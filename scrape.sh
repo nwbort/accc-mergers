@@ -22,9 +22,9 @@ echo "Saved main page to '$MAIN_PAGE_FILE'"
 # 2. Create the subdirectory for individual acquisition pages
 mkdir -p "$SUBFOLDER"
 
-# 3. Extract relative links of individual acquisitions using pup
+# 3. Extract relative links
 echo "Extracting links from main page..."
-relative_links=$(cat "$MAIN_PAGE_FILE" | pup '.accc-collapsed-card__header a attr{href}' | tr -d '\r')
+relative_links=$(cat "$MAIN_PAGE_FILE" | pup '.accc-collapsed-card__header a attr{href}' | grep -v '#card-' | tr -d '\r')
 
 if [ -z "$relative_links" ]; then
   echo "Warning: No acquisition links found on the main page. The website structure might have changed."
@@ -40,8 +40,8 @@ echo "$relative_links" | while IFS= read -r link; do
   temp_html=$(mktemp)
   curl -s -L -A "$USER_AGENT" "$full_url" -o "$temp_html"
   
-  # Extract matter number 
-  matter_number=$(cat "$temp_html" | pup '.field--name-field-acccgov-mcmsmergermatterno .field__item text{}' | tr -d '[:space:]')
+  # Extract matter number
+  matter_number=$(cat "$temp_html" | pup '.field--name-dynamic-token-fieldnode-acccgov-merger-id p text{}' | tr -d '[:space:]')
   
   if [ -n "$matter_number" ]; then
     filename="${SUBFOLDER}/${matter_number}.html"
