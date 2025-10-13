@@ -26,6 +26,9 @@ jobs:
         go install github.com/ericchiang/pup@latest
         echo "${HOME}/go/bin" >> $GITHUB_PATH
 
+    - name: Make scrape.sh executable
+      run: chmod +x ./scrape.sh
+
     - name: Run the scraper
       run: |
         ./scrape.sh
