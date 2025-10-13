@@ -16,10 +16,15 @@ jobs:
     - name: Check out repository
       uses: actions/checkout@v4
 
+    - name: Set up Go
+      uses: actions/setup-go@v5
+      with:
+        go-version: '>=1.22'
+
     - name: Install pup HTML parser
       run: |
-        sudo apt-get update
-        sudo apt-get install -y pup
+        go install github.com/ericchiang/pup@latest
+        echo "${HOME}/go/bin" >> $GITHUB_PATH
 
     - name: Run the scraper
       run: |
