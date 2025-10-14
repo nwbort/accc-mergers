@@ -1,0 +1,39 @@
+name: Extract and Commit Merger Data
+
+on:
+  workflow_dispatch:
+  schedule:
+  - cron: '16 1 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  extract-and-commit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install beautifulsoup4==4.12.3
+
+      - name: Run extraction script
+        run: python extract_mergers.py > mergers.json
+
+      - name: Commit and push changes
+        run: |-
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          git add mergers.json
+          timestamp=$(date -u)
+          git commit -m "Update scraped data: ${timestamp}" || exit 0
+          git pull --rebase
+          git push
