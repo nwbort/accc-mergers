@@ -3,6 +3,8 @@ name: Scrape
 on:
   push:
   workflow_dispatch:
+  repository_dispatch:
+    types: [new_merger_detected]
   schedule:
   - cron: '7 * * * *'
 
