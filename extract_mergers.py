@@ -191,6 +191,9 @@ def main():
             except Exception as e:
                 print(f"Error processing {filepath}: {e}", file=sys.stderr)
 
+    # Sort the data by merger_id to ensure a consistent order
+    all_mergers_data.sort(key=lambda x: x.get('merger_id', ''))
+
     # Print the final JSON output to stdout
     print(json.dumps(all_mergers_data, indent=2))
 
