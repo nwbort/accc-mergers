@@ -1,15 +1,52 @@
 import os
 import json
-import sys  # Import the sys module
+import sys
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse, unquote
+import requests
 
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./matters"
 
+def download_attachment(merger_id, attachment_url):
+    """Downloads an attachment if it doesn't already exist locally."""
+    if not merger_id or not attachment_url:
+        return
+
+    try:
+        # Create a directory for the merger's attachments
+        attachment_dir = os.path.join(MATTERS_DIR, merger_id)
+        os.makedirs(attachment_dir, exist_ok=True)
+
+        # Get filename from URL and construct local path
+        parsed_url = urlparse(attachment_url)
+        filename = unquote(os.path.basename(parsed_url.path))
+        local_filepath = os.path.join(attachment_dir, filename)
+
+        # Check if the file already exists before downloading
+        if not os.path.exists(local_filepath):
+            print(f"Downloading new attachment for {merger_id}: {filename}", file=sys.stderr)
+            
+            # Download the file
+            response = requests.get(attachment_url, stream=True)
+            response.raise_for_status()  # Raise an exception for bad status codes
+
+            # Save the file
+            with open(local_filepath, 'wb') as f_out:
+                for chunk in response.iter_content(chunk_size=8192):
+                    f_out.write(chunk)
+            print(f"Saved to {local_filepath}", file=sys.stderr)
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error downloading {attachment_url}: {e}", file=sys.stderr)
+    except IOError as e:
+        print(f"Error saving file {local_filepath}: {e}", file=sys.stderr)
+
+
 def parse_merger_file(filepath):
     """
-    Parses a single HTML file and extracts structured data for a merger.
+    Parses a single HTML file, extracts structured data for a merger,
+    and downloads any new attachments found.
 
     Args:
         filepath (str): The path to the HTML file.
@@ -32,7 +69,8 @@ def parse_merger_file(filepath):
     merger_data['status'] = status_tag.get_text(strip=True) if status_tag else None
 
     id_tag = soup.find('div', class_='field--name-dynamic-token-fieldnode-acccgov-merger-id')
-    merger_data['merger_id'] = id_tag.get_text(strip=True) if id_tag else None
+    merger_id = id_tag.get_text(strip=True) if id_tag else None
+    merger_data['merger_id'] = merger_id
     
     # --- Dates and Status ---
     date_tag = soup.find('div', class_='field--name-field-acccgov-pub-reg-date')
@@ -121,12 +159,16 @@ def parse_merger_file(filepath):
             title_cell = next((c for c in row.find_all('td') if c not in [date_cell, link_cell]), None)
 
             if date_cell and title_cell and link_cell and link_cell.find('a'):
+                attachment_url = urljoin(BASE_URL, link_cell.find('a')['href'])
                 attachment = {
                     'date': date_cell.find('time')['datetime'] if date_cell.find('time') else date_cell.get_text(strip=True),
                     'title': title_cell.get_text(strip=True),
-                    'url': urljoin(BASE_URL, link_cell.find('a')['href'])
+                    'url': attachment_url
                 }
                 merger_data['attachments'].append(attachment)
+                
+                # Download the attachment if it's new
+                download_attachment(merger_id, attachment_url)
 
     return merger_data
 
