@@ -12,6 +12,31 @@ MAIN_PAGE_FILE="acquisitions-register.html"
 SUBFOLDER="matters"
 USER_AGENT="Mozilla/5.0 (compatible; git-scraper-bot/1.0;)" # Be a good citizen
 
+# --- Functions ---
+
+# Function to clean dynamic content from HTML files
+clean_html() {
+  echo "Cleaning dynamic content from all downloaded HTML files..."
+  
+  # Find all .html files in the current directory and the subfolder
+  find . -name "*.html" | while IFS= read -r file; do
+    echo "  - Cleaning $file"
+    
+    # Use sed to perform in-place replacements.
+    # The -E flag enables extended regular expressions.
+    # Each '-e' adds another expression to the command.
+    sed -i -E \
+      -e 's/js-view-dom-id-[a-f0-9]{64}/js-view-dom-id-STATIC/g' \
+      -e 's/("views_dom_id:)[a-f0-9]{64}/\1STATIC"/g' \
+      -e 's/(id="edit-submit-accc-search-site--)[^"]+"/\1STATIC"/g' \
+      -e 's/(js\/js_)[^.]+\.js/\1STATIC.js/g' \
+      "$file"
+  done
+  
+  echo "Cleaning complete."
+}
+
+
 # --- Main Script ---
 
 # 1. Download the main acquisitions list page
@@ -55,5 +80,8 @@ echo "$relative_links" | while IFS= read -r link; do
   # Politeness delay to avoid overwhelming the server
   sleep 1
 done
+
+# 5. Clean the downloaded files before committing
+clean_html
 
 echo "Scraping process completed successfully."
