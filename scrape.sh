@@ -27,9 +27,13 @@ clean_html() {
     # Each '-e' adds another expression to the command.
     sed -i -E \
       -e 's/js-view-dom-id-[a-f0-9]{64}/js-view-dom-id-STATIC/g' \
-      -e 's/("views_dom_id:)[a-f0-9]{64}/\1STATIC"/g' \
       -e 's/(id="edit-submit-accc-search-site--)[^"]+"/\1STATIC"/g' \
+      -e 's/(css\/css_)[^.]+\.css/\1STATIC.css/g' \
       -e 's/(js\/js_)[^.]+\.js/\1STATIC.js/g' \
+      -e 's/("libraries":")[^"]+"/\1STATIC_LIBRARIES"/g' \
+      -e 's/("permissionsHash":")[^"]+"/\1STATIC_HASH"/g' \
+      -e 's/("view_dom_id":")[a-f0-9]{64}/\1STATIC"/g' \
+      -e 's/include=[^"&>]+/include=STATIC/g' \
       "$file"
   done
   
