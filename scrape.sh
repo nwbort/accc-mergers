@@ -33,6 +33,7 @@ clean_html() {
       -e 's/("libraries":")[^"]+"/\1STATIC_LIBRARIES"/g' \
       -e 's/("permissionsHash":")[^"]+"/\1STATIC_HASH"/g' \
       -e 's/("view_dom_id":")[a-f0-9]{64}/\1STATIC"/g' \
+      -e 's/(views_dom_id:)[a-f0-9]{64}/\1STATIC/g' \
       -e 's/include=[^"&>]+/include=STATIC/g' \
       "$file"
   done
