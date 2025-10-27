@@ -190,7 +190,7 @@
             const statsContainer = document.getElementById('stats');
             
             try {
-                const response = await fetch('../mergers.json');
+                const response = await fetch('mergers.json');
                 if (!response.ok) throw new Error('Failed to load mergers.json');
                 
                 const mergers = await response.json();
