@@ -2,6 +2,9 @@ name: Extract and Commit Merger Data
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'matters/**.html'
   schedule:
   - cron: '16 1 * * *'
 
