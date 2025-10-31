@@ -7,7 +7,7 @@ set -e
 
 # --- Configuration ---
 BASE_URL="https://www.accc.gov.au"
-REGISTER_URL="${BASE_URL}/public-registers/mergers-and-acquisitions-registers/acquisitions-register?init=1"
+REGISTER_URL="${BASE_URL}/public-registers/mergers-and-acquisitions-registers/acquisitions-register?init=1&items_per_page=20"
 MAIN_PAGE_FILE="acquisitions-register.html"
 SUBFOLDER="matters"
 USER_AGENT="Mozilla/5.0 (compatible; git-scraper-bot/1.0;)" # Be a good citizen
