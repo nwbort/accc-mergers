@@ -36,6 +36,7 @@ clean_html() {
       -e 's/(views_dom_id:)[a-f0-9]{64}/\1STATIC/g' \
       -e 's/include=[^"&>]+/include=STATIC/g' \
       -e 's/href="https:\/\/app\.readspeaker\.com\/[^"]+"/href="STATIC_READSPEAKER_URL"/g' \
+      -e 's/(icons\.svg\?t)[^#]+#/\1STATIC#/g' \
       "$file"
   done
   
