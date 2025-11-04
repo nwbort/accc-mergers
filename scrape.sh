@@ -6,13 +6,54 @@
 set -e
 
 # --- Configuration ---
-BASE_URL="https://www.accc.gov.au"
-REGISTER_URL="${BASE_URL}/public-registers/mergers-and-acquisitions-registers/acquisitions-register?init=1&items_per_page=20"
-MAIN_PAGE_FILE="acquisitions-register.html"
-SUBFOLDER="matters"
-USER_AGENT="Mozilla/5.0 (compatible; git-scraper-bot/1.0;)" # Be a good citizen
+# Export variables so they are available to subshells spawned by xargs.
+export BASE_URL="https://www.accc.gov.au"
+export REGISTER_URL="${BASE_URL}/public-registers/mergers-and-acquisitions-registers/acquisitions-register?init=1&items_per_page=20"
+export MAIN_PAGE_FILE="acquisitions-register.html"
+export SUBFOLDER="matters"
+export USER_AGENT="Mozilla/5.0 (compatible; git-scraper-bot/1.0;)" # Be a good citizen
 
 # --- Functions ---
+
+# Function to fetch and process a single matter page.
+# It's designed to be called by xargs for parallel execution.
+fetch_matter_page() {
+  local link="$1"
+  local full_url="${BASE_URL}${link}"
+  
+  echo "  - Fetching: $full_url"
+  
+  local temp_html
+  temp_html=$(mktemp)
+  # Ensure temp file is cleaned up when the function returns
+  trap 'rm -f "$temp_html"' RETURN
+
+  # Download the page. The --fail flag ensures curl exits with an error on HTTP failures (like 404).
+  if ! curl -s -L -A "$USER_AGENT" --fail "$full_url" -o "$temp_html"; then
+      echo "  - FAILED to fetch: $full_url"
+      # Returning a non-zero status will cause xargs to stop
+      return 1
+  fi
+  
+  # Extract matter number
+  local matter_number
+  matter_number=$(cat "$temp_html" | pup '.field--name-dynamic-token-fieldnode-acccgov-merger-id p text{}' | tr -d '[:space:]')
+  
+  local filename
+  if [ -n "$matter_number" ]; then
+    filename="${SUBFOLDER}/${matter_number}.html"
+    mv "$temp_html" "$filename"
+  else
+    # Fallback in case matter number isn't found
+    local fallback_name
+    fallback_name=$(basename "$link")
+    filename="${SUBFOLDER}/${fallback_name}.html"
+    mv "$temp_html" "$filename"
+    echo "    Warning: Could not find matter number for $full_url. Used fallback name: $fallback_name"
+  fi
+}
+# Export the function so it's available to subshells spawned by xargs
+export -f fetch_matter_page
 
 # Function to clean dynamic content from HTML files
 clean_html() {
@@ -67,30 +108,9 @@ if [ -z "$relative_links" ]; then
   exit 0
 fi
 
-# 4. Loop through each link, download the page, and save it
-echo "$relative_links" | while IFS= read -r link; do
-  full_url="${BASE_URL}${link}"
-  
-  echo "  - Fetching: $full_url"
-  
-  temp_html=$(mktemp)
-  curl -s -L -A "$USER_AGENT" "$full_url" -o "$temp_html"
-  
-  # Extract matter number
-  matter_number=$(cat "$temp_html" | pup '.field--name-dynamic-token-fieldnode-acccgov-merger-id p text{}' | tr -d '[:space:]')
-  
-  if [ -n "$matter_number" ]; then
-    filename="${SUBFOLDER}/${matter_number}.html"
-    mv "$temp_html" "$filename"
-  else
-    fallback_name=$(basename "$link")
-    filename="${SUBFOLDER}/${fallback_name}.html"
-    mv "$temp_html" "$filename"
-  fi
-  
-  # Politeness delay to avoid overwhelming the server
-  sleep 1
-done
+# 4. Fetch the individual matter pages in parallel
+echo "Fetching individual matter pages in parallel..."
+echo "$relative_links" | xargs -P 8 -I {} bash -c 'fetch_matter_page "$@"' _ {}
 
 # 5. Clean the downloaded files before committing
 clean_html
