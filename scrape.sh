@@ -22,7 +22,7 @@ clean_html() {
   find . -name "*.html" | while IFS= read -r file; do
     echo "  - Cleaning $file"
     
-    # Use sed to perform in-place replacements.
+    # Use sed to perform in-place replacements for simple line-based patterns.
     # The -E flag enables extended regular expressions.
     # Each '-e' adds another expression to the command.
     sed -i -E \
@@ -39,6 +39,9 @@ clean_html() {
       -e 's/(icons\.svg\?t)[^#]+#/\1STATIC#/g' \
       -e 's/(\?t)[^">]+/\1STATIC/g' \
       "$file"
+
+    # Use a second sed pass for complex multi-line replacements.
+    sed -i -E -e ':a;N;$!ba;s#(<a[^>]*class="[^"]*megamenu-page-link-level-3[^"]*"[^>]*href=")[^"]*("[^>]*>[[:space:]]*<span>)[^<]*(</span>)#\1STATIC_HREF\2STATIC_TEXT\3#g' "$file"
   done
   
   echo "Cleaning complete."
