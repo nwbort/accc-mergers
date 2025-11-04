@@ -6,11 +6,12 @@
 set -e
 
 # --- Configuration ---
-BASE_URL="https://www.accc.gov.au"
-REGISTER_URL="${BASE_URL}/public-registers/mergers-and-acquisitions-registers/acquisitions-register?init=1&items_per_page=20"
-MAIN_PAGE_FILE="acquisitions-register.html"
-SUBFOLDER="matters"
-USER_AGENT="Mozilla/5.0 (compatible; git-scraper-bot/1.0;)" # Be a good citizen
+# Export variables so they are available to subshells spawned by xargs.
+export BASE_URL="https://www.accc.gov.au"
+export REGISTER_URL="${BASE_URL}/public-registers/mergers-and-acquisitions-registers/acquisitions-register?init=1&items_per_page=20"
+export MAIN_PAGE_FILE="acquisitions-register.html"
+export SUBFOLDER="matters"
+export USER_AGENT="Mozilla/5.0 (compatible; git-scraper-bot/1.0;)" # Be a good citizen
 
 # --- Functions ---
 
@@ -30,7 +31,7 @@ fetch_matter_page() {
   # Download the page. The --fail flag ensures curl exits with an error on HTTP failures (like 404).
   if ! curl -s -L -A "$USER_AGENT" --fail "$full_url" -o "$temp_html"; then
       echo "  - FAILED to fetch: $full_url"
-      # Returning a non-zero status will cause xargs to stop if not using -r
+      # Returning a non-zero status will cause xargs to stop
       return 1
   fi
   
@@ -107,9 +108,9 @@ if [ -z "$relative_links" ]; then
   exit 0
 fi
 
-# 4. Loop through each link, download the page, and save it IN PARALLEL
+# 4. Fetch the individual matter pages in parallel
 echo "Fetching individual matter pages in parallel..."
-echo "$relative_links" | xargs -n 1 -P 8 -I {} bash -c 'fetch_matter_page "$@"' _ {}
+echo "$relative_links" | xargs -P 8 -I {} bash -c 'fetch_matter_page "$@"' _ {}
 
 # 5. Clean the downloaded files before committing
 clean_html
