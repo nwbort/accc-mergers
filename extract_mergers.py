@@ -130,8 +130,8 @@ def parse_merger_file(filepath):
             merger_data['merger_description'] = (full_text_div.get_text('\n', strip=True) if full_text_div 
                                                 else description_tag.get_text('\n', strip=True).replace('Description','').strip())
 
-        # --- Attachments ---
-        merger_data['attachments'] = []
+        # --- Events ---
+        merger_data['events'] = []
         attachment_tables = soup.find_all('div', class_='table-responsive')
         for table in attachment_tables:
             for row in table.find_all('tr'):
@@ -139,15 +139,21 @@ def parse_merger_file(filepath):
                 link_cell = row.find('td', class_='acccgov-timeline__file-link')
                 title_cell = next((c for c in row.find_all('td') if c not in [date_cell, link_cell]), None)
 
-                if date_cell and title_cell and link_cell and link_cell.find('a'):
-                    attachment_url = urljoin(BASE_URL, link_cell.find('a')['href'])
-                    attachment = {
-                        'date': date_cell.find('time')['datetime'] if date_cell.find('time') else date_cell.get_text(strip=True),
-                        'title': title_cell.get_text(strip=True),
-                        'url': attachment_url
-                    }
-                    merger_data['attachments'].append(attachment)
-                    download_attachment(merger_id, attachment_url)
+                if not (date_cell and title_cell):
+                    continue
+
+                event = {
+                    'date': date_cell.find('time')['datetime'] if date_cell.find('time') else date_cell.get_text(strip=True),
+                    'title': title_cell.get_text(strip=True)
+                }
+
+                link_tag = link_cell.find('a') if link_cell else None
+                if link_tag and link_tag.has_attr('href'):
+                    url = urljoin(BASE_URL, link_tag['href'])
+                    event['url'] = url
+                    download_attachment(merger_id, url)
+
+                merger_data['events'].append(event)
 
         return merger_data
     
