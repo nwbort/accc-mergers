@@ -26,15 +26,15 @@
         
         header {
             background: white;
-            padding: 30px;
+            padding: 20px;
             border-radius: 8px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
         h1 {
             color: #2c3e50;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
         
         .stats {
@@ -53,7 +53,7 @@
         
         .merger-card {
             background: white;
-            padding: 25px;
+            padding: 20px;
             margin-bottom: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -69,7 +69,7 @@
         
         .merger-title {
             color: #2c3e50;
-            font-size: 1.3em;
+            font-size: 1.2em;
             font-weight: 600;
             flex: 1;
         }
@@ -83,13 +83,21 @@
         }
         
         .badge.approved {
-            background: #d4edda;
-            color: #155724;
+            background-color: #e6f7ff;
+            color: #006d9c;
+            border: 1px solid #b3e0ff;
         }
-        
-        .badge.phase1 {
-            background: #e7f3ff;
-            color: #004085;
+
+        .badge.cleared {
+            background-color: #e6fff2;
+            color: #00875a;
+            border: 1px solid #b3ffdb;
+        }
+
+        .badge.declined {
+            background-color: #fff0f0;
+            color: #d90000;
+            border: 1px solid #ffb3b3;
         }
         
         .info-grid {
@@ -170,6 +178,47 @@
             border-radius: 8px;
             margin: 20px 0;
         }
+
+        .search-summary-container {
+          margin-bottom: 20px;
+        }
+
+        #merger-search {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          box-sizing: border-box;
+        }
+
+        #summary-boxes {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .summary-box {
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        .summary-box.active {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        #merger-search {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -178,6 +227,18 @@
             <h1>ACCC merger register</h1>
             <div class="stats" id="stats"></div>
         </header>
+
+        <div class="search-summary-container">
+          <input type="text" id="merger-search" onkeyup="applyFilters()" placeholder="Search mergers by name, party, or industry...">
+          <div id="summary-boxes">
+            <div class="summary-box active" data-status="all" onclick="updateStatusFilter('all')">Total mergers: <span id="total-count">0</span></div>
+            <div class="summary-box" data-status="in-progress" onclick="updateStatusFilter('in-progress')">In Progress: <span id="in-progress-count">0</span></div>
+            <div class="summary-box" data-status="cleared" onclick="updateStatusFilter('cleared')">Cleared: <span id="cleared-count">0</span></div>
+            <div class="summary-box" data-status="authorised" onclick="updateStatusFilter('authorised')">Authorised: <span id="authorised-count">0</span></div>
+            <div class="summary-box" data-status="declined" onclick="updateStatusFilter('declined')">Declined: <span id="declined-count">0</span></div>
+            <div class="summary-box" data-status="withdrawn" onclick="updateStatusFilter('withdrawn')">Withdrawn: <span id="withdrawn-count">0</span></div>
+          </div>
+        </div>
         
         <div id="mergers-container">
             <div class="loading">Loading mergers...</div>
@@ -185,6 +246,49 @@
     </div>
 
     <script>
+        function applyFilters() {
+            const searchText = document.getElementById('merger-search').value.toUpperCase();
+            const activeStatusBox = document.querySelector('.summary-box.active');
+            const statusFilter = activeStatusBox.getAttribute('data-status');
+
+            const mergers = document.getElementsByClassName('merger-card');
+
+            for (const merger of mergers) {
+                const title = merger.querySelector('.merger-title').innerText.toUpperCase();
+                const parties = Array.from(merger.querySelectorAll('.party')).map(p => p.innerText.toUpperCase()).join(' ');
+                const cardStatus = merger.getAttribute('data-status').toLowerCase();
+
+                const matchesSearch = title.includes(searchText) || parties.includes(searchText);
+                const matchesStatus = statusFilter === 'all' || cardStatus.includes(statusFilter.replace('-', ' '));
+
+                if (matchesSearch && matchesStatus) {
+                    merger.style.display = "";
+                } else {
+                    merger.style.display = "none";
+                }
+            }
+        }
+
+        function updateStatusFilter(status) {
+            let summaryBoxes = document.getElementsByClassName('summary-box');
+            for (let i = 0; i < summaryBoxes.length; i++) {
+                summaryBoxes[i].classList.remove('active');
+            }
+            document.querySelector(`.summary-box[data-status="${status}"]`).classList.add('active');
+            applyFilters();
+        }
+
+        function toggleDescription(button) {
+          let content = button.nextElementSibling;
+          if (content.style.display === 'none') {
+            content.style.display = 'block';
+            button.innerText = 'Hide description';
+          } else {
+            content.style.display = 'none';
+            button.innerText = 'Show description';
+          }
+        }
+
         async function loadMergers() {
             const container = document.getElementById('mergers-container');
             const statsContainer = document.getElementById('stats');
@@ -196,26 +300,34 @@
                 const mergers = await response.json();
                 
                 // Display stats
-                const approvedCount = mergers.filter(m => m.accc_determination?.includes('Approved')).length;
-                statsContainer.innerHTML = `
-                    <div class="stat">Total mergers: ${mergers.length}</div>
-                    <div class="stat">Approved: ${approvedCount}</div>
-                `;
+                const totalCount = mergers.length;
+                const inProgressCount = mergers.filter(m => !m.accc_determination).length;
+                const clearedCount = mergers.filter(m => m.accc_determination?.includes('Cleared')).length;
+                const authorisedCount = mergers.filter(m => m.accc_determination?.includes('Authorised')).length;
+                const declinedCount = mergers.filter(m => m.accc_determination?.includes('Declined')).length;
+                const withdrawnCount = mergers.filter(m => m.accc_determination?.includes('Withdrawn')).length;
+
+                document.getElementById('total-count').innerText = totalCount;
+                document.getElementById('in-progress-count').innerText = inProgressCount;
+                document.getElementById('cleared-count').innerText = clearedCount;
+                document.getElementById('authorised-count').innerText = authorisedCount;
+                document.getElementById('declined-count').innerText = declinedCount;
+                document.getElementById('withdrawn-count').innerText = withdrawnCount;
+
                 
                 // Display mergers
                 container.innerHTML = mergers.map(merger => {
                     const notificationDate = new Date(merger.effective_notification_datetime).toLocaleDateString('en-AU');
                     const determinationDate = merger.determination_publication_date ? 
-                        new Date(merger.determination_publication_date).toLocaleDateString('en-AU') : 'N/A';
+                        new Date(merger.determination_publication_date).toLocaleDateString('en-AU') : 'Pending';
+                    const status = merger.accc_determination || 'In Progress';
                     
                     return `
-                        <div class="merger-card">
+                        <div class="merger-card" data-status="${status}">
                             <div class="merger-header">
                                 <h2 class="merger-title">${merger.merger_name}</h2>
                                 <div>
-                                    ${merger.accc_determination?.includes('Approved') ? 
-                                        '<span class="badge approved">Approved</span>' : 
-                                        '<span class="badge">' + (merger.accc_determination || 'N/A') + '</span>'}
+                                    <span class="badge ${status.toLowerCase().replace(' ', '-')}">${status}</span>
                                 </div>
                             </div>
                             
@@ -258,9 +370,12 @@
                             
                             ${merger.merger_description ? `
                                 <div class="description">
-                                    ${merger.merger_description.split('\n').map(p => 
-                                        p.trim() ? `<p>${p}</p>` : ''
-                                    ).join('')}
+                                    <button onclick="toggleDescription(this)">Show description</button>
+                                    <div class="description-content" style="display: none;">
+                                        ${merger.merger_description.split('\n').map(p =>
+                                            p.trim() ? `<p>${p}</p>` : ''
+                                        ).join('')}
+                                    </div>
                                 </div>
                             ` : ''}
                             
