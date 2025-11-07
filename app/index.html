@@ -136,24 +136,43 @@
             color: #555;
         }
         
-        .attachments {
+        .events {
             margin-top: 15px;
             padding-top: 15px;
             border-top: 1px solid #eee;
         }
         
-        .attachment-link {
+        .event {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .event-date {
+            font-weight: 600;
+            color: #333;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+
+        .event-title {
+            font-size: 14px;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .event-link {
             display: inline-block;
-            padding: 8px 12px;
+            padding: 6px 10px;
             background: #007bff;
             color: white;
             text-decoration: none;
             border-radius: 4px;
             font-size: 13px;
-            margin-top: 5px;
+            margin-left: 10px;
         }
-        
-        .attachment-link:hover {
+
+        .event-link:hover {
             background: #0056b3;
         }
         
@@ -264,12 +283,16 @@
                                 </div>
                             ` : ''}
                             
-                            ${merger.attachments && merger.attachments.length > 0 ? `
-                                <div class="attachments">
-                                    <span class="info-label">Documents</span>
-                                    ${merger.attachments.map(att => 
-                                        `<a href="${att.url}" class="attachment-link" target="_blank">${att.title}</a>`
-                                    ).join(' ')}
+                            ${merger.events && merger.events.length > 0 ? `
+                                <div class="events">
+                                    <span class="info-label">Events & Documents</span>
+                                    ${merger.events.map(event => `
+                                        <div class="event">
+                                            <span class="event-date">${new Date(event.date).toLocaleDateString('en-AU')}</span>
+                                            <span class="event-title">${event.title}</span>
+                                            ${event.url ? `<a href="${event.url}" class="event-link" target="_blank">Download</a>` : ''}
+                                        </div>
+                                    `).join('')}
                                 </div>
                             ` : ''}
                         </div>
