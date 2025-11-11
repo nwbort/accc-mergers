@@ -1,5 +1,4 @@
 name: Scrape
-
 on:
   push:
   workflow_dispatch:
@@ -7,10 +6,8 @@ on:
     types: [new_merger_detected]
   schedule:
   - cron: '7 * * * *'
-
 permissions:
   contents: write
-
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -40,11 +37,11 @@ jobs:
   
     - name: Make scrape.sh executable
       run: chmod +x ./scrape.sh
-
+    
     - name: Run the scraper
       run: |
         ./scrape.sh
-
+    
     - name: Commit and push changes
       run: |-
         git config user.name "Automated"
@@ -54,3 +51,10 @@ jobs:
         git commit -m "Update scraped data: ${timestamp}" || exit 0
         git pull --rebase
         git push
+    
+    - name: Trigger extract workflow if repository dispatch
+      if: github.event_name == 'repository_dispatch'
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        gh workflow run extract.yml
