@@ -30,7 +30,7 @@ jobs:
           pip install beautifulsoup4==4.12.3 requests
 
       - name: Run extraction script
-        run: python extract_mergers.py > mergers.json
+        run: python extract_mergers.py
 
       - name: Commit and push changes
         id: commit
