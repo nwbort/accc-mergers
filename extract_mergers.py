@@ -72,7 +72,7 @@ def parse_merger_file(filepath, existing_merger_data=None):
         status_tag = soup.find('div', class_='field--name-field-acccgov-merger-status')
         merger_data['status'] = status_tag.get_text(strip=True) if status_tag else None
 
-        id_tag = soup.find('div', class_='field--name-dynamic-token-fieldnode-acccgov-merger-id')
+        id_tag = soup.select_one('.field--name-dynamic-token-fieldnode-acccgov-merger-id')
         merger_id = id_tag.get_text(strip=True) if id_tag else None
         merger_data['merger_id'] = merger_id
         
@@ -189,13 +189,16 @@ def parse_merger_file(filepath, existing_merger_data=None):
 def get_merger_id_from_file(filepath):
     """Extracts the merger ID from the HTML file without full parsing."""
     with open(filepath, 'r', encoding='utf-8') as f:
-        for line in f:
-            if 'field--name-dynamic-token-fieldnode-acccgov-merger-id' in line:
-                soup = BeautifulSoup(line, 'html.parser')
-                id_tag = soup.find('div', class_='field--item')
-                if id_tag:
-                    return id_tag.get_text(strip=True)
+        html_content = f.read()
+    soup = BeautifulSoup(html_content, 'html.parser')
+    id_tag = soup.select_one('.field--name-dynamic-token-fieldnode-acccgov-merger-id')
+    if id_tag:
+        return id_tag.get_text(strip=True)
     return None
+
+def run_parse_merger_file(task):
+    """Helper function to unpack arguments for parse_merger_file."""
+    return parse_merger_file(*task)
 
 def main():
     """
@@ -238,7 +241,7 @@ def main():
                 print(f"Warning: Could not extract merger_id from {fp}", file=sys.stderr)
 
         # The map function applies parse_merger_file to each task tuple
-        results = executor.map(lambda p: parse_merger_file(*p), tasks)
+        results = executor.map(run_parse_merger_file, tasks)
         
         # 4. Collect valid results, filtering out any None values from failed parses
         all_mergers_data = [data for data in results if data is not None]
