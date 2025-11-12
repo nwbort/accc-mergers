@@ -44,7 +44,7 @@ def download_attachment(merger_id, attachment_url):
         print(f"Error saving file {local_filepath}: {e}", file=sys.stderr)
 
 
-def parse_merger_file(filepath):
+def parse_merger_file(filepath, existing_merger_data=None):
     """
     Parses a single HTML file, extracts structured data for a merger,
     and downloads any new attachments found. This function is designed to be
@@ -52,6 +52,7 @@ def parse_merger_file(filepath):
 
     Args:
         filepath (str): The path to the HTML file.
+        existing_merger_data (dict or None): Existing data for the merger.
 
     Returns:
         dict or None: A dictionary containing the structured data for the merger,
@@ -132,6 +133,7 @@ def parse_merger_file(filepath):
 
         # --- Events ---
         merger_data['events'] = []
+        scraped_events = []
         attachment_tables = soup.find_all('div', class_='table-responsive')
         for table in attachment_tables:
             for row in table.find_all('tr'):
@@ -153,7 +155,29 @@ def parse_merger_file(filepath):
                     event['url'] = url
                     download_attachment(merger_id, url)
 
-                merger_data['events'].append(event)
+                    # Add github url and status
+                    parsed_url = urlparse(url)
+                    filename = unquote(os.path.basename(parsed_url.path))
+                    event['url_gh'] = f"https://github.com/nwbort/accc-mergers/raw/main/matters/{merger_id}/{filename}"
+                    event['status'] = 'live'
+
+                scraped_events.append(event)
+
+        # Merge scraped events with existing events
+        if existing_merger_data and 'events' in existing_merger_data:
+            existing_events = existing_merger_data['events']
+            merged_events = {event['title']: event for event in scraped_events}
+
+            for event in existing_events:
+                if event['title'] not in merged_events:
+                    # This event is not in the new scrape, so mark as removed
+                    if 'url' in event:
+                        event['status'] = 'removed'
+                    merged_events[event['title']] = event
+
+            merger_data['events'] = list(merged_events.values())
+        else:
+            merger_data['events'] = scraped_events
 
         return merger_data
     
@@ -161,6 +185,17 @@ def parse_merger_file(filepath):
         print(f"Error processing {filepath}: {e}", file=sys.stderr)
         return None
 
+
+def get_merger_id_from_file(filepath):
+    """Extracts the merger ID from the HTML file without full parsing."""
+    with open(filepath, 'r', encoding='utf-8') as f:
+        for line in f:
+            if 'field--name-dynamic-token-fieldnode-acccgov-merger-id' in line:
+                soup = BeautifulSoup(line, 'html.parser')
+                id_tag = soup.find('div', class_='field--item')
+                if id_tag:
+                    return id_tag.get_text(strip=True)
+    return None
 
 def main():
     """
@@ -171,7 +206,19 @@ def main():
         print(f"Error: Directory '{MATTERS_DIR}' not found.", file=sys.stderr)
         sys.exit(1)
 
-    # 1. Get a list of all HTML file paths to process
+    # 1. Load existing data if mergers.json exists
+    existing_mergers = {}
+    if os.path.exists('mergers.json'):
+        with open('mergers.json', 'r', encoding='utf-8') as f:
+            try:
+                existing_data = json.load(f)
+                for merger in existing_data:
+                    if 'merger_id' in merger:
+                        existing_mergers[merger['merger_id']] = merger
+            except json.JSONDecodeError:
+                print("Warning: mergers.json is empty or invalid. Starting fresh.", file=sys.stderr)
+
+    # 2. Get a list of all HTML file paths to process
     filepaths = [
         os.path.join(MATTERS_DIR, filename)
         for filename in os.listdir(MATTERS_DIR)
@@ -179,16 +226,24 @@ def main():
     ]
 
     all_mergers_data = []
-    # 2. Use a ProcessPoolExecutor to run parsing in parallel
+    # 3. Use a ProcessPoolExecutor to run parsing in parallel
     with ProcessPoolExecutor() as executor:
-        # The map function applies parse_merger_file to each filepath
-        # and returns an iterator of the results.
-        results = executor.map(parse_merger_file, filepaths)
+        # Create a list of arguments for parse_merger_file
+        tasks = []
+        for fp in filepaths:
+            merger_id = get_merger_id_from_file(fp)
+            if merger_id:
+                tasks.append((fp, existing_mergers.get(merger_id)))
+            else:
+                print(f"Warning: Could not extract merger_id from {fp}", file=sys.stderr)
+
+        # The map function applies parse_merger_file to each task tuple
+        results = executor.map(lambda p: parse_merger_file(*p), tasks)
         
-        # 3. Collect valid results, filtering out any None values from failed parses
+        # 4. Collect valid results, filtering out any None values from failed parses
         all_mergers_data = [data for data in results if data is not None]
 
-    # 4. Sort the data by merger_id to ensure a consistent output
+    # 5. Sort the data by merger_id to ensure a consistent output
     all_mergers_data.sort(key=lambda x: x.get('merger_id', ''))
 
     # 5. Print the final JSON output to stdout
