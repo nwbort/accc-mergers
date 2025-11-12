@@ -211,15 +211,30 @@ def main():
 
     # 1. Load existing data if mergers.json exists
     existing_mergers = {}
-    if os.path.exists('mergers.json'):
-        with open('mergers.json', 'r', encoding='utf-8') as f:
-            try:
+    mergers_json_path = 'mergers.json'
+    if os.path.exists(mergers_json_path) and os.path.getsize(mergers_json_path) > 0:
+        try:
+            with open(mergers_json_path, 'r', encoding='utf-8') as f:
                 existing_data = json.load(f)
                 for merger in existing_data:
                     if 'merger_id' in merger:
                         existing_mergers[merger['merger_id']] = merger
-            except json.JSONDecodeError:
-                print("Warning: mergers.json is empty or invalid. Starting fresh.", file=sys.stderr)
+        except json.JSONDecodeError as e:
+            print(f"Error decoding JSON from {mergers_json_path}:", file=sys.stderr)
+            print(f"  - Error: {e.msg}", file=sys.stderr)
+            print(f"  - At line {e.lineno}, column {e.colno}", file=sys.stderr)
+            
+            # Go back and read the problematic line to show the user
+            with open(mergers_json_path, 'r', encoding='utf-8') as f_debug:
+                for i, line in enumerate(f_debug, 1):
+                    if i == e.lineno:
+                        print(f"Problematic line ({i}): {line.strip()}", file=sys.stderr)
+                        print(f"{' ' * (e.colno + 21)}--->^", file=sys.stderr)
+                        break
+            sys.exit(1) # Exit if the existing data can't be parsed
+    elif os.path.exists(mergers_json_path):
+         print("Warning: mergers.json exists but is empty. Starting fresh.", file=sys.stderr)
+
 
     # 2. Get a list of all HTML file paths to process
     filepaths = [
