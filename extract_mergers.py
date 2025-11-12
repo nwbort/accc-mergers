@@ -249,8 +249,9 @@ def main():
     # 5. Sort the data by merger_id to ensure a consistent output
     all_mergers_data.sort(key=lambda x: x.get('merger_id', ''))
 
-    # 5. Print the final JSON output to stdout
-    print(json.dumps(all_mergers_data, indent=2))
+    # 6. Write the final JSON output to mergers.json
+    with open('mergers.json', 'w', encoding='utf-8') as f:
+        json.dump(all_mergers_data, f, indent=2)
 
 if __name__ == "__main__":
     main()
