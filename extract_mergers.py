@@ -212,6 +212,8 @@ def main():
     # 1. Load existing data if mergers.json exists
     existing_mergers = {}
     mergers_json_path = 'mergers.json'
+    mergers_json_size = os.path.getsize(mergers_json_path)
+    print(f"mergers.json file size: {mergers_json_size}")
     if os.path.exists(mergers_json_path) and os.path.getsize(mergers_json_path) > 0:
         try:
             with open(mergers_json_path, 'r', encoding='utf-8') as f:
