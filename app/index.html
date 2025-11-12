@@ -82,13 +82,7 @@
             white-space: nowrap;
         }
         
-        .badge.approved {
-            background-color: #e6f7ff;
-            color: #006d9c;
-            border: 1px solid #b3e0ff;
-        }
-
-        .badge.cleared {
+        .badge.approved, .badge.accc-determinationapproved {
             background-color: #e6fff2;
             color: #00875a;
             border: 1px solid #b3ffdb;
@@ -252,10 +246,8 @@
           <div id="summary-boxes">
             <div class="summary-box active" data-status="all" onclick="updateStatusFilter('all')">Total mergers: <span id="total-count">0</span></div>
             <div class="summary-box" data-status="in-progress" onclick="updateStatusFilter('in-progress')">In Progress: <span id="in-progress-count">0</span></div>
-            <div class="summary-box" data-status="cleared" onclick="updateStatusFilter('cleared')">Cleared: <span id="cleared-count">0</span></div>
-            <div class="summary-box" data-status="authorised" onclick="updateStatusFilter('authorised')">Authorised: <span id="authorised-count">0</span></div>
+            <div class="summary-box" data-status="approved" onclick="updateStatusFilter('approved')">Approved: <span id="approved-count">0</span></div>
             <div class="summary-box" data-status="declined" onclick="updateStatusFilter('declined')">Declined: <span id="declined-count">0</span></div>
-            <div class="summary-box" data-status="withdrawn" onclick="updateStatusFilter('withdrawn')">Withdrawn: <span id="withdrawn-count">0</span></div>
           </div>
         </div>
         
@@ -321,17 +313,13 @@
                 // Display stats
                 const totalCount = mergers.length;
                 const inProgressCount = mergers.filter(m => !m.accc_determination).length;
-                const clearedCount = mergers.filter(m => m.accc_determination?.includes('Cleared')).length;
-                const authorisedCount = mergers.filter(m => m.accc_determination?.includes('Authorised')).length;
+                const approvedCount = mergers.filter(m => m.accc_determination?.includes('Approved')).length;
                 const declinedCount = mergers.filter(m => m.accc_determination?.includes('Declined')).length;
-                const withdrawnCount = mergers.filter(m => m.accc_determination?.includes('Withdrawn')).length;
 
                 document.getElementById('total-count').innerText = totalCount;
                 document.getElementById('in-progress-count').innerText = inProgressCount;
-                document.getElementById('cleared-count').innerText = clearedCount;
-                document.getElementById('authorised-count').innerText = authorisedCount;
+                document.getElementById('approved-count').innerText = approvedCount;
                 document.getElementById('declined-count').innerText = declinedCount;
-                document.getElementById('withdrawn-count').innerText = withdrawnCount;
 
                 
                 // Display mergers
@@ -339,7 +327,10 @@
                     const notificationDate = new Date(merger.effective_notification_datetime).toLocaleDateString('en-AU');
                     const determinationDate = merger.determination_publication_date ? 
                         new Date(merger.determination_publication_date).toLocaleDateString('en-AU') : 'Pending';
-                    const status = merger.accc_determination || 'In Progress';
+                    let status = merger.accc_determination || 'In Progress';
+                    if (status === 'ACCC DeterminationApproved') {
+                        status = 'Approved';
+                    }
                     
                     return `
                         <div class="merger-card" data-status="${status}">
