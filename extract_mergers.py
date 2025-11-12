@@ -213,7 +213,6 @@ def main():
     existing_mergers = {}
     mergers_json_path = 'mergers.json'
     mergers_json_size = os.path.getsize(mergers_json_path)
-    print(f"mergers.json file size: {mergers_json_size}", file=sys.stderr)
     if os.path.exists(mergers_json_path) and os.path.getsize(mergers_json_path) > 0:
         try:
             with open(mergers_json_path, 'r', encoding='utf-8') as f:
