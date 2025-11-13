@@ -224,11 +224,6 @@ function MergerDetail() {
                           <p className="text-sm font-medium text-gray-900">
                             {event.title}
                           </p>
-                          {event.status === 'removed' && (
-                            <span className="text-xs text-gray-500 italic">
-                              (removed)
-                            </span>
-                          )}
                         </div>
                         <p className="text-sm text-gray-500">
                           {formatDate(event.date)}
@@ -252,7 +247,7 @@ function MergerDetail() {
                                 rel="noopener noreferrer"
                                 className="text-sm text-primary hover:text-primary-dark"
                               >
-                                View Archive →
+                                View archive →
                               </a>
                             )}
                           </div>

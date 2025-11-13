@@ -24,7 +24,7 @@ function Footer() {
             on the information presented. For official merger information, please
             visit the{' '}
             <a
-              href="https://www.accc.gov.au/business/mergers/public-merger-reviews"
+              href="https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:text-primary-dark underline"

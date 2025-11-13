@@ -3,12 +3,12 @@
 This guide covers deployment options for the ACCC Merger Tracker application.
 
 ## Table of Contents
-1. [Docker Deployment](#docker-deployment)
-2. [DigitalOcean Deployment](#digitalocean-deployment)
-3. [AWS EC2 Deployment](#aws-ec2-deployment)
-4. [Production Considerations](#production-considerations)
+1. [Docker deployment](#docker-deployment)
+2. [DigitalOcean deployment](#digitalocean-deployment)
+3. [AWS EC2 deployment](#aws-ec2-deployment)
+4. [Production considerations](#production-considerations)
 
-## Docker Deployment
+## Docker deployment
 
 The easiest way to deploy is using Docker Compose.
 
@@ -31,44 +31,44 @@ docker-compose exec backend python sync_data.py
 
 The application will be available at `http://localhost` (configured port).
 
-## DigitalOcean Deployment
+## DigitalOcean deployment
 
-### Option 1: DigitalOcean App Platform
+### Option 1: DigitalOcean app platform
 
 1. **Create a new App**
-   - Go to DigitalOcean App Platform
+   - Go to DigitalOcean app platform
    - Click "Create App"
    - Connect your GitHub repository
 
-2. **Configure Backend Service**
+2. **Configure backend service**
    - Type: Web Service
-   - Source Directory: `merger-tracker/backend`
-   - Build Command: `pip install -r requirements.txt`
-   - Run Command: `uvicorn main:app --host 0.0.0.0 --port 8080`
-   - Environment Variables:
+   - Source directory: `merger-tracker/backend`
+   - Build command: `pip install -r requirements.txt`
+   - Run command: `uvicorn main:app --host 0.0.0.0 --port 8080`
+   - Environment variables:
      - `PORT=8080`
      - `ALLOWED_ORIGINS=https://your-frontend-domain.ondigitalocean.app`
 
-3. **Configure Frontend Service**
+3. **Configure frontend service**
    - Type: Static Site
-   - Source Directory: `merger-tracker/frontend`
-   - Build Command: `npm install && npm run build`
-   - Output Directory: `dist`
-   - Environment Variables:
+   - Source directory: `merger-tracker/frontend`
+   - Build command: `npm install && npm run build`
+   - Output directory: `dist`
+   - Environment variables:
      - `VITE_API_URL=https://your-backend-domain.ondigitalocean.app`
 
-4. **Set up Database Volume**
+4. **Set up database volume**
    - Add a persistent volume to the backend service
    - Mount at `/app/mergers.db`
 
-### Option 2: DigitalOcean Droplet
+### Option 2: DigitalOcean droplet
 
-1. **Create a Droplet**
+1. **Create a droplet**
    - Ubuntu 22.04 LTS
    - At least 2GB RAM
    - Enable backups
 
-2. **Initial Setup**
+2. **Initial setup**
 ```bash
 # Update system
 sudo apt update && sudo apt upgrade -y
@@ -80,7 +80,7 @@ sudo apt install -y python3-pip python3-venv nginx nodejs npm
 sudo npm install -g pm2
 ```
 
-3. **Deploy Backend**
+3. **Deploy backend**
 ```bash
 # Create app directory
 sudo mkdir -p /var/www/merger-tracker
@@ -105,7 +105,7 @@ pm2 save
 pm2 startup
 ```
 
-4. **Deploy Frontend**
+4. **Deploy frontend**
 ```bash
 cd /var/www/merger-tracker/frontend
 
@@ -122,14 +122,14 @@ sudo cp -r dist/* /var/www/html/
 
 5. **Configure Nginx** (see nginx configuration below)
 
-## AWS EC2 Deployment
+## AWS EC2 deployment
 
-### 1. Launch EC2 Instance
+### 1. Launch EC2 instance
 - AMI: Ubuntu Server 22.04 LTS
 - Instance Type: t3.small or larger
 - Security Group: Allow ports 22 (SSH), 80 (HTTP), 443 (HTTPS)
 
-### 2. Connect and Install Dependencies
+### 2. Connect and install dependencies
 ```bash
 ssh -i your-key.pem ubuntu@your-ec2-ip
 
@@ -143,19 +143,19 @@ sudo apt install -y python3-pip python3-venv nginx nodejs npm certbot python3-ce
 sudo npm install -g pm2
 ```
 
-### 3. Deploy Application
+### 3. Deploy application
 Follow the same steps as DigitalOcean Droplet deployment above.
 
-### 4. Configure Domain and SSL
+### 4. Configure domain and SSL
 ```bash
 # Configure DNS to point to your EC2 IP
 # Then run certbot
 sudo certbot --nginx -d yourdomain.com -d api.yourdomain.com
 ```
 
-## Production Considerations
+## Production considerations
 
-### 1. Database Backups
+### 1. Database backups
 Set up automated backups for the SQLite database:
 
 ```bash
@@ -176,7 +176,7 @@ chmod +x /var/www/merger-tracker/backup.sh
 (crontab -l 2>/dev/null; echo "0 2 * * * /var/www/merger-tracker/backup.sh") | crontab -
 ```
 
-### 2. Data Sync Automation
+### 2. Data sync automation
 Set up a cron job to sync data periodically:
 
 ```bash
@@ -206,7 +206,7 @@ pm2 set pm2-logrotate:retain 7
 - Consider using PostgreSQL instead of SQLite for high traffic
 - Implement Redis for caching if needed
 
-## Nginx Configuration
+## Nginx configuration
 
 ### Frontend (Static Files)
 ```nginx
@@ -261,7 +261,7 @@ sudo nginx -t
 sudo systemctl restart nginx
 ```
 
-## Systemd Service (Alternative to PM2)
+## Systemd service (alternative to PM2)
 
 Create `/etc/systemd/system/merger-backend.service`:
 ```ini
