@@ -4,12 +4,12 @@ A modern web application for tracking and analyzing ACCC merger reviews. This ap
 
 ## Features
 
-- **Dashboard**: Overview with key statistics and visualizations
-- **Merger List**: Searchable and filterable list of all mergers
-- **Detailed Views**: Comprehensive information for each merger including timeline and events
-- **Timeline View**: Chronological display of all mergers
-- **Industry Analysis**: ANZSIC industry classifications and merger counts
-- **Charts & Analytics**: Phase duration analysis, approval rates, and more
+- **dashboard**: Overview with key statistics and visualizations
+- **merger list**: Searchable and filterable list of all mergers
+- **detailed views**: Comprehensive information for each merger including timeline and events
+- **timeline view**: Chronological display of all mergers
+- **industry analysis**: ANZSIC industry classifications and merger counts
+- **charts & analytics**: Phase duration analysis, approval rates, and more
 
 ## Architecture
 
@@ -24,14 +24,14 @@ A modern web application for tracking and analyzing ACCC merger reviews. This ap
 - **Chart.js**: Beautiful data visualizations
 - **React Router**: Client-side routing
 
-## Quick Start
+## Quick start
 
 ### Prerequisites
 - Python 3.8+
-- Node.js 18+
+- Node.js 20+
 - npm or yarn
 
-### Backend Setup
+### Backend setup
 
 1. Navigate to the backend directory:
 ```bash
@@ -61,7 +61,7 @@ python main.py
 
 The API will be available at `http://localhost:8000`
 
-### Frontend Setup
+### Frontend setup
 
 1. Navigate to the frontend directory:
 ```bash
@@ -80,7 +80,7 @@ npm run dev
 
 The frontend will be available at `http://localhost:5173`
 
-## API Endpoints
+## API endpoints
 
 - `GET /api/mergers` - List all mergers with optional filters
 - `GET /api/mergers/{id}` - Get detailed information about a merger
@@ -88,7 +88,7 @@ The frontend will be available at `http://localhost:5173`
 - `GET /api/timeline` - Get timeline data for all mergers
 - `GET /api/industries` - Get industry classifications with merger counts
 
-## Data Sync
+## Data sync
 
 To keep the database updated with the latest merger data:
 
@@ -99,7 +99,7 @@ python sync_data.py
 
 This script reads the `mergers.json` file from the parent repository and updates the SQLite database.
 
-## Production Deployment
+## Production deployment
 
 See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions on deploying to:
 - DigitalOcean
@@ -108,7 +108,7 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions on deploying to:
 
 ## Configuration
 
-### Backend Configuration
+### Backend configuration
 Copy `.env.example` to `.env` and adjust settings:
 ```bash
 PORT=8000
@@ -117,7 +117,7 @@ ALLOWED_ORIGINS=https://your-domain.com
 DATABASE_PATH=mergers.db
 ```
 
-### Frontend Configuration
+### Frontend configuration
 Copy `.env.example` to `.env` and set the API URL:
 ```bash
 VITE_API_URL=https://api.your-domain.com
@@ -125,19 +125,19 @@ VITE_API_URL=https://api.your-domain.com
 
 ## Development
 
-### Backend Development
+### Backend development
 ```bash
 cd backend
 uvicorn main:app --reload
 ```
 
-### Frontend Development
+### Frontend development
 ```bash
 cd frontend
 npm run dev
 ```
 
-### Building for Production
+### Building for production
 
 Frontend:
 ```bash
@@ -147,14 +147,6 @@ npm run build
 
 The built files will be in the `dist` directory.
 
-## Design
-
-The application uses a minimal, clean design with the primary accent color `#335145` (dark green) throughout the interface.
-
 ## License
 
 [Add your license here]
-
-## Contributing
-
-[Add contribution guidelines here]

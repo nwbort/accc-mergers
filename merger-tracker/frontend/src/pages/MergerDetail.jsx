@@ -123,7 +123,7 @@ function MergerDetail() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div className="bg-white rounded-lg shadow p-6">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Acquirer(s)
+            Acquirers
           </h2>
           {merger.acquirers.map((acquirer, idx) => (
             <div key={idx} className="mb-3">
@@ -139,7 +139,7 @@ function MergerDetail() {
 
         <div className="bg-white rounded-lg shadow p-6">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Target(s)
+            Targets
           </h2>
           {merger.targets.map((target, idx) => (
             <div key={idx} className="mb-3">

@@ -66,7 +66,7 @@ function Mergers() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">All Mergers</h1>
+        <h1 className="text-3xl font-bold text-gray-900">All mergers</h1>
         <p className="mt-2 text-sm text-gray-600">
           Browse and search all merger reviews
         </p>
@@ -107,7 +107,7 @@ function Mergers() {
               {statuses.map((status) => (
                 <option key={status} value={status}>
                   {status === 'all'
-                    ? 'All Statuses'
+                    ? 'All statuses'
                     : status}
                 </option>
               ))}
@@ -151,19 +151,19 @@ function Mergers() {
 
               <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div>
-                  <p className="text-xs text-gray-500">Acquirer(s)</p>
+                  <p className="text-xs text-gray-500">Acquirers</p>
                   <p className="text-sm font-medium text-gray-900">
                     {merger.acquirers.map((a) => a.name).join(', ')}
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500">Target(s)</p>
+                  <p className="text-xs text-gray-500">Targets</p>
                   <p className="text-sm font-medium text-gray-900">
                     {merger.targets.map((t) => t.name).join(', ')}
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs text-gray-500">Notification Date</p>
+                  <p className="text-xs text-gray-500">Notification date</p>
                   <p className="text-sm font-medium text-gray-900">
                     {formatDate(merger.effective_notification_datetime)}
                   </p>

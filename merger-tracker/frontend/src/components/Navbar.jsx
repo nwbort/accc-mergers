@@ -14,7 +14,7 @@ function Navbar() {
           <div className="flex">
             <Link to="/" className="flex items-center">
               <span className="text-xl font-bold text-primary">
-                ACCC Merger Tracker
+                Australian merger tracker
               </span>
             </Link>
             <div className="hidden sm:ml-8 sm:flex sm:space-x-8">
