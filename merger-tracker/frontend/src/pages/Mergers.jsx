@@ -134,19 +134,17 @@ function Mergers() {
             <div className="p-6">
               <div className="flex items-start justify-between">
                 <div className="flex-1">
-                  <div className="flex items-center space-x-3">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      {merger.merger_name}
-                    </h3>
-                    <StatusBadge
-                      status={merger.status}
-                      determination={merger.accc_determination}
-                    />
-                  </div>
+                  <h3 className="text-lg font-semibold text-gray-900">
+                    {merger.merger_name}
+                  </h3>
                   <p className="text-sm text-gray-500 mt-1">
                     {merger.merger_id} • {merger.stage || 'N/A'}
                   </p>
                 </div>
+                <StatusBadge
+                  status={merger.status}
+                  determination={merger.accc_determination}
+                />
               </div>
 
               <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">

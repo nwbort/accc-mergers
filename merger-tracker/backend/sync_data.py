@@ -10,6 +10,20 @@ from pathlib import Path
 from database import init_database, DATABASE_PATH, get_db
 
 
+def normalize_determination(determination: str) -> str:
+    """Normalize determination strings to cleaner values."""
+    if not determination:
+        return determination
+
+    # Normalize common patterns
+    if 'Approved' in determination:
+        return 'Approved'
+    elif 'Declined' in determination:
+        return 'Declined'
+
+    return determination
+
+
 def sync_from_json(json_path: str):
     """Sync data from mergers.json into the database."""
 
@@ -57,7 +71,7 @@ def sync_from_json(json_path: str):
                 merger_data.get('effective_notification_datetime'),
                 merger_data.get('end_of_determination_period'),
                 merger_data.get('determination_publication_date'),
-                merger_data.get('accc_determination'),
+                normalize_determination(merger_data.get('accc_determination')),
                 merger_data.get('merger_description')
             ))
 
