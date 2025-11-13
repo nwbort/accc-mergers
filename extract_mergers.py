@@ -179,6 +179,27 @@ def parse_merger_file(filepath, existing_merger_data=None):
         else:
             merger_data['events'] = scraped_events
 
+        # Add notification date as an event
+        if merger_data.get('effective_notification_datetime'):
+            notification_event = {
+                'date': merger_data['effective_notification_datetime'],
+                'title': 'Merger notified to ACCC',
+            }
+            # Add to events if not already there
+            if not any(e['title'] == notification_event['title'] for e in merger_data['events']):
+                merger_data['events'].append(notification_event)
+
+        # Add determination publication as an event
+        if merger_data.get('determination_publication_date'):
+            determination_title = f"Determination published: {merger_data.get('accc_determination', 'Decision made')}"
+            determination_event = {
+                'date': merger_data['determination_publication_date'],
+                'title': determination_title,
+            }
+            # Add to events if not already there
+            if not any(e['title'] == determination_title for e in merger_data['events']):
+                merger_data['events'].append(determination_event)
+
         return merger_data
     
     except Exception as e:
