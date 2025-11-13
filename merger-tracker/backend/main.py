@@ -78,12 +78,12 @@ def get_mergers(
             )
             merger['anzsic_codes'] = [dict(row) for row in cursor.fetchall()]
 
-            # Get event count
+            # Get events
             cursor.execute(
-                "SELECT COUNT(*) as count FROM events WHERE merger_id = ?",
+                "SELECT * FROM events WHERE merger_id = ? ORDER BY date DESC",
                 (merger_id,)
             )
-            merger['event_count'] = cursor.fetchone()['count']
+            merger['events'] = [dict(row) for row in cursor.fetchall()]
 
         return {"mergers": mergers, "count": len(mergers)}
 
