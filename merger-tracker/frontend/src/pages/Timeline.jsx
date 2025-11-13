@@ -1,12 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
-import StatusBadge from '../components/StatusBadge';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 
 function Timeline() {
-  const [timeline, setTimeline] = useState([]);
+  const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -16,10 +15,54 @@ function Timeline() {
 
   const fetchTimeline = async () => {
     try {
-      const response = await fetch(API_ENDPOINTS.timeline);
+      const response = await fetch(API_ENDPOINTS.mergers);
       if (!response.ok) throw new Error('Failed to fetch timeline');
       const data = await response.json();
-      setTimeline(data.timeline);
+
+      // Flatten all events from all mergers
+      const allEvents = [];
+      data.mergers.forEach((merger) => {
+        // Add notification as an event
+        if (merger.effective_notification_datetime) {
+          allEvents.push({
+            date: merger.effective_notification_datetime,
+            title: 'Merger notified',
+            merger_id: merger.merger_id,
+            merger_name: merger.merger_name,
+            type: 'notification',
+          });
+        }
+
+        // Add all other events
+        if (merger.events) {
+          merger.events.forEach((event) => {
+            allEvents.push({
+              ...event,
+              merger_id: merger.merger_id,
+              merger_name: merger.merger_name,
+              type: 'event',
+            });
+          });
+        }
+
+        // Add determination publication as an event if exists
+        if (merger.determination_publication_date) {
+          allEvents.push({
+            date: merger.determination_publication_date,
+            title: `Determination published${
+              merger.accc_determination ? ': ' + merger.accc_determination : ''
+            }`,
+            merger_id: merger.merger_id,
+            merger_name: merger.merger_name,
+            type: 'determination',
+          });
+        }
+      });
+
+      // Sort by date (most recent first)
+      allEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+      setEvents(allEvents);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -35,135 +78,115 @@ function Timeline() {
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900">Timeline</h1>
         <p className="mt-2 text-sm text-gray-600">
-          Chronological view of all merger reviews and their progress
+          Chronological view of all events across all merger reviews
         </p>
       </div>
 
       <div className="flow-root">
         <ul className="-mb-8">
-          {timeline.map((merger, idx) => (
-            <li key={merger.merger_id}>
+          {events.map((event, idx) => (
+            <li key={`${event.merger_id}-${event.date}-${idx}`}>
               <div className="relative pb-8">
-                {idx !== timeline.length - 1 && (
+                {idx !== events.length - 1 && (
                   <span
-                    className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
+                    className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
                     aria-hidden="true"
                   />
                 )}
-                <div className="relative">
-                  <div className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
-                    <div className="p-6">
-                      <div className="flex items-start space-x-4">
-                        {/* Timeline dot */}
-                        <div className="flex-shrink-0">
-                          <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center ring-8 ring-white">
-                            <svg
-                              className="h-6 w-6 text-white"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                              />
-                            </svg>
-                          </div>
-                        </div>
-
-                        {/* Content */}
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-start justify-between">
-                            <Link
-                              to={`/mergers/${merger.merger_id}`}
-                              className="group"
-                            >
-                              <h3 className="text-lg font-semibold text-gray-900 group-hover:text-primary">
-                                {merger.merger_name}
-                              </h3>
-                              <p className="text-sm text-gray-500 mt-1">
-                                {merger.merger_id} • {merger.stage || 'N/A'}
-                              </p>
-                            </Link>
-                            <StatusBadge
-                              status={merger.status}
-                              determination={merger.accc_determination}
-                            />
-                          </div>
-
-                          {/* Key dates */}
-                          <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
-                            <div>
-                              <p className="text-xs text-gray-500">
-                                Notified
-                              </p>
-                              <p className="text-sm font-medium text-gray-900">
-                                {formatDate(
-                                  merger.effective_notification_datetime
-                                )}
-                              </p>
-                            </div>
-                            {merger.end_of_determination_period && (
-                              <div>
-                                <p className="text-xs text-gray-500">
-                                  Determination Due
-                                </p>
-                                <p className="text-sm font-medium text-gray-900">
-                                  {formatDate(
-                                    merger.end_of_determination_period
-                                  )}
-                                </p>
-                              </div>
-                            )}
-                            {merger.determination_publication_date && (
-                              <div>
-                                <p className="text-xs text-gray-500">
-                                  Determined
-                                </p>
-                                <p className="text-sm font-medium text-gray-900">
-                                  {formatDate(
-                                    merger.determination_publication_date
-                                  )}
-                                </p>
-                              </div>
-                            )}
-                          </div>
-
-                          {/* Key events */}
-                          {merger.key_events &&
-                            merger.key_events.length > 0 && (
-                              <div className="mt-4">
-                                <p className="text-xs text-gray-500 mb-2">
-                                  Recent Events
-                                </p>
-                                <div className="space-y-1">
-                                  {merger.key_events
-                                    .slice(-3)
-                                    .reverse()
-                                    .map((event, eventIdx) => (
-                                      <div
-                                        key={eventIdx}
-                                        className="flex items-center text-sm"
-                                      >
-                                        <span className="text-gray-400 mr-2">
-                                          •
-                                        </span>
-                                        <span className="text-gray-700">
-                                          {event.title}
-                                        </span>
-                                        <span className="text-gray-400 ml-2">
-                                          ({formatDate(event.date)})
-                                        </span>
-                                      </div>
-                                    ))}
-                                </div>
-                              </div>
-                            )}
-                        </div>
-                      </div>
+                <div className="relative flex space-x-3">
+                  <div>
+                    <span
+                      className={`h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white ${
+                        event.type === 'notification'
+                          ? 'bg-blue-500'
+                          : event.type === 'determination'
+                          ? 'bg-green-500'
+                          : 'bg-primary'
+                      }`}
+                    >
+                      {event.type === 'notification' ? (
+                        <svg
+                          className="h-5 w-5 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      ) : event.type === 'determination' ? (
+                        <svg
+                          className="h-5 w-5 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          className="h-5 w-5 text-white"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                            clipRule="evenodd"
+                          />
+                        </svg>
+                      )}
+                    </span>
+                  </div>
+                  <div className="min-w-0 flex-1 pt-1.5">
+                    <div>
+                      <p className="text-sm font-medium text-gray-900">
+                        {event.title}
+                      </p>
+                      <Link
+                        to={`/mergers/${event.merger_id}`}
+                        className="text-sm text-primary hover:text-primary-dark"
+                      >
+                        {event.merger_name}
+                      </Link>
+                      <p className="mt-0.5 text-sm text-gray-500">
+                        {formatDate(event.date)}
+                      </p>
                     </div>
+                    {event.url && event.status !== 'removed' && (
+                      <div className="mt-2">
+                        <a
+                          href={event.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-primary hover:text-primary-dark"
+                        >
+                          View document →
+                        </a>
+                      </div>
+                    )}
+                    {event.url_gh && (
+                      <div className="mt-1">
+                        <a
+                          href={event.url_gh}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-xs text-gray-600 hover:text-gray-900"
+                        >
+                          View archive →
+                        </a>
+                      </div>
+                    )}
+                    {event.status === 'removed' && (
+                      <span className="mt-1 text-xs text-gray-500 italic">
+                        (document removed from ACCC site)
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
@@ -172,9 +195,9 @@ function Timeline() {
         </ul>
       </div>
 
-      {timeline.length === 0 && (
+      {events.length === 0 && (
         <div className="text-center py-12">
-          <p className="text-gray-500">No merger data available</p>
+          <p className="text-gray-500">No timeline data available</p>
         </div>
       )}
     </div>
