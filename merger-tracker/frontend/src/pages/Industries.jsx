@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { API_ENDPOINTS } from '../config';
@@ -163,7 +163,7 @@ function Industries() {
               );
 
               return (
-                <React.Fragment key={idx}>
+                <Fragment key={idx}>
                   <tr
                     className="hover:bg-gray-50 cursor-pointer"
                     onClick={() => toggleIndustry(industry.code, industry.name)}
@@ -236,7 +236,7 @@ function Industries() {
                       </td>
                     </tr>
                   )}
-                </React.Fragment>
+                </Fragment>
               );
             })}
           </tbody>
