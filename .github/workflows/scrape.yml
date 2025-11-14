@@ -8,6 +8,7 @@ on:
   - cron: '7 * * * *'
 permissions:
   contents: write
+  actions: write
 jobs:
   scrape:
     runs-on: ubuntu-latest
