@@ -333,9 +333,54 @@
     "events": [
       {
         "date": "2025-11-11T12:00:00Z",
+        "title": "Caterpillar - RPMGlobal Questionnaire",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Caterpillar%20-%20RPMGlobal%20-%20Questionnaire_0.docx",
+        "url_gh": "https://github.com/nwbort/accc-mergers/raw/main/matters/MN-01058/Caterpillar - RPMGlobal - Questionnaire_0.docx",
+        "status": "live"
+      },
+      {
+        "date": "2025-11-11T12:00:00Z",
         "title": "Questionnaire released for Caterpillar acquisition of RPMGlobal",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Caterpillar%20-%20RPMGlobal%20-%20Questionnaire_0.docx",
         "url_gh": "https://github.com/nwbort/accc-mergers/raw/main/matters/MN-01058/Caterpillar - RPMGlobal - Questionnaire_0.docx",
+        "status": "removed"
+      }
+    ]
+  },
+  {
+    "merger_name": "Molex \u2013 Smiths Interconnect",
+    "status": "Under assessment",
+    "merger_id": "MN-01061",
+    "effective_notification_datetime": "2025-11-13T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-01-14T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "Molex Electronic Technologies Holdings, LLC",
+        "identifier_type": null,
+        "identifier": "Company number   464432478"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Smiths Interconnect Group Limited",
+        "identifier_type": null,
+        "identifier": "UK CRN  06641403"
+      }
+    ],
+    "anszic_codes": [
+      {
+        "code": "2429",
+        "name": "Other Electronic Equipment Manufacturing"
+      }
+    ],
+    "merger_description": "Molex Electronic Technologies Holdings LLC (\nMolex\n) proposes to acquire Smiths Interconnect Group Limited (\nSmiths Interconnect\n) from Smiths Group International Holdings Limited through a share sale agreement.\nMolex is part of the Molex group. The Molex group is a provider of electronic, electrical, and fibre optic connectivity solutions. It designs, manufactures, and markets a broad range of products used in various industries, including automotive, data communications, medical, industrial, and consumer electronics, including developing connectors, cables, cable assemblies, antennas, and sensors that enable data transmission and power delivery.\nThe Molex group is a part of the Koch Group. The Koch Group is a multinational conglomerate based in the U.S. Its subsidiaries are involved in a variety of industries, in particular the manufacturing, refining, and distribution of petroleum, chemicals, energy, fibre, intermediates and polymers, minerals, fertiliser, pulp and paper, chemical technology equipment, cloud computing, interconnect products and electronic solutions, finance, raw materials trading, and investments.\nSmiths Interconnect researches, develops and produces electronic components, sub-systems, optical and radio frequency products for reliable, high-speed and secure data for customers in the aerospace and defence, medical and industrial sectors, as well as providing semiconductor testing capabilities.\nMolex and Smiths Interconnect overlap in Australia for the supply of connectors for all end use applications.",
+    "events": [
+      {
+        "date": "2025-11-14T12:00:00Z",
+        "title": "Questionnaire \u2013 Molex - Smiths Interconnect",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Smiths%20-%20Questionnaire%20-%2014%20November%202025_0.docx",
+        "url_gh": "https://github.com/nwbort/accc-mergers/raw/main/matters/MN-01061/Smiths - Questionnaire - 14 November 2025_0.docx",
         "status": "live"
       }
     ]
