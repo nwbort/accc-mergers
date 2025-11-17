@@ -149,7 +149,7 @@ function Timeline() {
                             rel="noopener noreferrer"
                             className="text-xs text-primary hover:text-primary-dark"
                           >
-                            View document →
+                            View document on ACCC website →
                           </a>
                         </div>
                       )}
@@ -161,13 +161,13 @@ function Timeline() {
                             rel="noopener noreferrer"
                             className="text-xs text-gray-600 hover:text-gray-900"
                           >
-                            View archive →
+                            View archived document →
                           </a>
                         </div>
                       )}
                       {event.status === 'removed' && (
                         <span className="mt-1 text-xs text-gray-500 italic">
-                          (document removed from ACCC site)
+                          (document removed from ACCC website)
                         </span>
                       )}
                     </div>

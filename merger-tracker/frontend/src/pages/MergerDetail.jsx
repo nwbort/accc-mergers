@@ -237,7 +237,7 @@ function MergerDetail() {
                                 rel="noopener noreferrer"
                                 className="text-sm text-primary hover:text-primary-dark"
                               >
-                                View on ACCC →
+                                View document on ACCC website →
                               </a>
                             )}
                             {event.url_gh && (
@@ -247,7 +247,7 @@ function MergerDetail() {
                                 rel="noopener noreferrer"
                                 className="text-sm text-primary hover:text-primary-dark"
                               >
-                                View archive →
+                                View archived document →
                               </a>
                             )}
                           </div>
