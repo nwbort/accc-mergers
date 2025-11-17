@@ -215,41 +215,39 @@ def get_statistics():
 
 
 @app.get("/api/timeline")
-def get_timeline():
-    """Get timeline data for all mergers."""
+def get_timeline(limit: int = 15, offset: int = 0):
+    """Get paginated timeline of all events across all mergers."""
     with get_db() as conn:
         cursor = conn.cursor()
 
+        # Get total count of events
+        cursor.execute("SELECT COUNT(*) as total FROM events")
+        total = cursor.fetchone()['total']
+
+        # Get paginated events with merger info
         cursor.execute("""
             SELECT
-                merger_id,
-                merger_name,
-                status,
-                stage,
-                effective_notification_datetime,
-                end_of_determination_period,
-                determination_publication_date,
-                accc_determination
-            FROM mergers
-            ORDER BY effective_notification_datetime DESC
-        """)
+                e.date,
+                e.title,
+                e.url,
+                e.url_gh,
+                e.status,
+                e.merger_id,
+                m.merger_name
+            FROM events e
+            JOIN mergers m ON e.merger_id = m.merger_id
+            ORDER BY e.date DESC
+            LIMIT ? OFFSET ?
+        """, (limit, offset))
 
-        timeline = []
-        for row in cursor.fetchall():
-            merger = dict(row)
+        events = [dict(row) for row in cursor.fetchall()]
 
-            # Get key events for this merger
-            cursor.execute("""
-                SELECT date, title
-                FROM events
-                WHERE merger_id = ?
-                ORDER BY date ASC
-            """, (merger['merger_id'],))
-
-            merger['key_events'] = [dict(e) for e in cursor.fetchall()]
-            timeline.append(merger)
-
-        return {"timeline": timeline}
+        return {
+            "events": events,
+            "total": total,
+            "limit": limit,
+            "offset": offset
+        }
 
 
 @app.get("/api/industries")

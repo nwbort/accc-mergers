@@ -7,8 +7,10 @@ import { API_ENDPOINTS } from '../config';
 function Timeline() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState(null);
-  const [displayCount, setDisplayCount] = useState(15);
+  const [total, setTotal] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
     fetchTimeline();
@@ -20,43 +22,48 @@ function Timeline() {
       const scrollPosition = window.innerHeight + window.scrollY;
       const threshold = document.documentElement.scrollHeight - 300;
 
-      if (scrollPosition >= threshold && displayCount < events.length) {
-        setDisplayCount((prev) => Math.min(prev + 10, events.length));
+      if (scrollPosition >= threshold && hasMore && !loadingMore) {
+        loadMoreEvents();
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [displayCount, events.length]);
+  }, [hasMore, loadingMore, events.length]);
 
   const fetchTimeline = async () => {
     try {
-      const response = await fetch(API_ENDPOINTS.mergers);
+      const response = await fetch(`${API_ENDPOINTS.timeline}?limit=15&offset=0`);
       if (!response.ok) throw new Error('Failed to fetch timeline');
       const data = await response.json();
 
-      // Flatten all events from all mergers
-      const allEvents = [];
-      data.mergers.forEach((merger) => {
-        if (merger.events && merger.events.length > 0) {
-          merger.events.forEach((event) => {
-            allEvents.push({
-              ...event,
-              merger_id: merger.merger_id,
-              merger_name: merger.merger_name,
-            });
-          });
-        }
-      });
-
-      // Sort by date (most recent first)
-      allEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-      setEvents(allEvents);
+      setEvents(data.events);
+      setTotal(data.total);
+      setHasMore(data.events.length < data.total);
     } catch (err) {
       setError(err.message);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const loadMoreEvents = async () => {
+    if (loadingMore || !hasMore) return;
+
+    setLoadingMore(true);
+    try {
+      const response = await fetch(
+        `${API_ENDPOINTS.timeline}?limit=10&offset=${events.length}`
+      );
+      if (!response.ok) throw new Error('Failed to load more events');
+      const data = await response.json();
+
+      setEvents((prev) => [...prev, ...data.events]);
+      setHasMore(events.length + data.events.length < data.total);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoadingMore(false);
     }
   };
 
@@ -80,13 +87,13 @@ function Timeline() {
 
       <div className="flow-root">
         <ul className="-mb-8">
-          {events.slice(0, displayCount).map((event, idx) => {
+          {events.map((event, idx) => {
             const eventType = getEventType(event.title);
 
             return (
               <li key={`${event.merger_id}-${event.date}-${idx}`}>
                 <div className="relative pb-8">
-                  {(idx !== displayCount - 1 || displayCount < events.length) && (
+                  {idx !== events.length - 1 && (
                     <span
                       className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
                       aria-hidden="true"
@@ -195,16 +202,20 @@ function Timeline() {
         </ul>
       </div>
 
-      {displayCount < events.length && (
+      {hasMore && (
         <div className="text-center py-8">
           <p className="text-sm text-gray-600">
-            Showing {displayCount} of {events.length} events
+            Showing {events.length} of {total} events
           </p>
-          <p className="text-xs text-gray-500 mt-1">Scroll down to load more</p>
+          {loadingMore ? (
+            <p className="text-xs text-gray-500 mt-1">Loading more...</p>
+          ) : (
+            <p className="text-xs text-gray-500 mt-1">Scroll down to load more</p>
+          )}
         </div>
       )}
 
-      {events.length === 0 && (
+      {!loading && events.length === 0 && (
         <div className="text-center py-12">
           <p className="text-gray-500">No timeline data available</p>
         </div>
