@@ -24,6 +24,12 @@ def init_database():
             determination_publication_date TEXT,
             accc_determination TEXT,
             merger_description TEXT,
+            phase_1_determination TEXT,
+            phase_1_determination_date TEXT,
+            phase_2_determination TEXT,
+            phase_2_determination_date TEXT,
+            public_benefits_determination TEXT,
+            public_benefits_determination_date TEXT,
             created_at TEXT DEFAULT CURRENT_TIMESTAMP,
             updated_at TEXT DEFAULT CURRENT_TIMESTAMP
         )
@@ -63,6 +69,7 @@ def init_database():
             url TEXT,
             url_gh TEXT,
             status TEXT,
+            phase TEXT,
             FOREIGN KEY (merger_id) REFERENCES mergers(merger_id)
         )
     """)
@@ -72,6 +79,7 @@ def init_database():
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_anzsic_merger_id ON anzsic_codes(merger_id)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_events_merger_id ON events(merger_id)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_events_date ON events(date)")
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_events_phase ON events(phase)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_mergers_status ON mergers(status)")
 
     conn.commit()

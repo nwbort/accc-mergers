@@ -15,13 +15,31 @@ def normalize_determination(determination: str) -> str:
     if not determination:
         return determination
 
+    # Remove 'ACCC Determination' prefix (with or without space)
+    determination = determination.replace('ACCC Determination', '').strip()
+
     # Normalize common patterns
-    if 'Approved' in determination:
+    if 'Approved' in determination or 'approved' in determination:
         return 'Approved'
-    elif 'Declined' in determination:
+    elif 'Declined' in determination or 'declined' in determination:
         return 'Declined'
+    elif 'Not opposed' in determination or 'not opposed' in determination:
+        return 'Not opposed'
 
     return determination
+
+
+def extract_phase_from_event(event_title: str) -> str:
+    """Extract phase information from event title."""
+    if 'Phase 1' in event_title:
+        return 'Phase 1'
+    elif 'Phase 2' in event_title:
+        return 'Phase 2'
+    elif 'Public Benefits' in event_title or 'public benefits' in event_title:
+        return 'Public Benefits'
+    elif 'notified' in event_title:
+        return 'Phase 1'  # Notification always starts Phase 1
+    return None
 
 
 def sync_from_json(json_path: str):
@@ -42,6 +60,31 @@ def sync_from_json(json_path: str):
         for merger_data in mergers:
             merger_id = merger_data['merger_id']
 
+            # Determine phase-specific determinations based on current stage
+            phase_1_det = None
+            phase_1_det_date = None
+            phase_2_det = None
+            phase_2_det_date = None
+            pb_det = None
+            pb_det_date = None
+
+            # For now, map current determination to appropriate phase
+            # In the future, we'll parse this from multiple determinations
+            if merger_data.get('accc_determination') and merger_data.get('determination_publication_date'):
+                stage = merger_data.get('stage', 'Phase 1')
+                normalized_det = normalize_determination(merger_data.get('accc_determination'))
+                det_date = merger_data.get('determination_publication_date')
+
+                if 'Phase 1' in stage:
+                    phase_1_det = normalized_det
+                    phase_1_det_date = det_date
+                elif 'Phase 2' in stage:
+                    phase_2_det = normalized_det
+                    phase_2_det_date = det_date
+                elif 'Public' in stage or 'Benefits' in stage:
+                    pb_det = normalized_det
+                    pb_det_date = det_date
+
             # Insert or update merger
             cursor.execute("""
                 INSERT INTO mergers (
@@ -51,8 +94,14 @@ def sync_from_json(json_path: str):
                     determination_publication_date,
                     accc_determination,
                     merger_description,
+                    phase_1_determination,
+                    phase_1_determination_date,
+                    phase_2_determination,
+                    phase_2_determination_date,
+                    public_benefits_determination,
+                    public_benefits_determination_date,
                     updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
                 ON CONFLICT(merger_id) DO UPDATE SET
                     merger_name = excluded.merger_name,
                     status = excluded.status,
@@ -62,6 +111,12 @@ def sync_from_json(json_path: str):
                     determination_publication_date = excluded.determination_publication_date,
                     accc_determination = excluded.accc_determination,
                     merger_description = excluded.merger_description,
+                    phase_1_determination = excluded.phase_1_determination,
+                    phase_1_determination_date = excluded.phase_1_determination_date,
+                    phase_2_determination = excluded.phase_2_determination,
+                    phase_2_determination_date = excluded.phase_2_determination_date,
+                    public_benefits_determination = excluded.public_benefits_determination,
+                    public_benefits_determination_date = excluded.public_benefits_determination_date,
                     updated_at = CURRENT_TIMESTAMP
             """, (
                 merger_id,
@@ -72,7 +127,13 @@ def sync_from_json(json_path: str):
                 merger_data.get('end_of_determination_period'),
                 merger_data.get('determination_publication_date'),
                 normalize_determination(merger_data.get('accc_determination')),
-                merger_data.get('merger_description')
+                merger_data.get('merger_description'),
+                phase_1_det,
+                phase_1_det_date,
+                phase_2_det,
+                phase_2_det_date,
+                pb_det,
+                pb_det_date
             ))
 
             # Delete existing related data to refresh
@@ -117,16 +178,20 @@ def sync_from_json(json_path: str):
 
             # Insert events
             for event in merger_data.get('events', []):
+                # Extract phase from event title
+                phase = extract_phase_from_event(event['title'])
+
                 cursor.execute("""
-                    INSERT INTO events (merger_id, date, title, url, url_gh, status)
-                    VALUES (?, ?, ?, ?, ?, ?)
+                    INSERT INTO events (merger_id, date, title, url, url_gh, status, phase)
+                    VALUES (?, ?, ?, ?, ?, ?, ?)
                 """, (
                     merger_id,
                     event['date'],
                     event['title'],
                     event.get('url'),
                     event.get('url_gh'),
-                    event.get('status')
+                    event.get('status'),
+                    phase
                 ))
 
         conn.commit()
