@@ -4,13 +4,27 @@ from typing import List, Optional, Dict, Any
 from datetime import datetime
 from database import get_db, calculate_phase_duration
 import json
+import os
 
 app = FastAPI(title="ACCC Merger Tracker API", version="1.0.0")
 
 # CORS middleware for frontend access
+# Allow production domain and localhost for development
+allowed_origins = [
+    "https://mergers.fyi",
+    "https://www.mergers.fyi",
+    "http://localhost:5173",
+    "http://localhost:3000",
+]
+
+# Add custom origins from environment variable if provided
+env_origins = os.getenv("ALLOWED_ORIGINS", "")
+if env_origins:
+    allowed_origins.extend([origin.strip() for origin in env_origins.split(",")])
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Configure this for production
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

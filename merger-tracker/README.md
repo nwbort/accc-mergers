@@ -101,6 +101,14 @@ This script reads the `mergers.json` file from the parent repository and updates
 
 ## Production deployment
 
+### Recommended: Free Deployment with Cloudflare Pages + Railway
+
+See [CLOUDFLARE_RAILWAY_DEPLOYMENT.md](../CLOUDFLARE_RAILWAY_DEPLOYMENT.md) for step-by-step instructions to deploy for **FREE** using:
+- **Cloudflare Pages** (Frontend) - Free tier
+- **Railway** (Backend) - $5/month free credits
+
+### Alternative: VPS/Cloud Deployments
+
 See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed instructions on deploying to:
 - DigitalOcean
 - AWS (EC2, ECS, or Elastic Beanstalk)
