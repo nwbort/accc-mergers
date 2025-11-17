@@ -3,7 +3,7 @@ import { format, parseISO, differenceInDays } from 'date-fns';
 export const formatDate = (dateString) => {
   if (!dateString) return 'N/A';
   try {
-    return format(parseISO(dateString), 'dd MMM yyyy');
+    return format(parseISO(dateString), 'dd/MM/yyyy');
   } catch (e) {
     return 'Invalid date';
   }
@@ -12,7 +12,7 @@ export const formatDate = (dateString) => {
 export const formatDateTime = (dateString) => {
   if (!dateString) return 'N/A';
   try {
-    return format(parseISO(dateString), 'dd MMM yyyy HH:mm');
+    return format(parseISO(dateString), 'dd/MM/yyyy HH:mm');
   } catch (e) {
     return 'Invalid date';
   }

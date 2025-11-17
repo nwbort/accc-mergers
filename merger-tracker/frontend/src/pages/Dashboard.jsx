@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Bar, Doughnut } from 'react-chartjs-2';
+import StatusBadge from '../components/StatusBadge';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -111,12 +112,12 @@ function Dashboard() {
       {/* Stats Grid */}
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 mb-8">
         <StatCard
-          title="Total Mergers"
+          title="Total mergers"
           value={stats.total_mergers}
           icon="📊"
         />
         <StatCard
-          title="Average Duration"
+          title="Average duration"
           value={
             stats.phase_duration.average_days
               ? `${Math.round(stats.phase_duration.average_days)} days`
@@ -126,7 +127,7 @@ function Dashboard() {
           icon="⏱️"
         />
         <StatCard
-          title="Median Duration"
+          title="Median duration"
           value={
             stats.phase_duration.median_days
               ? `${stats.phase_duration.median_days} days`
@@ -135,7 +136,7 @@ function Dashboard() {
           icon="📈"
         />
         <StatCard
-          title="Under Assessment"
+          title="Under assessment"
           value={stats.by_status['Under assessment'] || 0}
           icon="🔍"
         />
@@ -147,7 +148,7 @@ function Dashboard() {
         {stats.phase_duration.all_durations.length > 0 && (
           <div className="bg-white p-6 rounded-lg shadow">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              Phase Duration Distribution
+              Phase duration distribution
             </h2>
             <div className="h-64">
               <Bar data={durationData} options={chartOptions} />
@@ -158,7 +159,7 @@ function Dashboard() {
         {/* Status Distribution */}
         <div className="bg-white p-6 rounded-lg shadow">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Mergers by Status
+            Mergers by status
           </h2>
           <div className="h-64">
             <Doughnut data={statusData} options={chartOptions} />
@@ -180,7 +181,7 @@ function Dashboard() {
         {/* Top Industries */}
         <div className="bg-white p-6 rounded-lg shadow">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Top Industries
+            Top industries
           </h2>
           <div className="space-y-3">
             {stats.top_industries.slice(0, 5).map((industry, index) => (
@@ -201,7 +202,7 @@ function Dashboard() {
       <div className="bg-white shadow rounded-lg">
         <div className="px-6 py-4 border-b border-gray-200">
           <h2 className="text-lg font-semibold text-gray-900">
-            Recent Mergers
+            Recent mergers
           </h2>
         </div>
         <ul className="divide-y divide-gray-200">
@@ -217,9 +218,7 @@ function Dashboard() {
                       {merger.merger_name}
                     </p>
                     <div className="ml-2 flex-shrink-0 flex">
-                      <p className="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-gray-100 text-gray-800">
-                        {merger.status}
-                      </p>
+                      <StatusBadge status={merger.status} />
                     </div>
                   </div>
                   <div className="mt-2 flex items-center text-sm text-gray-500">
