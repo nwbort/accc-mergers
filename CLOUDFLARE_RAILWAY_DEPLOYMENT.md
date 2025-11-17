@@ -22,21 +22,19 @@ This guide will walk you through deploying the ACCC Merger Tracker to **Cloudfla
 
 ### Step 2: Configure Backend Service
 
-**Option A: Use Root Directory (Recommended)**
+⚠️ **Important**: Railway's "Root Directory" setting may not work as expected. Instead, we use configuration files and a start command that changes to the correct directory.
 
-1. After Railway creates the project, click on the service
-2. Go to **Settings** tab
-3. Set **Root Directory**: `merger-tracker/backend` (⚠️ **DO NOT use a leading slash** - use relative path)
-4. Set **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
-
-**Option B: Use Root-Level Wrapper**
-
-If you prefer to deploy from the repository root:
+**Recommended Configuration:**
 
 1. After Railway creates the project, click on the service
 2. Go to **Settings** tab
 3. **Leave Root Directory empty** (or set to `.`)
-4. Set **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+4. The **Start Command** is already configured in `railway.toml` and `merger-tracker/backend/railway.json`:
+   ```
+   cd merger-tracker/backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+   ```
+
+The repository includes configuration files (`railway.toml`, `nixpacks.toml`, and `merger-tracker/backend/railway.json`) that Railway will automatically detect and use.
 
 The repository includes a wrapper `main.py` at the root that imports the backend application.
 
@@ -54,8 +52,9 @@ DATABASE_PATH=mergers.db
 
 1. Go to the **Data** tab (or **Volumes**)
 2. Click **"New Volume"**
-3. Mount path: `/app`
+3. Mount path: `/app/merger-tracker/backend`
 4. This ensures your SQLite database persists across deployments
+5. The database file will be created at `/app/merger-tracker/backend/mergers.db`
 
 ### Step 5: Initialize Database
 
