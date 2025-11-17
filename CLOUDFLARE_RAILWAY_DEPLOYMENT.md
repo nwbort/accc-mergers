@@ -36,6 +36,8 @@ This guide will walk you through deploying the ACCC Merger Tracker to **Cloudfla
 
 The repository includes configuration files (`railway.toml`, `nixpacks.toml`, and `merger-tracker/backend/railway.json`) that Railway will automatically detect and use.
 
+The repository includes a wrapper `main.py` at the root that imports the backend application.
+
 ### Step 3: Add Environment Variables
 
 1. Go to the **Variables** tab
