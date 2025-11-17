@@ -128,15 +128,15 @@ function Timeline() {
                     </div>
                     <div className="min-w-0 flex-1 pt-1.5">
                       <div>
-                        <p className="text-sm font-medium text-gray-900">
-                          {event.title}
-                        </p>
                         <Link
                           to={`/mergers/${event.merger_id}`}
-                          className="text-sm text-primary hover:text-primary-dark"
+                          className="text-sm font-medium text-gray-900 hover:text-primary-dark"
                         >
                           {event.merger_name}
                         </Link>
+                        <p className="text-sm text-gray-600">
+                          {event.title}
+                        </p>
                         <p className="mt-0.5 text-sm text-gray-500">
                           {formatDate(event.date)}
                         </p>
