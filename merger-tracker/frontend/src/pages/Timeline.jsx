@@ -72,14 +72,14 @@ function Timeline() {
                 <div className="relative pb-8">
                   {idx !== events.length - 1 && (
                     <span
-                      className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
+                      className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
                       aria-hidden="true"
                     />
                   )}
-                  <div className="relative flex space-x-3">
-                    <div>
+                  <div className="relative flex space-x-4 items-start">
+                    <div className="flex-shrink-0">
                       <span
-                        className={`h-8 w-8 rounded-full flex items-center justify-center ring-8 ring-white ${
+                        className={`h-10 w-10 rounded-full flex items-center justify-center ring-8 ring-white ${
                           eventType === 'notification'
                             ? 'bg-blue-500'
                             : eventType === 'determination'
@@ -126,7 +126,7 @@ function Timeline() {
                         )}
                       </span>
                     </div>
-                    <div className="min-w-0 flex-1 pt-1.5">
+                    <div className="min-w-0 flex-1 bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow duration-200">
                       <div>
                         <Link
                           to={`/mergers/${event.merger_id}`}
@@ -134,10 +134,10 @@ function Timeline() {
                         >
                           {event.merger_name}
                         </Link>
-                        <p className="text-sm text-gray-600">
+                        <p className="text-sm text-gray-600 mt-1">
                           {event.title}
                         </p>
-                        <p className="mt-0.5 text-sm text-gray-500">
+                        <p className="mt-1 text-sm text-gray-500">
                           {formatDate(event.date)}
                         </p>
                       </div>
