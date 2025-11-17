@@ -69,7 +69,7 @@ function Timeline() {
 
   const getEventType = (title) => {
     if (title.includes('notified')) return 'notification';
-    if (title.includes('Determination published')) return 'determination';
+    if (title.includes('determination:')) return 'determination';
     return 'event';
   };
 
