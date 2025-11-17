@@ -5,4 +5,4 @@ nixPkgs = ["python311", "gcc"]
 cmds = ["python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r merger-tracker/backend/requirements.txt"]
 
 [start]
-cmd = "cd merger-tracker/backend && uvicorn main:app --host 0.0.0.0 --port $PORT"
+cmd = "bash start.sh"
