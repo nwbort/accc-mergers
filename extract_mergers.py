@@ -9,6 +9,26 @@ import requests
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./matters"
 
+
+def normalize_determination(determination: str) -> str:
+    """Normalize determination strings to cleaner values."""
+    if not determination:
+        return determination
+
+    # Remove 'ACCC Determination' prefix (with or without space)
+    determination = determination.replace('ACCC Determination', '').strip()
+
+    # Normalize common patterns
+    if 'Approved' in determination or 'approved' in determination:
+        return 'Approved'
+    elif 'Declined' in determination or 'declined' in determination:
+        return 'Declined'
+    elif 'Not opposed' in determination or 'not opposed' in determination:
+        return 'Not opposed'
+
+    return determination
+
+
 def download_attachment(merger_id, attachment_url):
     """Downloads an attachment if it doesn't already exist locally."""
     if not merger_id or not attachment_url:
@@ -94,7 +114,8 @@ def parse_merger_file(filepath, existing_merger_data=None):
             
         determination_tag = soup.find('div', class_='field--name-field-acccgov-acquisition-deter')
         if determination_tag:
-            merger_data['accc_determination'] = determination_tag.get_text(strip=True).replace('ACCC Determination ','')
+            raw_determination = determination_tag.get_text(strip=True)
+            merger_data['accc_determination'] = normalize_determination(raw_determination)
 
         # --- Parties (Acquirers and Targets) ---
         def get_parties(field_name):
@@ -178,6 +199,37 @@ def parse_merger_file(filepath, existing_merger_data=None):
             merger_data['events'] = list(merged_events.values())
         else:
             merger_data['events'] = scraped_events
+
+        # Add notification date as an event
+        if merger_data.get('effective_notification_datetime'):
+            notification_event = {
+                'date': merger_data['effective_notification_datetime'],
+                'title': 'Merger notified to ACCC',
+            }
+            # Add to events if not already there
+            if not any(e['title'] == notification_event['title'] for e in merger_data['events']):
+                merger_data['events'].append(notification_event)
+
+        # Add determination publication as an event
+        if merger_data.get('determination_publication_date'):
+            determination = merger_data.get('accc_determination', 'Decision made')
+            phase = merger_data.get('stage', 'Phase 1')
+            determination_title = f"{phase} determination: {determination}"
+            determination_event = {
+                'date': merger_data['determination_publication_date'],
+                'title': determination_title,
+            }
+
+            # Remove old format determination events to avoid duplicates
+            merger_data['events'] = [
+                e for e in merger_data['events']
+                if not (e['title'].startswith('Determination published:') and
+                       e['date'] == merger_data['determination_publication_date'])
+            ]
+
+            # Add new determination event if not already there
+            if not any(e['title'] == determination_title for e in merger_data['events']):
+                merger_data['events'].append(determination_event)
 
         return merger_data
     
