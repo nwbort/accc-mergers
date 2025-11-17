@@ -8,10 +8,26 @@ function Timeline() {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [displayCount, setDisplayCount] = useState(15);
 
   useEffect(() => {
     fetchTimeline();
   }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if user is near bottom (within 300px)
+      const scrollPosition = window.innerHeight + window.scrollY;
+      const threshold = document.documentElement.scrollHeight - 300;
+
+      if (scrollPosition >= threshold && displayCount < events.length) {
+        setDisplayCount((prev) => Math.min(prev + 10, events.length));
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [displayCount, events.length]);
 
   const fetchTimeline = async () => {
     try {
@@ -64,13 +80,13 @@ function Timeline() {
 
       <div className="flow-root">
         <ul className="-mb-8">
-          {events.map((event, idx) => {
+          {events.slice(0, displayCount).map((event, idx) => {
             const eventType = getEventType(event.title);
 
             return (
               <li key={`${event.merger_id}-${event.date}-${idx}`}>
                 <div className="relative pb-8">
-                  {idx !== events.length - 1 && (
+                  {(idx !== displayCount - 1 || displayCount < events.length) && (
                     <span
                       className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
                       aria-hidden="true"
@@ -178,6 +194,15 @@ function Timeline() {
           })}
         </ul>
       </div>
+
+      {displayCount < events.length && (
+        <div className="text-center py-8">
+          <p className="text-sm text-gray-600">
+            Showing {displayCount} of {events.length} events
+          </p>
+          <p className="text-xs text-gray-500 mt-1">Scroll down to load more</p>
+        </div>
+      )}
 
       {events.length === 0 && (
         <div className="text-center py-12">
