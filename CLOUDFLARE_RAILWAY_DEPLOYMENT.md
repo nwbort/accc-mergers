@@ -374,13 +374,6 @@ Railway doesn't have built-in cron, but you can use an external service:
 
 ---
 
-## 📞 Support
-
-- **Railway**: https://railway.app/help
-- **Cloudflare**: https://support.cloudflare.com
-
----
-
 ## 🎉 You're Done!
 
 Your merger tracker is now live at:
