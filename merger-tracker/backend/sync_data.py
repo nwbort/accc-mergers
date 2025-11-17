@@ -181,13 +181,17 @@ def sync_from_json(json_path: str):
                 # Extract phase from event title
                 phase = extract_phase_from_event(event['title'])
 
+                # Use display_title if available, otherwise fall back to title
+                display_title = event.get('display_title', event['title'])
+
                 cursor.execute("""
-                    INSERT INTO events (merger_id, date, title, url, url_gh, status, phase)
-                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                    INSERT INTO events (merger_id, date, title, display_title, url, url_gh, status, phase)
+                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
                 """, (
                     merger_id,
                     event['date'],
                     event['title'],
+                    display_title,
                     event.get('url'),
                     event.get('url_gh'),
                     event.get('status'),

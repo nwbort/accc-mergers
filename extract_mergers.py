@@ -165,9 +165,11 @@ def parse_merger_file(filepath, existing_merger_data=None):
                 if not (date_cell and title_cell):
                     continue
 
+                title = title_cell.get_text(strip=True)
                 event = {
                     'date': date_cell.find('time')['datetime'] if date_cell.find('time') else date_cell.get_text(strip=True),
-                    'title': title_cell.get_text(strip=True)
+                    'title': title,
+                    'display_title': title  # Default to title, can be manually overridden
                 }
 
                 link_tag = link_cell.find('a') if link_cell else None
@@ -187,24 +189,79 @@ def parse_merger_file(filepath, existing_merger_data=None):
         # Merge scraped events with existing events
         if existing_merger_data and 'events' in existing_merger_data:
             existing_events = existing_merger_data['events']
-            merged_events = {event['title']: event for event in scraped_events}
 
-            for event in existing_events:
-                if event['title'] not in merged_events:
-                    # This event is not in the new scrape, so mark as removed
-                    if 'url' in event:
-                        event['status'] = 'removed'
-                    merged_events[event['title']] = event
+            # Create a mapping of scraped events by URL (for events with URLs)
+            # Use URL as the primary key for matching to avoid title-based duplicates
+            scraped_by_url = {}
+            scraped_without_url = []
 
-            merger_data['events'] = list(merged_events.values())
+            for event in scraped_events:
+                if 'url' in event:
+                    scraped_by_url[event['url']] = event
+                else:
+                    scraped_without_url.append(event)
+
+            # Process existing events
+            merged_events = []
+            existing_urls_processed = set()
+
+            for existing_event in existing_events:
+                if 'url' in existing_event:
+                    url = existing_event['url']
+                    if url in scraped_by_url:
+                        # Event still exists, update it but preserve display_title
+                        updated_event = scraped_by_url[url].copy()
+                        if 'display_title' in existing_event:
+                            updated_event['display_title'] = existing_event['display_title']
+                        merged_events.append(updated_event)
+                        existing_urls_processed.add(url)
+                    else:
+                        # Event no longer in scrape, mark as removed
+                        existing_event['status'] = 'removed'
+                        merged_events.append(existing_event)
+                else:
+                    # Event without URL (like "Merger notified to ACCC")
+                    # Match by title for these
+                    matching_scraped = next(
+                        (e for e in scraped_without_url if e['title'] == existing_event['title']),
+                        None
+                    )
+                    if matching_scraped:
+                        # Preserve display_title if it exists
+                        if 'display_title' in existing_event:
+                            matching_scraped['display_title'] = existing_event['display_title']
+                        elif 'display_title' not in matching_scraped:
+                            matching_scraped['display_title'] = matching_scraped['title']
+                        merged_events.append(matching_scraped)
+                        scraped_without_url.remove(matching_scraped)
+                    else:
+                        # Add display_title if missing
+                        if 'display_title' not in existing_event:
+                            existing_event['display_title'] = existing_event['title']
+                        merged_events.append(existing_event)
+
+            # Add any new scraped events that weren't in existing
+            for url, event in scraped_by_url.items():
+                if url not in existing_urls_processed:
+                    merged_events.append(event)
+
+            # Add any remaining scraped events without URLs
+            for event in scraped_without_url:
+                if 'display_title' not in event:
+                    event['display_title'] = event['title']
+                merged_events.append(event)
+
+            merger_data['events'] = merged_events
         else:
             merger_data['events'] = scraped_events
 
         # Add notification date as an event
         if merger_data.get('effective_notification_datetime'):
+            notification_title = 'Merger notified to ACCC'
             notification_event = {
                 'date': merger_data['effective_notification_datetime'],
-                'title': 'Merger notified to ACCC',
+                'title': notification_title,
+                'display_title': notification_title,
             }
             # Add to events if not already there
             if not any(e['title'] == notification_event['title'] for e in merger_data['events']):
@@ -218,6 +275,7 @@ def parse_merger_file(filepath, existing_merger_data=None):
             determination_event = {
                 'date': merger_data['determination_publication_date'],
                 'title': determination_title,
+                'display_title': determination_title,
             }
 
             # Remove old format determination events to avoid duplicates

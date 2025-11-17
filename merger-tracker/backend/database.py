@@ -66,6 +66,7 @@ def init_database():
             merger_id TEXT NOT NULL,
             date TEXT NOT NULL,
             title TEXT NOT NULL,
+            display_title TEXT,
             url TEXT,
             url_gh TEXT,
             status TEXT,

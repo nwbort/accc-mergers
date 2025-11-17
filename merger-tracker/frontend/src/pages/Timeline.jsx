@@ -158,7 +158,7 @@ function Timeline() {
                           {event.merger_name}
                         </Link>
                         <p className="text-sm text-gray-600 mt-1">
-                          {event.title}
+                          {event.display_title || event.title}
                         </p>
                         <p className="mt-1 text-sm text-gray-500">
                           {formatDate(event.date)}
