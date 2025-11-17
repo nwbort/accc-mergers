@@ -222,7 +222,7 @@ function MergerDetail() {
                       <div className="min-w-0 flex-1 pt-1.5">
                         <div className="flex items-center justify-between">
                           <p className="text-sm font-medium text-gray-900">
-                            {event.title}
+                            {event.display_title || event.title}
                           </p>
                         </div>
                         <p className="text-sm text-gray-500">

@@ -7,7 +7,7 @@ import sqlite3
 from database import DATABASE_PATH
 
 def migrate():
-    """Add phase tracking columns to existing tables."""
+    """Add phase tracking and display_title columns to existing tables."""
     conn = sqlite3.connect(DATABASE_PATH)
     cursor = conn.cursor()
 
@@ -23,6 +23,16 @@ def migrate():
             print("✓ Added phase column to events table")
         else:
             print("✓ Phase column already exists in events table")
+
+        # Check if display_title column exists in events table
+        if 'display_title' not in columns:
+            print("Adding display_title column to events table...")
+            cursor.execute("ALTER TABLE events ADD COLUMN display_title TEXT")
+            # Set display_title to title for existing events
+            cursor.execute("UPDATE events SET display_title = title WHERE display_title IS NULL")
+            print("✓ Added display_title column to events table")
+        else:
+            print("✓ display_title column already exists in events table")
 
         # Check if phase-specific determination columns exist in mergers table
         cursor.execute("PRAGMA table_info(mergers)")

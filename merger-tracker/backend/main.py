@@ -229,6 +229,7 @@ def get_timeline(limit: int = 15, offset: int = 0):
             SELECT
                 e.date,
                 e.title,
+                e.display_title,
                 e.url,
                 e.url_gh,
                 e.status,
