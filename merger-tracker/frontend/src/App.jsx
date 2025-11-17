@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div className="min-h-screen bg-gray-50 flex flex-col">
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow pt-16">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/mergers" element={<Mergers />} />
