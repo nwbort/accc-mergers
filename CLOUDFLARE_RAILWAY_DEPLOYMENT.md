@@ -22,10 +22,23 @@ This guide will walk you through deploying the ACCC Merger Tracker to **Cloudfla
 
 ### Step 2: Configure Backend Service
 
+**Option A: Use Root Directory (Recommended)**
+
 1. After Railway creates the project, click on the service
 2. Go to **Settings** tab
-3. Set **Root Directory**: `merger-tracker/backend`
+3. Set **Root Directory**: `merger-tracker/backend` (⚠️ **DO NOT use a leading slash** - use relative path)
 4. Set **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+
+**Option B: Use Root-Level Wrapper**
+
+If you prefer to deploy from the repository root:
+
+1. After Railway creates the project, click on the service
+2. Go to **Settings** tab
+3. **Leave Root Directory empty** (or set to `.`)
+4. Set **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
+
+The repository includes a wrapper `main.py` at the root that imports the backend application.
 
 ### Step 3: Add Environment Variables
 
