@@ -92,7 +92,7 @@ def parse_merger_file(filepath, existing_merger_data=None):
         status_tag = soup.find('div', class_='field--name-field-acccgov-merger-status')
         merger_data['status'] = status_tag.get_text(strip=True) if status_tag else None
 
-        id_tag = soup.select_one('.field--name-dynamic-token-fieldnode-acccgov-merger-id')
+        id_tag = soup.select_one('.field--name-dynamic-token-fieldnode-acccgov-merger-id .field__item')
         merger_id = id_tag.get_text(strip=True) if id_tag else None
         merger_data['merger_id'] = merger_id
         
@@ -302,7 +302,7 @@ def get_merger_id_from_file(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         html_content = f.read()
     soup = BeautifulSoup(html_content, 'html.parser')
-    id_tag = soup.select_one('.field--name-dynamic-token-fieldnode-acccgov-merger-id')
+    id_tag = soup.select_one('.field--name-dynamic-token-fieldnode-acccgov-merger-id .field__item')
     if id_tag:
         return id_tag.get_text(strip=True)
     return None
