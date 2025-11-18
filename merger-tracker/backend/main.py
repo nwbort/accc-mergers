@@ -42,7 +42,7 @@ async def startup_event():
     print("✓ Application startup complete")
 
 # CORS middleware for frontend access
-# Allow production domain and localhost for development
+# Allow production domain, Cloudflare preview branches, and localhost for development
 allowed_origins = [
     "https://mergers.fyi",
     "https://www.mergers.fyi",
@@ -55,9 +55,14 @@ env_origins = os.getenv("ALLOWED_ORIGINS", "")
 if env_origins:
     allowed_origins.extend([origin.strip() for origin in env_origins.split(",")])
 
+# Regex pattern to match all Cloudflare Pages preview deployments
+# Matches: https://*.mergers-fyi.pages.dev and https://mergers.fyi
+allow_origin_regex = r"https://([a-z0-9-]+\.)?mergers-fyi(\.pages\.dev)?"
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
+    allow_origin_regex=allow_origin_regex,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
