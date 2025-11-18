@@ -43,9 +43,3 @@ jobs:
           git commit -m "Update scraped data and attachments: ${timestamp}" || exit 0
           git pull --rebase
           git push
-
-      - name: Trigger static workflow
-        if: steps.commit.outputs.changes == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: gh workflow run static.yml
