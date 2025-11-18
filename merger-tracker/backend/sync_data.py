@@ -165,6 +165,18 @@ def sync_from_json(json_path: str):
                     target.get('identifier')
                 ))
 
+            # Insert other parties
+            for other_party in merger_data.get('other_parties', []):
+                cursor.execute("""
+                    INSERT INTO parties (merger_id, party_type, name, identifier_type, identifier)
+                    VALUES (?, 'other', ?, ?, ?)
+                """, (
+                    merger_id,
+                    other_party['name'],
+                    other_party.get('identifier_type'),
+                    other_party.get('identifier')
+                ))
+
             # Insert ANZSIC codes
             for anzsic in merger_data.get('anszic_codes', []):
                 cursor.execute("""
