@@ -208,7 +208,7 @@ def get_merger(merger_id: str, response: Response):
 @cache(expire=3600)  # Cache for 1 hour (data syncs every 6 hours)
 def get_statistics(response: Response):
     """Get aggregated statistics about mergers."""
-    response.headers["Cache-Control"] = "public, max-age=300"
+    response.headers["Cache-Control"] = "public, max-age=120"
     with get_db() as conn:
         cursor = conn.cursor()
 
@@ -330,7 +330,7 @@ def get_timeline(response: Response, limit: int = 15, offset: int = 0):
 @cache(expire=3600)  # Cache for 1 hour
 def get_industries(response: Response):
     """Get all industries with merger counts."""
-    response.headers["Cache-Control"] = "public, max-age=300"
+    response.headers["Cache-Control"] = "public, max-age=120"
     with get_db() as conn:
         cursor = conn.cursor()
 
