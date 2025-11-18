@@ -1,5 +1,8 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi_cache import FastAPICache
+from fastapi_cache.backends.inmemory import InMemoryBackend
+from fastapi_cache.decorator import cache
 from typing import List, Optional, Dict, Any
 from datetime import datetime
 from database import get_db, calculate_phase_duration, init_database
@@ -12,7 +15,11 @@ app = FastAPI(title="ACCC Merger Tracker API", version="1.0.0")
 
 @app.on_event("startup")
 async def startup_event():
-    """Initialize database and sync data on startup."""
+    """Initialize database, cache, and sync data on startup."""
+    print("Initializing in-memory cache...")
+    FastAPICache.init(InMemoryBackend())
+    print("✓ Cache initialized")
+
     print("Initializing database...")
     init_database()
     print("✓ Database initialized")
@@ -63,12 +70,15 @@ def read_root():
 
 
 @app.get("/api/mergers")
+@cache(expire=1800)  # Cache for 30 minutes
 def get_mergers(
+    response: Response,
     status: Optional[str] = None,
     search: Optional[str] = None,
     limit: Optional[int] = None
 ):
     """Get all mergers with optional filtering."""
+    response.headers["Cache-Control"] = "public, max-age=1800"
     with get_db() as conn:
         cursor = conn.cursor()
 
@@ -129,8 +139,10 @@ def get_mergers(
 
 
 @app.get("/api/mergers/{merger_id}")
-def get_merger(merger_id: str):
+@cache(expire=1800)  # Cache for 30 minutes
+def get_merger(merger_id: str, response: Response):
     """Get detailed information about a specific merger."""
+    response.headers["Cache-Control"] = "public, max-age=1800"
     with get_db() as conn:
         cursor = conn.cursor()
 
@@ -174,8 +186,10 @@ def get_merger(merger_id: str):
 
 
 @app.get("/api/stats")
-def get_statistics():
+@cache(expire=3600)  # Cache for 1 hour (data syncs every 6 hours)
+def get_statistics(response: Response):
     """Get aggregated statistics about mergers."""
+    response.headers["Cache-Control"] = "public, max-age=3600"
     with get_db() as conn:
         cursor = conn.cursor()
 
@@ -255,8 +269,10 @@ def get_statistics():
 
 
 @app.get("/api/timeline")
-def get_timeline(limit: int = 15, offset: int = 0):
+@cache(expire=1800)  # Cache for 30 minutes
+def get_timeline(response: Response, limit: int = 15, offset: int = 0):
     """Get paginated timeline of all events across all mergers."""
+    response.headers["Cache-Control"] = "public, max-age=1800"
     with get_db() as conn:
         cursor = conn.cursor()
 
@@ -292,8 +308,10 @@ def get_timeline(limit: int = 15, offset: int = 0):
 
 
 @app.get("/api/industries")
-def get_industries():
+@cache(expire=3600)  # Cache for 1 hour
+def get_industries(response: Response):
     """Get all industries with merger counts."""
+    response.headers["Cache-Control"] = "public, max-age=3600"
     with get_db() as conn:
         cursor = conn.cursor()
 
