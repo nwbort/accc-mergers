@@ -35,12 +35,12 @@ def init_database():
         )
     """)
 
-    # Parties table (acquirers and targets)
+    # Parties table (acquirers, targets, and other parties)
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS parties (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             merger_id TEXT NOT NULL,
-            party_type TEXT NOT NULL, -- 'acquirer' or 'target'
+            party_type TEXT NOT NULL, -- 'acquirer', 'target', or 'other'
             name TEXT NOT NULL,
             identifier_type TEXT,
             identifier TEXT,

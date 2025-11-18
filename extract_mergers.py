@@ -135,6 +135,7 @@ def parse_merger_file(filepath, existing_merger_data=None):
 
         merger_data['acquirers'] = get_parties('field--name-field-acccgov-applicants')
         merger_data['targets'] = get_parties('field--name-field-acccgov-pub-reg-targets')
+        merger_data['other_parties'] = get_parties('field--name-field-acccgov-other-parties')
 
         # --- ANZSIC Codes ---
         merger_data['anszic_codes'] = []

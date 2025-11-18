@@ -126,6 +126,13 @@ def get_mergers(
             )
             merger['targets'] = [dict(row) for row in cursor.fetchall()]
 
+            # Get other parties
+            cursor.execute(
+                "SELECT * FROM parties WHERE merger_id = ? AND party_type = 'other'",
+                (merger_id,)
+            )
+            merger['other_parties'] = [dict(row) for row in cursor.fetchall()]
+
             # Get ANZSIC codes
             cursor.execute(
                 "SELECT * FROM anzsic_codes WHERE merger_id = ?",
@@ -172,6 +179,13 @@ def get_merger(merger_id: str, response: Response):
             (merger_id,)
         )
         merger['targets'] = [dict(row) for row in cursor.fetchall()]
+
+        # Get other parties
+        cursor.execute(
+            "SELECT * FROM parties WHERE merger_id = ? AND party_type = 'other'",
+            (merger_id,)
+        )
+        merger['other_parties'] = [dict(row) for row in cursor.fetchall()]
 
         # Get ANZSIC codes
         cursor.execute(

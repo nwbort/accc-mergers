@@ -154,6 +154,27 @@ function MergerDetail() {
         </div>
       </div>
 
+      {/* Other Parties */}
+      {merger.other_parties && merger.other_parties.length > 0 && (
+        <div className="bg-white rounded-lg shadow p-6 mb-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4">
+            Other Party(ies)
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {merger.other_parties.map((party, idx) => (
+              <div key={idx} className="mb-3">
+                <p className="font-medium text-gray-900">{party.name}</p>
+                {party.identifier && (
+                  <p className="text-sm text-gray-500">
+                    {party.identifier_type}: {party.identifier}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Description */}
       {merger.merger_description && (
         <div className="bg-white rounded-lg shadow p-6 mb-6">
