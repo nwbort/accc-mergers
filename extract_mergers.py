@@ -89,7 +89,7 @@ def parse_merger_file(filepath, existing_merger_data=None):
         # --- Basic Information ---
         merger_data['merger_name'] = soup.find('h1', class_='page-title').get_text(strip=True) if soup.find('h1', class_='page-title') else None
         
-        status_tag = soup.find('div', class_='field--name-field-acccgov-merger-status')
+        status_tag = soup.select_one('.field--name-field-acccgov-merger-status .field__item')
         merger_data['status'] = status_tag.get_text(strip=True) if status_tag else None
 
         id_tag = soup.select_one('.field--name-dynamic-token-fieldnode-acccgov-merger-id .field__item')
