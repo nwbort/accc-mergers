@@ -218,7 +218,10 @@ function Dashboard() {
                       {merger.merger_name}
                     </p>
                     <div className="ml-2 flex-shrink-0 flex">
-                      <StatusBadge status={merger.status} />
+                      <StatusBadge
+                        status={merger.status}
+                        determination={merger.accc_determination}
+                      />
                     </div>
                   </div>
                   <div className="mt-2 flex items-center text-sm text-gray-500">

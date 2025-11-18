@@ -56,7 +56,19 @@ function MergerDetail() {
             <h1 className="text-2xl font-bold text-gray-900 mb-2">
               {merger.merger_name}
             </h1>
-            <p className="text-sm text-gray-500">{merger.merger_id}</p>
+            <div className="flex items-center gap-4">
+              <p className="text-sm text-gray-500">{merger.merger_id}</p>
+              {merger.url && (
+                <a
+                  href={merger.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary hover:text-primary-dark"
+                >
+                  View on ACCC website →
+                </a>
+              )}
+            </div>
           </div>
           <StatusBadge
             status={merger.status}
@@ -191,7 +203,7 @@ function MergerDetail() {
       {merger.anzsic_codes && merger.anzsic_codes.length > 0 && (
         <div className="bg-white rounded-lg shadow p-6 mb-6">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Industries (ANZSIC)
+            Industries
           </h2>
           <div className="flex flex-wrap gap-2">
             {merger.anzsic_codes.map((code, idx) => (

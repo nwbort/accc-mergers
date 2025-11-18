@@ -86,6 +86,11 @@ def parse_merger_file(filepath, existing_merger_data=None):
         soup = BeautifulSoup(html_content, 'html.parser')
         merger_data = {}
 
+        # --- URL ---
+        canonical_link = soup.find('link', rel='canonical')
+        if canonical_link and canonical_link.has_attr('href'):
+            merger_data['url'] = canonical_link['href']
+
         # --- Basic Information ---
         merger_data['merger_name'] = soup.find('h1', class_='page-title').get_text(strip=True) if soup.find('h1', class_='page-title') else None
         
@@ -107,6 +112,10 @@ def parse_merger_file(filepath, existing_merger_data=None):
         end_date_tag = soup.find('div', class_='field--name-field-acccgov-end-determination')
         if end_date_tag and end_date_tag.find('time'):
             merger_data['end_of_determination_period'] = end_date_tag.find('time')['datetime']
+        elif existing_merger_data and 'end_of_determination_period' in existing_merger_data:
+            # Preserve end_of_determination_period from existing data if not in HTML
+            # (it's often removed from the HTML after assessment is completed)
+            merger_data['end_of_determination_period'] = existing_merger_data['end_of_determination_period']
         
         determination_date_tag = soup.find('div', class_='field--name-field-acccgov-pub-reg-end-date')
         if determination_date_tag and determination_date_tag.find('time'):
@@ -143,8 +152,15 @@ def parse_merger_file(filepath, existing_merger_data=None):
         if anszic_container:
             for code in anszic_container.find_all('div', class_='field__item'):
                 text = code.get_text(strip=True)
-                code_num, *code_name_parts = text.split()
-                merger_data['anszic_codes'].append({'code': code_num, 'name': ' '.join(code_name_parts)})
+                # Split by semicolon first to handle multiple codes in one field__item
+                for code_entry in text.split(';'):
+                    code_entry = code_entry.strip()
+                    if code_entry:
+                        parts = code_entry.split(maxsplit=1)
+                        if len(parts) >= 2:
+                            code_num = parts[0]
+                            code_name = parts[1]
+                            merger_data['anszic_codes'].append({'code': code_num, 'name': code_name})
 
         # --- Description ---
         description_tag = soup.find('div', class_='field--name-field-accc-body')

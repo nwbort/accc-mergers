@@ -85,7 +85,7 @@ function Industries() {
         <div className="bg-white p-6 rounded-lg shadow">
           <p className="text-sm text-gray-500">Total merger reviews</p>
           <p className="text-3xl font-bold text-primary mt-2">
-            {industries.reduce((sum, i) => sum + i.merger_count, 0)}
+            {mergers.length}
           </p>
         </div>
         <div className="bg-white p-6 rounded-lg shadow">
@@ -147,10 +147,7 @@ function Industries() {
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {filteredIndustries.map((industry, idx) => {
-              const totalMergers = industries.reduce(
-                (sum, i) => sum + i.merger_count,
-                0
-              );
+              const totalMergers = mergers.length;
               const percentage = (
                 (industry.merger_count / totalMergers) *
                 100
