@@ -2,11 +2,37 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List, Optional, Dict, Any
 from datetime import datetime
-from database import get_db, calculate_phase_duration
+from database import get_db, calculate_phase_duration, init_database
 import json
 import os
+from pathlib import Path
 
 app = FastAPI(title="ACCC Merger Tracker API", version="1.0.0")
+
+
+@app.on_event("startup")
+async def startup_event():
+    """Initialize database and sync data on startup."""
+    print("Initializing database...")
+    init_database()
+    print("✓ Database initialized")
+
+    # Sync data from mergers.json if it exists
+    json_path = Path(__file__).parent.parent.parent / "mergers.json"
+    if json_path.exists():
+        print(f"Syncing data from {json_path}...")
+        try:
+            # Import sync function here to avoid circular imports
+            from sync_data import sync_from_json
+            sync_from_json(str(json_path))
+            print("✓ Data synced successfully")
+        except Exception as e:
+            print(f"Warning: Failed to sync data: {e}")
+            print("Database will be empty until data is synced manually")
+    else:
+        print(f"Warning: {json_path} not found. Database will be empty until data is synced.")
+
+    print("✓ Application startup complete")
 
 # CORS middleware for frontend access
 # Allow production domain and localhost for development
