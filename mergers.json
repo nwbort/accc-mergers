@@ -227,11 +227,12 @@
   },
   {
     "merger_name": "Anglo American - Teck Resources",
-    "status": "Acquisition statusUnder assessment",
+    "status": "Acquisition statusAssessment completed",
     "merger_id": "Acquisition case numberMN-01037",
     "effective_notification_datetime": "2025-10-24T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
-    "end_of_determination_period": "2025-12-05T12:00:00Z",
+    "determination_publication_date": "2025-11-18T12:00:00Z",
+    "accc_determination": "Approved",
     "acquirers": [
       {
         "name": "Anglo American plc",
@@ -259,6 +260,19 @@
         "date": "2025-10-24T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2025-11-18T12:00:00Z",
+        "title": "Anglo American - Teck Resources - Phase 1 determination",
+        "display_title": "Anglo American - Teck Resources - Phase 1 determination",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Anglo%20American%20-%20Teck%20Resources%20-%20Phase%201%20determination%20-%2018%20November%202025.pdf",
+        "url_gh": "https://github.com/nwbort/accc-mergers/raw/main/matters/Acquisition case numberMN-01037/Anglo American - Teck Resources - Phase 1 determination - 18 November 2025.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2025-11-18T12:00:00Z",
+        "title": "Phase 1 - initial assessment determination: Approved",
+        "display_title": "Phase 1 - initial assessment determination: Approved"
       }
     ]
   },
