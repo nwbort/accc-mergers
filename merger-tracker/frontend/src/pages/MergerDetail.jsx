@@ -58,14 +58,16 @@ function MergerDetail() {
             </h1>
             <div className="flex items-center gap-4">
               <p className="text-sm text-gray-500">{merger.merger_id}</p>
-              <a
-                href={`https://www.accc.gov.au/public-registers/mergers-registers/public-merger-reviews/${merger.merger_id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm text-primary hover:text-primary-dark"
-              >
-                View on ACCC website →
-              </a>
+              {merger.url && (
+                <a
+                  href={merger.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary hover:text-primary-dark"
+                >
+                  View on ACCC website →
+                </a>
+              )}
             </div>
           </div>
           <StatusBadge

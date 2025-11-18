@@ -86,6 +86,11 @@ def parse_merger_file(filepath, existing_merger_data=None):
         soup = BeautifulSoup(html_content, 'html.parser')
         merger_data = {}
 
+        # --- URL ---
+        canonical_link = soup.find('link', rel='canonical')
+        if canonical_link and canonical_link.has_attr('href'):
+            merger_data['url'] = canonical_link['href']
+
         # --- Basic Information ---
         merger_data['merger_name'] = soup.find('h1', class_='page-title').get_text(strip=True) if soup.find('h1', class_='page-title') else None
         
