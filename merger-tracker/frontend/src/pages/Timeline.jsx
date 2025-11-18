@@ -99,7 +99,7 @@ function Timeline() {
                       aria-hidden="true"
                     />
                   )}
-                  <div className="relative flex space-x-4 items-start">
+                  <div className="relative flex space-x-4 items-center">
                     <div className="flex-shrink-0">
                       <span
                         className={`h-10 w-10 rounded-full flex items-center justify-center ring-8 ring-white ${
