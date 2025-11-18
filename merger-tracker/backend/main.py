@@ -83,7 +83,7 @@ def get_mergers(
     limit: Optional[int] = None
 ):
     """Get all mergers with optional filtering."""
-    response.headers["Cache-Control"] = "public, max-age=1800"
+    response.headers["Cache-Control"] = "public, max-age=60"
     with get_db() as conn:
         cursor = conn.cursor()
 
@@ -154,7 +154,7 @@ def get_mergers(
 @cache(expire=1800)  # Cache for 30 minutes
 def get_merger(merger_id: str, response: Response):
     """Get detailed information about a specific merger."""
-    response.headers["Cache-Control"] = "public, max-age=1800"
+    response.headers["Cache-Control"] = "public, max-age=60"
     with get_db() as conn:
         cursor = conn.cursor()
 
@@ -208,7 +208,7 @@ def get_merger(merger_id: str, response: Response):
 @cache(expire=3600)  # Cache for 1 hour (data syncs every 6 hours)
 def get_statistics(response: Response):
     """Get aggregated statistics about mergers."""
-    response.headers["Cache-Control"] = "public, max-age=3600"
+    response.headers["Cache-Control"] = "public, max-age=300"
     with get_db() as conn:
         cursor = conn.cursor()
 
@@ -291,7 +291,7 @@ def get_statistics(response: Response):
 @cache(expire=1800)  # Cache for 30 minutes
 def get_timeline(response: Response, limit: int = 15, offset: int = 0):
     """Get paginated timeline of all events across all mergers."""
-    response.headers["Cache-Control"] = "public, max-age=1800"
+    response.headers["Cache-Control"] = "public, max-age=60"
     with get_db() as conn:
         cursor = conn.cursor()
 
@@ -330,7 +330,7 @@ def get_timeline(response: Response, limit: int = 15, offset: int = 0):
 @cache(expire=3600)  # Cache for 1 hour
 def get_industries(response: Response):
     """Get all industries with merger counts."""
-    response.headers["Cache-Control"] = "public, max-age=3600"
+    response.headers["Cache-Control"] = "public, max-age=300"
     with get_db() as conn:
         cursor = conn.cursor()
 
