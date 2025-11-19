@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
+import SEO from '../components/SEO';
 import { formatDate, calculateDuration, getDaysRemaining } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 
@@ -39,8 +40,41 @@ function MergerDetail() {
 
   const daysRemaining = getDaysRemaining(merger.end_of_determination_period);
 
+  // Create structured data for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": merger.merger_name,
+    "description": merger.merger_description || `Merger between ${merger.acquirers.map(a => a.name).join(', ')} and ${merger.targets.map(t => t.name).join(', ')}`,
+    "datePublished": merger.effective_notification_datetime,
+    "author": {
+      "@type": "Person",
+      "name": "Nick Twort",
+      "url": "https://mergers.fyi"
+    },
+    "about": {
+      "@type": "MergerAcquisition",
+      "name": merger.merger_name,
+      "acquirer": merger.acquirers.map(a => ({
+        "@type": "Organization",
+        "name": a.name
+      })),
+      "target": merger.targets.map(t => ({
+        "@type": "Organization",
+        "name": t.name
+      }))
+    }
+  };
+
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <>
+      <SEO
+        title={merger.merger_name}
+        description={merger.merger_description || `ACCC merger review: ${merger.acquirers.map(a => a.name).join(', ')} acquiring ${merger.targets.map(t => t.name).join(', ')}. Status: ${merger.status}`}
+        url={`/mergers/${merger.merger_id}`}
+        structuredData={structuredData}
+      />
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Back button */}
       <Link
         to="/mergers"
@@ -295,6 +329,7 @@ function MergerDetail() {
         </div>
       )}
     </div>
+    </>
   );
 }
 
