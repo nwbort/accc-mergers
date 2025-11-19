@@ -6,7 +6,7 @@ function UpcomingEventsTable({ events }) {
     return (
       <div className="bg-white rounded-lg shadow p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-4">
-          Upcoming Events
+          Upcoming events
         </h2>
         <p className="text-gray-500 text-sm">No upcoming events in the next 60 days.</p>
       </div>
@@ -17,11 +17,8 @@ function UpcomingEventsTable({ events }) {
     <div className="bg-white rounded-lg shadow">
       <div className="px-6 py-4 border-b border-gray-200">
         <h2 className="text-lg font-semibold text-gray-900">
-          Upcoming Events
+          Upcoming events
         </h2>
-        <p className="text-sm text-gray-500 mt-1">
-          Consultation due dates and determination deadlines
-        </p>
       </div>
       <div className="overflow-x-auto">
         <table className="min-w-full divide-y divide-gray-200">
