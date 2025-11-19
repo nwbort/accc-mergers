@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
+import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 
@@ -77,10 +78,16 @@ function Timeline() {
   if (error) return <div className="text-red-600">Error: {error}</div>;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Timeline</h1>
-      </div>
+    <>
+      <SEO
+        title="Timeline"
+        description="Chronological timeline of all Australian merger and acquisition events, determinations, and public consultations monitored by the ACCC."
+        url="/timeline"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-900">Timeline</h1>
+        </div>
 
       <div className="flow-root">
         <ul className="-mb-8">
@@ -218,6 +225,7 @@ function Timeline() {
         </div>
       )}
     </div>
+    </>
   );
 }
 

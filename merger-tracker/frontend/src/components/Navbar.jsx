@@ -35,6 +35,13 @@ function Navbar() {
         isVisible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
+      {/* Skip to main content link for keyboard navigation */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded"
+      >
+        Skip to main content
+      </a>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex">
@@ -91,8 +98,10 @@ function Navbar() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
               aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}
             >
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">{mobileMenuOpen ? "Close" : "Open"} main menu</span>
               {mobileMenuOpen ? (
                 <svg
                   className="block h-6 w-6"
@@ -129,8 +138,8 @@ function Navbar() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="sm:hidden">
-          <div className="pt-2 pb-3 space-y-1">
+        <div id="mobile-menu" className="sm:hidden">
+          <nav aria-label="Mobile navigation" className="pt-2 pb-3 space-y-1">
             <Link
               to="/"
               className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
@@ -175,7 +184,7 @@ function Navbar() {
             >
               Industries
             </Link>
-          </div>
+          </nav>
         </div>
       )}
     </nav>

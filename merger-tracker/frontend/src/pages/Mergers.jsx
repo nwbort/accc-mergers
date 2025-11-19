@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
+import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 
@@ -64,10 +65,16 @@ function Mergers() {
   const statuses = ['all', ...new Set(mergers.map((m) => m.status))];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">All mergers</h1>
-      </div>
+    <>
+      <SEO
+        title="All Mergers"
+        description="Browse all Australian mergers and acquisitions being reviewed by the ACCC. Search, filter, and track merger statuses and determinations."
+        url="/mergers"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-900">All mergers</h1>
+        </div>
 
       {/* Filters */}
       <div className="bg-white p-4 rounded-lg shadow mb-6">
@@ -188,6 +195,7 @@ function Mergers() {
         </div>
       )}
     </div>
+    </>
   );
 }
 

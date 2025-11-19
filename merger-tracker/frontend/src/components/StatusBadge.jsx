@@ -14,9 +14,15 @@ function StatusBadge({ status, determination }) {
 
   const displayText = determination || status;
 
+  const ariaLabel = determination
+    ? `Determination: ${determination}`
+    : `Status: ${status}`;
+
   return (
     <span
       className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusStyle()}`}
+      role="status"
+      aria-label={ariaLabel}
     >
       {displayText}
     </span>

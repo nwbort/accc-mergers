@@ -15,6 +15,7 @@ import {
 import StatCard from '../components/StatCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import UpcomingEventsTable from '../components/UpcomingEventsTable';
+import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 
 ChartJS.register(
@@ -117,10 +118,16 @@ function Dashboard() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-      </div>
+    <>
+      <SEO
+        title="Dashboard"
+        description="Track Australian merger and acquisition activities monitored by the ACCC. View statistics, trends, and upcoming events for corporate mergers in Australia."
+        url="/"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+        </div>
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 mb-8">
@@ -169,7 +176,7 @@ function Dashboard() {
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
               Phase duration distribution
             </h2>
-            <div className="h-64">
+            <div className="h-64" role="img" aria-label={`Bar chart showing phase duration distribution across ${stats.phase_duration.all_durations.length} mergers. Average duration is ${Math.round(stats.phase_duration.average_days)} days.`}>
               <Bar data={durationData} options={chartOptions} />
             </div>
           </div>
@@ -180,7 +187,7 @@ function Dashboard() {
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
             Mergers by status
           </h2>
-          <div className="h-64">
+          <div className="h-64" role="img" aria-label={`Doughnut chart showing distribution of mergers by status: ${Object.entries(stats.by_status).map(([status, count]) => `${count} ${status}`).join(', ')}`}>
             <Doughnut data={statusData} options={chartOptions} />
           </div>
         </div>
@@ -191,7 +198,7 @@ function Dashboard() {
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
               Determinations
             </h2>
-            <div className="h-64">
+            <div className="h-64" role="img" aria-label={`Doughnut chart showing distribution of determinations: ${Object.entries(stats.by_determination).map(([det, count]) => `${count} ${det}`).join(', ')}`}>
               <Doughnut data={determinationData} options={chartOptions} />
             </div>
           </div>
@@ -260,6 +267,7 @@ function Dashboard() {
         </ul>
       </div>
     </div>
+    </>
   );
 }
 
