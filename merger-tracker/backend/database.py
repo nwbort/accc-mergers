@@ -23,6 +23,7 @@ def init_database():
             end_of_determination_period TEXT,
             determination_publication_date TEXT,
             accc_determination TEXT,
+            consultation_response_due_date TEXT,
             merger_description TEXT,
             phase_1_determination TEXT,
             phase_1_determination_date TEXT,

@@ -96,7 +96,7 @@ function MergerDetail() {
             </h3>
             <p className="text-base text-gray-900">
               {formatDate(merger.end_of_determination_period)}
-              {daysRemaining !== null && daysRemaining > 0 && (
+              {daysRemaining !== null && daysRemaining > 0 && !merger.determination_publication_date && (
                 <span className="ml-2 text-sm text-gray-500">
                   ({daysRemaining} days remaining)
                 </span>
