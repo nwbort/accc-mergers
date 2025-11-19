@@ -19,6 +19,7 @@ def init_database():
             merger_name TEXT NOT NULL,
             status TEXT NOT NULL,
             stage TEXT,
+            url TEXT,
             effective_notification_datetime TEXT,
             end_of_determination_period TEXT,
             determination_publication_date TEXT,
