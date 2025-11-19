@@ -88,7 +88,7 @@ def sync_from_json(json_path: str):
             # Insert or update merger
             cursor.execute("""
                 INSERT INTO mergers (
-                    merger_id, merger_name, status, stage,
+                    merger_id, merger_name, status, stage, url,
                     effective_notification_datetime,
                     end_of_determination_period,
                     determination_publication_date,
@@ -102,11 +102,12 @@ def sync_from_json(json_path: str):
                     public_benefits_determination,
                     public_benefits_determination_date,
                     updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
                 ON CONFLICT(merger_id) DO UPDATE SET
                     merger_name = excluded.merger_name,
                     status = excluded.status,
                     stage = excluded.stage,
+                    url = excluded.url,
                     effective_notification_datetime = excluded.effective_notification_datetime,
                     end_of_determination_period = excluded.end_of_determination_period,
                     determination_publication_date = excluded.determination_publication_date,
@@ -125,6 +126,7 @@ def sync_from_json(json_path: str):
                 merger_data['merger_name'],
                 merger_data['status'],
                 merger_data.get('stage'),
+                merger_data.get('url'),
                 merger_data.get('effective_notification_datetime'),
                 merger_data.get('end_of_determination_period'),
                 merger_data.get('determination_publication_date'),

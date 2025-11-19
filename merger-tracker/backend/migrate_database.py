@@ -39,6 +39,7 @@ def migrate():
         merger_columns = [row[1] for row in cursor.fetchall()]
 
         new_columns = [
+            ('url', 'TEXT'),
             ('phase_1_determination', 'TEXT'),
             ('phase_1_determination_date', 'TEXT'),
             ('phase_2_determination', 'TEXT'),
