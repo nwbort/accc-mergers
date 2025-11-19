@@ -7,4 +7,5 @@ export const API_ENDPOINTS = {
   stats: `${API_BASE_URL}/api/stats`,
   timeline: `${API_BASE_URL}/api/timeline`,
   industries: `${API_BASE_URL}/api/industries`,
+  upcomingEvents: `${API_BASE_URL}/api/upcoming-events`,
 };

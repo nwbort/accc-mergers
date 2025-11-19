@@ -93,6 +93,7 @@ def sync_from_json(json_path: str):
                     end_of_determination_period,
                     determination_publication_date,
                     accc_determination,
+                    consultation_response_due_date,
                     merger_description,
                     phase_1_determination,
                     phase_1_determination_date,
@@ -101,7 +102,7 @@ def sync_from_json(json_path: str):
                     public_benefits_determination,
                     public_benefits_determination_date,
                     updated_at
-                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
                 ON CONFLICT(merger_id) DO UPDATE SET
                     merger_name = excluded.merger_name,
                     status = excluded.status,
@@ -110,6 +111,7 @@ def sync_from_json(json_path: str):
                     end_of_determination_period = excluded.end_of_determination_period,
                     determination_publication_date = excluded.determination_publication_date,
                     accc_determination = excluded.accc_determination,
+                    consultation_response_due_date = excluded.consultation_response_due_date,
                     merger_description = excluded.merger_description,
                     phase_1_determination = excluded.phase_1_determination,
                     phase_1_determination_date = excluded.phase_1_determination_date,
@@ -127,6 +129,7 @@ def sync_from_json(json_path: str):
                 merger_data.get('end_of_determination_period'),
                 merger_data.get('determination_publication_date'),
                 normalize_determination(merger_data.get('accc_determination')),
+                merger_data.get('consultation_response_due_date'),
                 merger_data.get('merger_description'),
                 phase_1_det,
                 phase_1_det_date,

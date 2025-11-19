@@ -14,6 +14,7 @@ import {
 } from 'chart.js';
 import StatCard from '../components/StatCard';
 import LoadingSpinner from '../components/LoadingSpinner';
+import UpcomingEventsTable from '../components/UpcomingEventsTable';
 import { API_ENDPOINTS } from '../config';
 
 ChartJS.register(
@@ -28,11 +29,13 @@ ChartJS.register(
 
 function Dashboard() {
   const [stats, setStats] = useState(null);
+  const [upcomingEvents, setUpcomingEvents] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchStats();
+    fetchUpcomingEvents();
   }, []);
 
   const fetchStats = async () => {
@@ -45,6 +48,19 @@ function Dashboard() {
       setError(err.message);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const fetchUpcomingEvents = async () => {
+    try {
+      const response = await fetch(API_ENDPOINTS.upcomingEvents);
+      if (!response.ok) throw new Error('Failed to fetch upcoming events');
+      const data = await response.json();
+      setUpcomingEvents(data.events);
+    } catch (err) {
+      console.error('Error fetching upcoming events:', err);
+      // Don't block the page if upcoming events fail
+      setUpcomingEvents([]);
     }
   };
 
@@ -141,6 +157,13 @@ function Dashboard() {
           icon="🔍"
         />
       </div>
+
+      {/* Upcoming Events */}
+      {upcomingEvents && (
+        <div className="mb-8">
+          <UpcomingEventsTable events={upcomingEvents} />
+        </div>
+      )}
 
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">

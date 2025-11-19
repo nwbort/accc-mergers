@@ -349,6 +349,99 @@ def get_industries(response: Response):
         return {"industries": industries}
 
 
+@app.get("/api/upcoming-events")
+@cache(expire=1800)  # Cache for 30 minutes
+def get_upcoming_events(response: Response, days_ahead: int = 60):
+    """
+    Get upcoming events including:
+    - Consultation response due dates
+    - Determination period end dates
+    Only includes mergers that don't have a determination published yet.
+    """
+    response.headers["Cache-Control"] = "public, max-age=60"
+
+    with get_db() as conn:
+        cursor = conn.cursor()
+
+        # Get current date/time
+        now = datetime.utcnow().isoformat() + 'Z'
+
+        # Calculate future date
+        from datetime import timedelta
+        future_date = (datetime.utcnow() + timedelta(days=days_ahead)).isoformat() + 'Z'
+
+        events = []
+
+        # Get mergers with upcoming consultation response due dates
+        cursor.execute("""
+            SELECT
+                merger_id,
+                merger_name,
+                status,
+                stage,
+                consultation_response_due_date,
+                effective_notification_datetime
+            FROM mergers
+            WHERE consultation_response_due_date IS NOT NULL
+                AND consultation_response_due_date >= ?
+                AND consultation_response_due_date <= ?
+                AND determination_publication_date IS NULL
+            ORDER BY consultation_response_due_date ASC
+        """, (now, future_date))
+
+        for row in cursor.fetchall():
+            merger = dict(row)
+            events.append({
+                'type': 'consultation_due',
+                'event_type_display': 'Consultation responses due',
+                'date': merger['consultation_response_due_date'],
+                'merger_id': merger['merger_id'],
+                'merger_name': merger['merger_name'],
+                'status': merger['status'],
+                'stage': merger['stage'],
+                'effective_notification_datetime': merger['effective_notification_datetime']
+            })
+
+        # Get mergers with upcoming determination period end dates
+        cursor.execute("""
+            SELECT
+                merger_id,
+                merger_name,
+                status,
+                stage,
+                end_of_determination_period,
+                effective_notification_datetime
+            FROM mergers
+            WHERE end_of_determination_period IS NOT NULL
+                AND end_of_determination_period >= ?
+                AND end_of_determination_period <= ?
+                AND determination_publication_date IS NULL
+            ORDER BY end_of_determination_period ASC
+        """, (now, future_date))
+
+        for row in cursor.fetchall():
+            merger = dict(row)
+            events.append({
+                'type': 'determination_due',
+                'event_type_display': 'Determination due',
+                'date': merger['end_of_determination_period'],
+                'merger_id': merger['merger_id'],
+                'merger_name': merger['merger_name'],
+                'status': merger['status'],
+                'stage': merger['stage'],
+                'effective_notification_datetime': merger['effective_notification_datetime']
+            })
+
+        # Sort all events by date
+        events.sort(key=lambda x: x['date'])
+
+        return {
+            "events": events,
+            "count": len(events),
+            "days_ahead": days_ahead
+        }
+
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
