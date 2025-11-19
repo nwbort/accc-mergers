@@ -4,13 +4,20 @@ from fastapi_cache import FastAPICache
 from fastapi_cache.backends.inmemory import InMemoryBackend
 from fastapi_cache.decorator import cache
 from typing import List, Optional, Dict, Any
-from datetime import datetime
+from datetime import datetime, time, date
 from database import get_db, calculate_phase_duration, init_database
 import json
 import os
 from pathlib import Path
+from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.triggers.cron import CronTrigger
+import subscription_routes
+import digest_service
 
 app = FastAPI(title="ACCC Merger Tracker API", version="1.0.0")
+
+# Include subscription routes
+app.include_router(subscription_routes.router)
 
 
 @app.on_event("startup")
@@ -23,6 +30,16 @@ async def startup_event():
     print("Initializing database...")
     init_database()
     print("✓ Database initialized")
+
+    # Run notification system migration
+    print("Running notification system migration...")
+    try:
+        from run_migration import run_migration
+        db_path = Path(__file__).parent.parent.parent / "mergers.db"
+        run_migration(str(db_path), "001_add_notifications.sql")
+        print("✓ Notification migration completed")
+    except Exception as e:
+        print(f"Warning: Migration may have already been applied: {e}")
 
     # Sync data from mergers.json if it exists
     json_path = Path(__file__).parent.parent.parent / "mergers.json"
@@ -38,6 +55,28 @@ async def startup_event():
             print("Database will be empty until data is synced manually")
     else:
         print(f"Warning: {json_path} not found. Database will be empty until data is synced.")
+
+    # Start daily digest scheduler (if enabled)
+    if os.getenv("ENABLE_DIGEST_SCHEDULER", "false").lower() == "true":
+        print("Starting daily digest scheduler...")
+        scheduler = BackgroundScheduler()
+
+        # Schedule daily digest to run at 9 AM UTC (configurable)
+        digest_hour = int(os.getenv("DIGEST_HOUR", "9"))
+        digest_minute = int(os.getenv("DIGEST_MINUTE", "0"))
+
+        scheduler.add_job(
+            func=digest_service.send_daily_digest,
+            trigger=CronTrigger(hour=digest_hour, minute=digest_minute),
+            id="daily_digest",
+            name="Send daily digest emails",
+            replace_existing=True,
+        )
+
+        scheduler.start()
+        print(f"✓ Daily digest scheduled for {digest_hour:02d}:{digest_minute:02d} UTC")
+    else:
+        print("Daily digest scheduler disabled (set ENABLE_DIGEST_SCHEDULER=true to enable)")
 
     print("✓ Application startup complete")
 
