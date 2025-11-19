@@ -120,13 +120,14 @@ function Dashboard() {
   return (
     <>
       <SEO
-        title="Dashboard"
-        description="Track Australian merger and acquisition activities monitored by the ACCC. View statistics, trends, and upcoming events for corporate mergers in Australia."
+        title="Australian Merger Tracker | ACCC Merger Reviews & M&A Data"
+        description="Real-time database of Australian mergers reviewed by the ACCC. Search merger decisions, track review timelines, analyze industry trends, and explore public consultation documents."
         url="/"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
+          <h1 className="text-3xl font-bold text-gray-900">Australian Merger Tracker</h1>
+          <p className="mt-2 text-lg text-gray-600">Overview of ACCC merger reviews and key statistics</p>
         </div>
 
       {/* Stats Grid */}

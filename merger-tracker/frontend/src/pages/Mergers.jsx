@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
 import SEO from '../components/SEO';
@@ -7,12 +7,21 @@ import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 
 function Mergers() {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [mergers, setMergers] = useState([]);
   const [filteredMergers, setFilteredMergers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
+
+  // Initialize search term from URL query parameter
+  useEffect(() => {
+    const queryParam = searchParams.get('q');
+    if (queryParam) {
+      setSearchTerm(queryParam);
+    }
+  }, []);
 
   useEffect(() => {
     fetchMergers();
@@ -92,7 +101,16 @@ function Mergers() {
               className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
               placeholder="Search mergers, companies, or industries..."
               value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                setSearchTerm(value);
+                // Update URL to reflect search term
+                if (value) {
+                  setSearchParams({ q: value });
+                } else {
+                  setSearchParams({});
+                }
+              }}
             />
           </div>
           <div>
