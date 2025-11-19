@@ -47,9 +47,9 @@ function MergerDetail() {
     "headline": merger.merger_name,
     "description": merger.merger_description || `Merger between ${merger.acquirers.map(a => a.name).join(', ')} and ${merger.targets.map(t => t.name).join(', ')}`,
     "datePublished": merger.effective_notification_datetime,
-    "publisher": {
-      "@type": "Organization",
-      "name": "Australian Merger Tracker",
+    "author": {
+      "@type": "Person",
+      "name": "Nick Twort",
       "url": "https://mergers.fyi"
     },
     "about": {
