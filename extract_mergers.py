@@ -12,6 +12,35 @@ BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./matters"
 
 
+def is_safe_filename(filename):
+    """
+    Validate filename to prevent path traversal attacks.
+    Only allows alphanumeric characters, spaces, dots, hyphens, and underscores.
+    Rejects filenames with path traversal sequences or suspicious patterns.
+    """
+    if not filename or not isinstance(filename, str):
+        return False
+
+    # Reject empty or whitespace-only filenames
+    if not filename.strip():
+        return False
+
+    # Reject path traversal sequences
+    if '..' in filename or '/' in filename or '\\' in filename:
+        return False
+
+    # Only allow safe characters: alphanumeric, space, dot, hyphen, underscore
+    # Also ensure filename doesn't start with a dot (hidden files)
+    if not re.match(r'^[a-zA-Z0-9][\w\-. ]*\.[a-zA-Z0-9]+$', filename):
+        return False
+
+    # Filename should not exceed reasonable length
+    if len(filename) > 255:
+        return False
+
+    return True
+
+
 def parse_date_from_text(text: str) -> str:
     """
     Extract and parse a date from text like '21 November 2025' and return ISO format.
@@ -76,8 +105,16 @@ def download_attachment(merger_id, attachment_url):
         os.makedirs(attachment_dir, exist_ok=True)
 
         # Get filename from URL and construct local path
+        # Security: Decode URL first, then extract basename, then validate
         parsed_url = urlparse(attachment_url)
-        filename = unquote(os.path.basename(parsed_url.path))
+        decoded_path = unquote(parsed_url.path)
+        filename = os.path.basename(decoded_path)
+
+        # Security: Validate filename to prevent path traversal
+        if not is_safe_filename(filename):
+            print(f"Warning: Unsafe filename detected and rejected: {filename}", file=sys.stderr)
+            return
+
         local_filepath = os.path.join(attachment_dir, filename)
 
         # Check if the file already exists before downloading

@@ -4,7 +4,29 @@ Migration script to add phase tracking columns to existing database.
 """
 
 import sqlite3
+import re
 from database import DATABASE_PATH
+
+# Security: Whitelist of allowed column types to prevent SQL injection
+ALLOWED_COLUMN_TYPES = {'TEXT', 'INTEGER', 'REAL', 'BLOB', 'NULL'}
+
+def is_safe_column_name(name):
+    """
+    Validate column name to prevent SQL injection.
+    Only allows alphanumeric characters, underscores, and must not be empty.
+    """
+    if not name or not isinstance(name, str):
+        return False
+    # Only allow alphanumeric and underscores, must start with letter or underscore
+    return bool(re.match(r'^[a-zA-Z_][a-zA-Z0-9_]*$', name))
+
+def is_safe_column_type(col_type):
+    """
+    Validate column type against whitelist to prevent SQL injection.
+    """
+    if not col_type or not isinstance(col_type, str):
+        return False
+    return col_type.upper() in ALLOWED_COLUMN_TYPES
 
 def migrate():
     """Add phase tracking and display_title columns to existing tables."""
@@ -49,8 +71,15 @@ def migrate():
         ]
 
         for col_name, col_type in new_columns:
+            # Security: Validate column name and type before using in SQL
+            if not is_safe_column_name(col_name):
+                raise ValueError(f"Invalid column name: {col_name}")
+            if not is_safe_column_type(col_type):
+                raise ValueError(f"Invalid column type: {col_type}")
+
             if col_name not in merger_columns:
                 print(f"Adding {col_name} column to mergers table...")
+                # Safe to use f-string here after validation
                 cursor.execute(f"ALTER TABLE mergers ADD COLUMN {col_name} {col_type}")
                 print(f"✓ Added {col_name} column")
             else:

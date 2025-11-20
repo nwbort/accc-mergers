@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Response
+from fastapi import FastAPI, HTTPException, Response, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends.inmemory import InMemoryBackend
@@ -6,11 +6,21 @@ from fastapi_cache.decorator import cache
 from typing import List, Optional, Dict, Any
 from datetime import datetime
 from database import get_db, calculate_phase_duration, init_database
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 import json
 import os
 from pathlib import Path
 
+# Initialize rate limiter
+limiter = Limiter(key_func=get_remote_address)
+
 app = FastAPI(title="ACCC Merger Tracker API", version="1.0.0")
+
+# Add rate limiter to app state
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 
 @app.on_event("startup")
@@ -64,19 +74,52 @@ app.add_middleware(
     allow_origins=allowed_origins,
     allow_origin_regex=allow_origin_regex,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    # Security: Restrict to read-only methods (GET, HEAD, OPTIONS for preflight)
+    allow_methods=["GET", "HEAD", "OPTIONS"],
+    # Security: Restrict to standard API headers
+    allow_headers=["Content-Type", "Accept", "Accept-Language", "Content-Language"],
 )
 
 
+# Security headers middleware
+@app.middleware("http")
+async def add_security_headers(request: Request, call_next):
+    """Add security headers to all responses."""
+    response = await call_next(request)
+
+    # Prevent MIME type sniffing
+    response.headers["X-Content-Type-Options"] = "nosniff"
+
+    # Prevent clickjacking
+    response.headers["X-Frame-Options"] = "DENY"
+
+    # Enable XSS protection (legacy browsers)
+    response.headers["X-XSS-Protection"] = "1; mode=block"
+
+    # Content Security Policy - restrictive policy for API
+    response.headers["Content-Security-Policy"] = "default-src 'none'; frame-ancestors 'none'"
+
+    # Control referrer information
+    response.headers["Referrer-Policy"] = "no-referrer"
+
+    # Enforce HTTPS in production (only if not localhost)
+    if not request.url.hostname in ["localhost", "127.0.0.1"]:
+        response.headers["Strict-Transport-Security"] = "max-age=31536000; includeSubDomains"
+
+    return response
+
+
 @app.get("/")
-def read_root():
+@limiter.limit("100/minute")
+def read_root(request: Request):
     return {"message": "ACCC Merger Tracker API", "version": "1.0.0"}
 
 
 @app.get("/api/mergers")
+@limiter.limit("100/minute")
 @cache(expire=1800)  # Cache for 30 minutes
 def get_mergers(
+    request: Request,
     response: Response,
     status: Optional[str] = None,
     search: Optional[str] = None,
@@ -151,8 +194,9 @@ def get_mergers(
 
 
 @app.get("/api/mergers/{merger_id}")
+@limiter.limit("100/minute")
 @cache(expire=1800)  # Cache for 30 minutes
-def get_merger(merger_id: str, response: Response):
+def get_merger(request: Request, merger_id: str, response: Response):
     """Get detailed information about a specific merger."""
     response.headers["Cache-Control"] = "public, max-age=60"
     with get_db() as conn:
@@ -205,8 +249,9 @@ def get_merger(merger_id: str, response: Response):
 
 
 @app.get("/api/stats")
+@limiter.limit("60/minute")
 @cache(expire=3600)  # Cache for 1 hour (data syncs every 6 hours)
-def get_statistics(response: Response):
+def get_statistics(request: Request, response: Response):
     """Get aggregated statistics about mergers."""
     response.headers["Cache-Control"] = "public, max-age=120"
     with get_db() as conn:
@@ -288,8 +333,9 @@ def get_statistics(response: Response):
 
 
 @app.get("/api/timeline")
+@limiter.limit("100/minute")
 @cache(expire=1800)  # Cache for 30 minutes
-def get_timeline(response: Response, limit: int = 15, offset: int = 0):
+def get_timeline(request: Request, response: Response, limit: int = 15, offset: int = 0):
     """Get paginated timeline of all events across all mergers."""
     response.headers["Cache-Control"] = "public, max-age=60"
     with get_db() as conn:
@@ -327,8 +373,9 @@ def get_timeline(response: Response, limit: int = 15, offset: int = 0):
 
 
 @app.get("/api/industries")
+@limiter.limit("60/minute")
 @cache(expire=3600)  # Cache for 1 hour
-def get_industries(response: Response):
+def get_industries(request: Request, response: Response):
     """Get all industries with merger counts."""
     response.headers["Cache-Control"] = "public, max-age=120"
     with get_db() as conn:
@@ -350,8 +397,9 @@ def get_industries(response: Response):
 
 
 @app.get("/api/upcoming-events")
+@limiter.limit("60/minute")
 @cache(expire=1800)  # Cache for 30 minutes
-def get_upcoming_events(response: Response, days_ahead: int = 60):
+def get_upcoming_events(request: Request, response: Response, days_ahead: int = 60):
     """
     Get upcoming events including:
     - Consultation response due dates
