@@ -170,6 +170,10 @@ def parse_merger_file(filepath, existing_merger_data=None):
             consultation_due_date = parse_date_from_text(consultation_text)
             if consultation_due_date:
                 merger_data['consultation_response_due_date'] = consultation_due_date
+        elif existing_merger_data and 'consultation_response_due_date' in existing_merger_data:
+            # Preserve consultation_response_due_date from existing data if not in HTML
+            # (it's often removed from the HTML after consultation period ends)
+            merger_data['consultation_response_due_date'] = existing_merger_data['consultation_response_due_date']
 
         # --- Parties (Acquirers and Targets) ---
         def get_parties(field_name):
