@@ -1,6 +1,7 @@
 import { useState, useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
+import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 
 function Industries() {
@@ -66,10 +67,16 @@ function Industries() {
   if (error) return <div className="text-red-600">Error: {error}</div>;
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Industries</h1>
-      </div>
+    <>
+      <SEO
+        title="Industries"
+        description="Browse mergers by industry (ANZSIC codes). See which Australian industries have the most merger activity monitored by the ACCC."
+        url="/industries"
+      />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="mb-8">
+          <h1 className="text-3xl font-bold text-gray-900">Industries</h1>
+        </div>
 
       {/* Summary Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
@@ -243,6 +250,7 @@ function Industries() {
         </div>
       )}
     </div>
+    </>
   );
 }
 
