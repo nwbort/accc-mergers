@@ -167,7 +167,7 @@ function MergerDetail() {
       </div>
 
       {/* Parties */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div className={`grid grid-cols-1 ${merger.other_parties && merger.other_parties.length > 0 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-6 mb-6`}>
         <div className="bg-white rounded-lg shadow p-6">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
             Acquirers
@@ -200,7 +200,7 @@ function MergerDetail() {
           ))}
         </div>
 
-        {merger.other_parties && merger.other_parties.length > 0 ? (
+        {merger.other_parties && merger.other_parties.length > 0 && (
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
               Other parties
@@ -216,8 +216,6 @@ function MergerDetail() {
               </div>
             ))}
           </div>
-        ) : (
-          <div></div>
         )}
       </div>
 
