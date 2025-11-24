@@ -6,7 +6,7 @@ This document explains how to set up and use the database backup and commentary 
 
 Two new features have been added to the backend API:
 
-1. **Database Backup**: Automated daily backups of the SQLite database to GitHub
+1. **Database Backup**: API endpoint for downloading SQLite database backups
 2. **Commentary System**: Add your own notes and analysis to mergers (admin-only)
 
 ## Setup
@@ -39,57 +39,70 @@ You need to add two API keys as environment variables in your Railway project:
   2. Navigate to Variables tab
   3. Add new variable: `ADMIN_API_KEY` = `<your-generated-key>`
 
-### 2. Configure GitHub Secrets
-
-To enable automated backups, add these secrets to your GitHub repository:
-
-1. Go to your repository → Settings → Secrets and variables → Actions
-2. Add the following secrets:
-
-#### BACKUP_API_KEY
-- **Value**: Same key you set in Railway
-- Used by GitHub Actions to authenticate backup requests
-
-#### BACKEND_URL
-- **Value**: Your Railway backend URL (e.g., `https://your-app.railway.app`)
-- Used by GitHub Actions to know where to download backups from
-
-### 3. Enable Automated Backups
-
-The backup workflow is already configured in `.github/workflows/backup-database.yml`:
-
-- **Schedule**: Runs daily at 2:30 AM UTC
-- **Retention**: Keeps the last 7 backups automatically
-- **Storage**: Backups are stored in the `backups/` directory in your repository
-
-To manually trigger a backup:
-1. Go to Actions tab in GitHub
-2. Select "Database Backup" workflow
-3. Click "Run workflow"
-
 ## Using the Features
 
 ### Database Backups
 
-#### Automated Backups
-- Run daily via GitHub Actions
-- Stored in `backups/` directory
-- Named with timestamp: `mergers-backup-YYYYMMDD-HHMMSS.db`
-- Old backups automatically cleaned up (keeps 7 most recent)
+The `/api/backup` endpoint allows you to download a copy of the SQLite database at any time.
 
 #### Manual Backup via API
-You can manually download a backup using curl:
+Download a backup using curl:
 
 ```bash
 curl -H "X-Backup-Key: YOUR_BACKUP_API_KEY" \
-     -o backup.db \
+     -o backup-$(date +%Y%m%d-%H%M%S).db \
      https://your-app.railway.app/api/backup
 ```
+
+#### Automated Backup Options
+
+**Option 1: Cron Job (Local Server/VPS)**
+If you have a server that runs 24/7, set up a cron job:
+
+```bash
+# Add to crontab (crontab -e)
+# Runs daily at 2:30 AM, keeps last 7 backups
+30 2 * * * cd /path/to/backups && curl -H "X-Backup-Key: YOUR_KEY" -o "backup-$(date +\%Y\%m\%d).db" https://your-app.railway.app/api/backup && ls -t backup-*.db | tail -n +8 | xargs rm -f
+```
+
+**Option 2: Cloud Storage (Backblaze B2, AWS S3)**
+Create a script that downloads and uploads to cloud storage:
+
+```bash
+#!/bin/bash
+# backup-to-cloud.sh
+TIMESTAMP=$(date +%Y%m%d-%H%M%S)
+BACKUP_FILE="backup-${TIMESTAMP}.db"
+
+# Download from Railway
+curl -H "X-Backup-Key: ${BACKUP_API_KEY}" \
+     -o "${BACKUP_FILE}" \
+     "${BACKEND_URL}/api/backup"
+
+# Upload to Backblaze B2 (or AWS S3)
+b2 upload-file your-bucket-name "${BACKUP_FILE}" "backups/${BACKUP_FILE}"
+
+# Clean up local file
+rm "${BACKUP_FILE}"
+```
+
+**Option 3: Railway Volumes (Built-in)**
+Railway volumes are persistent, so your database is already protected against:
+- Deployments/redeploys
+- Service restarts
+- Code updates
+
+You only need manual backups for:
+- Protection against data corruption
+- Ability to restore to a previous state
+- Off-site backup redundancy
+
+**Recommendation**: Set up a weekly/monthly manual backup routine using Option 1 or 2, depending on your infrastructure.
 
 #### Restoring from Backup
 To restore a backup on Railway:
 
-1. Download the backup file from GitHub repository
+1. Download your backup file
 2. Use Railway CLI to upload:
    ```bash
    railway volume mount <volume-id>
@@ -97,6 +110,8 @@ To restore a backup on Railway:
    cp backup.db /app/merger-tracker/backend/mergers.db
    ```
 3. Restart the backend service
+
+Or restore by temporarily adding an upload endpoint (for one-time use).
 
 ### Commentary System
 
@@ -227,10 +242,10 @@ CREATE INDEX idx_commentary_merger_id ON commentary(merger_id);
 
 ## Troubleshooting
 
-### Backup workflow fails
-- Check that `BACKUP_API_KEY` secret is set in GitHub
-- Check that `BACKEND_URL` secret is set correctly
-- Verify Railway environment variable `BACKUP_API_KEY` matches GitHub secret
+### Backup endpoint returns 401
+- Verify `BACKUP_API_KEY` is set in Railway environment variables
+- Check that you're sending the correct header: `X-Backup-Key`
+- Ensure the key in your request matches the Railway environment variable
 
 ### Commentary endpoints return 401
 - Verify `ADMIN_API_KEY` is set in Railway
