@@ -1,0 +1,56 @@
+name: Database Backup
+on:
+  workflow_dispatch:  # Allow manual trigger
+  schedule:
+    - cron: '30 2 * * *'  # Run daily at 2:30 AM UTC
+
+permissions:
+  contents: write
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Download database backup
+        env:
+          BACKUP_API_KEY: ${{ secrets.BACKUP_API_KEY }}
+          BACKEND_URL: ${{ secrets.BACKEND_URL }}
+        run: |
+          mkdir -p backups
+          timestamp=$(date -u +"%Y%m%d-%H%M%S")
+          filename="mergers-backup-${timestamp}.db"
+
+          # Download database from backup endpoint
+          curl -H "X-Backup-Key: ${BACKUP_API_KEY}" \
+               -o "backups/${filename}" \
+               "${BACKEND_URL}/api/backup"
+
+          # Verify the file was downloaded
+          if [ ! -s "backups/${filename}" ]; then
+            echo "Error: Backup file is empty or missing"
+            exit 1
+          fi
+
+          echo "✓ Database backup downloaded: ${filename}"
+          ls -lh "backups/${filename}"
+
+      - name: Keep only recent backups
+        run: |
+          # Keep only the last 7 daily backups to avoid repo bloat
+          cd backups
+          ls -t mergers-backup-*.db | tail -n +8 | xargs -r rm
+          echo "✓ Cleaned up old backups, keeping most recent 7"
+          ls -lh
+
+      - name: Commit and push backup
+        run: |
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          git add backups/
+          timestamp=$(date -u)
+          git commit -m "Database backup: ${timestamp}" || exit 0
+          git pull --rebase
+          git push

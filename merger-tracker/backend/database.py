@@ -77,6 +77,18 @@ def init_database():
         )
     """)
 
+    # Commentary table (for user-added notes/analysis on mergers)
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS commentary (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            merger_id TEXT NOT NULL,
+            content TEXT NOT NULL,
+            created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (merger_id) REFERENCES mergers(merger_id)
+        )
+    """)
+
     # Create indexes for better query performance
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_parties_merger_id ON parties(merger_id)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_anzsic_merger_id ON anzsic_codes(merger_id)")
@@ -84,6 +96,7 @@ def init_database():
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_events_date ON events(date)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_events_phase ON events(phase)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_mergers_status ON mergers(status)")
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_commentary_merger_id ON commentary(merger_id)")
 
     conn.commit()
     conn.close()

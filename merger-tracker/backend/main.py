@@ -1,14 +1,16 @@
-from fastapi import FastAPI, HTTPException, Response, Request
+from fastapi import FastAPI, HTTPException, Response, Request, Header, Depends
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends.inmemory import InMemoryBackend
 from fastapi_cache.decorator import cache
 from typing import List, Optional, Dict, Any
 from datetime import datetime
-from database import get_db, calculate_phase_duration, init_database
+from database import get_db, calculate_phase_duration, init_database, DATABASE_PATH
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
+from pydantic import BaseModel
 import json
 import os
 from pathlib import Path
@@ -21,6 +23,47 @@ app = FastAPI(title="ACCC Merger Tracker API", version="1.0.0")
 # Add rate limiter to app state
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
+
+
+# Pydantic models for request/response
+class CommentaryCreate(BaseModel):
+    content: str
+
+
+class CommentaryUpdate(BaseModel):
+    content: str
+
+
+# Authentication helpers
+def verify_admin_key(x_admin_key: Optional[str] = Header(None)):
+    """Verify admin API key for protected endpoints."""
+    admin_key = os.getenv("ADMIN_API_KEY")
+    if not admin_key:
+        raise HTTPException(
+            status_code=500,
+            detail="Admin API key not configured on server"
+        )
+    if not x_admin_key or x_admin_key != admin_key:
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid or missing admin API key"
+        )
+    return True
+
+
+def verify_backup_key(x_backup_key: Optional[str] = Header(None)):
+    """Verify backup API key for database backup endpoint."""
+    backup_key = os.getenv("BACKUP_API_KEY")
+    if not backup_key:
+        raise HTTPException(
+            status_code=500,
+            detail="Backup API key not configured on server"
+        )
+    if not x_backup_key or x_backup_key != backup_key:
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid or missing backup API key"
+        )
 
 
 @app.on_event("startup")
@@ -74,10 +117,13 @@ app.add_middleware(
     allow_origins=allowed_origins,
     allow_origin_regex=allow_origin_regex,
     allow_credentials=True,
-    # Security: Restrict to read-only methods (GET, HEAD, OPTIONS for preflight)
-    allow_methods=["GET", "HEAD", "OPTIONS"],
-    # Security: Restrict to standard API headers
-    allow_headers=["Content-Type", "Accept", "Accept-Language", "Content-Language"],
+    # Allow write methods for admin endpoints (commentary CRUD, backup)
+    allow_methods=["GET", "HEAD", "OPTIONS", "POST", "PUT", "DELETE"],
+    # Include X-Admin-Key and X-Backup-Key for authentication
+    allow_headers=[
+        "Content-Type", "Accept", "Accept-Language", "Content-Language",
+        "X-Admin-Key", "X-Backup-Key"
+    ],
 )
 
 
@@ -488,6 +534,162 @@ def get_upcoming_events(request: Request, response: Response, days_ahead: int = 
             "count": len(events),
             "days_ahead": days_ahead
         }
+
+
+# Database Backup Endpoint
+@app.get("/api/backup")
+@limiter.limit("10/hour")
+def download_database_backup(request: Request, _: None = Depends(verify_backup_key)):
+    """
+    Download a backup of the SQLite database.
+    Requires X-Backup-Key header matching BACKUP_API_KEY environment variable.
+    """
+    db_path = Path(DATABASE_PATH)
+    if not db_path.exists():
+        raise HTTPException(status_code=404, detail="Database file not found")
+
+    return FileResponse(
+        path=str(db_path),
+        media_type="application/x-sqlite3",
+        filename=f"mergers-backup-{datetime.utcnow().strftime('%Y%m%d-%H%M%S')}.db"
+    )
+
+
+# Commentary Endpoints
+@app.get("/api/mergers/{merger_id}/commentary")
+@limiter.limit("100/minute")
+@cache(expire=300)  # Cache for 5 minutes (shorter than merger data)
+def get_commentary(request: Request, merger_id: str, response: Response):
+    """Get all commentary for a specific merger. Public endpoint."""
+    response.headers["Cache-Control"] = "public, max-age=60"
+    with get_db() as conn:
+        cursor = conn.cursor()
+
+        # Verify merger exists
+        cursor.execute("SELECT merger_id FROM mergers WHERE merger_id = ?", (merger_id,))
+        if not cursor.fetchone():
+            raise HTTPException(status_code=404, detail="Merger not found")
+
+        # Get all commentary
+        cursor.execute("""
+            SELECT id, merger_id, content, created_at, updated_at
+            FROM commentary
+            WHERE merger_id = ?
+            ORDER BY created_at DESC
+        """, (merger_id,))
+
+        comments = [dict(row) for row in cursor.fetchall()]
+
+        return {"commentary": comments, "count": len(comments)}
+
+
+@app.post("/api/mergers/{merger_id}/commentary")
+@limiter.limit("30/minute")
+def create_commentary(
+    request: Request,
+    merger_id: str,
+    commentary: CommentaryCreate,
+    _: None = Depends(verify_admin_key)
+):
+    """
+    Create new commentary for a merger. Admin only.
+    Requires X-Admin-Key header matching ADMIN_API_KEY environment variable.
+    """
+    with get_db() as conn:
+        cursor = conn.cursor()
+
+        # Verify merger exists
+        cursor.execute("SELECT merger_id FROM mergers WHERE merger_id = ?", (merger_id,))
+        if not cursor.fetchone():
+            raise HTTPException(status_code=404, detail="Merger not found")
+
+        # Insert commentary
+        now = datetime.utcnow().isoformat() + 'Z'
+        cursor.execute("""
+            INSERT INTO commentary (merger_id, content, created_at, updated_at)
+            VALUES (?, ?, ?, ?)
+        """, (merger_id, commentary.content, now, now))
+
+        commentary_id = cursor.lastrowid
+        conn.commit()
+
+        # Clear cache for this merger's commentary
+        # Note: FastAPI cache will expire naturally, but we could add cache invalidation here
+
+        return {
+            "id": commentary_id,
+            "merger_id": merger_id,
+            "content": commentary.content,
+            "created_at": now,
+            "updated_at": now
+        }
+
+
+@app.put("/api/commentary/{commentary_id}")
+@limiter.limit("30/minute")
+def update_commentary(
+    request: Request,
+    commentary_id: int,
+    commentary: CommentaryUpdate,
+    _: None = Depends(verify_admin_key)
+):
+    """
+    Update existing commentary. Admin only.
+    Requires X-Admin-Key header matching ADMIN_API_KEY environment variable.
+    """
+    with get_db() as conn:
+        cursor = conn.cursor()
+
+        # Check if commentary exists
+        cursor.execute("SELECT * FROM commentary WHERE id = ?", (commentary_id,))
+        existing = cursor.fetchone()
+        if not existing:
+            raise HTTPException(status_code=404, detail="Commentary not found")
+
+        # Update commentary
+        now = datetime.utcnow().isoformat() + 'Z'
+        cursor.execute("""
+            UPDATE commentary
+            SET content = ?, updated_at = ?
+            WHERE id = ?
+        """, (commentary.content, now, commentary_id))
+
+        conn.commit()
+
+        return {
+            "id": commentary_id,
+            "merger_id": existing['merger_id'],
+            "content": commentary.content,
+            "created_at": existing['created_at'],
+            "updated_at": now
+        }
+
+
+@app.delete("/api/commentary/{commentary_id}")
+@limiter.limit("30/minute")
+def delete_commentary(
+    request: Request,
+    commentary_id: int,
+    _: None = Depends(verify_admin_key)
+):
+    """
+    Delete commentary. Admin only.
+    Requires X-Admin-Key header matching ADMIN_API_KEY environment variable.
+    """
+    with get_db() as conn:
+        cursor = conn.cursor()
+
+        # Check if commentary exists
+        cursor.execute("SELECT * FROM commentary WHERE id = ?", (commentary_id,))
+        existing = cursor.fetchone()
+        if not existing:
+            raise HTTPException(status_code=404, detail="Commentary not found")
+
+        # Delete commentary
+        cursor.execute("DELETE FROM commentary WHERE id = ?", (commentary_id,))
+        conn.commit()
+
+        return {"message": "Commentary deleted successfully", "id": commentary_id}
 
 
 if __name__ == "__main__":
