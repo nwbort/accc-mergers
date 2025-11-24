@@ -17,6 +17,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import UpcomingEventsTable from '../components/UpcomingEventsTable';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
+import { formatDate } from '../utils/dates';
 
 ChartJS.register(
   CategoryScale,
@@ -254,11 +255,7 @@ function Dashboard() {
                   <div className="mt-2 flex items-center text-sm text-gray-500">
                     <span className="truncate">
                       Notified:{' '}
-                      {merger.effective_notification_datetime
-                        ? new Date(
-                            merger.effective_notification_datetime
-                          ).toLocaleDateString()
-                        : 'N/A'}
+                      {formatDate(merger.effective_notification_datetime)}
                     </span>
                   </div>
                 </div>
