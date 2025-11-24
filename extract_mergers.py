@@ -7,6 +7,7 @@ from urllib.parse import urljoin, urlparse, unquote
 import requests
 import re
 from datetime import datetime
+from markdownify import markdownify as md
 
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./matters"
@@ -29,9 +30,9 @@ def is_safe_filename(filename):
     if '..' in filename or '/' in filename or '\\' in filename:
         return False
 
-    # Only allow safe characters: alphanumeric, space, dot, hyphen, underscore
+    # Only allow safe characters: alphanumeric, space, dot, hyphen, underscore, parentheses, comma
     # Also ensure filename doesn't start with a dot (hidden files)
-    if not re.match(r'^[a-zA-Z0-9][\w\-. ]*\.[a-zA-Z0-9]+$', filename):
+    if not re.match(r'^[a-zA-Z0-9][\w\-. (),]*\.[a-zA-Z0-9]+$', filename):
         return False
 
     # Filename should not exceed reasonable length
@@ -255,8 +256,22 @@ def parse_merger_file(filepath, existing_merger_data=None):
         description_tag = soup.find('div', class_='field--name-field-accc-body')
         if description_tag:
             full_text_div = description_tag.find('div', class_='full-text')
-            merger_data['merger_description'] = (full_text_div.get_text('\n', strip=True) if full_text_div 
-                                                else description_tag.get_text('\n', strip=True).replace('Description','').strip())
+            if full_text_div:
+                # Convert HTML to Markdown to preserve formatting (bullets, bold, etc.)
+                description_html = str(full_text_div)
+                description_md = md(description_html, heading_style="ATX", strip=['a'])
+                merger_data['merger_description'] = description_md.strip()
+            else:
+                # Fallback to old method if full-text div not found
+                field_item = description_tag.find('div', class_='field__item')
+                if field_item:
+                    description_html = str(field_item)
+                    description_md = md(description_html, heading_style="ATX", strip=['a'])
+                    # Remove the 'Description' heading if present
+                    description_md = description_md.replace('### Description', '').strip()
+                    merger_data['merger_description'] = description_md
+                else:
+                    merger_data['merger_description'] = description_tag.get_text('\n', strip=True).replace('Description','').strip()
 
         # --- Events ---
         merger_data['events'] = []

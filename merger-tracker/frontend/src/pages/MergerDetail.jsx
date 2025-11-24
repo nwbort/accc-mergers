@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
 import SEO from '../components/SEO';
@@ -227,9 +228,9 @@ function MergerDetail() {
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
             Description
           </h2>
-          <p className="text-gray-700 whitespace-pre-wrap">
-            {merger.merger_description}
-          </p>
+          <div className="text-gray-700 prose prose-sm max-w-none">
+            <ReactMarkdown>{merger.merger_description}</ReactMarkdown>
+          </div>
         </div>
       )}
 
