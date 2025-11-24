@@ -167,7 +167,7 @@ function MergerDetail() {
       </div>
 
       {/* Parties */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <div className={`grid grid-cols-1 ${merger.other_parties && merger.other_parties.length > 0 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-6 mb-6`}>
         <div className="bg-white rounded-lg shadow p-6">
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
             Acquirers
@@ -177,7 +177,7 @@ function MergerDetail() {
               <p className="font-medium text-gray-900">{acquirer.name}</p>
               {acquirer.identifier && (
                 <p className="text-sm text-gray-500">
-                  {acquirer.identifier_type}: {acquirer.identifier}
+                  {acquirer.identifier_type ? `${acquirer.identifier_type}: ` : ''}{acquirer.identifier}
                 </p>
               )}
             </div>
@@ -193,34 +193,31 @@ function MergerDetail() {
               <p className="font-medium text-gray-900">{target.name}</p>
               {target.identifier && (
                 <p className="text-sm text-gray-500">
-                  {target.identifier_type}: {target.identifier}
+                  {target.identifier_type ? `${target.identifier_type}: ` : ''}{target.identifier}
                 </p>
               )}
             </div>
           ))}
         </div>
-      </div>
 
-      {/* Other Parties */}
-      {merger.other_parties && merger.other_parties.length > 0 && (
-        <div className="bg-white rounded-lg shadow p-6 mb-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Other Party(ies)
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {merger.other_parties && merger.other_parties.length > 0 && (
+          <div className="bg-white rounded-lg shadow p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">
+              Other parties
+            </h2>
             {merger.other_parties.map((party, idx) => (
               <div key={idx} className="mb-3">
                 <p className="font-medium text-gray-900">{party.name}</p>
                 {party.identifier && (
                   <p className="text-sm text-gray-500">
-                    {party.identifier_type}: {party.identifier}
+                    {party.identifier_type ? `${party.identifier_type}: ` : ''}{party.identifier}
                   </p>
                 )}
               </div>
             ))}
           </div>
-        </div>
-      )}
+        )}
+      </div>
 
       {/* Description */}
       {merger.merger_description && (
@@ -228,7 +225,7 @@ function MergerDetail() {
           <h2 className="text-lg font-semibold text-gray-900 mb-4">
             Description
           </h2>
-          <div className="text-gray-700 prose prose-sm max-w-none">
+          <div className="text-gray-700 prose prose-sm max-w-none [&>p]:mb-4 [&>ul]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:mb-2 [&>ol]:mb-4 [&>ol]:list-decimal [&>ol]:pl-5 [&>ol>li]:mb-2">
             <ReactMarkdown>{merger.merger_description}</ReactMarkdown>
           </div>
         </div>
