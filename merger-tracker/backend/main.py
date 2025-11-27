@@ -357,7 +357,7 @@ def get_statistics(request: Request, response: Response):
 
         # Recent mergers
         cursor.execute("""
-            SELECT merger_id, merger_name, status, effective_notification_datetime
+            SELECT merger_id, merger_name, status, accc_determination, effective_notification_datetime
             FROM mergers
             ORDER BY effective_notification_datetime DESC
             LIMIT 5
