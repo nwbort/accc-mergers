@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install beautifulsoup4==4.12.3 requests markdownify
+          pip install -r requirements.txt
 
       - name: Run extraction script
         run: python extract_mergers.py
