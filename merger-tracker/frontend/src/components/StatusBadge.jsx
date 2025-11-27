@@ -1,6 +1,6 @@
 function StatusBadge({ status, determination }) {
   const getStatusStyle = () => {
-    if (determination === 'Approved' || determination === 'Not opposed') {
+    if (determination === 'Approved') {
       return 'bg-green-100 text-green-800';
     } else if (determination === 'Declined') {
       return 'bg-red-100 text-red-800';
