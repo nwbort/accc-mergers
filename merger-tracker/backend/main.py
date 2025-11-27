@@ -7,6 +7,7 @@ from fastapi_cache.decorator import cache
 from typing import List, Optional, Dict, Any
 from datetime import datetime
 from database import get_db, calculate_phase_duration, init_database, DATABASE_PATH
+from business_days import calculate_business_days
 from slowapi import Limiter, _rate_limit_exceeded_handler
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
@@ -324,7 +325,7 @@ def get_statistics(request: Request, response: Response):
         """)
         by_determination = {row['accc_determination']: row['count'] for row in cursor.fetchall()}
 
-        # Calculate phase durations
+        # Calculate phase durations (both calendar and business days)
         cursor.execute("""
             SELECT
                 effective_notification_datetime,
@@ -334,6 +335,7 @@ def get_statistics(request: Request, response: Response):
         """)
 
         durations = []
+        business_durations = []
         for row in cursor.fetchall():
             duration = calculate_phase_duration(
                 row['effective_notification_datetime'],
@@ -342,8 +344,18 @@ def get_statistics(request: Request, response: Response):
             if duration is not None:
                 durations.append(duration)
 
+            business_duration = calculate_business_days(
+                row['effective_notification_datetime'],
+                row['determination_publication_date']
+            )
+            if business_duration is not None:
+                business_durations.append(business_duration)
+
         avg_duration = sum(durations) / len(durations) if durations else None
         median_duration = sorted(durations)[len(durations) // 2] if durations else None
+
+        avg_business_duration = sum(business_durations) / len(business_durations) if business_durations else None
+        median_business_duration = sorted(business_durations)[len(business_durations) // 2] if business_durations else None
 
         # Top industries
         cursor.execute("""
@@ -371,7 +383,10 @@ def get_statistics(request: Request, response: Response):
             "phase_duration": {
                 "average_days": avg_duration,
                 "median_days": median_duration,
-                "all_durations": durations
+                "all_durations": durations,
+                "average_business_days": avg_business_duration,
+                "median_business_days": median_business_duration,
+                "all_business_durations": business_durations
             },
             "top_industries": top_industries,
             "recent_mergers": recent_mergers

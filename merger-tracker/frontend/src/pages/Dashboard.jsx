@@ -142,8 +142,13 @@ function Dashboard() {
           title="Average duration"
           value={
             stats.phase_duration.average_days
-              ? `${Math.round(stats.phase_duration.average_days)} days`
+              ? `${Math.round(stats.phase_duration.average_days)} calendar days`
               : 'N/A'
+          }
+          subtitle={
+            stats.phase_duration.average_business_days
+              ? `${Math.round(stats.phase_duration.average_business_days)} business days`
+              : null
           }
           icon="⏱️"
         />
@@ -151,8 +156,13 @@ function Dashboard() {
           title="Median duration"
           value={
             stats.phase_duration.median_days
-              ? `${stats.phase_duration.median_days} days`
+              ? `${stats.phase_duration.median_days} calendar days`
               : 'N/A'
+          }
+          subtitle={
+            stats.phase_duration.median_business_days
+              ? `${stats.phase_duration.median_business_days} business days`
+              : null
           }
           icon="📈"
         />

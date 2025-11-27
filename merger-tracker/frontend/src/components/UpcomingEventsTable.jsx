@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { formatDate, getDaysRemaining } from '../utils/dates';
+import { formatDate, getDaysRemaining, getBusinessDaysRemaining } from '../utils/dates';
 
 function UpcomingEventsTable({ events }) {
   if (!events || events.length === 0) {
@@ -53,6 +53,7 @@ function UpcomingEventsTable({ events }) {
           <tbody className="bg-white divide-y divide-gray-200">
             {events.map((event, idx) => {
               const daysRemaining = getDaysRemaining(event.date);
+              const businessDaysRemaining = getBusinessDaysRemaining(event.date);
               const isUrgent = daysRemaining !== null && daysRemaining <= 7;
 
               return (
@@ -82,19 +83,28 @@ function UpcomingEventsTable({ events }) {
                       {event.merger_id} • {event.stage}
                     </div>
                   </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm">
-                    {daysRemaining !== null && (
-                      <span
-                        className={`font-medium ${
-                          isUrgent ? 'text-red-600' : 'text-gray-900'
-                        }`}
-                      >
-                        {daysRemaining === 0
-                          ? 'Today'
-                          : daysRemaining === 1
-                          ? '1 day'
-                          : `${daysRemaining} days`}
-                      </span>
+                  <td className="px-6 py-4 text-sm">
+                    {daysRemaining !== null && businessDaysRemaining !== null && (
+                      <div>
+                        <span
+                          className={`font-medium ${
+                            isUrgent ? 'text-red-600' : 'text-gray-900'
+                          }`}
+                        >
+                          {daysRemaining === 0
+                            ? 'Today'
+                            : daysRemaining === 1
+                            ? '1 day'
+                            : `${daysRemaining} days`}
+                        </span>
+                        <div className="text-xs text-gray-500 mt-0.5">
+                          {businessDaysRemaining === 0
+                            ? 'Today'
+                            : businessDaysRemaining === 1
+                            ? '1 business day'
+                            : `${businessDaysRemaining} business days`}
+                        </div>
+                      </div>
                     )}
                   </td>
                 </tr>
