@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
 import SEO from '../components/SEO';
-import { formatDate, calculateDuration, getDaysRemaining } from '../utils/dates';
+import { formatDate, calculateDuration, getDaysRemaining, calculateBusinessDays, getBusinessDaysRemaining } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 
 function MergerDetail() {
@@ -39,7 +39,13 @@ function MergerDetail() {
     merger.determination_publication_date
   );
 
+  const businessDuration = calculateBusinessDays(
+    merger.effective_notification_datetime,
+    merger.determination_publication_date
+  );
+
   const daysRemaining = getDaysRemaining(merger.end_of_determination_period);
+  const businessDaysRemaining = getBusinessDaysRemaining(merger.end_of_determination_period);
 
   // Create structured data for SEO
   const structuredData = {
@@ -133,7 +139,7 @@ function MergerDetail() {
               {formatDate(merger.end_of_determination_period)}
               {daysRemaining !== null && daysRemaining > 0 && !merger.determination_publication_date && (
                 <span className="ml-2 text-sm text-gray-500">
-                  ({daysRemaining} days remaining)
+                  ({daysRemaining} calendar days, {businessDaysRemaining} business days remaining)
                 </span>
               )}
             </p>
@@ -145,9 +151,9 @@ function MergerDetail() {
               </h3>
               <p className="text-base text-gray-900">
                 {formatDate(merger.determination_publication_date)}
-                {duration !== null && (
+                {duration !== null && businessDuration !== null && (
                   <span className="ml-2 text-sm text-gray-500">
-                    ({duration} days)
+                    ({duration} calendar days, {businessDuration} business days)
                   </span>
                 )}
               </p>
