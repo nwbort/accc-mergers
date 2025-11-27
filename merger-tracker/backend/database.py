@@ -89,6 +89,21 @@ def init_database():
         )
     """)
 
+    # Determination details table (parsed content from determination PDFs)
+    cursor.execute("""
+        CREATE TABLE IF NOT EXISTS determination_details (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            merger_id TEXT NOT NULL,
+            event_id INTEGER,
+            commission_division TEXT,
+            table_content TEXT,
+            created_at TEXT DEFAULT CURRENT_TIMESTAMP,
+            updated_at TEXT DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (merger_id) REFERENCES mergers(merger_id),
+            FOREIGN KEY (event_id) REFERENCES events(id)
+        )
+    """)
+
     # Create indexes for better query performance
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_parties_merger_id ON parties(merger_id)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_anzsic_merger_id ON anzsic_codes(merger_id)")
@@ -97,6 +112,8 @@ def init_database():
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_events_phase ON events(phase)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_mergers_status ON mergers(status)")
     cursor.execute("CREATE INDEX IF NOT EXISTS idx_commentary_merger_id ON commentary(merger_id)")
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_determination_details_merger_id ON determination_details(merger_id)")
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_determination_details_event_id ON determination_details(event_id)")
 
     conn.commit()
     conn.close()
