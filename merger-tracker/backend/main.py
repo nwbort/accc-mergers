@@ -295,6 +295,69 @@ def get_merger(request: Request, merger_id: str, response: Response):
         return merger
 
 
+@app.get("/api/determinations/{merger_id}")
+@limiter.limit("100/minute")
+@cache(expire=1800)  # Cache for 30 minutes
+def get_determinations(request: Request, merger_id: str, response: Response):
+    """
+    Get all determination details for a specific merger.
+    Returns commission division and table content for each determination.
+    Multiple determinations may exist (Phase 1, Phase 2, etc.).
+    """
+    response.headers["Cache-Control"] = "public, max-age=60"
+    with get_db() as conn:
+        cursor = conn.cursor()
+
+        # Verify merger exists
+        cursor.execute("SELECT merger_id, merger_name FROM mergers WHERE merger_id = ?", (merger_id,))
+        merger = cursor.fetchone()
+        if not merger:
+            raise HTTPException(status_code=404, detail="Merger not found")
+
+        merger = dict(merger)
+
+        # Get all determination details with associated event information
+        cursor.execute("""
+            SELECT
+                dd.id,
+                dd.commission_division,
+                dd.table_content,
+                dd.created_at,
+                e.id as event_id,
+                e.date as event_date,
+                e.title as event_title,
+                e.display_title as event_display_title,
+                e.url as event_url,
+                e.url_gh as event_url_gh,
+                e.phase
+            FROM determination_details dd
+            JOIN events e ON dd.event_id = e.id
+            WHERE dd.merger_id = ?
+            ORDER BY e.date ASC
+        """, (merger_id,))
+
+        determinations = []
+        for row in cursor.fetchall():
+            determination = dict(row)
+
+            # Parse the JSON table_content if it exists
+            if determination['table_content']:
+                try:
+                    determination['table_content'] = json.loads(determination['table_content'])
+                except json.JSONDecodeError:
+                    # If parsing fails, keep as string
+                    pass
+
+            determinations.append(determination)
+
+        return {
+            "merger_id": merger['merger_id'],
+            "merger_name": merger['merger_name'],
+            "determinations": determinations,
+            "count": len(determinations)
+        }
+
+
 @app.get("/api/stats")
 @limiter.limit("60/minute")
 @cache(expire=3600)  # Cache for 1 hour (data syncs every 6 hours)
