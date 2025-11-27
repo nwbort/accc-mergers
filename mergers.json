@@ -651,5 +651,56 @@
         "display_title": "Merger notified to ACCC"
       }
     ]
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/carlyle-basf-coatings",
+    "merger_name": "Carlyle - BASF Coatings",
+    "status": "Under assessment",
+    "merger_id": "MN-01064",
+    "effective_notification_datetime": "2025-11-27T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-01-29T12:00:00Z",
+    "consultation_response_due_date": "2025-12-04T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "Bond UK MidCo 4 Ltd",
+        "identifier_type": null,
+        "identifier": "Jersey Financial Services Commission Registry  161931"
+      }
+    ],
+    "targets": [
+      {
+        "name": "BASF SE",
+        "identifier_type": null,
+        "identifier": "HRB 6000"
+      }
+    ],
+    "other_parties": [],
+    "anszic_codes": [
+      {
+        "code": "1916",
+        "name": "Paint and Coatings Manufacturing"
+      },
+      {
+        "code": "6419",
+        "name": "Other Auxiliary Finance and Investment Services"
+      }
+    ],
+    "merger_description": "The Carlyle Group Inc. (together with its controlled funds and affiliates, **Carlyle**) proposes to acquire sole control of BASF\u2019s Coatings division (**BASF Coatings**) from BASF SE (the **Seller**), a German publicly listed chemical company. The Seller, through its wholly-owned direct subsidiary, BASF Handels- und Exportgesellschaft mbH, will reinvest in BASF Coatings, acquiring a 40% non-controlling stake on a look-through basis, and Qatar Investment Authority (**QIA**), through its wholly owned investment-holding company, Qatar Holding LLC, will acquire a non-controlling stake of approximately 16% in BASF Coatings on a look-through basis at closing.\n\nBASF Coatings is a global company which develops, produces and markets automotive original equipment manufacturer and refinish coatings, as well as applied surface treatments for various industries. The business operates in Europe, North America, South America and the Asia Pacific, including Australia.\n\nCarlyle is a global investment firm with assets under management across three business segments: (i) Global Private Equity (including corporate private equity and real estate funds); (ii) Global Credit (including liquid credit, illiquid credit and real assets credit); and (iii) Carlyle AlpInvest (including primary, secondary, and co-investments, commingled funds, and separately managed accounts).",
+    "events": [
+      {
+        "date": "2025-11-27T12:00:00Z",
+        "title": "Questionnaire - Carlyle - BASF Coatings",
+        "display_title": "Questionnaire - Carlyle - BASF Coatings",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Carlyle%20-%20BASF%20Coatings%20-%20Third-party%20questionnaire%20-%2027.11.2025_1.docx",
+        "url_gh": "https://github.com/nwbort/accc-mergers/raw/main/matters/MN-01064/Carlyle - BASF Coatings - Third-party questionnaire - 27.11.2025_1.docx",
+        "status": "live"
+      },
+      {
+        "date": "2025-11-27T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ]
   }
 ]
