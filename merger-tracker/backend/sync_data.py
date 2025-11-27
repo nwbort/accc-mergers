@@ -145,6 +145,7 @@ def sync_from_json(json_path: str):
             cursor.execute("DELETE FROM parties WHERE merger_id = ?", (merger_id,))
             cursor.execute("DELETE FROM anzsic_codes WHERE merger_id = ?", (merger_id,))
             cursor.execute("DELETE FROM events WHERE merger_id = ?", (merger_id,))
+            cursor.execute("DELETE FROM determination_details WHERE merger_id = ?", (merger_id,))
 
             # Insert acquirers
             for acquirer in merger_data.get('acquirers', []):
@@ -214,6 +215,26 @@ def sync_from_json(json_path: str):
                     event.get('status'),
                     phase
                 ))
+
+                # Get the event_id of the just-inserted event
+                event_id = cursor.lastrowid
+
+                # If this event has determination data, insert it
+                if event.get('determination_commission_division') or event.get('determination_table_content'):
+                    table_content_json = None
+                    if event.get('determination_table_content'):
+                        table_content_json = json.dumps(event['determination_table_content'])
+
+                    cursor.execute("""
+                        INSERT INTO determination_details (
+                            merger_id, event_id, commission_division, table_content
+                        ) VALUES (?, ?, ?, ?)
+                    """, (
+                        merger_id,
+                        event_id,
+                        event.get('determination_commission_division'),
+                        table_content_json
+                    ))
 
         conn.commit()
 

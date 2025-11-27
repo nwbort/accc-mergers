@@ -8,6 +8,7 @@ import requests
 import re
 from datetime import datetime
 from markdownify import markdownify as md
+from parse_determination import parse_determination_pdf
 
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./matters"
@@ -95,10 +96,23 @@ def normalize_determination(determination: str) -> str:
     return determination
 
 
-def download_attachment(merger_id, attachment_url):
-    """Downloads an attachment if it doesn't already exist locally."""
+def download_attachment(merger_id, attachment_url, event_title=None):
+    """
+    Downloads an attachment if it doesn't already exist locally.
+    If it's a determination PDF, also parses it to extract commission division and table content.
+
+    Args:
+        merger_id: The merger ID
+        attachment_url: URL to download
+        event_title: Title of the event (used to detect determination PDFs)
+
+    Returns:
+        Dictionary with parsed determination data if applicable, None otherwise
+    """
     if not merger_id or not attachment_url:
-        return
+        return None
+
+    determination_data = None
 
     try:
         # Create a directory for the merger's attachments
@@ -114,14 +128,14 @@ def download_attachment(merger_id, attachment_url):
         # Security: Validate filename to prevent path traversal
         if not is_safe_filename(filename):
             print(f"Warning: Unsafe filename detected and rejected: {filename}", file=sys.stderr)
-            return
+            return None
 
         local_filepath = os.path.join(attachment_dir, filename)
 
         # Check if the file already exists before downloading
         if not os.path.exists(local_filepath):
             print(f"Downloading new attachment for {merger_id}: {filename}", file=sys.stderr)
-            
+
             # Download the file
             response = requests.get(attachment_url, stream=True)
             response.raise_for_status()  # Raise an exception for bad status codes
@@ -132,10 +146,28 @@ def download_attachment(merger_id, attachment_url):
                     f_out.write(chunk)
             print(f"Saved to {local_filepath}", file=sys.stderr)
 
+        # Check if this is a determination PDF and parse it
+        is_determination = (
+            event_title and
+            'determination' in event_title.lower() and
+            filename.lower().endswith('.pdf')
+        )
+
+        if is_determination and os.path.exists(local_filepath):
+            print(f"Parsing determination PDF: {filename}", file=sys.stderr)
+            try:
+                determination_data = parse_determination_pdf(local_filepath)
+                print(f"Successfully parsed determination PDF: {filename}", file=sys.stderr)
+            except Exception as e:
+                print(f"Error parsing determination PDF {filename}: {e}", file=sys.stderr)
+                determination_data = None
+
     except requests.exceptions.RequestException as e:
         print(f"Error downloading {attachment_url}: {e}", file=sys.stderr)
     except IOError as e:
         print(f"Error saving file {local_filepath}: {e}", file=sys.stderr)
+
+    return determination_data
 
 
 def parse_merger_file(filepath, existing_merger_data=None):
@@ -297,7 +329,14 @@ def parse_merger_file(filepath, existing_merger_data=None):
                 if link_tag and link_tag.has_attr('href'):
                     url = urljoin(BASE_URL, link_tag['href'])
                     event['url'] = url
-                    download_attachment(merger_id, url)
+
+                    # Download attachment and parse if it's a determination PDF
+                    determination_data = download_attachment(merger_id, url, title)
+
+                    # If determination data was parsed, add it to the event
+                    if determination_data:
+                        event['determination_commission_division'] = determination_data.get('commission_division')
+                        event['determination_table_content'] = determination_data.get('table_content')
 
                     # Add github url and status
                     parsed_url = urlparse(url)
