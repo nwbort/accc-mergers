@@ -5,7 +5,9 @@ builder = "nixpacks"
 watchPatterns = [
   "**/*",
   "!mergers.json",
-  "!matters/**"
+  "!matters/**",
+  "!acquisitions-register.html"
+  "!README.md"
 ]
 
 [deploy]
