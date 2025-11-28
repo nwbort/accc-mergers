@@ -67,6 +67,22 @@ def verify_backup_key(x_backup_key: Optional[str] = Header(None)):
         )
 
 
+def verify_webhook_secret(x_webhook_secret: Optional[str] = Header(None)):
+    """Verify webhook secret for data sync endpoint."""
+    webhook_secret = os.getenv("WEBHOOK_SECRET")
+    if not webhook_secret:
+        raise HTTPException(
+            status_code=500,
+            detail="Webhook secret not configured on server"
+        )
+    if not x_webhook_secret or x_webhook_secret != webhook_secret:
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid or missing webhook secret"
+        )
+    return True
+
+
 @app.on_event("startup")
 async def startup_event():
     """Initialize database, cache, and sync data on startup."""
@@ -120,10 +136,10 @@ app.add_middleware(
     allow_credentials=True,
     # Allow write methods for admin endpoints (commentary CRUD, backup)
     allow_methods=["GET", "HEAD", "OPTIONS", "POST", "PUT", "DELETE"],
-    # Include X-Admin-Key and X-Backup-Key for authentication
+    # Include X-Admin-Key, X-Backup-Key, and X-Webhook-Secret for authentication
     allow_headers=[
         "Content-Type", "Accept", "Accept-Language", "Content-Language",
-        "X-Admin-Key", "X-Backup-Key"
+        "X-Admin-Key", "X-Backup-Key", "X-Webhook-Secret"
     ],
 )
 
@@ -631,6 +647,62 @@ def download_database_backup(request: Request, _: None = Depends(verify_backup_k
         media_type="application/x-sqlite3",
         filename=f"mergers-backup-{datetime.utcnow().strftime('%Y%m%d-%H%M%S')}.db"
     )
+
+
+# Webhook Endpoint for Data Sync
+@app.post("/api/webhook/sync-data")
+@limiter.limit("30/hour")
+async def webhook_sync_data(request: Request, _: None = Depends(verify_webhook_secret)):
+    """
+    Webhook endpoint to trigger data sync from GitHub.
+    Downloads latest mergers.json from main branch and updates database.
+    Requires X-Webhook-Secret header matching WEBHOOK_SECRET environment variable.
+
+    This allows Railway to pull data updates without full redeployment.
+    """
+    try:
+        # Import sync functions
+        from sync_data import download_mergers_json_from_github, sync_from_json
+        from fastapi_cache import FastAPICache
+
+        # Get GitHub token from environment (optional but recommended)
+        github_token = os.getenv("GITHUB_TOKEN")
+
+        # Get repo and branch from environment or use defaults
+        repo = os.getenv("GITHUB_REPO", "nwbort/accc-mergers")
+        branch = os.getenv("GITHUB_BRANCH", "main")
+
+        # Download latest mergers.json from GitHub
+        json_path = download_mergers_json_from_github(
+            repo=repo,
+            branch=branch,
+            github_token=github_token
+        )
+
+        # Sync to database
+        sync_from_json(json_path)
+
+        # Clear cache to ensure fresh data
+        await FastAPICache.clear()
+
+        # Clean up temporary file
+        Path(json_path).unlink(missing_ok=True)
+
+        return {
+            "success": True,
+            "message": "Data synced successfully from GitHub",
+            "timestamp": datetime.utcnow().isoformat() + 'Z',
+            "source": {
+                "repo": repo,
+                "branch": branch
+            }
+        }
+
+    except Exception as e:
+        raise HTTPException(
+            status_code=500,
+            detail=f"Failed to sync data: {str(e)}"
+        )
 
 
 # Commentary Endpoints

@@ -1,0 +1,48 @@
+name: Sync Data to Railway
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'mergers.json'
+  # Allow manual trigger for testing
+  workflow_dispatch:
+
+jobs:
+  notify-railway:
+    runs-on: ubuntu-latest
+    name: Trigger Railway Data Sync
+
+    steps:
+      - name: Trigger Railway webhook
+        run: |
+          echo "Triggering Railway data sync webhook..."
+
+          response=$(curl -s -w "\n%{http_code}" -X POST \
+            -H "X-Webhook-Secret: ${{ secrets.RAILWAY_WEBHOOK_SECRET }}" \
+            -H "Content-Type: application/json" \
+            "${{ secrets.RAILWAY_API_URL }}/api/webhook/sync-data")
+
+          http_code=$(echo "$response" | tail -n1)
+          body=$(echo "$response" | sed '$d')
+
+          echo "Response code: $http_code"
+          echo "Response body: $body"
+
+          if [ "$http_code" -ge 200 ] && [ "$http_code" -lt 300 ]; then
+            echo "✓ Successfully triggered Railway data sync"
+          else
+            echo "✗ Failed to trigger Railway data sync (HTTP $http_code)"
+            exit 1
+          fi
+
+      - name: Summary
+        run: |
+          echo "## Railway Data Sync Triggered 🚀" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "The Railway backend has been notified to pull the latest mergers.json data." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Workflow**: ${{ github.workflow }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Trigger**: mergers.json updated on main branch" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
