@@ -6,6 +6,8 @@ Run this periodically to keep the database updated with latest merger data.
 
 import json
 import sqlite3
+import os
+import urllib.request
 from pathlib import Path
 from database import init_database, DATABASE_PATH, get_db
 
@@ -40,6 +42,54 @@ def extract_phase_from_event(event_title: str) -> str:
     elif 'notified' in event_title:
         return 'Phase 1'  # Notification always starts Phase 1
     return None
+
+
+def download_mergers_json_from_github(
+    repo: str = "nwbort/accc-mergers",
+    branch: str = "main",
+    github_token: str = None
+) -> str:
+    """
+    Download mergers.json from GitHub repository.
+
+    Args:
+        repo: GitHub repository in format "owner/repo"
+        branch: Branch name to download from
+        github_token: Optional GitHub token for private repos or higher rate limits
+
+    Returns:
+        Path to the downloaded file
+
+    Raises:
+        Exception: If download fails
+    """
+    url = f"https://raw.githubusercontent.com/{repo}/{branch}/mergers.json"
+
+    print(f"Downloading mergers.json from {url}...")
+
+    # Create request with optional GitHub token
+    request = urllib.request.Request(url)
+    if github_token:
+        request.add_header("Authorization", f"token {github_token}")
+
+    try:
+        with urllib.request.urlopen(request, timeout=30) as response:
+            data = response.read().decode('utf-8')
+
+        # Save to temporary file
+        temp_path = Path(__file__).parent / "mergers_temp.json"
+        with open(temp_path, 'w', encoding='utf-8') as f:
+            f.write(data)
+
+        print(f"✓ Downloaded to {temp_path}")
+        return str(temp_path)
+
+    except urllib.error.HTTPError as e:
+        raise Exception(f"Failed to download from GitHub: HTTP {e.code} - {e.reason}")
+    except urllib.error.URLError as e:
+        raise Exception(f"Failed to download from GitHub: {e.reason}")
+    except Exception as e:
+        raise Exception(f"Failed to download from GitHub: {str(e)}")
 
 
 def sync_from_json(json_path: str):

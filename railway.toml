@@ -1,5 +1,12 @@
 [build]
 builder = "nixpacks"
+# Watch patterns: exclude mergers.json to prevent redeployment on data updates
+# The webhook will handle data syncing without redeployment
+watchPatterns = [
+  "**/*",
+  "!mergers.json",
+  "!matters/**"
+]
 
 [deploy]
 startCommand = "bash start.sh"
