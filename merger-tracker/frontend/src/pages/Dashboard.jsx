@@ -72,7 +72,7 @@ function Dashboard() {
 
   // Calculate Phase 1 duration stats using business days
   const calculateDurationStats = () => {
-    const businessDaysDurations = stats.phase_duration.all_business_days_durations || [];
+    const businessDaysDurations = stats.phase_duration.all_business_durations || [];
     const total = businessDaysDurations.length;
 
     if (total === 0) return null;
