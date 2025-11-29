@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Bar, Doughnut } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import StatusBadge from '../components/StatusBadge';
 import {
   Chart as ChartJS,
@@ -70,17 +70,22 @@ function Dashboard() {
   if (error) return <div className="text-red-600">Error: {error}</div>;
   if (!stats) return null;
 
-  const durationData = {
-    labels: stats.phase_duration.all_durations.map((_, i) => `Merger ${i + 1}`),
-    datasets: [
-      {
-        label: 'Phase Duration (days)',
-        data: stats.phase_duration.all_durations,
-        backgroundColor: '#335145',
-        borderColor: '#335145',
-        borderWidth: 1,
-      },
-    ],
+  // Calculate Phase 1 duration stats using business days
+  const calculateDurationStats = () => {
+    const businessDaysDurations = stats.phase_duration.all_business_durations || [];
+    const total = businessDaysDurations.length;
+
+    if (total === 0) return null;
+
+    const day15Count = businessDaysDurations.filter(d => d <= 15).length;
+    const day20Count = businessDaysDurations.filter(d => d <= 20).length;
+    const day30Count = businessDaysDurations.filter(d => d <= 30).length;
+
+    return {
+      day15: { count: day15Count, percentage: ((day15Count / total) * 100).toFixed(1) },
+      day20: { count: day20Count, percentage: ((day20Count / total) * 100).toFixed(1) },
+      day30: { count: day30Count, percentage: ((day30Count / total) * 100).toFixed(1) },
+    };
   };
 
   const statusData = {
@@ -88,7 +93,7 @@ function Dashboard() {
     datasets: [
       {
         data: Object.values(stats.by_status),
-        backgroundColor: ['#335145', '#4a6d5e', '#6b8f7f', '#8cafa0'],
+        backgroundColor: ['#335145', '#e07a5f', '#6b8f7f', '#8cafa0'],
         borderWidth: 2,
         borderColor: '#fff',
       },
@@ -139,15 +144,20 @@ function Dashboard() {
           icon="📊"
         />
         <StatCard
+          title="Under assessment"
+          value={stats.by_status['Under assessment'] || 0}
+          icon="🔍"
+        />
+        <StatCard
           title="Average duration"
           value={
-            stats.phase_duration.average_days
-              ? `${Math.round(stats.phase_duration.average_days)} calendar days`
+            stats.phase_duration.average_business_days
+              ? `${Math.round(stats.phase_duration.average_business_days)} business days`
               : 'N/A'
           }
           subtitle={
-            stats.phase_duration.average_business_days
-              ? `${Math.round(stats.phase_duration.average_business_days)} business days`
+            stats.phase_duration.average_days
+              ? `${Math.round(stats.phase_duration.average_days)} calendar days`
               : null
           }
           icon="⏱️"
@@ -155,21 +165,16 @@ function Dashboard() {
         <StatCard
           title="Median duration"
           value={
-            stats.phase_duration.median_days
-              ? `${stats.phase_duration.median_days} calendar days`
+            stats.phase_duration.median_business_days
+              ? `${stats.phase_duration.median_business_days} business days`
               : 'N/A'
           }
           subtitle={
-            stats.phase_duration.median_business_days
-              ? `${stats.phase_duration.median_business_days} business days`
+            stats.phase_duration.median_days
+              ? `${stats.phase_duration.median_days} calendar days`
               : null
           }
           icon="📈"
-        />
-        <StatCard
-          title="Under assessment"
-          value={stats.by_status['Under assessment'] || 0}
-          icon="🔍"
         />
       </div>
 
@@ -181,18 +186,38 @@ function Dashboard() {
       )}
 
       {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
-        {/* Duration Chart */}
-        {stats.phase_duration.all_durations.length > 0 && (
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              Phase duration distribution
-            </h2>
-            <div className="h-64" role="img" aria-label={`Bar chart showing phase duration distribution across ${stats.phase_duration.all_durations.length} mergers. Average duration is ${Math.round(stats.phase_duration.average_days)} days.`}>
-              <Bar data={durationData} options={chartOptions} />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        {/* Phase 1 Duration Table */}
+        {(() => {
+          const durationStats = calculateDurationStats();
+          return durationStats && (
+            <div className="bg-white p-6 rounded-lg shadow">
+              <h2 className="text-lg font-semibold text-gray-900 mb-4">
+                Phase 1 duration
+              </h2>
+              <div className="space-y-3">
+                <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                  <span className="text-sm font-medium text-gray-700">Determined by day 15</span>
+                  <span className="text-sm font-semibold text-gray-900">
+                    {durationStats.day15.percentage}% ({durationStats.day15.count})
+                  </span>
+                </div>
+                <div className="flex justify-between items-center py-2 border-b border-gray-200">
+                  <span className="text-sm font-medium text-gray-700">Determined by day 20</span>
+                  <span className="text-sm font-semibold text-gray-900">
+                    {durationStats.day20.percentage}% ({durationStats.day20.count})
+                  </span>
+                </div>
+                <div className="flex justify-between items-center py-2">
+                  <span className="text-sm font-medium text-gray-700">Determined by day 30</span>
+                  <span className="text-sm font-semibold text-gray-900">
+                    {durationStats.day30.percentage}% ({durationStats.day30.count})
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
-        )}
+          );
+        })()}
 
         {/* Status Distribution */}
         <div className="bg-white p-6 rounded-lg shadow">
@@ -208,39 +233,20 @@ function Dashboard() {
         {Object.keys(stats.by_determination).length > 0 && (
           <div className="bg-white p-6 rounded-lg shadow">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              Determinations
+              Phase 1 determinations
             </h2>
-            <div className="h-64" role="img" aria-label={`Doughnut chart showing distribution of determinations: ${Object.entries(stats.by_determination).map(([det, count]) => `${count} ${det}`).join(', ')}`}>
+            <div className="h-64" role="img" aria-label={`Doughnut chart showing distribution of Phase 1 determinations: ${Object.entries(stats.by_determination).map(([det, count]) => `${count} ${det}`).join(', ')}`}>
               <Doughnut data={determinationData} options={chartOptions} />
             </div>
           </div>
         )}
-
-        {/* Top Industries */}
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Top industries
-          </h2>
-          <div className="space-y-3">
-            {stats.top_industries.slice(0, 5).map((industry, index) => (
-              <div key={index} className="flex items-center justify-between">
-                <span className="text-sm text-gray-700 truncate flex-1">
-                  {industry.name}
-                </span>
-                <span className="ml-2 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary text-white">
-                  {industry.count}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
 
       {/* Recent Mergers */}
       <div className="bg-white shadow rounded-lg">
         <div className="px-6 py-4 border-b border-gray-200">
           <h2 className="text-lg font-semibold text-gray-900">
-            Recent mergers
+            Recently notified mergers
           </h2>
         </div>
         <ul className="divide-y divide-gray-200">
