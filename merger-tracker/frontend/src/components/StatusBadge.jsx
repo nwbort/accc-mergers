@@ -5,7 +5,7 @@ function StatusBadge({ status, determination }) {
     } else if (determination === 'Declined') {
       return 'bg-red-100 text-red-800';
     } else if (status === 'Under assessment') {
-      return 'bg-blue-100 text-blue-800';
+      return 'bg-[#335145] bg-opacity-10 text-[#335145]';
     } else if (status === 'Assessment completed') {
       return 'bg-gray-100 text-gray-800';
     }
