@@ -139,13 +139,9 @@ function Dashboard() {
       {/* Stats Grid */}
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 mb-8">
         <StatCard
-          title="Total mergers"
-          value={stats.total_mergers}
-          icon="📊"
-        />
-        <StatCard
-          title="Under assessment"
-          value={stats.by_status['Under assessment'] || 0}
+          title="Mergers"
+          value={`${stats.by_status['Under assessment'] || 0} under assessment`}
+          subtitle={`${stats.total_mergers} notified`}
           icon="🔍"
         />
         <StatCard
