@@ -20,7 +20,12 @@ function MergerDetail() {
   const fetchMerger = async () => {
     try {
       const response = await fetch(API_ENDPOINTS.merger(id));
-      if (!response.ok) throw new Error('Failed to fetch merger details');
+      if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error('not_found');
+        }
+        throw new Error('Failed to fetch merger details');
+      }
       const data = await response.json();
       setMerger(data);
     } catch (err) {
@@ -31,7 +36,29 @@ function MergerDetail() {
   };
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div className="text-red-600">Error: {error}</div>;
+  if (error) {
+    return (
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="bg-white rounded-lg shadow-lg p-8 text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">
+            {error === 'not_found' ? "Hmm...merger not found" : "Error loading merger"}
+          </h1>
+          <p className="text-gray-600 mb-6">
+            {error === 'not_found'
+              ? `We couldn't find a merger with ID "${id}". It may have been removed or the ID might be incorrect.`
+              : error
+            }
+          </p>
+          <Link
+            to="/mergers"
+            className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark transition-colors"
+          >
+            ← Back to all mergers
+          </Link>
+        </div>
+      </div>
+    );
+  }
   if (!merger) return null;
 
   const duration = calculateDuration(
