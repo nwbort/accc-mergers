@@ -49,12 +49,23 @@ function MergerDetail() {
               : error
             }
           </p>
-          <Link
-            to="/mergers"
-            className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark transition-colors"
-          >
-            ← Back to all mergers
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link
+              to="/mergers"
+              className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark transition-colors"
+            >
+              ← Back to all mergers
+            </Link>
+            <span className="text-gray-500">or</span>
+            <a
+              href={`https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register?init=1&query=${id}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-4 py-2 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+            >
+              Check ACCC website →
+            </a>
+          </div>
         </div>
       </div>
     );
