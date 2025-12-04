@@ -6,6 +6,8 @@ on:
       - main
     paths:
       - 'mergers.json'
+  schedule:
+    - cron: '1,6,11,15,21,26,31,36,41,46,51,56 * * * *'
   # Allow manual trigger for testing
   workflow_dispatch:
 
@@ -44,5 +46,5 @@ jobs:
           echo "The Railway backend has been notified to pull the latest mergers.json data." >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- **Workflow**: ${{ github.workflow }}" >> $GITHUB_STEP_SUMMARY
-          echo "- **Trigger**: mergers.json updated on main branch" >> $GITHUB_STEP_SUMMARY
+          echo "- **Trigger**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
           echo "- **Commit**: ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
