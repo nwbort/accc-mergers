@@ -17,6 +17,25 @@ echo "Changed to: $(pwd)"
 echo "Contents:"
 ls -la
 echo ""
+
+# Sync data from GitHub on startup
+echo "Syncing mergers.json from GitHub..."
+python3 -c "
+from sync_data import download_mergers_json_from_github, sync_from_json
+import os
+
+repo = os.getenv('GITHUB_REPO', 'nwbort/accc-mergers')
+branch = os.getenv('GITHUB_BRANCH', 'main')
+token = os.getenv('GITHUB_TOKEN')
+
+print(f'Downloading from {repo}@{branch}...')
+json_path = download_mergers_json_from_github(repo=repo, branch=branch, github_token=token)
+print('Syncing to database...')
+sync_from_json(json_path)
+print('Startup sync complete!')
+" || echo "Warning: Startup sync failed, continuing with existing data..."
+
+echo ""
 echo "Starting uvicorn..."
 
 # Start the application
