@@ -181,7 +181,7 @@ def read_root(request: Request):
 @app.get("/api/mergers")
 @limiter.limit("100/minute")
 @cache(expire=1800)  # Cache for 30 minutes
-def get_mergers(
+async def get_mergers(
     request: Request,
     response: Response,
     status: Optional[str] = None,
@@ -259,7 +259,7 @@ def get_mergers(
 @app.get("/api/mergers/{merger_id}")
 @limiter.limit("100/minute")
 @cache(expire=1800)  # Cache for 30 minutes
-def get_merger(request: Request, merger_id: str, response: Response):
+async def get_merger(request: Request, merger_id: str, response: Response):
     """Get detailed information about a specific merger."""
     response.headers["Cache-Control"] = "public, max-age=60"
     with get_db() as conn:
@@ -314,7 +314,7 @@ def get_merger(request: Request, merger_id: str, response: Response):
 @app.get("/api/determinations/{merger_id}")
 @limiter.limit("100/minute")
 @cache(expire=1800)  # Cache for 30 minutes
-def get_determinations(request: Request, merger_id: str, response: Response):
+async def get_determinations(request: Request, merger_id: str, response: Response):
     """
     Get all determination details for a specific merger.
     Returns commission division and table content for each determination.
@@ -377,7 +377,7 @@ def get_determinations(request: Request, merger_id: str, response: Response):
 @app.get("/api/stats")
 @limiter.limit("60/minute")
 @cache(expire=3600)  # Cache for 1 hour (data syncs every 6 hours)
-def get_statistics(request: Request, response: Response):
+async def get_statistics(request: Request, response: Response):
     """Get aggregated statistics about mergers."""
     response.headers["Cache-Control"] = "public, max-age=120"
     with get_db() as conn:
@@ -475,7 +475,7 @@ def get_statistics(request: Request, response: Response):
 @app.get("/api/timeline")
 @limiter.limit("100/minute")
 @cache(expire=1800)  # Cache for 30 minutes
-def get_timeline(request: Request, response: Response, limit: int = 15, offset: int = 0):
+async def get_timeline(request: Request, response: Response, limit: int = 15, offset: int = 0):
     """Get paginated timeline of all events across all mergers."""
     response.headers["Cache-Control"] = "public, max-age=60"
     with get_db() as conn:
@@ -515,7 +515,7 @@ def get_timeline(request: Request, response: Response, limit: int = 15, offset: 
 @app.get("/api/industries")
 @limiter.limit("60/minute")
 @cache(expire=3600)  # Cache for 1 hour
-def get_industries(request: Request, response: Response):
+async def get_industries(request: Request, response: Response):
     """Get all industries with merger counts."""
     response.headers["Cache-Control"] = "public, max-age=120"
     with get_db() as conn:
