@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'matters/**.html'
+      - 'matters/**'
   schedule:
   - cron: '16 1 * * *'
 
@@ -43,3 +43,10 @@ jobs:
           git commit -m "Update scraped data and attachments: ${timestamp}" || exit 0
           git pull --rebase
           git push
+
+      - name: Trigger Railway sync workflow if changes committed
+        if: steps.commit.outputs.changes == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run sync-to-railway.yml
