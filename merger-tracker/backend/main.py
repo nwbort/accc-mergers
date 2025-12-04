@@ -539,7 +539,7 @@ async def get_industries(request: Request, response: Response):
 @app.get("/api/upcoming-events")
 @limiter.limit("60/minute")
 @cache(expire=1800)  # Cache for 30 minutes
-def get_upcoming_events(request: Request, response: Response, days_ahead: int = 60):
+async def get_upcoming_events(request: Request, response: Response, days_ahead: int = 60):
     """
     Get upcoming events including:
     - Consultation response due dates
@@ -709,7 +709,7 @@ async def webhook_sync_data(request: Request, _: None = Depends(verify_webhook_s
 @app.get("/api/mergers/{merger_id}/commentary")
 @limiter.limit("100/minute")
 @cache(expire=300)  # Cache for 5 minutes (shorter than merger data)
-def get_commentary(request: Request, merger_id: str, response: Response):
+async def get_commentary(request: Request, merger_id: str, response: Response):
     """Get all commentary for a specific merger. Public endpoint."""
     response.headers["Cache-Control"] = "public, max-age=60"
     with get_db() as conn:
