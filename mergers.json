@@ -697,11 +697,13 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/carlyle-basf-coatings",
     "merger_name": "Carlyle - BASF Coatings",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-01064",
     "effective_notification_datetime": "2025-11-27T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-01-29T12:00:00Z",
+    "determination_publication_date": "2025-12-18T12:00:00Z",
+    "accc_determination": "Approved",
     "consultation_response_due_date": "2025-12-04T12:00:00Z",
     "acquirers": [
       {
@@ -742,6 +744,19 @@
         "date": "2025-11-27T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2025-12-18T12:00:00Z",
+        "title": "Carlyle - BASF Coatings",
+        "display_title": "Carlyle - BASF Coatings",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Carlyle%20BASF%20Coatings%20-Determination%20-%2018%20December%202025.pdf",
+        "url_gh": "https://github.com/nwbort/accc-mergers/raw/main/matters/MN-01064/Carlyle BASF Coatings -Determination - 18 December 2025.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2025-12-18T12:00:00Z",
+        "title": "Phase 1 - initial assessment determination: Approved",
+        "display_title": "Phase 1 - initial assessment determination: Approved"
       }
     ]
   },
