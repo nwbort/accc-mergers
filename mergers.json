@@ -551,11 +551,13 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/caterpillar-%E2%80%93-rpmglobal-holdings",
     "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-01058",
     "effective_notification_datetime": "2025-11-10T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2025-12-22T12:00:00Z",
+    "determination_publication_date": "2025-12-18T12:00:00Z",
+    "accc_determination": "Approved",
     "consultation_response_due_date": "2025-11-18T12:00:00Z",
     "acquirers": [
       {
@@ -582,7 +584,7 @@
         "name": "Software Publishing"
       }
     ],
-    "merger_description": "Caterpillar Inc (Caterpillar) proposes to acquire 100% of fully diluted share capital in RPMGlobal Holdings Limited (RPM) (ASX:RUL), through a scheme of arrangement.\n\nCaterpillar is a global manufacturer of construction and mining equipment, off-highway diesel and natural gas engines, industrial gas turbines and diesel-electric locomotives. Caterpillar also supplies a range of different software products which interface with its equipment including Minestar for fleet track, Visionlink and CAT Foresight for asset management.\n\nRPM is a global provider of mining software solutions. RPM\u2019s software solutions are enterprise applications used by mining companies, original equipment manufacturers (OEMs) and contractors, including for asset management, planning and\u00a0scheduling, short-interval control and execution, simulation, and financial forecasting. RPM also provides associated technical consulting and training services applicable for mine design, planning, scheduling, operational management, asset management, simulation, financial modelling and ESG reporting.\n\nCaterpillar is an end customer of RPM\u2019s asset management and mining simulation tools.",
+    "merger_description": "Caterpillar Inc (Caterpillar) proposes to acquire 100% of fully diluted share capital in RPMGlobal Holdings Limited (RPM) (ASX:RUL), through a scheme of arrangement.\n\nCaterpillar is a global manufacturer of construction and mining equipment, off-highway diesel and natural gas engines, industrial gas turbines and diesel-electric locomotives. Caterpillar also supplies a range of different software products which interface with its equipment including MineStar for fleet track, VisionLink and CAT Foresight for asset management.\n\nRPM is a global provider of mining software solutions. RPM\u2019s software solutions are enterprise applications used by mining companies, original equipment manufacturers (OEMs) and contractors, including for asset management, planning and\u00a0scheduling, short-interval control and execution, simulation, and financial forecasting. RPM also provides associated technical consulting and training services applicable for mine design, planning, scheduling, operational management, asset management, simulation, financial modelling and ESG reporting.\n\nCaterpillar is an end customer of RPM\u2019s asset management and mining simulation tools.",
     "events": [
       {
         "date": "2025-11-11T12:00:00Z",
@@ -596,6 +598,38 @@
         "date": "2025-11-10T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2025-12-18T12:00:00Z",
+        "title": "Caterpillar \u2013 RPMGlobal Holdings - Phase 1 determination",
+        "display_title": "Caterpillar \u2013 RPMGlobal Holdings - Phase 1 determination",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Caterpillar%20Inc%20-%20RPMGlobal%20Holdings%20Limited%20-%20Phase%201%20determination.pdf",
+        "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "Caterpillar Inc.\u2019s (Caterpillar) proposed acquisition of 100% of the\nfully diluted share capital in RPMGlobal Holdings Limited (ASX: RUL)\n(RPM) (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "The acquirer, Caterpillar, is a global manufacturer and supplier of\nconstruction and mining equipment, natural gas and off-highway\ndiesel engines, industrial gas turbines and diesel-electric\nlocomotives.\nCaterpillar supplies a range of equipment and ancillary support and\nservices to mining customers including large haul trucks, loading\nequipment, drilling equipment, dozers and graders, support trucks\nand site support machines, underground hard-rock equipment,\nlongwall systems and associated attachments and parts.\nCaterpillar also supplies different mining software solutions: Cat\nMineStar, Cat Foresight and Cat VisionLink, which can be integrated\nwith Caterpillar and other original equipment manufacturer (OEM)\nmining equipment for mining equipment management and\nautomation.\nThe target, RPM, is a global provider of mining software solutions for\nmanaging mine planning and design, simulation, scheduling, asset\nmanagement, operational management, financial modelling and\nenvironmental, social and governance reporting. Its software is used\nby mining companies, OEMs and contractors."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "The reasons for the ACCC\u2019s determination are set out in section 2."
+          }
+        ],
+        "url_gh": "https://github.com/nwbort/accc-mergers/raw/main/matters/MN-01058/Caterpillar Inc - RPMGlobal Holdings Limited - Phase 1 determination.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2025-12-18T12:00:00Z",
+        "title": "Phase 1 - initial assessment determination: Approved",
+        "display_title": "Phase 1 - initial assessment determination: Approved"
       }
     ]
   },
