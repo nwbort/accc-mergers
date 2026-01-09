@@ -7,7 +7,7 @@ on:
     paths:
       - 'mergers.json'
   schedule:
-    - cron: '1,6,11,15,21,26,31,36,41,46,51,56 * * * *'
+    - cron: '1,11,31,51 * * * *'
   # Allow manual trigger for testing
   workflow_dispatch:
 
