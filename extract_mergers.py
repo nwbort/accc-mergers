@@ -31,9 +31,8 @@ def is_safe_filename(filename):
     if '..' in filename or '/' in filename or '\\' in filename:
         return False
 
-    # Only allow safe characters: alphanumeric, space, dot, hyphen, underscore, parentheses, comma
-    # Also ensure filename doesn't start with a dot (hidden files)
-    if not re.match(r'^[a-zA-Z0-9][\w\-. (),]*\.[a-zA-Z0-9]+$', filename):
+    # Allow hyphens, en-dashes, and em-dashes
+    if not re.match(r'^[a-zA-Z0-9][\w\u002D\u2013\u2014. (),]*\.[a-zA-Z0-9]+$', filename):
         return False
 
     # Filename should not exceed reasonable length
