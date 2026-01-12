@@ -15,7 +15,7 @@ Output files (to merger-tracker/frontend/public/data/):
 
 import json
 import os
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from collections import defaultdict
 
@@ -133,7 +133,22 @@ def normalize_determination(determination: str) -> str | None:
     return determination
 
 
-def enrich_merger(merger: dict) -> dict:
+def extract_phase_from_event(event_title: str) -> str | None:
+    """Extract phase information from event title."""
+    if not event_title:
+        return None
+    if 'Phase 1' in event_title:
+        return 'Phase 1'
+    elif 'Phase 2' in event_title:
+        return 'Phase 2'
+    elif 'Public Benefits' in event_title or 'public benefits' in event_title:
+        return 'Public Benefits'
+    elif 'notified' in event_title:
+        return 'Phase 1'  # Notification always starts Phase 1
+    return None
+
+
+def enrich_merger(merger: dict, generated_at: str) -> dict:
     """Add computed fields to a merger (phase determinations, etc.)."""
     m = merger.copy()
     
@@ -170,12 +185,30 @@ def enrich_merger(merger: dict) -> dict:
     m['public_benefits_determination'] = pb_det
     m['public_benefits_determination_date'] = pb_det_date
     
+    # Normalise anszic_codes -> anzsic_codes
+    if 'anszic_codes' in m and 'anzsic_codes' not in m:
+        m['anzsic_codes'] = m.pop('anszic_codes')
+    elif 'anzsic_codes' not in m:
+        m['anzsic_codes'] = []
+    
+    # Add phase to events
+    if 'events' in m:
+        for event in m['events']:
+            if 'phase' not in event:
+                event['phase'] = extract_phase_from_event(event.get('title', ''))
+    
+    # Add timestamps (preserve existing or use generation time)
+    if 'created_at' not in m:
+        m['created_at'] = generated_at
+    if 'updated_at' not in m:
+        m['updated_at'] = generated_at
+    
     return m
 
 
-def generate_mergers_json(mergers: list) -> dict:
+def generate_mergers_json(mergers: list, generated_at: str) -> dict:
     """Generate mergers.json with wrapper format and enriched fields."""
-    enriched = [enrich_merger(m) for m in mergers]
+    enriched = [enrich_merger(m, generated_at) for m in mergers]
     return {"mergers": enriched}
 
 
@@ -222,7 +255,8 @@ def generate_stats_json(mergers: list) -> dict:
     # Top industries
     industry_counts = defaultdict(int)
     for m in mergers:
-        for code in m.get('anzsic_codes', []):
+        codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
+        for code in codes:
             industry_counts[code.get('name', 'Unknown')] += 1
     
     top_industries = [
@@ -273,15 +307,17 @@ def generate_timeline_json(mergers: list) -> dict:
         merger_name = m['merger_name']
         
         for event in m.get('events', []):
+            title = event.get('title', '')
             events.append({
                 "date": event.get('date'),
-                "title": event.get('title'),
+                "title": title,
                 "display_title": event.get('display_title'),
                 "url": event.get('url'),
                 "url_gh": event.get('url_gh'),
                 "status": event.get('status'),
                 "merger_id": merger_id,
-                "merger_name": merger_name
+                "merger_name": merger_name,
+                "phase": event.get('phase') or extract_phase_from_event(title)
             })
     
     # Sort by date descending
@@ -300,7 +336,9 @@ def generate_industries_json(mergers: list) -> dict:
     
     for m in mergers:
         merger_id = m['merger_id']
-        for code in m.get('anzsic_codes', []):
+        # Handle both spellings
+        codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
+        for code in codes:
             key = (code.get('code', ''), code.get('name', ''))
             industry_mergers[key].add(merger_id)
     
@@ -321,7 +359,7 @@ def generate_industries_json(mergers: list) -> dict:
 
 def generate_upcoming_events_json(mergers: list, days_ahead: int = 60) -> dict:
     """Generate upcoming events (consultation due, determination due)."""
-    now = datetime.utcnow()
+    now = datetime.now(timezone.utc).replace(tzinfo=None)
     future = now + timedelta(days=days_ahead)
     
     events = []
@@ -404,9 +442,12 @@ def main():
     # Create output directory
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     
+    # Generation timestamp
+    generated_at = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+    
     # Generate each file
     outputs = [
-        ("mergers.json", generate_mergers_json(mergers)),
+        ("mergers.json", generate_mergers_json(mergers, generated_at)),
         ("stats.json", generate_stats_json(mergers)),
         ("timeline.json", generate_timeline_json(mergers)),
         ("industries.json", generate_industries_json(mergers)),
