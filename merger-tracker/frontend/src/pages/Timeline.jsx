@@ -193,7 +193,7 @@ function Timeline() {
                               rel="noopener noreferrer"
                               className="text-xs text-gray-600 hover:text-gray-900"
                             >
-                              View archived document →
+                              View document →
                             </a>
                           </div>
                         )}

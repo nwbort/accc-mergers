@@ -340,7 +340,7 @@ def parse_merger_file(filepath, existing_merger_data=None):
                     # Add github url and status
                     parsed_url = urlparse(url)
                     filename = unquote(os.path.basename(parsed_url.path))
-                    event['url_gh'] = f"https://github.com/nwbort/accc-mergers/raw/main/matters/{merger_id}/{filename}"
+                    event['url_gh'] = f"/matters/{merger_id}/{filename}"
                     event['status'] = 'live'
 
                 scraped_events.append(event)

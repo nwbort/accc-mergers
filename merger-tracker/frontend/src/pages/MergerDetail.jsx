@@ -365,7 +365,7 @@ function MergerDetail() {
                                   rel="noopener noreferrer"
                                   className="text-sm text-primary hover:text-primary-dark"
                                 >
-                                  View archived document →
+                                  View document →
                                 </a>
                               )}
                             </div>
