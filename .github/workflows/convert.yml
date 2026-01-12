@@ -1,0 +1,83 @@
+name: Convert DOCX to PDF
+
+on:
+  # Run after extract workflow completes
+  workflow_run:
+    workflows: ["Extract and Commit Merger Data"]
+    types:
+      - completed
+  # Manual trigger
+  workflow_dispatch:
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    # Only run if triggered manually or if extract workflow succeeded
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Find unconverted DOCX files
+        id: find-docx
+        run: |
+          # Find all docx files
+          docx_files=$(find matters -name "*.docx" -type f 2>/dev/null || true)
+          
+          unconverted=""
+          for docx in $docx_files; do
+            # Get corresponding PDF path
+            pdf="${docx%.docx}.pdf"
+            if [ ! -f "$pdf" ]; then
+              unconverted="$unconverted$docx"$'\n'
+            fi
+          done
+          
+          # Trim trailing newline
+          unconverted=$(echo -n "$unconverted" | sed '/^$/d')
+          
+          if [ -n "$unconverted" ]; then
+            echo "Found unconverted files:"
+            echo "$unconverted"
+            echo "has_unconverted=true" >> $GITHUB_OUTPUT
+            # Store in file to handle newlines properly
+            echo "$unconverted" > /tmp/unconverted.txt
+          else
+            echo "No unconverted DOCX files found"
+            echo "has_unconverted=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install LibreOffice
+        if: steps.find-docx.outputs.has_unconverted == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libreoffice-writer --no-install-recommends
+
+      - name: Convert DOCX to PDF
+        if: steps.find-docx.outputs.has_unconverted == 'true'
+        run: |
+          while IFS= read -r docx; do
+            if [ -n "$docx" ]; then
+              echo "Converting: $docx"
+              dir=$(dirname "$docx")
+              libreoffice --headless --convert-to pdf --outdir "$dir" "$docx"
+            fi
+          done < /tmp/unconverted.txt
+
+      - name: Commit converted PDFs
+        if: steps.find-docx.outputs.has_unconverted == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add "matters/**/*.pdf"
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Convert DOCX attachments to PDF"
+            git push
+          fi

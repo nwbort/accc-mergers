@@ -169,6 +169,18 @@ def download_attachment(merger_id, attachment_url, event_title=None):
     return determination_data
 
 
+def get_serve_filename(original_filename: str) -> str:
+    """
+    Determine the filename to serve to users.
+    For DOCX files, returns the PDF filename (conversion handled by separate workflow).
+    For other files, returns the original filename.
+    """
+    if original_filename.lower().endswith('.docx'):
+        # Return PDF filename - conversion workflow will create it
+        return os.path.splitext(original_filename)[0] + '.pdf'
+    return original_filename
+
+
 def parse_merger_file(filepath, existing_merger_data=None):
     """
     Parses a single HTML file, extracts structured data for a merger,
@@ -337,10 +349,13 @@ def parse_merger_file(filepath, existing_merger_data=None):
                         event['determination_commission_division'] = determination_data.get('commission_division')
                         event['determination_table_content'] = determination_data.get('table_content')
 
-                    # Add github url and status
+                    # Get original filename and determine serve filename
+                    # For DOCX files, url_gh points to PDF (created by separate workflow)
                     parsed_url = urlparse(url)
-                    filename = unquote(os.path.basename(parsed_url.path))
-                    event['url_gh'] = f"/matters/{merger_id}/{filename}"
+                    original_filename = unquote(os.path.basename(parsed_url.path))
+                    serve_filename = get_serve_filename(original_filename)
+                    
+                    event['url_gh'] = f"/matters/{merger_id}/{serve_filename}"
                     event['status'] = 'live'
 
                 scraped_events.append(event)
@@ -481,7 +496,6 @@ def main():
     # 1. Load existing data if mergers.json exists
     existing_mergers = {}
     mergers_json_path = 'mergers.json'
-    mergers_json_size = os.path.getsize(mergers_json_path)
     if os.path.exists(mergers_json_path) and os.path.getsize(mergers_json_path) > 0:
         try:
             with open(mergers_json_path, 'r', encoding='utf-8') as f:
