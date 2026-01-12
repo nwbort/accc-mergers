@@ -443,7 +443,7 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     
     # Generation timestamp
-    generated_at = datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S')
+    generated_at = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     
     # Generate each file
     outputs = [
