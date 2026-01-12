@@ -24,27 +24,21 @@ jobs:
       - name: Find unconverted DOCX files
         id: find-docx
         run: |
-          # Find all docx files
-          docx_files=$(find matters -name "*.docx" -type f 2>/dev/null || true)
+          # Find all docx files without matching PDFs
+          # Use null delimiter to handle spaces in filenames
+          > /tmp/unconverted.txt
           
-          unconverted=""
-          for docx in $docx_files; do
-            # Get corresponding PDF path
+          while IFS= read -r -d '' docx; do
             pdf="${docx%.docx}.pdf"
             if [ ! -f "$pdf" ]; then
-              unconverted="$unconverted$docx"$'\n'
+              echo "$docx" >> /tmp/unconverted.txt
             fi
-          done
+          done < <(find matters -name "*.docx" -type f -print0 2>/dev/null)
           
-          # Trim trailing newline
-          unconverted=$(echo -n "$unconverted" | sed '/^$/d')
-          
-          if [ -n "$unconverted" ]; then
+          if [ -s /tmp/unconverted.txt ]; then
             echo "Found unconverted files:"
-            echo "$unconverted"
+            cat /tmp/unconverted.txt
             echo "has_unconverted=true" >> $GITHUB_OUTPUT
-            # Store in file to handle newlines properly
-            echo "$unconverted" > /tmp/unconverted.txt
           else
             echo "No unconverted DOCX files found"
             echo "has_unconverted=false" >> $GITHUB_OUTPUT
