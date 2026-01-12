@@ -1,0 +1,359 @@
+#!/usr/bin/env python3
+"""
+Generate static JSON data files for Cloudflare Pages deployment.
+
+This script reads mergers.json and generates pre-computed JSON files
+that the frontend can consume directly without a backend API.
+
+Output files (to merger-tracker/frontend/public/data/):
+- mergers.json      - All mergers wrapped in {mergers: [...]}
+- stats.json        - Aggregated statistics
+- timeline.json     - All events sorted by date
+- industries.json   - ANZSIC codes with merger counts
+- upcoming-events.json - Future consultation/determination dates
+"""
+
+import json
+import os
+from datetime import datetime, timedelta
+from pathlib import Path
+from collections import defaultdict
+
+# Paths
+SCRIPT_DIR = Path(__file__).parent
+MERGERS_JSON = SCRIPT_DIR / "mergers.json"
+HOLIDAYS_JSON = SCRIPT_DIR / "merger-tracker" / "frontend" / "src" / "data" / "act-public-holidays.json"
+OUTPUT_DIR = SCRIPT_DIR / "merger-tracker" / "frontend" / "public" / "data"
+
+
+def load_public_holidays():
+    """Load ACT public holidays from JSON file."""
+    with open(HOLIDAYS_JSON, 'r') as f:
+        data = json.load(f)
+    
+    holidays = set()
+    for year_data in data['holidays']:
+        for holiday in year_data['dates']:
+            holidays.add(holiday['date'])
+    
+    return holidays
+
+
+PUBLIC_HOLIDAYS = None  # Loaded lazily
+
+
+def is_christmas_new_year_period(date: datetime) -> bool:
+    """Check if date falls in Christmas/New Year period (23 Dec - 10 Jan)."""
+    month = date.month
+    day = date.day
+    
+    if month == 12 and day >= 23:
+        return True
+    if month == 1 and day <= 10:
+        return True
+    
+    return False
+
+
+def is_business_day(date: datetime) -> bool:
+    """Check if a date is a business day according to ACCC Act."""
+    global PUBLIC_HOLIDAYS
+    if PUBLIC_HOLIDAYS is None:
+        PUBLIC_HOLIDAYS = load_public_holidays()
+    
+    # Saturday (5) or Sunday (6)
+    if date.weekday() in (5, 6):
+        return False
+    
+    # Christmas/New Year period
+    if is_christmas_new_year_period(date):
+        return False
+    
+    # Public holiday
+    date_string = date.strftime('%Y-%m-%d')
+    if date_string in PUBLIC_HOLIDAYS:
+        return False
+    
+    return True
+
+
+def calculate_business_days(start_date_str: str, end_date_str: str) -> int | None:
+    """Calculate business days between two ISO date strings (inclusive of start)."""
+    if not start_date_str or not end_date_str:
+        return None
+    
+    try:
+        start = datetime.fromisoformat(start_date_str.replace('Z', '+00:00'))
+        end = datetime.fromisoformat(end_date_str.replace('Z', '+00:00'))
+        
+        start = start.replace(hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
+        end = end.replace(hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
+        
+        business_days = 0
+        current = start
+        
+        while current <= end:
+            if is_business_day(current):
+                business_days += 1
+            current += timedelta(days=1)
+        
+        return business_days
+    except (ValueError, AttributeError):
+        return None
+
+
+def calculate_calendar_days(start_date_str: str, end_date_str: str) -> int | None:
+    """Calculate calendar days between two ISO date strings."""
+    if not start_date_str or not end_date_str:
+        return None
+    
+    try:
+        start = datetime.fromisoformat(start_date_str.replace('Z', '+00:00'))
+        end = datetime.fromisoformat(end_date_str.replace('Z', '+00:00'))
+        return (end - start).days
+    except (ValueError, AttributeError):
+        return None
+
+
+def generate_mergers_json(mergers: list) -> dict:
+    """Generate mergers.json with wrapper format."""
+    return {"mergers": mergers}
+
+
+def generate_stats_json(mergers: list) -> dict:
+    """Generate aggregated statistics."""
+    total_mergers = len(mergers)
+    
+    # By status
+    by_status = defaultdict(int)
+    for m in mergers:
+        status = m.get('status', 'Unknown')
+        by_status[status] += 1
+    
+    # By determination
+    by_determination = defaultdict(int)
+    for m in mergers:
+        det = m.get('accc_determination')
+        if det:
+            by_determination[det] += 1
+    
+    # Phase durations
+    durations = []
+    business_durations = []
+    
+    for m in mergers:
+        start = m.get('effective_notification_datetime')
+        end = m.get('determination_publication_date')
+        
+        if start and end:
+            cal_days = calculate_calendar_days(start, end)
+            if cal_days is not None:
+                durations.append(cal_days)
+            
+            bus_days = calculate_business_days(start, end)
+            if bus_days is not None:
+                business_durations.append(bus_days)
+    
+    avg_duration = sum(durations) / len(durations) if durations else None
+    median_duration = sorted(durations)[len(durations) // 2] if durations else None
+    
+    avg_business = sum(business_durations) / len(business_durations) if business_durations else None
+    median_business = sorted(business_durations)[len(business_durations) // 2] if business_durations else None
+    
+    # Top industries
+    industry_counts = defaultdict(int)
+    for m in mergers:
+        for code in m.get('anzsic_codes', []):
+            industry_counts[code.get('name', 'Unknown')] += 1
+    
+    top_industries = [
+        {"name": name, "count": count}
+        for name, count in sorted(industry_counts.items(), key=lambda x: -x[1])[:10]
+    ]
+    
+    # Recent mergers
+    sorted_mergers = sorted(
+        mergers,
+        key=lambda x: x.get('effective_notification_datetime', ''),
+        reverse=True
+    )
+    recent_mergers = [
+        {
+            "merger_id": m['merger_id'],
+            "merger_name": m['merger_name'],
+            "status": m.get('status'),
+            "accc_determination": m.get('accc_determination'),
+            "effective_notification_datetime": m.get('effective_notification_datetime')
+        }
+        for m in sorted_mergers[:5]
+    ]
+    
+    return {
+        "total_mergers": total_mergers,
+        "by_status": dict(by_status),
+        "by_determination": dict(by_determination),
+        "phase_duration": {
+            "average_days": avg_duration,
+            "median_days": median_duration,
+            "all_durations": durations,
+            "average_business_days": avg_business,
+            "median_business_days": median_business,
+            "all_business_durations": business_durations
+        },
+        "top_industries": top_industries,
+        "recent_mergers": recent_mergers
+    }
+
+
+def generate_timeline_json(mergers: list) -> dict:
+    """Generate timeline of all events."""
+    events = []
+    
+    for m in mergers:
+        merger_id = m['merger_id']
+        merger_name = m['merger_name']
+        
+        for event in m.get('events', []):
+            events.append({
+                "date": event.get('date'),
+                "title": event.get('title'),
+                "display_title": event.get('display_title'),
+                "url": event.get('url'),
+                "url_gh": event.get('url_gh'),
+                "status": event.get('status'),
+                "merger_id": merger_id,
+                "merger_name": merger_name
+            })
+    
+    # Sort by date descending
+    events.sort(key=lambda x: x.get('date', ''), reverse=True)
+    
+    return {
+        "events": events,
+        "total": len(events)
+    }
+
+
+def generate_industries_json(mergers: list) -> dict:
+    """Generate industry list with merger counts."""
+    # Group by (code, name) to count unique mergers
+    industry_mergers = defaultdict(set)
+    
+    for m in mergers:
+        merger_id = m['merger_id']
+        for code in m.get('anzsic_codes', []):
+            key = (code.get('code', ''), code.get('name', ''))
+            industry_mergers[key].add(merger_id)
+    
+    industries = [
+        {
+            "code": code,
+            "name": name,
+            "merger_count": len(merger_ids)
+        }
+        for (code, name), merger_ids in industry_mergers.items()
+    ]
+    
+    # Sort by merger count descending
+    industries.sort(key=lambda x: -x['merger_count'])
+    
+    return {"industries": industries}
+
+
+def generate_upcoming_events_json(mergers: list, days_ahead: int = 60) -> dict:
+    """Generate upcoming events (consultation due, determination due)."""
+    now = datetime.utcnow()
+    future = now + timedelta(days=days_ahead)
+    
+    events = []
+    
+    for m in mergers:
+        # Skip if already determined
+        if m.get('determination_publication_date'):
+            continue
+        
+        merger_id = m['merger_id']
+        merger_name = m['merger_name']
+        status = m.get('status')
+        stage = m.get('stage')
+        notification_date = m.get('effective_notification_datetime')
+        
+        # Consultation response due
+        consultation_due = m.get('consultation_response_due_date')
+        if consultation_due:
+            try:
+                due_date = datetime.fromisoformat(consultation_due.replace('Z', '+00:00')).replace(tzinfo=None)
+                if now <= due_date <= future:
+                    events.append({
+                        "type": "consultation_due",
+                        "event_type_display": "Consultation responses due",
+                        "date": consultation_due,
+                        "merger_id": merger_id,
+                        "merger_name": merger_name,
+                        "status": status,
+                        "stage": stage,
+                        "effective_notification_datetime": notification_date
+                    })
+            except (ValueError, AttributeError):
+                pass
+        
+        # Determination period end
+        determination_due = m.get('end_of_determination_period')
+        if determination_due:
+            try:
+                due_date = datetime.fromisoformat(determination_due.replace('Z', '+00:00')).replace(tzinfo=None)
+                if now <= due_date <= future:
+                    events.append({
+                        "type": "determination_due",
+                        "event_type_display": "Determination due",
+                        "date": determination_due,
+                        "merger_id": merger_id,
+                        "merger_name": merger_name,
+                        "status": status,
+                        "stage": stage,
+                        "effective_notification_datetime": notification_date
+                    })
+            except (ValueError, AttributeError):
+                pass
+    
+    # Sort by date
+    events.sort(key=lambda x: x['date'])
+    
+    return {
+        "events": events,
+        "count": len(events),
+        "days_ahead": days_ahead
+    }
+
+
+def main():
+    """Generate all static data files."""
+    print("Loading mergers.json...")
+    with open(MERGERS_JSON, 'r', encoding='utf-8') as f:
+        mergers = json.load(f)
+    
+    print(f"Loaded {len(mergers)} mergers")
+    
+    # Create output directory
+    OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    
+    # Generate each file
+    outputs = [
+        ("mergers.json", generate_mergers_json(mergers)),
+        ("stats.json", generate_stats_json(mergers)),
+        ("timeline.json", generate_timeline_json(mergers)),
+        ("industries.json", generate_industries_json(mergers)),
+        ("upcoming-events.json", generate_upcoming_events_json(mergers)),
+    ]
+    
+    for filename, data in outputs:
+        output_path = OUTPUT_DIR / filename
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=2)
+        print(f"✓ Generated {output_path}")
+    
+    print("\nDone!")
+
+
+if __name__ == "__main__":
+    main()
