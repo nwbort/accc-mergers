@@ -929,6 +929,66 @@
     ]
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cse-crosscom-%E2%80%93-progility",
+    "merger_name": "CSE Crosscom \u2013 Progility",
+    "status": "Under assessment",
+    "merger_id": "MN-01071",
+    "effective_notification_datetime": "2025-12-22T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-02-23T12:00:00Z",
+    "consultation_response_due_date": "2026-01-19T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "CSE CROSSCOM PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "25 606 614 500"
+      },
+      {
+        "name": "CSE-Global (Australia) Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "85 109 958 090"
+      }
+    ],
+    "targets": [
+      {
+        "name": "PROGILITY PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "11 131 639 837"
+      }
+    ],
+    "other_parties": [],
+    "anszic_codes": [
+      {
+        "code": "3493",
+        "name": "Telecommunication Goods Wholesaling"
+      },
+      {
+        "code": "5809",
+        "name": "Other Telecommunications Services"
+      },
+      {
+        "code": "7000",
+        "name": "Computer System Design and Related Services"
+      }
+    ],
+    "merger_description": "CSE Crosscom Pty Ltd (**CSE Crosscom**) proposes to acquire 100% of the share capital in Progility Pty Ltd (**Progility**).\n\nCSE Crosscom is an Australian communications systems integrator that designs, supplies, installs and maintains mission- and business-critical communications solutions nationally, including two-way Land Mobile Radio networks, push-to-talk over cellular solutions, in-building coverage/distributed antenna systems, internet protocol networking and managed services.\n\nCSE Crosscom is a subsidiary of CSE Global Limited\u2019s Australia/New Zealand communications business. CSE Global Limited is a public company listed on the Singapore stock exchange.\n\nProgility supplies communications integration and enterprise solutions with a particular focus on two-way radio networks, push-to-talk over cellular solutions and managed services.\n\nCSE Crosscom and Progility both supply communications systems integration services to enterprise and public sector customers nationally.",
+    "events": [
+      {
+        "date": "2026-01-12T12:00:00Z",
+        "title": "Questionnaire \u2013 CSE Crosscom \u2013 Progility",
+        "display_title": "Questionnaire \u2013 CSE Crosscom \u2013 Progility",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20CSE%20Crosscom%20%E2%80%93%20Progility%20-%2012%20January%202026.pdf",
+        "url_gh": "https://github.com/nwbort/accc-mergers/raw/main/matters/MN-01071/Questionnaire - CSE Crosscom \u2013 Progility - 12 January 2026.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2025-12-22T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ]
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/servicenow-veza",
     "merger_name": "ServiceNow - Veza",
     "status": "Under assessment",
