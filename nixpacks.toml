@@ -1,8 +1,0 @@
-[phases.setup]
-nixPkgs = ["python311", "gcc"]
-
-[phases.install]
-cmds = ["python -m venv --copies /opt/venv && . /opt/venv/bin/activate && pip install -r merger-tracker/backend/requirements.txt"]
-
-[start]
-cmd = "bash start.sh"
