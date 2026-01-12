@@ -115,9 +115,68 @@ def calculate_calendar_days(start_date_str: str, end_date_str: str) -> int | Non
         return None
 
 
+def normalize_determination(determination: str) -> str | None:
+    """Normalize determination strings to cleaner values."""
+    if not determination:
+        return None
+    
+    # Remove 'ACCC Determination' prefix
+    determination = determination.replace('ACCC Determination', '').strip()
+    
+    if 'Approved' in determination or 'approved' in determination:
+        return 'Approved'
+    elif 'Declined' in determination or 'declined' in determination:
+        return 'Declined'
+    elif 'Not opposed' in determination or 'not opposed' in determination:
+        return 'Not opposed'
+    
+    return determination
+
+
+def enrich_merger(merger: dict) -> dict:
+    """Add computed fields to a merger (phase determinations, etc.)."""
+    m = merger.copy()
+    
+    # Normalize the determination
+    m['accc_determination'] = normalize_determination(m.get('accc_determination'))
+    
+    # Compute phase-specific determinations based on stage
+    phase_1_det = None
+    phase_1_det_date = None
+    phase_2_det = None
+    phase_2_det_date = None
+    pb_det = None
+    pb_det_date = None
+    
+    if m.get('accc_determination') and m.get('determination_publication_date'):
+        stage = m.get('stage', 'Phase 1')
+        det = m['accc_determination']
+        det_date = m['determination_publication_date']
+        
+        if 'Phase 1' in stage:
+            phase_1_det = det
+            phase_1_det_date = det_date
+        elif 'Phase 2' in stage:
+            phase_2_det = det
+            phase_2_det_date = det_date
+        elif 'Public' in stage or 'Benefits' in stage:
+            pb_det = det
+            pb_det_date = det_date
+    
+    m['phase_1_determination'] = phase_1_det
+    m['phase_1_determination_date'] = phase_1_det_date
+    m['phase_2_determination'] = phase_2_det
+    m['phase_2_determination_date'] = phase_2_det_date
+    m['public_benefits_determination'] = pb_det
+    m['public_benefits_determination_date'] = pb_det_date
+    
+    return m
+
+
 def generate_mergers_json(mergers: list) -> dict:
-    """Generate mergers.json with wrapper format."""
-    return {"mergers": mergers}
+    """Generate mergers.json with wrapper format and enriched fields."""
+    enriched = [enrich_merger(m) for m in mergers]
+    return {"mergers": enriched}
 
 
 def generate_stats_json(mergers: list) -> dict:
@@ -130,10 +189,10 @@ def generate_stats_json(mergers: list) -> dict:
         status = m.get('status', 'Unknown')
         by_status[status] += 1
     
-    # By determination
+    # By determination (normalized)
     by_determination = defaultdict(int)
     for m in mergers:
-        det = m.get('accc_determination')
+        det = normalize_determination(m.get('accc_determination'))
         if det:
             by_determination[det] += 1
     
@@ -182,7 +241,7 @@ def generate_stats_json(mergers: list) -> dict:
             "merger_id": m['merger_id'],
             "merger_name": m['merger_name'],
             "status": m.get('status'),
-            "accc_determination": m.get('accc_determination'),
+            "accc_determination": normalize_determination(m.get('accc_determination')),
             "effective_notification_datetime": m.get('effective_notification_datetime')
         }
         for m in sorted_mergers[:5]
@@ -330,7 +389,15 @@ def main():
     """Generate all static data files."""
     print("Loading mergers.json...")
     with open(MERGERS_JSON, 'r', encoding='utf-8') as f:
-        mergers = json.load(f)
+        data = json.load(f)
+    
+    # Handle both formats: raw list or {mergers: [...]} wrapper
+    if isinstance(data, list):
+        mergers = data
+    elif isinstance(data, dict) and 'mergers' in data:
+        mergers = data['mergers']
+    else:
+        raise ValueError("Unexpected mergers.json format")
     
     print(f"Loaded {len(mergers)} mergers")
     
