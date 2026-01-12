@@ -989,6 +989,77 @@
     ]
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/google-wiz",
+    "merger_name": "Google - Wiz",
+    "status": "Under assessment",
+    "merger_id": "MN-15002",
+    "effective_notification_datetime": "2026-01-09T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-02-23T12:00:00Z",
+    "consultation_response_due_date": "2026-01-23T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "Google LLC",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "targets": [
+      {
+        "name": "Wiz Inc",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "other_parties": [],
+    "anszic_codes": [
+      {
+        "code": "5420",
+        "name": "Software Publishing"
+      },
+      {
+        "code": "5700",
+        "name": "Internet Publishing and Broadcasting"
+      },
+      {
+        "code": "5910",
+        "name": "Internet Service Providers and Web Search Portals"
+      },
+      {
+        "code": "5921",
+        "name": "Data Processing and Web Hosting Services"
+      },
+      {
+        "code": "5922",
+        "name": "Electronic Information Storage Services"
+      },
+      {
+        "code": "6940",
+        "name": "Advertising Services"
+      },
+      {
+        "code": "7000",
+        "name": "Computer System Design and Related Services"
+      }
+    ],
+    "merger_description": "Google LLC (**Google**) proposes to acquire 100% of the share capital in Wiz Inc (**Wiz**).\n\nGoogle supplies a wide range of digital products and services in Australia, including general search services, a mobile operating system (Android), a mobile app marketplace (the Play Store) and advertising technology services, and operates across multiple layers of the generative AI stack. Google supplies a range of cloud computing services to Australian consumers and businesses through its Google Cloud division, and also offers several cloud security products.\n\nWiz offers cloud security services to enable organisations to identify and prevent critical security risks across multiple cloud platforms, as well as in hybrid and on-premises environments. Wiz\u2019s primary product is a cloud native application protection platform (**CNAPP**) called Wiz Cloud. Wiz also offers add-ons to Wiz Cloud to enhance its capabilities, including Wiz Sensor, Wiz Defend and Wiz Code.",
+    "events": [
+      {
+        "date": "2026-01-12T12:00:00Z",
+        "title": "Google Wiz - Questionnaire - January 2026",
+        "display_title": "Google Wiz - Questionnaire - January 2026",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Google%20Wiz%20-%20Questionnaire%20-%20January%202026.docx",
+        "url_gh": "https://github.com/nwbort/accc-mergers/raw/main/matters/MN-15002/Google Wiz - Questionnaire - January 2026.docx",
+        "status": "live"
+      },
+      {
+        "date": "2026-01-09T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ]
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/servicenow-veza",
     "merger_name": "ServiceNow - Veza",
     "status": "Under assessment",
