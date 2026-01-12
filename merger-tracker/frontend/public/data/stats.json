@@ -1,0 +1,115 @@
+{
+  "total_mergers": 14,
+  "by_status": {
+    "Assessment completed": 8,
+    "Under assessment": 6
+  },
+  "by_determination": {
+    "Approved": 8
+  },
+  "phase_duration": {
+    "average_days": 25.125,
+    "median_days": 25,
+    "all_durations": [
+      21,
+      21,
+      28,
+      25,
+      25,
+      38,
+      22,
+      21
+    ],
+    "average_business_days": 18.875,
+    "median_business_days": 18,
+    "all_business_durations": [
+      16,
+      16,
+      21,
+      18,
+      18,
+      29,
+      17,
+      16
+    ]
+  },
+  "top_industries": [
+    {
+      "name": "Software Publishing",
+      "count": 3
+    },
+    {
+      "name": "Supermarket and Grocery Stores",
+      "count": 2
+    },
+    {
+      "name": "Non-Residential Property Operators",
+      "count": 2
+    },
+    {
+      "name": "Computer System Design and Related Services",
+      "count": 2
+    },
+    {
+      "name": "Beverage Manufacturing",
+      "count": 1
+    },
+    {
+      "name": "Property Operators and Real Estate Services",
+      "count": 1
+    },
+    {
+      "name": "Other Machinery and Equipment Manufacturing n.e.c.",
+      "count": 1
+    },
+    {
+      "name": "Land Development and Subdivision",
+      "count": 1
+    },
+    {
+      "name": "Petroleum Refining and Petroleum Fuel Manufacturing",
+      "count": 1
+    },
+    {
+      "name": "Petroleum Product Wholesaling",
+      "count": 1
+    }
+  ],
+  "recent_mergers": [
+    {
+      "merger_id": "MN-15002",
+      "merger_name": "Google - Wiz",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-01-09T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-01071",
+      "merger_name": "CSE Crosscom \u2013 Progility",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2025-12-22T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-85002",
+      "merger_name": "ServiceNow - Veza",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2025-12-22T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-01069",
+      "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia Pty Ltd",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2025-12-12T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-01064",
+      "merger_name": "Carlyle - BASF Coatings",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2025-11-27T12:00:00Z"
+    }
+  ]
+}

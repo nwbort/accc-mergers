@@ -32,21 +32,17 @@ jobs:
       - name: Run extraction script
         run: python extract_mergers.py
 
+      - name: Generate static data files
+        run: python generate_static_data.py
+
       - name: Commit and push changes
         id: commit
         run: |-
           git config user.name "Automated"
           git config user.email "actions@users.noreply.github.com"
-          git add mergers.json matters/
+          git add mergers.json matters/ merger-tracker/frontend/public/data/
           timestamp=$(date -u)
           git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
-          git commit -m "Update scraped data and attachments: ${timestamp}" || exit 0
+          git commit -m "Update scraped data and static files: ${timestamp}" || exit 0
           git pull --rebase
           git push
-
-      - name: Trigger Railway sync workflow if changes committed
-        if: steps.commit.outputs.changes == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh workflow run sync-to-railway.yml
