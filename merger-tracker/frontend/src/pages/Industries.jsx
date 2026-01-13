@@ -223,10 +223,12 @@ function Industries() {
                               <div className="flex items-center justify-between">
                                 <span className="text-sm font-medium text-primary">
                                   {merger.merger_name}
-                                  {merger.is_waiver && (
-                                    <span className="ml-2 text-amber-700 font-normal">(waiver)</span>
-                                  )}
                                 </span>
+                                {merger.is_waiver && (
+                                  <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                                    Waiver
+                                  </span>
+                                )}
                                 <span className="text-xs text-gray-500">
                                   {merger.merger_id}
                                 </span>

@@ -259,8 +259,8 @@ function Dashboard() {
                         {merger.merger_name}
                       </p>
                       {merger.is_waiver && (
-                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-800">
-                          waiver
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                          Waiver
                         </span>
                       )}
                     </div>

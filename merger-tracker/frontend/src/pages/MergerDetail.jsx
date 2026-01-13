@@ -146,8 +146,8 @@ function MergerDetail() {
                   {merger.merger_name}
                 </h1>
                 {merger.is_waiver && (
-                  <span className="inline-flex items-center px-2.5 py-1 rounded text-sm font-medium bg-amber-100 text-amber-800">
-                    waiver
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-sm font-medium bg-amber-100 text-amber-800">
+                    Waiver
                   </span>
                 )}
               </div>
