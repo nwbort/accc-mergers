@@ -143,9 +143,19 @@ def extract_phase_from_event(event_title: str) -> str | None:
         return 'Phase 2'
     elif 'Public Benefits' in event_title or 'public benefits' in event_title:
         return 'Public Benefits'
+    elif 'Waiver' in event_title or 'waiver' in event_title:
+        return 'Waiver'
     elif 'notified' in event_title:
         return 'Phase 1'  # Notification always starts Phase 1
     return None
+
+
+def is_waiver_merger(merger: dict) -> bool:
+    """Check if a merger is a waiver application (not a full notification)."""
+    merger_id = merger.get('merger_id', '')
+    stage = merger.get('stage', '')
+    
+    return merger_id.startswith('WA-') or 'Waiver' in stage
 
 
 def enrich_merger(merger: dict) -> dict:
@@ -154,6 +164,9 @@ def enrich_merger(merger: dict) -> dict:
     
     # Normalize the determination
     m['accc_determination'] = normalize_determination(m.get('accc_determination'))
+    
+    # Add is_waiver flag
+    m['is_waiver'] = is_waiver_merger(merger)
     
     # Compute phase-specific determinations based on stage
     phase_1_det = None
@@ -207,27 +220,32 @@ def generate_mergers_json(mergers: list) -> dict:
 
 
 def generate_stats_json(mergers: list) -> dict:
-    """Generate aggregated statistics."""
-    total_mergers = len(mergers)
+    """Generate aggregated statistics (excluding waiver mergers)."""
+    # Filter out waiver mergers for stats
+    notification_mergers = [m for m in mergers if not is_waiver_merger(m)]
+    waiver_mergers = [m for m in mergers if is_waiver_merger(m)]
     
-    # By status
+    total_notifications = len(notification_mergers)
+    total_waivers = len(waiver_mergers)
+    
+    # By status (notifications only)
     by_status = defaultdict(int)
-    for m in mergers:
+    for m in notification_mergers:
         status = m.get('status', 'Unknown')
         by_status[status] += 1
     
-    # By determination (normalized)
+    # By determination (notifications only, normalized)
     by_determination = defaultdict(int)
-    for m in mergers:
+    for m in notification_mergers:
         det = normalize_determination(m.get('accc_determination'))
         if det:
             by_determination[det] += 1
     
-    # Phase durations
+    # Phase durations (notifications only)
     durations = []
     business_durations = []
     
-    for m in mergers:
+    for m in notification_mergers:
         start = m.get('effective_notification_datetime')
         end = m.get('determination_publication_date')
         
@@ -246,7 +264,7 @@ def generate_stats_json(mergers: list) -> dict:
     avg_business = sum(business_durations) / len(business_durations) if business_durations else None
     median_business = sorted(business_durations)[len(business_durations) // 2] if business_durations else None
     
-    # Top industries
+    # Top industries (including waivers)
     industry_counts = defaultdict(int)
     for m in mergers:
         codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
@@ -258,7 +276,7 @@ def generate_stats_json(mergers: list) -> dict:
         for name, count in sorted(industry_counts.items(), key=lambda x: -x[1])[:10]
     ]
     
-    # Recent mergers
+    # Recent mergers (include all but mark waivers)
     sorted_mergers = sorted(
         mergers,
         key=lambda x: x.get('effective_notification_datetime', ''),
@@ -270,13 +288,15 @@ def generate_stats_json(mergers: list) -> dict:
             "merger_name": m['merger_name'],
             "status": m.get('status'),
             "accc_determination": normalize_determination(m.get('accc_determination')),
-            "effective_notification_datetime": m.get('effective_notification_datetime')
+            "effective_notification_datetime": m.get('effective_notification_datetime'),
+            "is_waiver": is_waiver_merger(m)
         }
         for m in sorted_mergers[:5]
     ]
     
     return {
-        "total_mergers": total_mergers,
+        "total_mergers": total_notifications,
+        "total_waivers": total_waivers,
         "by_status": dict(by_status),
         "by_determination": dict(by_determination),
         "phase_duration": {
@@ -299,6 +319,7 @@ def generate_timeline_json(mergers: list) -> dict:
     for m in mergers:
         merger_id = m['merger_id']
         merger_name = m['merger_name']
+        merger_is_waiver = is_waiver_merger(m)
         
         for event in m.get('events', []):
             title = event.get('title', '')
@@ -311,7 +332,8 @@ def generate_timeline_json(mergers: list) -> dict:
                 "status": event.get('status'),
                 "merger_id": merger_id,
                 "merger_name": merger_name,
-                "phase": event.get('phase') or extract_phase_from_event(title)
+                "phase": event.get('phase') or extract_phase_from_event(title),
+                "is_waiver": merger_is_waiver
             })
     
     # Sort by date descending
@@ -361,6 +383,10 @@ def generate_upcoming_events_json(mergers: list, days_ahead: int = 60) -> dict:
     for m in mergers:
         # Skip if already determined
         if m.get('determination_publication_date'):
+            continue
+        
+        # Skip waiver mergers (they don't have determination periods)
+        if is_waiver_merger(m):
             continue
         
         merger_id = m['merger_id']
@@ -431,7 +457,10 @@ def main():
     else:
         raise ValueError("Unexpected mergers.json format")
     
-    print(f"Loaded {len(mergers)} mergers")
+    # Count waivers vs notifications
+    waiver_count = sum(1 for m in mergers if is_waiver_merger(m))
+    notification_count = len(mergers) - waiver_count
+    print(f"Loaded {len(mergers)} mergers ({notification_count} notifications, {waiver_count} waivers)")
     
     # Create output directory
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

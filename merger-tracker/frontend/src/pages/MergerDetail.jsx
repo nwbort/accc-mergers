@@ -141,9 +141,16 @@ function MergerDetail() {
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900 mb-2">
-                {merger.merger_name}
-              </h1>
+              <div className="flex items-center gap-3 mb-2">
+                <h1 className="text-2xl font-bold text-gray-900">
+                  {merger.merger_name}
+                </h1>
+                {merger.is_waiver && (
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-sm font-medium bg-amber-100 text-amber-800">
+                    Waiver
+                  </span>
+                )}
+              </div>
               <div className="flex items-center gap-4">
                 <p className="text-sm text-gray-500">{merger.merger_id}</p>
                 {merger.url && (
@@ -172,25 +179,28 @@ function MergerDetail() {
             </div>
             <div>
               <h3 className="text-sm font-medium text-gray-500 mb-2">
-                Effective Notification
+                {merger.is_waiver ? 'Waiver Application Date' : 'Effective Notification'}
               </h3>
               <p className="text-base text-gray-900">
                 {formatDate(merger.effective_notification_datetime)}
               </p>
             </div>
-            <div>
-              <h3 className="text-sm font-medium text-gray-500 mb-2">
-                End of Determination Period
-              </h3>
-              <p className="text-base text-gray-900">
-                {formatDate(merger.end_of_determination_period)}
-                {daysRemaining !== null && daysRemaining > 0 && !merger.determination_publication_date && (
-                  <span className="ml-2 text-sm text-gray-500">
-                    ({daysRemaining} calendar days, {businessDaysRemaining} business days remaining)
-                  </span>
-                )}
-              </p>
-            </div>
+            {/* Only show End of Determination Period for non-waiver mergers */}
+            {!merger.is_waiver && (
+              <div>
+                <h3 className="text-sm font-medium text-gray-500 mb-2">
+                  End of Determination Period
+                </h3>
+                <p className="text-base text-gray-900">
+                  {formatDate(merger.end_of_determination_period)}
+                  {daysRemaining !== null && daysRemaining > 0 && !merger.determination_publication_date && (
+                    <span className="ml-2 text-sm text-gray-500">
+                      ({daysRemaining} calendar days, {businessDaysRemaining} business days remaining)
+                    </span>
+                  )}
+                </p>
+              </div>
+            )}
             {merger.determination_publication_date && (
               <div>
                 <h3 className="text-sm font-medium text-gray-500 mb-2">
