@@ -148,7 +148,7 @@ def extract_phase_from_event(event_title: str) -> str | None:
     return None
 
 
-def enrich_merger(merger: dict, generated_at: str) -> dict:
+def enrich_merger(merger: dict) -> dict:
     """Add computed fields to a merger (phase determinations, etc.)."""
     m = merger.copy()
     
@@ -197,18 +197,12 @@ def enrich_merger(merger: dict, generated_at: str) -> dict:
             if 'phase' not in event:
                 event['phase'] = extract_phase_from_event(event.get('title', ''))
     
-    # Add timestamps (preserve existing or use generation time)
-    if 'created_at' not in m:
-        m['created_at'] = generated_at
-    if 'updated_at' not in m:
-        m['updated_at'] = generated_at
-    
     return m
 
 
-def generate_mergers_json(mergers: list, generated_at: str) -> dict:
+def generate_mergers_json(mergers: list) -> dict:
     """Generate mergers.json with wrapper format and enriched fields."""
-    enriched = [enrich_merger(m, generated_at) for m in mergers]
+    enriched = [enrich_merger(m) for m in mergers]
     return {"mergers": enriched}
 
 
@@ -442,12 +436,9 @@ def main():
     # Create output directory
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     
-    # Generation timestamp
-    generated_at = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
-    
     # Generate each file
     outputs = [
-        ("mergers.json", generate_mergers_json(mergers, generated_at)),
+        ("mergers.json", generate_mergers_json(mergers)),
         ("stats.json", generate_stats_json(mergers)),
         ("timeline.json", generate_timeline_json(mergers)),
         ("industries.json", generate_industries_json(mergers)),
