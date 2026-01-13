@@ -1,15 +1,16 @@
 {
-  "total_mergers": 16,
+  "total_mergers": 14,
+  "total_waivers": 2,
   "by_status": {
-    "Assessment completed": 10,
+    "Assessment completed": 8,
     "Under assessment": 6
   },
   "by_determination": {
-    "Approved": 10
+    "Approved": 8
   },
   "phase_duration": {
-    "average_days": 21.8,
-    "median_days": 22,
+    "average_days": 25.125,
+    "median_days": 25,
     "all_durations": [
       21,
       21,
@@ -18,12 +19,10 @@
       25,
       38,
       22,
-      21,
-      7,
-      10
+      21
     ],
-    "average_business_days": 15.5,
-    "median_business_days": 17,
+    "average_business_days": 18.875,
+    "median_business_days": 18,
     "all_business_durations": [
       16,
       16,
@@ -32,9 +31,7 @@
       18,
       29,
       17,
-      16,
-      2,
-      2
+      16
     ]
   },
   "top_industries": [
@@ -85,35 +82,40 @@
       "merger_name": "Google - Wiz",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-01-09T12:00:00Z"
+      "effective_notification_datetime": "2026-01-09T12:00:00Z",
+      "is_waiver": false
     },
     {
       "merger_id": "WA-35001",
       "merger_name": "WSP \u2013 TRC",
       "status": "Assessment completed",
       "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-01-06T12:00:00Z"
+      "effective_notification_datetime": "2026-01-06T12:00:00Z",
+      "is_waiver": true
     },
     {
       "merger_id": "WA-70002",
       "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
       "status": "Assessment completed",
       "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-01-03T12:00:00Z"
+      "effective_notification_datetime": "2026-01-03T12:00:00Z",
+      "is_waiver": true
     },
     {
       "merger_id": "MN-01071",
       "merger_name": "CSE Crosscom \u2013 Progility",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2025-12-22T12:00:00Z"
+      "effective_notification_datetime": "2025-12-22T12:00:00Z",
+      "is_waiver": false
     },
     {
       "merger_id": "MN-85002",
       "merger_name": "ServiceNow - Veza",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2025-12-22T12:00:00Z"
+      "effective_notification_datetime": "2025-12-22T12:00:00Z",
+      "is_waiver": false
     }
   ]
 }
