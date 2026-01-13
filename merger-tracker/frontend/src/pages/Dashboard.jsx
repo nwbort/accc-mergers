@@ -141,7 +141,7 @@ function Dashboard() {
         <StatCard
           title="Mergers"
           value={`${stats.by_status['Under assessment'] || 0} under assessment`}
-          subtitle={`${stats.total_mergers} notified`}
+          subtitle={`${stats.total_mergers} notified${stats.total_waivers ? `, ${stats.total_waivers} waiver${stats.total_waivers !== 1 ? 's' : ''}` : ''}`}
           icon="🔍"
         />
         <StatCard
@@ -254,9 +254,16 @@ function Dashboard() {
               >
                 <div className="px-6 py-4">
                   <div className="flex items-center justify-between">
-                    <p className="text-sm font-medium text-primary truncate">
-                      {merger.merger_name}
-                    </p>
+                    <div className="flex items-center gap-2">
+                      <p className="text-sm font-medium text-primary truncate">
+                        {merger.merger_name}
+                      </p>
+                      {merger.is_waiver && (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-800">
+                          waiver
+                        </span>
+                      )}
+                    </div>
                     <div className="ml-2 flex-shrink-0 flex">
                       <StatusBadge
                         status={merger.status}
@@ -266,7 +273,7 @@ function Dashboard() {
                   </div>
                   <div className="mt-2 flex items-center text-sm text-gray-500">
                     <span className="truncate">
-                      Notified:{' '}
+                      {merger.is_waiver ? 'Applied:' : 'Notified:'}{' '}
                       {formatDate(merger.effective_notification_datetime)}
                     </span>
                   </div>

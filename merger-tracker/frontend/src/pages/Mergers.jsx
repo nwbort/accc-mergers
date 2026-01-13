@@ -14,6 +14,7 @@ function Mergers() {
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
+  const [typeFilter, setTypeFilter] = useState('all');
 
   // Initialize search term from URL query parameter
   useEffect(() => {
@@ -29,7 +30,7 @@ function Mergers() {
 
   useEffect(() => {
     filterMergers();
-  }, [searchTerm, statusFilter, mergers]);
+  }, [searchTerm, statusFilter, typeFilter, mergers]);
 
   const fetchMergers = async () => {
     try {
@@ -47,6 +48,13 @@ function Mergers() {
 
   const filterMergers = () => {
     let filtered = [...mergers];
+
+    // Filter by type (notification vs waiver)
+    if (typeFilter === 'notification') {
+      filtered = filtered.filter((m) => !m.is_waiver);
+    } else if (typeFilter === 'waiver') {
+      filtered = filtered.filter((m) => m.is_waiver);
+    }
 
     // Filter by status
     if (statusFilter !== 'all') {
@@ -95,7 +103,7 @@ function Mergers() {
 
         {/* Filters */}
         <div className="bg-white p-4 rounded-lg shadow mb-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label
                 htmlFor="search"
@@ -120,6 +128,24 @@ function Mergers() {
                   }
                 }}
               />
+            </div>
+            <div>
+              <label
+                htmlFor="type"
+                className="block text-sm font-medium text-gray-700 mb-1"
+              >
+                Type
+              </label>
+              <select
+                id="type"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
+                value={typeFilter}
+                onChange={(e) => setTypeFilter(e.target.value)}
+              >
+                <option value="all">All types</option>
+                <option value="notification">Notification</option>
+                <option value="waiver">Waiver</option>
+              </select>
             </div>
             <div>
               <label
@@ -164,9 +190,16 @@ function Mergers() {
               <div className="p-6">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      {merger.merger_name}
-                    </h3>
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-lg font-semibold text-gray-900">
+                        {merger.merger_name}
+                      </h3>
+                      {merger.is_waiver && (
+                        <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-amber-100 text-amber-800">
+                          waiver
+                        </span>
+                      )}
+                    </div>
                     <p className="text-sm text-gray-500 mt-1">
                       {merger.merger_id} • {merger.stage || 'N/A'}
                     </p>
@@ -191,7 +224,9 @@ function Mergers() {
                     </p>
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500">Notification date</p>
+                    <p className="text-xs text-gray-500">
+                      {merger.is_waiver ? 'Application date' : 'Notification date'}
+                    </p>
                     <p className="text-sm font-medium text-gray-900">
                       {formatDate(merger.effective_notification_datetime)}
                     </p>
