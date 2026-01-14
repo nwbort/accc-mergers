@@ -88,15 +88,16 @@ export const calculateBusinessDays = (startDate, endDate) => {
  */
 export const getBusinessDaysRemaining = (endDate) => {
   if (!endDate) return null;
-
   try {
     const end = parseISO(endDate);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-
-    if (end < today) return 0;
-
-    return calculateBusinessDays(today, end);
+    
+    if (end <= today) return 0;
+    
+    // Start counting from tomorrow
+    const tomorrow = addDays(today, 1);
+    return calculateBusinessDays(tomorrow, end);
   } catch (e) {
     console.error('Error calculating business days remaining:', e);
     return null;
