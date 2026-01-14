@@ -57,7 +57,10 @@ function UpcomingEventsTable({ events }) {
               const isUrgent = daysRemaining !== null && daysRemaining <= 7;
 
               return (
-                <tr key={idx} className="hover:bg-gray-50">
+                <tr
+                  key={idx}
+                  className="relative hover:bg-gray-50"
+                >
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                     {formatDate(event.date)}
                   </td>
@@ -75,7 +78,7 @@ function UpcomingEventsTable({ events }) {
                   <td className="px-6 py-4 text-sm text-gray-900">
                     <Link
                       to={`/mergers/${event.merger_id}`}
-                      className="text-primary hover:text-primary-dark"
+                      className="text-primary after:absolute after:inset-0"
                     >
                       {event.merger_name}
                     </Link>
