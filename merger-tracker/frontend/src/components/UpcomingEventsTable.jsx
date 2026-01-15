@@ -24,12 +24,26 @@ function UpcomingEventsTable({ events }) {
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
+              {/* Combined column - mobile only */}
               <th
                 scope="col"
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                className="sm:hidden px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
                 <div>Date</div>
                 <div>Event</div>
+              </th>
+              {/* Separate columns - desktop only */}
+              <th
+                scope="col"
+                className="hidden sm:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                Date
+              </th>
+              <th
+                scope="col"
+                className="hidden sm:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                Event
               </th>
               <th
                 scope="col"
@@ -41,7 +55,7 @@ function UpcomingEventsTable({ events }) {
                 scope="col"
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
-                Days Remaining
+                Days remaining
               </th>
             </tr>
           </thead>
@@ -56,10 +70,26 @@ function UpcomingEventsTable({ events }) {
                   key={idx}
                   className="relative hover:bg-gray-50"
                 >
-                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    <div>{formatDate(event.date)}</div>
+                  {/* Combined cell - mobile only */}
+                  <td className="sm:hidden px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <div className="pl-2.5">{formatDate(event.date)}</div>
                     <span
                       className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium mt-1 ${
+                        event.type === 'consultation_due'
+                          ? 'bg-blue-100 text-blue-800'
+                          : 'bg-purple-100 text-purple-800'
+                      }`}
+                    >
+                      {event.event_type_display.replace(/ due$/, '')}
+                    </span>
+                  </td>
+                  {/* Separate cells - desktop only */}
+                  <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    {formatDate(event.date)}
+                  </td>
+                  <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-sm">
+                    <span
+                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                         event.type === 'consultation_due'
                           ? 'bg-blue-100 text-blue-800'
                           : 'bg-purple-100 text-purple-800'
