@@ -253,9 +253,9 @@ function Dashboard() {
                 className="block hover:bg-gray-50 transition-colors duration-150"
               >
                 <div className="px-6 py-4">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2">
-                      <p className="text-sm font-medium text-primary truncate">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex items-start gap-2 min-w-0 flex-1">
+                      <p className="text-sm font-medium text-primary break-words">
                         {merger.merger_name}
                       </p>
                       {merger.is_waiver && (
