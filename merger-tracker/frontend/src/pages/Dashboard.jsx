@@ -251,6 +251,7 @@ function Dashboard() {
               <Link
                 to={`/mergers/${merger.merger_id}`}
                 className="block hover:bg-gray-50 transition-colors duration-150"
+                aria-label={`View merger details for ${merger.merger_name}`}
               >
                 <div className="px-6 py-4">
                   <div className="flex items-start justify-between gap-2">
@@ -259,7 +260,11 @@ function Dashboard() {
                         {merger.merger_name}
                       </p>
                       {merger.is_waiver && (
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                        <span
+                          className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800"
+                          role="status"
+                          aria-label="Merger type: waiver application"
+                        >
                           Waiver
                         </span>
                       )}

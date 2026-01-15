@@ -79,6 +79,8 @@ function UpcomingEventsTable({ events }) {
                           ? 'bg-blue-100 text-blue-800'
                           : 'bg-purple-100 text-purple-800'
                       }`}
+                      role="status"
+                      aria-label={`Event type: ${event.event_type_display.replace(/ due$/, '')}`}
                     >
                       {event.event_type_display.replace(/ due$/, '')}
                     </span>
@@ -94,6 +96,8 @@ function UpcomingEventsTable({ events }) {
                           ? 'bg-blue-100 text-blue-800'
                           : 'bg-purple-100 text-purple-800'
                       }`}
+                      role="status"
+                      aria-label={`Event type: ${event.event_type_display}`}
                     >
                       {event.event_type_display}
                     </span>
@@ -102,6 +106,7 @@ function UpcomingEventsTable({ events }) {
                     <Link
                       to={`/mergers/${event.merger_id}`}
                       className="text-primary after:absolute after:inset-0"
+                      aria-label={`View merger details for ${event.merger_name}`}
                     >
                       {event.merger_name}
                     </Link>
@@ -114,7 +119,7 @@ function UpcomingEventsTable({ events }) {
                       <div>
                         <span
                           className={`font-medium ${
-                            isUrgent ? 'text-red-600' : 'text-gray-900'
+                            isUrgent ? 'text-red-700' : 'text-gray-900'
                           }`}
                         >
                           {daysRemaining === 0
