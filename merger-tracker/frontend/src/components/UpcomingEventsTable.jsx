@@ -28,13 +28,8 @@ function UpcomingEventsTable({ events }) {
                 scope="col"
                 className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
-                Date
-              </th>
-              <th
-                scope="col"
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                Event Type
+                <div>Date</div>
+                <div>Event</div>
               </th>
               <th
                 scope="col"
@@ -62,11 +57,9 @@ function UpcomingEventsTable({ events }) {
                   className="relative hover:bg-gray-50"
                 >
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                    {formatDate(event.date)}
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap text-sm">
+                    <div>{formatDate(event.date)}</div>
                     <span
-                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
+                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium mt-1 ${
                         event.type === 'consultation_due'
                           ? 'bg-blue-100 text-blue-800'
                           : 'bg-purple-100 text-purple-800'
