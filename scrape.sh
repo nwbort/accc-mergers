@@ -79,6 +79,7 @@ clean_html() {
       -e 's/href="https:\/\/app\.readspeaker\.com\/[^"]+"/href="STATIC_READSPEAKER_URL"/g' \
       -e 's/(icons\.svg\?t)[^#]+#/\1STATIC#/g' \
       -e 's/(\?t)[^">]+/\1STATIC/g' \
+      -e 's/("css_js_query_string":")[^"]+"/\1STATIC"/g' \
       "$file"
 
     # Use a second sed pass for complex multi-line replacements.
