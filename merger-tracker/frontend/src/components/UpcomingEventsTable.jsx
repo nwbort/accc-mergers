@@ -15,7 +15,7 @@ function UpcomingEventsTable({ events }) {
 
   return (
     <div className="bg-white rounded-lg shadow">
-      <div className="px-6 py-4 border-b border-gray-200">
+      <div className="px-4 sm:px-3 sm:px-6 py-4 border-b border-gray-200">
         <h2 className="text-lg font-semibold text-gray-900">
           Upcoming events
         </h2>
@@ -27,7 +27,7 @@ function UpcomingEventsTable({ events }) {
               {/* Combined column - mobile only */}
               <th
                 scope="col"
-                className="sm:hidden px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                className="sm:hidden px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
                 <div>Date</div>
                 <div>Event</div>
@@ -35,25 +35,25 @@ function UpcomingEventsTable({ events }) {
               {/* Separate columns - desktop only */}
               <th
                 scope="col"
-                className="hidden sm:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                className="hidden sm:table-cell px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
                 Date
               </th>
               <th
                 scope="col"
-                className="hidden sm:table-cell px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                className="hidden sm:table-cell px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
                 Event
               </th>
               <th
                 scope="col"
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
                 Merger
               </th>
               <th
                 scope="col"
-                className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                className="px-3 sm:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
                 Days remaining
               </th>
@@ -71,7 +71,7 @@ function UpcomingEventsTable({ events }) {
                   className="relative hover:bg-gray-50"
                 >
                   {/* Combined cell - mobile only */}
-                  <td className="sm:hidden px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="sm:hidden px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                     <div className="pl-2.5">{formatDate(event.date)}</div>
                     <span
                       className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium mt-1 ${
@@ -84,10 +84,10 @@ function UpcomingEventsTable({ events }) {
                     </span>
                   </td>
                   {/* Separate cells - desktop only */}
-                  <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                  <td className="hidden sm:table-cell px-3 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                     {formatDate(event.date)}
                   </td>
-                  <td className="hidden sm:table-cell px-6 py-4 whitespace-nowrap text-sm">
+                  <td className="hidden sm:table-cell px-3 sm:px-6 py-4 whitespace-nowrap text-sm">
                     <span
                       className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
                         event.type === 'consultation_due'
@@ -98,7 +98,7 @@ function UpcomingEventsTable({ events }) {
                       {event.event_type_display}
                     </span>
                   </td>
-                  <td className="px-6 py-4 text-sm text-gray-900">
+                  <td className="px-3 sm:px-6 py-4 text-sm text-gray-900">
                     <Link
                       to={`/mergers/${event.merger_id}`}
                       className="text-primary after:absolute after:inset-0"
@@ -109,7 +109,7 @@ function UpcomingEventsTable({ events }) {
                       {event.merger_id} • {event.stage}
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-sm">
+                  <td className="px-3 sm:px-6 py-4 text-sm">
                     {daysRemaining !== null && businessDaysRemaining !== null && (
                       <div>
                         <span
