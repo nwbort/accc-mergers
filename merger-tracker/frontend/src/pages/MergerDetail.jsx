@@ -57,6 +57,7 @@ function MergerDetail() {
             <Link
               to="/mergers"
               className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-dark transition-colors"
+              aria-label="Return to all mergers list"
             >
               ← Back to all mergers
             </Link>
@@ -66,6 +67,7 @@ function MergerDetail() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors"
+              aria-label={`Search for ${id} on ACCC website`}
             >
               Check ACCC website →
             </a>
@@ -133,6 +135,7 @@ function MergerDetail() {
         <Link
           to="/mergers"
           className="text-primary hover:text-primary-dark mb-4 inline-flex items-center"
+          aria-label="Return to all mergers list"
         >
           ← Back to all mergers
         </Link>
@@ -146,7 +149,11 @@ function MergerDetail() {
                   {merger.merger_name}
                 </h1>
                 {merger.is_waiver && (
-                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-sm font-medium bg-amber-100 text-amber-800">
+                  <span
+                    className="inline-flex items-center px-2.5 py-1 rounded-full text-sm font-medium bg-amber-100 text-amber-800"
+                    role="status"
+                    aria-label="Merger type: Waiver application"
+                  >
                     Waiver
                   </span>
                 )}
@@ -159,6 +166,7 @@ function MergerDetail() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-primary hover:text-primary-dark"
+                    aria-label={`View ${merger.merger_name} on ACCC website`}
                   >
                     View on ACCC website →
                   </a>
@@ -338,6 +346,8 @@ function MergerDetail() {
                               className="h-5 w-5 text-white"
                               fill="currentColor"
                               viewBox="0 0 20 20"
+                              role="img"
+                              aria-label="Timeline event"
                             >
                               <path
                                 fillRule="evenodd"
@@ -364,6 +374,7 @@ function MergerDetail() {
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="text-sm text-primary hover:text-primary-dark"
+                                  aria-label={`View ACCC document: ${event.display_title || event.title}`}
                                 >
                                   View document on ACCC website →
                                 </a>
@@ -374,6 +385,7 @@ function MergerDetail() {
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="text-sm text-primary hover:text-primary-dark"
+                                  aria-label={`View archived document: ${event.display_title || event.title}`}
                                 >
                                   View document →
                                 </a>

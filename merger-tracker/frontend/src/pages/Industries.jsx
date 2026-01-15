@@ -133,6 +133,9 @@ function Industries() {
       {/* Industries Table */}
       <div className="bg-white shadow rounded-lg overflow-hidden">
         <table className="min-w-full divide-y divide-gray-200">
+          <caption className="sr-only">
+            Industry breakdown of Australian merger reviews by ANZSIC code, showing merger counts and percentage of total reviews
+          </caption>
           <thead className="bg-gray-50">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -168,6 +171,16 @@ function Industries() {
                   <tr
                     className="hover:bg-gray-50 cursor-pointer"
                     onClick={() => toggleIndustry(industry.code, industry.name)}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        toggleIndustry(industry.code, industry.name);
+                      }
+                    }}
+                    tabIndex={0}
+                    role="button"
+                    aria-expanded={isExpanded}
+                    aria-controls={`industry-details-${industry.code}`}
                   >
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                       <div className="flex items-center">
@@ -177,6 +190,8 @@ function Industries() {
                           }`}
                           fill="currentColor"
                           viewBox="0 0 20 20"
+                          role="img"
+                          aria-label={isExpanded ? 'Collapse industry details' : 'Expand industry details'}
                         >
                           <path
                             fillRule="evenodd"
@@ -198,7 +213,14 @@ function Industries() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       <div className="flex items-center">
                         <span className="mr-2">{percentage}%</span>
-                        <div className="flex-1 bg-gray-200 rounded-full h-2 max-w-xs">
+                        <div
+                          className="flex-1 bg-gray-200 rounded-full h-2 max-w-xs"
+                          role="progressbar"
+                          aria-valuenow={parseFloat(percentage)}
+                          aria-valuemin={0}
+                          aria-valuemax={100}
+                          aria-label={`${percentage}% of total mergers`}
+                        >
                           <div
                             className="bg-primary h-2 rounded-full"
                             style={{ width: `${percentage}%` }}
@@ -208,7 +230,7 @@ function Industries() {
                     </td>
                   </tr>
                   {isExpanded && (
-                    <tr>
+                    <tr id={`industry-details-${industry.code}`}>
                       <td colSpan="4" className="px-6 py-4 bg-gray-50">
                         <div className="space-y-2">
                           <p className="text-sm font-medium text-gray-700 mb-3">
@@ -219,13 +241,18 @@ function Industries() {
                               key={merger.merger_id}
                               to={`/mergers/${merger.merger_id}`}
                               className="block p-3 bg-white rounded border border-gray-200 hover:border-primary hover:bg-gray-50 transition-colors"
+                              aria-label={`View merger details for ${merger.merger_name}`}
                             >
                               <div className="flex items-center justify-between">
                                 <span className="text-sm font-medium text-primary">
                                   {merger.merger_name}
                                 </span>
                                 {merger.is_waiver && (
-                                  <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                                  <span
+                                    className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800"
+                                    role="status"
+                                    aria-label="Merger type: Waiver application"
+                                  >
                                     Waiver
                                   </span>
                                 )}

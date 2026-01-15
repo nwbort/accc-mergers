@@ -116,6 +116,7 @@ function Mergers() {
                 id="search"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
                 placeholder="Search mergers, companies, or industries..."
+                aria-label="Search mergers, companies, or industries"
                 value={searchTerm}
                 onChange={(e) => {
                   const value = e.target.value;
@@ -141,6 +142,7 @@ function Mergers() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
                 value={typeFilter}
                 onChange={(e) => setTypeFilter(e.target.value)}
+                aria-label="Filter by merger type"
               >
                 <option value="all">All types</option>
                 <option value="notification">Notification</option>
@@ -159,6 +161,7 @@ function Mergers() {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
+                aria-label="Filter by merger status"
               >
                 {statuses.map((status) => (
                   <option key={status} value={status}>
@@ -186,6 +189,7 @@ function Mergers() {
               key={merger.merger_id}
               to={`/mergers/${merger.merger_id}`}
               className="block bg-white rounded-lg shadow hover:shadow-md transition-shadow duration-200"
+              aria-label={`View merger details for ${merger.merger_name}`}
             >
               <div className="p-6">
                 <div className="flex items-start justify-between">
@@ -195,7 +199,11 @@ function Mergers() {
                         {merger.merger_name}
                       </h3>
                       {merger.is_waiver && (
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                        <span
+                          className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800"
+                          role="status"
+                          aria-label="Merger type: Waiver application"
+                        >
                           Waiver
                         </span>
                       )}

@@ -124,6 +124,8 @@ function Timeline() {
                               className="h-5 w-5 text-white"
                               fill="currentColor"
                               viewBox="0 0 20 20"
+                              role="img"
+                              aria-label="New merger notification"
                             >
                               <path
                                 fillRule="evenodd"
@@ -136,6 +138,8 @@ function Timeline() {
                               className="h-5 w-5 text-white"
                               fill="currentColor"
                               viewBox="0 0 20 20"
+                              role="img"
+                              aria-label="Determination made"
                             >
                               <path
                                 fillRule="evenodd"
@@ -148,6 +152,8 @@ function Timeline() {
                               className="h-5 w-5 text-white"
                               fill="currentColor"
                               viewBox="0 0 20 20"
+                              role="img"
+                              aria-label="Timeline event"
                             >
                               <path
                                 fillRule="evenodd"
@@ -163,6 +169,7 @@ function Timeline() {
                           <Link
                             to={`/mergers/${event.merger_id}`}
                             className="text-sm font-medium text-gray-900 hover:text-primary-dark"
+                            aria-label={`View merger details for ${event.merger_name}`}
                           >
                             {event.merger_name}
                           </Link>
@@ -180,6 +187,7 @@ function Timeline() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-xs text-primary hover:text-primary-dark"
+                              aria-label={`View ACCC document for ${event.merger_name}`}
                             >
                               View document on ACCC website →
                             </a>
@@ -192,6 +200,7 @@ function Timeline() {
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-xs text-gray-600 hover:text-gray-900"
+                              aria-label={`View archived document for ${event.merger_name}`}
                             >
                               View document →
                             </a>
