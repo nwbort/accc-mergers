@@ -302,6 +302,53 @@ function MergerDetail() {
           </div>
         )}
 
+        {/* Commentary */}
+        {merger.commentary && (
+          <div className="bg-blue-50 border-l-4 border-blue-400 rounded-lg shadow p-6 mb-6">
+            <div className="flex items-start">
+              <div className="flex-shrink-0">
+                <svg className="h-6 w-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                </svg>
+              </div>
+              <div className="ml-3 flex-1">
+                <h2 className="text-lg font-semibold text-gray-900 mb-2">
+                  Commentary
+                </h2>
+                <div className="text-gray-700 prose prose-sm max-w-none [&>p]:mb-4 [&>ul]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:mb-2 [&>ol]:mb-4 [&>ol]:list-decimal [&>ol]:pl-5 [&>ol>li]:mb-2">
+                  {merger.commentary.commentary && (
+                    <div className="mb-4">
+                      <ReactMarkdown>{merger.commentary.commentary}</ReactMarkdown>
+                    </div>
+                  )}
+                  {merger.commentary.tags && merger.commentary.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-3">
+                      {merger.commentary.tags.map((tag, idx) => (
+                        <span
+                          key={idx}
+                          className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-blue-100 text-blue-800"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  {merger.commentary.last_updated && (
+                    <p className="text-xs text-gray-500 mt-3">
+                      Last updated: {formatDate(merger.commentary.last_updated)}
+                    </p>
+                  )}
+                  {merger.commentary.author && (
+                    <p className="text-xs text-gray-500">
+                      By: {merger.commentary.author}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         {/* Industries */}
         {merger.anzsic_codes && merger.anzsic_codes.length > 0 && (
           <div className="bg-white rounded-lg shadow p-6 mb-6">
