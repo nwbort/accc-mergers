@@ -359,13 +359,13 @@ function MergerDetail() {
             </h2>
             <div className="flex flex-wrap gap-2">
               {merger.anzsic_codes.map((code, idx) => (
-                <span
+                <Link
                   key={idx}
-                  className="inline-flex items-center px-3 py-1 rounded-md text-sm bg-gray-100 text-gray-700"
+                  to={`/mergers?q=${encodeURIComponent(code.name)}`}
+                  className="inline-flex items-center px-3 py-1 rounded-md text-sm bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors cursor-pointer"
                 >
-                  <span className="font-medium mr-1">{code.code}:</span>
                   {code.name}
-                </span>
+                </Link>
               ))}
             </div>
           </div>
