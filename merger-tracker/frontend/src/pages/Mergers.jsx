@@ -34,7 +34,7 @@ function Mergers() {
 
   const fetchMergers = async () => {
     try {
-      const response = await fetch(API_ENDPOINTS.mergers);
+      const response = await fetch(API_ENDPOINTS.mergersList);
       if (!response.ok) throw new Error('Failed to fetch mergers');
       const data = await response.json();
       setMergers(data.mergers);
@@ -61,13 +61,13 @@ function Mergers() {
       filtered = filtered.filter((m) => m.status === statusFilter);
     }
 
-    // Search filter
+    // Search filter (note: merger_description not included in list view for performance)
     if (searchTerm) {
       const term = searchTerm.toLowerCase();
       filtered = filtered.filter(
         (m) =>
           m.merger_name.toLowerCase().includes(term) ||
-          m.merger_description?.toLowerCase().includes(term) ||
+          m.merger_id.toLowerCase().includes(term) ||
           m.acquirers.some((a) => a.name.toLowerCase().includes(term)) ||
           m.targets.some((t) => t.name.toLowerCase().includes(term)) ||
           m.anzsic_codes?.some((c) => c.name.toLowerCase().includes(term))

@@ -6,7 +6,9 @@ This script reads mergers.json and generates pre-computed JSON files
 that the frontend can consume directly without a backend API.
 
 Output files (to merger-tracker/frontend/public/data/):
-- mergers.json      - All mergers wrapped in {mergers: [...]}
+- mergers.json      - All mergers wrapped in {mergers: [...]} (legacy, full data)
+- mergers/list.json - Lightweight merger list (no events/descriptions)
+- mergers/{id}.json - Individual merger files (one per merger)
 - stats.json        - Aggregated statistics
 - timeline.json     - All events sorted by date
 - industries.json   - ANZSIC codes with merger counts
@@ -239,6 +241,47 @@ def generate_mergers_json(mergers: list, commentary: dict = None) -> dict:
     """Generate mergers.json with wrapper format and enriched fields."""
     enriched = [enrich_merger(m, commentary) for m in mergers]
     return {"mergers": enriched}
+
+
+def generate_individual_merger_files(mergers: list, commentary: dict = None) -> None:
+    """Generate individual JSON files for each merger."""
+    mergers_dir = OUTPUT_DIR / "mergers"
+    mergers_dir.mkdir(parents=True, exist_ok=True)
+
+    for merger in mergers:
+        enriched = enrich_merger(merger, commentary)
+        merger_id = enriched.get('merger_id', '')
+
+        if merger_id:
+            output_path = mergers_dir / f"{merger_id}.json"
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(enriched, f, indent=2)
+
+
+def generate_mergers_list_json(mergers: list) -> dict:
+    """Generate lightweight list of mergers with only essential fields for listing pages."""
+    lightweight_mergers = []
+
+    for m in mergers:
+        # Only include fields needed for list view (no events, no large descriptions)
+        lightweight_mergers.append({
+            "merger_id": m.get('merger_id'),
+            "merger_name": m.get('merger_name'),
+            "status": m.get('status'),
+            "accc_determination": normalize_determination(m.get('accc_determination')),
+            "is_waiver": is_waiver_merger(m),
+            "effective_notification_datetime": m.get('effective_notification_datetime'),
+            "determination_publication_date": m.get('determination_publication_date'),
+            "end_of_determination_period": m.get('end_of_determination_period'),
+            "stage": m.get('stage'),
+            "acquirers": m.get('acquirers', []),
+            "targets": m.get('targets', []),
+            "other_parties": m.get('other_parties', []),
+            "anzsic_codes": m.get('anzsic_codes') or m.get('anszic_codes', []),
+            "url": m.get('url')
+        })
+
+    return {"mergers": lightweight_mergers}
 
 
 def generate_stats_json(mergers: list) -> dict:
@@ -503,13 +546,25 @@ def main():
         ("industries.json", generate_industries_json(mergers)),
         ("upcoming-events.json", generate_upcoming_events_json(mergers)),
     ]
-    
+
     for filename, data in outputs:
         output_path = OUTPUT_DIR / filename
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2)
         print(f"✓ Generated {output_path}")
-    
+
+    # Generate individual merger files
+    print("\nGenerating individual merger files...")
+    generate_individual_merger_files(mergers, commentary)
+    print(f"✓ Generated {len(mergers)} individual merger files in {OUTPUT_DIR / 'mergers'}")
+
+    # Generate lightweight list.json
+    list_data = generate_mergers_list_json(mergers)
+    list_path = OUTPUT_DIR / "mergers" / "list.json"
+    with open(list_path, 'w', encoding='utf-8') as f:
+        json.dump(list_data, f, indent=2)
+    print(f"✓ Generated {list_path}")
+
     print("\nDone!")
 
 
