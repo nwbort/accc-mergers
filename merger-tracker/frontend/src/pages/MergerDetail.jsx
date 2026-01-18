@@ -317,7 +317,7 @@ function MergerDetail() {
                 </h2>
                 <div>
                   {merger.commentary.commentary && (
-                    <div className="prose prose-sm max-w-none text-gray-700">
+                    <div className="text-gray-700 prose prose-sm max-w-none [&>p]:mb-4 [&>ul]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:mb-2 [&>ol]:mb-4 [&>ol]:list-decimal [&>ol]:pl-5 [&>ol>li]:mb-2">
                       <ReactMarkdown>{merger.commentary.commentary}</ReactMarkdown>
                     </div>
                   )}
