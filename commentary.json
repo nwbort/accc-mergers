@@ -1,0 +1,14 @@
+{
+  "_README": "Add your commentary for mergers here. Use the merger_id as the key (e.g., 'MN-01016'). All fields are optional. Commentary text supports full markdown formatting.",
+  "_example": {
+    "commentary": "Your analysis or commentary text here. Supports **markdown** formatting:\n\n- Bullet points\n- **Bold** and *italic*\n- [Links](https://example.com)\n- And more!",
+    "tags": ["notable", "real-estate", "approved"],
+    "last_updated": "2026-01-17",
+    "author": "Your Name"
+  },
+  "MN-01017": {
+    "commentary": "The acquisition by KDAu of a lease for land adjacent to Newcastle Airport was the first acquisition cleared by the ACCC under the new regime. The ACCC considered that:\n\n- there is no horizontal competitive overlap between KDAu and the landlord;\n- there are sufficient suitable alternative sites available for KDau's competitors; and\n- the acquisition does not otherwise limit or prevent competition from rivals.\n\nOn that basis, Commissioner Williams determined that the acquisition may be put into effect.",
+    "tags": ["landmark"],
+    "last_updated": "2026-01-19"
+  }
+}

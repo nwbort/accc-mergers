@@ -22,6 +22,7 @@ from collections import defaultdict
 # Paths
 SCRIPT_DIR = Path(__file__).parent
 MERGERS_JSON = SCRIPT_DIR / "mergers.json"
+COMMENTARY_JSON = SCRIPT_DIR / "commentary.json"
 HOLIDAYS_JSON = SCRIPT_DIR / "merger-tracker" / "frontend" / "src" / "data" / "act-public-holidays.json"
 OUTPUT_DIR = SCRIPT_DIR / "merger-tracker" / "frontend" / "public" / "data"
 
@@ -154,19 +155,40 @@ def is_waiver_merger(merger: dict) -> bool:
     """Check if a merger is a waiver application (not a full notification)."""
     merger_id = merger.get('merger_id', '')
     stage = merger.get('stage', '')
-    
+
     return merger_id.startswith('WA-') or 'Waiver' in stage
 
 
-def enrich_merger(merger: dict) -> dict:
+def load_commentary() -> dict:
+    """Load user commentary from commentary.json if it exists."""
+    if not COMMENTARY_JSON.exists():
+        return {}
+
+    try:
+        with open(COMMENTARY_JSON, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        # Filter out metadata keys (starting with _)
+        return {k: v for k, v in data.items() if not k.startswith('_')}
+    except (json.JSONDecodeError, IOError) as e:
+        print(f"Warning: Could not load commentary.json: {e}")
+        return {}
+
+
+def enrich_merger(merger: dict, commentary: dict = None) -> dict:
     """Add computed fields to a merger (phase determinations, etc.)."""
     m = merger.copy()
-    
+
     # Normalize the determination
     m['accc_determination'] = normalize_determination(m.get('accc_determination'))
-    
+
     # Add is_waiver flag
     m['is_waiver'] = is_waiver_merger(merger)
+
+    # Add user commentary if available
+    merger_id = m.get('merger_id', '')
+    if commentary and merger_id in commentary:
+        m['commentary'] = commentary[merger_id]
     
     # Compute phase-specific determinations based on stage
     phase_1_det = None
@@ -213,9 +235,9 @@ def enrich_merger(merger: dict) -> dict:
     return m
 
 
-def generate_mergers_json(mergers: list) -> dict:
+def generate_mergers_json(mergers: list, commentary: dict = None) -> dict:
     """Generate mergers.json with wrapper format and enriched fields."""
-    enriched = [enrich_merger(m) for m in mergers]
+    enriched = [enrich_merger(m, commentary) for m in mergers]
     return {"mergers": enriched}
 
 
@@ -448,7 +470,7 @@ def main():
     print("Loading mergers.json...")
     with open(MERGERS_JSON, 'r', encoding='utf-8') as f:
         data = json.load(f)
-    
+
     # Handle both formats: raw list or {mergers: [...]} wrapper
     if isinstance(data, list):
         mergers = data
@@ -456,18 +478,26 @@ def main():
         mergers = data['mergers']
     else:
         raise ValueError("Unexpected mergers.json format")
-    
+
     # Count waivers vs notifications
     waiver_count = sum(1 for m in mergers if is_waiver_merger(m))
     notification_count = len(mergers) - waiver_count
     print(f"Loaded {len(mergers)} mergers ({notification_count} notifications, {waiver_count} waivers)")
-    
+
+    # Load user commentary
+    print("Loading commentary.json...")
+    commentary = load_commentary()
+    if commentary:
+        print(f"Loaded commentary for {len(commentary)} merger(s)")
+    else:
+        print("No commentary found")
+
     # Create output directory
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    
+
     # Generate each file
     outputs = [
-        ("mergers.json", generate_mergers_json(mergers)),
+        ("mergers.json", generate_mergers_json(mergers, commentary)),
         ("stats.json", generate_stats_json(mergers)),
         ("timeline.json", generate_timeline_json(mergers)),
         ("industries.json", generate_industries_json(mergers)),
