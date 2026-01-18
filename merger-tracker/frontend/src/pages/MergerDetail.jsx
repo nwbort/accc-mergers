@@ -19,21 +19,23 @@ function MergerDetail() {
 
   const fetchMerger = async () => {
     try {
-      // Load all mergers and find by ID (static JSON approach)
-      const response = await fetch(API_ENDPOINTS.mergers);
+      // Load individual merger file directly
+      const response = await fetch(API_ENDPOINTS.mergerDetail(id));
       if (!response.ok) {
+        if (response.status === 404) {
+          throw new Error('not_found');
+        }
         throw new Error('Failed to fetch merger details');
       }
       const data = await response.json();
-      const found = data.mergers.find(m => m.merger_id === id);
-      
-      if (!found) {
-        throw new Error('not_found');
-      }
-      
-      setMerger(found);
+      setMerger(data);
     } catch (err) {
-      setError(err.message);
+      if (err.name === 'TypeError') {
+        // Network error or fetch failed
+        setError('not_found');
+      } else {
+        setError(err.message);
+      }
     } finally {
       setLoading(false);
     }

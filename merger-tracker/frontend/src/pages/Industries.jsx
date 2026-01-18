@@ -20,7 +20,7 @@ function Industries() {
     try {
       const [industriesRes, mergersRes] = await Promise.all([
         fetch(API_ENDPOINTS.industries),
-        fetch(API_ENDPOINTS.mergers),
+        fetch(API_ENDPOINTS.mergersList),
       ]);
 
       if (!industriesRes.ok || !mergersRes.ok) {
