@@ -18,6 +18,7 @@ def extract_deadline(text: str) -> Optional[str]:
     Looks for patterns like:
     - "Deadline to respond: 25 August 2025"
     - "Deadline to respond: 3 November 2025"
+    - "Deadline to respond: 5.00pm (AEDT) on 20 October 2025"
 
     Args:
         text: Full text of the questionnaire PDF
@@ -25,12 +26,18 @@ def extract_deadline(text: str) -> Optional[str]:
     Returns:
         The deadline date as a string, or None if not found
     """
-    # Look for "Deadline to respond:" followed by a date
-    pattern = r'Deadline to respond:\s*(\d{1,2}\s+[A-Za-z]+\s+\d{4})'
-    match = re.search(pattern, text, re.IGNORECASE)
+    # Look for "Deadline to respond:" followed by optional time/timezone, then a date
+    # Pattern handles both formats:
+    # 1. "Deadline to respond: 25 August 2025"
+    # 2. "Deadline to respond: 5.00pm (AEDT) on 20 October 2025"
+    pattern = r'Deadline to respond:\s*(?:[\d:.apm]+\s*\([A-Z]+\)\s+on\s+)?(\d{1,2}\s+[A-Za-z]+\s+\d{4})'
+    match = re.search(pattern, text, re.IGNORECASE | re.DOTALL)
 
     if match:
-        return match.group(1).strip()
+        # Clean up the deadline by removing extra whitespace and newlines
+        deadline = match.group(1).strip()
+        deadline = re.sub(r'\s+', ' ', deadline)  # Replace multiple spaces/newlines with single space
+        return deadline
 
     return None
 
