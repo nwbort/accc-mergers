@@ -9,6 +9,7 @@ import re
 from datetime import datetime
 from markdownify import markdownify as md
 from parse_determination import parse_determination_pdf
+from parse_questionnaire import process_all_questionnaires
 
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./matters"
@@ -480,6 +481,71 @@ def get_merger_id_from_file(filepath):
         return id_tag.get_text(strip=True)
     return None
 
+
+def enrich_with_questionnaire_data(mergers_data):
+    """
+    Enrich merger data with consultation deadlines from questionnaire PDFs.
+    Only updates consultation_response_due_date if it's missing from the merger data.
+    Also writes questionnaire_data.json as a standalone reference file.
+
+    Args:
+        mergers_data: List of merger dictionaries
+
+    Returns:
+        Updated list of merger dictionaries
+    """
+    print("Extracting questionnaire data...", file=sys.stderr)
+
+    try:
+        # Process all questionnaires in the matters directory
+        questionnaire_data = process_all_questionnaires(MATTERS_DIR)
+
+        if not questionnaire_data:
+            print("No questionnaire data found.", file=sys.stderr)
+            return mergers_data
+
+        print(f"Found {len(questionnaire_data)} questionnaires", file=sys.stderr)
+
+        # Write questionnaire data to JSON file for reference
+        with open('questionnaire_data.json', 'w', encoding='utf-8') as f:
+            json.dump(questionnaire_data, f, indent=2)
+        print("Wrote questionnaire_data.json", file=sys.stderr)
+
+        # Create a mapping of merger_id to merger data for quick lookups
+        mergers_by_id = {m['merger_id']: m for m in mergers_data if 'merger_id' in m}
+
+        # Update mergers with questionnaire data where consultation date is missing
+        updates_made = 0
+        for matter_id, q_data in questionnaire_data.items():
+            if matter_id in mergers_by_id:
+                merger = mergers_by_id[matter_id]
+
+                # Only update if consultation_response_due_date is missing and we have a deadline
+                if (not merger.get('consultation_response_due_date') and
+                    q_data.get('deadline_iso')):
+
+                    # Convert ISO date (YYYY-MM-DD) to datetime format with time
+                    iso_date = q_data['deadline_iso']
+                    consultation_datetime = f"{iso_date}T12:00:00Z"
+                    merger['consultation_response_due_date'] = consultation_datetime
+
+                    print(f"Updated {matter_id} with consultation date: {consultation_datetime}",
+                          file=sys.stderr)
+                    updates_made += 1
+
+        if updates_made > 0:
+            print(f"Updated {updates_made} merger(s) with questionnaire consultation dates",
+                  file=sys.stderr)
+        else:
+            print("No consultation dates needed updating", file=sys.stderr)
+
+    except Exception as e:
+        print(f"Error enriching with questionnaire data: {e}", file=sys.stderr)
+        import traceback
+        traceback.print_exc(file=sys.stderr)
+
+    return mergers_data
+
 def run_parse_merger_file(task):
     """Helper function to unpack arguments for parse_merger_file."""
     return parse_merger_file(*task)
@@ -545,10 +611,13 @@ def main():
         # 4. Collect valid results, filtering out any None values from failed parses
         all_mergers_data = [data for data in results if data is not None]
 
-    # 5. Sort the data by merger_id to ensure a consistent output
+    # 5. Enrich with questionnaire data (consultation deadlines)
+    all_mergers_data = enrich_with_questionnaire_data(all_mergers_data)
+
+    # 6. Sort the data by merger_id to ensure a consistent output
     all_mergers_data.sort(key=lambda x: x.get('merger_id', ''))
 
-    # 6. Write the final JSON output to mergers.json
+    # 7. Write the final JSON output to mergers.json
     with open('mergers.json', 'w', encoding='utf-8') as f:
         json.dump(all_mergers_data, f, indent=2)
 
