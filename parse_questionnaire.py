@@ -284,7 +284,7 @@ if __name__ == "__main__":
             # Save results to JSON
             output_file = "questionnaire_data.json"
             with open(output_file, 'w') as f:
-                json.dump(results, f, indent=2)
+                json.dump(results, f, indent=2, sort_keys=True)
 
             print("=" * 80)
             print(f"Results saved to {output_file}")
