@@ -486,6 +486,7 @@ def enrich_with_questionnaire_data(mergers_data):
     """
     Enrich merger data with consultation deadlines from questionnaire PDFs.
     Only updates consultation_response_due_date if it's missing from the merger data.
+    Also writes questionnaire_data.json as a standalone reference file.
 
     Args:
         mergers_data: List of merger dictionaries
@@ -504,6 +505,11 @@ def enrich_with_questionnaire_data(mergers_data):
             return mergers_data
 
         print(f"Found {len(questionnaire_data)} questionnaires", file=sys.stderr)
+
+        # Write questionnaire data to JSON file for reference
+        with open('questionnaire_data.json', 'w', encoding='utf-8') as f:
+            json.dump(questionnaire_data, f, indent=2)
+        print("Wrote questionnaire_data.json", file=sys.stderr)
 
         # Create a mapping of merger_id to merger data for quick lookups
         mergers_by_id = {m['merger_id']: m for m in mergers_data if 'merger_id' in m}
