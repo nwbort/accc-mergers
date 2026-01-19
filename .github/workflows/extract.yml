@@ -5,6 +5,7 @@ on:
   push:
     paths:
       - 'matters/**'
+      - 'commentary.json'
   schedule:
   - cron: '16 1 * * *'
 
