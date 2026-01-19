@@ -23,8 +23,8 @@ from collections import defaultdict
 
 # Paths
 SCRIPT_DIR = Path(__file__).parent
-MERGERS_JSON = SCRIPT_DIR / "mergers.json"
-COMMENTARY_JSON = SCRIPT_DIR / "commentary.json"
+MERGERS_JSON = SCRIPT_DIR / "data" / "processed" / "mergers.json"
+COMMENTARY_JSON = SCRIPT_DIR / "data" / "processed" / "commentary.json"
 HOLIDAYS_JSON = SCRIPT_DIR / "merger-tracker" / "frontend" / "src" / "data" / "act-public-holidays.json"
 OUTPUT_DIR = SCRIPT_DIR / "merger-tracker" / "frontend" / "public" / "data"
 

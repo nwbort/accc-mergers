@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'matters/**'
-      - 'commentary.json'
+      - 'data/raw/matters/**'
+      - 'data/processed/commentary.json'
   schedule:
   - cron: '16 1 * * *'
 
@@ -41,7 +41,7 @@ jobs:
         run: |-
           git config user.name "Automated"
           git config user.email "actions@users.noreply.github.com"
-          git add mergers.json questionnaire_data.json matters/ merger-tracker/frontend/public/data/
+          git add data/processed/mergers.json data/processed/questionnaire_data.json data/raw/matters/ merger-tracker/frontend/public/data/
           timestamp=$(date -u)
           git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
           git commit -m "Update scraped data and static files: ${timestamp}" || exit 0
