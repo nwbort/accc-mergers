@@ -41,6 +41,16 @@
       "effective_notification_datetime": "2026-01-09T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-01-27T12:00:00Z",
+      "merger_id": "MN-01075",
+      "merger_name": "Thermo Fisher - Clario Holdings",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-01-16T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-01-29T12:00:00Z",
@@ -111,6 +121,6 @@
       "effective_notification_datetime": "2026-01-16T12:00:00Z"
     }
   ],
-  "count": 11,
+  "count": 12,
   "days_ahead": 60
 }
