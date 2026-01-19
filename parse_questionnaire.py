@@ -186,8 +186,12 @@ def process_all_questionnaires(matters_dir: str = "matters") -> Dict[str, Dict]:
     if not matters_path.exists():
         raise FileNotFoundError(f"Matters directory not found: {matters_dir}")
 
-    # Find all questionnaire PDFs
-    questionnaire_pdfs = list(matters_path.glob("*/Questionnaire*.pdf"))
+    # Find all questionnaire PDFs (case-insensitive search for "questionnaire" in filename)
+    all_pdfs = list(matters_path.glob("*/*.pdf"))
+    questionnaire_pdfs = [
+        pdf for pdf in all_pdfs
+        if "questionnaire" in pdf.name.lower()
+    ]
 
     for pdf_path in questionnaire_pdfs:
         # Extract matter ID from the path (e.g., "MN-01016" from "matters/MN-01016/...")
