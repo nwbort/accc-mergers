@@ -508,7 +508,7 @@ def enrich_with_questionnaire_data(mergers_data):
 
         # Write questionnaire data to JSON file for reference
         with open('questionnaire_data.json', 'w', encoding='utf-8') as f:
-            json.dump(questionnaire_data, f, indent=2)
+            json.dump(questionnaire_data, f, indent=2, sort_keys=True)
         print("Wrote questionnaire_data.json", file=sys.stderr)
 
         # Create a mapping of merger_id to merger data for quick lookups
