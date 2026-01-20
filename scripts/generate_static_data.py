@@ -23,10 +23,11 @@ from collections import defaultdict
 
 # Paths
 SCRIPT_DIR = Path(__file__).parent
-MERGERS_JSON = SCRIPT_DIR / "data" / "processed" / "mergers.json"
-COMMENTARY_JSON = SCRIPT_DIR / "data" / "processed" / "commentary.json"
-HOLIDAYS_JSON = SCRIPT_DIR / "merger-tracker" / "frontend" / "src" / "data" / "act-public-holidays.json"
-OUTPUT_DIR = SCRIPT_DIR / "merger-tracker" / "frontend" / "public" / "data"
+REPO_ROOT = SCRIPT_DIR.parent
+MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
+COMMENTARY_JSON = REPO_ROOT / "data" / "processed" / "commentary.json"
+HOLIDAYS_JSON = REPO_ROOT / "merger-tracker" / "frontend" / "src" / "data" / "act-public-holidays.json"
+OUTPUT_DIR = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "data"
 
 
 def load_public_holidays():
