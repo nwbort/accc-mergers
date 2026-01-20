@@ -44,17 +44,19 @@ jobs:
         ./scripts/scrape.sh
     
     - name: Commit and push changes
+      id: commit
       run: |-
         git config user.name "Automated"
         git config user.email "actions@users.noreply.github.com"
         git add -A
         timestamp=$(date -u)
+        git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
         git commit -m "Update scraped data: ${timestamp}" || exit 0
         git pull --rebase
         git push
-    
-    - name: Trigger extract workflow if repository dispatch
-      if: github.event_name == 'repository_dispatch'
+
+    - name: Trigger extract workflow if changes were committed
+      if: steps.commit.outputs.changes == 'true' || github.event_name == 'repository_dispatch'
       env:
         GH_TOKEN: ${{ github.token }}
       run: |
