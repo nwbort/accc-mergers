@@ -1,9 +1,9 @@
 {
-  "total_mergers": 16,
+  "total_mergers": 17,
   "total_waivers": 2,
   "by_status": {
     "Assessment completed": 8,
-    "Under assessment": 8
+    "Under assessment": 9
   },
   "by_determination": {
     "Approved": 8
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-75002",
+      "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-01-19T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-01075",
       "merger_name": "Thermo Fisher - Clario Holdings",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Assessment completed",
       "accc_determination": "Approved",
       "effective_notification_datetime": "2026-01-06T12:00:00Z",
-      "is_waiver": true
-    },
-    {
-      "merger_id": "WA-70002",
-      "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-01-03T12:00:00Z",
       "is_waiver": true
     }
   ]

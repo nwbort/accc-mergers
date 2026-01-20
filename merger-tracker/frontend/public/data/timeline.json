@@ -1,6 +1,18 @@
 {
   "events": [
     {
+      "date": "2026-01-20T12:00:00Z",
+      "title": "Questionnaire - Opal Healthcare - Sunnymeade Park Aged Care Community",
+      "display_title": "Questionnaire - Opal Healthcare - Sunnymeade Park Aged Care Community",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Opal%20Healthcare%20Sunnymeade%20Park%20-%20Questionnaire%20-%2020%20January%202026.docx",
+      "url_gh": "/matters/MN-75002/Opal Healthcare Sunnymeade Park - Questionnaire - 20 January 2026.pdf",
+      "status": "live",
+      "merger_id": "MN-75002",
+      "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
       "date": "2026-01-19T12:00:00Z",
       "title": "Thermo Fisher Clario - Questionnaire - January 2026",
       "display_title": "Thermo Fisher Clario - Questionnaire - January 2026",
@@ -10,6 +22,18 @@
       "merger_id": "MN-01075",
       "merger_name": "Thermo Fisher - Clario Holdings",
       "phase": null,
+      "is_waiver": false
+    },
+    {
+      "date": "2026-01-19T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-75002",
+      "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
+      "phase": "Phase 1",
       "is_waiver": false
     },
     {
@@ -102,7 +126,7 @@
       "display_title": "Questionnaire released for CSE Crosscom acquisition of Progility",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20CSE%20Crosscom%20%E2%80%93%20Progility%20-%2012%20January%202026.pdf",
       "url_gh": "/matters/MN-01071/Questionnaire - CSE Crosscom \u2013 Progility - 12 January 2026.pdf",
-      "status": "live",
+      "status": "removed",
       "merger_id": "MN-01071",
       "merger_name": "CSE Crosscom \u2013 Progility",
       "phase": null,
@@ -673,5 +697,5 @@
       "is_waiver": false
     }
   ],
-  "total": 56
+  "total": 58
 }
