@@ -31,10 +31,10 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run extraction script
-        run: python extract_mergers.py
+        run: python scripts/extract_mergers.py
 
       - name: Generate static data files
-        run: python generate_static_data.py
+        run: python scripts/generate_static_data.py
 
       - name: Commit and push changes
         id: commit
