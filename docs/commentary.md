@@ -71,7 +71,7 @@ After editing `commentary.json`:
 
 ```bash
 # Regenerate static data files
-python3 generate_static_data.py
+python3 scripts/generate_static_data.py
 
 # Commit your changes
 git add commentary.json merger-tracker/frontend/public/data/
