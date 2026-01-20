@@ -177,7 +177,7 @@ def parse_questionnaire_pdf(pdf_path: str) -> Dict[str, any]:
     return result
 
 
-def process_all_questionnaires(matters_dir: str = "matters") -> Dict[str, Dict]:
+def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[str, Dict]:
     """
     Process all questionnaire PDFs in the matters directory.
 
@@ -282,7 +282,7 @@ if __name__ == "__main__":
                 print()
 
             # Save results to JSON
-            output_file = "questionnaire_data.json"
+            output_file = "data/processed/questionnaire_data.json"
             with open(output_file, 'w') as f:
                 json.dump(results, f, indent=2, sort_keys=True)
 

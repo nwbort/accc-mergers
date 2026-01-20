@@ -33,7 +33,7 @@ jobs:
             if [ ! -f "$pdf" ]; then
               echo "$docx" >> /tmp/unconverted.txt
             fi
-          done < <(find matters -name "*.docx" -type f -print0 2>/dev/null)
+          done < <(find data/raw/matters -name "*.docx" -type f -print0 2>/dev/null)
           
           if [ -s /tmp/unconverted.txt ]; then
             echo "Found unconverted files:"
@@ -67,7 +67,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           
-          git add "matters/**/*.pdf"
+          git add "data/raw/matters/**/*.pdf"
           
           if git diff --staged --quiet; then
             echo "No changes to commit"

@@ -12,7 +12,7 @@ from parse_determination import parse_determination_pdf
 from parse_questionnaire import process_all_questionnaires
 
 BASE_URL = "https://www.accc.gov.au"
-MATTERS_DIR = "./matters"
+MATTERS_DIR = "./data/raw/matters"
 
 
 def is_safe_filename(filename):
@@ -507,9 +507,9 @@ def enrich_with_questionnaire_data(mergers_data):
         print(f"Found {len(questionnaire_data)} questionnaires", file=sys.stderr)
 
         # Write questionnaire data to JSON file for reference
-        with open('questionnaire_data.json', 'w', encoding='utf-8') as f:
+        with open('data/processed/questionnaire_data.json', 'w', encoding='utf-8') as f:
             json.dump(questionnaire_data, f, indent=2, sort_keys=True)
-        print("Wrote questionnaire_data.json", file=sys.stderr)
+        print("Wrote data/processed/questionnaire_data.json", file=sys.stderr)
 
         # Create a mapping of merger_id to merger data for quick lookups
         mergers_by_id = {m['merger_id']: m for m in mergers_data if 'merger_id' in m}
@@ -561,7 +561,7 @@ def main():
 
     # 1. Load existing data if mergers.json exists
     existing_mergers = {}
-    mergers_json_path = 'mergers.json'
+    mergers_json_path = 'data/processed/mergers.json'
     if os.path.exists(mergers_json_path) and os.path.getsize(mergers_json_path) > 0:
         try:
             with open(mergers_json_path, 'r', encoding='utf-8') as f:
@@ -618,7 +618,7 @@ def main():
     all_mergers_data.sort(key=lambda x: x.get('merger_id', ''))
 
     # 7. Write the final JSON output to mergers.json
-    with open('mergers.json', 'w', encoding='utf-8') as f:
+    with open('data/processed/mergers.json', 'w', encoding='utf-8') as f:
         json.dump(all_mergers_data, f, indent=2)
 
 if __name__ == "__main__":
