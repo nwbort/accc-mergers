@@ -244,18 +244,20 @@ function Industries() {
                               aria-label={`View merger details for ${merger.merger_name}`}
                             >
                               <div className="flex items-center justify-between">
-                                <span className="text-sm font-medium text-primary">
-                                  {merger.merger_name}
-                                </span>
-                                {merger.is_waiver && (
-                                  <span
-                                    className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800"
-                                    role="status"
-                                    aria-label="Merger type: Waiver application"
-                                  >
-                                    Waiver
+                                <div className="flex items-center">
+                                  <span className="text-sm font-medium text-primary">
+                                    {merger.merger_name}
                                   </span>
-                                )}
+                                  {merger.is_waiver && (
+                                    <span
+                                      className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800"
+                                      role="status"
+                                      aria-label="Merger type: Waiver application"
+                                    >
+                                      Waiver
+                                    </span>
+                                  )}
+                                </div>
                                 <span className="text-xs text-gray-500">
                                   {merger.merger_id}
                                 </span>
