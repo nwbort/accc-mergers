@@ -59,8 +59,8 @@ export -f fetch_matter_page
 clean_html() {
   echo "Cleaning dynamic content from all downloaded HTML files..."
   
-  # Find .html files only in the root and the matters subfolder
-  { find . -maxdepth 1 -name "*.html"; find "./$SUBFOLDER" -maxdepth 1 -name "*.html" 2>/dev/null; } | while IFS= read -r file; do
+  # Find .html files in the root, data/raw, and the matters subfolder
+  { find . -maxdepth 1 -name "*.html"; find "data/raw" -maxdepth 1 -name "*.html" 2>/dev/null; find "./$SUBFOLDER" -maxdepth 1 -name "*.html" 2>/dev/null; } | while IFS= read -r file; do
     echo "  - Cleaning $file"
     
     # Use sed to perform in-place replacements for simple line-based patterns.
