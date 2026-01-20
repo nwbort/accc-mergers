@@ -56,7 +56,7 @@ jobs:
         git push
 
     - name: Trigger extract workflow if changes were committed
-      if: steps.commit.outputs.changes == 'true'
+      if: steps.commit.outputs.changes == 'true' || github.event_name == 'repository_dispatch'
       env:
         GH_TOKEN: ${{ github.token }}
       run: |
