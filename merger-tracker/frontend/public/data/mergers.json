@@ -227,8 +227,8 @@
       "merger_id": "MN-01019",
       "effective_notification_datetime": "2025-10-10T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
-      "end_of_determination_period": "2026-01-22T12:00:00Z",
-      "consultation_response_due_date": "2025-10-20T12:00:00Z",
+      "end_of_determination_period": "2026-06-05T12:00:00Z",
+      "consultation_response_due_date": "2026-02-04T12:00:00Z",
       "acquirers": [
         {
           "name": "AMPOL RETAIL HOLDING PTY LTD",
@@ -274,6 +274,30 @@
           "date": "2025-10-10T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2025-10-13T12:00:00Z",
+          "title": "Questionnaire",
+          "display_title": "Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/EG%20-%20Questionnaire_0.docx",
+          "url_gh": "/matters/MN-01019/EG - Questionnaire_0.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-01-21T12:00:00Z",
+          "title": "ACCC decided notification is subject to Phase 2 review",
+          "display_title": "ACCC decided notification is subject to Phase 2 review",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ampol%20-%20EG%20Australia%20-%20Phase%202%20Notice%20-%20Redacted.pdf",
+          "url_gh": "/matters/MN-01019/Ampol - EG Australia - Phase 2 Notice - Redacted.pdf",
+          "status": "live",
+          "phase": "Phase 2"
+        },
+        {
+          "date": "2025-11-06T12:00:00Z",
+          "title": "ACCC decided to extend the Phase 1 determination period following receipt of extension request from Ampol, to allow Ampol to provide additional information.",
+          "display_title": "ACCC decided to extend the Phase 1 determination period following receipt of extension request from Ampol, to allow Ampol to provide additional information.",
           "phase": "Phase 1"
         }
       ],

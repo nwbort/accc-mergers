@@ -2,6 +2,18 @@
   "events": [
     {
       "date": "2026-01-21T12:00:00Z",
+      "title": "ACCC decided notification is subject to Phase 2 review",
+      "display_title": "ACCC decided notification is subject to Phase 2 review",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ampol%20-%20EG%20Australia%20-%20Phase%202%20Notice%20-%20Redacted.pdf",
+      "url_gh": "/matters/MN-01019/Ampol - EG Australia - Phase 2 Notice - Redacted.pdf",
+      "status": "live",
+      "merger_id": "MN-01019",
+      "merger_name": "Ampol \u2013 EG Australia",
+      "phase": "Phase 2",
+      "is_waiver": false
+    },
+    {
+      "date": "2026-01-21T12:00:00Z",
       "title": "Notification waiver determination published",
       "display_title": "Notification waiver determination published",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Salesforce-Qualified%20%28WA-35003%29%20-%20Notification%20waiver%20determination%20-%2020%20January%202026.pdf",
@@ -565,6 +577,18 @@
       "is_waiver": false
     },
     {
+      "date": "2025-11-06T12:00:00Z",
+      "title": "ACCC decided to extend the Phase 1 determination period following receipt of extension request from Ampol, to allow Ampol to provide additional information.",
+      "display_title": "ACCC decided to extend the Phase 1 determination period following receipt of extension request from Ampol, to allow Ampol to provide additional information.",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-01019",
+      "merger_name": "Ampol \u2013 EG Australia",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
       "date": "2025-10-30T12:00:00Z",
       "title": "Questionnaire released for La Caise acquisition Edify NSW Development assets",
       "display_title": "Questionnaire released for La Caise acquisition Edify NSW Development assets",
@@ -643,6 +667,18 @@
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/EG%20-%20Questionnaire.docx",
       "url_gh": "/matters/MN-01019/EG - Questionnaire.pdf",
       "status": "removed",
+      "merger_id": "MN-01019",
+      "merger_name": "Ampol \u2013 EG Australia",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
+      "date": "2025-10-13T12:00:00Z",
+      "title": "Questionnaire",
+      "display_title": "Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/EG%20-%20Questionnaire_0.docx",
+      "url_gh": "/matters/MN-01019/EG - Questionnaire_0.pdf",
+      "status": "live",
       "merger_id": "MN-01019",
       "merger_name": "Ampol \u2013 EG Australia",
       "phase": null,
@@ -769,5 +805,5 @@
       "is_waiver": false
     }
   ],
-  "total": 64
+  "total": 67
 }
