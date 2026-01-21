@@ -1,9 +1,9 @@
 {
-  "total_mergers": 17,
+  "total_mergers": 18,
   "total_waivers": 4,
   "by_status": {
     "Assessment completed": 8,
-    "Under assessment": 9
+    "Under assessment": 10
   },
   "by_determination": {
     "Approved": 8
@@ -37,11 +37,11 @@
   "top_industries": [
     {
       "name": "Software Publishing",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Supermarket and Grocery Stores",
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-01074",
+      "merger_name": "GE Healthcare \u2013 Intelerad",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-01-20T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-75002",
       "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
       "status": "Under assessment",
@@ -108,14 +116,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-01-09T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "WA-01081",
-      "merger_name": "Accenture \u2013 Faculty Science",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-01-08T12:00:00Z",
-      "is_waiver": true
     }
   ]
 }

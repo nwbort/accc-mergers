@@ -53,6 +53,16 @@
     {
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
+      "date": "2026-01-29T12:00:00Z",
+      "merger_id": "MN-01074",
+      "merger_name": "GE Healthcare \u2013 Intelerad",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-01-20T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
       "date": "2026-02-04T12:00:00Z",
       "merger_id": "MN-01019",
       "merger_name": "Ampol \u2013 EG Australia",
@@ -129,8 +139,18 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-01-19T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-03-04T12:00:00Z",
+      "merger_id": "MN-01074",
+      "merger_name": "GE Healthcare \u2013 Intelerad",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-01-20T12:00:00Z"
     }
   ],
-  "count": 13,
+  "count": 15,
   "days_ahead": 60
 }
