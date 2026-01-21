@@ -47,3 +47,9 @@ jobs:
           git commit -m "Update scraped data and static files: ${timestamp}" || exit 0
           git pull --rebase
           git push
+
+      - name: Trigger convert workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run convert.yml
