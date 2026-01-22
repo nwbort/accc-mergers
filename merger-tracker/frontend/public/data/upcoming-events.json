@@ -63,6 +63,16 @@
     {
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
+      "date": "2026-01-30T12:00:00Z",
+      "merger_id": "MN-75003",
+      "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-01-21T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
       "date": "2026-02-04T12:00:00Z",
       "merger_id": "MN-01019",
       "merger_name": "Ampol \u2013 EG Australia",
@@ -161,6 +171,6 @@
       "effective_notification_datetime": "2026-01-21T12:00:00Z"
     }
   ],
-  "count": 16,
+  "count": 17,
   "days_ahead": 60
 }

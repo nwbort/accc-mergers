@@ -86,7 +86,10 @@ def normalize_determination(determination: str) -> str:
     determination = determination.replace('ACCC Determination', '').strip()
 
     # Normalize common patterns
-    if 'Approved' in determination or 'approved' in determination:
+    # IMPORTANT: Check for "Not approved" BEFORE "Approved" to avoid substring match
+    if 'Not approved' in determination or 'not approved' in determination:
+        return 'Not approved'
+    elif 'Approved' in determination or 'approved' in determination:
         return 'Approved'
     elif 'Declined' in determination or 'declined' in determination:
         return 'Declined'

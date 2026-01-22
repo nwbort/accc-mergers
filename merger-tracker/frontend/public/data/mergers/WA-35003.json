@@ -6,7 +6,7 @@
   "effective_notification_datetime": "2026-01-08T12:00:00Z",
   "stage": "Waiver application",
   "determination_publication_date": "2026-01-21T12:00:00Z",
-  "accc_determination": "Approved",
+  "accc_determination": "Not approved",
   "acquirers": [
     {
       "name": "Salesforce, Inc",
@@ -66,6 +66,12 @@
       "date": "2026-01-21T12:00:00Z",
       "title": "Waiver application determination: Approved",
       "display_title": "Waiver application determination: Approved",
+      "phase": "Waiver"
+    },
+    {
+      "date": "2026-01-21T12:00:00Z",
+      "title": "Waiver application determination: Not approved",
+      "display_title": "Waiver application determination: Not approved",
       "phase": "Waiver"
     }
   ],

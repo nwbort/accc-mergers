@@ -2,7 +2,7 @@ function StatusBadge({ status, determination }) {
   const getStatusStyle = () => {
     if (determination === 'Approved') {
       return 'bg-green-100 text-green-800';
-    } else if (determination === 'Declined') {
+    } else if (determination === 'Declined' || determination === 'Not approved') {
       return 'bg-red-100 text-red-800';
     } else if (status === 'Under assessment') {
       return 'bg-[#335145] bg-opacity-10 text-[#335145]';

@@ -123,17 +123,20 @@ def normalize_determination(determination: str) -> str | None:
     """Normalize determination strings to cleaner values."""
     if not determination:
         return None
-    
+
     # Remove 'ACCC Determination' prefix
     determination = determination.replace('ACCC Determination', '').strip()
-    
-    if 'Approved' in determination or 'approved' in determination:
+
+    # IMPORTANT: Check for "Not approved" BEFORE "Approved" to avoid substring match
+    if 'Not approved' in determination or 'not approved' in determination:
+        return 'Not approved'
+    elif 'Approved' in determination or 'approved' in determination:
         return 'Approved'
     elif 'Declined' in determination or 'declined' in determination:
         return 'Declined'
     elif 'Not opposed' in determination or 'not opposed' in determination:
         return 'Not opposed'
-    
+
     return determination
 
 
