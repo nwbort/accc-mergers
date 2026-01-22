@@ -1,6 +1,18 @@
 {
   "events": [
     {
+      "date": "2026-01-22T12:00:00Z",
+      "title": "Ramsay - National Capital Private Hospital - Questionnaire",
+      "display_title": "Ramsay - National Capital Private Hospital - Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ramsay%20National%20Capital%20-%20Phase%201%20Questionnaire.docx",
+      "url_gh": "/matters/MN-75003/Ramsay National Capital - Phase 1 Questionnaire.pdf",
+      "status": "live",
+      "merger_id": "MN-75003",
+      "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
       "date": "2026-01-21T12:00:00Z",
       "title": "ACCC decided notification is subject to Phase 2 review",
       "display_title": "ACCC decided notification is subject to Phase 2 review",
@@ -22,6 +34,18 @@
       "merger_id": "MN-01074",
       "merger_name": "GE Healthcare \u2013 Intelerad",
       "phase": null,
+      "is_waiver": false
+    },
+    {
+      "date": "2026-01-21T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-75003",
+      "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
+      "phase": "Phase 1",
       "is_waiver": false
     },
     {
@@ -817,5 +841,5 @@
       "is_waiver": false
     }
   ],
-  "total": 68
+  "total": 70
 }

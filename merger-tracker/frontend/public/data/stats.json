@@ -1,9 +1,9 @@
 {
-  "total_mergers": 18,
+  "total_mergers": 19,
   "total_waivers": 4,
   "by_status": {
     "Assessment completed": 8,
-    "Under assessment": 10
+    "Under assessment": 11
   },
   "by_determination": {
     "Approved": 8
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-75003",
+      "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-01-21T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-01074",
       "merger_name": "GE Healthcare \u2013 Intelerad",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-01-15T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-15002",
-      "merger_name": "Google - Wiz",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-01-09T12:00:00Z",
       "is_waiver": false
     }
   ]
