@@ -139,9 +139,6 @@ function Industries() {
           <thead className="bg-gray-50">
             <tr>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Code
-              </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Industry name
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -182,7 +179,7 @@ function Industries() {
                     aria-expanded={isExpanded}
                     aria-controls={`industry-details-${industry.code}`}
                   >
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    <td className="px-6 py-4 text-sm text-gray-900">
                       <div className="flex items-center">
                         <svg
                           className={`w-4 h-4 mr-2 transition-transform ${
@@ -199,11 +196,8 @@ function Industries() {
                             clipRule="evenodd"
                           />
                         </svg>
-                        {industry.code}
+                        {industry.name}
                       </div>
-                    </td>
-                    <td className="px-6 py-4 text-sm text-gray-900">
-                      {industry.name}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary text-white">
@@ -231,7 +225,7 @@ function Industries() {
                   </tr>
                   {isExpanded && (
                     <tr id={`industry-details-${industry.code}`}>
-                      <td colSpan="4" className="px-6 py-4 bg-gray-50">
+                      <td colSpan="3" className="px-6 py-4 bg-gray-50">
                         <div className="space-y-2">
                           <p className="text-sm font-medium text-gray-700 mb-3">
                             Mergers in this industry:
