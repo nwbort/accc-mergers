@@ -21,6 +21,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from collections import defaultdict
 
+from normalization import normalize_determination
+
 # Paths
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
@@ -117,24 +119,6 @@ def calculate_calendar_days(start_date_str: str, end_date_str: str) -> int | Non
         return (end - start).days
     except (ValueError, AttributeError):
         return None
-
-
-def normalize_determination(determination: str) -> str | None:
-    """Normalize determination strings to cleaner values."""
-    if not determination:
-        return None
-    
-    # Remove 'ACCC Determination' prefix
-    determination = determination.replace('ACCC Determination', '').strip()
-    
-    if 'Approved' in determination or 'approved' in determination:
-        return 'Approved'
-    elif 'Declined' in determination or 'declined' in determination:
-        return 'Declined'
-    elif 'Not opposed' in determination or 'not opposed' in determination:
-        return 'Not opposed'
-    
-    return determination
 
 
 def extract_phase_from_event(event_title: str) -> str | None:

@@ -10,6 +10,7 @@ from datetime import datetime
 from markdownify import markdownify as md
 from parse_determination import parse_determination_pdf
 from parse_questionnaire import process_all_questionnaires
+from normalization import normalize_determination
 
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./data/raw/matters"
@@ -75,25 +76,6 @@ def parse_date_from_text(text: str) -> str:
                 return None
 
     return None
-
-
-def normalize_determination(determination: str) -> str:
-    """Normalize determination strings to cleaner values."""
-    if not determination:
-        return determination
-
-    # Remove 'ACCC Determination' prefix (with or without space)
-    determination = determination.replace('ACCC Determination', '').strip()
-
-    # Normalize common patterns
-    if 'Approved' in determination or 'approved' in determination:
-        return 'Approved'
-    elif 'Declined' in determination or 'declined' in determination:
-        return 'Declined'
-    elif 'Not opposed' in determination or 'not opposed' in determination:
-        return 'Not opposed'
-
-    return determination
 
 
 def download_attachment(merger_id, attachment_url, event_title=None):
