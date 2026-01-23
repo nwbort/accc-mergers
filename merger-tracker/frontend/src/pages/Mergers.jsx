@@ -149,7 +149,7 @@ function Mergers() {
                 <option value="all">All phases</option>
                 <option value="phase1">Phase 1</option>
                 <option value="phase2">Phase 2</option>
-                <option value="waivers">Waivers</option>
+                <option value="waivers">Waiver</option>
               </select>
             </div>
             <div>
