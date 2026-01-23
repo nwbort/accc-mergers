@@ -58,9 +58,12 @@ function Mergers() {
       filtered = filtered.filter((m) => m.is_waiver);
     }
 
-    // Filter by status
+    // Filter by status (match against displayed outcome: determination || status)
     if (statusFilter !== 'all') {
-      filtered = filtered.filter((m) => m.status === statusFilter);
+      filtered = filtered.filter((m) => {
+        const displayedOutcome = m.accc_determination || m.status;
+        return displayedOutcome === statusFilter;
+      });
     }
 
     // Search filter (note: merger_description not included in list view for performance)
@@ -89,7 +92,8 @@ function Mergers() {
   if (loading) return <LoadingSpinner />;
   if (error) return <div className="text-red-600">Error: {error}</div>;
 
-  const statuses = ['all', ...new Set(mergers.map((m) => m.status))];
+  // Get all unique outcomes (what's actually displayed in the badge: determination || status)
+  const outcomes = ['all', ...new Set(mergers.map((m) => m.accc_determination || m.status))];
 
   return (
     <>
@@ -166,11 +170,11 @@ function Mergers() {
                 onChange={(e) => setStatusFilter(e.target.value)}
                 aria-label="Filter by merger status"
               >
-                {statuses.map((status) => (
-                  <option key={status} value={status}>
-                  {status === 'all'
+                {outcomes.map((outcome) => (
+                  <option key={outcome} value={outcome}>
+                  {outcome === 'all'
                     ? 'All statuses'
-                    : status}
+                    : outcome}
                   </option>
                 ))}
               </select>
