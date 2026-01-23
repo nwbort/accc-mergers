@@ -33,6 +33,12 @@
       "identifier": "US EIN  872063362"
     }
   ],
+  "anzsic_codes": [
+    {
+      "code": "5420",
+      "name": "Software Publishing"
+    }
+  ],
   "merger_description": "Ethos Bidco, Ltd (**Ethos**) proposes to indirectly acquire the following from affiliates of UnitedHealth Group Incorporated (**UHG**) pursuant to a Share and Asset Purchase Agreement (**EMIS SAPA**):\n\n* 100% of the shares of EMIS Group Limited (**EMIS**); and\n* Certain healthcare technology assets used in the UK by UHG's wholly owned subsidiary, Optum Health Solutions (UK) Limited (**Transferred Assets**).\n\nEthos also proposes to acquire 100% of EMIS Health India Private Limited (**EMIS India**) (together with EMIS and the Transferred Assets, **the Target Group**) from UHG through a separate Share Purchase Agreement (**EMIS India** **SPA**, together with EMIS SAPA, **the Acquisition**).\n\nEthos is a special purpose vehicle established by funds managed by affiliates of TPG Inc. (**TPG**) for the purpose of the Acquisition. TPG is a leading global alternative asset manager firm founded in San Francisco in 1992.\n\nUHG is an NYSE-listed multinational healthcare and well-being company. EMIS is a UK-based healthcare software business ultimately owned by UHG. Its core product is a primary care electronic patient record (**EPR**) system.\n\nIn Australia, the Target Group's activities are limited to the provision of ancillary services to a single customer in relation to the Target Group's legacy EPR system.",
   "events": [
     {
@@ -93,11 +99,5 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
-  "anzsic_codes": [
-    {
-      "code": "5420",
-      "name": "Software Publishing"
-    }
-  ]
+  "public_benefits_determination_date": null
 }

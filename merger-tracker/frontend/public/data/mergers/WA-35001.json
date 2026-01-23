@@ -22,6 +22,12 @@
     }
   ],
   "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "6923",
+      "name": "Engineering Design and Engineering Consulting Services"
+    }
+  ],
   "merger_description": "WSP Global Inc. (**WSP**) is a global engineering consulting services firm, which is listed on the Toronto Stock Exchange. In Australia, WSP operates through its wholly owned subsidiary, WSP Australia Pty Limited, and provides engineering services to customers across various industries (except where otherwise indicated, WSP and WSP Australia Pty Ltd are collectively referred to as WSP).\n\nTRC Companies, Inc. (**TRC**) (referred to as the Target, together with its related subsidiaries forming the TRC group) is a US-based privately held engineering consulting and construction services firm which predominantly services clients in the US who own or operate large-scale infrastructure and land assets. TRC has no subsidiary, employees or other physical presence in Australia and has immaterial supplies to Australian customers from its offshore operations.\n\nWSP has entered into an agreement to indirectly acquire 100% of the shares of TRC.",
   "events": [
     {
@@ -82,11 +88,5 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
-  "anzsic_codes": [
-    {
-      "code": "6923",
-      "name": "Engineering Design and Engineering Consulting Services"
-    }
-  ]
+  "public_benefits_determination_date": null
 }

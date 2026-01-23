@@ -246,7 +246,7 @@ function MergerDetail() {
               Acquirers
             </h2>
             {merger.acquirers.map((acquirer, idx) => (
-              <div key={idx} className="mb-3">
+              <div key={`acquirer-${acquirer.name}-${acquirer.identifier || idx}`} className="mb-3">
                 <p className="font-medium text-gray-900">{acquirer.name}</p>
                 {acquirer.identifier && (
                   <p className="text-sm text-gray-500">
@@ -262,7 +262,7 @@ function MergerDetail() {
               Targets
             </h2>
             {merger.targets.map((target, idx) => (
-              <div key={idx} className="mb-3">
+              <div key={`target-${target.name}-${target.identifier || idx}`} className="mb-3">
                 <p className="font-medium text-gray-900">{target.name}</p>
                 {target.identifier && (
                   <p className="text-sm text-gray-500">
@@ -279,7 +279,7 @@ function MergerDetail() {
                 Other parties
               </h2>
               {merger.other_parties.map((party, idx) => (
-                <div key={idx} className="mb-3">
+                <div key={`party-${party.name}-${party.identifier || idx}`} className="mb-3">
                   <p className="font-medium text-gray-900">{party.name}</p>
                   {party.identifier && (
                     <p className="text-sm text-gray-500">
@@ -327,7 +327,7 @@ function MergerDetail() {
                     <div className="flex flex-wrap gap-2 mt-3">
                       {merger.commentary.tags.map((tag, idx) => (
                         <span
-                          key={idx}
+                          key={`tag-${tag}-${idx}`}
                           className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-blue-100 text-blue-800"
                         >
                           {tag}
@@ -360,7 +360,7 @@ function MergerDetail() {
             <div className="flex flex-wrap gap-2">
               {merger.anzsic_codes.map((code, idx) => (
                 <Link
-                  key={idx}
+                  key={`anzsic-${code.code || code.name}`}
                   to={`/mergers?q=${encodeURIComponent(code.name)}`}
                   className="inline-flex items-center px-3 py-1 rounded-md text-sm bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors cursor-pointer"
                 >
@@ -380,7 +380,7 @@ function MergerDetail() {
             <div className="flow-root">
               <ul className="-mb-8">
                 {sortedEvents.map((event, idx) => (
-                  <li key={idx}>
+                  <li key={`event-${event.date}-${event.display_title || event.title}-${idx}`}>
                     <div className="relative pb-8">
                       {idx !== sortedEvents.length - 1 && (
                         <span

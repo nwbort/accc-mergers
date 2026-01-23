@@ -22,6 +22,16 @@
     }
   ],
   "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "5420",
+      "name": "Software Publishing"
+    },
+    {
+      "code": "7000",
+      "name": "Computer System Design and Related Services"
+    }
+  ],
   "merger_description": "GE Healthcare Technologies Inc (**GE Healthcare**), through a wholly owned subsidiary, proposes to acquire Intelerad Topco Holdings ULC and Intelerad Holdings ULC (together, **Intelerad**) (the\u00a0**Acquisition**).\n\nGE Healthcare is a global medical technology, pharmaceutical diagnostics, and digital solutions company.\n\nGE Healthcare has a portfolio of enterprise imaging products for healthcare providers. This includes products that manage patient data, images and enterprise content, picture archiving and communication systems (**PACS**) and radiological information systems, which manage the storage and reporting of radiology images. GE also manufactures medical imaging equipment, including CT, ultrasound, MRI and X-ray.\n\nIntelerad is a global medical imaging software provider that specialises in diagnostic viewing (including PACS), reporting, archiving, and collaboration tools for healthcare providers.",
   "events": [
     {
@@ -47,15 +57,5 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
-  "anzsic_codes": [
-    {
-      "code": "5420",
-      "name": "Software Publishing"
-    },
-    {
-      "code": "7000",
-      "name": "Computer System Design and Related Services"
-    }
-  ]
+  "public_benefits_determination_date": null
 }

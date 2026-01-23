@@ -76,7 +76,6 @@ export const calculateBusinessDays = (startDate, endDate) => {
 
     return businessDays;
   } catch (e) {
-    console.error('Error calculating business days:', e);
     return null;
   }
 };
@@ -99,7 +98,6 @@ export const getBusinessDaysRemaining = (endDate) => {
     const tomorrow = addDays(today, 1);
     return calculateBusinessDays(tomorrow, end);
   } catch (e) {
-    console.error('Error calculating business days remaining:', e);
     return null;
   }
 };

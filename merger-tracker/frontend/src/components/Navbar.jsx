@@ -1,6 +1,8 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
+const SCROLL_HIDE_THRESHOLD_PX = 50;
+
 function Navbar() {
   const location = useLocation();
   const [isVisible, setIsVisible] = useState(true);
@@ -18,7 +20,7 @@ function Navbar() {
       // Show navbar when scrolling up, hide when scrolling down
       if (currentScrollY < lastScrollY) {
         setIsVisible(true);
-      } else if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      } else if (currentScrollY > lastScrollY && currentScrollY > SCROLL_HIDE_THRESHOLD_PX) {
         setIsVisible(false);
       }
 

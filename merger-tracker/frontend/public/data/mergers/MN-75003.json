@@ -63,6 +63,12 @@
       "identifier": ""
     }
   ],
+  "anzsic_codes": [
+    {
+      "code": "8401",
+      "name": "Hospitals (Except Psychiatric Hospitals)"
+    }
+  ],
   "merger_description": "Ramsay Health Care Investments (Ramsay) or one or more of its wholly owned subsidiaries proposes to acquire the businesses, assets and certain assumed liabilities of National Capital Private Hospital (NCPH) from Healthscope pursuant to a Business and Asset Sale Agreement.\n\nRamsay is a publicly listed private hospital operator with over 75 hospitals, clinics and surgical centres across Australia. Ramsay does not currently have any facilities in the Australian Capital Territory (ACT) or its surrounding regions. The closest Ramsay operated private hospitals to NCPH are Southern Highlands Private Hospital in Bowral, New South Wales (NSW) and Nowra Private Hospital in Nowra, NSW.\n\nNCPH is a private hospital in Garran, ACT which is currently operated by Healthscope, a private hospital operator with 36 hospitals Australia-wide. In May 2025, Healthscope\u2019s parent entities went into voluntary administration and receivers and administrators were appointed by its lenders and the Healthscope Board, respectively, to conduct an orderly sale of the hospitals in its network.\n\nPrivate hospitals supply services to patients, private health funds in respect of their members and to government for Medicare patients. Private hospital operators also supply facilities to medical and allied health professionals providing services within the hospitals that they operate.",
   "events": [
     {
@@ -88,11 +94,5 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
-  "anzsic_codes": [
-    {
-      "code": "8401",
-      "name": "Hospitals (Except Psychiatric Hospitals)"
-    }
-  ]
+  "public_benefits_determination_date": null
 }

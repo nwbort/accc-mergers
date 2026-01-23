@@ -60,7 +60,6 @@ function Dashboard() {
       const data = await response.json();
       setUpcomingEvents(data.events);
     } catch (err) {
-      console.error('Error fetching upcoming events:', err);
       // Don't block the page if upcoming events fail
       setUpcomingEvents([]);
     }

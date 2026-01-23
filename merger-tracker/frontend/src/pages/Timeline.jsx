@@ -7,6 +7,7 @@ import { API_ENDPOINTS } from '../config';
 
 const ITEMS_PER_PAGE = 15;
 const LOAD_MORE_COUNT = 10;
+const SCROLL_THRESHOLD_PX = 300;
 
 function Timeline() {
   const [allEvents, setAllEvents] = useState([]);
@@ -22,9 +23,9 @@ function Timeline() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Check if user is near bottom (within 300px)
+      // Check if user is near bottom
       const scrollPosition = window.innerHeight + window.scrollY;
-      const threshold = document.documentElement.scrollHeight - 300;
+      const threshold = document.documentElement.scrollHeight - SCROLL_THRESHOLD_PX;
 
       if (scrollPosition >= threshold && hasMore && !loadingMore) {
         loadMoreEvents();

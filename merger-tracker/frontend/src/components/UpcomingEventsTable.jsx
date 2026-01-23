@@ -67,7 +67,7 @@ function UpcomingEventsTable({ events }) {
 
               return (
                 <tr
-                  key={idx}
+                  key={`${event.merger_id}-${event.date}-${event.type}`}
                   className="relative hover:bg-gray-50"
                 >
                   {/* Combined cell - mobile only */}
