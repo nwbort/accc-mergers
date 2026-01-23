@@ -14,7 +14,7 @@ function Mergers() {
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
-  const [typeFilter, setTypeFilter] = useState('all');
+  const [phaseFilter, setPhaseFilter] = useState('all');
 
   // Initialize search term from URL query parameter
   useEffect(() => {
@@ -30,7 +30,7 @@ function Mergers() {
 
   useEffect(() => {
     filterMergers();
-  }, [searchTerm, statusFilter, typeFilter, mergers]);
+  }, [searchTerm, statusFilter, phaseFilter, mergers]);
 
   const fetchMergers = async () => {
     try {
@@ -49,10 +49,12 @@ function Mergers() {
   const filterMergers = () => {
     let filtered = [...mergers];
 
-    // Filter by type (notification vs waiver)
-    if (typeFilter === 'notification') {
-      filtered = filtered.filter((m) => !m.is_waiver);
-    } else if (typeFilter === 'waiver') {
+    // Filter by phase
+    if (phaseFilter === 'phase1') {
+      filtered = filtered.filter((m) => m.stage && m.stage.includes('Phase 1'));
+    } else if (phaseFilter === 'phase2') {
+      filtered = filtered.filter((m) => m.stage && m.stage.includes('Phase 2'));
+    } else if (phaseFilter === 'waivers') {
       filtered = filtered.filter((m) => m.is_waiver);
     }
 
@@ -132,21 +134,22 @@ function Mergers() {
             </div>
             <div>
               <label
-                htmlFor="type"
+                htmlFor="phase"
                 className="block text-sm font-medium text-gray-700 mb-1"
               >
-                Type
+                Phase
               </label>
               <select
-                id="type"
+                id="phase"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
-                value={typeFilter}
-                onChange={(e) => setTypeFilter(e.target.value)}
-                aria-label="Filter by merger type"
+                value={phaseFilter}
+                onChange={(e) => setPhaseFilter(e.target.value)}
+                aria-label="Filter by merger phase"
               >
-                <option value="all">All types</option>
-                <option value="notification">Notification</option>
-                <option value="waiver">Waiver</option>
+                <option value="all">All phases</option>
+                <option value="phase1">Phase 1</option>
+                <option value="phase2">Phase 2</option>
+                <option value="waivers">Waiver</option>
               </select>
             </div>
             <div>
