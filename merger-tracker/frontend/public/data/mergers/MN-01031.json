@@ -24,6 +24,16 @@
     }
   ],
   "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "2619",
+      "name": "Other Electricity Generation"
+    },
+    {
+      "code": "2620",
+      "name": "Electricity Transmission"
+    }
+  ],
   "merger_description": "Caisse de d\u00e9p\u00f4t et placement du Qu\u00e9bec (La Caisse), through a wholly owned and controlled special purpose vehicle, C Renewables Australia Pty Ltd (C Renewables), proposes to acquire Edify New South Wales Landco Pty Ltd (Edify NSW) through a share sale agreement.\n\nLa Caisse is a global investment group headquartered in the Province of Qu\u00e9bec (Canada) active globally in major financial markets, private equity, fixed income, infrastructure and real estate. In Australia, its investments in infrastructure are in Transgrid, the Port of Brisbane, Sydney Metro, DPW Australia, and Westconnex. La Caisse's other investments in Australia include investments in Gunn Agri Partners (farmland management), Greenstone, (insurance), ESR (logistics estate) and Scape.\n\nEdify NSW is an Australian renewable energy generation and storage asset developer. On 21 September 2025, Edify NSW entered into an asset sale agreement to acquire certain assets (e.g., options over land, contracts, preliminary connection arrangements and documents, environment and planning applications and documents, intellectual property, and records) from Edify Energy (an Australian renewable energy generation and storage asset developer), which have the potential to be developed into renewable energy projects in NSW (NSW Development Assets). Should the NSW Development Assets be developed into renewable energy projects, they will be connected into the National Electricity Market (**NEM**) in NSW.\n\nWhile La Caisse does not presently own or operate any energy generation or storage assets in Australia, on 21 September 2025, C Renewables entered into an agreement to acquire Edify Energy which owns certain assets which have the potential to be developed into renewable energy projects in Queensland, Victoria and South Australia.\n\nIn addition, La Caisse is a minority securityholder in Transgrid, which is the Transmission Network Service Provider for the high-voltage electricity transmission network in NSW and the Australian Capital Territory. This network forms part of the NEM.",
   "events": [
     {
@@ -95,15 +105,5 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
-  "anzsic_codes": [
-    {
-      "code": "2619",
-      "name": "Other Electricity Generation"
-    },
-    {
-      "code": "2620",
-      "name": "Electricity Transmission"
-    }
-  ]
+  "public_benefits_determination_date": null
 }

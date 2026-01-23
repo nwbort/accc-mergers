@@ -22,32 +22,6 @@
     }
   ],
   "other_parties": [],
-  "merger_description": "Google LLC (**Google**) proposes to acquire 100% of the share capital in Wiz Inc (**Wiz**).\n\nGoogle supplies a wide range of digital products and services in Australia, including general search services, a mobile operating system (Android), a mobile app marketplace (the Play Store) and advertising technology services, and operates across multiple layers of the generative AI stack. Google supplies a range of cloud computing services to Australian consumers and businesses through its Google Cloud division, and also offers several cloud security products.\n\nWiz offers cloud security services to enable organisations to identify and prevent critical security risks across multiple cloud platforms, as well as in hybrid and on-premises environments. Wiz\u2019s primary product is a cloud native application protection platform (**CNAPP**) called Wiz Cloud. Wiz also offers add-ons to Wiz Cloud to enhance its capabilities, including Wiz Sensor, Wiz Defend and Wiz Code.",
-  "events": [
-    {
-      "date": "2026-01-12T12:00:00Z",
-      "title": "Google Wiz - Questionnaire - January 2026",
-      "display_title": "Questionnaire released for Google acquisition of Wiz",
-      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Google%20Wiz%20-%20Questionnaire%20-%20January%202026.docx",
-      "url_gh": "/matters/MN-15002/Google Wiz - Questionnaire - January 2026.pdf",
-      "status": "live",
-      "phase": null
-    },
-    {
-      "date": "2026-01-09T12:00:00Z",
-      "title": "Merger notified to ACCC",
-      "display_title": "Merger notified to ACCC",
-      "phase": "Phase 1"
-    }
-  ],
-  "accc_determination": null,
-  "is_waiver": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
-  "phase_2_determination": null,
-  "phase_2_determination_date": null,
-  "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
   "anzsic_codes": [
     {
       "code": "5420",
@@ -77,5 +51,31 @@
       "code": "7000",
       "name": "Computer System Design and Related Services"
     }
-  ]
+  ],
+  "merger_description": "Google LLC (**Google**) proposes to acquire 100% of the share capital in Wiz Inc (**Wiz**).\n\nGoogle supplies a wide range of digital products and services in Australia, including general search services, a mobile operating system (Android), a mobile app marketplace (the Play Store) and advertising technology services, and operates across multiple layers of the generative AI stack. Google supplies a range of cloud computing services to Australian consumers and businesses through its Google Cloud division, and also offers several cloud security products.\n\nWiz offers cloud security services to enable organisations to identify and prevent critical security risks across multiple cloud platforms, as well as in hybrid and on-premises environments. Wiz\u2019s primary product is a cloud native application protection platform (**CNAPP**) called Wiz Cloud. Wiz also offers add-ons to Wiz Cloud to enhance its capabilities, including Wiz Sensor, Wiz Defend and Wiz Code.",
+  "events": [
+    {
+      "date": "2026-01-12T12:00:00Z",
+      "title": "Google Wiz - Questionnaire - January 2026",
+      "display_title": "Questionnaire released for Google acquisition of Wiz",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Google%20Wiz%20-%20Questionnaire%20-%20January%202026.docx",
+      "url_gh": "/matters/MN-15002/Google Wiz - Questionnaire - January 2026.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-01-09T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "accc_determination": null,
+  "is_waiver": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null
 }

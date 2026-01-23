@@ -22,6 +22,16 @@
     }
   ],
   "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "6910",
+      "name": "Scientific Research Services"
+    },
+    {
+      "code": "6925",
+      "name": "Scientific Testing and Analysis Services"
+    }
+  ],
   "merger_description": "Thermo Fisher proposes to acquire all issued and outstanding equity interests of Clario Holdings, Inc.\n\nThermo Fisher is a US-based global manufacturer and supplier of a broad range of analytical, research and bioprocessing products, as well as pharmaceutical contract development and manufacturing services. Thermo Fisher, through its Clinical Research Group (CRG, branded as PPD), is active as a global provider of contract research organisation (CRO) services. CRG offers CRO solutions to help pharma and biotech customers bring new therapies and vaccines to market safely and efficiently. It supports pharma and biotech customers (also referred to as Sponsors) in the organisation and evaluation of clinical trials.\n\nClario is a US-based, privately held clinical trial technology services company that provides regulatory-grade data capture and interpretation services in the context of clinical trials. Clario\u2019s data and analytics technology platform enables critical primary data collection for life sciences customers across all major digital endpoints. Clario offers comprehensive digital endpoint collection services that include electronic Clinical Outcome Assessment, medical imaging solutions, cardiac safety services and respiratory services. While Clario does provide its digital endpoint collection services to certain customers in Australia, Clario does not have a physical presence or a legal entity presence in Australia.\n\nThe Parties are active in the provision of different types of clinical trial services to Sponsors.",
   "events": [
     {
@@ -47,15 +57,5 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
-  "anzsic_codes": [
-    {
-      "code": "6910",
-      "name": "Scientific Research Services"
-    },
-    {
-      "code": "6925",
-      "name": "Scientific Testing and Analysis Services"
-    }
-  ]
+  "public_benefits_determination_date": null
 }

@@ -24,6 +24,16 @@
     }
   ],
   "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "2462",
+      "name": "Mining and Construction Machinery Manufacturing"
+    },
+    {
+      "code": "5420",
+      "name": "Software Publishing"
+    }
+  ],
   "merger_description": "Caterpillar Inc (Caterpillar) proposes to acquire 100% of fully diluted share capital in RPMGlobal Holdings Limited (RPM) (ASX:RUL), through a scheme of arrangement.\n\nCaterpillar is a global manufacturer of construction and mining equipment, off-highway diesel and natural gas engines, industrial gas turbines and diesel-electric locomotives. Caterpillar also supplies a range of different software products which interface with its equipment including MineStar for fleet track, VisionLink and CAT Foresight for asset management.\n\nRPM is a global provider of mining software solutions. RPM\u2019s software solutions are enterprise applications used by mining companies, original equipment manufacturers (OEMs) and contractors, including for asset management, planning and\u00a0scheduling, short-interval control and execution, simulation, and financial forecasting. RPM also provides associated technical consulting and training services applicable for mine design, planning, scheduling, operational management, asset management, simulation, financial modelling and ESG reporting.\n\nCaterpillar is an end customer of RPM\u2019s asset management and mining simulation tools.",
   "events": [
     {
@@ -87,15 +97,5 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
-  "anzsic_codes": [
-    {
-      "code": "2462",
-      "name": "Mining and Construction Machinery Manufacturing"
-    },
-    {
-      "code": "5420",
-      "name": "Software Publishing"
-    }
-  ]
+  "public_benefits_determination_date": null
 }

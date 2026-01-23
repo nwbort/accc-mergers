@@ -27,6 +27,20 @@
     }
   ],
   "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "3493",
+      "name": "Telecommunication Goods Wholesaling"
+    },
+    {
+      "code": "5809",
+      "name": "Other Telecommunications Services"
+    },
+    {
+      "code": "7000",
+      "name": "Computer System Design and Related Services"
+    }
+  ],
   "merger_description": "CSE Crosscom Pty Ltd (**CSE Crosscom**) proposes to acquire 100% of the share capital in Progility Pty Ltd (**Progility**).\n\nCSE Crosscom is an Australian communications systems integrator that designs, supplies, installs and maintains mission- and business-critical communications solutions nationally, including two-way Land Mobile Radio networks, push-to-talk over cellular solutions, in-building coverage/distributed antenna systems, internet protocol networking and managed services.\n\nCSE Crosscom is a subsidiary of CSE Global Limited\u2019s Australia/New Zealand communications business. CSE Global Limited is a public company listed on the Singapore stock exchange.\n\nProgility supplies communications integration and enterprise solutions with a particular focus on two-way radio networks, push-to-talk over cellular solutions and managed services.\n\nCSE Crosscom and Progility both supply communications systems integration services to enterprise and public sector customers nationally.",
   "events": [
     {
@@ -52,19 +66,5 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null,
-  "anzsic_codes": [
-    {
-      "code": "3493",
-      "name": "Telecommunication Goods Wholesaling"
-    },
-    {
-      "code": "5809",
-      "name": "Other Telecommunications Services"
-    },
-    {
-      "code": "7000",
-      "name": "Computer System Design and Related Services"
-    }
-  ]
+  "public_benefits_determination_date": null
 }
