@@ -22,7 +22,7 @@ function Mergers() {
     if (queryParam) {
       setSearchTerm(queryParam);
     }
-  }, []);
+  }, [searchParams]);
 
   useEffect(() => {
     fetchMergers();
@@ -68,11 +68,11 @@ function Mergers() {
       const term = searchTerm.toLowerCase();
       filtered = filtered.filter(
         (m) =>
-          m.merger_name.toLowerCase().includes(term) ||
-          m.merger_id.toLowerCase().includes(term) ||
-          m.acquirers.some((a) => a.name.toLowerCase().includes(term)) ||
-          m.targets.some((t) => t.name.toLowerCase().includes(term)) ||
-          m.anzsic_codes?.some((c) => c.name.toLowerCase().includes(term))
+          m.merger_name?.toLowerCase().includes(term) ||
+          m.merger_id?.toLowerCase().includes(term) ||
+          m.acquirers?.some((a) => a?.name?.toLowerCase().includes(term)) ||
+          m.targets?.some((t) => t?.name?.toLowerCase().includes(term)) ||
+          m.anzsic_codes?.some((c) => c?.name?.toLowerCase().includes(term))
       );
     }
 
@@ -248,7 +248,7 @@ function Mergers() {
                   <div className="mt-3 flex flex-wrap gap-2">
                     {merger.anzsic_codes.map((code, idx) => (
                       <span
-                        key={idx}
+                        key={`${merger.merger_id}-anzsic-${code.code || code.name}`}
                         className="inline-flex items-center px-2 py-1 rounded text-xs bg-gray-100 text-gray-700"
                       >
                         {code.name}

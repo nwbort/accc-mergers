@@ -263,7 +263,7 @@ def parse_merger_file(filepath, existing_merger_data=None):
         merger_data['other_parties'] = get_parties('field--name-field-acccgov-other-parties')
 
         # --- ANZSIC Codes ---
-        merger_data['anszic_codes'] = []
+        merger_data['anzsic_codes'] = []
         anszic_container = soup.find('div', class_='field--name-field-acquisition-anzsic-code')
         if anszic_container:
             for code in anszic_container.find_all('div', class_='field__item'):
@@ -276,7 +276,7 @@ def parse_merger_file(filepath, existing_merger_data=None):
                         if len(parts) >= 2:
                             code_num = parts[0]
                             code_name = parts[1]
-                            merger_data['anszic_codes'].append({'code': code_num, 'name': code_name})
+                            merger_data['anzsic_codes'].append({'code': code_num, 'name': code_name})
 
         # --- Description ---
         description_tag = soup.find('div', class_='field--name-field-accc-body')

@@ -164,7 +164,7 @@ function Industries() {
               );
 
               return (
-                <Fragment key={idx}>
+                <Fragment key={industry.code}>
                   <tr
                     className="hover:bg-gray-50 cursor-pointer"
                     onClick={() => toggleIndustry(industry.code, industry.name)}

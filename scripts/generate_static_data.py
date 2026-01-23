@@ -207,10 +207,8 @@ def enrich_merger(merger: dict, commentary: dict = None) -> dict:
     m['public_benefits_determination'] = pb_det
     m['public_benefits_determination_date'] = pb_det_date
     
-    # Normalise anszic_codes -> anzsic_codes
-    if 'anszic_codes' in m and 'anzsic_codes' not in m:
-        m['anzsic_codes'] = m.pop('anszic_codes')
-    elif 'anzsic_codes' not in m:
+    # Ensure anzsic_codes exists
+    if 'anzsic_codes' not in m:
         m['anzsic_codes'] = []
     
     # Add phase to events
