@@ -335,7 +335,7 @@ def parse_merger_file(filepath, existing_merger_data=None):
                     # Get original filename and determine serve filename
                     # For DOCX files, url_gh points to PDF (created by separate workflow)
                     parsed_url = urlparse(url)
-                    original_filename = unquote(os.path.basename(parsed_url.path))
+                    original_filename = unquote(os.path.basename(parsed_url.path)).strip()
                     serve_filename = get_serve_filename(original_filename)
                     
                     event['url_gh'] = f"/matters/{merger_id}/{serve_filename}"
