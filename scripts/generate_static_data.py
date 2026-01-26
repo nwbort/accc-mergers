@@ -177,19 +177,27 @@ def enrich_merger(merger: dict, commentary: dict = None) -> dict:
     if commentary and merger_id in commentary:
         m['commentary'] = commentary[merger_id]
     
-    # Compute phase-specific determinations based on stage
+    # Compute phase-specific determinations based on stage and events
     phase_1_det = None
     phase_1_det_date = None
     phase_2_det = None
     phase_2_det_date = None
     pb_det = None
     pb_det_date = None
-    
+
+    # Check events for Phase 2 review decision (indicates Phase 1 completion)
+    for event in m.get('events', []):
+        title = event.get('title', '')
+        if 'subject to Phase 2 review' in title:
+            phase_1_det = 'Phase 2 required'
+            phase_1_det_date = event.get('date')
+            break
+
     if m.get('accc_determination') and m.get('determination_publication_date'):
         stage = m.get('stage', 'Phase 1')
         det = m['accc_determination']
         det_date = m['determination_publication_date']
-        
+
         if 'Phase 1' in stage:
             phase_1_det = det
             phase_1_det_date = det_date
