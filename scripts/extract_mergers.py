@@ -105,7 +105,7 @@ def download_attachment(merger_id, attachment_url, event_title=None):
         # Security: Decode URL first, then extract basename, then validate
         parsed_url = urlparse(attachment_url)
         decoded_path = unquote(parsed_url.path)
-        filename = os.path.basename(decoded_path)
+        filename = os.path.basename(decoded_path).strip()  # Strip accidental leading/trailing whitespace
 
         # Security: Validate filename to prevent path traversal
         if not is_safe_filename(filename):
