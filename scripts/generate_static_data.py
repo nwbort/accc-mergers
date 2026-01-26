@@ -189,7 +189,7 @@ def enrich_merger(merger: dict, commentary: dict = None) -> dict:
     for event in m.get('events', []):
         title = event.get('title', '')
         if 'subject to Phase 2 review' in title:
-            phase_1_det = 'Phase 2 required'
+            phase_1_det = 'Referred to phase 2'
             phase_1_det_date = event.get('date')
             break
 
