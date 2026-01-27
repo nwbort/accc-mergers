@@ -82,20 +82,27 @@ def extract_table_content(pdf_path: str) -> List[Dict[str, str]]:
                     item = item.strip()
                     details = details.strip()
 
-                    # Skip empty rows or header rows
-                    if not item or not details:
+                    # Skip completely empty rows
+                    if not item and not details:
                         continue
 
                     # Check if this is a continuation of the previous row
                     # (item is empty or starts with lowercase/whitespace)
-                    if table_data and (not item or item[0].islower() or item.startswith(' ')):
+                    # This handles content that spans multiple pages
+                    if table_data and (not item or (item and item[0].islower()) or (item and item.startswith(' '))):
                         # Append to the previous row's details
-                        table_data[-1]['details'] += ' ' + item + ' ' + details
-                    else:
-                        table_data.append({
-                            'item': item,
-                            'details': details
-                        })
+                        continuation_text = (item.strip() + ' ' + details.strip()) if item else details.strip()
+                        table_data[-1]['details'] += '\n' + continuation_text
+                        continue
+
+                    # Skip rows without details (header rows)
+                    if not details:
+                        continue
+
+                    table_data.append({
+                        'item': item,
+                        'details': details
+                    })
 
         # If no tables were extracted, try to extract text and parse it manually
         if not table_data:
