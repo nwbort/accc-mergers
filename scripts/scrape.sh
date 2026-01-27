@@ -1,9 +1,32 @@
 #!/bin/bash
 #
 # This script scrapes the ACCC acquisitions register.
+#
+# Usage:
+#   ./scrape.sh [--all]
+#
+# Options:
+#   --all    Scrape all mergers, ignoring cutoff dates (by default, mergers
+#            are skipped 3 weeks after an approved notification or waiver decision)
 
 # Exit immediately if a command exits with a non-zero status.
 set -e
+
+# --- Parse Arguments ---
+SCRAPE_ALL=false
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    --all)
+      SCRAPE_ALL=true
+      shift
+      ;;
+    *)
+      echo "Unknown option: $1"
+      echo "Usage: $0 [--all]"
+      exit 1
+      ;;
+  esac
+done
 
 # --- Configuration ---
 # Export variables so they are available to subshells spawned by xargs.
@@ -12,6 +35,8 @@ export REGISTER_URL="${BASE_URL}/public-registers/mergers-and-acquisitions-regis
 export MAIN_PAGE_FILE="data/raw/acquisitions-register.html"
 export SUBFOLDER="data/raw/matters"
 export USER_AGENT="Mozilla/5.0 (compatible; git-scraper-bot/1.0;)" # Be a good citizen
+export MERGERS_JSON="data/processed/mergers.json"
+export SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # --- Functions ---
 
@@ -109,11 +134,48 @@ if [ -z "$relative_links" ]; then
   exit 0
 fi
 
-# 4. Fetch the individual matter pages in parallel
-echo "Fetching individual matter pages in parallel..."
-echo "$relative_links" | xargs -P 8 -I {} bash -c 'fetch_matter_page "$@"' _ {}
+# 4. Filter out links for mergers past cutoff (unless --all is specified)
+if [ "$SCRAPE_ALL" = true ]; then
+  echo "Scraping all mergers (--all flag specified)"
+  links_to_fetch="$relative_links"
+else
+  # Get list of URL paths to skip from cutoff.py
+  skip_paths_file=$(mktemp)
+  trap 'rm -f "$skip_paths_file"' EXIT
 
-# 5. Clean the downloaded files before committing
+  if [ -f "$MERGERS_JSON" ]; then
+    python3 "$SCRIPT_DIR/cutoff.py" --paths "$MERGERS_JSON" > "$skip_paths_file" 2>/dev/null || true
+  fi
+
+  skip_count=$(wc -l < "$skip_paths_file" | tr -d ' ')
+  if [ "$skip_count" -gt 0 ]; then
+    echo "Skipping $skip_count merger(s) past cutoff date (use --all to scrape all)"
+
+    # Filter out links that are in the skip list
+    links_to_fetch=$(echo "$relative_links" | while IFS= read -r link; do
+      if ! grep -qF "$link" "$skip_paths_file" 2>/dev/null; then
+        echo "$link"
+      fi
+    done)
+  else
+    links_to_fetch="$relative_links"
+  fi
+fi
+
+link_count=$(echo "$links_to_fetch" | grep -c . || true)
+if [ "$link_count" -eq 0 ]; then
+  echo "No mergers to fetch (all are past cutoff)."
+  clean_html
+  echo "Scraping process completed successfully."
+  exit 0
+fi
+
+echo "Fetching $link_count merger page(s)..."
+
+# 5. Fetch the individual matter pages in parallel
+echo "$links_to_fetch" | xargs -P 8 -I {} bash -c 'fetch_matter_page "$@"' _ {}
+
+# 6. Clean the downloaded files before committing
 clean_html
 
 echo "Scraping process completed successfully."
