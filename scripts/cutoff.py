@@ -16,7 +16,7 @@ import sys
 from datetime import datetime, timedelta
 
 # Default cutoff period after determination/waiver decision
-CUTOFF_WEEKS = 3
+CUTOFF_WEEKS = 2
 
 
 def parse_date(date_str: str) -> datetime:
