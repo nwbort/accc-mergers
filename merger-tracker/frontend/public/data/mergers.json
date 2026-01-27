@@ -1273,7 +1273,7 @@
           "display_title": "Thermo Fisher Clario - Questionnaire - January 2026",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Thermo%20Fisher%20Clario%20-%20Questionnaire%20-%20January%202026_0.docx",
           "url_gh": "/matters/MN-01075/Thermo Fisher Clario - Questionnaire - January 2026_0.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
@@ -1938,6 +1938,96 @@
         ],
         "last_updated": "2026-01-19"
       },
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ifs-%E2%80%93-softeon",
+      "merger_name": "IFS \u2013 Softeon",
+      "status": "Assessment completed",
+      "merger_id": "WA-35002",
+      "effective_notification_datetime": "2026-01-06T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-01-27T12:00:00Z",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Fjord Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  921660460"
+        },
+        {
+          "name": "IFS North America, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  391292200"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Softeon Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 541960847"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        }
+      ],
+      "merger_description": "IFS North America Inc. (**IFS North America**), via its wholly owned subsidiary incorporated for the purposes of the transaction, Fjord Merger Sub, Inc. (**Merger Sub**), proposes to acquire 100% of the issued and outstanding shares of Softeon, Inc. (**Softeon**) through a reverse triangular merger where:\n\n(a) Merger Sub will merge with and into Softeon; and\n\n(b) Merger Sub will then cease, and Softeon will be the surviving company.\n\nAs a result, Softeon will become a wholly owned subsidiary of IFS North America.\n\nIFS North America is owned by Industrial and Financial Systems Aktiebolag, which is headquartered in Link\u00f6ping, Sweden (together, IFS). IFS develops and commercialises business software for customers that manufacture and distribute goods, maintain assets and manage services-focused operations. Its technology enables manufacturing businesses to maintain complex assets and manage service-focused operations to enhance productivity, efficiency and sustainability.\n\nSofteon is headquartered in Reston, VA. and supplies a supply chain fulfilment software platform for warehouses. Softeon operates in the warehouse management systems segment and provides a suite of supply chain software solutions on a single, integrated services-based technology platform that offers the following cloud-based software capabilities: warehouse management system, warehouse execution system and distributed order management solutions.",
+      "events": [
+        {
+          "date": "2026-01-27T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Notification waiver determination published",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IFS-Softeon%20%28WA-35002%29%20-%20Notification%20waiver%20determination%20-%2027%20January%202026.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "IFS North America Inc. (IFS North America) applied for a notification\nwaiver in respect of its proposed acquisition, via its subsidiary Fjord\nMerger Sub Inc (Merger Sub), of 100% of the share capital in Softeon\nInc. (Softeon), as described in the transaction documents provided\nas part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "27 January 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, IFS North America, develops and commercialises\nbusiness software for customers that manufacture and distribute\ngoods, maintain assets and manage services-focused operations.\nThe software includes functionalities that use artificial intelligence to\nsupport productivity, efficiency, and sustainable objectives.\nIFS North America is owned by Industrial and Financial Systems\nAktiebolag, which is headquartered in Link\u00f6ping, Sweden (together,\nIFS). IFS is jointly controlled by EQT IX, an investment fund managed\nby EQT Fund Management S.\u00e0 r.l. (a global investment organisation),\nand by Hg Pooled Management Limited, an investor in software and\nservices businesses, with a focus on Europe and the United States.\nThe target, Softeon, is a global software provider of warehouse\nmanagement systems and innovative supply chain solutions. Softeon\nis headquartered in Reston, Virginia, USA and has a very limited\npresence in Australia.\nBoth parties supply enterprise application software, however IFS\u2019s\nAustralian business mainly supplies enterprise resource planning\nservices, whereas Softeon specialises in warehouse management\nand supply chain management solutions. These services are largely\ncomplementary."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (ACCC) has considered the\ninformation provided with the notification waiver application and had\nregard to the factors in section 51ABV(2)(b) of the Competition and\nConsumer Act 2010 (Cth) (Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. Softeon currently has a very small presence in Australia."
+            }
+          ],
+          "url_gh": "/matters/WA-35002/IFS-Softeon (WA-35002) - Notification waiver determination - 27 January 2026.pdf",
+          "status": "live",
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-01-06T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        },
+        {
+          "date": "2026-01-27T12:00:00Z",
+          "title": "Waiver application determination: Approved",
+          "display_title": "Waiver application determination: Approved",
+          "phase": "Waiver"
+        }
+      ],
+      "is_waiver": true,
       "phase_1_determination": null,
       "phase_1_determination_date": null,
       "phase_2_determination": null,

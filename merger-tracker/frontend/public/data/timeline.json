@@ -1,6 +1,30 @@
 {
   "events": [
     {
+      "date": "2026-01-27T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Notification waiver determination published",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IFS-Softeon%20%28WA-35002%29%20-%20Notification%20waiver%20determination%20-%2027%20January%202026.pdf",
+      "url_gh": "/matters/WA-35002/IFS-Softeon (WA-35002) - Notification waiver determination - 27 January 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-35002",
+      "merger_name": "IFS \u2013 Softeon",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-01-27T12:00:00Z",
+      "title": "Waiver application determination: Approved",
+      "display_title": "Waiver application determination: Approved",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "WA-35002",
+      "merger_name": "IFS \u2013 Softeon",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
       "date": "2026-01-23T12:00:00Z",
       "title": "Symal Group / Timms Group and L&D Group - Questionnaire",
       "display_title": "Symal Group / Timms Group and L&D Group - Questionnaire",
@@ -150,7 +174,7 @@
       "display_title": "Thermo Fisher Clario - Questionnaire - January 2026",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Thermo%20Fisher%20Clario%20-%20Questionnaire%20-%20January%202026_0.docx",
       "url_gh": "/matters/MN-01075/Thermo Fisher Clario - Questionnaire - January 2026_0.pdf",
-      "status": "live",
+      "status": "removed",
       "merger_id": "MN-01075",
       "merger_name": "Thermo Fisher - Clario Holdings",
       "phase": null,
@@ -321,6 +345,18 @@
       "status": null,
       "merger_id": "WA-35001",
       "merger_name": "WSP \u2013 TRC",
+      "phase": "Phase 1",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-01-06T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "WA-35002",
+      "merger_name": "IFS \u2013 Softeon",
       "phase": "Phase 1",
       "is_waiver": true
     },
@@ -853,5 +889,5 @@
       "is_waiver": false
     }
   ],
-  "total": 71
+  "total": 74
 }
