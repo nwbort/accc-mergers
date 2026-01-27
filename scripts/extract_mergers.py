@@ -1,6 +1,7 @@
 import os
 import json
 import sys
+import argparse
 from concurrent.futures import ProcessPoolExecutor
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse, unquote
@@ -11,6 +12,7 @@ from markdownify import markdownify as md
 from parse_determination import parse_determination_pdf
 from parse_questionnaire import process_all_questionnaires
 from normalization import normalize_determination
+from cutoff import should_skip_merger, get_skipped_merger_ids
 
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./data/raw/matters"
@@ -537,6 +539,18 @@ def main():
     Main function to find all merger HTML files, parse them in parallel,
     and print the consolidated data as JSON to stdout.
     """
+    # Parse command-line arguments
+    parser = argparse.ArgumentParser(
+        description='Extract merger data from scraped HTML files.'
+    )
+    parser.add_argument(
+        '--all',
+        action='store_true',
+        help='Process all mergers, ignoring cutoff dates (by default, mergers are skipped '
+             '3 weeks after an approved notification or waiver decision)'
+    )
+    args = parser.parse_args()
+
     if not os.path.isdir(MATTERS_DIR):
         print(f"Error: Directory '{MATTERS_DIR}' not found.", file=sys.stderr)
         sys.exit(1)
@@ -568,7 +582,15 @@ def main():
          print("Warning: mergers.json exists but is empty. Starting fresh.", file=sys.stderr)
 
 
-    # 2. Get a list of all HTML file paths to process
+    # 2. Determine which mergers to skip based on cutoff (unless --all is passed)
+    skipped_merger_ids = set()
+    if not args.all:
+        skipped_merger_ids = get_skipped_merger_ids(mergers_json_path)
+        if skipped_merger_ids:
+            print(f"Skipping {len(skipped_merger_ids)} merger(s) past cutoff date "
+                  "(use --all to process all mergers)", file=sys.stderr)
+
+    # 3. Get a list of all HTML file paths to process
     filepaths = [
         os.path.join(MATTERS_DIR, filename)
         for filename in os.listdir(MATTERS_DIR)
@@ -576,30 +598,41 @@ def main():
     ]
 
     all_mergers_data = []
-    # 3. Use a ProcessPoolExecutor to run parsing in parallel
+    processed_merger_ids = set()
+
+    # 4. Use a ProcessPoolExecutor to run parsing in parallel
     with ProcessPoolExecutor() as executor:
         # Create a list of arguments for parse_merger_file
         tasks = []
         for fp in filepaths:
             merger_id = get_merger_id_from_file(fp)
             if merger_id:
+                # Skip mergers past cutoff unless --all is specified
+                if merger_id in skipped_merger_ids:
+                    continue
                 tasks.append((fp, existing_mergers.get(merger_id)))
+                processed_merger_ids.add(merger_id)
             else:
                 print(f"Warning: Could not extract merger_id from {fp}", file=sys.stderr)
 
         # The map function applies parse_merger_file to each task tuple
         results = executor.map(run_parse_merger_file, tasks)
-        
-        # 4. Collect valid results, filtering out any None values from failed parses
+
+        # 5. Collect valid results, filtering out any None values from failed parses
         all_mergers_data = [data for data in results if data is not None]
 
-    # 5. Enrich with questionnaire data (consultation deadlines)
+    # 6. Preserve skipped mergers from existing data (they remain in output unchanged)
+    for merger_id in skipped_merger_ids:
+        if merger_id in existing_mergers:
+            all_mergers_data.append(existing_mergers[merger_id])
+
+    # 7. Enrich with questionnaire data (consultation deadlines)
     all_mergers_data = enrich_with_questionnaire_data(all_mergers_data)
 
-    # 6. Sort the data by merger_id to ensure a consistent output
+    # 8. Sort the data by merger_id to ensure a consistent output
     all_mergers_data.sort(key=lambda x: x.get('merger_id', ''))
 
-    # 7. Write the final JSON output to mergers.json
+    # 9. Write the final JSON output to mergers.json
     with open('data/processed/mergers.json', 'w', encoding='utf-8') as f:
         json.dump(all_mergers_data, f, indent=2)
 
