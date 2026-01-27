@@ -947,6 +947,64 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/accenture-%E2%80%93-faculty-science"
     },
     {
+      "merger_id": "WA-05003",
+      "merger_name": "KKR led consortium \u2013 Saviynt",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-11T12:00:00Z",
+      "determination_publication_date": "2026-01-27T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "KKR Spire Aggregator L.P.",
+          "identifier_type": null,
+          "identifier": "Company No.: 1001421059  Ontario"
+        },
+        {
+          "name": "Carrick Capital Associates Fund II, L.P.",
+          "identifier_type": null,
+          "identifier": "Company No.: 5654423  Delaware"
+        },
+        {
+          "name": "Carrick Capital Partners III Co-Investment Fund II, L.P.",
+          "identifier_type": null,
+          "identifier": "Company No.: 7023487  Delaware"
+        },
+        {
+          "name": "Carrick Capital Founders Fund II, L.P.",
+          "identifier_type": null,
+          "identifier": "Company No.: 5654424  Delaware"
+        },
+        {
+          "name": "Carrick Capital II Co-Investment Fund II, L.P.",
+          "identifier_type": null,
+          "identifier": "Company No.: 6150404  Delaware"
+        },
+        {
+          "name": "Carrick Capital Partners II, L.P.",
+          "identifier_type": null,
+          "identifier": "Company No.: 5654420  Delaware"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Saviynt, Inc.",
+          "identifier_type": null,
+          "identifier": "Company No.: 5712935  Delaware"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kkr-led-consortium-%E2%80%93-saviynt"
+    },
+    {
       "merger_id": "WA-35001",
       "merger_name": "WSP \u2013 TRC",
       "status": "Assessment completed",
@@ -1093,6 +1151,59 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ethos-tpg-%E2%80%93-emis-and-certain-related-assets"
+    },
+    {
+      "merger_id": "WA-85004",
+      "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-03T12:00:00Z",
+      "determination_publication_date": "2026-01-27T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Treysta Wealth Management Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "87 151 156 222"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Locumsgroup Private Accounting Services Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "66 116 993 670"
+        },
+        {
+          "name": "Locumsgroup Asset Management Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "71 113 009 626"
+        },
+        {
+          "name": "Locums Nominees Pty Limited",
+          "identifier_type": "ACN",
+          "identifier": "084 426 415"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 167 960 018"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6932",
+          "name": "Accounting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/treysta-wealth-management-%E2%80%93-locumsgroup"
     }
   ]
 }
