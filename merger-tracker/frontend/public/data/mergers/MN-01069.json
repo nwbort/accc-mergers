@@ -1,11 +1,13 @@
 {
-  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danone-%E2%80%93-further-1-interest-in-danone-saputo-dairy-australia-pty-ltd",
-  "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia Pty Ltd",
-  "status": "Under assessment",
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danone-%E2%80%93-further-1-interest-in-danone-saputo-dairy-australia",
+  "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia",
+  "status": "Assessment completed",
   "merger_id": "MN-01069",
   "effective_notification_datetime": "2025-12-12T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-02-13T12:00:00Z",
+  "determination_publication_date": "2026-01-28T12:00:00Z",
+  "accc_determination": "Approved",
   "consultation_response_due_date": "2025-12-22T12:00:00Z",
   "acquirers": [
     {
@@ -23,14 +25,14 @@
   ],
   "other_parties": [
     {
-      "name": "SAPUTO DAIRY AUSTRALIA PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "52 166 135 486"
-    },
-    {
       "name": "NUTRICIA AUSTRALIA PTY LIMITED",
       "identifier_type": "ABN",
       "identifier": "99 076 246 752"
+    },
+    {
+      "name": "SAPUTO DAIRY AUSTRALIA PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "52 166 135 486"
     },
     {
       "name": "Soci\u00e9t\u00e9 Anonyme des Eaux Min\u00e9rales d\u2019\u00c9vian S.A.",
@@ -76,12 +78,26 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-01-28T12:00:00Z",
+      "title": "Danone - further 1% interest in Danone Saputo Dairy Australia - Phase 1 determination - 27 Jan 2026",
+      "display_title": "Danone - further 1% interest in Danone Saputo Dairy Australia - Phase 1 determination - 27 Jan 2026",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Danone-DSDA%20-%20Phase%201%20determination%20-%2027%20January%202026.pdf",
+      "url_gh": "/matters/MN-01069/Danone-DSDA - Phase 1 determination - 27 January 2026.pdf",
+      "status": "live",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-01-28T12:00:00Z",
+      "title": "Phase 1 - initial assessment determination: Approved",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "phase": "Phase 1"
     }
   ],
-  "accc_determination": null,
   "is_waiver": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-01-28T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
