@@ -431,11 +431,6 @@ def parse_merger_file(filepath, existing_merger_data=None):
             determination = merger_data.get('accc_determination', 'Decision made')
             phase = merger_data.get('stage', 'Phase 1')
             determination_title = f"{phase} determination: {determination}"
-            determination_event = {
-                'date': merger_data['determination_publication_date'],
-                'title': determination_title,
-                'display_title': determination_title,
-            }
 
             # Remove old format determination events to avoid duplicates
             merger_data['events'] = [
@@ -444,9 +439,31 @@ def parse_merger_file(filepath, existing_merger_data=None):
                        e['date'] == merger_data['determination_publication_date'])
             ]
 
-            # Add new determination event if not already there
-            if not any(e['title'] == determination_title for e in merger_data['events']):
-                merger_data['events'].append(determination_event)
+            # Look for an existing determination document event on the same date
+            # (an event with "determination" in the title that has a URL)
+            existing_determination_event = None
+            for event in merger_data['events']:
+                if (event.get('date') == merger_data['determination_publication_date'] and
+                    'determination' in event.get('title', '').lower() and
+                    event.get('url')):
+                    existing_determination_event = event
+                    break
+
+            if existing_determination_event:
+                # Update the existing document event's display_title instead of creating a duplicate
+                existing_determination_event['display_title'] = determination_title
+                if 'phase' not in existing_determination_event:
+                    existing_determination_event['phase'] = phase.split()[0] if ' ' in phase else phase
+            else:
+                # No existing determination document event, create a synthetic one
+                determination_event = {
+                    'date': merger_data['determination_publication_date'],
+                    'title': determination_title,
+                    'display_title': determination_title,
+                }
+                # Add new determination event if not already there
+                if not any(e['title'] == determination_title for e in merger_data['events']):
+                    merger_data['events'].append(determination_event)
 
         return merger_data
     

@@ -181,36 +181,18 @@ function Timeline() {
                             {formatDate(event.date)}
                           </p>
                         </div>
-                        {event.url && event.status !== 'removed' && (
-                          <div className="mt-2">
-                            <a
-                              href={event.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-xs text-primary hover:text-primary-dark"
-                              aria-label={`View ACCC document for ${event.merger_name}`}
-                            >
-                              View document on ACCC website →
-                            </a>
-                          </div>
-                        )}
                         {event.url_gh && (
-                          <div className="mt-1">
+                          <div className="mt-2">
                             <a
                               href={event.url_gh}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-xs text-gray-600 hover:text-gray-900"
-                              aria-label={`View archived document for ${event.merger_name}`}
+                              className="text-xs text-primary hover:text-primary-dark"
+                              aria-label={`View document for ${event.merger_name}`}
                             >
                               View document →
                             </a>
                           </div>
-                        )}
-                        {event.status === 'removed' && (
-                          <span className="mt-1 text-xs text-gray-500 italic">
-                            (document removed from ACCC website)
-                          </span>
                         )}
                       </div>
                     </div>

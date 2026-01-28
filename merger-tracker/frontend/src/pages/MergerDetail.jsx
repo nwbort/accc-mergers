@@ -415,30 +415,17 @@ function MergerDetail() {
                           <p className="text-sm text-gray-500">
                             {formatDate(event.date)}
                           </p>
-                          {(event.url || event.url_gh) && (
-                            <div className="mt-2 space-x-2">
-                              {event.url && event.status !== 'removed' && (
-                                <a
-                                  href={event.url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="text-sm text-primary hover:text-primary-dark"
-                                  aria-label={`View ACCC document: ${event.display_title || event.title}`}
-                                >
-                                  View document on ACCC website →
-                                </a>
-                              )}
-                              {event.url_gh && (
-                                <a
-                                  href={event.url_gh}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="text-sm text-primary hover:text-primary-dark"
-                                  aria-label={`View archived document: ${event.display_title || event.title}`}
-                                >
-                                  View document →
-                                </a>
-                              )}
+                          {event.url_gh && (
+                            <div className="mt-2">
+                              <a
+                                href={event.url_gh}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-sm text-primary hover:text-primary-dark"
+                                aria-label={`View document: ${event.display_title || event.title}`}
+                              >
+                                View document →
+                              </a>
                             </div>
                           )}
                         </div>
