@@ -453,8 +453,11 @@ def parse_merger_file(filepath, existing_merger_data=None):
                 # Update the existing document event's display_title instead of creating a duplicate
                 existing_determination_event['display_title'] = determination_title
                 if 'phase' not in existing_determination_event:
-                    # Extract "Phase 1", "Phase 2", or "Waiver" from stage like "Phase 1 - initial assessment"
-                    existing_determination_event['phase'] = phase.split(' - ')[0] if ' - ' in phase else phase
+                    # Extract "Phase 1", "Phase 2", or "Waiver" from stage
+                    if 'waiver' in phase.lower():
+                        existing_determination_event['phase'] = 'Waiver'
+                    else:
+                        existing_determination_event['phase'] = phase.split(' - ')[0] if ' - ' in phase else phase
             else:
                 # No existing determination document event, create a synthetic one
                 determination_event = {
