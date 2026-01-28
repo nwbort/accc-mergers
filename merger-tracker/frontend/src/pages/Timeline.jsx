@@ -73,7 +73,7 @@ function Timeline() {
 
   const getEventType = (title, displayTitle) => {
     if (title.includes('notified')) return 'notification';
-    if (displaytitle.includes('determination:')) {
+    if (displayTitle.includes('determination:')) {
       const fullText = (displayTitle || title).toLowerCase();
       if (fullText.includes('not approved') || fullText.includes('declined') || fullText.includes('not opposed')) {
         return 'determination-not-approved';
