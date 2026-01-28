@@ -73,7 +73,7 @@ function Timeline() {
 
   const getEventType = (title, displayTitle) => {
     if (title.includes('notified')) return 'notification';
-    if (title.includes('determination:')) {
+    if (displaytitle.includes('determination:')) {
       const fullText = (displayTitle || title).toLowerCase();
       if (fullText.includes('not approved') || fullText.includes('declined') || fullText.includes('not opposed')) {
         return 'determination-not-approved';
@@ -107,7 +107,7 @@ function Timeline() {
         <div className="flow-root">
           <ul className="-mb-8">
             {displayedEvents.map((event, idx) => {
-              const eventType = getEventType(event.title || '', event.display_title);
+              const eventType = getEventType(event.title || '', event.display_title || '');
 
               return (
                 <li key={`${event.merger_id}-${event.date}-${idx}`}>
