@@ -71,9 +71,18 @@ function Timeline() {
     setLoadingMore(false);
   };
 
-  const getEventType = (title) => {
+  const getEventType = (title, displayTitle) => {
     if (title.includes('notified')) return 'notification';
-    if (title.includes('determination:')) return 'determination';
+    if (displayTitle.includes('determination:') || displayTitle.includes('subject to Phase 2 review')) {
+      const fullText = (displayTitle || title).toLowerCase();
+      if (fullText.includes('not approved') || fullText.includes('declined') || fullText.includes('not opposed')) {
+        return 'determination-not-approved';
+      }
+      if (fullText.includes('subject to phase 2 review')) {
+        return 'determination-referred';
+      }
+      return 'determination-approved';
+    }
     return 'event';
   };
 
@@ -98,7 +107,7 @@ function Timeline() {
         <div className="flow-root">
           <ul className="-mb-8">
             {displayedEvents.map((event, idx) => {
-              const eventType = getEventType(event.title || '');
+              const eventType = getEventType(event.title || '', event.display_title || '');
 
               return (
                 <li key={`${event.merger_id}-${event.date}-${idx}`}>
@@ -115,8 +124,12 @@ function Timeline() {
                           className={`h-10 w-10 rounded-full flex items-center justify-center ring-8 ring-white ${
                             eventType === 'notification'
                               ? 'bg-blue-500'
-                              : eventType === 'determination'
+                              : eventType === 'determination-approved'
                               ? 'bg-green-500'
+                              : eventType === 'determination-not-approved'
+                              ? 'bg-red-500'
+                              : eventType === 'determination-referred'
+                              ? 'bg-amber-500'
                               : 'bg-primary'
                           }`}
                         >
@@ -134,17 +147,45 @@ function Timeline() {
                                 clipRule="evenodd"
                               />
                             </svg>
-                          ) : eventType === 'determination' ? (
+                          ) : eventType === 'determination-approved' ? (
                             <svg
                               className="h-5 w-5 text-white"
                               fill="currentColor"
                               viewBox="0 0 20 20"
                               role="img"
-                              aria-label="Determination made"
+                              aria-label="Merger approved"
                             >
                               <path
                                 fillRule="evenodd"
                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          ) : eventType === 'determination-not-approved' ? (
+                            <svg
+                              className="h-5 w-5 text-white"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                              role="img"
+                              aria-label="Merger not approved"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                          ) : eventType === 'determination-referred' ? (
+                            <svg
+                              className="h-5 w-5 text-white"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                              role="img"
+                              aria-label="Merger referred to phase 2"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
                                 clipRule="evenodd"
                               />
                             </svg>
