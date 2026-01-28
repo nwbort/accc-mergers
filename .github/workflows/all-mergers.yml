@@ -1,0 +1,133 @@
+name: Process All Mergers
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  process-all:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # --- Scrape Setup ---
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '>=1.22'
+          cache: false
+
+      - name: Cache pup binary
+        id: cache-pup
+        uses: actions/cache@v4
+        with:
+          path: ~/go/bin/pup
+          key: ${{ runner.os }}-pup-v0.4.0
+
+      - name: Install pup HTML parser
+        if: steps.cache-pup.outputs.cache-hit != 'true'
+        run: go install github.com/ericchiang/pup@latest
+
+      - name: Add Go bin to PATH
+        run: echo "${HOME}/go/bin" >> $GITHUB_PATH
+
+      # --- Extract Setup ---
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # --- Run Scrape (all mergers) ---
+      - name: Run scraper for all mergers
+        run: |
+          chmod +x ./scripts/scrape.sh
+          ./scripts/scrape.sh --all
+
+      - name: Commit scraped data
+        id: commit-scrape
+        run: |-
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          timestamp=$(date -u)
+          git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
+          git commit -m "Update scraped data (all mergers): ${timestamp}" || exit 0
+          git pull --rebase
+          git push
+
+      # --- Run Extract (all mergers) ---
+      - name: Run extraction script for all mergers
+        run: python scripts/extract_mergers.py --all
+
+      - name: Generate static data files
+        run: python scripts/generate_static_data.py
+
+      - name: Commit extracted data
+        id: commit-extract
+        run: |-
+          git add data/processed/mergers.json data/processed/questionnaire_data.json data/raw/matters/ merger-tracker/frontend/public/data/
+          timestamp=$(date -u)
+          git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
+          git commit -m "Update extracted data (all mergers): ${timestamp}" || exit 0
+          git pull --rebase
+          git push
+
+      # --- Run Convert ---
+      - name: Find unconverted DOCX files
+        id: find-docx
+        run: |
+          > /tmp/unconverted.txt
+
+          while IFS= read -r -d '' docx; do
+            pdf="${docx%.docx}.pdf"
+            if [ ! -f "$pdf" ]; then
+              echo "$docx" >> /tmp/unconverted.txt
+            fi
+          done < <(find data/raw/matters -name "*.docx" -type f -print0 2>/dev/null)
+
+          if [ -s /tmp/unconverted.txt ]; then
+            echo "Found unconverted files:"
+            cat /tmp/unconverted.txt
+            echo "has_unconverted=true" >> $GITHUB_OUTPUT
+          else
+            echo "No unconverted DOCX files found"
+            echo "has_unconverted=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install LibreOffice
+        if: steps.find-docx.outputs.has_unconverted == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libreoffice-writer --no-install-recommends
+
+      - name: Convert DOCX to PDF
+        if: steps.find-docx.outputs.has_unconverted == 'true'
+        run: |
+          while IFS= read -r docx; do
+            if [ -n "$docx" ]; then
+              echo "Converting: $docx"
+              dir=$(dirname "$docx")
+              libreoffice --headless --convert-to pdf --outdir "$dir" "$docx"
+            fi
+          done < /tmp/unconverted.txt
+
+      - name: Commit converted PDFs
+        if: steps.find-docx.outputs.has_unconverted == 'true'
+        run: |
+          git add "data/raw/matters/**/*.pdf"
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Convert DOCX attachments to PDF (all mergers)"
+            git pull --rebase
+            git push
+          fi
