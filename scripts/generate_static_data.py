@@ -349,7 +349,48 @@ def generate_stats_json(mergers: list) -> dict:
         }
         for m in sorted_mergers[:5]
     ]
-    
+
+    # Recent determinations (approvals, declines, stage transitions)
+    determination_events = []
+
+    for m in mergers:
+        merger_id = m['merger_id']
+        merger_name = m['merger_name']
+        is_waiver = is_waiver_merger(m)
+
+        # Check for final determination (approved/not approved)
+        det = normalize_determination(m.get('accc_determination'))
+        det_date = m.get('determination_publication_date')
+        if det and det_date:
+            determination_events.append({
+                "merger_id": merger_id,
+                "merger_name": merger_name,
+                "determination": det,
+                "determination_date": det_date,
+                "determination_type": "final",
+                "is_waiver": is_waiver,
+                "stage": m.get('stage')
+            })
+
+        # Check for Phase 2 referrals (stage transitions)
+        for event in m.get('events', []):
+            title = event.get('title', '')
+            if 'subject to Phase 2 review' in title:
+                determination_events.append({
+                    "merger_id": merger_id,
+                    "merger_name": merger_name,
+                    "determination": "Referred to phase 2",
+                    "determination_date": event.get('date'),
+                    "determination_type": "phase_transition",
+                    "is_waiver": is_waiver,
+                    "stage": "Phase 2 - detailed assessment"
+                })
+                break
+
+    # Sort by date descending and take top 6
+    determination_events.sort(key=lambda x: x.get('determination_date', ''), reverse=True)
+    recent_determinations = determination_events[:6]
+
     return {
         "total_mergers": total_notifications,
         "total_waivers": total_waivers,
@@ -364,7 +405,8 @@ def generate_stats_json(mergers: list) -> dict:
             "all_business_durations": business_durations
         },
         "top_industries": top_industries,
-        "recent_mergers": recent_mergers
+        "recent_mergers": recent_mergers,
+        "recent_determinations": recent_determinations
     }
 
 

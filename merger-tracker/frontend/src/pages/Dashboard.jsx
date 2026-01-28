@@ -15,9 +15,10 @@ import {
 import StatCard from '../components/StatCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import UpcomingEventsTable from '../components/UpcomingEventsTable';
+import RecentDeterminationsTable from '../components/RecentDeterminationsTable';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
-import { formatDate } from '../utils/dates';
+import { formatDate, getDaysRemaining } from '../utils/dates';
 
 ChartJS.register(
   CategoryScale,
@@ -173,15 +174,79 @@ function Dashboard() {
         />
       </div>
 
-      {/* Upcoming Events */}
-      {upcomingEvents && (
+      {/* Recent Determinations */}
+      {stats.recent_determinations && (
         <div className="mb-8">
-          <UpcomingEventsTable events={upcomingEvents} />
+          <RecentDeterminationsTable determinations={stats.recent_determinations} />
         </div>
       )}
 
+      {/* Recently Notified Mergers */}
+      <div className="bg-white shadow rounded-lg mb-8">
+        <div className="px-6 py-4 border-b border-gray-200">
+          <h2 className="text-lg font-semibold text-gray-900">
+            Recently notified mergers
+          </h2>
+        </div>
+        <ul className="divide-y divide-gray-200">
+          {stats.recent_mergers.map((merger) => (
+            <li key={merger.merger_id}>
+              <Link
+                to={`/mergers/${merger.merger_id}`}
+                className="block hover:bg-gray-50 transition-colors duration-150"
+                aria-label={`View merger details for ${merger.merger_name}`}
+              >
+                <div className="px-6 py-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div className="flex items-start gap-2 min-w-0 flex-1">
+                      <p className="text-sm font-medium text-primary break-words">
+                        {merger.merger_name}
+                      </p>
+                      {merger.is_waiver && (
+                        <span
+                          className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800"
+                          role="status"
+                          aria-label="Merger type: waiver application"
+                        >
+                          Waiver
+                        </span>
+                      )}
+                    </div>
+                    <div className="ml-2 flex-shrink-0 flex">
+                      <StatusBadge
+                        status={merger.status}
+                        determination={merger.accc_determination}
+                      />
+                    </div>
+                  </div>
+                  <div className="mt-2 flex items-center text-sm text-gray-500">
+                    <span className="truncate">
+                      {merger.is_waiver ? 'Applied:' : 'Notified:'}{' '}
+                      {formatDate(merger.effective_notification_datetime)}
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      {/* Upcoming Events (within 7 days) */}
+      {upcomingEvents && (() => {
+        const eventsWithin7Days = upcomingEvents.filter(event => {
+          const daysRemaining = getDaysRemaining(event.date);
+          return daysRemaining !== null && daysRemaining <= 7;
+        });
+        return eventsWithin7Days.length > 0 ? (
+          <div className="mb-8">
+            <UpcomingEventsTable events={eventsWithin7Days} />
+          </div>
+        ) : null;
+      })()}
+
       {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Phase 1 Duration Table */}
         {(() => {
           const durationStats = calculateDurationStats();
@@ -235,57 +300,6 @@ function Dashboard() {
             </div>
           </div>
         )}
-      </div>
-
-      {/* Recent Mergers */}
-      <div className="bg-white shadow rounded-lg">
-        <div className="px-6 py-4 border-b border-gray-200">
-          <h2 className="text-lg font-semibold text-gray-900">
-            Recently notified mergers
-          </h2>
-        </div>
-        <ul className="divide-y divide-gray-200">
-          {stats.recent_mergers.map((merger) => (
-            <li key={merger.merger_id}>
-              <Link
-                to={`/mergers/${merger.merger_id}`}
-                className="block hover:bg-gray-50 transition-colors duration-150"
-                aria-label={`View merger details for ${merger.merger_name}`}
-              >
-                <div className="px-6 py-4">
-                  <div className="flex items-start justify-between gap-2">
-                    <div className="flex items-start gap-2 min-w-0 flex-1">
-                      <p className="text-sm font-medium text-primary break-words">
-                        {merger.merger_name}
-                      </p>
-                      {merger.is_waiver && (
-                        <span
-                          className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800"
-                          role="status"
-                          aria-label="Merger type: waiver application"
-                        >
-                          Waiver
-                        </span>
-                      )}
-                    </div>
-                    <div className="ml-2 flex-shrink-0 flex">
-                      <StatusBadge
-                        status={merger.status}
-                        determination={merger.accc_determination}
-                      />
-                    </div>
-                  </div>
-                  <div className="mt-2 flex items-center text-sm text-gray-500">
-                    <span className="truncate">
-                      {merger.is_waiver ? 'Applied:' : 'Notified:'}{' '}
-                      {formatDate(merger.effective_notification_datetime)}
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
       </div>
     </div>
     </>
