@@ -1,6 +1,6 @@
 {
   "total_mergers": 20,
-  "total_waivers": 7,
+  "total_waivers": 9,
   "by_status": {
     "Assessment completed": 9,
     "Under assessment": 11
@@ -38,11 +38,11 @@
   },
   "top_industries": [
     {
-      "name": "Software Publishing",
-      "count": 6
+      "name": "Computer System Design and Related Services",
+      "count": 7
     },
     {
-      "name": "Computer System Design and Related Services",
+      "name": "Software Publishing",
       "count": 6
     },
     {
@@ -112,12 +112,12 @@
       "is_waiver": false
     },
     {
-      "merger_id": "MN-01075",
-      "merger_name": "Thermo Fisher - Clario Holdings",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-01-16T12:00:00Z",
-      "is_waiver": false
+      "merger_id": "WA-80001",
+      "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2026-01-19T12:00:00Z",
+      "is_waiver": true
     }
   ],
   "recent_determinations": [
@@ -129,6 +129,24 @@
       "determination_type": "phase_transition",
       "is_waiver": false,
       "stage": "Phase 2 - detailed assessment"
+    },
+    {
+      "merger_id": "WA-60006",
+      "merger_name": "Re.Group \u2013 Scouts Queensland Recycling Centre Site",
+      "determination": "Approved",
+      "determination_date": "2026-01-29T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-80001",
+      "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+      "determination": "Approved",
+      "determination_date": "2026-01-29T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
     },
     {
       "merger_id": "MN-01069",
@@ -156,24 +174,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-85004",
-      "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
-      "determination": "Approved",
-      "determination_date": "2026-01-27T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-01019",
-      "merger_name": "Ampol \u2013 EG Australia",
-      "determination": "Referred to phase 2",
-      "determination_date": "2026-01-21T12:00:00Z",
-      "determination_type": "phase_transition",
-      "is_waiver": false,
-      "stage": "Phase 2 - detailed assessment"
     }
   ]
 }

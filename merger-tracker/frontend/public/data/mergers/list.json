@@ -1109,6 +1109,45 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/salesforce-%E2%80%93-qualified"
     },
     {
+      "merger_id": "WA-60006",
+      "merger_name": "Re.Group \u2013 Scouts Queensland Recycling Centre Site",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-14T12:00:00Z",
+      "determination_publication_date": "2026-01-29T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "RETURN IT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "61 615 434 869"
+        }
+      ],
+      "targets": [
+        {
+          "name": "THE SCOUT ASSOCIATION OF AUSTRALIA, SOUTH AUSTRALIAN BRANCH INCORPORATED",
+          "identifier_type": "ABN",
+          "identifier": "35 621 021 366"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "RE.GROUP PTY LIMITED",
+          "identifier_type": "ACN",
+          "identifier": "616 439 779"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2919",
+          "name": "Other Waste Collection Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/regroup-%E2%80%93-scouts-queensland-recycling-centre-site"
+    },
+    {
       "merger_id": "WA-70002",
       "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
       "status": "Assessment completed",
@@ -1151,6 +1190,74 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ethos-tpg-%E2%80%93-emis-and-certain-related-assets"
+    },
+    {
+      "merger_id": "WA-80001",
+      "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-19T12:00:00Z",
+      "determination_publication_date": "2026-01-29T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Arena BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 657 484"
+        }
+      ],
+      "targets": [
+        {
+          "name": "RFGI GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "55 630 028 974"
+        },
+        {
+          "name": "GAMEON HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 629 422 206"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "ASG IV, LLC",
+          "identifier_type": null,
+          "identifier": "EIN  393804433"
+        },
+        {
+          "name": "PLAYHQ SPORTS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 624 565 359"
+        },
+        {
+          "name": "PlayHQ Sports UK Limited",
+          "identifier_type": null,
+          "identifier": "UK registered company  16260012"
+        },
+        {
+          "name": "PlayHQ Sports Ltd",
+          "identifier_type": null,
+          "identifier": "Canadian registered company  1001392583"
+        },
+        {
+          "name": "Arena HoldCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 657 162"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        },
+        {
+          "code": "9112",
+          "name": "Sports and Physical Recreation Clubs and Sports Professionals"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/alpine-software-group-asg-%E2%80%93-playhq"
     },
     {
       "merger_id": "WA-85004",
