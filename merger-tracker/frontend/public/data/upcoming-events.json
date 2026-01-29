@@ -1,16 +1,6 @@
 {
   "events": [
     {
-      "type": "determination_due",
-      "event_type_display": "Determination due",
-      "date": "2026-01-29T12:00:00Z",
-      "merger_id": "MN-01068",
-      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2025-11-27T12:00:00Z"
-    },
-    {
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-01-29T12:00:00Z",
@@ -49,6 +39,16 @@
       "status": "Under assessment",
       "stage": "Phase 2 - detailed assessment",
       "effective_notification_datetime": "2025-10-10T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-02-13T12:00:00Z",
+      "merger_id": "MN-01068",
+      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+      "status": "Under assessment",
+      "stage": "Phase 2 - detailed assessment",
+      "effective_notification_datetime": "2025-11-27T12:00:00Z"
     },
     {
       "type": "determination_due",

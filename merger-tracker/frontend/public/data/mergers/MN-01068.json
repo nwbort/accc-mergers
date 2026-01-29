@@ -4,9 +4,9 @@
   "status": "Under assessment",
   "merger_id": "MN-01068",
   "effective_notification_datetime": "2025-11-27T12:00:00Z",
-  "stage": "Phase 1 - initial assessment",
-  "end_of_determination_period": "2026-01-29T12:00:00Z",
-  "consultation_response_due_date": "2025-12-05T12:00:00Z",
+  "stage": "Phase 2 - detailed assessment",
+  "end_of_determination_period": "2026-06-12T12:00:00Z",
+  "consultation_response_due_date": "2026-02-13T12:00:00Z",
   "acquirers": [
     {
       "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
@@ -52,12 +52,21 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-01-29T12:00:00Z",
+      "title": "ACCC decided notification is subject to Phase 2 review",
+      "display_title": "ACCC decided notification is subject to Phase 2 review",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Kalgoorlie%20-%20Decision%20to%20Proceed%20to%20Phase%202%20review%20-%2029%20January%202026.pdf",
+      "url_gh": "/matters/MN-01068/Kalgoorlie - Decision to Proceed to Phase 2 review - 29 January 2026.pdf",
+      "status": "live",
+      "phase": "Phase 2"
     }
   ],
   "accc_determination": null,
   "is_waiver": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Referred to phase 2",
+  "phase_1_determination_date": "2026-01-29T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
