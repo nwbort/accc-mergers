@@ -1,6 +1,6 @@
 {
   "total_mergers": 21,
-  "total_waivers": 9,
+  "total_waivers": 11,
   "by_status": {
     "Assessment completed": 9,
     "Under assessment": 12
@@ -38,12 +38,12 @@
   },
   "top_industries": [
     {
-      "name": "Computer System Design and Related Services",
+      "name": "Software Publishing",
       "count": 7
     },
     {
-      "name": "Software Publishing",
-      "count": 6
+      "name": "Computer System Design and Related Services",
+      "count": 7
     },
     {
       "name": "Supermarket and Grocery Stores",
@@ -122,6 +122,24 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20003",
+      "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
+      "determination": "Approved",
+      "determination_date": "2026-01-30T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-40003",
+      "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
+      "determination": "Approved",
+      "determination_date": "2026-01-30T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-01068",
       "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
       "determination": "Referred to phase 2",
@@ -156,24 +174,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-05003",
-      "merger_name": "KKR led consortium \u2013 Saviynt",
-      "determination": "Approved",
-      "determination_date": "2026-01-27T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-35002",
-      "merger_name": "IFS \u2013 Softeon",
-      "determination": "Approved",
-      "determination_date": "2026-01-27T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
