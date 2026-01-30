@@ -98,6 +98,14 @@ function MergerDetail() {
     ? [...merger.events].sort((a, b) => new Date(b.date) - new Date(a.date))
     : [];
 
+  // Find the determination event (match by determination_publication_date and "Determination" in title)
+  const determinationEvent = merger.determination_publication_date && merger.events
+    ? merger.events.find(event =>
+        event.date === merger.determination_publication_date &&
+        event.title?.toLowerCase().includes('determination')
+      )
+    : null;
+
   // Create structured data for SEO
   const structuredData = {
     "@context": "https://schema.org",
@@ -232,7 +240,22 @@ function MergerDetail() {
                   Determination
                 </h3>
                 <p className="text-base text-gray-900">
-                  {merger.accc_determination}
+                  {determinationEvent?.url_gh ? (
+                    <a
+                      href={determinationEvent.url_gh}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-primary hover:text-primary-dark hover:underline"
+                      aria-label={`View determination document: ${merger.accc_determination}`}
+                    >
+                      {merger.accc_determination}
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  ) : (
+                    merger.accc_determination
+                  )}
                 </p>
               </div>
             )}
