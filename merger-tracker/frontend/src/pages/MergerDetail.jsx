@@ -73,7 +73,7 @@ function MergerDetail() {
           <button
             type="button"
             onClick={() => togglePartyExpand(partyType)}
-            className="text-sm text-primary hover:text-primary-dark font-medium"
+            className="text-sm text-primary hover:text-primary-dark hover:underline font-medium"
             aria-expanded={isExpanded}
           >
             {isExpanded ? 'Show less' : `Show ${hiddenCount} more`}
