@@ -105,7 +105,7 @@ function Dashboard() {
     datasets: [
       {
         data: Object.values(stats.by_determination),
-        backgroundColor: ['#10b981', '#ef4444', '#6b7280'],
+        backgroundColor: ['#335145', '#e07a5f', '#6b8f7f', '#8cafa0'],
         borderWidth: 2,
         borderColor: '#fff',
       },
