@@ -12,6 +12,7 @@ function MergerDetail() {
   const [merger, setMerger] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [expandedParties, setExpandedParties] = useState({});
 
   useEffect(() => {
     fetchMerger();
@@ -39,6 +40,47 @@ function MergerDetail() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const togglePartyExpand = (partyType) => {
+    setExpandedParties(prev => ({
+      ...prev,
+      [partyType]: !prev[partyType]
+    }));
+  };
+
+  const renderPartyList = (parties, partyType, title) => {
+    const VISIBLE_COUNT = 2;
+    const isExpanded = expandedParties[partyType];
+    const hasMore = parties.length > VISIBLE_COUNT;
+    const visibleParties = hasMore && !isExpanded ? parties.slice(0, VISIBLE_COUNT) : parties;
+    const hiddenCount = parties.length - VISIBLE_COUNT;
+
+    return (
+      <div className="bg-white rounded-lg shadow p-6">
+        <h2 className="text-lg font-semibold text-gray-900 mb-4">{title}</h2>
+        {visibleParties.map((party, idx) => (
+          <div key={`${partyType}-${party.name}-${party.identifier || idx}`} className="mb-3">
+            <p className="font-medium text-gray-900">{party.name}</p>
+            {party.identifier && (
+              <p className="text-sm text-gray-500">
+                {party.identifier_type ? `${party.identifier_type}: ` : ''}{party.identifier}
+              </p>
+            )}
+          </div>
+        ))}
+        {hasMore && (
+          <button
+            type="button"
+            onClick={() => togglePartyExpand(partyType)}
+            className="text-sm text-primary hover:text-primary-dark font-medium"
+            aria-expanded={isExpanded}
+          >
+            {isExpanded ? 'Show less' : `Show ${hiddenCount} more`}
+          </button>
+        )}
+      </div>
+    );
   };
 
   if (loading) return <LoadingSpinner />;
@@ -241,55 +283,11 @@ function MergerDetail() {
 
         {/* Parties */}
         <div className={`grid grid-cols-1 ${merger.other_parties && merger.other_parties.length > 0 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-6 mb-6`}>
-          <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              Acquirers
-            </h2>
-            {merger.acquirers.map((acquirer, idx) => (
-              <div key={`acquirer-${acquirer.name}-${acquirer.identifier || idx}`} className="mb-3">
-                <p className="font-medium text-gray-900">{acquirer.name}</p>
-                {acquirer.identifier && (
-                  <p className="text-sm text-gray-500">
-                    {acquirer.identifier_type ? `${acquirer.identifier_type}: ` : ''}{acquirer.identifier}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="bg-white rounded-lg shadow p-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">
-              Targets
-            </h2>
-            {merger.targets.map((target, idx) => (
-              <div key={`target-${target.name}-${target.identifier || idx}`} className="mb-3">
-                <p className="font-medium text-gray-900">{target.name}</p>
-                {target.identifier && (
-                  <p className="text-sm text-gray-500">
-                    {target.identifier_type ? `${target.identifier_type}: ` : ''}{target.identifier}
-                  </p>
-                )}
-              </div>
-            ))}
-          </div>
-
-          {merger.other_parties && merger.other_parties.length > 0 && (
-            <div className="bg-white rounded-lg shadow p-6">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                Other parties
-              </h2>
-              {merger.other_parties.map((party, idx) => (
-                <div key={`party-${party.name}-${party.identifier || idx}`} className="mb-3">
-                  <p className="font-medium text-gray-900">{party.name}</p>
-                  {party.identifier && (
-                    <p className="text-sm text-gray-500">
-                      {party.identifier_type ? `${party.identifier_type}: ` : ''}{party.identifier}
-                    </p>
-                  )}
-                </div>
-              ))}
-            </div>
-          )}
+          {renderPartyList(merger.acquirers, 'acquirers', 'Acquirers')}
+          {renderPartyList(merger.targets, 'targets', 'Targets')}
+          {merger.other_parties && merger.other_parties.length > 0 &&
+            renderPartyList(merger.other_parties, 'other_parties', 'Other parties')
+          }
         </div>
 
         {/* Description */}
