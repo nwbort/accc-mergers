@@ -1,6 +1,6 @@
 {
   "total_mergers": 21,
-  "total_waivers": 11,
+  "total_waivers": 13,
   "by_status": {
     "Assessment completed": 9,
     "Under assessment": 12
@@ -47,6 +47,10 @@
       "count": 7
     },
     {
+      "name": "Other Auxiliary Finance and Investment Services",
+      "count": 3
+    },
+    {
       "name": "Supermarket and Grocery Stores",
       "count": 2
     },
@@ -55,11 +59,15 @@
       "count": 2
     },
     {
-      "name": "Other Auxiliary Finance and Investment Services",
+      "name": "Other Heavy and Civil Engineering Construction",
       "count": 2
     },
     {
-      "name": "Other Heavy and Civil Engineering Construction",
+      "name": "Other Waste Collection Services",
+      "count": 2
+    },
+    {
+      "name": "Accounting Services",
       "count": 2
     },
     {
@@ -68,14 +76,6 @@
     },
     {
       "name": "Property Operators and Real Estate Services",
-      "count": 1
-    },
-    {
-      "name": "Other Machinery and Equipment Manufacturing n.e.c.",
-      "count": 1
-    },
-    {
-      "name": "Land Development and Subdivision",
       "count": 1
     }
   ],
@@ -113,12 +113,12 @@
       "is_waiver": false
     },
     {
-      "merger_id": "MN-75002",
-      "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-01-19T12:00:00Z",
-      "is_waiver": false
+      "merger_id": "WA-60008",
+      "merger_name": "Warburg Pincus \u2013 Acclime",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2026-01-20T12:00:00Z",
+      "is_waiver": true
     }
   ],
   "recent_determinations": [
@@ -134,6 +134,24 @@
     {
       "merger_id": "WA-40003",
       "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
+      "determination": "Approved",
+      "determination_date": "2026-01-30T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-60008",
+      "merger_name": "Warburg Pincus \u2013 Acclime",
+      "determination": "Approved",
+      "determination_date": "2026-01-30T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-85005",
+      "merger_name": "Altor Fund Manager - Evac Holding Oy",
       "determination": "Approved",
       "determination_date": "2026-01-30T12:00:00Z",
       "determination_type": "final",
@@ -157,24 +175,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-80001",
-      "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
-      "determination": "Approved",
-      "determination_date": "2026-01-29T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-01069",
-      "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia",
-      "determination": "Approved",
-      "determination_date": "2026-01-28T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
