@@ -1,9 +1,9 @@
 {
-  "total_mergers": 20,
+  "total_mergers": 21,
   "total_waivers": 9,
   "by_status": {
     "Assessment completed": 9,
-    "Under assessment": 11
+    "Under assessment": 12
   },
   "by_determination": {
     "Approved": 9
@@ -58,6 +58,10 @@
       "count": 2
     },
     {
+      "name": "Other Heavy and Civil Engineering Construction",
+      "count": 2
+    },
+    {
       "name": "Beverage Manufacturing",
       "count": 1
     },
@@ -72,13 +76,17 @@
     {
       "name": "Land Development and Subdivision",
       "count": 1
-    },
-    {
-      "name": "Petroleum Refining and Petroleum Fuel Manufacturing",
-      "count": 1
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-85003",
+      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-01-30T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-25002",
       "merger_name": "Symal Group - Timms Group and L&D Group",
@@ -110,14 +118,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-01-19T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "WA-80001",
-      "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-01-19T12:00:00Z",
-      "is_waiver": true
     }
   ],
   "recent_determinations": [

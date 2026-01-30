@@ -33,6 +33,16 @@
     {
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
+      "date": "2026-02-09T12:00:00Z",
+      "merger_id": "MN-85003",
+      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-01-30T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
       "date": "2026-02-13T12:00:00Z",
       "merger_id": "MN-01068",
       "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
@@ -129,8 +139,18 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-01-23T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-03-16T12:00:00Z",
+      "merger_id": "MN-85003",
+      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 13,
+  "count": 15,
   "days_ahead": 60
 }
