@@ -290,10 +290,12 @@ def generate_stats_json(mergers: list) -> dict:
         status = m.get('status', 'Unknown')
         by_status[status] += 1
     
-    # By determination (notifications only, normalized)
+    # By Phase 1 determination (notifications only)
+    # Use enriched phase_1_determination which correctly identifies "Referred to phase 2"
     by_determination = defaultdict(int)
     for m in notification_mergers:
-        det = normalize_determination(m.get('accc_determination'))
+        enriched = enrich_merger(m)
+        det = enriched.get('phase_1_determination')
         if det:
             by_determination[det] += 1
     
