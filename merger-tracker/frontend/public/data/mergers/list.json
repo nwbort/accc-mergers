@@ -814,27 +814,17 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "36 003 184 889"
-        },
-        {
           "name": "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "44 078 881 473"
+        },
+        {
+          "name": "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "36 003 184 889"
         }
       ],
       "targets": [
-        {
-          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 146 342 814"
-        },
-        {
-          "name": "HEALTHSCOPE NEWCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 092 450 274"
-        },
         {
           "name": "ANZ HOSPITALS PTY LTD",
           "identifier_type": "ABN",
@@ -844,16 +834,21 @@
           "name": "HEALTHSCOPE OPERATIONS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "85 006 405 152"
+        },
+        {
+          "name": "HEALTHSCOPE NEWCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 092 450 274"
+        },
+        {
+          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 146 342 814"
         }
       ],
       "other_parties": [
         {
-          "name": "Keith Crawford",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Matthew Caddy",
+          "name": "Katherine Sozou",
           "identifier_type": null,
           "identifier": ""
         },
@@ -863,7 +858,12 @@
           "identifier": ""
         },
         {
-          "name": "Katherine Sozou",
+          "name": "Keith Crawford",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Matthew Caddy",
           "identifier_type": null,
           "identifier": ""
         }
