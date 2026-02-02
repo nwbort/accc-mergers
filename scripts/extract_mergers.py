@@ -46,6 +46,51 @@ def is_safe_filename(filename):
     return True
 
 
+def sanitize_filename(filename):
+    """
+    Sanitize a filename by replacing problematic characters with safe alternatives.
+    Preserves the file extension and returns a filename that passes is_safe_filename().
+
+    Characters replaced:
+    - Colons (:) -> hyphen (-) - problematic on Windows
+    - Other problematic characters are replaced with underscores
+
+    Returns None if the filename cannot be sanitized (e.g., path traversal attempts).
+    """
+    if not filename or not isinstance(filename, str):
+        return None
+
+    # Reject empty or whitespace-only filenames
+    if not filename.strip():
+        return None
+
+    # Reject path traversal sequences - these can't be sanitized safely
+    if '..' in filename or '/' in filename or '\\' in filename:
+        return None
+
+    # Replace colons with hyphens (common in document titles like "Company: Document")
+    sanitized = filename.replace(':', ' -')
+
+    # Clean up any double spaces that might result
+    while '  ' in sanitized:
+        sanitized = sanitized.replace('  ', ' ')
+
+    sanitized = sanitized.strip()
+
+    # Filename should not exceed reasonable length
+    if len(sanitized) > 255:
+        # Truncate but preserve extension
+        name, ext = os.path.splitext(sanitized)
+        max_name_len = 255 - len(ext)
+        sanitized = name[:max_name_len] + ext
+
+    # Verify the sanitized filename is safe
+    if not is_safe_filename(sanitized):
+        return None
+
+    return sanitized
+
+
 def parse_date_from_text(text: str) -> str:
     """
     Extract and parse a date from text like '21 November 2025' and return ISO format.
@@ -104,15 +149,21 @@ def download_attachment(merger_id, attachment_url, event_title=None):
         os.makedirs(attachment_dir, exist_ok=True)
 
         # Get filename from URL and construct local path
-        # Security: Decode URL first, then extract basename, then validate
+        # Security: Decode URL first, then extract basename, then sanitize
         parsed_url = urlparse(attachment_url)
         decoded_path = unquote(parsed_url.path)
-        filename = os.path.basename(decoded_path).strip()  # Strip accidental leading/trailing whitespace
+        original_filename = os.path.basename(decoded_path).strip()  # Strip accidental leading/trailing whitespace
 
-        # Security: Validate filename to prevent path traversal
-        if not is_safe_filename(filename):
-            print(f"Warning: Unsafe filename detected and rejected: {filename}", file=sys.stderr)
-            return None
+        # Security: Sanitize filename to prevent path traversal and handle problematic characters
+        if is_safe_filename(original_filename):
+            filename = original_filename
+        else:
+            filename = sanitize_filename(original_filename)
+            if filename is None:
+                print(f"Warning: Unsafe filename could not be sanitized: {original_filename}", file=sys.stderr)
+                return None
+            if filename != original_filename:
+                print(f"Note: Sanitized filename '{original_filename}' -> '{filename}'", file=sys.stderr)
 
         local_filepath = os.path.join(attachment_dir, filename)
 
@@ -334,13 +385,19 @@ def parse_merger_file(filepath, existing_merger_data=None):
                         event['determination_commission_division'] = determination_data.get('commission_division')
                         event['determination_table_content'] = determination_data.get('table_content')
 
-                    # Get original filename and determine serve filename
+                    # Get filename and determine serve filename
                     # For DOCX files, url_gh points to PDF (created by separate workflow)
+                    # Filename must be sanitized to match the actual saved file
                     parsed_url = urlparse(url)
                     original_filename = unquote(os.path.basename(parsed_url.path)).strip()
-                    serve_filename = get_serve_filename(original_filename)
-                    
-                    event['url_gh'] = f"/matters/{merger_id}/{serve_filename}"
+                    if is_safe_filename(original_filename):
+                        safe_filename = original_filename
+                    else:
+                        safe_filename = sanitize_filename(original_filename)
+
+                    if safe_filename:
+                        serve_filename = get_serve_filename(safe_filename)
+                        event['url_gh'] = f"/matters/{merger_id}/{serve_filename}"
                     event['status'] = 'live'
 
                 scraped_events.append(event)
