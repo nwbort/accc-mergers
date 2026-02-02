@@ -13,6 +13,7 @@ Output files (to merger-tracker/frontend/public/data/):
 - timeline.json     - All events sorted by date
 - industries.json   - ANZSIC codes with merger counts
 - upcoming-events.json - Future consultation/determination dates
+- commentary.json   - Mergers with user commentary
 """
 
 import json
@@ -473,6 +474,41 @@ def generate_industries_json(mergers: list) -> dict:
     return {"industries": industries}
 
 
+def generate_commentary_json(mergers: list, commentary: dict) -> dict:
+    """Generate commentary.json with all mergers that have commentary."""
+    items = []
+
+    for m in mergers:
+        merger_id = m.get('merger_id', '')
+        if merger_id in commentary:
+            comm = commentary[merger_id]
+            items.append({
+                "merger_id": merger_id,
+                "merger_name": m.get('merger_name'),
+                "status": m.get('status'),
+                "accc_determination": normalize_determination(m.get('accc_determination')),
+                "is_waiver": is_waiver_merger(m),
+                "effective_notification_datetime": m.get('effective_notification_datetime'),
+                "determination_publication_date": m.get('determination_publication_date'),
+                "stage": m.get('stage'),
+                "acquirers": m.get('acquirers', []),
+                "targets": m.get('targets', []),
+                "anzsic_codes": m.get('anzsic_codes', []),
+                "commentary": comm.get('commentary'),
+                "tags": comm.get('tags', []),
+                "last_updated": comm.get('last_updated'),
+                "author": comm.get('author')
+            })
+
+    # Sort by last_updated descending (most recent first)
+    items.sort(key=lambda x: x.get('last_updated', ''), reverse=True)
+
+    return {
+        "items": items,
+        "count": len(items)
+    }
+
+
 def generate_upcoming_events_json(mergers: list, days_ahead: int = 60) -> dict:
     """Generate upcoming events (consultation due, determination due)."""
     now = datetime.now(timezone.utc).replace(tzinfo=None)
@@ -580,6 +616,7 @@ def main():
         ("timeline.json", generate_timeline_json(mergers)),
         ("industries.json", generate_industries_json(mergers)),
         ("upcoming-events.json", generate_upcoming_events_json(mergers)),
+        ("commentary.json", generate_commentary_json(mergers, commentary)),
     ]
 
     for filename, data in outputs:

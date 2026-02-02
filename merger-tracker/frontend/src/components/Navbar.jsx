@@ -93,6 +93,16 @@ function Navbar() {
               >
                 Industries
               </Link>
+              <Link
+                to="/commentary"
+                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
+                  isActive('/commentary')
+                    ? 'border-primary text-gray-900'
+                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                }`}
+              >
+                Commentary
+              </Link>
             </div>
           </div>
           <div className="flex items-center sm:hidden">
@@ -185,6 +195,17 @@ function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Industries
+            </Link>
+            <Link
+              to="/commentary"
+              className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
+                isActive('/commentary')
+                  ? 'bg-primary-light border-primary text-white'
+                  : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-900'
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Commentary
             </Link>
           </nav>
         </div>
