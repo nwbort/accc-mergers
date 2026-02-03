@@ -86,7 +86,7 @@ function Commentary() {
                       {item.merger_id} • {item.stage || 'N/A'} • {item.is_waiver ? 'Applied' : 'Notified'}: {formatDate(item.effective_notification_datetime)}
                       {item.determination_publication_date && (
                         <>
-                          {' • Determined: '}
+                          {' • '}
                           {item.determination_url ? (
                             <a
                               href={item.determination_url}
@@ -95,13 +95,13 @@ function Commentary() {
                               className="inline-flex items-center gap-1 text-primary hover:text-primary-dark hover:underline"
                               aria-label="View determination document"
                             >
-                              {formatDate(item.determination_publication_date)}
+                              Determined: {formatDate(item.determination_publication_date)}
                               <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                               </svg>
                             </a>
                           ) : (
-                            formatDate(item.determination_publication_date)
+                            `Determined: ${formatDate(item.determination_publication_date)}`
                           )}
                         </>
                       )}
