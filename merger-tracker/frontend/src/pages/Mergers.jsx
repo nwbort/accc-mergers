@@ -7,10 +7,19 @@ import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
 
+// Sort mergers by notification date (newest first)
+const sortMergers = (list) => {
+  return [...list].sort((a, b) => {
+    const dateA = a.effective_notification_datetime || '';
+    const dateB = b.effective_notification_datetime || '';
+    return dateB.localeCompare(dateA);
+  });
+};
+
 function Mergers() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [mergers, setMergers] = useState(() => dataCache.get('mergers-list') || []);
-  const [filteredMergers, setFilteredMergers] = useState(() => dataCache.get('mergers-list') || []);
+  const [filteredMergers, setFilteredMergers] = useState(() => sortMergers(dataCache.get('mergers-list') || []));
   const [loading, setLoading] = useState(() => !dataCache.has('mergers-list'));
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
@@ -81,14 +90,7 @@ function Mergers() {
       );
     }
 
-    // Sort by notification date (newest first)
-    filtered.sort((a, b) => {
-      const dateA = a.effective_notification_datetime || '';
-      const dateB = b.effective_notification_datetime || '';
-      return dateB.localeCompare(dateA);
-    });
-
-    setFilteredMergers(filtered);
+    setFilteredMergers(sortMergers(filtered));
   };
 
   if (loading) return <LoadingSpinner />;
