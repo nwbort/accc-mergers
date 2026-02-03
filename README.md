@@ -12,6 +12,7 @@ A web application for tracking and analysing ACCC merger reviews. Provides an in
 - **Timeline**: Chronological display of all events
 - **Industry analysis**: ANZSIC classifications and merger counts
 - **Upcoming events**: Consultation and determination deadlines
+- **Commentary**: Analysis and notes on mergers reviewed by the ACCC
 
 ## Tech stack
 
