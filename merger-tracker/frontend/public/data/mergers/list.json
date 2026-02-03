@@ -683,36 +683,31 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "T Operations Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "57 691 920 242"
-        },
-        {
           "name": "Syl TM Contracting Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "68 693 144 697"
         },
         {
-          "name": "T Haulage Pty Ltd",
+          "name": "T Operations Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "53 691 920 224"
+          "identifier": "57 691 920 242"
         },
         {
           "name": "Symal Management Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "85 602 084 471"
+        },
+        {
+          "name": "T Haulage Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "53 691 920 224"
         }
       ],
       "targets": [
         {
-          "name": "Churinga (Investments) Pty Ltd as trustee for THE CHURINGA Trust",
+          "name": "Timms Hire Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "45 218 813 341"
-        },
-        {
-          "name": "Teagun Investments Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "45 061 988 538"
+          "identifier": "73 115 389 949"
         },
         {
           "name": "Timms Contracting Pty Ltd",
@@ -720,26 +715,26 @@
           "identifier": "30 070 456 567"
         },
         {
+          "name": "Teagun Investments Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "45 061 988 538"
+        },
+        {
+          "name": "Churinga (Investments) Pty Ltd as trustee for THE CHURINGA Trust",
+          "identifier_type": "ABN",
+          "identifier": "45 218 813 341"
+        },
+        {
           "name": "Adawin Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "49 010 904 551"
-        },
-        {
-          "name": "Timms Hire Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "73 115 389 949"
         }
       ],
       "other_parties": [
         {
-          "name": "Clarkson-Jones Investments (Qld) Pty Ltd as trustee for the Clarkson-Jones Investments Trust",
+          "name": "Jones Investments (Qld) Pty Ltd as trustee for the Jones Investments Trust",
           "identifier_type": "ACN",
-          "identifier": "143 730 956"
-        },
-        {
-          "name": "Timms Investments (Qld) Pty Ltd as trustee for the Timms Investments Trust",
-          "identifier_type": "ACN",
-          "identifier": "143 730 572"
+          "identifier": "143 730 705"
         },
         {
           "name": "K Parsons Investments (Qld) Pty Ltd as trustee for the Parsons Investment Trust",
@@ -747,9 +742,14 @@
           "identifier": "143 731 524"
         },
         {
-          "name": "Jones Investments (Qld) Pty Ltd as trustee for the Jones Investments Trust",
+          "name": "Timms Investments (Qld) Pty Ltd as trustee for the Timms Investments Trust",
           "identifier_type": "ACN",
-          "identifier": "143 730 705"
+          "identifier": "143 730 572"
+        },
+        {
+          "name": "Clarkson-Jones Investments (Qld) Pty Ltd as trustee for the Clarkson-Jones Investments Trust",
+          "identifier_type": "ACN",
+          "identifier": "143 730 956"
         }
       ],
       "anzsic_codes": [
