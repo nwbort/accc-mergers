@@ -2,15 +2,15 @@
   "total_mergers": 22,
   "total_waivers": 14,
   "by_status": {
-    "Assessment completed": 9,
-    "Under assessment": 13
+    "Assessment completed": 10,
+    "Under assessment": 12
   },
   "by_determination": {
-    "Approved": 9,
+    "Approved": 10,
     "Referred to phase 2": 2
   },
   "phase_duration": {
-    "average_days": 27.555555555555557,
+    "average_days": 29.1,
     "median_days": 25,
     "all_durations": [
       21,
@@ -21,9 +21,10 @@
       38,
       22,
       21,
-      47
+      47,
+      43
     ],
-    "average_business_days": 18.88888888888889,
+    "average_business_days": 18.7,
     "median_business_days": 18,
     "all_business_durations": [
       16,
@@ -34,7 +35,8 @@
       29,
       17,
       16,
-      19
+      19,
+      17
     ]
   },
   "top_industries": [
@@ -123,6 +125,15 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-01071",
+      "merger_name": "CSE Crosscom \u2013 Progility",
+      "determination": "Approved",
+      "determination_date": "2026-02-03T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-40002",
       "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
       "determination": "Approved",
@@ -166,15 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-01068",
-      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
-      "determination": "Referred to phase 2",
-      "determination_date": "2026-01-29T12:00:00Z",
-      "determination_type": "phase_transition",
-      "is_waiver": false,
-      "stage": "Phase 2 - detailed assessment"
     }
   ]
 }

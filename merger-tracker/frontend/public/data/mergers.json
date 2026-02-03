@@ -1107,11 +1107,13 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cse-crosscom-%E2%80%93-progility",
       "merger_name": "CSE Crosscom \u2013 Progility",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-01071",
       "effective_notification_datetime": "2025-12-22T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-02-23T12:00:00Z",
+      "determination_publication_date": "2026-02-03T12:00:00Z",
+      "accc_determination": "Approved",
       "consultation_response_due_date": "2026-01-19T12:00:00Z",
       "acquirers": [
         {
@@ -1163,12 +1165,47 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-02-03T12:00:00Z",
+          "title": "CSE Crosscom - Progility - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CSE%20Crosscom%20-%20Progility%20-%20Phase%201%20determination%20without%20conditions.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "CSE Crosscom Pty Ltd (CSE Crosscom) proposes to acquire 100%\nof the share capital in Progility Pty Ltd (Progility) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, CSE Crosscom is an Australian communications\nsystems integrator that designs, supplies, installs and maintains\nmission and business-critical communications, including two-way\nradio networks, push-to-talk over cellular solutions, in-building\ncoverage/distributed antenna systems, internet protocol networking\nand managed services to industrial, government, transport and\nsecurity sectors across Australia.\nCSE Crosscom is a subsidiary of CSE Global Limited, a company\nlisted on the Singapore stock exchange.\nThe target, Progility, supplies integration and enterprise solutions\nwith a particular focus on two-way radio networks, push-to-talk over\ncellular solutions, and managed services."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the parties",
+              "details": "CSE Crosscom and Progility overlap in the supply of systems\nintegration and managed services for enterprise/public sector\ncritical communications. Specifically, the Parties overlap in the:\n\u2022 sale and rental of two-way radio equipment\n\u2022 design and installation of radio systems\n\u2022 integration of different communications systems\n\u2022 maintenance and support of communications systems and\nequipment.\nCritical communications refer to communications services in\nhazardous or remote working environments for the purposes of\nhealth, safety and environment where other forms of communication\nmay not be available.\nParticipants in this industry provide communications equipment, as\nwell as integration, support and maintenance services.\nCustomers of critical communications services include public safety\nand emergency services, defence and national security agencies,\nhospitals, and companies involved in energy, utilities, transport,\nmining, oil, gas, and resources."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third partes.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market in\nAustralia. In reaching its decision, and based on the material before\nit, the ACCC makes the following findings:\n\u2022 the Parties\u2019 market share aggregation is estimated to be low\n\u2022 the Parties do not appear to be close competitors in the supply\nof critical communications\n\u2022 the Parties would likely continue to be constrained by alternative\nsuppliers of critical communications in Australia, including\nTelstra, Motorola Solutions and Nokia."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/matters/MN-01071/CSE Crosscom - Progility - Phase 1 determination without conditions.pdf",
+          "status": "live",
+          "phase": "Phase 1"
         }
       ],
-      "accc_determination": null,
       "is_waiver": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-02-03T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
