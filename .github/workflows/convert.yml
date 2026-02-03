@@ -1,14 +1,8 @@
 name: Convert DOCX to PDF
 
 on:
-  # Run every 15 minutes (at 2, 17, 32, 47 minutes past each hour)
   schedule:
-    - cron: '2,17,32,47 * * * *'
-  # Run after extract workflow completes
-  workflow_run:
-    workflows: ["Extract and Commit Merger Data"]
-    types:
-      - completed
+    - cron: '47 1,9,17 * * *'
   # Manual trigger
   workflow_dispatch:
 
