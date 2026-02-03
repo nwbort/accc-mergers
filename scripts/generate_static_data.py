@@ -482,6 +482,17 @@ def generate_commentary_json(mergers: list, commentary: dict) -> dict:
         merger_id = m.get('merger_id', '')
         if merger_id in commentary:
             comm = commentary[merger_id]
+
+            # Find determination event URL
+            determination_url = None
+            det_date = m.get('determination_publication_date')
+            if det_date:
+                for event in m.get('events', []):
+                    if (event.get('date') == det_date and
+                            'determination' in event.get('title', '').lower()):
+                        determination_url = event.get('url_gh') or event.get('url')
+                        break
+
             items.append({
                 "merger_id": merger_id,
                 "merger_name": m.get('merger_name'),
@@ -490,6 +501,7 @@ def generate_commentary_json(mergers: list, commentary: dict) -> dict:
                 "is_waiver": is_waiver_merger(m),
                 "effective_notification_datetime": m.get('effective_notification_datetime'),
                 "determination_publication_date": m.get('determination_publication_date'),
+                "determination_url": determination_url,
                 "stage": m.get('stage'),
                 "acquirers": m.get('acquirers', []),
                 "targets": m.get('targets', []),
