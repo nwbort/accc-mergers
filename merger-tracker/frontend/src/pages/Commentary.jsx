@@ -83,36 +83,14 @@ function Commentary() {
                       )}
                     </div>
                     <p className="text-sm text-gray-500 mt-1">
-                      {item.merger_id} • {item.stage || 'N/A'}
+                      {item.merger_id} • {item.stage || 'N/A'} • {item.is_waiver ? 'Applied' : 'Notified'}: {formatDate(item.effective_notification_datetime)}
+                      {item.determination_publication_date && ` • Determined: ${formatDate(item.determination_publication_date)}`}
                     </p>
                   </div>
                   <StatusBadge
                     status={item.status}
                     determination={item.accc_determination}
                   />
-                </div>
-
-                <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-500">Acquirers</p>
-                    <p className="text-sm font-medium text-gray-900">
-                      {item.acquirers.map((a) => a.name).join(', ')}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500">Targets</p>
-                    <p className="text-sm font-medium text-gray-900">
-                      {item.targets.map((t) => t.name).join(', ')}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-500">
-                      {item.is_waiver ? 'Application date' : 'Notification date'}
-                    </p>
-                    <p className="text-sm font-medium text-gray-900">
-                      {formatDate(item.effective_notification_datetime)}
-                    </p>
-                  </div>
                 </div>
               </div>
 
