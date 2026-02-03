@@ -4,18 +4,24 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
+import { dataCache } from '../utils/dataCache';
 
 const ITEMS_PER_PAGE = 15;
 const LOAD_MORE_COUNT = 10;
 const SCROLL_THRESHOLD_PX = 300;
 
 function Timeline() {
-  const [allEvents, setAllEvents] = useState([]);
-  const [displayedEvents, setDisplayedEvents] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const cachedEvents = dataCache.get('timeline-events');
+  const [allEvents, setAllEvents] = useState(() => cachedEvents || []);
+  const [displayedEvents, setDisplayedEvents] = useState(() =>
+    cachedEvents ? cachedEvents.slice(0, ITEMS_PER_PAGE) : []
+  );
+  const [loading, setLoading] = useState(() => !cachedEvents);
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState(null);
-  const [hasMore, setHasMore] = useState(true);
+  const [hasMore, setHasMore] = useState(() =>
+    cachedEvents ? cachedEvents.length > ITEMS_PER_PAGE : true
+  );
 
   useEffect(() => {
     fetchTimeline();
@@ -42,6 +48,7 @@ function Timeline() {
       if (!response.ok) throw new Error('Failed to fetch timeline');
       const data = await response.json();
 
+      dataCache.set('timeline-events', data.events);
       setAllEvents(data.events);
       // Show initial batch
       setDisplayedEvents(data.events.slice(0, ITEMS_PER_PAGE));

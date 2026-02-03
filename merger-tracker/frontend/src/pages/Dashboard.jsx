@@ -19,6 +19,7 @@ import RecentDeterminationsTable from '../components/RecentDeterminationsTable';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { formatDate, getDaysRemaining } from '../utils/dates';
+import { dataCache } from '../utils/dataCache';
 
 ChartJS.register(
   CategoryScale,
@@ -31,12 +32,13 @@ ChartJS.register(
 );
 
 function Dashboard() {
-  const [stats, setStats] = useState(null);
-  const [upcomingEvents, setUpcomingEvents] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [stats, setStats] = useState(() => dataCache.get('dashboard-stats') || null);
+  const [upcomingEvents, setUpcomingEvents] = useState(() => dataCache.get('dashboard-events') || null);
+  const [loading, setLoading] = useState(() => !dataCache.has('dashboard-stats'));
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    // Always fetch fresh data, but don't show loading if we have cached data
     fetchStats();
     fetchUpcomingEvents();
   }, []);
@@ -46,6 +48,7 @@ function Dashboard() {
       const response = await fetch(API_ENDPOINTS.stats);
       if (!response.ok) throw new Error('Failed to fetch statistics');
       const data = await response.json();
+      dataCache.set('dashboard-stats', data);
       setStats(data);
     } catch (err) {
       setError(err.message);
@@ -59,6 +62,7 @@ function Dashboard() {
       const response = await fetch(API_ENDPOINTS.upcomingEvents);
       if (!response.ok) throw new Error('Failed to fetch upcoming events');
       const data = await response.json();
+      dataCache.set('dashboard-events', data.events);
       setUpcomingEvents(data.events);
     } catch (err) {
       // Don't block the page if upcoming events fail
