@@ -6,10 +6,11 @@ import StatusBadge from '../components/StatusBadge';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
+import { dataCache } from '../utils/dataCache';
 
 function Commentary() {
-  const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [items, setItems] = useState(() => dataCache.get('commentary-items') || []);
+  const [loading, setLoading] = useState(() => !dataCache.has('commentary-items'));
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -21,6 +22,7 @@ function Commentary() {
       const response = await fetch(API_ENDPOINTS.commentary);
       if (!response.ok) throw new Error('Failed to fetch commentary');
       const data = await response.json();
+      dataCache.set('commentary-items', data.items);
       setItems(data.items);
     } catch (err) {
       setError(err.message);

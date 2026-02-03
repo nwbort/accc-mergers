@@ -5,12 +5,13 @@ import StatusBadge from '../components/StatusBadge';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
+import { dataCache } from '../utils/dataCache';
 
 function Mergers() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [mergers, setMergers] = useState([]);
-  const [filteredMergers, setFilteredMergers] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [mergers, setMergers] = useState(() => dataCache.get('mergers-list') || []);
+  const [filteredMergers, setFilteredMergers] = useState(() => dataCache.get('mergers-list') || []);
+  const [loading, setLoading] = useState(() => !dataCache.has('mergers-list'));
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
@@ -37,6 +38,7 @@ function Mergers() {
       const response = await fetch(API_ENDPOINTS.mergersList);
       if (!response.ok) throw new Error('Failed to fetch mergers');
       const data = await response.json();
+      dataCache.set('mergers-list', data.mergers);
       setMergers(data.mergers);
       setFilteredMergers(data.mergers);
     } catch (err) {

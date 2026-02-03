@@ -3,11 +3,12 @@ import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
+import { dataCache } from '../utils/dataCache';
 
 function Industries() {
-  const [industries, setIndustries] = useState([]);
-  const [mergers, setMergers] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [industries, setIndustries] = useState(() => dataCache.get('industries-list') || []);
+  const [mergers, setMergers] = useState(() => dataCache.get('industries-mergers') || []);
+  const [loading, setLoading] = useState(() => !dataCache.has('industries-list'));
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedIndustry, setExpandedIndustry] = useState(null);
@@ -30,6 +31,8 @@ function Industries() {
       const industriesData = await industriesRes.json();
       const mergersData = await mergersRes.json();
 
+      dataCache.set('industries-list', industriesData.industries);
+      dataCache.set('industries-mergers', mergersData.mergers);
       setIndustries(industriesData.industries);
       setMergers(mergersData.mergers);
     } catch (err) {
