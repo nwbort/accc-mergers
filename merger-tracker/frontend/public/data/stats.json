@@ -1,6 +1,6 @@
 {
   "total_mergers": 22,
-  "total_waivers": 14,
+  "total_waivers": 15,
   "by_status": {
     "Assessment completed": 10,
     "Under assessment": 12
@@ -42,11 +42,11 @@
   "top_industries": [
     {
       "name": "Software Publishing",
-      "count": 7
+      "count": 8
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 7
+      "count": 8
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -134,6 +134,15 @@
       "stage": "Phase 1 - initial assessment"
     },
     {
+      "merger_id": "WA-25003",
+      "merger_name": "Delinea (TPG) - StrongDM",
+      "determination": "Approved",
+      "determination_date": "2026-02-03T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-40002",
       "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
       "determination": "Approved",
@@ -163,15 +172,6 @@
     {
       "merger_id": "WA-60008",
       "merger_name": "Warburg Pincus \u2013 Acclime",
-      "determination": "Approved",
-      "determination_date": "2026-01-30T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-85005",
-      "merger_name": "Altor Fund Manager - Evac Holding Oy",
       "determination": "Approved",
       "determination_date": "2026-01-30T12:00:00Z",
       "determination_type": "final",
