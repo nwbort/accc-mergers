@@ -49,7 +49,7 @@ function Mergers() {
       const data = await response.json();
       dataCache.set('mergers-list', data.mergers);
       setMergers(data.mergers);
-      setFilteredMergers(data.mergers);
+      // Don't set filteredMergers here - the useEffect will handle sorting
     } catch (err) {
       setError(err.message);
     } finally {
