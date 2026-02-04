@@ -1,9 +1,9 @@
 {
-  "total_mergers": 22,
+  "total_mergers": 23,
   "total_waivers": 16,
   "by_status": {
     "Assessment completed": 10,
-    "Under assessment": 12
+    "Under assessment": 13
   },
   "by_determination": {
     "Approved": 10,
@@ -57,6 +57,10 @@
       "count": 3
     },
     {
+      "name": "Other Heavy and Civil Engineering Construction",
+      "count": 3
+    },
+    {
       "name": "Supermarket and Grocery Stores",
       "count": 2
     },
@@ -65,7 +69,7 @@
       "count": 2
     },
     {
-      "name": "Other Heavy and Civil Engineering Construction",
+      "name": "Site Preparation Services",
       "count": 2
     },
     {
@@ -75,13 +79,17 @@
     {
       "name": "Accounting Services",
       "count": 2
-    },
-    {
-      "name": "Beverage Manufacturing",
-      "count": 1
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-55003",
+      "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-03T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-95002",
       "merger_name": "Abbott Laboratories - Exact Sciences",
@@ -113,14 +121,6 @@
       "accc_determination": "Approved",
       "effective_notification_datetime": "2026-01-22T12:00:00Z",
       "is_waiver": true
-    },
-    {
-      "merger_id": "MN-75003",
-      "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-01-21T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
