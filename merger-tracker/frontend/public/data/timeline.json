@@ -1,6 +1,18 @@
 {
   "events": [
     {
+      "date": "2026-02-04T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/L%20Catterton%20Management%20-%20Ex%20Nihilo%20Group%20%28WA-35004%29%20-%20Notification%20waiver%20determination%20-%204%20February%202026.pdf",
+      "url_gh": "/matters/WA-35004/L Catterton Management - Ex Nihilo Group (WA-35004) - Notification waiver determination - 4 February 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-35004",
+      "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
       "date": "2026-02-03T12:00:00Z",
       "title": "CSE Crosscom - Progility - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
@@ -251,6 +263,18 @@
       "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
       "phase": null,
       "is_waiver": false
+    },
+    {
+      "date": "2026-01-22T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "WA-35004",
+      "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
+      "phase": "Phase 1",
+      "is_waiver": true
     },
     {
       "date": "2026-01-21T12:00:00Z",
@@ -1069,5 +1093,5 @@
       "is_waiver": false
     }
   ],
-  "total": 89
+  "total": 91
 }

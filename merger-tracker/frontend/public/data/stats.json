@@ -1,6 +1,6 @@
 {
   "total_mergers": 22,
-  "total_waivers": 15,
+  "total_waivers": 16,
   "by_status": {
     "Assessment completed": 10,
     "Under assessment": 12
@@ -53,15 +53,15 @@
       "count": 3
     },
     {
+      "name": "Pharmaceutical and Toiletry Goods Wholesaling",
+      "count": 3
+    },
+    {
       "name": "Supermarket and Grocery Stores",
       "count": 2
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 2
-    },
-    {
-      "name": "Pharmaceutical and Toiletry Goods Wholesaling",
       "count": 2
     },
     {
@@ -107,23 +107,32 @@
       "is_waiver": false
     },
     {
+      "merger_id": "WA-35004",
+      "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2026-01-22T12:00:00Z",
+      "is_waiver": true
+    },
+    {
       "merger_id": "MN-75003",
       "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-01-21T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-01074",
-      "merger_name": "GE Healthcare \u2013 Intelerad",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-01-20T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-35004",
+      "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
+      "determination": "Approved",
+      "determination_date": "2026-02-04T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
     {
       "merger_id": "MN-01071",
       "merger_name": "CSE Crosscom \u2013 Progility",
@@ -163,15 +172,6 @@
     {
       "merger_id": "WA-40003",
       "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
-      "determination": "Approved",
-      "determination_date": "2026-01-30T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-60008",
-      "merger_name": "Warburg Pincus \u2013 Acclime",
       "determination": "Approved",
       "determination_date": "2026-01-30T12:00:00Z",
       "determination_type": "final",
