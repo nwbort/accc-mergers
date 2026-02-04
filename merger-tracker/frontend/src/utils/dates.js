@@ -138,3 +138,20 @@ export const getDaysRemaining = (endDate) => {
     return null;
   }
 };
+
+/**
+ * Check if a date is in the past (before the start of today)
+ * @param {string} dateString - Date in ISO format
+ * @returns {boolean} True if the date is before today
+ */
+export const isDatePast = (dateString) => {
+  if (!dateString) return false;
+  try {
+    const date = parseISO(dateString);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return date < today;
+  } catch (e) {
+    return false;
+  }
+};
