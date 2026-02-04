@@ -109,8 +109,13 @@ clean_html() {
 
     # Use a second sed pass for complex multi-line replacements.
     sed -i -E -e ':a;N;$!ba;s#(<a[^>]*class="[^"]*megamenu-page-link-level-3[^"]*"[^>]*href=")[^"]*("[^>]*>[[:space:]]*<span>)[^<]*(</span>)#\1STATIC_HREF\2STATIC_TEXT\3#g' "$file"
+
+    # Squeeze multiple consecutive blank lines into a single blank line.
+    # This prevents unnecessary diffs when the server adds/removes blank lines.
+    temp_file=$(mktemp)
+    cat -s "$file" > "$temp_file" && mv "$temp_file" "$file"
   done
-  
+
   echo "Cleaning complete."
 }
 
