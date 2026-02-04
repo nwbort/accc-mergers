@@ -18,7 +18,7 @@ import UpcomingEventsTable from '../components/UpcomingEventsTable';
 import RecentDeterminationsTable from '../components/RecentDeterminationsTable';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
-import { formatDate, getDaysRemaining } from '../utils/dates';
+import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
 import { dataCache } from '../utils/dataCache';
 
 ChartJS.register(
@@ -234,6 +234,7 @@ function Dashboard() {
       {/* Upcoming Events (within 7 days) */}
       {upcomingEvents && (() => {
         const eventsWithin7Days = upcomingEvents.filter(event => {
+          if (isDatePast(event.date)) return false;
           const daysRemaining = getDaysRemaining(event.date);
           return daysRemaining !== null && daysRemaining <= 7;
         });
