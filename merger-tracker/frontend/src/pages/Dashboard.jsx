@@ -144,7 +144,7 @@ function Dashboard() {
           icon="🔍"
         />
         <StatCard
-          title="Average duration"
+          title="Average phase 1 duration"
           value={
             stats.phase_duration.average_business_days
               ? `${Math.round(stats.phase_duration.average_business_days)} business days`
@@ -158,7 +158,7 @@ function Dashboard() {
           icon="⏱️"
         />
         <StatCard
-          title="Median duration"
+          title="Median phase 1 duration"
           value={
             stats.phase_duration.median_business_days
               ? `${stats.phase_duration.median_business_days} business days`
