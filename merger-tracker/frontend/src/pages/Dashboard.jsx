@@ -38,7 +38,6 @@ function Dashboard() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Always fetch fresh data, but don't show loading if we have cached data
     fetchStats();
     fetchUpcomingEvents();
   }, []);
@@ -65,16 +64,14 @@ function Dashboard() {
       dataCache.set('dashboard-events', data.events);
       setUpcomingEvents(data.events);
     } catch (err) {
-      // Don't block the page if upcoming events fail
       setUpcomingEvents([]);
     }
   };
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div className="text-red-600">Error: {error}</div>;
+  if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
   if (!stats) return null;
 
-  // Calculate Phase 1 duration stats using business days
   const calculateDurationStats = () => {
     const businessDaysDurations = stats.phase_duration.all_business_durations || [];
     const total = businessDaysDurations.length;
@@ -98,13 +95,12 @@ function Dashboard() {
       {
         data: Object.values(stats.by_determination),
         backgroundColor: ['#335145', '#e07a5f', '#6b8f7f', '#8cafa0'],
-        borderWidth: 2,
-        borderColor: '#fff',
+        borderWidth: 0,
+        borderRadius: 4,
       },
     ],
   };
 
-  // Order waiver determinations with Approved first (green), Not approved second (salmon)
   const waiverLabels = ['Approved', 'Not approved'].filter(
     (label) => stats.by_waiver_determination && stats.by_waiver_determination[label]
   );
@@ -116,8 +112,8 @@ function Dashboard() {
         backgroundColor: waiverLabels.map((label) =>
           label === 'Approved' ? '#335145' : '#e07a5f'
         ),
-        borderWidth: 2,
-        borderColor: '#fff',
+        borderWidth: 0,
+        borderRadius: 4,
       },
     ],
   };
@@ -126,9 +122,19 @@ function Dashboard() {
     responsive: true,
     maintainAspectRatio: false,
     animation: false,
+    cutout: '65%',
     plugins: {
       legend: {
         position: 'bottom',
+        labels: {
+          padding: 16,
+          usePointStyle: true,
+          pointStyle: 'circle',
+          font: {
+            size: 12,
+            family: 'Inter, sans-serif',
+          },
+        },
       },
     },
   };
@@ -140,7 +146,7 @@ function Dashboard() {
         description="Real-time database of Australian mergers reviewed by the ACCC. Search merger decisions, track review timelines, analyze industry trends, and explore public consultation documents."
         url="/"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
       {/* Stats Grid */}
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-8">
         <StatCard
@@ -187,29 +193,29 @@ function Dashboard() {
       )}
 
       {/* Recently Notified Mergers */}
-      <div className="bg-white shadow rounded-lg mb-8">
-        <div className="px-6 py-4 border-b border-gray-200">
-          <h2 className="text-lg font-semibold text-gray-900">
+      <div className="bg-white rounded-2xl border border-gray-100 shadow-card mb-8 overflow-hidden">
+        <div className="px-6 py-5 border-b border-gray-100">
+          <h2 className="text-base font-semibold text-gray-900">
             Recently notified mergers
           </h2>
         </div>
-        <ul className="divide-y divide-gray-200">
+        <ul className="divide-y divide-gray-50">
           {stats.recent_mergers.map((merger) => (
             <li key={merger.merger_id}>
               <Link
                 to={`/mergers/${merger.merger_id}`}
-                className="block hover:bg-gray-50 transition-colors duration-150"
+                className="block hover:bg-gray-50/50 transition-colors duration-150"
                 aria-label={`View merger details for ${merger.merger_name}`}
               >
                 <div className="px-6 py-4">
-                  <div className="flex items-start justify-between gap-2">
+                  <div className="flex items-start justify-between gap-3">
                     <div className="flex items-start gap-2 min-w-0 flex-1">
-                      <p className="text-sm font-medium text-primary break-words">
+                      <p className="text-sm font-medium text-gray-900 break-words hover:text-primary transition-colors">
                         {merger.merger_name}
                       </p>
                       {merger.is_waiver && (
                         <span
-                          className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800"
+                          className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60"
                           role="status"
                           aria-label="Merger type: waiver application"
                         >
@@ -217,18 +223,16 @@ function Dashboard() {
                         </span>
                       )}
                     </div>
-                    <div className="ml-2 flex-shrink-0 flex">
+                    <div className="ml-2 flex-shrink-0">
                       <StatusBadge
                         status={merger.status}
                         determination={merger.accc_determination}
                       />
                     </div>
                   </div>
-                  <div className="mt-2 flex items-center text-sm text-gray-500">
-                    <span className="truncate">
-                      {merger.is_waiver ? 'Applied:' : 'Notified:'}{' '}
-                      {formatDate(merger.effective_notification_datetime)}
-                    </span>
+                  <div className="mt-1.5 text-xs text-gray-400">
+                    {merger.is_waiver ? 'Applied:' : 'Notified:'}{' '}
+                    {formatDate(merger.effective_notification_datetime)}
                   </div>
                 </div>
               </Link>
@@ -252,34 +256,37 @@ function Dashboard() {
       })()}
 
       {/* Charts */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Phase 1 Duration Table */}
         {(() => {
           const durationStats = calculateDurationStats();
           return durationStats && (
-            <div className="bg-white p-6 rounded-lg shadow">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
+              <h2 className="text-base font-semibold text-gray-900 mb-5">
                 Phase 1 duration
               </h2>
-              <div className="space-y-3">
-                <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                  <span className="text-sm font-medium text-gray-700">Determined by day 15</span>
-                  <span className="text-sm font-semibold text-gray-900">
-                    {durationStats.day15.percentage}% ({durationStats.day15.count})
-                  </span>
-                </div>
-                <div className="flex justify-between items-center py-2 border-b border-gray-200">
-                  <span className="text-sm font-medium text-gray-700">Determined by day 20</span>
-                  <span className="text-sm font-semibold text-gray-900">
-                    {durationStats.day20.percentage}% ({durationStats.day20.count})
-                  </span>
-                </div>
-                <div className="flex justify-between items-center py-2">
-                  <span className="text-sm font-medium text-gray-700">Determined by day 30</span>
-                  <span className="text-sm font-semibold text-gray-900">
-                    {durationStats.day30.percentage}% ({durationStats.day30.count})
-                  </span>
-                </div>
+              <div className="space-y-1">
+                {[
+                  { label: 'By day 15', data: durationStats.day15 },
+                  { label: 'By day 20', data: durationStats.day20 },
+                  { label: 'By day 30', data: durationStats.day30 },
+                ].map(({ label, data }) => (
+                  <div key={label} className="flex justify-between items-center py-3 border-b border-gray-50 last:border-0">
+                    <span className="text-sm text-gray-600">{label}</span>
+                    <div className="flex items-center gap-3">
+                      <div className="w-24 bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                        <div
+                          className="bg-primary h-1.5 rounded-full transition-all duration-500"
+                          style={{ width: `${data.percentage}%` }}
+                        />
+                      </div>
+                      <span className="text-sm font-semibold text-gray-900 tabular-nums w-20 text-right">
+                        {data.percentage}%
+                        <span className="text-gray-400 font-normal ml-1">({data.count})</span>
+                      </span>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           );
@@ -287,8 +294,8 @@ function Dashboard() {
 
         {/* Phase 1 Determination Distribution */}
         {Object.keys(stats.by_determination).length > 0 && (
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
+            <h2 className="text-base font-semibold text-gray-900 mb-5">
               Phase 1 determinations
             </h2>
             <div className="h-64" role="img" aria-label={`Doughnut chart showing distribution of Phase 1 determinations: ${Object.entries(stats.by_determination).map(([det, count]) => `${count} ${det}`).join(', ')}`}>
@@ -299,8 +306,8 @@ function Dashboard() {
 
         {/* Waiver Determination Distribution */}
         {stats.by_waiver_determination && Object.keys(stats.by_waiver_determination).length > 0 && (
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
+            <h2 className="text-base font-semibold text-gray-900 mb-5">
               Waiver determinations
             </h2>
             <div className="h-64" role="img" aria-label={`Doughnut chart showing distribution of waiver determinations: ${Object.entries(stats.by_waiver_determination).map(([det, count]) => `${count} ${det}`).join(', ')}`}>

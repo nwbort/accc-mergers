@@ -31,7 +31,6 @@ function Timeline() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Check if user is near bottom
       const scrollPosition = window.innerHeight + window.scrollY;
       const threshold = document.documentElement.scrollHeight - SCROLL_THRESHOLD_PX;
 
@@ -52,7 +51,6 @@ function Timeline() {
 
       dataCache.set('timeline-events', data.events);
       setAllEvents(data.events);
-      // Show initial batch
       setDisplayedEvents(data.events.slice(0, ITEMS_PER_PAGE));
       setHasMore(data.events.length > ITEMS_PER_PAGE);
     } catch (err) {
@@ -66,17 +64,17 @@ function Timeline() {
     if (loadingMore || !hasMore) return;
 
     setLoadingMore(true);
-    
+
     const currentLength = displayedEvents.length;
     const nextBatch = allEvents.slice(currentLength, currentLength + LOAD_MORE_COUNT);
-    
+
     if (nextBatch.length > 0) {
       setDisplayedEvents(prev => [...prev, ...nextBatch]);
       setHasMore(currentLength + nextBatch.length < allEvents.length);
     } else {
       setHasMore(false);
     }
-    
+
     setLoadingMore(false);
   };
 
@@ -95,8 +93,33 @@ function Timeline() {
     return 'event';
   };
 
+  const getEventColor = (eventType) => {
+    switch (eventType) {
+      case 'notification': return 'bg-blue-500';
+      case 'determination-approved': return 'bg-emerald-500';
+      case 'determination-not-approved': return 'bg-red-500';
+      case 'determination-referred': return 'bg-amber-500';
+      default: return 'bg-primary';
+    }
+  };
+
+  const getEventIcon = (eventType) => {
+    switch (eventType) {
+      case 'notification':
+        return <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clipRule="evenodd" />;
+      case 'determination-approved':
+        return <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />;
+      case 'determination-not-approved':
+        return <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />;
+      case 'determination-referred':
+        return <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />;
+      default:
+        return <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />;
+    }
+  };
+
   if (loading) return <LoadingSpinner />;
-  if (error) return <div className="text-red-600">Error: {error}</div>;
+  if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
 
   return (
     <>
@@ -105,7 +128,7 @@ function Timeline() {
         description="Chronological timeline of all Australian merger and acquisition events, determinations, and public consultations monitored by the ACCC."
         url="/timeline"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <div className="flow-root">
           <ul className="-mb-8">
             {displayedEvents.map((event, idx) => {
@@ -116,122 +139,42 @@ function Timeline() {
                   <div className="relative pb-8">
                     {idx !== displayedEvents.length - 1 && (
                       <span
-                        className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-200"
+                        className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-100"
                         aria-hidden="true"
                       />
                     )}
-                    <div className="relative flex space-x-4 items-center">
-                      <div className="flex-shrink-0">
+                    <div className="relative flex space-x-4 items-start">
+                      <div className="flex-shrink-0 pt-0.5">
                         <span
-                          className={`h-10 w-10 rounded-full flex items-center justify-center ring-8 ring-white ${
-                            eventType === 'notification'
-                              ? 'bg-blue-500'
-                              : eventType === 'determination-approved'
-                              ? 'bg-green-500'
-                              : eventType === 'determination-not-approved'
-                              ? 'bg-red-500'
-                              : eventType === 'determination-referred'
-                              ? 'bg-amber-500'
-                              : 'bg-primary'
-                          }`}
+                          className={`h-10 w-10 rounded-xl flex items-center justify-center shadow-sm ${getEventColor(eventType)}`}
                         >
-                          {eventType === 'notification' ? (
-                            <svg
-                              className="h-5 w-5 text-white"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                              role="img"
-                              aria-label="New merger notification"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          ) : eventType === 'determination-approved' ? (
-                            <svg
-                              className="h-5 w-5 text-white"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                              role="img"
-                              aria-label="Merger approved"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          ) : eventType === 'determination-not-approved' ? (
-                            <svg
-                              className="h-5 w-5 text-white"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                              role="img"
-                              aria-label="Merger not approved"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          ) : eventType === 'determination-referred' ? (
-                            <svg
-                              className="h-5 w-5 text-white"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                              role="img"
-                              aria-label="Merger referred to phase 2"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          ) : (
-                            <svg
-                              className="h-5 w-5 text-white"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                              role="img"
-                              aria-label="Timeline event"
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          )}
+                          <svg className="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20" role="img" aria-label="Timeline event">
+                            {getEventIcon(eventType)}
+                          </svg>
                         </span>
                       </div>
                       <div
-                        className="min-w-0 flex-1 bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow duration-200 cursor-pointer"
+                        className="min-w-0 flex-1 bg-white rounded-2xl border border-gray-100 shadow-card p-4 hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 cursor-pointer"
                         onClick={() => navigate(`/mergers/${event.merger_id}`)}
                         role="link"
                         aria-label={`View merger details for ${event.merger_name}`}
                       >
-                        <div>
-                          <span className="text-sm font-medium text-gray-900">
-                            {event.merger_name}
-                          </span>
-                          <p className="text-sm text-gray-600 mt-1">
-                            {event.display_title || event.title}
-                          </p>
-                          <p className="mt-1 text-sm text-gray-500">
-                            {formatDate(event.date)}
-                          </p>
-                        </div>
+                        <span className="text-sm font-semibold text-gray-900">
+                          {event.merger_name}
+                        </span>
+                        <p className="text-sm text-gray-500 mt-1">
+                          {event.display_title || event.title}
+                        </p>
+                        <p className="mt-1 text-xs text-gray-400">
+                          {formatDate(event.date)}
+                        </p>
                         {event.url_gh && (
                           <div className="mt-2">
                             <a
                               href={event.url_gh}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark hover:underline"
+                              className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark transition-colors"
                               aria-label={`View document for ${event.merger_name}`}
                               onClick={(e) => e.stopPropagation()}
                             >
@@ -251,27 +194,27 @@ function Timeline() {
 
         {hasMore && (
           <div className="text-center py-8">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-400">
               Showing {displayedEvents.length} of {allEvents.length} events
             </p>
             {loadingMore ? (
-              <p className="text-xs text-gray-500 mt-1">Loading more...</p>
+              <p className="text-xs text-gray-400 mt-1">Loading more...</p>
             ) : (
-              <p className="text-xs text-gray-500 mt-1">Scroll down to load more</p>
+              <p className="text-xs text-gray-400 mt-1">Scroll down to load more</p>
             )}
           </div>
         )}
 
         {!hasMore && displayedEvents.length > 0 && (
           <div className="text-center py-8">
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-400 text-sm">
               Showing all {allEvents.length} events
             </p>
           </div>
         )}
 
         {!loading && displayedEvents.length === 0 && (
-          <div className="text-center py-12">
+          <div className="text-center py-16">
             <p className="text-gray-500">No timeline data available</p>
           </div>
         )}

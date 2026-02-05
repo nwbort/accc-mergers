@@ -19,12 +19,12 @@ function MergerEventGroup({ group, onClose, isEventSeen }) {
       <Link
         to={`/mergers/${group.merger_id}`}
         onClick={onClose}
-        className="block hover:bg-gray-50 -mx-4 -mt-4 px-4 pt-4 pb-2 rounded-t"
+        className="block hover:bg-gray-50/80 -mx-4 -mt-4 px-4 pt-4 pb-2 rounded-t-xl transition-colors"
       >
-        <h3 className="text-sm font-medium text-gray-900 hover:text-primary line-clamp-2">
+        <h3 className="text-sm font-medium text-gray-900 hover:text-primary transition-colors line-clamp-2">
           {group.merger_name}
         </h3>
-        <p className="text-xs text-gray-500 mt-0.5">{group.merger_id}</p>
+        <p className="text-xs text-gray-400 mt-0.5">{group.merger_id}</p>
       </Link>
 
       <ul className="mt-2 space-y-2">
@@ -41,7 +41,7 @@ function MergerEventGroup({ group, onClose, isEventSeen }) {
             >
               <div className="flex items-start gap-2">
                 <span className={`mt-0.5 flex-shrink-0 w-2 h-2 rounded-full ${
-                  isNew ? 'bg-green-500' : isUpcoming ? 'bg-amber-400' : 'bg-gray-300'
+                  isNew ? 'bg-emerald-500' : isUpcoming ? 'bg-amber-400' : 'bg-gray-300'
                 }`} />
                 <div className="flex-1 min-w-0">
                   <p className="text-gray-700 truncate">
@@ -50,7 +50,7 @@ function MergerEventGroup({ group, onClose, isEventSeen }) {
                   <p className="text-gray-400">
                     {formatDate(event.date)}
                     {isUpcoming && daysRemaining > 0 && (
-                      <span className="ml-1 text-amber-600">
+                      <span className="ml-1 text-amber-600 font-medium">
                         ({daysRemaining} day{daysRemaining !== 1 ? 's' : ''})
                       </span>
                     )}
@@ -67,7 +67,7 @@ function MergerEventGroup({ group, onClose, isEventSeen }) {
             <li className="text-xs">
               <button
                 onClick={() => setShowPastEvents(!showPastEvents)}
-                className="text-gray-400 hover:text-gray-600 hover:underline cursor-pointer pl-4"
+                className="text-gray-400 hover:text-gray-600 hover:underline cursor-pointer pl-4 transition-colors"
               >
                 {showPastEvents ? 'Hide' : 'Show'} {pastEvents.length} past event{pastEvents.length !== 1 ? 's' : ''}
               </button>
@@ -83,7 +83,7 @@ function MergerEventGroup({ group, onClose, isEventSeen }) {
                 >
                   <div className="flex items-start gap-2">
                     <span className={`mt-0.5 flex-shrink-0 w-2 h-2 rounded-full ${
-                      isNew ? 'bg-green-500' : 'bg-gray-300'
+                      isNew ? 'bg-emerald-500' : 'bg-gray-300'
                     }`} />
                     <div className="flex-1 min-w-0">
                       <p className="text-gray-500 truncate">
@@ -209,26 +209,26 @@ function NotificationPanel({ isOpen, onClose }) {
   return (
     <div
       ref={panelRef}
-      className="fixed left-1/2 -translate-x-1/2 top-16 sm:absolute sm:left-auto sm:translate-x-0 sm:right-0 sm:top-full sm:mt-2 w-[calc(100vw-1rem)] sm:w-96 bg-white rounded-lg shadow-xl border border-gray-200 z-50 max-h-[70vh] sm:max-h-[80vh] overflow-hidden flex flex-col"
+      className="fixed left-1/2 -translate-x-1/2 top-16 sm:absolute sm:left-auto sm:translate-x-0 sm:right-0 sm:top-full sm:mt-2 w-[calc(100vw-1rem)] sm:w-96 bg-white/95 backdrop-blur-lg rounded-2xl shadow-elevated border border-gray-100 z-50 max-h-[70vh] sm:max-h-[80vh] overflow-hidden flex flex-col"
       role="dialog"
       aria-label="Notifications panel"
     >
       {/* Header */}
-      <div className="px-4 py-3 border-b border-gray-200 bg-gray-50 flex items-center justify-between flex-shrink-0">
+      <div className="px-5 py-3.5 border-b border-gray-100 bg-gray-50/80 flex items-center justify-between flex-shrink-0">
         <h2 className="text-sm font-semibold text-gray-900">
           Tracked Mergers
           {trackedMergerIds.length > 0 && (
-            <span className="ml-2 text-gray-500 font-normal">
+            <span className="ml-2 text-gray-400 font-normal">
               ({trackedMergerIds.length})
             </span>
           )}
         </h2>
         <button
           onClick={onClose}
-          className="text-gray-400 hover:text-gray-600 p-1"
+          className="text-gray-400 hover:text-gray-600 p-1.5 rounded-lg hover:bg-gray-100 transition-colors"
           aria-label="Close notifications"
         >
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
@@ -237,32 +237,36 @@ function NotificationPanel({ isOpen, onClose }) {
       {/* Content */}
       <div className="overflow-y-auto flex-1">
         {trackedMergerIds.length === 0 ? (
-          <div className="px-4 py-8 text-center">
-            <svg className="mx-auto h-12 w-12 text-gray-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-            </svg>
-            <p className="text-sm text-gray-500 mb-2">No tracked mergers yet</p>
+          <div className="px-5 py-10 text-center">
+            <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center mx-auto mb-3">
+              <svg className="h-6 w-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+              </svg>
+            </div>
+            <p className="text-sm font-medium text-gray-500 mb-1">No tracked mergers yet</p>
             <p className="text-xs text-gray-400">
               Visit a merger&apos;s page and click &quot;Track&quot; to receive updates
             </p>
           </div>
         ) : loading ? (
-          <div className="px-4 py-8 text-center">
+          <div className="px-5 py-10 text-center">
             <div className="animate-spin h-8 w-8 border-2 border-primary border-t-transparent rounded-full mx-auto mb-3"></div>
             <p className="text-sm text-gray-500">Loading events...</p>
           </div>
         ) : trackedEvents.length === 0 ? (
-          <div className="px-4 py-8 text-center">
-            <svg className="mx-auto h-12 w-12 text-gray-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <p className="text-sm text-gray-500">No recent events</p>
+          <div className="px-5 py-10 text-center">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center mx-auto mb-3">
+              <svg className="h-6 w-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <p className="text-sm font-medium text-gray-500">No recent events</p>
             <p className="text-xs text-gray-400 mt-1">
               Events for your tracked mergers will appear here
             </p>
           </div>
         ) : (
-          <div className="divide-y divide-gray-100">
+          <div className="divide-y divide-gray-50">
             {mergerGroups.map((group) => (
               <MergerEventGroup
                 key={group.merger_id}
@@ -277,11 +281,11 @@ function NotificationPanel({ isOpen, onClose }) {
 
       {/* Footer */}
       {trackedMergerIds.length > 0 && (
-        <div className="px-4 py-3 border-t border-gray-200 bg-gray-50 flex-shrink-0">
+        <div className="px-5 py-3 border-t border-gray-100 bg-gray-50/80 flex-shrink-0">
           <Link
             to="/mergers"
             onClick={onClose}
-            className="text-xs text-primary hover:text-primary-dark hover:underline"
+            className="text-xs font-medium text-primary hover:text-primary-dark transition-colors"
           >
             View all mergers
           </Link>
