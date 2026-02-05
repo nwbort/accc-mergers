@@ -1,5 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useTracking } from '../context/TrackingContext';
+import NotificationPanel from './NotificationPanel';
 
 const SCROLL_HIDE_THRESHOLD_PX = 50;
 
@@ -8,6 +10,8 @@ function Navbar() {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [notificationPanelOpen, setNotificationPanelOpen] = useState(false);
+  const { unseenCount } = useTracking();
 
   const isActive = (path) => {
     return location.pathname === path;
@@ -105,10 +109,44 @@ function Navbar() {
               </Link>
             </div>
           </div>
-          <div className="flex items-center sm:hidden">
+          {/* Right side: Notifications bell + mobile menu */}
+          <div className="flex items-center gap-2">
+            {/* Notifications bell */}
+            <div className="relative">
+              <button
+                onClick={() => setNotificationPanelOpen(!notificationPanelOpen)}
+                className="relative inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+                aria-expanded={notificationPanelOpen}
+                aria-label={`Notifications${unseenCount > 0 ? `, ${unseenCount} new` : ''}`}
+              >
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                  />
+                </svg>
+                {unseenCount > 0 && (
+                  <span className="absolute -top-0.5 -right-0.5 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white transform bg-red-500 rounded-full min-w-[1.25rem]">
+                    {unseenCount > 99 ? '99+' : unseenCount}
+                  </span>
+                )}
+              </button>
+              <NotificationPanel
+                isOpen={notificationPanelOpen}
+                onClose={() => setNotificationPanelOpen(false)}
+              />
+            </div>
+            {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+              className="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
               aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}

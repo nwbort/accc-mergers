@@ -3,6 +3,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
+import { TrackingProvider } from './context/TrackingContext';
 import Dashboard from './pages/Dashboard';
 import Mergers from './pages/Mergers';
 import MergerDetail from './pages/MergerDetail';
@@ -14,6 +15,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <TrackingProvider>
         <ErrorBoundary>
           <div className="min-h-screen bg-gray-50 flex flex-col">
             <Navbar />
@@ -30,6 +32,7 @@ function App() {
             <Footer />
           </div>
         </ErrorBoundary>
+        </TrackingProvider>
       </Router>
     </HelmetProvider>
   );
