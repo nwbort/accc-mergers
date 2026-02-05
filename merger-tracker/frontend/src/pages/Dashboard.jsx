@@ -204,7 +204,7 @@ function Dashboard() {
             <li key={merger.merger_id}>
               <Link
                 to={`/mergers/${merger.merger_id}`}
-                className="block hover:bg-gray-50/50 transition-colors duration-150"
+                className="block hover:bg-gray-100/70 transition-colors duration-150"
                 aria-label={`View merger details for ${merger.merger_name}`}
               >
                 <div className="px-6 py-4">

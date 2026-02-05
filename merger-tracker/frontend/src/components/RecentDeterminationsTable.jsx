@@ -71,7 +71,7 @@ function RecentDeterminationsTable({ determinations }) {
             {determinations.map((item) => (
               <tr
                 key={`${item.merger_id}-${item.determination_date}-${item.determination_type}`}
-                className="relative hover:bg-gray-50/50 transition-colors"
+                className="relative hover:bg-gray-100/70 transition-colors"
               >
                 <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                   {formatDate(item.determination_date)}

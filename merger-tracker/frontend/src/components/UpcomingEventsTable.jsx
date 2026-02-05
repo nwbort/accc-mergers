@@ -68,7 +68,7 @@ function UpcomingEventsTable({ events }) {
               return (
                 <tr
                   key={`${event.merger_id}-${event.date}-${event.type}`}
-                  className="relative hover:bg-gray-50/50 transition-colors"
+                  className="relative hover:bg-gray-100/70 transition-colors"
                 >
                   {/* Combined cell - mobile only */}
                   <td className="sm:hidden px-5 py-4 whitespace-nowrap text-sm text-gray-900">
