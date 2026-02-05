@@ -51,12 +51,6 @@ function RecentDeterminationsTable({ determinations }) {
                 scope="col"
                 className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
-                Date
-              </th>
-              <th
-                scope="col"
-                className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
                 Merger
               </th>
               <th
@@ -73,9 +67,6 @@ function RecentDeterminationsTable({ determinations }) {
                 key={`${item.merger_id}-${item.determination_date}-${item.determination_type}`}
                 className="relative hover:bg-gray-100/70 transition-colors"
               >
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                  {formatDate(item.determination_date)}
-                </td>
                 <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                   <Link
                     to={`/mergers/${item.merger_id}`}
@@ -95,6 +86,9 @@ function RecentDeterminationsTable({ determinations }) {
                 </td>
                 <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
                   <DeterminationBadge determination={item.determination} />
+                  <div className="text-xs text-gray-400 mt-0.5">
+                    {formatDate(item.determination_date)}
+                  </div>
                 </td>
               </tr>
             ))}
