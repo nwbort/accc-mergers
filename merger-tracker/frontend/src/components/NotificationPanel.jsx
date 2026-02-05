@@ -10,9 +10,8 @@ function MergerEventGroup({ group, onClose, isEventSeen }) {
   const pastEvents = group.events.filter((e) => isDatePast(e.date));
   const futureEvents = group.events.filter((e) => !isDatePast(e.date));
 
-  // Sort future events by date ascending (soonest first)
-  futureEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
-  // Sort past events by date descending (most recent first)
+  // Sort all events by date descending (most recent/latest dates first)
+  futureEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
   pastEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
