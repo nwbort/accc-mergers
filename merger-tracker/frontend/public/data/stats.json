@@ -1,6 +1,6 @@
 {
   "total_mergers": 24,
-  "total_waivers": 16,
+  "total_waivers": 19,
   "by_status": {
     "Assessment completed": 10,
     "Under assessment": 14
@@ -61,6 +61,10 @@
       "count": 3
     },
     {
+      "name": "Financial Asset Investing",
+      "count": 3
+    },
+    {
       "name": "Supermarket and Grocery Stores",
       "count": 2
     },
@@ -73,11 +77,7 @@
       "count": 2
     },
     {
-      "name": "Other Waste Collection Services",
-      "count": 2
-    },
-    {
-      "name": "Accounting Services",
+      "name": "Accommodation",
       "count": 2
     }
   ],
@@ -125,6 +125,33 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25001",
+      "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
+      "determination": "Approved",
+      "determination_date": "2026-02-05T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-65003",
+      "merger_name": "Henkel \u2013 ATP adhesive systems group",
+      "determination": "Not approved",
+      "determination_date": "2026-02-05T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-70003",
+      "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury",
+      "determination": "Not approved",
+      "determination_date": "2026-02-05T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-35004",
       "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
       "determination": "Approved",
@@ -147,33 +174,6 @@
       "merger_name": "Delinea (TPG) - StrongDM",
       "determination": "Approved",
       "determination_date": "2026-02-03T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-40002",
-      "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
-      "determination": "Approved",
-      "determination_date": "2026-02-02T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-20003",
-      "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
-      "determination": "Approved",
-      "determination_date": "2026-01-30T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-40003",
-      "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
-      "determination": "Approved",
-      "determination_date": "2026-01-30T12:00:00Z",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

@@ -1263,6 +1263,54 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/carlyle-%E2%80%93-peloton-computer-enterprises"
     },
     {
+      "merger_id": "WA-25001",
+      "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-09T12:00:00Z",
+      "determination_publication_date": "2026-02-05T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "ALBANY MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "95 676 040 341"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Esperance Motor Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "57 121 986 016"
+        },
+        {
+          "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST",
+          "identifier_type": "ABN",
+          "identifier": "80 701 405 315"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Regent Motors Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "12 008 685 087"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/regent-motors-group-%E2%80%93-esperance-motor-group-esperance-toyota-ford"
+    },
+    {
       "merger_id": "WA-25003",
       "merger_name": "Delinea (TPG) - StrongDM",
       "status": "Assessment completed",
@@ -1648,6 +1696,62 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/warburg-pincus-%E2%80%93-acclime"
     },
     {
+      "merger_id": "WA-65003",
+      "merger_name": "Henkel \u2013 ATP adhesive systems group",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-19T12:00:00Z",
+      "determination_publication_date": "2026-02-05T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Aqua Adhesives I GmbH",
+          "identifier_type": null,
+          "identifier": "Swiss registration number  CH170.4.019.1870"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Henkel AG & Co. KGaA",
+          "identifier_type": null,
+          "identifier": "HRB  4724"
+        },
+        {
+          "name": "ATP adhesive systems Group GmbH",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1851",
+          "name": "Cleaning Compound Manufacturing"
+        },
+        {
+          "code": "1852",
+          "name": "Cosmetic and Toiletry Preparation Manufacturing"
+        },
+        {
+          "code": "1915",
+          "name": "Adhesive Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/henkel-%E2%80%93-atp-adhesive-systems-group"
+    },
+    {
       "merger_id": "WA-70002",
       "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
       "status": "Assessment completed",
@@ -1690,6 +1794,62 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ethos-tpg-%E2%80%93-emis-and-certain-related-assets"
+    },
+    {
+      "merger_id": "WA-70003",
+      "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-20T12:00:00Z",
+      "determination_publication_date": "2026-02-05T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "INTREPID TRAVEL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "35 007 172 456"
+        }
+      ],
+      "targets": [
+        {
+          "name": "EXPERIENCE CO LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "56 167 320 470"
+        },
+        {
+          "name": "WILD BUSH LUXURY EXPERIENCE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 648 431 734"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "INTREPID GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "30 131 952 513"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "5010",
+          "name": "Scenic and Sightseeing Transport"
+        },
+        {
+          "code": "7220",
+          "name": "Travel Agency and Tour Arrangement Services"
+        },
+        {
+          "code": "8922",
+          "name": "Nature Reserves and Conservation Parks Operation"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/intrepid-travel-%E2%80%93-wild-bush-luxury"
     },
     {
       "merger_id": "WA-80001",
