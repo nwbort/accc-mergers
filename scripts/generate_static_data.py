@@ -299,6 +299,13 @@ def generate_stats_json(mergers: list) -> dict:
         det = enriched.get('phase_1_determination')
         if det:
             by_determination[det] += 1
+
+    # By waiver determination
+    by_waiver_determination = defaultdict(int)
+    for m in waiver_mergers:
+        det = normalize_determination(m.get('accc_determination'))
+        if det:
+            by_waiver_determination[det] += 1
     
     # Phase durations (notifications only)
     durations = []
@@ -399,6 +406,7 @@ def generate_stats_json(mergers: list) -> dict:
         "total_waivers": total_waivers,
         "by_status": dict(by_status),
         "by_determination": dict(by_determination),
+        "by_waiver_determination": dict(by_waiver_determination),
         "phase_duration": {
             "average_days": avg_duration,
             "median_days": median_duration,

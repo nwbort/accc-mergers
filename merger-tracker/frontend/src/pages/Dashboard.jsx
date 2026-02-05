@@ -92,11 +92,11 @@ function Dashboard() {
     };
   };
 
-  const statusData = {
-    labels: Object.keys(stats.by_status),
+  const determinationData = {
+    labels: Object.keys(stats.by_determination),
     datasets: [
       {
-        data: Object.values(stats.by_status),
+        data: Object.values(stats.by_determination),
         backgroundColor: ['#335145', '#e07a5f', '#6b8f7f', '#8cafa0'],
         borderWidth: 2,
         borderColor: '#fff',
@@ -104,12 +104,18 @@ function Dashboard() {
     ],
   };
 
-  const determinationData = {
-    labels: Object.keys(stats.by_determination),
+  // Order waiver determinations with Approved first (green), Not approved second (salmon)
+  const waiverLabels = ['Approved', 'Not approved'].filter(
+    (label) => stats.by_waiver_determination && stats.by_waiver_determination[label]
+  );
+  const waiverDeterminationData = {
+    labels: waiverLabels,
     datasets: [
       {
-        data: Object.values(stats.by_determination),
-        backgroundColor: ['#335145', '#e07a5f', '#6b8f7f', '#8cafa0'],
+        data: waiverLabels.map((label) => stats.by_waiver_determination[label]),
+        backgroundColor: waiverLabels.map((label) =>
+          label === 'Approved' ? '#335145' : '#e07a5f'
+        ),
         borderWidth: 2,
         borderColor: '#fff',
       },
@@ -279,17 +285,7 @@ function Dashboard() {
           );
         })()}
 
-        {/* Status Distribution */}
-        <div className="bg-white p-6 rounded-lg shadow">
-          <h2 className="text-lg font-semibold text-gray-900 mb-4">
-            Mergers by status
-          </h2>
-          <div className="h-64" role="img" aria-label={`Doughnut chart showing distribution of mergers by status: ${Object.entries(stats.by_status).map(([status, count]) => `${count} ${status}`).join(', ')}`}>
-            <Doughnut data={statusData} options={chartOptions} />
-          </div>
-        </div>
-
-        {/* Determination Distribution */}
+        {/* Phase 1 Determination Distribution */}
         {Object.keys(stats.by_determination).length > 0 && (
           <div className="bg-white p-6 rounded-lg shadow">
             <h2 className="text-lg font-semibold text-gray-900 mb-4">
@@ -297,6 +293,18 @@ function Dashboard() {
             </h2>
             <div className="h-64" role="img" aria-label={`Doughnut chart showing distribution of Phase 1 determinations: ${Object.entries(stats.by_determination).map(([det, count]) => `${count} ${det}`).join(', ')}`}>
               <Doughnut data={determinationData} options={chartOptions} />
+            </div>
+          </div>
+        )}
+
+        {/* Waiver Determination Distribution */}
+        {stats.by_waiver_determination && Object.keys(stats.by_waiver_determination).length > 0 && (
+          <div className="bg-white p-6 rounded-lg shadow">
+            <h2 className="text-lg font-semibold text-gray-900 mb-4">
+              Waiver determinations
+            </h2>
+            <div className="h-64" role="img" aria-label={`Doughnut chart showing distribution of waiver determinations: ${Object.entries(stats.by_waiver_determination).map(([det, count]) => `${count} ${det}`).join(', ')}`}>
+              <Doughnut data={waiverDeterminationData} options={chartOptions} />
             </div>
           </div>
         )}
