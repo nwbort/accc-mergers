@@ -140,7 +140,7 @@ function Dashboard() {
         <StatCard
           title="Mergers"
           value={`${stats.by_status['Under assessment'] || 0} under assessment`}
-          subtitle={`${stats.total_mergers} notified${stats.total_waivers ? `, ${stats.total_waivers} waiver${stats.total_waivers !== 1 ? 's' : ''}` : ''}`}
+          subtitle={`${stats.total_mergers} notified${stats.total_waivers ? ` and ${stats.total_waivers} waiver${stats.total_waivers !== 1 ? 's' : ''}` : ''}`}
           icon="🔍"
         />
         <StatCard
