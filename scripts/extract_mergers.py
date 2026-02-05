@@ -53,7 +53,7 @@ def sanitize_filename(filename):
 
     Characters replaced:
     - Colons (:) -> hyphen (-) - problematic on Windows
-    - Other problematic characters are replaced with underscores
+    - Ampersands (&) -> 'and' - not allowed in safe filename regex
 
     Returns None if the filename cannot be sanitized (e.g., path traversal attempts).
     """
@@ -70,6 +70,9 @@ def sanitize_filename(filename):
 
     # Replace colons with hyphens (common in document titles like "Company: Document")
     sanitized = filename.replace(':', ' -')
+
+    # Replace ampersands with 'and' (common in company names like "Toyota & Ford")
+    sanitized = sanitized.replace('&', 'and')
 
     # Clean up any double spaces that might result
     while '  ' in sanitized:
