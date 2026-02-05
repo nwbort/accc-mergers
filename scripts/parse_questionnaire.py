@@ -79,8 +79,8 @@ def extract_questions(text: str) -> List[Dict[str, str]]:
     """
     questions = []
 
-    # Find the "Questions" section heading (must be at the start of a line)
-    questions_match = re.search(r'^Questions\b', text, re.IGNORECASE | re.MULTILINE)
+    # Find the "Questions" section heading (must be at the start of a line, capital Q)
+    questions_match = re.search(r'^Questions\b', text, re.MULTILINE)
     if not questions_match:
         return questions
 
