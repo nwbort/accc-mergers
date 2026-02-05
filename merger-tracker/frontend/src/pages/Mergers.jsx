@@ -30,6 +30,10 @@ function Mergers() {
     if (queryParam) {
       setSearchTerm(queryParam);
     }
+    const statusParam = searchParams.get('status');
+    if (statusParam) {
+      setStatusFilter(statusParam);
+    }
   }, [searchParams]);
 
   useEffect(() => {

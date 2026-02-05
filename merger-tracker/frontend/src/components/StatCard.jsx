@@ -1,6 +1,14 @@
-function StatCard({ title, value, subtitle, icon }) {
+import { Link } from 'react-router-dom';
+
+function StatCard({ title, value, subtitle, icon, href }) {
+  const Wrapper = href ? Link : 'div';
+  const wrapperProps = href ? { to: href } : {};
+
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-200 overflow-hidden group">
+    <Wrapper
+      {...wrapperProps}
+      className="block bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-200 overflow-hidden group"
+    >
       <div className="p-6">
         <div className="flex items-start gap-4">
           {icon && (
@@ -25,7 +33,7 @@ function StatCard({ title, value, subtitle, icon }) {
           </div>
         </div>
       </div>
-    </div>
+    </Wrapper>
   );
 }
 

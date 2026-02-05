@@ -154,6 +154,7 @@ function Dashboard() {
           value={`${stats.by_status['Under assessment'] || 0} under assessment`}
           subtitle={`${stats.total_mergers} notified${stats.total_waivers ? ` and ${stats.total_waivers} waiver${stats.total_waivers !== 1 ? 's' : ''}` : ''}`}
           icon="🔍"
+          href="/mergers?status=Under assessment"
         />
         <StatCard
           title="Average phase 1 duration"
