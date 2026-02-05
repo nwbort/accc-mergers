@@ -36,8 +36,8 @@ export default {
       },
       animation: {
         'gradient': 'gradient 8s ease infinite',
-        'fade-in': 'fadeIn 0.5s ease-out',
-        'slide-up': 'slideUp 0.4s ease-out',
+        'fade-in': 'fadeIn 0.15s ease-out',
+        'slide-up': 'slideUp 0.15s ease-out',
         'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
       },
       keyframes: {
