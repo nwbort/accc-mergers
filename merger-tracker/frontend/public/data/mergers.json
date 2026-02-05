@@ -1391,6 +1391,67 @@
       "public_benefits_determination_date": null
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ibm-confluent",
+      "merger_name": "IBM - Confluent",
+      "status": "Under assessment",
+      "merger_id": "MN-10001",
+      "effective_notification_datetime": "2026-02-04T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-03-19T12:00:00Z",
+      "consultation_response_due_date": "2026-02-12T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "International Business Machines Corporation",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Confluent, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "International Business Machines Corporation (**IBM**) proposes to acquire 100% of the shares in Confluent, Inc (**Confluent**).\n\nIBM is a corporation headquartered in Armonk, New York, United States of America, and is publicly listed on the New York Stock Exchange (NYSE: IBM). It is active worldwide in the development, production and marketing of a wide variety of IT solutions, including enterprise IT software and systems (such as servers, storage systems, cloud, and cognitive offerings) and IT implementation services (such as business consulting and IT infrastructure services).\n\nConfluent is headquartered in Mountain View, California, United States of America, and is publicly listed on the Nasdaq Global Select Market (Nasdaq: CFLT). Confluent is a data-streaming platform company built on Apache Kafka, which is an open-source technology. Confluent provides cloud-native and on-premise offerings that enable organisations to publish, subscribe to, store, and process real-time data streams at scale for use in building real-time applications and event-driven architectures.",
+      "events": [
+        {
+          "date": "2026-02-05T12:00:00Z",
+          "title": "Questionnaire - IBM-Confluent",
+          "display_title": "Questionnaire - IBM-Confluent",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IBM%20-%20Confluent%20-%20Questionnaire.docx",
+          "url_gh": "/matters/MN-10001/IBM - Confluent - Questionnaire.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-02-04T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "accc_determination": null,
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/google-wiz",
       "merger_name": "Google - Wiz",
       "status": "Under assessment",

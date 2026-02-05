@@ -1,9 +1,9 @@
 {
-  "total_mergers": 23,
+  "total_mergers": 24,
   "total_waivers": 16,
   "by_status": {
     "Assessment completed": 10,
-    "Under assessment": 13
+    "Under assessment": 14
   },
   "by_determination": {
     "Approved": 10,
@@ -42,11 +42,11 @@
   "top_industries": [
     {
       "name": "Software Publishing",
-      "count": 8
+      "count": 9
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 8
+      "count": 9
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -83,6 +83,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-10001",
+      "merger_name": "IBM - Confluent",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-04T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-55003",
       "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
       "status": "Under assessment",
@@ -113,14 +121,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-01-23T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "WA-35004",
-      "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-01-22T12:00:00Z",
-      "is_waiver": true
     }
   ],
   "recent_determinations": [
