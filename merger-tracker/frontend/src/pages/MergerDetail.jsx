@@ -218,7 +218,7 @@ function MergerDetail() {
                     href={merger.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary-dark"
+                    className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary-dark hover:underline"
                     aria-label={`View ${merger.merger_name} on ACCC website`}
                   >
                     View on ACCC website
@@ -442,7 +442,7 @@ function MergerDetail() {
                                 href={event.url_gh}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary-dark"
+                                className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary-dark hover:underline"
                                 aria-label={`View document: ${event.display_title || event.title}`}
                               >
                                 View document
