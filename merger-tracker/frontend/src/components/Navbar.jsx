@@ -11,7 +11,7 @@ function Navbar() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [notificationPanelOpen, setNotificationPanelOpen] = useState(false);
-  const { unseenCount, trackedMergerIds } = useTracking();
+  const { unseenCount } = useTracking();
 
   const isActive = (path) => {
     return location.pathname === path;
@@ -136,9 +136,6 @@ function Navbar() {
                   <span className="absolute -top-0.5 -right-0.5 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white transform bg-red-500 rounded-full min-w-[1.25rem]">
                     {unseenCount > 99 ? '99+' : unseenCount}
                   </span>
-                )}
-                {unseenCount === 0 && trackedMergerIds.length > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 inline-flex items-center justify-center w-2.5 h-2.5 bg-primary rounded-full" />
                 )}
               </button>
               <NotificationPanel

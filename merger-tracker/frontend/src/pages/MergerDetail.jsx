@@ -230,10 +230,14 @@ function MergerDetail() {
                 )}
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col items-end gap-2">
+              <StatusBadge
+                status={merger.status}
+                determination={merger.accc_determination}
+              />
               <button
                 onClick={() => toggleTracking(id)}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md transition-colors ${
+                className={`inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-sm font-medium rounded-md transition-colors min-w-[5.5rem] ${
                   tracked
                     ? 'bg-primary text-white hover:bg-primary-dark'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -257,10 +261,6 @@ function MergerDetail() {
                   </>
                 )}
               </button>
-              <StatusBadge
-                status={merger.status}
-                determination={merger.accc_determination}
-              />
             </div>
           </div>
 

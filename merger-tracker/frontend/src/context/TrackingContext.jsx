@@ -36,6 +36,8 @@ export function TrackingProvider({ children }) {
   const [timelineEvents, setTimelineEvents] = useState([]);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  // Track newly added merger IDs so we can mark their events as seen
+  const [newlyTrackedIds, setNewlyTrackedIds] = useState([]);
 
   // Fetch events on mount and when tracked mergers change
   useEffect(() => {
@@ -54,11 +56,14 @@ export function TrackingProvider({ children }) {
           fetch(API_ENDPOINTS.upcomingEvents),
         ]);
 
+        let allFetchedEvents = [];
+
         if (timelineRes.ok) {
           const data = await timelineRes.json();
           // Filter to only tracked mergers
           const filtered = data.events.filter((e) => trackedMergerIds.includes(e.merger_id));
           setTimelineEvents(filtered);
+          allFetchedEvents = [...allFetchedEvents, ...filtered];
         }
 
         if (upcomingRes.ok) {
@@ -66,6 +71,23 @@ export function TrackingProvider({ children }) {
           // Filter to only tracked mergers
           const filtered = data.events.filter((e) => trackedMergerIds.includes(e.merger_id));
           setUpcomingEvents(filtered);
+          allFetchedEvents = [...allFetchedEvents, ...filtered];
+        }
+
+        // Mark all events for newly tracked mergers as seen
+        if (newlyTrackedIds.length > 0) {
+          const eventsToMarkSeen = allFetchedEvents.filter((e) =>
+            newlyTrackedIds.includes(e.merger_id)
+          );
+          if (eventsToMarkSeen.length > 0) {
+            const keys = eventsToMarkSeen.map(getEventKey);
+            setSeenEventKeys((prev) => {
+              const newKeys = keys.filter((k) => !prev.includes(k));
+              if (newKeys.length === 0) return prev;
+              return [...prev, ...newKeys];
+            });
+          }
+          setNewlyTrackedIds([]);
         }
       } catch (err) {
         console.error('Failed to fetch events:', err);
@@ -75,7 +97,7 @@ export function TrackingProvider({ children }) {
     };
 
     fetchEvents();
-  }, [trackedMergerIds]);
+  }, [trackedMergerIds, newlyTrackedIds]);
 
   // Persist tracked mergers to localStorage
   useEffect(() => {
@@ -98,6 +120,8 @@ export function TrackingProvider({ children }) {
   const trackMerger = useCallback((mergerId) => {
     setTrackedMergerIds((prev) => {
       if (prev.includes(mergerId)) return prev;
+      // Mark this as a newly tracked merger so we can auto-mark its events as seen
+      setNewlyTrackedIds((ids) => [...ids, mergerId]);
       return [...prev, mergerId];
     });
   }, []);
@@ -115,6 +139,8 @@ export function TrackingProvider({ children }) {
       if (prev.includes(mergerId)) {
         return prev.filter((id) => id !== mergerId);
       }
+      // Mark this as a newly tracked merger so we can auto-mark its events as seen
+      setNewlyTrackedIds((ids) => [...ids, mergerId]);
       return [...prev, mergerId];
     });
   }, []);

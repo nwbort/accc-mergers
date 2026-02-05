@@ -1,7 +1,109 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTracking } from '../context/TrackingContext';
-import { formatDate, getDaysRemaining } from '../utils/dates';
+import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
+
+function MergerEventGroup({ group, onClose, isEventSeen }) {
+  const [showPastEvents, setShowPastEvents] = useState(false);
+
+  // Separate past and future events
+  const pastEvents = group.events.filter((e) => isDatePast(e.date));
+  const futureEvents = group.events.filter((e) => !isDatePast(e.date));
+
+  // Sort future events by date ascending (soonest first)
+  futureEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
+  // Sort past events by date descending (most recent first)
+  pastEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+  return (
+    <div className="p-4">
+      <Link
+        to={`/mergers/${group.merger_id}`}
+        onClick={onClose}
+        className="block hover:bg-gray-50 -mx-4 -mt-4 px-4 pt-4 pb-2 rounded-t"
+      >
+        <h3 className="text-sm font-medium text-gray-900 hover:text-primary line-clamp-2">
+          {group.merger_name}
+        </h3>
+        <p className="text-xs text-gray-500 mt-0.5">{group.merger_id}</p>
+      </Link>
+
+      <ul className="mt-2 space-y-2">
+        {/* Future/current events */}
+        {futureEvents.map((event, idx) => {
+          const daysRemaining = getDaysRemaining(event.date);
+          const isUpcoming = event.type === 'consultation_due' || event.type === 'determination_due';
+          const isNew = !isEventSeen(event);
+
+          return (
+            <li
+              key={`${event.merger_id}-${event.date}-future-${idx}`}
+              className="text-xs"
+            >
+              <div className="flex items-start gap-2">
+                <span className={`mt-0.5 flex-shrink-0 w-2 h-2 rounded-full ${
+                  isNew ? 'bg-green-500' : isUpcoming ? 'bg-amber-400' : 'bg-gray-300'
+                }`} />
+                <div className="flex-1 min-w-0">
+                  <p className="text-gray-700 truncate">
+                    {event.display_title || event.event_type_display || event.title}
+                  </p>
+                  <p className="text-gray-400">
+                    {formatDate(event.date)}
+                    {isUpcoming && daysRemaining > 0 && (
+                      <span className="ml-1 text-amber-600">
+                        ({daysRemaining} day{daysRemaining !== 1 ? 's' : ''})
+                      </span>
+                    )}
+                  </p>
+                </div>
+              </div>
+            </li>
+          );
+        })}
+
+        {/* Past events collapsible */}
+        {pastEvents.length > 0 && (
+          <>
+            <li className="text-xs">
+              <button
+                onClick={() => setShowPastEvents(!showPastEvents)}
+                className="text-gray-400 hover:text-gray-600 hover:underline cursor-pointer pl-4"
+              >
+                {showPastEvents ? 'Hide' : 'Show'} {pastEvents.length} past event{pastEvents.length !== 1 ? 's' : ''}
+              </button>
+            </li>
+
+            {showPastEvents && pastEvents.map((event, idx) => {
+              const isNew = !isEventSeen(event);
+
+              return (
+                <li
+                  key={`${event.merger_id}-${event.date}-past-${idx}`}
+                  className="text-xs"
+                >
+                  <div className="flex items-start gap-2">
+                    <span className={`mt-0.5 flex-shrink-0 w-2 h-2 rounded-full ${
+                      isNew ? 'bg-green-500' : 'bg-gray-300'
+                    }`} />
+                    <div className="flex-1 min-w-0">
+                      <p className="text-gray-500 truncate">
+                        {event.display_title || event.event_type_display || event.title}
+                      </p>
+                      <p className="text-gray-400">
+                        {formatDate(event.date)}
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              );
+            })}
+          </>
+        )}
+      </ul>
+    </div>
+  );
+}
 
 function NotificationPanel({ isOpen, onClose }) {
   const panelRef = useRef(null);
@@ -9,6 +111,7 @@ function NotificationPanel({ isOpen, onClose }) {
     trackedEvents,
     trackedMergerIds,
     markEventsAsSeen,
+    isEventSeen,
     loading
   } = useTracking();
 
@@ -73,7 +176,7 @@ function NotificationPanel({ isOpen, onClose }) {
   return (
     <div
       ref={panelRef}
-      className="absolute right-0 sm:right-0 top-full mt-2 w-[calc(100vw-1rem)] sm:w-96 max-w-[calc(100vw-1rem)] bg-white rounded-lg shadow-xl border border-gray-200 z-50 max-h-[70vh] sm:max-h-[80vh] overflow-hidden flex flex-col -mr-2 sm:mr-0"
+      className="absolute left-1/2 -translate-x-1/2 sm:left-auto sm:translate-x-0 sm:right-0 top-full mt-2 w-[calc(100vw-1rem)] sm:w-96 bg-white rounded-lg shadow-xl border border-gray-200 z-50 max-h-[70vh] sm:max-h-[80vh] overflow-hidden flex flex-col"
       role="dialog"
       aria-label="Notifications panel"
     >
@@ -128,56 +231,12 @@ function NotificationPanel({ isOpen, onClose }) {
         ) : (
           <div className="divide-y divide-gray-100">
             {mergerGroups.map((group) => (
-              <div key={group.merger_id} className="p-4">
-                <Link
-                  to={`/mergers/${group.merger_id}`}
-                  onClick={onClose}
-                  className="block hover:bg-gray-50 -mx-4 -mt-4 px-4 pt-4 pb-2 rounded-t"
-                >
-                  <h3 className="text-sm font-medium text-gray-900 hover:text-primary line-clamp-2">
-                    {group.merger_name}
-                  </h3>
-                  <p className="text-xs text-gray-500 mt-0.5">{group.merger_id}</p>
-                </Link>
-                <ul className="mt-2 space-y-2">
-                  {group.events.slice(0, 5).map((event, idx) => {
-                    const daysRemaining = getDaysRemaining(event.date);
-                    const isPast = daysRemaining === 0;
-                    const isUpcoming = event.type === 'consultation_due' || event.type === 'determination_due';
-
-                    return (
-                      <li
-                        key={`${event.merger_id}-${event.date}-${idx}`}
-                        className="text-xs"
-                      >
-                        <div className="flex items-start gap-2">
-                          <span className={`mt-0.5 flex-shrink-0 w-2 h-2 rounded-full ${
-                            isUpcoming && !isPast ? 'bg-amber-400' : 'bg-gray-300'
-                          }`} />
-                          <div className="flex-1 min-w-0">
-                            <p className="text-gray-700 truncate">
-                              {event.display_title || event.event_type_display || event.title}
-                            </p>
-                            <p className="text-gray-400">
-                              {formatDate(event.date)}
-                              {isUpcoming && daysRemaining > 0 && (
-                                <span className="ml-1 text-amber-600">
-                                  ({daysRemaining} days)
-                                </span>
-                              )}
-                            </p>
-                          </div>
-                        </div>
-                      </li>
-                    );
-                  })}
-                  {group.events.length > 5 && (
-                    <li className="text-xs text-gray-400 pl-4">
-                      +{group.events.length - 5} more events
-                    </li>
-                  )}
-                </ul>
-              </div>
+              <MergerEventGroup
+                key={group.merger_id}
+                group={group}
+                onClose={onClose}
+                isEventSeen={isEventSeen}
+              />
             ))}
           </div>
         )}
