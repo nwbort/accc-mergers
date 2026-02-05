@@ -214,7 +214,7 @@ function NotificationPanel({ isOpen, onClose }) {
       aria-label="Notifications panel"
     >
       {/* Header */}
-      <div className="px-5 py-3.5 border-b border-gray-100 bg-gray-50/80 flex items-center justify-between flex-shrink-0">
+      <div className="px-5 py-3.5 border-b border-gray-100 bg-gray-50/80 flex-shrink-0">
         <h2 className="text-sm font-semibold text-gray-900">
           Tracked Mergers
           {trackedMergerIds.length > 0 && (
@@ -223,15 +223,6 @@ function NotificationPanel({ isOpen, onClose }) {
             </span>
           )}
         </h2>
-        <button
-          onClick={onClose}
-          className="text-gray-400 hover:text-gray-600 p-1.5 rounded-lg hover:bg-gray-100 transition-colors"
-          aria-label="Close notifications"
-        >
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
       </div>
 
       {/* Content */}
