@@ -170,7 +170,41 @@ function NotificationPanel({ isOpen, onClose }) {
     return acc;
   }, {});
 
-  const mergerGroups = Object.values(eventsByMerger);
+  // Sort merger groups:
+  // 1. Mergers with unseen events first (most recent unseen event at top)
+  // 2. Then by soonest upcoming event
+  const mergerGroups = Object.values(eventsByMerger).sort((a, b) => {
+    // Check for unseen events
+    const aUnseenEvents = a.events.filter((e) => !isEventSeen(e));
+    const bUnseenEvents = b.events.filter((e) => !isEventSeen(e));
+    const aHasUnseen = aUnseenEvents.length > 0;
+    const bHasUnseen = bUnseenEvents.length > 0;
+
+    // Mergers with unseen events come first
+    if (aHasUnseen && !bHasUnseen) return -1;
+    if (!aHasUnseen && bHasUnseen) return 1;
+
+    // If both have unseen events, sort by most recent unseen event
+    if (aHasUnseen && bHasUnseen) {
+      const aMostRecent = Math.max(...aUnseenEvents.map((e) => new Date(e.date).getTime()));
+      const bMostRecent = Math.max(...bUnseenEvents.map((e) => new Date(e.date).getTime()));
+      return bMostRecent - aMostRecent; // Most recent first
+    }
+
+    // Neither has unseen events - sort by soonest upcoming event
+    const now = new Date();
+    const aFutureEvents = a.events.filter((e) => new Date(e.date) >= now);
+    const bFutureEvents = b.events.filter((e) => new Date(e.date) >= now);
+
+    const aSoonest = aFutureEvents.length > 0
+      ? Math.min(...aFutureEvents.map((e) => new Date(e.date).getTime()))
+      : Infinity;
+    const bSoonest = bFutureEvents.length > 0
+      ? Math.min(...bFutureEvents.map((e) => new Date(e.date).getTime()))
+      : Infinity;
+
+    return aSoonest - bSoonest; // Soonest first
+  });
 
   return (
     <div
