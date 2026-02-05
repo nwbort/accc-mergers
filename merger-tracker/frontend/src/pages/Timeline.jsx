@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import SEO from '../components/SEO';
+import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
@@ -228,10 +229,11 @@ function Timeline() {
                               href={event.url_gh}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-xs text-primary hover:text-primary-dark"
+                              className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark"
                               aria-label={`View document for ${event.merger_name}`}
                             >
-                              View document →
+                              View document
+                              <ExternalLinkIcon className="h-3 w-3" />
                             </a>
                           </div>
                         )}

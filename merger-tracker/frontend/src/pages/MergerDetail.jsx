@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
 import SEO from '../components/SEO';
+import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import { formatDate, calculateDuration, getDaysRemaining, calculateBusinessDays, getBusinessDaysRemaining } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 
@@ -221,9 +222,7 @@ function MergerDetail() {
                     aria-label={`View ${merger.merger_name} on ACCC website`}
                   >
                     View on ACCC website
-                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
+                    <ExternalLinkIcon />
                   </a>
                 )}
               </div>
@@ -294,9 +293,7 @@ function MergerDetail() {
                       aria-label={`View determination document: ${merger.accc_determination}`}
                     >
                       {merger.accc_determination}
-                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
+                      <ExternalLinkIcon />
                     </a>
                   ) : (
                     merger.accc_determination
@@ -449,9 +446,7 @@ function MergerDetail() {
                                 aria-label={`View document: ${event.display_title || event.title}`}
                               >
                                 View document
-                                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                </svg>
+                                <ExternalLinkIcon />
                               </a>
                             </div>
                           )}
