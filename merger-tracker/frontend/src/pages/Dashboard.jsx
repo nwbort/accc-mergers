@@ -195,7 +195,7 @@ function Dashboard() {
       {/* Recently Notified Mergers */}
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card mb-8 overflow-hidden">
         <div className="px-6 py-5 border-b border-gray-100">
-          <h2 className="text-base font-semibold text-gray-900">
+          <h2 className="text-lg font-semibold text-gray-900">
             Recently notified mergers
           </h2>
         </div>
