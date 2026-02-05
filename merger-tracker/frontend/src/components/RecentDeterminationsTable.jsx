@@ -86,7 +86,7 @@ function RecentDeterminationsTable({ determinations }) {
                 </td>
                 <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
                   <DeterminationBadge determination={item.determination} />
-                  <div className="text-xs text-gray-400 mt-0.5 pl-2.5">
+                  <div className="text-xs text-gray-400 pl-2.5">
                     {formatDate(item.determination_date)}
                   </div>
                 </td>
