@@ -68,7 +68,8 @@ def extract_questions(text: str) -> List[Dict[str, str]]:
     Extract the numbered questions from the questionnaire.
 
     Questions typically appear after a "Questions" heading and are numbered.
-    Each question may span multiple lines.
+    Each question may span multiple lines. Question numbers may also appear
+    inline (e.g., "10.Please" without a newline) due to PDF text extraction.
 
     Args:
         text: Full text of the questionnaire PDF
@@ -78,8 +79,8 @@ def extract_questions(text: str) -> List[Dict[str, str]]:
     """
     questions = []
 
-    # Find the "Questions" section
-    questions_match = re.search(r'\bQuestions\b', text, re.IGNORECASE)
+    # Find the "Questions" section heading (must be at the start of a line)
+    questions_match = re.search(r'^Questions\b', text, re.IGNORECASE | re.MULTILINE)
     if not questions_match:
         return questions
 
@@ -92,6 +93,23 @@ def extract_questions(text: str) -> List[Dict[str, str]]:
     current_question_num = None
     current_question_text = []
 
+    def save_current_question():
+        """Helper to save the current question to the list."""
+        nonlocal current_question_num, current_question_text
+        if current_question_num is not None:
+            full_text = ' '.join(current_question_text).strip()
+            # Clean up any multiple spaces
+            full_text = re.sub(r'\s+', ' ', full_text)
+            # Remove trailing section headings (e.g., "Questions for customers of...", "Other issues")
+            full_text = re.sub(r'\s+Questions for (customers|suppliers) of .+$', '', full_text)
+            full_text = re.sub(r'\s+Other issues$', '', full_text)
+            # Remove trailing page numbers (single digit at the end)
+            full_text = re.sub(r'\s+\d$', '', full_text)
+            questions.append({
+                'number': current_question_num,
+                'text': full_text
+            })
+
     for line in lines:
         line = line.strip()
 
@@ -99,34 +117,70 @@ def extract_questions(text: str) -> List[Dict[str, str]]:
         if not line:
             continue
 
+        # Stop if we hit certain keywords that indicate end of questions section
+        if re.match(r'^(Confidentiality|Note:|Please note)', line, re.IGNORECASE):
+            break
+
         # Check if this line starts a new question (e.g., "1.", "2.", "3.")
-        question_start_match = re.match(r'^(\d+)\.\s+(.+)$', line)
+        question_start_match = re.match(r'^(\d+)\.\s*(.*)$', line)
 
         if question_start_match:
             # Save the previous question if exists
-            if current_question_num is not None:
-                questions.append({
-                    'number': current_question_num,
-                    'text': ' '.join(current_question_text).strip()
-                })
+            save_current_question()
 
             # Start a new question
             current_question_num = int(question_start_match.group(1))
-            current_question_text = [question_start_match.group(2)]
+            remaining_text = question_start_match.group(2)
+
+            # Check if there are inline questions in the remaining text
+            # Pattern matches "10.Text" or "10. Text" inline (question number followed by period)
+            inline_questions = re.split(r'\s+(?=\d+\.\s*[A-Z])', remaining_text)
+
+            if len(inline_questions) > 1:
+                # First part is the current question text
+                current_question_text = [inline_questions[0]]
+                save_current_question()
+                current_question_num = None
+                current_question_text = []
+
+                # Process each inline question
+                for inline_q in inline_questions[1:]:
+                    inline_match = re.match(r'^(\d+)\.\s*(.*)$', inline_q)
+                    if inline_match:
+                        current_question_num = int(inline_match.group(1))
+                        current_question_text = [inline_match.group(2)]
+                        save_current_question()
+                        current_question_num = None
+                        current_question_text = []
+            else:
+                current_question_text = [remaining_text] if remaining_text else []
         elif current_question_num is not None:
             # This line is a continuation of the current question
-            # Stop if we hit certain keywords that indicate end of questions section
-            if re.match(r'^(Confidentiality|Note:|Please note)', line, re.IGNORECASE):
-                break
+            # But first check if it contains inline question numbers
+            # Pattern: text followed by "10.Text" or "10. Text"
+            inline_split = re.split(r'\s+(?=\d+\.\s*[A-Z])', line)
 
-            current_question_text.append(line)
+            if len(inline_split) > 1:
+                # First part is continuation of current question
+                current_question_text.append(inline_split[0])
+                save_current_question()
+                current_question_num = None
+                current_question_text = []
+
+                # Process each inline question
+                for inline_q in inline_split[1:]:
+                    inline_match = re.match(r'^(\d+)\.\s*(.*)$', inline_q)
+                    if inline_match:
+                        current_question_num = int(inline_match.group(1))
+                        current_question_text = [inline_match.group(2)]
+                        save_current_question()
+                        current_question_num = None
+                        current_question_text = []
+            else:
+                current_question_text.append(line)
 
     # Don't forget the last question
-    if current_question_num is not None:
-        questions.append({
-            'number': current_question_num,
-            'text': ' '.join(current_question_text).strip()
-        })
+    save_current_question()
 
     return questions
 
