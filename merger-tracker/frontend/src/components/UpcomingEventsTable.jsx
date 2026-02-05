@@ -82,7 +82,7 @@ function UpcomingEventsTable({ events }) {
                       role="status"
                       aria-label={`Event type: ${event.event_type_display.replace(/ due$/, '')}`}
                     >
-                      {event.event_type_display.replace(/ due$/, '')}
+                      {event.event_type_display.replace(/ due$/, '').replace(/^Consultation responses$/, 'Consultation')}
                     </span>
                   </td>
                   {/* Separate cells - desktop only */}
