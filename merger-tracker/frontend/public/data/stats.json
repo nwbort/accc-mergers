@@ -1,9 +1,9 @@
 {
-  "total_mergers": 24,
+  "total_mergers": 25,
   "total_waivers": 19,
   "by_status": {
     "Assessment completed": 10,
-    "Under assessment": 14
+    "Under assessment": 15
   },
   "by_determination": {
     "Approved": 10,
@@ -69,23 +69,31 @@
       "count": 3
     },
     {
+      "name": "Other Machinery and Equipment Manufacturing n.e.c.",
+      "count": 2
+    },
+    {
+      "name": "Petroleum Refining and Petroleum Fuel Manufacturing",
+      "count": 2
+    },
+    {
       "name": "Supermarket and Grocery Stores",
       "count": 2
     },
     {
       "name": "Non-Residential Property Operators",
       "count": 2
-    },
-    {
-      "name": "Site Preparation Services",
-      "count": 2
-    },
-    {
-      "name": "Accommodation",
-      "count": 2
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-75004",
+      "merger_name": "Parker-Hannifin \u2013 Filtration Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-05T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-10001",
       "merger_name": "IBM - Confluent",
@@ -116,14 +124,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-01-30T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-25002",
-      "merger_name": "Symal Group - Timms Group and L&D Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-01-23T12:00:00Z",
       "is_waiver": false
     }
   ],
