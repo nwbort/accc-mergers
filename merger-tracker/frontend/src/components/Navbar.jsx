@@ -66,7 +66,7 @@ function Navbar() {
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2.5 group">
               <span className="text-lg font-bold text-gray-900 tracking-tight">
-                merger tracker
+                australian merger tracker
               </span>
             </Link>
             <div className="hidden sm:ml-10 sm:flex sm:space-x-1">
