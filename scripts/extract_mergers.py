@@ -377,7 +377,11 @@ def parse_merger_file(filepath, existing_merger_data=None):
 
                 link_tag = link_cell.find('a') if link_cell else None
                 if link_tag and link_tag.has_attr('href'):
-                    url = urljoin(BASE_URL, link_tag['href'])
+                    href = link_tag['href']
+                    # Sanitize URL: replace double spaces with single space
+                    while '  ' in href:
+                        href = href.replace('  ', ' ')
+                    url = urljoin(BASE_URL, href)
                     event['url'] = url
 
                     # Download attachment and parse if it's a determination PDF
