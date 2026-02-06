@@ -5,7 +5,7 @@ function Footer() {
         <div className="text-center text-xs text-gray-500 leading-relaxed">
           <span className="font-semibold text-gray-600">Disclaimer:</span> This is an unofficial website created by{' '}
           <a
-            href="https://nick.twort.co.nz/"
+            href="http://nick.twort.co.nz/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
