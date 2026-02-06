@@ -35,6 +35,10 @@ def is_safe_filename(filename):
     if '..' in filename or '/' in filename or '\\' in filename:
         return False
 
+    # Reject consecutive spaces (should be normalized by sanitize_filename)
+    if '  ' in filename:
+        return False
+
     # Allow hyphens, en-dashes, em-dashes, apostrophes, and accented Latin chars
     if not re.match(r'^[a-zA-Z0-9\u00C0-\u00FF][\w\u00C0-\u00FF\u002D\u2013\u2014\u0027\u2019. (),]*\.[a-zA-Z0-9]+$', filename):
         return False
