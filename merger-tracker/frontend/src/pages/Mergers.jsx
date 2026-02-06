@@ -26,14 +26,9 @@ function Mergers() {
   const [phaseFilter, setPhaseFilter] = useState('all');
 
   useEffect(() => {
-    const queryParam = searchParams.get('q');
-    if (queryParam) {
-      setSearchTerm(queryParam);
-    }
-    const statusParam = searchParams.get('status');
-    if (statusParam) {
-      setStatusFilter(statusParam);
-    }
+    setSearchTerm(searchParams.get('q') || '');
+    setStatusFilter(searchParams.get('status') || 'all');
+    setPhaseFilter(searchParams.get('phase') || 'all');
   }, [searchParams]);
 
   useEffect(() => {
@@ -56,6 +51,16 @@ function Mergers() {
     } finally {
       setLoading(false);
     }
+  };
+
+  const updateParam = (key, value, defaultValue) => {
+    const params = new URLSearchParams(searchParams);
+    if (value && value !== defaultValue) {
+      params.set(key, value);
+    } else {
+      params.delete(key);
+    }
+    setSearchParams(params);
   };
 
   const filterMergers = () => {
@@ -125,15 +130,7 @@ function Mergers() {
                   placeholder="Search mergers, companies, or industries..."
                   aria-label="Search mergers, companies, or industries"
                   value={searchTerm}
-                  onChange={(e) => {
-                    const value = e.target.value;
-                    setSearchTerm(value);
-                    if (value) {
-                      setSearchParams({ q: value });
-                    } else {
-                      setSearchParams({});
-                    }
-                  }}
+                  onChange={(e) => updateParam('q', e.target.value, '')}
                 />
               </div>
             </div>
@@ -148,7 +145,7 @@ function Mergers() {
                 id="phase"
                 className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none"
                 value={phaseFilter}
-                onChange={(e) => setPhaseFilter(e.target.value)}
+                onChange={(e) => updateParam('phase', e.target.value, 'all')}
                 aria-label="Filter by merger phase"
               >
                 <option value="all">All phases</option>
@@ -168,7 +165,7 @@ function Mergers() {
                 id="status"
                 className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none"
                 value={statusFilter}
-                onChange={(e) => setStatusFilter(e.target.value)}
+                onChange={(e) => updateParam('status', e.target.value, 'all')}
                 aria-label="Filter by merger status"
               >
                 {outcomes.map((outcome) => (
