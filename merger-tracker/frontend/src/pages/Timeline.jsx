@@ -139,12 +139,12 @@ function Timeline() {
                   <div className="relative pb-8">
                     {idx !== displayedEvents.length - 1 && (
                       <span
-                        className="absolute top-5 left-5 -ml-px h-full w-0.5 bg-gray-100"
+                        className="absolute top-0 bottom-0 left-5 -ml-px w-0.5 bg-gray-100"
                         aria-hidden="true"
                       />
                     )}
-                    <div className="relative flex space-x-4 items-start">
-                      <div className="flex-shrink-0 pt-0.5">
+                    <div className="relative flex space-x-4 items-center">
+                      <div className="flex-shrink-0">
                         <span
                           className={`h-10 w-10 rounded-xl flex items-center justify-center shadow-sm ${getEventColor(eventType)}`}
                         >
