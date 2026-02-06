@@ -1,14 +1,14 @@
 function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 mt-auto">
-      <div className="max-w-7xl mx-auto px-4 py-2">
-        <div className="text-center text-xs text-gray-600">
-          <strong>Disclaimer:</strong> This is an unofficial website created by{' '}
+    <footer className="border-t border-gray-200/60 mt-auto bg-white/50 backdrop-blur-sm">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="text-center text-xs text-gray-500 leading-relaxed">
+          <span className="font-semibold text-gray-600">Disclaimer:</span> This is an unofficial website created by{' '}
           <a
             href="https://nick.twort.co.nz/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:text-primary-dark underline"
+            className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
           >
             Nick Twort
           </a>
@@ -17,7 +17,7 @@ function Footer() {
             href="https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:text-primary-dark underline"
+            className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
           >
             ACCC website
           </a>

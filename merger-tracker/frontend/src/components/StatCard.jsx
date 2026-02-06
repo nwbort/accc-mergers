@@ -1,29 +1,39 @@
-function StatCard({ title, value, subtitle, icon }) {
+import { Link } from 'react-router-dom';
+
+function StatCard({ title, value, subtitle, icon, href }) {
+  const Wrapper = href ? Link : 'div';
+  const wrapperProps = href ? { to: href } : {};
+
   return (
-    <div className="bg-white overflow-hidden shadow rounded-lg">
-      <div className="p-5">
-        <div className="flex items-center">
-          <div className="flex-shrink-0">
-            {icon && <div className="text-primary text-2xl">{icon}</div>}
-          </div>
-          <div className="ml-5 w-0 flex-1">
+    <Wrapper
+      {...wrapperProps}
+      className="block bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-200 overflow-hidden group"
+    >
+      <div className="p-6">
+        <div className="flex items-start gap-4">
+          {icon && (
+            <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-xl group-hover:scale-105 transition-transform duration-200">
+              {icon}
+            </div>
+          )}
+          <div className="flex-1 min-w-0">
             <dl>
-              <dt className="text-sm font-medium text-gray-500 truncate">
+              <dt className="text-sm font-medium text-gray-500 mb-1">
                 {title}
               </dt>
-              <dd className="flex items-baseline">
-                <div className="text-2xl font-semibold text-gray-900">
+              <dd>
+                <div className="text-xl font-bold text-gray-900 tracking-tight">
                   {value}
                 </div>
               </dd>
               {subtitle && (
-                <dd className="text-sm text-gray-500 mt-1">{subtitle}</dd>
+                <dd className="text-sm text-gray-400 mt-1">{subtitle}</dd>
               )}
             </dl>
           </div>
         </div>
       </div>
-    </div>
+    </Wrapper>
   );
 }
 

@@ -67,7 +67,7 @@ function Industries() {
   };
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div className="text-red-600">Error: {error}</div>;
+  if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
 
   return (
     <>
@@ -76,79 +76,73 @@ function Industries() {
         description="Browse mergers by industry (ANZSIC codes). See which Australian industries have the most merger activity monitored by the ACCC."
         url="/industries"
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
       {/* Summary Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-        <div className="bg-white p-6 rounded-lg shadow">
-          <p className="text-sm text-gray-500">Total industries</p>
-          <p className="text-3xl font-bold text-primary mt-2">
-            {industries.length}
-          </p>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow">
-          <p className="text-sm text-gray-500">Total merger reviews</p>
-          <p className="text-3xl font-bold text-primary mt-2">
-            {mergers.length}
-          </p>
-        </div>
-        <div className="bg-white p-6 rounded-lg shadow">
-          <p className="text-sm text-gray-500">Avg mergers per industry</p>
-          <p className="text-3xl font-bold text-primary mt-2">
-            {industries.length > 0
-              ? (
-                  industries.reduce((sum, i) => sum + i.merger_count, 0) /
-                  industries.length
-                ).toFixed(1)
-              : 0}
-          </p>
-        </div>
+        {[
+          { label: 'Total industries', value: industries.length },
+          { label: 'Total merger reviews', value: mergers.length },
+          { label: 'Avg mergers per industry', value: industries.length > 0 ? (industries.reduce((sum, i) => sum + i.merger_count, 0) / industries.length).toFixed(1) : 0 },
+        ].map(({ label, value }) => (
+          <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
+            <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">{label}</p>
+            <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+              {value}
+            </p>
+          </div>
+        ))}
       </div>
 
       {/* Search */}
-      <div className="bg-white p-4 rounded-lg shadow mb-6">
+      <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
         <label
           htmlFor="search"
-          className="block text-sm font-medium text-gray-700 mb-2"
+          className="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2"
         >
           Search industries
         </label>
-        <input
-          type="text"
-          id="search"
-          className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-primary focus:border-primary"
-          placeholder="Search by industry name or code..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
+        <div className="relative">
+          <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>
+          <input
+            type="text"
+            id="search"
+            className="w-full pl-10 pr-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all"
+            placeholder="Search by industry name or code..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
       </div>
 
       {/* Results count */}
       <div className="mb-4">
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-400">
           Showing {filteredIndustries.length} of {industries.length} industries
         </p>
       </div>
 
       {/* Industries Table */}
-      <div className="bg-white shadow rounded-lg overflow-hidden">
-        <table className="min-w-full divide-y divide-gray-200">
+      <div className="bg-white border border-gray-100 shadow-card rounded-2xl overflow-hidden">
+        <table className="min-w-full divide-y divide-gray-100">
           <caption className="sr-only">
             Industry breakdown of Australian merger reviews by ANZSIC code, showing merger counts and percentage of total reviews
           </caption>
-          <thead className="bg-gray-50">
-            <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+          <thead>
+            <tr className="bg-gray-50/80">
+              <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Industry name
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Merger count
+              <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Mergers
               </th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Percentage
+              <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Share
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white divide-y divide-gray-200">
+          <tbody className="divide-y divide-gray-50">
             {filteredIndustries.map((industry, idx) => {
               const totalMergers = mergers.length;
               const percentage = (
@@ -165,7 +159,7 @@ function Industries() {
               return (
                 <Fragment key={industry.code}>
                   <tr
-                    className="hover:bg-gray-50 cursor-pointer"
+                    className="hover:bg-gray-50/50 cursor-pointer transition-colors"
                     onClick={() => toggleIndustry(industry.code, industry.name)}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {
@@ -181,7 +175,7 @@ function Industries() {
                     <td className="px-6 py-4 text-sm text-gray-900">
                       <div className="flex items-center">
                         <svg
-                          className={`w-4 h-4 mr-2 transition-transform ${
+                          className={`w-4 h-4 mr-2.5 text-gray-400 transition-transform duration-200 ${
                             isExpanded ? 'transform rotate-90' : ''
                           }`}
                           fill="currentColor"
@@ -195,19 +189,18 @@ function Industries() {
                             clipRule="evenodd"
                           />
                         </svg>
-                        {industry.name}
+                        <span className="font-medium">{industry.name}</span>
                       </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary text-white">
+                    <td className="px-6 py-4 whitespace-nowrap text-sm">
+                      <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary">
                         {industry.merger_count}
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      <div className="flex items-center">
-                        <span className="mr-2">{percentage}%</span>
+                      <div className="flex items-center gap-3">
                         <div
-                          className="flex-1 bg-gray-200 rounded-full h-2 max-w-xs"
+                          className="flex-1 bg-gray-100 rounded-full h-1.5 max-w-[8rem] overflow-hidden"
                           role="progressbar"
                           aria-valuenow={parseFloat(percentage)}
                           aria-valuemin={0}
@@ -215,35 +208,36 @@ function Industries() {
                           aria-label={`${percentage}% of total mergers`}
                         >
                           <div
-                            className="bg-primary h-2 rounded-full"
+                            className="bg-primary h-1.5 rounded-full transition-all duration-300"
                             style={{ width: `${percentage}%` }}
                           />
                         </div>
+                        <span className="text-xs tabular-nums font-medium text-gray-600 w-12">{percentage}%</span>
                       </div>
                     </td>
                   </tr>
                   {isExpanded && (
                     <tr id={`industry-details-${industry.code}`}>
-                      <td colSpan="3" className="px-6 py-4 bg-gray-50">
+                      <td colSpan="3" className="px-6 py-4 bg-gray-50/50">
                         <div className="space-y-2">
-                          <p className="text-sm font-medium text-gray-700 mb-3">
-                            Mergers in this industry:
+                          <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
+                            Mergers in this industry
                           </p>
                           {industryMergers.map((merger) => (
                             <Link
                               key={merger.merger_id}
                               to={`/mergers/${merger.merger_id}`}
-                              className="block p-3 bg-white rounded border border-gray-200 hover:border-primary hover:bg-gray-50 transition-colors"
+                              className="block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
                               aria-label={`View merger details for ${merger.merger_name}`}
                             >
                               <div className="flex items-center justify-between">
-                                <div className="flex items-center">
-                                  <span className="text-sm font-medium text-primary">
+                                <div className="flex items-center gap-2 min-w-0">
+                                  <span className="text-sm font-medium text-gray-900 truncate">
                                     {merger.merger_name}
                                   </span>
                                   {merger.is_waiver && (
                                     <span
-                                      className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800"
+                                      className="flex-shrink-0 inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60"
                                       role="status"
                                       aria-label="Merger type: Waiver application"
                                     >
@@ -251,11 +245,11 @@ function Industries() {
                                     </span>
                                   )}
                                 </div>
-                                <span className="text-xs text-gray-500">
+                                <span className="text-xs text-gray-400 flex-shrink-0 ml-3">
                                   {merger.merger_id}
                                 </span>
                               </div>
-                              <span className="text-xs text-gray-500 mt-1 block">
+                              <span className="text-xs text-gray-400 mt-1 block">
                                 {merger.status}
                               </span>
                             </Link>
@@ -272,8 +266,9 @@ function Industries() {
       </div>
 
       {filteredIndustries.length === 0 && (
-        <div className="text-center py-12">
-          <p className="text-gray-500">No industries found matching your search</p>
+        <div className="text-center py-16">
+          <p className="text-gray-500 font-medium">No industries found</p>
+          <p className="text-gray-400 text-sm mt-1">Try adjusting your search</p>
         </div>
       )}
     </div>

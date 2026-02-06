@@ -1,15 +1,15 @@
 function StatusBadge({ status, determination }) {
   const getStatusStyle = () => {
     if (determination === 'Approved') {
-      return 'bg-green-100 text-green-800';
+      return 'bg-emerald-50 text-emerald-700 border-emerald-200/60';
     } else if (determination === 'Declined' || determination === 'Not approved') {
-      return 'bg-red-100 text-red-800';
+      return 'bg-red-50 text-red-700 border-red-200/60';
     } else if (status === 'Under assessment') {
-      return 'bg-[#335145] bg-opacity-10 text-[#335145]';
+      return 'bg-primary/5 text-primary border-primary/20';
     } else if (status === 'Assessment completed') {
-      return 'bg-gray-100 text-gray-800';
+      return 'bg-gray-50 text-gray-600 border-gray-200/60';
     }
-    return 'bg-gray-100 text-gray-800';
+    return 'bg-gray-50 text-gray-600 border-gray-200/60';
   };
 
   const displayText = determination || status;
@@ -20,7 +20,7 @@ function StatusBadge({ status, determination }) {
 
   return (
     <span
-      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getStatusStyle()}`}
+      className={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold border ${getStatusStyle()}`}
       role="status"
       aria-label={ariaLabel}
     >

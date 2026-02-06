@@ -17,7 +17,7 @@ function App() {
       <Router>
         <TrackingProvider>
         <ErrorBoundary>
-          <div className="min-h-screen bg-gray-50 flex flex-col">
+          <div className="min-h-screen gradient-mesh flex flex-col">
             <Navbar />
             <main id="main-content" className="flex-grow pt-16">
               <Routes>

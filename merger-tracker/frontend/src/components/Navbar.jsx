@@ -5,10 +5,19 @@ import NotificationPanel from './NotificationPanel';
 
 const SCROLL_HIDE_THRESHOLD_PX = 50;
 
+const navLinks = [
+  { path: '/', label: 'Dashboard' },
+  { path: '/mergers', label: 'Mergers' },
+  { path: '/timeline', label: 'Timeline' },
+  { path: '/industries', label: 'Industries' },
+  { path: '/commentary', label: 'Commentary' },
+];
+
 function Navbar() {
   const location = useLocation();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [notificationPanelOpen, setNotificationPanelOpen] = useState(false);
   const { unseenCount } = useTracking();
@@ -21,7 +30,8 @@ function Navbar() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Show navbar when scrolling up, hide when scrolling down
+      setIsScrolled(currentScrollY > 10);
+
       if (currentScrollY < lastScrollY) {
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY && currentScrollY > SCROLL_HIDE_THRESHOLD_PX) {
@@ -37,90 +47,55 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 transition-transform duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isVisible ? 'translate-y-0' : '-translate-y-full'
+      } ${
+        isScrolled
+          ? 'bg-white/80 backdrop-blur-lg shadow-glass border-b border-gray-200/50'
+          : 'bg-white border-b border-gray-100'
       }`}
     >
-      {/* Skip to main content link for keyboard navigation */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg"
       >
         Skip to main content
       </a>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex">
-            <Link to="/" className="flex items-center">
-              <span className="text-xl font-bold text-primary">
-                Australian merger tracker
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center gap-2.5 group">
+              <span className="text-lg font-bold text-gray-900 tracking-tight">
+                merger tracker
               </span>
             </Link>
-            <div className="hidden sm:ml-8 sm:flex sm:space-x-8">
-              <Link
-                to="/"
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  isActive('/')
-                    ? 'border-primary text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                }`}
-              >
-                Dashboard
-              </Link>
-              <Link
-                to="/mergers"
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  isActive('/mergers')
-                    ? 'border-primary text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                }`}
-              >
-                Mergers
-              </Link>
-              <Link
-                to="/timeline"
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  isActive('/timeline')
-                    ? 'border-primary text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                }`}
-              >
-                Timeline
-              </Link>
-              <Link
-                to="/industries"
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  isActive('/industries')
-                    ? 'border-primary text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                }`}
-              >
-                Industries
-              </Link>
-              <Link
-                to="/commentary"
-                className={`inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium ${
-                  isActive('/commentary')
-                    ? 'border-primary text-gray-900'
-                    : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                }`}
-              >
-                Commentary
-              </Link>
+            <div className="hidden sm:ml-10 sm:flex sm:space-x-1">
+              {navLinks.map(({ path, label }) => (
+                <Link
+                  key={path}
+                  to={path}
+                  className={`inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
+                    isActive(path)
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80'
+                  }`}
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
           </div>
-          {/* Right side: Notifications bell + mobile menu */}
-          <div className="flex items-center gap-2">
-            {/* Notifications bell */}
+          <div className="flex items-center gap-1">
             <div className="relative">
               <button
+                onMouseDown={(e) => e.stopPropagation()}
                 onClick={() => setNotificationPanelOpen(!notificationPanelOpen)}
-                className="relative inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+                className="relative inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150"
                 aria-expanded={notificationPanelOpen}
                 aria-label={`Notifications${unseenCount > 0 ? `, ${unseenCount} new` : ''}`}
               >
                 <svg
-                  className="h-6 w-6"
+                  className="h-5 w-5"
                   fill="none"
                   viewBox="0 0 24 24"
                   strokeWidth="1.5"
@@ -133,8 +108,11 @@ function Navbar() {
                   />
                 </svg>
                 {unseenCount > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 inline-flex items-center justify-center px-1.5 py-0.5 text-xs font-bold leading-none text-white transform bg-red-500 rounded-full min-w-[1.25rem]">
-                    {unseenCount > 99 ? '99+' : unseenCount}
+                  <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-40"></span>
+                    <span className="relative inline-flex h-3.5 w-3.5 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-white">
+                      {unseenCount > 9 ? '9+' : unseenCount}
+                    </span>
                   </span>
                 )}
               </button>
@@ -143,42 +121,21 @@ function Navbar() {
                 onClose={() => setNotificationPanelOpen(false)}
               />
             </div>
-            {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="sm:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary"
+              className="sm:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
               aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}
             >
               <span className="sr-only">{mobileMenuOpen ? "Close" : "Open"} main menu</span>
               {mobileMenuOpen ? (
-                <svg
-                  className="block h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
+                <svg className="block h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
               ) : (
-                <svg
-                  className="block h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
+                <svg className="block h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
               )}
             </button>
@@ -186,65 +143,23 @@ function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div id="mobile-menu" className="sm:hidden">
-          <nav aria-label="Mobile navigation" className="pt-2 pb-3 space-y-1">
-            <Link
-              to="/"
-              className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
-                isActive('/')
-                  ? 'bg-primary-light border-primary text-white'
-                  : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-900'
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Dashboard
-            </Link>
-            <Link
-              to="/mergers"
-              className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
-                isActive('/mergers')
-                  ? 'bg-primary-light border-primary text-white'
-                  : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-900'
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Mergers
-            </Link>
-            <Link
-              to="/timeline"
-              className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
-                isActive('/timeline')
-                  ? 'bg-primary-light border-primary text-white'
-                  : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-900'
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Timeline
-            </Link>
-            <Link
-              to="/industries"
-              className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
-                isActive('/industries')
-                  ? 'bg-primary-light border-primary text-white'
-                  : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-900'
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Industries
-            </Link>
-            <Link
-              to="/commentary"
-              className={`block pl-3 pr-4 py-2 border-l-4 text-base font-medium ${
-                isActive('/commentary')
-                  ? 'bg-primary-light border-primary text-white'
-                  : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-900'
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Commentary
-            </Link>
+        <div id="mobile-menu" className="sm:hidden border-t border-gray-100 bg-white/95 backdrop-blur-lg">
+          <nav aria-label="Mobile navigation" className="px-3 py-3 space-y-1">
+            {navLinks.map(({ path, label }) => (
+              <Link
+                key={path}
+                to={path}
+                className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 ${
+                  isActive(path)
+                    ? 'bg-primary/10 text-primary'
+                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
         </div>
       )}
