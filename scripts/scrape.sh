@@ -136,12 +136,13 @@ echo "Extracting links from register pages..."
 # Extract links from the first page
 relative_links=$(cat "$MAIN_PAGE_FILE" | pup '.accc-collapsed-card__header a attr{href}' | grep -v '#card-' | tr -d '\r')
 
-# Check if there are additional pages by looking for the "Go to last page" link
-last_page_href=$(cat "$MAIN_PAGE_FILE" | pup 'a[title="Go to last page"] attr{href}' | tr -d '\r')
+# Check if there are additional pages by looking for the "Go to last page" link.
+# pup does not decode HTML entities in attributes, so we decode &amp; to & with sed.
+last_page_href=$(cat "$MAIN_PAGE_FILE" | pup 'a[title="Go to last page"] attr{href}' | sed 's/&amp;/\&/g' | tr -d '\r')
 
 if [ -n "$last_page_href" ]; then
   # Extract the page number from the href (e.g. "?init=1&items_per_page=20&page=2" -> "2")
-  last_page=$(echo "$last_page_href" | grep -oP '[?&]page=\K[0-9]+')
+  last_page=$(echo "$last_page_href" | grep -oP '[?&]page=\K[0-9]+' || true)
 
   if [ -n "$last_page" ] && [ "$last_page" -gt 0 ]; then
     echo "Register has $(( last_page + 1 )) pages. Fetching additional pages..."
