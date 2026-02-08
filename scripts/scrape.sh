@@ -122,7 +122,7 @@ clean_html() {
 
 # --- Main Script ---
 
-# 1. Download the main acquisitions list page
+# 1. Download the first page of the acquisitions register
 echo "Downloading main register page from $REGISTER_URL..."
 curl -s -L -A "$USER_AGENT" "$REGISTER_URL" -o "$MAIN_PAGE_FILE"
 echo "Saved main page to '$MAIN_PAGE_FILE'"
@@ -130,12 +130,41 @@ echo "Saved main page to '$MAIN_PAGE_FILE'"
 # 2. Create the subdirectory for individual acquisition pages
 mkdir -p "$SUBFOLDER"
 
-# 3. Extract relative links
-echo "Extracting links from main page..."
+# 3. Handle pagination and extract relative links from all pages
+echo "Extracting links from register pages..."
+
+# Extract links from the first page
 relative_links=$(cat "$MAIN_PAGE_FILE" | pup '.accc-collapsed-card__header a attr{href}' | grep -v '#card-' | tr -d '\r')
 
+# Check if there are additional pages by looking for the "Go to last page" link.
+# pup does not decode HTML entities in attributes, so we decode &amp; to & with sed.
+last_page_href=$(cat "$MAIN_PAGE_FILE" | pup 'a[title="Go to last page"] attr{href}' | sed 's/&amp;/\&/g' | tr -d '\r')
+
+if [ -n "$last_page_href" ]; then
+  # Extract the page number from the href (e.g. "?init=1&items_per_page=20&page=2" -> "2")
+  last_page=$(echo "$last_page_href" | grep -oP '[?&]page=\K[0-9]+' || true)
+
+  if [ -n "$last_page" ] && [ "$last_page" -gt 0 ]; then
+    echo "Register has $(( last_page + 1 )) pages. Fetching additional pages..."
+
+    for (( page=1; page<=last_page; page++ )); do
+      page_url="${REGISTER_URL}&page=${page}"
+      page_file=$(mktemp)
+      echo "  - Fetching page $(( page + 1 )): $page_url"
+      curl -s -L -A "$USER_AGENT" "$page_url" -o "$page_file"
+
+      page_links=$(cat "$page_file" | pup '.accc-collapsed-card__header a attr{href}' | grep -v '#card-' | tr -d '\r')
+      if [ -n "$page_links" ]; then
+        relative_links=$(printf '%s\n%s' "$relative_links" "$page_links")
+      fi
+
+      rm -f "$page_file"
+    done
+  fi
+fi
+
 if [ -z "$relative_links" ]; then
-  echo "Warning: No acquisition links found on the main page. The website structure might have changed."
+  echo "Warning: No acquisition links found on the register. The website structure might have changed."
   exit 0
 fi
 
