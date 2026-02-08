@@ -262,30 +262,28 @@ function Dashboard() {
         {(() => {
           const durationStats = calculateDurationStats();
           return durationStats && (
-            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
+            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card flex flex-col">
               <h2 className="text-base font-semibold text-gray-900 mb-5">
                 Phase 1 duration
               </h2>
-              <div className="space-y-1">
+              <div className="flex flex-col flex-1 justify-around">
                 {[
                   { label: 'By day 15', data: durationStats.day15 },
                   { label: 'By day 20', data: durationStats.day20 },
                   { label: 'By day 30', data: durationStats.day30 },
-                ].map(({ label, data }) => (
-                  <div key={label} className="flex justify-between items-center py-3 border-b border-gray-50 last:border-0">
+                ].map(({ label, data }, index) => (
+                  <div key={label} className={`grid grid-cols-[auto_1fr_auto] items-center gap-4 py-3 ${index < 2 ? 'border-b border-gray-50' : ''}`}>
                     <span className="text-sm text-gray-600">{label}</span>
-                    <div className="flex items-center gap-3">
-                      <div className="w-24 bg-gray-100 rounded-full h-1.5 overflow-hidden">
-                        <div
-                          className="bg-primary h-1.5 rounded-full transition-all duration-500"
-                          style={{ width: `${data.percentage}%` }}
-                        />
-                      </div>
-                      <span className="text-sm font-semibold text-gray-900 tabular-nums w-20 text-right">
-                        {data.percentage}%
-                        <span className="text-gray-400 font-normal ml-1">({data.count})</span>
-                      </span>
+                    <div className="bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                      <div
+                        className="bg-primary h-1.5 rounded-full transition-all duration-500"
+                        style={{ width: `${data.percentage}%` }}
+                      />
                     </div>
+                    <span className="text-sm font-semibold text-gray-900 tabular-nums text-right">
+                      {data.percentage}%
+                      <span className="text-gray-400 font-normal ml-1">({data.count})</span>
+                    </span>
                   </div>
                 ))}
               </div>
