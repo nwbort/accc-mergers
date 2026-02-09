@@ -8,11 +8,9 @@ import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
 import { useTracking } from '../context/TrackingContext';
 
-const SORT_OPTIONS = [
-  { value: 'notification-desc', label: 'Notification date (newest)' },
-  { value: 'notification-asc', label: 'Notification date (oldest)' },
-  { value: 'determination-desc', label: 'Determination date (newest)' },
-  { value: 'determination-asc', label: 'Determination date (oldest)' },
+const SORT_FIELDS = [
+  { value: 'notification', label: 'Notification date' },
+  { value: 'determination', label: 'Determination date' },
 ];
 
 const sortMergers = (list, sortBy = 'notification-desc') => {
@@ -196,17 +194,17 @@ function Mergers() {
               aria-label="Toggle filters"
               aria-expanded={filtersOpen}
             >
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
-              </svg>
+              <span className="relative">
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+                </svg>
+                {activeFilterCount > 0 && (
+                  <span className="absolute -top-2 -right-2 inline-flex items-center justify-center w-4 h-4 text-[10px] font-bold rounded-full bg-accent text-white ring-2 ring-white">
+                    {activeFilterCount}
+                  </span>
+                )}
+              </span>
               <span className="hidden sm:inline">Filters</span>
-              {activeFilterCount > 0 && (
-                <span className={`inline-flex items-center justify-center w-5 h-5 text-xs font-bold rounded-full ${
-                  filtersOpen ? 'bg-white/20 text-white' : 'bg-primary text-white'
-                }`}>
-                  {activeFilterCount}
-                </span>
-              )}
             </button>
           </div>
 
@@ -317,15 +315,32 @@ function Mergers() {
             <label htmlFor="sort" className="text-sm text-gray-400 hidden sm:inline">Sort by</label>
             <select
               id="sort"
-              className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
-              value={sortBy}
-              onChange={(e) => updateParam('sort', e.target.value, 'notification-desc')}
-              aria-label="Sort mergers"
+              className="px-3 py-1.5 bg-white border border-gray-200 rounded-l-lg text-sm text-gray-600 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
+              value={sortBy.replace(/-(?:asc|desc)$/, '')}
+              onChange={(e) => {
+                const dir = sortBy.endsWith('-asc') ? 'asc' : 'desc';
+                updateParam('sort', `${e.target.value}-${dir}`, 'notification-desc');
+              }}
+              aria-label="Sort field"
             >
-              {SORT_OPTIONS.map((opt) => (
+              {SORT_FIELDS.map((opt) => (
                 <option key={opt.value} value={opt.value}>{opt.label}</option>
               ))}
             </select>
+            <button
+              onClick={() => {
+                const field = sortBy.replace(/-(?:asc|desc)$/, '');
+                const newDir = sortBy.endsWith('-asc') ? 'desc' : 'asc';
+                updateParam('sort', `${field}-${newDir}`, 'notification-desc');
+              }}
+              className="px-2 py-1.5 bg-white border border-l-0 border-gray-200 rounded-r-lg text-gray-500 hover:text-gray-700 hover:bg-gray-50 transition-all"
+              aria-label={sortBy.endsWith('-asc') ? 'Sort descending' : 'Sort ascending'}
+              title={sortBy.endsWith('-asc') ? 'Ascending (click for descending)' : 'Descending (click for ascending)'}
+            >
+              <svg className={`h-4 w-4 transition-transform ${sortBy.endsWith('-asc') ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+              </svg>
+            </button>
           </div>
         </div>
 
