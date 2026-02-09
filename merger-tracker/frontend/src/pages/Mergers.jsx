@@ -72,8 +72,8 @@ function Mergers() {
     setPhaseFilter(phase);
     setSortBy(sort);
     setTrackedOnly(tracked);
-    // Auto-open filters if any filter is active on load
-    if (status !== 'all' || phase !== 'all' || tracked) {
+    // Auto-open filters on desktop if any filter is active
+    if ((status !== 'all' || phase !== 'all' || tracked) && window.matchMedia('(min-width: 768px)').matches) {
       setFiltersOpen(true);
     }
   }, [searchParams]);
