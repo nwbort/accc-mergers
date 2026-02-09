@@ -1,6 +1,6 @@
 {
   "total_mergers": 28,
-  "total_waivers": 19,
+  "total_waivers": 20,
   "by_status": {
     "Assessment completed": 10,
     "Under assessment": 18
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 16,
+    "Approved": 17,
     "Not approved": 3
   },
   "phase_duration": {
@@ -69,6 +69,10 @@
       "count": 3
     },
     {
+      "name": "Pubs, Taverns and Bars",
+      "count": 3
+    },
+    {
       "name": "Other Heavy and Civil Engineering Construction",
       "count": 3
     },
@@ -78,10 +82,6 @@
     },
     {
       "name": "Petroleum Refining and Petroleum Fuel Manufacturing",
-      "count": 2
-    },
-    {
-      "name": "Supermarket and Grocery Stores",
       "count": 2
     }
   ],
@@ -129,6 +129,15 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25005",
+      "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
+      "determination": "Approved",
+      "determination_date": "2026-02-09T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-25001",
       "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
       "determination": "Approved",
@@ -172,15 +181,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-25003",
-      "merger_name": "Delinea (TPG) - StrongDM",
-      "determination": "Approved",
-      "determination_date": "2026-02-03T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
