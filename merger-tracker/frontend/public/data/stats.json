@@ -1,9 +1,9 @@
 {
-  "total_mergers": 25,
+  "total_mergers": 26,
   "total_waivers": 19,
   "by_status": {
     "Assessment completed": 10,
-    "Under assessment": 15
+    "Under assessment": 16
   },
   "by_determination": {
     "Approved": 10,
@@ -87,6 +87,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-30003",
+      "merger_name": "MicroStar Logistics - Konvoy",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-06T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-75004",
       "merger_name": "Parker-Hannifin \u2013 Filtration Group",
       "status": "Under assessment",
@@ -116,14 +124,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-02T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-85003",
-      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-01-30T12:00:00Z",
       "is_waiver": false
     }
   ],
