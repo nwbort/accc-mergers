@@ -76,6 +76,8 @@ function Mergers() {
     if ((status !== 'all' || phase !== 'all' || tracked) && window.matchMedia('(min-width: 768px)').matches) {
       setFiltersOpen(true);
     }
+    // Persist filter state so it survives navigation to detail pages and back
+    sessionStorage.setItem('mergers_filter_params', searchParams.toString());
   }, [searchParams]);
 
   useEffect(() => {
