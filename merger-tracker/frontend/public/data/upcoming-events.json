@@ -84,6 +84,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-02-16T12:00:00Z",
+      "merger_id": "MN-70005",
+      "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-02-09T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-02-16T12:00:00Z",
       "merger_id": "MN-80002",
       "merger_name": "Bain Capital \u2013 MCJ",
       "status": "Under assessment",
@@ -249,8 +259,18 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-02-06T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-03-24T12:00:00Z",
+      "merger_id": "MN-70005",
+      "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-02-09T12:00:00Z"
     }
   ],
-  "count": 25,
+  "count": 27,
   "days_ahead": 60
 }
