@@ -199,7 +199,7 @@ function Mergers() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
                 </svg>
                 {activeFilterCount > 0 && (
-                  <span className="absolute -top-2 -right-2 inline-flex items-center justify-center w-4 h-4 text-[10px] font-bold rounded-full bg-accent text-white ring-2 ring-white">
+                  <span className="absolute -top-2.5 -right-2.5 text-[10px] font-bold text-white leading-none">
                     {activeFilterCount}
                   </span>
                 )}
@@ -315,7 +315,7 @@ function Mergers() {
             <label htmlFor="sort" className="text-sm text-gray-400 hidden sm:inline">Sort by</label>
             <select
               id="sort"
-              className="px-3 py-1.5 bg-white border border-gray-200 rounded-l-lg text-sm text-gray-600 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
+              className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
               value={sortBy.replace(/-(?:asc|desc)$/, '')}
               onChange={(e) => {
                 const dir = sortBy.endsWith('-asc') ? 'asc' : 'desc';
@@ -333,7 +333,7 @@ function Mergers() {
                 const newDir = sortBy.endsWith('-asc') ? 'desc' : 'asc';
                 updateParam('sort', `${field}-${newDir}`, 'notification-desc');
               }}
-              className="px-2 py-1.5 bg-white border border-l-0 border-gray-200 rounded-r-lg text-gray-500 hover:text-gray-700 hover:bg-gray-50 transition-all"
+              className="p-1 text-gray-400 hover:text-gray-600 transition-all"
               aria-label={sortBy.endsWith('-asc') ? 'Sort descending' : 'Sort ascending'}
               title={sortBy.endsWith('-asc') ? 'Ascending (click for descending)' : 'Descending (click for ascending)'}
             >
