@@ -1,9 +1,9 @@
 {
-  "total_mergers": 27,
+  "total_mergers": 28,
   "total_waivers": 19,
   "by_status": {
     "Assessment completed": 10,
-    "Under assessment": 17
+    "Under assessment": 18
   },
   "by_determination": {
     "Approved": 10,
@@ -45,12 +45,16 @@
   },
   "top_industries": [
     {
+      "name": "Computer System Design and Related Services",
+      "count": 10
+    },
+    {
       "name": "Software Publishing",
       "count": 9
     },
     {
-      "name": "Computer System Design and Related Services",
-      "count": 9
+      "name": "Financial Asset Investing",
+      "count": 4
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -66,10 +70,6 @@
     },
     {
       "name": "Other Heavy and Civil Engineering Construction",
-      "count": 3
-    },
-    {
-      "name": "Financial Asset Investing",
       "count": 3
     },
     {
@@ -103,6 +103,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-80002",
+      "merger_name": "Bain Capital \u2013 MCJ",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-06T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-75004",
       "merger_name": "Parker-Hannifin \u2013 Filtration Group",
       "status": "Under assessment",
@@ -116,14 +124,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-04T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-55003",
-      "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-03T12:00:00Z",
       "is_waiver": false
     }
   ],

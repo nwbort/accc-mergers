@@ -1,14 +1,19 @@
 {
   "industries": [
     {
+      "code": "7000",
+      "name": "Computer System Design and Related Services",
+      "merger_count": 10
+    },
+    {
       "code": "5420",
       "name": "Software Publishing",
       "merger_count": 9
     },
     {
-      "code": "7000",
-      "name": "Computer System Design and Related Services",
-      "merger_count": 9
+      "code": "6240",
+      "name": "Financial Asset Investing",
+      "merger_count": 4
     },
     {
       "code": "6419",
@@ -28,11 +33,6 @@
     {
       "code": "3109",
       "name": "Other Heavy and Civil Engineering Construction",
-      "merger_count": 3
-    },
-    {
-      "code": "6240",
-      "name": "Financial Asset Investing",
       "merger_count": 3
     },
     {
@@ -263,6 +263,11 @@
     {
       "code": "2452",
       "name": "Fixed Space Heating, Cooling and Ventilation Equipment Manufacturing",
+      "merger_count": 1
+    },
+    {
+      "code": "2421",
+      "name": "Computer and Electronic Office Equipment Manufacturing",
       "merger_count": 1
     },
     {
