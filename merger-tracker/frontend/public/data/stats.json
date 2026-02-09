@@ -1,9 +1,9 @@
 {
-  "total_mergers": 26,
+  "total_mergers": 27,
   "total_waivers": 19,
   "by_status": {
     "Assessment completed": 10,
-    "Under assessment": 16
+    "Under assessment": 17
   },
   "by_determination": {
     "Approved": 10,
@@ -61,6 +61,10 @@
       "count": 3
     },
     {
+      "name": "Accommodation",
+      "count": 3
+    },
+    {
       "name": "Other Heavy and Civil Engineering Construction",
       "count": 3
     },
@@ -79,13 +83,17 @@
     {
       "name": "Supermarket and Grocery Stores",
       "count": 2
-    },
-    {
-      "name": "Non-Residential Property Operators",
-      "count": 2
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-10006",
+      "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-06T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-30003",
       "merger_name": "MicroStar Logistics - Konvoy",
@@ -116,14 +124,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-03T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-95002",
-      "merger_name": "Abbott Laboratories - Exact Sciences",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-02T12:00:00Z",
       "is_waiver": false
     }
   ],
