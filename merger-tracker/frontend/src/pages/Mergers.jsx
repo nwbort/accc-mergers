@@ -179,12 +179,26 @@ function Mergers() {
               <input
                 type="text"
                 id="search"
-                className="w-full pl-10 pr-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all"
+                className={`w-full pl-10 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all ${
+                  searchTerm ? 'pr-10' : 'pr-3'
+                }`}
                 placeholder="Search mergers, companies, or industries..."
                 aria-label="Search mergers, companies, or industries"
                 value={searchTerm}
                 onChange={(e) => updateParam('q', e.target.value, '')}
               />
+              {searchTerm && (
+                <button
+                  onClick={() => updateParam('q', '', '')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                  aria-label="Clear search"
+                  type="button"
+                >
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
             </div>
             <button
               onClick={() => setFiltersOpen(!filtersOpen)}
