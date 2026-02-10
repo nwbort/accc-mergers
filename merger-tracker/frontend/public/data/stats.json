@@ -2,11 +2,11 @@
   "total_mergers": 29,
   "total_waivers": 20,
   "by_status": {
-    "Assessment completed": 10,
-    "Under assessment": 19
+    "Assessment completed": 11,
+    "Under assessment": 18
   },
   "by_determination": {
-    "Approved": 10,
+    "Approved": 11,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -14,7 +14,7 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 29.1,
+    "average_days": 28.727272727272727,
     "median_days": 25,
     "all_durations": [
       21,
@@ -26,10 +26,11 @@
       22,
       21,
       47,
-      43
+      43,
+      25
     ],
-    "average_business_days": 18.7,
-    "median_business_days": 18,
+    "average_business_days": 18.545454545454547,
+    "median_business_days": 17,
     "all_business_durations": [
       16,
       16,
@@ -40,6 +41,7 @@
       17,
       16,
       19,
+      17,
       17
     ]
   },
@@ -129,6 +131,15 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-01075",
+      "merger_name": "Thermo Fisher - Clario Holdings",
+      "determination": "Approved",
+      "determination_date": "2026-02-10T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-25005",
       "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
       "determination": "Approved",
@@ -172,15 +183,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-01071",
-      "merger_name": "CSE Crosscom \u2013 Progility",
-      "determination": "Approved",
-      "determination_date": "2026-02-03T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
