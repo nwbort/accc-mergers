@@ -124,8 +124,27 @@ clean_html() {
 
 # 1. Download the first page of the acquisitions register
 echo "Downloading main register page from $REGISTER_URL..."
-curl -s -L -A "$USER_AGENT" "$REGISTER_URL" -o "$MAIN_PAGE_FILE"
-echo "Saved main page to '$MAIN_PAGE_FILE'"
+
+# Retry logic with 30-second timeout per attempt
+MAX_RETRIES=3
+RETRY_COUNT=0
+TIMEOUT=30
+
+while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+  if curl -s -L -A "$USER_AGENT" --max-time "$TIMEOUT" "$REGISTER_URL" -o "$MAIN_PAGE_FILE"; then
+    echo "Saved main page to '$MAIN_PAGE_FILE'"
+    break
+  else
+    RETRY_COUNT=$((RETRY_COUNT + 1))
+    if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
+      echo "Download timed out or failed (attempt $RETRY_COUNT/$MAX_RETRIES). Retrying..."
+      sleep 2
+    else
+      echo "Failed to download main page after $MAX_RETRIES attempts"
+      exit 1
+    fi
+  fi
+done
 
 # 2. Create the subdirectory for individual acquisition pages
 mkdir -p "$SUBFOLDER"
