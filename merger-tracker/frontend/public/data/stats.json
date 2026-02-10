@@ -2,11 +2,11 @@
   "total_mergers": 29,
   "total_waivers": 20,
   "by_status": {
-    "Assessment completed": 11,
-    "Under assessment": 18
+    "Assessment completed": 12,
+    "Under assessment": 17
   },
   "by_determination": {
-    "Approved": 11,
+    "Approved": 12,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -14,7 +14,7 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 28.727272727272727,
+    "average_days": 30.5,
     "median_days": 25,
     "all_durations": [
       21,
@@ -27,10 +27,11 @@
       21,
       47,
       43,
-      25
+      25,
+      50
     ],
-    "average_business_days": 18.545454545454547,
-    "median_business_days": 17,
+    "average_business_days": 18.833333333333332,
+    "median_business_days": 18,
     "all_business_durations": [
       16,
       16,
@@ -42,7 +43,8 @@
       16,
       19,
       17,
-      17
+      17,
+      22
     ]
   },
   "top_industries": [
@@ -140,6 +142,15 @@
       "stage": "Phase 1 - initial assessment"
     },
     {
+      "merger_id": "MN-85002",
+      "merger_name": "ServiceNow - Veza",
+      "determination": "Approved",
+      "determination_date": "2026-02-10T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-25005",
       "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
       "determination": "Approved",
@@ -171,15 +182,6 @@
       "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury",
       "determination": "Not approved",
       "determination_date": "2026-02-05T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-35004",
-      "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
-      "determination": "Approved",
-      "determination_date": "2026-02-04T12:00:00Z",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

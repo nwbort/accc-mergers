@@ -1,11 +1,13 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/servicenow-veza",
   "merger_name": "ServiceNow - Veza",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-85002",
   "effective_notification_datetime": "2025-12-22T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-02-23T12:00:00Z",
+  "determination_publication_date": "2026-02-10T12:00:00Z",
+  "accc_determination": "Approved",
   "consultation_response_due_date": "2026-01-16T12:00:00Z",
   "acquirers": [
     {
@@ -44,12 +46,47 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-02-10T12:00:00Z",
+      "title": "ServiceNow-Veza - Phase 1 Determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/ServiceNow-%20Veza%20-%20Phase%201%20determination.pdf",
+      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "ServiceNow, Inc. (ServiceNow)\u2019s proposed acquisition of 100% of\nthe issued shares in Veza Technologies, Inc. (Veza) (the\nAcquisition)."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "ServiceNow is a US software company. It supplies products which\nautomate and simplify manual tasks to facilitate autonomous,\ncoordinated workflows for organisations. These products can be\napplied across a range of operations including customer workflows\n(e.g. for order fulfilment), technology workflows (e.g. for IT and risk\nmanagement and security operations), core business workflows\n(e.g. for HR employee onboarding) and creator workflows\n(workflows to support software developers). These services are\ndelivered on ServiceNow\u2019s \u2018Now Platform\u2019. ServiceNow also supplies\nIT security software to organisations via that platform.\nThe target, Veza, is a US security company that supplies Identity\nAccess Management (IAM) products, which are designed to enable\ncompanies to manage access to their data. These products are\ndelivered via Veza\u2019s \u2018Access Platform\u2019, which allows companies to\nmonitor privilege access, investigate identity threats, automate\naccess reviews, and introduce access governance to enterprise\nresources. Veza particularly focuses on identity governance and\nadministration (IGA) solutions, which are solutions that establish\nand manage the rules and processes governing access to systems.\nVeza has a very limited presence in Australia."
+        },
+        {
+          "item": "Overlap and relationship\nbetween the parties",
+          "details": "The Parties both supply IT security software products:\n\u2022 ServiceNow supplies IT security software products known\nas security operations (SecOps) software and integrated risk\nmanagement (IRM) software. SecOps and IRM products\nfunction as workflow management solutions and risk\ntrackers for customers.\n\u2022 Veza supplies IAM software security products which govern\nand monitor access to a customer\u2019s IT systems.\nWhile the Parties\u2019 products can coexist within a customer\u2019s\ntechnology environment, they operate separately and perform\ndifferent functions for different purposes. As such, there is no\nhorizontal overlap between the Parties in Australia.\nThere are no vertical relationships between the Parties in Australia."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form as well as further information provided by\nServiceNow following pre-notification engagement with the ACCC.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market in\nAustralia. In reaching its decision, and based on the material before\nit, the ACCC makes the following findings:\n\u2022 Veza has a very limited presence in Australia.\n\u2022 There are no horizontal overlaps or vertical relationships\nbetween ServiceNow and Veza in Australia.\n\u2022 The merged entity is unlikely to have the ability or incentive to\nforeclose Veza\u2019s competitors in IAM (including IGA) by\npreventing their integration with ServiceNow, or to take other\nactions that would lead to conglomerate competition concerns\nin Australia. Also, ServiceNow\u2019s offering relies on permitting\nintegrations with a wide range of different platforms, tools and\nsoftware in order to perform its functions and remain attractive\nto customers.\n\u2022 ServiceNow\u2019s primary focus is the supply of integrated IT\nworkflow management software to enterprise customers. It\nfaces competition from alternative providers of such software,\nincluding Microsoft, Broadcom, Oracle and Atlassian."
+        },
+        {
+          "item": "Applications for review",
+          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+        }
+      ],
+      "url_gh": "/matters/MN-85002/ServiceNow- Veza - Phase 1 determination.pdf",
+      "status": "live",
+      "phase": "Phase 1"
     }
   ],
-  "accc_determination": null,
   "is_waiver": false,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-02-10T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
