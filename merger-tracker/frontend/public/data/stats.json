@@ -2,11 +2,11 @@
   "total_mergers": 29,
   "total_waivers": 21,
   "by_status": {
-    "Assessment completed": 12,
-    "Under assessment": 17
+    "Assessment completed": 13,
+    "Under assessment": 16
   },
   "by_determination": {
-    "Approved": 12,
+    "Approved": 13,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -14,7 +14,7 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 30.5,
+    "average_days": 29.846153846153847,
     "median_days": 25,
     "all_durations": [
       21,
@@ -28,10 +28,11 @@
       47,
       43,
       25,
+      22,
       50
     ],
-    "average_business_days": 18.833333333333332,
-    "median_business_days": 18,
+    "average_business_days": 18.615384615384617,
+    "median_business_days": 17,
     "all_business_durations": [
       16,
       16,
@@ -44,6 +45,7 @@
       19,
       17,
       17,
+      16,
       22
     ]
   },
@@ -133,6 +135,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-75002",
+      "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
+      "determination": "Approved",
+      "determination_date": "2026-02-10T12:00:00Z",
+      "page_modified_datetime": "2026-02-10T16:24:51+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-55004",
       "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
       "determination": "Approved",
@@ -178,16 +190,6 @@
       "determination": "Not approved",
       "determination_date": "2026-02-05T12:00:00Z",
       "page_modified_datetime": "2026-02-05T17:37:16+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-70003",
-      "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury",
-      "determination": "Not approved",
-      "determination_date": "2026-02-05T12:00:00Z",
-      "page_modified_datetime": "2026-02-05T17:30:19+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
