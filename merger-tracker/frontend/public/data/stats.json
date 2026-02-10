@@ -1,6 +1,6 @@
 {
   "total_mergers": 29,
-  "total_waivers": 20,
+  "total_waivers": 21,
   "by_status": {
     "Assessment completed": 12,
     "Under assessment": 17
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 17,
+    "Approved": 18,
     "Not approved": 3
   },
   "phase_duration": {
@@ -50,11 +50,11 @@
   "top_industries": [
     {
       "name": "Computer System Design and Related Services",
-      "count": 10
+      "count": 11
     },
     {
       "name": "Software Publishing",
-      "count": 9
+      "count": 10
     },
     {
       "name": "Pharmaceutical and Toiletry Goods Wholesaling",
@@ -151,6 +151,15 @@
       "stage": "Phase 1 - initial assessment"
     },
     {
+      "merger_id": "WA-55004",
+      "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
+      "determination": "Approved",
+      "determination_date": "2026-02-10T12:00:00Z",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-25005",
       "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
       "determination": "Approved",
@@ -171,15 +180,6 @@
     {
       "merger_id": "WA-65003",
       "merger_name": "Henkel \u2013 ATP adhesive systems group",
-      "determination": "Not approved",
-      "determination_date": "2026-02-05T12:00:00Z",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-70003",
-      "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury",
       "determination": "Not approved",
       "determination_date": "2026-02-05T12:00:00Z",
       "determination_type": "final",
