@@ -286,6 +286,13 @@ def parse_merger_file(filepath, existing_merger_data=None):
             raw_determination = determination_tag.get_text(strip=True)
             merger_data['accc_determination'] = normalize_determination(raw_determination)
 
+        # --- Page Modified DateTime (for sorting determinations on same day) ---
+        # Extract dcterms.modified metadata which shows when the page was last updated
+        # This helps sort determinations that occur on the same day by the time they were added
+        modified_meta = soup.find('meta', attrs={'name': 'dcterms.modified'})
+        if modified_meta and modified_meta.has_attr('content'):
+            merger_data['page_modified_datetime'] = modified_meta['content']
+
         # --- Consultation Response Due Date ---
         consultation_tag = soup.find('div', class_='field--name-field-acccgov-consultation-text')
         consultation_due_date = None
