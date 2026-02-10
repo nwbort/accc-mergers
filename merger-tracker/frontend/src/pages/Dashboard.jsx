@@ -44,9 +44,16 @@ function Dashboard() {
     fetchStats();
     fetchUpcomingEvents();
 
-    // Update last visit timestamp when component unmounts
+    // Update last visit timestamp when page is about to unload or component unmounts
+    const handleBeforeUnload = () => {
+      updateLastVisit();
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
     return () => {
       updateLastVisit();
+      window.removeEventListener('beforeunload', handleBeforeUnload);
     };
   }, []);
 
