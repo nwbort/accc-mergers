@@ -12,7 +12,7 @@ from markdownify import markdownify as md
 from parse_determination import parse_determination_pdf
 from parse_questionnaire import process_all_questionnaires
 from normalization import normalize_determination
-from cutoff import should_skip_merger, get_skipped_merger_ids
+from cutoff import should_skip_merger, get_skipped_merger_ids, is_waiver_merger
 
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./data/raw/matters"
@@ -710,10 +710,14 @@ def main():
     # 7. Enrich with questionnaire data (consultation deadlines)
     all_mergers_data = enrich_with_questionnaire_data(all_mergers_data)
 
-    # 8. Sort the data by merger_id to ensure a consistent output
+    # 8. Add is_waiver field to each merger
+    for merger in all_mergers_data:
+        merger['is_waiver'] = is_waiver_merger(merger)
+
+    # 9. Sort the data by merger_id to ensure a consistent output
     all_mergers_data.sort(key=lambda x: x.get('merger_id', ''))
 
-    # 9. Write the final JSON output to mergers.json
+    # 10. Write the final JSON output to mergers.json
     with open('data/processed/mergers.json', 'w', encoding='utf-8') as f:
         json.dump(all_mergers_data, f, indent=2)
 
