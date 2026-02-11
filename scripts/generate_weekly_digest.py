@@ -71,12 +71,15 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
         'targets': merger.get('targets', []),
         'effective_notification_datetime': merger.get('effective_notification_datetime'),
         'determination_publication_date': merger.get('determination_publication_date'),
+        'end_of_determination_period': merger.get('end_of_determination_period'),
         'accc_determination': merger.get('accc_determination'),
         'stage': merger.get('stage'),
         'status': merger.get('status'),
         'is_waiver': merger.get('is_waiver', False),
         'phase_1_determination': merger.get('phase_1_determination'),
         'phase_2_determination': merger.get('phase_2_determination'),
+        'merger_description': merger.get('merger_description'),
+        'events': merger.get('events', []),
     }
 
 

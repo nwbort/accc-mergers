@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import StatusBadge from '../components/StatusBadge';
 import LoadingSpinner from '../components/LoadingSpinner';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
@@ -30,136 +29,434 @@ function Digest() {
     }
   };
 
-  const formatParties = (parties) => {
-    if (!parties || parties.length === 0) return 'N/A';
-    return parties.map(p => p.name).join(', ');
+  const formatDateRange = (startDate, endDate) => {
+    if (!startDate || !endDate) return '';
+
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+
+    const startDay = start.getDate();
+    const endDay = end.getDate();
+    const startMonth = start.toLocaleDateString('en-AU', { month: 'long' });
+    const endMonth = end.toLocaleDateString('en-AU', { month: 'long' });
+    const year = end.getFullYear();
+
+    if (startMonth === endMonth) {
+      // Same month: "5-12 February 2026"
+      return `${startDay}-${endDay} ${startMonth} ${year}`;
+    } else {
+      // Different months: "27 February to 4 March 2026"
+      return `${startDay} ${startMonth} to ${endDay} ${endMonth} ${year}`;
+    }
   };
 
-  const renderMergerRow = (merger) => (
-    <tr key={merger.merger_id} className="border-b border-gray-200 hover:bg-gray-50">
-      <td className="px-4 py-3">
-        <Link
-          to={`/mergers/${merger.merger_id}`}
-          className="text-blue-600 hover:text-blue-800 font-medium"
-        >
-          {merger.merger_id}
-        </Link>
-      </td>
-      <td className="px-4 py-3">
-        <Link
-          to={`/mergers/${merger.merger_id}`}
-          className="text-gray-900 hover:text-blue-600"
-        >
-          {merger.merger_name}
-        </Link>
-      </td>
-      <td className="px-4 py-3 text-sm text-gray-600">
-        {formatParties(merger.acquirers)}
-      </td>
-      <td className="px-4 py-3 text-sm text-gray-600">
-        {formatParties(merger.targets)}
-      </td>
-      <td className="px-4 py-3 text-sm">
-        <StatusBadge
-          status={merger.status}
-          determination={merger.accc_determination}
-        />
-      </td>
-      <td className="px-4 py-3 text-sm text-gray-600">
-        {merger.effective_notification_datetime
-          ? formatDate(merger.effective_notification_datetime)
-          : 'N/A'}
-      </td>
-    </tr>
-  );
+  const getFirstParagraph = (description) => {
+    if (!description) return '';
+    // Split by double newline or first paragraph
+    const firstPara = description.split('\n\n')[0];
+    return firstPara.trim();
+  };
 
-  const renderMergerRowWithDetermination = (merger) => (
-    <tr key={merger.merger_id} className="border-b border-gray-200 hover:bg-gray-50">
-      <td className="px-4 py-3">
-        <Link
-          to={`/mergers/${merger.merger_id}`}
-          className="text-blue-600 hover:text-blue-800 font-medium"
-        >
-          {merger.merger_id}
-        </Link>
-      </td>
-      <td className="px-4 py-3">
-        <Link
-          to={`/mergers/${merger.merger_id}`}
-          className="text-gray-900 hover:text-blue-600"
-        >
-          {merger.merger_name}
-        </Link>
-      </td>
-      <td className="px-4 py-3 text-sm text-gray-600">
-        {formatParties(merger.acquirers)}
-      </td>
-      <td className="px-4 py-3 text-sm text-gray-600">
-        {formatParties(merger.targets)}
-      </td>
-      <td className="px-4 py-3 text-sm">
-        <StatusBadge
-          status={merger.status}
-          determination={merger.accc_determination}
-        />
-      </td>
-      <td className="px-4 py-3 text-sm text-gray-600">
-        {merger.determination_publication_date
-          ? formatDate(merger.determination_publication_date)
-          : 'N/A'}
-      </td>
-    </tr>
-  );
+  const getDeterminationPdf = (events) => {
+    if (!events || events.length === 0) return null;
 
-  const renderSection = (title, description, mergers, showDeterminationDate = false) => {
+    // Find the most recent determination event with a URL
+    const determinationEvent = events
+      .filter(e => e.display_title && e.display_title.includes('determination') && e.url)
+      .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+
+    return determinationEvent?.url || null;
+  };
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const renderNewMergersTable = (mergers) => {
     if (mergers.length === 0) {
       return (
-        <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-          <h2 className="text-xl font-bold text-gray-900 mb-2">{title}</h2>
-          <p className="text-gray-600 mb-4">{description}</p>
-          <p className="text-gray-500 italic">No deals in this category</p>
+        <div id="new-mergers" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+            <h2 className="text-lg font-semibold text-gray-900">New mergers</h2>
+          </div>
+          <div className="px-5 sm:px-6 py-4">
+            <p className="text-gray-500 text-sm">No new mergers this week</p>
+          </div>
         </div>
       );
     }
 
     return (
-      <div className="bg-white rounded-lg shadow-md p-6 mb-6">
-        <h2 className="text-xl font-bold text-gray-900 mb-2">{title}</h2>
-        <p className="text-gray-600 mb-4">{description}</p>
+      <div id="new-mergers" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+          <h2 className="text-lg font-semibold text-gray-900">New mergers</h2>
+        </div>
         <div className="overflow-x-auto">
-          <table className="min-w-full">
+          <table className="min-w-full divide-y divide-gray-100">
             <thead>
-              <tr className="bg-gray-50 border-b border-gray-200">
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  ID
+              <tr className="bg-gray-50/80">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Merger
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Deal
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Notification date
                 </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Acquirer(s)
-                </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Target(s)
-                </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Status
-                </th>
-                <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  {showDeterminationDate ? 'Determination Date' : 'Notification Date'}
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Summary
                 </th>
               </tr>
             </thead>
-            <tbody className="bg-white">
-              {showDeterminationDate
-                ? mergers.map(renderMergerRowWithDetermination)
-                : mergers.map(renderMergerRow)}
+            <tbody className="divide-y divide-gray-50">
+              {mergers.map((merger) => (
+                <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                  <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
+                    <Link
+                      to={`/mergers/${merger.merger_id}`}
+                      className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                      aria-label={`View merger details for ${merger.merger_name}`}
+                    >
+                      {merger.merger_name}
+                    </Link>
+                    <div className="text-xs text-gray-400 mt-0.5">
+                      <span>{merger.merger_id}</span>
+                    </div>
+                  </td>
+                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                    {merger.effective_notification_datetime
+                      ? formatDate(merger.effective_notification_datetime)
+                      : 'N/A'}
+                  </td>
+                  <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
+                    {getFirstParagraph(merger.merger_description)}
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
-        <p className="text-sm text-gray-500 mt-4">
-          {mergers.length} {mergers.length === 1 ? 'deal' : 'deals'}
-        </p>
+      </div>
+    );
+  };
+
+  const renderApprovedMergersTable = (mergers) => {
+    if (mergers.length === 0) {
+      return (
+        <div id="mergers-approved" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+            <h2 className="text-lg font-semibold text-gray-900">Mergers approved</h2>
+          </div>
+          <div className="px-5 sm:px-6 py-4">
+            <p className="text-gray-500 text-sm">No mergers approved this week</p>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div id="mergers-approved" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+          <h2 className="text-lg font-semibold text-gray-900">Mergers approved</h2>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-100">
+            <thead>
+              <tr className="bg-gray-50/80">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Merger
+                </th>
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Determination date
+                </th>
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Determination
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-50">
+              {mergers.map((merger) => {
+                const pdfUrl = getDeterminationPdf(merger.events);
+                return (
+                  <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                    <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
+                      <Link
+                        to={`/mergers/${merger.merger_id}`}
+                        className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                        aria-label={`View merger details for ${merger.merger_name}`}
+                      >
+                        {merger.merger_name}
+                      </Link>
+                      <div className="text-xs text-gray-400 mt-0.5 flex items-center gap-2">
+                        <span>{merger.merger_id}</span>
+                        {merger.is_waiver && (
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60">
+                            Waiver
+                          </span>
+                        )}
+                      </div>
+                    </td>
+                    <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                      {merger.determination_publication_date
+                        ? formatDate(merger.determination_publication_date)
+                        : 'N/A'}
+                    </td>
+                    <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
+                      {pdfUrl ? (
+                        <a
+                          href={pdfUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:text-primary-dark transition-colors relative z-10"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          View PDF
+                        </a>
+                      ) : (
+                        <span className="text-gray-400">N/A</span>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  };
+
+  const renderDeclinedMergersTable = (mergers) => {
+    if (mergers.length === 0) {
+      return (
+        <div id="mergers-declined" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+            <h2 className="text-lg font-semibold text-gray-900">Mergers declined</h2>
+          </div>
+          <div className="px-5 sm:px-6 py-4">
+            <p className="text-gray-500 text-sm">No mergers declined this week</p>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div id="mergers-declined" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+          <h2 className="text-lg font-semibold text-gray-900">Mergers declined</h2>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-100">
+            <thead>
+              <tr className="bg-gray-50/80">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Merger
+                </th>
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Determination date
+                </th>
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Determination
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-50">
+              {mergers.map((merger) => {
+                const pdfUrl = getDeterminationPdf(merger.events);
+                return (
+                  <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                    <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
+                      <Link
+                        to={`/mergers/${merger.merger_id}`}
+                        className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                        aria-label={`View merger details for ${merger.merger_name}`}
+                      >
+                        {merger.merger_name}
+                      </Link>
+                      <div className="text-xs text-gray-400 mt-0.5 flex items-center gap-2">
+                        <span>{merger.merger_id}</span>
+                        {merger.is_waiver && (
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60">
+                            Waiver
+                          </span>
+                        )}
+                      </div>
+                    </td>
+                    <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                      {merger.determination_publication_date
+                        ? formatDate(merger.determination_publication_date)
+                        : 'N/A'}
+                    </td>
+                    <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
+                      {pdfUrl ? (
+                        <a
+                          href={pdfUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:text-primary-dark transition-colors relative z-10"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          View PDF
+                        </a>
+                      ) : (
+                        <span className="text-gray-400">N/A</span>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  };
+
+  const renderOngoingPhase1Table = (mergers) => {
+    if (mergers.length === 0) {
+      return (
+        <div id="ongoing-phase-1" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+            <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 1 - initial assessment</h2>
+          </div>
+          <div className="px-5 sm:px-6 py-4">
+            <p className="text-gray-500 text-sm">No ongoing phase 1 mergers</p>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div id="ongoing-phase-1" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+          <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 1 - initial assessment</h2>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-100">
+            <thead>
+              <tr className="bg-gray-50/80">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Merger
+                </th>
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Notification date
+                </th>
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Determination due date
+                </th>
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Summary
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-50">
+              {mergers.map((merger) => (
+                <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                  <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
+                    <Link
+                      to={`/mergers/${merger.merger_id}`}
+                      className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                      aria-label={`View merger details for ${merger.merger_name}`}
+                    >
+                      {merger.merger_name}
+                    </Link>
+                    <div className="text-xs text-gray-400 mt-0.5">
+                      <span>{merger.merger_id}</span>
+                    </div>
+                  </td>
+                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                    {merger.effective_notification_datetime
+                      ? formatDate(merger.effective_notification_datetime)
+                      : 'N/A'}
+                  </td>
+                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                    {merger.end_of_determination_period
+                      ? formatDate(merger.end_of_determination_period)
+                      : 'N/A'}
+                  </td>
+                  <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
+                    {getFirstParagraph(merger.merger_description)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  };
+
+  const renderOngoingPhase2Table = (mergers) => {
+    if (mergers.length === 0) {
+      return (
+        <div id="ongoing-phase-2" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+            <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 2 - detailed assessment</h2>
+          </div>
+          <div className="px-5 sm:px-6 py-4">
+            <p className="text-gray-500 text-sm">No ongoing phase 2 mergers</p>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div id="ongoing-phase-2" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+          <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 2 - detailed assessment</h2>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-100">
+            <thead>
+              <tr className="bg-gray-50/80">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Merger
+                </th>
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Notification date
+                </th>
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Determination due date
+                </th>
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                  Summary
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-50">
+              {mergers.map((merger) => (
+                <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                  <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
+                    <Link
+                      to={`/mergers/${merger.merger_id}`}
+                      className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                      aria-label={`View merger details for ${merger.merger_name}`}
+                    >
+                      {merger.merger_name}
+                    </Link>
+                    <div className="text-xs text-gray-400 mt-0.5">
+                      <span>{merger.merger_id}</span>
+                    </div>
+                  </td>
+                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                    {merger.effective_notification_datetime
+                      ? formatDate(merger.effective_notification_datetime)
+                      : 'N/A'}
+                  </td>
+                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                    {merger.end_of_determination_period
+                      ? formatDate(merger.end_of_determination_period)
+                      : 'N/A'}
+                  </td>
+                  <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
+                    {getFirstParagraph(merger.merger_description)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   };
@@ -168,8 +465,7 @@ function Digest() {
   if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
   if (!digest) return null;
 
-  const periodStart = digest.period_start ? formatDate(digest.period_start) : 'N/A';
-  const periodEnd = digest.period_end ? formatDate(digest.period_end) : 'N/A';
+  const dateRange = formatDateRange(digest.period_start, digest.period_end);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -183,86 +479,67 @@ function Digest() {
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Catch me up</h1>
           <p className="text-gray-600">
-            Weekly digest of ACCC merger activity from {periodStart} to {periodEnd}
-          </p>
-          <p className="text-sm text-gray-500 mt-2">
-            Last updated: {digest.generated_at ? formatDate(digest.generated_at) : 'N/A'}
+            Weekly digest of merger activity from {dateRange}
           </p>
         </div>
 
         {/* Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
-          <div className="bg-white rounded-lg shadow p-4">
-            <div className="text-2xl font-bold text-blue-600">
+          <button
+            onClick={() => scrollToSection('new-mergers')}
+            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+          >
+            <div className="text-2xl font-bold text-primary">
               {digest.new_deals_notified.length}
             </div>
-            <div className="text-sm text-gray-600">New Deals Notified</div>
-          </div>
-          <div className="bg-white rounded-lg shadow p-4">
-            <div className="text-2xl font-bold text-green-600">
+            <div className="text-sm text-gray-600">New deals notified</div>
+          </button>
+          <button
+            onClick={() => scrollToSection('mergers-approved')}
+            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+          >
+            <div className="text-2xl font-bold text-primary">
               {digest.deals_cleared.length}
             </div>
-            <div className="text-sm text-gray-600">Deals Cleared</div>
-          </div>
-          <div className="bg-white rounded-lg shadow p-4">
-            <div className="text-2xl font-bold text-red-600">
+            <div className="text-sm text-gray-600">Deals cleared</div>
+          </button>
+          <button
+            onClick={() => scrollToSection('mergers-declined')}
+            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+          >
+            <div className="text-2xl font-bold text-primary">
               {digest.deals_declined.length}
             </div>
-            <div className="text-sm text-gray-600">Deals Declined</div>
-          </div>
-          <div className="bg-white rounded-lg shadow p-4">
-            <div className="text-2xl font-bold text-yellow-600">
+            <div className="text-sm text-gray-600">Deals declined</div>
+          </button>
+          <button
+            onClick={() => scrollToSection('ongoing-phase-1')}
+            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+          >
+            <div className="text-2xl font-bold text-primary">
               {digest.ongoing_phase_1.length}
             </div>
-            <div className="text-sm text-gray-600">Ongoing Phase 1</div>
-          </div>
-          <div className="bg-white rounded-lg shadow p-4">
-            <div className="text-2xl font-bold text-orange-600">
+            <div className="text-sm text-gray-600">Ongoing phase 1</div>
+          </button>
+          <button
+            onClick={() => scrollToSection('ongoing-phase-2')}
+            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+          >
+            <div className="text-2xl font-bold text-primary">
               {digest.ongoing_phase_2.length}
             </div>
-            <div className="text-sm text-gray-600">Ongoing Phase 2</div>
-          </div>
+            <div className="text-sm text-gray-600">Ongoing phase 2</div>
+          </button>
         </div>
 
-        {/* New Deals Notified */}
-        {renderSection(
-          'New Deals Notified',
-          'Mergers notified to the ACCC in the last week that have not yet been determined',
-          digest.new_deals_notified,
-          false
-        )}
-
-        {/* Deals Cleared */}
-        {renderSection(
-          'Deals Cleared',
-          'Mergers approved by the ACCC in the last week',
-          digest.deals_cleared,
-          true
-        )}
-
-        {/* Deals Declined */}
-        {renderSection(
-          'Deals Declined',
-          'Mergers not approved by the ACCC in the last week',
-          digest.deals_declined,
-          true
-        )}
-
-        {/* Ongoing Phase 1 */}
-        {renderSection(
-          'Ongoing Phase 1 Deals',
-          'Mergers currently under Phase 1 initial assessment',
-          digest.ongoing_phase_1,
-          false
-        )}
-
-        {/* Ongoing Phase 2 */}
-        {renderSection(
-          'Ongoing Phase 2 Deals',
-          'Mergers currently under Phase 2 detailed assessment',
-          digest.ongoing_phase_2,
-          false
-        )}
+        {/* Tables */}
+        <div className="space-y-6">
+          {renderNewMergersTable(digest.new_deals_notified)}
+          {renderApprovedMergersTable(digest.deals_cleared)}
+          {renderDeclinedMergersTable(digest.deals_declined)}
+          {renderOngoingPhase1Table(digest.ongoing_phase_1)}
+          {renderOngoingPhase2Table(digest.ongoing_phase_2)}
+        </div>
       </div>
     </div>
   );
