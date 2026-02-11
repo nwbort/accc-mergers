@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
+import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { formatDate } from '../utils/dates';
@@ -52,9 +54,24 @@ function Digest() {
 
   const getFirstParagraph = (description) => {
     if (!description) return '';
+
     // Split by double newline or first paragraph
-    const firstPara = description.split('\n\n')[0];
-    return firstPara.trim();
+    const paragraphs = description.split('\n\n').map(p => p.trim()).filter(p => p);
+
+    // Skip single-word paragraphs (especially ones like **Acquisition**)
+    for (const para of paragraphs) {
+      // Remove markdown formatting to check word count
+      const plainText = para.replace(/\*\*/g, '').replace(/\*/g, '').trim();
+      const wordCount = plainText.split(/\s+/).length;
+
+      // If the paragraph has more than one word, use it
+      if (wordCount > 1) {
+        return para;
+      }
+    }
+
+    // If all paragraphs are single words, just return the first one
+    return paragraphs[0] || '';
   };
 
   const getDeterminationPdf = (events) => {
@@ -98,13 +115,13 @@ function Digest() {
           <table className="min-w-full divide-y divide-gray-100">
             <thead>
               <tr className="bg-gray-50/80">
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Merger
                 </th>
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Notification date
                 </th>
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Summary
                 </th>
               </tr>
@@ -130,7 +147,9 @@ function Digest() {
                       : 'N/A'}
                   </td>
                   <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
-                    {getFirstParagraph(merger.merger_description)}
+                    <ReactMarkdown className="prose prose-sm max-w-none">
+                      {getFirstParagraph(merger.merger_description)}
+                    </ReactMarkdown>
                   </td>
                 </tr>
               ))}
@@ -250,13 +269,13 @@ function Digest() {
           <table className="min-w-full divide-y divide-gray-100">
             <thead>
               <tr className="bg-gray-50/80">
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Merger
                 </th>
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Determination date
                 </th>
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Determination
                 </th>
               </tr>
@@ -264,6 +283,7 @@ function Digest() {
             <tbody className="divide-y divide-gray-50">
               {mergers.map((merger) => {
                 const pdfUrl = getDeterminationPdf(merger.events);
+                const determination = merger.accc_determination || merger.phase_1_determination || merger.phase_2_determination || 'Not approved';
                 return (
                   <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
                     <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
@@ -294,13 +314,14 @@ function Digest() {
                           href={pdfUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary hover:text-primary-dark transition-colors relative z-10"
+                          className="text-primary hover:text-primary-dark transition-colors relative z-10 inline-flex items-center gap-1"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          View PDF
+                          {determination}
+                          <ExternalLinkIcon className="h-3.5 w-3.5" />
                         </a>
                       ) : (
-                        <span className="text-gray-400">N/A</span>
+                        <span className="text-gray-600">{determination}</span>
                       )}
                     </td>
                   </tr>
@@ -336,16 +357,16 @@ function Digest() {
           <table className="min-w-full divide-y divide-gray-100">
             <thead>
               <tr className="bg-gray-50/80">
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Merger
                 </th>
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Notification date
                 </th>
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Determination due date
                 </th>
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Summary
                 </th>
               </tr>
@@ -376,7 +397,9 @@ function Digest() {
                       : 'N/A'}
                   </td>
                   <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
-                    {getFirstParagraph(merger.merger_description)}
+                    <ReactMarkdown className="prose prose-sm max-w-none">
+                      {getFirstParagraph(merger.merger_description)}
+                    </ReactMarkdown>
                   </td>
                 </tr>
               ))}
@@ -410,16 +433,16 @@ function Digest() {
           <table className="min-w-full divide-y divide-gray-100">
             <thead>
               <tr className="bg-gray-50/80">
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Merger
                 </th>
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Notification date
                 </th>
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Determination due date
                 </th>
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Summary
                 </th>
               </tr>
@@ -450,7 +473,9 @@ function Digest() {
                       : 'N/A'}
                   </td>
                   <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
-                    {getFirstParagraph(merger.merger_description)}
+                    <ReactMarkdown className="prose prose-sm max-w-none">
+                      {getFirstParagraph(merger.merger_description)}
+                    </ReactMarkdown>
                   </td>
                 </tr>
               ))}
