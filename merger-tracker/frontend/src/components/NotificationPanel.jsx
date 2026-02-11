@@ -216,7 +216,7 @@ function NotificationPanel({ isOpen, onClose }) {
       {/* Header */}
       <div className="px-5 py-3.5 border-b border-gray-100 bg-gray-50/80 flex-shrink-0">
         <h2 className="text-sm font-semibold text-gray-900">
-          Tracked Mergers
+          Tracked
           {trackedMergerIds.length > 0 && (
             <span className="ml-2 text-gray-400 font-normal">
               ({trackedMergerIds.length})
@@ -273,13 +273,23 @@ function NotificationPanel({ isOpen, onClose }) {
       {/* Footer */}
       {trackedMergerIds.length > 0 && (
         <div className="px-5 py-3 border-t border-gray-100 bg-gray-50/80 flex-shrink-0">
-          <Link
-            to="/mergers"
-            onClick={onClose}
-            className="text-xs font-medium text-primary hover:text-primary-dark transition-colors"
-          >
-            View all mergers
-          </Link>
+          <div className="flex items-center gap-1.5 text-xs font-medium">
+            <Link
+              to="/mergers?tracked=true"
+              onClick={onClose}
+              className="text-primary hover:text-primary-dark transition-colors"
+            >
+              View tracked
+            </Link>
+            <span className="text-gray-400">·</span>
+            <Link
+              to="/mergers"
+              onClick={onClose}
+              className="text-primary hover:text-primary-dark transition-colors"
+            >
+              View all mergers
+            </Link>
+          </div>
         </div>
       )}
     </div>
