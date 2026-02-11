@@ -242,24 +242,24 @@ function MergerDetail() {
               />
               <button
                 onClick={() => toggleTracking(id)}
-                className={`inline-flex items-center justify-center gap-1.5 px-3.5 py-2 text-sm font-medium rounded-xl transition-all duration-200 w-[7rem] ${
+                className={`inline-flex items-center justify-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-lg border transition-all duration-200 ${
                   tracked
-                    ? 'bg-primary text-white hover:bg-primary-dark shadow-sm'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                    ? 'bg-primary text-white border-primary hover:bg-primary-dark shadow-sm'
+                    : 'bg-gray-100 text-gray-600 border-gray-200/60 hover:bg-gray-200'
                 }`}
                 aria-pressed={tracked}
                 aria-label={tracked ? 'Stop tracking this merger' : 'Track this merger for updates'}
               >
                 {tracked ? (
                   <>
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                     </svg>
                     Tracking
                   </>
                 ) : (
                   <>
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                     </svg>
                     Track
