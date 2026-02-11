@@ -10,6 +10,7 @@ import MergerDetail from './pages/MergerDetail';
 import Timeline from './pages/Timeline';
 import Industries from './pages/Industries';
 import Commentary from './pages/Commentary';
+import Digest from './pages/Digest';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/timeline" element={<Timeline />} />
                 <Route path="/industries" element={<Industries />} />
                 <Route path="/commentary" element={<Commentary />} />
+                <Route path="/digest" element={<Digest />} />
               </Routes>
             </main>
             <Footer />

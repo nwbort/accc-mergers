@@ -10,4 +10,5 @@ export const API_ENDPOINTS = {
   industries: '/data/industries.json',
   upcomingEvents: '/data/upcoming-events.json',
   commentary: '/data/commentary.json',  // Mergers with user commentary
+  digest: '/data/digest.json',  // Weekly digest of merger activity
 };

@@ -11,6 +11,7 @@ const navLinks = [
   { path: '/timeline', label: 'Timeline' },
   { path: '/industries', label: 'Industries' },
   { path: '/commentary', label: 'Commentary' },
+  { path: '/digest', label: 'Catch me up' },
 ];
 
 function Navbar() {
