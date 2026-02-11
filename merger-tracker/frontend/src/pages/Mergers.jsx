@@ -423,19 +423,7 @@ function Mergers() {
                   </div>
                 </div>
 
-                <div className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <p className="text-xs text-gray-400 mb-0.5">Acquirers</p>
-                    <p className="text-sm font-medium text-gray-700">
-                      {merger.acquirers.map((a) => a.name).join(', ')}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-xs text-gray-400 mb-0.5">Targets</p>
-                    <p className="text-sm font-medium text-gray-700">
-                      {merger.targets.map((t) => t.name).join(', ')}
-                    </p>
-                  </div>
+                <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <p className="text-xs text-gray-400 mb-0.5">
                       {merger.is_waiver ? 'Application date' : 'Notification date'}
@@ -444,6 +432,18 @@ function Mergers() {
                       {formatDate(merger.effective_notification_datetime)}
                     </p>
                   </div>
+                  {(merger.determination_publication_date || merger.end_of_determination_period) && (
+                    <div>
+                      <p className="text-xs text-gray-400 mb-0.5">
+                        {merger.determination_publication_date ? 'Determination date' : 'End of determination period'}
+                      </p>
+                      <p className="text-sm font-medium text-gray-700">
+                        {merger.determination_publication_date
+                          ? formatDate(merger.determination_publication_date)
+                          : formatDate(merger.end_of_determination_period)}
+                      </p>
+                    </div>
+                  )}
                 </div>
 
                 {merger.anzsic_codes && merger.anzsic_codes.length > 0 && (
