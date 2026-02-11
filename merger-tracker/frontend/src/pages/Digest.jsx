@@ -79,10 +79,10 @@ function Digest() {
 
     // Find the most recent determination event with a URL
     const determinationEvent = events
-      .filter(e => e.display_title && e.display_title.includes('determination') && e.url)
+      .filter(e => e.display_title && e.display_title.includes('determination') && e.url_gh)
       .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
 
-    return determinationEvent?.url || null;
+    return determinationEvent?.url_gh || null;
   };
 
   const scrollToSection = (sectionId) => {
@@ -183,13 +183,13 @@ function Digest() {
           <table className="min-w-full divide-y divide-gray-100">
             <thead>
               <tr className="bg-gray-50/80">
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Merger
                 </th>
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Determination date
                 </th>
-                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 tracking-wider">
+                <th scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Determination
                 </th>
               </tr>
@@ -197,6 +197,7 @@ function Digest() {
             <tbody className="divide-y divide-gray-50">
               {mergers.map((merger) => {
                 const pdfUrl = getDeterminationPdf(merger.events);
+                const determination = merger.accc_determination || merger.phase_1_determination || merger.phase_2_determination || 'Approved';
                 return (
                   <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
                     <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
@@ -227,13 +228,14 @@ function Digest() {
                           href={pdfUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary hover:text-primary-dark transition-colors relative z-10"
+                          className="text-primary hover:text-primary-dark transition-colors relative z-10 inline-flex items-center gap-1"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          View PDF
+                          {determination}
+                          <ExternalLinkIcon className="h-3.5 w-3.5" />
                         </a>
                       ) : (
-                        <span className="text-gray-400">N/A</span>
+                        <span className="text-gray-600">{determination}</span>
                       )}
                     </td>
                   </tr>
