@@ -201,20 +201,22 @@ function Digest() {
                 return (
                   <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
                     <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
-                      <Link
-                        to={`/mergers/${merger.merger_id}`}
-                        className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
-                        aria-label={`View merger details for ${merger.merger_name}`}
-                      >
-                        {merger.merger_name}
-                      </Link>
-                      <div className="text-xs text-gray-400 mt-0.5 flex items-center gap-2">
-                        <span>{merger.merger_id}</span>
+                      <div className="flex items-start gap-2">
+                        <Link
+                          to={`/mergers/${merger.merger_id}`}
+                          className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                          aria-label={`View merger details for ${merger.merger_name}`}
+                        >
+                          {merger.merger_name}
+                        </Link>
                         {merger.is_waiver && (
-                          <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60">
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60 relative z-10">
                             Waiver
                           </span>
                         )}
+                      </div>
+                      <div className="text-xs text-gray-400 mt-0.5">
+                        <span>{merger.merger_id}</span>
                       </div>
                     </td>
                     <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
@@ -289,20 +291,22 @@ function Digest() {
                 return (
                   <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
                     <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
-                      <Link
-                        to={`/mergers/${merger.merger_id}`}
-                        className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
-                        aria-label={`View merger details for ${merger.merger_name}`}
-                      >
-                        {merger.merger_name}
-                      </Link>
-                      <div className="text-xs text-gray-400 mt-0.5 flex items-center gap-2">
-                        <span>{merger.merger_id}</span>
+                      <div className="flex items-start gap-2">
+                        <Link
+                          to={`/mergers/${merger.merger_id}`}
+                          className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                          aria-label={`View merger details for ${merger.merger_name}`}
+                        >
+                          {merger.merger_name}
+                        </Link>
                         {merger.is_waiver && (
-                          <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60">
+                          <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60 relative z-10">
                             Waiver
                           </span>
                         )}
+                      </div>
+                      <div className="text-xs text-gray-400 mt-0.5">
+                        <span>{merger.merger_id}</span>
                       </div>
                     </td>
                     <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
