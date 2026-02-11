@@ -45,9 +45,7 @@ export SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 fetch_matter_page() {
   local link="$1"
   local full_url="${BASE_URL}${link}"
-  
-  echo "  - Fetching: $full_url"
-  
+
   local temp_html
   temp_html=$(mktemp)
   # Ensure temp file is cleaned up when the function returns
@@ -55,15 +53,15 @@ fetch_matter_page() {
 
   # Download the page. The --fail flag ensures curl exits with an error on HTTP failures (like 404).
   if ! curl -s -L -A "$USER_AGENT" --fail "$full_url" -o "$temp_html"; then
-      echo "  - FAILED to fetch: $full_url"
+      echo "FAILED: $full_url" >&2
       # Returning a non-zero status will cause xargs to stop
       return 1
   fi
-  
+
   # Extract matter number
   local matter_number
   matter_number=$(cat "$temp_html" | pup '.field--name-dynamic-token-fieldnode-acccgov-merger-id p text{}' | tr -d '[:space:]')
-  
+
   local filename
   if [ -n "$matter_number" ]; then
     filename="${SUBFOLDER}/${matter_number}.html"
@@ -82,12 +80,22 @@ export -f fetch_matter_page
 
 # Function to clean dynamic content from HTML files
 clean_html() {
-  echo "Cleaning dynamic content from all downloaded HTML files..."
-  
-  # Find .html files in the root, data/raw, and the matters subfolder
-  { find . -maxdepth 1 -name "*.html"; find "data/raw" -maxdepth 1 -name "*.html" 2>/dev/null; find "./$SUBFOLDER" -maxdepth 1 -name "*.html" 2>/dev/null; } | while IFS= read -r file; do
-    echo "  - Cleaning $file"
-    
+  # Find all .html files to clean
+  local files_to_clean=()
+  while IFS= read -r file; do
+    files_to_clean+=("$file")
+  done < <({ find . -maxdepth 1 -name "*.html"; find "data/raw" -maxdepth 1 -name "*.html" 2>/dev/null; find "./$SUBFOLDER" -maxdepth 1 -name "*.html" 2>/dev/null; })
+
+  local file_count=${#files_to_clean[@]}
+
+  if [ "$file_count" -eq 0 ]; then
+    echo "No HTML files to clean."
+    return
+  fi
+
+  echo "Cleaning dynamic content from $file_count HTML file(s)..."
+
+  for file in "${files_to_clean[@]}"; do
     # Use sed to perform in-place replacements for simple line-based patterns.
     # The -E flag enables extended regular expressions.
     # Each '-e' adds another expression to the command.
@@ -116,7 +124,7 @@ clean_html() {
     cat -s "$file" > "$temp_file" && mv "$temp_file" "$file"
   done
 
-  echo "Cleaning complete."
+  echo "Successfully cleaned $file_count HTML file(s)"
 }
 
 
@@ -226,7 +234,25 @@ fi
 echo "Fetching $link_count merger page(s)..."
 
 # 5. Fetch the individual matter pages in parallel
-echo "$links_to_fetch" | xargs -P 8 -I {} bash -c 'fetch_matter_page "$@"' _ {}
+# Capture any failures from stderr
+failed_urls_file=$(mktemp)
+trap 'rm -f "$failed_urls_file"' EXIT
+
+if echo "$links_to_fetch" | xargs -P 8 -I {} bash -c 'fetch_matter_page "$@"' _ {} 2>"$failed_urls_file"; then
+  # All succeeded
+  echo "Successfully fetched $link_count merger page(s)"
+else
+  # Some failed - xargs returns non-zero if any command failed
+  failed_count=$(grep -c "^FAILED:" "$failed_urls_file" 2>/dev/null || echo "0")
+  success_count=$((link_count - failed_count))
+
+  echo "Successfully fetched $success_count merger page(s)"
+
+  if [ "$failed_count" -gt 0 ]; then
+    echo "$failed_count merger page(s) unsuccessful:"
+    grep "^FAILED:" "$failed_urls_file" | sed 's/^FAILED: /- /'
+  fi
+fi
 
 # 6. Clean the downloaded files before committing
 clean_html

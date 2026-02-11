@@ -169,15 +169,11 @@ def download_attachment(merger_id, attachment_url, event_title=None):
             if filename is None:
                 print(f"Warning: Unsafe filename could not be sanitized: {original_filename}", file=sys.stderr)
                 return None
-            if filename != original_filename:
-                print(f"Note: Sanitized filename '{original_filename}' -> '{filename}'", file=sys.stderr)
 
         local_filepath = os.path.join(attachment_dir, filename)
 
         # Check if the file already exists before downloading
         if not os.path.exists(local_filepath):
-            print(f"Downloading new attachment for {merger_id}: {filename}", file=sys.stderr)
-
             # Download the file
             response = requests.get(attachment_url, stream=True)
             response.raise_for_status()  # Raise an exception for bad status codes
@@ -186,7 +182,6 @@ def download_attachment(merger_id, attachment_url, event_title=None):
             with open(local_filepath, 'wb') as f_out:
                 for chunk in response.iter_content(chunk_size=8192):
                     f_out.write(chunk)
-            print(f"Saved to {local_filepath}", file=sys.stderr)
 
         # Check if this is a determination PDF and parse it
         is_determination = (
@@ -196,10 +191,8 @@ def download_attachment(merger_id, attachment_url, event_title=None):
         )
 
         if is_determination and os.path.exists(local_filepath):
-            print(f"Parsing determination PDF: {filename}", file=sys.stderr)
             try:
                 determination_data = parse_determination_pdf(local_filepath)
-                print(f"Successfully parsed determination PDF: {filename}", file=sys.stderr)
             except Exception as e:
                 print(f"Error parsing determination PDF {filename}: {e}", file=sys.stderr)
                 determination_data = None
@@ -239,7 +232,6 @@ def parse_merger_file(filepath, existing_merger_data=None):
                       or None if parsing fails.
     """
     try:
-        print(f"Processing file: {filepath}...", file=sys.stderr)
         with open(filepath, 'r', encoding='utf-8') as f:
             html_content = f.read()
 
@@ -604,9 +596,6 @@ def enrich_with_questionnaire_data(mergers_data):
                     iso_date = q_data['deadline_iso']
                     consultation_datetime = f"{iso_date}T12:00:00Z"
                     merger['consultation_response_due_date'] = consultation_datetime
-
-                    print(f"Updated {matter_id} with consultation date: {consultation_datetime}",
-                          file=sys.stderr)
                     updates_made += 1
 
         if updates_made > 0:
