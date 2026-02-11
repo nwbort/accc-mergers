@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { formatDate } from '../utils/dates';
+import { isNewItem } from '../utils/lastVisit';
+import NewBadge from './NewBadge';
 
 function DeterminationBadge({ determination }) {
   const getStyle = () => {
@@ -24,7 +26,7 @@ function DeterminationBadge({ determination }) {
   );
 }
 
-function RecentDeterminationsTable({ determinations }) {
+function RecentDeterminationsTable({ determinations, lastVisit }) {
   if (!determinations || determinations.length === 0) {
     return (
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
@@ -68,13 +70,18 @@ function RecentDeterminationsTable({ determinations }) {
                 className="relative hover:bg-gray-100/70 transition-colors"
               >
                 <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
-                  <Link
-                    to={`/mergers/${item.merger_id}`}
-                    className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
-                    aria-label={`View merger details for ${item.merger_name}`}
-                  >
-                    {item.merger_name}
-                  </Link>
+                  <div className="flex items-start gap-2">
+                    <Link
+                      to={`/mergers/${item.merger_id}`}
+                      className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                      aria-label={`View merger details for ${item.merger_name}`}
+                    >
+                      {item.merger_name}
+                    </Link>
+                    {isNewItem(item.determination_date, lastVisit) && (
+                      <NewBadge />
+                    )}
+                  </div>
                   <div className="text-xs text-gray-400 mt-0.5 flex items-center gap-2">
                     <span>{item.merger_id}</span>
                     {item.is_waiver && (

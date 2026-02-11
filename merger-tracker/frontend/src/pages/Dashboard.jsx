@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Doughnut } from 'react-chartjs-2';
 import StatusBadge from '../components/StatusBadge';
+import NewBadge from '../components/NewBadge';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -20,6 +21,7 @@ import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
 import { dataCache } from '../utils/dataCache';
+import { getLastVisit, updateLastVisit, isNewItem } from '../utils/lastVisit';
 
 ChartJS.register(
   CategoryScale,
@@ -36,10 +38,23 @@ function Dashboard() {
   const [upcomingEvents, setUpcomingEvents] = useState(() => dataCache.get('dashboard-events') || null);
   const [loading, setLoading] = useState(() => !dataCache.has('dashboard-stats'));
   const [error, setError] = useState(null);
+  const [lastVisit, setLastVisit] = useState(() => getLastVisit());
 
   useEffect(() => {
     fetchStats();
     fetchUpcomingEvents();
+
+    // Update last visit timestamp when page is about to unload or component unmounts
+    const handleBeforeUnload = () => {
+      updateLastVisit();
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      updateLastVisit();
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
   }, []);
 
   const fetchStats = async () => {
@@ -189,7 +204,10 @@ function Dashboard() {
       {/* Recent Determinations */}
       {stats.recent_determinations && (
         <div className="mb-8">
-          <RecentDeterminationsTable determinations={stats.recent_determinations} />
+          <RecentDeterminationsTable
+            determinations={stats.recent_determinations}
+            lastVisit={lastVisit}
+          />
         </div>
       )}
 
@@ -214,6 +232,9 @@ function Dashboard() {
                       <p className="text-sm font-medium text-gray-900 break-words hover:text-primary transition-colors">
                         {merger.merger_name}
                       </p>
+                      {isNewItem(merger.effective_notification_datetime, lastVisit) && (
+                        <NewBadge />
+                      )}
                       {merger.is_waiver && (
                         <span
                           className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60"
