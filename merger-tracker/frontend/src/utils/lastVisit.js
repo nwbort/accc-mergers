@@ -28,5 +28,21 @@ export function isNewItem(itemDate, lastVisit) {
   }
 
   const itemDateTime = new Date(itemDate);
-  return itemDateTime > lastVisit;
+
+  // Normalize both dates to midnight UTC for date-only comparison
+  // This prevents issues where itemDate has a fixed time (e.g., 12pm UTC)
+  // and lastVisit has the actual visit time
+  const itemDateOnly = new Date(Date.UTC(
+    itemDateTime.getUTCFullYear(),
+    itemDateTime.getUTCMonth(),
+    itemDateTime.getUTCDate()
+  ));
+
+  const lastVisitDateOnly = new Date(Date.UTC(
+    lastVisit.getUTCFullYear(),
+    lastVisit.getUTCMonth(),
+    lastVisit.getUTCDate()
+  ));
+
+  return itemDateOnly > lastVisitDateOnly;
 }
