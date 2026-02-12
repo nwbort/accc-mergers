@@ -2,11 +2,11 @@
   "total_mergers": 29,
   "total_waivers": 21,
   "by_status": {
-    "Assessment completed": 14,
-    "Under assessment": 15
+    "Assessment completed": 15,
+    "Under assessment": 14
   },
   "by_determination": {
-    "Approved": 14,
+    "Approved": 15,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -14,7 +14,7 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 29.642857142857142,
+    "average_days": 29.133333333333333,
     "median_days": 25,
     "all_durations": [
       21,
@@ -30,10 +30,11 @@
       25,
       27,
       22,
+      22,
       50
     ],
-    "average_business_days": 18.642857142857142,
-    "median_business_days": 18,
+    "average_business_days": 18.466666666666665,
+    "median_business_days": 17,
     "all_business_durations": [
       16,
       16,
@@ -47,6 +48,7 @@
       17,
       17,
       19,
+      16,
       16,
       22
     ]
@@ -137,6 +139,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-75003",
+      "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
+      "determination": "Approved",
+      "determination_date": "2026-02-12T12:00:00Z",
+      "page_modified_datetime": "2026-02-12T17:10:36+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-01080",
       "merger_name": "L\u2019Or\u00e9al \u2013 Kering Beaut\u00e9",
       "determination": "Approved",
@@ -185,16 +197,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-25005",
-      "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
-      "determination": "Approved",
-      "determination_date": "2026-02-09T12:00:00Z",
-      "page_modified_datetime": "2026-02-09T17:36:29+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

@@ -1047,35 +1047,35 @@
     {
       "merger_id": "MN-75003",
       "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-01-21T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-02-12T12:00:00Z",
       "end_of_determination_period": "2026-03-05T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "44 078 881 473"
-        },
-        {
           "name": "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "36 003 184 889"
+        },
+        {
+          "name": "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "44 078 881 473"
         }
       ],
       "targets": [
         {
-          "name": "ANZ HOSPITALS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "14 631 014 938"
-        },
-        {
           "name": "HEALTHSCOPE OPERATIONS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "85 006 405 152"
+        },
+        {
+          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 146 342 814"
         },
         {
           "name": "HEALTHSCOPE NEWCO PTY LTD",
@@ -1083,9 +1083,9 @@
           "identifier": "80 092 450 274"
         },
         {
-          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "name": "ANZ HOSPITALS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "80 146 342 814"
+          "identifier": "14 631 014 938"
         }
       ],
       "other_parties": [
@@ -1100,12 +1100,12 @@
           "identifier": ""
         },
         {
-          "name": "Keith Crawford",
+          "name": "Matthew Caddy",
           "identifier_type": null,
           "identifier": ""
         },
         {
-          "name": "Matthew Caddy",
+          "name": "Keith Crawford",
           "identifier_type": null,
           "identifier": ""
         }
