@@ -235,16 +235,9 @@ function Industries() {
                     <tr id={`industry-details-${industry.code}`}>
                       <td colSpan="3" className="px-6 py-4 bg-gray-50/50">
                         <div className="space-y-2">
-                          <div className="flex items-center justify-between mb-3">
-                            <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">
-                              Mergers in this industry
-                            </p>
-                            {industryMergers.length > 6 && (
-                              <span className="text-xs text-gray-400">
-                                Showing {Math.min(6, industryMergers.length)} of {industryMergers.length} (scroll for more)
-                              </span>
-                            )}
-                          </div>
+                          <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
+                            Mergers in this industry
+                          </p>
                           <div className={`space-y-2 ${industryMergers.length > 6 ? 'max-h-[400px] overflow-y-auto pr-2' : ''}`}>
                             {industryMergers.map((merger) => (
                               <Link
@@ -253,24 +246,19 @@ function Industries() {
                                 className="block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
                                 aria-label={`View merger details for ${merger.merger_name}`}
                               >
-                                <div className="flex items-center justify-between">
-                                  <div className="flex items-center gap-2 min-w-0">
-                                    <span className="text-sm font-medium text-gray-900 truncate">
-                                      {merger.merger_name}
-                                    </span>
-                                    {merger.is_waiver && (
-                                      <span
-                                        className="flex-shrink-0 inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60"
-                                        role="status"
-                                        aria-label="Merger type: Waiver application"
-                                      >
-                                        Waiver
-                                      </span>
-                                    )}
-                                  </div>
-                                  <span className="text-xs text-gray-400 flex-shrink-0 ml-3">
-                                    {merger.merger_id}
+                                <div className="flex items-center gap-2 min-w-0">
+                                  <span className="text-sm font-medium text-gray-900 truncate">
+                                    {merger.merger_name}
                                   </span>
+                                  {merger.is_waiver && (
+                                    <span
+                                      className="flex-shrink-0 inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60"
+                                      role="status"
+                                      aria-label="Merger type: Waiver application"
+                                    >
+                                      Waiver
+                                    </span>
+                                  )}
                                 </div>
                                 <span className="text-xs text-gray-400 mt-1 block">
                                   {merger.status}
