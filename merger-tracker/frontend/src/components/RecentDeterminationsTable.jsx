@@ -26,7 +26,7 @@ function DeterminationBadge({ determination }) {
   );
 }
 
-function RecentDeterminationsTable({ determinations, lastVisit }) {
+function RecentDeterminationsTable({ determinations }) {
   if (!determinations || determinations.length === 0) {
     return (
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
@@ -78,7 +78,7 @@ function RecentDeterminationsTable({ determinations, lastVisit }) {
                     >
                       {item.merger_name}
                     </Link>
-                    {isNewItem(item.determination_date, lastVisit) && (
+                    {isNewItem(item.merger_id) && (
                       <NewBadge />
                     )}
                   </div>

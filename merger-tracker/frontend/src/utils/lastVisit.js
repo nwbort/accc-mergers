@@ -1,32 +1,77 @@
-const LAST_VISIT_KEY = 'dashboard_last_visit';
+const SEEN_ITEMS_KEY = 'dashboard_seen_items';
+const MAX_SEEN_ITEMS = 100; // Limit to prevent unbounded growth
 
 /**
- * Gets the last visit timestamp from localStorage
- * @returns {Date|null} The last visit date, or null if this is the first visit
+ * Gets the set of seen item IDs from localStorage
+ * @returns {Set<string>} Set of merger IDs that have been seen
  */
-export function getLastVisit() {
-  const lastVisit = localStorage.getItem(LAST_VISIT_KEY);
-  return lastVisit ? new Date(lastVisit) : null;
+export function getSeenItems() {
+  const seenItems = localStorage.getItem(SEEN_ITEMS_KEY);
+  return seenItems ? new Set(JSON.parse(seenItems)) : new Set();
 }
 
 /**
- * Updates the last visit timestamp in localStorage to the current time
+ * Prunes the seen items set to stay within MAX_SEEN_ITEMS limit
+ * Removes oldest items (from the beginning of the array) when limit is exceeded
+ * @param {Set<string>} seenItems - The current set of seen items
+ * @returns {Set<string>} The pruned set of seen items
  */
-export function updateLastVisit() {
-  localStorage.setItem(LAST_VISIT_KEY, new Date().toISOString());
-}
-
-/**
- * Checks if an item is new (created after the last visit)
- * @param {string} itemDate - The date string of the item
- * @param {Date|null} lastVisit - The last visit date
- * @returns {boolean} True if the item is new, false otherwise
- */
-export function isNewItem(itemDate, lastVisit) {
-  if (!lastVisit || !itemDate) {
-    return false;
+function pruneSeenItems(seenItems) {
+  if (seenItems.size <= MAX_SEEN_ITEMS) {
+    return seenItems;
   }
 
-  const itemDateTime = new Date(itemDate);
-  return itemDateTime > lastVisit;
+  // Convert to array, keep only the most recent MAX_SEEN_ITEMS entries
+  const itemsArray = [...seenItems];
+  const prunedArray = itemsArray.slice(-MAX_SEEN_ITEMS);
+  return new Set(prunedArray);
+}
+
+/**
+ * Marks a single item as seen
+ * @param {string} itemId - The merger ID to mark as seen
+ */
+export function markItemAsSeen(itemId) {
+  if (!itemId) return;
+
+  const seenItems = getSeenItems();
+  seenItems.add(itemId);
+
+  const prunedItems = pruneSeenItems(seenItems);
+  localStorage.setItem(SEEN_ITEMS_KEY, JSON.stringify([...prunedItems]));
+}
+
+/**
+ * Marks multiple items as seen
+ * @param {string[]} itemIds - Array of merger IDs to mark as seen
+ */
+export function markItemsAsSeen(itemIds) {
+  if (!itemIds || itemIds.length === 0) return;
+
+  const seenItems = getSeenItems();
+  itemIds.forEach(id => {
+    if (id) seenItems.add(id);
+  });
+
+  const prunedItems = pruneSeenItems(seenItems);
+  localStorage.setItem(SEEN_ITEMS_KEY, JSON.stringify([...prunedItems]));
+}
+
+/**
+ * Checks if an item is new (not yet seen by the user)
+ * @param {string} itemId - The merger ID to check
+ * @returns {boolean} True if the item has not been seen, false otherwise
+ */
+export function isNewItem(itemId) {
+  if (!itemId) return false;
+
+  const seenItems = getSeenItems();
+  return !seenItems.has(itemId);
+}
+
+/**
+ * Clears all seen items (useful for testing or reset)
+ */
+export function clearSeenItems() {
+  localStorage.removeItem(SEEN_ITEMS_KEY);
 }
