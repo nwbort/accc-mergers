@@ -21,7 +21,7 @@ import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
 import { dataCache } from '../utils/dataCache';
-import { getLastVisit, updateLastVisit, isNewItem } from '../utils/lastVisit';
+import { markItemsAsSeen, isNewItem } from '../utils/lastVisit';
 
 ChartJS.register(
   CategoryScale,
@@ -38,24 +38,42 @@ function Dashboard() {
   const [upcomingEvents, setUpcomingEvents] = useState(() => dataCache.get('dashboard-events') || null);
   const [loading, setLoading] = useState(() => !dataCache.has('dashboard-stats'));
   const [error, setError] = useState(null);
-  const [lastVisit, setLastVisit] = useState(() => getLastVisit());
 
   useEffect(() => {
     fetchStats();
     fetchUpcomingEvents();
 
-    // Update last visit timestamp when page is about to unload or component unmounts
+    // Mark items as seen when page is about to unload or component unmounts
     const handleBeforeUnload = () => {
-      updateLastVisit();
+      markCurrentItemsAsSeen();
     };
 
     window.addEventListener('beforeunload', handleBeforeUnload);
 
     return () => {
-      updateLastVisit();
+      markCurrentItemsAsSeen();
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
-  }, []);
+  }, [stats]);
+
+  const markCurrentItemsAsSeen = () => {
+    if (!stats) return;
+
+    const itemIds = [];
+
+    // Collect all merger IDs from recently notified mergers
+    if (stats.recent_mergers) {
+      itemIds.push(...stats.recent_mergers.map(m => m.merger_id));
+    }
+
+    // Collect all merger IDs from recent determinations
+    if (stats.recent_determinations) {
+      itemIds.push(...stats.recent_determinations.map(d => d.merger_id));
+    }
+
+    // Mark them all as seen
+    markItemsAsSeen(itemIds);
+  };
 
   const fetchStats = async () => {
     try {
@@ -206,7 +224,6 @@ function Dashboard() {
         <div className="mb-8">
           <RecentDeterminationsTable
             determinations={stats.recent_determinations}
-            lastVisit={lastVisit}
           />
         </div>
       )}
@@ -232,7 +249,7 @@ function Dashboard() {
                       <p className="text-sm font-medium text-gray-900 break-words hover:text-primary transition-colors">
                         {merger.merger_name}
                       </p>
-                      {isNewItem(merger.effective_notification_datetime, lastVisit) && (
+                      {isNewItem(merger.merger_id) && (
                         <NewBadge />
                       )}
                       {merger.is_waiver && (

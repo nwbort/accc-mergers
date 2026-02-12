@@ -1,48 +1,55 @@
-const LAST_VISIT_KEY = 'dashboard_last_visit';
+const SEEN_ITEMS_KEY = 'dashboard_seen_items';
 
 /**
- * Gets the last visit timestamp from localStorage
- * @returns {Date|null} The last visit date, or null if this is the first visit
+ * Gets the set of seen item IDs from localStorage
+ * @returns {Set<string>} Set of merger IDs that have been seen
  */
-export function getLastVisit() {
-  const lastVisit = localStorage.getItem(LAST_VISIT_KEY);
-  return lastVisit ? new Date(lastVisit) : null;
+export function getSeenItems() {
+  const seenItems = localStorage.getItem(SEEN_ITEMS_KEY);
+  return seenItems ? new Set(JSON.parse(seenItems)) : new Set();
 }
 
 /**
- * Updates the last visit timestamp in localStorage to the current time
+ * Marks a single item as seen
+ * @param {string} itemId - The merger ID to mark as seen
  */
-export function updateLastVisit() {
-  localStorage.setItem(LAST_VISIT_KEY, new Date().toISOString());
+export function markItemAsSeen(itemId) {
+  if (!itemId) return;
+
+  const seenItems = getSeenItems();
+  seenItems.add(itemId);
+  localStorage.setItem(SEEN_ITEMS_KEY, JSON.stringify([...seenItems]));
 }
 
 /**
- * Checks if an item is new (created after the last visit)
- * @param {string} itemDate - The date string of the item
- * @param {Date|null} lastVisit - The last visit date
- * @returns {boolean} True if the item is new, false otherwise
+ * Marks multiple items as seen
+ * @param {string[]} itemIds - Array of merger IDs to mark as seen
  */
-export function isNewItem(itemDate, lastVisit) {
-  if (!lastVisit || !itemDate) {
-    return false;
-  }
+export function markItemsAsSeen(itemIds) {
+  if (!itemIds || itemIds.length === 0) return;
 
-  const itemDateTime = new Date(itemDate);
+  const seenItems = getSeenItems();
+  itemIds.forEach(id => {
+    if (id) seenItems.add(id);
+  });
+  localStorage.setItem(SEEN_ITEMS_KEY, JSON.stringify([...seenItems]));
+}
 
-  // Normalize both dates to midnight UTC for date-only comparison
-  // This prevents issues where itemDate has a fixed time (e.g., 12pm UTC)
-  // and lastVisit has the actual visit time
-  const itemDateOnly = new Date(Date.UTC(
-    itemDateTime.getUTCFullYear(),
-    itemDateTime.getUTCMonth(),
-    itemDateTime.getUTCDate()
-  ));
+/**
+ * Checks if an item is new (not yet seen by the user)
+ * @param {string} itemId - The merger ID to check
+ * @returns {boolean} True if the item has not been seen, false otherwise
+ */
+export function isNewItem(itemId) {
+  if (!itemId) return false;
 
-  const lastVisitDateOnly = new Date(Date.UTC(
-    lastVisit.getUTCFullYear(),
-    lastVisit.getUTCMonth(),
-    lastVisit.getUTCDate()
-  ));
+  const seenItems = getSeenItems();
+  return !seenItems.has(itemId);
+}
 
-  return itemDateOnly > lastVisitDateOnly;
+/**
+ * Clears all seen items (useful for testing or reset)
+ */
+export function clearSeenItems() {
+  localStorage.removeItem(SEEN_ITEMS_KEY);
 }
