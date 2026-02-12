@@ -41,6 +41,9 @@ jobs:
 
           assignee_trigger: "claude-bot"
 
+          claude_ags: |
+            --allowedTools "Bash(npm:*),Bash(git:*)"  # Allows only npm and git commands
+
           # Optional: Configure Claude's behavior with CLI arguments
           # claude_args: |
           #   --model claude-opus-4-1-20250805
