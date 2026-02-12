@@ -43,11 +43,26 @@ function Industries() {
   };
 
   const getMergersForIndustry = (code, name) => {
-    return mergers.filter((merger) =>
+    const filtered = mergers.filter((merger) =>
       merger.anzsic_codes.some(
         (anzsic) => anzsic.code === code && anzsic.name === name
       )
     );
+
+    // Sort by most recent date (comparing determination and notification dates)
+    return filtered.sort((a, b) => {
+      const getLatestDate = (merger) => {
+        const dates = [
+          merger.determination_publication_date,
+          merger.effective_notification_datetime
+        ].filter(Boolean);
+
+        if (dates.length === 0) return new Date(0);
+        return new Date(Math.max(...dates.map(d => new Date(d).getTime())));
+      };
+
+      return getLatestDate(b) - getLatestDate(a); // Most recent first
+    });
   };
 
   const filteredIndustries = industries
@@ -143,7 +158,7 @@ function Industries() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-50">
-            {filteredIndustries.map((industry, idx) => {
+            {filteredIndustries.map((industry) => {
               const totalMergers = mergers.length;
               const percentage = (
                 (industry.merger_count / totalMergers) *
@@ -223,14 +238,14 @@ function Industries() {
                           <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
                             Mergers in this industry
                           </p>
-                          {industryMergers.map((merger) => (
-                            <Link
-                              key={merger.merger_id}
-                              to={`/mergers/${merger.merger_id}`}
-                              className="block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
-                              aria-label={`View merger details for ${merger.merger_name}`}
-                            >
-                              <div className="flex items-center justify-between">
+                          <div className={`space-y-2 ${industryMergers.length > 6 ? 'max-h-[400px] overflow-y-auto pr-2' : ''}`}>
+                            {industryMergers.map((merger) => (
+                              <Link
+                                key={merger.merger_id}
+                                to={`/mergers/${merger.merger_id}`}
+                                className="block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
+                                aria-label={`View merger details for ${merger.merger_name}`}
+                              >
                                 <div className="flex items-center gap-2 min-w-0">
                                   <span className="text-sm font-medium text-gray-900 truncate">
                                     {merger.merger_name}
@@ -245,15 +260,12 @@ function Industries() {
                                     </span>
                                   )}
                                 </div>
-                                <span className="text-xs text-gray-400 flex-shrink-0 ml-3">
-                                  {merger.merger_id}
+                                <span className="text-xs text-gray-400 mt-1 block">
+                                  {merger.status}
                                 </span>
-                              </div>
-                              <span className="text-xs text-gray-400 mt-1 block">
-                                {merger.status}
-                              </span>
-                            </Link>
-                          ))}
+                              </Link>
+                            ))}
+                          </div>
                         </div>
                       </td>
                     </tr>
