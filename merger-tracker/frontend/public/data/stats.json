@@ -1,6 +1,6 @@
 {
   "total_mergers": 29,
-  "total_waivers": 21,
+  "total_waivers": 22,
   "by_status": {
     "Assessment completed": 15,
     "Under assessment": 14
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 18,
+    "Approved": 19,
     "Not approved": 3
   },
   "phase_duration": {
@@ -139,6 +139,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-40004",
+      "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
+      "determination": "Approved",
+      "determination_date": "2026-02-12T12:00:00Z",
+      "page_modified_datetime": "2026-02-12T18:10:44+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-75003",
       "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
       "determination": "Approved",
@@ -184,16 +194,6 @@
       "determination": "Approved",
       "determination_date": "2026-02-10T12:00:00Z",
       "page_modified_datetime": "2026-02-10T15:42:30+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-01075",
-      "merger_name": "Thermo Fisher - Clario Holdings",
-      "determination": "Approved",
-      "determination_date": "2026-02-10T12:00:00Z",
-      "page_modified_datetime": "2026-02-10T12:44:10+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
