@@ -1,6 +1,6 @@
 {
   "total_mergers": 29,
-  "total_waivers": 22,
+  "total_waivers": 23,
   "by_status": {
     "Assessment completed": 15,
     "Under assessment": 14
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 19,
+    "Approved": 20,
     "Not approved": 3
   },
   "phase_duration": {
@@ -139,6 +139,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20005",
+      "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-02-12T12:00:00Z",
+      "page_modified_datetime": "2026-02-12T19:50:43+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-40004",
       "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
       "determination": "Approved",
@@ -187,16 +197,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-85002",
-      "merger_name": "ServiceNow - Veza",
-      "determination": "Approved",
-      "determination_date": "2026-02-10T12:00:00Z",
-      "page_modified_datetime": "2026-02-10T15:42:30+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
