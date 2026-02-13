@@ -9,6 +9,76 @@ import { API_ENDPOINTS } from '../config';
 import { formatDate } from '../utils/dates';
 import { dataCache } from '../utils/dataCache';
 
+// Full class names so Tailwind's scanner can detect them at build time.
+// Dynamic interpolation like `text-${colorKey}` gets purged.
+const COLOR_CLASSES = {
+  'new-merger': {
+    borderLeft: 'border-l-new-merger',
+    borderLight: 'border-new-merger-light/20',
+    headerBg: 'from-new-merger-pale/50',
+    emptyText: 'text-new-merger/70',
+    text: 'text-new-merger',
+    hoverText: 'hover:text-new-merger-dark',
+    cardFrom: 'from-new-merger-pale',
+    cardTo: 'to-new-merger-pale/50',
+    cardBorder: 'border-new-merger-light/30',
+    groupHoverText: 'group-hover:text-new-merger-dark',
+    labelText: 'text-new-merger-dark/80',
+  },
+  'cleared': {
+    borderLeft: 'border-l-cleared',
+    borderLight: 'border-cleared-light/20',
+    headerBg: 'from-cleared-pale/50',
+    emptyText: 'text-cleared/70',
+    text: 'text-cleared',
+    hoverText: 'hover:text-cleared-dark',
+    cardFrom: 'from-cleared-pale',
+    cardTo: 'to-cleared-pale/50',
+    cardBorder: 'border-cleared-light/30',
+    groupHoverText: 'group-hover:text-cleared-dark',
+    labelText: 'text-cleared-dark/80',
+  },
+  'declined': {
+    borderLeft: 'border-l-declined',
+    borderLight: 'border-declined-light/20',
+    headerBg: 'from-declined-pale/50',
+    emptyText: 'text-declined/70',
+    text: 'text-declined',
+    hoverText: 'hover:text-declined-dark',
+    cardFrom: 'from-declined-pale',
+    cardTo: 'to-declined-pale/50',
+    cardBorder: 'border-declined-light/30',
+    groupHoverText: 'group-hover:text-declined-dark',
+    labelText: 'text-declined-dark/80',
+  },
+  'phase-1': {
+    borderLeft: 'border-l-phase-1',
+    borderLight: 'border-phase-1-light/20',
+    headerBg: 'from-phase-1-pale/50',
+    emptyText: 'text-phase-1/70',
+    text: 'text-phase-1',
+    hoverText: 'hover:text-phase-1-dark',
+    cardFrom: 'from-phase-1-pale',
+    cardTo: 'to-phase-1-pale/50',
+    cardBorder: 'border-phase-1-light/30',
+    groupHoverText: 'group-hover:text-phase-1-dark',
+    labelText: 'text-phase-1-dark/80',
+  },
+  'phase-2': {
+    borderLeft: 'border-l-phase-2',
+    borderLight: 'border-phase-2-light/20',
+    headerBg: 'from-phase-2-pale/50',
+    emptyText: 'text-phase-2/70',
+    text: 'text-phase-2',
+    hoverText: 'hover:text-phase-2-dark',
+    cardFrom: 'from-phase-2-pale',
+    cardTo: 'to-phase-2-pale/50',
+    cardBorder: 'border-phase-2-light/30',
+    groupHoverText: 'group-hover:text-phase-2-dark',
+    labelText: 'text-phase-2-dark/80',
+  },
+};
+
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
@@ -29,9 +99,10 @@ function ScrollToTopButton() {
 }
 
 function DigestSection({ id, title, emptyMessage, colorKey, mergers, columns, renderRow }) {
+  const c = COLOR_CLASSES[colorKey];
   return (
-    <div id={id} className={`bg-white rounded-2xl border-l-4 border-l-${colorKey} border-t border-r border-b border-gray-100 shadow-card overflow-hidden`}>
-      <div className={`px-5 sm:px-6 py-4 border-b border-${colorKey}-light/20 bg-gradient-to-r from-${colorKey}-pale/50 to-transparent`}>
+    <div id={id} className={`bg-white rounded-2xl border-l-4 ${c.borderLeft} border-t border-r border-b border-gray-100 shadow-card overflow-hidden`}>
+      <div className={`px-5 sm:px-6 py-4 border-b ${c.borderLight} bg-gradient-to-r ${c.headerBg} to-transparent`}>
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
           <ScrollToTopButton />
@@ -39,7 +110,7 @@ function DigestSection({ id, title, emptyMessage, colorKey, mergers, columns, re
       </div>
       {mergers.length === 0 ? (
         <div className="px-5 sm:px-6 py-4">
-          <p className={`text-${colorKey}/70 text-sm`}>{emptyMessage}</p>
+          <p className={`${c.emptyText} text-sm`}>{emptyMessage}</p>
         </div>
       ) : (
         <div className="overflow-x-auto">
@@ -64,12 +135,13 @@ function DigestSection({ id, title, emptyMessage, colorKey, mergers, columns, re
 }
 
 function MergerNameCell({ merger, colorKey }) {
+  const c = COLOR_CLASSES[colorKey];
   return (
     <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
       <div className="flex items-start gap-2">
         <Link
           to={`/mergers/${merger.merger_id}`}
-          className={`text-${colorKey} hover:text-${colorKey}-dark font-medium transition-colors after:absolute after:inset-0`}
+          className={`${c.text} ${c.hoverText} font-medium transition-colors after:absolute after:inset-0`}
           aria-label={`View merger details for ${merger.merger_name}`}
         >
           {merger.merger_name}
@@ -84,6 +156,7 @@ function MergerNameCell({ merger, colorKey }) {
 }
 
 function DeterminationCell({ merger, colorKey, defaultDetermination, getDeterminationPdf }) {
+  const c = COLOR_CLASSES[colorKey];
   const pdfUrl = getDeterminationPdf(merger.events);
   const determination = merger.accc_determination || merger.phase_1_determination || merger.phase_2_determination || defaultDetermination;
   return (
@@ -93,7 +166,7 @@ function DeterminationCell({ merger, colorKey, defaultDetermination, getDetermin
           href={pdfUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-${colorKey} hover:text-${colorKey}-dark font-medium transition-colors relative z-10 inline-flex items-center gap-1`}
+          className={`${c.text} ${c.hoverText} font-medium transition-colors relative z-10 inline-flex items-center gap-1`}
           onClick={(e) => e.stopPropagation()}
         >
           {determination}
@@ -214,18 +287,21 @@ function Digest() {
 
         {/* Summary Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
-          {summaryCards.map(({ id, colorKey, count, label }) => (
-            <button
-              key={id}
-              onClick={() => scrollToSection(id)}
-              className={`bg-gradient-to-br from-${colorKey}-pale to-${colorKey}-pale/50 rounded-lg shadow-card border border-${colorKey}-light/30 p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group`}
-            >
-              <div className={`text-2xl font-bold text-${colorKey} group-hover:text-${colorKey}-dark transition-colors`}>
-                {count}
-              </div>
-              <div className={`text-sm text-${colorKey}-dark/80 font-medium`}>{label}</div>
-            </button>
-          ))}
+          {summaryCards.map(({ id, colorKey, count, label }) => {
+            const c = COLOR_CLASSES[colorKey];
+            return (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                className={`bg-gradient-to-br ${c.cardFrom} ${c.cardTo} rounded-lg shadow-card border ${c.cardBorder} p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group`}
+              >
+                <div className={`text-2xl font-bold ${c.text} ${c.groupHoverText} transition-colors`}>
+                  {count}
+                </div>
+                <div className={`text-sm ${c.labelText} font-medium`}>{label}</div>
+              </button>
+            );
+          })}
         </div>
 
         {/* Tables */}
