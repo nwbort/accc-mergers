@@ -40,8 +40,13 @@ function Dashboard() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetchStats();
-    fetchUpcomingEvents();
+    // Only fetch if not already cached
+    if (!dataCache.has('dashboard-stats')) {
+      fetchStats();
+    }
+    if (!dataCache.has('dashboard-events')) {
+      fetchUpcomingEvents();
+    }
 
     // Mark items as seen when page is about to unload or component unmounts
     const handleBeforeUnload = () => {
