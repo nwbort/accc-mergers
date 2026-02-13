@@ -95,20 +95,20 @@ function Digest() {
   const renderNewMergersTable = (mergers) => {
     if (mergers.length === 0) {
       return (
-        <div id="new-mergers" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+        <div id="new-mergers" className="bg-white rounded-2xl border-l-4 border-l-blue-500 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-blue-100 bg-gradient-to-r from-blue-50/50 to-transparent">
             <h2 className="text-lg font-semibold text-gray-900">New mergers</h2>
           </div>
           <div className="px-5 sm:px-6 py-4">
-            <p className="text-gray-500 text-sm">No new mergers this week</p>
+            <p className="text-blue-600/70 text-sm">No new mergers this week</p>
           </div>
         </div>
       );
     }
 
     return (
-      <div id="new-mergers" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+      <div id="new-mergers" className="bg-white rounded-2xl border-l-4 border-l-blue-500 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-blue-100 bg-gradient-to-r from-blue-50/50 to-transparent">
           <h2 className="text-lg font-semibold text-gray-900">New mergers</h2>
         </div>
         <div className="overflow-x-auto">
@@ -128,11 +128,11 @@ function Digest() {
             </thead>
             <tbody className="divide-y divide-gray-50">
               {mergers.map((merger) => (
-                <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                <tr key={merger.merger_id} className="relative hover:bg-blue-50/40 transition-colors">
                   <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                     <Link
                       to={`/mergers/${merger.merger_id}`}
-                      className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                      className="text-blue-600 hover:text-blue-700 font-medium transition-colors after:absolute after:inset-0"
                       aria-label={`View merger details for ${merger.merger_name}`}
                     >
                       {merger.merger_name}
@@ -163,20 +163,20 @@ function Digest() {
   const renderApprovedMergersTable = (mergers) => {
     if (mergers.length === 0) {
       return (
-        <div id="mergers-approved" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+        <div id="mergers-approved" className="bg-white rounded-2xl border-l-4 border-l-emerald-500 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-emerald-100 bg-gradient-to-r from-emerald-50/50 to-transparent">
             <h2 className="text-lg font-semibold text-gray-900">Mergers approved</h2>
           </div>
           <div className="px-5 sm:px-6 py-4">
-            <p className="text-gray-500 text-sm">No mergers approved this week</p>
+            <p className="text-emerald-600/70 text-sm">No mergers approved this week</p>
           </div>
         </div>
       );
     }
 
     return (
-      <div id="mergers-approved" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+      <div id="mergers-approved" className="bg-white rounded-2xl border-l-4 border-l-emerald-500 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-emerald-100 bg-gradient-to-r from-emerald-50/50 to-transparent">
           <h2 className="text-lg font-semibold text-gray-900">Mergers approved</h2>
         </div>
         <div className="overflow-x-auto">
@@ -199,12 +199,12 @@ function Digest() {
                 const pdfUrl = getDeterminationPdf(merger.events);
                 const determination = merger.accc_determination || merger.phase_1_determination || merger.phase_2_determination || 'Approved';
                 return (
-                  <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                  <tr key={merger.merger_id} className="relative hover:bg-emerald-50/40 transition-colors">
                     <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                       <div className="flex items-start gap-2">
                         <Link
                           to={`/mergers/${merger.merger_id}`}
-                          className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                          className="text-emerald-600 hover:text-emerald-700 font-medium transition-colors after:absolute after:inset-0"
                           aria-label={`View merger details for ${merger.merger_name}`}
                         >
                           {merger.merger_name}
@@ -230,7 +230,7 @@ function Digest() {
                           href={pdfUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary hover:text-primary-dark transition-colors relative z-10 inline-flex items-center gap-1"
+                          className="text-emerald-600 hover:text-emerald-700 font-medium transition-colors relative z-10 inline-flex items-center gap-1"
                           onClick={(e) => e.stopPropagation()}
                         >
                           {determination}
@@ -253,20 +253,20 @@ function Digest() {
   const renderDeclinedMergersTable = (mergers) => {
     if (mergers.length === 0) {
       return (
-        <div id="mergers-declined" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+        <div id="mergers-declined" className="bg-white rounded-2xl border-l-4 border-l-rose-500 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-rose-100 bg-gradient-to-r from-rose-50/50 to-transparent">
             <h2 className="text-lg font-semibold text-gray-900">Mergers declined</h2>
           </div>
           <div className="px-5 sm:px-6 py-4">
-            <p className="text-gray-500 text-sm">No mergers declined this week</p>
+            <p className="text-rose-600/70 text-sm">No mergers declined this week</p>
           </div>
         </div>
       );
     }
 
     return (
-      <div id="mergers-declined" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+      <div id="mergers-declined" className="bg-white rounded-2xl border-l-4 border-l-rose-500 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-rose-100 bg-gradient-to-r from-rose-50/50 to-transparent">
           <h2 className="text-lg font-semibold text-gray-900">Mergers declined</h2>
         </div>
         <div className="overflow-x-auto">
@@ -289,12 +289,12 @@ function Digest() {
                 const pdfUrl = getDeterminationPdf(merger.events);
                 const determination = merger.accc_determination || merger.phase_1_determination || merger.phase_2_determination || 'Not approved';
                 return (
-                  <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                  <tr key={merger.merger_id} className="relative hover:bg-rose-50/40 transition-colors">
                     <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                       <div className="flex items-start gap-2">
                         <Link
                           to={`/mergers/${merger.merger_id}`}
-                          className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                          className="text-rose-600 hover:text-rose-700 font-medium transition-colors after:absolute after:inset-0"
                           aria-label={`View merger details for ${merger.merger_name}`}
                         >
                           {merger.merger_name}
@@ -320,7 +320,7 @@ function Digest() {
                           href={pdfUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary hover:text-primary-dark transition-colors relative z-10 inline-flex items-center gap-1"
+                          className="text-rose-600 hover:text-rose-700 font-medium transition-colors relative z-10 inline-flex items-center gap-1"
                           onClick={(e) => e.stopPropagation()}
                         >
                           {determination}
@@ -343,20 +343,20 @@ function Digest() {
   const renderOngoingPhase1Table = (mergers) => {
     if (mergers.length === 0) {
       return (
-        <div id="ongoing-phase-1" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+        <div id="ongoing-phase-1" className="bg-white rounded-2xl border-l-4 border-l-amber-500 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-amber-100 bg-gradient-to-r from-amber-50/50 to-transparent">
             <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 1 - initial assessment</h2>
           </div>
           <div className="px-5 sm:px-6 py-4">
-            <p className="text-gray-500 text-sm">No ongoing phase 1 mergers</p>
+            <p className="text-amber-600/70 text-sm">No ongoing phase 1 mergers</p>
           </div>
         </div>
       );
     }
 
     return (
-      <div id="ongoing-phase-1" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+      <div id="ongoing-phase-1" className="bg-white rounded-2xl border-l-4 border-l-amber-500 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-amber-100 bg-gradient-to-r from-amber-50/50 to-transparent">
           <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 1 - initial assessment</h2>
         </div>
         <div className="overflow-x-auto">
@@ -379,11 +379,11 @@ function Digest() {
             </thead>
             <tbody className="divide-y divide-gray-50">
               {mergers.map((merger) => (
-                <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                <tr key={merger.merger_id} className="relative hover:bg-amber-50/40 transition-colors">
                   <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                     <Link
                       to={`/mergers/${merger.merger_id}`}
-                      className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                      className="text-amber-600 hover:text-amber-700 font-medium transition-colors after:absolute after:inset-0"
                       aria-label={`View merger details for ${merger.merger_name}`}
                     >
                       {merger.merger_name}
@@ -419,20 +419,20 @@ function Digest() {
   const renderOngoingPhase2Table = (mergers) => {
     if (mergers.length === 0) {
       return (
-        <div id="ongoing-phase-2" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+        <div id="ongoing-phase-2" className="bg-white rounded-2xl border-l-4 border-l-purple-500 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-purple-100 bg-gradient-to-r from-purple-50/50 to-transparent">
             <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 2 - detailed assessment</h2>
           </div>
           <div className="px-5 sm:px-6 py-4">
-            <p className="text-gray-500 text-sm">No ongoing phase 2 mergers</p>
+            <p className="text-purple-600/70 text-sm">No ongoing phase 2 mergers</p>
           </div>
         </div>
       );
     }
 
     return (
-      <div id="ongoing-phase-2" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
+      <div id="ongoing-phase-2" className="bg-white rounded-2xl border-l-4 border-l-purple-500 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-purple-100 bg-gradient-to-r from-purple-50/50 to-transparent">
           <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 2 - detailed assessment</h2>
         </div>
         <div className="overflow-x-auto">
@@ -455,11 +455,11 @@ function Digest() {
             </thead>
             <tbody className="divide-y divide-gray-50">
               {mergers.map((merger) => (
-                <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                <tr key={merger.merger_id} className="relative hover:bg-purple-50/40 transition-colors">
                   <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                     <Link
                       to={`/mergers/${merger.merger_id}`}
-                      className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                      className="text-purple-600 hover:text-purple-700 font-medium transition-colors after:absolute after:inset-0"
                       aria-label={`View merger details for ${merger.merger_name}`}
                     >
                       {merger.merger_name}
@@ -518,48 +518,48 @@ function Digest() {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
           <button
             onClick={() => scrollToSection('new-mergers')}
-            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+            className="bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-lg shadow-card border border-blue-200/50 p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group"
           >
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-2xl font-bold text-blue-600 group-hover:text-blue-700 transition-colors">
               {digest.new_deals_notified.length}
             </div>
-            <div className="text-sm text-gray-600">New deals notified</div>
+            <div className="text-sm text-blue-700/80 font-medium">New deals notified</div>
           </button>
           <button
             onClick={() => scrollToSection('mergers-approved')}
-            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+            className="bg-gradient-to-br from-emerald-50 to-emerald-100/50 rounded-lg shadow-card border border-emerald-200/50 p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group"
           >
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-2xl font-bold text-emerald-600 group-hover:text-emerald-700 transition-colors">
               {digest.deals_cleared.length}
             </div>
-            <div className="text-sm text-gray-600">Deals cleared</div>
+            <div className="text-sm text-emerald-700/80 font-medium">Deals cleared</div>
           </button>
           <button
             onClick={() => scrollToSection('mergers-declined')}
-            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+            className="bg-gradient-to-br from-rose-50 to-rose-100/50 rounded-lg shadow-card border border-rose-200/50 p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group"
           >
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-2xl font-bold text-rose-600 group-hover:text-rose-700 transition-colors">
               {digest.deals_declined.length}
             </div>
-            <div className="text-sm text-gray-600">Deals declined</div>
+            <div className="text-sm text-rose-700/80 font-medium">Deals declined</div>
           </button>
           <button
             onClick={() => scrollToSection('ongoing-phase-1')}
-            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+            className="bg-gradient-to-br from-amber-50 to-amber-100/50 rounded-lg shadow-card border border-amber-200/50 p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group"
           >
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-2xl font-bold text-amber-600 group-hover:text-amber-700 transition-colors">
               {digest.ongoing_phase_1.length}
             </div>
-            <div className="text-sm text-gray-600">Ongoing phase 1</div>
+            <div className="text-sm text-amber-700/80 font-medium">Ongoing phase 1</div>
           </button>
           <button
             onClick={() => scrollToSection('ongoing-phase-2')}
-            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+            className="bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-lg shadow-card border border-purple-200/50 p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group"
           >
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-2xl font-bold text-purple-600 group-hover:text-purple-700 transition-colors">
               {digest.ongoing_phase_2.length}
             </div>
-            <div className="text-sm text-gray-600">Ongoing phase 2</div>
+            <div className="text-sm text-purple-700/80 font-medium">Ongoing phase 2</div>
           </button>
         </div>
 
