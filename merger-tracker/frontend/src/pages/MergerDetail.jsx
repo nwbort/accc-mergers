@@ -10,6 +10,7 @@ import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import { useTracking } from '../context/TrackingContext';
 import { formatDate, calculateDuration, getDaysRemaining, calculateBusinessDays, getBusinessDaysRemaining } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
+import { PROSE_MARKDOWN } from '../utils/classNames';
 
 function MergerDetail() {
   const { id } = useParams();
@@ -335,7 +336,7 @@ function MergerDetail() {
             <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
               Description
             </h2>
-            <div className="prose-markdown">
+            <div className={PROSE_MARKDOWN}>
               <ReactMarkdown>{merger.merger_description}</ReactMarkdown>
             </div>
           </div>
@@ -355,7 +356,7 @@ function MergerDetail() {
                   Commentary
                 </h2>
                 {merger.commentary.commentary && (
-                  <div className="prose-markdown">
+                  <div className={PROSE_MARKDOWN}>
                     <ReactMarkdown>{merger.commentary.commentary}</ReactMarkdown>
                   </div>
                 )}

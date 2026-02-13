@@ -9,6 +9,7 @@ import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
+import { PROSE_MARKDOWN } from '../utils/classNames';
 
 function Commentary() {
   const [items, setItems] = useState(() => dataCache.get('commentary-items') || []);
@@ -111,7 +112,7 @@ function Commentary() {
                   </div>
                   <div className="flex-1 min-w-0">
                     {item.commentary && (
-                      <div className="prose-markdown">
+                      <div className={PROSE_MARKDOWN}>
                         <ReactMarkdown>{item.commentary}</ReactMarkdown>
                       </div>
                     )}
