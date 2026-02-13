@@ -1,6 +1,6 @@
 {
   "total_mergers": 31,
-  "total_waivers": 23,
+  "total_waivers": 24,
   "by_status": {
     "Assessment completed": 15,
     "Under assessment": 16
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 20,
+    "Approved": 21,
     "Not approved": 3
   },
   "phase_duration": {
@@ -139,6 +139,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-65004",
+      "merger_name": "Kee Safety - RIS Safety",
+      "determination": "Approved",
+      "determination_date": "2026-02-13T12:00:00Z",
+      "page_modified_datetime": "2026-02-13T17:48:41+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-20005",
       "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
       "determination": "Approved",
@@ -187,16 +197,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-55004",
-      "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
-      "determination": "Approved",
-      "determination_date": "2026-02-10T12:00:00Z",
-      "page_modified_datetime": "2026-02-10T16:00:35+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
