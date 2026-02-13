@@ -54,7 +54,7 @@ function Dashboard() {
       markCurrentItemsAsSeen();
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
-  }, [stats]);
+  }, []);
 
   const markCurrentItemsAsSeen = () => {
     if (!stats) return;
