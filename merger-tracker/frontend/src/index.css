@@ -58,6 +58,18 @@ code {
   background: linear-gradient(90deg, #335145, #10b981);
 }
 
+/* Prose styles for rendered markdown content */
+@layer components {
+  .prose-markdown {
+    @apply text-gray-600 prose prose-sm max-w-none leading-relaxed;
+  }
+  .prose-markdown > p { @apply mb-4; }
+  .prose-markdown > ul { @apply mb-4 list-disc pl-5; }
+  .prose-markdown > ul > li { @apply mb-2; }
+  .prose-markdown > ol { @apply mb-4 list-decimal pl-5; }
+  .prose-markdown > ol > li { @apply mb-2; }
+}
+
 /* Smooth transitions for interactive elements */
 @layer utilities {
   .transition-smooth {

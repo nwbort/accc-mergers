@@ -1,6 +1,7 @@
 import { useState, useEffect, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
+import WaiverBadge from '../components/WaiverBadge';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
@@ -250,15 +251,7 @@ function Industries() {
                                   <span className="text-sm font-medium text-gray-900 truncate">
                                     {merger.merger_name}
                                   </span>
-                                  {merger.is_waiver && (
-                                    <span
-                                      className="flex-shrink-0 inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60"
-                                      role="status"
-                                      aria-label="Merger type: Waiver application"
-                                    >
-                                      Waiver
-                                    </span>
-                                  )}
+                                  {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
                                 </div>
                                 <span className="text-xs text-gray-400 mt-1 block">
                                   {merger.status}

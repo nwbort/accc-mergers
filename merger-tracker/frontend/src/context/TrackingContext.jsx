@@ -13,6 +13,17 @@ const getEventKey = (event) => {
   return `${event.merger_id}_${event.date}_${event.title || event.display_title || event.type}`;
 };
 
+// Deduplicate events by their event key
+const dedupeEvents = (events) => {
+  const seen = new Set();
+  return events.filter((event) => {
+    const key = getEventKey(event);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+};
+
 export function TrackingProvider({ children }) {
   const [trackedMergerIds, setTrackedMergerIds] = useState(() => {
     try {
@@ -167,38 +178,20 @@ export function TrackingProvider({ children }) {
     return seenEventKeys.includes(key);
   }, [seenEventKeys]);
 
-  // Get unseen events (combines timeline and upcoming, removes duplicates)
-  const unseenEvents = useMemo(() => {
-    const allEvents = [...timelineEvents, ...upcomingEvents];
-    // Dedupe by event key
-    const seen = new Set();
-    const unique = allEvents.filter((event) => {
-      const key = getEventKey(event);
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
-    // Filter to unseen only
-    return unique.filter((event) => !seenEventKeys.includes(getEventKey(event)));
-  }, [timelineEvents, upcomingEvents, seenEventKeys]);
-
-  // Count of unseen events (for badge)
-  const unseenCount = unseenEvents.length;
-
-  // All events for tracked mergers (for notification panel)
+  // All unique events for tracked mergers (for notification panel)
   const trackedEvents = useMemo(() => {
-    const allEvents = [...timelineEvents, ...upcomingEvents];
-    // Dedupe by event key
-    const seen = new Set();
-    const unique = allEvents.filter((event) => {
-      const key = getEventKey(event);
-      if (seen.has(key)) return false;
-      seen.add(key);
-      return true;
-    });
+    const unique = dedupeEvents([...timelineEvents, ...upcomingEvents]);
     // Sort by date descending (most recent first)
     return unique.sort((a, b) => new Date(b.date) - new Date(a.date));
   }, [timelineEvents, upcomingEvents]);
+
+  // Get unseen events (subset of trackedEvents)
+  const unseenEvents = useMemo(() => {
+    return trackedEvents.filter((event) => !seenEventKeys.includes(getEventKey(event)));
+  }, [trackedEvents, seenEventKeys]);
+
+  // Count of unseen events (for badge)
+  const unseenCount = unseenEvents.length;
 
   const value = useMemo(() => ({
     trackedMergerIds,

@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
 import BellIcon from '../components/BellIcon';
+import WaiverBadge from '../components/WaiverBadge';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
@@ -384,15 +385,7 @@ function Mergers() {
                       <h3 className="text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
                         {merger.merger_name}
                       </h3>
-                      {merger.is_waiver && (
-                        <span
-                          className="flex-shrink-0 inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60"
-                          role="status"
-                          aria-label="Merger type: Waiver application"
-                        >
-                          Waiver
-                        </span>
-                      )}
+                      {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
                     </div>
                     <p className="text-xs text-gray-400 mt-1">
                       {merger.merger_id} · {merger.stage || 'N/A'}

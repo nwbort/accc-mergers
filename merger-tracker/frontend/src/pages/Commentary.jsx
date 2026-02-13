@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
+import WaiverBadge from '../components/WaiverBadge';
+import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
@@ -67,15 +69,7 @@ function Commentary() {
                       >
                         {item.merger_name}
                       </Link>
-                      {item.is_waiver && (
-                        <span
-                          className="flex-shrink-0 inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60"
-                          role="status"
-                          aria-label="Merger type: Waiver application"
-                        >
-                          Waiver
-                        </span>
-                      )}
+                      {item.is_waiver && <WaiverBadge className="flex-shrink-0" />}
                     </div>
                     <p className="text-xs text-gray-400 mt-1">
                       {item.merger_id} · {item.stage || 'N/A'} · {item.is_waiver ? 'Applied' : 'Notified'}: {formatDate(item.effective_notification_datetime)}
@@ -91,9 +85,7 @@ function Commentary() {
                               aria-label="View determination document"
                             >
                               Determined: {formatDate(item.determination_publication_date)}
-                              <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                              </svg>
+                              <ExternalLinkIcon className="h-3 w-3" />
                             </a>
                           ) : (
                             `Determined: ${formatDate(item.determination_publication_date)}`
@@ -119,7 +111,7 @@ function Commentary() {
                   </div>
                   <div className="flex-1 min-w-0">
                     {item.commentary && (
-                      <div className="text-gray-600 prose prose-sm max-w-none leading-relaxed [&>p]:mb-4 [&>ul]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:mb-2 [&>ol]:mb-4 [&>ol]:list-decimal [&>ol]:pl-5 [&>ol>li]:mb-2">
+                      <div className="prose-markdown">
                         <ReactMarkdown>{item.commentary}</ReactMarkdown>
                       </div>
                     )}

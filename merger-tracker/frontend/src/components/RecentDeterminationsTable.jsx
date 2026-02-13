@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { formatDate } from '../utils/dates';
 import { isNewItem } from '../utils/lastVisit';
 import NewBadge from './NewBadge';
+import WaiverBadge from './WaiverBadge';
 
 function DeterminationBadge({ determination }) {
   const getStyle = () => {
@@ -84,11 +85,7 @@ function RecentDeterminationsTable({ determinations }) {
                   </div>
                   <div className="text-xs text-gray-400 mt-0.5 flex items-center gap-2">
                     <span>{item.merger_id}</span>
-                    {item.is_waiver && (
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60">
-                        Waiver
-                      </span>
-                    )}
+                    {item.is_waiver && <WaiverBadge />}
                   </div>
                 </td>
                 <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
