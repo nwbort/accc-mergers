@@ -1,9 +1,9 @@
 {
-  "total_mergers": 30,
+  "total_mergers": 31,
   "total_waivers": 23,
   "by_status": {
     "Assessment completed": 15,
-    "Under assessment": 15
+    "Under assessment": 16
   },
   "by_determination": {
     "Approved": 15,
@@ -97,6 +97,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-95001",
+      "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-13T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-95003",
       "merger_name": "CVS Group - Pittwater Animal Hospital",
       "status": "Under assessment",
@@ -123,14 +131,6 @@
     {
       "merger_id": "MN-30003",
       "merger_name": "MicroStar Logistics - Konvoy",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-06T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-80002",
-      "merger_name": "Bain Capital \u2013 MCJ",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-06T12:00:00Z",
