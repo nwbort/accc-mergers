@@ -1,6 +1,6 @@
 {
   "total_mergers": 31,
-  "total_waivers": 24,
+  "total_waivers": 26,
   "by_status": {
     "Assessment completed": 15,
     "Under assessment": 16
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 21,
+    "Approved": 23,
     "Not approved": 3
   },
   "phase_duration": {
@@ -56,7 +56,7 @@
   "top_industries": [
     {
       "name": "Computer System Design and Related Services",
-      "count": 11
+      "count": 12
     },
     {
       "name": "Software Publishing",
@@ -91,7 +91,7 @@
       "count": 2
     },
     {
-      "name": "Petroleum Refining and Petroleum Fuel Manufacturing",
+      "name": "Land Development and Subdivision",
       "count": 2
     }
   ],
@@ -139,6 +139,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-10002",
+      "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
+      "determination": "Approved",
+      "determination_date": "2026-02-13T12:00:00Z",
+      "page_modified_datetime": "2026-02-13T18:31:05+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-15003",
+      "merger_name": "Coforge - Encora",
+      "determination": "Approved",
+      "determination_date": "2026-02-13T12:00:00Z",
+      "page_modified_datetime": "2026-02-13T18:15:28+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-65004",
       "merger_name": "Kee Safety - RIS Safety",
       "determination": "Approved",
@@ -174,26 +194,6 @@
       "determination": "Approved",
       "determination_date": "2026-02-12T12:00:00Z",
       "page_modified_datetime": "2026-02-12T17:10:36+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-01080",
-      "merger_name": "L\u2019Or\u00e9al \u2013 Kering Beaut\u00e9",
-      "determination": "Approved",
-      "determination_date": "2026-02-11T12:00:00Z",
-      "page_modified_datetime": "2026-02-11T09:29:05+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-75002",
-      "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
-      "determination": "Approved",
-      "determination_date": "2026-02-10T12:00:00Z",
-      "page_modified_datetime": "2026-02-10T16:24:51+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

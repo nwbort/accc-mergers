@@ -1673,6 +1673,114 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kkr-led-consortium-%E2%80%93-saviynt"
     },
     {
+      "merger_id": "WA-10002",
+      "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-15T12:00:00Z",
+      "determination_publication_date": "2026-02-13T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "SMLLP ASSET PTY LTD (as trustee for the SMLLP Evergreen Trust)",
+          "identifier_type": "ABN",
+          "identifier": "84 693 264 649"
+        },
+        {
+          "name": "SMLLP SUB PTY LTD (as trustee of the SMLLP Development Sub Trust)",
+          "identifier_type": "ABN",
+          "identifier": "92 693 263 875"
+        }
+      ],
+      "targets": [
+        {
+          "name": "STOCKLAND LAND LEASE MANAGEMENT PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "31 639 714 453"
+        },
+        {
+          "name": "Stockland LLC No. 2 Pty Ltd (as trustee for the Stockland LLC St Germain Trust)",
+          "identifier_type": "ACN",
+          "identifier": "651 781 556"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "STOCKLAND CORPORATION LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 000 181 733"
+        },
+        {
+          "name": "Stockland Trust (ARSN 092 897 348)",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3211",
+          "name": "Land Development and Subdivision"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/stockland-llc-%E2%80%93-intragroup-transfer-of-halcyon-jardin-and-evergreen-projects"
+    },
+    {
+      "merger_id": "WA-15003",
+      "merger_name": "Coforge - Encora",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-21T12:00:00Z",
+      "determination_publication_date": "2026-02-13T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Coforge Limited",
+          "identifier_type": null,
+          "identifier": "L72100HR1992PLC128382"
+        },
+        {
+          "name": "Encora Holdco Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Al Altius Parent (Cayman) Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Encora US Holdco, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Encora Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Advent International, L.P.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coforge-encora"
+    },
+    {
       "merger_id": "WA-20003",
       "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
       "status": "Assessment completed",
