@@ -634,8 +634,8 @@
       "targets": [
         {
           "name": "Confluent, Inc.",
-          "identifier_type": null,
-          "identifier": ""
+          "identifier_type": "ACN",
+          "identifier": ": 624104141"
         }
       ],
       "other_parties": [],
@@ -1470,6 +1470,55 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/abbott-laboratories-exact-sciences"
+    },
+    {
+      "merger_id": "MN-95003",
+      "merger_name": "CVS Group - Pittwater Animal Hospital",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-02-13T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-03-30T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "35 667 654 686"
+        }
+      ],
+      "targets": [
+        {
+          "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 001 336 723"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "SAH NORTHERN BEACHES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 689 321 837"
+        },
+        {
+          "name": "CVS (AUSTRALIA) HOLDINGS PROPRIETARY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "25 667 652 520"
+        },
+        {
+          "name": "SAH AVALON PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "46 689 321 793"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvs-group-pittwater-animal-hospital"
     },
     {
       "merger_id": "WA-01081",

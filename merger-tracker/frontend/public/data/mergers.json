@@ -1487,7 +1487,7 @@
       "effective_notification_datetime": "2026-02-04T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-03-19T12:00:00Z",
-      "page_modified_datetime": "2026-02-05T11:53:26+11:00",
+      "page_modified_datetime": "2026-02-12T18:04:46+11:00",
       "consultation_response_due_date": "2026-02-12T12:00:00Z",
       "acquirers": [
         {
@@ -1499,8 +1499,8 @@
       "targets": [
         {
           "name": "Confluent, Inc.",
-          "identifier_type": null,
-          "identifier": ""
+          "identifier_type": "ACN",
+          "identifier": ": 624104141"
         }
       ],
       "other_parties": [],
@@ -1522,7 +1522,7 @@
           "display_title": "Questionnaire - IBM-Confluent",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IBM%20-%20Confluent%20-%20Questionnaire.docx",
           "url_gh": "/matters/MN-10001/IBM - Confluent - Questionnaire.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
@@ -2783,6 +2783,80 @@
         },
         {
           "date": "2026-02-02T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvs-group-pittwater-animal-hospital",
+      "merger_name": "CVS Group - Pittwater Animal Hospital",
+      "status": "Under assessment",
+      "merger_id": "MN-95003",
+      "effective_notification_datetime": "2026-02-13T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-03-30T12:00:00Z",
+      "page_modified_datetime": "2026-02-13T12:12:12+11:00",
+      "consultation_response_due_date": "2026-02-20T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "35 667 654 686"
+        }
+      ],
+      "targets": [
+        {
+          "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 001 336 723"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "SAH NORTHERN BEACHES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 689 321 837"
+        },
+        {
+          "name": "CVS (AUSTRALIA) HOLDINGS PROPRIETARY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "25 667 652 520"
+        },
+        {
+          "name": "SAH AVALON PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "46 689 321 793"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        }
+      ],
+      "merger_description": "CVS Vets (Australia) Pty Ltd, a wholly owned subsidiary of CVS (Australia) Holdings Pty Ltd which is part of CVS Group Plc (together, CVS Group) proposes to acquire 100% of the shares of Pittwater Animal Hospital, a small animal veterinary practice in Warriewood in Sydney's Northern Beaches region (the Acquisition).\n\nCVS Group is an integrated veterinary services provider based in the United Kingdom, and listed on the London Stock Exchange. In Australia, CVS Group owns a number of veterinary practices in Queensland, New South Wales, the Australian Capital Territory, Victoria, South Australia and Western Australia. CVS Group owns a number of veterinary practices in metropolitan Sydney, including holding a majority interest in Sydney Animal Hospitals (SAH). SAH operates two clinics in the Northern Beaches region, SAH Newport and SAH Avalon.\n\nCVS Group and Pittwater Animal Hospital both supply small animal veterinary services in the Northern Beaches region on the fringes of metropolitan Sydney. Small animal veterinary practices attend to small animals (such as cats, dogs, guinea pigs, birds, rabbits and other pets), rather than larger animals such as cattle, sheep and horses, and offer services such as consultation, general and preventative health care/advice, surgery, microchipping, dentistry, radiology, pathology, pharmacy and related services such as puppy school.\n\nThere are no vertical overlaps between the parties.",
+      "events": [
+        {
+          "date": "2026-02-13T12:00:00Z",
+          "title": "CVS / Pittwater Animal Hospital - Questionnaire",
+          "display_title": "CVS / Pittwater Animal Hospital - Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CVS%20-%20Pittwater%20-%20Questionnaire.docx",
+          "url_gh": "/matters/MN-95003/CVS - Pittwater - Questionnaire.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-02-13T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
