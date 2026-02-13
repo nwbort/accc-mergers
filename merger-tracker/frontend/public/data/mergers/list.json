@@ -1435,6 +1435,63 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/north-american-construction-group-%E2%80%93-iron-mine-contracting"
     },
     {
+      "merger_id": "MN-95001",
+      "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-02-13T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-03-30T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Sembcorp Industries Ltd",
+          "identifier_type": null,
+          "identifier": "SG1R50925390 (Singapore ISIN Code)"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Pioneer Sail Holdings Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "45 617 844 569"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "26",
+          "name": "Electricity Supply"
+        },
+        {
+          "code": "261",
+          "name": "Electricity Generation"
+        },
+        {
+          "code": "2611",
+          "name": "Fossil Fuel Electricity Generation"
+        },
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        },
+        {
+          "code": "2640",
+          "name": "On Selling Electricity and Electricity Market Operation"
+        },
+        {
+          "code": "27",
+          "name": "Gas Supply"
+        },
+        {
+          "code": "2700",
+          "name": "Gas Supply"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sembcorp-industries-ltd-alinta-energy"
+    },
+    {
       "merger_id": "MN-95002",
       "merger_name": "Abbott Laboratories - Exact Sciences",
       "status": "Under assessment",
@@ -1614,6 +1671,114 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kkr-led-consortium-%E2%80%93-saviynt"
+    },
+    {
+      "merger_id": "WA-10002",
+      "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-15T12:00:00Z",
+      "determination_publication_date": "2026-02-13T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "SMLLP ASSET PTY LTD (as trustee for the SMLLP Evergreen Trust)",
+          "identifier_type": "ABN",
+          "identifier": "84 693 264 649"
+        },
+        {
+          "name": "SMLLP SUB PTY LTD (as trustee of the SMLLP Development Sub Trust)",
+          "identifier_type": "ABN",
+          "identifier": "92 693 263 875"
+        }
+      ],
+      "targets": [
+        {
+          "name": "STOCKLAND LAND LEASE MANAGEMENT PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "31 639 714 453"
+        },
+        {
+          "name": "Stockland LLC No. 2 Pty Ltd (as trustee for the Stockland LLC St Germain Trust)",
+          "identifier_type": "ACN",
+          "identifier": "651 781 556"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "STOCKLAND CORPORATION LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 000 181 733"
+        },
+        {
+          "name": "Stockland Trust (ARSN 092 897 348)",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3211",
+          "name": "Land Development and Subdivision"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/stockland-llc-%E2%80%93-intragroup-transfer-of-halcyon-jardin-and-evergreen-projects"
+    },
+    {
+      "merger_id": "WA-15003",
+      "merger_name": "Coforge - Encora",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-21T12:00:00Z",
+      "determination_publication_date": "2026-02-13T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Coforge Limited",
+          "identifier_type": null,
+          "identifier": "L72100HR1992PLC128382"
+        },
+        {
+          "name": "Encora Holdco Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Al Altius Parent (Cayman) Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Encora US Holdco, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Encora Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Advent International, L.P.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coforge-encora"
     },
     {
       "merger_id": "WA-20003",
@@ -2338,6 +2503,88 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/henkel-%E2%80%93-atp-adhesive-systems-group"
+    },
+    {
+      "merger_id": "WA-65004",
+      "merger_name": "Kee Safety - RIS Safety",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-02T12:00:00Z",
+      "determination_publication_date": "2026-02-13T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Cielo TopCo Limited",
+          "identifier_type": null,
+          "identifier": "CRN  16320933"
+        },
+        {
+          "name": "Kee Safety (Australia) Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "694 369 116"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HALLWELD BENNETT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "15 161 086 595"
+        },
+        {
+          "name": "RIS SAFETY HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "19 668 836 351"
+        },
+        {
+          "name": "RTO SAFETY TRAINING PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "89 164 524 994"
+        },
+        {
+          "name": "RISSAFETY ENTERPRISES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "62 152 879 082"
+        },
+        {
+          "name": "RISSAFETY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "46 008 445 458"
+        },
+        {
+          "name": "W.C. SALES PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "13 067 394 281"
+        },
+        {
+          "name": "Sydney Safety Training Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "12 158 377 532"
+        },
+        {
+          "name": "SST VILLAWOOD PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 649 992 487"
+        },
+        {
+          "name": "SAFETY TRAINING GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 158 347 490"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3019",
+          "name": "Other Residential Building Construction"
+        },
+        {
+          "code": "3020",
+          "name": "Non-Residential Building Construction"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kee-safety-ris-safety"
     },
     {
       "merger_id": "WA-70002",
