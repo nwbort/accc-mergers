@@ -92,24 +92,52 @@ function Digest() {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const renderNewMergersTable = (mergers) => {
     if (mergers.length === 0) {
       return (
-        <div id="new-mergers" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
-            <h2 className="text-lg font-semibold text-gray-900">New mergers</h2>
+        <div id="new-mergers" className="bg-white rounded-2xl border-l-4 border-l-new-merger border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-new-merger-light/20 bg-gradient-to-r from-new-merger-pale/50 to-transparent">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-semibold text-gray-900">New mergers</h2>
+              <button
+                onClick={scrollToTop}
+                className="p-1 text-gray-400 hover:text-gray-600 transition-all"
+                aria-label="Scroll to top"
+                title="Back to top"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+                </svg>
+              </button>
+            </div>
           </div>
           <div className="px-5 sm:px-6 py-4">
-            <p className="text-gray-500 text-sm">No new mergers this week</p>
+            <p className="text-new-merger/70 text-sm">No new mergers this week</p>
           </div>
         </div>
       );
     }
 
     return (
-      <div id="new-mergers" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
-          <h2 className="text-lg font-semibold text-gray-900">New mergers</h2>
+      <div id="new-mergers" className="bg-white rounded-2xl border-l-4 border-l-new-merger border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-new-merger-light/20 bg-gradient-to-r from-new-merger-pale/50 to-transparent">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-gray-900">New mergers</h2>
+            <button
+              onClick={scrollToTop}
+              className="p-1 text-gray-400 hover:text-gray-600 transition-all"
+              aria-label="Scroll to top"
+              title="Back to top"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+              </svg>
+            </button>
+          </div>
         </div>
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-100">
@@ -128,11 +156,11 @@ function Digest() {
             </thead>
             <tbody className="divide-y divide-gray-50">
               {mergers.map((merger) => (
-                <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                <tr key={merger.merger_id} className="relative hover:bg-new-merger-pale/40 transition-colors">
                   <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                     <Link
                       to={`/mergers/${merger.merger_id}`}
-                      className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                      className="text-new-merger hover:text-new-merger-dark font-medium transition-colors after:absolute after:inset-0"
                       aria-label={`View merger details for ${merger.merger_name}`}
                     >
                       {merger.merger_name}
@@ -163,21 +191,45 @@ function Digest() {
   const renderApprovedMergersTable = (mergers) => {
     if (mergers.length === 0) {
       return (
-        <div id="mergers-approved" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
-            <h2 className="text-lg font-semibold text-gray-900">Mergers approved</h2>
+        <div id="mergers-approved" className="bg-white rounded-2xl border-l-4 border-l-cleared border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-cleared-light/20 bg-gradient-to-r from-cleared-pale/50 to-transparent">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-semibold text-gray-900">Mergers approved</h2>
+              <button
+                onClick={scrollToTop}
+                className="p-1 text-gray-400 hover:text-gray-600 transition-all"
+                aria-label="Scroll to top"
+                title="Back to top"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+                </svg>
+              </button>
+            </div>
           </div>
           <div className="px-5 sm:px-6 py-4">
-            <p className="text-gray-500 text-sm">No mergers approved this week</p>
+            <p className="text-cleared/70 text-sm">No mergers approved this week</p>
           </div>
         </div>
       );
     }
 
     return (
-      <div id="mergers-approved" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
-          <h2 className="text-lg font-semibold text-gray-900">Mergers approved</h2>
+      <div id="mergers-approved" className="bg-white rounded-2xl border-l-4 border-l-cleared border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-cleared-light/20 bg-gradient-to-r from-cleared-pale/50 to-transparent">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-gray-900">Mergers approved</h2>
+            <button
+              onClick={scrollToTop}
+              className="p-1 text-gray-400 hover:text-gray-600 transition-all"
+              aria-label="Scroll to top"
+              title="Back to top"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+              </svg>
+            </button>
+          </div>
         </div>
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-100">
@@ -199,12 +251,12 @@ function Digest() {
                 const pdfUrl = getDeterminationPdf(merger.events);
                 const determination = merger.accc_determination || merger.phase_1_determination || merger.phase_2_determination || 'Approved';
                 return (
-                  <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                  <tr key={merger.merger_id} className="relative hover:bg-cleared-pale/40 transition-colors">
                     <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                       <div className="flex items-start gap-2">
                         <Link
                           to={`/mergers/${merger.merger_id}`}
-                          className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                          className="text-cleared hover:text-cleared-dark font-medium transition-colors after:absolute after:inset-0"
                           aria-label={`View merger details for ${merger.merger_name}`}
                         >
                           {merger.merger_name}
@@ -230,7 +282,7 @@ function Digest() {
                           href={pdfUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary hover:text-primary-dark transition-colors relative z-10 inline-flex items-center gap-1"
+                          className="text-cleared hover:text-cleared-dark font-medium transition-colors relative z-10 inline-flex items-center gap-1"
                           onClick={(e) => e.stopPropagation()}
                         >
                           {determination}
@@ -253,21 +305,45 @@ function Digest() {
   const renderDeclinedMergersTable = (mergers) => {
     if (mergers.length === 0) {
       return (
-        <div id="mergers-declined" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
-            <h2 className="text-lg font-semibold text-gray-900">Mergers declined</h2>
+        <div id="mergers-declined" className="bg-white rounded-2xl border-l-4 border-l-declined border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-declined-light/20 bg-gradient-to-r from-declined-pale/50 to-transparent">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-semibold text-gray-900">Mergers declined</h2>
+              <button
+                onClick={scrollToTop}
+                className="p-1 text-gray-400 hover:text-gray-600 transition-all"
+                aria-label="Scroll to top"
+                title="Back to top"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+                </svg>
+              </button>
+            </div>
           </div>
           <div className="px-5 sm:px-6 py-4">
-            <p className="text-gray-500 text-sm">No mergers declined this week</p>
+            <p className="text-declined/70 text-sm">No mergers declined this week</p>
           </div>
         </div>
       );
     }
 
     return (
-      <div id="mergers-declined" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
-          <h2 className="text-lg font-semibold text-gray-900">Mergers declined</h2>
+      <div id="mergers-declined" className="bg-white rounded-2xl border-l-4 border-l-declined border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-declined-light/20 bg-gradient-to-r from-declined-pale/50 to-transparent">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-gray-900">Mergers declined</h2>
+            <button
+              onClick={scrollToTop}
+              className="p-1 text-gray-400 hover:text-gray-600 transition-all"
+              aria-label="Scroll to top"
+              title="Back to top"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+              </svg>
+            </button>
+          </div>
         </div>
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-100">
@@ -289,12 +365,12 @@ function Digest() {
                 const pdfUrl = getDeterminationPdf(merger.events);
                 const determination = merger.accc_determination || merger.phase_1_determination || merger.phase_2_determination || 'Not approved';
                 return (
-                  <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                  <tr key={merger.merger_id} className="relative hover:bg-declined-pale/40 transition-colors">
                     <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                       <div className="flex items-start gap-2">
                         <Link
                           to={`/mergers/${merger.merger_id}`}
-                          className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                          className="text-declined hover:text-declined-dark font-medium transition-colors after:absolute after:inset-0"
                           aria-label={`View merger details for ${merger.merger_name}`}
                         >
                           {merger.merger_name}
@@ -320,7 +396,7 @@ function Digest() {
                           href={pdfUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary hover:text-primary-dark transition-colors relative z-10 inline-flex items-center gap-1"
+                          className="text-declined hover:text-declined-dark font-medium transition-colors relative z-10 inline-flex items-center gap-1"
                           onClick={(e) => e.stopPropagation()}
                         >
                           {determination}
@@ -343,21 +419,45 @@ function Digest() {
   const renderOngoingPhase1Table = (mergers) => {
     if (mergers.length === 0) {
       return (
-        <div id="ongoing-phase-1" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
-            <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 1 - initial assessment</h2>
+        <div id="ongoing-phase-1" className="bg-white rounded-2xl border-l-4 border-l-phase-1 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-phase-1-light/20 bg-gradient-to-r from-phase-1-pale/50 to-transparent">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 1 - initial assessment</h2>
+              <button
+                onClick={scrollToTop}
+                className="p-1 text-gray-400 hover:text-gray-600 transition-all"
+                aria-label="Scroll to top"
+                title="Back to top"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+                </svg>
+              </button>
+            </div>
           </div>
           <div className="px-5 sm:px-6 py-4">
-            <p className="text-gray-500 text-sm">No ongoing phase 1 mergers</p>
+            <p className="text-phase-1/70 text-sm">No ongoing phase 1 mergers</p>
           </div>
         </div>
       );
     }
 
     return (
-      <div id="ongoing-phase-1" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
-          <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 1 - initial assessment</h2>
+      <div id="ongoing-phase-1" className="bg-white rounded-2xl border-l-4 border-l-phase-1 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-phase-1-light/20 bg-gradient-to-r from-phase-1-pale/50 to-transparent">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 1 - initial assessment</h2>
+            <button
+              onClick={scrollToTop}
+              className="p-1 text-gray-400 hover:text-gray-600 transition-all"
+              aria-label="Scroll to top"
+              title="Back to top"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+              </svg>
+            </button>
+          </div>
         </div>
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-100">
@@ -379,11 +479,11 @@ function Digest() {
             </thead>
             <tbody className="divide-y divide-gray-50">
               {mergers.map((merger) => (
-                <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                <tr key={merger.merger_id} className="relative hover:bg-phase-1-pale/40 transition-colors">
                   <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                     <Link
                       to={`/mergers/${merger.merger_id}`}
-                      className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                      className="text-phase-1 hover:text-phase-1-dark font-medium transition-colors after:absolute after:inset-0"
                       aria-label={`View merger details for ${merger.merger_name}`}
                     >
                       {merger.merger_name}
@@ -419,21 +519,45 @@ function Digest() {
   const renderOngoingPhase2Table = (mergers) => {
     if (mergers.length === 0) {
       return (
-        <div id="ongoing-phase-2" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-          <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
-            <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 2 - detailed assessment</h2>
+        <div id="ongoing-phase-2" className="bg-white rounded-2xl border-l-4 border-l-phase-2 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+          <div className="px-5 sm:px-6 py-4 border-b border-phase-2-light/20 bg-gradient-to-r from-phase-2-pale/50 to-transparent">
+            <div className="flex items-center justify-between">
+              <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 2 - detailed assessment</h2>
+              <button
+                onClick={scrollToTop}
+                className="p-1 text-gray-400 hover:text-gray-600 transition-all"
+                aria-label="Scroll to top"
+                title="Back to top"
+              >
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+                </svg>
+              </button>
+            </div>
           </div>
           <div className="px-5 sm:px-6 py-4">
-            <p className="text-gray-500 text-sm">No ongoing phase 2 mergers</p>
+            <p className="text-phase-2/70 text-sm">No ongoing phase 2 mergers</p>
           </div>
         </div>
       );
     }
 
     return (
-      <div id="ongoing-phase-2" className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-        <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
-          <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 2 - detailed assessment</h2>
+      <div id="ongoing-phase-2" className="bg-white rounded-2xl border-l-4 border-l-phase-2 border-t border-r border-b border-gray-100 shadow-card overflow-hidden">
+        <div className="px-5 sm:px-6 py-4 border-b border-phase-2-light/20 bg-gradient-to-r from-phase-2-pale/50 to-transparent">
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-gray-900">Ongoing - phase 2 - detailed assessment</h2>
+            <button
+              onClick={scrollToTop}
+              className="p-1 text-gray-400 hover:text-gray-600 transition-all"
+              aria-label="Scroll to top"
+              title="Back to top"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+              </svg>
+            </button>
+          </div>
         </div>
         <div className="overflow-x-auto">
           <table className="min-w-full divide-y divide-gray-100">
@@ -455,11 +579,11 @@ function Digest() {
             </thead>
             <tbody className="divide-y divide-gray-50">
               {mergers.map((merger) => (
-                <tr key={merger.merger_id} className="relative hover:bg-gray-100/70 transition-colors">
+                <tr key={merger.merger_id} className="relative hover:bg-phase-2-pale/40 transition-colors">
                   <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                     <Link
                       to={`/mergers/${merger.merger_id}`}
-                      className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
+                      className="text-phase-2 hover:text-phase-2-dark font-medium transition-colors after:absolute after:inset-0"
                       aria-label={`View merger details for ${merger.merger_name}`}
                     >
                       {merger.merger_name}
@@ -518,48 +642,48 @@ function Digest() {
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-8">
           <button
             onClick={() => scrollToSection('new-mergers')}
-            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+            className="bg-gradient-to-br from-new-merger-pale to-new-merger-pale/50 rounded-lg shadow-card border border-new-merger-light/30 p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group"
           >
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-2xl font-bold text-new-merger group-hover:text-new-merger-dark transition-colors">
               {digest.new_deals_notified.length}
             </div>
-            <div className="text-sm text-gray-600">New deals notified</div>
+            <div className="text-sm text-new-merger-dark/80 font-medium">New deals notified</div>
           </button>
           <button
             onClick={() => scrollToSection('mergers-approved')}
-            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+            className="bg-gradient-to-br from-cleared-pale to-cleared-pale/50 rounded-lg shadow-card border border-cleared-light/30 p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group"
           >
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-2xl font-bold text-cleared group-hover:text-cleared-dark transition-colors">
               {digest.deals_cleared.length}
             </div>
-            <div className="text-sm text-gray-600">Deals cleared</div>
+            <div className="text-sm text-cleared-dark/80 font-medium">Deals cleared</div>
           </button>
           <button
             onClick={() => scrollToSection('mergers-declined')}
-            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+            className="bg-gradient-to-br from-declined-pale to-declined-pale/50 rounded-lg shadow-card border border-declined-light/30 p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group"
           >
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-2xl font-bold text-declined group-hover:text-declined-dark transition-colors">
               {digest.deals_declined.length}
             </div>
-            <div className="text-sm text-gray-600">Deals declined</div>
+            <div className="text-sm text-declined-dark/80 font-medium">Deals declined</div>
           </button>
           <button
             onClick={() => scrollToSection('ongoing-phase-1')}
-            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+            className="bg-gradient-to-br from-phase-1-pale to-phase-1-pale/50 rounded-lg shadow-card border border-phase-1-light/30 p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group"
           >
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-2xl font-bold text-phase-1 group-hover:text-phase-1-dark transition-colors">
               {digest.ongoing_phase_1.length}
             </div>
-            <div className="text-sm text-gray-600">Ongoing phase 1</div>
+            <div className="text-sm text-phase-1-dark/80 font-medium">Ongoing phase 1</div>
           </button>
           <button
             onClick={() => scrollToSection('ongoing-phase-2')}
-            className="bg-white rounded-lg shadow p-4 hover:shadow-md transition-shadow cursor-pointer text-left"
+            className="bg-gradient-to-br from-phase-2-pale to-phase-2-pale/50 rounded-lg shadow-card border border-phase-2-light/30 p-4 hover:shadow-card-hover hover:scale-105 transition-all cursor-pointer text-left group"
           >
-            <div className="text-2xl font-bold text-primary">
+            <div className="text-2xl font-bold text-phase-2 group-hover:text-phase-2-dark transition-colors">
               {digest.ongoing_phase_2.length}
             </div>
-            <div className="text-sm text-gray-600">Ongoing phase 2</div>
+            <div className="text-sm text-phase-2-dark/80 font-medium">Ongoing phase 2</div>
           </button>
         </div>
 
