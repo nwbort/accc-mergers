@@ -13,7 +13,8 @@ Output: digest.json in the frontend public data directory
 """
 
 import json
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timedelta, time
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from typing import Dict, List, Any
 
@@ -45,8 +46,45 @@ def parse_datetime(date_str: str) -> datetime:
         return None
 
 
-def is_in_last_week(date_str: str, reference_date: datetime = None) -> bool:
-    """Check if a date falls within the last week."""
+def get_last_week_range() -> tuple[datetime, datetime]:
+    """
+    Get the Monday-Sunday date range for the most recent completed week in Australian time.
+
+    Returns:
+        tuple: (period_start, period_end) where:
+            - period_start is Monday 00:00:00 AEST/AEDT
+            - period_end is Sunday 23:59:59.999999 AEST/AEDT
+    """
+    sydney_tz = ZoneInfo('Australia/Sydney')
+    now_sydney = datetime.now(sydney_tz)
+
+    # Calculate days since last Monday
+    # Monday = 0, Sunday = 6
+    days_since_monday = now_sydney.weekday()
+
+    # If it's currently Sunday (weekday = 6) and after midnight,
+    # we want the current week (this Monday to today)
+    # Otherwise, we want the previous complete week
+    if now_sydney.weekday() == 6:  # Sunday
+        # Current week: this Monday to this Sunday
+        days_to_subtract = days_since_monday
+    else:
+        # Previous complete week: last Monday to last Sunday
+        days_to_subtract = days_since_monday + 7
+
+    # Calculate Monday at 00:00:00
+    monday = (now_sydney - timedelta(days=days_to_subtract)).replace(
+        hour=0, minute=0, second=0, microsecond=0
+    )
+
+    # Calculate Sunday at 23:59:59.999999
+    sunday = monday + timedelta(days=6, hours=23, minutes=59, seconds=59, microseconds=999999)
+
+    return monday, sunday
+
+
+def is_in_week_range(date_str: str, period_start: datetime, period_end: datetime) -> bool:
+    """Check if a date falls within the specified week range."""
     if not date_str:
         return False
 
@@ -54,11 +92,14 @@ def is_in_last_week(date_str: str, reference_date: datetime = None) -> bool:
     if not dt:
         return False
 
-    if reference_date is None:
-        reference_date = datetime.now(timezone.utc)
+    # Convert to Sydney timezone for comparison
+    sydney_tz = ZoneInfo('Australia/Sydney')
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=sydney_tz)
+    else:
+        dt = dt.astimezone(sydney_tz)
 
-    one_week_ago = reference_date - timedelta(days=7)
-    return one_week_ago <= dt <= reference_date
+    return period_start <= dt <= period_end
 
 
 def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
@@ -86,12 +127,16 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
 def generate_weekly_digest() -> Dict[str, Any]:
     """Generate the weekly digest data."""
     mergers = load_mergers_data()
-    reference_date = datetime.now(timezone.utc)
+
+    # Get the Monday-Sunday week range in Australian time
+    period_start, period_end = get_last_week_range()
+    sydney_tz = ZoneInfo('Australia/Sydney')
+    now_sydney = datetime.now(sydney_tz)
 
     digest = {
-        'generated_at': reference_date.isoformat(),
-        'period_start': (reference_date - timedelta(days=7)).isoformat(),
-        'period_end': reference_date.isoformat(),
+        'generated_at': now_sydney.isoformat(),
+        'period_start': period_start.isoformat(),
+        'period_end': period_end.isoformat(),
         'new_deals_notified': [],
         'deals_cleared': [],
         'deals_declined': [],
@@ -109,12 +154,12 @@ def generate_weekly_digest() -> Dict[str, Any]:
         phase_2_determination = merger.get('phase_2_determination')
 
         # New deals notified in the last week (not yet determined)
-        if (is_in_last_week(notification_date, reference_date) and
+        if (is_in_week_range(notification_date, period_start, period_end) and
             status == 'Under assessment'):
             digest['new_deals_notified'].append(create_merger_summary(merger))
 
         # Deals cleared in the last week
-        if is_in_last_week(determination_date, reference_date):
+        if is_in_week_range(determination_date, period_start, period_end):
             if accc_determination in ['Approved'] or phase_1_determination == 'Approved' or phase_2_determination == 'Approved':
                 digest['deals_cleared'].append(create_merger_summary(merger))
             # Deals declined/not approved in the last week
