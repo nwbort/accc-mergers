@@ -3,11 +3,9 @@ import { Link } from 'react-router-dom';
 import { Doughnut } from 'react-chartjs-2';
 import StatusBadge from '../components/StatusBadge';
 import NewBadge from '../components/NewBadge';
+import WaiverBadge from '../components/WaiverBadge';
 import {
   Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
   Title,
   Tooltip,
   Legend,
@@ -24,9 +22,6 @@ import { dataCache } from '../utils/dataCache';
 import { markItemsAsSeen, isNewItem } from '../utils/lastVisit';
 
 ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
   Title,
   Tooltip,
   Legend,
@@ -252,15 +247,7 @@ function Dashboard() {
                       {isNewItem(merger.merger_id) && (
                         <NewBadge />
                       )}
-                      {merger.is_waiver && (
-                        <span
-                          className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200/60"
-                          role="status"
-                          aria-label="Merger type: waiver application"
-                        >
-                          Waiver
-                        </span>
-                      )}
+                      {merger.is_waiver && <WaiverBadge />}
                     </div>
                     <div className="ml-2 flex-shrink-0">
                       <StatusBadge

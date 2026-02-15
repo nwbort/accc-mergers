@@ -2,6 +2,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useTracking } from '../context/TrackingContext';
 import NotificationPanel from './NotificationPanel';
+import BellIcon from './BellIcon';
 
 const SCROLL_HIDE_THRESHOLD_PX = 50;
 
@@ -95,19 +96,7 @@ function Navbar() {
                 aria-expanded={notificationPanelOpen}
                 aria-label={`Notifications${unseenCount > 0 ? `, ${unseenCount} new` : ''}`}
               >
-                <svg
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-                  />
-                </svg>
+                <BellIcon className="h-5 w-5" />
                 {unseenCount > 0 && (
                   <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-40"></span>

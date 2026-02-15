@@ -28,20 +28,6 @@ function pruneSeenItems(seenItems) {
 }
 
 /**
- * Marks a single item as seen
- * @param {string} itemId - The merger ID to mark as seen
- */
-export function markItemAsSeen(itemId) {
-  if (!itemId) return;
-
-  const seenItems = getSeenItems();
-  seenItems.add(itemId);
-
-  const prunedItems = pruneSeenItems(seenItems);
-  localStorage.setItem(SEEN_ITEMS_KEY, JSON.stringify([...prunedItems]));
-}
-
-/**
  * Marks multiple items as seen
  * @param {string[]} itemIds - Array of merger IDs to mark as seen
  */
@@ -69,9 +55,3 @@ export function isNewItem(itemId) {
   return !seenItems.has(itemId);
 }
 
-/**
- * Clears all seen items (useful for testing or reset)
- */
-export function clearSeenItems() {
-  localStorage.removeItem(SEEN_ITEMS_KEY);
-}

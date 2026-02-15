@@ -111,15 +111,6 @@ export const formatDate = (dateString) => {
   }
 };
 
-export const formatDateTime = (dateString) => {
-  if (!dateString) return 'N/A';
-  try {
-    return format(parseISO(dateString), 'dd/MM/yyyy HH:mm');
-  } catch (e) {
-    return 'Invalid date';
-  }
-};
-
 export const calculateDuration = (startDate, endDate) => {
   if (!startDate || !endDate) return null;
   try {

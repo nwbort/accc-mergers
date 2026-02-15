@@ -4,11 +4,13 @@ import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
 import BellIcon from '../components/BellIcon';
+import WaiverBadge from '../components/WaiverBadge';
 import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import { useTracking } from '../context/TrackingContext';
 import { formatDate, calculateDuration, getDaysRemaining, calculateBusinessDays, getBusinessDaysRemaining } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
+import { PROSE_MARKDOWN } from '../utils/classNames';
 
 function MergerDetail() {
   const { id } = useParams();
@@ -210,15 +212,7 @@ function MergerDetail() {
                 <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
                   {merger.merger_name}
                 </h1>
-                {merger.is_waiver && (
-                  <span
-                    className="inline-flex items-center px-2.5 py-1 rounded-lg text-sm font-medium bg-amber-50 text-amber-700 border border-amber-200/60"
-                    role="status"
-                    aria-label="Merger type: Waiver application"
-                  >
-                    Waiver
-                  </span>
-                )}
+                {merger.is_waiver && <WaiverBadge className="px-2.5 py-1 rounded-lg text-sm" />}
               </div>
               <div className="flex items-center gap-4 flex-wrap">
                 <p className="text-sm text-gray-400">{merger.merger_id}</p>
@@ -342,7 +336,7 @@ function MergerDetail() {
             <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
               Description
             </h2>
-            <div className="text-gray-600 prose prose-sm max-w-none leading-relaxed [&>p]:mb-4 [&>ul]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:mb-2 [&>ol]:mb-4 [&>ol]:list-decimal [&>ol]:pl-5 [&>ol>li]:mb-2">
+            <div className={PROSE_MARKDOWN}>
               <ReactMarkdown>{merger.merger_description}</ReactMarkdown>
             </div>
           </div>
@@ -362,7 +356,7 @@ function MergerDetail() {
                   Commentary
                 </h2>
                 {merger.commentary.commentary && (
-                  <div className="text-gray-600 prose prose-sm max-w-none leading-relaxed [&>p]:mb-4 [&>ul]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul>li]:mb-2 [&>ol]:mb-4 [&>ol]:list-decimal [&>ol]:pl-5 [&>ol>li]:mb-2">
+                  <div className={PROSE_MARKDOWN}>
                     <ReactMarkdown>{merger.commentary.commentary}</ReactMarkdown>
                   </div>
                 )}
