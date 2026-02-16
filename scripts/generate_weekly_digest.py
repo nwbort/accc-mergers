@@ -17,6 +17,7 @@ from datetime import datetime, timedelta, time
 from zoneinfo import ZoneInfo
 from pathlib import Path
 from typing import Dict, List, Any
+from date_utils import parse_iso_datetime
 
 
 def load_mergers_data() -> List[Dict[str, Any]]:
@@ -30,20 +31,6 @@ def load_mergers_data() -> List[Dict[str, Any]]:
     if isinstance(data, dict) and 'mergers' in data:
         return data['mergers']
     return data
-
-
-def parse_datetime(date_str: str) -> datetime:
-    """Parse ISO 8601 datetime string to datetime object."""
-    if not date_str:
-        return None
-
-    try:
-        # Handle both with and without timezone
-        if date_str.endswith('Z'):
-            return datetime.fromisoformat(date_str.replace('Z', '+00:00'))
-        return datetime.fromisoformat(date_str)
-    except (ValueError, AttributeError):
-        return None
 
 
 def get_last_week_range() -> tuple[datetime, datetime]:
@@ -88,7 +75,7 @@ def is_in_week_range(date_str: str, period_start: datetime, period_end: datetime
     if not date_str:
         return False
 
-    dt = parse_datetime(date_str)
+    dt = parse_iso_datetime(date_str)
     if not dt:
         return False
 
