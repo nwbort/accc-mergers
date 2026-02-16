@@ -84,27 +84,68 @@ def is_business_day(date: datetime) -> bool:
     return True
 
 
+def _count_weekdays_in_range(start: datetime, end: datetime) -> int:
+    """Count weekdays (Mon-Fri) from start to end inclusive using arithmetic."""
+    if start > end:
+        return 0
+    total_days = (end - start).days + 1
+    full_weeks, remainder = divmod(total_days, 7)
+    weekdays = full_weeks * 5
+    start_weekday = start.weekday()  # 0=Mon, 6=Sun
+    for i in range(remainder):
+        if (start_weekday + i) % 7 < 5:
+            weekdays += 1
+    return weekdays
+
+
 def calculate_business_days(start_date_str: str, end_date_str: str) -> int | None:
-    """Calculate business days between two ISO date strings (inclusive of start)."""
+    """Calculate business days between two ISO date strings (inclusive of start).
+
+    Uses arithmetic weekday counting and subtracts holidays/Christmas periods
+    instead of iterating day-by-day.
+    """
     if not start_date_str or not end_date_str:
         return None
-    
+
+    global PUBLIC_HOLIDAYS
+    if PUBLIC_HOLIDAYS is None:
+        PUBLIC_HOLIDAYS = load_public_holidays()
+
     try:
         start = datetime.fromisoformat(start_date_str.replace('Z', '+00:00'))
         end = datetime.fromisoformat(end_date_str.replace('Z', '+00:00'))
-        
+
         start = start.replace(hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
         end = end.replace(hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
-        
-        business_days = 0
-        current = start
-        
-        while current <= end:
-            if is_business_day(current):
-                business_days += 1
-            current += timedelta(days=1)
-        
-        return business_days
+
+        if start > end:
+            return 0
+
+        # Step 1: Count all weekdays (Mon-Fri) arithmetically
+        business_days = _count_weekdays_in_range(start, end)
+
+        # Step 2: Subtract weekdays that fall in Christmas/New Year periods (Dec 23 - Jan 10)
+        # Enumerate all Christmas/New Year periods that could overlap [start, end]
+        for year in range(start.year - 1, end.year + 1):
+            # Each period runs from Dec 23 of year to Jan 10 of year+1
+            xmas_start = datetime(year, 12, 23)
+            xmas_end = datetime(year + 1, 1, 10)
+
+            # Clamp to [start, end]
+            overlap_start = max(xmas_start, start)
+            overlap_end = min(xmas_end, end)
+
+            if overlap_start <= overlap_end:
+                business_days -= _count_weekdays_in_range(overlap_start, overlap_end)
+
+        # Step 3: Subtract public holidays that fall on weekdays outside Christmas/New Year
+        for holiday_str in PUBLIC_HOLIDAYS:
+            holiday = datetime.strptime(holiday_str, '%Y-%m-%d')
+            if start <= holiday <= end:
+                if holiday.weekday() < 5 and not is_christmas_new_year_period(holiday):
+                    business_days -= 1
+
+        return max(business_days, 0)
     except (ValueError, AttributeError):
         return None
 
