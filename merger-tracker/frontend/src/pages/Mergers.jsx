@@ -422,10 +422,12 @@ function Mergers() {
                       {merger.is_waiver ? 'Application date' : 'Notification date'}
                     </p>
                     <p className="text-sm font-medium text-gray-700">
-                      {formatDate(merger.effective_notification_datetime)}
+                      {!merger.effective_notification_datetime && merger.status?.toLowerCase().includes('suspended')
+                        ? 'None - assessment suspended'
+                        : formatDate(merger.effective_notification_datetime)}
                     </p>
                   </div>
-                  {(merger.determination_publication_date || merger.end_of_determination_period) && (
+                  {(merger.determination_publication_date || (merger.end_of_determination_period && !merger.status?.toLowerCase().includes('suspended'))) && (
                     <div>
                       <p className="text-xs text-gray-400 mb-0.5">
                         {merger.determination_publication_date ? 'Determination date' : 'End of determination period'}
