@@ -17,6 +17,8 @@ const SORT_FIELDS = [
   { value: 'determination', label: 'Determination date' },
 ];
 
+const SEARCH_DEBOUNCE_MS = 300;
+
 const sortMergers = (list, sortBy = 'notification-desc') => {
   return [...list].sort((a, b) => {
     switch (sortBy) {
@@ -71,8 +73,8 @@ function Mergers() {
     return cachedMergers.length ? buildSearchIndex(cachedMergers) : null;
   });
 
-  // Debounce search term to reduce filter executions (300ms delay)
-  const debouncedSearchTerm = useDebounce(searchTerm, 300);
+  // Debounce search term to reduce filter executions
+  const debouncedSearchTerm = useDebounce(searchTerm, SEARCH_DEBOUNCE_MS);
 
   useEffect(() => {
     const q = searchParams.get('q') || '';
