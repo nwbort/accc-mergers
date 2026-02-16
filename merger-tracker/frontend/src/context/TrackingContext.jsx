@@ -100,23 +100,50 @@ export function TrackingProvider({ children }) {
 
       setLoading(true);
       try {
-        const [timelineRes, upcomingRes] = await Promise.all([
-          fetch(API_ENDPOINTS.timeline),
-          fetch(API_ENDPOINTS.upcomingEvents),
+        // Fetch individual merger files instead of full timeline for better performance
+        // This is more efficient when tracking only a few mergers
+        const mergerPromises = trackedMergerIds.map(id =>
+          fetch(API_ENDPOINTS.mergerDetail(id))
+            .then(res => res.ok ? res.json() : null)
+            .catch(() => null)
+        );
+
+        const upcomingRes = fetch(API_ENDPOINTS.upcomingEvents);
+
+        const [mergers, upcomingResponse] = await Promise.all([
+          Promise.all(mergerPromises),
+          upcomingRes
         ]);
 
         let allFetchedEvents = [];
 
-        if (timelineRes.ok) {
-          const data = await timelineRes.json();
-          // Filter to only tracked mergers (using Set for O(1) lookup)
-          const filtered = data.events.filter((e) => trackedMergerIdsSet.has(e.merger_id));
-          setTimelineEvents(filtered);
-          allFetchedEvents = [...allFetchedEvents, ...filtered];
-        }
+        // Extract events from individual merger files
+        const timelineEventsFromMergers = [];
+        mergers.forEach(merger => {
+          if (!merger) return;
+          const events = merger.events || [];
+          events.forEach(event => {
+            timelineEventsFromMergers.push({
+              date: event.date,
+              title: event.title,
+              display_title: event.display_title,
+              url: event.url,
+              url_gh: event.url_gh,
+              status: event.status,
+              merger_id: merger.merger_id,
+              merger_name: merger.merger_name,
+              phase: event.phase,
+              is_waiver: merger.is_waiver
+            });
+          });
+        });
 
-        if (upcomingRes.ok) {
-          const data = await upcomingRes.json();
+        setTimelineEvents(timelineEventsFromMergers);
+        allFetchedEvents = [...allFetchedEvents, ...timelineEventsFromMergers];
+
+        // Fetch upcoming events
+        if (upcomingResponse.ok) {
+          const data = await upcomingResponse.json();
           // Filter to only tracked mergers (using Set for O(1) lookup)
           const filtered = data.events.filter((e) => trackedMergerIdsSet.has(e.merger_id));
           setUpcomingEvents(filtered);
