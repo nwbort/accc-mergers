@@ -609,7 +609,7 @@ def generate_industries_json(mergers: list) -> dict:
     """Generate industry list with merger counts."""
     # Group by (code, name) to count unique mergers
     industry_mergers = defaultdict(set)
-    
+
     for m in mergers:
         merger_id = m['merger_id']
         # Handle both spellings
@@ -617,7 +617,7 @@ def generate_industries_json(mergers: list) -> dict:
         for code in codes:
             key = (code.get('code', ''), code.get('name', ''))
             industry_mergers[key].add(merger_id)
-    
+
     industries = [
         {
             "code": code,
@@ -626,11 +626,73 @@ def generate_industries_json(mergers: list) -> dict:
         }
         for (code, name), merger_ids in industry_mergers.items()
     ]
-    
+
     # Sort by merger count descending
     industries.sort(key=lambda x: -x['merger_count'])
-    
+
     return {"industries": industries}
+
+
+def generate_individual_industry_files(mergers: list) -> None:
+    """Generate individual JSON files for each industry code."""
+    industries_dir = OUTPUT_DIR / "industries"
+    industries_dir.mkdir(parents=True, exist_ok=True)
+
+    # Group mergers by industry
+    industry_mergers_map = defaultdict(list)
+
+    for m in mergers:
+        merger_id = m.get('merger_id')
+        merger_name = m.get('merger_name')
+        status = m.get('status')
+        determination = normalize_determination(m.get('accc_determination'))
+        is_waiver = is_waiver_merger(m)
+        notification_date = m.get('effective_notification_datetime')
+        determination_date = m.get('determination_publication_date')
+
+        # Handle both spellings
+        codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
+        for code_obj in codes:
+            code = code_obj.get('code', '')
+            name = code_obj.get('name', '')
+
+            if code:  # Only add if code exists
+                # Create lightweight merger object
+                merger_summary = {
+                    "merger_id": merger_id,
+                    "merger_name": merger_name,
+                    "status": status,
+                    "accc_determination": determination,
+                    "is_waiver": is_waiver,
+                    "effective_notification_datetime": notification_date,
+                    "determination_publication_date": determination_date
+                }
+
+                # Use code as key (name can vary)
+                industry_mergers_map[code].append(merger_summary)
+
+    # Generate a file for each industry
+    for code, industry_mergers in industry_mergers_map.items():
+        # Sort by most recent date (determination or notification)
+        industry_mergers.sort(key=lambda x: max(
+            x.get('determination_publication_date') or '',
+            x.get('effective_notification_datetime') or ''
+        ), reverse=True)
+
+        output_data = {
+            "code": code,
+            "mergers": industry_mergers,
+            "count": len(industry_mergers)
+        }
+
+        # Use code as filename (sanitize for filesystem)
+        safe_code = code.replace('/', '-').replace('\\', '-')
+        output_path = industries_dir / f"{safe_code}.json"
+
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(output_data, f, indent=2)
+
+    print(f"✓ Generated {len(industry_mergers_map)} individual industry files in {industries_dir}")
 
 
 def generate_commentary_json(mergers: list, commentary: dict) -> dict:
@@ -815,6 +877,10 @@ def main():
     # Generate paginated timeline files
     print("\nGenerating paginated timeline files...")
     generate_paginated_timeline(mergers, page_size=100)
+
+    # Generate individual industry files
+    print("\nGenerating individual industry files...")
+    generate_individual_industry_files(mergers)
 
     print("\nDone!")
 

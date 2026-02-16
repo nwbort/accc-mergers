@@ -8,7 +8,8 @@ import { dataCache } from '../utils/dataCache';
 
 function Industries() {
   const [industries, setIndustries] = useState(() => dataCache.get('industries-list') || []);
-  const [mergers, setMergers] = useState(() => dataCache.get('industries-mergers') || []);
+  const [industryMergersMap, setIndustryMergersMap] = useState(() => dataCache.get('industry-mergers-map') || {});
+  const [loadingIndustries, setLoadingIndustries] = useState({});
   const [loading, setLoading] = useState(() => !dataCache.has('industries-list'));
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
@@ -20,47 +21,13 @@ function Industries() {
 
   const fetchData = async () => {
     try {
-      // Fetch industries data
+      // Only fetch industries list with counts
       const industriesRes = await fetch(API_ENDPOINTS.industries);
       if (!industriesRes.ok) throw new Error('Failed to fetch industries');
       const industriesData = await industriesRes.json();
 
-      // Fetch mergers list using pagination
-      let allMergers = [];
-      const metaResponse = await fetch(API_ENDPOINTS.mergersListMeta);
-
-      if (!metaResponse.ok) {
-        // Fallback to legacy endpoint if pagination not available
-        console.log('Pagination not available, falling back to legacy endpoint');
-        const mergersRes = await fetch(API_ENDPOINTS.mergersList);
-        if (!mergersRes.ok) throw new Error('Failed to fetch mergers');
-        const mergersData = await mergersRes.json();
-        allMergers = mergersData.mergers;
-      } else {
-        const meta = await metaResponse.json();
-        const totalPages = meta.total_pages;
-
-        // Fetch all pages in parallel
-        const pagePromises = [];
-        for (let i = 1; i <= totalPages; i++) {
-          pagePromises.push(fetch(API_ENDPOINTS.mergersListPage(i)));
-        }
-
-        const pageResponses = await Promise.all(pagePromises);
-        const pageDataPromises = pageResponses.map(r => {
-          if (!r.ok) throw new Error('Failed to fetch merger page');
-          return r.json();
-        });
-        const pagesData = await Promise.all(pageDataPromises);
-
-        // Combine all pages
-        allMergers = pagesData.flatMap(page => page.mergers);
-      }
-
       dataCache.set('industries-list', industriesData.industries);
-      dataCache.set('industries-mergers', allMergers);
       setIndustries(industriesData.industries);
-      setMergers(allMergers);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -68,27 +35,80 @@ function Industries() {
     }
   };
 
-  const getMergersForIndustry = (code, name) => {
-    const filtered = mergers.filter((merger) =>
-      merger.anzsic_codes.some(
-        (anzsic) => anzsic.code === code && anzsic.name === name
-      )
-    );
+  const fetchIndustryMergers = async (code) => {
+    // Check if already loaded
+    if (industryMergersMap[code]) {
+      return industryMergersMap[code];
+    }
 
-    // Sort by most recent date (comparing determination and notification dates)
-    return filtered.sort((a, b) => {
-      const getLatestDate = (merger) => {
-        const dates = [
-          merger.determination_publication_date,
-          merger.effective_notification_datetime
-        ].filter(Boolean);
+    // Check if already loading
+    if (loadingIndustries[code]) {
+      return null;
+    }
 
-        if (dates.length === 0) return new Date(0);
-        return new Date(Math.max(...dates.map(d => new Date(d).getTime())));
-      };
+    setLoadingIndustries(prev => ({ ...prev, [code]: true }));
 
-      return getLatestDate(b) - getLatestDate(a); // Most recent first
-    });
+    try {
+      const response = await fetch(API_ENDPOINTS.industryDetail(code));
+
+      if (!response.ok) {
+        // Fallback to loading all mergers if individual files not available
+        console.log('Industry files not available, falling back to full merger list');
+        const metaResponse = await fetch(API_ENDPOINTS.mergersListMeta);
+
+        let allMergers = [];
+        if (!metaResponse.ok) {
+          const mergersRes = await fetch(API_ENDPOINTS.mergersList);
+          if (!mergersRes.ok) throw new Error('Failed to fetch mergers');
+          const mergersData = await mergersRes.json();
+          allMergers = mergersData.mergers;
+        } else {
+          const meta = await metaResponse.json();
+          const totalPages = meta.total_pages;
+          const pagePromises = [];
+          for (let i = 1; i <= totalPages; i++) {
+            pagePromises.push(fetch(API_ENDPOINTS.mergersListPage(i)));
+          }
+          const pageResponses = await Promise.all(pagePromises);
+          const pagesData = await Promise.all(pageResponses.map(r => r.json()));
+          allMergers = pagesData.flatMap(page => page.mergers);
+        }
+
+        // Filter to this industry
+        const filtered = allMergers.filter(m =>
+          m.anzsic_codes?.some(c => c.code === code)
+        );
+
+        setIndustryMergersMap(prev => {
+          const updated = { ...prev, [code]: filtered };
+          dataCache.set('industry-mergers-map', updated);
+          return updated;
+        });
+
+        return filtered;
+      }
+
+      const data = await response.json();
+      const mergers = data.mergers || [];
+
+      setIndustryMergersMap(prev => {
+        const updated = { ...prev, [code]: mergers };
+        dataCache.set('industry-mergers-map', updated);
+        return updated;
+      });
+
+      return mergers;
+    } catch (err) {
+      console.error(`Failed to fetch industry ${code}:`, err);
+      return [];
+    } finally {
+      setLoadingIndustries(prev => ({ ...prev, [code]: false }));
+    }
+  };
+
+  const getMergersForIndustry = (code) => {
+    // Return cached mergers if available
+    return industryMergersMap[code] || [];
   };
 
   const filteredIndustries = industries
@@ -102,9 +122,19 @@ function Industries() {
     })
     .sort((a, b) => b.merger_count - a.merger_count);
 
-  const toggleIndustry = (code, name) => {
+  const toggleIndustry = async (code, name) => {
     const key = `${code}-${name}`;
-    setExpandedIndustry(expandedIndustry === key ? null : key);
+
+    if (expandedIndustry === key) {
+      // Collapse
+      setExpandedIndustry(null);
+    } else {
+      // Expand and fetch data if not already loaded
+      setExpandedIndustry(key);
+      if (!industryMergersMap[code]) {
+        await fetchIndustryMergers(code);
+      }
+    }
   };
 
   if (loading) return <LoadingSpinner />;
@@ -122,7 +152,7 @@ function Industries() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         {[
           { label: 'Total industries', value: industries.length },
-          { label: 'Total merger reviews', value: mergers.length },
+          { label: 'Total merger reviews', value: industries.reduce((sum, i) => sum + i.merger_count, 0) },
           { label: 'Avg mergers per industry', value: industries.length > 0 ? (industries.reduce((sum, i) => sum + i.merger_count, 0) / industries.length).toFixed(1) : 0 },
         ].map(({ label, value }) => (
           <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
@@ -185,17 +215,15 @@ function Industries() {
           </thead>
           <tbody className="divide-y divide-gray-50">
             {filteredIndustries.map((industry) => {
-              const totalMergers = mergers.length;
+              const totalMergers = industries.reduce((sum, i) => sum + i.merger_count, 0);
               const percentage = (
                 (industry.merger_count / totalMergers) *
                 100
               ).toFixed(1);
               const key = `${industry.code}-${industry.name}`;
               const isExpanded = expandedIndustry === key;
-              const industryMergers = getMergersForIndustry(
-                industry.code,
-                industry.name
-              );
+              const industryMergers = getMergersForIndustry(industry.code);
+              const isLoadingThisIndustry = loadingIndustries[industry.code];
 
               return (
                 <Fragment key={industry.code}>
@@ -264,26 +292,34 @@ function Industries() {
                           <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
                             Mergers in this industry
                           </p>
-                          <div className={`space-y-2 ${industryMergers.length > 6 ? 'max-h-[400px] overflow-y-auto pr-2' : ''}`}>
-                            {industryMergers.map((merger) => (
-                              <Link
-                                key={merger.merger_id}
-                                to={`/mergers/${merger.merger_id}`}
-                                className="block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
-                                aria-label={`View merger details for ${merger.merger_name}`}
-                              >
-                                <div className="flex items-center gap-2 min-w-0">
-                                  <span className="text-sm font-medium text-gray-900 truncate">
-                                    {merger.merger_name}
+                          {isLoadingThisIndustry ? (
+                            <div className="flex items-center justify-center py-8">
+                              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+                            </div>
+                          ) : industryMergers.length === 0 ? (
+                            <p className="text-sm text-gray-500 py-4">No mergers found for this industry</p>
+                          ) : (
+                            <div className={`space-y-2 ${industryMergers.length > 6 ? 'max-h-[400px] overflow-y-auto pr-2' : ''}`}>
+                              {industryMergers.map((merger) => (
+                                <Link
+                                  key={merger.merger_id}
+                                  to={`/mergers/${merger.merger_id}`}
+                                  className="block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
+                                  aria-label={`View merger details for ${merger.merger_name}`}
+                                >
+                                  <div className="flex items-center gap-2 min-w-0">
+                                    <span className="text-sm font-medium text-gray-900 truncate">
+                                      {merger.merger_name}
+                                    </span>
+                                    {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
+                                  </div>
+                                  <span className="text-xs text-gray-400 mt-1 block">
+                                    {merger.status}
                                   </span>
-                                  {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
-                                </div>
-                                <span className="text-xs text-gray-400 mt-1 block">
-                                  {merger.status}
-                                </span>
-                              </Link>
-                            ))}
-                          </div>
+                                </Link>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       </td>
                     </tr>
