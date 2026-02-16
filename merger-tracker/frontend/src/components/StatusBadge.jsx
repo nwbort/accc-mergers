@@ -6,6 +6,8 @@ function StatusBadge({ status, determination }) {
       return 'bg-red-50 text-red-700 border-red-200/60';
     } else if (status === 'Under assessment') {
       return 'bg-primary/5 text-primary border-primary/20';
+    } else if (status === 'Assessment suspended') {
+      return 'bg-orange-50 text-orange-700 border-orange-200/60';
     } else if (status === 'Assessment completed') {
       return 'bg-gray-50 text-gray-600 border-gray-200/60';
     }
