@@ -67,7 +67,7 @@ function Mergers() {
   const [sortBy, setSortBy] = useState(() => searchParams.get('sort') || 'notification-desc');
   const [trackedOnly, setTrackedOnly] = useState(() => searchParams.get('tracked') === 'true');
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const { isTracked, trackedMergerIds, toggleTracking } = useTracking();
+  const { isTracked, toggleTracking } = useTracking();
 
   // Initialize search index from cached data if available
   const [searchIndex, setSearchIndex] = useState(() => {
@@ -103,7 +103,7 @@ function Mergers() {
 
   useEffect(() => {
     filterMergers();
-  }, [debouncedSearchTerm, statusFilter, phaseFilter, sortBy, trackedOnly, mergers, trackedMergerIds]);
+  }, [filterMergers]);
 
   const fetchMergers = async () => {
     try {
@@ -211,7 +211,6 @@ function Mergers() {
     phaseFilter,
     sortBy,
     trackedOnly,
-    trackedMergerIds,
     isTracked,
   ]);
 
@@ -507,7 +506,7 @@ function Mergers() {
 
                 {merger.anzsic_codes && merger.anzsic_codes.length > 0 && (
                   <div className="mt-3 flex flex-wrap gap-1.5">
-                    {merger.anzsic_codes.map((code, idx) => (
+                    {merger.anzsic_codes.map((code) => (
                       <span
                         key={`${merger.merger_id}-anzsic-${code.code || code.name}`}
                         className="inline-flex items-center px-2 py-0.5 rounded-md text-xs bg-gray-50 text-gray-500 border border-gray-100"
