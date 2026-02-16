@@ -59,11 +59,13 @@ function Mergers() {
   const [filteredMergers, setFilteredMergers] = useState(() => sortMergers(dataCache.get('mergers-list') || []));
   const [loading, setLoading] = useState(() => !dataCache.has('mergers-list'));
   const [error, setError] = useState(null);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [statusFilter, setStatusFilter] = useState('all');
-  const [phaseFilter, setPhaseFilter] = useState('all');
-  const [sortBy, setSortBy] = useState('notification-desc');
-  const [trackedOnly, setTrackedOnly] = useState(false);
+
+  // Initialize filter state from URL params to avoid flash of unfiltered content
+  const [searchTerm, setSearchTerm] = useState(() => searchParams.get('q') || '');
+  const [statusFilter, setStatusFilter] = useState(() => searchParams.get('status') || 'all');
+  const [phaseFilter, setPhaseFilter] = useState(() => searchParams.get('phase') || 'all');
+  const [sortBy, setSortBy] = useState(() => searchParams.get('sort') || 'notification-desc');
+  const [trackedOnly, setTrackedOnly] = useState(() => searchParams.get('tracked') === 'true');
   const [filtersOpen, setFiltersOpen] = useState(false);
   const { isTracked, trackedMergerIds, toggleTracking } = useTracking();
 
