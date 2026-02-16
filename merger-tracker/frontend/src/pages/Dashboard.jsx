@@ -100,23 +100,6 @@ function Dashboard() {
   if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
   if (!stats) return null;
 
-  const calculateDurationStats = () => {
-    const businessDaysDurations = stats.phase_duration.all_business_durations || [];
-    const total = businessDaysDurations.length;
-
-    if (total === 0) return null;
-
-    const day15Count = businessDaysDurations.filter(d => d <= 15).length;
-    const day20Count = businessDaysDurations.filter(d => d <= 20).length;
-    const day30Count = businessDaysDurations.filter(d => d <= 30).length;
-
-    return {
-      day15: { count: day15Count, percentage: ((day15Count / total) * 100).toFixed(1) },
-      day20: { count: day20Count, percentage: ((day20Count / total) * 100).toFixed(1) },
-      day30: { count: day30Count, percentage: ((day30Count / total) * 100).toFixed(1) },
-    };
-  };
-
   const determinationData = {
     labels: Object.keys(stats.by_determination),
     datasets: [
@@ -284,37 +267,34 @@ function Dashboard() {
       {/* Charts */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Phase 1 Duration Table */}
-        {(() => {
-          const durationStats = calculateDurationStats();
-          return durationStats && (
-            <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card flex flex-col">
-              <h2 className="text-base font-semibold text-gray-900 mb-5">
-                Phase 1 duration
-              </h2>
-              <div className="flex flex-col flex-1 justify-around">
-                {[
-                  { label: 'By day 15', data: durationStats.day15 },
-                  { label: 'By day 20', data: durationStats.day20 },
-                  { label: 'By day 30', data: durationStats.day30 },
-                ].map(({ label, data }, index) => (
-                  <div key={label} className={`grid grid-cols-[auto_1fr_auto] items-center gap-4 py-3 ${index < 2 ? 'border-b border-gray-50' : ''}`}>
-                    <span className="text-sm text-gray-600">{label}</span>
-                    <div className="bg-gray-100 rounded-full h-1.5 overflow-hidden">
-                      <div
-                        className="bg-primary h-1.5 rounded-full transition-all duration-500"
-                        style={{ width: `${data.percentage}%` }}
-                      />
-                    </div>
-                    <span className="text-sm font-semibold text-gray-900 tabular-nums text-right">
-                      {data.percentage}%
-                      <span className="text-gray-400 font-normal ml-1">({data.count})</span>
-                    </span>
+        {stats.phase_duration.percentiles && (
+          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card flex flex-col">
+            <h2 className="text-base font-semibold text-gray-900 mb-5">
+              Phase 1 duration
+            </h2>
+            <div className="flex flex-col flex-1 justify-around">
+              {[
+                { label: 'By day 15', data: stats.phase_duration.percentiles.day15 },
+                { label: 'By day 20', data: stats.phase_duration.percentiles.day20 },
+                { label: 'By day 30', data: stats.phase_duration.percentiles.day30 },
+              ].map(({ label, data }, index) => (
+                <div key={label} className={`grid grid-cols-[auto_1fr_auto] items-center gap-4 py-3 ${index < 2 ? 'border-b border-gray-50' : ''}`}>
+                  <span className="text-sm text-gray-600">{label}</span>
+                  <div className="bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                    <div
+                      className="bg-primary h-1.5 rounded-full transition-all duration-500"
+                      style={{ width: `${data.percentage}%` }}
+                    />
                   </div>
-                ))}
-              </div>
+                  <span className="text-sm font-semibold text-gray-900 tabular-nums text-right">
+                    {data.percentage}%
+                    <span className="text-gray-400 font-normal ml-1">({data.count})</span>
+                  </span>
+                </div>
+              ))}
             </div>
-          );
-        })()}
+          </div>
+        )}
 
         {/* Phase 1 Determination Distribution */}
         {Object.keys(stats.by_determination).length > 0 && (
