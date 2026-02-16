@@ -8,9 +8,37 @@ const STORAGE_KEYS = {
   SEEN_EVENTS: 'merger_tracker_seen_events',
 };
 
+// Maximum age for seen events (90 days)
+const MAX_EVENT_AGE_DAYS = 90;
+
 // Generate a unique key for an event
 const getEventKey = (event) => {
   return `${event.merger_id}_${event.date}_${event.title || event.display_title || event.type}`;
+};
+
+// Extract date from event key (format: mergerId_date_title)
+const getDateFromKey = (key) => {
+  const parts = key.split('_');
+  if (parts.length < 2) return null;
+  return parts[1]; // date is the second part
+};
+
+// Prune old entries from the seen events array
+const pruneOldEntries = (keys) => {
+  const cutoffDate = new Date();
+  cutoffDate.setDate(cutoffDate.getDate() - MAX_EVENT_AGE_DAYS);
+
+  return keys.filter((key) => {
+    const dateStr = getDateFromKey(key);
+    if (!dateStr) return true; // Keep malformed keys
+
+    try {
+      const eventDate = new Date(dateStr);
+      return eventDate >= cutoffDate;
+    } catch {
+      return true; // Keep keys with unparseable dates
+    }
+  });
 };
 
 // Deduplicate events by their event key
@@ -34,18 +62,23 @@ export function TrackingProvider({ children }) {
     }
   });
 
+  // Use Set internally for O(1) lookups
   const [seenEventKeys, setSeenEventKeys] = useState(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEYS.SEEN_EVENTS);
-      return stored ? JSON.parse(stored) : [];
+      if (!stored) return new Set();
+
+      const keys = JSON.parse(stored);
+      // Prune old entries on load
+      const prunedKeys = pruneOldEntries(keys);
+      return new Set(prunedKeys);
     } catch {
-      return [];
+      return new Set();
     }
   });
 
   // Create Sets for O(1) lookup performance
   const trackedMergerIdsSet = useMemo(() => new Set(trackedMergerIds), [trackedMergerIds]);
-  const seenEventKeysSet = useMemo(() => new Set(seenEventKeys), [seenEventKeys]);
 
   // Timeline events for tracked mergers
   const [timelineEvents, setTimelineEvents] = useState([]);
@@ -98,10 +131,15 @@ export function TrackingProvider({ children }) {
           if (eventsToMarkSeen.length > 0) {
             const keys = eventsToMarkSeen.map(getEventKey);
             setSeenEventKeys((prev) => {
-              const prevSet = new Set(prev);
-              const newKeys = keys.filter((k) => !prevSet.has(k));
-              if (newKeys.length === 0) return prev;
-              return [...prev, ...newKeys];
+              const newSet = new Set(prev);
+              let hasChanges = false;
+              keys.forEach((k) => {
+                if (!newSet.has(k)) {
+                  newSet.add(k);
+                  hasChanges = true;
+                }
+              });
+              return hasChanges ? newSet : prev;
             });
           }
           setNewlyTrackedIds([]);
@@ -125,10 +163,11 @@ export function TrackingProvider({ children }) {
     }
   }, [trackedMergerIds]);
 
-  // Persist seen events to localStorage
+  // Persist seen events to localStorage (convert Set to Array)
   useEffect(() => {
     try {
-      localStorage.setItem(STORAGE_KEYS.SEEN_EVENTS, JSON.stringify(seenEventKeys));
+      const keysArray = Array.from(seenEventKeys);
+      localStorage.setItem(STORAGE_KEYS.SEEN_EVENTS, JSON.stringify(keysArray));
     } catch (e) {
       console.error('Failed to save seen events:', e);
     }
@@ -167,26 +206,32 @@ export function TrackingProvider({ children }) {
   const markEventAsSeen = useCallback((event) => {
     const key = getEventKey(event);
     setSeenEventKeys((prev) => {
-      const prevSet = new Set(prev);
-      if (prevSet.has(key)) return prev;
-      return [...prev, key];
+      if (prev.has(key)) return prev;
+      const newSet = new Set(prev);
+      newSet.add(key);
+      return newSet;
     });
   }, []);
 
   const markEventsAsSeen = useCallback((events) => {
     const keys = events.map(getEventKey);
     setSeenEventKeys((prev) => {
-      const prevSet = new Set(prev);
-      const newKeys = keys.filter((k) => !prevSet.has(k));
-      if (newKeys.length === 0) return prev;
-      return [...prev, ...newKeys];
+      const newSet = new Set(prev);
+      let hasChanges = false;
+      keys.forEach((k) => {
+        if (!newSet.has(k)) {
+          newSet.add(k);
+          hasChanges = true;
+        }
+      });
+      return hasChanges ? newSet : prev;
     });
   }, []);
 
   const isEventSeen = useCallback((event) => {
     const key = getEventKey(event);
-    return seenEventKeysSet.has(key);
-  }, [seenEventKeysSet]);
+    return seenEventKeys.has(key);
+  }, [seenEventKeys]);
 
   // All unique events for tracked mergers (for notification panel)
   const trackedEvents = useMemo(() => {
@@ -197,8 +242,8 @@ export function TrackingProvider({ children }) {
 
   // Get unseen events (subset of trackedEvents)
   const unseenEvents = useMemo(() => {
-    return trackedEvents.filter((event) => !seenEventKeysSet.has(getEventKey(event)));
-  }, [trackedEvents, seenEventKeysSet]);
+    return trackedEvents.filter((event) => !seenEventKeys.has(getEventKey(event)));
+  }, [trackedEvents, seenEventKeys]);
 
   // Count of unseen events (for badge)
   const unseenCount = unseenEvents.length;
