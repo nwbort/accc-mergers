@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
@@ -18,7 +18,9 @@ const SORT_FIELDS = [
 ];
 
 const SEARCH_DEBOUNCE_MS = 300;
-const MERGERS_PER_PAGE = 50;
+const INITIAL_VISIBLE = 20;
+const LOAD_MORE_COUNT = 20;
+const SCROLL_THRESHOLD_PX = 300;
 
 const sortMergers = (list, sortBy = 'notification-desc') => {
   return [...list].sort((a, b) => {
@@ -68,10 +70,7 @@ function Mergers() {
   const [sortBy, setSortBy] = useState(() => searchParams.get('sort') || 'notification-desc');
   const [trackedOnly, setTrackedOnly] = useState(() => searchParams.get('tracked') === 'true');
   const [filtersOpen, setFiltersOpen] = useState(false);
-  const [currentPage, setCurrentPage] = useState(() => {
-    const p = parseInt(searchParams.get('page'), 10);
-    return p > 0 ? p : 1;
-  });
+  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE);
   const { isTracked, trackedMergerIds, toggleTracking } = useTracking();
 
   // Initialize search index from cached data if available
@@ -89,13 +88,11 @@ function Mergers() {
     const phase = searchParams.get('phase') || 'all';
     const sort = searchParams.get('sort') || 'notification-desc';
     const tracked = searchParams.get('tracked') === 'true';
-    const page = parseInt(searchParams.get('page'), 10);
     setSearchTerm(q);
     setStatusFilter(status);
     setPhaseFilter(phase);
     setSortBy(sort);
     setTrackedOnly(tracked);
-    setCurrentPage(page > 0 ? page : 1);
     // Auto-open filters on desktop if any filter is active
     if ((status !== 'all' || phase !== 'all' || tracked) && window.matchMedia('(min-width: 768px)').matches) {
       setFiltersOpen(true);
@@ -111,6 +108,29 @@ function Mergers() {
   useEffect(() => {
     filterMergers();
   }, [debouncedSearchTerm, statusFilter, phaseFilter, sortBy, trackedOnly, mergers, trackedMergerIds]);
+
+  // Reset visible count when filters, search, or sort change
+  useEffect(() => {
+    setVisibleCount(INITIAL_VISIBLE);
+  }, [debouncedSearchTerm, statusFilter, phaseFilter, sortBy, trackedOnly]);
+
+  // Infinite scroll: load more items when user scrolls near bottom
+  const visibleCountRef = useRef(visibleCount);
+  visibleCountRef.current = visibleCount;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.innerHeight + window.scrollY;
+      const threshold = document.documentElement.scrollHeight - SCROLL_THRESHOLD_PX;
+
+      if (scrollPosition >= threshold && visibleCountRef.current < filteredMergers.length) {
+        setVisibleCount(prev => Math.min(prev + LOAD_MORE_COUNT, filteredMergers.length));
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [filteredMergers.length]);
 
   const fetchMergers = async () => {
     try {
@@ -170,10 +190,6 @@ function Mergers() {
     } else {
       params.delete(key);
     }
-    // Reset to page 1 when filters, search, or sort change
-    if (key !== 'page') {
-      params.delete('page');
-    }
     setSearchParams(params);
   };
 
@@ -226,22 +242,8 @@ function Mergers() {
     isTracked,
   ]);
 
-  // Pagination
-  const totalPages = Math.max(1, Math.ceil(filteredMergers.length / MERGERS_PER_PAGE));
-  const safePage = Math.min(currentPage, totalPages);
-  const startIndex = (safePage - 1) * MERGERS_PER_PAGE;
-  const paginatedMergers = filteredMergers.slice(startIndex, startIndex + MERGERS_PER_PAGE);
-
-  const goToPage = (page) => {
-    const params = new URLSearchParams(searchParams);
-    if (page <= 1) {
-      params.delete('page');
-    } else {
-      params.set('page', String(page));
-    }
-    setSearchParams(params);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const visibleMergers = filteredMergers.slice(0, visibleCount);
+  const hasMore = visibleCount < filteredMergers.length;
 
   const activeFilterCount = [
     phaseFilter !== 'all',
@@ -419,7 +421,7 @@ function Mergers() {
         {/* Results count & Sort */}
         <div className="flex items-center justify-between mb-4">
           <p className="text-sm text-gray-400">
-            Showing {filteredMergers.length === 0 ? '0' : `${startIndex + 1}\u2013${Math.min(startIndex + MERGERS_PER_PAGE, filteredMergers.length)}`} of {filteredMergers.length} mergers
+            Showing {visibleMergers.length} of {filteredMergers.length} mergers
           </p>
           <div className="flex items-center gap-2">
             <label htmlFor="sort" className="text-sm text-gray-400 hidden sm:inline">Sort by</label>
@@ -456,7 +458,7 @@ function Mergers() {
 
         {/* Mergers List */}
         <div className="space-y-3">
-          {paginatedMergers.map((merger) => (
+          {visibleMergers.map((merger) => (
             <div
               key={merger.merger_id}
               className="bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200"
@@ -550,45 +552,10 @@ function Mergers() {
           ))}
         </div>
 
-        {/* Pagination controls */}
-        {totalPages > 1 && (
-          <nav className="mt-6 flex items-center justify-center gap-1" aria-label="Pagination">
-            <button
-              onClick={() => goToPage(safePage - 1)}
-              disabled={safePage <= 1}
-              className="px-3 py-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-              aria-label="Previous page"
-            >
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-            </button>
-            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
-                key={page}
-                onClick={() => goToPage(page)}
-                className={`px-3.5 py-2 text-sm font-medium rounded-lg border transition-colors ${
-                  page === safePage
-                    ? 'bg-primary text-white border-primary shadow-sm'
-                    : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'
-                }`}
-                aria-label={`Page ${page}`}
-                aria-current={page === safePage ? 'page' : undefined}
-              >
-                {page}
-              </button>
-            ))}
-            <button
-              onClick={() => goToPage(safePage + 1)}
-              disabled={safePage >= totalPages}
-              className="px-3 py-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-              aria-label="Next page"
-            >
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </button>
-          </nav>
+        {hasMore && (
+          <div className="text-center py-6">
+            <p className="text-xs text-gray-400">Scroll down to load more</p>
+          </div>
         )}
 
         {filteredMergers.length === 0 && (
