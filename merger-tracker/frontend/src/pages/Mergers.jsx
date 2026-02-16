@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
@@ -9,11 +9,15 @@ import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
 import { useTracking } from '../context/TrackingContext';
+import { useDebounce } from '../hooks/useDebounce';
+import { buildSearchIndex, searchMergers } from '../utils/searchIndex';
 
 const SORT_FIELDS = [
   { value: 'notification', label: 'Notification date' },
   { value: 'determination', label: 'Determination date' },
 ];
+
+const SEARCH_DEBOUNCE_MS = 300;
 
 const sortMergers = (list, sortBy = 'notification-desc') => {
   return [...list].sort((a, b) => {
@@ -55,13 +59,24 @@ function Mergers() {
   const [filteredMergers, setFilteredMergers] = useState(() => sortMergers(dataCache.get('mergers-list') || []));
   const [loading, setLoading] = useState(() => !dataCache.has('mergers-list'));
   const [error, setError] = useState(null);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [statusFilter, setStatusFilter] = useState('all');
-  const [phaseFilter, setPhaseFilter] = useState('all');
-  const [sortBy, setSortBy] = useState('notification-desc');
-  const [trackedOnly, setTrackedOnly] = useState(false);
+
+  // Initialize filter state from URL params to avoid flash of unfiltered content
+  const [searchTerm, setSearchTerm] = useState(() => searchParams.get('q') || '');
+  const [statusFilter, setStatusFilter] = useState(() => searchParams.get('status') || 'all');
+  const [phaseFilter, setPhaseFilter] = useState(() => searchParams.get('phase') || 'all');
+  const [sortBy, setSortBy] = useState(() => searchParams.get('sort') || 'notification-desc');
+  const [trackedOnly, setTrackedOnly] = useState(() => searchParams.get('tracked') === 'true');
   const [filtersOpen, setFiltersOpen] = useState(false);
   const { isTracked, trackedMergerIds, toggleTracking } = useTracking();
+
+  // Initialize search index from cached data if available
+  const [searchIndex, setSearchIndex] = useState(() => {
+    const cachedMergers = dataCache.get('mergers-list') || [];
+    return cachedMergers.length ? buildSearchIndex(cachedMergers) : null;
+  });
+
+  // Debounce search term to reduce filter executions
+  const debouncedSearchTerm = useDebounce(searchTerm, SEARCH_DEBOUNCE_MS);
 
   useEffect(() => {
     const q = searchParams.get('q') || '';
@@ -88,7 +103,7 @@ function Mergers() {
 
   useEffect(() => {
     filterMergers();
-  }, [searchTerm, statusFilter, phaseFilter, sortBy, trackedOnly, mergers, trackedMergerIds]);
+  }, [debouncedSearchTerm, statusFilter, phaseFilter, sortBy, trackedOnly, mergers, trackedMergerIds]);
 
   const fetchMergers = async () => {
     try {
@@ -97,6 +112,10 @@ function Mergers() {
       const data = await response.json();
       dataCache.set('mergers-list', data.mergers);
       setMergers(data.mergers);
+
+      // Build search index after data loads for optimized searching
+      const index = buildSearchIndex(data.mergers);
+      setSearchIndex(index);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -114,13 +133,21 @@ function Mergers() {
     setSearchParams(params);
   };
 
-  const filterMergers = () => {
+  const filterMergers = useCallback(() => {
+    // Early return if data not loaded yet
+    if (!mergers.length || !searchIndex) {
+      setFilteredMergers([]);
+      return;
+    }
+
     let filtered = [...mergers];
 
+    // Apply tracked filter
     if (trackedOnly) {
       filtered = filtered.filter((m) => isTracked(m.merger_id));
     }
 
+    // Apply phase filter
     if (phaseFilter === 'phase1') {
       filtered = filtered.filter((m) => m.stage && m.stage.includes('Phase 1'));
     } else if (phaseFilter === 'phase2') {
@@ -129,6 +156,7 @@ function Mergers() {
       filtered = filtered.filter((m) => m.is_waiver);
     }
 
+    // Apply status filter
     if (statusFilter !== 'all') {
       filtered = filtered.filter((m) => {
         const displayedOutcome = m.accc_determination || m.status;
@@ -136,20 +164,23 @@ function Mergers() {
       });
     }
 
-    if (searchTerm) {
-      const term = searchTerm.toLowerCase();
-      filtered = filtered.filter(
-        (m) =>
-          m.merger_name?.toLowerCase().includes(term) ||
-          m.merger_id?.toLowerCase().includes(term) ||
-          m.acquirers?.some((a) => a?.name?.toLowerCase().includes(term)) ||
-          m.targets?.some((t) => t?.name?.toLowerCase().includes(term)) ||
-          m.anzsic_codes?.some((c) => c?.name?.toLowerCase().includes(term))
-      );
+    // Apply search filter using optimized index
+    if (debouncedSearchTerm) {
+      filtered = searchMergers(filtered, debouncedSearchTerm, searchIndex);
     }
 
     setFilteredMergers(sortMergers(filtered, sortBy));
-  };
+  }, [
+    mergers,
+    searchIndex,
+    debouncedSearchTerm,
+    statusFilter,
+    phaseFilter,
+    sortBy,
+    trackedOnly,
+    trackedMergerIds,
+    isTracked,
+  ]);
 
   const activeFilterCount = [
     phaseFilter !== 'all',
