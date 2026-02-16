@@ -49,6 +49,7 @@ function Dashboard() {
       markCurrentItemsAsSeen();
       window.removeEventListener('beforeunload', handleBeforeUnload);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const markCurrentItemsAsSeen = () => {
@@ -91,7 +92,7 @@ function Dashboard() {
       const data = await response.json();
       dataCache.set('dashboard-events', data.events);
       setUpcomingEvents(data.events);
-    } catch (err) {
+    } catch {
       setUpcomingEvents([]);
     }
   };
