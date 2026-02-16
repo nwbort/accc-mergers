@@ -43,12 +43,17 @@ export function TrackingProvider({ children }) {
     }
   });
 
+  // Create Sets for O(1) lookup performance
+  const trackedMergerIdsSet = useMemo(() => new Set(trackedMergerIds), [trackedMergerIds]);
+  const seenEventKeysSet = useMemo(() => new Set(seenEventKeys), [seenEventKeys]);
+
   // Timeline events for tracked mergers
   const [timelineEvents, setTimelineEvents] = useState([]);
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   // Track newly added merger IDs so we can mark their events as seen
   const [newlyTrackedIds, setNewlyTrackedIds] = useState([]);
+  const newlyTrackedIdsSet = useMemo(() => new Set(newlyTrackedIds), [newlyTrackedIds]);
 
   // Fetch events on mount and when tracked mergers change
   useEffect(() => {
@@ -71,16 +76,16 @@ export function TrackingProvider({ children }) {
 
         if (timelineRes.ok) {
           const data = await timelineRes.json();
-          // Filter to only tracked mergers
-          const filtered = data.events.filter((e) => trackedMergerIds.includes(e.merger_id));
+          // Filter to only tracked mergers (using Set for O(1) lookup)
+          const filtered = data.events.filter((e) => trackedMergerIdsSet.has(e.merger_id));
           setTimelineEvents(filtered);
           allFetchedEvents = [...allFetchedEvents, ...filtered];
         }
 
         if (upcomingRes.ok) {
           const data = await upcomingRes.json();
-          // Filter to only tracked mergers
-          const filtered = data.events.filter((e) => trackedMergerIds.includes(e.merger_id));
+          // Filter to only tracked mergers (using Set for O(1) lookup)
+          const filtered = data.events.filter((e) => trackedMergerIdsSet.has(e.merger_id));
           setUpcomingEvents(filtered);
           allFetchedEvents = [...allFetchedEvents, ...filtered];
         }
@@ -88,12 +93,13 @@ export function TrackingProvider({ children }) {
         // Mark all events for newly tracked mergers as seen
         if (newlyTrackedIds.length > 0) {
           const eventsToMarkSeen = allFetchedEvents.filter((e) =>
-            newlyTrackedIds.includes(e.merger_id)
+            newlyTrackedIdsSet.has(e.merger_id)
           );
           if (eventsToMarkSeen.length > 0) {
             const keys = eventsToMarkSeen.map(getEventKey);
             setSeenEventKeys((prev) => {
-              const newKeys = keys.filter((k) => !prev.includes(k));
+              const prevSet = new Set(prev);
+              const newKeys = keys.filter((k) => !prevSet.has(k));
               if (newKeys.length === 0) return prev;
               return [...prev, ...newKeys];
             });
@@ -108,7 +114,7 @@ export function TrackingProvider({ children }) {
     };
 
     fetchEvents();
-  }, [trackedMergerIds, newlyTrackedIds]);
+  }, [trackedMergerIds, newlyTrackedIds, trackedMergerIdsSet, newlyTrackedIdsSet]);
 
   // Persist tracked mergers to localStorage
   useEffect(() => {
@@ -130,7 +136,8 @@ export function TrackingProvider({ children }) {
 
   const trackMerger = useCallback((mergerId) => {
     setTrackedMergerIds((prev) => {
-      if (prev.includes(mergerId)) return prev;
+      const prevSet = new Set(prev);
+      if (prevSet.has(mergerId)) return prev;
       // Mark this as a newly tracked merger so we can auto-mark its events as seen
       setNewlyTrackedIds((ids) => [...ids, mergerId]);
       return [...prev, mergerId];
@@ -142,12 +149,13 @@ export function TrackingProvider({ children }) {
   }, []);
 
   const isTracked = useCallback((mergerId) => {
-    return trackedMergerIds.includes(mergerId);
-  }, [trackedMergerIds]);
+    return trackedMergerIdsSet.has(mergerId);
+  }, [trackedMergerIdsSet]);
 
   const toggleTracking = useCallback((mergerId) => {
     setTrackedMergerIds((prev) => {
-      if (prev.includes(mergerId)) {
+      const prevSet = new Set(prev);
+      if (prevSet.has(mergerId)) {
         return prev.filter((id) => id !== mergerId);
       }
       // Mark this as a newly tracked merger so we can auto-mark its events as seen
@@ -159,7 +167,8 @@ export function TrackingProvider({ children }) {
   const markEventAsSeen = useCallback((event) => {
     const key = getEventKey(event);
     setSeenEventKeys((prev) => {
-      if (prev.includes(key)) return prev;
+      const prevSet = new Set(prev);
+      if (prevSet.has(key)) return prev;
       return [...prev, key];
     });
   }, []);
@@ -167,7 +176,8 @@ export function TrackingProvider({ children }) {
   const markEventsAsSeen = useCallback((events) => {
     const keys = events.map(getEventKey);
     setSeenEventKeys((prev) => {
-      const newKeys = keys.filter((k) => !prev.includes(k));
+      const prevSet = new Set(prev);
+      const newKeys = keys.filter((k) => !prevSet.has(k));
       if (newKeys.length === 0) return prev;
       return [...prev, ...newKeys];
     });
@@ -175,8 +185,8 @@ export function TrackingProvider({ children }) {
 
   const isEventSeen = useCallback((event) => {
     const key = getEventKey(event);
-    return seenEventKeys.includes(key);
-  }, [seenEventKeys]);
+    return seenEventKeysSet.has(key);
+  }, [seenEventKeysSet]);
 
   // All unique events for tracked mergers (for notification panel)
   const trackedEvents = useMemo(() => {
@@ -187,8 +197,8 @@ export function TrackingProvider({ children }) {
 
   // Get unseen events (subset of trackedEvents)
   const unseenEvents = useMemo(() => {
-    return trackedEvents.filter((event) => !seenEventKeys.includes(getEventKey(event)));
-  }, [trackedEvents, seenEventKeys]);
+    return trackedEvents.filter((event) => !seenEventKeysSet.has(getEventKey(event)));
+  }, [trackedEvents, seenEventKeysSet]);
 
   // Count of unseen events (for badge)
   const unseenCount = unseenEvents.length;
