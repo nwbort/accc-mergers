@@ -107,14 +107,47 @@ function Mergers() {
 
   const fetchMergers = async () => {
     try {
-      const response = await fetch(API_ENDPOINTS.mergersList);
-      if (!response.ok) throw new Error('Failed to fetch mergers');
-      const data = await response.json();
-      dataCache.set('mergers-list', data.mergers);
-      setMergers(data.mergers);
+      // First, fetch metadata to know how many pages there are
+      const metaResponse = await fetch(API_ENDPOINTS.mergersListMeta);
+
+      if (!metaResponse.ok) {
+        // Fallback to legacy endpoint if pagination not available
+        console.log('Pagination not available, falling back to legacy endpoint');
+        const response = await fetch(API_ENDPOINTS.mergersList);
+        if (!response.ok) throw new Error('Failed to fetch mergers');
+        const data = await response.json();
+        dataCache.set('mergers-list', data.mergers);
+        setMergers(data.mergers);
+        const index = buildSearchIndex(data.mergers);
+        setSearchIndex(index);
+        setLoading(false);
+        return;
+      }
+
+      const meta = await metaResponse.json();
+      const totalPages = meta.total_pages;
+
+      // Fetch all pages in parallel
+      const pagePromises = [];
+      for (let i = 1; i <= totalPages; i++) {
+        pagePromises.push(fetch(API_ENDPOINTS.mergersListPage(i)));
+      }
+
+      const pageResponses = await Promise.all(pagePromises);
+      const pageDataPromises = pageResponses.map(r => {
+        if (!r.ok) throw new Error('Failed to fetch merger page');
+        return r.json();
+      });
+      const pagesData = await Promise.all(pageDataPromises);
+
+      // Combine all pages
+      const allMergers = pagesData.flatMap(page => page.mergers);
+
+      dataCache.set('mergers-list', allMergers);
+      setMergers(allMergers);
 
       // Build search index after data loads for optimized searching
-      const index = buildSearchIndex(data.mergers);
+      const index = buildSearchIndex(allMergers);
       setSearchIndex(index);
     } catch (err) {
       setError(err.message);

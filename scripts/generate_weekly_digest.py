@@ -89,8 +89,33 @@ def is_in_week_range(date_str: str, period_start: datetime, period_end: datetime
     return period_start <= dt <= period_end
 
 
+def get_first_paragraph(description: str) -> str:
+    """Extract the first paragraph from a description."""
+    if not description:
+        return ''
+
+    paragraphs = description.split('\n\n')
+    paragraphs = [p.strip() for p in paragraphs if p.strip()]
+
+    for para in paragraphs:
+        # Remove markdown formatting for word count
+        plain_text = para.replace('**', '').replace('*', '').strip()
+        word_count = len(plain_text.split())
+
+        # Only return paragraphs with more than 1 word
+        if word_count > 1:
+            return para
+
+    # Fallback to first paragraph if no substantial one found
+    return paragraphs[0] if paragraphs else ''
+
+
 def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
     """Create a lightweight summary of a merger for the digest."""
+    # Truncate description to first paragraph to reduce payload size
+    full_description = merger.get('merger_description', '')
+    truncated_description = get_first_paragraph(full_description)
+
     return {
         'merger_id': merger.get('merger_id'),
         'merger_name': merger.get('merger_name'),
@@ -106,7 +131,7 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
         'is_waiver': merger.get('is_waiver', False),
         'phase_1_determination': merger.get('phase_1_determination'),
         'phase_2_determination': merger.get('phase_2_determination'),
-        'merger_description': merger.get('merger_description'),
+        'merger_description': truncated_description,
         'events': merger.get('events', []),
     }
 

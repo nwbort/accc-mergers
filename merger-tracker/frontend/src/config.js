@@ -3,11 +3,16 @@
 
 export const API_ENDPOINTS = {
   mergers: '/data/mergers.json',  // Legacy: full mergers list (not currently used by frontend)
-  mergersList: '/data/mergers/list.json',  // Lightweight merger list (no events/descriptions)
+  mergersList: '/data/mergers/list.json',  // Legacy: full lightweight merger list
+  mergersListPage: (page) => `/data/mergers/list-page-${page}.json`,  // Paginated merger list
+  mergersListMeta: '/data/mergers/list-meta.json',  // Pagination metadata for mergers list
   mergerDetail: (id) => `/data/mergers/${id}.json`,  // Individual merger file
   stats: '/data/stats.json',
-  timeline: '/data/timeline.json',
+  timeline: '/data/timeline.json',  // Legacy: full timeline
+  timelinePage: (page) => `/data/timeline-page-${page}.json`,  // Paginated timeline
+  timelineMeta: '/data/timeline-meta.json',  // Pagination metadata for timeline
   industries: '/data/industries.json',
+  industryDetail: (code) => `/data/industries/${code}.json`,  // Individual industry file with mergers
   upcomingEvents: '/data/upcoming-events.json',
   commentary: '/data/commentary.json',  // Mergers with user commentary
   digest: '/data/digest.json',  // Weekly digest of merger activity

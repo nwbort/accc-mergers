@@ -276,6 +276,63 @@ def generate_mergers_list_json(mergers: list) -> dict:
     return {"mergers": lightweight_mergers}
 
 
+def generate_paginated_list(mergers: list, page_size: int = 50) -> None:
+    """Generate paginated merger list files."""
+    mergers_dir = OUTPUT_DIR / "mergers"
+    mergers_dir.mkdir(parents=True, exist_ok=True)
+
+    # Generate lightweight merger data
+    lightweight_mergers = []
+    for m in mergers:
+        lightweight_mergers.append({
+            "merger_id": m.get('merger_id'),
+            "merger_name": m.get('merger_name'),
+            "status": m.get('status'),
+            "accc_determination": normalize_determination(m.get('accc_determination')),
+            "is_waiver": is_waiver_merger(m),
+            "effective_notification_datetime": m.get('effective_notification_datetime'),
+            "determination_publication_date": m.get('determination_publication_date'),
+            "end_of_determination_period": m.get('end_of_determination_period'),
+            "stage": m.get('stage'),
+            "acquirers": m.get('acquirers', []),
+            "targets": m.get('targets', []),
+            "other_parties": m.get('other_parties', []),
+            "anzsic_codes": m.get('anzsic_codes') or m.get('anszic_codes', []),
+            "url": m.get('url')
+        })
+
+    total_mergers = len(lightweight_mergers)
+    total_pages = (total_mergers + page_size - 1) // page_size
+
+    # Generate page files
+    for page_num in range(1, total_pages + 1):
+        start_idx = (page_num - 1) * page_size
+        end_idx = min(start_idx + page_size, total_mergers)
+        page_data = {
+            "mergers": lightweight_mergers[start_idx:end_idx],
+            "page": page_num,
+            "page_size": page_size,
+            "total": total_mergers,
+            "total_pages": total_pages
+        }
+
+        output_path = mergers_dir / f"list-page-{page_num}.json"
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(page_data, f, indent=2)
+
+    # Generate metadata file
+    meta_data = {
+        "total": total_mergers,
+        "page_size": page_size,
+        "total_pages": total_pages
+    }
+    meta_path = mergers_dir / "list-meta.json"
+    with open(meta_path, 'w', encoding='utf-8') as f:
+        json.dump(meta_data, f, indent=2)
+
+    print(f"✓ Generated {total_pages} paginated list files ({page_size} mergers/page)")
+
+
 def generate_stats_json(mergers: list) -> dict:
     """Generate aggregated statistics (excluding waiver mergers)."""
     # Filter out waiver mergers for stats
@@ -459,12 +516,12 @@ def generate_stats_json(mergers: list) -> dict:
 def generate_timeline_json(mergers: list) -> dict:
     """Generate timeline of all events."""
     events = []
-    
+
     for m in mergers:
         merger_id = m['merger_id']
         merger_name = m['merger_name']
         merger_is_waiver = is_waiver_merger(m)
-        
+
         for event in m.get('events', []):
             title = event.get('title', '')
             events.append({
@@ -479,21 +536,80 @@ def generate_timeline_json(mergers: list) -> dict:
                 "phase": event.get('phase') or extract_phase_from_event(title),
                 "is_waiver": merger_is_waiver
             })
-    
+
     # Sort by date descending
     events.sort(key=lambda x: x.get('date', ''), reverse=True)
-    
+
     return {
         "events": events,
         "total": len(events)
     }
 
 
+def generate_paginated_timeline(mergers: list, page_size: int = 100) -> None:
+    """Generate paginated timeline files."""
+    events = []
+
+    for m in mergers:
+        merger_id = m['merger_id']
+        merger_name = m['merger_name']
+        merger_is_waiver = is_waiver_merger(m)
+
+        for event in m.get('events', []):
+            title = event.get('title', '')
+            events.append({
+                "date": event.get('date'),
+                "title": title,
+                "display_title": event.get('display_title'),
+                "url": event.get('url'),
+                "url_gh": event.get('url_gh'),
+                "status": event.get('status'),
+                "merger_id": merger_id,
+                "merger_name": merger_name,
+                "phase": event.get('phase') or extract_phase_from_event(title),
+                "is_waiver": merger_is_waiver
+            })
+
+    # Sort by date descending
+    events.sort(key=lambda x: x.get('date', ''), reverse=True)
+
+    total_events = len(events)
+    total_pages = (total_events + page_size - 1) // page_size
+
+    # Generate page files
+    for page_num in range(1, total_pages + 1):
+        start_idx = (page_num - 1) * page_size
+        end_idx = min(start_idx + page_size, total_events)
+        page_data = {
+            "events": events[start_idx:end_idx],
+            "page": page_num,
+            "page_size": page_size,
+            "total": total_events,
+            "total_pages": total_pages
+        }
+
+        output_path = OUTPUT_DIR / f"timeline-page-{page_num}.json"
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(page_data, f, indent=2)
+
+    # Generate metadata file
+    meta_data = {
+        "total": total_events,
+        "page_size": page_size,
+        "total_pages": total_pages
+    }
+    meta_path = OUTPUT_DIR / "timeline-meta.json"
+    with open(meta_path, 'w', encoding='utf-8') as f:
+        json.dump(meta_data, f, indent=2)
+
+    print(f"✓ Generated {total_pages} paginated timeline files ({page_size} events/page)")
+
+
 def generate_industries_json(mergers: list) -> dict:
     """Generate industry list with merger counts."""
     # Group by (code, name) to count unique mergers
     industry_mergers = defaultdict(set)
-    
+
     for m in mergers:
         merger_id = m['merger_id']
         # Handle both spellings
@@ -501,7 +617,7 @@ def generate_industries_json(mergers: list) -> dict:
         for code in codes:
             key = (code.get('code', ''), code.get('name', ''))
             industry_mergers[key].add(merger_id)
-    
+
     industries = [
         {
             "code": code,
@@ -510,11 +626,73 @@ def generate_industries_json(mergers: list) -> dict:
         }
         for (code, name), merger_ids in industry_mergers.items()
     ]
-    
+
     # Sort by merger count descending
     industries.sort(key=lambda x: -x['merger_count'])
-    
+
     return {"industries": industries}
+
+
+def generate_individual_industry_files(mergers: list) -> None:
+    """Generate individual JSON files for each industry code."""
+    industries_dir = OUTPUT_DIR / "industries"
+    industries_dir.mkdir(parents=True, exist_ok=True)
+
+    # Group mergers by industry
+    industry_mergers_map = defaultdict(list)
+
+    for m in mergers:
+        merger_id = m.get('merger_id')
+        merger_name = m.get('merger_name')
+        status = m.get('status')
+        is_waiver = is_waiver_merger(m)
+        # Get latest date for sorting
+        determination_date = m.get('determination_publication_date') or ''
+        notification_date = m.get('effective_notification_datetime') or ''
+
+        # Handle both spellings
+        codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
+        for code_obj in codes:
+            code = code_obj.get('code', '')
+            name = code_obj.get('name', '')
+
+            if code:  # Only add if code exists
+                # Create minimal merger object with only fields needed by frontend
+                merger_summary = {
+                    "merger_id": merger_id,
+                    "merger_name": merger_name,
+                    "is_waiver": is_waiver,
+                    "status": status,
+                    # Internal field for sorting only (not displayed)
+                    "_latest_date": max(determination_date, notification_date)
+                }
+
+                # Use code as key (name can vary)
+                industry_mergers_map[code].append(merger_summary)
+
+    # Generate a file for each industry
+    for code, industry_mergers in industry_mergers_map.items():
+        # Sort by most recent date (determination or notification)
+        industry_mergers.sort(key=lambda x: x.get('_latest_date', ''), reverse=True)
+
+        # Remove internal sorting field before output
+        for merger in industry_mergers:
+            merger.pop('_latest_date', None)
+
+        output_data = {
+            "code": code,
+            "mergers": industry_mergers,
+            "count": len(industry_mergers)
+        }
+
+        # Use code as filename (sanitize for filesystem)
+        safe_code = code.replace('/', '-').replace('\\', '-')
+        output_path = industries_dir / f"{safe_code}.json"
+
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(output_data, f, indent=2)
+
+    print(f"✓ Generated {len(industry_mergers_map)} individual industry files in {industries_dir}")
 
 
 def generate_commentary_json(mergers: list, commentary: dict) -> dict:
@@ -685,12 +863,24 @@ def main():
     generate_individual_merger_files(mergers, commentary)
     print(f"✓ Generated {len(mergers)} individual merger files in {OUTPUT_DIR / 'mergers'}")
 
-    # Generate lightweight list.json
+    # Generate lightweight list.json (kept for backward compatibility)
     list_data = generate_mergers_list_json(mergers)
     list_path = OUTPUT_DIR / "mergers" / "list.json"
     with open(list_path, 'w', encoding='utf-8') as f:
         json.dump(list_data, f, indent=2)
     print(f"✓ Generated {list_path}")
+
+    # Generate paginated list files
+    print("\nGenerating paginated list files...")
+    generate_paginated_list(mergers, page_size=50)
+
+    # Generate paginated timeline files
+    print("\nGenerating paginated timeline files...")
+    generate_paginated_timeline(mergers, page_size=100)
+
+    # Generate individual industry files
+    print("\nGenerating individual industry files...")
+    generate_individual_industry_files(mergers)
 
     print("\nDone!")
 

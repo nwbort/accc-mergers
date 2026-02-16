@@ -24,6 +24,8 @@ function Timeline() {
   const [hasMore, setHasMore] = useState(() =>
     cachedEvents ? cachedEvents.length > ITEMS_PER_PAGE : true
   );
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(null);
 
   useEffect(() => {
     fetchTimeline();
@@ -41,18 +43,41 @@ function Timeline() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [hasMore, loadingMore, displayedEvents.length, allEvents.length]);
+  }, [hasMore, loadingMore, displayedEvents.length, allEvents.length, currentPage, totalPages]);
 
   const fetchTimeline = async () => {
     try {
-      const response = await fetch(API_ENDPOINTS.timeline);
+      // First, fetch metadata to know total pages
+      const metaResponse = await fetch(API_ENDPOINTS.timelineMeta);
+
+      if (!metaResponse.ok) {
+        // Fallback to legacy endpoint if pagination not available
+        console.log('Timeline pagination not available, falling back to legacy endpoint');
+        const response = await fetch(API_ENDPOINTS.timeline);
+        if (!response.ok) throw new Error('Failed to fetch timeline');
+        const data = await response.json();
+
+        dataCache.set('timeline-events', data.events);
+        setAllEvents(data.events);
+        setDisplayedEvents(data.events.slice(0, ITEMS_PER_PAGE));
+        setHasMore(data.events.length > ITEMS_PER_PAGE);
+        setLoading(false);
+        return;
+      }
+
+      const meta = await metaResponse.json();
+      setTotalPages(meta.total_pages);
+
+      // Fetch first page
+      const response = await fetch(API_ENDPOINTS.timelinePage(1));
       if (!response.ok) throw new Error('Failed to fetch timeline');
       const data = await response.json();
 
-      dataCache.set('timeline-events', data.events);
+      dataCache.set('timeline-page-1', data.events);
       setAllEvents(data.events);
       setDisplayedEvents(data.events.slice(0, ITEMS_PER_PAGE));
-      setHasMore(data.events.length > ITEMS_PER_PAGE);
+      setHasMore(data.events.length > ITEMS_PER_PAGE || meta.total_pages > 1);
+      setCurrentPage(1);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -60,22 +85,55 @@ function Timeline() {
     }
   };
 
-  const loadMoreEvents = () => {
+  const loadMoreEvents = async () => {
     if (loadingMore || !hasMore) return;
 
     setLoadingMore(true);
 
-    const currentLength = displayedEvents.length;
-    const nextBatch = allEvents.slice(currentLength, currentLength + LOAD_MORE_COUNT);
+    try {
+      const currentLength = displayedEvents.length;
 
-    if (nextBatch.length > 0) {
-      setDisplayedEvents(prev => [...prev, ...nextBatch]);
-      setHasMore(currentLength + nextBatch.length < allEvents.length);
-    } else {
+      // Check if we have more events in the current loaded data
+      if (currentLength < allEvents.length) {
+        const nextBatch = allEvents.slice(currentLength, currentLength + LOAD_MORE_COUNT);
+        setDisplayedEvents(prev => [...prev, ...nextBatch]);
+        setHasMore(currentLength + nextBatch.length < allEvents.length || (totalPages && currentPage < totalPages));
+      } else if (totalPages && currentPage < totalPages) {
+        // Need to fetch next page
+        const nextPage = currentPage + 1;
+        const cachedPage = dataCache.get(`timeline-page-${nextPage}`);
+
+        let pageEvents;
+        if (cachedPage) {
+          pageEvents = cachedPage;
+        } else {
+          const response = await fetch(API_ENDPOINTS.timelinePage(nextPage));
+          if (!response.ok) {
+            setHasMore(false);
+            setLoadingMore(false);
+            return;
+          }
+          const data = await response.json();
+          pageEvents = data.events;
+          dataCache.set(`timeline-page-${nextPage}`, pageEvents);
+        }
+
+        // Append new page events to allEvents
+        setAllEvents(prev => [...prev, ...pageEvents]);
+        // Display the first batch from the new page
+        const nextBatch = pageEvents.slice(0, LOAD_MORE_COUNT);
+        setDisplayedEvents(prev => [...prev, ...nextBatch]);
+        setCurrentPage(nextPage);
+        setHasMore(nextBatch.length < pageEvents.length || nextPage < totalPages);
+      } else {
+        setHasMore(false);
+      }
+    } catch (err) {
+      console.error('Failed to load more events:', err);
       setHasMore(false);
+    } finally {
+      setLoadingMore(false);
     }
-
-    setLoadingMore(false);
   };
 
   const getEventType = (title, displayTitle) => {
