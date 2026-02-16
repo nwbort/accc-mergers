@@ -18,6 +18,7 @@ const SORT_FIELDS = [
 ];
 
 const SEARCH_DEBOUNCE_MS = 300;
+const MERGERS_PER_PAGE = 50;
 
 const sortMergers = (list, sortBy = 'notification-desc') => {
   return [...list].sort((a, b) => {
@@ -67,6 +68,10 @@ function Mergers() {
   const [sortBy, setSortBy] = useState(() => searchParams.get('sort') || 'notification-desc');
   const [trackedOnly, setTrackedOnly] = useState(() => searchParams.get('tracked') === 'true');
   const [filtersOpen, setFiltersOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState(() => {
+    const p = parseInt(searchParams.get('page'), 10);
+    return p > 0 ? p : 1;
+  });
   const { isTracked, trackedMergerIds, toggleTracking } = useTracking();
 
   // Initialize search index from cached data if available
@@ -84,11 +89,13 @@ function Mergers() {
     const phase = searchParams.get('phase') || 'all';
     const sort = searchParams.get('sort') || 'notification-desc';
     const tracked = searchParams.get('tracked') === 'true';
+    const page = parseInt(searchParams.get('page'), 10);
     setSearchTerm(q);
     setStatusFilter(status);
     setPhaseFilter(phase);
     setSortBy(sort);
     setTrackedOnly(tracked);
+    setCurrentPage(page > 0 ? page : 1);
     // Auto-open filters on desktop if any filter is active
     if ((status !== 'all' || phase !== 'all' || tracked) && window.matchMedia('(min-width: 768px)').matches) {
       setFiltersOpen(true);
@@ -163,6 +170,10 @@ function Mergers() {
     } else {
       params.delete(key);
     }
+    // Reset to page 1 when filters, search, or sort change
+    if (key !== 'page') {
+      params.delete('page');
+    }
     setSearchParams(params);
   };
 
@@ -214,6 +225,23 @@ function Mergers() {
     trackedMergerIds,
     isTracked,
   ]);
+
+  // Pagination
+  const totalPages = Math.max(1, Math.ceil(filteredMergers.length / MERGERS_PER_PAGE));
+  const safePage = Math.min(currentPage, totalPages);
+  const startIndex = (safePage - 1) * MERGERS_PER_PAGE;
+  const paginatedMergers = filteredMergers.slice(startIndex, startIndex + MERGERS_PER_PAGE);
+
+  const goToPage = (page) => {
+    const params = new URLSearchParams(searchParams);
+    if (page <= 1) {
+      params.delete('page');
+    } else {
+      params.set('page', String(page));
+    }
+    setSearchParams(params);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const activeFilterCount = [
     phaseFilter !== 'all',
@@ -391,7 +419,7 @@ function Mergers() {
         {/* Results count & Sort */}
         <div className="flex items-center justify-between mb-4">
           <p className="text-sm text-gray-400">
-            Showing {filteredMergers.length} of {mergers.length} mergers
+            Showing {filteredMergers.length === 0 ? '0' : `${startIndex + 1}\u2013${Math.min(startIndex + MERGERS_PER_PAGE, filteredMergers.length)}`} of {filteredMergers.length} mergers
           </p>
           <div className="flex items-center gap-2">
             <label htmlFor="sort" className="text-sm text-gray-400 hidden sm:inline">Sort by</label>
@@ -428,7 +456,7 @@ function Mergers() {
 
         {/* Mergers List */}
         <div className="space-y-3">
-          {filteredMergers.map((merger) => (
+          {paginatedMergers.map((merger) => (
             <div
               key={merger.merger_id}
               className="bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200"
@@ -507,7 +535,7 @@ function Mergers() {
 
                 {merger.anzsic_codes && merger.anzsic_codes.length > 0 && (
                   <div className="mt-3 flex flex-wrap gap-1.5">
-                    {merger.anzsic_codes.map((code, idx) => (
+                    {merger.anzsic_codes.map((code) => (
                       <span
                         key={`${merger.merger_id}-anzsic-${code.code || code.name}`}
                         className="inline-flex items-center px-2 py-0.5 rounded-md text-xs bg-gray-50 text-gray-500 border border-gray-100"
@@ -521,6 +549,47 @@ function Mergers() {
             </div>
           ))}
         </div>
+
+        {/* Pagination controls */}
+        {totalPages > 1 && (
+          <nav className="mt-6 flex items-center justify-center gap-1" aria-label="Pagination">
+            <button
+              onClick={() => goToPage(safePage - 1)}
+              disabled={safePage <= 1}
+              className="px-3 py-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              aria-label="Previous page"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => goToPage(page)}
+                className={`px-3.5 py-2 text-sm font-medium rounded-lg border transition-colors ${
+                  page === safePage
+                    ? 'bg-primary text-white border-primary shadow-sm'
+                    : 'bg-white text-gray-600 border-gray-200 hover:bg-gray-50'
+                }`}
+                aria-label={`Page ${page}`}
+                aria-current={page === safePage ? 'page' : undefined}
+              >
+                {page}
+              </button>
+            ))}
+            <button
+              onClick={() => goToPage(safePage + 1)}
+              disabled={safePage >= totalPages}
+              className="px-3 py-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-600 hover:bg-gray-50 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              aria-label="Next page"
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </nav>
+        )}
 
         {filteredMergers.length === 0 && (
           <div className="text-center py-16">
