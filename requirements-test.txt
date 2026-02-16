@@ -1,0 +1,16 @@
+# Testing dependencies for ACCC mergers scripts
+
+# Test framework
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-mock>=3.11.1
+
+# Code quality
+flake8>=6.0.0
+black>=23.7.0
+
+# Type checking (optional)
+mypy>=1.4.1
+
+# The main requirements are needed for testing
+-r requirements.txt
