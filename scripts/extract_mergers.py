@@ -13,6 +13,7 @@ from parse_determination import parse_determination_pdf
 from parse_questionnaire import process_all_questionnaires
 from normalization import normalize_determination
 from cutoff import should_skip_merger, get_skipped_merger_ids, is_waiver_merger
+from date_utils import parse_text_to_iso
 
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./data/raw/matters"
@@ -96,40 +97,6 @@ def sanitize_filename(filename):
         return None
 
     return sanitized
-
-
-def parse_date_from_text(text: str) -> str:
-    """
-    Extract and parse a date from text like '21 November 2025' and return ISO format.
-    Returns None if no date is found.
-    """
-    if not text:
-        return None
-
-    # Pattern to match dates like "21 November 2025" or "21 Nov 2025"
-    date_pattern = r'(\d{1,2})\s+(January|February|March|April|May|June|July|August|September|October|November|December|Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\s+(\d{4})'
-    match = re.search(date_pattern, text, re.IGNORECASE)
-
-    if match:
-        day = match.group(1)
-        month = match.group(2)
-        year = match.group(3)
-
-        # Parse the date
-        try:
-            date_str = f"{day} {month} {year}"
-            parsed_date = datetime.strptime(date_str, "%d %B %Y")
-            # Return in ISO format with timezone (assuming Australian time, midday)
-            return parsed_date.strftime("%Y-%m-%dT12:00:00Z")
-        except ValueError:
-            # Try abbreviated month format
-            try:
-                parsed_date = datetime.strptime(date_str, "%d %b %Y")
-                return parsed_date.strftime("%Y-%m-%dT12:00:00Z")
-            except ValueError:
-                return None
-
-    return None
 
 
 def download_attachment(merger_id, attachment_url, event_title=None):
@@ -291,7 +258,7 @@ def parse_merger_file(filepath, existing_merger_data=None):
         if consultation_tag:
             consultation_text = consultation_tag.get_text(strip=True)
             # Look for patterns like "provided by 21 November 2025"
-            consultation_due_date = parse_date_from_text(consultation_text)
+            consultation_due_date = parse_text_to_iso(consultation_text, include_time=True)
 
         if consultation_due_date:
             merger_data['consultation_response_due_date'] = consultation_due_date

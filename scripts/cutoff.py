@@ -14,23 +14,10 @@ import json
 import os
 import sys
 from datetime import datetime, timedelta
+from date_utils import parse_iso_datetime
 
 # Default cutoff period after determination/waiver decision
 CUTOFF_WEEKS = 3
-
-
-def parse_date(date_str: str) -> datetime:
-    """Parse an ISO format date string to a datetime object."""
-    if not date_str:
-        return None
-    try:
-        # Handle ISO format with timezone
-        if 'T' in date_str:
-            return datetime.fromisoformat(date_str.replace('Z', '+00:00'))
-        # Handle simple date format
-        return datetime.strptime(date_str, '%Y-%m-%d')
-    except (ValueError, TypeError):
-        return None
 
 
 def is_waiver_merger(merger: dict) -> bool:
@@ -47,7 +34,7 @@ def get_cutoff_date(merger: dict, cutoff_weeks: int = CUTOFF_WEEKS) -> datetime:
     Returns None if the merger should still be actively processed.
     Returns a datetime if the merger has a cutoff date.
     """
-    determination_date = parse_date(merger.get('determination_publication_date'))
+    determination_date = parse_iso_datetime(merger.get('determination_publication_date'))
 
     if determination_date is None:
         # No determination yet, keep processing

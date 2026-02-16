@@ -8,7 +8,7 @@ import re
 import json
 from typing import Optional, Dict, List
 from pathlib import Path
-from datetime import datetime
+from date_utils import parse_text_to_iso
 
 
 def extract_deadline(text: str) -> Optional[str]:
@@ -40,27 +40,6 @@ def extract_deadline(text: str) -> Optional[str]:
         return deadline
 
     return None
-
-
-def parse_deadline_date(deadline_str: str) -> Optional[str]:
-    """
-    Parse a deadline string into ISO format (YYYY-MM-DD).
-
-    Args:
-        deadline_str: Date string like "25 August 2025"
-
-    Returns:
-        ISO format date string or None if parsing fails
-    """
-    if not deadline_str:
-        return None
-
-    try:
-        # Parse the date string
-        date_obj = datetime.strptime(deadline_str, "%d %B %Y")
-        return date_obj.strftime("%Y-%m-%d")
-    except ValueError:
-        return None
 
 
 def extract_questions(text: str) -> List[Dict[str, str]]:
@@ -222,7 +201,7 @@ def parse_questionnaire_pdf(pdf_path: str) -> Dict[str, any]:
     # Extract deadline
     result['deadline'] = extract_deadline(full_text)
     if result['deadline']:
-        result['deadline_iso'] = parse_deadline_date(result['deadline'])
+        result['deadline_iso'] = parse_text_to_iso(result['deadline'], include_time=False)
 
     # Extract questions
     result['questions'] = extract_questions(full_text)
