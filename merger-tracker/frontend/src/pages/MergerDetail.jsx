@@ -262,10 +262,12 @@ function MergerDetail() {
                 {merger.is_waiver ? 'Waiver Application Date' : 'Effective Notification'}
               </h3>
               <p className="text-sm font-medium text-gray-900">
-                {formatDate(merger.effective_notification_datetime)}
+                {!merger.effective_notification_datetime && merger.status?.toLowerCase().includes('suspended')
+                  ? 'None - assessment suspended'
+                  : formatDate(merger.effective_notification_datetime)}
               </p>
             </div>
-            {!merger.is_waiver && (
+            {!merger.is_waiver && !merger.status?.toLowerCase().includes('suspended') && (
               <div>
                 <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">
                   End of Determination Period
