@@ -645,10 +645,10 @@ def generate_individual_industry_files(mergers: list) -> None:
         merger_id = m.get('merger_id')
         merger_name = m.get('merger_name')
         status = m.get('status')
-        determination = normalize_determination(m.get('accc_determination'))
         is_waiver = is_waiver_merger(m)
-        notification_date = m.get('effective_notification_datetime')
-        determination_date = m.get('determination_publication_date')
+        # Get latest date for sorting
+        determination_date = m.get('determination_publication_date') or ''
+        notification_date = m.get('effective_notification_datetime') or ''
 
         # Handle both spellings
         codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
@@ -657,15 +657,14 @@ def generate_individual_industry_files(mergers: list) -> None:
             name = code_obj.get('name', '')
 
             if code:  # Only add if code exists
-                # Create lightweight merger object
+                # Create minimal merger object with only fields needed by frontend
                 merger_summary = {
                     "merger_id": merger_id,
                     "merger_name": merger_name,
-                    "status": status,
-                    "accc_determination": determination,
                     "is_waiver": is_waiver,
-                    "effective_notification_datetime": notification_date,
-                    "determination_publication_date": determination_date
+                    "status": status,
+                    # Internal field for sorting only (not displayed)
+                    "_latest_date": max(determination_date, notification_date)
                 }
 
                 # Use code as key (name can vary)
@@ -674,10 +673,11 @@ def generate_individual_industry_files(mergers: list) -> None:
     # Generate a file for each industry
     for code, industry_mergers in industry_mergers_map.items():
         # Sort by most recent date (determination or notification)
-        industry_mergers.sort(key=lambda x: max(
-            x.get('determination_publication_date') or '',
-            x.get('effective_notification_datetime') or ''
-        ), reverse=True)
+        industry_mergers.sort(key=lambda x: x.get('_latest_date', ''), reverse=True)
+
+        # Remove internal sorting field before output
+        for merger in industry_mergers:
+            merger.pop('_latest_date', None)
 
         output_data = {
             "code": code,
