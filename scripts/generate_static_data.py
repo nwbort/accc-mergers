@@ -229,39 +229,37 @@ def enrich_merger(merger: dict, commentary: dict = None) -> dict:
     return m
 
 
-def generate_mergers_json(mergers: list, commentary: dict = None) -> dict:
-    """Generate mergers.json with wrapper format and enriched fields."""
-    enriched = [enrich_merger(m, commentary) for m in mergers]
-    return {"mergers": enriched}
+def generate_mergers_json(enriched_mergers: list) -> dict:
+    """Generate mergers.json with wrapper format (expects pre-enriched mergers)."""
+    return {"mergers": enriched_mergers}
 
 
-def generate_individual_merger_files(mergers: list, commentary: dict = None) -> None:
-    """Generate individual JSON files for each merger."""
+def generate_individual_merger_files(enriched_mergers: list) -> None:
+    """Generate individual JSON files for each merger (expects pre-enriched mergers)."""
     mergers_dir = OUTPUT_DIR / "mergers"
     mergers_dir.mkdir(parents=True, exist_ok=True)
 
-    for merger in mergers:
-        enriched = enrich_merger(merger, commentary)
-        merger_id = enriched.get('merger_id', '')
+    for merger in enriched_mergers:
+        merger_id = merger.get('merger_id', '')
 
         if merger_id:
             output_path = mergers_dir / f"{merger_id}.json"
             with open(output_path, 'w', encoding='utf-8') as f:
-                json.dump(enriched, f, indent=2)
+                json.dump(merger, f, indent=2)
 
 
-def generate_mergers_list_json(mergers: list) -> dict:
-    """Generate lightweight list of mergers with only essential fields for listing pages."""
+def generate_mergers_list_json(enriched_mergers: list) -> dict:
+    """Generate lightweight list of mergers with only essential fields (expects pre-enriched mergers)."""
     lightweight_mergers = []
 
-    for m in mergers:
+    for m in enriched_mergers:
         # Only include fields needed for list view (no events, no large descriptions)
         lightweight_mergers.append({
             "merger_id": m.get('merger_id'),
             "merger_name": m.get('merger_name'),
             "status": m.get('status'),
-            "accc_determination": normalize_determination(m.get('accc_determination')),
-            "is_waiver": is_waiver_merger(m),
+            "accc_determination": m.get('accc_determination'),
+            "is_waiver": m.get('is_waiver', False),
             "effective_notification_datetime": m.get('effective_notification_datetime'),
             "determination_publication_date": m.get('determination_publication_date'),
             "end_of_determination_period": m.get('end_of_determination_period'),
@@ -276,20 +274,20 @@ def generate_mergers_list_json(mergers: list) -> dict:
     return {"mergers": lightweight_mergers}
 
 
-def generate_paginated_list(mergers: list, page_size: int = 50) -> None:
-    """Generate paginated merger list files."""
+def generate_paginated_list(enriched_mergers: list, page_size: int = 50) -> None:
+    """Generate paginated merger list files (expects pre-enriched mergers)."""
     mergers_dir = OUTPUT_DIR / "mergers"
     mergers_dir.mkdir(parents=True, exist_ok=True)
 
     # Generate lightweight merger data
     lightweight_mergers = []
-    for m in mergers:
+    for m in enriched_mergers:
         lightweight_mergers.append({
             "merger_id": m.get('merger_id'),
             "merger_name": m.get('merger_name'),
             "status": m.get('status'),
-            "accc_determination": normalize_determination(m.get('accc_determination')),
-            "is_waiver": is_waiver_merger(m),
+            "accc_determination": m.get('accc_determination'),
+            "is_waiver": m.get('is_waiver', False),
             "effective_notification_datetime": m.get('effective_notification_datetime'),
             "determination_publication_date": m.get('determination_publication_date'),
             "end_of_determination_period": m.get('end_of_determination_period'),
@@ -333,34 +331,34 @@ def generate_paginated_list(mergers: list, page_size: int = 50) -> None:
     print(f"✓ Generated {total_pages} paginated list files ({page_size} mergers/page)")
 
 
-def generate_stats_json(mergers: list) -> dict:
-    """Generate aggregated statistics (excluding waiver mergers)."""
-    # Filter out waiver mergers for stats
-    notification_mergers = [m for m in mergers if not is_waiver_merger(m)]
-    waiver_mergers = [m for m in mergers if is_waiver_merger(m)]
-    
+def generate_stats_json(enriched_mergers: list) -> dict:
+    """Generate aggregated statistics (expects pre-enriched mergers, excluding waiver mergers)."""
+    # Filter out waiver mergers for stats (using pre-enriched is_waiver field)
+    notification_mergers = [m for m in enriched_mergers if not m.get('is_waiver', False)]
+    waiver_mergers = [m for m in enriched_mergers if m.get('is_waiver', False)]
+
     total_notifications = len(notification_mergers)
     total_waivers = len(waiver_mergers)
-    
+
     # By status (notifications only)
     by_status = defaultdict(int)
     for m in notification_mergers:
         status = m.get('status', 'Unknown')
         by_status[status] += 1
-    
+
     # By Phase 1 determination (notifications only)
-    # Use enriched phase_1_determination which correctly identifies "Referred to phase 2"
+    # Use pre-enriched phase_1_determination which correctly identifies "Referred to phase 2"
     by_determination = defaultdict(int)
     for m in notification_mergers:
-        enriched = enrich_merger(m)
-        det = enriched.get('phase_1_determination')
+        det = m.get('phase_1_determination')
         if det:
             by_determination[det] += 1
 
     # By waiver determination
     by_waiver_determination = defaultdict(int)
     for m in waiver_mergers:
-        det = normalize_determination(m.get('accc_determination'))
+        # Use pre-enriched determination
+        det = m.get('accc_determination')
         if det:
             by_waiver_determination[det] += 1
     
@@ -412,19 +410,19 @@ def generate_stats_json(mergers: list) -> dict:
     
     # Top industries (including waivers)
     industry_counts = defaultdict(int)
-    for m in mergers:
+    for m in enriched_mergers:
         codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
         for code in codes:
             industry_counts[code.get('name', 'Unknown')] += 1
-    
+
     top_industries = [
         {"name": name, "count": count}
         for name, count in sorted(industry_counts.items(), key=lambda x: -x[1])[:10]
     ]
-    
-    # Recent mergers (include all but mark waivers)
+
+    # Recent mergers (include all but mark waivers) - using pre-enriched data
     sorted_mergers = sorted(
-        mergers,
+        enriched_mergers,
         key=lambda x: x.get('effective_notification_datetime', ''),
         reverse=True
     )
@@ -433,23 +431,23 @@ def generate_stats_json(mergers: list) -> dict:
             "merger_id": m['merger_id'],
             "merger_name": m['merger_name'],
             "status": m.get('status'),
-            "accc_determination": normalize_determination(m.get('accc_determination')),
+            "accc_determination": m.get('accc_determination'),
             "effective_notification_datetime": m.get('effective_notification_datetime'),
-            "is_waiver": is_waiver_merger(m)
+            "is_waiver": m.get('is_waiver', False)
         }
         for m in sorted_mergers[:5]
     ]
 
-    # Recent determinations (approvals, declines, stage transitions)
+    # Recent determinations (approvals, declines, stage transitions) - using pre-enriched data
     determination_events = []
 
-    for m in mergers:
+    for m in enriched_mergers:
         merger_id = m['merger_id']
         merger_name = m['merger_name']
-        is_waiver = is_waiver_merger(m)
+        is_waiver = m.get('is_waiver', False)
 
-        # Check for final determination (approved/not approved)
-        det = normalize_determination(m.get('accc_determination'))
+        # Check for final determination (approved/not approved) - using pre-enriched determination
+        det = m.get('accc_determination')
         det_date = m.get('determination_publication_date')
         page_modified = m.get('page_modified_datetime', '')
         if det and det_date:
@@ -513,14 +511,14 @@ def generate_stats_json(mergers: list) -> dict:
     }
 
 
-def generate_timeline_json(mergers: list) -> dict:
-    """Generate timeline of all events."""
+def generate_timeline_json(enriched_mergers: list) -> dict:
+    """Generate timeline of all events (expects pre-enriched mergers)."""
     events = []
 
-    for m in mergers:
+    for m in enriched_mergers:
         merger_id = m['merger_id']
         merger_name = m['merger_name']
-        merger_is_waiver = is_waiver_merger(m)
+        merger_is_waiver = m.get('is_waiver', False)
 
         for event in m.get('events', []):
             title = event.get('title', '')
@@ -546,14 +544,14 @@ def generate_timeline_json(mergers: list) -> dict:
     }
 
 
-def generate_paginated_timeline(mergers: list, page_size: int = 100) -> None:
-    """Generate paginated timeline files."""
+def generate_paginated_timeline(enriched_mergers: list, page_size: int = 100) -> None:
+    """Generate paginated timeline files (expects pre-enriched mergers)."""
     events = []
 
-    for m in mergers:
+    for m in enriched_mergers:
         merger_id = m['merger_id']
         merger_name = m['merger_name']
-        merger_is_waiver = is_waiver_merger(m)
+        merger_is_waiver = m.get('is_waiver', False)
 
         for event in m.get('events', []):
             title = event.get('title', '')
@@ -605,12 +603,12 @@ def generate_paginated_timeline(mergers: list, page_size: int = 100) -> None:
     print(f"✓ Generated {total_pages} paginated timeline files ({page_size} events/page)")
 
 
-def generate_industries_json(mergers: list) -> dict:
-    """Generate industry list with merger counts."""
+def generate_industries_json(enriched_mergers: list) -> dict:
+    """Generate industry list with merger counts (expects pre-enriched mergers)."""
     # Group by (code, name) to count unique mergers
     industry_mergers = defaultdict(set)
 
-    for m in mergers:
+    for m in enriched_mergers:
         merger_id = m['merger_id']
         # Handle both spellings
         codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
@@ -633,19 +631,19 @@ def generate_industries_json(mergers: list) -> dict:
     return {"industries": industries}
 
 
-def generate_individual_industry_files(mergers: list) -> None:
-    """Generate individual JSON files for each industry code."""
+def generate_individual_industry_files(enriched_mergers: list) -> None:
+    """Generate individual JSON files for each industry code (expects pre-enriched mergers)."""
     industries_dir = OUTPUT_DIR / "industries"
     industries_dir.mkdir(parents=True, exist_ok=True)
 
     # Group mergers by industry
     industry_mergers_map = defaultdict(list)
 
-    for m in mergers:
+    for m in enriched_mergers:
         merger_id = m.get('merger_id')
         merger_name = m.get('merger_name')
         status = m.get('status')
-        is_waiver = is_waiver_merger(m)
+        is_waiver = m.get('is_waiver', False)
         # Get latest date for sorting
         determination_date = m.get('determination_publication_date') or ''
         notification_date = m.get('effective_notification_datetime') or ''
@@ -695,11 +693,11 @@ def generate_individual_industry_files(mergers: list) -> None:
     print(f"✓ Generated {len(industry_mergers_map)} individual industry files in {industries_dir}")
 
 
-def generate_commentary_json(mergers: list, commentary: dict) -> dict:
-    """Generate commentary.json with all mergers that have commentary."""
+def generate_commentary_json(enriched_mergers: list, commentary: dict) -> dict:
+    """Generate commentary.json with all mergers that have commentary (expects pre-enriched mergers)."""
     items = []
 
-    for m in mergers:
+    for m in enriched_mergers:
         merger_id = m.get('merger_id', '')
         if merger_id in commentary:
             comm = commentary[merger_id]
@@ -718,8 +716,8 @@ def generate_commentary_json(mergers: list, commentary: dict) -> dict:
                 "merger_id": merger_id,
                 "merger_name": m.get('merger_name'),
                 "status": m.get('status'),
-                "accc_determination": normalize_determination(m.get('accc_determination')),
-                "is_waiver": is_waiver_merger(m),
+                "accc_determination": m.get('accc_determination'),
+                "is_waiver": m.get('is_waiver', False),
                 "effective_notification_datetime": m.get('effective_notification_datetime'),
                 "determination_publication_date": m.get('determination_publication_date'),
                 "determination_url": determination_url,
@@ -742,20 +740,20 @@ def generate_commentary_json(mergers: list, commentary: dict) -> dict:
     }
 
 
-def generate_upcoming_events_json(mergers: list, days_ahead: int = 60) -> dict:
-    """Generate upcoming events (consultation due, determination due)."""
+def generate_upcoming_events_json(enriched_mergers: list, days_ahead: int = 60) -> dict:
+    """Generate upcoming events (expects pre-enriched mergers)."""
     now = datetime.now(timezone.utc).replace(tzinfo=None)
     future = now + timedelta(days=days_ahead)
-    
+
     events = []
-    
-    for m in mergers:
+
+    for m in enriched_mergers:
         # Skip if already determined
         if m.get('determination_publication_date'):
             continue
-        
-        # Skip waiver mergers (they don't have determination periods)
-        if is_waiver_merger(m):
+
+        # Skip waiver mergers (they don't have determination periods) - using pre-enriched field
+        if m.get('is_waiver', False):
             continue
         
         merger_id = m['merger_id']
@@ -826,10 +824,7 @@ def main():
     else:
         raise ValueError("Unexpected mergers.json format")
 
-    # Count waivers vs notifications
-    waiver_count = sum(1 for m in mergers if is_waiver_merger(m))
-    notification_count = len(mergers) - waiver_count
-    print(f"Loaded {len(mergers)} mergers ({notification_count} notifications, {waiver_count} waivers)")
+    print(f"Loaded {len(mergers)} mergers")
 
     # Load user commentary
     print("Loading commentary.json...")
@@ -839,17 +834,22 @@ def main():
     else:
         print("No commentary found")
 
+    # Enrich all mergers once (add computed fields, phase determinations, etc.)
+    print("Enriching mergers...")
+    enriched_mergers = [enrich_merger(m, commentary) for m in mergers]
+    print(f"✓ Enriched {len(enriched_mergers)} mergers")
+
     # Create output directory
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Generate each file
+    # Generate each file (all functions now receive pre-enriched mergers)
     outputs = [
-        ("mergers.json", generate_mergers_json(mergers, commentary)),
-        ("stats.json", generate_stats_json(mergers)),
-        ("timeline.json", generate_timeline_json(mergers)),
-        ("industries.json", generate_industries_json(mergers)),
-        ("upcoming-events.json", generate_upcoming_events_json(mergers)),
-        ("commentary.json", generate_commentary_json(mergers, commentary)),
+        ("mergers.json", generate_mergers_json(enriched_mergers)),
+        ("stats.json", generate_stats_json(enriched_mergers)),
+        ("timeline.json", generate_timeline_json(enriched_mergers)),
+        ("industries.json", generate_industries_json(enriched_mergers)),
+        ("upcoming-events.json", generate_upcoming_events_json(enriched_mergers)),
+        ("commentary.json", generate_commentary_json(enriched_mergers, commentary)),
     ]
 
     for filename, data in outputs:
@@ -860,11 +860,11 @@ def main():
 
     # Generate individual merger files
     print("\nGenerating individual merger files...")
-    generate_individual_merger_files(mergers, commentary)
-    print(f"✓ Generated {len(mergers)} individual merger files in {OUTPUT_DIR / 'mergers'}")
+    generate_individual_merger_files(enriched_mergers)
+    print(f"✓ Generated {len(enriched_mergers)} individual merger files in {OUTPUT_DIR / 'mergers'}")
 
     # Generate lightweight list.json (kept for backward compatibility)
-    list_data = generate_mergers_list_json(mergers)
+    list_data = generate_mergers_list_json(enriched_mergers)
     list_path = OUTPUT_DIR / "mergers" / "list.json"
     with open(list_path, 'w', encoding='utf-8') as f:
         json.dump(list_data, f, indent=2)
@@ -872,15 +872,15 @@ def main():
 
     # Generate paginated list files
     print("\nGenerating paginated list files...")
-    generate_paginated_list(mergers, page_size=50)
+    generate_paginated_list(enriched_mergers, page_size=50)
 
     # Generate paginated timeline files
     print("\nGenerating paginated timeline files...")
-    generate_paginated_timeline(mergers, page_size=100)
+    generate_paginated_timeline(enriched_mergers, page_size=100)
 
     # Generate individual industry files
     print("\nGenerating individual industry files...")
-    generate_individual_industry_files(mergers)
+    generate_individual_industry_files(enriched_mergers)
 
     print("\nDone!")
 
