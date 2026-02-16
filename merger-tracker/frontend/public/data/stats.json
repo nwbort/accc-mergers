@@ -1,9 +1,9 @@
 {
-  "total_mergers": 31,
+  "total_mergers": 32,
   "total_waivers": 26,
   "by_status": {
     "Assessment completed": 15,
-    "Under assessment": 16
+    "Under assessment": 17
   },
   "by_determination": {
     "Approved": 15,
@@ -60,7 +60,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 10
+      "count": 11
     },
     {
       "name": "Pharmaceutical and Toiletry Goods Wholesaling",
@@ -97,6 +97,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-25004",
+      "merger_name": "ServiceNow - Armis",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-13T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-95001",
       "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
       "status": "Under assessment",
@@ -123,14 +131,6 @@
     {
       "merger_id": "MN-10006",
       "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-06T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-30003",
-      "merger_name": "MicroStar Logistics - Konvoy",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-06T12:00:00Z",

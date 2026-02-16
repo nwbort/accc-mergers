@@ -71,6 +71,16 @@
       "effective_notification_datetime": "2026-01-09T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-02-23T12:00:00Z",
+      "merger_id": "MN-25004",
+      "merger_name": "ServiceNow - Armis",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-02-13T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-03-04T12:00:00Z",
@@ -184,6 +194,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-03-30T12:00:00Z",
+      "merger_id": "MN-25004",
+      "merger_name": "ServiceNow - Armis",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-02-13T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-03-30T12:00:00Z",
       "merger_id": "MN-95001",
       "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
       "status": "Under assessment",
@@ -201,6 +221,6 @@
       "effective_notification_datetime": "2026-02-13T12:00:00Z"
     }
   ],
-  "count": 20,
+  "count": 22,
   "days_ahead": 60
 }
