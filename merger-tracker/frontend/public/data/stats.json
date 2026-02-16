@@ -17,42 +17,22 @@
   "phase_duration": {
     "average_days": 29.133333333333333,
     "median_days": 25,
-    "all_durations": [
-      21,
-      21,
-      28,
-      25,
-      25,
-      38,
-      22,
-      21,
-      47,
-      43,
-      25,
-      27,
-      22,
-      22,
-      50
-    ],
     "average_business_days": 18.466666666666665,
     "median_business_days": 17,
-    "all_business_durations": [
-      16,
-      16,
-      21,
-      18,
-      18,
-      29,
-      17,
-      16,
-      19,
-      17,
-      17,
-      19,
-      16,
-      16,
-      22
-    ]
+    "percentiles": {
+      "day15": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "day20": {
+        "count": 12,
+        "percentage": 80.0
+      },
+      "day30": {
+        "count": 15,
+        "percentage": 100.0
+      }
+    }
   },
   "top_industries": [
     {
