@@ -20,22 +20,47 @@ function Industries() {
 
   const fetchData = async () => {
     try {
-      const [industriesRes, mergersRes] = await Promise.all([
-        fetch(API_ENDPOINTS.industries),
-        fetch(API_ENDPOINTS.mergersList),
-      ]);
+      // Fetch industries data
+      const industriesRes = await fetch(API_ENDPOINTS.industries);
+      if (!industriesRes.ok) throw new Error('Failed to fetch industries');
+      const industriesData = await industriesRes.json();
 
-      if (!industriesRes.ok || !mergersRes.ok) {
-        throw new Error('Failed to fetch data');
+      // Fetch mergers list using pagination
+      let allMergers = [];
+      const metaResponse = await fetch(API_ENDPOINTS.mergersListMeta);
+
+      if (!metaResponse.ok) {
+        // Fallback to legacy endpoint if pagination not available
+        console.log('Pagination not available, falling back to legacy endpoint');
+        const mergersRes = await fetch(API_ENDPOINTS.mergersList);
+        if (!mergersRes.ok) throw new Error('Failed to fetch mergers');
+        const mergersData = await mergersRes.json();
+        allMergers = mergersData.mergers;
+      } else {
+        const meta = await metaResponse.json();
+        const totalPages = meta.total_pages;
+
+        // Fetch all pages in parallel
+        const pagePromises = [];
+        for (let i = 1; i <= totalPages; i++) {
+          pagePromises.push(fetch(API_ENDPOINTS.mergersListPage(i)));
+        }
+
+        const pageResponses = await Promise.all(pagePromises);
+        const pageDataPromises = pageResponses.map(r => {
+          if (!r.ok) throw new Error('Failed to fetch merger page');
+          return r.json();
+        });
+        const pagesData = await Promise.all(pageDataPromises);
+
+        // Combine all pages
+        allMergers = pagesData.flatMap(page => page.mergers);
       }
 
-      const industriesData = await industriesRes.json();
-      const mergersData = await mergersRes.json();
-
       dataCache.set('industries-list', industriesData.industries);
-      dataCache.set('industries-mergers', mergersData.mergers);
+      dataCache.set('industries-mergers', allMergers);
       setIndustries(industriesData.industries);
-      setMergers(mergersData.mergers);
+      setMergers(allMergers);
     } catch (err) {
       setError(err.message);
     } finally {
