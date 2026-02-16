@@ -310,25 +310,48 @@ def generate_stats_json(mergers: list) -> dict:
     # Phase durations (notifications only)
     durations = []
     business_durations = []
-    
+
     for m in notification_mergers:
         start = m.get('effective_notification_datetime')
         end = m.get('determination_publication_date')
-        
+
         if start and end:
             cal_days = calculate_calendar_days(start, end)
             if cal_days is not None:
                 durations.append(cal_days)
-            
+
             bus_days = calculate_business_days(start, end)
             if bus_days is not None:
                 business_durations.append(bus_days)
-    
+
     avg_duration = sum(durations) / len(durations) if durations else None
     median_duration = sorted(durations)[len(durations) // 2] if durations else None
-    
+
     avg_business = sum(business_durations) / len(business_durations) if business_durations else None
     median_business = sorted(business_durations)[len(business_durations) // 2] if business_durations else None
+
+    # Pre-compute percentile statistics for business days
+    total_completed = len(business_durations)
+    percentile_stats = None
+    if total_completed > 0:
+        day15_count = sum(1 for d in business_durations if d <= 15)
+        day20_count = sum(1 for d in business_durations if d <= 20)
+        day30_count = sum(1 for d in business_durations if d <= 30)
+
+        percentile_stats = {
+            "day15": {
+                "count": day15_count,
+                "percentage": round((day15_count / total_completed) * 100, 1)
+            },
+            "day20": {
+                "count": day20_count,
+                "percentage": round((day20_count / total_completed) * 100, 1)
+            },
+            "day30": {
+                "count": day30_count,
+                "percentage": round((day30_count / total_completed) * 100, 1)
+            }
+        }
     
     # Top industries (including waivers)
     industry_counts = defaultdict(int)
@@ -408,20 +431,25 @@ def generate_stats_json(mergers: list) -> dict:
     )
     recent_determinations = determination_events[:6]
 
+    # Build phase_duration object with pre-computed stats
+    phase_duration_data = {
+        "average_days": avg_duration,
+        "median_days": median_duration,
+        "average_business_days": avg_business,
+        "median_business_days": median_business
+    }
+
+    # Add percentile stats if available
+    if percentile_stats:
+        phase_duration_data["percentiles"] = percentile_stats
+
     return {
         "total_mergers": total_notifications,
         "total_waivers": total_waivers,
         "by_status": dict(by_status),
         "by_determination": dict(by_determination),
         "by_waiver_determination": dict(by_waiver_determination),
-        "phase_duration": {
-            "average_days": avg_duration,
-            "median_days": median_duration,
-            "all_durations": durations,
-            "average_business_days": avg_business,
-            "median_business_days": median_business,
-            "all_business_durations": business_durations
-        },
+        "phase_duration": phase_duration_data,
         "top_industries": top_industries,
         "recent_mergers": recent_mergers,
         "recent_determinations": recent_determinations
