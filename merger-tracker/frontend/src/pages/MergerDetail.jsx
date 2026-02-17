@@ -25,7 +25,6 @@ function MergerDetail() {
 
   useEffect(() => {
     fetchMerger();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   const fetchMerger = async () => {
@@ -399,7 +398,7 @@ function MergerDetail() {
               Industries
             </h2>
             <div className="flex flex-wrap gap-2">
-              {merger.anzsic_codes.map((code) => (
+              {merger.anzsic_codes.map((code, idx) => (
                 <Link
                   key={`anzsic-${code.code || code.name}`}
                   to={`/mergers?q=${encodeURIComponent(code.name)}`}
