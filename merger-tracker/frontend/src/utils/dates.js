@@ -75,7 +75,7 @@ export const calculateBusinessDays = (startDate, endDate) => {
     }
 
     return businessDays;
-  } catch {
+  } catch (e) {
     return null;
   }
 };
@@ -91,13 +91,13 @@ export const getBusinessDaysRemaining = (endDate) => {
     const end = parseISO(endDate);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-
+    
     if (end <= today) return 0;
-
+    
     // Start counting from tomorrow
     const tomorrow = addDays(today, 1);
     return calculateBusinessDays(tomorrow, end);
-  } catch {
+  } catch (e) {
     return null;
   }
 };
@@ -106,7 +106,7 @@ export const formatDate = (dateString) => {
   if (!dateString) return 'N/A';
   try {
     return format(parseISO(dateString), 'dd/MM/yyyy');
-  } catch {
+  } catch (e) {
     return 'Invalid date';
   }
 };
@@ -115,7 +115,7 @@ export const calculateDuration = (startDate, endDate) => {
   if (!startDate || !endDate) return null;
   try {
     return differenceInDays(parseISO(endDate), parseISO(startDate));
-  } catch {
+  } catch (e) {
     return null;
   }
 };
@@ -125,7 +125,7 @@ export const getDaysRemaining = (endDate) => {
   try {
     const days = differenceInDays(parseISO(endDate), new Date());
     return days > 0 ? days : 0;
-  } catch {
+  } catch (e) {
     return null;
   }
 };
@@ -142,7 +142,7 @@ export const isDatePast = (dateString) => {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     return date < today;
-  } catch {
+  } catch (e) {
     return false;
   }
 };

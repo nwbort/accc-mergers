@@ -311,7 +311,6 @@ export function TrackingProvider({ children }) {
   );
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function useTracking() {
   const context = useContext(TrackingContext);
   if (!context) {

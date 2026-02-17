@@ -43,7 +43,6 @@ function Timeline() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasMore, loadingMore, displayedEvents.length, allEvents.length, currentPage, totalPages]);
 
   const fetchTimeline = async () => {
