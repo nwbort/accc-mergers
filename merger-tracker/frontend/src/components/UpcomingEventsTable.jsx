@@ -54,7 +54,7 @@ function UpcomingEventsTable({ events }) {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-50">
-            {events.map((event, idx) => {
+            {events.map((event) => {
               const daysRemaining = getDaysRemaining(event.date);
               const isUrgent = daysRemaining !== null && daysRemaining <= 3;
 
