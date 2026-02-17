@@ -12,8 +12,11 @@ const STORAGE_KEYS = {
 const MAX_EVENT_AGE_DAYS = 90;
 
 // Generate a unique key for an event
+// Use a consistent order and normalize the title field for stability
 const getEventKey = (event) => {
-  return `${event.merger_id}_${event.date}_${event.title || event.display_title || event.type}`;
+  // Normalize title: prefer display_title, then title, then event_type_display, finally type
+  const title = event.display_title || event.title || event.event_type_display || event.type || '';
+  return `${event.merger_id}_${event.date}_${title}`;
 };
 
 // Extract date from event key (format: mergerId_date_title)
@@ -145,7 +148,16 @@ export function TrackingProvider({ children }) {
         if (upcomingResponse.ok) {
           const data = await upcomingResponse.json();
           // Filter to only tracked mergers (using Set for O(1) lookup)
-          const filtered = data.events.filter((e) => trackedMergerIdsSet.has(e.merger_id));
+          // Normalize event structure to match timeline events for consistent keys
+          const filtered = data.events
+            .filter((e) => trackedMergerIdsSet.has(e.merger_id))
+            .map((event) => ({
+              ...event,
+              // Ensure display_title is set for consistent key generation
+              display_title: event.display_title || event.event_type_display || event.title,
+              // Preserve original fields too
+              title: event.title || event.event_type_display,
+            }));
           setUpcomingEvents(filtered);
           allFetchedEvents = [...allFetchedEvents, ...filtered];
         }

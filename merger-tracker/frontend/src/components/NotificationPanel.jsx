@@ -149,11 +149,13 @@ function NotificationPanel({ isOpen, onClose }) {
   }, [isOpen, onClose]);
 
   // Mark all events as seen when panel is opened
+  // Only mark when transitioning to open, not on every trackedEvents change
   useEffect(() => {
     if (isOpen && trackedEvents.length > 0) {
       markEventsAsSeen(trackedEvents);
     }
-  }, [isOpen, trackedEvents, markEventsAsSeen]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isOpen]); // Only depend on isOpen to mark events when panel first opens
 
   if (!isOpen) return null;
 
