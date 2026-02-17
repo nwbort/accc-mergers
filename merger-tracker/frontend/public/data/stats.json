@@ -1,9 +1,9 @@
 {
-  "total_mergers": 32,
+  "total_mergers": 33,
   "total_waivers": 27,
   "by_status": {
     "Assessment completed": 15,
-    "Under assessment": 16,
+    "Under assessment": 17,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -44,16 +44,16 @@
       "count": 11
     },
     {
+      "name": "Other Auxiliary Finance and Investment Services",
+      "count": 4
+    },
+    {
       "name": "Pharmaceutical and Toiletry Goods Wholesaling",
       "count": 4
     },
     {
       "name": "Financial Asset Investing",
       "count": 4
-    },
-    {
-      "name": "Other Auxiliary Finance and Investment Services",
-      "count": 3
     },
     {
       "name": "Accommodation",
@@ -77,6 +77,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-10005",
+      "merger_name": "Apex - Mercer Administration Services and related assets",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-17T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-25004",
       "merger_name": "ServiceNow - Armis",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-09T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-10006",
-      "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-06T12:00:00Z",
       "is_waiver": false
     }
   ],
