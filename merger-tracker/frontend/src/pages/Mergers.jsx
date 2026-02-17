@@ -103,7 +103,8 @@ function Mergers() {
 
   useEffect(() => {
     filterMergers();
-  }, [filterMergers]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [debouncedSearchTerm, statusFilter, phaseFilter, sortBy, trackedOnly, mergers, isTracked]);
 
   const fetchMergers = async () => {
     try {
