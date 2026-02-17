@@ -37,20 +37,21 @@ function Dashboard() {
   useEffect(() => {
     fetchStats();
     fetchUpcomingEvents();
-
-    // Mark items as seen when page is about to unload or component unmounts
-    const handleBeforeUnload = () => {
-      markCurrentItemsAsSeen();
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
-    return () => {
-      markCurrentItemsAsSeen();
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  // Mark items as seen after user has viewed them for 2 seconds
+  // This ensures the "New" badge persists across refreshes
+  useEffect(() => {
+    if (!stats) return;
+
+    const timer = setTimeout(() => {
+      markCurrentItemsAsSeen();
+    }, 2000); // 2 second delay to ensure user actually viewed the content
+
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [stats]);
 
   const markCurrentItemsAsSeen = () => {
     if (!stats) return;
