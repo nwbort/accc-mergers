@@ -1,6 +1,46 @@
 {
   "items": [
     {
+      "merger_id": "MN-30003",
+      "merger_name": "MicroStar Logistics - Konvoy",
+      "status": "Assessment suspended",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": null,
+      "determination_publication_date": null,
+      "determination_url": null,
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "KEGSTAR PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "81 157 818 990"
+        }
+      ],
+      "targets": [
+        {
+          "name": "KONVOY HOLDINGS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "66 634 234 549"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6639",
+          "name": "Other Goods and Equipment Rental and Hiring n.e.c."
+        }
+      ],
+      "comments": [
+        {
+          "commentary": "MicroStar's proposed acquisition of Konvoy is the first to be found to be 'materially incomplete'. It follows an earlier decision by the ACCC to oppose the acquisition under the old informal regime.",
+          "tags": [
+            "landmark"
+          ],
+          "date": "2026-02-18"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-01016",
       "merger_name": "Asahi \u2013 Warehouse site on Tilburn Rd, Deer Park (Vic)",
       "status": "Assessment completed",
@@ -432,5 +472,5 @@
       ]
     }
   ],
-  "count": 10
+  "count": 11
 }
