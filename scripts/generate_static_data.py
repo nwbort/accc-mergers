@@ -217,7 +217,7 @@ def enrich_merger(merger: dict, commentary: dict = None) -> dict:
     # Add user commentary if available
     merger_id = m.get('merger_id', '')
     if commentary and merger_id in commentary:
-        m['commentary'] = commentary[merger_id]
+        m['comments'] = commentary[merger_id].get('comments', [])
     
     # Compute phase-specific determinations based on stage and events
     phase_1_det = None
@@ -766,14 +766,15 @@ def generate_commentary_json(enriched_mergers: list, commentary: dict) -> dict:
                 "acquirers": m.get('acquirers', []),
                 "targets": m.get('targets', []),
                 "anzsic_codes": m.get('anzsic_codes', []),
-                "commentary": comm.get('commentary'),
-                "tags": comm.get('tags', []),
-                "last_updated": comm.get('last_updated'),
-                "author": comm.get('author')
+                "comments": comm.get('comments', [])
             })
 
-    # Sort by last_updated descending (most recent first)
-    items.sort(key=lambda x: x.get('last_updated', ''), reverse=True)
+    # Sort by most recent comment date descending
+    def get_latest_comment_date(item):
+        dates = [c.get('date', '') for c in item.get('comments', []) if c.get('date')]
+        return max(dates) if dates else ''
+
+    items.sort(key=get_latest_comment_date, reverse=True)
 
     return {
         "items": items,
