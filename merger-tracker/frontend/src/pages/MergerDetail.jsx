@@ -346,49 +346,55 @@ function MergerDetail() {
         )}
 
         {/* Commentary */}
-        {merger.commentary && (
-          <div className="bg-gradient-to-r from-blue-50 to-indigo-50/50 rounded-2xl border border-blue-100/60 shadow-card p-6 mb-6">
-            <div className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-blue-100 flex items-center justify-center">
-                <svg className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                </svg>
-              </div>
-              <div className="flex-1 min-w-0">
-                <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">
-                  Commentary
-                </h2>
-                {merger.commentary.commentary && (
-                  <div className={PROSE_MARKDOWN}>
-                    <ReactMarkdown>{merger.commentary.commentary}</ReactMarkdown>
+        {merger.comments && merger.comments.length > 0 && (
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50/50 rounded-2xl border border-blue-100/60 shadow-card mb-6 overflow-hidden divide-y divide-blue-100/60">
+            {merger.comments.map((comment, commentIdx) => (
+              <div key={commentIdx} className="p-6">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-blue-100 flex items-center justify-center">
+                    <svg className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                    </svg>
                   </div>
-                )}
-                {merger.commentary.tags && merger.commentary.tags.length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 mt-3">
-                    {merger.commentary.tags.map((tag, idx) => (
-                      <span
-                        key={`tag-${tag}-${idx}`}
-                        className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-blue-100/80 text-blue-700"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  <div className="flex-1 min-w-0">
+                    {commentIdx === 0 && (
+                      <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">
+                        Commentary
+                      </h2>
+                    )}
+                    {comment.commentary && (
+                      <div className={PROSE_MARKDOWN}>
+                        <ReactMarkdown>{comment.commentary}</ReactMarkdown>
+                      </div>
+                    )}
+                    {comment.tags && comment.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 mt-3">
+                        {comment.tags.map((tag, idx) => (
+                          <span
+                            key={`tag-${tag}-${idx}`}
+                            className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-blue-100/80 text-blue-700"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                    <div className="flex items-center gap-3 mt-3">
+                      {comment.date && (
+                        <p className="text-xs text-gray-400">
+                          Updated {formatDate(comment.date)}
+                        </p>
+                      )}
+                      {comment.author && (
+                        <p className="text-xs text-gray-400">
+                          by {comment.author}
+                        </p>
+                      )}
+                    </div>
                   </div>
-                )}
-                <div className="flex items-center gap-3 mt-3">
-                  {merger.commentary.last_updated && (
-                    <p className="text-xs text-gray-400">
-                      Updated {formatDate(merger.commentary.last_updated)}
-                    </p>
-                  )}
-                  {merger.commentary.author && (
-                    <p className="text-xs text-gray-400">
-                      by {merger.commentary.author}
-                    </p>
-                  )}
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         )}
 

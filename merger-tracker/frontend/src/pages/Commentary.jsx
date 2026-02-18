@@ -102,47 +102,53 @@ function Commentary() {
                 </div>
               </div>
 
-              {/* Commentary Content */}
-              <div className="p-5 bg-gradient-to-r from-blue-50/80 to-indigo-50/30">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
-                    <svg className="h-4 w-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                    </svg>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    {item.commentary && (
-                      <div className={PROSE_MARKDOWN}>
-                        <ReactMarkdown>{item.commentary}</ReactMarkdown>
+              {/* Comments */}
+              {item.comments && item.comments.length > 0 && (
+                <div className="divide-y divide-blue-100/60">
+                  {item.comments.map((comment, commentIdx) => (
+                    <div key={commentIdx} className="p-5 bg-gradient-to-r from-blue-50/80 to-indigo-50/30">
+                      <div className="flex items-start gap-3">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
+                          <svg className="h-4 w-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                          </svg>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          {comment.commentary && (
+                            <div className={PROSE_MARKDOWN}>
+                              <ReactMarkdown>{comment.commentary}</ReactMarkdown>
+                            </div>
+                          )}
+                          {comment.tags && comment.tags.length > 0 && (
+                            <div className="flex flex-wrap gap-1.5 mt-3">
+                              {comment.tags.map((tag, tagIdx) => (
+                                <span
+                                  key={`tag-${tag}-${tagIdx}`}
+                                  className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-blue-100/80 text-blue-700"
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          )}
+                          <div className="flex items-center gap-3 mt-3">
+                            {comment.date && (
+                              <p className="text-xs text-gray-400">
+                                Updated {formatDate(comment.date)}
+                              </p>
+                            )}
+                            {comment.author && (
+                              <p className="text-xs text-gray-400">
+                                by {comment.author}
+                              </p>
+                            )}
+                          </div>
+                        </div>
                       </div>
-                    )}
-                    {item.tags && item.tags.length > 0 && (
-                      <div className="flex flex-wrap gap-1.5 mt-3">
-                        {item.tags.map((tag, idx) => (
-                          <span
-                            key={`tag-${tag}-${idx}`}
-                            className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-blue-100/80 text-blue-700"
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                    <div className="flex items-center gap-3 mt-3">
-                      {item.last_updated && (
-                        <p className="text-xs text-gray-400">
-                          Updated {formatDate(item.last_updated)}
-                        </p>
-                      )}
-                      {item.author && (
-                        <p className="text-xs text-gray-400">
-                          by {item.author}
-                        </p>
-                      )}
                     </div>
-                  </div>
+                  ))}
                 </div>
-              </div>
+              )}
             </div>
           ))}
         </div>
