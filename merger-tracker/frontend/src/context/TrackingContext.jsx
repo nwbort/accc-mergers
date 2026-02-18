@@ -8,40 +8,12 @@ const STORAGE_KEYS = {
   SEEN_EVENTS: 'merger_tracker_seen_events',
 };
 
-// Maximum age for seen events (90 days)
-const MAX_EVENT_AGE_DAYS = 90;
-
 // Generate a unique key for an event
 // Use a consistent order and normalize the title field for stability
 const getEventKey = (event) => {
   // Normalize title: prefer display_title, then title, then event_type_display, finally type
   const title = event.display_title || event.title || event.event_type_display || event.type || '';
   return `${event.merger_id}_${event.date}_${title}`;
-};
-
-// Extract date from event key (format: mergerId_date_title)
-const getDateFromKey = (key) => {
-  const parts = key.split('_');
-  if (parts.length < 2) return null;
-  return parts[1]; // date is the second part
-};
-
-// Prune old entries from the seen events array
-const pruneOldEntries = (keys) => {
-  const cutoffDate = new Date();
-  cutoffDate.setDate(cutoffDate.getDate() - MAX_EVENT_AGE_DAYS);
-
-  return keys.filter((key) => {
-    const dateStr = getDateFromKey(key);
-    if (!dateStr) return true; // Keep malformed keys
-
-    try {
-      const eventDate = new Date(dateStr);
-      return eventDate >= cutoffDate;
-    } catch {
-      return true; // Keep keys with unparseable dates
-    }
-  });
 };
 
 // Deduplicate events by their event key
@@ -70,11 +42,8 @@ export function TrackingProvider({ children }) {
     try {
       const stored = localStorage.getItem(STORAGE_KEYS.SEEN_EVENTS);
       if (!stored) return new Set();
-
       const keys = JSON.parse(stored);
-      // Prune old entries on load
-      const prunedKeys = pruneOldEntries(keys);
-      return new Set(prunedKeys);
+      return new Set(keys);
     } catch {
       return new Set();
     }
