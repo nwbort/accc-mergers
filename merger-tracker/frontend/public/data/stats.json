@@ -1,6 +1,6 @@
 {
   "total_mergers": 34,
-  "total_waivers": 27,
+  "total_waivers": 28,
   "by_status": {
     "Assessment completed": 15,
     "Under assessment": 18,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 24,
+    "Approved": 25,
     "Not approved": 3
   },
   "phase_duration": {
@@ -37,11 +37,11 @@
   "top_industries": [
     {
       "name": "Computer System Design and Related Services",
-      "count": 12
+      "count": 13
     },
     {
       "name": "Software Publishing",
-      "count": 11
+      "count": 12
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-95005",
+      "merger_name": "HCLTech - Jaspersoft",
+      "determination": "Approved",
+      "determination_date": "2026-02-19T12:00:00Z",
+      "page_modified_datetime": "2026-02-19T09:02:41+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-45001",
       "merger_name": "Paragon Care \u2013 Presidental",
       "determination": "Approved",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-02-12T12:00:00Z",
       "page_modified_datetime": "2026-02-12T19:50:43+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-40004",
-      "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
-      "determination": "Approved",
-      "determination_date": "2026-02-12T12:00:00Z",
-      "page_modified_datetime": "2026-02-12T18:10:44+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

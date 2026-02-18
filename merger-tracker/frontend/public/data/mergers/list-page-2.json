@@ -590,10 +590,47 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/altor-fund-manager-evac-holding-oy"
+    },
+    {
+      "merger_id": "WA-95005",
+      "merger_name": "HCLTech - Jaspersoft",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-05T12:00:00Z",
+      "determination_publication_date": "2026-02-19T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "HCL Technologies Limited",
+          "identifier_type": "ABN",
+          "identifier": "37 541 578 951"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "94 092 002 321"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hcltech-jaspersoft"
     }
   ],
   "page": 2,
   "page_size": 50,
-  "total": 61,
+  "total": 62,
   "total_pages": 2
 }

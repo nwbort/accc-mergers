@@ -1,6 +1,18 @@
 {
   "events": [
     {
+      "date": "2026-02-19T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/HCLTech%20-%20Jaspersoft%20%28WA-95005%29%20-%20Notification%20waiver%20determination%20-%2018%20February%202026_0.pdf",
+      "url_gh": "/matters/WA-95005/HCLTech - Jaspersoft (WA-95005) - Notification waiver determination - 18 February 2026_0.pdf",
+      "status": "live",
+      "merger_id": "WA-95005",
+      "merger_name": "HCLTech - Jaspersoft",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
       "date": "2026-02-18T12:00:00Z",
       "title": "Charter Hall Holdings - JGS Private Capital - Questionnaire",
       "display_title": "Charter Hall Holdings - JGS Private Capital - Questionnaire",
@@ -454,6 +466,18 @@
       "merger_id": "WA-70003",
       "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury",
       "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-02-05T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "WA-95005",
+      "merger_name": "HCLTech - Jaspersoft",
+      "phase": "Phase 1",
       "is_waiver": true
     },
     {
@@ -1717,5 +1741,5 @@
       "is_waiver": false
     }
   ],
-  "total": 143
+  "total": 145
 }
