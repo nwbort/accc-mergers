@@ -1,9 +1,9 @@
 {
-  "total_mergers": 33,
+  "total_mergers": 34,
   "total_waivers": 27,
   "by_status": {
     "Assessment completed": 15,
-    "Under assessment": 17,
+    "Under assessment": 18,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -45,7 +45,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 4
+      "count": 5
     },
     {
       "name": "Pharmaceutical and Toiletry Goods Wholesaling",
@@ -54,6 +54,10 @@
     {
       "name": "Financial Asset Investing",
       "count": 4
+    },
+    {
+      "name": "Non-Residential Property Operators",
+      "count": 3
     },
     {
       "name": "Accommodation",
@@ -70,16 +74,20 @@
     {
       "name": "Other Machinery and Equipment Manufacturing n.e.c.",
       "count": 2
-    },
-    {
-      "name": "Land Development and Subdivision",
-      "count": 2
     }
   ],
   "recent_mergers": [
     {
       "merger_id": "MN-10005",
       "merger_name": "Apex - Mercer Administration Services and related assets",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-17T12:00:00Z",
+      "is_waiver": false
+    },
+    {
+      "merger_id": "MN-75009",
+      "merger_name": "Charter Hall Holdings - JGS Private Capital",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-17T12:00:00Z",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-13T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-70005",
-      "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-09T12:00:00Z",
       "is_waiver": false
     }
   ],

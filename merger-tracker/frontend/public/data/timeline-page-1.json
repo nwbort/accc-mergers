@@ -1,6 +1,18 @@
 {
   "events": [
     {
+      "date": "2026-02-18T12:00:00Z",
+      "title": "Charter Hall Holdings - JGS Private Capital - Questionnaire",
+      "display_title": "Charter Hall Holdings - JGS Private Capital - Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Charter%20Hall%20-%20JGS%20Private%20Capital%20-%20Questionnaire%20-%2018%20Feb%202026.docx",
+      "url_gh": "/matters/MN-75009/Charter Hall - JGS Private Capital - Questionnaire - 18 Feb 2026.pdf",
+      "status": "live",
+      "merger_id": "MN-75009",
+      "merger_name": "Charter Hall Holdings - JGS Private Capital",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
       "date": "2026-02-17T12:00:00Z",
       "title": "Questionnaire - Apex - Mercer",
       "display_title": "Questionnaire - Apex - Mercer",
@@ -21,6 +33,18 @@
       "status": null,
       "merger_id": "MN-10005",
       "merger_name": "Apex - Mercer Administration Services and related assets",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
+      "date": "2026-02-17T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-75009",
+      "merger_name": "Charter Hall Holdings - JGS Private Capital",
       "phase": "Phase 1",
       "is_waiver": false
     },
@@ -1175,34 +1199,10 @@
       "merger_name": "Google - Wiz",
       "phase": "Phase 1",
       "is_waiver": false
-    },
-    {
-      "date": "2026-01-09T12:00:00Z",
-      "title": "Merger notified to ACCC",
-      "display_title": "Merger notified to ACCC",
-      "url": null,
-      "url_gh": null,
-      "status": null,
-      "merger_id": "WA-25001",
-      "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
-      "phase": "Phase 1",
-      "is_waiver": true
-    },
-    {
-      "date": "2026-01-08T12:00:00Z",
-      "title": "Merger notified to ACCC",
-      "display_title": "Merger notified to ACCC",
-      "url": null,
-      "url_gh": null,
-      "status": null,
-      "merger_id": "WA-01081",
-      "merger_name": "Accenture \u2013 Faculty Science",
-      "phase": "Phase 1",
-      "is_waiver": true
     }
   ],
   "page": 1,
   "page_size": 100,
-  "total": 141,
+  "total": 143,
   "total_pages": 2
 }

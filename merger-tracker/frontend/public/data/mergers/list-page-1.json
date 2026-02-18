@@ -1260,6 +1260,58 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/parker-hannifin-%E2%80%93-filtration-group"
     },
     {
+      "merger_id": "MN-75009",
+      "merger_name": "Charter Hall Holdings - JGS Private Capital",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-02-17T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-01T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "CHARTER HALL HOLDINGS PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "15 051 363 547"
+        }
+      ],
+      "targets": [
+        {
+          "name": "J.G. SERVICE PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "75 008 492 126"
+        },
+        {
+          "name": "JGS PRIVATE CAPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 602 602 595"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CARESUPER PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 008 650 628"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        },
+        {
+          "code": "6720",
+          "name": "Real Estate Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/charter-hall-holdings-jgs-private-capital"
+    },
+    {
       "merger_id": "MN-80002",
       "merger_name": "Bain Capital \u2013 MCJ",
       "status": "Under assessment",
@@ -2389,53 +2441,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-%E2%80%93-gawler-animal-hospital-and-animalia-vet-clinic"
-    },
-    {
-      "merger_id": "WA-45001",
-      "merger_name": "Paragon Care \u2013 Presidental",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-01-30T12:00:00Z",
-      "determination_publication_date": "2026-02-16T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "PARAGON CARE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "76 064 551 426"
-        },
-        {
-          "name": "CLIFFORD HALLAM HEALTHCARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "38 001 655 554"
-        }
-      ],
-      "targets": [
-        {
-          "name": "ROCKPAC SOUTH PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "40 639 100 422"
-        },
-        {
-          "name": "PRESIDENTAL PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 002 697 896"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3491",
-          "name": "Professional and Scientific Goods Wholesaling"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/paragon-care-%E2%80%93-presidental"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 60,
+  "total": 61,
   "total_pages": 2
 }
