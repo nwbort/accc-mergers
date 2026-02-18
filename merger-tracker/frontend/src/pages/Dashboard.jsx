@@ -274,26 +274,24 @@ function Dashboard() {
             <h2 className="text-base font-semibold text-gray-900 mb-5">
               Phase 1 duration
             </h2>
-            <div className="flex flex-col flex-1 justify-around">
+            <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-4 flex-1 content-around">
               {[
                 { label: 'By day 15', data: stats.phase_duration.percentiles.day15 },
                 { label: 'By day 20', data: stats.phase_duration.percentiles.day20 },
                 { label: 'By day 30', data: stats.phase_duration.percentiles.day30 },
-              ].map(({ label, data }, index) => (
-                <div key={label} className={`grid grid-cols-[auto_1fr_auto] items-center gap-4 py-3 ${index < 2 ? 'border-b border-gray-50' : ''}`}>
-                  <span className="text-sm text-gray-600">{label}</span>
-                  <div className="bg-gray-100 rounded-full h-1.5 overflow-hidden">
-                    <div
-                      className="bg-primary h-1.5 rounded-full transition-all duration-500"
-                      style={{ width: `${data.percentage}%` }}
-                    />
-                  </div>
-                  <span className="text-sm font-semibold text-gray-900 tabular-nums text-right">
-                    {data.percentage}%
-                    <span className="text-gray-400 font-normal ml-1">({data.count})</span>
-                  </span>
-                </div>
-              ))}
+              ].flatMap(({ label, data }, index) => [
+                <span key={`${label}-label`} className={`text-sm text-gray-600 py-3 ${index < 2 ? 'border-b border-gray-50' : ''}`}>{label}</span>,
+                <div key={`${label}-bar`} className="bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                  <div
+                    className="bg-primary h-1.5 rounded-full transition-all duration-500"
+                    style={{ width: `${data.percentage}%` }}
+                  />
+                </div>,
+                <span key={`${label}-pct`} className={`text-sm font-semibold text-gray-900 tabular-nums text-right py-3 whitespace-nowrap ${index < 2 ? 'border-b border-gray-50' : ''}`}>
+                  {data.percentage}%
+                  <span className="text-gray-400 font-normal ml-1">({data.count})</span>
+                </span>,
+              ])}
             </div>
           </div>
         )}
