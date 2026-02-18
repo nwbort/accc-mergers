@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
@@ -236,6 +236,24 @@ function Mergers() {
   useEffect(() => {
     setPage(1);
   }, [filteredMergers, sortBy]);
+
+  // Sentinel element watched by IntersectionObserver to trigger the next page
+  const sentinelRef = useRef(null);
+
+  useEffect(() => {
+    if (!hasMore) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setPage((p) => p + 1);
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    const el = sentinelRef.current;
+    if (el) observer.observe(el);
+    return () => observer.disconnect();
+  }, [hasMore]);
 
   if (loading) return <LoadingSpinner />;
   if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
@@ -546,16 +564,7 @@ function Mergers() {
           })}
         </div>
 
-        {hasMore && (
-          <div className="mt-6 text-center">
-            <button
-              onClick={() => setPage((p) => p + 1)}
-              className="px-6 py-2.5 bg-white border border-gray-200 rounded-xl text-sm text-gray-600 hover:bg-gray-50 transition-colors shadow-sm"
-            >
-              Show more ({sortedMergers.length - visibleMergers.length} remaining)
-            </button>
-          </div>
-        )}
+        {hasMore && <div ref={sentinelRef} className="h-12" />}
 
         {sortedMergers.length === 0 && (
           <div className="text-center py-16">
