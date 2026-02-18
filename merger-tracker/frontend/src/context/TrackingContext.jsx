@@ -113,13 +113,67 @@ export function TrackingProvider({ children }) {
         setTimelineEvents(timelineEventsFromMergers);
         allFetchedEvents = [...allFetchedEvents, ...timelineEventsFromMergers];
 
+        // Synthesize upcoming events directly from individual merger data for tracked mergers.
+        // This ensures determination/consultation due dates appear in the notification panel
+        // even when they fall beyond the 60-day window in upcoming-events.json (e.g. Phase 2
+        // mergers whose determination deadline is months away).
+        const now = new Date();
+        const syntheticUpcomingEvents = [];
+        mergers.forEach(merger => {
+          if (!merger) return;
+          // Skip if already determined, a waiver, or assessment is suspended
+          if (merger.determination_publication_date) return;
+          if (merger.is_waiver) return;
+          if (merger.status === 'Assessment suspended') return;
+
+          if (merger.end_of_determination_period) {
+            const dueDate = new Date(merger.end_of_determination_period);
+            if (dueDate > now) {
+              syntheticUpcomingEvents.push({
+                type: 'determination_due',
+                event_type_display: 'Determination due',
+                display_title: 'Determination due',
+                title: 'Determination due',
+                date: merger.end_of_determination_period,
+                merger_id: merger.merger_id,
+                merger_name: merger.merger_name,
+                status: merger.status,
+                stage: merger.stage,
+                effective_notification_datetime: merger.effective_notification_datetime,
+                is_waiver: merger.is_waiver,
+              });
+            }
+          }
+
+          if (merger.consultation_response_due_date) {
+            const dueDate = new Date(merger.consultation_response_due_date);
+            if (dueDate > now) {
+              syntheticUpcomingEvents.push({
+                type: 'consultation_due',
+                event_type_display: 'Consultation responses due',
+                display_title: 'Consultation responses due',
+                title: 'Consultation responses due',
+                date: merger.consultation_response_due_date,
+                merger_id: merger.merger_id,
+                merger_name: merger.merger_name,
+                status: merger.status,
+                stage: merger.stage,
+                effective_notification_datetime: merger.effective_notification_datetime,
+                is_waiver: merger.is_waiver,
+              });
+            }
+          }
+        });
+
         // Fetch upcoming events
         if (upcomingResponse.ok) {
           const data = await upcomingResponse.json();
-          // Filter to only tracked mergers (using Set for O(1) lookup)
-          // Normalize event structure to match timeline events for consistent keys
+          // Filter to only tracked mergers (using Set for O(1) lookup).
+          // Also exclude suspended mergers since their assessment is no longer active.
+          // Normalize event structure to match timeline events for consistent keys.
           const filtered = data.events
             .filter((e) => trackedMergerIdsSet.has(e.merger_id))
+            .filter((e) => e.status !== 'Assessment suspended')
             .map((event) => ({
               ...event,
               // Ensure display_title is set for consistent key generation
@@ -127,8 +181,15 @@ export function TrackingProvider({ children }) {
               // Preserve original fields too
               title: event.title || event.event_type_display,
             }));
-          setUpcomingEvents(filtered);
-          allFetchedEvents = [...allFetchedEvents, ...filtered];
+          // Combine with synthetic events; deduplication in trackedEvents handles any overlap
+          // when a date falls within both the 60-day window and the synthetic events list.
+          const allUpcoming = [...filtered, ...syntheticUpcomingEvents];
+          setUpcomingEvents(allUpcoming);
+          allFetchedEvents = [...allFetchedEvents, ...allUpcoming];
+        } else {
+          // Even if upcoming-events.json is unavailable, still surface synthetic events
+          setUpcomingEvents(syntheticUpcomingEvents);
+          allFetchedEvents = [...allFetchedEvents, ...syntheticUpcomingEvents];
         }
 
         // Mark all events for newly tracked mergers as seen

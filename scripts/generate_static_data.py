@@ -793,6 +793,10 @@ def generate_upcoming_events_json(enriched_mergers: list, days_ahead: int = 60) 
         if m.get('determination_publication_date'):
             continue
 
+        # Skip if assessment is suspended (no active determination period)
+        if m.get('status') == 'Assessment suspended':
+            continue
+
         # Skip waiver mergers (they don't have determination periods) - using pre-enriched field
         if m.get('is_waiver', False):
             continue
