@@ -1510,6 +1510,7 @@
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-02-23T12:00:00Z",
     "accc_determination": "Approved",
+    "determination_publication_date": "2026-02-19T12:00:00Z",
     "page_modified_datetime": "2026-02-19T17:11:53+11:00",
     "consultation_response_due_date": "2026-01-23T12:00:00Z",
     "acquirers": [
@@ -1575,10 +1576,11 @@
       {
         "date": "2026-02-19T12:00:00Z",
         "title": "Google - Wiz - Phase 1 determination",
-        "display_title": "Google - Wiz - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Google%20-%20Wiz%20-%20Phase%201%20determination_0.pdf",
         "url_gh": "/matters/MN-15002/Google - Wiz - Phase 1 determination_0.pdf",
-        "status": "live"
+        "status": "live",
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false

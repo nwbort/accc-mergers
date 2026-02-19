@@ -245,6 +245,11 @@ def parse_merger_file(filepath, existing_merger_data=None):
             raw_determination = determination_tag.get_text(strip=True)
             merger_data['accc_determination'] = normalize_determination(raw_determination)
 
+        # If there's a determination but the date field wasn't on the page yet, default to today.
+        # This handles the case where the ACCC updates status/determination before adding the date field.
+        if merger_data.get('accc_determination') and not merger_data.get('determination_publication_date'):
+            merger_data['determination_publication_date'] = datetime.utcnow().strftime('%Y-%m-%dT12:00:00Z')
+
         # --- Page Modified DateTime (for sorting determinations on same day) ---
         # Extract dcterms.modified metadata which shows when the page was last updated
         # This helps sort determinations that occur on the same day by the time they were added
