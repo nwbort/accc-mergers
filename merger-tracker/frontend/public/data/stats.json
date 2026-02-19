@@ -2,12 +2,12 @@
   "total_mergers": 37,
   "total_waivers": 32,
   "by_status": {
-    "Assessment completed": 16,
-    "Under assessment": 20,
+    "Assessment completed": 17,
+    "Under assessment": 19,
     "Assessment suspended": 1
   },
   "by_determination": {
-    "Approved": 16,
+    "Approved": 17,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -15,9 +15,9 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 29.875,
+    "average_days": 29.705882352941178,
     "median_days": 25,
-    "average_business_days": 19.0625,
+    "average_business_days": 19.058823529411764,
     "median_business_days": 18,
     "percentiles": {
       "day15": {
@@ -25,11 +25,11 @@
         "percentage": 0.0
       },
       "day20": {
-        "count": 12,
-        "percentage": 75.0
+        "count": 13,
+        "percentage": 76.5
       },
       "day30": {
-        "count": 16,
+        "count": 17,
         "percentage": 100.0
       }
     }
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-25002",
+      "merger_name": "Symal Group - Timms Group and L&D Group",
+      "determination": "Approved",
+      "determination_date": "2026-02-19T12:00:00Z",
+      "page_modified_datetime": "2026-02-20T09:48:15+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-15007",
       "merger_name": "Apollo Funds led consortium \u2013 Lecta Group",
       "determination": "Approved",
@@ -168,16 +178,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-95005",
-      "merger_name": "HCLTech - Jaspersoft",
-      "determination": "Approved",
-      "determination_date": "2026-02-19T12:00:00Z",
-      "page_modified_datetime": "2026-02-19T09:02:41+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
