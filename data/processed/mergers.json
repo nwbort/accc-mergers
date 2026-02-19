@@ -1510,6 +1510,7 @@
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-02-23T12:00:00Z",
     "accc_determination": "Approved",
+    "determination_publication_date": "2026-02-19T12:00:00Z",
     "page_modified_datetime": "2026-02-19T17:11:53+11:00",
     "consultation_response_due_date": "2026-01-23T12:00:00Z",
     "acquirers": [
@@ -1575,10 +1576,11 @@
       {
         "date": "2026-02-19T12:00:00Z",
         "title": "Google - Wiz - Phase 1 determination",
-        "display_title": "Google - Wiz - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Google%20-%20Wiz%20-%20Phase%201%20determination_0.pdf",
         "url_gh": "/matters/MN-15002/Google - Wiz - Phase 1 determination_0.pdf",
-        "status": "live"
+        "status": "live",
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false
@@ -1806,6 +1808,151 @@
     "is_waiver": false
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/henkel-%E2%80%93-atp-adhesives-systems-group",
+    "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+    "status": "Under assessment",
+    "merger_id": "MN-40005",
+    "effective_notification_datetime": "2026-02-18T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-04-02T12:00:00Z",
+    "page_modified_datetime": "2026-02-19T17:30:47+11:00",
+    "consultation_response_due_date": "2026-02-26T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "Henkel Global Supply Chain B.V.",
+        "identifier_type": null,
+        "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Aqua Adhesives I GmbH",
+        "identifier_type": null,
+        "identifier": "Swiss registration number: CH170.4.019.1870"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Henkel Finance Australia L.P.",
+        "identifier_type": "ABN",
+        "identifier": "15 740 196 765"
+      },
+      {
+        "name": "Henkel AG & Co. KGaA",
+        "identifier_type": null,
+        "identifier": "HRB  4724"
+      },
+      {
+        "name": "Henkel Australia Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "82 001 302 996"
+      },
+      {
+        "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH",
+        "identifier_type": null,
+        "identifier": "HRB  35906"
+      },
+      {
+        "name": "ATP Adhesive Systems Group GmbH",
+        "identifier_type": null,
+        "identifier": "Swiss registration number: CHE219.637.488"
+      },
+      {
+        "name": "ATP Adhesives Holdings LP",
+        "identifier_type": null,
+        "identifier": "Delaware registration number: 6443870"
+      },
+      {
+        "name": "Daniel Oscar Werner Heini",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Dr Jan M\u00fcller",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Ren\u00e9 Sven Hoffmann",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Daniel Lippuner",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Paul Schwitter",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Axel van Steenbergen",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Sladjan Bakcic",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Richard Lee Simpson",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Sascha Phillipp Kamer",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Thomas Wener Keller",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Tobias Oliver Kr\u00e4mer",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Dirk Helmut Stadler",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Arsenal Capital Management LP",
+        "identifier_type": null,
+        "identifier": "EIN 134 13 7189"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "1915",
+        "name": "Adhesive Manufacturing"
+      }
+    ],
+    "merger_description": "Henkel AG & Co. KGaA (**Henkel**) proposes to acquire all the shares in and sole control of ATP Adhesives Systems Group GmbH (together with subsidiaries, **ATP**) from ATP Adhesives Holdings LP, which pre-transaction is controlled by affiliates of Arsenal Capital Partners.\n\nHenkel is a German public company listed on the Frankfurt Stock Exchange. Henkel\u2019s Adhesive Technologies business unit is a producer of adhesives, sealants and functional coatings for industrial customers, as well as for consumers and craftsmen. Henkel\u2019s Adhesive Technologies brands available in Australia include Loctite, Teroson, Bonderite, Clingtape, Technomelt, Aquence and Pritt. In Australia, Henkel supplies tapes and labels (**T&L**) adhesives and non-water-based pressure-sensitive adhesive (**PSA**) tapes.\n\nATP is a private company headquartered in Wollerau, Switzerland. ATP manufactures PSA tapes for various end uses. In Australia, ATP supplies only water-based PSA tapes.",
+    "events": [
+      {
+        "date": "2026-02-19T12:00:00Z",
+        "title": "Henkel - ATP Adhesives Systems - Questionnaire",
+        "display_title": "Henkel - ATP Adhesives Systems - Questionnaire",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Henkel%20-%20ATP%20Adhesives%20Systems%20-%20Questionnaire.docx",
+        "url_gh": "/matters/MN-40005/Henkel - ATP Adhesives Systems - Questionnaire.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-02-18T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/symal-group-80-acquisition-of-davison-earthmovers",
     "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
     "status": "Under assessment",
@@ -1873,6 +2020,76 @@
       },
       {
         "date": "2026-02-03T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hg-capital-onestream",
+    "merger_name": "Hg Capital - OneStream",
+    "status": "Under assessment",
+    "merger_id": "MN-55006",
+    "effective_notification_datetime": "2026-02-19T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-04-07T12:00:00Z",
+    "page_modified_datetime": "2026-02-19T17:35:22+11:00",
+    "consultation_response_due_date": "2026-02-26T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "Hg Pooled Management Limited",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "OnwardAcquireCo, Inc",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "targets": [
+      {
+        "name": "OneStream, Inc.",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "GS Topco GP LLC",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Prophix Software Inc",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "LucaNet Group GmbH",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "7000",
+        "name": "Computer System Design and Related Services"
+      }
+    ],
+    "merger_description": "Hg Pooled Management Limited (**Hg Capital**) through a special purpose vehicle, Onward AcquireCo, Inc., proposes to acquire 100% of share capital in Onestream, Inc and OneStream Software LLC (together **OneStream**).\n\nHg Capital is a private equity firm focussed on investment in Europe and the US. Hg Capital\u2019s portfolio companies include GS Topco GP LLC (insightsoftware), Prophix Software Inc (Prophix), and LucaNet Group GmbH (LucaNet). These companies provide various enterprise performance management software solutions throughout Australia for financial consolidation, budgeting, analysis, and planning and management reporting.\n\nOneStream is a software provider offering a platform that unifies an enterprise's core financial functions and broader operation data and processes to increase the strategic impact of the Office of the CFO. OneStream's platform \u2013 the Digital Finance Cloud \u2013 provides capabilities centred on financial close and consolidation, and financial and operational planning and reporting (i.e. enterprise performance management).",
+    "events": [
+      {
+        "date": "2026-02-19T12:00:00Z",
+        "title": "Questionnaire - Hg Capital - OneStream",
+        "display_title": "Questionnaire - Hg Capital - OneStream",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Hg%20Capital%20-%20OneStream.docx",
+        "url_gh": "/matters/MN-55006/Questionnaire - Hg Capital - OneStream.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-02-19T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }

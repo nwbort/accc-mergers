@@ -1,6 +1,96 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-40002",
+      "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-14T12:00:00Z",
+      "determination_publication_date": "2026-02-02T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "HOTEL MAROOCHYDORE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 140 651 887"
+        },
+        {
+          "name": "SCHF PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 644 329 733"
+        },
+        {
+          "name": "Star Consolidated Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "12 615 803 588"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for Kingston Family Trust",
+          "identifier_type": "ABN",
+          "identifier": "96 328 946 230"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/star-hotels-group-%E2%80%93-yandina-hotel-qld"
+    },
+    {
+      "merger_id": "WA-40003",
+      "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-16T12:00:00Z",
+      "determination_publication_date": "2026-01-30T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Skyshield UK Bidco Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Skyshield US Bidco Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "CVC Capital Partners plc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Smiths Detection Group Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2469",
+          "name": "Other Specialised Machinery and Equipment Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-smiths-detection-group"
+    },
+    {
       "merger_id": "WA-40004",
       "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
       "status": "Assessment completed",
@@ -678,6 +768,6 @@
   ],
   "page": 2,
   "page_size": 50,
-  "total": 63,
+  "total": 65,
   "total_pages": 2
 }
