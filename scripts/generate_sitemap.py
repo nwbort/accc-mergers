@@ -21,21 +21,23 @@ SITEMAP_OUT = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "sitemap.xm
 TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
 STATIC_PAGES = [
-    {"path": "/",            "changefreq": "daily",  "priority": "1.0"},
-    {"path": "/mergers",     "changefreq": "daily",  "priority": "0.9"},
-    {"path": "/timeline",    "changefreq": "daily",  "priority": "0.8"},
-    {"path": "/industries",  "changefreq": "weekly", "priority": "0.8"},
-    {"path": "/commentary",  "changefreq": "weekly", "priority": "0.7"},
-    {"path": "/digest",      "changefreq": "weekly", "priority": "0.7"},
+    {"path": "/",            "changefreq": "daily",   "priority": "1.0"},
+    {"path": "/mergers",     "changefreq": "daily",   "priority": "0.9"},
+    {"path": "/timeline",    "changefreq": "daily",   "priority": "0.8"},
+    {"path": "/industries",  "changefreq": "weekly",  "priority": "0.8"},
+    {"path": "/commentary",  "changefreq": "weekly",  "priority": "0.7"},
+    {"path": "/digest",      "changefreq": "weekly",  "priority": "0.7"},
+    {"path": "/nick-twort",  "changefreq": "monthly", "priority": "0.8"},
 ]
 
 STATIC_COMMENTS = {
-    "/":           "Homepage / Dashboard",
-    "/mergers":    "All Mergers Page",
-    "/timeline":   "Timeline Page",
-    "/industries": "Industries Page",
-    "/commentary": "Commentary Page",
-    "/digest":     "Digest Page",
+    "/":            "Homepage / Dashboard",
+    "/mergers":     "All Mergers Page",
+    "/timeline":    "Timeline Page",
+    "/industries":  "Industries Page",
+    "/commentary":  "Commentary Page",
+    "/digest":      "Digest Page",
+    "/nick-twort":  "About / Author Page",
 }
 
 
