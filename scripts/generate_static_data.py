@@ -5,15 +5,21 @@ Generate static JSON data files for Cloudflare Pages deployment.
 This script reads mergers.json and generates pre-computed JSON files
 that the frontend can consume directly without a backend API.
 
-Output files (to merger-tracker/frontend/public/data/):
-- mergers.json      - All mergers wrapped in {mergers: [...]} (legacy, full data)
-- mergers/list.json - Lightweight merger list (no events/descriptions)
-- mergers/{id}.json - Individual merger files (one per merger)
-- stats.json        - Aggregated statistics
-- timeline.json     - All events sorted by date
-- industries.json   - ANZSIC codes with merger counts
-- upcoming-events.json - Future consultation/determination dates
-- commentary.json   - Mergers with user commentary
+Output files:
+  data/output/ (for offline analysis, not deployed):
+  - mergers.json      - All mergers wrapped in {mergers: [...]} (full enriched data)
+
+  merger-tracker/frontend/public/data/ (deployed to Cloudflare Pages):
+  - mergers/{id}.json - Individual merger files (one per merger)
+  - mergers/list-page-{N}.json - Paginated lightweight merger lists (50/page)
+  - mergers/list-meta.json - Pagination metadata for merger list
+  - stats.json        - Aggregated statistics
+  - timeline-page-{N}.json - Paginated timeline events (100/page)
+  - timeline-meta.json - Pagination metadata for timeline
+  - industries.json   - ANZSIC codes with merger counts
+  - industries/{code}.json - Mergers per industry code
+  - upcoming-events.json - Future consultation/determination dates
+  - commentary.json   - Mergers with user commentary
 """
 
 import json
@@ -31,6 +37,7 @@ MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
 COMMENTARY_JSON = REPO_ROOT / "data" / "processed" / "commentary.json"
 HOLIDAYS_JSON = REPO_ROOT / "merger-tracker" / "frontend" / "src" / "data" / "act-public-holidays.json"
 OUTPUT_DIR = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "data"
+DATA_OUTPUT_DIR = REPO_ROOT / "data" / "output"
 
 
 def load_public_holidays():
@@ -289,31 +296,6 @@ def generate_individual_merger_files(enriched_mergers: list) -> None:
                 json.dump(merger, f, indent=2)
 
 
-def generate_mergers_list_json(enriched_mergers: list) -> dict:
-    """Generate lightweight list of mergers with only essential fields (expects pre-enriched mergers)."""
-    lightweight_mergers = []
-
-    for m in enriched_mergers:
-        # Only include fields needed for list view (no events, no large descriptions)
-        lightweight_mergers.append({
-            "merger_id": m.get('merger_id'),
-            "merger_name": m.get('merger_name'),
-            "status": m.get('status'),
-            "accc_determination": m.get('accc_determination'),
-            "is_waiver": m.get('is_waiver', False),
-            "effective_notification_datetime": m.get('effective_notification_datetime'),
-            "determination_publication_date": m.get('determination_publication_date'),
-            "end_of_determination_period": m.get('end_of_determination_period'),
-            "stage": m.get('stage'),
-            "acquirers": m.get('acquirers', []),
-            "targets": m.get('targets', []),
-            "other_parties": m.get('other_parties', []),
-            "anzsic_codes": m.get('anzsic_codes') or m.get('anszic_codes', []),
-            "url": m.get('url')
-        })
-
-    return {"mergers": lightweight_mergers}
-
 
 def generate_paginated_list(enriched_mergers: list, page_size: int = 50) -> None:
     """Generate paginated merger list files (expects pre-enriched mergers)."""
@@ -551,38 +533,6 @@ def generate_stats_json(enriched_mergers: list) -> dict:
         "recent_determinations": recent_determinations
     }
 
-
-def generate_timeline_json(enriched_mergers: list) -> dict:
-    """Generate timeline of all events (expects pre-enriched mergers)."""
-    events = []
-
-    for m in enriched_mergers:
-        merger_id = m['merger_id']
-        merger_name = m['merger_name']
-        merger_is_waiver = m.get('is_waiver', False)
-
-        for event in m.get('events', []):
-            title = event.get('title', '')
-            events.append({
-                "date": event.get('date'),
-                "title": title,
-                "display_title": event.get('display_title'),
-                "url": event.get('url'),
-                "url_gh": event.get('url_gh'),
-                "status": event.get('status'),
-                "merger_id": merger_id,
-                "merger_name": merger_name,
-                "phase": event.get('phase') or extract_phase_from_event(title),
-                "is_waiver": merger_is_waiver
-            })
-
-    # Sort by date descending
-    events.sort(key=lambda x: x.get('date', ''), reverse=True)
-
-    return {
-        "events": events,
-        "total": len(events)
-    }
 
 
 def generate_paginated_timeline(enriched_mergers: list, page_size: int = 100) -> None:
@@ -885,14 +835,19 @@ def main():
     enriched_mergers = [enrich_merger(m, commentary) for m in mergers]
     print(f"✓ Enriched {len(enriched_mergers)} mergers")
 
-    # Create output directory
+    # Create output directories
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    DATA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Generate each file (all functions now receive pre-enriched mergers)
+    # Write full enriched mergers.json to data/output/ (for offline analysis, not deployed)
+    mergers_json_path = DATA_OUTPUT_DIR / "mergers.json"
+    with open(mergers_json_path, 'w', encoding='utf-8') as f:
+        json.dump(generate_mergers_json(enriched_mergers), f, indent=2)
+    print(f"✓ Generated {mergers_json_path}")
+
+    # Generate each deployed file (all functions receive pre-enriched mergers)
     outputs = [
-        ("mergers.json", generate_mergers_json(enriched_mergers)),
         ("stats.json", generate_stats_json(enriched_mergers)),
-        ("timeline.json", generate_timeline_json(enriched_mergers)),
         ("industries.json", generate_industries_json(enriched_mergers)),
         ("upcoming-events.json", generate_upcoming_events_json(enriched_mergers)),
         ("commentary.json", generate_commentary_json(enriched_mergers, commentary)),
@@ -908,13 +863,6 @@ def main():
     print("\nGenerating individual merger files...")
     generate_individual_merger_files(enriched_mergers)
     print(f"✓ Generated {len(enriched_mergers)} individual merger files in {OUTPUT_DIR / 'mergers'}")
-
-    # Generate lightweight list.json (kept for backward compatibility)
-    list_data = generate_mergers_list_json(enriched_mergers)
-    list_path = OUTPUT_DIR / "mergers" / "list.json"
-    with open(list_path, 'w', encoding='utf-8') as f:
-        json.dump(list_data, f, indent=2)
-    print(f"✓ Generated {list_path}")
 
     # Generate paginated list files
     print("\nGenerating paginated list files...")

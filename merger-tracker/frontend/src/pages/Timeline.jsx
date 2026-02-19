@@ -51,20 +51,7 @@ function Timeline() {
       // First, fetch metadata to know total pages
       const metaResponse = await fetch(API_ENDPOINTS.timelineMeta);
 
-      if (!metaResponse.ok) {
-        // Fallback to legacy endpoint if pagination not available
-        console.log('Timeline pagination not available, falling back to legacy endpoint');
-        const response = await fetch(API_ENDPOINTS.timeline);
-        if (!response.ok) throw new Error('Failed to fetch timeline');
-        const data = await response.json();
-
-        dataCache.set('timeline-events', data.events);
-        setAllEvents(data.events);
-        setDisplayedEvents(data.events.slice(0, ITEMS_PER_PAGE));
-        setHasMore(data.events.length > ITEMS_PER_PAGE);
-        setLoading(false);
-        return;
-      }
+      if (!metaResponse.ok) throw new Error('Failed to fetch timeline metadata');
 
       const meta = await metaResponse.json();
       setTotalPages(meta.total_pages);
