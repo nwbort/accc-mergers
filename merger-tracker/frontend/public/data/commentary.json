@@ -1,6 +1,86 @@
 {
   "items": [
     {
+      "merger_id": "MN-85007",
+      "merger_name": "Salesforce \u2013 Qualified",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-02-19T12:00:00Z",
+      "determination_publication_date": null,
+      "determination_url": null,
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Salesforce, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Qualified.com, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "comments": [
+        {
+          "commentary": "The ACCC [declined to provide a waiver](/mergers/WA-35003) for Salesforce's proposed acquisition of Qualified. The parties subsequently notified the transaction for ACCC review.",
+          "tags": [
+            "landmark"
+          ],
+          "date": "2026-02-19"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35003",
+      "merger_name": "Salesforce \u2013 Qualified",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-08T12:00:00Z",
+      "determination_publication_date": "2026-01-21T12:00:00Z",
+      "determination_url": "/matters/WA-35003/Salesforce-Qualified (WA-35003) - Notification waiver determination - 20 January 2026.pdf",
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Salesforce, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Qualified.com, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "comments": [
+        {
+          "commentary": "The ACCC declined to provide a waiver for Salesforce's proposed acquisition of Qualified. The parties subsequently [notified the transaction](/mergers/MN-85007) for ACCC review.",
+          "tags": [
+            "landmark"
+          ],
+          "date": "2026-02-19"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-30003",
       "merger_name": "MicroStar Logistics - Konvoy",
       "status": "Assessment suspended",
@@ -472,5 +552,5 @@
       ]
     }
   ],
-  "count": 11
+  "count": 13
 }
