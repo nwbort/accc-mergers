@@ -11,6 +11,7 @@ import Timeline from './pages/Timeline';
 import Industries from './pages/Industries';
 import Commentary from './pages/Commentary';
 import Digest from './pages/Digest';
+import NickTwort from './pages/NickTwort';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
                 <Route path="/industries" element={<Industries />} />
                 <Route path="/commentary" element={<Commentary />} />
                 <Route path="/digest" element={<Digest />} />
+                <Route path="/nick-twort" element={<NickTwort />} />
               </Routes>
             </main>
             <Footer />
