@@ -1,6 +1,49 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-35004",
+      "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-22T12:00:00Z",
+      "determination_publication_date": "2026-02-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Saphir Holdings SAS",
+          "identifier_type": null,
+          "identifier": "Trade and Companies Registry Number 995 192 986"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ex Nihilo Group",
+          "identifier_type": null,
+          "identifier": "Trade and Companies Registry Number 981 087 646"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "L Catterton Management Limited",
+          "identifier_type": null,
+          "identifier": "N/A"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3720",
+          "name": "Pharmaceutical and Toiletry Goods Wholesaling"
+        },
+        {
+          "code": "4271",
+          "name": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/l-catterton-management-%E2%80%93-ex-nihilo-group"
+    },
+    {
       "merger_id": "WA-40002",
       "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
       "status": "Assessment completed",
@@ -956,6 +999,6 @@
   ],
   "page": 2,
   "page_size": 50,
-  "total": 68,
+  "total": 69,
   "total_pages": 2
 }

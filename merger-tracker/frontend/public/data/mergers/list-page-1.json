@@ -2141,6 +2141,62 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coforge-encora"
     },
     {
+      "merger_id": "WA-15007",
+      "merger_name": "Apollo Funds led consortium \u2013 Lecta Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-10T12:00:00Z",
+      "determination_publication_date": "2026-02-19T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Reed BidCo Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Apollo Capital Management, L.P.",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Apollo Global Management",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1510",
+          "name": "Pulp, Paper and Paperboard Manufacturing"
+        },
+        {
+          "code": "1521",
+          "name": "Corrugated Paperboard and Paperboard Container Manufacturing"
+        },
+        {
+          "code": "1529",
+          "name": "Other Converted Paper Product Manufacturing"
+        },
+        {
+          "code": "3739",
+          "name": "Other Goods Wholesaling n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/apollo-funds-led-consortium-%E2%80%93-lecta-group"
+    },
+    {
       "merger_id": "WA-20003",
       "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
       "status": "Assessment completed",
@@ -2477,53 +2533,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/salesforce-%E2%80%93-qualified"
-    },
-    {
-      "merger_id": "WA-35004",
-      "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-01-22T12:00:00Z",
-      "determination_publication_date": "2026-02-04T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Saphir Holdings SAS",
-          "identifier_type": null,
-          "identifier": "Trade and Companies Registry Number 995 192 986"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Ex Nihilo Group",
-          "identifier_type": null,
-          "identifier": "Trade and Companies Registry Number 981 087 646"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "L Catterton Management Limited",
-          "identifier_type": null,
-          "identifier": "N/A"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "3720",
-          "name": "Pharmaceutical and Toiletry Goods Wholesaling"
-        },
-        {
-          "code": "4271",
-          "name": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/l-catterton-management-%E2%80%93-ex-nihilo-group"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 68,
+  "total": 69,
   "total_pages": 2
 }
