@@ -1,9 +1,9 @@
 {
-  "total_mergers": 34,
+  "total_mergers": 35,
   "total_waivers": 28,
   "by_status": {
     "Assessment completed": 15,
-    "Under assessment": 18,
+    "Under assessment": 19,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -37,7 +37,7 @@
   "top_industries": [
     {
       "name": "Computer System Design and Related Services",
-      "count": 13
+      "count": 14
     },
     {
       "name": "Software Publishing",
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-85007",
+      "merger_name": "Salesforce \u2013 Qualified",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-19T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-10005",
       "merger_name": "Apex - Mercer Administration Services and related assets",
       "status": "Under assessment",
@@ -104,14 +112,6 @@
     {
       "merger_id": "MN-95001",
       "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-13T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-95003",
-      "merger_name": "CVS Group - Pittwater Animal Hospital",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-13T12:00:00Z",

@@ -1579,6 +1579,39 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/north-american-construction-group-%E2%80%93-iron-mine-contracting"
     },
     {
+      "merger_id": "MN-85007",
+      "merger_name": "Salesforce \u2013 Qualified",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-02-19T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Salesforce, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Qualified.com, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/salesforce-%E2%80%93-qualified-0"
+    },
+    {
       "merger_id": "MN-95001",
       "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
       "status": "Under assessment",
@@ -2394,57 +2427,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-smiths-detection-group"
-    },
-    {
-      "merger_id": "WA-40004",
-      "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-01-29T12:00:00Z",
-      "determination_publication_date": "2026-02-12T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005"
-        },
-        {
-          "name": "VETS CENTRAL HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 652 812 256"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Gawler Animal Hospital Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "87 160 265 109"
-        },
-        {
-          "name": "GAH 2.0 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "76 666 800 666"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "6970",
-          "name": "Veterinary Services"
-        },
-        {
-          "code": "9539",
-          "name": "Other Personal Services n.e.c."
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-%E2%80%93-gawler-animal-hospital-and-animalia-vet-clinic"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 62,
+  "total": 63,
   "total_pages": 2
 }
