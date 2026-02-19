@@ -37,6 +37,7 @@ export SUBFOLDER="data/raw/matters"
 export USER_AGENT="Mozilla/5.0 (compatible; git-scraper-bot/1.0;)" # Be a good citizen
 export MERGERS_JSON="data/processed/mergers.json"
 export SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export PARALLEL_JOBS=16
 
 # --- Functions ---
 
@@ -238,7 +239,7 @@ echo "Fetching $link_count merger page(s)..."
 failed_urls_file=$(mktemp)
 trap 'rm -f "$failed_urls_file"' EXIT
 
-if echo "$links_to_fetch" | xargs -P 8 -I {} bash -c 'fetch_matter_page "$@"' _ {} 2>"$failed_urls_file"; then
+if echo "$links_to_fetch" | xargs -P "$PARALLEL_JOBS" -I {} bash -c 'fetch_matter_page "$@"' _ {} 2>"$failed_urls_file"; then
   # All succeeded
   echo "Successfully fetched $link_count merger page(s)"
 else
