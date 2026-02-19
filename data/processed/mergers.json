@@ -1504,12 +1504,13 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/google-wiz",
     "merger_name": "Google - Wiz",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-15002",
     "effective_notification_datetime": "2026-01-09T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-02-23T12:00:00Z",
-    "page_modified_datetime": "2026-01-23T15:31:26+11:00",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-02-19T17:11:53+11:00",
     "consultation_response_due_date": "2026-01-23T12:00:00Z",
     "acquirers": [
       {
@@ -1570,6 +1571,14 @@
         "date": "2026-01-09T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-02-19T12:00:00Z",
+        "title": "Google - Wiz - Phase 1 determination",
+        "display_title": "Google - Wiz - Phase 1 determination",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Google%20-%20Wiz%20-%20Phase%201%20determination_0.pdf",
+        "url_gh": "/matters/MN-15002/Google - Wiz - Phase 1 determination_0.pdf",
+        "status": "live"
       }
     ],
     "is_waiver": false
