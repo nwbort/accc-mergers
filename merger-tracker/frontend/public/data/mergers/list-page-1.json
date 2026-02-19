@@ -1175,6 +1175,60 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/symal-group-80-acquisition-of-davison-earthmovers"
     },
     {
+      "merger_id": "MN-55006",
+      "merger_name": "Hg Capital - OneStream",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-02-19T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Hg Pooled Management Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "OnwardAcquireCo, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "OneStream, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "GS Topco GP LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Prophix Software Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "LucaNet Group GmbH",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hg-capital-onestream"
+    },
+    {
       "merger_id": "MN-70005",
       "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
       "status": "Under assessment",
@@ -2466,57 +2520,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/l-catterton-management-%E2%80%93-ex-nihilo-group"
-    },
-    {
-      "merger_id": "WA-40002",
-      "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-01-14T12:00:00Z",
-      "determination_publication_date": "2026-02-02T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "HOTEL MAROOCHYDORE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 140 651 887"
-        },
-        {
-          "name": "SCHF PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 644 329 733"
-        },
-        {
-          "name": "Star Consolidated Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "12 615 803 588"
-        }
-      ],
-      "targets": [
-        {
-          "name": "The Trustee for Kingston Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "96 328 946 230"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "4400",
-          "name": "Accommodation"
-        },
-        {
-          "code": "4520",
-          "name": "Pubs, Taverns and Bars"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/star-hotels-group-%E2%80%93-yandina-hotel-qld"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 64,
+  "total": 65,
   "total_pages": 2
 }

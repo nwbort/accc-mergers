@@ -74,6 +74,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-02-26T12:00:00Z",
+      "merger_id": "MN-55006",
+      "merger_name": "Hg Capital - OneStream",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-02-19T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-02-26T12:00:00Z",
       "merger_id": "MN-85007",
       "merger_name": "Salesforce \u2013 Qualified",
       "status": "Under assessment",
@@ -244,6 +254,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-04-07T12:00:00Z",
+      "merger_id": "MN-55006",
+      "merger_name": "Hg Capital - OneStream",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-02-19T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-04-07T12:00:00Z",
       "merger_id": "MN-85007",
       "merger_name": "Salesforce \u2013 Qualified",
       "status": "Under assessment",
@@ -251,6 +271,6 @@
       "effective_notification_datetime": "2026-02-19T12:00:00Z"
     }
   ],
-  "count": 25,
+  "count": 27,
   "days_ahead": 60
 }
