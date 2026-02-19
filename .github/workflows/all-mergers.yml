@@ -73,7 +73,7 @@ jobs:
       - name: Commit extracted data
         id: commit-extract
         run: |-
-          git add data/processed/mergers.json data/processed/questionnaire_data.json data/raw/matters/ merger-tracker/frontend/public/data/
+          git add data/processed/mergers.json data/processed/questionnaire_data.json data/raw/matters/ merger-tracker/frontend/public/data/ data/output/
           timestamp=$(date -u)
           git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
           git commit -m "Update extracted data (all mergers): ${timestamp}" || exit 0

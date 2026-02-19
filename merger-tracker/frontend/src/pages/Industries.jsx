@@ -51,42 +51,7 @@ function Industries() {
     try {
       const response = await fetch(API_ENDPOINTS.industryDetail(code));
 
-      if (!response.ok) {
-        // Fallback to loading all mergers if individual files not available
-        console.log('Industry files not available, falling back to full merger list');
-        const metaResponse = await fetch(API_ENDPOINTS.mergersListMeta);
-
-        let allMergers = [];
-        if (!metaResponse.ok) {
-          const mergersRes = await fetch(API_ENDPOINTS.mergersList);
-          if (!mergersRes.ok) throw new Error('Failed to fetch mergers');
-          const mergersData = await mergersRes.json();
-          allMergers = mergersData.mergers;
-        } else {
-          const meta = await metaResponse.json();
-          const totalPages = meta.total_pages;
-          const pagePromises = [];
-          for (let i = 1; i <= totalPages; i++) {
-            pagePromises.push(fetch(API_ENDPOINTS.mergersListPage(i)));
-          }
-          const pageResponses = await Promise.all(pagePromises);
-          const pagesData = await Promise.all(pageResponses.map(r => r.json()));
-          allMergers = pagesData.flatMap(page => page.mergers);
-        }
-
-        // Filter to this industry
-        const filtered = allMergers.filter(m =>
-          m.anzsic_codes?.some(c => c.code === code)
-        );
-
-        setIndustryMergersMap(prev => {
-          const updated = { ...prev, [code]: filtered };
-          dataCache.set('industry-mergers-map', updated);
-          return updated;
-        });
-
-        return filtered;
-      }
+      if (!response.ok) throw new Error(`Failed to fetch industry ${code}`);
 
       const data = await response.json();
       const mergers = data.mergers || [];

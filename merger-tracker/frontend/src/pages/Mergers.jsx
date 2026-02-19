@@ -113,19 +113,7 @@ function Mergers() {
       // First, fetch metadata to know how many pages there are
       const metaResponse = await fetch(API_ENDPOINTS.mergersListMeta);
 
-      if (!metaResponse.ok) {
-        // Fallback to legacy endpoint if pagination not available
-        console.log('Pagination not available, falling back to legacy endpoint');
-        const response = await fetch(API_ENDPOINTS.mergersList);
-        if (!response.ok) throw new Error('Failed to fetch mergers');
-        const data = await response.json();
-        dataCache.set('mergers-list', data.mergers);
-        setMergers(data.mergers);
-        clearSearchIndex();
-        setSearchIndex(buildSearchIndex(data.mergers));
-        setLoading(false);
-        return;
-      }
+      if (!metaResponse.ok) throw new Error('Failed to fetch merger list metadata');
 
       const meta = await metaResponse.json();
       const totalPages = meta.total_pages;
