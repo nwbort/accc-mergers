@@ -7,7 +7,7 @@
     "Assessment suspended": 1
   },
   "by_determination": {
-    "Approved": 16,
+    "Approved": 15,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -15,10 +15,10 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 29.875,
+    "average_days": 29.133333333333333,
     "median_days": 25,
-    "average_business_days": 19.0625,
-    "median_business_days": 18,
+    "average_business_days": 18.466666666666665,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 0,
@@ -26,10 +26,10 @@
       },
       "day20": {
         "count": 12,
-        "percentage": 75.0
+        "percentage": 80.0
       },
       "day30": {
-        "count": 16,
+        "count": 15,
         "percentage": 100.0
       }
     }
@@ -120,16 +120,6 @@
   ],
   "recent_determinations": [
     {
-      "merger_id": "MN-15002",
-      "merger_name": "Google - Wiz",
-      "determination": "Approved",
-      "determination_date": "2026-02-19T12:00:00Z",
-      "page_modified_datetime": "2026-02-19T17:11:53+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
       "merger_id": "WA-95005",
       "merger_name": "HCLTech - Jaspersoft",
       "determination": "Approved",
@@ -175,6 +165,16 @@
       "determination": "Approved",
       "determination_date": "2026-02-13T12:00:00Z",
       "page_modified_datetime": "2026-02-13T17:48:41+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-20005",
+      "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-02-12T12:00:00Z",
+      "page_modified_datetime": "2026-02-12T19:50:43+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
