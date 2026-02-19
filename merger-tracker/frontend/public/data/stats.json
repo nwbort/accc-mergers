@@ -1,9 +1,9 @@
 {
-  "total_mergers": 35,
+  "total_mergers": 36,
   "total_waivers": 28,
   "by_status": {
     "Assessment completed": 16,
-    "Under assessment": 18,
+    "Under assessment": 19,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -86,6 +86,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-40005",
+      "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-18T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-10005",
       "merger_name": "Apex - Mercer Administration Services and related assets",
       "status": "Under assessment",
@@ -104,14 +112,6 @@
     {
       "merger_id": "MN-25004",
       "merger_name": "ServiceNow - Armis",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-13T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-95001",
-      "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-13T12:00:00Z",

@@ -988,6 +988,135 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/microstar-logistics-konvoy"
     },
     {
+      "merger_id": "MN-40005",
+      "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-02-18T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-02T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Aqua Adhesives I GmbH",
+          "identifier_type": null,
+          "identifier": "Swiss registration number: CH170.4.019.1870"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Henkel Finance Australia L.P.",
+          "identifier_type": "ABN",
+          "identifier": "15 740 196 765"
+        },
+        {
+          "name": "Henkel AG & Co. KGaA",
+          "identifier_type": null,
+          "identifier": "HRB  4724"
+        },
+        {
+          "name": "Henkel Australia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "82 001 302 996"
+        },
+        {
+          "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH",
+          "identifier_type": null,
+          "identifier": "HRB  35906"
+        },
+        {
+          "name": "ATP Adhesive Systems Group GmbH",
+          "identifier_type": null,
+          "identifier": "Swiss registration number: CHE219.637.488"
+        },
+        {
+          "name": "ATP Adhesives Holdings LP",
+          "identifier_type": null,
+          "identifier": "Delaware registration number: 6443870"
+        },
+        {
+          "name": "Daniel Oscar Werner Heini",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Dr Jan M\u00fcller",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Ren\u00e9 Sven Hoffmann",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Daniel Lippuner",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Paul Schwitter",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Axel van Steenbergen",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Sladjan Bakcic",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Richard Lee Simpson",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Sascha Phillipp Kamer",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Thomas Wener Keller",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Tobias Oliver Kr\u00e4mer",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Dirk Helmut Stadler",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Arsenal Capital Management LP",
+          "identifier_type": null,
+          "identifier": "EIN 134 13 7189"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1915",
+          "name": "Adhesive Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/henkel-%E2%80%93-atp-adhesives-systems-group"
+    },
+    {
       "merger_id": "MN-55003",
       "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
       "status": "Under assessment",
@@ -2384,53 +2513,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/star-hotels-group-%E2%80%93-yandina-hotel-qld"
-    },
-    {
-      "merger_id": "WA-40003",
-      "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-01-16T12:00:00Z",
-      "determination_publication_date": "2026-01-30T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Skyshield UK Bidco Limited",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Skyshield US Bidco Limited",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "CVC Capital Partners plc",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "targets": [
-        {
-          "name": "Smiths Detection Group Limited",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "2469",
-          "name": "Other Specialised Machinery and Equipment Manufacturing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-smiths-detection-group"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 63,
+  "total": 64,
   "total_pages": 2
 }

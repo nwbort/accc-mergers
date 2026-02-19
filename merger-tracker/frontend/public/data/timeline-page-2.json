@@ -1,6 +1,30 @@
 {
   "events": [
     {
+      "date": "2026-01-13T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ethos%20%28TPG%29-EMIS%20%28WA-70002%29%20-%20Notification%20waiver%20determination%20-%2012%20January%202026.pdf",
+      "url_gh": "/matters/WA-70002/Ethos (TPG)-EMIS (WA-70002) - Notification waiver determination - 12 January 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-70002",
+      "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-01-12T12:00:00Z",
+      "title": "Questionnaire \u2013 CSE Crosscom \u2013 Progility",
+      "display_title": "Questionnaire released for CSE Crosscom acquisition of Progility",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20CSE%20Crosscom%20%E2%80%93%20Progility%20-%2012%20January%202026.pdf",
+      "url_gh": "/matters/MN-01071/Questionnaire - CSE Crosscom \u2013 Progility - 12 January 2026.pdf",
+      "status": "removed",
+      "merger_id": "MN-01071",
+      "merger_name": "CSE Crosscom \u2013 Progility",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
       "date": "2026-01-12T12:00:00Z",
       "title": "Google Wiz - Questionnaire - January 2026",
       "display_title": "Questionnaire released for Google acquisition of Wiz",
@@ -579,6 +603,6 @@
   ],
   "page": 2,
   "page_size": 100,
-  "total": 148,
+  "total": 150,
   "total_pages": 2
 }
