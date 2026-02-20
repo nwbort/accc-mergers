@@ -15,9 +15,9 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 29.705882352941178,
+    "average_days": 29.764705882352942,
     "median_days": 25,
-    "average_business_days": 19.058823529411764,
+    "average_business_days": 19.11764705882353,
     "median_business_days": 18,
     "percentiles": {
       "day15": {
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-15002",
+      "merger_name": "Google - Wiz",
+      "determination": "Approved",
+      "determination_date": "2026-02-20T12:00:00Z",
+      "page_modified_datetime": "2026-02-19T17:11:53+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-25002",
       "merger_name": "Symal Group - Timms Group and L&D Group",
       "determination": "Approved",
@@ -168,16 +178,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-15002",
-      "merger_name": "Google - Wiz",
-      "determination": "Approved",
-      "determination_date": "2026-02-19T12:00:00Z",
-      "page_modified_datetime": "2026-02-19T17:11:53+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

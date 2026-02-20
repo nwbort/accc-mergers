@@ -7,7 +7,7 @@
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-02-23T12:00:00Z",
   "accc_determination": "Approved",
-  "determination_publication_date": "2026-02-19T12:00:00Z",
+  "determination_publication_date": "2026-02-20T12:00:00Z",
   "page_modified_datetime": "2026-02-19T17:11:53+11:00",
   "consultation_response_due_date": "2026-01-23T12:00:00Z",
   "acquirers": [
@@ -77,14 +77,39 @@
       "title": "Google - Wiz - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Google%20-%20Wiz%20-%20Phase%201%20determination_0.pdf",
+      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "Google LLC (Google)\u2019s proposed acquisition of 100% of the share\ncapital in Wiz, Inc. (Wiz) (the Acquisition)."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "The acquirer, Google, is a large, multinational technology company\nheadquartered in the United States. Google supplies a wide range of\ndigital products and services in Australia, including cloud\ninfrastructure through the Google Cloud Platform (Google Cloud).\nGoogle Cloud\u2019s products include the following cloud security\nproducts:\n\u2022 Security Operations (SecOps)\n\u2022 Threat Intelligence\n\u2022 Mandiant Managed Defense, Response & Consulting\n(Mandiant)\n\u2022 Security Command Center (SCC) and Security Command\nCenter Enterprise (SCCE).\nGoogle\u2019s generative AI foundation models (Gemini) can be\nintegrated into cloud security products including cloud-native\napplication protection platforms (CNAPPs).\nThe target, Wiz, is a private cloud security firm headquartered in the\nUnited States. Wiz offers cloud security solutions that enable\norganisations to identify and prevent security risks across multiple\ncloud platforms, as well as hybrid and on-premises environments.\nWiz\u2019s key service is Wiz Cloud. It offers several add-ons to Wiz Cloud\n(Wiz Sensor, Wiz Defend and Wiz Code), and offers a commercial\npackage of all of its products together which it markets as Wiz\nCNAPP."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "The reasons for the ACCC\u2019s determination are set out in section 2."
+        }
+      ],
       "url_gh": "/matters/MN-15002/Google - Wiz - Phase 1 determination_0.pdf",
       "status": "live",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-02-20T12:00:00Z",
+      "title": "Phase 1 - initial assessment determination: Approved",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
       "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
   "phase_1_determination": "Approved",
-  "phase_1_determination_date": "2026-02-19T12:00:00Z",
+  "phase_1_determination_date": "2026-02-20T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
