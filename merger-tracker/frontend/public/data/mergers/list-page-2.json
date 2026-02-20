@@ -1,6 +1,39 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-35003",
+      "merger_name": "Salesforce \u2013 Qualified",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-08T12:00:00Z",
+      "determination_publication_date": "2026-01-21T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Salesforce, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Qualified.com, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/salesforce-%E2%80%93-qualified"
+    },
+    {
       "merger_id": "WA-35004",
       "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
       "status": "Assessment completed",
@@ -999,6 +1032,6 @@
   ],
   "page": 2,
   "page_size": 50,
-  "total": 69,
+  "total": 70,
   "total_pages": 2
 }

@@ -1552,6 +1552,80 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bain-capital-%E2%80%93-mcj"
     },
     {
+      "merger_id": "MN-80004",
+      "merger_name": "Audiotonix - Soundtech Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-02-20T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-08T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Sound Bidco (Denmark) ApS",
+          "identifier_type": null,
+          "identifier": "Company number (Denmark)  45697088"
+        },
+        {
+          "name": "Sound Bidco S.r.l.",
+          "identifier_type": null,
+          "identifier": "Registration number (Companies\u2019 Register of Milan, Monza, Brianza and Lodi)  14469610969"
+        },
+        {
+          "name": "A6 Audio Bidco Limited",
+          "identifier_type": null,
+          "identifier": "Company number (England and Wales)  10573578"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Soundtech Group S.r.l.",
+          "identifier_type": null,
+          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Wisycom S.r.l.",
+          "identifier_type": null,
+          "identifier": "Registration number (Companies\u2019 Register of Padova, VAT and Tax Code)  02765640244"
+        },
+        {
+          "name": "DPA Microphones A/S",
+          "identifier_type": null,
+          "identifier": "Company number (Denmark)  15912200"
+        },
+        {
+          "name": "Sound Network ApS",
+          "identifier_type": null,
+          "identifier": "Company number (Denmark)  43989472"
+        },
+        {
+          "name": "Sound Devices LLC",
+          "identifier_type": null,
+          "identifier": "Company number (State of Wisconsin)  S053063"
+        },
+        {
+          "name": "Austrian Audio GmbH",
+          "identifier_type": null,
+          "identifier": "Company number (Austria): FN 472051"
+        },
+        {
+          "name": "Audiotonix Limited",
+          "identifier_type": null,
+          "identifier": "Company number (England and Wales)  15618986"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3739",
+          "name": "Other Goods Wholesaling n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/audiotonix-soundtech-group"
+    },
+    {
       "merger_id": "MN-85002",
       "merger_name": "ServiceNow - Veza",
       "status": "Assessment completed",
@@ -2510,43 +2584,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ifs-%E2%80%93-softeon"
-    },
-    {
-      "merger_id": "WA-35003",
-      "merger_name": "Salesforce \u2013 Qualified",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-01-08T12:00:00Z",
-      "determination_publication_date": "2026-01-21T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Salesforce, Inc",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "targets": [
-        {
-          "name": "Qualified.com, Inc",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/salesforce-%E2%80%93-qualified"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 69,
+  "total": 70,
   "total_pages": 2
 }
