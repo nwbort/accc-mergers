@@ -1,6 +1,6 @@
 {
   "total_mergers": 38,
-  "total_waivers": 32,
+  "total_waivers": 33,
   "by_status": {
     "Assessment completed": 17,
     "Under assessment": 20,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 29,
+    "Approved": 30,
     "Not approved": 3
   },
   "phase_duration": {
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-95006",
+      "merger_name": "Laundy Group \u2013 Nine Radio",
+      "determination": "Approved",
+      "determination_date": "2026-02-20T12:00:00Z",
+      "page_modified_datetime": "2026-02-20T17:54:20+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-15002",
       "merger_name": "Google - Wiz",
       "determination": "Approved",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-02-19T12:00:00Z",
       "page_modified_datetime": "2026-02-19T18:09:05+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-85008",
-      "merger_name": "Sony \u2013 Peanuts Worldwide",
-      "determination": "Approved",
-      "determination_date": "2026-02-19T12:00:00Z",
-      "page_modified_datetime": "2026-02-19T17:57:38+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

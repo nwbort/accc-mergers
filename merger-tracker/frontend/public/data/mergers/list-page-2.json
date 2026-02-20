@@ -1028,10 +1028,59 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hcltech-jaspersoft"
+    },
+    {
+      "merger_id": "WA-95006",
+      "merger_name": "Laundy Group \u2013 Nine Radio",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-11T12:00:00Z",
+      "determination_publication_date": "2026-02-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "SPIKE MEDIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 694 712 699"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NINE RADIO PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "32 063 906 927"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Arthur Laundy",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "FAIRFAX MEDIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "15 008 663 161"
+        },
+        {
+          "name": "NINE ENTERTAINMENT CO. HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "60 122 203 892"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5610",
+          "name": "Radio Broadcasting"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/laundy-group-%E2%80%93-nine-radio"
     }
   ],
   "page": 2,
   "page_size": 50,
-  "total": 70,
+  "total": 71,
   "total_pages": 2
 }
