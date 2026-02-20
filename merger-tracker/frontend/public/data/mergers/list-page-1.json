@@ -2225,6 +2225,73 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coforge-encora"
     },
     {
+      "merger_id": "WA-15004",
+      "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-24T12:00:00Z",
+      "determination_publication_date": "2026-02-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "QIC TT COMPANY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "27 694 380 973"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SCENTRE GROUP TRUST 3",
+          "identifier_type": "ABN",
+          "identifier": "11 517 229 138"
+        },
+        {
+          "name": "SCENTRE ALLIANCES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "53 098 357 521"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "QIC INVESTMENTS NO.4 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "84 682 889 818"
+        },
+        {
+          "name": "THE TRUSTEE FOR AUSTRALIAN RETIREMENT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "60 905 115 063"
+        },
+        {
+          "name": "SCENTRE GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "66 001 671 496"
+        },
+        {
+          "name": "WESTFIELD GIFT CARDS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "78 113 171 663"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        },
+        {
+          "code": "6940",
+          "name": "Advertising Services"
+        },
+        {
+          "code": "9533",
+          "name": "Parking Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-retirement-trust-%E2%80%93-interests-in-non-rental-income-westfield-sydney"
+    },
+    {
       "merger_id": "WA-15007",
       "merger_name": "Apollo Funds led consortium \u2013 Lecta Group",
       "status": "Assessment completed",
@@ -2546,48 +2613,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/wsp-%E2%80%93-trc"
-    },
-    {
-      "merger_id": "WA-35002",
-      "merger_name": "IFS \u2013 Softeon",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-01-06T12:00:00Z",
-      "determination_publication_date": "2026-01-27T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Fjord Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "TIN/EIN  921660460"
-        },
-        {
-          "name": "IFS North America, Inc.",
-          "identifier_type": null,
-          "identifier": "TIN/EIN  391292200"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Softeon Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 541960847"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "5420",
-          "name": "Software Publishing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ifs-%E2%80%93-softeon"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 71,
+  "total": 73,
   "total_pages": 2
 }

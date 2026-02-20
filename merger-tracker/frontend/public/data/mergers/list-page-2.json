@@ -1,6 +1,44 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-35002",
+      "merger_name": "IFS \u2013 Softeon",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-06T12:00:00Z",
+      "determination_publication_date": "2026-01-27T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Fjord Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  921660460"
+        },
+        {
+          "name": "IFS North America, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  391292200"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Softeon Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 541960847"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ifs-%E2%80%93-softeon"
+    },
+    {
       "merger_id": "WA-35003",
       "merger_name": "Salesforce \u2013 Qualified",
       "status": "Assessment completed",
@@ -255,6 +293,49 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/paragon-care-%E2%80%93-presidental"
+    },
+    {
+      "merger_id": "WA-50003",
+      "merger_name": "Francisco Partners - Sermo",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-20T12:00:00Z",
+      "determination_publication_date": "2026-02-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Sigrun Bidco Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)",
+          "identifier_type": null,
+          "identifier": "CRN 11755038"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Francisco Partners Management, L.P",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6950",
+          "name": "Market Research and Statistical Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/francisco-partners-sermo"
     },
     {
       "merger_id": "WA-55004",
@@ -1081,6 +1162,6 @@
   ],
   "page": 2,
   "page_size": 50,
-  "total": 71,
+  "total": 73,
   "total_pages": 2
 }

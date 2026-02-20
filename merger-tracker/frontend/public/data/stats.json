@@ -1,6 +1,6 @@
 {
   "total_mergers": 38,
-  "total_waivers": 33,
+  "total_waivers": 35,
   "by_status": {
     "Assessment completed": 17,
     "Under assessment": 20,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 30,
+    "Approved": 32,
     "Not approved": 3
   },
   "phase_duration": {
@@ -45,19 +45,19 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Financial Asset Investing",
       "count": 5
     },
     {
-      "name": "Pharmaceutical and Toiletry Goods Wholesaling",
+      "name": "Non-Residential Property Operators",
       "count": 4
     },
     {
-      "name": "Non-Residential Property Operators",
-      "count": 3
+      "name": "Pharmaceutical and Toiletry Goods Wholesaling",
+      "count": 4
     },
     {
       "name": "Accommodation",
@@ -68,12 +68,12 @@
       "count": 3
     },
     {
-      "name": "Other Heavy and Civil Engineering Construction",
+      "name": "Advertising Services",
       "count": 3
     },
     {
-      "name": "Other Machinery and Equipment Manufacturing n.e.c.",
-      "count": 2
+      "name": "Other Heavy and Civil Engineering Construction",
+      "count": 3
     }
   ],
   "recent_mergers": [
@@ -120,6 +120,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-50003",
+      "merger_name": "Francisco Partners - Sermo",
+      "determination": "Approved",
+      "determination_date": "2026-02-20T12:00:00Z",
+      "page_modified_datetime": "2026-02-20T18:41:18+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-15004",
+      "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+      "determination": "Approved",
+      "determination_date": "2026-02-20T12:00:00Z",
+      "page_modified_datetime": "2026-02-20T18:33:32+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-95006",
       "merger_name": "Laundy Group \u2013 Nine Radio",
       "determination": "Approved",
@@ -155,26 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-02-19T12:00:00Z",
       "page_modified_datetime": "2026-02-19T18:52:09+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-55005",
-      "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
-      "determination": "Approved",
-      "determination_date": "2026-02-19T12:00:00Z",
-      "page_modified_datetime": "2026-02-19T18:12:02+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-75006",
-      "merger_name": "Playlist \u2013 EGYM",
-      "determination": "Approved",
-      "determination_date": "2026-02-19T12:00:00Z",
-      "page_modified_datetime": "2026-02-19T18:09:05+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
