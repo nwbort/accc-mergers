@@ -15,7 +15,7 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 29.764705882352942,
+    "average_days": 29.823529411764707,
     "median_days": 25,
     "average_business_days": 19.11764705882353,
     "median_business_days": 18,
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-15002",
+      "merger_name": "Google - Wiz",
+      "determination": "Approved",
+      "determination_date": "2026-02-21T12:00:00Z",
+      "page_modified_datetime": "2026-02-19T17:11:53+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-50003",
       "merger_name": "Francisco Partners - Sermo",
       "determination": "Approved",
@@ -148,16 +158,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-15002",
-      "merger_name": "Google - Wiz",
-      "determination": "Approved",
-      "determination_date": "2026-02-20T12:00:00Z",
-      "page_modified_datetime": "2026-02-19T17:11:53+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     },
     {
       "merger_id": "MN-25002",
