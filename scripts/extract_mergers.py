@@ -245,10 +245,14 @@ def parse_merger_file(filepath, existing_merger_data=None):
             raw_determination = determination_tag.get_text(strip=True)
             merger_data['accc_determination'] = normalize_determination(raw_determination)
 
-        # If there's a determination but the date field wasn't on the page yet, default to today.
-        # This handles the case where the ACCC updates status/determination before adding the date field.
+        # If there's a determination but the date field wasn't on the page yet, use a known
+        # hardcoded date for cases where the ACCC page is unlikely to ever be corrected.
+        KNOWN_DETERMINATION_DATES = {
+            'MN-15002': '2026-02-19T12:00:00Z',  # Google - Wiz: approved 19 Feb 2026, date never added to page
+        }
         if merger_data.get('accc_determination') and not merger_data.get('determination_publication_date'):
-            merger_data['determination_publication_date'] = datetime.utcnow().strftime('%Y-%m-%dT12:00:00Z')
+            if merger_id in KNOWN_DETERMINATION_DATES:
+                merger_data['determination_publication_date'] = KNOWN_DETERMINATION_DATES[merger_id]
 
         # --- Page Modified DateTime (for sorting determinations on same day) ---
         # Extract dcterms.modified metadata which shows when the page was last updated
