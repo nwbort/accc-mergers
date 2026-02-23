@@ -166,12 +166,14 @@ def build_text_email(digest: dict) -> str:
     ]
     lines.append(_text_section("NEW MERGERS NOTIFIED", ["Merger", "Notified"], new_rows, "No new mergers notified this week."))
     lines.append("")
+    lines.append("")
 
     cleared_rows = [
         [m.get("merger_name", m["merger_id"]), format_date(m.get("determination_publication_date"))]
         for m in digest["deals_cleared"]
     ]
     lines.append(_text_section("MERGERS APPROVED", ["Merger", "Date"], cleared_rows, "No mergers approved this week."))
+    lines.append("")
     lines.append("")
 
     declined_rows = [
@@ -180,12 +182,14 @@ def build_text_email(digest: dict) -> str:
     ]
     lines.append(_text_section("MERGERS DECLINED", ["Merger", "Date"], declined_rows, "No mergers declined this week."))
     lines.append("")
+    lines.append("")
 
     phase1_rows = [
         [m.get("merger_name", m["merger_id"]), format_date(m.get("effective_notification_datetime"))]
         for m in digest["ongoing_phase_1"]
     ]
     lines.append(_text_section("ONGOING \u2013 PHASE 1 \u2013 INITIAL ASSESSMENT", ["Merger", "Notified"], phase1_rows, "No ongoing phase 1 mergers."))
+    lines.append("")
     lines.append("")
 
     phase2_rows = [
