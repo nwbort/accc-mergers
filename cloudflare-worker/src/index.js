@@ -2,15 +2,17 @@
  * Cloudflare Worker — mergers.fyi digest email signup handler
  *
  * Accepts POST requests from the signup form on mergers.fyi,
- * validates the email address, and adds it to the configured
- * Resend audience via the Resend Contacts API.
+ * validates the email address, verifies the Cloudflare Turnstile
+ * CAPTCHA token, and adds the contact to the configured Resend audience.
  *
  * Required Worker secrets (set via `wrangler secret put`):
- *   RESEND_API_KEY      — Resend API key
- *   RESEND_AUDIENCE_ID  — Resend audience ID
+ *   RESEND_API_KEY        — Resend API key
+ *   RESEND_AUDIENCE_ID    — Resend audience ID
+ *   TURNSTILE_SECRET_KEY  — Cloudflare Turnstile secret key
  */
 
 const RESEND_API_BASE = "https://api.resend.com";
+const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
 // Allowed origin for CORS — update if you serve the form from a different domain
 const ALLOWED_ORIGIN = "https://mergers.fyi";
@@ -73,6 +75,7 @@ export default {
     }
 
     const email = (body.email || "").trim().toLowerCase();
+    const turnstileToken = body["cf-turnstile-response"] || "";
 
     if (!email) {
       return jsonResponse({ error: "Email address is required" }, 400, origin);
@@ -80,6 +83,33 @@ export default {
 
     if (!EMAIL_RE.test(email)) {
       return jsonResponse({ error: "Please enter a valid email address" }, 400, origin);
+    }
+
+    // Verify Turnstile CAPTCHA token
+    if (!turnstileToken) {
+      return jsonResponse({ error: "CAPTCHA verification required" }, 400, origin);
+    }
+
+    let turnstileResp;
+    try {
+      turnstileResp = await fetch(TURNSTILE_VERIFY_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          secret: env.TURNSTILE_SECRET_KEY,
+          response: turnstileToken,
+          remoteip: request.headers.get("CF-Connecting-IP") || undefined,
+        }),
+      });
+    } catch (err) {
+      console.error("Network error verifying Turnstile token:", err);
+      return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 503, origin);
+    }
+
+    const turnstileData = await turnstileResp.json().catch(() => ({}));
+    if (!turnstileData.success) {
+      console.error("Turnstile verification failed:", JSON.stringify(turnstileData));
+      return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 400, origin);
     }
 
     // Add contact to Resend audience

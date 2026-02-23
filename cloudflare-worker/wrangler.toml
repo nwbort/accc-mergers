@@ -15,5 +15,11 @@ compatibility_date = "2024-09-23"
 # Secrets — set these with:
 #   wrangler secret put RESEND_API_KEY
 #   wrangler secret put RESEND_AUDIENCE_ID
+#   wrangler secret put TURNSTILE_SECRET_KEY
 #
 # Do NOT put real values here; wrangler.toml is committed to the repo.
+#
+# Turnstile setup:
+#   1. Go to Cloudflare Dashboard > Turnstile > Add site
+#   2. Copy the Site Key into merger-tracker/frontend/src/config.js (TURNSTILE_SITE_KEY)
+#   3. Run: wrangler secret put TURNSTILE_SECRET_KEY  (paste the Secret Key when prompted)
