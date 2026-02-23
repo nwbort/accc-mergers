@@ -5,6 +5,10 @@ Generate sitemap.xml for mergers.fyi.
 Reads merger data from the frontend public data directory and writes
 a sitemap covering all static pages and individual merger detail pages.
 
+Merger data is read from the paginated list files:
+  data/mergers/list-meta.json      – pagination metadata (total_pages, etc.)
+  data/mergers/list-page-{n}.json  – one page of merger records each
+
 Output: merger-tracker/frontend/public/sitemap.xml
 """
 
@@ -15,7 +19,8 @@ from pathlib import Path
 
 BASE_URL = "https://mergers.fyi"
 REPO_ROOT = Path(__file__).parent.parent
-MERGERS_JSON = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "data" / "mergers.json"
+MERGERS_DATA_DIR = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "data" / "mergers"
+LIST_META_JSON = MERGERS_DATA_DIR / "list-meta.json"
 SITEMAP_OUT = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "sitemap.xml"
 
 TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -42,9 +47,17 @@ STATIC_COMMENTS = {
 
 
 def load_mergers():
-    with open(MERGERS_JSON, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    return data["mergers"] if isinstance(data, dict) else data
+    with open(LIST_META_JSON, "r", encoding="utf-8") as f:
+        meta = json.load(f)
+    total_pages = meta["total_pages"]
+    mergers = []
+    for page in range(1, total_pages + 1):
+        page_file = MERGERS_DATA_DIR / f"list-page-{page}.json"
+        with open(page_file, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        page_mergers = data["mergers"] if isinstance(data, dict) else data
+        mergers.extend(page_mergers)
+    return mergers
 
 
 def lastmod_for(merger):
