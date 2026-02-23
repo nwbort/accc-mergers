@@ -119,6 +119,96 @@ def esc(text: str) -> str:
     )
 
 
+def _text_table(headers: list[str], rows: list[list[str]]) -> str:
+    """Render a simple fixed-width text table."""
+    all_rows = [headers] + rows
+    widths = [max(len(str(r[i])) for r in all_rows) for i in range(len(headers))]
+    header_line = " | ".join(h.ljust(widths[i]) for i, h in enumerate(headers))
+    sep_line = "-+-".join("-" * w for w in widths)
+    data_lines = [
+        " | ".join(str(row[i]).ljust(widths[i]) for i in range(len(row)))
+        for row in rows
+    ]
+    return "\n".join([header_line, sep_line] + data_lines)
+
+
+def _text_section(title: str, headers: list[str], rows: list[list[str]], empty_msg: str) -> str:
+    lines = [title, "-" * len(title)]
+    if rows:
+        lines.append(_text_table(headers, rows))
+    else:
+        lines.append(empty_msg)
+    return "\n".join(lines)
+
+
+def build_text_email(digest: dict) -> str:
+    """Build a plain-text version of the weekly digest email."""
+    date_range = format_date_range(digest["period_start"], digest["period_end"])
+
+    lines = [
+        "mergers.fyi weekly digest",
+        f"Week of {date_range}",
+        f"{SITE_BASE}/digest",
+        "",
+        "SUMMARY",
+        "-------",
+        f"New deals notified : {len(digest['new_deals_notified'])}",
+        f"Cleared            : {len(digest['deals_cleared'])}",
+        f"Declined           : {len(digest['deals_declined'])}",
+        f"Ongoing phase 1    : {len(digest['ongoing_phase_1'])}",
+        f"Ongoing phase 2    : {len(digest['ongoing_phase_2'])}",
+        "",
+    ]
+
+    new_rows = [
+        [m.get("merger_name", m["merger_id"]), format_date(m.get("effective_notification_datetime"))]
+        for m in digest["new_deals_notified"]
+    ]
+    lines.append(_text_section("NEW MERGERS NOTIFIED", ["Merger", "Notified"], new_rows, "No new mergers notified this week."))
+    lines.append("")
+    lines.append("")
+
+    cleared_rows = [
+        [m.get("merger_name", m["merger_id"]), format_date(m.get("determination_publication_date"))]
+        for m in digest["deals_cleared"]
+    ]
+    lines.append(_text_section("MERGERS APPROVED", ["Merger", "Date"], cleared_rows, "No mergers approved this week."))
+    lines.append("")
+    lines.append("")
+
+    declined_rows = [
+        [m.get("merger_name", m["merger_id"]), format_date(m.get("determination_publication_date"))]
+        for m in digest["deals_declined"]
+    ]
+    lines.append(_text_section("MERGERS DECLINED", ["Merger", "Date"], declined_rows, "No mergers declined this week."))
+    lines.append("")
+    lines.append("")
+
+    phase1_rows = [
+        [m.get("merger_name", m["merger_id"]), format_date(m.get("effective_notification_datetime"))]
+        for m in digest["ongoing_phase_1"]
+    ]
+    lines.append(_text_section("ONGOING \u2013 PHASE 1 \u2013 INITIAL ASSESSMENT", ["Merger", "Notified"], phase1_rows, "No ongoing phase 1 mergers."))
+    lines.append("")
+    lines.append("")
+
+    phase2_rows = [
+        [m.get("merger_name", m["merger_id"]), format_date(m.get("effective_notification_datetime"))]
+        for m in digest["ongoing_phase_2"]
+    ]
+    lines.append(_text_section("ONGOING \u2013 PHASE 2 \u2013 DETAILED ASSESSMENT", ["Merger", "Notified"], phase2_rows, "No ongoing phase 2 mergers."))
+    lines.append("")
+
+    unsub_var = "{{{RESEND_UNSUBSCRIBE_URL}}}"
+    lines += [
+        "--",
+        "You're receiving this because you subscribed at mergers.fyi.",
+        f"Unsubscribe: {unsub_var}",
+    ]
+
+    return "\n".join(lines)
+
+
 def merger_link(merger: dict, color: dict) -> str:
     url = f"{SITE_BASE}/mergers/{esc(merger['merger_id'])}"
     name = esc(merger.get("merger_name", merger["merger_id"]))
@@ -453,21 +543,24 @@ def build_html_email(digest: dict) -> str:
 # Resend API calls
 # ---------------------------------------------------------------------------
 
-def create_broadcast(api_key: str, audience_id: str, subject: str, html: str, name: str) -> str:
+def create_broadcast(api_key: str, audience_id: str, subject: str, html: str, name: str, text: str = "") -> str:
     """Create a Resend broadcast draft and return its ID."""
+    payload: dict = {
+        "audience_id": audience_id,
+        "from": SEND_FROM,
+        "subject": subject,
+        "html": html,
+        "name": name,
+    }
+    if text:
+        payload["text"] = text
     resp = requests.post(
         f"{RESEND_API_BASE}/broadcasts",
         headers={
             "Authorization": f"Bearer {api_key}",
             "Content-Type": "application/json",
         },
-        json={
-            "audience_id": audience_id,
-            "from": SEND_FROM,
-            "subject": subject,
-            "html": html,
-            "name": name,
-        },
+        json=payload,
         timeout=30,
     )
     if not resp.ok:
@@ -525,16 +618,20 @@ def main() -> None:
 
     print("\nBuilding HTML email…")
     html = build_html_email(digest)
+    print("Building text email…")
+    text = build_text_email(digest)
 
     if dry_run:
         out_path = Path("/tmp/digest_email_preview.html")
         out_path.write_text(html, encoding="utf-8")
         print(f"\nDRY RUN — email HTML written to {out_path}")
         print(f"Subject: {subject}")
+        print("\n--- TEXT VERSION ---\n")
+        print(text)
         return
 
     print(f"\nCreating Resend broadcast '{broadcast_name}'…")
-    broadcast_id = create_broadcast(api_key, audience_id, subject, html, broadcast_name)
+    broadcast_id = create_broadcast(api_key, audience_id, subject, html, broadcast_name, text)
     print(f"Broadcast created: {broadcast_id}")
 
     print("Sending broadcast…")
