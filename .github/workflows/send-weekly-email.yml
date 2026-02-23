@@ -1,0 +1,42 @@
+name: Send Weekly Digest Email
+
+on:
+  schedule:
+    # Monday 9 AM AEST (Sunday 11 PM UTC / Sunday 10 PM UTC during AEDT)
+    # Runs ~1 hour after the digest.json is generated and pushed by weekly-digest.yml
+    - cron: '0 23 * * 0'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run (build HTML, skip sending)'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Shallow clone is enough — we only need digest.json
+          fetch-depth: 1
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Send weekly digest email
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: python scripts/send_weekly_email.py
