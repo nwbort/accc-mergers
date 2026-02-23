@@ -138,11 +138,6 @@
         "determination": "Approved"
       }
     ],
-    "distribution": {
-      "16-20": 13,
-      "21-25": 2,
-      "26-30": 2
-    },
     "stats": {
       "average": 19.1,
       "median": 18,
@@ -442,151 +437,6 @@
       "count": 35
     }
   },
-  "determination_period_usage": {
-    "data": [
-      {
-        "merger_id": "MN-01016",
-        "merger_name": "Asahi \u2013 Warehouse site on Tilburn Rd, Deer Park (Vic)",
-        "days_before_deadline": 16,
-        "total_period_days": 31,
-        "days_used": 16,
-        "percentage_used": 51.6
-      },
-      {
-        "merger_id": "MN-01017",
-        "merger_name": "Kongsberg Defence \u2013 site within Newcastle Airport precinct",
-        "days_before_deadline": 16,
-        "total_period_days": 31,
-        "days_used": 16,
-        "percentage_used": 51.6
-      },
-      {
-        "merger_id": "MN-01031",
-        "merger_name": "La Caisse \u2013 Edify NSW Development assets",
-        "days_before_deadline": 11,
-        "total_period_days": 31,
-        "days_used": 21,
-        "percentage_used": 67.7
-      },
-      {
-        "merger_id": "MN-01035",
-        "merger_name": "Asahi \u2013 Warehouse site on Weedman and Montgomery Streets, Redbank (Qld)",
-        "days_before_deadline": 14,
-        "total_period_days": 31,
-        "days_used": 18,
-        "percentage_used": 58.1
-      },
-      {
-        "merger_id": "MN-01037",
-        "merger_name": "Anglo American - Teck Resources",
-        "days_before_deadline": 14,
-        "total_period_days": 31,
-        "days_used": 18,
-        "percentage_used": 58.1
-      },
-      {
-        "merger_id": "MN-01058",
-        "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
-        "days_before_deadline": 3,
-        "total_period_days": 31,
-        "days_used": 29,
-        "percentage_used": 93.5
-      },
-      {
-        "merger_id": "MN-01061",
-        "merger_name": "Molex \u2013 Smiths Interconnect",
-        "days_before_deadline": 15,
-        "total_period_days": 31,
-        "days_used": 17,
-        "percentage_used": 54.8
-      },
-      {
-        "merger_id": "MN-01064",
-        "merger_name": "Carlyle - BASF Coatings",
-        "days_before_deadline": 16,
-        "total_period_days": 31,
-        "days_used": 16,
-        "percentage_used": 51.6
-      },
-      {
-        "merger_id": "MN-01069",
-        "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia",
-        "days_before_deadline": 13,
-        "total_period_days": 31,
-        "days_used": 19,
-        "percentage_used": 61.3
-      },
-      {
-        "merger_id": "MN-01071",
-        "merger_name": "CSE Crosscom \u2013 Progility",
-        "days_before_deadline": 15,
-        "total_period_days": 31,
-        "days_used": 17,
-        "percentage_used": 54.8
-      },
-      {
-        "merger_id": "MN-01075",
-        "merger_name": "Thermo Fisher - Clario Holdings",
-        "days_before_deadline": 15,
-        "total_period_days": 31,
-        "days_used": 17,
-        "percentage_used": 54.8
-      },
-      {
-        "merger_id": "MN-01080",
-        "merger_name": "L\u2019Or\u00e9al \u2013 Kering Beaut\u00e9",
-        "days_before_deadline": 13,
-        "total_period_days": 31,
-        "days_used": 19,
-        "percentage_used": 61.3
-      },
-      {
-        "merger_id": "MN-15002",
-        "merger_name": "Google - Wiz",
-        "days_before_deadline": 3,
-        "total_period_days": 30,
-        "days_used": 28,
-        "percentage_used": 93.3
-      },
-      {
-        "merger_id": "MN-25002",
-        "merger_name": "Symal Group - Timms Group and L&D Group",
-        "days_before_deadline": 13,
-        "total_period_days": 31,
-        "days_used": 19,
-        "percentage_used": 61.3
-      },
-      {
-        "merger_id": "MN-75002",
-        "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
-        "days_before_deadline": 16,
-        "total_period_days": 31,
-        "days_used": 16,
-        "percentage_used": 51.6
-      },
-      {
-        "merger_id": "MN-75003",
-        "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
-        "days_before_deadline": 16,
-        "total_period_days": 31,
-        "days_used": 16,
-        "percentage_used": 51.6
-      },
-      {
-        "merger_id": "MN-85002",
-        "merger_name": "ServiceNow - Veza",
-        "days_before_deadline": 10,
-        "total_period_days": 31,
-        "days_used": 22,
-        "percentage_used": 71.0
-      }
-    ],
-    "stats": {
-      "average_days_early": 12.9,
-      "median_days_early": 14,
-      "average_percentage_used": 61.6
-    }
-  },
   "monthly_volume": {
     "labels": [
       "2025-08",
@@ -602,7 +452,7 @@
       4,
       3,
       8,
-      16
+      17
     ],
     "waivers": [
       0,
@@ -612,99 +462,5 @@
       29,
       6
     ]
-  },
-  "consultation_gap": {
-    "data": [
-      {
-        "merger_id": "MN-01016",
-        "merger_name": "Asahi \u2013 Warehouse site on Tilburn Rd, Deer Park (Vic)",
-        "business_days": 10
-      },
-      {
-        "merger_id": "MN-01017",
-        "merger_name": "Kongsberg Defence \u2013 site within Newcastle Airport precinct",
-        "business_days": 10
-      },
-      {
-        "merger_id": "MN-01031",
-        "merger_name": "La Caisse \u2013 Edify NSW Development assets",
-        "business_days": 15
-      },
-      {
-        "merger_id": "MN-01035",
-        "merger_name": "Asahi \u2013 Warehouse site on Weedman and Montgomery Streets, Redbank (Qld)",
-        "business_days": 12
-      },
-      {
-        "merger_id": "MN-01037",
-        "merger_name": "Anglo American - Teck Resources",
-        "business_days": 12
-      },
-      {
-        "merger_id": "MN-01058",
-        "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
-        "business_days": 23
-      },
-      {
-        "merger_id": "MN-01061",
-        "merger_name": "Molex \u2013 Smiths Interconnect",
-        "business_days": 11
-      },
-      {
-        "merger_id": "MN-01064",
-        "merger_name": "Carlyle - BASF Coatings",
-        "business_days": 11
-      },
-      {
-        "merger_id": "MN-01069",
-        "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia",
-        "business_days": 13
-      },
-      {
-        "merger_id": "MN-01071",
-        "merger_name": "CSE Crosscom \u2013 Progility",
-        "business_days": 11
-      },
-      {
-        "merger_id": "MN-01075",
-        "merger_name": "Thermo Fisher - Clario Holdings",
-        "business_days": 11
-      },
-      {
-        "merger_id": "MN-01080",
-        "merger_name": "L\u2019Or\u00e9al \u2013 Kering Beaut\u00e9",
-        "business_days": 13
-      },
-      {
-        "merger_id": "MN-15002",
-        "merger_name": "Google - Wiz",
-        "business_days": 19
-      },
-      {
-        "merger_id": "MN-25002",
-        "merger_name": "Symal Group - Timms Group and L&D Group",
-        "business_days": 13
-      },
-      {
-        "merger_id": "MN-75002",
-        "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
-        "business_days": 10
-      },
-      {
-        "merger_id": "MN-75003",
-        "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
-        "business_days": 10
-      },
-      {
-        "merger_id": "MN-85002",
-        "merger_name": "ServiceNow - Veza",
-        "business_days": 17
-      }
-    ],
-    "stats": {
-      "average": 13.0,
-      "median": 12,
-      "count": 17
-    }
   }
 }
