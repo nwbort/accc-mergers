@@ -4,7 +4,7 @@
 // Cloudflare Worker endpoint for the digest email signup form.
 // Update this URL after deploying the worker (cloudflare-worker/).
 export const SUBSCRIBE_ENDPOINT =
-  "https://mergers-digest-signup.YOUR_SUBDOMAIN.workers.dev";
+  "https://signup.mergers.fyi";
 
 export const API_ENDPOINTS = {
   mergersListPage: (page) => `/data/mergers/list-page-${page}.json`,  // Paginated merger list
