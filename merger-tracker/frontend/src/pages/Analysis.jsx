@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Scatter, Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -48,6 +48,7 @@ function Analysis() {
   const [data, setData] = useState(() => dataCache.get('analysis-data') || null);
   const [loading, setLoading] = useState(() => !dataCache.has('analysis-data'));
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
@@ -71,7 +72,7 @@ function Analysis() {
   if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
   if (!data) return null;
 
-  const { phase1_duration, waiver_duration, determination_period_usage, monthly_volume, consultation_gap } = data;
+  const { phase1_duration, waiver_duration, monthly_volume } = data;
 
   // --- Phase 1 Scatter Chart ---
   const phase1ScatterData = {
@@ -108,10 +109,24 @@ function Analysis() {
     ],
   };
 
+  const handleChartClick = (event, elements, chart) => {
+    if (elements.length > 0) {
+      const { datasetIndex, index } = elements[0];
+      const point = chart.data.datasets[datasetIndex].data[index];
+      if (point?.id) {
+        navigate(`/mergers/${point.id}`);
+      }
+    }
+  };
+
   const phase1ScatterOptions = {
     responsive: true,
     maintainAspectRatio: false,
     animation: false,
+    onClick: handleChartClick,
+    onHover: (event, elements) => {
+      event.native.target.style.cursor = elements.length > 0 ? 'pointer' : 'default';
+    },
     plugins: {
       legend: {
         position: 'bottom',
@@ -209,6 +224,10 @@ function Analysis() {
 
   const waiverScatterOptions = {
     ...phase1ScatterOptions,
+    onClick: handleChartClick,
+    onHover: (event, elements) => {
+      event.native.target.style.cursor = elements.length > 0 ? 'pointer' : 'default';
+    },
     scales: {
       ...phase1ScatterOptions.scales,
       x: {
@@ -219,53 +238,6 @@ function Analysis() {
           font: { size: 12, family: 'Inter, sans-serif' },
           color: '#6b7280',
         },
-      },
-    },
-  };
-
-  // --- Phase 1 Duration Distribution ---
-  const distributionLabels = Object.keys(phase1_duration.distribution);
-  const distributionData = {
-    labels: distributionLabels,
-    datasets: [
-      {
-        label: 'Number of mergers',
-        data: Object.values(phase1_duration.distribution),
-        backgroundColor: COLORS.primary,
-        borderRadius: 6,
-        maxBarThickness: 60,
-      },
-    ],
-  };
-
-  const distributionOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: false,
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        callbacks: {
-          title: (items) => `${items[0].label} business days`,
-          label: (item) => `${item.raw} merger${item.raw !== 1 ? 's' : ''}`,
-        },
-      },
-    },
-    scales: {
-      x: {
-        title: {
-          display: true,
-          text: 'Business days',
-          font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
-        },
-        grid: { display: false },
-        ticks: { font: { size: 11 } },
-      },
-      y: {
-        beginAtZero: true,
-        ticks: { stepSize: 1, font: { size: 11 } },
-        grid: { color: 'rgba(0,0,0,0.04)' },
       },
     },
   };
@@ -327,82 +299,6 @@ function Analysis() {
     },
   };
 
-  // --- Determination Period Usage (horizontal bar) ---
-  const sortedUsage = [...determination_period_usage.data].sort((a, b) => a.percentage_used - b.percentage_used);
-  const usageLabels = sortedUsage.map(d => {
-    const name = d.merger_name;
-    return name.length > 35 ? name.slice(0, 32) + '...' : name;
-  });
-
-  const usageData = {
-    labels: usageLabels,
-    datasets: [
-      {
-        label: 'Period used',
-        data: sortedUsage.map(d => d.days_used),
-        backgroundColor: sortedUsage.map(d =>
-          d.percentage_used >= 90 ? COLORS.accent : COLORS.primary
-        ),
-        borderRadius: 4,
-      },
-      {
-        label: 'Days remaining',
-        data: sortedUsage.map(d => d.days_before_deadline),
-        backgroundColor: 'rgba(0,0,0,0.05)',
-        borderRadius: 4,
-      },
-    ],
-  };
-
-  const usageOptions = {
-    indexAxis: 'y',
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: false,
-    plugins: {
-      legend: {
-        position: 'bottom',
-        labels: {
-          usePointStyle: true,
-          pointStyle: 'rectRounded',
-          padding: 16,
-          font: { size: 12, family: 'Inter, sans-serif' },
-        },
-      },
-      tooltip: {
-        callbacks: {
-          title: (items) => sortedUsage[items[0].dataIndex].merger_name,
-          afterTitle: (items) => sortedUsage[items[0].dataIndex].merger_id,
-          label: (item) => {
-            const d = sortedUsage[item.dataIndex];
-            if (item.datasetIndex === 0) {
-              return `Used: ${d.days_used} of ${d.total_period_days} business days (${d.percentage_used}%)`;
-            }
-            return `Remaining: ${d.days_before_deadline} business days`;
-          },
-        },
-      },
-    },
-    scales: {
-      x: {
-        stacked: true,
-        title: {
-          display: true,
-          text: 'Business days',
-          font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
-        },
-        grid: { color: 'rgba(0,0,0,0.04)' },
-        ticks: { font: { size: 11 } },
-      },
-      y: {
-        stacked: true,
-        grid: { display: false },
-        ticks: { font: { size: 11 } },
-      },
-    },
-  };
-
   return (
     <>
       <SEO
@@ -411,16 +307,8 @@ function Analysis() {
         url="/analysis"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
-        {/* Page Header */}
-        <div className="mb-8">
-          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Analysis</h1>
-          <p className="text-sm text-gray-500 mt-1">
-            Statistical analysis of ACCC merger review durations and trends. All durations are in business days (excluding weekends, ACT public holidays, and the 23 Dec &ndash; 10 Jan period).
-          </p>
-        </div>
-
         {/* Summary Stat Cards */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 mb-8">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-8">
           {[
             {
               label: 'Avg phase 1 duration',
@@ -438,15 +326,6 @@ function Analysis() {
               label: 'Avg waiver duration',
               value: waiver_duration.stats.average ? `${waiver_duration.stats.average} days` : 'N/A',
               detail: waiver_duration.stats.count ? `${waiver_duration.stats.count} completed` : null,
-            },
-            {
-              label: 'Avg determination period used',
-              value: determination_period_usage.stats.average_percentage_used
-                ? `${determination_period_usage.stats.average_percentage_used}%`
-                : 'N/A',
-              detail: determination_period_usage.stats.average_days_early
-                ? `~${determination_period_usage.stats.average_days_early} days early`
-                : null,
             },
           ].map(({ label, value, detail }) => (
             <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
@@ -474,71 +353,13 @@ function Analysis() {
           </div>
         </section>
 
-        {/* Phase 1 Distribution + Consultation Gap side by side */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-6 py-5 border-b border-gray-100">
-              <h2 className="text-base font-semibold text-gray-900">Phase 1 duration distribution</h2>
-            </div>
-            <div className="p-6">
-              <div className="h-64">
-                <Bar data={distributionData} options={distributionOptions} />
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-6 py-5 border-b border-gray-100">
-              <h2 className="text-base font-semibold text-gray-900">Consultation close to determination</h2>
-              <p className="text-sm text-gray-500 mt-0.5">
-                Business days from consultation response due date to determination
-              </p>
-            </div>
-            <div className="p-6">
-              <div className="space-y-3">
-                {consultation_gap.data
-                  .sort((a, b) => a.business_days - b.business_days)
-                  .map((d) => (
-                    <div key={d.merger_id} className="flex items-center gap-3">
-                      <Link
-                        to={`/mergers/${d.merger_id}`}
-                        className="text-xs text-gray-600 hover:text-primary transition-colors w-40 truncate flex-shrink-0"
-                        title={d.merger_name}
-                      >
-                        {d.merger_name}
-                      </Link>
-                      <div className="flex-1 bg-gray-100 rounded-full h-1.5 overflow-hidden">
-                        <div
-                          className="h-1.5 rounded-full transition-all duration-300"
-                          style={{
-                            width: `${Math.min((d.business_days / (consultation_gap.stats.average * 2)) * 100, 100)}%`,
-                            backgroundColor: d.business_days > consultation_gap.stats.average * 1.5
-                              ? COLORS.accent
-                              : COLORS.primary,
-                          }}
-                        />
-                      </div>
-                      <span className="text-xs font-semibold text-gray-700 tabular-nums w-12 text-right">
-                        {d.business_days}d
-                      </span>
-                    </div>
-                  ))}
-              </div>
-              <div className="mt-4 pt-3 border-t border-gray-100 flex gap-6 text-xs text-gray-500">
-                <span>Average: <strong className="text-gray-700">{consultation_gap.stats.average} days</strong></span>
-                <span>Median: <strong className="text-gray-700">{consultation_gap.stats.median} days</strong></span>
-              </div>
-            </div>
-          </div>
-        </div>
-
         {/* Waiver Duration Analysis */}
         <section className="mb-8">
           <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
             <div className="px-6 py-5 border-b border-gray-100">
               <h2 className="text-lg font-semibold text-gray-900">Waiver duration over time</h2>
               <p className="text-sm text-gray-500 mt-0.5">
-                Each point represents a completed waiver application. Average: {waiver_duration.stats.average} business days, median: {waiver_duration.stats.median} business days.
+                Each point represents a completed waiver application. Hover for details.
               </p>
             </div>
             <div className="p-6">
@@ -549,7 +370,7 @@ function Analysis() {
           </div>
         </section>
 
-        {/* Monthly Volume + Determination Period Usage */}
+        {/* Monthly Volume */}
         <div className="grid grid-cols-1 gap-6 mb-8">
           <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
             <div className="px-6 py-5 border-b border-gray-100">
@@ -566,22 +387,6 @@ function Analysis() {
           </div>
         </div>
 
-        {/* Determination Period Usage */}
-        <section className="mb-8">
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-6 py-5 border-b border-gray-100">
-              <h2 className="text-lg font-semibold text-gray-900">Determination period usage</h2>
-              <p className="text-sm text-gray-500 mt-0.5">
-                How much of the statutory determination period (30 business days) each merger used before a decision was made. Mergers highlighted in red used over 90% of the period.
-              </p>
-            </div>
-            <div className="p-6">
-              <div style={{ height: `${Math.max(sortedUsage.length * 36, 200)}px` }}>
-                <Bar data={usageData} options={usageOptions} />
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </>
   );

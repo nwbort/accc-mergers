@@ -841,21 +841,6 @@ def generate_analysis_json(enriched_mergers: list) -> dict:
     # Sort scatter data by date
     phase1_scatter.sort(key=lambda x: x['notification_date'])
 
-    # Distribution in 5-day buckets
-    phase1_distribution = {}
-    if phase1_business_days:
-        max_days = max(phase1_business_days)
-        for bucket_start in range(0, max_days + 5, 5):
-            bucket_end = bucket_start + 4
-            label = f"{bucket_start + 1}-{bucket_end + 1}" if bucket_start > 0 else f"1-5"
-            if bucket_start == 0:
-                label = "1-5"
-            else:
-                label = f"{bucket_start + 1}-{bucket_start + 5}"
-            count = sum(1 for d in phase1_business_days if bucket_start < d <= bucket_start + 5)
-            if count > 0:
-                phase1_distribution[label] = count
-
     phase1_stats = {}
     if phase1_business_days:
         phase1_stats = {
@@ -903,40 +888,6 @@ def generate_analysis_json(enriched_mergers: list) -> dict:
             "count": len(waiver_business_days),
         }
 
-    # --- Determination period usage (how early are decisions made?) ---
-    period_usage_data = []
-    for m in notification_mergers:
-        det_date = m.get('determination_publication_date')
-        end_period = m.get('end_of_determination_period')
-        start = m.get('effective_notification_datetime')
-        if not det_date or not end_period or not start:
-            continue
-
-        days_early = calculate_business_days(det_date, end_period)
-        total_period = calculate_business_days(start, end_period)
-        days_used = calculate_business_days(start, det_date)
-        if days_early is None or total_period is None or total_period == 0:
-            continue
-
-        period_usage_data.append({
-            "merger_id": m.get('merger_id'),
-            "merger_name": m.get('merger_name'),
-            "days_before_deadline": days_early,
-            "total_period_days": total_period,
-            "days_used": days_used,
-            "percentage_used": round((days_used / total_period) * 100, 1),
-        })
-
-    period_usage_stats = {}
-    if period_usage_data:
-        early_days = [d['days_before_deadline'] for d in period_usage_data]
-        pct_used = [d['percentage_used'] for d in period_usage_data]
-        period_usage_stats = {
-            "average_days_early": round(sum(early_days) / len(early_days), 1),
-            "median_days_early": stat_median(early_days),
-            "average_percentage_used": round(sum(pct_used) / len(pct_used), 1),
-        }
-
     # --- Monthly notification volume ---
     monthly_counts = defaultdict(lambda: {"notifications": 0, "waivers": 0})
     for m in enriched_mergers:
@@ -956,52 +907,16 @@ def generate_analysis_json(enriched_mergers: list) -> dict:
         "waivers": [monthly_counts[m]["waivers"] for m in sorted_months],
     }
 
-    # --- Consultation response to determination gap ---
-    consultation_gap_data = []
-    for m in notification_mergers:
-        consult_due = m.get('consultation_response_due_date')
-        det_date = m.get('determination_publication_date')
-        if not consult_due or not det_date:
-            continue
-
-        gap_days = calculate_business_days(consult_due, det_date)
-        if gap_days is None:
-            continue
-
-        consultation_gap_data.append({
-            "merger_id": m.get('merger_id'),
-            "merger_name": m.get('merger_name'),
-            "business_days": gap_days,
-        })
-
-    consultation_gap_stats = {}
-    if consultation_gap_data:
-        gap_days_list = [d['business_days'] for d in consultation_gap_data]
-        consultation_gap_stats = {
-            "average": round(sum(gap_days_list) / len(gap_days_list), 1),
-            "median": stat_median(gap_days_list),
-            "count": len(gap_days_list),
-        }
-
     return {
         "phase1_duration": {
             "scatter_data": phase1_scatter,
-            "distribution": phase1_distribution,
             "stats": phase1_stats,
         },
         "waiver_duration": {
             "scatter_data": waiver_scatter,
             "stats": waiver_stats,
         },
-        "determination_period_usage": {
-            "data": period_usage_data,
-            "stats": period_usage_stats,
-        },
         "monthly_volume": monthly_volume,
-        "consultation_gap": {
-            "data": consultation_gap_data,
-            "stats": consultation_gap_stats,
-        },
     }
 
 
