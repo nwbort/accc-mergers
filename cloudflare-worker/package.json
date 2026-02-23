@@ -1,0 +1,14 @@
+{
+  "name": "mergers-digest-signup",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cloudflare Worker — handles email signup for the mergers.fyi weekly digest",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:dry": "wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}
