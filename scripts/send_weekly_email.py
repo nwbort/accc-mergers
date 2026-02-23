@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Send the weekly ACCC merger digest email via Resend.
+"""Send the mergers.fyi weekly digest email via Resend.
 
 Reads digest.json, builds an HTML email, creates a Resend broadcast,
 and sends it to the configured audience.
@@ -10,7 +10,7 @@ Required environment variables:
 
 Optional environment variables:
     DRY_RUN             — If set to 'true', prints the HTML and exits without sending
-    SEND_FROM           — Sender address (default: ACCC Merger Digest <digest@mergers.fyi>)
+    SEND_FROM           — Sender address (default: mergers.fyi weekly digest <digest@mergers.fyi>)
 """
 
 import json
@@ -29,7 +29,7 @@ import requests
 
 SITE_BASE = "https://mergers.fyi"
 RESEND_API_BASE = "https://api.resend.com"
-SEND_FROM = os.environ.get("SEND_FROM", "ACCC Merger Digest <digest@mergers.fyi>")
+SEND_FROM = os.environ.get("SEND_FROM", "mergers.fyi weekly digest <digest@mergers.fyi>")
 
 # Colour palette matching tailwind.config.js
 COLORS = {
@@ -364,7 +364,7 @@ def build_html_email(digest: dict) -> str:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ACCC Merger Digest \u2013 Week of {esc(date_range)}</title>
+  <title>mergers.fyi weekly digest for {esc(date_range)}</title>
 </head>
 <body style="margin:0;padding:0;background-color:#f1f5f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,Helvetica,sans-serif;">
 
@@ -381,7 +381,7 @@ def build_html_email(digest: dict) -> str:
         <tr>
           <td style="background:#335145;border-radius:12px 12px 0 0;padding:26px 28px 22px;">
             <span style="font-size:18px;font-weight:700;color:#ffffff;letter-spacing:-0.3px;">
-              ACCC Merger Digest
+              mergers.fyi weekly digest
             </span>
             <br>
             <span style="font-size:13px;color:#a3c4b3;margin-top:6px;display:block;">
@@ -428,7 +428,7 @@ def build_html_email(digest: dict) -> str:
                      padding:18px 28px;border:1px solid #e5e7eb;border-top:none;
                      text-align:center;">
             <p style="margin:0 0 6px;font-size:12px;color:#6b7280;line-height:1.6;">
-              You&rsquo;re receiving this because you subscribed to the ACCC Merger Digest
+              You&rsquo;re receiving this because you subscribed to the mergers.fyi weekly digest
               at <a href="{SITE_BASE}" style="color:#335145;text-decoration:none;font-weight:500;">mergers.fyi</a>.
             </p>
             <p style="margin:0;font-size:12px;color:#9ca3af;">
@@ -513,8 +513,8 @@ def main() -> None:
     digest = load_digest()
 
     date_range = format_date_range(digest["period_start"], digest["period_end"])
-    subject = f"ACCC Merger Digest \u2013 Week of {date_range}"
-    broadcast_name = f"Weekly Digest \u2013 {date_range}"
+    subject = f"mergers.fyi weekly digest for {date_range}"
+    broadcast_name = f"Weekly digest \u2013 {date_range}"
 
     print(f"Period: {date_range}")
     print(f"  New deals notified : {len(digest['new_deals_notified'])}")
