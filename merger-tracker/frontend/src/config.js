@@ -6,6 +6,12 @@
 export const SUBSCRIBE_ENDPOINT =
   "https://signup.mergers.fyi";
 
+// Cloudflare Turnstile site key (public — safe to commit).
+// 1. Go to Cloudflare Dashboard > Turnstile > Add site
+// 2. Paste the Site Key here.
+// 3. Add the Secret Key to your Worker: wrangler secret put TURNSTILE_SECRET_KEY
+export const TURNSTILE_SITE_KEY = "YOUR_TURNSTILE_SITE_KEY";
+
 export const API_ENDPOINTS = {
   mergersListPage: (page) => `/data/mergers/list-page-${page}.json`,  // Paginated merger list
   mergersListMeta: '/data/mergers/list-meta.json',  // Pagination metadata for mergers list

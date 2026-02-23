@@ -5,7 +5,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import WaiverBadge from '../components/WaiverBadge';
 import SEO from '../components/SEO';
-import { API_ENDPOINTS, SUBSCRIBE_ENDPOINT } from '../config';
+import { API_ENDPOINTS, SUBSCRIBE_ENDPOINT, TURNSTILE_SITE_KEY } from '../config';
 import { formatDate } from '../utils/dates';
 import { dataCache } from '../utils/dataCache';
 
@@ -183,30 +183,77 @@ function DigestSignup() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [errorMsg, setErrorMsg] = useState('');
+  const [turnstileToken, setTurnstileToken] = useState('');
   const inputRef = useRef(null);
+  const turnstileRef = useRef(null);
+  const widgetIdRef = useRef(null);
+
+  useEffect(() => {
+    let scriptEl = null;
+
+    const renderWidget = () => {
+      if (turnstileRef.current && widgetIdRef.current === null) {
+        widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+          sitekey: TURNSTILE_SITE_KEY,
+          callback: (token) => setTurnstileToken(token),
+          'expired-callback': () => setTurnstileToken(''),
+          'error-callback': () => setTurnstileToken(''),
+        });
+      }
+    };
+
+    if (window.turnstile) {
+      renderWidget();
+    } else {
+      scriptEl = document.createElement('script');
+      scriptEl.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+      scriptEl.async = true;
+      scriptEl.onload = renderWidget;
+      document.head.appendChild(scriptEl);
+    }
+
+    return () => {
+      if (widgetIdRef.current !== null && window.turnstile) {
+        window.turnstile.remove(widgetIdRef.current);
+        widgetIdRef.current = null;
+      }
+      if (scriptEl && document.head.contains(scriptEl)) {
+        document.head.removeChild(scriptEl);
+      }
+    };
+  }, []);
+
+  const resetTurnstile = () => {
+    setTurnstileToken('');
+    if (widgetIdRef.current !== null && window.turnstile) {
+      window.turnstile.reset(widgetIdRef.current);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const trimmed = email.trim();
-    if (!trimmed) return;
+    if (!trimmed || !turnstileToken) return;
     setStatus('loading');
     setErrorMsg('');
     try {
       const resp = await fetch(SUBSCRIBE_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: trimmed }),
+        body: JSON.stringify({ email: trimmed, 'cf-turnstile-response': turnstileToken }),
       });
       const data = await resp.json();
       if (!resp.ok) {
         setErrorMsg(data.error || 'Something went wrong. Please try again.');
         setStatus('error');
+        resetTurnstile();
       } else {
         setStatus('success');
       }
     } catch {
       setErrorMsg('Could not connect. Please try again.');
       setStatus('error');
+      resetTurnstile();
     }
   };
 
@@ -225,31 +272,34 @@ function DigestSignup() {
 
   return (
     <div className="mb-6 rounded-xl border border-gray-200 bg-white px-5 py-4 shadow-card">
-      <form onSubmit={handleSubmit} className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
-        <div className="flex-1">
-          <label htmlFor="digest-email" className="mb-1 block text-sm font-medium text-gray-700">
-            Get this delivered every Monday morning
-          </label>
-          <input
-            ref={inputRef}
-            id="digest-email"
-            type="email"
-            autoComplete="email"
-            required
-            placeholder="you@example.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            disabled={status === 'loading'}
-            className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
-          />
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:gap-4">
+          <div className="flex-1">
+            <label htmlFor="digest-email" className="mb-1 block text-sm font-medium text-gray-700">
+              Get this delivered every Monday morning
+            </label>
+            <input
+              ref={inputRef}
+              id="digest-email"
+              type="email"
+              autoComplete="email"
+              required
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              disabled={status === 'loading'}
+              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={status === 'loading' || !email.trim() || !turnstileToken}
+            className="shrink-0 rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-dark disabled:opacity-50"
+          >
+            {status === 'loading' ? 'Subscribing…' : 'Subscribe'}
+          </button>
         </div>
-        <button
-          type="submit"
-          disabled={status === 'loading' || !email.trim()}
-          className="shrink-0 rounded-lg bg-primary px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-dark disabled:opacity-50 sm:self-end"
-        >
-          {status === 'loading' ? 'Subscribing…' : 'Subscribe'}
-        </button>
+        <div ref={turnstileRef} />
       </form>
       {status === 'error' && (
         <p className="mt-2 text-xs text-red-600">{errorMsg}</p>
