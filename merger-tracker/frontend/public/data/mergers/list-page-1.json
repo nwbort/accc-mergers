@@ -818,6 +818,45 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/google-wiz"
     },
     {
+      "merger_id": "MN-15005",
+      "merger_name": "Cvent - ON24",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-02-23T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-09T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Cvent Atlanta, LLC",
+          "identifier_type": null,
+          "identifier": "[Delaware corporate file number  5603939]"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ON24, Inc.",
+          "identifier_type": null,
+          "identifier": "[Delaware corporate file number  2843568]"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Blackstone Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5921",
+          "name": "Data Processing and Web Hosting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvent-on24"
+    },
+    {
       "merger_id": "MN-25002",
       "merger_name": "Symal Group - Timms Group and L&D Group",
       "status": "Assessment completed",
@@ -1998,14 +2037,14 @@
       ],
       "other_parties": [
         {
-          "name": "SAH NORTHERN BEACHES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "57 689 321 837"
-        },
-        {
           "name": "CVS (AUSTRALIA) HOLDINGS PROPRIETARY LIMITED",
           "identifier_type": "ABN",
           "identifier": "25 667 652 520"
+        },
+        {
+          "name": "SAH NORTHERN BEACHES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 689 321 837"
         },
         {
           "name": "SAH AVALON PTY LTD",
@@ -2580,43 +2619,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-venue-co-%E2%80%93-leasehold-and-certain-other-assets-of-quay-restaurant-sydney"
-    },
-    {
-      "merger_id": "WA-35001",
-      "merger_name": "WSP \u2013 TRC",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-01-06T12:00:00Z",
-      "determination_publication_date": "2026-01-13T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "WSP Global Inc.",
-          "identifier_type": null,
-          "identifier": "Corporation No.: 7748388"
-        }
-      ],
-      "targets": [
-        {
-          "name": "TRC Companies, Inc.",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "6923",
-          "name": "Engineering Design and Engineering Consulting Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/wsp-%E2%80%93-trc"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 73,
+  "total": 74,
   "total_pages": 2
 }

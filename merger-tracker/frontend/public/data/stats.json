@@ -1,9 +1,9 @@
 {
-  "total_mergers": 38,
+  "total_mergers": 39,
   "total_waivers": 35,
   "by_status": {
     "Assessment completed": 17,
-    "Under assessment": 20,
+    "Under assessment": 21,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-15005",
+      "merger_name": "Cvent - ON24",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-23T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-80004",
       "merger_name": "Audiotonix - Soundtech Group",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-18T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-10005",
-      "merger_name": "Apex - Mercer Administration Services and related assets",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-17T12:00:00Z",
       "is_waiver": false
     }
   ],
