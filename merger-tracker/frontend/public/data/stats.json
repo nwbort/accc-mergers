@@ -1,9 +1,9 @@
 {
-  "total_mergers": 39,
+  "total_mergers": 40,
   "total_waivers": 35,
   "by_status": {
     "Assessment completed": 17,
-    "Under assessment": 21,
+    "Under assessment": 22,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -86,6 +86,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-60007",
+      "merger_name": "Craig Mostyn \u2013 Patmore Feeds",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-20T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-80004",
       "merger_name": "Audiotonix - Soundtech Group",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-19T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-40005",
-      "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-18T12:00:00Z",
       "is_waiver": false
     }
   ],
