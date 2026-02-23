@@ -12,6 +12,7 @@ const navLinks = [
   { path: '/timeline', label: 'Timeline' },
   { path: '/industries', label: 'Industries' },
   { path: '/commentary', label: 'Commentary' },
+  { path: '/analysis', label: 'Analysis' },
   { path: '/digest', label: 'Catch me up' },
 ];
 
