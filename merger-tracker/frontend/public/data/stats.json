@@ -3,8 +3,7 @@
   "total_waivers": 35,
   "by_status": {
     "Assessment completed": 17,
-    "Under assessment": 22,
-    "Assessment suspended": 1
+    "Under assessment": 23
   },
   "by_determination": {
     "Approved": 17,
@@ -86,6 +85,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-30003",
+      "merger_name": "MicroStar Logistics - Konvoy",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-20T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-60007",
       "merger_name": "Craig Mostyn \u2013 Patmore Feeds",
       "status": "Under assessment",
@@ -104,14 +111,6 @@
     {
       "merger_id": "MN-55006",
       "merger_name": "Hg Capital - OneStream",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-19T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-85007",
-      "merger_name": "Salesforce \u2013 Qualified",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-19T12:00:00Z",

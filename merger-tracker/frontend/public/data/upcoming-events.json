@@ -264,6 +264,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-04-08T12:00:00Z",
+      "merger_id": "MN-30003",
+      "merger_name": "MicroStar Logistics - Konvoy",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-02-20T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-04-08T12:00:00Z",
       "merger_id": "MN-60007",
       "merger_name": "Craig Mostyn \u2013 Patmore Feeds",
       "status": "Under assessment",
@@ -291,6 +301,6 @@
       "effective_notification_datetime": "2026-02-23T12:00:00Z"
     }
   ],
-  "count": 29,
+  "count": 30,
   "days_ahead": 60
 }
