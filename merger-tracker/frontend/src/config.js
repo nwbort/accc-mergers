@@ -10,7 +10,7 @@ export const SUBSCRIBE_ENDPOINT =
 // 1. Go to Cloudflare Dashboard > Turnstile > Add site
 // 2. Paste the Site Key here.
 // 3. Add the Secret Key to your Worker: wrangler secret put TURNSTILE_SECRET_KEY
-export const TURNSTILE_SITE_KEY = "YOUR_TURNSTILE_SITE_KEY";
+export const TURNSTILE_SITE_KEY = "0x4AAAAAACg1KC_xTS0WAPpu";
 
 export const API_ENDPOINTS = {
   mergersListPage: (page) => `/data/mergers/list-page-${page}.json`,  // Paginated merger list
