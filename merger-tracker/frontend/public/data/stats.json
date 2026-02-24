@@ -2,11 +2,11 @@
   "total_mergers": 41,
   "total_waivers": 35,
   "by_status": {
-    "Assessment completed": 17,
-    "Under assessment": 24
+    "Assessment completed": 18,
+    "Under assessment": 23
   },
   "by_determination": {
-    "Approved": 17,
+    "Approved": 18,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -14,9 +14,9 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 29.705882352941178,
+    "average_days": 29.27777777777778,
     "median_days": 25,
-    "average_business_days": 19.058823529411764,
+    "average_business_days": 18.944444444444443,
     "median_business_days": 18,
     "percentiles": {
       "day15": {
@@ -24,11 +24,11 @@
         "percentage": 0.0
       },
       "day20": {
-        "count": 13,
-        "percentage": 76.5
+        "count": 14,
+        "percentage": 77.8
       },
       "day30": {
-        "count": 17,
+        "count": 18,
         "percentage": 100.0
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-95002",
+      "merger_name": "Abbott Laboratories - Exact Sciences",
+      "determination": "Approved",
+      "determination_date": "2026-02-24T12:00:00Z",
+      "page_modified_datetime": "2026-02-24T15:38:43+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-50003",
       "merger_name": "Francisco Partners - Sermo",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-02-19T12:00:00Z",
       "page_modified_datetime": "2026-02-19T18:52:09+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-55005",
-      "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
-      "determination": "Approved",
-      "determination_date": "2026-02-19T12:00:00Z",
-      "page_modified_datetime": "2026-02-19T18:12:02+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

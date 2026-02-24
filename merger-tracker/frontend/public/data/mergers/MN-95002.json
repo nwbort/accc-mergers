@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/abbott-laboratories-exact-sciences",
   "merger_name": "Abbott Laboratories - Exact Sciences",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-95002",
   "effective_notification_datetime": "2026-02-02T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-03-17T12:00:00Z",
-  "page_modified_datetime": "2026-02-10T09:37:50+11:00",
+  "determination_publication_date": "2026-02-24T12:00:00Z",
+  "accc_determination": "Approved",
+  "page_modified_datetime": "2026-02-24T15:38:43+11:00",
   "consultation_response_due_date": "2026-02-09T12:00:00Z",
   "acquirers": [
     {
@@ -49,12 +51,47 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-02-24T12:00:00Z",
+      "title": "Abbott Laboratories - Exact Sciences - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Exact%20-%20Phase%201%20determination%20without%20conditions%20-%2024%20Feb%202026.pdf",
+      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "Abbott Laboratories (Abbott) proposes to acquire 100% of the\nshares of Exact Sciences Corporation (Exact Sciences) (together,\nthe Parties) through an agreement and plan of merger (the\nAcquisition)."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "The acquirer, Abbott, is a global healthcare company headquartered\nin the US, active in the provision of diagnostics, medical devices,\nnutrition, and branded generic pharmaceuticals.\nThe target, Exact Sciences, is a US headquartered company active in\nthe provision of advanced molecular diagnostics, specialising in\ncancer screening and testing. It has no corporate presence in\nAustralia. It supplies one product in Australia, Oncotype DX Breast\nRecurrence Score, via an Australian distributor, Specialised\nTherapeutics H Pty Ltd."
+        },
+        {
+          "item": "Overlap between the\nparties",
+          "details": "The Parties overlap in the supply of oncology molecular diagnostics.\nOncology diagnostics are highly specific. Diagnostic products are\nspecific to the disease type (e.g. breast cancer) and then focused to\nsub-segmentations within the disease type (e.g. HER-2 positive\nbreast cancer).\nAbbott supplies two oncology molecular diagnostics tests in\nAustralia: (1) Vysis CLL FISH, which tests for disease prognosis and\ntreatment selection for chronic lymphocytic leukemia; and (2) Alinity\nm High Risk (HR) HPV, which screens for variants of the common\nHPV (human papillomavirus) virus. Although not sold in Australia,\nAbbott also supplies PathVysion which tests whether a patient is\nHER2 positive which guides breast cancer treatment selection.\nExact Sciences supplies Oncotype DX, which is designed to predict\nthe recurrence of cancer in patients diagnosed with breast cancer\nand help guide treatment decisions.\nThe Parties do not supply any products in Australia that are\nsubstitutable for one another given they target different disease\ntypes.\nEven if Abbott\u2019s PathVysion was sold in Australia, it is functionally\ndifferent to Oncotype DX and these tests would not be substitutable."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There is limited horizontal overlap between the Parties. While\nthe Parties operate in the oncology diagnostic sector, the\nParties\u2019 products are functionally different and are not\nsubstitutes.\n\u2022 If a broader relevant market were applied that includes all cancer\nscreening tests, the Parties' market share aggregation as a\nresult of the Acquisition is estimated to be very low.\n\u2022 The Parties will continue to face competition from a number of\nother well-resourced companies in their respective test types\nboth in Australia and globally."
+        },
+        {
+          "item": "Applications for review",
+          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+        }
+      ],
+      "url_gh": "/matters/MN-95002/Exact - Phase 1 determination without conditions - 24 Feb 2026.pdf",
+      "status": "live",
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-02-24T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
