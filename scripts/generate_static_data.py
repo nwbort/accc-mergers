@@ -106,7 +106,10 @@ def _count_weekdays_in_range(start: datetime, end: datetime) -> int:
 
 
 def calculate_business_days(start_date_str: str, end_date_str: str) -> int | None:
-    """Calculate business days between two ISO date strings (inclusive of start).
+    """Calculate business days between two ISO date strings (exclusive of start, inclusive of end).
+
+    The start date (notification date) is day 0; counting begins the following day,
+    matching the ACCC convention where BD 1 is the day after notification.
 
     Uses arithmetic weekday counting and subtracts holidays/Christmas periods
     instead of iterating day-by-day.
@@ -124,6 +127,9 @@ def calculate_business_days(start_date_str: str, end_date_str: str) -> int | Non
 
         start = start.replace(hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
         end = end.replace(hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
+
+        # BD 1 is the day after notification, so exclude the start date itself
+        start += timedelta(days=1)
 
         if start > end:
             return 0
@@ -155,6 +161,38 @@ def calculate_business_days(start_date_str: str, end_date_str: str) -> int | Non
         return max(business_days, 0)
     except (ValueError, AttributeError):
         return None
+
+
+def add_business_days(start_date: datetime, n: int) -> datetime:
+    """Return the date that is the nth business day from start_date (counting start_date as day 1)."""
+    global PUBLIC_HOLIDAYS
+    if PUBLIC_HOLIDAYS is None:
+        PUBLIC_HOLIDAYS = load_public_holidays()
+
+    current = start_date
+    count = 0
+    while True:
+        if is_business_day(current):
+            count += 1
+        if count == n:
+            return current
+        current += timedelta(days=1)
+
+
+def subtract_business_days(end_date: datetime, n: int) -> datetime:
+    """Return the date that is the nth business day counting backward from end_date (counting end_date as day 1)."""
+    global PUBLIC_HOLIDAYS
+    if PUBLIC_HOLIDAYS is None:
+        PUBLIC_HOLIDAYS = load_public_holidays()
+
+    current = end_date
+    count = 0
+    while True:
+        if is_business_day(current):
+            count += 1
+        if count == n:
+            return current
+        current -= timedelta(days=1)
 
 
 def calculate_calendar_days(start_date_str: str, end_date_str: str) -> int | None:
@@ -776,7 +814,37 @@ def generate_upcoming_events_json(enriched_mergers: list, days_ahead: int = 60) 
                     })
             except (ValueError, AttributeError):
                 pass
-        
+
+        # Phase 2 - Notice of competition concerns (issued by business day 25 of Phase 2)
+        # Phase 2 BD 1 is derived by subtracting 89 BDs from end_of_determination_period
+        # (BD 90 of Phase 2), not from the date the referral notice was issued (which may
+        # have been issued before Phase 1's determination period fully expired).
+        if stage and 'Phase 2' in stage:
+            notice_already_issued = any(
+                'competition concern' in event.get('title', '').lower()
+                for event in m.get('events', [])
+            )
+            phase2_end = m.get('end_of_determination_period')
+            if phase2_end and not notice_already_issued:
+                try:
+                    phase2_end_date = datetime.fromisoformat(phase2_end.replace('Z', '+00:00')).replace(tzinfo=None)
+                    phase2_start_date = subtract_business_days(phase2_end_date, 90)  # BD 1 of Phase 2
+                    notice_date = add_business_days(phase2_start_date, 25)
+                    notice_date_str = notice_date.strftime('%Y-%m-%dT12:00:00Z')
+                    if now <= notice_date <= future:
+                        events.append({
+                            "type": "notice_of_competition_concerns",
+                            "event_type_display": "Notice of competition concerns",
+                            "date": notice_date_str,
+                            "merger_id": merger_id,
+                            "merger_name": merger_name,
+                            "status": status,
+                            "stage": stage,
+                            "effective_notification_datetime": notification_date
+                        })
+                except (ValueError, AttributeError):
+                    pass
+
         # Determination period end
         determination_due = m.get('end_of_determination_period')
         if determination_due:
