@@ -243,6 +243,43 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/l-catterton-management-%E2%80%93-ex-nihilo-group"
     },
     {
+      "merger_id": "WA-35005",
+      "merger_name": "Superloop \u2013 Lynham Networks",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-18T12:00:00Z",
+      "determination_publication_date": "2026-02-24T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "SUPERLOOP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "96 169 263 094"
+        }
+      ],
+      "targets": [
+        {
+          "name": "LYNHAM NETWORKS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "17 602 258 337"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5801",
+          "name": "Wired Telecommunications Network Operation"
+        },
+        {
+          "code": "5809",
+          "name": "Other Telecommunications Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/superloop-%E2%80%93-lynham-networks"
+    },
+    {
       "merger_id": "WA-40002",
       "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
       "status": "Assessment completed",
@@ -1202,6 +1239,39 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sony-%E2%80%93-peanuts-worldwide"
     },
     {
+      "merger_id": "WA-90002",
+      "merger_name": "NEC Corporation \u2013 CSG Systems International",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-28T12:00:00Z",
+      "determination_publication_date": "2026-02-24T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "NEC Corporation",
+          "identifier_type": null,
+          "identifier": "Company number 7010401022916"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CSG Systems International, Inc.",
+          "identifier_type": null,
+          "identifier": "Company number 2444546"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5921",
+          "name": "Data Processing and Web Hosting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/nec-corporation-%E2%80%93-csg-systems-international"
+    },
+    {
       "merger_id": "WA-95005",
       "merger_name": "HCLTech - Jaspersoft",
       "status": "Assessment completed",
@@ -1290,6 +1360,6 @@
   ],
   "page": 2,
   "page_size": 50,
-  "total": 76,
+  "total": 78,
   "total_pages": 2
 }

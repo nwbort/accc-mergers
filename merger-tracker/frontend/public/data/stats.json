@@ -1,6 +1,6 @@
 {
   "total_mergers": 41,
-  "total_waivers": 35,
+  "total_waivers": 37,
   "by_status": {
     "Assessment completed": 19,
     "Under assessment": 22
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 32,
+    "Approved": 34,
     "Not approved": 3
   },
   "phase_duration": {
@@ -71,7 +71,7 @@
       "count": 3
     },
     {
-      "name": "Advertising Services",
+      "name": "Data Processing and Web Hosting Services",
       "count": 3
     }
   ],
@@ -119,6 +119,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-35005",
+      "merger_name": "Superloop \u2013 Lynham Networks",
+      "determination": "Approved",
+      "determination_date": "2026-02-24T12:00:00Z",
+      "page_modified_datetime": "2026-02-24T19:17:24+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-90002",
+      "merger_name": "NEC Corporation \u2013 CSG Systems International",
+      "determination": "Approved",
+      "determination_date": "2026-02-24T12:00:00Z",
+      "page_modified_datetime": "2026-02-24T19:12:31+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-95002",
       "merger_name": "Abbott Laboratories - Exact Sciences",
       "determination": "Approved",
@@ -157,26 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-95006",
-      "merger_name": "Laundy Group \u2013 Nine Radio",
-      "determination": "Approved",
-      "determination_date": "2026-02-20T12:00:00Z",
-      "page_modified_datetime": "2026-02-20T17:54:20+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-25002",
-      "merger_name": "Symal Group - Timms Group and L&D Group",
-      "determination": "Approved",
-      "determination_date": "2026-02-19T12:00:00Z",
-      "page_modified_datetime": "2026-02-20T09:48:15+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
