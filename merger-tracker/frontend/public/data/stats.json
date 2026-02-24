@@ -1,9 +1,9 @@
 {
-  "total_mergers": 40,
+  "total_mergers": 41,
   "total_waivers": 35,
   "by_status": {
     "Assessment completed": 17,
-    "Under assessment": 23
+    "Under assessment": 24
   },
   "by_determination": {
     "Approved": 17,
@@ -59,19 +59,19 @@
       "count": 4
     },
     {
+      "name": "Pubs, Taverns and Bars",
+      "count": 4
+    },
+    {
       "name": "Accommodation",
       "count": 3
     },
     {
-      "name": "Pubs, Taverns and Bars",
+      "name": "Cafes and Restaurants",
       "count": 3
     },
     {
       "name": "Advertising Services",
-      "count": 3
-    },
-    {
-      "name": "Other Heavy and Civil Engineering Construction",
       "count": 3
     }
   ],
@@ -79,6 +79,14 @@
     {
       "merger_id": "MN-15005",
       "merger_name": "Cvent - ON24",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-23T12:00:00Z",
+      "is_waiver": false
+    },
+    {
+      "merger_id": "MN-65007",
+      "merger_name": "Australian Venue Co. \u2013 An Sibin Irish Pub",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-23T12:00:00Z",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-20T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-55006",
-      "merger_name": "Hg Capital - OneStream",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-19T12:00:00Z",
       "is_waiver": false
     }
   ],
