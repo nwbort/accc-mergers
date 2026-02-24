@@ -79,6 +79,8 @@ function UpcomingEventsTable({ events }) {
                       className={`inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold mt-1 border ${
                         event.type === 'consultation_due'
                           ? 'bg-blue-50 text-blue-700 border-blue-200/60'
+                          : event.type === 'notice_of_competition_concerns'
+                          ? 'bg-amber-50 text-amber-700 border-amber-200/60'
                           : 'bg-purple-50 text-purple-700 border-purple-200/60'
                       }`}
                       role="status"
@@ -103,6 +105,8 @@ function UpcomingEventsTable({ events }) {
                       className={`inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold border ${
                         event.type === 'consultation_due'
                           ? 'bg-blue-50 text-blue-700 border-blue-200/60'
+                          : event.type === 'notice_of_competition_concerns'
+                          ? 'bg-amber-50 text-amber-700 border-amber-200/60'
                           : 'bg-purple-50 text-purple-700 border-purple-200/60'
                       }`}
                       role="status"

@@ -157,6 +157,22 @@ def calculate_business_days(start_date_str: str, end_date_str: str) -> int | Non
         return None
 
 
+def add_business_days(start_date: datetime, n: int) -> datetime:
+    """Return the date that is the nth business day from start_date (counting start_date as day 1)."""
+    global PUBLIC_HOLIDAYS
+    if PUBLIC_HOLIDAYS is None:
+        PUBLIC_HOLIDAYS = load_public_holidays()
+
+    current = start_date
+    count = 0
+    while True:
+        if is_business_day(current):
+            count += 1
+        if count == n:
+            return current
+        current += timedelta(days=1)
+
+
 def calculate_calendar_days(start_date_str: str, end_date_str: str) -> int | None:
     """Calculate calendar days between two ISO date strings."""
     if not start_date_str or not end_date_str:
@@ -776,7 +792,33 @@ def generate_upcoming_events_json(enriched_mergers: list, days_ahead: int = 60) 
                     })
             except (ValueError, AttributeError):
                 pass
-        
+
+        # Phase 2 - Notice of competition concerns (issued by business day 25 of Phase 2)
+        if stage and 'Phase 2' in stage:
+            notice_already_issued = any(
+                'competition concern' in event.get('title', '').lower()
+                for event in m.get('events', [])
+            )
+            phase2_start = m.get('phase_1_determination_date')
+            if phase2_start and not notice_already_issued:
+                try:
+                    phase2_start_date = datetime.fromisoformat(phase2_start.replace('Z', '+00:00')).replace(tzinfo=None)
+                    notice_date = add_business_days(phase2_start_date, 25)
+                    notice_date_str = notice_date.strftime('%Y-%m-%dT12:00:00Z')
+                    if now <= notice_date <= future:
+                        events.append({
+                            "type": "notice_of_competition_concerns",
+                            "event_type_display": "Notice of competition concerns",
+                            "date": notice_date_str,
+                            "merger_id": merger_id,
+                            "merger_name": merger_name,
+                            "status": status,
+                            "stage": stage,
+                            "effective_notification_datetime": notification_date
+                        })
+                except (ValueError, AttributeError):
+                    pass
+
         # Determination period end
         determination_due = m.get('end_of_determination_period')
         if determination_due:
