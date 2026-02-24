@@ -2,11 +2,11 @@
   "total_mergers": 41,
   "total_waivers": 35,
   "by_status": {
-    "Assessment completed": 18,
-    "Under assessment": 23
+    "Assessment completed": 19,
+    "Under assessment": 22
   },
   "by_determination": {
-    "Approved": 18,
+    "Approved": 19,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 29.27777777777778,
+    "average_days": 28.842105263157894,
     "median_days": 25,
-    "average_business_days": 18.944444444444443,
-    "median_business_days": 18,
+    "average_business_days": 18.789473684210527,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 0,
         "percentage": 0.0
       },
       "day20": {
-        "count": 14,
-        "percentage": 77.8
+        "count": 15,
+        "percentage": 78.9
       },
       "day30": {
-        "count": 18,
+        "count": 19,
         "percentage": 100.0
       }
     }
@@ -129,6 +129,16 @@
       "stage": "Phase 1 - initial assessment"
     },
     {
+      "merger_id": "MN-55003",
+      "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
+      "determination": "Approved",
+      "determination_date": "2026-02-24T12:00:00Z",
+      "page_modified_datetime": "2026-02-24T12:53:55+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-50003",
       "merger_name": "Francisco Partners - Sermo",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-15007",
-      "merger_name": "Apollo Funds led consortium \u2013 Lecta Group",
-      "determination": "Approved",
-      "determination_date": "2026-02-19T12:00:00Z",
-      "page_modified_datetime": "2026-02-19T18:52:09+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
