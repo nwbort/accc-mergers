@@ -173,6 +173,22 @@ def add_business_days(start_date: datetime, n: int) -> datetime:
         current += timedelta(days=1)
 
 
+def subtract_business_days(end_date: datetime, n: int) -> datetime:
+    """Return the date that is the nth business day counting backward from end_date (counting end_date as day 1)."""
+    global PUBLIC_HOLIDAYS
+    if PUBLIC_HOLIDAYS is None:
+        PUBLIC_HOLIDAYS = load_public_holidays()
+
+    current = end_date
+    count = 0
+    while True:
+        if is_business_day(current):
+            count += 1
+        if count == n:
+            return current
+        current -= timedelta(days=1)
+
+
 def calculate_calendar_days(start_date_str: str, end_date_str: str) -> int | None:
     """Calculate calendar days between two ISO date strings."""
     if not start_date_str or not end_date_str:
@@ -794,15 +810,19 @@ def generate_upcoming_events_json(enriched_mergers: list, days_ahead: int = 60) 
                 pass
 
         # Phase 2 - Notice of competition concerns (issued by business day 25 of Phase 2)
+        # Phase 2 BD 1 is derived by subtracting 89 BDs from end_of_determination_period
+        # (BD 90 of Phase 2), not from the date the referral notice was issued (which may
+        # have been issued before Phase 1's determination period fully expired).
         if stage and 'Phase 2' in stage:
             notice_already_issued = any(
                 'competition concern' in event.get('title', '').lower()
                 for event in m.get('events', [])
             )
-            phase2_start = m.get('phase_1_determination_date')
-            if phase2_start and not notice_already_issued:
+            phase2_end = m.get('end_of_determination_period')
+            if phase2_end and not notice_already_issued:
                 try:
-                    phase2_start_date = datetime.fromisoformat(phase2_start.replace('Z', '+00:00')).replace(tzinfo=None)
+                    phase2_end_date = datetime.fromisoformat(phase2_end.replace('Z', '+00:00')).replace(tzinfo=None)
+                    phase2_start_date = subtract_business_days(phase2_end_date, 90)  # BD 1 of Phase 2
                     notice_date = add_business_days(phase2_start_date, 25)
                     notice_date_str = notice_date.strftime('%Y-%m-%dT12:00:00Z')
                     if now <= notice_date <= future:
