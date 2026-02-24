@@ -106,7 +106,10 @@ def _count_weekdays_in_range(start: datetime, end: datetime) -> int:
 
 
 def calculate_business_days(start_date_str: str, end_date_str: str) -> int | None:
-    """Calculate business days between two ISO date strings (inclusive of start).
+    """Calculate business days between two ISO date strings (exclusive of start, inclusive of end).
+
+    The start date (notification date) is day 0; counting begins the following day,
+    matching the ACCC convention where BD 1 is the day after notification.
 
     Uses arithmetic weekday counting and subtracts holidays/Christmas periods
     instead of iterating day-by-day.
@@ -124,6 +127,9 @@ def calculate_business_days(start_date_str: str, end_date_str: str) -> int | Non
 
         start = start.replace(hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
         end = end.replace(hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
+
+        # BD 1 is the day after notification, so exclude the start date itself
+        start += timedelta(days=1)
 
         if start > end:
             return 0
