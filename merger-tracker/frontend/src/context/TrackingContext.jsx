@@ -163,6 +163,25 @@ export function TrackingProvider({ children }) {
               });
             }
           }
+
+          if (merger.competition_concerns_notice_date) {
+            const dueDate = new Date(merger.competition_concerns_notice_date);
+            if (dueDate > now) {
+              syntheticUpcomingEvents.push({
+                type: 'notice_of_competition_concerns',
+                event_type_display: 'Notice of competition concerns',
+                display_title: 'Notice of competition concerns',
+                title: 'Notice of competition concerns',
+                date: merger.competition_concerns_notice_date,
+                merger_id: merger.merger_id,
+                merger_name: merger.merger_name,
+                status: merger.status,
+                stage: merger.stage,
+                effective_notification_datetime: merger.effective_notification_datetime,
+                is_waiver: merger.is_waiver,
+              });
+            }
+          }
         });
 
         // Fetch upcoming events
