@@ -902,25 +902,39 @@ def generate_analysis_json(enriched_mergers: list) -> dict:
     phase1_scatter = []
     phase1_business_days = []
 
+    today_str = datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+
     for m in notification_mergers:
         start = m.get('effective_notification_datetime')
         end = m.get('determination_publication_date')
-        if not start or not end:
+        phase_1_det = m.get('phase_1_determination')
+
+        if not start:
             continue
+
+        # Include 'Referred to phase 2' mergers still in progress using today as the end date
+        if not end:
+            if phase_1_det == 'Referred to phase 2':
+                end = today_str
+            else:
+                continue
 
         bus_days = calculate_business_days(start, end)
         cal_days = calculate_calendar_days(start, end)
         if bus_days is None:
             continue
 
-        phase1_business_days.append(bus_days)
+        in_progress = m.get('determination_publication_date') is None
+        if not in_progress:
+            phase1_business_days.append(bus_days)
         phase1_scatter.append({
             "notification_date": start[:10],
             "business_days": bus_days,
             "calendar_days": cal_days,
             "merger_name": m.get('merger_name'),
             "merger_id": m.get('merger_id'),
-            "determination": m.get('phase_1_determination'),
+            "determination": phase_1_det,
+            "in_progress": in_progress,
         })
 
     # Sort scatter data by date
