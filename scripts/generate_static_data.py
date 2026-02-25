@@ -302,10 +302,27 @@ def enrich_merger(merger: dict, commentary: dict = None) -> dict:
     m['public_benefits_determination'] = pb_det
     m['public_benefits_determination_date'] = pb_det_date
     
+    # Compute competition concerns notice date for Phase 2 mergers
+    # The notice is due by BD 25 of Phase 2 (Phase 2 BD 1 = end_of_determination_period - 90 BDs)
+    stage = m.get('stage', '')
+    phase2_end = m.get('end_of_determination_period')
+    notice_already_issued = any(
+        'competition concern' in event.get('title', '').lower()
+        for event in m.get('events', [])
+    )
+    if stage and 'Phase 2' in stage and phase2_end and not notice_already_issued:
+        try:
+            phase2_end_date = datetime.fromisoformat(phase2_end.replace('Z', '+00:00')).replace(tzinfo=None)
+            phase2_start_date = subtract_business_days(phase2_end_date, 90)
+            notice_date = add_business_days(phase2_start_date, 25)
+            m['competition_concerns_notice_date'] = notice_date.strftime('%Y-%m-%dT12:00:00Z')
+        except (ValueError, AttributeError):
+            pass
+
     # Ensure anzsic_codes exists
     if 'anzsic_codes' not in m:
         m['anzsic_codes'] = []
-    
+
     # Add phase to events
     if 'events' in m:
         for event in m['events']:

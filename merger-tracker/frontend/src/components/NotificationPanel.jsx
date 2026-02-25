@@ -31,7 +31,7 @@ function MergerEventGroup({ group, onClose, isEventSeen }) {
         {/* Future/current events */}
         {futureEvents.map((event, idx) => {
           const daysRemaining = getDaysRemaining(event.date);
-          const isUpcoming = event.type === 'consultation_due' || event.type === 'determination_due';
+          const isUpcoming = event.type === 'consultation_due' || event.type === 'determination_due' || event.type === 'notice_of_competition_concerns';
           const isNew = !isEventSeen(event);
 
           return (
