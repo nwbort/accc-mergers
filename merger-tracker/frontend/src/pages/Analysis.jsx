@@ -215,9 +215,9 @@ function Analysis() {
             id: d.merger_id,
           })),
         backgroundColor: COLORS.accent,
-        pointRadius: 6,
-        pointHoverRadius: 9,
-        pointStyle: 'crossRot',
+        pointRadius: 8,
+        pointHoverRadius: 10,
+        pointStyle: 'triangle',
       },
     ],
   };
