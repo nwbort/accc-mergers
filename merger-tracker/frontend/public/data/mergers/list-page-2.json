@@ -1,6 +1,54 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-25001",
+      "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-09T12:00:00Z",
+      "determination_publication_date": "2026-02-05T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "ALBANY MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "95 676 040 341"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Esperance Motor Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "57 121 986 016"
+        },
+        {
+          "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST",
+          "identifier_type": "ABN",
+          "identifier": "80 701 405 315"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Regent Motors Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "12 008 685 087"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/regent-motors-group-%E2%80%93-esperance-motor-group-esperance-toyota-ford"
+    },
+    {
       "merger_id": "WA-25003",
       "merger_name": "Delinea (TPG) - StrongDM",
       "status": "Assessment completed",
@@ -1265,6 +1313,10 @@
       "other_parties": [],
       "anzsic_codes": [
         {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
           "code": "5921",
           "name": "Data Processing and Web Hosting Services"
         }
@@ -1360,6 +1412,6 @@
   ],
   "page": 2,
   "page_size": 50,
-  "total": 78,
+  "total": 79,
   "total_pages": 2
 }

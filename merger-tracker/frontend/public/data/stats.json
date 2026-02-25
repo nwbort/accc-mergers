@@ -1,6 +1,6 @@
 {
   "total_mergers": 41,
-  "total_waivers": 37,
+  "total_waivers": 38,
   "by_status": {
     "Assessment completed": 19,
     "Under assessment": 22
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 34,
+    "Approved": 35,
     "Not approved": 3
   },
   "phase_duration": {
@@ -40,7 +40,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 13
+      "count": 14
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -119,11 +119,11 @@
   ],
   "recent_determinations": [
     {
-      "merger_id": "WA-35005",
-      "merger_name": "Superloop \u2013 Lynham Networks",
+      "merger_id": "WA-15008",
+      "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
       "determination": "Approved",
-      "determination_date": "2026-02-24T12:00:00Z",
-      "page_modified_datetime": "2026-02-24T19:17:24+11:00",
+      "determination_date": "2026-02-25T12:00:00Z",
+      "page_modified_datetime": "2026-02-25T17:22:14+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
@@ -133,7 +133,17 @@
       "merger_name": "NEC Corporation \u2013 CSG Systems International",
       "determination": "Approved",
       "determination_date": "2026-02-24T12:00:00Z",
-      "page_modified_datetime": "2026-02-24T19:12:31+11:00",
+      "page_modified_datetime": "2026-02-25T18:08:12+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-35005",
+      "merger_name": "Superloop \u2013 Lynham Networks",
+      "determination": "Approved",
+      "determination_date": "2026-02-24T12:00:00Z",
+      "page_modified_datetime": "2026-02-24T19:17:24+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-02-20T12:00:00Z",
       "page_modified_datetime": "2026-02-20T18:41:18+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-15004",
-      "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
-      "determination": "Approved",
-      "determination_date": "2026-02-20T12:00:00Z",
-      "page_modified_datetime": "2026-02-20T18:33:32+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
