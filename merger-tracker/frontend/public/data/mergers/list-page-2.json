@@ -1,6 +1,75 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-15008",
+      "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-13T12:00:00Z",
+      "determination_publication_date": "2026-02-25T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Global Garella, S.L.",
+          "identifier_type": null,
+          "identifier": "Spanish Tax Identification Number  B24904989"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ayesa Engineering, S.A.U.",
+          "identifier_type": null,
+          "identifier": "Spanish Tax Identification Number  A91379875"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Colliers International Engineering & Design (Holdings) Pty Limited",
+          "identifier_type": "ACN",
+          "identifier": "670 625 617"
+        },
+        {
+          "name": "Colliers International Group Inc.",
+          "identifier_type": null,
+          "identifier": "Ontario Registry  1936883"
+        },
+        {
+          "name": "COLLIERS INTERNATIONAL ENGINEERING & DESIGN PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "44 615 403 506"
+        },
+        {
+          "name": "COLLIERS INTERNATIONAL URBAN PLANNING PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "13 615 087 931"
+        },
+        {
+          "name": "COLLIERS INTERNATIONAL HOLDINGS (AUSTRALIA) LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "65 008 178 238"
+        },
+        {
+          "name": "ADP CONSULTING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "81 139 719 529"
+        },
+        {
+          "name": "AYESA ENGINEERING HOLDCO AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 683 539 620"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/colliers-international-group-%E2%80%93-ayesa-engineering"
+    },
+    {
       "merger_id": "WA-20003",
       "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
       "status": "Assessment completed",
@@ -1552,6 +1621,6 @@
   ],
   "page": 2,
   "page_size": 50,
-  "total": 82,
+  "total": 83,
   "total_pages": 2
 }

@@ -1,9 +1,9 @@
 {
-  "total_mergers": 42,
+  "total_mergers": 43,
   "total_waivers": 40,
   "by_status": {
     "Assessment completed": 20,
-    "Under assessment": 22
+    "Under assessment": 23
   },
   "by_determination": {
     "Approved": 20,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-60004",
+      "merger_name": "IOR - Delta Specialised Energy assets",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-26T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-01083",
       "merger_name": "Civilmart \u2013 Taylex",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-15005",
       "merger_name": "Cvent - ON24",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-23T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-65007",
-      "merger_name": "Australian Venue Co. \u2013 An Sibin Irish Pub",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-23T12:00:00Z",

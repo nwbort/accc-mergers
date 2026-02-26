@@ -1,6 +1,18 @@
 {
   "events": [
     {
+      "date": "2026-02-27T12:00:00Z",
+      "title": "Questionnaire - IOR - Delta",
+      "display_title": "Questionnaire - IOR - Delta",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Delta%3A%20third-party%20questionnaire%20-%20January%202026.docx",
+      "url_gh": "/matters/MN-60004/Delta - third-party questionnaire - January 2026.pdf",
+      "status": "live",
+      "merger_id": "MN-60004",
+      "merger_name": "IOR - Delta Specialised Energy assets",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
       "date": "2026-02-26T12:00:00Z",
       "title": "GE Healthcare - Intelerad - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
@@ -22,6 +34,18 @@
       "merger_id": "MN-01083",
       "merger_name": "Civilmart \u2013 Taylex",
       "phase": null,
+      "is_waiver": false
+    },
+    {
+      "date": "2026-02-26T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-60004",
+      "merger_name": "IOR - Delta Specialised Energy assets",
+      "phase": "Phase 1",
       "is_waiver": false
     },
     {
@@ -1175,34 +1199,10 @@
       "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
       "phase": "Phase 1",
       "is_waiver": true
-    },
-    {
-      "date": "2026-01-30T12:00:00Z",
-      "title": "Notification waiver determination published",
-      "display_title": "Waiver application determination: Approved",
-      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CVC%20Capital%20Partners%20%E2%80%93%20Smiths%20Detection%20Group%20%28WA-40003%29%20-%20Notification%20waiver%20determination%20-%2030%20January%202026.pdf",
-      "url_gh": "/matters/WA-40003/CVC Capital Partners \u2013 Smiths Detection Group (WA-40003) - Notification waiver determination - 30 January 2026.pdf",
-      "status": "live",
-      "merger_id": "WA-40003",
-      "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
-      "phase": "Waiver",
-      "is_waiver": true
-    },
-    {
-      "date": "2026-01-30T12:00:00Z",
-      "title": "Merger notified to ACCC",
-      "display_title": "Merger notified to ACCC",
-      "url": null,
-      "url_gh": null,
-      "status": null,
-      "merger_id": "WA-45001",
-      "merger_name": "Paragon Care \u2013 Presidental",
-      "phase": "Phase 1",
-      "is_waiver": true
     }
   ],
   "page": 1,
   "page_size": 100,
-  "total": 193,
+  "total": 195,
   "total_pages": 2
 }
