@@ -1,9 +1,9 @@
 {
-  "total_mergers": 41,
+  "total_mergers": 42,
   "total_waivers": 38,
   "by_status": {
     "Assessment completed": 20,
-    "Under assessment": 21
+    "Under assessment": 22
   },
   "by_determination": {
     "Approved": 20,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-01083",
+      "merger_name": "Civilmart \u2013 Taylex",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-02-25T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-15005",
       "merger_name": "Cvent - ON24",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-60007",
       "merger_name": "Craig Mostyn \u2013 Patmore Feeds",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-20T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-80004",
-      "merger_name": "Audiotonix - Soundtech Group",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-20T12:00:00Z",
