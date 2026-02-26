@@ -1,6 +1,45 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-20003",
+      "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-12T12:00:00Z",
+      "determination_publication_date": "2026-01-30T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "CG Panther Parentco, L.P.",
+          "identifier_type": null,
+          "identifier": "135095"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Peloton Computer Enterprises Ltd.",
+          "identifier_type": null,
+          "identifier": "2023447374  Canada"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "The Carlyle Group Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/carlyle-%E2%80%93-peloton-computer-enterprises"
+    },
+    {
       "merger_id": "WA-20005",
       "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
       "status": "Assessment completed",
@@ -1044,6 +1083,55 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/intrepid-travel-%E2%80%93-wild-bush-luxury"
     },
     {
+      "merger_id": "WA-70004",
+      "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-12T12:00:00Z",
+      "determination_publication_date": "2026-02-26T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "GENERAL DENTAL HOLDINGS PTY LTD trading as Impression Dental Group",
+          "identifier_type": "ABN",
+          "identifier": "55 646 760 367"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Happy Rock Dental Practice",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "WEI-JIE JIANG PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 116 562 693"
+        },
+        {
+          "name": "Wei-Jie Jiang",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Genesis Capital",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8531",
+          "name": "Dental Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/impression-dental-group-happy-rock-dental-practice"
+    },
+    {
       "merger_id": "WA-75006",
       "merger_name": "Playlist \u2013 EGYM",
       "status": "Assessment completed",
@@ -1464,6 +1552,6 @@
   ],
   "page": 2,
   "page_size": 50,
-  "total": 80,
+  "total": 82,
   "total_pages": 2
 }

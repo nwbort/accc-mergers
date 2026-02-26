@@ -499,6 +499,14 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-02-12",
+        "business_days": 10,
+        "calendar_days": 14,
+        "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
+        "merger_id": "WA-70004",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-02-13",
         "business_days": 8,
         "calendar_days": 12,
@@ -513,14 +521,22 @@
         "merger_name": "Superloop \u2013 Lynham Networks",
         "merger_id": "WA-35005",
         "determination": "Approved"
+      },
+      {
+        "application_date": "2026-02-24",
+        "business_days": 2,
+        "calendar_days": 2,
+        "merger_name": "Eiffel and Eurazeo \u2013 Segula",
+        "merger_id": "WA-05007",
+        "determination": "Approved"
       }
     ],
     "stats": {
-      "average": 10.7,
+      "average": 10.5,
       "median": 10.0,
       "min": 2,
       "max": 22,
-      "count": 38
+      "count": 40
     }
   },
   "monthly_volume": {
@@ -546,7 +562,7 @@
       0,
       0,
       30,
-      8
+      10
     ]
   }
 }

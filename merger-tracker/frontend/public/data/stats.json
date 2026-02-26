@@ -1,6 +1,6 @@
 {
   "total_mergers": 42,
-  "total_waivers": 38,
+  "total_waivers": 40,
   "by_status": {
     "Assessment completed": 20,
     "Under assessment": 22
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 35,
+    "Approved": 37,
     "Not approved": 3
   },
   "phase_duration": {
@@ -93,6 +93,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "WA-05007",
+      "merger_name": "Eiffel and Eurazeo \u2013 Segula",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2026-02-24T12:00:00Z",
+      "is_waiver": true
+    },
+    {
       "merger_id": "MN-15005",
       "merger_name": "Cvent - ON24",
       "status": "Under assessment",
@@ -107,17 +115,29 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-23T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-30003",
-      "merger_name": "MicroStar Logistics - Konvoy",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-20T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-05007",
+      "merger_name": "Eiffel and Eurazeo \u2013 Segula",
+      "determination": "Approved",
+      "determination_date": "2026-02-26T12:00:00Z",
+      "page_modified_datetime": "2026-02-26T18:26:54+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-70004",
+      "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
+      "determination": "Approved",
+      "determination_date": "2026-02-26T12:00:00Z",
+      "page_modified_datetime": "2026-02-26T17:25:08+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
     {
       "merger_id": "MN-01074",
       "merger_name": "GE Healthcare \u2013 Intelerad",
@@ -157,26 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-95002",
-      "merger_name": "Abbott Laboratories - Exact Sciences",
-      "determination": "Approved",
-      "determination_date": "2026-02-24T12:00:00Z",
-      "page_modified_datetime": "2026-02-24T15:38:43+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-55003",
-      "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
-      "determination": "Approved",
-      "determination_date": "2026-02-24T12:00:00Z",
-      "page_modified_datetime": "2026-02-24T12:53:55+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
