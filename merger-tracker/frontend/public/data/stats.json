@@ -2,11 +2,11 @@
   "total_mergers": 41,
   "total_waivers": 38,
   "by_status": {
-    "Assessment completed": 19,
-    "Under assessment": 22
+    "Assessment completed": 20,
+    "Under assessment": 21
   },
   "by_determination": {
-    "Approved": 19,
+    "Approved": 20,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 28.842105263157894,
+    "average_days": 29.25,
     "median_days": 25,
-    "average_business_days": 17.842105263157894,
-    "median_business_days": 16,
+    "average_business_days": 18.25,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 6,
-        "percentage": 31.6
+        "percentage": 30.0
       },
       "day20": {
         "count": 16,
-        "percentage": 84.2
+        "percentage": 80.0
       },
       "day30": {
-        "count": 19,
+        "count": 20,
         "percentage": 100.0
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-01074",
+      "merger_name": "GE Healthcare \u2013 Intelerad",
+      "determination": "Approved",
+      "determination_date": "2026-02-26T12:00:00Z",
+      "page_modified_datetime": "2026-02-26T15:17:05+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-15008",
       "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-50003",
-      "merger_name": "Francisco Partners - Sermo",
-      "determination": "Approved",
-      "determination_date": "2026-02-20T12:00:00Z",
-      "page_modified_datetime": "2026-02-20T18:41:18+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

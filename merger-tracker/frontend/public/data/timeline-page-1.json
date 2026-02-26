@@ -1,6 +1,18 @@
 {
   "events": [
     {
+      "date": "2026-02-26T12:00:00Z",
+      "title": "GE Healthcare - Intelerad - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/GE%20Healthcare%20-%20Intelerad%20-%20Phase%201%20determination.pdf",
+      "url_gh": "/matters/MN-01074/GE Healthcare - Intelerad - Phase 1 determination.pdf",
+      "status": "live",
+      "merger_id": "MN-01074",
+      "merger_name": "GE Healthcare \u2013 Intelerad",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
       "date": "2026-02-25T12:00:00Z",
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
@@ -1187,22 +1199,10 @@
       "merger_name": "Re.Group \u2013 Scouts Queensland Recycling Centre Site",
       "phase": "Waiver",
       "is_waiver": true
-    },
-    {
-      "date": "2026-01-29T12:00:00Z",
-      "title": "Notification waiver determination published",
-      "display_title": "Waiver application determination: Approved",
-      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Alpine%20Software%20Group%20-%20PlayHQ%20%28WA-80001%29%20-%20Notification%20waiver%20determination%20-%2029%20January%202026_0.pdf",
-      "url_gh": "/matters/WA-80001/Alpine Software Group - PlayHQ (WA-80001) - Notification waiver determination - 29 January 2026_0.pdf",
-      "status": "live",
-      "merger_id": "WA-80001",
-      "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
-      "phase": "Waiver",
-      "is_waiver": true
     }
   ],
   "page": 1,
   "page_size": 100,
-  "total": 185,
+  "total": 186,
   "total_pages": 2
 }
