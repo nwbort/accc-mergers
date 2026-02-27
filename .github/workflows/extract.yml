@@ -7,7 +7,7 @@ on:
       - 'data/raw/matters/**'
       - 'data/processed/commentary.json'
   schedule:
-  - cron: '16 1 * * *'
+  - cron: '17 1 * * *'
 
 permissions:
   contents: write
