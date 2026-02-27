@@ -1294,6 +1294,39 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/playlist-%E2%80%93-egym"
     },
     {
+      "merger_id": "WA-75008",
+      "merger_name": "Bettergrow - HYG",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-12T12:00:00Z",
+      "determination_publication_date": "2026-02-27T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "BETTERGROW HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 649 891 663"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HYG HOLDCO PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "81 622 657 729"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1192",
+          "name": "Prepared Animal and Bird Feed Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bettergrow-hyg"
+    },
+    {
       "merger_id": "WA-80001",
       "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
       "status": "Assessment completed",
@@ -1621,6 +1654,6 @@
   ],
   "page": 2,
   "page_size": 50,
-  "total": 83,
+  "total": 84,
   "total_pages": 2
 }

@@ -507,6 +507,14 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-02-12",
+        "business_days": 11,
+        "calendar_days": 15,
+        "merger_name": "Bettergrow - HYG",
+        "merger_id": "WA-75008",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-02-13",
         "business_days": 8,
         "calendar_days": 12,
@@ -533,10 +541,10 @@
     ],
     "stats": {
       "average": 10.5,
-      "median": 10.0,
+      "median": 10,
       "min": 2,
       "max": 22,
-      "count": 40
+      "count": 41
     }
   },
   "monthly_volume": {
@@ -562,7 +570,7 @@
       0,
       0,
       30,
-      10
+      11
     ]
   }
 }
