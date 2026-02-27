@@ -5,7 +5,7 @@ on:
   repository_dispatch:
     types: [new_merger_detected]
   schedule:
-  - cron: '7 * * * *'
+  - cron: '8 * * * *'
 permissions:
   contents: write
   actions: write
