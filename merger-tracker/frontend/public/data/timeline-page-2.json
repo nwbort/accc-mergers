@@ -2,6 +2,18 @@
   "events": [
     {
       "date": "2026-01-30T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-85003",
+      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
+      "date": "2026-01-30T12:00:00Z",
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Carlyle%20-%20Peloton%20Computer%20Enterprises%20%28WA-20003%29%20-%20Notification%20waiver%20determination%20-%2030%20January%202026.pdf",
@@ -282,7 +294,19 @@
       "display_title": "ACCC decided notification is subject to Phase 2 review",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ampol%20-%20EG%20Australia%20-%20Phase%202%20Notice%20-%20Redacted.pdf",
       "url_gh": "/matters/MN-01019/Ampol - EG Australia - Phase 2 Notice - Redacted.pdf",
-      "status": "live",
+      "status": "removed",
+      "merger_id": "MN-01019",
+      "merger_name": "Ampol \u2013 EG Australia",
+      "phase": "Phase 2",
+      "is_waiver": false
+    },
+    {
+      "date": "2026-01-21T12:00:00Z",
+      "title": "ACCC decided notification is subject to Phase 2 review",
+      "display_title": "ACCC decided notification is subject to Phase 2 review",
+      "url": null,
+      "url_gh": null,
+      "status": null,
       "merger_id": "MN-01019",
       "merger_name": "Ampol \u2013 EG Australia",
       "phase": "Phase 2",
@@ -1167,6 +1191,6 @@
   ],
   "page": 2,
   "page_size": 100,
-  "total": 197,
+  "total": 199,
   "total_pages": 2
 }
