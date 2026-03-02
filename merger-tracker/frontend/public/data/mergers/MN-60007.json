@@ -6,18 +6,18 @@
   "effective_notification_datetime": "2026-02-20T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-04-08T12:00:00Z",
-  "page_modified_datetime": "2026-02-23T15:48:08+11:00",
+  "page_modified_datetime": "2026-03-02T16:15:36+11:00",
   "consultation_response_due_date": "2026-03-02T12:00:00Z",
   "acquirers": [
-    {
-      "name": "CRAIG MOSTYN HOLDINGS PTY LIMITED",
-      "identifier_type": "ABN",
-      "identifier": "14 008 398 356"
-    },
     {
       "name": "CRAIG MOSTYN FARMS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "96 127 068 115"
+    },
+    {
+      "name": "CRAIG MOSTYN HOLDINGS PTY LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "14 008 398 356"
     }
   ],
   "targets": [
@@ -50,7 +50,7 @@
       "display_title": "Questionnaire - Craig Mostyn - Patmore Feeds",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Craig%20Mostyn%20-%20Patmore%20Feeds_0.docx",
       "url_gh": "/matters/MN-60007/Questionnaire - Craig Mostyn - Patmore Feeds_0.pdf",
-      "status": "live",
+      "status": "removed",
       "phase": null
     },
     {
