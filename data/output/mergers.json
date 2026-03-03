@@ -1624,12 +1624,14 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ibm-confluent",
       "merger_name": "IBM - Confluent",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-10001",
       "effective_notification_datetime": "2026-02-04T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-03-19T12:00:00Z",
-      "page_modified_datetime": "2026-02-12T18:04:46+11:00",
+      "determination_publication_date": "2026-03-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-03-03T14:40:04+11:00",
       "consultation_response_due_date": "2026-02-12T12:00:00Z",
       "acquirers": [
         {
@@ -1641,8 +1643,8 @@
       "targets": [
         {
           "name": "Confluent, Inc.",
-          "identifier_type": "ACN",
-          "identifier": ": 624104141"
+          "identifier_type": null,
+          "identifier": ""
         }
       ],
       "other_parties": [],
@@ -1672,12 +1674,39 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-03-03T12:00:00Z",
+          "title": "IBM - Confluent - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IBM-Confluent%20-%20Phase%201%20determination_1.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "International Business Machines Corporation (IBM)\u2019s proposed\nacquisition of 100% of the share capital in Confluent, Inc (Confluent)\n(IBM and Confluent together, the Parties) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, IBM, is active worldwide in the development and\nmarketing of a wide variety of IT solutions, including cloud\ninfrastructure provided through IBM Cloud, multiple Event Stream\nProcessing Software (ESPS) offerings and an enterprise AI and data\nplatform, known as Watsonx.\nThe target, Confluent, also operates worldwide and provides a data-\nstreaming platform built on Apache Kafka, which is an open-source\ntechnology. Confluent provides both cloud-native and on-premises\nESPS offerings that enable organisations to publish, subscribe to,\nstore, and process real-time data streams at scale for use in building\napplications and event-driven architectures."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "The reasons for the ACCC\u2019s determination are set out in section 2."
+            }
+          ],
+          "url_gh": "/matters/MN-10001/IBM-Confluent - Phase 1 determination_1.pdf",
+          "status": "live",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-03-03T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -1759,12 +1788,14 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-venue-co-%E2%80%93-four-licensed-venues-in-metropolitan-sydney-public-house-petersham-the-erko-the-golden-sheaf-and-barangaroo-house",
       "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-10006",
       "effective_notification_datetime": "2026-02-06T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-03-23T12:00:00Z",
-      "page_modified_datetime": "2026-02-16T15:42:59+11:00",
+      "determination_publication_date": "2026-03-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-03-03T13:07:04+11:00",
       "consultation_response_due_date": "2026-02-16T12:00:00Z",
       "acquirers": [
         {
@@ -1775,19 +1806,9 @@
       ],
       "targets": [
         {
-          "name": "Sherilyn Pty. Limited",
+          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
           "identifier_type": "ABN",
           "identifier": "70 075 074 930"
-        },
-        {
-          "name": "Newington Nominees Pty Limited as trustee for Newington Trust",
-          "identifier_type": "ACN",
-          "identifier": "602 630 302"
-        },
-        {
-          "name": "Ersko Pty Limited as trustee for The Ersko Trust",
-          "identifier_type": "ACN",
-          "identifier": "152 205 251"
         },
         {
           "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
@@ -1795,9 +1816,19 @@
           "identifier": "604 221 801"
         },
         {
+          "name": "Newington Nominees Pty Limited as trustee for Newington Trust",
+          "identifier_type": "ACN",
+          "identifier": "602 630 302"
+        },
+        {
           "name": "Mash Barangaroo Pty. Limited as trustee for The Mash Barangaroo Trust",
           "identifier_type": "ACN",
           "identifier": "606 824 300"
+        },
+        {
+          "name": "Ersko Pty Limited as trustee for The Ersko Trust",
+          "identifier_type": "ACN",
+          "identifier": "152 205 251"
         }
       ],
       "other_parties": [],
@@ -1815,7 +1846,7 @@
           "name": "Pubs, Taverns and Bars"
         }
       ],
-      "merger_description": "AVC Operations Pty Limited (**AVC**), a subsidiary of Australian Venue Co. Holdings Limited, proposes to acquire substantially all of the assets (including the exclusive right to carry on the businesses in succession of the vendors) of four venues in NSW pursuant to two interdependent transactions: (a) Three Asset Sale Agreement: acquiring Public House Petersham, The Erko, and The Golden Sheaf; and (b) Barangaroo Asset Sale Agreement: acquiring Barangaroo House (together, the Proposed Transaction).\n\nAVC operates licensed venues throughout Australia and New Zealand, primarily pubs, as well as bars, clubs and licensed restaurants. AVC's venues are individually branded and are predominantly located in inner-city and metropolitan areas, offering a range of products and services including food, alcoholic and non-alcoholic beverages, function rooms, live entertainment and gaming facilities.\n\nThe four venues are: Public House Petersham: pub in Petersham; The Erko (Erskineville Hotel): hotel in Erskineville with food and accommodation; The Golden Sheaf: pub and late-night venue in Double Bay; and Barangaroo House: three-level dining venue in Barangaroo. Public House Petersham, The Erko, and The Golden Sheaf are owned by Solotel Group entities, which operates 27 licensed venues across Sydney, Parramatta, and Brisbane. Barangaroo House is co-owned by Solotel Group and Matt Moran.",
+      "merger_description": "AVC Operations Pty Limited (**AVC**), a subsidiary of Australian Venue Co. Holdings Limited, proposes to acquire substantially all of the assets (including the exclusive right to carry on the businesses in succession of the vendors) of four venues in NSW pursuant to two interdependent transactions: (a) Three Asset Sale Agreement: acquiring Public House Petersham, The Erko, and The Golden Sheaf; and (b) Barangaroo Asset Sale Agreement: acquiring Barangaroo House.\n\nAVC operates licensed venues throughout Australia and New Zealand, primarily pubs, as well as bars, clubs and licensed restaurants. AVC's venues are individually branded and are predominantly located in inner-city and metropolitan areas, offering a range of products and services including food, alcoholic and non-alcoholic beverages, function rooms, live entertainment and gaming facilities.\n\nThe four venues are: Public House Petersham: pub in Petersham; The Erko (Erskineville Hotel): hotel in Erskineville with food and accommodation; The Golden Sheaf: pub and late-night venue in Double Bay; and Barangaroo House: three-level dining venue in Barangaroo. Public House Petersham, The Erko, and The Golden Sheaf are owned by Solotel Group entities, which operates 27 licensed venues across Sydney, Parramatta, and Brisbane. Barangaroo House is co-owned by Solotel Group and Matt Moran.",
       "events": [
         {
           "date": "2026-02-09T12:00:00Z",
@@ -1831,12 +1862,47 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-03-03T12:00:00Z",
+          "title": "Australian Venue Co - four licensed venues in metropolitan Sydney - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Australian%20Venue%20Co%20-%20four%20licensed%20venues%20in%20Sydney%20-%20Phase%201%20Determination.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "AVC Operations Pty Limited (AVC) proposes to acquire substantially\nall of the assets (including the exclusive right to carry on the\nbusinesses in succession of the vendors) of Public House\nPetersham, The Erko, The Golden Sheaf and Barangaroo House (the\nTarget Venues) (together, the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, AVC, is a subsidiary of Australian Venue Co. Holdings\nLimited, which operates licensed venues throughout Australia and\nNew Zealand, primarily pubs, as well as bars, clubs and licensed\nrestaurants. AVC\u2019s venues are individually branded and\npredominantly located in inner-city and metropolitan areas, offering\nfood, alcoholic and non-alcoholic beverages, function rooms, live\nentertainment and gaming facilities.\nPublic House Petersham is a pub located at 292 Stanmore Road,\nPetersham NSW 2049. The seller is Newington Nominees Pty\nLimited as trustee for Newington Trust.\nThe Erko (Erskineville Hotel) is a hotel with food and\naccommodation located at 102 Erskineville Road, Erskineville NSW\n2043. The seller is Ersko Pty Limited as trustee for The Ersko Trust.\nThe Golden Sheaf is a pub and late-night venue located at 429 New\nSouth Head Road, Double Bay NSW 2026. The seller is Sherilyn Pty.\nLimited as trustee for Solotrust Unit Trust.\nBarangaroo House is a three-level dining venue located at Building\nR1, Southern Residue, 35 Barangaroo Avenue, Barangaroo NSW\n2000. The seller is Barangaroo Pty Limited as trustee for Barangaroo\nTrust and Mash Barangaroo Pty. Limited as trustee for The Mash\nBarangaroo Trust.\nPublic House Petersham, The Erko, and the Golden Sheaf are owned\nby Solotel Group entities, which operate 27 licensed venues across\nSydney, Paramatta, and Brisbane. Barangaroo House is co-owned by\nSolotel Group and Matt Moran."
+            },
+            {
+              "item": "Overlap between the\nparties",
+              "details": "The parties overlap in the supply of retail hospitality venues in\nmetropolitan Sydney."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any relevant market.\nIn reaching its decision, and based on the material before it, the\nACCC makes the following findings.\n\u2022 The aggregation in retail hospitality venues arising from the\nAcquisition is minimal in respect of each Target Venue including\nat a local level.\n\u2022 AVC will continue to face competition from alternative retail\nhospitality venues in the local areas surrounding the Target\nVenues."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/matters/MN-10006/Australian Venue Co - four licensed venues in Sydney - Phase 1 Determination.pdf",
+          "status": "live",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-03-03T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -2847,7 +2913,7 @@
       "effective_notification_datetime": "2026-02-23T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-04-09T12:00:00Z",
-      "page_modified_datetime": "2026-02-24T13:30:30+11:00",
+      "page_modified_datetime": "2026-03-03T16:02:38+11:00",
       "consultation_response_due_date": "2026-03-03T12:00:00Z",
       "acquirers": [
         {
@@ -2874,7 +2940,7 @@
           "name": "Pubs, Taverns and Bars"
         }
       ],
-      "merger_description": "AVC Operations Pty Limited (**AVC**) proposes to acquire 100% of the business and assets of Ash Promotions Pty Ltd trading as An Sibin Irish Pub\u00a0(**An Sibin**) under an asset sale agreement, dated 10 February 2026 (the **Acquisition**).\n\nAVC is a subsidiary of Australian Venue Co. Holdings Limited which operates licensed venues throughout Australia and New Zealand, primarily pubs, as well as some bars, clubs, and licensed restaurants. AVC's venues are individually branded and mostly located in inner-city and metro areas, offering food, alcoholic and non-alcoholic beverages, function rooms, live entertainment and gaming facilities.\n\nAn Sibin is a pub located at 147 James Street, Northbridge WA 6003. It has a traditional Irish pub offering, similar to a hotel or tavern. The business and assets of An Sibin are operated by Ash Promotions Pty Ltd trading as An Sibin Irish Pub, being the Target.",
+      "merger_description": "AVC Operations Pty Limited (AVC) proposes to acquire 100% of the business and assets of Ash Promotions Pty Ltd trading as An Sibin Irish Pub\u00a0(An Sibin) under an asset sale agreement, dated 10 February 2026 (the Acquisition).\n\nAVC is a subsidiary of Australian Venue Co. Holdings Limited which operates licensed venues throughout Australia and New Zealand, primarily pubs, as well as some bars, clubs, and licensed restaurants. AVC's venues are individually branded and mostly located in inner-city and metro areas, offering food, alcoholic and non-alcoholic beverages, function rooms, live entertainment and gaming facilities.\n\nAn Sibin is a pub located at 147 James Street, Northbridge WA 6003. It has a traditional Irish pub offering, similar to a hotel or tavern. The business and assets of An Sibin are operated by Ash Promotions Pty Ltd trading as An Sibin Irish Pub, being the Target.",
       "events": [
         {
           "date": "2026-02-24T12:00:00Z",
@@ -2882,7 +2948,7 @@
           "display_title": "Questionnaire - Australian Venue Co. - An Sibin Irish Pub",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Australian%20Venue%20Co%20-%20An%20Sibin%20Irish%20Pub%20-%20Questionnaire%20-%2024%20February%202026_0.docx",
           "url_gh": "/matters/MN-65007/Australian Venue Co - An Sibin Irish Pub - Questionnaire - 24 February 2026_0.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {

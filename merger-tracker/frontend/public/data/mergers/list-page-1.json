@@ -665,11 +665,11 @@
     {
       "merger_id": "MN-10001",
       "merger_name": "IBM - Confluent",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-02-04T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-03-03T12:00:00Z",
       "end_of_determination_period": "2026-03-19T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -682,8 +682,8 @@
       "targets": [
         {
           "name": "Confluent, Inc.",
-          "identifier_type": "ACN",
-          "identifier": ": 624104141"
+          "identifier_type": null,
+          "identifier": ""
         }
       ],
       "other_parties": [],
@@ -750,11 +750,11 @@
     {
       "merger_id": "MN-10006",
       "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-02-06T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-03-03T12:00:00Z",
       "end_of_determination_period": "2026-03-23T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -766,19 +766,9 @@
       ],
       "targets": [
         {
-          "name": "Sherilyn Pty. Limited",
+          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
           "identifier_type": "ABN",
           "identifier": "70 075 074 930"
-        },
-        {
-          "name": "Newington Nominees Pty Limited as trustee for Newington Trust",
-          "identifier_type": "ACN",
-          "identifier": "602 630 302"
-        },
-        {
-          "name": "Ersko Pty Limited as trustee for The Ersko Trust",
-          "identifier_type": "ACN",
-          "identifier": "152 205 251"
         },
         {
           "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
@@ -786,9 +776,19 @@
           "identifier": "604 221 801"
         },
         {
+          "name": "Newington Nominees Pty Limited as trustee for Newington Trust",
+          "identifier_type": "ACN",
+          "identifier": "602 630 302"
+        },
+        {
           "name": "Mash Barangaroo Pty. Limited as trustee for The Mash Barangaroo Trust",
           "identifier_type": "ACN",
           "identifier": "606 824 300"
+        },
+        {
+          "name": "Ersko Pty Limited as trustee for The Ersko Trust",
+          "identifier_type": "ACN",
+          "identifier": "152 205 251"
         }
       ],
       "other_parties": [],

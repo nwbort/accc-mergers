@@ -2,11 +2,11 @@
   "total_mergers": 43,
   "total_waivers": 41,
   "by_status": {
-    "Assessment completed": 21,
-    "Under assessment": 22
+    "Assessment completed": 23,
+    "Under assessment": 20
   },
   "by_determination": {
-    "Approved": 21,
+    "Approved": 23,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 29.047619047619047,
+    "average_days": 28.782608695652176,
     "median_days": 25,
-    "average_business_days": 18.19047619047619,
+    "average_business_days": 18.17391304347826,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 6,
-        "percentage": 28.6
+        "percentage": 26.1
       },
       "day20": {
-        "count": 17,
-        "percentage": 81.0
+        "count": 19,
+        "percentage": 82.6
       },
       "day30": {
-        "count": 21,
+        "count": 23,
         "percentage": 100.0
       }
     }
@@ -119,11 +119,31 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-10001",
+      "merger_name": "IBM - Confluent",
+      "determination": "Approved",
+      "determination_date": "2026-03-03T12:00:00Z",
+      "page_modified_datetime": "2026-03-03T14:40:04+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-80002",
       "merger_name": "Bain Capital \u2013 MCJ",
       "determination": "Approved",
       "determination_date": "2026-03-03T12:00:00Z",
       "page_modified_datetime": "2026-03-03T14:10:12+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
+      "merger_id": "MN-10006",
+      "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+      "determination": "Approved",
+      "determination_date": "2026-03-03T12:00:00Z",
+      "page_modified_datetime": "2026-03-03T13:07:04+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
@@ -154,26 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-02-26T12:00:00Z",
       "page_modified_datetime": "2026-02-26T17:25:08+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-01074",
-      "merger_name": "GE Healthcare \u2013 Intelerad",
-      "determination": "Approved",
-      "determination_date": "2026-02-26T12:00:00Z",
-      "page_modified_datetime": "2026-02-26T15:17:05+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-15008",
-      "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
-      "determination": "Approved",
-      "determination_date": "2026-02-25T12:00:00Z",
-      "page_modified_datetime": "2026-02-25T17:22:14+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

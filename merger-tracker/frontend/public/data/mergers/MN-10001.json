@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ibm-confluent",
   "merger_name": "IBM - Confluent",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-10001",
   "effective_notification_datetime": "2026-02-04T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-03-19T12:00:00Z",
-  "page_modified_datetime": "2026-02-12T18:04:46+11:00",
+  "determination_publication_date": "2026-03-03T12:00:00Z",
+  "accc_determination": "Approved",
+  "page_modified_datetime": "2026-03-03T14:40:04+11:00",
   "consultation_response_due_date": "2026-02-12T12:00:00Z",
   "acquirers": [
     {
@@ -18,8 +20,8 @@
   "targets": [
     {
       "name": "Confluent, Inc.",
-      "identifier_type": "ACN",
-      "identifier": ": 624104141"
+      "identifier_type": null,
+      "identifier": ""
     }
   ],
   "other_parties": [],
@@ -49,12 +51,39 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-03-03T12:00:00Z",
+      "title": "IBM - Confluent - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IBM-Confluent%20-%20Phase%201%20determination_1.pdf",
+      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "International Business Machines Corporation (IBM)\u2019s proposed\nacquisition of 100% of the share capital in Confluent, Inc (Confluent)\n(IBM and Confluent together, the Parties) (the Acquisition)."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "The acquirer, IBM, is active worldwide in the development and\nmarketing of a wide variety of IT solutions, including cloud\ninfrastructure provided through IBM Cloud, multiple Event Stream\nProcessing Software (ESPS) offerings and an enterprise AI and data\nplatform, known as Watsonx.\nThe target, Confluent, also operates worldwide and provides a data-\nstreaming platform built on Apache Kafka, which is an open-source\ntechnology. Confluent provides both cloud-native and on-premises\nESPS offerings that enable organisations to publish, subscribe to,\nstore, and process real-time data streams at scale for use in building\napplications and event-driven architectures."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "The reasons for the ACCC\u2019s determination are set out in section 2."
+        }
+      ],
+      "url_gh": "/matters/MN-10001/IBM-Confluent - Phase 1 determination_1.pdf",
+      "status": "live",
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-03-03T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
