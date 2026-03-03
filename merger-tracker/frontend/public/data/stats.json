@@ -2,11 +2,11 @@
   "total_mergers": 43,
   "total_waivers": 41,
   "by_status": {
-    "Assessment completed": 20,
-    "Under assessment": 23
+    "Assessment completed": 21,
+    "Under assessment": 22
   },
   "by_determination": {
-    "Approved": 20,
+    "Approved": 21,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 29.25,
+    "average_days": 29.047619047619047,
     "median_days": 25,
-    "average_business_days": 18.25,
+    "average_business_days": 18.19047619047619,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 6,
-        "percentage": 30.0
+        "percentage": 28.6
       },
       "day20": {
-        "count": 16,
-        "percentage": 80.0
+        "count": 17,
+        "percentage": 81.0
       },
       "day30": {
-        "count": 20,
+        "count": 21,
         "percentage": 100.0
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-80002",
+      "merger_name": "Bain Capital \u2013 MCJ",
+      "determination": "Approved",
+      "determination_date": "2026-03-03T12:00:00Z",
+      "page_modified_datetime": "2026-03-03T14:10:12+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-75008",
       "merger_name": "Bettergrow - HYG",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-02-25T12:00:00Z",
       "page_modified_datetime": "2026-02-25T17:22:14+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-90002",
-      "merger_name": "NEC Corporation \u2013 CSG Systems International",
-      "determination": "Approved",
-      "determination_date": "2026-02-24T12:00:00Z",
-      "page_modified_datetime": "2026-02-25T18:08:12+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
