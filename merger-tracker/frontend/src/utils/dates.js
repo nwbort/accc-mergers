@@ -64,9 +64,9 @@ export const calculateBusinessDays = (startDate, endDate) => {
     const end = typeof endDate === 'string' ? parseISO(endDate) : endDate;
 
     let businessDays = 0;
-    let currentDate = new Date(start);
+    // Start from the day after start — application date is day 0
+    let currentDate = addDays(new Date(start), 1);
 
-    // Include the start date in the calculation
     while (currentDate <= end) {
       if (isBusinessDay(currentDate)) {
         businessDays++;
@@ -94,9 +94,7 @@ export const getBusinessDaysRemaining = (endDate) => {
 
     if (end <= today) return 0;
 
-    // Start counting from tomorrow
-    const tomorrow = addDays(today, 1);
-    return calculateBusinessDays(tomorrow, end);
+    return calculateBusinessDays(today, end);
   } catch {
     return null;
   }
