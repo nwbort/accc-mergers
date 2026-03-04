@@ -1,6 +1,18 @@
 {
   "events": [
     {
+      "date": "2026-03-04T12:00:00Z",
+      "title": "Questionnaire - IAG - RACI",
+      "display_title": "Questionnaire - IAG - RACI",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20IAG%20-%20RACI.docx",
+      "url_gh": "/matters/MN-65005/Questionnaire - IAG - RACI.pdf",
+      "status": "live",
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
       "date": "2026-03-03T12:00:00Z",
       "title": "IBM - Confluent - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
@@ -21,6 +33,18 @@
       "status": "live",
       "merger_id": "MN-10006",
       "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
+      "date": "2026-03-03T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "phase": "Phase 1",
       "is_waiver": false
     },
@@ -1175,34 +1199,10 @@
       "merger_name": "Abbott Laboratories - Exact Sciences",
       "phase": null,
       "is_waiver": false
-    },
-    {
-      "date": "2026-02-02T12:00:00Z",
-      "title": "Merger notified to ACCC",
-      "display_title": "Merger notified to ACCC",
-      "url": null,
-      "url_gh": null,
-      "status": null,
-      "merger_id": "MN-95002",
-      "merger_name": "Abbott Laboratories - Exact Sciences",
-      "phase": "Phase 1",
-      "is_waiver": false
-    },
-    {
-      "date": "2026-02-02T12:00:00Z",
-      "title": "Notification waiver determination published",
-      "display_title": "Waiver application determination: Approved",
-      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Star%20Hotels%20Group%20-%20Yandina%20Hotel_%20QLD%20%28WA-40002%29%20-%20Notification%20waiver%20determination_0.pdf",
-      "url_gh": "/matters/WA-40002/Star Hotels Group - Yandina Hotel_ QLD (WA-40002) - Notification waiver determination_0.pdf",
-      "status": "live",
-      "merger_id": "WA-40002",
-      "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
-      "phase": "Waiver",
-      "is_waiver": true
     }
   ],
   "page": 1,
   "page_size": 100,
-  "total": 202,
+  "total": 204,
   "total_pages": 3
 }

@@ -1,9 +1,9 @@
 {
-  "total_mergers": 43,
+  "total_mergers": 44,
   "total_waivers": 41,
   "by_status": {
     "Assessment completed": 23,
-    "Under assessment": 20
+    "Under assessment": 21
   },
   "by_determination": {
     "Approved": 23,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-03T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-60004",
       "merger_name": "IOR - Delta Specialised Energy assets",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "accc_determination": "Approved",
       "effective_notification_datetime": "2026-02-24T12:00:00Z",
       "is_waiver": true
-    },
-    {
-      "merger_id": "MN-15005",
-      "merger_name": "Cvent - ON24",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-23T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
