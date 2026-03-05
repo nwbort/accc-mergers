@@ -171,7 +171,7 @@ function Timeline() {
     <>
       <SEO
         title="Timeline"
-        description="Chronological timeline of all Australian merger and acquisition events, determinations, and public consultations monitored by the ACCC."
+        description="Chronological feed of every ACCC merger event — notifications, Phase 2 launches, public consultation windows, and final determinations in date order."
         url="/timeline"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
