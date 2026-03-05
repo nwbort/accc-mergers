@@ -1,6 +1,30 @@
 {
   "events": [
     {
+      "date": "2026-02-03T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Delinea%20%28TPG%29%20-%20StrongDM%20%28WA-25003%29%20-%20Notification%20waiver%20determination%20-%203%20February%202026.pdf",
+      "url_gh": "/matters/WA-25003/Delinea (TPG) - StrongDM (WA-25003) - Notification waiver determination - 3 February 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-25003",
+      "merger_name": "Delinea (TPG) - StrongDM",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-02-02T12:00:00Z",
+      "title": "Questionnaire - Abbott - Exact Sciences",
+      "display_title": "Questionnaire - Abbott - Exact Sciences",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Exact%20Sciences%3A%20Third-party%20questionnaire%20template%20-%20January%202026_3.docx",
+      "url_gh": "/matters/MN-95002/Exact Sciences - Third-party questionnaire template - January 2026_3.pdf",
+      "status": "removed",
+      "merger_id": "MN-95002",
+      "merger_name": "Abbott Laboratories - Exact Sciences",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
       "date": "2026-02-02T12:00:00Z",
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
@@ -1175,34 +1199,10 @@
       "merger_name": "Ampol \u2013 EG Australia",
       "phase": "Phase 1",
       "is_waiver": false
-    },
-    {
-      "date": "2025-09-05T12:00:00Z",
-      "title": "Asahi - Warehouse site on Tilburn Rd, Deer Park, VIC - Phase 1 Determination",
-      "display_title": "Phase 1 - initial assessment determination: Approved",
-      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Asahi%20warehouse%20lease%20-%20Determination%20-%20September%205.pdf",
-      "url_gh": "/matters/MN-01016/Asahi warehouse lease - Determination - September 5.pdf",
-      "status": "live",
-      "merger_id": "MN-01016",
-      "merger_name": "Asahi \u2013 Warehouse site on Tilburn Rd, Deer Park (Vic)",
-      "phase": "Phase 1",
-      "is_waiver": false
-    },
-    {
-      "date": "2025-08-29T12:00:00Z",
-      "title": "Kongsberg Defence - site within Newcastle Airport precinct - Phase 1 Determination",
-      "display_title": "Phase 1 - initial assessment determination: Approved",
-      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Kongsberg%20Defence%20-%20Newcastle%20Airport%20-%20Phase%201%20Determination%20290825.pdf",
-      "url_gh": "/matters/MN-01017/Kongsberg Defence - Newcastle Airport - Phase 1 Determination 290825.pdf",
-      "status": "live",
-      "merger_id": "MN-01017",
-      "merger_name": "Kongsberg Defence \u2013 site within Newcastle Airport precinct",
-      "phase": "Phase 1",
-      "is_waiver": false
     }
   ],
   "page": 2,
   "page_size": 100,
-  "total": 204,
+  "total": 206,
   "total_pages": 3
 }

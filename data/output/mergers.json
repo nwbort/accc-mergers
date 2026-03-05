@@ -2318,6 +2318,109 @@
       "public_benefits_determination_date": null
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/peter-warren-wakeling-automotive",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "status": "Under assessment",
+      "merger_id": "MN-30002",
+      "effective_notification_datetime": "2026-03-05T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-04-21T12:00:00Z",
+      "page_modified_datetime": "2026-03-05T17:51:11+11:00",
+      "acquirers": [
+        {
+          "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "57 615 674 185"
+        }
+      ],
+      "targets": [
+        {
+          "name": "WOLLONGONG CITY MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 002 019 598"
+        },
+        {
+          "name": "Wakeling South Coast Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "636 298 970"
+        },
+        {
+          "name": "HURRIKAYNE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 118 744 915"
+        },
+        {
+          "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
+          "identifier_type": "ACN",
+          "identifier": "119 875 768"
+        },
+        {
+          "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
+          "identifier_type": "ACN",
+          "identifier": "119 879 980"
+        },
+        {
+          "name": "WAKELING HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "41 160 814 040"
+        },
+        {
+          "name": "Paul Wakeling Motor Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "47 119 908 780"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "3921",
+          "name": "Motor Vehicle Parts Retailing"
+        },
+        {
+          "code": "6230",
+          "name": "Non-Depository Financing"
+        },
+        {
+          "code": "6322",
+          "name": "General Insurance"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "merger_description": "Peter Warren Automotive Holdings Ltd (Peter Warren) proposes to acquire:\n\n* 100% of the shares of Paul Wakeling Motor Group Pty Ltd;\n* 100% of the shares of Wollongong City Motors Pty Ltd; and\n* the business and trading net assets of Hurrikayne Pty Ltd, relating to the Moss Vale Motor Group\n\nfrom Wakeling Automotive Group (Wakeling Automotive) (the Acquisition), as part of which Peter Warren will acquire 30 new and used car dealerships in New South Wales.\n\nPeter Warren is an ASX-listed new and used car retailing business that operates over 80 automotive dealership sites at 25 locations across the east coast of Australia. Peter Warren represents 30 Original Equipment Manufacturer (OEM) vehicle brands as an authorised dealer, and also supplies OEM spare parts and aftermarket vehicle servicing.\n\nWakeling Automotive is a new and used car retailing business that operates 30 automotive dealership sites at 8 locations across Sydney, Wollongong and the Southern Highlands. Wakeling Automotive represents 16 OEM vehicle brands as an authorised dealer, and also supplies OEM spare parts and aftermarket vehicle servicing.\n\nBoth of Peter Warren and Wakeling Automotive supply new and used cars, OEM spare parts and aftermarket vehicle servicing in the Campbelltown/Narellan/Smeaton Grange suburbs of southern Sydney.",
+      "events": [
+        {
+          "date": "2026-03-05T12:00:00Z",
+          "title": "Questionnaire - Peter Warren - Wakeling Automotive",
+          "display_title": "Questionnaire - Peter Warren - Wakeling Automotive",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Peter%20Warren%20-%20Wakeling%20Automotive.docx",
+          "url_gh": "/matters/MN-30002/Questionnaire - Peter Warren - Wakeling Automotive.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-03-05T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/microstar-logistics-konvoy",
       "merger_name": "MicroStar Logistics - Konvoy",
       "status": "Under assessment",
@@ -3817,7 +3920,7 @@
       "effective_notification_datetime": "2026-02-25T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-04-13T12:00:00Z",
-      "page_modified_datetime": "2026-02-26T16:29:36+11:00",
+      "page_modified_datetime": "2026-03-05T12:53:13+11:00",
       "consultation_response_due_date": "2026-03-05T12:00:00Z",
       "acquirers": [
         {
@@ -3828,21 +3931,21 @@
       ],
       "targets": [
         {
-          "name": "DCL CORP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 633 008 992"
-        },
-        {
           "name": "IRON HIRE PTY LTD",
           "identifier_type": "ABN",
           "identifier": "43 641 807 589"
+        },
+        {
+          "name": "DCL CORP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 633 008 992"
         }
       ],
       "other_parties": [
         {
-          "name": "North American Construction Group Limited",
-          "identifier_type": null,
-          "identifier": "BN 889309654"
+          "name": "INDIGENOUS PARTNERSHIPS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 616 384 171"
         },
         {
           "name": "MacKellar Mining Pty Ltd",
@@ -3850,14 +3953,14 @@
           "identifier": "81 150 919 761"
         },
         {
-          "name": "DGI TRADING (AUST) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 134 423 966"
-        },
-        {
           "name": "WESTERN PLANT HIRE (WA) PTY LTD",
           "identifier_type": "ABN",
           "identifier": "74 643 771 920"
+        },
+        {
+          "name": "DGI TRADING (AUST) PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "50 134 423 966"
         },
         {
           "name": "NACG MM ACQUISITION PTY LTD",
@@ -3865,19 +3968,19 @@
           "identifier": "89 669 859 376"
         },
         {
-          "name": "IRON MINE CONTRACTING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "26 626 808 759"
-        },
-        {
           "name": "IRON MINE SERVICES PTY LTD",
           "identifier_type": "ABN",
           "identifier": "77 608 402 446"
         },
         {
-          "name": "INDIGENOUS PARTNERSHIPS AUSTRALIA PTY LTD",
+          "name": "IRON MINE CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 616 384 171"
+          "identifier": "26 626 808 759"
+        },
+        {
+          "name": "North American Construction Group Limited",
+          "identifier_type": null,
+          "identifier": "BN 889309654"
         }
       ],
       "anzsic_codes": [
@@ -3917,7 +4020,7 @@
           "display_title": "NACG - IMC and Iron Hire - Questionnaire",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/NACG%20-IMC%20and%20Iron%20Hire%20-%20Questionnaire%20-%20February%202026_1.docx",
           "url_gh": "/matters/MN-85003/NACG -IMC and Iron Hire - Questionnaire - February 2026_1.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         }
       ],

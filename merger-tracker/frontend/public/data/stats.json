@@ -1,9 +1,9 @@
 {
-  "total_mergers": 44,
+  "total_mergers": 45,
   "total_waivers": 41,
   "by_status": {
     "Assessment completed": 23,
-    "Under assessment": 21
+    "Under assessment": 22
   },
   "by_determination": {
     "Approved": 23,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-30002",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-05T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-25T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "WA-05007",
-      "merger_name": "Eiffel and Eurazeo \u2013 Segula",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-02-24T12:00:00Z",
-      "is_waiver": true
     }
   ],
   "recent_determinations": [

@@ -1052,6 +1052,85 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/servicenow-armis"
     },
     {
+      "merger_id": "MN-30002",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-05T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-21T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "57 615 674 185"
+        }
+      ],
+      "targets": [
+        {
+          "name": "WOLLONGONG CITY MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 002 019 598"
+        },
+        {
+          "name": "Wakeling South Coast Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "636 298 970"
+        },
+        {
+          "name": "HURRIKAYNE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 118 744 915"
+        },
+        {
+          "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
+          "identifier_type": "ACN",
+          "identifier": "119 875 768"
+        },
+        {
+          "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
+          "identifier_type": "ACN",
+          "identifier": "119 879 980"
+        },
+        {
+          "name": "WAKELING HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "41 160 814 040"
+        },
+        {
+          "name": "Paul Wakeling Motor Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "47 119 908 780"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "3921",
+          "name": "Motor Vehicle Parts Retailing"
+        },
+        {
+          "code": "6230",
+          "name": "Non-Depository Financing"
+        },
+        {
+          "code": "6322",
+          "name": "General Insurance"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/peter-warren-wakeling-automotive"
+    },
+    {
       "merger_id": "MN-30003",
       "merger_name": "MicroStar Logistics - Konvoy",
       "status": "Under assessment",
@@ -1940,21 +2019,21 @@
       ],
       "targets": [
         {
-          "name": "DCL CORP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 633 008 992"
-        },
-        {
           "name": "IRON HIRE PTY LTD",
           "identifier_type": "ABN",
           "identifier": "43 641 807 589"
+        },
+        {
+          "name": "DCL CORP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 633 008 992"
         }
       ],
       "other_parties": [
         {
-          "name": "North American Construction Group Limited",
-          "identifier_type": null,
-          "identifier": "BN 889309654"
+          "name": "INDIGENOUS PARTNERSHIPS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 616 384 171"
         },
         {
           "name": "MacKellar Mining Pty Ltd",
@@ -1962,14 +2041,14 @@
           "identifier": "81 150 919 761"
         },
         {
-          "name": "DGI TRADING (AUST) PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 134 423 966"
-        },
-        {
           "name": "WESTERN PLANT HIRE (WA) PTY LTD",
           "identifier_type": "ABN",
           "identifier": "74 643 771 920"
+        },
+        {
+          "name": "DGI TRADING (AUST) PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "50 134 423 966"
         },
         {
           "name": "NACG MM ACQUISITION PTY LTD",
@@ -1977,19 +2056,19 @@
           "identifier": "89 669 859 376"
         },
         {
-          "name": "IRON MINE CONTRACTING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "26 626 808 759"
-        },
-        {
           "name": "IRON MINE SERVICES PTY LTD",
           "identifier_type": "ABN",
           "identifier": "77 608 402 446"
         },
         {
-          "name": "INDIGENOUS PARTNERSHIPS AUSTRALIA PTY LTD",
+          "name": "IRON MINE CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 616 384 171"
+          "identifier": "26 626 808 759"
+        },
+        {
+          "name": "North American Construction Group Limited",
+          "identifier_type": null,
+          "identifier": "BN 889309654"
         }
       ],
       "anzsic_codes": [
@@ -2424,77 +2503,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coforge-encora"
-    },
-    {
-      "merger_id": "WA-15004",
-      "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-01-24T12:00:00Z",
-      "determination_publication_date": "2026-02-20T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "QIC TT COMPANY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "27 694 380 973"
-        }
-      ],
-      "targets": [
-        {
-          "name": "SCENTRE GROUP TRUST 3",
-          "identifier_type": "ABN",
-          "identifier": "11 517 229 138"
-        },
-        {
-          "name": "SCENTRE ALLIANCES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "53 098 357 521"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "QIC INVESTMENTS NO.4 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "84 682 889 818"
-        },
-        {
-          "name": "THE TRUSTEE FOR AUSTRALIAN RETIREMENT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "60 905 115 063"
-        },
-        {
-          "name": "SCENTRE GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "66 001 671 496"
-        },
-        {
-          "name": "WESTFIELD GIFT CARDS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "78 113 171 663"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6712",
-          "name": "Non-Residential Property Operators"
-        },
-        {
-          "code": "6940",
-          "name": "Advertising Services"
-        },
-        {
-          "code": "9533",
-          "name": "Parking Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-retirement-trust-%E2%80%93-interests-in-non-rental-income-westfield-sydney"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 85,
+  "total": 86,
   "total_pages": 2
 }
