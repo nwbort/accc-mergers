@@ -402,7 +402,8 @@ function Digest() {
     <div className="min-h-screen bg-gray-50">
       <SEO
         title="Catch me up - ACCC Merger Tracker"
-        description="Weekly digest of ACCC merger activity including new deals, cleared deals, declined deals, and ongoing assessments"
+        description="Weekly roundup of Australian merger activity: new ACCC notifications, Phase 1 clearances, Phase 2 launches, and upcoming consultation deadlines — all in one digest."
+        url="/digest"
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

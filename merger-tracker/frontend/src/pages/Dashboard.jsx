@@ -156,7 +156,7 @@ function Dashboard() {
     <>
       <SEO
         title="Australian Merger Tracker | ACCC Merger Reviews & M&A Data"
-        description="Real-time database of Australian mergers reviewed by the ACCC. Search merger decisions, track review timelines, analyze industry trends, and explore public consultation documents."
+        description="Live stats on every ACCC merger review — recent clearances, upcoming deadlines, phase durations, and determination trends across Australian industries."
         url="/"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

@@ -109,7 +109,7 @@ function Industries() {
     <>
       <SEO
         title="Industries"
-        description="Browse mergers by industry (ANZSIC codes). See which Australian industries have the most merger activity monitored by the ACCC."
+        description="Explore Australian merger activity by industry sector. See which ANZSIC industries attract the most ACCC scrutiny and how deal outcomes compare across sectors."
         url="/industries"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

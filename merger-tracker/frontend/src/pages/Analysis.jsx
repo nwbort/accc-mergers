@@ -303,7 +303,7 @@ function Analysis() {
     <>
       <SEO
         title="Analysis"
-        description="Statistical analysis of Australian merger reviews including phase 1 durations, waiver processing times, and ACCC determination trends."
+        description="Data-driven analysis of ACCC merger reviews: Phase 1 and Phase 2 durations, waiver processing times, clearance rates, and year-on-year determination trends."
         url="/analysis"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

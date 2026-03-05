@@ -41,7 +41,7 @@ function Commentary() {
     <>
       <SEO
         title="Commentary"
-        description="Analysis and commentary on Australian mergers and acquisitions reviewed by the ACCC."
+        description="In-depth analysis of Australian merger cases — examining ACCC decisions, competitive concerns, economic reasoning, and M&A policy implications."
         url="/commentary"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
