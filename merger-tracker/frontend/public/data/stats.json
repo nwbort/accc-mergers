@@ -1,6 +1,6 @@
 {
   "total_mergers": 45,
-  "total_waivers": 41,
+  "total_waivers": 42,
   "by_status": {
     "Assessment completed": 23,
     "Under assessment": 22
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 38,
+    "Approved": 39,
     "Not approved": 3
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-90004",
+      "merger_name": "Crossmuller \u2013 GEM",
+      "determination": "Approved",
+      "determination_date": "2026-03-05T12:00:00Z",
+      "page_modified_datetime": "2026-03-05T18:03:46+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-10001",
       "merger_name": "IBM - Confluent",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-02-26T12:00:00Z",
       "page_modified_datetime": "2026-02-26T18:26:54+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-70004",
-      "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
-      "determination": "Approved",
-      "determination_date": "2026-02-26T12:00:00Z",
-      "page_modified_datetime": "2026-02-26T17:25:08+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

@@ -550,6 +550,14 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-02-16",
+        "business_days": 13,
+        "calendar_days": 17,
+        "merger_name": "Crossmuller \u2013 GEM",
+        "merger_id": "WA-90004",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-02-18",
         "business_days": 4,
         "calendar_days": 6,
@@ -568,10 +576,10 @@
     ],
     "stats": {
       "average": 10.5,
-      "median": 10,
+      "median": 10.0,
       "min": 2,
       "max": 22,
-      "count": 41
+      "count": 42
     }
   },
   "monthly_volume": {
@@ -599,7 +607,7 @@
       0,
       0,
       30,
-      11,
+      12,
       0
     ]
   }
