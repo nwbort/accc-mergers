@@ -952,7 +952,7 @@
       "effective_notification_datetime": "2025-11-27T12:00:00Z",
       "stage": "Phase 2 - detailed assessment",
       "end_of_determination_period": "2026-06-12T12:00:00Z",
-      "page_modified_datetime": "2026-02-19T09:40:33+11:00",
+      "page_modified_datetime": "2026-03-06T16:10:40+11:00",
       "consultation_response_due_date": "2026-02-13T12:00:00Z",
       "acquirers": [
         {
@@ -1006,6 +1006,24 @@
           "display_title": "ACCC decided notification is subject to Phase 2 review",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Kalgoorlie%20-%20Decision%20to%20Proceed%20to%20Phase%202%20review%20-%2029%20January%202026.pdf",
           "url_gh": "/matters/MN-01068/Kalgoorlie - Decision to Proceed to Phase 2 review - 29 January 2026.pdf",
+          "status": "removed",
+          "phase": "Phase 2"
+        },
+        {
+          "date": "2026-03-06T12:00:00Z",
+          "title": "Summary of Notice of Competition Concerns",
+          "display_title": "Summary of Notice of Competition Concerns",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles_Kalgoorlie%20-%20Final%20-%20Summary%20of%20Notice%20of%20Competition%20Concerns%20-%20March%202026.pdf",
+          "url_gh": "/matters/MN-01068/Coles_Kalgoorlie - Final - Summary of Notice of Competition Concerns - March 2026.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-01-29T12:00:00Z",
+          "title": "ACCC decided notification is subject to Phase 2 review",
+          "display_title": "ACCC decided notification is subject to Phase 2 review",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Kalgoorlie%20-%20Decision%20to%20Proceed%20to%20Phase%202%20review%20-%2029%20January%202026_0.pdf",
+          "url_gh": "/matters/MN-01068/Kalgoorlie - Decision to Proceed to Phase 2 review - 29 January 2026_0.pdf",
           "status": "live",
           "phase": "Phase 2"
         }
@@ -1017,8 +1035,7 @@
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
-      "public_benefits_determination_date": null,
-      "competition_concerns_notice_date": "2026-03-06T12:00:00Z"
+      "public_benefits_determination_date": null
     },
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danone-%E2%80%93-further-1-interest-in-danone-saputo-dairy-australia",
