@@ -1,6 +1,6 @@
 {
   "total_mergers": 46,
-  "total_waivers": 47,
+  "total_waivers": 48,
   "by_status": {
     "Assessment completed": 23,
     "Under assessment": 23
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 44,
+    "Approved": 45,
     "Not approved": 3
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-01088",
+      "merger_name": "BSN Sports \u2013 Sports Endeavors",
+      "determination": "Approved",
+      "determination_date": "2026-03-06T12:00:00Z",
+      "page_modified_datetime": "2026-03-06T20:07:56+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-50005",
       "merger_name": "Allied Beef - Lease of Yarranbrook Feedlot",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-06T12:00:00Z",
       "page_modified_datetime": "2026-03-06T18:30:43+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-90004",
-      "merger_name": "Crossmuller \u2013 GEM",
-      "determination": "Approved",
-      "determination_date": "2026-03-05T12:00:00Z",
-      "page_modified_datetime": "2026-03-05T18:03:46+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
