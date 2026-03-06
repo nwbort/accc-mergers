@@ -1378,6 +1378,58 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/impression-dental-group-happy-rock-dental-practice"
     },
     {
+      "merger_id": "WA-70006",
+      "merger_name": "Scopely \u2013 Loom Games",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-18T12:00:00Z",
+      "determination_publication_date": "2026-03-06T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Scopely, Inc.",
+          "identifier_type": null,
+          "identifier": "State of Delaware, Division of Corporations  4932055"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Loom Games Oyun Yaz\u0131l\u0131m ve Pazarlama Anonim \u015eirketi",
+          "identifier_type": null,
+          "identifier": "Istanbul Trade Registry  2483665"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Public Investment Fund",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Savvy Games Group",
+          "identifier_type": null,
+          "identifier": "KSA National Number  7026599618; Commercial Register Number  1010758131"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4242",
+          "name": "Entertainment Media Retailing"
+        },
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/scopely-%E2%80%93-loom-games"
+    },
+    {
       "merger_id": "WA-75006",
       "merger_name": "Playlist \u2013 EGYM",
       "status": "Assessment completed",
@@ -1502,6 +1554,50 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bettergrow-hyg"
+    },
+    {
+      "merger_id": "WA-75010",
+      "merger_name": "Zendesk \u2013 Forethought",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-23T12:00:00Z",
+      "determination_publication_date": "2026-03-06T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Zendesk, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 264411091"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Forethought Technologies, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Hellman & Friedman LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Permira Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/zendesk-%E2%80%93-forethought"
     },
     {
       "merger_id": "WA-80001",
@@ -1864,6 +1960,6 @@
   ],
   "page": 2,
   "page_size": 50,
-  "total": 88,
+  "total": 90,
   "total_pages": 2
 }

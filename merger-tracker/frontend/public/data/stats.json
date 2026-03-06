@@ -1,6 +1,6 @@
 {
   "total_mergers": 46,
-  "total_waivers": 42,
+  "total_waivers": 44,
   "by_status": {
     "Assessment completed": 23,
     "Under assessment": 23
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 39,
+    "Approved": 41,
     "Not approved": 3
   },
   "phase_duration": {
@@ -35,12 +35,12 @@
   },
   "top_industries": [
     {
-      "name": "Computer System Design and Related Services",
-      "count": 15
+      "name": "Software Publishing",
+      "count": 16
     },
     {
-      "name": "Software Publishing",
-      "count": 14
+      "name": "Computer System Design and Related Services",
+      "count": 16
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -119,6 +119,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70006",
+      "merger_name": "Scopely \u2013 Loom Games",
+      "determination": "Approved",
+      "determination_date": "2026-03-06T12:00:00Z",
+      "page_modified_datetime": "2026-03-06T18:39:09+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-75010",
+      "merger_name": "Zendesk \u2013 Forethought",
+      "determination": "Approved",
+      "determination_date": "2026-03-06T12:00:00Z",
+      "page_modified_datetime": "2026-03-06T18:30:43+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-90004",
       "merger_name": "Crossmuller \u2013 GEM",
       "determination": "Approved",
@@ -157,26 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-75008",
-      "merger_name": "Bettergrow - HYG",
-      "determination": "Approved",
-      "determination_date": "2026-02-27T12:00:00Z",
-      "page_modified_datetime": "2026-02-27T17:31:29+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-05007",
-      "merger_name": "Eiffel and Eurazeo \u2013 Segula",
-      "determination": "Approved",
-      "determination_date": "2026-02-26T12:00:00Z",
-      "page_modified_datetime": "2026-02-26T18:26:54+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
