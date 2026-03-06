@@ -1,6 +1,6 @@
 {
   "total_mergers": 46,
-  "total_waivers": 44,
+  "total_waivers": 47,
   "by_status": {
     "Assessment completed": 23,
     "Under assessment": 23
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 41,
+    "Approved": 44,
     "Not approved": 3
   },
   "phase_duration": {
@@ -119,6 +119,36 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-50005",
+      "merger_name": "Allied Beef - Lease of Yarranbrook Feedlot",
+      "determination": "Approved",
+      "determination_date": "2026-03-06T12:00:00Z",
+      "page_modified_datetime": "2026-03-06T19:40:13+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-05008",
+      "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+      "determination": "Approved",
+      "determination_date": "2026-03-06T12:00:00Z",
+      "page_modified_datetime": "2026-03-06T19:17:18+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-70007",
+      "merger_name": "Platinum Equity Group \u2013 Burke",
+      "determination": "Approved",
+      "determination_date": "2026-03-06T12:00:00Z",
+      "page_modified_datetime": "2026-03-06T19:00:57+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-70006",
       "merger_name": "Scopely \u2013 Loom Games",
       "determination": "Approved",
@@ -147,36 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-10001",
-      "merger_name": "IBM - Confluent",
-      "determination": "Approved",
-      "determination_date": "2026-03-03T12:00:00Z",
-      "page_modified_datetime": "2026-03-03T14:40:04+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-80002",
-      "merger_name": "Bain Capital \u2013 MCJ",
-      "determination": "Approved",
-      "determination_date": "2026-03-03T12:00:00Z",
-      "page_modified_datetime": "2026-03-03T14:10:12+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-10006",
-      "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
-      "determination": "Approved",
-      "determination_date": "2026-03-03T12:00:00Z",
-      "page_modified_datetime": "2026-03-03T13:07:04+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

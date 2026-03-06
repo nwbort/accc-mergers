@@ -1,6 +1,60 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-10002",
+      "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-15T12:00:00Z",
+      "determination_publication_date": "2026-02-13T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "SMLLP ASSET PTY LTD (as trustee for the SMLLP Evergreen Trust)",
+          "identifier_type": "ABN",
+          "identifier": "84 693 264 649"
+        },
+        {
+          "name": "SMLLP SUB PTY LTD (as trustee of the SMLLP Development Sub Trust)",
+          "identifier_type": "ABN",
+          "identifier": "92 693 263 875"
+        }
+      ],
+      "targets": [
+        {
+          "name": "STOCKLAND LAND LEASE MANAGEMENT PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "31 639 714 453"
+        },
+        {
+          "name": "Stockland LLC No. 2 Pty Ltd (as trustee for the Stockland LLC St Germain Trust)",
+          "identifier_type": "ACN",
+          "identifier": "651 781 556"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "STOCKLAND CORPORATION LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 000 181 733"
+        },
+        {
+          "name": "Stockland Trust (ARSN 092 897 348)",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3211",
+          "name": "Land Development and Subdivision"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/stockland-llc-%E2%80%93-intragroup-transfer-of-halcyon-jardin-and-evergreen-projects"
+    },
+    {
       "merger_id": "WA-15003",
       "merger_name": "Coforge - Encora",
       "status": "Assessment completed",
@@ -888,6 +942,54 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/francisco-partners-sermo"
     },
     {
+      "merger_id": "WA-50005",
+      "merger_name": "Allied Beef - Lease of Yarranbrook Feedlot",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-13T12:00:00Z",
+      "determination_publication_date": "2026-03-06T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "ALLIED BEEF GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "52 151 578 102"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Yarranbrook Feedlot land",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "YARRANBROOK PROPERTY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "88 693 879 042"
+        },
+        {
+          "name": "Laguna Bay Agricultural Fund 1",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0142",
+          "name": "Beef Cattle Farming (Specialised)"
+        },
+        {
+          "code": "0143",
+          "name": "Beef Cattle Feedlots (Specialised)"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/allied-beef-lease-of-yarranbrook-feedlot"
+    },
+    {
       "merger_id": "WA-55004",
       "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
       "status": "Assessment completed",
@@ -1430,6 +1532,54 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/scopely-%E2%80%93-loom-games"
     },
     {
+      "merger_id": "WA-70007",
+      "merger_name": "Platinum Equity Group \u2013 Burke",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-23T12:00:00Z",
+      "determination_publication_date": "2026-03-06T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Advance Holdings II, LLC",
+          "identifier_type": null,
+          "identifier": "Delaware ID  10496142"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BCI Acquisitions, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware ID  6389940"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Play Holdings Inc",
+          "identifier_type": null,
+          "identifier": "Delaware ID  5740345"
+        },
+        {
+          "name": "Platinum Equity Advisors, LLC",
+          "identifier_type": null,
+          "identifier": "Delaware ID  3623250"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2592",
+          "name": "Toy, Sporting and Recreational Product Manufacturing"
+        },
+        {
+          "code": "2599",
+          "name": "Other Manufacturing n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/platinum-equity-group-%E2%80%93-burke"
+    },
+    {
       "merger_id": "WA-75006",
       "merger_name": "Playlist \u2013 EGYM",
       "status": "Assessment completed",
@@ -1960,6 +2110,6 @@
   ],
   "page": 2,
   "page_size": 50,
-  "total": 90,
+  "total": 93,
   "total_pages": 2
 }

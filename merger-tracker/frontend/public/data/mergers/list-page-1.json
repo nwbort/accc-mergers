@@ -2449,62 +2449,90 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eiffel-and-eurazeo-%E2%80%93-segula"
     },
     {
-      "merger_id": "WA-10002",
-      "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
+      "merger_id": "WA-05008",
+      "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
       "status": "Assessment completed",
       "accc_determination": "Approved",
       "is_waiver": true,
-      "effective_notification_datetime": "2026-01-15T12:00:00Z",
-      "determination_publication_date": "2026-02-13T12:00:00Z",
+      "effective_notification_datetime": "2026-02-17T12:00:00Z",
+      "determination_publication_date": "2026-03-06T12:00:00Z",
       "end_of_determination_period": null,
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "SMLLP ASSET PTY LTD (as trustee for the SMLLP Evergreen Trust)",
-          "identifier_type": "ABN",
-          "identifier": "84 693 264 649"
+          "name": "Rosa Investments Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "UEN 202340014H (Accounting and Corporate Regulatory Authority of Singapore)"
         },
         {
-          "name": "SMLLP SUB PTY LTD (as trustee of the SMLLP Development Sub Trust)",
-          "identifier_type": "ABN",
-          "identifier": "92 693 263 875"
+          "name": "GG12 S.p.A.",
+          "identifier_type": null,
+          "identifier": "14436160965 (Italy)"
         }
       ],
       "targets": [
         {
-          "name": "STOCKLAND LAND LEASE MANAGEMENT PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "31 639 714 453"
+          "name": "Permira VII Investment Platform Limited",
+          "identifier_type": null,
+          "identifier": "12263614 (UK Tax number)"
         },
         {
-          "name": "Stockland LLC No. 2 Pty Ltd (as trustee for the Stockland LLC St Germain Trust)",
-          "identifier_type": "ACN",
-          "identifier": "651 781 556"
+          "name": "Golden Goose Group S.p.A.",
+          "identifier_type": null,
+          "identifier": "11212510967 (Partita IVA \u2013 Italy)"
         }
       ],
       "other_parties": [
         {
-          "name": "STOCKLAND CORPORATION LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 000 181 733"
+          "name": "HongShan Capital Advisors (Hong Kong) Limited",
+          "identifier_type": null,
+          "identifier": "35968906 (Hong Kong)"
         },
         {
-          "name": "Stockland Trust (ARSN 092 897 348)",
+          "name": "GG11 S.p.A.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "14413670960 (Italy)"
+        },
+        {
+          "name": "Temasek Holdings (Private) Limited",
+          "identifier_type": null,
+          "identifier": "UEN 197401143C (Accounting and Corporate Regulatory Authority of Singapore)"
+        },
+        {
+          "name": "Holzweiler Items AS",
+          "identifier_type": null,
+          "identifier": "914193087 (Norway)"
+        },
+        {
+          "name": "Ami Paris SAS",
+          "identifier_type": null,
+          "identifier": "527636609 (France)"
+        },
+        {
+          "name": "True Light Investments P Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "UEN 202105088D (Accounting and Corporate Regulatory Authority of Singapore)"
         }
       ],
       "anzsic_codes": [
         {
-          "code": "3211",
-          "name": "Land Development and Subdivision"
+          "code": "4251",
+          "name": "Clothing Retailing"
+        },
+        {
+          "code": "4252",
+          "name": "Footwear Retailing"
+        },
+        {
+          "code": "4259",
+          "name": "Other Personal Accessory Retailing"
         }
       ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/stockland-llc-%E2%80%93-intragroup-transfer-of-halcyon-jardin-and-evergreen-projects"
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hongshan-capital-group-and-temasek-%E2%80%93-golden-goose-group"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 90,
+  "total": 93,
   "total_pages": 2
 }
