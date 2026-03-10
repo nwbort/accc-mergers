@@ -1,9 +1,9 @@
 {
-  "total_mergers": 46,
+  "total_mergers": 47,
   "total_waivers": 48,
   "by_status": {
     "Assessment completed": 23,
-    "Under assessment": 23
+    "Under assessment": 24
   },
   "by_determination": {
     "Approved": 23,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-55012",
+      "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-10T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-90006",
       "merger_name": "CARe \u2013 MotorOne Autobody",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-02-26T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-01083",
-      "merger_name": "Civilmart \u2013 Taylex",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-25T12:00:00Z",
       "is_waiver": false
     }
   ],
