@@ -1,6 +1,44 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-05007",
+      "merger_name": "Eiffel and Eurazeo \u2013 Segula",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-24T12:00:00Z",
+      "determination_publication_date": "2026-02-26T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Eiffel Investment Group SAS",
+          "identifier_type": null,
+          "identifier": "SIREN 510 813 991"
+        },
+        {
+          "name": "Eurazeo SE",
+          "identifier_type": null,
+          "identifier": "SIREN 692 030 992"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Segula Holding SAS",
+          "identifier_type": null,
+          "identifier": "SIREN 343 166 393"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eiffel-and-eurazeo-%E2%80%93-segula"
+    },
+    {
       "merger_id": "WA-05008",
       "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
       "status": "Assessment completed",
@@ -2192,6 +2230,6 @@
   ],
   "page": 2,
   "page_size": 50,
-  "total": 94,
+  "total": 95,
   "total_pages": 2
 }

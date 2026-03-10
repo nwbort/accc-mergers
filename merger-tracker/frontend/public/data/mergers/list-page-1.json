@@ -1405,6 +1405,100 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hg-capital-onestream"
     },
     {
+      "merger_id": "MN-55012",
+      "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-23T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Argo Bowen 2 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 023 619"
+        }
+      ],
+      "targets": [
+        {
+          "name": "New Lenton Coal Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "48 095 390 079"
+        },
+        {
+          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 149 524 809"
+        },
+        {
+          "name": "BOWEN COKING COAL MARKETING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 642 022 437"
+        },
+        {
+          "name": "BOWEN COKING COAL LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "72 064 874 620"
+        },
+        {
+          "name": "COKING COAL ONE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 615 317 907"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Mercuria Argo Investments Pty Ltd",
+          "identifier_type": null,
+          "identifier": "202505079"
+        },
+        {
+          "name": "Mercuria Dry Bulk Finance Limited",
+          "identifier_type": null,
+          "identifier": "202505067"
+        },
+        {
+          "name": "Argo Holdings QLD Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "690 887 597"
+        },
+        {
+          "name": "Argo Bowen Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 021 124"
+        },
+        {
+          "name": "Argo QLD Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "690 893 371"
+        },
+        {
+          "name": "TALISMAN PARTNERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "31 645 148 796"
+        },
+        {
+          "name": "ECLIPSE MINING 2 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 690 880 892"
+        },
+        {
+          "name": "Mercuria Energy Group Limited",
+          "identifier_type": null,
+          "identifier": "202404088"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0600",
+          "name": "Coal Mining"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/argo-bowen-2-%E2%80%93-bowen-coking-coal-and-certain-subsidiaries"
+    },
+    {
       "merger_id": "MN-60004",
       "merger_name": "IOR - Delta Specialised Energy assets",
       "status": "Under assessment",
@@ -2461,48 +2555,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kkr-led-consortium-%E2%80%93-saviynt"
-    },
-    {
-      "merger_id": "WA-05007",
-      "merger_name": "Eiffel and Eurazeo \u2013 Segula",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-02-24T12:00:00Z",
-      "determination_publication_date": "2026-02-26T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Eiffel Investment Group SAS",
-          "identifier_type": null,
-          "identifier": "SIREN 510 813 991"
-        },
-        {
-          "name": "Eurazeo SE",
-          "identifier_type": null,
-          "identifier": "SIREN 692 030 992"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Segula Holding SAS",
-          "identifier_type": null,
-          "identifier": "SIREN 343 166 393"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "6923",
-          "name": "Engineering Design and Engineering Consulting Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eiffel-and-eurazeo-%E2%80%93-segula"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 94,
+  "total": 95,
   "total_pages": 2
 }
