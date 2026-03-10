@@ -1,6 +1,6 @@
 {
   "total_mergers": 47,
-  "total_waivers": 48,
+  "total_waivers": 50,
   "by_status": {
     "Assessment completed": 24,
     "Under assessment": 23
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 45,
+    "Approved": 47,
     "Not approved": 3
   },
   "phase_duration": {
@@ -101,23 +101,43 @@
       "is_waiver": false
     },
     {
+      "merger_id": "WA-95008",
+      "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2026-03-04T12:00:00Z",
+      "is_waiver": true
+    },
+    {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-03T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-60004",
-      "merger_name": "IOR - Delta Specialised Energy assets",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-02-26T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-85013",
+      "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
+      "determination": "Approved",
+      "determination_date": "2026-03-10T12:00:00Z",
+      "page_modified_datetime": "2026-03-10T19:25:43+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-95008",
+      "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
+      "determination": "Approved",
+      "determination_date": "2026-03-10T12:00:00Z",
+      "page_modified_datetime": "2026-03-10T19:23:17+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
     {
       "merger_id": "MN-75004",
       "merger_name": "Parker-Hannifin \u2013 Filtration Group",
@@ -154,26 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-06T12:00:00Z",
       "page_modified_datetime": "2026-03-06T19:17:18+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-70007",
-      "merger_name": "Platinum Equity Group \u2013 Burke",
-      "determination": "Approved",
-      "determination_date": "2026-03-06T12:00:00Z",
-      "page_modified_datetime": "2026-03-06T19:00:57+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-70006",
-      "merger_name": "Scopely \u2013 Loom Games",
-      "determination": "Approved",
-      "determination_date": "2026-03-06T12:00:00Z",
-      "page_modified_datetime": "2026-03-06T18:39:09+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

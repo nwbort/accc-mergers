@@ -2072,6 +2072,65 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sony-%E2%80%93-peanuts-worldwide"
     },
     {
+      "merger_id": "WA-85013",
+      "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-27T12:00:00Z",
+      "determination_publication_date": "2026-03-10T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TAN DENTAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 146 067 594"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "NDC FINCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 654 149 818"
+        },
+        {
+          "name": "NATIONAL DENTAL CARE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "89 160 442 071"
+        },
+        {
+          "name": "NDC SERVICE CO PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 162 958 072"
+        },
+        {
+          "name": "NDC PROPERTY CO PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "68 163 264 097"
+        },
+        {
+          "name": "NDC HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "13 654 148 188"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8531",
+          "name": "Dental Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/national-dental-care-%E2%80%93-ddta-dental-clinic-in-launceston-tas"
+    },
+    {
       "merger_id": "WA-90002",
       "merger_name": "NEC Corporation \u2013 CSG Systems International",
       "status": "Assessment completed",
@@ -2226,10 +2285,53 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/laundy-group-%E2%80%93-nine-radio"
+    },
+    {
+      "merger_id": "WA-95008",
+      "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-04T12:00:00Z",
+      "determination_publication_date": "2026-03-10T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The trustee for the Burke Family Trust",
+          "identifier_type": "ABN",
+          "identifier": "35 834 715 269"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "VETS CENTRAL HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 652 812 256"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        },
+        {
+          "code": "9539",
+          "name": "Other Personal Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-%E2%80%93-west-toowoomba-veterinary-surgery-in-qld"
     }
   ],
   "page": 2,
   "page_size": 50,
-  "total": 95,
+  "total": 97,
   "total_pages": 2
 }

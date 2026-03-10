@@ -1,6 +1,54 @@
 {
   "events": [
     {
+      "date": "2025-12-12T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-01069",
+      "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
+      "date": "2025-12-05T12:00:00Z",
+      "title": "Molex - Smith Interconnect - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Smiths%20Interconnect%20-%20Determination%20-%204%20December%202025%20-%20FINAL.pdf",
+      "url_gh": "/matters/MN-01061/Smiths Interconnect - Determination - 4 December 2025 - FINAL.pdf",
+      "status": "live",
+      "merger_id": "MN-01061",
+      "merger_name": "Molex \u2013 Smiths Interconnect",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
+      "date": "2025-11-28T12:00:00Z",
+      "title": "Questionnaire \u2013 Coles - supermarket and liquor site in Kalgoorlie, WA",
+      "display_title": "Questionnaire released for Coles acquisition of supermarket and liquor site in Kalgoorlie, WA",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20%E2%80%93%20Coles%20-%20supermarket%20and%20liquor%20site%20in%20Kalgoorlie%2C%20WA%20-%2028.11.2025.docx",
+      "url_gh": "/matters/MN-01068/Questionnaire \u2013 Coles - supermarket and liquor site in Kalgoorlie, WA - 28.11.2025.pdf",
+      "status": "removed",
+      "merger_id": "MN-01068",
+      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
+      "date": "2025-11-27T12:00:00Z",
+      "title": "Questionnaire - Carlyle - BASF Coatings",
+      "display_title": "Questionnaire released for Carlyle acquisition of BASF Coatings",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Carlyle%20-%20BASF%20Coatings%20-%20Third-party%20questionnaire%20-%2027.11.2025_1.docx",
+      "url_gh": "/matters/MN-01064/Carlyle - BASF Coatings - Third-party questionnaire - 27.11.2025_1.pdf",
+      "status": "removed",
+      "merger_id": "MN-01064",
+      "merger_name": "Carlyle - BASF Coatings",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
       "date": "2025-11-27T12:00:00Z",
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
@@ -303,6 +351,6 @@
   ],
   "page": 3,
   "page_size": 100,
-  "total": 225,
+  "total": 229,
   "total_pages": 3
 }
