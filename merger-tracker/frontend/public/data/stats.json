@@ -2,11 +2,11 @@
   "total_mergers": 47,
   "total_waivers": 48,
   "by_status": {
-    "Assessment completed": 23,
-    "Under assessment": 24
+    "Assessment completed": 24,
+    "Under assessment": 23
   },
   "by_determination": {
-    "Approved": 23,
+    "Approved": 24,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 28.782608695652176,
+    "average_days": 28.958333333333332,
     "median_days": 25,
-    "average_business_days": 18.17391304347826,
+    "average_business_days": 18.333333333333332,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 6,
-        "percentage": 26.1
+        "percentage": 25.0
       },
       "day20": {
         "count": 19,
-        "percentage": 82.6
+        "percentage": 79.2
       },
       "day30": {
-        "count": 23,
+        "count": 24,
         "percentage": 100.0
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-75004",
+      "merger_name": "Parker-Hannifin \u2013 Filtration Group",
+      "determination": "Approved",
+      "determination_date": "2026-03-10T12:00:00Z",
+      "page_modified_datetime": "2026-03-10T17:20:58+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-01088",
       "merger_name": "BSN Sports \u2013 Sports Endeavors",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-06T12:00:00Z",
       "page_modified_datetime": "2026-03-06T18:39:09+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-75010",
-      "merger_name": "Zendesk \u2013 Forethought",
-      "determination": "Approved",
-      "determination_date": "2026-03-06T12:00:00Z",
-      "page_modified_datetime": "2026-03-06T18:30:43+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
