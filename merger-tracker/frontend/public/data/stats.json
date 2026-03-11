@@ -1,6 +1,6 @@
 {
   "total_mergers": 47,
-  "total_waivers": 50,
+  "total_waivers": 53,
   "by_status": {
     "Assessment completed": 24,
     "Under assessment": 23
@@ -10,7 +10,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 47,
+    "Approved": 50,
     "Not approved": 3
   },
   "phase_duration": {
@@ -63,15 +63,15 @@
       "count": 4
     },
     {
+      "name": "Engineering Design and Engineering Consulting Services",
+      "count": 4
+    },
+    {
       "name": "Accommodation",
       "count": 3
     },
     {
       "name": "Cafes and Restaurants",
-      "count": 3
-    },
-    {
-      "name": "Data Processing and Web Hosting Services",
       "count": 3
     }
   ],
@@ -119,6 +119,36 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-55009",
+      "merger_name": "Resonetics \u2013 Resolution Medical",
+      "determination": "Approved",
+      "determination_date": "2026-03-11T12:00:00Z",
+      "page_modified_datetime": "2026-03-11T18:58:29+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-75011",
+      "merger_name": "Autosports Group - Solitaire Automotive Group",
+      "determination": "Approved",
+      "determination_date": "2026-03-11T12:00:00Z",
+      "page_modified_datetime": "2026-03-11T18:43:18+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-45003",
+      "merger_name": "Aluminium Specialties Group \u2013 Manufacturing facility site in Orchard Hills, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-03-11T12:00:00Z",
+      "page_modified_datetime": "2026-03-11T18:33:16+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-85013",
       "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
       "determination": "Approved",
@@ -147,36 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-01088",
-      "merger_name": "BSN Sports \u2013 Sports Endeavors",
-      "determination": "Approved",
-      "determination_date": "2026-03-06T12:00:00Z",
-      "page_modified_datetime": "2026-03-06T20:07:56+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-50005",
-      "merger_name": "Allied Beef - Lease of Yarranbrook Feedlot",
-      "determination": "Approved",
-      "determination_date": "2026-03-06T12:00:00Z",
-      "page_modified_datetime": "2026-03-06T19:40:13+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-05008",
-      "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
-      "determination": "Approved",
-      "determination_date": "2026-03-06T12:00:00Z",
-      "page_modified_datetime": "2026-03-06T19:17:18+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

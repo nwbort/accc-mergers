@@ -1019,6 +1019,39 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/paragon-care-%E2%80%93-presidental"
     },
     {
+      "merger_id": "WA-45003",
+      "merger_name": "Aluminium Specialties Group \u2013 Manufacturing facility site in Orchard Hills, NSW",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-26T12:00:00Z",
+      "determination_publication_date": "2026-03-11T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "ALUMINIUM SPECIALTIES GROUP PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "63 001 252 259"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Atilol Holdings Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "163 060 759"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2142",
+          "name": "Aluminium Rolling, Drawing, Extruding"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/aluminium-specialties-group-%E2%80%93-manufacturing-facility-site-in-orchard-hills-nsw"
+    },
+    {
       "merger_id": "WA-50003",
       "merger_name": "Francisco Partners - Sermo",
       "status": "Assessment completed",
@@ -1216,6 +1249,74 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/general-atlantic-and-cpp-investments-led-consortium-boats-group"
+    },
+    {
+      "merger_id": "WA-55009",
+      "merger_name": "Resonetics \u2013 Resolution Medical",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-26T12:00:00Z",
+      "determination_publication_date": "2026-03-11T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Resonetics, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Resolution Medical MidCo, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Arcline Capital Partners II-A LP",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Arcline Resolution Blocker, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Resolution Medical TopCo LP",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "GTCR (Regatta Investors) LP",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "CP Granite Holdings, L.P.",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Regatta Medical Holdings, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2412",
+          "name": "Medical and Surgical Equipment Manufacturing"
+        },
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/resonetics-%E2%80%93-resolution-medical"
     },
     {
       "merger_id": "WA-60006",
@@ -1870,6 +1971,59 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/zendesk-%E2%80%93-forethought"
     },
     {
+      "merger_id": "WA-75011",
+      "merger_name": "Autosports Group - Solitaire Automotive Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-26T12:00:00Z",
+      "determination_publication_date": "2026-03-11T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "AUTOSPORTS GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "54 614 505 261"
+        }
+      ],
+      "targets": [
+        {
+          "name": "David Smoker",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Russleigh Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "052 977 198"
+        },
+        {
+          "name": "Toja Investments Pty Ltd as trustee for the Bill Holst Family Trust",
+          "identifier_type": "ABN",
+          "identifier": "13 097 498 390"
+        },
+        {
+          "name": "CAMBRIDGE MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "52 007 555 295"
+        },
+        {
+          "name": "THE RUSSLEIGH UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "81 107 070 988"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/autosports-group-solitaire-automotive-group"
+    },
+    {
       "merger_id": "WA-80001",
       "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
       "status": "Assessment completed",
@@ -2332,6 +2486,6 @@
   ],
   "page": 2,
   "page_size": 50,
-  "total": 97,
+  "total": 100,
   "total_pages": 2
 }
