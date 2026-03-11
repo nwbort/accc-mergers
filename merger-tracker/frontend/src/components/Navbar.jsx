@@ -7,12 +7,12 @@ import BellIcon from './BellIcon';
 const SCROLL_HIDE_THRESHOLD_PX = 50;
 
 const navLinks = [
-  { path: '/', label: 'Dashboard' },
-  { path: '/mergers', label: 'Mergers' },
-  { path: '/timeline', label: 'Timeline' },
-  { path: '/industries', label: 'Industries' },
-  { path: '/commentary', label: 'Commentary' },
-  { path: '/analysis', label: 'Analysis' },
+  { path: '/', label: 'Dashboard', shortcut: 'd' },
+  { path: '/mergers', label: 'Mergers', shortcut: 'm' },
+  { path: '/timeline', label: 'Timeline', shortcut: 't' },
+  { path: '/industries', label: 'Industries', shortcut: 'i' },
+  { path: '/commentary', label: 'Commentary', shortcut: 'c' },
+  { path: '/analysis', label: 'Analysis', shortcut: 'a' },
   { path: '/digest', label: 'Catch me up' },
 ];
 
@@ -23,11 +23,38 @@ function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [notificationPanelOpen, setNotificationPanelOpen] = useState(false);
+  const [showShortcutHints, setShowShortcutHints] = useState(false);
   const { unseenCount } = useTracking();
 
   const isActive = (path) => {
     return location.pathname === path;
   };
+
+  // Show shortcut hint badges while "g" is held/pending
+  useEffect(() => {
+    let timer = null;
+    const handleKeyDown = (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT' || e.target.isContentEditable) return;
+      if (e.key === 'g' && !e.ctrlKey && !e.metaKey && !e.altKey) {
+        setShowShortcutHints(true);
+        clearTimeout(timer);
+        timer = setTimeout(() => setShowShortcutHints(false), 2000);
+      }
+    };
+    const handleKeyUp = (e) => {
+      // Hide on any key after g (the navigation will have happened)
+      if (showShortcutHints && e.key !== 'g') {
+        setShowShortcutHints(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('keyup', handleKeyUp);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('keyup', handleKeyUp);
+      clearTimeout(timer);
+    };
+  }, [showShortcutHints]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,17 +100,22 @@ function Navbar() {
               </span>
             </Link>
             <div className="hidden sm:ml-10 sm:flex sm:space-x-1">
-              {navLinks.map(({ path, label }) => (
+              {navLinks.map(({ path, label, shortcut }) => (
                 <Link
                   key={path}
                   to={path}
-                  className={`inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
+                  className={`relative inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
                     isActive(path)
                       ? 'bg-primary/10 text-primary'
                       : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80'
                   }`}
                 >
                   {label}
+                  {shortcut && showShortcutHints && (
+                    <span className="absolute -top-1 -right-1 flex items-center justify-center w-4 h-4 rounded bg-primary text-[10px] font-bold text-white shadow-sm animate-fade-in">
+                      {shortcut}
+                    </span>
+                  )}
                 </Link>
               ))}
             </div>

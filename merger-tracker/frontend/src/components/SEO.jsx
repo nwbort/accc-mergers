@@ -23,6 +23,7 @@ export default function SEO({
   const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
   const siteUrl = 'https://mergers.fyi';
   const canonicalUrl = url ? `${siteUrl}${url}` : siteUrl;
+  const ogImage = image || `${siteUrl}/og-image.png`;
 
   return (
     <Helmet>
@@ -39,13 +40,15 @@ export default function SEO({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content={siteTitle} />
-      {image && <meta property="og:image" content={image} />}
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
 
       {/* Twitter Card Tags */}
-      <meta name="twitter:card" content={image ? "summary_large_image" : "summary"} />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      {image && <meta name="twitter:image" content={image} />}
+      <meta name="twitter:image" content={ogImage} />
 
       {/* Structured Data (JSON-LD) */}
       {structuredData && (

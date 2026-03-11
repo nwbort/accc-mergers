@@ -87,3 +87,64 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
+
+/* Print styles */
+@media print {
+  /* Hide navigation, footer, and interactive elements */
+  nav,
+  footer,
+  button,
+  .no-print,
+  [aria-label="Notifications"],
+  [aria-label="Toggle filters"] {
+    display: none !important;
+  }
+
+  /* Reset background and shadows for clean printing */
+  body,
+  .gradient-mesh {
+    background: white !important;
+    background-image: none !important;
+  }
+
+  main {
+    padding-top: 0 !important;
+  }
+
+  /* Remove card shadows for cleaner print */
+  .shadow-card,
+  .shadow-card-hover,
+  .shadow-glass {
+    box-shadow: none !important;
+  }
+
+  /* Ensure cards have visible borders when printed */
+  .border-gray-100 {
+    border-color: #d1d5db !important;
+  }
+
+  /* Prevent page breaks inside cards */
+  .rounded-2xl {
+    break-inside: avoid;
+  }
+
+  /* Ensure text is black for readability */
+  .text-primary,
+  .text-accent {
+    color: #000 !important;
+  }
+
+  /* Print URLs after external links */
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #666;
+    word-break: break-all;
+  }
+
+  /* But not for internal navigation links */
+  nav a::after,
+  a[href^="/"]::after {
+    content: none !important;
+  }
+}
