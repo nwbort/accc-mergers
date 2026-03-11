@@ -67,7 +67,7 @@ export function useKeyboardShortcuts({ onToggleHelp } = {}) {
 
       if (e.key === 'g') {
         pendingG = true;
-        gTimer = setTimeout(() => { pendingG = false; }, 1000);
+        gTimer = setTimeout(() => { pendingG = false; }, 2500);
         return;
       }
 

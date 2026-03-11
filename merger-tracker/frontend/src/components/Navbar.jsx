@@ -38,7 +38,7 @@ function Navbar() {
       if (e.key === 'g' && !e.ctrlKey && !e.metaKey && !e.altKey) {
         setShowShortcutHints(true);
         clearTimeout(timer);
-        timer = setTimeout(() => setShowShortcutHints(false), 1000);
+        timer = setTimeout(() => setShowShortcutHints(false), 2000);
       }
     };
     const handleKeyUp = (e) => {
