@@ -1,5 +1,5 @@
-import { useState, useEffect, useMemo, useRef } from 'react';
-import { Link, useSearchParams } from 'react-router-dom';
+import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
+import { Link, useSearchParams, useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
 import BellIcon from '../components/BellIcon';
@@ -58,10 +58,13 @@ const sortMergers = (list, sortBy = 'notification-desc') => {
 
 function Mergers() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
   const [mergers, setMergers] = useState(() => dataCache.get('mergers-list') || []);
   const [loading, setLoading] = useState(() => !dataCache.has('mergers-list'));
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const listRef = useRef(null);
 
   // searchTerm is kept as local state so the input is responsive and debouncing works.
   // All other filter values are derived directly from the URL (source of truth).
@@ -242,6 +245,44 @@ function Mergers() {
     if (el) observer.observe(el);
     return () => observer.disconnect();
   }, [hasMore]);
+
+  // Reset keyboard selection when the visible list changes
+  useEffect(() => {
+    setSelectedIndex(-1);
+  }, [sortedMergers]);
+
+  // j/k/Enter keyboard navigation for the merger list
+  const handleListKeyDown = useCallback((e) => {
+    const tag = e.target.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || e.target.isContentEditable) return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+    if (e.key === 'j') {
+      e.preventDefault();
+      setSelectedIndex((prev) => {
+        const next = Math.min(prev + 1, visibleMergers.length - 1);
+        const el = listRef.current?.querySelector(`[data-merger-index="${next}"]`);
+        el?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        return next;
+      });
+    } else if (e.key === 'k') {
+      e.preventDefault();
+      setSelectedIndex((prev) => {
+        const next = Math.max(prev - 1, 0);
+        const el = listRef.current?.querySelector(`[data-merger-index="${next}"]`);
+        el?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        return next;
+      });
+    } else if (e.key === 'Enter' && selectedIndex >= 0 && selectedIndex < visibleMergers.length) {
+      e.preventDefault();
+      navigate(`/mergers/${visibleMergers[selectedIndex].merger_id}`);
+    }
+  }, [visibleMergers, selectedIndex, navigate]);
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleListKeyDown);
+    return () => window.removeEventListener('keydown', handleListKeyDown);
+  }, [handleListKeyDown]);
 
   if (loading) return <LoadingSpinner />;
   if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
@@ -453,14 +494,18 @@ function Mergers() {
         </div>
 
         {/* Mergers List */}
-        <div className="space-y-3">
-          {visibleMergers.map((merger) => {
+        <div ref={listRef} className="space-y-3">
+          {visibleMergers.map((merger, idx) => {
             // Compute once per item rather than calling isTracked 4 times in the JSX
             const tracked = isTracked(merger.merger_id);
+            const isSelected = idx === selectedIndex;
             return (
               <div
                 key={merger.merger_id}
-                className="bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200"
+                data-merger-index={idx}
+                className={`bg-white rounded-2xl border shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 ${
+                  isSelected ? 'border-primary/40 ring-2 ring-primary/20' : 'border-gray-100'
+                }`}
               >
                 <div className="p-5">
                   <div className="flex items-start justify-between gap-3">

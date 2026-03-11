@@ -8,6 +8,9 @@ const shortcuts = [
   { keys: ['g', 'i'], description: 'Go to Industries' },
   { keys: ['g', 'c'], description: 'Go to Commentary' },
   { keys: ['g', 'a'], description: 'Go to Analysis' },
+  { keys: ['j'], description: 'Next item (mergers list)' },
+  { keys: ['k'], description: 'Previous item (mergers list)' },
+  { keys: ['Enter'], description: 'Open selected item' },
   { keys: ['?'], description: 'Toggle this help' },
   { keys: ['Esc'], description: 'Close / unfocus' },
 ];
