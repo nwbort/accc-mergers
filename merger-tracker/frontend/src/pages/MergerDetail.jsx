@@ -408,7 +408,7 @@ function MergerDetail() {
               {merger.anzsic_codes.map((code) => (
                 <Link
                   key={`anzsic-${code.code || code.name}`}
-                  to={`/mergers?q=${encodeURIComponent(code.name)}`}
+                  to={code.code ? `/industries/${encodeURIComponent(code.code)}` : `/mergers?q=${encodeURIComponent(code.name)}`}
                   className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm bg-gray-50 text-gray-600 border border-gray-100 hover:bg-primary/5 hover:text-primary hover:border-primary/20 transition-all"
                 >
                   {code.name}
