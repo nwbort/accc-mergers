@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-08T09:26:56.681631+11:00",
+  "generated_at": "2026-03-11T16:06:31.706833+11:00",
   "period_start": "2026-03-02T00:00:00+11:00",
   "period_end": "2026-03-08T23:59:59.999999+11:00",
   "new_deals_notified": [
@@ -914,50 +914,6 @@
   "deals_declined": [],
   "ongoing_phase_1": [
     {
-      "merger_id": "MN-75004",
-      "merger_name": "Parker-Hannifin – Filtration Group",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/parker-hannifin-%E2%80%93-filtration-group",
-      "acquirers": [
-        {
-          "name": "Parker-Hannifin Corporation",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "targets": [
-        {
-          "name": "Filtration Group Corporation",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "effective_notification_datetime": "2026-02-05T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-03-20T12:00:00Z",
-      "accc_determination": null,
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "is_waiver": false,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Parker-Hannifin Corporation (Parker-Hannifin) proposes to acquire 100% of the share capital in Filtration Group Corporation (Filtration Group). Parker-Hannifin is a global engineering company headquartered in Cleveland, Ohio, USA. It designs, manufactures and supplies motion and control technologies and systems to a variety of industries, including aerospace and defence, transportation, energy, and HVAC (heating, ventilation and air conditioning) and refrigeration. Filtration Group is a global filtration and separation technology company headquartered in Illinois, USA. Filtration Group’s core business is the design, manufacture and supply of filtration and separation products for life sciences, indoor air quality and industrial applications. Parker-Hannifin and Filtration Group both supply filtration products for use in industrial applications in Australia.",
-      "events": [
-        {
-          "date": "2026-02-06T12:00:00Z",
-          "title": "Parker-Hannifin - Filtration Group - Questionnaire",
-          "display_title": "Parker-Hannifin - Filtration Group - Questionnaire",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Parker-Hannifin%20-%20Filtration%20Group%20%20-%20%20Questionnaire_0.docx",
-          "url_gh": "/matters/MN-75004/Parker-Hannifin - Filtration Group - Questionnaire_0.pdf",
-          "status": "removed"
-        },
-        {
-          "date": "2026-02-05T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
       "merger_id": "MN-70005",
       "merger_name": "Freudenberg Home and Cleaning Solutions – Nilfisk",
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/freudenberg-home-and-cleaning-solutions-%E2%80%93-nilfisk",
@@ -1762,7 +1718,7 @@
           "display_title": "Questionnaire - IOR - Delta",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Delta%3A%20third-party%20questionnaire%20-%20January%202026.docx",
           "url_gh": "/matters/MN-60004/Delta - third-party questionnaire - January 2026.pdf",
-          "status": "live"
+          "status": "removed"
         },
         {
           "date": "2026-02-26T12:00:00Z",
@@ -1937,6 +1893,70 @@
           "display_title": "Merger notified to ACCC"
         }
       ]
+    },
+    {
+      "merger_id": "MN-55012",
+      "merger_name": "Argo Bowen 2 – Bowen Coking Coal and certain subsidiaries",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/argo-bowen-2-%E2%80%93-bowen-coking-coal-and-certain-subsidiaries",
+      "acquirers": [
+        {
+          "name": "Argo Bowen 2 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 023 619"
+        }
+      ],
+      "targets": [
+        {
+          "name": "New Lenton Coal Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "48 095 390 079"
+        },
+        {
+          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 149 524 809"
+        },
+        {
+          "name": "BOWEN COKING COAL MARKETING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 642 022 437"
+        },
+        {
+          "name": "BOWEN COKING COAL LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "72 064 874 620"
+        },
+        {
+          "name": "COKING COAL ONE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 615 317 907"
+        }
+      ],
+      "effective_notification_datetime": "2026-03-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-23T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Argo Bowen 2 Pty Ltd (**Argo Bowen 2**) proposes to acquire 100% of the shares in Bowen Coking Coal Limited (ASX:BCB) (**BCC**) and certain wholly owned subsidiaries (together, the **Bowen Group**) pursuant to a Deed of Company Arrangement Proposal dated 9 February 2026 (the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-03-10T12:00:00Z",
+          "title": "Questionnaire: Argo Bowen 2 – Bowen Coking Coal and certain subsidiaries",
+          "display_title": "Questionnaire: Argo Bowen 2 – Bowen Coking Coal and certain subsidiaries",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%3A%20Argo%20Bowen%202%20%E2%80%93%20Bowen%20Coking%20Coal%20and%20certain%20subsidiaries%20-%20March%202026.docx",
+          "url_gh": "/matters/MN-55012/Questionnaire - Argo Bowen 2 – Bowen Coking Coal and certain subsidiaries - March 2026.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-03-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
     }
   ],
   "ongoing_phase_2": [
@@ -1960,7 +1980,7 @@
       ],
       "effective_notification_datetime": "2025-10-10T12:00:00Z",
       "determination_publication_date": null,
-      "end_of_determination_period": "2026-06-05T12:00:00Z",
+      "end_of_determination_period": "2026-06-09T12:00:00Z",
       "accc_determination": null,
       "stage": "Phase 2 - detailed assessment",
       "status": "Under assessment",
@@ -1996,14 +2016,6 @@
           "display_title": "ACCC decided to extend the Phase 1 determination period following receipt of extension request from Ampol, to allow Ampol to provide additional information."
         },
         {
-          "date": "2026-01-21T12:00:00Z",
-          "title": "ACCC decided notification is subject to Phase 2 review",
-          "display_title": "ACCC decided notification is subject to Phase 2 review",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ampol%20-%20EG%20Australia%20-%20Phase%202%20Notice%20-%20Redacted.pdf",
-          "url_gh": "/matters/MN-01019/Ampol - EG Australia - Phase 2 Notice - Redacted.pdf",
-          "status": "removed"
-        },
-        {
           "date": "2026-03-02T12:00:00Z",
           "title": "Summary of Notice of Competition Concerns",
           "display_title": "Summary of Notice of Competition Concerns",
@@ -2014,7 +2026,10 @@
         {
           "date": "2026-01-21T12:00:00Z",
           "title": "ACCC decided notification is subject to Phase 2 review",
-          "display_title": "ACCC decided notification is subject to Phase 2 review"
+          "display_title": "ACCC decided notification is subject to Phase 2 review",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ampol%20-%20EG%20Australia%20-%20Phase%202%20Notice%20-%20Redacted_0.pdf",
+          "url_gh": "/matters/MN-01019/Ampol - EG Australia - Phase 2 Notice - Redacted_0.pdf",
+          "status": "live"
         }
       ]
     },
@@ -2059,14 +2074,6 @@
           "date": "2025-11-27T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC"
-        },
-        {
-          "date": "2026-01-29T12:00:00Z",
-          "title": "ACCC decided notification is subject to Phase 2 review",
-          "display_title": "ACCC decided notification is subject to Phase 2 review",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Kalgoorlie%20-%20Decision%20to%20Proceed%20to%20Phase%202%20review%20-%2029%20January%202026.pdf",
-          "url_gh": "/matters/MN-01068/Kalgoorlie - Decision to Proceed to Phase 2 review - 29 January 2026.pdf",
-          "status": "removed"
         },
         {
           "date": "2026-03-06T12:00:00Z",
