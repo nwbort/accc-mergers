@@ -2,11 +2,11 @@
   "total_mergers": 47,
   "total_waivers": 53,
   "by_status": {
-    "Assessment completed": 24,
-    "Under assessment": 23
+    "Assessment completed": 25,
+    "Under assessment": 22
   },
   "by_determination": {
-    "Approved": 24,
+    "Approved": 25,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 28.958333333333332,
+    "average_days": 28.72,
     "median_days": 25,
-    "average_business_days": 18.333333333333332,
+    "average_business_days": 18.24,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 6,
-        "percentage": 25.0
+        "percentage": 24.0
       },
       "day20": {
-        "count": 19,
-        "percentage": 79.2
+        "count": 20,
+        "percentage": 80.0
       },
       "day30": {
-        "count": 24,
+        "count": 25,
         "percentage": 100.0
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-10005",
+      "merger_name": "Apex - Mercer Administration Services and related assets",
+      "determination": "Approved",
+      "determination_date": "2026-03-12T12:00:00Z",
+      "page_modified_datetime": "2026-03-12T11:27:44+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-55009",
       "merger_name": "Resonetics \u2013 Resolution Medical",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-75004",
-      "merger_name": "Parker-Hannifin \u2013 Filtration Group",
-      "determination": "Approved",
-      "determination_date": "2026-03-10T12:00:00Z",
-      "page_modified_datetime": "2026-03-10T17:20:58+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
