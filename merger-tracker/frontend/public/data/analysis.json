@@ -236,6 +236,15 @@
         "in_progress": false
       },
       {
+        "notification_date": "2026-02-13",
+        "business_days": 18,
+        "calendar_days": 27,
+        "merger_name": "ServiceNow - Armis",
+        "merger_id": "MN-25004",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
         "notification_date": "2026-02-17",
         "business_days": 16,
         "calendar_days": 23,
@@ -256,10 +265,10 @@
     ],
     "stats": {
       "average": 18.1,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 28,
-      "count": 26
+      "count": 27
     }
   },
   "waiver_duration": {

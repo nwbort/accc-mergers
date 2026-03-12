@@ -2117,12 +2117,14 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/servicenow-armis",
     "merger_name": "ServiceNow - Armis",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-25004",
     "effective_notification_datetime": "2026-02-13T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-03-30T12:00:00Z",
-    "page_modified_datetime": "2026-02-24T09:37:17+11:00",
+    "determination_publication_date": "2026-03-12T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-03-12T16:37:10+11:00",
     "consultation_response_due_date": "2026-02-23T12:00:00Z",
     "acquirers": [
       {
@@ -2133,14 +2135,14 @@
     ],
     "targets": [
       {
-        "name": "Armis, Inc.",
-        "identifier_type": null,
-        "identifier": "6021196"
-      },
-      {
         "name": "Armis Security, Ltd.",
         "identifier_type": null,
         "identifier": "515335941"
+      },
+      {
+        "name": "Armis, Inc.",
+        "identifier_type": null,
+        "identifier": "6021196"
       }
     ],
     "other_parties": [
@@ -2156,7 +2158,7 @@
         "name": "Software Publishing"
       }
     ],
-    "merger_description": "ServiceNow, Inc. (ServiceNow) proposes to acquire Armis Security, Ltd (Armis).\n\nServiceNow is a US-based software company.\u00a0ServiceNow primarily supplies enterprise software which brings together data, artificial intelligence (AI), company processes, assets and security into a single platform that employees can use for a range of purposes. ServiceNow\u2019s products facilitate organisation workflows by turning fragmented operations into coordinated, autonomous workflows.\u00a0These types of software products are known as \u2018IT operations management\u2019 or ITOM products. ServiceNow also supplies\u00a0Operational Technology (OT)\u00a0operations management (OTOM) products, which improve visibility, health, and serviceability of industrial systems in OT environments, including by enabling incident response and operational resilience. \u2018OT\u2019 describes\u00a0technology that interacts directly with physical equipment like utility grids, industrial machinery or healthcare equipment.\n\nArmis is a US-based software company specialising in cyber exposure management and security. Armis\u2019 products help organisations see, protect and manage all points through which an unauthorised user could access a system and extract data. Armis\u2019 products work across cyber-physical system environments, primarily focused on OT security. Armis provides a range of security products under its Armis Centrix platform, including products for Asset Management and Security, OT/IoT (Internet of Things) Security (SaaS and On-Premise), Secure Remote Access, Medical Device Security and Early Warning.\n\nBoth ServiceNow and Armis supply products that have:\n\n* continuous threat exposure management (CTEM) capabilities for IT environments, and\n* OT security solution capabilities.",
+    "merger_description": "ServiceNow, Inc. (**ServiceNow**) proposes to acquire Armis Security, Ltd (**Armis**).\n\nServiceNow is a US-based software company.\u00a0ServiceNow primarily supplies enterprise software which brings together data, artificial intelligence (**AI**), company processes, assets and security into a single platform that employees can use for a range of purposes. ServiceNow\u2019s products facilitate organisation workflows by turning fragmented operations into coordinated, autonomous workflows.\u00a0These types of software products are known as \u2018IT operations management\u2019 or ITOM products. ServiceNow also supplies\u00a0Operational Technology (**OT**)\u00a0operations management (**OTOM**) products, which improve visibility, health, and serviceability of industrial systems in OT environments, including by enabling incident response and operational resilience. \u2018OT\u2019 describes\u00a0technology that interacts directly with physical equipment like utility grids, industrial machinery or healthcare equipment.\n\nArmis is a US-based software company specialising in cyber exposure management and security. Armis\u2019 products help organisations see, protect and manage all points through which an unauthorised user could access a system and extract data. Armis\u2019 products work across cyber-physical system environments, primarily focused on OT security. Armis provides a range of security products under its Armis Centrix platform, including products for Asset Management and Security, OT/IoT (Internet of Things) Security (SaaS and On-Premise), Secure Remote Access, Medical Device Security and Early Warning.\n\nBoth ServiceNow and Armis supply products that have:\n\n* continuous threat exposure management (**CTEM**) capabilities for IT environments, and\n* OT security solution capabilities.",
     "events": [
       {
         "date": "2026-02-13T12:00:00Z",
@@ -2170,6 +2172,42 @@
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/ServiceNow-Armis%20-%20Questionnaire%20-%2016%20Feb%202026_0.docx",
         "url_gh": "/matters/MN-25004/ServiceNow-Armis - Questionnaire - 16 Feb 2026_0.pdf",
         "status": "removed"
+      },
+      {
+        "date": "2026-03-12T12:00:00Z",
+        "title": "ServiceNow - Armis - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Armis%20-%20Determination_0.pdf",
+        "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "ServiceNow, Inc. (ServiceNow) proposes to acquire 100% of the\nissued shares in Armis Security, Ltd (Armis) (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "The acquirer, ServiceNow, is a US-based software company.\nServiceNow primarily supplies enterprise software which brings\ntogether data, artificial intelligence (AI), company processes, assets\nand security into a single platform that employees can use for a\nrange of purposes. ServiceNow\u2019s products facilitate organisation\nworkflows by turning fragmented operations into coordinated,\nautonomous workflows.\nThe target, Armis, is a US-based software company specialising in\ncyber exposure management and security. Armis\u2019 products help\norganisations see, protect and manage all points through which an\nunauthorised user could access a system and extract data.\nArmis\u2019 products work across so-called \u2018cyber-physical system\u2019\nenvironments, primarily focused on operational technology (OT)\nsecurity. OT describes technology that interacts directly with\nphysical equipment like utility grids, industrial machinery and\nhealthcare equipment. Armis provides a range of security products\nunder its Armis Centrix platform, including products for:\n- asset management and security,\n- OT/IoT (Internet of Things) security (SaaS and on-premise),\n- secure remote access,\n- medical device security, and\n- early warning."
+          },
+          {
+            "item": "Overlap and relationship\nbetween the parties",
+            "details": "The parties each supply enterprise software products in Australia.\nThey overlap in the supply of:\n\u2022 continuous threat exposure management (CTEM) software\nproducts for IT environments, and\n\u2022 OT security software products.\nServiceNow also supplies:\n\u2022 IT operations management (ITOM) software, which is used\nby companies to oversee and manage computing,\nnetworking and application resources. CTEM software\nproducts are often integrated and interoperable with ITOM\nsoftware.\n\u2022 OT operations management (OTOM) software, which\nenhances visibility, health, and serviceability of industrial\nsystems in OT environments, including by enabling rapid\nincident response and operational resilience. OT security\nsoftware products are often integrated and interoperable\nwith OTOM software.\nArmis\u2019 CTEM products can be integrated with ServiceNow\u2019s ITOM\nproducts, as well as the products of other ITOM providers who\ncompete with ServiceNow. ServiceNow\u2019s ITOM products permit\nintegrations with products supplied by many other CTEM providers.\nArmis\u2019 OT security products can be integrated with ServiceNow\u2019s\nOTOM products, as well as those of other OTOM providers who\ncompete with ServiceNow. ServiceNow\u2019s OTOM products permit\nintegrations with products supplied by other OT security providers."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the ACCC undertakes a\ncompetition assessment and considers whether it is appropriate for\nan acquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form as well as further information provided by the\nparties, publicly available information and feedback from market\nparticipants.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market in\nAustralia. In reaching its decision, and based on the material before\nit, the ACCC makes the following findings.\n\u2022 The parties are not close competitors in the supply of CTEM\nsoftware or OT security software.\n\u2022 Post acquisition, the combined entity would continue to face\ncompetition in the supply of both OT security software and\nCTEM software from a number of alternative providers.\n\u2022 ServiceNow would be unlikely to have the ability and\nincentive to foreclose Armis\u2019 competitors through, for\nexample, limiting the interoperability of its ITOM platform\nwith Armis\u2019 competitors\u2019 products. This is principally\nbecause such a foreclosure strategy is likely to damage\nServiceNow\u2019s reputation and customer relationships, and\nnot be profitable. ServiceNow\u2019s key value proposition to its\ncustomers is in providing an agnostic, interoperable\nplatform for an organisation\u2019s workflows which affords\nsignificant choice to its customers. Market feedback\nconfirmed this is valued highly. Information provided by the\nmerger parties, and confirmed by market inquiries, also\nindicate that ServiceNow\u2019s APIs are built on universally\naccessible protocols.\n\u2022 The merged entity would be unlikely to have the ability and\nincentive to foreclose ServiceNow\u2019s competitors that use\nArmis\u2019 products, for example, through restricting the\ninteroperability of Armis\u2019 products with ServiceNow\u2019s rivals.\nThere are a range of CTEM and OT security alternatives to\nArmis\u2019 products in Australia. Customers would be able to\nswitch to such products should ServiceNow attempt to limit\nArmis\u2019 interoperability with ServiceNow\u2019s rivals."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/matters/MN-25004/Armis - Determination_0.pdf",
+        "status": "live",
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false

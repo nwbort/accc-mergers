@@ -2,11 +2,11 @@
   "total_mergers": 48,
   "total_waivers": 53,
   "by_status": {
-    "Assessment completed": 26,
-    "Under assessment": 22
+    "Assessment completed": 27,
+    "Under assessment": 21
   },
   "by_determination": {
-    "Approved": 26,
+    "Approved": 27,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 28.46153846153846,
+    "average_days": 28.40740740740741,
     "median_days": 25,
-    "average_business_days": 18.115384615384617,
+    "average_business_days": 18.11111111111111,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 7,
-        "percentage": 26.9
+        "percentage": 25.9
       },
       "day20": {
-        "count": 21,
-        "percentage": 80.8
+        "count": 22,
+        "percentage": 81.5
       },
       "day30": {
-        "count": 26,
+        "count": 27,
         "percentage": 100.0
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-25004",
+      "merger_name": "ServiceNow - Armis",
+      "determination": "Approved",
+      "determination_date": "2026-03-12T12:00:00Z",
+      "page_modified_datetime": "2026-03-12T16:37:10+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-40005",
       "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-11T12:00:00Z",
       "page_modified_datetime": "2026-03-11T18:33:16+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-85013",
-      "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
-      "determination": "Approved",
-      "determination_date": "2026-03-10T12:00:00Z",
-      "page_modified_datetime": "2026-03-10T19:25:43+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
