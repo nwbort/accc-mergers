@@ -614,8 +614,10 @@ def generate_paginated_timeline(enriched_mergers: list, page_size: int = 100) ->
                 "is_waiver": merger_is_waiver
             })
 
-    # Sort by date descending
-    events.sort(key=lambda x: x.get('date', ''), reverse=True)
+    # Sort by date ascending (oldest first, newest last).
+    # New events always append to the last page, so only the last page file
+    # changes per scrape run rather than cascading through all pages.
+    events.sort(key=lambda x: x.get('date', ''))
 
     total_events = len(events)
     total_pages = (total_events + page_size - 1) // page_size
