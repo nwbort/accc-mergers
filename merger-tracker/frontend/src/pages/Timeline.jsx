@@ -48,24 +48,25 @@ function Timeline() {
 
   const fetchTimeline = async () => {
     try {
-      // First, fetch metadata to know total pages
+      // Fetch metadata to know total pages
       const metaResponse = await fetch(API_ENDPOINTS.timelineMeta);
-
       if (!metaResponse.ok) throw new Error('Failed to fetch timeline metadata');
-
       const meta = await metaResponse.json();
       setTotalPages(meta.total_pages);
 
-      // Fetch first page
-      const response = await fetch(API_ENDPOINTS.timelinePage(1));
+      // Events are stored date-ascending (oldest first), so fetch the last page
+      // to show the most recent events first. Reverse for display.
+      const lastPage = meta.total_pages;
+      const response = await fetch(API_ENDPOINTS.timelinePage(lastPage));
       if (!response.ok) throw new Error('Failed to fetch timeline');
       const data = await response.json();
 
-      dataCache.set('timeline-page-1', data.events);
-      setAllEvents(data.events);
-      setDisplayedEvents(data.events.slice(0, ITEMS_PER_PAGE));
-      setHasMore(data.events.length > ITEMS_PER_PAGE || meta.total_pages > 1);
-      setCurrentPage(1);
+      const events = [...data.events].reverse();
+      dataCache.set(`timeline-page-${lastPage}`, events);
+      setAllEvents(events);
+      setDisplayedEvents(events.slice(0, ITEMS_PER_PAGE));
+      setHasMore(events.length > ITEMS_PER_PAGE || meta.total_pages > 1);
+      setCurrentPage(lastPage);
     } catch (err) {
       setError(err.message);
     } finally {
@@ -85,34 +86,33 @@ function Timeline() {
       if (currentLength < allEvents.length) {
         const nextBatch = allEvents.slice(currentLength, currentLength + LOAD_MORE_COUNT);
         setDisplayedEvents(prev => [...prev, ...nextBatch]);
-        setHasMore(currentLength + nextBatch.length < allEvents.length || (totalPages && currentPage < totalPages));
-      } else if (totalPages && currentPage < totalPages) {
-        // Need to fetch next page
-        const nextPage = currentPage + 1;
-        const cachedPage = dataCache.get(`timeline-page-${nextPage}`);
+        setHasMore(currentLength + nextBatch.length < allEvents.length || (totalPages && currentPage > 1));
+      } else if (totalPages && currentPage > 1) {
+        // Events stored ascending: page before current has older events
+        const prevPage = currentPage - 1;
+        const cachedPage = dataCache.get(`timeline-page-${prevPage}`);
 
         let pageEvents;
         if (cachedPage) {
           pageEvents = cachedPage;
         } else {
-          const response = await fetch(API_ENDPOINTS.timelinePage(nextPage));
+          const response = await fetch(API_ENDPOINTS.timelinePage(prevPage));
           if (!response.ok) {
             setHasMore(false);
             setLoadingMore(false);
             return;
           }
           const data = await response.json();
-          pageEvents = data.events;
-          dataCache.set(`timeline-page-${nextPage}`, pageEvents);
+          // Reverse each page so events append oldest-to-newest as user scrolls down
+          pageEvents = [...data.events].reverse();
+          dataCache.set(`timeline-page-${prevPage}`, pageEvents);
         }
 
-        // Append new page events to allEvents
         setAllEvents(prev => [...prev, ...pageEvents]);
-        // Display the first batch from the new page
         const nextBatch = pageEvents.slice(0, LOAD_MORE_COUNT);
         setDisplayedEvents(prev => [...prev, ...nextBatch]);
-        setCurrentPage(nextPage);
-        setHasMore(nextBatch.length < pageEvents.length || nextPage < totalPages);
+        setCurrentPage(prevPage);
+        setHasMore(nextBatch.length < pageEvents.length || prevPage > 1);
       } else {
         setHasMore(false);
       }
