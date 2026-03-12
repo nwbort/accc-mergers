@@ -2,6 +2,30 @@
   "events": [
     {
       "date": "2026-02-26T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-60004",
+      "merger_name": "IOR - Delta Specialised Energy assets",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
+      "date": "2026-02-26T12:00:00Z",
+      "title": "NACG - IMC and Iron Hire - Questionnaire",
+      "display_title": "NACG - IMC and Iron Hire - Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/NACG%20-IMC%20and%20Iron%20Hire%20-%20Questionnaire%20-%20February%202026_1.docx",
+      "url_gh": "/matters/MN-85003/NACG -IMC and Iron Hire - Questionnaire - February 2026_1.pdf",
+      "status": "removed",
+      "merger_id": "MN-85003",
+      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
+      "date": "2026-02-26T12:00:00Z",
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Eiffel%20and%20Eurazeo%20-%20Segula%20%28WA-05007%29%20-%20Notification%20waiver%20determination%20-%2026%20February%202026.pdf",
@@ -162,7 +186,7 @@
       "display_title": "Questionnaire - IAG - RACI",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20IAG%20-%20RACI.docx",
       "url_gh": "/matters/MN-65005/Questionnaire - IAG - RACI.pdf",
-      "status": "live",
+      "status": "removed",
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "phase": null,
@@ -479,10 +503,46 @@
       "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
       "phase": "Phase 1",
       "is_waiver": false
+    },
+    {
+      "date": "2026-03-12T12:00:00Z",
+      "title": "Freudenberg - Nilfisk - Phase 1 Determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Freudenberg_Nilfisk%20-%20Phase%201%20Determination.pdf",
+      "url_gh": "/matters/MN-70005/Freudenberg_Nilfisk - Phase 1 Determination.pdf",
+      "status": "live",
+      "merger_id": "MN-70005",
+      "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
+      "date": "2026-03-12T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Not approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Eli%20Lilly%20-%20Orna%20Therapeutics%20%28WA-01087%29%20-%20Notification%20waiver%20determination%20-%2012%20March%202026.pdf",
+      "url_gh": "/matters/WA-01087/Eli Lilly - Orna Therapeutics (WA-01087) - Notification waiver determination - 12 March 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-01087",
+      "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-03-12T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Russell%20Investment%20Group%20-%20Zurich%20Investment%20Management%20%28WA-80006%29%20-%20Notification%20waiver%20determination%20-%2012%20March%202026.pdf",
+      "url_gh": "/matters/WA-80006/Russell Investment Group - Zurich Investment Management (WA-80006) - Notification waiver determination - 12 March 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-80006",
+      "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
+      "phase": "Waiver",
+      "is_waiver": true
     }
   ],
   "page": 3,
   "page_size": 100,
-  "total": 240,
+  "total": 245,
   "total_pages": 3
 }

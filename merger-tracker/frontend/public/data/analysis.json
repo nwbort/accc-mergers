@@ -236,6 +236,15 @@
         "in_progress": false
       },
       {
+        "notification_date": "2026-02-09",
+        "business_days": 22,
+        "calendar_days": 31,
+        "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
+        "merger_id": "MN-70005",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
         "notification_date": "2026-02-13",
         "business_days": 18,
         "calendar_days": 27,
@@ -264,11 +273,11 @@
       }
     ],
     "stats": {
-      "average": 18.1,
-      "median": 17,
+      "average": 18.2,
+      "median": 17.0,
       "min": 15,
       "max": 28,
-      "count": 27
+      "count": 28
     }
   },
   "waiver_duration": {
@@ -626,6 +635,14 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-02-19",
+        "business_days": 14,
+        "calendar_days": 21,
+        "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
+        "merger_id": "WA-80006",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-02-23",
         "business_days": 9,
         "calendar_days": 11,
@@ -640,6 +657,14 @@
         "merger_name": "Zendesk \u2013 Forethought",
         "merger_id": "WA-75010",
         "determination": "Approved"
+      },
+      {
+        "application_date": "2026-02-24",
+        "business_days": 11,
+        "calendar_days": 16,
+        "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
+        "merger_id": "WA-01087",
+        "determination": "Not approved"
       },
       {
         "application_date": "2026-02-24",
@@ -699,11 +724,11 @@
       }
     ],
     "stats": {
-      "average": 10.2,
+      "average": 10.3,
       "median": 10,
       "min": 2,
       "max": 22,
-      "count": 53
+      "count": 55
     }
   },
   "monthly_volume": {
@@ -731,7 +756,7 @@
       0,
       0,
       30,
-      22,
+      24,
       1
     ]
   }

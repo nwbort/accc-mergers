@@ -1,34 +1,34 @@
 {
   "total_mergers": 48,
-  "total_waivers": 53,
+  "total_waivers": 55,
   "by_status": {
-    "Assessment completed": 27,
-    "Under assessment": 21
+    "Assessment completed": 28,
+    "Under assessment": 20
   },
   "by_determination": {
-    "Approved": 27,
+    "Approved": 28,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 50,
-    "Not approved": 3
+    "Approved": 51,
+    "Not approved": 4
   },
   "phase_duration": {
-    "average_days": 28.40740740740741,
+    "average_days": 28.5,
     "median_days": 25,
-    "average_business_days": 18.11111111111111,
+    "average_business_days": 18.25,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 7,
-        "percentage": 25.9
+        "percentage": 25.0
       },
       "day20": {
         "count": 22,
-        "percentage": 81.5
+        "percentage": 78.6
       },
       "day30": {
-        "count": 27,
+        "count": 28,
         "percentage": 100.0
       }
     }
@@ -48,7 +48,7 @@
     },
     {
       "name": "Financial Asset Investing",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Non-Residential Property Operators",
@@ -67,11 +67,11 @@
       "count": 4
     },
     {
-      "name": "Accommodation",
+      "name": "Scientific Research Services",
       "count": 3
     },
     {
-      "name": "Cafes and Restaurants",
+      "name": "Accommodation",
       "count": 3
     }
   ],
@@ -119,6 +119,36 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80006",
+      "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
+      "determination": "Approved",
+      "determination_date": "2026-03-12T12:00:00Z",
+      "page_modified_datetime": "2026-03-12T18:36:38+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-01087",
+      "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
+      "determination": "Not approved",
+      "determination_date": "2026-03-12T12:00:00Z",
+      "page_modified_datetime": "2026-03-12T18:31:06+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "MN-70005",
+      "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
+      "determination": "Approved",
+      "determination_date": "2026-03-12T12:00:00Z",
+      "page_modified_datetime": "2026-03-12T18:05:50+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-25004",
       "merger_name": "ServiceNow - Armis",
       "determination": "Approved",
@@ -147,36 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-55009",
-      "merger_name": "Resonetics \u2013 Resolution Medical",
-      "determination": "Approved",
-      "determination_date": "2026-03-11T12:00:00Z",
-      "page_modified_datetime": "2026-03-11T18:58:29+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-75011",
-      "merger_name": "Autosports Group - Solitaire Automotive Group",
-      "determination": "Approved",
-      "determination_date": "2026-03-11T12:00:00Z",
-      "page_modified_datetime": "2026-03-11T18:43:18+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-45003",
-      "merger_name": "Aluminium Specialties Group \u2013 Manufacturing facility site in Orchard Hills, NSW",
-      "determination": "Approved",
-      "determination_date": "2026-03-11T12:00:00Z",
-      "page_modified_datetime": "2026-03-11T18:33:16+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

@@ -1731,11 +1731,11 @@
     {
       "merger_id": "MN-70005",
       "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-02-09T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-03-12T12:00:00Z",
       "end_of_determination_period": "2026-03-24T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1754,6 +1754,11 @@
       ],
       "other_parties": [
         {
+          "name": "FREUDENBERG HOME AND CLEANING SOLUTIONS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 082 274 324"
+        },
+        {
           "name": "NILFISK PTY LTD",
           "identifier_type": "ABN",
           "identifier": "98 003 762 623"
@@ -1762,11 +1767,6 @@
           "name": "Nilfisk A/S",
           "identifier_type": null,
           "identifier": "CVR 62572213"
-        },
-        {
-          "name": "FREUDENBERG HOME AND CLEANING SOLUTIONS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 082 274 324"
         }
       ],
       "anzsic_codes": [
@@ -2501,60 +2501,56 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/accenture-%E2%80%93-faculty-science"
     },
     {
-      "merger_id": "WA-01088",
-      "merger_name": "BSN Sports \u2013 Sports Endeavors",
+      "merger_id": "WA-01087",
+      "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
       "status": "Assessment completed",
-      "accc_determination": "Approved",
+      "accc_determination": "Not approved",
       "is_waiver": true,
-      "effective_notification_datetime": "2026-02-25T12:00:00Z",
-      "determination_publication_date": "2026-03-06T12:00:00Z",
+      "effective_notification_datetime": "2026-02-24T12:00:00Z",
+      "determination_publication_date": "2026-03-12T12:00:00Z",
       "end_of_determination_period": null,
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "BSN Sports, LLC",
+          "name": "Eli Lilly and Company",
           "identifier_type": null,
-          "identifier": "Company No.: 2980248  Delaware"
+          "identifier": "IRS Employer Identification Number  350470950"
         }
       ],
       "targets": [
         {
-          "name": "SW Soccer Corp Holdings LLC",
+          "name": "Orna Therapeutics Holdings, LLC",
           "identifier_type": null,
-          "identifier": "Company No.: 6920423  Delaware"
+          "identifier": "IRS Employer Identification Number  861182936"
         }
       ],
       "other_parties": [
         {
-          "name": "SW Soccer HoldCo LLC",
+          "name": "Shareholder Representative Services, LLC",
           "identifier_type": null,
-          "identifier": "Company No.: 6906027  Delaware"
+          "identifier": ""
         },
         {
-          "name": "Varsity Brands, Inc.",
+          "name": "BLJX Acquisition, LLC",
           "identifier_type": null,
-          "identifier": "Company No.: 2426622  Delaware"
+          "identifier": ""
         }
       ],
       "anzsic_codes": [
         {
-          "code": "4241",
-          "name": "Sport and Camping Equipment Retailing"
+          "code": "1841",
+          "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
         },
         {
-          "code": "4251",
-          "name": "Clothing Retailing"
-        },
-        {
-          "code": "4252",
-          "name": "Footwear Retailing"
+          "code": "6910",
+          "name": "Scientific Research Services"
         }
       ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bsn-sports-%E2%80%93-sports-endeavors"
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eli-lilly-%E2%80%93-orna-therapeutics"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 101,
+  "total": 103,
   "total_pages": 3
 }

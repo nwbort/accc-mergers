@@ -2979,7 +2979,7 @@
     "effective_notification_datetime": "2026-03-03T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-04-17T12:00:00Z",
-    "page_modified_datetime": "2026-03-04T17:09:51+11:00",
+    "page_modified_datetime": "2026-03-12T18:08:37+11:00",
     "consultation_response_due_date": "2026-03-12T12:00:00Z",
     "acquirers": [
       {
@@ -3026,7 +3026,7 @@
         "display_title": "Questionnaire - IAG - RACI",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20IAG%20-%20RACI.docx",
         "url_gh": "/matters/MN-65005/Questionnaire - IAG - RACI.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-03-03T12:00:00Z",
@@ -3092,12 +3092,14 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/freudenberg-home-and-cleaning-solutions-%E2%80%93-nilfisk",
     "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-70005",
     "effective_notification_datetime": "2026-02-09T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-03-24T12:00:00Z",
-    "page_modified_datetime": "2026-02-17T08:55:27+11:00",
+    "determination_publication_date": "2026-03-12T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-03-12T18:05:50+11:00",
     "consultation_response_due_date": "2026-02-16T12:00:00Z",
     "acquirers": [
       {
@@ -3115,6 +3117,11 @@
     ],
     "other_parties": [
       {
+        "name": "FREUDENBERG HOME AND CLEANING SOLUTIONS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "99 082 274 324"
+      },
+      {
         "name": "NILFISK PTY LTD",
         "identifier_type": "ABN",
         "identifier": "98 003 762 623"
@@ -3123,11 +3130,6 @@
         "name": "Nilfisk A/S",
         "identifier_type": null,
         "identifier": "CVR 62572213"
-      },
-      {
-        "name": "FREUDENBERG HOME AND CLEANING SOLUTIONS PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "99 082 274 324"
       }
     ],
     "anzsic_codes": [
@@ -3154,6 +3156,42 @@
         "date": "2026-02-09T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-03-12T12:00:00Z",
+        "title": "Freudenberg - Nilfisk - Phase 1 Determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Freudenberg_Nilfisk%20-%20Phase%201%20Determination.pdf",
+        "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "Freudenberg Home and Cleaning Solutions GmbH\u2019s (Freudenberg)\nproposes to acquire 100% of share capital in Nilfisk Holding A/S\n(Nilfisk) (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "The acquirer, Freudenberg, supplies manual cleaning tools and other\ncleaning products in Australia. Freudenberg\u2019s brands include Vileda\nand Oates. Its products include mops and floorcare, brooms,\nbrushware, cloths and wipes, dusters, cleaning carts and trolleys,\nwaste management, window cleaning equipment, spray bottles,\ndurable gloves, and various cleaning chemicals. It supplies these\nproducts primarily for retailer customer use.\nFreudenberg is a wholly-owned subsidiary of Freudenberg & Co. KG,\nwhich is headquartered in Germany. Freudenberg manufactures its\nmanual cleaning products overseas and imports them into Australia\nthrough third party distributors and large retailers which on-sell to\nend customers.\nThe target, Nilfisk, supplies professional cleaning machines for\ncommercial use in Australia including floorcare machines, vacuum\ncleaners, pressure washers and related accessories and\nconsumables. It also provides machine repair and maintenance\nservices.\nNilfisk is the holding company of the Nilfisk group of companies (the\nNilfisk Group). The Nilfisk Group is a global original equipment\nmanufacturer for these cleaning machines. Nilfisk manufactures its\nprofessional cleaning machines overseas and imports them into\nAustralia through third party distributors which then on-sell to end\ncustomers."
+          },
+          {
+            "item": "Overlap between the\nparties",
+            "details": "While the Parties both supply cleaning products, there is minimal\noverlap between the Parties. Freudenberg supplies manual cleaning\nproducts, primarily for retailer customer use, and some professional\nuse. Nilfisk supplies cleaning machines, primarily for professional\nuse."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third partes, and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The Parties are not close competitors, and its products are not\nreadily substitutable for each other. Freudenberg supplies\nmanual cleaning products (such as mops, brooms, cloths and\nwipes) for both consumer and professional use, whilst Nilfisk\nsupplies professional cleaning machines (such as pressure\nwashers, and commercial and industrial vacuum cleaners, for\nprofessional cleaning customers) largely for commercial use.\n\u2022 Post acquisition, the Parties would continue to face competition\nfrom alternative suppliers of manual cleaning products and\nprofessional cleaning machines in Australia, including several\ncompetitors which are of a similar size, or larger than the\nParties.\n\u2022 While some market participants suggested that the acquisition\ncould enable the Parties to tie or bundle manual cleaning\nproducts and professional cleaning machines, or foreclose\naccess to inputs used in the manufacture of cleaning machines,\nthe ACCC considers that the merged entity would be unlikely to\nhave the ability and incentive to do so due to the presence of\ncompetitors in both the manual cleaning product and\nprofessional cleaning machine markets in Australia."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/matters/MN-70005/Freudenberg_Nilfisk - Phase 1 Determination.pdf",
+        "status": "live",
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false
@@ -4355,6 +4393,94 @@
       },
       {
         "date": "2026-01-08T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eli-lilly-%E2%80%93-orna-therapeutics",
+    "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
+    "status": "Assessment completed",
+    "merger_id": "WA-01087",
+    "effective_notification_datetime": "2026-02-24T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-03-12T12:00:00Z",
+    "accc_determination": "Not approved",
+    "page_modified_datetime": "2026-03-12T18:31:06+11:00",
+    "acquirers": [
+      {
+        "name": "Eli Lilly and Company",
+        "identifier_type": null,
+        "identifier": "IRS Employer Identification Number  350470950"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Orna Therapeutics Holdings, LLC",
+        "identifier_type": null,
+        "identifier": "IRS Employer Identification Number  861182936"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Shareholder Representative Services, LLC",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "BLJX Acquisition, LLC",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "1841",
+        "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
+      },
+      {
+        "code": "6910",
+        "name": "Scientific Research Services"
+      }
+    ],
+    "merger_description": "Eli Lilly and Company (**Eli Lilly**) proposes to acquire 100% of the issued shares in Orna Therapeutics Holdings, LLC (**Orna Therapeutics**) pursuant to an Agreement and Plan of Merger.\n\nEli Lilly is a US-based pharmaceutical company, which discovers, develops, manufactures and markets human pharmaceutical products for various therapeutic areas, including diabetes, oncology, immunology and neuroscience. Eli Lilly is headquartered in Indianapolis, US and is publicly listed on the New York Stock Exchange.\n\nOrna Therapeutics is a US-based pre-clinical biotechnology company developing a new class of engineered circular RNA (**oRNA**) therapeutics and immune tropic lipid nanoparticles (**LNP**) delivery technologies for the treatment of autoimmune disorders, and cancer conditions. Orna Therapeutics has a pipeline of pre-clinical in vivo\u00a0Chimeric Antigen Receptor T-cell (**CAR-T**) therapies designed to treat B cell-driven autoimmune diseases.",
+    "events": [
+      {
+        "date": "2026-03-12T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Not approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Eli%20Lilly%20-%20Orna%20Therapeutics%20%28WA-01087%29%20-%20Notification%20waiver%20determination%20-%2012%20March%202026.pdf",
+        "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Eli Lilly and Company (Eli Lilly) applied for a notification waiver in\nrespect of its proposed acquisition of 100% of the issued shares in\nOrna Therapeutics Holdings, LLC (Orna Therapeutics), via Eli Lilly\u2019s\nsubsidiary BLJX Acquisition, LLC, as described in the transaction\ndocuments provided as part of the application (the Acquisition).\nAfter the Acquisition, Orna Therapeutics would be a wholly owned\nsubsidiary of Eli Lilly."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(b) of the Competition and\nConsumer Act 2010 (Cth) not to make the notification waiver\ndetermination applied for."
+          },
+          {
+            "item": "Date of determination",
+            "details": "12 March 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, Eli Lilly, is a US-based pharmaceutical company, which\ndiscovers, develops, manufactures and markets human\npharmaceutical products for various therapeutic areas, including\ndiabetes, oncology, immunology and neuroscience. Eli Lilly is\nheadquartered in Indianapolis, US and is publicly listed on the New\nYork Stock Exchange.\nThe target, Orna Therapeutics, is a US-based pre-clinical\nbiotechnology company developing a new class of engineered\ncircular RNA (oRNA) therapeutics and immune tropic lipid\nnanoparticles (LNP) delivery technologies for the treatment of\nautoimmune disorders, and cancer conditions. Orna Therapeutics\nhas a pipeline of pre-clinical in vivo Chimeric Antigen Receptor T-cell\n(CAR-T) therapies designed to treat B cell-driven autoimmune\ndiseases."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information and had regard to the factors in\nsection 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information provided in the application, including the\nparties\u2019 revenue in Australia and the transaction value, the ACCC\nconsiders that, if the Acquisition were put into effect, the notification\nthresholds would be met.\nFurther, based on the information currently before it, the ACCC\nconsiders that the Acquisition may raise competition issues. It\nconsiders that the Acquisition warrants consideration through the\nnotification process, including via further information gathering and\nconsultation with third parties. This may include a focus on:\na. the extent to which the Acquisition would remove potential\ncompetition from Orna Therapeutics or Eli Lilly\nb. the extent to which the parties are likely to face competition\nfrom alternative suppliers of circular RNA therapeutics, LNP\ndelivery technologies and CAR-T therapies to treat\nautoimmune diseases, cancer and other diseases\nc. the nature and extent of any vertical or conglomerate\nrelationship between the parties and their ability and/or\nincentive to engage in exclusionary conduct, bundling or\ntying of products post-Acquisition.\nGiven the above, the ACCC has determined not to make the\nnotification waiver determination applied for.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/matters/WA-01087/Eli Lilly - Orna Therapeutics (WA-01087) - Notification waiver determination - 12 March 2026.pdf",
+        "status": "live",
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-02-24T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }
@@ -8284,6 +8410,89 @@
       },
       {
         "date": "2026-01-19T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/russell-investment-group-%E2%80%93-zurich-investment-management",
+    "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
+    "status": "Assessment completed",
+    "merger_id": "WA-80006",
+    "effective_notification_datetime": "2026-02-19T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-03-12T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-03-12T18:36:38+11:00",
+    "acquirers": [
+      {
+        "name": "RUSSELL INVESTMENT GROUP PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "92 003 066 859"
+      }
+    ],
+    "targets": [
+      {
+        "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "56 063 278 400"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Zurich Insurance Group Ltd",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "6240",
+        "name": "Financial Asset Investing"
+      },
+      {
+        "code": "6962",
+        "name": "Management Advice and Related Consulting Services"
+      }
+    ],
+    "merger_description": "Russell Investment Group Pty Ltd (**Russell**) proposes to acquire 100 per cent of the issued and outstanding shares of Zurich Investment Management Limited (**Zurich**) through a share sale agreement (the\u00a0**Acquisition**).\n\nRussell provides investment and asset management services in Australia.\n\nZurich is an Australian incorporated member of the global Zurich Insurance Group. The ultimate holding company is Zurich Insurance Group Ltd (incorporated in Switzerland). Zurich provides managed fund solutions to Australian investors. The Acquisition only relates to Zurich, rather than the broader Zurich Insurance Group.\n\nBoth Russell and Zurich supply investment and asset management services in Australia, including issuing interests in Australian and global equities funds, property securities funds, fixed interest funds, diversified or multi-asset funds and cash funds to Australian investors.",
+    "events": [
+      {
+        "date": "2026-03-12T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Russell%20Investment%20Group%20-%20Zurich%20Investment%20Management%20%28WA-80006%29%20-%20Notification%20waiver%20determination%20-%2012%20March%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Russell Investment Group Pty Ltd (Russell) applied for a notification\nwaiver in respect of its proposed acquisition of 100% of the issued\nand outstanding shares of Zurich Investment Management Limited\n(Zurich), as described in the transaction documents provided as part\nof the application (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "12 March 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, Russell, provides investment and asset management\nservices in Australia.\nThe target, Zurich, is an Australian incorporated member of the\nglobal Zurich Insurance Group. The ultimate holding company is\nZurich Insurance Group Ltd (incorporated in Switzerland). Zurich\nprovides managed fund solutions to Australian investors. The\nAcquisition only relates to Zurich, rather than the broader Zurich\nInsurance Group.\nBoth Russell and Zurich\u2019s supply investment and asset management\nservices in Australia, including issuing interests in Australian and\nglobal equities funds, property securities funds, fixed interest funds,\ndiversified or multi-asset funds and cash funds to Australian\ninvestors."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is a small horizontal overlap between Russell and\nZurich in the supply of investment and asset management\nservices\nb. the parties\u2019 combined share in the supply of investment and\nasset management services is low\nc. there are alternative suppliers of investment and asset\nmanagement services in Australia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/matters/WA-80006/Russell Investment Group - Zurich Investment Management (WA-80006) - Notification waiver determination - 12 March 2026.pdf",
+        "status": "live",
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-02-19T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }
