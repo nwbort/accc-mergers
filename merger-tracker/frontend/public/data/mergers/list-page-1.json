@@ -1220,11 +1220,11 @@
     {
       "merger_id": "MN-40005",
       "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-02-18T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-03-12T12:00:00Z",
       "end_of_determination_period": "2026-04-02T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1243,14 +1243,19 @@
       ],
       "other_parties": [
         {
+          "name": "ATP Adhesives Holdings LP",
+          "identifier_type": null,
+          "identifier": "Delaware registration number: 6443870"
+        },
+        {
+          "name": "ATP Adhesive Systems Group GmbH",
+          "identifier_type": null,
+          "identifier": "Swiss registration number: CHE219.637.488"
+        },
+        {
           "name": "Henkel Finance Australia L.P.",
           "identifier_type": "ABN",
           "identifier": "15 740 196 765"
-        },
-        {
-          "name": "Henkel AG & Co. KGaA",
-          "identifier_type": null,
-          "identifier": "HRB  4724"
         },
         {
           "name": "Henkel Australia Pty Ltd",
@@ -1263,14 +1268,9 @@
           "identifier": "HRB  35906"
         },
         {
-          "name": "ATP Adhesive Systems Group GmbH",
+          "name": "Henkel AG & Co. KGaA",
           "identifier_type": null,
-          "identifier": "Swiss registration number: CHE219.637.488"
-        },
-        {
-          "name": "ATP Adhesives Holdings LP",
-          "identifier_type": null,
-          "identifier": "Delaware registration number: 6443870"
+          "identifier": "HRB  4724"
         },
         {
           "name": "Daniel Oscar Werner Heini",

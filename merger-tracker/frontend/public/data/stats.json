@@ -2,11 +2,11 @@
   "total_mergers": 48,
   "total_waivers": 53,
   "by_status": {
-    "Assessment completed": 25,
-    "Under assessment": 23
+    "Assessment completed": 26,
+    "Under assessment": 22
   },
   "by_determination": {
-    "Approved": 25,
+    "Approved": 26,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 3
   },
   "phase_duration": {
-    "average_days": 28.72,
+    "average_days": 28.46153846153846,
     "median_days": 25,
-    "average_business_days": 18.24,
+    "average_business_days": 18.115384615384617,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 6,
-        "percentage": 24.0
+        "count": 7,
+        "percentage": 26.9
       },
       "day20": {
-        "count": 20,
-        "percentage": 80.0
+        "count": 21,
+        "percentage": 80.8
       },
       "day30": {
-        "count": 25,
+        "count": 26,
         "percentage": 100.0
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-40005",
+      "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+      "determination": "Approved",
+      "determination_date": "2026-03-12T12:00:00Z",
+      "page_modified_datetime": "2026-03-12T12:24:22+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-10005",
       "merger_name": "Apex - Mercer Administration Services and related assets",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-10T12:00:00Z",
       "page_modified_datetime": "2026-03-10T19:25:43+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-95008",
-      "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
-      "determination": "Approved",
-      "determination_date": "2026-03-10T12:00:00Z",
-      "page_modified_datetime": "2026-03-10T19:23:17+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
