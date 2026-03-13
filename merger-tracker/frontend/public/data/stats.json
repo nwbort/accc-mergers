@@ -1,9 +1,9 @@
 {
-  "total_mergers": 48,
+  "total_mergers": 49,
   "total_waivers": 55,
   "by_status": {
     "Assessment completed": 28,
-    "Under assessment": 20
+    "Under assessment": 21
   },
   "by_determination": {
     "Approved": 28,
@@ -43,11 +43,11 @@
       "count": 16
     },
     {
-      "name": "Other Auxiliary Finance and Investment Services",
-      "count": 6
+      "name": "Financial Asset Investing",
+      "count": 7
     },
     {
-      "name": "Financial Asset Investing",
+      "name": "Other Auxiliary Finance and Investment Services",
       "count": 6
     },
     {
@@ -76,6 +76,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-25006",
+      "merger_name": "KPS \u2013 Novacel",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-12T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-20009",
       "merger_name": "Rocket Software \u2013 Vertica",
@@ -107,14 +115,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-05T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "WA-95008",
-      "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-03-04T12:00:00Z",
-      "is_waiver": true
     }
   ],
   "recent_determinations": [

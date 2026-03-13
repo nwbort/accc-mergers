@@ -1106,6 +1106,72 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/servicenow-armis"
     },
     {
+      "merger_id": "MN-25006",
+      "merger_name": "KPS \u2013 Novacel",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-12T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-28T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "KPS Capital Partners, LP",
+          "identifier_type": null,
+          "identifier": "CRD  157678 / SEC  80173907"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Chargeurs Films de Protection SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  885 582 072"
+        },
+        {
+          "name": "Chargeurs USA Holdings Inc.",
+          "identifier_type": null,
+          "identifier": "EIN / TIN  043515028"
+        },
+        {
+          "name": "Novacel, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  043515032"
+        },
+        {
+          "name": "Compagnie Chargeurs Invest SA",
+          "identifier_type": null,
+          "identifier": "SIREN  390 474 898"
+        },
+        {
+          "name": "Novacel Performance Coatings, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  311708662"
+        },
+        {
+          "name": "Walco, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  821136395"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1911",
+          "name": "Polymer Film and Sheet Packaging Material Manufacturing"
+        },
+        {
+          "code": "2469",
+          "name": "Other Specialised Machinery and Equipment Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kps-%E2%80%93-novacel"
+    },
+    {
       "merger_id": "MN-30002",
       "merger_name": "Peter Warren - Wakeling Automotive",
       "status": "Under assessment",
@@ -2499,58 +2565,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/accenture-%E2%80%93-faculty-science"
-    },
-    {
-      "merger_id": "WA-01087",
-      "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-02-24T12:00:00Z",
-      "determination_publication_date": "2026-03-12T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Eli Lilly and Company",
-          "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  350470950"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Orna Therapeutics Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  861182936"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Shareholder Representative Services, LLC",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "BLJX Acquisition, LLC",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "1841",
-          "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
-        },
-        {
-          "code": "6910",
-          "name": "Scientific Research Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eli-lilly-%E2%80%93-orna-therapeutics"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 103,
+  "total": 104,
   "total_pages": 3
 }
