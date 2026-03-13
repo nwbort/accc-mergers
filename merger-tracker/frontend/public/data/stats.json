@@ -1,9 +1,10 @@
 {
   "total_mergers": 50,
-  "total_waivers": 55,
+  "total_waivers": 56,
   "by_status": {
     "Assessment completed": 28,
-    "Under assessment": 22
+    "Under assessment": 21,
+    "Assessment suspended": 1
   },
   "by_determination": {
     "Approved": 28,
@@ -11,7 +12,7 @@
   },
   "by_waiver_determination": {
     "Approved": 51,
-    "Not approved": 4
+    "Not approved": 5
   },
   "phase_duration": {
     "average_days": 28.5,
@@ -119,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-10008",
+      "merger_name": "Premier Fresh \u2013 Charles Domenico Group",
+      "determination": "Not approved",
+      "determination_date": "2026-03-13T12:00:00Z",
+      "page_modified_datetime": "2026-03-13T16:44:43+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-80006",
       "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
       "determination": "Approved",
@@ -164,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-12T12:00:00Z",
       "page_modified_datetime": "2026-03-12T12:24:22+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-10005",
-      "merger_name": "Apex - Mercer Administration Services and related assets",
-      "determination": "Approved",
-      "determination_date": "2026-03-12T12:00:00Z",
-      "page_modified_datetime": "2026-03-12T11:27:44+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

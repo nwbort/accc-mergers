@@ -370,6 +370,60 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/stockland-llc-%E2%80%93-intragroup-transfer-of-halcyon-jardin-and-evergreen-projects"
     },
     {
+      "merger_id": "WA-10008",
+      "merger_name": "Premier Fresh \u2013 Charles Domenico Group",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-20T12:00:00Z",
+      "determination_publication_date": "2026-03-13T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "PREMIER FRESH AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "87 004 843 556"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Carmelo De Domenico",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "C.A. DE DOMENICO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 102 487 963"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "0123",
+          "name": "Vegetable Growing (Outdoors)"
+        },
+        {
+          "code": "1140",
+          "name": "Fruit and Vegetable Processing"
+        },
+        {
+          "code": "3605",
+          "name": "Fruit and Vegetable Wholesaling"
+        },
+        {
+          "code": "4122",
+          "name": "Fruit and Vegetable Retailing"
+        },
+        {
+          "code": "7320",
+          "name": "Packaging Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/premier-fresh-%E2%80%93-charles-domenico-group"
+    },
+    {
       "merger_id": "WA-15003",
       "merger_name": "Coforge - Encora",
       "status": "Assessment completed",
@@ -2462,69 +2516,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sony-%E2%80%93-peanuts-worldwide"
-    },
-    {
-      "merger_id": "WA-85013",
-      "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-02-27T12:00:00Z",
-      "determination_publication_date": "2026-03-10T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
-        }
-      ],
-      "targets": [
-        {
-          "name": "TAN DENTAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 146 067 594"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "NDC FINCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "14 654 149 818"
-        },
-        {
-          "name": "NATIONAL DENTAL CARE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "89 160 442 071"
-        },
-        {
-          "name": "NDC SERVICE CO PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 162 958 072"
-        },
-        {
-          "name": "NDC PROPERTY CO PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "68 163 264 097"
-        },
-        {
-          "name": "NDC HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "13 654 148 188"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "8531",
-          "name": "Dental Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/national-dental-care-%E2%80%93-ddta-dental-clinic-in-launceston-tas"
     }
   ],
   "page": 2,
   "page_size": 50,
-  "total": 105,
+  "total": 106,
   "total_pages": 3
 }
