@@ -1,6 +1,43 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-01081",
+      "merger_name": "Accenture \u2013 Faculty Science",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-08T12:00:00Z",
+      "determination_publication_date": "2026-01-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Accenture International B.V.",
+          "identifier_type": null,
+          "identifier": "Business registration no: KVK70797285"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Faculty Science Limited",
+          "identifier_type": null,
+          "identifier": "Company registration no: CRN08873131"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6962",
+          "name": "Management Advice and Related Consulting Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/accenture-%E2%80%93-faculty-science"
+    },
+    {
       "merger_id": "WA-01087",
       "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
       "status": "Assessment completed",
@@ -2484,47 +2521,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/national-dental-care-%E2%80%93-ddta-dental-clinic-in-launceston-tas"
-    },
-    {
-      "merger_id": "WA-90002",
-      "merger_name": "NEC Corporation \u2013 CSG Systems International",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-01-28T12:00:00Z",
-      "determination_publication_date": "2026-02-24T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "NEC Corporation",
-          "identifier_type": null,
-          "identifier": "Company number 7010401022916"
-        }
-      ],
-      "targets": [
-        {
-          "name": "CSG Systems International, Inc.",
-          "identifier_type": null,
-          "identifier": "Company number 2444546"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "5420",
-          "name": "Software Publishing"
-        },
-        {
-          "code": "5921",
-          "name": "Data Processing and Web Hosting Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/nec-corporation-%E2%80%93-csg-systems-international"
     }
   ],
   "page": 2,
   "page_size": 50,
-  "total": 104,
+  "total": 105,
   "total_pages": 3
 }
