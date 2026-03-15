@@ -2641,7 +2641,7 @@
       "effective_notification_datetime": "2026-03-05T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-04-21T12:00:00Z",
-      "page_modified_datetime": "2026-03-05T17:51:11+11:00",
+      "page_modified_datetime": "2026-03-16T09:24:06+11:00",
       "consultation_response_due_date": "2026-03-13T12:00:00Z",
       "acquirers": [
         {
@@ -2652,14 +2652,19 @@
       ],
       "targets": [
         {
+          "name": "WAKELING HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "41 160 814 040"
+        },
+        {
+          "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
+          "identifier_type": "ACN",
+          "identifier": "119 879 980"
+        },
+        {
           "name": "WOLLONGONG CITY MOTORS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "22 002 019 598"
-        },
-        {
-          "name": "Wakeling South Coast Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "636 298 970"
         },
         {
           "name": "HURRIKAYNE PTY LTD",
@@ -2672,14 +2677,9 @@
           "identifier": "119 875 768"
         },
         {
-          "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
+          "name": "Wakeling South Coast Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "119 879 980"
-        },
-        {
-          "name": "WAKELING HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "41 160 814 040"
+          "identifier": "636 298 970"
         },
         {
           "name": "Paul Wakeling Motor Group Pty Ltd",
@@ -2718,7 +2718,7 @@
           "display_title": "Questionnaire - Peter Warren - Wakeling Automotive",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Peter%20Warren%20-%20Wakeling%20Automotive.docx",
           "url_gh": "/matters/MN-30002/Questionnaire - Peter Warren - Wakeling Automotive.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
