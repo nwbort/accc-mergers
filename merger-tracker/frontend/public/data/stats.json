@@ -1,9 +1,9 @@
 {
-  "total_mergers": 50,
+  "total_mergers": 51,
   "total_waivers": 56,
   "by_status": {
     "Assessment completed": 28,
-    "Under assessment": 21,
+    "Under assessment": 22,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-50007",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-13T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-01090",
       "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-10T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-90006",
-      "merger_name": "CARe \u2013 MotorOne Autobody",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-06T12:00:00Z",
       "is_waiver": false
     }
   ],

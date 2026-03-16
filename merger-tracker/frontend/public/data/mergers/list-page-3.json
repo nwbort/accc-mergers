@@ -1,6 +1,48 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-85008",
+      "merger_name": "Sony \u2013 Peanuts Worldwide",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-02T12:00:00Z",
+      "determination_publication_date": "2026-02-19T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Sony Music Entertainment (Japan) Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Sony Pictures Entertainment, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "DHX Entertainment (USA) Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5511",
+          "name": "Motion Picture and Video Production"
+        },
+        {
+          "code": "5512",
+          "name": "Motion Picture and Video Distribution"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sony-%E2%80%93-peanuts-worldwide"
+    },
+    {
       "merger_id": "WA-85013",
       "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
       "status": "Assessment completed",
@@ -261,6 +303,6 @@
   ],
   "page": 3,
   "page_size": 50,
-  "total": 106,
+  "total": 107,
   "total_pages": 3
 }

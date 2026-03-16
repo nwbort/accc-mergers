@@ -1454,6 +1454,65 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/henkel-%E2%80%93-atp-adhesives-systems-group"
     },
     {
+      "merger_id": "MN-50007",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-13T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-29T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for the Comfy Dental Trust",
+          "identifier_type": "ABN",
+          "identifier": "59 865 563 072"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "NDC SERVICE CO PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 162 958 072"
+        },
+        {
+          "name": "NATIONAL DENTAL CARE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "89 160 442 071"
+        },
+        {
+          "name": "NDC PROPERTY CO PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "68 163 264 097"
+        },
+        {
+          "name": "NDC HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "13 654 148 188"
+        },
+        {
+          "name": "NDC FINCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 654 149 818"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8531",
+          "name": "Dental Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/national-dental-care-%E2%80%93-business-assets-comprising-the-comfy-dental-clinic-mandurah-wa"
+    },
+    {
       "merger_id": "MN-55003",
       "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
       "status": "Assessment completed",
@@ -2520,59 +2579,10 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/abbott-laboratories-exact-sciences"
-    },
-    {
-      "merger_id": "MN-95003",
-      "merger_name": "CVS Group - Pittwater Animal Hospital",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-02-13T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-03-30T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "35 667 654 686"
-        }
-      ],
-      "targets": [
-        {
-          "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 001 336 723"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "CVS (AUSTRALIA) HOLDINGS PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "25 667 652 520"
-        },
-        {
-          "name": "SAH NORTHERN BEACHES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "57 689 321 837"
-        },
-        {
-          "name": "SAH AVALON PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "46 689 321 793"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6970",
-          "name": "Veterinary Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvs-group-pittwater-animal-hospital"
     }
   ],
   "page": 1,
   "page_size": 50,
-  "total": 106,
+  "total": 107,
   "total_pages": 3
 }
