@@ -1,57 +1,401 @@
 {
   "mergers": [
     {
-      "merger_id": "WA-85008",
-      "merger_name": "Sony \u2013 Peanuts Worldwide",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-02-02T12:00:00Z",
-      "determination_publication_date": "2026-02-19T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
+      "merger_id": "MN-30002",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-05T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-21T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Sony Music Entertainment (Japan) Inc.",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Sony Pictures Entertainment, Inc.",
-          "identifier_type": null,
-          "identifier": ""
+          "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "57 615 674 185"
         }
       ],
       "targets": [
         {
-          "name": "DHX Entertainment (USA) Inc.",
-          "identifier_type": null,
-          "identifier": ""
+          "name": "WAKELING HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "41 160 814 040"
+        },
+        {
+          "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
+          "identifier_type": "ACN",
+          "identifier": "119 879 980"
+        },
+        {
+          "name": "WOLLONGONG CITY MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 002 019 598"
+        },
+        {
+          "name": "HURRIKAYNE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 118 744 915"
+        },
+        {
+          "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
+          "identifier_type": "ACN",
+          "identifier": "119 875 768"
+        },
+        {
+          "name": "Wakeling South Coast Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "636 298 970"
+        },
+        {
+          "name": "Paul Wakeling Motor Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "47 119 908 780"
         }
       ],
       "other_parties": [],
       "anzsic_codes": [
         {
-          "code": "5511",
-          "name": "Motion Picture and Video Production"
+          "code": "3911",
+          "name": "Car Retailing"
         },
         {
-          "code": "5512",
-          "name": "Motion Picture and Video Distribution"
+          "code": "3921",
+          "name": "Motor Vehicle Parts Retailing"
+        },
+        {
+          "code": "6230",
+          "name": "Non-Depository Financing"
+        },
+        {
+          "code": "6322",
+          "name": "General Insurance"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
         }
       ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sony-%E2%80%93-peanuts-worldwide"
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/peter-warren-wakeling-automotive"
     },
     {
-      "merger_id": "WA-85013",
-      "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-02-27T12:00:00Z",
-      "determination_publication_date": "2026-03-10T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
+      "merger_id": "MN-90006",
+      "merger_name": "CARe \u2013 MotorOne Autobody",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-06T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-22T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "CARE AUTOBODY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 692 619 962"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MOTORONE AUTOBODY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "98 077 935 614"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "M1 TOPCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 663 463 116"
+        },
+        {
+          "name": "THE CARE AUTOMOTIVE GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "94 633 108 700"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "9411",
+          "name": "Automotive Electrical Services"
+        },
+        {
+          "code": "9412",
+          "name": "Automotive Body, Paint and Interior Repair"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/care-%E2%80%93-motorone-autobody"
+    },
+    {
+      "merger_id": "MN-55012",
+      "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-23T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Argo Bowen 2 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 023 619"
+        }
+      ],
+      "targets": [
+        {
+          "name": "New Lenton Coal Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "48 095 390 079"
+        },
+        {
+          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 149 524 809"
+        },
+        {
+          "name": "BOWEN COKING COAL MARKETING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 642 022 437"
+        },
+        {
+          "name": "BOWEN COKING COAL LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "72 064 874 620"
+        },
+        {
+          "name": "COKING COAL ONE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 615 317 907"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Mercuria Argo Investments Pty Ltd",
+          "identifier_type": null,
+          "identifier": "202505079"
+        },
+        {
+          "name": "Mercuria Dry Bulk Finance Limited",
+          "identifier_type": null,
+          "identifier": "202505067"
+        },
+        {
+          "name": "Argo Holdings QLD Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "690 887 597"
+        },
+        {
+          "name": "Argo Bowen Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 021 124"
+        },
+        {
+          "name": "Argo QLD Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "690 893 371"
+        },
+        {
+          "name": "TALISMAN PARTNERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "31 645 148 796"
+        },
+        {
+          "name": "ECLIPSE MINING 2 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 690 880 892"
+        },
+        {
+          "name": "Mercuria Energy Group Limited",
+          "identifier_type": null,
+          "identifier": "202404088"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0600",
+          "name": "Coal Mining"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/argo-bowen-2-%E2%80%93-bowen-coking-coal-and-certain-subsidiaries"
+    },
+    {
+      "merger_id": "MN-20009",
+      "merger_name": "Rocket Software \u2013 Vertica",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-11T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-24T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Rocket Software AMC UK Ltd",
+          "identifier_type": null,
+          "identifier": "UK Company number 01504593"
+        },
+        {
+          "name": "Rocket Software, Inc.",
+          "identifier_type": null,
+          "identifier": "Companies\u2019 Register of Delaware  3506913"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Open Text Corporation",
+          "identifier_type": null,
+          "identifier": "10836044"
+        },
+        {
+          "name": "Micro Focus IP Development Limited",
+          "identifier_type": null,
+          "identifier": "UK Company number 07233975"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "ROCKET SOFTWARE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 050 043 699"
+        },
+        {
+          "name": "Bain Capital Investors LLC",
+          "identifier_type": null,
+          "identifier": "3229725"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/rocket-software-%E2%80%93-vertica"
+    },
+    {
+      "merger_id": "MN-01090",
+      "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-12T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-28T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 004 189 708"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Tipalea Private No. 27 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "656 207 082"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        },
+        {
+          "code": "6720",
+          "name": "Real Estate Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-new-norfolk-tas"
+    },
+    {
+      "merger_id": "MN-25006",
+      "merger_name": "KPS \u2013 Novacel",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-12T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-28T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "KPS Capital Partners, LP",
+          "identifier_type": null,
+          "identifier": "CRD  157678 / SEC  80173907"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Chargeurs Films de Protection SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  885 582 072"
+        },
+        {
+          "name": "Chargeurs USA Holdings Inc.",
+          "identifier_type": null,
+          "identifier": "EIN / TIN  043515028"
+        },
+        {
+          "name": "Novacel, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  043515032"
+        },
+        {
+          "name": "Compagnie Chargeurs Invest SA",
+          "identifier_type": null,
+          "identifier": "SIREN  390 474 898"
+        },
+        {
+          "name": "Novacel Performance Coatings, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  311708662"
+        },
+        {
+          "name": "Walco, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  821136395"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1911",
+          "name": "Polymer Film and Sheet Packaging Material Manufacturing"
+        },
+        {
+          "code": "2469",
+          "name": "Other Specialised Machinery and Equipment Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kps-%E2%80%93-novacel"
+    },
+    {
+      "merger_id": "MN-50007",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-13T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-04-29T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
@@ -61,26 +405,21 @@
       ],
       "targets": [
         {
-          "name": "TAN DENTAL PTY LTD",
+          "name": "The Trustee for the Comfy Dental Trust",
           "identifier_type": "ABN",
-          "identifier": "18 146 067 594"
+          "identifier": "59 865 563 072"
         }
       ],
       "other_parties": [
         {
-          "name": "NDC FINCO PTY LTD",
+          "name": "NDC SERVICE CO PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "14 654 149 818"
+          "identifier": "11 162 958 072"
         },
         {
           "name": "NATIONAL DENTAL CARE LIMITED",
           "identifier_type": "ABN",
           "identifier": "89 160 442 071"
-        },
-        {
-          "name": "NDC SERVICE CO PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 162 958 072"
         },
         {
           "name": "NDC PROPERTY CO PTY LIMITED",
@@ -91,6 +430,11 @@
           "name": "NDC HOLDCO PTY LTD",
           "identifier_type": "ABN",
           "identifier": "13 654 148 188"
+        },
+        {
+          "name": "NDC FINCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 654 149 818"
         }
       ],
       "anzsic_codes": [
@@ -99,210 +443,9 @@
           "name": "Dental Services"
         }
       ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/national-dental-care-%E2%80%93-ddta-dental-clinic-in-launceston-tas"
-    },
-    {
-      "merger_id": "WA-90002",
-      "merger_name": "NEC Corporation \u2013 CSG Systems International",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-01-28T12:00:00Z",
-      "determination_publication_date": "2026-02-24T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "NEC Corporation",
-          "identifier_type": null,
-          "identifier": "Company number 7010401022916"
-        }
-      ],
-      "targets": [
-        {
-          "name": "CSG Systems International, Inc.",
-          "identifier_type": null,
-          "identifier": "Company number 2444546"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "5420",
-          "name": "Software Publishing"
-        },
-        {
-          "code": "5921",
-          "name": "Data Processing and Web Hosting Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/nec-corporation-%E2%80%93-csg-systems-international"
-    },
-    {
-      "merger_id": "WA-90004",
-      "merger_name": "Crossmuller \u2013 GEM",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-02-16T12:00:00Z",
-      "determination_publication_date": "2026-03-05T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "CROSSMULLER PTY. LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "98 088 327 093"
-        }
-      ],
-      "targets": [
-        {
-          "name": "GEMCORP Holdings Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "685 947 522"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "2439",
-          "name": "Other Electrical Equipment Manufacturing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/crossmuller-%E2%80%93-gem"
-    },
-    {
-      "merger_id": "WA-95005",
-      "merger_name": "HCLTech - Jaspersoft",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-02-05T12:00:00Z",
-      "determination_publication_date": "2026-02-19T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "HCL Technologies Limited",
-          "identifier_type": "ABN",
-          "identifier": "37 541 578 951"
-        }
-      ],
-      "targets": [
-        {
-          "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "94 092 002 321"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "5420",
-          "name": "Software Publishing"
-        },
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hcltech-jaspersoft"
-    },
-    {
-      "merger_id": "WA-95006",
-      "merger_name": "Laundy Group \u2013 Nine Radio",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-02-11T12:00:00Z",
-      "determination_publication_date": "2026-02-20T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "SPIKE MEDIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 694 712 699"
-        }
-      ],
-      "targets": [
-        {
-          "name": "NINE RADIO PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "32 063 906 927"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Arthur Laundy",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "FAIRFAX MEDIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "15 008 663 161"
-        },
-        {
-          "name": "NINE ENTERTAINMENT CO. HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "60 122 203 892"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "5610",
-          "name": "Radio Broadcasting"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/laundy-group-%E2%80%93-nine-radio"
-    },
-    {
-      "merger_id": "WA-95008",
-      "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-03-04T12:00:00Z",
-      "determination_publication_date": "2026-03-10T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005"
-        }
-      ],
-      "targets": [
-        {
-          "name": "The trustee for the Burke Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "35 834 715 269"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "VETS CENTRAL HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 652 812 256"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6970",
-          "name": "Veterinary Services"
-        },
-        {
-          "code": "9539",
-          "name": "Other Personal Services n.e.c."
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-%E2%80%93-west-toowoomba-veterinary-surgery-in-qld"
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/national-dental-care-%E2%80%93-business-assets-comprising-the-comfy-dental-clinic-mandurah-wa"
     }
   ],
   "page": 3,
-  "page_size": 50,
-  "total": 107,
-  "total_pages": 3
+  "page_size": 50
 }
