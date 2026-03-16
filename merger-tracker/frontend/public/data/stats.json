@@ -1,9 +1,9 @@
 {
-  "total_mergers": 51,
+  "total_mergers": 52,
   "total_waivers": 56,
   "by_status": {
     "Assessment completed": 28,
-    "Under assessment": 22,
+    "Under assessment": 23,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-05004",
+      "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-14T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-50007",
       "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-11T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-55012",
-      "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-10T12:00:00Z",
       "is_waiver": false
     }
   ],
