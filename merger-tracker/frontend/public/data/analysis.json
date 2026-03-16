@@ -708,6 +708,14 @@
       },
       {
         "application_date": "2026-02-26",
+        "business_days": 11,
+        "calendar_days": 18,
+        "merger_name": "OEP IX \u2013 Leviat",
+        "merger_id": "WA-55011",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-02-26",
         "business_days": 8,
         "calendar_days": 13,
         "merger_name": "Autosports Group - Solitaire Automotive Group",
@@ -733,10 +741,10 @@
     ],
     "stats": {
       "average": 10.4,
-      "median": 10.0,
+      "median": 10,
       "min": 2,
       "max": 22,
-      "count": 56
+      "count": 57
     }
   },
   "monthly_volume": {
@@ -764,7 +772,7 @@
       0,
       0,
       30,
-      25,
+      26,
       1
     ]
   }

@@ -1,6 +1,6 @@
 {
   "total_mergers": 52,
-  "total_waivers": 56,
+  "total_waivers": 57,
   "by_status": {
     "Assessment completed": 28,
     "Under assessment": 23,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 51,
+    "Approved": 52,
     "Not approved": 5
   },
   "phase_duration": {
@@ -45,7 +45,7 @@
     },
     {
       "name": "Financial Asset Investing",
-      "count": 7
+      "count": 8
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-55011",
+      "merger_name": "OEP IX \u2013 Leviat",
+      "determination": "Approved",
+      "determination_date": "2026-03-16T12:00:00Z",
+      "page_modified_datetime": "2026-03-16T18:20:16+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-10008",
       "merger_name": "Premier Fresh \u2013 Charles Domenico Group",
       "determination": "Not approved",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-12T12:00:00Z",
       "page_modified_datetime": "2026-03-12T16:37:10+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-40005",
-      "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
-      "determination": "Approved",
-      "determination_date": "2026-03-12T12:00:00Z",
-      "page_modified_datetime": "2026-03-12T12:24:22+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
