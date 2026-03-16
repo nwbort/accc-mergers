@@ -377,6 +377,11 @@ def generate_paginated_list(enriched_mergers: list, page_size: int = 50) -> None
             "url": m.get('url')
         })
 
+    # Sort by notification date ascending (oldest first, newest last).
+    # New mergers always append to the last page, so only the last page file
+    # changes per scrape run rather than cascading through all pages.
+    lightweight_mergers.sort(key=lambda x: x.get('effective_notification_datetime') or '')
+
     total_mergers = len(lightweight_mergers)
     total_pages = (total_mergers + page_size - 1) // page_size
 
@@ -388,8 +393,6 @@ def generate_paginated_list(enriched_mergers: list, page_size: int = 50) -> None
             "mergers": lightweight_mergers[start_idx:end_idx],
             "page": page_num,
             "page_size": page_size,
-            "total": total_mergers,
-            "total_pages": total_pages
         }
 
         output_path = mergers_dir / f"list-page-{page_num}.json"
@@ -630,8 +633,6 @@ def generate_paginated_timeline(enriched_mergers: list, page_size: int = 100) ->
             "events": events[start_idx:end_idx],
             "page": page_num,
             "page_size": page_size,
-            "total": total_events,
-            "total_pages": total_pages
         }
 
         output_path = OUTPUT_DIR / f"timeline-page-{page_num}.json"
