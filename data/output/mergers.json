@@ -2262,6 +2262,33 @@
           "title": "Cvent - ON24 - Phase 1 Determination",
           "display_title": "Phase 1 - initial assessment determination: Approved",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Cvent%20-%20ON24%20-%20Phase%201%20Determination.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Cvent Atlanta, LLC (Cvent)\u2019s proposed acquisition of ON24, Inc.\n(ON24), through the merger of Summit Sub Corp. (an indirect wholly\nowned subsidiary of Cvent) with ON24. Following the merger, ON24\nwill be the surviving entity and continue as an indirect wholly owned\nsubsidiary of Cvent (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Cvent,provides meetings, events and hospitality\ntechnology, specifically an event marketing and management\nplatform. Cvent is solely controlled by investment funds managed by\naffiliates of Blackstone, Inc.\nBlackstone is one of the largest alternative asset managers\noperating globally.\nThe target, ON24, is a cloud-based engagement platform that\nprovides tools for webinars, virtual events and other experiences. It\nalso provides marketing and sales analytics tools."
+            },
+            {
+              "item": "Overlap between the\nparties",
+              "details": "Cvent and ON24 (the Parties) both supply software related to\nmeetings and events.\nCvent\u2019s event management tool, AttendeeHub, enables businesses\nto host in-person events such as conferences. Its services include\nvenue and attendee management, customised event websites and\napps, and data analytics. It can also be used for virtual events and\nwebinars. The ACCC understands that AttendeeHub is marketed\nprimarily to event management professionals.\nON24\u2019s tool, Webcast Elite, delivers live and on-demand webinar\nservices. ON24 also has a hybrid event platform which manages\nparticipant engagement across in-person and online attendees. The\nACCC understands that Webcast Elite is marketed primarily to\nmarketing professionals."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The Parties are not close competitors to each other with their\nservices performing distinct functions. ON24 does not offer\nservices which are substitutable for Cvent\u2019s in-person event\nmanagement platform. Cvent provides a webinar service but has\nvery little revenue in Australia.\n\u2022 Post acquisition, Cvent will continue to face competition from\nalternative suppliers of webinar services and alternative\nsuppliers of event services in Australia, including Zoom, Teams,\nWebex, EventsAir and GoTo."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
           "url_gh": "/matters/MN-15005/Cvent - ON24 - Phase 1 Determination.pdf",
           "status": "live",
           "phase": "Phase 1"
@@ -10235,6 +10262,106 @@
         },
         {
           "date": "2026-02-02T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tdr-and-estoril-%E2%80%93-escode",
+      "merger_name": "TDR and Estoril \u2013 Escode",
+      "status": "Assessment completed",
+      "merger_id": "WA-85011",
+      "effective_notification_datetime": "2026-02-19T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-03-17T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-03-17T16:54:48+11:00",
+      "acquirers": [
+        {
+          "name": "TDR Capital LLP",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Estoril Coinvest SCSp",
+          "identifier_type": null,
+          "identifier": "B303369"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ESCODE AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 675 307 301"
+        },
+        {
+          "name": "NCC Group plc",
+          "identifier_type": null,
+          "identifier": "UK Company number: 04627044"
+        },
+        {
+          "name": "Escode Jersey Holdco Limited",
+          "identifier_type": null,
+          "identifier": "Jersey Registration Number 162830"
+        },
+        {
+          "name": "NCC Group Software Resilience (Americas) LLC",
+          "identifier_type": null,
+          "identifier": "State of Delaware File Number 5837008"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5922",
+          "name": "Electronic Information Storage Services"
+        }
+      ],
+      "merger_description": "TDR Capital LLP (**TDR**) and Estoril Coinvest SCSp (**Estoril**) propose to enter a Shareholders Agreement, pursuant to which TDR will hold a majority interest while Estoril will hold a minority interest in Escode.\n\nTDR is a private equity firm based in the United Kingdom. Estoril is a co-investment vehicle managed by a private equity firm.\n\nThe target, Escode, is a UK headquartered business active in providing software escrow and related services. Escode primarily supplies software escrow services, whereby software code and data or other business critical information is deposited by a licensor in Escode's physical or virtual vaults, and released to the licensee where the release criteria are met. In Australia, Escode also supplies verification services.\n\nEscode is a division of NCC Group plc (**NCC**), which is also based in the UK and is a supplier of cybersecurity services. NCC launched its Escode brand in Australia in 2024.",
+      "events": [
+        {
+          "date": "2026-03-17T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/TDR%20and%20Estoril%20-%20Escode%20%28WA-85011%29%20-%20Notification%20waiver%20determination%20-%2017%20March%202026.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "TDR Capital LLP (TDR) and Estoril Coinvest SCSp (Estoril) propose\nto acquire 100% of the two NCC Group plc (NCC) entities that\ncomprise the Escode business:\na. 100% of the entire issued share capital of Escode Jersey\nHoldco Limited (a UK incorporated company), and\nb. the entire membership interest of NCC Group Software\nResilience (Americas) LLC (a US-incorporated company),\nas described in the transaction documents provided as part of the\napplication (the Acquisition).\nThe Acquisition will result in TDR acquiring a majority interest and\nEstoril a minority interest in Escode.\nTDR and Estoril applied for a notification waiver in respect of the\nAcquisition."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "17 March 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "One of the acquirers, TDR, is a private equity firm based in the United\nKingdom. The other acquirer, Estoril, is a co-investment vehicle\nmanaged by a private equity firm.\nThe target, Escode, is a UK-headquartered business active in\nproviding software escrow and related services. Escode primarily\nsupplies software escrow services, whereby software code and data\nor other business critical information is deposited by a licensor in\nEscode's physical or virtual vaults, and released to the licensee\nwhere the release criteria are met. In Australia, Escode also supplies\nverification services.\nEscode is a division of NCC, which is also based in the UK and is a\nsupplier of cybersecurity services. NCC launched its Escode brand in\nAustralia in 2024.\nThe acquirers and their connected entities do not provide software\nescrow and verification services in Australia or globally."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal or non-horizontal overlap between the\nacquirers (or their connected entities) and Escode in the\nsupply of software escrow and verification services in\nAustralia\nb. the presence of alternative suppliers of software escrow and\nverification services in Australia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/matters/WA-85011/TDR and Estoril - Escode (WA-85011) - Notification waiver determination - 17 March 2026.pdf",
+          "status": "live",
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-02-19T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"

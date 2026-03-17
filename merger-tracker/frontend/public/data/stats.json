@@ -1,6 +1,6 @@
 {
   "total_mergers": 52,
-  "total_waivers": 57,
+  "total_waivers": 58,
   "by_status": {
     "Assessment completed": 32,
     "Under assessment": 19,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 52,
+    "Approved": 53,
     "Not approved": 5
   },
   "phase_duration": {
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85011",
+      "merger_name": "TDR and Estoril \u2013 Escode",
+      "determination": "Approved",
+      "determination_date": "2026-03-17T12:00:00Z",
+      "page_modified_datetime": "2026-03-17T16:54:48+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-85007",
       "merger_name": "Salesforce \u2013 Qualified",
       "determination": "Approved",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-16T12:00:00Z",
       "page_modified_datetime": "2026-03-16T18:20:16+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-10008",
-      "merger_name": "Premier Fresh \u2013 Charles Domenico Group",
-      "determination": "Not approved",
-      "determination_date": "2026-03-13T12:00:00Z",
-      "page_modified_datetime": "2026-03-13T16:44:43+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

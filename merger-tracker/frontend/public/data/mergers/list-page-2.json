@@ -1600,6 +1600,59 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/russell-investment-group-%E2%80%93-zurich-investment-management"
     },
     {
+      "merger_id": "WA-85011",
+      "merger_name": "TDR and Estoril \u2013 Escode",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-19T12:00:00Z",
+      "determination_publication_date": "2026-03-17T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "TDR Capital LLP",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Estoril Coinvest SCSp",
+          "identifier_type": null,
+          "identifier": "B303369"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ESCODE AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 675 307 301"
+        },
+        {
+          "name": "NCC Group plc",
+          "identifier_type": null,
+          "identifier": "UK Company number: 04627044"
+        },
+        {
+          "name": "Escode Jersey Holdco Limited",
+          "identifier_type": null,
+          "identifier": "Jersey Registration Number 162830"
+        },
+        {
+          "name": "NCC Group Software Resilience (Americas) LLC",
+          "identifier_type": null,
+          "identifier": "State of Delaware File Number 5837008"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5922",
+          "name": "Electronic Information Storage Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tdr-and-estoril-%E2%80%93-escode"
+    },
+    {
       "merger_id": "MN-30003",
       "merger_name": "MicroStar Logistics - Konvoy",
       "status": "Under assessment",
@@ -2540,55 +2593,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/national-dental-care-%E2%80%93-ddta-dental-clinic-in-launceston-tas"
-    },
-    {
-      "merger_id": "MN-65005",
-      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-03-03T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-04-17T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "INSURANCE AUSTRALIA GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "60 090 739 923"
-        }
-      ],
-      "targets": [
-        {
-          "name": "RACI PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "40 008 671 805"
-        },
-        {
-          "name": "RAC INSURANCE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "59 094 685 882"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "THE ROYAL AUTOMOBILE CLUB OF WA INC",
-          "identifier_type": "ABN",
-          "identifier": "33 212 133 120"
-        },
-        {
-          "name": "RACWA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 008 985 877"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6322",
-          "name": "General Insurance"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/insurance-australia-group-%E2%80%93-rac-insurance"
     }
   ],
   "page": 2,
