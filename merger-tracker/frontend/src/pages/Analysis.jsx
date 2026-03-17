@@ -28,6 +28,43 @@ ChartJS.register(
   Legend
 );
 
+const approvalDateLinesPlugin = {
+  id: 'approvalDateLines',
+  beforeDatasetsDraw(chart) {
+    const { ctx, scales: { x: xScale, y: yScale } } = chart;
+    const yZero = yScale.getPixelForValue(0);
+    const yMax = yScale.max;
+
+    ctx.save();
+    chart.data.datasets.forEach((dataset) => {
+      dataset.data.forEach((point) => {
+        if (!point.calendarDays) return;
+        const msPerDay = 86400000;
+        const approvalDateMs = point.x + point.calendarDays * msPerDay;
+
+        const px = xScale.getPixelForValue(point.x);
+        const py = yScale.getPixelForValue(point.y);
+        const approvalPx = xScale.getPixelForValue(approvalDateMs);
+
+        // Extend line upward: from point to top of chart at same slope
+        const slope = (yZero - py) / (approvalPx - px); // pixels per pixel
+        const topY = yScale.getPixelForValue(yMax);
+        const topX = px - (py - topY) / slope;
+
+        ctx.beginPath();
+        ctx.moveTo(topX, topY);
+        ctx.lineTo(approvalPx, yZero);
+        ctx.strokeStyle = 'rgba(0, 0, 0, 0.06)';
+        ctx.lineWidth = 1;
+        ctx.setLineDash([4, 4]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+      });
+    });
+    ctx.restore();
+  },
+};
+
 const COLORS = {
   primary: '#335145',
   primaryLight: 'rgba(51, 81, 69, 0.15)',
@@ -84,6 +121,7 @@ function Analysis() {
           .map(d => ({
             x: new Date(d.notification_date).getTime(),
             y: d.business_days,
+            calendarDays: d.calendar_days,
             label: d.merger_name,
             id: d.merger_id,
           })),
@@ -98,6 +136,7 @@ function Analysis() {
           .map(d => ({
             x: new Date(d.notification_date).getTime(),
             y: d.business_days,
+            calendarDays: d.calendar_days,
             label: d.merger_name,
             id: d.merger_id,
           })),
@@ -197,6 +236,7 @@ function Analysis() {
           .map(d => ({
             x: new Date(d.application_date).getTime(),
             y: d.business_days,
+            calendarDays: d.calendar_days,
             label: d.merger_name,
             id: d.merger_id,
           })),
@@ -211,6 +251,7 @@ function Analysis() {
           .map(d => ({
             x: new Date(d.application_date).getTime(),
             y: d.business_days,
+            calendarDays: d.calendar_days,
             label: d.merger_name,
             id: d.merger_id,
           })),
@@ -347,7 +388,7 @@ function Analysis() {
             </div>
             <div className="p-6">
               <div className="h-80">
-                <Scatter data={phase1ScatterData} options={phase1ScatterOptions} />
+                <Scatter data={phase1ScatterData} options={phase1ScatterOptions} plugins={[approvalDateLinesPlugin]} />
               </div>
             </div>
           </div>
@@ -364,7 +405,7 @@ function Analysis() {
             </div>
             <div className="p-6">
               <div className="h-80">
-                <Scatter data={waiverScatterData} options={waiverScatterOptions} />
+                <Scatter data={waiverScatterData} options={waiverScatterOptions} plugins={[approvalDateLinesPlugin]} />
               </div>
             </div>
           </div>
