@@ -2,12 +2,12 @@
   "total_mergers": 52,
   "total_waivers": 57,
   "by_status": {
-    "Assessment completed": 30,
-    "Under assessment": 21,
+    "Assessment completed": 31,
+    "Under assessment": 20,
     "Assessment suspended": 1
   },
   "by_determination": {
-    "Approved": 30,
+    "Approved": 31,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 5
   },
   "phase_duration": {
-    "average_days": 28.166666666666668,
+    "average_days": 28.096774193548388,
     "median_days": 25,
-    "average_business_days": 18.066666666666666,
+    "average_business_days": 18.032258064516128,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 8,
-        "percentage": 26.7
+        "percentage": 25.8
       },
       "day20": {
-        "count": 24,
-        "percentage": 80.0
+        "count": 25,
+        "percentage": 80.6
       },
       "day30": {
-        "count": 30,
+        "count": 31,
         "percentage": 100.0
       }
     }
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-85007",
+      "merger_name": "Salesforce \u2013 Qualified",
+      "determination": "Approved",
+      "determination_date": "2026-03-17T12:00:00Z",
+      "page_modified_datetime": "2026-03-17T14:06:31+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-65007",
       "merger_name": "Australian Venue Co. \u2013 An Sibin Irish Pub",
       "determination": "Approved",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-12T12:00:00Z",
       "page_modified_datetime": "2026-03-12T18:36:38+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-01087",
-      "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
-      "determination": "Not approved",
-      "determination_date": "2026-03-12T12:00:00Z",
-      "page_modified_datetime": "2026-03-12T18:31:06+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
