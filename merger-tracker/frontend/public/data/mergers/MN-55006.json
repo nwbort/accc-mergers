@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hg-capital-onestream",
   "merger_name": "Hg Capital - OneStream",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-55006",
   "effective_notification_datetime": "2026-02-19T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-04-07T12:00:00Z",
-  "page_modified_datetime": "2026-02-26T17:20:57+11:00",
+  "determination_publication_date": "2026-03-17T12:00:00Z",
+  "accc_determination": "Approved",
+  "page_modified_datetime": "2026-03-17T17:37:17+11:00",
   "consultation_response_due_date": "2026-02-26T12:00:00Z",
   "acquirers": [
     {
@@ -29,7 +31,7 @@
   ],
   "other_parties": [
     {
-      "name": "Prophix Software Inc",
+      "name": "GS Topco GP LLC",
       "identifier_type": null,
       "identifier": ""
     },
@@ -39,7 +41,7 @@
       "identifier": ""
     },
     {
-      "name": "GS Topco GP LLC",
+      "name": "Prophix Software Inc",
       "identifier_type": null,
       "identifier": ""
     }
@@ -66,12 +68,47 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-03-17T12:00:00Z",
+      "title": "Hg Capital - OneStream - Phase 1 Determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Hg%20Capital%20-%20OneStream%20-%20Phase%201%20Determination_0.pdf",
+      "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "Hg Pooled Management Limited (Hg Capital) through a special\npurpose vehicle, Onward AcquireCo, Inc., proposes to acquire 100%\nof share capital in Onestream, Inc and OneStream Software LLC\n(together OneStream) (the Acquisition)."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "The acquirer, Hg Capital, is a private equity firm focussed on\ninvestment in Europe and the US. Hg Capital\u2019s portfolio companies\ninclude GS Topco GP LLC (insightsoftware), Prophix Software Inc\n(Prophix), and LucaNet Group GmbH (LucaNet). These companies\nprovide various enterprise performance management software\nsolutions throughout Australia for financial consolidation, budgeting,\nanalysis, and planning and management reporting.\nThe target, OneStream, is a software provider offering a platform\nthat unifies an enterprise's core financial functions and broader\noperation data and processes to increase the strategic impact of the\nOffice of the CFO. OneStream's platform \u2013 the Digital Finance Cloud\n\u2013 provides capabilities centred on financial close and consolidation,\nand financial and operational planning and reporting (i.e. enterprise\nperformance management)."
+        },
+        {
+          "item": "Overlap and relationship\nbetween the parties",
+          "details": "HG Capital, through its portfolio companies (insightsoftware,\nProphix and LucaNet) and OneStream overlap in the supply of\nenterprise performance management software solutions."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third partes and publicly available\ninformation.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings:\n\u2022 The Parties do not compete closely as they primarily offer a\ndifferent range and quality of products to different groups of\ncustomers.\n\u2022 The Parties will continue to face competition from alternative\nsuppliers of enterprise performance management software\nsolutions in Australia, including several competitors which are of\na similar or larger size to the Parties."
+        },
+        {
+          "item": "Applications for review",
+          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+        }
+      ],
+      "url_gh": "/matters/MN-55006/Hg Capital - OneStream - Phase 1 Determination_0.pdf",
+      "status": "live",
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-03-17T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,

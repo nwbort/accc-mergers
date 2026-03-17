@@ -2,12 +2,12 @@
   "total_mergers": 52,
   "total_waivers": 58,
   "by_status": {
-    "Assessment completed": 32,
-    "Under assessment": 19,
+    "Assessment completed": 33,
+    "Under assessment": 18,
     "Assessment suspended": 1
   },
   "by_determination": {
-    "Approved": 32,
+    "Approved": 33,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 5
   },
   "phase_duration": {
-    "average_days": 27.90625,
+    "average_days": 27.848484848484848,
     "median_days": 25,
-    "average_business_days": 17.9375,
+    "average_business_days": 17.90909090909091,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 9,
-        "percentage": 28.1
+        "percentage": 27.3
       },
       "day20": {
-        "count": 26,
-        "percentage": 81.2
+        "count": 27,
+        "percentage": 81.8
       },
       "day30": {
-        "count": 32,
+        "count": 33,
         "percentage": 100.0
       }
     }
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-55006",
+      "merger_name": "Hg Capital - OneStream",
+      "determination": "Approved",
+      "determination_date": "2026-03-17T12:00:00Z",
+      "page_modified_datetime": "2026-03-17T17:37:17+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-85011",
       "merger_name": "TDR and Estoril \u2013 Escode",
       "determination": "Approved",
@@ -168,16 +178,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-55011",
-      "merger_name": "OEP IX \u2013 Leviat",
-      "determination": "Approved",
-      "determination_date": "2026-03-16T12:00:00Z",
-      "page_modified_datetime": "2026-03-16T18:20:16+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

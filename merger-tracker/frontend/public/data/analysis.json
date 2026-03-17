@@ -275,6 +275,15 @@
         "notification_date": "2026-02-19",
         "business_days": 17,
         "calendar_days": 26,
+        "merger_name": "Hg Capital - OneStream",
+        "merger_id": "MN-55006",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "notification_date": "2026-02-19",
+        "business_days": 17,
+        "calendar_days": 26,
         "merger_name": "Salesforce \u2013 Qualified",
         "merger_id": "MN-85007",
         "determination": "Approved",
@@ -310,10 +319,10 @@
     ],
     "stats": {
       "average": 17.9,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 28,
-      "count": 32
+      "count": 33
     }
   },
   "waiver_duration": {
