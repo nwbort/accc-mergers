@@ -3528,7 +3528,7 @@
       "effective_notification_datetime": "2026-03-10T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-04-23T12:00:00Z",
-      "page_modified_datetime": "2026-03-10T17:15:02+11:00",
+      "page_modified_datetime": "2026-03-18T09:05:31+11:00",
       "consultation_response_due_date": "2026-03-17T12:00:00Z",
       "acquirers": [
         {
@@ -3538,16 +3538,6 @@
         }
       ],
       "targets": [
-        {
-          "name": "New Lenton Coal Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "48 095 390 079"
-        },
-        {
-          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 149 524 809"
-        },
         {
           "name": "BOWEN COKING COAL MARKETING PTY LTD",
           "identifier_type": "ABN",
@@ -3559,16 +3549,26 @@
           "identifier": "72 064 874 620"
         },
         {
+          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 149 524 809"
+        },
+        {
           "name": "COKING COAL ONE PTY LTD",
           "identifier_type": "ABN",
           "identifier": "89 615 317 907"
+        },
+        {
+          "name": "New Lenton Coal Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "48 095 390 079"
         }
       ],
       "other_parties": [
         {
-          "name": "Mercuria Argo Investments Pty Ltd",
-          "identifier_type": null,
-          "identifier": "202505079"
+          "name": "Argo QLD Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "690 893 371"
         },
         {
           "name": "Mercuria Dry Bulk Finance Limited",
@@ -3576,24 +3576,14 @@
           "identifier": "202505067"
         },
         {
-          "name": "Argo Holdings QLD Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "690 887 597"
-        },
-        {
           "name": "Argo Bowen Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "695 021 124"
         },
         {
-          "name": "Argo QLD Pty Ltd",
+          "name": "Argo Holdings QLD Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "690 893 371"
-        },
-        {
-          "name": "TALISMAN PARTNERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "31 645 148 796"
+          "identifier": "690 887 597"
         },
         {
           "name": "ECLIPSE MINING 2 PTY LTD",
@@ -3601,9 +3591,19 @@
           "identifier": "99 690 880 892"
         },
         {
+          "name": "TALISMAN PARTNERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "31 645 148 796"
+        },
+        {
           "name": "Mercuria Energy Group Limited",
           "identifier_type": null,
           "identifier": "202404088"
+        },
+        {
+          "name": "Mercuria Argo Investments Pty Ltd",
+          "identifier_type": null,
+          "identifier": "202505079"
         }
       ],
       "anzsic_codes": [
@@ -3612,7 +3612,7 @@
           "name": "Coal Mining"
         }
       ],
-      "merger_description": "Argo Bowen 2 Pty Ltd (**Argo Bowen 2**) proposes to acquire 100% of the shares in Bowen Coking Coal Limited (ASX:BCB) (**BCC**) and certain wholly owned subsidiaries (together, the\u00a0**Bowen Group**) pursuant to a Deed of Company Arrangement Proposal dated 9 February 2026 (the\u00a0**Acquisition**).\n\nBCC is a company that focuses on the development, production and sale of metallurgical and thermal coal.\n\nBCC appointed voluntary administrators on 30 July 2025.\n\nBCC is the indirect majority investor in the Burton-Lenton Joint Venture, which, relevant to the Acquisition, owns:\n\n* the Burton Mining Complex (also known as the New Burton Mine), which owns the Ellensfield South Mine and Plumtree North Mine;\n* the Broadmeadow East Mine (a satellite pit);\n* a coal handling and processing plant and associated facilities including a train loadout facility, rail loop and haul road.\n\nThe Bowen Group also owns the Bluff Mine, which this is excluded from the Acquisition.\n\nThe Bowen Group also holds mining licences, exploration tenements and interests in deposits and potential development projects that are undeveloped and in pre-feasibility or exploration stages in the Bowen Basin.\n\nArgo Bowen 2 Pty Ltd is a subsidiary of Argo Bowen Pty Ltd. Argo Bowen Pty Ltd is currently wholly owned by Argo Holdings QLD Pty Ltd.\n\nAnother subsidiary of Argo Holdings QLD Pty Ltd has entered into a contract to acquire a 70% interest in Fitzroy (CQ) Pty Ltd (the **Fitzroy Group**), which owns and operates three mines in the Bowen Basin region: Carborough Downs, Ironbark No. 1 mine and Broadlea open cut mine. The Fitzroy Group principally produces metallurgical coal.\n\nArgo Holdings QLD Pty Ltd is owned by Mercuria Argo Investments Pty Limited (**Mercuria**) and Eclipse Mining 2 Pty Ltd (**Eclipse**).\n\nMercuria is a subsidiary of Mercuria Energy Group Limited, an energy and commodity trading group, specialising in physical commodities, investing in strategic assets, providing financing and logistics services.\n\nEclipse is a subsidiary of Talisman Partners Pty Ltd. Talisman Partners, through another subsidiary, Eclipse Mining Pty Ltd, provides mine contracting and operations support which focuses on building and operating mines on behalf of mine owners.",
+      "merger_description": "Argo Bowen 2 Pty Ltd (**Argo Bowen 2**) proposes to acquire 100% of the shares in Bowen Coking Coal Limited (ASX:BCB) (**BCC**) and certain wholly owned subsidiaries (together, the\u00a0**Bowen Group**) pursuant to a Deed of Company Arrangement Proposal dated 9 February 2026 (the\u00a0**Acquisition**).\n\nBCC is a company that focuses on the development, production and sale of metallurgical and thermal coal.\n\nBCC appointed voluntary administrators on 30 July 2025.\n\nBCC is the indirect majority investor in the Burton-Lenton Joint Venture, which, relevant to the Acquisition, owns:\n\n* the Burton Mining Complex (also known as the New Burton Mine), which owns the Ellensfield South Mine and Plumtree North Mine;\n* the Broadmeadow East Mine (a satellite pit);\n* a coal handling and processing plant and associated facilities including a train loadout facility, rail loop and haul road.\n\nThe Bowen Group also owns the Bluff Mine, which is excluded from the Acquisition.\n\nThe Bowen Group also holds mining licences, exploration tenements and interests in deposits and potential development projects that are undeveloped and in pre-feasibility or exploration stages in the Bowen Basin.\n\nArgo Bowen 2 Pty Ltd is a subsidiary of Argo Bowen Pty Ltd. Argo Bowen Pty Ltd is currently wholly owned by Argo Holdings QLD Pty Ltd.\n\nAnother subsidiary of Argo Holdings QLD Pty Ltd has entered into a contract to acquire a 70% interest in Fitzroy (CQ) Pty Ltd (the **Fitzroy Group**), which owns and operates three mines in the Bowen Basin region: Carborough Downs, Ironbark No. 1 mine and Broadlea open cut mine. The Fitzroy Group principally produces metallurgical coal.\n\nArgo Holdings QLD Pty Ltd is owned by Mercuria Argo Investments Pty Limited (**Mercuria**) and Eclipse Mining 2 Pty Ltd (**Eclipse**).\n\nMercuria is a subsidiary of Mercuria Energy Group Limited, an energy and commodity trading group, specialising in physical commodities, investing in strategic assets, providing financing and logistics services.\n\nEclipse is a subsidiary of Talisman Partners Pty Ltd. Talisman Partners, through another subsidiary, Eclipse Mining Pty Ltd, provides mine contracting and operations support which focuses on building and operating mines on behalf of mine owners.",
       "events": [
         {
           "date": "2026-03-10T12:00:00Z",
@@ -3620,7 +3620,7 @@
           "display_title": "Questionnaire: Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%3A%20Argo%20Bowen%202%20%E2%80%93%20Bowen%20Coking%20Coal%20and%20certain%20subsidiaries%20-%20March%202026.docx",
           "url_gh": "/matters/MN-55012/Questionnaire - Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries - March 2026.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {

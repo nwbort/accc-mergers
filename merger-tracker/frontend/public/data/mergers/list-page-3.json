@@ -242,16 +242,6 @@
       ],
       "targets": [
         {
-          "name": "New Lenton Coal Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "48 095 390 079"
-        },
-        {
-          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 149 524 809"
-        },
-        {
           "name": "BOWEN COKING COAL MARKETING PTY LTD",
           "identifier_type": "ABN",
           "identifier": "22 642 022 437"
@@ -262,16 +252,26 @@
           "identifier": "72 064 874 620"
         },
         {
+          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 149 524 809"
+        },
+        {
           "name": "COKING COAL ONE PTY LTD",
           "identifier_type": "ABN",
           "identifier": "89 615 317 907"
+        },
+        {
+          "name": "New Lenton Coal Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "48 095 390 079"
         }
       ],
       "other_parties": [
         {
-          "name": "Mercuria Argo Investments Pty Ltd",
-          "identifier_type": null,
-          "identifier": "202505079"
+          "name": "Argo QLD Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "690 893 371"
         },
         {
           "name": "Mercuria Dry Bulk Finance Limited",
@@ -279,24 +279,14 @@
           "identifier": "202505067"
         },
         {
-          "name": "Argo Holdings QLD Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "690 887 597"
-        },
-        {
           "name": "Argo Bowen Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "695 021 124"
         },
         {
-          "name": "Argo QLD Pty Ltd",
+          "name": "Argo Holdings QLD Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "690 893 371"
-        },
-        {
-          "name": "TALISMAN PARTNERS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "31 645 148 796"
+          "identifier": "690 887 597"
         },
         {
           "name": "ECLIPSE MINING 2 PTY LTD",
@@ -304,9 +294,19 @@
           "identifier": "99 690 880 892"
         },
         {
+          "name": "TALISMAN PARTNERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "31 645 148 796"
+        },
+        {
           "name": "Mercuria Energy Group Limited",
           "identifier_type": null,
           "identifier": "202404088"
+        },
+        {
+          "name": "Mercuria Argo Investments Pty Ltd",
+          "identifier_type": null,
+          "identifier": "202505079"
         }
       ],
       "anzsic_codes": [
