@@ -293,6 +293,15 @@
         "notification_date": "2026-02-23",
         "business_days": 15,
         "calendar_days": 22,
+        "merger_name": "Cvent - ON24",
+        "merger_id": "MN-15005",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "notification_date": "2026-02-23",
+        "business_days": 15,
+        "calendar_days": 22,
         "merger_name": "Australian Venue Co. \u2013 An Sibin Irish Pub",
         "merger_id": "MN-65007",
         "determination": "Approved",
@@ -300,11 +309,11 @@
       }
     ],
     "stats": {
-      "average": 18.0,
-      "median": 17,
+      "average": 17.9,
+      "median": 17.0,
       "min": 15,
       "max": 28,
-      "count": 31
+      "count": 32
     }
   },
   "waiver_duration": {

@@ -1,12 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvent-on24",
   "merger_name": "Cvent - ON24",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-15005",
   "effective_notification_datetime": "2026-02-23T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-04-09T12:00:00Z",
-  "page_modified_datetime": "2026-03-02T16:30:47+11:00",
+  "determination_publication_date": "2026-03-17T12:00:00Z",
+  "accc_determination": "Approved",
+  "page_modified_datetime": "2026-03-17T13:21:43+11:00",
   "consultation_response_due_date": "2026-03-02T12:00:00Z",
   "acquirers": [
     {
@@ -35,7 +37,7 @@
       "name": "Data Processing and Web Hosting Services"
     }
   ],
-  "merger_description": "Cvent Atlanta, LLC (**Cvent**) proposes to acquire ON24, Inc. (**ON24**), through the merger of Summit Sub Corp. (an indirect wholly owned subsidiary of Cvent) with ON24. Following the merger, ON24 will be the surviving entity and continue as an indirect wholly owned subsidiary of Cvent (**Proposed Acquisition**).\n\nCvent provides meetings, events and hospitality technology, specifically an event marketing and management platform. Cvent is solely controlled by investment funds managed by affiliates of Blackstone, Inc.\n\nIn Australia, Cvent provides cloud-based services for hospitality and event management, and limited webinar services.\n\nON24 is a cloud-based engagement platform that provides tools for webinars, virtual events and other experiences. It also provides marketing and sales analytics tools.\n\nIn Australia, ON24 supplies webinar services and to a lesser extent virtual event services software.",
+  "merger_description": "Cvent Atlanta, LLC (Cvent) proposes to acquire ON24, Inc. (ON24), through the merger of Summit Sub Corp. (an indirect wholly owned subsidiary of Cvent) with ON24. Following the merger, ON24 will be the surviving entity and continue as an indirect wholly owned subsidiary of Cvent (Proposed Acquisition).\n\nCvent provides meetings, events and hospitality technology, specifically an event marketing and management platform. Cvent is solely controlled by investment funds managed by affiliates of Blackstone, Inc.\n\nIn Australia, Cvent provides cloud-based services for hospitality and event management, and limited webinar services.\n\nON24 is a cloud-based engagement platform that provides tools for webinars, virtual events and other experiences. It also provides marketing and sales analytics tools.\n\nIn Australia, ON24 supplies webinar services and to a lesser extent virtual event services software.",
   "events": [
     {
       "date": "2026-02-23T12:00:00Z",
@@ -51,12 +53,20 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-03-17T12:00:00Z",
+      "title": "Cvent - ON24 - Phase 1 Determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Cvent%20-%20ON24%20-%20Phase%201%20Determination.pdf",
+      "url_gh": "/matters/MN-15005/Cvent - ON24 - Phase 1 Determination.pdf",
+      "status": "live",
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-03-17T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
