@@ -2,12 +2,12 @@
   "total_mergers": 52,
   "total_waivers": 57,
   "by_status": {
-    "Assessment completed": 29,
-    "Under assessment": 22,
+    "Assessment completed": 30,
+    "Under assessment": 21,
     "Assessment suspended": 1
   },
   "by_determination": {
-    "Approved": 29,
+    "Approved": 30,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 5
   },
   "phase_duration": {
-    "average_days": 28.275862068965516,
+    "average_days": 28.166666666666668,
     "median_days": 25,
-    "average_business_days": 18.137931034482758,
+    "average_business_days": 18.066666666666666,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 8,
-        "percentage": 27.6
+        "percentage": 26.7
       },
       "day20": {
-        "count": 23,
-        "percentage": 79.3
+        "count": 24,
+        "percentage": 80.0
       },
       "day30": {
-        "count": 29,
+        "count": 30,
         "percentage": 100.0
       }
     }
@@ -130,6 +130,16 @@
       "stage": "Phase 1 - initial assessment"
     },
     {
+      "merger_id": "MN-80004",
+      "merger_name": "Audiotonix - Soundtech Group",
+      "determination": "Approved",
+      "determination_date": "2026-03-17T12:00:00Z",
+      "page_modified_datetime": "2026-03-17T11:46:00+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-55011",
       "merger_name": "OEP IX \u2013 Leviat",
       "determination": "Approved",
@@ -168,16 +178,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-70005",
-      "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
-      "determination": "Approved",
-      "determination_date": "2026-03-12T12:00:00Z",
-      "page_modified_datetime": "2026-03-12T18:05:50+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

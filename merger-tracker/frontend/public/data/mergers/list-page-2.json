@@ -1681,23 +1681,23 @@
     {
       "merger_id": "MN-80004",
       "merger_name": "Audiotonix - Soundtech Group",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-02-20T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-03-17T12:00:00Z",
       "end_of_determination_period": "2026-04-08T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Sound Bidco (Denmark) ApS",
-          "identifier_type": null,
-          "identifier": "Company number (Denmark)  45697088"
-        },
-        {
           "name": "A6 Audio Bidco Limited",
           "identifier_type": null,
           "identifier": "Company number (England and Wales)  10573578"
+        },
+        {
+          "name": "Sound Bidco (Denmark) ApS",
+          "identifier_type": null,
+          "identifier": "Company number (Denmark)  45697088"
         },
         {
           "name": "Sound Bidco S.r.l.",
@@ -1719,9 +1719,19 @@
           "identifier": "Company number (Denmark)  15912200"
         },
         {
+          "name": "Sound Network ApS",
+          "identifier_type": null,
+          "identifier": "Company number (Denmark)  43989472"
+        },
+        {
           "name": "Austrian Audio GmbH",
           "identifier_type": null,
           "identifier": "Company number (Austria): FN 472051"
+        },
+        {
+          "name": "Sound Devices LLC",
+          "identifier_type": null,
+          "identifier": "Company number (State of Wisconsin)  S053063"
         },
         {
           "name": "Audiotonix Limited",
@@ -1729,19 +1739,9 @@
           "identifier": "Company number (England and Wales)  15618986"
         },
         {
-          "name": "Sound Network ApS",
-          "identifier_type": null,
-          "identifier": "Company number (Denmark)  43989472"
-        },
-        {
           "name": "Wisycom S.r.l.",
           "identifier_type": null,
           "identifier": "Registration number (Companies\u2019 Register of Padova, VAT and Tax Code)  02765640244"
-        },
-        {
-          "name": "Sound Devices LLC",
-          "identifier_type": null,
-          "identifier": "Company number (State of Wisconsin)  S053063"
         }
       ],
       "anzsic_codes": [

@@ -4553,23 +4553,25 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/audiotonix-soundtech-group",
       "merger_name": "Audiotonix - Soundtech Group",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-80004",
       "effective_notification_datetime": "2026-02-20T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-04-08T12:00:00Z",
-      "page_modified_datetime": "2026-02-28T11:51:07+11:00",
+      "determination_publication_date": "2026-03-17T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-03-17T11:46:00+11:00",
       "consultation_response_due_date": "2026-02-27T12:00:00Z",
       "acquirers": [
-        {
-          "name": "Sound Bidco (Denmark) ApS",
-          "identifier_type": null,
-          "identifier": "Company number (Denmark)  45697088"
-        },
         {
           "name": "A6 Audio Bidco Limited",
           "identifier_type": null,
           "identifier": "Company number (England and Wales)  10573578"
+        },
+        {
+          "name": "Sound Bidco (Denmark) ApS",
+          "identifier_type": null,
+          "identifier": "Company number (Denmark)  45697088"
         },
         {
           "name": "Sound Bidco S.r.l.",
@@ -4591,9 +4593,19 @@
           "identifier": "Company number (Denmark)  15912200"
         },
         {
+          "name": "Sound Network ApS",
+          "identifier_type": null,
+          "identifier": "Company number (Denmark)  43989472"
+        },
+        {
           "name": "Austrian Audio GmbH",
           "identifier_type": null,
           "identifier": "Company number (Austria): FN 472051"
+        },
+        {
+          "name": "Sound Devices LLC",
+          "identifier_type": null,
+          "identifier": "Company number (State of Wisconsin)  S053063"
         },
         {
           "name": "Audiotonix Limited",
@@ -4601,19 +4613,9 @@
           "identifier": "Company number (England and Wales)  15618986"
         },
         {
-          "name": "Sound Network ApS",
-          "identifier_type": null,
-          "identifier": "Company number (Denmark)  43989472"
-        },
-        {
           "name": "Wisycom S.r.l.",
           "identifier_type": null,
           "identifier": "Registration number (Companies\u2019 Register of Padova, VAT and Tax Code)  02765640244"
-        },
-        {
-          "name": "Sound Devices LLC",
-          "identifier_type": null,
-          "identifier": "Company number (State of Wisconsin)  S053063"
         }
       ],
       "anzsic_codes": [
@@ -4622,7 +4624,7 @@
           "name": "Other Goods Wholesaling n.e.c."
         }
       ],
-      "merger_description": "Audiotonix Limited (**Audiotonix**) intends to acquire 100% of the shares and sole control of Soundtech Group S.r.l. (**Soundtech Group**) through 2 special purpose vehicles, Sound Bidco S.r.l and Sound Bidco (Denmark) ApS. Both special purpose vehicles will be 100% directly owned by A6 Audio Bidco Limited (**A6 Audio**), which, in turn, is 100% indirectly owned by Audiotonix. A6 Audio and Audiotonix are part of Audiotonix Group, a UK-headquartered group active in the design, engineering and manufacturing of professional audio mixing consoles, as well as associated equipment such as networking (allowing consoles to connect with other consoles), interface products (used to physically control music editing and mixing remotely from a console), software (e.g., audio processing, control software and operating systems) and spare parts.\n\nAudiotonix is under the sole control of PAI Partners, a private equity firm with a focus on investing in business services, food and consumer, general industrials and healthcare.\n\nIn Australia, Audiotonix\u2019s subsidiary Sound Devices is a wholesale supplier of wireless microphone systems.\n\nSoundtech Group is a supplier in the professional audio industry which is active in the design, manufacturing and application of micro-electronic mechanisms.\n\nSoundtech Group\u2019s subsidiaries include DPA Microphones A/S (DPA Microphones), Austrian Audio GmbH (Austrian Audio) and Wisycom S.r.l. (Wisycom).\n\nIn Australia, DPA Microphones and Austrian Audio are wholesale suppliers of high-end microphones, and Wisycom is a wholesale supplier of wireless microphone systems and wireless in-ear monitoring systems.",
+      "merger_description": "Audiotonix Limited (Audiotonix) intends to acquire 100% of the shares and sole control of Soundtech Group S.r.l. (Soundtech Group) through 2 special purpose vehicles, Sound Bidco S.r.l and Sound Bidco (Denmark) ApS. Both special purpose vehicles will be 100% directly owned by A6 Audio Bidco Limited (A6 Audio), which, in turn, is 100% indirectly owned by Audiotonix. A6 Audio and Audiotonix are part of Audiotonix Group, a UK-headquartered group active in the design, engineering and manufacturing of professional audio mixing consoles, as well as associated equipment such as networking (allowing consoles to connect with other consoles), interface products (used to physically control music editing and mixing remotely from a console), software (e.g., audio processing, control software and operating systems) and spare parts.\n\nAudiotonix is under the sole control of PAI Partners, a private equity firm with a focus on investing in business services, food and consumer, general industrials and healthcare.\n\nIn Australia, Audiotonix\u2019s subsidiary Sound Devices is a wholesale supplier of wireless microphone systems.\n\nSoundtech Group is a supplier in the professional audio industry which is active in the design, manufacturing and application of micro-electronic mechanisms.\n\nSoundtech Group\u2019s subsidiaries include DPA Microphones A/S (DPA Microphones), Austrian Audio GmbH (Austrian Audio) and Wisycom S.r.l. (Wisycom).\n\nIn Australia, DPA Microphones and Austrian Audio are wholesale suppliers of high-end microphones, and Wisycom is a wholesale supplier of wireless microphone systems and wireless in-ear monitoring systems.",
       "events": [
         {
           "date": "2026-02-20T12:00:00Z",
@@ -4638,12 +4640,47 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-03-17T12:00:00Z",
+          "title": "Audiotonix - Soundtech Group - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Audiotonix%20-%20Soundtech%20Group%20-%20Phase%201%20Determination.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Audiotonix Limited (Audiotonix)\u2019s proposed acquisition, via Sound\nBidco S.r.l. and Sound Bidco (Denmark) ApS, of 100% of the shares\nin Soundtech Group S.r.l. (Soundtech Group) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Audiotonix, is a wholly-owned subsidiary of Audiotonix\nGroup Limited (Audiotonix Group), an UK-headquartered group\nactive in the design, engineering and manufacturing of professional\naudio mixing consoles, associated equipment such as networking\n(allowing consoles to connect with other consoles), interface\nproducts (used to physically control music editing and mixing\nremotely from a console), software (e.g., audio processing, control\nsoftware and operating systems) and spare parts. Audiotonix Group\nis ultimately owned by PAI Partners S.\u00e0 r.l. (PAI Partners), an\nindependent private equity firm headquartered in Paris, France. PAI\nPartners invests in business services, food and consumer, general\nindustrials and healthcare.\nIn Australia, Audiotonix\u2019s subsidiary Sound Devices LLC (Sound\nDevices) is a wholesale supplier of portable and installed production\nsound and video products for professional applications, including\nwireless microphone systems.\nThe target, Soundtech Group, is a supplier of professional audio\nmicro-electronic mechanisms. Its subsidiaries include DPA\nMicrophones A/S (DPA Microphones), Austrian Audio GmbH\n(Austrian Audio) and Wisycom S.r.l. (Wisycom).\nIn Australia, DPA Microphones and Austrian Audio are wholesale\nsuppliers of high-end microphones, and Wisycom is a wholesale\nsupplier of wireless microphone systems and wireless in-ear\nmonitoring systems."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the parties",
+              "details": "Audiotonix and Soundtech Group (together, the Parties) overlap in\nthe supply of wireless microphone systems in Australia. Soundtech\nGroup also supplies wireless in-ear monitoring systems in Australia.\nWireless microphone systems refer to audio solutions for use on\nstage, on set or on the move that combine microphones, wireless\ntransmitters and receivers. Sound is recorded through a wireless\nhandheld microphone or through other types of microphones, such\nas on-body or on-clothing microphones, that communicates with a\nbodypack transmitter. The sound is transmitted to a wireless\nreceiver, which can be connected to various other\nmicrophones/transmitters, and transfers the recorded sound to\nother sound systems for processing. Antennas can be used as part\nof the system to pick up radio frequency-transmitted sound over\nlonger distances.\nWireless in-ear monitoring systems refer to audio solutions used in\nlive, broadcast and theatrical environments and enable different\nperformers to hear all or relevant parts of the sound of the\nperformance. These systems combine wireless transmitters,\nreceivers worn on the body by the performers which transmit the\nsound to an audio device, such as ear moulds, and combiners that\ncombine radio frequency outputs from several transmitters into a\nsingle antenna."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The Parties\u2019 market share aggregation is estimated to be low on\nany market definition, with an estimated post-acquisition market\nshare of below 10%.\n\u2022 The Parties would continue to face competition from alternative\nsuppliers of wireless microphone and in-ear monitoring systems\nin Australia, such as Sennheiser, Shure, Audio-Technica and\nLectrosonics."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/matters/MN-80004/Audiotonix - Soundtech Group - Phase 1 Determination.pdf",
+          "status": "live",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-03-17T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
