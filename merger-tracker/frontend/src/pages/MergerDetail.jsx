@@ -40,7 +40,7 @@ function MergerDetail() {
       const data = await response.json();
       setMerger(data);
     } catch (err) {
-      if (err.name === 'TypeError') {
+      if (err.name === 'TypeError' || err.name === 'SyntaxError') {
         setError('not_found');
       } else {
         setError(err.message);
