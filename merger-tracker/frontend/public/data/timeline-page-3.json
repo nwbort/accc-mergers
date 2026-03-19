@@ -338,6 +338,18 @@
     },
     {
       "date": "2026-03-06T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "WA-20010",
+      "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+      "phase": "Phase 1",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-03-06T12:00:00Z",
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Allied%20Beef%20-%20Lease%20of%20Yarranbrook%20Feedlot%20%28WA-50005%29%20-%20Notification%20waiver%20determination%20-%206%20March%202026.pdf",
@@ -534,7 +546,7 @@
       "display_title": "Questionnaire - Rocket Software - Vertica",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Rocket-Vertica%20-%20third-party%20questionnaire%20-%20March%202026.docx",
       "url_gh": "/matters/MN-20009/Rocket-Vertica - third-party questionnaire - March 2026.pdf",
-      "status": "live",
+      "status": "removed",
       "merger_id": "MN-20009",
       "merger_name": "Rocket Software \u2013 Vertica",
       "phase": null,
@@ -899,6 +911,18 @@
       "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
       "phase": "Phase 1",
       "is_waiver": false
+    },
+    {
+      "date": "2026-03-19T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Not approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/PT%20Asian%20Bulk%20Logistics%20-%20Engage%20Marine%20%28WA-20010%29%20-%20Notification%20waiver%20determination%20-%2019%20March%202026.pdf",
+      "url_gh": "/matters/WA-20010/PT Asian Bulk Logistics - Engage Marine (WA-20010) - Notification waiver determination - 19 March 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-20010",
+      "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+      "phase": "Waiver",
+      "is_waiver": true
     }
   ],
   "page": 3,

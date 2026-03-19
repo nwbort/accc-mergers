@@ -808,14 +808,22 @@
         "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
         "merger_id": "WA-95008",
         "determination": "Approved"
+      },
+      {
+        "application_date": "2026-03-06",
+        "business_days": 8,
+        "calendar_days": 13,
+        "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+        "merger_id": "WA-20010",
+        "determination": "Not approved"
       }
     ],
     "stats": {
-      "average": 10.5,
-      "median": 10.0,
+      "average": 10.4,
+      "median": 10,
       "min": 2,
       "max": 22,
-      "count": 58
+      "count": 59
     }
   },
   "monthly_volume": {
@@ -844,7 +852,7 @@
       0,
       30,
       27,
-      1
+      2
     ]
   }
 }
