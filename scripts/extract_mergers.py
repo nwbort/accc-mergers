@@ -79,6 +79,9 @@ def sanitize_filename(filename):
     # Replace ampersands with 'and' (common in company names like "Toyota & Ford")
     sanitized = sanitized.replace('&', 'and')
 
+    # Replace percent signs with 'pct' (common in titles like "50% acquisition")
+    sanitized = sanitized.replace('%', 'pct')
+
     # Clean up any double spaces that might result
     while '  ' in sanitized:
         sanitized = sanitized.replace('  ', ' ')
