@@ -184,7 +184,22 @@ def get_serve_filename(original_filename: str) -> str:
     return original_filename
 
 
-def parse_merger_file(filepath, existing_merger_data=None):
+FROZEN_EVENTS_MERGERS_PATH = 'data/frozen_events_mergers.json'
+
+def _load_frozen_events_mergers():
+    """Load the set of merger IDs whose events should not be updated from scraping."""
+    try:
+        with open(FROZEN_EVENTS_MERGERS_PATH, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return {k for k in data if not k.startswith('_')}
+    except FileNotFoundError:
+        return set()
+    except Exception as e:
+        print(f"Warning: could not load {FROZEN_EVENTS_MERGERS_PATH}: {e}", file=sys.stderr)
+        return set()
+
+
+def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers=None):
     """
     Parses a single HTML file, extracts structured data for a merger,
     and downloads any new attachments found. This function is designed to be
@@ -193,6 +208,7 @@ def parse_merger_file(filepath, existing_merger_data=None):
     Args:
         filepath (str): The path to the HTML file.
         existing_merger_data (dict or None): Existing data for the merger.
+        frozen_events_mergers (set or None): Merger IDs whose events should not be updated from scraping.
 
     Returns:
         dict or None: A dictionary containing the structured data for the merger,
@@ -253,6 +269,8 @@ def parse_merger_file(filepath, existing_merger_data=None):
         if merger_data.get('accc_determination') and not merger_data.get('determination_publication_date'):
             if merger_id in KNOWN_DETERMINATION_DATES:
                 merger_data['determination_publication_date'] = KNOWN_DETERMINATION_DATES[merger_id]
+
+        FROZEN_EVENTS_MERGERS = frozen_events_mergers or set()
 
         # --- Page Modified DateTime (for sorting determinations on same day) ---
         # Extract dcterms.modified metadata which shows when the page was last updated
@@ -385,7 +403,14 @@ def parse_merger_file(filepath, existing_merger_data=None):
                 scraped_events.append(event)
 
         # Merge scraped events with existing events
-        if existing_merger_data and 'events' in existing_merger_data:
+        if existing_merger_data and 'events' in existing_merger_data and merger_id in FROZEN_EVENTS_MERGERS:
+            # Events are frozen: the ACCC website has bad data for this merger.
+            # Preserve existing events exactly as-is; only add genuinely new events
+            # (ones whose URL doesn't appear anywhere in the existing list).
+            existing_urls = {e['url'] for e in existing_merger_data['events'] if 'url' in e}
+            new_events = [e for e in scraped_events if e.get('url') not in existing_urls and 'url' in e]
+            merger_data['events'] = existing_merger_data['events'] + new_events
+        elif existing_merger_data and 'events' in existing_merger_data:
             existing_events = existing_merger_data['events']
 
             # Create a mapping of scraped events by URL (for events with URLs)
@@ -647,7 +672,13 @@ def main():
             print(f"Skipping {len(skipped_merger_ids)} merger(s) past cutoff date "
                   "(use --all to process all mergers)", file=sys.stderr)
 
-    # 3. Get a list of all HTML file paths to process
+    # 3. Load the frozen events merger list
+    frozen_events_mergers = _load_frozen_events_mergers()
+    if frozen_events_mergers:
+        print(f"Frozen events for {len(frozen_events_mergers)} merger(s): {', '.join(sorted(frozen_events_mergers))}",
+              file=sys.stderr)
+
+    # 4. Get a list of all HTML file paths to process
     filepaths = [
         os.path.join(MATTERS_DIR, filename)
         for filename in os.listdir(MATTERS_DIR)
@@ -657,7 +688,7 @@ def main():
     all_mergers_data = []
     processed_merger_ids = set()
 
-    # 4. Use a ProcessPoolExecutor to run parsing in parallel
+    # 5. Use a ProcessPoolExecutor to run parsing in parallel
     with ProcessPoolExecutor() as executor:
         # Create a list of arguments for parse_merger_file
         tasks = []
@@ -667,7 +698,7 @@ def main():
                 # Skip mergers past cutoff unless --all is specified
                 if merger_id in skipped_merger_ids:
                     continue
-                tasks.append((fp, existing_mergers.get(merger_id)))
+                tasks.append((fp, existing_mergers.get(merger_id), frozen_events_mergers))
                 processed_merger_ids.add(merger_id)
             else:
                 print(f"Warning: Could not extract merger_id from {fp}", file=sys.stderr)
@@ -675,25 +706,25 @@ def main():
         # The map function applies parse_merger_file to each task tuple
         results = executor.map(run_parse_merger_file, tasks)
 
-        # 5. Collect valid results, filtering out any None values from failed parses
+        # 6. Collect valid results, filtering out any None values from failed parses
         all_mergers_data = [data for data in results if data is not None]
 
-    # 6. Preserve skipped mergers from existing data (they remain in output unchanged)
+    # 7. Preserve skipped mergers from existing data (they remain in output unchanged)
     for merger_id in skipped_merger_ids:
         if merger_id in existing_mergers:
             all_mergers_data.append(existing_mergers[merger_id])
 
-    # 7. Enrich with questionnaire data (consultation deadlines)
+    # 8. Enrich with questionnaire data (consultation deadlines)
     all_mergers_data = enrich_with_questionnaire_data(all_mergers_data)
 
-    # 8. Add is_waiver field to each merger
+    # 9. Add is_waiver field to each merger
     for merger in all_mergers_data:
         merger['is_waiver'] = is_waiver_merger(merger)
 
-    # 9. Sort the data by merger_id to ensure a consistent output
+    # 10. Sort the data by merger_id to ensure a consistent output
     all_mergers_data.sort(key=lambda x: x.get('merger_id', ''))
 
-    # 10. Write the final JSON output to mergers.json
+    # 11. Write the final JSON output to mergers.json
     with open('data/processed/mergers.json', 'w', encoding='utf-8') as f:
         json.dump(all_mergers_data, f, indent=2)
 
