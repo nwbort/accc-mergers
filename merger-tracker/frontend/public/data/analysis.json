@@ -291,6 +291,15 @@
       },
       {
         "notification_date": "2026-02-20",
+        "business_days": 18,
+        "calendar_days": 27,
+        "merger_name": "Craig Mostyn \u2013 Patmore Feeds",
+        "merger_id": "MN-60007",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "notification_date": "2026-02-20",
         "business_days": 16,
         "calendar_days": 25,
         "merger_name": "Audiotonix - Soundtech Group",
@@ -319,10 +328,10 @@
     ],
     "stats": {
       "average": 17.9,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 28,
-      "count": 33
+      "count": 34
     }
   },
   "waiver_duration": {
