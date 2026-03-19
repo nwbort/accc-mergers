@@ -1,9 +1,9 @@
 {
-  "total_mergers": 53,
+  "total_mergers": 54,
   "total_waivers": 58,
   "by_status": {
     "Assessment completed": 34,
-    "Under assessment": 18,
+    "Under assessment": 19,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -56,6 +56,10 @@
       "count": 5
     },
     {
+      "name": "Scientific Research Services",
+      "count": 4
+    },
+    {
       "name": "Pharmaceutical and Toiletry Goods Wholesaling",
       "count": 4
     },
@@ -70,13 +74,17 @@
     {
       "name": "Supermarket and Grocery Stores",
       "count": 3
-    },
-    {
-      "name": "Scientific Research Services",
-      "count": 3
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-40009",
+      "merger_name": "Gilead - Arcellx",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-19T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-30005",
       "merger_name": "Adobe - Semrush",
@@ -104,14 +112,6 @@
     {
       "merger_id": "MN-01090",
       "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-12T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-25006",
-      "merger_name": "KPS \u2013 Novacel",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-12T12:00:00Z",
