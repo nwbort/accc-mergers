@@ -1,0 +1,4 @@
+{
+  "_comment": "Mergers whose events table on the ACCC website is known to be incorrect. For these, the existing events from mergers.json are preserved as-is rather than being overwritten by bad scraped data. Remove a merger from this list once the ACCC has fixed their website.",
+  "MN-01019": "Ampol / EG Australia: ACCC site has wrong dates on events table (NOCC summary shows 2025-11-06 instead of 2026-03-02; Phase 2 notice shows 2026-03-02 instead of 2026-01-21)"
+}
