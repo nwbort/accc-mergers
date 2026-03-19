@@ -1,6 +1,30 @@
 {
   "events": [
     {
+      "date": "2026-02-25T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "WA-01088",
+      "merger_name": "BSN Sports \u2013 Sports Endeavors",
+      "phase": "Phase 1",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-02-25T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Colliers%20International%20Group%20-%20Ayesa%20Engineering%20%28WA-15008%29%20-%20Notification%20waiver%20determination%20-%2025%20February%202026.pdf",
+      "url_gh": "/matters/WA-15008/Colliers International Group - Ayesa Engineering (WA-15008) - Notification waiver determination - 25 February 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-15008",
+      "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
       "date": "2026-02-26T12:00:00Z",
       "title": "GE Healthcare - Intelerad - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
@@ -215,6 +239,18 @@
       "merger_name": "Bain Capital \u2013 MCJ",
       "phase": "Phase 1",
       "is_waiver": false
+    },
+    {
+      "date": "2026-03-03T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "WA-85014",
+      "merger_name": "Genesis Minerals \u2013 Magnetic Resources",
+      "phase": "Phase 1",
+      "is_waiver": true
     },
     {
       "date": "2026-03-04T12:00:00Z",
@@ -915,12 +951,48 @@
     {
       "date": "2026-03-19T12:00:00Z",
       "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Telstra%20%E2%80%93%20outsourcing%20agreement%20with%20Infosys%20Technologies%20%28WA-20007%29%20-%20Notification%20waiver%20determination%20-%2019%20March%202026_0.pdf",
+      "url_gh": "/matters/WA-20007/Telstra \u2013 outsourcing agreement with Infosys Technologies (WA-20007) - Notification waiver determination - 19 March 2026_0.pdf",
+      "status": "live",
+      "merger_id": "WA-20007",
+      "merger_name": "Telstra \u2013 Infosys Technologies",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-03-19T12:00:00Z",
+      "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Not approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/PT%20Asian%20Bulk%20Logistics%20-%20Engage%20Marine%20%28WA-20010%29%20-%20Notification%20waiver%20determination%20-%2019%20March%202026.pdf",
       "url_gh": "/matters/WA-20010/PT Asian Bulk Logistics - Engage Marine (WA-20010) - Notification waiver determination - 19 March 2026.pdf",
       "status": "live",
       "merger_id": "WA-20010",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-03-19T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Airtree%20-%20HotDoc%20%28WA-50006%29%20-%20Notification%20waiver%20determination%20-%2019%20March%202026.pdf",
+      "url_gh": "/matters/WA-50006/Airtree - HotDoc (WA-50006) - Notification waiver determination - 19 March 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-50006",
+      "merger_name": "Airtree \u2013 HotDoc",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-03-19T12:00:00Z",
+      "title": "Notiification waiver determination",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Genesis%20Minerals%20-%20Magnetic%20Resources%20%28WA-85014%29%20-%20Notification%20waiver%20determination%20-%2019%20March%202026.pdf",
+      "url_gh": "/matters/WA-85014/Genesis Minerals - Magnetic Resources (WA-85014) - Notification waiver determination - 19 March 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-85014",
+      "merger_name": "Genesis Minerals \u2013 Magnetic Resources",
       "phase": "Waiver",
       "is_waiver": true
     }

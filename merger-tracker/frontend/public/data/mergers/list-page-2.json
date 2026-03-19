@@ -1252,6 +1252,51 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hongshan-capital-group-and-temasek-%E2%80%93-golden-goose-group"
     },
     {
+      "merger_id": "WA-20007",
+      "merger_name": "Telstra \u2013 Infosys Technologies",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-17T12:00:00Z",
+      "determination_publication_date": "2026-03-19T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "TELSTRA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "64 086 174 781"
+        }
+      ],
+      "targets": [
+        {
+          "name": "INFOSYS TECHNOLOGIES LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "52 090 591 209"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5801",
+          "name": "Wired Telecommunications Network Operation"
+        },
+        {
+          "code": "5802",
+          "name": "Other Telecommunications Network Operation"
+        },
+        {
+          "code": "5809",
+          "name": "Other Telecommunications Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/telstra-%E2%80%93-infosys-technologies"
+    },
+    {
       "merger_id": "MN-40005",
       "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
       "status": "Assessment completed",
@@ -1936,6 +1981,85 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-venue-co-%E2%80%93-an-sibin-irish-pub"
     },
     {
+      "merger_id": "WA-50006",
+      "merger_name": "Airtree \u2013 HotDoc",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-02-23T12:00:00Z",
+      "determination_publication_date": "2026-03-19T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Airtree Ventures Opportunity Fund V Trusco Pty Ltd atf Airtree Ventures Opportunity Fund V Stapled T",
+          "identifier_type": "ABN",
+          "identifier": "14 646 384 732"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Aegleon Holdco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 692 769"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "HOTDOC ONLINE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "84 159 662 558"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "5921",
+          "name": "Data Processing and Web Hosting Services"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        },
+        {
+          "code": "8511",
+          "name": "General Practice Medical Services"
+        },
+        {
+          "code": "8512",
+          "name": "Specialist Medical Services"
+        },
+        {
+          "code": "8531",
+          "name": "Dental Services"
+        },
+        {
+          "code": "8532",
+          "name": "Optometry and Optical Dispensing"
+        },
+        {
+          "code": "8533",
+          "name": "Physiotherapy Services"
+        },
+        {
+          "code": "8534",
+          "name": "Chiropractic and Osteopathic Services"
+        },
+        {
+          "code": "8539",
+          "name": "Other Allied Health Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/airtree-%E2%80%93-hotdoc"
+    },
+    {
       "merger_id": "WA-70007",
       "merger_name": "Platinum Equity Group \u2013 Burke",
       "status": "Assessment completed",
@@ -2481,118 +2605,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/oep-ix-%E2%80%93-leviat"
-    },
-    {
-      "merger_id": "WA-75011",
-      "merger_name": "Autosports Group - Solitaire Automotive Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-02-26T12:00:00Z",
-      "determination_publication_date": "2026-03-11T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "AUTOSPORTS GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "54 614 505 261"
-        }
-      ],
-      "targets": [
-        {
-          "name": "David Smoker",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Russleigh Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "052 977 198"
-        },
-        {
-          "name": "Toja Investments Pty Ltd as trustee for the Bill Holst Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "13 097 498 390"
-        },
-        {
-          "name": "CAMBRIDGE MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "52 007 555 295"
-        },
-        {
-          "name": "THE RUSSLEIGH UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "81 107 070 988"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3911",
-          "name": "Car Retailing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/autosports-group-solitaire-automotive-group"
-    },
-    {
-      "merger_id": "WA-85013",
-      "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-02-27T12:00:00Z",
-      "determination_publication_date": "2026-03-10T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "NDC AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
-        }
-      ],
-      "targets": [
-        {
-          "name": "TAN DENTAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 146 067 594"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "NDC FINCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "14 654 149 818"
-        },
-        {
-          "name": "NATIONAL DENTAL CARE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "89 160 442 071"
-        },
-        {
-          "name": "NDC SERVICE CO PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 162 958 072"
-        },
-        {
-          "name": "NDC PROPERTY CO PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "68 163 264 097"
-        },
-        {
-          "name": "NDC HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "13 654 148 188"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "8531",
-          "name": "Dental Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/national-dental-care-%E2%80%93-ddta-dental-clinic-in-launceston-tas"
     }
   ],
   "page": 2,

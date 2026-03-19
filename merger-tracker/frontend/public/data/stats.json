@@ -1,6 +1,6 @@
 {
   "total_mergers": 56,
-  "total_waivers": 59,
+  "total_waivers": 62,
   "by_status": {
     "Assessment completed": 35,
     "Under assessment": 20,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 53,
+    "Approved": 56,
     "Not approved": 6
   },
   "phase_duration": {
@@ -37,11 +37,11 @@
   "top_industries": [
     {
       "name": "Software Publishing",
-      "count": 18
+      "count": 19
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 17
+      "count": 19
     },
     {
       "name": "Financial Asset Investing",
@@ -49,7 +49,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 7
+      "count": 8
     },
     {
       "name": "Non-Residential Property Operators",
@@ -68,12 +68,12 @@
       "count": 4
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
+      "name": "Data Processing and Web Hosting Services",
       "count": 4
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 3
+      "name": "Dental Services",
+      "count": 4
     }
   ],
   "recent_mergers": [
@@ -120,6 +120,36 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85014",
+      "merger_name": "Genesis Minerals \u2013 Magnetic Resources",
+      "determination": "Approved",
+      "determination_date": "2026-03-19T12:00:00Z",
+      "page_modified_datetime": "2026-03-19T18:48:09+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-50006",
+      "merger_name": "Airtree \u2013 HotDoc",
+      "determination": "Approved",
+      "determination_date": "2026-03-19T12:00:00Z",
+      "page_modified_datetime": "2026-03-19T18:39:40+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-20007",
+      "merger_name": "Telstra \u2013 Infosys Technologies",
+      "determination": "Approved",
+      "determination_date": "2026-03-19T12:00:00Z",
+      "page_modified_datetime": "2026-03-19T18:15:59+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-20010",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
       "determination": "Not approved",
@@ -145,36 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-19T12:00:00Z",
       "page_modified_datetime": "2026-03-19T12:04:41+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-55006",
-      "merger_name": "Hg Capital - OneStream",
-      "determination": "Approved",
-      "determination_date": "2026-03-17T12:00:00Z",
-      "page_modified_datetime": "2026-03-17T17:37:17+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-85011",
-      "merger_name": "TDR and Estoril \u2013 Escode",
-      "determination": "Approved",
-      "determination_date": "2026-03-17T12:00:00Z",
-      "page_modified_datetime": "2026-03-17T16:54:48+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-85007",
-      "merger_name": "Salesforce \u2013 Qualified",
-      "determination": "Approved",
-      "determination_date": "2026-03-17T12:00:00Z",
-      "page_modified_datetime": "2026-03-17T14:06:31+11:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
