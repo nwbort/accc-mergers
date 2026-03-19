@@ -254,6 +254,14 @@ def parse_merger_file(filepath, existing_merger_data=None):
             if merger_id in KNOWN_DETERMINATION_DATES:
                 merger_data['determination_publication_date'] = KNOWN_DETERMINATION_DATES[merger_id]
 
+        # Mergers whose events table on the ACCC website is known to be incorrect.
+        # For these, we preserve the existing events from mergers.json rather than
+        # overwriting them with bad data scraped from the site.
+        # Remove a merger from this list once the ACCC has fixed their website.
+        FROZEN_EVENTS_MERGERS = {
+            'MN-01019',  # Ampol / EG Australia: ACCC site has wrong dates on events table
+        }
+
         # --- Page Modified DateTime (for sorting determinations on same day) ---
         # Extract dcterms.modified metadata which shows when the page was last updated
         # This helps sort determinations that occur on the same day by the time they were added
@@ -385,7 +393,14 @@ def parse_merger_file(filepath, existing_merger_data=None):
                 scraped_events.append(event)
 
         # Merge scraped events with existing events
-        if existing_merger_data and 'events' in existing_merger_data:
+        if existing_merger_data and 'events' in existing_merger_data and merger_id in FROZEN_EVENTS_MERGERS:
+            # Events are frozen: the ACCC website has bad data for this merger.
+            # Preserve existing events exactly as-is; only add genuinely new events
+            # (ones whose URL doesn't appear anywhere in the existing list).
+            existing_urls = {e['url'] for e in existing_merger_data['events'] if 'url' in e}
+            new_events = [e for e in scraped_events if e.get('url') not in existing_urls and 'url' in e]
+            merger_data['events'] = existing_merger_data['events'] + new_events
+        elif existing_merger_data and 'events' in existing_merger_data:
             existing_events = existing_merger_data['events']
 
             # Create a mapping of scraped events by URL (for events with URLs)
