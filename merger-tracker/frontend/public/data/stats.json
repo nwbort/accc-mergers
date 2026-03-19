@@ -1,9 +1,9 @@
 {
-  "total_mergers": 55,
+  "total_mergers": 56,
   "total_waivers": 58,
   "by_status": {
     "Assessment completed": 35,
-    "Under assessment": 19,
+    "Under assessment": 20,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -86,6 +86,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-50012",
+      "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-18T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-65009",
       "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-14T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50007",
-      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-13T12:00:00Z",
       "is_waiver": false
     }
   ],
