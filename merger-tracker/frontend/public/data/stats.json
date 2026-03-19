@@ -1,9 +1,9 @@
 {
-  "total_mergers": 54,
+  "total_mergers": 55,
   "total_waivers": 58,
   "by_status": {
     "Assessment completed": 35,
-    "Under assessment": 18,
+    "Under assessment": 19,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -45,11 +45,11 @@
     },
     {
       "name": "Financial Asset Investing",
-      "count": 8
+      "count": 9
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 6
+      "count": 7
     },
     {
       "name": "Non-Residential Property Operators",
@@ -86,6 +86,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-65009",
+      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-18T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-30005",
       "merger_name": "Adobe - Semrush",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-13T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-01090",
-      "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-12T12:00:00Z",
       "is_waiver": false
     }
   ],
