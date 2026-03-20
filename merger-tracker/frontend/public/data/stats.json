@@ -1,9 +1,9 @@
 {
-  "total_mergers": 56,
+  "total_mergers": 57,
   "total_waivers": 62,
   "by_status": {
     "Assessment completed": 35,
-    "Under assessment": 20,
+    "Under assessment": 21,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -86,6 +86,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-75012",
+      "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-19T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-50012",
       "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-16T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-05004",
-      "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-14T12:00:00Z",
       "is_waiver": false
     }
   ],
