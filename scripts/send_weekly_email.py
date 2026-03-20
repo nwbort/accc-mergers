@@ -18,10 +18,13 @@ import os
 import re
 import sys
 from datetime import datetime
+from html import escape as esc
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import requests
+
+from date_utils import parse_iso_datetime
 
 # ---------------------------------------------------------------------------
 # Config
@@ -60,8 +63,10 @@ def format_date(date_str: str) -> str:
     """Convert an ISO datetime string to a short human-readable date (AEST)."""
     if not date_str:
         return "N/A"
+    dt = parse_iso_datetime(date_str)
+    if dt is None:
+        return date_str
     try:
-        dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
         dt = dt.astimezone(ZoneInfo("Australia/Sydney"))
         return dt.strftime("%-d %b %Y")
     except (ValueError, AttributeError):
@@ -109,17 +114,6 @@ def truncate(text: str, max_chars: int = 200) -> str:
     if last_space > int(max_chars * WORD_BREAK_THRESHOLD):
         cut = cut[:last_space]
     return cut + "\u2026"
-
-
-def esc(text: str) -> str:
-    """HTML-escape a string."""
-    return (
-        text
-        .replace("&", "&amp;")
-        .replace("<", "&lt;")
-        .replace(">", "&gt;")
-        .replace('"', "&quot;")
-    )
 
 
 def _text_table(headers: list[str], rows: list[list[str]]) -> str:
