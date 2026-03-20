@@ -28,6 +28,8 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from collections import defaultdict
 
+from cutoff import is_waiver_merger
+from date_utils import parse_iso_datetime
 from normalization import normalize_determination
 
 # Paths
@@ -122,8 +124,10 @@ def calculate_business_days(start_date_str: str, end_date_str: str) -> int | Non
         PUBLIC_HOLIDAYS = load_public_holidays()
 
     try:
-        start = datetime.fromisoformat(start_date_str.replace('Z', '+00:00'))
-        end = datetime.fromisoformat(end_date_str.replace('Z', '+00:00'))
+        start = parse_iso_datetime(start_date_str)
+        end = parse_iso_datetime(end_date_str)
+        if start is None or end is None:
+            return None
 
         start = start.replace(hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
         end = end.replace(hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
@@ -201,8 +205,10 @@ def calculate_calendar_days(start_date_str: str, end_date_str: str) -> int | Non
         return None
     
     try:
-        start = datetime.fromisoformat(start_date_str.replace('Z', '+00:00'))
-        end = datetime.fromisoformat(end_date_str.replace('Z', '+00:00'))
+        start = parse_iso_datetime(start_date_str)
+        end = parse_iso_datetime(end_date_str)
+        if start is None or end is None:
+            return None
         return (end - start).days
     except (ValueError, AttributeError):
         return None
@@ -223,14 +229,6 @@ def extract_phase_from_event(event_title: str) -> str | None:
     elif 'notified' in event_title:
         return 'Phase 1'  # Notification always starts Phase 1
     return None
-
-
-def is_waiver_merger(merger: dict) -> bool:
-    """Check if a merger is a waiver application (not a full notification)."""
-    merger_id = merger.get('merger_id', '')
-    stage = merger.get('stage', '')
-
-    return merger_id.startswith('WA-') or 'Waiver' in stage
 
 
 def load_commentary() -> dict:
@@ -312,7 +310,10 @@ def enrich_merger(merger: dict, commentary: dict = None) -> dict:
     )
     if stage and 'Phase 2' in stage and phase2_end and not notice_already_issued:
         try:
-            phase2_end_date = datetime.fromisoformat(phase2_end.replace('Z', '+00:00')).replace(tzinfo=None)
+            phase2_end_date = parse_iso_datetime(phase2_end)
+            if phase2_end_date is None:
+                raise ValueError("unparseable date")
+            phase2_end_date = phase2_end_date.replace(tzinfo=None)
             phase2_start_date = subtract_business_days(phase2_end_date, 90)
             notice_date = add_business_days(phase2_start_date, 25)
             m['competition_concerns_notice_date'] = notice_date.strftime('%Y-%m-%dT12:00:00Z')
@@ -820,7 +821,10 @@ def generate_upcoming_events_json(enriched_mergers: list, days_ahead: int = 60) 
         consultation_due = m.get('consultation_response_due_date')
         if consultation_due:
             try:
-                due_date = datetime.fromisoformat(consultation_due.replace('Z', '+00:00')).replace(tzinfo=None)
+                due_date = parse_iso_datetime(consultation_due)
+                if due_date is None:
+                    raise ValueError("unparseable date")
+                due_date = due_date.replace(tzinfo=None)
                 if now <= due_date <= future:
                     events.append({
                         "type": "consultation_due",
@@ -847,7 +851,10 @@ def generate_upcoming_events_json(enriched_mergers: list, days_ahead: int = 60) 
             phase2_end = m.get('end_of_determination_period')
             if phase2_end and not notice_already_issued:
                 try:
-                    phase2_end_date = datetime.fromisoformat(phase2_end.replace('Z', '+00:00')).replace(tzinfo=None)
+                    phase2_end_date = parse_iso_datetime(phase2_end)
+                    if phase2_end_date is None:
+                        raise ValueError("unparseable date")
+                    phase2_end_date = phase2_end_date.replace(tzinfo=None)
                     phase2_start_date = subtract_business_days(phase2_end_date, 90)  # BD 1 of Phase 2
                     notice_date = add_business_days(phase2_start_date, 25)
                     notice_date_str = notice_date.strftime('%Y-%m-%dT12:00:00Z')
@@ -869,7 +876,10 @@ def generate_upcoming_events_json(enriched_mergers: list, days_ahead: int = 60) 
         determination_due = m.get('end_of_determination_period')
         if determination_due:
             try:
-                due_date = datetime.fromisoformat(determination_due.replace('Z', '+00:00')).replace(tzinfo=None)
+                due_date = parse_iso_datetime(determination_due)
+                if due_date is None:
+                    raise ValueError("unparseable date")
+                due_date = due_date.replace(tzinfo=None)
                 if now <= due_date <= future:
                     events.append({
                         "type": "determination_due",
