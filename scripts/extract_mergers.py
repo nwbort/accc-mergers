@@ -189,6 +189,12 @@ def get_serve_filename(original_filename: str) -> str:
 
 FROZEN_EVENTS_MERGERS_PATH = 'data/frozen_events_mergers.json'
 
+# Known determination dates for mergers where the ACCC page is unlikely to be corrected
+KNOWN_DETERMINATION_DATES = {
+    'MN-15002': '2026-02-19T12:00:00Z',  # Google - Wiz: approved 19 Feb 2026, date never added to page
+}
+
+
 def _load_frozen_events_mergers():
     """Load the set of merger IDs whose events should not be updated from scraping."""
     try:
@@ -200,6 +206,313 @@ def _load_frozen_events_mergers():
     except Exception as e:
         print(f"Warning: could not load {FROZEN_EVENTS_MERGERS_PATH}: {e}", file=sys.stderr)
         return set()
+
+
+def _extract_basic_info(soup):
+    """Extract URL, name, status, and merger ID from the parsed HTML."""
+    data = {}
+
+    canonical_link = soup.find('link', rel='canonical')
+    if canonical_link and canonical_link.has_attr('href'):
+        data['url'] = canonical_link['href']
+
+    data['merger_name'] = soup.find('h1', class_='page-title').get_text(strip=True) if soup.find('h1', class_='page-title') else None
+
+    status_tag = soup.select_one('.field--name-field-acccgov-merger-status .field__item')
+    data['status'] = status_tag.get_text(strip=True) if status_tag else None
+
+    id_tag = soup.select_one('.field--name-dynamic-token-fieldnode-acccgov-merger-id .field__item')
+    data['merger_id'] = id_tag.get_text(strip=True) if id_tag else None
+
+    return data
+
+
+def _extract_dates_and_status(soup, merger_id, existing_merger_data):
+    """Extract dates, stage, determination info, and page modification time."""
+    data = {}
+
+    date_tag = soup.find('div', class_='field--name-field-acccgov-pub-reg-date')
+    if date_tag and date_tag.find('time'):
+        data['effective_notification_datetime'] = date_tag.find('time')['datetime']
+
+    stage_tag = soup.find('div', class_='field--name-field-acquisition-stage')
+    data['stage'] = stage_tag.get_text(strip=True, separator=' ',).replace('Stage ', '') if stage_tag else None
+
+    end_date_tag = soup.find('div', class_='field--name-field-acccgov-end-determination')
+    if end_date_tag and end_date_tag.find('time'):
+        data['end_of_determination_period'] = end_date_tag.find('time')['datetime']
+    elif existing_merger_data and 'end_of_determination_period' in existing_merger_data:
+        # Preserve from existing data (often removed from HTML after assessment completes)
+        data['end_of_determination_period'] = existing_merger_data['end_of_determination_period']
+
+    determination_date_tag = soup.find('div', class_='field--name-field-acccgov-pub-reg-end-date')
+    if determination_date_tag and determination_date_tag.find('time'):
+        data['determination_publication_date'] = determination_date_tag.find('time')['datetime']
+
+    determination_tag = soup.find('div', class_='field--name-field-acccgov-acquisition-deter')
+    if determination_tag:
+        raw_determination = determination_tag.get_text(strip=True)
+        data['accc_determination'] = normalize_determination(raw_determination)
+
+    # Use known hardcoded date if the page is missing the determination date
+    if data.get('accc_determination') and not data.get('determination_publication_date'):
+        if merger_id in KNOWN_DETERMINATION_DATES:
+            data['determination_publication_date'] = KNOWN_DETERMINATION_DATES[merger_id]
+
+    modified_meta = soup.find('meta', attrs={'name': 'dcterms.modified'})
+    if modified_meta and modified_meta.has_attr('content'):
+        data['page_modified_datetime'] = modified_meta['content']
+
+    return data
+
+
+def _extract_consultation_date(soup, existing_merger_data):
+    """Extract consultation response due date, preserving existing data as fallback."""
+    consultation_tag = soup.find('div', class_='field--name-field-acccgov-consultation-text')
+    consultation_due_date = None
+    if consultation_tag:
+        consultation_text = consultation_tag.get_text(strip=True)
+        consultation_due_date = parse_text_to_iso(consultation_text, include_time=True)
+
+    if consultation_due_date:
+        return {'consultation_response_due_date': consultation_due_date}
+    elif existing_merger_data and 'consultation_response_due_date' in existing_merger_data:
+        # Preserve from existing data (often removed after consultation period ends)
+        return {'consultation_response_due_date': existing_merger_data['consultation_response_due_date']}
+
+    return {}
+
+
+def _extract_parties(soup):
+    """Extract acquirers, targets, and other parties."""
+    def get_parties(field_name):
+        parties = []
+        container = soup.find('div', class_=field_name)
+        if not container:
+            return parties
+
+        for item in container.find_all('div', class_='paragraph--type--acccgov-trader'):
+            name = item.find('span', class_='field_acccgov_name').get_text(strip=True)
+            acn_span = item.find_all('span')[-1]
+            acn_text = acn_span.get_text(strip=True).replace('-', '').strip()
+            party_type, number = (('ACN', acn_text.replace('ACN', '').strip()) if 'ACN' in acn_text else
+                                ('ABN', acn_text.replace('ABN', '').strip()) if 'ABN' in acn_text else
+                                (None, acn_text))
+            parties.append({'name': name, 'identifier_type': party_type, 'identifier': number})
+        return parties
+
+    return {
+        'acquirers': get_parties('field--name-field-acccgov-applicants'),
+        'targets': get_parties('field--name-field-acccgov-pub-reg-targets'),
+        'other_parties': get_parties('field--name-field-acccgov-other-parties'),
+    }
+
+
+def _extract_anzsic_codes(soup):
+    """Extract ANZSIC industry classification codes."""
+    codes = []
+    container = soup.find('div', class_='field--name-field-acquisition-anzsic-code')
+    if container:
+        for code_div in container.find_all('div', class_='field__item'):
+            text = code_div.get_text(strip=True)
+            for code_entry in text.split(';'):
+                code_entry = code_entry.strip()
+                if code_entry:
+                    parts = code_entry.split(maxsplit=1)
+                    if len(parts) >= 2:
+                        codes.append({'code': parts[0], 'name': parts[1]})
+    return codes
+
+
+def _extract_description(soup):
+    """Extract merger description, converting HTML to Markdown."""
+    description_tag = soup.find('div', class_='field--name-field-accc-body')
+    if not description_tag:
+        return None
+
+    full_text_div = description_tag.find('div', class_='full-text')
+    if full_text_div:
+        description_html = str(full_text_div)
+        description_md = md(description_html, heading_style="ATX", strip=['a'])
+        return description_md.strip()
+
+    field_item = description_tag.find('div', class_='field__item')
+    if field_item:
+        description_html = str(field_item)
+        description_md = md(description_html, heading_style="ATX", strip=['a'])
+        return description_md.replace('### Description', '').strip()
+
+    return description_tag.get_text('\n', strip=True).replace('Description', '').strip()
+
+
+def _scrape_events(soup, merger_id):
+    """Scrape timeline events from the HTML, downloading attachments as needed."""
+    scraped_events = []
+    attachment_tables = soup.find_all('div', class_='table-responsive')
+
+    for table in attachment_tables:
+        for row in table.find_all('tr'):
+            date_cell = row.find('td', class_='acccgov-timeline__date')
+            link_cell = row.find('td', class_='acccgov-timeline__file-link')
+            title_cell = next((c for c in row.find_all('td') if c not in [date_cell, link_cell]), None)
+
+            if not (date_cell and title_cell):
+                continue
+
+            title = title_cell.get_text(strip=True)
+            event = {
+                'date': date_cell.find('time')['datetime'] if date_cell.find('time') else date_cell.get_text(strip=True),
+                'title': title,
+                'display_title': title,
+            }
+
+            link_tag = link_cell.find('a') if link_cell else None
+            if link_tag and link_tag.has_attr('href'):
+                url = urljoin(BASE_URL, link_tag['href'])
+                event['url'] = url
+
+                determination_data = download_attachment(merger_id, url, title)
+                if determination_data:
+                    event['determination_commission_division'] = determination_data.get('commission_division')
+                    event['determination_table_content'] = determination_data.get('table_content')
+
+                parsed_url = urlparse(url)
+                original_filename = unquote(os.path.basename(parsed_url.path)).strip()
+                if is_safe_filename(original_filename):
+                    safe_filename = original_filename
+                else:
+                    safe_filename = sanitize_filename(original_filename)
+
+                if safe_filename:
+                    serve_filename = get_serve_filename(safe_filename)
+                    event['url_gh'] = f"/matters/{merger_id}/{serve_filename}"
+                event['status'] = 'live'
+
+            scraped_events.append(event)
+
+    return scraped_events
+
+
+def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events_mergers):
+    """Merge scraped events with existing events, handling frozen mergers and display_title preservation."""
+    frozen = frozen_events_mergers or set()
+
+    if existing_merger_data and 'events' in existing_merger_data and merger_id in frozen:
+        # Events are frozen: preserve existing events exactly as-is, only add genuinely new ones
+        existing_urls = {e['url'] for e in existing_merger_data['events'] if 'url' in e}
+        new_events = [e for e in scraped_events if e.get('url') not in existing_urls and 'url' in e]
+        return existing_merger_data['events'] + new_events
+
+    if not (existing_merger_data and 'events' in existing_merger_data):
+        return scraped_events
+
+    existing_events = existing_merger_data['events']
+
+    scraped_by_url = {}
+    scraped_without_url = []
+    for event in scraped_events:
+        if 'url' in event:
+            scraped_by_url[event['url']] = event
+        else:
+            scraped_without_url.append(event)
+
+    merged_events = []
+    existing_urls_processed = set()
+
+    for existing_event in existing_events:
+        if 'url' in existing_event:
+            url = existing_event['url']
+            if url in scraped_by_url:
+                updated_event = scraped_by_url[url].copy()
+                if 'display_title' in existing_event:
+                    updated_event['display_title'] = existing_event['display_title']
+                merged_events.append(updated_event)
+                existing_urls_processed.add(url)
+            else:
+                existing_event['status'] = 'removed'
+                merged_events.append(existing_event)
+        else:
+            matching_scraped = next(
+                (e for e in scraped_without_url if e['title'] == existing_event['title']),
+                None
+            )
+            if matching_scraped:
+                if 'display_title' in existing_event:
+                    matching_scraped['display_title'] = existing_event['display_title']
+                elif 'display_title' not in matching_scraped:
+                    matching_scraped['display_title'] = matching_scraped['title']
+                merged_events.append(matching_scraped)
+                scraped_without_url.remove(matching_scraped)
+            else:
+                if 'display_title' not in existing_event:
+                    existing_event['display_title'] = existing_event['title']
+                merged_events.append(existing_event)
+
+    for url, event in scraped_by_url.items():
+        if url not in existing_urls_processed:
+            merged_events.append(event)
+
+    for event in scraped_without_url:
+        if 'display_title' not in event:
+            event['display_title'] = event['title']
+        merged_events.append(event)
+
+    return merged_events
+
+
+def _add_synthetic_events(merger_data):
+    """Add notification and determination synthetic events if not already present."""
+    events = merger_data['events']
+
+    # Notification event
+    if merger_data.get('effective_notification_datetime'):
+        notification_title = 'Merger notified to ACCC'
+        if not any(e['title'] == notification_title for e in events):
+            events.append({
+                'date': merger_data['effective_notification_datetime'],
+                'title': notification_title,
+                'display_title': notification_title,
+            })
+
+    # Determination event
+    if not merger_data.get('determination_publication_date'):
+        return
+
+    determination = merger_data.get('accc_determination', 'Decision made')
+    phase = merger_data.get('stage', 'Phase 1')
+    determination_title = f"{phase} determination: {determination}"
+    det_date = merger_data['determination_publication_date']
+
+    # Remove old format determination events to avoid duplicates
+    merger_data['events'] = [
+        e for e in events
+        if not (e['title'].startswith('Determination published:') and e['date'] == det_date)
+    ]
+    events = merger_data['events']
+
+    # Look for an existing determination document event on the same date
+    existing_det_event = next(
+        (e for e in events
+         if e.get('date') == det_date
+         and 'determination' in e.get('title', '').lower()
+         and e.get('url')),
+        None
+    )
+
+    if existing_det_event:
+        existing_det_event['display_title'] = determination_title
+        if 'phase' not in existing_det_event:
+            if 'waiver' in phase.lower():
+                existing_det_event['phase'] = 'Waiver'
+            else:
+                existing_det_event['phase'] = phase.split(' - ')[0] if ' - ' in phase else phase
+    else:
+        if not any(e['title'] == determination_title for e in events):
+            events.append({
+                'date': det_date,
+                'title': determination_title,
+                'display_title': determination_title,
+            })
 
 
 def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers=None):
@@ -222,322 +535,27 @@ def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers
             html_content = f.read()
 
         soup = BeautifulSoup(html_content, 'html.parser')
-        merger_data = {}
 
-        # --- URL ---
-        canonical_link = soup.find('link', rel='canonical')
-        if canonical_link and canonical_link.has_attr('href'):
-            merger_data['url'] = canonical_link['href']
+        merger_data = _extract_basic_info(soup)
+        merger_id = merger_data['merger_id']
 
-        # --- Basic Information ---
-        merger_data['merger_name'] = soup.find('h1', class_='page-title').get_text(strip=True) if soup.find('h1', class_='page-title') else None
-        
-        status_tag = soup.select_one('.field--name-field-acccgov-merger-status .field__item')
-        merger_data['status'] = status_tag.get_text(strip=True) if status_tag else None
+        merger_data.update(_extract_dates_and_status(soup, merger_id, existing_merger_data))
+        merger_data.update(_extract_consultation_date(soup, existing_merger_data))
+        merger_data.update(_extract_parties(soup))
+        merger_data['anzsic_codes'] = _extract_anzsic_codes(soup)
 
-        id_tag = soup.select_one('.field--name-dynamic-token-fieldnode-acccgov-merger-id .field__item')
-        merger_id = id_tag.get_text(strip=True) if id_tag else None
-        merger_data['merger_id'] = merger_id
-        
-        # --- Dates and Status ---
-        date_tag = soup.find('div', class_='field--name-field-acccgov-pub-reg-date')
-        if date_tag and date_tag.find('time'):
-            merger_data['effective_notification_datetime'] = date_tag.find('time')['datetime']
+        description = _extract_description(soup)
+        if description:
+            merger_data['merger_description'] = description
 
-        stage_tag = soup.find('div', class_='field--name-field-acquisition-stage')
-        merger_data['stage'] = stage_tag.get_text(strip=True, separator=' ',).replace('Stage ', '') if stage_tag else None
-
-        end_date_tag = soup.find('div', class_='field--name-field-acccgov-end-determination')
-        if end_date_tag and end_date_tag.find('time'):
-            merger_data['end_of_determination_period'] = end_date_tag.find('time')['datetime']
-        elif existing_merger_data and 'end_of_determination_period' in existing_merger_data:
-            # Preserve end_of_determination_period from existing data if not in HTML
-            # (it's often removed from the HTML after assessment is completed)
-            merger_data['end_of_determination_period'] = existing_merger_data['end_of_determination_period']
-        
-        determination_date_tag = soup.find('div', class_='field--name-field-acccgov-pub-reg-end-date')
-        if determination_date_tag and determination_date_tag.find('time'):
-            merger_data['determination_publication_date'] = determination_date_tag.find('time')['datetime']
-            
-        determination_tag = soup.find('div', class_='field--name-field-acccgov-acquisition-deter')
-        if determination_tag:
-            raw_determination = determination_tag.get_text(strip=True)
-            merger_data['accc_determination'] = normalize_determination(raw_determination)
-
-        # If there's a determination but the date field wasn't on the page yet, use a known
-        # hardcoded date for cases where the ACCC page is unlikely to ever be corrected.
-        KNOWN_DETERMINATION_DATES = {
-            'MN-15002': '2026-02-19T12:00:00Z',  # Google - Wiz: approved 19 Feb 2026, date never added to page
-        }
-        if merger_data.get('accc_determination') and not merger_data.get('determination_publication_date'):
-            if merger_id in KNOWN_DETERMINATION_DATES:
-                merger_data['determination_publication_date'] = KNOWN_DETERMINATION_DATES[merger_id]
-
-        FROZEN_EVENTS_MERGERS = frozen_events_mergers or set()
-
-        # --- Page Modified DateTime (for sorting determinations on same day) ---
-        # Extract dcterms.modified metadata which shows when the page was last updated
-        # This helps sort determinations that occur on the same day by the time they were added
-        modified_meta = soup.find('meta', attrs={'name': 'dcterms.modified'})
-        if modified_meta and modified_meta.has_attr('content'):
-            merger_data['page_modified_datetime'] = modified_meta['content']
-
-        # --- Consultation Response Due Date ---
-        consultation_tag = soup.find('div', class_='field--name-field-acccgov-consultation-text')
-        consultation_due_date = None
-        if consultation_tag:
-            consultation_text = consultation_tag.get_text(strip=True)
-            # Look for patterns like "provided by 21 November 2025"
-            consultation_due_date = parse_text_to_iso(consultation_text, include_time=True)
-
-        if consultation_due_date:
-            merger_data['consultation_response_due_date'] = consultation_due_date
-        elif existing_merger_data and 'consultation_response_due_date' in existing_merger_data:
-            # Preserve consultation_response_due_date from existing data if not in HTML
-            # or if consultation text doesn't contain a parseable date
-            # (it's often removed or changed after consultation period ends)
-            merger_data['consultation_response_due_date'] = existing_merger_data['consultation_response_due_date']
-
-        # --- Parties (Acquirers and Targets) ---
-        def get_parties(field_name):
-            parties = []
-            container = soup.find('div', class_=field_name)
-            if not container: return parties
-            
-            for item in container.find_all('div', class_='paragraph--type--acccgov-trader'):
-                name = item.find('span', class_='field_acccgov_name').get_text(strip=True)
-                acn_span = item.find_all('span')[-1]
-                acn_text = acn_span.get_text(strip=True).replace('-', '').strip()
-                party_type, number = (('ACN', acn_text.replace('ACN', '').strip()) if 'ACN' in acn_text else
-                                    ('ABN', acn_text.replace('ABN', '').strip()) if 'ABN' in acn_text else
-                                    (None, acn_text))
-                parties.append({'name': name, 'identifier_type': party_type, 'identifier': number})
-            return parties
-
-        merger_data['acquirers'] = get_parties('field--name-field-acccgov-applicants')
-        merger_data['targets'] = get_parties('field--name-field-acccgov-pub-reg-targets')
-        merger_data['other_parties'] = get_parties('field--name-field-acccgov-other-parties')
-
-        # --- ANZSIC Codes ---
-        merger_data['anzsic_codes'] = []
-        anszic_container = soup.find('div', class_='field--name-field-acquisition-anzsic-code')
-        if anszic_container:
-            for code in anszic_container.find_all('div', class_='field__item'):
-                text = code.get_text(strip=True)
-                # Split by semicolon first to handle multiple codes in one field__item
-                for code_entry in text.split(';'):
-                    code_entry = code_entry.strip()
-                    if code_entry:
-                        parts = code_entry.split(maxsplit=1)
-                        if len(parts) >= 2:
-                            code_num = parts[0]
-                            code_name = parts[1]
-                            merger_data['anzsic_codes'].append({'code': code_num, 'name': code_name})
-
-        # --- Description ---
-        description_tag = soup.find('div', class_='field--name-field-accc-body')
-        if description_tag:
-            full_text_div = description_tag.find('div', class_='full-text')
-            if full_text_div:
-                # Convert HTML to Markdown to preserve formatting (bullets, bold, etc.)
-                description_html = str(full_text_div)
-                description_md = md(description_html, heading_style="ATX", strip=['a'])
-                merger_data['merger_description'] = description_md.strip()
-            else:
-                # Fallback to old method if full-text div not found
-                field_item = description_tag.find('div', class_='field__item')
-                if field_item:
-                    description_html = str(field_item)
-                    description_md = md(description_html, heading_style="ATX", strip=['a'])
-                    # Remove the 'Description' heading if present
-                    description_md = description_md.replace('### Description', '').strip()
-                    merger_data['merger_description'] = description_md
-                else:
-                    merger_data['merger_description'] = description_tag.get_text('\n', strip=True).replace('Description','').strip()
-
-        # --- Events ---
-        merger_data['events'] = []
-        scraped_events = []
-        attachment_tables = soup.find_all('div', class_='table-responsive')
-        for table in attachment_tables:
-            for row in table.find_all('tr'):
-                date_cell = row.find('td', class_='acccgov-timeline__date')
-                link_cell = row.find('td', class_='acccgov-timeline__file-link')
-                title_cell = next((c for c in row.find_all('td') if c not in [date_cell, link_cell]), None)
-
-                if not (date_cell and title_cell):
-                    continue
-
-                title = title_cell.get_text(strip=True)
-                event = {
-                    'date': date_cell.find('time')['datetime'] if date_cell.find('time') else date_cell.get_text(strip=True),
-                    'title': title,
-                    'display_title': title  # Default to title, can be manually overridden
-                }
-
-                link_tag = link_cell.find('a') if link_cell else None
-                if link_tag and link_tag.has_attr('href'):
-                    url = urljoin(BASE_URL, link_tag['href'])
-                    event['url'] = url
-
-                    # Download attachment and parse if it's a determination PDF
-                    determination_data = download_attachment(merger_id, url, title)
-
-                    # If determination data was parsed, add it to the event
-                    if determination_data:
-                        event['determination_commission_division'] = determination_data.get('commission_division')
-                        event['determination_table_content'] = determination_data.get('table_content')
-
-                    # Get filename and determine serve filename
-                    # For DOCX files, url_gh points to PDF (created by separate workflow)
-                    # Filename must be sanitized to match the actual saved file
-                    parsed_url = urlparse(url)
-                    original_filename = unquote(os.path.basename(parsed_url.path)).strip()
-                    if is_safe_filename(original_filename):
-                        safe_filename = original_filename
-                    else:
-                        safe_filename = sanitize_filename(original_filename)
-
-                    if safe_filename:
-                        serve_filename = get_serve_filename(safe_filename)
-                        event['url_gh'] = f"/matters/{merger_id}/{serve_filename}"
-                    event['status'] = 'live'
-
-                scraped_events.append(event)
-
-        # Merge scraped events with existing events
-        if existing_merger_data and 'events' in existing_merger_data and merger_id in FROZEN_EVENTS_MERGERS:
-            # Events are frozen: the ACCC website has bad data for this merger.
-            # Preserve existing events exactly as-is; only add genuinely new events
-            # (ones whose URL doesn't appear anywhere in the existing list).
-            existing_urls = {e['url'] for e in existing_merger_data['events'] if 'url' in e}
-            new_events = [e for e in scraped_events if e.get('url') not in existing_urls and 'url' in e]
-            merger_data['events'] = existing_merger_data['events'] + new_events
-        elif existing_merger_data and 'events' in existing_merger_data:
-            existing_events = existing_merger_data['events']
-
-            # Create a mapping of scraped events by URL (for events with URLs)
-            # Use URL as the primary key for matching to avoid title-based duplicates
-            scraped_by_url = {}
-            scraped_without_url = []
-
-            for event in scraped_events:
-                if 'url' in event:
-                    scraped_by_url[event['url']] = event
-                else:
-                    scraped_without_url.append(event)
-
-            # Process existing events
-            merged_events = []
-            existing_urls_processed = set()
-
-            for existing_event in existing_events:
-                if 'url' in existing_event:
-                    url = existing_event['url']
-                    if url in scraped_by_url:
-                        # Event still exists, update it but preserve display_title
-                        updated_event = scraped_by_url[url].copy()
-                        if 'display_title' in existing_event:
-                            updated_event['display_title'] = existing_event['display_title']
-                        merged_events.append(updated_event)
-                        existing_urls_processed.add(url)
-                    else:
-                        # Event no longer in scrape, mark as removed
-                        existing_event['status'] = 'removed'
-                        merged_events.append(existing_event)
-                else:
-                    # Event without URL (like "Merger notified to ACCC")
-                    # Match by title for these
-                    matching_scraped = next(
-                        (e for e in scraped_without_url if e['title'] == existing_event['title']),
-                        None
-                    )
-                    if matching_scraped:
-                        # Preserve display_title if it exists
-                        if 'display_title' in existing_event:
-                            matching_scraped['display_title'] = existing_event['display_title']
-                        elif 'display_title' not in matching_scraped:
-                            matching_scraped['display_title'] = matching_scraped['title']
-                        merged_events.append(matching_scraped)
-                        scraped_without_url.remove(matching_scraped)
-                    else:
-                        # Add display_title if missing
-                        if 'display_title' not in existing_event:
-                            existing_event['display_title'] = existing_event['title']
-                        merged_events.append(existing_event)
-
-            # Add any new scraped events that weren't in existing
-            for url, event in scraped_by_url.items():
-                if url not in existing_urls_processed:
-                    merged_events.append(event)
-
-            # Add any remaining scraped events without URLs
-            for event in scraped_without_url:
-                if 'display_title' not in event:
-                    event['display_title'] = event['title']
-                merged_events.append(event)
-
-            merger_data['events'] = merged_events
-        else:
-            merger_data['events'] = scraped_events
-
-        # Add notification date as an event
-        if merger_data.get('effective_notification_datetime'):
-            notification_title = 'Merger notified to ACCC'
-            notification_event = {
-                'date': merger_data['effective_notification_datetime'],
-                'title': notification_title,
-                'display_title': notification_title,
-            }
-            # Add to events if not already there
-            if not any(e['title'] == notification_event['title'] for e in merger_data['events']):
-                merger_data['events'].append(notification_event)
-
-        # Add determination publication as an event
-        if merger_data.get('determination_publication_date'):
-            determination = merger_data.get('accc_determination', 'Decision made')
-            phase = merger_data.get('stage', 'Phase 1')
-            determination_title = f"{phase} determination: {determination}"
-
-            # Remove old format determination events to avoid duplicates
-            merger_data['events'] = [
-                e for e in merger_data['events']
-                if not (e['title'].startswith('Determination published:') and
-                       e['date'] == merger_data['determination_publication_date'])
-            ]
-
-            # Look for an existing determination document event on the same date
-            # (an event with "determination" in the title that has a URL)
-            existing_determination_event = None
-            for event in merger_data['events']:
-                if (event.get('date') == merger_data['determination_publication_date'] and
-                    'determination' in event.get('title', '').lower() and
-                    event.get('url')):
-                    existing_determination_event = event
-                    break
-
-            if existing_determination_event:
-                # Update the existing document event's display_title instead of creating a duplicate
-                existing_determination_event['display_title'] = determination_title
-                if 'phase' not in existing_determination_event:
-                    # Extract "Phase 1", "Phase 2", or "Waiver" from stage
-                    if 'waiver' in phase.lower():
-                        existing_determination_event['phase'] = 'Waiver'
-                    else:
-                        existing_determination_event['phase'] = phase.split(' - ')[0] if ' - ' in phase else phase
-            else:
-                # No existing determination document event, create a synthetic one
-                determination_event = {
-                    'date': merger_data['determination_publication_date'],
-                    'title': determination_title,
-                    'display_title': determination_title,
-                }
-                # Add new determination event if not already there
-                if not any(e['title'] == determination_title for e in merger_data['events']):
-                    merger_data['events'].append(determination_event)
+        scraped_events = _scrape_events(soup, merger_id)
+        merger_data['events'] = _merge_events(
+            scraped_events, existing_merger_data, merger_id, frozen_events_mergers
+        )
+        _add_synthetic_events(merger_data)
 
         return merger_data
-    
+
     except Exception as e:
         print(f"Error processing {filepath}: {e}", file=sys.stderr)
         return None

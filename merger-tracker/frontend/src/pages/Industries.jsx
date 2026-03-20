@@ -6,6 +6,8 @@ import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
 
+const SCROLL_THRESHOLD = 6; // Show scrollable container when industry has more than this many mergers
+
 function Industries() {
   const [industries, setIndustries] = useState(() => dataCache.get('industries-list') || []);
   const [industryMergersMap, setIndustryMergersMap] = useState(() => dataCache.get('industry-mergers-map') || {});
@@ -264,7 +266,7 @@ function Industries() {
                           ) : industryMergers.length === 0 ? (
                             <p className="text-sm text-gray-500 py-4">No mergers found for this industry</p>
                           ) : (
-                            <div className={`space-y-2 ${industryMergers.length > 6 ? 'max-h-[400px] overflow-y-auto pr-2' : ''}`}>
+                            <div className={`space-y-2 ${industryMergers.length > SCROLL_THRESHOLD ? 'max-h-[400px] overflow-y-auto pr-2' : ''}`}>
                               {industryMergers.map((merger) => (
                                 <Link
                                   key={merger.merger_id}
