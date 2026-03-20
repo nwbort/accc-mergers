@@ -41,6 +41,64 @@ export PARALLEL_JOBS=16
 
 # --- Functions ---
 
+# Function to clean dynamic content from a single HTML file.
+# Exported so it can be called from subshells spawned by xargs.
+clean_file() {
+  local file="$1"
+
+  # Use sed to perform in-place replacements for simple line-based patterns.
+  # The -E flag enables extended regular expressions.
+  # Each '-e' adds another expression to the command.
+  sed -i -E \
+    -e 's/js-view-dom-id-[a-f0-9]{64}/js-view-dom-id-STATIC/g' \
+    -e 's/(id="edit-submit-accc-search-site--)[^"]+"/\1STATIC"/g' \
+    -e 's/(css\/css_)[^.]+\.css/\1STATIC.css/g' \
+    -e 's/(js\/js_)[^.]+\.js/\1STATIC.js/g' \
+    -e 's/("libraries":")[^"]+"/\1STATIC_LIBRARIES"/g' \
+    -e 's/("permissionsHash":")[^"]+"/\1STATIC_HASH"/g' \
+    -e 's/("view_dom_id":")[a-f0-9]{64}/\1STATIC"/g' \
+    -e 's/(views_dom_id:)[a-f0-9]{64}/\1STATIC/g' \
+    -e 's/include=[^"&>]+/include=STATIC/g' \
+    -e 's/href="https:\/\/app\.readspeaker\.com\/[^"]+"/href="STATIC_READSPEAKER_URL"/g' \
+    -e 's/(icons\.svg\?t)[^#]+#/\1STATIC#/g' \
+    -e 's/(\?t)[^">]+/\1STATIC/g' \
+    -e 's/("css_js_query_string":")[^"]+"/\1STATIC"/g' \
+    "$file"
+
+  # Use a second sed pass for complex multi-line replacements.
+  sed -i -E -e ':a;N;$!ba;s#(<a[^>]*class="[^"]*megamenu-page-link-level-3[^"]*"[^>]*href=")[^"]*("[^>]*>[[:space:]]*<span>)[^<]*(</span>)#\1STATIC_HREF\2STATIC_TEXT\3#g' "$file"
+
+  # Squeeze multiple consecutive blank lines into a single blank line.
+  # This prevents unnecessary diffs when the server adds/removes blank lines.
+  local temp_file
+  temp_file=$(mktemp)
+  cat -s "$file" > "$temp_file" && mv "$temp_file" "$file"
+}
+# Export the function so it's available to subshells spawned by xargs
+export -f clean_file
+
+# Function to clean dynamic content from all HTML files (used with --all)
+clean_html() {
+  # Find all .html files to clean
+  local files_to_clean=()
+  while IFS= read -r file; do
+    files_to_clean+=("$file")
+  done < <({ find . -maxdepth 1 -name "*.html"; find "data/raw" -maxdepth 1 -name "*.html" 2>/dev/null; find "./$SUBFOLDER" -maxdepth 1 -name "*.html" 2>/dev/null; })
+
+  local file_count=${#files_to_clean[@]}
+
+  if [ "$file_count" -eq 0 ]; then
+    echo "No HTML files to clean."
+    return
+  fi
+
+  echo "Cleaning dynamic content from $file_count HTML file(s)..."
+  for file in "${files_to_clean[@]}"; do
+    clean_file "$file"
+  done
+  echo "Successfully cleaned $file_count HTML file(s)"
+}
+
 # Function to fetch and process a single matter page.
 # It's designed to be called by xargs for parallel execution.
 fetch_matter_page() {
@@ -75,58 +133,11 @@ fetch_matter_page() {
     mv "$temp_html" "$filename"
     echo "    Warning: Could not find matter number for $full_url. Used fallback name: $fallback_name"
   fi
+
+  clean_file "$filename"
 }
 # Export the function so it's available to subshells spawned by xargs
 export -f fetch_matter_page
-
-# Function to clean dynamic content from HTML files
-clean_html() {
-  # Find all .html files to clean
-  local files_to_clean=()
-  while IFS= read -r file; do
-    files_to_clean+=("$file")
-  done < <({ find . -maxdepth 1 -name "*.html"; find "data/raw" -maxdepth 1 -name "*.html" 2>/dev/null; find "./$SUBFOLDER" -maxdepth 1 -name "*.html" 2>/dev/null; })
-
-  local file_count=${#files_to_clean[@]}
-
-  if [ "$file_count" -eq 0 ]; then
-    echo "No HTML files to clean."
-    return
-  fi
-
-  echo "Cleaning dynamic content from $file_count HTML file(s)..."
-
-  for file in "${files_to_clean[@]}"; do
-    # Use sed to perform in-place replacements for simple line-based patterns.
-    # The -E flag enables extended regular expressions.
-    # Each '-e' adds another expression to the command.
-    sed -i -E \
-      -e 's/js-view-dom-id-[a-f0-9]{64}/js-view-dom-id-STATIC/g' \
-      -e 's/(id="edit-submit-accc-search-site--)[^"]+"/\1STATIC"/g' \
-      -e 's/(css\/css_)[^.]+\.css/\1STATIC.css/g' \
-      -e 's/(js\/js_)[^.]+\.js/\1STATIC.js/g' \
-      -e 's/("libraries":")[^"]+"/\1STATIC_LIBRARIES"/g' \
-      -e 's/("permissionsHash":")[^"]+"/\1STATIC_HASH"/g' \
-      -e 's/("view_dom_id":")[a-f0-9]{64}/\1STATIC"/g' \
-      -e 's/(views_dom_id:)[a-f0-9]{64}/\1STATIC/g' \
-      -e 's/include=[^"&>]+/include=STATIC/g' \
-      -e 's/href="https:\/\/app\.readspeaker\.com\/[^"]+"/href="STATIC_READSPEAKER_URL"/g' \
-      -e 's/(icons\.svg\?t)[^#]+#/\1STATIC#/g' \
-      -e 's/(\?t)[^">]+/\1STATIC/g' \
-      -e 's/("css_js_query_string":")[^"]+"/\1STATIC"/g' \
-      "$file"
-
-    # Use a second sed pass for complex multi-line replacements.
-    sed -i -E -e ':a;N;$!ba;s#(<a[^>]*class="[^"]*megamenu-page-link-level-3[^"]*"[^>]*href=")[^"]*("[^>]*>[[:space:]]*<span>)[^<]*(</span>)#\1STATIC_HREF\2STATIC_TEXT\3#g' "$file"
-
-    # Squeeze multiple consecutive blank lines into a single blank line.
-    # This prevents unnecessary diffs when the server adds/removes blank lines.
-    temp_file=$(mktemp)
-    cat -s "$file" > "$temp_file" && mv "$temp_file" "$file"
-  done
-
-  echo "Successfully cleaned $file_count HTML file(s)"
-}
 
 
 # --- Main Script ---
@@ -142,6 +153,7 @@ TIMEOUT=30
 while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
   if curl -s -L -A "$USER_AGENT" --max-time "$TIMEOUT" "$REGISTER_URL" -o "$MAIN_PAGE_FILE"; then
     echo "Saved main page to '$MAIN_PAGE_FILE'"
+    clean_file "$MAIN_PAGE_FILE"
     break
   else
     RETRY_COUNT=$((RETRY_COUNT + 1))
@@ -254,7 +266,10 @@ else
   fi
 fi
 
-# 6. Clean the downloaded files before committing
-clean_html
+# 6. When scraping all mergers, re-clean everything (files were also cleaned inline,
+#    but a full pass ensures consistency for files downloaded in previous runs).
+if [ "$SCRAPE_ALL" = true ]; then
+  clean_html
+fi
 
 echo "Scraping process completed successfully."
