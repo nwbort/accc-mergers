@@ -5,6 +5,7 @@ import argparse
 from concurrent.futures import ProcessPoolExecutor
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse, unquote
+import unicodedata
 import requests
 import re
 from datetime import datetime
@@ -65,6 +66,9 @@ def sanitize_filename(filename):
     if not filename or not isinstance(filename, str):
         return None
 
+    # Normalize Unicode to prevent bypass via homoglyphs or decomposed characters
+    filename = unicodedata.normalize('NFKC', filename)
+
     # Reject empty or whitespace-only filenames
     if not filename.strip():
         return None
@@ -102,6 +106,13 @@ def sanitize_filename(filename):
     return sanitized
 
 
+def is_safe_url(url):
+    """Validate that a URL points to an allowed domain to prevent SSRF attacks."""
+    parsed = urlparse(url)
+    return (parsed.scheme in ('http', 'https')
+            and parsed.netloc.endswith('accc.gov.au'))
+
+
 def download_attachment(merger_id, attachment_url, event_title=None):
     """
     Downloads an attachment if it doesn't already exist locally.
@@ -116,6 +127,10 @@ def download_attachment(merger_id, attachment_url, event_title=None):
         Dictionary with parsed determination data if applicable, None otherwise
     """
     if not merger_id or not attachment_url:
+        return None
+
+    if not is_safe_url(attachment_url):
+        print(f"Warning: Rejecting URL with disallowed domain: {attachment_url}", file=sys.stderr)
         return None
 
     determination_data = None
@@ -145,7 +160,7 @@ def download_attachment(merger_id, attachment_url, event_title=None):
         # Check if the file already exists before downloading
         if not os.path.exists(local_filepath):
             # Download the file
-            response = requests.get(attachment_url, stream=True)
+            response = requests.get(attachment_url, stream=True, timeout=30)
             response.raise_for_status()  # Raise an exception for bad status codes
 
             # Save the file
