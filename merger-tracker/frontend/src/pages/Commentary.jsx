@@ -115,7 +115,7 @@ function Commentary() {
                         </div>
                         <div className="flex-1 min-w-0">
                           {comment.commentary && (
-                            <div className={PROSE_MARKDOWN}>
+                            <div className={PROSE_MARKDOWN} role="article" aria-label={`Commentary on ${item.merger_name}`}>
                               <ReactMarkdown>{comment.commentary}</ReactMarkdown>
                             </div>
                           )}

@@ -24,18 +24,9 @@ function UpcomingEventsTable({ events }) {
         <table className="min-w-full divide-y divide-gray-100">
           <thead>
             <tr className="bg-gray-50/80">
-              {/* Combined column - mobile only */}
               <th
                 scope="col"
-                className="sm:hidden px-5 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                <div>Date</div>
-                <div>Event</div>
-              </th>
-              {/* Separate columns - desktop only */}
-              <th
-                scope="col"
-                className="hidden sm:table-cell px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
               >
                 Date
               </th>
@@ -63,20 +54,18 @@ function UpcomingEventsTable({ events }) {
                   key={`${event.merger_id}-${event.date}-${event.type}`}
                   className="relative hover:bg-gray-100/70 transition-colors"
                 >
-                  {/* Combined cell - mobile only */}
-                  <td className="sm:hidden px-5 py-4 whitespace-nowrap text-sm">
-                    <div className="pl-2.5">
-                      <div className={`font-medium ${isUrgent ? 'text-red-700' : 'text-gray-900'}`}>
-                        {daysRemaining === 0
-                          ? 'Today'
-                          : daysRemaining === 1
-                          ? '1 day'
-                          : `${daysRemaining} days`}
-                      </div>
-                      <div className="text-xs text-gray-400 mt-0.5">{formatDate(event.date)}</div>
+                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
+                    <div className={`font-medium ${isUrgent ? 'text-red-700' : 'text-gray-900'}`}>
+                      {daysRemaining === 0
+                        ? 'Today'
+                        : daysRemaining === 1
+                        ? '1 day'
+                        : `${daysRemaining} days`}
                     </div>
+                    <div className="text-xs text-gray-400 mt-0.5">{formatDate(event.date)}</div>
+                    {/* Event badge inline on mobile */}
                     <span
-                      className={`inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold mt-1 border ${
+                      className={`sm:hidden inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold border mt-1.5 ${
                         event.type === 'consultation_due'
                           ? 'bg-blue-50 text-blue-700 border-blue-200/60'
                           : event.type === 'notice_of_competition_concerns'
@@ -88,17 +77,6 @@ function UpcomingEventsTable({ events }) {
                     >
                       {event.event_type_display.replace(/ due$/, '').replace(/^Consultation responses$/, 'Consultation')}
                     </span>
-                  </td>
-                  {/* Separate cells - desktop only */}
-                  <td className="hidden sm:table-cell px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
-                    <div className={`font-medium ${isUrgent ? 'text-red-700' : 'text-gray-900'}`}>
-                      {daysRemaining === 0
-                        ? 'Today'
-                        : daysRemaining === 1
-                        ? '1 day'
-                        : `${daysRemaining} days`}
-                    </div>
-                    <div className="text-xs text-gray-400 mt-0.5">{formatDate(event.date)}</div>
                   </td>
                   <td className="hidden sm:table-cell px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
                     <span

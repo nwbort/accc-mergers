@@ -457,9 +457,11 @@ function Digest() {
                     : 'N/A'}
                 </td>
                 <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
-                  <ReactMarkdown className="prose prose-sm max-w-none">
-                    {getFirstParagraph(merger.merger_description)}
-                  </ReactMarkdown>
+                  <div role="article" aria-label="Merger summary">
+                    <ReactMarkdown className="prose prose-sm max-w-none">
+                      {getFirstParagraph(merger.merger_description)}
+                    </ReactMarkdown>
+                  </div>
                 </td>
               </tr>
             )}
@@ -526,9 +528,11 @@ function Digest() {
                     : 'N/A'}
                 </td>
                 <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
-                  <ReactMarkdown className="prose prose-sm max-w-none">
-                    {getFirstParagraph(merger.merger_description)}
-                  </ReactMarkdown>
+                  <div role="article" aria-label="Merger summary">
+                    <ReactMarkdown className="prose prose-sm max-w-none">
+                      {getFirstParagraph(merger.merger_description)}
+                    </ReactMarkdown>
+                  </div>
                 </td>
               </tr>
             )}
@@ -555,9 +559,11 @@ function Digest() {
                     : 'N/A'}
                 </td>
                 <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
-                  <ReactMarkdown className="prose prose-sm max-w-none">
-                    {getFirstParagraph(merger.merger_description)}
-                  </ReactMarkdown>
+                  <div role="article" aria-label="Merger summary">
+                    <ReactMarkdown className="prose prose-sm max-w-none">
+                      {getFirstParagraph(merger.merger_description)}
+                    </ReactMarkdown>
+                  </div>
                 </td>
               </tr>
             )}

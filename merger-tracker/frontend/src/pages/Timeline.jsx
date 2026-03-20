@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
@@ -12,7 +12,6 @@ const LOAD_MORE_COUNT = 10;
 const SCROLL_THRESHOLD_PX = 300;
 
 function Timeline() {
-  const navigate = useNavigate();
   const cachedEvents = dataCache.get('timeline-events');
   const [allEvents, setAllEvents] = useState(() => cachedEvents || []);
   const [displayedEvents, setDisplayedEvents] = useState(() =>
@@ -202,10 +201,9 @@ function Timeline() {
                           </svg>
                         </span>
                       </div>
-                      <div
-                        className="min-w-0 flex-1 bg-white rounded-2xl border border-gray-100 shadow-card p-4 hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 cursor-pointer"
-                        onClick={() => navigate(`/mergers/${event.merger_id}`)}
-                        role="link"
+                      <Link
+                        to={`/mergers/${event.merger_id}`}
+                        className="min-w-0 flex-1 bg-white rounded-2xl border border-gray-100 shadow-card p-4 hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 block"
                         aria-label={`View merger details for ${event.merger_name}`}
                       >
                         <span className="text-sm font-semibold text-gray-900">
@@ -223,7 +221,7 @@ function Timeline() {
                               href={event.url_gh}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark transition-colors"
+                              className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark transition-colors relative z-10"
                               aria-label={`View document for ${event.merger_name}`}
                               onClick={(e) => e.stopPropagation()}
                             >
@@ -232,7 +230,7 @@ function Timeline() {
                             </a>
                           </div>
                         )}
-                      </div>
+                      </Link>
                     </div>
                   </div>
                 </li>
