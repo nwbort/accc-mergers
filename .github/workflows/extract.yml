@@ -48,10 +48,11 @@ jobs:
           timestamp=$(date -u)
           git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
           git commit -m "Update scraped data and static files: ${timestamp}" || exit 0
-          git pull --rebase
+          git pull --rebase || { git rebase --abort; exit 1; }
           git push
 
       - name: Trigger convert workflow
+        if: steps.commit.outputs.changes == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |

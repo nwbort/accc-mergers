@@ -2,7 +2,7 @@ name: Send Weekly Digest Email
 
 on:
   schedule:
-    # Monday 9 AM AEST (Sunday 11 PM UTC / Sunday 10 PM UTC during AEDT)
+    # Monday 9 AM AEST (Sunday 11 PM UTC)
     # Runs ~1 hour after the digest.json is generated and pushed by weekly-digest.yml
     - cron: '0 23 * * 0'
   workflow_dispatch:
@@ -16,6 +16,7 @@ on:
 jobs:
   send-email:
     runs-on: ubuntu-latest
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
 
     steps:
       - name: Checkout repository

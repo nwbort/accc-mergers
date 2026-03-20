@@ -8,7 +8,12 @@ import { dataCache } from '../utils/dataCache';
 
 function IndustryDetail() {
   const { code } = useParams();
-  const decodedCode = decodeURIComponent(code);
+  let decodedCode;
+  try {
+    decodedCode = decodeURIComponent(code);
+  } catch {
+    decodedCode = code;
+  }
   const [data, setData] = useState(() => dataCache.get(`industry-${decodedCode}`) || null);
   const [industries, setIndustries] = useState(() => dataCache.get('industries-list') || null);
   const [loading, setLoading] = useState(() => !dataCache.has(`industry-${decodedCode}`));

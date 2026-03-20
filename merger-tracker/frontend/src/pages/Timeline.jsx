@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import SEO from '../components/SEO';
@@ -19,6 +19,7 @@ function Timeline() {
   );
   const [loading, setLoading] = useState(() => !cachedEvents);
   const [loadingMore, setLoadingMore] = useState(false);
+  const loadingMoreRef = useRef(false);
   const [error, setError] = useState(null);
   const [hasMore, setHasMore] = useState(() =>
     cachedEvents ? cachedEvents.length > ITEMS_PER_PAGE : true
@@ -74,8 +75,9 @@ function Timeline() {
   };
 
   const loadMoreEvents = async () => {
-    if (loadingMore || !hasMore) return;
+    if (loadingMoreRef.current || !hasMore) return;
 
+    loadingMoreRef.current = true;
     setLoadingMore(true);
 
     try {
@@ -119,6 +121,7 @@ function Timeline() {
       console.error('Failed to load more events:', err);
       setHasMore(false);
     } finally {
+      loadingMoreRef.current = false;
       setLoadingMore(false);
     }
   };
