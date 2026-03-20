@@ -299,24 +299,42 @@ function Dashboard() {
         {/* Phase 1 Determination Distribution */}
         {Object.keys(stats.by_determination).length > 0 && (
           <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
-            <h2 className="text-base font-semibold text-gray-900 mb-5">
+            <h2 id="chart-phase1-title" className="text-base font-semibold text-gray-900 mb-5">
               Phase 1 determinations
             </h2>
-            <div className="h-64" role="img" aria-label={`Doughnut chart showing distribution of Phase 1 determinations: ${Object.entries(stats.by_determination).map(([det, count]) => `${count} ${det}`).join(', ')}`}>
+            <div className="h-64" role="img" aria-labelledby="chart-phase1-title" aria-describedby="chart-phase1-summary">
               <Doughnut data={determinationData} options={chartOptions} />
             </div>
+            <table id="chart-phase1-summary" className="sr-only">
+              <caption>Phase 1 determination breakdown</caption>
+              <thead><tr><th>Determination</th><th>Count</th></tr></thead>
+              <tbody>
+                {Object.entries(stats.by_determination).map(([det, count]) => (
+                  <tr key={det}><td>{det}</td><td>{count}</td></tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         )}
 
         {/* Waiver Determination Distribution */}
         {stats.by_waiver_determination && Object.keys(stats.by_waiver_determination).length > 0 && (
           <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
-            <h2 className="text-base font-semibold text-gray-900 mb-5">
+            <h2 id="chart-waiver-title" className="text-base font-semibold text-gray-900 mb-5">
               Waiver determinations
             </h2>
-            <div className="h-64" role="img" aria-label={`Doughnut chart showing distribution of waiver determinations: ${Object.entries(stats.by_waiver_determination).map(([det, count]) => `${count} ${det}`).join(', ')}`}>
+            <div className="h-64" role="img" aria-labelledby="chart-waiver-title" aria-describedby="chart-waiver-summary">
               <Doughnut data={waiverDeterminationData} options={chartOptions} />
             </div>
+            <table id="chart-waiver-summary" className="sr-only">
+              <caption>Waiver determination breakdown</caption>
+              <thead><tr><th>Determination</th><th>Count</th></tr></thead>
+              <tbody>
+                {Object.entries(stats.by_waiver_determination).map(([det, count]) => (
+                  <tr key={det}><td>{det}</td><td>{count}</td></tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         )}
       </div>
