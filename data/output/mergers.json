@@ -222,7 +222,7 @@
       "effective_notification_datetime": "2025-10-10T12:00:00Z",
       "stage": "Phase 2 - detailed assessment",
       "end_of_determination_period": "2026-06-05T12:00:00Z",
-      "page_modified_datetime": "2026-03-19T10:32:09+11:00",
+      "page_modified_datetime": "2026-03-20T10:26:21+11:00",
       "consultation_response_due_date": "2026-02-04T12:00:00Z",
       "acquirers": [
         {
@@ -304,6 +304,24 @@
           "display_title": "ACCC decided notification is subject to Phase 2 review",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ampol%20-%20EG%20Australia%20-%20Phase%202%20Notice%20-%20Redacted_0.pdf",
           "url_gh": "/matters/MN-01019/Ampol - EG Australia - Phase 2 Notice - Redacted_0.pdf",
+          "status": "live",
+          "phase": "Phase 2"
+        },
+        {
+          "date": "2026-03-02T12:00:00Z",
+          "title": "Summary of Notice of Competition Concerns",
+          "display_title": "Summary of Notice of Competition Concerns",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ampol_EG%20-%20NOCC%20summary%20-%20AR%20version%20-%202%20March%202026_1.pdf",
+          "url_gh": "/matters/MN-01019/Ampol_EG - NOCC summary - AR version - 2 March 2026_1.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-01-21T12:00:00Z",
+          "title": "ACCC decided notification is subject to Phase 2 review",
+          "display_title": "ACCC decided notification is subject to Phase 2 review",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ampol%20-%20EG%20Australia%20-%20Phase%202%20Notice%20-%20Redacted_2.pdf",
+          "url_gh": "/matters/MN-01019/Ampol - EG Australia - Phase 2 Notice - Redacted_2.pdf",
           "status": "live",
           "phase": "Phase 2"
         }
@@ -2660,35 +2678,40 @@
       "effective_notification_datetime": "2026-03-12T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-04-28T12:00:00Z",
-      "page_modified_datetime": "2026-03-13T13:29:03+11:00",
+      "page_modified_datetime": "2026-03-20T16:21:59+11:00",
       "consultation_response_due_date": "2026-03-20T12:00:00Z",
       "acquirers": [
+        {
+          "name": "Desmos US Bidco, Inc.",
+          "identifier_type": null,
+          "identifier": "[ID type unknown]  10469174"
+        },
         {
           "name": "KPS Capital Partners, LP",
           "identifier_type": null,
           "identifier": "CRD  157678 / SEC  80173907"
+        },
+        {
+          "name": "Desmos Bidco SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  100 230 754"
         }
       ],
       "targets": [
-        {
-          "name": "Chargeurs Films de Protection SAS",
-          "identifier_type": null,
-          "identifier": "SIREN  885 582 072"
-        },
         {
           "name": "Chargeurs USA Holdings Inc.",
           "identifier_type": null,
           "identifier": "EIN / TIN  043515028"
         },
         {
-          "name": "Novacel, Inc.",
+          "name": "Chargeurs Films de Protection SAS",
           "identifier_type": null,
-          "identifier": "EIN  043515032"
+          "identifier": "SIREN  885 582 072"
         },
         {
-          "name": "Compagnie Chargeurs Invest SA",
+          "name": "Walco, Inc.",
           "identifier_type": null,
-          "identifier": "SIREN  390 474 898"
+          "identifier": "EIN  821136395"
         },
         {
           "name": "Novacel Performance Coatings, Inc.",
@@ -2696,9 +2719,14 @@
           "identifier": "EIN  311708662"
         },
         {
-          "name": "Walco, Inc.",
+          "name": "Compagnie Chargeurs Invest SA",
           "identifier_type": null,
-          "identifier": "EIN  821136395"
+          "identifier": "SIREN  390 474 898"
+        },
+        {
+          "name": "Novacel, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  043515032"
         }
       ],
       "other_parties": [],
@@ -2724,7 +2752,7 @@
           "display_title": "Questionnaire - KPS - Novacel",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20KPS%20-%20Novacel.docx",
           "url_gh": "/matters/MN-25006/Questionnaire - KPS - Novacel.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
@@ -4661,12 +4689,14 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/charter-hall-holdings-jgs-private-capital",
       "merger_name": "Charter Hall Holdings - JGS Private Capital",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-75009",
       "effective_notification_datetime": "2026-02-17T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-04-01T12:00:00Z",
-      "page_modified_datetime": "2026-02-25T12:28:57+11:00",
+      "determination_publication_date": "2026-03-20T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-03-20T12:31:56+11:00",
       "consultation_response_due_date": "2026-02-25T12:00:00Z",
       "acquirers": [
         {
@@ -4708,7 +4738,7 @@
           "name": "Real Estate Services"
         }
       ],
-      "merger_description": "Charter Hall Holdings Pty Limited (**Charter Hall Holdings**) is wholly owned by Charter Hall Limited (ASX: CHC) and proposes to acquire 100% of JGS Private Capital Pty Ltd (**JGS Private Capital**), which is wholly owned by J.G. Service Pty Limited (the **Proposed Acquisition**).\n\n  \n\nJGS Private Capital operates an investment and property management business and serves as trustee of 8 unit trusts, with 7 of the units holding interests in commercial real estate and one being a finance trust (**Trusts**). CareSuper Pty Ltd (**CareSuper**) is the sole unitholder of each Trust.\n\n  \n\nCharter Hall Holdings operates a property investment and management business and serves as trustee of land-holding trusts.\n\n  \n\nBoth Charter Hall Holdings and JGS Private Capital are involved in leasing and/or licensing commercial real estate to existing or prospective tenants to generate rental returns.\n\n  \n\nCareSuper is JGS Private Capital\u2019s only client, and is also an existing client of Charter Hall Holdings, but JGS Private Capital and Charter Hall Holdings are otherwise unrelated.\n\n  \n\nThere are no vertical relationships between Charter Hall Holdings and JGS Private Capital.\n\n  \n\nThrough the Proposed Acquisition Charter Hall Holdings will acquire the right to manage and control the Trusts and their underlying assets. JGS Private Capital owns no beneficial ownership interest in any Trust or any of the real property assets held by the Trusts, which will continue following completion. Beneficial ownership of the Trusts and their underlying assets will remain with CareSuper following completion of the transaction.",
+      "merger_description": "Charter Hall Holdings Pty Limited (**Charter Hall Holdings**) is wholly owned by Charter Hall Limited (ASX: CHC) and proposes to acquire 100% of JGS Private Capital Pty Ltd (**JGS Private Capital**), which is wholly owned by J.G. Service Pty Limited (the **Proposed Acquisition**).\n\nJGS Private Capital operates an investment and property management business and serves as trustee of 8 unit trusts, with 7 of the units holding interests in commercial real estate and one being a finance trust (**Trusts**). CareSuper Pty Ltd (**CareSuper**) is the sole unitholder of each Trust.\n\nCharter Hall Holdings operates a property investment and management business and serves as trustee of land-holding trusts.\n\nBoth Charter Hall Holdings and JGS Private Capital are involved in leasing and/or licensing commercial real estate to existing or prospective tenants to generate rental returns.\n\nCareSuper is JGS Private Capital\u2019s only client, and is also an existing client of Charter Hall Holdings, but JGS Private Capital and Charter Hall Holdings are otherwise unrelated.\n\nThere are no vertical relationships between Charter Hall Holdings and JGS Private Capital.\n\nThrough the Proposed Acquisition Charter Hall Holdings will acquire the right to manage and control the Trusts and their underlying assets. JGS Private Capital owns no beneficial ownership interest in any Trust or any of the real property assets held by the Trusts, which will continue following completion. Beneficial ownership of the Trusts and their underlying assets will remain with CareSuper following completion of the transaction.",
       "events": [
         {
           "date": "2026-02-18T12:00:00Z",
@@ -4724,12 +4754,47 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-03-20T12:00:00Z",
+          "title": "Charter Hall Holdings - JGS Private Capital - Phase 1 Determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Charter%20Hall%20-%20JGS%20Private%20Capital%20-%20Phase%201%20Determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Charter Hall Holdings Pty Limited (Charter Hall Holdings) is wholly\nowned by Charter Hall Limited (ASX:CHC) and proposes to acquire\n100% of JGS Private Capital Pty Ltd (JGS Private Capital), which is\nwholly owned by J.G. Service Pty Limited (the Proposed\nAcquisition).\nJGS Private Capital operates an investment and property\nmanagement business and serves as trustee of 8 unit trusts, with 7\nof the units holding interests in commercial real estate and 1 being a\nfinance trust (Trusts). CareSuper Pty Ltd (CareSuper) is the sole\nunitholder of each Trust.\nThrough the Proposed Acquisition, Charter Hall Holdings will acquire\nthe right to manage and control the Trusts and their underlying\nassets. JGS Private Capital has no beneficial ownership interest in\nany Trust or any of the real property assets held by the Trusts, which\nwill continue following completion. Beneficial ownership of the\nTrusts and their underlying assets will remain with CareSuper\nfollowing completion of the transaction."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Charter Hall Holdings, is an Australian property\ninvestment and funds management group. Charter Hall Holdings is\ninvolved in leasing and/or licensing commercial real estate to\nexisting or prospective tenants to generate investment returns. This\nmay include incidental services such as property maintenance.\nThe target, JGS Private Capital, operates an investment and property\nmanagement business and serves as trustee of the Trusts.\nCareSuper is the sole unitholder of each Trust."
+            },
+            {
+              "item": "Overlap between the\nparties",
+              "details": "Charter Hall Holdings and JGS Private Capital (together, the Parties)\noverlap in the supply of commercial real estate investment services\nand the supply of commercial real estate leasing services.\nCommercial real estate investment services include investment\nmanagement services (asset acquisition, divestments, restructuring\nand management for the purpose of generating a financial return to\ninvestors) and property management services (leasing,\nmaintenance, development and associated activities in connection\nwith the management and operation of Australian commercial real\nestate assets). These services facilitate passive income generation\nand capital growth for investors located across Australia, and\nfunction via commercial real estate assets held and managed by the\nJGS Private Capital and Charter Hall Holdings.\nIn respect of investment services, CareSuper is JGS Private Capital\u2019s\nonly client, and is also an existing client of Charter Hall Holdings.\nJGS Private Capital and Charter Hall Holdings are otherwise\nunrelated.\nCommercial real estate leasing services may include incidental\nservices such as maintaining properties and dealing with lease\nexpiries and extensions, and are for the purpose of generating\ninvestment returns for investors in commercial real estate assets.\nIn respect of leasing services, the Parties overlap in Canberra,\nMelbourne and Sydney."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 JGS Private Capital\u2019s portfolio of assets under management is\nrelatively small in comparison to Charter Hall Holdings and other\nsuppliers of commercial real estate investment and leasing\nservices.\n\u2022 Charter Hall Holdings\u2019 market share aggregation in respect of\nthe supply of commercial real estate investment and leasing\nservices is estimated to be low.\n\u2022 After the Proposed Acquisition, Charter Hall Holdings would\nlikely continue to face competition from alternative suppliers of\ncommercial real estate investment and leasing services, such as\nGoodman Group, Lendlease, Dexus, GPT Group and Mirvac."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/matters/MN-75009/Charter Hall - JGS Private Capital - Phase 1 Determination.pdf",
+          "status": "live",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-03-20T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -6967,6 +7032,109 @@
         },
         {
           "date": "2026-02-13T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ma-financial-group-redcape-fund-hotel-brunswick",
+      "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
+      "status": "Assessment completed",
+      "merger_id": "WA-15009",
+      "effective_notification_datetime": "2026-03-05T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-03-20T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-03-20T16:34:34+11:00",
+      "acquirers": [
+        {
+          "name": "REDCAPE HOTEL GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 139 067 244"
+        },
+        {
+          "name": "MAHPT TT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "31 619 297 657"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BRUNSWICK HOTEL OPCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 656 116 853"
+        },
+        {
+          "name": "The Trustee for Brunswick Hotel Sub-Trust",
+          "identifier_type": "ABN",
+          "identifier": "51 927 228 244"
+        },
+        {
+          "name": "BRUNSWICK HOTEL TT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "17 656 117 252"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        },
+        {
+          "code": "4511",
+          "name": "Cafes and Restaurants"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        }
+      ],
+      "merger_description": "MAHPT TT Pty Ltd (as trustee for Redcape Hotel Property Trust) and Redcape Hotel Group Pty Ltd (the **Acquirers**) propose to acquire 100% of the freehold land interest, buildings, licences and business assets (both tangible and intangible) of Hotel Brunswick from Brunswick Hotel TT Pty Ltd as trustee for Brunswick Hotel Sub-Trust and Brunswick Hotel Opco Pty Ltd (the **Acquisition**).\n\nHotel Brunswick is a community, food, beverage and entertainment venue located in Brunswick Heads, New South Wales. It also operates a bottle shop.\n\nThe Acquirers are part of MA Financial Group Limited\u2019s (ASX:MAF) Redcape Fund, which owns and operates community pubs and hotels. The Redcape Fund portfolio currently has 34 hotels in New South Wales, Queensland and Victoria.",
+      "events": [
+        {
+          "date": "2026-03-20T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/MA%20Financial%20Group%20%28Redcape%20Fund%29%20-%20Hotel%20Brunswick%20%28WA-15009%29%20-%20Notification%20waiver%20determination%20-%2020%20March%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "MAHPT TT Pty Ltd (as trustee for Redcape Hotel Property Trust) and\nRedcape Hotel Group Pty Ltd (the Acquirers) propose to acquire\n100% of the freehold land interest, buildings, licenses and business\nassets (both tangible and intangible) of Hotel Brunswick from\nBrunswick Hotel TT Pty Ltd as trustee for Brunswick Hotel Sub-Trust\nand Brunswick Hotel Opco Pty Ltd (the Sellers), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "20 March 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The Acquirers are part of MA Financial Group Limited\u2019s (ASX:MAF)\n(MA Financial) Redcape Fund, which owns and operates community\npubs and hotels. The Redcape Fund portfolio currently has 34 hotels\nin New South Wales, Queensland and Victoria.\nThe target, Hotel Brunswick, is a community, food, beverage and\nentertainment venue located in Brunswick Heads, New South Wales.\nIt also operates a Cellarbrations bottle shop. The Hotel Brunswick is\nlocated at located at 2-4 Mullumbumbi Street, Brunswick Head, NSW\n2483.\nThe Sellers are part of MA Financial\u2019s Brunswick Fund, a single asset\ninvestment fund."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. the Acquisition involves the transfer of assets between MA\nFinancial-controlled entities.\nb. there is no horizontal consolidation or removal of a\ncompetitor as a result of the Acquisition.\nc. the presence of alternative suppliers of products and\nservices available at hotels and hospitality venues, and retail\nsuppliers of packaged liquor for offsite consumption.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nThe ACCC notes that it also considered the potential application of\nsection 51ABD (internal restructures and reorganisations) of the Act.\nThe application noted the potential application of this provision and\nthe ACCC considered that the Acquisition might fall within it.\nHowever, based on facts of this matter and having regard to the\nentities and structures involved, the ACCC considered it was\nappropriate to make a determination on the basis that the\nacquisition provisions in the Act applied to the Acquisition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/matters/WA-15009/MA Financial Group (Redcape Fund) - Hotel Brunswick (WA-15009) - Notification waiver determination - 20 March 2026.pdf",
+          "status": "live",
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-03-05T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"

@@ -6,35 +6,40 @@
   "effective_notification_datetime": "2026-03-12T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-04-28T12:00:00Z",
-  "page_modified_datetime": "2026-03-13T13:29:03+11:00",
+  "page_modified_datetime": "2026-03-20T16:21:59+11:00",
   "consultation_response_due_date": "2026-03-20T12:00:00Z",
   "acquirers": [
+    {
+      "name": "Desmos US Bidco, Inc.",
+      "identifier_type": null,
+      "identifier": "[ID type unknown]  10469174"
+    },
     {
       "name": "KPS Capital Partners, LP",
       "identifier_type": null,
       "identifier": "CRD  157678 / SEC  80173907"
+    },
+    {
+      "name": "Desmos Bidco SAS",
+      "identifier_type": null,
+      "identifier": "SIREN  100 230 754"
     }
   ],
   "targets": [
-    {
-      "name": "Chargeurs Films de Protection SAS",
-      "identifier_type": null,
-      "identifier": "SIREN  885 582 072"
-    },
     {
       "name": "Chargeurs USA Holdings Inc.",
       "identifier_type": null,
       "identifier": "EIN / TIN  043515028"
     },
     {
-      "name": "Novacel, Inc.",
+      "name": "Chargeurs Films de Protection SAS",
       "identifier_type": null,
-      "identifier": "EIN  043515032"
+      "identifier": "SIREN  885 582 072"
     },
     {
-      "name": "Compagnie Chargeurs Invest SA",
+      "name": "Walco, Inc.",
       "identifier_type": null,
-      "identifier": "SIREN  390 474 898"
+      "identifier": "EIN  821136395"
     },
     {
       "name": "Novacel Performance Coatings, Inc.",
@@ -42,9 +47,14 @@
       "identifier": "EIN  311708662"
     },
     {
-      "name": "Walco, Inc.",
+      "name": "Compagnie Chargeurs Invest SA",
       "identifier_type": null,
-      "identifier": "EIN  821136395"
+      "identifier": "SIREN  390 474 898"
+    },
+    {
+      "name": "Novacel, Inc.",
+      "identifier_type": null,
+      "identifier": "EIN  043515032"
     }
   ],
   "other_parties": [],
@@ -70,7 +80,7 @@
       "display_title": "Questionnaire - KPS - Novacel",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20KPS%20-%20Novacel.docx",
       "url_gh": "/matters/MN-25006/Questionnaire - KPS - Novacel.pdf",
-      "status": "live",
+      "status": "removed",
       "phase": null
     },
     {

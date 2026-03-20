@@ -1,35 +1,35 @@
 {
   "total_mergers": 57,
-  "total_waivers": 62,
+  "total_waivers": 63,
   "by_status": {
-    "Assessment completed": 35,
-    "Under assessment": 21,
+    "Assessment completed": 36,
+    "Under assessment": 20,
     "Assessment suspended": 1
   },
   "by_determination": {
-    "Approved": 35,
+    "Approved": 36,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 56,
+    "Approved": 57,
     "Not approved": 6
   },
   "phase_duration": {
-    "average_days": 27.65714285714286,
+    "average_days": 27.75,
     "median_days": 25,
-    "average_business_days": 17.82857142857143,
+    "average_business_days": 17.944444444444443,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 10,
-        "percentage": 28.6
+        "percentage": 27.8
       },
       "day20": {
         "count": 29,
-        "percentage": 82.9
+        "percentage": 80.6
       },
       "day30": {
-        "count": 35,
+        "count": 36,
         "percentage": 100.0
       }
     }
@@ -56,6 +56,10 @@
       "count": 5
     },
     {
+      "name": "Pubs, Taverns and Bars",
+      "count": 5
+    },
+    {
       "name": "Scientific Research Services",
       "count": 4
     },
@@ -64,15 +68,11 @@
       "count": 4
     },
     {
-      "name": "Pubs, Taverns and Bars",
+      "name": "Cafes and Restaurants",
       "count": 4
     },
     {
       "name": "Data Processing and Web Hosting Services",
-      "count": 4
-    },
-    {
-      "name": "Dental Services",
       "count": 4
     }
   ],
@@ -120,6 +120,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-15009",
+      "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
+      "determination": "Approved",
+      "determination_date": "2026-03-20T12:00:00Z",
+      "page_modified_datetime": "2026-03-20T16:34:34+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "MN-75009",
+      "merger_name": "Charter Hall Holdings - JGS Private Capital",
+      "determination": "Approved",
+      "determination_date": "2026-03-20T12:00:00Z",
+      "page_modified_datetime": "2026-03-20T12:31:56+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-85014",
       "merger_name": "Genesis Minerals \u2013 Magnetic Resources",
       "determination": "Approved",
@@ -158,26 +178,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-85003",
-      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
-      "determination": "Approved",
-      "determination_date": "2026-03-19T12:00:00Z",
-      "page_modified_datetime": "2026-03-19T12:58:20+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-60007",
-      "merger_name": "Craig Mostyn \u2013 Patmore Feeds",
-      "determination": "Approved",
-      "determination_date": "2026-03-19T12:00:00Z",
-      "page_modified_datetime": "2026-03-19T12:04:41+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
