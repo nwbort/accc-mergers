@@ -1,10 +1,10 @@
 name: Send Weekly Digest Email
 
 on:
-  workflow_run:
-    workflows: ["Generate Weekly Digest"]
-    types:
-      - completed
+  schedule:
+    # Monday 9 AM AEST (Sunday 11 PM UTC)
+    # Runs ~1 hour after the digest.json is generated and pushed by weekly-digest.yml
+    - cron: '0 23 * * 0'
   workflow_dispatch:
     inputs:
       dry_run:
@@ -16,7 +16,7 @@ on:
 jobs:
   send-email:
     runs-on: ubuntu-latest
-    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
 
     steps:
       - name: Checkout repository
