@@ -96,6 +96,9 @@ def strip_markdown(text: str) -> str:
     return text.strip()
 
 
+WORD_BREAK_THRESHOLD = 0.7  # Only break at word boundary if at least 70% through max_chars
+
+
 def truncate(text: str, max_chars: int = 200) -> str:
     """Strip markdown then truncate to max_chars, breaking on a word boundary."""
     text = strip_markdown(text)
@@ -103,7 +106,7 @@ def truncate(text: str, max_chars: int = 200) -> str:
         return text
     cut = text[:max_chars]
     last_space = cut.rfind(" ")
-    if last_space > int(max_chars * 0.7):
+    if last_space > int(max_chars * WORD_BREAK_THRESHOLD):
         cut = cut[:last_space]
     return cut + "\u2026"
 
