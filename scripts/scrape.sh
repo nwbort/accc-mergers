@@ -227,7 +227,6 @@ fi
 link_count=$(echo "$links_to_fetch" | grep -c . || true)
 if [ "$link_count" -eq 0 ]; then
   echo "No mergers to fetch (all are past cutoff)."
-  clean_html
   echo "Scraping process completed successfully."
   exit 0
 fi
