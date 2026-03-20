@@ -154,7 +154,7 @@ function MergerDetail() {
 
   const determinationEvent = merger.determination_publication_date && merger.events
     ? merger.events.find(event =>
-        event.date === merger.determination_publication_date &&
+        event.date?.split('T')[0] === merger.determination_publication_date?.split('T')[0] &&
         event.title?.toLowerCase().includes('determination')
       )
     : null;

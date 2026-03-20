@@ -133,14 +133,16 @@ function Mergers() {
         allResponses.push(...batchResponses);
       }
 
-      const pagesData = await Promise.all(
+      const pagesResults = await Promise.allSettled(
         allResponses.map((r) => {
           if (!r.ok) throw new Error('Failed to fetch merger page');
           return r.json();
         })
       );
 
-      const allMergers = pagesData.flatMap((p) => p.mergers);
+      const allMergers = pagesResults
+        .filter((r) => r.status === 'fulfilled')
+        .flatMap((r) => r.value.mergers);
 
       dataCache.set('mergers-list', allMergers);
       setMergers(allMergers);

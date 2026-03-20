@@ -60,7 +60,7 @@ jobs:
           timestamp=$(date -u)
           git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
           git commit -m "Update scraped data (all mergers): ${timestamp}" || exit 0
-          git pull --rebase
+          git pull --rebase || { git rebase --abort; exit 1; }
           git push
 
       # --- Run Extract (all mergers) ---
@@ -80,7 +80,7 @@ jobs:
           timestamp=$(date -u)
           git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
           git commit -m "Update extracted data (all mergers): ${timestamp}" || exit 0
-          git pull --rebase
+          git pull --rebase || { git rebase --abort; exit 1; }
           git push
 
       # --- Run Convert ---

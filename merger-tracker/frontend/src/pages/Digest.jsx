@@ -343,7 +343,9 @@ function Digest() {
     const endMonth = end.toLocaleDateString('en-AU', { month: 'long' });
     const year = end.getFullYear();
 
-    if (startMonth === endMonth) {
+    if (start.getTime() === end.getTime()) {
+      return `${startDay} ${startMonth} ${year}`;
+    } else if (startMonth === endMonth) {
       return `${startDay}-${endDay} ${startMonth} ${year}`;
     } else {
       return `${startDay} ${startMonth} to ${endDay} ${endMonth} ${year}`;
