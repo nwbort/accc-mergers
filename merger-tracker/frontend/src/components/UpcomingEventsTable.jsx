@@ -63,6 +63,20 @@ function UpcomingEventsTable({ events }) {
                         : `${daysRemaining} days`}
                     </div>
                     <div className="text-xs text-gray-400 mt-0.5">{formatDate(event.date)}</div>
+                    {/* Event badge inline on mobile */}
+                    <span
+                      className={`sm:hidden inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold border mt-1.5 ${
+                        event.type === 'consultation_due'
+                          ? 'bg-blue-50 text-blue-700 border-blue-200/60'
+                          : event.type === 'notice_of_competition_concerns'
+                          ? 'bg-amber-50 text-amber-700 border-amber-200/60'
+                          : 'bg-purple-50 text-purple-700 border-purple-200/60'
+                      }`}
+                      role="status"
+                      aria-label={`Event type: ${event.event_type_display.replace(/ due$/, '')}`}
+                    >
+                      {event.event_type_display.replace(/ due$/, '').replace(/^Consultation responses$/, 'Consultation')}
+                    </span>
                   </td>
                   <td className="hidden sm:table-cell px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
                     <span
