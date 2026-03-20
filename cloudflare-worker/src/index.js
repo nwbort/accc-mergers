@@ -24,9 +24,11 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // CORS helpers
 // ---------------------------------------------------------------------------
 
-function corsHeaders(origin) {
-  // Allow the production site and localhost for local development
-  const allowedOrigins = [ALLOWED_ORIGIN, "http://localhost:5173", "http://localhost:4173"];
+function corsHeaders(origin, env = {}) {
+  // Only allow localhost origins in development environments
+  const allowedOrigins = env.ENVIRONMENT === 'development'
+    ? [ALLOWED_ORIGIN, "http://localhost:5173", "http://localhost:4173"]
+    : [ALLOWED_ORIGIN];
   const responseOrigin = allowedOrigins.includes(origin) ? origin : ALLOWED_ORIGIN;
   return {
     "Access-Control-Allow-Origin": responseOrigin,
@@ -36,12 +38,12 @@ function corsHeaders(origin) {
   };
 }
 
-function jsonResponse(body, status, origin = "") {
+function jsonResponse(body, status, origin = "", env = {}) {
   return new Response(JSON.stringify(body), {
     status,
     headers: {
       "Content-Type": "application/json",
-      ...corsHeaders(origin),
+      ...corsHeaders(origin, env),
     },
   });
 }
@@ -58,12 +60,12 @@ export default {
     if (request.method === "OPTIONS") {
       return new Response(null, {
         status: 204,
-        headers: corsHeaders(origin),
+        headers: corsHeaders(origin, env),
       });
     }
 
     if (request.method !== "POST") {
-      return jsonResponse({ error: "Method not allowed" }, 405, origin);
+      return jsonResponse({ error: "Method not allowed" }, 405, origin, env);
     }
 
     // Parse body
@@ -71,23 +73,23 @@ export default {
     try {
       body = await request.json();
     } catch {
-      return jsonResponse({ error: "Invalid request body" }, 400, origin);
+      return jsonResponse({ error: "Invalid request body" }, 400, origin, env);
     }
 
     const email = (body.email || "").trim().toLowerCase();
     const turnstileToken = body["cf-turnstile-response"] || "";
 
     if (!email) {
-      return jsonResponse({ error: "Email address is required" }, 400, origin);
+      return jsonResponse({ error: "Email address is required" }, 400, origin, env);
     }
 
     if (!EMAIL_RE.test(email)) {
-      return jsonResponse({ error: "Please enter a valid email address" }, 400, origin);
+      return jsonResponse({ error: "Please enter a valid email address" }, 400, origin, env);
     }
 
     // Verify Turnstile CAPTCHA token
     if (!turnstileToken) {
-      return jsonResponse({ error: "CAPTCHA verification required" }, 400, origin);
+      return jsonResponse({ error: "CAPTCHA verification required" }, 400, origin, env);
     }
 
     let turnstileResp;
@@ -103,13 +105,13 @@ export default {
       });
     } catch (err) {
       console.error("Network error verifying Turnstile token:", err);
-      return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 503, origin);
+      return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 503, origin, env);
     }
 
     const turnstileData = await turnstileResp.json().catch(() => ({}));
     if (!turnstileData.success) {
       console.error("Turnstile verification failed:", JSON.stringify(turnstileData));
-      return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 400, origin);
+      return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 400, origin, env);
     }
 
     // Add contact to Resend audience
@@ -131,7 +133,7 @@ export default {
       );
     } catch (err) {
       console.error("Network error calling Resend:", err);
-      return jsonResponse({ error: "Failed to subscribe. Please try again." }, 503, origin);
+      return jsonResponse({ error: "Failed to subscribe. Please try again." }, 503, origin, env);
     }
 
     if (!resendResp.ok) {
@@ -139,14 +141,15 @@ export default {
       console.error("Resend API error:", resendResp.status, JSON.stringify(errData));
       // 409 means contact already exists — that's fine, treat as success
       if (resendResp.status !== 409) {
-        return jsonResponse({ error: "Failed to subscribe. Please try again." }, 500, origin);
+        return jsonResponse({ error: "Failed to subscribe. Please try again." }, 500, origin, env);
       }
     }
 
     return jsonResponse(
       { success: true, message: "Subscribed! You\u2019ll get the weekly digest every Monday." },
       200,
-      origin
+      origin,
+      env
     );
   },
 };
