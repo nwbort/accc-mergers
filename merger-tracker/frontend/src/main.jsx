@@ -11,7 +11,11 @@ const app = (
 );
 
 if (root.dataset.prerendered) {
-  hydrateRoot(root, app);
+  hydrateRoot(root, app, {
+    onRecoverableError() {}, // suppress hydration mismatch warnings (expected due to dynamic data)
+  });
+  // Reveal styled content now that React has hydrated
+  root.classList.add('hydrated');
 } else {
   createRoot(root).render(app);
 }

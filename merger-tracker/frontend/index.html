@@ -67,6 +67,11 @@
       }
     }
     </script>
+    <!-- Hide pre-rendered SEO content until React hydrates (prevents unstyled flash) -->
+    <style>
+      #root[data-prerendered] { visibility: hidden; }
+      #root[data-prerendered].hydrated { visibility: visible; }
+    </style>
   </head>
   <body>
     <div id="root"></div>
