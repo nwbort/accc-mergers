@@ -4,6 +4,34 @@ const STORAGE_KEYS = {
   SEEN_EVENTS: 'merger_tracker_seen_events',
 };
 
+// SessionStorage cache for merger JSON fetches (15-minute TTL)
+const MERGER_CACHE_TTL = 15 * 60 * 1000;
+
+async function fetchMergerCached(mergerId) {
+  const cacheKey = `merger_cache_${mergerId}`;
+  try {
+    const cached = sessionStorage.getItem(cacheKey);
+    if (cached) {
+      const { data, ts } = JSON.parse(cached);
+      if (Date.now() - ts < MERGER_CACHE_TTL) return data;
+    }
+  } catch { /* ignore parse errors */ }
+
+  try {
+    const res = await fetch(`/data/mergers/${mergerId}.json`);
+    if (!res.ok) return null;
+    const data = await res.json();
+    try {
+      sessionStorage.setItem(cacheKey, JSON.stringify({ data, ts: Date.now() }));
+    } catch { /* sessionStorage full — continue without caching */ }
+    return data;
+  } catch { return null; }
+}
+
+function invalidateMergerCache(mergerId) {
+  try { sessionStorage.removeItem(`merger_cache_${mergerId}`); } catch {}
+}
+
 function getTrackedIds() {
   try {
     const stored = localStorage.getItem(STORAGE_KEYS.TRACKED_MERGERS);
@@ -79,17 +107,13 @@ function updateTrackButton(btn, tracked) {
 }
 
 async function markExistingEventsAsSeen(mergerId) {
-  try {
-    const res = await fetch(`/data/mergers/${mergerId}.json`);
-    if (!res.ok) return;
-    const merger = await res.json();
-    if (!merger.events) return;
-    const seenKeys = getSeenEventKeys();
-    merger.events.forEach(event => {
-      seenKeys.add(getEventKey({ ...event, merger_id: mergerId }));
-    });
-    setSeenEventKeys(seenKeys);
-  } catch { /* ignore */ }
+  const merger = await fetchMergerCached(mergerId);
+  if (!merger?.events) return;
+  const seenKeys = getSeenEventKeys();
+  merger.events.forEach(event => {
+    seenKeys.add(getEventKey({ ...event, merger_id: mergerId }));
+  });
+  setSeenEventKeys(seenKeys);
 }
 
 // Notification bell and badge
@@ -107,17 +131,13 @@ async function updateNotificationBadge() {
   const seenKeys = getSeenEventKeys();
   let unseenCount = 0;
 
-  for (const id of ids) {
-    try {
-      const res = await fetch(`/data/mergers/${id}.json`);
-      if (!res.ok) continue;
-      const merger = await res.json();
-      if (!merger.events) continue;
-      merger.events.forEach(event => {
-        const key = getEventKey({ ...event, merger_id: id });
-        if (!seenKeys.has(key)) unseenCount++;
-      });
-    } catch { /* ignore */ }
+  const mergers = await Promise.all(ids.map(id => fetchMergerCached(id).then(m => ({ id, merger: m }))));
+  for (const { id, merger } of mergers) {
+    if (!merger?.events) continue;
+    merger.events.forEach(event => {
+      const key = getEventKey({ ...event, merger_id: id });
+      if (!seenKeys.has(key)) unseenCount++;
+    });
   }
 
   if (unseenCount > 0 && badge && countEl) {
@@ -169,16 +189,12 @@ async function markAllTrackedEventsSeen() {
   const ids = getTrackedIds();
   const seenKeys = getSeenEventKeys();
 
-  for (const id of ids) {
-    try {
-      const res = await fetch(`/data/mergers/${id}.json`);
-      if (!res.ok) continue;
-      const merger = await res.json();
-      if (!merger.events) continue;
-      merger.events.forEach(event => {
-        seenKeys.add(getEventKey({ ...event, merger_id: id }));
-      });
-    } catch { /* ignore */ }
+  const mergers = await Promise.all(ids.map(id => fetchMergerCached(id).then(m => ({ id, merger: m }))));
+  for (const { id, merger } of mergers) {
+    if (!merger?.events) continue;
+    merger.events.forEach(event => {
+      seenKeys.add(getEventKey({ ...event, merger_id: id }));
+    });
   }
 
   setSeenEventKeys(seenKeys);
@@ -219,20 +235,16 @@ async function loadNotificationContent() {
   const seenKeys = getSeenEventKeys();
   const groups = {};
 
-  for (const id of ids) {
-    try {
-      const res = await fetch(`/data/mergers/${id}.json`);
-      if (!res.ok) continue;
-      const merger = await res.json();
-      if (!merger.events || merger.events.length === 0) continue;
+  const mergers = await Promise.all(ids.map(id => fetchMergerCached(id).then(m => ({ id, merger: m }))));
+  for (const { id, merger } of mergers) {
+    if (!merger?.events || merger.events.length === 0) continue;
 
-      groups[id] = {
-        merger_id: id,
-        merger_name: merger.merger_name,
-        events: merger.events.map(e => ({ ...e, merger_id: id, merger_name: merger.merger_name }))
-          .sort((a, b) => new Date(b.date) - new Date(a.date)),
-      };
-    } catch { /* ignore */ }
+    groups[id] = {
+      merger_id: id,
+      merger_name: merger.merger_name,
+      events: merger.events.map(e => ({ ...e, merger_id: id, merger_name: merger.merger_name }))
+        .sort((a, b) => new Date(b.date) - new Date(a.date)),
+    };
   }
 
   const sortedGroups = Object.values(groups).sort((a, b) => {
