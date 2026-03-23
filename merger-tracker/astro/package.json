@@ -5,23 +5,20 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "build:cf": "astro build && find ../../data/raw/matters -type f -name \"*pdf\" | while IFS= read -r f; do rel=\"${f#../../data/raw/matters/}\"; mkdir -p \"dist/matters/$(dirname \"$rel\")\"; cp \"$f\" \"dist/matters/$(dirname \"$rel\")/\"; done",
     "preview": "astro preview",
-    "deploy:preview": "npm run build:cf && npx wrangler pages deploy dist --project-name=accc-mergers --branch=astro-preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.3.1",
-    "@astrojs/tailwind": "^6.0.2",
     "astro": "^5.7.10",
+    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/sitemap": "^3.3.1",
+    "tailwindcss": "^3.4.1",
     "chart.js": "^4.5.1",
     "date-fns": "^4.1.0",
-    "marked": "^15.0.7",
-    "tailwindcss": "^3.4.1"
+    "marked": "^15.0.7"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",
-    "postcss": "^8.4.35",
-    "wrangler": "^4.76.0"
+    "postcss": "^8.4.35"
   }
 }
