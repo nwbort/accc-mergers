@@ -264,7 +264,7 @@ function MergerDetail() {
               </h3>
               <p className="text-sm font-medium text-gray-900">
                 {!merger.effective_notification_datetime && merger.status?.toLowerCase().includes('suspended')
-                  ? 'None - assessment suspended'
+                  ? <>None - assessment suspended{merger.original_notification_datetime && <span className="text-gray-500 font-normal"> (originally {formatDate(merger.original_notification_datetime)})</span>}</>
                   : formatDate(merger.effective_notification_datetime)}
               </p>
             </div>
