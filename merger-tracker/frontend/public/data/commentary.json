@@ -1,6 +1,70 @@
 {
   "items": [
     {
+      "merger_id": "MN-95001",
+      "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
+      "status": "Assessment suspended",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": null,
+      "determination_publication_date": null,
+      "determination_url": null,
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Sembcorp Industries Ltd",
+          "identifier_type": null,
+          "identifier": "SG1R50925390 (Singapore ISIN Code)"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Pioneer Sail Holdings Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "45 617 844 569"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "26",
+          "name": "Electricity Supply"
+        },
+        {
+          "code": "261",
+          "name": "Electricity Generation"
+        },
+        {
+          "code": "2611",
+          "name": "Fossil Fuel Electricity Generation"
+        },
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        },
+        {
+          "code": "2640",
+          "name": "On Selling Electricity and Electricity Market Operation"
+        },
+        {
+          "code": "27",
+          "name": "Gas Supply"
+        },
+        {
+          "code": "2700",
+          "name": "Gas Supply"
+        }
+      ],
+      "comments": [
+        {
+          "commentary": "Sembcorp Industries proposed acquisition of Alinta Energy (via Pioneer Sail Holdings) was the first notification to be found 'materially misleading' by the ACCC.",
+          "tags": [
+            "landmark"
+          ],
+          "date": "2026-03-12"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-30003",
       "merger_name": "MicroStar Logistics - Konvoy",
       "status": "Under assessment",
@@ -559,5 +623,5 @@
       ]
     }
   ],
-  "count": 13
+  "count": 14
 }
