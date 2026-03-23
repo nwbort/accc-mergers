@@ -47,6 +47,16 @@ function Timeline() {
   }, [hasMore, loadingMore, displayedEvents.length, allEvents.length, currentPage, totalPages]);
 
   const fetchTimeline = async () => {
+    // If SSG data pre-populated the cache, use it directly
+    const cachedMeta = dataCache.get('timeline-meta');
+    if (cachedEvents && cachedMeta) {
+      setTotalPages(cachedMeta.total_pages);
+      setCurrentPage(cachedMeta.total_pages);
+      setHasMore(cachedEvents.length > ITEMS_PER_PAGE || cachedMeta.total_pages > 1);
+      setLoading(false);
+      return;
+    }
+
     try {
       // Fetch metadata to know total pages
       const metaResponse = await fetch(API_ENDPOINTS.timelineMeta);

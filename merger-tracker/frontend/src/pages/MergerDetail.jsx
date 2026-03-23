@@ -11,11 +11,12 @@ import { useTracking } from '../context/TrackingContext';
 import { formatDate, calculateDuration, getDaysRemaining, calculateBusinessDays, getBusinessDaysRemaining } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN } from '../utils/classNames';
+import { dataCache } from '../utils/dataCache';
 
 function MergerDetail() {
   const { id } = useParams();
-  const [merger, setMerger] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [merger, setMerger] = useState(() => dataCache.get(`merger-${id}`) || null);
+  const [loading, setLoading] = useState(() => !dataCache.has(`merger-${id}`));
   const [error, setError] = useState(null);
   const [expandedParties, setExpandedParties] = useState({});
   const { isTracked, toggleTracking } = useTracking();
@@ -29,6 +30,11 @@ function MergerDetail() {
   }, [id]);
 
   const fetchMerger = async () => {
+    if (dataCache.has(`merger-${id}`)) {
+      setMerger(dataCache.get(`merger-${id}`));
+      setLoading(false);
+      return;
+    }
     try {
       const response = await fetch(API_ENDPOINTS.mergerDetail(id));
       if (!response.ok) {
@@ -38,6 +44,7 @@ function MergerDetail() {
         throw new Error('Failed to fetch merger details');
       }
       const data = await response.json();
+      dataCache.set(`merger-${id}`, data);
       setMerger(data);
     } catch (err) {
       if (err.name === 'TypeError' || err.name === 'SyntaxError') {

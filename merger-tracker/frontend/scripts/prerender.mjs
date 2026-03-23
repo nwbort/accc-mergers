@@ -70,7 +70,7 @@ const templateHtml = readFileSync(resolve(DIST_DIR, 'index.html'), 'utf-8');
  * Build a full HTML page by injecting SEO meta tags and content into the
  * built index.html template.
  */
-function buildPage({ title, description, url, type = 'website', structuredData, content }) {
+function buildPage({ title, description, url, type = 'website', structuredData, content, ssgData }) {
   const fullTitle = title ? `${title} | ${SITE_TITLE}` : `${SITE_TITLE} | ACCC Merger Reviews & M&A Data`;
   const canonicalUrl = `${SITE_URL}${url || '/'}`;
   const ogImage = `${SITE_URL}/og-image.png`;
@@ -141,6 +141,17 @@ function buildPage({ title, description, url, type = 'website', structuredData, 
     );
   }
 
+  // Embed JSON data so React can render instantly without fetching
+  if (ssgData && Object.keys(ssgData).length > 0) {
+    const jsonStr = JSON.stringify(ssgData)
+      .replace(/</g, '\\u003c')   // prevent script injection via </script>
+      .replace(/>/g, '\\u003e');
+    html = html.replace(
+      '</body>',
+      `<script id="__SSG_DATA__" type="application/json">${jsonStr}</script>\n  </body>`
+    );
+  }
+
   return html;
 }
 
@@ -194,11 +205,16 @@ function generateDashboard() {
   content += `</ul></nav>`;
   content += '</div>';
 
+  const ssgData = {};
+  if (stats) ssgData['dashboard-stats'] = stats;
+  if (upcoming) ssgData['dashboard-events'] = upcoming.events || upcoming;
+
   return buildPage({
     title: null, // use default site title
     description: 'Live stats on every ACCC merger review — recent clearances, upcoming deadlines, phase durations, and determination trends across Australian industries.',
     url: '/',
     content,
+    ssgData,
   });
 }
 
@@ -233,6 +249,7 @@ function generateMergersList() {
     description: 'Search every Australian merger notified to the ACCC. Filter by status, industry, acquirer, or outcome — cleared, declined, Phase 2, or under review.',
     url: '/mergers',
     content,
+    ssgData: allMergers.length ? { 'mergers-list': allMergers } : {},
   });
 }
 
@@ -346,6 +363,7 @@ function generateMergerDetail(mergerId) {
     url: `/mergers/${merger.merger_id}`,
     structuredData,
     content,
+    ssgData: { [`merger-${merger.merger_id}`]: merger },
   });
 }
 
@@ -373,16 +391,24 @@ function generateTimeline() {
   }
   content += '</div>';
 
+  // Timeline page needs all events (reversed, most recent first) and meta
+  const reversedEvents = [...allEvents].reverse();
+  const ssgData = {};
+  if (reversedEvents.length) ssgData['timeline-events'] = reversedEvents;
+  if (meta) ssgData['timeline-meta'] = meta;
+
   return buildPage({
     title: 'Timeline',
     description: 'Chronological feed of every ACCC merger event — notifications, Phase 2 launches, public consultation windows, and final determinations in date order.',
     url: '/timeline',
     content,
+    ssgData,
   });
 }
 
 function generateIndustries() {
-  const industries = readJSON(resolve(DATA_DIR, 'industries.json'));
+  const raw = readJSON(resolve(DATA_DIR, 'industries.json'));
+  const industries = raw?.industries || raw || [];
 
   let content = '<div>';
   content += `<h1>Industries</h1>`;
@@ -402,6 +428,7 @@ function generateIndustries() {
     description: 'Explore Australian merger activity by industry sector. See which ANZSIC industries attract the most ACCC scrutiny and how deal outcomes compare across sectors.',
     url: '/industries',
     content,
+    ssgData: industries?.length ? { 'industries-list': industries } : {},
   });
 }
 
@@ -432,11 +459,13 @@ function generateIndustryDetail(code) {
     description: `${mergers.length} merger${mergers.length !== 1 ? 's' : ''} in the ${industryName} industry reviewed by the ACCC.`,
     url: `/industries/${encodeURIComponent(code)}`,
     content,
+    ssgData: data ? { [`industry-${code}`]: data } : {},
   });
 }
 
 function generateCommentary() {
-  const data = readJSON(resolve(DATA_DIR, 'commentary.json'));
+  const raw = readJSON(resolve(DATA_DIR, 'commentary.json'));
+  const data = raw?.items || raw || [];
 
   let content = '<div>';
   content += `<h1>Commentary</h1>`;
@@ -462,6 +491,7 @@ function generateCommentary() {
     description: 'In-depth analysis of Australian merger cases — examining ACCC decisions, competitive concerns, economic reasoning, and M&A policy implications.',
     url: '/commentary',
     content,
+    ssgData: data?.length ? { 'commentary-items': data } : {},
   });
 }
 
@@ -499,6 +529,7 @@ function generateDigest() {
     description: 'Weekly roundup of Australian merger activity: new ACCC notifications, Phase 1 clearances, Phase 2 launches, and upcoming consultation deadlines — all in one digest.',
     url: '/digest',
     content,
+    ssgData: data ? { 'digest': data } : {},
   });
 }
 
@@ -523,6 +554,7 @@ function generateAnalysis() {
     description: 'Data-driven analysis of ACCC merger reviews: Phase 1 and Phase 2 durations, waiver processing times, clearance rates, and year-on-year determination trends.',
     url: '/analysis',
     content,
+    ssgData: data ? { 'analysis-data': data } : {},
   });
 }
 
