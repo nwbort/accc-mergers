@@ -38,7 +38,7 @@ REPO_ROOT = SCRIPT_DIR.parent
 MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
 COMMENTARY_JSON = REPO_ROOT / "data" / "processed" / "commentary.json"
 HOLIDAYS_JSON = REPO_ROOT / "merger-tracker" / "frontend" / "src" / "data" / "act-public-holidays.json"
-OUTPUT_DIR = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "data"
+OUTPUT_DIR = Path(os.environ.get("STATIC_DATA_OUTPUT_DIR", REPO_ROOT / "merger-tracker" / "frontend" / "public" / "data"))
 DATA_OUTPUT_DIR = REPO_ROOT / "data" / "output"
 
 

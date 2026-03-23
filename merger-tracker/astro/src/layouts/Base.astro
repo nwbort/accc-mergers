@@ -1,0 +1,111 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import KeyboardShortcutsHelp from '../components/KeyboardShortcutsHelp.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  url?: string;
+  image?: string;
+  type?: string;
+  structuredData?: object;
+}
+
+const siteTitle = 'Australian Merger Tracker';
+const siteUrl = 'https://mergers.fyi';
+const {
+  title,
+  description = 'Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents.',
+  url,
+  image,
+  type = 'website',
+  structuredData,
+} = Astro.props;
+
+const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+const canonicalUrl = url ? `${siteUrl}${url}` : siteUrl;
+const ogImage = image || `${siteUrl}/og-image.png`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="ACCC, mergers, acquisitions, Australia, competition, antitrust, merger review, corporate mergers" />
+    <meta name="author" content="Nick Twort" />
+    <meta name="theme-color" content="#335145" />
+    <meta name="msvalidate.01" content="55FE5385DD2794F88A353F21FE08BB2E" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content={siteTitle} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/atom+xml" title="Australian Merger Tracker Feed" href="/feed.xml" />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    {url && <link rel="canonical" href={canonicalUrl} />}
+
+    <title>{fullTitle}</title>
+
+    <!-- Structured Data -->
+    {structuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    )}
+
+    {!structuredData && (
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Australian Merger Tracker",
+        "alternateName": "mergers.fyi",
+        "url": "https://mergers.fyi",
+        "description": "Real-time database of Australian mergers reviewed by the ACCC.",
+        "author": { "@type": "Person", "name": "Nick Twort" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": { "@type": "EntryPoint", "urlTemplate": "https://mergers.fyi/mergers?q={search_term_string}" },
+          "query-input": "required name=search_term_string"
+        }
+      })} />
+    )}
+  </head>
+  <body>
+    <div class="min-h-screen gradient-mesh flex flex-col">
+      <Navbar />
+      <main id="main-content" class="flex-grow pt-16">
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    <KeyboardShortcutsHelp />
+    <script src="../scripts/keyboard-shortcuts.js"></script>
+    <script src="../scripts/tracking.js"></script>
+  </body>
+</html>

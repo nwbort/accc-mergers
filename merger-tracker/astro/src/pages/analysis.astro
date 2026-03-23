@@ -1,0 +1,200 @@
+---
+import Base from '../layouts/Base.astro';
+import { getAnalysis } from '../data/loader';
+
+const data = getAnalysis();
+const phase1_duration = data?.phase1_duration;
+const waiver_duration = data?.waiver_duration;
+const monthly_volume = data?.monthly_volume;
+---
+
+<Base
+  title="Analysis"
+  description="Data-driven analysis of ACCC merger reviews: Phase 1 and Phase 2 durations, waiver processing times, clearance rates, and year-on-year determination trends."
+  url="/analysis"
+>
+  {data && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+      <!-- Summary Stat Cards -->
+      <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-8">
+        {[
+          { label: 'Avg phase 1 duration', value: phase1_duration?.stats?.average ? `${phase1_duration.stats.average} days` : 'N/A', detail: phase1_duration?.stats?.count ? `${phase1_duration.stats.count} completed` : null },
+          { label: 'Median phase 1 duration', value: phase1_duration?.stats?.median ? `${phase1_duration.stats.median} days` : 'N/A', detail: phase1_duration?.stats?.min && phase1_duration?.stats?.max ? `Range: ${phase1_duration.stats.min}\u2013${phase1_duration.stats.max}` : null },
+          { label: 'Avg waiver duration', value: waiver_duration?.stats?.average ? `${waiver_duration.stats.average} days` : 'N/A', detail: waiver_duration?.stats?.count ? `${waiver_duration.stats.count} completed` : null },
+        ].map(({ label, value, detail }) => (
+          <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
+            <p class="text-xs font-medium text-gray-400 uppercase tracking-wider">{label}</p>
+            <p class="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">{value}</p>
+            {detail && <p class="text-sm text-gray-400 mt-0.5">{detail}</p>}
+          </div>
+        ))}
+      </div>
+
+      <!-- Phase 1 Duration Scatter -->
+      <section class="mb-8">
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+          <div class="px-6 py-5 border-b border-gray-100">
+            <h2 class="text-lg font-semibold text-gray-900">Phase 1 duration over time</h2>
+            <p class="text-sm text-gray-500 mt-0.5">Each point represents a completed phase 1 assessment. Hover for details.</p>
+          </div>
+          <div class="p-6"><div class="h-80"><canvas id="chart-phase1-scatter"></canvas></div></div>
+        </div>
+      </section>
+
+      <!-- Waiver Duration Scatter -->
+      <section class="mb-8">
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+          <div class="px-6 py-5 border-b border-gray-100">
+            <h2 class="text-lg font-semibold text-gray-900">Waiver duration over time</h2>
+            <p class="text-sm text-gray-500 mt-0.5">Each point represents a completed waiver application. Hover for details.</p>
+          </div>
+          <div class="p-6"><div class="h-80"><canvas id="chart-waiver-scatter"></canvas></div></div>
+        </div>
+      </section>
+
+      <!-- Monthly Volume -->
+      <div class="grid grid-cols-1 gap-6 mb-8">
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+          <div class="px-6 py-5 border-b border-gray-100">
+            <h2 class="text-base font-semibold text-gray-900">Monthly notification volume</h2>
+            <p class="text-sm text-gray-500 mt-0.5">Number of merger notifications and waiver applications per month</p>
+          </div>
+          <div class="p-6"><div class="h-72"><canvas id="chart-monthly-volume"></canvas></div></div>
+        </div>
+      </div>
+    </div>
+  )}
+</Base>
+
+<script define:vars={{ phase1_duration, waiver_duration, monthly_volume }}>
+  import('chart.js').then(({ Chart, CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend }) => {
+    Chart.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend);
+
+    const COLORS = {
+      primary: '#335145',
+      accent: '#e07a5f',
+      teal: '#6b8f7f',
+    };
+
+    function formatMonthLabel(yyyymm) {
+      const [year, month] = yyyymm.split('-');
+      const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      return `${months[parseInt(month, 10) - 1]} ${year}`;
+    }
+
+    const handleChartClick = (event, elements, chart) => {
+      if (elements.length > 0) {
+        const { datasetIndex, index } = elements[0];
+        const point = chart.data.datasets[datasetIndex].data[index];
+        if (point?.id) window.location.href = `/mergers/${point.id}`;
+      }
+    };
+
+    const scatterOptions = {
+      responsive: true, maintainAspectRatio: false, animation: false,
+      onClick: handleChartClick,
+      onHover: (event, elements) => { event.native.target.style.cursor = elements.length > 0 ? 'pointer' : 'default'; },
+      plugins: {
+        legend: { position: 'bottom', labels: { usePointStyle: true, padding: 16, font: { size: 12, family: 'Inter, sans-serif' } } },
+        tooltip: {
+          callbacks: {
+            title: (items) => items.length ? items[0].raw.label : '',
+            label: (item) => {
+              const date = new Date(item.raw.x);
+              return [`Duration: ${item.raw.y} business days`, `Notified: ${date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })}`];
+            },
+          },
+        },
+      },
+      scales: {
+        x: {
+          type: 'linear',
+          ticks: { callback: (v) => { const d = new Date(v); const m = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']; return `${m[d.getMonth()]} ${d.getFullYear()}`; }, maxTicksLimit: 8, font: { size: 11 } },
+          title: { display: true, text: 'Notification date', font: { size: 12, family: 'Inter, sans-serif' }, color: '#6b7280' },
+          grid: { color: 'rgba(0,0,0,0.04)' },
+        },
+        y: {
+          beginAtZero: true,
+          title: { display: true, text: 'Business days', font: { size: 12, family: 'Inter, sans-serif' }, color: '#6b7280' },
+          grid: { color: 'rgba(0,0,0,0.04)' },
+          ticks: { font: { size: 11 } },
+        },
+      },
+    };
+
+    // Phase 1 scatter
+    if (phase1_duration?.scatter_data) {
+      const ctx = document.getElementById('chart-phase1-scatter');
+      if (ctx) {
+        new Chart(ctx, {
+          type: 'scatter',
+          data: {
+            datasets: [
+              {
+                label: 'Approved',
+                data: phase1_duration.scatter_data.filter(d => d.determination === 'Approved').map(d => ({ x: new Date(d.notification_date).getTime(), y: d.business_days, label: d.merger_name, id: d.merger_id })),
+                backgroundColor: COLORS.primary, pointRadius: 6, pointHoverRadius: 9,
+              },
+              {
+                label: 'Referred to phase 2',
+                data: phase1_duration.scatter_data.filter(d => d.determination === 'Referred to phase 2').map(d => ({ x: new Date(d.notification_date).getTime(), y: d.business_days, label: d.merger_name, id: d.merger_id })),
+                backgroundColor: COLORS.accent, pointRadius: 8, pointHoverRadius: 10, pointStyle: 'triangle',
+              },
+            ],
+          },
+          options: scatterOptions,
+        });
+      }
+    }
+
+    // Waiver scatter
+    if (waiver_duration?.scatter_data) {
+      const ctx = document.getElementById('chart-waiver-scatter');
+      if (ctx) {
+        new Chart(ctx, {
+          type: 'scatter',
+          data: {
+            datasets: [
+              {
+                label: 'Approved',
+                data: waiver_duration.scatter_data.filter(d => d.determination === 'Approved').map(d => ({ x: new Date(d.application_date).getTime(), y: d.business_days, label: d.merger_name, id: d.merger_id })),
+                backgroundColor: COLORS.primary, pointRadius: 5, pointHoverRadius: 8,
+              },
+              {
+                label: 'Not approved',
+                data: waiver_duration.scatter_data.filter(d => d.determination === 'Not approved').map(d => ({ x: new Date(d.application_date).getTime(), y: d.business_days, label: d.merger_name, id: d.merger_id })),
+                backgroundColor: COLORS.accent, pointRadius: 8, pointHoverRadius: 10, pointStyle: 'triangle',
+              },
+            ],
+          },
+          options: { ...scatterOptions, scales: { ...scatterOptions.scales, x: { ...scatterOptions.scales.x, title: { display: true, text: 'Application date', font: { size: 12, family: 'Inter, sans-serif' }, color: '#6b7280' } } } },
+        });
+      }
+    }
+
+    // Monthly volume
+    if (monthly_volume) {
+      const ctx = document.getElementById('chart-monthly-volume');
+      if (ctx) {
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: monthly_volume.labels.map(formatMonthLabel),
+            datasets: [
+              { label: 'Notifications', data: monthly_volume.notifications, backgroundColor: COLORS.primary, borderRadius: 4, maxBarThickness: 40 },
+              { label: 'Waivers', data: monthly_volume.waivers, backgroundColor: COLORS.teal, borderRadius: 4, maxBarThickness: 40 },
+            ],
+          },
+          options: {
+            responsive: true, maintainAspectRatio: false, animation: false,
+            plugins: { legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'rectRounded', padding: 16, font: { size: 12, family: 'Inter, sans-serif' } } } },
+            scales: {
+              x: { stacked: true, grid: { display: false }, ticks: { font: { size: 11 } } },
+              y: { stacked: true, beginAtZero: true, ticks: { stepSize: 5, font: { size: 11 } }, grid: { color: 'rgba(0,0,0,0.04)' }, title: { display: true, text: 'Count', font: { size: 12, family: 'Inter, sans-serif' }, color: '#6b7280' } },
+            },
+          },
+        });
+      }
+    }
+  });
+</script>

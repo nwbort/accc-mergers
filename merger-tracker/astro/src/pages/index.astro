@@ -1,0 +1,312 @@
+---
+import Base from '../layouts/Base.astro';
+import StatusBadge from '../components/StatusBadge.astro';
+import WaiverBadge from '../components/WaiverBadge.astro';
+import { getStats, getUpcomingEvents } from '../data/loader';
+import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
+
+const stats = getStats();
+const upcomingEventsData = getUpcomingEvents();
+const allUpcomingEvents = upcomingEventsData?.events || [];
+const eventsWithin7Days = allUpcomingEvents.filter(event => {
+  if (isDatePast(event.date)) return false;
+  const days = getDaysRemaining(event.date);
+  return days !== null && days <= 7;
+});
+
+// Chart data embedded as JSON for client-side Chart.js
+const determinationData = stats ? {
+  labels: Object.keys(stats.by_determination),
+  values: Object.values(stats.by_determination),
+} : null;
+
+const waiverLabels = stats?.by_waiver_determination
+  ? ['Approved', 'Not approved'].filter(l => stats.by_waiver_determination[l])
+  : [];
+const waiverData = stats?.by_waiver_determination ? {
+  labels: waiverLabels,
+  values: waiverLabels.map(l => stats.by_waiver_determination[l]),
+} : null;
+
+function getDeterminationStyle(determination) {
+  if (determination === 'Approved') return 'bg-emerald-50 text-emerald-700 border border-emerald-200/60';
+  if (determination === 'Not approved') return 'bg-red-50 text-red-700 border border-red-200/60';
+  if (determination === 'Referred to phase 2') return 'bg-amber-50 text-amber-700 border border-amber-200/60';
+  return 'bg-gray-50 text-gray-700 border border-gray-200/60';
+}
+---
+
+<Base
+  title="Australian Merger Tracker | ACCC Merger Reviews & M&A Data"
+  description="Live stats on every ACCC merger review — recent clearances, upcoming deadlines, phase durations, and determination trends across Australian industries."
+  url="/"
+>
+  {stats && (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-8">
+        {[
+          { title: 'Mergers', value: `${stats.by_status['Under assessment'] || 0} under assessment`, subtitle: `${stats.total_mergers} notified${stats.total_waivers ? ` and ${stats.total_waivers} waiver${stats.total_waivers !== 1 ? 's' : ''}` : ''}`, icon: '\uD83D\uDD0D', href: '/mergers?status=Under+assessment' },
+          { title: 'Average phase 1 duration', value: stats.phase_duration.average_business_days ? `${Math.round(stats.phase_duration.average_business_days)} business days` : 'N/A', subtitle: stats.phase_duration.average_days ? `${Math.round(stats.phase_duration.average_days)} calendar days` : null, icon: '\u23F1\uFE0F' },
+          { title: 'Median phase 1 duration', value: stats.phase_duration.median_business_days ? `${stats.phase_duration.median_business_days} business days` : 'N/A', subtitle: stats.phase_duration.median_days ? `${stats.phase_duration.median_days} calendar days` : null, icon: '\uD83D\uDCC8' },
+        ].map(({ title, value, subtitle, icon, href }) => {
+          const Tag = href ? 'a' : 'div';
+          return (
+            <a href={href || undefined} class="block bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-200 overflow-hidden group">
+              <div class="p-6">
+                <div class="flex items-start gap-4">
+                  <div class="flex-shrink-0 w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-xl group-hover:scale-105 transition-transform duration-200">
+                    {icon}
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <dl>
+                      <dt class="text-sm font-medium text-gray-500 mb-1">{title}</dt>
+                      <dd><div class="text-xl font-bold text-gray-900 tracking-tight">{value}</div></dd>
+                      {subtitle && <dd class="text-sm text-gray-400 mt-1">{subtitle}</dd>}
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      <!-- Recent Determinations -->
+      {stats.recent_determinations && stats.recent_determinations.length > 0 && (
+        <div class="mb-8">
+          <div class="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div class="px-5 sm:px-6 py-4 border-b border-gray-50">
+              <h2 class="text-lg font-semibold text-gray-900">Recent determinations</h2>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-gray-100">
+                <thead><tr class="bg-gray-50/80">
+                  <th class="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Merger</th>
+                  <th class="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Determination</th>
+                </tr></thead>
+                <tbody class="divide-y divide-gray-50">
+                  {stats.recent_determinations.map((item) => (
+                    <tr class="relative hover:bg-gray-100/70 transition-colors">
+                      <td class="px-5 sm:px-6 py-4 text-sm text-gray-900">
+                        <div class="flex items-start gap-2">
+                          <a href={`/mergers/${item.merger_id}`} class="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0">{item.merger_name}</a>
+                        </div>
+                        <div class="text-xs text-gray-400 mt-0.5 flex items-center gap-2">
+                          <span>{item.merger_id}</span>
+                          {item.is_waiver && <WaiverBadge />}
+                        </div>
+                      </td>
+                      <td class="px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
+                        <span class={`inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold ${getDeterminationStyle(item.determination)}`} role="status">
+                          {item.determination}
+                        </span>
+                        <div class="text-xs text-gray-400 mt-1 pl-2.5">{formatDate(item.determination_date)}</div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <!-- Recently Notified Mergers -->
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-card mb-8 overflow-hidden">
+        <div class="px-6 py-5 border-b border-gray-100">
+          <h2 class="text-lg font-semibold text-gray-900">Recently notified mergers</h2>
+        </div>
+        <ul class="divide-y divide-gray-50">
+          {stats.recent_mergers.map((merger) => (
+            <li>
+              <a href={`/mergers/${merger.merger_id}`} class="block hover:bg-gray-100/70 transition-colors duration-150">
+                <div class="px-6 py-4">
+                  <div class="flex items-start justify-between gap-3">
+                    <div class="flex items-start gap-2 min-w-0 flex-1">
+                      <p class="text-sm font-medium text-gray-900 break-words hover:text-primary transition-colors">{merger.merger_name}</p>
+                      {merger.is_waiver && <WaiverBadge />}
+                    </div>
+                    <div class="ml-2 flex-shrink-0">
+                      <StatusBadge status={merger.status} determination={merger.accc_determination} />
+                    </div>
+                  </div>
+                  <div class="mt-1.5 text-xs text-gray-400">
+                    {merger.is_waiver ? 'Applied:' : 'Notified:'} {formatDate(merger.effective_notification_datetime)}
+                  </div>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Upcoming Events -->
+      {eventsWithin7Days.length > 0 && (
+        <div class="mb-8">
+          <div class="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div class="px-5 sm:px-6 py-4 border-b border-gray-50">
+              <h2 class="text-lg font-semibold text-gray-900">Upcoming events</h2>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="min-w-full divide-y divide-gray-100">
+                <thead><tr class="bg-gray-50/80">
+                  <th class="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+                  <th class="hidden sm:table-cell px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Event</th>
+                  <th class="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Merger</th>
+                </tr></thead>
+                <tbody class="divide-y divide-gray-50">
+                  {eventsWithin7Days.map((event) => {
+                    const daysRemaining = getDaysRemaining(event.date);
+                    const isUrgent = daysRemaining !== null && daysRemaining < 4;
+                    const eventBadgeClass = event.type === 'consultation_due' ? 'bg-blue-50 text-blue-700 border-blue-200/60' : event.type === 'notice_of_competition_concerns' ? 'bg-amber-50 text-amber-700 border-amber-200/60' : 'bg-purple-50 text-purple-700 border-purple-200/60';
+                    return (
+                      <tr class="relative hover:bg-gray-100/70 transition-colors">
+                        <td class="px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
+                          <div class={`font-medium ${isUrgent ? 'text-red-700' : 'text-gray-900'}`}>
+                            {daysRemaining === 0 ? 'Today' : daysRemaining === 1 ? '1 day' : `${daysRemaining} days`}
+                          </div>
+                          <div class="text-xs text-gray-400 mt-0.5">{formatDate(event.date)}</div>
+                          <span class={`sm:hidden inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold border mt-1.5 ${eventBadgeClass}`}>
+                            {event.event_type_display?.replace(/ due$/, '').replace(/^Consultation responses$/, 'Consultation')}
+                          </span>
+                        </td>
+                        <td class="hidden sm:table-cell px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
+                          <span class={`inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold border ${eventBadgeClass}`}>
+                            {event.event_type_display}
+                          </span>
+                        </td>
+                        <td class="px-5 sm:px-6 py-4 text-sm text-gray-900">
+                          <a href={`/mergers/${event.merger_id}`} class="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0">{event.merger_name}</a>
+                          <div class="text-xs text-gray-400 mt-0.5">{event.merger_id} &middot; {event.stage}</div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <!-- Charts -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Phase 1 Duration -->
+        {stats.phase_duration.percentiles && (
+          <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-card flex flex-col">
+            <h2 class="text-base font-semibold text-gray-900 mb-5">Phase 1 duration</h2>
+            <div class="grid grid-cols-[auto_1fr_auto] items-center gap-x-4 flex-1 content-around">
+              <span class="text-sm text-gray-600 py-3 border-b border-gray-50">By day 15</span>
+              <div class="bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                <div class="bg-primary h-1.5 rounded-full" style={`width: ${stats.phase_duration.percentiles.day15.percentage}%`}></div>
+              </div>
+              <span class="text-sm font-semibold text-gray-900 tabular-nums text-right py-3 whitespace-nowrap border-b border-gray-50">
+                {stats.phase_duration.percentiles.day15.percentage}%<span class="text-gray-400 font-normal ml-1">({stats.phase_duration.percentiles.day15.count})</span>
+              </span>
+
+              <span class="text-sm text-gray-600 py-3 border-b border-gray-50">By day 20</span>
+              <div class="bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                <div class="bg-primary h-1.5 rounded-full" style={`width: ${stats.phase_duration.percentiles.day20.percentage}%`}></div>
+              </div>
+              <span class="text-sm font-semibold text-gray-900 tabular-nums text-right py-3 whitespace-nowrap border-b border-gray-50">
+                {stats.phase_duration.percentiles.day20.percentage}%<span class="text-gray-400 font-normal ml-1">({stats.phase_duration.percentiles.day20.count})</span>
+              </span>
+
+              <span class="text-sm text-gray-600 py-3">By day 30</span>
+              <div class="bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                <div class="bg-primary h-1.5 rounded-full" style={`width: ${stats.phase_duration.percentiles.day30.percentage}%`}></div>
+              </div>
+              <span class="text-sm font-semibold text-gray-900 tabular-nums text-right py-3 whitespace-nowrap">
+                {stats.phase_duration.percentiles.day30.percentage}%<span class="text-gray-400 font-normal ml-1">({stats.phase_duration.percentiles.day30.count})</span>
+              </span>
+            </div>
+          </div>
+        )}
+
+        <!-- Charts rendered client-side -->
+        {determinationData && Object.keys(stats.by_determination).length > 0 && (
+          <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
+            <h2 class="text-base font-semibold text-gray-900 mb-5">Phase 1 determinations</h2>
+            <div class="h-64"><canvas id="chart-determination"></canvas></div>
+            <table class="sr-only">
+              <caption>Phase 1 determination breakdown</caption>
+              <thead><tr><th>Determination</th><th>Count</th></tr></thead>
+              <tbody>
+                {Object.entries(stats.by_determination).map(([det, count]) => (
+                  <tr><td>{det}</td><td>{count}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        {waiverData && waiverData.labels.length > 0 && (
+          <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
+            <h2 class="text-base font-semibold text-gray-900 mb-5">Waiver determinations</h2>
+            <div class="h-64"><canvas id="chart-waiver"></canvas></div>
+            <table class="sr-only">
+              <caption>Waiver determination breakdown</caption>
+              <thead><tr><th>Determination</th><th>Count</th></tr></thead>
+              <tbody>
+                {waiverLabels.map((det) => (
+                  <tr><td>{det}</td><td>{stats.by_waiver_determination[det]}</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </div>
+    </div>
+  )}
+</Base>
+
+<script define:vars={{ determinationData, waiverData }}>
+  // Client-side Chart.js for doughnut charts
+  if (determinationData || waiverData) {
+    import('chart.js').then(({ Chart, ArcElement, Tooltip, Legend }) => {
+      Chart.register(ArcElement, Tooltip, Legend);
+
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+        animation: false,
+        cutout: '65%',
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { padding: 16, usePointStyle: true, pointStyle: 'circle', font: { size: 12, family: 'Inter, sans-serif' } },
+          },
+        },
+      };
+
+      if (determinationData) {
+        const ctx = document.getElementById('chart-determination');
+        if (ctx) {
+          new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+              labels: determinationData.labels,
+              datasets: [{ data: determinationData.values, backgroundColor: ['#335145', '#e07a5f', '#6b8f7f', '#8cafa0'], borderWidth: 0, borderRadius: 4 }],
+            },
+            options: chartOptions,
+          });
+        }
+      }
+
+      if (waiverData) {
+        const ctx = document.getElementById('chart-waiver');
+        if (ctx) {
+          new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+              labels: waiverData.labels,
+              datasets: [{ data: waiverData.values, backgroundColor: waiverData.labels.map(l => l === 'Approved' ? '#335145' : '#e07a5f'), borderWidth: 0, borderRadius: 4 }],
+            },
+            options: chartOptions,
+          });
+        }
+      }
+    });
+  }
+</script>

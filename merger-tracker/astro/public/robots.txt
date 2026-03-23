@@ -1,0 +1,6 @@
+# robots.txt for mergers.fyi
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://mergers.fyi/sitemap.xml

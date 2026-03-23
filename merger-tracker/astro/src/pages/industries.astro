@@ -1,0 +1,168 @@
+---
+import Base from '../layouts/Base.astro';
+import WaiverBadge from '../components/WaiverBadge.astro';
+import { getIndustries, getIndustryDetail } from '../data/loader';
+
+const data = getIndustries();
+const industries = (data?.industries || []).sort((a, b) => b.merger_count - a.merger_count);
+const totalMergers = industries.reduce((sum, i) => sum + i.merger_count, 0);
+const avgMergers = industries.length > 0 ? (totalMergers / industries.length).toFixed(1) : '0';
+
+// Pre-load all industry details at build time
+const industryMergersMap = {};
+for (const industry of industries) {
+  const detail = getIndustryDetail(industry.code);
+  if (detail && detail.mergers) {
+    industryMergersMap[industry.code] = detail.mergers;
+  }
+}
+
+const SCROLL_THRESHOLD = 6;
+---
+
+<Base
+  title="Industries"
+  description="Explore Australian merger activity by industry sector. See which ANZSIC industries attract the most ACCC scrutiny and how deal outcomes compare across sectors."
+  url="/industries"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+    <!-- Summary Stats -->
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+      {[
+        { label: 'Total industries', value: industries.length },
+        { label: 'Total merger reviews', value: totalMergers },
+        { label: 'Avg mergers per industry', value: avgMergers },
+      ].map(({ label, value }) => (
+        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
+          <p class="text-xs font-medium text-gray-400 uppercase tracking-wider">{label}</p>
+          <p class="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">{value}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Search -->
+    <div class="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
+      <label for="search" class="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">
+        Search industries
+      </label>
+      <div class="relative">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+        <input
+          type="text"
+          id="search"
+          class="w-full pl-10 pr-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all"
+          placeholder="Search by industry name or code..."
+        />
+      </div>
+    </div>
+
+    <!-- Results count -->
+    <div class="mb-4">
+      <p id="industry-count" class="text-sm text-gray-400">
+        Showing {industries.length} of {industries.length} industries
+      </p>
+    </div>
+
+    <!-- Industries Table -->
+    <div class="bg-white border border-gray-100 shadow-card rounded-2xl overflow-hidden">
+      <table class="min-w-full divide-y divide-gray-100">
+        <caption class="sr-only">Industry breakdown of Australian merger reviews by ANZSIC code</caption>
+        <thead>
+          <tr class="bg-gray-50/80">
+            <th class="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Industry name</th>
+            <th class="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Mergers</th>
+            <th class="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Share</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-50" id="industries-tbody">
+          {industries.map((industry) => {
+            const percentage = ((industry.merger_count / totalMergers) * 100).toFixed(1);
+            const mergers = industryMergersMap[industry.code] || [];
+            return (
+              <>
+                <tr
+                  class="hover:bg-gray-50/50 cursor-pointer transition-colors"
+                  data-industry-row
+                  data-industry-name={industry.name.toLowerCase()}
+                  data-industry-code={industry.code.toLowerCase()}
+                >
+                  <td class="px-6 py-4 text-sm text-gray-900">
+                    <details class="group">
+                      <summary class="flex items-center list-none cursor-pointer">
+                        <svg class="w-4 h-4 mr-2.5 text-gray-400 transition-transform duration-200 group-open:rotate-90" fill="currentColor" viewBox="0 0 20 20">
+                          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                        </svg>
+                        <span class="font-medium">{industry.name}</span>
+                      </summary>
+                      <div class="mt-3 ml-6.5 space-y-2">
+                        <p class="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">Mergers in this industry</p>
+                        {mergers.length === 0 ? (
+                          <p class="text-sm text-gray-500 py-4">No mergers found for this industry</p>
+                        ) : (
+                          <div class={mergers.length > SCROLL_THRESHOLD ? 'max-h-[400px] overflow-y-auto pr-2 space-y-2' : 'space-y-2'}>
+                            {mergers.map((merger) => (
+                              <a
+                                href={`/mergers/${merger.merger_id}`}
+                                class="block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
+                              >
+                                <div class="flex items-center gap-2 min-w-0">
+                                  <span class="text-sm font-medium text-gray-900 truncate">{merger.merger_name}</span>
+                                  {merger.is_waiver && <WaiverBadge class="flex-shrink-0" />}
+                                </div>
+                                <span class="text-xs text-gray-400 mt-1 block">{merger.status}</span>
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    </details>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm">
+                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary">
+                      {industry.merger_count}
+                    </span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <div class="flex items-center gap-3">
+                      <div class="flex-1 bg-gray-100 rounded-full h-1.5 max-w-[8rem] overflow-hidden">
+                        <div class="bg-primary h-1.5 rounded-full" style={`width: ${percentage}%`} />
+                      </div>
+                      <span class="text-xs tabular-nums font-medium text-gray-600 w-12">{percentage}%</span>
+                    </div>
+                  </td>
+                </tr>
+              </>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</Base>
+
+<script>
+  // Client-side search filtering
+  const searchInput = document.getElementById('search');
+  const rows = document.querySelectorAll('[data-industry-row]');
+  const countEl = document.getElementById('industry-count');
+  const total = rows.length;
+
+  searchInput?.addEventListener('input', () => {
+    const term = searchInput.value.toLowerCase().trim();
+    let visible = 0;
+
+    rows.forEach(row => {
+      const name = row.getAttribute('data-industry-name') || '';
+      const code = row.getAttribute('data-industry-code') || '';
+      const matches = !term || name.includes(term) || code.includes(term);
+      row.style.display = matches ? '' : 'none';
+      if (matches) visible++;
+    });
+
+    if (countEl) {
+      countEl.textContent = `Showing ${visible} of ${total} industries`;
+    }
+  });
+</script>

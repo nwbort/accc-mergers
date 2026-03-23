@@ -1,0 +1,65 @@
+---
+import Base from '../../layouts/Base.astro';
+import WaiverBadge from '../../components/WaiverBadge.astro';
+import { getIndustries, getIndustryDetail, getAllIndustryCodes } from '../../data/loader';
+
+export function getStaticPaths() {
+  const codes = getAllIndustryCodes();
+  return codes.map(code => ({ params: { code } }));
+}
+
+const { code } = Astro.params;
+const decodedCode = decodeURIComponent(code);
+const data = getIndustryDetail(decodedCode);
+const industriesData = getIndustries();
+const industries = industriesData?.industries || [];
+const industryName = industries.find(i => i.code === decodedCode)?.name || decodedCode;
+const mergers = data?.mergers || [];
+---
+
+<Base
+  title={industryName}
+  description={`${mergers.length} merger${mergers.length !== 1 ? 's' : ''} in the ${industryName} industry reviewed by the ACCC.`}
+  url={`/industries/${encodeURIComponent(decodedCode)}`}
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+    <a href="/industries" class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-primary mb-5 transition-colors">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+      Back to industries
+    </a>
+
+    <div class="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6 card-accent">
+      <div class="pt-1">
+        <h1 class="text-2xl font-bold text-gray-900 tracking-tight">{industryName}</h1>
+        <p class="text-sm text-gray-400 mt-1">
+          ANZSIC code: {decodedCode} &middot; {mergers.length} merger{mergers.length !== 1 ? 's' : ''}
+        </p>
+      </div>
+    </div>
+
+    <div class="space-y-3">
+      {mergers.map((merger) => (
+        <a
+          href={`/mergers/${merger.merger_id}`}
+          class="block bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 p-5"
+        >
+          <div class="flex items-center gap-2 min-w-0">
+            <h3 class="text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
+              {merger.merger_name}
+            </h3>
+            {merger.is_waiver && <WaiverBadge class="flex-shrink-0" />}
+          </div>
+          <p class="text-xs text-gray-400 mt-1">{merger.status}</p>
+        </a>
+      ))}
+    </div>
+
+    {mergers.length === 0 && (
+      <div class="text-center py-16">
+        <p class="text-gray-500 font-medium">No mergers found for this industry</p>
+      </div>
+    )}
+  </div>
+</Base>

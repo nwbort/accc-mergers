@@ -1,0 +1,107 @@
+---
+import Base from '../layouts/Base.astro';
+import ExternalLinkIcon from '../components/ExternalLinkIcon.astro';
+import { getAllTimelineEvents } from '../data/loader';
+import { formatDate } from '../utils/dates';
+
+const allEvents = getAllTimelineEvents();
+
+function getEventType(title, displayTitle) {
+  if (title?.includes('notified')) return 'notification';
+  if (displayTitle?.includes('determination:') || displayTitle?.includes('subject to Phase 2 review')) {
+    const fullText = (displayTitle || title || '').toLowerCase();
+    if (fullText.includes('not approved') || fullText.includes('declined') || fullText.includes('not opposed')) return 'determination-not-approved';
+    if (fullText.includes('subject to phase 2 review')) return 'determination-referred';
+    return 'determination-approved';
+  }
+  return 'event';
+}
+
+function getEventColor(eventType) {
+  switch (eventType) {
+    case 'notification': return 'bg-blue-500';
+    case 'determination-approved': return 'bg-emerald-500';
+    case 'determination-not-approved': return 'bg-red-500';
+    case 'determination-referred': return 'bg-amber-500';
+    default: return 'bg-primary';
+  }
+}
+
+function getEventIconPath(eventType) {
+  switch (eventType) {
+    case 'notification':
+      return '<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd" />';
+    case 'determination-approved':
+      return '<path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />';
+    case 'determination-not-approved':
+      return '<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />';
+    case 'determination-referred':
+      return '<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />';
+    default:
+      return '<path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />';
+  }
+}
+---
+
+<Base
+  title="Timeline"
+  description="Chronological feed of every ACCC merger event — notifications, Phase 2 launches, public consultation windows, and final determinations in date order."
+  url="/timeline"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+    <div class="flow-root">
+      <ul class="-mb-8">
+        {allEvents.map((event, idx) => {
+          const eventType = getEventType(event.title || '', event.display_title || '');
+          return (
+            <li>
+              <div class="relative pb-8">
+                {idx !== allEvents.length - 1 && (
+                  <span class="absolute top-0 bottom-0 left-5 -ml-px w-0.5 bg-gray-100" aria-hidden="true" />
+                )}
+                <div class="relative flex space-x-4 items-center">
+                  <div class="flex-shrink-0">
+                    <span class={`h-10 w-10 rounded-xl flex items-center justify-center shadow-sm ${getEventColor(eventType)}`}>
+                      <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20" role="img" aria-label="Timeline event">
+                        <Fragment set:html={getEventIconPath(eventType)} />
+                      </svg>
+                    </span>
+                  </div>
+                  <a
+                    href={`/mergers/${event.merger_id}`}
+                    class="min-w-0 flex-1 bg-white rounded-2xl border border-gray-100 shadow-card p-4 hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 block"
+                    aria-label={`View merger details for ${event.merger_name}`}
+                  >
+                    <span class="text-sm font-semibold text-gray-900">{event.merger_name}</span>
+                    <p class="text-sm text-gray-500 mt-1">{event.display_title || event.title}</p>
+                    <p class="mt-1 text-xs text-gray-400">{formatDate(event.date)}</p>
+                    {event.url_gh && (
+                      <div class="mt-2">
+                        <span class="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark transition-colors">
+                          View document
+                          <ExternalLinkIcon class="h-3 w-3" />
+                        </span>
+                      </div>
+                    )}
+                  </a>
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+
+    {allEvents.length > 0 && (
+      <div class="text-center py-8">
+        <p class="text-gray-400 text-sm">Showing all {allEvents.length} events</p>
+      </div>
+    )}
+
+    {allEvents.length === 0 && (
+      <div class="text-center py-16">
+        <p class="text-gray-500">No timeline data available</p>
+      </div>
+    )}
+  </div>
+</Base>

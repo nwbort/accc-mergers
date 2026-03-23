@@ -1,0 +1,59 @@
+---
+const shortcuts = [
+  { keys: ['/'], description: 'Focus search' },
+  { keys: ['g', 'd'], description: 'Go to Dashboard' },
+  { keys: ['g', 'm'], description: 'Go to Mergers' },
+  { keys: ['g', 't'], description: 'Go to Timeline' },
+  { keys: ['g', 'i'], description: 'Go to Industries' },
+  { keys: ['g', 'c'], description: 'Go to Commentary' },
+  { keys: ['g', 'a'], description: 'Go to Analysis' },
+  { keys: ['j'], description: 'Next item (mergers list)' },
+  { keys: ['k'], description: 'Previous item (mergers list)' },
+  { keys: ['Enter'], description: 'Open selected item' },
+  { keys: ['?'], description: 'Toggle this help' },
+  { keys: ['Esc'], description: 'Close / unfocus' },
+];
+---
+
+<div
+  id="keyboard-shortcuts-modal"
+  class="hidden fixed inset-0 z-[100] flex items-center justify-center p-4"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Keyboard shortcuts"
+>
+  <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" data-shortcuts-backdrop></div>
+  <div
+    class="relative bg-white rounded-2xl shadow-xl border border-gray-100 max-w-sm w-full p-6 animate-fade-in"
+  >
+    <div class="flex items-center justify-between mb-5">
+      <h2 class="text-lg font-semibold text-gray-900">Keyboard shortcuts</h2>
+      <button
+        data-shortcuts-close
+        class="p-1 text-gray-400 hover:text-gray-600 transition-colors rounded-lg"
+        aria-label="Close shortcuts help"
+      >
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <ul class="space-y-3">
+      {shortcuts.map(({ keys, description }) => (
+        <li class="flex items-center justify-between">
+          <span class="text-sm text-gray-600">{description}</span>
+          <span class="flex items-center gap-1">
+            {keys.map((key, i) => (
+              <>
+                {i > 0 && <span class="text-xs text-gray-400">then</span>}
+                <kbd class="inline-flex items-center justify-center min-w-[1.5rem] h-6 px-1.5 rounded bg-gray-100 border border-gray-200 text-xs font-mono font-medium text-gray-600 shadow-sm">
+                  {key}
+                </kbd>
+              </>
+            ))}
+          </span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,265 @@
+---
+import Base from '../../layouts/Base.astro';
+import StatusBadge from '../../components/StatusBadge.astro';
+import WaiverBadge from '../../components/WaiverBadge.astro';
+import ExternalLinkIcon from '../../components/ExternalLinkIcon.astro';
+import { getAllMergers, getMergerDetail } from '../../data/loader';
+import { formatDate, calculateDuration, getDaysRemaining, calculateBusinessDays, getBusinessDaysRemaining } from '../../utils/dates';
+import { marked } from 'marked';
+import { PROSE_MARKDOWN } from '../../utils/classNames';
+
+export function getStaticPaths() {
+  const mergers = getAllMergers();
+  return mergers.map(m => ({ params: { id: m.merger_id } }));
+}
+
+const { id } = Astro.params;
+const merger = getMergerDetail(id);
+
+if (!merger) {
+  return Astro.redirect('/404');
+}
+
+const duration = calculateDuration(merger.effective_notification_datetime, merger.determination_publication_date);
+const businessDuration = calculateBusinessDays(merger.effective_notification_datetime, merger.determination_publication_date);
+const daysRemaining = getDaysRemaining(merger.end_of_determination_period);
+const businessDaysRemaining = getBusinessDaysRemaining(merger.end_of_determination_period);
+
+const sortedEvents = merger.events ? [...merger.events].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) : [];
+
+const determinationEvent = merger.determination_publication_date && merger.events
+  ? merger.events.find(event =>
+      event.date?.split('T')[0] === merger.determination_publication_date?.split('T')[0] &&
+      event.title?.toLowerCase().includes('determination')
+    )
+  : null;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": merger.merger_name,
+  "description": merger.merger_description || `Merger between ${merger.acquirers.map(a => a.name).join(', ')} and ${merger.targets.map(t => t.name).join(', ')}`,
+  "datePublished": merger.effective_notification_datetime,
+  "author": { "@type": "Person", "name": "Nick Twort", "url": "https://mergers.fyi" },
+};
+
+function renderParties(parties, title) {
+  const VISIBLE_COUNT = 2;
+  const hasMore = parties.length > VISIBLE_COUNT;
+  return { parties, title, visibleCount: VISIBLE_COUNT, hasMore };
+}
+
+const acquirersInfo = renderParties(merger.acquirers, 'Acquirers');
+const targetsInfo = renderParties(merger.targets, 'Targets');
+const otherPartiesInfo = merger.other_parties?.length ? renderParties(merger.other_parties, 'Other parties') : null;
+---
+
+<Base
+  title={merger.merger_name}
+  description={merger.merger_description || `ACCC merger review: ${merger.acquirers.map(a => a.name).join(', ')} acquiring ${merger.targets.map(t => t.name).join(', ')}. Status: ${merger.status}`}
+  url={`/mergers/${merger.merger_id}`}
+  structuredData={structuredData}
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+    <a href="/mergers" class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-primary mb-5 transition-colors">
+      <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+      Back to all mergers
+    </a>
+
+    <!-- Header -->
+    <div class="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6 card-accent">
+      <div class="flex items-start justify-between gap-4 pt-1">
+        <div class="min-w-0">
+          <div class="flex items-center gap-3 mb-2 flex-wrap">
+            <h1 class="text-2xl font-bold text-gray-900 tracking-tight">{merger.merger_name}</h1>
+            {merger.is_waiver && <WaiverBadge class="px-2.5 py-1 rounded-lg text-sm" />}
+          </div>
+          <div class="flex items-center gap-4 flex-wrap">
+            <p class="text-sm text-gray-400">{merger.merger_id}</p>
+            {merger.url && (
+              <a href={merger.url} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm text-primary hover:text-primary-dark transition-colors">
+                View on ACCC website<ExternalLinkIcon />
+              </a>
+            )}
+          </div>
+        </div>
+        <div class="flex flex-col items-end gap-2 flex-shrink-0">
+          <StatusBadge status={merger.status} determination={merger.accc_determination} />
+          <button
+            data-track-merger={id}
+            class="inline-flex items-center justify-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-lg border transition-all duration-200 bg-gray-100 text-gray-600 border-gray-200/60 hover:bg-gray-200"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" /></svg>
+            Track
+          </button>
+        </div>
+      </div>
+
+      <!-- Key Info Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 pt-6 border-t border-gray-100">
+        <div>
+          <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">Stage</h3>
+          <p class="text-sm font-medium text-gray-900">{merger.stage || 'N/A'}</p>
+        </div>
+        <div>
+          <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">
+            {merger.is_waiver ? 'Waiver Application Date' : 'Effective Notification'}
+          </h3>
+          <p class="text-sm font-medium text-gray-900">
+            {!merger.effective_notification_datetime && merger.status?.toLowerCase().includes('suspended')
+              ? <>None - assessment suspended{merger.original_notification_datetime && <span class="text-gray-500 font-normal"> (originally {formatDate(merger.original_notification_datetime)})</span>}</>
+              : formatDate(merger.effective_notification_datetime)}
+          </p>
+        </div>
+        {!merger.is_waiver && !merger.status?.toLowerCase().includes('suspended') && (
+          <div>
+            <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">End of Determination Period</h3>
+            <p class="text-sm font-medium text-gray-900">
+              {formatDate(merger.end_of_determination_period)}
+              {daysRemaining !== null && daysRemaining > 0 && !merger.determination_publication_date && (
+                <span class="ml-2 text-xs text-gray-400 font-normal">({daysRemaining} cal / {businessDaysRemaining} bus. days remaining)</span>
+              )}
+            </p>
+          </div>
+        )}
+        {merger.determination_publication_date && (
+          <div>
+            <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">Determination Published</h3>
+            <p class="text-sm font-medium text-gray-900">
+              {formatDate(merger.determination_publication_date)}
+              {duration !== null && businessDuration !== null && (
+                <span class="ml-2 text-xs text-gray-400 font-normal">({duration} cal / {businessDuration} bus. days)</span>
+              )}
+            </p>
+          </div>
+        )}
+        {merger.accc_determination && (
+          <div>
+            <h3 class="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">Determination</h3>
+            <p class="text-sm font-medium text-gray-900">
+              {determinationEvent?.url_gh ? (
+                <a href={determinationEvent.url_gh} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors">
+                  {merger.accc_determination}<ExternalLinkIcon />
+                </a>
+              ) : merger.accc_determination}
+            </p>
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- Parties -->
+    <div class={`grid grid-cols-1 ${otherPartiesInfo ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4 mb-6`}>
+      {[acquirersInfo, targetsInfo, otherPartiesInfo].filter(Boolean).map((info) => (
+        <div class="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
+          <h2 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">{info.title}</h2>
+          {info.parties.map((party, idx) => (
+            <div class="mb-3 last:mb-0">
+              <p class="font-medium text-gray-900">{party.name}</p>
+              {party.identifier && (
+                <p class="text-sm text-gray-400">{party.identifier_type ? `${party.identifier_type}: ` : ''}{party.identifier}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      ))}
+    </div>
+
+    <!-- Description -->
+    {merger.merger_description && (
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6">
+        <h2 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Description</h2>
+        <div class={PROSE_MARKDOWN} set:html={marked(merger.merger_description)} />
+      </div>
+    )}
+
+    <!-- Commentary -->
+    {merger.comments && merger.comments.length > 0 && (
+      <div class="bg-gradient-to-r from-blue-50 to-indigo-50/50 rounded-2xl border border-blue-100/60 shadow-card mb-6 overflow-hidden divide-y divide-blue-100/60">
+        {merger.comments.map((comment, commentIdx) => (
+          <div class="p-6">
+            <div class="flex items-start gap-3">
+              <div class="flex-shrink-0 w-9 h-9 rounded-xl bg-blue-100 flex items-center justify-center">
+                <svg class="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+                </svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                {commentIdx === 0 && <h2 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">Commentary</h2>}
+                {comment.commentary && <div class={PROSE_MARKDOWN} set:html={marked(comment.commentary)} />}
+                {comment.tags && comment.tags.length > 0 && (
+                  <div class="flex flex-wrap gap-1.5 mt-3">
+                    {comment.tags.map((tag) => (
+                      <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-blue-100/80 text-blue-700">{tag}</span>
+                    ))}
+                  </div>
+                )}
+                <div class="flex items-center gap-3 mt-3">
+                  {comment.date && <p class="text-xs text-gray-400">Updated {formatDate(comment.date)}</p>}
+                  {comment.author && <p class="text-xs text-gray-400">by {comment.author}</p>}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+
+    <!-- Industries -->
+    {merger.anzsic_codes && merger.anzsic_codes.length > 0 && (
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6">
+        <h2 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">Industries</h2>
+        <div class="flex flex-wrap gap-2">
+          {merger.anzsic_codes.map((code) => (
+            <a
+              href={code.code ? `/industries/${encodeURIComponent(code.code)}` : `/mergers?q=${encodeURIComponent(code.name)}`}
+              class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm bg-gray-50 text-gray-600 border border-gray-100 hover:bg-primary/5 hover:text-primary hover:border-primary/20 transition-all"
+            >
+              {code.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+
+    <!-- Timeline -->
+    {sortedEvents.length > 0 && (
+      <div class="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
+        <h2 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-6">Timeline & Events</h2>
+        <div class="flow-root">
+          <ul class="-mb-8">
+            {sortedEvents.map((event, idx) => (
+              <li>
+                <div class="relative pb-8">
+                  {idx !== sortedEvents.length - 1 && (
+                    <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-100" aria-hidden="true" />
+                  )}
+                  <div class="relative flex space-x-3">
+                    <div>
+                      <span class="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center ring-4 ring-white">
+                        <div class="h-2.5 w-2.5 rounded-full bg-primary" />
+                      </span>
+                    </div>
+                    <div class="min-w-0 flex-1 pt-1">
+                      <p class="text-sm font-medium text-gray-900">{event.display_title || event.title}</p>
+                      <p class="text-xs text-gray-400 mt-0.5">{formatDate(event.date)}</p>
+                      {event.url_gh && (
+                        <div class="mt-1.5">
+                          <a href={event.url_gh} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark transition-colors">
+                            View document<ExternalLinkIcon class="h-3 w-3" />
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    )}
+  </div>
+</Base>
