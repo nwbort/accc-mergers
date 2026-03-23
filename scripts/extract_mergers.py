@@ -250,6 +250,13 @@ def _extract_dates_and_status(soup, merger_id, existing_merger_data):
     if date_tag and date_tag.find('time'):
         data['effective_notification_datetime'] = date_tag.find('time')['datetime']
 
+    # Preserve original_notification_datetime from existing data if already set,
+    # otherwise initialise it from the current effective_notification_datetime.
+    if existing_merger_data and existing_merger_data.get('original_notification_datetime'):
+        data['original_notification_datetime'] = existing_merger_data['original_notification_datetime']
+    else:
+        data['original_notification_datetime'] = data.get('effective_notification_datetime')
+
     stage_tag = soup.find('div', class_='field--name-field-acquisition-stage')
     data['stage'] = stage_tag.get_text(strip=True, separator=' ',).replace('Stage ', '') if stage_tag else None
 
