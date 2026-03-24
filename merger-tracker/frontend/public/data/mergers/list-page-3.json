@@ -113,6 +113,97 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/national-dental-care-%E2%80%93-ddta-dental-clinic-in-launceston-tas"
     },
     {
+      "merger_id": "WA-10009",
+      "merger_name": "SoftBank \u2013 DigitalBridge",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-02T12:00:00Z",
+      "determination_publication_date": "2026-03-24T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Duncan Holdco III LLC",
+          "identifier_type": null,
+          "identifier": "State of Delaware Company File Number  10510961"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DigitalBridge Group, Inc.",
+          "identifier_type": null,
+          "identifier": "IRS  464591526"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "SoftBank Group Corp",
+          "identifier_type": null,
+          "identifier": "Japanese registration number  010401056795"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/softbank-%E2%80%93-digitalbridge"
+    },
+    {
+      "merger_id": "WA-20008",
+      "merger_name": "Hall & McLean \u2013 Freehold interest in commercial land in Wellcamp, QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-02T12:00:00Z",
+      "determination_publication_date": "2026-03-24T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "HALL & MCLEAN PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "17 099 000 861"
+        }
+      ],
+      "targets": [
+        {
+          "name": "VISION STREET PROPERTY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "92 621 004 466"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Alpair Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Ellerslie Free Range Farms Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0172",
+          "name": "Poultry Farming (Eggs)"
+        },
+        {
+          "code": "0529",
+          "name": "Other Agriculture and Fishing Support Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hall-mclean-%E2%80%93-freehold-interest-in-commercial-land-in-wellcamp-qld"
+    },
+    {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "status": "Under assessment",
@@ -197,6 +288,129 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/genesis-minerals-%E2%80%93-magnetic-resources"
+    },
+    {
+      "merger_id": "WA-25008",
+      "merger_name": "Five V Capital - FTP Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-04T12:00:00Z",
+      "determination_publication_date": "2026-03-24T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "OVERWATCH BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 739 970"
+        }
+      ],
+      "targets": [
+        {
+          "name": "FTP GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 626 217 614"
+        },
+        {
+          "name": "FAARM BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 834 390"
+        },
+        {
+          "name": "FTP Solutions Inc",
+          "identifier_type": null,
+          "identifier": "BN  770283133"
+        },
+        {
+          "name": "FAARM SOLUTIONS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 660 811 567"
+        },
+        {
+          "name": "YARN MESH PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "83 660 812 788"
+        },
+        {
+          "name": "YARN MESH BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 835 039"
+        },
+        {
+          "name": "Faarm Solutions NZ Limited",
+          "identifier_type": null,
+          "identifier": "CN 8033618"
+        },
+        {
+          "name": "FAARM HOLDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 827 411"
+        },
+        {
+          "name": "YARN MESH HOLDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 828 061"
+        },
+        {
+          "name": "FTP TECHNOLOGIES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 613 149 232"
+        },
+        {
+          "name": "FTP SOLUTIONS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "91 156 293 346"
+        },
+        {
+          "name": "Yarn Mesh NZ Limited",
+          "identifier_type": null,
+          "identifier": "CN  8033621"
+        },
+        {
+          "name": "FTP Construction Inc",
+          "identifier_type": null,
+          "identifier": "BN  706188802"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "FIVE V CAPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "29 162 193 928"
+        },
+        {
+          "name": "Five V Horizons Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "665 223 192"
+        },
+        {
+          "name": "Five V Frontier Fund UGP1 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "677 413 633"
+        },
+        {
+          "name": "BEACON TOPCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 682 992 561"
+        },
+        {
+          "name": "OVERWATCH HOLDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 739 916"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/five-v-capital-ftp-group"
     },
     {
       "merger_id": "WA-95008",
@@ -429,6 +643,55 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/care-%E2%80%93-motorone-autobody"
     },
     {
+      "merger_id": "WA-15010",
+      "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-06T12:00:00Z",
+      "determination_publication_date": "2026-03-24T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 167 960 018"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BMM PARTNERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 649 113 959"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "BMM PARTNERS SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "84 649 113 968"
+        },
+        {
+          "name": "AZ NGA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "12 675 083 833"
+        },
+        {
+          "name": "AZ AUST HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 675 083 717"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/az-next-generation-advisory-%E2%80%93-intend-financial"
+    },
+    {
       "merger_id": "WA-20010",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
       "status": "Assessment completed",
@@ -505,6 +768,58 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/pt-asian-bulk-logistics-%E2%80%93-engage-marine"
+    },
+    {
+      "merger_id": "WA-35010",
+      "merger_name": "Blackstone - Advanced Cooling Technologies",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-09T12:00:00Z",
+      "determination_publication_date": "2026-03-24T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Rocket Purchaser, L.L.C.",
+          "identifier_type": null,
+          "identifier": "10521263"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Advanced Cooling Technologies, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Rocket Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "10499371"
+        },
+        {
+          "name": "Zhijun Zuo",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2452",
+          "name": "Fixed Space Heating, Cooling and Ventilation Equipment Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/blackstone-advanced-cooling-technologies"
     },
     {
       "merger_id": "MN-55012",

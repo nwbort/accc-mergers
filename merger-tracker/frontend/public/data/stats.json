@@ -1,6 +1,6 @@
 {
   "total_mergers": 58,
-  "total_waivers": 63,
+  "total_waivers": 68,
   "by_status": {
     "Assessment completed": 36,
     "Under assessment": 21,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 57,
+    "Approved": 62,
     "Not approved": 6
   },
   "phase_duration": {
@@ -36,20 +36,20 @@
   },
   "top_industries": [
     {
+      "name": "Computer System Design and Related Services",
+      "count": 20
+    },
+    {
       "name": "Software Publishing",
       "count": 19
     },
     {
-      "name": "Computer System Design and Related Services",
-      "count": 19
+      "name": "Other Auxiliary Finance and Investment Services",
+      "count": 12
     },
     {
       "name": "Financial Asset Investing",
-      "count": 9
-    },
-    {
-      "name": "Other Auxiliary Finance and Investment Services",
-      "count": 8
+      "count": 11
     },
     {
       "name": "Non-Residential Property Operators",
@@ -120,61 +120,61 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-15010",
+      "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
+      "determination": "Approved",
+      "determination_date": "2026-03-24T12:00:00Z",
+      "page_modified_datetime": "2026-03-24T18:32:16+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-35010",
+      "merger_name": "Blackstone - Advanced Cooling Technologies",
+      "determination": "Approved",
+      "determination_date": "2026-03-24T12:00:00Z",
+      "page_modified_datetime": "2026-03-24T18:28:24+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-20008",
+      "merger_name": "Hall & McLean \u2013 Freehold interest in commercial land in Wellcamp, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-03-24T12:00:00Z",
+      "page_modified_datetime": "2026-03-24T18:19:17+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-25008",
+      "merger_name": "Five V Capital - FTP Group",
+      "determination": "Approved",
+      "determination_date": "2026-03-24T12:00:00Z",
+      "page_modified_datetime": "2026-03-24T18:16:26+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-10009",
+      "merger_name": "SoftBank \u2013 DigitalBridge",
+      "determination": "Approved",
+      "determination_date": "2026-03-24T12:00:00Z",
+      "page_modified_datetime": "2026-03-24T18:12:00+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-15009",
       "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
       "determination": "Approved",
       "determination_date": "2026-03-20T12:00:00Z",
       "page_modified_datetime": "2026-03-20T16:34:34+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-75009",
-      "merger_name": "Charter Hall Holdings - JGS Private Capital",
-      "determination": "Approved",
-      "determination_date": "2026-03-20T12:00:00Z",
-      "page_modified_datetime": "2026-03-20T12:31:56+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-85014",
-      "merger_name": "Genesis Minerals \u2013 Magnetic Resources",
-      "determination": "Approved",
-      "determination_date": "2026-03-19T12:00:00Z",
-      "page_modified_datetime": "2026-03-19T18:48:09+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-50006",
-      "merger_name": "Airtree \u2013 HotDoc",
-      "determination": "Approved",
-      "determination_date": "2026-03-19T12:00:00Z",
-      "page_modified_datetime": "2026-03-19T18:39:40+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-20007",
-      "merger_name": "Telstra \u2013 Infosys Technologies",
-      "determination": "Approved",
-      "determination_date": "2026-03-19T12:00:00Z",
-      "page_modified_datetime": "2026-03-19T18:15:59+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-20010",
-      "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "determination": "Not approved",
-      "determination_date": "2026-03-19T12:00:00Z",
-      "page_modified_datetime": "2026-03-19T18:09:33+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
