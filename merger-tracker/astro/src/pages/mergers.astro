@@ -1,0 +1,456 @@
+---
+import Base from '../layouts/Base.astro';
+import StatusBadge from '../components/StatusBadge.astro';
+import WaiverBadge from '../components/WaiverBadge.astro';
+import { getAllMergers } from '../data/loader';
+import { formatDate } from '../utils/dates';
+
+const mergers = getAllMergers().sort((a, b) => {
+  const dateA = a.effective_notification_datetime || '';
+  const dateB = b.effective_notification_datetime || '';
+  return dateB.localeCompare(dateA);
+});
+
+// Build outcomes list for the status filter
+const outcomes = ['all', ...new Set(mergers.map(m => m.accc_determination || m.status))];
+---
+
+<Base
+  title="All Mergers"
+  description="Search every Australian merger notified to the ACCC. Filter by status, industry, acquirer, or outcome — cleared, declined, Phase 2, or under review."
+  url="/mergers"
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+    <!-- Search & Filters -->
+    <div class="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
+      <div class="flex gap-3">
+        <div class="flex-1 relative">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+          </svg>
+          <input
+            type="text"
+            id="search"
+            class="w-full pl-10 pr-10 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all"
+            placeholder="Search mergers, companies, or industries..."
+            aria-label="Search mergers, companies, or industries"
+          />
+          <button id="search-clear" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors" aria-label="Clear search" type="button">
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <button id="filter-toggle" class="flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium border transition-all bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100" aria-label="Toggle filters" aria-expanded="false">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+          </svg>
+          <span class="hidden sm:inline">Filters</span>
+        </button>
+      </div>
+
+      <div id="filter-panel" class="hidden mt-4 pt-4 border-t border-gray-100 animate-fade-in">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div>
+            <label for="phase" class="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">Phase</label>
+            <select id="phase" class="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none">
+              <option value="all">All phases</option>
+              <option value="phase1">Phase 1</option>
+              <option value="phase2">Phase 2</option>
+              <option value="waivers">Waiver</option>
+            </select>
+          </div>
+          <div>
+            <label for="status" class="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">Status</label>
+            <select id="status" class="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none">
+              {outcomes.map(outcome => (
+                <option value={outcome}>{outcome === 'all' ? 'All statuses' : outcome}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">Tracked</label>
+            <button id="tracked-toggle" role="switch" aria-checked="false" class="flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm border transition-all bg-gray-50 border-gray-200 text-gray-500 hover:bg-gray-100">
+              <span class="relative inline-flex h-5 w-9 flex-shrink-0 items-center rounded-full transition-colors bg-gray-300">
+                <span class="inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm transform transition-transform translate-x-0.5" />
+              </span>
+              <span class="font-medium">Tracked mergers only</span>
+            </button>
+          </div>
+        </div>
+        <div id="clear-filters" class="hidden mt-3 pt-3 border-t border-gray-100 flex justify-end">
+          <button class="text-xs text-gray-400 hover:text-gray-600 transition-colors">Clear all filters</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results count & Sort -->
+    <div class="flex items-center justify-between mb-4">
+      <p id="results-count" class="text-sm text-gray-400">
+        Showing {mergers.length} of {mergers.length} mergers
+      </p>
+      <div class="flex items-center gap-2">
+        <label for="sort" class="text-sm text-gray-400 hidden sm:inline">Sort by</label>
+        <select id="sort" class="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer">
+          <option value="notification">Notification date</option>
+          <option value="determination">Determination date</option>
+        </select>
+        <button id="sort-dir" class="p-1 text-gray-400 hover:text-gray-600 transition-all" aria-label="Sort descending" title="Descending (click for ascending)">
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mergers List -->
+    <div id="mergers-list" class="space-y-3">
+      {mergers.map((merger, idx) => (
+        <div
+          class="merger-card bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200"
+          data-merger-index={idx}
+          data-merger-id={merger.merger_id}
+          data-phase={merger.stage || ''}
+          data-status={merger.accc_determination || merger.status}
+          data-is-waiver={merger.is_waiver ? 'true' : 'false'}
+          data-notification-date={merger.effective_notification_datetime || ''}
+          data-determination-date={merger.determination_publication_date || ''}
+          data-search={`${merger.merger_name} ${merger.merger_id} ${(merger.acquirers || []).map(a => a.name).join(' ')} ${(merger.targets || []).map(t => t.name).join(' ')} ${(merger.anzsic_codes || []).map(c => c.name).join(' ')}`.toLowerCase()}
+        >
+          <div class="p-5">
+            <div class="flex items-start justify-between gap-3">
+              <a href={`/mergers/${merger.merger_id}`} class="flex-1 min-w-0">
+                <div class="flex items-center gap-2">
+                  <svg data-tracked-star={merger.merger_id} class="hidden h-4 w-4 flex-shrink-0 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                  </svg>
+                  <h3 class="text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">{merger.merger_name}</h3>
+                  {merger.is_waiver && <WaiverBadge class="flex-shrink-0" />}
+                </div>
+                <p class="text-xs text-gray-400 mt-1">{merger.merger_id} &middot; {merger.stage || 'N/A'}</p>
+              </a>
+              <div class="flex items-center gap-2 flex-shrink-0">
+                <StatusBadge status={merger.status} determination={merger.accc_determination} />
+                <button
+                  data-track-merger={merger.merger_id}
+                  class="hidden md:inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-200 bg-gray-100 text-gray-600 hover:bg-gray-200"
+                >
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" /></svg>
+                  Track
+                </button>
+              </div>
+            </div>
+
+            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <p class="text-xs text-gray-400 mb-0.5">{merger.is_waiver ? 'Application date' : 'Notification date'}</p>
+                <p class="text-sm font-medium text-gray-700">
+                  {!merger.effective_notification_datetime && merger.status?.toLowerCase().includes('suspended')
+                    ? 'None - assessment suspended'
+                    : formatDate(merger.effective_notification_datetime)}
+                </p>
+              </div>
+              {(merger.determination_publication_date || (merger.end_of_determination_period && !merger.status?.toLowerCase().includes('suspended'))) && (
+                <div>
+                  <p class="text-xs text-gray-400 mb-0.5">
+                    {merger.determination_publication_date ? 'Determination date' : 'End of determination period'}
+                  </p>
+                  <p class="text-sm font-medium text-gray-700">
+                    {merger.determination_publication_date
+                      ? formatDate(merger.determination_publication_date)
+                      : formatDate(merger.end_of_determination_period)}
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {merger.anzsic_codes && merger.anzsic_codes.length > 0 && (
+              <div class="mt-3 flex flex-wrap gap-1.5">
+                {merger.anzsic_codes.map((code) => (
+                  <span class="inline-flex items-center px-2 py-0.5 rounded-md text-xs bg-gray-50 text-gray-500 border border-gray-100">{code.name}</span>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div id="no-results" class="hidden text-center py-16">
+      <div class="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gray-100 flex items-center justify-center">
+        <svg class="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+      </div>
+      <p class="text-gray-500 font-medium">No mergers found</p>
+      <p class="text-gray-400 text-sm mt-1">Try adjusting your search or filters</p>
+    </div>
+  </div>
+</Base>
+
+<script>
+  // Client-side filtering, sorting, search, and keyboard navigation
+  const cards = Array.from(document.querySelectorAll('.merger-card'));
+  const searchInput = document.getElementById('search') as HTMLInputElement;
+  const searchClear = document.getElementById('search-clear');
+  const filterToggle = document.getElementById('filter-toggle');
+  const filterPanel = document.getElementById('filter-panel');
+  const phaseSelect = document.getElementById('phase') as HTMLSelectElement;
+  const statusSelect = document.getElementById('status') as HTMLSelectElement;
+  const trackedToggle = document.getElementById('tracked-toggle');
+  const sortSelect = document.getElementById('sort') as HTMLSelectElement;
+  const sortDirBtn = document.getElementById('sort-dir');
+  const resultsCount = document.getElementById('results-count');
+  const noResults = document.getElementById('no-results');
+  const mergersList = document.getElementById('mergers-list');
+  const clearFiltersDiv = document.getElementById('clear-filters');
+
+  let sortDir = 'desc';
+  let trackedOnly = false;
+  let selectedIndex = -1;
+  const totalCount = cards.length;
+
+  // Read URL params on load
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('q')) { searchInput.value = params.get('q') || ''; }
+  if (params.get('phase') && phaseSelect) phaseSelect.value = params.get('phase') || 'all';
+  if (params.get('status') && statusSelect) statusSelect.value = params.get('status') || 'all';
+  if (params.get('tracked') === 'true') { trackedOnly = true; }
+  if (params.get('sort')) {
+    const sortParam = params.get('sort') || '';
+    const parts = sortParam.split('-');
+    const field = parts.slice(0, -1).join('-');
+    const dir = parts[parts.length - 1];
+    if (sortSelect && (field === 'notification' || field === 'determination')) sortSelect.value = field;
+    if (dir === 'asc' || dir === 'desc') sortDir = dir;
+  }
+
+  // Auto-open filters if active
+  const hasActiveFilters = params.get('phase') || params.get('status') || params.get('tracked') === 'true';
+  if (hasActiveFilters && window.matchMedia('(min-width: 768px)').matches) {
+    filterPanel?.classList.remove('hidden');
+    filterToggle?.setAttribute('aria-expanded', 'true');
+  }
+
+  function getTrackedIds(): string[] {
+    try {
+      const stored = localStorage.getItem('merger_tracker_tracked');
+      return stored ? JSON.parse(stored) : [];
+    } catch { return []; }
+  }
+
+  function updateTrackedToggleUI() {
+    if (!trackedToggle) return;
+    const switchEl = trackedToggle.querySelector('span > span');
+    const outer = trackedToggle.querySelector('span');
+    if (trackedOnly) {
+      trackedToggle.setAttribute('aria-checked', 'true');
+      trackedToggle.classList.add('bg-primary/5', 'border-primary/30', 'text-primary');
+      trackedToggle.classList.remove('bg-gray-50', 'border-gray-200', 'text-gray-500');
+      outer?.classList.add('bg-primary');
+      outer?.classList.remove('bg-gray-300');
+      switchEl?.classList.add('translate-x-4');
+      switchEl?.classList.remove('translate-x-0.5');
+    } else {
+      trackedToggle.setAttribute('aria-checked', 'false');
+      trackedToggle.classList.remove('bg-primary/5', 'border-primary/30', 'text-primary');
+      trackedToggle.classList.add('bg-gray-50', 'border-gray-200', 'text-gray-500');
+      outer?.classList.remove('bg-primary');
+      outer?.classList.add('bg-gray-300');
+      switchEl?.classList.remove('translate-x-4');
+      switchEl?.classList.add('translate-x-0.5');
+    }
+  }
+  updateTrackedToggleUI();
+
+  function applyFilters() {
+    const query = searchInput?.value.toLowerCase().trim() || '';
+    const phase = phaseSelect?.value || 'all';
+    const status = statusSelect?.value || 'all';
+    const trackedIds = trackedOnly ? getTrackedIds() : [];
+    let visible = 0;
+
+    cards.forEach(card => {
+      let show = true;
+      const el = card as HTMLElement;
+
+      // Search
+      if (query) {
+        const searchText = el.getAttribute('data-search') || '';
+        if (!searchText.includes(query)) show = false;
+      }
+
+      // Phase
+      if (show && phase !== 'all') {
+        const cardPhase = el.getAttribute('data-phase') || '';
+        const isWaiver = el.getAttribute('data-is-waiver') === 'true';
+        if (phase === 'phase1' && !cardPhase.includes('Phase 1')) show = false;
+        if (phase === 'phase2' && !cardPhase.includes('Phase 2')) show = false;
+        if (phase === 'waivers' && !isWaiver) show = false;
+      }
+
+      // Status
+      if (show && status !== 'all') {
+        const cardStatus = el.getAttribute('data-status') || '';
+        if (cardStatus !== status) show = false;
+      }
+
+      // Tracked
+      if (show && trackedOnly) {
+        const id = el.getAttribute('data-merger-id') || '';
+        if (!trackedIds.includes(id)) show = false;
+      }
+
+      el.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    // Sort visible cards
+    const sortField = sortSelect?.value || 'notification';
+    const dateAttr = sortField === 'determination' ? 'data-determination-date' : 'data-notification-date';
+
+    const sortedCards = cards
+      .filter(c => (c as HTMLElement).style.display !== 'none')
+      .sort((a, b) => {
+        const aDate = (a as HTMLElement).getAttribute(dateAttr) || '';
+        const bDate = (b as HTMLElement).getAttribute(dateAttr) || '';
+        if (sortField === 'determination') {
+          if (!aDate && !bDate) return 0;
+          if (!aDate) return 1;
+          if (!bDate) return -1;
+        }
+        return sortDir === 'asc' ? aDate.localeCompare(bDate) : bDate.localeCompare(aDate);
+      });
+
+    // Reorder DOM
+    if (mergersList) {
+      sortedCards.forEach(card => mergersList.appendChild(card));
+    }
+
+    // Update count
+    if (resultsCount) {
+      resultsCount.textContent = `Showing ${visible} of ${totalCount} mergers`;
+    }
+
+    // Show/hide no results
+    if (noResults) {
+      noResults.classList.toggle('hidden', visible > 0);
+    }
+
+    // Search clear button
+    searchClear?.classList.toggle('hidden', !query);
+
+    // Active filter count for button styling
+    const activeCount = [phase !== 'all', status !== 'all', trackedOnly].filter(Boolean).length;
+    if (filterToggle) {
+      if (activeCount > 0) {
+        filterToggle.classList.add('bg-primary', 'text-white', 'border-primary', 'shadow-sm');
+        filterToggle.classList.remove('bg-gray-50', 'text-gray-600', 'border-gray-200');
+      } else {
+        filterToggle.classList.remove('bg-primary', 'text-white', 'border-primary', 'shadow-sm');
+        filterToggle.classList.add('bg-gray-50', 'text-gray-600', 'border-gray-200');
+      }
+    }
+    clearFiltersDiv?.classList.toggle('hidden', activeCount === 0);
+
+    // Update URL
+    const newParams = new URLSearchParams();
+    if (query) newParams.set('q', query);
+    if (phase !== 'all') newParams.set('phase', phase);
+    if (status !== 'all') newParams.set('status', status);
+    if (trackedOnly) newParams.set('tracked', 'true');
+    if (sortField !== 'notification' || sortDir !== 'desc') newParams.set('sort', `${sortField}-${sortDir}`);
+    const qs = newParams.toString();
+    const newUrl = qs ? `${window.location.pathname}?${qs}` : window.location.pathname;
+    window.history.replaceState(null, '', newUrl);
+    sessionStorage.setItem('mergers_filter_params', newParams.toString());
+
+    selectedIndex = -1;
+  }
+
+  // Event listeners
+  let debounceTimer: ReturnType<typeof setTimeout>;
+  searchInput?.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(applyFilters, 300);
+  });
+
+  searchClear?.addEventListener('click', () => {
+    if (searchInput) searchInput.value = '';
+    applyFilters();
+  });
+
+  filterToggle?.addEventListener('click', () => {
+    filterPanel?.classList.toggle('hidden');
+    filterToggle.setAttribute('aria-expanded', String(!filterPanel?.classList.contains('hidden')));
+  });
+
+  phaseSelect?.addEventListener('change', applyFilters);
+  statusSelect?.addEventListener('change', applyFilters);
+
+  trackedToggle?.addEventListener('click', () => {
+    trackedOnly = !trackedOnly;
+    updateTrackedToggleUI();
+    applyFilters();
+  });
+
+  sortSelect?.addEventListener('change', applyFilters);
+
+  sortDirBtn?.addEventListener('click', () => {
+    sortDir = sortDir === 'desc' ? 'asc' : 'desc';
+    const svg = sortDirBtn.querySelector('svg');
+    svg?.classList.toggle('rotate-180', sortDir === 'asc');
+    sortDirBtn.setAttribute('aria-label', sortDir === 'asc' ? 'Sort ascending' : 'Sort descending');
+    applyFilters();
+  });
+
+  clearFiltersDiv?.querySelector('button')?.addEventListener('click', () => {
+    if (phaseSelect) phaseSelect.value = 'all';
+    if (statusSelect) statusSelect.value = 'all';
+    trackedOnly = false;
+    updateTrackedToggleUI();
+    applyFilters();
+  });
+
+  // j/k/Enter keyboard navigation
+  window.addEventListener('keydown', (e) => {
+    const tag = (e.target as HTMLElement).tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+    const visibleCards = cards.filter(c => (c as HTMLElement).style.display !== 'none');
+
+    if (e.key === 'j') {
+      e.preventDefault();
+      selectedIndex = Math.min(selectedIndex + 1, visibleCards.length - 1);
+      highlightCard(visibleCards);
+    } else if (e.key === 'k') {
+      e.preventDefault();
+      selectedIndex = Math.max(selectedIndex - 1, 0);
+      highlightCard(visibleCards);
+    } else if (e.key === 'Enter' && selectedIndex >= 0 && selectedIndex < visibleCards.length) {
+      e.preventDefault();
+      const link = visibleCards[selectedIndex].querySelector('a');
+      if (link) window.location.href = link.getAttribute('href') || '';
+    }
+  });
+
+  function highlightCard(visibleCards: Element[]) {
+    cards.forEach(c => {
+      c.classList.remove('border-primary/40', 'ring-2', 'ring-primary/20');
+      c.classList.add('border-gray-100');
+    });
+    if (selectedIndex >= 0 && selectedIndex < visibleCards.length) {
+      const card = visibleCards[selectedIndex];
+      card.classList.add('border-primary/40', 'ring-2', 'ring-primary/20');
+      card.classList.remove('border-gray-100');
+      card.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+  }
+
+  // Apply initial filters (from URL params)
+  if (sortDir === 'asc') {
+    sortDirBtn?.querySelector('svg')?.classList.add('rotate-180');
+  }
+  applyFilters();
+</script>

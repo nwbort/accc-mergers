@@ -1,0 +1,15 @@
+# build output
+dist/
+
+# dependencies
+node_modules/
+
+# astro
+.astro/
+
+# environment variables
+.env
+.env.production
+
+# macOS
+.DS_Store

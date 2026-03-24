@@ -1,0 +1,29 @@
+---
+interface Props {
+  status: string;
+  determination?: string;
+}
+
+const { status, determination } = Astro.props;
+
+function getStatusStyle(status: string, determination?: string) {
+  if (determination === 'Approved') return 'bg-emerald-50 text-emerald-700 border-emerald-200/60';
+  if (determination === 'Declined' || determination === 'Not approved') return 'bg-red-50 text-red-700 border-red-200/60';
+  if (status === 'Under assessment') return 'bg-primary/5 text-primary border-primary/20';
+  if (status === 'Assessment suspended') return 'bg-orange-50 text-orange-700 border-orange-200/60';
+  if (status === 'Assessment completed') return 'bg-gray-50 text-gray-600 border-gray-200/60';
+  return 'bg-gray-50 text-gray-600 border-gray-200/60';
+}
+
+const displayText = determination || status;
+const ariaLabel = determination ? `Determination: ${determination}` : `Status: ${status}`;
+const styleClass = getStatusStyle(status, determination);
+---
+
+<span
+  class={`inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold border ${styleClass}`}
+  role="status"
+  aria-label={ariaLabel}
+>
+  {displayText}
+</span>
