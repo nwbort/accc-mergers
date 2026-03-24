@@ -1,23 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
-import WaiverBadge from '../components/WaiverBadge.astro';
-import { getIndustries, getIndustryDetail } from '../data/loader';
+import { getIndustries } from '../data/loader';
 
 const data = getIndustries();
 const industries = (data?.industries || []).sort((a, b) => b.merger_count - a.merger_count);
 const totalMergers = industries.reduce((sum, i) => sum + i.merger_count, 0);
 const avgMergers = industries.length > 0 ? (totalMergers / industries.length).toFixed(1) : '0';
-
-// Pre-load all industry details at build time
-const industryMergersMap = {};
-for (const industry of industries) {
-  const detail = getIndustryDetail(industry.code);
-  if (detail && detail.mergers) {
-    industryMergersMap[industry.code] = detail.mergers;
-  }
-}
-
-const SCROLL_THRESHOLD = 6;
 ---
 
 <Base
@@ -79,61 +67,33 @@ const SCROLL_THRESHOLD = 6;
         <tbody class="divide-y divide-gray-50" id="industries-tbody">
           {industries.map((industry) => {
             const percentage = ((industry.merger_count / totalMergers) * 100).toFixed(1);
-            const mergers = industryMergersMap[industry.code] || [];
             return (
-              <>
-                <tr
-                  class="hover:bg-gray-50/50 cursor-pointer transition-colors"
-                  data-industry-row
-                  data-industry-name={industry.name.toLowerCase()}
-                  data-industry-code={industry.code.toLowerCase()}
-                >
-                  <td class="px-6 py-4 text-sm text-gray-900">
-                    <details class="group">
-                      <summary class="flex items-center list-none cursor-pointer">
-                        <svg class="w-4 h-4 mr-2.5 text-gray-400 transition-transform duration-200 group-open:rotate-90" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                        </svg>
-                        <span class="font-medium">{industry.name}</span>
-                      </summary>
-                      <div class="mt-3 ml-6.5 space-y-2">
-                        <p class="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">Mergers in this industry</p>
-                        {mergers.length === 0 ? (
-                          <p class="text-sm text-gray-500 py-4">No mergers found for this industry</p>
-                        ) : (
-                          <div class={mergers.length > SCROLL_THRESHOLD ? 'max-h-[400px] overflow-y-auto pr-2 space-y-2' : 'space-y-2'}>
-                            {mergers.map((merger) => (
-                              <a
-                                href={`/mergers/${merger.merger_id}`}
-                                class="block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
-                              >
-                                <div class="flex items-center gap-2 min-w-0">
-                                  <span class="text-sm font-medium text-gray-900 truncate">{merger.merger_name}</span>
-                                  {merger.is_waiver && <WaiverBadge class="flex-shrink-0" />}
-                                </div>
-                                <span class="text-xs text-gray-400 mt-1 block">{merger.status}</span>
-                              </a>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </details>
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm">
-                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary">
+              <tr
+                data-industry-row
+                data-industry-name={industry.name.toLowerCase()}
+                data-industry-code={industry.code.toLowerCase()}
+              >
+                <td class="px-0 py-0 text-sm text-gray-900" colspan="3">
+                  <a
+                    href={`/industries/${industry.code}`}
+                    class="flex items-center hover:bg-gray-50/50 transition-colors px-6 py-4"
+                  >
+                    <span class="flex-1 font-medium min-w-0 truncate">{industry.name}</span>
+                    <span class="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary flex-shrink-0 mx-4">
                       {industry.merger_count}
                     </span>
-                  </td>
-                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    <div class="flex items-center gap-3">
+                    <div class="flex items-center gap-3 flex-shrink-0 w-48">
                       <div class="flex-1 bg-gray-100 rounded-full h-1.5 max-w-[8rem] overflow-hidden">
                         <div class="bg-primary h-1.5 rounded-full" style={`width: ${percentage}%`} />
                       </div>
                       <span class="text-xs tabular-nums font-medium text-gray-600 w-12">{percentage}%</span>
                     </div>
-                  </td>
-                </tr>
-              </>
+                    <svg class="w-4 h-4 text-gray-400 flex-shrink-0 ml-2" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
             );
           })}
         </tbody>
