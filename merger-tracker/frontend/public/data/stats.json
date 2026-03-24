@@ -1,9 +1,9 @@
 {
-  "total_mergers": 57,
+  "total_mergers": 58,
   "total_waivers": 63,
   "by_status": {
     "Assessment completed": 36,
-    "Under assessment": 20,
+    "Under assessment": 21,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -68,15 +68,23 @@
       "count": 4
     },
     {
-      "name": "Cafes and Restaurants",
+      "name": "Accommodation",
       "count": 4
     },
     {
-      "name": "Data Processing and Web Hosting Services",
+      "name": "Cafes and Restaurants",
       "count": 4
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-40008",
+      "merger_name": "Intrepid Travel - Wild Bush Luxury",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-23T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-40009",
       "merger_name": "Gilead - Arcellx",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-18T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-30005",
-      "merger_name": "Adobe - Semrush",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-16T12:00:00Z",
       "is_waiver": false
     }
   ],
