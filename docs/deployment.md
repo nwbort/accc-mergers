@@ -30,16 +30,21 @@ Cloudflare Pages auto-deploys
 
 ## Cloudflare Pages configuration
 
-### Build settings
+Build configuration is codified in the repo:
 
-- **Framework preset**: None (or Vite)
-- **Build command**:
-  ```
-  npm run build && find ../../data/raw/matters -type f -name "*.pdf" | while IFS= read -r f; do rel="${f#../../data/raw/matters/}"; mkdir -p "dist/mergers/$(dirname "$rel")"; cp "$f" "dist/mergers/$(dirname "$rel")/"; done
-  ```
-  This builds the frontend, then copies all PDFs from `data/raw/matters/` into `dist/mergers/`, preserving the folder structure (e.g., `dist/mergers/MN-40008/file.pdf`). Documents are served at `mergers.fyi/mergers/{id}/file.pdf`.
+- **`wrangler.toml`** — Pages project settings (name, output directory, compatibility date)
+- **`scripts/build.sh`** — Build script that compiles the frontend and copies PDFs into the output
+
+The build script runs `npm run build`, then copies all PDFs from `data/raw/matters/` into `dist/mergers/`, preserving the folder structure (e.g., `dist/mergers/MN-40008/file.pdf`). Documents are served at `mergers.fyi/mergers/{id}/file.pdf`.
+
+### Dashboard settings
+
+These settings must still be configured in the Cloudflare Pages dashboard:
+
+- **Framework preset**: None
+- **Build command**: `bash scripts/build.sh`
 - **Build output directory**: `merger-tracker/frontend/dist`
-- **Root directory**: `merger-tracker/frontend`
+- **Root directory**: `/` (repo root)
 
 ### Custom domain
 
