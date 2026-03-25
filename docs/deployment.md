@@ -33,7 +33,11 @@ Cloudflare Pages auto-deploys
 ### Build settings
 
 - **Framework preset**: None (or Vite)
-- **Build command**: `npm run build && cp -r ../../matters dist/matters`
+- **Build command**:
+  ```
+  npm run build && find ../../data/raw/matters -type f -name "*.pdf" | while IFS= read -r f; do rel="${f#../../data/raw/matters/}"; mkdir -p "dist/mergers/$(dirname "$rel")"; cp "$f" "dist/mergers/$(dirname "$rel")/"; done
+  ```
+  This builds the frontend, then copies all PDFs from `data/raw/matters/` into `dist/mergers/`, preserving the folder structure (e.g., `dist/mergers/MN-40008/file.pdf`). Documents are served at `mergers.fyi/mergers/{id}/file.pdf`.
 - **Build output directory**: `merger-tracker/frontend/dist`
 - **Root directory**: `merger-tracker/frontend`
 
