@@ -36,7 +36,7 @@ function NotFound() {
                 to={`/mergers/${matterId}`}
                 className="inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl text-white bg-primary hover:bg-primary-dark transition-colors shadow-sm"
               >
-                View {matterId} details
+                View merger details
               </Link>
               <a
                 href={`https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register?init=1&query=${matterId}`}
