@@ -1,7 +1,7 @@
 #:schema node_modules/wrangler/config-schema.json
 
 # Cloudflare Pages project configuration
-# See: https://developers.cloudflare.com/pages/functions/wrangler-configuration/
+# Docs: https://developers.cloudflare.com/pages/functions/wrangler-configuration/
 name = "merger-tracker"
 pages_build_output_dir = "merger-tracker/frontend/dist"
 compatibility_date = "2024-09-23"
