@@ -59,7 +59,7 @@ npm run lint      # ESLint
 npm run preview   # Preview production build
 
 # Data pipeline (from repo root)
-pip install -r requirements.txt
+pip install -r scripts/requirements.txt
 ./scripts/scrape.sh
 python scripts/extract_mergers.py
 python scripts/generate_static_data.py
