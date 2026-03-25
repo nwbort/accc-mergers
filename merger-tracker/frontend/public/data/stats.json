@@ -1,9 +1,9 @@
 {
-  "total_mergers": 59,
+  "total_mergers": 60,
   "total_waivers": 68,
   "by_status": {
     "Assessment completed": 37,
-    "Under assessment": 21,
+    "Under assessment": 22,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -37,7 +37,7 @@
   "top_industries": [
     {
       "name": "Computer System Design and Related Services",
-      "count": 20
+      "count": 21
     },
     {
       "name": "Software Publishing",
@@ -86,6 +86,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-20011",
+      "merger_name": "Origin \u2013 Equity stake in Kraken",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-24T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-40008",
       "merger_name": "Intrepid Travel - Wild Bush Luxury",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-19T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50012",
-      "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-18T12:00:00Z",
       "is_waiver": false
     }
   ],
