@@ -2,12 +2,12 @@
   "total_mergers": 58,
   "total_waivers": 68,
   "by_status": {
-    "Assessment completed": 36,
-    "Under assessment": 21,
+    "Assessment completed": 37,
+    "Under assessment": 20,
     "Assessment suspended": 1
   },
   "by_determination": {
-    "Approved": 36,
+    "Approved": 37,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 6
   },
   "phase_duration": {
-    "average_days": 27.75,
+    "average_days": 27.72972972972973,
     "median_days": 25,
-    "average_business_days": 17.944444444444443,
+    "average_business_days": 17.945945945945947,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 10,
-        "percentage": 27.8
+        "percentage": 27.0
       },
       "day20": {
-        "count": 29,
-        "percentage": 80.6
+        "count": 30,
+        "percentage": 81.1
       },
       "day30": {
-        "count": 36,
+        "count": 37,
         "percentage": 100.0
       }
     }
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-60004",
+      "merger_name": "IOR - Delta Specialised Energy assets",
+      "determination": "Approved",
+      "determination_date": "2026-03-25T12:00:00Z",
+      "page_modified_datetime": "2026-03-25T11:05:41+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-15010",
       "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
       "determination": "Approved",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-24T12:00:00Z",
       "page_modified_datetime": "2026-03-24T18:12:00+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-15009",
-      "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
-      "determination": "Approved",
-      "determination_date": "2026-03-20T12:00:00Z",
-      "page_modified_datetime": "2026-03-20T16:34:34+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

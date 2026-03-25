@@ -3915,13 +3915,15 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ior-delta-specialised-energy-assets",
       "merger_name": "IOR - Delta Specialised Energy assets",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-60004",
       "effective_notification_datetime": "2026-02-26T12:00:00Z",
       "original_notification_datetime": "2026-02-26T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-04-14T12:00:00Z",
-      "page_modified_datetime": "2026-03-09T08:55:50+11:00",
+      "determination_publication_date": "2026-03-25T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-03-25T11:05:41+11:00",
       "consultation_response_due_date": "2026-03-06T12:00:00Z",
       "acquirers": [
         {
@@ -3971,12 +3973,20 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-03-25T12:00:00Z",
+          "title": "IOR - Delta Specialised Energy assets - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IOR%20-%20Delta%20Specialised%20Energy%20assets%20-%20Phase%201%20Determination_0.pdf",
+          "url_gh": "/matters/MN-60004/IOR - Delta Specialised Energy assets - Phase 1 Determination_0.pdf",
+          "status": "live",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-03-25T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
