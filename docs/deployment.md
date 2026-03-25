@@ -33,7 +33,7 @@ Cloudflare Pages auto-deploys
 ### Build settings
 
 - **Framework preset**: None (or Vite)
-- **Build command**: `npm run build && cp -r ../../matters dist/matters`
+- **Build command**: `npm run build && cp -r ../../matters dist/mergers`
 - **Build output directory**: `merger-tracker/frontend/dist`
 - **Root directory**: `merger-tracker/frontend`
 

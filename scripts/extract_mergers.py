@@ -407,7 +407,7 @@ def _scrape_events(soup, merger_id):
 
                 if safe_filename:
                     serve_filename = get_serve_filename(safe_filename)
-                    event['url_gh'] = f"/matters/{merger_id}/{serve_filename}"
+                    event['url_gh'] = f"/mergers/{merger_id}/{serve_filename}"
                 event['status'] = 'live'
 
             scraped_events.append(event)
