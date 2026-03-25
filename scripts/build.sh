@@ -11,8 +11,9 @@ set -euo pipefail
 FRONTEND_DIR="merger-tracker/frontend"
 DATA_DIR="data/raw/matters"
 
-# 1. Build the frontend
+# 1. Install and build the frontend
 cd "$FRONTEND_DIR"
+npm ci
 npm run build
 
 # 2. Copy PDF files from data/raw/matters into the build output
