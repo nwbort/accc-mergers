@@ -1,4 +1,2 @@
 # Redirect old /matters/ document paths to /mergers/
 /matters/*  /mergers/:splat  301
-
-/* /index.html 200
