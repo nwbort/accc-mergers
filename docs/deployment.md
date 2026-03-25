@@ -45,6 +45,7 @@ These settings must still be configured in the Cloudflare Pages dashboard:
 - **Build command**: `bash scripts/build.sh`
 - **Build output directory**: `merger-tracker/frontend/dist`
 - **Root directory**: `/` (repo root)
+- **Environment variable**: `SKIP_DEPENDENCY_INSTALL` = `true` (prevents auto-installing Python deps from `requirements.txt` — Node deps are handled by `npm ci` in the build script)
 
 ### Custom domain
 
