@@ -5,11 +5,11 @@ function NotFound() {
   const location = useLocation();
   const path = location.pathname;
 
-  // Detect if this is a missing PDF document under /matters/MN-XXXXX/
-  const matterMatch = path.match(/^\/matters\/(MN-\d+)\//i);
+  // Detect if this is a missing PDF document under /mergers/MN-XXXXX/ or /matters/MN-XXXXX/
+  const matterMatch = path.match(/^\/(mergers|matters)\/(MN-\d+)\//i);
   const isPdf = path.toLowerCase().endsWith('.pdf');
   const isDocumentNotFound = matterMatch && isPdf;
-  const matterId = matterMatch ? matterMatch[1] : null;
+  const matterId = matterMatch ? matterMatch[2] : null;
 
   if (isDocumentNotFound) {
     return (
