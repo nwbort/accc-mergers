@@ -1,9 +1,9 @@
 {
-  "total_mergers": 58,
+  "total_mergers": 59,
   "total_waivers": 68,
   "by_status": {
     "Assessment completed": 37,
-    "Under assessment": 20,
+    "Under assessment": 21,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-45005",
+      "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-25T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-40008",
       "merger_name": "Intrepid Travel - Wild Bush Luxury",
       "status": "Under assessment",
@@ -104,14 +112,6 @@
     {
       "merger_id": "MN-50012",
       "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-18T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-65009",
-      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-18T12:00:00Z",
