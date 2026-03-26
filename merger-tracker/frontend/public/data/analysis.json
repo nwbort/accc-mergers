@@ -900,6 +900,14 @@
         "determination": "Not approved"
       },
       {
+        "application_date": "2026-03-06",
+        "business_days": 13,
+        "calendar_days": 20,
+        "merger_name": "Infotrust \u2013 Catalyst Cyber",
+        "merger_id": "WA-70009",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-03-09",
         "business_days": 11,
         "calendar_days": 15,
@@ -910,10 +918,10 @@
     ],
     "stats": {
       "average": 10.9,
-      "median": 11.0,
+      "median": 11,
       "min": 2,
       "max": 22,
-      "count": 68
+      "count": 69
     }
   },
   "monthly_volume": {
@@ -942,7 +950,7 @@
       0,
       30,
       29,
-      9
+      10
     ]
   }
 }

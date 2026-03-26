@@ -1,6 +1,6 @@
 {
   "total_mergers": 60,
-  "total_waivers": 68,
+  "total_waivers": 69,
   "by_status": {
     "Assessment completed": 37,
     "Under assessment": 22,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 62,
+    "Approved": 63,
     "Not approved": 6
   },
   "phase_duration": {
@@ -37,7 +37,7 @@
   "top_industries": [
     {
       "name": "Computer System Design and Related Services",
-      "count": 21
+      "count": 22
     },
     {
       "name": "Software Publishing",
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70009",
+      "merger_name": "Infotrust \u2013 Catalyst Cyber",
+      "determination": "Approved",
+      "determination_date": "2026-03-26T12:00:00Z",
+      "page_modified_datetime": "2026-03-26T22:08:46+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-60004",
       "merger_name": "IOR - Delta Specialised Energy assets",
       "determination": "Approved",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-24T12:00:00Z",
       "page_modified_datetime": "2026-03-24T18:16:26+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-10009",
-      "merger_name": "SoftBank \u2013 DigitalBridge",
-      "determination": "Approved",
-      "determination_date": "2026-03-24T12:00:00Z",
-      "page_modified_datetime": "2026-03-24T18:12:00+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
