@@ -1350,11 +1350,6 @@
       ],
       "targets": [
         {
-          "name": "COLAS AUSTRALIA GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 000 388 161"
-        },
-        {
           "name": "COLAS QUEENSLAND PTY LTD",
           "identifier_type": "ABN",
           "identifier": "91 169 872 208"
@@ -1363,6 +1358,11 @@
           "name": "COLAS NEW SOUTH WALES PTY LTD",
           "identifier_type": "ABN",
           "identifier": "16 064 662 148"
+        },
+        {
+          "name": "COLAS AUSTRALIA GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 000 388 161"
         }
       ],
       "other_parties": [],
@@ -1473,7 +1473,7 @@
     },
     {
       "merger_id": "MN-75012",
-      "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
+      "merger_name": "Opal Healthcare \u2013 Greenwich Place residential aged care home",
       "status": "Under assessment",
       "accc_determination": null,
       "is_waiver": false,
@@ -1483,21 +1483,21 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
-        },
-        {
           "name": "DPG SERVICES PTY LTD",
           "identifier_type": "ABN",
           "identifier": "38 090 007 999"
+        },
+        {
+          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 675 807 477"
         }
       ],
       "targets": [
         {
-          "name": "GREENWICH CARE PTY LIMITED",
+          "name": "STAMEN GREENWICH PROPERTY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 613 786 682"
+          "identifier": "82 613 786 182"
         },
         {
           "name": "GREENWICH PLACE PTY LTD",
@@ -1505,9 +1505,9 @@
           "identifier": "45 000 706 249"
         },
         {
-          "name": "STAMEN GREENWICH PROPERTY PTY LTD",
+          "name": "GREENWICH CARE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "82 613 786 182"
+          "identifier": "96 613 786 682"
         }
       ],
       "other_parties": [],
@@ -1706,6 +1706,97 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ma-financial-group-ma-marina-fund-%E2%80%93-gold-coast-city-marina"
+    },
+    {
+      "merger_id": "MN-85006",
+      "merger_name": "Tega and Apollo Funds consortium - Molycop",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-26T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-12T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Tega MC Australia Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "16 147 692 840"
+        },
+        {
+          "name": "Tega MC SG Holdings Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "202551682E"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Molycop Technologies Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "85 154 346 004"
+        },
+        {
+          "name": "Molycop Group, comprising all of the entities owned directly or indirectly by AIP MC Holdings LLC.",
+          "identifier_type": null,
+          "identifier": "6208194"
+        },
+        {
+          "name": "Orway IQ Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "52 631 359 370"
+        },
+        {
+          "name": "Molycop Singapore Trading Pte. Ltd",
+          "identifier_type": null,
+          "identifier": "201943325C"
+        },
+        {
+          "name": "Commonwealth Steel Company Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "58 000 007 698"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "AP Jupiter Holdco (SG) P. Ltd.",
+          "identifier_type": null,
+          "identifier": "202551665M"
+        },
+        {
+          "name": "Losugen Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "26 097 626 849"
+        },
+        {
+          "name": "Tega MC Investment Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "202551329C"
+        },
+        {
+          "name": "Tega MC JV Holdings Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "202551674N"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1919",
+          "name": "Other Polymer Product Manufacturing"
+        },
+        {
+          "code": "1920",
+          "name": "Natural Rubber Product Manufacturing"
+        },
+        {
+          "code": "2469",
+          "name": "Other Specialised Machinery and Equipment Manufacturing"
+        },
+        {
+          "code": "3419",
+          "name": "Other Specialised Industrial Machinery and Equipment Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tega-and-apollo-funds-consortium-molycop"
     }
   ],
   "page": 3,

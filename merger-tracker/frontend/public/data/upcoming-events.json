@@ -5,7 +5,7 @@
       "event_type_display": "Consultation responses due",
       "date": "2026-03-27T12:00:00Z",
       "merger_id": "MN-75012",
-      "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
+      "merger_name": "Opal Healthcare \u2013 Greenwich Place residential aged care home",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-03-19T12:00:00Z"
@@ -39,6 +39,16 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-03-25T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-04-07T12:00:00Z",
+      "merger_id": "MN-85006",
+      "merger_name": "Tega and Apollo Funds consortium - Molycop",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-03-26T12:00:00Z"
     },
     {
       "type": "determination_due",
@@ -205,7 +215,7 @@
       "event_type_display": "Determination due",
       "date": "2026-05-05T12:00:00Z",
       "merger_id": "MN-75012",
-      "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
+      "merger_name": "Opal Healthcare \u2013 Greenwich Place residential aged care home",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-03-19T12:00:00Z"
@@ -239,8 +249,18 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-03-25T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-05-12T12:00:00Z",
+      "merger_id": "MN-85006",
+      "merger_name": "Tega and Apollo Funds consortium - Molycop",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-03-26T12:00:00Z"
     }
   ],
-  "count": 24,
+  "count": 26,
   "days_ahead": 60
 }

@@ -1,9 +1,9 @@
 {
-  "total_mergers": 60,
+  "total_mergers": 61,
   "total_waivers": 70,
   "by_status": {
     "Assessment completed": 37,
-    "Under assessment": 22,
+    "Under assessment": 23,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-85006",
+      "merger_name": "Tega and Apollo Funds consortium - Molycop",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-26T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-45005",
       "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
       "status": "Under assessment",
@@ -104,14 +112,6 @@
     {
       "merger_id": "MN-40009",
       "merger_name": "Gilead - Arcellx",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-19T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-75012",
-      "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-19T12:00:00Z",
