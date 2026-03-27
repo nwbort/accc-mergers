@@ -1,6 +1,6 @@
 {
   "total_mergers": 62,
-  "total_waivers": 70,
+  "total_waivers": 71,
   "by_status": {
     "Assessment completed": 37,
     "Under assessment": 24,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 64,
+    "Approved": 65,
     "Not approved": 6
   },
   "phase_duration": {
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-60010",
+      "merger_name": "Michelin - Flexitallic",
+      "determination": "Approved",
+      "determination_date": "2026-03-27T12:00:00Z",
+      "page_modified_datetime": "2026-03-27T18:22:20+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-35008",
       "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
       "determination": "Approved",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-24T12:00:00Z",
       "page_modified_datetime": "2026-03-24T18:28:24+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-20008",
-      "merger_name": "Hall & McLean \u2013 Freehold interest in commercial land in Wellcamp, QLD",
-      "determination": "Approved",
-      "determination_date": "2026-03-24T12:00:00Z",
-      "page_modified_datetime": "2026-03-24T18:19:17+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
