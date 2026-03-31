@@ -2,12 +2,12 @@
   "total_mergers": 63,
   "total_waivers": 71,
   "by_status": {
-    "Assessment completed": 37,
-    "Under assessment": 25,
+    "Assessment completed": 38,
+    "Under assessment": 24,
     "Assessment suspended": 1
   },
   "by_determination": {
-    "Approved": 37,
+    "Approved": 38,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 6
   },
   "phase_duration": {
-    "average_days": 27.72972972972973,
+    "average_days": 27.63157894736842,
     "median_days": 25,
-    "average_business_days": 17.945945945945947,
+    "average_business_days": 17.86842105263158,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 10,
-        "percentage": 27.0
+        "count": 11,
+        "percentage": 28.9
       },
       "day20": {
-        "count": 30,
-        "percentage": 81.1
+        "count": 31,
+        "percentage": 81.6
       },
       "day30": {
-        "count": 37,
+        "count": 38,
         "percentage": 100.0
       }
     }
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-90006",
+      "merger_name": "CARe \u2013 MotorOne Autobody",
+      "determination": "Approved",
+      "determination_date": "2026-03-30T12:00:00Z",
+      "page_modified_datetime": "2026-03-31T12:15:53+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-60010",
       "merger_name": "Michelin - Flexitallic",
       "determination": "Approved",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-24T12:00:00Z",
       "page_modified_datetime": "2026-03-24T18:32:16+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-35010",
-      "merger_name": "Blackstone - Advanced Cooling Technologies",
-      "determination": "Approved",
-      "determination_date": "2026-03-24T12:00:00Z",
-      "page_modified_datetime": "2026-03-24T18:28:24+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
