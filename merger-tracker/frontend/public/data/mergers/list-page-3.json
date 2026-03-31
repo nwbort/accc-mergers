@@ -1009,11 +1009,11 @@
     {
       "merger_id": "MN-55012",
       "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-03-10T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-04-01T12:00:00Z",
       "end_of_determination_period": "2026-04-23T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1025,19 +1025,9 @@
       ],
       "targets": [
         {
-          "name": "BOWEN COKING COAL MARKETING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "22 642 022 437"
-        },
-        {
           "name": "BOWEN COKING COAL LIMITED",
           "identifier_type": "ABN",
           "identifier": "72 064 874 620"
-        },
-        {
-          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 149 524 809"
         },
         {
           "name": "COKING COAL ONE PTY LTD",
@@ -1048,18 +1038,33 @@
           "name": "New Lenton Coal Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "48 095 390 079"
+        },
+        {
+          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 149 524 809"
+        },
+        {
+          "name": "BOWEN COKING COAL MARKETING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 642 022 437"
         }
       ],
       "other_parties": [
         {
-          "name": "Argo QLD Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "690 893 371"
-        },
-        {
           "name": "Mercuria Dry Bulk Finance Limited",
           "identifier_type": null,
           "identifier": "202505067"
+        },
+        {
+          "name": "Mercuria Argo Investments Pty Ltd",
+          "identifier_type": null,
+          "identifier": "202505079"
+        },
+        {
+          "name": "Argo QLD Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "690 893 371"
         },
         {
           "name": "Argo Bowen Pty Ltd",
@@ -1067,9 +1072,9 @@
           "identifier": "695 021 124"
         },
         {
-          "name": "Argo Holdings QLD Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "690 887 597"
+          "name": "Mercuria Energy Group Limited",
+          "identifier_type": null,
+          "identifier": "202404088"
         },
         {
           "name": "ECLIPSE MINING 2 PTY LTD",
@@ -1077,19 +1082,14 @@
           "identifier": "99 690 880 892"
         },
         {
+          "name": "Argo Holdings QLD Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "690 887 597"
+        },
+        {
           "name": "TALISMAN PARTNERS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "31 645 148 796"
-        },
-        {
-          "name": "Mercuria Energy Group Limited",
-          "identifier_type": null,
-          "identifier": "202404088"
-        },
-        {
-          "name": "Mercuria Argo Investments Pty Ltd",
-          "identifier_type": null,
-          "identifier": "202505079"
         }
       ],
       "anzsic_codes": [
