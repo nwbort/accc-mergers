@@ -2,12 +2,12 @@
   "total_mergers": 63,
   "total_waivers": 71,
   "by_status": {
-    "Assessment completed": 38,
-    "Under assessment": 24,
+    "Assessment completed": 39,
+    "Under assessment": 23,
     "Assessment suspended": 1
   },
   "by_determination": {
-    "Approved": 38,
+    "Approved": 39,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 6
   },
   "phase_duration": {
-    "average_days": 27.63157894736842,
+    "average_days": 27.487179487179485,
     "median_days": 25,
-    "average_business_days": 17.86842105263158,
+    "average_business_days": 17.82051282051282,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 11,
-        "percentage": 28.9
+        "percentage": 28.2
       },
       "day20": {
-        "count": 31,
-        "percentage": 81.6
+        "count": 32,
+        "percentage": 82.1
       },
       "day30": {
-        "count": 38,
+        "count": 39,
         "percentage": 100.0
       }
     }
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-55012",
+      "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+      "determination": "Approved",
+      "determination_date": "2026-04-01T12:00:00Z",
+      "page_modified_datetime": "2026-04-01T12:17:52+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-90006",
       "merger_name": "CARe \u2013 MotorOne Autobody",
       "determination": "Approved",
@@ -168,16 +178,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-15010",
-      "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
-      "determination": "Approved",
-      "determination_date": "2026-03-24T12:00:00Z",
-      "page_modified_datetime": "2026-03-24T18:32:16+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
