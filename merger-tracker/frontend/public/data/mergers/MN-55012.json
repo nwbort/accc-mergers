@@ -1,15 +1,13 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/argo-bowen-2-%E2%80%93-bowen-coking-coal-and-certain-subsidiaries",
   "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
-  "status": "Assessment completed",
+  "status": "Under assessment",
   "merger_id": "MN-55012",
   "effective_notification_datetime": "2026-03-10T12:00:00Z",
   "original_notification_datetime": "2026-03-10T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-04-23T12:00:00Z",
-  "determination_publication_date": "2026-04-01T12:00:00Z",
-  "accc_determination": "Approved",
-  "page_modified_datetime": "2026-04-01T07:47:35+11:00",
+  "page_modified_datetime": "2026-03-18T09:05:31+11:00",
   "consultation_response_due_date": "2026-03-17T12:00:00Z",
   "acquirers": [
     {
@@ -20,9 +18,19 @@
   ],
   "targets": [
     {
+      "name": "BOWEN COKING COAL MARKETING PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "22 642 022 437"
+    },
+    {
       "name": "BOWEN COKING COAL LIMITED",
       "identifier_type": "ABN",
       "identifier": "72 064 874 620"
+    },
+    {
+      "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "48 149 524 809"
     },
     {
       "name": "COKING COAL ONE PTY LTD",
@@ -33,33 +41,18 @@
       "name": "New Lenton Coal Pty Ltd",
       "identifier_type": "ABN",
       "identifier": "48 095 390 079"
-    },
-    {
-      "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "48 149 524 809"
-    },
-    {
-      "name": "BOWEN COKING COAL MARKETING PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "22 642 022 437"
     }
   ],
   "other_parties": [
     {
-      "name": "Mercuria Dry Bulk Finance Limited",
-      "identifier_type": null,
-      "identifier": "202505067"
-    },
-    {
-      "name": "Mercuria Argo Investments Pty Ltd",
-      "identifier_type": null,
-      "identifier": "202505079"
-    },
-    {
       "name": "Argo QLD Pty Ltd",
       "identifier_type": "ACN",
       "identifier": "690 893 371"
+    },
+    {
+      "name": "Mercuria Dry Bulk Finance Limited",
+      "identifier_type": null,
+      "identifier": "202505067"
     },
     {
       "name": "Argo Bowen Pty Ltd",
@@ -67,9 +60,9 @@
       "identifier": "695 021 124"
     },
     {
-      "name": "Mercuria Energy Group Limited",
-      "identifier_type": null,
-      "identifier": "202404088"
+      "name": "Argo Holdings QLD Pty Ltd",
+      "identifier_type": "ACN",
+      "identifier": "690 887 597"
     },
     {
       "name": "ECLIPSE MINING 2 PTY LTD",
@@ -77,14 +70,19 @@
       "identifier": "99 690 880 892"
     },
     {
-      "name": "Argo Holdings QLD Pty Ltd",
-      "identifier_type": "ACN",
-      "identifier": "690 887 597"
-    },
-    {
       "name": "TALISMAN PARTNERS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "31 645 148 796"
+    },
+    {
+      "name": "Mercuria Energy Group Limited",
+      "identifier_type": null,
+      "identifier": "202404088"
+    },
+    {
+      "name": "Mercuria Argo Investments Pty Ltd",
+      "identifier_type": null,
+      "identifier": "202505079"
     }
   ],
   "anzsic_codes": [
@@ -143,7 +141,7 @@
         }
       ],
       "url_gh": "/mergers/MN-55012/Argo Bowen 2 - Bowen Coking Coal and certain subsidiaries - Phase 1 Determination.pdf",
-      "status": "live",
+      "status": "removed",
       "phase": "Phase 1"
     },
     {
@@ -154,8 +152,9 @@
     }
   ],
   "is_waiver": false,
-  "phase_1_determination": "Approved",
-  "phase_1_determination_date": "2026-04-01T12:00:00Z",
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,

@@ -103,6 +103,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-04-23T12:00:00Z",
+      "merger_id": "MN-55012",
+      "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-03-10T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-04-24T12:00:00Z",
       "merger_id": "MN-20009",
       "merger_name": "Rocket Software \u2013 Vertica",
@@ -261,6 +271,6 @@
       "effective_notification_datetime": "2026-03-27T12:00:00Z"
     }
   ],
-  "count": 26,
+  "count": 27,
   "days_ahead": 60
 }

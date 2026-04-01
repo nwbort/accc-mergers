@@ -3012,7 +3012,7 @@
     "original_notification_datetime": "2026-03-23T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-05-07T12:00:00Z",
-    "page_modified_datetime": "2026-04-01T10:11:23+11:00",
+    "page_modified_datetime": "2026-03-24T11:28:48+11:00",
     "consultation_response_due_date": "2026-03-31T12:00:00Z",
     "acquirers": [
       {
@@ -3035,11 +3035,6 @@
     ],
     "other_parties": [
       {
-        "name": "INTREPID IP HOLDINGS PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "54 006 831 974"
-      },
-      {
         "name": "SKYDIVE HOLDINGS PTY LTD",
         "identifier_type": "ABN",
         "identifier": "99 140 817 063"
@@ -3048,6 +3043,11 @@
         "name": "EXPERIENCE CO ADMIN PTY LTD",
         "identifier_type": "ABN",
         "identifier": "30 636 083 639"
+      },
+      {
+        "name": "INTREPID IP HOLDINGS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "54 006 831 974"
       }
     ],
     "anzsic_codes": [
@@ -3076,7 +3076,7 @@
         "display_title": "Questionnaire - Intrepid Travel - Wild Bush Luxury",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Wild%20Bush%20-%20Questionnaire%20-%20FINAL%20-%2024%20March%202026.docx",
         "url_gh": "/mergers/MN-40008/Wild Bush - Questionnaire - FINAL - 24 March 2026.pdf",
-        "status": "removed"
+        "status": "live"
       },
       {
         "date": "2026-03-23T12:00:00Z",
@@ -3674,15 +3674,13 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/argo-bowen-2-%E2%80%93-bowen-coking-coal-and-certain-subsidiaries",
     "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
-    "status": "Assessment completed",
+    "status": "Under assessment",
     "merger_id": "MN-55012",
     "effective_notification_datetime": "2026-03-10T12:00:00Z",
     "original_notification_datetime": "2026-03-10T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-04-23T12:00:00Z",
-    "determination_publication_date": "2026-04-01T12:00:00Z",
-    "accc_determination": "Approved",
-    "page_modified_datetime": "2026-04-01T07:47:35+11:00",
+    "page_modified_datetime": "2026-03-18T09:05:31+11:00",
     "consultation_response_due_date": "2026-03-17T12:00:00Z",
     "acquirers": [
       {
@@ -3693,9 +3691,19 @@
     ],
     "targets": [
       {
+        "name": "BOWEN COKING COAL MARKETING PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "22 642 022 437"
+      },
+      {
         "name": "BOWEN COKING COAL LIMITED",
         "identifier_type": "ABN",
         "identifier": "72 064 874 620"
+      },
+      {
+        "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "48 149 524 809"
       },
       {
         "name": "COKING COAL ONE PTY LTD",
@@ -3706,33 +3714,18 @@
         "name": "New Lenton Coal Pty Ltd",
         "identifier_type": "ABN",
         "identifier": "48 095 390 079"
-      },
-      {
-        "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "48 149 524 809"
-      },
-      {
-        "name": "BOWEN COKING COAL MARKETING PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "22 642 022 437"
       }
     ],
     "other_parties": [
       {
-        "name": "Mercuria Dry Bulk Finance Limited",
-        "identifier_type": null,
-        "identifier": "202505067"
-      },
-      {
-        "name": "Mercuria Argo Investments Pty Ltd",
-        "identifier_type": null,
-        "identifier": "202505079"
-      },
-      {
         "name": "Argo QLD Pty Ltd",
         "identifier_type": "ACN",
         "identifier": "690 893 371"
+      },
+      {
+        "name": "Mercuria Dry Bulk Finance Limited",
+        "identifier_type": null,
+        "identifier": "202505067"
       },
       {
         "name": "Argo Bowen Pty Ltd",
@@ -3740,9 +3733,9 @@
         "identifier": "695 021 124"
       },
       {
-        "name": "Mercuria Energy Group Limited",
-        "identifier_type": null,
-        "identifier": "202404088"
+        "name": "Argo Holdings QLD Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "690 887 597"
       },
       {
         "name": "ECLIPSE MINING 2 PTY LTD",
@@ -3750,14 +3743,19 @@
         "identifier": "99 690 880 892"
       },
       {
-        "name": "Argo Holdings QLD Pty Ltd",
-        "identifier_type": "ACN",
-        "identifier": "690 887 597"
-      },
-      {
         "name": "TALISMAN PARTNERS PTY LTD",
         "identifier_type": "ABN",
         "identifier": "31 645 148 796"
+      },
+      {
+        "name": "Mercuria Energy Group Limited",
+        "identifier_type": null,
+        "identifier": "202404088"
+      },
+      {
+        "name": "Mercuria Argo Investments Pty Ltd",
+        "identifier_type": null,
+        "identifier": "202505079"
       }
     ],
     "anzsic_codes": [
@@ -3814,7 +3812,7 @@
           }
         ],
         "url_gh": "/mergers/MN-55012/Argo Bowen 2 - Bowen Coking Coal and certain subsidiaries - Phase 1 Determination.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-04-01T12:00:00Z",
@@ -6038,7 +6036,7 @@
           }
         ],
         "url_gh": "/mergers/WA-01087/Eli Lilly - Orna Therapeutics (WA-01087) - Notification waiver determination - 12 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -6627,7 +6625,7 @@
           }
         ],
         "url_gh": "/mergers/WA-10008/Premier Fresh - Charles Domenico Group (WA-10008) - Notification waiver determination - 12 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -6716,7 +6714,7 @@
           }
         ],
         "url_gh": "/mergers/WA-10009/SoftBank - DigitalBridge (WA-10009) - Notification waiver determination - 24 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -7228,7 +7226,7 @@
           }
         ],
         "url_gh": "/mergers/WA-15009/MA Financial Group (Redcape Fund) - Hotel Brunswick (WA-15009) - Notification waiver determination - 20 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -7323,7 +7321,7 @@
           }
         ],
         "url_gh": "/mergers/WA-15010/AZ Next Generation Advisory - Intend Financial (WA-15010) - Notification waiver determination - 24 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -7587,7 +7585,7 @@
           }
         ],
         "url_gh": "/mergers/WA-20007/Telstra \u2013 outsourcing agreement with Infosys Technologies (WA-20007) - Notification waiver determination - 19 March 2026_0.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -7681,7 +7679,7 @@
           }
         ],
         "url_gh": "/mergers/WA-20008/Hall and McLean - Freehold interest in commercial land in Wellcamp, QLD (WA-20008) - Notification waiver determination - 23 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -7805,7 +7803,7 @@
           }
         ],
         "url_gh": "/mergers/WA-20010/PT Asian Bulk Logistics - Engage Marine (WA-20010) - Notification waiver determination - 19 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -8240,7 +8238,7 @@
           }
         ],
         "url_gh": "/mergers/WA-25008/Five V Capital - FTP Group (WA-25008) - Notification waiver determination - 24 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -8738,7 +8736,7 @@
           }
         ],
         "url_gh": "/mergers/WA-35008/VFMC - CorVal Land and Operator Trusts (WA-35008) - Notification waiver determination - 26 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -8836,7 +8834,7 @@
           }
         ],
         "url_gh": "/mergers/WA-35010/Blackstone - Advanced Cooling Technologies - (WA-35010) - Notification waiver determination - 24 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -9263,7 +9261,7 @@
           }
         ],
         "url_gh": "/mergers/WA-45003/Aluminium Specialties Group - Manufacturing facility site in Orchard Hills, NSW (WA-45003) - Notification waiver determination - 11 March 2026_1.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -9561,7 +9559,7 @@
           }
         ],
         "url_gh": "/mergers/WA-50006/Airtree - HotDoc (WA-50006) - Notification waiver determination - 19 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -9865,7 +9863,7 @@
           }
         ],
         "url_gh": "/mergers/WA-55009/Resonetics - Resolution Medical (WA-55009) - Notification waiver determination - 11 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -9948,7 +9946,7 @@
           }
         ],
         "url_gh": "/mergers/WA-55011/OEP IX - Leviat (WA-55011) - Notification waiver determination - 16 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -10264,7 +10262,7 @@
           }
         ],
         "url_gh": "/mergers/WA-60010/Michelin - Flexitallic (WA-60010) - Notification waiver determination - 27 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -11017,7 +11015,7 @@
           }
         ],
         "url_gh": "/mergers/WA-70009/Infotrust - Catalyst Cyber (WA-70009) - Notification waiver determination - 26 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -11409,7 +11407,7 @@
           }
         ],
         "url_gh": "/mergers/WA-75011/Autosports Group - Solitaire Automotive Group (WA-75011) - Notification waiver determination - 11 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -11607,7 +11605,7 @@
           }
         ],
         "url_gh": "/mergers/WA-80006/Russell Investment Group - Zurich Investment Management (WA-80006) - Notification waiver determination - 12 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -11963,7 +11961,7 @@
           }
         ],
         "url_gh": "/mergers/WA-85011/TDR and Estoril - Escode (WA-85011) - Notification waiver determination - 17 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
@@ -12151,7 +12149,7 @@
           }
         ],
         "url_gh": "/mergers/WA-85014/Genesis Minerals - Magnetic Resources (WA-85014) - Notification waiver determination - 19 March 2026.pdf",
-        "status": "removed",
+        "status": "live",
         "phase": "Waiver"
       },
       {
