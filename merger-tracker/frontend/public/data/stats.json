@@ -1,9 +1,9 @@
 {
-  "total_mergers": 63,
+  "total_mergers": 64,
   "total_waivers": 71,
   "by_status": {
     "Assessment completed": 40,
-    "Under assessment": 22,
+    "Under assessment": 23,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -68,15 +68,23 @@
       "count": 4
     },
     {
-      "name": "Accommodation",
+      "name": "Car Retailing",
       "count": 4
     },
     {
-      "name": "Cafes and Restaurants",
+      "name": "Accommodation",
       "count": 4
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-05012",
+      "merger_name": "Eagers Vic - Audi Melbourne and Audi Richmond",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-03-31T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-55010",
       "merger_name": "Calvary - Holmesglen Private Hospital",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-25T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-20011",
-      "merger_name": "Origin \u2013 Equity stake in Kraken",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-24T12:00:00Z",
       "is_waiver": false
     }
   ],
