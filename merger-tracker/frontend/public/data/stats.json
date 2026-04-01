@@ -1,6 +1,6 @@
 {
   "total_mergers": 64,
-  "total_waivers": 71,
+  "total_waivers": 72,
   "by_status": {
     "Assessment completed": 40,
     "Under assessment": 23,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 65,
+    "Approved": 66,
     "Not approved": 6
   },
   "phase_duration": {
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-65010",
+      "merger_name": "Honda \u2013 additional shareholding in Astemo",
+      "determination": "Approved",
+      "determination_date": "2026-04-01T12:00:00Z",
+      "page_modified_datetime": "2026-04-01T16:47:19+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-20009",
       "merger_name": "Rocket Software \u2013 Vertica",
       "determination": "Approved",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-03-26T12:00:00Z",
       "page_modified_datetime": "2026-03-26T22:13:05+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-70009",
-      "merger_name": "Infotrust \u2013 Catalyst Cyber",
-      "determination": "Approved",
-      "determination_date": "2026-03-26T12:00:00Z",
-      "page_modified_datetime": "2026-03-26T22:08:46+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
