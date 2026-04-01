@@ -1,6 +1,6 @@
 {
   "total_mergers": 64,
-  "total_waivers": 72,
+  "total_waivers": 78,
   "by_status": {
     "Assessment completed": 40,
     "Under assessment": 23,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
-    "Approved": 66,
+    "Approved": 72,
     "Not approved": 6
   },
   "phase_duration": {
@@ -37,22 +37,26 @@
   "top_industries": [
     {
       "name": "Computer System Design and Related Services",
-      "count": 22
+      "count": 24
     },
     {
       "name": "Software Publishing",
-      "count": 19
+      "count": 20
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 13
+      "count": 14
     },
     {
       "name": "Financial Asset Investing",
-      "count": 11
+      "count": 13
     },
     {
       "name": "Non-Residential Property Operators",
+      "count": 5
+    },
+    {
+      "name": "Scientific Research Services",
       "count": 5
     },
     {
@@ -60,8 +64,8 @@
       "count": 5
     },
     {
-      "name": "Scientific Research Services",
-      "count": 4
+      "name": "Data Processing and Web Hosting Services",
+      "count": 5
     },
     {
       "name": "Pharmaceutical and Toiletry Goods Wholesaling",
@@ -69,10 +73,6 @@
     },
     {
       "name": "Car Retailing",
-      "count": 4
-    },
-    {
-      "name": "Accommodation",
       "count": 4
     }
   ],
@@ -120,61 +120,61 @@
   ],
   "recent_determinations": [
     {
-      "merger_id": "WA-65010",
-      "merger_name": "Honda \u2013 additional shareholding in Astemo",
+      "merger_id": "WA-25013",
+      "merger_name": "Cinven \u2013 Regenity",
       "determination": "Approved",
       "determination_date": "2026-04-01T12:00:00Z",
-      "page_modified_datetime": "2026-04-01T16:47:19+11:00",
+      "page_modified_datetime": "2026-04-01T18:46:07+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
     },
     {
-      "merger_id": "MN-20009",
-      "merger_name": "Rocket Software \u2013 Vertica",
+      "merger_id": "WA-40010",
+      "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
       "determination": "Approved",
       "determination_date": "2026-04-01T12:00:00Z",
-      "page_modified_datetime": "2026-04-01T14:49:08+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-55012",
-      "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
-      "determination": "Approved",
-      "determination_date": "2026-04-01T12:00:00Z",
-      "page_modified_datetime": "2026-04-01T12:17:52+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-90006",
-      "merger_name": "CARe \u2013 MotorOne Autobody",
-      "determination": "Approved",
-      "determination_date": "2026-03-30T12:00:00Z",
-      "page_modified_datetime": "2026-03-31T12:15:53+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-60010",
-      "merger_name": "Michelin - Flexitallic",
-      "determination": "Approved",
-      "determination_date": "2026-03-27T12:00:00Z",
-      "page_modified_datetime": "2026-03-27T18:22:20+11:00",
+      "page_modified_datetime": "2026-04-01T18:43:03+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
     },
     {
-      "merger_id": "WA-35008",
-      "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
+      "merger_id": "WA-50010",
+      "merger_name": "Blackbird Ventures \u2013 Halter",
       "determination": "Approved",
-      "determination_date": "2026-03-26T12:00:00Z",
-      "page_modified_datetime": "2026-03-26T22:13:05+11:00",
+      "determination_date": "2026-04-01T12:00:00Z",
+      "page_modified_datetime": "2026-04-01T18:38:46+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-95009",
+      "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in Bankstown and Yagoona, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-04-01T12:00:00Z",
+      "page_modified_datetime": "2026-04-01T18:35:29+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-75013",
+      "merger_name": "Aldus - Hilton Manufacturing",
+      "determination": "Approved",
+      "determination_date": "2026-04-01T12:00:00Z",
+      "page_modified_datetime": "2026-04-01T18:32:38+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-70008",
+      "merger_name": "Tetra Tech \u2013 Providence Consulting",
+      "determination": "Approved",
+      "determination_date": "2026-04-01T12:00:00Z",
+      "page_modified_datetime": "2026-04-01T18:25:57+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
