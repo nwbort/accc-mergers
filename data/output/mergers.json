@@ -2387,24 +2387,26 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/rocket-software-%E2%80%93-vertica",
       "merger_name": "Rocket Software \u2013 Vertica",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-20009",
       "effective_notification_datetime": "2026-03-11T12:00:00Z",
       "original_notification_datetime": "2026-03-11T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-04-24T12:00:00Z",
-      "page_modified_datetime": "2026-03-19T16:11:08+11:00",
+      "determination_publication_date": "2026-04-01T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-04-01T14:49:08+11:00",
       "consultation_response_due_date": "2026-03-19T12:00:00Z",
       "acquirers": [
-        {
-          "name": "Rocket Software, Inc.",
-          "identifier_type": null,
-          "identifier": "Companies\u2019 Register of Delaware  3506913"
-        },
         {
           "name": "Rocket Software AMC UK Ltd",
           "identifier_type": null,
           "identifier": "UK Company number 01504593"
+        },
+        {
+          "name": "Rocket Software, Inc.",
+          "identifier_type": null,
+          "identifier": "Companies\u2019 Register of Delaware  3506913"
         }
       ],
       "targets": [
@@ -2421,14 +2423,14 @@
       ],
       "other_parties": [
         {
-          "name": "Bain Capital Investors LLC",
-          "identifier_type": null,
-          "identifier": "3229725"
-        },
-        {
           "name": "ROCKET SOFTWARE PTY LTD",
           "identifier_type": "ABN",
           "identifier": "22 050 043 699"
+        },
+        {
+          "name": "Bain Capital Investors LLC",
+          "identifier_type": null,
+          "identifier": "3229725"
         }
       ],
       "anzsic_codes": [
@@ -2453,12 +2455,47 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-04-01T12:00:00Z",
+          "title": "Rocket Vertica - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Rocket%20Vertica%20-%20Phase%201%20determination%20-%201%20April%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Rocket Software, Inc. (Rocket Software)\u2019s proposed acquisition of\nthe Vertica Analytics Database Platform (Vertica) from Open Text\nCorporation (Open Text) (the Acquisition). The Acquisition will occur\nlargely by way of asset sale."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Rocket Software, is a portfolio company of Bain\nCapital. Rocket Software is a global provider of infrastructure and\napplication software solutions. Rocket Software\u2019s products and\nservices focus on modernising and optimising applications on\nmainframe computers. Bain Capital is a private equity investment\nfirm that invests in companies across a number of industries,\nincluding information technology, healthcare, retail and consumer\nproducts, communications, financial services and\nindustrial/manufacturing.\nThe target, Vertica, is an enterprise-grade analytical database\nsoftware that currently forms part of Open Text. Vertica is designed\nfor large-scale data analytics within a customer\u2019s own IT\nenvironment."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the parties",
+              "details": "While Rocket Software and Vertica (together, the Parties) both\nsupply business analytics software, there is limited functional\noverlap between their products. In particular, unlike Vertica, neither\nRocket Software, nor any other connected entity of Rocket Software\nprovides a dedicated platform for large-scale data analytics\nworkloads.\nThe ACCC understands that post acquisition, Vertica\u2019s capabilities\ncould be used to improve certain aspects of Rocket Software\u2019s\nofferings with data analytics-related functionality. However, the\nACCC has not identified any other actual vertical or conglomerate\nrelationships between Vertica and Rocket Software or any other Bain\nCapital portfolio company (or other connected entity of Rocket\nSoftware) active in the technology sector. However, the Acquisition\ncould potentially give rise to a vertical relationship in future if one of\nRocket\u2019s connected entities (including a company managed by Bain\nCapital) were to become a supplier or customer of the Vertica\nproduct."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There is no (or very limited) horizontal overlap between the\nproduct offerings of Rocket Software and Vertica (including the\nproduct offerings of the parties\u2019 connected entities), given\ndifferences in functionality.\n\u2022 Post acquisition, Rocket Software would be unlikely to have an\nability and incentive to foreclose rivals\u2019 access to a large-scale\ndata analytics platform, including by adopting an anti-\ncompetitive bundling or tying strategy, given the availability of\nmultiple alternative suppliers of analytical database platforms,\nincluding Microsoft, Oracle and Databricks."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-20009/Rocket Vertica - Phase 1 determination - 1 April 2026.pdf",
+          "status": "live",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-04-01T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,

@@ -2,12 +2,12 @@
   "total_mergers": 63,
   "total_waivers": 71,
   "by_status": {
-    "Assessment completed": 39,
-    "Under assessment": 23,
+    "Assessment completed": 40,
+    "Under assessment": 22,
     "Assessment suspended": 1
   },
   "by_determination": {
-    "Approved": 39,
+    "Approved": 40,
     "Referred to phase 2": 2
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 6
   },
   "phase_duration": {
-    "average_days": 27.487179487179485,
+    "average_days": 27.325,
     "median_days": 25,
-    "average_business_days": 17.82051282051282,
+    "average_business_days": 17.75,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 11,
-        "percentage": 28.2
+        "count": 12,
+        "percentage": 30.0
       },
       "day20": {
-        "count": 32,
-        "percentage": 82.1
+        "count": 33,
+        "percentage": 82.5
       },
       "day30": {
-        "count": 39,
+        "count": 40,
         "percentage": 100.0
       }
     }
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-20009",
+      "merger_name": "Rocket Software \u2013 Vertica",
+      "determination": "Approved",
+      "determination_date": "2026-04-01T12:00:00Z",
+      "page_modified_datetime": "2026-04-01T14:49:08+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-55012",
       "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
       "determination": "Approved",
@@ -168,16 +178,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-60004",
-      "merger_name": "IOR - Delta Specialised Energy assets",
-      "determination": "Approved",
-      "determination_date": "2026-03-25T12:00:00Z",
-      "page_modified_datetime": "2026-03-25T11:05:41+11:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

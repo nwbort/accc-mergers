@@ -369,14 +369,23 @@
         "merger_id": "MN-55012",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-03-11",
+        "business_days": 15,
+        "calendar_days": 21,
+        "merger_name": "Rocket Software \u2013 Vertica",
+        "merger_id": "MN-20009",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 17.8,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 28,
-      "count": 39
+      "count": 40
     }
   },
   "waiver_duration": {
