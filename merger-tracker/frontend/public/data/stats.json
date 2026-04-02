@@ -1,6 +1,6 @@
 {
   "total_mergers": 65,
-  "total_waivers": 78,
+  "total_waivers": 81,
   "by_status": {
     "Assessment completed": 41,
     "Under assessment": 23,
@@ -11,8 +11,8 @@
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
-    "Approved": 72,
-    "Not approved": 6
+    "Approved": 74,
+    "Not approved": 7
   },
   "phase_duration": {
     "average_days": 27.536585365853657,
@@ -52,15 +52,19 @@
       "count": 13
     },
     {
+      "name": "Pubs, Taverns and Bars",
+      "count": 7
+    },
+    {
+      "name": "Non-Residential Property Operators",
+      "count": 6
+    },
+    {
       "name": "Scientific Research Services",
       "count": 6
     },
     {
-      "name": "Non-Residential Property Operators",
-      "count": 5
-    },
-    {
-      "name": "Pubs, Taverns and Bars",
+      "name": "Accommodation",
       "count": 5
     },
     {
@@ -68,11 +72,7 @@
       "count": 5
     },
     {
-      "name": "Pharmaceutical and Toiletry Goods Wholesaling",
-      "count": 4
-    },
-    {
-      "name": "Car Retailing",
+      "name": "Liquor Retailing",
       "count": 4
     }
   ],
@@ -94,6 +94,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "WA-85020",
+      "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2026-03-30T12:00:00Z",
+      "is_waiver": true
+    },
+    {
       "merger_id": "MN-55010",
       "merger_name": "Calvary - Holmesglen Private Hospital",
       "status": "Under assessment",
@@ -108,17 +116,39 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-26T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-85006",
-      "merger_name": "Tega and Apollo Funds consortium - Molycop",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-26T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-75015",
+      "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
+      "determination": "Not approved",
+      "determination_date": "2026-04-02T12:00:00Z",
+      "page_modified_datetime": "2026-04-02T17:28:26+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-85020",
+      "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
+      "determination": "Approved",
+      "determination_date": "2026-04-02T12:00:00Z",
+      "page_modified_datetime": "2026-04-02T17:24:56+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-70010",
+      "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
+      "determination": "Approved",
+      "determination_date": "2026-04-02T12:00:00Z",
+      "page_modified_datetime": "2026-04-02T17:22:24+11:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
     {
       "merger_id": "MN-01083",
       "merger_name": "Civilmart \u2013 Taylex",
@@ -145,36 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-04-01T12:00:00Z",
       "page_modified_datetime": "2026-04-01T18:46:07+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-40010",
-      "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
-      "determination": "Approved",
-      "determination_date": "2026-04-01T12:00:00Z",
-      "page_modified_datetime": "2026-04-01T18:43:03+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-50010",
-      "merger_name": "Blackbird Ventures \u2013 Halter",
-      "determination": "Approved",
-      "determination_date": "2026-04-01T12:00:00Z",
-      "page_modified_datetime": "2026-04-01T18:38:46+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-95009",
-      "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in Bankstown and Yagoona, NSW",
-      "determination": "Approved",
-      "determination_date": "2026-04-01T12:00:00Z",
-      "page_modified_datetime": "2026-04-01T18:35:29+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

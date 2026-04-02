@@ -1,6 +1,30 @@
 {
   "events": [
     {
+      "date": "2026-03-18T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-65009",
+      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
+      "date": "2026-03-19T12:00:00Z",
+      "title": "Questionnaire \u2013 Gilead - Arcellx",
+      "display_title": "Questionnaire \u2013 Gilead - Arcellx",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Gilead%20-%20Arcellx.docx",
+      "url_gh": "/mergers/MN-40009/Questionnaire - Gilead - Arcellx.pdf",
+      "status": "removed",
+      "merger_id": "MN-40009",
+      "merger_name": "Gilead - Arcellx",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
       "date": "2026-03-19T12:00:00Z",
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
@@ -390,7 +414,7 @@
       "display_title": "Origin - Equity stake in Kraken - Questionnaire",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Kraken%20-%20questionnaire%20-%2025%20March%202026%20-%20Register%20version.docx",
       "url_gh": "/mergers/MN-20011/Kraken - questionnaire - 25 March 2026 - Register version.pdf",
-      "status": "live",
+      "status": "removed",
       "merger_id": "MN-20011",
       "merger_name": "Origin \u2013 Equity stake in Kraken",
       "phase": null,
@@ -613,6 +637,18 @@
       "is_waiver": false
     },
     {
+      "date": "2026-03-30T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "WA-85020",
+      "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
+      "phase": "Phase 1",
+      "is_waiver": true
+    },
+    {
       "date": "2026-03-31T12:00:00Z",
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
@@ -815,6 +851,42 @@
       "merger_name": "Danaher Corporation / Masimo Corporation",
       "phase": "Phase 1",
       "is_waiver": false
+    },
+    {
+      "date": "2026-04-02T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Waymark%20Hotels%20Group%20-%20Warrego%20Hotel%20Motel%2C%20Cunnamulla%2C%20QLD%20%28WA-70010%29%20-%20Notification%20waiver%20determination%20-%202%20April%202026.pdf",
+      "url_gh": "/mergers/WA-70010/Waymark Hotels Group - Warrego Hotel Motel, Cunnamulla, QLD (WA-70010) - Notification waiver determination - 2 April 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-70010",
+      "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-04-02T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Not approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Star%20Hotels%20Group%20%E2%80%93%20Liquor%20Legends%20Berserker%20%26%20Liquor%20Legends%20Highway%20A1%2C%20QLD%20%28WA-75015%29%20-%20Notification%20waiver%20determination%20-%202%20April%202026.pdf",
+      "url_gh": "/mergers/WA-75015/Star Hotels Group \u2013 Liquor Legends Berserker and Liquor Legends Highway A1, QLD (WA-75015) - Notification waiver determination - 2 April 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-75015",
+      "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-04-02T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Francisco%20Partners%20-%20Capsa%20Healthcare%20%28WA-85020%29%20-%20Notification%20waiver%20determination%20-%202%20April%202026.pdf",
+      "url_gh": "/mergers/WA-85020/Francisco Partners - Capsa Healthcare (WA-85020) - Notification waiver determination - 2 April 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-85020",
+      "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
+      "phase": "Waiver",
+      "is_waiver": true
     }
   ],
   "page": 4,
