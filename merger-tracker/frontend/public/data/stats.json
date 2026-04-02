@@ -2,12 +2,12 @@
   "total_mergers": 65,
   "total_waivers": 78,
   "by_status": {
-    "Assessment completed": 40,
-    "Under assessment": 24,
+    "Assessment completed": 41,
+    "Under assessment": 23,
     "Assessment suspended": 1
   },
   "by_determination": {
-    "Approved": 40,
+    "Approved": 41,
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 6
   },
   "phase_duration": {
-    "average_days": 27.325,
+    "average_days": 27.536585365853657,
     "median_days": 25,
-    "average_business_days": 17.75,
+    "average_business_days": 17.926829268292682,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 12,
-        "percentage": 30.0
+        "percentage": 29.3
       },
       "day20": {
         "count": 33,
-        "percentage": 82.5
+        "percentage": 80.5
       },
       "day30": {
-        "count": 40,
+        "count": 41,
         "percentage": 100.0
       }
     }
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-01083",
+      "merger_name": "Civilmart \u2013 Taylex",
+      "determination": "Approved",
+      "determination_date": "2026-04-02T12:00:00Z",
+      "page_modified_datetime": "2026-04-02T14:28:37+11:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-30003",
       "merger_name": "MicroStar Logistics - Konvoy",
       "determination": "Referred to phase 2",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-04-01T12:00:00Z",
       "page_modified_datetime": "2026-04-01T18:35:29+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-75013",
-      "merger_name": "Aldus - Hilton Manufacturing",
-      "determination": "Approved",
-      "determination_date": "2026-04-01T12:00:00Z",
-      "page_modified_datetime": "2026-04-01T18:32:38+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

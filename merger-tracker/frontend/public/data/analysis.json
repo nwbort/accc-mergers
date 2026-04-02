@@ -345,6 +345,15 @@
       },
       {
         "notification_date": "2026-02-25",
+        "business_days": 25,
+        "calendar_days": 36,
+        "merger_name": "Civilmart \u2013 Taylex",
+        "merger_id": "MN-01083",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "notification_date": "2026-02-25",
         "business_days": 15,
         "calendar_days": 22,
         "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
@@ -390,11 +399,11 @@
       }
     ],
     "stats": {
-      "average": 17.8,
-      "median": 17.0,
+      "average": 17.9,
+      "median": 17,
       "min": 15,
       "max": 28,
-      "count": 40
+      "count": 41
     }
   },
   "waiver_duration": {
