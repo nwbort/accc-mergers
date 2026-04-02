@@ -8,7 +8,7 @@
   },
   "by_determination": {
     "Approved": 40,
-    "Referred to phase 2": 2
+    "Referred to phase 2": 3
   },
   "by_waiver_determination": {
     "Approved": 72,
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-30003",
+      "merger_name": "MicroStar Logistics - Konvoy",
+      "determination": "Referred to phase 2",
+      "determination_date": "2026-04-01T12:00:00Z",
+      "page_modified_datetime": "2026-04-02T11:59:59+11:00",
+      "determination_type": "phase_transition",
+      "is_waiver": false,
+      "stage": "Phase 2 - detailed assessment"
+    },
+    {
       "merger_id": "WA-25013",
       "merger_name": "Cinven \u2013 Regenity",
       "determination": "Approved",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-04-01T12:00:00Z",
       "page_modified_datetime": "2026-04-01T18:32:38+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-70008",
-      "merger_name": "Tetra Tech \u2013 Providence Consulting",
-      "determination": "Approved",
-      "determination_date": "2026-04-01T12:00:00Z",
-      "page_modified_datetime": "2026-04-01T18:25:57+11:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

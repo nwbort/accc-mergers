@@ -3,16 +3,6 @@
     {
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
-      "date": "2026-04-01T12:00:00Z",
-      "merger_id": "MN-20011",
-      "merger_name": "Origin \u2013 Equity stake in Kraken",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-03-24T12:00:00Z"
-    },
-    {
-      "type": "consultation_due",
-      "event_type_display": "Consultation responses due",
       "date": "2026-04-02T12:00:00Z",
       "merger_id": "MN-45005",
       "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
@@ -39,16 +29,6 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-03-26T12:00:00Z"
-    },
-    {
-      "type": "determination_due",
-      "event_type_display": "Determination due",
-      "date": "2026-04-08T12:00:00Z",
-      "merger_id": "MN-30003",
-      "merger_name": "MicroStar Logistics - Konvoy",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-02-20T12:00:00Z"
     },
     {
       "type": "consultation_due",
@@ -99,6 +79,16 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-03-03T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-04-20T12:00:00Z",
+      "merger_id": "MN-30003",
+      "merger_name": "MicroStar Logistics - Konvoy",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-02-20T12:00:00Z"
     },
     {
       "type": "determination_due",
@@ -271,6 +261,6 @@
       "effective_notification_datetime": "2026-03-31T12:00:00Z"
     }
   ],
-  "count": 27,
+  "count": 26,
   "days_ahead": 60
 }
