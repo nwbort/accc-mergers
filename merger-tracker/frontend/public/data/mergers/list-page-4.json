@@ -1,6 +1,397 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-85006",
+      "merger_name": "Tega and Apollo Funds consortium - Molycop",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-26T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-12T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Tega MC SG Holdings Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "202551682E"
+        },
+        {
+          "name": "Tega MC Australia Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "16 147 692 840"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Molycop Group, comprising all of the entities owned directly or indirectly by AIP MC Holdings LLC.",
+          "identifier_type": null,
+          "identifier": "6208194"
+        },
+        {
+          "name": "Molycop Technologies Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "85 154 346 004"
+        },
+        {
+          "name": "Molycop Singapore Trading Pte. Ltd",
+          "identifier_type": null,
+          "identifier": "201943325C"
+        },
+        {
+          "name": "Commonwealth Steel Company Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "58 000 007 698"
+        },
+        {
+          "name": "Orway IQ Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "52 631 359 370"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Losugen Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "26 097 626 849"
+        },
+        {
+          "name": "AP Jupiter Holdco (SG) P. Ltd.",
+          "identifier_type": null,
+          "identifier": "202551665M"
+        },
+        {
+          "name": "Tega MC JV Holdings Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "202551674N"
+        },
+        {
+          "name": "Tega MC Investment Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "202551329C"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1919",
+          "name": "Other Polymer Product Manufacturing"
+        },
+        {
+          "code": "1920",
+          "name": "Natural Rubber Product Manufacturing"
+        },
+        {
+          "code": "2469",
+          "name": "Other Specialised Machinery and Equipment Manufacturing"
+        },
+        {
+          "code": "3419",
+          "name": "Other Specialised Industrial Machinery and Equipment Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tega-and-apollo-funds-consortium-molycop"
+    },
+    {
+      "merger_id": "WA-15012",
+      "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-26T12:00:00Z",
+      "determination_publication_date": "2026-04-07T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "OCHRE HEALTH PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "79 101 069 452"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TELEGRAPH ROAD MEDICAL SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 107 416 080"
+        },
+        {
+          "name": "The Trustee for TELEGRAPH ROAD MEDICAL SERVICES UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "94 428 158 606"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "RAINLEIGH PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "41 056 364 679"
+        },
+        {
+          "name": "Genesis Capital",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8511",
+          "name": "General Practice Medical Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ochre-health-telegraph-road-clinic-bracken-ridge-qld"
+    },
+    {
+      "merger_id": "MN-55010",
+      "merger_name": "Calvary - Holmesglen Private Hospital",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-27T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-13T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 079 815 697"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ANZ HOSPITALS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 631 014 938"
+        },
+        {
+          "name": "HEALTHSCOPE NEWCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 092 450 274"
+        },
+        {
+          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 146 342 814"
+        },
+        {
+          "name": "HEALTHSCOPE OPERATIONS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 006 405 152"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "8401",
+          "name": "Hospitals (Except Psychiatric Hospitals)"
+        },
+        {
+          "code": "8601",
+          "name": "Aged Care Residential Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/calvary-holmesglen-private-hospital"
+    },
+    {
+      "merger_id": "WA-85020",
+      "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-30T12:00:00Z",
+      "determination_publication_date": "2026-04-02T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Catalyst Blocker Merger Sub I, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Catalyst Blocker Merger Sub II, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Catalyst Holdco Merger Sub, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Catalyst Debt Merger Sub, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "CSHC Buyerco, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CSHC Holdings, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Capsa Solutions, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "CSHC Fund Blocker, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "CSHC Co-Investment Blocker Corp., LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Francisco Partners Management, LP",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8401",
+          "name": "Hospitals (Except Psychiatric Hospitals)"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/francisco-partners-%E2%80%93-capsa-healthcare"
+    },
+    {
+      "merger_id": "MN-05012",
+      "merger_name": "Eagers Vic - Audi Melbourne and Audi Richmond",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-31T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-15T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "EAGERS VIC PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "29 616 989 596"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Zagame Automotive Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "85 085 950 063"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "3921",
+          "name": "Motor Vehicle Parts Retailing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eagers-vic-audi-melbourne-and-audi-richmond"
+    },
+    {
+      "merger_id": "WA-75017",
+      "merger_name": "Vets Central - Drovers Vet Hospital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-31T12:00:00Z",
+      "determination_publication_date": "2026-04-07T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
+          "identifier_type": "ABN",
+          "identifier": "96 315 737 133"
+        },
+        {
+          "name": "DROVERS VET HOSPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "67 159 300 768"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "FACEBARK PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "71 154 736 884"
+        },
+        {
+          "name": "NORTHERN BEACHES VETERINARY HOSPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 650 961 541"
+        },
+        {
+          "name": "VETS CENTRAL HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 652 812 256"
+        },
+        {
+          "name": "VC OPERATIONS (NSW) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 646 515 433"
+        },
+        {
+          "name": "KINGS ROAD VETERINARY SURGERY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 609 596 910"
+        },
+        {
+          "name": "VC OPERATIONS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 641 403 938"
+        },
+        {
+          "name": "VETS CENTRAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 646 462 973"
+        },
+        {
+          "name": "Vets Central (New Zealand) Limited",
+          "identifier_type": null,
+          "identifier": "NZBN  9429051820992"
+        },
+        {
+          "name": "MISTYCAT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "12 644 129 224"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        },
+        {
+          "code": "9539",
+          "name": "Other Personal Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-drovers-vet-hospital"
+    },
+    {
       "merger_id": "MN-15011",
       "merger_name": "Danaher Corporation / Masimo Corporation",
       "status": "Under assessment",

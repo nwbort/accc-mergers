@@ -1,6 +1,6 @@
 {
   "total_mergers": 66,
-  "total_waivers": 86,
+  "total_waivers": 92,
   "by_status": {
     "Assessment completed": 43,
     "Under assessment": 22,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
-    "Approved": 79,
+    "Approved": 85,
     "Not approved": 7
   },
   "phase_duration": {
@@ -44,11 +44,11 @@
       "count": 21
     },
     {
-      "name": "Other Auxiliary Finance and Investment Services",
-      "count": 14
+      "name": "Financial Asset Investing",
+      "count": 15
     },
     {
-      "name": "Financial Asset Investing",
+      "name": "Other Auxiliary Finance and Investment Services",
       "count": 14
     },
     {
@@ -65,7 +65,7 @@
     },
     {
       "name": "Accommodation",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Data Processing and Web Hosting Services",
@@ -102,82 +102,82 @@
       "is_waiver": false
     },
     {
+      "merger_id": "WA-75017",
+      "merger_name": "Vets Central - Drovers Vet Hospital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2026-03-31T12:00:00Z",
+      "is_waiver": true
+    },
+    {
       "merger_id": "WA-85020",
       "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
       "status": "Assessment completed",
       "accc_determination": "Approved",
       "effective_notification_datetime": "2026-03-30T12:00:00Z",
       "is_waiver": true
-    },
-    {
-      "merger_id": "MN-55010",
-      "merger_name": "Calvary - Holmesglen Private Hospital",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-27T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
     {
-      "merger_id": "WA-40011",
-      "merger_name": "Element Zero's L701 \u2013 Option to lease DevelopmentWA industrial land at Boodarie Strategic Industrial Area",
+      "merger_id": "WA-15012",
+      "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
       "determination": "Approved",
       "determination_date": "2026-04-07T12:00:00Z",
-      "page_modified_datetime": "2026-04-07T17:43:00+10:00",
+      "page_modified_datetime": "2026-04-07T19:16:55+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
     },
     {
-      "merger_id": "WA-35011",
-      "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
+      "merger_id": "WA-75017",
+      "merger_name": "Vets Central - Drovers Vet Hospital",
       "determination": "Approved",
       "determination_date": "2026-04-07T12:00:00Z",
-      "page_modified_datetime": "2026-04-07T17:36:44+10:00",
+      "page_modified_datetime": "2026-04-07T19:13:23+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
     },
     {
-      "merger_id": "WA-25011",
-      "merger_name": "BGIS - Ascot Air",
+      "merger_id": "WA-10011",
+      "merger_name": "Wentworth Capital \u2013 Novotel Darling Harbour and Ibis Darling Harbour",
       "determination": "Approved",
       "determination_date": "2026-04-07T12:00:00Z",
-      "page_modified_datetime": "2026-04-07T17:29:32+10:00",
+      "page_modified_datetime": "2026-04-07T19:09:20+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
     },
     {
-      "merger_id": "WA-25014",
-      "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+      "merger_id": "WA-55014",
+      "merger_name": "KPS Capital Partners - Jennmar",
       "determination": "Approved",
       "determination_date": "2026-04-07T12:00:00Z",
-      "page_modified_datetime": "2026-04-07T17:26:00+10:00",
+      "page_modified_datetime": "2026-04-07T19:07:11+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
     },
     {
-      "merger_id": "WA-10010",
-      "merger_name": "Enverus \u2013 Spatial Business Systems",
+      "merger_id": "WA-45007",
+      "merger_name": "Henkel \u2013 Stahl",
       "determination": "Approved",
       "determination_date": "2026-04-07T12:00:00Z",
-      "page_modified_datetime": "2026-04-07T17:09:01+10:00",
+      "page_modified_datetime": "2026-04-07T18:12:37+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
     },
     {
-      "merger_id": "MN-50007",
-      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+      "merger_id": "WA-80007",
+      "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
       "determination": "Approved",
       "determination_date": "2026-04-07T12:00:00Z",
-      "page_modified_datetime": "2026-04-07T14:42:53+10:00",
+      "page_modified_datetime": "2026-04-07T18:05:35+10:00",
       "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
+      "is_waiver": true,
+      "stage": "Waiver application"
     }
   ]
 }
