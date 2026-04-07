@@ -620,7 +620,7 @@
       "is_waiver": false,
       "effective_notification_datetime": "2026-03-05T12:00:00Z",
       "determination_publication_date": null,
-      "end_of_determination_period": "2026-04-21T12:00:00Z",
+      "end_of_determination_period": "2026-06-02T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
@@ -631,14 +631,9 @@
       ],
       "targets": [
         {
-          "name": "WAKELING HOLDINGS PTY LTD",
+          "name": "HURRIKAYNE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "41 160 814 040"
-        },
-        {
-          "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
-          "identifier_type": "ACN",
-          "identifier": "119 879 980"
+          "identifier": "74 118 744 915"
         },
         {
           "name": "WOLLONGONG CITY MOTORS PTY LTD",
@@ -646,24 +641,29 @@
           "identifier": "22 002 019 598"
         },
         {
-          "name": "HURRIKAYNE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 118 744 915"
-        },
-        {
-          "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
-          "identifier_type": "ACN",
-          "identifier": "119 875 768"
-        },
-        {
           "name": "Wakeling South Coast Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "636 298 970"
         },
         {
+          "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
+          "identifier_type": "ACN",
+          "identifier": "119 879 980"
+        },
+        {
           "name": "Paul Wakeling Motor Group Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "47 119 908 780"
+        },
+        {
+          "name": "WAKELING HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "41 160 814 040"
+        },
+        {
+          "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
+          "identifier_type": "ACN",
+          "identifier": "119 875 768"
         }
       ],
       "other_parties": [],
