@@ -1,6 +1,6 @@
 {
   "total_mergers": 66,
-  "total_waivers": 92,
+  "total_waivers": 93,
   "by_status": {
     "Assessment completed": 43,
     "Under assessment": 22,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
-    "Approved": 85,
+    "Approved": 86,
     "Not approved": 7
   },
   "phase_duration": {
@@ -110,15 +110,25 @@
       "is_waiver": true
     },
     {
-      "merger_id": "WA-85020",
-      "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
+      "merger_id": "WA-95012",
+      "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
       "status": "Assessment completed",
       "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-03-30T12:00:00Z",
+      "effective_notification_datetime": "2026-03-31T12:00:00Z",
       "is_waiver": true
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-95012",
+      "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
+      "determination": "Approved",
+      "determination_date": "2026-04-07T12:00:00Z",
+      "page_modified_datetime": "2026-04-07T19:24:00+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
     {
       "merger_id": "WA-15012",
       "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-04-07T12:00:00Z",
       "page_modified_datetime": "2026-04-07T18:12:37+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-80007",
-      "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
-      "determination": "Approved",
-      "determination_date": "2026-04-07T12:00:00Z",
-      "page_modified_datetime": "2026-04-07T18:05:35+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
