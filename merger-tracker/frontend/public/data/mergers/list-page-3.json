@@ -2194,21 +2194,21 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "MA MARINA FUND HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 667 241 385"
-        },
-        {
           "name": "MA MARINA FUND TT PTY LTD",
           "identifier_type": "ABN",
           "identifier": "65 666 902 245"
+        },
+        {
+          "name": "MA MARINA FUND HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 667 241 385"
         }
       ],
       "targets": [
         {
-          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
+          "name": "GGC Marketing Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "72 081 370 685"
+          "identifier": "32 105 294 228"
         },
         {
           "name": "XYZ Investments Pty Ltd",
@@ -2216,26 +2216,26 @@
           "identifier": "010 149 943"
         },
         {
-          "name": "GGC Marketing Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "32 105 294 228"
-        },
-        {
           "name": "GOLD COAST CITY MARINA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "42 083 695 283"
+        },
+        {
+          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "72 081 370 685"
         }
       ],
       "other_parties": [
         {
-          "name": "MAAM HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "92 621 215 450"
-        },
-        {
           "name": "MA MARINA FUND OPCO NO. 1 PTY LTD",
           "identifier_type": "ABN",
           "identifier": "59 667 243 601"
+        },
+        {
+          "name": "MAAM HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "92 621 215 450"
         },
         {
           "name": "MA INVESTMENT MANAGEMENT PTY LTD",
@@ -2243,14 +2243,14 @@
           "identifier": "85 621 552 896"
         },
         {
-          "name": "MA FINANCIAL GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "68 142 008 428"
-        },
-        {
           "name": "MA ASSET MANAGEMENT LTD",
           "identifier_type": "ABN",
           "identifier": "93 142 008 535"
+        },
+        {
+          "name": "MA FINANCIAL GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "68 142 008 428"
         }
       ],
       "anzsic_codes": [
@@ -2596,6 +2596,64 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danaher-corporation-masimo-corporation"
+    },
+    {
+      "merger_id": "MN-45002",
+      "merger_name": "eBay / Depop",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-04-03T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-19T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "eBay Inc.",
+          "identifier_type": null,
+          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Depop Limited",
+          "identifier_type": null,
+          "identifier": "UK Company Registration Number  08316342"
+        },
+        {
+          "name": "Etsy, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "EBAY COMMERCE AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "62 634 460 969"
+        },
+        {
+          "name": "eBay Marketplaces GmbH",
+          "identifier_type": null,
+          "identifier": "Swiss Enterprise Identification Number  CHE205764206"
+        },
+        {
+          "name": "EBAY AUSTRALIA AND NEW ZEALAND PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "22 086 288 888"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4320",
+          "name": "Retail Commission-Based Buying and/or Selling"
+        },
+        {
+          "code": "6940",
+          "name": "Advertising Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ebay-depop"
     }
   ],
   "page": 3,

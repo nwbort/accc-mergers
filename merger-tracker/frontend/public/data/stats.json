@@ -1,9 +1,9 @@
 {
-  "total_mergers": 65,
+  "total_mergers": 66,
   "total_waivers": 81,
   "by_status": {
     "Assessment completed": 41,
-    "Under assessment": 23,
+    "Under assessment": 24,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-45002",
+      "merger_name": "eBay / Depop",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-03T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-15011",
       "merger_name": "Danaher Corporation / Masimo Corporation",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-27T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-01093",
-      "merger_name": "Sinopec / CNAF",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-26T12:00:00Z",
       "is_waiver": false
     }
   ],
