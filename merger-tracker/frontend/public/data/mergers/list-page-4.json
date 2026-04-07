@@ -1,0 +1,109 @@
+{
+  "mergers": [
+    {
+      "merger_id": "MN-15011",
+      "merger_name": "Danaher Corporation / Masimo Corporation",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-04-02T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-19T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Danaher Corporation",
+          "identifier_type": null,
+          "identifier": "213594"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Masimo Corporation",
+          "identifier_type": null,
+          "identifier": "2614702"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2412",
+          "name": "Medical and Surgical Equipment Manufacturing"
+        },
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "3491",
+          "name": "Professional and Scientific Goods Wholesaling"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danaher-corporation-masimo-corporation"
+    },
+    {
+      "merger_id": "MN-45002",
+      "merger_name": "eBay / Depop",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-04-03T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-19T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "eBay Inc.",
+          "identifier_type": null,
+          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Depop Limited",
+          "identifier_type": null,
+          "identifier": "UK Company Registration Number  08316342"
+        },
+        {
+          "name": "Etsy, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "EBAY COMMERCE AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "62 634 460 969"
+        },
+        {
+          "name": "eBay Marketplaces GmbH",
+          "identifier_type": null,
+          "identifier": "Swiss Enterprise Identification Number  CHE205764206"
+        },
+        {
+          "name": "EBAY AUSTRALIA AND NEW ZEALAND PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "22 086 288 888"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4320",
+          "name": "Retail Commission-Based Buying and/or Selling"
+        },
+        {
+          "code": "6940",
+          "name": "Advertising Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ebay-depop"
+    }
+  ],
+  "page": 4,
+  "page_size": 50
+}

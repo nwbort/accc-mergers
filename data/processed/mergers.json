@@ -5722,35 +5722,30 @@
     "original_notification_datetime": "2026-03-26T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-05-12T12:00:00Z",
-    "page_modified_datetime": "2026-03-30T11:17:29+11:00",
+    "page_modified_datetime": "2026-04-07T14:19:23+10:00",
     "consultation_response_due_date": "2026-04-07T12:00:00Z",
     "acquirers": [
-      {
-        "name": "Tega MC Australia Holdings Pty Ltd",
-        "identifier_type": "ABN",
-        "identifier": "16 147 692 840"
-      },
       {
         "name": "Tega MC SG Holdings Pte. Ltd.",
         "identifier_type": null,
         "identifier": "202551682E"
+      },
+      {
+        "name": "Tega MC Australia Holdings Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "16 147 692 840"
       }
     ],
     "targets": [
-      {
-        "name": "Molycop Technologies Pty Ltd",
-        "identifier_type": "ABN",
-        "identifier": "85 154 346 004"
-      },
       {
         "name": "Molycop Group, comprising all of the entities owned directly or indirectly by AIP MC Holdings LLC.",
         "identifier_type": null,
         "identifier": "6208194"
       },
       {
-        "name": "Orway IQ Pty Ltd",
+        "name": "Molycop Technologies Pty Ltd",
         "identifier_type": "ABN",
-        "identifier": "52 631 359 370"
+        "identifier": "85 154 346 004"
       },
       {
         "name": "Molycop Singapore Trading Pte. Ltd",
@@ -5761,28 +5756,33 @@
         "name": "Commonwealth Steel Company Pty Limited",
         "identifier_type": "ABN",
         "identifier": "58 000 007 698"
+      },
+      {
+        "name": "Orway IQ Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "52 631 359 370"
       }
     ],
     "other_parties": [
-      {
-        "name": "AP Jupiter Holdco (SG) P. Ltd.",
-        "identifier_type": null,
-        "identifier": "202551665M"
-      },
       {
         "name": "Losugen Pty Ltd",
         "identifier_type": "ABN",
         "identifier": "26 097 626 849"
       },
       {
-        "name": "Tega MC Investment Pte. Ltd.",
+        "name": "AP Jupiter Holdco (SG) P. Ltd.",
         "identifier_type": null,
-        "identifier": "202551329C"
+        "identifier": "202551665M"
       },
       {
         "name": "Tega MC JV Holdings Pte. Ltd.",
         "identifier_type": null,
         "identifier": "202551674N"
+      },
+      {
+        "name": "Tega MC Investment Pte. Ltd.",
+        "identifier_type": null,
+        "identifier": "202551329C"
       }
     ],
     "anzsic_codes": [
@@ -5803,7 +5803,7 @@
         "name": "Other Specialised Industrial Machinery and Equipment Wholesaling"
       }
     ],
-    "merger_description": "The proposed acquisition involves a consortium comprised of Tega Industries Limited (**Tega**) and the Apollo funds indirectly and collectively acquiring all outstanding shares in the subsidiaries of AIP MC Holdings LLC that collectively form **Molycop**.\n\nThe Apollo Funds are managed by\u00a0Apollo Global Management, Inc\u00a0and indirect subsidiaries of it (**Apollo**).\n\nThe proposed acquisition will occur through a special purpose vehicle, Tega MC JV Holdings Pte. Ltd (**JV Co.**), which is indirectly and jointly controlled by Tega and the Apollo funds. Tega indirectly holds 76.7% of JV Co., while Apollo indirectly hold the remaining 23.3%.\n\nTega is a global supplier of mining products such as mill and scrubber liners, trommels, screen media, hydrocyclones, slurry pumps and parts, conveyor components, chutes, and other rubber and composite wear parts. Tega also provides installation, condition monitoring, and maintenance services.\n\nApollo is an alternative asset management firm headquartered in New York. Examples of current investments include companies in natural resources, manufacturing and industrial, education, insurance, financial services, and leisure businesses.\n\nMolycop is a global supplier of mining consumables, with a focus on the manufacture and sale of grinding media and flotation chemicals for use in both semi-autogenous grinding mills and ball mills. These products are used for mineral extraction and processing for copper, gold and iron ore.\u00a0In Australia, Molycop also supplies engineered products for the Australian rail and manufacturing industries.",
+    "merger_description": "The proposed acquisition involves a consortium comprised of Tega Industries Limited (**Tega**) and the Apollo funds indirectly and collectively acquiring all outstanding shares in the subsidiaries of AIP MC Holdings LLC that collectively form **Molycop**.\n\nThe Apollo Funds are managed by\u00a0Apollo Global Management, Inc\u00a0and indirect subsidiaries of it (**Apollo**)\n\nThe proposed acquisition will occur through a special purpose vehicle, Tega MC JV Holdings Pte. Ltd (**JV Co.**), which is indirectly and jointly controlled by Tega and the Apollo funds. \u00a0Tega indirectly holds 76.7% of JV Co., while Apollo indirectly hold the remaining 23.3%.\n\nTega is a global supplier of mining products such as mill and scrubber liners, trommels, screen media, hydrocyclones, slurry pumps and parts, conveyor components, chutes, and other rubber and composite wear parts. Tega also provides installation, condition monitoring, and maintenance services.\n\nApollo is an alternative asset management firm headquartered in New York. Examples of current investments include companies in natural resources, manufacturing and industrial, education, insurance, financial services, and leisure businesses.\n\nMolycop is a global supplier of mining consumables, with a focus on the manufacture and sale of grinding media and flotation chemicals for use in both semi-autogenous grinding mills and ball mills. These products are used for mineral extraction and processing for copper, gold and iron ore.\u00a0In Australia, Molycop also supplies engineered products for the Australian rail and manufacturing industries",
     "events": [
       {
         "date": "2026-03-27T12:00:00Z",
@@ -5832,7 +5832,7 @@
         "display_title": "Questionnaire - Tega/Apollo - Molycop",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Apollo%20-%20Molycop_0_0.docx",
         "url_gh": "/mergers/MN-85006/Apollo - Molycop_0_0.pdf",
-        "status": "live"
+        "status": "removed"
       }
     ],
     "is_waiver": false
@@ -7119,6 +7119,96 @@
         "date": "2026-03-24T12:00:00Z",
         "title": "Notification waiver determination published",
         "display_title": "Notification waiver determination published"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/enverus-%E2%80%93-spatial-business-systems",
+    "merger_name": "Enverus \u2013 Spatial Business Systems",
+    "status": "Assessment completed",
+    "merger_id": "WA-10010",
+    "effective_notification_datetime": "2026-03-10T12:00:00Z",
+    "original_notification_datetime": "2026-03-10T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-04-07T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-04-07T17:09:01+10:00",
+    "acquirers": [
+      {
+        "name": "Enverus, Inc.",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "targets": [
+      {
+        "name": "Spatial Business Systems Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "76 125 465 483"
+      },
+      {
+        "name": "SBS Optionco, LLC",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "SBS Blocker, LLC",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Blackstone, Inc.",
+        "identifier_type": null,
+        "identifier": "CIK 0001393818"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "5420",
+        "name": "Software Publishing"
+      }
+    ],
+    "merger_description": "Enverus, Inc. (**Enverus**), a Texas corporation, proposes to acquire 100% of the issued share capital of SBS Optionco, LLC, a Delaware limited liability company, and SBS Blocker, LLC, a Delaware limited liability company (collectively, with each of their direct and indirect subsidiaries, **Spatial Business Systems**).\n\nEnverus is a global Software-as-a-Service and data provider to the energy industry. Founded in 1999, and headquartered in Austin, Texas, Enverus offers a platform that integrates analytics, supply chain management, and commercial intelligence tools for oil and gas, power, utilities and renewable energy customers. Enverus is controlled by funds advised and/or managed by affiliates of Blackstone, Inc.\n\nSpatial Business Systems is a global business headquartered in Littleton, Colorado in the United States. Spatial Business Systems supplies design software for utilities and critical network infrastructure assets to customers across electric and gas utilities, engineering and construction firms and broadband infrastructure operators. Spatial Business Systems\u2019 software solutions are designed to automate and streamline engineering and design workflows, integrate spatial and design data and improve design effectiveness.\n\nIn Australia, Spatial Business Systems provides distribution design and substation services to customers.",
+    "events": [
+      {
+        "date": "2026-04-07T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Enverus%20%E2%80%93%20Spatial%20Business%20Systems%20%28WA-10010%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Enverus, Inc. (Enverus) applied for a notification waiver in respect of\nits proposed acquisition of 100% of the issued share capital of SBS\nOptionco, LLC and SBS Blocker, LLC (collectively, with each of their\ndirect and indirect subsidiaries, Spatial Business Systems), as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "7 April 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, Enverus, is a global Software-as-a-Service and data\nprovider to the energy industry. Enverus was founded in 1999 and is\nheadquartered in Austin, Texas. Enverus offers a platform that\nintegrates analytics, supply chain management, and commercial\nintelligence tools for oil and gas, power, utilities and renewable\nenergy customers.\nEnverus is controlled by funds advised and/or managed by affiliates\nof Blackstone, Inc. (together with its affiliates or affiliated investment\nfunds, Blackstone). Blackstone, Inc. is a US-based corporation,\nincorporated under the laws of Delaware, United States.\nThe target, Spatial Business Systems, is a global business\nheadquartered in Littleton, Colorado in the United States. Spatial\nBusiness Systems supplies design software for utilities and critical\nnetwork infrastructure assets to customers across electric and gas\nutilities, engineering and construction firms, and broadband\ninfrastructure operators. Spatial Business Systems\u2019 software\nsolutions are designed to automate and streamline engineering and\ndesign workflows, integrate spatial and design data, and improve\ndesign effectiveness. In Australia, Spatial Business Systems\nprovides distribution design and substation design services to\ncustomers."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap, and limited potential vertical\nrelationships, between Enverus or Blackstone\u2019s controlled\nportfolio companies and Spatial Business Systems in the\nsupply of software for designing electric and gas distribution\nnetworks and substations to customers in Australia\nb. Spatial Business Systems has a small presence in Australia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-10010/Enverus \u2013 Spatial Business Systems (WA-10010) - Notification waiver determination - 7 April 2026.pdf",
+        "status": "live",
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-03-10T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
       }
     ],
     "is_waiver": true
@@ -8648,6 +8738,80 @@
     "is_waiver": true
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bgis-ascot-air",
+    "merger_name": "BGIS - Ascot Air",
+    "status": "Assessment completed",
+    "merger_id": "WA-25011",
+    "effective_notification_datetime": "2026-03-10T12:00:00Z",
+    "original_notification_datetime": "2026-03-10T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-04-07T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-04-07T17:29:32+10:00",
+    "acquirers": [
+      {
+        "name": "BGIS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "83 064 638 197"
+      }
+    ],
+    "targets": [
+      {
+        "name": "ASCOT AIR FACILITIES PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "34 620 803 358"
+      }
+    ],
+    "other_parties": [],
+    "anzsic_codes": [
+      {
+        "code": "3233",
+        "name": "Air Conditioning and Heating Services"
+      }
+    ],
+    "merger_description": "BGIS Pty Ltd (**BGIS**) proposes to acquire 100% of the issued shares in the Ascot Air Facilities Pty Ltd (**Ascot Air**) from its shareholders (the **Acquisition**).\n\nBGIS is a national provider of integrated facilities management services and supplies heating, ventilation and air conditioning (**HVAC**) services largely as part of broader facilities management arrangements for portfolio customers, either through internal service capability or specialist subcontractors.\n\nAscot Air is a provider of commercial HVAC and mechanical services, supplying commercial HVAC design and construction, chilled water systems, refrigeration, ventilation ductwork, pipework and mechanical services, computer room air conditioning systems, building management systems and controls, drafting and design support and commissioning services.\n\nAscot Air provides services across South East Queensland, including Brisbane, Ipswich, Logan, Redland, Moreton Bay and the Gold Coast.",
+    "events": [
+      {
+        "date": "2026-04-07T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/BGIS%20-%20Ascot%20Air%20%28WA-25011%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "BGIS Pty Ltd (BGIS) applied for a notification waiver in respect of its\nproposed acquisition of 100% of the share capital in Ascot Air\nFacilities Pty Ltd (Ascot Air), as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "7 April 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, BGIS, is a national provider of integrated facilities\nmanagement services and supplies heating, ventilation and air\nconditioning (HVAC) services largely as part of broader facilities\nmanagement arrangements for portfolio customers, either through\ninternal service capability or specialist subcontractors.\nThe target, Ascot Air, is a provider of commercial HVAC and\nmechanical services, supplying commercial HVAC design and\nconstruction, chilled water systems, refrigeration, ventilation\nductwork, pipework and mechanical services, computer room air\nconditioning systems, building management systems and controls,\ndrafting and design support and commissioning services. Ascot Air\nprovides services across South East Queensland, including Brisbane,\nIpswich, Logan, Redland, Moreton Bay and the Gold Coast.\nBoth parties supply commercial HVAC and related mechanical\nservices within South East Queensland."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is a small horizontal overlap between BGIS and Ascot\nAir in the supply of commercial HVAC and related\nmechanical services to areas within South East Queensland\nb. while there is a potential vertical supply relationship between\nthe parties, there appears to be a low risk of foreclosure or\nother concerning vertical effects resulting from exclusionary\nconduct post-acquisition\nc. there are alternative suppliers of commercial HVAC and\nrelated mechanical services in areas within South East\nQueensland.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-25011/BGIS - Ascot Air (WA-25011) - Notification waiver determination - 7 April 2026.pdf",
+        "status": "live",
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-03-10T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cinven-%E2%80%93-regenity",
     "merger_name": "Cinven \u2013 Regenity",
     "status": "Assessment completed",
@@ -8730,6 +8894,145 @@
       },
       {
         "date": "2026-03-17T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-the-animal-nutrition-and-health-division-of-the-dsm-firmenich-group",
+    "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+    "status": "Assessment completed",
+    "merger_id": "WA-25014",
+    "effective_notification_datetime": "2026-03-21T12:00:00Z",
+    "original_notification_datetime": "2026-03-21T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-04-07T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-04-07T17:26:00+10:00",
+    "acquirers": [
+      {
+        "name": "Essential Bidco B.V.",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Specialty (U.S.) Bidco, Inc.",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Essential (U.S.) Bidco, Inc.",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Specialty Bidco B.V.",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "targets": [
+      {
+        "name": "SpecialtyCo US LLC",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Biomin Phytogenics GmbH (Germany)",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "DSM Nutritional Products Holding AG (Switzerland)",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "EssentialCo Holding AG",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Animal Nutrition & Health, LLC (US)",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "DSM Nutritional Products GmbH",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "DSM Nutritional Products Vietnam Ltd (Vietnam)",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "DSM B.V.",
+        "identifier_type": null,
+        "identifier": "Dutch Commercial Register 14022069"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "CVC Capital Partners",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "DSM-Firmenich AG",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "1199",
+        "name": "Other Food Product Manufacturing n.e.c."
+      },
+      {
+        "code": "6240",
+        "name": "Financial Asset Investing"
+      }
+    ],
+    "merger_description": "The Acquisition is a private equity financial investment concerning the acquisition of DSM-Firmenich AG\u2019s Animal Nutrition & Health business (the **Target**) by the following newly formed companies:\n\n1. Specialty Bidco B.V.;\n2. Specialty (U.S.) Bidco, Inc.;\n3. Essential Bidco B.V.; and\n4. Essential (U.S.) Bidco, Inc.\n\nThese companies are all indirectly controlled by funds advised or managed by affiliates of CVC Capital Partners plc (**CVC Capital Partners**), a public limited company incorporated in Jersey and listed in Amsterdam.\n\nThe CVC Network is a global alternative investment manager focused on private equity, credit, infrastructure and secondaries, and includes CVC Capital Partners, each of its subsidiaries, and the CVC Funds.\n\nThe seller is DSM B.V., a private limited liability company incorporated in the Netherlands and part of DSM-Firmenich AG. The Target is a global provider of science-based animal nutrition and health solutions for livestock producers and feed manufacturers. Its global activities span:\n\n1. vitamins and carotenoids;\n2. premixes;\n3. performance solutions;\n4. aroma ingredients; and\n5. precision services.",
+    "events": [
+      {
+        "date": "2026-04-07T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CVC%20Capital%20Partners%20%E2%80%93%20The%20animal%20nutrition%20and%20health%20division%20of%20the%20DSM-Firmenich%20group%20%28WA-25014%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "CVC Capital Partners plc. (CVC Capital Partners) proposes to\nacquire the animal nutrition and health division of the DSM-\nFirmenich Group as described in the transaction documents\nprovided as part of the application (the Acquisition).\nThe Acquisition consists of:\n\u2022 CVC Capital Partners to indirectly acquire, through Specialty\nBidco B.V., Speciality (U.S.) Bidco, Inc., Essential Bidco B.V.,\nand Essential (U.S.) Bidco, Inc., an 80% shareholding and\nsole control over the SpecialtyCo Business and EssentialCo\nBusiness (which together comprise the animal nutrition and\nhealth division), and\n\u2022 the DSM-Firmenich Group to (indirectly through to be\nincorporated entities) reinvest in each of the SpecialityCo\nBusiness and the EssentialCo Business to retain a ~20%\nnon-controlling, minority stake in each.\nSpecialty Bidco B.V., Speciality (U.S.) Bidco, Inc., Essential Bidco\nB.V., and Essential (U.S.) Bidco, Inc applied for a notification waiver\nin respect of the Acquisition."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "7 April 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, CVC Capital Partners, is a global alternative investment\nmanager focused on private equity, credit, infrastructure and\nsecondaries. CVC Capital Partners hold interests in companies\nactive in a variety of industries around the world, including in\nfinancial services, chemicals, utilities, manufacturing, retailing and\ndistribution, primarily in Europe, the US and the Asia-Pacific region.\nThe target, the animal nutrition and health division of the DSM-\nFirmenich Group, is a global provider of science-based animal\nnutrition and health solutions. Its core business is the manufacture\nand supply of animal nutrition ingredients, particularly vitamins and\ncarotenoids, for livestock and aquaculture feed. It is also involved in\nthe premix industry, which serve as a link from feed additives to final\nfeed composition in the animal nutrition value chain."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver and had regard\nto the factors in section 51ABV(2)(b) of the Competition and\nConsumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular, there is no horizontal overlap\nbetween the products and services supplied by the animal nutrition\nand health division of the DSM-Firmenich Group and CVC Capital\nPartners controlled portfolio companies in Australia, or any vertical\nrelationships.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-25014/CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich group (WA-25014) - Notification waiver determination - 7 April 2026.pdf",
+        "status": "live",
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-03-21T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }
@@ -9333,6 +9636,104 @@
     "is_waiver": true
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/austral-resources-australia-%E2%80%93-lady-loretta-mine",
+    "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
+    "status": "Assessment completed",
+    "merger_id": "WA-35011",
+    "effective_notification_datetime": "2026-03-12T12:00:00Z",
+    "original_notification_datetime": "2026-03-12T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-04-07T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-04-07T17:36:44+10:00",
+    "acquirers": [
+      {
+        "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "50 142 485 470"
+      }
+    ],
+    "targets": [
+      {
+        "name": "NORANDA PACIFIC PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "65 006 864 802"
+      },
+      {
+        "name": "Noranda Pacific No. 2 Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "158 936 264"
+      },
+      {
+        "name": "MOUNT ISA MINES LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "87 009 661 447"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Glencore plc",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "0803",
+        "name": "Copper Ore Mining"
+      },
+      {
+        "code": "0807",
+        "name": "Silver-Lead-Zinc Ore Mining"
+      },
+      {
+        "code": "2133",
+        "name": "Copper, Silver, Lead and Zinc Smelting and Refining"
+      }
+    ],
+    "merger_description": "On 16 February 2026, Austral Resources Australia Ltd (**Austral**) entered into an agreement with Noranda Pacific No. 2 Pty Ltd (**NP2**) and Mount Isa Mines Limited (**MIM**) (both indirect subsidiaries of Glencore plc) to acquire:\n\n* 100% of the shares in Noranda Pacific Pty Ltd (**NPPL**), the owner and operator of the Lady Loretta zinc mine in Queensland, from NP2 and MIM; and\n* the exploration permits associated with the Lady Loretta mine from MIM, (together, the **Acquisition**).\n\nThe Lady Loretta mine ceased production in 2025.\n\nAustral is an Australian-based copper producer headquartered in Queensland. Austral owns and operates a number of copper mines in Australia, including the Lady Annie copper mine which is located 16km south of the Lady Loretta mine.\n\nNPPL, NP2 and MIM are indirect wholly-owned subsidiaries of Glencore plc, a multi-national commodity trading and mining company headquartered in Switzerland.\n\nFollowing completion, Austral will assume the progressive rehabilitation obligations of the Lady Loretta mine, and will enter into an offtake agreement with Glencore in respect of future copper products derived from the Lady Loretta tenements.",
+    "events": [
+      {
+        "date": "2026-04-07T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Austral%20Resources%20Australia%20%E2%80%93%20Lady%20Loretta%20mine%20%28WA-35011%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Austral Resources Australia Limited (Austral) applied for a\nnotification waiver in respect of its proposed acquisition of:\n\u2022 100% of the shares in Noranda Pacific Pty Ltd (NPPL), the\nowner and operator of the Lady Loretta zinc mine in\nQueensland, from Noranda Pacific No. 2 Pty Ltd (NP2) and\nMount Isa Mines Limited (MIM); and\n\u2022 the exploration permits associated with the Lady Loretta\nmine from MIM,\nas described in the transaction documents provided as part of the\napplication (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "7 April 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, Austral, is an Australian-based copper producer\nheadquartered in Queensland. Austral owns and operates a number\nof copper mines in Australia, including the Lady Annie copper mine\nwhich is located 16km south of the Lady Loretta mine.\nThe Lady Loretta mine ceased production in 2025. Prior to its\nclosure, the mine produced zinc concentrate (with lead and silver\nconcentrate by-products), 100% of which was supplied to related\nentities of NPPL for processing in Mount Isa.\nNPPL, NP2 and MIM are indirect wholly-owned subsidiaries of\nGlencore plc, a multi-national commodity trading and mining\ncompany headquartered in Switzerland.\nFollowing completion, Austral will assume the progressive\nrehabilitation obligations of the Lady Loretta mine, and will enter into\nan offtake agreement with Glencore in respect of future copper\nproducts derived from the Lady Loretta tenements."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information before it, the ACCC considers that the\nAcquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. Austral\u2019s share of the actual and expected production and\nsupply of copper concentrate and zinc concentrate in\nAustralia and globally is expected to be low\nb. there are several alternative producers and suppliers of\ncopper concentrate and zinc concentrate in Australia and\nglobally.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-35011/Austral Resources Australia \u2013 Lady Loretta mine (WA-35011) - Notification waiver determination - 7 April 2026.pdf",
+        "status": "live",
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-03-12T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/star-hotels-group-%E2%80%93-yandina-hotel-qld",
     "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
     "status": "Assessment completed",
@@ -9698,6 +10099,85 @@
       },
       {
         "date": "2026-03-11T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/element-zeros-l701-%E2%80%93-option-to-lease-developmentwa-industrial-land-at-boodarie-strategic-industrial-area",
+    "merger_name": "Element Zero's L701 \u2013 Option to lease DevelopmentWA industrial land at Boodarie Strategic Industrial Area",
+    "status": "Assessment completed",
+    "merger_id": "WA-40011",
+    "effective_notification_datetime": "2026-03-12T12:00:00Z",
+    "original_notification_datetime": "2026-03-12T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-04-07T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-04-07T17:43:00+10:00",
+    "acquirers": [
+      {
+        "name": "ELEMENT ZERO PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "38 664 342 081"
+      },
+      {
+        "name": "L701 PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "92 692 500 780"
+      }
+    ],
+    "targets": [
+      {
+        "name": "WESTERN AUSTRALIAN LAND AUTHORITY",
+        "identifier_type": "ABN",
+        "identifier": "34 868 192 835"
+      }
+    ],
+    "other_parties": [],
+    "anzsic_codes": [
+      {
+        "code": "2110",
+        "name": "Iron Smelting and Steel Manufacturing"
+      }
+    ],
+    "merger_description": "L701 Pty Ltd proposes to enter into an option to lease agreement with the Western Australian Land Authority (trading as **DevelopmentWA**) over part of Lot 701 within the Boodarie Strategic Industrial Area in Western Australia. The option provides L701 Pty Ltd with the right to lease the land following completion of development milestones.\n\nL701 Pty Ltd is a subsidiary of Element Zero Pty Ltd (**Element Zero**), an Australian company developing technology and projects for the production of low-emissions mineral products, including green iron. Element Zero develops technology and projects for the production of low-carbon mineral products and intends to develop a commercial-scale green iron production facility.\n\nDevelopmentWA is the Western Australian Government\u2019s land and development agency responsible for facilitating industrial land development. DevelopmentWA develops and manages industrial land and infrastructure in Western Australia, including within the Boodarie Strategic Industrial Area.\n\nIf the option is exercised, the parties intend to enter into a long-term industrial ground lease to enable development and operation of a green iron production facility.",
+    "events": [
+      {
+        "date": "2026-04-07T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Element%20Zero%27s%20L701%20-%20Option%20to%20lease%20DevelopmentWA%20industrial%20land%20at%20Boodarie%20Strategic%20Industrial%20Area%20%28WA-40011%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "L701 Pty Ltd applied for a notification waiver in respect of its\nproposal to enter into an option to lease agreement with the\nWestern Australian Land Authority (trading as DevelopmentWA) over\npart of Lot 701 within the Boodarie Strategic Industrial Area in\nWestern Australia, as described in the transaction documents\nprovided as part of the application (the Acquisition). The option\nprovides L701 Pty Ltd with the right to lease the land following\ncompletion of development milestones."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "7 April 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, L701 Pty Ltd, is a subsidiary of Element Zero Pty Ltd\n(Element Zero), an Australian company developing technology and\nprojects for the production of low-emissions mineral products,\nincluding green iron. Element Zero develops technology and projects\nfor the production of low-carbon mineral products and intends to\ndevelop a commercial-scale green iron production facility.\nDevelopmentWA is the Western Australian Government\u2019s land and\ndevelopment agency responsible for facilitating industrial land\ndevelopment. DevelopmentWA develops and manages industrial\nland and infrastructure in Western Australia, including within the\nBoodarie Strategic Industrial Area.\nIf the option for lease is exercised, the parties intend to enter into a\nlong-term industrial ground lease to enable development and\noperation of a green iron production facility."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is no horizontal competitive overlap\nb. there appear to be alternative sites available for Element\nZero\u2019s competitors\nc. the Acquisition does not appear likely to otherwise limit or\nprevent competition from rivals.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-40011/Element Zero's L701 - Option to lease DevelopmentWA industrial land at Boodarie Strategic Industrial Area (WA-40011) - Notification waiver determination - 7 April 2026.pdf",
+        "status": "live",
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-03-12T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }

@@ -1258,6 +1258,88 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/argo-bowen-2-%E2%80%93-bowen-coking-coal-and-certain-subsidiaries"
     },
     {
+      "merger_id": "WA-10010",
+      "merger_name": "Enverus \u2013 Spatial Business Systems",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-10T12:00:00Z",
+      "determination_publication_date": "2026-04-07T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Enverus, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Spatial Business Systems Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "76 125 465 483"
+        },
+        {
+          "name": "SBS Optionco, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "SBS Blocker, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Blackstone, Inc.",
+          "identifier_type": null,
+          "identifier": "CIK 0001393818"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/enverus-%E2%80%93-spatial-business-systems"
+    },
+    {
+      "merger_id": "WA-25011",
+      "merger_name": "BGIS - Ascot Air",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-10T12:00:00Z",
+      "determination_publication_date": "2026-04-07T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "BGIS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "83 064 638 197"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ASCOT AIR FACILITIES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "34 620 803 358"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3233",
+          "name": "Air Conditioning and Heating Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bgis-ascot-air"
+    },
+    {
       "merger_id": "WA-65010",
       "merger_name": "Honda \u2013 additional shareholding in Astemo",
       "status": "Assessment completed",
@@ -1535,6 +1617,101 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kps-%E2%80%93-novacel"
+    },
+    {
+      "merger_id": "WA-35011",
+      "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-12T12:00:00Z",
+      "determination_publication_date": "2026-04-07T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "50 142 485 470"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NORANDA PACIFIC PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 006 864 802"
+        },
+        {
+          "name": "Noranda Pacific No. 2 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "158 936 264"
+        },
+        {
+          "name": "MOUNT ISA MINES LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "87 009 661 447"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Glencore plc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0803",
+          "name": "Copper Ore Mining"
+        },
+        {
+          "code": "0807",
+          "name": "Silver-Lead-Zinc Ore Mining"
+        },
+        {
+          "code": "2133",
+          "name": "Copper, Silver, Lead and Zinc Smelting and Refining"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/austral-resources-australia-%E2%80%93-lady-loretta-mine"
+    },
+    {
+      "merger_id": "WA-40011",
+      "merger_name": "Element Zero's L701 \u2013 Option to lease DevelopmentWA industrial land at Boodarie Strategic Industrial Area",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-12T12:00:00Z",
+      "determination_publication_date": "2026-04-07T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "ELEMENT ZERO PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "38 664 342 081"
+        },
+        {
+          "name": "L701 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "92 692 500 780"
+        }
+      ],
+      "targets": [
+        {
+          "name": "WESTERN AUSTRALIAN LAND AUTHORITY",
+          "identifier_type": "ABN",
+          "identifier": "34 868 192 835"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2110",
+          "name": "Iron Smelting and Steel Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/element-zeros-l701-%E2%80%93-option-to-lease-developmentwa-industrial-land-at-boodarie-strategic-industrial-area"
     },
     {
       "merger_id": "MN-50007",
@@ -2078,6 +2255,104 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/opal-healthcare-%E2%80%93-greenwich-place-residential-aged-care-home"
     },
     {
+      "merger_id": "WA-25014",
+      "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-21T12:00:00Z",
+      "determination_publication_date": "2026-04-07T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Essential Bidco B.V.",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Specialty (U.S.) Bidco, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Essential (U.S.) Bidco, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Specialty Bidco B.V.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "SpecialtyCo US LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Biomin Phytogenics GmbH (Germany)",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "DSM Nutritional Products Holding AG (Switzerland)",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "EssentialCo Holding AG",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Animal Nutrition & Health, LLC (US)",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "DSM Nutritional Products GmbH",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "DSM Nutritional Products Vietnam Ltd (Vietnam)",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "DSM B.V.",
+          "identifier_type": null,
+          "identifier": "Dutch Commercial Register 14022069"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CVC Capital Partners",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "DSM-Firmenich AG",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1199",
+          "name": "Other Food Product Manufacturing n.e.c."
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-the-animal-nutrition-and-health-division-of-the-dsm-firmenich-group"
+    },
+    {
       "merger_id": "MN-40008",
       "merger_name": "Intrepid Travel - Wild Bush Luxury",
       "status": "Under assessment",
@@ -2310,31 +2585,26 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Tega MC Australia Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "16 147 692 840"
-        },
-        {
           "name": "Tega MC SG Holdings Pte. Ltd.",
           "identifier_type": null,
           "identifier": "202551682E"
+        },
+        {
+          "name": "Tega MC Australia Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "16 147 692 840"
         }
       ],
       "targets": [
-        {
-          "name": "Molycop Technologies Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "85 154 346 004"
-        },
         {
           "name": "Molycop Group, comprising all of the entities owned directly or indirectly by AIP MC Holdings LLC.",
           "identifier_type": null,
           "identifier": "6208194"
         },
         {
-          "name": "Orway IQ Pty Ltd",
+          "name": "Molycop Technologies Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "52 631 359 370"
+          "identifier": "85 154 346 004"
         },
         {
           "name": "Molycop Singapore Trading Pte. Ltd",
@@ -2345,28 +2615,33 @@
           "name": "Commonwealth Steel Company Pty Limited",
           "identifier_type": "ABN",
           "identifier": "58 000 007 698"
+        },
+        {
+          "name": "Orway IQ Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "52 631 359 370"
         }
       ],
       "other_parties": [
-        {
-          "name": "AP Jupiter Holdco (SG) P. Ltd.",
-          "identifier_type": null,
-          "identifier": "202551665M"
-        },
         {
           "name": "Losugen Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "26 097 626 849"
         },
         {
-          "name": "Tega MC Investment Pte. Ltd.",
+          "name": "AP Jupiter Holdco (SG) P. Ltd.",
           "identifier_type": null,
-          "identifier": "202551329C"
+          "identifier": "202551665M"
         },
         {
           "name": "Tega MC JV Holdings Pte. Ltd.",
           "identifier_type": null,
           "identifier": "202551674N"
+        },
+        {
+          "name": "Tega MC Investment Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "202551329C"
         }
       ],
       "anzsic_codes": [
@@ -2551,109 +2826,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eagers-vic-audi-melbourne-and-audi-richmond"
-    },
-    {
-      "merger_id": "MN-15011",
-      "merger_name": "Danaher Corporation / Masimo Corporation",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-04-02T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-05-19T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Danaher Corporation",
-          "identifier_type": null,
-          "identifier": "213594"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Masimo Corporation",
-          "identifier_type": null,
-          "identifier": "2614702"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "2412",
-          "name": "Medical and Surgical Equipment Manufacturing"
-        },
-        {
-          "code": "2419",
-          "name": "Other Professional and Scientific Equipment Manufacturing"
-        },
-        {
-          "code": "3491",
-          "name": "Professional and Scientific Goods Wholesaling"
-        },
-        {
-          "code": "6910",
-          "name": "Scientific Research Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danaher-corporation-masimo-corporation"
-    },
-    {
-      "merger_id": "MN-45002",
-      "merger_name": "eBay / Depop",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-04-03T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-05-19T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "eBay Inc.",
-          "identifier_type": null,
-          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Depop Limited",
-          "identifier_type": null,
-          "identifier": "UK Company Registration Number  08316342"
-        },
-        {
-          "name": "Etsy, Inc.",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "EBAY COMMERCE AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "62 634 460 969"
-        },
-        {
-          "name": "eBay Marketplaces GmbH",
-          "identifier_type": null,
-          "identifier": "Swiss Enterprise Identification Number  CHE205764206"
-        },
-        {
-          "name": "EBAY AUSTRALIA AND NEW ZEALAND PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "22 086 288 888"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "4320",
-          "name": "Retail Commission-Based Buying and/or Selling"
-        },
-        {
-          "code": "6940",
-          "name": "Advertising Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ebay-depop"
     }
   ],
   "page": 3,
