@@ -2,12 +2,12 @@
   "total_mergers": 66,
   "total_waivers": 81,
   "by_status": {
-    "Assessment completed": 41,
-    "Under assessment": 24,
+    "Assessment completed": 42,
+    "Under assessment": 23,
     "Assessment suspended": 1
   },
   "by_determination": {
-    "Approved": 41,
+    "Approved": 42,
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 7
   },
   "phase_duration": {
-    "average_days": 27.536585365853657,
+    "average_days": 27.38095238095238,
     "median_days": 25,
-    "average_business_days": 17.926829268292682,
+    "average_business_days": 17.857142857142858,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 12,
-        "percentage": 29.3
+        "count": 13,
+        "percentage": 31.0
       },
       "day20": {
-        "count": 33,
-        "percentage": 80.5
+        "count": 34,
+        "percentage": 81.0
       },
       "day30": {
-        "count": 41,
+        "count": 42,
         "percentage": 100.0
       }
     }
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-25006",
+      "merger_name": "KPS \u2013 Novacel",
+      "determination": "Approved",
+      "determination_date": "2026-04-02T12:00:00Z",
+      "page_modified_datetime": "2026-04-07T13:15:28+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-75015",
       "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
       "determination": "Not approved",
@@ -168,16 +178,6 @@
       "determination_type": "phase_transition",
       "is_waiver": false,
       "stage": "Phase 2 - detailed assessment"
-    },
-    {
-      "merger_id": "WA-25013",
-      "merger_name": "Cinven \u2013 Regenity",
-      "determination": "Approved",
-      "determination_date": "2026-04-01T12:00:00Z",
-      "page_modified_datetime": "2026-04-01T18:46:07+11:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

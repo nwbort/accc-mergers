@@ -1463,11 +1463,11 @@
     {
       "merger_id": "MN-25006",
       "merger_name": "KPS \u2013 Novacel",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-03-12T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-04-02T12:00:00Z",
       "end_of_determination_period": "2026-04-28T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1477,17 +1477,32 @@
           "identifier": "[ID type unknown]  10469174"
         },
         {
-          "name": "KPS Capital Partners, LP",
-          "identifier_type": null,
-          "identifier": "CRD  157678 / SEC  80173907"
-        },
-        {
           "name": "Desmos Bidco SAS",
           "identifier_type": null,
           "identifier": "SIREN  100 230 754"
+        },
+        {
+          "name": "KPS Capital Partners, LP",
+          "identifier_type": null,
+          "identifier": "CRD  157678 / SEC  80173907"
         }
       ],
       "targets": [
+        {
+          "name": "Novacel Performance Coatings, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  311708662"
+        },
+        {
+          "name": "Novacel, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  043515032"
+        },
+        {
+          "name": "Walco, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  821136395"
+        },
         {
           "name": "Chargeurs USA Holdings Inc.",
           "identifier_type": null,
@@ -1499,24 +1514,9 @@
           "identifier": "SIREN  885 582 072"
         },
         {
-          "name": "Walco, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  821136395"
-        },
-        {
-          "name": "Novacel Performance Coatings, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  311708662"
-        },
-        {
           "name": "Compagnie Chargeurs Invest SA",
           "identifier_type": null,
           "identifier": "SIREN  390 474 898"
-        },
-        {
-          "name": "Novacel, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN  043515032"
         }
       ],
       "other_parties": [],

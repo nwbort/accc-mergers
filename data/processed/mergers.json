@@ -1546,7 +1546,7 @@
     "original_notification_datetime": "2026-03-26T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-05-12T12:00:00Z",
-    "page_modified_datetime": "2026-03-27T15:41:11+11:00",
+    "page_modified_datetime": "2026-04-07T12:28:24+10:00",
     "consultation_response_due_date": "2026-04-07T12:00:00Z",
     "acquirers": [
       {
@@ -1577,7 +1577,7 @@
         "display_title": "Sinopec - CNAF Questionnaire",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Sinopec%20-%20CNAF%20questionnaire%20for%203rd%20parties%20-%2026%20March%202026.docx",
         "url_gh": "/mergers/MN-01093/Sinopec - CNAF questionnaire for 3rd parties - 26 March 2026.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-03-26T12:00:00Z",
@@ -2698,13 +2698,15 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kps-%E2%80%93-novacel",
     "merger_name": "KPS \u2013 Novacel",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-25006",
     "effective_notification_datetime": "2026-03-12T12:00:00Z",
     "original_notification_datetime": "2026-03-12T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-04-28T12:00:00Z",
-    "page_modified_datetime": "2026-03-20T16:21:59+11:00",
+    "determination_publication_date": "2026-04-02T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-04-07T13:15:28+10:00",
     "consultation_response_due_date": "2026-03-20T12:00:00Z",
     "acquirers": [
       {
@@ -2713,17 +2715,32 @@
         "identifier": "[ID type unknown]  10469174"
       },
       {
-        "name": "KPS Capital Partners, LP",
-        "identifier_type": null,
-        "identifier": "CRD  157678 / SEC  80173907"
-      },
-      {
         "name": "Desmos Bidco SAS",
         "identifier_type": null,
         "identifier": "SIREN  100 230 754"
+      },
+      {
+        "name": "KPS Capital Partners, LP",
+        "identifier_type": null,
+        "identifier": "CRD  157678 / SEC  80173907"
       }
     ],
     "targets": [
+      {
+        "name": "Novacel Performance Coatings, Inc.",
+        "identifier_type": null,
+        "identifier": "EIN  311708662"
+      },
+      {
+        "name": "Novacel, Inc.",
+        "identifier_type": null,
+        "identifier": "EIN  043515032"
+      },
+      {
+        "name": "Walco, Inc.",
+        "identifier_type": null,
+        "identifier": "EIN  821136395"
+      },
       {
         "name": "Chargeurs USA Holdings Inc.",
         "identifier_type": null,
@@ -2735,24 +2752,9 @@
         "identifier": "SIREN  885 582 072"
       },
       {
-        "name": "Walco, Inc.",
-        "identifier_type": null,
-        "identifier": "EIN  821136395"
-      },
-      {
-        "name": "Novacel Performance Coatings, Inc.",
-        "identifier_type": null,
-        "identifier": "EIN  311708662"
-      },
-      {
         "name": "Compagnie Chargeurs Invest SA",
         "identifier_type": null,
         "identifier": "SIREN  390 474 898"
-      },
-      {
-        "name": "Novacel, Inc.",
-        "identifier_type": null,
-        "identifier": "EIN  043515032"
       }
     ],
     "other_parties": [],
@@ -2784,6 +2786,42 @@
         "date": "2026-03-12T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-04-02T12:00:00Z",
+        "title": "KPS Capital - Novacel - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/KPS%20Capital-Novacel%20-%20Phase%201%20determination.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "KPS Special Situations Mid-Cap Fund II\u2019s (KPS) proposes to acquire\n100% of the share capital in:\n\u2022 Chargeurs Films de Protection SAS,\n\u2022 Novacel, Inc.,\n\u2022 Walco, Inc., and\n\u2022 Novacel Performance Coatings, Inc.\n(collectively, Novacel),\nFollowing completion, the seller, Compagnie Chargeurs Invest SA\nwill roll-over an interest of approximately 25% in Novacel, with no\njoint control rights (together, the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "The acquirer, KPS and its associated entities, is a private investment\ncompany incorporated in the US. Through its funds, KPS makes\nequity investments in manufacturing and industrial companies\nacross a diverse array of industries, including basic materials,\nbranded consumer, healthcare and luxury products, automotive\nparts, capital equipment and general manufacturing.\nNovacel, is a global producer of specialty processing films used for\nprotecting surfaces during manufacturing, assembly, transport or\ninstallation, as well as specialty tapes and kraft papers used to\nprotect, hold, splice, wrap or strap industrial materials, and\nassociated specialty machines used in industrial material handling\nand processing. Novacel only supplies processing and protective\nfilms in Australia."
+          },
+          {
+            "item": "Overlap and relationship\nbetween the parties",
+            "details": "There is no horizontal overlap or vertical relationship between KPS\n(and its connected entities) and Novacel in Australia."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There are no horizontal overlaps or vertical relationships\nbetween KPS (and its connected entities) and Novacel."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/mergers/MN-25006/KPS Capital-Novacel - Phase 1 determination.pdf",
+        "status": "live",
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false
