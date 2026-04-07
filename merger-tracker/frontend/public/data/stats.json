@@ -2,12 +2,12 @@
   "total_mergers": 66,
   "total_waivers": 81,
   "by_status": {
-    "Assessment completed": 42,
-    "Under assessment": 23,
+    "Assessment completed": 43,
+    "Under assessment": 22,
     "Assessment suspended": 1
   },
   "by_determination": {
-    "Approved": 42,
+    "Approved": 43,
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 7
   },
   "phase_duration": {
-    "average_days": 27.38095238095238,
+    "average_days": 27.325581395348838,
     "median_days": 25,
-    "average_business_days": 17.857142857142858,
+    "average_business_days": 17.790697674418606,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 13,
-        "percentage": 31.0
+        "count": 14,
+        "percentage": 32.6
       },
       "day20": {
-        "count": 34,
-        "percentage": 81.0
+        "count": 35,
+        "percentage": 81.4
       },
       "day30": {
-        "count": 42,
+        "count": 43,
         "percentage": 100.0
       }
     }
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-50007",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+      "determination": "Approved",
+      "determination_date": "2026-04-07T12:00:00Z",
+      "page_modified_datetime": "2026-04-07T14:42:53+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-25006",
       "merger_name": "KPS \u2013 Novacel",
       "determination": "Approved",
@@ -168,16 +178,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-30003",
-      "merger_name": "MicroStar Logistics - Konvoy",
-      "determination": "Referred to phase 2",
-      "determination_date": "2026-04-01T12:00:00Z",
-      "page_modified_datetime": "2026-04-02T11:59:59+11:00",
-      "determination_type": "phase_transition",
-      "is_waiver": false,
-      "stage": "Phase 2 - detailed assessment"
     }
   ]
 }

@@ -1539,11 +1539,11 @@
     {
       "merger_id": "MN-50007",
       "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-03-13T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-04-07T12:00:00Z",
       "end_of_determination_period": "2026-04-29T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1562,6 +1562,21 @@
       ],
       "other_parties": [
         {
+          "name": "NDC FINCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 654 149 818"
+        },
+        {
+          "name": "NDC PROPERTY CO PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "68 163 264 097"
+        },
+        {
+          "name": "NDC SERVICE CO PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 162 958 072"
+        },
+        {
           "name": "NDC HOLDCO PTY LTD",
           "identifier_type": "ABN",
           "identifier": "13 654 148 188"
@@ -1570,21 +1585,6 @@
           "name": "NATIONAL DENTAL CARE LIMITED",
           "identifier_type": "ABN",
           "identifier": "89 160 442 071"
-        },
-        {
-          "name": "NDC SERVICE CO PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 162 958 072"
-        },
-        {
-          "name": "NDC PROPERTY CO PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "68 163 264 097"
-        },
-        {
-          "name": "NDC FINCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "14 654 149 818"
         }
       ],
       "anzsic_codes": [
