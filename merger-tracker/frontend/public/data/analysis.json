@@ -980,6 +980,14 @@
       },
       {
         "application_date": "2026-03-06",
+        "business_days": 20,
+        "calendar_days": 33,
+        "merger_name": "Brisbane Airport Corporation \u2013 Interest in land at Brisbane Airport",
+        "merger_id": "WA-25009",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-03-06",
         "business_days": 13,
         "calendar_days": 20,
         "merger_name": "Infotrust \u2013 Catalyst Cyber",
@@ -1172,11 +1180,11 @@
       }
     ],
     "stats": {
-      "average": 11.4,
-      "median": 11,
+      "average": 11.5,
+      "median": 11.0,
       "min": 2,
       "max": 22,
-      "count": 93
+      "count": 94
     }
   },
   "monthly_volume": {
@@ -1207,7 +1215,7 @@
       0,
       30,
       30,
-      33,
+      34,
       0
     ]
   }

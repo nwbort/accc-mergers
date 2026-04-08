@@ -874,6 +874,39 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/pt-asian-bulk-logistics-%E2%80%93-engage-marine"
     },
     {
+      "merger_id": "WA-25009",
+      "merger_name": "Brisbane Airport Corporation \u2013 Interest in land at Brisbane Airport",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-06T12:00:00Z",
+      "determination_publication_date": "2026-04-08T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "BRISBANE AIRPORT CORPORATION PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "54 076 870 650"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GROWTHPOINT PROPERTIES AUSTRALIA LIMITED AS TRUSTEE FOR THE WHOLESALE INDUSTRIAL PROPERTY FUND",
+          "identifier_type": "ABN",
+          "identifier": "33 124 093 901"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/brisbane-airport-corporation-%E2%80%93-interest-in-land-at-brisbane-airport"
+    },
+    {
       "merger_id": "WA-70009",
       "merger_name": "Infotrust \u2013 Catalyst Cyber",
       "status": "Assessment completed",
@@ -2825,97 +2858,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sinopec-cnaf"
-    },
-    {
-      "merger_id": "MN-85006",
-      "merger_name": "Tega and Apollo Funds consortium - Molycop",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-03-26T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-05-12T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Tega MC SG Holdings Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "202551682E"
-        },
-        {
-          "name": "Tega MC Australia Holdings Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "16 147 692 840"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Molycop Group, comprising all of the entities owned directly or indirectly by AIP MC Holdings LLC.",
-          "identifier_type": null,
-          "identifier": "6208194"
-        },
-        {
-          "name": "Molycop Technologies Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "85 154 346 004"
-        },
-        {
-          "name": "Molycop Singapore Trading Pte. Ltd",
-          "identifier_type": null,
-          "identifier": "201943325C"
-        },
-        {
-          "name": "Commonwealth Steel Company Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "58 000 007 698"
-        },
-        {
-          "name": "Orway IQ Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "52 631 359 370"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Losugen Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "26 097 626 849"
-        },
-        {
-          "name": "AP Jupiter Holdco (SG) P. Ltd.",
-          "identifier_type": null,
-          "identifier": "202551665M"
-        },
-        {
-          "name": "Tega MC JV Holdings Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "202551674N"
-        },
-        {
-          "name": "Tega MC Investment Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "202551329C"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "1919",
-          "name": "Other Polymer Product Manufacturing"
-        },
-        {
-          "code": "1920",
-          "name": "Natural Rubber Product Manufacturing"
-        },
-        {
-          "code": "2469",
-          "name": "Other Specialised Machinery and Equipment Manufacturing"
-        },
-        {
-          "code": "3419",
-          "name": "Other Specialised Industrial Machinery and Equipment Wholesaling"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tega-and-apollo-funds-consortium-molycop"
     }
   ],
   "page": 3,
