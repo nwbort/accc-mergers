@@ -1,9 +1,9 @@
 {
-  "total_mergers": 66,
+  "total_mergers": 67,
   "total_waivers": 93,
   "by_status": {
     "Assessment completed": 43,
-    "Under assessment": 22,
+    "Under assessment": 23,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -44,12 +44,12 @@
       "count": 21
     },
     {
-      "name": "Financial Asset Investing",
+      "name": "Other Auxiliary Finance and Investment Services",
       "count": 15
     },
     {
-      "name": "Other Auxiliary Finance and Investment Services",
-      "count": 14
+      "name": "Financial Asset Investing",
+      "count": 15
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-65008",
+      "merger_name": "REA Group - Simplicity Loans & Advisory",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-07T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-45002",
       "merger_name": "eBay / Depop",
       "status": "Under assessment",
@@ -104,14 +112,6 @@
     {
       "merger_id": "WA-75017",
       "merger_name": "Vets Central - Drovers Vet Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-03-31T12:00:00Z",
-      "is_waiver": true
-    },
-    {
-      "merger_id": "WA-95012",
-      "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
       "status": "Assessment completed",
       "accc_determination": "Approved",
       "effective_notification_datetime": "2026-03-31T12:00:00Z",
