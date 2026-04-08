@@ -3,8 +3,7 @@
   "total_waivers": 93,
   "by_status": {
     "Assessment completed": 43,
-    "Under assessment": 24,
-    "Assessment suspended": 1
+    "Under assessment": 25
   },
   "by_determination": {
     "Approved": 43,
@@ -94,6 +93,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-95001",
+      "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-07T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-45002",
       "merger_name": "eBay / Depop",
       "status": "Under assessment",
@@ -107,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-02T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-05012",
-      "merger_name": "Eagers Vic - Audi Melbourne and Audi Richmond",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-03-31T12:00:00Z",
       "is_waiver": false
     }
   ],

@@ -273,6 +273,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-05-20T12:00:00Z",
+      "merger_id": "MN-95001",
+      "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-07T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-06-02T12:00:00Z",
       "merger_id": "MN-30002",
       "merger_name": "Peter Warren - Wakeling Automotive",
@@ -291,6 +301,6 @@
       "effective_notification_datetime": "2025-10-10T12:00:00Z"
     }
   ],
-  "count": 29,
+  "count": 30,
   "days_ahead": 60
 }
