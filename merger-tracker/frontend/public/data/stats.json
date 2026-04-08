@@ -1,9 +1,9 @@
 {
-  "total_mergers": 67,
+  "total_mergers": 68,
   "total_waivers": 93,
   "by_status": {
     "Assessment completed": 43,
-    "Under assessment": 23,
+    "Under assessment": 24,
     "Assessment suspended": 1
   },
   "by_determination": {
@@ -52,6 +52,10 @@
       "count": 15
     },
     {
+      "name": "Accommodation",
+      "count": 7
+    },
+    {
       "name": "Pubs, Taverns and Bars",
       "count": 7
     },
@@ -64,10 +68,6 @@
       "count": 6
     },
     {
-      "name": "Accommodation",
-      "count": 6
-    },
-    {
       "name": "Data Processing and Web Hosting Services",
       "count": 5
     },
@@ -77,6 +77,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-15013",
+      "merger_name": "Journey Beyond \u2013 Kakadu Crocodile Hotel",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-07T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-65008",
       "merger_name": "REA Group - Simplicity Loans & Advisory",
@@ -108,14 +116,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-03-31T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "WA-75017",
-      "merger_name": "Vets Central - Drovers Vet Hospital",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-03-31T12:00:00Z",
-      "is_waiver": true
     }
   ],
   "recent_determinations": [
