@@ -2306,7 +2306,7 @@
     "original_notification_datetime": "2026-04-07T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-05-20T12:00:00Z",
-    "page_modified_datetime": "2026-04-08T16:20:22+10:00",
+    "page_modified_datetime": "2026-04-09T11:02:23+10:00",
     "consultation_response_due_date": "2026-04-14T12:00:00Z",
     "acquirers": [
       {
@@ -2324,14 +2324,14 @@
     ],
     "other_parties": [
       {
-        "name": "EXPERIENCE AUSTRALIA GROUP PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "56 614 713 003"
-      },
-      {
         "name": "Gundjeihmi Aboriginal Corporation Jabiru Town",
         "identifier_type": null,
         "identifier": ""
+      },
+      {
+        "name": "EXPERIENCE AUSTRALIA GROUP PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "56 614 713 003"
       }
     ],
     "anzsic_codes": [
@@ -2359,6 +2359,14 @@
         "date": "2026-04-07T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-04-08T12:00:00Z",
+        "title": "Questionnaire - Journey Beyond - Kakadu Crocodile Hotel",
+        "display_title": "Questionnaire - Journey Beyond - Kakadu Crocodile Hotel",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Journey%20Beyond%20-%20Kakadu%20Crocodile%20Hotel_0.docx",
+        "url_gh": "/mergers/MN-15013/Questionnaire - Journey Beyond - Kakadu Crocodile Hotel_0.pdf",
+        "status": "live"
       }
     ],
     "is_waiver": false
