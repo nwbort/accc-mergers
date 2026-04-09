@@ -423,14 +423,23 @@
         "merger_id": "MN-50007",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-03-14",
+        "business_days": 17,
+        "calendar_days": 26,
+        "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
+        "merger_id": "MN-05004",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 18.2,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 36,
-      "count": 44
+      "count": 45
     }
   },
   "waiver_duration": {
@@ -1109,6 +1118,14 @@
       },
       {
         "application_date": "2026-03-17",
+        "business_days": 15,
+        "calendar_days": 23,
+        "merger_name": "Ironbark - Investment in Viola Private Wealth",
+        "merger_id": "WA-05005",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-03-17",
         "business_days": 11,
         "calendar_days": 15,
         "merger_name": "Cinven \u2013 Regenity",
@@ -1190,10 +1207,10 @@
     ],
     "stats": {
       "average": 11.5,
-      "median": 11.0,
+      "median": 11,
       "min": 2,
       "max": 22,
-      "count": 94
+      "count": 95
     }
   },
   "monthly_volume": {
@@ -1224,7 +1241,7 @@
       0,
       30,
       30,
-      34,
+      35,
       0
     ]
   }

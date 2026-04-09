@@ -1947,11 +1947,11 @@
     {
       "merger_id": "MN-05004",
       "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-03-14T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-04-09T12:00:00Z",
       "end_of_determination_period": "2026-04-29T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1963,9 +1963,9 @@
       ],
       "targets": [
         {
-          "name": "JERA Ichthys Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "158 193 241"
+          "name": "JERA EXPLORATION ICHTHYS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 158 193 250"
         },
         {
           "name": "JERA GORGON PTY LTD",
@@ -1978,9 +1978,9 @@
           "identifier": "39 693 288 710"
         },
         {
-          "name": "JERA EXPLORATION ICHTHYS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 158 193 250"
+          "name": "JERA Ichthys Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "158 193 241"
         }
       ],
       "other_parties": [],
@@ -2033,6 +2033,45 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/adobe-semrush"
+    },
+    {
+      "merger_id": "WA-05005",
+      "merger_name": "Ironbark - Investment in Viola Private Wealth",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-17T12:00:00Z",
+      "determination_publication_date": "2026-04-09T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "IBWM PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 621 141 026"
+        }
+      ],
+      "targets": [
+        {
+          "name": "VIOLA GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 680 038 180"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Ironbark Investment Partners Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "94 136 679 215"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ironbark-investment-in-viola-private-wealth"
     },
     {
       "merger_id": "WA-25013",
@@ -2825,39 +2864,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ma-financial-group-ma-marina-fund-%E2%80%93-gold-coast-city-marina"
-    },
-    {
-      "merger_id": "MN-01093",
-      "merger_name": "Sinopec / CNAF",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-03-26T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-05-12T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "China Petrochemical Corporation",
-          "identifier_type": null,
-          "identifier": "Unified social credit identifier 9111000010169286X1"
-        }
-      ],
-      "targets": [
-        {
-          "name": "China National Aviation Fuel Group Limited",
-          "identifier_type": null,
-          "identifier": "Unified social credit identifier 911100007109303176"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3321",
-          "name": "Petroleum Product Wholesaling"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sinopec-cnaf"
     }
   ],
   "page": 3,

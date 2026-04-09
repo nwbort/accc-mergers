@@ -1,35 +1,35 @@
 {
   "total_mergers": 69,
-  "total_waivers": 94,
+  "total_waivers": 95,
   "by_status": {
-    "Assessment completed": 44,
-    "Under assessment": 25
+    "Assessment completed": 45,
+    "Under assessment": 24
   },
   "by_determination": {
-    "Approved": 44,
+    "Approved": 45,
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
-    "Approved": 87,
+    "Approved": 88,
     "Not approved": 7
   },
   "phase_duration": {
-    "average_days": 27.954545454545453,
+    "average_days": 27.91111111111111,
     "median_days": 25,
-    "average_business_days": 18.204545454545453,
+    "average_business_days": 18.177777777777777,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 14,
-        "percentage": 31.8
+        "percentage": 31.1
       },
       "day20": {
-        "count": 35,
-        "percentage": 79.5
+        "count": 36,
+        "percentage": 80.0
       },
       "day30": {
-        "count": 43,
-        "percentage": 97.7
+        "count": 44,
+        "percentage": 97.8
       }
     }
   },
@@ -43,11 +43,11 @@
       "count": 21
     },
     {
-      "name": "Other Auxiliary Finance and Investment Services",
-      "count": 15
+      "name": "Financial Asset Investing",
+      "count": 16
     },
     {
-      "name": "Financial Asset Investing",
+      "name": "Other Auxiliary Finance and Investment Services",
       "count": 15
     },
     {
@@ -119,6 +119,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05005",
+      "merger_name": "Ironbark - Investment in Viola Private Wealth",
+      "determination": "Approved",
+      "determination_date": "2026-04-09T12:00:00Z",
+      "page_modified_datetime": "2026-04-09T18:24:25+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "MN-05004",
+      "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
+      "determination": "Approved",
+      "determination_date": "2026-04-09T12:00:00Z",
+      "page_modified_datetime": "2026-04-09T17:47:13+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-95003",
       "merger_name": "CVS Group - Pittwater Animal Hospital",
       "determination": "Approved",
@@ -154,26 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-04-07T12:00:00Z",
       "page_modified_datetime": "2026-04-07T19:16:55+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-75017",
-      "merger_name": "Vets Central - Drovers Vet Hospital",
-      "determination": "Approved",
-      "determination_date": "2026-04-07T12:00:00Z",
-      "page_modified_datetime": "2026-04-07T19:13:23+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-10011",
-      "merger_name": "Wentworth Capital \u2013 Novotel Darling Harbour and Ibis Darling Harbour",
-      "determination": "Approved",
-      "determination_date": "2026-04-07T12:00:00Z",
-      "page_modified_datetime": "2026-04-07T19:09:20+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

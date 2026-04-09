@@ -1,6 +1,39 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-01093",
+      "merger_name": "Sinopec / CNAF",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-26T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-12T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "China Petrochemical Corporation",
+          "identifier_type": null,
+          "identifier": "Unified social credit identifier 9111000010169286X1"
+        }
+      ],
+      "targets": [
+        {
+          "name": "China National Aviation Fuel Group Limited",
+          "identifier_type": null,
+          "identifier": "Unified social credit identifier 911100007109303176"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3321",
+          "name": "Petroleum Product Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sinopec-cnaf"
+    },
+    {
       "merger_id": "MN-85006",
       "merger_name": "Tega and Apollo Funds consortium - Molycop",
       "status": "Under assessment",
