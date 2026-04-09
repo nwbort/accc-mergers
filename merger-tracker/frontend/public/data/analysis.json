@@ -254,6 +254,15 @@
         "in_progress": false
       },
       {
+        "notification_date": "2026-02-13",
+        "business_days": 36,
+        "calendar_days": 55,
+        "merger_name": "CVS Group - Pittwater Animal Hospital",
+        "merger_id": "MN-95003",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
         "notification_date": "2026-02-17",
         "business_days": 16,
         "calendar_days": 23,
@@ -417,11 +426,11 @@
       }
     ],
     "stats": {
-      "average": 17.8,
-      "median": 17,
+      "average": 18.2,
+      "median": 17.0,
       "min": 15,
-      "max": 28,
-      "count": 43
+      "max": 36,
+      "count": 44
     }
   },
   "waiver_duration": {
