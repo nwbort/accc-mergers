@@ -1,9 +1,9 @@
 {
-  "total_mergers": 68,
+  "total_mergers": 69,
   "total_waivers": 94,
   "by_status": {
     "Assessment completed": 43,
-    "Under assessment": 25
+    "Under assessment": 26
   },
   "by_determination": {
     "Approved": 43,
@@ -55,16 +55,16 @@
       "count": 7
     },
     {
+      "name": "Scientific Research Services",
+      "count": 7
+    },
+    {
       "name": "Accommodation",
       "count": 7
     },
     {
       "name": "Pubs, Taverns and Bars",
       "count": 7
-    },
-    {
-      "name": "Scientific Research Services",
-      "count": 6
     },
     {
       "name": "Data Processing and Web Hosting Services",
@@ -76,6 +76,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-20013",
+      "merger_name": "Eli Lilly / Orna Therapeutics",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-08T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-15013",
       "merger_name": "Journey Beyond \u2013 Kakadu Crocodile Hotel",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-03T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-15011",
-      "merger_name": "Danaher Corporation / Masimo Corporation",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-02T12:00:00Z",
       "is_waiver": false
     }
   ],
