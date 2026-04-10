@@ -1,9 +1,9 @@
 {
-  "total_mergers": 69,
+  "total_mergers": 70,
   "total_waivers": 95,
   "by_status": {
     "Assessment completed": 46,
-    "Under assessment": 23
+    "Under assessment": 24
   },
   "by_determination": {
     "Approved": 46,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-40015",
+      "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-10T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-20013",
       "merger_name": "Eli Lilly / Orna Therapeutics",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-07T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-45002",
-      "merger_name": "eBay / Depop",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-03T12:00:00Z",
       "is_waiver": false
     }
   ],

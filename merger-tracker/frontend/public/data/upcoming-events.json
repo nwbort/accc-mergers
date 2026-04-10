@@ -61,6 +61,16 @@
       "effective_notification_datetime": "2026-04-08T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-04-17T12:00:00Z",
+      "merger_id": "MN-40015",
+      "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-10T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-04-17T12:00:00Z",
@@ -273,6 +283,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-05-25T12:00:00Z",
+      "merger_id": "MN-40015",
+      "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-10T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-06-02T12:00:00Z",
       "merger_id": "MN-30002",
       "merger_name": "Peter Warren - Wakeling Automotive",
@@ -291,6 +311,6 @@
       "effective_notification_datetime": "2025-10-10T12:00:00Z"
     }
   ],
-  "count": 29,
+  "count": 31,
   "days_ahead": 60
 }
