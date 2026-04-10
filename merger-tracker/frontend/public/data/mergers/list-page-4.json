@@ -1,6 +1,171 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-45009",
+      "merger_name": "Idemitsu - MidOcean Energy",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-23T12:00:00Z",
+      "determination_publication_date": "2026-04-10T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "IDEMITSU EUROPE LTD.",
+          "identifier_type": null,
+          "identifier": "UK Company Number 17103829"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MidOcean Holdings II L.P.",
+          "identifier_type": null,
+          "identifier": "SL036455"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Idemitsu Kosan Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "TYO 5019"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0600",
+          "name": "Coal Mining"
+        },
+        {
+          "code": "0700",
+          "name": "Oil and Gas Extraction"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/idemitsu-midocean-energy"
+    },
+    {
+      "merger_id": "MN-20011",
+      "merger_name": "Origin \u2013 Equity stake in Kraken",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-24T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-08T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "53 143 484 208"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CPP Investment Board Private Holdings (4) Inc.",
+          "identifier_type": null,
+          "identifier": "BN  11089340"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Kraken Technologies Global Limited",
+          "identifier_type": null,
+          "identifier": "RN  164051"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/origin-%E2%80%93-equity-stake-in-kraken"
+    },
+    {
+      "merger_id": "MN-45005",
+      "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-03-25T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-11T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "MA MARINA FUND TT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 666 902 245"
+        },
+        {
+          "name": "MA MARINA FUND HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 667 241 385"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GGC Marketing Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "32 105 294 228"
+        },
+        {
+          "name": "XYZ Investments Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "010 149 943"
+        },
+        {
+          "name": "GOLD COAST CITY MARINA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "42 083 695 283"
+        },
+        {
+          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "72 081 370 685"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "MA MARINA FUND OPCO NO. 1 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "59 667 243 601"
+        },
+        {
+          "name": "MAAM HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "92 621 215 450"
+        },
+        {
+          "name": "MA INVESTMENT MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 621 552 896"
+        },
+        {
+          "name": "MA ASSET MANAGEMENT LTD",
+          "identifier_type": "ABN",
+          "identifier": "93 142 008 535"
+        },
+        {
+          "name": "MA FINANCIAL GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "68 142 008 428"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2392",
+          "name": "Boatbuilding and Repair Services"
+        },
+        {
+          "code": "5219",
+          "name": "Other Water Transport Support Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ma-financial-group-ma-marina-fund-%E2%80%93-gold-coast-city-marina"
+    },
+    {
       "merger_id": "MN-01093",
       "merger_name": "Sinopec / CNAF",
       "status": "Under assessment",

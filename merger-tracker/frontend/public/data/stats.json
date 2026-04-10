@@ -1,6 +1,6 @@
 {
   "total_mergers": 70,
-  "total_waivers": 95,
+  "total_waivers": 98,
   "by_status": {
     "Assessment completed": 46,
     "Under assessment": 24
@@ -10,7 +10,7 @@
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
-    "Approved": 88,
+    "Approved": 91,
     "Not approved": 7
   },
   "phase_duration": {
@@ -51,6 +51,10 @@
       "count": 15
     },
     {
+      "name": "Accommodation",
+      "count": 8
+    },
+    {
       "name": "Non-Residential Property Operators",
       "count": 7
     },
@@ -59,20 +63,16 @@
       "count": 7
     },
     {
-      "name": "Accommodation",
-      "count": 7
-    },
-    {
       "name": "Pubs, Taverns and Bars",
       "count": 7
     },
     {
-      "name": "Data Processing and Web Hosting Services",
+      "name": "Car Retailing",
       "count": 5
     },
     {
-      "name": "Liquor Retailing",
-      "count": 4
+      "name": "Cafes and Restaurants",
+      "count": 5
     }
   ],
   "recent_mergers": [
@@ -119,6 +119,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45009",
+      "merger_name": "Idemitsu - MidOcean Energy",
+      "determination": "Approved",
+      "determination_date": "2026-04-10T12:00:00Z",
+      "page_modified_datetime": "2026-04-10T17:06:36+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-85018",
+      "merger_name": "Discovery Holiday Parks \u2013 Habitat Noosa Everglades Eco Camp",
+      "determination": "Approved",
+      "determination_date": "2026-04-10T12:00:00Z",
+      "page_modified_datetime": "2026-04-10T17:03:25+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-01090",
       "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
       "determination": "Approved",
@@ -127,6 +147,16 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
+    },
+    {
+      "merger_id": "WA-85017",
+      "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
+      "determination": "Approved",
+      "determination_date": "2026-04-09T12:00:00Z",
+      "page_modified_datetime": "2026-04-10T16:59:53+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
     },
     {
       "merger_id": "WA-05005",
@@ -147,36 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-95003",
-      "merger_name": "CVS Group - Pittwater Animal Hospital",
-      "determination": "Approved",
-      "determination_date": "2026-04-09T12:00:00Z",
-      "page_modified_datetime": "2026-04-09T16:26:26+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-25009",
-      "merger_name": "Brisbane Airport Corporation \u2013 Interest in land at Brisbane Airport",
-      "determination": "Approved",
-      "determination_date": "2026-04-08T12:00:00Z",
-      "page_modified_datetime": "2026-04-08T17:36:06+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-95012",
-      "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
-      "determination": "Approved",
-      "determination_date": "2026-04-07T12:00:00Z",
-      "page_modified_datetime": "2026-04-07T19:24:00+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
