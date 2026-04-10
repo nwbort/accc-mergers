@@ -408,6 +408,15 @@
       },
       {
         "notification_date": "2026-03-12",
+        "business_days": 19,
+        "calendar_days": 29,
+        "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
+        "merger_id": "MN-01090",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "notification_date": "2026-03-12",
         "business_days": 15,
         "calendar_days": 21,
         "merger_name": "KPS \u2013 Novacel",
@@ -436,10 +445,10 @@
     ],
     "stats": {
       "average": 18.2,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 36,
-      "count": 45
+      "count": 46
     }
   },
   "waiver_duration": {

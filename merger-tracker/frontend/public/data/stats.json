@@ -2,11 +2,11 @@
   "total_mergers": 69,
   "total_waivers": 95,
   "by_status": {
-    "Assessment completed": 45,
-    "Under assessment": 24
+    "Assessment completed": 46,
+    "Under assessment": 23
   },
   "by_determination": {
-    "Approved": 45,
+    "Approved": 46,
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 7
   },
   "phase_duration": {
-    "average_days": 27.91111111111111,
+    "average_days": 27.934782608695652,
     "median_days": 25,
-    "average_business_days": 18.177777777777777,
+    "average_business_days": 18.195652173913043,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 14,
-        "percentage": 31.1
+        "percentage": 30.4
       },
       "day20": {
-        "count": 36,
-        "percentage": 80.0
+        "count": 37,
+        "percentage": 80.4
       },
       "day30": {
-        "count": 44,
+        "count": 45,
         "percentage": 97.8
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-01090",
+      "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
+      "determination": "Approved",
+      "determination_date": "2026-04-10T12:00:00Z",
+      "page_modified_datetime": "2026-04-10T10:40:04+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-05005",
       "merger_name": "Ironbark - Investment in Viola Private Wealth",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-04-07T12:00:00Z",
       "page_modified_datetime": "2026-04-07T19:24:00+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-15012",
-      "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
-      "determination": "Approved",
-      "determination_date": "2026-04-07T12:00:00Z",
-      "page_modified_datetime": "2026-04-07T19:16:55+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
