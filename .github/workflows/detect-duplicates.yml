@@ -58,7 +58,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           DATE=$(date -u +%Y-%m-%d)
-          REPORT=$(python3 scripts/detect_duplicates.py)
+          REPORT=$(python3 scripts/detect_duplicates.py || true)
 
           BODY="Duplicate events were detected on **${DATE}**. Please inspect the entries below and manually edit \`data/processed/mergers.json\` as needed.
 
