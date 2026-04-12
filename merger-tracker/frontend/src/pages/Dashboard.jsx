@@ -149,6 +149,15 @@ function Dashboard() {
           },
         },
       },
+      tooltip: {
+        callbacks: {
+          label: (item) => {
+            const total = item.dataset.data.reduce((sum, val) => sum + val, 0);
+            const pct = total > 0 ? Math.round((item.parsed / total) * 100) : 0;
+            return ` ${item.parsed} (${pct}%)`;
+          },
+        },
+      },
     },
   };
 
