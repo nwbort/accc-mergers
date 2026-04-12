@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write   # needed to push the fix branch
   issues: write
 
 jobs:
@@ -52,54 +52,95 @@ jobs:
             --color "e4e669" \
             --force
 
-      - name: Create or update issue
+      # Push (or reset) a single well-known fix branch so there is always
+      # exactly one place to make edits.  The branch points to the current
+      # HEAD of the default branch, giving reviewers a clean diff baseline.
+      - name: Create or reset fix branch
+        id: branch
+        if: steps.detect.outputs.found == 'true'
+        run: |
+          BRANCH="fix/duplicate-events"
+          git push origin "HEAD:refs/heads/$BRANCH" --force
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Generate issue content
+        if: steps.detect.outputs.found == 'true'
+        run: |
+          python3 scripts/detect_duplicates.py \
+            --issues-json issue_content.json \
+            --branch "${{ steps.branch.outputs.branch }}" || true
+
+      # Close any open issues from a previous run before creating fresh ones.
+      # This keeps the issue list clean and ensures sub-issue bodies reflect
+      # the current state of the data.
+      - name: Close stale duplicate-events issues
         if: steps.detect.outputs.found == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          DATE=$(date -u +%Y-%m-%d)
-          REPORT=$(python3 scripts/detect_duplicates.py || true)
-
-          BODY="Duplicate events were detected on **${DATE}**. Please inspect the entries below and manually edit \`data/processed/mergers.json\` as needed.
-
-          \`\`\`
-          ${REPORT}
-          \`\`\`"
-
-          EXISTING=$(gh issue list \
+          gh issue list \
             --label "duplicate-events" \
             --state open \
             --json number \
-            --jq '.[0].number // empty')
+            --jq '.[].number' | \
+          while read -r num; do
+            gh issue close "$num" \
+              --comment "Superseded by a new detection run — closing to recreate with updated details." \
+              || true
+          done
 
-          if [ -n "$EXISTING" ]; then
-            gh issue edit "$EXISTING" \
-              --title "Duplicate merger events detected - ${DATE}" \
-              --body "$BODY"
-            echo "Updated existing issue #${EXISTING}"
-          else
-            gh issue create \
-              --title "Duplicate merger events detected - ${DATE}" \
+      # Create one sub-issue per affected merger, then a parent issue that
+      # links them all.  Sub-issues are attached via the GitHub REST API.
+      - name: Create sub-issues and main issue
+        if: steps.detect.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          SUB_NUMS=""
+          COUNT=$(jq '.sub_issues | length' issue_content.json)
+
+          for i in $(seq 0 $((COUNT - 1))); do
+            TITLE=$(jq -r ".sub_issues[$i].title" issue_content.json)
+            BODY=$(jq -r ".sub_issues[$i].body" issue_content.json)
+            NUM=$(gh issue create \
+              --title "$TITLE" \
               --body "$BODY" \
-              --label "duplicate-events"
-            echo "Created new issue"
-          fi
+              --label "duplicate-events" \
+              --json number \
+              --jq '.number')
+            SUB_NUMS="$SUB_NUMS $NUM"
+            echo "Created sub-issue #$NUM: $TITLE"
+          done
 
-      - name: Close issue if no duplicates remain
+          MAIN_TITLE=$(jq -r '.main_issue.title' issue_content.json)
+          MAIN_BODY=$(jq -r '.main_issue.body' issue_content.json)
+          MAIN_NUM=$(gh issue create \
+            --title "$MAIN_TITLE" \
+            --body "$MAIN_BODY" \
+            --label "duplicate-events" \
+            --json number \
+            --jq '.number')
+          echo "Created main issue #$MAIN_NUM"
+
+          for SUB_NUM in $SUB_NUMS; do
+            gh api "repos/$GITHUB_REPOSITORY/issues/$MAIN_NUM/sub_issues" \
+              --method POST \
+              -F sub_issue_id="$SUB_NUM" \
+              || echo "Warning: could not attach sub-issue #$SUB_NUM as a sub-issue (feature may not be enabled on this repo)"
+          done
+
+      - name: Close all duplicate-events issues when resolved
         if: steps.detect.outputs.found == 'false'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          EXISTING=$(gh issue list \
+          gh issue list \
             --label "duplicate-events" \
             --state open \
             --json number \
-            --jq '.[0].number // empty')
-
-          if [ -n "$EXISTING" ]; then
-            gh issue close "$EXISTING" \
-              --comment "All duplicate events resolved as of $(date -u +%Y-%m-%d). Closing automatically."
-            echo "Closed issue #${EXISTING}"
-          else
-            echo "No open duplicate-events issue to close"
-          fi
+            --jq '.[].number' | \
+          while read -r num; do
+            gh issue close "$num" \
+              --comment "All duplicate events resolved as of $(date -u +%Y-%m-%d). Closing automatically." \
+              || true
+          done

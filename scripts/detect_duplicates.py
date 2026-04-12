@@ -39,6 +39,9 @@ DEFAULT_INPUT = REPO_ROOT / "data" / "processed" / "mergers.json"
 
 SIMILARITY_THRESHOLD = 0.80
 
+_REPO = "nwbort/accc-mergers"
+_MERGERS_FYI_BASE = "https://mergers.fyi/mergers"
+
 
 def normalise_title(title: str) -> str:
     """Strip leading/trailing whitespace and punctuation for fuzzy comparison."""
@@ -216,6 +219,176 @@ def print_human_report(report: dict) -> None:
         print()
 
 
+# ---------------------------------------------------------------------------
+# Helpers for GitHub issue generation
+# ---------------------------------------------------------------------------
+
+def mergers_fyi_url(merger_id: str) -> str:
+    return f"{_MERGERS_FYI_BASE}/{merger_id}"
+
+
+def _json_github_url(branch: str, line: int | None = None) -> str:
+    base = f"https://github.com/{_REPO}/blob/{branch}/data/processed/mergers.json"
+    return f"{base}#L{line}" if line else base
+
+
+def _find_merger_line(input_path: Path, merger_id: str) -> int | None:
+    """Return the first line number where merger_id appears in the JSON file."""
+    needle = f'"merger_id": "{merger_id}"'
+    with input_path.open() as fh:
+        for i, line in enumerate(fh, 1):
+            if needle in line:
+                return i
+    return None
+
+
+def suggest_deletion(group: dict) -> tuple[int, str]:
+    """
+    Return (index_to_delete, reason) for the most likely duplicate to remove.
+
+    Priority:
+    1. Delete the event with status 'removed' if the other is 'live'.
+    2. Delete the event that lacks url_gh when the other has it.
+    3. Delete the event with fewer populated fields.
+    4. Fall back to deleting the last entry (keep the earlier one).
+    """
+    indices = group["indices"]
+    events = group["events"]
+
+    statuses = [ev.get("status", "") for ev in events]
+    if "removed" in statuses and "live" in statuses:
+        pos = statuses.index("removed")
+        return indices[pos], "has status `removed` (no longer present on the ACCC website)"
+
+    has_gh = [bool(ev.get("url_gh")) for ev in events]
+    if any(has_gh) and not all(has_gh):
+        pos = has_gh.index(False)
+        return indices[pos], "lacks an attachment (`url_gh`) while the other entry has one"
+
+    has_url = [bool(ev.get("url")) for ev in events]
+    if any(has_url) and not all(has_url):
+        pos = has_url.index(False)
+        return indices[pos], "has no ACCC URL while the other entry does"
+
+    scores = [sum(1 for v in ev.values() if v) for ev in events]
+    if min(scores) != max(scores):
+        pos = scores.index(min(scores))
+        return indices[pos], "has fewer populated fields than the other entry"
+
+    return indices[-1], f"appears to be a later duplicate — keeping `event[{indices[0]}]` (the earlier entry)"
+
+
+def _build_sub_issue_body(entry: dict, input_path: Path, branch: str) -> str:
+    """Build the markdown body for a per-merger sub-issue."""
+    merger_id = entry["merger_id"]
+    line = _find_merger_line(input_path, merger_id)
+    fyi_url = mergers_fyi_url(merger_id)
+    json_url = _json_github_url(branch, line)
+    branch_url = f"https://github.com/{_REPO}/tree/{branch}"
+
+    out = [
+        f"**mergers.fyi:** [{merger_id}]({fyi_url})",
+        f"**JSON:** [`data/processed/mergers.json`]({json_url})"
+        + (f" (line {line})" if line else ""),
+        f"**Fix branch:** [`{branch}`]({branch_url})",
+        "",
+        "---",
+        "",
+    ]
+
+    for i, g in enumerate(entry["duplicate_groups"], 1):
+        kind = "CERTAIN" if g["kind"] == "certain" else "LIKELY"
+        out.append(f"### Group {i} — {kind} — {g['date']}")
+        out.append("")
+        out.append("| Index | Status | Title | ACCC URL |")
+        out.append("|-------|--------|-------|----------|")
+        for idx, ev in zip(g["indices"], g["events"]):
+            status = ev.get("status") or "—"
+            title = (ev.get("title") or "—").replace("|", "\\|")
+            url = ev.get("url") or ""
+            link = f"[link]({url})" if url else "—"
+            out.append(f"| `event[{idx}]` | `{status}` | {title} | {link} |")
+        out.append("")
+        del_idx, reason = suggest_deletion(g)
+        out.append(f"**Suggested action:** Remove `event[{del_idx}]` — {reason}")
+        out.append("")
+        out.append("**To fix:**")
+        out.append(f"1. Check out branch `{branch}`")
+        out.append(f"2. Open `data/processed/mergers.json` and find merger `{merger_id}`")
+        out.append(f"3. In the `events` array, remove the entry at index `{del_idx}`")
+        out.append("4. Commit, push, and open a PR")
+        out.append("")
+
+    return "\n".join(out)
+
+
+def _build_main_issue_body(report: dict, branch: str, date: str) -> str:
+    """Build the markdown body for the top-level duplicate-events issue."""
+    branch_url = f"https://github.com/{_REPO}/tree/{branch}"
+    s = report["summary"]
+
+    out = [
+        f"Duplicate events were detected on **{date}**.",
+        "",
+        f"**Fix branch:** [`{branch}`]({branch_url})",
+        "",
+        "Check out this branch, edit `data/processed/mergers.json` to remove the "
+        "duplicates described in each sub-issue below, then open a PR.",
+        "",
+        "---",
+        "",
+        "## Affected mergers",
+        "",
+        "| Merger | Name | Groups |",
+        "|--------|------|--------|",
+    ]
+
+    for entry in report["findings"]:
+        mid = entry["merger_id"]
+        name = entry["merger_name"].replace("|", "\\|")
+        n = len(entry["duplicate_groups"])
+        kinds = " + ".join(sorted({g["kind"] for g in entry["duplicate_groups"]}))
+        out.append(f"| [{mid}]({mergers_fyi_url(mid)}) | {name} | {n} ({kinds}) |")
+
+    out.extend([
+        "",
+        "---",
+        f"*{s['mergers_with_duplicates']} merger(s) · "
+        f"{s['certain_duplicate_groups']} certain · "
+        f"{s['likely_duplicate_groups']} likely group(s)*",
+    ])
+
+    return "\n".join(out)
+
+
+def build_issues_data(report: dict, input_path: Path, branch: str, date: str) -> dict:
+    """
+    Build structured data for GitHub issue creation:
+      { "main_issue": { "title", "body" },
+        "sub_issues":  [ { "merger_id", "title", "body" }, ... ] }
+    """
+    sub_issues = []
+    for entry in report["findings"]:
+        mid = entry["merger_id"]
+        name = entry["merger_name"]
+        title = f"Fix duplicates: {mid} — {name}"
+        if len(title) > 200:
+            title = title[:197] + "..."
+        sub_issues.append({
+            "merger_id": mid,
+            "title": title,
+            "body": _build_sub_issue_body(entry, input_path, branch),
+        })
+
+    return {
+        "main_issue": {
+            "title": f"Duplicate merger events detected — {date}",
+            "body": _build_main_issue_body(report, branch, date),
+        },
+        "sub_issues": sub_issues,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(
         description="Detect duplicate or likely-duplicate events in merger data."
@@ -236,6 +409,20 @@ def main() -> None:
         "--json",
         action="store_true",
         help="Print JSON report to stdout instead of human-readable text",
+    )
+    parser.add_argument(
+        "--branch",
+        default="main",
+        metavar="BRANCH",
+        help="Branch name used in GitHub links within issue bodies (default: main)",
+    )
+    parser.add_argument(
+        "--issues-json",
+        type=Path,
+        default=None,
+        metavar="PATH",
+        dest="issues_json",
+        help="Write structured issue data (main issue + per-merger sub-issues) to this JSON file",
     )
     args = parser.parse_args()
 
@@ -261,6 +448,14 @@ def main() -> None:
         with args.output.open("w") as fh:
             json.dump(report, fh, indent=2)
         print(f"JSON report written to {args.output}")
+
+    if args.issues_json:
+        today = datetime.utcnow().strftime("%Y-%m-%d")
+        issues_data = build_issues_data(report, args.input, args.branch, today)
+        args.issues_json.parent.mkdir(parents=True, exist_ok=True)
+        with args.issues_json.open("w") as fh:
+            json.dump(issues_data, fh, indent=2)
+        print(f"Issue data written to {args.issues_json}", file=sys.stderr)
 
     # Exit with a non-zero code if any duplicates were found (useful in CI)
     total = (
