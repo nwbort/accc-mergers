@@ -2,14 +2,20 @@
   "code": "8601",
   "mergers": [
     {
-      "merger_id": "MN-55010",
-      "merger_name": "Calvary - Holmesglen Private Hospital",
+      "merger_id": "MN-75012",
+      "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
+      "is_waiver": false,
+      "status": "Assessment completed"
+    },
+    {
+      "merger_id": "MN-35013",
+      "merger_name": "Estia Health \u2013 Norsan residential aged care business",
       "is_waiver": false,
       "status": "Under assessment"
     },
     {
-      "merger_id": "MN-75012",
-      "merger_name": "Opal Healthcare \u2013 Greenwich Place residential aged care home",
+      "merger_id": "MN-55010",
+      "merger_name": "Calvary - Holmesglen Private Hospital",
       "is_waiver": false,
       "status": "Under assessment"
     },
@@ -20,5 +26,5 @@
       "status": "Assessment completed"
     }
   ],
-  "count": 3
+  "count": 4
 }

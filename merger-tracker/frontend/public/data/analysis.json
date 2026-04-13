@@ -441,14 +441,23 @@
         "merger_id": "MN-05004",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-03-19",
+        "business_days": 15,
+        "calendar_days": 25,
+        "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
+        "merger_id": "MN-75012",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
-      "average": 18.2,
-      "median": 17.0,
+      "average": 18.1,
+      "median": 17,
       "min": 15,
       "max": 36,
-      "count": 46
+      "count": 47
     }
   },
   "waiver_duration": {
@@ -1265,7 +1274,7 @@
       7,
       22,
       21,
-      7
+      10
     ],
     "waivers": [
       0,

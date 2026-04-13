@@ -81,6 +81,36 @@
       "effective_notification_datetime": "2026-02-20T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-04-20T12:00:00Z",
+      "merger_id": "MN-35013",
+      "merger_name": "Estia Health \u2013 Norsan residential aged care business",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-10T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-04-20T12:00:00Z",
+      "merger_id": "MN-55013",
+      "merger_name": "Lawrence & Hanson - Gordon Macdonald",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-13T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-04-20T12:00:00Z",
+      "merger_id": "MN-95011",
+      "merger_name": "Dubai Aerospace Enterprise - Macquarie AirFinance",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-10T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-04-30T12:00:00Z",
@@ -116,16 +146,6 @@
       "date": "2026-05-05T12:00:00Z",
       "merger_id": "MN-40009",
       "merger_name": "Gilead - Arcellx",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-03-19T12:00:00Z"
-    },
-    {
-      "type": "determination_due",
-      "event_type_display": "Determination due",
-      "date": "2026-05-05T12:00:00Z",
-      "merger_id": "MN-75012",
-      "merger_name": "Opal Healthcare \u2013 Greenwich Place residential aged care home",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-03-19T12:00:00Z"
@@ -274,11 +294,41 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-05-25T12:00:00Z",
+      "merger_id": "MN-35013",
+      "merger_name": "Estia Health \u2013 Norsan residential aged care business",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-10T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-05-25T12:00:00Z",
       "merger_id": "MN-40015",
       "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-04-10T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-05-25T12:00:00Z",
+      "merger_id": "MN-95011",
+      "merger_name": "Dubai Aerospace Enterprise - Macquarie AirFinance",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-10T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-05-26T12:00:00Z",
+      "merger_id": "MN-55013",
+      "merger_name": "Lawrence & Hanson - Gordon Macdonald",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-13T12:00:00Z"
     },
     {
       "type": "determination_due",
@@ -301,6 +351,6 @@
       "effective_notification_datetime": "2025-10-10T12:00:00Z"
     }
   ],
-  "count": 30,
+  "count": 35,
   "days_ahead": 60
 }

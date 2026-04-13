@@ -1,12 +1,12 @@
 {
-  "total_mergers": 70,
+  "total_mergers": 73,
   "total_waivers": 98,
   "by_status": {
-    "Assessment completed": 46,
-    "Under assessment": 24
+    "Assessment completed": 47,
+    "Under assessment": 26
   },
   "by_determination": {
-    "Approved": 46,
+    "Approved": 47,
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
@@ -14,22 +14,22 @@
     "Not approved": 7
   },
   "phase_duration": {
-    "average_days": 27.934782608695652,
+    "average_days": 27.872340425531913,
     "median_days": 25,
-    "average_business_days": 18.195652173913043,
+    "average_business_days": 18.127659574468087,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 14,
-        "percentage": 30.4
+        "count": 15,
+        "percentage": 31.9
       },
       "day20": {
-        "count": 37,
-        "percentage": 80.4
+        "count": 38,
+        "percentage": 80.9
       },
       "day30": {
-        "count": 45,
-        "percentage": 97.8
+        "count": 46,
+        "percentage": 97.9
       }
     }
   },
@@ -77,8 +77,32 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-55013",
+      "merger_name": "Lawrence & Hanson - Gordon Macdonald",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-13T12:00:00Z",
+      "is_waiver": false
+    },
+    {
+      "merger_id": "MN-35013",
+      "merger_name": "Estia Health \u2013 Norsan residential aged care business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-10T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-40015",
       "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-10T12:00:00Z",
+      "is_waiver": false
+    },
+    {
+      "merger_id": "MN-95011",
+      "merger_name": "Dubai Aerospace Enterprise - Macquarie AirFinance",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-10T12:00:00Z",
@@ -91,33 +115,19 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-08T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-15013",
-      "merger_name": "Journey Beyond \u2013 Kakadu Crocodile Hotel",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-07T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-65008",
-      "merger_name": "REA Group - Simplicity Loans & Advisory",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-07T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-95001",
-      "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-07T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-75012",
+      "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
+      "determination": "Approved",
+      "determination_date": "2026-04-13T12:00:00Z",
+      "page_modified_datetime": "2026-04-13T14:41:36+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
     {
       "merger_id": "WA-45009",
       "merger_name": "Idemitsu - MidOcean Energy",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-05004",
-      "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
-      "determination": "Approved",
-      "determination_date": "2026-04-09T12:00:00Z",
-      "page_modified_datetime": "2026-04-09T17:47:13+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
