@@ -4,7 +4,7 @@ export default function PrivacyPolicy() {
   return (
     <>
       <SEO
-        title="Privacy Policy"
+        title="Privacy policy"
         description="How mergers.fyi collects, uses, and protects your personal information."
         url="/privacy"
       />
@@ -35,10 +35,10 @@ export default function PrivacyPolicy() {
           <p className="text-gray-700 leading-relaxed mb-4">
             We collect only the minimum personal information necessary to provide our services.
           </p>
-          <h3 className="font-semibold text-gray-800 mb-2">Information you provide</h3>
-          <p className="text-gray-700 leading-relaxed">
-            <span className="font-medium">Email address</span> — when you sign up to receive our weekly email digest.
-          </p>
+          <p className="text-gray-700 leading-relaxed mb-3">Information you provide:</p>
+          <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
+            <li>email address</span> - when you sign up to receive our weekly email digest.</li>
+          </ul>
           <p className="text-gray-700 leading-relaxed mt-4">
             We do not collect any other personal information.
           </p>
@@ -49,13 +49,13 @@ export default function PrivacyPolicy() {
           <h2 className="text-xl font-semibold text-gray-900 mb-4">3. How We Use Your Information</h2>
           <p className="text-gray-700 leading-relaxed mb-3">We use your email address solely to:</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
-            <li>Send you the mergers.fyi weekly digest</li>
-            <li>Manage and maintain our email subscriber list</li>
+            <li>send you the mergers.fyi weekly digest; and</li>
+            <li>manage and maintain our email subscriber list.</li>
           </ul>
           <p className="text-gray-700 leading-relaxed mb-3">We do not use your information for:</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li>Marketing unrelated products or services</li>
-            <li>Selling or renting your data to third parties</li>
+            <li>marketing unrelated products or services</li>
+            <li>selling or renting your data to third parties</li>
           </ul>
         </section>
 
@@ -67,12 +67,9 @@ export default function PrivacyPolicy() {
           </p>
           <p className="text-gray-700 leading-relaxed mb-3">This means:</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
-            <li>Your email address is securely stored by Resend on our behalf</li>
-            <li>Resend processes your data only to send emails for us</li>
+            <li>your email address is securely stored by Resend on our behalf; and</li>
+            <li>Resend processes your data only to send emails for us.</li>
           </ul>
-          <p className="text-gray-700 leading-relaxed">
-            For more information, you can review Resend&#39;s privacy policy on their website.
-          </p>
         </section>
 
         {/* 5. Data Storage and Security */}
