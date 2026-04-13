@@ -17,6 +17,7 @@ import Commentary from './pages/Commentary';
 import Digest from './pages/Digest';
 import NickTwort from './pages/NickTwort';
 import Analysis from './pages/Analysis';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import NotFound from './pages/NotFound';
 
 function AppContent() {
@@ -41,6 +42,7 @@ function AppContent() {
             <Route path="/digest" element={<Digest />} />
             <Route path="/analysis" element={<Analysis />} />
             <Route path="/nick-twort" element={<NickTwort />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
