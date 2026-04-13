@@ -750,6 +750,43 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danaher-masimo"
     },
     {
+      "merger_id": "WA-85021",
+      "merger_name": "Yancoal - Kestrel Coal Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-02T12:00:00Z",
+      "determination_publication_date": "2026-04-13T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "YANCOAL AUSTRALIA LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 111 859 119"
+        }
+      ],
+      "targets": [
+        {
+          "name": "KESTREL COAL GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 624 655 518"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2110",
+          "name": "Iron Smelting and Steel Manufacturing"
+        },
+        {
+          "code": "2611",
+          "name": "Fossil Fuel Electricity Generation"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/yancoal-kestrel-coal-group"
+    },
+    {
       "merger_id": "MN-45002",
       "merger_name": "eBay / Depop",
       "status": "Under assessment",

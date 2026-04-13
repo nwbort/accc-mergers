@@ -1271,14 +1271,22 @@
         "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
         "merger_id": "WA-95012",
         "determination": "Approved"
+      },
+      {
+        "application_date": "2026-04-02",
+        "business_days": 5,
+        "calendar_days": 11,
+        "merger_name": "Yancoal - Kestrel Coal Group",
+        "merger_id": "WA-85021",
+        "determination": "Approved"
       }
     ],
     "stats": {
-      "average": 11.6,
-      "median": 11,
+      "average": 11.5,
+      "median": 11.0,
       "min": 2,
       "max": 22,
-      "count": 99
+      "count": 100
     }
   },
   "monthly_volume": {
@@ -1310,7 +1318,7 @@
       30,
       30,
       39,
-      0
+      1
     ]
   }
 }
