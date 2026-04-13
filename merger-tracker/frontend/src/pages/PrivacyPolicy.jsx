@@ -54,7 +54,7 @@ export default function PrivacyPolicy() {
           </ul>
           <p className="text-gray-700 leading-relaxed mb-3">We do not use your information for:</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1">
-            <li>marketing unrelated products or services</li>
+            <li>marketing unrelated products or services; or</li>
             <li>selling or renting your data to third parties</li>
           </ul>
         </section>
