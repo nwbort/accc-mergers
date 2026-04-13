@@ -101,27 +101,29 @@ jobs:
 
           for i in $(seq 0 $((COUNT - 1))); do
             TITLE=$(jq -r ".sub_issues[$i].title" issue_content.json)
-            BODY=$(jq -r ".sub_issues[$i].body" issue_content.json)
-            # Use --json to get both number and database id in one call,
-            # avoiding a separate gh api lookup that can transiently 404.
-            RESULT=$(gh issue create \
-              --title "$TITLE" \
-              --body "$BODY" \
-              --label "duplicate-events" \
-              --json id,number)
+            # Use gh api directly so the response is JSON with both .id and
+            # .number in one call — no URL-parsing and no second lookup.
+            RESULT=$(jq -n \
+              --argjson idx "$i" \
+              --slurpfile data issue_content.json \
+              '{"title": $data[0].sub_issues[$idx].title,
+                "body":  $data[0].sub_issues[$idx].body,
+                "labels": ["duplicate-events"]}' | \
+              gh api "repos/$GITHUB_REPOSITORY/issues" \
+                --method POST --input -)
             NUM=$(echo "$RESULT" | jq -r '.number')
             ID=$(echo "$RESULT" | jq -r '.id')
             SUB_IDS="$SUB_IDS $ID"
             echo "Created sub-issue #$NUM (id=$ID): $TITLE"
           done
 
-          MAIN_TITLE=$(jq -r '.main_issue.title' issue_content.json)
-          MAIN_BODY=$(jq -r '.main_issue.body' issue_content.json)
-          MAIN_RESULT=$(gh issue create \
-            --title "$MAIN_TITLE" \
-            --body "$MAIN_BODY" \
-            --label "duplicate-events" \
-            --json number)
+          MAIN_RESULT=$(jq -n \
+            --slurpfile data issue_content.json \
+            '{"title": $data[0].main_issue.title,
+              "body":  $data[0].main_issue.body,
+              "labels": ["duplicate-events"]}' | \
+            gh api "repos/$GITHUB_REPOSITORY/issues" \
+              --method POST --input -)
           MAIN_NUM=$(echo "$MAIN_RESULT" | jq -r '.number')
           echo "Created main issue #$MAIN_NUM"
 
