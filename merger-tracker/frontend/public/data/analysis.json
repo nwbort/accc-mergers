@@ -455,6 +455,15 @@
         "notification_date": "2026-03-19",
         "business_days": 15,
         "calendar_days": 25,
+        "merger_name": "Gilead - Arcellx",
+        "merger_id": "MN-40009",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "notification_date": "2026-03-19",
+        "business_days": 15,
+        "calendar_days": 25,
         "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
         "merger_id": "MN-75012",
         "determination": "Approved",
@@ -462,11 +471,11 @@
       }
     ],
     "stats": {
-      "average": 18.1,
-      "median": 17.0,
+      "average": 18.0,
+      "median": 17,
       "min": 15,
       "max": 36,
-      "count": 48
+      "count": 49
     }
   },
   "waiver_duration": {
