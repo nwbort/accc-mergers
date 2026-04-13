@@ -2,11 +2,11 @@
   "total_mergers": 73,
   "total_waivers": 100,
   "by_status": {
-    "Assessment completed": 49,
-    "Under assessment": 24
+    "Assessment completed": 50,
+    "Under assessment": 23
   },
   "by_determination": {
-    "Approved": 49,
+    "Approved": 50,
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 7
   },
   "phase_duration": {
-    "average_days": 27.755102040816325,
+    "average_days": 27.72,
     "median_days": 25,
-    "average_business_days": 18.040816326530614,
+    "average_business_days": 18.0,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 16,
-        "percentage": 32.7
+        "percentage": 32.0
       },
       "day20": {
-        "count": 40,
-        "percentage": 81.6
+        "count": 41,
+        "percentage": 82.0
       },
       "day30": {
-        "count": 48,
+        "count": 49,
         "percentage": 98.0
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-50012",
+      "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
+      "determination": "Approved",
+      "determination_date": "2026-04-13T12:00:00Z",
+      "page_modified_datetime": "2026-04-13T17:51:27+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-85021",
       "merger_name": "Yancoal - Kestrel Coal Group",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-45009",
-      "merger_name": "Idemitsu - MidOcean Energy",
-      "determination": "Approved",
-      "determination_date": "2026-04-10T12:00:00Z",
-      "page_modified_datetime": "2026-04-10T17:06:36+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
