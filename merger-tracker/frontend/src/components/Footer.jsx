@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 function Footer() {
   return (
     <footer className="border-t border-gray-200/60 mt-auto bg-white/50 backdrop-blur-sm">
@@ -28,6 +30,13 @@ function Footer() {
           >
             nick@mergers.fyi
           </a>
+          .{' '}
+          <Link
+            to="/privacy"
+            className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
+          >
+            Privacy Policy
+          </Link>
           .
         </div>
       </div>
