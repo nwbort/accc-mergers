@@ -2,11 +2,11 @@
   "total_mergers": 73,
   "total_waivers": 98,
   "by_status": {
-    "Assessment completed": 47,
-    "Under assessment": 26
+    "Assessment completed": 48,
+    "Under assessment": 25
   },
   "by_determination": {
-    "Approved": 47,
+    "Approved": 48,
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 7
   },
   "phase_duration": {
-    "average_days": 27.872340425531913,
+    "average_days": 27.8125,
     "median_days": 25,
-    "average_business_days": 18.127659574468087,
+    "average_business_days": 18.104166666666668,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 15,
-        "percentage": 31.9
+        "percentage": 31.2
       },
       "day20": {
-        "count": 38,
-        "percentage": 80.9
+        "count": 39,
+        "percentage": 81.2
       },
       "day30": {
-        "count": 46,
+        "count": 47,
         "percentage": 97.9
       }
     }
@@ -129,6 +129,16 @@
       "stage": "Phase 1 - initial assessment"
     },
     {
+      "merger_id": "MN-30005",
+      "merger_name": "Adobe - Semrush",
+      "determination": "Approved",
+      "determination_date": "2026-04-10T12:00:00Z",
+      "page_modified_datetime": "2026-04-13T15:47:05+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-45009",
       "merger_name": "Idemitsu - MidOcean Energy",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-04-09T12:00:00Z",
       "page_modified_datetime": "2026-04-10T16:59:53+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-05005",
-      "merger_name": "Ironbark - Investment in Viola Private Wealth",
-      "determination": "Approved",
-      "determination_date": "2026-04-09T12:00:00Z",
-      "page_modified_datetime": "2026-04-09T18:24:25+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

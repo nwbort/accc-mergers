@@ -3625,24 +3625,26 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/adobe-semrush",
       "merger_name": "Adobe - Semrush",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-30005",
       "effective_notification_datetime": "2026-03-16T12:00:00Z",
       "original_notification_datetime": "2026-03-16T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-04-30T12:00:00Z",
-      "page_modified_datetime": "2026-03-24T17:41:06+11:00",
+      "determination_publication_date": "2026-04-10T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-04-13T15:47:05+10:00",
       "consultation_response_due_date": "2026-03-24T12:00:00Z",
       "acquirers": [
-        {
-          "name": "Fenway Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "10389477"
-        },
         {
           "name": "Adobe Inc. (NASDAQ: ADBE)",
           "identifier_type": null,
           "identifier": "2748129"
+        },
+        {
+          "name": "Fenway Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "10389477"
         }
       ],
       "targets": [
@@ -3679,12 +3681,47 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-04-10T12:00:00Z",
+          "title": "Adobe - Semrush - Phase 1 Determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Adobe%20-%20Semrush%20-%20Phase%201%20Determination%20-%2010%20April%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Adobe Inc. (Adobe) through a newly incorporated direct wholly\nowned subsidiary, Fenway Merger Sub, Inc. (Merger Sub), proposes\nto acquire 100% of the share capital in Semrush Holdings, Inc.\n(Semrush) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Adobe, is a global technology company. Adobe's main\nofferings can be divided between its Customer Experience\nOrchestration business, which focuses on accelerating customer\nexperience and delivering business intelligence services, and its\nCreativity & Productivity business, which focuses on helping users\ncreate, design, and publish rich content and 3D experiences, and\nimprove how they view, share, and collaborate on documents and\ncontent. Adobe is headquartered in California and incorporated in\nDelaware, USA.\nThe target, Semrush, provides an online visibility management and\ncontent marketing service offering a range of tools to manage web\nbrand presence, including through its search engine optimisation\ntoolkit. Semrush is headquartered in Massachusetts and\nincorporated in Delaware, USA."
+            },
+            {
+              "item": "Overlap between the\nparties",
+              "details": "Adobe and Semrush (together, the Parties) overlap in the supply of\ngenerative engine optimisation services in Australia. Generative\nengine optimisation refers to the process of adapting a website so\nthat large language model platforms, such as ChatGPT, Gemini, and\nClaude, can understand, extract, and cite it when answering user\nqueries.\nAdobe supplies generative engine optimisation services through its\nLarge Language Model Optimiser product. Semrush supplies\ngenerative engine optimisation services through its AI Visibility\nToolkit and Enterprise AI Optimization products."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third partes and publicly available\ninformation.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The Parties do not compete closely as the generative engine\noptimisation tools they supply have different use cases.\n\u2022 The Parties would continue to face competition from multiple\nalternative suppliers of generative engine optimisation service\nsuppliers in Australia."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-30005/Adobe - Semrush - Phase 1 Determination - 10 April 2026.pdf",
+          "status": "live",
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-04-10T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
