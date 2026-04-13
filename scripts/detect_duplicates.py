@@ -191,7 +191,6 @@ def build_report(mergers: list[dict]) -> dict:
 
 def print_human_report(report: dict) -> None:
     s = report["summary"]
-    print("=" * 70)
     print("ACCC Merger Duplicate Event Report")
     print("=" * 70)
     print(
