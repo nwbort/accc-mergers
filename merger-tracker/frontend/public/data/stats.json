@@ -1,6 +1,6 @@
 {
   "total_mergers": 73,
-  "total_waivers": 98,
+  "total_waivers": 99,
   "by_status": {
     "Assessment completed": 49,
     "Under assessment": 24
@@ -10,7 +10,7 @@
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
-    "Approved": 91,
+    "Approved": 92,
     "Not approved": 7
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-95010",
+      "merger_name": "Lighthouse - Precise Services Group",
+      "determination": "Approved",
+      "determination_date": "2026-04-13T12:00:00Z",
+      "page_modified_datetime": "2026-04-13T17:31:23+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-40009",
       "merger_name": "Gilead - Arcellx",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-01090",
-      "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
-      "determination": "Approved",
-      "determination_date": "2026-04-10T12:00:00Z",
-      "page_modified_datetime": "2026-04-10T10:40:04+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
