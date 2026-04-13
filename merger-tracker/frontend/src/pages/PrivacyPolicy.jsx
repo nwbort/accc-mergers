@@ -37,7 +37,7 @@ export default function PrivacyPolicy() {
           </p>
           <p className="text-gray-700 leading-relaxed mb-3">Information you provide:</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
-            <li>email address</span> - when you sign up to receive our weekly email digest.</li>
+            <li>email address - when you sign up to receive our weekly email digest.</li>
           </ul>
           <p className="text-gray-700 leading-relaxed mt-4">
             We do not collect any other personal information.
