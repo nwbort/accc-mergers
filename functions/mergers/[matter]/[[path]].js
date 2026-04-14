@@ -24,12 +24,11 @@ export async function onRequest(context) {
   }
 
   const matterId = match[1];
-  const fileName = decodeURIComponent(path.split('/').pop());
+  const displayName = decodeURIComponent(path.split('/').pop()).replace(/\.pdf$/i, '');
 
   const html = renderViewer({
     matterId,
-    displayName: fileName.replace(/\.pdf$/i, ''),
-    fileName,
+    displayName,
     rawPdfUrl: `${path}?raw=1`,
     mergerPageUrl: `/mergers/${matterId}`,
   });
