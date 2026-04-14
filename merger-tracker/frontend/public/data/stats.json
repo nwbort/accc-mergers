@@ -1,9 +1,9 @@
 {
-  "total_mergers": 74,
+  "total_mergers": 75,
   "total_waivers": 102,
   "by_status": {
     "Assessment completed": 50,
-    "Under assessment": 24
+    "Under assessment": 25
   },
   "by_determination": {
     "Approved": 50,
@@ -85,6 +85,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-14T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-55013",
       "merger_name": "Lawrence & Hanson - Gordon Macdonald",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-40015",
       "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-10T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-95011",
-      "merger_name": "Dubai Aerospace Enterprise - Macquarie AirFinance",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-10T12:00:00Z",
