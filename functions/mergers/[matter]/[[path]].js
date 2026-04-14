@@ -15,8 +15,8 @@ export async function onRequest(context) {
     return env.ASSETS.fetch(new Request(assetUrl.toString()));
   }
 
-  // Extract matter ID from the path: /mergers/MN-XXXXX/filename.pdf
-  const match = path.match(/^\/mergers\/(MN-\d+)\//i);
+  // Extract matter ID from the path: /mergers/{MN,WA}-XXXXX/filename.pdf
+  const match = path.match(/^\/mergers\/((MN|WA)-\d+)\//i);
   if (!match) {
     return context.next();
   }
