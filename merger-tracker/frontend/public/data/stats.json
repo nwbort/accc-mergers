@@ -1,9 +1,9 @@
 {
-  "total_mergers": 73,
-  "total_waivers": 100,
+  "total_mergers": 74,
+  "total_waivers": 102,
   "by_status": {
     "Assessment completed": 50,
-    "Under assessment": 23
+    "Under assessment": 24
   },
   "by_determination": {
     "Approved": 50,
@@ -11,7 +11,7 @@
   },
   "by_waiver_determination": {
     "Approved": 93,
-    "Not approved": 7
+    "Not approved": 9
   },
   "phase_duration": {
     "average_days": 27.72,
@@ -51,6 +51,10 @@
       "count": 15
     },
     {
+      "name": "Scientific Research Services",
+      "count": 8
+    },
+    {
       "name": "Accommodation",
       "count": 8
     },
@@ -59,16 +63,12 @@
       "count": 7
     },
     {
-      "name": "Scientific Research Services",
-      "count": 7
-    },
-    {
       "name": "Pubs, Taverns and Bars",
       "count": 7
     },
     {
       "name": "Car Retailing",
-      "count": 5
+      "count": 6
     },
     {
       "name": "Cafes and Restaurants",
@@ -76,6 +76,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-40012",
+      "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-14T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-55013",
       "merger_name": "Lawrence & Hanson - Gordon Macdonald",
@@ -107,17 +115,29 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-10T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-20013",
-      "merger_name": "Eli Lilly / Orna Therapeutics",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-08T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-85016",
+      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+      "determination": "Not approved",
+      "determination_date": "2026-04-14T12:00:00Z",
+      "page_modified_datetime": "2026-04-14T17:04:50+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-65011",
+      "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
+      "determination": "Not approved",
+      "determination_date": "2026-04-14T12:00:00Z",
+      "page_modified_datetime": "2026-04-14T16:52:12+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
     {
       "merger_id": "MN-50012",
       "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
@@ -154,26 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-04-13T12:00:00Z",
       "page_modified_datetime": "2026-04-13T17:07:35+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-75012",
-      "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
-      "determination": "Approved",
-      "determination_date": "2026-04-13T12:00:00Z",
-      "page_modified_datetime": "2026-04-13T14:41:36+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-30005",
-      "merger_name": "Adobe - Semrush",
-      "determination": "Approved",
-      "determination_date": "2026-04-10T12:00:00Z",
-      "page_modified_datetime": "2026-04-13T15:47:05+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
