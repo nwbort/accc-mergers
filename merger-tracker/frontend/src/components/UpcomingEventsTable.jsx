@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom';
 import { formatDate, getDaysRemaining } from '../utils/dates';
 
+function getEventTypeStyle(type) {
+  if (type === 'consultation_due') return 'bg-blue-50 text-blue-700 border-blue-200/60';
+  if (type === 'notice_of_competition_concerns') return 'bg-amber-50 text-amber-700 border-amber-200/60';
+  return 'bg-purple-50 text-purple-700 border-purple-200/60';
+}
+
 function UpcomingEventsTable({ events }) {
   if (!events || events.length === 0) {
     return (
@@ -65,13 +71,7 @@ function UpcomingEventsTable({ events }) {
                     <div className="text-xs text-gray-400 mt-0.5">{formatDate(event.date)}</div>
                     {/* Event badge inline on mobile */}
                     <span
-                      className={`sm:hidden inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold border mt-1.5 ${
-                        event.type === 'consultation_due'
-                          ? 'bg-blue-50 text-blue-700 border-blue-200/60'
-                          : event.type === 'notice_of_competition_concerns'
-                          ? 'bg-amber-50 text-amber-700 border-amber-200/60'
-                          : 'bg-purple-50 text-purple-700 border-purple-200/60'
-                      }`}
+                      className={`sm:hidden inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold border mt-1.5 ${getEventTypeStyle(event.type)}`}
                       role="status"
                       aria-label={`Event type: ${event.event_type_display.replace(/ due$/, '')}`}
                     >
@@ -80,13 +80,7 @@ function UpcomingEventsTable({ events }) {
                   </td>
                   <td className="hidden sm:table-cell px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
                     <span
-                      className={`inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold border ${
-                        event.type === 'consultation_due'
-                          ? 'bg-blue-50 text-blue-700 border-blue-200/60'
-                          : event.type === 'notice_of_competition_concerns'
-                          ? 'bg-amber-50 text-amber-700 border-amber-200/60'
-                          : 'bg-purple-50 text-purple-700 border-purple-200/60'
-                      }`}
+                      className={`inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold border ${getEventTypeStyle(event.type)}`}
                       role="status"
                       aria-label={`Event type: ${event.event_type_display}`}
                     >
