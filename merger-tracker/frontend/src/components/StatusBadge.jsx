@@ -4,6 +4,8 @@ function StatusBadge({ status, determination }) {
       return 'bg-emerald-50 text-emerald-700 border-emerald-200/60';
     } else if (determination === 'Declined' || determination === 'Not approved') {
       return 'bg-red-50 text-red-700 border-red-200/60';
+    } else if (determination === 'Referred to phase 2') {
+      return 'bg-amber-50 text-amber-700 border-amber-200/60';
     } else if (status === 'Under assessment') {
       return 'bg-primary/5 text-primary border-primary/20';
     } else if (status === 'Assessment suspended') {

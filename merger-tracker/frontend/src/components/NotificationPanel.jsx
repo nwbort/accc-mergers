@@ -3,6 +3,20 @@ import { Link } from 'react-router-dom';
 import { useTracking } from '../context/TrackingContext';
 import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
 
+function PanelEmptyState({ iconBg, iconColor, iconPath, title, subtitle }) {
+  return (
+    <div className="px-5 py-10 text-center">
+      <div className={`w-12 h-12 rounded-2xl ${iconBg} flex items-center justify-center mx-auto mb-3`}>
+        <svg className={`h-6 w-6 ${iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={iconPath} />
+        </svg>
+      </div>
+      <p className="text-sm font-medium text-gray-500 mb-1">{title}</p>
+      {subtitle && <p className="text-xs text-gray-400">{subtitle}</p>}
+    </div>
+  );
+}
+
 function MergerEventGroup({ group, onClose, isEventSeen }) {
   const [showPastEvents, setShowPastEvents] = useState(false);
 
@@ -230,34 +244,26 @@ function NotificationPanel({ isOpen, onClose }) {
       {/* Content */}
       <div className="overflow-y-auto flex-1">
         {trackedMergerIds.length === 0 ? (
-          <div className="px-5 py-10 text-center">
-            <div className="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center mx-auto mb-3">
-              <svg className="h-6 w-6 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-              </svg>
-            </div>
-            <p className="text-sm font-medium text-gray-500 mb-1">No tracked mergers yet</p>
-            <p className="text-xs text-gray-400">
-              Visit a merger&apos;s page and click &quot;Track&quot; to receive updates
-            </p>
-          </div>
+          <PanelEmptyState
+            iconBg="bg-gray-50"
+            iconColor="text-gray-300"
+            iconPath="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
+            title="No tracked mergers yet"
+            subtitle="Visit a merger's page and click &quot;Track&quot; to receive updates"
+          />
         ) : loading ? (
           <div className="px-5 py-10 text-center">
             <div className="animate-spin h-8 w-8 border-2 border-primary border-t-transparent rounded-full mx-auto mb-3"></div>
             <p className="text-sm text-gray-500">Loading events...</p>
           </div>
         ) : trackedEvents.length === 0 ? (
-          <div className="px-5 py-10 text-center">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-50 flex items-center justify-center mx-auto mb-3">
-              <svg className="h-6 w-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <p className="text-sm font-medium text-gray-500">No recent events</p>
-            <p className="text-xs text-gray-400 mt-1">
-              Events for your tracked mergers will appear here
-            </p>
-          </div>
+          <PanelEmptyState
+            iconBg="bg-emerald-50"
+            iconColor="text-emerald-400"
+            iconPath="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            title="No recent events"
+            subtitle="Events for your tracked mergers will appear here"
+          />
         ) : (
           <div className="divide-y divide-gray-50">
             {mergerGroups.map((group) => (

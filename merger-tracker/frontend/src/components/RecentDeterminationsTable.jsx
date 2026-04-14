@@ -2,30 +2,8 @@ import { Link } from 'react-router-dom';
 import { formatDate } from '../utils/dates';
 import { isNewItem } from '../utils/lastVisit';
 import NewBadge from './NewBadge';
+import StatusBadge from './StatusBadge';
 import WaiverBadge from './WaiverBadge';
-
-function DeterminationBadge({ determination }) {
-  const getStyle = () => {
-    if (determination === 'Approved') {
-      return 'bg-emerald-50 text-emerald-700 border border-emerald-200/60';
-    } else if (determination === 'Not approved') {
-      return 'bg-red-50 text-red-700 border border-red-200/60';
-    } else if (determination === 'Referred to phase 2') {
-      return 'bg-amber-50 text-amber-700 border border-amber-200/60';
-    }
-    return 'bg-gray-50 text-gray-700 border border-gray-200/60';
-  };
-
-  return (
-    <span
-      className={`inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold ${getStyle()}`}
-      role="status"
-      aria-label={`Determination: ${determination}`}
-    >
-      {determination}
-    </span>
-  );
-}
 
 function RecentDeterminationsTable({ determinations }) {
   if (!determinations || determinations.length === 0) {
@@ -89,7 +67,7 @@ function RecentDeterminationsTable({ determinations }) {
                   </div>
                 </td>
                 <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
-                  <DeterminationBadge determination={item.determination} />
+                  <StatusBadge determination={item.determination} />
                   <div className="text-xs text-gray-400 mt-1 pl-2.5">
                     {formatDate(item.determination_date)}
                   </div>
