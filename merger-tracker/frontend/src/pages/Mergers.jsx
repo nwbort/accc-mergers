@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
-import { Link, useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
 import BellIcon from '../components/BellIcon';
@@ -505,17 +505,23 @@ function Mergers() {
               <div
                 key={merger.merger_id}
                 data-merger-index={idx}
-                className={`bg-white rounded-2xl border shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 ${
+                role="link"
+                tabIndex={0}
+                aria-label={`View merger details for ${merger.merger_name}`}
+                onClick={() => navigate(`/mergers/${merger.merger_id}`)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    navigate(`/mergers/${merger.merger_id}`);
+                  }
+                }}
+                className={`bg-white rounded-2xl border shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 cursor-pointer ${
                   isSelected ? 'border-primary/40 ring-2 ring-primary/20' : 'border-gray-100'
                 }`}
               >
                 <div className="p-5">
                   <div className="flex items-start justify-between gap-3">
-                    <Link
-                      to={`/mergers/${merger.merger_id}`}
-                      className="flex-1 min-w-0"
-                      aria-label={`View merger details for ${merger.merger_name}`}
-                    >
+                    <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         {tracked && (
                           <svg className="h-4 w-4 flex-shrink-0 text-primary" fill="currentColor" viewBox="0 0 24 24">
@@ -530,7 +536,7 @@ function Mergers() {
                       <p className="text-xs text-gray-400 mt-1">
                         {merger.merger_id} · {merger.stage || 'N/A'}
                       </p>
-                    </Link>
+                    </div>
                     <div className="flex items-center gap-2 flex-shrink-0">
                       <StatusBadge
                         status={merger.status}
