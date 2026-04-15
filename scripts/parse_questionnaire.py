@@ -115,10 +115,14 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
     """
     questions = []
 
-    # Find the "Questions" heading line
+    # Find the "Questions" heading line.
+    # Must start with "Questions" but NOT "Questions for ..." (which is a sub-section).
+    # Matches: "Questions", "Questions – please answer...", etc.
     start_idx = None
     for i, line in enumerate(lines):
-        if re.match(r'^Questions\b', line['text']) and line['is_bold']:
+        if (line['is_bold']
+                and re.match(r'^Questions\b', line['text'])
+                and not re.match(r'^Questions\s+for\s+', line['text'], re.IGNORECASE)):
             start_idx = i + 1
             break
 
@@ -352,6 +356,15 @@ def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[st
 
 if __name__ == "__main__":
     import sys
+
+    if len(sys.argv) > 1 and sys.argv[1] == '--debug-lines':
+        # Dump annotated lines for a PDF to debug extraction
+        pdf_path = sys.argv[2]
+        lines, full_text = extract_lines_with_formatting(pdf_path)
+        for i, line in enumerate(lines):
+            bold = 'BOLD' if line['is_bold'] else '    '
+            print(f"{i:3d} [{bold}] {line['text']}")
+        sys.exit(0)
 
     if len(sys.argv) > 1:
         # Process a single PDF file

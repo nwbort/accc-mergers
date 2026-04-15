@@ -344,18 +344,29 @@ class TestExtractQuestions:
         assert result[0]['section'] == 'Questions for customers of Event Stream Processing Software and Integration Software'
         assert result[1]['section'] == result[0]['section']
 
-    def test_questions_heading_with_trailing_text(self):
-        """'Questions' heading that isn't alone on a line (e.g. 'Questions  ')."""
+    def test_questions_for_not_treated_as_heading(self):
+        """'Questions for ...' is a sub-section, not the main heading."""
         lines = _lines(
-            ("Questions for the parties", True),  # not matching - wrong format
+            ("Questions for the parties", True),
             "1. Should not match.",
         )
-        # This shouldn't match as a heading since it doesn't start with just "Questions"
-        # followed by a word boundary at position 9
-        # Actually "Questions" does match ^Questions\b in "Questions for the parties"
-        # So this WILL be treated as the heading
+        # "Questions for ..." should NOT match as the main heading
         result = extract_questions(lines)
-        assert len(result) == 1
+        assert len(result) == 0
+
+    def test_heading_with_subtitle(self):
+        """Heading like 'Questions – please answer all questions...'"""
+        lines = _lines(
+            ("Questions – please answer all questions", True),
+            ("General questions", True),
+            "1. Describe your business.",
+            ("Questions for suppliers of ITOM software", True),
+            "2. Describe your position.",
+        )
+        result = extract_questions(lines)
+        assert len(result) == 2
+        assert result[0]['section'] == 'General questions'
+        assert result[1]['section'] == 'Questions for suppliers of ITOM software'
 
 
 class TestExtractQuestionsFromText:
