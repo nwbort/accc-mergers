@@ -128,7 +128,7 @@ function QuestionnaireSection({ mergerId, events }) {
                     </span>
                   )}
                 </p>
-                {questionnaireEvents.map((event, idx) => (
+                {questionnaireEvents.map((event) => (
                   <a
                     key={event.url_gh}
                     href={event.url_gh}
