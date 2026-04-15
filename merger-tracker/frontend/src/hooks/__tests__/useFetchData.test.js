@@ -100,6 +100,25 @@ describe('useFetchData', () => {
     expect(consoleErrorSpy).toHaveBeenCalled();
   });
 
+  it('surfaces SyntaxError from res.json() as HTTP 404 (SPA fallback case)', async () => {
+    // Cloudflare Pages serves index.html with HTTP 200 for missing static
+    // files; res.json() then throws SyntaxError. Consumers (MergerDetail /
+    // IndustryDetail) rely on this being reported as a 404.
+    vi.spyOn(globalThis, 'fetch').mockResolvedValue({
+      ok: true,
+      status: 200,
+      json: () => Promise.reject(new SyntaxError(`Unexpected token '<'`)),
+    });
+
+    const { result } = renderHook(() => useFetchData('/data/missing.json'));
+
+    await waitFor(() => expect(result.current.loading).toBe(false));
+
+    expect(result.current.error).toBe('HTTP 404');
+    expect(result.current.data).toBeNull();
+    expect(consoleErrorSpy).toHaveBeenCalled();
+  });
+
   it('captures network errors and logs them to console.error', async () => {
     vi.spyOn(globalThis, 'fetch').mockRejectedValue(new TypeError('Failed to fetch'));
 
@@ -118,12 +137,8 @@ describe('useFetchData', () => {
       (_url, { signal }) => {
         // Reject with AbortError when the caller aborts, matching fetch semantics.
         signal.addEventListener('abort', () => {
-          const abortErr = new Error('aborted');
-          abortErr.name = 'AbortError';
-          // eslint-disable-next-line promise/no-promise-in-callback
-          Promise.resolve().then(() => {
-            // no-op; promise already wired up via `reject` below
-          });
+          // The caller aborting doesn't need to do anything extra here — the
+          // deferred promise stays pending until the test resolves it below.
         });
         return promise;
       }

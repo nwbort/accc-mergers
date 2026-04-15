@@ -56,6 +56,18 @@ export function useFetchData(url, { cacheKey } = {}) {
       })
       .catch((err) => {
         if (err.name === 'AbortError' || controller.signal.aborted) return;
+        // On static SPA deploys (e.g. Cloudflare Pages), a request for a
+        // missing JSON file returns the index.html fallback with HTTP 200.
+        // Parsing that as JSON throws SyntaxError — surface it as an HTTP 404
+        // so callers can distinguish "not found" from real errors.
+        if (err.name === 'SyntaxError') {
+          console.error(
+            `useFetchData: JSON parse failed for ${url} (likely 404 via SPA fallback):`,
+            err
+          );
+          setResult({ data: null, error: 'HTTP 404', url });
+          return;
+        }
         console.error(`useFetchData failed for ${url}:`, err);
         setResult({ data: null, error: err.message, url });
       });
