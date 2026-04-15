@@ -32,7 +32,8 @@ export function TrackingProvider({ children }) {
     try {
       const stored = localStorage.getItem(STORAGE_KEYS.TRACKED_MERGERS);
       return stored ? JSON.parse(stored) : [];
-    } catch {
+    } catch (err) {
+      console.error('Failed to read tracked mergers from localStorage:', err);
       return [];
     }
   });
@@ -44,7 +45,8 @@ export function TrackingProvider({ children }) {
       if (!stored) return new Set();
       const keys = JSON.parse(stored);
       return new Set(keys);
-    } catch {
+    } catch (err) {
+      console.error('Failed to read seen events from localStorage:', err);
       return new Set();
     }
   });
