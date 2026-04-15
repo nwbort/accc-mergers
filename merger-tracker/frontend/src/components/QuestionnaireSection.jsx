@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { formatDate } from '../utils/dates';
+import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
 import ExternalLinkIcon from './ExternalLinkIcon';
 import { API_ENDPOINTS } from '../config';
 
@@ -31,6 +31,16 @@ function QuestionnaireSection({ mergerId, events }) {
     if (willExpand && !questionnaire && !error) {
       fetchQuestionnaire();
     }
+  };
+
+  const renderDeadlineCountdown = (deadlineIso) => {
+    if (isDatePast(deadlineIso)) return 'responses now closed';
+    // Anchor the deadline at noon UTC so the calendar-day count matches
+    // the dashboard's Upcoming Events table (whose dates include a time).
+    const daysRemaining = getDaysRemaining(deadlineIso + 'T12:00:00Z');
+    if (daysRemaining === null) return null;
+    if (daysRemaining === 0) return 'today';
+    return `${daysRemaining} day${daysRemaining === 1 ? '' : 's'}`;
   };
 
   // Find all questionnaire document links from events (some mergers have multiple)
@@ -108,7 +118,14 @@ function QuestionnaireSection({ mergerId, events }) {
                 <p className="text-xs text-gray-400">
                   {questionnaire.questions_count} question{questionnaire.questions_count !== 1 ? 's' : ''}
                   {questionnaire.deadline_iso && (
-                    <span> · Responses due {formatDate(questionnaire.deadline_iso + 'T12:00:00Z')}</span>
+                    <span>
+                      {' · Responses due '}
+                      {formatDate(questionnaire.deadline_iso + 'T12:00:00Z')}
+                      {(() => {
+                        const countdown = renderDeadlineCountdown(questionnaire.deadline_iso);
+                        return countdown ? ` (${countdown})` : '';
+                      })()}
+                    </span>
                   )}
                 </p>
                 {questionnaireEvents.map((event, idx) => (
