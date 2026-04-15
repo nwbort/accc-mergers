@@ -7,7 +7,7 @@ import WaiverBadge from '../components/WaiverBadge';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS, SUBSCRIBE_ENDPOINT, TURNSTILE_SITE_KEY } from '../config';
 import { formatDate } from '../utils/dates';
-import { dataCache } from '../utils/dataCache';
+import { useFetchData } from '../hooks/useFetchData';
 import {
   DIGEST_COLOR_KEYS,
   DIGEST_COLOR_CLASSES as COLOR_CLASSES,
@@ -244,27 +244,9 @@ function DigestSignup() {
 }
 
 function Digest() {
-  const [digest, setDigest] = useState(() => dataCache.get('digest') || null);
-  const [loading, setLoading] = useState(() => !dataCache.has('digest'));
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetchDigest();
-  }, []);
-
-  const fetchDigest = async () => {
-    try {
-      const response = await fetch(API_ENDPOINTS.digest);
-      if (!response.ok) throw new Error('Failed to fetch digest');
-      const data = await response.json();
-      dataCache.set('digest', data);
-      setDigest(data);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { data: digest, loading, error } = useFetchData(API_ENDPOINTS.digest, {
+    cacheKey: 'digest',
+  });
 
   const formatDateRange = (startDate, endDate) => {
     if (!startDate || !endDate) return '';

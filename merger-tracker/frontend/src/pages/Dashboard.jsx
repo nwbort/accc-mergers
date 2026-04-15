@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Doughnut } from 'react-chartjs-2';
 import StatusBadge from '../components/StatusBadge';
@@ -18,7 +18,7 @@ import RecentDeterminationsTable from '../components/RecentDeterminationsTable';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
-import { dataCache } from '../utils/dataCache';
+import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen, isNewItem } from '../utils/lastVisit';
 
 ChartJS.register(
@@ -29,16 +29,15 @@ ChartJS.register(
 );
 
 function Dashboard() {
-  const [stats, setStats] = useState(() => dataCache.get('dashboard-stats') || null);
-  const [upcomingEvents, setUpcomingEvents] = useState(() => dataCache.get('dashboard-events') || null);
-  const [loading, setLoading] = useState(() => !dataCache.has('dashboard-stats'));
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetchStats();
-    fetchUpcomingEvents();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const { data: stats, loading, error } = useFetchData(API_ENDPOINTS.stats, {
+    cacheKey: 'dashboard-stats',
+  });
+  // A failed upcoming-events fetch shouldn't block the page — we just omit the
+  // section. Errors are logged by the hook.
+  const { data: upcomingEventsData } = useFetchData(API_ENDPOINTS.upcomingEvents, {
+    cacheKey: 'dashboard-events',
+  });
+  const upcomingEvents = upcomingEventsData?.events ?? null;
 
   // Mark items as seen after user has viewed them for 2 seconds
   // This ensures the "New" badge persists across refreshes
@@ -46,57 +45,18 @@ function Dashboard() {
     if (!stats) return;
 
     const timer = setTimeout(() => {
-      markCurrentItemsAsSeen();
+      const itemIds = [];
+      if (stats.recent_mergers) {
+        itemIds.push(...stats.recent_mergers.map(m => m.merger_id));
+      }
+      if (stats.recent_determinations) {
+        itemIds.push(...stats.recent_determinations.map(d => d.merger_id));
+      }
+      markItemsAsSeen(itemIds);
     }, 2000); // 2 second delay to ensure user actually viewed the content
 
     return () => clearTimeout(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stats]);
-
-  const markCurrentItemsAsSeen = () => {
-    if (!stats) return;
-
-    const itemIds = [];
-
-    // Collect all merger IDs from recently notified mergers
-    if (stats.recent_mergers) {
-      itemIds.push(...stats.recent_mergers.map(m => m.merger_id));
-    }
-
-    // Collect all merger IDs from recent determinations
-    if (stats.recent_determinations) {
-      itemIds.push(...stats.recent_determinations.map(d => d.merger_id));
-    }
-
-    // Mark them all as seen
-    markItemsAsSeen(itemIds);
-  };
-
-  const fetchStats = async () => {
-    try {
-      const response = await fetch(API_ENDPOINTS.stats);
-      if (!response.ok) throw new Error('Failed to fetch statistics');
-      const data = await response.json();
-      dataCache.set('dashboard-stats', data);
-      setStats(data);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const fetchUpcomingEvents = async () => {
-    try {
-      const response = await fetch(API_ENDPOINTS.upcomingEvents);
-      if (!response.ok) throw new Error('Failed to fetch upcoming events');
-      const data = await response.json();
-      dataCache.set('dashboard-events', data.events);
-      setUpcomingEvents(data.events);
-    } catch {
-      setUpcomingEvents([]);
-    }
-  };
 
   if (loading) return <LoadingSpinner />;
   if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;

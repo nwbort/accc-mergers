@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -8,31 +7,14 @@ import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
-import { dataCache } from '../utils/dataCache';
+import { useFetchData } from '../hooks/useFetchData';
 import { PROSE_MARKDOWN } from '../utils/classNames';
 
 function Commentary() {
-  const [items, setItems] = useState(() => dataCache.get('commentary-items') || []);
-  const [loading, setLoading] = useState(() => !dataCache.has('commentary-items'));
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetchCommentary();
-  }, []);
-
-  const fetchCommentary = async () => {
-    try {
-      const response = await fetch(API_ENDPOINTS.commentary);
-      if (!response.ok) throw new Error('Failed to fetch commentary');
-      const data = await response.json();
-      dataCache.set('commentary-items', data.items);
-      setItems(data.items);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { data, loading, error } = useFetchData(API_ENDPOINTS.commentary, {
+    cacheKey: 'commentary-items',
+  });
+  const items = data?.items || [];
 
   if (loading) return <LoadingSpinner />;
   if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;

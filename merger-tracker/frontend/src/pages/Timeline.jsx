@@ -6,30 +6,49 @@ import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
+import { useFetchData } from '../hooks/useFetchData';
 
 const ITEMS_PER_PAGE = 15;
 const LOAD_MORE_COUNT = 10;
 const SCROLL_THRESHOLD_PX = 300;
 
 function Timeline() {
-  const cachedEvents = dataCache.get('timeline-events');
-  const [allEvents, setAllEvents] = useState(() => cachedEvents || []);
-  const [displayedEvents, setDisplayedEvents] = useState(() =>
-    cachedEvents ? cachedEvents.slice(0, ITEMS_PER_PAGE) : []
+  const { data: meta, error: metaError } = useFetchData(
+    API_ENDPOINTS.timelineMeta,
+    { cacheKey: 'timeline-meta' }
   );
-  const [loading, setLoading] = useState(() => !cachedEvents);
-  const [loadingMore, setLoadingMore] = useState(false);
-  const loadingMoreRef = useRef(false);
-  const [error, setError] = useState(null);
-  const [hasMore, setHasMore] = useState(() =>
-    cachedEvents ? cachedEvents.length > ITEMS_PER_PAGE : true
-  );
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(null);
+  const totalPages = meta?.total_pages ?? null;
+  const lastPage = totalPages;
 
+  // Events are stored date-ascending (oldest first). We fetch the last page
+  // first — the hook handles caching the raw response — then reverse below.
+  const { data: lastPageData, error: pageError } = useFetchData(
+    lastPage ? API_ENDPOINTS.timelinePage(lastPage) : null,
+    { cacheKey: lastPage ? `timeline-page-${lastPage}-raw` : undefined }
+  );
+
+  const [allEvents, setAllEvents] = useState([]);
+  const [displayedEvents, setDisplayedEvents] = useState([]);
+  const [hasMore, setHasMore] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [initialLoaded, setInitialLoaded] = useState(false);
+  const loadingMoreRef = useRef(false);
+
+  // Initialize display state once the last page's events arrive.
   useEffect(() => {
-    fetchTimeline();
-  }, []);
+    if (!lastPageData || !lastPage) return;
+    const events = [...lastPageData.events].reverse();
+    setAllEvents(events);
+    setDisplayedEvents(events.slice(0, ITEMS_PER_PAGE));
+    setHasMore(events.length > ITEMS_PER_PAGE || lastPage > 1);
+    setCurrentPage(lastPage);
+    setInitialLoaded(true);
+  }, [lastPageData, lastPage]);
+
+  const error = metaError || pageError;
+  // Show the spinner until the initial events are processed (or an error occurs).
+  const loading = !error && !initialLoaded;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,34 +64,6 @@ function Timeline() {
     return () => window.removeEventListener('scroll', handleScroll);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasMore, loadingMore, displayedEvents.length, allEvents.length, currentPage, totalPages]);
-
-  const fetchTimeline = async () => {
-    try {
-      // Fetch metadata to know total pages
-      const metaResponse = await fetch(API_ENDPOINTS.timelineMeta);
-      if (!metaResponse.ok) throw new Error('Failed to fetch timeline metadata');
-      const meta = await metaResponse.json();
-      setTotalPages(meta.total_pages);
-
-      // Events are stored date-ascending (oldest first), so fetch the last page
-      // to show the most recent events first. Reverse for display.
-      const lastPage = meta.total_pages;
-      const response = await fetch(API_ENDPOINTS.timelinePage(lastPage));
-      if (!response.ok) throw new Error('Failed to fetch timeline');
-      const data = await response.json();
-
-      const events = [...data.events].reverse();
-      dataCache.set(`timeline-page-${lastPage}`, events);
-      setAllEvents(events);
-      setDisplayedEvents(events.slice(0, ITEMS_PER_PAGE));
-      setHasMore(events.length > ITEMS_PER_PAGE || meta.total_pages > 1);
-      setCurrentPage(lastPage);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const loadMoreEvents = async () => {
     if (loadingMoreRef.current || !hasMore) return;

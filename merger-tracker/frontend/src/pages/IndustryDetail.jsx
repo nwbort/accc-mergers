@@ -1,11 +1,10 @@
-import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
 import WaiverBadge from '../components/WaiverBadge';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
-import { dataCache } from '../utils/dataCache';
+import { useFetchData } from '../hooks/useFetchData';
 
 function IndustryDetail() {
   const { code } = useParams();
@@ -15,53 +14,27 @@ function IndustryDetail() {
   } catch {
     decodedCode = code;
   }
-  const [data, setData] = useState(() => dataCache.get(`industry-${decodedCode}`) || null);
-  const [industries, setIndustries] = useState(() => dataCache.get('industries-list') || null);
-  const [loading, setLoading] = useState(() => !dataCache.has(`industry-${decodedCode}`));
-  const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [decodedCode]);
+  const { data, loading, error } = useFetchData(
+    API_ENDPOINTS.industryDetail(decodedCode),
+    { cacheKey: `industry-${decodedCode}` }
+  );
+  // The industries list is used solely to resolve the display name. A failure
+  // there shouldn't block the page — we fall back to the code.
+  const { data: industriesData } = useFetchData(API_ENDPOINTS.industries, {
+    cacheKey: 'industries-list',
+  });
+  const industries = industriesData?.industries || null;
 
-  const fetchData = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const [detailRes, industriesRes] = await Promise.all([
-        fetch(API_ENDPOINTS.industryDetail(decodedCode)),
-        industries ? Promise.resolve(null) : fetch(API_ENDPOINTS.industries),
-      ]);
-
-      if (!detailRes.ok) {
-        if (detailRes.status === 404) throw new Error('not_found');
-        throw new Error('Failed to fetch industry data');
-      }
-
-      const detailData = await detailRes.json();
-      dataCache.set(`industry-${decodedCode}`, detailData);
-      setData(detailData);
-
-      if (industriesRes) {
-        const industriesData = await industriesRes.json();
-        dataCache.set('industries-list', industriesData.industries);
-        setIndustries(industriesData.industries);
-      }
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const isNotFound = error === 'HTTP 404';
 
   if (loading) return <LoadingSpinner />;
 
   if (error) {
     return (
       <ErrorCard
-        title={error === 'not_found' ? 'Industry not found' : 'Error loading industry'}
-        message={error === 'not_found'
+        title={isNotFound ? 'Industry not found' : 'Error loading industry'}
+        message={isNotFound
           ? `We couldn't find an industry with code "${decodedCode}".`
           : error
         }

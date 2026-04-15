@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -10,47 +10,23 @@ import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import QuestionnaireSection from '../components/QuestionnaireSection';
 import { useTracking } from '../context/TrackingContext';
+import { useFetchData } from '../hooks/useFetchData';
 import { formatDate, calculateDuration, getDaysRemaining, calculateBusinessDays, getBusinessDaysRemaining } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN } from '../utils/classNames';
 
 function MergerDetail() {
   const { id } = useParams();
-  const [merger, setMerger] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const { data: merger, loading, error } = useFetchData(
+    API_ENDPOINTS.mergerDetail(id),
+    { cacheKey: `merger-${id}` }
+  );
+  const isNotFound = error === 'HTTP 404';
   const [expandedParties, setExpandedParties] = useState({});
   const { isTracked, toggleTracking } = useTracking();
   const tracked = isTracked(id);
   const savedParams = sessionStorage.getItem('mergers_filter_params');
   const backToMergers = savedParams ? `/mergers?${savedParams}` : '/mergers';
-
-  useEffect(() => {
-    fetchMerger();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id]);
-
-  const fetchMerger = async () => {
-    try {
-      const response = await fetch(API_ENDPOINTS.mergerDetail(id));
-      if (!response.ok) {
-        if (response.status === 404) {
-          throw new Error('not_found');
-        }
-        throw new Error('Failed to fetch merger details');
-      }
-      const data = await response.json();
-      setMerger(data);
-    } catch (err) {
-      if (err.name === 'TypeError' || err.name === 'SyntaxError') {
-        setError('not_found');
-      } else {
-        setError(err.message);
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const togglePartyExpand = (partyType) => {
     setExpandedParties(prev => ({
@@ -97,8 +73,8 @@ function MergerDetail() {
   if (error) {
     return (
       <ErrorCard
-        title={error === 'not_found' ? "Merger not found" : "Error loading merger"}
-        message={error === 'not_found'
+        title={isNotFound ? "Merger not found" : "Error loading merger"}
+        message={isNotFound
           ? `We couldn't find a merger with ID "${id}". It may have been removed or the ID might be incorrect.`
           : error
         }
