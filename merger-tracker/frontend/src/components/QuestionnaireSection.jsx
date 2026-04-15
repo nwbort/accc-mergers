@@ -35,7 +35,9 @@ function QuestionnaireSection({ mergerId, events }) {
 
   const renderDeadlineCountdown = (deadlineIso) => {
     if (isDatePast(deadlineIso)) return 'responses now closed';
-    const daysRemaining = getDaysRemaining(deadlineIso);
+    // Anchor the deadline at noon UTC so the calendar-day count matches
+    // the dashboard's Upcoming Events table (whose dates include a time).
+    const daysRemaining = getDaysRemaining(deadlineIso + 'T12:00:00Z');
     if (daysRemaining === null) return null;
     if (daysRemaining === 0) return 'today';
     return `${daysRemaining} day${daysRemaining === 1 ? '' : 's'}`;
