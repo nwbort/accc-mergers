@@ -1,0 +1,112 @@
+name: Detect Related Mergers
+
+on:
+  schedule:
+    # Daily at 2:30 AM UTC — slightly after detect-duplicates so that run's
+    # processed data is settled. Adjust freely.
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Run related-merger detection
+        id: detect
+        run: |
+          python3 scripts/detect_related_mergers.py \
+            --branch "${{ github.event.repository.default_branch }}" \
+            --issue-json issue_payload.json || true
+          FOUND=$(jq -r '.found' issue_payload.json)
+          COUNT=$(jq -r '.count' issue_payload.json)
+          echo "found=$FOUND" >> "$GITHUB_OUTPUT"
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "### Related mergers detection" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$FOUND" = "true" ]; then
+            echo "Found **$COUNT** candidate pair(s)." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "No new candidate pairs found." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Ensure label exists
+        if: steps.detect.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create "related-mergers" \
+            --description "Candidate related-merger pairs suggested for related_mergers.json" \
+            --color "1f6feb" \
+            --force
+
+      # If the bot has already opened an issue whose body matches the current
+      # candidate set, do nothing — this avoids spamming the issue list on
+      # every run. If the candidate set has changed, close the stale issue(s)
+      # before opening a fresh one.
+      - name: Decide whether to (re)create the issue
+        id: decide
+        if: steps.detect.outputs.found == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          CURRENT_BODY=$(jq -r '.body' issue_payload.json)
+          # Existing open issues authored by the bot
+          MATCH_NUM=""
+          STALE_NUMS=""
+          for num in $(gh issue list --label "related-mergers" --state open --json number --jq '.[].number'); do
+            BODY=$(gh issue view "$num" --json body --jq '.body')
+            if [ "$BODY" = "$CURRENT_BODY" ]; then
+              MATCH_NUM="$num"
+            else
+              STALE_NUMS="$STALE_NUMS $num"
+            fi
+          done
+          echo "match=$MATCH_NUM" >> "$GITHUB_OUTPUT"
+          echo "stale=$STALE_NUMS" >> "$GITHUB_OUTPUT"
+
+      - name: Close stale related-mergers issues
+        if: steps.detect.outputs.found == 'true' && steps.decide.outputs.stale != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for num in ${{ steps.decide.outputs.stale }}; do
+            gh issue close "$num" \
+              --comment "Superseded by a new detection run — closing to recreate with the updated candidate set." \
+              || true
+          done
+
+      - name: Create related-mergers issue
+        if: steps.detect.outputs.found == 'true' && steps.decide.outputs.match == ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE=$(jq -r '.title' issue_payload.json)
+          BODY=$(jq -r '.body' issue_payload.json)
+          gh issue create \
+            --title "$TITLE" \
+            --body "$BODY" \
+            --label "related-mergers"
+
+      - name: Close all related-mergers issues when none detected
+        if: steps.detect.outputs.found == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for num in $(gh issue list --label "related-mergers" --state open --json number --jq '.[].number'); do
+            gh issue close "$num" \
+              --comment "All previously suggested related-merger candidates have been resolved as of $(date -u +%Y-%m-%d). Closing automatically." \
+              || true
+          done
