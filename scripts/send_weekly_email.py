@@ -561,12 +561,19 @@ def create_broadcast(api_key: str, audience_id: str, subject: str, html: str, na
         timeout=30,
     )
     if not resp.ok:
-        print(f"ERROR creating broadcast: {resp.status_code} {resp.text}", file=sys.stderr)
+        # Avoid logging resp.text — Resend error bodies can include recipient
+        # metadata that would end up in public GitHub Actions logs.
+        err_name = "unknown"
+        try:
+            err_name = str(resp.json().get("name", "unknown"))
+        except Exception:
+            pass
+        print(f"ERROR creating broadcast: {resp.status_code} {err_name}", file=sys.stderr)
         sys.exit(1)
     data = resp.json()
     broadcast_id = data.get("id")
     if not broadcast_id:
-        print(f"ERROR: no broadcast ID in response: {data}", file=sys.stderr)
+        print("ERROR: no broadcast ID in Resend response", file=sys.stderr)
         sys.exit(1)
     return broadcast_id
 
@@ -579,7 +586,12 @@ def send_broadcast(api_key: str, broadcast_id: str) -> None:
         timeout=30,
     )
     if not resp.ok:
-        print(f"ERROR sending broadcast: {resp.status_code} {resp.text}", file=sys.stderr)
+        err_name = "unknown"
+        try:
+            err_name = str(resp.json().get("name", "unknown"))
+        except Exception:
+            pass
+        print(f"ERROR sending broadcast: {resp.status_code} {err_name}", file=sys.stderr)
         sys.exit(1)
 
 # ---------------------------------------------------------------------------

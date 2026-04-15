@@ -33,10 +33,33 @@ export async function onRequest(context) {
     mergerPageUrl: `/mergers/${matterId}`,
   });
 
+  // Security headers — Pages Functions override the top-level _headers file for
+  // any response they produce, so we repeat the baseline set here. The CSP
+  // mirrors public/_headers with the additions needed by this inline viewer:
+  //   • style-src 'unsafe-inline' for the <style> block rendered in the HTML
+  //   • object-src 'self' for the <object data="...pdf"> preview
+  const csp = [
+    "default-src 'self'",
+    "script-src 'self'",
+    "style-src 'self' 'unsafe-inline'",
+    "img-src 'self' data:",
+    "font-src 'self' data:",
+    "connect-src 'self'",
+    "object-src 'self'",
+    "frame-ancestors 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "upgrade-insecure-requests",
+  ].join('; ');
+
   return new Response(html, {
     headers: {
       'Content-Type': 'text/html; charset=utf-8',
       'Cache-Control': 'public, max-age=3600',
+      'Content-Security-Policy': csp,
+      'X-Content-Type-Options': 'nosniff',
+      'X-Frame-Options': 'DENY',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
     },
   });
 }
