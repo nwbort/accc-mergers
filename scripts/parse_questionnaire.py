@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
 Parse questionnaire PDFs to extract consultation closing date and questions.
+
+Uses pdfplumber's character-level font metadata to detect bold section
+headers structurally, rather than relying on regex patterns.
 """
 
 import pdfplumber
@@ -42,66 +45,137 @@ def extract_deadline(text: str) -> Optional[str]:
     return None
 
 
-def extract_questions(text: str) -> List[Dict[str, str]]:
+def _is_bold_line(chars: list) -> bool:
     """
-    Extract the numbered questions from the questionnaire.
+    Determine if a line is bold by examining character font names.
 
-    Questions typically appear after a "Questions" heading and are numbered.
-    Each question may span multiple lines. Question numbers may also appear
-    inline (e.g., "10.Please" without a newline) due to PDF text extraction.
+    A line is considered bold if the majority of its non-space alphabetic
+    characters use a bold font (fontname contains "Bold").
+    """
+    if not chars:
+        return False
+
+    alpha_chars = [c for c in chars if c.get('text', '').strip()]
+    if not alpha_chars:
+        return False
+
+    bold_count = sum(
+        1 for c in alpha_chars
+        if 'bold' in c.get('fontname', '').lower()
+    )
+
+    return bold_count > len(alpha_chars) / 2
+
+
+def extract_lines_with_formatting(pdf_path: str) -> List[Dict]:
+    """
+    Extract text lines from a PDF with formatting metadata.
+
+    Returns a list of dicts, each with:
+    - text: the line's text content
+    - is_bold: whether the line is predominantly bold
+
+    Also returns the full plain text for deadline extraction.
+    """
+    lines = []
+    full_text = ""
+
+    with pdfplumber.open(pdf_path) as pdf:
+        for page in pdf.pages:
+            page_text = page.extract_text()
+            if page_text:
+                full_text += page_text + "\n"
+
+            text_lines = page.extract_text_lines(return_chars=True)
+            for tl in text_lines:
+                text = tl.get('text', '').strip()
+                if text:
+                    lines.append({
+                        'text': text,
+                        'is_bold': _is_bold_line(tl.get('chars', [])),
+                    })
+
+    return lines, full_text
+
+
+def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
+    """
+    Extract the numbered questions from annotated lines.
+
+    Uses font metadata (bold detection) to identify section headers
+    instead of regex pattern matching. A bold, non-numbered line within
+    the questions block is treated as a section header.
 
     Args:
-        text: Full text of the questionnaire PDF
+        lines: List of dicts with 'text' and 'is_bold' keys,
+               as returned by extract_lines_with_formatting().
 
     Returns:
-        List of dictionaries with 'number' and 'text' keys
+        List of dictionaries with 'number', 'text', and optionally 'section' keys
     """
     questions = []
 
-    # Find the "Questions" section heading (must be at the start of a line, capital Q)
-    questions_match = re.search(r'^Questions\b', text, re.MULTILINE)
-    if not questions_match:
+    # Find the "Questions" heading line.
+    # Must start with "Questions" but NOT "Questions for ..." (which is a sub-section).
+    # Matches: "Questions", "Questions – please answer...", etc.
+    # The heading may or may not be bold (some PDFs don't mark it as bold).
+    start_idx = None
+    for i, line in enumerate(lines):
+        if (re.match(r'^Questions\b', line['text'])
+                and not re.match(r'^Questions\s+for\s+', line['text'], re.IGNORECASE)):
+            start_idx = i + 1
+            break
+
+    if start_idx is None:
         return questions
-
-    # Get text after the "Questions" heading
-    text_after_questions = text[questions_match.end():]
-
-    # Split into lines for processing
-    lines = text_after_questions.split('\n')
 
     current_question_num = None
     current_question_text = []
+    current_section = None
+    has_sections = False
+    prev_was_section_header = False
 
     def save_current_question():
         """Helper to save the current question to the list."""
         nonlocal current_question_num, current_question_text
         if current_question_num is not None:
             full_text = ' '.join(current_question_text).strip()
-            # Clean up any multiple spaces
             full_text = re.sub(r'\s+', ' ', full_text)
-            # Remove trailing section headings (e.g., "Questions for customers of...", "Other issues")
-            full_text = re.sub(r'\s+Questions for (customers|suppliers) of .+$', '', full_text)
-            full_text = re.sub(r'\s+Other issues$', '', full_text)
             # Remove trailing page numbers (single digit at the end)
             full_text = re.sub(r'\s+\d$', '', full_text)
             questions.append({
                 'number': current_question_num,
-                'text': full_text
+                'text': full_text,
+                'section': current_section,
             })
 
-    for line in lines:
-        line = line.strip()
-
-        # Skip empty lines
-        if not line:
-            continue
+    for line in lines[start_idx:]:
+        text = line['text']
+        is_bold = line['is_bold']
 
         # Stop if we hit certain keywords that indicate end of questions section
-        if re.match(r'^(Confidentiality|Note:|Please note)', line, re.IGNORECASE):
+        if re.match(r'^(Confidentiality|Note:|Please note)', text, re.IGNORECASE):
             break
 
+        # Bold non-numbered line = section header
+        if is_bold and not re.match(r'^\d+\.', text):
+            if current_question_num is not None:
+                save_current_question()
+                current_question_num = None
+                current_question_text = []
+            # Consecutive bold lines = multi-line section header, concatenate
+            if prev_was_section_header and current_section:
+                current_section = current_section + ' ' + text
+            else:
+                current_section = text
+            has_sections = True
+            prev_was_section_header = True
+            continue
+
+        prev_was_section_header = False
+
         # Check if this line starts a new question (e.g., "1.", "2.", "3.")
-        question_start_match = re.match(r'^(\d+)\.\s*(.*)$', line)
+        question_start_match = re.match(r'^(\d+)\.\s*(.*)$', text)
 
         if question_start_match:
             # Save the previous question if exists
@@ -112,17 +186,14 @@ def extract_questions(text: str) -> List[Dict[str, str]]:
             remaining_text = question_start_match.group(2)
 
             # Check if there are inline questions in the remaining text
-            # Pattern matches "10.Text" or "10. Text" inline (question number followed by period)
             inline_questions = re.split(r'\s+(?=\d+\.\s*[A-Z])', remaining_text)
 
             if len(inline_questions) > 1:
-                # First part is the current question text
                 current_question_text = [inline_questions[0]]
                 save_current_question()
                 current_question_num = None
                 current_question_text = []
 
-                # Process each inline question
                 for inline_q in inline_questions[1:]:
                     inline_match = re.match(r'^(\d+)\.\s*(.*)$', inline_q)
                     if inline_match:
@@ -134,19 +205,15 @@ def extract_questions(text: str) -> List[Dict[str, str]]:
             else:
                 current_question_text = [remaining_text] if remaining_text else []
         elif current_question_num is not None:
-            # This line is a continuation of the current question
-            # But first check if it contains inline question numbers
-            # Pattern: text followed by "10.Text" or "10. Text"
-            inline_split = re.split(r'\s+(?=\d+\.\s*[A-Z])', line)
+            # Continuation of current question
+            inline_split = re.split(r'\s+(?=\d+\.\s*[A-Z])', text)
 
             if len(inline_split) > 1:
-                # First part is continuation of current question
                 current_question_text.append(inline_split[0])
                 save_current_question()
                 current_question_num = None
                 current_question_text = []
 
-                # Process each inline question
                 for inline_q in inline_split[1:]:
                     inline_match = re.match(r'^(\d+)\.\s*(.*)$', inline_q)
                     if inline_match:
@@ -156,17 +223,59 @@ def extract_questions(text: str) -> List[Dict[str, str]]:
                         current_question_num = None
                         current_question_text = []
             else:
-                current_question_text.append(line)
+                current_question_text.append(text)
 
     # Don't forget the last question
     save_current_question()
 
+    # If no sections were found, strip the section field to keep output clean
+    if not has_sections:
+        for q in questions:
+            del q['section']
+
     return questions
+
+
+def extract_questions_from_text(text: str) -> List[Dict[str, str]]:
+    """
+    Fallback: extract questions from plain text without formatting metadata.
+
+    Used when character-level data is unavailable (e.g., in tests).
+    Falls back to regex-based section detection for known patterns.
+
+    Args:
+        text: Full text of the questionnaire PDF
+
+    Returns:
+        List of dictionaries with 'number', 'text', and optionally 'section' keys
+    """
+    # Build annotated lines from plain text using regex heuristics
+    questions_match = re.search(r'^Questions\b', text, re.MULTILINE)
+    if not questions_match:
+        return []
+
+    annotated_lines = []
+    for raw_line in text.split('\n'):
+        stripped = raw_line.strip()
+        if not stripped:
+            continue
+        # Heuristic: detect section headers by known patterns
+        is_header = bool(
+            re.match(r'^Questions(\s+for\s+|\s*$)', stripped, re.IGNORECASE)
+            or re.match(r'^General\s+questions', stripped, re.IGNORECASE)
+            or re.match(r'^Other\s+issues', stripped, re.IGNORECASE)
+        )
+        annotated_lines.append({'text': stripped, 'is_bold': is_header})
+
+    return extract_questions(annotated_lines)
 
 
 def parse_questionnaire_pdf(pdf_path: str) -> Dict[str, any]:
     """
     Parse a questionnaire PDF to extract consultation deadline and questions.
+
+    Uses character-level font metadata from pdfplumber to detect bold
+    section headers structurally.
 
     Args:
         pdf_path: Path to the questionnaire PDF file
@@ -185,26 +294,20 @@ def parse_questionnaire_pdf(pdf_path: str) -> Dict[str, any]:
         'questions_count': 0
     }
 
-    # Check if file exists
     pdf_file = Path(pdf_path)
     if not pdf_file.exists():
         raise FileNotFoundError(f"PDF file not found: {pdf_path}")
 
-    # Extract full text
-    full_text = ""
-    with pdfplumber.open(pdf_path) as pdf:
-        for page in pdf.pages:
-            page_text = page.extract_text()
-            if page_text:
-                full_text += page_text + "\n"
+    # Extract lines with formatting metadata and full text
+    annotated_lines, full_text = extract_lines_with_formatting(pdf_path)
 
-    # Extract deadline
+    # Extract deadline from plain text
     result['deadline'] = extract_deadline(full_text)
     if result['deadline']:
         result['deadline_iso'] = parse_text_to_iso(result['deadline'], include_time=False)
 
-    # Extract questions
-    result['questions'] = extract_questions(full_text)
+    # Extract questions using font-aware line data
+    result['questions'] = extract_questions(annotated_lines)
     result['questions_count'] = len(result['questions'])
 
     return result
@@ -234,7 +337,6 @@ def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[st
     ]
 
     for pdf_path in questionnaire_pdfs:
-        # Extract matter ID from the path (e.g., "MN-01016" from "matters/MN-01016/...")
         matter_id = pdf_path.parent.name
 
         try:
@@ -255,6 +357,15 @@ def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[st
 if __name__ == "__main__":
     import sys
 
+    if len(sys.argv) > 1 and sys.argv[1] == '--debug-lines':
+        # Dump annotated lines for a PDF to debug extraction
+        pdf_path = sys.argv[2]
+        lines, full_text = extract_lines_with_formatting(pdf_path)
+        for i, line in enumerate(lines):
+            bold = 'BOLD' if line['is_bold'] else '    '
+            print(f"{i:3d} [{bold}] {line['text']}")
+        sys.exit(0)
+
     if len(sys.argv) > 1:
         # Process a single PDF file
         pdf_path = sys.argv[1]
@@ -274,6 +385,9 @@ if __name__ == "__main__":
             print("QUESTIONS:")
             print("=" * 80)
             for q in result['questions']:
+                section = q.get('section')
+                if section:
+                    print(f"\n  [{section}]")
                 print(f"\nQuestion {q['number']}:")
                 print("-" * 40)
                 print(q['text'])
@@ -294,7 +408,6 @@ if __name__ == "__main__":
         try:
             results = process_all_questionnaires()
 
-            # Print results
             for matter_id, data in sorted(results.items()):
                 print("=" * 80)
                 print(f"Matter: {matter_id}")
@@ -314,7 +427,6 @@ if __name__ == "__main__":
 
                 print()
 
-            # Save results to JSON
             output_file = "data/processed/questionnaire_data.json"
             with open(output_file, 'w') as f:
                 json.dump(results, f, indent=2, sort_keys=True)

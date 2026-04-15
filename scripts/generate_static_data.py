@@ -37,6 +37,7 @@ SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
 MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
 COMMENTARY_JSON = REPO_ROOT / "data" / "processed" / "commentary.json"
+QUESTIONNAIRE_JSON = REPO_ROOT / "data" / "processed" / "questionnaire_data.json"
 RELATED_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "related_mergers.json"
 HOLIDAYS_JSON = REPO_ROOT / "merger-tracker" / "frontend" / "src" / "data" / "act-public-holidays.json"
 OUTPUT_DIR = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "data"
@@ -273,7 +274,20 @@ def load_commentary() -> dict:
         return {}
 
 
-def enrich_merger(merger: dict, commentary: dict = None) -> dict:
+def load_questionnaire_data() -> dict:
+    """Load questionnaire data from questionnaire_data.json if it exists."""
+    if not QUESTIONNAIRE_JSON.exists():
+        return {}
+
+    try:
+        with open(QUESTIONNAIRE_JSON, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (json.JSONDecodeError, IOError) as e:
+        print(f"Warning: Could not load questionnaire_data.json: {e}")
+        return {}
+
+
+def enrich_merger(merger: dict, commentary: dict = None, questionnaire_data: dict = None) -> dict:
     """Add computed fields to a merger (phase determinations, etc.)."""
     m = merger.copy()
 
@@ -355,7 +369,13 @@ def enrich_merger(merger: dict, commentary: dict = None) -> dict:
         for event in m['events']:
             if 'phase' not in event:
                 event['phase'] = extract_phase_from_event(event.get('title', ''))
-    
+
+    # Flag whether questionnaire data exists for this merger
+    if questionnaire_data and merger_id in questionnaire_data:
+        q_data = questionnaire_data[merger_id]
+        if q_data.get('questions'):
+            m['has_questionnaire'] = True
+
     return m
 
 
@@ -377,6 +397,29 @@ def generate_individual_merger_files(enriched_mergers: list) -> None:
             with open(output_path, 'w', encoding='utf-8') as f:
                 json.dump(merger, f, indent=2)
 
+
+
+def generate_questionnaire_files(questionnaire_data: dict) -> int:
+    """Generate individual questionnaire JSON files for lazy loading."""
+    questionnaires_dir = OUTPUT_DIR / "questionnaires"
+    questionnaires_dir.mkdir(parents=True, exist_ok=True)
+
+    count = 0
+    for merger_id, q_data in questionnaire_data.items():
+        if q_data.get('questions'):
+            output = {
+                'deadline': q_data.get('deadline'),
+                'deadline_iso': q_data.get('deadline_iso'),
+                'file_name': q_data.get('file_name'),
+                'questions': q_data.get('questions', []),
+                'questions_count': q_data.get('questions_count', 0),
+            }
+            output_path = questionnaires_dir / f"{merger_id}.json"
+            with open(output_path, 'w', encoding='utf-8') as f:
+                json.dump(output, f, indent=2)
+            count += 1
+
+    return count
 
 
 def generate_paginated_list(enriched_mergers: list, page_size: int = 50) -> None:
@@ -1080,6 +1123,14 @@ def main():
     else:
         print("No commentary found")
 
+    # Load questionnaire data
+    print("Loading questionnaire_data.json...")
+    questionnaire_data = load_questionnaire_data()
+    if questionnaire_data:
+        print(f"Loaded questionnaire data for {len(questionnaire_data)} merger(s)")
+    else:
+        print("No questionnaire data found")
+
     # Load related merger pairs
     related_mergers = load_related_mergers()
     if related_mergers:
@@ -1087,7 +1138,7 @@ def main():
 
     # Enrich all mergers once (add computed fields, phase determinations, etc.)
     print("Enriching mergers...")
-    enriched_mergers = [enrich_merger(m, commentary) for m in mergers]
+    enriched_mergers = [enrich_merger(m, commentary, questionnaire_data) for m in mergers]
 
     # Link related mergers (waiver <-> notification pairs) with resolved names
     merger_name_lookup = {m['merger_id']: m['merger_name'] for m in enriched_mergers if m.get('merger_id')}
@@ -1148,6 +1199,12 @@ def main():
     # Generate individual industry files
     print("\nGenerating individual industry files...")
     generate_individual_industry_files(enriched_mergers)
+
+    # Generate individual questionnaire files (lazy-loaded by frontend)
+    if questionnaire_data:
+        print("\nGenerating questionnaire files...")
+        q_count = generate_questionnaire_files(questionnaire_data)
+        print(f"✓ Generated {q_count} questionnaire files in {OUTPUT_DIR / 'questionnaires'}")
 
     print("\nDone!")
 
