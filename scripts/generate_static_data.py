@@ -37,6 +37,7 @@ SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
 MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
 COMMENTARY_JSON = REPO_ROOT / "data" / "processed" / "commentary.json"
+RELATED_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "related_mergers.json"
 HOLIDAYS_JSON = REPO_ROOT / "merger-tracker" / "frontend" / "src" / "data" / "act-public-holidays.json"
 OUTPUT_DIR = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "data"
 DATA_OUTPUT_DIR = REPO_ROOT / "data" / "output"
@@ -231,18 +232,29 @@ def extract_phase_from_event(event_title: str) -> str | None:
     return None
 
 
-# Mergers that were initially filed as waiver applications but declined, then re-filed
-# as formal notifications. Each entry maps both directions (WA->MN and MN->WA).
-RELATED_MERGERS = {
-    'WA-35003': {'merger_id': 'MN-85007', 'relationship': 'refiled_as'},
-    'MN-85007': {'merger_id': 'WA-35003', 'relationship': 'refiled_from'},
-    'WA-01087': {'merger_id': 'MN-20013', 'relationship': 'refiled_as'},
-    'MN-20013': {'merger_id': 'WA-01087', 'relationship': 'refiled_from'},
-    'WA-65003': {'merger_id': 'MN-40005', 'relationship': 'refiled_as'},
-    'MN-40005': {'merger_id': 'WA-65003', 'relationship': 'refiled_from'},
-    'WA-70003': {'merger_id': 'MN-40008', 'relationship': 'refiled_as'},
-    'MN-40008': {'merger_id': 'WA-70003', 'relationship': 'refiled_from'},
-}
+def load_related_mergers() -> dict:
+    """Load related merger pairs from related_mergers.json.
+
+    Returns a dict keyed by merger_id mapping to
+    {'merger_id': ..., 'relationship': 'refiled_as' | 'refiled_from'}.
+    """
+    if not RELATED_MERGERS_JSON.exists():
+        return {}
+
+    try:
+        with open(RELATED_MERGERS_JSON, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        result = {}
+        for pair in data.get('pairs', []):
+            wa = pair['waiver']
+            mn = pair['notification']
+            result[wa] = {'merger_id': mn, 'relationship': 'refiled_as'}
+            result[mn] = {'merger_id': wa, 'relationship': 'refiled_from'}
+        return result
+    except (json.JSONDecodeError, IOError, KeyError) as e:
+        print(f"Warning: Could not load related_mergers.json: {e}")
+        return {}
 
 
 def load_commentary() -> dict:
@@ -1068,6 +1080,11 @@ def main():
     else:
         print("No commentary found")
 
+    # Load related merger pairs
+    related_mergers = load_related_mergers()
+    if related_mergers:
+        print(f"Loaded {len(related_mergers) // 2} related merger pair(s)")
+
     # Enrich all mergers once (add computed fields, phase determinations, etc.)
     print("Enriching mergers...")
     enriched_mergers = [enrich_merger(m, commentary) for m in mergers]
@@ -1077,8 +1094,8 @@ def main():
     linked_count = 0
     for m in enriched_mergers:
         mid = m.get('merger_id', '')
-        if mid in RELATED_MERGERS:
-            related = RELATED_MERGERS[mid]
+        if mid in related_mergers:
+            related = related_mergers[mid]
             m['related_merger'] = {
                 'merger_id': related['merger_id'],
                 'relationship': related['relationship'],

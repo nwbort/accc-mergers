@@ -316,12 +316,9 @@ function MergerDetail() {
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-900">
                 {merger.related_merger.relationship === 'refiled_as'
-                  ? 'Waiver declined — subsequently notified as a formal merger'
+                  ? 'Waiver declined \u2013 subsequently notified'
                   : 'Originally filed as a waiver application'
                 }
-              </p>
-              <p className="text-sm text-amber-700 group-hover:text-amber-800 transition-colors">
-                See {merger.related_merger.merger_id}{merger.related_merger.merger_name ? ` — ${merger.related_merger.merger_name}` : ''} →
               </p>
             </div>
           </Link>
