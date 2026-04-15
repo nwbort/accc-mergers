@@ -17,20 +17,9 @@ from datetime import datetime, timedelta, time
 from zoneinfo import ZoneInfo
 from pathlib import Path
 from typing import Dict, List, Any
+from constants import merger_status
 from date_utils import parse_iso_datetime
-
-
-def load_mergers_data() -> List[Dict[str, Any]]:
-    """Load the processed mergers data."""
-    data_path = Path(__file__).parent.parent / 'data' / 'processed' / 'mergers.json'
-
-    with open(data_path, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-
-    # Handle both wrapped and unwrapped data formats
-    if isinstance(data, dict) and 'mergers' in data:
-        return data['mergers']
-    return data
+from merger_filters import filter_public, load_mergers
 
 
 def get_last_week_range() -> tuple[datetime, datetime]:
@@ -137,8 +126,13 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def generate_weekly_digest() -> Dict[str, Any]:
-    """Generate the weekly digest data."""
-    mergers = load_mergers_data()
+    """Generate the weekly digest data.
+
+    Applies the canonical public filter (:func:`merger_filters.filter_public`)
+    which excludes waivers and suspended assessments — the digest summarises
+    substantive notification activity only.
+    """
+    mergers = filter_public(load_mergers())
 
     # Get the Monday-Sunday week range in Australian time
     period_start, period_end = get_last_week_range()
@@ -167,24 +161,28 @@ def generate_weekly_digest() -> Dict[str, Any]:
 
         # New deals notified in the last week (not yet determined)
         if (is_in_week_range(notification_date, period_start, period_end) and
-            status == 'Under assessment'):
+            status == merger_status.UNDER_ASSESSMENT):
             digest['new_deals_notified'].append(create_merger_summary(merger))
 
         # Deals cleared in the last week
         if is_in_week_range(determination_date, period_start, period_end):
-            if accc_determination in ['Approved'] or phase_1_determination == 'Approved' or phase_2_determination == 'Approved':
+            if (accc_determination == merger_status.APPROVED or
+                phase_1_determination == merger_status.APPROVED or
+                phase_2_determination == merger_status.APPROVED):
                 digest['deals_cleared'].append(create_merger_summary(merger))
             # Deals declined/not approved in the last week
-            elif accc_determination in ['Not approved'] or phase_1_determination == 'Not approved' or phase_2_determination == 'Not approved':
+            elif (accc_determination == merger_status.NOT_APPROVED or
+                  phase_1_determination == merger_status.NOT_APPROVED or
+                  phase_2_determination == merger_status.NOT_APPROVED):
                 digest['deals_declined'].append(create_merger_summary(merger))
 
         # Ongoing phase 1 deals (under assessment, in phase 1)
-        if (status == 'Under assessment' and
+        if (status == merger_status.UNDER_ASSESSMENT and
             stage == 'Phase 1 - initial assessment'):
             digest['ongoing_phase_1'].append(create_merger_summary(merger))
 
         # Ongoing phase 2 deals (under assessment, in phase 2)
-        if (status == 'Under assessment' and
+        if (status == merger_status.UNDER_ASSESSMENT and
             stage == 'Phase 2 - detailed assessment'):
             digest['ongoing_phase_2'].append(create_merger_summary(merger))
 

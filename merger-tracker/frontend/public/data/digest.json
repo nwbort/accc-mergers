@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-12T08:35:41.479666+10:00",
+  "generated_at": "2026-04-16T09:12:39.948732+10:00",
   "period_start": "2026-04-06T00:00:00+10:00",
   "period_end": "2026-04-12T23:59:59.999999+10:00",
   "new_deals_notified": [
@@ -32,11 +32,6 @@
       "phase_2_determination": null,
       "merger_description": "Experience Australia Group Pty Ltd (EAG), via its wholly owned subsidiary JB Kakadu Hotel Pty Ltd (JB Kakadu), proposes to acquire Crocodile Hotel Pty Ltd, which operates the business and business assets known as the Kakadu Crocodile Hotel (Crocodile Hotel) in Jabiru (NT), from Kakadu Tourism (GCH) Pty Limited (the Seller), as well as a 100% leasehold interest in the land on which the Crocodile Hotel is situated from Gundjeihmi Aboriginal Corporation Jabiru Town (the Acquisition).",
       "events": [
-        {
-          "date": "2026-04-08T12:00:00Z",
-          "title": "Questionnaire - Journey Beyond - Kakadu Crocodile Hotel",
-          "display_title": "Questionnaire - Journey Beyond - Kakadu Crocodile Hotel"
-        },
         {
           "date": "2026-04-07T12:00:00Z",
           "title": "Merger notified to ACCC",
@@ -87,7 +82,7 @@
           "display_title": "Questionnaire - REA Group - Simplicity Loans & Advisory",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/REA%20Group%20-%20Simplicity%20Loans%20and%20Advisory%20-%20Questionnaire%20-%20April%202026.docx",
           "url_gh": "/mergers/MN-65008/REA Group - Simplicity Loans and Advisory - Questionnaire - April 2026.pdf",
-          "status": "live"
+          "status": "removed"
         },
         {
           "date": "2026-04-07T12:00:00Z",
@@ -139,17 +134,12 @@
           "display_title": "Merger notified to ACCC"
         },
         {
-          "date": "2026-03-12T12:00:00Z",
-          "title": "In accordance with s 51ABZ of the Competition and Consumer Act 2010, the ACCC decided that the notification filed on 11 February 2026 should be taken not to have an effective notification date because it is materially incomplete and materially misleading.",
-          "display_title": "In accordance with s 51ABZ of the Competition and Consumer Act 2010, the ACCC decided that the notification filed on 11 February 2026 should be taken not to have an effective notification date because it is materially incomplete and materially misleading."
-        },
-        {
           "date": "2026-04-08T12:00:00Z",
           "title": "Sembcorp / Alinta Energy - third-party questionnaire",
           "display_title": "Sembcorp / Alinta Energy - third-party questionnaire",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Alinta%20Energy%20-%20third-party%20questionnaire%20-%208%20April_1.docx",
           "url_gh": "/mergers/MN-95001/Alinta Energy - third-party questionnaire - 8 April_1.pdf",
-          "status": "live"
+          "status": "removed"
         },
         {
           "date": "2026-04-07T12:00:00Z",
@@ -208,6 +198,50 @@
       ]
     },
     {
+      "merger_id": "MN-35013",
+      "merger_name": "Estia Health – Norsan residential aged care business",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/estia-health-%E2%80%93-norsan-residential-aged-care-business",
+      "acquirers": [
+        {
+          "name": "ESTIA INVESTMENTS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "87 164 350 387"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NORSAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 076 143 596"
+        }
+      ],
+      "effective_notification_datetime": "2026-04-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-25T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Estia Investments Pty. Ltd. (**Estia**) proposes to acquire substantially all of the business assets of three residential aged care homes from Norsan Pty Ltd (**Norsan**), being Chirnside Views Residential Aged Care, Park Lane Croydon Residential Aged Care and Willowbrae - Melton Residential Aged Care (the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-04-13T12:00:00Z",
+          "title": "Questionnaire - Estia Health - Norsan residential aged care business",
+          "display_title": "Questionnaire - Estia Health - Norsan residential aged care business",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Estia%20Health%20-%20Norsan%20residential%20aged%20care%20business.docx",
+          "url_gh": "/mergers/MN-35013/Questionnaire - Estia Health - Norsan residential aged care business.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-40015",
       "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/swiss-re-qbe-insurances-trade-credit-and-surety-business",
@@ -242,6 +276,50 @@
           "display_title": "Questionnaire - Swiss Re - QBE Insurance's Trade Credit and Surety business",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Swiss%20Re%20-%20QBE%20Insurance%27s%20Trade%20Credit%20%26%20Surety%20business_1.docx",
           "url_gh": "/mergers/MN-40015/Questionnaire - Swiss Re - QBE Insurance's Trade Credit and Surety business_1.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-95011",
+      "merger_name": "Dubai Aerospace Enterprise - Macquarie AirFinance",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/dubai-aerospace-enterprise-macquarie-airfinance",
+      "acquirers": [
+        {
+          "name": "Dubai Aerospace Enterprise (DAE) Ltd",
+          "identifier_type": null,
+          "identifier": "DIFC  0170"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Macquarie AirFinance Limited",
+          "identifier_type": null,
+          "identifier": "UK  11958743"
+        }
+      ],
+      "effective_notification_datetime": "2026-04-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-25T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Dubai Aerospace Enterprise DAE Ltd (**DAE**) proposes to acquire 100% of the issued share capital in Macquarie AirFinance Limited (**Macquarie AirFinance**) (the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-04-13T12:00:00Z",
+          "title": "Questionnaire - Dubai Aerospace Enterprise - Macquarie AirFinance",
+          "display_title": "Questionnaire - Dubai Aerospace Enterprise - Macquarie AirFinance",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Dubai%20Aerospace%20Enterprise%20-%20Macquarie%20AirFinance.docx",
+          "url_gh": "/mergers/MN-95011/Questionnaire - Dubai Aerospace Enterprise - Macquarie AirFinance.pdf",
           "status": "live"
         },
         {
@@ -330,1075 +408,6 @@
           "url_gh": "/mergers/MN-50007/Phase 1 Determination - National Dental Care – business assets comprising the Comfy Dental clinic, Mandurah, WA.pdf",
           "status": "live",
           "phase": "Phase 1"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-10010",
-      "merger_name": "Enverus – Spatial Business Systems",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/enverus-%E2%80%93-spatial-business-systems",
-      "acquirers": [
-        {
-          "name": "Enverus, Inc.",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "targets": [
-        {
-          "name": "Spatial Business Systems Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "76 125 465 483"
-        },
-        {
-          "name": "SBS Optionco, LLC",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "SBS Blocker, LLC",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "effective_notification_datetime": "2026-03-10T12:00:00Z",
-      "determination_publication_date": "2026-04-07T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Enverus, Inc. (**Enverus**), a Texas corporation, proposes to acquire 100% of the issued share capital of SBS Optionco, LLC, a Delaware limited liability company, and SBS Blocker, LLC, a Delaware limited liability company (collectively, with each of their direct and indirect subsidiaries, **Spatial Business Systems**).",
-      "events": [
-        {
-          "date": "2026-04-07T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Enverus%20%E2%80%93%20Spatial%20Business%20Systems%20%28WA-10010%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "Enverus, Inc. (Enverus) applied for a notification waiver in respect of\nits proposed acquisition of 100% of the issued share capital of SBS\nOptionco, LLC and SBS Blocker, LLC (collectively, with each of their\ndirect and indirect subsidiaries, Spatial Business Systems), as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "7 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, Enverus, is a global Software-as-a-Service and data\nprovider to the energy industry. Enverus was founded in 1999 and is\nheadquartered in Austin, Texas. Enverus offers a platform that\nintegrates analytics, supply chain management, and commercial\nintelligence tools for oil and gas, power, utilities and renewable\nenergy customers.\nEnverus is controlled by funds advised and/or managed by affiliates\nof Blackstone, Inc. (together with its affiliates or affiliated investment\nfunds, Blackstone). Blackstone, Inc. is a US-based corporation,\nincorporated under the laws of Delaware, United States.\nThe target, Spatial Business Systems, is a global business\nheadquartered in Littleton, Colorado in the United States. Spatial\nBusiness Systems supplies design software for utilities and critical\nnetwork infrastructure assets to customers across electric and gas\nutilities, engineering and construction firms, and broadband\ninfrastructure operators. Spatial Business Systems’ software\nsolutions are designed to automate and streamline engineering and\ndesign workflows, integrate spatial and design data, and improve\ndesign effectiveness. In Australia, Spatial Business Systems\nprovides distribution design and substation design services to\ncustomers."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap, and limited potential vertical\nrelationships, between Enverus or Blackstone’s controlled\nportfolio companies and Spatial Business Systems in the\nsupply of software for designing electric and gas distribution\nnetworks and substations to customers in Australia\nb. Spatial Business Systems has a small presence in Australia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-10010/Enverus – Spatial Business Systems (WA-10010) - Notification waiver determination - 7 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-10T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-10011",
-      "merger_name": "Wentworth Capital – Novotel Darling Harbour and Ibis Darling Harbour",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/wentworth-capital-%E2%80%93-novotel-darling-harbour-and-ibis-darling-harbour",
-      "acquirers": [
-        {
-          "name": "Wentworth Inn Prop TC Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 488 263"
-        },
-        {
-          "name": "Wentworth Inn OpCo II Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 554 262"
-        },
-        {
-          "name": "Wentworth Inn OpCo I Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 554 253"
-        }
-      ],
-      "targets": [
-        {
-          "name": "THE TRUST COMPANY (AUSTRALIA) LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "21 000 000 993"
-        },
-        {
-          "name": "PEARL HOTELS D 1993 PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "25 060 896 568"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-12T12:00:00Z",
-      "determination_publication_date": "2026-04-07T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Wentworth Capital Investment Management Pty Ltd (together with its holding companies and subsidiaries, **Wentworth**) is an Australian asset manager based in Sydney which specialises in real estate. Its core activities are asset management, real estate private equity and real estate private credit.",
-      "events": [
-        {
-          "date": "2026-04-07T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Wentworth%20Capital%20%E2%80%93%20Novotel%20Darling%20Harbour%20and%20Ibis%20Darling%20Harbour%20%28WA-10011%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "Wentworth Inn Prop TC Pty Ltd, Wentworth Inn OpCo I Pty Ltd and\nWentworth Inn OpCo II Pty Ltd (the Acquirers) applied for a\nnotification waiver in respect of their proposed acquisition of:\n• 100% of the hotel businesses and related assets of Novotel\nDarling Harbour and Ibis Darling Harbour (Hotel Businesses)\nfrom Pearl Hotels D 1993 Pty Limited\n• the leasehold interests in the land on which the Hotel Businesses\noperate (the Property) from The Trust Company (Australia)\nLimited in its capacity as trustee of the Pearl Hotels ZC 2013\nTrust\nas described in the transaction documents provided as part of the\napplication (the Acquisition)."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "7 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The Acquirers are funds managed by Wentworth Capital Investment\nManagement Pty Ltd (together with its holding companies and\nsubsidiaries, Wentworth). Wentworth is an Australian asset manager\nbased in Sydney which specialises in real estate. Its core activities\nare asset management, real estate private equity and real estate\nprivate credit.\nThe Hotel Businesses offer hotel accommodation services and\nancillary services related to the operation of a hotel under brands\nassociated with the Accor Group (which will continue to manage the\nhotels post-Acquisition).\nWentworth states that it does not hold any interests in hotel or other\nshort-term accommodation businesses in Australia. However, one\nnon-controlling co-investor in the Acquirers, Mulpha Australia\nLimited (which is ultimately owned by Mulpha International Bhd\n(together, Mulpha)), has interests in the InterContinental Sydney at\nCircular Quay and a proposed venue in Sussex Street, Sydney.\nMulpha is an international real estate and hospitality investor\nheadquartered in Malaysia."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\n• there appears to be no, or a very limited, horizontal overlap\nbetween Wentworth and the Hotel Businesses\n• there are alternative suppliers of short-term accommodation and\nancillary services in Sydney, including in Darling Harbour\n• the Accor Group will continue to operate and manage the Hotel\nBusinesses post-Acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-10011/Wentworth Capital – Novotel Darling Harbour and Ibis Darling Harbour (WA-10011) - Notification waiver determination - 7 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-12T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-15012",
-      "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ochre-health-telegraph-road-clinic-bracken-ridge-qld",
-      "acquirers": [
-        {
-          "name": "OCHRE HEALTH PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "79 101 069 452"
-        }
-      ],
-      "targets": [
-        {
-          "name": "TELEGRAPH ROAD MEDICAL SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 107 416 080"
-        },
-        {
-          "name": "The Trustee for TELEGRAPH ROAD MEDICAL SERVICES UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "94 428 158 606"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-26T12:00:00Z",
-      "determination_publication_date": "2026-04-07T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Ochre Health Pty Limited (**Ochre Health**) proposes to acquire the business and all of the assets of the Telegraph Road Clinic (**TRC**) in Bracken Ridge, Queensland, through a business and assets acquisition agreement (the **Acquisition**).",
-      "events": [
-        {
-          "date": "2026-04-07T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ochre%20Health%20-%20Telegraph%20Road%20Clinic%2C%20Bracken%20Ridge%20QLD%20%28WA-15012%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "Ochre Health Pty Limited (Ochre Health) applied for a notification\nwaiver in respect of its proposed acquisition of the business and all\nof the assets of Telegraph Road Clinic (TRC) in Bracken Ridge,\nQueensland, as described in the transaction documents provided as\npart of the application (the Acquisition)."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "7 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, Ochre Health, supports independent doctors to provide\ngeneral practice medical services in regional, rural and urban\ncommunities around Australia. Ochre Health currently operates 68\nmedical centres and urgent care clinics located in the ACT, NSW,\nQueensland, Tasmania and Victoria. Ochre Health Group’s medical\nrecruitment business, Ochre Recruitment, also works with hospitals\nand medical practices across Australia and NZ to source and place\nlocum and permanent doctors across a range of specialities.\nOchre Health is majority owned and controlled by Genesis Capital\n(Genesis), an Australian-based private equity firm that invests in\nbusinesses operating in the healthcare sector. Genesis’s\ninvestments also include Holdsworth House Medical Group\n(Holdsworth House), which operates a general medical practice in\nFortitude Valley, Brisbane and another general medical practice in\nSydney which is co-located with a medical research centre, specialist\nmedical clinic and dentistry clinic.\nThe target, TRC, is a family medical practice providing\ncomprehensive general practice medical care from its clinic located\nin the Bracken Ridge Plaza, Shop 26, 250 Telegraph Road, Bracken\nRidge, Queensland, and home visits to nearby patients (within a 3km\nradius of the clinic). TRC is owned and operated by Telegraph Road\nMedical Services Pty Ltd as trustee for Telegraph Road Medical\nServices Unit Trust.\nOchre Health, Genesis and TRC supply general practice medical\nservices in Queensland."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no overlap in the supply of general practice medical\nservices in the local Bracken Ridge area in Queensland and a\nsmall horizontal overlap between Ochre Health, Genesis and\nTRC in the broader Brisbane area\nb. there are other clinics supplying general practice medical\nservices near Bracken Ridge, Queensland.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-15012/Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD (WA-15012) - Notification waiver determination - 7 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-26T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-25011",
-      "merger_name": "BGIS - Ascot Air",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bgis-ascot-air",
-      "acquirers": [
-        {
-          "name": "BGIS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "83 064 638 197"
-        }
-      ],
-      "targets": [
-        {
-          "name": "ASCOT AIR FACILITIES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "34 620 803 358"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-10T12:00:00Z",
-      "determination_publication_date": "2026-04-07T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "BGIS Pty Ltd (**BGIS**) proposes to acquire 100% of the issued shares in the Ascot Air Facilities Pty Ltd (**Ascot Air**) from its shareholders (the **Acquisition**).",
-      "events": [
-        {
-          "date": "2026-04-07T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/BGIS%20-%20Ascot%20Air%20%28WA-25011%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "BGIS Pty Ltd (BGIS) applied for a notification waiver in respect of its\nproposed acquisition of 100% of the share capital in Ascot Air\nFacilities Pty Ltd (Ascot Air), as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "7 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, BGIS, is a national provider of integrated facilities\nmanagement services and supplies heating, ventilation and air\nconditioning (HVAC) services largely as part of broader facilities\nmanagement arrangements for portfolio customers, either through\ninternal service capability or specialist subcontractors.\nThe target, Ascot Air, is a provider of commercial HVAC and\nmechanical services, supplying commercial HVAC design and\nconstruction, chilled water systems, refrigeration, ventilation\nductwork, pipework and mechanical services, computer room air\nconditioning systems, building management systems and controls,\ndrafting and design support and commissioning services. Ascot Air\nprovides services across South East Queensland, including Brisbane,\nIpswich, Logan, Redland, Moreton Bay and the Gold Coast.\nBoth parties supply commercial HVAC and related mechanical\nservices within South East Queensland."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is a small horizontal overlap between BGIS and Ascot\nAir in the supply of commercial HVAC and related\nmechanical services to areas within South East Queensland\nb. while there is a potential vertical supply relationship between\nthe parties, there appears to be a low risk of foreclosure or\nother concerning vertical effects resulting from exclusionary\nconduct post-acquisition\nc. there are alternative suppliers of commercial HVAC and\nrelated mechanical services in areas within South East\nQueensland.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-25011/BGIS - Ascot Air (WA-25011) - Notification waiver determination - 7 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-10T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-25014",
-      "merger_name": "CVC Capital Partners – The animal nutrition and health division of the DSM-Firmenich Group",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-the-animal-nutrition-and-health-division-of-the-dsm-firmenich-group",
-      "acquirers": [
-        {
-          "name": "Essential Bidco B.V.",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Specialty (U.S.) Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Essential (U.S.) Bidco, Inc.",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Specialty Bidco B.V.",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "targets": [
-        {
-          "name": "SpecialtyCo US LLC",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Biomin Phytogenics GmbH (Germany)",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "DSM Nutritional Products Holding AG (Switzerland)",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "EssentialCo Holding AG",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Animal Nutrition & Health, LLC (US)",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "DSM Nutritional Products GmbH",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "DSM Nutritional Products Vietnam Ltd (Vietnam)",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "DSM B.V.",
-          "identifier_type": null,
-          "identifier": "Dutch Commercial Register 14022069"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-21T12:00:00Z",
-      "determination_publication_date": "2026-04-07T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "The Acquisition is a private equity financial investment concerning the acquisition of DSM-Firmenich AG’s Animal Nutrition & Health business (the **Target**) by the following newly formed companies:",
-      "events": [
-        {
-          "date": "2026-04-07T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CVC%20Capital%20Partners%20%E2%80%93%20The%20animal%20nutrition%20and%20health%20division%20of%20the%20DSM-Firmenich%20group%20%28WA-25014%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "CVC Capital Partners plc. (CVC Capital Partners) proposes to\nacquire the animal nutrition and health division of the DSM-\nFirmenich Group as described in the transaction documents\nprovided as part of the application (the Acquisition).\nThe Acquisition consists of:\n• CVC Capital Partners to indirectly acquire, through Specialty\nBidco B.V., Speciality (U.S.) Bidco, Inc., Essential Bidco B.V.,\nand Essential (U.S.) Bidco, Inc., an 80% shareholding and\nsole control over the SpecialtyCo Business and EssentialCo\nBusiness (which together comprise the animal nutrition and\nhealth division), and\n• the DSM-Firmenich Group to (indirectly through to be\nincorporated entities) reinvest in each of the SpecialityCo\nBusiness and the EssentialCo Business to retain a ~20%\nnon-controlling, minority stake in each.\nSpecialty Bidco B.V., Speciality (U.S.) Bidco, Inc., Essential Bidco\nB.V., and Essential (U.S.) Bidco, Inc applied for a notification waiver\nin respect of the Acquisition."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "7 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, CVC Capital Partners, is a global alternative investment\nmanager focused on private equity, credit, infrastructure and\nsecondaries. CVC Capital Partners hold interests in companies\nactive in a variety of industries around the world, including in\nfinancial services, chemicals, utilities, manufacturing, retailing and\ndistribution, primarily in Europe, the US and the Asia-Pacific region.\nThe target, the animal nutrition and health division of the DSM-\nFirmenich Group, is a global provider of science-based animal\nnutrition and health solutions. Its core business is the manufacture\nand supply of animal nutrition ingredients, particularly vitamins and\ncarotenoids, for livestock and aquaculture feed. It is also involved in\nthe premix industry, which serve as a link from feed additives to final\nfeed composition in the animal nutrition value chain."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver and had regard\nto the factors in section 51ABV(2)(b) of the Competition and\nConsumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular, there is no horizontal overlap\nbetween the products and services supplied by the animal nutrition\nand health division of the DSM-Firmenich Group and CVC Capital\nPartners controlled portfolio companies in Australia, or any vertical\nrelationships.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-25014/CVC Capital Partners – The animal nutrition and health division of the DSM-Firmenich group (WA-25014) - Notification waiver determination - 7 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-21T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-35011",
-      "merger_name": "Austral Resources Australia – Lady Loretta mine",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/austral-resources-australia-%E2%80%93-lady-loretta-mine",
-      "acquirers": [
-        {
-          "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 142 485 470"
-        }
-      ],
-      "targets": [
-        {
-          "name": "NORANDA PACIFIC PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 006 864 802"
-        },
-        {
-          "name": "Noranda Pacific No. 2 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "158 936 264"
-        },
-        {
-          "name": "MOUNT ISA MINES LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "87 009 661 447"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-12T12:00:00Z",
-      "determination_publication_date": "2026-04-07T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "On 16 February 2026, Austral Resources Australia Ltd (**Austral**) entered into an agreement with Noranda Pacific No. 2 Pty Ltd (**NP2**) and Mount Isa Mines Limited (**MIM**) (both indirect subsidiaries of Glencore plc) to acquire:",
-      "events": [
-        {
-          "date": "2026-04-07T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Austral%20Resources%20Australia%20%E2%80%93%20Lady%20Loretta%20mine%20%28WA-35011%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "Austral Resources Australia Limited (Austral) applied for a\nnotification waiver in respect of its proposed acquisition of:\n• 100% of the shares in Noranda Pacific Pty Ltd (NPPL), the\nowner and operator of the Lady Loretta zinc mine in\nQueensland, from Noranda Pacific No. 2 Pty Ltd (NP2) and\nMount Isa Mines Limited (MIM); and\n• the exploration permits associated with the Lady Loretta\nmine from MIM,\nas described in the transaction documents provided as part of the\napplication (the Acquisition)."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "7 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, Austral, is an Australian-based copper producer\nheadquartered in Queensland. Austral owns and operates a number\nof copper mines in Australia, including the Lady Annie copper mine\nwhich is located 16km south of the Lady Loretta mine.\nThe Lady Loretta mine ceased production in 2025. Prior to its\nclosure, the mine produced zinc concentrate (with lead and silver\nconcentrate by-products), 100% of which was supplied to related\nentities of NPPL for processing in Mount Isa.\nNPPL, NP2 and MIM are indirect wholly-owned subsidiaries of\nGlencore plc, a multi-national commodity trading and mining\ncompany headquartered in Switzerland.\nFollowing completion, Austral will assume the progressive\nrehabilitation obligations of the Lady Loretta mine, and will enter into\nan offtake agreement with Glencore in respect of future copper\nproducts derived from the Lady Loretta tenements."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information before it, the ACCC considers that the\nAcquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. Austral’s share of the actual and expected production and\nsupply of copper concentrate and zinc concentrate in\nAustralia and globally is expected to be low\nb. there are several alternative producers and suppliers of\ncopper concentrate and zinc concentrate in Australia and\nglobally.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-35011/Austral Resources Australia – Lady Loretta mine (WA-35011) - Notification waiver determination - 7 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-12T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-40011",
-      "merger_name": "Element Zero's L701 – Option to lease DevelopmentWA industrial land at Boodarie Strategic Industrial Area",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/element-zeros-l701-%E2%80%93-option-to-lease-developmentwa-industrial-land-at-boodarie-strategic-industrial-area",
-      "acquirers": [
-        {
-          "name": "ELEMENT ZERO PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "38 664 342 081"
-        },
-        {
-          "name": "L701 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "92 692 500 780"
-        }
-      ],
-      "targets": [
-        {
-          "name": "WESTERN AUSTRALIAN LAND AUTHORITY",
-          "identifier_type": "ABN",
-          "identifier": "34 868 192 835"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-12T12:00:00Z",
-      "determination_publication_date": "2026-04-07T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "L701 Pty Ltd proposes to enter into an option to lease agreement with the Western Australian Land Authority (trading as **DevelopmentWA**) over part of Lot 701 within the Boodarie Strategic Industrial Area in Western Australia. The option provides L701 Pty Ltd with the right to lease the land following completion of development milestones.",
-      "events": [
-        {
-          "date": "2026-04-07T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Element%20Zero%27s%20L701%20-%20Option%20to%20lease%20DevelopmentWA%20industrial%20land%20at%20Boodarie%20Strategic%20Industrial%20Area%20%28WA-40011%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "L701 Pty Ltd applied for a notification waiver in respect of its\nproposal to enter into an option to lease agreement with the\nWestern Australian Land Authority (trading as DevelopmentWA) over\npart of Lot 701 within the Boodarie Strategic Industrial Area in\nWestern Australia, as described in the transaction documents\nprovided as part of the application (the Acquisition). The option\nprovides L701 Pty Ltd with the right to lease the land following\ncompletion of development milestones."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "7 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, L701 Pty Ltd, is a subsidiary of Element Zero Pty Ltd\n(Element Zero), an Australian company developing technology and\nprojects for the production of low-emissions mineral products,\nincluding green iron. Element Zero develops technology and projects\nfor the production of low-carbon mineral products and intends to\ndevelop a commercial-scale green iron production facility.\nDevelopmentWA is the Western Australian Government’s land and\ndevelopment agency responsible for facilitating industrial land\ndevelopment. DevelopmentWA develops and manages industrial\nland and infrastructure in Western Australia, including within the\nBoodarie Strategic Industrial Area.\nIf the option for lease is exercised, the parties intend to enter into a\nlong-term industrial ground lease to enable development and\noperation of a green iron production facility."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is no horizontal competitive overlap\nb. there appear to be alternative sites available for Element\nZero’s competitors\nc. the Acquisition does not appear likely to otherwise limit or\nprevent competition from rivals.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-40011/Element Zero's L701 - Option to lease DevelopmentWA industrial land at Boodarie Strategic Industrial Area (WA-40011) - Notification waiver determination - 7 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-12T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-45007",
-      "merger_name": "Henkel – Stahl",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/henkel-%E2%80%93-stahl",
-      "acquirers": [
-        {
-          "name": "Henkel Global Supply Chain B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number, 854017447, CCI 60683945"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Stahl Holdings B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 34249320"
-        },
-        {
-          "name": "Stahl Asia Pacific Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "Singapore registration number: 200606884Z"
-        },
-        {
-          "name": "Stahl Parent B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 63799618"
-        },
-        {
-          "name": "Hi-Tech Coatings International B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 37105426"
-        },
-        {
-          "name": "Stahl Chemicals Germany GmbH",
-          "identifier_type": null,
-          "identifier": "Germany registration number (HRB): 747774"
-        },
-        {
-          "name": "Stahl Europe B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 18107581"
-        },
-        {
-          "name": "Stahl Netherlands B.V.",
-          "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 18065840"
-        },
-        {
-          "name": "Weilburger Graphics GmbH",
-          "identifier_type": null,
-          "identifier": "Germany registration number (HRB): 8017"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-18T12:00:00Z",
-      "determination_publication_date": "2026-04-07T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Henkel AG & Co. KGaA, through its subsidiary Henkel Global Supply Chain B.V. (**Henkel**), proposes to acquire all the shares in and sole control of Stahl Parent B.V. (together with subsidiaries, **Stahl**) from Stahl Group S.A., which is indirectly controlled by affiliates of Wendel S.E. (**Wendel**).",
-      "events": [
-        {
-          "date": "2026-04-07T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Henkel%20-%20Stahl%20%28WA-45007%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "Henkel Global Supply Chain B.V. (Henkel), which is a subsidiary of\nHenkel AG & Co. KGaA, applied for a notification waiver in respect of\nits proposed acquisition of all of the share capital in Stahl Parent\nB.V. (together with its subsidiaries, Stahl), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "7 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, Henkel, is a German public company listed on the\nFrankfurt Stock Exchange, headquartered in Düsseldorf. It is active\nworldwide through its Adhesive Technologies business and\nConsumer Brands business. Henkel’s Adhesive Technologies\nbusiness is a producer of adhesives, sealants and functional\ncoatings for industrial customers, consumers and craftsmen. Its\nAdhesive Technologies brands available in Australia include Loctite,\nTeroson, Bonderite, Clingtape, Technomelt, Aquence and Pritt.\nHenkel’s Consumer Brands business offers a portfolio of consumer\nbrands with a focus on Laundry & Home Care and Hair Care. Its\nconsumer brands include Persil, Schwarzkopf, Perwoll, Syoss, Somat\nand Bref.\nThe target, Stahl, is a manufacturer of specialty coatings for flexible\nmaterials headquartered in the Netherlands. With subsidiaries in\nEurope, Asia, and the Americas, the company is active worldwide. Its\nportfolio comprises leather finishing coatings, performance coatings,\nand packaging coatings, serving customers mainly in mobility\n(automotive and aviation interiors), packaging, fashion & lifestyle,\nand home furnishing.\nIn Australia, the parties both supply barrier (interior) coatings for\npaper packaging and laminating adhesives for flexible packaging to\nindustrial customers, which are subsets of packaging coatings and\npackaging adhesives respectively."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\n• there is a small horizontal overlap between the parties in the\nsupply of packaging coatings and packaging adhesives\n• the parties combined market shares in the supply of packaging\ncoatings and packaging adhesives are estimated to be low\n• there are alternative providers of packaging coatings and\npackaging adhesives in Australia, including in the supply of the\nsubsets of these products in which the parties overlap\n• there appears to be a low risk of foreclosure or other concerning\nvertical or conglomerate effects resulting from exclusionary\nconduct, bundling or tying of products post-acquisition.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-45007/Henkel - Stahl (WA-45007) - Notification waiver determination - 7 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-18T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-55014",
-      "merger_name": "KPS Capital Partners - Jennmar",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kps-capital-partners-jennmar",
-      "acquirers": [
-        {
-          "name": "KPS Capital Partners, LP",
-          "identifier_type": null,
-          "identifier": "CRD 157678 / SEC: 80173907"
-        },
-        {
-          "name": "Three Rivers Purchaser, LLC",
-          "identifier_type": null,
-          "identifier": "10533455"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Jennmar Intermediate Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "990520173"
-        },
-        {
-          "name": "Jennmar Super Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "412378602"
-        },
-        {
-          "name": "Karl A. Calandra",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "FalconPoint Non-U.S./USTE Feeder II L.P",
-          "identifier_type": null,
-          "identifier": "934704164"
-        },
-        {
-          "name": "FalconPoint Partners II, LP",
-          "identifier_type": null,
-          "identifier": "933979415"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-20T12:00:00Z",
-      "determination_publication_date": "2026-04-07T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Investment funds managed or advised by affiliates of KPS Capital Partners, LP (**KPS**) propose to, indirectly through Three Rivers Purchaser, LLC (**Three Rivers**), acquire sole control of Jennmar Super Holdings, LLC and Jennmar Intermediate Holdings, Inc. and their respective subsidiaries and joint ventures (collectively, **Jennmar**) from funds managed or advised by affiliates of Falcon Point Partners and trusts held by or for the benefit of Mr Calandra or family members thereof (collectively, the **Sellers**). The Sellers will each indirectly acquire non-controlling, minority interests in Three Rivers.",
-      "events": [
-        {
-          "date": "2026-04-07T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/KPS%20Capital%20Partners%20-%20Jennmar%20%28WA-55014%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "KPS Capital Partners (KPS) and Three Rivers Purchaser, LLC (Three\nRivers Purchaser) have applied for a notification waiver in respect\nof:\n• the acquisition of sole control of Jennmar Super Holdings,\nLLC and Jennmar Intermediate Holdings, Inc., and their\nrespective subsidiaries and joint ventures (collectively,\nJennmar) by investment funds managed or advised by\naffiliates of KPS; and\n• the acquisition of non-controlling, minority interests in\nJennmar, by funds managed or advised by Falcon Point\nPartners and trusts held by or for the benefit of Mr Calandra,\nindirectly through Three Rivers Purchaser, as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "7 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, KPS, is a US private investment company, which makes\ncontrolling equity investments in manufacturing and industrial\ncompanies across industries including basic materials, branded\nconsumer, healthcare and luxury products, automotive parts, capital\nequipment and general manufacturing.\nThe target, Jennmar, manufactures and supplies steel and chemical\nground support products for use in underground mining and\ntunnelling (such as rock bolts, cable bolts, plate), and related\nproducts (such as mesh, resins and grout). Globally, its six core\nbusiness segments are mining, civil construction and tunnelling,\nventilation, OEM manufacturing and steel service, renewable energy\nand carbide cutting tools.\nFalcon Point Partners is a private investment company\nheadquartered in the US and Canada. Mr Calandra is the current CEO\nof Jenmar. Three Rivers Purchaser is an entity newly established for\nthe purposes of the Acquisition.\nKPS has two portfolio companies that supply resins, Alta\nPerformance Materials and Primient Products, but states that the\nproducts supplied by these companies are for different end-uses and\napplications (and involve distinct chemical compounds) than those\nsupplied by Jennmar."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is no horizontal overlap or vertical relationship\nbetween KPS (including its portfolio companies with\noperations in Australia) and Jennmar\nb. There are alternative suppliers of steel and chemical ground\nsupport products for use in underground mining and\ntunnelling such as rock bolts, cable bolts, plate, and related\nproducts such as mesh, resins and grout, in Australia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-55014/KPS Capital Partners - Jennmar (WA-55014) - Notification waiver determination - 7 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-20T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-75017",
-      "merger_name": "Vets Central - Drovers Vet Hospital",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-drovers-vet-hospital",
-      "acquirers": [
-        {
-          "name": "VC OPERATIONS (WA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 646 499 005"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "96 315 737 133"
-        },
-        {
-          "name": "DROVERS VET HOSPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "67 159 300 768"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-31T12:00:00Z",
-      "determination_publication_date": "2026-04-07T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Vets Central Holdings Pty Ltd (together, with its subsidiaries, **Vets Central**), proposes to acquire 100% of the shares on issue in Drovers Vet Hospital Pty Ltd (**Drovers Vet Hospital**) from Dr Wayne Shipham and Raylene Shipham as trustees for the McGuire Family Trust.",
-      "events": [
-        {
-          "date": "2026-04-07T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Vets%20Central%20-%20Drovers%20Vet%20Hospital%20%28WA-75017%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "Vets Central Holdings Pty Ltd (together with its subsidiaries, Vets\nCentral) applied for a notification waiver in respect of its proposed\nacquisition of 100% of the shares on issue in Drovers Vet Hospital\nPty Ltd (Drovers Vet Hospital), as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "7 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, Vets Central, is an Australian-owned veterinary group\nthat owns and operates 81 first opinion veterinary practices across\nAustralia and New Zealand. In Australia, Vets Central’s practices\nprovide core and ancillary veterinary services, for household pets as\nwell as livestock, and other exotic species. The services primarily\ninclude routine, planned, and emergency veterinary services\n(excluding after-hours services).\nThe target, Drovers Vet Hospital, is a full-service veterinary practice\nproviding a range of first opinion core and ancillary veterinary\nservices for household pets (extending to exotic pets) in the\nWanneroo area of Western Australia.\nVets Central and Drovers Vet Hospital both supply first opinion\nveterinary services to household pets, livestock, and exotic species\nin Western Australia."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is no horizontal overlap between Vets Central and\nDrovers Vet Hospital in the supply of veterinary services in\nthe Wanneroo area\nb. there are alternative suppliers of veterinary services on a\nlocal, state, and national basis.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-75017/Vets Central - Drovers Vet Hospital (WA-75017) - Notification waiver determination - 7 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-31T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-80007",
-      "merger_name": "Arlington Capital Partners – Eptec Defence Solutions",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/arlington-capital-partners-%E2%80%93-eptec-defence-solutions",
-      "acquirers": [
-        {
-          "name": "Admiral AU Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 801 195"
-        },
-        {
-          "name": "Admiral AU Holdco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "695 791 710"
-        }
-      ],
-      "targets": [
-        {
-          "name": "EPTEC MARINE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "49 118 319 547"
-        },
-        {
-          "name": "EPTEC BIDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 638 785 378"
-        },
-        {
-          "name": "EPTEC HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "14 638 785 387"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-18T12:00:00Z",
-      "determination_publication_date": "2026-04-07T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Admiral AU Bidco Pty Ltd (**Admiral Bidco**) intends to acquire 100% of the Eptec Defence Solutions (**EDS**) business by acquiring 100% of the issued shares in Eptec Holdco Pty Ltd and, indirectly, its subsidiaries Eptec Marine Pty Ltd and Eptec Bidco Pty Ltd (together the **Target Group)**, from the current shareholders (the **Acquisition**).",
-      "events": [
-        {
-          "date": "2026-04-07T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Arlington%20Capital%20Partners%20-%20Eptec%20Defence%20Solutions%20%28WA-80007%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "Admiral AU Bidco Pty Ltd (Admiral Bidco) applied for a notification\nwaiver in respect of its proposed acquisition of 100% of the Eptec\nDefence Solutions (EDS) business by acquiring 100% of the issued\nshares in Eptec Holdco Pty Ltd and, indirectly, its subsidiaries Eptec\nMarine Pty Ltd and Eptec Bidco Pty Ltd, as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "7 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, Admiral Bidco, is a newly established fund that is\nultimately controlled by Arlington Capital Partners (ACP), a US-based\nprivate equity investment firm that acquires, manages, and grows\nportfolio companies in sectors such as defence & aerospace,\ngovernment & technology, healthcare, and business services\nsoftware.\nThe Eptec Group carries on two businesses in Australia: EDS and\nEptec Infrastructure Solutions. EDS specialises in the maintenance,\npreservation, and remediation of naval vessels and defence\ninfrastructure.\nPrior to the Acquisition, the Eptec Group will be restructured so that\nthe Eptec Infrastructure Solutions business will be transferred out of\nthe Target Group and retained by the seller."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is no horizontal overlap between ACP’s portfolio of\ncontrolled companies and EDS in the supply of maintenance,\npreservation, and remediation of naval vessels and defence\ninfrastructure services, and no vertical relationships, in\nAustralia\nb. there are alternative suppliers of maintenance, preservation,\nand remediation of naval vessels and defence infrastructure\nservices in Australia\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-80007/Arlington Capital Partners - Eptec Defence Solutions (WA-80007) - Notification waiver determination - 7 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-18T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-95012",
-      "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ochre-health-newstead-medical-and-kings-meadows-medical-centre-tas",
-      "acquirers": [
-        {
-          "name": "OCHRE HEALTH PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "79 101 069 452"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Business and assets comprising Newstead Medical and Kings Meadows Medical Centre",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "A.J FAIR & T.G GARDNER & D.P KIRK",
-          "identifier_type": "ABN",
-          "identifier": "37 656 963 829"
-        },
-        {
-          "name": "TRUSTEE FOR FAIR FAMILY TRUST & Kirk Family Trust & Gardner Family Trust",
-          "identifier_type": "ABN",
-          "identifier": "71 630 254 987"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-31T12:00:00Z",
-      "determination_publication_date": "2026-04-07T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Ochre Health Pty Limited (**Ochre Health**) proposes to acquire the business and all of the assets of Newstead Medical (including the co-located Urgent Care Centre) and Kings Meadows Medical Centre (**Newstead and Kings Meadows clinics**) through a business and assets acquisition agreement (the **Acquisition**).",
-      "events": [
-        {
-          "date": "2026-04-07T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ochre%20Health%20-%20Newstead%20Medical%20and%20Kings%20Meadows%20Medical%20Centre%2C%20TAS%20%28WA-95012%29%20-%20Notification%20waiver%20determination%20-%207%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "Ochre Health Pty Limited (Ochre Health) applied for a notification\nwaiver in respect of its proposed acquisition of the business and all\nof the assets of Newstead Medical (including the co-located Urgent\nCare Centre) and Kings Meadows Medical Centre (Newstead and\nKings Meadows clinics), as described in the transaction documents\nprovided as part of the application (the Acquisition)."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "7 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, Ochre Health, supports independent doctors to provide\ngeneral practice medical services in regional, rural and urban\ncommunities around Australia. Ochre Health currently operates 68\nmedical centres and urgent care clinics located in the ACT, NSW,\nQueensland, Tasmania and Victoria. Ochre Health Group’s medical\nrecruitment business, Ochre Recruitment, also works with hospitals\nand medical practices across Australia and NZ to source and place\nlocum and permanent doctors across a range of specialities.\nOchre Health is majority owned and controlled by Genesis Capital\n(Genesis), an Australian-based private equity firm that invests in\nbusinesses operating in the healthcare sector.\nThe target, Newstead and Kings Meadows clinics, provide general\npractice medical services from their respective premises in\nLaunceston, Tasmania. A private urgent care centre is co-located\nwithin the Newstead clinic for treatment of non-life-threatening\nurgent medical presentations. The Newstead and Kings Meadows\nclinics are currently owned and operated by general practitioners\nAndrew Fair, Daniel Kirk, Toby Gardner in partnership as the Newmed\nGroup and the trustees of their family trusts in partnership as\nNewstead Health Nexus.\nOchre Health and Newstead and Kings Meadows clinics supply\ngeneral practice medical services in Tasmania, but Ochre Health\ncurrently does not operate any medical centres or urgent care clinics\nwithin 40km of Launceston, Tasmania."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap between Ochre Health, Genesis\nand the Newstead and Kings Meadows clinics in the supply\nof general practice medical services near Launceston,\nTasmania\nb. there are other clinics supplying general practice medical\nservices near Launceston, Tasmania.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-95012/Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS (WA-95012) - Notification waiver determination - 7 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-31T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-25009",
-      "merger_name": "Brisbane Airport Corporation – Interest in land at Brisbane Airport",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/brisbane-airport-corporation-%E2%80%93-interest-in-land-at-brisbane-airport",
-      "acquirers": [
-        {
-          "name": "BRISBANE AIRPORT CORPORATION PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "54 076 870 650"
-        }
-      ],
-      "targets": [
-        {
-          "name": "GROWTHPOINT PROPERTIES AUSTRALIA LIMITED AS TRUSTEE FOR THE WHOLESALE INDUSTRIAL PROPERTY FUND",
-          "identifier_type": "ABN",
-          "identifier": "33 124 093 901"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-06T12:00:00Z",
-      "determination_publication_date": "2026-04-08T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Brisbane Airport Corporation Pty Limited (**Brisbane Airport Corporation**) operates, manages, and develops Brisbane Airport. Brisbane Airport Corporation facilitates international and domestic travel, manages over 2,700 hectares of land, provides infrastructure (terminals, runways, roads), and facilitates commercial/retail/industrial activities through the leasing of the airport land.",
-      "events": [
-        {
-          "date": "2026-04-08T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Brisbane%20Airport%20Corporation%20%E2%80%93%20Interest%20in%20land%20at%20Brisbane%20Airport%20%28WA-25009%29%20-%20Notification%20waiver%20determination%20-%208%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "Brisbane Airport Corporation Pty Limited (Brisbane Airport\nCorporation) applied for a notification waiver in respect of its\nproposed acquisition from Growthpoint Properties Australia Limited\nas trustee of the Wholesale Industrial Property Fund (Growthpoint)\nof Growthpoint’s interest as lessee under the Head Leases and as\nsublessor under the Subleases for lots located at 3, 5 and 7A Viola\nPlace, Brisbane Airport, Queensland, as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "8 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, Brisbane Airport Corporation, operates, manages, and\ndevelops Brisbane Airport. Brisbane Airport Corporation facilitates\ninternational and domestic travel, manages over 2,700 hectares of\nland, provides infrastructure (terminals, runways, roads), and\nfacilitates commercial, retail and industrial activity through the\nleasing of the airport land.\nGrowthpoint Properties Australia Limited (GOZ) is an ASX-listed real\nestate investment trust, which carries on a business primarily\nengaged in leasing, buying and selling land and managing a portfolio\nof office, industrial and retail assets for third party wholesale\nsyndicates and institutional investors. GOZ invests in Australian real\nestate and has a directly owned portfolio of office and industrial\nproperties which it leases to commercial tenants.\nGrowthpoint holds a leasehold interest (as lessee) of the properties\nlocated at 3, 5 and 7A Viola Place, Brisbane Airport (the Property)\nunder the Head Leases from Brisbane Airport Corporation (as\nlessor).\nThe Property would be an input into the operations of Brisbane\nAirport Corporation."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. Brisbane Airport Corporation is the head lessor in respect of\nthe Property and will be acquiring interests in existing leases\nb. there are alternative sites available to develop or lease at\nBrisbane Airport, and in the wider Brisbane area, that are\nheld by third parties.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-25009/Brisbane Airport Corporation – Interest in land at Brisbane Airport (WA-25009) - Notification waiver determination - 8 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-06T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
         }
       ]
     },
@@ -1579,152 +588,6 @@
       ]
     },
     {
-      "merger_id": "WA-05005",
-      "merger_name": "Ironbark - Investment in Viola Private Wealth",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ironbark-investment-in-viola-private-wealth",
-      "acquirers": [
-        {
-          "name": "IBWM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "28 621 141 026"
-        }
-      ],
-      "targets": [
-        {
-          "name": "VIOLA GROUP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 680 038 180"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-17T12:00:00Z",
-      "determination_publication_date": "2026-04-09T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "IBWM Pty Ltd (**IBWM**), a subsidiary of Ironbark Investment Partners Pty Ltd (**Ironbark**), will acquire 40% of the shares on issue in Viola Group Holdings Pty Ltd (**Viola Group**). Viola Group is the parent company of Viola Finance Pty Ltd, Viola Private Holdings Pty Ltd, Viola Services Pty Ltd and Viola Private Wealth Pty Ltd (**Viola**).",
-      "events": [
-        {
-          "date": "2026-04-09T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ironbark%20-%20Investment%20in%20Viola%20Private%20Wealth%20%28WA-05005%29%20-%20Notification%20waiver%20determination%20-%209%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "IBWM Pty Ltd, a subsidiary of Ironbark Investment Partners Pty Ltd\n(Ironbark), applied for a notification waiver in respect of its proposed\nacquisition of 40% of the shares on issue in Viola Group Holdings Pty\nLtd (Viola Group), as described in the transaction documents\nprovided as part of the application (the Acquisition)."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "9 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, IBWM Pty Ltd, is a subsidiary of Ironbark. Ironbark has\na business division which provides financial advice to retail and\nwholesale clients.\nThe target, Viola Group, is the parent company of Viola Finance Pty\nLtd, Viola Private Holdings Pty Ltd, Viola Services Pty Ltd and Viola\nPrivate Wealth Pty Ltd (Viola). Viola Group focuses on private wealth\nand high net worth clients.\nBoth parties provide financial advice and wealth management\nservices in Sydney. The services provided by Ironbark and Viola\ninclude financial planning advice, superannuation advice, retirement\nplanning, cash flow planning, listed and unlisted securities advice,\ntransaction execution and management, tax advice and life\ninsurance advice."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is a small horizontal overlap between Ironbark and\nViola in the supply of financial advice and wealth\nmanagement services in Sydney and across Australia\nb. the parties’ combined share in the supply of financial advice\nand wealth management services in Sydney and across\nAustralia is estimated to be low and the increase in share of\nsupply arising from the Acquisition would be small\nc. there are alternative suppliers of financial advice and wealth\nmanagement services in Sydney and across Australia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-05005/Ironbark - Investment in Viola Private Wealth (WA-05005) - Notification waiver determination - 9 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-17T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-85017",
-      "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/regent-motors-group-lane-groups-mandurah-dealerships",
-      "acquirers": [
-        {
-          "name": "MANDURAH AUTO GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 699"
-        },
-        {
-          "name": "PEEL MOTOR GROUP PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "693 645 742"
-        },
-        {
-          "name": "REGENT MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 008 685 087"
-        }
-      ],
-      "targets": [
-        {
-          "name": "WA AUTOMOTIVE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 158 702 740"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-18T12:00:00Z",
-      "determination_publication_date": "2026-04-09T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Regent Motors Pty Ltd (**Regent Motors Group**) proposes to acquire a portfolio of franchised automotive dealerships and associated real property located in Mandurah, Western Australia, currently operated by WA Automotive Pty Ltd, controlled by the Lane Group (the **Vendor**) (the **Acquisition**).",
-      "events": [
-        {
-          "date": "2026-04-09T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Regent%20Motors%20Group%20%E2%80%93%20Lane%20Group%27s%20Mandurah%20Dealerships%20%28WA-85017%29%20-%20Notification%20waiver%20determination%20-%209%20April%202026_0.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "Regent Motors Pty Ltd (Regent Motors Group) applied for a\nnotification waiver in respect of its proposed acquisition of the\nportfolio of franchised automotive dealerships and associated real\nproperty located in Mandurah, Western Australia, currently operated\nby WA Automotive Pty Ltd, controlled by the Lane Group, as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "9 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, Regent Motors Group is an Australian-owned\nautomotive retail group headquartered in Perth, Western Australia.\nRegent Motors Group owns and operates franchised motor vehicle\ndealerships across Western Australia and the Northern Territory,\nsupplying new and used motor vehicles across a range of OEM\nbrands including Ford, Toyota, Hyundai, Suzuki, BMW, Mini, MG,\nGeely, GMSV, Isuzu Ute, Subaru, and Volkswagen. Regent Motors\nGroup also provides vehicle servicing and repairs, genuine parts and\naccessories, fleet sales and service, and facilitates finance,\ninsurance, and aftercare products in connection with vehicle\ntransactions.\nThe target, the Lane Group dealerships, comprises of six franchised\nretail dealerships and associated storage facilities in Mandurah, WA,\nsupplying new and used motor vehicles for the following brands:\nFord, Mitsubishi, Hyundai, Kia, Nissan, and Suzuki. Lane Group also\nprovides vehicle servicing and repairs, parts and accessories, fleet\nservices, and finance and insurance facilitation."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is no overlap between the Regent Motors Group and\nthe Lane Group in the supply of new and used motor\nvehicles and associated services in Mandurah and the\nsurrounding areas\nb. while there is a small horizontal overlap between the Regent\nMotors Group and the Lane Group in the broader area\nsurrounding Mandurah (including Perth and Bunbury), there\nare independent alternatives suppliers of new and used cars\nin Mandurah, Perth, Bunbury and Rockingham\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-85017/Regent Motors Group – Lane Group's Mandurah Dealerships (WA-85017) - Notification waiver determination - 9 April 2026_0.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-18T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
       "merger_id": "MN-01090",
       "merger_name": "Coles – supermarket site in New Norfolk (TAS)",
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-new-norfolk-tas",
@@ -1809,138 +672,87 @@
       ]
     },
     {
-      "merger_id": "WA-45009",
-      "merger_name": "Idemitsu - MidOcean Energy",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/idemitsu-midocean-energy",
+      "merger_id": "MN-30005",
+      "merger_name": "Adobe - Semrush",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/adobe-semrush",
       "acquirers": [
         {
-          "name": "IDEMITSU EUROPE LTD.",
+          "name": "Adobe Inc. (NASDAQ: ADBE)",
           "identifier_type": null,
-          "identifier": "UK Company Number 17103829"
+          "identifier": "2748129"
+        },
+        {
+          "name": "Fenway Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "10389477"
         }
       ],
       "targets": [
         {
-          "name": "MidOcean Holdings II L.P.",
+          "name": "Semrush Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "SL036455"
+          "identifier": "7690622"
         }
       ],
-      "effective_notification_datetime": "2026-03-23T12:00:00Z",
+      "effective_notification_datetime": "2026-03-16T12:00:00Z",
       "determination_publication_date": "2026-04-10T12:00:00Z",
-      "end_of_determination_period": null,
+      "end_of_determination_period": "2026-04-30T12:00:00Z",
       "accc_determination": "Approved",
-      "stage": "Waiver application",
+      "stage": "Phase 1 - initial assessment",
       "status": "Assessment completed",
-      "is_waiver": true,
+      "is_waiver": false,
       "phase_1_determination": null,
       "phase_2_determination": null,
-      "merger_description": "The acquirer, Idemitsu, is a Japanese company oil-refining and marketing company. It has been involved in the development, production, and sale of coal at several mines in Australia. Idemitsu currently operates the Boggabri Coal Mine in NSW. Idemitsu has invested in lithium and vanadium development companies, renewables and acquired a fuel oil retail business.",
+      "merger_description": "Adobe Inc. (**Adobe**) through a newly incorporated direct wholly owned subsidiary, Fenway Merger Sub, Inc. (**Merger Sub**), proposes to acquire 100% of the share capital in Semrush Holdings, Inc. (Semrush and together with Adobe, the **Parties**). The Proposed Transaction is being implemented pursuant to a merger agreement entered into between Adobe, Merger Sub, and Semrush dated 18 November 2025 (**Merger Agreement**). Pursuant to the Merger Agreement, Merger Sub will merge with and into Semrush, such that Merger Sub will cease to exist and Semrush will become the \"surviving corporation\" and a direct, wholly owned subsidiary of Adobe. After the Proposed Transaction, Semrush will be solely controlled by Adobe.",
       "events": [
         {
+          "date": "2026-03-17T12:00:00Z",
+          "title": "Adobe / Semrush - Questionnaire",
+          "display_title": "Adobe / Semrush - Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Adobe%20-%20Semrush%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-30005/Adobe - Semrush - Questionnaire.pdf",
+          "status": "removed"
+        },
+        {
+          "date": "2026-03-16T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        },
+        {
           "date": "2026-04-10T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Idemitsu%20-%20MidOcean%20Energy%20%28WA-45009%29%20-%20Notification%20waiver%20determination%20-%2010%20April%202026_0.pdf",
+          "title": "Adobe - Semrush - Phase 1 Determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Adobe%20-%20Semrush%20-%20Phase%201%20Determination%20-%2010%20April%202026.pdf",
           "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
           "determination_table_content": [
             {
-              "item": "Acquisition",
-              "details": "IDEMITSU EUROPE LTD., (together with its subsidiaries, Idemitsu)\napplied for a notification waiver in respect of its proposed\nacquisition of share capital in MidOcean Holdings II, L.P, as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition).\nMidOcean Holdings II, L.P. indirectly owns MidOcean Energy LLC\n(MidOcean Energy)."
+              "item": "Notified acquisition",
+              "details": "Adobe Inc. (Adobe) through a newly incorporated direct wholly\nowned subsidiary, Fenway Merger Sub, Inc. (Merger Sub), proposes\nto acquire 100% of the share capital in Semrush Holdings, Inc.\n(Semrush) (the Acquisition)."
             },
             {
               "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
             },
             {
-              "item": "Date of determination",
-              "details": "10 April 2026"
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Adobe, is a global technology company. Adobe's main\nofferings can be divided between its Customer Experience\nOrchestration business, which focuses on accelerating customer\nexperience and delivering business intelligence services, and its\nCreativity & Productivity business, which focuses on helping users\ncreate, design, and publish rich content and 3D experiences, and\nimprove how they view, share, and collaborate on documents and\ncontent. Adobe is headquartered in California and incorporated in\nDelaware, USA.\nThe target, Semrush, provides an online visibility management and\ncontent marketing service offering a range of tools to manage web\nbrand presence, including through its search engine optimisation\ntoolkit. Semrush is headquartered in Massachusetts and\nincorporated in Delaware, USA."
             },
             {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, Idemitsu, is a Japanese company oil-refining and\nmarketing company. It has been involved in the development,\nproduction, and sale of coal at several mines in Australia. Idemitsu\ncurrently operates the Boggabri Coal Mine in NSW. Idemitsu has\ninvested in lithium and vanadium development companies,\nrenewables and acquired a fuel oil retail business.\nMidOcean Energy is a global liquid natural gas (LNG) platform\nformed and managed by EIG Partners in 2023. In Australia,\nMidOcean holds minority interests in the Queensland Curtis LNG\nProject, Gorgon LNG Project and Pluto LNG Project. These projects\nare involved in the extraction and production of natural gas and LNG."
+              "item": "Overlap between the\nparties",
+              "details": "Adobe and Semrush (together, the Parties) overlap in the supply of\ngenerative engine optimisation services in Australia. Generative\nengine optimisation refers to the process of adapting a website so\nthat large language model platforms, such as ChatGPT, Gemini, and\nClaude, can understand, extract, and cite it when answering user\nqueries.\nAdobe supplies generative engine optimisation services through its\nLarge Language Model Optimiser product. Semrush supplies\ngenerative engine optimisation services through its AI Visibility\nToolkit and Enterprise AI Optimization products."
             },
             {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver and had regard\nto the factors in section 51ABV(2)(b) of the Competition and\nConsumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap between Idemistu and\nMidOcean Energy in the production of natural gas or LNG in\nAustralia\nb. there are alternative producers of natural gas or LNG in\nAustralia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC’s approach to considering\nnotified acquisitions, see the ACCC’s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third partes and publicly available\ninformation.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n• The Parties do not compete closely as the generative engine\noptimisation tools they supply have different use cases.\n• The Parties would continue to face competition from multiple\nalternative suppliers of generative engine optimisation service\nsuppliers in Australia."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC’s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
             }
           ],
-          "url_gh": "/mergers/WA-45009/Idemitsu - MidOcean Energy (WA-45009) - Notification waiver determination - 10 April 2026_0.pdf",
+          "url_gh": "/mergers/MN-30005/Adobe - Semrush - Phase 1 Determination - 10 April 2026.pdf",
           "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-23T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "WA-85018",
-      "merger_name": "Discovery Holiday Parks – Habitat Noosa Everglades Eco Camp",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/discovery-holiday-parks-%E2%80%93-habitat-noosa-everglades-eco-camp",
-      "acquirers": [
-        {
-          "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 111 782 846"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Eco Camp Pty Ltd as trustee for the MCB Trust",
-          "identifier_type": "ACN",
-          "identifier": "615 432 016"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-20T12:00:00Z",
-      "determination_publication_date": "2026-04-10T12:00:00Z",
-      "end_of_determination_period": null,
-      "accc_determination": "Approved",
-      "stage": "Waiver application",
-      "status": "Assessment completed",
-      "is_waiver": true,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Discovery Holiday Parks Pty Limited (**Discover Holiday Parks**), a wholly-owned subsidiary of Discovery Parks Holdings Pty Limited (**Discovery Parks Holdings**), proposes to acquire the business of operating and managing \"Habitat Noosa Everglades Eco Camp\" (**Habitat Noosa**).",
-      "events": [
-        {
-          "date": "2026-04-10T12:00:00Z",
-          "title": "Notification waiver determination published",
-          "display_title": "Waiver application determination: Approved",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Discovery%20Holiday%20Parks%20%E2%80%93%20Habitat%20Noosa%20Everglades%20Eco%20Camp%20%28WA-85018%29%20-%20Notification%20waiver%20determination%20-%2010%20April%202026.pdf",
-          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
-          "determination_table_content": [
-            {
-              "item": "Acquisition",
-              "details": "Discovery Holiday Parks Pty Ltd (Discovery Holiday Parks) applied\nfor a notification waiver in respect of its proposed acquisition of the\nassets of Habitat Noosa Everglades Eco Camp (Habitat Noosa), as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition).\nThe waiver application does not include Discovery Holiday Parks\nInvestments Pty Ltd’s acquisition of shares in the entity that holds a\nlease for the land on which Habitat Noosa operates."
-            },
-            {
-              "item": "Determination",
-              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
-            },
-            {
-              "item": "Date of determination",
-              "details": "10 April 2026"
-            },
-            {
-              "item": "Parties to the\nAcquisition",
-              "details": "The acquirer, Discovery Holiday Parks, owns and operates over 90\naccommodation offerings throughout Australia. Discovery provides\nshort-stay holiday accommodation, worker accommodation, and\nlong-stay accommodation, as well as tours and food and beverage\nservices within the tourism and hospitality industry. Discovery\nHoliday Parks is not present in Noosa or on the Sunshine Coast.\nThe target, Habitat Noosa, is an integrated hospitality business\ncomprising accommodation options for backpackers, couples and\nfamilies, a 200 seat bar and bistro with an onsite micro brewery, and\nNoosa Everglades eco safari boat tours. Associated brands include\nEverglades Eco Safaris, Kangarooms Noosa Everglades, Eco Brewing\nCo and Coothara Bar."
-            },
-            {
-              "item": "Explanation for\ndetermination",
-              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. There is no overlap between Discovery Holiday Parks and\nHabitat Noosa in Noosa and the Sunshine Coast and a small\noverlap in Queensland in the supply of accommodation, food\nand beverage, and activities and tours\nb. there are alternative providers of accommodation, food and\nbeverage, and activities and tours in Noosa and the\nSunshine Coast.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC’s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC’s interim guidance on\nnotification waivers and merger assessment guidelines."
-            }
-          ],
-          "url_gh": "/mergers/WA-85018/Discovery Holiday Parks – Habitat Noosa Everglades Eco Camp (WA-85018) - Notification waiver determination - 10 April 2026.pdf",
-          "status": "live",
-          "phase": "Waiver"
-        },
-        {
-          "date": "2026-03-20T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
+          "phase": "Phase 1"
         }
       ]
     }
@@ -2076,109 +888,6 @@
       ]
     },
     {
-      "merger_id": "MN-30005",
-      "merger_name": "Adobe - Semrush",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/adobe-semrush",
-      "acquirers": [
-        {
-          "name": "Fenway Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "10389477"
-        },
-        {
-          "name": "Adobe Inc. (NASDAQ: ADBE)",
-          "identifier_type": null,
-          "identifier": "2748129"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Semrush Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "7690622"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-16T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-04-30T12:00:00Z",
-      "accc_determination": null,
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "is_waiver": false,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Adobe Inc. (**Adobe**) through a newly incorporated direct wholly owned subsidiary, Fenway Merger Sub, Inc. (**Merger Sub**), proposes to acquire 100% of the share capital in Semrush Holdings, Inc. (Semrush and together with Adobe, the **Parties**). The Proposed Transaction is being implemented pursuant to a merger agreement entered into between Adobe, Merger Sub, and Semrush dated 18 November 2025 (**Merger Agreement**). Pursuant to the Merger Agreement, Merger Sub will merge with and into Semrush, such that Merger Sub will cease to exist and Semrush will become the \"surviving corporation\" and a direct, wholly owned subsidiary of Adobe. After the Proposed Transaction, Semrush will be solely controlled by Adobe.",
-      "events": [
-        {
-          "date": "2026-03-17T12:00:00Z",
-          "title": "Adobe / Semrush - Questionnaire",
-          "display_title": "Adobe / Semrush - Questionnaire",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Adobe%20-%20Semrush%20-%20Questionnaire.docx",
-          "url_gh": "/mergers/MN-30005/Adobe - Semrush - Questionnaire.pdf",
-          "status": "removed"
-        },
-        {
-          "date": "2026-03-16T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-50012",
-      "merger_name": "Maas – 50% acquisition of COLAS’ Caloundra asphalt plant and 100% of COLAS’ Tomago asphalt plant",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/maas-%E2%80%93-50-acquisition-of-colas%E2%80%99-caloundra-asphalt-plant-and-100-of-colas%E2%80%99-tomago-asphalt-plant",
-      "acquirers": [
-        {
-          "name": "ASPHALT OPERATORS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 682 698 282"
-        }
-      ],
-      "targets": [
-        {
-          "name": "COLAS QUEENSLAND PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "91 169 872 208"
-        },
-        {
-          "name": "COLAS NEW SOUTH WALES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "16 064 662 148"
-        },
-        {
-          "name": "COLAS AUSTRALIA GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 000 388 161"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-18T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-05-04T12:00:00Z",
-      "accc_determination": null,
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "is_waiver": false,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Maas Group Holdings Limited (**Maas**) proposes to acquire, through its subsidiary Asphalt Operators Australia Pty Ltd (**AOA**), a 50% interest in Coltek Asphalt Pty Ltd (**Coltek**), which will own and operate the hot-mix asphalt business currently owned and operated by a subsidiary of COLAS Australia Group Pty Ltd (**COLAS**) at Caloundra on the Sunshine Coast, QLD. The remaining 50% interest in Coltek will be retained by COLAS Australia, and Coltek will operate the hot-mix asphalt business at Caloundra as an incorporated joint venture between Maas and COLAS Australia (the **Acquisition**).",
-      "events": [
-        {
-          "date": "2026-03-19T12:00:00Z",
-          "title": "Questionnaire: Maas – 50% acquisition of COLAS’ Caloundra asphalt plant and 100% of COLAS’ Tomago asphalt plant - March 2026",
-          "display_title": "Questionnaire: Maas – 50% acquisition of COLAS’ Caloundra asphalt plant and 100% of COLAS’ Tomago asphalt plant - March 2026",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%3A%20Maas%20%E2%80%93%2050%25%20acquisition%20of%20COLAS%E2%80%99%20Caloundra%20asphalt%20plant%20and%20100%25%20of%20COLAS%E2%80%99%20Tomago%20asphalt%20plant%20-%20March%202026.docx",
-          "url_gh": "/mergers/MN-50012/Questionnaire - Maas – 50pct acquisition of COLAS’ Caloundra asphalt plant and 100pct of COLAS’ Tomago asphalt plant - March 2026.pdf",
-          "status": "removed"
-        },
-        {
-          "date": "2026-03-18T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
       "merger_id": "MN-65009",
       "merger_name": "CVC Capital Partners – Marathon Asset Management",
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-marathon-asset-management",
@@ -2217,109 +926,6 @@
         },
         {
           "date": "2026-03-18T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-40009",
-      "merger_name": "Gilead - Arcellx",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/gilead-arcellx",
-      "acquirers": [
-        {
-          "name": "Gilead Sciences, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 943047598"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Arcellx, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 472855917"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-19T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-05-05T12:00:00Z",
-      "accc_determination": null,
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "is_waiver": false,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Gilead Sciences, Inc. (Gilead), through its wholly owned subsidiary Ravens Sub, Inc. (Ravens Sub) proposes to acquire all the outstanding shares of Arcellx, Inc. (Arcellx) via a public cash tender offer. Following consummation of the offer, Ravens Sub will be merged with Arcellx, and Arcellx will continue as the surviving corporation and a wholly owned subsidiary of Gilead.",
-      "events": [
-        {
-          "date": "2026-03-19T12:00:00Z",
-          "title": "Questionnaire – Gilead - Arcellx",
-          "display_title": "Questionnaire – Gilead - Arcellx",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Gilead%20-%20Arcellx.docx",
-          "url_gh": "/mergers/MN-40009/Questionnaire - Gilead - Arcellx.pdf",
-          "status": "removed"
-        },
-        {
-          "date": "2026-03-19T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-75012",
-      "merger_name": "Opal Healthcare – Greenwich Place residential aged care home",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/opal-healthcare-%E2%80%93-greenwich-place-residential-aged-care-home",
-      "acquirers": [
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
-        },
-        {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
-        }
-      ],
-      "targets": [
-        {
-          "name": "STAMEN GREENWICH PROPERTY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 613 786 182"
-        },
-        {
-          "name": "GREENWICH PLACE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 000 706 249"
-        },
-        {
-          "name": "GREENWICH CARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "96 613 786 682"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-19T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-05-05T12:00:00Z",
-      "accc_determination": null,
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "is_waiver": false,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "DPG Services Pty Ltd (**DPG**) and OHCA Property Holdings Pty Ltd (**OHCA**) (being related bodies corporate, and together referred to as **Opal Healthcare**) propose to acquire the land, assets and business comprising the Greenwich Place residential aged care home located in Greenwich, Sydney (**Greenwich Place**) (**Acquisition**).",
-      "events": [
-        {
-          "date": "2026-03-20T12:00:00Z",
-          "title": "Questionnaire - Opal Healthcare - Greenwich Place residential aged care home",
-          "display_title": "Questionnaire - Opal Healthcare - Greenwich Place residential aged care home",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Opal%20Healthcare%20-%20Greenwich%20Place%20residential%20aged%20care%20home.docx",
-          "url_gh": "/mergers/MN-75012/Questionnaire - Opal Healthcare - Greenwich Place residential aged care home.pdf",
-          "status": "removed"
-        },
-        {
-          "date": "2026-03-19T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC"
         }
@@ -2581,25 +1187,9 @@
       "merger_description": "The proposed acquisition involves a consortium comprised of Tega Industries Limited (**Tega**) and the Apollo funds indirectly and collectively acquiring all outstanding shares in the subsidiaries of AIP MC Holdings LLC that collectively form **Molycop**.",
       "events": [
         {
-          "date": "2026-03-27T12:00:00Z",
-          "title": "Questionnaire - Tega/Apollo - Molycop",
-          "display_title": "Questionnaire - Tega/Apollo - Molycop",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Apollo%20-%20Molycop.docx",
-          "url_gh": "/mergers/MN-85006/Apollo - Molycop.pdf",
-          "status": "removed"
-        },
-        {
           "date": "2026-03-26T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC"
-        },
-        {
-          "date": "2026-03-27T12:00:00Z",
-          "title": "Questionnaire - Tega/Apollo - Molycop",
-          "display_title": "Questionnaire - Tega/Apollo - Molycop",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Apollo%20-%20Molycop_0.docx",
-          "url_gh": "/mergers/MN-85006/Apollo - Molycop_0.pdf",
-          "status": "removed"
         },
         {
           "date": "2026-03-27T12:00:00Z",
@@ -2716,8 +1306,8 @@
     },
     {
       "merger_id": "MN-15011",
-      "merger_name": "Danaher Corporation / Masimo Corporation",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danaher-corporation-masimo-corporation",
+      "merger_name": "Danaher - Masimo",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danaher-masimo",
       "acquirers": [
         {
           "name": "Danaher Corporation",
@@ -2749,7 +1339,7 @@
           "display_title": "Danaher - Masimo - Questionnaire",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Danaher%20-%20Masimo%20-%20Questionnaire.docx",
           "url_gh": "/mergers/MN-15011/Danaher - Masimo - Questionnaire.pdf",
-          "status": "live"
+          "status": "removed"
         },
         {
           "date": "2026-04-02T12:00:00Z",
@@ -2837,11 +1427,6 @@
       "merger_description": "Experience Australia Group Pty Ltd (EAG), via its wholly owned subsidiary JB Kakadu Hotel Pty Ltd (JB Kakadu), proposes to acquire Crocodile Hotel Pty Ltd, which operates the business and business assets known as the Kakadu Crocodile Hotel (Crocodile Hotel) in Jabiru (NT), from Kakadu Tourism (GCH) Pty Limited (the Seller), as well as a 100% leasehold interest in the land on which the Crocodile Hotel is situated from Gundjeihmi Aboriginal Corporation Jabiru Town (the Acquisition).",
       "events": [
         {
-          "date": "2026-04-08T12:00:00Z",
-          "title": "Questionnaire - Journey Beyond - Kakadu Crocodile Hotel",
-          "display_title": "Questionnaire - Journey Beyond - Kakadu Crocodile Hotel"
-        },
-        {
           "date": "2026-04-07T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC"
@@ -2891,7 +1476,7 @@
           "display_title": "Questionnaire - REA Group - Simplicity Loans & Advisory",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/REA%20Group%20-%20Simplicity%20Loans%20and%20Advisory%20-%20Questionnaire%20-%20April%202026.docx",
           "url_gh": "/mergers/MN-65008/REA Group - Simplicity Loans and Advisory - Questionnaire - April 2026.pdf",
-          "status": "live"
+          "status": "removed"
         },
         {
           "date": "2026-04-07T12:00:00Z",
@@ -2943,17 +1528,12 @@
           "display_title": "Merger notified to ACCC"
         },
         {
-          "date": "2026-03-12T12:00:00Z",
-          "title": "In accordance with s 51ABZ of the Competition and Consumer Act 2010, the ACCC decided that the notification filed on 11 February 2026 should be taken not to have an effective notification date because it is materially incomplete and materially misleading.",
-          "display_title": "In accordance with s 51ABZ of the Competition and Consumer Act 2010, the ACCC decided that the notification filed on 11 February 2026 should be taken not to have an effective notification date because it is materially incomplete and materially misleading."
-        },
-        {
           "date": "2026-04-08T12:00:00Z",
           "title": "Sembcorp / Alinta Energy - third-party questionnaire",
           "display_title": "Sembcorp / Alinta Energy - third-party questionnaire",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Alinta%20Energy%20-%20third-party%20questionnaire%20-%208%20April_1.docx",
           "url_gh": "/mergers/MN-95001/Alinta Energy - third-party questionnaire - 8 April_1.pdf",
-          "status": "live"
+          "status": "removed"
         },
         {
           "date": "2026-04-07T12:00:00Z",
@@ -3012,6 +1592,50 @@
       ]
     },
     {
+      "merger_id": "MN-35013",
+      "merger_name": "Estia Health – Norsan residential aged care business",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/estia-health-%E2%80%93-norsan-residential-aged-care-business",
+      "acquirers": [
+        {
+          "name": "ESTIA INVESTMENTS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "87 164 350 387"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NORSAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 076 143 596"
+        }
+      ],
+      "effective_notification_datetime": "2026-04-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-25T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Estia Investments Pty. Ltd. (**Estia**) proposes to acquire substantially all of the business assets of three residential aged care homes from Norsan Pty Ltd (**Norsan**), being Chirnside Views Residential Aged Care, Park Lane Croydon Residential Aged Care and Willowbrae - Melton Residential Aged Care (the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-04-13T12:00:00Z",
+          "title": "Questionnaire - Estia Health - Norsan residential aged care business",
+          "display_title": "Questionnaire - Estia Health - Norsan residential aged care business",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Estia%20Health%20-%20Norsan%20residential%20aged%20care%20business.docx",
+          "url_gh": "/mergers/MN-35013/Questionnaire - Estia Health - Norsan residential aged care business.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-40015",
       "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/swiss-re-qbe-insurances-trade-credit-and-surety-business",
@@ -3050,6 +1674,182 @@
         },
         {
           "date": "2026-04-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-95011",
+      "merger_name": "Dubai Aerospace Enterprise - Macquarie AirFinance",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/dubai-aerospace-enterprise-macquarie-airfinance",
+      "acquirers": [
+        {
+          "name": "Dubai Aerospace Enterprise (DAE) Ltd",
+          "identifier_type": null,
+          "identifier": "DIFC  0170"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Macquarie AirFinance Limited",
+          "identifier_type": null,
+          "identifier": "UK  11958743"
+        }
+      ],
+      "effective_notification_datetime": "2026-04-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-25T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Dubai Aerospace Enterprise DAE Ltd (**DAE**) proposes to acquire 100% of the issued share capital in Macquarie AirFinance Limited (**Macquarie AirFinance**) (the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-04-13T12:00:00Z",
+          "title": "Questionnaire - Dubai Aerospace Enterprise - Macquarie AirFinance",
+          "display_title": "Questionnaire - Dubai Aerospace Enterprise - Macquarie AirFinance",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Dubai%20Aerospace%20Enterprise%20-%20Macquarie%20AirFinance.docx",
+          "url_gh": "/mergers/MN-95011/Questionnaire - Dubai Aerospace Enterprise - Macquarie AirFinance.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55013",
+      "merger_name": "Lawrence & Hanson - Gordon Macdonald",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/lawrence-hanson-gordon-macdonald",
+      "acquirers": [
+        {
+          "name": "LAWRENCE & HANSON GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "69 080 350 812"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GORDON MACDONALD PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "36 000 307 246"
+        }
+      ],
+      "effective_notification_datetime": "2026-04-13T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-26T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Lawrence & Hanson Group Pty Ltd (**Lawrence & Hanson**) proposes to acquire the business and assets of Gordon Macdonald Pty Ltd (**Gordon Macdonald**) (the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-04-13T12:00:00Z",
+          "title": "Questionnaire - Lawrence & Hanson - Gordon Macdonald",
+          "display_title": "Questionnaire - Lawrence & Hanson - Gordon Macdonald",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Lawrence%20%26%20Hanson%20-%20Gordon%20Macdonald.docx",
+          "url_gh": "/mergers/MN-55013/Questionnaire - Lawrence and Hanson - Gordon Macdonald.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-13T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-40012",
+      "merger_name": "Eli Lilly – acquisition of licence from CSL Behring",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eli-lilly-%E2%80%93-acquisition-of-licence-from-csl-behring",
+      "acquirers": [
+        {
+          "name": "Eli Lilly and Company",
+          "identifier_type": null,
+          "identifier": "350470950 (IRS Employer Identification Number)"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CSL Behring LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "effective_notification_datetime": "2026-04-14T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-27T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Eli Lilly and Company (Eli Lilly) and CSL Behring LLC (CSL Behring) propose to enter into a Licence Agreement under which Eli Lilly would be granted certain exclusive rights to develop and commercialise Clazakizumab, an anti-interleukin-6 (IL-6) monoclonal antibody, for certain new indications including atrial fibrillation, atherosclerotic cardiovascular disease and other cardiovascular-related indications (the Acquisition). CSL Behring would retain exclusive rights to continue the development and commercialisation of Clazakizumab for the prevention of cardiovascular events in patients with end-stage kidney disease.",
+      "events": [
+        {
+          "date": "2026-04-14T12:00:00Z",
+          "title": "Questionnaire - Eli Lilly: acquisition of Clazakizumab licence from CSL Behring",
+          "display_title": "Questionnaire - Eli Lilly: acquisition of Clazakizumab licence from CSL Behring",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Eli%20Lilly%20-%20Clazakizumab%20licence%20from%20CSL%20Behring%3A%20Third-party%20questionnaire.docx",
+          "url_gh": "/mergers/MN-40012/Eli Lilly - Clazakizumab licence from CSL Behring - Third-party questionnaire.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-14T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal – TR Calibration",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/trescal-%E2%80%93-tr-calibration",
+      "acquirers": [
+        {
+          "name": "TRESCAL (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "39 117 603 835"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TR PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 005 499 721"
+        }
+      ],
+      "effective_notification_datetime": "2026-04-14T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-27T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Trescal Holding Pty Ltd (**Trescal**), through a wholly-owned subsidiary, proposes to acquire TR Pty Ltd’s (**TR**) calibration and equipment sales business, TechRentals Calibration & Sales (**TR Calibration**) (the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-04-14T12:00:00Z",
+          "title": "Questionnaire - Trescal - TR Calibration",
+          "display_title": "Questionnaire - Trescal - TR Calibration",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Trescal%20-%20TR%20Calibration%20-Questionnaire.docx",
+          "url_gh": "/mergers/MN-90009/Trescal - TR Calibration -Questionnaire.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-14T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC"
         }
@@ -3119,14 +1919,6 @@
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ampol_EG%20-%20NOCC%20summary%20-%20AR%20version%20-%202%20March%202026_1.pdf",
           "url_gh": "/mergers/MN-01019/Ampol_EG - NOCC summary - AR version - 2 March 2026_1.pdf",
           "status": "live"
-        },
-        {
-          "date": "2026-01-20T12:00:00Z",
-          "title": "ACCC decided notification is subject to Phase 2 review",
-          "display_title": "ACCC decided notification is subject to Phase 2 review",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ampol%20-%20EG%20Australia%20-%20Phase%202%20Notice%20-%20Redacted_2.pdf",
-          "url_gh": "/mergers/MN-01019/Ampol - EG Australia - Phase 2 Notice - Redacted_2.pdf",
-          "status": "removed"
         },
         {
           "date": "2026-04-07T12:00:00Z",
@@ -3273,14 +2065,6 @@
           "date": "2026-02-20T12:00:00Z",
           "title": "On 20 February 2026, MicroStar gave the ACCC additional information and documents in response to the ACCC’s decision under s 51ABY of the CCA. Accordingly, the effective notification date is 20 February 2026.",
           "display_title": "On 20 February 2026, MicroStar gave the ACCC additional information and documents in response to the ACCC’s decision under s 51ABY of the CCA. Accordingly, the effective notification date is 20 February 2026."
-        },
-        {
-          "date": "2026-04-01T12:00:00Z",
-          "title": "ACCC decided notification is subject to Phase 2 review",
-          "display_title": "ACCC decided notification is subject to Phase 2 review",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/MN%2030003%20-%20MicroStar_Konvoy%20-%20Phase%202%20notice%20-%201%20April%202026_0.pdf",
-          "url_gh": "/mergers/MN-30003/MN 30003 - MicroStar_Konvoy - Phase 2 notice - 1 April 2026_0.pdf",
-          "status": "removed"
         },
         {
           "date": "2026-04-01T12:00:00Z",

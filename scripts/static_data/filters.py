@@ -1,45 +1,34 @@
 """Predicates and list filters for segmenting enriched mergers.
 
-These replace the inline list comprehensions that used to live in
-``generate_stats_json`` and ``generate_analysis_json`` (the notification/waiver
-split) and in ``generate_upcoming_events_json`` (exclude waivers + suspended).
+The canonical implementations now live in :mod:`merger_filters` so that
+every generator in ``scripts/`` can share a single source of truth. This
+module re-exports them unchanged for backwards compatibility with the
+static-data package's existing callers.
 
 All filters expect *enriched* mergers — specifically, ``is_waiver`` must have
-been set by :func:`static_data.enrichment.enrich_merger`.
+been set by :func:`static_data.enrichment.enrich_merger` (the raw
+``data/processed/mergers.json`` also carries the flag, written by
+``extract_mergers.py``).
 """
 
-from constants import merger_status
+from merger_filters import (
+    exclude_for_public_output,
+    filter_notifications,
+    filter_public,
+    filter_suspended,
+    filter_waivers,
+    is_public_visible,
+    is_suspended,
+    is_waiver,
+)
 
-
-def is_waiver(merger: dict) -> bool:
-    """Return True if the merger has been tagged as a waiver application."""
-    return bool(merger.get('is_waiver', False))
-
-
-def is_suspended(merger: dict) -> bool:
-    """Return True if the merger's assessment has been suspended."""
-    return merger.get('status') == merger_status.ASSESSMENT_SUSPENDED
-
-
-def filter_waivers(mergers: list) -> list:
-    """Return only the waiver mergers from ``mergers``."""
-    return [m for m in mergers if is_waiver(m)]
-
-
-def filter_notifications(mergers: list) -> list:
-    """Return only non-waiver (notification) mergers from ``mergers``."""
-    return [m for m in mergers if not is_waiver(m)]
-
-
-def filter_suspended(mergers: list) -> list:
-    """Return only mergers whose assessment has been suspended."""
-    return [m for m in mergers if is_suspended(m)]
-
-
-def exclude_for_public_output(mergers: list) -> list:
-    """Exclude waivers and suspended mergers.
-
-    This is the combined predicate used by generators that should only show
-    "live" notification mergers to the public (e.g. the upcoming-events feed).
-    """
-    return [m for m in mergers if not is_waiver(m) and not is_suspended(m)]
+__all__ = [
+    "is_waiver",
+    "is_suspended",
+    "is_public_visible",
+    "filter_waivers",
+    "filter_notifications",
+    "filter_suspended",
+    "filter_public",
+    "exclude_for_public_output",
+]
