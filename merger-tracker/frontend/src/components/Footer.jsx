@@ -14,7 +14,7 @@ function Footer() {
           >
             Nick Twort
           </a>
-          . The information on this site is provided for informational purposes only and should not be relied upon for legal or business decisions. No responsibility is accepted for any errors, omissions, or reliance on the information presented. For official merger information, please visit the{' '}
+          . The information on this site is provided for informational purposes only and should not be relied upon for legal or business decisions. No responsibility is accepted for any errors, omissions, or reliance on the information presented. <span className="whitespace-nowrap">For official merger information, please visit the</span>{' '}
           <a
             href="https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register"
             target="_blank"
