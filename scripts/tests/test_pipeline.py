@@ -567,18 +567,16 @@ class TestGetServeFilename:
 # ---------------------------------------------------------------------------
 
 # Import after mocks are set up
-from generate_static_data import (
+from static_data.business_days import (
     is_christmas_new_year_period,
     _count_weekdays_in_range,
     calculate_calendar_days,
-    extract_phase_from_event,
-    enrich_merger,
-    generate_mergers_json,
-    generate_industries_json,
-    generate_commentary_json,
-    load_questionnaire_data,
-    generate_questionnaire_files,
 )
+from static_data.enrichment import enrich_merger, extract_phase_from_event
+from static_data.loaders import load_questionnaire_data
+from static_data.outputs.commentary import generate as generate_commentary_json
+from static_data.outputs.industries import generate_index as generate_industries_json
+from static_data.outputs.questionnaires import generate as generate_questionnaire_files
 
 
 class TestIsChristmasNewYearPeriod:
@@ -807,22 +805,6 @@ class TestEnrichMerger:
 
 
 # ---------------------------------------------------------------------------
-# generate_static_data: generate_mergers_json
-# ---------------------------------------------------------------------------
-
-class TestGenerateMergersJson:
-    def test_wraps_in_mergers_key(self):
-        mergers = [{'merger_id': 'MN-01016'}]
-        result = generate_mergers_json(mergers)
-        assert 'mergers' in result
-        assert result['mergers'] == mergers
-
-    def test_empty_list(self):
-        result = generate_mergers_json([])
-        assert result == {"mergers": []}
-
-
-# ---------------------------------------------------------------------------
 # generate_static_data: generate_industries_json
 # ---------------------------------------------------------------------------
 
@@ -1026,10 +1008,7 @@ class TestEnrichMergerQuestionnaire:
 # ---------------------------------------------------------------------------
 
 class TestGenerateQuestionnaireFiles:
-    def test_generates_files(self, tmp_path, monkeypatch):
-        import generate_static_data
-        monkeypatch.setattr(generate_static_data, 'OUTPUT_DIR', tmp_path)
-
+    def test_generates_files(self, tmp_path):
         q_data = {
             'MN-01016': {
                 'deadline': '25 August 2025',
@@ -1050,7 +1029,7 @@ class TestGenerateQuestionnaireFiles:
             },
         }
 
-        count = generate_questionnaire_files(q_data)
+        count = generate_questionnaire_files(q_data, tmp_path)
         assert count == 2
 
         # Verify files exist
@@ -1069,10 +1048,7 @@ class TestGenerateQuestionnaireFiles:
         assert data['questions'][0]['number'] == 1
         assert data['questions'][0]['text'] == 'What is the impact?'
 
-    def test_skips_entries_without_questions(self, tmp_path, monkeypatch):
-        import generate_static_data
-        monkeypatch.setattr(generate_static_data, 'OUTPUT_DIR', tmp_path)
-
+    def test_skips_entries_without_questions(self, tmp_path):
         q_data = {
             'MN-01016': {
                 'questions': [{'number': 1, 'text': 'Q1'}],
@@ -1084,25 +1060,19 @@ class TestGenerateQuestionnaireFiles:
             },
         }
 
-        count = generate_questionnaire_files(q_data)
+        count = generate_questionnaire_files(q_data, tmp_path)
         assert count == 1
 
         q_dir = tmp_path / "questionnaires"
         assert (q_dir / "MN-01016.json").exists()
         assert not (q_dir / "MN-01017.json").exists()
 
-    def test_empty_data(self, tmp_path, monkeypatch):
-        import generate_static_data
-        monkeypatch.setattr(generate_static_data, 'OUTPUT_DIR', tmp_path)
-
-        count = generate_questionnaire_files({})
+    def test_empty_data(self, tmp_path):
+        count = generate_questionnaire_files({}, tmp_path)
         assert count == 0
 
-    def test_does_not_include_file_path(self, tmp_path, monkeypatch):
+    def test_does_not_include_file_path(self, tmp_path):
         """file_path is an internal path and should not be in the output."""
-        import generate_static_data
-        monkeypatch.setattr(generate_static_data, 'OUTPUT_DIR', tmp_path)
-
         q_data = {
             'MN-01016': {
                 'file_path': 'matters/MN-01016/Questionnaire.pdf',
@@ -1112,7 +1082,7 @@ class TestGenerateQuestionnaireFiles:
             },
         }
 
-        generate_questionnaire_files(q_data)
+        generate_questionnaire_files(q_data, tmp_path)
 
         import json
         with open(tmp_path / "questionnaires" / "MN-01016.json") as f:
