@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Scatter, Bar } from 'react-chartjs-2';
 import {
@@ -15,7 +14,7 @@ import {
 import LoadingSpinner from '../components/LoadingSpinner';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
-import { dataCache } from '../utils/dataCache';
+import { useFetchData } from '../hooks/useFetchData';
 
 ChartJS.register(
   CategoryScale,
@@ -45,28 +44,10 @@ function formatMonthLabel(yyyymm) {
 }
 
 function Analysis() {
-  const [data, setData] = useState(() => dataCache.get('analysis-data') || null);
-  const [loading, setLoading] = useState(() => !dataCache.has('analysis-data'));
-  const [error, setError] = useState(null);
+  const { data, loading, error } = useFetchData(API_ENDPOINTS.analysis, {
+    cacheKey: 'analysis-data',
+  });
   const navigate = useNavigate();
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      const response = await fetch(API_ENDPOINTS.analysis);
-      if (!response.ok) throw new Error('Failed to fetch analysis data');
-      const result = await response.json();
-      dataCache.set('analysis-data', result);
-      setData(result);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   if (loading) return <LoadingSpinner />;
   if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;

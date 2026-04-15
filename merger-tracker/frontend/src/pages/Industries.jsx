@@ -1,41 +1,25 @@
-import { useState, useEffect, Fragment } from 'react';
+import { useState, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import WaiverBadge from '../components/WaiverBadge';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
+import { useFetchData } from '../hooks/useFetchData';
 
 const SCROLL_THRESHOLD = 6; // Show scrollable container when industry has more than this many mergers
 
 function Industries() {
-  const [industries, setIndustries] = useState(() => dataCache.get('industries-list') || []);
+  const { data: industriesData, loading, error } = useFetchData(
+    API_ENDPOINTS.industries,
+    { cacheKey: 'industries-list' }
+  );
+  const industries = industriesData?.industries || [];
+
   const [industryMergersMap, setIndustryMergersMap] = useState(() => dataCache.get('industry-mergers-map') || {});
   const [loadingIndustries, setLoadingIndustries] = useState({});
-  const [loading, setLoading] = useState(() => !dataCache.has('industries-list'));
-  const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [expandedIndustry, setExpandedIndustry] = useState(null);
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const fetchData = async () => {
-    try {
-      // Only fetch industries list with counts
-      const industriesRes = await fetch(API_ENDPOINTS.industries);
-      if (!industriesRes.ok) throw new Error('Failed to fetch industries');
-      const industriesData = await industriesRes.json();
-
-      dataCache.set('industries-list', industriesData.industries);
-      setIndustries(industriesData.industries);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const fetchIndustryMergers = async (code) => {
     // Check if already loaded
