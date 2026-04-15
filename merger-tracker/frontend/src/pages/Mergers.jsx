@@ -11,6 +11,7 @@ import { dataCache } from '../utils/dataCache';
 import { useTracking } from '../context/TrackingContext';
 import { useDebounce } from '../hooks/useDebounce';
 import { buildSearchIndex, searchMergers, clearSearchIndex } from '../utils/searchIndex';
+import { PHASES } from '../constants/mergerStatus';
 
 const SORT_FIELDS = [
   { value: 'notification', label: 'Notification date' },
@@ -187,9 +188,9 @@ function Mergers() {
     }
 
     if (phaseFilter === 'phase1') {
-      filtered = filtered.filter((m) => m.stage && m.stage.includes('Phase 1'));
+      filtered = filtered.filter((m) => m.stage && m.stage.includes(PHASES.PHASE_1));
     } else if (phaseFilter === 'phase2') {
-      filtered = filtered.filter((m) => m.stage && m.stage.includes('Phase 2'));
+      filtered = filtered.filter((m) => m.stage && m.stage.includes(PHASES.PHASE_2));
     } else if (phaseFilter === 'waivers') {
       filtered = filtered.filter((m) => m.is_waiver);
     }
@@ -378,9 +379,9 @@ function Mergers() {
                     aria-label="Filter by merger phase"
                   >
                     <option value="all">All phases</option>
-                    <option value="phase1">Phase 1</option>
-                    <option value="phase2">Phase 2</option>
-                    <option value="waivers">Waiver</option>
+                    <option value="phase1">{PHASES.PHASE_1}</option>
+                    <option value="phase2">{PHASES.PHASE_2}</option>
+                    <option value="waivers">{PHASES.WAIVER}</option>
                   </select>
                 </div>
                 <div>

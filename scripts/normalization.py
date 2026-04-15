@@ -6,6 +6,8 @@ scripts in the data processing pipeline to ensure consistent behavior and
 avoid code duplication.
 """
 
+from constants import merger_status
+
 
 def normalize_determination(determination: str) -> str | None:
     """
@@ -42,13 +44,13 @@ def normalize_determination(determination: str) -> str | None:
 
     # Normalize common patterns
     # IMPORTANT: Check for "Not approved" BEFORE "Approved" to avoid substring match
-    if 'Not approved' in determination or 'not approved' in determination:
-        return 'Not approved'
-    elif 'Approved' in determination or 'approved' in determination:
-        return 'Approved'
-    elif 'Declined' in determination or 'declined' in determination:
-        return 'Declined'
-    elif 'Not opposed' in determination or 'not opposed' in determination:
-        return 'Not opposed'
+    if merger_status.NOT_APPROVED in determination or 'not approved' in determination:
+        return merger_status.NOT_APPROVED
+    elif merger_status.APPROVED in determination or 'approved' in determination:
+        return merger_status.APPROVED
+    elif merger_status.DECLINED in determination or 'declined' in determination:
+        return merger_status.DECLINED
+    elif merger_status.NOT_OPPOSED in determination or 'not opposed' in determination:
+        return merger_status.NOT_OPPOSED
 
     return determination

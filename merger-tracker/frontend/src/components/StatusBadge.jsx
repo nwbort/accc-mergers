@@ -1,19 +1,25 @@
+import { MERGER_STATUS, STATUS_COLORS, DEFAULT_STATUS_STYLE } from '../constants/mergerStatus';
+
 function StatusBadge({ status, determination }) {
   const getStatusStyle = () => {
-    if (determination === 'Approved') {
-      return 'bg-emerald-50 text-emerald-700 border-emerald-200/60';
-    } else if (determination === 'Declined' || determination === 'Not approved') {
-      return 'bg-red-50 text-red-700 border-red-200/60';
-    } else if (determination === 'Referred to phase 2') {
-      return 'bg-amber-50 text-amber-700 border-amber-200/60';
-    } else if (status === 'Under assessment') {
-      return 'bg-primary/5 text-primary border-primary/20';
-    } else if (status === 'Assessment suspended') {
-      return 'bg-orange-50 text-orange-700 border-orange-200/60';
-    } else if (status === 'Assessment completed') {
-      return 'bg-gray-50 text-gray-600 border-gray-200/60';
+    // Determinations take precedence over statuses; 'Declined' and 'Not approved'
+    // share the same red palette (both map to the same STATUS_COLORS entry).
+    if (
+      determination === MERGER_STATUS.APPROVED ||
+      determination === MERGER_STATUS.DECLINED ||
+      determination === MERGER_STATUS.NOT_APPROVED ||
+      determination === MERGER_STATUS.REFERRED_TO_PHASE_2
+    ) {
+      return STATUS_COLORS[determination];
     }
-    return 'bg-gray-50 text-gray-600 border-gray-200/60';
+    if (
+      status === MERGER_STATUS.UNDER_ASSESSMENT ||
+      status === MERGER_STATUS.ASSESSMENT_SUSPENDED ||
+      status === MERGER_STATUS.ASSESSMENT_COMPLETED
+    ) {
+      return STATUS_COLORS[status];
+    }
+    return DEFAULT_STATUS_STYLE;
   };
 
   const displayText = determination || status;

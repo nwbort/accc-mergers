@@ -15,6 +15,7 @@ import os
 import sys
 from datetime import datetime, timedelta
 from date_utils import parse_iso_datetime
+from constants import merger_status
 
 # Default cutoff period after determination/waiver decision
 CUTOFF_WEEKS = 3
@@ -24,7 +25,7 @@ def is_waiver_merger(merger: dict) -> bool:
     """Check if a merger is a waiver application."""
     merger_id = merger.get('merger_id', '')
     stage = merger.get('stage', '')
-    return merger_id.startswith('WA-') or 'Waiver' in stage
+    return merger_id.startswith('WA-') or merger_status.WAIVER in stage
 
 
 def get_cutoff_date(merger: dict, cutoff_weeks: int = CUTOFF_WEEKS) -> datetime:
@@ -46,7 +47,7 @@ def get_cutoff_date(merger: dict, cutoff_weeks: int = CUTOFF_WEEKS) -> datetime:
 
     # For regular notifications: only cut off if approved
     determination = merger.get('accc_determination', '')
-    if determination == 'Approved':
+    if determination == merger_status.APPROVED:
         return determination_date + timedelta(weeks=cutoff_weeks)
 
     # Not approved or no determination - keep processing
