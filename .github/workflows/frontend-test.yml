@@ -1,10 +1,6 @@
 name: Frontend Tests
 
 on:
-  push:
-    paths:
-      - 'merger-tracker/frontend/**'
-      - '.github/workflows/frontend-test.yml'
   pull_request:
     paths:
       - 'merger-tracker/frontend/**'
