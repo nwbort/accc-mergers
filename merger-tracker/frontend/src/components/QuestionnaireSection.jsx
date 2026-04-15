@@ -33,13 +33,15 @@ function QuestionnaireSection({ mergerId, events }) {
     }
   };
 
-  // Find the questionnaire document link from events
-  const questionnaireEvent = events?.find(
-    (event) =>
-      event.url_gh &&
-      (event.title?.toLowerCase().includes('questionnaire') ||
-        event.display_title?.toLowerCase().includes('questionnaire'))
-  );
+  // Find all questionnaire document links from events (some mergers have multiple)
+  const questionnaireEvents = (events || [])
+    .filter(
+      (event) =>
+        event.url_gh &&
+        (event.title?.toLowerCase().includes('questionnaire') ||
+          event.display_title?.toLowerCase().includes('questionnaire'))
+    )
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-card mb-6 overflow-hidden">
@@ -102,24 +104,27 @@ function QuestionnaireSection({ mergerId, events }) {
 
           {questionnaire && (
             <>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mt-4 mb-4">
+              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 mb-4">
                 <p className="text-xs text-gray-400">
                   {questionnaire.questions_count} question{questionnaire.questions_count !== 1 ? 's' : ''}
                   {questionnaire.deadline_iso && (
                     <span> · Responses due {formatDate(questionnaire.deadline_iso + 'T12:00:00Z')}</span>
                   )}
                 </p>
-                {questionnaireEvent?.url_gh && (
+                {questionnaireEvents.map((event, idx) => (
                   <a
-                    href={questionnaireEvent.url_gh}
+                    key={event.url_gh}
+                    href={event.url_gh}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark transition-colors font-medium"
                   >
-                    View document
+                    {questionnaireEvents.length > 1
+                      ? `View document (${formatDate(event.date)})`
+                      : 'View document'}
                     <ExternalLinkIcon className="h-3 w-3" />
                   </a>
-                )}
+                ))}
               </div>
               <ol className="space-y-3">
                 {questionnaire.questions.map((q) => (
