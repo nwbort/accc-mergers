@@ -28,6 +28,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from collections import defaultdict
 
+from constants import merger_status
 from cutoff import is_waiver_merger
 from date_utils import parse_iso_datetime
 from normalization import normalize_determination
@@ -220,16 +221,16 @@ def extract_phase_from_event(event_title: str) -> str | None:
     """Extract phase information from event title."""
     if not event_title:
         return None
-    if 'Phase 1' in event_title:
-        return 'Phase 1'
-    elif 'Phase 2' in event_title:
-        return 'Phase 2'
-    elif 'Public Benefits' in event_title or 'public benefits' in event_title:
-        return 'Public Benefits'
-    elif 'Waiver' in event_title or 'waiver' in event_title:
-        return 'Waiver'
+    if merger_status.PHASE_1 in event_title:
+        return merger_status.PHASE_1
+    elif merger_status.PHASE_2 in event_title:
+        return merger_status.PHASE_2
+    elif merger_status.PUBLIC_BENEFITS in event_title or 'public benefits' in event_title:
+        return merger_status.PUBLIC_BENEFITS
+    elif merger_status.WAIVER in event_title or 'waiver' in event_title:
+        return merger_status.WAIVER
     elif 'notified' in event_title:
-        return 'Phase 1'  # Notification always starts Phase 1
+        return merger_status.PHASE_1  # Notification always starts Phase 1
     return None
 
 
@@ -314,19 +315,19 @@ def enrich_merger(merger: dict, commentary: dict = None, questionnaire_data: dic
     for event in m.get('events', []):
         title = event.get('title', '')
         if 'subject to Phase 2 review' in title:
-            phase_1_det = 'Referred to phase 2'
+            phase_1_det = merger_status.REFERRED_TO_PHASE_2
             phase_1_det_date = event.get('date')
             break
 
     if m.get('accc_determination') and m.get('determination_publication_date'):
-        stage = m.get('stage', 'Phase 1')
+        stage = m.get('stage', merger_status.PHASE_1)
         det = m['accc_determination']
         det_date = m['determination_publication_date']
 
-        if 'Phase 1' in stage:
+        if merger_status.PHASE_1 in stage:
             phase_1_det = det
             phase_1_det_date = det_date
-        elif 'Phase 2' in stage:
+        elif merger_status.PHASE_2 in stage:
             phase_2_det = det
             phase_2_det_date = det_date
         elif 'Public' in stage or 'Benefits' in stage:
@@ -348,7 +349,7 @@ def enrich_merger(merger: dict, commentary: dict = None, questionnaire_data: dic
         'competition concern' in event.get('title', '').lower()
         for event in m.get('events', [])
     )
-    if stage and 'Phase 2' in stage and phase2_end and not notice_already_issued:
+    if stage and merger_status.PHASE_2 in stage and phase2_end and not notice_already_issued:
         try:
             phase2_end_date = parse_iso_datetime(phase2_end)
             if phase2_end_date is None:
@@ -620,7 +621,7 @@ def generate_stats_json(enriched_mergers: list) -> dict:
                 determination_events.append({
                     "merger_id": merger_id,
                     "merger_name": merger_name,
-                    "determination": "Referred to phase 2",
+                    "determination": merger_status.REFERRED_TO_PHASE_2,
                     "determination_date": event.get('date'),
                     "page_modified_datetime": page_modified,
                     "determination_type": "phase_transition",
@@ -873,7 +874,7 @@ def generate_upcoming_events_json(enriched_mergers: list, days_ahead: int = 60) 
             continue
 
         # Skip if assessment is suspended (no active determination period)
-        if m.get('status') == 'Assessment suspended':
+        if m.get('status') == merger_status.ASSESSMENT_SUSPENDED:
             continue
 
         # Skip waiver mergers (they don't have determination periods) - using pre-enriched field
@@ -912,7 +913,7 @@ def generate_upcoming_events_json(enriched_mergers: list, days_ahead: int = 60) 
         # Phase 2 BD 1 is derived by subtracting 89 BDs from end_of_determination_period
         # (BD 90 of Phase 2), not from the date the referral notice was issued (which may
         # have been issued before Phase 1's determination period fully expired).
-        if stage and 'Phase 2' in stage:
+        if stage and merger_status.PHASE_2 in stage:
             notice_already_issued = any(
                 'competition concern' in event.get('title', '').lower()
                 for event in m.get('events', [])
@@ -994,7 +995,7 @@ def generate_analysis_json(enriched_mergers: list) -> dict:
 
         # Include 'Referred to phase 2' mergers using the date the phase 2 notice was issued
         if not end:
-            if phase_1_det == 'Referred to phase 2' and m.get('phase_1_determination_date'):
+            if phase_1_det == merger_status.REFERRED_TO_PHASE_2 and m.get('phase_1_determination_date'):
                 end = m['phase_1_determination_date']
             else:
                 continue

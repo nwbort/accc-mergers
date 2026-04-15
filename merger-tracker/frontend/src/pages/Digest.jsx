@@ -8,76 +8,11 @@ import SEO from '../components/SEO';
 import { API_ENDPOINTS, SUBSCRIBE_ENDPOINT, TURNSTILE_SITE_KEY } from '../config';
 import { formatDate } from '../utils/dates';
 import { dataCache } from '../utils/dataCache';
-
-// Full class names so Tailwind's scanner can detect them at build time.
-// Dynamic interpolation like `text-${colorKey}` gets purged.
-const COLOR_CLASSES = {
-  'new-merger': {
-    borderLeft: 'border-l-new-merger',
-    borderLight: 'border-new-merger-light/20',
-    headerBg: 'from-new-merger-pale/50',
-    emptyText: 'text-new-merger/70',
-    text: 'text-new-merger',
-    hoverText: 'hover:text-new-merger-dark',
-    cardFrom: 'from-new-merger-pale',
-    cardTo: 'to-new-merger-pale/50',
-    cardBorder: 'border-new-merger-light/30',
-    groupHoverText: 'group-hover:text-new-merger-dark',
-    labelText: 'text-new-merger-dark/80',
-  },
-  'cleared': {
-    borderLeft: 'border-l-cleared',
-    borderLight: 'border-cleared-light/20',
-    headerBg: 'from-cleared-pale/50',
-    emptyText: 'text-cleared/70',
-    text: 'text-cleared',
-    hoverText: 'hover:text-cleared-dark',
-    cardFrom: 'from-cleared-pale',
-    cardTo: 'to-cleared-pale/50',
-    cardBorder: 'border-cleared-light/30',
-    groupHoverText: 'group-hover:text-cleared-dark',
-    labelText: 'text-cleared-dark/80',
-  },
-  'declined': {
-    borderLeft: 'border-l-declined',
-    borderLight: 'border-declined-light/20',
-    headerBg: 'from-declined-pale/50',
-    emptyText: 'text-declined/70',
-    text: 'text-declined',
-    hoverText: 'hover:text-declined-dark',
-    cardFrom: 'from-declined-pale',
-    cardTo: 'to-declined-pale/50',
-    cardBorder: 'border-declined-light/30',
-    groupHoverText: 'group-hover:text-declined-dark',
-    labelText: 'text-declined-dark/80',
-  },
-  'phase-1': {
-    borderLeft: 'border-l-phase-1',
-    borderLight: 'border-phase-1-light/20',
-    headerBg: 'from-phase-1-pale/50',
-    emptyText: 'text-phase-1/70',
-    text: 'text-phase-1',
-    hoverText: 'hover:text-phase-1-dark',
-    cardFrom: 'from-phase-1-pale',
-    cardTo: 'to-phase-1-pale/50',
-    cardBorder: 'border-phase-1-light/30',
-    groupHoverText: 'group-hover:text-phase-1-dark',
-    labelText: 'text-phase-1-dark/80',
-  },
-  'phase-2': {
-    borderLeft: 'border-l-phase-2',
-    borderLight: 'border-phase-2-light/20',
-    headerBg: 'from-phase-2-pale/50',
-    emptyText: 'text-phase-2/70',
-    text: 'text-phase-2',
-    hoverText: 'hover:text-phase-2-dark',
-    cardFrom: 'from-phase-2-pale',
-    cardTo: 'to-phase-2-pale/50',
-    cardBorder: 'border-phase-2-light/30',
-    groupHoverText: 'group-hover:text-phase-2-dark',
-    labelText: 'text-phase-2-dark/80',
-  },
-};
+import {
+  DIGEST_COLOR_KEYS,
+  DIGEST_COLOR_CLASSES as COLOR_CLASSES,
+  MERGER_STATUS,
+} from '../constants/mergerStatus';
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -393,11 +328,11 @@ function Digest() {
   const dateRange = formatDateRange(digest.period_start, digest.period_end);
 
   const summaryCards = [
-    { id: 'new-mergers', colorKey: 'new-merger', count: digest.new_deals_notified.length, label: 'New deals notified' },
-    { id: 'mergers-approved', colorKey: 'cleared', count: digest.deals_cleared.length, label: 'Deals cleared' },
-    { id: 'mergers-declined', colorKey: 'declined', count: digest.deals_declined.length, label: 'Deals declined' },
-    { id: 'ongoing-phase-1', colorKey: 'phase-1', count: digest.ongoing_phase_1.length, label: 'Ongoing phase 1' },
-    { id: 'ongoing-phase-2', colorKey: 'phase-2', count: digest.ongoing_phase_2.length, label: 'Ongoing phase 2' },
+    { id: 'new-mergers', colorKey: DIGEST_COLOR_KEYS.NEW_MERGER, count: digest.new_deals_notified.length, label: 'New deals notified' },
+    { id: 'mergers-approved', colorKey: DIGEST_COLOR_KEYS.CLEARED, count: digest.deals_cleared.length, label: 'Deals cleared' },
+    { id: 'mergers-declined', colorKey: DIGEST_COLOR_KEYS.DECLINED, count: digest.deals_declined.length, label: 'Deals declined' },
+    { id: 'ongoing-phase-1', colorKey: DIGEST_COLOR_KEYS.PHASE_1, count: digest.ongoing_phase_1.length, label: 'Ongoing phase 1' },
+    { id: 'ongoing-phase-2', colorKey: DIGEST_COLOR_KEYS.PHASE_2, count: digest.ongoing_phase_2.length, label: 'Ongoing phase 2' },
   ];
 
   return (
@@ -445,12 +380,12 @@ function Digest() {
             id="new-mergers"
             title="New mergers"
             emptyMessage="No new mergers this week"
-            colorKey="new-merger"
+            colorKey={DIGEST_COLOR_KEYS.NEW_MERGER}
             mergers={digest.new_deals_notified}
             columns={['Merger', 'Notification date', 'Summary']}
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-new-merger-pale/40 transition-colors">
-                <MergerNameCell merger={merger} colorKey="new-merger" />
+                <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.NEW_MERGER} />
                 <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                   {merger.effective_notification_datetime
                     ? formatDate(merger.effective_notification_datetime)
@@ -471,18 +406,18 @@ function Digest() {
             id="mergers-approved"
             title="Mergers approved"
             emptyMessage="No mergers approved this week"
-            colorKey="cleared"
+            colorKey={DIGEST_COLOR_KEYS.CLEARED}
             mergers={digest.deals_cleared}
             columns={['Merger', 'Determination date', 'Determination']}
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-cleared-pale/40 transition-colors">
-                <MergerNameCell merger={merger} colorKey="cleared" />
+                <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.CLEARED} />
                 <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                   {merger.determination_publication_date
                     ? formatDate(merger.determination_publication_date)
                     : 'N/A'}
                 </td>
-                <DeterminationCell merger={merger} colorKey="cleared" defaultDetermination="Approved" getDeterminationPdf={getDeterminationPdf} />
+                <DeterminationCell merger={merger} colorKey={DIGEST_COLOR_KEYS.CLEARED} defaultDetermination={MERGER_STATUS.APPROVED} getDeterminationPdf={getDeterminationPdf} />
               </tr>
             )}
           />
@@ -491,18 +426,18 @@ function Digest() {
             id="mergers-declined"
             title="Mergers declined"
             emptyMessage="No mergers declined this week"
-            colorKey="declined"
+            colorKey={DIGEST_COLOR_KEYS.DECLINED}
             mergers={digest.deals_declined}
             columns={['Merger', 'Determination date', 'Determination']}
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-declined-pale/40 transition-colors">
-                <MergerNameCell merger={merger} colorKey="declined" />
+                <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.DECLINED} />
                 <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                   {merger.determination_publication_date
                     ? formatDate(merger.determination_publication_date)
                     : 'N/A'}
                 </td>
-                <DeterminationCell merger={merger} colorKey="declined" defaultDetermination="Not approved" getDeterminationPdf={getDeterminationPdf} />
+                <DeterminationCell merger={merger} colorKey={DIGEST_COLOR_KEYS.DECLINED} defaultDetermination={MERGER_STATUS.NOT_APPROVED} getDeterminationPdf={getDeterminationPdf} />
               </tr>
             )}
           />
@@ -511,12 +446,12 @@ function Digest() {
             id="ongoing-phase-1"
             title="Ongoing - phase 1 - initial assessment"
             emptyMessage="No ongoing phase 1 mergers"
-            colorKey="phase-1"
+            colorKey={DIGEST_COLOR_KEYS.PHASE_1}
             mergers={digest.ongoing_phase_1}
             columns={['Merger', 'Notification date', 'Determination due date', 'Summary']}
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-phase-1-pale/40 transition-colors">
-                <MergerNameCell merger={merger} colorKey="phase-1" />
+                <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.PHASE_1} />
                 <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                   {merger.effective_notification_datetime
                     ? formatDate(merger.effective_notification_datetime)
@@ -542,12 +477,12 @@ function Digest() {
             id="ongoing-phase-2"
             title="Ongoing - phase 2 - detailed assessment"
             emptyMessage="No ongoing phase 2 mergers"
-            colorKey="phase-2"
+            colorKey={DIGEST_COLOR_KEYS.PHASE_2}
             mergers={digest.ongoing_phase_2}
             columns={['Merger', 'Notification date', 'Determination due date', 'Summary']}
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-phase-2-pale/40 transition-colors">
-                <MergerNameCell merger={merger} colorKey="phase-2" />
+                <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.PHASE_2} />
                 <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
                   {merger.effective_notification_datetime
                     ? formatDate(merger.effective_notification_datetime)
