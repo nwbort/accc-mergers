@@ -302,6 +302,28 @@ function MergerDetail() {
           </div>
         </div>
 
+        {/* Related Merger Link */}
+        {merger.related_merger && (
+          <Link
+            to={`/mergers/${merger.related_merger.merger_id}`}
+            className="flex items-center gap-3 bg-amber-50/80 rounded-2xl border border-amber-200/60 shadow-card p-4 mb-6 hover:bg-amber-50 hover:border-amber-300/60 transition-all group"
+          >
+            <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center">
+              <svg className="h-5 w-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-gray-900">
+                {merger.related_merger.relationship === 'refiled_as'
+                  ? 'Waiver declined \u2013 subsequently notified'
+                  : 'Originally filed as a waiver application'
+                }
+              </p>
+            </div>
+          </Link>
+        )}
+
         {/* Parties */}
         <div className={`grid grid-cols-1 ${merger.other_parties && merger.other_parties.length > 0 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4 mb-6`}>
           {renderPartyList(merger.acquirers, 'acquirers', 'Acquirers')}

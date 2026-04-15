@@ -37,6 +37,7 @@ SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
 MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
 COMMENTARY_JSON = REPO_ROOT / "data" / "processed" / "commentary.json"
+RELATED_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "related_mergers.json"
 HOLIDAYS_JSON = REPO_ROOT / "merger-tracker" / "frontend" / "src" / "data" / "act-public-holidays.json"
 OUTPUT_DIR = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "data"
 DATA_OUTPUT_DIR = REPO_ROOT / "data" / "output"
@@ -231,6 +232,31 @@ def extract_phase_from_event(event_title: str) -> str | None:
     return None
 
 
+def load_related_mergers() -> dict:
+    """Load related merger pairs from related_mergers.json.
+
+    Returns a dict keyed by merger_id mapping to
+    {'merger_id': ..., 'relationship': 'refiled_as' | 'refiled_from'}.
+    """
+    if not RELATED_MERGERS_JSON.exists():
+        return {}
+
+    try:
+        with open(RELATED_MERGERS_JSON, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        result = {}
+        for pair in data.get('pairs', []):
+            wa = pair['waiver']
+            mn = pair['notification']
+            result[wa] = {'merger_id': mn, 'relationship': 'refiled_as'}
+            result[mn] = {'merger_id': wa, 'relationship': 'refiled_from'}
+        return result
+    except (json.JSONDecodeError, IOError, KeyError) as e:
+        print(f"Warning: Could not load related_mergers.json: {e}")
+        return {}
+
+
 def load_commentary() -> dict:
     """Load user commentary from commentary.json if it exists."""
     if not COMMENTARY_JSON.exists():
@@ -261,7 +287,7 @@ def enrich_merger(merger: dict, commentary: dict = None) -> dict:
     merger_id = m.get('merger_id', '')
     if commentary and merger_id in commentary:
         m['comments'] = commentary[merger_id].get('comments', [])
-    
+
     # Compute phase-specific determinations based on stage and events
     phase_1_det = None
     phase_1_det_date = None
@@ -1054,9 +1080,31 @@ def main():
     else:
         print("No commentary found")
 
+    # Load related merger pairs
+    related_mergers = load_related_mergers()
+    if related_mergers:
+        print(f"Loaded {len(related_mergers) // 2} related merger pair(s)")
+
     # Enrich all mergers once (add computed fields, phase determinations, etc.)
     print("Enriching mergers...")
     enriched_mergers = [enrich_merger(m, commentary) for m in mergers]
+
+    # Link related mergers (waiver <-> notification pairs) with resolved names
+    merger_name_lookup = {m['merger_id']: m['merger_name'] for m in enriched_mergers if m.get('merger_id')}
+    linked_count = 0
+    for m in enriched_mergers:
+        mid = m.get('merger_id', '')
+        if mid in related_mergers:
+            related = related_mergers[mid]
+            m['related_merger'] = {
+                'merger_id': related['merger_id'],
+                'relationship': related['relationship'],
+                'merger_name': merger_name_lookup.get(related['merger_id'], ''),
+            }
+            linked_count += 1
+    if linked_count:
+        print(f"  Linked {linked_count} related merger pairs")
+
     print(f"✓ Enriched {len(enriched_mergers)} mergers")
 
     # Create output directories
