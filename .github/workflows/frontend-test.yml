@@ -1,0 +1,31 @@
+name: Frontend Tests
+
+on:
+  pull_request:
+    paths:
+      - 'merger-tracker/frontend/**'
+      - '.github/workflows/frontend-test.yml'
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: merger-tracker/frontend
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version-file: merger-tracker/frontend/.nvmrc
+          cache: 'npm'
+          cache-dependency-path: merger-tracker/frontend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test

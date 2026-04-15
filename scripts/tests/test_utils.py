@@ -60,6 +60,28 @@ class TestParseIsoDatetime:
         assert result.hour == 14
         assert result.minute == 30
 
+    def test_z_suffix_produces_utc_tzinfo(self):
+        result = parse_iso_datetime("2025-11-21T12:00:00Z")
+        assert result is not None
+        assert result.tzinfo is not None
+        # UTC offset should be zero
+        assert result.utcoffset().total_seconds() == 0
+
+    def test_simple_date_has_midnight(self):
+        result = parse_iso_datetime("2025-11-21")
+        assert result is not None
+        assert result.hour == 0
+        assert result.minute == 0
+        assert result.second == 0
+
+    def test_malformed_iso_string_returns_none(self):
+        # Has a 'T' but the rest is not a valid ISO body.
+        assert parse_iso_datetime("2025-11-21Tnonsense") is None
+
+    def test_non_string_input_returns_none(self):
+        # AttributeError / TypeError paths
+        assert parse_iso_datetime(12345) is None
+
 
 # ---------------------------------------------------------------------------
 # date_utils: parse_text_to_iso
@@ -91,6 +113,37 @@ class TestParseTextToIso:
 
     def test_single_digit_day(self):
         assert parse_text_to_iso("Due 5 January 2026") == "2026-01-05"
+
+    def test_two_digit_day(self):
+        assert parse_text_to_iso("Due 25 January 2026") == "2026-01-25"
+
+    def test_case_insensitive_month_name(self):
+        # The regex uses re.IGNORECASE.
+        assert parse_text_to_iso("Due 5 january 2026") == "2026-01-05"
+        assert parse_text_to_iso("Due 5 JANUARY 2026") == "2026-01-05"
+
+    def test_returns_first_date_when_multiple_present(self):
+        # The regex matches the first occurrence.
+        assert parse_text_to_iso("From 1 March 2025 to 30 April 2025") == "2025-03-01"
+
+    def test_each_full_month_name(self):
+        months = [
+            ("January", "01"), ("February", "02"), ("March", "03"),
+            ("April", "04"), ("May", "05"), ("June", "06"),
+            ("July", "07"), ("August", "08"), ("September", "09"),
+            ("October", "10"), ("November", "11"), ("December", "12"),
+        ]
+        for name, num in months:
+            assert parse_text_to_iso(f"Due 15 {name} 2026") == f"2026-{num}-15"
+
+    def test_each_abbreviated_month(self):
+        abbr = [
+            ("Jan", "01"), ("Feb", "02"), ("Mar", "03"), ("Apr", "04"),
+            ("Jun", "06"), ("Jul", "07"), ("Aug", "08"), ("Sep", "09"),
+            ("Oct", "10"), ("Nov", "11"), ("Dec", "12"),
+        ]
+        for name, num in abbr:
+            assert parse_text_to_iso(f"Due 15 {name} 2026") == f"2026-{num}-15"
 
 
 # ---------------------------------------------------------------------------
@@ -214,3 +267,20 @@ class TestNormalizeDetermination:
     def test_case_sensitivity(self):
         assert normalize_determination("approved") == "Approved"
         assert normalize_determination("not approved") == "Not approved"
+
+    def test_accc_determination_not_approved(self):
+        # Regression guard: the "Not approved" branch must fire BEFORE the
+        # "Approved" branch to avoid a substring false-positive.
+        assert normalize_determination("ACCC Determination Not approved") == "Not approved"
+
+    def test_accc_determination_not_opposed(self):
+        assert normalize_determination("ACCC Determination Not opposed") == "Not opposed"
+
+    def test_prefix_without_trailing_space(self):
+        # strip() should handle a prefix with no trailing whitespace.
+        assert normalize_determination("ACCC DeterminationApproved") == "Approved"
+
+    def test_whitespace_only_string_passes_through(self):
+        # Whitespace is truthy, so it falls through the "if not" check, and
+        # strip() returns "" which matches none of the branches.
+        assert normalize_determination("   ") == ""

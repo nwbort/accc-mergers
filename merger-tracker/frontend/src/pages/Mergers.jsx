@@ -153,6 +153,7 @@ function Mergers() {
       clearSearchIndex();
       setSearchIndex(buildSearchIndex(allMergers));
     } catch (err) {
+      console.error('Failed to load mergers list:', err);
       setError(err.message);
     } finally {
       setLoading(false);
