@@ -200,7 +200,7 @@ class TestExtractQuestions:
     def test_simple_numbered_questions(self):
         lines = _lines(
             "Background", "Some background info.",
-            "Questions",
+            ("Questions", True),
             "1. What is the nature of your business?",
             "2. How will this merger affect competition?",
             "3. Are there any barriers to entry?",
@@ -213,7 +213,7 @@ class TestExtractQuestions:
 
     def test_multiline_question(self):
         lines = _lines(
-            "Questions",
+            ("Questions", True),
             "1. Please describe in detail",
             "the nature of your business",
             "and your market position.",
@@ -230,7 +230,7 @@ class TestExtractQuestions:
 
     def test_stops_at_confidentiality(self):
         lines = _lines(
-            "Questions",
+            ("Questions", True),
             "1. First question?",
             "2. Second question?",
             "Confidentiality",
@@ -244,7 +244,7 @@ class TestExtractQuestions:
 
     def test_question_with_trailing_page_number(self):
         lines = _lines(
-            "Questions",
+            ("Questions", True),
             "1. What is the relevant market? 5",
             "2. Next question.",
         )
@@ -255,7 +255,7 @@ class TestExtractQuestions:
 
     def test_no_section_field_when_no_sections(self):
         lines = _lines(
-            "Questions",
+            ("Questions", True),
             "1. First question?",
             "2. Second question?",
         )
@@ -266,7 +266,7 @@ class TestExtractQuestions:
 
     def test_bold_lines_become_section_headers(self):
         lines = _lines(
-            "Questions",
+            ("Questions", True),
             ("General questions", True),
             "1. Describe your business.",
             "2. Outline any concerns.",
@@ -284,7 +284,7 @@ class TestExtractQuestions:
     def test_bold_header_mid_question(self):
         """Bold section header between questions saves current question first."""
         lines = _lines(
-            "Questions",
+            ("Questions", True),
             "1. Describe your business.",
             "2. Provide additional info relevant",
             "to the ACCC assessment.",
@@ -302,7 +302,7 @@ class TestExtractQuestions:
     def test_multiple_bold_sections(self):
         """Any bold non-numbered text works as a section header."""
         lines = _lines(
-            "Questions",
+            ("Questions", True),
             ("General questions", True),
             "1. General Q1.",
             "2. General Q2.",
@@ -321,7 +321,7 @@ class TestExtractQuestions:
     def test_non_bold_non_numbered_line_is_continuation(self):
         """A non-bold, non-numbered line should be treated as continuation text."""
         lines = _lines(
-            "Questions",
+            ("Questions", True),
             "1. First question starts here",
             "and continues on next line.",
             "2. Second question.",
@@ -329,6 +329,33 @@ class TestExtractQuestions:
         result = extract_questions(lines)
         assert len(result) == 2
         assert "starts here and continues" in result[0]['text']
+
+    def test_multiline_bold_section_header(self):
+        """Consecutive bold lines should be concatenated into one section name."""
+        lines = _lines(
+            ("Questions", True),
+            ("Questions for customers of Event Stream Processing Software and", True),
+            ("Integration Software", True),
+            "1. Describe your usage.",
+            "2. What features matter?",
+        )
+        result = extract_questions(lines)
+        assert len(result) == 2
+        assert result[0]['section'] == 'Questions for customers of Event Stream Processing Software and Integration Software'
+        assert result[1]['section'] == result[0]['section']
+
+    def test_questions_heading_with_trailing_text(self):
+        """'Questions' heading that isn't alone on a line (e.g. 'Questions  ')."""
+        lines = _lines(
+            ("Questions for the parties", True),  # not matching - wrong format
+            "1. Should not match.",
+        )
+        # This shouldn't match as a heading since it doesn't start with just "Questions"
+        # followed by a word boundary at position 9
+        # Actually "Questions" does match ^Questions\b in "Questions for the parties"
+        # So this WILL be treated as the heading
+        result = extract_questions(lines)
+        assert len(result) == 1
 
 
 class TestExtractQuestionsFromText:

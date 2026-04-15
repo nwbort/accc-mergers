@@ -118,7 +118,7 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
     # Find the "Questions" heading line
     start_idx = None
     for i, line in enumerate(lines):
-        if re.match(r'^Questions$', line['text']):
+        if re.match(r'^Questions\b', line['text']) and line['is_bold']:
             start_idx = i + 1
             break
 
@@ -129,6 +129,7 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
     current_question_text = []
     current_section = None
     has_sections = False
+    prev_was_section_header = False
 
     def save_current_question():
         """Helper to save the current question to the list."""
@@ -158,9 +159,16 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
                 save_current_question()
                 current_question_num = None
                 current_question_text = []
-            current_section = text
+            # Consecutive bold lines = multi-line section header, concatenate
+            if prev_was_section_header and current_section:
+                current_section = current_section + ' ' + text
+            else:
+                current_section = text
             has_sections = True
+            prev_was_section_header = True
             continue
+
+        prev_was_section_header = False
 
         # Check if this line starts a new question (e.g., "1.", "2.", "3.")
         question_start_match = re.match(r'^(\d+)\.\s*(.*)$', text)
