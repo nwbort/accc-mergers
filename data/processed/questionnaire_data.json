@@ -141,82 +141,102 @@
     "questions": [
       {
         "number": 1,
+        "section": "General questions",
         "text": "Please provide a brief description of your business or organisation, including any commercial relationships with Caterpillar or RPM."
       },
       {
         "number": 2,
+        "section": "General questions",
         "text": "Outline any concerns you have regarding the impact of the Acquisition on competition for the supply of services or products to the mining industry."
       },
       {
         "number": 3,
-        "text": "Provide any additional information or comments that you consider relevant to the ACCC\u2019s assessment of the Acquisition. Questions for mining customers"
+        "section": "General questions",
+        "text": "Provide any additional information or comments that you consider relevant to the ACCC\u2019s assessment of the Acquisition."
       },
       {
         "number": 4,
+        "section": "Questions for mining customers",
         "text": "Provide a brief description of your current fleet of mining equipment, noting which equipment you acquire or have acquired from Caterpillar."
       },
       {
         "number": 5,
+        "section": "Questions for mining customers",
         "text": "Identify any potential alternative suppliers for your current fleet of mining equipment, including with reference to factors such as quality, price, availability and how closely they compete with Caterpillar\u2019s products."
       },
       {
         "number": 6,
+        "section": "Questions for mining customers",
         "text": "List any products or equipment in your current fleet that you acquire or have acquired from Caterpillar, for which there are no effective substitutes available from alternative suppliers."
       },
       {
         "number": 7,
+        "section": "Questions for mining customers",
         "text": "Describe any barriers there are to switching OEMs for your mining equipment."
       },
       {
         "number": 8,
+        "section": "Questions for mining customers",
         "text": "Provide a brief description of the software products (noting products you acquire or have acquired from RPM) you use for: a. Asset Management b. Financial modelling c. Mine operations, planning and scheduling"
       },
       {
         "number": 9,
+        "section": "Questions for mining customers",
         "text": "Identify any alternative suppliers of the software products identified in response to question 8, including with reference to factors such as quality, price and how closely they compete with RPM\u2019s products. a. Asset Management b. Financial modelling c. Mine operations, planning and scheduling"
       },
       {
         "number": 10,
+        "section": "Questions for mining customers",
         "text": "List any products or services that you acquire or have acquired from RPM, for which there are no effective substitutes available from alternative suppliers."
       },
       {
         "number": 11,
+        "section": "Questions for mining customers",
         "text": "Describe any barriers there are to switching your software suppliers, for example with respect to cost, data ownership and interoperability."
       },
       {
         "number": 12,
-        "text": "Describe how you procure mining equipment and software products, including if your business or organisation has a preference for tendering for these products together. Questions for OEMs"
+        "section": "Questions for mining customers",
+        "text": "Describe how you procure mining equipment and software products, including if your business or organisation has a preference for tendering for these products together."
       },
       {
         "number": 13,
+        "section": "Questions for OEMs",
         "text": "To what extent do you compete with Caterpillar in the supply of mining equipment? Please identify the types of Caterpillar products in which you compete."
       },
       {
         "number": 14,
+        "section": "Questions for OEMs",
         "text": "To what extent is your equipment interoperable with RPM or other asset management, financial modelling or mine operations, planning and scheduling software products? Please list the software products your mining equipment is interoperable with."
       },
       {
         "number": 15,
+        "section": "Questions for OEMs",
         "text": "Do you currently use RPM\u2019s software in your own business or organisation? If so, please identify any alternative suppliers of the software products you use."
       },
       {
         "number": 16,
-        "text": "Do you offer or bundle any software products with your equipment for mining customers? If so, please provide a brief description of your software products. Questions for software suppliers"
+        "section": "Questions for OEMs",
+        "text": "Do you offer or bundle any software products with your equipment for mining customers? If so, please provide a brief description of your software products."
       },
       {
         "number": 17,
+        "section": "Questions for software suppliers",
         "text": "Identify barriers to entry and expansion in the supply of mining industry specific software, including asset management, financial modelling, and mining operations, planning and scheduling software. As a part of your response, explain the estimated timeframes for any entry or expansion."
       },
       {
         "number": 18,
+        "section": "Questions for software suppliers",
         "text": "Explain whether you compete with RPM in the supply of any software products for the mining industry. If so: \uf0b7 identify which RPM products you compete with, and \uf0b7 respond to questions 19 and 20."
       },
       {
         "number": 19,
+        "section": "Questions for software suppliers",
         "text": "Describe how you charge your customers, for example, whether your software is subscription or licence based?"
       },
       {
         "number": 20,
+        "section": "Questions for software suppliers",
         "text": "Do your customers own the data they input into your software, and to what extent is your software interoperable with Caterpillar and other OEMs\u2019 mining equipment?"
       }
     ],
@@ -527,58 +547,72 @@
     "questions": [
       {
         "number": 1,
+        "section": null,
         "text": "Provide a brief description of your organisation, including any existing commercial relationships with IBM and/or Confluent."
       },
       {
         "number": 2,
+        "section": null,
         "text": "Are IBM and Confluent close competitors? If so, for which products/services?"
       },
       {
         "number": 3,
+        "section": "Questions for customers of Event Stream Processing Software and",
         "text": "Provide a brief description of the: a. Event Stream Processing Software products/services that you currently use and which providers they are from. b. Integration Software products/services that you currently use and which providers they are from (eg, IBM webMethods Hybrid Integration Platform and IBM MQ). c. Products or services for developing AI models that you currently use and which providers they are from (eg, watsonx or equivalent products)."
       },
       {
         "number": 4,
+        "section": "Questions for customers of Event Stream Processing Software and",
         "text": "What features are important to your organisation in an Event Stream Processing Software solution?"
       },
       {
         "number": 5,
+        "section": "Questions for customers of Event Stream Processing Software and",
         "text": "Describe how your organisation procures Event Stream Processing Software products and services. Does your organisation independently procure Event Stream Processing Software or procure it as part of a bundle with other products (if so, which products and from which supplier)?"
       },
       {
         "number": 6,
+        "section": "Questions for customers of Event Stream Processing Software and",
         "text": "List any Event Stream Processing Software products you acquire from Confluent for which there are no effective substitutes available from alternative suppliers (considering your requirements, for example, in relation to functionality, performance or cost). Please explain why."
       },
       {
         "number": 7,
+        "section": "Questions for customers of Event Stream Processing Software and",
         "text": "In the event that Confluent\u2019s Event Stream Processing Software was only available when used with other related IBM software, for example its Integration Software (ie, Confluent\u2019s software was not available on a standalone basis), would this affect your choice of provider of that other related software? Explain why/why not, including any barriers to changing providers."
       },
       {
         "number": 8,
+        "section": "Questions for customers of Event Stream Processing Software and",
         "text": "What would be involved in switching 1) Event Stream Processing Software providers (including to open-source Apache Kafka) and 2) Integration Software providers? Please consider factors such as costs to switch, data ownership and interoperability/neutrality."
       },
       {
         "number": 9,
+        "section": "Questions for suppliers of Event Stream Processing Software",
         "text": "Please describe your Event Stream Processing Software product(s), how they function and their intended users."
       },
       {
         "number": 10,
+        "section": "Questions for suppliers of Event Stream Processing Software",
         "text": "Please identify the IBM and/or Confluent Event Stream Processing Software products with which you compete."
       },
       {
         "number": 11,
+        "section": "Questions for suppliers of Event Stream Processing Software",
         "text": "Please describe what is involved in entering and expanding in the supply of Event Stream Processing Software in Australia. Do you consider IBM\u2019s acquisition of Confluent will change this? If known, please include any examples of recent entry or expansion in the supply of Event Stream Processing Software in Australia."
       },
       {
         "number": 12,
+        "section": "Questions for suppliers of Integration Software",
         "text": "Explain the extent to which interoperability with Confluent\u2019s Event Stream Processing Software is important for your Integration Software."
       },
       {
         "number": 13,
+        "section": "Other issues",
         "text": "To what extent do you consider that the Acquisition may impact competition in the supply of products used to create AI models (such as IBM\u2019s watsonx)?"
       },
       {
         "number": 14,
+        "section": "Other issues",
         "text": "Provide any additional information or comments that you consider relevant to the ACCC\u2019s assessment of the Acquisition, including any views on the effect of the Acquisition on competition in Australia."
       }
     ],
@@ -634,46 +668,57 @@
     "questions": [
       {
         "number": 1,
+        "section": null,
         "text": "Provide a brief description of your business or organisation, including any commercial relationships with Google and/or Wiz."
       },
       {
         "number": 2,
+        "section": "Questions for customers of cloud security services and cloud providers",
         "text": "Provide a brief description of the: \uf0b7 cloud security services you acquire or have acquired, including the functions of those services, your suppliers (including Google or Wiz, if applicable), and the cloud environments in which they are used (including multi-cloud, hybrid or on-premises environments). \uf0b7 cloud provider(s) you use, including whether you are a multi-cloud user and whether you use different providers for specific use cases."
       },
       {
         "number": 3,
+        "section": "Questions for customers of cloud security services and cloud providers",
         "text": "List any cloud security services you acquire or have acquired from Wiz for which you consider there are no effective substitutes for your requirements available from alternative suppliers (for example, in relation to functionality, performance or risk). Please explain why."
       },
       {
         "number": 4,
+        "section": "Questions for customers of cloud security services and cloud providers",
         "text": "In the event that Wiz\u2019s security software was not available on, or its quality/integration was degraded when used with, non-Google cloud environments (but the software still worked the same when used with Google Cloud), would this affect your choice of cloud provider(s)? Explain why/why not, including any barriers to changing providers."
       },
       {
         "number": 5,
+        "section": "Questions for customers of cloud security services and cloud providers",
         "text": "In the event that non-Wiz security software was not available on, or its quality/integration was degraded when used with Google Cloud, would this affect your choice of cloud security service provider(s)? Explain why/why not, including any barriers to changing providers."
       },
       {
         "number": 6,
+        "section": "Questions for suppliers of cloud security services",
         "text": "To what extent do you compete with Wiz and/or Google in the supply of cloud security services, including the types of services, customer segments, or use cases?"
       },
       {
         "number": 7,
+        "section": "Questions for suppliers of cloud security services",
         "text": "Provide detail as to what extent your cloud security services operate across different cloud and on-premises environments. For example: whether functionality, performance, or access differs materially by environment."
       },
       {
         "number": 8,
-        "text": "Do you consider any changes to access, integration or interoperability in Google\u2019s cloud environment could materially affect your ability to compete? Please explain why/why not. Questions for cloud service providers This question is for providers of public cloud infrastructure services (for example, computing, data storage, data analytics, and machine learning services provided on an Infrastructure-as-a-Service (IaaS) or Platform-as-a-Service (PaaS) basis)."
+        "section": "Questions for suppliers of cloud security services",
+        "text": "Do you consider any changes to access, integration or interoperability in Google\u2019s cloud environment could materially affect your ability to compete? Please explain why/why not."
       },
       {
         "number": 9,
+        "section": "Questions for cloud service providers",
         "text": "Explain the extent to which the availability of Wiz\u2019s cloud security services on your cloud environment is relevant to your ability to compete for customers. Other"
       },
       {
         "number": 10,
+        "section": "Questions for cloud service providers",
         "text": "What data, if any, would each of the merging parties obtain access to as a result of the Acquisition, that they would not otherwise have access to? For example: \uf0b7 data about customers\u2019 use of alternative cloud platforms, which Google would not otherwise have had access to; and/or \uf0b7 data about customers\u2019 use of alternative cloud security services, which Wiz would not otherwise have had access to. Provide an overview of the types of data, how the data access would arise in the ordinary course of providing the relevant services, and whether the data would be considered commercially sensitive and competitively valuable."
       },
       {
         "number": 11,
+        "section": "Questions for cloud service providers",
         "text": "Provide any additional information or comments that you consider relevant to the ACCC\u2019s assessment of the Acquisition, including any views on the effect of the Acquisition on competition in Australia."
       }
     ],
@@ -838,54 +883,67 @@
     "questions": [
       {
         "number": 1,
+        "section": "General questions",
         "text": "Provide a brief description of your business or organisation, including: \uf0b7any commercial relationships with ServiceNow and/or Armis, and \uf0b7whether you consider your business competes with either of those businesses, and if so, identifying which of your products/services compete with which of their products/services."
       },
       {
         "number": 2,
+        "section": "General questions",
         "text": "Outline any concerns regarding the impact of the Acquisition on competition."
       },
       {
         "number": 3,
+        "section": "General questions",
         "text": "Do you think the Acquisition would enable ServiceNow to obtain access to any competitively valuable data that they would not otherwise have had access to?"
       },
       {
         "number": 4,
+        "section": "Questions for suppliers of IT operations management (ITOM) software",
         "text": "Please describe your own, ServiceNow\u2019s and its main competitors\u2019 positions in the ITOM software category."
       },
       {
         "number": 5,
+        "section": "Questions for suppliers of IT operations management (ITOM) software",
         "text": "Does your business offer operational technology (OT) operations management (OTOM) products, OT security products and/or continuous threat exposure management (CTEM) products as part of (or \u2018add-ons\u2019 to) your business\u2019s ITOM software offering? If so, are these products provided directly by your business or through third party integrations?"
       },
       {
         "number": 6,
+        "section": "Questions for suppliers of IT operations management (ITOM) software",
         "text": "Does your ITOM product include agentic AI functionality, or offer this as an \u2018add-on\u2019? How important is that functionality to your customers? 1 Question for suppliers of OT security products"
       },
       {
         "number": 7,
+        "section": "Questions for suppliers of IT operations management (ITOM) software",
         "text": "Please describe your own, Armis\u2019, and its competitors\u2019 positions in this category, and identify if your products are able to integrate/interoperate with any ITOM or OTOM products."
       },
       {
         "number": 8,
+        "section": "Questions for customers of OT security products",
         "text": "Please describe Armis\u2019, ServiceNow\u2019s and key competitors\u2019 positions in OT security."
       },
       {
         "number": 9,
+        "section": "Questions for customers of OT security products",
         "text": "Does your business use an OTOM product? Are the OT security products you use integrated into/interoperable with that OTOM product(s)?"
       },
       {
         "number": 10,
+        "section": "Questions for customers of OT security products",
         "text": "Which OT security provider do you currently use and how easily could you switch providers? Question for customers of ITOM software"
       },
       {
         "number": 11,
+        "section": "Questions for customers of OT security products",
         "text": "Describe ServiceNow\u2019s market position, and that of its key competitors in ITOM software. Is there anything that sets ServiceNow apart? 2 Question for CTEM customers"
       },
       {
         "number": 12,
+        "section": "Questions for customers of OT security products",
         "text": "Are ServiceNow and Armis close competitors in the supply of CTEM products? Who are the key competitors in this space? Question for OTOM customers"
       },
       {
         "number": 13,
+        "section": "Questions for customers of OT security products",
         "text": "Describe ServiceNow\u2019s market position, and its key competitors in OTOM. Is there anything that sets ServiceNow apart?"
       }
     ],
@@ -920,66 +978,82 @@
     "questions": [
       {
         "number": 1,
-        "text": "Provide a brief description of your business or organisation, including any commercial relationships you have with Peter Warren or Wakeling Automotive. If you are a new car dealer, please specify any OEM agreements you have. Questions for OEMs"
+        "section": null,
+        "text": "Provide a brief description of your business or organisation, including any commercial relationships you have with Peter Warren or Wakeling Automotive. If you are a new car dealer, please specify any OEM agreements you have."
       },
       {
         "number": 2,
-        "text": "Identify: a. your closest OEM competitors in the supply of new cars in Australia b. how your OEM brand promotes competition between new car dealerships, particularly in local areas. Questions for new car dealerships"
+        "section": "Questions for OEMs",
+        "text": "Identify: a. your closest OEM competitors in the supply of new cars in Australia b. how your OEM brand promotes competition between new car dealerships, particularly in local areas."
       },
       {
         "number": 3,
+        "section": "Questions for new car dealerships",
         "text": "For any new car dealerships you operate in the Campbelltown-Narellan- Smeaton Grange area in New South Wales, specify the distances or areas your customers travel to purchase a new car. If known, please provide percentages of customers travelling 0-10km, 10-20km, 20-30km and 30- 40km to purchase a new car. If you do not operate any new car dealerships in the Campbelltown-Narellan- Smeaton Grange area, please respond to the above based on other dealerships you operate in surrounding areas, such as Sydney or the Illawarra."
       },
       {
         "number": 4,
+        "section": "Questions for new car dealerships",
         "text": "Identify your strongest dealership competitors and specify the OEM brands that each competitor represents. As part of your response, explain what makes them strong competitors to you (e.g. price, range, proximity, service levels)."
       },
       {
         "number": 5,
+        "section": "Questions for new car dealerships",
         "text": "Specify the elements of a new car offer that are within a dealership\u2019s control, e.g., discounting off RRP, stock availability, proximity to customer. Comment on the importance of these factors in a customer\u2019s purchasing decision. If there is any difference between types of customers (i.e. fleet customers / commercial customers / novated lease customers / private consumers), please specify."
       },
       {
         "number": 6,
+        "section": "Questions for new car dealerships",
         "text": "To what extent do dealerships offering different OEM brands compete? For example, to what extent does a Toyota dealership compete with a Mazda dealership? Please provide further information on which OEM brands are considered to be in closest competition with each other at a dealer level."
       },
       {
         "number": 7,
+        "section": "Questions for new car dealerships",
         "text": "Describe what is involved in establishing a new car dealership site. In your response, please explain what would be required to win a new OEM agreement, what investments and/or existing assets would be required to establish a dealer site, and how long it would take."
       },
       {
         "number": 8,
+        "section": "Questions for new car dealerships",
         "text": "To what extent do you compete with independent repairers in the supply of car servicing and repairs? Explain how this differs for cars within OEM warranty periods and outside OEM warranty periods, and cars with capped price servicing."
       },
       {
         "number": 9,
+        "section": "Questions for new car dealerships",
         "text": "For any servicing and repair sites you operate in the Campbelltown-Narellan- Smeaton Grange area, specify the distances or areas your customers travel for car servicing and repairs. If known, please provide percentages of customers travelling 0-10km, 10-20km, 20-30km and 30-40km to obtain car servicing and repairs. If you do not operate any car servicing and repair sites in the Campbelltown- Narellan-Smeaton Grange area, please respond to the above based on other sites you operate in surrounding areas, such as Sydney or the Illawarra. Independent Repairers"
       },
       {
         "number": 10,
+        "section": "Questions for new car dealerships",
         "text": "To what extent do you compete with new car dealerships in the supply of car servicing and repairs? Explain how this differs for cars within OEM warranty periods and outside OEM warranty periods, and cars with capped price servicing."
       },
       {
         "number": 11,
+        "section": "Questions for new car dealerships",
         "text": "For any servicing and repair businesses you operate in the Campbelltown- Narellan-Smeaton Grange area, specify the distances or areas your customers travel for car servicing and repairs. If known, please provide percentages of customers travelling 0-10km, 10-20km, 20-30km and 30-40km to obtain car servicing and repairs. If you do not operate any car servicing and repair businesses in the Campbelltown-Narellan-Smeaton Grange area, please respond to the above based on other independent repair businesses you operate in surrounding areas, such as Sydney or the Illawarra."
       },
       {
         "number": 12,
-        "text": "For independent repairers in the Campbelltown-Narellan-Smeaton Grange area, to what extent are you able to acquire OEM branded spare parts from 4 surrounding areas such as Sydney or the Illawarra, and if so, how quick, reliable and cost effective is the supply? Other issues (for all respondents)"
+        "section": "Questions for new car dealerships",
+        "text": "For independent repairers in the Campbelltown-Narellan-Smeaton Grange area, to what extent are you able to acquire OEM branded spare parts from 4 surrounding areas such as Sydney or the Illawarra, and if so, how quick, reliable and cost effective is the supply?"
       },
       {
         "number": 13,
+        "section": "Other issues (for all respondents)",
         "text": "With respect to the supply of spare parts, to what extent are customers willing to use non-genuine parts instead of genuine/OEM branded parts and explain the factors that influence this decision, e.g. age of car, value of car, brand of car, warranty period."
       },
       {
         "number": 14,
+        "section": "Other issues (for all respondents)",
         "text": "Do you consider Peter Warren and Wakeling Automotive are close competitors in the Campbelltown-Narellan-Smeaton Grange area in the supply of: a. new car retailing; and/or b. servicing and repairs? If so, please provide the reasons why."
       },
       {
         "number": 15,
+        "section": "Other issues (for all respondents)",
         "text": "Outline any concerns you have regarding the impact of the Acquisition on competition."
       },
       {
         "number": 16,
+        "section": "Other issues (for all respondents)",
         "text": "Provide any additional information or comments that you consider relevant to the ACCC\u2019s assessment of the Acquisition."
       }
     ],
@@ -993,30 +1067,37 @@
     "questions": [
       {
         "number": 1,
+        "section": null,
         "text": "Provide a brief description of your business or organisation, including any commercial relationships with MicroStar or Konvoy."
       },
       {
         "number": 2,
+        "section": null,
         "text": "Outline any concerns you have regarding the impact of the Acquisition on competition."
       },
       {
         "number": 3,
+        "section": "Questions for customers of MicroStar or Konvoy",
         "text": "In the event that you were not able to access keg pooling services or the price for keg pooling services increased substantially, what impact would this have on your business? How would you respond? What options are available?"
       },
       {
         "number": 4,
-        "text": "In the last six (6) months, have you experienced any changes (in terms of price, or quality or nature of services) to the supply of keg pooling services or keg leasing services you access from MicroStar or Konvoy? If so, please provide details on the nature of those changes. Questions for competitors or potential competitors of MicroStar or Konvoy"
+        "section": "Questions for customers of MicroStar or Konvoy",
+        "text": "In the last six (6) months, have you experienced any changes (in terms of price, or quality or nature of services) to the supply of keg pooling services or keg leasing services you access from MicroStar or Konvoy? If so, please provide details on the nature of those changes."
       },
       {
         "number": 5,
+        "section": "Questions for competitors or potential competitors of MicroStar or",
         "text": "Does your organisation compete with MicroStar or Konvoy in their supply of key pooling services? If so, describe the services you supply in competition with them. If not, is your organisation interested in providing keg pooling services, why/why not?"
       },
       {
         "number": 6,
+        "section": "Questions for competitors or potential competitors of MicroStar or",
         "text": "Please describe what is involved in entering and expanding in the supply of keg pooling services. If known, please provide details on the assets and supporting facilities necessary to enter or expand. Do you consider that the Acquisition will change the ease or difficulty of commencing the supply of key pooling services?"
       },
       {
         "number": 7,
+        "section": "Other issues",
         "text": "Provide any additional information or comments that you consider relevant to the ACCC\u2019s assessment of the Acquisition."
       }
     ],
@@ -1181,50 +1262,62 @@
     "questions": [
       {
         "number": 1,
+        "section": "Questions for sellers of pre-owned fashion items on online platforms in",
         "text": "Provide an overview of your experience as a seller of pre-owned fashion items in Australia, including: \uf0b7 which platforms you use and why (and whether you have any preferred platforms) \uf0b7 what categories of fashion items best describe the items you sell \uf0b7 whether you list the same item(s) for sale on more than one platform."
       },
       {
         "number": 2,
+        "section": "Questions for sellers of pre-owned fashion items on online platforms in",
         "text": "Do you use other online or offline channels in Australia to sell pre-owned fashion items? If so, please provide details (for example, local markets or consignment stores) and whether you sell the same items or type(s) of items through these channels as you do on eBay or Depop (if applicable)."
       },
       {
         "number": 3,
+        "section": "Questions for sellers of pre-owned fashion items on online platforms in",
         "text": "If you have previously used eBay, Depop or both to sell pre-owned fashion items but no longer do so, please outline why."
       },
       {
         "number": 4,
+        "section": "Questions for sellers of pre-owned fashion items on online platforms in",
         "text": "Please provide details of any features available on Depop that are important to you when selling pre-owned fashion items (for example, seller fees, the listing process or other platform features). How do these compare to eBay?"
       },
       {
         "number": 5,
-        "text": "Please identify any barriers to changing platforms. 2 Questions for buyers of pre-owned fashion items in Australia"
+        "section": "Questions for sellers of pre-owned fashion items on online platforms in",
+        "text": "Please identify any barriers to changing platforms."
       },
       {
         "number": 6,
+        "section": "Questions for buyers of pre-owned fashion items in Australia",
         "text": "Provide an overview of your experience as a buyer of pre-owned fashion on eBay and/or Depop, including: \uf0b7 how often you use (or used) each of eBay and Depop and why \uf0b7 what categories of fashion items best describe the items you buy (or bought) on eBay or Depop \uf0b7 which other platforms (for example, Facebook Marketplace, Facebook groups, Gumtree or Instagram) or offline stores (for example, op shops or local markets) you use (or used) and why."
       },
       {
         "number": 7,
+        "section": "Questions for buyers of pre-owned fashion items in Australia",
         "text": "If you have previously used eBay or Depop to purchase pre-owned fashion items but no longer do so, please explain why."
       },
       {
         "number": 8,
+        "section": "Questions for buyers of pre-owned fashion items in Australia",
         "text": "Please provide details of any features available on Depop that are important to you when buying pre-owned fashion items (for example, fees, delivery timeframes or other platform features). How do these compare to eBay?"
       },
       {
         "number": 9,
+        "section": "Questions for suppliers of online marketplace services in Australia",
         "text": "Provide a brief description of your business or organisation, including any commercial relationships with eBay and/or Depop."
       },
       {
         "number": 10,
+        "section": "Questions for suppliers of online marketplace services in Australia",
         "text": "To what extent do you compete with eBay and/or Depop in the supply of online marketplace services in Australia, particularly with respect to pre- owned fashion items?"
       },
       {
         "number": 11,
-        "text": "What are the main ways in which you compete with eBay or Depop for buyers or sellers of pre-owned fashion items (for example, listing fees, platform features or terms of use)? General questions"
+        "section": "Questions for suppliers of online marketplace services in Australia",
+        "text": "What are the main ways in which you compete with eBay or Depop for buyers or sellers of pre-owned fashion items (for example, listing fees, platform features or terms of use)?"
       },
       {
         "number": 12,
+        "section": "General questions",
         "text": "Provide any additional information or comments that you consider relevant to the ACCC\u2019s assessment of the Acquisition, including any views on the effect of the Acquisition on competition in Australia."
       }
     ],
@@ -1435,42 +1528,52 @@
     "questions": [
       {
         "number": 1,
+        "section": null,
         "text": "Provide a brief description of your business or organisation, including the products or services you supply or acquire, the geographic areas in which you operate and any current or recent commercial relationships with Craig Mostyn and/or Patmore Feeds. Please indicate whether you supply to, acquire from, compete with or otherwise operate at the same level of the supply chain as either party."
       },
       {
         "number": 2,
+        "section": "Questions for customers of pelletised pig feed",
         "text": "Describe where your operations are located and the volume of pelletised pig feed that you acquire per year. Please identify the suppliers from whom you source this feed and the approximate volumes supplied by each."
       },
       {
         "number": 3,
+        "section": "Questions for customers of pelletised pig feed",
         "text": "What are the main factors that determine your choice of pelletised pig feed supplier? For example, price, reliability of supply, proximity, feed specifications, and contractual terms."
       },
       {
         "number": 4,
+        "section": "Questions for customers of pelletised pig feed",
         "text": "Describe what is involved in switching suppliers of pelletised pig feed based on your experience? For example, time required, costs, contractual constraints, or risks to animal health or production."
       },
       {
         "number": 5,
+        "section": "Questions for customers of pelletised pig feed",
         "text": "If your current main supplier of pelletised pig feed were to reduce the volumes supplied to you (whether temporarily or on an ongoing basis) what alternative sourcing options you would consider? If this has occurred in the past, please describe what you did in response."
       },
       {
         "number": 6,
+        "section": "Questions for suppliers of pelletised livestock feed",
         "text": "Provide the location of your operations, the types of pelletised livestock feed that you supply, your annual output, maximum production capacity and typical capacity utilisation, and the proportion of your output sold to Craig Mostyn and/or Patmore Feeds."
       },
       {
         "number": 7,
+        "section": "Questions for suppliers of pelletised livestock feed",
         "text": "If Craig Mostyn were to cease or materially reduce the amount of pelletised feed purchased from you following the Acquisition, describe how your business would respond in practice. For example, whether you would seek alternative customers, adjust output levels, or change investment plans."
       },
       {
         "number": 8,
+        "section": "Questions for suppliers of pelletised livestock feed",
         "text": "Does your business supply pelletised livestock feed to third parties only, or does it also supply feed internally to affiliated livestock production operations? If it supplies internally, what proportion of total supply is internal?"
       },
       {
         "number": 9,
+        "section": "Questions for suppliers of pelletised livestock feed",
         "text": "Describe what would be required for your business to expand production of pelletised pig feed, or, if you do not currently supply pelletised pig feed, what would be required to switch production from other livestock feed to pelletised pig feed. Please include timeframes, costs, and any operational or regulatory constraints, and the commercial conditions under which such expansion or switching would be undertaken. Other"
       },
       {
         "number": 10,
+        "section": "Questions for suppliers of pelletised livestock feed",
         "text": "Provide any additional information or comments that you consider relevant to the ACCC\u2019s assessment of the Acquisition, including any views or concerns on the effect of the Acquisition on competition in Australia."
       }
     ],
@@ -1484,50 +1587,62 @@
     "questions": [
       {
         "number": 1,
+        "section": null,
         "text": "Provide a brief description of your business or, organisation including any relationships with IAG, RAC and/or RACI."
       },
       {
         "number": 2,
+        "section": null,
         "text": "Outline any concerns you have regarding the impact of the Acquisition on competition. Questions about motor insurance and home and contents insurance"
       },
       {
         "number": 3,
+        "section": null,
         "text": "Explain whether there are any features of the motor insurance and/or home and contents insurance markets in Western Australia and/or certain areas of Western Australia which differ compared to the rest of Australia."
       },
       {
         "number": 4,
+        "section": null,
         "text": "Describe how effective a competitor RACI is in Western Australia, and on what factors it competes most strongly (e.g. price, service quality, coverage, etc). Also explain on what factors it does not compete strongly."
       },
       {
         "number": 5,
+        "section": null,
         "text": "Describe how effective a competitor IAG is in Western Australia, and on what factors it competes most strongly (e.g. price, service quality, coverage, etc). Also explain on what factors it does not compete strongly."
       },
       {
         "number": 6,
+        "section": null,
         "text": "Describe how closely IAG and RACI compete in the supply of motor insurance and/or home and contents insurance Western Australia (e.g. in terms of price, service quality, coverage, etc)."
       },
       {
         "number": 7,
+        "section": null,
         "text": "Explain how strongly established insurers and mid-tier insurers compete in Western Australia. Explain the extent to which established insurer and mid- tier insurers would prevent the merged IAG/RACI from increasing premiums, reducing coverage, reducing its product range or diminishing the service provided in Western Australia. Please also include the level of constraint insurers with larger market shares outside of Western Australia are likely to impose."
       },
       {
         "number": 8,
+        "section": null,
         "text": "Explain any challenges being faced by the insurance industry and the impact this could have on insurers and insurance products, including whether RACI is likely to experience heightened vulnerability to these challenges as a state- based, mutual organisation."
       },
       {
         "number": 9,
+        "section": null,
         "text": "Identify any insurers that have entered or exited in the last 12 months or known upcoming examples of entry or exit in the supply of motor and home and contents insurance in Western Australia or Australia. Questions about repair services"
       },
       {
         "number": 10,
+        "section": null,
         "text": "Explain the extent to which the merged IAG/RACI would be in an enhanced position to foreclose or frustrate competing insurers' access to each of (i) smash repair services, (ii) windscreen repair and replacement services, and (iii) building repair services."
       },
       {
         "number": 11,
+        "section": null,
         "text": "Explain the extent to which the merged entity IAG/RACI would be able to reduce prices or degrade the terms on which it acquires repair services. Please explain why you consider the merged entity would (or would not) be able to do this, including whether competition from other insurers would prevent the merged entity from doing so."
       },
       {
         "number": 12,
+        "section": "Other issues",
         "text": "Provide any additional information or comments that you consider relevant to the ACCC\u2019s assessment of the Acquisition."
       }
     ],
