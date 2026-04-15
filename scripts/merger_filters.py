@@ -116,15 +116,19 @@ def is_suspended(merger: dict) -> bool:
 def is_public_visible(merger: dict) -> bool:
     """Return True if the merger belongs in curated public activity streams.
 
-    "Public" here means *curated* feeds such as the weekly digest, the RSS
-    feed, and the upcoming-events widget — not "has a publicly-reachable
-    URL". The detail page ``/mergers/<id>`` exists and is served regardless
-    of this predicate; the sitemap therefore intentionally does *not* use
-    this filter.
+    "Public" here means *curated* feeds such as the upcoming-events widget
+    — not "has a publicly-reachable URL". The detail page
+    ``/mergers/<id>`` exists and is served regardless of this predicate;
+    the sitemap therefore intentionally does *not* use this filter.
 
     A merger is publicly visible when it is a genuine notification review
     whose assessment is still active — i.e. not a waiver
     (:func:`is_waiver`) and not suspended (:func:`is_suspended`).
+
+    Note: the weekly digest and RSS feed deliberately use the less
+    restrictive :func:`filter_active` instead of this predicate — they
+    include waivers as part of substantive ACCC activity. See those
+    generators' module docstrings.
     """
     return not is_waiver(merger) and not is_suspended(merger)
 
@@ -137,10 +141,28 @@ def is_public_visible(merger: dict) -> bool:
 def filter_public(mergers: Iterable[dict]) -> List[dict]:
     """Return only mergers that pass :func:`is_public_visible`.
 
-    This is the standard exclusion applied by curated public outputs
-    (weekly digest, RSS feed, upcoming-events). Preserves input order.
+    Used by the upcoming-events widget, which only surfaces substantive
+    non-waiver, non-suspended mergers. The digest and RSS feed use the
+    less restrictive :func:`filter_active` (waivers included).
+
+    Preserves input order.
     """
     return [m for m in mergers if is_public_visible(m)]
+
+
+def filter_active(mergers: Iterable[dict]) -> List[dict]:
+    """Return only mergers whose assessment is not suspended.
+
+    "Active" here means the ACCC has not paused the review — this
+    includes both :data:`constants.merger_status.UNDER_ASSESSMENT` and
+    :data:`constants.merger_status.ASSESSMENT_COMPLETED` records, and it
+    includes waivers. It is the filter used by curated *activity* feeds
+    (weekly digest, RSS feed) where waiver grants / denials are
+    legitimate ACCC activity worth surfacing.
+
+    Preserves input order.
+    """
+    return [m for m in mergers if not is_suspended(m)]
 
 
 def filter_waivers(mergers: Iterable[dict]) -> List[dict]:
@@ -173,6 +195,7 @@ __all__ = [
     "is_suspended",
     "is_public_visible",
     "filter_public",
+    "filter_active",
     "filter_waivers",
     "filter_notifications",
     "filter_suspended",

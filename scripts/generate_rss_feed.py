@@ -13,7 +13,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from xml.sax.saxutils import escape
 
-from merger_filters import filter_public, load_mergers
+from merger_filters import filter_active, load_mergers
 
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
@@ -97,8 +97,8 @@ def generate_atom_xml(entries: list) -> str:
 
 def main():
     print("Loading mergers.json...")
-    mergers = filter_public(load_mergers())
-    print(f"Loaded {len(mergers)} mergers (after filter_public)")
+    mergers = filter_active(load_mergers())
+    print(f"Loaded {len(mergers)} mergers (after filter_active)")
 
     print("Collecting feed entries...")
     entries = collect_feed_entries(mergers)

@@ -6,12 +6,11 @@ Lists every merger detail page plus the static SPA routes, for search
 engine crawlers.
 
 Sitemap policy: unlike the weekly digest and RSS feed — which exclude
-waivers and suspended assessments via
-:func:`merger_filters.filter_public` — this generator does NOT apply that
-filter. The detail page ``/mergers/<id>`` is publicly served for every
-merger (including waivers), and removing those URLs from the sitemap
-would hurt discoverability without affecting what the site actually
-renders.
+suspended assessments via :func:`merger_filters.filter_active` — this
+generator does NOT apply any filter. The detail page ``/mergers/<id>``
+is publicly served for every merger, including waivers *and* suspended
+mergers, and removing those URLs from the sitemap would hurt
+discoverability without affecting what the site actually renders.
 
 Output: merger-tracker/frontend/public/sitemap.xml
 """

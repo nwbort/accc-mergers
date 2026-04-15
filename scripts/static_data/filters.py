@@ -13,6 +13,7 @@ been set by :func:`static_data.enrichment.enrich_merger` (the raw
 
 from merger_filters import (
     exclude_for_public_output,
+    filter_active,
     filter_notifications,
     filter_public,
     filter_suspended,
@@ -30,5 +31,6 @@ __all__ = [
     "filter_notifications",
     "filter_suspended",
     "filter_public",
+    "filter_active",
     "exclude_for_public_output",
 ]

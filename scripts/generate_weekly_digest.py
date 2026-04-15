@@ -19,7 +19,7 @@ from pathlib import Path
 from typing import Dict, List, Any
 from constants import merger_status
 from date_utils import parse_iso_datetime
-from merger_filters import filter_public, load_mergers
+from merger_filters import filter_active, load_mergers
 
 
 def get_last_week_range() -> tuple[datetime, datetime]:
@@ -128,11 +128,12 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
 def generate_weekly_digest() -> Dict[str, Any]:
     """Generate the weekly digest data.
 
-    Applies the canonical public filter (:func:`merger_filters.filter_public`)
-    which excludes waivers and suspended assessments — the digest summarises
-    substantive notification activity only.
+    Applies :func:`merger_filters.filter_active`, which excludes suspended
+    assessments but *includes* waivers. Waiver grants and denials count as
+    substantive ACCC activity and belong in the weekly summary; suspended
+    mergers are paused and are not meaningful week-to-week activity.
     """
-    mergers = filter_public(load_mergers())
+    mergers = filter_active(load_mergers())
 
     # Get the Monday-Sunday week range in Australian time
     period_start, period_end = get_last_week_range()

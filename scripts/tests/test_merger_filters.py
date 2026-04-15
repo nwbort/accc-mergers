@@ -26,6 +26,7 @@ from constants import merger_status
 from merger_filters import (
     DEFAULT_MERGERS_JSON,
     exclude_for_public_output,
+    filter_active,
     filter_notifications,
     filter_public,
     filter_suspended,
@@ -217,6 +218,50 @@ class TestFilterPublic:
 # ---------------------------------------------------------------------------
 # filter_waivers / filter_notifications / filter_suspended
 # ---------------------------------------------------------------------------
+
+
+class TestFilterActive:
+    def test_excludes_suspended_only(self):
+        """Waivers are kept; only suspended mergers are dropped."""
+        result = filter_active(_fixture())
+        ids = sorted(m['merger_id'] for m in result)
+        # MN-01019 (suspended notification) and WA-09002 (suspended waiver)
+        # are removed. MN-01017, MN-01018, and WA-09001 remain.
+        assert ids == ['MN-01017', 'MN-01018', 'WA-09001']
+
+    def test_includes_waivers(self):
+        waivers = [
+            {'merger_id': 'WA-1', 'is_waiver': True,
+             'status': merger_status.ASSESSMENT_COMPLETED},
+            {'merger_id': 'WA-2', 'is_waiver': True,
+             'status': merger_status.UNDER_ASSESSMENT},
+        ]
+        assert [m['merger_id'] for m in filter_active(waivers)] == ['WA-1', 'WA-2']
+
+    def test_empty_input(self):
+        assert filter_active([]) == []
+
+    def test_preserves_input_order(self):
+        mergers = [
+            {'merger_id': 'A', 'is_waiver': False,
+             'status': merger_status.UNDER_ASSESSMENT},
+            {'merger_id': 'S', 'is_waiver': False,
+             'status': merger_status.ASSESSMENT_SUSPENDED},
+            {'merger_id': 'W', 'is_waiver': True,
+             'status': merger_status.ASSESSMENT_COMPLETED},
+            {'merger_id': 'B', 'is_waiver': False,
+             'status': merger_status.ASSESSMENT_COMPLETED},
+        ]
+        assert [m['merger_id'] for m in filter_active(mergers)] == ['A', 'W', 'B']
+
+    def test_is_strictly_looser_than_filter_public(self):
+        """filter_public result should be a subset of filter_active."""
+        mergers = _fixture()
+        public_ids = {m['merger_id'] for m in filter_public(mergers)}
+        active_ids = {m['merger_id'] for m in filter_active(mergers)}
+        assert public_ids.issubset(active_ids)
+        # And specifically wider by the waivers that aren't also suspended.
+        assert active_ids - public_ids == {'WA-09001'}
 
 
 class TestFilterWaivers:
