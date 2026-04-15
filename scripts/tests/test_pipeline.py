@@ -399,6 +399,8 @@ from generate_static_data import (
     generate_mergers_json,
     generate_industries_json,
     generate_commentary_json,
+    load_questionnaire_data,
+    generate_questionnaire_files,
 )
 
 
@@ -762,3 +764,180 @@ class TestGenerateCommentaryJson:
         result = generate_commentary_json(mergers, commentary)
         assert result['items'][0]['merger_id'] == 'MN-002'
         assert result['items'][1]['merger_id'] == 'MN-001'
+
+
+# ---------------------------------------------------------------------------
+# generate_static_data: enrich_merger with questionnaire data
+# ---------------------------------------------------------------------------
+
+class TestEnrichMergerQuestionnaire:
+    def _base_merger(self):
+        return {
+            'merger_id': 'MN-01016',
+            'merger_name': 'Test Merger',
+            'accc_determination': None,
+            'determination_publication_date': None,
+            'stage': 'Phase 1 - preliminary assessment',
+            'status': 'Under assessment',
+            'events': [],
+            'effective_notification_datetime': '2025-01-15T12:00:00Z',
+        }
+
+    def test_has_questionnaire_flag_set_when_data_exists(self):
+        m = self._base_merger()
+        q_data = {
+            'MN-01016': {
+                'questions': [{'number': 1, 'text': 'Q1'}],
+                'questions_count': 1,
+            }
+        }
+        result = enrich_merger(m, questionnaire_data=q_data)
+        assert result.get('has_questionnaire') is True
+
+    def test_no_flag_when_no_questionnaire_data(self):
+        m = self._base_merger()
+        result = enrich_merger(m, questionnaire_data={})
+        assert 'has_questionnaire' not in result
+
+    def test_no_flag_when_questionnaire_data_is_none(self):
+        m = self._base_merger()
+        result = enrich_merger(m, questionnaire_data=None)
+        assert 'has_questionnaire' not in result
+
+    def test_no_flag_when_merger_not_in_data(self):
+        m = self._base_merger()
+        q_data = {
+            'MN-99999': {
+                'questions': [{'number': 1, 'text': 'Q1'}],
+                'questions_count': 1,
+            }
+        }
+        result = enrich_merger(m, questionnaire_data=q_data)
+        assert 'has_questionnaire' not in result
+
+    def test_no_flag_when_questions_list_empty(self):
+        m = self._base_merger()
+        q_data = {
+            'MN-01016': {
+                'questions': [],
+                'questions_count': 0,
+            }
+        }
+        result = enrich_merger(m, questionnaire_data=q_data)
+        assert 'has_questionnaire' not in result
+
+    def test_questionnaire_data_not_embedded(self):
+        """Questionnaire data should NOT be embedded in the merger — only a flag."""
+        m = self._base_merger()
+        q_data = {
+            'MN-01016': {
+                'deadline': '25 August 2025',
+                'deadline_iso': '2025-08-25',
+                'file_name': 'Questionnaire.pdf',
+                'questions': [{'number': 1, 'text': 'Q1'}],
+                'questions_count': 1,
+            }
+        }
+        result = enrich_merger(m, questionnaire_data=q_data)
+        assert result.get('has_questionnaire') is True
+        assert 'questionnaire' not in result
+        assert 'questions' not in result
+
+
+# ---------------------------------------------------------------------------
+# generate_static_data: generate_questionnaire_files
+# ---------------------------------------------------------------------------
+
+class TestGenerateQuestionnaireFiles:
+    def test_generates_files(self, tmp_path, monkeypatch):
+        import generate_static_data
+        monkeypatch.setattr(generate_static_data, 'OUTPUT_DIR', tmp_path)
+
+        q_data = {
+            'MN-01016': {
+                'deadline': '25 August 2025',
+                'deadline_iso': '2025-08-25',
+                'file_name': 'Questionnaire.pdf',
+                'questions': [
+                    {'number': 1, 'text': 'What is the impact?'},
+                    {'number': 2, 'text': 'Describe your business.'},
+                ],
+                'questions_count': 2,
+            },
+            'MN-01017': {
+                'deadline': '18 August 2025',
+                'deadline_iso': '2025-08-18',
+                'file_name': 'Q2.pdf',
+                'questions': [{'number': 1, 'text': 'Question'}],
+                'questions_count': 1,
+            },
+        }
+
+        count = generate_questionnaire_files(q_data)
+        assert count == 2
+
+        # Verify files exist
+        q_dir = tmp_path / "questionnaires"
+        assert (q_dir / "MN-01016.json").exists()
+        assert (q_dir / "MN-01017.json").exists()
+
+        # Verify content
+        import json
+        with open(q_dir / "MN-01016.json") as f:
+            data = json.load(f)
+        assert data['deadline'] == '25 August 2025'
+        assert data['deadline_iso'] == '2025-08-25'
+        assert data['questions_count'] == 2
+        assert len(data['questions']) == 2
+        assert data['questions'][0]['number'] == 1
+        assert data['questions'][0]['text'] == 'What is the impact?'
+
+    def test_skips_entries_without_questions(self, tmp_path, monkeypatch):
+        import generate_static_data
+        monkeypatch.setattr(generate_static_data, 'OUTPUT_DIR', tmp_path)
+
+        q_data = {
+            'MN-01016': {
+                'questions': [{'number': 1, 'text': 'Q1'}],
+                'questions_count': 1,
+            },
+            'MN-01017': {
+                'questions': [],
+                'questions_count': 0,
+            },
+        }
+
+        count = generate_questionnaire_files(q_data)
+        assert count == 1
+
+        q_dir = tmp_path / "questionnaires"
+        assert (q_dir / "MN-01016.json").exists()
+        assert not (q_dir / "MN-01017.json").exists()
+
+    def test_empty_data(self, tmp_path, monkeypatch):
+        import generate_static_data
+        monkeypatch.setattr(generate_static_data, 'OUTPUT_DIR', tmp_path)
+
+        count = generate_questionnaire_files({})
+        assert count == 0
+
+    def test_does_not_include_file_path(self, tmp_path, monkeypatch):
+        """file_path is an internal path and should not be in the output."""
+        import generate_static_data
+        monkeypatch.setattr(generate_static_data, 'OUTPUT_DIR', tmp_path)
+
+        q_data = {
+            'MN-01016': {
+                'file_path': 'matters/MN-01016/Questionnaire.pdf',
+                'file_name': 'Questionnaire.pdf',
+                'questions': [{'number': 1, 'text': 'Q1'}],
+                'questions_count': 1,
+            },
+        }
+
+        generate_questionnaire_files(q_data)
+
+        import json
+        with open(tmp_path / "questionnaires" / "MN-01016.json") as f:
+            data = json.load(f)
+        assert 'file_path' not in data
