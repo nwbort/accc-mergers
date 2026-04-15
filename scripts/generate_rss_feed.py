@@ -9,14 +9,14 @@ Output:
   merger-tracker/frontend/public/feed.xml
 """
 
-import json
 from datetime import datetime, timezone
 from pathlib import Path
 from xml.sax.saxutils import escape
 
+from merger_filters import filter_active, load_mergers
+
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
-MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
 OUTPUT_PATH = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "feed.xml"
 
 SITE_URL = "https://mergers.fyi"
@@ -24,19 +24,6 @@ FEED_TITLE = "Australian Merger Tracker"
 FEED_SUBTITLE = "Recent ACCC merger notifications, determinations, and review events"
 AUTHOR_NAME = "Nick Twort"
 MAX_ITEMS = 50
-
-
-def load_mergers():
-    """Load mergers from the processed JSON file."""
-    with open(MERGERS_JSON, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-
-    if isinstance(data, list):
-        return data
-    elif isinstance(data, dict) and 'mergers' in data:
-        return data['mergers']
-    else:
-        raise ValueError("Unexpected mergers.json format")
 
 
 def collect_feed_entries(mergers: list) -> list:
@@ -110,8 +97,8 @@ def generate_atom_xml(entries: list) -> str:
 
 def main():
     print("Loading mergers.json...")
-    mergers = load_mergers()
-    print(f"Loaded {len(mergers)} mergers")
+    mergers = filter_active(load_mergers())
+    print(f"Loaded {len(mergers)} mergers (after filter_active)")
 
     print("Collecting feed entries...")
     entries = collect_feed_entries(mergers)

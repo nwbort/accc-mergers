@@ -2,26 +2,28 @@
 """
 Generate sitemap.xml for mergers.fyi.
 
-Reads merger data from the frontend public data directory and writes
-a sitemap covering all static pages and individual merger detail pages.
+Lists every merger detail page plus the static SPA routes, for search
+engine crawlers.
 
-Merger data is read from the paginated list files:
-  data/mergers/list-meta.json      – pagination metadata (total_pages, etc.)
-  data/mergers/list-page-{n}.json  – one page of merger records each
+Sitemap policy: unlike the weekly digest and RSS feed — which exclude
+suspended assessments via :func:`merger_filters.filter_active` — this
+generator does NOT apply any filter. The detail page ``/mergers/<id>``
+is publicly served for every merger, including waivers *and* suspended
+mergers, and removing those URLs from the sitemap would hurt
+discoverability without affecting what the site actually renders.
 
 Output: merger-tracker/frontend/public/sitemap.xml
 """
 
-import json
 from datetime import datetime, timezone
 from pathlib import Path
 from xml.sax.saxutils import escape
 
+from merger_filters import load_mergers
+
 
 BASE_URL = "https://mergers.fyi"
 REPO_ROOT = Path(__file__).parent.parent
-MERGERS_DATA_DIR = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "data" / "mergers"
-LIST_META_JSON = MERGERS_DATA_DIR / "list-meta.json"
 SITEMAP_OUT = REPO_ROOT / "merger-tracker" / "frontend" / "public" / "sitemap.xml"
 
 TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
@@ -47,20 +49,6 @@ STATIC_COMMENTS = {
     "/nick-twort":  "About / Author Page",
     "/privacy":     "Privacy Policy",
 }
-
-
-def load_mergers():
-    with open(LIST_META_JSON, "r", encoding="utf-8") as f:
-        meta = json.load(f)
-    total_pages = meta["total_pages"]
-    mergers = []
-    for page in range(1, total_pages + 1):
-        page_file = MERGERS_DATA_DIR / f"list-page-{page}.json"
-        with open(page_file, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        page_mergers = data["mergers"] if isinstance(data, dict) else data
-        mergers.extend(page_mergers)
-    return mergers
 
 
 def lastmod_for(merger):

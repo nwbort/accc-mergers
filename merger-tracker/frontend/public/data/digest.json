@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-12T08:35:41.479666+10:00",
+  "generated_at": "2026-04-16T09:32:24.436836+10:00",
   "period_start": "2026-04-06T00:00:00+10:00",
   "period_end": "2026-04-12T23:59:59.999999+10:00",
   "new_deals_notified": [
@@ -32,11 +32,6 @@
       "phase_2_determination": null,
       "merger_description": "Experience Australia Group Pty Ltd (EAG), via its wholly owned subsidiary JB Kakadu Hotel Pty Ltd (JB Kakadu), proposes to acquire Crocodile Hotel Pty Ltd, which operates the business and business assets known as the Kakadu Crocodile Hotel (Crocodile Hotel) in Jabiru (NT), from Kakadu Tourism (GCH) Pty Limited (the Seller), as well as a 100% leasehold interest in the land on which the Crocodile Hotel is situated from Gundjeihmi Aboriginal Corporation Jabiru Town (the Acquisition).",
       "events": [
-        {
-          "date": "2026-04-08T12:00:00Z",
-          "title": "Questionnaire - Journey Beyond - Kakadu Crocodile Hotel",
-          "display_title": "Questionnaire - Journey Beyond - Kakadu Crocodile Hotel"
-        },
         {
           "date": "2026-04-07T12:00:00Z",
           "title": "Merger notified to ACCC",
@@ -87,7 +82,7 @@
           "display_title": "Questionnaire - REA Group - Simplicity Loans & Advisory",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/REA%20Group%20-%20Simplicity%20Loans%20and%20Advisory%20-%20Questionnaire%20-%20April%202026.docx",
           "url_gh": "/mergers/MN-65008/REA Group - Simplicity Loans and Advisory - Questionnaire - April 2026.pdf",
-          "status": "live"
+          "status": "removed"
         },
         {
           "date": "2026-04-07T12:00:00Z",
@@ -139,17 +134,12 @@
           "display_title": "Merger notified to ACCC"
         },
         {
-          "date": "2026-03-12T12:00:00Z",
-          "title": "In accordance with s 51ABZ of the Competition and Consumer Act 2010, the ACCC decided that the notification filed on 11 February 2026 should be taken not to have an effective notification date because it is materially incomplete and materially misleading.",
-          "display_title": "In accordance with s 51ABZ of the Competition and Consumer Act 2010, the ACCC decided that the notification filed on 11 February 2026 should be taken not to have an effective notification date because it is materially incomplete and materially misleading."
-        },
-        {
           "date": "2026-04-08T12:00:00Z",
           "title": "Sembcorp / Alinta Energy - third-party questionnaire",
           "display_title": "Sembcorp / Alinta Energy - third-party questionnaire",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Alinta%20Energy%20-%20third-party%20questionnaire%20-%208%20April_1.docx",
           "url_gh": "/mergers/MN-95001/Alinta Energy - third-party questionnaire - 8 April_1.pdf",
-          "status": "live"
+          "status": "removed"
         },
         {
           "date": "2026-04-07T12:00:00Z",
@@ -208,6 +198,50 @@
       ]
     },
     {
+      "merger_id": "MN-35013",
+      "merger_name": "Estia Health – Norsan residential aged care business",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/estia-health-%E2%80%93-norsan-residential-aged-care-business",
+      "acquirers": [
+        {
+          "name": "ESTIA INVESTMENTS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "87 164 350 387"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NORSAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 076 143 596"
+        }
+      ],
+      "effective_notification_datetime": "2026-04-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-25T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Estia Investments Pty. Ltd. (**Estia**) proposes to acquire substantially all of the business assets of three residential aged care homes from Norsan Pty Ltd (**Norsan**), being Chirnside Views Residential Aged Care, Park Lane Croydon Residential Aged Care and Willowbrae - Melton Residential Aged Care (the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-04-13T12:00:00Z",
+          "title": "Questionnaire - Estia Health - Norsan residential aged care business",
+          "display_title": "Questionnaire - Estia Health - Norsan residential aged care business",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Estia%20Health%20-%20Norsan%20residential%20aged%20care%20business.docx",
+          "url_gh": "/mergers/MN-35013/Questionnaire - Estia Health - Norsan residential aged care business.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-40015",
       "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/swiss-re-qbe-insurances-trade-credit-and-surety-business",
@@ -242,6 +276,50 @@
           "display_title": "Questionnaire - Swiss Re - QBE Insurance's Trade Credit and Surety business",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Swiss%20Re%20-%20QBE%20Insurance%27s%20Trade%20Credit%20%26%20Surety%20business_1.docx",
           "url_gh": "/mergers/MN-40015/Questionnaire - Swiss Re - QBE Insurance's Trade Credit and Surety business_1.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-95011",
+      "merger_name": "Dubai Aerospace Enterprise - Macquarie AirFinance",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/dubai-aerospace-enterprise-macquarie-airfinance",
+      "acquirers": [
+        {
+          "name": "Dubai Aerospace Enterprise (DAE) Ltd",
+          "identifier_type": null,
+          "identifier": "DIFC  0170"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Macquarie AirFinance Limited",
+          "identifier_type": null,
+          "identifier": "UK  11958743"
+        }
+      ],
+      "effective_notification_datetime": "2026-04-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-25T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Dubai Aerospace Enterprise DAE Ltd (**DAE**) proposes to acquire 100% of the issued share capital in Macquarie AirFinance Limited (**Macquarie AirFinance**) (the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-04-13T12:00:00Z",
+          "title": "Questionnaire - Dubai Aerospace Enterprise - Macquarie AirFinance",
+          "display_title": "Questionnaire - Dubai Aerospace Enterprise - Macquarie AirFinance",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Dubai%20Aerospace%20Enterprise%20-%20Macquarie%20AirFinance.docx",
+          "url_gh": "/mergers/MN-95011/Questionnaire - Dubai Aerospace Enterprise - Macquarie AirFinance.pdf",
           "status": "live"
         },
         {
@@ -1809,6 +1887,91 @@
       ]
     },
     {
+      "merger_id": "MN-30005",
+      "merger_name": "Adobe - Semrush",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/adobe-semrush",
+      "acquirers": [
+        {
+          "name": "Adobe Inc. (NASDAQ: ADBE)",
+          "identifier_type": null,
+          "identifier": "2748129"
+        },
+        {
+          "name": "Fenway Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "10389477"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Semrush Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "7690622"
+        }
+      ],
+      "effective_notification_datetime": "2026-03-16T12:00:00Z",
+      "determination_publication_date": "2026-04-10T12:00:00Z",
+      "end_of_determination_period": "2026-04-30T12:00:00Z",
+      "accc_determination": "Approved",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Assessment completed",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Adobe Inc. (**Adobe**) through a newly incorporated direct wholly owned subsidiary, Fenway Merger Sub, Inc. (**Merger Sub**), proposes to acquire 100% of the share capital in Semrush Holdings, Inc. (Semrush and together with Adobe, the **Parties**). The Proposed Transaction is being implemented pursuant to a merger agreement entered into between Adobe, Merger Sub, and Semrush dated 18 November 2025 (**Merger Agreement**). Pursuant to the Merger Agreement, Merger Sub will merge with and into Semrush, such that Merger Sub will cease to exist and Semrush will become the \"surviving corporation\" and a direct, wholly owned subsidiary of Adobe. After the Proposed Transaction, Semrush will be solely controlled by Adobe.",
+      "events": [
+        {
+          "date": "2026-03-17T12:00:00Z",
+          "title": "Adobe / Semrush - Questionnaire",
+          "display_title": "Adobe / Semrush - Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Adobe%20-%20Semrush%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-30005/Adobe - Semrush - Questionnaire.pdf",
+          "status": "removed"
+        },
+        {
+          "date": "2026-03-16T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        },
+        {
+          "date": "2026-04-10T12:00:00Z",
+          "title": "Adobe - Semrush - Phase 1 Determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Adobe%20-%20Semrush%20-%20Phase%201%20Determination%20-%2010%20April%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Adobe Inc. (Adobe) through a newly incorporated direct wholly\nowned subsidiary, Fenway Merger Sub, Inc. (Merger Sub), proposes\nto acquire 100% of the share capital in Semrush Holdings, Inc.\n(Semrush) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Adobe, is a global technology company. Adobe's main\nofferings can be divided between its Customer Experience\nOrchestration business, which focuses on accelerating customer\nexperience and delivering business intelligence services, and its\nCreativity & Productivity business, which focuses on helping users\ncreate, design, and publish rich content and 3D experiences, and\nimprove how they view, share, and collaborate on documents and\ncontent. Adobe is headquartered in California and incorporated in\nDelaware, USA.\nThe target, Semrush, provides an online visibility management and\ncontent marketing service offering a range of tools to manage web\nbrand presence, including through its search engine optimisation\ntoolkit. Semrush is headquartered in Massachusetts and\nincorporated in Delaware, USA."
+            },
+            {
+              "item": "Overlap between the\nparties",
+              "details": "Adobe and Semrush (together, the Parties) overlap in the supply of\ngenerative engine optimisation services in Australia. Generative\nengine optimisation refers to the process of adapting a website so\nthat large language model platforms, such as ChatGPT, Gemini, and\nClaude, can understand, extract, and cite it when answering user\nqueries.\nAdobe supplies generative engine optimisation services through its\nLarge Language Model Optimiser product. Semrush supplies\ngenerative engine optimisation services through its AI Visibility\nToolkit and Enterprise AI Optimization products."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC’s approach to considering\nnotified acquisitions, see the ACCC’s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third partes and publicly available\ninformation.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n• The Parties do not compete closely as the generative engine\noptimisation tools they supply have different use cases.\n• The Parties would continue to face competition from multiple\nalternative suppliers of generative engine optimisation service\nsuppliers in Australia."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC’s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-30005/Adobe - Semrush - Phase 1 Determination - 10 April 2026.pdf",
+          "status": "live",
+          "phase": "Phase 1"
+        }
+      ]
+    },
+    {
       "merger_id": "WA-45009",
       "merger_name": "Idemitsu - MidOcean Energy",
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/idemitsu-midocean-energy",
@@ -2076,109 +2239,6 @@
       ]
     },
     {
-      "merger_id": "MN-30005",
-      "merger_name": "Adobe - Semrush",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/adobe-semrush",
-      "acquirers": [
-        {
-          "name": "Fenway Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "10389477"
-        },
-        {
-          "name": "Adobe Inc. (NASDAQ: ADBE)",
-          "identifier_type": null,
-          "identifier": "2748129"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Semrush Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "7690622"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-16T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-04-30T12:00:00Z",
-      "accc_determination": null,
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "is_waiver": false,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Adobe Inc. (**Adobe**) through a newly incorporated direct wholly owned subsidiary, Fenway Merger Sub, Inc. (**Merger Sub**), proposes to acquire 100% of the share capital in Semrush Holdings, Inc. (Semrush and together with Adobe, the **Parties**). The Proposed Transaction is being implemented pursuant to a merger agreement entered into between Adobe, Merger Sub, and Semrush dated 18 November 2025 (**Merger Agreement**). Pursuant to the Merger Agreement, Merger Sub will merge with and into Semrush, such that Merger Sub will cease to exist and Semrush will become the \"surviving corporation\" and a direct, wholly owned subsidiary of Adobe. After the Proposed Transaction, Semrush will be solely controlled by Adobe.",
-      "events": [
-        {
-          "date": "2026-03-17T12:00:00Z",
-          "title": "Adobe / Semrush - Questionnaire",
-          "display_title": "Adobe / Semrush - Questionnaire",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Adobe%20-%20Semrush%20-%20Questionnaire.docx",
-          "url_gh": "/mergers/MN-30005/Adobe - Semrush - Questionnaire.pdf",
-          "status": "removed"
-        },
-        {
-          "date": "2026-03-16T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-50012",
-      "merger_name": "Maas – 50% acquisition of COLAS’ Caloundra asphalt plant and 100% of COLAS’ Tomago asphalt plant",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/maas-%E2%80%93-50-acquisition-of-colas%E2%80%99-caloundra-asphalt-plant-and-100-of-colas%E2%80%99-tomago-asphalt-plant",
-      "acquirers": [
-        {
-          "name": "ASPHALT OPERATORS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 682 698 282"
-        }
-      ],
-      "targets": [
-        {
-          "name": "COLAS QUEENSLAND PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "91 169 872 208"
-        },
-        {
-          "name": "COLAS NEW SOUTH WALES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "16 064 662 148"
-        },
-        {
-          "name": "COLAS AUSTRALIA GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 000 388 161"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-18T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-05-04T12:00:00Z",
-      "accc_determination": null,
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "is_waiver": false,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Maas Group Holdings Limited (**Maas**) proposes to acquire, through its subsidiary Asphalt Operators Australia Pty Ltd (**AOA**), a 50% interest in Coltek Asphalt Pty Ltd (**Coltek**), which will own and operate the hot-mix asphalt business currently owned and operated by a subsidiary of COLAS Australia Group Pty Ltd (**COLAS**) at Caloundra on the Sunshine Coast, QLD. The remaining 50% interest in Coltek will be retained by COLAS Australia, and Coltek will operate the hot-mix asphalt business at Caloundra as an incorporated joint venture between Maas and COLAS Australia (the **Acquisition**).",
-      "events": [
-        {
-          "date": "2026-03-19T12:00:00Z",
-          "title": "Questionnaire: Maas – 50% acquisition of COLAS’ Caloundra asphalt plant and 100% of COLAS’ Tomago asphalt plant - March 2026",
-          "display_title": "Questionnaire: Maas – 50% acquisition of COLAS’ Caloundra asphalt plant and 100% of COLAS’ Tomago asphalt plant - March 2026",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%3A%20Maas%20%E2%80%93%2050%25%20acquisition%20of%20COLAS%E2%80%99%20Caloundra%20asphalt%20plant%20and%20100%25%20of%20COLAS%E2%80%99%20Tomago%20asphalt%20plant%20-%20March%202026.docx",
-          "url_gh": "/mergers/MN-50012/Questionnaire - Maas – 50pct acquisition of COLAS’ Caloundra asphalt plant and 100pct of COLAS’ Tomago asphalt plant - March 2026.pdf",
-          "status": "removed"
-        },
-        {
-          "date": "2026-03-18T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
       "merger_id": "MN-65009",
       "merger_name": "CVC Capital Partners – Marathon Asset Management",
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-marathon-asset-management",
@@ -2217,109 +2277,6 @@
         },
         {
           "date": "2026-03-18T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-40009",
-      "merger_name": "Gilead - Arcellx",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/gilead-arcellx",
-      "acquirers": [
-        {
-          "name": "Gilead Sciences, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 943047598"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Arcellx, Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 472855917"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-19T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-05-05T12:00:00Z",
-      "accc_determination": null,
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "is_waiver": false,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "Gilead Sciences, Inc. (Gilead), through its wholly owned subsidiary Ravens Sub, Inc. (Ravens Sub) proposes to acquire all the outstanding shares of Arcellx, Inc. (Arcellx) via a public cash tender offer. Following consummation of the offer, Ravens Sub will be merged with Arcellx, and Arcellx will continue as the surviving corporation and a wholly owned subsidiary of Gilead.",
-      "events": [
-        {
-          "date": "2026-03-19T12:00:00Z",
-          "title": "Questionnaire – Gilead - Arcellx",
-          "display_title": "Questionnaire – Gilead - Arcellx",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Gilead%20-%20Arcellx.docx",
-          "url_gh": "/mergers/MN-40009/Questionnaire - Gilead - Arcellx.pdf",
-          "status": "removed"
-        },
-        {
-          "date": "2026-03-19T12:00:00Z",
-          "title": "Merger notified to ACCC",
-          "display_title": "Merger notified to ACCC"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-75012",
-      "merger_name": "Opal Healthcare – Greenwich Place residential aged care home",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/opal-healthcare-%E2%80%93-greenwich-place-residential-aged-care-home",
-      "acquirers": [
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
-        },
-        {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
-        }
-      ],
-      "targets": [
-        {
-          "name": "STAMEN GREENWICH PROPERTY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "82 613 786 182"
-        },
-        {
-          "name": "GREENWICH PLACE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 000 706 249"
-        },
-        {
-          "name": "GREENWICH CARE PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "96 613 786 682"
-        }
-      ],
-      "effective_notification_datetime": "2026-03-19T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-05-05T12:00:00Z",
-      "accc_determination": null,
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "is_waiver": false,
-      "phase_1_determination": null,
-      "phase_2_determination": null,
-      "merger_description": "DPG Services Pty Ltd (**DPG**) and OHCA Property Holdings Pty Ltd (**OHCA**) (being related bodies corporate, and together referred to as **Opal Healthcare**) propose to acquire the land, assets and business comprising the Greenwich Place residential aged care home located in Greenwich, Sydney (**Greenwich Place**) (**Acquisition**).",
-      "events": [
-        {
-          "date": "2026-03-20T12:00:00Z",
-          "title": "Questionnaire - Opal Healthcare - Greenwich Place residential aged care home",
-          "display_title": "Questionnaire - Opal Healthcare - Greenwich Place residential aged care home",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Opal%20Healthcare%20-%20Greenwich%20Place%20residential%20aged%20care%20home.docx",
-          "url_gh": "/mergers/MN-75012/Questionnaire - Opal Healthcare - Greenwich Place residential aged care home.pdf",
-          "status": "removed"
-        },
-        {
-          "date": "2026-03-19T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC"
         }
@@ -2581,25 +2538,9 @@
       "merger_description": "The proposed acquisition involves a consortium comprised of Tega Industries Limited (**Tega**) and the Apollo funds indirectly and collectively acquiring all outstanding shares in the subsidiaries of AIP MC Holdings LLC that collectively form **Molycop**.",
       "events": [
         {
-          "date": "2026-03-27T12:00:00Z",
-          "title": "Questionnaire - Tega/Apollo - Molycop",
-          "display_title": "Questionnaire - Tega/Apollo - Molycop",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Apollo%20-%20Molycop.docx",
-          "url_gh": "/mergers/MN-85006/Apollo - Molycop.pdf",
-          "status": "removed"
-        },
-        {
           "date": "2026-03-26T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC"
-        },
-        {
-          "date": "2026-03-27T12:00:00Z",
-          "title": "Questionnaire - Tega/Apollo - Molycop",
-          "display_title": "Questionnaire - Tega/Apollo - Molycop",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Apollo%20-%20Molycop_0.docx",
-          "url_gh": "/mergers/MN-85006/Apollo - Molycop_0.pdf",
-          "status": "removed"
         },
         {
           "date": "2026-03-27T12:00:00Z",
@@ -2716,8 +2657,8 @@
     },
     {
       "merger_id": "MN-15011",
-      "merger_name": "Danaher Corporation / Masimo Corporation",
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danaher-corporation-masimo-corporation",
+      "merger_name": "Danaher - Masimo",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danaher-masimo",
       "acquirers": [
         {
           "name": "Danaher Corporation",
@@ -2749,7 +2690,7 @@
           "display_title": "Danaher - Masimo - Questionnaire",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Danaher%20-%20Masimo%20-%20Questionnaire.docx",
           "url_gh": "/mergers/MN-15011/Danaher - Masimo - Questionnaire.pdf",
-          "status": "live"
+          "status": "removed"
         },
         {
           "date": "2026-04-02T12:00:00Z",
@@ -2837,11 +2778,6 @@
       "merger_description": "Experience Australia Group Pty Ltd (EAG), via its wholly owned subsidiary JB Kakadu Hotel Pty Ltd (JB Kakadu), proposes to acquire Crocodile Hotel Pty Ltd, which operates the business and business assets known as the Kakadu Crocodile Hotel (Crocodile Hotel) in Jabiru (NT), from Kakadu Tourism (GCH) Pty Limited (the Seller), as well as a 100% leasehold interest in the land on which the Crocodile Hotel is situated from Gundjeihmi Aboriginal Corporation Jabiru Town (the Acquisition).",
       "events": [
         {
-          "date": "2026-04-08T12:00:00Z",
-          "title": "Questionnaire - Journey Beyond - Kakadu Crocodile Hotel",
-          "display_title": "Questionnaire - Journey Beyond - Kakadu Crocodile Hotel"
-        },
-        {
           "date": "2026-04-07T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC"
@@ -2891,7 +2827,7 @@
           "display_title": "Questionnaire - REA Group - Simplicity Loans & Advisory",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/REA%20Group%20-%20Simplicity%20Loans%20and%20Advisory%20-%20Questionnaire%20-%20April%202026.docx",
           "url_gh": "/mergers/MN-65008/REA Group - Simplicity Loans and Advisory - Questionnaire - April 2026.pdf",
-          "status": "live"
+          "status": "removed"
         },
         {
           "date": "2026-04-07T12:00:00Z",
@@ -2943,17 +2879,12 @@
           "display_title": "Merger notified to ACCC"
         },
         {
-          "date": "2026-03-12T12:00:00Z",
-          "title": "In accordance with s 51ABZ of the Competition and Consumer Act 2010, the ACCC decided that the notification filed on 11 February 2026 should be taken not to have an effective notification date because it is materially incomplete and materially misleading.",
-          "display_title": "In accordance with s 51ABZ of the Competition and Consumer Act 2010, the ACCC decided that the notification filed on 11 February 2026 should be taken not to have an effective notification date because it is materially incomplete and materially misleading."
-        },
-        {
           "date": "2026-04-08T12:00:00Z",
           "title": "Sembcorp / Alinta Energy - third-party questionnaire",
           "display_title": "Sembcorp / Alinta Energy - third-party questionnaire",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Alinta%20Energy%20-%20third-party%20questionnaire%20-%208%20April_1.docx",
           "url_gh": "/mergers/MN-95001/Alinta Energy - third-party questionnaire - 8 April_1.pdf",
-          "status": "live"
+          "status": "removed"
         },
         {
           "date": "2026-04-07T12:00:00Z",
@@ -3012,6 +2943,50 @@
       ]
     },
     {
+      "merger_id": "MN-35013",
+      "merger_name": "Estia Health – Norsan residential aged care business",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/estia-health-%E2%80%93-norsan-residential-aged-care-business",
+      "acquirers": [
+        {
+          "name": "ESTIA INVESTMENTS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "87 164 350 387"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NORSAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 076 143 596"
+        }
+      ],
+      "effective_notification_datetime": "2026-04-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-25T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Estia Investments Pty. Ltd. (**Estia**) proposes to acquire substantially all of the business assets of three residential aged care homes from Norsan Pty Ltd (**Norsan**), being Chirnside Views Residential Aged Care, Park Lane Croydon Residential Aged Care and Willowbrae - Melton Residential Aged Care (the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-04-13T12:00:00Z",
+          "title": "Questionnaire - Estia Health - Norsan residential aged care business",
+          "display_title": "Questionnaire - Estia Health - Norsan residential aged care business",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Estia%20Health%20-%20Norsan%20residential%20aged%20care%20business.docx",
+          "url_gh": "/mergers/MN-35013/Questionnaire - Estia Health - Norsan residential aged care business.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-40015",
       "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/swiss-re-qbe-insurances-trade-credit-and-surety-business",
@@ -3050,6 +3025,182 @@
         },
         {
           "date": "2026-04-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-95011",
+      "merger_name": "Dubai Aerospace Enterprise - Macquarie AirFinance",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/dubai-aerospace-enterprise-macquarie-airfinance",
+      "acquirers": [
+        {
+          "name": "Dubai Aerospace Enterprise (DAE) Ltd",
+          "identifier_type": null,
+          "identifier": "DIFC  0170"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Macquarie AirFinance Limited",
+          "identifier_type": null,
+          "identifier": "UK  11958743"
+        }
+      ],
+      "effective_notification_datetime": "2026-04-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-25T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Dubai Aerospace Enterprise DAE Ltd (**DAE**) proposes to acquire 100% of the issued share capital in Macquarie AirFinance Limited (**Macquarie AirFinance**) (the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-04-13T12:00:00Z",
+          "title": "Questionnaire - Dubai Aerospace Enterprise - Macquarie AirFinance",
+          "display_title": "Questionnaire - Dubai Aerospace Enterprise - Macquarie AirFinance",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Dubai%20Aerospace%20Enterprise%20-%20Macquarie%20AirFinance.docx",
+          "url_gh": "/mergers/MN-95011/Questionnaire - Dubai Aerospace Enterprise - Macquarie AirFinance.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-10T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55013",
+      "merger_name": "Lawrence & Hanson - Gordon Macdonald",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/lawrence-hanson-gordon-macdonald",
+      "acquirers": [
+        {
+          "name": "LAWRENCE & HANSON GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "69 080 350 812"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GORDON MACDONALD PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "36 000 307 246"
+        }
+      ],
+      "effective_notification_datetime": "2026-04-13T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-26T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Lawrence & Hanson Group Pty Ltd (**Lawrence & Hanson**) proposes to acquire the business and assets of Gordon Macdonald Pty Ltd (**Gordon Macdonald**) (the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-04-13T12:00:00Z",
+          "title": "Questionnaire - Lawrence & Hanson - Gordon Macdonald",
+          "display_title": "Questionnaire - Lawrence & Hanson - Gordon Macdonald",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Lawrence%20%26%20Hanson%20-%20Gordon%20Macdonald.docx",
+          "url_gh": "/mergers/MN-55013/Questionnaire - Lawrence and Hanson - Gordon Macdonald.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-13T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-40012",
+      "merger_name": "Eli Lilly – acquisition of licence from CSL Behring",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eli-lilly-%E2%80%93-acquisition-of-licence-from-csl-behring",
+      "acquirers": [
+        {
+          "name": "Eli Lilly and Company",
+          "identifier_type": null,
+          "identifier": "350470950 (IRS Employer Identification Number)"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CSL Behring LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "effective_notification_datetime": "2026-04-14T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-27T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Eli Lilly and Company (Eli Lilly) and CSL Behring LLC (CSL Behring) propose to enter into a Licence Agreement under which Eli Lilly would be granted certain exclusive rights to develop and commercialise Clazakizumab, an anti-interleukin-6 (IL-6) monoclonal antibody, for certain new indications including atrial fibrillation, atherosclerotic cardiovascular disease and other cardiovascular-related indications (the Acquisition). CSL Behring would retain exclusive rights to continue the development and commercialisation of Clazakizumab for the prevention of cardiovascular events in patients with end-stage kidney disease.",
+      "events": [
+        {
+          "date": "2026-04-14T12:00:00Z",
+          "title": "Questionnaire - Eli Lilly: acquisition of Clazakizumab licence from CSL Behring",
+          "display_title": "Questionnaire - Eli Lilly: acquisition of Clazakizumab licence from CSL Behring",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Eli%20Lilly%20-%20Clazakizumab%20licence%20from%20CSL%20Behring%3A%20Third-party%20questionnaire.docx",
+          "url_gh": "/mergers/MN-40012/Eli Lilly - Clazakizumab licence from CSL Behring - Third-party questionnaire.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-14T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal – TR Calibration",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/trescal-%E2%80%93-tr-calibration",
+      "acquirers": [
+        {
+          "name": "TRESCAL (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "39 117 603 835"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TR PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 005 499 721"
+        }
+      ],
+      "effective_notification_datetime": "2026-04-14T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-05-27T12:00:00Z",
+      "accc_determination": null,
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "is_waiver": false,
+      "phase_1_determination": null,
+      "phase_2_determination": null,
+      "merger_description": "Trescal Holding Pty Ltd (**Trescal**), through a wholly-owned subsidiary, proposes to acquire TR Pty Ltd’s (**TR**) calibration and equipment sales business, TechRentals Calibration & Sales (**TR Calibration**) (the **Acquisition**).",
+      "events": [
+        {
+          "date": "2026-04-14T12:00:00Z",
+          "title": "Questionnaire - Trescal - TR Calibration",
+          "display_title": "Questionnaire - Trescal - TR Calibration",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Trescal%20-%20TR%20Calibration%20-Questionnaire.docx",
+          "url_gh": "/mergers/MN-90009/Trescal - TR Calibration -Questionnaire.pdf",
+          "status": "live"
+        },
+        {
+          "date": "2026-04-14T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC"
         }
@@ -3119,14 +3270,6 @@
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ampol_EG%20-%20NOCC%20summary%20-%20AR%20version%20-%202%20March%202026_1.pdf",
           "url_gh": "/mergers/MN-01019/Ampol_EG - NOCC summary - AR version - 2 March 2026_1.pdf",
           "status": "live"
-        },
-        {
-          "date": "2026-01-20T12:00:00Z",
-          "title": "ACCC decided notification is subject to Phase 2 review",
-          "display_title": "ACCC decided notification is subject to Phase 2 review",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ampol%20-%20EG%20Australia%20-%20Phase%202%20Notice%20-%20Redacted_2.pdf",
-          "url_gh": "/mergers/MN-01019/Ampol - EG Australia - Phase 2 Notice - Redacted_2.pdf",
-          "status": "removed"
         },
         {
           "date": "2026-04-07T12:00:00Z",
@@ -3273,14 +3416,6 @@
           "date": "2026-02-20T12:00:00Z",
           "title": "On 20 February 2026, MicroStar gave the ACCC additional information and documents in response to the ACCC’s decision under s 51ABY of the CCA. Accordingly, the effective notification date is 20 February 2026.",
           "display_title": "On 20 February 2026, MicroStar gave the ACCC additional information and documents in response to the ACCC’s decision under s 51ABY of the CCA. Accordingly, the effective notification date is 20 February 2026."
-        },
-        {
-          "date": "2026-04-01T12:00:00Z",
-          "title": "ACCC decided notification is subject to Phase 2 review",
-          "display_title": "ACCC decided notification is subject to Phase 2 review",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/MN%2030003%20-%20MicroStar_Konvoy%20-%20Phase%202%20notice%20-%201%20April%202026_0.pdf",
-          "url_gh": "/mergers/MN-30003/MN 30003 - MicroStar_Konvoy - Phase 2 notice - 1 April 2026_0.pdf",
-          "status": "removed"
         },
         {
           "date": "2026-04-01T12:00:00Z",
