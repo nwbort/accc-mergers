@@ -110,7 +110,12 @@ export default {
 
     const turnstileData = await turnstileResp.json().catch(() => ({}));
     if (!turnstileData.success) {
-      console.error("Turnstile verification failed:", JSON.stringify(turnstileData));
+      // Log only the error codes array — never the full response, which can
+      // include the user's IP or other request metadata.
+      const codes = Array.isArray(turnstileData["error-codes"])
+        ? turnstileData["error-codes"].join(",")
+        : "unknown";
+      console.error("Turnstile verification failed:", turnstileResp.status, codes);
       return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 400, origin, env);
     }
 
@@ -137,8 +142,12 @@ export default {
     }
 
     if (!resendResp.ok) {
+      // Consume the body so the socket can be reused, but do not log it — Resend
+      // error payloads echo the submitted email address, which would leak PII
+      // into Cloudflare Logs. Log only the status and Resend's short "name" code.
       const errData = await resendResp.json().catch(() => ({}));
-      console.error("Resend API error:", resendResp.status, JSON.stringify(errData));
+      const errName = typeof errData?.name === "string" ? errData.name : "unknown";
+      console.error("Resend API error:", resendResp.status, errName);
       // 409 means contact already exists — that's fine, treat as success
       if (resendResp.status !== 409) {
         return jsonResponse({ error: "Failed to subscribe. Please try again." }, 500, origin, env);

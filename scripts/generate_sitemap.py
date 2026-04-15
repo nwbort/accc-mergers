@@ -15,6 +15,7 @@ Output: merger-tracker/frontend/public/sitemap.xml
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from xml.sax.saxutils import escape
 
 
 BASE_URL = "https://mergers.fyi"
@@ -95,7 +96,7 @@ def generate_sitemap(mergers):
         if comment:
             lines.append(f"  <!-- {comment} -->")
         lines.append(url_entry(
-            loc=f"{BASE_URL}{page['path']}",
+            loc=escape(f"{BASE_URL}{page['path']}"),
             lastmod=TODAY,
             changefreq=page["changefreq"],
             priority=page["priority"],
@@ -108,7 +109,7 @@ def generate_sitemap(mergers):
         if not merger_id:
             continue
         lines.append(url_entry(
-            loc=f"{BASE_URL}/mergers/{merger_id}",
+            loc=escape(f"{BASE_URL}/mergers/{merger_id}"),
             lastmod=lastmod_for(merger),
             changefreq="weekly",
             priority="0.6",

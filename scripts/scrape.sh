@@ -121,14 +121,28 @@ fetch_matter_page() {
   local matter_number
   matter_number=$(cat "$temp_html" | pup '.field--name-dynamic-token-fieldnode-acccgov-merger-id p text{}' | tr -d '[:space:]')
 
+  # Whitelist the matter number to a safe filename pattern to prevent path
+  # traversal if the upstream site ever returns unexpected content. Expected
+  # values look like "MN-12345" or "WA-12345".
+  if [[ -n "$matter_number" && ! "$matter_number" =~ ^[A-Za-z0-9_-]+$ ]]; then
+    echo "    Warning: Rejected unsafe matter number '$matter_number' for $full_url" >&2
+    matter_number=""
+  fi
+
   local filename
   if [ -n "$matter_number" ]; then
     filename="${SUBFOLDER}/${matter_number}.html"
     mv "$temp_html" "$filename"
   else
-    # Fallback in case matter number isn't found
+    # Fallback in case matter number isn't found or was rejected. basename strips
+    # any leading path, and we additionally scrub anything outside a safe set.
     local fallback_name
     fallback_name=$(basename "$link")
+    fallback_name=$(echo "$fallback_name" | tr -cd 'A-Za-z0-9_.-')
+    if [ -z "$fallback_name" ]; then
+      echo "    Warning: Skipping $full_url (no safe filename)" >&2
+      return 1
+    fi
     filename="${SUBFOLDER}/${fallback_name}.html"
     mv "$temp_html" "$filename"
     echo "    Warning: Could not find matter number for $full_url. Used fallback name: $fallback_name"
