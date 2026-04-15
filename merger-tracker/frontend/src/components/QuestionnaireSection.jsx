@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import { formatDate, getBusinessDaysRemaining, isDatePast } from '../utils/dates';
+import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
 import ExternalLinkIcon from './ExternalLinkIcon';
 import { API_ENDPOINTS } from '../config';
 
@@ -35,10 +35,10 @@ function QuestionnaireSection({ mergerId, events }) {
 
   const renderDeadlineCountdown = (deadlineIso) => {
     if (isDatePast(deadlineIso)) return 'responses now closed';
-    const businessDaysRemaining = getBusinessDaysRemaining(deadlineIso);
-    if (businessDaysRemaining === null) return null;
-    if (businessDaysRemaining === 0) return 'today';
-    return `${businessDaysRemaining} business day${businessDaysRemaining === 1 ? '' : 's'}`;
+    const daysRemaining = getDaysRemaining(deadlineIso);
+    if (daysRemaining === null) return null;
+    if (daysRemaining === 0) return 'today';
+    return `${daysRemaining} day${daysRemaining === 1 ? '' : 's'}`;
   };
 
   // Find all questionnaire document links from events (some mergers have multiple)
