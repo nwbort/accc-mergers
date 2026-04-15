@@ -8,6 +8,7 @@ import BellIcon from '../components/BellIcon';
 import WaiverBadge from '../components/WaiverBadge';
 import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
+import QuestionnaireSection from '../components/QuestionnaireSection';
 import { useTracking } from '../context/TrackingContext';
 import { formatDate, calculateDuration, getDaysRemaining, calculateBusinessDays, getBusinessDaysRemaining } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
@@ -321,6 +322,11 @@ function MergerDetail() {
               <ReactMarkdown>{merger.merger_description}</ReactMarkdown>
             </div>
           </div>
+        )}
+
+        {/* Questionnaire */}
+        {merger.has_questionnaire && (
+          <QuestionnaireSection mergerId={merger.merger_id} events={merger.events} />
         )}
 
         {/* Commentary */}
