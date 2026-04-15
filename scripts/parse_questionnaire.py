@@ -118,10 +118,10 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
     # Find the "Questions" heading line.
     # Must start with "Questions" but NOT "Questions for ..." (which is a sub-section).
     # Matches: "Questions", "Questions – please answer...", etc.
+    # The heading may or may not be bold (some PDFs don't mark it as bold).
     start_idx = None
     for i, line in enumerate(lines):
-        if (line['is_bold']
-                and re.match(r'^Questions\b', line['text'])
+        if (re.match(r'^Questions\b', line['text'])
                 and not re.match(r'^Questions\s+for\s+', line['text'], re.IGNORECASE)):
             start_idx = i + 1
             break

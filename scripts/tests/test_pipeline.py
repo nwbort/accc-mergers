@@ -368,6 +368,22 @@ class TestExtractQuestions:
         assert result[0]['section'] == 'General questions'
         assert result[1]['section'] == 'Questions for suppliers of ITOM software'
 
+    def test_non_bold_heading(self):
+        """Some PDFs have the Questions heading as non-bold (e.g. MN-25004)."""
+        lines = _lines(
+            "Questions – please answer all questions that are relevant to your business",
+            ("General questions", True),
+            "1. Describe your business.",
+            "2. Outline any concerns.",
+            ("Questions for suppliers of ITOM software", True),
+            "3. Describe your position.",
+        )
+        result = extract_questions(lines)
+        assert len(result) == 3
+        assert result[0]['section'] == 'General questions'
+        assert result[0]['number'] == 1
+        assert result[2]['section'] == 'Questions for suppliers of ITOM software'
+
 
 class TestExtractQuestionsFromText:
     """Tests for the plain-text fallback used when font data is unavailable."""
