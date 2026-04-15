@@ -15,7 +15,7 @@ sys.modules['markdownify'] = unittest.mock.MagicMock()
 sys.modules['requests'] = unittest.mock.MagicMock()
 
 from parse_determination import extract_commission_division, parse_text_as_table
-from parse_questionnaire import extract_deadline, extract_questions
+from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text
 from cutoff import is_waiver_merger, get_cutoff_date, should_skip_merger
 from extract_mergers import is_safe_url, get_serve_filename
 
@@ -182,148 +182,185 @@ class TestExtractDeadline:
 # parse_questionnaire: extract_questions
 # ---------------------------------------------------------------------------
 
+def _lines(*specs):
+    """Helper to build annotated lines for extract_questions tests.
+
+    Each spec is either a string (plain line) or a tuple (text, is_bold).
+    """
+    result = []
+    for s in specs:
+        if isinstance(s, tuple):
+            result.append({'text': s[0], 'is_bold': s[1]})
+        else:
+            result.append({'text': s, 'is_bold': False})
+    return result
+
+
 class TestExtractQuestions:
     def test_simple_numbered_questions(self):
-        text = (
-            "Background\nSome background info.\n"
-            "Questions\n"
-            "1. What is the nature of your business?\n"
-            "2. How will this merger affect competition?\n"
-            "3. Are there any barriers to entry?\n"
+        lines = _lines(
+            "Background", "Some background info.",
+            "Questions",
+            "1. What is the nature of your business?",
+            "2. How will this merger affect competition?",
+            "3. Are there any barriers to entry?",
         )
-        result = extract_questions(text)
+        result = extract_questions(lines)
         assert len(result) == 3
         assert result[0]['number'] == 1
         assert "nature of your business" in result[0]['text']
         assert result[2]['number'] == 3
 
     def test_multiline_question(self):
-        text = (
-            "Questions\n"
-            "1. Please describe in detail\n"
-            "the nature of your business\n"
-            "and your market position.\n"
-            "2. Next question.\n"
+        lines = _lines(
+            "Questions",
+            "1. Please describe in detail",
+            "the nature of your business",
+            "and your market position.",
+            "2. Next question.",
         )
-        result = extract_questions(text)
+        result = extract_questions(lines)
         assert len(result) == 2
         assert "nature of your business" in result[0]['text']
         assert "market position" in result[0]['text']
 
     def test_no_questions_section(self):
-        text = "This document has no questions heading."
-        assert extract_questions(text) == []
+        lines = _lines("This document has no questions heading.")
+        assert extract_questions(lines) == []
 
     def test_stops_at_confidentiality(self):
-        text = (
-            "Questions\n"
-            "1. First question?\n"
-            "2. Second question?\n"
-            "Confidentiality\n"
-            "3. This should not be captured.\n"
+        lines = _lines(
+            "Questions",
+            "1. First question?",
+            "2. Second question?",
+            "Confidentiality",
+            "3. This should not be captured.",
         )
-        result = extract_questions(text)
+        result = extract_questions(lines)
         assert len(result) == 2
 
-    def test_empty_text(self):
-        assert extract_questions("") == []
+    def test_empty_lines(self):
+        assert extract_questions([]) == []
 
     def test_question_with_trailing_page_number(self):
-        text = (
-            "Questions\n"
-            "1. What is the relevant market? 5\n"
-            "2. Next question.\n"
+        lines = _lines(
+            "Questions",
+            "1. What is the relevant market? 5",
+            "2. Next question.",
         )
-        result = extract_questions(text)
+        result = extract_questions(lines)
         assert len(result) == 2
         # Trailing page number should be stripped
         assert not result[0]['text'].endswith("5")
 
     def test_no_section_field_when_no_sections(self):
-        text = (
-            "Questions\n"
-            "1. First question?\n"
-            "2. Second question?\n"
+        lines = _lines(
+            "Questions",
+            "1. First question?",
+            "2. Second question?",
         )
-        result = extract_questions(text)
+        result = extract_questions(lines)
         assert len(result) == 2
         assert 'section' not in result[0]
         assert 'section' not in result[1]
 
-    def test_standalone_section_headers(self):
-        text = (
-            "Questions\n"
-            "General questions\n"
-            "1. Describe your business.\n"
-            "2. Outline any concerns.\n"
-            "Questions for mining customers\n"
-            "3. Describe your fleet.\n"
-            "4. Identify alternative suppliers.\n"
+    def test_bold_lines_become_section_headers(self):
+        lines = _lines(
+            "Questions",
+            ("General questions", True),
+            "1. Describe your business.",
+            "2. Outline any concerns.",
+            ("Questions for mining customers", True),
+            "3. Describe your fleet.",
+            "4. Identify alternative suppliers.",
         )
-        result = extract_questions(text)
+        result = extract_questions(lines)
         assert len(result) == 4
         assert result[0]['section'] == 'General questions'
         assert result[1]['section'] == 'General questions'
         assert result[2]['section'] == 'Questions for mining customers'
         assert result[3]['section'] == 'Questions for mining customers'
 
-    def test_trailing_section_header_stripped_from_question(self):
-        """Section headers that PDF extraction concatenated onto a question."""
-        text = (
-            "Questions\n"
-            "1. Describe your business.\n"
-            "2. Outline any concerns.\n"
-            "3. Provide additional info. Questions for mining customers\n"
-            "4. Describe your fleet.\n"
+    def test_bold_header_mid_question(self):
+        """Bold section header between questions saves current question first."""
+        lines = _lines(
+            "Questions",
+            "1. Describe your business.",
+            "2. Provide additional info relevant",
+            "to the ACCC assessment.",
+            ("Independent Repairers", True),
+            "3. Identify barriers to entry.",
         )
-        result = extract_questions(text)
-        assert len(result) == 4
-        # Question 3 should NOT contain the section header text
-        assert "Questions for mining" not in result[2]['text']
-        assert result[2]['text'] == 'Provide additional info.'
-        # Questions 1-3 should be in the default (None) section
+        result = extract_questions(lines)
+        assert len(result) == 3
+        assert "to the ACCC assessment" in result[1]['text']
+        assert "Independent" not in result[1]['text']
         assert result[0]['section'] is None
-        assert result[2]['section'] is None
-        # Question 4 should be in the new section
-        assert result[3]['section'] == 'Questions for mining customers'
+        assert result[1]['section'] is None
+        assert result[2]['section'] == 'Independent Repairers'
 
-    def test_multiple_section_transitions(self):
-        """Test multiple section headers including trailing and standalone."""
-        text = (
-            "Questions\n"
-            "General questions\n"
-            "1. General Q1.\n"
-            "2. General Q2. Questions for OEMs\n"
-            "3. OEM Q1.\n"
-            "Other issues\n"
-            "4. Other Q1.\n"
+    def test_multiple_bold_sections(self):
+        """Any bold non-numbered text works as a section header."""
+        lines = _lines(
+            "Questions",
+            ("General questions", True),
+            "1. General Q1.",
+            "2. General Q2.",
+            ("Questions for OEMs", True),
+            "3. OEM Q1.",
+            ("Other issues", True),
+            "4. Other Q1.",
         )
-        result = extract_questions(text)
+        result = extract_questions(lines)
         assert len(result) == 4
         assert result[0]['section'] == 'General questions'
         assert result[1]['section'] == 'General questions'
         assert result[2]['section'] == 'Questions for OEMs'
         assert result[3]['section'] == 'Other issues'
-        # Verify trailing header was stripped
-        assert "Questions for OEMs" not in result[1]['text']
 
-    def test_section_header_mid_question_continuation(self):
-        """Section header appearing as a continuation line mid-question."""
+    def test_non_bold_non_numbered_line_is_continuation(self):
+        """A non-bold, non-numbered line should be treated as continuation text."""
+        lines = _lines(
+            "Questions",
+            "1. First question starts here",
+            "and continues on next line.",
+            "2. Second question.",
+        )
+        result = extract_questions(lines)
+        assert len(result) == 2
+        assert "starts here and continues" in result[0]['text']
+
+
+class TestExtractQuestionsFromText:
+    """Tests for the plain-text fallback used when font data is unavailable."""
+
+    def test_simple_questions(self):
         text = (
             "Questions\n"
-            "1. Describe your business.\n"
-            "2. Provide additional info relevant\n"
-            "to the ACCC assessment.\n"
-            "Questions for software suppliers\n"
-            "3. Identify barriers to entry.\n"
+            "1. What is your business?\n"
+            "2. Any concerns?\n"
         )
-        result = extract_questions(text)
+        result = extract_questions_from_text(text)
+        assert len(result) == 2
+
+    def test_known_section_patterns_detected(self):
+        text = (
+            "Questions\n"
+            "General questions\n"
+            "1. Q1.\n"
+            "Questions for mining customers\n"
+            "2. Q2.\n"
+            "Other issues\n"
+            "3. Q3.\n"
+        )
+        result = extract_questions_from_text(text)
         assert len(result) == 3
-        assert "to the ACCC assessment" in result[1]['text']
-        assert "software suppliers" not in result[1]['text']
-        assert result[0]['section'] is None
-        assert result[1]['section'] is None
-        assert result[2]['section'] == 'Questions for software suppliers'
+        assert result[0]['section'] == 'General questions'
+        assert result[1]['section'] == 'Questions for mining customers'
+        assert result[2]['section'] == 'Other issues'
+
+    def test_no_questions_heading(self):
+        assert extract_questions_from_text("No heading here.") == []
 
 
 # ---------------------------------------------------------------------------
