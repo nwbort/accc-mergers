@@ -295,62 +295,72 @@ def _format_signals(signals: dict) -> str:
     return "; ".join(bits)
 
 
-def build_issue_body(candidates: list[dict], branch: str = "main") -> str:
+def pair_id(candidate: dict) -> str:
+    """Canonical, parseable identifier used in titles and for de-duplication."""
+    return f"{candidate['waiver']}/{candidate['notification']}"
+
+
+def build_issue_title(candidate: dict) -> str:
+    wa = candidate["waiver"]
+    mn = candidate["notification"]
+    # The `WA-XXXX/MN-XXXX` substring is the marker the workflow greps for
+    # to decide whether an issue already exists for this pair.
+    name = candidate.get("waiver_name") or candidate.get("notification_name") or ""
+    base = f"Related mergers: {wa}/{mn}"
+    if name:
+        base = f"{base} — {name}"
+    # GitHub issue title limit is 256 chars
+    if len(base) > 240:
+        base = base[:237] + "..."
+    return base
+
+
+def build_issue_body(candidate: dict, branch: str = "main") -> str:
+    wa = candidate["waiver"]
+    mn = candidate["notification"]
     edit_url = edit_related_mergers_url(branch)
-    intro_s = "s" if len(candidates) != 1 else ""
+    related_blob = f"https://github.com/{_REPO}/blob/{branch}/{_RELATED_PATH}"
+
     lines = [
-        f"The daily detector spotted {len(candidates)} likely new related-merger pair{intro_s} "
-        f"that aren't yet recorded in "
-        f"[`{_RELATED_PATH}`](https://github.com/{_REPO}/blob/{branch}/{_RELATED_PATH}).",
+        f"<!-- pair-id: {pair_id(candidate)} -->",
+        f"The daily detector thinks **`{wa}`** and **`{mn}`** look like a "
+        f"related-merger pair that isn't yet in "
+        f"[`{_RELATED_PATH}`]({related_blob}).",
         "",
         "A \"related merger\" is one that was initially filed as a **waiver** "
         "application, declined, then re-filed as a formal **notification** "
         "(see the `_README` field in the JSON).",
         "",
-        f"[**Edit `related_mergers.json` on GitHub →**]({edit_url})",
+        "## The two mergers",
         "",
-        "---",
+        f"- **Waiver:** [{wa} — {candidate['waiver_name']}]({mergers_fyi_url(wa)}) "
+        f"· filed {candidate['waiver_filed'] or 'unknown'} · determination: "
+        f"{candidate['waiver_determination'] or 'unknown'}",
+        f"- **Notification:** [{mn} — {candidate['notification_name']}]({mergers_fyi_url(mn)}) "
+        f"· filed {candidate['notification_filed'] or 'unknown'} · status: "
+        f"{candidate['notification_status'] or 'unknown'}",
         "",
+        f"**Match confidence:** {candidate['score']:.2f}  ",
+        f"**Signals:** {_format_signals(candidate['signals'])}",
+        "",
+        "## To accept this suggestion",
+        "",
+        f"1. [**Open `related_mergers.json` for editing on GitHub →**]({edit_url})",
+        "2. Paste the following line into the `pairs` array:",
+        "",
+        "```json",
+        json_line_for(candidate),
+        "```",
+        "",
+        "3. Commit on `main` (or via a PR) — the next run will then see the "
+        "pair is recorded and will auto-close this issue.",
+        "",
+        "## If this isn't a real pair",
+        "",
+        "Just close the issue. The workflow treats any closed issue for this "
+        "pair as a permanent \"no\" and will not re-raise it on future runs.",
     ]
-
-    for i, c in enumerate(candidates, 1):
-        wa = c["waiver"]
-        mn = c["notification"]
-        lines.extend([
-            f"## Candidate {i}: `{wa}` ↔ `{mn}` (confidence {c['score']:.2f})",
-            "",
-            f"- **Waiver:** [{wa} — {c['waiver_name']}]({mergers_fyi_url(wa)}) "
-            f"· filed {c['waiver_filed'] or 'unknown'} · determination: "
-            f"{c['waiver_determination'] or 'unknown'}",
-            f"- **Notification:** [{mn} — {c['notification_name']}]({mergers_fyi_url(mn)}) "
-            f"· filed {c['notification_filed'] or 'unknown'} · status: "
-            f"{c['notification_status'] or 'unknown'}",
-            f"- **Match signals:** {_format_signals(c['signals'])}",
-            "",
-            "Copy-paste line for `related_mergers.json` → `pairs`:",
-            "",
-            "```json",
-            json_line_for(c),
-            "```",
-            "",
-        ])
-
-    lines.extend([
-        "---",
-        "",
-        f"To add any of the pairs above, **[open the file for editing]({edit_url})** "
-        "and drop the JSON line(s) into the `pairs` array. Close this issue once done "
-        "(or if none of the candidates are genuine — the bot will re-open a fresh "
-        "issue if the pair is still flagged on the next run).",
-    ])
     return "\n".join(lines)
-
-
-def build_issue_title(candidates: list[dict], date: str) -> str:
-    if len(candidates) == 1:
-        c = candidates[0]
-        return f"Related mergers: suggest adding {c['waiver']} ↔ {c['notification']} ({date})"
-    return f"Related mergers: {len(candidates)} new candidate pairs to review ({date})"
 
 
 # ---------------------------------------------------------------------------
@@ -376,7 +386,8 @@ def main() -> int:
         "--issue-json",
         type=Path,
         default=None,
-        help="If set, write {title, body, candidates} JSON to this path",
+        help="If set, write a JSON payload (candidates + per-pair title/body + "
+        "recorded_pairs) to this path, for use by the workflow.",
     )
     parser.add_argument(
         "--summary",
@@ -410,13 +421,21 @@ def main() -> int:
                 print()
 
     if args.issue_json:
-        today = datetime.utcnow().strftime("%Y-%m-%d")
+        enriched = []
+        for c in candidates:
+            enriched.append({
+                **c,
+                "pair_id": pair_id(c),
+                "title": build_issue_title(c),
+                "body": build_issue_body(c, args.branch),
+            })
         payload = {
-            "found": bool(candidates),
-            "count": len(candidates),
-            "title": build_issue_title(candidates, today) if candidates else "",
-            "body": build_issue_body(candidates, args.branch) if candidates else "",
-            "candidates": candidates,
+            "count": len(enriched),
+            "candidates": enriched,
+            # Pairs already recorded in related_mergers.json — used by the
+            # workflow to produce nicer close messages when an open issue's
+            # pair has been recorded since it was raised.
+            "recorded_pairs": sorted(f"{w}/{n}" for w, n in known),
         }
         args.issue_json.parent.mkdir(parents=True, exist_ok=True)
         with args.issue_json.open("w") as fh:
