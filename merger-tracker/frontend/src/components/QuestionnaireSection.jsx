@@ -127,14 +127,25 @@ function QuestionnaireSection({ mergerId, events }) {
                 ))}
               </div>
               <ol className="space-y-3">
-                {questionnaire.questions.map((q) => (
-                  <li key={q.number} className="flex gap-3">
-                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 text-gray-500 text-xs font-medium flex items-center justify-center mt-0.5">
-                      {q.number}
-                    </span>
-                    <p className="text-sm text-gray-600 leading-relaxed">{q.text}</p>
-                  </li>
-                ))}
+                {questionnaire.questions.map((q, idx) => {
+                  const prevSection = idx > 0 ? questionnaire.questions[idx - 1].section : null;
+                  const showSectionHeader = q.section && q.section !== prevSection;
+                  return (
+                    <li key={q.number}>
+                      {showSectionHeader && (
+                        <p className={`text-xs font-semibold text-gray-500 uppercase tracking-wider ${idx > 0 ? 'mt-3' : ''} mb-3`}>
+                          {q.section}
+                        </p>
+                      )}
+                      <div className="flex gap-3">
+                        <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 text-gray-500 text-xs font-medium flex items-center justify-center mt-0.5">
+                          {q.number}
+                        </span>
+                        <p className="text-sm text-gray-600 leading-relaxed">{q.text}</p>
+                      </div>
+                    </li>
+                  );
+                })}
               </ol>
             </>
           )}

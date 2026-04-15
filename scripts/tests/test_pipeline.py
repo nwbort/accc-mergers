@@ -239,6 +239,92 @@ class TestExtractQuestions:
         # Trailing page number should be stripped
         assert not result[0]['text'].endswith("5")
 
+    def test_no_section_field_when_no_sections(self):
+        text = (
+            "Questions\n"
+            "1. First question?\n"
+            "2. Second question?\n"
+        )
+        result = extract_questions(text)
+        assert len(result) == 2
+        assert 'section' not in result[0]
+        assert 'section' not in result[1]
+
+    def test_standalone_section_headers(self):
+        text = (
+            "Questions\n"
+            "General questions\n"
+            "1. Describe your business.\n"
+            "2. Outline any concerns.\n"
+            "Questions for mining customers\n"
+            "3. Describe your fleet.\n"
+            "4. Identify alternative suppliers.\n"
+        )
+        result = extract_questions(text)
+        assert len(result) == 4
+        assert result[0]['section'] == 'General questions'
+        assert result[1]['section'] == 'General questions'
+        assert result[2]['section'] == 'Questions for mining customers'
+        assert result[3]['section'] == 'Questions for mining customers'
+
+    def test_trailing_section_header_stripped_from_question(self):
+        """Section headers that PDF extraction concatenated onto a question."""
+        text = (
+            "Questions\n"
+            "1. Describe your business.\n"
+            "2. Outline any concerns.\n"
+            "3. Provide additional info. Questions for mining customers\n"
+            "4. Describe your fleet.\n"
+        )
+        result = extract_questions(text)
+        assert len(result) == 4
+        # Question 3 should NOT contain the section header text
+        assert "Questions for mining" not in result[2]['text']
+        assert result[2]['text'] == 'Provide additional info.'
+        # Questions 1-3 should be in the default (None) section
+        assert result[0]['section'] is None
+        assert result[2]['section'] is None
+        # Question 4 should be in the new section
+        assert result[3]['section'] == 'Questions for mining customers'
+
+    def test_multiple_section_transitions(self):
+        """Test multiple section headers including trailing and standalone."""
+        text = (
+            "Questions\n"
+            "General questions\n"
+            "1. General Q1.\n"
+            "2. General Q2. Questions for OEMs\n"
+            "3. OEM Q1.\n"
+            "Other issues\n"
+            "4. Other Q1.\n"
+        )
+        result = extract_questions(text)
+        assert len(result) == 4
+        assert result[0]['section'] == 'General questions'
+        assert result[1]['section'] == 'General questions'
+        assert result[2]['section'] == 'Questions for OEMs'
+        assert result[3]['section'] == 'Other issues'
+        # Verify trailing header was stripped
+        assert "Questions for OEMs" not in result[1]['text']
+
+    def test_section_header_mid_question_continuation(self):
+        """Section header appearing as a continuation line mid-question."""
+        text = (
+            "Questions\n"
+            "1. Describe your business.\n"
+            "2. Provide additional info relevant\n"
+            "to the ACCC assessment.\n"
+            "Questions for software suppliers\n"
+            "3. Identify barriers to entry.\n"
+        )
+        result = extract_questions(text)
+        assert len(result) == 3
+        assert "to the ACCC assessment" in result[1]['text']
+        assert "software suppliers" not in result[1]['text']
+        assert result[0]['section'] is None
+        assert result[1]['section'] is None
+        assert result[2]['section'] == 'Questions for software suppliers'
+
 
 # ---------------------------------------------------------------------------
 # cutoff: is_waiver_merger

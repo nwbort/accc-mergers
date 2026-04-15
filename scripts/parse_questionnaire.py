@@ -42,6 +42,34 @@ def extract_deadline(text: str) -> Optional[str]:
     return None
 
 
+def _is_section_header(line: str) -> Optional[str]:
+    """
+    Check if a line is a section header within the questions block.
+
+    Section headers appear as standalone lines like:
+    - "General questions"
+    - "Questions for mining customers"
+    - "Questions for OEMs"
+    - "Other issues (for all respondents)"
+
+    Returns the section name if it's a header, None otherwise.
+    """
+    # "Questions for ..." pattern (but not starting with a number, which would be a question)
+    m = re.match(r'^Questions\s+for\s+(.+)', line, re.IGNORECASE)
+    if m:
+        return line
+
+    # "General questions" or similar
+    if re.match(r'^General\s+questions', line, re.IGNORECASE):
+        return line
+
+    # "Other issues" with optional parenthetical
+    if re.match(r'^Other\s+issues', line, re.IGNORECASE):
+        return line
+
+    return None
+
+
 def extract_questions(text: str) -> List[Dict[str, str]]:
     """
     Extract the numbered questions from the questionnaire.
@@ -50,11 +78,15 @@ def extract_questions(text: str) -> List[Dict[str, str]]:
     Each question may span multiple lines. Question numbers may also appear
     inline (e.g., "10.Please" without a newline) due to PDF text extraction.
 
+    Questions may be grouped under section headers like "General questions",
+    "Questions for mining customers", etc. Each question includes a 'section'
+    field indicating which section it belongs to (null if no sections).
+
     Args:
         text: Full text of the questionnaire PDF
 
     Returns:
-        List of dictionaries with 'number' and 'text' keys
+        List of dictionaries with 'number', 'text', and optionally 'section' keys
     """
     questions = []
 
@@ -66,11 +98,38 @@ def extract_questions(text: str) -> List[Dict[str, str]]:
     # Get text after the "Questions" heading
     text_after_questions = text[questions_match.end():]
 
-    # Split into lines for processing
-    lines = text_after_questions.split('\n')
+    # Regex for trailing section headers that PDF extraction concatenated onto a line.
+    _trailing_section_re = re.compile(
+        r'\s+'
+        r'(Questions\s+for\s+.+'
+        r'|General\s+questions.*'
+        r'|Other\s+issues.*'
+        r')\s*$',
+        re.IGNORECASE,
+    )
+
+    # Pre-process: split raw lines into a clean list, separating out any
+    # trailing section headers that were concatenated onto a line.
+    raw_lines = text_after_questions.split('\n')
+    lines = []
+    for raw_line in raw_lines:
+        stripped = raw_line.strip()
+        if not stripped:
+            continue
+        trailing_match = _trailing_section_re.search(stripped)
+        if trailing_match:
+            before = stripped[:trailing_match.start()].strip()
+            header = trailing_match.group(1).strip()
+            if before:
+                lines.append(before)
+            lines.append(header)
+        else:
+            lines.append(stripped)
 
     current_question_num = None
     current_question_text = []
+    current_section = None
+    has_sections = False
 
     def save_current_question():
         """Helper to save the current question to the list."""
@@ -79,26 +138,30 @@ def extract_questions(text: str) -> List[Dict[str, str]]:
             full_text = ' '.join(current_question_text).strip()
             # Clean up any multiple spaces
             full_text = re.sub(r'\s+', ' ', full_text)
-            # Remove trailing section headings (e.g., "Questions for customers of...", "Other issues")
-            full_text = re.sub(r'\s+Questions for (customers|suppliers) of .+$', '', full_text)
-            full_text = re.sub(r'\s+Other issues$', '', full_text)
             # Remove trailing page numbers (single digit at the end)
             full_text = re.sub(r'\s+\d$', '', full_text)
             questions.append({
                 'number': current_question_num,
-                'text': full_text
+                'text': full_text,
+                'section': current_section,
             })
 
     for line in lines:
-        line = line.strip()
-
-        # Skip empty lines
-        if not line:
-            continue
-
         # Stop if we hit certain keywords that indicate end of questions section
         if re.match(r'^(Confidentiality|Note:|Please note)', line, re.IGNORECASE):
             break
+
+        # Check if this line is a section header
+        section_name = _is_section_header(line)
+        if section_name:
+            # Save current question first if we're mid-question
+            if current_question_num is not None:
+                save_current_question()
+                current_question_num = None
+                current_question_text = []
+            current_section = section_name
+            has_sections = True
+            continue
 
         # Check if this line starts a new question (e.g., "1.", "2.", "3.")
         question_start_match = re.match(r'^(\d+)\.\s*(.*)$', line)
@@ -160,6 +223,11 @@ def extract_questions(text: str) -> List[Dict[str, str]]:
 
     # Don't forget the last question
     save_current_question()
+
+    # If no sections were found, strip the section field to keep output clean
+    if not has_sections:
+        for q in questions:
+            del q['section']
 
     return questions
 
