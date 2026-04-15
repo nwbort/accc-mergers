@@ -231,6 +231,20 @@ def extract_phase_from_event(event_title: str) -> str | None:
     return None
 
 
+# Mergers that were initially filed as waiver applications but declined, then re-filed
+# as formal notifications. Each entry maps both directions (WA->MN and MN->WA).
+RELATED_MERGERS = {
+    'WA-35003': {'merger_id': 'MN-85007', 'relationship': 'refiled_as'},
+    'MN-85007': {'merger_id': 'WA-35003', 'relationship': 'refiled_from'},
+    'WA-01087': {'merger_id': 'MN-20013', 'relationship': 'refiled_as'},
+    'MN-20013': {'merger_id': 'WA-01087', 'relationship': 'refiled_from'},
+    'WA-65003': {'merger_id': 'MN-40005', 'relationship': 'refiled_as'},
+    'MN-40005': {'merger_id': 'WA-65003', 'relationship': 'refiled_from'},
+    'WA-70003': {'merger_id': 'MN-40008', 'relationship': 'refiled_as'},
+    'MN-40008': {'merger_id': 'WA-70003', 'relationship': 'refiled_from'},
+}
+
+
 def load_commentary() -> dict:
     """Load user commentary from commentary.json if it exists."""
     if not COMMENTARY_JSON.exists():
@@ -261,7 +275,7 @@ def enrich_merger(merger: dict, commentary: dict = None) -> dict:
     merger_id = m.get('merger_id', '')
     if commentary and merger_id in commentary:
         m['comments'] = commentary[merger_id].get('comments', [])
-    
+
     # Compute phase-specific determinations based on stage and events
     phase_1_det = None
     phase_1_det_date = None
@@ -1057,6 +1071,23 @@ def main():
     # Enrich all mergers once (add computed fields, phase determinations, etc.)
     print("Enriching mergers...")
     enriched_mergers = [enrich_merger(m, commentary) for m in mergers]
+
+    # Link related mergers (waiver <-> notification pairs) with resolved names
+    merger_name_lookup = {m['merger_id']: m['merger_name'] for m in enriched_mergers if m.get('merger_id')}
+    linked_count = 0
+    for m in enriched_mergers:
+        mid = m.get('merger_id', '')
+        if mid in RELATED_MERGERS:
+            related = RELATED_MERGERS[mid]
+            m['related_merger'] = {
+                'merger_id': related['merger_id'],
+                'relationship': related['relationship'],
+                'merger_name': merger_name_lookup.get(related['merger_id'], ''),
+            }
+            linked_count += 1
+    if linked_count:
+        print(f"  Linked {linked_count} related merger pairs")
+
     print(f"✓ Enriched {len(enriched_mergers)} mergers")
 
     # Create output directories
