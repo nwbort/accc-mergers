@@ -1,0 +1,141 @@
+name: Detect Related Mergers
+
+on:
+  schedule:
+    # Daily at 2:30 AM UTC — slightly after detect-duplicates so that run's
+    # processed data is settled. Adjust freely.
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Run related-merger detection
+        id: detect
+        run: |
+          python3 scripts/detect_related_mergers.py \
+            --branch "${{ github.event.repository.default_branch }}" \
+            --issue-json issue_payload.json || true
+          COUNT=$(jq -r '.count' issue_payload.json)
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          {
+            echo "### Related mergers detection"
+            echo ""
+            if [ "$COUNT" -gt 0 ]; then
+              echo "Found **$COUNT** candidate pair(s)."
+              jq -r '.candidates[] | "- \(.pair_id) — confidence \(.score)"' issue_payload.json
+            else
+              echo "No candidate pairs found."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Ensure label exists
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create "related-mergers" \
+            --description "Suggested additions to data/processed/related_mergers.json" \
+            --color "1f6feb" \
+            --force
+
+      # List every issue the bot has ever opened for this purpose (open or
+      # closed). A closed issue is treated as a permanent decision — the bot
+      # will NOT re-raise the same pair on a later run.
+      - name: Gather existing related-mergers issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue list \
+            --label related-mergers \
+            --state all \
+            --limit 500 \
+            --json number,state,title > existing_issues.json
+
+          # Extract "WA-XXXX/MN-XXXX" from each title.  Titles created by this
+          # workflow always contain that substring; anything else is skipped.
+          jq -r '
+            .[]
+            | select(.title | test("WA-[0-9]+/MN-[0-9]+"))
+            | [
+                (.title | capture("(?<w>WA-[0-9]+)/(?<m>MN-[0-9]+)") | .w + "/" + .m),
+                (.number | tostring),
+                .state
+              ]
+            | @tsv
+          ' existing_issues.json > existing_pairs.tsv
+
+          echo "Existing related-mergers issues (pair, number, state):"
+          cat existing_pairs.tsv || true
+
+      # For each candidate pair, create an issue if (and only if) no issue
+      # for that pair already exists in any state.
+      - name: Create issues for new candidate pairs
+        if: steps.detect.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          COUNT=$(jq -r '.count' issue_payload.json)
+          CREATED=0
+          SKIPPED=0
+          for i in $(seq 0 $((COUNT - 1))); do
+            PAIR=$(jq -r ".candidates[$i].pair_id" issue_payload.json)
+            if awk -F '\t' -v p="$PAIR" '$1 == p { found=1 } END { exit !found }' existing_pairs.tsv; then
+              STATE=$(awk -F '\t' -v p="$PAIR" '$1 == p { print $3; exit }' existing_pairs.tsv)
+              echo "Skipping $PAIR — existing issue ($STATE)."
+              SKIPPED=$((SKIPPED + 1))
+              continue
+            fi
+            TITLE=$(jq -r ".candidates[$i].title" issue_payload.json)
+            BODY=$(jq -r ".candidates[$i].body" issue_payload.json)
+            URL=$(gh issue create \
+              --title "$TITLE" \
+              --body "$BODY" \
+              --label "related-mergers")
+            echo "Created issue for $PAIR: $URL"
+            CREATED=$((CREATED + 1))
+          done
+          {
+            echo ""
+            echo "**Issues created:** $CREATED"
+            echo "**Already-seen pairs skipped:** $SKIPPED"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # Close open issues whose pair is no longer flagged by the detector.
+      # This handles the case where the user added the pair to
+      # related_mergers.json (detector now filters it out) or the underlying
+      # data changed.  Issues the user has already closed are left alone.
+      - name: Close open issues for pairs no longer flagged
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          jq -r '.candidates[].pair_id' issue_payload.json > current_pairs.txt
+          jq -r '.recorded_pairs[]' issue_payload.json > recorded_pairs.txt
+
+          awk -F '\t' '$3 == "OPEN" { print $1 "\t" $2 }' existing_pairs.tsv | \
+          while IFS=$'\t' read -r pair num; do
+            [ -z "$pair" ] && continue
+            if grep -qxF "$pair" current_pairs.txt; then
+              continue   # still flagged — leave the issue open
+            fi
+            if grep -qxF "$pair" recorded_pairs.txt; then
+              MSG="Looks like \`$pair\` is now recorded in \`data/processed/related_mergers.json\` — thanks! Closing automatically."
+            else
+              MSG="The detector no longer flags \`$pair\` (the underlying data may have changed, or the pair was added to \`related_mergers.json\` and then removed). Closing automatically — re-open this issue if you want to act on it."
+            fi
+            echo "Closing #$num for $pair"
+            gh issue close "$num" --comment "$MSG" || true
+          done
