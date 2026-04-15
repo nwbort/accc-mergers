@@ -14,7 +14,7 @@ from parse_determination import parse_determination_pdf
 from parse_questionnaire import process_all_questionnaires
 from normalization import normalize_determination
 from cutoff import should_skip_merger, get_skipped_merger_ids, is_waiver_merger
-from date_utils import parse_text_to_iso
+from date_utils import parse_text_to_iso, parse_iso_datetime
 
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./data/raw/matters"
@@ -482,6 +482,22 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
     return merged_events
 
 
+def _dates_within_one_day(date1, date2):
+    """Return True if two ISO date strings are on the same date or one day apart.
+
+    The ACCC website sometimes shows a determination publication date that is
+    one day later than the date recorded in the events table (e.g. the page
+    field says 10 April but the timeline row says 9 April).  Allowing a ±1 day
+    tolerance prevents a duplicate synthetic event from being created when the
+    PDF event already exists under a slightly different date.
+    """
+    dt1 = parse_iso_datetime(date1)
+    dt2 = parse_iso_datetime(date2)
+    if dt1 is None or dt2 is None:
+        return date1 == date2
+    return abs((dt1.date() - dt2.date()).days) <= 1
+
+
 def _add_synthetic_events(merger_data):
     """Add notification and determination synthetic events if not already present."""
     events = merger_data['events']
@@ -512,10 +528,12 @@ def _add_synthetic_events(merger_data):
     ]
     events = merger_data['events']
 
-    # Look for an existing determination document event on the same date
+    # Look for an existing determination document event on the same date (or
+    # ±1 day to handle cases where the ACCC publication date field and the
+    # events table date differ by one day, e.g. MN-01090).
     existing_det_event = next(
         (e for e in events
-         if e.get('date') == det_date
+         if _dates_within_one_day(e.get('date'), det_date)
          and 'determination' in e.get('title', '').lower()
          and e.get('url')),
         None
