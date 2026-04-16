@@ -17,6 +17,14 @@ export async function onRequest(context) {
     return env.ASSETS.fetch(new Request(assetUrl.toString()));
   }
 
+  // Mobile browsers (Android, iPhone, iPod) don't support inline PDF rendering
+  // via <object> tags — serve the raw PDF directly instead of the viewer wrapper
+  const ua = request.headers.get('User-Agent') || '';
+  if (/Android|iPhone|iPod/i.test(ua)) {
+    const assetUrl = new URL(path, url.origin);
+    return env.ASSETS.fetch(new Request(assetUrl.toString()));
+  }
+
   // Extract matter ID from the path: /mergers/{MN,WA}-XXXXX/filename.pdf
   const match = path.match(/^\/mergers\/((MN|WA)-\d+)\//i);
   if (!match) {
