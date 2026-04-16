@@ -2634,7 +2634,7 @@
     "original_notification_datetime": "2026-04-08T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-05-21T12:00:00Z",
-    "page_modified_datetime": "2026-04-09T15:26:25+10:00",
+    "page_modified_datetime": "2026-04-16T11:14:22+10:00",
     "consultation_response_due_date": "2026-04-16T12:00:00Z",
     "acquirers": [
       {
@@ -2672,7 +2672,7 @@
         "name": "Scientific Research Services"
       }
     ],
-    "merger_description": "Eli Lilly and Company (**Eli Lilly**) proposes to acquire 100% of the issued shares in Orna Therapeutics Holdings, LLC (**Orna Therapeutics**) (the **Acquisition**).\n\nEli Lilly is a US-based pharmaceutical company, which discovers, develops, manufactures and markets human pharmaceutical products for various therapeutic areas, including diabetes, oncology, immunology and neuroscience. Eli Lilly is headquartered in Indianapolis, US and is publicly listed on the New York Stock Exchange. Eli Lilly has an Australian subsidiary that registers and markets medicine in Australia.\n\nOrna Therapeutics is a US-based pre-clinical biotechnology company developing a new class of engineered circular RNA (**oRNA**) therapeutics and immune tropic lipid nanoparticles (**LNP**) delivery technologies for the treatment of autoimmune disorders, and cancer conditions. Orna Therapeutics has a pipeline consisting of two pre-clinical in vivo\u00a0Chimeric Antigen Receptor T-cell (**CAR-T**) therapies, designed to treat B cell-driven autoimmune diseases.",
+    "merger_description": "Eli Lilly and Company (**Eli Lilly**) proposes to acquire 100% of the issued shares in Orna Therapeutics Holdings, LLC (**Orna Therapeutics**) (the **Acquisition**).\n\nEli Lilly is a US-based pharmaceutical company, which discovers, develops, manufactures and markets human pharmaceutical products for various therapeutic areas, including diabetes, oncology, immunology and neuroscience. Eli Lilly is headquartered in Indianapolis, US and is publicly listed on the New York Stock Exchange. Eli Lilly has an Australian subsidiary that registers and markets medicine in Australia.\n\nOrna Therapeutics is a US-based pre-clinical biotechnology company developing a new class of engineered circular RNA (oRNA) therapeutics and immune tropic lipid nanoparticles (LNP) delivery technologies for the treatment of autoimmune disorders, and cancer conditions. Orna Therapeutics has a pipeline consisting of two pre-clinical in vivo\u00a0Chimeric Antigen Receptor T-cell (CAR-T) therapies, designed to treat B cell-driven autoimmune diseases.",
     "events": [
       {
         "date": "2026-04-09T12:00:00Z",
@@ -2680,7 +2680,7 @@
         "display_title": "Eli Lilly / Orna Therapeutics - questionnaire",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Orna%20Therapeutics%20-%20questionnaire%20-%209%20April%202026_0.docx",
         "url_gh": "/mergers/MN-20013/Orna Therapeutics - questionnaire - 9 April 2026_0.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-04-08T12:00:00Z",
@@ -5392,6 +5392,92 @@
         "status": "live",
         "is_determination_event": true,
         "phase": "Phase 1"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ventura-motors-%E2%80%93-crown-coaches",
+    "merger_name": "Ventura Motors \u2013 Crown Coaches",
+    "status": "Under assessment",
+    "merger_id": "MN-70013",
+    "effective_notification_datetime": "2026-04-15T12:00:00Z",
+    "original_notification_datetime": "2026-04-15T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-05-28T12:00:00Z",
+    "page_modified_datetime": "2026-04-16T16:46:03+10:00",
+    "consultation_response_due_date": "2026-04-23T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "VENTURA NEWCO PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "43 694 822 047"
+      }
+    ],
+    "targets": [
+      {
+        "name": "CROWN COACHES PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "48 004 882 213"
+      },
+      {
+        "name": "CROWN HYBRID PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "47 004 550 529"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Ventura Property Management Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "28 100 908 049"
+      },
+      {
+        "name": "Keppel Infrastructure Fund Management Pte. Ltd.",
+        "identifier_type": null,
+        "identifier": "UEN  200803959H"
+      },
+      {
+        "name": "Zumba Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "154 324 839"
+      },
+      {
+        "name": "Ventura Bus Lines Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "005 798 121"
+      },
+      {
+        "name": "IVANHOE BUS COMPANY PROPRIETARY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "57 004 367 962"
+      },
+      {
+        "name": "VENTURA MOTORS PROPRIETARY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "67 004 235 518"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "4622",
+        "name": "Urban Bus Transport (Including Tramway)"
+      }
+    ],
+    "merger_description": "Ventura Motors NewCo Pty Ltd, a wholly owned subsidiary of Ventura Motors Pty Ltd (together with its subsidiaries, **Ventura Motors**) proposes to acquire the business assets (including the vehicles, plant and equipment, IP and IP licences, goodwill, and business records) of Crown Coaches Pty Ltd and Crown Hybrid Pty Ltd that constitute the Crown Coaches business (**Crown Coaches**) (the **Acquisition**).\n\nVentura Motors is an Australian bus operator primarily active in metropolitan Melbourne. It supplies metropolitan bus services, public school bus services, and private school and other private charter bus services, as well as regional intercity coach transport.\n\nCrown Coaches is a family-owned bus operator that supplies public school bus services, and private school and other private charter bus services in metropolitan Melbourne.\n\nBoth Ventura Motors and Crown Coaches supply bus services in metropolitan Melbourne.",
+    "events": [
+      {
+        "date": "2026-04-16T12:00:00Z",
+        "title": "Questionnaire \u2013 Ventura Motors \u2013 Crown Coaches",
+        "display_title": "Questionnaire \u2013 Ventura Motors \u2013 Crown Coaches",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ventura%20Motors%20-%20Crown%20Coaches%20-%20Questionnaire.docx",
+        "url_gh": "/mergers/MN-70013/Ventura Motors - Crown Coaches - Questionnaire.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-04-15T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
       }
     ],
     "is_waiver": false
