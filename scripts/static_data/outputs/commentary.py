@@ -12,13 +12,10 @@ def generate(mergers: list, commentary: dict) -> dict:
 
             # Find determination event URL
             determination_url = None
-            det_date = m.get('determination_publication_date')
-            if det_date:
-                for event in m.get('events', []):
-                    if (event.get('date') == det_date and
-                            'determination' in event.get('title', '').lower()):
-                        determination_url = event.get('url_gh') or event.get('url')
-                        break
+            for event in m.get('events', []):
+                if event.get('is_determination_event'):
+                    determination_url = event.get('url_gh') or event.get('url')
+                    break
 
             items.append({
                 "merger_id": merger_id,

@@ -107,11 +107,8 @@ function MergerDetail() {
     ? [...merger.events].sort((a, b) => new Date(b.date) - new Date(a.date))
     : [];
 
-  const determinationEvent = merger.determination_publication_date && merger.events
-    ? merger.events.find(event =>
-        event.date?.split('T')[0] === merger.determination_publication_date?.split('T')[0] &&
-        event.title?.toLowerCase().includes('determination')
-      )
+  const determinationEvent = merger.events
+    ? merger.events.find(event => event.is_determination_event)
     : null;
 
   const structuredData = {
