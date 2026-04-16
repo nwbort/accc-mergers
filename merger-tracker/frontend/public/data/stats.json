@@ -2,11 +2,11 @@
   "total_mergers": 75,
   "total_waivers": 102,
   "by_status": {
-    "Assessment completed": 50,
-    "Under assessment": 25
+    "Assessment completed": 51,
+    "Under assessment": 24
   },
   "by_determination": {
-    "Approved": 50,
+    "Approved": 51,
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 9
   },
   "phase_duration": {
-    "average_days": 27.72,
+    "average_days": 27.647058823529413,
     "median_days": 25,
-    "average_business_days": 18.0,
+    "average_business_days": 17.96078431372549,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 16,
-        "percentage": 32.0
+        "percentage": 31.4
       },
       "day20": {
-        "count": 41,
-        "percentage": 82.0
+        "count": 42,
+        "percentage": 82.4
       },
       "day30": {
-        "count": 49,
+        "count": 50,
         "percentage": 98.0
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-40008",
+      "merger_name": "Intrepid Travel - Wild Bush Luxury",
+      "determination": "Approved",
+      "determination_date": "2026-04-16T12:00:00Z",
+      "page_modified_datetime": "2026-04-16T16:08:25+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-85016",
       "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
       "determination": "Not approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-40009",
-      "merger_name": "Gilead - Arcellx",
-      "determination": "Approved",
-      "determination_date": "2026-04-13T12:00:00Z",
-      "page_modified_datetime": "2026-04-13T17:07:35+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
