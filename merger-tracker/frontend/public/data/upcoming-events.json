@@ -3,32 +3,12 @@
     {
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
-      "date": "2026-04-16T12:00:00Z",
-      "merger_id": "MN-20013",
-      "merger_name": "Eli Lilly / Orna Therapeutics",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-04-08T12:00:00Z"
-    },
-    {
-      "type": "consultation_due",
-      "event_type_display": "Consultation responses due",
       "date": "2026-04-17T12:00:00Z",
       "merger_id": "MN-40015",
       "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-04-10T12:00:00Z"
-    },
-    {
-      "type": "determination_due",
-      "event_type_display": "Determination due",
-      "date": "2026-04-17T12:00:00Z",
-      "merger_id": "MN-65005",
-      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-03-03T12:00:00Z"
     },
     {
       "type": "consultation_due",
@@ -99,6 +79,16 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-04-15T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-05-04T12:00:00Z",
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "status": "Under assessment",
+      "stage": "Phase 2 - detailed assessment",
+      "effective_notification_datetime": "2026-03-03T12:00:00Z"
     },
     {
       "type": "determination_due",
@@ -249,6 +239,16 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-04-10T12:00:00Z"
+    },
+    {
+      "type": "notice_of_competition_concerns",
+      "event_type_display": "Notice of competition concerns",
+      "date": "2026-05-25T12:00:00Z",
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "status": "Under assessment",
+      "stage": "Phase 2 - detailed assessment",
+      "effective_notification_datetime": "2026-03-03T12:00:00Z"
     },
     {
       "type": "determination_due",

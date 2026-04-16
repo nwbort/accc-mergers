@@ -5614,10 +5614,10 @@
       "merger_id": "MN-65005",
       "effective_notification_datetime": "2026-03-03T12:00:00Z",
       "original_notification_datetime": "2026-03-03T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "end_of_determination_period": "2026-04-17T12:00:00Z",
-      "page_modified_datetime": "2026-03-12T18:08:37+11:00",
-      "consultation_response_due_date": "2026-03-12T12:00:00Z",
+      "stage": "Phase 2 - detailed assessment",
+      "end_of_determination_period": "2026-08-26T12:00:00Z",
+      "page_modified_datetime": "2026-04-17T09:21:28+10:00",
+      "consultation_response_due_date": "2026-05-04T12:00:00Z",
       "acquirers": [
         {
           "name": "INSURANCE AUSTRALIA GROUP LIMITED",
@@ -5627,26 +5627,26 @@
       ],
       "targets": [
         {
-          "name": "RACI PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "40 008 671 805"
-        },
-        {
           "name": "RAC INSURANCE PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "59 094 685 882"
+        },
+        {
+          "name": "RACI PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "40 008 671 805"
         }
       ],
       "other_parties": [
         {
-          "name": "THE ROYAL AUTOMOBILE CLUB OF WA INC",
-          "identifier_type": "ABN",
-          "identifier": "33 212 133 120"
-        },
-        {
           "name": "RACWA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "60 008 985 877"
+        },
+        {
+          "name": "THE ROYAL AUTOMOBILE CLUB OF WA INC",
+          "identifier_type": "ABN",
+          "identifier": "33 212 133 120"
         }
       ],
       "anzsic_codes": [
@@ -5671,6 +5671,15 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-04-16T12:00:00Z",
+          "title": "Decision to Proceed to a Phase 2 review",
+          "display_title": "Decision to Proceed to a Phase 2 review",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Decision%20to%20Proceed%20to%20a%20Phase%202%20review.pdf",
+          "url_gh": "/mergers/MN-65005/Decision to Proceed to a Phase 2 review.pdf",
+          "status": "live",
+          "phase": "Phase 2"
         }
       ],
       "is_waiver": false,
@@ -5681,6 +5690,7 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "competition_concerns_notice_date": "2026-05-25T12:00:00Z",
       "has_questionnaire": true
     },
     {

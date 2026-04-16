@@ -226,8 +226,8 @@
       "is_waiver": false,
       "effective_notification_datetime": "2026-03-03T12:00:00Z",
       "determination_publication_date": null,
-      "end_of_determination_period": "2026-04-17T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-08-26T12:00:00Z",
+      "stage": "Phase 2 - detailed assessment",
       "acquirers": [
         {
           "name": "INSURANCE AUSTRALIA GROUP LIMITED",
@@ -237,26 +237,26 @@
       ],
       "targets": [
         {
-          "name": "RACI PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "40 008 671 805"
-        },
-        {
           "name": "RAC INSURANCE PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "59 094 685 882"
+        },
+        {
+          "name": "RACI PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "40 008 671 805"
         }
       ],
       "other_parties": [
         {
-          "name": "THE ROYAL AUTOMOBILE CLUB OF WA INC",
-          "identifier_type": "ABN",
-          "identifier": "33 212 133 120"
-        },
-        {
           "name": "RACWA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "60 008 985 877"
+        },
+        {
+          "name": "THE ROYAL AUTOMOBILE CLUB OF WA INC",
+          "identifier_type": "ABN",
+          "identifier": "33 212 133 120"
         }
       ],
       "anzsic_codes": [
