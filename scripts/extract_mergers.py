@@ -541,6 +541,7 @@ def _add_synthetic_events(merger_data):
 
     if existing_det_event:
         existing_det_event['display_title'] = determination_title
+        existing_det_event['is_determination_event'] = True
         if 'phase' not in existing_det_event:
             if 'waiver' in phase.lower():
                 existing_det_event['phase'] = 'Waiver'
@@ -552,6 +553,7 @@ def _add_synthetic_events(merger_data):
                 'date': det_date,
                 'title': determination_title,
                 'display_title': determination_title,
+                'is_determination_event': True,
             })
 
 
