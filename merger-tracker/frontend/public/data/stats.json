@@ -1,35 +1,35 @@
 {
   "total_mergers": 76,
-  "total_waivers": 102,
+  "total_waivers": 105,
   "by_status": {
-    "Assessment completed": 51,
-    "Under assessment": 25
+    "Assessment completed": 52,
+    "Under assessment": 24
   },
   "by_determination": {
-    "Approved": 51,
+    "Approved": 52,
     "Referred to phase 2": 3
   },
   "by_waiver_determination": {
-    "Approved": 93,
-    "Not approved": 9
+    "Approved": 95,
+    "Not approved": 10
   },
   "phase_duration": {
-    "average_days": 27.647058823529413,
+    "average_days": 27.673076923076923,
     "median_days": 25,
-    "average_business_days": 17.96078431372549,
+    "average_business_days": 17.98076923076923,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 16,
-        "percentage": 31.4
+        "percentage": 30.8
       },
       "day20": {
-        "count": 42,
-        "percentage": 82.4
+        "count": 43,
+        "percentage": 82.7
       },
       "day30": {
-        "count": 50,
-        "percentage": 98.0
+        "count": 51,
+        "percentage": 98.1
       }
     }
   },
@@ -44,7 +44,7 @@
     },
     {
       "name": "Financial Asset Investing",
-      "count": 16
+      "count": 17
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -119,6 +119,46 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25010",
+      "merger_name": "INNIO Group \u2013 Enerflex",
+      "determination": "Not approved",
+      "determination_date": "2026-04-16T12:00:00Z",
+      "page_modified_datetime": "2026-04-16T17:23:04+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-45011",
+      "merger_name": "Signant - ActiGraph",
+      "determination": "Approved",
+      "determination_date": "2026-04-16T12:00:00Z",
+      "page_modified_datetime": "2026-04-16T17:19:44+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-85022",
+      "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
+      "determination": "Approved",
+      "determination_date": "2026-04-16T12:00:00Z",
+      "page_modified_datetime": "2026-04-16T17:17:34+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "MN-65009",
+      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+      "determination": "Approved",
+      "determination_date": "2026-04-16T12:00:00Z",
+      "page_modified_datetime": "2026-04-16T17:13:43+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-40008",
       "merger_name": "Intrepid Travel - Wild Bush Luxury",
       "determination": "Approved",
@@ -134,46 +174,6 @@
       "determination": "Not approved",
       "determination_date": "2026-04-14T12:00:00Z",
       "page_modified_datetime": "2026-04-14T17:04:50+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-65011",
-      "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
-      "determination": "Not approved",
-      "determination_date": "2026-04-14T12:00:00Z",
-      "page_modified_datetime": "2026-04-14T16:52:12+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-50012",
-      "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
-      "determination": "Approved",
-      "determination_date": "2026-04-13T12:00:00Z",
-      "page_modified_datetime": "2026-04-13T17:51:27+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-85021",
-      "merger_name": "Yancoal - Kestrel Coal Group",
-      "determination": "Approved",
-      "determination_date": "2026-04-13T12:00:00Z",
-      "page_modified_datetime": "2026-04-13T17:49:56+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-95010",
-      "merger_name": "Lighthouse - Precise Services Group",
-      "determination": "Approved",
-      "determination_date": "2026-04-13T12:00:00Z",
-      "page_modified_datetime": "2026-04-13T17:31:23+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

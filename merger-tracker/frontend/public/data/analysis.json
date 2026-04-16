@@ -461,6 +461,15 @@
         "in_progress": false
       },
       {
+        "notification_date": "2026-03-18",
+        "business_days": 19,
+        "calendar_days": 29,
+        "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+        "merger_id": "MN-65009",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
         "notification_date": "2026-03-19",
         "business_days": 15,
         "calendar_days": 25,
@@ -490,10 +499,10 @@
     ],
     "stats": {
       "average": 18.0,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 36,
-      "count": 51
+      "count": 52
     }
   },
   "waiver_duration": {
@@ -1156,6 +1165,14 @@
       },
       {
         "application_date": "2026-03-13",
+        "business_days": 22,
+        "calendar_days": 34,
+        "merger_name": "INNIO Group \u2013 Enerflex",
+        "merger_id": "WA-25010",
+        "determination": "Not approved"
+      },
+      {
+        "application_date": "2026-03-13",
         "business_days": 13,
         "calendar_days": 19,
         "merger_name": "Blackbird Ventures \u2013 Halter",
@@ -1313,14 +1330,30 @@
         "merger_name": "Yancoal - Kestrel Coal Group",
         "merger_id": "WA-85021",
         "determination": "Approved"
+      },
+      {
+        "application_date": "2026-04-08",
+        "business_days": 6,
+        "calendar_days": 8,
+        "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
+        "merger_id": "WA-85022",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-04-10",
+        "business_days": 4,
+        "calendar_days": 6,
+        "merger_name": "Signant - ActiGraph",
+        "merger_id": "WA-45011",
+        "determination": "Approved"
       }
     ],
     "stats": {
       "average": 11.7,
-      "median": 11.0,
+      "median": 11,
       "min": 2,
       "max": 22,
-      "count": 102
+      "count": 105
     }
   },
   "monthly_volume": {
@@ -1351,8 +1384,8 @@
       0,
       30,
       30,
-      41,
-      1
+      42,
+      3
     ]
   }
 }

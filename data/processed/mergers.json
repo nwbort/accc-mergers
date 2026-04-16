@@ -5217,13 +5217,15 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-marathon-asset-management",
     "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-65009",
     "effective_notification_datetime": "2026-03-18T12:00:00Z",
     "original_notification_datetime": "2026-03-18T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-05-04T12:00:00Z",
-    "page_modified_datetime": "2026-03-26T16:13:17+11:00",
+    "determination_publication_date": "2026-04-16T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-04-16T17:13:43+10:00",
     "consultation_response_due_date": "2026-03-26T12:00:00Z",
     "acquirers": [
       {
@@ -5283,6 +5285,16 @@
         "date": "2026-03-18T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-04-16T12:00:00Z",
+        "title": "CVC Capital Partners - Marathon Asset Management - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CVC%20Capital%20Partners%20-%20Marathon%20Asset%20Management%20-%20Phase%201%20determination.pdf",
+        "url_gh": "/mergers/MN-65009/CVC Capital Partners - Marathon Asset Management - Phase 1 determination.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false
@@ -10022,6 +10034,82 @@
     "is_waiver": true
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/innio-group-%E2%80%93-enerflex",
+    "merger_name": "INNIO Group \u2013 Enerflex",
+    "status": "Assessment completed",
+    "merger_id": "WA-25010",
+    "effective_notification_datetime": "2026-03-13T12:00:00Z",
+    "original_notification_datetime": "2026-03-13T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-04-16T12:00:00Z",
+    "accc_determination": "Not approved",
+    "page_modified_datetime": "2026-04-16T17:23:04+10:00",
+    "acquirers": [
+      {
+        "name": "INNIO Jenbacher International B.V.",
+        "identifier_type": null,
+        "identifier": "KVK90210352"
+      },
+      {
+        "name": "INNIO Jenbacher Netherlands B.V.",
+        "identifier_type": null,
+        "identifier": "KVK90209982"
+      },
+      {
+        "name": "INNIO Holding GmbH",
+        "identifier_type": null,
+        "identifier": "HRB305810"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Exterran (Thailand) Ltd",
+        "identifier_type": null,
+        "identifier": "0105542031616"
+      },
+      {
+        "name": "PT Enerflex (Indonesia)",
+        "identifier_type": null,
+        "identifier": "9120407262914"
+      },
+      {
+        "name": "ENERFLEX SERVICE PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "85 063 267 238"
+      }
+    ],
+    "other_parties": [],
+    "anzsic_codes": [
+      {
+        "code": "2499",
+        "name": "Other Machinery and Equipment Manufacturing n.e.c."
+      },
+      {
+        "code": "3299",
+        "name": "Other Construction Services n.e.c."
+      }
+    ],
+    "merger_description": "The INNIO Group operates in the industrial equipment and energy infrastructure sector, primarily as a global manufacturer of gas power units under the Jenbacher and Waukesha brands. Its products are supplied to industries such as power generation, oil and gas (particularly for gas compression), utilities and large-scale industrial users. INNIO\u2019s power units are used for distributed power generation, combined heat and power applications, and gas compression, serving a broad range of commercial, industrial and utility customers.\n\nEnerflex Australia operates in the energy infrastructure services sector with a strong focus on supporting the gas industry as well as industrial energy users. The company provides aftermarket services such as maintenance, repair, spare parts, field services, retrofits, and operations and maintenance for a wide variety of gas compression and engine-power equipment.\n\nTwo wholly owned subsidiaries of INNIO Holding (INNIO Jenbacher International and INNIO Jenbacher Netherlands) propose to acquire from Enerflex Ltd (together with all its subsidiaries, **Enerflex Group**) the issued share capital in certain Enerflex Group operating companies in Australia, Indonesia and Thailand (**Target Companies**), which will transfer Enerflex Group\u2019s aftermarket service businesses in those countries to the INNIO Group (**APAC Transaction**).\n\nThe Australian element of the APAC Transaction (the\u00a0**Acquisition**) comprises the acquisition by INNIO Jenbacher International of all of the issued share capital in Enerflex Service Pty Limited (**Enerflex Australia**) from Enerflex Australasia Holdings Pty Ltd., an indirect, wholly-owned subsidiary of Enerflex Ltd. On completion of the Acquisition, Enerflex Australia will become an indirect, wholly owned subsidiary of INNIO Holding and part of the INNIO Group\u2019s global Jenbacher/Waukesha gas compression power units and services business.",
+    "events": [
+      {
+        "date": "2026-04-16T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Not approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/INNIO%20Group%20-%20Enerflex%20%28WA-25010%29%20-%20Notification%20waiver%20determination%20-%2016%20April%202026.pdf",
+        "url_gh": "/mergers/WA-25010/INNIO Group - Enerflex (WA-25010) - Notification waiver determination - 16 April 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-03-13T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bgis-ascot-air",
     "merger_name": "BGIS - Ascot Air",
     "status": "Assessment completed",
@@ -11866,6 +11954,83 @@
       },
       {
         "date": "2026-03-23T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/signant-actigraph",
+    "merger_name": "Signant - ActiGraph",
+    "status": "Assessment completed",
+    "merger_id": "WA-45011",
+    "effective_notification_datetime": "2026-04-10T12:00:00Z",
+    "original_notification_datetime": "2026-04-10T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-04-16T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-04-16T17:19:44+10:00",
+    "acquirers": [
+      {
+        "name": "Signant Health Holding Corp.",
+        "identifier_type": null,
+        "identifier": "Delaware File Number  5354678"
+      }
+    ],
+    "targets": [
+      {
+        "name": "ActiGraph Holdings, LLC",
+        "identifier_type": null,
+        "identifier": "Delaware File Number  7952013"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "ActiGraph India Private Limited",
+        "identifier_type": null,
+        "identifier": "India CIN  U72900KA2023FTC169807"
+      },
+      {
+        "name": "Genstar BI Gen Holdings Cayman, L.P.",
+        "identifier_type": null,
+        "identifier": "Cayman Islands Reference Number  1754174"
+      },
+      {
+        "name": "ActiGraph, LLC",
+        "identifier_type": null,
+        "identifier": "EIN  562443729"
+      },
+      {
+        "name": "Buccaneer Holdco Limited",
+        "identifier_type": null,
+        "identifier": "UK Company Number  11463144"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "6240",
+        "name": "Financial Asset Investing"
+      },
+      {
+        "code": "6925",
+        "name": "Scientific Testing and Analysis Services"
+      }
+    ],
+    "merger_description": "Signant Health Holding Corp (**Signant**) proposes to acquire 100% of the shares in ActiGraph Holdings, LLC (together with its subsidiaries, **ActiGraph**).\n\nSignant is a US-based evidence generation company that provides services used in clinical trials. Signant does not have a physical presence in Australia but provides electronic clinical outcome assessments (**eCOA**), clinical trial randomisation and supply management (**RTSM**) services, and supplementary clinical trial professional services. Signant supplies these services to both contract research organisations (**CROs**) and directly to pharmaceutical and biotechnology companies.\n\nAmetris (formerly ActiGraph) is a US-based provider of digital health technology (**DHT**) for clinical trials, specialising in wearables \u2013 in particular, wrist-worn wearables and other sensors \u2013 which track biovitals and other digital endpoints for patients participating in clinical trials. Ametris does not have a physical presence in Australia but supplies its DHT products in Australia for non-commercial academic research.",
+    "events": [
+      {
+        "date": "2026-04-16T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Signant%20-%20ActiGraph%20%28WA-45011%29%20-%20Notification%20waiver%20determination%20-%2016%20April%202026.pdf",
+        "url_gh": "/mergers/WA-45011/Signant - ActiGraph (WA-45011) - Notification waiver determination - 16 April 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-04-10T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }
@@ -16220,6 +16385,72 @@
       },
       {
         "date": "2026-04-02T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ph-medical-centres-riverstone-family-medical-practice",
+    "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
+    "status": "Assessment completed",
+    "merger_id": "WA-85022",
+    "effective_notification_datetime": "2026-04-08T12:00:00Z",
+    "original_notification_datetime": "2026-04-08T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-04-16T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-04-16T17:17:34+10:00",
+    "acquirers": [
+      {
+        "name": "PH MEDICAL CENTRES PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "84 615 268 043"
+      }
+    ],
+    "targets": [
+      {
+        "name": "RIVERSTONE GP PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "34 651 255 319"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "PARTNERED HEALTH PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "41 164 892 924"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "8511",
+        "name": "General Practice Medical Services"
+      },
+      {
+        "code": "8533",
+        "name": "Physiotherapy Services"
+      },
+      {
+        "code": "8539",
+        "name": "Other Allied Health Services"
+      }
+    ],
+    "merger_description": "PH Medical Centres Pty Ltd (**PHMC**) proposes to acquire the business and assets of the Riverstone Family Medical Practice (**RFMP**) from Riverstone GP Pty Ltd (the **Acquisition**).\n\nPHMC is part of the Partnered Health Group and an indirectly wholly owned subsidiary of Partnered Health Pty Ltd (**PHPL**).\n\nPHMC together with other PHPL subsidiaries (the **PH Primary Care Group**) provide primary care services with more than 60 general practice clinics and medical centres across Australia, engaging more than 600 general practitioners. The PH Primary Care Group also operates skin cancer clinics, allied health providers (physiotherapy and dietetics) and TeleWell, a telehealth platform which provides 24/7 continuous access to general practitioners.\n\nThe Partnered Health Group also operates a healthcare platform which provides corporate and occupational healthcare solutions alongside its primary care network.\n\nPHPL is part of a larger group of companies which are ultimately controlled by Quadrant Private Equity (**QPE**) through Quadrant Private Equity No. 6 (**QPE Fund 6**).\n\nRFMP is a medical centre located at 71 Garfield Road East, Riverstone, NSW 2765, which provides primary care services through 12 general practitioners (plus four Registrars) and three allied health professionals.",
+    "events": [
+      {
+        "date": "2026-04-16T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/PH%20Medical%20Centres%20%E2%80%93%20Riverstone%20Family%20Medical%20Practice%20%28WA-85022%29%20-%20Notification%20waiver%20determination%20-%2016%20April%202026.pdf",
+        "url_gh": "/mergers/WA-85022/PH Medical Centres \u2013 Riverstone Family Medical Practice (WA-85022) - Notification waiver determination - 16 April 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-04-08T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }

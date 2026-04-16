@@ -1,13 +1,15 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvc-capital-partners-%E2%80%93-marathon-asset-management",
   "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-65009",
   "effective_notification_datetime": "2026-03-18T12:00:00Z",
   "original_notification_datetime": "2026-03-18T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-05-04T12:00:00Z",
-  "page_modified_datetime": "2026-03-26T16:13:17+11:00",
+  "determination_publication_date": "2026-04-16T12:00:00Z",
+  "accc_determination": "Approved",
+  "page_modified_datetime": "2026-04-16T17:13:43+10:00",
   "consultation_response_due_date": "2026-03-26T12:00:00Z",
   "acquirers": [
     {
@@ -69,12 +71,21 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-04-16T12:00:00Z",
+      "title": "CVC Capital Partners - Marathon Asset Management - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CVC%20Capital%20Partners%20-%20Marathon%20Asset%20Management%20-%20Phase%201%20determination.pdf",
+      "url_gh": "/mergers/MN-65009/CVC Capital Partners - Marathon Asset Management - Phase 1 determination.pdf",
+      "status": "live",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-04-16T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,

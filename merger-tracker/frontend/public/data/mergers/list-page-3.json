@@ -1832,6 +1832,63 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/national-dental-care-%E2%80%93-business-assets-comprising-the-comfy-dental-clinic-mandurah-wa"
     },
     {
+      "merger_id": "WA-25010",
+      "merger_name": "INNIO Group \u2013 Enerflex",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-03-13T12:00:00Z",
+      "determination_publication_date": "2026-04-16T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "INNIO Jenbacher International B.V.",
+          "identifier_type": null,
+          "identifier": "KVK90210352"
+        },
+        {
+          "name": "INNIO Jenbacher Netherlands B.V.",
+          "identifier_type": null,
+          "identifier": "KVK90209982"
+        },
+        {
+          "name": "INNIO Holding GmbH",
+          "identifier_type": null,
+          "identifier": "HRB305810"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Exterran (Thailand) Ltd",
+          "identifier_type": null,
+          "identifier": "0105542031616"
+        },
+        {
+          "name": "PT Enerflex (Indonesia)",
+          "identifier_type": null,
+          "identifier": "9120407262914"
+        },
+        {
+          "name": "ENERFLEX SERVICE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "85 063 267 238"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2499",
+          "name": "Other Machinery and Equipment Manufacturing n.e.c."
+        },
+        {
+          "code": "3299",
+          "name": "Other Construction Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/innio-group-%E2%80%93-enerflex"
+    },
+    {
       "merger_id": "WA-50010",
       "merger_name": "Blackbird Ventures \u2013 Halter",
       "status": "Assessment completed",
@@ -2340,11 +2397,11 @@
     {
       "merger_id": "MN-65009",
       "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-03-18T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-04-16T12:00:00Z",
       "end_of_determination_period": "2026-05-04T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -2747,63 +2804,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kps-capital-partners-jennmar"
-    },
-    {
-      "merger_id": "WA-85018",
-      "merger_name": "Discovery Holiday Parks \u2013 Habitat Noosa Everglades Eco Camp",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-03-20T12:00:00Z",
-      "determination_publication_date": "2026-04-10T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "50 111 782 846"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Eco Camp Pty Ltd as trustee for the MCB Trust",
-          "identifier_type": "ACN",
-          "identifier": "615 432 016"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Discovery Parks Holdings Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "61 127 847 269"
-        },
-        {
-          "name": "Discovery Parks Investments Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "84 127 847 303"
-        },
-        {
-          "name": "THE TRUSTEE FOR AUSTRALIAN RETIREMENT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "60 905 115 063"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "4400",
-          "name": "Accommodation"
-        },
-        {
-          "code": "4511",
-          "name": "Cafes and Restaurants"
-        },
-        {
-          "code": "7220",
-          "name": "Travel Agency and Tour Arrangement Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/discovery-holiday-parks-%E2%80%93-habitat-noosa-everglades-eco-camp"
     }
   ],
   "page": 3,

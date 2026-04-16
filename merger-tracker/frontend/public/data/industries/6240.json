@@ -2,6 +2,18 @@
   "code": "6240",
   "mergers": [
     {
+      "merger_id": "MN-65009",
+      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+      "is_waiver": false,
+      "status": "Assessment completed"
+    },
+    {
+      "merger_id": "WA-45011",
+      "merger_name": "Signant - ActiGraph",
+      "is_waiver": true,
+      "status": "Assessment completed"
+    },
+    {
       "merger_id": "WA-05005",
       "merger_name": "Ironbark - Investment in Viola Private Wealth",
       "is_waiver": true,
@@ -50,12 +62,6 @@
       "status": "Assessment completed"
     },
     {
-      "merger_id": "MN-65009",
-      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
-      "is_waiver": false,
-      "status": "Under assessment"
-    },
-    {
       "merger_id": "WA-55011",
       "merger_name": "OEP IX \u2013 Leviat",
       "is_waiver": true,
@@ -98,5 +104,5 @@
       "status": "Assessment completed"
     }
   ],
-  "count": 16
+  "count": 17
 }

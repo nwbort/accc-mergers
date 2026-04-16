@@ -2,6 +2,30 @@
   "events": [
     {
       "date": "2026-04-09T12:00:00Z",
+      "title": "Phase 1 - initial assessment determination: Approved",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-05004",
+      "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
+      "date": "2026-04-09T12:00:00Z",
+      "title": "Eli Lilly / Orna Therapeutics - questionnaire",
+      "display_title": "Eli Lilly / Orna Therapeutics - questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Orna%20Therapeutics%20-%20questionnaire%20-%209%20April%202026_0.docx",
+      "url_gh": "/mergers/MN-20013/Orna Therapeutics - questionnaire - 9 April 2026_0.pdf",
+      "status": "removed",
+      "merger_id": "MN-20013",
+      "merger_name": "Eli Lilly / Orna Therapeutics",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
+      "date": "2026-04-09T12:00:00Z",
       "title": "CVS Group - Pittwater Animal Hospital - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CVS%20Group%20-%20Pittwater%20Animal%20Hospital%20-%20Determination.pdf",
@@ -106,6 +130,18 @@
       "merger_id": "WA-45009",
       "merger_name": "Idemitsu - MidOcean Energy",
       "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-04-10T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "WA-45011",
+      "merger_name": "Signant - ActiGraph",
+      "phase": "Phase 1",
       "is_waiver": true
     },
     {
@@ -338,6 +374,18 @@
     },
     {
       "date": "2026-04-16T12:00:00Z",
+      "title": "CVC Capital Partners - Marathon Asset Management - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CVC%20Capital%20Partners%20-%20Marathon%20Asset%20Management%20-%20Phase%201%20determination.pdf",
+      "url_gh": "/mergers/MN-65009/CVC Capital Partners - Marathon Asset Management - Phase 1 determination.pdf",
+      "status": "live",
+      "merger_id": "MN-65009",
+      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
+      "date": "2026-04-16T12:00:00Z",
       "title": "Questionnaire \u2013 Ventura Motors \u2013 Crown Coaches",
       "display_title": "Questionnaire \u2013 Ventura Motors \u2013 Crown Coaches",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Ventura%20Motors%20-%20Crown%20Coaches%20-%20Questionnaire.docx",
@@ -347,6 +395,42 @@
       "merger_name": "Ventura Motors \u2013 Crown Coaches",
       "phase": null,
       "is_waiver": false
+    },
+    {
+      "date": "2026-04-16T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Not approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/INNIO%20Group%20-%20Enerflex%20%28WA-25010%29%20-%20Notification%20waiver%20determination%20-%2016%20April%202026.pdf",
+      "url_gh": "/mergers/WA-25010/INNIO Group - Enerflex (WA-25010) - Notification waiver determination - 16 April 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-25010",
+      "merger_name": "INNIO Group \u2013 Enerflex",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-04-16T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Signant%20-%20ActiGraph%20%28WA-45011%29%20-%20Notification%20waiver%20determination%20-%2016%20April%202026.pdf",
+      "url_gh": "/mergers/WA-45011/Signant - ActiGraph (WA-45011) - Notification waiver determination - 16 April 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-45011",
+      "merger_name": "Signant - ActiGraph",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-04-16T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/PH%20Medical%20Centres%20%E2%80%93%20Riverstone%20Family%20Medical%20Practice%20%28WA-85022%29%20-%20Notification%20waiver%20determination%20-%2016%20April%202026.pdf",
+      "url_gh": "/mergers/WA-85022/PH Medical Centres \u2013 Riverstone Family Medical Practice (WA-85022) - Notification waiver determination - 16 April 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-85022",
+      "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
+      "phase": "Waiver",
+      "is_waiver": true
     }
   ],
   "page": 5,
