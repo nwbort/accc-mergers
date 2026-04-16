@@ -108,10 +108,14 @@ function MergerDetail() {
     : [];
 
   const determinationEvent = merger.determination_publication_date && merger.events
-    ? merger.events.find(event =>
-        event.date?.split('T')[0] === merger.determination_publication_date?.split('T')[0] &&
-        event.title?.toLowerCase().includes('determination')
-      )
+    ? merger.events.find(event => {
+        if (!event.title?.toLowerCase().includes('determination')) return false;
+        const eventDate = event.date?.split('T')[0];
+        const pubDate = merger.determination_publication_date?.split('T')[0];
+        if (!eventDate || !pubDate) return eventDate === pubDate;
+        const diffDays = Math.abs((new Date(eventDate) - new Date(pubDate)) / 86400000);
+        return diffDays <= 1;
+      })
     : null;
 
   const structuredData = {
