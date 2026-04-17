@@ -62,8 +62,8 @@ jobs:
       run: |
         gh workflow run extract.yml
 
-    - name: Retry workflow on failure (scheduled runs only)
-      if: failure() && github.event_name == 'schedule'
+    - name: Retry workflow on failure
+      if: failure() && github.event_name != 'workflow_dispatch'
       env:
         GH_TOKEN: ${{ github.token }}
       run: |
