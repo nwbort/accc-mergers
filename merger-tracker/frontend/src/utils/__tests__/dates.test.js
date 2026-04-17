@@ -114,10 +114,7 @@ describe('calculateBusinessDays', () => {
     expect(calculateBusinessDays(undefined, undefined)).toBeNull();
   });
 
-  // BUG: parseISO() returns an Invalid Date object rather than throwing for
-  // unparseable input, so the catch block never fires and the function
-  // returns 0 (or NaN) instead of null. Tracking for a follow-up PR.
-  it.skip('returns null for unparseable strings', () => {
+  it('returns null for unparseable strings', () => {
     expect(calculateBusinessDays('not a date', '2025-06-13')).toBeNull();
   });
 });
@@ -154,9 +151,7 @@ describe('getBusinessDaysRemaining', () => {
     expect(getBusinessDaysRemaining('')).toBeNull();
   });
 
-  // BUG: parseISO() does not throw on unparseable input, so this falls through
-  // to calculateBusinessDays() and returns 0 instead of null. See follow-up.
-  it.skip('returns null for an unparseable date string', () => {
+  it('returns null for an unparseable date string', () => {
     expect(getBusinessDaysRemaining('garbage')).toBeNull();
   });
 });
@@ -199,9 +194,7 @@ describe('calculateDuration', () => {
     expect(calculateDuration('2025-06-10', null)).toBeNull();
   });
 
-  // BUG: parseISO() returns Invalid Date instead of throwing, so
-  // differenceInDays() returns NaN and the catch never fires.
-  it.skip('returns null for an unparseable input', () => {
+  it('returns null for an unparseable input', () => {
     expect(calculateDuration('nope', '2025-06-20')).toBeNull();
   });
 });
@@ -230,9 +223,7 @@ describe('getDaysRemaining', () => {
     expect(getDaysRemaining(null)).toBeNull();
   });
 
-  // BUG: parseISO() returns Invalid Date instead of throwing, so the
-  // function falls through to `days > 0 ? days : 0` and returns 0.
-  it.skip('returns null for an unparseable string', () => {
+  it('returns null for an unparseable string', () => {
     expect(getDaysRemaining('nonsense')).toBeNull();
   });
 });

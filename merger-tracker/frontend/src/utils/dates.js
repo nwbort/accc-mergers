@@ -1,4 +1,4 @@
-import { format, parseISO, differenceInDays, addDays, getDay } from 'date-fns';
+import { format, parseISO, differenceInDays, addDays, getDay, isValid } from 'date-fns';
 import actPublicHolidays from '../data/act-public-holidays.json';
 
 // Build a Set of public holiday dates for fast lookup
@@ -63,6 +63,8 @@ export const calculateBusinessDays = (startDate, endDate) => {
     const start = typeof startDate === 'string' ? parseISO(startDate) : startDate;
     const end = typeof endDate === 'string' ? parseISO(endDate) : endDate;
 
+    if (!isValid(start) || !isValid(end)) return null;
+
     let businessDays = 0;
     // Start from the day after start — application date is day 0
     let currentDate = addDays(new Date(start), 1);
@@ -89,6 +91,7 @@ export const getBusinessDaysRemaining = (endDate) => {
   if (!endDate) return null;
   try {
     const end = parseISO(endDate);
+    if (!isValid(end)) return null;
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
@@ -112,7 +115,10 @@ export const formatDate = (dateString) => {
 export const calculateDuration = (startDate, endDate) => {
   if (!startDate || !endDate) return null;
   try {
-    return differenceInDays(parseISO(endDate), parseISO(startDate));
+    const start = parseISO(startDate);
+    const end = parseISO(endDate);
+    if (!isValid(start) || !isValid(end)) return null;
+    return differenceInDays(end, start);
   } catch {
     return null;
   }
@@ -121,7 +127,9 @@ export const calculateDuration = (startDate, endDate) => {
 export const getDaysRemaining = (endDate) => {
   if (!endDate) return null;
   try {
-    const days = differenceInDays(parseISO(endDate), new Date());
+    const parsed = parseISO(endDate);
+    if (!isValid(parsed)) return null;
+    const days = differenceInDays(parsed, new Date());
     return days > 0 ? days : 0;
   } catch {
     return null;
