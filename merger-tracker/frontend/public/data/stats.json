@@ -1,9 +1,9 @@
 {
-  "total_mergers": 77,
+  "total_mergers": 78,
   "total_waivers": 105,
   "by_status": {
     "Assessment completed": 52,
-    "Under assessment": 25
+    "Under assessment": 26
   },
   "by_determination": {
     "Approved": 52,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-30009",
+      "merger_name": "Daikin - AAMS Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-16T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-70014",
       "merger_name": "Global Infrastructure Management \u2013 TCR",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-14T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-55013",
-      "merger_name": "Lawrence & Hanson - Gordon Macdonald",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-13T12:00:00Z",
       "is_waiver": false
     }
   ],

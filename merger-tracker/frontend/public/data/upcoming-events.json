@@ -84,6 +84,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-04-24T12:00:00Z",
+      "merger_id": "MN-30009",
+      "merger_name": "Daikin - AAMS Group",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-16T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-04-24T12:00:00Z",
       "merger_id": "MN-70014",
       "merger_name": "Global Infrastructure Management \u2013 TCR",
       "status": "Under assessment",
@@ -314,6 +324,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-05-29T12:00:00Z",
+      "merger_id": "MN-30009",
+      "merger_name": "Daikin - AAMS Group",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-16T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-05-29T12:00:00Z",
       "merger_id": "MN-70014",
       "merger_name": "Global Infrastructure Management \u2013 TCR",
       "status": "Under assessment",
@@ -351,6 +371,6 @@
       "effective_notification_datetime": "2025-11-27T12:00:00Z"
     }
   ],
-  "count": 35,
+  "count": 37,
   "days_ahead": 60
 }
