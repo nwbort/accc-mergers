@@ -9,6 +9,14 @@ This script creates a summary showing:
 - Ongoing phase 1 deals
 - Ongoing phase 2 deals
 
+To account for the discrepancy between when a decision is "made" and when it
+appears on the ACCC's acquisitions register (a decision dated Friday often
+doesn't appear on the site until the following Monday afternoon, after the
+Sunday-morning digest has already been generated), the three time-scoped
+buckets are built from a two-week window and then deduplicated against the
+previous week's digest. Anything that was already surfaced last week is
+removed; anything newly-visible in the last two weeks is included.
+
 Output: digest.json in the frontend public data directory
 """
 
@@ -16,10 +24,22 @@ import json
 from datetime import datetime, timedelta, time
 from zoneinfo import ZoneInfo
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional, Set
 from constants import merger_status
 from date_utils import parse_iso_datetime
 from merger_filters import filter_active, load_mergers
+
+
+OUTPUT_PATH = (
+    Path(__file__).parent.parent
+    / 'merger-tracker' / 'frontend' / 'public' / 'data' / 'digest.json'
+)
+
+# How far back to look for items that should appear in this digest.
+# Two weeks means: the prior Mon-Sun week plus the current Mon-Sun week.
+# Items from the prior week that already appeared in last week's digest are
+# deduplicated out.
+LOOKBACK_WEEKS = 2
 
 
 def get_last_week_range() -> tuple[datetime, datetime]:
@@ -78,48 +98,27 @@ def is_in_week_range(date_str: str, period_start: datetime, period_end: datetime
     return period_start <= dt <= period_end
 
 
-def appeared_in_period(
-    primary_date_str: str,
-    page_modified_str: str,
-    period_start: datetime,
-    period_end: datetime,
-) -> bool:
-    """Whether an item belongs in this week's digest.
+def load_previous_digest(path: Path = OUTPUT_PATH) -> Dict[str, Any]:
+    """Load the previously generated digest, or an empty dict if none exists.
 
-    Returns True when either:
-
-    1. The primary date (notification or determination) falls in the period, or
-    2. The primary date fell in the *immediately preceding* week, but the ACCC
-       page was only modified — i.e. first visible to the scraper — during
-       this period. This catches decisions dated on a Friday that don't actually
-       appear on the ACCC's acquisitions register until the following Monday,
-       after the previous week's digest has already been generated.
-
-    Restricting the late-arrival catch-up to the prior week keeps us from
-    re-surfacing items when ACCC edits a page weeks later (for example to
-    attach a document or fix a typo).
+    Used to deduplicate the time-scoped buckets: anything that was already
+    surfaced in last week's digest is not repeated this week, even if its
+    primary date falls inside the widened lookback window.
     """
-    if is_in_week_range(primary_date_str, period_start, period_end):
-        return True
+    if not path.exists():
+        return {}
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            return data if isinstance(data, dict) else {}
+    except (json.JSONDecodeError, OSError):
+        return {}
 
-    if not primary_date_str or not page_modified_str:
-        return False
 
-    primary_dt = parse_iso_datetime(primary_date_str)
-    if not primary_dt:
-        return False
-
-    sydney_tz = ZoneInfo('Australia/Sydney')
-    if primary_dt.tzinfo is None:
-        primary_dt = primary_dt.replace(tzinfo=sydney_tz)
-    else:
-        primary_dt = primary_dt.astimezone(sydney_tz)
-
-    prior_week_start = period_start - timedelta(days=7)
-    if not (prior_week_start <= primary_dt < period_start):
-        return False
-
-    return is_in_week_range(page_modified_str, period_start, period_end)
+def bucket_ids(digest: Dict[str, Any], bucket: str) -> Set[str]:
+    """Return the set of merger IDs in a given bucket of a digest."""
+    items = digest.get(bucket) or []
+    return {m.get('merger_id') for m in items if m.get('merger_id')}
 
 
 def get_first_paragraph(description: str) -> str:
@@ -169,18 +168,35 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
-def generate_weekly_digest() -> Dict[str, Any]:
+def generate_weekly_digest(
+    previous_digest: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
     """Generate the weekly digest data.
 
     Applies :func:`merger_filters.filter_active`, which excludes suspended
     assessments but *includes* waivers. Waiver grants and denials count as
     substantive ACCC activity and belong in the weekly summary; suspended
     mergers are paused and are not meaningful week-to-week activity.
+
+    Args:
+        previous_digest: The previously generated digest, used to deduplicate
+            the time-scoped buckets so mergers already surfaced in last
+            week's digest are not repeated. Defaults to reading the
+            currently-on-disk digest.json.
     """
     mergers = filter_active(load_mergers())
 
-    # Get the Monday-Sunday week range in Australian time
+    # Get the Monday-Sunday week range in Australian time (for display) and
+    # the widened lookback window that actually drives inclusion.
     period_start, period_end = get_last_week_range()
+    lookback_start = period_start - timedelta(days=7 * (LOOKBACK_WEEKS - 1))
+
+    if previous_digest is None:
+        previous_digest = load_previous_digest()
+    already_notified = bucket_ids(previous_digest, 'new_deals_notified')
+    already_cleared = bucket_ids(previous_digest, 'deals_cleared')
+    already_declined = bucket_ids(previous_digest, 'deals_declined')
+
     sydney_tz = ZoneInfo('Australia/Sydney')
     now_sydney = datetime.now(sydney_tz)
 
@@ -200,37 +216,40 @@ def generate_weekly_digest() -> Dict[str, Any]:
         stage = merger.get('stage', '')
         notification_date = merger.get('effective_notification_datetime')
         determination_date = merger.get('determination_publication_date')
-        page_modified = merger.get('page_modified_datetime')
         accc_determination = merger.get('accc_determination')
         phase_1_determination = merger.get('phase_1_determination')
         phase_2_determination = merger.get('phase_2_determination')
+        merger_id = merger.get('merger_id')
 
-        # New deals notified in the last week (not yet determined).
-        # Also catches notifications dated in the prior week whose ACCC page
-        # only became visible this week.
-        if (appeared_in_period(notification_date, page_modified, period_start, period_end) and
-            status == merger_status.UNDER_ASSESSMENT):
+        # New deals notified within the lookback window, minus anything already
+        # surfaced in last week's digest.
+        if (is_in_week_range(notification_date, lookback_start, period_end) and
+            status == merger_status.UNDER_ASSESSMENT and
+            merger_id not in already_notified):
             digest['new_deals_notified'].append(create_merger_summary(merger))
 
-        # Deals cleared / declined in the last week.
-        # Catches Friday decisions that only appear on the register the
-        # following Monday, after the prior week's digest has been sent.
-        if appeared_in_period(determination_date, page_modified, period_start, period_end):
+        # Deals cleared / declined within the lookback window, minus anything
+        # already surfaced in last week's digest. This is how a Friday
+        # determination that only appeared on the register the following
+        # Monday — too late for last week's digest — gets caught here.
+        if is_in_week_range(determination_date, lookback_start, period_end):
             if (accc_determination == merger_status.APPROVED or
                 phase_1_determination == merger_status.APPROVED or
                 phase_2_determination == merger_status.APPROVED):
-                digest['deals_cleared'].append(create_merger_summary(merger))
+                if merger_id not in already_cleared:
+                    digest['deals_cleared'].append(create_merger_summary(merger))
             elif (accc_determination == merger_status.NOT_APPROVED or
                   phase_1_determination == merger_status.NOT_APPROVED or
                   phase_2_determination == merger_status.NOT_APPROVED):
-                digest['deals_declined'].append(create_merger_summary(merger))
+                if merger_id not in already_declined:
+                    digest['deals_declined'].append(create_merger_summary(merger))
 
-        # Ongoing phase 1 deals (under assessment, in phase 1)
+        # Ongoing phase 1/2 lists are always a current snapshot, not a
+        # week-scoped activity list, so dedup does not apply.
         if (status == merger_status.UNDER_ASSESSMENT and
             stage == 'Phase 1 - initial assessment'):
             digest['ongoing_phase_1'].append(create_merger_summary(merger))
 
-        # Ongoing phase 2 deals (under assessment, in phase 2)
         if (status == merger_status.UNDER_ASSESSMENT and
             stage == 'Phase 2 - detailed assessment'):
             digest['ongoing_phase_2'].append(create_merger_summary(merger))
@@ -265,14 +284,12 @@ def main():
 
     digest = generate_weekly_digest()
 
-    # Output to frontend public data directory
-    output_path = Path(__file__).parent.parent / 'merger-tracker' / 'frontend' / 'public' / 'data' / 'digest.json'
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-    with open(output_path, 'w', encoding='utf-8') as f:
+    with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
         json.dump(digest, f, indent=2, ensure_ascii=False)
 
-    print(f"Digest generated: {output_path}")
+    print(f"Digest generated: {OUTPUT_PATH}")
     print(f"\nSummary:")
     print(f"  New deals notified (last week): {len(digest['new_deals_notified'])}")
     print(f"  Deals cleared (last week): {len(digest['deals_cleared'])}")

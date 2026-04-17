@@ -1,9 +1,11 @@
 """Tests for generate_weekly_digest.
 
-Focuses on the inclusion criteria used to build digest buckets —
-especially the late-arrival catch-up that surfaces determinations
-dated on a Friday but not actually published on the ACCC's
-acquisitions register until the following Monday.
+Focuses on the inclusion criteria used to build digest buckets — in
+particular the two-week lookback window combined with dedup against
+the previous week's digest. That combination is what surfaces
+determinations dated on a Friday but only published on the ACCC's
+acquisitions register the following Monday, without re-surfacing
+items every time ACCC edits an old page.
 """
 
 import os
@@ -34,155 +36,275 @@ def _period(monday_iso: str):
     return monday, sunday
 
 
-class TestAppearedInPeriod:
-    """appeared_in_period is the core of the late-arrival logic."""
+class TestLoadPreviousDigest:
+    def test_returns_empty_dict_when_file_missing(self, tmp_path):
+        missing = tmp_path / 'nope.json'
+        assert gwd.load_previous_digest(missing) == {}
 
-    def test_primary_date_inside_period_returns_true(self):
-        # Current-period digest: Mon 14 Apr - Sun 20 Apr 2025
-        start, end = _period('2025-04-14')
-        assert gwd.appeared_in_period(
-            '2025-04-16T12:00:00Z',
-            None,
-            start, end,
-        ) is True
+    def test_returns_empty_dict_on_corrupt_json(self, tmp_path):
+        corrupt = tmp_path / 'digest.json'
+        corrupt.write_text('{not valid json', encoding='utf-8')
+        assert gwd.load_previous_digest(corrupt) == {}
 
-    def test_primary_date_before_period_without_page_modified_returns_false(self):
-        start, end = _period('2025-04-14')
-        assert gwd.appeared_in_period(
-            '2025-04-11T12:00:00Z',
-            None,
-            start, end,
-        ) is False
-
-    def test_friday_decision_appearing_monday_is_caught(self):
-        """Core bug: determination dated Fri 11 Apr, page modified Mon 14 Apr afternoon."""
-        start, end = _period('2025-04-14')
-        # page_modified_datetime format from ACCC: includes offset
-        assert gwd.appeared_in_period(
-            '2025-04-11T12:00:00Z',
-            '2025-04-14T15:30:00+10:00',
-            start, end,
-        ) is True
-
-    def test_primary_date_too_old_is_not_caught_even_if_page_modified_this_week(self):
-        """ACCC editing an old page (typo fix, adding a document) must not re-surface
-        the merger in every later digest."""
-        start, end = _period('2025-04-14')
-        # Determination two weeks ago — would already have appeared in an earlier digest.
-        assert gwd.appeared_in_period(
-            '2025-03-28T12:00:00Z',
-            '2025-04-15T10:00:00+10:00',
-            start, end,
-        ) is False
-
-    def test_primary_date_in_prior_week_but_page_modified_also_in_prior_week_returns_false(self):
-        """If the page was already visible during the prior week, the prior week's
-        digest caught it; don't re-include now."""
-        start, end = _period('2025-04-14')
-        assert gwd.appeared_in_period(
-            '2025-04-11T12:00:00Z',
-            '2025-04-11T13:00:00+10:00',
-            start, end,
-        ) is False
-
-    def test_missing_primary_date_returns_false(self):
-        start, end = _period('2025-04-14')
-        assert gwd.appeared_in_period(None, '2025-04-14T15:30:00+10:00', start, end) is False
-
-    def test_page_modified_far_in_future_still_requires_primary_in_prior_week(self):
-        start, end = _period('2025-04-14')
-        # Primary two months ago — should not be caught.
-        assert gwd.appeared_in_period(
-            '2025-02-14T12:00:00Z',
-            '2025-04-15T10:00:00+10:00',
-            start, end,
-        ) is False
+    def test_returns_parsed_digest(self, tmp_path):
+        import json
+        path = tmp_path / 'digest.json'
+        path.write_text(
+            json.dumps({'deals_cleared': [{'merger_id': 'MN-1'}]}),
+            encoding='utf-8',
+        )
+        result = gwd.load_previous_digest(path)
+        assert result == {'deals_cleared': [{'merger_id': 'MN-1'}]}
 
 
-class TestDigestBucketsLateArrival:
-    """End-to-end check that generate_weekly_digest places late arrivals in the
-    correct bucket for the current period."""
+class TestBucketIds:
+    def test_empty_digest_returns_empty_set(self):
+        assert gwd.bucket_ids({}, 'deals_cleared') == set()
 
-    def _run(self, mergers, monkeypatch):
-        start, end = _period('2025-04-14')
+    def test_bucket_absent_returns_empty_set(self):
+        assert gwd.bucket_ids({'other_bucket': []}, 'deals_cleared') == set()
 
+    def test_extracts_merger_ids(self):
+        digest = {
+            'deals_cleared': [
+                {'merger_id': 'MN-1'},
+                {'merger_id': 'MN-2'},
+            ],
+        }
+        assert gwd.bucket_ids(digest, 'deals_cleared') == {'MN-1', 'MN-2'}
+
+    def test_ignores_entries_without_merger_id(self):
+        digest = {'deals_cleared': [{'merger_id': 'MN-1'}, {}]}
+        assert gwd.bucket_ids(digest, 'deals_cleared') == {'MN-1'}
+
+
+class TestWeeklyDigestBuckets:
+    """Drive generate_weekly_digest end-to-end via monkeypatched dependencies."""
+
+    def _run(self, mergers, monkeypatch, previous_digest=None, this_monday='2025-04-14'):
+        start, end = _period(this_monday)
         monkeypatch.setattr(gwd, 'load_mergers', lambda: mergers)
         monkeypatch.setattr(gwd, 'filter_active', lambda ms: ms)
         monkeypatch.setattr(gwd, 'get_last_week_range', lambda: (start, end))
+        return gwd.generate_weekly_digest(previous_digest=previous_digest or {})
 
-        return gwd.generate_weekly_digest()
+    # -----------------------------------------------------------------
+    # Normal (same-week) behaviour
+    # -----------------------------------------------------------------
 
-    def test_late_friday_clearance_is_picked_up_in_following_week(self, monkeypatch):
+    def test_same_week_clearance_is_included(self, monkeypatch):
         merger = {
-            'merger_id': 'MN-9001',
-            'merger_name': 'Friday clearance',
+            'merger_id': 'MN-1',
+            'merger_name': 'Mid-week clearance',
             'status': merger_status.ASSESSMENT_COMPLETED,
             'stage': 'Phase 1 - initial assessment',
-            'effective_notification_datetime': '2025-03-01T00:00:00Z',
-            'determination_publication_date': '2025-04-11T00:00:00Z',  # Friday of prior week
-            'page_modified_datetime': '2025-04-14T15:00:00+10:00',  # Monday of current week
+            'effective_notification_datetime': '2025-03-20T00:00:00Z',
+            'determination_publication_date': '2025-04-16T12:00:00Z',  # Wed in period
             'accc_determination': merger_status.APPROVED,
             'events': [],
         }
         digest = self._run([merger], monkeypatch)
-        assert any(m['merger_id'] == 'MN-9001' for m in digest['deals_cleared'])
-        assert not any(m['merger_id'] == 'MN-9001' for m in digest['deals_declined'])
+        assert [m['merger_id'] for m in digest['deals_cleared']] == ['MN-1']
 
-    def test_late_friday_declined_is_picked_up_in_following_week(self, monkeypatch):
+    def test_same_week_declined_is_included(self, monkeypatch):
         merger = {
-            'merger_id': 'MN-9002',
+            'merger_id': 'MN-2',
+            'merger_name': 'Mid-week decline',
+            'status': merger_status.ASSESSMENT_COMPLETED,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-03-20T00:00:00Z',
+            'determination_publication_date': '2025-04-16T12:00:00Z',
+            'accc_determination': merger_status.NOT_APPROVED,
+            'events': [],
+        }
+        digest = self._run([merger], monkeypatch)
+        assert [m['merger_id'] for m in digest['deals_declined']] == ['MN-2']
+
+    def test_same_week_new_notification_is_included(self, monkeypatch):
+        merger = {
+            'merger_id': 'MN-3',
+            'merger_name': 'Mid-week notification',
+            'status': merger_status.UNDER_ASSESSMENT,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-04-16T12:00:00Z',
+            'events': [],
+        }
+        digest = self._run([merger], monkeypatch)
+        assert [m['merger_id'] for m in digest['new_deals_notified']] == ['MN-3']
+
+    # -----------------------------------------------------------------
+    # Late-arrival catch-up
+    # -----------------------------------------------------------------
+
+    def test_friday_clearance_caught_in_following_week(self, monkeypatch):
+        """A decision dated last Friday that the previous digest missed is
+        included here, because it's in the 2-week window and wasn't in last
+        week's digest."""
+        merger = {
+            'merger_id': 'MN-100',
+            'merger_name': 'Friday clearance',
+            'status': merger_status.ASSESSMENT_COMPLETED,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-03-01T00:00:00Z',
+            'determination_publication_date': '2025-04-11T00:00:00Z',  # prior Friday
+            'accc_determination': merger_status.APPROVED,
+            'events': [],
+        }
+        previous_digest = {
+            'new_deals_notified': [],
+            'deals_cleared': [],
+            'deals_declined': [],
+        }
+        digest = self._run([merger], monkeypatch, previous_digest=previous_digest)
+        assert [m['merger_id'] for m in digest['deals_cleared']] == ['MN-100']
+
+    def test_friday_decline_caught_in_following_week(self, monkeypatch):
+        merger = {
+            'merger_id': 'MN-101',
             'merger_name': 'Friday decline',
             'status': merger_status.ASSESSMENT_COMPLETED,
             'stage': 'Phase 1 - initial assessment',
             'effective_notification_datetime': '2025-03-01T00:00:00Z',
             'determination_publication_date': '2025-04-11T00:00:00Z',
-            'page_modified_datetime': '2025-04-14T15:00:00+10:00',
             'accc_determination': merger_status.NOT_APPROVED,
             'events': [],
         }
-        digest = self._run([merger], monkeypatch)
-        assert any(m['merger_id'] == 'MN-9002' for m in digest['deals_declined'])
+        digest = self._run([merger], monkeypatch, previous_digest={})
+        assert [m['merger_id'] for m in digest['deals_declined']] == ['MN-101']
 
-    def test_late_notification_is_picked_up_in_following_week(self, monkeypatch):
+    def test_late_notification_caught_in_following_week(self, monkeypatch):
         merger = {
-            'merger_id': 'MN-9003',
+            'merger_id': 'MN-102',
             'merger_name': 'Late notification',
             'status': merger_status.UNDER_ASSESSMENT,
             'stage': 'Phase 1 - initial assessment',
             'effective_notification_datetime': '2025-04-11T00:00:00Z',  # prior Friday
-            'page_modified_datetime': '2025-04-14T15:00:00+10:00',  # this Monday
             'events': [],
         }
-        digest = self._run([merger], monkeypatch)
-        assert any(m['merger_id'] == 'MN-9003' for m in digest['new_deals_notified'])
+        digest = self._run([merger], monkeypatch, previous_digest={})
+        assert [m['merger_id'] for m in digest['new_deals_notified']] == ['MN-102']
 
-    def test_typo_fix_on_old_determination_is_not_re_surfaced(self, monkeypatch):
+    # -----------------------------------------------------------------
+    # Deduplication against last week's digest
+    # -----------------------------------------------------------------
+
+    def test_merger_already_in_previous_cleared_is_not_repeated(self, monkeypatch):
+        """If last week's digest already surfaced this determination (even with
+        a prior-week determination date), this week's digest must not repeat it,
+        regardless of any ACCC page edits since then."""
         merger = {
-            'merger_id': 'MN-9004',
-            'merger_name': 'Old determination, page edited today',
+            'merger_id': 'MN-200',
+            'merger_name': 'Already digested',
+            'status': merger_status.ASSESSMENT_COMPLETED,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-03-01T00:00:00Z',
+            'determination_publication_date': '2025-04-09T00:00:00Z',  # prior Wed
+            'accc_determination': merger_status.APPROVED,
+            'events': [],
+        }
+        previous_digest = {
+            'deals_cleared': [{'merger_id': 'MN-200'}],
+        }
+        digest = self._run([merger], monkeypatch, previous_digest=previous_digest)
+        assert digest['deals_cleared'] == []
+
+    def test_merger_already_in_previous_notifications_is_not_repeated(self, monkeypatch):
+        merger = {
+            'merger_id': 'MN-201',
+            'merger_name': 'Already notified last week',
+            'status': merger_status.UNDER_ASSESSMENT,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-04-09T00:00:00Z',
+            'events': [],
+        }
+        previous_digest = {
+            'new_deals_notified': [{'merger_id': 'MN-201'}],
+        }
+        digest = self._run([merger], monkeypatch, previous_digest=previous_digest)
+        assert digest['new_deals_notified'] == []
+
+    def test_merger_already_in_previous_declined_is_not_repeated(self, monkeypatch):
+        merger = {
+            'merger_id': 'MN-202',
+            'merger_name': 'Already declined last week',
+            'status': merger_status.ASSESSMENT_COMPLETED,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-03-01T00:00:00Z',
+            'determination_publication_date': '2025-04-09T00:00:00Z',
+            'accc_determination': merger_status.NOT_APPROVED,
+            'events': [],
+        }
+        previous_digest = {
+            'deals_declined': [{'merger_id': 'MN-202'}],
+        }
+        digest = self._run([merger], monkeypatch, previous_digest=previous_digest)
+        assert digest['deals_declined'] == []
+
+    def test_dedup_is_per_bucket(self, monkeypatch):
+        """A merger that appeared last week as 'new notification' and has since
+        been cleared should still show up in this week's cleared bucket —
+        dedup must be per-bucket, not global by merger_id."""
+        merger = {
+            'merger_id': 'MN-203',
+            'merger_name': 'Notified last week, cleared this week',
+            'status': merger_status.ASSESSMENT_COMPLETED,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-04-09T00:00:00Z',
+            'determination_publication_date': '2025-04-16T12:00:00Z',  # this week
+            'accc_determination': merger_status.APPROVED,
+            'events': [],
+        }
+        previous_digest = {
+            'new_deals_notified': [{'merger_id': 'MN-203'}],
+            'deals_cleared': [],
+        }
+        digest = self._run([merger], monkeypatch, previous_digest=previous_digest)
+        assert [m['merger_id'] for m in digest['deals_cleared']] == ['MN-203']
+
+    # -----------------------------------------------------------------
+    # Lookback window boundary
+    # -----------------------------------------------------------------
+
+    def test_determination_older_than_two_weeks_is_not_included(self, monkeypatch):
+        """Items outside the 2-week lookback window are not surfaced, even if
+        they somehow missed every prior digest."""
+        merger = {
+            'merger_id': 'MN-300',
+            'merger_name': 'Old determination',
             'status': merger_status.ASSESSMENT_COMPLETED,
             'stage': 'Phase 1 - initial assessment',
             'effective_notification_datetime': '2025-02-01T00:00:00Z',
-            'determination_publication_date': '2025-03-20T00:00:00Z',
-            'page_modified_datetime': '2025-04-15T10:00:00+10:00',  # typo fix this week
+            'determination_publication_date': '2025-03-28T00:00:00Z',  # >2 weeks old
             'accc_determination': merger_status.APPROVED,
             'events': [],
         }
-        digest = self._run([merger], monkeypatch)
-        assert not any(m['merger_id'] == 'MN-9004' for m in digest['deals_cleared'])
+        digest = self._run([merger], monkeypatch, previous_digest={})
+        assert digest['deals_cleared'] == []
 
-    def test_same_week_determination_still_works(self, monkeypatch):
-        """Regression check: the normal path (determination in the period) still fires."""
+    def test_period_metadata_reflects_single_week_not_lookback(self, monkeypatch):
+        """The period_start/period_end labels must continue to describe the
+        current Mon-Sun week; the email and UI rely on that label. The
+        widened lookback window is an internal implementation detail."""
+        start, end = _period('2025-04-14')
+        digest = self._run([], monkeypatch)
+        assert digest['period_start'] == start.isoformat()
+        assert digest['period_end'] == end.isoformat()
+
+    # -----------------------------------------------------------------
+    # Ongoing buckets are current snapshots
+    # -----------------------------------------------------------------
+
+    def test_ongoing_phase1_not_deduplicated(self, monkeypatch):
+        """Ongoing phase 1/2 lists reflect the current state of open reviews
+        and should not be affected by what last week's digest listed."""
         merger = {
-            'merger_id': 'MN-9005',
-            'merger_name': 'Normal mid-week clearance',
-            'status': merger_status.ASSESSMENT_COMPLETED,
+            'merger_id': 'MN-400',
+            'merger_name': 'Still under phase 1',
+            'status': merger_status.UNDER_ASSESSMENT,
             'stage': 'Phase 1 - initial assessment',
             'effective_notification_datetime': '2025-03-20T00:00:00Z',
-            'determination_publication_date': '2025-04-16T12:00:00Z',
-            'page_modified_datetime': '2025-04-16T13:00:00+10:00',
-            'accc_determination': merger_status.APPROVED,
             'events': [],
         }
-        digest = self._run([merger], monkeypatch)
-        assert any(m['merger_id'] == 'MN-9005' for m in digest['deals_cleared'])
+        previous_digest = {'ongoing_phase_1': [{'merger_id': 'MN-400'}]}
+        digest = self._run([merger], monkeypatch, previous_digest=previous_digest)
+        assert [m['merger_id'] for m in digest['ongoing_phase_1']] == ['MN-400']
