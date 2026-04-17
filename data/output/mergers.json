@@ -2410,6 +2410,96 @@
       "has_questionnaire": true
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/accenture-ziff-davis-connectivity-business",
+      "merger_name": "Accenture - Ziff Davis' connectivity business",
+      "status": "Under assessment",
+      "merger_id": "MN-10013",
+      "effective_notification_datetime": "2026-04-17T12:00:00Z",
+      "original_notification_datetime": "2026-04-17T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-06-02T12:00:00Z",
+      "page_modified_datetime": "2026-04-17T16:30:07+10:00",
+      "consultation_response_due_date": "2026-04-24T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Accenture Inc.",
+          "identifier_type": null,
+          "identifier": "State File Number  3387477"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ekahau OY",
+          "identifier_type": null,
+          "identifier": "Business ID  16108964"
+        },
+        {
+          "name": "Ookla, LLC",
+          "identifier_type": null,
+          "identifier": "Unified Business ID  602 422 103"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Accenture plc",
+          "identifier_type": null,
+          "identifier": "CRN  471706"
+        },
+        {
+          "name": "Accenture Venture Holdings B.V.",
+          "identifier_type": null,
+          "identifier": "KVK  42007173"
+        },
+        {
+          "name": "Accenture Australia Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "61 096 995 649"
+        },
+        {
+          "name": "Ziff Davis, Inc.",
+          "identifier_type": null,
+          "identifier": "State File Number  5542070"
+        },
+        {
+          "name": "Ziff Davis, LLC",
+          "identifier_type": null,
+          "identifier": "State File Number  5455121"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "Accenture Inc. (**Accenture**) proposes to acquire Ziff Davis, Inc.\u2019s (**Ziff Davis**) connectivity business comprising various entities and assets (the **Target**) (the **Acquisition**).\n\nAccenture is a global professional services company headquartered in Dublin, Ireland. It provides a range of professional services designed to assist public and private sectors to navigate digital transformation, optimise operations, and build advanced technological capabilities. In Australia, Accenture (through its \u2018umlaut\u2019 brand) provides network assessment services, among other services.\n\nZiff Davis (NASDAQ: ZD) is a digital media and internet company. The Target comprises Ziff Davis\u2019 globally active connectivity businesses, including its \u201cOokla\u201d, \u201cSpeedtest\u201d, \u201cEkahau\u201d, \u201cRootMetrics\u201d and \u201cDowndetector\u201d brands. The focus of the Target business is the collection and provision of network connectivity data, which can be used by customers for marketing purposes or by telecom operators\u2019 engineering teams for network optimisation purposes.\n\nIn Australia, the Target supplies:\n\n* network performance measurement, monitoring, benchmarking, and diagnostic software and tools;\n* related data products, analytical insights and services, including the collection and analysis of network performance, experience and availability;\n* reliability data across fixed broadband, mobile, satellite and Wi-Fi networks; and\n* enterprise wireless network management, planning and optimisation solutions.\n\nBoth Accenture and the Target supply network assessment services in Australia \u2013 Accenture, through its umlaut brand, and the Target through Speedtest.",
+      "events": [
+        {
+          "date": "2026-04-17T12:00:00Z",
+          "title": "Questionnaire - Accenture - Ziff Davis' connectivity business",
+          "display_title": "Questionnaire - Accenture - Ziff Davis' connectivity business",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Accenture%20-%20Ziff%20Davis%27%20connectivity%20business_1.docx",
+          "url_gh": "/mergers/MN-10013/Questionnaire - Accenture - Ziff Davis' connectivity business_1.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-04-17T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/google-wiz",
       "merger_name": "Google - Wiz",
       "status": "Assessment completed",
@@ -4580,24 +4670,26 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ma-financial-group-ma-marina-fund-%E2%80%93-gold-coast-city-marina",
       "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-45005",
       "effective_notification_datetime": "2026-03-25T12:00:00Z",
       "original_notification_datetime": "2026-03-25T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-05-11T12:00:00Z",
-      "page_modified_datetime": "2026-04-07T09:46:23+10:00",
+      "determination_publication_date": "2026-04-17T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-04-17T14:30:20+10:00",
       "consultation_response_due_date": "2026-04-02T12:00:00Z",
       "acquirers": [
-        {
-          "name": "MA MARINA FUND TT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "65 666 902 245"
-        },
         {
           "name": "MA MARINA FUND HOLDCO PTY LTD",
           "identifier_type": "ABN",
           "identifier": "96 667 241 385"
+        },
+        {
+          "name": "MA MARINA FUND TT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 666 902 245"
         }
       ],
       "targets": [
@@ -4607,9 +4699,9 @@
           "identifier": "32 105 294 228"
         },
         {
-          "name": "XYZ Investments Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "010 149 943"
+          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "72 081 370 685"
         },
         {
           "name": "GOLD COAST CITY MARINA PTY LTD",
@@ -4617,21 +4709,26 @@
           "identifier": "42 083 695 283"
         },
         {
-          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "72 081 370 685"
+          "name": "XYZ Investments Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "010 149 943"
         }
       ],
       "other_parties": [
+        {
+          "name": "MA ASSET MANAGEMENT LTD",
+          "identifier_type": "ABN",
+          "identifier": "93 142 008 535"
+        },
         {
           "name": "MA MARINA FUND OPCO NO. 1 PTY LTD",
           "identifier_type": "ABN",
           "identifier": "59 667 243 601"
         },
         {
-          "name": "MAAM HOLDINGS PTY LTD",
+          "name": "MA FINANCIAL GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "92 621 215 450"
+          "identifier": "68 142 008 428"
         },
         {
           "name": "MA INVESTMENT MANAGEMENT PTY LTD",
@@ -4639,14 +4736,9 @@
           "identifier": "85 621 552 896"
         },
         {
-          "name": "MA ASSET MANAGEMENT LTD",
+          "name": "MAAM HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "93 142 008 535"
-        },
-        {
-          "name": "MA FINANCIAL GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "68 142 008 428"
+          "identifier": "92 621 215 450"
         }
       ],
       "anzsic_codes": [
@@ -4675,12 +4767,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-04-17T12:00:00Z",
+          "title": "MA Financial Group - Gold Coast City Marina - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/MA%20Financial%20-%20Gold%20Coast%20City%20Marina%20-%20Phase%201%20determination%20without%20conditions.pdf",
+          "determination_commission_division": "Determination made by Commissioner Philip Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "MA Marina Fund Holdco Pty Ltd and MA Marina Fund TT Pty Ltd\u2019s\n(together, the Acquirers)\u2019s proposed acquisition of 100% of the real\nproperty and business assets (both tangible and intangible) of the\nGold Coast City Marina (Gold Coast City Marina) (the Acquisition).\nThe Acquirers are indirectly solely controlled by funds managed by\nMA Financial Group Limited (MA Financial)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The Acquirers are part of the MA Marina Fund, managed by entities\nheld by MA Financial, which invests in and operates marinas. The\nMA Marina Fund currently operates a portfolio of 16 marinas located\nalong Australia\u2019s eastern seaboard under the \u2018d\u2019Albora\u2019 brand (MA\nMarina Portfolio). The MA Marina Portfolio includes 2 marinas in\nsouth-east Queensland \u2013 the Pacific Point Marina in Steiglitz on the\nGold Coast, and the East Coast Marina in Manly, Brisbane.\nEach marina in the MA Marina Portfolio operates as an integrated\nmarina services facility combining vessel storage, maintenance and\nassociated commercial uses. Marinas in the MA Marina Portfolio\ntypically provide wet berthing and other ancillary marina services\nincluding dry storage, boatyard storage, marine workshop and\nindustrial leasing, and marine fuel.\nThe target, Gold Coast City Marina, is a full-service marina and\nmarina industrial facility located in Coomera, Queensland. It provides\nwet berthing and other ancillary marina services including dry\nstorage, boatyard storage, marine workshop and industrial leasing\nand marine fuel."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the parties",
+              "details": "The Acquirers and MA Financial (together, the Parties) overlap in the\nGold Coast region in the supply of wet berthing and ancillary marina\nservices, including dry storage, boatyard storage, marine workshop,\nmarine fuel and industrial leasing (e.g. to boat builders, mechanics,\nbrokers), for recreational and commercial vessels."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third parties, and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings:\n\u2022 The Parties\u2019 market share aggregation in either the supply of\nwet berthing or ancillary marina services as a result of the\nAcquisition is estimated to be low on any market definition;\n\u2022 The Parties would continue to face competition from\nmultiple alternative suppliers of wet berthing and ancillary\nmarina services in the Gold Coast region, including The Boat\nWorks, Marina Mirage, Main Beach Superyacht Marina,\nSouthport Yacht Club, Hope Island Marina, Sanctuary Cove,\nRunaway Bay Marina and Hope Harbour Marina."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-45005/MA Financial - Gold Coast City Marina - Phase 1 determination without conditions.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-04-17T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -12963,6 +13091,99 @@
       "public_benefits_determination_date": null
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/infosys-%E2%80%93-optimum-healthcare-it",
+      "merger_name": "Infosys \u2013 Optimum Healthcare IT",
+      "status": "Assessment completed",
+      "merger_id": "WA-40014",
+      "effective_notification_datetime": "2026-04-07T12:00:00Z",
+      "original_notification_datetime": "2026-04-07T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-04-17T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-04-17T16:42:02+10:00",
+      "acquirers": [
+        {
+          "name": "Infosys Nova Holdings LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Optimum Achieve Holdings, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "OPTIMUM HEALTHCARE IT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 689 795 702"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "INFOSYS TECHNOLOGIES LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "52 090 591 209"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "Infosys Nova Holdings LLC proposes to acquire Optimum Achieve Holdings, Inc including Optimum\u2019s subsidiary, Optimum Healthcare IT Pty Ltd.\n\nInfosys Nova Holdings LLC is a wholly owned subsidiary of Infosys Limited (**Infosys**). Infosys is a global consulting and IT services company. Infosys provides a range of professional services across consulting, application development and maintenance, testing, business process management, cybersecurity, transformation, digital, cloud services, AI and automation, and data analytics. It is a leading provider of application sustainment, development and testing services. In Australia, Infosys provides services to Government and private sector organisations including in the financial services and telecommunications sectors.\n\nInfosys is a foreign company registered in its original jurisdiction of India. Infosys trades as Infosys Technologies Limited in Australia.\n\nOptimum Achieve Holdings, Inc is a digital transformation and consulting firm based in the US that specialises in providing services to the healthcare industry. Its broader suite of services includes digital transformation services, enterprise application services, managed services and application managed services, analytics and AI enablement, and cybersecurity and compliance.",
+      "events": [
+        {
+          "date": "2026-04-17T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Infosys%20-%20Optimum%20Healthcare%20IT%20%28WA-40014%29%20-%20Notification%20waiver%20determination%20-%2017%20April%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Infosys Nova Holdings LLC, a wholly owned subsidiary of Infosys\nLimited (Infosys), applied for a notification waiver in respect of its\nproposed acquisition of Optimum Achieve Holdings, Inc (Optimum\nHealthcare IT), as described in the transaction documents provided\nas part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "17 April 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "Infosys is a global consulting and IT services company registered in\nIndia. Infosys provides a range of professional services across\nconsulting, application development and maintenance, testing,\nbusiness process management, cybersecurity, transformation,\ndigital, cloud services, AI and automation, and data analytics. In\nAustralia, Infosys provides services to Government and private\nsector organisations including in the financial services and\ntelecommunications sectors.\nOptimum Healthcare IT is a digital transformation and consulting\nfirm based in the US that specialises in providing services to the\nhealthcare industry. Its broader suite of services includes digital\ntransformation services, enterprise application services, managed\nservices and application managed services, analytics and AI\nenablement, and cybersecurity and compliance. In Australia,\nOptimum Healthcare IT has limited operations."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is a small horizontal overlap between Infosys and\nOptimum Healthcare IT in the supply of IT implementation\nand support services for healthcare services in Australia\nb. Optimum Healthcare IT has a small presence in Australia\nc. there are alternative suppliers of IT implementation and\nsupport services for healthcare services in Australia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-40014/Infosys - Optimum Healthcare IT (WA-40014) - Notification waiver determination - 17 April 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-04-07T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/paragon-care-%E2%80%93-presidental",
       "merger_name": "Paragon Care \u2013 Presidental",
       "status": "Assessment completed",
@@ -17054,6 +17275,99 @@
         },
         {
           "date": "2026-03-18T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mizuho-%E2%80%93-avendus",
+      "merger_name": "Mizuho \u2013 Avendus",
+      "status": "Assessment completed",
+      "merger_id": "WA-80009",
+      "effective_notification_datetime": "2026-04-07T12:00:00Z",
+      "original_notification_datetime": "2026-04-07T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-04-17T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-04-17T16:41:57+10:00",
+      "acquirers": [
+        {
+          "name": "Mizuho Securities Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "No. 94"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Redpoint Investments Pte Ltd",
+          "identifier_type": null,
+          "identifier": "201536795E"
+        },
+        {
+          "name": "Avendus Capital Private Limited",
+          "identifier_type": null,
+          "identifier": "CIN U99999MH1999PTC123358"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Spark Institutional Equities Private Limited",
+          "identifier_type": null,
+          "identifier": "CIN U65999TN2022PTC149473"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "merger_description": "Mizuho Securities Co. Ltd (**Mizuho**) proposes to acquire an interest of between 61.60% and 78.30% in Avendus Capital Private Limited (**Avendus**) (the **Acquisition**).\n\nMizuho is a subsidiary of Mizuho Financial Group, a full service Japanese financial services company. Mizuho through its connected entities, supplies financial services within Australia, including business banking, financial advisory and auto finance and car leasing.\n\nAvendus is an Indian investment bank and financial services firm that provides bespoke solutions in the areas of investment banking, institutional equities, wealth management, asset management and credit solutions. Founded in 1999, Avendus operates in India, the United States, Singapore and United Kingdom through its subsidiaries. It is a Securities and Exchange Board of India registered merchant banker.\n\nAvendus has limited operations in Australia, supplying some research analyst and stock broking services via its wholly owned subsidiary, Spark Institutional Equities Private Limited.",
+      "events": [
+        {
+          "date": "2026-04-17T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Mizuho%20-%20Avendus%20%28WA-80009%29%20-%20Notification%20waiver%20determination%20-%2016%20April%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Mizuho Securities Co. Ltd. (Mizuho) applied for a notification waiver\nin respect of its proposed acquisition of an interest of between\n61.60% and 78.30% in Avendus Capital Private Limited (Avendus), as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "16 April 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Mizuho, is a subsidiary of Mizuho Financial Group, a\nfull service Japanese financial services company. Mizuho through its\nconnected entities, supplies financial services within Australia,\nincluding business banking, financial advisory and auto finance and\ncar leasing.\nThe target, Avendus, is an Indian investment bank and financial\nservices firm that provides bespoke solutions in the areas of\ninvestment banking, institutional equities, wealth management, asset\nmanagement and credit solutions. Founded in 1999, Avendus\noperates in India, the United States, Singapore and United Kingdom\nthrough its subsidiaries. It is a Securities and Exchange Board of\nIndia registered merchant banker.\nAvendus has limited operations in Australia, supplying some\nresearch analyst and stock broking services via its wholly owned\nsubsidiary, Spark Institutional Equities Private Limited."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is limited actual or potential horizontal overlap\nbetween Mizuho and Avendus in the supply of M&A advisory\nservices in Australia\nb. Avendus has a small presence in Australia\nc. there are alternative suppliers of M&A advisory services in\nAustralia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-80009/Mizuho - Avendus (WA-80009) - Notification waiver determination - 16 April 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-04-07T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"

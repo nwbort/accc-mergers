@@ -2,6 +2,18 @@
   "code": "7000",
   "mergers": [
     {
+      "merger_id": "MN-10013",
+      "merger_name": "Accenture - Ziff Davis' connectivity business",
+      "is_waiver": false,
+      "status": "Under assessment"
+    },
+    {
+      "merger_id": "WA-40014",
+      "merger_name": "Infosys \u2013 Optimum Healthcare IT",
+      "is_waiver": true,
+      "status": "Assessment completed"
+    },
+    {
       "merger_id": "MN-30005",
       "merger_name": "Adobe - Semrush",
       "is_waiver": false,
@@ -146,5 +158,5 @@
       "status": "Assessment completed"
     }
   ],
-  "count": 24
+  "count": 26
 }

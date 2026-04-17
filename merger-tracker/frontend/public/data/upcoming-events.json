@@ -84,6 +84,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-04-24T12:00:00Z",
+      "merger_id": "MN-10013",
+      "merger_name": "Accenture - Ziff Davis' connectivity business",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-17T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-04-24T12:00:00Z",
       "merger_id": "MN-30009",
       "merger_name": "Daikin - AAMS Group",
       "status": "Under assessment",
@@ -119,16 +129,6 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-03-24T12:00:00Z"
-    },
-    {
-      "type": "determination_due",
-      "event_type_display": "Determination due",
-      "date": "2026-05-11T12:00:00Z",
-      "merger_id": "MN-45005",
-      "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-03-25T12:00:00Z"
     },
     {
       "type": "determination_due",
@@ -344,6 +344,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-06-02T12:00:00Z",
+      "merger_id": "MN-10013",
+      "merger_name": "Accenture - Ziff Davis' connectivity business",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-17T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-06-02T12:00:00Z",
       "merger_id": "MN-30002",
       "merger_name": "Peter Warren - Wakeling Automotive",
       "status": "Under assessment",
@@ -371,6 +381,6 @@
       "effective_notification_datetime": "2025-11-27T12:00:00Z"
     }
   ],
-  "count": 37,
+  "count": 38,
   "days_ahead": 60
 }

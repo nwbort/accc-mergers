@@ -1,34 +1,34 @@
 {
-  "total_mergers": 78,
-  "total_waivers": 105,
+  "total_mergers": 79,
+  "total_waivers": 107,
   "by_status": {
-    "Assessment completed": 52,
+    "Assessment completed": 53,
     "Under assessment": 26
   },
   "by_determination": {
-    "Approved": 52,
+    "Approved": 53,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 95,
+    "Approved": 97,
     "Not approved": 10
   },
   "phase_duration": {
-    "average_days": 27.673076923076923,
+    "average_days": 27.58490566037736,
     "median_days": 25,
-    "average_business_days": 17.98076923076923,
+    "average_business_days": 17.92452830188679,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 16,
-        "percentage": 30.8
+        "count": 17,
+        "percentage": 32.1
       },
       "day20": {
-        "count": 43,
-        "percentage": 82.7
+        "count": 44,
+        "percentage": 83.0
       },
       "day30": {
-        "count": 51,
+        "count": 52,
         "percentage": 98.1
       }
     }
@@ -36,7 +36,7 @@
   "top_industries": [
     {
       "name": "Computer System Design and Related Services",
-      "count": 24
+      "count": 26
     },
     {
       "name": "Software Publishing",
@@ -48,7 +48,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 15
+      "count": 16
     },
     {
       "name": "Scientific Research Services",
@@ -76,6 +76,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-10013",
+      "merger_name": "Accenture - Ziff Davis' connectivity business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-17T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-30009",
       "merger_name": "Daikin - AAMS Group",
@@ -107,17 +115,39 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-14T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-90009",
-      "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-14T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-40014",
+      "merger_name": "Infosys \u2013 Optimum Healthcare IT",
+      "determination": "Approved",
+      "determination_date": "2026-04-17T12:00:00Z",
+      "page_modified_datetime": "2026-04-17T16:42:02+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-80009",
+      "merger_name": "Mizuho \u2013 Avendus",
+      "determination": "Approved",
+      "determination_date": "2026-04-17T12:00:00Z",
+      "page_modified_datetime": "2026-04-17T16:41:57+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "MN-45005",
+      "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+      "determination": "Approved",
+      "determination_date": "2026-04-17T12:00:00Z",
+      "page_modified_datetime": "2026-04-17T14:30:20+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
     {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
@@ -147,36 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-85022",
-      "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
-      "determination": "Approved",
-      "determination_date": "2026-04-16T12:00:00Z",
-      "page_modified_datetime": "2026-04-16T17:17:34+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-65009",
-      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
-      "determination": "Approved",
-      "determination_date": "2026-04-16T12:00:00Z",
-      "page_modified_datetime": "2026-04-16T17:13:43+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-40008",
-      "merger_name": "Intrepid Travel - Wild Bush Luxury",
-      "determination": "Approved",
-      "determination_date": "2026-04-16T12:00:00Z",
-      "page_modified_datetime": "2026-04-16T16:08:25+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
