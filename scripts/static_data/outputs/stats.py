@@ -5,6 +5,7 @@ from collections import defaultdict
 from constants import merger_status
 
 from ..business_days import calculate_business_days, calculate_calendar_days
+from ..enrichment import is_phase_2_referral_event
 from ..filters import filter_notifications, filter_waivers
 
 
@@ -139,8 +140,7 @@ def generate(mergers: list) -> dict:
 
         # Check for Phase 2 referrals (stage transitions)
         for event in m.get('events', []):
-            title = event.get('title', '')
-            if 'subject to Phase 2 review' in title:
+            if is_phase_2_referral_event(event.get('title', '')):
                 determination_events.append({
                     "merger_id": merger_id,
                     "merger_name": merger_name,

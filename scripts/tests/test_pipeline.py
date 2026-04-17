@@ -764,6 +764,20 @@ class TestEnrichMerger:
         assert result['phase_1_determination'] == 'Referred to phase 2'
         assert result['phase_1_determination_date'] == '2025-02-15T12:00:00Z'
 
+    def test_phase_2_referral_event_new_phrasing(self):
+        # ACCC changed the event title from "subject to Phase 2 review" to
+        # "Decision to Proceed to a Phase 2 review" in 2026 (e.g. MN-65005).
+        m = self._base_merger()
+        m['accc_determination'] = None
+        m['determination_publication_date'] = None
+        m['stage'] = 'Phase 2 - detailed assessment'
+        m['events'] = [
+            {'title': 'Decision to Proceed to a Phase 2 review', 'date': '2026-04-16T12:00:00Z'}
+        ]
+        result = enrich_merger(m)
+        assert result['phase_1_determination'] == 'Referred to phase 2'
+        assert result['phase_1_determination_date'] == '2026-04-16T12:00:00Z'
+
     def test_adds_commentary(self):
         m = self._base_merger()
         commentary = {

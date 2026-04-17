@@ -117,14 +117,23 @@ function Timeline() {
     }
   };
 
+  const isPhase2ReferralTitle = (text) => {
+    const lower = text.toLowerCase();
+    return (
+      lower.includes('subject to phase 2 review') ||
+      lower.includes('proceed to a phase 2') ||
+      lower.includes('proceed to phase 2')
+    );
+  };
+
   const getEventType = (title, displayTitle) => {
     if (title.includes('notified')) return 'notification';
-    if (displayTitle.includes('determination:') || displayTitle.includes('subject to Phase 2 review')) {
+    if (displayTitle.includes('determination:') || isPhase2ReferralTitle(displayTitle)) {
       const fullText = (displayTitle || title).toLowerCase();
       if (fullText.includes('not approved') || fullText.includes('declined') || fullText.includes('not opposed')) {
         return 'determination-not-approved';
       }
-      if (fullText.includes('subject to phase 2 review')) {
+      if (isPhase2ReferralTitle(fullText)) {
         return 'determination-referred';
       }
       return 'determination-approved';
