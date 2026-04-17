@@ -78,6 +78,50 @@ def is_in_week_range(date_str: str, period_start: datetime, period_end: datetime
     return period_start <= dt <= period_end
 
 
+def appeared_in_period(
+    primary_date_str: str,
+    page_modified_str: str,
+    period_start: datetime,
+    period_end: datetime,
+) -> bool:
+    """Whether an item belongs in this week's digest.
+
+    Returns True when either:
+
+    1. The primary date (notification or determination) falls in the period, or
+    2. The primary date fell in the *immediately preceding* week, but the ACCC
+       page was only modified — i.e. first visible to the scraper — during
+       this period. This catches decisions dated on a Friday that don't actually
+       appear on the ACCC's acquisitions register until the following Monday,
+       after the previous week's digest has already been generated.
+
+    Restricting the late-arrival catch-up to the prior week keeps us from
+    re-surfacing items when ACCC edits a page weeks later (for example to
+    attach a document or fix a typo).
+    """
+    if is_in_week_range(primary_date_str, period_start, period_end):
+        return True
+
+    if not primary_date_str or not page_modified_str:
+        return False
+
+    primary_dt = parse_iso_datetime(primary_date_str)
+    if not primary_dt:
+        return False
+
+    sydney_tz = ZoneInfo('Australia/Sydney')
+    if primary_dt.tzinfo is None:
+        primary_dt = primary_dt.replace(tzinfo=sydney_tz)
+    else:
+        primary_dt = primary_dt.astimezone(sydney_tz)
+
+    prior_week_start = period_start - timedelta(days=7)
+    if not (prior_week_start <= primary_dt < period_start):
+        return False
+
+    return is_in_week_range(page_modified_str, period_start, period_end)
+
+
 def get_first_paragraph(description: str) -> str:
     """Extract the first paragraph from a description."""
     if not description:
@@ -156,22 +200,26 @@ def generate_weekly_digest() -> Dict[str, Any]:
         stage = merger.get('stage', '')
         notification_date = merger.get('effective_notification_datetime')
         determination_date = merger.get('determination_publication_date')
+        page_modified = merger.get('page_modified_datetime')
         accc_determination = merger.get('accc_determination')
         phase_1_determination = merger.get('phase_1_determination')
         phase_2_determination = merger.get('phase_2_determination')
 
-        # New deals notified in the last week (not yet determined)
-        if (is_in_week_range(notification_date, period_start, period_end) and
+        # New deals notified in the last week (not yet determined).
+        # Also catches notifications dated in the prior week whose ACCC page
+        # only became visible this week.
+        if (appeared_in_period(notification_date, page_modified, period_start, period_end) and
             status == merger_status.UNDER_ASSESSMENT):
             digest['new_deals_notified'].append(create_merger_summary(merger))
 
-        # Deals cleared in the last week
-        if is_in_week_range(determination_date, period_start, period_end):
+        # Deals cleared / declined in the last week.
+        # Catches Friday decisions that only appear on the register the
+        # following Monday, after the prior week's digest has been sent.
+        if appeared_in_period(determination_date, page_modified, period_start, period_end):
             if (accc_determination == merger_status.APPROVED or
                 phase_1_determination == merger_status.APPROVED or
                 phase_2_determination == merger_status.APPROVED):
                 digest['deals_cleared'].append(create_merger_summary(merger))
-            # Deals declined/not approved in the last week
             elif (accc_determination == merger_status.NOT_APPROVED or
                   phase_1_determination == merger_status.NOT_APPROVED or
                   phase_2_determination == merger_status.NOT_APPROVED):
