@@ -9,17 +9,52 @@ This script creates a summary showing:
 - Ongoing phase 1 deals
 - Ongoing phase 2 deals
 
-Output: digest.json in the frontend public data directory
+To account for the discrepancy between when a decision is "made" and when it
+appears on the ACCC's acquisitions register (a decision dated Friday often
+doesn't appear on the site until the following Monday afternoon, after the
+Sunday-morning digest has already been generated), the three time-scoped
+buckets are built from a two-week window and then deduplicated against the
+previous week's digest. Anything that was already surfaced last week is
+removed; anything newly-visible in the last two weeks is included.
+
+The "previous week's digest" is loaded from a dated archive snapshot written
+by the last scheduled run, falling back to the current digest.json only when
+the archive is unavailable. That isolation means a mid-week manual re-run of
+this script won't spoil the dedup baseline for next week's scheduled run.
+
+Outputs:
+- digest.json in the frontend public data directory (the live digest)
+- data/digest-archive/digest-<YYYY-MM-DD>.json (dated snapshot, keyed by the
+  Monday of the period it covers)
 """
 
 import json
 from datetime import datetime, timedelta, time
 from zoneinfo import ZoneInfo
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional, Set
 from constants import merger_status
 from date_utils import parse_iso_datetime
 from merger_filters import filter_active, load_mergers
+
+
+OUTPUT_PATH = (
+    Path(__file__).parent.parent
+    / 'merger-tracker' / 'frontend' / 'public' / 'data' / 'digest.json'
+)
+
+# Dated snapshots of each week's digest. Reading last week's snapshot from
+# here (rather than the current digest.json) means that an ad-hoc mid-week
+# re-run — for example, to pick up a decision that only appeared on the
+# ACCC register after Sunday's scheduled run — won't corrupt the dedup
+# baseline for the next scheduled run.
+DIGEST_ARCHIVE_DIR = Path(__file__).parent.parent / 'data' / 'digest-archive'
+
+# How far back to look for items that should appear in this digest.
+# Two weeks means: the prior Mon-Sun week plus the current Mon-Sun week.
+# Items from the prior week that already appeared in last week's digest are
+# deduplicated out.
+LOOKBACK_WEEKS = 2
 
 
 def get_last_week_range() -> tuple[datetime, datetime]:
@@ -78,6 +113,75 @@ def is_in_week_range(date_str: str, period_start: datetime, period_end: datetime
     return period_start <= dt <= period_end
 
 
+def archive_path_for(period_start: datetime, archive_dir: Optional[Path] = None) -> Path:
+    """The dated archive path for a digest whose period starts on ``period_start``.
+
+    ``archive_dir`` defaults to the module-level :data:`DIGEST_ARCHIVE_DIR`
+    *at call time*, so tests can monkeypatch that constant to redirect writes.
+    """
+    if archive_dir is None:
+        archive_dir = DIGEST_ARCHIVE_DIR
+    return archive_dir / f'digest-{period_start.date().isoformat()}.json'
+
+
+def resolve_previous_digest_path(
+    period_start: datetime,
+    archive_dir: Optional[Path] = None,
+    fallback: Optional[Path] = None,
+) -> Optional[Path]:
+    """Pick the path to load as last week's digest for dedup purposes.
+
+    Resolution order:
+
+    1. The dated archive snapshot for the immediately preceding Monday
+       (``<archive_dir>/digest-<last_week_monday>.json``). This is the
+       authoritative record of what last Sunday's scheduled run committed
+       and emailed, unaffected by any mid-week manual reruns of the
+       generator.
+    2. The current ``digest.json`` on disk, as a fallback for cases where
+       the dated archive isn't available (most notably the first run after
+       this archive mechanism is introduced).
+    3. ``None`` — treated as "no previous digest".
+
+    ``archive_dir`` / ``fallback`` default to the module-level constants
+    *at call time*.
+    """
+    if archive_dir is None:
+        archive_dir = DIGEST_ARCHIVE_DIR
+    if fallback is None:
+        fallback = OUTPUT_PATH
+    last_week_start = period_start - timedelta(days=7)
+    archived = archive_path_for(last_week_start, archive_dir)
+    if archived.exists():
+        return archived
+    if fallback.exists():
+        return fallback
+    return None
+
+
+def load_previous_digest(path: Optional[Path]) -> Dict[str, Any]:
+    """Load a digest JSON file, or return an empty dict.
+
+    Used to deduplicate the time-scoped buckets: anything that was already
+    surfaced in last week's digest is not repeated this week, even if its
+    primary date falls inside the widened lookback window.
+    """
+    if path is None or not path.exists():
+        return {}
+    try:
+        with open(path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            return data if isinstance(data, dict) else {}
+    except (json.JSONDecodeError, OSError):
+        return {}
+
+
+def bucket_ids(digest: Dict[str, Any], bucket: str) -> Set[str]:
+    """Return the set of merger IDs in a given bucket of a digest."""
+    items = digest.get(bucket) or []
+    return {m.get('merger_id') for m in items if m.get('merger_id')}
+
+
 def get_first_paragraph(description: str) -> str:
     """Extract the first paragraph from a description."""
     if not description:
@@ -125,18 +229,35 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
-def generate_weekly_digest() -> Dict[str, Any]:
+def generate_weekly_digest(
+    previous_digest: Optional[Dict[str, Any]] = None,
+) -> Dict[str, Any]:
     """Generate the weekly digest data.
 
     Applies :func:`merger_filters.filter_active`, which excludes suspended
     assessments but *includes* waivers. Waiver grants and denials count as
     substantive ACCC activity and belong in the weekly summary; suspended
     mergers are paused and are not meaningful week-to-week activity.
+
+    Args:
+        previous_digest: The previously generated digest, used to deduplicate
+            the time-scoped buckets so mergers already surfaced in last
+            week's digest are not repeated. Defaults to reading the
+            currently-on-disk digest.json.
     """
     mergers = filter_active(load_mergers())
 
-    # Get the Monday-Sunday week range in Australian time
+    # Get the Monday-Sunday week range in Australian time (for display) and
+    # the widened lookback window that actually drives inclusion.
     period_start, period_end = get_last_week_range()
+    lookback_start = period_start - timedelta(days=7 * (LOOKBACK_WEEKS - 1))
+
+    if previous_digest is None:
+        previous_digest = load_previous_digest(resolve_previous_digest_path(period_start))
+    already_notified = bucket_ids(previous_digest, 'new_deals_notified')
+    already_cleared = bucket_ids(previous_digest, 'deals_cleared')
+    already_declined = bucket_ids(previous_digest, 'deals_declined')
+
     sydney_tz = ZoneInfo('Australia/Sydney')
     now_sydney = datetime.now(sydney_tz)
 
@@ -159,30 +280,37 @@ def generate_weekly_digest() -> Dict[str, Any]:
         accc_determination = merger.get('accc_determination')
         phase_1_determination = merger.get('phase_1_determination')
         phase_2_determination = merger.get('phase_2_determination')
+        merger_id = merger.get('merger_id')
 
-        # New deals notified in the last week (not yet determined)
-        if (is_in_week_range(notification_date, period_start, period_end) and
-            status == merger_status.UNDER_ASSESSMENT):
+        # New deals notified within the lookback window, minus anything already
+        # surfaced in last week's digest.
+        if (is_in_week_range(notification_date, lookback_start, period_end) and
+            status == merger_status.UNDER_ASSESSMENT and
+            merger_id not in already_notified):
             digest['new_deals_notified'].append(create_merger_summary(merger))
 
-        # Deals cleared in the last week
-        if is_in_week_range(determination_date, period_start, period_end):
+        # Deals cleared / declined within the lookback window, minus anything
+        # already surfaced in last week's digest. This is how a Friday
+        # determination that only appeared on the register the following
+        # Monday — too late for last week's digest — gets caught here.
+        if is_in_week_range(determination_date, lookback_start, period_end):
             if (accc_determination == merger_status.APPROVED or
                 phase_1_determination == merger_status.APPROVED or
                 phase_2_determination == merger_status.APPROVED):
-                digest['deals_cleared'].append(create_merger_summary(merger))
-            # Deals declined/not approved in the last week
+                if merger_id not in already_cleared:
+                    digest['deals_cleared'].append(create_merger_summary(merger))
             elif (accc_determination == merger_status.NOT_APPROVED or
                   phase_1_determination == merger_status.NOT_APPROVED or
                   phase_2_determination == merger_status.NOT_APPROVED):
-                digest['deals_declined'].append(create_merger_summary(merger))
+                if merger_id not in already_declined:
+                    digest['deals_declined'].append(create_merger_summary(merger))
 
-        # Ongoing phase 1 deals (under assessment, in phase 1)
+        # Ongoing phase 1/2 lists are always a current snapshot, not a
+        # week-scoped activity list, so dedup does not apply.
         if (status == merger_status.UNDER_ASSESSMENT and
             stage == 'Phase 1 - initial assessment'):
             digest['ongoing_phase_1'].append(create_merger_summary(merger))
 
-        # Ongoing phase 2 deals (under assessment, in phase 2)
         if (status == merger_status.UNDER_ASSESSMENT and
             stage == 'Phase 2 - detailed assessment'):
             digest['ongoing_phase_2'].append(create_merger_summary(merger))
@@ -211,20 +339,30 @@ def generate_weekly_digest() -> Dict[str, Any]:
     return digest
 
 
+def _write_json(path: Path, data: Dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+
 def main():
     """Main entry point."""
     print("Generating weekly digest...")
 
     digest = generate_weekly_digest()
 
-    # Output to frontend public data directory
-    output_path = Path(__file__).parent.parent / 'merger-tracker' / 'frontend' / 'public' / 'data' / 'digest.json'
-    output_path.parent.mkdir(parents=True, exist_ok=True)
+    _write_json(OUTPUT_PATH, digest)
 
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(digest, f, indent=2, ensure_ascii=False)
+    # Also write a dated snapshot keyed by the Monday of the period. Next
+    # week's run will dedup against this archived copy rather than the
+    # live digest.json, so an ad-hoc mid-week re-run doesn't silently
+    # spoil the next scheduled digest.
+    period_start = datetime.fromisoformat(digest['period_start'])
+    archive_path = archive_path_for(period_start)
+    _write_json(archive_path, digest)
 
-    print(f"Digest generated: {output_path}")
+    print(f"Digest generated: {OUTPUT_PATH}")
+    print(f"Archive snapshot: {archive_path}")
     print(f"\nSummary:")
     print(f"  New deals notified (last week): {len(digest['new_deals_notified'])}")
     print(f"  Deals cleared (last week): {len(digest['deals_cleared'])}")
