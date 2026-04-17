@@ -160,7 +160,7 @@ export -f fetch_matter_page
 echo "Downloading main register page from $REGISTER_URL..."
 
 # Retry logic with 30-second timeout per attempt
-MAX_RETRIES=3
+MAX_RETRIES=2
 RETRY_COUNT=0
 TIMEOUT=30
 
@@ -173,7 +173,7 @@ while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
     RETRY_COUNT=$((RETRY_COUNT + 1))
     if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
       echo "Download timed out or failed (attempt $RETRY_COUNT/$MAX_RETRIES). Retrying..."
-      sleep 2
+      sleep $TIMEOUT
     else
       echo "Failed to download main page after $MAX_RETRIES attempts"
       exit 1
