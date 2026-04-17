@@ -17,7 +17,15 @@ buckets are built from a two-week window and then deduplicated against the
 previous week's digest. Anything that was already surfaced last week is
 removed; anything newly-visible in the last two weeks is included.
 
-Output: digest.json in the frontend public data directory
+The "previous week's digest" is loaded from a dated archive snapshot written
+by the last scheduled run, falling back to the current digest.json only when
+the archive is unavailable. That isolation means a mid-week manual re-run of
+this script won't spoil the dedup baseline for next week's scheduled run.
+
+Outputs:
+- digest.json in the frontend public data directory (the live digest)
+- data/digest-archive/digest-<YYYY-MM-DD>.json (dated snapshot, keyed by the
+  Monday of the period it covers)
 """
 
 import json
@@ -34,6 +42,13 @@ OUTPUT_PATH = (
     Path(__file__).parent.parent
     / 'merger-tracker' / 'frontend' / 'public' / 'data' / 'digest.json'
 )
+
+# Dated snapshots of each week's digest. Reading last week's snapshot from
+# here (rather than the current digest.json) means that an ad-hoc mid-week
+# re-run — for example, to pick up a decision that only appeared on the
+# ACCC register after Sunday's scheduled run — won't corrupt the dedup
+# baseline for the next scheduled run.
+DIGEST_ARCHIVE_DIR = Path(__file__).parent.parent / 'data' / 'digest-archive'
 
 # How far back to look for items that should appear in this digest.
 # Two weeks means: the prior Mon-Sun week plus the current Mon-Sun week.
@@ -98,14 +113,60 @@ def is_in_week_range(date_str: str, period_start: datetime, period_end: datetime
     return period_start <= dt <= period_end
 
 
-def load_previous_digest(path: Path = OUTPUT_PATH) -> Dict[str, Any]:
-    """Load the previously generated digest, or an empty dict if none exists.
+def archive_path_for(period_start: datetime, archive_dir: Optional[Path] = None) -> Path:
+    """The dated archive path for a digest whose period starts on ``period_start``.
+
+    ``archive_dir`` defaults to the module-level :data:`DIGEST_ARCHIVE_DIR`
+    *at call time*, so tests can monkeypatch that constant to redirect writes.
+    """
+    if archive_dir is None:
+        archive_dir = DIGEST_ARCHIVE_DIR
+    return archive_dir / f'digest-{period_start.date().isoformat()}.json'
+
+
+def resolve_previous_digest_path(
+    period_start: datetime,
+    archive_dir: Optional[Path] = None,
+    fallback: Optional[Path] = None,
+) -> Optional[Path]:
+    """Pick the path to load as last week's digest for dedup purposes.
+
+    Resolution order:
+
+    1. The dated archive snapshot for the immediately preceding Monday
+       (``<archive_dir>/digest-<last_week_monday>.json``). This is the
+       authoritative record of what last Sunday's scheduled run committed
+       and emailed, unaffected by any mid-week manual reruns of the
+       generator.
+    2. The current ``digest.json`` on disk, as a fallback for cases where
+       the dated archive isn't available (most notably the first run after
+       this archive mechanism is introduced).
+    3. ``None`` — treated as "no previous digest".
+
+    ``archive_dir`` / ``fallback`` default to the module-level constants
+    *at call time*.
+    """
+    if archive_dir is None:
+        archive_dir = DIGEST_ARCHIVE_DIR
+    if fallback is None:
+        fallback = OUTPUT_PATH
+    last_week_start = period_start - timedelta(days=7)
+    archived = archive_path_for(last_week_start, archive_dir)
+    if archived.exists():
+        return archived
+    if fallback.exists():
+        return fallback
+    return None
+
+
+def load_previous_digest(path: Optional[Path]) -> Dict[str, Any]:
+    """Load a digest JSON file, or return an empty dict.
 
     Used to deduplicate the time-scoped buckets: anything that was already
     surfaced in last week's digest is not repeated this week, even if its
     primary date falls inside the widened lookback window.
     """
-    if not path.exists():
+    if path is None or not path.exists():
         return {}
     try:
         with open(path, 'r', encoding='utf-8') as f:
@@ -192,7 +253,7 @@ def generate_weekly_digest(
     lookback_start = period_start - timedelta(days=7 * (LOOKBACK_WEEKS - 1))
 
     if previous_digest is None:
-        previous_digest = load_previous_digest()
+        previous_digest = load_previous_digest(resolve_previous_digest_path(period_start))
     already_notified = bucket_ids(previous_digest, 'new_deals_notified')
     already_cleared = bucket_ids(previous_digest, 'deals_cleared')
     already_declined = bucket_ids(previous_digest, 'deals_declined')
@@ -278,18 +339,30 @@ def generate_weekly_digest(
     return digest
 
 
+def _write_json(path: Path, data: Dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+
 def main():
     """Main entry point."""
     print("Generating weekly digest...")
 
     digest = generate_weekly_digest()
 
-    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    _write_json(OUTPUT_PATH, digest)
 
-    with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
-        json.dump(digest, f, indent=2, ensure_ascii=False)
+    # Also write a dated snapshot keyed by the Monday of the period. Next
+    # week's run will dedup against this archived copy rather than the
+    # live digest.json, so an ad-hoc mid-week re-run doesn't silently
+    # spoil the next scheduled digest.
+    period_start = datetime.fromisoformat(digest['period_start'])
+    archive_path = archive_path_for(period_start)
+    _write_json(archive_path, digest)
 
     print(f"Digest generated: {OUTPUT_PATH}")
+    print(f"Archive snapshot: {archive_path}")
     print(f"\nSummary:")
     print(f"  New deals notified (last week): {len(digest['new_deals_notified'])}")
     print(f"  Deals cleared (last week): {len(digest['deals_cleared'])}")
