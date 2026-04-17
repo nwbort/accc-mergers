@@ -151,6 +151,39 @@ class TestStatsGenerate:
         mining = next(i for i in payload['top_industries'] if i['name'] == 'Mining')
         assert mining['count'] == 2
 
+    def test_recent_determinations_includes_phase_2_referrals(self):
+        mergers = _raw_fixture()
+        mergers.append({
+            'merger_id': 'MN-0005',
+            'merger_name': 'Iota proceeds to phase 2',
+            'status': merger_status.UNDER_ASSESSMENT,
+            'accc_determination': None,
+            'stage': 'Phase 2 - detailed assessment',
+            'effective_notification_datetime': '2026-03-03T09:00:00Z',
+            'determination_publication_date': None,
+            'end_of_determination_period': '2026-08-01T12:00:00Z',
+            'page_modified_datetime': '2026-04-16T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': ['Iota'],
+            'targets': ['Kappa'],
+            'other_parties': [],
+            'url': 'https://example.com/MN-0005',
+            'events': [
+                {'title': 'Merger notified to ACCC', 'date': '2026-03-03T09:00:00Z', 'url': 'e6'},
+                {'title': 'Decision to Proceed to a Phase 2 review', 'date': '2026-04-16T12:00:00Z', 'url': 'e7'},
+            ],
+        })
+        enriched = [enrich_merger(m) for m in mergers]
+        payload = stats.generate(enriched)
+        phase_transitions = [
+            d for d in payload['recent_determinations']
+            if d.get('determination_type') == 'phase_transition'
+        ]
+        assert any(d['merger_id'] == 'MN-0005' for d in phase_transitions)
+        phase_2 = next(d for d in phase_transitions if d['merger_id'] == 'MN-0005')
+        assert phase_2['determination'] == merger_status.REFERRED_TO_PHASE_2
+        assert phase_2['determination_date'] == '2026-04-16T12:00:00Z'
+
 
 # ---------------------------------------------------------------------------
 # industries

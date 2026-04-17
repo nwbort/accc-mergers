@@ -29,6 +29,23 @@ def extract_phase_from_event(event_title: str) -> str | None:
     return None
 
 
+def is_phase_2_referral_event(event_title: str) -> bool:
+    """Return True if ``event_title`` marks the Phase 1 → Phase 2 transition.
+
+    The ACCC has used at least two phrasings on the public register:
+      - "ACCC decided notification is subject to Phase 2 review" (2025)
+      - "Decision to Proceed to a Phase 2 review" (from 2026)
+    """
+    if not event_title:
+        return False
+    lower = event_title.lower()
+    return (
+        'subject to phase 2 review' in lower
+        or 'proceed to a phase 2' in lower
+        or 'proceed to phase 2' in lower
+    )
+
+
 def enrich_merger(merger: dict, commentary: dict = None, questionnaire_data: dict = None) -> dict:
     """Add computed fields to a merger (phase determinations, etc.)."""
     m = merger.copy()
@@ -54,8 +71,7 @@ def enrich_merger(merger: dict, commentary: dict = None, questionnaire_data: dic
 
     # Check events for Phase 2 review decision (indicates Phase 1 completion)
     for event in m.get('events', []):
-        title = event.get('title', '')
-        if 'subject to Phase 2 review' in title:
+        if is_phase_2_referral_event(event.get('title', '')):
             phase_1_det = merger_status.REFERRED_TO_PHASE_2
             phase_1_det_date = event.get('date')
             break

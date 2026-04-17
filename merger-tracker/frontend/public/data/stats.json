@@ -7,7 +7,7 @@
   },
   "by_determination": {
     "Approved": 52,
-    "Referred to phase 2": 3
+    "Referred to phase 2": 4
   },
   "by_waiver_determination": {
     "Approved": 95,
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "determination": "Referred to phase 2",
+      "determination_date": "2026-04-16T12:00:00Z",
+      "page_modified_datetime": "2026-04-17T09:21:28+10:00",
+      "determination_type": "phase_transition",
+      "is_waiver": false,
+      "stage": "Phase 2 - detailed assessment"
+    },
+    {
       "merger_id": "WA-25010",
       "merger_name": "INNIO Group \u2013 Enerflex",
       "determination": "Not approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-85016",
-      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-      "determination": "Not approved",
-      "determination_date": "2026-04-14T12:00:00Z",
-      "page_modified_datetime": "2026-04-14T17:04:50+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
