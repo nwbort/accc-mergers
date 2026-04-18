@@ -15,6 +15,7 @@ sys.modules['markdownify'] = unittest.mock.MagicMock()
 sys.modules['requests'] = unittest.mock.MagicMock()
 
 from parse_determination import extract_commission_division, parse_text_as_table
+from parse_nocc import extract_sections as extract_nocc_sections, extract_key_dates as extract_nocc_key_dates
 from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text
 from cutoff import is_waiver_merger, get_cutoff_date, should_skip_merger
 from extract_mergers import is_safe_url, get_serve_filename
@@ -141,6 +142,136 @@ class TestParseTextAsTable:
         )
         result = parse_text_as_table(text)
         assert len(result) == 2
+
+
+# ---------------------------------------------------------------------------
+# parse_nocc: extract_sections
+# ---------------------------------------------------------------------------
+
+class TestExtractNoccSections:
+    def test_basic_sections(self):
+        text = (
+            "1. Introduction\n"
+            "1.1. This is an introduction paragraph.\n"
+            "2. Background\n"
+            "2.1. This is the background paragraph.\n"
+            "3. Next steps\n"
+            "3.1. These are the next steps.\n"
+        )
+        sections = extract_nocc_sections(text)
+        assert len(sections) == 3
+        assert sections[0]['number'] == '1'
+        assert sections[0]['title'] == 'Introduction'
+        assert 'introduction paragraph' in sections[0]['content']
+        assert sections[1]['title'] == 'Background'
+        assert sections[2]['title'] == 'Next steps'
+
+    def test_ignores_paragraph_numbers(self):
+        """A line like '1.1. Something' must not be treated as a section heading."""
+        text = (
+            "1. Introduction\n"
+            "1.1. First paragraph of introduction.\n"
+            "1.2. Second paragraph of introduction.\n"
+            "2. Background\n"
+            "2.1. Background paragraph.\n"
+        )
+        sections = extract_nocc_sections(text)
+        assert len(sections) == 2
+        assert 'First paragraph' in sections[0]['content']
+        assert 'Second paragraph' in sections[0]['content']
+
+    def test_strips_running_header(self):
+        text = (
+            "Notice of Competition Concerns – Summary | Acme Co (MN-12345)\n"
+            "1. Introduction\n"
+            "1.1. Intro text.\n"
+            "Notice of Competition Concerns – Summary | Acme Co (MN-12345)\n"
+            "2. Background\n"
+            "2.1. Background text.\n"
+            "Notice of Competition Concerns – Summary | Acme Co (MN-12345)\n"
+        )
+        sections = extract_nocc_sections(text)
+        assert len(sections) == 2
+        for section in sections:
+            assert 'Notice of Competition Concerns – Summary' not in section['content']
+
+    def test_drops_page_footers(self):
+        text = (
+            "1. Introduction\n"
+            "1.1. Intro text.\n"
+            "2\n"  # page footer
+            "2. Background\n"
+            "2.1. Background text.\n"
+            "3\n"  # page footer
+        )
+        sections = extract_nocc_sections(text)
+        assert len(sections) == 2
+        # Bare page-number lines should not appear in section content.
+        assert '\n2\n' not in '\n'.join(s['content'] for s in sections)
+
+    def test_preserves_subheadings(self):
+        text = (
+            "1. Introduction\n"
+            "1.1. Intro.\n"
+            "2. Background\n"
+            "The acquirer – Acme\n"
+            "2.1. Acme is a company.\n"
+            "The target – Widget Co\n"
+            "2.2. Widget Co is a target.\n"
+        )
+        sections = extract_nocc_sections(text)
+        assert len(sections) == 2
+        assert 'The acquirer – Acme' in sections[1]['content']
+        assert 'The target – Widget Co' in sections[1]['content']
+
+    def test_out_of_order_numbers_ignored(self):
+        """A stray '5. Something' before section 1 should not be treated as a section."""
+        text = (
+            "5. This looks like a heading but is out of order.\n"
+            "Some filler text.\n"
+            "1. Introduction\n"
+            "1.1. Intro.\n"
+            "2. Background\n"
+            "2.1. Background.\n"
+        )
+        sections = extract_nocc_sections(text)
+        assert len(sections) == 2
+        assert sections[0]['title'] == 'Introduction'
+
+    def test_empty_text(self):
+        assert extract_nocc_sections('') == []
+
+
+# ---------------------------------------------------------------------------
+# parse_nocc: extract_key_dates
+# ---------------------------------------------------------------------------
+
+class TestExtractNoccKeyDates:
+    def test_all_three_dates(self):
+        text = (
+            "1.3. On 5 March 2026, the ACCC issued a Notice of Competition Concerns (NOCC) "
+            "to Coles Supermarkets.\n"
+            "5.1. The notifying party has an opportunity to respond to the preliminary "
+            "issues identified in the NOCC by 14 April 2026.\n"
+            "5.2. Under the current statutory timeframe, the ACCC must issue a determination "
+            "in response to the Acquisition by 12 June 2026.\n"
+        )
+        dates = extract_nocc_key_dates(text)
+        assert dates['nocc_issued_date'] == '5 March 2026'
+        assert dates['response_due_date'] == '14 April 2026'
+        assert dates['determination_due_date'] == '12 June 2026'
+
+    def test_missing_dates(self):
+        text = "This NOCC has no parseable date references."
+        dates = extract_nocc_key_dates(text)
+        assert dates['nocc_issued_date'] is None
+        assert dates['response_due_date'] is None
+        assert dates['determination_due_date'] is None
+
+    def test_issued_date_alternate_phrasing(self):
+        text = "The ACCC issued a Notice of Competition Concerns to the parties on 27 February 2026."
+        dates = extract_nocc_key_dates(text)
+        assert dates['nocc_issued_date'] == '27 February 2026'
 
 
 # ---------------------------------------------------------------------------
