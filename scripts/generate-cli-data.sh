@@ -1,16 +1,22 @@
 #!/usr/bin/env bash
 # scripts/generate-cli-data.sh
 #
-# Generates two files consumed by the accc-mergers-cli companion tool:
+# Generates three files consumed by the accc-mergers-cli companion tool:
 #
 #   data/output/cli/cli-manifest.json
-#     Lightweight version file. The CLI fetches this first to check if its
-#     cached bundle is still current, without committing to a full download.
+#     Lightweight version file (~hundreds of bytes). The CLI fetches this
+#     first to check whether its cached bundle is still current, without
+#     committing to a full download.
 #
 #   data/output/cli/cli-bundle.json
 #     Complete dataset (all mergers + questionnaires + stats + industries)
 #     bundled into a single file. Only downloaded when the manifest's
 #     bundle_sha256 differs from the client's cached copy.
+#
+#   data/output/cli/cli-merger-manifest.json
+#     {merger_id: sha256} map of every individual merger file. Supports a
+#     future per-record incremental sync path; the CLI only fetches this
+#     when the main manifest's merger_manifest_sha256 has changed.
 #
 # These live under data/output/ (not deployed to Cloudflare Pages); the CLI
 # fetches them directly from raw.githubusercontent.com.
@@ -43,6 +49,7 @@ INDUSTRIES_FILE="$SRC_DIR/industries.json"
 OUT_DIR="$REPO_ROOT/data/output/cli"
 BUNDLE_PATH="$OUT_DIR/cli-bundle.json"
 MANIFEST_PATH="$OUT_DIR/cli-manifest.json"
+MERGER_MANIFEST_PATH="$OUT_DIR/cli-merger-manifest.json"
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -163,11 +170,15 @@ mv "$BUNDLE_TMP" "$BUNDLE_PATH"
 echo "Bundle updated: v${PREV_VERSION} -> v${NEW_VERSION}"
 
 # ---------------------------------------------------------------------------
+# Write per-merger manifest (separate file)
+#
 # Per-merger checksums support a future per-record incremental sync where the
-# CLI fetches only changed merger files instead of the full bundle.
+# CLI fetches only changed merger files instead of the full bundle. Kept in
+# its own file so the main cli-manifest.json stays small; the CLI only fetches
+# this one when it wants to do an incremental sync.
 # ---------------------------------------------------------------------------
 echo "Computing per-merger checksums..."
-MERGER_CHECKSUMS=$(python3 - "${MERGER_FILES[@]}" <<'PYEOF'
+python3 - "${MERGER_FILES[@]}" > "$MERGER_MANIFEST_PATH" <<'PYEOF'
 import hashlib, json, os, sys
 result = {}
 for path in sys.argv[1:]:
@@ -176,25 +187,29 @@ for path in sys.argv[1:]:
         result[merger_id] = hashlib.sha256(f.read()).hexdigest()
 print(json.dumps(result, separators=(',', ':'), sort_keys=True))
 PYEOF
-)
+
+MERGER_MANIFEST_SHA256=$(sha256_file "$MERGER_MANIFEST_PATH")
 
 # ---------------------------------------------------------------------------
-# Write manifest
+# Write top-level manifest
+#
+# merger_manifest_sha256 lets the CLI detect whether cli-merger-manifest.json
+# needs to be re-fetched without downloading it.
 # ---------------------------------------------------------------------------
 GENERATED_AT=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
 
 jq -n \
-    --argjson version          "$NEW_VERSION" \
-    --arg     generated_at     "$GENERATED_AT" \
-    --argjson merger_count     "$MERGER_COUNT" \
-    --arg     bundle_sha256    "$BUNDLE_SHA256" \
-    --argjson merger_checksums "$MERGER_CHECKSUMS" \
+    --argjson version                "$NEW_VERSION" \
+    --arg     generated_at           "$GENERATED_AT" \
+    --argjson merger_count           "$MERGER_COUNT" \
+    --arg     bundle_sha256          "$BUNDLE_SHA256" \
+    --arg     merger_manifest_sha256 "$MERGER_MANIFEST_SHA256" \
     '{
-        version:          $version,
-        generated_at:     $generated_at,
-        merger_count:     $merger_count,
-        bundle_sha256:    $bundle_sha256,
-        merger_checksums: $merger_checksums
+        version:                $version,
+        generated_at:           $generated_at,
+        merger_count:           $merger_count,
+        bundle_sha256:          $bundle_sha256,
+        merger_manifest_sha256: $merger_manifest_sha256
     }' > "$MANIFEST_PATH"
 
 # ---------------------------------------------------------------------------
@@ -203,9 +218,10 @@ jq -n \
 BUNDLE_KB=$(( $(wc -c < "$BUNDLE_PATH") / 1024 ))
 echo ""
 echo "CLI data generated"
-echo "  Version:   $NEW_VERSION"
-echo "  Generated: $GENERATED_AT"
-echo "  Mergers:   $MERGER_COUNT"
-echo "  Bundle:    $BUNDLE_PATH (${BUNDLE_KB} KB)"
-echo "  Manifest:  $MANIFEST_PATH"
-echo "  SHA256:    $BUNDLE_SHA256"
+echo "  Version:         $NEW_VERSION"
+echo "  Generated:       $GENERATED_AT"
+echo "  Mergers:         $MERGER_COUNT"
+echo "  Bundle:          $BUNDLE_PATH (${BUNDLE_KB} KB)"
+echo "  Manifest:        $MANIFEST_PATH"
+echo "  Merger manifest: $MERGER_MANIFEST_PATH"
+echo "  Bundle SHA256:   $BUNDLE_SHA256"
