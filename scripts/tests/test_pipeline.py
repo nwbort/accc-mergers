@@ -15,6 +15,7 @@ sys.modules['markdownify'] = unittest.mock.MagicMock()
 sys.modules['requests'] = unittest.mock.MagicMock()
 
 from parse_determination import extract_commission_division, parse_text_as_table
+from parse_notice_of_competition_concerns import split_sections, extract_issue_date
 from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text
 from cutoff import is_waiver_merger, get_cutoff_date, should_skip_merger
 from extract_mergers import is_safe_url, get_serve_filename
@@ -141,6 +142,95 @@ class TestParseTextAsTable:
         )
         result = parse_text_as_table(text)
         assert len(result) == 2
+
+
+# ---------------------------------------------------------------------------
+# parse_notice_of_competition_concerns: split_sections
+# ---------------------------------------------------------------------------
+
+class TestNOCCSplitSections:
+    def test_splits_on_top_level_headings(self):
+        text = (
+            "1. Introduction\n"
+            "1.1. Lorem ipsum.\n"
+            "2. Background\n"
+            "2.1. Dolor sit amet.\n"
+            "3. Next steps\n"
+            "3.1. Consequuntur."
+        )
+        result = split_sections(text)
+        assert [s['item'] for s in result] == [
+            "1. Introduction",
+            "2. Background",
+            "3. Next steps",
+        ]
+        assert "Lorem ipsum" in result[0]['details']
+        assert "Dolor sit amet" in result[1]['details']
+        assert "Consequuntur" in result[2]['details']
+
+    def test_ignores_numbered_paragraphs(self):
+        # 1.1. and 2.15. style paragraph numbers must not be treated as section headings.
+        text = (
+            "1. Introduction\n"
+            "1.1. First paragraph.\n"
+            "1.2. Second paragraph.\n"
+            "2. Background\n"
+            "2.15. A later paragraph."
+        )
+        result = split_sections(text)
+        assert len(result) == 2
+        assert result[0]['item'] == "1. Introduction"
+        assert "1.1." in result[0]['details']
+        assert "1.2." in result[0]['details']
+
+    def test_sub_headings_remain_in_details(self):
+        text = (
+            "1. Introduction\n"
+            "1.1. Some intro.\n"
+            "2. Background\n"
+            "The Acquisition\n"
+            "2.1. Details about the acquisition.\n"
+            "The acquirer\n"
+            "2.2. Details about the acquirer."
+        )
+        result = split_sections(text)
+        assert len(result) == 2
+        assert "The Acquisition" in result[1]['details']
+        assert "The acquirer" in result[1]['details']
+
+    def test_requires_sequential_numbering(self):
+        # A lone "7." heading with no "1." context should not be treated as a section.
+        text = (
+            "7. Something that looks like a heading\n"
+            "but is actually a stray line."
+        )
+        assert split_sections(text) == []
+
+    def test_empty_input(self):
+        assert split_sections("") == []
+
+
+# ---------------------------------------------------------------------------
+# parse_notice_of_competition_concerns: extract_issue_date
+# ---------------------------------------------------------------------------
+
+class TestNOCCExtractIssueDate:
+    def test_standard_sentence(self):
+        text = (
+            "1.3. On 5 March 2026, the ACCC issued a Notice of Competition "
+            "Concerns (NOCC) to Coles Supermarkets."
+        )
+        assert extract_issue_date(text) == "5 March 2026"
+
+    def test_sentence_without_comma(self):
+        text = "On 27 February 2026 the ACCC issued a Notice of Competition Concerns to Ampol."
+        assert extract_issue_date(text) == "27 February 2026"
+
+    def test_no_match_returns_none(self):
+        assert extract_issue_date("No issuing sentence here.") is None
+
+    def test_empty_input(self):
+        assert extract_issue_date("") is None
 
 
 # ---------------------------------------------------------------------------

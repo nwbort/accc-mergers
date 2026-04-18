@@ -11,6 +11,7 @@ import re
 from datetime import datetime
 from markdownify import markdownify as md
 from parse_determination import parse_determination_pdf
+from parse_notice_of_competition_concerns import parse_notice_of_competition_concerns_pdf
 from parse_questionnaire import process_all_questionnaires
 from normalization import normalize_determination
 from cutoff import should_skip_merger, get_skipped_merger_ids, is_waiver_merger
@@ -117,14 +118,16 @@ def download_attachment(merger_id, attachment_url, event_title=None):
     """
     Downloads an attachment if it doesn't already exist locally.
     If it's a determination PDF, also parses it to extract commission division and table content.
+    If it's a Notice of Competition Concerns summary PDF, parses it into sections.
 
     Args:
         merger_id: The merger ID
         attachment_url: URL to download
-        event_title: Title of the event (used to detect determination PDFs)
+        event_title: Title of the event (used to detect what kind of PDF this is)
 
     Returns:
-        Dictionary with parsed determination data if applicable, None otherwise
+        Dict with keys 'determination' and/or 'nocc' holding parsed data,
+        or None if nothing applicable was parsed.
     """
     if not merger_id or not attachment_url:
         return None
@@ -133,7 +136,7 @@ def download_attachment(merger_id, attachment_url, event_title=None):
         print(f"Warning: Rejecting URL with disallowed domain: {attachment_url}", file=sys.stderr)
         return None
 
-    determination_data = None
+    parsed: dict = {}
 
     try:
         # Create a directory for the merger's attachments
@@ -168,26 +171,39 @@ def download_attachment(merger_id, attachment_url, event_title=None):
                 for chunk in response.iter_content(chunk_size=8192):
                     f_out.write(chunk)
 
-        # Check if this is a determination PDF and parse it
+        title_lower = (event_title or '').lower()
+        is_pdf = filename.lower().endswith('.pdf')
+
+        # Notice of Competition Concerns summaries are tracked as determination-like
+        # events too, so check for them first and treat them as NOCC only.
+        is_nocc = (
+            is_pdf and
+            'notice of competition concerns' in title_lower
+        )
         is_determination = (
-            event_title and
-            'determination' in event_title.lower() and
-            filename.lower().endswith('.pdf')
+            is_pdf and
+            not is_nocc and
+            'determination' in title_lower
         )
 
         if is_determination and os.path.exists(local_filepath):
             try:
-                determination_data = parse_determination_pdf(local_filepath)
+                parsed['determination'] = parse_determination_pdf(local_filepath)
             except Exception as e:
                 print(f"Error parsing determination PDF {filename}: {e}", file=sys.stderr)
-                determination_data = None
+
+        if is_nocc and os.path.exists(local_filepath):
+            try:
+                parsed['nocc'] = parse_notice_of_competition_concerns_pdf(local_filepath)
+            except Exception as e:
+                print(f"Error parsing NOCC PDF {filename}: {e}", file=sys.stderr)
 
     except requests.exceptions.RequestException as e:
         print(f"Error downloading {attachment_url}: {e}", file=sys.stderr)
     except IOError as e:
         print(f"Error saving file {local_filepath}: {e}", file=sys.stderr)
 
-    return determination_data
+    return parsed or None
 
 
 def get_serve_filename(original_filename: str) -> str:
@@ -393,10 +409,17 @@ def _scrape_events(soup, merger_id):
                 url = urljoin(BASE_URL, link_tag['href'])
                 event['url'] = url
 
-                determination_data = download_attachment(merger_id, url, title)
-                if determination_data:
-                    event['determination_commission_division'] = determination_data.get('commission_division')
-                    event['determination_table_content'] = determination_data.get('table_content')
+                parsed_attachment = download_attachment(merger_id, url, title)
+                if parsed_attachment:
+                    determination_data = parsed_attachment.get('determination')
+                    if determination_data:
+                        event['determination_commission_division'] = determination_data.get('commission_division')
+                        event['determination_table_content'] = determination_data.get('table_content')
+
+                    nocc_data = parsed_attachment.get('nocc')
+                    if nocc_data:
+                        event['nocc_sections'] = nocc_data.get('sections')
+                        event['nocc_issue_date'] = nocc_data.get('issue_date')
 
                 parsed_url = urlparse(url)
                 original_filename = unquote(os.path.basename(parsed_url.path)).strip()
