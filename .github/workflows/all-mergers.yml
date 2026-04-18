@@ -71,6 +71,9 @@ jobs:
       - name: Generate static data files
         run: python scripts/generate_static_data.py
 
+      - name: Generate CLI data bundle
+        run: ./scripts/generate-cli-data.sh
+
       - name: Generate RSS feed
         run: python scripts/generate_rss_feed.py
 

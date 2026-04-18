@@ -79,7 +79,8 @@ scripts/
 data/
 ├── raw/                  # Scraped HTML files and PDFs
 ├── processed/            # Intermediate JSON (mergers.json, commentary.json)
-└── output/               # Full enriched mergers.json (for offline analysis, not deployed)
+└── output/               # Not deployed. Full enriched mergers.json (offline analysis)
+    └── cli/              # Bundled data files for accc-mergers-cli (manifest + bundle)
 ```
 
 ## Common Commands
