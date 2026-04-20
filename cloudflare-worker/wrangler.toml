@@ -18,13 +18,21 @@ compatibility_date = "2024-09-23"
 #   wrangler secret put TURNSTILE_SECRET_KEY
 #
 # Do NOT put real values here; wrangler.toml is committed to the repo.
-#
-# Turnstile setup:
-#   1. Go to Cloudflare Dashboard > Turnstile > Add site
-#   2. Copy the Site Key into merger-tracker/frontend/src/config.js (TURNSTILE_SITE_KEY)
-#   3. Run: wrangler secret put TURNSTILE_SECRET_KEY  (paste the Secret Key when prompted)
 
-# Environment variable — controls CORS localhost access
+# D1 database for feedback storage.
+# Setup:
+#   1. wrangler d1 create mergers-feedback
+#   2. Copy the database_id from the output and paste it below
+#   3. wrangler d1 execute mergers-feedback --file=schema.sql
+#   4. wrangler deploy
+#
+# To read feedback: Cloudflare Dashboard → D1 → mergers-feedback → Console
+#   SELECT * FROM feedback ORDER BY created_at DESC;
+[[d1_databases]]
+binding = "DB"
+database_name = "mergers-feedback"
+database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+
 [vars]
 ENVIRONMENT = "production"
 

@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
 import KeyboardShortcutsHelp from './components/KeyboardShortcutsHelp';
+import FeedbackPopup from './components/FeedbackPopup';
 import { TrackingProvider } from './context/TrackingContext';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 import Dashboard from './pages/Dashboard';
@@ -52,6 +53,7 @@ function AppContent() {
         isOpen={showShortcuts}
         onClose={() => setShowShortcuts(false)}
       />
+      <FeedbackPopup />
     </>
   );
 }
