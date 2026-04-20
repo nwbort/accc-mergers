@@ -5,6 +5,7 @@ Generate a weekly digest of ACCC merger activity.
 This script creates a summary showing:
 - New deals notified (but not yet determined) in the last week
 - Deals cleared in the last week
+- Deals referred to phase 2 in the last week
 - Deals declined/not approved in the last week
 - Ongoing phase 1 deals
 - Ongoing phase 2 deals
@@ -36,6 +37,7 @@ from typing import Dict, List, Any, Optional, Set
 from constants import merger_status
 from date_utils import parse_iso_datetime
 from merger_filters import filter_active, load_mergers
+from static_data.enrichment import enrich_merger
 
 
 OUTPUT_PATH = (
@@ -223,6 +225,7 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
         'status': merger.get('status'),
         'is_waiver': merger.get('is_waiver', False),
         'phase_1_determination': merger.get('phase_1_determination'),
+        'phase_1_determination_date': merger.get('phase_1_determination_date'),
         'phase_2_determination': merger.get('phase_2_determination'),
         'merger_description': truncated_description,
         'events': merger.get('events', []),
@@ -245,7 +248,7 @@ def generate_weekly_digest(
             week's digest are not repeated. Defaults to reading the
             currently-on-disk digest.json.
     """
-    mergers = filter_active(load_mergers())
+    mergers = filter_active([enrich_merger(m) for m in load_mergers()])
 
     # Get the Monday-Sunday week range in Australian time (for display) and
     # the widened lookback window that actually drives inclusion.
@@ -256,6 +259,7 @@ def generate_weekly_digest(
         previous_digest = load_previous_digest(resolve_previous_digest_path(period_start))
     already_notified = bucket_ids(previous_digest, 'new_deals_notified')
     already_cleared = bucket_ids(previous_digest, 'deals_cleared')
+    already_referred = bucket_ids(previous_digest, 'deals_referred_to_phase_2')
     already_declined = bucket_ids(previous_digest, 'deals_declined')
 
     sydney_tz = ZoneInfo('Australia/Sydney')
@@ -267,6 +271,7 @@ def generate_weekly_digest(
         'period_end': period_end.isoformat(),
         'new_deals_notified': [],
         'deals_cleared': [],
+        'deals_referred_to_phase_2': [],
         'deals_declined': [],
         'ongoing_phase_1': [],
         'ongoing_phase_2': [],
@@ -305,6 +310,12 @@ def generate_weekly_digest(
                 if merger_id not in already_declined:
                     digest['deals_declined'].append(create_merger_summary(merger))
 
+        phase_1_determination_date = merger.get('phase_1_determination_date')
+        if (phase_1_determination == merger_status.REFERRED_TO_PHASE_2 and
+            is_in_week_range(phase_1_determination_date, lookback_start, period_end) and
+            merger_id not in already_referred):
+            digest['deals_referred_to_phase_2'].append(create_merger_summary(merger))
+
         # Ongoing phase 1/2 lists are always a current snapshot, not a
         # week-scoped activity list, so dedup does not apply.
         if (status == merger_status.UNDER_ASSESSMENT and
@@ -320,9 +331,12 @@ def generate_weekly_digest(
         key=lambda x: x.get('effective_notification_datetime') or ''
     )
 
-    # Sort cleared and declined by determination date (ascending)
+    # Sort cleared, referred, and declined by determination date (ascending)
     digest['deals_cleared'].sort(
         key=lambda x: x.get('determination_publication_date') or ''
+    )
+    digest['deals_referred_to_phase_2'].sort(
+        key=lambda x: x.get('phase_1_determination_date') or ''
     )
     digest['deals_declined'].sort(
         key=lambda x: x.get('determination_publication_date') or ''
@@ -366,6 +380,7 @@ def main():
     print(f"\nSummary:")
     print(f"  New deals notified (last week): {len(digest['new_deals_notified'])}")
     print(f"  Deals cleared (last week): {len(digest['deals_cleared'])}")
+    print(f"  Deals referred to phase 2 (last week): {len(digest['deals_referred_to_phase_2'])}")
     print(f"  Deals declined (last week): {len(digest['deals_declined'])}")
     print(f"  Ongoing phase 1 deals: {len(digest['ongoing_phase_1'])}")
     print(f"  Ongoing phase 2 deals: {len(digest['ongoing_phase_2'])}")

@@ -55,6 +55,7 @@ export const DIGEST_COLOR_KEYS = {
   NEW_MERGER: 'new-merger',
   CLEARED: 'cleared',
   DECLINED: 'declined',
+  PHASE_2_REFERRAL: 'phase-2-referral',
   PHASE_1: 'phase-1',
   PHASE_2: 'phase-2',
 };
@@ -101,6 +102,19 @@ export const DIGEST_COLOR_CLASSES = {
     cardBorder: 'border-declined-light/30',
     groupHoverText: 'group-hover:text-declined-dark',
     labelText: 'text-declined-dark/80',
+  },
+  [DIGEST_COLOR_KEYS.PHASE_2_REFERRAL]: {
+    borderLeft: 'border-l-phase-2-referral',
+    borderLight: 'border-phase-2-referral-light/20',
+    headerBg: 'from-phase-2-referral-pale/50',
+    emptyText: 'text-phase-2-referral/70',
+    text: 'text-phase-2-referral',
+    hoverText: 'hover:text-phase-2-referral-dark',
+    cardFrom: 'from-phase-2-referral-pale',
+    cardTo: 'to-phase-2-referral-pale/50',
+    cardBorder: 'border-phase-2-referral-light/30',
+    groupHoverText: 'group-hover:text-phase-2-referral-dark',
+    labelText: 'text-phase-2-referral-dark/80',
   },
   [DIGEST_COLOR_KEYS.PHASE_1]: {
     borderLeft: 'border-l-phase-1',
