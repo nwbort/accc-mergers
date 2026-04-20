@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { FEEDBACK_ENDPOINT, TURNSTILE_SITE_KEY } from '../config';
 
 // Set to false to hide the popup entirely (e.g. between feedback campaigns).
-const ENABLED = false;
+const ENABLED = true;
 
 // Set to false to suppress the popup on mobile screens (< 768px).
 const SHOW_ON_MOBILE = false;
