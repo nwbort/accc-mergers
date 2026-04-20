@@ -1,7 +1,11 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { FEEDBACK_ENDPOINT, TURNSTILE_SITE_KEY } from '../config';
 
-// Bump this string whenever you want to resurface the popup for a new feedback campaign.
+// Set to false to hide the popup entirely (e.g. between feedback campaigns).
+const ENABLED = true;
+
+// Bump this string to resurface the popup for everyone who dismissed a previous campaign.
+// e.g. 'v1' → 'v2' shows it again to all previous dismissers.
 const CAMPAIGN = 'v1';
 const STORAGE_KEY = `feedback_dismissed_${CAMPAIGN}`;
 const SHOW_DELAY_MS = 30_000;
@@ -16,9 +20,9 @@ function FeedbackPopup() {
   const turnstileRef = useRef(null);
   const widgetIdRef = useRef(null);
 
-  // Show after delay unless already dismissed for this campaign
+  // Show after delay unless disabled or already dismissed for this campaign
   useEffect(() => {
-    if (localStorage.getItem(STORAGE_KEY)) return;
+    if (!ENABLED || localStorage.getItem(STORAGE_KEY)) return;
     const timer = setTimeout(() => setIsVisible(true), SHOW_DELAY_MS);
     return () => clearTimeout(timer);
   }, []);
