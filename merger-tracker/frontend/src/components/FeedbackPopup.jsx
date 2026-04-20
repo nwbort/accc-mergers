@@ -4,6 +4,9 @@ import { FEEDBACK_ENDPOINT, TURNSTILE_SITE_KEY } from '../config';
 // Set to false to hide the popup entirely (e.g. between feedback campaigns).
 const ENABLED = true;
 
+// Set to false to suppress the popup on mobile screens (< 768px).
+const SHOW_ON_MOBILE = true;
+
 // Bump this string to resurface the popup for everyone who dismissed a previous campaign.
 // e.g. 'v1' → 'v2' shows it again to all previous dismissers.
 const CAMPAIGN = 'v1';
@@ -22,7 +25,8 @@ function FeedbackPopup() {
 
   // Show after delay unless disabled or already dismissed for this campaign
   useEffect(() => {
-    if (!ENABLED || localStorage.getItem(STORAGE_KEY)) return;
+    const isMobile = window.innerWidth < 768;
+    if (!ENABLED || (!SHOW_ON_MOBILE && isMobile) || localStorage.getItem(STORAGE_KEY)) return;
     const timer = setTimeout(() => setIsVisible(true), SHOW_DELAY_MS);
     return () => clearTimeout(timer);
   }, []);
