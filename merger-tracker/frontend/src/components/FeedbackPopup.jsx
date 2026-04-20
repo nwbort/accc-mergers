@@ -11,7 +11,7 @@ const SHOW_ON_MOBILE = false;
 // e.g. 'v1' → 'v2' shows it again to all previous dismissers.
 const CAMPAIGN = 'v1';
 const STORAGE_KEY = `feedback_dismissed_${CAMPAIGN}`;
-const SHOW_DELAY_MS = 1_000;
+const SHOW_DELAY_MS = 10_000;
 
 function FeedbackPopup() {
   const [isVisible, setIsVisible] = useState(false);
