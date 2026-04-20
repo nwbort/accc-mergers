@@ -511,6 +511,10 @@ function Mergers() {
                 tabIndex={0}
                 aria-label={`View merger details for ${merger.merger_name}`}
                 onClick={() => navigate(`/mergers/${merger.merger_id}`)}
+                onMouseDown={(e) => { if (e.button === 1) e.preventDefault(); }}
+                onAuxClick={(e) => {
+                  if (e.button === 1) window.open(`/mergers/${merger.merger_id}`, '_blank');
+                }}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
