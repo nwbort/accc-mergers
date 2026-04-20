@@ -5,7 +5,7 @@ import { FEEDBACK_ENDPOINT, TURNSTILE_SITE_KEY } from '../config';
 const ENABLED = true;
 
 // Set to false to suppress the popup on mobile screens (< 768px).
-const SHOW_ON_MOBILE = true;
+const SHOW_ON_MOBILE = false;
 
 // Bump this string to resurface the popup for everyone who dismissed a previous campaign.
 // e.g. 'v1' → 'v2' shows it again to all previous dismissers.
