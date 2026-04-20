@@ -1350,6 +1350,14 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-04-02",
+        "business_days": 10,
+        "calendar_days": 18,
+        "merger_name": "Prime Super - Additional interest in Peninsula Link Project",
+        "merger_id": "WA-90010",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-04-07",
         "business_days": 8,
         "calendar_days": 10,
@@ -1384,10 +1392,10 @@
     ],
     "stats": {
       "average": 11.6,
-      "median": 11,
+      "median": 11.0,
       "min": 2,
       "max": 22,
-      "count": 107
+      "count": 108
     }
   },
   "monthly_volume": {
@@ -1419,7 +1427,7 @@
       30,
       30,
       42,
-      5
+      6
     ]
   }
 }

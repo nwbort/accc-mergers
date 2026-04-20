@@ -1,6 +1,6 @@
 {
   "total_mergers": 79,
-  "total_waivers": 107,
+  "total_waivers": 108,
   "by_status": {
     "Assessment completed": 53,
     "Under assessment": 26
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 97,
+    "Approved": 98,
     "Not approved": 10
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-90010",
+      "merger_name": "Prime Super - Additional interest in Peninsula Link Project",
+      "determination": "Approved",
+      "determination_date": "2026-04-20T12:00:00Z",
+      "page_modified_datetime": "2026-04-20T18:01:43+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-40014",
       "merger_name": "Infosys \u2013 Optimum Healthcare IT",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Not approved",
       "determination_date": "2026-04-16T12:00:00Z",
       "page_modified_datetime": "2026-04-16T17:23:04+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-45011",
-      "merger_name": "Signant - ActiGraph",
-      "determination": "Approved",
-      "determination_date": "2026-04-16T12:00:00Z",
-      "page_modified_datetime": "2026-04-16T17:19:44+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
