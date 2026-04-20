@@ -24,9 +24,13 @@ compatibility_date = "2024-09-23"
 #   2. Copy the Site Key into merger-tracker/frontend/src/config.js (TURNSTILE_SITE_KEY)
 #   3. Run: wrangler secret put TURNSTILE_SECRET_KEY  (paste the Secret Key when prompted)
 
-# Environment variable — controls CORS localhost access
+# Environment variables
 [vars]
 ENVIRONMENT = "production"
+# Sender address for feedback emails (must be a verified Resend domain)
+FEEDBACK_FROM_EMAIL = "Mergers.fyi <noreply@mergers.fyi>"
+# Recipient address for feedback emails
+FEEDBACK_TO_EMAIL = "nick@mergers.fyi"
 
 # Local development overrides (used by `wrangler dev`)
 [env.dev]
