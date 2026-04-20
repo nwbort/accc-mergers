@@ -3,21 +3,25 @@
  *
  * Routes:
  *   POST /          — digest email signup (adds contact to Resend audience)
- *   POST /feedback  — sends feedback email via Resend to the site owner
+ *   POST /feedback  — stores feedback in Cloudflare D1
  *
  * Required Worker secrets (set via `wrangler secret put`):
  *   RESEND_API_KEY        — Resend API key
  *   RESEND_AUDIENCE_ID    — Resend audience ID (signup only)
  *   TURNSTILE_SECRET_KEY  — Cloudflare Turnstile secret key
+ *
+ * Required D1 binding (wrangler.toml):
+ *   DB  — mergers-feedback D1 database
+ *
+ * To view feedback: Cloudflare Dashboard → D1 → mergers-feedback → Console
+ *   SELECT * FROM feedback ORDER BY created_at DESC;
  */
 
 const RESEND_API_BASE = "https://api.resend.com";
 const TURNSTILE_VERIFY_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
 
-// Allowed origin for CORS — update if you serve the form from a different domain
 const ALLOWED_ORIGIN = "https://mergers.fyi";
 
-// Simple but robust email regex
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // ---------------------------------------------------------------------------
@@ -25,7 +29,6 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 // ---------------------------------------------------------------------------
 
 function corsHeaders(origin, env = {}) {
-  // Only allow localhost origins in development environments
   const allowedOrigins = env.ENVIRONMENT === 'development'
     ? [ALLOWED_ORIGIN, "http://localhost:5173", "http://localhost:4173"]
     : [ALLOWED_ORIGIN];
@@ -113,7 +116,6 @@ async function handleSubscribe(request, env, origin) {
     return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 400, origin, env);
   }
 
-  // Add contact to Resend audience
   let resendResp;
   try {
     resendResp = await fetch(
@@ -124,10 +126,7 @@ async function handleSubscribe(request, env, origin) {
           Authorization: `Bearer ${env.RESEND_API_KEY}`,
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({
-          email,
-          unsubscribed: false,
-        }),
+        body: JSON.stringify({ email, unsubscribed: false }),
       }
     );
   } catch (err) {
@@ -136,13 +135,9 @@ async function handleSubscribe(request, env, origin) {
   }
 
   if (!resendResp.ok) {
-    // Consume the body so the socket can be reused, but do not log it — Resend
-    // error payloads echo the submitted email address, which would leak PII
-    // into Cloudflare Logs. Log only the status and Resend's short "name" code.
     const errData = await resendResp.json().catch(() => ({}));
     const errName = typeof errData?.name === "string" ? errData.name : "unknown";
     console.error("Resend API error:", resendResp.status, errName);
-    // 409 means contact already exists — that's fine, treat as success
     if (resendResp.status !== 409) {
       return jsonResponse({ error: "Failed to subscribe. Please try again." }, 500, origin, env);
     }
@@ -157,7 +152,7 @@ async function handleSubscribe(request, env, origin) {
 }
 
 // ---------------------------------------------------------------------------
-// Handler: POST /feedback — send feedback email to site owner
+// Handler: POST /feedback — store feedback in D1
 // ---------------------------------------------------------------------------
 
 async function handleFeedback(request, env, origin) {
@@ -169,7 +164,7 @@ async function handleFeedback(request, env, origin) {
   }
 
   const message = (body.message || "").trim();
-  const replyTo = (body.email || "").trim().toLowerCase();
+  const email = (body.email || "").trim().toLowerCase();
   const turnstileToken = body["cf-turnstile-response"] || "";
 
   if (!message) {
@@ -180,7 +175,7 @@ async function handleFeedback(request, env, origin) {
     return jsonResponse({ error: "Message is too long (max 5000 characters)" }, 400, origin, env);
   }
 
-  if (replyTo && !EMAIL_RE.test(replyTo)) {
+  if (email && !EMAIL_RE.test(email)) {
     return jsonResponse({ error: "Please enter a valid email address" }, 400, origin, env);
   }
 
@@ -208,44 +203,16 @@ async function handleFeedback(request, env, origin) {
     return jsonResponse({ error: "CAPTCHA verification failed. Please try again." }, 400, origin, env);
   }
 
-  const fromEmail = env.FEEDBACK_FROM_EMAIL || "Mergers.fyi <noreply@mergers.fyi>";
-  const toEmail = env.FEEDBACK_TO_EMAIL || "nick@mergers.fyi";
-
-  const emailText = replyTo
-    ? `New feedback from mergers.fyi\n\n${message}\n\n---\nReply-to: ${replyTo}`
-    : `New feedback from mergers.fyi\n\n${message}`;
-
-  const emailPayload = {
-    from: fromEmail,
-    to: [toEmail],
-    subject: "New feedback from mergers.fyi",
-    text: emailText,
-    ...(replyTo && { reply_to: replyTo }),
-  };
-
-  let resendResp;
   try {
-    resendResp = await fetch(`${RESEND_API_BASE}/emails`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${env.RESEND_API_KEY}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(emailPayload),
-    });
+    await env.DB.prepare(
+      "INSERT INTO feedback (message, email) VALUES (?, ?)"
+    ).bind(message, email || null).run();
   } catch (err) {
-    console.error("Network error sending feedback email:", err);
-    return jsonResponse({ error: "Failed to send feedback. Please try again." }, 503, origin, env);
+    console.error("D1 insert error:", err);
+    return jsonResponse({ error: "Failed to save feedback. Please try again." }, 500, origin, env);
   }
 
-  if (!resendResp.ok) {
-    const errData = await resendResp.json().catch(() => ({}));
-    const errName = typeof errData?.name === "string" ? errData.name : "unknown";
-    console.error("Resend API error sending feedback:", resendResp.status, errName);
-    return jsonResponse({ error: "Failed to send feedback. Please try again." }, 500, origin, env);
-  }
-
-  return jsonResponse({ success: true, message: "Feedback sent. Thanks!" }, 200, origin, env);
+  return jsonResponse({ success: true, message: "Feedback saved. Thanks!" }, 200, origin, env);
 }
 
 // ---------------------------------------------------------------------------
@@ -256,7 +223,6 @@ export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
 
-    // Handle CORS preflight
     if (request.method === "OPTIONS") {
       return new Response(null, {
         status: 204,
@@ -268,8 +234,7 @@ export default {
       return jsonResponse({ error: "Method not allowed" }, 405, origin, env);
     }
 
-    const url = new URL(request.url);
-    const path = url.pathname;
+    const path = new URL(request.url).pathname;
 
     if (path === "/feedback") {
       return handleFeedback(request, env, origin);
