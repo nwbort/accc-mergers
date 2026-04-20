@@ -50,6 +50,12 @@ export default {
           dark: '#3A3372',
           pale: '#E8E5F3',
         },
+        'phase-2-referral': {
+          DEFAULT: '#d97706',
+          light: '#f59e0b',
+          dark: '#b45309',
+          pale: '#fef3c7',
+        },
       },
       boxShadow: {
         'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
