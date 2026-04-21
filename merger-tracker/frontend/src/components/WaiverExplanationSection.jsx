@@ -69,7 +69,7 @@ function WaiverExplanationSection({ events }) {
 
   const determinationEvent = eventsArr.find(e => e.is_determination_event && e.url_gh);
 
-  const paragraphs = cleanExplanation(explanationDetails)
+  const rawParagraphs = cleanExplanation(explanationDetails)
     .split('\n\n')
     .map(p => p.trim())
     .filter(p =>
@@ -77,6 +77,13 @@ function WaiverExplanationSection({ events }) {
       !p.startsWith('In making this notification waiver determination, the Australian Competition and Consumer Commission') &&
       !p.startsWith('For more information about the ACCC')
     );
+
+  // If the very first paragraph is a bullet point, strip the bullet and treat it as plain text.
+  if (rawParagraphs.length > 0 && rawParagraphs[0].startsWith('•')) {
+    rawParagraphs[0] = rawParagraphs[0].replace(/^•\s*/, '');
+  }
+
+  const paragraphs = rawParagraphs;
 
   const segments = groupSegments(paragraphs);
 

@@ -299,6 +299,11 @@ function MergerDetail() {
           </Link>
         )}
 
+        {/* Waiver explanation */}
+        {merger.is_waiver && (
+          <WaiverExplanationSection events={merger.events} />
+        )}
+
         {/* Parties */}
         <div className={`grid grid-cols-1 ${merger.other_parties && merger.other_parties.length > 0 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4 mb-6`}>
           {renderPartyList(merger.acquirers, 'acquirers', 'Acquirers')}
@@ -323,11 +328,6 @@ function MergerDetail() {
         {/* Questionnaire */}
         {merger.has_questionnaire && (
           <QuestionnaireSection mergerId={merger.merger_id} events={merger.events} />
-        )}
-
-        {/* Waiver explanation */}
-        {merger.is_waiver && (
-          <WaiverExplanationSection events={merger.events} />
         )}
 
         {/* Commentary */}
