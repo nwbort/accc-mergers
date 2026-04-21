@@ -1,0 +1,180 @@
+name: Merger Pipeline
+
+on:
+  repository_dispatch:
+    types: [new_merger_detected]
+  workflow_dispatch:
+    inputs:
+      all_mergers:
+        description: 'Process all mergers (not just new/changed ones)'
+        required: false
+        default: false
+        type: boolean
+  push:
+    paths:
+      - 'data/processed/commentary.json'
+  schedule:
+    - cron: '8 * * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: '>=1.22'
+          cache: false
+
+      - name: Cache pup binary
+        id: cache-pup
+        uses: actions/cache@v5
+        with:
+          path: ~/go/bin/pup
+          key: ${{ runner.os }}-pup-v0.4.0
+
+      - name: Install pup HTML parser
+        if: steps.cache-pup.outputs.cache-hit != 'true'
+        run: go install github.com/ericchiang/pup@latest
+
+      - name: Add Go bin to PATH
+        run: echo "${HOME}/go/bin" >> $GITHUB_PATH
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      # --- Scrape ---
+
+      - name: Run scraper
+        run: |
+          chmod +x ./scripts/scrape.sh
+          if [ "${{ inputs.all_mergers }}" = "true" ]; then
+            ./scripts/scrape.sh --all
+          else
+            ./scripts/scrape.sh
+          fi
+
+      - name: Check for scrape changes
+        id: scrape-changes
+        run: |
+          git add -A
+          if git diff --staged --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      # --- Extract (first pass) ---
+      # Always runs on non-scheduled triggers; on schedule only if scrape found changes.
+
+      - name: Run extraction
+        if: steps.scrape-changes.outputs.changed == 'true' || github.event_name != 'schedule'
+        run: |
+          if [ "${{ inputs.all_mergers }}" = "true" ]; then
+            python scripts/extract_mergers.py --all
+          else
+            python scripts/extract_mergers.py
+          fi
+          python scripts/generate_static_data.py
+          ./scripts/generate-cli-data.sh
+          python scripts/generate_rss_feed.py
+
+      - name: Stage extracted data
+        if: steps.scrape-changes.outputs.changed == 'true' || github.event_name != 'schedule'
+        run: |
+          git add data/processed/mergers.json data/processed/questionnaire_data.json \
+            data/raw/matters/ merger-tracker/frontend/public/data/ \
+            merger-tracker/frontend/public/feed.xml data/output/
+
+      # --- Convert DOCX to PDF ---
+      # Runs whenever there are unconverted files, catching both new downloads and stragglers.
+
+      - name: Find unconverted DOCX files
+        id: find-docx
+        run: |
+          > /tmp/unconverted.txt
+          while IFS= read -r -d '' docx; do
+            pdf="${docx%.docx}.pdf"
+            if [ ! -f "$pdf" ]; then
+              echo "$docx" >> /tmp/unconverted.txt
+            fi
+          done < <(find data/raw/matters -name "*.docx" -type f -print0 2>/dev/null)
+
+          if [ -s /tmp/unconverted.txt ]; then
+            echo "Found unconverted DOCX files:"
+            cat /tmp/unconverted.txt
+            echo "has_unconverted=true" >> $GITHUB_OUTPUT
+          else
+            echo "No unconverted DOCX files found"
+            echo "has_unconverted=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Install LibreOffice
+        if: steps.find-docx.outputs.has_unconverted == 'true'
+        run: sudo apt-get update && sudo apt-get install -y libreoffice-writer --no-install-recommends
+
+      - name: Convert DOCX to PDF
+        if: steps.find-docx.outputs.has_unconverted == 'true'
+        run: |
+          while IFS= read -r docx; do
+            if [ -n "$docx" ]; then
+              echo "Converting: $docx"
+              dir=$(dirname "$docx")
+              libreoffice --headless --convert-to pdf --outdir "$dir" "$docx"
+            fi
+          done < /tmp/unconverted.txt
+
+      - name: Stage converted PDFs
+        if: steps.find-docx.outputs.has_unconverted == 'true'
+        run: git add "data/raw/matters/**/*.pdf"
+
+      # --- Extract (second pass) ---
+      # Picks up questionnaire data from newly converted PDFs.
+
+      - name: Re-run extraction to pick up converted PDFs
+        if: steps.find-docx.outputs.has_unconverted == 'true'
+        run: |
+          if [ "${{ inputs.all_mergers }}" = "true" ]; then
+            python scripts/extract_mergers.py --all
+          else
+            python scripts/extract_mergers.py
+          fi
+          python scripts/generate_static_data.py
+          ./scripts/generate-cli-data.sh
+          python scripts/generate_rss_feed.py
+
+      - name: Stage re-extracted data
+        if: steps.find-docx.outputs.has_unconverted == 'true'
+        run: |
+          git add data/processed/mergers.json data/processed/questionnaire_data.json \
+            data/raw/matters/ merger-tracker/frontend/public/data/ \
+            merger-tracker/frontend/public/feed.xml data/output/
+
+      # --- Single commit ---
+
+      - name: Commit all changes
+        run: |
+          git config user.name "Automated"
+          git config user.email "actions@users.noreply.github.com"
+          timestamp=$(date -u)
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update merger data: ${timestamp}"
+            git pull --rebase || { git rebase --abort; exit 1; }
+            git push
+          fi
