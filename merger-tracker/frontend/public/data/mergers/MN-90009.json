@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-04-14T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-05-27T12:00:00Z",
-  "page_modified_datetime": "2026-04-14T17:09:02+10:00",
+  "page_modified_datetime": "2026-04-21T16:06:23+10:00",
   "consultation_response_due_date": "2026-04-21T12:00:00Z",
   "acquirers": [
     {
@@ -25,6 +25,11 @@
   ],
   "other_parties": [
     {
+      "name": "IPAC SOLUTIONS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "30 108 845 718"
+    },
+    {
       "name": "TRESCAL HOLDING PTY LTD",
       "identifier_type": "ABN",
       "identifier": "35 633 411 391"
@@ -35,19 +40,14 @@
       "identifier": "57 818 350 085"
     },
     {
-      "name": "IPAC SOLUTIONS PTY LTD",
+      "name": "N.G. BROWN & ASSOCIATES PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "30 108 845 718"
+      "identifier": "97 004 819 738"
     },
     {
       "name": "Mobile Test 'n' Cal Australia Pty Ltd",
       "identifier_type": "ABN",
       "identifier": "45 147 991 482"
-    },
-    {
-      "name": "N.G. BROWN & ASSOCIATES PTY. LTD.",
-      "identifier_type": "ABN",
-      "identifier": "97 004 819 738"
     },
     {
       "name": "EQT Fund Management S.\u00e0 r.l.",
@@ -77,7 +77,7 @@
       "display_title": "Questionnaire - Trescal - TR Calibration",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Trescal%20-%20TR%20Calibration%20-Questionnaire.docx",
       "url_gh": "/mergers/MN-90009/Trescal - TR Calibration -Questionnaire.pdf",
-      "status": "live",
+      "status": "removed",
       "phase": null
     },
     {
