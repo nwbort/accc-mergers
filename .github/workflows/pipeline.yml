@@ -11,8 +11,8 @@ on:
         default: false
         type: boolean
   push:
-    paths:
-      - 'data/processed/commentary.json'
+    branches:
+      - main
   schedule:
     - cron: '8 * * * *'
 
