@@ -69,12 +69,14 @@ function WaiverExplanationSection({ events }) {
 
   const determinationEvent = eventsArr.find(e => e.is_determination_event && e.url_gh);
 
-  const BOILERPLATE_PREFIX = 'In making this notification waiver determination, the Australian Competition and Consumer Commission';
-
   const paragraphs = cleanExplanation(explanationDetails)
     .split('\n\n')
     .map(p => p.trim())
-    .filter(p => p && !p.startsWith(BOILERPLATE_PREFIX));
+    .filter(p =>
+      p &&
+      !p.startsWith('In making this notification waiver determination, the Australian Competition and Consumer Commission') &&
+      !p.startsWith('For more information about the ACCC')
+    );
 
   const segments = groupSegments(paragraphs);
 
