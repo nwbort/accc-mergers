@@ -185,7 +185,9 @@ for path in sys.argv[1:]:
     merger_id = os.path.splitext(os.path.basename(path))[0]
     with open(path, 'rb') as f:
         result[merger_id] = hashlib.sha256(f.read()).hexdigest()
-print(json.dumps(result, separators=(',', ':'), sort_keys=True))
+keys = sorted(result)
+lines = ['"' + k + '":"' + result[k] + '"' for k in keys]
+print('{' + ',\n'.join(lines) + '}')
 PYEOF
 
 MERGER_MANIFEST_SHA256=$(sha256_file "$MERGER_MANIFEST_PATH")
