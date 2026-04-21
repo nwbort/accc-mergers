@@ -1,6 +1,6 @@
 {
   "total_mergers": 80,
-  "total_waivers": 108,
+  "total_waivers": 109,
   "by_status": {
     "Assessment completed": 54,
     "Under assessment": 26
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 98,
+    "Approved": 99,
     "Not approved": 10
   },
   "phase_duration": {
@@ -52,7 +52,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 8
+      "count": 9
     },
     {
       "name": "Scientific Research Services",
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80008",
+      "merger_name": "Princeton Digital Group Australia - land located in Campbelltown, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-04-21T12:00:00Z",
+      "page_modified_datetime": "2026-04-21T18:09:55+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-20011",
       "merger_name": "Origin \u2013 Equity stake in Kraken",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-65005",
-      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-      "determination": "Referred to phase 2",
-      "determination_date": "2026-04-16T12:00:00Z",
-      "page_modified_datetime": "2026-04-17T09:21:28+10:00",
-      "determination_type": "phase_transition",
-      "is_waiver": false,
-      "stage": "Phase 2 - detailed assessment"
     }
   ]
 }
