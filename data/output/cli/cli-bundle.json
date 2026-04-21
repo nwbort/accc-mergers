@@ -2410,6 +2410,95 @@
       "has_questionnaire": true
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/massmutual-rest-aware-super-and-goodman-%E2%80%93-moorabbin-airport",
+      "merger_name": "MassMutual, Rest, Aware Super and Goodman – Moorabbin Airport",
+      "status": "Under assessment",
+      "merger_id": "MN-10012",
+      "effective_notification_datetime": "2026-04-21T12:00:00Z",
+      "original_notification_datetime": "2026-04-21T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-06-04T12:00:00Z",
+      "page_modified_datetime": "2026-04-21T13:51:00+10:00",
+      "consultation_response_due_date": "2026-04-28T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "MAC HoldCo Pty Ltd (an entity which has not been established yet)",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "MOORABBIN AIRPORT CORPORATION PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "94 081 564 310"
+        },
+        {
+          "name": "TALLINA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "68 090 716 895"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "The Massachusetts Mutual Life Insurance Company (MassMutual)",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "The Trustee for AWARE SUPER",
+          "identifier_type": "ABN",
+          "identifier": "53 226 460 365"
+        },
+        {
+          "name": "The Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST",
+          "identifier_type": "ABN",
+          "identifier": "62 653 671 394"
+        },
+        {
+          "name": "GOODMAN LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "69 000 123 071"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5220",
+          "name": "Airport Operations and Other Air Transport Support Services"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "merger_description": "A group of investors proposes to acquire 100% of the issued shares in Moorabbin Airport Corporation Pty Ltd (**MAC**), to be held through a holding company. MAC holds the long-term airport lease granted by the Commonwealth in relation to Moorabbin Airport, a metropolitan airport located south-east of the Melbourne CBD. The investors also propose to acquire leasehold interests in various non-aviation commercial properties located at the Moorabbin Airport site (together, the **Acquisition**).\n\nThe group of investors comprise:\n\n* REST, an Australian profit-to-member superannuation fund with approximately 2 million members and around $105 billion in funds under management;\n* Aware Super, an Australian superannuation and retirement fund, with almost 1.2 million members and $198.7 billion in funds under management;\n* MassMutual, a mutual life insurance company based in Massachusetts, United States; and\n* Goodman Limited (**Goodman**), part of the Goodman Group, an ASX-listed industrial property and digital infrastructure business. Goodman’s primary business activities include the ownership, development and management of essential real estate assets, including logistics facilities, warehouses and data centres worldwide.\n\n(these four businesses are together the **Investors**)\n\nGoodman currently owns 100% of the units in the Moorabbin Airport Unit Trust (with Tallina Pty Ltd as trustee), which in turn owns 100% of the shares in MAC. The acquisition therefore results in a reduction of Goodman's interest in MAC.\n\nMoorabbin Airport provides services to facilitate general aviation activities such as flight training, private air charter, freight, recreational flying and air work and emergency services. Moorabbin Airport has only one regular passenger transport service, with King Island Airlines flying between King Island and the mainland daily. Moorabbin Airport contains over 250 mixed-use, large and small businesses, including Kingston Central Plaza, Direct Factory Outlet (DFO), and the Chifley Business Park.\n\nThe Investors, excluding Goodman, have interests in industrial land across metropolitan Melbourne. The Investors, excluding Goodman, also hold interests in other airports, which either focus on different primary operations to Moorabbin Airport (that is, they are focused on regular passenger transport rather than general aviation services) or offer general aviation services outside of Victoria.",
+      "events": [
+        {
+          "date": "2026-04-21T12:00:00Z",
+          "title": "Questionnaire - MassMutual, Rest, Aware Super and Goodman - Moorabbin Airport",
+          "display_title": "Questionnaire - MassMutual, Rest, Aware Super and Goodman - Moorabbin Airport",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/MassMutual%20-%20Moorabbin%20Airport%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-10012/MassMutual - Moorabbin Airport - Questionnaire.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-04-21T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/accenture-ziff-davis-connectivity-business",
       "merger_name": "Accenture - Ziff Davis' connectivity business",
       "status": "Under assessment",
@@ -21556,11 +21645,11 @@
     }
   },
   "stats": {
-    "total_mergers": 79,
+    "total_mergers": 80,
     "total_waivers": 108,
     "by_status": {
       "Assessment completed": 53,
-      "Under assessment": 26
+      "Under assessment": 27
     },
     "by_determination": {
       "Approved": 53,
@@ -21608,16 +21697,16 @@
         "count": 16
       },
       {
+        "name": "Non-Residential Property Operators",
+        "count": 8
+      },
+      {
         "name": "Scientific Research Services",
         "count": 8
       },
       {
         "name": "Accommodation",
         "count": 8
-      },
-      {
-        "name": "Non-Residential Property Operators",
-        "count": 7
       },
       {
         "name": "Pubs, Taverns and Bars",
@@ -21633,6 +21722,14 @@
       }
     ],
     "recent_mergers": [
+      {
+        "merger_id": "MN-10012",
+        "merger_name": "MassMutual, Rest, Aware Super and Goodman – Moorabbin Airport",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-04-21T12:00:00Z",
+        "is_waiver": false
+      },
       {
         "merger_id": "MN-10013",
         "merger_name": "Accenture - Ziff Davis' connectivity business",
@@ -21663,14 +21760,6 @@
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-04-15T12:00:00Z",
-        "is_waiver": false
-      },
-      {
-        "merger_id": "MN-40012",
-        "merger_name": "Eli Lilly – acquisition of licence from CSL Behring",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-04-14T12:00:00Z",
         "is_waiver": false
       }
     ],
@@ -21760,6 +21849,11 @@
         "merger_count": 16
       },
       {
+        "code": "6712",
+        "name": "Non-Residential Property Operators",
+        "merger_count": 8
+      },
+      {
         "code": "6910",
         "name": "Scientific Research Services",
         "merger_count": 8
@@ -21768,11 +21862,6 @@
         "code": "4400",
         "name": "Accommodation",
         "merger_count": 8
-      },
-      {
-        "code": "6712",
-        "name": "Non-Residential Property Operators",
-        "merger_count": 7
       },
       {
         "code": "4520",
@@ -22197,6 +22286,11 @@
       {
         "code": "6420",
         "name": "Auxiliary Insurance Services",
+        "merger_count": 1
+      },
+      {
+        "code": "5220",
+        "name": "Airport Operations and Other Air Transport Support Services",
         "merger_count": 1
       },
       {

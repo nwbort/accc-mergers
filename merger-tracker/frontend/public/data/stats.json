@@ -1,9 +1,9 @@
 {
-  "total_mergers": 79,
+  "total_mergers": 80,
   "total_waivers": 108,
   "by_status": {
     "Assessment completed": 53,
-    "Under assessment": 26
+    "Under assessment": 27
   },
   "by_determination": {
     "Approved": 53,
@@ -51,16 +51,16 @@
       "count": 16
     },
     {
+      "name": "Non-Residential Property Operators",
+      "count": 8
+    },
+    {
       "name": "Scientific Research Services",
       "count": 8
     },
     {
       "name": "Accommodation",
       "count": 8
-    },
-    {
-      "name": "Non-Residential Property Operators",
-      "count": 7
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -76,6 +76,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-10012",
+      "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-21T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-10013",
       "merger_name": "Accenture - Ziff Davis' connectivity business",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-15T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-40012",
-      "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-14T12:00:00Z",
       "is_waiver": false
     }
   ],
