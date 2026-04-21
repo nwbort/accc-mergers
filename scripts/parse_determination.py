@@ -86,10 +86,11 @@ def extract_table_content(pdf_path: str) -> List[Dict[str, str]]:
                     if not item and not details:
                         continue
 
-                    # Check if this is a continuation of the previous row
-                    # (item is empty or starts with lowercase/whitespace)
-                    # This handles content that spans multiple pages
-                    if table_data and (not item or (item and item[0].islower()) or (item and item.startswith(' '))):
+                    # Check if this is a continuation of the previous row.
+                    # Handles: empty item, lowercase/whitespace start, or bullet "•"
+                    # (bullet markers appear when a spanning row has sub-points in the
+                    # item column, e.g. the "Explanation for determination" continuation rows)
+                    if table_data and (not item or item == '•' or (item and item[0].islower()) or (item and item.startswith(' '))):
                         # Append to the previous row's details
                         continuation_text = (item.strip() + ' ' + details.strip()) if item else details.strip()
                         table_data[-1]['details'] += '\n' + continuation_text
