@@ -2496,7 +2496,8 @@
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
-      "public_benefits_determination_date": null
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true
     },
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/accenture-ziff-davis-connectivity-business",
@@ -20178,6 +20179,26 @@
         {
           "number": 3,
           "text": "Provide a brief description of your business or organisation, including any commercial relationships with Australian Venue Co. and/or the target four licensed venues (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)."
+        }
+      ],
+      "questions_count": 3
+    },
+    "MN-10012": {
+      "deadline": "28 April 2026",
+      "deadline_iso": "2026-04-28",
+      "file_name": "MassMutual - Moorabbin Airport - Questionnaire.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with MassMutual, Rest, Aware Super, Goodman and/or Moorabbin Airport."
+        },
+        {
+          "number": 2,
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition."
+        },
+        {
+          "number": 3,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
         }
       ],
       "questions_count": 3
