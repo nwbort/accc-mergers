@@ -9,6 +9,7 @@ import WaiverBadge from '../components/WaiverBadge';
 import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import QuestionnaireSection from '../components/QuestionnaireSection';
+import WaiverExplanationSection from '../components/WaiverExplanationSection';
 import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatDate, calculateDuration, getDaysRemaining, calculateBusinessDays, getBusinessDaysRemaining } from '../utils/dates';
@@ -322,6 +323,11 @@ function MergerDetail() {
         {/* Questionnaire */}
         {merger.has_questionnaire && (
           <QuestionnaireSection mergerId={merger.merger_id} events={merger.events} />
+        )}
+
+        {/* Waiver explanation */}
+        {merger.is_waiver && (
+          <WaiverExplanationSection events={merger.events} />
         )}
 
         {/* Commentary */}
