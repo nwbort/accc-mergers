@@ -2,16 +2,9 @@ name: Extract and Commit Merger Data
 
 on:
   workflow_dispatch:
-  push:
-    paths:
-      - 'data/raw/matters/**'
-      - 'data/processed/commentary.json'
-  schedule:
-  - cron: '17 1 * * *'
 
 permissions:
   contents: write
-  actions: write
 
 jobs:
   extract-and-commit:
@@ -44,20 +37,14 @@ jobs:
         run: python scripts/generate_rss_feed.py
 
       - name: Commit and push changes
-        id: commit
         run: |-
           git config user.name "Automated"
           git config user.email "actions@users.noreply.github.com"
-          git add data/processed/mergers.json data/processed/questionnaire_data.json data/raw/matters/ merger-tracker/frontend/public/data/ merger-tracker/frontend/public/feed.xml data/output/
+          git add data/processed/mergers.json data/processed/questionnaire_data.json \
+            data/raw/matters/ merger-tracker/frontend/public/data/ \
+            merger-tracker/frontend/public/feed.xml data/output/
           timestamp=$(date -u)
-          git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
+          git diff --staged --quiet || true
           git commit -m "Update scraped data and static files: ${timestamp}" || exit 0
           git pull --rebase || { git rebase --abort; exit 1; }
           git push
-
-      - name: Trigger convert workflow
-        if: steps.commit.outputs.changes == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh workflow run convert.yml

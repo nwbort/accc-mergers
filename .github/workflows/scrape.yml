@@ -1,71 +1,51 @@
 name: Scrape
+
 on:
-  push:
   workflow_dispatch:
-  repository_dispatch:
-    types: [new_merger_detected]
-  schedule:
-  - cron: '8 * * * *'
+
 permissions:
   contents: write
-  actions: write
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
     steps:
     - name: Check out repository
       uses: actions/checkout@v6
-      
+
     - name: Set up Go
       uses: actions/setup-go@v6
       with:
         go-version: '>=1.22'
         cache: false
-    
+
     - name: Cache pup binary
       id: cache-pup
       uses: actions/cache@v5
       with:
         path: ~/go/bin/pup
         key: ${{ runner.os }}-pup-v0.4.0
-  
+
     - name: Install pup HTML parser
       if: steps.cache-pup.outputs.cache-hit != 'true'
       run: go install github.com/ericchiang/pup@latest
-  
+
     - name: Add Go bin to PATH
       run: echo "${HOME}/go/bin" >> $GITHUB_PATH
-  
+
     - name: Make scrape.sh executable
       run: chmod +x ./scripts/scrape.sh
 
     - name: Run the scraper
-      run: |
-        ./scripts/scrape.sh
-    
+      run: ./scripts/scrape.sh
+
     - name: Commit and push changes
-      id: commit
       run: |-
         git config user.name "Automated"
         git config user.email "actions@users.noreply.github.com"
         git add -A
         timestamp=$(date -u)
-        git diff --staged --quiet || echo "changes=true" >> $GITHUB_OUTPUT
+        git diff --staged --quiet || true
         git commit -m "Update scraped data: ${timestamp}" || exit 0
         git pull --rebase || { git rebase --abort; exit 1; }
         git push
-
-    - name: Trigger extract workflow if changes were committed
-      if: steps.commit.outputs.changes == 'true' || github.event_name == 'repository_dispatch'
-      env:
-        GH_TOKEN: ${{ github.token }}
-      run: |
-        gh workflow run extract.yml
-
-    - name: Retry workflow on failure
-      if: failure() && github.event_name != 'workflow_dispatch'
-      env:
-        GH_TOKEN: ${{ github.token }}
-      run: |
-        sleep 60
-        gh workflow run scrape.yml
