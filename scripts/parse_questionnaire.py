@@ -371,23 +371,20 @@ def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[st
             continue
 
         # Normalise filename by stripping re-download suffixes (_0, _1 …).
-        # "File_0.pdf" and "File.pdf" are the same source document — possibly
-        # re-uploaded by the ACCC with a different deadline (e.g. MN-30003).
         def _norm(name: str) -> str:
             return re.sub(r'_\d+(\.[^.]+)$', r'\1', name)
 
-        # Group by normalised filename; within each group keep the entry with
-        # the latest deadline (latest deadline = most recent version).
-        groups: Dict[str, Dict] = {}
+        # Deduplicate: collapse only when BOTH the normalised filename AND the
+        # deadline are identical (i.e. the scraper downloaded the same file
+        # twice).  Different deadlines with the same base name means the ACCC
+        # re-released the questionnaire with an extended deadline — keep both.
+        seen: set = set()
+        unique = []
         for p in parsed:
-            key = _norm(p['file_name'])
-            existing = groups.get(key)
-            if existing is None:
-                groups[key] = p
-            elif (p.get('deadline_iso') or '0000-00-00') > (existing.get('deadline_iso') or '0000-00-00'):
-                groups[key] = p
-
-        unique = list(groups.values())
+            key = (_norm(p['file_name']), p.get('deadline_iso') or '')
+            if key not in seen:
+                seen.add(key)
+                unique.append(p)
 
         # Sort latest-first; treat missing deadline as oldest
         unique.sort(

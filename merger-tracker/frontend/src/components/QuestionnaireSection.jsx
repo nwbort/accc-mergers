@@ -56,15 +56,26 @@ function QuestionnaireSection({ mergerId, events }) {
   const normalizeFilename = (name) =>
     (name || '').replace(/_\d+(\.[^.]+)$/, '$1');
 
-  // Return the questionnaire events whose url_gh basename matches this version.
+  // Return the questionnaire events that match this version's document.
+  // Try exact filename first so that same-name re-releases (e.g. MN-30003,
+  // where _0.pdf and the base file are different events) each get their own
+  // link. Only fall back to normalised matching when there is no exact hit,
+  // which handles the case where the scraper added a _N suffix but the event
+  // still points to the original name.
   const getVersionEvents = (versionData) => {
     if (!versionData?.file_name) return questionnaireEvents;
+
+    const exact = questionnaireEvents.filter((event) => {
+      const basename = decodeURIComponent((event.url_gh || '').split('/').pop());
+      return basename === versionData.file_name;
+    });
+    if (exact.length > 0) return exact;
+
     const normalized = normalizeFilename(versionData.file_name);
-    const matched = questionnaireEvents.filter((event) => {
+    return questionnaireEvents.filter((event) => {
       const basename = decodeURIComponent((event.url_gh || '').split('/').pop());
       return normalizeFilename(basename) === normalized;
     });
-    return matched;
   };
 
   // Label a version tab with its release date (from the matching event),
