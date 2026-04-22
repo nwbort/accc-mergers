@@ -1,6 +1,6 @@
 {
   "total_mergers": 81,
-  "total_waivers": 109,
+  "total_waivers": 110,
   "by_status": {
     "Assessment completed": 54,
     "Under assessment": 27
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 99,
+    "Approved": 100,
     "Not approved": 10
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70011",
+      "merger_name": "Egis Projects Asia Pacific - Fulton Hogan Egis O&M",
+      "determination": "Approved",
+      "determination_date": "2026-04-22T12:00:00Z",
+      "page_modified_datetime": "2026-04-22T21:47:20+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-80008",
       "merger_name": "Princeton Digital Group Australia - land located in Campbelltown, NSW",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-45005",
-      "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-      "determination": "Approved",
-      "determination_date": "2026-04-17T12:00:00Z",
-      "page_modified_datetime": "2026-04-17T14:30:20+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
