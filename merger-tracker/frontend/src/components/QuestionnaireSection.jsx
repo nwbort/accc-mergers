@@ -51,6 +51,31 @@ function QuestionnaireSection({ mergerId, events }) {
     )
     .sort((a, b) => new Date(b.date) - new Date(a.date));
 
+  // Strip re-download suffixes (_0, _1 …) before the extension so that
+  // "EG - Questionnaire_0.pdf" matches the event URL "EG - Questionnaire.pdf".
+  const normalizeFilename = (name) =>
+    (name || '').replace(/_\d+(\.[^.]+)$/, '$1');
+
+  // Return the questionnaire events whose url_gh basename matches this version.
+  const getVersionEvents = (versionData) => {
+    if (!versionData?.file_name) return questionnaireEvents;
+    const normalized = normalizeFilename(versionData.file_name);
+    const matched = questionnaireEvents.filter((event) => {
+      const basename = decodeURIComponent((event.url_gh || '').split('/').pop());
+      return normalizeFilename(basename) === normalized;
+    });
+    return matched;
+  };
+
+  // Label a version tab with its release date (from the matching event),
+  // falling back to the deadline date, then a generic ordinal.
+  const getVersionLabel = (versionData, index, total) => {
+    const matched = getVersionEvents(versionData);
+    if (matched.length > 0) return formatDate(matched[0].date);
+    if (versionData?.deadline_iso) return formatDate(versionData.deadline_iso + 'T12:00:00Z');
+    return `Questionnaire ${total - index}`;
+  };
+
   return (
     <CollapsibleCard
       icon={<QuestionnaireIcon />}
@@ -100,49 +125,43 @@ function QuestionnaireSection({ mergerId, events }) {
                         : 'border-gray-200 text-gray-500 hover:border-gray-300 hover:text-gray-700'
                     }`}
                   >
-                    {q.deadline_iso
-                      ? formatDate(q.deadline_iso + 'T12:00:00Z')
-                      : `Questionnaire ${allVersions.length - i}`}
+                    {getVersionLabel(q, i, allVersions.length)}
                   </button>
                 ))}
               </div>
             )}
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 mb-4">
-              <p className="text-xs text-gray-400">
-                {active.questions_count} question{active.questions_count !== 1 ? 's' : ''}
-                {active.deadline_iso && (
-                  <span>
-                    {' · Responses due '}
-                    {formatDate(active.deadline_iso + 'T12:00:00Z')}
-                    {(() => {
-                      const countdown = renderDeadlineCountdown(active.deadline_iso);
-                      return countdown ? ` (${countdown})` : '';
-                    })()}
-                  </span>
-                )}
-              </p>
-              {questionnaireEvents
-                .filter((event) =>
-                  allVersions.length <= 1 ||
-                  (active.deadline_iso
-                    ? event.date?.startsWith(active.deadline_iso.slice(0, 7))
-                    : true)
-                )
-                .map((event) => (
-                  <a
-                    key={event.url_gh}
-                    href={event.url_gh}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark transition-colors font-medium"
-                  >
-                    {questionnaireEvents.length > 1
-                      ? `View document (${formatDate(event.date)})`
-                      : 'View document'}
-                    <ExternalLinkIcon className="h-3 w-3" />
-                  </a>
-                ))}
-            </div>
+            {(() => {
+              const activeEvents = getVersionEvents(active);
+              return (
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 mb-4">
+                  <p className="text-xs text-gray-400">
+                    {active.questions_count} question{active.questions_count !== 1 ? 's' : ''}
+                    {active.deadline_iso && (
+                      <span>
+                        {' · Responses due '}
+                        {formatDate(active.deadline_iso + 'T12:00:00Z')}
+                        {(() => {
+                          const countdown = renderDeadlineCountdown(active.deadline_iso);
+                          return countdown ? ` (${countdown})` : '';
+                        })()}
+                      </span>
+                    )}
+                  </p>
+                  {activeEvents.map((event) => (
+                    <a
+                      key={event.url_gh}
+                      href={event.url_gh}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark transition-colors font-medium"
+                    >
+                      View document
+                      <ExternalLinkIcon className="h-3 w-3" />
+                    </a>
+                  ))}
+                </div>
+              );
+            })()}
             <ol className="space-y-3">
               {active.questions.map((q, idx) => {
                 const prevSection = idx > 0 ? active.questions[idx - 1].section : null;
