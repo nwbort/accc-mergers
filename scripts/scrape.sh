@@ -65,6 +65,10 @@ clean_file() {
     -e 's/("css_js_query_string":")[^"]+"/\1STATIC"/g' \
     "$file"
 
+  # Remove Akamai/mPulse BOOMR performance script injected before </head>.
+  # The injection adds a whitespace-only line followed by the script on one line.
+  perl -i -0pe 's/[ \t]*\n[ \t]*<script>!function\(e\)\{var n="https:\/\/s\.go-mpulse\.net\/boomerang\/".*?\(window\);<\/script><\/head>/\n  <\/head>/s' "$file"
+
   # Use a second sed pass for complex multi-line replacements.
   sed -i -E -e ':a;N;$!ba;s#(<a[^>]*class="[^"]*megamenu-page-link-level-3[^"]*"[^>]*href=")[^"]*("[^>]*>[[:space:]]*<span>)[^<]*(</span>)#\1STATIC_HREF\2STATIC_TEXT\3#g' "$file"
 
