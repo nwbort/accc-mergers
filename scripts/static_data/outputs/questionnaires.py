@@ -8,6 +8,16 @@ import json
 from pathlib import Path
 
 
+def _questionnaire_record(q_data: dict) -> dict:
+    return {
+        'deadline': q_data.get('deadline'),
+        'deadline_iso': q_data.get('deadline_iso'),
+        'file_name': q_data.get('file_name'),
+        'questions': q_data.get('questions', []),
+        'questions_count': q_data.get('questions_count', 0),
+    }
+
+
 def generate(questionnaire_data: dict, output_dir: Path) -> int:
     """Write individual questionnaire files. Returns count written."""
     questionnaires_dir = Path(output_dir) / "questionnaires"
@@ -16,13 +26,18 @@ def generate(questionnaire_data: dict, output_dir: Path) -> int:
     count = 0
     for merger_id, q_data in questionnaire_data.items():
         if q_data.get('questions'):
-            output = {
-                'deadline': q_data.get('deadline'),
-                'deadline_iso': q_data.get('deadline_iso'),
-                'file_name': q_data.get('file_name'),
-                'questions': q_data.get('questions', []),
-                'questions_count': q_data.get('questions_count', 0),
-            }
+            output = _questionnaire_record(q_data)
+
+            # When the matter has multiple distinct questionnaires, include them
+            # all (sorted latest-first) so consumers can access older versions.
+            all_qs = q_data.get('all_questionnaires', [])
+            if len(all_qs) > 1:
+                output['all_questionnaires'] = [
+                    _questionnaire_record(aq)
+                    for aq in all_qs
+                    if aq.get('questions')
+                ]
+
             out_path = questionnaires_dir / f"{merger_id}.json"
             with open(out_path, 'w', encoding='utf-8') as f:
                 json.dump(output, f, indent=2)
