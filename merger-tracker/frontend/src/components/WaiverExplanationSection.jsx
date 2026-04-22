@@ -21,7 +21,7 @@ function cleanExplanation(text) {
     const lastChar = before.slice(-1);
 
     if (lastChar === '-') return '';
-    if (after.startsWith('•')) return '\n\n';
+    if (after.startsWith('•')) return /[a-zA-Z]/.test(lastChar) ? ' ' : '\n\n';
     if (/^[a-z]\./.test(after)) return '\n\n';
     if ((lastChar === '.' || lastChar === ')') && /^[A-Z]/.test(after)) return '\n\n';
     return ' ';
