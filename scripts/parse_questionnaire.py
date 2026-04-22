@@ -317,6 +317,12 @@ def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[st
     """
     Process all questionnaire PDFs in the matters directory.
 
+    When a matter has multiple questionnaire PDFs, the one with the latest
+    deadline is used as the primary entry. Duplicates (same deadline date,
+    typically re-downloads of the same document) are collapsed to one. All
+    distinct questionnaires are preserved in an ``all_questionnaires`` list,
+    sorted latest-first, when more than one exists.
+
     Args:
         matters_dir: Path to the matters directory
 
@@ -336,20 +342,61 @@ def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[st
         if "questionnaire" in pdf.name.lower()
     ]
 
+    # Group by matter_id for deterministic processing
+    pdfs_by_matter: Dict[str, List] = {}
     for pdf_path in questionnaire_pdfs:
         matter_id = pdf_path.parent.name
+        pdfs_by_matter.setdefault(matter_id, []).append(pdf_path)
 
-        try:
-            data = parse_questionnaire_pdf(str(pdf_path))
-            data['file_path'] = str(pdf_path.relative_to(matters_path.parent))
-            data['file_name'] = pdf_path.name
-            results[matter_id] = data
-        except Exception as e:
-            print(f"Error processing {pdf_path}: {e}")
-            results[matter_id] = {
-                'error': str(e),
-                'file_path': str(pdf_path.relative_to(matters_path.parent))
-            }
+    for matter_id, pdf_paths in pdfs_by_matter.items():
+        parsed = []
+        last_error = None
+
+        for pdf_path in sorted(pdf_paths):  # alphabetical for determinism
+            try:
+                data = parse_questionnaire_pdf(str(pdf_path))
+                data['file_path'] = str(pdf_path.relative_to(matters_path.parent))
+                data['file_name'] = pdf_path.name
+                parsed.append(data)
+            except Exception as e:
+                print(f"Error processing {pdf_path}: {e}")
+                last_error = {
+                    'error': str(e),
+                    'file_path': str(pdf_path.relative_to(matters_path.parent))
+                }
+
+        if not parsed:
+            if last_error:
+                results[matter_id] = last_error
+            continue
+
+        # Normalise filename by stripping re-download suffixes (_0, _1 …).
+        def _norm(name: str) -> str:
+            return re.sub(r'_\d+(\.[^.]+)$', r'\1', name)
+
+        # Deduplicate: collapse only when BOTH the normalised filename AND the
+        # deadline are identical (i.e. the scraper downloaded the same file
+        # twice).  Different deadlines with the same base name means the ACCC
+        # re-released the questionnaire with an extended deadline — keep both.
+        seen: set = set()
+        unique = []
+        for p in parsed:
+            key = (_norm(p['file_name']), p.get('deadline_iso') or '')
+            if key not in seen:
+                seen.add(key)
+                unique.append(p)
+
+        # Sort latest-first; treat missing deadline as oldest
+        unique.sort(
+            key=lambda p: p.get('deadline_iso') or '0000-00-00',
+            reverse=True,
+        )
+
+        primary = unique[0].copy()
+        if len(unique) > 1:
+            primary['all_questionnaires'] = unique
+
+        results[matter_id] = primary
 
     return results
 
