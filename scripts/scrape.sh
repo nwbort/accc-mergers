@@ -173,9 +173,8 @@ fetch_matter_page() {
     echo "    Warning: Could not find matter number for $full_url. Used fallback name: $fallback_name"
   fi
 
-  echo "Fetching: $full_url → $filename"
   clean_file "$filename"
-  echo "Cleaned:  $filename"
+
 }
 # Export the function so it's available to subshells spawned by xargs
 export -f fetch_matter_page
