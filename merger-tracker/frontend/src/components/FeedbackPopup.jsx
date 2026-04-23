@@ -2,14 +2,13 @@ import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 // Set to false to hide the popup entirely (e.g. between feedback campaigns).
-const ENABLED = true;
+const ENABLED = false;
 
 // Set to false to suppress the popup on mobile screens (< 768px).
 const SHOW_ON_MOBILE = false;
 
 // Bump this string to resurface the popup for everyone who dismissed a previous campaign.
-// e.g. 'v1' → 'v2' shows it again to all previous dismissers.
-const CAMPAIGN = 'v1';
+const CAMPAIGN = 'v2';
 const STORAGE_KEY = `feedback_dismissed_${CAMPAIGN}`;
 const SHOW_DELAY_MS = 10_000;
 
