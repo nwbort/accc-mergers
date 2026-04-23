@@ -68,6 +68,40 @@ jobs:
             ./scripts/scrape.sh
           fi
 
+      - name: Verify HTML cleaning
+        run: |
+          # Report any matter HTML files modified by this scrape run that still
+          # contain known uncleaned dynamic tokens. This catches cases where
+          # clean_file did not run, or where a git rebase will later undo its
+          # substitutions when two concurrent runs touched the same file.
+          modified_html=()
+          while IFS= read -r f; do
+            modified_html+=("$f")
+          done < <(git status --porcelain data/raw/matters/ 2>/dev/null \
+                    | awk '{print $NF}' | grep '\.html$' || true)
+
+          if [ ${#modified_html[@]} -eq 0 ]; then
+            echo "No matter HTML files were modified by this scrape run."
+          else
+            echo "Checking ${#modified_html[@]} modified matter page(s) for uncleaned tokens..."
+            bad_files=()
+            for f in "${modified_html[@]}"; do
+              if grep -qE \
+                'js-view-dom-id-[a-f0-9]{64}|/(css|js)/[a-zA-Z]+_[A-Za-z0-9_-]{30,}\.(css|js)(\?|")' \
+                "$f" 2>/dev/null; then
+                bad_files+=("$f")
+              fi
+            done
+            if [ ${#bad_files[@]} -gt 0 ]; then
+              echo "WARNING: The following matter pages appear to have uncleaned dynamic content:"
+              printf '  %s\n' "${bad_files[@]}"
+              echo "This may indicate clean_file did not run, or a concurrent pipeline run"
+              echo "touching the same file will cause a rebase to reintroduce raw tokens."
+            else
+              echo "HTML cleaning check passed (${#modified_html[@]} file(s) verified)."
+            fi
+          fi
+
       - name: Check for scrape changes
         id: scrape-changes
         run: |
@@ -185,5 +219,26 @@ jobs:
           else
             git commit -m "Update merger data: ${timestamp}"
             git pull --rebase || { git rebase --abort; exit 1; }
+
+            # After rebase, re-clean any HTML files that changed. A 3-way merge
+            # during rebase can reintroduce raw dynamic tokens if both the local
+            # commit and the pulled commits touched the same file.
+            rebase_html=$(git diff HEAD^..HEAD --name-only 2>/dev/null | grep '\.html$' || true)
+            if [ -n "$rebase_html" ]; then
+              echo "HTML files in rebased commit:"
+              echo "$rebase_html" | sed 's/^/  /'
+              while IFS= read -r f; do
+                if [ -f "$f" ]; then
+                  ./scripts/scrape.sh --clean-file "$f"
+                  git add "$f"
+                  echo "Re-cleaned: $f"
+                fi
+              done <<< "$rebase_html"
+              if ! git diff --staged --quiet; then
+                echo "WARNING: Rebase introduced uncleaned HTML — amending commit to fix"
+                git commit --amend --no-edit
+              fi
+            fi
+
             git push
           fi

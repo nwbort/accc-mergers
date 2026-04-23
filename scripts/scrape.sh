@@ -4,25 +4,39 @@
 #
 # Usage:
 #   ./scrape.sh [--all]
+#   ./scrape.sh --clean-file <path>
 #
 # Options:
-#   --all    Scrape all mergers, ignoring cutoff dates (by default, mergers
-#            are skipped 3 weeks after an approved notification or waiver decision)
+#   --all              Scrape all mergers, ignoring cutoff dates (by default,
+#                      mergers are skipped 3 weeks after an approved notification
+#                      or waiver decision)
+#   --clean-file <path>  Apply HTML cleaning to a single file and exit. Used by
+#                        the pipeline to re-clean files after a git rebase.
 
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
 # --- Parse Arguments ---
 SCRAPE_ALL=false
+CLEAN_FILE_PATH=""
 while [[ $# -gt 0 ]]; do
   case $1 in
     --all)
       SCRAPE_ALL=true
       shift
       ;;
+    --clean-file)
+      if [[ -z "${2:-}" ]]; then
+        echo "Error: --clean-file requires a file path argument"
+        echo "Usage: $0 --clean-file <path>"
+        exit 1
+      fi
+      CLEAN_FILE_PATH="$2"
+      shift 2
+      ;;
     *)
       echo "Unknown option: $1"
-      echo "Usage: $0 [--all]"
+      echo "Usage: $0 [--all] | $0 --clean-file <path>"
       exit 1
       ;;
   esac
@@ -159,11 +173,19 @@ fetch_matter_page() {
     echo "    Warning: Could not find matter number for $full_url. Used fallback name: $fallback_name"
   fi
 
+  echo "Fetching: $full_url → $filename"
   clean_file "$filename"
+  echo "Cleaned:  $filename"
 }
 # Export the function so it's available to subshells spawned by xargs
 export -f fetch_matter_page
 
+# If called with --clean-file, just clean the specified file and exit.
+# This mode is used by the pipeline to re-clean files after a git rebase.
+if [ -n "$CLEAN_FILE_PATH" ]; then
+  clean_file "$CLEAN_FILE_PATH"
+  exit 0
+fi
 
 # --- Main Script ---
 
