@@ -1,6 +1,6 @@
 {
   "total_mergers": 82,
-  "total_waivers": 114,
+  "total_waivers": 115,
   "by_status": {
     "Assessment completed": 54,
     "Under assessment": 28
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 104,
+    "Approved": 105,
     "Not approved": 10
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-01092",
+      "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
+      "determination": "Approved",
+      "determination_date": "2026-04-23T12:00:00Z",
+      "page_modified_datetime": "2026-04-23T20:17:10+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-60012",
       "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-04-22T12:00:00Z",
       "page_modified_datetime": "2026-04-22T21:47:20+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-80008",
-      "merger_name": "Princeton Digital Group Australia - land located in Campbelltown, NSW",
-      "determination": "Approved",
-      "determination_date": "2026-04-21T12:00:00Z",
-      "page_modified_datetime": "2026-04-21T18:09:55+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

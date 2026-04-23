@@ -1304,6 +1304,14 @@
       },
       {
         "application_date": "2026-03-23",
+        "business_days": 21,
+        "calendar_days": 31,
+        "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
+        "merger_id": "WA-01092",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-03-23",
         "business_days": 12,
         "calendar_days": 18,
         "merger_name": "Idemitsu - MidOcean Energy",
@@ -1448,11 +1456,11 @@
       }
     ],
     "stats": {
-      "average": 11.7,
-      "median": 11.0,
+      "average": 11.8,
+      "median": 11,
       "min": 2,
       "max": 22,
-      "count": 114
+      "count": 115
     }
   },
   "monthly_volume": {
@@ -1483,7 +1491,7 @@
       0,
       30,
       30,
-      45,
+      46,
       9
     ]
   }
