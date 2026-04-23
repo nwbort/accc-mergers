@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-04-03T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-05-19T12:00:00Z",
-  "page_modified_datetime": "2026-04-07T12:11:58+10:00",
+  "page_modified_datetime": "2026-04-15T12:13:13+10:00",
   "consultation_response_due_date": "2026-04-14T12:00:00Z",
   "acquirers": [
     {
@@ -18,22 +18,17 @@
   ],
   "targets": [
     {
-      "name": "Depop Limited",
-      "identifier_type": null,
-      "identifier": "UK Company Registration Number  08316342"
-    },
-    {
       "name": "Etsy, Inc.",
       "identifier_type": null,
       "identifier": ""
+    },
+    {
+      "name": "Depop Limited",
+      "identifier_type": null,
+      "identifier": "UK Company Registration Number  08316342"
     }
   ],
   "other_parties": [
-    {
-      "name": "EBAY COMMERCE AUSTRALIA PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "62 634 460 969"
-    },
     {
       "name": "eBay Marketplaces GmbH",
       "identifier_type": null,
@@ -43,6 +38,11 @@
       "name": "EBAY AUSTRALIA AND NEW ZEALAND PTY LIMITED",
       "identifier_type": "ABN",
       "identifier": "22 086 288 888"
+    },
+    {
+      "name": "EBAY COMMERCE AUSTRALIA PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "62 634 460 969"
     }
   ],
   "anzsic_codes": [
@@ -63,7 +63,7 @@
       "display_title": "eBay / Depop - 3rd party questionnaire - April 2026",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/eBay-Depop%20-%20Questionnaire%20-%20April%202026.docx",
       "url_gh": "/mergers/MN-45002/eBay-Depop - Questionnaire - April 2026.pdf",
-      "status": "live",
+      "status": "removed",
       "phase": null
     },
     {
