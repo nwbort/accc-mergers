@@ -1,9 +1,9 @@
 {
-  "total_mergers": 81,
+  "total_mergers": 82,
   "total_waivers": 110,
   "by_status": {
     "Assessment completed": 54,
-    "Under assessment": 27
+    "Under assessment": 28
   },
   "by_determination": {
     "Approved": 54,
@@ -56,7 +56,7 @@
     },
     {
       "name": "Scientific Research Services",
-      "count": 8
+      "count": 9
     },
     {
       "name": "Accommodation",
@@ -71,11 +71,19 @@
       "count": 6
     },
     {
-      "name": "Cafes and Restaurants",
-      "count": 5
+      "name": "Human Pharmaceutical and Medicinal Product Manufacturing",
+      "count": 6
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-60014",
+      "merger_name": "Gilead - Ouro",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-22T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-10012",
       "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-30009",
       "merger_name": "Daikin - AAMS Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-16T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-70014",
-      "merger_name": "Global Infrastructure Management \u2013 TCR",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-16T12:00:00Z",
