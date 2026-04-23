@@ -73,6 +73,9 @@ clean_file() {
   # and dcterms.modified between requests, causing spurious diffs. Always put created first.
   perl -i -0pe 's{(<meta name="dcterms\.modified"[^\n]*/>\n)(<meta name="dcterms\.created"[^\n]*/>\n)}{$2$1}g' "$file"
 
+  # Normalize canonical/shortlink order: always put shortlink before canonical.
+  perl -i -0pe 's{(<link rel="canonical"[^\n]*/>\n)(<link rel="shortlink"[^\n]*/>\n)}{$2$1}g' "$file"
+
   # Use a second sed pass for complex multi-line replacements.
   sed -i -E -e ':a;N;$!ba;s#(<a[^>]*class="[^"]*megamenu-page-link-level-3[^"]*"[^>]*href=")[^"]*("[^>]*>[[:space:]]*<span>)[^<]*(</span>)#\1STATIC_HREF\2STATIC_TEXT\3#g' "$file"
 
