@@ -75,7 +75,16 @@ jobs:
           if git diff --staged --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
-            echo "changed=true" >> $GITHUB_OUTPUT
+            # acquisitions-register.html alone isn't worth committing: any meaningful
+            # change (new merger, status update) is also reflected in individual matter
+            # pages. Unstage it if it's the only thing that changed.
+            non_register=$(git diff --staged --name-only | grep -v "^data/raw/acquisitions-register\.html$" | wc -l)
+            if [ "$non_register" -gt 0 ]; then
+              echo "changed=true" >> $GITHUB_OUTPUT
+            else
+              git restore --staged data/raw/acquisitions-register.html
+              echo "changed=false" >> $GITHUB_OUTPUT
+            fi
           fi
 
       # --- Extract (first pass) ---
