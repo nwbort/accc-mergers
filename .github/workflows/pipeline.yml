@@ -116,7 +116,7 @@ jobs:
             if [ "$non_register" -gt 0 ]; then
               echo "changed=true" >> $GITHUB_OUTPUT
             else
-              git restore --staged data/raw/acquisitions-register.html
+              git restore --staged --worktree data/raw/acquisitions-register.html
               echo "changed=false" >> $GITHUB_OUTPUT
             fi
           fi
