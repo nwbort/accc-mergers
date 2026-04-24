@@ -1600,6 +1600,49 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sembcorp-industries-ltd-alinta-energy"
     },
     {
+      "merger_id": "WA-15014",
+      "merger_name": "Wipro - Mindsprint",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-07T12:00:00Z",
+      "determination_publication_date": "2026-04-24T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Wipro Networks Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN  199907933M"
+        },
+        {
+          "name": "Wipro Limited",
+          "identifier_type": null,
+          "identifier": "CIN L32102KA1945PLC020800"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Mindsprint Pte Limited",
+          "identifier_type": null,
+          "identifier": "UEN  202118596N"
+        },
+        {
+          "name": "Olam Holdings Pte Limited",
+          "identifier_type": null,
+          "identifier": "UEN  202110101R"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/wipro-mindsprint"
+    },
+    {
       "merger_id": "WA-40014",
       "merger_name": "Infosys \u2013 Optimum Healthcare IT",
       "status": "Assessment completed",
@@ -2313,14 +2356,14 @@
       ],
       "other_parties": [
         {
-          "name": "Global Infrastructure Management, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware file number  4215071"
-        },
-        {
           "name": "BlackRock, Inc.",
           "identifier_type": null,
           "identifier": "Delaware file number \u2013 2886049"
+        },
+        {
+          "name": "Global Infrastructure Management, LLC",
+          "identifier_type": null,
+          "identifier": "Delaware file number  4215071"
         }
       ],
       "anzsic_codes": [

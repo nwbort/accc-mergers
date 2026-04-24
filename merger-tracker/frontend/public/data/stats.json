@@ -1,6 +1,6 @@
 {
   "total_mergers": 82,
-  "total_waivers": 115,
+  "total_waivers": 116,
   "by_status": {
     "Assessment completed": 54,
     "Under assessment": 28
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 105,
+    "Approved": 106,
     "Not approved": 10
   },
   "phase_duration": {
@@ -36,7 +36,7 @@
   "top_industries": [
     {
       "name": "Computer System Design and Related Services",
-      "count": 26
+      "count": 27
     },
     {
       "name": "Software Publishing",
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-15014",
+      "merger_name": "Wipro - Mindsprint",
+      "determination": "Approved",
+      "determination_date": "2026-04-24T12:00:00Z",
+      "page_modified_datetime": "2026-04-24T17:00:05+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-01092",
       "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-04-23T12:00:00Z",
       "page_modified_datetime": "2026-04-23T16:34:30+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-70011",
-      "merger_name": "Egis Projects Asia Pacific - Fulton Hogan Egis O&M",
-      "determination": "Approved",
-      "determination_date": "2026-04-22T12:00:00Z",
-      "page_modified_datetime": "2026-04-22T21:47:20+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

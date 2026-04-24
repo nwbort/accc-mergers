@@ -1416,6 +1416,14 @@
       },
       {
         "application_date": "2026-04-07",
+        "business_days": 13,
+        "calendar_days": 17,
+        "merger_name": "Wipro - Mindsprint",
+        "merger_id": "WA-15014",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-04-07",
         "business_days": 8,
         "calendar_days": 10,
         "merger_name": "Infosys \u2013 Optimum Healthcare IT",
@@ -1457,10 +1465,10 @@
     ],
     "stats": {
       "average": 11.8,
-      "median": 11,
+      "median": 11.5,
       "min": 2,
       "max": 22,
-      "count": 115
+      "count": 116
     }
   },
   "monthly_volume": {
@@ -1492,7 +1500,7 @@
       30,
       30,
       46,
-      9
+      10
     ]
   }
 }

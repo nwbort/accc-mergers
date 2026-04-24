@@ -6717,7 +6717,7 @@
       "original_notification_datetime": "2026-04-16T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-05-29T12:00:00Z",
-      "page_modified_datetime": "2026-04-17T14:58:39+10:00",
+      "page_modified_datetime": "2026-04-24T17:03:35+10:00",
       "consultation_response_due_date": "2026-04-24T12:00:00Z",
       "acquirers": [
         {
@@ -6735,14 +6735,14 @@
       ],
       "other_parties": [
         {
-          "name": "Global Infrastructure Management, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware file number  4215071"
-        },
-        {
           "name": "BlackRock, Inc.",
           "identifier_type": null,
           "identifier": "Delaware file number \u2013 2886049"
+        },
+        {
+          "name": "Global Infrastructure Management, LLC",
+          "identifier_type": null,
+          "identifier": "Delaware file number  4215071"
         }
       ],
       "anzsic_codes": [
@@ -6763,7 +6763,7 @@
           "display_title": "Questionnaire - GIM-TCR",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/TCR%20-%20third-party%20questionnaire%20-%2017%20April%202026.docx",
           "url_gh": "/mergers/MN-70014/TCR - third-party questionnaire - 17 April 2026.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
@@ -10751,6 +10751,98 @@
         },
         {
           "date": "2026-03-26T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/wipro-mindsprint",
+      "merger_name": "Wipro - Mindsprint",
+      "status": "Assessment completed",
+      "merger_id": "WA-15014",
+      "effective_notification_datetime": "2026-04-07T12:00:00Z",
+      "original_notification_datetime": "2026-04-07T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-04-24T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-04-24T17:00:05+10:00",
+      "acquirers": [
+        {
+          "name": "Wipro Networks Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN  199907933M"
+        },
+        {
+          "name": "Wipro Limited",
+          "identifier_type": null,
+          "identifier": "CIN L32102KA1945PLC020800"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Mindsprint Pte Limited",
+          "identifier_type": null,
+          "identifier": "UEN  202118596N"
+        },
+        {
+          "name": "Olam Holdings Pte Limited",
+          "identifier_type": null,
+          "identifier": "UEN  202110101R"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "Wipro Networks Pte Ltd, a wholly owned subsidiary of Wipro Limited (**Wipro**), proposes to acquire all the shares in Mindsprint Pte Limited (**Mindsprint**).\n\nWipro will not acquire Mindsprint's current 51% interest in Mindsprint Pty Ltd (**Mindsprint Australia**), a joint venture in Australia.\n\nWipro is a global technology, consulting and outsourcing company, with over 230,000 employees serving more than 1,400 clients across 175 cities. Wipro maintains long-standing relationships across key sectors including financial services, healthcare, government, retail, consumer goods, technology, manufacturing, energy and utilities. Its business is structured around four global business lines: Technology Services, Business Process Services, Consulting Services and Engineering.\n\nMindsprint offers information technology and related services for the food & agritech, manufacturing, retail and consumer packaged goods industries. It offers solutions in consulting, enterprise applications, digital engineering, data analytics, cloud and infrastructure services, cybersecurity, intelligent enterprise operations and business process outsourcing.\n\nThe services offered by Wipro and Mindsprint overlap in relation to technology services in particular, cloud, cybersecurity, business process services and consulting services.",
+      "events": [
+        {
+          "date": "2026-04-24T12:00:00Z",
+          "title": "Notification waiver determination",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Wipro%20-%20Mindsprint%20%28WA-15014%29%20-%20Notification%20waiver%20determination%20-%2024%20April%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Wipro Networks Pte Ltd, a subsidiary of Wipro Limited (Wipro),\napplied for a notification waiver in respect of its proposed\nacquisition of 100% of the share capital in Mindsprint Pte Limited\n(Mindsprint), as described in the transaction documents provided as\npart of the application (the Acquisition).\nThe Acquisition does not include Wipro acquiring Mindsprint's\ncurrent 51% interest in Mindsprint Pty Ltd (Mindsprint Australia), a\njoint venture with XL Tech in Australia."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "24 April 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "Wipro is an Indian global technology, consulting and outsourcing\ncompany, with over 230,000 employees serving more than 1,400\nclients across 175 cities. Wipro maintains relationships across key\nsectors including financial services, healthcare, government, retail,\nconsumer goods, technology, manufacturing, energy and utilities. Its\nbusiness is structured around four global business lines: Technology\nServices, Business Process Services, Consulting Services and\nEngineering.\nMindsprint is a Singapore-based technology consultancy that offers\ninformation technology and related services for the food & agritech,\nmanufacturing, retail and consumer packaged goods. It offers\nsolutions in consulting, enterprise applications, digital engineering,\ndata analytics, cloud and infrastructure services, cybersecurity,\nintelligent enterprise operations and business process outsourcing.\nBoth Wipro and Mindsprint offer information technology solutions\n(including cloud and cybersecurity), business and consulting\nservices."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\n\u2022 a. Wipro is not acquiring Mindsprint\u2019s interest in Mindsprint\nAustralia and, beyond the joint venture, Mindsprint has a\nsmall presence in Australia\nb. there are alternative providers of information technology,\nbusiness and consulting services in Australia, and the\ncombined share in the supply of these services is estimated\nto be low.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-15014/Wipro - Mindsprint (WA-15014) - Notification waiver determination - 24 April 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-04-07T12:00:00Z",
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
