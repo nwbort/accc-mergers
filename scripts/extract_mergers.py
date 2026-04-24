@@ -554,10 +554,13 @@ def _add_synthetic_events(merger_data):
     # Look for an existing determination document event on the same date (or
     # ±1 day to handle cases where the ACCC publication date field and the
     # events table date differ by one day, e.g. MN-01090).
+    # Also check the URL in case the event title is just the parties' names
+    # while the attached PDF filename contains "determination".
     existing_det_event = next(
         (e for e in events
          if _dates_within_one_day(e.get('date'), det_date)
-         and 'determination' in e.get('title', '').lower()
+         and ('determination' in e.get('title', '').lower()
+              or 'determination' in e.get('url', '').lower())
          and e.get('url')),
         None
     )
@@ -570,24 +573,14 @@ def _add_synthetic_events(merger_data):
                 existing_det_event['phase'] = 'Waiver'
             else:
                 existing_det_event['phase'] = phase.split(' - ')[0] if ' - ' in phase else phase
+        # Remove any redundant plain-text status row with the same title that
+        # the ACCC sometimes publishes alongside the document row.
+        merger_data['events'] = [
+            e for e in merger_data['events']
+            if not (e['title'] == determination_title and not e.get('url'))
+        ]
     else:
-        existing_titled_event = next(
-            (e for e in events if e['title'] == determination_title),
-            None
-        )
-        if existing_titled_event:
-            existing_titled_event['is_determination_event'] = True
-            if not existing_titled_event.get('url_gh'):
-                doc_event = next(
-                    (e for e in events
-                     if _dates_within_one_day(e.get('date'), det_date)
-                     and e.get('url_gh')
-                     and e is not existing_titled_event),
-                    None
-                )
-                if doc_event:
-                    existing_titled_event['url_gh'] = doc_event['url_gh']
-        else:
+        if not any(e['title'] == determination_title for e in events):
             events.append({
                 'date': det_date,
                 'title': determination_title,
