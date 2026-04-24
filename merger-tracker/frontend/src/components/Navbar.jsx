@@ -1,5 +1,5 @@
-import { Link, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
 import { useTracking } from '../context/TrackingContext';
 import NotificationPanel from './NotificationPanel';
 import BellIcon from './BellIcon';
@@ -18,13 +18,49 @@ const navLinks = [
 
 function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [notificationPanelOpen, setNotificationPanelOpen] = useState(false);
   const [showShortcutHints, setShowShortcutHints] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const searchInputRef = useRef(null);
   const { unseenCount } = useTracking();
+
+  const submitSearch = (query) => {
+    const trimmed = query.trim();
+    if (trimmed) {
+      navigate(`/mergers?q=${encodeURIComponent(trimmed)}`);
+    }
+    setSearchOpen(false);
+    setSearchQuery('');
+  };
+
+  const handleSearchKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      submitSearch(searchQuery);
+    } else if (e.key === 'Escape') {
+      setSearchOpen(false);
+      setSearchQuery('');
+    }
+  };
+
+  const handleSearchIconClick = () => {
+    if (searchOpen && searchQuery.trim()) {
+      submitSearch(searchQuery);
+    } else {
+      setSearchOpen((prev) => !prev);
+    }
+  };
+
+  useEffect(() => {
+    if (searchOpen && searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  }, [searchOpen]);
 
   const isActive = (path) => {
     return location.pathname === path;
@@ -121,6 +157,32 @@ function Navbar() {
             </div>
           </div>
           <div className="flex items-center gap-1">
+            <div className="hidden sm:flex items-center">
+              <div className={`flex items-center transition-all duration-200 ${searchOpen ? 'w-52' : 'w-8'}`}>
+                {searchOpen && (
+                  <input
+                    ref={searchInputRef}
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyDown={handleSearchKeyDown}
+                    onBlur={() => { if (!searchQuery.trim()) { setSearchOpen(false); } }}
+                    placeholder="Search mergers…"
+                    className="w-full text-sm bg-gray-100/80 border border-gray-200 rounded-l-lg px-3 py-1.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/40"
+                    aria-label="Search mergers"
+                  />
+                )}
+                <button
+                  onClick={handleSearchIconClick}
+                  className={`inline-flex items-center justify-center p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 ${searchOpen ? 'rounded-r-lg border border-l-0 border-gray-200 bg-gray-100/80 hover:bg-gray-200/80' : 'rounded-lg'}`}
+                  aria-label="Search"
+                >
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                  </svg>
+                </button>
+              </div>
+            </div>
             <div className="relative">
               <button
                 onMouseDown={(e) => e.stopPropagation()}
@@ -168,6 +230,25 @@ function Navbar() {
 
       {mobileMenuOpen && (
         <div id="mobile-menu" className="sm:hidden border-t border-gray-100 bg-white/95 backdrop-blur-lg">
+          <div className="px-3 pt-3 pb-1">
+            <div className="flex items-center gap-2 bg-gray-100/80 border border-gray-200 rounded-lg px-3 py-2">
+              <svg className="h-4 w-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+              <input
+                type="text"
+                placeholder="Search mergers…"
+                className="flex-1 text-sm bg-transparent text-gray-900 placeholder-gray-400 focus:outline-none"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && e.target.value.trim()) {
+                    navigate(`/mergers?q=${encodeURIComponent(e.target.value.trim())}`);
+                    setMobileMenuOpen(false);
+                  }
+                }}
+                aria-label="Search mergers"
+              />
+            </div>
+          </div>
           <nav aria-label="Mobile navigation" className="px-3 py-3 space-y-1">
             {navLinks.map(({ path, label }) => (
               <Link
