@@ -211,16 +211,37 @@ KNOWN_DETERMINATION_DATES = {
 
 
 def _load_frozen_events_mergers():
-    """Load the set of merger IDs whose events should not be updated from scraping."""
+    """Load frozen-events and field-override data from frozen_events_mergers.json.
+
+    Returns:
+        tuple: (frozen_ids, field_overrides)
+            frozen_ids: set of merger IDs whose events should not be updated from scraping.
+                An entry with an empty dict or ``freeze_events: true`` freezes events.
+            field_overrides: dict mapping merger IDs to dicts of field values that should
+                replace whatever the scraper finds.  Any key other than ``freeze_events``
+                (and keys starting with ``_``) is treated as a field override.
+    """
     try:
         with open(FROZEN_EVENTS_MERGERS_PATH, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        return {k for k in data if not k.startswith('_')}
+        frozen_ids = set()
+        field_overrides = {}
+        for k, v in data.items():
+            if k.startswith('_'):
+                continue
+            if not isinstance(v, dict) or not v or v.get('freeze_events'):
+                frozen_ids.add(k)
+            if isinstance(v, dict):
+                overrides = {fk: fv for fk, fv in v.items()
+                             if fk != 'freeze_events' and not fk.startswith('_')}
+                if overrides:
+                    field_overrides[k] = overrides
+        return frozen_ids, field_overrides
     except FileNotFoundError:
-        return set()
+        return set(), {}
     except Exception as e:
         print(f"Warning: could not load {FROZEN_EVENTS_MERGERS_PATH}: {e}", file=sys.stderr)
-        return set()
+        return set(), {}
 
 
 def _extract_basic_info(soup):
@@ -557,7 +578,7 @@ def _add_synthetic_events(merger_data):
             })
 
 
-def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers=None):
+def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers=None, field_overrides=None):
     """
     Parses a single HTML file, extracts structured data for a merger,
     and downloads any new attachments found. This function is designed to be
@@ -567,6 +588,7 @@ def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers
         filepath (str): The path to the HTML file.
         existing_merger_data (dict or None): Existing data for the merger.
         frozen_events_mergers (set or None): Merger IDs whose events should not be updated from scraping.
+        field_overrides (dict or None): Mapping of merger IDs to field-value dicts that override scraped data.
 
     Returns:
         dict or None: A dictionary containing the structured data for the merger,
@@ -595,6 +617,9 @@ def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers
             scraped_events, existing_merger_data, merger_id, frozen_events_mergers
         )
         _add_synthetic_events(merger_data)
+
+        if field_overrides and merger_id in field_overrides:
+            merger_data.update(field_overrides[merger_id])
 
         return merger_data
 
@@ -735,10 +760,13 @@ def main():
             print(f"Skipping {len(skipped_merger_ids)} merger(s) past cutoff date "
                   "(use --all to process all mergers)", file=sys.stderr)
 
-    # 3. Load the frozen events merger list
-    frozen_events_mergers = _load_frozen_events_mergers()
+    # 3. Load the frozen events merger list and any manual field overrides
+    frozen_events_mergers, field_overrides = _load_frozen_events_mergers()
     if frozen_events_mergers:
         print(f"Frozen events for {len(frozen_events_mergers)} merger(s): {', '.join(sorted(frozen_events_mergers))}",
+              file=sys.stderr)
+    if field_overrides:
+        print(f"Field overrides for {len(field_overrides)} merger(s): {', '.join(sorted(field_overrides))}",
               file=sys.stderr)
 
     # 4. Get a list of all HTML file paths to process
@@ -761,7 +789,7 @@ def main():
                 # Skip mergers past cutoff unless --all is specified
                 if merger_id in skipped_merger_ids:
                     continue
-                tasks.append((fp, existing_mergers.get(merger_id), frozen_events_mergers))
+                tasks.append((fp, existing_mergers.get(merger_id), frozen_events_mergers, field_overrides))
                 processed_merger_ids.add(merger_id)
             else:
                 print(f"Warning: Could not extract merger_id from {fp}", file=sys.stderr)
