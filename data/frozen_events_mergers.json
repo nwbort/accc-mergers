@@ -1,3 +1,6 @@
 {
-  "_comment": "Mergers whose events table on the ACCC website is known to be incorrect. For these, the existing events from mergers.json are preserved as-is rather than being overwritten by bad scraped data. Remove a merger from this list once the ACCC has fixed their website."
+  "_comment": "Override data for specific mergers. An entry with an empty dict or 'freeze_events: true' preserves the existing events array rather than overwriting from the scraped page (use this when the ACCC events table is incorrect). Any other keys are treated as field overrides — the scraper will use these values instead of whatever it finds on the page.",
+  "MN-01019": {
+    "consultation_response_due_date": "2026-04-30T12:00:00Z"
+  }
 }
