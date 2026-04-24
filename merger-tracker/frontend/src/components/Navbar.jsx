@@ -192,6 +192,15 @@ function Navbar() {
                 </button>
               </div>
             </div>
+            <button
+              onClick={() => { setMobileMenuOpen(true); setFocusMobileSearch(true); }}
+              className="sm:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150"
+              aria-label="Search"
+            >
+              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+            </button>
             <div className="relative">
               <button
                 onMouseDown={(e) => e.stopPropagation()}
@@ -215,15 +224,6 @@ function Navbar() {
                 onClose={() => setNotificationPanelOpen(false)}
               />
             </div>
-            <button
-              onClick={() => { setMobileMenuOpen(true); setFocusMobileSearch(true); }}
-              className="sm:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150"
-              aria-label="Search"
-            >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-              </svg>
-            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="sm:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150"
