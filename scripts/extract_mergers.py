@@ -609,7 +609,7 @@ def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers
         with open(filepath, 'r', encoding='utf-8') as f:
             html_content = f.read()
 
-        soup = BeautifulSoup(html_content, 'html.parser')
+        soup = BeautifulSoup(html_content, 'lxml')
 
         merger_data = _extract_basic_info(soup)
         merger_id = merger_data['merger_id']
@@ -640,14 +640,15 @@ def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers
 
 
 def get_merger_id_from_file(filepath):
-    """Extracts the merger ID from the HTML file without full parsing."""
+    """Extracts the merger ID from the HTML file using regex, avoiding a full HTML parse."""
     with open(filepath, 'r', encoding='utf-8') as f:
         html_content = f.read()
-    soup = BeautifulSoup(html_content, 'html.parser')
-    id_tag = soup.select_one('.field--name-dynamic-token-fieldnode-acccgov-merger-id .field__item')
-    if id_tag:
-        return id_tag.get_text(strip=True)
-    return None
+    match = re.search(
+        r'field--name-dynamic-token-fieldnode-acccgov-merger-id[^>]*>.*?'
+        r'class="field__item"[^>]*>.*?([A-Z]{2}-\d+)',
+        html_content, re.DOTALL
+    )
+    return match.group(1) if match else None
 
 
 def enrich_with_questionnaire_data(mergers_data):
