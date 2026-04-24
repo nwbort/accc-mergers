@@ -484,6 +484,8 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
                     matching_scraped['display_title'] = existing_event['display_title']
                 elif 'display_title' not in matching_scraped:
                     matching_scraped['display_title'] = matching_scraped['title']
+                if existing_event.get('is_determination_event'):
+                    matching_scraped['is_determination_event'] = existing_event['is_determination_event']
                 merged_events.append(matching_scraped)
                 scraped_without_url.remove(matching_scraped)
             else:
@@ -569,7 +571,23 @@ def _add_synthetic_events(merger_data):
             else:
                 existing_det_event['phase'] = phase.split(' - ')[0] if ' - ' in phase else phase
     else:
-        if not any(e['title'] == determination_title for e in events):
+        existing_titled_event = next(
+            (e for e in events if e['title'] == determination_title),
+            None
+        )
+        if existing_titled_event:
+            existing_titled_event['is_determination_event'] = True
+            if not existing_titled_event.get('url_gh'):
+                doc_event = next(
+                    (e for e in events
+                     if _dates_within_one_day(e.get('date'), det_date)
+                     and e.get('url_gh')
+                     and e is not existing_titled_event),
+                    None
+                )
+                if doc_event:
+                    existing_titled_event['url_gh'] = doc_event['url_gh']
+        else:
             events.append({
                 'date': det_date,
                 'title': determination_title,
