@@ -51,7 +51,7 @@ export SUBFOLDER="data/raw/matters"
 export USER_AGENT="Mozilla/5.0 (compatible; git-scraper-bot/1.0;)" # Be a good citizen
 export MERGERS_JSON="data/processed/mergers.json"
 export SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-export PARALLEL_JOBS=16
+export PARALLEL_JOBS=24
 
 # --- Functions ---
 
@@ -179,6 +179,14 @@ fetch_matter_page() {
 # Export the function so it's available to subshells spawned by xargs
 export -f fetch_matter_page
 
+# Function to fetch a single register page into PAGE_TEMP_DIR.
+# Exported so it can be called from subshells spawned by xargs.
+fetch_register_page() {
+  local page="$1"
+  curl -s -L -A "$USER_AGENT" "${REGISTER_URL}&page=${page}" -o "${PAGE_TEMP_DIR}/page_${page}.html"
+}
+export -f fetch_register_page
+
 # If called with --clean-file, just clean the specified file and exit.
 # This mode is used by the pipeline to re-clean files after a git rebase.
 if [ -n "$CLEAN_FILE_PATH" ]; then
@@ -231,21 +239,24 @@ if [ -n "$last_page_href" ]; then
   last_page=$(echo "$last_page_href" | grep -oP '[?&]page=\K[0-9]+' || true)
 
   if [ -n "$last_page" ] && [ "$last_page" -gt 0 ]; then
-    echo "Register has $(( last_page + 1 )) pages. Fetching additional pages..."
+    echo "Register has $(( last_page + 1 )) pages. Fetching additional pages in parallel..."
+
+    PAGE_TEMP_DIR=$(mktemp -d)
+    export PAGE_TEMP_DIR
+
+    seq 1 "$last_page" | xargs -P "$PARALLEL_JOBS" -I {} bash -c 'fetch_register_page "$@"' _ {}
 
     for (( page=1; page<=last_page; page++ )); do
-      page_url="${REGISTER_URL}&page=${page}"
-      page_file=$(mktemp)
-      echo "  - Fetching page $(( page + 1 )): $page_url"
-      curl -s -L -A "$USER_AGENT" "$page_url" -o "$page_file"
-
-      page_links=$(cat "$page_file" | pup '.accc-collapsed-card__header a attr{href}' | grep -v '#card-' | tr -d '\r')
-      if [ -n "$page_links" ]; then
-        relative_links=$(printf '%s\n%s' "$relative_links" "$page_links")
+      page_file="${PAGE_TEMP_DIR}/page_${page}.html"
+      if [ -f "$page_file" ]; then
+        page_links=$(pup '.accc-collapsed-card__header a attr{href}' < "$page_file" | grep -v '#card-' | tr -d '\r')
+        if [ -n "$page_links" ]; then
+          relative_links=$(printf '%s\n%s' "$relative_links" "$page_links")
+        fi
       fi
-
-      rm -f "$page_file"
     done
+
+    rm -rf "$PAGE_TEMP_DIR"
   fi
 fi
 
