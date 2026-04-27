@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-04-17T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-06-02T12:00:00Z",
-  "page_modified_datetime": "2026-04-17T16:30:07+10:00",
+  "page_modified_datetime": "2026-04-27T10:33:19+10:00",
   "consultation_response_due_date": "2026-04-24T12:00:00Z",
   "acquirers": [
     {
@@ -30,9 +30,9 @@
   ],
   "other_parties": [
     {
-      "name": "Accenture plc",
-      "identifier_type": null,
-      "identifier": "CRN  471706"
+      "name": "ACCENTURE AUSTRALIA HOLDINGS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "61 096 995 649"
     },
     {
       "name": "Accenture Venture Holdings B.V.",
@@ -40,19 +40,19 @@
       "identifier": "KVK  42007173"
     },
     {
-      "name": "Accenture Australia Holdings Pty Ltd",
-      "identifier_type": "ABN",
-      "identifier": "61 096 995 649"
+      "name": "Ziff Davis, LLC",
+      "identifier_type": null,
+      "identifier": "State File Number  5455121"
+    },
+    {
+      "name": "Accenture plc",
+      "identifier_type": null,
+      "identifier": "CRN  471706"
     },
     {
       "name": "Ziff Davis, Inc.",
       "identifier_type": null,
       "identifier": "State File Number  5542070"
-    },
-    {
-      "name": "Ziff Davis, LLC",
-      "identifier_type": null,
-      "identifier": "State File Number  5455121"
     }
   ],
   "anzsic_codes": [
@@ -69,7 +69,7 @@
       "display_title": "Questionnaire - Accenture - Ziff Davis' connectivity business",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Accenture%20-%20Ziff%20Davis%27%20connectivity%20business_1.docx",
       "url_gh": "/mergers/MN-10013/Questionnaire - Accenture - Ziff Davis' connectivity business_1.pdf",
-      "status": "live",
+      "status": "removed",
       "phase": null
     },
     {
