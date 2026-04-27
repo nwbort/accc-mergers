@@ -36,11 +36,12 @@ SEND_FROM = os.environ.get("SEND_FROM", "mergers.fyi weekly digest <digest@merge
 
 # Colour palette matching tailwind.config.js
 COLORS = {
-    "new_merger": {"border": "#5B3758", "pale": "#F3EBF2", "dark": "#3D2539"},
-    "cleared":    {"border": "#10b981", "pale": "#D1FAE5", "dark": "#059669"},
-    "declined":   {"border": "#f49097", "pale": "#FEE7E9", "dark": "#E8636C"},
-    "phase_1":    {"border": "#B8935C", "pale": "#FCECC9", "dark": "#8A6B3E"},
-    "phase_2":    {"border": "#52489c", "pale": "#E8E5F3", "dark": "#3A3372"},
+    "new_merger":       {"border": "#5B3758", "pale": "#F3EBF2", "dark": "#3D2539"},
+    "cleared":          {"border": "#10b981", "pale": "#D1FAE5", "dark": "#059669"},
+    "phase_2_referral": {"border": "#d97706", "pale": "#fef3c7", "dark": "#b45309"},
+    "declined":         {"border": "#f49097", "pale": "#FEE7E9", "dark": "#E8636C"},
+    "phase_1":          {"border": "#B8935C", "pale": "#FCECC9", "dark": "#8A6B3E"},
+    "phase_2":          {"border": "#52489c", "pale": "#E8E5F3", "dark": "#3A3372"},
 }
 
 # ---------------------------------------------------------------------------
@@ -142,6 +143,8 @@ def build_text_email(digest: dict) -> str:
     """Build a plain-text version of the weekly digest email."""
     date_range = format_date_range(digest["period_start"], digest["period_end"])
 
+    referred = digest.get("deals_referred_to_phase_2") or []
+
     lines = [
         "mergers.fyi weekly digest",
         f"Week of {date_range}",
@@ -149,11 +152,12 @@ def build_text_email(digest: dict) -> str:
         "",
         "SUMMARY",
         "-------",
-        f"New deals notified : {len(digest['new_deals_notified'])}",
-        f"Cleared            : {len(digest['deals_cleared'])}",
-        f"Declined           : {len(digest['deals_declined'])}",
-        f"Ongoing phase 1    : {len(digest['ongoing_phase_1'])}",
-        f"Ongoing phase 2    : {len(digest['ongoing_phase_2'])}",
+        f"New deals notified   : {len(digest['new_deals_notified'])}",
+        f"Cleared              : {len(digest['deals_cleared'])}",
+        f"Referred to phase 2  : {len(referred)}",
+        f"Declined             : {len(digest['deals_declined'])}",
+        f"Ongoing phase 1      : {len(digest['ongoing_phase_1'])}",
+        f"Ongoing phase 2      : {len(digest['ongoing_phase_2'])}",
         "",
     ]
 
@@ -170,6 +174,14 @@ def build_text_email(digest: dict) -> str:
         for m in digest["deals_cleared"]
     ]
     lines.append(_text_section("MERGERS APPROVED", ["Merger", "Date"], cleared_rows, "No mergers approved this week."))
+    lines.append("")
+    lines.append("")
+
+    referred_rows = [
+        [m.get("merger_name", m["merger_id"]), format_date(m.get("phase_1_determination_date"))]
+        for m in referred
+    ]
+    lines.append(_text_section("REFERRED TO PHASE 2", ["Merger", "Referral date"], referred_rows, "No mergers referred to phase 2 this week."))
     lines.append("")
     lines.append("")
 
@@ -218,10 +230,10 @@ def merger_link(merger: dict, color: dict) -> str:
 # Email HTML building blocks
 # ---------------------------------------------------------------------------
 
-def stat_card(count: int, label: str, color: dict, anchor: str) -> str:
+def stat_card(count: int, label: str, color: dict, anchor: str, width: str = "16%") -> str:
     url = f"{SITE_BASE}/digest#{anchor}"
     return (
-        f'<td width="20%" style="padding:4px 3px;">'
+        f'<td width="{width}" style="padding:4px 3px;">'
         f'<a href="{url}" style="text-decoration:none;display:block;">'
         f'<table width="100%" cellpadding="0" cellspacing="0" border="0">'
         f'<tr><td style="background:{color["pale"]};border-radius:8px;'
@@ -388,6 +400,31 @@ def build_declined(mergers: list) -> str:
     return section_table(hdr, cols, rows)
 
 
+def build_referred_to_phase_2(mergers: list) -> str:
+    c = COLORS["phase_2_referral"]
+    num_cols = 3
+    hdr = section_header_row("Mergers referred to phase 2", c, num_cols)
+    cols = col_header_row("Merger", "Referral date", "Determination")
+    if not mergers:
+        rows = empty_row("No mergers referred to phase 2 this week.", c, num_cols)
+    else:
+        rows = ""
+        for m in mergers:
+            det = (
+                m.get("accc_determination")
+                or m.get("phase_1_determination")
+                or "Referred to phase 2"
+            )
+            rows += (
+                f"<tr{_row_divider()}>"
+                f"{name_cell(m, c)}"
+                f"{date_cell(m.get('phase_1_determination_date'))}"
+                f"{text_cell(det, c['dark'])}"
+                f"</tr>"
+            )
+    return section_table(hdr, cols, rows)
+
+
 def build_phase_section(mergers: list, phase_key: str, title: str) -> str:
     c = COLORS[phase_key]
     num_cols = 4
@@ -417,6 +454,7 @@ def build_html_email(digest: dict) -> str:
     date_range = format_date_range(digest["period_start"], digest["period_end"])
     new_count = len(digest["new_deals_notified"])
     cleared_count = len(digest["deals_cleared"])
+    referred_count = len(digest.get("deals_referred_to_phase_2") or [])
     declined_count = len(digest["deals_declined"])
     phase1_count = len(digest["ongoing_phase_1"])
     phase2_count = len(digest["ongoing_phase_2"])
@@ -424,6 +462,7 @@ def build_html_email(digest: dict) -> str:
     stat_cards = (
         stat_card(new_count, "New deals", COLORS["new_merger"], "new-mergers")
         + stat_card(cleared_count, "Cleared", COLORS["cleared"], "mergers-approved")
+        + stat_card(referred_count, "Referred to phase\u00a02", COLORS["phase_2_referral"], "mergers-referred")
         + stat_card(declined_count, "Declined", COLORS["declined"], "mergers-declined")
         + stat_card(phase1_count, "Ongoing phase\u00a01", COLORS["phase_1"], "ongoing-phase-1")
         + stat_card(phase2_count, "Ongoing phase\u00a02", COLORS["phase_2"], "ongoing-phase-2")
@@ -432,6 +471,7 @@ def build_html_email(digest: dict) -> str:
     sections = (
         build_new_mergers(digest["new_deals_notified"])
         + build_cleared(digest["deals_cleared"])
+        + build_referred_to_phase_2(digest.get("deals_referred_to_phase_2") or [])
         + build_declined(digest["deals_declined"])
         + build_phase_section(
             digest["ongoing_phase_1"], "phase_1",
@@ -619,11 +659,12 @@ def main() -> None:
     broadcast_name = f"Weekly digest \u2013 {date_range}"
 
     print(f"Period: {date_range}")
-    print(f"  New deals notified : {len(digest['new_deals_notified'])}")
-    print(f"  Deals cleared      : {len(digest['deals_cleared'])}")
-    print(f"  Deals declined     : {len(digest['deals_declined'])}")
-    print(f"  Ongoing phase 1    : {len(digest['ongoing_phase_1'])}")
-    print(f"  Ongoing phase 2    : {len(digest['ongoing_phase_2'])}")
+    print(f"  New deals notified    : {len(digest['new_deals_notified'])}")
+    print(f"  Deals cleared         : {len(digest['deals_cleared'])}")
+    print(f"  Referred to phase 2   : {len(digest.get('deals_referred_to_phase_2') or [])}")
+    print(f"  Deals declined        : {len(digest['deals_declined'])}")
+    print(f"  Ongoing phase 1       : {len(digest['ongoing_phase_1'])}")
+    print(f"  Ongoing phase 2       : {len(digest['ongoing_phase_2'])}")
 
     print("\nBuilding HTML email…")
     html = build_html_email(digest)
