@@ -67,6 +67,28 @@ def _is_bold_line(chars: list) -> bool:
     return bold_count > len(alpha_chars) / 2
 
 
+def _get_table_bboxes(page) -> List[tuple]:
+    """Return bounding boxes of all tables detected on the page."""
+    try:
+        return [t.bbox for t in page.find_tables()]
+    except Exception:
+        return []
+
+
+def _is_in_table(line_dict: dict, table_bboxes: List[tuple]) -> bool:
+    """Return True if the line's midpoint falls within any table bounding box."""
+    if not table_bboxes:
+        return False
+    line_top = line_dict.get('top', 0)
+    line_bottom = line_dict.get('bottom', line_top)
+    mid_y = (line_top + line_bottom) / 2
+    mid_x = (line_dict.get('x0', 0) + line_dict.get('x1', 0)) / 2
+    for (tx0, ttop, tx1, tbottom) in table_bboxes:
+        if ttop <= mid_y <= tbottom and tx0 <= mid_x <= tx1:
+            return True
+    return False
+
+
 def extract_lines_with_formatting(pdf_path: str) -> List[Dict]:
     """
     Extract text lines from a PDF with formatting metadata.
@@ -74,6 +96,7 @@ def extract_lines_with_formatting(pdf_path: str) -> List[Dict]:
     Returns a list of dicts, each with:
     - text: the line's text content
     - is_bold: whether the line is predominantly bold
+    - is_table_content: whether the line falls inside a detected table region
 
     Also returns the full plain text for deadline extraction.
     """
@@ -86,6 +109,7 @@ def extract_lines_with_formatting(pdf_path: str) -> List[Dict]:
             if page_text:
                 full_text += page_text + "\n"
 
+            table_bboxes = _get_table_bboxes(page)
             text_lines = page.extract_text_lines(return_chars=True)
             for tl in text_lines:
                 text = tl.get('text', '').strip()
@@ -93,6 +117,7 @@ def extract_lines_with_formatting(pdf_path: str) -> List[Dict]:
                     lines.append({
                         'text': text,
                         'is_bold': _is_bold_line(tl.get('chars', [])),
+                        'is_table_content': _is_in_table(tl, table_bboxes),
                     })
 
     return lines, full_text
@@ -157,8 +182,28 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
         if re.match(r'^(Confidentiality|Note:|Please note)', text, re.IGNORECASE):
             break
 
-        # Bold non-numbered line = section header
+        # Skip lines that fall inside a detected table region. Save the current
+        # question first (on the first table line) so no table content is
+        # appended to it; leave the active section unchanged so the next real
+        # question inherits the correct section name.
+        if line.get('is_table_content', False):
+            if current_question_num is not None:
+                save_current_question()
+                current_question_num = None
+                current_question_text = []
+            prev_was_section_header = False
+            continue
+
+        # Bold non-numbered line = section header (with exceptions below)
         if is_bold and not re.match(r'^\d+\.', text):
+            # Parenthetical acronym labels like "(SURF)" or "(IRMD)" are bold
+            # inline labels within question sub-parts, not section headers.
+            if re.match(r'^\([^)]+\)$', text):
+                if current_question_num is not None:
+                    current_question_text.append(text)
+                prev_was_section_header = False
+                continue
+
             if current_question_num is not None:
                 save_current_question()
                 current_question_num = None
@@ -409,8 +454,9 @@ if __name__ == "__main__":
         pdf_path = sys.argv[2]
         lines, full_text = extract_lines_with_formatting(pdf_path)
         for i, line in enumerate(lines):
-            bold = 'BOLD' if line['is_bold'] else '    '
-            print(f"{i:3d} [{bold}] {line['text']}")
+            bold = 'BOLD ' if line['is_bold'] else '     '
+            table = 'TABLE' if line.get('is_table_content') else '     '
+            print(f"{i:3d} [{bold}][{table}] {line['text']}")
         sys.exit(0)
 
     if len(sys.argv) > 1:
