@@ -157,8 +157,27 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
         if re.match(r'^(Confidentiality|Note:|Please note)', text, re.IGNORECASE):
             break
 
-        # Bold non-numbered line = section header
+        # Bold non-numbered line = section header (with exceptions below)
         if is_bold and not re.match(r'^\d+\.', text):
+            # Parenthetical acronym labels like "(SURF)" or "(IRMD)" are bold
+            # inline labels within question sub-parts, not section headers.
+            if re.match(r'^\([^)]+\)$', text):
+                if current_question_num is not None:
+                    current_question_text.append(text)
+                prev_was_section_header = False
+                continue
+
+            # Excessively long bold lines are table column headers, not section
+            # headers. Save the current question so subsequent table-body lines
+            # don't get appended to it, but leave the current section unchanged.
+            if len(text) > 100:
+                if current_question_num is not None:
+                    save_current_question()
+                    current_question_num = None
+                    current_question_text = []
+                prev_was_section_header = False
+                continue
+
             if current_question_num is not None:
                 save_current_question()
                 current_question_num = None
