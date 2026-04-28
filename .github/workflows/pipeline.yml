@@ -217,28 +217,54 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Update merger data: ${timestamp}"
-            git pull --rebase || { git rebase --abort; exit 1; }
+            # Guard: skip the commit if only acquisitions-register.html is staged.
+            # The scrape-changes filter above handles the obvious case (register is
+            # the only scraped change), but it can be bypassed when a matter page
+            # changes cosmetically (non_register > 0 → filter skipped, changed=true)
+            # yet extraction produces output identical to HEAD, leaving the register
+            # as the sole meaningful staged diff.
+            staged_non_register=$(git diff --staged --name-only \
+              | grep -v "^data/raw/acquisitions-register\.html$" | wc -l)
+            if [ "$staged_non_register" -eq 0 ]; then
+              echo "Only acquisitions-register.html staged — skipping commit"
+            else
+              git commit -m "Update merger data: ${timestamp}"
+              git pull --rebase || { git rebase --abort; exit 1; }
 
-            # After rebase, re-clean any HTML files that changed. A 3-way merge
-            # during rebase can reintroduce raw dynamic tokens if both the local
-            # commit and the pulled commits touched the same file.
-            rebase_html=$(git diff HEAD^..HEAD --name-only 2>/dev/null | grep '\.html$' || true)
-            if [ -n "$rebase_html" ]; then
-              echo "HTML files in rebased commit:"
-              echo "$rebase_html" | sed 's/^/  /'
-              while IFS= read -r f; do
-                if [ -f "$f" ]; then
-                  ./scripts/scrape.sh --clean-file "$f"
-                  git add "$f"
-                  echo "Re-cleaned: $f"
+              # After rebase, re-clean any HTML files that changed. A 3-way merge
+              # during rebase can reintroduce raw dynamic tokens if both the local
+              # commit and the pulled commits touched the same file.
+              rebase_html=$(git diff HEAD^..HEAD --name-only 2>/dev/null | grep '\.html$' || true)
+              if [ -n "$rebase_html" ]; then
+                echo "HTML files in rebased commit:"
+                echo "$rebase_html" | sed 's/^/  /'
+                while IFS= read -r f; do
+                  if [ -f "$f" ]; then
+                    ./scripts/scrape.sh --clean-file "$f"
+                    git add "$f"
+                    echo "Re-cleaned: $f"
+                  fi
+                done <<< "$rebase_html"
+                if ! git diff --staged --quiet; then
+                  echo "WARNING: Rebase introduced uncleaned HTML — amending commit to fix"
+                  git commit --amend --no-edit
                 fi
-              done <<< "$rebase_html"
-              if ! git diff --staged --quiet; then
-                echo "WARNING: Rebase introduced uncleaned HTML — amending commit to fix"
-                git commit --amend --no-edit
+              fi
+
+              # After rebase (and any amend), check whether our commit was reduced to
+              # only acquisitions-register.html. This can happen if a concurrent run
+              # already committed the shared matter-page/processed-data changes, leaving
+              # only the slightly-different acquisitions-register.html in our rebased
+              # commit. Drop it rather than push noise.
+              post_rebase_non_register=$(git diff HEAD^..HEAD --name-only 2>/dev/null \
+                | grep -v "^data/raw/acquisitions-register\.html$" | wc -l)
+              if git diff HEAD^..HEAD --name-only 2>/dev/null \
+                  | grep -q "acquisitions-register" \
+                  && [ "$post_rebase_non_register" -eq 0 ]; then
+                echo "Rebase reduced commit to acquisitions-register.html only — dropping, not pushing"
+                git reset --hard HEAD^
+              else
+                git push
               fi
             fi
-
-            git push
           fi
