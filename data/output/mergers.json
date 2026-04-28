@@ -2570,7 +2570,7 @@
       "original_notification_datetime": "2026-04-21T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-06-04T12:00:00Z",
-      "page_modified_datetime": "2026-04-21T13:51:00+10:00",
+      "page_modified_datetime": "2026-04-28T17:35:36+10:00",
       "consultation_response_due_date": "2026-04-28T12:00:00Z",
       "acquirers": [
         {
@@ -2593,6 +2593,11 @@
       ],
       "other_parties": [
         {
+          "name": "The Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST",
+          "identifier_type": "ABN",
+          "identifier": "62 653 671 394"
+        },
+        {
           "name": "The Massachusetts Mutual Life Insurance Company (MassMutual)",
           "identifier_type": null,
           "identifier": ""
@@ -2601,11 +2606,6 @@
           "name": "The Trustee for AWARE SUPER",
           "identifier_type": "ABN",
           "identifier": "53 226 460 365"
-        },
-        {
-          "name": "The Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST",
-          "identifier_type": "ABN",
-          "identifier": "62 653 671 394"
         },
         {
           "name": "GOODMAN LIMITED",
@@ -2623,7 +2623,7 @@
           "name": "Non-Residential Property Operators"
         }
       ],
-      "merger_description": "A group of investors proposes to acquire 100% of the issued shares in Moorabbin Airport Corporation Pty Ltd (**MAC**), to be held through a holding company. MAC holds the long-term airport lease granted by the Commonwealth in relation to Moorabbin Airport, a metropolitan airport located south-east of the Melbourne CBD. The investors also propose to acquire leasehold interests in various non-aviation commercial properties located at the Moorabbin Airport site (together, the **Acquisition**).\n\nThe group of investors comprise:\n\n* REST, an Australian profit-to-member superannuation fund with approximately 2 million members and around $105 billion in funds under management;\n* Aware Super, an Australian superannuation and retirement fund, with almost 1.2 million members and $198.7 billion in funds under management;\n* MassMutual, a mutual life insurance company based in Massachusetts, United States; and\n* Goodman Limited (**Goodman**), part of the Goodman Group, an ASX-listed industrial property and digital infrastructure business. Goodman\u2019s primary business activities include the ownership, development and management of essential real estate assets, including logistics facilities, warehouses and data centres worldwide.\n\n(these four businesses are together the **Investors**)\n\nGoodman currently owns 100% of the units in the Moorabbin Airport Unit Trust (with Tallina Pty Ltd as trustee), which in turn owns 100% of the shares in MAC. The acquisition therefore results in a reduction of Goodman's interest in MAC.\n\nMoorabbin Airport provides services to facilitate general aviation activities such as flight training, private air charter, freight, recreational flying and air work and emergency services. Moorabbin Airport has only one regular passenger transport service, with King Island Airlines flying between King Island and the mainland daily. Moorabbin Airport contains over 250 mixed-use, large and small businesses, including Kingston Central Plaza, Direct Factory Outlet (DFO),\u00a0and the Chifley Business Park.\n\nThe Investors, excluding Goodman, have interests in industrial land across metropolitan Melbourne. The Investors, excluding Goodman, also hold interests in other airports, which either focus on different primary operations to Moorabbin Airport (that is, they are focused on regular passenger transport rather than general aviation services) or offer general aviation services outside of Victoria.",
+      "merger_description": "A group of investors proposes to acquire 100% of the issued shares in Moorabbin Airport Corporation Pty Ltd (**MAC**), to be held through a holding company. MAC holds the long-term airport lease granted by the Commonwealth in relation to Moorabbin Airport, a metropolitan airport located south-east of the Melbourne CBD. The investors also propose to acquire leasehold interests in various non-aviation commercial properties located at the Moorabbin Airport site (together, the **Acquisition**).\n\nThe group of investors comprise:\n\n* REST, an Australian profit-to-member superannuation fund with approximately 2 million members and around $105 billion in funds under management;\n* Aware Super, an Australian superannuation and retirement fund, with almost 1.2 million members and $198.7 billion in funds under management;\n* MassMutual, a mutual life insurance company based in Massachusetts, United States; and\n* Goodman Limited (Goodman), part of the Goodman Group, an ASX-listed industrial property and digital infrastructure business. Goodman\u2019s primary business activities include the ownership, development and management of essential real estate assets, including logistics facilities, warehouses and data centres worldwide.\n\n(these four businesses are together, the **Investors**)\n\nGoodman currently owns 100% of the units in the Moorabbin Airport Unit Trust (with Tallina Pty Ltd as trustee), which in turn owns 100% of the shares in MAC. The acquisition therefore results in a reduction of Goodman's interest in MAC.\n\nMoorabbin Airport provides services to facilitate general aviation activities such as flight training, private air charter, freight, recreational flying and air work and emergency services. Moorabbin Airport has only one regular passenger transport service, with King Island Airlines flying between King Island and the mainland daily. Moorabbin Airport contains over 250 mixed-use, large and small businesses, including Kingston Central Plaza, Direct Factory Outlet (DFO),\u00a0and the Chifley Business Park.\n\nThe Investors, excluding Goodman, have interests in industrial land across metropolitan Melbourne. The Investors, excluding Goodman, also hold interests in other airports, which either focus on different primary operations to Moorabbin Airport (that is, they are focused on regular passenger transport rather than general aviation services) or offer general aviation services outside of Victoria.",
       "events": [
         {
           "date": "2026-04-21T12:00:00Z",
@@ -2631,7 +2631,7 @@
           "display_title": "Questionnaire - MassMutual, Rest, Aware Super and Goodman - Moorabbin Airport",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/MassMutual%20-%20Moorabbin%20Airport%20-%20Questionnaire.docx",
           "url_gh": "/mergers/MN-10012/MassMutual - Moorabbin Airport - Questionnaire.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
