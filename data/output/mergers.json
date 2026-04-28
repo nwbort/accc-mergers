@@ -5221,6 +5221,81 @@
       "has_questionnaire": true
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/win-television-network-nbn-enterprises-television-holdings-darwin",
+      "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
+      "status": "Under assessment",
+      "merger_id": "MN-50008",
+      "effective_notification_datetime": "2026-04-24T12:00:00Z",
+      "original_notification_datetime": "2026-04-24T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-06-10T12:00:00Z",
+      "page_modified_datetime": "2026-04-28T16:18:29+10:00",
+      "consultation_response_due_date": "2026-05-05T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "WIN TELEVISION NETWORK PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 008 589 026"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 124 816 093"
+        },
+        {
+          "name": "TELEVISION HOLDINGS DARWIN PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "33 009 634 048"
+        },
+        {
+          "name": "NBN ENTERPRISES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "68 009 140 078"
+        },
+        {
+          "name": "NINE NETWORK AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "88 008 685 407"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5621",
+          "name": "Free-to-Air Television Broadcasting"
+        }
+      ],
+      "merger_description": "WIN Television Network Pty Ltd (**WIN TV**) proposes to acquire 100% of the shares in NBN Enterprises Pty Limited (**NBN**) from Nine Network Australia Holdings Pty Ltd and 100% of the shares in Television Holdings Darwin Pty Limited (**NTD**) from Nine Network Australia Pty Limited (the **Acquisition**).  \n\nNBN and NTD are wholly owned subsidiaries of the Nine Network Australia Holdings Pty Ltd and Nine Network Australia Pty Limited respectively, and are ultimately controlled by Nine Entertainment Co. Holdings Limited (the parent company of a group of companies known as the Nine Group). Both NBN and NTD, via their respective wholly owned subsidiaries, operate regional free-to-air television stations. NBN broadcasts across the Northern NSW (**NNSW**) and Gold Coast regions, while NTD broadcasts to Darwin, Palmerston and the surrounding areas in the Northern Territory.\n\nWIN TV is the parent company of a group of wholly owned subsidiaries which broadcast free-to-air television in other parts of regional Australia.\n\nThere is no geographic overlap between the local broadcasting areas of WIN TV, NBN and NTD.",
+      "events": [
+        {
+          "date": "",
+          "title": "Questionnaire - WIN Television Network - NBN Enterprises & Television Holdings Darwin",
+          "display_title": "Questionnaire - WIN Television Network - NBN Enterprises & Television Holdings Darwin",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/WIN%20Network%20-%20NBN%20Enterprises%20%26%20Television%20Holdings%20Darwin%20-%20Third%20party%20questionnaire.docx",
+          "url_gh": "/mergers/MN-50008/WIN Network - NBN Enterprises and Television Holdings Darwin - Third party questionnaire.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-04-24T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/maas-%E2%80%93-50-acquisition-of-colas%E2%80%99-caloundra-asphalt-plant-and-100-of-colas%E2%80%99-tomago-asphalt-plant",
       "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
       "status": "Assessment completed",
@@ -5577,13 +5652,15 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/calvary-holmesglen-private-hospital",
       "merger_name": "Calvary - Holmesglen Private Hospital",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-55010",
       "effective_notification_datetime": "2026-03-27T12:00:00Z",
       "original_notification_datetime": "2026-03-27T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-05-13T12:00:00Z",
-      "page_modified_datetime": "2026-04-08T16:06:54+10:00",
+      "determination_publication_date": "2026-04-28T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-04-28T15:52:53+10:00",
       "consultation_response_due_date": "2026-04-08T12:00:00Z",
       "acquirers": [
         {
@@ -5594,6 +5671,11 @@
       ],
       "targets": [
         {
+          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 146 342 814"
+        },
+        {
           "name": "ANZ HOSPITALS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "14 631 014 938"
@@ -5602,11 +5684,6 @@
           "name": "HEALTHSCOPE NEWCO PTY LTD",
           "identifier_type": "ABN",
           "identifier": "80 092 450 274"
-        },
-        {
-          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 146 342 814"
         },
         {
           "name": "HEALTHSCOPE OPERATIONS PTY LTD",
@@ -5625,7 +5702,7 @@
           "name": "Aged Care Residential Services"
         }
       ],
-      "merger_description": "Little Company of Mary Health Care Ltd (**Calvary**) proposes to acquire the business and assets of Holmesglen Private Hospital (**Holmesglen Private**) from Healthscope.\n\nCalvary is a not-for-profit operator of public and private hospitals in Australia. Calvary operates one healthcare facility in Victoria, Calvary Health Care Bethlehem, a publicly-funded facility located in Caulfield South. Calvary Bethlehem provides healthcare services for patients with progressive neurodegenerative disease, as well as for palliative care more broadly.\n\nHolmesglen Private is a private hospital in located in Moorabbin, which is currently operated by Healthscope. In May 2025, Healthscope\u2019s parent entities went into voluntary administration, and receivers and administrators were appointed by its lenders and the Healthscope Board, respectively, to conduct an orderly sale of the hospitals in its network.\n\nHolmesglen Private is an acute care facility with 147 beds offering a 24/7 Emergency Department, intensive care unit, and coronary care unit. It provides a wide range of surgical and medical services including cardiology, orthopaedic and general surgery, and plastic and reconstructive surgery. Holmesglen Private does not have a palliative care unit.",
+      "merger_description": "Little Company of Mary Health Care Ltd (**Calvary**) proposes to acquire the business and assets of Holmesglen Private Hospital (**Holmesglen Private**) from Healthscope.\n\nCalvary is a not-for-profit operator of public and private hospitals in Australia. Calvary operates one healthcare facility in Victoria, Calvary Health Care Bethlehem, a publicly-funded facility located in Caulfield South. Calvary Bethlehem provides healthcare services for patients with progressive neurodegenerative disease, as well as for palliative care more broadly.\n\nHolmesglen Private is a private hospital located in Moorabbin, which is currently operated by Healthscope. In May 2025, Healthscope\u2019s parent entities went into voluntary administration, and receivers and administrators were appointed by its lenders and the Healthscope Board, respectively, to conduct an orderly sale of the hospitals in its network.\n\nHolmesglen Private is an acute care facility with 147 beds offering a 24/7 Emergency Department, intensive care unit, and coronary care unit. It provides a wide range of surgical and medical services including cardiology, orthopaedic and general surgery, and plastic and reconstructive surgery. Holmesglen Private does not have a palliative care unit.",
       "events": [
         {
           "date": "2026-03-30T12:00:00Z",
@@ -5641,12 +5718,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-04-28T12:00:00Z",
+          "title": "Calvary - Holmesglen Private Hospital - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Calvary%20-%20Holmesglen%20-%20Phase%201%20determination%20-%2028%20April%202026.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Little Company of Mary Health Care Ltd (Calvary) proposes to\nacquire 100% of the assets of Holmesglen Private Hospital\n(Holmesglen Private) from Healthscope pursuant to a Business and\nAsset Sale Agreement (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Calvary is a not-for-profit, Catholic operator of public\nand private hospitals in Australia, with facilities in Victoria, New\nSouth Wales, South Australia, Tasmania, and the ACT.\nThe target, Holmesglen Private, is a private hospital in Melbourne,\nVictoria which is currently operated by Healthscope.\nIn May 2025, Healthscope\u2019s parent entities went into voluntary\nadministration, and receivers and administrators were appointed by\nits lenders and the Healthscope Board respectively to conduct an\norderly sale of the hospitals in its network."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the parties",
+              "details": "Calvary is a private and public hospital operator, and Holmesglen\nPrivate is a private hospital located in Moorabbin, Victoria.\nCalvary does not currently have any private hospitals in Victoria.\nCalvary operates one publicly-funded healthcare facility in Victoria,\nCalvary Health Care Bethlehem, located in the Melbourne suburb of\nCaulfield South, a 7km drive from Holmesglen Private. Calvary\nBethlehem provides specialist healthcare services for patients with\nprogressive neurodegenerative disease, and for palliative care more\nbroadly.\nHolmesglen Private is a private hospital focused on acute medical\nand surgical care. Holmesglen Private does not have a palliative care\nunit."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third parties, including\nsubmissions expressing concerns that post-acquisition, Calvary, as\na Catholic healthcare provider, is likely to discontinue the supply of\nsome services, including certain reproductive procedures, at\nHolmesglen Private.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\nThere is limited horizontal overlap between Holmesglen Private and\nCalvary Bethlehem, and they are not close competitors. Calvary\nBethlehem is a public facility principally supplying palliative care\nservices and treatment for progressive neurodegenerative disease,\nand it does not have operating theatres or provide acute care.\nConversely, Holmesglen Private is a private hospital primarily\nproviding acute medical and surgical care, and it does not have a\npalliative care unit.\nHolmesglen Private would likely continue to face competition from\nalternative suppliers of private hospital services in Melbourne.\nThe ACCC considers that following the Acquisition, it is likely that\nCalvary, as a Catholic healthcare provider, will not provide the same\nbreadth of services that Holmesglen Private currently provides and\nthat certain services may not continue to be available at Holmesglen\nPrivate in the future. The ACCC has had regard to the future without\nthe Acquisition, including the commercially likely scenarios for future\nownership and operation of Holmesglen Private, and considers that\nthe Acquisition is unlikely to have the effect of substantially\nlessening competition in any market."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-55010/Calvary - Holmesglen - Phase 1 determination - 28 April 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-04-28T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -8009,13 +8122,15 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tega-and-apollo-funds-consortium-molycop",
       "merger_name": "Tega and Apollo Funds consortium - Molycop",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-85006",
       "effective_notification_datetime": "2026-03-26T12:00:00Z",
       "original_notification_datetime": "2026-03-26T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-05-12T12:00:00Z",
-      "page_modified_datetime": "2026-04-07T14:19:23+10:00",
+      "determination_publication_date": "2026-04-28T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-04-28T15:20:58+10:00",
       "consultation_response_due_date": "2026-04-07T12:00:00Z",
       "acquirers": [
         {
@@ -8031,9 +8146,9 @@
       ],
       "targets": [
         {
-          "name": "Molycop Group, comprising all of the entities owned directly or indirectly by AIP MC Holdings LLC.",
-          "identifier_type": null,
-          "identifier": "6208194"
+          "name": "Orway IQ Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "52 631 359 370"
         },
         {
           "name": "Molycop Technologies Pty Ltd",
@@ -8051,16 +8166,16 @@
           "identifier": "58 000 007 698"
         },
         {
-          "name": "Orway IQ Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "52 631 359 370"
+          "name": "Molycop Group, comprising all of the entities owned directly or indirectly by AIP MC Holdings LLC.",
+          "identifier_type": null,
+          "identifier": "6208194"
         }
       ],
       "other_parties": [
         {
-          "name": "Losugen Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "26 097 626 849"
+          "name": "Tega MC JV Holdings Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "202551674N"
         },
         {
           "name": "AP Jupiter Holdco (SG) P. Ltd.",
@@ -8068,9 +8183,9 @@
           "identifier": "202551665M"
         },
         {
-          "name": "Tega MC JV Holdings Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "202551674N"
+          "name": "Losugen Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "26 097 626 849"
         },
         {
           "name": "Tega MC Investment Pte. Ltd.",
@@ -8096,7 +8211,7 @@
           "name": "Other Specialised Industrial Machinery and Equipment Wholesaling"
         }
       ],
-      "merger_description": "The proposed acquisition involves a consortium comprised of Tega Industries Limited (**Tega**) and the Apollo funds indirectly and collectively acquiring all outstanding shares in the subsidiaries of AIP MC Holdings LLC that collectively form **Molycop**.\n\nThe Apollo Funds are managed by\u00a0Apollo Global Management, Inc\u00a0and indirect subsidiaries of it (**Apollo**)\n\nThe proposed acquisition will occur through a special purpose vehicle, Tega MC JV Holdings Pte. Ltd (**JV Co.**), which is indirectly and jointly controlled by Tega and the Apollo funds. \u00a0Tega indirectly holds 76.7% of JV Co., while Apollo indirectly hold the remaining 23.3%.\n\nTega is a global supplier of mining products such as mill and scrubber liners, trommels, screen media, hydrocyclones, slurry pumps and parts, conveyor components, chutes, and other rubber and composite wear parts. Tega also provides installation, condition monitoring, and maintenance services.\n\nApollo is an alternative asset management firm headquartered in New York. Examples of current investments include companies in natural resources, manufacturing and industrial, education, insurance, financial services, and leisure businesses.\n\nMolycop is a global supplier of mining consumables, with a focus on the manufacture and sale of grinding media and flotation chemicals for use in both semi-autogenous grinding mills and ball mills. These products are used for mineral extraction and processing for copper, gold and iron ore.\u00a0In Australia, Molycop also supplies engineered products for the Australian rail and manufacturing industries",
+      "merger_description": "The proposed acquisition involves a consortium comprised of Tega Industries Limited (**Tega**) and the Apollo funds indirectly and collectively acquiring all outstanding shares in the subsidiaries of AIP MC Holdings LLC that collectively form Molycop.\n\nThe Apollo Funds are managed by\u00a0Apollo Global Management, Inc\u00a0and indirect subsidiaries of it (**Apollo**).\n\nThe proposed acquisition will occur through a special purpose vehicle, Tega MC JV Holdings Pte. Ltd (**JV Co.**), which is indirectly and jointly controlled by Tega and the Apollo funds. \u00a0Tega indirectly holds 76.7% of JV Co., while Apollo indirectly hold the remaining 23.3%.\n\nTega is a global supplier of mining products such as mill and scrubber liners, trommels, screen media, hydrocyclones, slurry pumps and parts, conveyor components, chutes, and other rubber and composite wear parts. Tega also provides installation, condition monitoring, and maintenance services.\n\nApollo is an alternative asset management firm headquartered in New York. Examples of current investments include companies in natural resources, manufacturing and industrial, education, insurance, financial services, and leisure businesses.\n\nMolycop is a global supplier of mining consumables, with a focus on the manufacture and sale of grinding media and flotation chemicals for use in both semi-autogenous grinding mills and ball mills. These products are used for mineral extraction and processing for copper, gold and iron ore.\u00a0In Australia, Molycop also supplies engineered products for the Australian rail and manufacturing industries",
       "events": [
         {
           "date": "2026-03-26T12:00:00Z",
@@ -8112,12 +8227,48 @@
           "url_gh": "/mergers/MN-85006/Apollo - Molycop_0_0.pdf",
           "status": "removed",
           "phase": null
+        },
+        {
+          "date": "2026-04-28T12:00:00Z",
+          "title": "Tega and Apollo Funds consortium - Molycop - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Tega%20and%20Apollo%20Funds%20consortium%20-%20Molycop%20-%20Phase%201%20determination%20-%2028%20April%202026_0.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "A consortium comprised of Tega Industries Limited (Tega) and funds\nadvised and/or managed by affiliates of certain subsidiaries of Apollo\nGlobal Management, Inc (Apollo Funds) proposed acquisition of all\noutstanding shares in the subsidiaries of AIP MC Holdings LLC that\ncollectively form Molycop (together, Molycop) (the Acquisition)]"
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined\nunder section 51ABZE(1) of the Competition and Consumer Act 2010\n(Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer is a consortium comprising Tega and the Apollo Funds.\nTega is a supplier of mining products such as mill and scrubber liners,\ntrommels, screen media, hydrocyclones, slurry pumps and parts,\nconveyor components, chutes, and other rubber and composite wear\nparts. Tega also provides installation, condition monitoring, and\nmaintenance services.\nApollo is an alternative asset management firm headquartered in New\nYork. Examples of current investments include companies in natural\nresources, manufacturing and industrial, education, insurance, financial\nservices, and leisure businesses.\nThe target, Molycop, is a global supplier of mining consumables, with a\nfocus on the manufacture and sale of grinding media and flotation\nchemicals for use in both semi-autogenous grinding mills and ball mills.\nThese products are used for mineral extraction and processing of\ncopper, gold, and iron ore. In Australia, Molycop also supplies\nengineered products for the Australian rail and manufacturing\nindustries."
+            },
+            {
+              "item": "Relationship between\nthe parties",
+              "details": "Molycop and Tega supply complementary products. Molycop\u2019s grinding\nmedia and Tega\u2019s mill liners are both inputs used by mining customers\nin grinding mills to process ore. Grinding media are fed into grinding\nmills together with ore. The rotation of the grinding mill creates impact\nbetween the grinding media and ore, reducing the ore material down to a\nfiner size and liberating the minerals of value.\nKey types of grinding media supplied by Molycop include:\n\u2022 SAG balls: large, forged steel balls that operate with a semi-\nautogenous (SAG) mill \u2013 the first stage of grinding ore after\ncrushing.\n\u2022 Small / medium balls: smaller forged steel balls that operate a\nball mill \u2013 the second phase of grinding ore (after the SAG mill).\n\u2022 High-chrome balls: typically smaller balls (also used in a ball\nmill) with a higher chromium content, that have a lower wear\nrate than forged steel but are more susceptible to breakage.\nMill liners, such as those supplied by Tega, are customised wear parts\nthat fit the interior grinding mills and ball mills to protect internal\nsurfaces from wear and impact during grinding to extend a mill\u2019s life and\nimprove operational efficiency."
+            },
+            {
+              "item": "Reasons for\ndetermination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an acquisition to\nbe approved or subject to further assessment in Phase 2 in accordance\nwith section 51ABZJ of the Competition and Consumer Act 2010 (Cth)\n(the Act). In doing so, the ACCC must have regard to the object of the\nAct and all relevant matters, including the interests of consumers.\nFor more information about the ACCC\u2019s approach to considering notified\nacquisitions, see the ACCC\u2019s merger assessment guidelines and interim\nmerger process guidelines.\nIn conducting its competition assessment, the ACCC has considered the\ninformation and documents that were submitted with the notification\nform and information from third parties, and publicly available\ninformation.\nThe ACCC has determined that the Acquisition may be put into effect as\nit considers that the Acquisition is unlikely to have the effect of\nsubstantially lessening competition in any market. In reaching its\ndecision, and based on the material before it, the ACCC makes the\nfollowing findings:\n\u2022 There are no horizontal overlaps or material vertical relationships\nbetween the parties.\n\u2022 The ACCC has considered the potential for conglomerate effects,\nparticularly whether Tega would have the ability and incentive to\nleverage Molycop\u2019s strong market position in grinding media to\nforeclose rival suppliers of mill liners by anti-competitively bundling\nor tying the two products. However, the ACCC found:\n\u2212 Many mining customers would be able to switch to a different\nsupplier of grinding media in response to any tying or bundling\nstrategy. While Molycop is the only supplier of Australian-made\ngrinding media and has a very high market share, they are\nrelatively commoditised products and customers are able to\nswitch to imported products.\n\u2212 There would be practical barriers to bundling or tying the\nproducts. For example, customers typically procure mill liners\nand grinding media separately through different methods (spot\npurchases for mill liners and competitive tenders for grinding\nmedia) and over different time periods (grinding media are\ntypically supplied under longer term supply arrangements)."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the\nAustralian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the Act,\napplications for review of the determination are to be made to the\nAustralian Competition Tribunal before the end of 14 calendar days after\nthis statement of reasons was included on the ACCC\u2019s Acquisitions\nRegister. To confirm whether there has been any application for review,\nplease contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-85006/Tega and Apollo Funds consortium - Molycop - Phase 1 determination - 28 April 2026_0.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-04-28T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,

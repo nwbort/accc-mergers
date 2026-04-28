@@ -1,12 +1,12 @@
 {
-  "total_mergers": 84,
+  "total_mergers": 85,
   "total_waivers": 116,
   "by_status": {
-    "Assessment completed": 54,
-    "Under assessment": 30
+    "Assessment completed": 56,
+    "Under assessment": 29
   },
   "by_determination": {
-    "Approved": 54,
+    "Approved": 56,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,22 +14,22 @@
     "Not approved": 10
   },
   "phase_duration": {
-    "average_days": 27.574074074074073,
+    "average_days": 27.75,
     "median_days": 25,
-    "average_business_days": 17.90740740740741,
+    "average_business_days": 18.0,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 31.5
+        "percentage": 30.4
       },
       "day20": {
-        "count": 45,
-        "percentage": 83.3
+        "count": 46,
+        "percentage": 82.1
       },
       "day30": {
-        "count": 53,
-        "percentage": 98.1
+        "count": 55,
+        "percentage": 98.2
       }
     }
   },
@@ -93,6 +93,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-50008",
+      "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-24T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-60014",
       "merger_name": "Gilead - Ouro",
       "status": "Under assessment",
@@ -107,17 +115,29 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-21T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-55016",
-      "merger_name": "Zurich - ClearView",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-21T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-55010",
+      "merger_name": "Calvary - Holmesglen Private Hospital",
+      "determination": "Approved",
+      "determination_date": "2026-04-28T12:00:00Z",
+      "page_modified_datetime": "2026-04-28T15:52:53+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
+      "merger_id": "MN-85006",
+      "merger_name": "Tega and Apollo Funds consortium - Molycop",
+      "determination": "Approved",
+      "determination_date": "2026-04-28T12:00:00Z",
+      "page_modified_datetime": "2026-04-28T15:20:58+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
     {
       "merger_id": "WA-15014",
       "merger_name": "Wipro - Mindsprint",
@@ -154,26 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-04-23T12:00:00Z",
       "page_modified_datetime": "2026-04-23T16:42:43+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-50013",
-      "merger_name": "Star Hotels - Fiveways Hotel Toowoomba",
-      "determination": "Approved",
-      "determination_date": "2026-04-23T12:00:00Z",
-      "page_modified_datetime": "2026-04-23T16:37:37+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-50014",
-      "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
-      "determination": "Approved",
-      "determination_date": "2026-04-23T12:00:00Z",
-      "page_modified_datetime": "2026-04-23T16:34:30+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
