@@ -1,9 +1,9 @@
 {
-  "total_mergers": 83,
+  "total_mergers": 84,
   "total_waivers": 116,
   "by_status": {
     "Assessment completed": 54,
-    "Under assessment": 29
+    "Under assessment": 30
   },
   "by_determination": {
     "Approved": 54,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-01072",
+      "merger_name": "Saipem S.p.A / Subsea7 S.A.",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-27T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-05009",
       "merger_name": "Genea - Embrace Fertility",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-21T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-10013",
-      "merger_name": "Accenture - Ziff Davis' connectivity business",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-17T12:00:00Z",
       "is_waiver": false
     }
   ],
