@@ -1361,6 +1361,14 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-03-28",
+        "business_days": 20,
+        "calendar_days": 31,
+        "merger_name": "Bendigo and Adelaide Bank \u2013 RACQ Bank",
+        "merger_id": "WA-70015",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-03-30",
         "business_days": 14,
         "calendar_days": 22,
@@ -1482,11 +1490,11 @@
       }
     ],
     "stats": {
-      "average": 11.8,
-      "median": 11.5,
+      "average": 11.9,
+      "median": 12,
       "min": 2,
       "max": 22,
-      "count": 116
+      "count": 117
     }
   },
   "monthly_volume": {
@@ -1508,7 +1516,7 @@
       7,
       22,
       21,
-      23
+      24
     ],
     "waivers": [
       0,
@@ -1517,7 +1525,7 @@
       0,
       30,
       30,
-      46,
+      47,
       10
     ]
   }

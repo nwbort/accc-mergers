@@ -1,16 +1,16 @@
 {
-  "total_mergers": 86,
-  "total_waivers": 116,
+  "total_mergers": 87,
+  "total_waivers": 117,
   "by_status": {
     "Assessment completed": 56,
-    "Under assessment": 30
+    "Under assessment": 31
   },
   "by_determination": {
     "Approved": 56,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 106,
+    "Approved": 107,
     "Not approved": 10
   },
   "phase_duration": {
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-75016",
+      "merger_name": "Fulton Hogan \u2013 Avionics",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-28T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-01072",
       "merger_name": "Saipem S.p.A / Subsea7 S.A.",
       "status": "Under assessment",
@@ -107,17 +115,19 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-24T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-60014",
-      "merger_name": "Gilead - Ouro",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-22T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-70015",
+      "merger_name": "Bendigo and Adelaide Bank \u2013 RACQ Bank",
+      "determination": "Approved",
+      "determination_date": "2026-04-28T12:00:00Z",
+      "page_modified_datetime": "2026-04-28T18:22:39+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
     {
       "merger_id": "MN-55010",
       "merger_name": "Calvary - Holmesglen Private Hospital",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-04-23T12:00:00Z",
       "page_modified_datetime": "2026-04-23T17:44:24+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-40016",
-      "merger_name": "Creative Planning \u2013 MASECO",
-      "determination": "Approved",
-      "determination_date": "2026-04-23T12:00:00Z",
-      "page_modified_datetime": "2026-04-23T16:42:43+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

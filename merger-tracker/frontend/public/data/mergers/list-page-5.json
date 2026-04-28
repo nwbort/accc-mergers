@@ -1,6 +1,54 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-50008",
+      "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-04-24T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-06-10T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "WIN TELEVISION NETWORK PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 008 589 026"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 124 816 093"
+        },
+        {
+          "name": "TELEVISION HOLDINGS DARWIN PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "33 009 634 048"
+        },
+        {
+          "name": "NBN ENTERPRISES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "68 009 140 078"
+        },
+        {
+          "name": "NINE NETWORK AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "88 008 685 407"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5621",
+          "name": "Free-to-Air Television Broadcasting"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/win-television-network-nbn-enterprises-television-holdings-darwin"
+    },
+    {
       "merger_id": "MN-01072",
       "merger_name": "Saipem S.p.A / Subsea7 S.A.",
       "status": "Under assessment",
@@ -99,6 +147,55 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/genea-embrace-fertility"
+    },
+    {
+      "merger_id": "MN-75016",
+      "merger_name": "Fulton Hogan \u2013 Avionics",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-04-28T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-06-11T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "FULTON HOGAN INDUSTRIES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "54 000 538 689"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Shane Webb Nominees Pty Ltd in its capacity at the trustee for The S & R Webb Family Trust",
+          "identifier_type": "ACN",
+          "identifier": "619 189 883"
+        },
+        {
+          "name": "Nick Brumley Pty Limited in its capacity atf Nick Brumley Family Trust (ABN 98 415 412 572)",
+          "identifier_type": "ABN",
+          "identifier": "44 124 730 605"
+        },
+        {
+          "name": "AVIONICS HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "92 166 405 321"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "FULTON HOGAN CONSTRUCTION PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "46 010 240 758"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5220",
+          "name": "Airport Operations and Other Air Transport Support Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/fulton-hogan-%E2%80%93-avionics"
     }
   ],
   "page": 5,
