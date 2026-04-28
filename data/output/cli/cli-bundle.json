@@ -2007,6 +2007,96 @@
       "has_questionnaire": true
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/genea-embrace-fertility",
+      "merger_name": "Genea - Embrace Fertility",
+      "status": "Under assessment",
+      "merger_id": "MN-05009",
+      "effective_notification_datetime": "2026-04-27T12:00:00Z",
+      "original_notification_datetime": "2026-04-27T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-06-10T12:00:00Z",
+      "page_modified_datetime": "2026-04-28T12:01:58+10:00",
+      "consultation_response_due_date": "2026-05-05T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Genea Bidco SA Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 694 458"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Histon Nelson Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "144 914 965"
+        },
+        {
+          "name": "EMBRACE FERTILITY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "84 135 918 580"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "JOEY HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "37 658 985 276"
+        },
+        {
+          "name": "ADORA HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "66 657 708 819"
+        },
+        {
+          "name": "Genea HoldCo SA Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 660 701"
+        },
+        {
+          "name": "Fertility SA Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "147 408 857"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "8512",
+          "name": "Specialist Medical Services"
+        }
+      ],
+      "merger_description": "Genea Holdco SA Pty Limited (**Genea**) (via a newly created special purpose vehicle Genea Bidco SA Pty Ltd) proposes to acquire 100% of the shares in Embrace Fertility Pty Ltd (**Embrace Fertility**). In return, the owner of Embrace Fertility will hold a minority equity interest in Genea (the **Acquisition**).\n\nGenea owns and operates an IVF and fertility business called Fertility SA that provides assisted reproduction services via a clinic in Adelaide, South Australia, as well as clinics in other states.\n\nEmbrace Fertility is an independent gynaecology and IVF and fertility business providing assisted reproduction services in Adelaide, South Australia. Historically, Repromed has provided laboratory services to Embrace Fertility, however, Genea would provide these services going forward.\n\nThe parties overlap in the supply of IVF and fertility services in Adelaide, South Australia.",
+      "events": [
+        {
+          "date": "2026-04-28T12:00:00Z",
+          "title": "Genea - Embrace Fertility - questionnaire",
+          "display_title": "Genea - Embrace Fertility - questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Genea%20-%20Embrace%20Fertility%20-%20questionnaire_2.docx",
+          "url_gh": "/mergers/MN-05009/Genea - Embrace Fertility - questionnaire_2.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-04-27T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eagers-vic-audi-melbourne-and-audi-richmond",
       "merger_name": "Eagers Vic - Audi Melbourne and Audi Richmond",
       "status": "Under assessment",
@@ -21200,6 +21290,26 @@
       ],
       "questions_count": 3
     },
+    "MN-05009": {
+      "deadline": "5 May 2026",
+      "deadline_iso": "2026-05-05",
+      "file_name": "Genea - Embrace Fertility - questionnaire_2.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition, including if Genea/Fertility SA and Embrace Fertility are close competitors and there are not many alternatives or if one is a major supplier to competitors of the other."
+        },
+        {
+          "number": 2,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        },
+        {
+          "number": 3,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with Genea, Fertility SA and/or Embrace Fertility."
+        }
+      ],
+      "questions_count": 3
+    },
     "MN-05012": {
       "deadline": null,
       "deadline_iso": null,
@@ -23033,11 +23143,11 @@
     }
   },
   "stats": {
-    "total_mergers": 82,
+    "total_mergers": 83,
     "total_waivers": 116,
     "by_status": {
       "Assessment completed": 54,
-      "Under assessment": 28
+      "Under assessment": 29
     },
     "by_determination": {
       "Approved": 54,
@@ -23078,7 +23188,7 @@
       },
       {
         "name": "Financial Asset Investing",
-        "count": 20
+        "count": 21
       },
       {
         "name": "Other Auxiliary Finance and Investment Services",
@@ -23111,6 +23221,14 @@
     ],
     "recent_mergers": [
       {
+        "merger_id": "MN-05009",
+        "merger_name": "Genea - Embrace Fertility",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-04-27T12:00:00Z",
+        "is_waiver": false
+      },
+      {
         "merger_id": "MN-60014",
         "merger_name": "Gilead - Ouro",
         "status": "Under assessment",
@@ -23140,14 +23258,6 @@
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-04-17T12:00:00Z",
-        "is_waiver": false
-      },
-      {
-        "merger_id": "MN-30009",
-        "merger_name": "Daikin - AAMS Group",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-04-16T12:00:00Z",
         "is_waiver": false
       }
     ],
@@ -23229,7 +23339,7 @@
       {
         "code": "6240",
         "name": "Financial Asset Investing",
-        "merger_count": 20
+        "merger_count": 21
       },
       {
         "code": "6419",
@@ -23469,6 +23579,11 @@
       {
         "code": "0700",
         "name": "Oil and Gas Extraction",
+        "merger_count": 2
+      },
+      {
+        "code": "8512",
+        "name": "Specialist Medical Services",
         "merger_count": 2
       },
       {
@@ -23964,11 +24079,6 @@
       {
         "code": "0143",
         "name": "Beef Cattle Feedlots (Specialised)",
-        "merger_count": 1
-      },
-      {
-        "code": "8512",
-        "name": "Specialist Medical Services",
         "merger_count": 1
       },
       {
