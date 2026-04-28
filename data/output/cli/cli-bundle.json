@@ -3335,6 +3335,96 @@
       "has_questionnaire": true
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-meat-group-pty-ltd-killara-feedlot-pty-ltd",
+      "merger_name": "Australian Meat Group Pty Ltd - Killara Feedlot Pty Ltd",
+      "status": "Under assessment",
+      "merger_id": "MN-20012",
+      "effective_notification_datetime": "2026-04-24T12:00:00Z",
+      "original_notification_datetime": "2026-04-24T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-06-10T12:00:00Z",
+      "page_modified_datetime": "2026-04-28T17:16:31+10:00",
+      "consultation_response_due_date": "2026-05-05T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Australian Meat Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "75 168 396 316"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Killara Feedlot Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "18 081 072 746"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Australian Meat Group Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "NSW Meat Properties Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "630 576 859"
+        },
+        {
+          "name": "Josdale Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "629 731 013"
+        },
+        {
+          "name": "Cheltenham Property Nominees Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "134 215 731"
+        },
+        {
+          "name": "Australian Meat Properties Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "165 852 282"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0143",
+          "name": "Beef Cattle Feedlots (Specialised)"
+        },
+        {
+          "code": "1111",
+          "name": "Meat Processing"
+        }
+      ],
+      "merger_description": "Australian Meat Group Pty Ltd (**AMG**) proposes to acquire 100% of the issued share capital, livestock inventory and general stock inventory of Killara Feedlot Pty Ltd (**Killara**) (**the Acquisition**).\n\nAMG is an independent Australian beef processor. AMG operates two beef processing facilities, one in Dandenong, Victoria and the other in Cootamundra, New South Wales. It supplies beef to the wholesale domestic and export markets.\n\nKillara is a wholly owned subsidiary of Elders Rural Services Australia Limited, an Australian listed agricultural services provider. Killara owns 1,185 ha of land on the edge of the Liverpool Plains, approximately 70km south of Tamworth, New South Wales. It operates a Tier 1 EPA accredited feedlot, grain processing facilities, cropping operations and grass feed paddocks, and supplies fat cattle from the feedlot to beef processors.\n\nAMG will acquire:\n\n* 100% of the issued share capital of Killara;\n* the livestock inventory of Killara at the date of completion (the majority of cattle acquired will be fully contracted to customers); and\n* the general stock inventory of Killara.",
+      "events": [
+        {
+          "date": "2026-04-28T12:00:00Z",
+          "title": "Australian Meat Group - Killara - Third-party questionnaire - April 2026",
+          "display_title": "Australian Meat Group - Killara - Third-party questionnaire - April 2026",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Australian%20Meat%20Group%20-%20Killara%20-%20Third-party%20questionnaire%20-%20April%202026.docx",
+          "url_gh": "/mergers/MN-20012/Australian Meat Group - Killara - Third-party questionnaire - April 2026.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-04-24T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eli-lilly-orna-therapeutics",
       "merger_name": "Eli Lilly / Orna Therapeutics",
       "status": "Under assessment",
@@ -21934,6 +22024,26 @@
       ],
       "questions_count": 3
     },
+    "MN-20012": {
+      "deadline": "5 May 2026",
+      "deadline_iso": "2026-05-05",
+      "file_name": "Australian Meat Group - Killara - Third-party questionnaire - April 2026.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition, including if AMG and Killara are close competitors and there are not many alternatives or if one is a major supplier to competitors of the other."
+        },
+        {
+          "number": 2,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        },
+        {
+          "number": 3,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with AMG and/or Killara."
+        }
+      ],
+      "questions_count": 3
+    },
     "MN-20013": {
       "deadline": "16 April 2026",
       "deadline_iso": "2026-04-16",
@@ -23454,11 +23564,11 @@
     }
   },
   "stats": {
-    "total_mergers": 85,
+    "total_mergers": 86,
     "total_waivers": 116,
     "by_status": {
       "Assessment completed": 56,
-      "Under assessment": 29
+      "Under assessment": 30
     },
     "by_determination": {
       "Approved": 56,
@@ -23548,6 +23658,14 @@
         "is_waiver": false
       },
       {
+        "merger_id": "MN-20012",
+        "merger_name": "Australian Meat Group Pty Ltd - Killara Feedlot Pty Ltd",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-04-24T12:00:00Z",
+        "is_waiver": false
+      },
+      {
         "merger_id": "MN-50008",
         "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
         "status": "Under assessment",
@@ -23561,14 +23679,6 @@
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-04-22T12:00:00Z",
-        "is_waiver": false
-      },
-      {
-        "merger_id": "MN-10012",
-        "merger_name": "MassMutual, Rest, Aware Super and Goodman – Moorabbin Airport",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-04-21T12:00:00Z",
         "is_waiver": false
       }
     ],
@@ -23908,6 +24018,16 @@
         "merger_count": 2
       },
       {
+        "code": "0143",
+        "name": "Beef Cattle Feedlots (Specialised)",
+        "merger_count": 2
+      },
+      {
+        "code": "1111",
+        "name": "Meat Processing",
+        "merger_count": 2
+      },
+      {
         "code": "3212",
         "name": "Site Preparation Services",
         "merger_count": 2
@@ -24193,11 +24313,6 @@
         "merger_count": 1
       },
       {
-        "code": "1111",
-        "name": "Meat Processing",
-        "merger_count": 1
-      },
-      {
         "code": "4622",
         "name": "Urban Bus Transport (Including Tramway)",
         "merger_count": 1
@@ -24390,11 +24505,6 @@
       {
         "code": "6950",
         "name": "Market Research and Statistical Services",
-        "merger_count": 1
-      },
-      {
-        "code": "0143",
-        "name": "Beef Cattle Feedlots (Specialised)",
         "merger_count": 1
       },
       {

@@ -1,9 +1,9 @@
 {
-  "total_mergers": 85,
+  "total_mergers": 86,
   "total_waivers": 116,
   "by_status": {
     "Assessment completed": 56,
-    "Under assessment": 29
+    "Under assessment": 30
   },
   "by_determination": {
     "Approved": 56,
@@ -93,6 +93,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-20012",
+      "merger_name": "Australian Meat Group Pty Ltd - Killara Feedlot Pty Ltd",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-24T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-50008",
       "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-22T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-10012",
-      "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-21T12:00:00Z",
       "is_waiver": false
     }
   ],

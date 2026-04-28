@@ -2631,6 +2631,69 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/gilead-ouro"
     },
     {
+      "merger_id": "MN-20012",
+      "merger_name": "Australian Meat Group Pty Ltd - Killara Feedlot Pty Ltd",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-04-24T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-06-10T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Australian Meat Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "75 168 396 316"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Killara Feedlot Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "18 081 072 746"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Australian Meat Group Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "NSW Meat Properties Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "630 576 859"
+        },
+        {
+          "name": "Josdale Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "629 731 013"
+        },
+        {
+          "name": "Cheltenham Property Nominees Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "134 215 731"
+        },
+        {
+          "name": "Australian Meat Properties Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "165 852 282"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0143",
+          "name": "Beef Cattle Feedlots (Specialised)"
+        },
+        {
+          "code": "1111",
+          "name": "Meat Processing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-meat-group-pty-ltd-killara-feedlot-pty-ltd"
+    },
+    {
       "merger_id": "MN-50008",
       "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
       "status": "Under assessment",
@@ -2677,43 +2740,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/win-television-network-nbn-enterprises-television-holdings-darwin"
-    },
-    {
-      "merger_id": "MN-01072",
-      "merger_name": "Saipem S.p.A / Subsea7 S.A.",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-04-27T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-06-10T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Saipem S.p.A",
-          "identifier_type": null,
-          "identifier": "Register of Milan Monza Brianza Lodi under number 00825790157"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Subsea7 S.A.",
-          "identifier_type": null,
-          "identifier": "R.C.S. Luxembourg B 43172"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3109",
-          "name": "Other Heavy and Civil Engineering Construction"
-        },
-        {
-          "code": "6923",
-          "name": "Engineering Design and Engineering Consulting Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/saipem-spa-subsea7-sa"
     }
   ],
   "page": 4,

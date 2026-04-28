@@ -3335,6 +3335,96 @@
       "has_questionnaire": true
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-meat-group-pty-ltd-killara-feedlot-pty-ltd",
+      "merger_name": "Australian Meat Group Pty Ltd - Killara Feedlot Pty Ltd",
+      "status": "Under assessment",
+      "merger_id": "MN-20012",
+      "effective_notification_datetime": "2026-04-24T12:00:00Z",
+      "original_notification_datetime": "2026-04-24T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-06-10T12:00:00Z",
+      "page_modified_datetime": "2026-04-28T17:16:31+10:00",
+      "consultation_response_due_date": "2026-05-05T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Australian Meat Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "75 168 396 316"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Killara Feedlot Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "18 081 072 746"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Australian Meat Group Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "NSW Meat Properties Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "630 576 859"
+        },
+        {
+          "name": "Josdale Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "629 731 013"
+        },
+        {
+          "name": "Cheltenham Property Nominees Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "134 215 731"
+        },
+        {
+          "name": "Australian Meat Properties Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "165 852 282"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0143",
+          "name": "Beef Cattle Feedlots (Specialised)"
+        },
+        {
+          "code": "1111",
+          "name": "Meat Processing"
+        }
+      ],
+      "merger_description": "Australian Meat Group Pty Ltd (**AMG**) proposes to acquire 100% of the issued share capital, livestock inventory and general stock inventory of Killara Feedlot Pty Ltd (**Killara**) (**the Acquisition**).\n\nAMG is an independent Australian beef processor. AMG operates two beef processing facilities, one in Dandenong, Victoria and the other in Cootamundra, New South Wales. It supplies beef to the wholesale domestic and export markets.\n\nKillara is a wholly owned subsidiary of Elders Rural Services Australia Limited, an Australian listed agricultural services provider. Killara owns 1,185 ha of land on the edge of the Liverpool Plains, approximately 70km south of Tamworth, New South Wales. It operates a Tier 1 EPA accredited feedlot, grain processing facilities, cropping operations and grass feed paddocks, and supplies fat cattle from the feedlot to beef processors.\n\nAMG will acquire:\n\n* 100% of the issued share capital of Killara;\n* the livestock inventory of Killara at the date of completion (the majority of cattle acquired will be fully contracted to customers); and\n* the general stock inventory of Killara.",
+      "events": [
+        {
+          "date": "2026-04-28T12:00:00Z",
+          "title": "Australian Meat Group - Killara - Third-party questionnaire - April 2026",
+          "display_title": "Australian Meat Group - Killara - Third-party questionnaire - April 2026",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Australian%20Meat%20Group%20-%20Killara%20-%20Third-party%20questionnaire%20-%20April%202026.docx",
+          "url_gh": "/mergers/MN-20012/Australian Meat Group - Killara - Third-party questionnaire - April 2026.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-04-24T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eli-lilly-orna-therapeutics",
       "merger_name": "Eli Lilly / Orna Therapeutics",
       "status": "Under assessment",

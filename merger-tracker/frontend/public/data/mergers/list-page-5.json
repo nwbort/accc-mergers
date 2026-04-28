@@ -1,6 +1,43 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-01072",
+      "merger_name": "Saipem S.p.A / Subsea7 S.A.",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-04-27T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-06-10T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Saipem S.p.A",
+          "identifier_type": null,
+          "identifier": "Register of Milan Monza Brianza Lodi under number 00825790157"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Subsea7 S.A.",
+          "identifier_type": null,
+          "identifier": "R.C.S. Luxembourg B 43172"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3109",
+          "name": "Other Heavy and Civil Engineering Construction"
+        },
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/saipem-spa-subsea7-sa"
+    },
+    {
       "merger_id": "MN-05009",
       "merger_name": "Genea - Embrace Fertility",
       "status": "Under assessment",
