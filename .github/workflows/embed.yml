@@ -1,0 +1,11 @@
+name: Generate semantic embeddings
+
+on:
+  workflow_dispatch:
+
+jobs:
+  do-nothing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Nothing
+        run: ":"
