@@ -1,6 +1,6 @@
 {
   "total_mergers": 88,
-  "total_waivers": 117,
+  "total_waivers": 121,
   "by_status": {
     "Assessment completed": 56,
     "Under assessment": 32
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 107,
+    "Approved": 111,
     "Not approved": 10
   },
   "phase_duration": {
@@ -52,7 +52,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 9
+      "count": 10
     },
     {
       "name": "Scientific Research Services",
@@ -119,6 +119,46 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-55015",
+      "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
+      "determination": "Approved",
+      "determination_date": "2026-04-29T12:00:00Z",
+      "page_modified_datetime": "2026-04-29T17:01:11+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-95014",
+      "merger_name": "Publicis \u2013 160over90",
+      "determination": "Approved",
+      "determination_date": "2026-04-29T12:00:00Z",
+      "page_modified_datetime": "2026-04-29T16:40:56+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-90011",
+      "merger_name": "Salter Brothers - Buroserv",
+      "determination": "Approved",
+      "determination_date": "2026-04-29T12:00:00Z",
+      "page_modified_datetime": "2026-04-29T16:34:39+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-60013",
+      "merger_name": "Export Trading Group Australia \u2013 pulses and grains business and facility in Mount Tyson, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-04-29T12:00:00Z",
+      "page_modified_datetime": "2026-04-29T16:29:27+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-70015",
       "merger_name": "Bendigo and Adelaide Bank \u2013 RACQ Bank",
       "determination": "Approved",
@@ -137,46 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-85006",
-      "merger_name": "Tega and Apollo Funds consortium - Molycop",
-      "determination": "Approved",
-      "determination_date": "2026-04-28T12:00:00Z",
-      "page_modified_datetime": "2026-04-28T15:20:58+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-15014",
-      "merger_name": "Wipro - Mindsprint",
-      "determination": "Approved",
-      "determination_date": "2026-04-24T12:00:00Z",
-      "page_modified_datetime": "2026-04-24T17:00:05+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-01092",
-      "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
-      "determination": "Approved",
-      "determination_date": "2026-04-23T12:00:00Z",
-      "page_modified_datetime": "2026-04-23T20:17:10+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-60012",
-      "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
-      "determination": "Approved",
-      "determination_date": "2026-04-23T12:00:00Z",
-      "page_modified_datetime": "2026-04-23T17:44:24+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

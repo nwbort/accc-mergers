@@ -1,6 +1,259 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-55016",
+      "merger_name": "Zurich - ClearView",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-04-21T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-06-04T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 008 423 372"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLEARVIEW WEALTH LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "83 106 248 248"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "ZURICH SERVICES (AUSTRALIA) PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "17 627 298 337"
+        },
+        {
+          "name": "ZURICH AUSTRALIAN PROPERTY HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "91 620 869 230"
+        },
+        {
+          "name": "ZURICH FINANCE (AUSTRALIA) LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "48 618 177 423"
+        },
+        {
+          "name": "INSITE HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "97 082 656 273"
+        },
+        {
+          "name": "ZURICH AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "92 000 010 195"
+        },
+        {
+          "name": "ZURICH AUSTRALIAN INSURANCE PROPERTIES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "79 002 463 292"
+        },
+        {
+          "name": "Cover-More Group",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "ZURICH AUSTRALIAN INSURANCE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "13 000 296 640"
+        },
+        {
+          "name": "OnePath General Insurance Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "56 072 892 365"
+        },
+        {
+          "name": "ZURICH ASSURE AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "58 657 804 736"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6310",
+          "name": "Life Insurance"
+        },
+        {
+          "code": "6322",
+          "name": "General Insurance"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/zurich-clearview"
+    },
+    {
+      "merger_id": "MN-60014",
+      "merger_name": "Gilead - Ouro",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-04-22T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-06-05T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Gilead Sciences, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 943047598"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ouro Medicines, LLC",
+          "identifier_type": null,
+          "identifier": "202462212198"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1841",
+          "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/gilead-ouro"
+    },
+    {
+      "merger_id": "WA-55015",
+      "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-23T12:00:00Z",
+      "determination_publication_date": "2026-04-29T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "ALLIANZ AUSTRALIA SERVICES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "66 002 947 257"
+        }
+      ],
+      "targets": [
+        {
+          "name": "VICTORIA CROSS COMMERCIAL PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "56 630 332 222"
+        },
+        {
+          "name": "The Trustee for Lendlease Victoria Cross Trust",
+          "identifier_type": "ABN",
+          "identifier": "26 397 448 085"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "ALLIANZ AUSTRALIA INSURANCE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "15 000 122 850"
+        },
+        {
+          "name": "LENDLEASE CORPORATION LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "32 000 226 228"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3019",
+          "name": "Other Residential Building Construction"
+        },
+        {
+          "code": "3020",
+          "name": "Non-Residential Building Construction"
+        },
+        {
+          "code": "3211",
+          "name": "Land Development and Subdivision"
+        },
+        {
+          "code": "6322",
+          "name": "General Insurance"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/allianz-lease-of-commercial-office-space-in-north-sydney-from-lendlease-victoria-cross"
+    },
+    {
+      "merger_id": "MN-20012",
+      "merger_name": "Australian Meat Group Pty Ltd - Killara Feedlot Pty Ltd",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-04-24T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-06-10T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Australian Meat Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "75 168 396 316"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Killara Feedlot Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "18 081 072 746"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Australian Meat Group Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "NSW Meat Properties Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "630 576 859"
+        },
+        {
+          "name": "Josdale Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "629 731 013"
+        },
+        {
+          "name": "Cheltenham Property Nominees Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "134 215 731"
+        },
+        {
+          "name": "Australian Meat Properties Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "165 852 282"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0143",
+          "name": "Beef Cattle Feedlots (Specialised)"
+        },
+        {
+          "code": "1111",
+          "name": "Meat Processing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-meat-group-pty-ltd-killara-feedlot-pty-ltd"
+    },
+    {
       "merger_id": "MN-50008",
       "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
       "status": "Under assessment",
