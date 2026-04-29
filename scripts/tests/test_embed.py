@@ -11,13 +11,16 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 import json
+import struct
 
 from embed import (
     MIN_CHUNK_CHARS,
     _classify_item,
     _clean_text,
     _content_hash,
-    _format_records,
+    _format_metadata,
+    _load_existing,
+    _pack_vectors,
     build_chunks,
     plan_embedding,
 )
@@ -165,15 +168,23 @@ class TestBuildChunks:
 
 class TestContentHash:
     def test_same_inputs_produce_same_hash(self):
-        assert _content_hash("model-a", "hello") == _content_hash("model-a", "hello")
+        assert _content_hash("model-a", 256, "hello") == _content_hash("model-a", 256, "hello")
 
     def test_different_text_produces_different_hash(self):
-        assert _content_hash("model-a", "hello") != _content_hash("model-a", "world")
+        assert _content_hash("model-a", 256, "hello") != _content_hash("model-a", 256, "world")
 
     def test_different_model_produces_different_hash(self):
         # Critical for cache correctness — mixing vectors from different
         # models in one file would silently corrupt similarity scores.
-        assert _content_hash("model-a", "hello") != _content_hash("model-b", "hello")
+        assert _content_hash("model-a", 256, "hello") != _content_hash("model-b", 256, "hello")
+
+    def test_different_dim_produces_different_hash(self):
+        # Same reason: 256-dim and 768-dim vectors aren't comparable, so
+        # changing the truncation dim must invalidate every cached entry.
+        assert _content_hash("model-a", 256, "hello") != _content_hash("model-a", 768, "hello")
+
+    def test_native_dim_distinguished_from_truncated(self):
+        assert _content_hash("model-a", None, "hello") != _content_hash("model-a", 768, "hello")
 
 
 def _chunk(merger_id, section, text, **extra):
@@ -182,23 +193,27 @@ def _chunk(merger_id, section, text, **extra):
 
 class TestPlanEmbedding:
     MODEL = "test-model"
+    DIM = 256
+
+    def _hash(self, text):
+        return _content_hash(self.MODEL, self.DIM, text)
 
     def test_no_existing_cache_means_everything_is_pending(self):
         chunks = [_chunk("M1", "overview", "x" * 60)]
-        reused, pending = plan_embedding(chunks, None, self.MODEL)
+        reused, pending = plan_embedding(chunks, None, self.MODEL, self.DIM)
         assert reused == []
         assert len(pending) == 1
-        assert pending[0]["hash"] == _content_hash(self.MODEL, chunks[0]["text"])
+        assert pending[0]["hash"] == self._hash(chunks[0]["text"])
 
     def test_unchanged_chunk_is_reused(self):
         text = "x" * 60
-        h = _content_hash(self.MODEL, text)
+        h = self._hash(text)
         existing = [{
             "merger_id": "M1", "section": "overview",
             "hash": h, "vector": [0.1, 0.2, 0.3], "outcome": "Approved",
         }]
         chunks = [_chunk("M1", "overview", text, outcome="Approved")]
-        reused, pending = plan_embedding(chunks, existing, self.MODEL)
+        reused, pending = plan_embedding(chunks, existing, self.MODEL, self.DIM)
         assert pending == []
         assert reused[0]["vector"] == [0.1, 0.2, 0.3]
         assert reused[0]["hash"] == h
@@ -207,11 +222,11 @@ class TestPlanEmbedding:
         old_text = "x" * 60
         existing = [{
             "merger_id": "M1", "section": "overview",
-            "hash": _content_hash(self.MODEL, old_text),
+            "hash": self._hash(old_text),
             "vector": [0.1], "outcome": "Approved",
         }]
         chunks = [_chunk("M1", "overview", "y" * 60)]
-        reused, pending = plan_embedding(chunks, existing, self.MODEL)
+        reused, pending = plan_embedding(chunks, existing, self.MODEL, self.DIM)
         assert reused == []
         assert len(pending) == 1
 
@@ -219,11 +234,26 @@ class TestPlanEmbedding:
         text = "x" * 60
         existing = [{
             "merger_id": "M1", "section": "overview",
-            "hash": _content_hash("old-model", text),
+            "hash": _content_hash("old-model", self.DIM, text),
             "vector": [0.1],
         }]
         chunks = [_chunk("M1", "overview", text)]
-        reused, pending = plan_embedding(chunks, existing, self.MODEL)
+        reused, pending = plan_embedding(chunks, existing, self.MODEL, self.DIM)
+        assert reused == []
+        assert len(pending) == 1
+
+    def test_dim_change_invalidates_every_entry(self):
+        # Same model, same text, but a different truncation dim → must
+        # re-embed. Otherwise we'd serve a 768-dim vector under a 256-dim
+        # contract and silently break similarity scores.
+        text = "x" * 60
+        existing = [{
+            "merger_id": "M1", "section": "overview",
+            "hash": _content_hash(self.MODEL, 768, text),
+            "vector": [0.1] * 768,
+        }]
+        chunks = [_chunk("M1", "overview", text)]
+        reused, pending = plan_embedding(chunks, existing, self.MODEL, self.DIM)
         assert reused == []
         assert len(pending) == 1
 
@@ -231,12 +261,12 @@ class TestPlanEmbedding:
         text = "x" * 60
         existing = [
             {"merger_id": "M1", "section": "overview",
-             "hash": _content_hash(self.MODEL, text), "vector": [0.1]},
+             "hash": self._hash(text), "vector": [0.1]},
             {"merger_id": "M2", "section": "overview",
-             "hash": _content_hash(self.MODEL, text), "vector": [0.2]},
+             "hash": self._hash(text), "vector": [0.2]},
         ]
         chunks = [_chunk("M1", "overview", text)]
-        reused, pending = plan_embedding(chunks, existing, self.MODEL)
+        reused, pending = plan_embedding(chunks, existing, self.MODEL, self.DIM)
         assert len(reused) + len(pending) == 1
         assert all(r["merger_id"] == "M1" for r in reused + pending)
 
@@ -247,44 +277,109 @@ class TestPlanEmbedding:
             _chunk("M1", "reasons", text),
             _chunk("M1", "overview", text),
         ]
-        reused, pending = plan_embedding(chunks, None, self.MODEL)
-        # plan_embedding doesn't sort — embed_chunks does after combining
-        # cached + fresh — but the same key is used downstream. Verify the
-        # merger_ids are still all present so we can sort them in tests.
+        reused, pending = plan_embedding(chunks, None, self.MODEL, self.DIM)
         assert {p["merger_id"] for p in pending} == {"M1", "M2"}
 
     def test_metadata_refreshes_even_when_vector_is_reused(self):
         # The text didn't change, but the merger's outcome did (e.g. status
         # update). The reused record should reflect the new metadata.
         text = "x" * 60
-        h = _content_hash(self.MODEL, text)
         existing = [{
             "merger_id": "M1", "section": "overview",
-            "hash": h, "vector": [0.1], "outcome": "Under assessment",
+            "hash": self._hash(text), "vector": [0.1], "outcome": "Under assessment",
         }]
         chunks = [_chunk("M1", "overview", text, outcome="Approved")]
-        reused, _ = plan_embedding(chunks, existing, self.MODEL)
+        reused, _ = plan_embedding(chunks, existing, self.MODEL, self.DIM)
         assert reused[0]["outcome"] == "Approved"
 
 
-class TestFormatRecords:
-    def test_each_record_is_on_its_own_line(self):
+class TestFormatMetadata:
+    def test_each_record_is_on_its_own_line_without_vectors(self):
         records = [
             {"merger_id": "M1", "section": "overview", "vector": [0.1, 0.2]},
             {"merger_id": "M2", "section": "overview", "vector": [0.3, 0.4]},
         ]
-        out = _format_records(records)
-        # Two record lines plus opening "[" and closing "]" = 4 lines.
+        out = _format_metadata(records)
         assert out.splitlines() == [
             "[",
-            '{"merger_id":"M1","section":"overview","vector":[0.1,0.2]},',
-            '{"merger_id":"M2","section":"overview","vector":[0.3,0.4]}',
+            '{"merger_id":"M1","section":"overview"},',
+            '{"merger_id":"M2","section":"overview"}',
             "]",
         ]
+        # Vectors are stripped — they live in the .bin file.
+        assert "0.1" not in out
 
     def test_output_round_trips_through_json(self):
         records = [{"merger_id": "M1", "section": "overview", "vector": [0.1]}]
-        assert json.loads(_format_records(records)) == records
+        assert json.loads(_format_metadata(records)) == [
+            {"merger_id": "M1", "section": "overview"},
+        ]
 
     def test_empty_input_returns_empty_array(self):
-        assert json.loads(_format_records([])) == []
+        assert json.loads(_format_metadata([])) == []
+
+
+class TestPackVectors:
+    def test_packs_vectors_in_record_order(self):
+        records = [
+            {"merger_id": "M1", "section": "overview", "vector": [1.0, 2.0]},
+            {"merger_id": "M2", "section": "overview", "vector": [3.0, 4.0]},
+        ]
+        packed = _pack_vectors(records)
+        # 4 floats × 4 bytes each = 16 bytes.
+        assert len(packed) == 16
+        assert struct.unpack("<4f", packed) == (1.0, 2.0, 3.0, 4.0)
+
+    def test_inconsistent_dim_raises(self):
+        records = [
+            {"merger_id": "M1", "section": "overview", "vector": [1.0, 2.0]},
+            {"merger_id": "M2", "section": "overview", "vector": [3.0]},
+        ]
+        try:
+            _pack_vectors(records)
+        except ValueError as e:
+            assert "M2" in str(e)
+        else:
+            raise AssertionError("expected ValueError")
+
+    def test_empty_input(self):
+        assert _pack_vectors([]) == b""
+
+
+class TestLoadExisting:
+    def test_round_trips_metadata_and_vectors(self, tmp_path):
+        json_path = tmp_path / "embeddings.json"
+        bin_path = tmp_path / "embeddings.bin"
+        records = [
+            {"merger_id": "M1", "section": "overview", "hash": "h1", "vector": [0.1, 0.2]},
+            {"merger_id": "M2", "section": "overview", "hash": "h2", "vector": [0.3, 0.4]},
+        ]
+        json_path.write_text(_format_metadata(records))
+        bin_path.write_bytes(_pack_vectors(records))
+
+        loaded = _load_existing(json_path, bin_path)
+        assert len(loaded) == 2
+        assert loaded[0]["merger_id"] == "M1"
+        assert loaded[0]["hash"] == "h1"
+        # Float32 round-trip: small precision drift is fine.
+        assert all(abs(a - b) < 1e-6 for a, b in zip(loaded[0]["vector"], [0.1, 0.2]))
+        assert all(abs(a - b) < 1e-6 for a, b in zip(loaded[1]["vector"], [0.3, 0.4]))
+
+    def test_returns_none_when_json_missing(self, tmp_path):
+        assert _load_existing(tmp_path / "missing.json", tmp_path / "missing.bin") is None
+
+    def test_returns_none_when_bin_missing_for_nonempty_json(self, tmp_path):
+        json_path = tmp_path / "embeddings.json"
+        bin_path = tmp_path / "embeddings.bin"
+        json_path.write_text(_format_metadata([
+            {"merger_id": "M1", "section": "overview", "vector": [0.1]},
+        ]))
+        # No bin file written.
+        assert _load_existing(json_path, bin_path) is None
+
+    def test_handles_empty_records(self, tmp_path):
+        json_path = tmp_path / "embeddings.json"
+        bin_path = tmp_path / "embeddings.bin"
+        json_path.write_text("[]\n")
+        # Empty JSON shouldn't require a bin file.
+        assert _load_existing(json_path, bin_path) == []
