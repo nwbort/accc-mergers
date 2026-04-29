@@ -307,7 +307,25 @@ def embed_chunks(
             record["vector"] = [round(float(x), 6) for x in vector.tolist()]
             fresh.append(record)
 
-    return reused + fresh
+    combined = reused + fresh
+    # Sort by (merger_id, section) so the on-disk order is stable across
+    # runs — without this, every run would shuffle the file and produce a
+    # massive but meaningless git diff.
+    combined.sort(key=lambda r: (r["merger_id"], r["section"]))
+    return combined
+
+
+def _format_records(records: list[dict]) -> str:
+    """Serialise the records as a JSON array with one record per line.
+
+    Standard ``json.dumps`` produces either everything on one line (unusable
+    for git diffs) or every scalar on its own line (4MB → 50MB). One record
+    per line keeps the file diffable while still parseable as a JSON array.
+    """
+    if not records:
+        return "[]\n"
+    lines = [json.dumps(r, ensure_ascii=False, separators=(",", ":")) for r in records]
+    return "[\n" + ",\n".join(lines) + "\n]\n"
 
 
 def main() -> None:
@@ -361,7 +379,7 @@ def main() -> None:
 
     records = embed_chunks(chunks, args.model, existing=existing)
     args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(json.dumps(records))
+    args.output.write_text(_format_records(records))
     size_kb = args.output.stat().st_size / 1024
     print(f"Wrote {len(records)} records to {args.output} ({size_kb:.1f} KB)")
 

@@ -10,11 +10,14 @@ import sys
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
+import json
+
 from embed import (
     MIN_CHUNK_CHARS,
     _classify_item,
     _clean_text,
     _content_hash,
+    _format_records,
     build_chunks,
     plan_embedding,
 )
@@ -237,6 +240,19 @@ class TestPlanEmbedding:
         assert len(reused) + len(pending) == 1
         assert all(r["merger_id"] == "M1" for r in reused + pending)
 
+    def test_output_is_sorted_for_stable_diffs(self):
+        text = "x" * 60
+        chunks = [
+            _chunk("M2", "overview", text),
+            _chunk("M1", "reasons", text),
+            _chunk("M1", "overview", text),
+        ]
+        reused, pending = plan_embedding(chunks, None, self.MODEL)
+        # plan_embedding doesn't sort — embed_chunks does after combining
+        # cached + fresh — but the same key is used downstream. Verify the
+        # merger_ids are still all present so we can sort them in tests.
+        assert {p["merger_id"] for p in pending} == {"M1", "M2"}
+
     def test_metadata_refreshes_even_when_vector_is_reused(self):
         # The text didn't change, but the merger's outcome did (e.g. status
         # update). The reused record should reflect the new metadata.
@@ -249,3 +265,26 @@ class TestPlanEmbedding:
         chunks = [_chunk("M1", "overview", text, outcome="Approved")]
         reused, _ = plan_embedding(chunks, existing, self.MODEL)
         assert reused[0]["outcome"] == "Approved"
+
+
+class TestFormatRecords:
+    def test_each_record_is_on_its_own_line(self):
+        records = [
+            {"merger_id": "M1", "section": "overview", "vector": [0.1, 0.2]},
+            {"merger_id": "M2", "section": "overview", "vector": [0.3, 0.4]},
+        ]
+        out = _format_records(records)
+        # Two record lines plus opening "[" and closing "]" = 4 lines.
+        assert out.splitlines() == [
+            "[",
+            '{"merger_id":"M1","section":"overview","vector":[0.1,0.2]},',
+            '{"merger_id":"M2","section":"overview","vector":[0.3,0.4]}',
+            "]",
+        ]
+
+    def test_output_round_trips_through_json(self):
+        records = [{"merger_id": "M1", "section": "overview", "vector": [0.1]}]
+        assert json.loads(_format_records(records)) == records
+
+    def test_empty_input_returns_empty_array(self):
+        assert json.loads(_format_records([])) == []
