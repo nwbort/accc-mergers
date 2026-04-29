@@ -16,8 +16,13 @@ The output is a JSON array of objects, one per chunk:
       "industry": [{"code": "121", "name": "Beverage Manufacturing"}, ...],
       "outcome": "Approved",
       "date": "2025-09-05",
-      "year": 2025
+      "year": 2025,
+      "hash": "ab12cd34ef567890"
     }
+
+The ``hash`` field is a content fingerprint that lets repeat runs reuse
+vectors for chunks whose text didn't change — only new or modified chunks
+are sent to the model.
 
 The chunk text itself is not stored in the output — it can be reconstructed
 from the source data. Stage 1 only: this file is consumed by future search /
@@ -27,6 +32,7 @@ RAG features but produces no UI changes itself.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -71,6 +77,25 @@ SKIP_ITEMS: set[str] = {
 # Sections shorter than this many characters are skipped — usually a
 # fragment from a malformed table row.
 MIN_CHUNK_CHARS = 50
+
+# Length of the truncated sha1 hash stored on each record. 16 hex chars
+# (64 bits) makes accidental collisions vanishingly unlikely at our scale
+# (~600 chunks) while keeping the JSON small.
+HASH_LEN = 16
+
+
+def _content_hash(model_name: str, text: str) -> str:
+    """Stable hash for caching embeddings.
+
+    Includes the model name so that swapping ``MODEL_NAME`` invalidates every
+    record on the next run — different models produce different vectors and
+    mixing them in one file would corrupt similarity scores.
+    """
+    h = hashlib.sha1()
+    h.update(model_name.encode("utf-8"))
+    h.update(b"\n")
+    h.update(text.encode("utf-8"))
+    return h.hexdigest()[:HASH_LEN]
 
 
 def _normalise_item(item: str) -> str:
@@ -199,40 +224,90 @@ def build_chunks(mergers: Iterable[dict]) -> list[dict]:
     return chunks
 
 
-def embed_chunks(chunks: list[dict], model_name: str) -> list[dict]:
+def plan_embedding(
+    chunks: list[dict],
+    existing: list[dict] | None,
+    model_name: str,
+) -> tuple[list[dict], list[dict]]:
+    """Split current chunks into (reusable_records, chunks_needing_embedding).
+
+    Each chunk gets a content hash that mixes in the model name, then we
+    look it up in the cache built from ``existing``. A cache hit means the
+    chunk text is byte-identical to the last run for the same model — its
+    vector can be reused verbatim. A miss means we need to call the model.
+
+    Records in ``existing`` whose ``(merger_id, section)`` no longer appear
+    in ``chunks`` are silently dropped (e.g. a merger was withdrawn, or a
+    section's text fell below ``MIN_CHUNK_CHARS``).
+    """
+    cache: dict[tuple[str, str], dict] = {}
+    if existing:
+        for record in existing:
+            key = (record.get("merger_id"), record.get("section"))
+            if record.get("hash") and record.get("vector") and all(key):
+                cache[key] = record
+
+    reused: list[dict] = []
+    pending: list[dict] = []
+    for chunk in chunks:
+        chunk["hash"] = _content_hash(model_name, chunk["text"])
+        cached = cache.get((chunk["merger_id"], chunk["section"]))
+        if cached and cached.get("hash") == chunk["hash"]:
+            # Reuse the vector but refresh the metadata fields — the merger's
+            # ``outcome`` / ``date`` / parties may have changed even when the
+            # section text didn't (e.g. a status update on the merger row).
+            refreshed = {k: v for k, v in chunk.items() if k != "text"}
+            refreshed["vector"] = cached["vector"]
+            reused.append(refreshed)
+        else:
+            pending.append(chunk)
+    return reused, pending
+
+
+def embed_chunks(
+    chunks: list[dict],
+    model_name: str,
+    existing: list[dict] | None = None,
+) -> list[dict]:
     """Embed each chunk's text and return the chunks with ``vector`` added.
 
+    Reuses vectors from ``existing`` for chunks whose text and model haven't
+    changed; only newly added or modified chunks are sent to the model.
     The ``text`` field is dropped from the output — it can be reconstructed
     from the source data and keeping it would multiply the file size.
     """
-    # Imported lazily so chunk-building can be tested without the heavy deps.
-    from sentence_transformers import SentenceTransformer
+    reused, pending = plan_embedding(chunks, existing, model_name)
+    print(f"Reusing {len(reused)} cached vectors, embedding {len(pending)} new/changed")
 
-    print(f"Loading model: {model_name}")
-    model = SentenceTransformer(model_name)
+    fresh: list[dict] = []
+    if pending:
+        # Imported lazily so chunk-building / cache logic can be tested
+        # without the heavy deps.
+        from sentence_transformers import SentenceTransformer
 
-    texts = [c["text"] for c in chunks]
-    print(f"Embedding {len(texts)} chunks...")
-    # Asymmetric retrieval models (EmbeddingGemma, e5, bge) want different
-    # prompt prefixes for documents vs queries. ``encode_document`` picks the
-    # right one when configured on the model and falls back to plain
-    # encoding otherwise — so this works for all three model families
-    # without branching here.
-    encode_fn = getattr(model, "encode_document", model.encode)
-    vectors = encode_fn(
-        texts,
-        batch_size=32,
-        show_progress_bar=True,
-        normalize_embeddings=True,
-        convert_to_numpy=True,
-    )
+        print(f"Loading model: {model_name}")
+        model = SentenceTransformer(model_name)
 
-    out: list[dict] = []
-    for chunk, vector in zip(chunks, vectors):
-        record = {k: v for k, v in chunk.items() if k != "text"}
-        record["vector"] = [round(float(x), 6) for x in vector.tolist()]
-        out.append(record)
-    return out
+        texts = [c["text"] for c in pending]
+        # Asymmetric retrieval models (EmbeddingGemma, e5, bge) want
+        # different prompt prefixes for documents vs queries.
+        # ``encode_document`` picks the right one when configured on the
+        # model and falls back to plain encoding otherwise — so this works
+        # for all three model families without branching here.
+        encode_fn = getattr(model, "encode_document", model.encode)
+        vectors = encode_fn(
+            texts,
+            batch_size=32,
+            show_progress_bar=True,
+            normalize_embeddings=True,
+            convert_to_numpy=True,
+        )
+        for chunk, vector in zip(pending, vectors):
+            record = {k: v for k, v in chunk.items() if k != "text"}
+            record["vector"] = [round(float(x), 6) for x in vector.tolist()]
+            fresh.append(record)
+
+    return reused + fresh
 
 
 def main() -> None:
@@ -276,7 +351,15 @@ def main() -> None:
     if args.dry_run:
         return
 
-    records = embed_chunks(chunks, args.model)
+    existing: list[dict] | None = None
+    if args.output.exists():
+        try:
+            existing = json.loads(args.output.read_text())
+            print(f"Loaded {len(existing)} existing records from {args.output}")
+        except json.JSONDecodeError:
+            print(f"Could not parse existing {args.output}, ignoring cache")
+
+    records = embed_chunks(chunks, args.model, existing=existing)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(records))
     size_kb = args.output.stat().st_size / 1024

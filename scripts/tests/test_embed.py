@@ -14,7 +14,9 @@ from embed import (
     MIN_CHUNK_CHARS,
     _classify_item,
     _clean_text,
+    _content_hash,
     build_chunks,
+    plan_embedding,
 )
 
 
@@ -156,3 +158,94 @@ class TestBuildChunks:
         # We can't see the text in the test (build_chunks keeps it though),
         # so check ordering via index lookup.
         assert overview["text"].index("DESC") < overview["text"].index("ROW")
+
+
+class TestContentHash:
+    def test_same_inputs_produce_same_hash(self):
+        assert _content_hash("model-a", "hello") == _content_hash("model-a", "hello")
+
+    def test_different_text_produces_different_hash(self):
+        assert _content_hash("model-a", "hello") != _content_hash("model-a", "world")
+
+    def test_different_model_produces_different_hash(self):
+        # Critical for cache correctness — mixing vectors from different
+        # models in one file would silently corrupt similarity scores.
+        assert _content_hash("model-a", "hello") != _content_hash("model-b", "hello")
+
+
+def _chunk(merger_id, section, text, **extra):
+    return {"merger_id": merger_id, "section": section, "text": text, **extra}
+
+
+class TestPlanEmbedding:
+    MODEL = "test-model"
+
+    def test_no_existing_cache_means_everything_is_pending(self):
+        chunks = [_chunk("M1", "overview", "x" * 60)]
+        reused, pending = plan_embedding(chunks, None, self.MODEL)
+        assert reused == []
+        assert len(pending) == 1
+        assert pending[0]["hash"] == _content_hash(self.MODEL, chunks[0]["text"])
+
+    def test_unchanged_chunk_is_reused(self):
+        text = "x" * 60
+        h = _content_hash(self.MODEL, text)
+        existing = [{
+            "merger_id": "M1", "section": "overview",
+            "hash": h, "vector": [0.1, 0.2, 0.3], "outcome": "Approved",
+        }]
+        chunks = [_chunk("M1", "overview", text, outcome="Approved")]
+        reused, pending = plan_embedding(chunks, existing, self.MODEL)
+        assert pending == []
+        assert reused[0]["vector"] == [0.1, 0.2, 0.3]
+        assert reused[0]["hash"] == h
+
+    def test_changed_text_invalidates_cache_entry(self):
+        old_text = "x" * 60
+        existing = [{
+            "merger_id": "M1", "section": "overview",
+            "hash": _content_hash(self.MODEL, old_text),
+            "vector": [0.1], "outcome": "Approved",
+        }]
+        chunks = [_chunk("M1", "overview", "y" * 60)]
+        reused, pending = plan_embedding(chunks, existing, self.MODEL)
+        assert reused == []
+        assert len(pending) == 1
+
+    def test_model_change_invalidates_every_entry(self):
+        text = "x" * 60
+        existing = [{
+            "merger_id": "M1", "section": "overview",
+            "hash": _content_hash("old-model", text),
+            "vector": [0.1],
+        }]
+        chunks = [_chunk("M1", "overview", text)]
+        reused, pending = plan_embedding(chunks, existing, self.MODEL)
+        assert reused == []
+        assert len(pending) == 1
+
+    def test_dropped_chunk_is_not_carried_over(self):
+        text = "x" * 60
+        existing = [
+            {"merger_id": "M1", "section": "overview",
+             "hash": _content_hash(self.MODEL, text), "vector": [0.1]},
+            {"merger_id": "M2", "section": "overview",
+             "hash": _content_hash(self.MODEL, text), "vector": [0.2]},
+        ]
+        chunks = [_chunk("M1", "overview", text)]
+        reused, pending = plan_embedding(chunks, existing, self.MODEL)
+        assert len(reused) + len(pending) == 1
+        assert all(r["merger_id"] == "M1" for r in reused + pending)
+
+    def test_metadata_refreshes_even_when_vector_is_reused(self):
+        # The text didn't change, but the merger's outcome did (e.g. status
+        # update). The reused record should reflect the new metadata.
+        text = "x" * 60
+        h = _content_hash(self.MODEL, text)
+        existing = [{
+            "merger_id": "M1", "section": "overview",
+            "hash": h, "vector": [0.1], "outcome": "Under assessment",
+        }]
+        chunks = [_chunk("M1", "overview", text, outcome="Approved")]
+        reused, _ = plan_embedding(chunks, existing, self.MODEL)
+        assert reused[0]["outcome"] == "Approved"
