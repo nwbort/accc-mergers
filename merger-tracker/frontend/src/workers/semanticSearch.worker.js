@@ -64,10 +64,11 @@ async function loadCorpus() {
 
 async function loadModel() {
   post({ type: 'progress', stage: 'model', message: 'Loading embedding model…' })
-  // Q4 quantisation keeps the download to ~80 MB (full FP32 is ~1.2 GB) and
-  // runs inference in well under a second on commodity hardware.
+  // int8 (q8) keeps the download manageable (~150 MB vs ~1.2 GB at fp32) and,
+  // unlike q4, uses ops that onnxruntime-web actually implements — q4
+  // requires GatherBlockQuantized, which is missing from the wasm backend.
   const ext = await pipeline('feature-extraction', MODEL_ID, {
-    dtype: 'q4',
+    dtype: 'q8',
     progress_callback: (info) => {
       if (info.status === 'progress' && info.progress != null) {
         post({
