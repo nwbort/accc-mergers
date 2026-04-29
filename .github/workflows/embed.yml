@@ -42,23 +42,31 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements-embed.txt
 
-      # Cache the Hugging Face model download so repeat runs skip the ~80MB
-      # fetch. Keyed on the model name so swapping MODEL_NAME in embed.py
-      # invalidates the cache automatically.
+      # Cache the Hugging Face model download so repeat runs skip the
+      # ~1.2GB fetch. Keyed on the model name so swapping MODEL_NAME in
+      # embed.py invalidates the cache automatically.
       - name: Resolve model name
         id: model
         run: |
           name=$(python -c "import sys; sys.path.insert(0, 'scripts'); from embed import MODEL_NAME; print(MODEL_NAME)")
+          # Sanitise '/' so the value is safe to use in a cache key.
+          safe=${name//\//__}
           echo "name=$name" >> "$GITHUB_OUTPUT"
+          echo "safe=$safe" >> "$GITHUB_OUTPUT"
           echo "Using model: $name"
 
       - name: Cache Hugging Face model
         uses: actions/cache@v4
         with:
           path: ~/.cache/huggingface
-          key: hf-${{ runner.os }}-${{ steps.model.outputs.name }}
+          key: hf-${{ runner.os }}-${{ steps.model.outputs.safe }}
 
       - name: Generate embeddings
+        # EmbeddingGemma is a gated model on Hugging Face. Accept the licence
+        # at https://huggingface.co/google/embeddinggemma-300m once, then add
+        # a read-only HF access token as the repo secret HF_TOKEN.
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: python scripts/embed.py
 
       - name: Commit and push embeddings

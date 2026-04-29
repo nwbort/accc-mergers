@@ -10,7 +10,7 @@ The output is a JSON array of objects, one per chunk:
     {
       "merger_id": "MN-01016",
       "section": "reasons",
-      "vector": [...384 floats...],
+      "vector": [...768 floats...],
       "merger_name": "Asahi - Warehouse site ...",
       "parties": ["ASAHI HOLDINGS (AUSTRALIA) PTY LTD", "GPT PLATFORM PTY LIMITED"],
       "industry": [{"code": "121", "name": "Beverage Manufacturing"}, ...],
@@ -37,9 +37,15 @@ REPO_ROOT = SCRIPT_DIR.parent
 INPUT_PATH = REPO_ROOT / "data" / "processed" / "mergers.json"
 OUTPUT_PATH = REPO_ROOT / "data" / "embeddings.json"
 
-# Single source of truth for the model. Swap to e.g. ``all-mpnet-base-v2``
-# (768 dims, slower) without other code changes.
-MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+# Single source of truth for the model. Swap to e.g.
+# ``sentence-transformers/all-MiniLM-L6-v2`` (384 dims, ~80MB, no auth) for a
+# lighter / unauthenticated alternative.
+#
+# EmbeddingGemma is gated: you must accept Google's Gemma license on
+# huggingface.co/google/embeddinggemma-300m once, then expose an HF access
+# token to the embed job as ``HF_TOKEN`` (env var or repo secret).
+# Produces 768-dim Matryoshka-trained vectors.
+MODEL_NAME = "google/embeddinggemma-300m"
 
 # Mapping from normalised determination-table item names to canonical section
 # keys. Multiple rows that map to the same section get combined into one chunk.
@@ -207,7 +213,13 @@ def embed_chunks(chunks: list[dict], model_name: str) -> list[dict]:
 
     texts = [c["text"] for c in chunks]
     print(f"Embedding {len(texts)} chunks...")
-    vectors = model.encode(
+    # Asymmetric retrieval models (EmbeddingGemma, e5, bge) want different
+    # prompt prefixes for documents vs queries. ``encode_document`` picks the
+    # right one when configured on the model and falls back to plain
+    # encoding otherwise — so this works for all three model families
+    # without branching here.
+    encode_fn = getattr(model, "encode_document", model.encode)
+    vectors = encode_fn(
         texts,
         batch_size=32,
         show_progress_bar=True,
