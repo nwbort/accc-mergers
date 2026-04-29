@@ -1,9 +1,9 @@
 {
-  "total_mergers": 87,
+  "total_mergers": 88,
   "total_waivers": 117,
   "by_status": {
     "Assessment completed": 56,
-    "Under assessment": 31
+    "Under assessment": 32
   },
   "by_determination": {
     "Approved": 56,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-60011",
+      "merger_name": "Barro Group / BQC Quarries and Burdekin Concrete",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-04-28T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-75016",
       "merger_name": "Fulton Hogan \u2013 Avionics",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-20012",
       "merger_name": "Australian Meat Group Pty Ltd - Killara Feedlot Pty Ltd",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-24T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50008",
-      "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-24T12:00:00Z",

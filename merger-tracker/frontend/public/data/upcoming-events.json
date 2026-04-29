@@ -84,6 +84,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-05-06T12:00:00Z",
+      "merger_id": "MN-60011",
+      "merger_name": "Barro Group / BQC Quarries and Burdekin Concrete",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-28T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-05-06T12:00:00Z",
       "merger_id": "MN-75016",
       "merger_name": "Fulton Hogan \u2013 Avionics",
       "status": "Under assessment",
@@ -384,6 +394,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-06-11T12:00:00Z",
+      "merger_id": "MN-60011",
+      "merger_name": "Barro Group / BQC Quarries and Burdekin Concrete",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-28T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-06-11T12:00:00Z",
       "merger_id": "MN-75016",
       "merger_name": "Fulton Hogan \u2013 Avionics",
       "status": "Under assessment",
@@ -401,6 +421,6 @@
       "effective_notification_datetime": "2025-11-27T12:00:00Z"
     }
   ],
-  "count": 40,
+  "count": 42,
   "days_ahead": 60
 }
