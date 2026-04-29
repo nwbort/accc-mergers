@@ -33,7 +33,7 @@ def extract_deadline(text: str) -> Optional[str]:
     # Pattern handles both formats:
     # 1. "Deadline to respond: 25 August 2025"
     # 2. "Deadline to respond: 5.00pm (AEDT) on 20 October 2025"
-    pattern = r'Deadline to respond:\s*(?:[\d:.apm]+\s*\([A-Z]+\)\s+on\s+)?(\d{1,2}\s+[A-Za-z]+\s+\d{4})'
+    pattern = r'Deadline to respond:\s*(?:[\d:.apm]+\s*\([A-Z]+\)\s+on\s+)?(?:[A-Za-z]+,\s*)?(\d{1,2}\s+[A-Za-z]+\s+\d{4})'
     match = re.search(pattern, text, re.IGNORECASE | re.DOTALL)
 
     if match:
