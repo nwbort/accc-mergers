@@ -1,0 +1,4 @@
+# Dependencies for scripts/embed.py — kept separate from requirements.txt
+# because torch + sentence-transformers add ~750MB and aren't needed by the
+# main scrape/extract pipeline.
+sentence-transformers==5.4.1
