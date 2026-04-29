@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Embeddings are copied from <repo-root>/data/ at dev/build time by
+# vite.config.js — the canonical files live there, not here.
+public/data/embeddings.json
+public/data/embeddings.bin
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

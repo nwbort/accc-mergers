@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
@@ -21,6 +21,11 @@ import Analysis from './pages/Analysis';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Feedback from './pages/Feedback';
 import NotFound from './pages/NotFound';
+import LoadingSpinner from './components/LoadingSpinner';
+// Hidden test page — intentionally not in the navbar. Lazy-loaded so its
+// transformers.js dependency doesn't bloat the main bundle for users who
+// never visit /search.
+const SemanticSearch = lazy(() => import('./pages/SemanticSearch'));
 
 function AppContent() {
   const [showShortcuts, setShowShortcuts] = useState(false);
@@ -46,6 +51,14 @@ function AppContent() {
             <Route path="/nick-twort" element={<NickTwort />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/feedback" element={<Feedback />} />
+            <Route
+              path="/search"
+              element={
+                <Suspense fallback={<LoadingSpinner />}>
+                  <SemanticSearch />
+                </Suspense>
+              }
+            />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
