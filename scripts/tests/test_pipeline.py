@@ -170,6 +170,11 @@ class TestExtractDeadline:
     def test_empty_text(self):
         assert extract_deadline("") is None
 
+    def test_deadline_with_day_name_and_comma(self):
+        text = "Deadline to respond: Wednesday, 6 May 2026"
+        result = extract_deadline(text)
+        assert result == "6 May 2026"
+
     def test_deadline_with_newline_in_date(self):
         text = "Deadline to respond: 25\nAugust 2025"
         # The regex uses DOTALL so \s+ matches newlines
