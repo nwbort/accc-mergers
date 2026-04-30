@@ -11,6 +11,11 @@ import { useFetchData } from '../hooks/useFetchData';
 const ITEMS_PER_PAGE = 15;
 const LOAD_MORE_COUNT = 10;
 const SCROLL_THRESHOLD_PX = 300;
+// If fewer than this many events are displayed after the initial load, keep
+// loading more pages automatically so the user has enough content to scroll
+// and trigger the infinite-scroll handler. Required because the last (newest)
+// page can have very few events — e.g. 503 total / 100 per page → 3 events.
+const MIN_DISPLAYED_TO_ENABLE_SCROLL = 8;
 
 function Timeline() {
   const { data: meta, error: metaError } = useFetchData(
@@ -49,6 +54,14 @@ function Timeline() {
   const error = metaError || pageError;
   // Show the spinner until the initial events are processed (or an error occurs).
   const loading = !error && !initialLoaded;
+
+  useEffect(() => {
+    if (!initialLoaded || loadingMore || !hasMore) return;
+    if (displayedEvents.length < MIN_DISPLAYED_TO_ENABLE_SCROLL) {
+      loadMoreEvents();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initialLoaded, displayedEvents.length, hasMore, loadingMore]);
 
   useEffect(() => {
     const handleScroll = () => {
