@@ -101,14 +101,14 @@
       "effective_notification_datetime": "2026-04-28T12:00:00Z"
     },
     {
-      "type": "determination_due",
-      "event_type_display": "Determination due",
-      "date": "2026-05-12T12:00:00Z",
-      "merger_id": "MN-01093",
-      "merger_name": "Sinopec / CNAF",
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-05-07T12:00:00Z",
+      "merger_id": "MN-45006",
+      "merger_name": "Paramount Skydance / Warner Bros. Discovery",
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-03-26T12:00:00Z"
+      "effective_notification_datetime": "2026-04-29T12:00:00Z"
     },
     {
       "type": "determination_due",
@@ -419,8 +419,18 @@
       "status": "Under assessment",
       "stage": "Phase 2 - detailed assessment",
       "effective_notification_datetime": "2025-11-27T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-06-12T12:00:00Z",
+      "merger_id": "MN-45006",
+      "merger_name": "Paramount Skydance / Warner Bros. Discovery",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-04-29T12:00:00Z"
     }
   ],
-  "count": 42,
+  "count": 43,
   "days_ahead": 60
 }

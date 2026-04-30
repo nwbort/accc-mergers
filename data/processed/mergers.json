@@ -1666,14 +1666,16 @@
   },
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sinopec-cnaf",
-    "merger_name": "Sinopec / CNAF",
-    "status": "Under assessment",
+    "merger_name": "Sinopec - CNAF",
+    "status": "Assessment completed",
     "merger_id": "MN-01093",
     "effective_notification_datetime": "2026-03-26T12:00:00Z",
     "original_notification_datetime": "2026-03-26T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-05-12T12:00:00Z",
-    "page_modified_datetime": "2026-04-07T12:28:24+10:00",
+    "determination_publication_date": "2026-04-30T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-04-30T15:27:43+10:00",
     "consultation_response_due_date": "2026-04-07T12:00:00Z",
     "acquirers": [
       {
@@ -1710,6 +1712,43 @@
         "date": "2026-03-26T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-04-30T12:00:00Z",
+        "title": "Sinopec - CNAF - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Sinopec%20-%20CNAF%20-%20Phase%201%20determination.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "China Petrochemical Corporation (Sinopec) is proposing to acquire\n100% of China National Aviation Fuel Group Limited (CNAF) (the\nAcquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "The acquirer, Sinopec, is a Chinese stated-owned energy company\nthat conducts energy investment, natural gas production, petroleum\nproduct trading, lubricant and chemical product sales, and retail fuel\nexpansion. Sinopec\u2019s activities include jet fuel trading and\nmarketing.\nThe target, CNAF, is a Chinese state-owned aviation fuel provider,\nwhich provides purchase, transport, storage, inspection, sales and\ninto-plane service of aviation fuel. CNAF\u2019s activities are primarily\ninternational. In Australia, CNAF does limited jet fuel trading."
+          },
+          {
+            "item": "Overlap and relationship\nbetween the parties",
+            "details": "The relevant market to the transaction is jet fuel production and\nsupply. The parties overlap in the production and supply of jet fuel in\nAustralia."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The market share aggregation arising from the acquisition is low\nand is estimated at less than 10 per cent.\n\u2022 The merged firm would likely continue to be constrained by\nalternative suppliers of jet fuel in Australia (e.g. Ampol, Viva\nEnergy, Caltex, BP)."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/mergers/MN-01093/Sinopec - CNAF - Phase 1 determination.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false
@@ -4608,6 +4647,94 @@
         "status": "live",
         "is_determination_event": true,
         "phase": "Phase 1"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/paramount-skydance-warner-bros-discovery",
+    "merger_name": "Paramount Skydance / Warner Bros. Discovery",
+    "status": "Under assessment",
+    "merger_id": "MN-45006",
+    "effective_notification_datetime": "2026-04-29T12:00:00Z",
+    "original_notification_datetime": "2026-04-29T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-06-12T12:00:00Z",
+    "page_modified_datetime": "2026-04-30T15:00:29+10:00",
+    "consultation_response_due_date": "2026-05-07T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "Paramount Skydance Corporation",
+        "identifier_type": null,
+        "identifier": "Commercial / Trade Register Number  10426606"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Warner Bros. Discovery, Inc.",
+        "identifier_type": null,
+        "identifier": "Delaware Division of Corporations File Number  4540106"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Annapurna Pictures, LLC",
+        "identifier_type": null,
+        "identifier": "Delaware Division of Corporations File Number  6312854"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "5511",
+        "name": "Motion Picture and Video Production"
+      },
+      {
+        "code": "5512",
+        "name": "Motion Picture and Video Distribution"
+      },
+      {
+        "code": "5514",
+        "name": "Post-production Services and Other Motion Picture and Video Activities"
+      },
+      {
+        "code": "5621",
+        "name": "Free-to-Air Television Broadcasting"
+      },
+      {
+        "code": "5622",
+        "name": "Cable and Other Subscription Broadcasting"
+      },
+      {
+        "code": "5921",
+        "name": "Data Processing and Web Hosting Services"
+      },
+      {
+        "code": "6640",
+        "name": "Non-Financial Intangible Assets (Except Copyrights) Leasing"
+      },
+      {
+        "code": "6940",
+        "name": "Advertising Services"
+      },
+      {
+        "code": "7000",
+        "name": "Computer System Design and Related Services"
+      }
+    ],
+    "merger_description": "On 27 February 2026, Paramount Skydance Corporation (**Paramount**) and Warner Bros. Discovery, Inc. (**WBD**) signed an agreement (the**Merger Agreement**). Under the terms of the Merger Agreement, Paramount will pay USD 31.00 per share in cash for all outstanding shares of WBD (the\u00a0**Acquisition**).\n\nParamount is a global media, streaming and entertainment company that supplies content and experiences, including films, television series, and animated content.\n\nParamount\u2019s portfolio of brands and production assets includes Paramount Pictures, Paramount Television, Paramount+, CBS, CBS News, CBS Sports, Nickelodeon, MTV, BET, Comedy Central, Showtime, Pluto TV and Skydance Media LLC animation, interactive/games and sports divisions.\n\nIn Australia, Paramount operates the free-to-air (**FTA**) television network, Network 10. Network 10 is one of five Australian FTA TV networks, and operates four television channels (Channel 10, 10 Drama, 10 Comedy and Nickelodeon) and a free online streaming service (\u201810\u2019). Paramount also operates Paramount+, a paid digital subscription video on-demand and live streaming service available to Australian consumers. Paramount also licenses audiovisual content to TV channels and digital services in Australia and distributes films to cinemas in Australia through its local theatrical distribution company.\n\nWBD is a global media and entertainment company that creates and distributes a portfolio of content and products across television, film, streaming and interactive gaming.\n\nWBD\u2019s brands and production assets include Discovery Channel, CNN, DC Studios, New Line Cinema, TNT Sports, Eurosport, HBO Max, HBO, Warner Bros. Motion Picture Group, Warner Bros. Television Group, and Warner Bros. Games.\n\nWBD operates several Pay TV services in Australia (Discovery, Investigation Discovery, Animal Planet, TLC, Discovery Turbo, Travel Channel and HGTV) and the subscription video on demand service HBO Max. In Australia, WBD distributes films to exhibitors via a third party, Universal Pictures. WBD also has local subsidiaries active in film and television production, including Big Pond Productions Pty Ltd and Warner Bros. International Television Production Australia.",
+    "events": [
+      {
+        "date": "2026-04-30T12:00:00Z",
+        "title": "Paramount Skydance / Warner Bros. Discovery - Questionnaire",
+        "display_title": "Paramount Skydance / Warner Bros. Discovery - Questionnaire",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Warner%20Bros.%20Discovery%20-%20Questionnaire%20-%2030%20April%202026.docx",
+        "url_gh": "/mergers/MN-45006/Warner Bros. Discovery - Questionnaire - 30 April 2026.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-04-29T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
       }
     ],
     "is_waiver": false
@@ -9536,6 +9663,107 @@
       },
       {
         "date": "2026-03-12T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/turner-family-entities-pedal-group",
+    "merger_name": "Turner Family Entities - Pedal Group",
+    "status": "Assessment completed",
+    "merger_id": "WA-10014",
+    "effective_notification_datetime": "2026-04-08T12:00:00Z",
+    "original_notification_datetime": "2026-04-08T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-04-30T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-04-30T17:22:46+10:00",
+    "acquirers": [
+      {
+        "name": "Hootie Blowfish Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "605 475 992"
+      },
+      {
+        "name": "COUNTING CROWS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "19 659 478 485"
+      },
+      {
+        "name": "Gainsdale Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "008 971 499"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Pedal Group Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "67 131 402 278"
+      }
+    ],
+    "other_parties": [],
+    "anzsic_codes": [
+      {
+        "code": "3734",
+        "name": "Toy and Sporting Goods Wholesaling"
+      },
+      {
+        "code": "4241",
+        "name": "Sport and Camping Equipment Retailing"
+      },
+      {
+        "code": "6639",
+        "name": "Other Goods and Equipment Rental and Hiring n.e.c."
+      },
+      {
+        "code": "7220",
+        "name": "Travel Agency and Tour Arrangement Services"
+      },
+      {
+        "code": "9499",
+        "name": "Other Repair and Maintenance n.e.c."
+      }
+    ],
+    "merger_description": "Gainsdale Pty Ltd, Hootie Blowfish Pty Ltd, and Counting Crows Pty Ltd, which are entities associated with Mr Matthew Turner and his family (together, the **Turner Family Entities**), propose to increase their existing shareholdings in Pedal Group Pty Ltd (**Pedal Group**) by collectively acquiring from Flight Centre Travel Group Limited (**Flight Centre**) shares representing (in aggregate) 20.32% of the shares in Pedal Group. In connection with this acquisition, Pedal Group will buy back the remaining shares held by Flight Centre in Pedal Group, representing (in aggregate) 26.68% of the shares in Pedal Group. The share buy-back and proposed acquisition of shares in Pedal Group by the Turner Family Entities (together, the **Acquisition**) are interrelated and conditional upon each other.\n\nUpon completion of the Acquisition, the Turner Family Entities\u2019 shareholding in Pedal Group will increase from 36.30% to 77.23%. The balance of the Pedal Group share register will continue to be held by existing and former Pedal Group employees.\n\nPedal Group is a retailer and/or wholesaler of bicycles, e-bikes, scooters, associated accessories and a provider of bicycle / e-bike maintenance services. In Australia, Pedal Group operates 71 \u201c99 Bikes\u201d-branded retail\u00a0stores and the \u201cAdvance Traders\u201d wholesale business. Pedal Group also supplies bicycle rental services in Queensland.",
+    "events": [
+      {
+        "date": "2026-04-30T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Turner%20Family%20Entities%20-%20Pedal%20Group%20%28WA-10014%29%20-%20Notification%20waiver%20determination%20-%2030%20April%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1)",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Gainsdale Pty Ltd applied for a notification waiver in respect of:\n\u2022 the proposed acquisition by Gainsdale Pty Ltd, Hootie\nBlowfish Pty Ltd, and Counting Crows Pty Ltd (together, the\nTurner Family Entities) of an additional 20.32% of the\nshares (in aggregate) in Pedal Group Pty Ltd (Pedal Group)\nfrom Flight Centre Travel Group Limited (Flight Centre)\n\u2022 Pedal Group\u2019s buy-back of Flight Centre\u2019s remaining shares\nin Pedal Group, representing (in aggregate) 26.68% of the\nshares in Pedal Group,\nas described in the transaction documents provided as part of the\napplication (the Acquisition).\nUpon completion of the Acquisition, the Turner Family Entities\u2019\nshareholding in Pedal Group will increase from 36.30% to 77.23%."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "30 April 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirers, the Turner Family Entities, are entities associated with\nMr Matthew Turner and his family.\nThe target, Pedal Group, is a retailer and wholesaler of bicycles, e-\nbikes, scooters, associated accessories and a provider of bicycle / e-\nbike maintenance services. In Australia, Pedal Group operates 71 \u201899\nBikes\u2019 branded retail stores and the \u2018Advance Traders\u2019 wholesale\nbusiness. Pedal Group also supplies bicycle rental services in\nQueensland."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. aside from their existing interests in Pedal Group, there are\nno horizontal overlaps or vertical relationships between the\nTurner Family Entities (including their connected entities)\nand Pedal Group (including its connected entities) in the\nretail and wholesale supply of bicycles, e-bikes, scooters,\nassociated accessories in Australia or in the supply of bike\nmaintenance and rental services\nb. there are alternative retail and wholesale suppliers of\nbicycles, e-bikes, scooters and associated accessories in\nAustralia\nc. there are alternative suppliers of maintenance services and\nrental services in areas where Pedal Group supplies such\nservices.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-10014/Turner Family Entities - Pedal Group (WA-10014) - Notification waiver determination - 30 April 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-04-08T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }
@@ -15221,6 +15449,124 @@
     "is_waiver": true
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ma-financial-group-redcape-fund-%E2%80%93-the-entrance-social-club",
+    "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
+    "status": "Assessment completed",
+    "merger_id": "WA-60017",
+    "effective_notification_datetime": "2026-04-16T12:00:00Z",
+    "original_notification_datetime": "2026-04-16T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-04-30T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-04-30T17:28:03+10:00",
+    "acquirers": [
+      {
+        "name": "REDCAPE HOTEL GROUP PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "43 139 067 244"
+      },
+      {
+        "name": "MAHF CUSTODIAN PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "96 619 512 060"
+      }
+    ],
+    "targets": [
+      {
+        "name": "REDBRAN PTY. LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "34 003 920 232"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "MA REDCAPE HOTEL FUND RE LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "87 610 990 004"
+      },
+      {
+        "name": "MA FINANCIAL GROUP LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "68 142 008 428"
+      },
+      {
+        "name": "The Trustee for The Entrance Trust",
+        "identifier_type": "ABN",
+        "identifier": "60 327 956 502"
+      },
+      {
+        "name": "REDCAPE HOSPITALITY PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "34 619 297 228"
+      },
+      {
+        "name": "RGM TT PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "99 619 024 949"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "4123",
+        "name": "Liquor Retailing"
+      },
+      {
+        "code": "4400",
+        "name": "Accommodation"
+      },
+      {
+        "code": "4511",
+        "name": "Cafes and Restaurants"
+      },
+      {
+        "code": "4520",
+        "name": "Pubs, Taverns and Bars"
+      }
+    ],
+    "merger_description": "MAHF Custodian Pty Ltd as custodian for RGM TT Pty Ltd (as trustee for The Entrance Hotel Sub Trust) and Redcape Hotel Group Pty Ltd (the **Acquirers**) proposes to acquire 100% of the freehold land interest, buildings, licences and business assets (both tangible and intangible) of The Entrance Social Club\u00a0from Redbran Pty Limited (the **Acquisition**).\n\nThe Acquirers are part of MA Financial Group Limited\u2019s (**MA Financial**) Redcape Fund, which owns and operates community pubs and hotels. The Redcape Fund portfolio currently has 34 pubs and hotels in NSW, Queensland and Victoria.\n\nThe Entrance Social Club is a community pub and hotel offering food, beverage, accommodation, gambling and entertainment, which is located in The Entrance, NSW. It also operates a \u2018Bottlemart\u2019 bottle shop.",
+    "events": [
+      {
+        "date": "2026-04-30T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/MA%20Financial%20Group%20%28Redcape%20Fund%29%20%E2%80%93%20The%20Entrance%20Social%20Club%20%28WA-60017%29%20-%20Notification%20waiver%20determination%20-%2030%20April%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "MAHF Custodian Pty Ltd, as custodian for RGM TT Pty Ltd (as\ntrustee for The Entrance Hotel Sub Trust) and Redcape Hotel Group\nPty Ltd, proposes to acquire 100% of the freehold land interest,\nbuildings, licences and business assets of The Entrance Social Club\nlocated in The Entrance, NSW, as described in the transaction\ndocuments provided as part of the application (the Acquisition).\nMA Financial Group Limited (MA Financial) applied for a notification\nwaiver in respect of the Acquisition."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "30 April 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, MAHF Custodian Pty Ltd, is the custodian for RGM TT\nPty Ltd (as trustee for The Entrance Hotel Sub Trust) and Redcape\nHotel Goup Pty Ltd. The acquirers are part of MA Financial\u2019s\nRedcape Fund, which owns and operates community pubs and\nhotels. The Redcape Fund portfolio currently has 34 pubs and hotels\nin NSW, Queensland and Victoria.\nThe target, The Entrance Social Club, is a community pub and hotel\noffering food, beverage, accommodation, gambling and\nentertainment, which is located in The Entrance, NSW. It also\noperates a bottle shop, being \u2018Bottlemart\u2019.\nThe parties both supply on-premises and take-away packaged liquor,\ndining, gambling, and accommodation services."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no local horizontal overlap between the Redcape\nFund and The Entrance Social Club in the supply of on-\npremises or takeaway packaged liquor, dining, gaming or\naccommodation services in The Entrance area or the\nsurrounding area\nb. there are alternative suppliers of on-premises and takeaway\npackaged liquor, dining, gaming and accommodation\nservices at the local and regional level.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-60017/MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club (WA-60017) - Notification waiver determination - 30 April 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-04-16T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/henkel-%E2%80%93-atp-adhesive-systems-group",
     "merger_name": "Henkel \u2013 ATP adhesive systems group",
     "status": "Assessment completed",
@@ -15600,6 +15946,92 @@
       },
       {
         "date": "2026-03-16T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/savvy-games-group-%E2%80%93-moonton",
+    "merger_name": "Savvy Games Group \u2013 Moonton",
+    "status": "Assessment completed",
+    "merger_id": "WA-65012",
+    "effective_notification_datetime": "2026-04-08T12:00:00Z",
+    "original_notification_datetime": "2026-04-08T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-04-30T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-04-30T17:30:30+10:00",
+    "acquirers": [
+      {
+        "name": "East Gate Games Investment Company",
+        "identifier_type": "ABN",
+        "identifier": "39 275 633 205"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Moonton Holdings Limited",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Saudi Electronic Gaming Holding Company (doing business as Savvy Games Group)",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Public Investment Fund",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "7000",
+        "name": "Computer System Design and Related Services"
+      }
+    ],
+    "merger_description": "East Gate Games Investment Company (**East Gate**) will acquire 100% of the shares of Moonton Holdings Limited (**Moonton**) from Bytedance Ltd. (**Bytedance**), by way of a Sale and Purchase Agreement (the **Acquisition**).\n\nEast Gate is a special purpose vehicle wholly owned by Saudi Electronic Games Holding Company (doing business as Savvy Games Group (**Savvy**)). Savvy principally invests in and manages companies that develop, market, and publish games for mobile devices.\n\nSavvy is wholly owned by the Public Investment Fund, the sovereign wealth fund of the Kingdom of Saudi Arabia.\n\nMoonton (a wholly owned subsidiary of Bytedance) is active in mobile game development, publishing and related business. Bytedance is a holding company registered in the Cayman Islands.\n\nSavvy and Moonton are involved in the development and publishing of games for mobile devices, and Savvy is also active in organising esports events.",
+    "events": [
+      {
+        "date": "2026-04-30T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Savvy%20Games%20Group%20%E2%80%93%20Moonton%20%28WA-65012%29%20-%20Notification%20waiver%20determination%20-%2029%20April%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "East Gate Games Investment Company (East Gate), a special\npurpose vehicle wholly owned by Saudi Electronic Games Holding\nCompany (doing business as Savvy Games Group (Savvy)), applied\nfor a notification waiver in respect of its proposed acquisition of\n100% of the shares of Moonton Holdings Limited (Moonton), as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "29 April 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, East Gate, is a special purpose vehicle wholly owned by\nSavvy. Savvy principally invests in and manages companies that\ndevelop, market, and publish games for mobile devices.\nSavvy is wholly owned by the Public Investment Fund (PIF), the\nsovereign wealth fund of the Kingdom of Saudi Arabia.\nMoonton (a wholly owned subsidiary of Bytedance Ltd. (Bytedance))\nis active in mobile game development, publishing and related\nbusiness. Bytedance is a holding company registered in the Cayman\nIslands.\nSavvy and Moonton are involved in the development and publishing\nof games for mobile devices, and Savvy is also active in organising\nesports events."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. the parties\u2019 combined share in the supply of mobile video\ngames in Australia is low and the increase in share of supply\narising from the Acquisition would be small\nb. there are alternative developers and publishers of mobile\nvideo games in Australia\nc. while there is a potential vertical relationship between the\nparties in relation to esports, there appears to be a low risk\nof foreclosure or other concerning vertical effects resulting\nfrom exclusionary conduct post-acquisition.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-65012/Savvy Games Group \u2013 Moonton (WA-65012) - Notification waiver determination - 29 April 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-04-08T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }

@@ -1,13 +1,15 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sinopec-cnaf",
-  "merger_name": "Sinopec / CNAF",
-  "status": "Under assessment",
+  "merger_name": "Sinopec - CNAF",
+  "status": "Assessment completed",
   "merger_id": "MN-01093",
   "effective_notification_datetime": "2026-03-26T12:00:00Z",
   "original_notification_datetime": "2026-03-26T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-05-12T12:00:00Z",
-  "page_modified_datetime": "2026-04-07T12:28:24+10:00",
+  "determination_publication_date": "2026-04-30T12:00:00Z",
+  "accc_determination": "Approved",
+  "page_modified_datetime": "2026-04-30T15:27:43+10:00",
   "consultation_response_due_date": "2026-04-07T12:00:00Z",
   "acquirers": [
     {
@@ -46,12 +48,48 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-04-30T12:00:00Z",
+      "title": "Sinopec - CNAF - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Sinopec%20-%20CNAF%20-%20Phase%201%20determination.pdf",
+      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "China Petrochemical Corporation (Sinopec) is proposing to acquire\n100% of China National Aviation Fuel Group Limited (CNAF) (the\nAcquisition)."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "The acquirer, Sinopec, is a Chinese stated-owned energy company\nthat conducts energy investment, natural gas production, petroleum\nproduct trading, lubricant and chemical product sales, and retail fuel\nexpansion. Sinopec\u2019s activities include jet fuel trading and\nmarketing.\nThe target, CNAF, is a Chinese state-owned aviation fuel provider,\nwhich provides purchase, transport, storage, inspection, sales and\ninto-plane service of aviation fuel. CNAF\u2019s activities are primarily\ninternational. In Australia, CNAF does limited jet fuel trading."
+        },
+        {
+          "item": "Overlap and relationship\nbetween the parties",
+          "details": "The relevant market to the transaction is jet fuel production and\nsupply. The parties overlap in the production and supply of jet fuel in\nAustralia."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The market share aggregation arising from the acquisition is low\nand is estimated at less than 10 per cent.\n\u2022 The merged firm would likely continue to be constrained by\nalternative suppliers of jet fuel in Australia (e.g. Ampol, Viva\nEnergy, Caltex, BP)."
+        },
+        {
+          "item": "Applications for review",
+          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+        }
+      ],
+      "url_gh": "/mergers/MN-01093/Sinopec - CNAF - Phase 1 determination.pdf",
+      "status": "live",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-04-30T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
