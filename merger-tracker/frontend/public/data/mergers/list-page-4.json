@@ -577,12 +577,12 @@
     },
     {
       "merger_id": "MN-01093",
-      "merger_name": "Sinopec / CNAF",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "merger_name": "Sinopec - CNAF",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-03-26T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-04-30T12:00:00Z",
       "end_of_determination_period": "2026-05-12T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1866,6 +1866,109 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eli-lilly-orna-therapeutics"
     },
     {
+      "merger_id": "WA-10014",
+      "merger_name": "Turner Family Entities - Pedal Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-08T12:00:00Z",
+      "determination_publication_date": "2026-04-30T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Hootie Blowfish Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "605 475 992"
+        },
+        {
+          "name": "COUNTING CROWS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "19 659 478 485"
+        },
+        {
+          "name": "Gainsdale Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "008 971 499"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Pedal Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "67 131 402 278"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3734",
+          "name": "Toy and Sporting Goods Wholesaling"
+        },
+        {
+          "code": "4241",
+          "name": "Sport and Camping Equipment Retailing"
+        },
+        {
+          "code": "6639",
+          "name": "Other Goods and Equipment Rental and Hiring n.e.c."
+        },
+        {
+          "code": "7220",
+          "name": "Travel Agency and Tour Arrangement Services"
+        },
+        {
+          "code": "9499",
+          "name": "Other Repair and Maintenance n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/turner-family-entities-pedal-group"
+    },
+    {
+      "merger_id": "WA-65012",
+      "merger_name": "Savvy Games Group \u2013 Moonton",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-08T12:00:00Z",
+      "determination_publication_date": "2026-04-30T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "East Gate Games Investment Company",
+          "identifier_type": "ABN",
+          "identifier": "39 275 633 205"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Moonton Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Saudi Electronic Gaming Holding Company (doing business as Savvy Games Group)",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Public Investment Fund",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/savvy-games-group-%E2%80%93-moonton"
+    },
+    {
       "merger_id": "WA-85022",
       "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
       "status": "Assessment completed",
@@ -2550,170 +2653,80 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/global-infrastructure-management-%E2%80%93-tcr"
     },
     {
-      "merger_id": "MN-10013",
-      "merger_name": "Accenture - Ziff Davis' connectivity business",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-04-17T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-06-02T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Accenture Inc.",
-          "identifier_type": null,
-          "identifier": "State File Number  3387477"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Ekahau OY",
-          "identifier_type": null,
-          "identifier": "Business ID  16108964"
-        },
-        {
-          "name": "Ookla, LLC",
-          "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "ACCENTURE AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "61 096 995 649"
-        },
-        {
-          "name": "Accenture Venture Holdings B.V.",
-          "identifier_type": null,
-          "identifier": "KVK  42007173"
-        },
-        {
-          "name": "Ziff Davis, LLC",
-          "identifier_type": null,
-          "identifier": "State File Number  5455121"
-        },
-        {
-          "name": "Accenture plc",
-          "identifier_type": null,
-          "identifier": "CRN  471706"
-        },
-        {
-          "name": "Ziff Davis, Inc.",
-          "identifier_type": null,
-          "identifier": "State File Number  5542070"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/accenture-ziff-davis-connectivity-business"
-    },
-    {
-      "merger_id": "WA-95014",
-      "merger_name": "Publicis \u2013 160over90",
+      "merger_id": "WA-60017",
+      "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
       "status": "Assessment completed",
       "accc_determination": "Approved",
       "is_waiver": true,
-      "effective_notification_datetime": "2026-04-20T12:00:00Z",
-      "determination_publication_date": "2026-04-29T12:00:00Z",
+      "effective_notification_datetime": "2026-04-16T12:00:00Z",
+      "determination_publication_date": "2026-04-30T12:00:00Z",
       "end_of_determination_period": null,
       "stage": "Waiver application",
       "acquirers": [
         {
-          "name": "PUBLICIS MEDIA AUSTRALIA PTY LTD",
+          "name": "REDCAPE HOTEL GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "40 001 786 858"
+          "identifier": "43 139 067 244"
+        },
+        {
+          "name": "MAHF CUSTODIAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 619 512 060"
         }
       ],
       "targets": [
         {
-          "name": "INTERNATIONAL MANAGEMENT GROUP OF AMERICA PTY LTD",
+          "name": "REDBRAN PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "23 001 788 343"
+          "identifier": "34 003 920 232"
         }
       ],
       "other_parties": [
         {
-          "name": "Publicis Groupe S.A.",
-          "identifier_type": null,
-          "identifier": "Paris Trade and Companies Registry no. 542 080 601"
+          "name": "MA REDCAPE HOTEL FUND RE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "87 610 990 004"
+        },
+        {
+          "name": "MA FINANCIAL GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "68 142 008 428"
+        },
+        {
+          "name": "The Trustee for The Entrance Trust",
+          "identifier_type": "ABN",
+          "identifier": "60 327 956 502"
+        },
+        {
+          "name": "REDCAPE HOSPITALITY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "34 619 297 228"
+        },
+        {
+          "name": "RGM TT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 619 024 949"
         }
       ],
       "anzsic_codes": [
         {
-          "code": "6940",
-          "name": "Advertising Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/publicis-%E2%80%93-160over90"
-    },
-    {
-      "merger_id": "MN-10012",
-      "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-04-21T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-06-04T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "MAC HoldCo Pty Ltd (an entity which has not been established yet)",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "targets": [
-        {
-          "name": "MOORABBIN AIRPORT CORPORATION PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "94 081 564 310"
+          "code": "4123",
+          "name": "Liquor Retailing"
         },
         {
-          "name": "TALLINA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "68 090 716 895"
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "4511",
+          "name": "Cafes and Restaurants"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
         }
       ],
-      "other_parties": [
-        {
-          "name": "The Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST",
-          "identifier_type": "ABN",
-          "identifier": "62 653 671 394"
-        },
-        {
-          "name": "The Massachusetts Mutual Life Insurance Company (MassMutual)",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "The Trustee for AWARE SUPER",
-          "identifier_type": "ABN",
-          "identifier": "53 226 460 365"
-        },
-        {
-          "name": "GOODMAN LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "69 000 123 071"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "5220",
-          "name": "Airport Operations and Other Air Transport Support Services"
-        },
-        {
-          "code": "6712",
-          "name": "Non-Residential Property Operators"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/massmutual-rest-aware-super-and-goodman-%E2%80%93-moorabbin-airport"
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ma-financial-group-redcape-fund-%E2%80%93-the-entrance-social-club"
     }
   ],
   "page": 4,
