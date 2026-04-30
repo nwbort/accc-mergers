@@ -48,7 +48,7 @@ export BASE_URL="https://www.accc.gov.au"
 export REGISTER_URL="${BASE_URL}/public-registers/mergers-and-acquisitions-registers/acquisitions-register?init=1&items_per_page=50"
 export MAIN_PAGE_FILE="data/raw/acquisitions-register.html"
 export SUBFOLDER="data/raw/matters"
-export USER_AGENT="Mozilla/5.0 (compatible; git-scraper-bot/1.0;)" # Be a good citizen
+export USER_AGENT="Mozilla/5.0 (compatible; mergers-fyi/1.0; +https://mergers.fyi)"
 export MERGERS_JSON="data/processed/mergers.json"
 export SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export PARALLEL_JOBS=24
