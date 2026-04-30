@@ -29,7 +29,7 @@ function Navbar() {
   const [searchQuery, setSearchQuery] = useState('');
   const searchInputRef = useRef(null);
   const mobileSearchInputRef = useRef(null);
-  const [focusMobileSearch, setFocusMobileSearch] = useState(false);
+  const focusMobileSearchRef = useRef(false);
   const { unseenCount } = useTracking();
 
   const submitSearch = (query) => {
@@ -65,11 +65,11 @@ function Navbar() {
   }, [searchOpen]);
 
   useEffect(() => {
-    if (mobileMenuOpen && focusMobileSearch && mobileSearchInputRef.current) {
+    if (mobileMenuOpen && focusMobileSearchRef.current && mobileSearchInputRef.current) {
       mobileSearchInputRef.current.focus();
-      setFocusMobileSearch(false);
+      focusMobileSearchRef.current = false;
     }
-  }, [mobileMenuOpen, focusMobileSearch]);
+  }, [mobileMenuOpen]);
 
   const isActive = (path) => {
     return location.pathname === path;
@@ -193,7 +193,7 @@ function Navbar() {
               </div>
             </div>
             <button
-              onClick={() => { setMobileMenuOpen(true); setFocusMobileSearch(true); }}
+              onClick={() => { focusMobileSearchRef.current = true; setMobileMenuOpen(true); }}
               className="sm:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150"
               aria-label="Search"
             >
