@@ -6,14 +6,6 @@ name: Generate semantic embeddings
 # static asset.
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'data/processed/mergers.json'
-      - 'scripts/embed.py'
-      - 'scripts/requirements-embed.txt'
-      - '.github/workflows/embed.yml'
   workflow_dispatch:
 
 permissions:
