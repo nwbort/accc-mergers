@@ -20,12 +20,12 @@ function RecentDeterminationsTable({ determinations }) {
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
       <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
-        <h2 className="text-lg font-semibold text-gray-900">
+        <h2 id="recent-determinations-heading" className="text-lg font-semibold text-gray-900">
           Recent determinations
         </h2>
       </div>
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-100">
+        <table className="min-w-full divide-y divide-gray-100" aria-labelledby="recent-determinations-heading">
           <thead>
             <tr className="bg-gray-50/80">
               <th

@@ -120,6 +120,7 @@ function MergerEventGroup({ group, onClose, isEventSeen }) {
 
 function NotificationPanel({ isOpen, onClose }) {
   const panelRef = useRef(null);
+  const previouslyFocusedRef = useRef(null);
   const {
     trackedEvents,
     trackedMergerIds,
@@ -127,6 +128,16 @@ function NotificationPanel({ isOpen, onClose }) {
     isEventSeen,
     loading
   } = useTracking();
+
+  // Restore focus to the trigger element when the panel closes
+  useEffect(() => {
+    if (isOpen) {
+      previouslyFocusedRef.current = document.activeElement;
+    } else if (previouslyFocusedRef.current) {
+      previouslyFocusedRef.current.focus?.();
+      previouslyFocusedRef.current = null;
+    }
+  }, [isOpen]);
 
   // Close panel when clicking outside
   useEffect(() => {

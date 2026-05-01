@@ -183,7 +183,7 @@ function Navbar() {
                 )}
                 <button
                   onClick={handleSearchIconClick}
-                  className={`inline-flex items-center justify-center p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 ${searchOpen ? 'rounded-r-lg border border-l-0 border-gray-200 bg-gray-100/80 hover:bg-gray-200/80' : 'rounded-lg'}`}
+                  className={`inline-flex items-center justify-center p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${searchOpen ? 'rounded-r-lg border border-l-0 border-gray-200 bg-gray-100/80 hover:bg-gray-200/80' : 'rounded-lg'}`}
                   aria-label="Search"
                 >
                   <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -194,7 +194,7 @@ function Navbar() {
             </div>
             <button
               onClick={() => { focusMobileSearchRef.current = true; setMobileMenuOpen(true); }}
-              className="sm:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150"
+              className="sm:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               aria-label="Search"
             >
               <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -205,7 +205,7 @@ function Navbar() {
               <button
                 onMouseDown={(e) => e.stopPropagation()}
                 onClick={() => setNotificationPanelOpen(!notificationPanelOpen)}
-                className="relative inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150"
+                className="relative inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                 aria-expanded={notificationPanelOpen}
                 aria-label={`Notifications${unseenCount > 0 ? `, ${unseenCount} new` : ''}`}
               >
@@ -226,7 +226,7 @@ function Navbar() {
             </div>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="sm:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150"
+              className="sm:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
               aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}
