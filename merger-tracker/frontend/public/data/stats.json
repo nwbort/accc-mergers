@@ -1,6 +1,6 @@
 {
   "total_mergers": 89,
-  "total_waivers": 124,
+  "total_waivers": 126,
   "by_status": {
     "Assessment completed": 57,
     "Under assessment": 32
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 114,
+    "Approved": 116,
     "Not approved": 10
   },
   "phase_duration": {
@@ -39,11 +39,11 @@
       "count": 29
     },
     {
-      "name": "Software Publishing",
-      "count": 21
+      "name": "Financial Asset Investing",
+      "count": 22
     },
     {
-      "name": "Financial Asset Investing",
+      "name": "Software Publishing",
       "count": 21
     },
     {
@@ -68,7 +68,7 @@
     },
     {
       "name": "Liquor Retailing",
-      "count": 6
+      "count": 7
     },
     {
       "name": "Car Retailing",
@@ -119,6 +119,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45010",
+      "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
+      "determination": "Approved",
+      "determination_date": "2026-05-01T12:00:00Z",
+      "page_modified_datetime": "2026-05-01T17:16:57+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-55017",
+      "merger_name": "Coles - Leasehold interest in shopping centre on Capricorn Highway, Emerald, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-05-01T12:00:00Z",
+      "page_modified_datetime": "2026-05-01T17:13:57+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-65012",
       "merger_name": "Savvy Games Group \u2013 Moonton",
       "determination": "Approved",
@@ -157,26 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-55015",
-      "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
-      "determination": "Approved",
-      "determination_date": "2026-04-29T12:00:00Z",
-      "page_modified_datetime": "2026-04-29T17:01:11+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-95014",
-      "merger_name": "Publicis \u2013 160over90",
-      "determination": "Approved",
-      "determination_date": "2026-04-29T12:00:00Z",
-      "page_modified_datetime": "2026-04-29T16:40:56+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
