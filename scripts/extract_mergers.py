@@ -418,6 +418,9 @@ def _scrape_events(soup, merger_id):
                 if determination_data:
                     event['determination_commission_division'] = determination_data.get('commission_division')
                     event['determination_table_content'] = determination_data.get('table_content')
+                    statement = determination_data.get('statement_of_reasons')
+                    if statement:
+                        event['determination_statement_of_reasons'] = statement
 
                 parsed_url = urlparse(url)
                 original_filename = unquote(os.path.basename(parsed_url.path)).strip()

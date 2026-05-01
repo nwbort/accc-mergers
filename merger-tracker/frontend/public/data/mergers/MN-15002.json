@@ -100,7 +100,277 @@
       "url_gh": "/mergers/MN-15002/Google - Wiz - Phase 1 determination_0.pdf",
       "status": "live",
       "is_determination_event": true,
-      "phase": "Phase 1"
+      "phase": "Phase 1",
+      "determination_statement_of_reasons": [
+        {
+          "type": "paragraph",
+          "number": "2.1",
+          "text": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.2",
+          "text": "For more information about the ACCC\u2019s approach to considering notified acquisitions, see the ACCC\u2019s merger assessment guidelines and interim merger process guidelines."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.3",
+          "text": "For the reasons given below, the ACCC has determined that the Acquisition may be put into effect."
+        },
+        {
+          "type": "heading",
+          "text": "Industry background"
+        },
+        {
+          "type": "heading",
+          "text": "Cloud computing"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.4",
+          "text": "Cloud computing services provide businesses and consumers with remote, on- demand access to computing resources such as networks, servers, storage, applications, and software, via remote data-centre infrastructure operated by a cloud computing provider (commonly known as a cloud service provider or CSP). Cloud computing can be deployed in various forms to meet different customer needs, and some customers may use different cloud environments and cloud service providers for different purposes. Cloud computing can be contrasted with traditional on- premises computing, in which traditional IT infrastructure (e.g. data centres and servers) is installed and maintained by an organisation for its own private use."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.5",
+          "text": "The Final Report of the ACCC\u2019s Digital Platform Services Inquiry (published in March 2025) noted that:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "use of cloud services is continuing to grow both globally and in Australia, and this growth is likely to continue with the rise of generative AI;",
+            "Amazon (through its subsidiary, Amazon Web Services), Microsoft and Google are the 3 leading providers of cloud \u2018infrastructure as a service\u2019 (IaaS) and \u2018platform as a service\u2019 (PaaS) globally. These providers are sometimes referred to as \u2018hyperscalers\u2019 in the supply of these services."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.6",
+          "text": "\u2018Multi-cloud\u2019 is a term that describes the placement of workloads on multiple cloud service providers. This is an increasingly prevalent strategy, particularly for large enterprises. The motivations for adopting a multi-cloud strategy include to leverage better functionalities on different clouds, to meet compliance needs, to reduce vendor lock-in with one cloud provider and/or to increase leverage in negotiating pricing."
+        },
+        {
+          "type": "heading",
+          "text": "Cloud-native application protection platforms (CNAPPs)"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.7",
+          "text": "Cloud security products are used by customers of cloud computing to secure their workloads or data, which are retained on one or more cloud environments."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.8",
+          "text": "The term \u2018CNAPP\u2019 describes a platform that combines a number of cloud security tools that were traditionally separate, under a single integrated platform, regardless of the underlying cloud providers or architecture. This provides a customer with a single, unified view of its security posture across multiple clouds and its on-premises environment, in order to monitor, detect and remediate potential cloud security threats during both application development and runtime."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.9",
+          "text": "The demand for multi-cloud security platforms such as Wiz\u2019s has grown as customers, particularly large enterprises, have increasingly adopted a multi-cloud strategy."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.10",
+          "text": "Practically, a CNAPP integrates with different cloud service providers via public Application Programming Interfaces (APIs). After integrating with a cloud service provider via an API, with a customer\u2019s permission, a CNAPP can scan the customer\u2019s cloud environment for common misconfigurations that could lead to security exposures."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.11",
+          "text": "The ACCC notes that the enterprise IT sector, and in particular cloud services and cyber-security services, continues to evolve, including due to the development of AI tools with applications across the sector. The ACCC has made its assessment on the basis of the specific circumstances of this Acquisition and the material before it."
+        },
+        {
+          "type": "heading",
+          "text": "Overlap and relationship between the parties"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.12",
+          "text": "Based on the material before it, the ACCC considers there are both horizontal and non-horizontal relationships between Google and Wiz (together, the Parties)."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.13",
+          "text": "The ACCC finds the Parties overlap to some extent in the supply of cloud security products, although the information available indicates this overlap is minimal:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "Wiz\u2019s CNAPP and Google\u2019s cloud security products do not appear to compete closely with each other, with market participants generally not seeing Google\u2019s cloud security offerings as comparable to Wiz\u2019s product.",
+            "While Google\u2019s SCCE product is marketed in a similar way, its multi-cloud features are more limited than Wiz\u2019s."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.14",
+          "text": "The parties also have a non-horizontal relationship, given Google\u2019s operation of Google Cloud, and the services that Wiz provides in securing customers\u2019 workloads on, and interoperating with, multiple cloud platforms including Google Cloud. Google\u2019s foundation models (Gemini) can also be integrated into Wiz\u2019s and other providers\u2019 multi-cloud security platforms either via the CNAPP provider or the customer, to provide AI-enhanced capabilities."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.15",
+          "text": "Wiz relies on access to the APIs of cloud service providers, including Google, in order to effectively secure its customers\u2019 workloads in underlying cloud computing environments. Google Cloud customers can also purchase Wiz through the Google Cloud marketplace, as well as via the AWS and Azure marketplaces."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.16",
+          "text": "The Parties submitted that the most relevant product markets for assessing the relationship between the Parties would be the global supply of a) so-called CNAPPs and b) cloud infrastructure and data analytics, including \u2018infrastructure as a service\u2019 and \u2018platform as a Service\u2019. However, the ACCC did not find it necessary to reach concluded views on the relevant product dimensions of these markets for the purposes of this assessment."
+        },
+        {
+          "type": "heading",
+          "text": "Competition assessment"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.17",
+          "text": "The ACCC has considered the effects of the Acquisition by comparing the likely future state of competition if the Acquisition proceeds against the continuation of the current state of competition (being the likely future state of competition if the Acquisition does not proceed)."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.18",
+          "text": "The ACCC has considered whether the Acquisition is likely to substantially lessen competition by providing:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "the merged entity the ability and incentive to harm the competitiveness of rival CNAPPs to Wiz through degrading their interoperability with Google Cloud;",
+            "the merged entity the ability and incentive to harm the competitiveness of rival cloud service providers through tying and bundling Wiz with Google Cloud; and/or",
+            "Google with access to and use of competitively significant information about rival cloud service providers that it would not have, absent the Acquisition."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.19",
+          "text": "The ACCC\u2019s assessment regarding each of these points is discussed further below."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.20",
+          "text": "In addition, the ACCC initially considered other possible theories of harm, including potential unilateral horizontal effects; the potential for Google to leverage its position in Generative AI to foreclose Wiz\u2019s rivals; and the potential for Wiz to access competitively significant information regarding Wiz\u2019s rivals. These theories were considered and dismissed as they were not supported by the material before the ACCC."
+        },
+        {
+          "type": "heading",
+          "text": "Non-horizontal effects \u2013 foreclosure of rival CNAPPs through degradation of interoperability with Google Cloud"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.21",
+          "text": "The ACCC considers that the Acquisition is unlikely to have the effect of substantially lessening competition in relation to the supply of CNAPP services, because the merged entity is unlikely to have the ability and/or the incentive to harm the competitiveness of rival CNAPPs through, for example, degrading their interoperability with Google Cloud."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.22",
+          "text": "Post-acquisition, the merged entity is unlikely to have a sufficiently strong position in the supply of cloud computing services to successfully foreclose non-Wiz CNAPPs through degrading their interoperability with Google Cloud. In particular, based on information from customers, competitors and the Parties:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "Rival CNAPP providers compete for customers that secure their workloads on alternative cloud environments, particularly those of Amazon Web Services and/or Microsoft, which host a significant volume of relevant customer workloads.",
+            "While Google is a large global provider of cloud computing services, it has a relatively small position in the supply of cloud computing services compared to the 2 largest hyperscalers, Microsoft and Amazon Web Services."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.23",
+          "text": "Therefore, the ACCC considers that rival multi-cloud security providers are not sufficiently dependent on interoperability with Google Cloud such that if the merged entity were to degrade Wiz\u2019s rivals\u2019 interoperability with Google Cloud, it would be unlikely to lead to a significant loss of rivals\u2019 sales."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.24",
+          "text": "Several market participants, including CNAPP competitors, have also submitted to the ACCC that while Google may be able to degrade the interoperability, integration or access of non-Wiz CNAPPs to Google Cloud, they do not expect such conduct would be commercially realistic."
+        },
+        {
+          "type": "heading",
+          "text": "Non-horizontal effects \u2013 foreclosure of rival cloud service providers through linking Wiz with Google Cloud"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.25",
+          "text": "The ACCC considers that the Acquisition is unlikely to have the effect of substantially lessening competition in the supply of cloud services by enabling the merged entity to foreclose rival cloud service providers through tying or bundling the supply of Wiz\u2019s platform with Google Cloud."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.26",
+          "text": "In this case, the ACCC considered the ability and incentive of the merged entity to:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "make the purchase of Wiz\u2019s platform conditional on customers also purchasing cloud services from Google Cloud (a tying strategy).",
+            "offer Wiz\u2019s CNAPP with Google Cloud services at an effectively lower price or on beneficial commercial terms, if purchased together (a bundling strategy). This could involve Google offering significant, targeted discounts on a bundled product offering, potentially combined with higher \u2018standalone\u2019 prices for Wiz\u2019s CNAPP."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.27",
+          "text": "For the reasons set out below, the ACCC does not consider the merged entity would have the ability or incentive to foreclose rival cloud service providers in these ways. Though some material before the ACCC indicates that the merged entity would have some incentive to provide linked offerings, the ACCC considers it is unlikely to find this approach profitable in a way that would foreclose rivals. Therefore, it was not necessary to consider whether such linking strategies could have the effect of substantially lessening competition. Tying"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.28",
+          "text": "The ACCC considers that the Acquisition is unlikely to have the effect of substantially lessening competition in the supply of cloud services through the adoption of a strategy which ties the use of Wiz\u2019s CNAPP to the purchase of Google Cloud services. This is primarily because any such strategy is unlikely to materially influence customer choice of cloud security provider such that it would lead to a significant loss of rivals\u2019 sales. Further, a key feature of Wiz\u2019s security platform is its multi-cloud functionality, as such, a tying strategy reducing Wiz\u2019s interoperability or integration with rival cloud platforms would be expected to significantly reduce its attractiveness to customers. Accordingly, the ACCC considers that the merged entity is unlikely to have an incentive to adopt such a strategy."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.29",
+          "text": "The ACCC notes material before it, including market feedback, suggesting that Wiz is a strong and growing supplier of cloud security services."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.30",
+          "text": "However, for tying to operate as an effective means of foreclosure, existing Wiz and non-Google Cloud customers would need to regard continued access to Wiz as sufficiently important that, in response to the tying strategy, they would be more likely to reallocate workload to Google Cloud in order to retain access to Wiz, than to switch away from Wiz to an alternative CNAPP provider."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.31",
+          "text": "Feedback from multiple customers of multi-cloud security providers in Australia indicates that customers have alternative options available and would consider switching, even where switching may involve some cost and effort. Market feedback further indicates that, when faced with changes that affect the availability or attractiveness of a CNAPP, customers tend to switch their CNAPP rather than their existing configuration of cloud service providers and/or on-premises hosting. The ACCC considers that, if access to Wiz were made conditional on using Google Cloud (including for at least some of the customer\u2019s cloud infrastructure requirements), customers would be more likely to switch away from Wiz than to change their cloud configuration."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.32",
+          "text": "Information from the Parties and third parties also suggests that customers generally treat decisions relating to cloud security platforms and decisions relating to cloud service providers as separate. Customers commonly adopt multi-cloud strategies and will deliberately seek cloud-agnostic security products to operate across different cloud platforms. In this context, access to a particular CNAPP does not appear to be a primary driver of customers\u2019 choice of cloud service providers."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.33",
+          "text": "Further, based on information before it, the ACCC understands that a portion of Wiz\u2019s sales occur through third-party marketplaces and indirect sales channels, and expects Google would continue to make Wiz\u2019s CNAPP offerings available through third-party channels following the Acquisition. The ACCC considers that this would further constrain the merged entity\u2019s ability, in practice, to implement tying in a way that would materially influence customers\u2019 choice of cloud service provider. Bundling"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.34",
+          "text": "The ACCC considers that the Acquisition is unlikely to substantially lessen competition in the supply of cloud services through the merged entity adopting a strategy which bundles the use of Wiz with Google Cloud services. This is because the merged entity would be unlikely to have the ability and incentive to anti- competitively bundle Wiz\u2019s CNAPP with Google Cloud post-acquisition."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.35",
+          "text": "While the merged entity may be able to technically engage in a bundling strategy involving Wiz and Google Cloud services post-Acquisition, and such a strategy may induce some customers to increase their use of Google Cloud, the ACCC considers that it is unlikely to induce a significant shift in workloads away from rival cloud service providers. Information from market participants and the Parties indicates that while customers regard Wiz as a strong and growing platform, it continues to face significant competitive constraints from alternative CNAPP providers and is unlikely to be sufficiently important in driving decisions about where cloud workloads are hosted."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.36",
+          "text": "In addition, for any bundling to significantly reduce rival cloud service providers\u2019 sales, customers would likely need to substantially concentrate workloads on Google Cloud. However, as set out above, market feedback indicates that a key feature of Wiz is its ability to provide multi-cloud security and that Wiz customers place significant value on flexibility in their choice of cloud services providers and commonly adopt multi-cloud strategies. In this context, the ACCC considers that any increase in Google Cloud usage induced by bundling is more likely to occur alongside continued use of rival cloud service providers, rather than from customers diverting material workloads away from rival cloud platforms. Accordingly, any such bundling strategy is unlikely to materially weaken competitive constraints from rival cloud service providers."
+        },
+        {
+          "type": "heading",
+          "text": "Non-horizontal effects \u2013 reduced competition arising from Google accessing and using competitively significant information about rival cloud service providers obtained through Wiz"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.37",
+          "text": "The ACCC considers that the Acquisition is unlikely to have the effect of substantially lessening competition in the supply of cloud services in Australia as a result of Google\u2019s access to and use of competitively significant information about rival cloud service providers post-acquisition through Wiz\u2019s CNAPP. This is because Google\u2019s access to such information is unlikely to be sufficiently valuable to undermine rival cloud service providers\u2019 ability to compete effectively."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.38",
+          "text": "Based on information provided by the Parties and market participants, the ACCC understands that post-Acquisition, Google would have access to additional information regarding Google\u2019s rival cloud service providers, obtained through Wiz\u2019s CNAPP products, that Google does not currently have access to. This would include customer information accessed via public cloud APIs, which may include some information regarding Wiz\u2019s customers\u2019 use of non-Google cloud environments (such as the volume and types of cloud resources used), as well as configuration information regarding non-Google cloud environments."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.39",
+          "text": "The ACCC\u2019s view, based on the information received by the Parties and market participants, is that while some data that Google receives post-Acquisition may provide insights that could help improve its cloud service offering, the type of data that Google may receive does not appear to be competitively significant such that it would undermine rivals\u2019 ability to compete effectively. This is because, based on the materials before it, the ACCC understands that this information is relatively general in nature, is the type of information made available to any cloud security provider when a customer engages them, and does not include information such as pricing strategies, technical product information or innovation plans."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.40",
+          "text": "The ACCC also understands that, based on information from the Parties and third parties, access to any customer information is currently conditional on Wiz\u2019s customers granting Wiz access. The ACCC considers that, if Wiz\u2019s customers faced increased costs or reduced quality then, to the extent those customers were able to link this reduced service to Google\u2019s access to their data, the customers would likely be in a position to restrict the merged entity\u2019s access to such information, including by switching away from Wiz to a competing cloud security service provider."
+        }
+      ]
     }
   ],
   "is_waiver": false,

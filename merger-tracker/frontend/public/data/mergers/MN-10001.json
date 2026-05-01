@@ -80,7 +80,244 @@
       "url_gh": "/mergers/MN-10001/IBM-Confluent - Phase 1 determination_1.pdf",
       "status": "live",
       "is_determination_event": true,
-      "phase": "Phase 1"
+      "phase": "Phase 1",
+      "determination_statement_of_reasons": [
+        {
+          "type": "paragraph",
+          "number": "2.1",
+          "text": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.2",
+          "text": "For more information about the ACCC\u2019s approach to considering notified acquisitions, see the ACCC\u2019s merger assessment guidelines and interim merger process guidelines."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.3",
+          "text": "For the reasons given below, the ACCC has determined that the Acquisition may be put into effect."
+        },
+        {
+          "type": "heading",
+          "text": "Industry background"
+        },
+        {
+          "type": "heading",
+          "text": "Event stream processing software"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.4",
+          "text": "ESPS is based on \u2018events\u2019, which are records of something happening or an action. ESPS has two primary components:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "Streaming: Where event data is conveyed from one application to another.",
+            "Processing: Where events are read from the streaming function and action is taken based on those events."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.5",
+          "text": "ESPS facilitates the real-time handling of event data as it is generated, instead of storing and processing data in batches. Enterprises constantly generate event data, such as when a customer places an order or a supplier delivers inventory. Systems such as ESPS are designed to instantly ingest, process and send event data to be analysed/actioned. This enables enterprises to efficiently process large amounts of data in real time which provides them with real-time analytics/insights and can support AI platforms to ingest and act on current information. Confluent\u2019s website identifies as typical use cases for its ESPS: consumer/user activity, fraud detection, inventory management, location data, machine learning and AI, monitoring internal IT systems, real-time financial data and ride share matching.1"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.6",
+          "text": "ESPS has benefits over traditional \u2018batch systems\u2019 which collect, store and facilitate the processing of data in batches (e.g. hourly, overnight). This latency makes them unsuitable for applications where real-time data is required. Additionally, batch systems require large cloud or physical storage space to store collected data. This can limit the amount of data that can be collected and stored or results in high storage infrastructure costs. By contrast, the real-time data-in-motion capabilities of ESPS mean that enterprises can collect and process large amounts of data with less storage infrastructure."
+        },
+        {
+          "type": "heading",
+          "text": "Providers of ESPS"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.7",
+          "text": "Customers use ESPS primarily via the following methods:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "Open-source Kafka: enterprises can use open-source tools such as Apache Kafka to develop and self-manage their ESPS.",
+            "Cloud service providers: some cloud service providers offer ESPS solutions via their cloud platforms. This includes those provided by the three largest major cloud service providers, known as \u2018hyperscalers\u2019, Amazon (which offers Amazon Managed Streaming for Apache Kafka (Amazon MSK), and Amazon Kinesis), Google (which offers Google Cloud Managed Service for Apache Kafka) and Microsoft (which offers Microsoft Azure Event Hubs). Many of these ESPS have limited or no multi-cloud functionality, meaning that they do not work outside of the provider\u2019s own cloud environment. IBM offers a cloud-native standalone version of its Event Streams product (a component of its broader IBM Event Automation solution) that only operates on IBM Cloud.",
+            "Managed Kafka: enterprises can contract with platforms to obtain a managed ESPS solution based around Apache Kafka which incorporates value-added services such as customer support, governance, data integration, security and features that simplify customisation and scaling. Managed Kafka providers include Confluent, Aiven, Cloudera, Striim and Lenses. IBM offers two products in this category \u2013 IBM Event Automation (which combines Event Streams, Event Endpoint Management and Event Processing, and is available as a standalone product or as part of certain IBM pre-integrated software packages) and Red Hat Streams for Apache Kafka (available only on Red Hat platforms).",
+            "Kafka alternatives: platforms which are based around software other than Apache Kafka, for example Redpanda, Estuary Flow and Bufstream. 1 Confluent, Event Streaming: How it Works, Benefits, and Use Cases, accessed 25 February 2026."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Overlap and relationship between the parties"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.8",
+          "text": "Based on the material before it, the ACCC considers there is a horizontal and non- horizontal relationship between IBM and Confluent\u2019s offerings."
+        },
+        {
+          "type": "heading",
+          "text": "Horizontal overlap"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.9",
+          "text": "The Parties overlap in the provision of ESPS."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.10",
+          "text": "Confluent\u2019s ESPS enables organisations to publish, subscribe to, store, and process real-time data streams at scale. Confluent offers its ESPS through two platforms:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "Confluent Cloud: A cloud-native, fully managed service. Confluent Cloud runs effectively on any cloud environment and is therefore considered cloud agnostic.",
+            "Confluent Platform: An on-premises data centre computed offering."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.11",
+          "text": "IBM primarily offers ESPS capabilities through two platforms:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "IBM Event Automation: facilitates the analysis and transportation of event data to applications that act on this data while upholding enterprise policies regarding data access, format and residency. IBM Event Automation is supplied as a standalone product or integrated with IBM\u2019s other offerings.",
+            "Red Hat Streams for Apache Kafka: an open-source data and event streaming software, which is part of Red Hat\u2019s AMQ open-source software offering. It is not currently offered as a standalone product."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.12",
+          "text": "IBM also offers the following products with limited ESPS capabilities:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "IBM MQ (inter-application communications software);",
+            "IBM StreamSets (a cloud-native real time data streaming integration product); and",
+            "DataStax Astra Streaming (a fully managed data streaming and event stream processing service built on Apache Pulsar)."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Non-horizontal relationship"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.13",
+          "text": "The Parties also have a non-horizontal relationship given that IBM offers products which interoperate with Confluent\u2019s ESPS, for example:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "Confluent\u2019s ESPS platform may support AI agents and models, such as IBM\u2019s Watsonx, to act on real time data;",
+            "Confluent Cloud requires a cloud environment, such as that supplied by IBM, to function; and",
+            "ESPS customers may acquire middleware products, such as those developed and supplied by IBM, to connect their ESPS with other applications."
+          ]
+        },
+        {
+          "type": "heading",
+          "text": "Competition assessment"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.14",
+          "text": "The ACCC has considered the effects of the Acquisition by comparing the likely future state of competition if the Acquisition proceeds against the continuation of the current state of competition (being the likely future state of competition if the Acquisition does not proceed)."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.15",
+          "text": "The ACCC has considered whether the Acquisition is likely to substantially lessen competition by:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "providing IBM with the ability and incentive to foreclose its rivals in adjacent markets by tying or bundling Confluent\u2019s software with any of IBM\u2019s related products or services; or",
+            "removing a close competitor and affording IBM the ability to profitably raise the price or lower the quality of its ESPS offerings."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.16",
+          "text": "The Parties submitted that the most relevant market for assessing the relationship between the Parties would be a global market for the supply of ESPS. However, the ACCC did not find it necessary to reach concluded views on the relevant dimensions of this market for the purposes of this assessment."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.17",
+          "text": "The ACCC\u2019s assessment regarding each of these points is discussed further below."
+        },
+        {
+          "type": "heading",
+          "text": "Horizontal unilateral effects in the supply of ESPS"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.18",
+          "text": "The ACCC considers that the Acquisition is unlikely to have the effect of substantially lessening competition through the elimination of competition between the merger parties in the supply of ESPS. The ACCC considers that IBM and Confluent are not currently, nor would they likely be in the future, close alternatives for customers for ESPS, including because their ESPS offerings are differentiated by distribution and functionality."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.19",
+          "text": "Confluent offers a standalone ESPS with multi-cloud compatibility. By contrast, IBM\u2019s ESPS products are either not offered on a standalone basis or have more limited multi-cloud functionality than Confluent:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "Red Hat Streams for Apache Kafka is not available as a standalone product and is only available on Red Hat Open Shift and Red Hat Enterprise Linux.",
+            "While IBM Event Automation can be purchased standalone, IBM submitted that it is also typically deployed as part of broader IBM product offerings. The cloud- native standalone version of Event Streams (the streaming component of IBM Event Automation) only operates in IBM Cloud.",
+            "IBM\u2019s broader middleware offerings, IBM MQ, IBM StreamSets and DataStax Astra, are not data streaming platforms, are not built on Apache Kafka, and are unlikely to be alternatives to Confluent."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.20",
+          "text": "Market feedback and information provided by the Parties suggested that while IBM and Confluent both provide event streaming and data platforms, the Parties' platforms have different focuses. Confluent primarily offers cloud native streaming services on a standalone basis with broad connectivity to diverse data sources. IBM's ESPS are designed to be integrated with its wider data portfolio, where event streaming is embedded within its enterprise integration, automation and analytics solutions."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.21",
+          "text": "Documents and data provided by the Parties confirm that the Parties\u2019 platforms have different focuses and that Confluent competes more closely with other ESPS providers such as hyperscalers (Amazon Web Services, Google and Microsoft), non- Kafka based Redpanda, open-source Apache Kafka and other managed Kafka platforms such as Aiven."
+        },
+        {
+          "type": "heading",
+          "text": "Non-horizontal effects \u2013 foreclosure of IBM\u2019s rivals through linking Confluent with IBM\u2019s related products"
+        },
+        {
+          "type": "paragraph",
+          "number": "2.22",
+          "text": "The ACCC does not consider that the Acquisition is likely to have the effect of substantially lessening competition in adjacent markets in which IBM operates by enabling IBM to foreclose its rivals in those markets through tying or bundling the supply of Confluent\u2019s software to IBM\u2019s related products/services (for example, IBM\u2019s artificial intelligence and cloud computing platforms)."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.23",
+          "text": "The ACCC considered the ability and incentive of IBM post-Acquisition to:"
+        },
+        {
+          "type": "bullet_list",
+          "items": [
+            "make the purchase of Confluent\u2019s software conditional on customers also purchasing a related IBM product/service (for example, IBM webMethods Hybrid Integration Platform, IBM MQ, Watsonx, RedHat or Hashicorp) (a tying strategy);",
+            "degrade the interoperability between Confluent and the products/services of IBM\u2019s rivals in adjacent markets, such that they work less effectively together (a technical tying strategy); or",
+            "offer Confluent\u2019s software with IBM\u2019s related products/services at an effectively lower price or on beneficial commercial terms, if purchased together (a bundling strategy). This could involve IBM offering significant, targeted discounts on a bundled product offering, potentially combined with higher \u2018standalone\u2019 prices for Confluent\u2019s software."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "number": "2.24",
+          "text": "The ACCC does not consider that IBM is likely to have the ability and incentive to foreclose its rivals in adjacent product/service markets post-Acquisition in these ways. This is primarily because Confluent does not have a sufficiently strong position in the supply of ESPS. Based on the internal documents of the merger parties and market feedback provided by industry participants, the ACCC considers that Confluent faces competition from alternative ESPS providers including hyperscalers (Amazon Web Services, Google and Microsoft) as well as the non-Kafka based Redpanda. Confluent also faces competition from open-source Apache Kafka and other managed Kafka platforms, such as Aiven. Therefore, Confluent\u2019s customers appear to have a range of alternative suppliers available such that if IBM attempted to link the supply of Confluent to other IBM products it would be likely to result in customers switching away from Confluent."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.25",
+          "text": "The merger parties\u2019 documents and third-party information also suggest that the competitive position of Confluent\u2019s offerings depends in part on their ability to operate with third-party products and services, and that any reduction in this interoperability would be likely to harm Confluent\u2019s attractiveness to customers and reduce demand for its products."
+        },
+        {
+          "type": "paragraph",
+          "number": "2.26",
+          "text": "On this basis, it appears unlikely that IBM would find an anticompetitive bundling or tying strategy profitable post-Acquisition. It was therefore not necessary for the ACCC to consider whether any such linking strategies could have the effect of substantially lessening competition."
+        }
+      ]
     }
   ],
   "is_waiver": false,
