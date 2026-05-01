@@ -246,5 +246,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-75011",
+      "merger_name": "Autosports Group - Solitaire Automotive Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AUTOSPORTS GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "54 614 505 261"
+        }
+      ],
+      "targets": [
+        {
+          "name": "David Smoker",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Russleigh Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "052 977 198"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-20012",
+      "merger_name": "Australian Meat Group Pty Ltd - Killara Feedlot Pty Ltd",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Australian Meat Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "75 168 396 316"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Killara Feedlot Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "18 081 072 746"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-10008",
+      "merger_name": "Premier Fresh \u2013 Charles Domenico Group",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "PREMIER FRESH AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "87 004 843 556"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Carmelo De Domenico",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "C.A. DE DOMENICO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 102 487 963"
+        }
+      ]
+    }
+  ]
 }

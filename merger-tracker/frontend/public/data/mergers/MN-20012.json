@@ -86,5 +86,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-25005",
+      "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AVC OPERATIONS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "81 607 832 299"
+        },
+        {
+          "name": "Australian Venue Co. Holdings Limited",
+          "identifier_type": "ABN",
+          "identifier": "90 619 977 070"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Q.R.A. PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "62 051 433 839"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55016",
+      "merger_name": "Zurich - ClearView",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 008 423 372"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLEARVIEW WEALTH LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "83 106 248 248"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-80004",
+      "merger_name": "Audiotonix - Soundtech Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "A6 Audio Bidco Limited",
+          "identifier_type": null,
+          "identifier": "Company number (England and Wales)  10573578"
+        },
+        {
+          "name": "Sound Bidco (Denmark) ApS",
+          "identifier_type": null,
+          "identifier": "Company number (Denmark)  45697088"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Soundtech Group S.r.l.",
+          "identifier_type": null,
+          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241"
+        }
+      ]
+    }
+  ]
 }

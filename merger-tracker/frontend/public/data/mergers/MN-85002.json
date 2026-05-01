@@ -94,5 +94,72 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-25004",
+      "merger_name": "ServiceNow - Armis",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ServiceNow, Inc.",
+          "identifier_type": null,
+          "identifier": "5111469"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Armis Security, Ltd.",
+          "identifier_type": null,
+          "identifier": "515335941"
+        },
+        {
+          "name": "Armis, Inc.",
+          "identifier_type": null,
+          "identifier": "6021196"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-75010",
+      "merger_name": "Zendesk \u2013 Forethought",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Zendesk, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 264411091"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Forethought Technologies, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-95005",
+      "merger_name": "HCLTech - Jaspersoft",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "HCL Technologies Limited",
+          "identifier_type": "ABN",
+          "identifier": "37 541 578 951"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "94 092 002 321"
+        }
+      ]
+    }
+  ]
 }

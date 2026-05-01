@@ -155,5 +155,72 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-35013",
+      "merger_name": "Estia Health \u2013 Norsan residential aged care business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "ESTIA INVESTMENTS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "87 164 350 387"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NORSAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 076 143 596"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15010",
+      "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 167 960 018"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BMM PARTNERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 649 113 959"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35008",
+      "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "TRANSPORT ACCIDENT COMMISSION",
+          "identifier_type": "ABN",
+          "identifier": "22 033 947 623"
+        },
+        {
+          "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
+          "identifier_type": "ABN",
+          "identifier": "39 682 497 841"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CORVAL PARTNERS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "86 130 628 830"
+        }
+      ]
+    }
+  ]
 }

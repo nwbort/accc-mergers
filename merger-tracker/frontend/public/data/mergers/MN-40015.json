@@ -56,5 +56,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "INSURANCE AUSTRALIA GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "60 090 739 923"
+        }
+      ],
+      "targets": [
+        {
+          "name": "RAC INSURANCE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "59 094 685 882"
+        },
+        {
+          "name": "RACI PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "40 008 671 805"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-55015",
+      "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ALLIANZ AUSTRALIA SERVICES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "66 002 947 257"
+        }
+      ],
+      "targets": [
+        {
+          "name": "VICTORIA CROSS COMMERCIAL PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "56 630 332 222"
+        },
+        {
+          "name": "The Trustee for Lendlease Victoria Cross Trust",
+          "identifier_type": "ABN",
+          "identifier": "26 397 448 085"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55016",
+      "merger_name": "Zurich - ClearView",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 008 423 372"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLEARVIEW WEALTH LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "83 106 248 248"
+        }
+      ]
+    }
+  ]
 }

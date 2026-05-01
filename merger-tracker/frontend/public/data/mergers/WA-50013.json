@@ -92,5 +92,87 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-40002",
+      "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "HOTEL MAROOCHYDORE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 140 651 887"
+        },
+        {
+          "name": "SCHF PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 644 329 733"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for Kingston Family Trust",
+          "identifier_type": "ABN",
+          "identifier": "96 328 946 230"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15009",
+      "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "REDCAPE HOTEL GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 139 067 244"
+        },
+        {
+          "name": "MAHPT TT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "31 619 297 657"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BRUNSWICK HOTEL OPCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 656 116 853"
+        },
+        {
+          "name": "The Trustee for Brunswick Hotel Sub-Trust",
+          "identifier_type": "ABN",
+          "identifier": "51 927 228 244"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-60017",
+      "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "REDCAPE HOTEL GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 139 067 244"
+        },
+        {
+          "name": "MAHF CUSTODIAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 619 512 060"
+        }
+      ],
+      "targets": [
+        {
+          "name": "REDBRAN PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "34 003 920 232"
+        }
+      ]
+    }
+  ]
 }

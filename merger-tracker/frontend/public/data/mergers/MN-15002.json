@@ -380,5 +380,82 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-10013",
+      "merger_name": "Accenture - Ziff Davis' connectivity business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Accenture Inc.",
+          "identifier_type": null,
+          "identifier": "State File Number  3387477"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ekahau OY",
+          "identifier_type": null,
+          "identifier": "Business ID  16108964"
+        },
+        {
+          "name": "Ookla, LLC",
+          "identifier_type": null,
+          "identifier": "Unified Business ID  602 422 103"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-60012",
+      "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
+          "identifier_type": "ABN",
+          "identifier": "72 004 428 326"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CITY OF PORT PHILLIP",
+          "identifier_type": "ABN",
+          "identifier": "21 762 977 945"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15014",
+      "merger_name": "Wipro - Mindsprint",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Wipro Networks Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN  199907933M"
+        },
+        {
+          "name": "Wipro Limited",
+          "identifier_type": null,
+          "identifier": "CIN L32102KA1945PLC020800"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Mindsprint Pte Limited",
+          "identifier_type": null,
+          "identifier": "UEN  202118596N"
+        },
+        {
+          "name": "Olam Holdings Pte Limited",
+          "identifier_type": null,
+          "identifier": "UEN  202110101R"
+        }
+      ]
+    }
+  ]
 }

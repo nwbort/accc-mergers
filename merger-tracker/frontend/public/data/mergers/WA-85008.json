@@ -87,5 +87,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-95006",
+      "merger_name": "Laundy Group \u2013 Nine Radio",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "SPIKE MEDIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 694 712 699"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NINE RADIO PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "32 063 906 927"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-85003",
+      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NACG WA Acquisition Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 678 296"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DCL CORP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 633 008 992"
+        },
+        {
+          "name": "IRON HIRE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 641 807 589"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35004",
+      "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Saphir Holdings SAS",
+          "identifier_type": null,
+          "identifier": "Trade and Companies Registry Number 995 192 986"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ex Nihilo Group",
+          "identifier_type": null,
+          "identifier": "Trade and Companies Registry Number 981 087 646"
+        }
+      ]
+    }
+  ]
 }

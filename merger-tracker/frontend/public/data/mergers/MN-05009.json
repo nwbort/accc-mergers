@@ -86,5 +86,82 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-80001",
+      "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Arena BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 657 484"
+        }
+      ],
+      "targets": [
+        {
+          "name": "RFGI GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "55 630 028 974"
+        },
+        {
+          "name": "GAMEON HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 629 422 206"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15003",
+      "merger_name": "Coforge - Encora",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Coforge Limited",
+          "identifier_type": null,
+          "identifier": "L72100HR1992PLC128382"
+        },
+        {
+          "name": "Encora Holdco Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Encora US Holdco, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Encora Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-75008",
+      "merger_name": "Bettergrow - HYG",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "BETTERGROW HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 649 891 663"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HYG HOLDCO PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "81 622 657 729"
+        }
+      ]
+    }
+  ]
 }

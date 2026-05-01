@@ -152,5 +152,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-40005",
+      "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Aqua Adhesives I GmbH",
+          "identifier_type": null,
+          "identifier": "Swiss registration number: CH170.4.019.1870"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-65003",
+      "merger_name": "Henkel \u2013 ATP adhesive systems group",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Aqua Adhesives I GmbH",
+          "identifier_type": null,
+          "identifier": "Swiss registration number  CH170.4.019.1870"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25010",
+      "merger_name": "INNIO Group \u2013 Enerflex",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "INNIO Jenbacher International B.V.",
+          "identifier_type": null,
+          "identifier": "KVK90210352"
+        },
+        {
+          "name": "INNIO Jenbacher Netherlands B.V.",
+          "identifier_type": null,
+          "identifier": "KVK90209982"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Exterran (Thailand) Ltd",
+          "identifier_type": null,
+          "identifier": "0105542031616"
+        },
+        {
+          "name": "PT Enerflex (Indonesia)",
+          "identifier_type": null,
+          "identifier": "9120407262914"
+        }
+      ]
+    }
+  ]
 }

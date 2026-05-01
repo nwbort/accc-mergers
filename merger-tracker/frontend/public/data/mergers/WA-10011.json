@@ -124,5 +124,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-45005",
+      "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "MA MARINA FUND HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 667 241 385"
+        },
+        {
+          "name": "MA MARINA FUND TT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 666 902 245"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GGC Marketing Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "32 105 294 228"
+        },
+        {
+          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "72 081 370 685"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-80006",
+      "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "RUSSELL INVESTMENT GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "92 003 066 859"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "56 063 278 400"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15004",
+      "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "QIC TT COMPANY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "27 694 380 973"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SCENTRE GROUP TRUST 3",
+          "identifier_type": "ABN",
+          "identifier": "11 517 229 138"
+        },
+        {
+          "name": "SCENTRE ALLIANCES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "53 098 357 521"
+        }
+      ]
+    }
+  ]
 }

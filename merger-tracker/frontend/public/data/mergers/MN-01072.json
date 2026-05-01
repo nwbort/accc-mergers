@@ -60,5 +60,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-45007",
+      "merger_name": "Henkel \u2013 Stahl",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number, 854017447, CCI 60683945"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Stahl Holdings B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number (KVK): 34249320"
+        },
+        {
+          "name": "Stahl Asia Pacific Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "Singapore registration number: 200606884Z"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15008",
+      "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Global Garella, S.L.",
+          "identifier_type": null,
+          "identifier": "Spanish Tax Identification Number  B24904989"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ayesa Engineering, S.A.U.",
+          "identifier_type": null,
+          "identifier": "Spanish Tax Identification Number  A91379875"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-55009",
+      "merger_name": "Resonetics \u2013 Resolution Medical",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Resonetics, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Resolution Medical MidCo, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Arcline Capital Partners II-A LP",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    }
+  ]
 }

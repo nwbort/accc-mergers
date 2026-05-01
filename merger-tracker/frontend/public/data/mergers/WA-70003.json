@@ -106,5 +106,67 @@
     "merger_id": "MN-40008",
     "relationship": "refiled_as",
     "merger_name": "Intrepid Travel - Wild Bush Luxury"
-  }
+  },
+  "similar_mergers": [
+    {
+      "merger_id": "MN-15013",
+      "merger_name": "Journey Beyond \u2013 Kakadu Crocodile Hotel",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "JB KAKADU HOTEL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 692 273 591"
+        }
+      ],
+      "targets": [
+        {
+          "name": "KAKADU TOURISM (GCH) PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "50 087 366 612"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-95002",
+      "merger_name": "Abbott Laboratories - Exact Sciences",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Badger Merger Sub I, Inc",
+          "identifier_type": null,
+          "identifier": "10389384"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Exact Sciences Corporation",
+          "identifier_type": null,
+          "identifier": "020478229"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55016",
+      "merger_name": "Zurich - ClearView",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 008 423 372"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLEARVIEW WEALTH LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "83 106 248 248"
+        }
+      ]
+    }
+  ]
 }

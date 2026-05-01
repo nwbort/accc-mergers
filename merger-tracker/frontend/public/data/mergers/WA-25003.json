@@ -98,5 +98,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-70002",
+      "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Ethos Bidco, Ltd",
+          "identifier_type": null,
+          "identifier": "UK Company Number: 16905190"
+        }
+      ],
+      "targets": [
+        {
+          "name": "EMIS Group Limited",
+          "identifier_type": "ABN",
+          "identifier": "75 075 102 028"
+        },
+        {
+          "name": "UnitedHealth Group Incorporated (UHG)",
+          "identifier_type": null,
+          "identifier": "US EIN  4113221939"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-40016",
+      "merger_name": "Creative Planning \u2013 MASECO",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CP Britannia Bidco Limited",
+          "identifier_type": null,
+          "identifier": "Jersey Financial Services Commission  163400"
+        },
+        {
+          "name": "Creative Planning Holdco, LLC",
+          "identifier_type": null,
+          "identifier": "SEC  801 7725610"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MASECO LLP",
+          "identifier_type": null,
+          "identifier": "United Kingdom  OC337650"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-30005",
+      "merger_name": "Adobe - Semrush",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Adobe Inc. (NASDAQ: ADBE)",
+          "identifier_type": null,
+          "identifier": "2748129"
+        },
+        {
+          "name": "Fenway Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "10389477"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Semrush Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "7690622"
+        }
+      ]
+    }
+  ]
 }

@@ -105,5 +105,67 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-05005",
+      "merger_name": "Ironbark - Investment in Viola Private Wealth",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "IBWM PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 621 141 026"
+        }
+      ],
+      "targets": [
+        {
+          "name": "VIOLA GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 680 038 180"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01093",
+      "merger_name": "Sinopec - CNAF",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "China Petrochemical Corporation",
+          "identifier_type": null,
+          "identifier": "Unified social credit identifier 9111000010169286X1"
+        }
+      ],
+      "targets": [
+        {
+          "name": "China National Aviation Fuel Group Limited",
+          "identifier_type": null,
+          "identifier": "Unified social credit identifier 911100007109303176"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-70008",
+      "merger_name": "Tetra Tech \u2013 Providence Consulting",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "TETRA TECH AUSTRALIA GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 676 488 716"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Providence Consulting Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "49 117 321 552"
+        }
+      ]
+    }
+  ]
 }

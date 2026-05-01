@@ -454,6 +454,42 @@ function MergerDetail() {
             </div>
           </div>
         )}
+
+        {/* Similar Mergers */}
+        {merger.similar_mergers && merger.similar_mergers.length > 0 && (
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mt-6">
+            <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+              Similar Mergers
+            </h2>
+            <div className="divide-y divide-gray-50">
+              {merger.similar_mergers.map((similar) => (
+                <Link
+                  key={similar.merger_id}
+                  to={`/mergers/${similar.merger_id}`}
+                  className="flex items-start gap-3 py-3 first:pt-0 last:pb-0 hover:opacity-75 transition-opacity group"
+                >
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors truncate">
+                      {similar.merger_name}
+                    </p>
+                    <p className="text-xs text-gray-400 mt-0.5 truncate">
+                      {[
+                        ...(similar.acquirers || []).map(a => a.name),
+                        '→',
+                        ...(similar.targets || []).map(t => t.name),
+                      ].join(' ')}
+                    </p>
+                  </div>
+                  {similar.accc_determination ? (
+                    <span className="flex-shrink-0 text-xs text-gray-400 mt-0.5">{similar.accc_determination}</span>
+                  ) : similar.status ? (
+                    <span className="flex-shrink-0 text-xs text-gray-400 mt-0.5">{similar.status}</span>
+                  ) : null}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </>
   );

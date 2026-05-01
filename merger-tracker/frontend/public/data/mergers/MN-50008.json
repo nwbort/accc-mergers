@@ -71,5 +71,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-35005",
+      "merger_name": "Superloop \u2013 Lynham Networks",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "SUPERLOOP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "96 169 263 094"
+        }
+      ],
+      "targets": [
+        {
+          "name": "LYNHAM NETWORKS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "17 602 258 337"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-65004",
+      "merger_name": "Kee Safety - RIS Safety",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Cielo TopCo Limited",
+          "identifier_type": null,
+          "identifier": "CRN  16320933"
+        },
+        {
+          "name": "Kee Safety (Australia) Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "694 369 116"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HALLWELD BENNETT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "15 161 086 595"
+        },
+        {
+          "name": "RIS SAFETY HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "19 668 836 351"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-90011",
+      "merger_name": "Salter Brothers - Buroserv",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "BUROSERV TELCO HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "17 690 175 770"
+        }
+      ],
+      "targets": [
+        {
+          "name": "LMGPS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 612 519 178"
+        }
+      ]
+    }
+  ]
 }

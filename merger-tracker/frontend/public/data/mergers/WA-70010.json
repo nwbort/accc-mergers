@@ -95,5 +95,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-80008",
+      "merger_name": "Princeton Digital Group Australia - land located in Campbelltown, NSW",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Princeton Digital Group (Australia Alpha) Prop Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 155 663"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MH Property No. 1 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "644 453 430"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-60017",
+      "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "REDCAPE HOTEL GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 139 067 244"
+        },
+        {
+          "name": "MAHF CUSTODIAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 619 512 060"
+        }
+      ],
+      "targets": [
+        {
+          "name": "REDBRAN PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "34 003 920 232"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55012",
+      "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Argo Bowen 2 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 023 619"
+        }
+      ],
+      "targets": [
+        {
+          "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 149 524 809"
+        },
+        {
+          "name": "COKING COAL ONE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 615 317 907"
+        }
+      ]
+    }
+  ]
 }

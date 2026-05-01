@@ -98,5 +98,82 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-10006",
+      "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AVC Operations Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "81 607 832 299"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "70 075 074 930"
+        },
+        {
+          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
+          "identifier_type": "ACN",
+          "identifier": "604 221 801"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25005",
+      "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AVC OPERATIONS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "81 607 832 299"
+        },
+        {
+          "name": "Australian Venue Co. Holdings Limited",
+          "identifier_type": "ABN",
+          "identifier": "90 619 977 070"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Q.R.A. PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "62 051 433 839"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-75017",
+      "merger_name": "Vets Central - Drovers Vet Hospital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
+          "identifier_type": "ABN",
+          "identifier": "96 315 737 133"
+        },
+        {
+          "name": "DROVERS VET HOSPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "67 159 300 768"
+        }
+      ]
+    }
+  ]
 }

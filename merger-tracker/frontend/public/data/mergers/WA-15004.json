@@ -112,5 +112,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-45010",
+      "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "LGPE SEC S.C. Sp",
+          "identifier_type": null,
+          "identifier": "Luxembourg Company Registration Number: B281514"
+        },
+        {
+          "name": "Crown Growth Opportunities IV SCSp-RAIF",
+          "identifier_type": null,
+          "identifier": "Luxembourg Company Registration Number: B254394"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ADVANCED NAVIGATION PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "49 156 101 549"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85018",
+      "merger_name": "Discovery Holiday Parks \u2013 Habitat Noosa Everglades Eco Camp",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "50 111 782 846"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Eco Camp Pty Ltd as trustee for the MCB Trust",
+          "identifier_type": "ACN",
+          "identifier": "615 432 016"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-10013",
+      "merger_name": "Accenture - Ziff Davis' connectivity business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Accenture Inc.",
+          "identifier_type": null,
+          "identifier": "State File Number  3387477"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ekahau OY",
+          "identifier_type": null,
+          "identifier": "Business ID  16108964"
+        },
+        {
+          "name": "Ookla, LLC",
+          "identifier_type": null,
+          "identifier": "Unified Business ID  602 422 103"
+        }
+      ]
+    }
+  ]
 }

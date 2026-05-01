@@ -109,5 +109,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-01016",
+      "merger_name": "Asahi \u2013 Warehouse site on Tilburn Rd, Deer Park (Vic)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ASAHI HOLDINGS (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 135 315 767"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GPT PLATFORM PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "51 164 839 061"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-80004",
+      "merger_name": "Audiotonix - Soundtech Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "A6 Audio Bidco Limited",
+          "identifier_type": null,
+          "identifier": "Company number (England and Wales)  10573578"
+        },
+        {
+          "name": "Sound Bidco (Denmark) ApS",
+          "identifier_type": null,
+          "identifier": "Company number (Denmark)  45697088"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Soundtech Group S.r.l.",
+          "identifier_type": null,
+          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-60017",
+      "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "REDCAPE HOTEL GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 139 067 244"
+        },
+        {
+          "name": "MAHF CUSTODIAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 619 512 060"
+        }
+      ],
+      "targets": [
+        {
+          "name": "REDBRAN PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "34 003 920 232"
+        }
+      ]
+    }
+  ]
 }

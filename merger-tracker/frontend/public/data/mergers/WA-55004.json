@@ -100,5 +100,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-50010",
+      "merger_name": "Blackbird Ventures \u2013 Halter",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Blackbird FSA Pty Ltd as trustee for Blackbird FSA Co-investment Trust",
+          "identifier_type": "ABN",
+          "identifier": "99 526 258 209"
+        },
+        {
+          "name": "Blackbird FOF25 Pty Ltd as trustee for Blackbird Ventures 2025 Follow-On Fund Trust",
+          "identifier_type": "ABN",
+          "identifier": "49 711 375 395"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Halter USA Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 364872517"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-10013",
+      "merger_name": "Accenture - Ziff Davis' connectivity business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Accenture Inc.",
+          "identifier_type": null,
+          "identifier": "State File Number  3387477"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ekahau OY",
+          "identifier_type": null,
+          "identifier": "Business ID  16108964"
+        },
+        {
+          "name": "Ookla, LLC",
+          "identifier_type": null,
+          "identifier": "Unified Business ID  602 422 103"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-01081",
+      "merger_name": "Accenture \u2013 Faculty Science",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Accenture International B.V.",
+          "identifier_type": null,
+          "identifier": "Business registration no: KVK70797285"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Faculty Science Limited",
+          "identifier_type": null,
+          "identifier": "Company registration no: CRN08873131"
+        }
+      ]
+    }
+  ]
 }

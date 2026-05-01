@@ -113,5 +113,72 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-35011",
+      "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "50 142 485 470"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NORANDA PACIFIC PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 006 864 802"
+        },
+        {
+          "name": "Noranda Pacific No. 2 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "158 936 264"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85014",
+      "merger_name": "Genesis Minerals \u2013 Magnetic Resources",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "GENESIS MINERALS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "72 124 772 041"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Magnetic Resources NL",
+          "identifier_type": "ABN",
+          "identifier": "34 121 370 232"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-95014",
+      "merger_name": "Publicis \u2013 160over90",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "PUBLICIS MEDIA AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "40 001 786 858"
+        }
+      ],
+      "targets": [
+        {
+          "name": "INTERNATIONAL MANAGEMENT GROUP OF AMERICA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "23 001 788 343"
+        }
+      ]
+    }
+  ]
 }

@@ -164,5 +164,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-55003",
+      "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "SYMAL GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "72 615 255 466"
+        }
+      ],
+      "targets": [
+        {
+          "name": "J. DAVISON NOMINEES PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "70 007 998 969"
+        },
+        {
+          "name": "DAVISON CONTRACTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "68 675 773 896"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-75017",
+      "merger_name": "Vets Central - Drovers Vet Hospital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
+          "identifier_type": "ABN",
+          "identifier": "96 315 737 133"
+        },
+        {
+          "name": "DROVERS VET HOSPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "67 159 300 768"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85016",
+      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CARRUTHERS, JONATHAN JULIAN",
+          "identifier_type": "ABN",
+          "identifier": "22 148 400 175"
+        }
+      ]
+    }
+  ]
 }

@@ -94,5 +94,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-15012",
+      "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OCHRE HEALTH PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "79 101 069 452"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TELEGRAPH ROAD MEDICAL SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 107 416 080"
+        },
+        {
+          "name": "The Trustee for TELEGRAPH ROAD MEDICAL SERVICES UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "94 428 158 606"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-70004",
+      "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "GENERAL DENTAL HOLDINGS PTY LTD trading as Impression Dental Group",
+          "identifier_type": "ABN",
+          "identifier": "55 646 760 367"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Happy Rock Dental Practice",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "WEI-JIE JIANG PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 116 562 693"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85022",
+      "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "PH MEDICAL CENTRES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "84 615 268 043"
+        }
+      ],
+      "targets": [
+        {
+          "name": "RIVERSTONE GP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "34 651 255 319"
+        }
+      ]
+    }
+  ]
 }

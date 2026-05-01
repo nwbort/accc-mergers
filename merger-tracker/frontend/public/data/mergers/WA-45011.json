@@ -103,5 +103,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-10009",
+      "merger_name": "SoftBank \u2013 DigitalBridge",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Duncan Holdco III LLC",
+          "identifier_type": null,
+          "identifier": "State of Delaware Company File Number  10510961"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DigitalBridge Group, Inc.",
+          "identifier_type": null,
+          "identifier": "IRS  464591526"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-05009",
+      "merger_name": "Genea - Embrace Fertility",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Genea Bidco SA Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 694 458"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Histon Nelson Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "144 914 965"
+        },
+        {
+          "name": "EMBRACE FERTILITY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "84 135 918 580"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-80002",
+      "merger_name": "Bain Capital \u2013 MCJ",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "BCPE Meta Cayman, L.P.",
+          "identifier_type": null,
+          "identifier": "MC135352"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MCJ Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "9030001052005"
+        }
+      ]
+    }
+  ]
 }

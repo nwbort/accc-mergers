@@ -94,5 +94,82 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-45007",
+      "merger_name": "Henkel \u2013 Stahl",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number, 854017447, CCI 60683945"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Stahl Holdings B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number (KVK): 34249320"
+        },
+        {
+          "name": "Stahl Asia Pacific Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "Singapore registration number: 200606884Z"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-70005",
+      "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Freudenberg Home and Cleaning Solutions GmbH",
+          "identifier_type": null,
+          "identifier": "HRB 431930"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Nilfisk Holding A/S",
+          "identifier_type": null,
+          "identifier": "CVR 38998870"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-50013",
+      "merger_name": "Star Hotels - Fiveways Hotel Toowoomba",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "SGL HOTELS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 627 068 526"
+        },
+        {
+          "name": "SCHF PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 644 329 733"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MPG FIVEWAYS PROP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 688 881 101"
+        },
+        {
+          "name": "MPG FIVEWAYS OP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 688 880 828"
+        }
+      ]
+    }
+  ]
 }

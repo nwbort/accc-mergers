@@ -94,5 +94,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-85008",
+      "merger_name": "Sony \u2013 Peanuts Worldwide",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Sony Music Entertainment (Japan) Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Sony Pictures Entertainment, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "DHX Entertainment (USA) Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-50008",
+      "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "WIN TELEVISION NETWORK PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 008 589 026"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 124 816 093"
+        },
+        {
+          "name": "TELEVISION HOLDINGS DARWIN PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "33 009 634 048"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-55009",
+      "merger_name": "Resonetics \u2013 Resolution Medical",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Resonetics, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Resolution Medical MidCo, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Arcline Capital Partners II-A LP",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    }
+  ]
 }

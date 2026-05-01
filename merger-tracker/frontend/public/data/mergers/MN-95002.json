@@ -98,5 +98,67 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-40009",
+      "merger_name": "Gilead - Arcellx",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Gilead Sciences, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 943047598"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Arcellx, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 472855917"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-60014",
+      "merger_name": "Gilead - Ouro",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Gilead Sciences, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 943047598"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ouro Medicines, LLC",
+          "identifier_type": null,
+          "identifier": "202462212198"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-01081",
+      "merger_name": "Accenture \u2013 Faculty Science",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Accenture International B.V.",
+          "identifier_type": null,
+          "identifier": "Business registration no: KVK70797285"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Faculty Science Limited",
+          "identifier_type": null,
+          "identifier": "Company registration no: CRN08873131"
+        }
+      ]
+    }
+  ]
 }

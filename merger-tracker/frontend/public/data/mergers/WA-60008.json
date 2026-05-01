@@ -101,5 +101,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-40010",
+      "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "GT Silver BidCo, Inc.",
+          "identifier_type": null,
+          "identifier": "413417606"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Clearwater Analytics Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "00140838"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-80001",
+      "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Arena BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 657 484"
+        }
+      ],
+      "targets": [
+        {
+          "name": "RFGI GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "55 630 028 974"
+        },
+        {
+          "name": "GAMEON HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 629 422 206"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25008",
+      "merger_name": "Five V Capital - FTP Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OVERWATCH BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 739 970"
+        }
+      ],
+      "targets": [
+        {
+          "name": "FTP GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 626 217 614"
+        },
+        {
+          "name": "FAARM BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 834 390"
+        }
+      ]
+    }
+  ]
 }

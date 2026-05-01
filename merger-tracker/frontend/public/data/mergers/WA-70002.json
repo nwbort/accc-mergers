@@ -98,5 +98,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-25003",
+      "merger_name": "Delinea (TPG) - StrongDM",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Delinea Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware corporation file number  3777797"
+        }
+      ],
+      "targets": [
+        {
+          "name": "StrongDM, Inc",
+          "identifier_type": null,
+          "identifier": "CIK  0001637806"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-40016",
+      "merger_name": "Creative Planning \u2013 MASECO",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CP Britannia Bidco Limited",
+          "identifier_type": null,
+          "identifier": "Jersey Financial Services Commission  163400"
+        },
+        {
+          "name": "Creative Planning Holdco, LLC",
+          "identifier_type": null,
+          "identifier": "SEC  801 7725610"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MASECO LLP",
+          "identifier_type": null,
+          "identifier": "United Kingdom  OC337650"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-25004",
+      "merger_name": "ServiceNow - Armis",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ServiceNow, Inc.",
+          "identifier_type": null,
+          "identifier": "5111469"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Armis Security, Ltd.",
+          "identifier_type": null,
+          "identifier": "515335941"
+        },
+        {
+          "name": "Armis, Inc.",
+          "identifier_type": null,
+          "identifier": "6021196"
+        }
+      ]
+    }
+  ]
 }

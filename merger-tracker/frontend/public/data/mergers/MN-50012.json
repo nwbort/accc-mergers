@@ -108,5 +108,82 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-60012",
+      "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
+          "identifier_type": "ABN",
+          "identifier": "72 004 428 326"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CITY OF PORT PHILLIP",
+          "identifier_type": "ABN",
+          "identifier": "21 762 977 945"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-25002",
+      "merger_name": "Symal Group - Timms Group and L&D Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "SYMAL MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 602 084 471"
+        },
+        {
+          "name": "SYL TM CONTRACTING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "68 693 144 697"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TIMMS HIRE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "73 115 389 949"
+        },
+        {
+          "name": "TIMMS CONTRACTING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "30 070 456 567"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55010",
+      "merger_name": "Calvary - Holmesglen Private Hospital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 079 815 697"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 146 342 814"
+        },
+        {
+          "name": "ANZ HOSPITALS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 631 014 938"
+        }
+      ]
+    }
+  ]
 }

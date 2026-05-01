@@ -82,5 +82,87 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-05005",
+      "merger_name": "Ironbark - Investment in Viola Private Wealth",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "IBWM PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 621 141 026"
+        }
+      ],
+      "targets": [
+        {
+          "name": "VIOLA GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 680 038 180"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-55014",
+      "merger_name": "KPS Capital Partners - Jennmar",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "KPS Capital Partners, LP",
+          "identifier_type": null,
+          "identifier": "CRD 157678 / SEC: 80173907"
+        },
+        {
+          "name": "Three Rivers Purchaser, LLC",
+          "identifier_type": null,
+          "identifier": "10533455"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Jennmar Intermediate Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "990520173"
+        },
+        {
+          "name": "Jennmar Super Holdings, LLC",
+          "identifier_type": null,
+          "identifier": "412378602"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-55005",
+      "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "General Atlantic",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Canada Pension Plan Investment Board",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Boats Group Holdings, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Bimini Holdings, LP",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    }
+  ]
 }

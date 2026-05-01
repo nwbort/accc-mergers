@@ -93,5 +93,92 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-25014",
+      "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Essential Bidco B.V.",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Specialty (U.S.) Bidco, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "SpecialtyCo US LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Biomin Phytogenics GmbH (Germany)",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-80007",
+      "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Admiral AU Bidco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 801 195"
+        },
+        {
+          "name": "Admiral AU Holdco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 791 710"
+        }
+      ],
+      "targets": [
+        {
+          "name": "EPTEC MARINE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "49 118 319 547"
+        },
+        {
+          "name": "EPTEC BIDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "12 638 785 378"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-55009",
+      "merger_name": "Resonetics \u2013 Resolution Medical",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Resonetics, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Resolution Medical MidCo, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Arcline Capital Partners II-A LP",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    }
+  ]
 }

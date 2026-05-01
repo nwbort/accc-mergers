@@ -78,5 +78,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-80009",
+      "merger_name": "Mizuho \u2013 Avendus",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Mizuho Securities Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "No. 94"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Redpoint Investments Pte Ltd",
+          "identifier_type": null,
+          "identifier": "201536795E"
+        },
+        {
+          "name": "Avendus Capital Private Limited",
+          "identifier_type": null,
+          "identifier": "CIN U99999MH1999PTC123358"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01058",
+      "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Caterpillar Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "RPMGLOBAL HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "17 010 672 321"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-25006",
+      "merger_name": "KPS \u2013 Novacel",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Desmos US Bidco, Inc.",
+          "identifier_type": null,
+          "identifier": "[ID type unknown]  10469174"
+        },
+        {
+          "name": "Desmos Bidco SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  100 230 754"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Novacel Performance Coatings, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  311708662"
+        },
+        {
+          "name": "Novacel, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  043515032"
+        }
+      ]
+    }
+  ]
 }

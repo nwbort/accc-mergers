@@ -88,5 +88,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-05004",
+      "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "MidOcean Australia Holdings 2 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "691 597 707"
+        }
+      ],
+      "targets": [
+        {
+          "name": "JERA EXPLORATION ICHTHYS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 158 193 250"
+        },
+        {
+          "name": "JERA GORGON PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "94 140 107 464"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-65009",
+      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CVC Capital Partners plc",
+          "identifier_type": null,
+          "identifier": "140080"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-55005",
+      "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "General Atlantic",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Canada Pension Plan Investment Board",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Boats Group Holdings, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Bimini Holdings, LP",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    }
+  ]
 }

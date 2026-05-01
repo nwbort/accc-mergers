@@ -107,5 +107,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-55004",
+      "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Blackbird FOF25 Pty Ltd as trustee for Blackbird Ventures 2025 Follow-On Fund Trust",
+          "identifier_type": "ABN",
+          "identifier": "49 711 375 395"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Baseten Labs, Inc",
+          "identifier_type": null,
+          "identifier": "EIN 371950658"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-25006",
+      "merger_name": "KPS \u2013 Novacel",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Desmos US Bidco, Inc.",
+          "identifier_type": null,
+          "identifier": "[ID type unknown]  10469174"
+        },
+        {
+          "name": "Desmos Bidco SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  100 230 754"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Novacel Performance Coatings, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  311708662"
+        },
+        {
+          "name": "Novacel, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN  043515032"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-60010",
+      "merger_name": "Michelin - Flexitallic",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Compagnie Financi\u00e8re Michelin SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  898 849 153"
+        },
+        {
+          "name": "Fenner America, Inc.",
+          "identifier_type": null,
+          "identifier": "USDOT  3744583"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Flexitallic Group SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  532 742 699"
+        }
+      ]
+    }
+  ]
 }

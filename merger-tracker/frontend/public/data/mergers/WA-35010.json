@@ -97,5 +97,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-50014",
+      "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Searchlight Capital IV LP",
+          "identifier_type": null,
+          "identifier": "US SEC  0001954453"
+        },
+        {
+          "name": "KONA Merger Sub Co.",
+          "identifier_type": null,
+          "identifier": "Delaware  10525073"
+        }
+      ],
+      "targets": [
+        {
+          "name": "KORE Group Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware  5388903"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-40010",
+      "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "GT Silver BidCo, Inc.",
+          "identifier_type": null,
+          "identifier": "413417606"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Clearwater Analytics Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "00140838"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25003",
+      "merger_name": "Delinea (TPG) - StrongDM",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Delinea Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware corporation file number  3777797"
+        }
+      ],
+      "targets": [
+        {
+          "name": "StrongDM, Inc",
+          "identifier_type": null,
+          "identifier": "CIK  0001637806"
+        }
+      ]
+    }
+  ]
 }

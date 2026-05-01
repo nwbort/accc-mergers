@@ -98,5 +98,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-35010",
+      "merger_name": "Blackstone - Advanced Cooling Technologies",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Rocket Purchaser, L.L.C.",
+          "identifier_type": null,
+          "identifier": "10521263"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Advanced Cooling Technologies, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-05005",
+      "merger_name": "Ironbark - Investment in Viola Private Wealth",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "IBWM PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 621 141 026"
+        }
+      ],
+      "targets": [
+        {
+          "name": "VIOLA GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 680 038 180"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-30005",
+      "merger_name": "Adobe - Semrush",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Adobe Inc. (NASDAQ: ADBE)",
+          "identifier_type": null,
+          "identifier": "2748129"
+        },
+        {
+          "name": "Fenway Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "10389477"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Semrush Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "7690622"
+        }
+      ]
+    }
+  ]
 }

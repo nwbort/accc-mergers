@@ -103,5 +103,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-65012",
+      "merger_name": "Savvy Games Group \u2013 Moonton",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "East Gate Games Investment Company",
+          "identifier_type": "ABN",
+          "identifier": "39 275 633 205"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Moonton Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-55009",
+      "merger_name": "Resonetics \u2013 Resolution Medical",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Resonetics, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Resolution Medical MidCo, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Arcline Capital Partners II-A LP",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-20011",
+      "merger_name": "Origin \u2013 Equity stake in Kraken",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "53 143 484 208"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CPP Investment Board Private Holdings (4) Inc.",
+          "identifier_type": null,
+          "identifier": "BN  11089340"
+        }
+      ]
+    }
+  ]
 }

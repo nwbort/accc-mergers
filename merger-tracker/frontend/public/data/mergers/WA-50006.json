@@ -124,5 +124,87 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-80001",
+      "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Arena BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 657 484"
+        }
+      ],
+      "targets": [
+        {
+          "name": "RFGI GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "55 630 028 974"
+        },
+        {
+          "name": "GAMEON HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 629 422 206"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-05009",
+      "merger_name": "Genea - Embrace Fertility",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Genea Bidco SA Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 694 458"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Histon Nelson Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "144 914 965"
+        },
+        {
+          "name": "EMBRACE FERTILITY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "84 135 918 580"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-80007",
+      "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Admiral AU Bidco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 801 195"
+        },
+        {
+          "name": "Admiral AU Holdco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 791 710"
+        }
+      ],
+      "targets": [
+        {
+          "name": "EPTEC MARINE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "49 118 319 547"
+        },
+        {
+          "name": "EPTEC BIDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "12 638 785 378"
+        }
+      ]
+    }
+  ]
 }

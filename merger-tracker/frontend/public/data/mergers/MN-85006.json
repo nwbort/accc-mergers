@@ -151,5 +151,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-25008",
+      "merger_name": "Five V Capital - FTP Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OVERWATCH BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 739 970"
+        }
+      ],
+      "targets": [
+        {
+          "name": "FTP GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 626 217 614"
+        },
+        {
+          "name": "FAARM BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 834 390"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-95005",
+      "merger_name": "HCLTech - Jaspersoft",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "HCL Technologies Limited",
+          "identifier_type": "ABN",
+          "identifier": "37 541 578 951"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "94 092 002 321"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-05008",
+      "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Rosa Investments Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "UEN 202340014H (Accounting and Corporate Regulatory Authority of Singapore)"
+        },
+        {
+          "name": "GG12 S.p.A.",
+          "identifier_type": null,
+          "identifier": "14436160965 (Italy)"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Permira VII Investment Platform Limited",
+          "identifier_type": null,
+          "identifier": "12263614 (UK Tax number)"
+        },
+        {
+          "name": "Golden Goose Group S.p.A.",
+          "identifier_type": null,
+          "identifier": "11212510967 (Partita IVA \u2013 Italy)"
+        }
+      ]
+    }
+  ]
 }

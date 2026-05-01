@@ -72,5 +72,82 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-70011",
+      "merger_name": "Egis Projects Asia Pacific - Fulton Hogan Egis O&M",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "EGIS PROJECTS ASIA PACIFIC PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "82 071 536 957"
+        }
+      ],
+      "targets": [
+        {
+          "name": "FULTON HOGAN INDUSTRIES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "54 000 538 689"
+        },
+        {
+          "name": "FULTON HOGAN EGIS O&M PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "37 609 764 730"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25008",
+      "merger_name": "Five V Capital - FTP Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OVERWATCH BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 739 970"
+        }
+      ],
+      "targets": [
+        {
+          "name": "FTP GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 626 217 614"
+        },
+        {
+          "name": "FAARM BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 834 390"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-85003",
+      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NACG WA Acquisition Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 678 296"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DCL CORP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 633 008 992"
+        },
+        {
+          "name": "IRON HIRE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 641 807 589"
+        }
+      ]
+    }
+  ]
 }

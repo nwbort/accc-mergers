@@ -135,5 +135,82 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-55010",
+      "merger_name": "Calvary - Holmesglen Private Hospital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 079 815 697"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 146 342 814"
+        },
+        {
+          "name": "ANZ HOSPITALS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 631 014 938"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85020",
+      "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Catalyst Blocker Merger Sub I, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Catalyst Blocker Merger Sub II, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "CSHC Buyerco, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-10006",
+      "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AVC Operations Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "81 607 832 299"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "70 075 074 930"
+        },
+        {
+          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
+          "identifier_type": "ACN",
+          "identifier": "604 221 801"
+        }
+      ]
+    }
+  ]
 }

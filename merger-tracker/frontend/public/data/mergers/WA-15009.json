@@ -101,5 +101,87 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-60017",
+      "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "REDCAPE HOTEL GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 139 067 244"
+        },
+        {
+          "name": "MAHF CUSTODIAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 619 512 060"
+        }
+      ],
+      "targets": [
+        {
+          "name": "REDBRAN PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "34 003 920 232"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-10006",
+      "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AVC Operations Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "81 607 832 299"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "70 075 074 930"
+        },
+        {
+          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
+          "identifier_type": "ACN",
+          "identifier": "604 221 801"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-50013",
+      "merger_name": "Star Hotels - Fiveways Hotel Toowoomba",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "SGL HOTELS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 627 068 526"
+        },
+        {
+          "name": "SCHF PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 644 329 733"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MPG FIVEWAYS PROP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 688 881 101"
+        },
+        {
+          "name": "MPG FIVEWAYS OP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 688 880 828"
+        }
+      ]
+    }
+  ]
 }

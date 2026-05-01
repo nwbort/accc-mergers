@@ -168,5 +168,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-40014",
+      "merger_name": "Infosys \u2013 Optimum Healthcare IT",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Infosys Nova Holdings LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Optimum Achieve Holdings, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "OPTIMUM HEALTHCARE IT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 689 795 702"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-95005",
+      "merger_name": "HCLTech - Jaspersoft",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "HCL Technologies Limited",
+          "identifier_type": "ABN",
+          "identifier": "37 541 578 951"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "94 092 002 321"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-80001",
+      "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Arena BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 657 484"
+        }
+      ],
+      "targets": [
+        {
+          "name": "RFGI GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "55 630 028 974"
+        },
+        {
+          "name": "GAMEON HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 629 422 206"
+        }
+      ]
+    }
+  ]
 }

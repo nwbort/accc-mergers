@@ -128,5 +128,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-40004",
+      "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005"
+        },
+        {
+          "name": "VETS CENTRAL HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 652 812 256"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Gawler Animal Hospital Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "87 160 265 109"
+        },
+        {
+          "name": "GAH 2.0 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "76 666 800 666"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-75017",
+      "merger_name": "Vets Central - Drovers Vet Hospital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
+          "identifier_type": "ABN",
+          "identifier": "96 315 737 133"
+        },
+        {
+          "name": "DROVERS VET HOSPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "67 159 300 768"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-95008",
+      "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The trustee for the Burke Family Trust",
+          "identifier_type": "ABN",
+          "identifier": "35 834 715 269"
+        }
+      ]
+    }
+  ]
 }

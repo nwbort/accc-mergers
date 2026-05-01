@@ -70,5 +70,87 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-25002",
+      "merger_name": "Symal Group - Timms Group and L&D Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "SYMAL MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 602 084 471"
+        },
+        {
+          "name": "SYL TM CONTRACTING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "68 693 144 697"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TIMMS HIRE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "73 115 389 949"
+        },
+        {
+          "name": "TIMMS CONTRACTING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "30 070 456 567"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-25004",
+      "merger_name": "ServiceNow - Armis",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ServiceNow, Inc.",
+          "identifier_type": null,
+          "identifier": "5111469"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Armis Security, Ltd.",
+          "identifier_type": null,
+          "identifier": "515335941"
+        },
+        {
+          "name": "Armis, Inc.",
+          "identifier_type": null,
+          "identifier": "6021196"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-30002",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "57 615 674 185"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HURRIKAYNE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 118 744 915"
+        },
+        {
+          "name": "WOLLONGONG CITY MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 002 019 598"
+        }
+      ]
+    }
+  ]
 }

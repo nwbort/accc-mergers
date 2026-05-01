@@ -109,5 +109,67 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "TRESCAL (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "39 117 603 835"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TR PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 005 499 721"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01019",
+      "merger_name": "Ampol \u2013 EG Australia",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "AMPOL RETAIL HOLDING PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "689 777 704"
+        }
+      ],
+      "targets": [
+        {
+          "name": "EG AsiaPac Ltd",
+          "identifier_type": null,
+          "identifier": "11658440"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85005",
+      "merger_name": "Altor Fund Manager - Evac Holding Oy",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CAVE BidCo Oy",
+          "identifier_type": null,
+          "identifier": "Business Identity Code 35317614"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Evac Holding Oy",
+          "identifier_type": null,
+          "identifier": "Business Identity Code 28586576"
+        }
+      ]
+    }
+  ]
 }

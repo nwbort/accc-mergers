@@ -113,5 +113,87 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-75003",
+      "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "36 003 184 889"
+        },
+        {
+          "name": "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "44 078 881 473"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HEALTHSCOPE OPERATIONS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 006 405 152"
+        },
+        {
+          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 146 342 814"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85020",
+      "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Catalyst Blocker Merger Sub I, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Catalyst Blocker Merger Sub II, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "CSHC Buyerco, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-10006",
+      "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AVC Operations Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "81 607 832 299"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "70 075 074 930"
+        },
+        {
+          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
+          "identifier_type": "ACN",
+          "identifier": "604 221 801"
+        }
+      ]
+    }
+  ]
 }

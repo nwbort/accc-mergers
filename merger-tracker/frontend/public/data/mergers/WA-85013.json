@@ -104,5 +104,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-50007",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for the Comfy Dental Trust",
+          "identifier_type": "ABN",
+          "identifier": "59 865 563 072"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-75002",
+      "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OHCA Property Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "70 675 807 477"
+        },
+        {
+          "name": "DPG Services Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "38 090 007 999"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-75012",
+      "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 675 807 477"
+        },
+        {
+          "name": "DPG SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "38 090 007 999"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GREENWICH PLACE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 000 706 249"
+        },
+        {
+          "name": "GREENWICH CARE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "96 613 786 682"
+        }
+      ]
+    }
+  ]
 }

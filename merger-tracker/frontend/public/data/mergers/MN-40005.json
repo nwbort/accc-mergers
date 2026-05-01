@@ -195,5 +195,77 @@
     "merger_id": "WA-65003",
     "relationship": "refiled_from",
     "merger_name": "Henkel \u2013 ATP adhesive systems group"
-  }
+  },
+  "similar_mergers": [
+    {
+      "merger_id": "WA-45007",
+      "merger_name": "Henkel \u2013 Stahl",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number, 854017447, CCI 60683945"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Stahl Holdings B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number (KVK): 34249320"
+        },
+        {
+          "name": "Stahl Asia Pacific Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "Singapore registration number: 200606884Z"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15007",
+      "merger_name": "Apollo Funds led consortium \u2013 Lecta Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Reed BidCo Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55010",
+      "merger_name": "Calvary - Holmesglen Private Hospital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 079 815 697"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 146 342 814"
+        },
+        {
+          "name": "ANZ HOSPITALS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 631 014 938"
+        }
+      ]
+    }
+  ]
 }

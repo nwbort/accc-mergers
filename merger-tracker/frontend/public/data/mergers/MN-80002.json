@@ -108,5 +108,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-20009",
+      "merger_name": "Rocket Software \u2013 Vertica",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Rocket Software AMC UK Ltd",
+          "identifier_type": null,
+          "identifier": "UK Company number 01504593"
+        },
+        {
+          "name": "Rocket Software, Inc.",
+          "identifier_type": null,
+          "identifier": "Companies\u2019 Register of Delaware  3506913"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Micro Focus IP Development Limited",
+          "identifier_type": null,
+          "identifier": "UK Company number 07233975"
+        },
+        {
+          "name": "Open Text Corporation",
+          "identifier_type": null,
+          "identifier": "10836044"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25013",
+      "merger_name": "Cinven \u2013 Regenity",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Rosewood AG, LP",
+          "identifier_type": null,
+          "identifier": "LP5500"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Collagen Holdings, LLC",
+          "identifier_type": null,
+          "identifier": "DE File Number  7473707"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-55017",
+      "merger_name": "Coles - Leasehold interest in shopping centre on Capricorn Highway, Emerald, QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "BOULDER CAPITAL INVESTMENTS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 632 507 996"
+        }
+      ]
+    }
+  ]
 }

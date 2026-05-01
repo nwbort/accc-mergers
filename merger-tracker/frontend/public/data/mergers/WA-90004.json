@@ -78,5 +78,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-35011",
+      "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "50 142 485 470"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NORANDA PACIFIC PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 006 864 802"
+        },
+        {
+          "name": "Noranda Pacific No. 2 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "158 936 264"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15008",
+      "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Global Garella, S.L.",
+          "identifier_type": null,
+          "identifier": "Spanish Tax Identification Number  B24904989"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ayesa Engineering, S.A.U.",
+          "identifier_type": null,
+          "identifier": "Spanish Tax Identification Number  A91379875"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15003",
+      "merger_name": "Coforge - Encora",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Coforge Limited",
+          "identifier_type": null,
+          "identifier": "L72100HR1992PLC128382"
+        },
+        {
+          "name": "Encora Holdco Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Encora US Holdco, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Encora Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    }
+  ]
 }

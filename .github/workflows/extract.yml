@@ -27,6 +27,9 @@ jobs:
       - name: Run extraction script
         run: python scripts/extract_mergers.py
 
+      - name: Generate similar mergers (incremental)
+        run: python scripts/generate_similar_mergers.py
+
       - name: Generate static data files
         run: python scripts/generate_static_data.py
 
@@ -41,6 +44,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/processed/mergers.json data/processed/questionnaire_data.json \
+            data/processed/similar_mergers.json \
             data/raw/matters/ merger-tracker/frontend/public/data/ \
             merger-tracker/frontend/public/feed.xml data/output/
           timestamp=$(date -u)

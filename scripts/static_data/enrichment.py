@@ -137,6 +137,49 @@ def enrich_merger(merger: dict, commentary: dict = None, questionnaire_data: dic
     return m
 
 
+def link_similar_mergers(enriched_mergers: list, similar_map: dict) -> int:
+    """Attach compact similar_mergers cards to each merger in-place.
+
+    similar_map: {merger_id: [similar_merger_id, ...]}
+
+    Each card contains the fields needed to render a summary tile without
+    requiring a separate fetch: merger_id, merger_name, status,
+    accc_determination, acquirers (first 2), targets (first 2).
+
+    Returns the number of mergers that had at least one similar merger linked.
+    """
+    def _make_card(m: dict) -> dict:
+        return {
+            'merger_id': m.get('merger_id'),
+            'merger_name': m.get('merger_name'),
+            'status': m.get('status'),
+            'accc_determination': m.get('accc_determination'),
+            'acquirers': m.get('acquirers', [])[:2],
+            'targets': m.get('targets', [])[:2],
+        }
+
+    card_lookup = {m['merger_id']: _make_card(m) for m in enriched_mergers if m.get('merger_id')}
+
+    linked = 0
+    for merger in enriched_mergers:
+        mid = merger.get('merger_id', '')
+        similar_ids = similar_map.get(mid, [])
+        if not similar_ids:
+            continue
+        # Safety net: never surface the merger's own waiver/notification partner
+        # (already shown via the related_merger link).
+        related_mid = (merger.get('related_merger') or {}).get('merger_id')
+        cards = [
+            card_lookup[sid]
+            for sid in similar_ids
+            if sid in card_lookup and sid != related_mid
+        ]
+        if cards:
+            merger['similar_mergers'] = cards
+            linked += 1
+    return linked
+
+
 def link_related_mergers(enriched_mergers: list, related_mergers: dict) -> int:
     """Attach ``related_merger`` entries to each merger in-place, with resolved names.
 

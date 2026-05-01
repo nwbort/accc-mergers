@@ -108,5 +108,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-15010",
+      "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 167 960 018"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BMM PARTNERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 649 113 959"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-65009",
+      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CVC Capital Partners plc",
+          "identifier_type": null,
+          "identifier": "140080"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25014",
+      "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Essential Bidco B.V.",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Specialty (U.S.) Bidco, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "SpecialtyCo US LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Biomin Phytogenics GmbH (Germany)",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    }
+  ]
 }

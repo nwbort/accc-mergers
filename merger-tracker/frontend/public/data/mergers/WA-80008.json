@@ -78,5 +78,87 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-75002",
+      "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OHCA Property Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "70 675 807 477"
+        },
+        {
+          "name": "DPG Services Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "38 090 007 999"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-75012",
+      "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 675 807 477"
+        },
+        {
+          "name": "DPG SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "38 090 007 999"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GREENWICH PLACE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 000 706 249"
+        },
+        {
+          "name": "GREENWICH CARE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "96 613 786 682"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-70010",
+      "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Waymark Hotels Properties No 42 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "692 820 143"
+        },
+        {
+          "name": "WARREGO OP CO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "29 692 796 697"
+        }
+      ],
+      "targets": [
+        {
+          "name": "G.A.A. Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "131 680 790"
+        }
+      ]
+    }
+  ]
 }

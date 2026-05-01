@@ -82,5 +82,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-90011",
+      "merger_name": "Salter Brothers - Buroserv",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "BUROSERV TELCO HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "17 690 175 770"
+        }
+      ],
+      "targets": [
+        {
+          "name": "LMGPS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 612 519 178"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-50008",
+      "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "WIN TELEVISION NETWORK PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 008 589 026"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 124 816 093"
+        },
+        {
+          "name": "TELEVISION HOLDINGS DARWIN PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "33 009 634 048"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-80004",
+      "merger_name": "Audiotonix - Soundtech Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "A6 Audio Bidco Limited",
+          "identifier_type": null,
+          "identifier": "Company number (England and Wales)  10573578"
+        },
+        {
+          "name": "Sound Bidco (Denmark) ApS",
+          "identifier_type": null,
+          "identifier": "Company number (Denmark)  45697088"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Soundtech Group S.r.l.",
+          "identifier_type": null,
+          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241"
+        }
+      ]
+    }
+  ]
 }

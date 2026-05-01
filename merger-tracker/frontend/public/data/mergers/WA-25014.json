@@ -143,5 +143,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-65009",
+      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CVC Capital Partners plc",
+          "identifier_type": null,
+          "identifier": "140080"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-40003",
+      "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Skyshield UK Bidco Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Skyshield US Bidco Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Smiths Detection Group Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25013",
+      "merger_name": "Cinven \u2013 Regenity",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Rosewood AG, LP",
+          "identifier_type": null,
+          "identifier": "LP5500"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Collagen Holdings, LLC",
+          "identifier_type": null,
+          "identifier": "DE File Number  7473707"
+        }
+      ]
+    }
+  ]
 }

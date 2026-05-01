@@ -93,5 +93,87 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-45005",
+      "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "MA MARINA FUND HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 667 241 385"
+        },
+        {
+          "name": "MA MARINA FUND TT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 666 902 245"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GGC Marketing Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "32 105 294 228"
+        },
+        {
+          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "72 081 370 685"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-90002",
+      "merger_name": "NEC Corporation \u2013 CSG Systems International",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NEC Corporation",
+          "identifier_type": null,
+          "identifier": "Company number 7010401022916"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CSG Systems International, Inc.",
+          "identifier_type": null,
+          "identifier": "Company number 2444546"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-65004",
+      "merger_name": "Kee Safety - RIS Safety",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Cielo TopCo Limited",
+          "identifier_type": null,
+          "identifier": "CRN  16320933"
+        },
+        {
+          "name": "Kee Safety (Australia) Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "694 369 116"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HALLWELD BENNETT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "15 161 086 595"
+        },
+        {
+          "name": "RIS SAFETY HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "19 668 836 351"
+        }
+      ]
+    }
+  ]
 }

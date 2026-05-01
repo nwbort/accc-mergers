@@ -110,5 +110,87 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-25002",
+      "merger_name": "Symal Group - Timms Group and L&D Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "SYMAL MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 602 084 471"
+        },
+        {
+          "name": "SYL TM CONTRACTING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "68 693 144 697"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TIMMS HIRE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "73 115 389 949"
+        },
+        {
+          "name": "TIMMS CONTRACTING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "30 070 456 567"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-60011",
+      "merger_name": "Barro Group / BQC Quarries and Burdekin Concrete",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "BQC Group Pty Ltd [yet to be incorporated]",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "M&T Populin Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "092 648 078"
+        },
+        {
+          "name": "BQC Registrations Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "613 361 041"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-60010",
+      "merger_name": "Michelin - Flexitallic",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Compagnie Financi\u00e8re Michelin SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  898 849 153"
+        },
+        {
+          "name": "Fenner America, Inc.",
+          "identifier_type": null,
+          "identifier": "USDOT  3744583"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Flexitallic Group SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  532 742 699"
+        }
+      ]
+    }
+  ]
 }

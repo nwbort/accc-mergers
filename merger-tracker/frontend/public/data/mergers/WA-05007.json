@@ -83,5 +83,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-35013",
+      "merger_name": "Estia Health \u2013 Norsan residential aged care business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "ESTIA INVESTMENTS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "87 164 350 387"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NORSAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 076 143 596"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15008",
+      "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Global Garella, S.L.",
+          "identifier_type": null,
+          "identifier": "Spanish Tax Identification Number  B24904989"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ayesa Engineering, S.A.U.",
+          "identifier_type": null,
+          "identifier": "Spanish Tax Identification Number  A91379875"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-25002",
+      "merger_name": "Symal Group - Timms Group and L&D Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "SYMAL MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 602 084 471"
+        },
+        {
+          "name": "SYL TM CONTRACTING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "68 693 144 697"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TIMMS HIRE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "73 115 389 949"
+        },
+        {
+          "name": "TIMMS CONTRACTING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "30 070 456 567"
+        }
+      ]
+    }
+  ]
 }

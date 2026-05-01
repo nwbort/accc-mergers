@@ -84,5 +84,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "TRESCAL (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "39 117 603 835"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TR PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 005 499 721"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-05007",
+      "merger_name": "Eiffel and Eurazeo \u2013 Segula",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Eiffel Investment Group SAS",
+          "identifier_type": null,
+          "identifier": "SIREN 510 813 991"
+        },
+        {
+          "name": "Eurazeo SE",
+          "identifier_type": null,
+          "identifier": "SIREN 692 030 992"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Segula Holding SAS",
+          "identifier_type": null,
+          "identifier": "SIREN 343 166 393"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-80001",
+      "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Arena BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 657 484"
+        }
+      ],
+      "targets": [
+        {
+          "name": "RFGI GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "55 630 028 974"
+        },
+        {
+          "name": "GAMEON HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 629 422 206"
+        }
+      ]
+    }
+  ]
 }

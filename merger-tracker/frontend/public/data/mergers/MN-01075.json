@@ -98,5 +98,67 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-40012",
+      "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Eli Lilly and Company",
+          "identifier_type": null,
+          "identifier": "350470950 (IRS Employer Identification Number)"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CSL Behring LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-15011",
+      "merger_name": "Danaher - Masimo",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Danaher Corporation",
+          "identifier_type": null,
+          "identifier": "213594"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Masimo Corporation",
+          "identifier_type": null,
+          "identifier": "2614702"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01083",
+      "merger_name": "Civilmart \u2013 Taylex",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CTC PRECAST PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "12 614 966 059"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TAYLEX GROUP HOLDING CO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "50 646 051 578"
+        }
+      ]
+    }
+  ]
 }

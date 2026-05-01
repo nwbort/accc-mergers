@@ -132,6 +132,7 @@ jobs:
           else
             python scripts/extract_mergers.py
           fi
+          python scripts/generate_similar_mergers.py
           python scripts/generate_static_data.py
           ./scripts/generate-cli-data.sh
           python scripts/generate_rss_feed.py
@@ -140,6 +141,7 @@ jobs:
         if: steps.scrape-changes.outputs.changed == 'true' || github.event_name != 'schedule'
         run: |
           git add data/processed/mergers.json data/processed/questionnaire_data.json \
+            data/processed/similar_mergers.json \
             data/raw/matters/ merger-tracker/frontend/public/data/ \
             merger-tracker/frontend/public/feed.xml data/output/
 
@@ -196,6 +198,7 @@ jobs:
           else
             python scripts/extract_mergers.py
           fi
+          python scripts/generate_similar_mergers.py
           python scripts/generate_static_data.py
           ./scripts/generate-cli-data.sh
           python scripts/generate_rss_feed.py
@@ -204,6 +207,7 @@ jobs:
         if: steps.find-docx.outputs.has_unconverted == 'true'
         run: |
           git add data/processed/mergers.json data/processed/questionnaire_data.json \
+            data/processed/similar_mergers.json \
             data/raw/matters/ merger-tracker/frontend/public/data/ \
             merger-tracker/frontend/public/feed.xml data/output/
 

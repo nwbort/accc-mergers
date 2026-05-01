@@ -107,5 +107,87 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-10006",
+      "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AVC Operations Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "81 607 832 299"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "70 075 074 930"
+        },
+        {
+          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
+          "identifier_type": "ACN",
+          "identifier": "604 221 801"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25010",
+      "merger_name": "INNIO Group \u2013 Enerflex",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "INNIO Jenbacher International B.V.",
+          "identifier_type": null,
+          "identifier": "KVK90210352"
+        },
+        {
+          "name": "INNIO Jenbacher Netherlands B.V.",
+          "identifier_type": null,
+          "identifier": "KVK90209982"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Exterran (Thailand) Ltd",
+          "identifier_type": null,
+          "identifier": "0105542031616"
+        },
+        {
+          "name": "PT Enerflex (Indonesia)",
+          "identifier_type": null,
+          "identifier": "9120407262914"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-80004",
+      "merger_name": "Audiotonix - Soundtech Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "A6 Audio Bidco Limited",
+          "identifier_type": null,
+          "identifier": "Company number (England and Wales)  10573578"
+        },
+        {
+          "name": "Sound Bidco (Denmark) ApS",
+          "identifier_type": null,
+          "identifier": "Company number (Denmark)  45697088"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Soundtech Group S.r.l.",
+          "identifier_type": null,
+          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241"
+        }
+      ]
+    }
+  ]
 }

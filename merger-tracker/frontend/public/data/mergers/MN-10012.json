@@ -86,5 +86,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-75009",
+      "merger_name": "Charter Hall Holdings - JGS Private Capital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CHARTER HALL HOLDINGS PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "15 051 363 547"
+        }
+      ],
+      "targets": [
+        {
+          "name": "JGS PRIVATE CAPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 602 602 595"
+        },
+        {
+          "name": "J.G. SERVICE PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "75 008 492 126"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25009",
+      "merger_name": "Brisbane Airport Corporation \u2013 Interest in land at Brisbane Airport",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "BRISBANE AIRPORT CORPORATION PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "54 076 870 650"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GROWTHPOINT PROPERTIES AUSTRALIA LIMITED AS TRUSTEE FOR THE WHOLESALE INDUSTRIAL PROPERTY FUND",
+          "identifier_type": "ABN",
+          "identifier": "33 124 093 901"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-90010",
+      "merger_name": "Prime Super - Additional interest in Peninsula Link Project",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Southern Way PS Pty Limited as trustee for PS Southern Way Unit Trust",
+          "identifier_type": "ACN",
+          "identifier": "140 806 935"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Southern Way Holding Trust",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "SOUTHERN WAY HOLDINGS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "93 140 429 483"
+        }
+      ]
+    }
+  ]
 }
