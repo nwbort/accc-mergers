@@ -14,7 +14,11 @@ sys.modules['pdfplumber'] = unittest.mock.MagicMock()
 sys.modules['markdownify'] = unittest.mock.MagicMock()
 sys.modules['requests'] = unittest.mock.MagicMock()
 
-from parse_determination import extract_commission_division, parse_text_as_table
+from parse_determination import (
+    extract_commission_division,
+    parse_text_as_table,
+    _parse_section_blocks,
+)
 from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text
 from cutoff import is_waiver_merger, get_cutoff_date, should_skip_merger
 from extract_mergers import is_safe_url, get_serve_filename
@@ -141,6 +145,136 @@ class TestParseTextAsTable:
         )
         result = parse_text_as_table(text)
         assert len(result) == 2
+
+
+# ---------------------------------------------------------------------------
+# parse_determination: _parse_section_blocks (Statement of reasons structure)
+# ---------------------------------------------------------------------------
+
+class TestParseSectionBlocks:
+    def test_numbered_paragraph(self):
+        text = (
+            "2.1. When making a determination in Phase 1, the ACCC undertakes a\n"
+            "competition assessment.\n"
+        )
+        blocks = _parse_section_blocks(text, {})
+        assert len(blocks) == 1
+        assert blocks[0]['type'] == 'paragraph'
+        assert blocks[0]['number'] == '2.1'
+        assert 'competition assessment' in blocks[0]['text']
+
+    def test_heading_then_paragraph(self):
+        text = (
+            "Industry background\n"
+            "Mining equipment\n"
+            "2.4. Mining equipment refers to various categories.\n"
+        )
+        heading_info = {
+            'Industry background': {'size': 14.0, 'bold': True, 'italic': False},
+            'Mining equipment': {'size': 11.0, 'bold': True, 'italic': False},
+        }
+        blocks = _parse_section_blocks(text, heading_info)
+        assert blocks[0] == {'type': 'heading', 'text': 'Industry background'}
+        assert blocks[1] == {'type': 'heading', 'text': 'Mining equipment'}
+        assert blocks[2]['type'] == 'paragraph'
+        assert blocks[2]['number'] == '2.4'
+
+    def test_multiline_heading_merged(self):
+        text = (
+            "Reduced competition arising from accessing and using competitively\n"
+            "significant information about rival OEMs\n"
+            "2.19. The ACCC considers...\n"
+        )
+        heading_info = {
+            'Reduced competition arising from accessing and using competitively': {
+                'size': 14.0, 'bold': True, 'italic': False,
+            },
+            'significant information about rival OEMs': {
+                'size': 14.0, 'bold': True, 'italic': False,
+            },
+        }
+        blocks = _parse_section_blocks(text, heading_info)
+        assert blocks[0]['type'] == 'heading'
+        assert 'competitively significant information' in blocks[0]['text']
+        # The heading-level fields are stripped from the public output.
+        assert '_size' not in blocks[0]
+        assert blocks[1]['type'] == 'paragraph'
+
+    def test_different_size_headings_not_merged(self):
+        text = (
+            "Industry background\n"
+            "Mining equipment\n"
+        )
+        heading_info = {
+            'Industry background': {'size': 14.0, 'bold': True, 'italic': False},
+            'Mining equipment': {'size': 11.0, 'bold': True, 'italic': False},
+        }
+        blocks = _parse_section_blocks(text, heading_info)
+        assert len(blocks) == 2
+        assert blocks[0]['text'] == 'Industry background'
+        assert blocks[1]['text'] == 'Mining equipment'
+
+    def test_bullet_list(self):
+        text = (
+            "2.20. The information types include:\n"
+            "• Maintenance strategy\n"
+            "• Equipment hire rates\n"
+            "• The actual usage and downtime.\n"
+        )
+        blocks = _parse_section_blocks(text, {})
+        assert blocks[0]['type'] == 'paragraph'
+        assert blocks[1]['type'] == 'bullet_list'
+        assert blocks[1]['items'] == [
+            'Maintenance strategy',
+            'Equipment hire rates',
+            'The actual usage and downtime.',
+        ]
+
+    def test_lettered_list_parens(self):
+        text = (
+            "2.4. Examples of mining equipment include:\n"
+            "(a) Large haul trucks\n"
+            "(b) Loading equipment\n"
+            "(c) Drilling equipment\n"
+        )
+        blocks = _parse_section_blocks(text, {})
+        assert blocks[1]['type'] == 'lettered_list'
+        assert [it['letter'] for it in blocks[1]['items']] == ['a', 'b', 'c']
+        assert blocks[1]['items'][0]['text'] == 'Large haul trucks'
+
+    def test_lettered_list_period_after_colon(self):
+        text = (
+            "2.14. The ACCC has considered, by:\n"
+            "a. Providing one ability.\n"
+            "b. Undermining another ability.\n"
+        )
+        blocks = _parse_section_blocks(text, {})
+        # Paragraph ending with a colon followed by "a." starts a lettered list.
+        assert blocks[1]['type'] == 'lettered_list'
+        assert blocks[1]['items'][0]['letter'] == 'a'
+        assert blocks[1]['items'][1]['letter'] == 'b'
+
+    def test_continuation_lines_joined(self):
+        text = (
+            "2.1. When making a determination in Phase 1, the ACCC undertakes\n"
+            "a competition assessment in accordance with the Act.\n"
+        )
+        blocks = _parse_section_blocks(text, {})
+        assert len(blocks) == 1
+        assert 'undertakes a competition assessment' in blocks[0]['text']
+
+    def test_bullet_continuation(self):
+        text = (
+            "2.20. The types of information include:\n"
+            "• The life cycle and maintenance strategy for equipment, including\n"
+            "estimates of the costs of maintenance\n"
+            "• Parts pricing\n"
+        )
+        blocks = _parse_section_blocks(text, {})
+        bullets = blocks[1]
+        assert bullets['type'] == 'bullet_list'
+        assert 'estimates of the costs of maintenance' in bullets['items'][0]
+        assert bullets['items'][1] == 'Parts pricing'
 
 
 # ---------------------------------------------------------------------------

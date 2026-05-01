@@ -9,7 +9,7 @@ import WaiverBadge from '../components/WaiverBadge';
 import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import QuestionnaireSection from '../components/QuestionnaireSection';
-import WaiverExplanationSection from '../components/WaiverExplanationSection';
+import DeterminationExplanationSection from '../components/DeterminationExplanationSection';
 import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatDate, calculateDuration, getDaysRemaining, calculateBusinessDays, getBusinessDaysRemaining } from '../utils/dates';
@@ -299,10 +299,8 @@ function MergerDetail() {
           </Link>
         )}
 
-        {/* Waiver explanation */}
-        {merger.is_waiver && (
-          <WaiverExplanationSection events={merger.events} />
-        )}
+        {/* Determination explanation (waivers and Phase 1 approved notifications) */}
+        <DeterminationExplanationSection merger={merger} />
 
         {/* Parties */}
         <div className={`grid grid-cols-1 ${merger.other_parties && merger.other_parties.length > 0 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4 mb-6`}>

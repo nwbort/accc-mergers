@@ -187,6 +187,288 @@ def parse_text_as_table(text: str) -> List[Dict[str, str]]:
     return table_data
 
 
+def _group_chars_into_lines(page) -> List[Dict]:
+    """Group characters on a page into lines with dominant font info.
+
+    Returns a list of dicts with keys 'text', 'size', 'bold', 'italic'.
+    """
+    lines: Dict[float, Dict] = {}
+    for c in page.chars:
+        # Round y0 to nearest 0.5pt to keep characters on the same baseline together.
+        y = round(c.get('y0', 0) * 2) / 2
+        bucket = lines.setdefault(y, {'fonts': [], 'parts': []})
+        bucket['fonts'].append((c.get('size', 0), c.get('fontname', '')))
+        bucket['parts'].append((c.get('x0', 0), c.get('text', '')))
+
+    out: List[Dict] = []
+    # Iterate top-to-bottom (largest y first).
+    for y in sorted(lines.keys(), reverse=True):
+        bucket = lines[y]
+        # Reconstruct the line text in left-to-right order.
+        bucket['parts'].sort(key=lambda p: p[0])
+        text = ''.join(p[1] for p in bucket['parts']).strip()
+        if not text:
+            continue
+        # Pick the most common (size, font) pair on this line.
+        from collections import Counter
+        font_counter = Counter(bucket['fonts'])
+        (size, fontname), _ = font_counter.most_common(1)[0]
+        font_short = fontname.split('+')[-1] if '+' in fontname else fontname
+        out.append({
+            'y': y,
+            'text': text,
+            'size': round(size, 2),
+            'bold': 'Bold' in font_short,
+            'italic': 'Italic' in font_short,
+        })
+    return out
+
+
+PAGE_HEADER_RE = re.compile(r'^Determination \| .+? \(MN-\d+\)\s*$')
+PAGE_HEADER_STRIP_RE = re.compile(r'^Determination \| [^\n]*?\(MN-\d+\)\s*\n', re.MULTILINE)
+PAGE_FOOTER_NUM_RE = re.compile(r'^\d+\s*$')
+
+
+def _is_heading_line(line: Dict) -> bool:
+    """Return True if a line's font characteristics suggest a section heading."""
+    text = line['text']
+    size = line['size']
+    if PAGE_HEADER_RE.match(text):
+        return False
+    # Top-level heading: noticeably larger font.
+    if size >= 12.5:
+        return True
+    # Looks like body content — not a heading regardless of styling.
+    if re.match(r'^\d+\.\d+\.?\s', text):
+        return False
+    if re.match(r'^[•▪]\s', text):
+        return False
+    if re.match(r'^\([a-z]\)\s', text):
+        return False
+    # Subheading: bold, body-sized, short.
+    if line['bold'] and 10 <= size < 12.5 and len(text) <= 120:
+        return True
+    # Italic subheading: short, no terminal punctuation. The detailed
+    # determinations sometimes use an italic line as a sub-sub-heading
+    # (e.g. "Asset management software"). We're conservative so as not to
+    # swallow inline-italic body lines: require short text and no period.
+    if (
+        line['italic']
+        and not line['bold']
+        and 10 <= size < 12.5
+        and len(text) <= 60
+        and not text.endswith('.')
+        and not text.endswith(',')
+    ):
+        return True
+    return False
+
+
+def _collect_heading_info(pdf) -> Dict[str, Dict]:
+    """Identify heading text by font characteristics across all pages.
+
+    Returns a mapping of heading text → {size, bold, italic} so callers can
+    distinguish heading levels (and avoid merging headings of different
+    sizes when one wraps onto the next line).
+    """
+    headings: Dict[str, Dict] = {}
+    for page in pdf.pages:
+        for line in _group_chars_into_lines(page):
+            if _is_heading_line(line):
+                headings[line['text']] = {
+                    'size': line['size'],
+                    'bold': line['bold'],
+                    'italic': line['italic'],
+                }
+    return headings
+
+
+def _full_text_without_page_chrome(pdf) -> str:
+    """Extract page text concatenated with page header and footer removed."""
+    parts = []
+    for page in pdf.pages:
+        text = page.extract_text() or ''
+        # Drop the running page header.
+        text = PAGE_HEADER_STRIP_RE.sub('', text)
+        # Drop a trailing page-number line, if any.
+        lines = text.splitlines()
+        while lines and PAGE_FOOTER_NUM_RE.match(lines[-1].strip()):
+            lines.pop()
+        parts.append('\n'.join(lines))
+    return '\n'.join(parts)
+
+
+def _parse_section_blocks(text: str, heading_info: Dict[str, Dict]) -> List[Dict]:
+    """Convert section text into structured blocks (headings, paragraphs, lists).
+
+    Each block has a 'type':
+      - 'heading' with 'text'
+      - 'paragraph' with 'text' and optional 'number' (e.g. "2.4")
+      - 'bullet_list' with 'items' (list of strings)
+      - 'lettered_list' with 'items' (list of {'letter', 'text'})
+    """
+    blocks: List[Dict] = []
+    current: Optional[Dict] = None
+
+    def flush():
+        nonlocal current
+        if current is not None:
+            blocks.append(current)
+            current = None
+
+    for raw_line in text.split('\n'):
+        line = raw_line.strip()
+        if not line:
+            continue
+
+        # Skip stray page-header fragments that may slip through (e.g. when
+        # extract_text emitted them on a page we didn't strip).
+        if PAGE_HEADER_RE.match(line):
+            continue
+
+        # Headings (detected via font in the source PDF). Two consecutive
+        # heading lines that share font size are merged so a single heading
+        # that wraps across two PDF lines renders as one block, but a
+        # top-level heading immediately followed by a sub-heading stays
+        # separate.
+        if line in heading_info:
+            info = heading_info[line]
+            flush()
+            prev = blocks[-1] if blocks else None
+            if (
+                prev
+                and prev['type'] == 'heading'
+                and prev.get('_size') == info['size']
+                and prev.get('_bold') == info['bold']
+                and prev.get('_italic') == info['italic']
+            ):
+                prev['text'] = (prev['text'] + ' ' + line).strip()
+            else:
+                blocks.append({
+                    'type': 'heading',
+                    'text': line,
+                    '_size': info['size'],
+                    '_bold': info['bold'],
+                    '_italic': info['italic'],
+                })
+            continue
+
+        # Numbered paragraph: "2.4. text" or "2.4 text" (sometimes the period
+        # is absorbed into the next character with no space).
+        para_match = re.match(r'^(\d+)\.(\d+)\.?\s*(.*)$', line)
+        if para_match and para_match.group(3):
+            flush()
+            current = {
+                'type': 'paragraph',
+                'number': f"{para_match.group(1)}.{para_match.group(2)}",
+                'text': para_match.group(3).strip(),
+            }
+            continue
+
+        # Bullet item.
+        bullet_match = re.match(r'^[•▪]\s*(.*)$', line)
+        if bullet_match:
+            if current is None or current.get('type') != 'bullet_list':
+                flush()
+                current = {'type': 'bullet_list', 'items': []}
+            current['items'].append(bullet_match.group(1).strip())
+            continue
+
+        # Lettered list with parenthesised marker: "(a) text".
+        letter_match = re.match(r'^\(([a-z])\)\s*(.*)$', line)
+        if letter_match:
+            if current is None or current.get('type') != 'lettered_list':
+                flush()
+                current = {'type': 'lettered_list', 'items': []}
+            current['items'].append({
+                'letter': letter_match.group(1),
+                'text': letter_match.group(2).strip(),
+            })
+            continue
+
+        # Lettered list with period marker: "a. text". Match if we're already
+        # in a lettered list, or if this looks like the start of one (the
+        # previous paragraph ended with a colon, and the marker is "a.").
+        period_letter = re.match(r'^([a-z])\.\s+(.*)$', line)
+        if period_letter:
+            letter = period_letter.group(1)
+            item_text = period_letter.group(2).strip()
+            if current and current.get('type') == 'lettered_list':
+                current['items'].append({'letter': letter, 'text': item_text})
+                continue
+            if (
+                letter == 'a'
+                and current
+                and current.get('type') == 'paragraph'
+                and current.get('text', '').rstrip().endswith(':')
+            ):
+                flush()
+                current = {
+                    'type': 'lettered_list',
+                    'items': [{'letter': letter, 'text': item_text}],
+                }
+                continue
+
+        # Continuation of the previous block.
+        if current is None:
+            current = {'type': 'paragraph', 'text': line}
+        elif current['type'] == 'paragraph':
+            current['text'] = (current['text'] + ' ' + line).strip()
+        elif current['type'] == 'bullet_list':
+            if current['items']:
+                current['items'][-1] = (current['items'][-1] + ' ' + line).strip()
+            else:
+                current['items'].append(line)
+        elif current['type'] == 'lettered_list':
+            if current['items']:
+                current['items'][-1]['text'] = (current['items'][-1]['text'] + ' ' + line).strip()
+
+    flush()
+    # Strip private font-tracking fields from heading blocks before returning.
+    for block in blocks:
+        if block['type'] == 'heading':
+            block.pop('_size', None)
+            block.pop('_bold', None)
+            block.pop('_italic', None)
+    return blocks
+
+
+def extract_statement_of_reasons(pdf_path: str) -> Optional[List[Dict]]:
+    """Extract the structured "Statement of reasons" content from a Phase 1
+    determination PDF.
+
+    The detailed Phase 1 determinations include a section "2. Statement of
+    reasons" with the ACCC's substantive reasoning. Simpler determinations
+    contain all reasoning inline within the determination table and have no
+    section 2 — those return ``None``.
+    """
+    if not Path(pdf_path).exists():
+        return None
+
+    with pdfplumber.open(pdf_path) as pdf:
+        heading_info = _collect_heading_info(pdf)
+        full_text = _full_text_without_page_chrome(pdf)
+
+    # Locate the body of section 2. The header line itself is not always on a
+    # line of its own when extract_text concatenates it with the next line.
+    section_match = re.search(
+        r'(?:^|\n)\s*2\.\s*Statement of reasons\s*\n(.+?)'
+        r'(?=\n\s*3\.\s+Applications for review|'
+        r'\n\s*Determination made by\b)',
+        full_text,
+        re.DOTALL,
+    )
+    if not section_match:
+        return None
+
+    body = section_match.group(1).strip()
+    if not body:
+        return None
+
+    blocks = _parse_section_blocks(body, heading_info)
+    return blocks or None
+
+
 def parse_determination_pdf(pdf_path: str) -> Dict[str, any]:
     """
     Parse a determination PDF to extract all relevant information.
@@ -199,11 +481,15 @@ def parse_determination_pdf(pdf_path: str) -> Dict[str, any]:
         - commission_division: The commission division sentence
         - table_content: List of item/details dictionaries
         - table_content_json: JSON string of the table content
+        - statement_of_reasons: List of structured blocks for Phase 1 detailed
+          reasons (section 2), or ``None`` for waivers and simple Phase 1
+          determinations whose reasons are inline in the table.
     """
     result = {
         'commission_division': None,
         'table_content': [],
-        'table_content_json': None
+        'table_content_json': None,
+        'statement_of_reasons': None,
     }
 
     # Check if file exists
@@ -225,6 +511,14 @@ def parse_determination_pdf(pdf_path: str) -> Dict[str, any]:
     # Convert table content to JSON for storage
     if result['table_content']:
         result['table_content_json'] = json.dumps(result['table_content'], indent=2)
+
+    # Extract structured "Statement of reasons" (only present in Phase 1
+    # determinations that put their detailed reasons after the table).
+    try:
+        result['statement_of_reasons'] = extract_statement_of_reasons(pdf_path)
+    except Exception as e:
+        print(f"Warning: Failed to extract statement of reasons: {e}")
+        result['statement_of_reasons'] = None
 
     return result
 
