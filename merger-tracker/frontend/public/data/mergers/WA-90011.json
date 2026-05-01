@@ -133,5 +133,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-35005",
+      "merger_name": "Superloop \u2013 Lynham Networks",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "SUPERLOOP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "96 169 263 094"
+        }
+      ],
+      "targets": [
+        {
+          "name": "LYNHAM NETWORKS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "17 602 258 337"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15014",
+      "merger_name": "Wipro - Mindsprint",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Wipro Networks Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN  199907933M"
+        },
+        {
+          "name": "Wipro Limited",
+          "identifier_type": null,
+          "identifier": "CIN L32102KA1945PLC020800"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Mindsprint Pte Limited",
+          "identifier_type": null,
+          "identifier": "UEN  202118596N"
+        },
+        {
+          "name": "Olam Holdings Pte Limited",
+          "identifier_type": null,
+          "identifier": "UEN  202110101R"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-50008",
+      "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "WIN TELEVISION NETWORK PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 008 589 026"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 124 816 093"
+        },
+        {
+          "name": "TELEVISION HOLDINGS DARWIN PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "33 009 634 048"
+        }
+      ]
+    }
+  ]
 }

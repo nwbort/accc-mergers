@@ -93,5 +93,87 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-85017",
+      "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "MANDURAH AUTO GROUP PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "693 645 699"
+        },
+        {
+          "name": "PEEL MOTOR GROUP PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "693 645 742"
+        }
+      ],
+      "targets": [
+        {
+          "name": "WA AUTOMOTIVE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 158 702 740"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-75011",
+      "merger_name": "Autosports Group - Solitaire Automotive Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AUTOSPORTS GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "54 614 505 261"
+        }
+      ],
+      "targets": [
+        {
+          "name": "David Smoker",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Russleigh Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "052 977 198"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-65011",
+      "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "TWG HUNTER DEALERSHIPS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 695 726 348"
+        },
+        {
+          "name": "THE TRUSTEE FOR WHITE KING CORPORATE UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "70 760 893 620"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SHARTON MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "55 001 345 384"
+        },
+        {
+          "name": "N&M BURTON PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "125 935 944"
+        }
+      ]
+    }
+  ]
 }

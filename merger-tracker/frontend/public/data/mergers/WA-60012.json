@@ -113,5 +113,67 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-55017",
+      "merger_name": "Coles - Leasehold interest in shopping centre on Capricorn Highway, Emerald, QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "BOULDER CAPITAL INVESTMENTS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 632 507 996"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01068",
+      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 004 189 708"
+        }
+      ],
+      "targets": [
+        {
+          "name": "M Holdings 4 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "652 075 799"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01090",
+      "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 004 189 708"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Tipalea Private No.31 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "686 197 115"
+        }
+      ]
+    }
+  ]
 }

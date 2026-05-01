@@ -100,5 +100,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-40014",
+      "merger_name": "Infosys \u2013 Optimum Healthcare IT",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Infosys Nova Holdings LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Optimum Achieve Holdings, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "OPTIMUM HEALTHCARE IT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 689 795 702"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-65012",
+      "merger_name": "Savvy Games Group \u2013 Moonton",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "East Gate Games Investment Company",
+          "identifier_type": "ABN",
+          "identifier": "39 275 633 205"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Moonton Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25008",
+      "merger_name": "Five V Capital - FTP Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OVERWATCH BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 739 970"
+        }
+      ],
+      "targets": [
+        {
+          "name": "FTP GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 626 217 614"
+        },
+        {
+          "name": "FAARM BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 834 390"
+        }
+      ]
+    }
+  ]
 }

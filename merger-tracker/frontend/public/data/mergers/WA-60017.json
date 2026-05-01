@@ -121,5 +121,87 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-45005",
+      "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "MA MARINA FUND HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 667 241 385"
+        },
+        {
+          "name": "MA MARINA FUND TT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 666 902 245"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GGC Marketing Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "32 105 294 228"
+        },
+        {
+          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "72 081 370 685"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15009",
+      "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "REDCAPE HOTEL GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 139 067 244"
+        },
+        {
+          "name": "MAHPT TT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "31 619 297 657"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BRUNSWICK HOTEL OPCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 656 116 853"
+        },
+        {
+          "name": "The Trustee for Brunswick Hotel Sub-Trust",
+          "identifier_type": "ABN",
+          "identifier": "51 927 228 244"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-75015",
+      "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "MIGALOO QLD PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "30 600 219 172"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for The Garden Holdings Trust",
+          "identifier_type": "ABN",
+          "identifier": "45 745 542 544"
+        }
+      ]
+    }
+  ]
 }

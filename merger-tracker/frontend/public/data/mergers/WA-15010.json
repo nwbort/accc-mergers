@@ -94,5 +94,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-85004",
+      "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Treysta Wealth Management Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "87 151 156 222"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Locumsgroup Private Accounting Services Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "66 116 993 670"
+        },
+        {
+          "name": "Locumsgroup Asset Management Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "71 113 009 626"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35008",
+      "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "TRANSPORT ACCIDENT COMMISSION",
+          "identifier_type": "ABN",
+          "identifier": "22 033 947 623"
+        },
+        {
+          "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
+          "identifier_type": "ABN",
+          "identifier": "39 682 497 841"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CORVAL PARTNERS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "86 130 628 830"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-65008",
+      "merger_name": "REA Group - Simplicity Loans & Advisory",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "REA FINANCIAL SERVICES HOLDING CO. PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "38 649 505 386"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SIMPLICITY LOANS & ADVISORY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "98 616 763 878"
+        }
+      ]
+    }
+  ]
 }

@@ -107,5 +107,67 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-35001",
+      "merger_name": "WSP \u2013 TRC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "WSP Global Inc.",
+          "identifier_type": null,
+          "identifier": "Corporation No.: 7748388"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TRC Companies, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01058",
+      "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Caterpillar Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "RPMGLOBAL HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "17 010 672 321"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-20011",
+      "merger_name": "Origin \u2013 Equity stake in Kraken",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "53 143 484 208"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CPP Investment Board Private Holdings (4) Inc.",
+          "identifier_type": null,
+          "identifier": "BN  11089340"
+        }
+      ]
+    }
+  ]
 }

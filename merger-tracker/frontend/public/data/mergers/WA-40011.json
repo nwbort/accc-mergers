@@ -83,5 +83,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-55016",
+      "merger_name": "Zurich - ClearView",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 008 423 372"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLEARVIEW WEALTH LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "83 106 248 248"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-20010",
+      "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "Global Engage Marine Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 762 122"
+        },
+        {
+          "name": "PT Asian Bulk Logistics",
+          "identifier_type": null,
+          "identifier": "NIB   8120012130871"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ENGAGE MARINE TOPCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "46 675 998 562"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35008",
+      "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "TRANSPORT ACCIDENT COMMISSION",
+          "identifier_type": "ABN",
+          "identifier": "22 033 947 623"
+        },
+        {
+          "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
+          "identifier_type": "ABN",
+          "identifier": "39 682 497 841"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CORVAL PARTNERS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "86 130 628 830"
+        }
+      ]
+    }
+  ]
 }

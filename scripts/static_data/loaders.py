@@ -9,6 +9,7 @@ MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
 COMMENTARY_JSON = REPO_ROOT / "data" / "processed" / "commentary.json"
 QUESTIONNAIRE_JSON = REPO_ROOT / "data" / "processed" / "questionnaire_data.json"
 RELATED_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "related_mergers.json"
+SIMILAR_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "similar_mergers.json"
 
 
 def load_mergers() -> list:
@@ -48,6 +49,24 @@ def load_related_mergers() -> dict:
         return result
     except (json.JSONDecodeError, IOError, KeyError) as e:
         print(f"Warning: Could not load related_mergers.json: {e}")
+        return {}
+
+
+def load_similar_mergers() -> dict:
+    """Load similar merger suggestions from similar_mergers.json.
+
+    Returns a dict keyed by merger_id mapping to a list of similar merger_ids,
+    e.g. ``{"MN-01016": ["MN-12345", "MN-67890"]}``.
+    """
+    if not SIMILAR_MERGERS_JSON.exists():
+        return {}
+
+    try:
+        with open(SIMILAR_MERGERS_JSON, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return data.get('similar', {})
+    except (json.JSONDecodeError, IOError) as e:
+        print(f"Warning: Could not load similar_mergers.json: {e}")
         return {}
 
 

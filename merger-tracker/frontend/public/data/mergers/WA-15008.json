@@ -114,5 +114,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-60012",
+      "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
+          "identifier_type": "ABN",
+          "identifier": "72 004 428 326"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CITY OF PORT PHILLIP",
+          "identifier_type": "ABN",
+          "identifier": "21 762 977 945"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35001",
+      "merger_name": "WSP \u2013 TRC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "WSP Global Inc.",
+          "identifier_type": null,
+          "identifier": "Corporation No.: 7748388"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TRC Companies, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-05007",
+      "merger_name": "Eiffel and Eurazeo \u2013 Segula",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Eiffel Investment Group SAS",
+          "identifier_type": null,
+          "identifier": "SIREN 510 813 991"
+        },
+        {
+          "name": "Eurazeo SE",
+          "identifier_type": null,
+          "identifier": "SIREN 692 030 992"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Segula Holding SAS",
+          "identifier_type": null,
+          "identifier": "SIREN 343 166 393"
+        }
+      ]
+    }
+  ]
 }

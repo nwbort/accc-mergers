@@ -127,5 +127,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-80009",
+      "merger_name": "Mizuho \u2013 Avendus",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Mizuho Securities Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "No. 94"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Redpoint Investments Pte Ltd",
+          "identifier_type": null,
+          "identifier": "201536795E"
+        },
+        {
+          "name": "Avendus Capital Private Limited",
+          "identifier_type": null,
+          "identifier": "CIN U99999MH1999PTC123358"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-85006",
+      "merger_name": "Tega and Apollo Funds consortium - Molycop",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Tega MC SG Holdings Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "202551682E"
+        },
+        {
+          "name": "Tega MC Australia Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "16 147 692 840"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Orway IQ Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "52 631 359 370"
+        },
+        {
+          "name": "Molycop Technologies Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "85 154 346 004"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-35013",
+      "merger_name": "Estia Health \u2013 Norsan residential aged care business",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "ESTIA INVESTMENTS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "87 164 350 387"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NORSAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 076 143 596"
+        }
+      ]
+    }
+  ]
 }

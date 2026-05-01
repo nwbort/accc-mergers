@@ -93,5 +93,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-60010",
+      "merger_name": "Michelin - Flexitallic",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Compagnie Financi\u00e8re Michelin SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  898 849 153"
+        },
+        {
+          "name": "Fenner America, Inc.",
+          "identifier_type": null,
+          "identifier": "USDOT  3744583"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Flexitallic Group SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  532 742 699"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-20013",
+      "merger_name": "Eli Lilly / Orna Therapeutics",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Eli Lilly and Company",
+          "identifier_type": null,
+          "identifier": "IRS Employer Identification Number  350470950"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Orna Therapeutics Holdings, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-01087",
+      "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "Eli Lilly and Company",
+          "identifier_type": null,
+          "identifier": "IRS Employer Identification Number  350470950"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Orna Therapeutics Holdings, LLC",
+          "identifier_type": null,
+          "identifier": "IRS Employer Identification Number  861182936"
+        }
+      ]
+    }
+  ]
 }

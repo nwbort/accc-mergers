@@ -82,5 +82,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "TRESCAL (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "39 117 603 835"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TR PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 005 499 721"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-01092",
+      "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
+          "identifier_type": "ABN",
+          "identifier": "21 151 833 555"
+        },
+        {
+          "name": "Yandoo Holdings Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "WINNING APPLIANCES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "94 002 193 688"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15003",
+      "merger_name": "Coforge - Encora",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Coforge Limited",
+          "identifier_type": null,
+          "identifier": "L72100HR1992PLC128382"
+        },
+        {
+          "name": "Encora Holdco Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Encora US Holdco, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Encora Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    }
+  ]
 }

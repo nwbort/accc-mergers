@@ -78,5 +78,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-10012",
+      "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "MAC HoldCo Pty Ltd (an entity which has not been established yet)",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "MOORABBIN AIRPORT CORPORATION PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "94 081 564 310"
+        },
+        {
+          "name": "TALLINA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "68 090 716 895"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-01088",
+      "merger_name": "BSN Sports \u2013 Sports Endeavors",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "BSN Sports, LLC",
+          "identifier_type": null,
+          "identifier": "Company No.: 2980248  Delaware"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SW Soccer Corp Holdings LLC",
+          "identifier_type": null,
+          "identifier": "Company No.: 6920423  Delaware"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-80008",
+      "merger_name": "Princeton Digital Group Australia - land located in Campbelltown, NSW",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Princeton Digital Group (Australia Alpha) Prop Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 155 663"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MH Property No. 1 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "644 453 430"
+        }
+      ]
+    }
+  ]
 }

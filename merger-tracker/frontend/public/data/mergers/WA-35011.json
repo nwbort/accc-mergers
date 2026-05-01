@@ -102,5 +102,87 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-01037",
+      "merger_name": "Anglo American - Teck Resources",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Anglo American plc",
+          "identifier_type": null,
+          "identifier": "03564138"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Teck Resources Limited",
+          "identifier_type": null,
+          "identifier": "4460561"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-45005",
+      "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "MA MARINA FUND HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 667 241 385"
+        },
+        {
+          "name": "MA MARINA FUND TT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 666 902 245"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GGC Marketing Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "32 105 294 228"
+        },
+        {
+          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "72 081 370 685"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15003",
+      "merger_name": "Coforge - Encora",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Coforge Limited",
+          "identifier_type": null,
+          "identifier": "L72100HR1992PLC128382"
+        },
+        {
+          "name": "Encora Holdco Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Encora US Holdco, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Encora Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    }
+  ]
 }

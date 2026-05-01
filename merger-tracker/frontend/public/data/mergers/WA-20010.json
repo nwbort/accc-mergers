@@ -123,5 +123,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-85004",
+      "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Treysta Wealth Management Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "87 151 156 222"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Locumsgroup Private Accounting Services Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "66 116 993 670"
+        },
+        {
+          "name": "Locumsgroup Asset Management Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "71 113 009 626"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55003",
+      "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "SYMAL GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "72 615 255 466"
+        }
+      ],
+      "targets": [
+        {
+          "name": "J. DAVISON NOMINEES PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "70 007 998 969"
+        },
+        {
+          "name": "DAVISON CONTRACTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "68 675 773 896"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-85003",
+      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NACG WA Acquisition Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 678 296"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DCL CORP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 633 008 992"
+        },
+        {
+          "name": "IRON HIRE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 641 807 589"
+        }
+      ]
+    }
+  ]
 }

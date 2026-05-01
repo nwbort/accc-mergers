@@ -113,5 +113,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-15008",
+      "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Global Garella, S.L.",
+          "identifier_type": null,
+          "identifier": "Spanish Tax Identification Number  B24904989"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ayesa Engineering, S.A.U.",
+          "identifier_type": null,
+          "identifier": "Spanish Tax Identification Number  A91379875"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-85003",
+      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NACG WA Acquisition Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 678 296"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DCL CORP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 633 008 992"
+        },
+        {
+          "name": "IRON HIRE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 641 807 589"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-85006",
+      "merger_name": "Tega and Apollo Funds consortium - Molycop",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Tega MC SG Holdings Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "202551682E"
+        },
+        {
+          "name": "Tega MC Australia Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "16 147 692 840"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Orway IQ Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "52 631 359 370"
+        },
+        {
+          "name": "Molycop Technologies Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "85 154 346 004"
+        }
+      ]
+    }
+  ]
 }

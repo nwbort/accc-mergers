@@ -103,5 +103,77 @@
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
   "competition_concerns_notice_date": "2026-05-15T12:00:00Z",
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-20007",
+      "merger_name": "Telstra \u2013 Infosys Technologies",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "TELSTRA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "64 086 174 781"
+        }
+      ],
+      "targets": [
+        {
+          "name": "INFOSYS TECHNOLOGIES LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "52 090 591 209"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-20009",
+      "merger_name": "Rocket Software \u2013 Vertica",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Rocket Software AMC UK Ltd",
+          "identifier_type": null,
+          "identifier": "UK Company number 01504593"
+        },
+        {
+          "name": "Rocket Software, Inc.",
+          "identifier_type": null,
+          "identifier": "Companies\u2019 Register of Delaware  3506913"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Micro Focus IP Development Limited",
+          "identifier_type": null,
+          "identifier": "UK Company number 07233975"
+        },
+        {
+          "name": "Open Text Corporation",
+          "identifier_type": null,
+          "identifier": "10836044"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-70014",
+      "merger_name": "Global Infrastructure Management \u2013 TCR",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "GIP V Snow Bidco Limited",
+          "identifier_type": null,
+          "identifier": "UK company number  17059583"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Envol Holdings Limited",
+          "identifier_type": null,
+          "identifier": "Jersey registration number  121115"
+        }
+      ]
+    }
+  ]
 }

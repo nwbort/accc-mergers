@@ -89,5 +89,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-20007",
+      "merger_name": "Telstra \u2013 Infosys Technologies",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "TELSTRA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "64 086 174 781"
+        }
+      ],
+      "targets": [
+        {
+          "name": "INFOSYS TECHNOLOGIES LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "52 090 591 209"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25008",
+      "merger_name": "Five V Capital - FTP Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OVERWATCH BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 739 970"
+        }
+      ],
+      "targets": [
+        {
+          "name": "FTP GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 626 217 614"
+        },
+        {
+          "name": "FAARM BIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 834 390"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-20011",
+      "merger_name": "Origin \u2013 Equity stake in Kraken",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "53 143 484 208"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CPP Investment Board Private Holdings (4) Inc.",
+          "identifier_type": null,
+          "identifier": "BN  11089340"
+        }
+      ]
+    }
+  ]
 }

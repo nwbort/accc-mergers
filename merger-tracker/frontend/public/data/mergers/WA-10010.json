@@ -94,5 +94,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-15005",
+      "merger_name": "Cvent - ON24",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Cvent Atlanta, LLC",
+          "identifier_type": null,
+          "identifier": "[Delaware corporate file number  5603939]"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ON24, Inc.",
+          "identifier_type": null,
+          "identifier": "[Delaware corporate file number  2843568]"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-75010",
+      "merger_name": "Zendesk \u2013 Forethought",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Zendesk, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 264411091"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Forethought Technologies, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35002",
+      "merger_name": "IFS \u2013 Softeon",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Fjord Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  921660460"
+        },
+        {
+          "name": "IFS North America, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  391292200"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Softeon Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 541960847"
+        }
+      ]
+    }
+  ]
 }

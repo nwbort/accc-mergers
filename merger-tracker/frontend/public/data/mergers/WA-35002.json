@@ -83,5 +83,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-30005",
+      "merger_name": "Adobe - Semrush",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Adobe Inc. (NASDAQ: ADBE)",
+          "identifier_type": null,
+          "identifier": "2748129"
+        },
+        {
+          "name": "Fenway Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "10389477"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Semrush Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "7690622"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-75006",
+      "merger_name": "Playlist \u2013 EGYM",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Saturn NewCo, Inc",
+          "identifier_type": null,
+          "identifier": "DE File number: 10449592"
+        },
+        {
+          "name": "ClassPass Aggregator, LLC",
+          "identifier_type": null,
+          "identifier": "DE File number: 6177870"
+        }
+      ],
+      "targets": [
+        {
+          "name": "EGYM SE",
+          "identifier_type": null,
+          "identifier": "HRB: 186394"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25003",
+      "merger_name": "Delinea (TPG) - StrongDM",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Delinea Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware corporation file number  3777797"
+        }
+      ],
+      "targets": [
+        {
+          "name": "StrongDM, Inc",
+          "identifier_type": null,
+          "identifier": "CIK  0001637806"
+        }
+      ]
+    }
+  ]
 }

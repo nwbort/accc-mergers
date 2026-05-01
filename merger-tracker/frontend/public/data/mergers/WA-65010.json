@@ -82,5 +82,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-65011",
+      "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "TWG HUNTER DEALERSHIPS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 695 726 348"
+        },
+        {
+          "name": "THE TRUSTEE FOR WHITE KING CORPORATE UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "70 760 893 620"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SHARTON MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "55 001 345 384"
+        },
+        {
+          "name": "N&M BURTON PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "125 935 944"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-15011",
+      "merger_name": "Danaher - Masimo",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Danaher Corporation",
+          "identifier_type": null,
+          "identifier": "213594"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Masimo Corporation",
+          "identifier_type": null,
+          "identifier": "2614702"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35002",
+      "merger_name": "IFS \u2013 Softeon",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Fjord Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  921660460"
+        },
+        {
+          "name": "IFS North America, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  391292200"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Softeon Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 541960847"
+        }
+      ]
+    }
+  ]
 }

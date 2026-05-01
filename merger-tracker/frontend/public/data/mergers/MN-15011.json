@@ -68,5 +68,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-65010",
+      "merger_name": "Honda \u2013 additional shareholding in Astemo",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Honda Motor Co., Ltd",
+          "identifier_type": null,
+          "identifier": "6010401027577"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Astemo, Ltd",
+          "identifier_type": null,
+          "identifier": "7050001007842"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-45005",
+      "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "MA MARINA FUND HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 667 241 385"
+        },
+        {
+          "name": "MA MARINA FUND TT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 666 902 245"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GGC Marketing Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "32 105 294 228"
+        },
+        {
+          "name": "QUEENSLAND & PACIFIC PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "72 081 370 685"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01075",
+      "merger_name": "Thermo Fisher - Clario Holdings",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Thermo Fisher Scientific Inc.",
+          "identifier_type": null,
+          "identifier": "042209186"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Clario Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "5977148"
+        }
+      ]
+    }
+  ]
 }

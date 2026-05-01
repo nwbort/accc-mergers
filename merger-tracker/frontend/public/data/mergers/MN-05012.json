@@ -60,5 +60,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-85017",
+      "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "MANDURAH AUTO GROUP PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "693 645 699"
+        },
+        {
+          "name": "PEEL MOTOR GROUP PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "693 645 742"
+        }
+      ],
+      "targets": [
+        {
+          "name": "WA AUTOMOTIVE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 158 702 740"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-30002",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "57 615 674 185"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HURRIKAYNE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 118 744 915"
+        },
+        {
+          "name": "WOLLONGONG CITY MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 002 019 598"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-90006",
+      "merger_name": "CARe \u2013 MotorOne Autobody",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CARE AUTOBODY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 692 619 962"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MOTORONE AUTOBODY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "98 077 935 614"
+        }
+      ]
+    }
+  ]
 }

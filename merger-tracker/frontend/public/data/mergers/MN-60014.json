@@ -60,5 +60,67 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-40009",
+      "merger_name": "Gilead - Arcellx",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Gilead Sciences, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 943047598"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Arcellx, Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 472855917"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-95002",
+      "merger_name": "Abbott Laboratories - Exact Sciences",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Badger Merger Sub I, Inc",
+          "identifier_type": null,
+          "identifier": "10389384"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Exact Sciences Corporation",
+          "identifier_type": null,
+          "identifier": "020478229"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-20013",
+      "merger_name": "Eli Lilly / Orna Therapeutics",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Eli Lilly and Company",
+          "identifier_type": null,
+          "identifier": "IRS Employer Identification Number  350470950"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Orna Therapeutics Holdings, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    }
+  ]
 }

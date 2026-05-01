@@ -132,5 +132,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-15004",
+      "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "QIC TT COMPANY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "27 694 380 973"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SCENTRE GROUP TRUST 3",
+          "identifier_type": "ABN",
+          "identifier": "11 517 229 138"
+        },
+        {
+          "name": "SCENTRE ALLIANCES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "53 098 357 521"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85018",
+      "merger_name": "Discovery Holiday Parks \u2013 Habitat Noosa Everglades Eco Camp",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "50 111 782 846"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Eco Camp Pty Ltd as trustee for the MCB Trust",
+          "identifier_type": "ACN",
+          "identifier": "615 432 016"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-70007",
+      "merger_name": "Platinum Equity Group \u2013 Burke",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Advance Holdings II, LLC",
+          "identifier_type": null,
+          "identifier": "Delaware ID  10496142"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BCI Acquisitions, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware ID  6389940"
+        }
+      ]
+    }
+  ]
 }

@@ -94,5 +94,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-15012",
+      "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OCHRE HEALTH PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "79 101 069 452"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TELEGRAPH ROAD MEDICAL SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 107 416 080"
+        },
+        {
+          "name": "The Trustee for TELEGRAPH ROAD MEDICAL SERVICES UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "94 428 158 606"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-95012",
+      "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OCHRE HEALTH PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "79 101 069 452"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Business and assets comprising Newstead Medical and Kings Meadows Medical Centre",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "A.J FAIR & T.G GARDNER & D.P KIRK",
+          "identifier_type": "ABN",
+          "identifier": "37 656 963 829"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-50007",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for the Comfy Dental Trust",
+          "identifier_type": "ABN",
+          "identifier": "59 865 563 072"
+        }
+      ]
+    }
+  ]
 }

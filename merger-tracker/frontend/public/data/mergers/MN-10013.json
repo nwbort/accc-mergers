@@ -87,5 +87,82 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-01081",
+      "merger_name": "Accenture \u2013 Faculty Science",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Accenture International B.V.",
+          "identifier_type": null,
+          "identifier": "Business registration no: KVK70797285"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Faculty Science Limited",
+          "identifier_type": null,
+          "identifier": "Company registration no: CRN08873131"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15004",
+      "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "QIC TT COMPANY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "27 694 380 973"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SCENTRE GROUP TRUST 3",
+          "identifier_type": "ABN",
+          "identifier": "11 517 229 138"
+        },
+        {
+          "name": "SCENTRE ALLIANCES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "53 098 357 521"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15014",
+      "merger_name": "Wipro - Mindsprint",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Wipro Networks Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN  199907933M"
+        },
+        {
+          "name": "Wipro Limited",
+          "identifier_type": null,
+          "identifier": "CIN L32102KA1945PLC020800"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Mindsprint Pte Limited",
+          "identifier_type": null,
+          "identifier": "UEN  202118596N"
+        },
+        {
+          "name": "Olam Holdings Pte Limited",
+          "identifier_type": null,
+          "identifier": "UEN  202110101R"
+        }
+      ]
+    }
+  ]
 }

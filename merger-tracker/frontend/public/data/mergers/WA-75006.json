@@ -138,5 +138,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-25003",
+      "merger_name": "Delinea (TPG) - StrongDM",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Delinea Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware corporation file number  3777797"
+        }
+      ],
+      "targets": [
+        {
+          "name": "StrongDM, Inc",
+          "identifier_type": null,
+          "identifier": "CIK  0001637806"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-85002",
+      "merger_name": "ServiceNow - Veza",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ServiceNow, Inc.",
+          "identifier_type": null,
+          "identifier": "5111469"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Veza Technologies, Inc.",
+          "identifier_type": null,
+          "identifier": "7791387"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35002",
+      "merger_name": "IFS \u2013 Softeon",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Fjord Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  921660460"
+        },
+        {
+          "name": "IFS North America, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  391292200"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Softeon Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 541960847"
+        }
+      ]
+    }
+  ]
 }

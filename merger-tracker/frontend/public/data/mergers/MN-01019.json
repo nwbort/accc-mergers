@@ -128,5 +128,72 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "TRESCAL (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "39 117 603 835"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TR PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 005 499 721"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01083",
+      "merger_name": "Civilmart \u2013 Taylex",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CTC PRECAST PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "12 614 966 059"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TAYLEX GROUP HOLDING CO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "50 646 051 578"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-05009",
+      "merger_name": "Genea - Embrace Fertility",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Genea Bidco SA Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 694 458"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Histon Nelson Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "144 914 965"
+        },
+        {
+          "name": "EMBRACE FERTILITY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "84 135 918 580"
+        }
+      ]
+    }
+  ]
 }

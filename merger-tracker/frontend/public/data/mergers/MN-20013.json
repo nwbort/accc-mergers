@@ -76,5 +76,72 @@
     "merger_id": "WA-01087",
     "relationship": "refiled_from",
     "merger_name": "Eli Lilly \u2013 Orna Therapeutics"
-  }
+  },
+  "similar_mergers": [
+    {
+      "merger_id": "MN-40012",
+      "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Eli Lilly and Company",
+          "identifier_type": null,
+          "identifier": "350470950 (IRS Employer Identification Number)"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CSL Behring LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-70007",
+      "merger_name": "Platinum Equity Group \u2013 Burke",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Advance Holdings II, LLC",
+          "identifier_type": null,
+          "identifier": "Delaware ID  10496142"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BCI Acquisitions, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware ID  6389940"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-60010",
+      "merger_name": "Michelin - Flexitallic",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Compagnie Financi\u00e8re Michelin SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  898 849 153"
+        },
+        {
+          "name": "Fenner America, Inc.",
+          "identifier_type": null,
+          "identifier": "USDOT  3744583"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Flexitallic Group SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  532 742 699"
+        }
+      ]
+    }
+  ]
 }

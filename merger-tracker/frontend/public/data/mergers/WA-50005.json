@@ -93,5 +93,87 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-65004",
+      "merger_name": "Kee Safety - RIS Safety",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Cielo TopCo Limited",
+          "identifier_type": null,
+          "identifier": "CRN  16320933"
+        },
+        {
+          "name": "Kee Safety (Australia) Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "694 369 116"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HALLWELD BENNETT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "15 161 086 595"
+        },
+        {
+          "name": "RIS SAFETY HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "19 668 836 351"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-20012",
+      "merger_name": "Australian Meat Group Pty Ltd - Killara Feedlot Pty Ltd",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Australian Meat Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "75 168 396 316"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Killara Feedlot Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "18 081 072 746"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-25002",
+      "merger_name": "Symal Group - Timms Group and L&D Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "SYMAL MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 602 084 471"
+        },
+        {
+          "name": "SYL TM CONTRACTING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "68 693 144 697"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TIMMS HIRE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "73 115 389 949"
+        },
+        {
+          "name": "TIMMS CONTRACTING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "30 070 456 567"
+        }
+      ]
+    }
+  ]
 }

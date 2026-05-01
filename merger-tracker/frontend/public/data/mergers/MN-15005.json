@@ -100,5 +100,82 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-10010",
+      "merger_name": "Enverus \u2013 Spatial Business Systems",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Enverus, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Spatial Business Systems Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "76 125 465 483"
+        },
+        {
+          "name": "SBS Optionco, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-70014",
+      "merger_name": "Global Infrastructure Management \u2013 TCR",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "GIP V Snow Bidco Limited",
+          "identifier_type": null,
+          "identifier": "UK company number  17059583"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Envol Holdings Limited",
+          "identifier_type": null,
+          "identifier": "Jersey registration number  121115"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-55005",
+      "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "General Atlantic",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Canada Pension Plan Investment Board",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Boats Group Holdings, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Bimini Holdings, LP",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    }
+  ]
 }

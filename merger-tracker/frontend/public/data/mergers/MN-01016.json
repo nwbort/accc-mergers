@@ -105,5 +105,72 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-01035",
+      "merger_name": "Asahi \u2013 Warehouse site on Weedman and Montgomery Streets, Redbank (Qld)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ASAHI HOLDINGS (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 135 315 767"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GTA INDUSTRIAL CUSTODIAN PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "45 081 823 743"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-50012",
+      "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ASPHALT OPERATORS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 682 698 282"
+        }
+      ],
+      "targets": [
+        {
+          "name": "COLAS QUEENSLAND PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "91 169 872 208"
+        },
+        {
+          "name": "COLAS AUSTRALIA GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 000 388 161"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-15011",
+      "merger_name": "Danaher - Masimo",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Danaher Corporation",
+          "identifier_type": null,
+          "identifier": "213594"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Masimo Corporation",
+          "identifier_type": null,
+          "identifier": "2614702"
+        }
+      ]
+    }
+  ]
 }

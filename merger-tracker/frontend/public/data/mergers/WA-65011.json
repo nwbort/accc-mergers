@@ -88,5 +88,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-85017",
+      "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "MANDURAH AUTO GROUP PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "693 645 699"
+        },
+        {
+          "name": "PEEL MOTOR GROUP PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "693 645 742"
+        }
+      ],
+      "targets": [
+        {
+          "name": "WA AUTOMOTIVE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 158 702 740"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-75011",
+      "merger_name": "Autosports Group - Solitaire Automotive Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AUTOSPORTS GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "54 614 505 261"
+        }
+      ],
+      "targets": [
+        {
+          "name": "David Smoker",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Russleigh Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "052 977 198"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-25001",
+      "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ALBANY MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "95 676 040 341"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Esperance Motor Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "57 121 986 016"
+        },
+        {
+          "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST",
+          "identifier_type": "ABN",
+          "identifier": "80 701 405 315"
+        }
+      ]
+    }
+  ]
 }

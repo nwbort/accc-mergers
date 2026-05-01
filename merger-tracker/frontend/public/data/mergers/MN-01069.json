@@ -126,5 +126,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-80007",
+      "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Admiral AU Bidco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 801 195"
+        },
+        {
+          "name": "Admiral AU Holdco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 791 710"
+        }
+      ],
+      "targets": [
+        {
+          "name": "EPTEC MARINE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "49 118 319 547"
+        },
+        {
+          "name": "EPTEC BIDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "12 638 785 378"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55016",
+      "merger_name": "Zurich - ClearView",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 008 423 372"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLEARVIEW WEALTH LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "83 106 248 248"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "TRESCAL (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "39 117 603 835"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TR PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 005 499 721"
+        }
+      ]
+    }
+  ]
 }

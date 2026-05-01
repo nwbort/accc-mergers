@@ -94,5 +94,82 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-40010",
+      "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "GT Silver BidCo, Inc.",
+          "identifier_type": null,
+          "identifier": "413417606"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Clearwater Analytics Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "00140838"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35011",
+      "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "50 142 485 470"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NORANDA PACIFIC PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 006 864 802"
+        },
+        {
+          "name": "Noranda Pacific No. 2 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "158 936 264"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-45001",
+      "merger_name": "Paragon Care \u2013 Presidental",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "PARAGON CARE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "76 064 551 426"
+        },
+        {
+          "name": "CLIFFORD HALLAM HEALTHCARE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "38 001 655 554"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ROCKPAC SOUTH PACIFIC PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "40 639 100 422"
+        },
+        {
+          "name": "PRESIDENTAL PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "77 002 697 896"
+        }
+      ]
+    }
+  ]
 }

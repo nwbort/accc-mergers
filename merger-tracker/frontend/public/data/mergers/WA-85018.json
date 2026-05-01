@@ -102,5 +102,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-15004",
+      "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "QIC TT COMPANY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "27 694 380 973"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SCENTRE GROUP TRUST 3",
+          "identifier_type": "ABN",
+          "identifier": "11 517 229 138"
+        },
+        {
+          "name": "SCENTRE ALLIANCES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "53 098 357 521"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-45010",
+      "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "LGPE SEC S.C. Sp",
+          "identifier_type": null,
+          "identifier": "Luxembourg Company Registration Number: B281514"
+        },
+        {
+          "name": "Crown Growth Opportunities IV SCSp-RAIF",
+          "identifier_type": null,
+          "identifier": "Luxembourg Company Registration Number: B254394"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ADVANCED NAVIGATION PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "49 156 101 549"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-10006",
+      "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AVC Operations Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "81 607 832 299"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "70 075 074 930"
+        },
+        {
+          "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
+          "identifier_type": "ACN",
+          "identifier": "604 221 801"
+        }
+      ]
+    }
+  ]
 }

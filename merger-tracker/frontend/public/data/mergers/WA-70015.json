@@ -84,5 +84,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "INSURANCE AUSTRALIA GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "60 090 739 923"
+        }
+      ],
+      "targets": [
+        {
+          "name": "RAC INSURANCE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "59 094 685 882"
+        },
+        {
+          "name": "RACI PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "40 008 671 805"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-60013",
+      "merger_name": "Export Trading Group Australia \u2013 pulses and grains business and facility in Mount Tyson, QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ETG QUEENSLAND PROCESSING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 695 139 032"
+        }
+      ],
+      "targets": [
+        {
+          "name": "QUEENSLAND COTTON CORPORATION PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "26 010 944 591"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-10005",
+      "merger_name": "Apex - Mercer Administration Services and related assets",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Apex Group Holdings (Australia) Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "48 112 252 114"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "83 068 908 912"
+        },
+        {
+          "name": "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "48 616 275 980"
+        }
+      ]
+    }
+  ]
 }

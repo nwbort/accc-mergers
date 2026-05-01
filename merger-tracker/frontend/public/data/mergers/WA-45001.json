@@ -88,5 +88,92 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-75003",
+      "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "36 003 184 889"
+        },
+        {
+          "name": "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "44 078 881 473"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HEALTHSCOPE OPERATIONS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 006 405 152"
+        },
+        {
+          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 146 342 814"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-10014",
+      "merger_name": "Turner Family Entities - Pedal Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Hootie Blowfish Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "605 475 992"
+        },
+        {
+          "name": "COUNTING CROWS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "19 659 478 485"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Pedal Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "67 131 402 278"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-40004",
+      "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005"
+        },
+        {
+          "name": "VETS CENTRAL HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 652 812 256"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Gawler Animal Hospital Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "87 160 265 109"
+        },
+        {
+          "name": "GAH 2.0 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "76 666 800 666"
+        }
+      ]
+    }
+  ]
 }

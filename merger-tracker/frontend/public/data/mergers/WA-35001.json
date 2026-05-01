@@ -87,5 +87,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-01071",
+      "merger_name": "CSE Crosscom \u2013 Progility",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CSE CROSSCOM PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 606 614 500"
+        },
+        {
+          "name": "CSE-Global (Australia) Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "85 109 958 090"
+        }
+      ],
+      "targets": [
+        {
+          "name": "PROGILITY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 131 639 837"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15008",
+      "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Global Garella, S.L.",
+          "identifier_type": null,
+          "identifier": "Spanish Tax Identification Number  B24904989"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ayesa Engineering, S.A.U.",
+          "identifier_type": null,
+          "identifier": "Spanish Tax Identification Number  A91379875"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01058",
+      "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Caterpillar Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "RPMGLOBAL HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "17 010 672 321"
+        }
+      ]
+    }
+  ]
 }

@@ -88,5 +88,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-40002",
+      "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "HOTEL MAROOCHYDORE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 140 651 887"
+        },
+        {
+          "name": "SCHF PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 644 329 733"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for Kingston Family Trust",
+          "identifier_type": "ABN",
+          "identifier": "96 328 946 230"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-60017",
+      "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "REDCAPE HOTEL GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 139 067 244"
+        },
+        {
+          "name": "MAHF CUSTODIAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 619 512 060"
+        }
+      ],
+      "targets": [
+        {
+          "name": "REDBRAN PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "34 003 920 232"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-50007",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for the Comfy Dental Trust",
+          "identifier_type": "ABN",
+          "identifier": "59 865 563 072"
+        }
+      ]
+    }
+  ]
 }

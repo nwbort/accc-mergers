@@ -99,5 +99,87 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-60007",
+      "merger_name": "Craig Mostyn \u2013 Patmore Feeds",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CRAIG MOSTYN HOLDINGS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "14 008 398 356"
+        },
+        {
+          "name": "CRAIG MOSTYN FARMS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 127 068 115"
+        }
+      ],
+      "targets": [
+        {
+          "name": "PATMORE FEEDS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 644 620 673"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-65004",
+      "merger_name": "Kee Safety - RIS Safety",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Cielo TopCo Limited",
+          "identifier_type": null,
+          "identifier": "CRN  16320933"
+        },
+        {
+          "name": "Kee Safety (Australia) Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "694 369 116"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HALLWELD BENNETT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "15 161 086 595"
+        },
+        {
+          "name": "RIS SAFETY HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "19 668 836 351"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-30005",
+      "merger_name": "Adobe - Semrush",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Adobe Inc. (NASDAQ: ADBE)",
+          "identifier_type": null,
+          "identifier": "2748129"
+        },
+        {
+          "name": "Fenway Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "10389477"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Semrush Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "7690622"
+        }
+      ]
+    }
+  ]
 }

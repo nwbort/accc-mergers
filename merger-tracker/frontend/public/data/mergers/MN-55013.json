@@ -76,5 +76,67 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-95009",
+      "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in Bankstown and Yagoona, NSW",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "MCDONALD'S AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "43 008 496 928"
+        }
+      ],
+      "targets": [
+        {
+          "name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST",
+          "identifier_type": "ACN",
+          "identifier": "601 504 590"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-10009",
+      "merger_name": "SoftBank \u2013 DigitalBridge",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Duncan Holdco III LLC",
+          "identifier_type": null,
+          "identifier": "State of Delaware Company File Number  10510961"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DigitalBridge Group, Inc.",
+          "identifier_type": null,
+          "identifier": "IRS  464591526"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-40005",
+      "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Aqua Adhesives I GmbH",
+          "identifier_type": null,
+          "identifier": "Swiss registration number: CH170.4.019.1870"
+        }
+      ]
+    }
+  ]
 }

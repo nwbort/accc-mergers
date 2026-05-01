@@ -132,5 +132,67 @@
     "merger_id": "WA-70003",
     "relationship": "refiled_from",
     "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury"
-  }
+  },
+  "similar_mergers": [
+    {
+      "merger_id": "MN-15013",
+      "merger_name": "Journey Beyond \u2013 Kakadu Crocodile Hotel",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "JB KAKADU HOTEL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 692 273 591"
+        }
+      ],
+      "targets": [
+        {
+          "name": "KAKADU TOURISM (GCH) PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "50 087 366 612"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-60013",
+      "merger_name": "Export Trading Group Australia \u2013 pulses and grains business and facility in Mount Tyson, QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ETG QUEENSLAND PROCESSING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 695 139 032"
+        }
+      ],
+      "targets": [
+        {
+          "name": "QUEENSLAND COTTON CORPORATION PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "26 010 944 591"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-95002",
+      "merger_name": "Abbott Laboratories - Exact Sciences",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Badger Merger Sub I, Inc",
+          "identifier_type": null,
+          "identifier": "10389384"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Exact Sciences Corporation",
+          "identifier_type": null,
+          "identifier": "020478229"
+        }
+      ]
+    }
+  ]
 }

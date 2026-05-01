@@ -89,5 +89,77 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-05008",
+      "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Rosa Investments Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "UEN 202340014H (Accounting and Corporate Regulatory Authority of Singapore)"
+        },
+        {
+          "name": "GG12 S.p.A.",
+          "identifier_type": null,
+          "identifier": "14436160965 (Italy)"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Permira VII Investment Platform Limited",
+          "identifier_type": null,
+          "identifier": "12263614 (UK Tax number)"
+        },
+        {
+          "name": "Golden Goose Group S.p.A.",
+          "identifier_type": null,
+          "identifier": "11212510967 (Partita IVA \u2013 Italy)"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-65009",
+      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CVC Capital Partners plc",
+          "identifier_type": null,
+          "identifier": "140080"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-65008",
+      "merger_name": "REA Group - Simplicity Loans & Advisory",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "REA FINANCIAL SERVICES HOLDING CO. PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "38 649 505 386"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SIMPLICITY LOANS & ADVISORY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "98 616 763 878"
+        }
+      ]
+    }
+  ]
 }

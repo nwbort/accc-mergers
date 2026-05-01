@@ -108,5 +108,87 @@
     "merger_id": "WA-35003",
     "relationship": "refiled_from",
     "merger_name": "Salesforce \u2013 Qualified"
-  }
+  },
+  "similar_mergers": [
+    {
+      "merger_id": "WA-15003",
+      "merger_name": "Coforge - Encora",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Coforge Limited",
+          "identifier_type": null,
+          "identifier": "L72100HR1992PLC128382"
+        },
+        {
+          "name": "Encora Holdco Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Encora US Holdco, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Encora Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55006",
+      "merger_name": "Hg Capital - OneStream",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Hg Pooled Management Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "OnwardAcquireCo, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "OneStream, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35011",
+      "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "50 142 485 470"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NORANDA PACIFIC PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 006 864 802"
+        },
+        {
+          "name": "Noranda Pacific No. 2 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "158 936 264"
+        }
+      ]
+    }
+  ]
 }

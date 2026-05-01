@@ -75,5 +75,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-40008",
+      "merger_name": "Intrepid Travel - Wild Bush Luxury",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "INTREPID TRAVEL PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "35 007 172 456"
+        }
+      ],
+      "targets": [
+        {
+          "name": "WILD BUSH LUXURY EXPERIENCE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 648 431 734"
+        },
+        {
+          "name": "EXPERIENCE CO LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "56 167 320 470"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-70003",
+      "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "INTREPID TRAVEL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "35 007 172 456"
+        }
+      ],
+      "targets": [
+        {
+          "name": "EXPERIENCE CO LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "56 167 320 470"
+        },
+        {
+          "name": "WILD BUSH LUXURY EXPERIENCE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 648 431 734"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-95002",
+      "merger_name": "Abbott Laboratories - Exact Sciences",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Badger Merger Sub I, Inc",
+          "identifier_type": null,
+          "identifier": "10389384"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Exact Sciences Corporation",
+          "identifier_type": null,
+          "identifier": "020478229"
+        }
+      ]
+    }
+  ]
 }

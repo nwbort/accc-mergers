@@ -103,5 +103,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-25003",
+      "merger_name": "Delinea (TPG) - StrongDM",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Delinea Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware corporation file number  3777797"
+        }
+      ],
+      "targets": [
+        {
+          "name": "StrongDM, Inc",
+          "identifier_type": null,
+          "identifier": "CIK  0001637806"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35002",
+      "merger_name": "IFS \u2013 Softeon",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Fjord Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  921660460"
+        },
+        {
+          "name": "IFS North America, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  391292200"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Softeon Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 541960847"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-50014",
+      "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Searchlight Capital IV LP",
+          "identifier_type": null,
+          "identifier": "US SEC  0001954453"
+        },
+        {
+          "name": "KONA Merger Sub Co.",
+          "identifier_type": null,
+          "identifier": "Delaware  10525073"
+        }
+      ],
+      "targets": [
+        {
+          "name": "KORE Group Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware  5388903"
+        }
+      ]
+    }
+  ]
 }

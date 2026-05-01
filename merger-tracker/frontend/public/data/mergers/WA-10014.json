@@ -104,5 +104,82 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-20012",
+      "merger_name": "Australian Meat Group Pty Ltd - Killara Feedlot Pty Ltd",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Australian Meat Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "75 168 396 316"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Killara Feedlot Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "18 081 072 746"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-45001",
+      "merger_name": "Paragon Care \u2013 Presidental",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "PARAGON CARE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "76 064 551 426"
+        },
+        {
+          "name": "CLIFFORD HALLAM HEALTHCARE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "38 001 655 554"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ROCKPAC SOUTH PACIFIC PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "40 639 100 422"
+        },
+        {
+          "name": "PRESIDENTAL PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "77 002 697 896"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "INSURANCE AUSTRALIA GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "60 090 739 923"
+        }
+      ],
+      "targets": [
+        {
+          "name": "RAC INSURANCE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "59 094 685 882"
+        },
+        {
+          "name": "RACI PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "40 008 671 805"
+        }
+      ]
+    }
+  ]
 }

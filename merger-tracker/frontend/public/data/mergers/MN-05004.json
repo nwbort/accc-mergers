@@ -109,5 +109,72 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-45009",
+      "merger_name": "Idemitsu - MidOcean Energy",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "IDEMITSU EUROPE LTD.",
+          "identifier_type": null,
+          "identifier": "UK Company Number 17103829"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MidOcean Holdings II L.P.",
+          "identifier_type": null,
+          "identifier": "SL036455"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-30002",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "57 615 674 185"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HURRIKAYNE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 118 744 915"
+        },
+        {
+          "name": "WOLLONGONG CITY MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 002 019 598"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-70008",
+      "merger_name": "Tetra Tech \u2013 Providence Consulting",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "TETRA TECH AUSTRALIA GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 676 488 716"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Providence Consulting Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "49 117 321 552"
+        }
+      ]
+    }
+  ]
 }

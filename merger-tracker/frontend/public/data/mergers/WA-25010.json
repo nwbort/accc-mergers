@@ -102,5 +102,72 @@
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
-  "public_benefits_determination_date": null
+  "public_benefits_determination_date": null,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-45007",
+      "merger_name": "Henkel \u2013 Stahl",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number, 854017447, CCI 60683945"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Stahl Holdings B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number (KVK): 34249320"
+        },
+        {
+          "name": "Stahl Asia Pacific Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "Singapore registration number: 200606884Z"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-50007",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for the Comfy Dental Trust",
+          "identifier_type": "ABN",
+          "identifier": "59 865 563 072"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85013",
+      "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TAN DENTAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 146 067 594"
+        }
+      ]
+    }
+  ]
 }

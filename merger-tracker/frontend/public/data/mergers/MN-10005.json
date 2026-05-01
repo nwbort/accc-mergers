@@ -113,5 +113,72 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-15010",
+      "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 167 960 018"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BMM PARTNERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 649 113 959"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-65008",
+      "merger_name": "REA Group - Simplicity Loans & Advisory",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "REA FINANCIAL SERVICES HOLDING CO. PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "38 649 505 386"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SIMPLICITY LOANS & ADVISORY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "98 616 763 878"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-95010",
+      "merger_name": "Lighthouse - Precise Services Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "LIGHTHOUSE SERVICE PARTNERS BIDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "91 685 113 197"
+        }
+      ],
+      "targets": [
+        {
+          "name": "PRECISE TRADE SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 167 424 562"
+        },
+        {
+          "name": "SA Pipe Relining Pty. Ltd.",
+          "identifier_type": "ABN",
+          "identifier": "89 125 590 276"
+        }
+      ]
+    }
+  ]
 }

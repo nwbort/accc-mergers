@@ -105,5 +105,82 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-50012",
+      "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ASPHALT OPERATORS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 682 698 282"
+        }
+      ],
+      "targets": [
+        {
+          "name": "COLAS QUEENSLAND PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "91 169 872 208"
+        },
+        {
+          "name": "COLAS AUSTRALIA GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 000 388 161"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-30002",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "57 615 674 185"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HURRIKAYNE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 118 744 915"
+        },
+        {
+          "name": "WOLLONGONG CITY MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 002 019 598"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-45002",
+      "merger_name": "eBay / Depop",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "eBay Inc.",
+          "identifier_type": null,
+          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Etsy, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Depop Limited",
+          "identifier_type": null,
+          "identifier": "UK Company Registration Number  08316342"
+        }
+      ]
+    }
+  ]
 }

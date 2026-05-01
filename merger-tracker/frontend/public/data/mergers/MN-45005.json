@@ -144,5 +144,77 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "has_questionnaire": true
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-60017",
+      "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "REDCAPE HOTEL GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 139 067 244"
+        },
+        {
+          "name": "MAHF CUSTODIAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 619 512 060"
+        }
+      ],
+      "targets": [
+        {
+          "name": "REDBRAN PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "34 003 920 232"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-80006",
+      "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "RUSSELL INVESTMENT GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "92 003 066 859"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "56 063 278 400"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85004",
+      "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Treysta Wealth Management Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "87 151 156 222"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Locumsgroup Private Accounting Services Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "66 116 993 670"
+        },
+        {
+          "name": "Locumsgroup Asset Management Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "71 113 009 626"
+        }
+      ]
+    }
+  ]
 }
