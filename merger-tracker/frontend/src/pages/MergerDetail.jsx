@@ -459,7 +459,7 @@ function MergerDetail() {
         {merger.similar_mergers && merger.similar_mergers.length > 0 && (
           <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mt-6">
             <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
-              Similar Mergers
+              You might be interested in
             </h2>
             <div className="divide-y divide-gray-50">
               {merger.similar_mergers.map((similar) => (
