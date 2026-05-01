@@ -179,7 +179,7 @@ function Industries() {
               return (
                 <Fragment key={industry.code}>
                   <tr
-                    className="hover:bg-gray-50/50 cursor-pointer transition-colors"
+                    className="hover:bg-gray-50/50 cursor-pointer transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"
                     onClick={() => toggleIndustry(industry.code, industry.name)}
                     onKeyDown={(e) => {
                       if (e.key === 'Enter' || e.key === ' ') {

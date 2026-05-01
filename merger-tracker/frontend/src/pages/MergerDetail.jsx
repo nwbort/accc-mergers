@@ -263,7 +263,7 @@ function MergerDetail() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
-                      aria-label={`View determination document: ${merger.accc_determination}`}
+                      aria-label={`View determination document: ${merger.accc_determination} (opens in new tab)`}
                     >
                       {merger.accc_determination}
                       <ExternalLinkIcon />

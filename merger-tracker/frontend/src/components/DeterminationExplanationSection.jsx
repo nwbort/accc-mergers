@@ -231,6 +231,7 @@ function DeterminationExplanationSection({ merger }) {
             >
               View determination document
               <ExternalLinkIcon className="h-3 w-3" />
+              <span className="sr-only">(opens in new tab)</span>
             </a>
           </div>
         )}

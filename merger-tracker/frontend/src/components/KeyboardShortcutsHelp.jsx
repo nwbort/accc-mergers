@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 const shortcuts = [
   { keys: ['/'], description: 'Focus search' },
@@ -24,6 +24,9 @@ function Kbd({ children }) {
 }
 
 export default function KeyboardShortcutsHelp({ isOpen, onClose }) {
+  const dialogRef = useRef(null);
+  const previouslyFocusedRef = useRef(null);
+
   useEffect(() => {
     if (!isOpen) return;
     const handleKey = (e) => {
@@ -35,6 +38,40 @@ export default function KeyboardShortcutsHelp({ isOpen, onClose }) {
     window.addEventListener('keydown', handleKey);
     return () => window.removeEventListener('keydown', handleKey);
   }, [isOpen, onClose]);
+
+  // Focus trap + focus restoration
+  useEffect(() => {
+    if (!isOpen) return;
+    previouslyFocusedRef.current = document.activeElement;
+
+    const dialog = dialogRef.current;
+    const focusables = dialog?.querySelectorAll(
+      'button, [href], input, [tabindex]:not([tabindex="-1"])'
+    );
+    focusables?.[0]?.focus();
+
+    const handleTab = (e) => {
+      if (e.key !== 'Tab' || !dialog) return;
+      const items = dialog.querySelectorAll(
+        'button, [href], input, [tabindex]:not([tabindex="-1"])'
+      );
+      if (items.length === 0) return;
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    };
+    document.addEventListener('keydown', handleTab);
+    return () => {
+      document.removeEventListener('keydown', handleTab);
+      previouslyFocusedRef.current?.focus?.();
+    };
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
@@ -48,6 +85,7 @@ export default function KeyboardShortcutsHelp({ isOpen, onClose }) {
     >
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
       <div
+        ref={dialogRef}
         className="relative bg-white rounded-2xl shadow-xl border border-gray-100 max-w-sm w-full p-6 animate-fade-in"
         onClick={(e) => e.stopPropagation()}
       >
@@ -55,7 +93,7 @@ export default function KeyboardShortcutsHelp({ isOpen, onClose }) {
           <h2 className="text-lg font-semibold text-gray-900">Keyboard shortcuts</h2>
           <button
             onClick={onClose}
-            className="p-1 text-gray-400 hover:text-gray-600 transition-colors rounded-lg"
+            className="p-1 text-gray-400 hover:text-gray-600 transition-colors rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             aria-label="Close shortcuts help"
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">

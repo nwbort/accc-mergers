@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 
 function CollapsibleCard({ icon, iconBgClass = 'bg-gray-100', title, subtitle, onExpand, children }) {
   const [isExpanded, setIsExpanded] = useState(false);
+  const panelId = useId();
 
   const handleToggle = () => {
     const next = !isExpanded;
@@ -14,8 +15,9 @@ function CollapsibleCard({ icon, iconBgClass = 'bg-gray-100', title, subtitle, o
       <button
         type="button"
         onClick={handleToggle}
-        className="w-full text-left p-6 flex items-center justify-between gap-4 hover:bg-gray-50/50 transition-colors"
+        className="w-full text-left p-6 flex items-center justify-between gap-4 hover:bg-gray-50/50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary"
         aria-expanded={isExpanded}
+        aria-controls={panelId}
       >
         <div className="flex items-center gap-3 min-w-0">
           <div className={`flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center ${iconBgClass}`}>
@@ -42,7 +44,7 @@ function CollapsibleCard({ icon, iconBgClass = 'bg-gray-100', title, subtitle, o
       </button>
 
       {isExpanded && (
-        <div className="px-6 pb-6 border-t border-gray-100">
+        <div id={panelId} className="px-6 pb-6 border-t border-gray-100">
           {children}
         </div>
       )}
