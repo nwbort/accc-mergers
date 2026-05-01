@@ -71,12 +71,15 @@ export function useKeyboardShortcuts({ onToggleHelp } = {}) {
         return;
       }
 
-      // "/" to focus search
+      // "/" to focus search — prefer an in-page search input if the page has
+      // one (Mergers, Industries); otherwise fall back to the navbar search.
       if (e.key === '/') {
+        e.preventDefault();
         const searchInput = document.getElementById('search');
         if (searchInput) {
-          e.preventDefault();
           searchInput.focus();
+        } else {
+          window.dispatchEvent(new CustomEvent('focus-navbar-search'));
         }
         return;
       }

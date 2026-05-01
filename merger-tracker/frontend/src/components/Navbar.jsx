@@ -65,6 +65,22 @@ function Navbar() {
   }, [searchOpen]);
 
   useEffect(() => {
+    const handleFocusNavbarSearch = () => {
+      if (window.matchMedia('(min-width: 640px)').matches) {
+        setSearchOpen(true);
+        if (searchInputRef.current) {
+          searchInputRef.current.focus();
+        }
+      } else {
+        focusMobileSearchRef.current = true;
+        setMobileMenuOpen(true);
+      }
+    };
+    window.addEventListener('focus-navbar-search', handleFocusNavbarSearch);
+    return () => window.removeEventListener('focus-navbar-search', handleFocusNavbarSearch);
+  }, []);
+
+  useEffect(() => {
     if (mobileMenuOpen && focusMobileSearchRef.current && mobileSearchInputRef.current) {
       mobileSearchInputRef.current.focus();
       focusMobileSearchRef.current = false;
