@@ -236,8 +236,9 @@ def stat_card(count: int, label: str, color: dict, anchor: str, width: str = "16
         f'<td width="{width}" style="padding:4px 3px;">'
         f'<a href="{url}" style="text-decoration:none;display:block;">'
         f'<table width="100%" cellpadding="0" cellspacing="0" border="0">'
-        f'<tr><td style="background:{color["pale"]};border-radius:8px;'
-        f'padding:12px 6px;text-align:center;border:1px solid {color["border"]}33;">'
+        f'<tr><td height="86" style="background:{color["pale"]};border-radius:8px;'
+        f'padding:12px 6px;text-align:center;border:1px solid {color["border"]}33;'
+        f'height:86px;vertical-align:middle;">'
         f'<div style="color:{color["border"]};font-size:26px;font-weight:700;line-height:1;">'
         f"{count}</div>"
         f'<div style="color:{color["dark"]};font-size:11px;font-weight:500;'
