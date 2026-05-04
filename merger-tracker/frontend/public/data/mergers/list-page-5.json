@@ -1,6 +1,54 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-25016",
+      "merger_name": "Hostplus \u2013 CH Investment Holding Trust",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-16T12:00:00Z",
+      "determination_publication_date": "2026-05-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "HOST-PLUS PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "79 008 634 704"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CH Investment Holding Trust",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Charter Hall Property Trust",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Charter Hall Prime Office Fund 1",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6330",
+          "name": "Superannuation Funds"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hostplus-%E2%80%93-ch-investment-holding-trust"
+    },
+    {
       "merger_id": "WA-60017",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
       "status": "Assessment completed",
@@ -415,6 +463,59 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/gilead-ouro"
+    },
+    {
+      "merger_id": "WA-70016",
+      "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-22T12:00:00Z",
+      "determination_publication_date": "2026-05-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "OCEANIA CAPITAL PARTNERS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "52 111 554 360"
+        },
+        {
+          "name": "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "HUDSON HIGHLAND (APAC) PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "14 074 319 396"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "HUDSON GLOBAL RESOURCES (AUST) PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "21 002 888 762"
+        },
+        {
+          "name": "The Trustee for Apache Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "91 171 649 407"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7211",
+          "name": "Employment Placement and Recruitment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/oceania-capital-partners-hudson-global-resources-aust"
     },
     {
       "merger_id": "WA-55015",

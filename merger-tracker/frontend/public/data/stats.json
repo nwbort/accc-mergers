@@ -1,6 +1,6 @@
 {
   "total_mergers": 89,
-  "total_waivers": 126,
+  "total_waivers": 128,
   "by_status": {
     "Assessment completed": 60,
     "Under assessment": 29
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 116,
+    "Approved": 118,
     "Not approved": 10
   },
   "phase_duration": {
@@ -40,7 +40,7 @@
     },
     {
       "name": "Financial Asset Investing",
-      "count": 22
+      "count": 23
     },
     {
       "name": "Software Publishing",
@@ -52,7 +52,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 10
+      "count": 11
     },
     {
       "name": "Scientific Research Services",
@@ -119,6 +119,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70016",
+      "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
+      "determination": "Approved",
+      "determination_date": "2026-05-04T12:00:00Z",
+      "page_modified_datetime": "2026-05-04T18:26:11+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-25016",
+      "merger_name": "Hostplus \u2013 CH Investment Holding Trust",
+      "determination": "Approved",
+      "determination_date": "2026-05-04T12:00:00Z",
+      "page_modified_datetime": "2026-05-04T18:13:30+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-35013",
       "merger_name": "Estia Health \u2013 Norsan residential aged care business",
       "determination": "Approved",
@@ -154,26 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-01T12:00:00Z",
       "page_modified_datetime": "2026-05-01T17:16:57+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-55017",
-      "merger_name": "Coles - Leasehold interest in shopping centre on Capricorn Highway, Emerald, QLD",
-      "determination": "Approved",
-      "determination_date": "2026-05-01T12:00:00Z",
-      "page_modified_datetime": "2026-05-01T17:13:57+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-65012",
-      "merger_name": "Savvy Games Group \u2013 Moonton",
-      "determination": "Approved",
-      "determination_date": "2026-04-30T12:00:00Z",
-      "page_modified_datetime": "2026-04-30T17:30:30+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
