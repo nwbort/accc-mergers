@@ -22,6 +22,7 @@ Output files:
   - commentary.json             - Mergers with user commentary
   - analysis.json               - Pre-computed analysis data
   - questionnaires/{id}.json    - Lazy-loaded questionnaire files
+  - noccs/{id}.json             - Lazy-loaded NOCC summary files
 """
 
 import json
@@ -31,6 +32,7 @@ from static_data.enrichment import enrich_merger, link_related_mergers, link_sim
 from static_data.loaders import (
     load_commentary,
     load_mergers,
+    load_nocc_data,
     load_questionnaire_data,
     load_related_mergers,
     load_similar_mergers,
@@ -41,6 +43,7 @@ from static_data.outputs import (
     individual,
     industries,
     list as list_out,
+    noccs,
     questionnaires,
     stats,
     timeline,
@@ -70,6 +73,13 @@ def main():
         if questionnaire_data else "No questionnaire data found"
     )
 
+    print("Loading nocc_data.json...")
+    nocc_data = load_nocc_data()
+    print(
+        f"Loaded NOCC data for {len(nocc_data)} merger(s)"
+        if nocc_data else "No NOCC data found"
+    )
+
     related_mergers = load_related_mergers()
     if related_mergers:
         print(f"Loaded {len(related_mergers) // 2} related merger pair(s)")
@@ -79,7 +89,9 @@ def main():
         print(f"Loaded similar merger suggestions for {len(similar_mergers)} merger(s)")
 
     print("Enriching mergers...")
-    enriched = [enrich_merger(m, commentary, questionnaire_data) for m in mergers]
+    enriched = [
+        enrich_merger(m, commentary, questionnaire_data, nocc_data) for m in mergers
+    ]
     linked = link_related_mergers(enriched, related_mergers)
     if linked:
         print(f"  Linked {linked} related merger pairs")
@@ -131,6 +143,11 @@ def main():
         print("\nGenerating questionnaire files...")
         q_count = questionnaires.generate(questionnaire_data, OUTPUT_DIR)
         print(f"✓ Generated {q_count} questionnaire files in {OUTPUT_DIR / 'questionnaires'}")
+
+    if nocc_data:
+        print("\nGenerating NOCC files...")
+        n_count = noccs.generate(nocc_data, OUTPUT_DIR)
+        print(f"✓ Generated {n_count} NOCC files in {OUTPUT_DIR / 'noccs'}")
 
     print("\nDone!")
 

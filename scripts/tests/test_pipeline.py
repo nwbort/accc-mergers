@@ -716,6 +716,14 @@ from static_data.loaders import load_questionnaire_data
 from static_data.outputs.commentary import generate as generate_commentary_json
 from static_data.outputs.industries import generate_index as generate_industries_json
 from static_data.outputs.questionnaires import generate as generate_questionnaire_files
+from static_data.outputs.noccs import generate as generate_nocc_files
+from parse_nocc import (
+    _parse_blocks,
+    _group_blocks_into_sections,
+    _is_top_level_heading,
+    _is_sub_heading,
+    _is_nocc_filename,
+)
 
 
 class TestIsChristmasNewYearPeriod:
@@ -1241,3 +1249,337 @@ class TestGenerateQuestionnaireFiles:
         with open(tmp_path / "questionnaires" / "MN-01016.json") as f:
             data = json.load(f)
         assert 'file_path' not in data
+
+
+# ---------------------------------------------------------------------------
+# parse_nocc: filename detection
+# ---------------------------------------------------------------------------
+
+class TestIsNoccFilename:
+    def test_full_phrase(self):
+        assert _is_nocc_filename(
+            'Coles_Kalgoorlie - Final - Summary of Notice of Competition Concerns - March 2026.pdf'
+        )
+
+    def test_abbreviation(self):
+        assert _is_nocc_filename('Ampol_EG - NOCC summary - AR version - 2 March 2026.pdf')
+
+    def test_case_insensitive(self):
+        assert _is_nocc_filename('NOTICE OF COMPETITION CONCERNS.PDF')
+
+    def test_must_be_pdf(self):
+        assert not _is_nocc_filename('Notice of Competition Concerns.docx')
+
+    def test_unrelated_pdf_rejected(self):
+        assert not _is_nocc_filename('Phase 2 Notice - Redacted.pdf')
+
+    def test_questionnaire_rejected(self):
+        assert not _is_nocc_filename('Questionnaire - Coles - 28.11.2025.pdf')
+
+
+# ---------------------------------------------------------------------------
+# parse_nocc: heading detection from font metadata
+# ---------------------------------------------------------------------------
+
+def _line(text, size=11.04, bold=False, italic=False):
+    return {'text': text, 'size': size, 'bold': bold, 'italic': italic, 'y': 0}
+
+
+class TestIsTopLevelHeading:
+    def test_numbered_heading_at_h1_size(self):
+        assert _is_top_level_heading(_line('1. Introduction', size=18.0, bold=True))
+
+    def test_numbered_heading_no_space(self):
+        # Real NOCCs sometimes drop the space between "1." and the title.
+        assert _is_top_level_heading(_line('1.Introduction', size=18.0, bold=True))
+
+    def test_body_sized_numbered_line_is_not_h1(self):
+        assert not _is_top_level_heading(_line('1.1. Some paragraph', size=11.04))
+
+    def test_unnumbered_heading_is_not_h1(self):
+        assert not _is_top_level_heading(_line('The Acquisition', size=14.0, bold=True))
+
+
+class TestIsSubHeading:
+    def test_bold_14pt(self):
+        assert _is_sub_heading(_line('The Acquisition', size=14.04, bold=True))
+
+    def test_regular_14pt(self):
+        # Sub-sub-headings such as "Grocery retailing in Australia" render at
+        # 14pt without bold and must still be detected.
+        assert _is_sub_heading(_line('Grocery retailing in Australia', size=14.04))
+
+    def test_top_level_heading_excluded(self):
+        # An H1-sized numbered line is the top-level case and must not also
+        # match the sub-heading rule.
+        assert not _is_sub_heading(_line('1. Introduction', size=18.0, bold=True))
+
+    def test_numbered_paragraph_excluded(self):
+        assert not _is_sub_heading(_line('1.1 Some paragraph', size=14.04, bold=True))
+
+    def test_bullet_excluded(self):
+        assert not _is_sub_heading(_line('▪ a point', size=14.04, bold=True))
+
+
+# ---------------------------------------------------------------------------
+# parse_nocc: _parse_blocks
+# ---------------------------------------------------------------------------
+
+class TestParseNoccBlocks:
+    def test_top_level_heading_then_paragraph(self):
+        lines = [
+            _line('1. Introduction', size=18.0, bold=True),
+            _line('1.1. The ACCC received a notification.', size=11.04),
+        ]
+        blocks = _parse_blocks(lines)
+        assert blocks[0] == {'type': 'heading', 'level': 1, 'text': '1. Introduction'}
+        assert blocks[1]['type'] == 'paragraph'
+        assert blocks[1]['number'] == '1.1'
+        assert 'received a notification' in blocks[1]['text']
+
+    def test_sub_heading_between_paragraphs(self):
+        lines = [
+            _line('2.1. First paragraph.', size=11.04),
+            _line('The Acquisition', size=14.04, bold=True),
+            _line('2.2. Second paragraph.', size=11.04),
+        ]
+        blocks = _parse_blocks(lines)
+        assert blocks[0]['type'] == 'paragraph' and blocks[0]['number'] == '2.1'
+        assert blocks[1] == {
+            'type': 'heading', 'level': 2, 'text': 'The Acquisition',
+            '_bold': True, '_italic': False,
+        }
+        assert blocks[2]['type'] == 'paragraph' and blocks[2]['number'] == '2.2'
+
+    def test_no_space_after_paragraph_number(self):
+        lines = [_line('2.4.Coles operates...', size=11.04)]
+        blocks = _parse_blocks(lines)
+        assert blocks[0]['number'] == '2.4'
+        assert blocks[0]['text'] == 'Coles operates...'
+
+    def test_continuation_lines_joined(self):
+        lines = [
+            _line('1.1. First half', size=11.04),
+            _line('and second half.', size=11.04),
+        ]
+        blocks = _parse_blocks(lines)
+        assert len(blocks) == 1
+        assert blocks[0]['text'] == 'First half and second half.'
+
+    def test_bullet_list(self):
+        lines = [
+            _line('1.1. The ACCC considers:', size=11.04),
+            _line('▪ first point', size=11.04),
+            _line('▪ second point', size=11.04),
+        ]
+        blocks = _parse_blocks(lines)
+        assert blocks[1]['type'] == 'bullet_list'
+        assert blocks[1]['items'] == ['first point', 'second point']
+
+    def test_lone_bullet_marker_collects_continuation(self):
+        # Some bullet markers render on their own line with the body text on
+        # the following line; the parser must keep them as a single item.
+        lines = [
+            _line('▪', size=11.04),
+            _line('the bullet body.', size=11.04),
+        ]
+        blocks = _parse_blocks(lines)
+        assert blocks[0]['type'] == 'bullet_list'
+        assert blocks[0]['items'] == ['the bullet body.']
+
+    def test_minus_sign_sub_bullet(self):
+        # Nested sub-bullets in NOCCs use the minus-sign character.
+        lines = [
+            _line('1.1. Headline:', size=11.04),
+            _line('−', size=11.04),
+            _line('first sub-point', size=11.04),
+            _line('−', size=11.04),
+            _line('second sub-point', size=11.04),
+        ]
+        blocks = _parse_blocks(lines)
+        # Paragraph followed by a bullet list of two items.
+        assert blocks[0]['type'] == 'paragraph'
+        assert blocks[1]['type'] == 'bullet_list'
+        assert blocks[1]['items'] == ['first sub-point', 'second sub-point']
+
+    def test_lettered_list(self):
+        lines = [
+            _line('1.1. Examples include:', size=11.04),
+            _line('(a) first example', size=11.04),
+            _line('(b) second example', size=11.04),
+        ]
+        blocks = _parse_blocks(lines)
+        assert blocks[1]['type'] == 'lettered_list'
+        assert [it['letter'] for it in blocks[1]['items']] == ['a', 'b']
+
+    def test_two_line_sub_heading_merged(self):
+        lines = [
+            _line('Reduced competition arising from', size=14.04, bold=True),
+            _line('access to rival information', size=14.04, bold=True),
+            _line('1.1. Body.', size=11.04),
+        ]
+        blocks = _parse_blocks(lines)
+        # The two adjacent same-style sub-heading lines collapse to one.
+        sub_headings = [b for b in blocks if b['type'] == 'heading' and b.get('level') == 2]
+        assert len(sub_headings) == 1
+        assert sub_headings[0]['text'] == (
+            'Reduced competition arising from access to rival information'
+        )
+
+    def test_different_style_sub_headings_kept_separate(self):
+        # A bold 14pt section heading immediately followed by an unbold 14pt
+        # sub-sub-heading must stay distinct.
+        lines = [
+            _line('Industry background – grocery retailing', size=14.04, bold=True),
+            _line('Grocery retailing in Australia', size=14.04, bold=False),
+        ]
+        blocks = _parse_blocks(lines)
+        sub_headings = [b for b in blocks if b['type'] == 'heading']
+        assert len(sub_headings) == 2
+        assert sub_headings[0]['text'] == 'Industry background – grocery retailing'
+        assert sub_headings[1]['text'] == 'Grocery retailing in Australia'
+
+
+# ---------------------------------------------------------------------------
+# parse_nocc: _group_blocks_into_sections
+# ---------------------------------------------------------------------------
+
+class TestGroupBlocksIntoSections:
+    def test_groups_under_top_level_headings(self):
+        blocks = [
+            {'type': 'heading', 'level': 1, 'text': '1. Introduction'},
+            {'type': 'paragraph', 'number': '1.1', 'text': 'First.'},
+            {'type': 'heading', 'level': 1, 'text': '2. Background'},
+            {'type': 'paragraph', 'number': '2.1', 'text': 'Second.'},
+        ]
+        sections = _group_blocks_into_sections(blocks)
+        assert len(sections) == 2
+        assert sections[0]['number'] == '1'
+        assert sections[0]['title'] == 'Introduction'
+        assert sections[0]['blocks'][0]['number'] == '1.1'
+        assert sections[1]['number'] == '2'
+        assert sections[1]['title'] == 'Background'
+
+    def test_strips_internal_heading_level_and_style_fields(self):
+        blocks = [
+            {'type': 'heading', 'level': 1, 'text': '1. Introduction'},
+            {
+                'type': 'heading', 'level': 2, 'text': 'A sub-heading',
+                '_bold': True, '_italic': False,
+            },
+            {'type': 'paragraph', 'number': '1.1', 'text': 'Body.'},
+        ]
+        sections = _group_blocks_into_sections(blocks)
+        sub = sections[0]['blocks'][0]
+        # Internal level and style markers are dropped from the public output.
+        assert sub == {'type': 'heading', 'text': 'A sub-heading'}
+
+    def test_preamble_kept_when_blocks_precede_first_section(self):
+        blocks = [
+            {'type': 'paragraph', 'text': 'Stray preamble.'},
+            {'type': 'heading', 'level': 1, 'text': '1. Introduction'},
+            {'type': 'paragraph', 'number': '1.1', 'text': 'Body.'},
+        ]
+        sections = _group_blocks_into_sections(blocks)
+        assert len(sections) == 2
+        assert sections[0]['number'] is None
+        assert sections[0]['blocks'][0]['text'] == 'Stray preamble.'
+        assert sections[1]['number'] == '1'
+
+
+# ---------------------------------------------------------------------------
+# enrichment: has_nocc flag
+# ---------------------------------------------------------------------------
+
+class TestEnrichMergerNocc:
+    def _base_merger(self):
+        return {
+            'merger_id': 'MN-01068',
+            'merger_name': 'Test Merger',
+            'accc_determination': None,
+            'determination_publication_date': None,
+            'stage': 'Phase 2',
+            'status': 'Under assessment',
+            'events': [],
+            'effective_notification_datetime': '2025-11-27T12:00:00Z',
+        }
+
+    def test_flag_set_when_sections_present(self):
+        m = self._base_merger()
+        nocc = {'MN-01068': {'sections': [{'number': '1', 'title': 'Introduction', 'blocks': []}]}}
+        result = enrich_merger(m, nocc_data=nocc)
+        assert result.get('has_nocc') is True
+
+    def test_no_flag_when_nocc_data_missing(self):
+        m = self._base_merger()
+        result = enrich_merger(m, nocc_data={})
+        assert 'has_nocc' not in result
+
+    def test_no_flag_when_merger_not_in_nocc_data(self):
+        m = self._base_merger()
+        result = enrich_merger(m, nocc_data={'MN-99999': {'sections': [{'blocks': []}]}})
+        assert 'has_nocc' not in result
+
+    def test_no_flag_when_sections_empty(self):
+        m = self._base_merger()
+        result = enrich_merger(m, nocc_data={'MN-01068': {'sections': []}})
+        assert 'has_nocc' not in result
+
+    def test_nocc_data_not_embedded(self):
+        m = self._base_merger()
+        nocc = {'MN-01068': {'sections': [{'number': '1', 'title': 'Introduction', 'blocks': []}]}}
+        result = enrich_merger(m, nocc_data=nocc)
+        # Only a flag is added; the parsed content is loaded separately.
+        assert 'sections' not in result
+        assert 'nocc' not in result
+
+
+# ---------------------------------------------------------------------------
+# generate_static_data: NOCC files
+# ---------------------------------------------------------------------------
+
+class TestGenerateNoccFiles:
+    def test_generates_files(self, tmp_path):
+        nocc_data = {
+            'MN-01068': {
+                'title': 'Coles – Kalgoorlie',
+                'matter_id': 'MN-01068',
+                'document_type': 'Notice of Competition Concerns – Summary',
+                'date': '5 March 2026',
+                'date_iso': '2026-03-05',
+                'file_name': 'NOCC.pdf',
+                'file_path': 'matters/MN-01068/NOCC.pdf',
+                'sections': [
+                    {'number': '1', 'title': 'Introduction', 'blocks': [
+                        {'type': 'paragraph', 'number': '1.1', 'text': 'Body.'},
+                    ]},
+                ],
+            },
+        }
+        count = generate_nocc_files(nocc_data, tmp_path)
+        assert count == 1
+        nocc_path = tmp_path / 'noccs' / 'MN-01068.json'
+        assert nocc_path.exists()
+
+        import json
+        with open(nocc_path) as f:
+            data = json.load(f)
+        assert data['title'] == 'Coles – Kalgoorlie'
+        assert data['date_iso'] == '2026-03-05'
+        assert len(data['sections']) == 1
+        assert data['sections'][0]['number'] == '1'
+
+    def test_skips_entries_without_sections(self, tmp_path):
+        nocc_data = {
+            'MN-01068': {'sections': [{'number': '1', 'title': 'X', 'blocks': []}]},
+            'MN-01069': {'sections': []},
+            'MN-01070': {'error': 'parse failed', 'file_path': 'matters/MN-01070/x.pdf'},
+        }
+        count = generate_nocc_files(nocc_data, tmp_path)
+        assert count == 1
+        assert (tmp_path / 'noccs' / 'MN-01068.json').exists()
+        assert not (tmp_path / 'noccs' / 'MN-01069.json').exists()
+        assert not (tmp_path / 'noccs' / 'MN-01070.json').exists()
+
+    def test_empty_data(self, tmp_path):
+        assert generate_nocc_files({}, tmp_path) == 0

@@ -14,6 +14,7 @@ from normalization import normalize_determination
 # extract_mergers has heavy transitive imports (pdfplumber, etc.)
 # Mock them so we can import just the filename functions
 sys.modules['parse_determination'] = unittest.mock.MagicMock()
+sys.modules['parse_nocc'] = unittest.mock.MagicMock()
 sys.modules['parse_questionnaire'] = unittest.mock.MagicMock()
 sys.modules['pdfplumber'] = unittest.mock.MagicMock()
 

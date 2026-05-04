@@ -11,6 +11,7 @@ import re
 from datetime import datetime
 from markdownify import markdownify as md
 from parse_determination import parse_determination_pdf
+from parse_nocc import process_all_noccs
 from parse_questionnaire import process_all_questionnaires
 from normalization import normalize_determination
 from cutoff import should_skip_merger, get_skipped_merger_ids, is_waiver_merger
@@ -742,6 +743,39 @@ def enrich_with_questionnaire_data(mergers_data):
 
     return mergers_data
 
+
+def extract_nocc_data():
+    """Parse all NOCC summary PDFs and write the standalone JSON manifest.
+
+    Returns the parsed dict, or an empty dict on failure / when no NOCCs are
+    present.
+    """
+    print("Extracting NOCC summary data...", file=sys.stderr)
+
+    try:
+        nocc_data = process_all_noccs(MATTERS_DIR)
+    except Exception as e:
+        print(f"Error extracting NOCC data: {e}", file=sys.stderr)
+        import traceback
+        traceback.print_exc(file=sys.stderr)
+        return {}
+
+    if not nocc_data:
+        print("No NOCC summaries found.", file=sys.stderr)
+        return {}
+
+    print(f"Found {len(nocc_data)} NOCC summary/summaries", file=sys.stderr)
+
+    try:
+        with open('data/processed/nocc_data.json', 'w', encoding='utf-8') as f:
+            json.dump(nocc_data, f, indent=2, sort_keys=True)
+        print("Wrote data/processed/nocc_data.json", file=sys.stderr)
+    except IOError as e:
+        print(f"Error writing nocc_data.json: {e}", file=sys.stderr)
+
+    return nocc_data
+
+
 def run_parse_merger_file(task):
     """Helper function to unpack arguments for parse_merger_file."""
     return parse_merger_file(*task)
@@ -853,6 +887,11 @@ def main():
 
     # 8. Enrich with questionnaire data (consultation deadlines)
     all_mergers_data = enrich_with_questionnaire_data(all_mergers_data)
+
+    # 8b. Parse NOCC summary PDFs to a standalone manifest. NOCCs do not feed
+    # back into per-merger fields (their date is already on the event), but
+    # downstream pipelines load the manifest separately.
+    extract_nocc_data()
 
     # 9. Add is_waiver field to each merger
     for merger in all_mergers_data:

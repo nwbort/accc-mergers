@@ -46,7 +46,12 @@ def is_phase_2_referral_event(event_title: str) -> bool:
     )
 
 
-def enrich_merger(merger: dict, commentary: dict = None, questionnaire_data: dict = None) -> dict:
+def enrich_merger(
+    merger: dict,
+    commentary: dict = None,
+    questionnaire_data: dict = None,
+    nocc_data: dict = None,
+) -> dict:
     """Add computed fields to a merger (phase determinations, etc.)."""
     m = merger.copy()
 
@@ -133,6 +138,12 @@ def enrich_merger(merger: dict, commentary: dict = None, questionnaire_data: dic
         q_data = questionnaire_data[merger_id]
         if q_data.get('questions'):
             m['has_questionnaire'] = True
+
+    # Flag whether a parsed NOCC summary exists for this merger
+    if nocc_data and merger_id in nocc_data:
+        n_data = nocc_data[merger_id]
+        if n_data.get('sections'):
+            m['has_nocc'] = True
 
     return m
 

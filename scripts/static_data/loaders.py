@@ -8,6 +8,7 @@ REPO_ROOT = SCRIPT_DIR.parent
 MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
 COMMENTARY_JSON = REPO_ROOT / "data" / "processed" / "commentary.json"
 QUESTIONNAIRE_JSON = REPO_ROOT / "data" / "processed" / "questionnaire_data.json"
+NOCC_JSON = REPO_ROOT / "data" / "processed" / "nocc_data.json"
 RELATED_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "related_mergers.json"
 SIMILAR_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "similar_mergers.json"
 
@@ -96,4 +97,17 @@ def load_questionnaire_data() -> dict:
             return json.load(f)
     except (json.JSONDecodeError, IOError) as e:
         print(f"Warning: Could not load questionnaire_data.json: {e}")
+        return {}
+
+
+def load_nocc_data() -> dict:
+    """Load NOCC summary data from nocc_data.json if it exists."""
+    if not NOCC_JSON.exists():
+        return {}
+
+    try:
+        with open(NOCC_JSON, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except (json.JSONDecodeError, IOError) as e:
+        print(f"Warning: Could not load nocc_data.json: {e}")
         return {}
