@@ -2,11 +2,11 @@
   "total_mergers": 89,
   "total_waivers": 126,
   "by_status": {
-    "Assessment completed": 58,
-    "Under assessment": 31
+    "Assessment completed": 60,
+    "Under assessment": 29
   },
   "by_determination": {
-    "Approved": 58,
+    "Approved": 60,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 10
   },
   "phase_duration": {
-    "average_days": 27.844827586206897,
-    "median_days": 26,
-    "average_business_days": 18.086206896551722,
+    "average_days": 27.716666666666665,
+    "median_days": 25,
+    "average_business_days": 18.016666666666666,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 29.3
+        "percentage": 28.3
       },
       "day20": {
-        "count": 47,
-        "percentage": 81.0
+        "count": 49,
+        "percentage": 81.7
       },
       "day30": {
-        "count": 57,
+        "count": 59,
         "percentage": 98.3
       }
     }
@@ -119,11 +119,31 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-35013",
+      "merger_name": "Estia Health \u2013 Norsan residential aged care business",
+      "determination": "Approved",
+      "determination_date": "2026-05-04T12:00:00Z",
+      "page_modified_datetime": "2026-05-04T10:53:06+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-20013",
       "merger_name": "Eli Lilly / Orna Therapeutics",
       "determination": "Approved",
       "determination_date": "2026-05-04T12:00:00Z",
       "page_modified_datetime": "2026-05-04T10:46:40+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
+      "merger_id": "MN-95011",
+      "merger_name": "Dubai Aerospace Enterprise - Macquarie AirFinance",
+      "determination": "Approved",
+      "determination_date": "2026-05-04T12:00:00Z",
+      "page_modified_datetime": "2026-05-04T10:46:06+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
@@ -154,26 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-04-30T12:00:00Z",
       "page_modified_datetime": "2026-04-30T17:30:30+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-60017",
-      "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
-      "determination": "Approved",
-      "determination_date": "2026-04-30T12:00:00Z",
-      "page_modified_datetime": "2026-04-30T17:28:03+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-10014",
-      "merger_name": "Turner Family Entities - Pedal Group",
-      "determination": "Approved",
-      "determination_date": "2026-04-30T12:00:00Z",
-      "page_modified_datetime": "2026-04-30T17:22:46+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
