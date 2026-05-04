@@ -72,8 +72,9 @@ scripts/
 ├── normalization.py      # Data cleaning utilities
 ├── date_utils.py         # Date parsing helpers
 ├── cutoff.py             # Skip old mergers logic
-├── resolver.py           # Merge/resolve duplicate merger records
-├── detect_duplicates.py  # Identify duplicate merger entries
+├── detect_duplicates.py  # Identify duplicate merger entries (CI check)
+├── detect_related_mergers.py # Suggest waiver→notification pairs (CI check)
+├── tools/                # Interactive admin web UIs (resolver, commentary)
 └── tests/                # test_pipeline.py, test_utils.py
 
 data/
