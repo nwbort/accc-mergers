@@ -42,3 +42,11 @@ jobs:
           RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: python scripts/send_weekly_email.py
+
+      - name: Upload rendered HTML preview
+        if: ${{ inputs.dry_run == true }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: digest-email-preview
+          path: /tmp/digest_email_preview.html
+          if-no-files-found: error
