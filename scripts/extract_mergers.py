@@ -113,7 +113,7 @@ def is_safe_url(url):
             and parsed.netloc.endswith('accc.gov.au'))
 
 
-def download_attachment(merger_id, attachment_url, event_title=None):
+def download_attachment(merger_id, attachment_url, event_title=None, cached_determination_data=None):
     """
     Downloads an attachment if it doesn't already exist locally.
     If it's a determination PDF, also parses it to extract commission division and table content.
@@ -122,6 +122,9 @@ def download_attachment(merger_id, attachment_url, event_title=None):
         merger_id: The merger ID
         attachment_url: URL to download
         event_title: Title of the event (used to detect determination PDFs)
+        cached_determination_data: Previously-parsed determination data for this
+            attachment. When provided, parse_determination_pdf() is skipped and
+            this value is returned as-is for determination PDFs.
 
     Returns:
         Dictionary with parsed determination data if applicable, None otherwise
@@ -176,11 +179,14 @@ def download_attachment(merger_id, attachment_url, event_title=None):
         )
 
         if is_determination and os.path.exists(local_filepath):
-            try:
-                determination_data = parse_determination_pdf(local_filepath)
-            except Exception as e:
-                print(f"Error parsing determination PDF {filename}: {e}", file=sys.stderr)
-                determination_data = None
+            if cached_determination_data is not None:
+                determination_data = cached_determination_data
+            else:
+                try:
+                    determination_data = parse_determination_pdf(local_filepath)
+                except Exception as e:
+                    print(f"Error parsing determination PDF {filename}: {e}", file=sys.stderr)
+                    determination_data = None
 
     except requests.exceptions.RequestException as e:
         print(f"Error downloading {attachment_url}: {e}", file=sys.stderr)
@@ -388,8 +394,26 @@ def _extract_description(soup):
     return description_tag.get_text('\n', strip=True).replace('Description', '').strip()
 
 
-def _scrape_events(soup, merger_id):
-    """Scrape timeline events from the HTML, downloading attachments as needed."""
+def _scrape_events(soup, merger_id, existing_merger_data=None):
+    """Scrape timeline events from the HTML, downloading attachments as needed.
+
+    Reuses previously-parsed determination data from ``existing_merger_data``
+    (matched by attachment URL) to avoid re-parsing PDFs on every run.
+    """
+    cached_determination_by_url = {}
+    if existing_merger_data:
+        for existing_event in existing_merger_data.get('events', []):
+            url = existing_event.get('url')
+            # 'determination_commission_division' is always written when a
+            # determination PDF parse has previously succeeded, so use its
+            # presence as the signal that we have cached data to reuse.
+            if url and 'determination_commission_division' in existing_event:
+                cached_determination_by_url[url] = {
+                    'commission_division': existing_event.get('determination_commission_division'),
+                    'table_content': existing_event.get('determination_table_content'),
+                    'statement_of_reasons': existing_event.get('determination_statement_of_reasons'),
+                }
+
     scraped_events = []
     attachment_tables = soup.find_all('div', class_='table-responsive')
 
@@ -414,7 +438,10 @@ def _scrape_events(soup, merger_id):
                 url = urljoin(BASE_URL, link_tag['href'])
                 event['url'] = url
 
-                determination_data = download_attachment(merger_id, url, title)
+                determination_data = download_attachment(
+                    merger_id, url, title,
+                    cached_determination_data=cached_determination_by_url.get(url),
+                )
                 if determination_data:
                     event['determination_commission_division'] = determination_data.get('commission_division')
                     event['determination_table_content'] = determination_data.get('table_content')
@@ -626,7 +653,7 @@ def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers
         if description:
             merger_data['merger_description'] = description
 
-        scraped_events = _scrape_events(soup, merger_id)
+        scraped_events = _scrape_events(soup, merger_id, existing_merger_data)
         merger_data['events'] = _merge_events(
             scraped_events, existing_merger_data, merger_id, frozen_events_mergers
         )
@@ -809,8 +836,12 @@ def main():
             else:
                 print(f"Warning: Could not extract merger_id from {fp}", file=sys.stderr)
 
-        # The map function applies parse_merger_file to each task tuple
-        results = executor.map(run_parse_merger_file, tasks)
+        # Most tasks are now fast (cached determination data, no PDF re-parse),
+        # so per-task IPC dominates with the default chunksize=1. Send tasks
+        # in small batches to amortise IPC across each worker.
+        worker_count = executor._max_workers or 1
+        chunksize = max(1, len(tasks) // (worker_count * 4))
+        results = executor.map(run_parse_merger_file, tasks, chunksize=chunksize)
 
         # 6. Collect valid results, filtering out any None values from failed parses
         all_mergers_data = [data for data in results if data is not None]
