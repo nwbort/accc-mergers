@@ -549,14 +549,23 @@
         "merger_id": "MN-55010",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-04-08",
+        "business_days": 18,
+        "calendar_days": 26,
+        "merger_name": "Eli Lilly / Orna Therapeutics",
+        "merger_id": "MN-20013",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 18.1,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 36,
-      "count": 57
+      "count": 58
     }
   },
   "waiver_duration": {

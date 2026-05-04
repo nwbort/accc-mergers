@@ -2,11 +2,11 @@
   "total_mergers": 89,
   "total_waivers": 126,
   "by_status": {
-    "Assessment completed": 57,
-    "Under assessment": 32
+    "Assessment completed": 58,
+    "Under assessment": 31
   },
   "by_determination": {
-    "Approved": 57,
+    "Approved": 58,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,22 +14,22 @@
     "Not approved": 10
   },
   "phase_duration": {
-    "average_days": 27.87719298245614,
-    "median_days": 25,
-    "average_business_days": 18.087719298245613,
+    "average_days": 27.844827586206897,
+    "median_days": 26,
+    "average_business_days": 18.086206896551722,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 29.8
+        "percentage": 29.3
       },
       "day20": {
-        "count": 46,
-        "percentage": 80.7
+        "count": 47,
+        "percentage": 81.0
       },
       "day30": {
-        "count": 56,
-        "percentage": 98.2
+        "count": 57,
+        "percentage": 98.3
       }
     }
   },
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-20013",
+      "merger_name": "Eli Lilly / Orna Therapeutics",
+      "determination": "Approved",
+      "determination_date": "2026-05-04T12:00:00Z",
+      "page_modified_datetime": "2026-05-04T10:46:40+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-45010",
       "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-01093",
-      "merger_name": "Sinopec - CNAF",
-      "determination": "Approved",
-      "determination_date": "2026-04-30T12:00:00Z",
-      "page_modified_datetime": "2026-04-30T15:27:43+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
