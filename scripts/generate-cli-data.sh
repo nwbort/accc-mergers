@@ -9,9 +9,9 @@
 #     committing to a full download.
 #
 #   data/output/cli/cli-bundle.json
-#     Complete dataset (all mergers + questionnaires + stats + industries)
-#     bundled into a single file. Only downloaded when the manifest's
-#     bundle_sha256 differs from the client's cached copy.
+#     Complete dataset (all mergers + questionnaires + noccs + stats +
+#     industries) bundled into a single file. Only downloaded when the
+#     manifest's bundle_sha256 differs from the client's cached copy.
 #
 #   data/output/cli/cli-merger-manifest.json
 #     {merger_id: sha256} map of every individual merger file. Supports a
@@ -42,6 +42,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 SRC_DIR="$REPO_ROOT/merger-tracker/frontend/public/data"
 MERGERS_DIR="$SRC_DIR/mergers"
 QUESTIONNAIRES_DIR="$SRC_DIR/questionnaires"
+NOCCS_DIR="$SRC_DIR/noccs"
 STATS_FILE="$SRC_DIR/stats.json"
 INDUSTRIES_FILE="$SRC_DIR/industries.json"
 
@@ -94,6 +95,14 @@ if [[ -d "$QUESTIONNAIRES_DIR" ]]; then
 fi
 echo "Found ${#QUESTIONNAIRE_FILES[@]} questionnaire files"
 
+NOCC_FILES=()
+if [[ -d "$NOCCS_DIR" ]]; then
+    for f in "$NOCCS_DIR"/*.json; do
+        [[ -f "$f" ]] && NOCC_FILES+=("$f")
+    done
+fi
+echo "Found ${#NOCC_FILES[@]} NOCC files"
+
 # ---------------------------------------------------------------------------
 # Build bundle into a temp file
 #
@@ -104,9 +113,10 @@ echo "Found ${#QUESTIONNAIRE_FILES[@]} questionnaire files"
 BUNDLE_TMP="$(mktemp)"
 MERGERS_TMP="$(mktemp)"
 QUESTIONNAIRES_TMP="$(mktemp)"
+NOCCS_TMP="$(mktemp)"
 STATS_TMP="$(mktemp)"
 INDUSTRIES_TMP="$(mktemp)"
-trap 'rm -f "$BUNDLE_TMP" "$MERGERS_TMP" "$QUESTIONNAIRES_TMP" "$STATS_TMP" "$INDUSTRIES_TMP"' EXIT
+trap 'rm -f "$BUNDLE_TMP" "$MERGERS_TMP" "$QUESTIONNAIRES_TMP" "$NOCCS_TMP" "$STATS_TMP" "$INDUSTRIES_TMP"' EXIT
 
 echo "Building bundle..."
 
@@ -126,6 +136,20 @@ else
     echo "{}" > "$QUESTIONNAIRES_TMP"
 fi
 
+if [[ ${#NOCC_FILES[@]} -gt 0 ]]; then
+    python3 - "${NOCC_FILES[@]}" > "$NOCCS_TMP" <<'PYEOF'
+import json, os, sys
+result = {}
+for path in sys.argv[1:]:
+    merger_id = os.path.splitext(os.path.basename(path))[0]
+    with open(path) as f:
+        result[merger_id] = json.load(f)
+print(json.dumps(result, separators=(',', ':'), sort_keys=True))
+PYEOF
+else
+    echo "{}" > "$NOCCS_TMP"
+fi
+
 if [[ -f "$STATS_FILE" ]]; then
     cp "$STATS_FILE" "$STATS_TMP"
 else
@@ -143,9 +167,10 @@ jq -n \
     '{
         mergers:        input,
         questionnaires: input,
+        noccs:          input,
         stats:          input,
         industries:     input
-    }' "$MERGERS_TMP" "$QUESTIONNAIRES_TMP" "$STATS_TMP" "$INDUSTRIES_TMP" \
+    }' "$MERGERS_TMP" "$QUESTIONNAIRES_TMP" "$NOCCS_TMP" "$STATS_TMP" "$INDUSTRIES_TMP" \
     > "$BUNDLE_TMP"
 
 # ---------------------------------------------------------------------------
