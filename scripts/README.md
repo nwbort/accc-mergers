@@ -29,6 +29,7 @@ scrape.sh ──► extract_mergers.py ──► generate_static_data.py ──�
 | --- | --- |
 | `extract_mergers.py` | Parse `data/raw/` HTML and supporting PDFs into `data/processed/mergers.json`. |
 | `parse_determination.py` | Extract structured info (decision, division, tables) from determination PDFs. |
+| `parse_nocc.py` | Extract structured sections (numbered paragraphs, headings, bullets) from Notice of Competition Concerns summary PDFs. |
 | `parse_questionnaire.py` | Extract consultation deadlines and questions from questionnaire PDFs. |
 | `normalization.py` | Shared string/value normalisation (e.g. determination labels). |
 | `date_utils.py` | Date parsing helpers shared across the pipeline. |
