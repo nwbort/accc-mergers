@@ -32,7 +32,7 @@ from date_utils import parse_iso_datetime
 
 SITE_BASE = "https://mergers.fyi"
 RESEND_API_BASE = "https://api.resend.com"
-SEND_FROM = os.environ.get("SEND_FROM", "mergers.fyi weekly digest <digest@mergers.fyi>")
+SEND_FROM = os.environ.get("SEND_FROM", "Australian Merger Tracker <digest@mergers.fyi>")
 
 # Colour palette matching tailwind.config.js
 COLORS = {
@@ -146,7 +146,7 @@ def build_text_email(digest: dict) -> str:
     referred = digest.get("deals_referred_to_phase_2") or []
 
     lines = [
-        "mergers.fyi weekly digest",
+        "Australian Merger Tracker weekly digest",
         f"Week of {date_range}",
         f"{SITE_BASE}/digest",
         "",
@@ -492,7 +492,7 @@ def build_html_email(digest: dict) -> str:
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>mergers.fyi weekly digest for {esc(date_range)}</title>
+  <title>Weekly mergers digest for {esc(date_range)} | Australian Merger Tracker</title>
 </head>
 <body style="margin:0;padding:0;background-color:#f1f5f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,Helvetica,sans-serif;">
 
@@ -507,15 +507,15 @@ def build_html_email(digest: dict) -> str:
 
         <!-- HEADER -->
         <tr>
-          <td style="background:#335145;border-radius:12px 12px 0 0;padding:26px 28px 22px;">
-            <span style="font-size:18px;font-weight:700;color:#ffffff;letter-spacing:-0.3px;">
-              mergers.fyi weekly digest
+          <td style="background:#ffffff;border:1px solid #e5e7eb;border-bottom:none;border-radius:12px 12px 0 0;padding:26px 28px 22px;">
+            <span style="font-size:18px;letter-spacing:-0.3px;">
+              <span style="font-weight:700;color:#335145;">australian merger tracker</span><span style="font-weight:400;color:#335145;"> weekly digest</span>
             </span>
             <br>
-            <span style="font-size:13px;color:#a3c4b3;margin-top:6px;display:block;">
+            <span style="font-size:13px;color:#6b7280;margin-top:6px;display:block;">
               Week of {esc(date_range)}
               &nbsp;&middot;&nbsp;
-              <a href="{SITE_BASE}/digest" style="color:#a3c4b3;text-decoration:underline;">
+              <a href="{SITE_BASE}/digest" style="color:#335145;text-decoration:underline;">
                 View online
               </a>
             </span>
@@ -656,7 +656,7 @@ def main() -> None:
     digest = load_digest()
 
     date_range = format_date_range(digest["period_start"], digest["period_end"])
-    subject = f"mergers.fyi weekly digest for {date_range}"
+    subject = f"Weekly mergers digest for {date_range} | Australian Merger Tracker"
     broadcast_name = f"Weekly digest \u2013 {date_range}"
 
     print(f"Period: {date_range}")
