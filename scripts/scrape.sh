@@ -60,67 +60,55 @@ export PARALLEL_JOBS=24
 clean_file() {
   local file="$1"
 
-  # Use sed to perform in-place replacements for simple line-based patterns.
-  # The -E flag enables extended regular expressions.
-  # Each '-e' adds another expression to the command.
-  sed -i -E \
-    -e 's/js-view-dom-id-[a-f0-9]{64}/js-view-dom-id-STATIC/g' \
-    -e 's/(id="edit-submit-accc-search-site--)[^"]+"/\1STATIC"/g' \
-    -e 's/(css\/css_)[^.]+\.css/\1STATIC.css/g' \
-    -e 's/(js\/js_)[^.]+\.js/\1STATIC.js/g' \
-    -e 's/("libraries":")[^"]+"/\1STATIC_LIBRARIES"/g' \
-    -e 's/("permissionsHash":")[^"]+"/\1STATIC_HASH"/g' \
-    -e 's/("view_dom_id":")[a-f0-9]{64}/\1STATIC"/g' \
-    -e 's/(views_dom_id:)[a-f0-9]{64}/\1STATIC/g' \
-    -e 's/include=[^"&>]+/include=STATIC/g' \
-    -e 's/href="https:\/\/app\.readspeaker\.com\/[^"]+"/href="STATIC_READSPEAKER_URL"/g' \
-    -e 's/(icons\.svg\?t)[^#]+#/\1STATIC#/g' \
-    -e 's/(\?t)[^">]+/\1STATIC/g' \
-    -e 's/("css_js_query_string":")[^"]+"/\1STATIC"/g' \
-    "$file"
-
-  # Remove Akamai/mPulse BOOMR performance script injected before </head>.
-  # The injection adds a whitespace-only line followed by the script on one line.
-  perl -i -0pe 's/[ \t]*\n[ \t]*<script>!function\(e\)\{var n="https:\/\/s\.go-mpulse\.net\/boomerang\/".*?\(window\);<\/script><\/head>/\n  <\/head>/s' "$file"
-
-  # Normalize dcterms meta tag order: the ACCC website randomly swaps dcterms.created
-  # and dcterms.modified between requests, causing spurious diffs. Always put created first.
-  perl -i -0pe 's{(<meta name="dcterms\.modified"[^\n]*/>\n)(<meta name="dcterms\.created"[^\n]*/>\n)}{$2$1}g' "$file"
-
-  # Normalize canonical/shortlink order: always put shortlink before canonical.
-  perl -i -0pe 's{(<link rel="canonical"[^\n]*/>\n)(<link rel="shortlink"[^\n]*/>\n)}{$2$1}g' "$file"
-
-  # Use a second sed pass for complex multi-line replacements.
-  sed -i -E -e ':a;N;$!ba;s#(<a[^>]*class="[^"]*megamenu-page-link-level-3[^"]*"[^>]*href=")[^"]*("[^>]*>[[:space:]]*<span>)[^<]*(</span>)#\1STATIC_HREF\2STATIC_TEXT\3#g' "$file"
-
-  # Squeeze multiple consecutive blank lines into a single blank line.
-  # This prevents unnecessary diffs when the server adds/removes blank lines.
-  local temp_file
-  temp_file=$(mktemp)
-  cat -s "$file" > "$temp_file" && mv "$temp_file" "$file"
+  # Single-pass perl rewrite. Slurp mode (-0777) lets the multi-line patterns
+  # (BOOMR script, dcterms/canonical reorder, megamenu) work alongside the
+  # line-scoped ones. Negated classes include \n so line-scoped patterns can't
+  # accidentally span lines under slurp mode.
+  perl -i -0777 -pe '
+    s/js-view-dom-id-[a-f0-9]{64}/js-view-dom-id-STATIC/g;
+    s/(id="edit-submit-accc-search-site--)[^"\n]+"/${1}STATIC"/g;
+    s/(css\/css_)[^.\n]+\.css/${1}STATIC.css/g;
+    s/(js\/js_)[^.\n]+\.js/${1}STATIC.js/g;
+    s/("libraries":")[^"\n]+"/${1}STATIC_LIBRARIES"/g;
+    s/("permissionsHash":")[^"\n]+"/${1}STATIC_HASH"/g;
+    s/("view_dom_id":")[a-f0-9]{64}/${1}STATIC"/g;
+    s/(views_dom_id:)[a-f0-9]{64}/${1}STATIC/g;
+    s/include=[^"&>\n]+/include=STATIC/g;
+    s/href="https:\/\/app\.readspeaker\.com\/[^"\n]+"/href="STATIC_READSPEAKER_URL"/g;
+    s/(icons\.svg\?t)[^#\n]+#/${1}STATIC#/g;
+    s/(\?t)[^">\n]+/${1}STATIC/g;
+    s/("css_js_query_string":")[^"\n]+"/${1}STATIC"/g;
+    s/[ \t]*\n[ \t]*<script>!function\(e\)\{var n="https:\/\/s\.go-mpulse\.net\/boomerang\/".*?\(window\);<\/script><\/head>/\n  <\/head>/s;
+    s{(<meta name="dcterms\.modified"[^\n]*/>\n)(<meta name="dcterms\.created"[^\n]*/>\n)}{$2$1}g;
+    s{(<link rel="canonical"[^\n]*/>\n)(<link rel="shortlink"[^\n]*/>\n)}{$2$1}g;
+    s#(<a[^>]*class="[^"]*megamenu-page-link-level-3[^"]*"[^>]*href=")[^"]*("[^>]*>[[:space:]]*<span>)[^<]*(</span>)#${1}STATIC_HREF${2}STATIC_TEXT${3}#g;
+    s/\n{3,}/\n\n/g;
+  ' "$file"
 }
 # Export the function so it's available to subshells spawned by xargs
 export -f clean_file
 
 # Function to clean dynamic content from all HTML files (used with --all)
 clean_html() {
-  # Find all .html files to clean
-  local files_to_clean=()
-  while IFS= read -r file; do
-    files_to_clean+=("$file")
-  done < <({ find . -maxdepth 1 -name "*.html"; find "data/raw" -maxdepth 1 -name "*.html" 2>/dev/null; find "./$SUBFOLDER" -maxdepth 1 -name "*.html" 2>/dev/null; })
+  local files_list
+  files_list=$(mktemp)
+  trap 'rm -f "$files_list"' RETURN
+  {
+    find . -maxdepth 1 -name "*.html"
+    find "data/raw" -maxdepth 1 -name "*.html" 2>/dev/null
+    find "./$SUBFOLDER" -maxdepth 1 -name "*.html" 2>/dev/null
+  } > "$files_list"
 
-  local file_count=${#files_to_clean[@]}
+  local file_count
+  file_count=$(wc -l < "$files_list" | tr -d ' ')
 
   if [ "$file_count" -eq 0 ]; then
     echo "No HTML files to clean."
     return
   fi
 
-  echo "Cleaning dynamic content from $file_count HTML file(s)..."
-  for file in "${files_to_clean[@]}"; do
-    clean_file "$file"
-  done
+  echo "Cleaning dynamic content from $file_count HTML file(s) in parallel..."
+  xargs -P "$PARALLEL_JOBS" -I {} bash -c 'clean_file "$1"' _ {} < "$files_list"
   echo "Successfully cleaned $file_count HTML file(s)"
 }
 
@@ -136,7 +124,7 @@ fetch_matter_page() {
   trap 'rm -f "$temp_html"' RETURN
 
   # Download the page. The --fail flag ensures curl exits with an error on HTTP failures (like 404).
-  if ! curl -s -L -A "$USER_AGENT" --fail "$full_url" -o "$temp_html"; then
+  if ! curl -s -L --compressed -A "$USER_AGENT" --fail "$full_url" -o "$temp_html"; then
       echo "FAILED: $full_url" >&2
       # Returning a non-zero status will cause xargs to stop
       return 1
@@ -144,7 +132,7 @@ fetch_matter_page() {
 
   # Extract matter number
   local matter_number
-  matter_number=$(cat "$temp_html" | pup '.field--name-dynamic-token-fieldnode-acccgov-merger-id p text{}' | tr -d '[:space:]')
+  matter_number=$(pup '.field--name-dynamic-token-fieldnode-acccgov-merger-id p text{}' < "$temp_html" | tr -d '[:space:]')
 
   # Whitelist the matter number to a safe filename pattern to prevent path
   # traversal if the upstream site ever returns unexpected content. Expected
@@ -183,7 +171,7 @@ export -f fetch_matter_page
 # Exported so it can be called from subshells spawned by xargs.
 fetch_register_page() {
   local page="$1"
-  curl -s -L -A "$USER_AGENT" "${REGISTER_URL}&page=${page}" -o "${PAGE_TEMP_DIR}/page_${page}.html"
+  curl -s -L --compressed -A "$USER_AGENT" "${REGISTER_URL}&page=${page}" -o "${PAGE_TEMP_DIR}/page_${page}.html"
 }
 export -f fetch_register_page
 
@@ -199,27 +187,17 @@ fi
 # 1. Download the first page of the acquisitions register
 echo "Downloading main register page from $REGISTER_URL..."
 
-# Retry logic with 30-second timeout per attempt
-MAX_RETRIES=2
-RETRY_COUNT=0
-TIMEOUT=30
-
-while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-  if curl -s -L -A "$USER_AGENT" --max-time "$TIMEOUT" "$REGISTER_URL" -o "$MAIN_PAGE_FILE"; then
-    echo "Saved main page to '$MAIN_PAGE_FILE'"
-    clean_file "$MAIN_PAGE_FILE"
-    break
-  else
-    RETRY_COUNT=$((RETRY_COUNT + 1))
-    if [ $RETRY_COUNT -lt $MAX_RETRIES ]; then
-      echo "Download timed out or failed (attempt $RETRY_COUNT/$MAX_RETRIES). Retrying..."
-      sleep $TIMEOUT
-    else
-      echo "Failed to download main page after $MAX_RETRIES attempts"
-      exit 1
-    fi
-  fi
-done
+# Up to 2 attempts (1 retry) with 30-second per-attempt timeout. Curl handles
+# the retry/backoff itself.
+if curl -s -L --compressed -A "$USER_AGENT" \
+     --max-time 30 --retry 1 --retry-delay 30 --retry-max-time 90 \
+     "$REGISTER_URL" -o "$MAIN_PAGE_FILE"; then
+  echo "Saved main page to '$MAIN_PAGE_FILE'"
+  clean_file "$MAIN_PAGE_FILE"
+else
+  echo "Failed to download main page after retries"
+  exit 1
+fi
 
 # 2. Create the subdirectory for individual acquisition pages
 mkdir -p "$SUBFOLDER"
@@ -228,11 +206,11 @@ mkdir -p "$SUBFOLDER"
 echo "Extracting links from register pages..."
 
 # Extract links from the first page
-relative_links=$(cat "$MAIN_PAGE_FILE" | pup '.accc-collapsed-card__header a attr{href}' | grep -v '#card-' | tr -d '\r')
+relative_links=$(pup '.accc-collapsed-card__header a attr{href}' < "$MAIN_PAGE_FILE" | grep -v '#card-' | tr -d '\r')
 
 # Check if there are additional pages by looking for the "Go to last page" link.
 # pup does not decode HTML entities in attributes, so we decode &amp; to & with sed.
-last_page_href=$(cat "$MAIN_PAGE_FILE" | pup 'a[title="Go to last page"] attr{href}' | sed 's/&amp;/\&/g' | tr -d '\r')
+last_page_href=$(pup 'a[title="Go to last page"] attr{href}' < "$MAIN_PAGE_FILE" | sed 's/&amp;/\&/g' | tr -d '\r')
 
 if [ -n "$last_page_href" ]; then
   # Extract the page number from the href (e.g. "?init=1&items_per_page=20&page=2" -> "2")
@@ -282,12 +260,9 @@ else
   if [ "$skip_count" -gt 0 ]; then
     echo "Skipping $skip_count merger(s) past cutoff date (use --all to scrape all)"
 
-    # Filter out links that are in the skip list
-    links_to_fetch=$(echo "$relative_links" | while IFS= read -r link; do
-      if ! grep -qF "$link" "$skip_paths_file" 2>/dev/null; then
-        echo "$link"
-      fi
-    done)
+    # Filter out links that exactly match a skip path. Single grep call vs.
+    # spawning one per link.
+    links_to_fetch=$(grep -vxFf "$skip_paths_file" <<< "$relative_links" || true)
   else
     links_to_fetch="$relative_links"
   fi
