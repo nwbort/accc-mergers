@@ -12,6 +12,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
+    "@tanstack/react-virtual": "^3.13.24",
     "chart.js": "^4.5.1",
     "date-fns": "^4.1.0",
     "react": "^19.2.0",
