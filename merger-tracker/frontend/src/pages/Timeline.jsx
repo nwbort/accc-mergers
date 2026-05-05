@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect, useMemo, useRef } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import LoadingSpinner from '../components/LoadingSpinner';
 import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
@@ -17,7 +17,86 @@ const SCROLL_THRESHOLD_PX = 300;
 // page can have very few events — e.g. 503 total / 100 per page → 3 events.
 const MIN_DISPLAYED_TO_ENABLE_SCROLL = 8;
 
+const PHASE_OPTIONS = [
+  { value: 'all', label: 'All phases' },
+  { value: 'Phase 1', label: 'Phase 1' },
+  { value: 'Phase 2', label: 'Phase 2' },
+  { value: 'Waiver', label: 'Waiver' },
+];
+
+const EVENT_TYPE_OPTIONS = [
+  { value: 'notification', label: 'Application/Notification' },
+  { value: 'questionnaire', label: 'Questionnaire' },
+  { value: 'determination', label: 'Determination' },
+  { value: 'nocc', label: 'NOCC' },
+  { value: 'other', label: 'Other' },
+];
+
+const isPhase2ReferralTitle = (text) => {
+  const lower = text.toLowerCase();
+  return (
+    lower.includes('subject to phase 2 review') ||
+    lower.includes('proceed to a phase 2') ||
+    lower.includes('proceed to phase 2')
+  );
+};
+
+// Maps an event to one of the high-level categories used by the type filter.
+// Order matters: notification > NOCC > questionnaire > determination > other.
+const getEventCategory = (event) => {
+  const title = (event.title || '').toLowerCase();
+  const display = (event.display_title || '').toLowerCase();
+  const combined = `${title} ${display}`;
+
+  if (title.includes('notified')) return 'notification';
+  if (combined.includes('notice of competition concerns')) return 'nocc';
+  if (combined.includes('questionnaire')) return 'questionnaire';
+  if (
+    combined.includes('determination') ||
+    isPhase2ReferralTitle(combined)
+  ) {
+    return 'determination';
+  }
+  return 'other';
+};
+
 function Timeline() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const phaseFilter = searchParams.get('phase') || 'all';
+  const typesParam = searchParams.get('types') || '';
+  const selectedTypes = useMemo(
+    () => (typesParam ? typesParam.split(',').filter(Boolean) : []),
+    [typesParam]
+  );
+  const [filtersOpen, setFiltersOpen] = useState(false);
+
+  const activeFilterCount =
+    (phaseFilter !== 'all' ? 1 : 0) + (selectedTypes.length > 0 ? 1 : 0);
+
+  const updateParam = (key, value, defaultValue) => {
+    const params = new URLSearchParams(searchParams);
+    if (!value || value === defaultValue) {
+      params.delete(key);
+    } else {
+      params.set(key, value);
+    }
+    setSearchParams(params);
+  };
+
+  const toggleType = (value) => {
+    const next = selectedTypes.includes(value)
+      ? selectedTypes.filter((t) => t !== value)
+      : [...selectedTypes, value];
+    updateParam('types', next.join(','), '');
+  };
+
+  const clearFilters = () => {
+    const params = new URLSearchParams(searchParams);
+    params.delete('phase');
+    params.delete('types');
+    setSearchParams(params);
+  };
+
   const { data: meta, error: metaError } = useFetchData(
     API_ENDPOINTS.timelineMeta,
     { cacheKey: 'timeline-meta' }
@@ -55,13 +134,38 @@ function Timeline() {
   // Show the spinner until the initial events are processed (or an error occurs).
   const loading = !error && !initialLoaded;
 
+  const matchesFilters = (event) => {
+    if (phaseFilter !== 'all' && event.phase !== phaseFilter) return false;
+    if (selectedTypes.length > 0) {
+      const cat = getEventCategory(event);
+      if (!selectedTypes.includes(cat)) return false;
+    }
+    return true;
+  };
+
+  const filteredDisplayedEvents = useMemo(
+    () => displayedEvents.filter(matchesFilters),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [displayedEvents, phaseFilter, typesParam]
+  );
+
+  const filteredAllEvents = useMemo(
+    () => allEvents.filter(matchesFilters),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [allEvents, phaseFilter, typesParam]
+  );
+
+  // Auto-load more pages while:
+  //   - the initial page has too few events to scroll, OR
+  //   - active filters have thinned the displayed list below the threshold
+  //     while more pages remain to fetch.
   useEffect(() => {
     if (!initialLoaded || loadingMore || !hasMore) return;
-    if (displayedEvents.length < MIN_DISPLAYED_TO_ENABLE_SCROLL) {
+    if (filteredDisplayedEvents.length < MIN_DISPLAYED_TO_ENABLE_SCROLL) {
       loadMoreEvents();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialLoaded, displayedEvents.length, hasMore, loadingMore]);
+  }, [initialLoaded, filteredDisplayedEvents.length, hasMore, loadingMore]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -130,15 +234,6 @@ function Timeline() {
     }
   };
 
-  const isPhase2ReferralTitle = (text) => {
-    const lower = text.toLowerCase();
-    return (
-      lower.includes('subject to phase 2 review') ||
-      lower.includes('proceed to a phase 2') ||
-      lower.includes('proceed to phase 2')
-    );
-  };
-
   const getEventType = (title, displayTitle) => {
     if (title.includes('notified')) return 'notification';
     if (displayTitle.includes('determination:') || isPhase2ReferralTitle(displayTitle)) {
@@ -190,15 +285,105 @@ function Timeline() {
         url="/timeline"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+        {/* Filters */}
+        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
+          <div className="flex items-center justify-between">
+            <h2 className="text-sm font-semibold text-gray-700">Timeline</h2>
+            <button
+              onClick={() => setFiltersOpen(!filtersOpen)}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-medium border transition-all ${
+                filtersOpen || activeFilterCount > 0
+                  ? 'bg-primary text-white border-primary shadow-sm'
+                  : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100'
+              }`}
+              aria-label="Toggle filters"
+              aria-expanded={filtersOpen}
+            >
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+              </svg>
+              <span>Filters{activeFilterCount > 0 ? ` (${activeFilterCount})` : ''}</span>
+            </button>
+          </div>
+
+          {filtersOpen && (
+            <div className="mt-4 pt-4 border-t border-gray-100 animate-fade-in space-y-4">
+              <div>
+                <label
+                  htmlFor="timeline-phase"
+                  className="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2"
+                >
+                  Phase
+                </label>
+                <select
+                  id="timeline-phase"
+                  className="w-full sm:w-64 px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none"
+                  value={phaseFilter}
+                  onChange={(e) => updateParam('phase', e.target.value, 'all')}
+                  aria-label="Filter timeline by phase"
+                >
+                  {PHASE_OPTIONS.map((opt) => (
+                    <option key={opt.value} value={opt.value}>
+                      {opt.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <span className="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">
+                  Event type
+                </span>
+                <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by event type">
+                  {EVENT_TYPE_OPTIONS.map((opt) => {
+                    const active = selectedTypes.includes(opt.value);
+                    return (
+                      <button
+                        key={opt.value}
+                        type="button"
+                        onClick={() => toggleType(opt.value)}
+                        aria-pressed={active}
+                        className={`px-3 py-1.5 rounded-full text-xs font-medium border transition-all ${
+                          active
+                            ? 'bg-primary text-white border-primary shadow-sm'
+                            : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100'
+                        }`}
+                      >
+                        {opt.label}
+                      </button>
+                    );
+                  })}
+                </div>
+                <p className="mt-1.5 text-xs text-gray-400">
+                  {selectedTypes.length === 0
+                    ? 'Showing all event types'
+                    : `Showing ${selectedTypes.length} selected type${selectedTypes.length === 1 ? '' : 's'}`}
+                </p>
+              </div>
+
+              {activeFilterCount > 0 && (
+                <div className="pt-3 border-t border-gray-100 flex justify-end">
+                  <button
+                    onClick={clearFilters}
+                    className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                  >
+                    Clear all filters
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+
         <div className="flow-root">
           <ul className="-mb-8">
-            {displayedEvents.map((event, idx) => {
+            {filteredDisplayedEvents.map((event, idx) => {
               const eventType = getEventType(event.title || '', event.display_title || '');
 
               return (
                 <li key={`${event.merger_id}-${event.date}-${idx}`}>
                   <div className="relative pb-8">
-                    {idx !== displayedEvents.length - 1 && (
+                    {idx !== filteredDisplayedEvents.length - 1 && (
                       <span
                         className="absolute top-0 bottom-0 left-5 -ml-px w-0.5 bg-gray-100"
                         aria-hidden="true"
@@ -255,7 +440,9 @@ function Timeline() {
         {hasMore && (
           <div className="text-center py-8">
             <p className="text-sm text-gray-400">
-              Showing {displayedEvents.length} of {allEvents.length} events
+              {activeFilterCount > 0
+                ? `Showing ${filteredDisplayedEvents.length} of ${filteredAllEvents.length} matching events (${displayedEvents.length} of ${allEvents.length} loaded)`
+                : `Showing ${displayedEvents.length} of ${allEvents.length} events`}
             </p>
             {loadingMore ? (
               <p className="text-xs text-gray-400 mt-1">Loading more...</p>
@@ -268,14 +455,28 @@ function Timeline() {
         {!hasMore && displayedEvents.length > 0 && (
           <div className="text-center py-8">
             <p className="text-gray-400 text-sm">
-              Showing all {allEvents.length} events
+              {activeFilterCount > 0
+                ? `Showing all ${filteredAllEvents.length} matching events (of ${allEvents.length} total)`
+                : `Showing all ${allEvents.length} events`}
             </p>
           </div>
         )}
 
-        {!loading && displayedEvents.length === 0 && (
+        {!loading && filteredDisplayedEvents.length === 0 && !hasMore && (
           <div className="text-center py-16">
-            <p className="text-gray-500">No timeline data available</p>
+            <p className="text-gray-500">
+              {activeFilterCount > 0
+                ? 'No events match the selected filters'
+                : 'No timeline data available'}
+            </p>
+            {activeFilterCount > 0 && (
+              <button
+                onClick={clearFilters}
+                className="mt-3 text-sm text-primary hover:text-primary-dark transition-colors"
+              >
+                Clear filters
+              </button>
+            )}
           </div>
         )}
       </div>
