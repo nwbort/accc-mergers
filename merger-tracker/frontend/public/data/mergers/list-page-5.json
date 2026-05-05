@@ -379,6 +379,59 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/zurich-clearview"
     },
     {
+      "merger_id": "WA-05016",
+      "merger_name": "Coles - substation in Yarrawonga VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-21T12:00:00Z",
+      "determination_publication_date": "2026-05-05T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
+          "identifier_type": "ABN",
+          "identifier": "72 004 428 326"
+        }
+      ],
+      "targets": [
+        {
+          "name": "POWERCOR AUSTRALIA LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 064 651 109"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2630",
+          "name": "Electricity Distribution"
+        },
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        },
+        {
+          "code": "4122",
+          "name": "Fruit and Vegetable Retailing"
+        },
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        },
+        {
+          "code": "4279",
+          "name": "Other Store-Based Retailing n.e.c."
+        },
+        {
+          "code": "5102",
+          "name": "Courier Pick-up and Delivery Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-substation-in-yarrawonga-vic"
+    },
+    {
       "merger_id": "WA-55017",
       "merger_name": "Coles - Leasehold interest in shopping centre on Capricorn Highway, Emerald, QLD",
       "status": "Assessment completed",
@@ -463,6 +516,49 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/gilead-ouro"
+    },
+    {
+      "merger_id": "WA-45012",
+      "merger_name": "Apollo Funds - Nippon Sheet Glass",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-22T12:00:00Z",
+      "determination_publication_date": "2026-05-05T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Lumina Japan Acquisition Co., Ltd",
+          "identifier_type": null,
+          "identifier": "010401197337"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Nippon Sheet Glass Company, Limited",
+          "identifier_type": null,
+          "identifier": "4010401054474"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Apollo Capital Management, L.P.",
+          "identifier_type": null,
+          "identifier": "4293091"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2010",
+          "name": "Glass and Glass Product Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/apollo-funds-nippon-sheet-glass"
     },
     {
       "merger_id": "WA-70016",

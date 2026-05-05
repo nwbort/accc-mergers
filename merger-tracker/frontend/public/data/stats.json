@@ -1,34 +1,34 @@
 {
   "total_mergers": 90,
-  "total_waivers": 128,
+  "total_waivers": 130,
   "by_status": {
-    "Assessment completed": 61,
-    "Under assessment": 29
+    "Assessment completed": 63,
+    "Under assessment": 27
   },
   "by_determination": {
-    "Approved": 61,
+    "Approved": 63,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 118,
+    "Approved": 120,
     "Not approved": 10
   },
   "phase_duration": {
-    "average_days": 27.80327868852459,
-    "median_days": 25,
-    "average_business_days": 18.065573770491802,
+    "average_days": 27.80952380952381,
+    "median_days": 26,
+    "average_business_days": 18.126984126984127,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 27.9
+        "percentage": 27.0
       },
       "day20": {
-        "count": 49,
-        "percentage": 80.3
+        "count": 51,
+        "percentage": 81.0
       },
       "day30": {
-        "count": 60,
+        "count": 62,
         "percentage": 98.4
       }
     }
@@ -40,7 +40,7 @@
     },
     {
       "name": "Financial Asset Investing",
-      "count": 23
+      "count": 24
     },
     {
       "name": "Software Publishing",
@@ -68,7 +68,7 @@
     },
     {
       "name": "Liquor Retailing",
-      "count": 7
+      "count": 8
     },
     {
       "name": "Advertising Services",
@@ -119,6 +119,46 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05016",
+      "merger_name": "Coles - substation in Yarrawonga VIC",
+      "determination": "Approved",
+      "determination_date": "2026-05-05T12:00:00Z",
+      "page_modified_datetime": "2026-05-05T17:08:23+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "MN-15013",
+      "merger_name": "Journey Beyond \u2013 Kakadu Crocodile Hotel",
+      "determination": "Approved",
+      "determination_date": "2026-05-05T12:00:00Z",
+      "page_modified_datetime": "2026-05-05T17:08:08+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
+      "merger_id": "WA-45012",
+      "merger_name": "Apollo Funds - Nippon Sheet Glass",
+      "determination": "Approved",
+      "determination_date": "2026-05-05T12:00:00Z",
+      "page_modified_datetime": "2026-05-05T17:05:46+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "MN-65008",
+      "merger_name": "REA Group - Simplicity Loans & Advisory",
+      "determination": "Approved",
+      "determination_date": "2026-05-05T12:00:00Z",
+      "page_modified_datetime": "2026-05-05T16:48:27+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-15011",
       "merger_name": "Danaher - Masimo",
       "determination": "Approved",
@@ -137,46 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-25016",
-      "merger_name": "Hostplus \u2013 CH Investment Holding Trust",
-      "determination": "Approved",
-      "determination_date": "2026-05-04T12:00:00Z",
-      "page_modified_datetime": "2026-05-04T18:13:30+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-35013",
-      "merger_name": "Estia Health \u2013 Norsan residential aged care business",
-      "determination": "Approved",
-      "determination_date": "2026-05-04T12:00:00Z",
-      "page_modified_datetime": "2026-05-04T10:53:06+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-20013",
-      "merger_name": "Eli Lilly / Orna Therapeutics",
-      "determination": "Approved",
-      "determination_date": "2026-05-04T12:00:00Z",
-      "page_modified_datetime": "2026-05-04T10:46:40+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-95011",
-      "merger_name": "Dubai Aerospace Enterprise - Macquarie AirFinance",
-      "determination": "Approved",
-      "determination_date": "2026-05-04T12:00:00Z",
-      "page_modified_datetime": "2026-05-04T10:46:06+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
