@@ -1,9 +1,9 @@
 {
-  "total_mergers": 90,
+  "total_mergers": 91,
   "total_waivers": 130,
   "by_status": {
     "Assessment completed": 63,
-    "Under assessment": 27
+    "Under assessment": 28
   },
   "by_determination": {
     "Approved": 63,
@@ -85,6 +85,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-75018",
+      "merger_name": "WPF DURATEC PTY LTD / Davhold Australia Pty Ltd",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-04T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-45006",
       "merger_name": "Paramount Skydance / Warner Bros. Discovery",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-28T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-01072",
-      "merger_name": "Saipem S.p.A / Subsea7 S.A.",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-27T12:00:00Z",
       "is_waiver": false
     }
   ],
