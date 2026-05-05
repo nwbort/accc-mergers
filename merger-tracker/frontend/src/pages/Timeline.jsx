@@ -137,13 +137,16 @@ function Timeline() {
   //   - the initial page has too few events to scroll, OR
   //   - active filters have thinned the displayed list below the threshold
   //     while more pages remain to fetch.
+  // Depends on displayedEvents.length (not just filtered length) so it
+  // re-fires after each load even when none of the new events matched the
+  // filter — otherwise a sparse filter would stall after one fetch.
   useEffect(() => {
     if (!initialLoaded || loadingMore || !hasMore) return;
     if (filteredDisplayedEvents.length < MIN_DISPLAYED_TO_ENABLE_SCROLL) {
       loadMoreEvents();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initialLoaded, filteredDisplayedEvents.length, hasMore, loadingMore]);
+  }, [initialLoaded, filteredDisplayedEvents.length, displayedEvents.length, hasMore, loadingMore]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -263,7 +266,7 @@ function Timeline() {
         url="/timeline"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
-        <div className="mb-6 flex flex-wrap items-center gap-2" role="group" aria-label="Filter by event type">
+        <div className="mb-6 pl-14 flex flex-wrap items-center gap-2" role="group" aria-label="Filter by event type">
           {EVENT_TYPE_OPTIONS.map((opt) => {
             const active = selectedTypes.includes(opt.value);
             return (
@@ -274,7 +277,7 @@ function Timeline() {
                 aria-pressed={active}
                 className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${
                   active
-                    ? 'bg-gray-900 text-white border-gray-900'
+                    ? 'bg-primary text-white border-primary'
                     : 'bg-transparent text-gray-500 border-gray-200 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
