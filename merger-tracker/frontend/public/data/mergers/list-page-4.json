@@ -2420,11 +2420,11 @@
     {
       "merger_id": "MN-55013",
       "merger_name": "Lawrence & Hanson - Gordon Macdonald",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-04-13T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-05-05T12:00:00Z",
       "end_of_determination_period": "2026-05-26T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -2435,6 +2435,16 @@
         }
       ],
       "targets": [
+        {
+          "name": "ROBYN DAN",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "LYNETTE ROBYN VAN ECK",
+          "identifier_type": null,
+          "identifier": ""
+        },
         {
           "name": "SCOTT VAN ECK",
           "identifier_type": null,
@@ -2449,16 +2459,6 @@
           "name": "GORDON MACDONALD PTY LTD",
           "identifier_type": "ABN",
           "identifier": "36 000 307 246"
-        },
-        {
-          "name": "LYNETTE ROBYN VAN ECK",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "ROBYN DAN",
-          "identifier_type": null,
-          "identifier": ""
         }
       ],
       "other_parties": [],

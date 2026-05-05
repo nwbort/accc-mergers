@@ -2,11 +2,11 @@
   "total_mergers": 91,
   "total_waivers": 130,
   "by_status": {
-    "Assessment completed": 63,
-    "Under assessment": 28
+    "Assessment completed": 64,
+    "Under assessment": 27
   },
   "by_determination": {
-    "Approved": 63,
+    "Approved": 64,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 10
   },
   "phase_duration": {
-    "average_days": 27.80952380952381,
+    "average_days": 27.71875,
     "median_days": 26,
-    "average_business_days": 18.126984126984127,
+    "average_business_days": 18.09375,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 27.0
+        "percentage": 26.6
       },
       "day20": {
-        "count": 51,
-        "percentage": 81.0
+        "count": 52,
+        "percentage": 81.2
       },
       "day30": {
-        "count": 62,
+        "count": 63,
         "percentage": 98.4
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-55013",
+      "merger_name": "Lawrence & Hanson - Gordon Macdonald",
+      "determination": "Approved",
+      "determination_date": "2026-05-05T12:00:00Z",
+      "page_modified_datetime": "2026-05-05T20:31:57+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-05016",
       "merger_name": "Coles - substation in Yarrawonga VIC",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-70016",
-      "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
-      "determination": "Approved",
-      "determination_date": "2026-05-04T12:00:00Z",
-      "page_modified_datetime": "2026-05-04T18:26:11+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
