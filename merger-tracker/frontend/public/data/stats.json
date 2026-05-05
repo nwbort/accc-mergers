@@ -2,11 +2,11 @@
   "total_mergers": 90,
   "total_waivers": 128,
   "by_status": {
-    "Assessment completed": 60,
-    "Under assessment": 30
+    "Assessment completed": 61,
+    "Under assessment": 29
   },
   "by_determination": {
-    "Approved": 60,
+    "Approved": 61,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,22 +14,22 @@
     "Not approved": 10
   },
   "phase_duration": {
-    "average_days": 27.716666666666665,
+    "average_days": 27.80327868852459,
     "median_days": 25,
-    "average_business_days": 18.016666666666666,
+    "average_business_days": 18.065573770491802,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 28.3
+        "percentage": 27.9
       },
       "day20": {
         "count": 49,
-        "percentage": 81.7
+        "percentage": 80.3
       },
       "day30": {
-        "count": 59,
-        "percentage": 98.3
+        "count": 60,
+        "percentage": 98.4
       }
     }
   },
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-15011",
+      "merger_name": "Danaher - Masimo",
+      "determination": "Approved",
+      "determination_date": "2026-05-05T12:00:00Z",
+      "page_modified_datetime": "2026-05-05T11:39:47+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-70016",
       "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-45010",
-      "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
-      "determination": "Approved",
-      "determination_date": "2026-05-01T12:00:00Z",
-      "page_modified_datetime": "2026-05-01T17:16:57+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
