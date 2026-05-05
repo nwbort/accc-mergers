@@ -8407,6 +8407,165 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/news-%E2%80%93-acquisition-of-20-of-national-distribution-services",
+      "merger_name": "News \u2013 acquisition of 20% of National Distribution Services",
+      "status": "Under assessment",
+      "merger_id": "MN-35014",
+      "effective_notification_datetime": "2026-05-04T12:00:00Z",
+      "original_notification_datetime": "2026-05-04T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-06-17T12:00:00Z",
+      "page_modified_datetime": "2026-05-05T10:44:50+10:00",
+      "consultation_response_due_date": "2026-05-11T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "NEWS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "47 007 871 178"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NATIONAL DISTRIBUTION SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "66 633 619 333"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "NATIONWIDE NEWS PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "98 008 438 828"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4610",
+          "name": "Road Freight Transport"
+        },
+        {
+          "code": "5102",
+          "name": "Courier Pick-up and Delivery Services"
+        },
+        {
+          "code": "5412",
+          "name": "Magazine and Other Periodical Publishing"
+        },
+        {
+          "code": "6940",
+          "name": "Advertising Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "News Corp Australia Pty Ltd (**News Corp**), through its subsidiary, News Pty Ltd, proposes to acquire a 20% interest in National Distribution Services Pty Ltd (**NDS**) and a call option to acquire the remaining shares in NDS in limited circumstances (the **Acquisition**). Following the Acquisition, current NDS shareholders will retain an 80% interest in NDS.\n\nNews Corp is an Australian\u00a0media company with interests across digital media, magazines, newspapers, audio production, marketing and publishing. It is indirectly wholly owned by News Corporation, headquartered in the United States.\n\nNews Corp, through its Australian subsidiaries,\u00a0currently contracts with a range of suppliers, including NDS, to distribute its\u00a0print media publications across Australia to retailers and home delivery subscribers. News Corp also arranges for its suppliers to distribute certain third\u2011party publishers\u2019 print media on a shared carriage basis.\n\nNDS supplies distribution and logistics services to a range of publishers in Australia, including News Corp. NDS operates a distribution network covering Victoria, New South Wales, South Australia, Tasmania, Queensland and Darwin.",
+      "events": [
+        {
+          "date": "",
+          "title": "News Corp / 20% interest in National Distribution Services - Questionnaire",
+          "display_title": "News Corp / 20% interest in National Distribution Services - Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/NDS%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-35014/NDS - Questionnaire.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-04T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-85003",
+          "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "NACG WA Acquisition Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "693 678 296"
+            }
+          ],
+          "targets": [
+            {
+              "name": "DCL CORP PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "60 633 008 992"
+            },
+            {
+              "name": "IRON HIRE PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "43 641 807 589"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-10005",
+          "merger_name": "Apex - Mercer Administration Services and related assets",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Apex Group Holdings (Australia) Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "48 112 252 114"
+            }
+          ],
+          "targets": [
+            {
+              "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "83 068 908 912"
+            },
+            {
+              "name": "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "48 616 275 980"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-50008",
+          "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
+          "status": "Under assessment",
+          "accc_determination": null,
+          "acquirers": [
+            {
+              "name": "WIN TELEVISION NETWORK PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "90 008 589 026"
+            }
+          ],
+          "targets": [
+            {
+              "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "43 124 816 093"
+            },
+            {
+              "name": "TELEVISION HOLDINGS DARWIN PTY. LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "33 009 634 048"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/henkel-%E2%80%93-atp-adhesives-systems-group",
       "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
       "status": "Assessment completed",

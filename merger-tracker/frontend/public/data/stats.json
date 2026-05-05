@@ -1,9 +1,9 @@
 {
-  "total_mergers": 89,
+  "total_mergers": 90,
   "total_waivers": 128,
   "by_status": {
     "Assessment completed": 60,
-    "Under assessment": 29
+    "Under assessment": 30
   },
   "by_determination": {
     "Approved": 60,
@@ -36,7 +36,7 @@
   "top_industries": [
     {
       "name": "Computer System Design and Related Services",
-      "count": 29
+      "count": 30
     },
     {
       "name": "Financial Asset Investing",
@@ -71,11 +71,19 @@
       "count": 7
     },
     {
-      "name": "Car Retailing",
-      "count": 6
+      "name": "Advertising Services",
+      "count": 7
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-35014",
+      "merger_name": "News \u2013 acquisition of 20% of National Distribution Services",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-04T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-45006",
       "merger_name": "Paramount Skydance / Warner Bros. Discovery",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-01072",
       "merger_name": "Saipem S.p.A / Subsea7 S.A.",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-27T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-05009",
-      "merger_name": "Genea - Embrace Fertility",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-27T12:00:00Z",
