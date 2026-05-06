@@ -14,7 +14,10 @@ on:
     branches:
       - main
   schedule:
-    - cron: '8 * * * *'
+    - cron: '8 7,11,15,19 * * 1-5'
+      timezone: 'Australia/Sydney'
+    - cron: '8 7 * * 0'
+      timezone: 'Australia/Sydney'
 
 permissions:
   contents: write
