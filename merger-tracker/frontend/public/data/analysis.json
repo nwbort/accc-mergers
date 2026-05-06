@@ -1654,6 +1654,14 @@
       },
       {
         "application_date": "2026-04-20",
+        "business_days": 12,
+        "calendar_days": 16,
+        "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
+        "merger_id": "WA-25017",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-04-20",
         "business_days": 7,
         "calendar_days": 9,
         "merger_name": "Publicis \u2013 160over90",
@@ -1711,10 +1719,10 @@
     ],
     "stats": {
       "average": 11.8,
-      "median": 11,
+      "median": 11.5,
       "min": 2,
       "max": 22,
-      "count": 131
+      "count": 132
     }
   },
   "monthly_volume": {
@@ -1748,7 +1756,7 @@
       30,
       30,
       48,
-      23,
+      24,
       0
     ]
   }

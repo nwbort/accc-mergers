@@ -1,6 +1,6 @@
 {
   "total_mergers": 92,
-  "total_waivers": 131,
+  "total_waivers": 132,
   "by_status": {
     "Assessment completed": 68,
     "Under assessment": 24
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 121,
+    "Approved": 122,
     "Not approved": 10
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25017",
+      "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
+      "determination": "Approved",
+      "determination_date": "2026-05-06T12:00:00Z",
+      "page_modified_datetime": "2026-05-06T18:03:18+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-40015",
       "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-05T12:00:00Z",
       "page_modified_datetime": "2026-05-06T16:49:26+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-55013",
-      "merger_name": "Lawrence & Hanson - Gordon Macdonald",
-      "determination": "Approved",
-      "determination_date": "2026-05-05T12:00:00Z",
-      "page_modified_datetime": "2026-05-05T20:31:57+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
