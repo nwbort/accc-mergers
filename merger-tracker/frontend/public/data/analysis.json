@@ -551,6 +551,15 @@
         "in_progress": false
       },
       {
+        "notification_date": "2026-03-31",
+        "business_days": 23,
+        "calendar_days": 35,
+        "merger_name": "Eagers - Audi Melbourne and Audi Richmond",
+        "merger_id": "MN-05012",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
         "notification_date": "2026-04-02",
         "business_days": 21,
         "calendar_days": 33,
@@ -624,11 +633,11 @@
       }
     ],
     "stats": {
-      "average": 18.1,
-      "median": 17,
+      "average": 18.2,
+      "median": 17.0,
       "min": 15,
       "max": 36,
-      "count": 65
+      "count": 66
     }
   },
   "waiver_duration": {

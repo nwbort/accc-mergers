@@ -2,11 +2,11 @@
   "total_mergers": 92,
   "total_waivers": 130,
   "by_status": {
-    "Assessment completed": 65,
-    "Under assessment": 27
+    "Assessment completed": 66,
+    "Under assessment": 26
   },
   "by_determination": {
-    "Approved": 65,
+    "Approved": 66,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 10
   },
   "phase_duration": {
-    "average_days": 27.73846153846154,
+    "average_days": 27.848484848484848,
     "median_days": 26,
-    "average_business_days": 18.138461538461538,
+    "average_business_days": 18.21212121212121,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 26.2
+        "percentage": 25.8
       },
       "day20": {
         "count": 52,
-        "percentage": 80.0
+        "percentage": 78.8
       },
       "day30": {
-        "count": 64,
+        "count": 65,
         "percentage": 98.5
       }
     }
@@ -129,6 +129,16 @@
       "stage": "Phase 1 - initial assessment"
     },
     {
+      "merger_id": "MN-05012",
+      "merger_name": "Eagers - Audi Melbourne and Audi Richmond",
+      "determination": "Approved",
+      "determination_date": "2026-05-05T12:00:00Z",
+      "page_modified_datetime": "2026-05-06T16:49:26+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-55013",
       "merger_name": "Lawrence & Hanson - Gordon Macdonald",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-65008",
-      "merger_name": "REA Group - Simplicity Loans & Advisory",
-      "determination": "Approved",
-      "determination_date": "2026-05-05T12:00:00Z",
-      "page_modified_datetime": "2026-05-05T16:48:27+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
