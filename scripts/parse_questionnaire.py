@@ -126,62 +126,57 @@ def extract_lines_with_formatting(pdf_path: str) -> List[Dict]:
 _BULLET_CHAR = ''
 
 
-def _extract_bullets(text: str) -> List[str]:
+def _list_stem(text: str, list_start_pos: int) -> str:
+    """Return text up to and including the last colon before list_start_pos."""
+    colon_pos = text.rfind(':', 0, list_start_pos)
+    return text[:colon_pos + 1]
+
+
+def _extract_bullets(text: str) -> tuple:
     """
     Extract bullet items (\\uf0b7 Wingdings bullet from PDF) from a question text.
 
     Detects lists introduced by a colon, e.g.:
       "…including: \\uf0b7 item one \\uf0b7 item two \\uf0b7 item three"
 
-    Returns a list of bullet text strings, or [] if no colon precedes the
-    first bullet.
+    Returns (stem, bullets) where stem is text up to and including the
+    colon, or (None, []) if no colon precedes the first bullet.
     """
     if _BULLET_CHAR not in text:
-        return []
+        return None, []
 
     first_pos = text.index(_BULLET_CHAR)
 
-    # A colon must appear before the first bullet
     if ':' not in text[:first_pos]:
-        return []
+        return None, []
 
     bullets = []
     for part in text.split(_BULLET_CHAR)[1:]:
         cleaned = part.strip()
-        # Strip trailing conjunction phrases before the next item
         cleaned = re.sub(r',?\s+and(?:/or)?\s*$', '', cleaned, flags=re.IGNORECASE).strip()
         cleaned = cleaned.rstrip('.,;').strip()
         if cleaned:
             bullets.append(cleaned)
 
-    return bullets
+    return (_list_stem(text, first_pos), bullets) if bullets else (None, [])
 
 
-def _extract_subpoints(text: str) -> List[Dict]:
+def _extract_subpoints(text: str) -> tuple:
     """
     Extract lettered sub-points (a., b., c. …) from a question text.
 
     Detects lists introduced by a colon, e.g.:
       "…following products: a. catheters, b. stent retrievers, c. coils."
 
-    Returns a list of {'letter': str, 'text': str} dicts, or [] if no
-    valid lettered list is found (fewer than two sequential items, or no
-    preceding colon).
+    Returns (stem, subpoints) where stem is text up to and including the
+    colon, or (None, []) if no valid lettered list is found (fewer than
+    two sequential items, or no preceding colon).
     """
-    # Find the first "a. <word>" in the text
     a_match = re.search(r'\ba\.\s+\w', text)
-    if not a_match:
-        return []
+    if not a_match or ':' not in text[:a_match.start()]:
+        return None, []
 
-    # A colon must appear before the "a." – it introduces the list
-    if ':' not in text[:a_match.start()]:
-        return []
-
-    # Work from "a." to the end of the text
-    list_text = text[a_match.start():]
-
-    # Split at sub-point boundaries: ", b.", " b.", ", and e.", etc.
-    items_raw = re.split(r'(?:\s*,\s*(?:and\s+)?|\s+)(?=[a-z]\.\s)', list_text)
+    items_raw = re.split(r'(?:\s*,\s*(?:and\s+)?|\s+)(?=[a-z]\.\s)', text[a_match.start():])
 
     subpoints = []
     for item in items_raw:
@@ -192,16 +187,18 @@ def _extract_subpoints(text: str) -> List[Dict]:
             item_text = re.sub(r'\s+', ' ', m.group(2)).strip().rstrip('.,')
             subpoints.append({'letter': letter, 'text': item_text})
 
-    # Validate: letters must be sequential starting from 'a'
     if not subpoints or subpoints[0]['letter'] != 'a':
-        return []
+        return None, []
     expected = ord('a')
     for sp in subpoints:
         if ord(sp['letter']) != expected:
-            return []
+            return None, []
         expected += 1
 
-    return subpoints if len(subpoints) >= 2 else []
+    if len(subpoints) < 2:
+        return None, []
+
+    return _list_stem(text, a_match.start()), subpoints
 
 
 def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
@@ -254,21 +251,12 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
                 'text': full_text,
                 'section': current_section,
             }
-            bullets = _extract_bullets(full_text)
-            if bullets:
-                # Trim the inline list from the text; it's fully captured in bullets.
-                first_pos = full_text.index(_BULLET_CHAR)
-                colon_pos = full_text.rfind(':', 0, first_pos)
-                q['text'] = full_text[:colon_pos + 1]
-                q['bullets'] = bullets
-            else:
-                subpoints = _extract_subpoints(full_text)
-                if subpoints:
-                    # Trim the inline list from the text; it's fully captured in subpoints.
-                    a_match = re.search(r'\ba\.\s+\w', full_text)
-                    colon_pos = full_text.rfind(':', 0, a_match.start())
-                    q['text'] = full_text[:colon_pos + 1]
-                    q['subpoints'] = subpoints
+            for extract_fn, key in [(_extract_bullets, 'bullets'), (_extract_subpoints, 'subpoints')]:
+                stem, items = extract_fn(full_text)
+                if items:
+                    q['text'] = stem
+                    q[key] = items
+                    break
             questions.append(q)
 
     for line in lines[start_idx:]:

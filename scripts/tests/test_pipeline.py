@@ -564,7 +564,7 @@ class TestExtractSubpoints:
             "that you procure: a. catheters, b. stent retrievers, c. neurovascular coils, "
             "d. flow diverters, and e. liquid embolic agents."
         )
-        result = _extract_subpoints(text)
+        _, result = _extract_subpoints(text)
         assert len(result) == 5
         assert result[0] == {'letter': 'a', 'text': 'catheters'}
         assert result[1] == {'letter': 'b', 'text': 'stent retrievers'}
@@ -572,19 +572,24 @@ class TestExtractSubpoints:
         assert result[3] == {'letter': 'd', 'text': 'flow diverters'}
         assert result[4] == {'letter': 'e', 'text': 'liquid embolic agents'}
 
+    def test_stem_is_text_up_to_colon(self):
+        text = "Please address the following products that you procure: a. X, and b. Y."
+        stem, _ = _extract_subpoints(text)
+        assert stem == "Please address the following products that you procure:"
+
     def test_no_colon_returns_empty(self):
-        assert _extract_subpoints("What is your business? a. retail b. wholesale") == []
+        assert _extract_subpoints("What is your business? a. retail b. wholesale") == (None, [])
 
     def test_no_subpoints_returns_empty(self):
-        assert _extract_subpoints("What is the nature of your business?") == []
+        assert _extract_subpoints("What is the nature of your business?") == (None, [])
 
     def test_single_item_returns_empty(self):
-        assert _extract_subpoints("Please address: a. only one thing.") == []
+        assert _extract_subpoints("Please address: a. only one thing.") == (None, [])
 
     def test_space_separated_subpoints(self):
         """Sub-points joined from separate PDF lines (no commas)."""
         text = "Please address each of the following: a. item one b. item two c. item three"
-        result = _extract_subpoints(text)
+        _, result = _extract_subpoints(text)
         assert len(result) == 3
         assert result[0] == {'letter': 'a', 'text': 'item one'}
         assert result[1] == {'letter': 'b', 'text': 'item two'}
@@ -592,11 +597,11 @@ class TestExtractSubpoints:
 
     def test_non_sequential_letters_returns_empty(self):
         text = "Consider: a. first thing, c. third thing skipping b."
-        assert _extract_subpoints(text) == []
+        assert _extract_subpoints(text) == (None, [])
 
     def test_two_items(self):
         text = "Choose between: a. option alpha, and b. option beta."
-        result = _extract_subpoints(text)
+        _, result = _extract_subpoints(text)
         assert len(result) == 2
         assert result[0] == {'letter': 'a', 'text': 'option alpha'}
         assert result[1] == {'letter': 'b', 'text': 'option beta'}
@@ -647,24 +652,29 @@ class TestExtractBullets:
 
     def test_basic(self):
         text = f'Explain whether you compete. If so: {self.BULLET} identify which products, and {self.BULLET} respond to questions 19 and 20.'
-        result = _extract_bullets(text)
+        _, result = _extract_bullets(text)
         assert result == ['identify which products', 'respond to questions 19 and 20']
 
     def test_no_colon_returns_empty(self):
         text = f'Some question {self.BULLET} item one {self.BULLET} item two'
-        assert _extract_bullets(text) == []
+        assert _extract_bullets(text) == (None, [])
+
+    def test_stem_is_text_up_to_colon(self):
+        text = f'Explain whether you compete. If so: {self.BULLET} item one {self.BULLET} item two.'
+        stem, _ = _extract_bullets(text)
+        assert stem == 'Explain whether you compete. If so:'
 
     def test_no_bullet_returns_empty(self):
-        assert _extract_bullets('What is your business?') == []
+        assert _extract_bullets('What is your business?') == (None, [])
 
     def test_strips_trailing_and(self):
         text = f'Describe, including: {self.BULLET} item one, and {self.BULLET} item two.'
-        result = _extract_bullets(text)
+        _, result = _extract_bullets(text)
         assert result == ['item one', 'item two']
 
     def test_no_space_after_bullet(self):
         text = f'Description, including: {self.BULLET}item one, and {self.BULLET}item two.'
-        result = _extract_bullets(text)
+        _, result = _extract_bullets(text)
         assert result == ['item one', 'item two']
 
 
