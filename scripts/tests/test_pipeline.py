@@ -19,7 +19,7 @@ from parse_determination import (
     parse_text_as_table,
     _parse_section_blocks,
 )
-from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text
+from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text, _extract_subpoints
 from cutoff import is_waiver_merger, get_cutoff_date, should_skip_merger
 from extract_mergers import is_safe_url, get_serve_filename
 
@@ -554,6 +554,92 @@ class TestExtractQuestionsFromText:
 
     def test_no_questions_heading(self):
         assert extract_questions_from_text("No heading here.") == []
+
+
+class TestExtractSubpoints:
+    def test_inline_comma_separated(self):
+        text = (
+            "Describe whether your organisation purchases guidewires as a bundled package. "
+            "Please address whether guidewires are bundled with any of the following products "
+            "that you procure: a. catheters, b. stent retrievers, c. neurovascular coils, "
+            "d. flow diverters, and e. liquid embolic agents."
+        )
+        result = _extract_subpoints(text)
+        assert len(result) == 5
+        assert result[0] == {'letter': 'a', 'text': 'catheters'}
+        assert result[1] == {'letter': 'b', 'text': 'stent retrievers'}
+        assert result[2] == {'letter': 'c', 'text': 'neurovascular coils'}
+        assert result[3] == {'letter': 'd', 'text': 'flow diverters'}
+        assert result[4] == {'letter': 'e', 'text': 'liquid embolic agents'}
+
+    def test_no_colon_returns_empty(self):
+        assert _extract_subpoints("What is your business? a. retail b. wholesale") == []
+
+    def test_no_subpoints_returns_empty(self):
+        assert _extract_subpoints("What is the nature of your business?") == []
+
+    def test_single_item_returns_empty(self):
+        assert _extract_subpoints("Please address: a. only one thing.") == []
+
+    def test_space_separated_subpoints(self):
+        """Sub-points joined from separate PDF lines (no commas)."""
+        text = "Please address each of the following: a. item one b. item two c. item three"
+        result = _extract_subpoints(text)
+        assert len(result) == 3
+        assert result[0] == {'letter': 'a', 'text': 'item one'}
+        assert result[1] == {'letter': 'b', 'text': 'item two'}
+        assert result[2] == {'letter': 'c', 'text': 'item three'}
+
+    def test_non_sequential_letters_returns_empty(self):
+        text = "Consider: a. first thing, c. third thing skipping b."
+        assert _extract_subpoints(text) == []
+
+    def test_two_items(self):
+        text = "Choose between: a. option alpha, and b. option beta."
+        result = _extract_subpoints(text)
+        assert len(result) == 2
+        assert result[0] == {'letter': 'a', 'text': 'option alpha'}
+        assert result[1] == {'letter': 'b', 'text': 'option beta'}
+
+
+class TestExtractQuestionsWithSubpoints:
+    def test_question_with_lettered_subpoints(self):
+        lines = _lines(
+            ("Questions", True),
+            "1. Please address the following: a. item one, b. item two, and c. item three.",
+            "2. Unrelated question.",
+        )
+        result = extract_questions(lines)
+        assert len(result) == 2
+        assert 'subpoints' in result[0]
+        assert len(result[0]['subpoints']) == 3
+        assert result[0]['subpoints'][0] == {'letter': 'a', 'text': 'item one'}
+        assert result[0]['subpoints'][2] == {'letter': 'c', 'text': 'item three'}
+        assert 'subpoints' not in result[1]
+
+    def test_question_without_subpoints_has_no_field(self):
+        lines = _lines(
+            ("Questions", True),
+            "1. Describe your business.",
+        )
+        result = extract_questions(lines)
+        assert len(result) == 1
+        assert 'subpoints' not in result[0]
+
+    def test_multiline_subpoints(self):
+        """Sub-points spread across multiple PDF lines are joined then parsed."""
+        lines = _lines(
+            ("Questions", True),
+            "1. Describe bundling across any of the following:",
+            "a. catheters, b. stent retrievers,",
+            "c. neurovascular coils.",
+            "2. Next question.",
+        )
+        result = extract_questions(lines)
+        assert len(result) == 2
+        assert 'subpoints' in result[0]
+        assert len(result[0]['subpoints']) == 3
+        assert result[0]['subpoints'][1]['letter'] == 'b'
 
 
 # ---------------------------------------------------------------------------

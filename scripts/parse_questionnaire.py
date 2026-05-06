@@ -123,6 +123,53 @@ def extract_lines_with_formatting(pdf_path: str) -> List[Dict]:
     return lines, full_text
 
 
+def _extract_subpoints(text: str) -> List[Dict]:
+    """
+    Extract lettered sub-points (a., b., c. …) from a question text.
+
+    Detects lists introduced by a colon, e.g.:
+      "…following products: a. catheters, b. stent retrievers, c. coils."
+
+    Returns a list of {'letter': str, 'text': str} dicts, or [] if no
+    valid lettered list is found (fewer than two sequential items, or no
+    preceding colon).
+    """
+    # Find the first "a. <word>" in the text
+    a_match = re.search(r'\ba\.\s+\w', text)
+    if not a_match:
+        return []
+
+    # A colon must appear before the "a." – it introduces the list
+    if ':' not in text[:a_match.start()]:
+        return []
+
+    # Work from "a." to the end of the text
+    list_text = text[a_match.start():]
+
+    # Split at sub-point boundaries: ", b.", " b.", ", and e.", etc.
+    items_raw = re.split(r'(?:\s*,\s*(?:and\s+)?|\s+)(?=[a-z]\.\s)', list_text)
+
+    subpoints = []
+    for item in items_raw:
+        item = item.strip().rstrip('.,')
+        m = re.match(r'^([a-z])\.\s+(.+)$', item, re.DOTALL)
+        if m:
+            letter = m.group(1)
+            item_text = re.sub(r'\s+', ' ', m.group(2)).strip().rstrip('.,')
+            subpoints.append({'letter': letter, 'text': item_text})
+
+    # Validate: letters must be sequential starting from 'a'
+    if not subpoints or subpoints[0]['letter'] != 'a':
+        return []
+    expected = ord('a')
+    for sp in subpoints:
+        if ord(sp['letter']) != expected:
+            return []
+        expected += 1
+
+    return subpoints if len(subpoints) >= 2 else []
+
+
 def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
     """
     Extract the numbered questions from annotated lines.
@@ -168,11 +215,15 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
             full_text = re.sub(r'\s+', ' ', full_text)
             # Remove trailing page numbers (single digit at the end)
             full_text = re.sub(r'\s+\d$', '', full_text)
-            questions.append({
+            q = {
                 'number': current_question_num,
                 'text': full_text,
                 'section': current_section,
-            })
+            }
+            subpoints = _extract_subpoints(full_text)
+            if subpoints:
+                q['subpoints'] = subpoints
+            questions.append(q)
 
     for line in lines[start_idx:]:
         text = line['text']
