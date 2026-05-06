@@ -1,9 +1,9 @@
 {
-  "total_mergers": 91,
+  "total_mergers": 92,
   "total_waivers": 130,
   "by_status": {
     "Assessment completed": 65,
-    "Under assessment": 26
+    "Under assessment": 27
   },
   "by_determination": {
     "Approved": 65,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-80010",
+      "merger_name": "Medtronic - Scientia",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-05T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-35014",
       "merger_name": "News \u2013 acquisition of 20% of National Distribution Services",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-60011",
       "merger_name": "Barro Group / BQC Quarries and Burdekin Concrete",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-28T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-75016",
-      "merger_name": "Fulton Hogan \u2013 Avionics",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-28T12:00:00Z",

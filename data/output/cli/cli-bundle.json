@@ -15559,6 +15559,143 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/medtronic-scientia",
+      "merger_name": "Medtronic - Scientia",
+      "status": "Under assessment",
+      "merger_id": "MN-80010",
+      "effective_notification_datetime": "2026-05-05T12:00:00Z",
+      "original_notification_datetime": "2026-05-05T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-06-18T12:00:00Z",
+      "page_modified_datetime": "2026-05-06T15:44:23+10:00",
+      "consultation_response_due_date": "2026-05-13T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Project Saint Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "10489040"
+        },
+        {
+          "name": "Medtronic plc",
+          "identifier_type": null,
+          "identifier": "981183488"
+        },
+        {
+          "name": "United States Surgical Corporation",
+          "identifier_type": null,
+          "identifier": "132518270"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Scientia Vascular, Inc.",
+          "identifier_type": null,
+          "identifier": "5931868"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2412",
+          "name": "Medical and Surgical Equipment Manufacturing"
+        }
+      ],
+      "merger_description": "Medtronic plc (Medtronic), via its indirect wholly-owned subsidiary Project Saint Merger Sub, Inc., proposes to acquire Scientia Vascular, Inc. (Scientia) (the Acquisition).\n\nMedtronic is a global healthcare technology company incorporated in Ireland and listed on the New York Stock Exchange. Globally (including in Australia), Medtronic develops, manufactures, distributes and sells device-based medical therapies and services within its cardiovascular, neuroscience and medical surgery portfolios. In Australia, Medtronic operates through its Australian subsidiary, Medtronic Australasia Pty Ltd, to supply medical devices, including neurovascular devices such as guidewires, catheters, aspiration catheters, embolic coils, flow diverters, liquid embolic agents, intrasaccular devices, AB stents and stent retrievers. In relation to the supply of guidewires in Australia, Medtronic supplies its Mirage .008” guidewire.\n\nScientia is a medical device company headquartered in West Valley City, Utah, USA. Scientia specialises in microfabrication technology for guidewires and catheters used in neurovascular and peripheral vascular procedures. In Australia, Scientia supplies guidewires under its “Aristotle” brand through a third-party distributor, LifeHealthcare Pty Ltd. The Aristotle-branded guidewires are supplied in Australia in four diameter configurations, .014”, .018”, .024”, and .035”.\n\nBoth Medtronic and Scientia supply neurovascular guidewires in Australia.",
+      "events": [
+        {
+          "date": "2026-05-06T12:00:00Z",
+          "title": "Questionnaire – Medtronic - Scientia",
+          "display_title": "Questionnaire – Medtronic - Scientia",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Medtronic%20-%20Scientia.docx",
+          "url_gh": "/mergers/MN-80010/Questionnaire - Medtronic - Scientia.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-05T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-25003",
+          "merger_name": "Delinea (TPG) - StrongDM",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Delinea Inc.",
+              "identifier_type": null,
+              "identifier": "Delaware corporation file number  3777797"
+            }
+          ],
+          "targets": [
+            {
+              "name": "StrongDM, Inc",
+              "identifier_type": null,
+              "identifier": "CIK  0001637806"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-35010",
+          "merger_name": "Blackstone - Advanced Cooling Technologies",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Rocket Purchaser, L.L.C.",
+              "identifier_type": null,
+              "identifier": "10521263"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Advanced Cooling Technologies, Inc.",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-75006",
+          "merger_name": "Playlist – EGYM",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Saturn NewCo, Inc",
+              "identifier_type": null,
+              "identifier": "DE File number: 10449592"
+            },
+            {
+              "name": "ClassPass Aggregator, LLC",
+              "identifier_type": null,
+              "identifier": "DE File number: 6177870"
+            }
+          ],
+          "targets": [
+            {
+              "name": "EGYM SE",
+              "identifier_type": null,
+              "identifier": "HRB: 186394"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/servicenow-veza",
       "merger_name": "ServiceNow - Veza",
       "status": "Assessment completed",
@@ -43523,6 +43660,69 @@
       ],
       "questions_count": 3
     },
+    "MN-80010": {
+      "deadline": "13 May 2026",
+      "deadline_iso": "2026-05-13",
+      "file_name": "Questionnaire - Medtronic - Scientia.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "section": "Questions for suppliers of guidewires and other neurovascular medical devices",
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships you have with Medtronic and/or Scientia."
+        },
+        {
+          "number": 2,
+          "section": "Questions for suppliers of guidewires and other neurovascular medical devices",
+          "text": "Who are your main competitors in the supply of guidewires and other neurovascular medical devices in Australia? In your response, please include who your strongest competitors are for each type of neurovascular medical device and the reasons why."
+        },
+        {
+          "number": 3,
+          "section": "Questions for suppliers of guidewires and other neurovascular medical devices",
+          "text": "Describe how procurement processes with private and public hospitals for the supply of guidewires and other neurovascular medical devices are typically carried out in Australia. In your response, you may wish to identify: a. whether processes are conducted on a product line basis, or whether they can encompass a range of related product lines (i.e. both guidewires and catheters); b. if neurovascular medical devices are added to a panel by private and/or public hospitals, at what stage and by who are decisions made to use and pay for the relevant device; c. any factors that influence a physician’s choice of brand when selecting a guidewire or other neurovascular medical device."
+        },
+        {
+          "number": 4,
+          "section": "Questions for suppliers of guidewires and other neurovascular medical devices",
+          "text": "If the Acquisition proceeds and the merged entity offered a bundled product of guidewires and other neurovascular medical devices to private and public hospitals in Australia, describe how this offering would impact your ability to compete with the merged entity."
+        },
+        {
+          "number": 5,
+          "section": "Questions for customers of Medtronic and/or Scientia",
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships you have (or have had) with Medtronic and/or Scientia for the supply of guidewires or other neurovascular devices."
+        },
+        {
+          "number": 6,
+          "section": "Questions for customers of Medtronic and/or Scientia",
+          "text": "Who are the main suppliers of guidewires and other neurovascular medical devices in Australia? In your response, please identify how these suppliers compare (e.g. in relation to price, product features, product quality)."
+        },
+        {
+          "number": 7,
+          "section": "Questions for customers of Medtronic and/or Scientia",
+          "text": "Please identify whether any guidewires or other neurovascular medical devices supplied by Scientia or Medtronic are particularly important or a ‘must have’."
+        },
+        {
+          "number": 8,
+          "section": "Questions for customers of Medtronic and/or Scientia",
+          "text": "Describe how procurement processes for guidewires and other neurovascular medical devices are carried out by your organisation in Australia. In your response, you may wish to identify: a. whether processes are conducted on a product line basis, or whether they encompass a range of related product lines (e.g. both guidewires and catheters); b. if neurovascular medical devices are added to a panel by private and/or public hospitals, who makes decisions to use and pay for the relevant device, and when are decisions typically made; c. factors that influence a physician’s choice of brand when selecting a guidewire or other neurovascular medical device."
+        },
+        {
+          "number": 9,
+          "section": "Questions for customers of Medtronic and/or Scientia",
+          "text": "Describe whether your organisation currently purchases guidewires and other neurovascular medical devices as a bundled package. Why or why not? In your response, please address whether guidewires are bundled with any of the following products that you procure: a. catheters, b. stent retrievers, c. neurovascular coils, d. flow diverters, and e. liquid embolic agents."
+        },
+        {
+          "number": 10,
+          "section": "Questions for all respondents",
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition."
+        },
+        {
+          "number": 11,
+          "section": "Questions for all respondents",
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        }
+      ],
+      "questions_count": 11
+    },
     "MN-85002": {
       "deadline": "16 January 2026",
       "deadline_iso": "2026-01-16",
@@ -44729,11 +44929,11 @@
     }
   },
   "stats": {
-    "total_mergers": 91,
+    "total_mergers": 92,
     "total_waivers": 130,
     "by_status": {
       "Assessment completed": 65,
-      "Under assessment": 26
+      "Under assessment": 27
     },
     "by_determination": {
       "Approved": 65,
@@ -44807,6 +45007,14 @@
     ],
     "recent_mergers": [
       {
+        "merger_id": "MN-80010",
+        "merger_name": "Medtronic - Scientia",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-05-05T12:00:00Z",
+        "is_waiver": false
+      },
+      {
         "merger_id": "MN-35014",
         "merger_name": "News – acquisition of 20% of National Distribution Services",
         "status": "Under assessment",
@@ -44833,14 +45041,6 @@
       {
         "merger_id": "MN-60011",
         "merger_name": "Barro Group / BQC Quarries and Burdekin Concrete",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-04-28T12:00:00Z",
-        "is_waiver": false
-      },
-      {
-        "merger_id": "MN-75016",
-        "merger_name": "Fulton Hogan – Avionics",
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-04-28T12:00:00Z",
@@ -45033,6 +45233,11 @@
         "merger_count": 4
       },
       {
+        "code": "2412",
+        "name": "Medical and Surgical Equipment Manufacturing",
+        "merger_count": 4
+      },
+      {
         "code": "2469",
         "name": "Other Specialised Machinery and Equipment Manufacturing",
         "merger_count": 4
@@ -45085,11 +45290,6 @@
       {
         "code": "5700",
         "name": "Internet Publishing and Broadcasting",
-        "merger_count": 3
-      },
-      {
-        "code": "2412",
-        "name": "Medical and Surgical Equipment Manufacturing",
         "merger_count": 3
       },
       {

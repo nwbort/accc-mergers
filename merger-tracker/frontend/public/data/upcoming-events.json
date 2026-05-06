@@ -51,6 +51,16 @@
       "effective_notification_datetime": "2026-05-04T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-05-13T12:00:00Z",
+      "merger_id": "MN-80010",
+      "merger_name": "Medtronic - Scientia",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-05-05T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-05-15T12:00:00Z",
@@ -309,8 +319,18 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-05-04T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-06-18T12:00:00Z",
+      "merger_id": "MN-80010",
+      "merger_name": "Medtronic - Scientia",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-05-05T12:00:00Z"
     }
   ],
-  "count": 31,
+  "count": 33,
   "days_ahead": 60
 }
