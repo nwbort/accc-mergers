@@ -18,6 +18,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   pipeline:
@@ -143,7 +144,8 @@ jobs:
           git add data/processed/mergers.json data/processed/questionnaire_data.json \
             data/processed/similar_mergers.json \
             data/raw/matters/ merger-tracker/frontend/public/data/ \
-            merger-tracker/frontend/public/feed.xml data/output/
+            merger-tracker/frontend/public/feed.xml data/output/ \
+            data/frozen_events_mergers.json
 
       # --- Convert DOCX to PDF ---
       # Runs whenever there are unconverted files, catching both new downloads and stragglers.
@@ -209,7 +211,8 @@ jobs:
           git add data/processed/mergers.json data/processed/questionnaire_data.json \
             data/processed/similar_mergers.json \
             data/raw/matters/ merger-tracker/frontend/public/data/ \
-            merger-tracker/frontend/public/feed.xml data/output/
+            merger-tracker/frontend/public/feed.xml data/output/ \
+            data/frozen_events_mergers.json
 
       # --- Single commit ---
 
@@ -272,3 +275,56 @@ jobs:
               fi
             fi
           fi
+
+      # --- Open GitHub issues for auto-fixed questionnaire dates ---
+      # The extraction script writes missing_questionnaire_dates.json when it
+      # auto-sets a date.  We create one issue per affected merger so the owner
+      # can confirm the date is correct and close the issue when happy.
+
+      - name: Create issues for auto-fixed questionnaire dates
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ ! -f data/processed/missing_questionnaire_dates.json ]; then
+            echo "No missing questionnaire dates to report"
+            exit 0
+          fi
+
+          COUNT=$(jq '.issues | length' data/processed/missing_questionnaire_dates.json)
+          if [ "$COUNT" -eq 0 ]; then
+            echo "No issues to create"
+            exit 0
+          fi
+
+          echo "Creating $COUNT issue(s) for missing questionnaire dates..."
+
+          gh label create "missing-questionnaire-date" \
+            --description "Questionnaire date was missing; auto-set by pipeline" \
+            --color "e4e669" \
+            --force
+
+          for i in $(seq 0 $((COUNT - 1))); do
+            MERGER_ID=$(jq -r ".issues[$i].merger_id" data/processed/missing_questionnaire_dates.json)
+
+            # Skip if an open issue already exists for this merger (idempotent guard)
+            EXISTING=$(gh issue list \
+              --label "missing-questionnaire-date" \
+              --state open \
+              --json title \
+              --jq '.[].title' | grep "$MERGER_ID" || true)
+            if [ -n "$EXISTING" ]; then
+              echo "Issue already open for $MERGER_ID — skipping"
+              continue
+            fi
+
+            TITLE=$(jq -r ".issues[$i].title" data/processed/missing_questionnaire_dates.json)
+            jq -n \
+              --argjson idx "$i" \
+              --slurpfile data data/processed/missing_questionnaire_dates.json \
+              '{"title": $data[0].issues[$idx].title,
+                "body":  $data[0].issues[$idx].body,
+                "labels": ["missing-questionnaire-date"]}' | \
+            gh api "repos/$GITHUB_REPOSITORY/issues" \
+              --method POST --input -
+            echo "Created issue: $TITLE"
+          done
