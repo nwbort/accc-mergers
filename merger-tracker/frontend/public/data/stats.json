@@ -2,11 +2,11 @@
   "total_mergers": 92,
   "total_waivers": 131,
   "by_status": {
-    "Assessment completed": 67,
-    "Under assessment": 25
+    "Assessment completed": 68,
+    "Under assessment": 24
   },
   "by_determination": {
-    "Approved": 67,
+    "Approved": 68,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 10
   },
   "phase_duration": {
-    "average_days": 27.761194029850746,
+    "average_days": 27.735294117647058,
     "median_days": 26,
-    "average_business_days": 18.17910447761194,
+    "average_business_days": 18.176470588235293,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 25.4
+        "percentage": 25.0
       },
       "day20": {
-        "count": 53,
-        "percentage": 79.1
+        "count": 54,
+        "percentage": 79.4
       },
       "day30": {
-        "count": 66,
+        "count": 67,
         "percentage": 98.5
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-40015",
+      "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
+      "determination": "Approved",
+      "determination_date": "2026-05-06T12:00:00Z",
+      "page_modified_datetime": "2026-05-06T17:23:58+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-85025",
       "merger_name": "Francisco Partners - Blackline Safety",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-05016",
-      "merger_name": "Coles - substation in Yarrawonga VIC",
-      "determination": "Approved",
-      "determination_date": "2026-05-05T12:00:00Z",
-      "page_modified_datetime": "2026-05-05T17:08:23+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
