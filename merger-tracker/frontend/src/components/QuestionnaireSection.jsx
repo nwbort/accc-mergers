@@ -177,6 +177,11 @@ function QuestionnaireSection({ mergerId, events }) {
               {active.questions.map((q, idx) => {
                 const prevSection = idx > 0 ? active.questions[idx - 1].section : null;
                 const showSectionHeader = q.section && q.section !== prevSection;
+                // When sub-points are present, strip the inline "a. X, b. Y…" run from
+                // the question text so it isn't shown twice.
+                const displayText = q.subpoints
+                  ? q.text.replace(/:\s+a\.\s+.+$/, ':')
+                  : q.text;
                 return (
                   <li key={q.number}>
                     {showSectionHeader && (
@@ -188,7 +193,19 @@ function QuestionnaireSection({ mergerId, events }) {
                       <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 text-gray-500 text-xs font-medium flex items-center justify-center mt-0.5">
                         {q.number}
                       </span>
-                      <p className="text-sm text-gray-600 leading-relaxed">{q.text}</p>
+                      <div>
+                        <p className="text-sm text-gray-600 leading-relaxed">{displayText}</p>
+                        {q.subpoints && (
+                          <ol className="mt-2 space-y-1">
+                            {q.subpoints.map((sp) => (
+                              <li key={sp.letter} className="flex gap-2 items-baseline">
+                                <span className="flex-shrink-0 text-xs font-medium text-gray-400 w-4">{sp.letter}.</span>
+                                <span className="text-sm text-gray-500">{sp.text}</span>
+                              </li>
+                            ))}
+                          </ol>
+                        )}
+                      </div>
                     </div>
                   </li>
                 );
