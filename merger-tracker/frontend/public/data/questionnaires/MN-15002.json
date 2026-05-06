@@ -11,7 +11,11 @@
     {
       "number": 2,
       "section": "Questions for customers of cloud security services and cloud providers",
-      "text": "Provide a brief description of the: \uf0b7 cloud security services you acquire or have acquired, including the functions of those services, your suppliers (including Google or Wiz, if applicable), and the cloud environments in which they are used (including multi-cloud, hybrid or on-premises environments). \uf0b7 cloud provider(s) you use, including whether you are a multi-cloud user and whether you use different providers for specific use cases."
+      "text": "Provide a brief description of the:",
+      "bullets": [
+        "cloud security services you acquire or have acquired, including the functions of those services, your suppliers (including Google or Wiz, if applicable), and the cloud environments in which they are used (including multi-cloud, hybrid or on-premises environments)",
+        "cloud provider(s) you use, including whether you are a multi-cloud user and whether you use different providers for specific use cases"
+      ]
     },
     {
       "number": 3,
@@ -51,7 +55,11 @@
     {
       "number": 10,
       "section": "Other",
-      "text": "What data, if any, would each of the merging parties obtain access to as a result of the Acquisition, that they would not otherwise have access to? For example: \uf0b7 data about customers\u2019 use of alternative cloud platforms, which Google would not otherwise have had access to; and/or \uf0b7 data about customers\u2019 use of alternative cloud security services, which Wiz would not otherwise have had access to. Provide an overview of the types of data, how the data access would arise in the ordinary course of providing the relevant services, and whether the data would be considered commercially sensitive and competitively valuable."
+      "text": "What data, if any, would each of the merging parties obtain access to as a result of the Acquisition, that they would not otherwise have access to? For example:",
+      "bullets": [
+        "data about customers\u2019 use of alternative cloud platforms, which Google would not otherwise have had access to",
+        "data about customers\u2019 use of alternative cloud security services, which Wiz would not otherwise have had access to. Provide an overview of the types of data, how the data access would arise in the ordinary course of providing the relevant services, and whether the data would be considered commercially sensitive and competitively valuable"
+      ]
     },
     {
       "number": 11,

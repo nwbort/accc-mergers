@@ -123,6 +123,84 @@ def extract_lines_with_formatting(pdf_path: str) -> List[Dict]:
     return lines, full_text
 
 
+_BULLET_CHAR = ''
+
+
+def _list_stem(text: str, list_start_pos: int) -> str:
+    """Return text up to and including the last colon before list_start_pos."""
+    colon_pos = text.rfind(':', 0, list_start_pos)
+    return text[:colon_pos + 1]
+
+
+def _extract_bullets(text: str) -> tuple:
+    """
+    Extract bullet items (\\uf0b7 Wingdings bullet from PDF) from a question text.
+
+    Detects lists introduced by a colon, e.g.:
+      "…including: \\uf0b7 item one \\uf0b7 item two \\uf0b7 item three"
+
+    Returns (stem, bullets) where stem is text up to and including the
+    colon, or (None, []) if no colon precedes the first bullet.
+    """
+    if _BULLET_CHAR not in text:
+        return None, []
+
+    first_pos = text.index(_BULLET_CHAR)
+
+    if ':' not in text[:first_pos]:
+        return None, []
+
+    bullets = []
+    for part in text.split(_BULLET_CHAR)[1:]:
+        cleaned = part.strip()
+        cleaned = re.sub(r',?\s+and(?:/or)?\s*$', '', cleaned, flags=re.IGNORECASE).strip()
+        cleaned = cleaned.rstrip('.,;').strip()
+        if cleaned:
+            bullets.append(cleaned)
+
+    return (_list_stem(text, first_pos), bullets) if bullets else (None, [])
+
+
+def _extract_subpoints(text: str) -> tuple:
+    """
+    Extract lettered sub-points (a., b., c. …) from a question text.
+
+    Detects lists introduced by a colon, e.g.:
+      "…following products: a. catheters, b. stent retrievers, c. coils."
+
+    Returns (stem, subpoints) where stem is text up to and including the
+    colon, or (None, []) if no valid lettered list is found (fewer than
+    two sequential items, or no preceding colon).
+    """
+    a_match = re.search(r'\ba\.\s+\w', text)
+    if not a_match or ':' not in text[:a_match.start()]:
+        return None, []
+
+    items_raw = re.split(r'(?:\s*,\s*(?:and\s+)?|\s+)(?=[a-z]\.\s)', text[a_match.start():])
+
+    subpoints = []
+    for item in items_raw:
+        item = item.strip().rstrip('.,')
+        m = re.match(r'^([a-z])\.\s+(.+)$', item, re.DOTALL)
+        if m:
+            letter = m.group(1)
+            item_text = re.sub(r'\s+', ' ', m.group(2)).strip().rstrip('.,')
+            subpoints.append({'letter': letter, 'text': item_text})
+
+    if not subpoints or subpoints[0]['letter'] != 'a':
+        return None, []
+    expected = ord('a')
+    for sp in subpoints:
+        if ord(sp['letter']) != expected:
+            return None, []
+        expected += 1
+
+    if len(subpoints) < 2:
+        return None, []
+
+    return _list_stem(text, a_match.start()), subpoints
+
+
 def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
     """
     Extract the numbered questions from annotated lines.
@@ -168,11 +246,18 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
             full_text = re.sub(r'\s+', ' ', full_text)
             # Remove trailing page numbers (single digit at the end)
             full_text = re.sub(r'\s+\d$', '', full_text)
-            questions.append({
+            q = {
                 'number': current_question_num,
                 'text': full_text,
                 'section': current_section,
-            })
+            }
+            for extract_fn, key in [(_extract_bullets, 'bullets'), (_extract_subpoints, 'subpoints')]:
+                stem, items = extract_fn(full_text)
+                if items:
+                    q['text'] = stem
+                    q[key] = items
+                    break
+            questions.append(q)
 
     for line in lines[start_idx:]:
         text = line['text']

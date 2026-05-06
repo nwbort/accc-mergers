@@ -188,7 +188,29 @@ function QuestionnaireSection({ mergerId, events }) {
                       <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 text-gray-500 text-xs font-medium flex items-center justify-center mt-0.5">
                         {q.number}
                       </span>
-                      <p className="text-sm text-gray-600 leading-relaxed">{q.text}</p>
+                      <div>
+                        <p className="text-sm text-gray-600 leading-relaxed">{q.text}</p>
+                        {q.subpoints && (
+                          <ol className="mt-2 space-y-1">
+                            {q.subpoints.map((sp) => (
+                              <li key={sp.letter} className="flex gap-2 items-baseline">
+                                <span className="flex-shrink-0 text-xs font-medium text-gray-400 w-4">{sp.letter}.</span>
+                                <span className="text-sm text-gray-500">{sp.text}</span>
+                              </li>
+                            ))}
+                          </ol>
+                        )}
+                        {q.bullets && (
+                          <ul className="mt-2 space-y-1">
+                            {q.bullets.map((b, i) => (
+                              <li key={i} className="flex gap-2 items-baseline">
+                                <span className="flex-shrink-0 text-gray-300 text-xs mt-0.5">–</span>
+                                <span className="text-sm text-gray-500">{b}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
                     </div>
                   </li>
                 );
