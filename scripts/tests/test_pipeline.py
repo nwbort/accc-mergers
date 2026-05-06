@@ -19,7 +19,7 @@ from parse_determination import (
     parse_text_as_table,
     _parse_section_blocks,
 )
-from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text, _extract_subpoints
+from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text, _extract_subpoints, _extract_bullets
 from cutoff import is_waiver_merger, get_cutoff_date, should_skip_merger
 from extract_mergers import is_safe_url, get_serve_filename
 
@@ -640,6 +640,59 @@ class TestExtractQuestionsWithSubpoints:
         assert 'subpoints' in result[0]
         assert len(result[0]['subpoints']) == 3
         assert result[0]['subpoints'][1]['letter'] == 'b'
+
+
+class TestExtractBullets:
+    BULLET = ''
+
+    def test_basic(self):
+        text = f'Explain whether you compete. If so: {self.BULLET} identify which products, and {self.BULLET} respond to questions 19 and 20.'
+        result = _extract_bullets(text)
+        assert result == ['identify which products', 'respond to questions 19 and 20']
+
+    def test_no_colon_returns_empty(self):
+        text = f'Some question {self.BULLET} item one {self.BULLET} item two'
+        assert _extract_bullets(text) == []
+
+    def test_no_bullet_returns_empty(self):
+        assert _extract_bullets('What is your business?') == []
+
+    def test_strips_trailing_and(self):
+        text = f'Describe, including: {self.BULLET} item one, and {self.BULLET} item two.'
+        result = _extract_bullets(text)
+        assert result == ['item one', 'item two']
+
+    def test_no_space_after_bullet(self):
+        text = f'Description, including: {self.BULLET}item one, and {self.BULLET}item two.'
+        result = _extract_bullets(text)
+        assert result == ['item one', 'item two']
+
+
+class TestExtractQuestionsWithBullets:
+    BULLET = ''
+
+    def test_question_with_bullets(self):
+        lines = _lines(
+            ("Questions", True),
+            f"1. Describe your experience, including: {self.BULLET} item one, and {self.BULLET} item two.",
+            "2. Unrelated question.",
+        )
+        result = extract_questions(lines)
+        assert len(result) == 2
+        assert 'bullets' in result[0]
+        assert result[0]['bullets'] == ['item one', 'item two']
+        assert result[0]['text'] == 'Describe your experience, including:'
+        assert 'bullets' not in result[1]
+
+    def test_bullets_take_priority_over_subpoints(self):
+        """If both patterns somehow appear, bullets win."""
+        lines = _lines(
+            ("Questions", True),
+            f"1. Address these: {self.BULLET} item one {self.BULLET} item two with a. detail b. more.",
+        )
+        result = extract_questions(lines)
+        assert 'bullets' in result[0]
+        assert 'subpoints' not in result[0]
 
 
 # ---------------------------------------------------------------------------

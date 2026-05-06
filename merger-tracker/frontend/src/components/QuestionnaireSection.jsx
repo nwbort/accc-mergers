@@ -200,6 +200,16 @@ function QuestionnaireSection({ mergerId, events }) {
                             ))}
                           </ol>
                         )}
+                        {q.bullets && (
+                          <ul className="mt-2 space-y-1">
+                            {q.bullets.map((b, i) => (
+                              <li key={i} className="flex gap-2 items-baseline">
+                                <span className="flex-shrink-0 text-gray-300 text-xs mt-0.5">–</span>
+                                <span className="text-sm text-gray-500">{b}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
                     </div>
                   </li>
