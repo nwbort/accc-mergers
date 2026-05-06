@@ -1,9 +1,9 @@
 {
-  "total_mergers": 92,
+  "total_mergers": 93,
   "total_waivers": 132,
   "by_status": {
     "Assessment completed": 68,
-    "Under assessment": 24
+    "Under assessment": 25
   },
   "by_determination": {
     "Approved": 68,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-10007",
+      "merger_name": "Rubik Australia Pty Limited - Qube Holdings Limited",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-06T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-80010",
       "merger_name": "Medtronic - Scientia",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-04-29T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-60011",
-      "merger_name": "Barro Group / BQC Quarries and Burdekin Concrete",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-28T12:00:00Z",
       "is_waiver": false
     }
   ],
