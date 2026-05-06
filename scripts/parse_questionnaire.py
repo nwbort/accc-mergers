@@ -222,6 +222,11 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
             }
             subpoints = _extract_subpoints(full_text)
             if subpoints:
+                # Trim the inline list from the text; it's fully captured in subpoints.
+                # Find the last colon before the "a." marker and cut there.
+                a_match = re.search(r'\ba\.\s+\w', full_text)
+                colon_pos = full_text.rfind(':', 0, a_match.start())
+                q['text'] = full_text[:colon_pos + 1]
                 q['subpoints'] = subpoints
             questions.append(q)
 

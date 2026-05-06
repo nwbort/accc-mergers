@@ -177,11 +177,6 @@ function QuestionnaireSection({ mergerId, events }) {
               {active.questions.map((q, idx) => {
                 const prevSection = idx > 0 ? active.questions[idx - 1].section : null;
                 const showSectionHeader = q.section && q.section !== prevSection;
-                // When sub-points are present, strip the inline "a. X, b. Y…" run from
-                // the question text so it isn't shown twice.
-                const displayText = q.subpoints
-                  ? q.text.replace(/:\s+a\.\s+.+$/, ':')
-                  : q.text;
                 return (
                   <li key={q.number}>
                     {showSectionHeader && (
@@ -194,7 +189,7 @@ function QuestionnaireSection({ mergerId, events }) {
                         {q.number}
                       </span>
                       <div>
-                        <p className="text-sm text-gray-600 leading-relaxed">{displayText}</p>
+                        <p className="text-sm text-gray-600 leading-relaxed">{q.text}</p>
                         {q.subpoints && (
                           <ol className="mt-2 space-y-1">
                             {q.subpoints.map((sp) => (
