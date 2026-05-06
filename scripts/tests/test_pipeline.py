@@ -483,15 +483,39 @@ class TestExtractQuestions:
         assert result[0]['section'] == 'Questions for customers of Event Stream Processing Software and Integration Software'
         assert result[1]['section'] == result[0]['section']
 
-    def test_questions_for_not_treated_as_heading(self):
-        """'Questions for ...' is a sub-section, not the main heading."""
+    def test_questions_for_as_sole_heading(self):
+        """'Questions for X' is used as the main heading when no plain 'Questions' exists."""
         lines = _lines(
             ("Questions for the parties", True),
-            "1. Should not match.",
+            "1. Describe your business.",
         )
-        # "Questions for ..." should NOT match as the main heading
         result = extract_questions(lines)
-        assert len(result) == 0
+        assert len(result) == 1
+        assert result[0]['number'] == 1
+        assert result[0]['section'] == 'Questions for the parties'
+
+    def test_questions_for_all_stakeholders_pattern(self):
+        """MN-10007 style: two 'Questions for X' sections, no plain 'Questions' heading."""
+        lines = _lines(
+            ("Questions for all stakeholders", True),
+            "1. Describe your business.",
+            "2. Outline any concerns.",
+            "3. Provide any additional information.",
+            ("Questions for stakeholders at the Port of Newcastle", True),
+            "Although MAM does not have a direct ownership interest,",
+            "the ACCC is considering the extent to which MAM could control.",
+            "4. Identify alternative suppliers of stevedoring services.",
+            "5. Identify alternative suppliers of grain export terminal services.",
+        )
+        result = extract_questions(lines)
+        assert len(result) == 5
+        assert result[0]['section'] == 'Questions for all stakeholders'
+        assert result[1]['section'] == 'Questions for all stakeholders'
+        assert result[2]['section'] == 'Questions for all stakeholders'
+        assert result[3]['section'] == 'Questions for stakeholders at the Port of Newcastle'
+        assert result[4]['section'] == 'Questions for stakeholders at the Port of Newcastle'
+        assert result[3]['number'] == 4
+        assert result[4]['number'] == 5
 
     def test_heading_with_subtitle(self):
         """Heading like 'Questions – please answer all questions...'"""
