@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-04-27T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-06-10T12:00:00Z",
-  "page_modified_datetime": "2026-04-28T12:01:58+10:00",
+  "page_modified_datetime": "2026-05-06T09:08:30+10:00",
   "consultation_response_due_date": "2026-05-05T12:00:00Z",
   "acquirers": [
     {
@@ -30,14 +30,14 @@
   ],
   "other_parties": [
     {
-      "name": "JOEY HOLDCO PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "37 658 985 276"
-    },
-    {
       "name": "ADORA HOLDCO PTY LTD",
       "identifier_type": "ABN",
       "identifier": "66 657 708 819"
+    },
+    {
+      "name": "Fertility SA Pty Ltd",
+      "identifier_type": "ACN",
+      "identifier": "147 408 857"
     },
     {
       "name": "Genea HoldCo SA Pty Ltd",
@@ -45,9 +45,9 @@
       "identifier": "695 660 701"
     },
     {
-      "name": "Fertility SA Pty Ltd",
-      "identifier_type": "ACN",
-      "identifier": "147 408 857"
+      "name": "JOEY HOLDCO PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "37 658 985 276"
     }
   ],
   "anzsic_codes": [
@@ -68,7 +68,7 @@
       "display_title": "Genea - Embrace Fertility - questionnaire",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Genea%20-%20Embrace%20Fertility%20-%20questionnaire_2.docx",
       "url_gh": "/mergers/MN-05009/Genea - Embrace Fertility - questionnaire_2.pdf",
-      "status": "live",
+      "status": "removed",
       "phase": null
     },
     {

@@ -2181,7 +2181,7 @@
     "original_notification_datetime": "2026-04-27T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-06-10T12:00:00Z",
-    "page_modified_datetime": "2026-04-28T12:01:58+10:00",
+    "page_modified_datetime": "2026-05-06T09:08:30+10:00",
     "consultation_response_due_date": "2026-05-05T12:00:00Z",
     "acquirers": [
       {
@@ -2204,14 +2204,14 @@
     ],
     "other_parties": [
       {
-        "name": "JOEY HOLDCO PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "37 658 985 276"
-      },
-      {
         "name": "ADORA HOLDCO PTY LTD",
         "identifier_type": "ABN",
         "identifier": "66 657 708 819"
+      },
+      {
+        "name": "Fertility SA Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "147 408 857"
       },
       {
         "name": "Genea HoldCo SA Pty Ltd",
@@ -2219,9 +2219,9 @@
         "identifier": "695 660 701"
       },
       {
-        "name": "Fertility SA Pty Ltd",
-        "identifier_type": "ACN",
-        "identifier": "147 408 857"
+        "name": "JOEY HOLDCO PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "37 658 985 276"
       }
     ],
     "anzsic_codes": [
@@ -2242,7 +2242,7 @@
         "display_title": "Genea - Embrace Fertility - questionnaire",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Genea%20-%20Embrace%20Fertility%20-%20questionnaire_2.docx",
         "url_gh": "/mergers/MN-05009/Genea - Embrace Fertility - questionnaire_2.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-04-27T12:00:00Z",
@@ -3907,7 +3907,7 @@
     "original_notification_datetime": "2026-04-24T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-06-10T12:00:00Z",
-    "page_modified_datetime": "2026-04-28T17:16:31+10:00",
+    "page_modified_datetime": "2026-05-05T17:00:46+10:00",
     "consultation_response_due_date": "2026-05-05T12:00:00Z",
     "acquirers": [
       {
@@ -3925,9 +3925,19 @@
     ],
     "other_parties": [
       {
+        "name": "Josdale Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "629 731 013"
+      },
+      {
         "name": "Australian Meat Group Inc",
         "identifier_type": null,
         "identifier": ""
+      },
+      {
+        "name": "Australian Meat Properties Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "165 852 282"
       },
       {
         "name": "NSW Meat Properties Pty Ltd",
@@ -3935,19 +3945,9 @@
         "identifier": "630 576 859"
       },
       {
-        "name": "Josdale Pty Ltd",
-        "identifier_type": "ACN",
-        "identifier": "629 731 013"
-      },
-      {
         "name": "Cheltenham Property Nominees Pty Ltd",
         "identifier_type": "ACN",
         "identifier": "134 215 731"
-      },
-      {
-        "name": "Australian Meat Properties Pty Ltd",
-        "identifier_type": "ACN",
-        "identifier": "165 852 282"
       }
     ],
     "anzsic_codes": [
@@ -3960,7 +3960,7 @@
         "name": "Meat Processing"
       }
     ],
-    "merger_description": "Australian Meat Group Pty Ltd (**AMG**) proposes to acquire 100% of the issued share capital, livestock inventory and general stock inventory of Killara Feedlot Pty Ltd (**Killara**) (**the Acquisition**).\n\nAMG is an independent Australian beef processor. AMG operates two beef processing facilities, one in Dandenong, Victoria and the other in Cootamundra, New South Wales. It supplies beef to the wholesale domestic and export markets.\n\nKillara is a wholly owned subsidiary of Elders Rural Services Australia Limited, an Australian listed agricultural services provider. Killara owns 1,185 ha of land on the edge of the Liverpool Plains, approximately 70km south of Tamworth, New South Wales. It operates a Tier 1 EPA accredited feedlot, grain processing facilities, cropping operations and grass feed paddocks, and supplies fat cattle from the feedlot to beef processors.\n\nAMG will acquire:\n\n* 100% of the issued share capital of Killara;\n* the livestock inventory of Killara at the date of completion (the majority of cattle acquired will be fully contracted to customers); and\n* the general stock inventory of Killara.",
+    "merger_description": "Australian Meat Group Pty Ltd (AMG) proposes to acquire 100% of the issued share capital, livestock inventory and general stock inventory of Killara Feedlot Pty Ltd (Killara) (the Acquisition).\n\nAMG is an independent Australian beef processor. AMG operates two beef processing facilities, one in Dandenong, Victoria and the other in Cootamundra, New South Wales. It supplies beef to the wholesale domestic and export markets.\n\nKillara is a wholly owned subsidiary of Elders Rural Services Australia Limited, an Australian listed agricultural services provider. Killara owns 1,185 ha of land on the edge of the Liverpool Plains, approximately 70km south of Tamworth, New South Wales. It operates a Tier 1 EPA accredited feedlot, grain processing facilities, cropping operations and grass feed paddocks, and supplies fat cattle from the feedlot to beef processors.\n\nAMG will acquire:\n\n* 100% of the issued share capital of Killara;\n* the livestock inventory of Killara at the date of completion (the majority of cattle acquired will be fully contracted to customers); and\n* the general stock inventory of Killara.",
     "events": [
       {
         "date": "2026-04-28T12:00:00Z",
@@ -3968,7 +3968,7 @@
         "display_title": "Australian Meat Group - Killara - Third-party questionnaire - April 2026",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Australian%20Meat%20Group%20-%20Killara%20-%20Third-party%20questionnaire%20-%20April%202026.docx",
         "url_gh": "/mergers/MN-20012/Australian Meat Group - Killara - Third-party questionnaire - April 2026.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-04-24T12:00:00Z",
@@ -8579,7 +8579,8 @@
     "original_notification_datetime": "2026-05-04T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-06-17T12:00:00Z",
-    "page_modified_datetime": "2026-05-05T17:38:07+10:00",
+    "page_modified_datetime": "2026-05-06T08:44:57+10:00",
+    "consultation_response_due_date": "2026-05-13T12:00:00Z",
     "acquirers": [
       {
         "name": "WPF DURATEC PTY LTD",
@@ -8596,12 +8597,12 @@
     ],
     "other_parties": [
       {
-        "name": "Grant Davies",
+        "name": "Ryan Jones",
         "identifier_type": null,
         "identifier": ""
       },
       {
-        "name": "Ryan Jones",
+        "name": "Grant Davies",
         "identifier_type": null,
         "identifier": ""
       }
@@ -8618,6 +8619,14 @@
         "date": "2026-05-04T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "",
+        "title": "WPF Duratec / Pacific Welding Australia - Questionnaire",
+        "display_title": "WPF Duratec / Pacific Welding Australia - Questionnaire",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Pacific%20Welding%20Australia_0.docx",
+        "url_gh": "/mergers/MN-75018/Pacific Welding Australia_0.pdf",
+        "status": "live"
       }
     ],
     "is_waiver": false

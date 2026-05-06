@@ -704,9 +704,19 @@
       ],
       "other_parties": [
         {
+          "name": "Josdale Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "629 731 013"
+        },
+        {
           "name": "Australian Meat Group Inc",
           "identifier_type": null,
           "identifier": ""
+        },
+        {
+          "name": "Australian Meat Properties Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "165 852 282"
         },
         {
           "name": "NSW Meat Properties Pty Ltd",
@@ -714,19 +724,9 @@
           "identifier": "630 576 859"
         },
         {
-          "name": "Josdale Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "629 731 013"
-        },
-        {
           "name": "Cheltenham Property Nominees Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "134 215 731"
-        },
-        {
-          "name": "Australian Meat Properties Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "165 852 282"
         }
       ],
       "anzsic_codes": [
@@ -857,14 +857,14 @@
       ],
       "other_parties": [
         {
-          "name": "JOEY HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "37 658 985 276"
-        },
-        {
           "name": "ADORA HOLDCO PTY LTD",
           "identifier_type": "ABN",
           "identifier": "66 657 708 819"
+        },
+        {
+          "name": "Fertility SA Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "147 408 857"
         },
         {
           "name": "Genea HoldCo SA Pty Ltd",
@@ -872,9 +872,9 @@
           "identifier": "695 660 701"
         },
         {
-          "name": "Fertility SA Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "147 408 857"
+          "name": "JOEY HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "37 658 985 276"
         }
       ],
       "anzsic_codes": [
@@ -1167,12 +1167,12 @@
       ],
       "other_parties": [
         {
-          "name": "Grant Davies",
+          "name": "Ryan Jones",
           "identifier_type": null,
           "identifier": ""
         },
         {
-          "name": "Ryan Jones",
+          "name": "Grant Davies",
           "identifier_type": null,
           "identifier": ""
         }
