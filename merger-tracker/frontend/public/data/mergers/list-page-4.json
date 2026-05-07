@@ -2471,6 +2471,65 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/lawrence-hanson-gordon-macdonald"
     },
     {
+      "merger_id": "WA-20015",
+      "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-13T12:00:00Z",
+      "determination_publication_date": "2026-05-07T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "HERRON TODD WHITE (BIDCO) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 665 809 665"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CJA Lee Property Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "113 706 826"
+        },
+        {
+          "name": "C McMahon Enterprises Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "115 024 854"
+        },
+        {
+          "name": "T.J. Shaw Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "115 022 930"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "HERRON TODD WHITE (HOLDINGS) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 665 808 962"
+        },
+        {
+          "name": "CJA LEE PROPERTY PARTNERSHIP",
+          "identifier_type": "ABN",
+          "identifier": "53 968 532 362"
+        },
+        {
+          "name": "QPE NO. 7 MANAGEMENT PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "34 643 260 182"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6720",
+          "name": "Real Estate Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/herron-todd-white-%E2%80%93-cja-lee-property-valuers"
+    },
+    {
       "merger_id": "MN-40012",
       "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
       "status": "Assessment completed",
@@ -2694,54 +2753,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/daikin-aams-group"
-    },
-    {
-      "merger_id": "MN-70014",
-      "merger_name": "Global Infrastructure Management \u2013 TCR",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-04-16T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-05-29T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "GIP V Snow Bidco Limited",
-          "identifier_type": null,
-          "identifier": "UK company number  17059583"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Envol Holdings Limited",
-          "identifier_type": null,
-          "identifier": "Jersey registration number  121115"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "BlackRock, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware file number \u2013 2886049"
-        },
-        {
-          "name": "Global Infrastructure Management, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware file number  4215071"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "9412",
-          "name": "Automotive Body, Paint and Interior Repair"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/global-infrastructure-management-%E2%80%93-tcr"
     }
   ],
   "page": 4,

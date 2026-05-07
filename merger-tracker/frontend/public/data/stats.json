@@ -1,6 +1,6 @@
 {
   "total_mergers": 93,
-  "total_waivers": 132,
+  "total_waivers": 133,
   "by_status": {
     "Assessment completed": 69,
     "Under assessment": 24
@@ -11,7 +11,7 @@
   },
   "by_waiver_determination": {
     "Approved": 122,
-    "Not approved": 10
+    "Not approved": 11
   },
   "phase_duration": {
     "average_days": 27.652173913043477,
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20015",
+      "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+      "determination": "Not approved",
+      "determination_date": "2026-05-07T12:00:00Z",
+      "page_modified_datetime": "2026-05-07T17:12:16+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-70013",
       "merger_name": "Ventura Motors \u2013 Crown Coaches",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-06T12:00:00Z",
       "page_modified_datetime": "2026-05-06T17:07:20+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-95001",
-      "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
-      "determination": "Approved",
-      "determination_date": "2026-05-06T12:00:00Z",
-      "page_modified_datetime": "2026-05-06T12:22:52+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
