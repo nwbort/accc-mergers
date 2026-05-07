@@ -123,7 +123,7 @@ export default function NickTwort() {
               },
               {
                 heading: "Access & Regulation",
-                body: "Advice on access disputes under Part IIIA of the CCA, regulated pricing, declaration criteria, and the economics of natural monopoly infrastructure."
+                body: "Advice on access disputes under Part V of the QCA Act and Part IIIA of the CCA, regulated pricing, declaration criteria, and the economics of natural monopoly infrastructure."
               },
               {
                 heading: "Public Inquiries",
