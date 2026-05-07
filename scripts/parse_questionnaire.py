@@ -451,6 +451,18 @@ def parse_questionnaire_pdf(pdf_path: str) -> Dict[str, any]:
     return result
 
 
+def _has_questionnaire_header(pdf_path: Path) -> bool:
+    """Return True if the PDF's first page starts with 'Questionnaire:'."""
+    try:
+        with pdfplumber.open(str(pdf_path)) as pdf:
+            if pdf.pages:
+                text = (pdf.pages[0].extract_text() or '').strip()
+                return bool(re.match(r'^Questionnaire\s*:', text))
+    except Exception:
+        pass
+    return False
+
+
 def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[str, Dict]:
     """
     Process all questionnaire PDFs in the matters directory.
@@ -485,6 +497,16 @@ def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[st
     for pdf_path in questionnaire_pdfs:
         matter_id = pdf_path.parent.name
         pdfs_by_matter.setdefault(matter_id, []).append(pdf_path)
+
+    # Some questionnaire PDFs are named after the merger parties rather than
+    # "questionnaire". Fall back to content detection for matter directories
+    # that yielded no questionnaire PDFs from the filename filter.
+    matter_ids_with_q = set(pdfs_by_matter.keys())
+    for pdf_path in sorted(all_pdfs):
+        matter_id = pdf_path.parent.name
+        if matter_id not in matter_ids_with_q and _has_questionnaire_header(pdf_path):
+            pdfs_by_matter.setdefault(matter_id, []).append(pdf_path)
+            matter_ids_with_q.add(matter_id)
 
     for matter_id, pdf_paths in pdfs_by_matter.items():
         parsed = []

@@ -19,7 +19,7 @@ from parse_determination import (
     parse_text_as_table,
     _parse_section_blocks,
 )
-from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text, _extract_subpoints, _extract_bullets
+from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text, _extract_subpoints, _extract_bullets, _has_questionnaire_header
 from cutoff import is_waiver_merger, get_cutoff_date, should_skip_merger
 from extract_mergers import is_safe_url, get_serve_filename
 
@@ -578,6 +578,43 @@ class TestExtractQuestionsFromText:
 
     def test_no_questions_heading(self):
         assert extract_questions_from_text("No heading here.") == []
+
+
+class TestHasQuestionnaireHeader:
+    """Tests for content-based questionnaire detection (_has_questionnaire_header)."""
+
+    def _patch_pdfplumber(self, first_page_text):
+        """Patch pdfplumber via the function's own __globals__ so the test is
+        immune to other test files replacing sys.modules['parse_questionnaire']."""
+        page = unittest.mock.MagicMock()
+        page.extract_text.return_value = first_page_text
+        pdf_obj = unittest.mock.MagicMock()
+        pdf_obj.pages = [page]
+        mock_pdfplumber = unittest.mock.MagicMock()
+        mock_pdfplumber.open.return_value.__enter__.return_value = pdf_obj
+        return unittest.mock.patch.dict(
+            _has_questionnaire_header.__globals__, {'pdfplumber': mock_pdfplumber}
+        )
+
+    def test_detects_questionnaire_header(self):
+        with self._patch_pdfplumber("Questionnaire: Acme – Target\nMN-99999"):
+            assert _has_questionnaire_header(unittest.mock.MagicMock()) is True
+
+    def test_rejects_determination(self):
+        with self._patch_pdfplumber("Determination\nSome content here."):
+            assert _has_questionnaire_header(unittest.mock.MagicMock()) is False
+
+    def test_rejects_empty_page(self):
+        with self._patch_pdfplumber(""):
+            assert _has_questionnaire_header(unittest.mock.MagicMock()) is False
+
+    def test_returns_false_on_exception(self):
+        broken = unittest.mock.MagicMock()
+        broken.open.side_effect = Exception("bad pdf")
+        with unittest.mock.patch.dict(
+            _has_questionnaire_header.__globals__, {'pdfplumber': broken}
+        ):
+            assert _has_questionnaire_header(unittest.mock.MagicMock()) is False
 
 
 class TestExtractSubpoints:
