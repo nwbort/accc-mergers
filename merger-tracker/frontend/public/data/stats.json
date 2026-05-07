@@ -1,6 +1,6 @@
 {
   "total_mergers": 93,
-  "total_waivers": 133,
+  "total_waivers": 134,
   "by_status": {
     "Assessment completed": 69,
     "Under assessment": 24
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 122,
+    "Approved": 123,
     "Not approved": 11
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-65013",
+      "merger_name": "BHP \u2013 expansion of Special Mining Lease at Olympic Dam, SA",
+      "determination": "Approved",
+      "determination_date": "2026-05-07T12:00:00Z",
+      "page_modified_datetime": "2026-05-07T17:38:08+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-20015",
       "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
       "determination": "Not approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-40012",
-      "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
-      "determination": "Approved",
-      "determination_date": "2026-05-06T12:00:00Z",
-      "page_modified_datetime": "2026-05-06T17:07:20+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

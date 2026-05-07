@@ -1727,6 +1727,14 @@
       },
       {
         "application_date": "2026-04-24",
+        "business_days": 9,
+        "calendar_days": 13,
+        "merger_name": "BHP \u2013 expansion of Special Mining Lease at Olympic Dam, SA",
+        "merger_id": "WA-65013",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-04-24",
         "business_days": 8,
         "calendar_days": 12,
         "merger_name": "Francisco Partners - Blackline Safety",
@@ -1736,10 +1744,10 @@
     ],
     "stats": {
       "average": 11.8,
-      "median": 12,
+      "median": 11.5,
       "min": 2,
       "max": 22,
-      "count": 133
+      "count": 134
     }
   },
   "monthly_volume": {
@@ -1773,7 +1781,7 @@
       30,
       30,
       48,
-      25,
+      26,
       0
     ]
   }
