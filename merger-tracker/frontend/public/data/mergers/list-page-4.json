@@ -2582,11 +2582,11 @@
     {
       "merger_id": "MN-70013",
       "merger_name": "Ventura Motors \u2013 Crown Coaches",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-04-15T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-05-07T12:00:00Z",
       "end_of_determination_period": "2026-05-28T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -2620,24 +2620,24 @@
           "identifier": "28 100 908 049"
         },
         {
-          "name": "VENTURA MOTORS PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "67 004 235 518"
-        },
-        {
-          "name": "Keppel Infrastructure Fund Management Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "UEN  200803959H"
-        },
-        {
           "name": "Zumba Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "154 324 839"
         },
         {
+          "name": "VENTURA MOTORS PROPRIETARY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "67 004 235 518"
+        },
+        {
           "name": "IVANHOE BUS COMPANY PROPRIETARY LIMITED",
           "identifier_type": "ABN",
           "identifier": "57 004 367 962"
+        },
+        {
+          "name": "Keppel Infrastructure Fund Management Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "UEN  200803959H"
         }
       ],
       "anzsic_codes": [

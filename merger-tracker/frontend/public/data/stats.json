@@ -2,11 +2,11 @@
   "total_mergers": 93,
   "total_waivers": 132,
   "by_status": {
-    "Assessment completed": 68,
-    "Under assessment": 25
+    "Assessment completed": 69,
+    "Under assessment": 24
   },
   "by_determination": {
-    "Approved": 68,
+    "Approved": 69,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,22 +14,22 @@
     "Not approved": 10
   },
   "phase_duration": {
-    "average_days": 27.735294117647058,
+    "average_days": 27.652173913043477,
     "median_days": 26,
-    "average_business_days": 18.176470588235293,
+    "average_business_days": 18.144927536231883,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 25.0
+        "percentage": 24.6
       },
       "day20": {
-        "count": 54,
-        "percentage": 79.4
+        "count": 55,
+        "percentage": 79.7
       },
       "day30": {
-        "count": 67,
-        "percentage": 98.5
+        "count": 68,
+        "percentage": 98.6
       }
     }
   },
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-70013",
+      "merger_name": "Ventura Motors \u2013 Crown Coaches",
+      "determination": "Approved",
+      "determination_date": "2026-05-07T12:00:00Z",
+      "page_modified_datetime": "2026-05-07T15:41:32+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-25017",
       "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-06T12:00:00Z",
       "page_modified_datetime": "2026-05-06T12:22:52+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-05012",
-      "merger_name": "Eagers - Audi Melbourne and Audi Richmond",
-      "determination": "Approved",
-      "determination_date": "2026-05-05T12:00:00Z",
-      "page_modified_datetime": "2026-05-06T16:49:26+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
