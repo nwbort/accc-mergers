@@ -219,18 +219,26 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
     questions = []
 
     # Find the "Questions" heading line.
-    # Must start with "Questions" but NOT "Questions for ..." (which is a sub-section).
-    # Matches: "Questions", "Questions – please answer...", etc.
+    # Prefer a plain "Questions" (or "Questions – subtitle") heading and skip it.
+    # If none exists, fall back to the first "Questions for X" heading and include
+    # it in processing so the main loop treats it as a section header (e.g. MN-10007).
     # The heading may or may not be bold (some PDFs don't mark it as bold).
     start_idx = None
+    fallback_idx = None
     for i, line in enumerate(lines):
-        if (re.match(r'^Questions\b', line['text'])
-                and not re.match(r'^Questions\s+for\s+', line['text'], re.IGNORECASE)):
-            start_idx = i + 1
-            break
+        if re.match(r'^Questions\b', line['text']):
+            if re.match(r'^Questions\s+for\s+', line['text'], re.IGNORECASE):
+                if fallback_idx is None:
+                    fallback_idx = i
+            else:
+                start_idx = i + 1
+                break
 
     if start_idx is None:
-        return questions
+        if fallback_idx is not None:
+            start_idx = fallback_idx
+        else:
+            return questions
 
     current_question_num = None
     current_question_text = []
@@ -443,6 +451,18 @@ def parse_questionnaire_pdf(pdf_path: str) -> Dict[str, any]:
     return result
 
 
+def _has_questionnaire_header(pdf_path: Path) -> bool:
+    """Return True if the PDF's first page starts with 'Questionnaire:'."""
+    try:
+        with pdfplumber.open(str(pdf_path)) as pdf:
+            if pdf.pages:
+                text = (pdf.pages[0].extract_text() or '').strip()
+                return bool(re.match(r'^Questionnaire\s*:', text))
+    except Exception:
+        pass
+    return False
+
+
 def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[str, Dict]:
     """
     Process all questionnaire PDFs in the matters directory.
@@ -477,6 +497,16 @@ def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[st
     for pdf_path in questionnaire_pdfs:
         matter_id = pdf_path.parent.name
         pdfs_by_matter.setdefault(matter_id, []).append(pdf_path)
+
+    # Some questionnaire PDFs are named after the merger parties rather than
+    # "questionnaire". Fall back to content detection for matter directories
+    # that yielded no questionnaire PDFs from the filename filter.
+    matter_ids_with_q = set(pdfs_by_matter.keys())
+    for pdf_path in sorted(all_pdfs):
+        matter_id = pdf_path.parent.name
+        if matter_id not in matter_ids_with_q and _has_questionnaire_header(pdf_path):
+            pdfs_by_matter.setdefault(matter_id, []).append(pdf_path)
+            matter_ids_with_q.add(matter_id)
 
     for matter_id, pdf_paths in pdfs_by_matter.items():
         parsed = []

@@ -19,7 +19,7 @@ from parse_determination import (
     parse_text_as_table,
     _parse_section_blocks,
 )
-from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text, _extract_subpoints, _extract_bullets
+from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text, _extract_subpoints, _extract_bullets, _has_questionnaire_header
 from cutoff import is_waiver_merger, get_cutoff_date, should_skip_merger
 from extract_mergers import is_safe_url, get_serve_filename
 
@@ -483,15 +483,39 @@ class TestExtractQuestions:
         assert result[0]['section'] == 'Questions for customers of Event Stream Processing Software and Integration Software'
         assert result[1]['section'] == result[0]['section']
 
-    def test_questions_for_not_treated_as_heading(self):
-        """'Questions for ...' is a sub-section, not the main heading."""
+    def test_questions_for_as_sole_heading(self):
+        """'Questions for X' is used as the main heading when no plain 'Questions' exists."""
         lines = _lines(
             ("Questions for the parties", True),
-            "1. Should not match.",
+            "1. Describe your business.",
         )
-        # "Questions for ..." should NOT match as the main heading
         result = extract_questions(lines)
-        assert len(result) == 0
+        assert len(result) == 1
+        assert result[0]['number'] == 1
+        assert result[0]['section'] == 'Questions for the parties'
+
+    def test_questions_for_all_stakeholders_pattern(self):
+        """MN-10007 style: two 'Questions for X' sections, no plain 'Questions' heading."""
+        lines = _lines(
+            ("Questions for all stakeholders", True),
+            "1. Describe your business.",
+            "2. Outline any concerns.",
+            "3. Provide any additional information.",
+            ("Questions for stakeholders at the Port of Newcastle", True),
+            "Although MAM does not have a direct ownership interest,",
+            "the ACCC is considering the extent to which MAM could control.",
+            "4. Identify alternative suppliers of stevedoring services.",
+            "5. Identify alternative suppliers of grain export terminal services.",
+        )
+        result = extract_questions(lines)
+        assert len(result) == 5
+        assert result[0]['section'] == 'Questions for all stakeholders'
+        assert result[1]['section'] == 'Questions for all stakeholders'
+        assert result[2]['section'] == 'Questions for all stakeholders'
+        assert result[3]['section'] == 'Questions for stakeholders at the Port of Newcastle'
+        assert result[4]['section'] == 'Questions for stakeholders at the Port of Newcastle'
+        assert result[3]['number'] == 4
+        assert result[4]['number'] == 5
 
     def test_heading_with_subtitle(self):
         """Heading like 'Questions – please answer all questions...'"""
@@ -554,6 +578,43 @@ class TestExtractQuestionsFromText:
 
     def test_no_questions_heading(self):
         assert extract_questions_from_text("No heading here.") == []
+
+
+class TestHasQuestionnaireHeader:
+    """Tests for content-based questionnaire detection (_has_questionnaire_header)."""
+
+    def _patch_pdfplumber(self, first_page_text):
+        """Patch pdfplumber via the function's own __globals__ so the test is
+        immune to other test files replacing sys.modules['parse_questionnaire']."""
+        page = unittest.mock.MagicMock()
+        page.extract_text.return_value = first_page_text
+        pdf_obj = unittest.mock.MagicMock()
+        pdf_obj.pages = [page]
+        mock_pdfplumber = unittest.mock.MagicMock()
+        mock_pdfplumber.open.return_value.__enter__.return_value = pdf_obj
+        return unittest.mock.patch.dict(
+            _has_questionnaire_header.__globals__, {'pdfplumber': mock_pdfplumber}
+        )
+
+    def test_detects_questionnaire_header(self):
+        with self._patch_pdfplumber("Questionnaire: Acme – Target\nMN-99999"):
+            assert _has_questionnaire_header(unittest.mock.MagicMock()) is True
+
+    def test_rejects_determination(self):
+        with self._patch_pdfplumber("Determination\nSome content here."):
+            assert _has_questionnaire_header(unittest.mock.MagicMock()) is False
+
+    def test_rejects_empty_page(self):
+        with self._patch_pdfplumber(""):
+            assert _has_questionnaire_header(unittest.mock.MagicMock()) is False
+
+    def test_returns_false_on_exception(self):
+        broken = unittest.mock.MagicMock()
+        broken.open.side_effect = Exception("bad pdf")
+        with unittest.mock.patch.dict(
+            _has_questionnaire_header.__globals__, {'pdfplumber': broken}
+        ):
+            assert _has_questionnaire_header(unittest.mock.MagicMock()) is False
 
 
 class TestExtractSubpoints:
