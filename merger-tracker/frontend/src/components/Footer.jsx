@@ -8,6 +8,7 @@ function Footer() {
           <span className="font-semibold text-gray-600">Disclaimer:</span> This is an unofficial website created by{' '}
           <Link
             to="/nick-twort"
+            onClick={() => window.scrollTo(0, 0)}
             className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
           >
             Nick Twort

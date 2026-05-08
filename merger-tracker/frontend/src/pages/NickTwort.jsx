@@ -61,7 +61,7 @@ export default function NickTwort() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn profile"
-              className="text-[#0A66C2] hover:opacity-75 transition-opacity"
+              className="text-primary hover:opacity-75 transition-opacity"
             >
               <FaLinkedin size={28} />
             </a>
@@ -70,7 +70,7 @@ export default function NickTwort() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub profile"
-              className="text-gray-800 hover:opacity-75 transition-opacity"
+              className="text-primary hover:opacity-75 transition-opacity"
             >
               <FaGithub size={28} />
             </a>
