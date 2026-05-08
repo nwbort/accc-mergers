@@ -1,3 +1,4 @@
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import SEO from '../components/SEO';
 
 const structuredData = {
@@ -53,7 +54,27 @@ export default function NickTwort() {
 
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Nick Twort</h1>
+          <div className="flex items-center gap-3 mb-2">
+            <h1 className="text-3xl font-bold text-gray-900">Nick Twort</h1>
+            <a
+              href="https://www.linkedin.com/in/nick-twort"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="text-[#0A66C2] hover:opacity-75 transition-opacity"
+            >
+              <FaLinkedin size={28} />
+            </a>
+            <a
+              href="https://github.com/nwbort"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              className="text-gray-800 hover:opacity-75 transition-opacity"
+            >
+              <FaGithub size={28} />
+            </a>
+          </div>
           <p className="text-lg text-emerald-700 font-medium">Competition Economist – Australia &amp; New Zealand</p>
         </div>
 
