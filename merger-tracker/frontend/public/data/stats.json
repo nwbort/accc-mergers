@@ -2,11 +2,11 @@
   "total_mergers": 93,
   "total_waivers": 134,
   "by_status": {
-    "Assessment completed": 69,
-    "Under assessment": 24
+    "Assessment completed": 70,
+    "Under assessment": 23
   },
   "by_determination": {
-    "Approved": 69,
+    "Approved": 70,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 11
   },
   "phase_duration": {
-    "average_days": 27.652173913043477,
+    "average_days": 27.571428571428573,
     "median_days": 26,
-    "average_business_days": 18.144927536231883,
+    "average_business_days": 18.114285714285714,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 24.6
+        "percentage": 24.3
       },
       "day20": {
-        "count": 55,
-        "percentage": 79.7
+        "count": 56,
+        "percentage": 80.0
       },
       "day30": {
-        "count": 68,
+        "count": 69,
         "percentage": 98.6
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-30009",
+      "merger_name": "Daikin - AAMS Group",
+      "determination": "Approved",
+      "determination_date": "2026-05-08T12:00:00Z",
+      "page_modified_datetime": "2026-05-08T12:11:48+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-65013",
       "merger_name": "BHP \u2013 expansion of Special Mining Lease at Olympic Dam, SA",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-85025",
-      "merger_name": "Francisco Partners - Blackline Safety",
-      "determination": "Approved",
-      "determination_date": "2026-05-06T12:00:00Z",
-      "page_modified_datetime": "2026-05-06T17:17:48+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
