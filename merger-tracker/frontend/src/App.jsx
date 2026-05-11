@@ -20,7 +20,6 @@ import NickTwort from './pages/NickTwort';
 import Analysis from './pages/Analysis';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Feedback from './pages/Feedback';
-import IconPicker from './pages/IconPicker';
 import NotFound from './pages/NotFound';
 
 function AppContent() {
@@ -47,7 +46,6 @@ function AppContent() {
             <Route path="/nick-twort" element={<NickTwort />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/feedback" element={<Feedback />} />
-            <Route path="/icon-picker" element={<IconPicker />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
