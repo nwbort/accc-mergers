@@ -16,7 +16,7 @@ import { HiBell as HiBellV1 } from 'react-icons/hi';
 import { HiBell as HiBellV2 } from 'react-icons/hi2';
 import { LuBell } from 'react-icons/lu';
 import { RiBellLine, RiBellFill } from 'react-icons/ri';
-import { IoBellOutline, IoBell } from 'react-icons/io5';
+import { IoNotificationsOutline, IoNotifications } from 'react-icons/io5';
 import { MdNotificationsNone, MdNotifications } from 'react-icons/md';
 import { TbBell } from 'react-icons/tb';
 
@@ -51,8 +51,8 @@ const BELL_OPTIONS = [
   { label: 'Lucide (LuBell)',                     Icon: LuBell },
   { label: 'Remix outline (RiBellLine)',          Icon: RiBellLine },
   { label: 'Remix fill (RiBellFill)',             Icon: RiBellFill },
-  { label: 'Ionicons outline (IoBellOutline)',    Icon: IoBellOutline },
-  { label: 'Ionicons solid (IoBell)',             Icon: IoBell },
+  { label: 'Ionicons outline (IoNotificationsOutline)', Icon: IoNotificationsOutline },
+  { label: 'Ionicons solid (IoNotifications)',    Icon: IoNotifications },
   { label: 'Material outline (MdNotificationsNone)', Icon: MdNotificationsNone },
   { label: 'Material filled (MdNotifications)',   Icon: MdNotifications },
   { label: 'Tabler (TbBell)',                     Icon: TbBell },
