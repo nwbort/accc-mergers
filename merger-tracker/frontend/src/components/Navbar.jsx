@@ -222,7 +222,7 @@ function Navbar() {
                 aria-expanded={notificationPanelOpen}
                 aria-label={`Notifications${unseenCount > 0 ? `, ${unseenCount} new` : ''}`}
               >
-                <BellIcon className="h-5 w-5" />
+                <BellIcon filled className="h-5 w-5" />
                 {unseenCount > 0 && (
                   <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-40"></span>
