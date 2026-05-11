@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { FaChevronLeft } from 'react-icons/fa';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
 import WaiverBadge from '../components/WaiverBadge';
@@ -64,9 +65,7 @@ function IndustryDetail() {
           to="/industries"
           className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-primary mb-5 transition-colors"
         >
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-          </svg>
+          <FaChevronLeft className="w-4 h-4" aria-hidden="true" />
           Back to industries
         </Link>
 

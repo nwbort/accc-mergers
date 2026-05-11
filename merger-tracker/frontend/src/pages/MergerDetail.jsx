@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { FaChevronLeft, FaLink, FaComment } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
@@ -152,9 +153,7 @@ function MergerDetail() {
           className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-primary mb-5 transition-colors"
           aria-label="Return to all mergers list"
         >
-          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-          </svg>
+          <FaChevronLeft className="w-4 h-4" aria-hidden="true" />
           Back to all mergers
         </Link>
 
@@ -284,9 +283,7 @@ function MergerDetail() {
             className="flex items-center gap-3 bg-amber-50/80 rounded-2xl border border-amber-200/60 shadow-card p-4 mb-6 hover:bg-amber-50 hover:border-amber-300/60 transition-all group"
           >
             <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center">
-              <svg className="h-5 w-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
-              </svg>
+              <FaLink className="h-5 w-5 text-amber-600" aria-hidden="true" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-900">
@@ -335,9 +332,7 @@ function MergerDetail() {
               <div key={commentIdx} className="p-6">
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-blue-100 flex items-center justify-center">
-                    <svg className="h-5 w-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                    </svg>
+                    <FaComment className="h-5 w-5 text-blue-600" aria-hidden="true" />
                   </div>
                   <div className="flex-1 min-w-0">
                     {commentIdx === 0 && (

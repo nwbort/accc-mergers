@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { FaCheckCircle } from 'react-icons/fa';
 import { FEEDBACK_ENDPOINT, TURNSTILE_SITE_KEY } from '../config';
 import SEO from '../components/SEO';
 
@@ -97,9 +98,7 @@ export default function Feedback() {
         <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-8">
           {status === 'success' ? (
             <div className="flex items-center gap-3 py-2">
-              <svg className="h-6 w-6 text-primary shrink-0" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-              </svg>
+              <FaCheckCircle className="h-6 w-6 text-primary shrink-0" aria-hidden="true" />
               <p className="text-gray-700">Thanks for your feedback!</p>
             </div>
           ) : (

@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
+import { FaExclamationCircle } from 'react-icons/fa';
 
 function ErrorCard({ title, message, backTo, backLabel, secondaryAction }) {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-10 text-center">
         <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gray-100 flex items-center justify-center">
-          <svg className="w-8 h-8 text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
-          </svg>
+          <FaExclamationCircle className="w-8 h-8 text-gray-400" aria-hidden="true" />
         </div>
         <h1 className="text-xl font-bold text-gray-900 mb-3">{title}</h1>
         <p className="text-gray-500 mb-6 max-w-md mx-auto">{message}</p>
