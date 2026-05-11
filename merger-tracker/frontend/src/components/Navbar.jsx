@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
 import NotificationPanel from './NotificationPanel';
@@ -28,10 +28,28 @@ function Navbar() {
   const [showShortcutHints, setShowShortcutHints] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [isMobileNav, setIsMobileNav] = useState(false);
+  const containerRef = useRef(null);
+  const probeRef = useRef(null);
   const searchInputRef = useRef(null);
   const mobileSearchInputRef = useRef(null);
   const focusMobileSearchRef = useRef(false);
   const { unseenCount } = useTracking();
+
+  useLayoutEffect(() => {
+    const container = containerRef.current;
+    const probe = probeRef.current;
+    if (!container || !probe) return;
+    const check = () => setIsMobileNav(probe.offsetWidth > container.clientWidth);
+    check();
+    const ro = new ResizeObserver(check);
+    ro.observe(container);
+    return () => ro.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isMobileNav) setMobileMenuOpen(false);
+  }, [isMobileNav]);
 
   const submitSearch = (query) => {
     const trimmed = query.trim();
@@ -67,7 +85,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleFocusNavbarSearch = () => {
-      if (window.matchMedia('(min-width: 640px)').matches) {
+      if (!isMobileNav) {
         setSearchOpen(true);
         if (searchInputRef.current) {
           searchInputRef.current.focus();
@@ -79,7 +97,7 @@ function Navbar() {
     };
     window.addEventListener('focus-navbar-search', handleFocusNavbarSearch);
     return () => window.removeEventListener('focus-navbar-search', handleFocusNavbarSearch);
-  }, []);
+  }, [isMobileNav]);
 
   useEffect(() => {
     if (mobileMenuOpen && focusMobileSearchRef.current && mobileSearchInputRef.current) {
@@ -154,14 +172,32 @@ function Navbar() {
         Skip to main content
       </a>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div ref={containerRef} className="flex justify-between h-16 relative">
+          {/* Probe: invisible full-width desktop nav used to calculate the natural wrap point */}
+          <div
+            ref={probeRef}
+            aria-hidden="true"
+            className="absolute top-0 left-0 invisible pointer-events-none flex items-center h-16 whitespace-nowrap"
+          >
+            <span className="text-lg font-bold tracking-tight">australian merger tracker</span>
+            <div className="ml-10 flex space-x-1">
+              {navLinks.map(({ label }) => (
+                <span key={label} className="px-3 py-2 text-sm font-medium">{label}</span>
+              ))}
+            </div>
+            {/* search icon + bell icon approximate widths */}
+            <div className="ml-1 flex items-center gap-1">
+              <div className="w-8 h-8" />
+              <div className="w-9 h-9" />
+            </div>
+          </div>
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2.5 group">
               <span className="text-lg font-bold text-primary tracking-tight">
                 australian merger tracker
               </span>
             </Link>
-            <div className="hidden sm:ml-10 sm:flex sm:space-x-1">
+            <div className={isMobileNav ? 'hidden' : 'ml-10 flex space-x-1'}>
               {navLinks.map(({ path, label, shortcut }) => (
                 <Link
                   key={path}
@@ -183,7 +219,7 @@ function Navbar() {
             </div>
           </div>
           <div className="flex items-center gap-1">
-            <div className="hidden sm:flex items-center">
+            <div className={isMobileNav ? 'hidden' : 'flex items-center'}>
               <div className={`flex items-center transition-all duration-200 ${searchOpen ? 'w-52' : 'w-8'}`}>
                 {searchOpen && (
                   <input
@@ -209,7 +245,7 @@ function Navbar() {
             </div>
             <button
               onClick={() => { focusMobileSearchRef.current = true; setMobileMenuOpen(true); }}
-              className="sm:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              className={`${isMobileNav ? '' : 'hidden'} inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
               aria-label="Search"
             >
               <FaSearch className="h-5 w-5" aria-hidden="true" />
@@ -239,7 +275,7 @@ function Navbar() {
             </div>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="sm:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              className={`${isMobileNav ? '' : 'hidden'} inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
               aria-expanded={mobileMenuOpen}
               aria-controls="mobile-menu"
               aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}
@@ -255,8 +291,8 @@ function Navbar() {
         </div>
       </div>
 
-      {mobileMenuOpen && (
-        <div id="mobile-menu" className="sm:hidden border-t border-gray-100 bg-white/95 backdrop-blur-lg">
+      {isMobileNav && mobileMenuOpen && (
+        <div id="mobile-menu" className="border-t border-gray-100 bg-white/95 backdrop-blur-lg">
           <div className="px-3 pt-3 pb-1">
             <div className="flex items-center gap-2 bg-gray-100/80 border border-gray-200 rounded-lg px-3 py-2">
               <FaSearch className="h-4 w-4 text-gray-400 shrink-0" aria-hidden="true" />
