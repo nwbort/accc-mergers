@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { FaComment } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
@@ -91,9 +92,7 @@ function Commentary() {
                     <div key={commentIdx} className="p-5 bg-gradient-to-r from-blue-50/80 to-indigo-50/30">
                       <div className="flex items-start gap-3">
                         <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center">
-                          <svg className="h-4 w-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-                          </svg>
+                          <FaComment className="h-4 w-4 text-blue-600" aria-hidden="true" />
                         </div>
                         <div className="flex-1 min-w-0">
                           {comment.commentary && (

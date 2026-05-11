@@ -1,4 +1,5 @@
 import { useId, useState } from 'react';
+import { FaChevronDown } from 'react-icons/fa';
 
 function CollapsibleCard({ icon, iconBgClass = 'bg-gray-100', title, subtitle, onExpand, children }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -32,15 +33,10 @@ function CollapsibleCard({ icon, iconBgClass = 'bg-gray-100', title, subtitle, o
             )}
           </div>
         </div>
-        <svg
+        <FaChevronDown
           className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
           aria-hidden="true"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-        </svg>
+        />
       </button>
 
       {isExpanded && (

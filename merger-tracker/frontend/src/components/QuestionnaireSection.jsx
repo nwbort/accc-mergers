@@ -1,13 +1,12 @@
 import { useState, useCallback } from 'react';
+import { FaQuestionCircle, FaSpinner } from 'react-icons/fa';
 import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
 import CollapsibleCard from './CollapsibleCard';
 import ExternalLinkIcon from './ExternalLinkIcon';
 import { API_ENDPOINTS } from '../config';
 
 const QuestionnaireIcon = () => (
-  <svg className="h-5 w-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-  </svg>
+  <FaQuestionCircle className="h-5 w-5 text-amber-600" aria-hidden="true" />
 );
 
 function QuestionnaireSection({ mergerId, events }) {
@@ -97,10 +96,7 @@ function QuestionnaireSection({ mergerId, events }) {
     >
       {loading && (
         <div className="flex items-center gap-2 mt-4 text-sm text-gray-400">
-          <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-          </svg>
+          <FaSpinner className="animate-spin h-4 w-4" aria-hidden="true" />
           Loading questionnaire...
         </div>
       )}

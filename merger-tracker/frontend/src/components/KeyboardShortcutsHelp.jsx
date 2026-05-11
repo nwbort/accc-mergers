@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { FaTimes } from 'react-icons/fa';
 
 const shortcuts = [
   { keys: ['/'], description: 'Focus search' },
@@ -96,9 +97,7 @@ export default function KeyboardShortcutsHelp({ isOpen, onClose }) {
             className="p-1 text-gray-400 hover:text-gray-600 transition-colors rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             aria-label="Close shortcuts help"
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <FaTimes className="w-5 h-5" aria-hidden="true" />
           </button>
         </div>
         <ul className="space-y-3">

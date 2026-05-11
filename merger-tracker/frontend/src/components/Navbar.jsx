@@ -1,5 +1,6 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
+import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
 import NotificationPanel from './NotificationPanel';
 import BellIcon from './BellIcon';
@@ -202,9 +203,7 @@ function Navbar() {
                   className={`inline-flex items-center justify-center p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${searchOpen ? 'rounded-r-lg border border-l-0 border-gray-200 bg-gray-100/80 hover:bg-gray-200/80' : 'rounded-lg'}`}
                   aria-label="Search"
                 >
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                  </svg>
+                  <FaSearch className="h-4 w-4" aria-hidden="true" />
                 </button>
               </div>
             </div>
@@ -213,9 +212,7 @@ function Navbar() {
               className="sm:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               aria-label="Search"
             >
-              <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-              </svg>
+              <FaSearch className="h-5 w-5" aria-hidden="true" />
             </button>
             <div className="relative">
               <button
@@ -225,7 +222,7 @@ function Navbar() {
                 aria-expanded={notificationPanelOpen}
                 aria-label={`Notifications${unseenCount > 0 ? `, ${unseenCount} new` : ''}`}
               >
-                <BellIcon className="h-5 w-5" />
+                <BellIcon filled className="h-5 w-5" />
                 {unseenCount > 0 && (
                   <span className="absolute top-1 right-1 flex h-4 w-4 items-center justify-center">
                     <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-40"></span>
@@ -249,13 +246,9 @@ function Navbar() {
             >
               <span className="sr-only">{mobileMenuOpen ? "Close" : "Open"} main menu</span>
               {mobileMenuOpen ? (
-                <svg className="block h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <FaTimes className="block h-5 w-5" aria-hidden="true" />
               ) : (
-                <svg className="block h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
+                <FaBars className="block h-5 w-5" aria-hidden="true" />
               )}
             </button>
           </div>
@@ -266,9 +259,7 @@ function Navbar() {
         <div id="mobile-menu" className="sm:hidden border-t border-gray-100 bg-white/95 backdrop-blur-lg">
           <div className="px-3 pt-3 pb-1">
             <div className="flex items-center gap-2 bg-gray-100/80 border border-gray-200 rounded-lg px-3 py-2">
-              <svg className="h-4 w-4 text-gray-400 shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-              </svg>
+              <FaSearch className="h-4 w-4 text-gray-400 shrink-0" aria-hidden="true" />
               <input
                 ref={mobileSearchInputRef}
                 type="text"
