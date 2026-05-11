@@ -60,6 +60,18 @@ def load_digest() -> dict:
 # Formatting helpers
 # ---------------------------------------------------------------------------
 
+def _is_feedback_week(period_start_iso: str) -> bool:
+    """Return True once every 8 weeks, based on weeks elapsed since a fixed Monday."""
+    from datetime import date as _date
+    _REFERENCE_MONDAY = _date(2024, 1, 1)  # confirmed Monday
+    try:
+        dt = datetime.fromisoformat(period_start_iso)
+        delta_days = (dt.date() - _REFERENCE_MONDAY).days
+        return (delta_days // 7) % 8 == 0
+    except (ValueError, AttributeError, TypeError):
+        return False
+
+
 def format_date(date_str: str) -> str:
     """Convert an ISO datetime string to a short human-readable date (AEST)."""
     if not date_str:
@@ -209,11 +221,15 @@ def build_text_email(digest: dict) -> str:
     lines.append("")
 
     unsub_var = "{{{RESEND_UNSUBSCRIBE_URL}}}"
-    lines += [
+    footer = [
         "--",
         "You're receiving this because you subscribed at mergers.fyi.",
         f"Unsubscribe: {unsub_var}",
     ]
+    if _is_feedback_week(digest.get("period_start", "")):
+        footer.insert(0, "Got thoughts, feedback or any market gossip? Just reply to this email - we'd love to hear from you.")
+        footer.insert(1, "")
+    lines += footer
 
     return "\n".join(lines)
 
@@ -453,6 +469,7 @@ def build_phase_section(mergers: list, phase_key: str, title: str) -> str:
 
 def build_html_email(digest: dict) -> str:
     date_range = format_date_range(digest["period_start"], digest["period_end"])
+    show_feedback = _is_feedback_week(digest.get("period_start", ""))
     new_count = len(digest["new_deals_notified"])
     cleared_count = len(digest["deals_cleared"])
     referred_count = len(digest.get("deals_referred_to_phase_2") or [])
@@ -483,6 +500,18 @@ def build_html_email(digest: dict) -> str:
             "Ongoing \u2013 phase 2 \u2013 detailed assessment"
         )
     )
+
+    if show_feedback:
+        header_cta = (
+            "Got thoughts, feedback or any market gossip? Just reply to this email - "
+            "we'd love to hear from you."
+        )
+    else:
+        header_cta = (
+            "Were you forwarded this email? Sign up "
+            '<a href="https://mergers.fyi/digest" '
+            'style="color:#335145;text-decoration:underline;">here</a>.'
+        )
 
     # Resend replaces {{{RESEND_UNSUBSCRIBE_URL}}} with the real link
     unsub_var = "{{{RESEND_UNSUBSCRIBE_URL}}}"
@@ -520,7 +549,7 @@ def build_html_email(digest: dict) -> str:
               </a>
             </span>
             <span style="font-size:13px;color:#6b7280;margin-top:4px;display:block;font-style:italic;">
-              Were you forwarded this email? Sign up <a href="https://mergers.fyi/digest" style="color:#335145;text-decoration:underline;">here</a>
+              {header_cta}
             </span>
           </td>
         </tr>
