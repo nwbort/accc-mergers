@@ -1,6 +1,6 @@
 {
   "total_mergers": 94,
-  "total_waivers": 135,
+  "total_waivers": 136,
   "by_status": {
     "Assessment completed": 70,
     "Under assessment": 24
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 123,
+    "Approved": 124,
     "Not approved": 12
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80011",
+      "merger_name": "CRH - Axius Water",
+      "determination": "Approved",
+      "determination_date": "2026-05-11T12:00:00Z",
+      "page_modified_datetime": "2026-05-11T17:22:36+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-01094",
       "merger_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
       "determination": "Not approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-25017",
-      "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
-      "determination": "Approved",
-      "determination_date": "2026-05-06T12:00:00Z",
-      "page_modified_datetime": "2026-05-06T18:03:18+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

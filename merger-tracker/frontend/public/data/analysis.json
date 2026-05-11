@@ -1752,6 +1752,14 @@
       },
       {
         "application_date": "2026-04-24",
+        "business_days": 11,
+        "calendar_days": 17,
+        "merger_name": "CRH - Axius Water",
+        "merger_id": "WA-80011",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-04-24",
         "business_days": 8,
         "calendar_days": 12,
         "merger_name": "Francisco Partners - Blackline Safety",
@@ -1761,10 +1769,10 @@
     ],
     "stats": {
       "average": 11.9,
-      "median": 12,
+      "median": 11.5,
       "min": 2,
       "max": 25,
-      "count": 135
+      "count": 136
     }
   },
   "monthly_volume": {
@@ -1798,7 +1806,7 @@
       30,
       30,
       48,
-      27,
+      28,
       0
     ]
   }
