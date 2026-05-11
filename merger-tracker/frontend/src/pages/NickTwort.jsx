@@ -166,7 +166,7 @@ export default function NickTwort() {
             Nick has worked across a broad range of Australian industries and markets, bringing sector-specific
             economic knowledge to each engagement:
           </p>
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-wrap gap-2 mb-4 justify-center">
             {[
               "Advertising",
               "Airlines & Airports",
