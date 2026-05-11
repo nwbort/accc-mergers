@@ -227,7 +227,7 @@ def build_text_email(digest: dict) -> str:
         f"Unsubscribe: {unsub_var}",
     ]
     if _is_feedback_week(digest.get("period_start", "")):
-        footer.insert(0, "Got thoughts, feedback or gossip? Just reply to this email.")
+        footer.insert(0, "Got thoughts, feedback or any market gossip? Just reply to this email - we'd love to hear from you.")
         footer.insert(1, "")
     lines += footer
 
@@ -503,12 +503,12 @@ def build_html_email(digest: dict) -> str:
 
     if show_feedback:
         header_cta = (
-            'Got thoughts, feedback or gossip? Just reply to this email — '
-            'we’d love to hear from you.'
+            "Got thoughts, feedback or any market gossip? Just reply to this email - "
+            "we'd love to hear from you."
         )
     else:
         header_cta = (
-            'Were you forwarded this email? Sign up '
+            "Were you forwarded this email? Sign up "
             '<a href="https://mergers.fyi/digest" '
             'style="color:#335145;text-decoration:underline;">here</a>.'
         )
