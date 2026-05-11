@@ -183,8 +183,10 @@ export default function NickTwort() {
               "Electricity Generation",
               "Electricity Transmission",
               "Estate Maintenance",
+              "General Hardware",
               "Groceries",
               "Health",
+              "Hydroelectric Generation",
               "Infrastructure",
               "Milk",
               "Pathology",
@@ -195,7 +197,9 @@ export default function NickTwort() {
               "Streaming Video",
               "Supermarkets",
               "Telecommunications",
-              "Wholesale Fuel"
+              "Water",
+              "Wholesale Fuel",
+              "Wholesale Internet Services"
             ].map((industry) => (
               <span
                 key={industry}
