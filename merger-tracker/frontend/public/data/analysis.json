@@ -1552,6 +1552,14 @@
       },
       {
         "application_date": "2026-04-02",
+        "business_days": 25,
+        "calendar_days": 39,
+        "merger_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
+        "merger_id": "WA-01094",
+        "determination": "Not approved"
+      },
+      {
+        "application_date": "2026-04-02",
         "business_days": 19,
         "calendar_days": 29,
         "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
@@ -1752,11 +1760,11 @@
       }
     ],
     "stats": {
-      "average": 11.8,
-      "median": 11.5,
+      "average": 11.9,
+      "median": 12,
       "min": 2,
-      "max": 22,
-      "count": 134
+      "max": 25,
+      "count": 135
     }
   },
   "monthly_volume": {
@@ -1790,7 +1798,7 @@
       30,
       30,
       48,
-      26,
+      27,
       0
     ]
   }

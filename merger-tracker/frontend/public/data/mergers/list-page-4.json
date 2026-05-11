@@ -1314,6 +1314,51 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danaher-masimo"
     },
     {
+      "merger_id": "WA-01094",
+      "merger_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-02T12:00:00Z",
+      "determination_publication_date": "2026-05-11T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "The Trustee for Energy Bay Kappa Fund",
+          "identifier_type": "ABN",
+          "identifier": "37 949 909 024"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CENTURIA FUNDS MANAGEMENT LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 607 153 588"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        },
+        {
+          "code": "2630",
+          "name": "Electricity Distribution"
+        },
+        {
+          "code": "2640",
+          "name": "On Selling Electricity and Electricity Market Operation"
+        },
+        {
+          "code": "3232",
+          "name": "Electrical Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/energy-bay-rights-to-installoperate-embedded-networks-and-other-assets-from-centuria-capital-group-members"
+    },
+    {
       "merger_id": "WA-45010",
       "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
       "status": "Assessment completed",
@@ -2706,53 +2751,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ventura-motors-%E2%80%93-crown-coaches"
-    },
-    {
-      "merger_id": "MN-30009",
-      "merger_name": "Daikin - AAMS Group",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-04-16T12:00:00Z",
-      "determination_publication_date": "2026-05-08T12:00:00Z",
-      "end_of_determination_period": "2026-05-29T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "AIRMASTER CORPORATION PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "26 133 652 749"
-        }
-      ],
-      "targets": [
-        {
-          "name": "DAMDAY PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 128 071 965"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "DAIKIN AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "62 000 172 967"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "2452",
-          "name": "Fixed Space Heating, Cooling and Ventilation Equipment Manufacturing"
-        },
-        {
-          "code": "3233",
-          "name": "Air Conditioning and Heating Services"
-        },
-        {
-          "code": "3234",
-          "name": "Fire and Security Alarm Installation Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/daikin-aams-group"
     }
   ],
   "page": 4,
