@@ -168,13 +168,34 @@ export default function NickTwort() {
           </p>
           <div className="flex flex-wrap gap-2 mb-4">
             {[
-              "Advertising", "Airlines & Airports", "Alcohol Retailing", "App Stores",
-              "Banking & Financial Services", "Cash-in-Transit", "Carpet", "Cement",
-              "Coal", "Cruise", "Car Parking", "Digital Platforms", "Electricity Generation",
-              "Electricity Transmission", "Estate Maintenance", "Retail Fuel", "Wholesale Fuel",
-              "Groceries", "Health", "Milk", "Pathology", "Pet Supplies", "Ports",
-              "Retail", "Streaming Video", "Supermarkets", "Telecommunications",
-              "Infrastructure"
+              "Advertising",
+              "Airlines & Airports",
+              "Alcohol Retailing",
+              "App Stores",
+              "Banking & Financial Services",
+              "Car Parking",
+              "Carpet",
+              "Cash-in-Transit",
+              "Cement",
+              "Coal",
+              "Cruise",
+              "Digital Platforms",
+              "Electricity Generation",
+              "Electricity Transmission",
+              "Estate Maintenance",
+              "Groceries",
+              "Health",
+              "Infrastructure",
+              "Milk",
+              "Pathology",
+              "Pet Supplies",
+              "Ports",
+              "Retail",
+              "Retail Fuel",
+              "Streaming Video",
+              "Supermarkets",
+              "Telecommunications",
+              "Wholesale Fuel"
             ].map((industry) => (
               <span
                 key={industry}
