@@ -519,6 +519,9 @@ def build_html_email(digest: dict) -> str:
                 View online
               </a>
             </span>
+            <span style="font-size:13px;color:#6b7280;margin-top:4px;display:block;font-style:italic;">
+              Were you forwarded this email? Sign up <a href="https://mergers.fyi/digest" style="color:#335145;text-decoration:underline;">here</a>
+            </span>
           </td>
         </tr>
 
