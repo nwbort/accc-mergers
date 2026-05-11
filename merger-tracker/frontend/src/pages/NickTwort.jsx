@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import SEO from '../components/SEO';
 
 const structuredData = {
@@ -73,6 +73,13 @@ export default function NickTwort() {
               className="text-primary hover:opacity-75 transition-opacity"
             >
               <FaGithub size={28} />
+            </a>
+            <a
+              href="mailto:nick@mergers.fyi"
+              aria-label="Email Nick"
+              className="text-primary hover:opacity-75 transition-opacity"
+            >
+              <FaEnvelope size={28} />
             </a>
           </div>
           <p className="text-lg text-emerald-700 font-medium">Competition Economist – Australia &amp; New Zealand</p>
