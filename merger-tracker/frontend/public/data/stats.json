@@ -1,9 +1,9 @@
 {
-  "total_mergers": 93,
+  "total_mergers": 94,
   "total_waivers": 134,
   "by_status": {
     "Assessment completed": 70,
-    "Under assessment": 23
+    "Under assessment": 24
   },
   "by_determination": {
     "Approved": 70,
@@ -85,6 +85,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-15015",
+      "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-06T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-80010",
       "merger_name": "Medtronic - Scientia",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-04T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-45006",
-      "merger_name": "Paramount Skydance / Warner Bros. Discovery",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-04-29T12:00:00Z",
       "is_waiver": false
     }
   ],
