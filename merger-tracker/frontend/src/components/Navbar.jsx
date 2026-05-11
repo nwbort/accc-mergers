@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
-import { HiSearch, HiMenu, HiX } from 'react-icons/hi';
+import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
 import NotificationPanel from './NotificationPanel';
 import BellIcon from './BellIcon';
@@ -203,7 +203,7 @@ function Navbar() {
                   className={`inline-flex items-center justify-center p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${searchOpen ? 'rounded-r-lg border border-l-0 border-gray-200 bg-gray-100/80 hover:bg-gray-200/80' : 'rounded-lg'}`}
                   aria-label="Search"
                 >
-                  <HiSearch className="h-4 w-4" aria-hidden="true" />
+                  <FaSearch className="h-4 w-4" aria-hidden="true" />
                 </button>
               </div>
             </div>
@@ -212,7 +212,7 @@ function Navbar() {
               className="sm:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               aria-label="Search"
             >
-              <HiSearch className="h-5 w-5" aria-hidden="true" />
+              <FaSearch className="h-5 w-5" aria-hidden="true" />
             </button>
             <div className="relative">
               <button
@@ -246,9 +246,9 @@ function Navbar() {
             >
               <span className="sr-only">{mobileMenuOpen ? "Close" : "Open"} main menu</span>
               {mobileMenuOpen ? (
-                <HiX className="block h-5 w-5" aria-hidden="true" />
+                <FaTimes className="block h-5 w-5" aria-hidden="true" />
               ) : (
-                <HiMenu className="block h-5 w-5" aria-hidden="true" />
+                <FaBars className="block h-5 w-5" aria-hidden="true" />
               )}
             </button>
           </div>
@@ -259,7 +259,7 @@ function Navbar() {
         <div id="mobile-menu" className="sm:hidden border-t border-gray-100 bg-white/95 backdrop-blur-lg">
           <div className="px-3 pt-3 pb-1">
             <div className="flex items-center gap-2 bg-gray-100/80 border border-gray-200 rounded-lg px-3 py-2">
-              <HiSearch className="h-4 w-4 text-gray-400 shrink-0" aria-hidden="true" />
+              <FaSearch className="h-4 w-4 text-gray-400 shrink-0" aria-hidden="true" />
               <input
                 ref={mobileSearchInputRef}
                 type="text"
