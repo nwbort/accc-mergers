@@ -1744,6 +1744,22 @@
       },
       {
         "application_date": "2026-04-24",
+        "business_days": 11,
+        "calendar_days": 17,
+        "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
+        "merger_id": "WA-35015",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-04-24",
+        "business_days": 11,
+        "calendar_days": 17,
+        "merger_name": "Australian Venue Co \u2013 assets of White Cockatoo Hotel, Petersham",
+        "merger_id": "WA-45013",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-04-24",
         "business_days": 9,
         "calendar_days": 13,
         "merger_name": "BHP \u2013 expansion of Special Mining Lease at Olympic Dam, SA",
@@ -1765,14 +1781,22 @@
         "merger_name": "Francisco Partners - Blackline Safety",
         "merger_id": "WA-85025",
         "determination": "Approved"
+      },
+      {
+        "application_date": "2026-04-24",
+        "business_days": 11,
+        "calendar_days": 17,
+        "merger_name": "Cement Australia \u2013 Global Manufacturing Group",
+        "merger_id": "WA-90013",
+        "determination": "Approved"
       }
     ],
     "stats": {
       "average": 11.9,
-      "median": 11.5,
+      "median": 11,
       "min": 2,
       "max": 25,
-      "count": 136
+      "count": 139
     }
   },
   "monthly_volume": {
@@ -1806,7 +1830,7 @@
       30,
       30,
       48,
-      28,
+      31,
       0
     ]
   }

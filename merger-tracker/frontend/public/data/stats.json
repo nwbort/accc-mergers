@@ -1,6 +1,6 @@
 {
   "total_mergers": 94,
-  "total_waivers": 136,
+  "total_waivers": 139,
   "by_status": {
     "Assessment completed": 70,
     "Under assessment": 24
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 124,
+    "Approved": 127,
     "Not approved": 12
   },
   "phase_duration": {
@@ -55,15 +55,15 @@
       "count": 11
     },
     {
+      "name": "Pubs, Taverns and Bars",
+      "count": 10
+    },
+    {
       "name": "Scientific Research Services",
       "count": 9
     },
     {
       "name": "Accommodation",
-      "count": 9
-    },
-    {
-      "name": "Pubs, Taverns and Bars",
       "count": 9
     },
     {
@@ -119,6 +119,36 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-35015",
+      "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
+      "determination": "Approved",
+      "determination_date": "2026-05-11T12:00:00Z",
+      "page_modified_datetime": "2026-05-11T17:32:17+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-90013",
+      "merger_name": "Cement Australia \u2013 Global Manufacturing Group",
+      "determination": "Approved",
+      "determination_date": "2026-05-11T12:00:00Z",
+      "page_modified_datetime": "2026-05-11T17:30:03+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-45013",
+      "merger_name": "Australian Venue Co \u2013 assets of White Cockatoo Hotel, Petersham",
+      "determination": "Approved",
+      "determination_date": "2026-05-11T12:00:00Z",
+      "page_modified_datetime": "2026-05-11T17:24:55+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-80011",
       "merger_name": "CRH - Axius Water",
       "determination": "Approved",
@@ -144,36 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-08T12:00:00Z",
       "page_modified_datetime": "2026-05-08T12:11:48+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-65013",
-      "merger_name": "BHP \u2013 expansion of Special Mining Lease at Olympic Dam, SA",
-      "determination": "Approved",
-      "determination_date": "2026-05-07T12:00:00Z",
-      "page_modified_datetime": "2026-05-07T17:38:08+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-20015",
-      "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
-      "determination": "Not approved",
-      "determination_date": "2026-05-07T12:00:00Z",
-      "page_modified_datetime": "2026-05-07T17:12:16+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-70013",
-      "merger_name": "Ventura Motors \u2013 Crown Coaches",
-      "determination": "Approved",
-      "determination_date": "2026-05-07T12:00:00Z",
-      "page_modified_datetime": "2026-05-07T15:41:32+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
