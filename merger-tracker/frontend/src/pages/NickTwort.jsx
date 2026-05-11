@@ -1,4 +1,4 @@
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import SEO from '../components/SEO';
 
 const structuredData = {
@@ -73,6 +73,13 @@ export default function NickTwort() {
               className="text-primary hover:opacity-75 transition-opacity"
             >
               <FaGithub size={28} />
+            </a>
+            <a
+              href="mailto:nick@mergers.fyi"
+              aria-label="Email Nick"
+              className="text-primary hover:opacity-75 transition-opacity"
+            >
+              <FaEnvelope size={28} />
             </a>
           </div>
           <p className="text-lg text-emerald-700 font-medium">Competition Economist – Australia &amp; New Zealand</p>
@@ -166,15 +173,40 @@ export default function NickTwort() {
             Nick has worked across a broad range of Australian industries and markets, bringing sector-specific
             economic knowledge to each engagement:
           </p>
-          <div className="flex flex-wrap gap-2 mb-4">
+          <div className="flex flex-wrap gap-2 mb-4 justify-between">
             {[
-              "Advertising", "Airlines & Airports", "Alcohol Retailing", "App Stores",
-              "Banking & Financial Services", "Cash-in-Transit", "Carpet", "Cement",
-              "Coal", "Cruise", "Car Parking", "Digital Platforms", "Electricity Generation",
-              "Electricity Transmission", "Estate Maintenance", "Retail Fuel", "Wholesale Fuel",
-              "Groceries", "Health", "Milk", "Pathology", "Pet Supplies", "Ports",
-              "Retail", "Streaming Video", "Supermarkets", "Telecommunications",
-              "Infrastructure"
+              "Advertising",
+              "Airlines & Airports",
+              "Alcohol Retailing",
+              "App Stores",
+              "Banking & Financial Services",
+              "Car Parking",
+              "Carpet",
+              "Cash-in-Transit",
+              "Cement",
+              "Coal",
+              "Cruise",
+              "Digital Platforms",
+              "Electricity Generation",
+              "Electricity Transmission",
+              "Estate Maintenance",
+              "General Hardware",
+              "Groceries",
+              "Health",
+              "Hydroelectric Generation",
+              "Infrastructure",
+              "Milk",
+              "Pathology",
+              "Pet Supplies",
+              "Ports",
+              "Retail",
+              "Retail Fuel",
+              "Streaming Video",
+              "Supermarkets",
+              "Telecommunications",
+              "Water",
+              "Wholesale Fuel",
+              "Wholesale Internet Services"
             ].map((industry) => (
               <span
                 key={industry}
