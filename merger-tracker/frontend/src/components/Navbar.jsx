@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
-import { FaSearch, FaBars, FaTimes } from 'react-icons/fa';
+import { FaSearch, FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
 import NotificationPanel from './NotificationPanel';
 import BellIcon from './BellIcon';
@@ -17,6 +17,9 @@ const navLinks = [
   { path: '/digest', label: 'Catch me up' },
 ];
 
+const mainNavLinks = navLinks.slice(0, 2);
+const moreNavLinks = navLinks.slice(2);
+
 function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -24,23 +27,36 @@ function Navbar() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [moreOpen, setMoreOpen] = useState(false);
   const [notificationPanelOpen, setNotificationPanelOpen] = useState(false);
   const [showShortcutHints, setShowShortcutHints] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [isMobileNav, setIsMobileNav] = useState(false);
+  const [navMode, setNavMode] = useState('full'); // 'full' | 'condensed' | 'mobile'
   const containerRef = useRef(null);
-  const probeRef = useRef(null);
+  const probeFullRef = useRef(null);
+  const probeCondensedRef = useRef(null);
   const searchInputRef = useRef(null);
   const mobileSearchInputRef = useRef(null);
+  const moreMenuRef = useRef(null);
   const focusMobileSearchRef = useRef(false);
   const { unseenCount } = useTracking();
 
   useLayoutEffect(() => {
     const container = containerRef.current;
-    const probe = probeRef.current;
-    if (!container || !probe) return;
-    const check = () => setIsMobileNav(probe.offsetWidth > container.clientWidth);
+    const probeFull = probeFullRef.current;
+    const probeCondensed = probeCondensedRef.current;
+    if (!container || !probeFull || !probeCondensed) return;
+    const check = () => {
+      const available = container.clientWidth;
+      if (probeFull.offsetWidth <= available) {
+        setNavMode('full');
+      } else if (probeCondensed.offsetWidth <= available) {
+        setNavMode('condensed');
+      } else {
+        setNavMode('mobile');
+      }
+    };
     check();
     const ro = new ResizeObserver(check);
     ro.observe(container);
@@ -48,8 +64,23 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (!isMobileNav) setMobileMenuOpen(false);
-  }, [isMobileNav]);
+    if (navMode !== 'mobile') setMobileMenuOpen(false);
+  }, [navMode]);
+
+  useEffect(() => {
+    if (navMode !== 'condensed') setMoreOpen(false);
+  }, [navMode]);
+
+  useEffect(() => {
+    if (!moreOpen) return;
+    const handleClick = (e) => {
+      if (moreMenuRef.current && !moreMenuRef.current.contains(e.target)) {
+        setMoreOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, [moreOpen]);
 
   const submitSearch = (query) => {
     const trimmed = query.trim();
@@ -85,7 +116,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleFocusNavbarSearch = () => {
-      if (!isMobileNav) {
+      if (navMode !== 'mobile') {
         setSearchOpen(true);
         if (searchInputRef.current) {
           searchInputRef.current.focus();
@@ -97,7 +128,7 @@ function Navbar() {
     };
     window.addEventListener('focus-navbar-search', handleFocusNavbarSearch);
     return () => window.removeEventListener('focus-navbar-search', handleFocusNavbarSearch);
-  }, [isMobileNav]);
+  }, [navMode]);
 
   useEffect(() => {
     if (mobileMenuOpen && focusMobileSearchRef.current && mobileSearchInputRef.current) {
@@ -106,9 +137,8 @@ function Navbar() {
     }
   }, [mobileMenuOpen]);
 
-  const isActive = (path) => {
-    return location.pathname === path;
-  };
+  const isActive = (path) => location.pathname === path;
+  const isMoreActive = moreNavLinks.some(({ path }) => isActive(path));
 
   // Show shortcut hint badges while "g" is held/pending
   useEffect(() => {
@@ -122,7 +152,6 @@ function Navbar() {
       }
     };
     const handleKeyUp = (e) => {
-      // Hide on any key after g (the navigation will have happened)
       if (showShortcutHints && e.key !== 'g') {
         setShowShortcutHints(false);
       }
@@ -139,18 +168,14 @@ function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-
       setIsScrolled(currentScrollY > 10);
-
       if (currentScrollY < lastScrollY) {
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY && currentScrollY > SCROLL_HIDE_THRESHOLD_PX) {
         setIsVisible(false);
       }
-
       setLastScrollY(currentScrollY);
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
@@ -173,9 +198,10 @@ function Navbar() {
       </a>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={containerRef} className="flex justify-between h-16 relative">
-          {/* Probe: invisible full-width desktop nav used to calculate the natural wrap point */}
+
+          {/* Full probe: all links + worst-case expanded search (w-52) + bell */}
           <div
-            ref={probeRef}
+            ref={probeFullRef}
             aria-hidden="true"
             className="absolute top-0 left-0 invisible pointer-events-none flex items-center h-16 whitespace-nowrap"
           >
@@ -185,71 +211,159 @@ function Navbar() {
                 <span key={label} className="px-3 py-2 text-sm font-medium">{label}</span>
               ))}
             </div>
-            {/* search icon + bell icon approximate widths */}
             <div className="ml-1 flex items-center gap-1">
-              <div className="w-8 h-8" />
+              <div className="w-52 h-8" />
               <div className="w-9 h-9" />
             </div>
           </div>
+
+          {/* Condensed probe: Dashboard + Mergers + More + worst-case expanded search (w-52) + bell */}
+          <div
+            ref={probeCondensedRef}
+            aria-hidden="true"
+            className="absolute top-0 left-0 invisible pointer-events-none flex items-center h-16 whitespace-nowrap"
+          >
+            <span className="text-lg font-bold tracking-tight">australian merger tracker</span>
+            <div className="ml-10 flex space-x-1">
+              <span className="px-3 py-2 text-sm font-medium">Dashboard</span>
+              <span className="px-3 py-2 text-sm font-medium">Mergers</span>
+              <span className="px-3 py-2 text-sm font-medium">More ▾</span>
+            </div>
+            <div className="ml-1 flex items-center gap-1">
+              <div className="w-52 h-8" />
+              <div className="w-9 h-9" />
+            </div>
+          </div>
+
+          {/* Left: brand + nav links */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2.5 group">
               <span className="text-lg font-bold text-primary tracking-tight">
                 australian merger tracker
               </span>
             </Link>
-            <div className={isMobileNav ? 'hidden' : 'ml-10 flex space-x-1'}>
-              {navLinks.map(({ path, label, shortcut }) => (
-                <Link
-                  key={path}
-                  to={path}
-                  className={`relative inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
-                    isActive(path)
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80'
-                  }`}
-                >
-                  {label}
-                  {shortcut && showShortcutHints && (
-                    <span className="absolute -top-1 -right-1 flex items-center justify-center w-4 h-4 rounded bg-primary text-[10px] font-bold text-white shadow-sm animate-fade-in">
-                      {shortcut}
-                    </span>
-                  )}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div className="flex items-center gap-1">
-            <div className={isMobileNav ? 'hidden' : 'flex items-center'}>
-              <div className={`flex items-center transition-all duration-200 ${searchOpen ? 'w-52' : 'w-8'}`}>
-                {searchOpen && (
-                  <input
-                    ref={searchInputRef}
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    onKeyDown={handleSearchKeyDown}
-                    onBlur={() => { if (!searchQuery.trim()) { setSearchOpen(false); } }}
-                    placeholder="Search mergers…"
-                    className="w-full text-sm bg-gray-100/80 border border-gray-200 rounded-l-lg px-3 py-1.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/40"
-                    aria-label="Search mergers"
-                  />
-                )}
-                <button
-                  onClick={handleSearchIconClick}
-                  className={`inline-flex items-center justify-center p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${searchOpen ? 'rounded-r-lg border border-l-0 border-gray-200 bg-gray-100/80 hover:bg-gray-200/80' : 'rounded-lg'}`}
-                  aria-label="Search"
-                >
-                  <FaSearch className="h-4 w-4" aria-hidden="true" />
-                </button>
+
+            {/* Full mode: all links */}
+            {navMode === 'full' && (
+              <div className="ml-10 flex space-x-1">
+                {navLinks.map(({ path, label, shortcut }) => (
+                  <Link
+                    key={path}
+                    to={path}
+                    className={`relative inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
+                      isActive(path)
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80'
+                    }`}
+                  >
+                    {label}
+                    {shortcut && showShortcutHints && (
+                      <span className="absolute -top-1 -right-1 flex items-center justify-center w-4 h-4 rounded bg-primary text-[10px] font-bold text-white shadow-sm animate-fade-in">
+                        {shortcut}
+                      </span>
+                    )}
+                  </Link>
+                ))}
               </div>
-            </div>
-            <button
-              onClick={() => { focusMobileSearchRef.current = true; setMobileMenuOpen(true); }}
-              className={`${isMobileNav ? '' : 'hidden'} inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
-              aria-label="Search"
-            >
-              <FaSearch className="h-5 w-5" aria-hidden="true" />
-            </button>
+            )}
+
+            {/* Condensed mode: Dashboard + Mergers + More dropdown */}
+            {navMode === 'condensed' && (
+              <div className="ml-10 flex items-center space-x-1">
+                {mainNavLinks.map(({ path, label, shortcut }) => (
+                  <Link
+                    key={path}
+                    to={path}
+                    className={`relative inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
+                      isActive(path)
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80'
+                    }`}
+                  >
+                    {label}
+                    {shortcut && showShortcutHints && (
+                      <span className="absolute -top-1 -right-1 flex items-center justify-center w-4 h-4 rounded bg-primary text-[10px] font-bold text-white shadow-sm animate-fade-in">
+                        {shortcut}
+                      </span>
+                    )}
+                  </Link>
+                ))}
+                <div ref={moreMenuRef} className="relative">
+                  <button
+                    onClick={() => setMoreOpen(!moreOpen)}
+                    className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+                      isMoreActive || moreOpen
+                        ? 'bg-primary/10 text-primary'
+                        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80'
+                    }`}
+                    aria-expanded={moreOpen}
+                    aria-haspopup="true"
+                  >
+                    More
+                    <FaChevronDown
+                      className={`h-3 w-3 transition-transform duration-150 ${moreOpen ? 'rotate-180' : ''}`}
+                      aria-hidden="true"
+                    />
+                  </button>
+                  {moreOpen && (
+                    <div className="absolute top-full left-0 mt-1 w-44 bg-white shadow-lg rounded-lg border border-gray-100 py-1 z-50">
+                      {moreNavLinks.map(({ path, label }) => (
+                        <Link
+                          key={path}
+                          to={path}
+                          className={`block px-4 py-2 text-sm font-medium transition-all duration-150 ${
+                            isActive(path)
+                              ? 'bg-primary/10 text-primary'
+                              : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                          }`}
+                          onClick={() => setMoreOpen(false)}
+                        >
+                          {label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Right: search, bell, mobile hamburger */}
+          <div className="flex items-center gap-1">
+            {navMode !== 'mobile' ? (
+              <div className="flex items-center">
+                <div className={`flex items-center transition-all duration-200 ${searchOpen ? 'w-52' : 'w-8'}`}>
+                  {searchOpen && (
+                    <input
+                      ref={searchInputRef}
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      onKeyDown={handleSearchKeyDown}
+                      onBlur={() => { if (!searchQuery.trim()) { setSearchOpen(false); } }}
+                      placeholder="Search mergers…"
+                      className="w-full text-sm bg-gray-100/80 border border-gray-200 rounded-l-lg px-3 py-1.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/40"
+                      aria-label="Search mergers"
+                    />
+                  )}
+                  <button
+                    onClick={handleSearchIconClick}
+                    className={`inline-flex items-center justify-center p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${searchOpen ? 'rounded-r-lg border border-l-0 border-gray-200 bg-gray-100/80 hover:bg-gray-200/80' : 'rounded-lg'}`}
+                    aria-label="Search"
+                  >
+                    <FaSearch className="h-4 w-4" aria-hidden="true" />
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <button
+                onClick={() => { focusMobileSearchRef.current = true; setMobileMenuOpen(true); }}
+                className="inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                aria-label="Search"
+              >
+                <FaSearch className="h-5 w-5" aria-hidden="true" />
+              </button>
+            )}
             <div className="relative">
               <button
                 onMouseDown={(e) => e.stopPropagation()}
@@ -273,25 +387,27 @@ function Navbar() {
                 onClose={() => setNotificationPanelOpen(false)}
               />
             </div>
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`${isMobileNav ? '' : 'hidden'} inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
-              aria-expanded={mobileMenuOpen}
-              aria-controls="mobile-menu"
-              aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}
-            >
-              <span className="sr-only">{mobileMenuOpen ? "Close" : "Open"} main menu</span>
-              {mobileMenuOpen ? (
-                <FaTimes className="block h-5 w-5" aria-hidden="true" />
-              ) : (
-                <FaBars className="block h-5 w-5" aria-hidden="true" />
-              )}
-            </button>
+            {navMode === 'mobile' && (
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-menu"
+                aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}
+              >
+                <span className="sr-only">{mobileMenuOpen ? "Close" : "Open"} main menu</span>
+                {mobileMenuOpen ? (
+                  <FaTimes className="block h-5 w-5" aria-hidden="true" />
+                ) : (
+                  <FaBars className="block h-5 w-5" aria-hidden="true" />
+                )}
+              </button>
+            )}
           </div>
         </div>
       </div>
 
-      {isMobileNav && mobileMenuOpen && (
+      {navMode === 'mobile' && mobileMenuOpen && (
         <div id="mobile-menu" className="border-t border-gray-100 bg-white/95 backdrop-blur-lg">
           <div className="px-3 pt-3 pb-1">
             <div className="flex items-center gap-2 bg-gray-100/80 border border-gray-200 rounded-lg px-3 py-2">
