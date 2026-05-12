@@ -1,6 +1,6 @@
 {
   "total_mergers": 96,
-  "total_waivers": 141,
+  "total_waivers": 142,
   "by_status": {
     "Assessment completed": 71,
     "Under assessment": 25
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 129,
+    "Approved": 130,
     "Not approved": 12
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-40021",
+      "merger_name": "Ochre Health - New Lambton Family Practice, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-05-12T12:00:00Z",
+      "page_modified_datetime": "2026-05-12T17:18:15+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-40018",
       "merger_name": "AustralianSuper - IFM Global Infrastructure (Australia) Trust",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-11T12:00:00Z",
       "page_modified_datetime": "2026-05-11T17:30:03+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-45013",
-      "merger_name": "Australian Venue Co \u2013 assets of White Cockatoo Hotel, Petersham",
-      "determination": "Approved",
-      "determination_date": "2026-05-11T12:00:00Z",
-      "page_modified_datetime": "2026-05-11T17:24:55+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
