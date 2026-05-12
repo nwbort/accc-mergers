@@ -1,6 +1,6 @@
 {
   "total_mergers": 96,
-  "total_waivers": 140,
+  "total_waivers": 141,
   "by_status": {
     "Assessment completed": 71,
     "Under assessment": 25
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 128,
+    "Approved": 129,
     "Not approved": 12
   },
   "phase_duration": {
@@ -40,7 +40,7 @@
     },
     {
       "name": "Financial Asset Investing",
-      "count": 25
+      "count": 26
     },
     {
       "name": "Software Publishing",
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-40018",
+      "merger_name": "AustralianSuper - IFM Global Infrastructure (Australia) Trust",
+      "determination": "Approved",
+      "determination_date": "2026-05-12T12:00:00Z",
+      "page_modified_datetime": "2026-05-12T17:07:47+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-45002",
       "merger_name": "eBay / Depop",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-11T12:00:00Z",
       "page_modified_datetime": "2026-05-11T17:24:55+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-80011",
-      "merger_name": "CRH - Axius Water",
-      "determination": "Approved",
-      "determination_date": "2026-05-11T12:00:00Z",
-      "page_modified_datetime": "2026-05-11T17:22:36+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
