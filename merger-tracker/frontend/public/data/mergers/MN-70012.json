@@ -1,0 +1,171 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/quanta-psd",
+  "merger_name": "Quanta - PSD",
+  "status": "Under assessment",
+  "merger_id": "MN-70012",
+  "effective_notification_datetime": "2026-05-12T12:00:00Z",
+  "original_notification_datetime": "2026-05-12T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-06-25T12:00:00Z",
+  "page_modified_datetime": "2026-05-12T14:58:54+10:00",
+  "consultation_response_due_date": "2026-05-19T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Quanta Services Australia Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "11 164 311 997"
+    }
+  ],
+  "targets": [
+    {
+      "name": "PSD Global Holdings Pty Ltd",
+      "identifier_type": "ACN",
+      "identifier": "634 380 813"
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "PSD Plant & Equipment Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "97 144 778 861"
+    },
+    {
+      "name": "Intellect Systems Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "11 115 885 348"
+    },
+    {
+      "name": "Axcentium Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "48 638 953 572"
+    },
+    {
+      "name": "Consolidated Power Projects Australia Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "18 075 411 219"
+    },
+    {
+      "name": "Nacap Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "33 006 306 994"
+    },
+    {
+      "name": "PSD Energy Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "68 117 966 926"
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "3109",
+      "name": "Other Heavy and Civil Engineering Construction"
+    },
+    {
+      "code": "6923",
+      "name": "Engineering Design and Engineering Consulting Services"
+    },
+    {
+      "code": "6961",
+      "name": "Corporate Head Office Management Services"
+    }
+  ],
+  "merger_description": "Quanta Services Australia Pty Ltd (**Quanta**) proposes to acquire 100% of the shares in PSD Global Holdings Pty Ltd, including ownership of its wholly owned subsidiaries, PSD Energy Pty Ltd and PSD Plant & Equipment Pty Ltd, and all assets constituting the business trading as PSD Energy (together, **PSD**).\n\nQuanta, through its subsidiaries, is involved in engineering, procurement and construction of infrastructure projects in the energy sector, including high voltage (**HV**) electricity projects. Quanta\u2019s operations in HV electricity projects include transmission lines, substations, grid-scale Battery Energy Storage Systems (**BESS**), and the supply of protection panels and switchrooms.\n\nPSD is an electrical engineering, design and construction company specialising in HV electrical infrastructure and secondary systems. PSD\u2019s projects include substations, solar farms, BESS and the supply of protection panels, switchrooms and related facilities.",
+  "events": [
+    {
+      "date": "2026-05-12T12:00:00Z",
+      "title": "Questionnaire - Quanta - PSD",
+      "display_title": "Questionnaire - Quanta - PSD",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Quanta%20-%20PSD.docx",
+      "url_gh": "/mergers/MN-70012/Questionnaire - Quanta - PSD.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-05-12T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-35001",
+      "merger_name": "WSP \u2013 TRC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "WSP Global Inc.",
+          "identifier_type": null,
+          "identifier": "Corporation No.: 7748388"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TRC Companies, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-55003",
+      "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "SYMAL GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "72 615 255 466"
+        }
+      ],
+      "targets": [
+        {
+          "name": "J. DAVISON NOMINEES PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "70 007 998 969"
+        },
+        {
+          "name": "DAVISON CONTRACTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "68 675 773 896"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01071",
+      "merger_name": "CSE Crosscom \u2013 Progility",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CSE CROSSCOM PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 606 614 500"
+        },
+        {
+          "name": "CSE-Global (Australia) Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "85 109 958 090"
+        }
+      ],
+      "targets": [
+        {
+          "name": "PROGILITY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 131 639 837"
+        }
+      ]
+    }
+  ]
+}

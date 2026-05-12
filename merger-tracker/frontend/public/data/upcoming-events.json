@@ -61,6 +61,16 @@
       "effective_notification_datetime": "2026-04-03T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-05-19T12:00:00Z",
+      "merger_id": "MN-70012",
+      "merger_name": "Quanta - PSD",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-05-12T12:00:00Z"
+    },
+    {
       "type": "notice_of_competition_concerns",
       "event_type_display": "Notice of competition concerns",
       "date": "2026-05-25T12:00:00Z",
@@ -279,8 +289,18 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-05-06T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-06-25T12:00:00Z",
+      "merger_id": "MN-70012",
+      "merger_name": "Quanta - PSD",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-05-12T12:00:00Z"
     }
   ],
-  "count": 28,
+  "count": 30,
   "days_ahead": 60
 }
