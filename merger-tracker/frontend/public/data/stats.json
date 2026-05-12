@@ -1,9 +1,9 @@
 {
-  "total_mergers": 95,
+  "total_mergers": 96,
   "total_waivers": 140,
   "by_status": {
     "Assessment completed": 71,
-    "Under assessment": 24
+    "Under assessment": 25
   },
   "by_determination": {
     "Approved": 71,
@@ -40,7 +40,7 @@
     },
     {
       "name": "Financial Asset Investing",
-      "count": 24
+      "count": 25
     },
     {
       "name": "Software Publishing",
@@ -55,12 +55,12 @@
       "count": 11
     },
     {
-      "name": "Pubs, Taverns and Bars",
+      "name": "Scientific Research Services",
       "count": 10
     },
     {
-      "name": "Scientific Research Services",
-      "count": 9
+      "name": "Pubs, Taverns and Bars",
+      "count": 10
     },
     {
       "name": "Accommodation",
@@ -76,6 +76,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-40019",
+      "merger_name": "Novartis / Excellergy",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-12T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-05T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-35014",
-      "merger_name": "News \u2013 acquisition of 20% of National Distribution Services",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-04T12:00:00Z",
       "is_waiver": false
     }
   ],
