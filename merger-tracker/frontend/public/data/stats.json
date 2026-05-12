@@ -2,11 +2,11 @@
   "total_mergers": 95,
   "total_waivers": 140,
   "by_status": {
-    "Assessment completed": 70,
-    "Under assessment": 25
+    "Assessment completed": 71,
+    "Under assessment": 24
   },
   "by_determination": {
-    "Approved": 70,
+    "Approved": 71,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 12
   },
   "phase_duration": {
-    "average_days": 27.571428571428573,
+    "average_days": 27.732394366197184,
     "median_days": 26,
-    "average_business_days": 18.114285714285714,
+    "average_business_days": 18.225352112676056,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 24.3
+        "percentage": 23.9
       },
       "day20": {
         "count": 56,
-        "percentage": 80.0
+        "percentage": 78.9
       },
       "day30": {
-        "count": 69,
+        "count": 70,
         "percentage": 98.6
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-45002",
+      "merger_name": "eBay / Depop",
+      "determination": "Approved",
+      "determination_date": "2026-05-12T12:00:00Z",
+      "page_modified_datetime": "2026-05-12T15:10:01+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-95015",
       "merger_name": "DP World Global Forwarding \u2013 Pure Global Logistics",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-11T12:00:00Z",
       "page_modified_datetime": "2026-05-11T17:22:36+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-01094",
-      "merger_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
-      "determination": "Not approved",
-      "determination_date": "2026-05-11T12:00:00Z",
-      "page_modified_datetime": "2026-05-11T16:56:29+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
