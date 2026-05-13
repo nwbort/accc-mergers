@@ -59,6 +59,9 @@ function Analysis() {
   const phase1Stats = calendarDays ? phase1_duration.calendar_stats : phase1_duration.stats;
   const waiverStats = calendarDays ? waiver_duration.calendar_stats : waiver_duration.stats;
 
+  const dayField = calendarDays ? 'calendar_days' : 'business_days';
+  const dayLabel = calendarDays ? 'calendar days' : 'business days';
+
   // --- Phase 1 Scatter Chart ---
   const phase1ScatterData = {
     datasets: [
@@ -68,7 +71,7 @@ function Analysis() {
           .filter(d => d.determination === 'Approved')
           .map(d => ({
             x: new Date(d.notification_date).getTime(),
-            y: d.business_days,
+            y: d[dayField],
             label: d.merger_name,
             id: d.merger_id,
           })),
@@ -82,7 +85,7 @@ function Analysis() {
           .filter(d => d.determination === 'Referred to phase 2')
           .map(d => ({
             x: new Date(d.notification_date).getTime(),
-            y: d.business_days,
+            y: d[dayField],
             label: d.merger_name,
             id: d.merger_id,
           })),
@@ -131,7 +134,7 @@ function Analysis() {
           label: (item) => {
             const date = new Date(item.raw.x);
             return [
-              `Duration: ${item.raw.y} business days`,
+              `Duration: ${item.raw.y} ${dayLabel}`,
               `Notified: ${date.toLocaleDateString('en-AU', { day: 'numeric', month: 'short', year: 'numeric' })}`,
             ];
           },
@@ -162,7 +165,7 @@ function Analysis() {
         beginAtZero: true,
         title: {
           display: true,
-          text: 'Business days',
+          text: calendarDays ? 'Calendar days' : 'Business days',
           font: { size: 12, family: 'Inter, sans-serif' },
           color: '#6b7280',
         },
@@ -181,7 +184,7 @@ function Analysis() {
           .filter(d => d.determination === 'Approved')
           .map(d => ({
             x: new Date(d.application_date).getTime(),
-            y: d.business_days,
+            y: d[dayField],
             label: d.merger_name,
             id: d.merger_id,
           })),
@@ -195,7 +198,7 @@ function Analysis() {
           .filter(d => d.determination === 'Not approved')
           .map(d => ({
             x: new Date(d.application_date).getTime(),
-            y: d.business_days,
+            y: d[dayField],
             label: d.merger_name,
             id: d.merger_id,
           })),
