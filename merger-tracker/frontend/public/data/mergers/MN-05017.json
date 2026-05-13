@@ -68,37 +68,12 @@
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
   "has_questionnaire": true,
+  "related_merger": {
+    "merger_id": "WA-65011",
+    "relationship": "refiled_from",
+    "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens"
+  },
   "similar_mergers": [
-    {
-      "merger_id": "WA-65011",
-      "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
-      "acquirers": [
-        {
-          "name": "TWG HUNTER DEALERSHIPS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 695 726 348"
-        },
-        {
-          "name": "THE TRUSTEE FOR WHITE KING CORPORATE UNIT TRUST",
-          "identifier_type": "ABN",
-          "identifier": "70 760 893 620"
-        }
-      ],
-      "targets": [
-        {
-          "name": "SHARTON MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 001 345 384"
-        },
-        {
-          "name": "N&M BURTON PTY LTD",
-          "identifier_type": "ACN",
-          "identifier": "125 935 944"
-        }
-      ]
-    },
     {
       "merger_id": "WA-85017",
       "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
