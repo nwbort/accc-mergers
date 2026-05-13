@@ -1,6 +1,6 @@
 {
   "total_mergers": 99,
-  "total_waivers": 142,
+  "total_waivers": 143,
   "by_status": {
     "Assessment completed": 71,
     "Under assessment": 28
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 130,
+    "Approved": 131,
     "Not approved": 12
   },
   "phase_duration": {
@@ -36,7 +36,7 @@
   "top_industries": [
     {
       "name": "Computer System Design and Related Services",
-      "count": 31
+      "count": 32
     },
     {
       "name": "Financial Asset Investing",
@@ -44,7 +44,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 22
+      "count": 23
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -71,8 +71,8 @@
       "count": 8
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
-      "count": 7
+      "name": "Data Processing and Web Hosting Services",
+      "count": 8
     }
   ],
   "recent_mergers": [
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-65014",
+      "merger_name": "26North Funds - Intermedia Cloud Communications",
+      "determination": "Approved",
+      "determination_date": "2026-05-13T12:00:00Z",
+      "page_modified_datetime": "2026-05-13T16:31:31+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-40021",
       "merger_name": "Ochre Health - New Lambton Family Practice, NSW",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-11T12:00:00Z",
       "page_modified_datetime": "2026-05-11T17:32:17+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-90013",
-      "merger_name": "Cement Australia \u2013 Global Manufacturing Group",
-      "determination": "Approved",
-      "determination_date": "2026-05-11T12:00:00Z",
-      "page_modified_datetime": "2026-05-11T17:30:03+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
