@@ -271,8 +271,13 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
         text = line['text']
         is_bold = line['is_bold']
 
-        # Stop if we hit certain keywords that indicate end of questions section
-        if re.match(r'^(Confidentiality|Note:|Please note)', text, re.IGNORECASE):
+        # Stop if we hit certain keywords that indicate end of questions section.
+        # Only stop once we've seen at least one question so preamble notes
+        # (e.g. a "Note:" paragraph between the "Questions" heading and Q1)
+        # don't abort parsing before any questions are captured.
+        if (questions or current_question_num is not None) and re.match(
+            r'^(Confidentiality|Note:|Please note)', text, re.IGNORECASE
+        ):
             break
 
         # Skip lines that fall inside a detected table region. Save the current
