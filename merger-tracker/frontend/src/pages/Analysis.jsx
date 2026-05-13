@@ -292,8 +292,8 @@ function Analysis() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mb-8">
           {/* Notifications phase 1 */}
           <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-5 py-3 border-b border-gray-100">
-              <p className="text-sm font-semibold text-primary">Notifications phase 1</p>
+            <div className="px-5 py-3 bg-primary">
+              <p className="text-sm font-semibold text-white">Notifications phase 1</p>
             </div>
             <div className="grid grid-cols-2 divide-x divide-gray-100">
               <div className="p-5">
@@ -319,8 +319,8 @@ function Analysis() {
 
           {/* Waivers */}
           <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-5 py-3 border-b border-gray-100">
-              <p className="text-sm font-semibold text-primary">Waivers</p>
+            <div className="px-5 py-3 bg-primary">
+              <p className="text-sm font-semibold text-white">Waivers</p>
             </div>
             <div className="grid grid-cols-2 divide-x divide-gray-100">
               <div className="p-5">
