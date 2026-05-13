@@ -1,6 +1,6 @@
 import { renderViewer } from '../../_lib/pdf-viewer.js';
 
-const BOT_UA_RE = /LinkedInBot|facebookexternalhit|Twitterbot|Slackbot|Discordbot|TelegramBot|WhatsApp|Googlebot|bingbot|Pinterestbot|Applebot|Iframely|rogerbot|embedly|outbrain|quora link preview|Slack|vkShare|W3C_Validator|redditbot|flipboard|tumblr|bitlybot|SkypeUriPreview|nuzzel|Disqus|Google Page Speed|Qwantify|pinterestbot|Baiduspider/i;
+const BOT_UA_RE = /LinkedInBot|facebookexternalhit|Twitterbot|Slackbot|Discordbot|TelegramBot|WhatsApp|bingbot|Pinterestbot|Applebot|Iframely|rogerbot|embedly|outbrain|quora link preview|Slack|vkShare|W3C_Validator|redditbot|flipboard|tumblr|bitlybot|SkypeUriPreview|nuzzel|Disqus|Qwantify|pinterestbot|Baiduspider/i;
 
 function isBotRequest(request) {
   const ua = request.headers.get('User-Agent') || '';
