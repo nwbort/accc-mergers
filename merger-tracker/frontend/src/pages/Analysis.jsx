@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Scatter, Bar } from 'react-chartjs-2';
 import {
@@ -48,12 +49,15 @@ function Analysis() {
     cacheKey: 'analysis-data',
   });
   const navigate = useNavigate();
+  const [calendarDays, setCalendarDays] = useState(false);
 
   if (loading) return <LoadingSpinner />;
   if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
   if (!data) return null;
 
   const { phase1_duration, waiver_duration, monthly_volume } = data;
+  const phase1Stats = calendarDays ? phase1_duration.calendar_stats : phase1_duration.stats;
+  const waiverStats = calendarDays ? waiver_duration.calendar_stats : waiver_duration.stats;
 
   // --- Phase 1 Scatter Chart ---
   const phase1ScatterData = {
@@ -289,59 +293,75 @@ function Analysis() {
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         {/* Summary Stat Cards */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mb-8">
-          {/* Notifications phase 1 */}
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-5 py-3 bg-primary flex items-center justify-between">
-              <p className="text-sm font-semibold text-white">Notifications phase 1</p>
-              <p className="text-xs text-white/60">business days</p>
-            </div>
-            <div className="grid grid-cols-2 divide-x divide-gray-100">
-              <div className="p-5">
-                <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Avg duration</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
-                  {phase1_duration.stats.average ? `${phase1_duration.stats.average} days` : 'N/A'}
-                </p>
-                {phase1_duration.stats.count && (
-                  <p className="text-sm text-gray-400 mt-0.5">{phase1_duration.stats.count} completed</p>
-                )}
-              </div>
-              <div className="p-5">
-                <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Median duration</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
-                  {phase1_duration.stats.median ? `${phase1_duration.stats.median} days` : 'N/A'}
-                </p>
-                {phase1_duration.stats.min && phase1_duration.stats.max && (
-                  <p className="text-sm text-gray-400 mt-0.5">Range {phase1_duration.stats.min}–{phase1_duration.stats.max} days</p>
-                )}
-              </div>
+        <div className="mb-8">
+          <div className="flex justify-end mb-3">
+            <div className="inline-flex items-center bg-gray-100 rounded-full p-0.5 text-sm">
+              <button
+                onClick={() => setCalendarDays(false)}
+                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${!calendarDays ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+              >
+                Business days
+              </button>
+              <button
+                onClick={() => setCalendarDays(true)}
+                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${calendarDays ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+              >
+                Calendar days
+              </button>
             </div>
           </div>
-
-          {/* Waivers */}
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-5 py-3 bg-primary flex items-center justify-between">
-              <p className="text-sm font-semibold text-white">Waivers</p>
-              <p className="text-xs text-white/60">business days</p>
-            </div>
-            <div className="grid grid-cols-2 divide-x divide-gray-100">
-              <div className="p-5">
-                <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Avg duration</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
-                  {waiver_duration.stats.average ? `${waiver_duration.stats.average} days` : 'N/A'}
-                </p>
-                {waiver_duration.stats.count && (
-                  <p className="text-sm text-gray-400 mt-0.5">{waiver_duration.stats.count} completed</p>
-                )}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {/* Notifications phase 1 */}
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+              <div className="px-5 py-3 bg-primary">
+                <p className="text-sm font-semibold text-white">Notifications phase 1</p>
               </div>
-              <div className="p-5">
-                <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Median duration</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
-                  {waiver_duration.stats.median ? `${waiver_duration.stats.median} days` : 'N/A'}
-                </p>
-                {waiver_duration.stats.min && waiver_duration.stats.max && (
-                  <p className="text-sm text-gray-400 mt-0.5">Range {waiver_duration.stats.min}–{waiver_duration.stats.max} days</p>
-                )}
+              <div className="grid grid-cols-2 divide-x divide-gray-100">
+                <div className="p-5">
+                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Avg duration</p>
+                  <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                    {phase1Stats.average ? `${phase1Stats.average} days` : 'N/A'}
+                  </p>
+                  {phase1Stats.count && (
+                    <p className="text-sm text-gray-400 mt-0.5">{phase1Stats.count} completed</p>
+                  )}
+                </div>
+                <div className="p-5">
+                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Median duration</p>
+                  <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                    {phase1Stats.median ? `${phase1Stats.median} days` : 'N/A'}
+                  </p>
+                  {phase1Stats.min && phase1Stats.max && (
+                    <p className="text-sm text-gray-400 mt-0.5">Range {phase1Stats.min}–{phase1Stats.max} days</p>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Waivers */}
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+              <div className="px-5 py-3 bg-primary">
+                <p className="text-sm font-semibold text-white">Waivers</p>
+              </div>
+              <div className="grid grid-cols-2 divide-x divide-gray-100">
+                <div className="p-5">
+                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Avg duration</p>
+                  <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                    {waiverStats.average ? `${waiverStats.average} days` : 'N/A'}
+                  </p>
+                  {waiverStats.count && (
+                    <p className="text-sm text-gray-400 mt-0.5">{waiverStats.count} completed</p>
+                  )}
+                </div>
+                <div className="p-5">
+                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Median duration</p>
+                  <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                    {waiverStats.median ? `${waiverStats.median} days` : 'N/A'}
+                  </p>
+                  {waiverStats.min && waiverStats.max && (
+                    <p className="text-sm text-gray-400 mt-0.5">Range {waiverStats.min}–{waiverStats.max} days</p>
+                  )}
+                </div>
               </div>
             </div>
           </div>
