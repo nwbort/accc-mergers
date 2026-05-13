@@ -317,6 +317,23 @@ function Analysis() {
           ))}
         </div>
 
+        {/* Monthly Volume */}
+        <div className="grid grid-cols-1 gap-6 mb-8">
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div className="px-6 py-5 border-b border-gray-100">
+              <h2 className="text-base font-semibold text-gray-900">Monthly notification volume</h2>
+              <p className="text-sm text-gray-500 mt-0.5">
+                Number of merger notifications and waiver applications per month
+              </p>
+            </div>
+            <div className="p-6">
+              <div className="h-72">
+                <Bar data={monthlyVolumeData} options={monthlyVolumeOptions} />
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Phase 1 Duration Analysis */}
         <section className="mb-8">
           <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
@@ -350,23 +367,6 @@ function Analysis() {
             </div>
           </div>
         </section>
-
-        {/* Monthly Volume */}
-        <div className="grid grid-cols-1 gap-6 mb-8">
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-6 py-5 border-b border-gray-100">
-              <h2 className="text-base font-semibold text-gray-900">Monthly notification volume</h2>
-              <p className="text-sm text-gray-500 mt-0.5">
-                Number of merger notifications and waiver applications per month
-              </p>
-            </div>
-            <div className="p-6">
-              <div className="h-72">
-                <Bar data={monthlyVolumeData} options={monthlyVolumeOptions} />
-              </div>
-            </div>
-          </div>
-        </div>
 
       </div>
     </>
