@@ -330,6 +330,9 @@ function Analysis() {
               <div className="h-72">
                 <Bar data={monthlyVolumeData} options={monthlyVolumeOptions} />
               </div>
+              <p className="text-xs text-gray-400 mt-3">
+                Waivers are recorded on the ACCC's register when they are decided. This means the number of waiver applications in a month can rise for up to 25 business days after the month ends.
+              </p>
             </div>
           </div>
         </div>
@@ -367,6 +370,7 @@ function Analysis() {
             </div>
           </div>
         </section>
+
 
       </div>
     </>
