@@ -289,32 +289,60 @@ function Analysis() {
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         {/* Summary Stat Cards */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 mb-8">
-          {[
-            {
-              label: 'Avg phase 1 duration',
-              value: phase1_duration.stats.average ? `${phase1_duration.stats.average} days` : 'N/A',
-              detail: phase1_duration.stats.count ? `${phase1_duration.stats.count} completed` : null,
-            },
-            {
-              label: 'Median phase 1 duration',
-              value: phase1_duration.stats.median ? `${phase1_duration.stats.median} days` : 'N/A',
-              detail: phase1_duration.stats.min && phase1_duration.stats.max
-                ? `Range: ${phase1_duration.stats.min}–${phase1_duration.stats.max}`
-                : null,
-            },
-            {
-              label: 'Avg waiver duration',
-              value: waiver_duration.stats.average ? `${waiver_duration.stats.average} days` : 'N/A',
-              detail: waiver_duration.stats.count ? `${waiver_duration.stats.count} completed` : null,
-            },
-          ].map(({ label, value, detail }) => (
-            <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
-              <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">{label}</p>
-              <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">{value}</p>
-              {detail && <p className="text-sm text-gray-400 mt-0.5">{detail}</p>}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 mb-8">
+          {/* Notifications phase 1 */}
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div className="px-5 py-3 border-b border-gray-100">
+              <p className="text-sm font-semibold text-primary">Notifications phase 1</p>
             </div>
-          ))}
+            <div className="grid grid-cols-2 divide-x divide-gray-100">
+              <div className="p-5">
+                <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Avg duration</p>
+                <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                  {phase1_duration.stats.average ? `${phase1_duration.stats.average} days` : 'N/A'}
+                </p>
+                {phase1_duration.stats.count && (
+                  <p className="text-sm text-gray-400 mt-0.5">{phase1_duration.stats.count} completed</p>
+                )}
+              </div>
+              <div className="p-5">
+                <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Median duration</p>
+                <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                  {phase1_duration.stats.median ? `${phase1_duration.stats.median} days` : 'N/A'}
+                </p>
+                {phase1_duration.stats.min && phase1_duration.stats.max && (
+                  <p className="text-sm text-gray-400 mt-0.5">Range {phase1_duration.stats.min}–{phase1_duration.stats.max} days</p>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Waivers */}
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div className="px-5 py-3 border-b border-gray-100">
+              <p className="text-sm font-semibold text-primary">Waivers</p>
+            </div>
+            <div className="grid grid-cols-2 divide-x divide-gray-100">
+              <div className="p-5">
+                <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Avg duration</p>
+                <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                  {waiver_duration.stats.average ? `${waiver_duration.stats.average} days` : 'N/A'}
+                </p>
+                {waiver_duration.stats.count && (
+                  <p className="text-sm text-gray-400 mt-0.5">{waiver_duration.stats.count} completed</p>
+                )}
+              </div>
+              <div className="p-5">
+                <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Median duration</p>
+                <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                  {waiver_duration.stats.median ? `${waiver_duration.stats.median} days` : 'N/A'}
+                </p>
+                {waiver_duration.stats.min && waiver_duration.stats.max && (
+                  <p className="text-sm text-gray-400 mt-0.5">Range {waiver_duration.stats.min}–{waiver_duration.stats.max} days</p>
+                )}
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Monthly Volume */}
