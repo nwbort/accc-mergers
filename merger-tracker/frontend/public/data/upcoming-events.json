@@ -81,6 +81,16 @@
       "effective_notification_datetime": "2026-05-12T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-05-20T12:00:00Z",
+      "merger_id": "MN-75014",
+      "merger_name": "Seismic \u2013 Highspot",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-05-12T12:00:00Z"
+    },
+    {
       "type": "notice_of_competition_concerns",
       "event_type_display": "Notice of competition concerns",
       "date": "2026-05-25T12:00:00Z",
@@ -329,8 +339,18 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-05-12T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-06-25T12:00:00Z",
+      "merger_id": "MN-75014",
+      "merger_name": "Seismic \u2013 Highspot",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-05-12T12:00:00Z"
     }
   ],
-  "count": 33,
+  "count": 35,
   "days_ahead": 60
 }

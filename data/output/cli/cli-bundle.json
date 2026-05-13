@@ -15994,6 +15994,161 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/seismic-%E2%80%93-highspot",
+      "merger_name": "Seismic – Highspot",
+      "status": "Under assessment",
+      "merger_id": "MN-75014",
+      "effective_notification_datetime": "2026-05-12T12:00:00Z",
+      "original_notification_datetime": "2026-05-12T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-06-25T12:00:00Z",
+      "page_modified_datetime": "2026-05-13T13:47:37+10:00",
+      "consultation_response_due_date": "2026-05-20T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Seismic Software, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  4832793"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Highspot Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  5126410"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "SEISMIC SOFTWARE PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "87 611 843 808"
+        },
+        {
+          "name": "HIGHSPOT AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 653 327 649"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6962",
+          "name": "Management Advice and Related Consulting Services"
+        }
+      ],
+      "merger_description": "Seismic Software, Inc (**Seismic**) proposes to acquire 100% of the share capital of Highspot, Inc. (**Highspot**), via merger.\n\nBoth Seismic and Highspot are US-headquartered business-to-business sales enablement software platforms which have Australian subsidiaries and customers. Sales enablement software platforms help improve enterprise sales teams’ performance by providing document management and collaboration capabilities, data analytics capabilities and learning and coaching modules to build sales skills. Both parties’ sales enablement platforms are enhanced by artificial intelligence. Both parties supply their products to customers across a range of industry sectors.\n\nSeismic is majority owned by Permira Advisers LLP (**Permira**). Permira would remain the controlling shareholder of Seismic following the proposed acquisition.",
+      "events": [
+        {
+          "date": "2026-05-12T12:00:00Z",
+          "title": "Questionnaire - Seismic - Highspot",
+          "display_title": "Questionnaire - Seismic - Highspot",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Seismic%20-%20Highspot%20-%203rd%20Party%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-75014/Seismic - Highspot - 3rd Party Questionnaire.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-12T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-20009",
+          "merger_name": "Rocket Software – Vertica",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Rocket Software AMC UK Ltd",
+              "identifier_type": null,
+              "identifier": "UK Company number 01504593"
+            },
+            {
+              "name": "Rocket Software, Inc.",
+              "identifier_type": null,
+              "identifier": "Companies’ Register of Delaware  3506913"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Micro Focus IP Development Limited",
+              "identifier_type": null,
+              "identifier": "UK Company number 07233975"
+            },
+            {
+              "name": "Open Text Corporation",
+              "identifier_type": null,
+              "identifier": "10836044"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-95005",
+          "merger_name": "HCLTech - Jaspersoft",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "HCL Technologies Limited",
+              "identifier_type": "ABN",
+              "identifier": "37 541 578 951"
+            }
+          ],
+          "targets": [
+            {
+              "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "94 092 002 321"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-55006",
+          "merger_name": "Hg Capital - OneStream",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Hg Pooled Management Limited",
+              "identifier_type": null,
+              "identifier": ""
+            },
+            {
+              "name": "OnwardAcquireCo, Inc",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ],
+          "targets": [
+            {
+              "name": "OneStream, Inc.",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/fulton-hogan-%E2%80%93-avionics",
       "merger_name": "Fulton Hogan – Avionics",
       "status": "Under assessment",
@@ -48714,11 +48869,11 @@
     }
   },
   "stats": {
-    "total_mergers": 97,
+    "total_mergers": 98,
     "total_waivers": 142,
     "by_status": {
       "Assessment completed": 71,
-      "Under assessment": 26
+      "Under assessment": 27
     },
     "by_determination": {
       "Approved": 71,
@@ -48755,11 +48910,11 @@
       },
       {
         "name": "Financial Asset Investing",
-        "count": 26
+        "count": 27
       },
       {
         "name": "Software Publishing",
-        "count": 21
+        "count": 22
       },
       {
         "name": "Other Auxiliary Finance and Investment Services",
@@ -48816,16 +48971,16 @@
         "is_waiver": false
       },
       {
-        "merger_id": "MN-10007",
-        "merger_name": "Rubik Australia Pty Limited - Qube Holdings Limited",
+        "merger_id": "MN-75014",
+        "merger_name": "Seismic – Highspot",
         "status": "Under assessment",
         "accc_determination": null,
-        "effective_notification_datetime": "2026-05-06T12:00:00Z",
+        "effective_notification_datetime": "2026-05-12T12:00:00Z",
         "is_waiver": false
       },
       {
-        "merger_id": "MN-15015",
-        "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
+        "merger_id": "MN-10007",
+        "merger_name": "Rubik Australia Pty Limited - Qube Holdings Limited",
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-05-06T12:00:00Z",
@@ -48905,12 +49060,12 @@
       {
         "code": "6240",
         "name": "Financial Asset Investing",
-        "merger_count": 26
+        "merger_count": 27
       },
       {
         "code": "5420",
         "name": "Software Publishing",
-        "merger_count": 21
+        "merger_count": 22
       },
       {
         "code": "6419",
@@ -49048,6 +49203,11 @@
         "merger_count": 4
       },
       {
+        "code": "6962",
+        "name": "Management Advice and Related Consulting Services",
+        "merger_count": 4
+      },
+      {
         "code": "4122",
         "name": "Fruit and Vegetable Retailing",
         "merger_count": 4
@@ -49165,11 +49325,6 @@
       {
         "code": "9429",
         "name": "Other Machinery and Equipment Repair and Maintenance",
-        "merger_count": 3
-      },
-      {
-        "code": "6962",
-        "name": "Management Advice and Related Consulting Services",
         "merger_count": 3
       },
       {
