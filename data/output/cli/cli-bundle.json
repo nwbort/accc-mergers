@@ -14478,6 +14478,128 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/atkinsr%C3%A9alis-wga",
+      "merger_name": "AtkinsRéalis - WGA",
+      "status": "Under assessment",
+      "merger_id": "MN-65016",
+      "effective_notification_datetime": "2026-05-12T12:00:00Z",
+      "original_notification_datetime": "2026-05-12T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-06-25T12:00:00Z",
+      "page_modified_datetime": "2026-05-13T16:40:14+10:00",
+      "consultation_response_due_date": "2026-05-20T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "ATKINSREALIS ENGINEERING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "36 101 300 476"
+        }
+      ],
+      "targets": [
+        {
+          "name": "WGA GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 649 953 980"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ],
+      "merger_description": "AtkinsRéalis Group Inc. through its wholly owned subsidiary AtkinsRéalis Engineering Pty Ltd (AtkinsRéalis), or otherwise through another wholly owned subsidiary (yet to be incorporated), proposes to acquire 100% of the shares in WGA Group Holdings Pty Ltd (WGA) through a scheme of arrangement.\n\nAtkinsRéalis Group Inc. is a publicly traded, Canadian engineering and construction company with a global footprint. In Australia, AtkinsRéalis operates as a professional engineering and technical consultancy firm that provides engineering, design, advisory and delivery services to public and private customers across the transport, buildings and places, defence, energy and water sectors.\n\nWGA is a multi-disciplinary engineering and project management consultancy firm, which operates across Australia and New Zealand. It provides engineering, technical, advisory, delivery and project management services as stand-alone commissions or multi-disciplinary packages to both public and private clients across the following sectors: buildings urban development, defence and space, energy, ports and marine, resources, sports and recreation, transport and water.",
+      "events": [
+        {
+          "date": "2026-05-13T12:00:00Z",
+          "title": "Questionnaire - AtkinsRealis - WGA",
+          "display_title": "Questionnaire - AtkinsRealis - WGA",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/AtkinsRealis%20-%20WGA%20Group%20-%20third-party%20questionnaire%20template.docx",
+          "url_gh": "/mergers/MN-65016/AtkinsRealis - WGA Group - third-party questionnaire template.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-12T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-15008",
+          "merger_name": "Colliers International Group – Ayesa Engineering",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Global Garella, S.L.",
+              "identifier_type": null,
+              "identifier": "Spanish Tax Identification Number  B24904989"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Ayesa Engineering, S.A.U.",
+              "identifier_type": null,
+              "identifier": "Spanish Tax Identification Number  A91379875"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-35001",
+          "merger_name": "WSP – TRC",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "WSP Global Inc.",
+              "identifier_type": null,
+              "identifier": "Corporation No.: 7748388"
+            }
+          ],
+          "targets": [
+            {
+              "name": "TRC Companies, Inc.",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-60004",
+          "merger_name": "IOR - Delta Specialised Energy assets",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "IOR PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "36 009 653 070"
+            }
+          ],
+          "targets": [
+            {
+              "name": "DELTA SPECIALISED ENERGY PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "11 624 642 682"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/freudenberg-home-and-cleaning-solutions-%E2%80%93-nilfisk",
       "merger_name": "Freudenberg Home and Cleaning Solutions – Nilfisk",
       "status": "Assessment completed",
@@ -47507,6 +47629,26 @@
       ],
       "questions_count": 3
     },
+    "MN-65016": {
+      "deadline": "20 May 2026",
+      "deadline_iso": "2026-05-20",
+      "file_name": "AtkinsRealis - WGA Group - third-party questionnaire template.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition, including if AtkinsRéalis and WGA are close competitors and there are not many alternatives or if one is a major supplier to competitors of the other."
+        },
+        {
+          "number": 2,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        },
+        {
+          "number": 3,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with AtkinsRéalis and/or WGA."
+        }
+      ],
+      "questions_count": 3
+    },
     "MN-70005": {
       "deadline": "16 February 2026",
       "deadline_iso": "2026-02-16",
@@ -49275,11 +49417,11 @@
     }
   },
   "stats": {
-    "total_mergers": 99,
+    "total_mergers": 100,
     "total_waivers": 143,
     "by_status": {
       "Assessment completed": 71,
-      "Under assessment": 28
+      "Under assessment": 29
     },
     "by_determination": {
       "Approved": 71,
@@ -49347,7 +49489,7 @@
         "count": 8
       },
       {
-        "name": "Data Processing and Web Hosting Services",
+        "name": "Engineering Design and Engineering Consulting Services",
         "count": 8
       }
     ],
@@ -49377,16 +49519,16 @@
         "is_waiver": false
       },
       {
-        "merger_id": "MN-70012",
-        "merger_name": "Quanta - PSD",
+        "merger_id": "MN-65016",
+        "merger_name": "AtkinsRéalis - WGA",
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-05-12T12:00:00Z",
         "is_waiver": false
       },
       {
-        "merger_id": "MN-75014",
-        "merger_name": "Seismic – Highspot",
+        "merger_id": "MN-70012",
+        "merger_name": "Quanta - PSD",
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-05-12T12:00:00Z",
@@ -49504,14 +49646,14 @@
         "merger_count": 8
       },
       {
-        "code": "5921",
-        "name": "Data Processing and Web Hosting Services",
+        "code": "6923",
+        "name": "Engineering Design and Engineering Consulting Services",
         "merger_count": 8
       },
       {
-        "code": "6923",
-        "name": "Engineering Design and Engineering Consulting Services",
-        "merger_count": 7
+        "code": "5921",
+        "name": "Data Processing and Web Hosting Services",
+        "merger_count": 8
       },
       {
         "code": "3911",
