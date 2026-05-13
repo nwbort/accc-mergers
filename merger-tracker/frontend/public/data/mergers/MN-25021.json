@@ -1,0 +1,152 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/openai-tomoro",
+  "merger_name": "OpenAI - Tomoro",
+  "status": "Under assessment",
+  "merger_id": "MN-25021",
+  "effective_notification_datetime": "2026-05-12T12:00:00Z",
+  "original_notification_datetime": "2026-05-12T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-06-25T12:00:00Z",
+  "page_modified_datetime": "2026-05-13T15:30:18+10:00",
+  "consultation_response_due_date": "2026-05-19T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "OpenAI Group PBC",
+      "identifier_type": null,
+      "identifier": "Delaware file number  10381551"
+    }
+  ],
+  "targets": [
+    {
+      "name": "Tomoro AI Ltd",
+      "identifier_type": null,
+      "identifier": "UK Companies House registration number  15208678"
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "OpenAI Foundation",
+      "identifier_type": null,
+      "identifier": "Delaware file number  5902936"
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "5921",
+      "name": "Data Processing and Web Hosting Services"
+    },
+    {
+      "code": "7000",
+      "name": "Computer System Design and Related Services"
+    }
+  ],
+  "merger_description": "OpenAI Group PBC, an entity controlled by the OpenAI Foundation (**OpenAI**), or another entity controlled\u00a0by OpenAI, proposes to acquire 100% of the shares in Tomoro AI Ltd (**Tomoro**).\n\nOpenAI develops artificial intelligence (**AI**) foundation models, including its GPT family of models, as well as foundation model-based services, including ChatGPT.\n\nTomoro is an AI delivery consultancy that helps businesses implement AI solutions built around commercially available generative AI technology (with a focus on OpenAI's models). Tomoro helps businesses to improve the use of AI within the business and provides assistance with building in-house solutions (based on existing commercial foundation models) for specific business needs",
+  "events": [
+    {
+      "date": "2026-05-13T12:00:00Z",
+      "title": "Questionnaire - OpenAI - Tomoro",
+      "display_title": "Questionnaire - OpenAI - Tomoro",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20OpenAI%20-%20Tomoro.docx",
+      "url_gh": "/mergers/MN-25021/Questionnaire - OpenAI - Tomoro.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-05-12T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-40010",
+      "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "GT Silver BidCo, Inc.",
+          "identifier_type": null,
+          "identifier": "413417606"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Clearwater Analytics Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "00140838"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15003",
+      "merger_name": "Coforge - Encora",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Coforge Limited",
+          "identifier_type": null,
+          "identifier": "L72100HR1992PLC128382"
+        },
+        {
+          "name": "Encora Holdco Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Encora US Holdco, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Encora Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15014",
+      "merger_name": "Wipro - Mindsprint",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Wipro Networks Pte Ltd",
+          "identifier_type": null,
+          "identifier": "UEN  199907933M"
+        },
+        {
+          "name": "Wipro Limited",
+          "identifier_type": null,
+          "identifier": "CIN L32102KA1945PLC020800"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Mindsprint Pte Limited",
+          "identifier_type": null,
+          "identifier": "UEN  202118596N"
+        },
+        {
+          "name": "Olam Holdings Pte Limited",
+          "identifier_type": null,
+          "identifier": "UEN  202110101R"
+        }
+      ]
+    }
+  ]
+}

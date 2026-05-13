@@ -1,9 +1,9 @@
 {
-  "total_mergers": 98,
+  "total_mergers": 99,
   "total_waivers": 142,
   "by_status": {
     "Assessment completed": 71,
-    "Under assessment": 27
+    "Under assessment": 28
   },
   "by_determination": {
     "Approved": 71,
@@ -36,7 +36,7 @@
   "top_industries": [
     {
       "name": "Computer System Design and Related Services",
-      "count": 30
+      "count": 31
     },
     {
       "name": "Financial Asset Investing",
@@ -85,6 +85,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-25021",
+      "merger_name": "OpenAI - Tomoro",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-12T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-40019",
       "merger_name": "Novartis / Excellergy",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-12T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-10007",
-      "merger_name": "Rubik Australia Pty Limited - Qube Holdings Limited",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-06T12:00:00Z",
       "is_waiver": false
     }
   ],
