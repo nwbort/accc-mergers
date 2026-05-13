@@ -17,6 +17,7 @@ def generate(mergers: list) -> dict:
     # --- Phase 1 duration analysis (notifications only) ---
     phase1_scatter = []
     phase1_business_days = []
+    phase1_calendar_days = []
 
     for m in notification_mergers:
         start = m.get('effective_notification_datetime')
@@ -41,6 +42,8 @@ def generate(mergers: list) -> dict:
         in_progress = m.get('determination_publication_date') is None
         if not in_progress:
             phase1_business_days.append(bus_days)
+            if cal_days is not None:
+                phase1_calendar_days.append(cal_days)
         phase1_scatter.append({
             "notification_date": start[:10],
             "business_days": bus_days,
@@ -63,9 +66,20 @@ def generate(mergers: list) -> dict:
             "count": len(phase1_business_days),
         }
 
+    phase1_calendar_stats = {}
+    if phase1_calendar_days:
+        phase1_calendar_stats = {
+            "average": round(sum(phase1_calendar_days) / len(phase1_calendar_days), 1),
+            "median": stat_median(phase1_calendar_days),
+            "min": min(phase1_calendar_days),
+            "max": max(phase1_calendar_days),
+            "count": len(phase1_calendar_days),
+        }
+
     # --- Waiver duration analysis ---
     waiver_scatter = []
     waiver_business_days = []
+    waiver_calendar_days = []
 
     for m in waiver_mergers:
         start = m.get('effective_notification_datetime')
@@ -79,6 +93,8 @@ def generate(mergers: list) -> dict:
             continue
 
         waiver_business_days.append(bus_days)
+        if cal_days is not None:
+            waiver_calendar_days.append(cal_days)
         waiver_scatter.append({
             "application_date": start[:10],
             "business_days": bus_days,
@@ -98,6 +114,16 @@ def generate(mergers: list) -> dict:
             "min": min(waiver_business_days),
             "max": max(waiver_business_days),
             "count": len(waiver_business_days),
+        }
+
+    waiver_calendar_stats = {}
+    if waiver_calendar_days:
+        waiver_calendar_stats = {
+            "average": round(sum(waiver_calendar_days) / len(waiver_calendar_days), 1),
+            "median": stat_median(waiver_calendar_days),
+            "min": min(waiver_calendar_days),
+            "max": max(waiver_calendar_days),
+            "count": len(waiver_calendar_days),
         }
 
     # --- Monthly notification volume ---
@@ -123,10 +149,12 @@ def generate(mergers: list) -> dict:
         "phase1_duration": {
             "scatter_data": phase1_scatter,
             "stats": phase1_stats,
+            "calendar_stats": phase1_calendar_stats,
         },
         "waiver_duration": {
             "scatter_data": waiver_scatter,
             "stats": waiver_stats,
+            "calendar_stats": waiver_calendar_stats,
         },
         "monthly_volume": monthly_volume,
     }
