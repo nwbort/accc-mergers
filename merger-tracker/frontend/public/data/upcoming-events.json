@@ -71,6 +71,16 @@
       "effective_notification_datetime": "2026-05-12T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-05-20T12:00:00Z",
+      "merger_id": "MN-05017",
+      "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-05-12T12:00:00Z"
+    },
+    {
       "type": "notice_of_competition_concerns",
       "event_type_display": "Notice of competition concerns",
       "date": "2026-05-25T12:00:00Z",
@@ -294,6 +304,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-06-25T12:00:00Z",
+      "merger_id": "MN-05017",
+      "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-05-12T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-06-25T12:00:00Z",
       "merger_id": "MN-40019",
       "merger_name": "Novartis / Excellergy",
       "status": "Under assessment",
@@ -311,6 +331,6 @@
       "effective_notification_datetime": "2026-05-12T12:00:00Z"
     }
   ],
-  "count": 31,
+  "count": 33,
   "days_ahead": 60
 }

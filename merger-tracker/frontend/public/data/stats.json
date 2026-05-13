@@ -1,9 +1,9 @@
 {
-  "total_mergers": 96,
+  "total_mergers": 97,
   "total_waivers": 142,
   "by_status": {
     "Assessment completed": 71,
-    "Under assessment": 25
+    "Under assessment": 26
   },
   "by_determination": {
     "Approved": 71,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-05017",
+      "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-12T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-40019",
       "merger_name": "Novartis / Excellergy",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-06T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-80010",
-      "merger_name": "Medtronic - Scientia",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-05T12:00:00Z",
       "is_waiver": false
     }
   ],
