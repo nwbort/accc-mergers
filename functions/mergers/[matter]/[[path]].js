@@ -17,7 +17,7 @@ function buildOgHtml(merger, canonicalUrl) {
     ? `ACCC decision: ${escapeHtml(merger.accc_determination)}`
     : escapeHtml(merger.status ?? '');
   const stage = merger.stage ? ` - ${escapeHtml(merger.stage)}` : '';
-  const description = `${merger.merger_id}: ${statusLabel}${stage}. Track ACCC merger reviews on mergers.fyi`;
+  const description = `Status: ${statusLabel}${stage}.&#10;Find merger analysis, commentary, decisions and more. Track ACCC merger reviews on mergers.fyi`;
   const publishDate = merger.effective_notification_datetime ?? merger.original_notification_datetime ?? '';
 
   return `<!doctype html>
@@ -27,6 +27,7 @@ function buildOgHtml(merger, canonicalUrl) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>${title}</title>
 <meta name="description" content="${description}" />
+<meta name="author" content="Nick Twort" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="${title}" />
 <meta property="og:description" content="${description}" />
@@ -36,6 +37,7 @@ function buildOgHtml(merger, canonicalUrl) {
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 ${publishDate ? `<meta property="article:published_time" content="${escapeHtml(publishDate)}" />` : ''}
+<meta property="article:author" content="Nick Twort" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="${title}" />
 <meta name="twitter:description" content="${description}" />
