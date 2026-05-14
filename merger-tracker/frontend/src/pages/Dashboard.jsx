@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FaHourglassHalf } from 'react-icons/fa6';
 import { Doughnut } from 'react-chartjs-2';
 import NewBadge from '../components/NewBadge';
 import WaiverBadge from '../components/WaiverBadge';
@@ -27,7 +28,7 @@ ChartJS.register(
 );
 
 const MERGER_STATUS_ICONS = {
-  'Under assessment':    { symbol: '⏳', classes: 'text-primary bg-primary/10 border-primary/20' },
+  'Under assessment':    { Icon: FaHourglassHalf, classes: 'text-primary bg-primary/10 border-primary/20' },
   'Assessment suspended':{ symbol: '⏸', classes: 'text-orange-700 bg-orange-50 border-orange-200' },
   'Assessment completed':{ symbol: '✓', classes: 'text-gray-500 bg-gray-50 border-gray-200' },
   'Approved':            { symbol: '✓', classes: 'text-emerald-700 bg-emerald-50 border-emerald-200' },
@@ -39,15 +40,16 @@ const MERGER_STATUS_ICONS = {
 
 function MergerStatusIcon({ status, determination }) {
   const key = determination || status;
-  const icon = MERGER_STATUS_ICONS[key] ?? { symbol: '?', classes: 'text-gray-500 bg-gray-50 border-gray-200' };
+  const config = MERGER_STATUS_ICONS[key] ?? { symbol: '?', classes: 'text-gray-500 bg-gray-50 border-gray-200' };
   return (
     <span className="relative group/status inline-flex">
-      <span className={`inline-flex items-center justify-center w-7 h-7 rounded-full border text-xs font-bold ${icon.classes}`}>
-        {icon.symbol}
+      <span className={`inline-flex items-center justify-center w-7 h-7 rounded-full border text-xs font-bold ${config.classes}`}>
+        {config.Icon ? <config.Icon className="w-3 h-3" /> : config.symbol}
       </span>
       <span className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 rounded-md bg-gray-900 text-white text-xs whitespace-nowrap opacity-0 group-hover/status:opacity-100 transition-opacity duration-150 pointer-events-none">
         {key}
       </span>
+
     </span>
   );
 }
@@ -160,10 +162,10 @@ function Dashboard() {
             <h1 className="text-3xl font-bold tracking-tight">Overview</h1>
             <Link
               to="/mergers?status=Under assessment"
-              className="text-right shrink-0 group/hero"
+              className="text-right shrink-0 group/hero rounded-xl px-4 py-3 -mr-2 hover:bg-white/10 transition-colors duration-150"
               aria-label={`View ${stats.by_status['Under assessment'] || 0} mergers under assessment`}
             >
-              <div className="text-5xl font-bold tabular-nums leading-none group-hover/hero:opacity-80 transition-opacity">
+              <div className="text-5xl font-bold tabular-nums leading-none">
                 {stats.by_status['Under assessment'] || 0}
               </div>
               <div className="text-white/60 text-xs mt-1.5 uppercase tracking-wide">mergers under assessment</div>
@@ -210,7 +212,7 @@ function Dashboard() {
               {stats.recent_mergers.map((merger) => (
                 <tr
                   key={merger.merger_id}
-                  className="relative border-l-[3px] border-l-transparent hover:border-l-primary hover:bg-primary/[0.04] transition-all"
+                  className="relative hover:shadow-[inset_3px_0_0_#335145] hover:bg-primary/[0.04] transition-all duration-150"
                 >
                   <td className="px-5 sm:px-6 py-3 text-sm">
                     <div className="flex items-center gap-2 flex-wrap">

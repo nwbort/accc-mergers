@@ -64,7 +64,7 @@ function RecentDeterminationsTable({ determinations }) {
             {determinations.map((item) => (
               <tr
                 key={`${item.merger_id}-${item.determination_date}-${item.determination_type}`}
-                className="relative border-l-[3px] border-l-transparent hover:border-l-primary hover:bg-primary/[0.04] transition-all"
+                className="relative hover:shadow-[inset_3px_0_0_#335145] hover:bg-primary/[0.04] transition-all duration-150"
               >
                 <td className="px-5 sm:px-6 py-3 text-sm text-gray-900">
                   <div className="flex items-center gap-2 flex-wrap">

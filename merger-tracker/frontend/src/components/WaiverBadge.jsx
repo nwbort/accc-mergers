@@ -7,7 +7,7 @@ function WaiverBadge({ className = '', compact = false }) {
         aria-label="Merger type: Waiver application"
       >
         <span className="font-bold pl-1.5 py-0.5">W</span>
-        <span className="font-medium whitespace-nowrap overflow-hidden max-w-0 group-hover/waiver:max-w-[2.5rem] py-0.5 pr-0 group-hover/waiver:pr-1.5 transition-all duration-200 ease-out">aiver</span>
+        <span className="font-medium whitespace-nowrap w-0 group-hover/waiver:w-[2.75rem] overflow-hidden transition-[width] duration-200 ease-in-out py-0.5 pr-1.5">aiver</span>
       </span>
     );
   }

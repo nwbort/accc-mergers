@@ -49,7 +49,7 @@ function UpcomingEventsTable({ events }) {
               return (
                 <tr
                   key={`${event.merger_id}-${event.date}-${event.type}`}
-                  className="relative border-l-[3px] border-l-transparent hover:border-l-primary hover:bg-primary/[0.04] transition-all"
+                  className="relative hover:shadow-[inset_3px_0_0_#335145] hover:bg-primary/[0.04] transition-all duration-150"
                 >
                   <td className="px-5 sm:px-6 py-3 whitespace-nowrap text-sm">
                     <div className={`font-medium ${isUrgent ? 'text-red-700' : 'text-gray-900'}`}>
