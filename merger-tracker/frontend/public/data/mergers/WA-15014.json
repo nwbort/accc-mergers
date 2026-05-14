@@ -118,8 +118,8 @@
     {
       "merger_id": "MN-10013",
       "merger_name": "Accenture - Ziff Davis' connectivity business",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "acquirers": [
         {
           "name": "Accenture Inc.",
@@ -129,14 +129,14 @@
       ],
       "targets": [
         {
-          "name": "Ekahau OY",
-          "identifier_type": null,
-          "identifier": "Business ID  16108964"
-        },
-        {
           "name": "Ookla, LLC",
           "identifier_type": null,
           "identifier": "Unified Business ID  602 422 103"
+        },
+        {
+          "name": "Ekahau OY",
+          "identifier_type": null,
+          "identifier": "Business ID  16108964"
         }
       ]
     },

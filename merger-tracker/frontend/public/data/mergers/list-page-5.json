@@ -222,11 +222,11 @@
     {
       "merger_id": "MN-10013",
       "merger_name": "Accenture - Ziff Davis' connectivity business",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-04-17T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-05-14T12:00:00Z",
       "end_of_determination_period": "2026-06-02T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -238,17 +238,32 @@
       ],
       "targets": [
         {
-          "name": "Ekahau OY",
-          "identifier_type": null,
-          "identifier": "Business ID  16108964"
-        },
-        {
           "name": "Ookla, LLC",
           "identifier_type": null,
           "identifier": "Unified Business ID  602 422 103"
+        },
+        {
+          "name": "Ekahau OY",
+          "identifier_type": null,
+          "identifier": "Business ID  16108964"
         }
       ],
       "other_parties": [
+        {
+          "name": "Accenture plc",
+          "identifier_type": null,
+          "identifier": "CRN  471706"
+        },
+        {
+          "name": "Ziff Davis, LLC",
+          "identifier_type": null,
+          "identifier": "State File Number  5455121"
+        },
+        {
+          "name": "Ziff Davis, Inc.",
+          "identifier_type": null,
+          "identifier": "State File Number  5542070"
+        },
         {
           "name": "ACCENTURE AUSTRALIA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
@@ -258,21 +273,6 @@
           "name": "Accenture Venture Holdings B.V.",
           "identifier_type": null,
           "identifier": "KVK  42007173"
-        },
-        {
-          "name": "Ziff Davis, LLC",
-          "identifier_type": null,
-          "identifier": "State File Number  5455121"
-        },
-        {
-          "name": "Accenture plc",
-          "identifier_type": null,
-          "identifier": "CRN  471706"
-        },
-        {
-          "name": "Ziff Davis, Inc.",
-          "identifier_type": null,
-          "identifier": "State File Number  5542070"
         }
       ],
       "anzsic_codes": [

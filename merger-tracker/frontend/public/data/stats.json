@@ -2,11 +2,11 @@
   "total_mergers": 102,
   "total_waivers": 143,
   "by_status": {
-    "Assessment completed": 72,
-    "Under assessment": 30
+    "Assessment completed": 73,
+    "Under assessment": 29
   },
   "by_determination": {
-    "Approved": 72,
+    "Approved": 73,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 12
   },
   "phase_duration": {
-    "average_days": 27.666666666666668,
+    "average_days": 27.65753424657534,
     "median_days": 26,
-    "average_business_days": 18.208333333333332,
+    "average_business_days": 18.21917808219178,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 23.6
+        "percentage": 23.3
       },
       "day20": {
-        "count": 57,
-        "percentage": 79.2
+        "count": 58,
+        "percentage": 79.5
       },
       "day30": {
-        "count": 71,
+        "count": 72,
         "percentage": 98.6
       }
     }
@@ -129,6 +129,16 @@
       "stage": "Phase 1 - initial assessment"
     },
     {
+      "merger_id": "MN-10013",
+      "merger_name": "Accenture - Ziff Davis' connectivity business",
+      "determination": "Approved",
+      "determination_date": "2026-05-14T12:00:00Z",
+      "page_modified_datetime": "2026-05-14T16:31:40+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-65014",
       "merger_name": "26North Funds - Intermedia Cloud Communications",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-95015",
-      "merger_name": "DP World Global Forwarding \u2013 Pure Global Logistics",
-      "determination": "Approved",
-      "determination_date": "2026-05-11T12:00:00Z",
-      "page_modified_datetime": "2026-05-11T17:35:33+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
