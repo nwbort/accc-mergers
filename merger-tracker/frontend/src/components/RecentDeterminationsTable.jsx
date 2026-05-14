@@ -15,8 +15,8 @@ const DETERMINATION_ICONS = {
 function DeterminationIcon({ determination, date }) {
   const icon = DETERMINATION_ICONS[determination] ?? { symbol: '?', classes: 'text-gray-500 bg-gray-50 border-gray-200' };
   return (
-    <div className="flex flex-col items-center gap-1">
-      <span className="relative group/det inline-flex">
+    <div className="flex items-center justify-center gap-2">
+      <span className="relative group/det inline-flex shrink-0">
         <span className={`inline-flex items-center justify-center w-7 h-7 rounded-full border text-xs font-bold ${icon.classes}`}>
           {icon.symbol}
         </span>
@@ -55,7 +55,7 @@ function RecentDeterminationsTable({ determinations }) {
               <th scope="col" className="px-5 sm:px-6 py-2.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Merger
               </th>
-              <th scope="col" className="px-5 sm:px-6 py-2.5 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-28">
+              <th scope="col" className="px-5 sm:px-6 py-2.5 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Determination
               </th>
             </tr>
