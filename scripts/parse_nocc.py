@@ -15,6 +15,7 @@ The shape of the output, however, is NOCC-specific: a list of top-level
 sections, each with its own ordered block stream.
 """
 
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -24,6 +25,46 @@ import pdfplumber
 
 from parse_determination import _group_chars_into_lines
 from date_utils import parse_text_to_iso
+
+_DEFAULT_CACHE_PATH = Path('data/processed/nocc_data.json')
+
+
+def _file_sha256(pdf_path: Path) -> str:
+    h = hashlib.sha256()
+    with open(pdf_path, 'rb') as f:
+        for chunk in iter(lambda: f.read(65536), b''):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+def _build_caches_from_existing(json_path: Path):
+    """Return (positive_cache, negative_cache) from a previously written JSON file.
+
+    NOCC candidate selection is filename-only (no content fallback), so the
+    negative cache is unused today. It is loaded/written symmetrically with
+    the questionnaire parser so the JSON shape stays predictable.
+    """
+    cache: Dict[str, Dict] = {}
+    neg_cache: set = set()
+    if not json_path.exists():
+        return cache, neg_cache
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, IOError):
+        return cache, neg_cache
+
+    for key, entry in data.items():
+        if key.startswith('_') and isinstance(entry, list):
+            continue
+        if not isinstance(entry, dict):
+            continue
+        candidates = [entry] + list(entry.get('all_noccs', []))
+        for c in candidates:
+            sha = c.get('_sha256')
+            if sha:
+                cache[sha] = c
+    return cache, neg_cache
 
 # Lines with font size below this threshold (footnote anchors/bodies, page
 # numbers and the running page header) are discarded before parsing.
@@ -379,16 +420,32 @@ def _is_nocc_filename(name: str) -> bool:
     return 'notice of competition concerns' in lower or 'nocc' in lower
 
 
-def process_all_noccs(matters_dir: str = "data/raw/matters") -> Dict[str, Dict]:
+def process_all_noccs(
+    matters_dir: str = "data/raw/matters",
+    cache: Optional[Dict[str, Dict]] = None,
+    neg_cache: Optional[set] = None,
+) -> Dict[str, Dict]:
     """Process all NOCC PDFs in the matters directory.
 
     Mirrors the questionnaire pipeline: when a matter has multiple NOCC PDFs,
     the latest by publication date wins, with duplicates (same normalised
     filename and date) collapsed.
+
+    Each parsed entry is fingerprinted with a SHA-256 of the source PDF
+    (``_sha256``). Subsequent runs reuse the cached parse for unchanged
+    PDFs.
+
+    The ``neg_cache`` argument is accepted for API symmetry with
+    ``process_all_questionnaires`` but is currently unused (NOCC candidate
+    selection is filename-only).
     """
     matters_path = Path(matters_dir)
     if not matters_path.exists():
         raise FileNotFoundError(f"Matters directory not found: {matters_dir}")
+
+    if cache is None:
+        loaded_cache, _ = _build_caches_from_existing(_DEFAULT_CACHE_PATH)
+        cache = loaded_cache
 
     candidates = [pdf for pdf in matters_path.glob("*/*.pdf") if _is_nocc_filename(pdf.name)]
 
@@ -407,9 +464,30 @@ def process_all_noccs(matters_dir: str = "data/raw/matters") -> Dict[str, Dict]:
 
         for pdf_path in sorted(pdf_paths):
             try:
+                sha = _file_sha256(pdf_path)
+            except OSError as e:
+                print(f"Error hashing {pdf_path}: {e}")
+                last_error = {
+                    'error': str(e),
+                    'file_path': str(pdf_path.relative_to(matters_path.parent)),
+                }
+                continue
+
+            cached = cache.get(sha)
+            if cached is not None:
+                data = dict(cached)
+                data.pop('all_noccs', None)
+                data['file_path'] = str(pdf_path.relative_to(matters_path.parent))
+                data['file_name'] = pdf_path.name
+                data['_sha256'] = sha
+                parsed.append(data)
+                continue
+
+            try:
                 data = parse_nocc_pdf(str(pdf_path))
                 data['file_path'] = str(pdf_path.relative_to(matters_path.parent))
                 data['file_name'] = pdf_path.name
+                data['_sha256'] = sha
                 parsed.append(data)
             except Exception as e:
                 print(f"Error processing {pdf_path}: {e}")

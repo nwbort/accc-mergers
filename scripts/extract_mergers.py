@@ -11,8 +11,17 @@ import re
 from datetime import datetime
 from markdownify import markdownify as md
 from parse_determination import parse_determination_pdf
-from parse_nocc import process_all_noccs
-from parse_questionnaire import process_all_questionnaires
+from parse_nocc import (
+    process_all_noccs,
+    _build_caches_from_existing as _build_nocc_caches,
+    _DEFAULT_CACHE_PATH as _NOCC_CACHE_PATH,
+)
+from parse_questionnaire import (
+    process_all_questionnaires,
+    _build_caches_from_existing as _build_q_caches,
+    _DEFAULT_CACHE_PATH as _Q_CACHE_PATH,
+    _NEG_CACHE_KEY as _Q_NEG_CACHE_KEY,
+)
 from normalization import normalize_determination
 from cutoff import should_skip_merger, get_skipped_merger_ids, is_waiver_merger
 from date_utils import parse_text_to_iso, parse_iso_datetime
@@ -697,8 +706,14 @@ def enrich_with_questionnaire_data(mergers_data):
     print("Extracting questionnaire data...", file=sys.stderr)
 
     try:
-        # Process all questionnaires in the matters directory
-        questionnaire_data = process_all_questionnaires(MATTERS_DIR)
+        # Process all questionnaires in the matters directory.
+        # Pre-load positive + negative caches from the last run's JSON so
+        # unchanged PDFs are not re-parsed and non-questionnaire PDFs are not
+        # re-opened for the content-detection fallback.
+        q_cache, q_neg_cache = _build_q_caches(_Q_CACHE_PATH)
+        questionnaire_data = process_all_questionnaires(
+            MATTERS_DIR, cache=q_cache, neg_cache=q_neg_cache,
+        )
 
         if not questionnaire_data:
             print("No questionnaire data found.", file=sys.stderr)
@@ -706,9 +721,15 @@ def enrich_with_questionnaire_data(mergers_data):
 
         print(f"Found {len(questionnaire_data)} questionnaires", file=sys.stderr)
 
-        # Write questionnaire data to JSON file for reference
+        # Write questionnaire data to JSON file for reference.
+        # The negative cache is serialised alongside under a reserved
+        # underscore key, sorted for deterministic diffs. Downstream loaders
+        # strip underscore keys before iterating.
+        payload = dict(questionnaire_data)
+        if q_neg_cache:
+            payload[_Q_NEG_CACHE_KEY] = sorted(q_neg_cache)
         with open('data/processed/questionnaire_data.json', 'w', encoding='utf-8') as f:
-            json.dump(questionnaire_data, f, indent=2, sort_keys=True)
+            json.dump(payload, f, indent=2, sort_keys=True)
         print("Wrote data/processed/questionnaire_data.json", file=sys.stderr)
 
         # Create a mapping of merger_id to merger data for quick lookups
@@ -871,7 +892,11 @@ def extract_nocc_data():
     print("Extracting NOCC summary data...", file=sys.stderr)
 
     try:
-        nocc_data = process_all_noccs(MATTERS_DIR)
+        # Pre-load the positive cache from the last run so unchanged NOCC
+        # PDFs (typically expensive — ~2s each — and rarely re-issued)
+        # don't have to be re-parsed.
+        nocc_cache, _ = _build_nocc_caches(_NOCC_CACHE_PATH)
+        nocc_data = process_all_noccs(MATTERS_DIR, cache=nocc_cache)
     except Exception as e:
         print(f"Error extracting NOCC data: {e}", file=sys.stderr)
         import traceback
@@ -912,6 +937,19 @@ def main():
         action='store_true',
         help='Process all mergers, ignoring cutoff dates (by default, mergers are skipped '
              '3 weeks after an approved notification or waiver decision)'
+    )
+    # The pipeline splits the run in two so DOCX→PDF conversion can happen
+    # between download and PDF-parse. Phase 1 sets --skip-pdf-enrich to
+    # download attachments without parsing PDFs; phase 2 runs
+    # scripts/enrich_pdfs.py to do the PDF parsing once DOCX files are
+    # converted. Running this script without the flag keeps the original
+    # end-to-end behaviour (useful for local one-shot runs).
+    parser.add_argument(
+        '--skip-pdf-enrich',
+        action='store_true',
+        help='Skip questionnaire/NOCC parsing and auto-fix; only do HTML parsing '
+             'and attachment download. Used by the pipeline ahead of DOCX→PDF '
+             'conversion; pair with scripts/enrich_pdfs.py for the second phase.'
     )
     args = parser.parse_args()
 
@@ -1003,18 +1041,19 @@ def main():
         if merger_id in existing_mergers:
             all_mergers_data.append(existing_mergers[merger_id])
 
-    # 8. Enrich with questionnaire data (consultation deadlines)
-    all_mergers_data = enrich_with_questionnaire_data(all_mergers_data)
+    if not args.skip_pdf_enrich:
+        # 8. Enrich with questionnaire data (consultation deadlines)
+        all_mergers_data = enrich_with_questionnaire_data(all_mergers_data)
 
-    # 8b. Parse NOCC summary PDFs to a standalone manifest. NOCCs do not feed
-    # back into per-merger fields (their date is already on the event), but
-    # downstream pipelines load the manifest separately.
-    extract_nocc_data()
+        # 8b. Parse NOCC summary PDFs to a standalone manifest. NOCCs do not feed
+        # back into per-merger fields (their date is already on the event), but
+        # downstream pipelines load the manifest separately.
+        extract_nocc_data()
 
-    # 8c. Auto-fix questionnaire events whose date is missing on the ACCC page.
-    #     Sets today as the date, freezes the merger to preserve it, and writes
-    #     issue content for the pipeline to open a GitHub issue for confirmation.
-    auto_fix_missing_questionnaire_dates(all_mergers_data, frozen_events_mergers)
+        # 8c. Auto-fix questionnaire events whose date is missing on the ACCC page.
+        #     Sets today as the date, freezes the merger to preserve it, and writes
+        #     issue content for the pipeline to open a GitHub issue for confirmation.
+        auto_fix_missing_questionnaire_dates(all_mergers_data, frozen_events_mergers)
 
     # 9. Add is_waiver field to each merger
     for merger in all_mergers_data:
