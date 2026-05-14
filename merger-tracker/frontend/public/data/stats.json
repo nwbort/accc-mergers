@@ -1,6 +1,6 @@
 {
   "total_mergers": 102,
-  "total_waivers": 143,
+  "total_waivers": 144,
   "by_status": {
     "Assessment completed": 73,
     "Under assessment": 29
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 131,
+    "Approved": 132,
     "Not approved": 12
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-75020",
+      "merger_name": "CleanPeak Energy Holdings - Sustainable Energy Infrastructure",
+      "determination": "Approved",
+      "determination_date": "2026-05-14T12:00:00Z",
+      "page_modified_datetime": "2026-05-14T17:22:54+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-55016",
       "merger_name": "Zurich - ClearView",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-45002",
-      "merger_name": "eBay / Depop",
-      "determination": "Approved",
-      "determination_date": "2026-05-12T12:00:00Z",
-      "page_modified_datetime": "2026-05-12T15:10:01+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

@@ -1704,6 +1704,63 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/fulton-hogan-%E2%80%93-avionics"
     },
     {
+      "merger_id": "WA-75020",
+      "merger_name": "CleanPeak Energy Holdings - Sustainable Energy Infrastructure",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-28T12:00:00Z",
+      "determination_publication_date": "2026-05-14T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "CLEANPEAK ENERGY HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "17 689 336 696"
+        },
+        {
+          "name": "CLEANPEAK IFM PROJECTS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "30 618 387 143"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CARESUPER PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 008 650 628"
+        },
+        {
+          "name": "STATE STREET AUSTRALIA LTD",
+          "identifier_type": "ABN",
+          "identifier": "21 002 965 200"
+        },
+        {
+          "name": "AUSTRALIAN RETIREMENT TRUST PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "88 010 720 840"
+        },
+        {
+          "name": "SUSTAINABLE ENERGY INFRASTRUCTURE HOLDINGS PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "625 685 734"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        },
+        {
+          "code": "4000",
+          "name": "Fuel Retailing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cleanpeak-energy-holdings-sustainable-energy-infrastructure"
+    },
+    {
       "merger_id": "WA-95015",
       "merger_name": "DP World Global Forwarding \u2013 Pure Global Logistics",
       "status": "Assessment completed",
