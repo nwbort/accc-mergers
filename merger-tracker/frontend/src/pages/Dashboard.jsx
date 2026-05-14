@@ -180,6 +180,8 @@ function Dashboard() {
         </div>
       </div>
 
+      <div className="h-px bg-gray-200 mb-8" />
+
       {/* Recent Determinations */}
       {stats.recent_determinations && (
         <div className="mb-8">
