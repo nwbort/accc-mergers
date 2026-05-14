@@ -1,9 +1,9 @@
 {
-  "total_mergers": 101,
+  "total_mergers": 102,
   "total_waivers": 143,
   "by_status": {
     "Assessment completed": 71,
-    "Under assessment": 30
+    "Under assessment": 31
   },
   "by_determination": {
     "Approved": 71,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-90012",
+      "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-13T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-40019",
       "merger_name": "Novartis / Excellergy",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-12T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-65016",
-      "merger_name": "AtkinsR\u00e9alis - WGA",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-12T12:00:00Z",
