@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Doughnut } from 'react-chartjs-2';
-import StatusBadge from '../components/StatusBadge';
 import NewBadge from '../components/NewBadge';
 import WaiverBadge from '../components/WaiverBadge';
 import {
@@ -26,6 +25,32 @@ ChartJS.register(
   Legend,
   ArcElement
 );
+
+const MERGER_STATUS_ICONS = {
+  'Under assessment':    { symbol: '⏳', classes: 'text-primary bg-primary/10 border-primary/20' },
+  'Assessment suspended':{ symbol: '⏸', classes: 'text-orange-700 bg-orange-50 border-orange-200' },
+  'Assessment completed':{ symbol: '✓', classes: 'text-gray-500 bg-gray-50 border-gray-200' },
+  'Approved':            { symbol: '✓', classes: 'text-emerald-700 bg-emerald-50 border-emerald-200' },
+  'Not opposed':         { symbol: '✓', classes: 'text-emerald-700 bg-emerald-50 border-emerald-200' },
+  'Not approved':        { symbol: '✗', classes: 'text-red-700 bg-red-50 border-red-200' },
+  'Declined':            { symbol: '✗', classes: 'text-red-700 bg-red-50 border-red-200' },
+  'Referred to phase 2': { symbol: '→', classes: 'text-amber-700 bg-amber-50 border-amber-200' },
+};
+
+function MergerStatusIcon({ status, determination }) {
+  const key = determination || status;
+  const icon = MERGER_STATUS_ICONS[key] ?? { symbol: '?', classes: 'text-gray-500 bg-gray-50 border-gray-200' };
+  return (
+    <span className="relative group/status inline-flex">
+      <span className={`inline-flex items-center justify-center w-7 h-7 rounded-full border text-xs font-bold ${icon.classes}`}>
+        {icon.symbol}
+      </span>
+      <span className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 rounded-md bg-gray-900 text-white text-xs whitespace-nowrap opacity-0 group-hover/status:opacity-100 transition-opacity duration-150 pointer-events-none">
+        {key}
+      </span>
+    </span>
+  );
+}
 
 function Dashboard() {
   const { data: stats, loading, error } = useFetchData(API_ENDPOINTS.stats, {
@@ -164,44 +189,53 @@ function Dashboard() {
 
       {/* Recently Notified Mergers */}
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card mb-8 overflow-hidden">
-        <div className="px-6 py-5 bg-primary">
-          <h2 className="text-lg font-semibold text-white">
+        <div className="px-6 py-4 bg-primary">
+          <h2 id="recent-mergers-heading" className="text-lg font-semibold text-white">
             Recently notified mergers
           </h2>
         </div>
-        <ul className="divide-y divide-gray-200">
-          {stats.recent_mergers.map((merger) => (
-            <li key={merger.merger_id}>
-              <Link
-                to={`/mergers/${merger.merger_id}`}
-                className="block border-l-[3px] border-transparent hover:border-primary hover:bg-primary/[0.04] transition-all duration-150"
-                aria-label={`View merger details for ${merger.merger_name}`}
-              >
-                <div className="px-6 py-3">
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="flex items-center gap-2 min-w-0 flex-1">
-                      <p className="text-sm font-medium text-gray-900 truncate">
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-200" aria-labelledby="recent-mergers-heading">
+            <thead>
+              <tr className="bg-gray-50/80">
+                <th scope="col" className="px-5 sm:px-6 py-2.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  Merger
+                </th>
+                <th scope="col" className="px-5 sm:px-6 py-2.5 text-center text-xs font-medium text-gray-500 uppercase tracking-wider w-24">
+                  Status
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-200">
+              {stats.recent_mergers.map((merger) => (
+                <tr
+                  key={merger.merger_id}
+                  className="relative border-l-[3px] border-l-transparent hover:border-l-primary hover:bg-primary/[0.04] transition-all"
+                >
+                  <td className="px-5 sm:px-6 py-3 text-sm">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <Link
+                        to={`/mergers/${merger.merger_id}`}
+                        className="font-medium text-gray-900 hover:text-primary transition-colors after:absolute after:inset-0"
+                        aria-label={`View merger details for ${merger.merger_name}`}
+                      >
                         {merger.merger_name}
-                      </p>
+                      </Link>
                       {isNewItem(merger.merger_id) && <NewBadge />}
                       {merger.is_waiver && <WaiverBadge compact />}
+                      <span className="text-xs text-gray-400 whitespace-nowrap">
+                        · {merger.is_waiver ? 'Applied' : 'Notified'} {formatDate(merger.effective_notification_datetime)}
+                      </span>
                     </div>
-                    <div className="shrink-0">
-                      <StatusBadge
-                        status={merger.status}
-                        determination={merger.accc_determination}
-                      />
-                    </div>
-                  </div>
-                  <div className="mt-0.5 text-xs text-gray-400">
-                    {merger.is_waiver ? 'Applied:' : 'Notified:'}{' '}
-                    {formatDate(merger.effective_notification_datetime)}
-                  </div>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
+                  </td>
+                  <td className="px-5 sm:px-6 py-3 text-center">
+                    <MergerStatusIcon status={merger.status} determination={merger.accc_determination} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {/* Upcoming Events (within 7 days) */}
