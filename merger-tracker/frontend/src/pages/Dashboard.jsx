@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FaMagnifyingGlass, FaStopwatch, FaChartLine } from 'react-icons/fa6';
 import { Doughnut } from 'react-chartjs-2';
 import StatusBadge from '../components/StatusBadge';
 import NewBadge from '../components/NewBadge';
@@ -135,7 +136,7 @@ function Dashboard() {
           title="Mergers"
           value={`${stats.by_status['Under assessment'] || 0} under assessment`}
           subtitle={`${stats.total_mergers} notified${stats.total_waivers ? ` and ${stats.total_waivers} waiver${stats.total_waivers !== 1 ? 's' : ''}` : ''}`}
-          icon="🔍"
+          icon={<FaMagnifyingGlass />}
           href="/mergers?status=Under assessment"
         />
         <StatCard
@@ -150,7 +151,7 @@ function Dashboard() {
               ? `${Math.round(stats.phase_duration.average_days)} calendar days`
               : null
           }
-          icon="⏱️"
+          icon={<FaStopwatch />}
         />
         <StatCard
           title="Median phase 1 duration"
@@ -164,7 +165,7 @@ function Dashboard() {
               ? `${stats.phase_duration.median_days} calendar days`
               : null
           }
-          icon="📈"
+          icon={<FaChartLine />}
         />
       </div>
 
