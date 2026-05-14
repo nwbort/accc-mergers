@@ -23,6 +23,14 @@ permissions:
   contents: write
   issues: write
 
+# Serialise pipeline runs on main. Two concurrent runs can otherwise race
+# on the same files and rely on the post-rebase HTML re-clean / commit-drop
+# logic below to recover. Forcing them to queue keeps that recovery code as
+# a belt-and-braces guard rather than a hot path.
+concurrency:
+  group: pipeline-main
+  cancel-in-progress: false
+
 jobs:
   pipeline:
     runs-on: ubuntu-latest
@@ -125,36 +133,28 @@ jobs:
             fi
           fi
 
-      # --- Extract (first pass) ---
-      # Always runs on non-scheduled triggers; on schedule only if scrape found changes.
+      # --- Extract phase 1: HTML parse + attachment download ---
+      # extract_mergers.py downloads attachment PDFs / DOCX files as a side
+      # effect of parsing each matter page. We skip questionnaire/NOCC PDF
+      # parsing here so we can convert any newly downloaded DOCX files first,
+      # then do the PDF-parse pass in phase 2 below.
 
-      - name: Run extraction
+      - name: Run extraction (download phase)
         if: steps.scrape-changes.outputs.changed == 'true' || github.event_name != 'schedule'
         run: |
           if [ "${{ inputs.all_mergers }}" = "true" ]; then
-            python scripts/extract_mergers.py --all
+            python scripts/extract_mergers.py --all --skip-pdf-enrich
           else
-            python scripts/extract_mergers.py
+            python scripts/extract_mergers.py --skip-pdf-enrich
           fi
-          python scripts/generate_similar_mergers.py
-          python scripts/generate_static_data.py
-          ./scripts/generate-cli-data.sh
-          python scripts/generate_rss_feed.py
-
-      - name: Stage extracted data
-        if: steps.scrape-changes.outputs.changed == 'true' || github.event_name != 'schedule'
-        run: |
-          git add data/processed/mergers.json data/processed/questionnaire_data.json \
-            data/processed/similar_mergers.json \
-            data/raw/matters/ merger-tracker/frontend/public/data/ \
-            merger-tracker/frontend/public/feed.xml data/output/ \
-            data/frozen_events_mergers.json
 
       # --- Convert DOCX to PDF ---
       # Runs whenever there are unconverted files, catching both new downloads and stragglers.
 
       - name: Find unconverted DOCX files
         id: find-docx
+        # Always run so we also catch stragglers from a previous conversion
+        # failure, even on scheduled runs that found no scrape changes.
         run: |
           > /tmp/unconverted.txt
           while IFS= read -r -d '' docx; do
@@ -188,31 +188,35 @@ jobs:
             fi
           done < /tmp/unconverted.txt
 
-      - name: Stage converted PDFs
-        if: steps.find-docx.outputs.has_unconverted == 'true'
-        run: git add "data/raw/matters/**/*.pdf"
+      # --- Extract phase 2: PDF parsing + downstream generation ---
+      # Loads the mergers.json written by phase 1, runs questionnaire/NOCC
+      # parsing (now seeing any newly-converted PDFs), auto-fixes missing
+      # questionnaire dates, and rewrites mergers.json. Downstream generators
+      # run exactly once here.
 
-      # --- Extract (second pass) ---
-      # Picks up questionnaire data from newly converted PDFs.
-
-      - name: Re-run extraction to pick up converted PDFs
-        if: steps.find-docx.outputs.has_unconverted == 'true'
+      - name: Run extraction (enrich phase) and downstream generation
+        # Run if phase 1 ran (scrape changes or non-schedule trigger) OR if
+        # we just converted DOCX stragglers (so questionnaire/NOCC parsing
+        # picks them up).
+        if: |
+          steps.scrape-changes.outputs.changed == 'true'
+          || steps.find-docx.outputs.has_unconverted == 'true'
+          || github.event_name != 'schedule'
         run: |
-          if [ "${{ inputs.all_mergers }}" = "true" ]; then
-            python scripts/extract_mergers.py --all
-          else
-            python scripts/extract_mergers.py
-          fi
+          python scripts/enrich_pdfs.py
           python scripts/generate_similar_mergers.py
           python scripts/generate_static_data.py
           ./scripts/generate-cli-data.sh
           python scripts/generate_rss_feed.py
 
-      - name: Stage re-extracted data
-        if: steps.find-docx.outputs.has_unconverted == 'true'
+      - name: Stage extracted data
+        if: |
+          steps.scrape-changes.outputs.changed == 'true'
+          || steps.find-docx.outputs.has_unconverted == 'true'
+          || github.event_name != 'schedule'
         run: |
           git add data/processed/mergers.json data/processed/questionnaire_data.json \
-            data/processed/similar_mergers.json \
+            data/processed/nocc_data.json data/processed/similar_mergers.json \
             data/raw/matters/ merger-tracker/frontend/public/data/ \
             merger-tracker/frontend/public/feed.xml data/output/ \
             data/frozen_events_mergers.json

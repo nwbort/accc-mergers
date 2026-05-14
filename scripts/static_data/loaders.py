@@ -94,7 +94,9 @@ def load_questionnaire_data() -> dict:
 
     try:
         with open(QUESTIONNAIRE_JSON, 'r', encoding='utf-8') as f:
-            return json.load(f)
+            data = json.load(f)
+        # Strip reserved metadata keys (parser cache state etc.)
+        return {k: v for k, v in data.items() if not k.startswith('_')}
     except (json.JSONDecodeError, IOError) as e:
         print(f"Warning: Could not load questionnaire_data.json: {e}")
         return {}
@@ -107,7 +109,8 @@ def load_nocc_data() -> dict:
 
     try:
         with open(NOCC_JSON, 'r', encoding='utf-8') as f:
-            return json.load(f)
+            data = json.load(f)
+        return {k: v for k, v in data.items() if not k.startswith('_')}
     except (json.JSONDecodeError, IOError) as e:
         print(f"Warning: Could not load nocc_data.json: {e}")
         return {}

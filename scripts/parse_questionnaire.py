@@ -6,12 +6,60 @@ Uses pdfplumber's character-level font metadata to detect bold section
 headers structurally, rather than relying on regex patterns.
 """
 
+import hashlib
 import pdfplumber
 import re
 import json
 from typing import Optional, Dict, List
 from pathlib import Path
 from date_utils import parse_text_to_iso
+
+
+_DEFAULT_CACHE_PATH = Path('data/processed/questionnaire_data.json')
+
+
+def _file_sha256(pdf_path: Path) -> str:
+    h = hashlib.sha256()
+    with open(pdf_path, 'rb') as f:
+        for chunk in iter(lambda: f.read(65536), b''):
+            h.update(chunk)
+    return h.hexdigest()
+
+
+_NEG_CACHE_KEY = '_not_questionnaire_shas'
+
+
+def _build_caches_from_existing(json_path: Path):
+    """Return (positive_cache, negative_cache) from a previously written JSON file.
+
+    - ``positive_cache`` maps SHA-256 → parsed entry for confirmed questionnaires
+      (walks primary entries and any ``all_questionnaires`` list).
+    - ``negative_cache`` is a set of SHA-256 hashes of PDFs that have already been
+      examined and confirmed NOT to be questionnaires (avoids re-opening them on
+      the content-detection fallback).
+    """
+    cache: Dict[str, Dict] = {}
+    neg_cache: set = set()
+    if not json_path.exists():
+        return cache, neg_cache
+    try:
+        with open(json_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, IOError):
+        return cache, neg_cache
+
+    for key, entry in data.items():
+        if key == _NEG_CACHE_KEY and isinstance(entry, list):
+            neg_cache.update(entry)
+            continue
+        if not isinstance(entry, dict):
+            continue
+        candidates = [entry] + list(entry.get('all_questionnaires', []))
+        for c in candidates:
+            sha = c.get('_sha256')
+            if sha:
+                cache[sha] = c
+    return cache, neg_cache
 
 
 def extract_deadline(text: str) -> Optional[str]:
@@ -468,7 +516,11 @@ def _has_questionnaire_header(pdf_path: Path) -> bool:
     return False
 
 
-def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[str, Dict]:
+def process_all_questionnaires(
+    matters_dir: str = "data/raw/matters",
+    cache: Optional[Dict[str, Dict]] = None,
+    neg_cache: Optional[set] = None,
+) -> Dict[str, Dict]:
     """
     Process all questionnaire PDFs in the matters directory.
 
@@ -478,8 +530,19 @@ def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[st
     distinct questionnaires are preserved in an ``all_questionnaires`` list,
     sorted latest-first, when more than one exists.
 
+    Each parsed entry is fingerprinted with a SHA-256 of the source PDF
+    (``_sha256``). Subsequent runs reuse the cached parse for unchanged
+    PDFs, avoiding the cost of re-parsing the questionnaire body.
+
     Args:
         matters_dir: Path to the matters directory
+        cache: Optional pre-built ``{sha256: parsed entry}`` map.
+        neg_cache: Optional mutable set of SHA-256 hashes of PDFs already
+            confirmed NOT to be questionnaires. Used to skip the content
+            detection fallback (which opens each PDF). Newly examined
+            non-questionnaire PDFs are added to this set.
+        When ``cache``/``neg_cache`` are omitted, both are loaded from
+        ``data/processed/questionnaire_data.json`` on disk.
 
     Returns:
         Dictionary mapping matter IDs to their questionnaire data
@@ -489,6 +552,13 @@ def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[st
 
     if not matters_path.exists():
         raise FileNotFoundError(f"Matters directory not found: {matters_dir}")
+
+    if cache is None or neg_cache is None:
+        loaded_cache, loaded_neg = _build_caches_from_existing(_DEFAULT_CACHE_PATH)
+        if cache is None:
+            cache = loaded_cache
+        if neg_cache is None:
+            neg_cache = loaded_neg
 
     # Find all questionnaire PDFs (case-insensitive search for "questionnaire" in filename)
     all_pdfs = list(matters_path.glob("*/*.pdf"))
@@ -503,13 +573,46 @@ def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[st
         matter_id = pdf_path.parent.name
         pdfs_by_matter.setdefault(matter_id, []).append(pdf_path)
 
+    # Cache file hashes — we'll reuse them when parsing below.
+    sha_by_path: Dict[Path, str] = {}
+
+    def _sha(p: Path) -> Optional[str]:
+        if p in sha_by_path:
+            return sha_by_path[p]
+        try:
+            sha = _file_sha256(p)
+        except OSError:
+            return None
+        sha_by_path[p] = sha
+        return sha
+
     # Some questionnaire PDFs are named after the merger parties rather than
     # "questionnaire". Fall back to content detection for matter directories
     # that yielded no questionnaire PDFs from the filename filter.
+    #
+    # Cache the verdict by SHA-256 so we don't open the same PDF on every run.
+    # ``cache`` holds confirmed questionnaires (positive); ``neg_cache`` holds
+    # PDFs already confirmed NOT to be questionnaires (negative).
     matter_ids_with_q = set(pdfs_by_matter.keys())
     for pdf_path in sorted(all_pdfs):
         matter_id = pdf_path.parent.name
-        if matter_id not in matter_ids_with_q and _has_questionnaire_header(pdf_path):
+        if matter_id in matter_ids_with_q:
+            continue
+
+        sha = _sha(pdf_path)
+        if sha is None:
+            continue
+
+        if sha in cache:
+            is_q = True
+        elif sha in neg_cache:
+            is_q = False
+        else:
+            is_q = _has_questionnaire_header(pdf_path)
+            if not is_q:
+                neg_cache.add(sha)
+
+        if is_q:
             pdfs_by_matter.setdefault(matter_id, []).append(pdf_path)
             matter_ids_with_q.add(matter_id)
 
@@ -518,10 +621,31 @@ def process_all_questionnaires(matters_dir: str = "data/raw/matters") -> Dict[st
         last_error = None
 
         for pdf_path in sorted(pdf_paths):  # alphabetical for determinism
+            sha = _sha(pdf_path)
+            if sha is None:
+                err = f"Unable to read {pdf_path}"
+                print(err)
+                last_error = {
+                    'error': err,
+                    'file_path': str(pdf_path.relative_to(matters_path.parent))
+                }
+                continue
+
+            cached = cache.get(sha)
+            if cached is not None:
+                data = dict(cached)
+                data.pop('all_questionnaires', None)
+                data['file_path'] = str(pdf_path.relative_to(matters_path.parent))
+                data['file_name'] = pdf_path.name
+                data['_sha256'] = sha
+                parsed.append(data)
+                continue
+
             try:
                 data = parse_questionnaire_pdf(str(pdf_path))
                 data['file_path'] = str(pdf_path.relative_to(matters_path.parent))
                 data['file_name'] = pdf_path.name
+                data['_sha256'] = sha
                 parsed.append(data)
             except Exception as e:
                 print(f"Error processing {pdf_path}: {e}")
