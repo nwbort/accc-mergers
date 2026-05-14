@@ -130,7 +130,7 @@ function Dashboard() {
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
       {/* Page header */}
-      <div className="mb-8">
+      <div className="mb-8 border-l-4 border-primary pl-4">
         <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Overview</h1>
         <p className="mt-1 text-sm text-gray-500">ACCC merger reviews and M&amp;A activity</p>
       </div>
@@ -185,7 +185,7 @@ function Dashboard() {
 
       {/* Recently Notified Mergers */}
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card mb-8 overflow-hidden">
-        <div className="px-6 py-5 border-b border-gray-100">
+        <div className="px-6 py-5 border-b border-gray-100 bg-primary/5">
           <h2 className="text-lg font-semibold text-gray-900">
             Recently notified mergers
           </h2>
@@ -242,75 +242,81 @@ function Dashboard() {
       })()}
 
       {/* Charts */}
-      <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Breakdown</h2>
+      <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">Breakdown</h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Phase 1 Duration Table */}
         {stats.phase_duration.percentiles && (
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card flex flex-col">
-            <h2 className="text-base font-semibold text-gray-900 mb-5">
-              Phase 1 duration
-            </h2>
-            <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-4 flex-1 content-around">
-              {[
-                { label: 'By day 15', data: stats.phase_duration.percentiles.day15 },
-                { label: 'By day 20', data: stats.phase_duration.percentiles.day20 },
-                { label: 'By day 30', data: stats.phase_duration.percentiles.day30 },
-              ].flatMap(({ label, data }, index) => [
-                <span key={`${label}-label`} className={`text-sm text-gray-600 py-3 ${index < 2 ? 'border-b border-gray-50' : ''}`}>{label}</span>,
-                <div key={`${label}-bar`} className="bg-gray-100 rounded-full h-1.5 overflow-hidden">
-                  <div
-                    className="bg-primary h-1.5 rounded-full transition-all duration-500"
-                    style={{ width: `${data.percentage}%` }}
-                  />
-                </div>,
-                <span key={`${label}-pct`} className={`text-sm font-semibold text-gray-900 tabular-nums text-right py-3 whitespace-nowrap ${index < 2 ? 'border-b border-gray-50' : ''}`}>
-                  {data.percentage}%
-                  <span className="text-gray-400 font-normal ml-1">({data.count})</span>
-                </span>,
-              ])}
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-card flex flex-col overflow-hidden">
+            <div className="px-6 py-4 bg-primary/5 border-b border-gray-100">
+              <h2 className="text-base font-semibold text-gray-900">Phase 1 duration</h2>
+            </div>
+            <div className="p-6 flex flex-col flex-1">
+              <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-4 flex-1 content-around">
+                {[
+                  { label: 'By day 15', data: stats.phase_duration.percentiles.day15 },
+                  { label: 'By day 20', data: stats.phase_duration.percentiles.day20 },
+                  { label: 'By day 30', data: stats.phase_duration.percentiles.day30 },
+                ].flatMap(({ label, data }, index) => [
+                  <span key={`${label}-label`} className={`text-sm text-gray-600 py-3 ${index < 2 ? 'border-b border-gray-50' : ''}`}>{label}</span>,
+                  <div key={`${label}-bar`} className="bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                    <div
+                      className="bg-primary h-1.5 rounded-full transition-all duration-500"
+                      style={{ width: `${data.percentage}%` }}
+                    />
+                  </div>,
+                  <span key={`${label}-pct`} className={`text-sm font-semibold text-gray-900 tabular-nums text-right py-3 whitespace-nowrap ${index < 2 ? 'border-b border-gray-50' : ''}`}>
+                    {data.percentage}%
+                    <span className="text-gray-400 font-normal ml-1">({data.count})</span>
+                  </span>,
+                ])}
+              </div>
             </div>
           </div>
         )}
 
         {/* Phase 1 Determination Distribution */}
         {Object.keys(stats.by_determination).length > 0 && (
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
-            <h2 id="chart-phase1-title" className="text-base font-semibold text-gray-900 mb-5">
-              Phase 1 determinations
-            </h2>
-            <div className="h-64" role="img" aria-labelledby="chart-phase1-title" aria-describedby="chart-phase1-summary">
-              <Doughnut data={determinationData} options={chartOptions} />
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div className="px-6 py-4 bg-primary/5 border-b border-gray-100">
+              <h2 id="chart-phase1-title" className="text-base font-semibold text-gray-900">Phase 1 determinations</h2>
             </div>
-            <table id="chart-phase1-summary" className="sr-only">
-              <caption>Phase 1 determination breakdown</caption>
-              <thead><tr><th>Determination</th><th>Count</th></tr></thead>
-              <tbody>
-                {Object.entries(stats.by_determination).map(([det, count]) => (
-                  <tr key={det}><td>{det}</td><td>{count}</td></tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="p-6">
+              <div className="h-64" role="img" aria-labelledby="chart-phase1-title" aria-describedby="chart-phase1-summary">
+                <Doughnut data={determinationData} options={chartOptions} />
+              </div>
+              <table id="chart-phase1-summary" className="sr-only">
+                <caption>Phase 1 determination breakdown</caption>
+                <thead><tr><th>Determination</th><th>Count</th></tr></thead>
+                <tbody>
+                  {Object.entries(stats.by_determination).map(([det, count]) => (
+                    <tr key={det}><td>{det}</td><td>{count}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
 
         {/* Waiver Determination Distribution */}
         {stats.by_waiver_determination && Object.keys(stats.by_waiver_determination).length > 0 && (
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
-            <h2 id="chart-waiver-title" className="text-base font-semibold text-gray-900 mb-5">
-              Waiver determinations
-            </h2>
-            <div className="h-64" role="img" aria-labelledby="chart-waiver-title" aria-describedby="chart-waiver-summary">
-              <Doughnut data={waiverDeterminationData} options={chartOptions} />
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div className="px-6 py-4 bg-primary/5 border-b border-gray-100">
+              <h2 id="chart-waiver-title" className="text-base font-semibold text-gray-900">Waiver determinations</h2>
             </div>
-            <table id="chart-waiver-summary" className="sr-only">
-              <caption>Waiver determination breakdown</caption>
-              <thead><tr><th>Determination</th><th>Count</th></tr></thead>
-              <tbody>
-                {Object.entries(stats.by_waiver_determination).map(([det, count]) => (
-                  <tr key={det}><td>{det}</td><td>{count}</td></tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="p-6">
+              <div className="h-64" role="img" aria-labelledby="chart-waiver-title" aria-describedby="chart-waiver-summary">
+                <Doughnut data={waiverDeterminationData} options={chartOptions} />
+              </div>
+              <table id="chart-waiver-summary" className="sr-only">
+                <caption>Waiver determination breakdown</caption>
+                <thead><tr><th>Determination</th><th>Count</th></tr></thead>
+                <tbody>
+                  {Object.entries(stats.by_waiver_determination).map(([det, count]) => (
+                    <tr key={det}><td>{det}</td><td>{count}</td></tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         )}
       </div>
