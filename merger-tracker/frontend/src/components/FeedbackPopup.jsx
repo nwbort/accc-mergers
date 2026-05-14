@@ -3,13 +3,13 @@ import { FaTimes } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 // Set to false to hide the popup entirely (e.g. between feedback campaigns).
-const ENABLED = false;
+const ENABLED = true;
 
 // Set to false to suppress the popup on mobile screens (< 768px).
 const SHOW_ON_MOBILE = false;
 
 // Bump this string to resurface the popup for everyone who dismissed a previous campaign.
-const CAMPAIGN = 'v2';
+const CAMPAIGN = 'v3';
 const STORAGE_KEY = `feedback_dismissed_${CAMPAIGN}`;
 const SHOW_DELAY_MS = 10_000;
 
