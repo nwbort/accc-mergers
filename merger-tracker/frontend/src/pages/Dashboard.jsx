@@ -200,8 +200,8 @@ function Dashboard() {
 
       {/* Recently Notified Mergers */}
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card mb-8 overflow-hidden">
-        <div className="px-6 py-4 bg-primary">
-          <h2 id="recent-mergers-heading" className="text-lg font-semibold text-white">
+        <div className="px-6 py-4 bg-[#bdd2c5]">
+          <h2 id="recent-mergers-heading" className="text-lg font-semibold text-primary">
             Recently notified mergers
           </h2>
         </div>
@@ -270,8 +270,8 @@ function Dashboard() {
         {/* Phase 1 Duration Table */}
         {stats.phase_duration.percentiles && (
           <div className="bg-white rounded-2xl border border-gray-100 shadow-card flex flex-col overflow-hidden">
-            <div className="px-6 py-4 bg-primary">
-              <h2 className="text-base font-semibold text-white">Phase 1 duration</h2>
+            <div className="px-6 py-4 bg-[#bdd2c5]">
+              <h2 className="text-base font-semibold text-primary">Phase 1 duration</h2>
             </div>
             <div className="p-6 flex flex-col flex-1">
               <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-4 flex-1 content-around">
@@ -300,8 +300,8 @@ function Dashboard() {
         {/* Phase 1 Determination Distribution */}
         {Object.keys(stats.by_determination).length > 0 && (
           <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-6 py-4 bg-primary">
-              <h2 id="chart-phase1-title" className="text-base font-semibold text-white">Phase 1 determinations</h2>
+            <div className="px-6 py-4 bg-[#bdd2c5]">
+              <h2 id="chart-phase1-title" className="text-base font-semibold text-primary">Phase 1 determinations</h2>
             </div>
             <div className="p-6">
               <div className="h-64" role="img" aria-labelledby="chart-phase1-title" aria-describedby="chart-phase1-summary">
@@ -323,8 +323,8 @@ function Dashboard() {
         {/* Waiver Determination Distribution */}
         {stats.by_waiver_determination && Object.keys(stats.by_waiver_determination).length > 0 && (
           <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-6 py-4 bg-primary">
-              <h2 id="chart-waiver-title" className="text-base font-semibold text-white">Waiver determinations</h2>
+            <div className="px-6 py-4 bg-[#bdd2c5]">
+              <h2 id="chart-waiver-title" className="text-base font-semibold text-primary">Waiver determinations</h2>
             </div>
             <div className="p-6">
               <div className="h-64" role="img" aria-labelledby="chart-waiver-title" aria-describedby="chart-waiver-summary">

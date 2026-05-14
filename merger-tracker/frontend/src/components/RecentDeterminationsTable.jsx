@@ -40,8 +40,8 @@ function RecentDeterminationsTable({ determinations }) {
   if (!determinations || determinations.length === 0) {
     return (
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-        <div className="px-5 sm:px-6 py-4 bg-primary">
-          <h2 className="text-lg font-semibold text-white">Recent determinations</h2>
+        <div className="px-5 sm:px-6 py-4 bg-[#bdd2c5]">
+          <h2 className="text-lg font-semibold text-primary">Recent determinations</h2>
         </div>
         <p className="text-gray-500 text-sm p-6">No recent determinations.</p>
       </div>
@@ -50,8 +50,8 @@ function RecentDeterminationsTable({ determinations }) {
 
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-      <div className="px-5 sm:px-6 py-4 bg-primary">
-        <h2 id="recent-determinations-heading" className="text-lg font-semibold text-white">
+      <div className="px-5 sm:px-6 py-4 bg-[#bdd2c5]">
+        <h2 id="recent-determinations-heading" className="text-lg font-semibold text-primary">
           Recent determinations
         </h2>
       </div>

@@ -11,8 +11,8 @@ function UpcomingEventsTable({ events }) {
   if (!events || events.length === 0) {
     return (
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-        <div className="px-5 sm:px-6 py-4 bg-primary">
-          <h2 className="text-lg font-semibold text-white">Upcoming events</h2>
+        <div className="px-5 sm:px-6 py-4 bg-[#bdd2c5]">
+          <h2 className="text-lg font-semibold text-primary">Upcoming events</h2>
         </div>
         <p className="text-gray-500 text-sm p-6">No upcoming events in the next 60 days.</p>
       </div>
@@ -21,8 +21,8 @@ function UpcomingEventsTable({ events }) {
 
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-      <div className="px-5 sm:px-6 py-4 bg-primary">
-        <h2 id="upcoming-events-heading" className="text-lg font-semibold text-white">
+      <div className="px-5 sm:px-6 py-4 bg-[#bdd2c5]">
+        <h2 id="upcoming-events-heading" className="text-lg font-semibold text-primary">
           Upcoming events
         </h2>
       </div>
@@ -49,7 +49,7 @@ function UpcomingEventsTable({ events }) {
               return (
                 <tr
                   key={`${event.merger_id}-${event.date}-${event.type}`}
-                  className="relative hover:shadow-[inset_3px_0_0_#335145] hover:bg-primary/[0.04] transition-all duration-150"
+                  className="relative hover:shadow-[inset_3px_0_0_#335145] hover:bg-[#bdd2c5]/[0.04] transition-all duration-150"
                 >
                   <td className="px-5 sm:px-6 py-3 whitespace-nowrap text-sm">
                     <div className={`font-medium ${isUrgent ? 'text-red-700' : 'text-gray-900'}`}>
