@@ -2,7 +2,7 @@ function WaiverBadge({ className = '', compact = false }) {
   if (compact) {
     return (
       <span
-        className={`relative z-10 group/waiver inline-flex items-center rounded-md text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200/60 shrink-0 select-none cursor-pointer px-1.5 py-0.5 ${className}`}
+        className={`relative z-10 group/waiver inline-flex items-center rounded-md text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200/60 shrink-0 select-none px-1.5 py-0.5 ${className}`}
         role="status"
         aria-label="Merger type: Waiver application"
       >

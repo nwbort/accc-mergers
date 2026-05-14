@@ -17,17 +17,26 @@ function DeterminationIcon({ determination, date }) {
   return (
     <div className="flex items-center justify-center gap-2">
       <span className="relative group/det inline-flex shrink-0">
-        <span className={`inline-flex items-center justify-center w-7 h-7 rounded-full border text-xs font-bold ${icon.classes}`}>
-          {icon.symbol}
+        <span
+          role="img"
+          aria-label={determination}
+          className={`inline-flex items-center justify-center w-7 h-7 rounded-full border text-xs font-bold ${icon.classes}`}
+        >
+          <span aria-hidden="true">{icon.symbol}</span>
         </span>
-        <span className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 rounded-md bg-gray-900 text-white text-xs whitespace-nowrap opacity-0 group-hover/det:opacity-100 transition-opacity duration-150 pointer-events-none">
+        <span className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 rounded-md bg-gray-900 text-white text-xs whitespace-nowrap opacity-0 group-hover/det:opacity-100 transition-opacity duration-150 pointer-events-none" aria-hidden="true">
           {determination}
         </span>
       </span>
       {date && (
         <span className="relative group/date inline-flex">
-          <span className="text-xs text-gray-400 whitespace-nowrap">{formatDate(date)}</span>
-          <span className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 rounded-md bg-gray-900 text-white text-xs whitespace-nowrap opacity-0 group-hover/date:opacity-100 transition-opacity duration-150 pointer-events-none">
+          <span
+            className="text-xs text-gray-400 whitespace-nowrap"
+            aria-label={`Determined on ${formatDate(date)}`}
+          >
+            {formatDate(date)}
+          </span>
+          <span className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 rounded-md bg-gray-900 text-white text-xs whitespace-nowrap opacity-0 group-hover/date:opacity-100 transition-opacity duration-150 pointer-events-none" aria-hidden="true">
             Determined on {formatDate(date)}
           </span>
         </span>

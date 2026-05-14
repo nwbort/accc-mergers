@@ -44,17 +44,26 @@ function MergerStatusIcon({ status, determination, date, isWaiver }) {
   return (
     <div className="flex items-center justify-center gap-2">
       <span className="relative group/status inline-flex shrink-0">
-        <span className={`inline-flex items-center justify-center w-7 h-7 rounded-full border text-xs font-bold ${config.classes}`}>
-          {config.Icon ? <config.Icon className="w-3 h-3" /> : config.symbol}
+        <span
+          role="img"
+          aria-label={key}
+          className={`inline-flex items-center justify-center w-7 h-7 rounded-full border text-xs font-bold ${config.classes}`}
+        >
+          {config.Icon ? <config.Icon className="w-3 h-3" aria-hidden="true" /> : <span aria-hidden="true">{config.symbol}</span>}
         </span>
-        <span className="absolute z-10 bottom-full right-0 mb-1.5 px-2 py-1 rounded-md bg-gray-900 text-white text-xs whitespace-nowrap opacity-0 group-hover/status:opacity-100 transition-opacity duration-150 pointer-events-none">
+        <span className="absolute z-10 bottom-full right-0 mb-1.5 px-2 py-1 rounded-md bg-gray-900 text-white text-xs whitespace-nowrap opacity-0 group-hover/status:opacity-100 transition-opacity duration-150 pointer-events-none" aria-hidden="true">
           {key}
         </span>
       </span>
       {date && (
         <span className="relative group/date inline-flex">
-          <span className="text-xs text-gray-400 whitespace-nowrap">{formatDate(date)}</span>
-          <span className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 rounded-md bg-gray-900 text-white text-xs whitespace-nowrap opacity-0 group-hover/date:opacity-100 transition-opacity duration-150 pointer-events-none">
+          <span
+            className="text-xs text-gray-400 whitespace-nowrap"
+            aria-label={`${isWaiver ? 'Applied on' : 'Notified on'} ${formatDate(date)}`}
+          >
+            {formatDate(date)}
+          </span>
+          <span className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 rounded-md bg-gray-900 text-white text-xs whitespace-nowrap opacity-0 group-hover/date:opacity-100 transition-opacity duration-150 pointer-events-none" aria-hidden="true">
             {isWaiver ? 'Applied on' : 'Notified on'} {formatDate(date)}
           </span>
         </span>
