@@ -13,7 +13,7 @@ function StatCard({ title, value, subtitle, icon, href }) {
       <div className="p-6">
         <div className="flex items-start gap-4">
           {icon && (
-            <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-xl group-hover:scale-105 transition-transform duration-200">
+            <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-xl text-primary group-hover:scale-105 transition-transform duration-200">
               {icon}
             </div>
           )}
