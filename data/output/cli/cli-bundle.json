@@ -18707,32 +18707,12 @@
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
       "has_questionnaire": true,
+      "related_merger": {
+        "merger_id": "WA-20010",
+        "relationship": "refiled_from",
+        "merger_name": "PT Asian Bulk Logistics – Engage Marine"
+      },
       "similar_mergers": [
-        {
-          "merger_id": "WA-20010",
-          "merger_name": "PT Asian Bulk Logistics – Engage Marine",
-          "status": "Assessment completed",
-          "accc_determination": "Not approved",
-          "acquirers": [
-            {
-              "name": "Global Engage Marine Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "693 762 122"
-            },
-            {
-              "name": "PT Asian Bulk Logistics",
-              "identifier_type": null,
-              "identifier": "NIB   8120012130871"
-            }
-          ],
-          "targets": [
-            {
-              "name": "ENGAGE MARINE TOPCO PTY LTD",
-              "identifier_type": "ABN",
-              "identifier": "46 675 998 562"
-            }
-          ]
-        },
         {
           "merger_id": "WA-80011",
           "merger_name": "CRH - Axius Water",
@@ -25049,6 +25029,11 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "related_merger": {
+        "merger_id": "MN-90012",
+        "relationship": "refiled_as",
+        "merger_name": "PT Asian Bulk Logistics – Engage Marine"
+      },
       "similar_mergers": [
         {
           "merger_id": "WA-85004",
