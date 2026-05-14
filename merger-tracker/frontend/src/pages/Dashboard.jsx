@@ -11,7 +11,6 @@ import {
   Legend,
   ArcElement,
 } from 'chart.js';
-import StatCard from '../components/StatCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import UpcomingEventsTable from '../components/UpcomingEventsTable';
 import RecentDeterminationsTable from '../components/RecentDeterminationsTable';
@@ -133,16 +132,17 @@ function Dashboard() {
       <div className="mb-8 rounded-2xl overflow-hidden shadow-elevated">
         <div className="bg-gradient-to-br from-primary-dark via-primary to-primary-light px-6 py-7 sm:px-8 text-white">
           <div className="flex items-center justify-between gap-6">
-            <div>
-              <h1 className="text-3xl font-bold tracking-tight">Overview</h1>
-              <p className="mt-1.5 text-white/60 text-sm">ACCC merger reviews and M&amp;A activity</p>
-            </div>
-            <div className="text-right shrink-0">
-              <div className="text-5xl font-bold tabular-nums leading-none">
+            <h1 className="text-3xl font-bold tracking-tight">Overview</h1>
+            <Link
+              to="/mergers?status=Under assessment"
+              className="text-right shrink-0 group/hero"
+              aria-label={`View ${stats.by_status['Under assessment'] || 0} mergers under assessment`}
+            >
+              <div className="text-5xl font-bold tabular-nums leading-none group-hover/hero:opacity-80 transition-opacity">
                 {stats.by_status['Under assessment'] || 0}
               </div>
-              <div className="text-white/60 text-xs mt-1.5 uppercase tracking-wide">under assessment</div>
-            </div>
+              <div className="text-white/60 text-xs mt-1.5 uppercase tracking-wide">mergers under assessment</div>
+            </Link>
           </div>
           <div className="mt-5 pt-4 border-t border-white/10 flex flex-wrap items-center gap-x-6 gap-y-1 text-sm text-white/60">
             <span>{stats.total_mergers} mergers notified</span>
@@ -151,45 +151,6 @@ function Dashboard() {
             )}
           </div>
         </div>
-      </div>
-
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-        <StatCard
-          title="Mergers"
-          value={`${stats.by_status['Under assessment'] || 0} under assessment`}
-          subtitle={`${stats.total_mergers} notified${stats.total_waivers ? ` and ${stats.total_waivers} waiver${stats.total_waivers !== 1 ? 's' : ''}` : ''}`}
-          icon="🔍"
-          href="/mergers?status=Under assessment"
-        />
-        <StatCard
-          title="Average phase 1 duration"
-          value={
-            stats.phase_duration.average_business_days
-              ? `${Math.round(stats.phase_duration.average_business_days)} business days`
-              : 'N/A'
-          }
-          subtitle={
-            stats.phase_duration.average_days
-              ? `${Math.round(stats.phase_duration.average_days)} calendar days`
-              : null
-          }
-          icon="⏱️"
-        />
-        <StatCard
-          title="Median phase 1 duration"
-          value={
-            stats.phase_duration.median_business_days
-              ? `${stats.phase_duration.median_business_days} business days`
-              : 'N/A'
-          }
-          subtitle={
-            stats.phase_duration.median_days
-              ? `${stats.phase_duration.median_days} calendar days`
-              : null
-          }
-          icon="📈"
-        />
       </div>
 
       {/* Recent Determinations */}
@@ -208,7 +169,7 @@ function Dashboard() {
             Recently notified mergers
           </h2>
         </div>
-        <ul className="divide-y divide-gray-100">
+        <ul className="divide-y divide-gray-200">
           {stats.recent_mergers.map((merger) => (
             <li key={merger.merger_id}>
               <Link
@@ -216,25 +177,23 @@ function Dashboard() {
                 className="block border-l-[3px] border-transparent hover:border-primary hover:bg-primary/[0.04] transition-all duration-150"
                 aria-label={`View merger details for ${merger.merger_name}`}
               >
-                <div className="px-6 py-4">
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex items-start gap-2 min-w-0 flex-1">
-                      <p className="text-sm font-medium text-gray-900 break-words hover:text-primary transition-colors">
+                <div className="px-6 py-3">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-2 min-w-0 flex-1">
+                      <p className="text-sm font-medium text-gray-900 truncate">
                         {merger.merger_name}
                       </p>
-                      {isNewItem(merger.merger_id) && (
-                        <NewBadge />
-                      )}
-                      {merger.is_waiver && <WaiverBadge />}
+                      {isNewItem(merger.merger_id) && <NewBadge />}
+                      {merger.is_waiver && <WaiverBadge compact />}
                     </div>
-                    <div className="ml-2 flex-shrink-0">
+                    <div className="shrink-0">
                       <StatusBadge
                         status={merger.status}
                         determination={merger.accc_determination}
                       />
                     </div>
                   </div>
-                  <div className="mt-1.5 text-xs text-gray-400">
+                  <div className="mt-0.5 text-xs text-gray-400">
                     {merger.is_waiver ? 'Applied:' : 'Notified:'}{' '}
                     {formatDate(merger.effective_notification_datetime)}
                   </div>
