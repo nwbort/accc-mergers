@@ -19,8 +19,8 @@ function RecentDeterminationsTable({ determinations }) {
 
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-      <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
-        <h2 id="recent-determinations-heading" className="text-lg font-semibold text-gray-900">
+      <div className="px-5 sm:px-6 py-4 bg-primary">
+        <h2 id="recent-determinations-heading" className="text-lg font-semibold text-white">
           Recent determinations
         </h2>
       </div>
@@ -46,7 +46,7 @@ function RecentDeterminationsTable({ determinations }) {
             {determinations.map((item) => (
               <tr
                 key={`${item.merger_id}-${item.determination_date}-${item.determination_type}`}
-                className="relative hover:bg-gray-100/70 transition-colors"
+                className="relative border-l-[3px] border-transparent hover:border-primary hover:bg-primary/[0.04] transition-all"
               >
                 <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                   <div className="flex items-start gap-2">

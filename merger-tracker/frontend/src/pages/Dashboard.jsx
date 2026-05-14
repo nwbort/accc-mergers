@@ -129,10 +129,28 @@ function Dashboard() {
         url="/"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
-      {/* Page header */}
-      <div className="mb-8 rounded-2xl bg-gradient-to-r from-primary/10 to-primary/[0.03] border border-primary/15 px-6 py-5">
-        <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Overview</h1>
-        <p className="mt-1 text-sm text-gray-500">ACCC merger reviews and M&amp;A activity</p>
+      {/* Hero */}
+      <div className="mb-8 rounded-2xl overflow-hidden shadow-elevated">
+        <div className="bg-gradient-to-br from-primary-dark via-primary to-primary-light px-6 py-7 sm:px-8 text-white">
+          <div className="flex items-center justify-between gap-6">
+            <div>
+              <h1 className="text-3xl font-bold tracking-tight">Overview</h1>
+              <p className="mt-1.5 text-white/60 text-sm">ACCC merger reviews and M&amp;A activity</p>
+            </div>
+            <div className="text-right shrink-0">
+              <div className="text-5xl font-bold tabular-nums leading-none">
+                {stats.by_status['Under assessment'] || 0}
+              </div>
+              <div className="text-white/60 text-xs mt-1.5 uppercase tracking-wide">under assessment</div>
+            </div>
+          </div>
+          <div className="mt-5 pt-4 border-t border-white/10 flex flex-wrap items-center gap-x-6 gap-y-1 text-sm text-white/60">
+            <span>{stats.total_mergers} mergers notified</span>
+            {stats.total_waivers > 0 && (
+              <span>{stats.total_waivers} waiver{stats.total_waivers !== 1 ? 's' : ''}</span>
+            )}
+          </div>
+        </div>
       </div>
 
       {/* Stats Grid */}
@@ -185,17 +203,17 @@ function Dashboard() {
 
       {/* Recently Notified Mergers */}
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card mb-8 overflow-hidden">
-        <div className="px-6 py-5 border-b border-gray-100 bg-primary/5">
-          <h2 className="text-lg font-semibold text-gray-900">
+        <div className="px-6 py-5 bg-primary">
+          <h2 className="text-lg font-semibold text-white">
             Recently notified mergers
           </h2>
         </div>
-        <ul className="divide-y divide-gray-50">
+        <ul className="divide-y divide-gray-100">
           {stats.recent_mergers.map((merger) => (
             <li key={merger.merger_id}>
               <Link
                 to={`/mergers/${merger.merger_id}`}
-                className="block hover:bg-primary/[0.04] transition-colors duration-150"
+                className="block border-l-[3px] border-transparent hover:border-primary hover:bg-primary/[0.04] transition-all duration-150"
                 aria-label={`View merger details for ${merger.merger_name}`}
               >
                 <div className="px-6 py-4">
@@ -242,13 +260,12 @@ function Dashboard() {
       })()}
 
       {/* Charts */}
-      <h2 className="text-sm font-semibold text-primary uppercase tracking-wider mb-4">Breakdown</h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Phase 1 Duration Table */}
         {stats.phase_duration.percentiles && (
           <div className="bg-white rounded-2xl border border-gray-100 shadow-card flex flex-col overflow-hidden">
-            <div className="px-6 py-4 bg-primary/5 border-b border-gray-100">
-              <h2 className="text-base font-semibold text-gray-900">Phase 1 duration</h2>
+            <div className="px-6 py-4 bg-primary">
+              <h2 className="text-base font-semibold text-white">Phase 1 duration</h2>
             </div>
             <div className="p-6 flex flex-col flex-1">
               <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-4 flex-1 content-around">
@@ -277,8 +294,8 @@ function Dashboard() {
         {/* Phase 1 Determination Distribution */}
         {Object.keys(stats.by_determination).length > 0 && (
           <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-6 py-4 bg-primary/5 border-b border-gray-100">
-              <h2 id="chart-phase1-title" className="text-base font-semibold text-gray-900">Phase 1 determinations</h2>
+            <div className="px-6 py-4 bg-primary">
+              <h2 id="chart-phase1-title" className="text-base font-semibold text-white">Phase 1 determinations</h2>
             </div>
             <div className="p-6">
               <div className="h-64" role="img" aria-labelledby="chart-phase1-title" aria-describedby="chart-phase1-summary">
@@ -300,8 +317,8 @@ function Dashboard() {
         {/* Waiver Determination Distribution */}
         {stats.by_waiver_determination && Object.keys(stats.by_waiver_determination).length > 0 && (
           <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-6 py-4 bg-primary/5 border-b border-gray-100">
-              <h2 id="chart-waiver-title" className="text-base font-semibold text-gray-900">Waiver determinations</h2>
+            <div className="px-6 py-4 bg-primary">
+              <h2 id="chart-waiver-title" className="text-base font-semibold text-white">Waiver determinations</h2>
             </div>
             <div className="p-6">
               <div className="h-64" role="img" aria-labelledby="chart-waiver-title" aria-describedby="chart-waiver-summary">
