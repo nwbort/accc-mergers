@@ -9,6 +9,7 @@ function StatCard({ title, value, subtitle, icon, href }) {
       {...wrapperProps}
       className="block bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-200 overflow-hidden group"
     >
+      <div className="h-1 bg-gradient-to-r from-primary to-primary-light" />
       <div className="p-6">
         <div className="flex items-start gap-4">
           {icon && (

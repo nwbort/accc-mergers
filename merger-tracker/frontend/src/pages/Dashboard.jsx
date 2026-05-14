@@ -130,7 +130,7 @@ function Dashboard() {
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
       {/* Page header */}
-      <div className="mb-8 border-l-4 border-primary pl-4">
+      <div className="mb-8 rounded-2xl bg-gradient-to-r from-primary/10 to-primary/[0.03] border border-primary/15 px-6 py-5">
         <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Overview</h1>
         <p className="mt-1 text-sm text-gray-500">ACCC merger reviews and M&amp;A activity</p>
       </div>
@@ -195,7 +195,7 @@ function Dashboard() {
             <li key={merger.merger_id}>
               <Link
                 to={`/mergers/${merger.merger_id}`}
-                className="block hover:bg-gray-100/70 transition-colors duration-150"
+                className="block hover:bg-primary/[0.04] transition-colors duration-150"
                 aria-label={`View merger details for ${merger.merger_name}`}
               >
                 <div className="px-6 py-4">
