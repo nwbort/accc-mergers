@@ -129,6 +129,12 @@ function Dashboard() {
         url="/"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+      {/* Page header */}
+      <div className="mb-8">
+        <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Overview</h1>
+        <p className="mt-1 text-sm text-gray-500">ACCC merger reviews and M&amp;A activity</p>
+      </div>
+
       {/* Stats Grid */}
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-8">
         <StatCard
@@ -236,6 +242,7 @@ function Dashboard() {
       })()}
 
       {/* Charts */}
+      <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Breakdown</h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Phase 1 Duration Table */}
         {stats.phase_duration.percentiles && (
