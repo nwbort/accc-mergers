@@ -120,7 +120,12 @@ trap 'rm -f "$BUNDLE_TMP" "$MERGERS_TMP" "$QUESTIONNAIRES_TMP" "$NOCCS_TMP" "$ST
 
 echo "Building bundle..."
 
-jq -s '.' "${MERGER_FILES[@]}" > "$MERGERS_TMP"
+# Aggregate merger files while applying determination-text cleaning. The
+# raw per-merger JSON contains PDF layout newlines inside
+# determination_table_content (see determination_text.py); the frontend
+# strips those at render time, but the CLI has no rendering layer, so we
+# pre-clean here. Equivalent to `jq -s '.'` aside from the in-flight cleanup.
+python3 "$SCRIPT_DIR/determination_text.py" "${MERGER_FILES[@]}" > "$MERGERS_TMP"
 
 if [[ ${#QUESTIONNAIRE_FILES[@]} -gt 0 ]]; then
     python3 - "${QUESTIONNAIRE_FILES[@]}" > "$QUESTIONNAIRES_TMP" <<'PYEOF'
