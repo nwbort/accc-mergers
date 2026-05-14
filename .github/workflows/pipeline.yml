@@ -239,7 +239,7 @@ jobs:
               echo "Only acquisitions-register.html staged — skipping commit"
             else
               git commit -m "Update merger data: ${timestamp}"
-              git pull --rebase || { git rebase --abort; exit 1; }
+              git pull --rebase --autostash || { git rebase --abort; exit 1; }
 
               # After rebase, re-clean any HTML files that changed. A 3-way merge
               # during rebase can reintroduce raw dynamic tokens if both the local
