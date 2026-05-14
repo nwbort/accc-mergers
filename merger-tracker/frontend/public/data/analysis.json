@@ -675,21 +675,30 @@
         "merger_id": "MN-30009",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-04-21",
+        "business_days": 17,
+        "calendar_days": 23,
+        "merger_name": "Zurich - ClearView",
+        "merger_id": "MN-55016",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 18.2,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 36,
-      "count": 71
+      "count": 72
     },
     "calendar_stats": {
       "average": 27.7,
-      "median": 26,
+      "median": 25.5,
       "min": 21,
       "max": 55,
-      "count": 71
+      "count": 72
     }
   },
   "waiver_duration": {

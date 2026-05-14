@@ -2,11 +2,11 @@
   "total_mergers": 102,
   "total_waivers": 143,
   "by_status": {
-    "Assessment completed": 71,
-    "Under assessment": 31
+    "Assessment completed": 72,
+    "Under assessment": 30
   },
   "by_determination": {
-    "Approved": 71,
+    "Approved": 72,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 12
   },
   "phase_duration": {
-    "average_days": 27.732394366197184,
+    "average_days": 27.666666666666668,
     "median_days": 26,
-    "average_business_days": 18.225352112676056,
+    "average_business_days": 18.208333333333332,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 23.9
+        "percentage": 23.6
       },
       "day20": {
-        "count": 56,
-        "percentage": 78.9
+        "count": 57,
+        "percentage": 79.2
       },
       "day30": {
-        "count": 70,
+        "count": 71,
         "percentage": 98.6
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-55016",
+      "merger_name": "Zurich - ClearView",
+      "determination": "Approved",
+      "determination_date": "2026-05-14T12:00:00Z",
+      "page_modified_datetime": "2026-05-14T16:46:57+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-65014",
       "merger_name": "26North Funds - Intermedia Cloud Communications",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-11T12:00:00Z",
       "page_modified_datetime": "2026-05-11T17:35:33+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-35015",
-      "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
-      "determination": "Approved",
-      "determination_date": "2026-05-11T12:00:00Z",
-      "page_modified_datetime": "2026-05-11T17:32:17+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
