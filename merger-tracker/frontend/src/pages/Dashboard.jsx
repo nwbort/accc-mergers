@@ -38,19 +38,28 @@ const MERGER_STATUS_ICONS = {
   'Referred to phase 2': { symbol: '→', classes: 'text-amber-700 bg-amber-50 border-amber-200' },
 };
 
-function MergerStatusIcon({ status, determination }) {
+function MergerStatusIcon({ status, determination, date, isWaiver }) {
   const key = determination || status;
   const config = MERGER_STATUS_ICONS[key] ?? { symbol: '?', classes: 'text-gray-500 bg-gray-50 border-gray-200' };
   return (
-    <span className="relative group/status inline-flex">
-      <span className={`inline-flex items-center justify-center w-7 h-7 rounded-full border text-xs font-bold ${config.classes}`}>
-        {config.Icon ? <config.Icon className="w-3 h-3" /> : config.symbol}
+    <div className="flex items-center justify-center gap-2">
+      <span className="relative group/status inline-flex shrink-0">
+        <span className={`inline-flex items-center justify-center w-7 h-7 rounded-full border text-xs font-bold ${config.classes}`}>
+          {config.Icon ? <config.Icon className="w-3 h-3" /> : config.symbol}
+        </span>
+        <span className="absolute z-10 bottom-full right-0 mb-1.5 px-2 py-1 rounded-md bg-gray-900 text-white text-xs whitespace-nowrap opacity-0 group-hover/status:opacity-100 transition-opacity duration-150 pointer-events-none">
+          {key}
+        </span>
       </span>
-      <span className="absolute z-10 bottom-full right-0 mb-1.5 px-2 py-1 rounded-md bg-gray-900 text-white text-xs whitespace-nowrap opacity-0 group-hover/status:opacity-100 transition-opacity duration-150 pointer-events-none">
-        {key}
-      </span>
-
-    </span>
+      {date && (
+        <span className="relative group/date inline-flex">
+          <span className="text-xs text-gray-400 whitespace-nowrap">{formatDate(date)}</span>
+          <span className="absolute z-10 bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2 py-1 rounded-md bg-gray-900 text-white text-xs whitespace-nowrap opacity-0 group-hover/date:opacity-100 transition-opacity duration-150 pointer-events-none">
+            {isWaiver ? 'Applied on' : 'Notified on'} {formatDate(date)}
+          </span>
+        </span>
+      )}
+    </div>
   );
 }
 
@@ -180,8 +189,6 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="h-px bg-gray-200 mb-8" />
-
       {/* Recent Determinations */}
       {stats.recent_determinations && (
         <div className="mb-8">
@@ -220,20 +227,22 @@ function Dashboard() {
                     <div className="flex items-center gap-2 flex-wrap">
                       <Link
                         to={`/mergers/${merger.merger_id}`}
-                        className="font-medium text-gray-900 hover:text-primary transition-colors after:absolute after:inset-0"
+                        className="text-gray-900 hover:text-primary transition-colors after:absolute after:inset-0"
                         aria-label={`View merger details for ${merger.merger_name}`}
                       >
                         {merger.merger_name}
                       </Link>
                       {isNewItem(merger.merger_id) && <NewBadge />}
                       {merger.is_waiver && <WaiverBadge compact />}
-                      <span className="text-xs text-gray-400 whitespace-nowrap">
-                        · {merger.is_waiver ? 'Applied' : 'Notified'} {formatDate(merger.effective_notification_datetime)}
-                      </span>
                     </div>
                   </td>
                   <td className="px-5 sm:px-6 py-3 text-center">
-                    <MergerStatusIcon status={merger.status} determination={merger.accc_determination} />
+                    <MergerStatusIcon
+                      status={merger.status}
+                      determination={merger.accc_determination}
+                      date={merger.effective_notification_datetime}
+                      isWaiver={merger.is_waiver}
+                    />
                   </td>
                 </tr>
               ))}
