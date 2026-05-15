@@ -1843,6 +1843,61 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cleanpeak-energy-holdings-sustainable-energy-infrastructure"
     },
     {
+      "merger_id": "WA-80012",
+      "merger_name": "FC Group Holdings Corporation & ors - Fluent Retail",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-28T12:00:00Z",
+      "determination_publication_date": "2026-05-15T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Fluent Commerce Holdings Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 415103184"
+        },
+        {
+          "name": "FC Group Holdings Corporation",
+          "identifier_type": null,
+          "identifier": "EIN 415051058"
+        },
+        {
+          "name": "Fluent Commerce MidCo Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 415132220"
+        }
+      ],
+      "targets": [
+        {
+          "name": "FLUENT RETAIL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "75 132 599 154"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4211",
+          "name": "Furniture Retailing"
+        },
+        {
+          "code": "4213",
+          "name": "Houseware Retailing"
+        },
+        {
+          "code": "4251",
+          "name": "Clothing Retailing"
+        },
+        {
+          "code": "4252",
+          "name": "Footwear Retailing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/fc-group-holdings-corporation-ors-fluent-retail"
+    },
+    {
       "merger_id": "WA-95015",
       "merger_name": "DP World Global Forwarding \u2013 Pure Global Logistics",
       "status": "Assessment completed",
@@ -2724,78 +2779,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/pt-asian-bulk-logistics-%E2%80%93-engage-marine-0"
-    },
-    {
-      "merger_id": "MN-90007",
-      "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-14T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-06-29T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Volt Managed Investment Trust 2",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Volt Managed Investment Trust 1",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "targets": [
-        {
-          "name": "VOLT HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 694 754 062"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "The John Laing Group Limited",
-          "identifier_type": null,
-          "identifier": "UK Company No: 05975300"
-        },
-        {
-          "name": "The Trust Company (Australia) Limited (as trustee for Volt Managed Investment Trust 2)",
-          "identifier_type": "ABN",
-          "identifier": "21 000 000 993"
-        },
-        {
-          "name": "HMC CAPITAL LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "94 138 990 593"
-        },
-        {
-          "name": "HMC Energy Transition No. 3 Holdings Pty Ltd as trustee of the HMC Energy Transition No. 3 Trust",
-          "identifier_type": "ABN",
-          "identifier": "98 159 167 344"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "2619",
-          "name": "Other Electricity Generation"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "6419",
-          "name": "Other Auxiliary Finance and Investment Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/volt-managed-investment-trusts-%E2%80%93-hmc-energy-transition-platform"
     }
   ],
   "page": 5,

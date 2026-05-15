@@ -1,6 +1,6 @@
 {
   "total_mergers": 103,
-  "total_waivers": 147,
+  "total_waivers": 148,
   "by_status": {
     "Assessment completed": 73,
     "Under assessment": 30
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 134,
+    "Approved": 135,
     "Not approved": 13
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80012",
+      "merger_name": "FC Group Holdings Corporation & ors - Fluent Retail",
+      "determination": "Approved",
+      "determination_date": "2026-05-15T12:00:00Z",
+      "page_modified_datetime": "2026-05-15T17:36:55+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-25022",
       "merger_name": "Nuveen \u2013 Schroders",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-14T12:00:00Z",
       "page_modified_datetime": "2026-05-14T16:46:57+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-10013",
-      "merger_name": "Accenture - Ziff Davis' connectivity business",
-      "determination": "Approved",
-      "determination_date": "2026-05-14T12:00:00Z",
-      "page_modified_datetime": "2026-05-14T16:31:40+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

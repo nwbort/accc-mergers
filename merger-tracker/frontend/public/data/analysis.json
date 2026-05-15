@@ -1866,6 +1866,14 @@
       },
       {
         "application_date": "2026-04-28",
+        "business_days": 13,
+        "calendar_days": 17,
+        "merger_name": "FC Group Holdings Corporation & ors - Fluent Retail",
+        "merger_id": "WA-80012",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-04-28",
         "business_days": 9,
         "calendar_days": 13,
         "merger_name": "DP World Global Forwarding \u2013 Pure Global Logistics",
@@ -1891,17 +1899,17 @@
     ],
     "stats": {
       "average": 12.0,
-      "median": 12,
+      "median": 12.0,
       "min": 2,
       "max": 25,
-      "count": 147
+      "count": 148
     },
     "calendar_stats": {
       "average": 17.9,
-      "median": 17,
+      "median": 17.0,
       "min": 2,
       "max": 39,
-      "count": 147
+      "count": 148
     }
   },
   "monthly_volume": {
@@ -1935,7 +1943,7 @@
       30,
       30,
       48,
-      39,
+      40,
       0
     ]
   }
