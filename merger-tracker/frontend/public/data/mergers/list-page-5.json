@@ -343,6 +343,88 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mayfair-corporation-%E2%80%93-phosphate-hill"
     },
     {
+      "merger_id": "WA-30010",
+      "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-20T12:00:00Z",
+      "determination_publication_date": "2026-05-15T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "MAG SOUTH COAST PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 683 627 590"
+        },
+        {
+          "name": "MCCARROLL PROPERTY HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "64 676 724 306"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Donna Lea Buikstra Family Will Trust",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Glenn Ype Buikstra Family Will Trust",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "KINGHORN MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 000 220 557"
+        },
+        {
+          "name": "COUNTRY MOTOR COMPANY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 002 189 228"
+        },
+        {
+          "name": "KJO PROPERTY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 169 760 178"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "MAG NORTHERN BEACHES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "21 659 209 051"
+        },
+        {
+          "name": "MAG BODY CORP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "93 676 724 495"
+        },
+        {
+          "name": "MCCARROLL'S OF MOSS VALE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 003 411 210"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "3921",
+          "name": "Motor Vehicle Parts Retailing"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mag-south-coast-country-motor-company-kinghorn-motors"
+    },
+    {
       "merger_id": "WA-65014",
       "merger_name": "26North Funds - Intermedia Cloud Communications",
       "status": "Assessment completed",
@@ -1922,6 +2004,50 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tmx-cboe-australia"
+    },
+    {
+      "merger_id": "WA-25022",
+      "merger_name": "Nuveen \u2013 Schroders",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-30T12:00:00Z",
+      "determination_publication_date": "2026-05-15T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Pantheon LLC",
+          "identifier_type": null,
+          "identifier": "10488789"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Schroders plc",
+          "identifier_type": null,
+          "identifier": "03909886"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Nuveen, LLC",
+          "identifier_type": null,
+          "identifier": "5572656"
+        },
+        {
+          "name": "Teachers Insurance and Annuity Association of America (TIAA)",
+          "identifier_type": null,
+          "identifier": "FEIN 131624203"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/nuveen-%E2%80%93-schroders"
     },
     {
       "merger_id": "MN-35014",
