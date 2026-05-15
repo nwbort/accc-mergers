@@ -1,6 +1,79 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-90012",
+      "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-13T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-06-26T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Global Engage Marine Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 762 122"
+        },
+        {
+          "name": "PT Asian Bulk Logistics",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "ENGAGE MARINE TOPCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "46 675 998 562"
+        },
+        {
+          "name": "ENGAGE MARINE HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 626 774 678"
+        },
+        {
+          "name": "ENGAGE MARINE FINCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 675 999 283"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "MAGNETIC INFRASTRUCTURE GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "81 663 518 563"
+        },
+        {
+          "name": "AUSTRALIAN GLOBAL MARINE AND LOGISTICS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "68 682 427 587"
+        },
+        {
+          "name": "Australian Global Onshore Logistics Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "691 961 136"
+        },
+        {
+          "name": "AUSTRALIAN GLOBAL INFRASTRUCTURE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 663 347 948"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1090",
+          "name": "Other Mining Support Services"
+        },
+        {
+          "code": "5219",
+          "name": "Other Water Transport Support Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/pt-asian-bulk-logistics-%E2%80%93-engage-marine-0"
+    },
+    {
       "merger_id": "MN-90007",
       "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
       "status": "Under assessment",

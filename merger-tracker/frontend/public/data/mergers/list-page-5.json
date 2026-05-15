@@ -2061,6 +2061,74 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tmx-cboe-australia"
     },
     {
+      "merger_id": "WA-90014",
+      "merger_name": "Constellation Software - DerbySoft Holdings",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-29T12:00:00Z",
+      "determination_publication_date": "2026-05-15T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Sail Parent Holdco Ltd",
+          "identifier_type": null,
+          "identifier": "UK Company Registration Number 17112723"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DerbySoft Holdings Limited",
+          "identifier_type": null,
+          "identifier": "Cayman Islands Company Registration Number CF172438"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "DerbySoft (Shanghai) Co. Limited",
+          "identifier_type": null,
+          "identifier": "Chinese Unified Social Credit Code  913101157456256621"
+        },
+        {
+          "name": "Constellation Software Inc.",
+          "identifier_type": null,
+          "identifier": "Canada Business Number 891148553"
+        },
+        {
+          "name": "CONSTELLATION SOFTWARE AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "50 141 627 232"
+        },
+        {
+          "name": "Vela Software International Inc.",
+          "identifier_type": null,
+          "identifier": "Canada Business Number 1998439"
+        },
+        {
+          "name": "DerbySoft Inc.",
+          "identifier_type": null,
+          "identifier": "Wyoming Filing ID 2011000595814"
+        },
+        {
+          "name": "DerbySoft (Hong Kong) Limited",
+          "identifier_type": null,
+          "identifier": "Hong Kong Business Registration Certificate Number: 6594292400004242"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/constellation-software-derbysoft-holdings"
+    },
+    {
       "merger_id": "WA-25022",
       "merger_name": "Nuveen \u2013 Schroders",
       "status": "Assessment completed",
@@ -2706,79 +2774,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/seismic-%E2%80%93-highspot"
-    },
-    {
-      "merger_id": "MN-90012",
-      "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-13T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-06-26T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Global Engage Marine Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 762 122"
-        },
-        {
-          "name": "PT Asian Bulk Logistics",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "targets": [
-        {
-          "name": "ENGAGE MARINE TOPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "46 675 998 562"
-        },
-        {
-          "name": "ENGAGE MARINE HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 626 774 678"
-        },
-        {
-          "name": "ENGAGE MARINE FINCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 675 999 283"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "MAGNETIC INFRASTRUCTURE GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "81 663 518 563"
-        },
-        {
-          "name": "AUSTRALIAN GLOBAL MARINE AND LOGISTICS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "68 682 427 587"
-        },
-        {
-          "name": "Australian Global Onshore Logistics Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "691 961 136"
-        },
-        {
-          "name": "AUSTRALIAN GLOBAL INFRASTRUCTURE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 663 347 948"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "1090",
-          "name": "Other Mining Support Services"
-        },
-        {
-          "code": "5219",
-          "name": "Other Water Transport Support Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/pt-asian-bulk-logistics-%E2%80%93-engage-marine-0"
     }
   ],
   "page": 5,

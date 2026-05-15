@@ -1,6 +1,6 @@
 {
   "total_mergers": 103,
-  "total_waivers": 148,
+  "total_waivers": 149,
   "by_status": {
     "Assessment completed": 73,
     "Under assessment": 30
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 135,
+    "Approved": 136,
     "Not approved": 13
   },
   "phase_duration": {
@@ -40,11 +40,11 @@
     },
     {
       "name": "Financial Asset Investing",
-      "count": 29
+      "count": 30
     },
     {
       "name": "Software Publishing",
-      "count": 23
+      "count": 24
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-90014",
+      "merger_name": "Constellation Software - DerbySoft Holdings",
+      "determination": "Approved",
+      "determination_date": "2026-05-15T12:00:00Z",
+      "page_modified_datetime": "2026-05-15T17:49:17+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-80012",
       "merger_name": "FC Group Holdings Corporation & ors - Fluent Retail",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-55016",
-      "merger_name": "Zurich - ClearView",
-      "determination": "Approved",
-      "determination_date": "2026-05-14T12:00:00Z",
-      "page_modified_datetime": "2026-05-14T16:46:57+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
