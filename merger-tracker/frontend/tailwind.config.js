@@ -76,8 +76,13 @@ export default {
         'fade-in': 'fadeIn 0.15s ease-out',
         'slide-up': 'slideUp 0.15s ease-out',
         'pulse-soft': 'pulseSoft 2s ease-in-out infinite',
+        'marquee': 'marquee 40s linear infinite',
       },
       keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
+        },
         gradient: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },

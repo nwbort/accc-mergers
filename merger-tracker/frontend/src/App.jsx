@@ -9,6 +9,9 @@ import FeedbackPopup from './components/FeedbackPopup';
 import { TrackingProvider } from './context/TrackingContext';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 import Dashboard from './pages/Dashboard';
+import Dashboard1 from './pages/Dashboard1';
+import Dashboard2 from './pages/Dashboard2';
+import Dashboard3 from './pages/Dashboard3';
 import Mergers from './pages/Mergers';
 import MergerDetail from './pages/MergerDetail';
 import Timeline from './pages/Timeline';
@@ -35,6 +38,9 @@ function AppContent() {
         <main id="main-content" className="flex-grow pt-16">
           <Routes>
             <Route path="/" element={<Dashboard />} />
+            <Route path="/dashboard-1" element={<Dashboard1 />} />
+            <Route path="/dashboard-2" element={<Dashboard2 />} />
+            <Route path="/dashboard-3" element={<Dashboard3 />} />
             <Route path="/mergers" element={<Mergers />} />
             <Route path="/mergers/:id" element={<MergerDetail />} />
             <Route path="/timeline" element={<Timeline />} />
