@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
         {/* Header */}
         <div className="mb-10">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Privacy Policy</h1>
-          <p className="text-sm text-gray-500">Last updated: 13 April 2026</p>
+          <p className="text-sm text-gray-500">Last updated: 18 May 2026</p>
         </div>
 
         {/* 1. Introduction */}
@@ -104,6 +104,15 @@ export default function PrivacyPolicy() {
             is used to remember the specific mergers you have chosen to follow. We do not collect or
             transmit the list of mergers you have selected to track.
           </p>
+          <p className="text-gray-700 leading-relaxed mb-3">We do not use cookies to track individual users. The only data stored <em>locally</em> in your browser
+            is:</p>
+          <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
+            <li>the specific mergers you have chosen to follow. We do not collect or
+            transmit the list of mergers you have selected to track;</li>
+            <li>the list of mergers on the homepage that you have seen, so we can attach 'new' tags'; and</li>
+            <li>whether you have dismissed feedback popups, so we can stop bothering you.</li>
+          </ul>
+
         </section>
 
         {/* 8. Access and Correction */}
