@@ -152,6 +152,7 @@ function Dashboard() {
               : null
           }
           icon={<FaStopwatch />}
+          href="/analysis"
         />
         <StatCard
           title="Median phase 1 duration"
@@ -166,6 +167,7 @@ function Dashboard() {
               : null
           }
           icon={<FaChartLine />}
+          href="/analysis"
         />
       </div>
 
