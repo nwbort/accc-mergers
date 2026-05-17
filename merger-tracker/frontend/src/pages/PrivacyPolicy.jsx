@@ -103,7 +103,7 @@ export default function PrivacyPolicy() {
             stores some limited information locally, ie:</p>
           <ul className="list-disc list-inside text-gray-700 space-y-1 mb-4">
             <li>the specific mergers you have chosen to follow;</li>
-            <li>the list of mergers on the homepage that you have seen, so we can attach 'new' tags'; and</li>
+            <li>the list of mergers on the homepage that you have seen, so we can attach &lsquo;new&rsquo; tags; and</li>
             <li>whether you have dismissed feedback popups, so we can stop bothering you.</li>
           </ul>
           <p className="text-gray-700 leading-relaxed">
