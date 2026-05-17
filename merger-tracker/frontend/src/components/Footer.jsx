@@ -32,6 +32,7 @@ function Footer() {
           .{' '}
           <Link
             to="/privacy"
+            onClick={() => window.scrollTo(0, 0)}
             className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
           >
             Privacy Policy
