@@ -1,6 +1,58 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-75014",
+      "merger_name": "Seismic \u2013 Highspot",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-12T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-06-25T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Seismic Software, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  4832793"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Highspot Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  5126410"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "SEISMIC SOFTWARE PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "87 611 843 808"
+        },
+        {
+          "name": "HIGHSPOT AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 653 327 649"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6962",
+          "name": "Management Advice and Related Consulting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/seismic-%E2%80%93-highspot"
+    },
+    {
       "merger_id": "MN-90012",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
       "status": "Under assessment",

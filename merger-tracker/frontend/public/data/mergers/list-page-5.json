@@ -2433,6 +2433,74 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/3m-and-funds-managed-andor-advised-by-bain-capital-madison-fire-rescue"
     },
     {
+      "merger_id": "WA-25023",
+      "merger_name": "EPL - Indovida India",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-07T12:00:00Z",
+      "determination_publication_date": "2026-05-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "EPL Limited",
+          "identifier_type": null,
+          "identifier": "Registered in India, no. L74950MH1982PLC028947"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Indovida India Private Limited",
+          "identifier_type": null,
+          "identifier": "Registered in India, no. U22203MH2025PTC455949"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Petform (Thailand) Limited",
+          "identifier_type": null,
+          "identifier": "Registered in Thailand, no. 0165539000306"
+        },
+        {
+          "name": "Blackstone Inc.",
+          "identifier_type": null,
+          "identifier": "Registered in Delaware, no. 0013355"
+        },
+        {
+          "name": "Indorama Ventures Public Company Limited",
+          "identifier_type": null,
+          "identifier": "Registered in Thailand, no. 0107552000201"
+        },
+        {
+          "name": "Ngoc Nghia Industry - Service - Trading Joint Stock Company",
+          "identifier_type": null,
+          "identifier": "Registered in Vietnam, no. 0301427028"
+        },
+        {
+          "name": "Epsilon Bidco Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "Registered in Singapore, no. 201736984W"
+        },
+        {
+          "name": "Indorama Netherland B.V.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1911",
+          "name": "Polymer Film and Sheet Packaging Material Manufacturing"
+        },
+        {
+          "code": "1912",
+          "name": "Rigid and Semi-Rigid Polymer Product Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/epl-indovida-india"
+    },
+    {
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
       "status": "Under assessment",
@@ -2722,58 +2790,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/quanta-psd"
-    },
-    {
-      "merger_id": "MN-75014",
-      "merger_name": "Seismic \u2013 Highspot",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-12T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-06-25T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Seismic Software, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  4832793"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Highspot Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  5126410"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "SEISMIC SOFTWARE PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "87 611 843 808"
-        },
-        {
-          "name": "HIGHSPOT AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "11 653 327 649"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "5420",
-          "name": "Software Publishing"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "6962",
-          "name": "Management Advice and Related Consulting Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/seismic-%E2%80%93-highspot"
     }
   ],
   "page": 5,
