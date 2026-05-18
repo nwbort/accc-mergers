@@ -1,0 +1,82 @@
+name: Publish CLI SQLite
+
+# Builds cli.sqlite + cli-manifest.json from the latest cli-bundle.json on
+# main and force-pushes them to the orphan `cli-dist` branch. The
+# accc-mergers-cli reads those two files directly from raw.githubusercontent.com:
+#
+#   https://raw.githubusercontent.com/nwbort/accc-mergers/cli-dist/cli-manifest.json
+#   https://raw.githubusercontent.com/nwbort/accc-mergers/cli-dist/cli.sqlite
+#
+# The SQLite binary lives only on the orphan branch so it doesn't bloat the
+# main history. Each run replaces the branch with a fresh single commit.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/output/cli/cli-bundle.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-cli-sqlite
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Build SQLite database
+        run: |
+          mkdir -p "${RUNNER_TEMP}/cli-dist"
+          python scripts/build_cli_sqlite.py \
+            --bundle data/output/cli/cli-bundle.json \
+            --output-dir "${RUNNER_TEMP}/cli-dist"
+          echo "--- Manifest ---"
+          cat "${RUNNER_TEMP}/cli-dist/cli-manifest.json"
+
+      - name: Force-push to cli-dist orphan branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          work="${RUNNER_TEMP}/cli-dist-publish"
+          mkdir -p "$work"
+          cp "${RUNNER_TEMP}/cli-dist/cli.sqlite" "$work/cli.sqlite"
+          cp "${RUNNER_TEMP}/cli-dist/cli-manifest.json" "$work/cli-manifest.json"
+
+          cd "$work"
+          git init -q -b cli-dist
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          version=$(python -c 'import json,sys; print(json.load(open("cli-manifest.json"))["version"])')
+
+          git add cli.sqlite cli-manifest.json
+          git commit -q -m "Publish cli.sqlite (data version ${version})"
+
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          # Single fresh orphan commit replaces whatever was on cli-dist.
+          # Retry transient network failures with exponential backoff.
+          for attempt in 1 2 3 4; do
+            if git push --force "$remote" HEAD:cli-dist; then
+              echo "Push succeeded on attempt ${attempt}"
+              break
+            fi
+            if [ "$attempt" -eq 4 ]; then
+              echo "Push failed after 4 attempts" >&2
+              exit 1
+            fi
+            sleep $((2 ** attempt))
+          done
