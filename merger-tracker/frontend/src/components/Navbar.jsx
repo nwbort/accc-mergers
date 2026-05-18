@@ -64,14 +64,6 @@ function Navbar() {
   }, []);
 
   useEffect(() => {
-    if (navMode !== 'mobile') setMobileMenuOpen(false);
-  }, [navMode]);
-
-  useEffect(() => {
-    if (navMode !== 'condensed') setMoreOpen(false);
-  }, [navMode]);
-
-  useEffect(() => {
     if (!moreOpen) return;
     const handleClick = (e) => {
       if (moreMenuRef.current && !moreMenuRef.current.contains(e.target)) {
@@ -81,6 +73,15 @@ function Navbar() {
     document.addEventListener('mousedown', handleClick);
     return () => document.removeEventListener('mousedown', handleClick);
   }, [moreOpen]);
+
+  // Reset menu state when navMode changes (recommended pattern over useEffect:
+  // https://react.dev/reference/react/useState#storing-information-from-previous-renders)
+  const [prevNavMode, setPrevNavMode] = useState(navMode);
+  if (prevNavMode !== navMode) {
+    setPrevNavMode(navMode);
+    if (navMode !== 'mobile' && mobileMenuOpen) setMobileMenuOpen(false);
+    if (navMode !== 'condensed' && moreOpen) setMoreOpen(false);
+  }
 
   const submitSearch = (query) => {
     const trimmed = query.trim();

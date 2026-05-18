@@ -4,13 +4,22 @@ const CORS = {
   "Access-Control-Allow-Headers": "x-secret",
 };
 
+function timingSafeEqual(a, b) {
+  if (typeof a !== "string" || typeof b !== "string") return false;
+  const enc = new TextEncoder();
+  const ab = enc.encode(a);
+  const bb = enc.encode(b);
+  if (ab.byteLength !== bb.byteLength) return false;
+  return crypto.subtle.timingSafeEqual(ab, bb);
+}
+
 export default {
   async fetch(request, env) {
     if (request.method === "OPTIONS") {
       return new Response(null, { headers: CORS });
     }
 
-    if (request.headers.get("x-secret") !== env.SECRET) {
+    if (!timingSafeEqual(request.headers.get("x-secret") || "", env.SECRET || "")) {
       return new Response("Forbidden", { status: 403, headers: CORS });
     }
 
