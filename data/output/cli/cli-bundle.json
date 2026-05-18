@@ -11894,6 +11894,158 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mastercard-bvnk",
+      "merger_name": "Mastercard - BVNK",
+      "status": "Under assessment",
+      "merger_id": "MN-50015",
+      "effective_notification_datetime": "2026-05-15T12:00:00Z",
+      "original_notification_datetime": "2026-05-15T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-06-30T12:00:00Z",
+      "page_modified_datetime": "2026-05-18T12:10:32+10:00",
+      "consultation_response_due_date": "2026-05-25T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Ares UK Holdco 2 Limited",
+          "identifier_type": null,
+          "identifier": "CRN 17107097"
+        },
+        {
+          "name": "Mastercard Incorporated",
+          "identifier_type": null,
+          "identifier": "3390142"
+        },
+        {
+          "name": "Mastercard International Incorporated",
+          "identifier_type": null,
+          "identifier": "648928"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BVNK Holdings Limited",
+          "identifier_type": null,
+          "identifier": "13922014"
+        },
+        {
+          "name": "B Corporation S.A.M",
+          "identifier_type": null,
+          "identifier": "23S09602"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "merger_description": "Mastercard Incorporated International (**Mastercard**) through its subsidiary Ares UK Holdco 2 Limited proposes to acquire BVNK Holdings Limited and B Corporation S.A.M (together, **BVNK**) from its current shareholders (the **Acquisition**).\n\nMastercard is a technology company in the global payments industry. Mastercard’s main activities include ownership and operation of payment card schemes and provision of switching services for card transactions. Mastercard provides a payments network to facilitate the switching of payment transactions in fiat, and offers payment capabilities that include automated clearing house transactions as well as other payment-related services.\n\nBVNK supplies stablecoin infrastructure services, by building and supplying infrastructure to enable customers to send, receive, convert, spend and earn stablecoins and 'fiat' currency across a variety of payment 'rails' and blockchains.\n\nStablecoin is a type of cryptocurrency designed to keep a stable value, usually by being pegged to a traditional 'fiat' currency.",
+      "events": [
+        {
+          "date": "2026-05-18T12:00:00Z",
+          "title": "Mastercard - BVNK - Questionnaire - May 2026",
+          "display_title": "Mastercard - BVNK - Questionnaire - May 2026",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Mastercard%20-%20BVNK%20-%20Questionnaire%20-%20May%202026.docx",
+          "url_gh": "/mergers/MN-50015/Mastercard - BVNK - Questionnaire - May 2026.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-15T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-25008",
+          "merger_name": "Five V Capital - FTP Group",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "OVERWATCH BIDCO PTY LTD",
+              "identifier_type": "ACN",
+              "identifier": "695 739 970"
+            }
+          ],
+          "targets": [
+            {
+              "name": "FTP GROUP HOLDINGS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "82 626 217 614"
+            },
+            {
+              "name": "FAARM BIDCO PTY LTD",
+              "identifier_type": "ACN",
+              "identifier": "695 834 390"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-40016",
+          "merger_name": "Creative Planning – MASECO",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "CP Britannia Bidco Limited",
+              "identifier_type": null,
+              "identifier": "Jersey Financial Services Commission  163400"
+            },
+            {
+              "name": "Creative Planning Holdco, LLC",
+              "identifier_type": null,
+              "identifier": "SEC  801 7725610"
+            }
+          ],
+          "targets": [
+            {
+              "name": "MASECO LLP",
+              "identifier_type": null,
+              "identifier": "United Kingdom  OC337650"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-80001",
+          "merger_name": "Alpine Software Group (ASG) – PlayHQ",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Arena BidCo Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "693 657 484"
+            }
+          ],
+          "targets": [
+            {
+              "name": "RFGI GROUP PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "55 630 028 974"
+            },
+            {
+              "name": "GAMEON HOLDINGS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "47 629 422 206"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/symal-group-80-acquisition-of-davison-earthmovers",
       "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
       "status": "Assessment completed",
@@ -48855,6 +49007,26 @@
       ],
       "questions_count": 3
     },
+    "MN-50015": {
+      "deadline": "25 May 2026",
+      "deadline_iso": "2026-05-25",
+      "file_name": "Mastercard - BVNK - Questionnaire - May 2026.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition, including if Mastercard and BVNK are close competitors and there are not many alternatives or if one is a major supplier to competitors of the other."
+        },
+        {
+          "number": 2,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        },
+        {
+          "number": 3,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with Mastercard and/or BVNK."
+        }
+      ],
+      "questions_count": 3
+    },
     "MN-55003": {
       "deadline": null,
       "deadline_iso": null,
@@ -51548,11 +51720,11 @@
     }
   },
   "stats": {
-    "total_mergers": 103,
+    "total_mergers": 104,
     "total_waivers": 149,
     "by_status": {
       "Assessment completed": 73,
-      "Under assessment": 30
+      "Under assessment": 31
     },
     "by_determination": {
       "Approved": 73,
@@ -51597,7 +51769,7 @@
       },
       {
         "name": "Other Auxiliary Finance and Investment Services",
-        "count": 19
+        "count": 20
       },
       {
         "name": "Non-Residential Property Operators",
@@ -51626,6 +51798,14 @@
     ],
     "recent_mergers": [
       {
+        "merger_id": "MN-50015",
+        "merger_name": "Mastercard - BVNK",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-05-15T12:00:00Z",
+        "is_waiver": false
+      },
+      {
         "merger_id": "MN-90007",
         "merger_name": "Volt Managed Investment Trusts – HMC Energy Transition Platform",
         "status": "Under assessment",
@@ -51652,14 +51832,6 @@
       {
         "merger_id": "MN-05017",
         "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-05-12T12:00:00Z",
-        "is_waiver": false
-      },
-      {
-        "merger_id": "MN-25021",
-        "merger_name": "OpenAI - Tomoro",
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-05-12T12:00:00Z",
@@ -51749,7 +51921,7 @@
       {
         "code": "6419",
         "name": "Other Auxiliary Finance and Investment Services",
-        "merger_count": 19
+        "merger_count": 20
       },
       {
         "code": "6712",

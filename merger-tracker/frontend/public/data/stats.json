@@ -1,9 +1,9 @@
 {
-  "total_mergers": 103,
+  "total_mergers": 104,
   "total_waivers": 149,
   "by_status": {
     "Assessment completed": 73,
-    "Under assessment": 30
+    "Under assessment": 31
   },
   "by_determination": {
     "Approved": 73,
@@ -48,7 +48,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 19
+      "count": 20
     },
     {
       "name": "Non-Residential Property Operators",
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-50015",
+      "merger_name": "Mastercard - BVNK",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-15T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-90007",
       "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-05017",
       "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-12T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-25021",
-      "merger_name": "OpenAI - Tomoro",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-12T12:00:00Z",
