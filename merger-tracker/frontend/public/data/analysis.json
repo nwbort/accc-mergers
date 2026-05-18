@@ -711,21 +711,30 @@
         "merger_id": "MN-50008",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-04-27",
+        "business_days": 15,
+        "calendar_days": 21,
+        "merger_name": "Genea - Embrace Fertility",
+        "merger_id": "MN-05009",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 18.2,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 36,
-      "count": 75
+      "count": 76
     },
     "calendar_stats": {
-      "average": 27.7,
-      "median": 26,
+      "average": 27.6,
+      "median": 25.5,
       "min": 21,
       "max": 55,
-      "count": 75
+      "count": 76
     }
   },
   "waiver_duration": {

@@ -1599,11 +1599,11 @@
     {
       "merger_id": "MN-05009",
       "merger_name": "Genea - Embrace Fertility",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-04-27T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-05-18T12:00:00Z",
       "end_of_determination_period": "2026-06-10T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1615,22 +1615,17 @@
       ],
       "targets": [
         {
-          "name": "Histon Nelson Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "144 914 965"
-        },
-        {
           "name": "EMBRACE FERTILITY PTY LTD",
           "identifier_type": "ABN",
           "identifier": "84 135 918 580"
+        },
+        {
+          "name": "Histon Nelson Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "144 914 965"
         }
       ],
       "other_parties": [
-        {
-          "name": "ADORA HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "66 657 708 819"
-        },
         {
           "name": "Fertility SA Pty Ltd",
           "identifier_type": "ACN",
@@ -1645,6 +1640,11 @@
           "name": "JOEY HOLDCO PTY LTD",
           "identifier_type": "ABN",
           "identifier": "37 658 985 276"
+        },
+        {
+          "name": "ADORA HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "66 657 708 819"
         }
       ],
       "anzsic_codes": [

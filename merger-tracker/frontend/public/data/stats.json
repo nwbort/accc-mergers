@@ -2,11 +2,11 @@
   "total_mergers": 104,
   "total_waivers": 151,
   "by_status": {
-    "Assessment completed": 75,
-    "Under assessment": 29
+    "Assessment completed": 76,
+    "Under assessment": 28
   },
   "by_determination": {
-    "Approved": 75,
+    "Approved": 76,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 13
   },
   "phase_duration": {
-    "average_days": 27.666666666666668,
+    "average_days": 27.57894736842105,
     "median_days": 26,
-    "average_business_days": 18.24,
+    "average_business_days": 18.19736842105263,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 17,
-        "percentage": 22.7
+        "count": 18,
+        "percentage": 23.7
       },
       "day20": {
-        "count": 59,
-        "percentage": 78.7
+        "count": 60,
+        "percentage": 78.9
       },
       "day30": {
-        "count": 74,
+        "count": 75,
         "percentage": 98.7
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-05009",
+      "merger_name": "Genea - Embrace Fertility",
+      "determination": "Approved",
+      "determination_date": "2026-05-18T12:00:00Z",
+      "page_modified_datetime": "2026-05-18T17:48:18+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-01097",
       "merger_name": "Quadrant Private Equity - Stanley International College",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-15T12:00:00Z",
       "page_modified_datetime": "2026-05-15T17:49:17+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-80012",
-      "merger_name": "FC Group Holdings Corporation & ors - Fluent Retail",
-      "determination": "Approved",
-      "determination_date": "2026-05-15T12:00:00Z",
-      "page_modified_datetime": "2026-05-15T17:36:55+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

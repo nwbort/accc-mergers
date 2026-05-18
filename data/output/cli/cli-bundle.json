@@ -545,8 +545,8 @@
         {
           "merger_id": "MN-05009",
           "merger_name": "Genea - Embrace Fertility",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Genea Bidco SA Pty Ltd",
@@ -556,14 +556,14 @@
           ],
           "targets": [
             {
-              "name": "Histon Nelson Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "144 914 965"
-            },
-            {
               "name": "EMBRACE FERTILITY PTY LTD",
               "identifier_type": "ABN",
               "identifier": "84 135 918 580"
+            },
+            {
+              "name": "Histon Nelson Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "144 914 965"
             }
           ]
         }
@@ -3809,13 +3809,15 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/genea-embrace-fertility",
       "merger_name": "Genea - Embrace Fertility",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-05009",
       "effective_notification_datetime": "2026-04-27T12:00:00Z",
       "original_notification_datetime": "2026-04-27T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-06-10T12:00:00Z",
-      "page_modified_datetime": "2026-05-06T09:08:30+10:00",
+      "determination_publication_date": "2026-05-18T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-05-18T17:48:18+10:00",
       "consultation_response_due_date": "2026-05-05T12:00:00Z",
       "acquirers": [
         {
@@ -3826,22 +3828,17 @@
       ],
       "targets": [
         {
-          "name": "Histon Nelson Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "144 914 965"
-        },
-        {
           "name": "EMBRACE FERTILITY PTY LTD",
           "identifier_type": "ABN",
           "identifier": "84 135 918 580"
+        },
+        {
+          "name": "Histon Nelson Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "144 914 965"
         }
       ],
       "other_parties": [
-        {
-          "name": "ADORA HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "66 657 708 819"
-        },
         {
           "name": "Fertility SA Pty Ltd",
           "identifier_type": "ACN",
@@ -3856,6 +3853,11 @@
           "name": "JOEY HOLDCO PTY LTD",
           "identifier_type": "ABN",
           "identifier": "37 658 985 276"
+        },
+        {
+          "name": "ADORA HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "66 657 708 819"
         }
       ],
       "anzsic_codes": [
@@ -3884,12 +3886,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-05-18T12:00:00Z",
+          "title": "Genea - Embrace Fertility - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Genea%20-%20Embrace%20Fertility%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Genea Holdco SA Pty Limited (Genea) (via a newly created special purpose vehicle Genea Bidco SA Pty Ltd) proposes to acquire 100% of the shares in Embrace Fertility Pty Ltd (Embrace Fertility) (collectively referred to as the Parties). In return, the owner of Embrace Fertility will hold a minority equity interest in Genea (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "Genea owns and operates an IVF and fertility business called Fertility SA that provides assisted reproduction services via a clinic in Adelaide, South Australia, as well as clinics in other states.\n\nEmbrace Fertility is an independent gynaecology and IVF and fertility business providing assisted reproduction services in Adelaide, South Australia.\n\nEmbrace Fertility does not have its own IVF laboratory and historically Repromed has provided laboratory services to Embrace Fertility, however, Genea would provide these services to Embrace Fertility going forward."
+            },
+            {
+              "item": "Overlap between the parties",
+              "details": "The Parties overlap in the supply of IVF and fertility services in Adelaide, South Australia."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form and engagement with third parties.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings.\n\n• The merged firm would continue to face competition from alternative suppliers of IVF and fertility services in Adelaide.\n\n• The Acquisition does not materially change the existing dynamics given Embrace Fertility would continue to use laboratory services of another provider (historically Repromed but going forward Genea)."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-05009/Genea - Embrace Fertility - Phase 1 determination.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-05-18T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -17140,8 +17178,8 @@
         {
           "merger_id": "MN-05009",
           "merger_name": "Genea - Embrace Fertility",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Genea Bidco SA Pty Ltd",
@@ -17151,14 +17189,14 @@
           ],
           "targets": [
             {
-              "name": "Histon Nelson Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "144 914 965"
-            },
-            {
               "name": "EMBRACE FERTILITY PTY LTD",
               "identifier_type": "ABN",
               "identifier": "84 135 918 580"
+            },
+            {
+              "name": "Histon Nelson Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "144 914 965"
             }
           ]
         },
@@ -18867,8 +18905,8 @@
         {
           "merger_id": "MN-05009",
           "merger_name": "Genea - Embrace Fertility",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Genea Bidco SA Pty Ltd",
@@ -18878,14 +18916,14 @@
           ],
           "targets": [
             {
-              "name": "Histon Nelson Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "144 914 965"
-            },
-            {
               "name": "EMBRACE FERTILITY PTY LTD",
               "identifier_type": "ABN",
               "identifier": "84 135 918 580"
+            },
+            {
+              "name": "Histon Nelson Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "144 914 965"
             }
           ]
         },
@@ -20919,8 +20957,8 @@
         {
           "merger_id": "MN-05009",
           "merger_name": "Genea - Embrace Fertility",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Genea Bidco SA Pty Ltd",
@@ -20930,14 +20968,14 @@
           ],
           "targets": [
             {
-              "name": "Histon Nelson Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "144 914 965"
-            },
-            {
               "name": "EMBRACE FERTILITY PTY LTD",
               "identifier_type": "ABN",
               "identifier": "84 135 918 580"
+            },
+            {
+              "name": "Histon Nelson Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "144 914 965"
             }
           ]
         },
@@ -23031,8 +23069,8 @@
         {
           "merger_id": "MN-05009",
           "merger_name": "Genea - Embrace Fertility",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Genea Bidco SA Pty Ltd",
@@ -23042,14 +23080,14 @@
           ],
           "targets": [
             {
-              "name": "Histon Nelson Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "144 914 965"
-            },
-            {
               "name": "EMBRACE FERTILITY PTY LTD",
               "identifier_type": "ABN",
               "identifier": "84 135 918 580"
+            },
+            {
+              "name": "Histon Nelson Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "144 914 965"
             }
           ]
         },
@@ -23761,8 +23799,8 @@
         {
           "merger_id": "MN-05009",
           "merger_name": "Genea - Embrace Fertility",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Genea Bidco SA Pty Ltd",
@@ -23772,14 +23810,14 @@
           ],
           "targets": [
             {
-              "name": "Histon Nelson Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "144 914 965"
-            },
-            {
               "name": "EMBRACE FERTILITY PTY LTD",
               "identifier_type": "ABN",
               "identifier": "84 135 918 580"
+            },
+            {
+              "name": "Histon Nelson Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "144 914 965"
             }
           ]
         },
@@ -32858,8 +32896,8 @@
         {
           "merger_id": "MN-05009",
           "merger_name": "Genea - Embrace Fertility",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Genea Bidco SA Pty Ltd",
@@ -32869,14 +32907,14 @@
           ],
           "targets": [
             {
-              "name": "Histon Nelson Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "144 914 965"
-            },
-            {
               "name": "EMBRACE FERTILITY PTY LTD",
               "identifier_type": "ABN",
               "identifier": "84 135 918 580"
+            },
+            {
+              "name": "Histon Nelson Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "144 914 965"
             }
           ]
         },
@@ -33718,8 +33756,8 @@
         {
           "merger_id": "MN-05009",
           "merger_name": "Genea - Embrace Fertility",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Genea Bidco SA Pty Ltd",
@@ -33729,14 +33767,14 @@
           ],
           "targets": [
             {
-              "name": "Histon Nelson Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "144 914 965"
-            },
-            {
               "name": "EMBRACE FERTILITY PTY LTD",
               "identifier_type": "ABN",
               "identifier": "84 135 918 580"
+            },
+            {
+              "name": "Histon Nelson Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "144 914 965"
             }
           ]
         },
@@ -40098,8 +40136,8 @@
         {
           "merger_id": "MN-05009",
           "merger_name": "Genea - Embrace Fertility",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Genea Bidco SA Pty Ltd",
@@ -40109,14 +40147,14 @@
           ],
           "targets": [
             {
-              "name": "Histon Nelson Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "144 914 965"
-            },
-            {
               "name": "EMBRACE FERTILITY PTY LTD",
               "identifier_type": "ABN",
               "identifier": "84 135 918 580"
+            },
+            {
+              "name": "Histon Nelson Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "144 914 965"
             }
           ]
         },
@@ -41424,8 +41462,8 @@
         {
           "merger_id": "MN-05009",
           "merger_name": "Genea - Embrace Fertility",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Genea Bidco SA Pty Ltd",
@@ -41435,14 +41473,14 @@
           ],
           "targets": [
             {
-              "name": "Histon Nelson Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "144 914 965"
-            },
-            {
               "name": "EMBRACE FERTILITY PTY LTD",
               "identifier_type": "ABN",
               "identifier": "84 135 918 580"
+            },
+            {
+              "name": "Histon Nelson Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "144 914 965"
             }
           ]
         }
@@ -41763,8 +41801,8 @@
         {
           "merger_id": "MN-05009",
           "merger_name": "Genea - Embrace Fertility",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Genea Bidco SA Pty Ltd",
@@ -41774,14 +41812,14 @@
           ],
           "targets": [
             {
-              "name": "Histon Nelson Pty Ltd",
-              "identifier_type": "ACN",
-              "identifier": "144 914 965"
-            },
-            {
               "name": "EMBRACE FERTILITY PTY LTD",
               "identifier_type": "ABN",
               "identifier": "84 135 918 580"
+            },
+            {
+              "name": "Histon Nelson Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "144 914 965"
             }
           ]
         }
@@ -52185,11 +52223,11 @@
     "total_mergers": 104,
     "total_waivers": 151,
     "by_status": {
-      "Assessment completed": 75,
-      "Under assessment": 29
+      "Assessment completed": 76,
+      "Under assessment": 28
     },
     "by_determination": {
-      "Approved": 75,
+      "Approved": 76,
       "Referred to phase 2": 4
     },
     "by_waiver_determination": {
@@ -52197,21 +52235,21 @@
       "Not approved": 13
     },
     "phase_duration": {
-      "average_days": 27.666666666666668,
+      "average_days": 27.57894736842105,
       "median_days": 26,
-      "average_business_days": 18.24,
+      "average_business_days": 18.19736842105263,
       "median_business_days": 17,
       "percentiles": {
         "day15": {
-          "count": 17,
-          "percentage": 22.7
+          "count": 18,
+          "percentage": 23.7
         },
         "day20": {
-          "count": 59,
-          "percentage": 78.7
+          "count": 60,
+          "percentage": 78.9
         },
         "day30": {
-          "count": 74,
+          "count": 75,
           "percentage": 98.7
         }
       }
@@ -52302,6 +52340,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "MN-05009",
+        "merger_name": "Genea - Embrace Fertility",
+        "determination": "Approved",
+        "determination_date": "2026-05-18T12:00:00Z",
+        "page_modified_datetime": "2026-05-18T17:48:18+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "WA-01097",
         "merger_name": "Quadrant Private Equity - Stanley International College",
         "determination": "Approved",
@@ -52347,16 +52395,6 @@
         "determination": "Approved",
         "determination_date": "2026-05-15T12:00:00Z",
         "page_modified_datetime": "2026-05-15T17:49:17+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-80012",
-        "merger_name": "FC Group Holdings Corporation & ors - Fluent Retail",
-        "determination": "Approved",
-        "determination_date": "2026-05-15T12:00:00Z",
-        "page_modified_datetime": "2026-05-15T17:36:55+10:00",
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"

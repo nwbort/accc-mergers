@@ -2180,13 +2180,15 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/genea-embrace-fertility",
     "merger_name": "Genea - Embrace Fertility",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-05009",
     "effective_notification_datetime": "2026-04-27T12:00:00Z",
     "original_notification_datetime": "2026-04-27T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-06-10T12:00:00Z",
-    "page_modified_datetime": "2026-05-06T09:08:30+10:00",
+    "determination_publication_date": "2026-05-18T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-05-18T17:48:18+10:00",
     "consultation_response_due_date": "2026-05-05T12:00:00Z",
     "acquirers": [
       {
@@ -2197,22 +2199,17 @@
     ],
     "targets": [
       {
-        "name": "Histon Nelson Pty Ltd",
-        "identifier_type": "ACN",
-        "identifier": "144 914 965"
-      },
-      {
         "name": "EMBRACE FERTILITY PTY LTD",
         "identifier_type": "ABN",
         "identifier": "84 135 918 580"
+      },
+      {
+        "name": "Histon Nelson Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "144 914 965"
       }
     ],
     "other_parties": [
-      {
-        "name": "ADORA HOLDCO PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "66 657 708 819"
-      },
       {
         "name": "Fertility SA Pty Ltd",
         "identifier_type": "ACN",
@@ -2227,6 +2224,11 @@
         "name": "JOEY HOLDCO PTY LTD",
         "identifier_type": "ABN",
         "identifier": "37 658 985 276"
+      },
+      {
+        "name": "ADORA HOLDCO PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "66 657 708 819"
       }
     ],
     "anzsic_codes": [
@@ -2253,6 +2255,43 @@
         "date": "2026-04-27T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-05-18T12:00:00Z",
+        "title": "Genea - Embrace Fertility - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Genea%20-%20Embrace%20Fertility%20-%20Phase%201%20determination.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "Genea Holdco SA Pty Limited (Genea) (via a newly created special\npurpose vehicle Genea Bidco SA Pty Ltd) proposes to acquire 100%\nof the shares in Embrace Fertility Pty Ltd (Embrace Fertility)\n(collectively referred to as the Parties). In return, the owner of\nEmbrace Fertility will hold a minority equity interest in Genea (the\nAcquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "Genea owns and operates an IVF and fertility business called Fertility\nSA that provides assisted reproduction services via a clinic in\nAdelaide, South Australia, as well as clinics in other states.\nEmbrace Fertility is an independent gynaecology and IVF and fertility\nbusiness providing assisted reproduction services in Adelaide, South\nAustralia.\nEmbrace Fertility does not have its own IVF laboratory and\nhistorically Repromed has provided laboratory services to Embrace\nFertility, however, Genea would provide these services to Embrace\nFertility going forward."
+          },
+          {
+            "item": "Overlap between the\nparties",
+            "details": "The Parties overlap in the supply of IVF and fertility services in\nAdelaide, South Australia."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and engagement with third parties.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The merged firm would continue to face competition from\nalternative suppliers of IVF and fertility services in Adelaide.\n\u2022 The Acquisition does not materially change the existing\ndynamics given Embrace Fertility would continue to use\nlaboratory services of another provider (historically Repromed\nbut going forward Genea)."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/mergers/MN-05009/Genea - Embrace Fertility - Phase 1 determination.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false
