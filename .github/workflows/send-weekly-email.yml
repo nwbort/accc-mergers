@@ -5,7 +5,6 @@ on:
     # Monday 9:26 AM Sydney time
     - cron: '26 9 * * 1'
       timezone: 'Australia/Sydney'
-
   workflow_dispatch:
     inputs:
       dry_run:
