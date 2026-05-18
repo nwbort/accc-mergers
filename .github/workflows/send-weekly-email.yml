@@ -1,10 +1,10 @@
 name: Send Weekly Digest Email
 
 on:
-  #schedule:
-  #  # Monday 9 AM AEST (Sunday 11 PM UTC)
-  #  # Runs ~1 hour after the digest.json is generated and pushed by weekly-digest.yml
-  #  - cron: '0 23 * * 0'
+  schedule:
+    # Monday 9:26 AM Sydney time
+    - cron: '26 9 * * 1'
+      timezone: 'Australia/Sydney'
   workflow_dispatch:
     inputs:
       dry_run:

@@ -2,10 +2,10 @@ name: Generate Weekly Digest
 
 on:
   schedule:
-    # Run every Sunday at 8 AM AEST (Saturday 10 PM UTC)
-    # Note: During AEDT (daylight saving), this will be 9 AM
-    - cron: '0 22 * * 6'
-  workflow_dispatch:  # Allow manual trigger
+    # Run every Sunday at 8:36 AM Sydney time
+    - cron: '36 8 * * 0'
+      timezone: 'Australia/Sydney'
+  workflow_dispatch:
 
 permissions:
   contents: write
