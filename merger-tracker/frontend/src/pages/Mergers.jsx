@@ -369,7 +369,9 @@ function Mergers() {
                   </label>
                   <select
                     id="phase"
-                    className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none"
+                    className={`w-full px-3 py-2.5 bg-gray-50 border rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none ${
+                      phaseFilter !== 'all' ? 'border-primary border-2' : 'border-gray-200'
+                    }`}
                     value={phaseFilter}
                     onChange={(e) => updateParam('phase', e.target.value, 'all')}
                     aria-label="Filter by merger phase"
@@ -389,7 +391,9 @@ function Mergers() {
                   </label>
                   <select
                     id="status"
-                    className="w-full px-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none"
+                    className={`w-full px-3 py-2.5 bg-gray-50 border rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none ${
+                      statusFilter !== 'all' ? 'border-primary border-2' : 'border-gray-200'
+                    }`}
                     value={statusFilter}
                     onChange={(e) => updateParam('status', e.target.value, 'all')}
                     aria-label="Filter by merger status"
@@ -413,10 +417,10 @@ function Mergers() {
                     role="switch"
                     aria-checked={trackedOnly}
                     onClick={() => updateParam('tracked', !trackedOnly ? 'true' : '', '')}
-                    className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm border transition-all ${
+                    className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm transition-all ${
                       trackedOnly
-                        ? 'bg-primary/5 border-primary/30 text-primary'
-                        : 'bg-gray-50 border-gray-200 text-gray-500 hover:bg-gray-100'
+                        ? 'bg-primary/5 border-2 border-primary text-primary'
+                        : 'bg-gray-50 border border-gray-200 text-gray-500 hover:bg-gray-100'
                     }`}
                   >
                     <span
