@@ -2,11 +2,11 @@
   "total_mergers": 104,
   "total_waivers": 149,
   "by_status": {
-    "Assessment completed": 73,
-    "Under assessment": 31
+    "Assessment completed": 74,
+    "Under assessment": 30
   },
   "by_determination": {
-    "Approved": 73,
+    "Approved": 74,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 13
   },
   "phase_duration": {
-    "average_days": 27.65753424657534,
+    "average_days": 27.716216216216218,
     "median_days": 26,
-    "average_business_days": 18.21917808219178,
+    "average_business_days": 18.27027027027027,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 23.3
+        "percentage": 23.0
       },
       "day20": {
         "count": 58,
-        "percentage": 79.5
+        "percentage": 78.4
       },
       "day30": {
-        "count": 72,
+        "count": 73,
         "percentage": 98.6
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-70014",
+      "merger_name": "Global Infrastructure Management \u2013 TCR",
+      "determination": "Approved",
+      "determination_date": "2026-05-18T12:00:00Z",
+      "page_modified_datetime": "2026-05-18T16:52:57+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-90014",
       "merger_name": "Constellation Software - DerbySoft Holdings",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-15T12:00:00Z",
       "page_modified_datetime": "2026-05-15T17:26:56+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-75020",
-      "merger_name": "CleanPeak Energy Holdings - Sustainable Energy Infrastructure",
-      "determination": "Approved",
-      "determination_date": "2026-05-14T12:00:00Z",
-      "page_modified_datetime": "2026-05-14T17:22:54+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
