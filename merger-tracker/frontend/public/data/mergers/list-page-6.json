@@ -1,6 +1,78 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-70012",
+      "merger_name": "Quanta - PSD",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-12T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-06-25T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Quanta Services Australia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "11 164 311 997"
+        }
+      ],
+      "targets": [
+        {
+          "name": "PSD Global Holdings Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "634 380 813"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "PSD Plant & Equipment Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "97 144 778 861"
+        },
+        {
+          "name": "Intellect Systems Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "11 115 885 348"
+        },
+        {
+          "name": "Axcentium Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "48 638 953 572"
+        },
+        {
+          "name": "Consolidated Power Projects Australia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "18 075 411 219"
+        },
+        {
+          "name": "Nacap Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "33 006 306 994"
+        },
+        {
+          "name": "PSD Energy Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "68 117 966 926"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3109",
+          "name": "Other Heavy and Civil Engineering Construction"
+        },
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        },
+        {
+          "code": "6961",
+          "name": "Corporate Head Office Management Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/quanta-psd"
+    },
+    {
       "merger_id": "MN-75014",
       "merger_name": "Seismic \u2013 Highspot",
       "status": "Under assessment",

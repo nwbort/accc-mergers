@@ -1100,11 +1100,11 @@
     {
       "merger_id": "MN-50008",
       "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-04-24T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-05-18T12:00:00Z",
       "end_of_determination_period": "2026-06-10T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1121,6 +1121,11 @@
           "identifier": "88 008 685 407"
         },
         {
+          "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 124 816 093"
+        },
+        {
           "name": "TELEVISION HOLDINGS DARWIN PTY. LIMITED",
           "identifier_type": "ABN",
           "identifier": "33 009 634 048"
@@ -1129,11 +1134,6 @@
           "name": "NBN ENTERPRISES PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "68 009 140 078"
-        },
-        {
-          "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 124 816 093"
         }
       ],
       "other_parties": [],
@@ -2129,6 +2129,77 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/constellation-software-derbysoft-holdings"
     },
     {
+      "merger_id": "WA-01097",
+      "merger_name": "Quadrant Private Equity - Stanley International College",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-30T12:00:00Z",
+      "determination_publication_date": "2026-05-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Swan Bidco Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "99 634 920 773"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Stanley International College Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "16 130 977 221"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Swan Topco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "682 241 612"
+        },
+        {
+          "name": "Kaishwer Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "17 142 301 371"
+        },
+        {
+          "name": "Swan Midco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "682 241 621"
+        },
+        {
+          "name": "BARRIJAG PTY. LIMITED & QPE GROWTH 3 GP PTY LIMITED & QPE GROWTH 3 LP PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "42 453 976 426"
+        },
+        {
+          "name": "Chintalia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "94 147 049 698"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "8101",
+          "name": "Technical and Vocational Education and Training"
+        },
+        {
+          "code": "8102",
+          "name": "Higher Education"
+        },
+        {
+          "code": "8220",
+          "name": "Educational Support Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/quadrant-private-equity-stanley-international-college"
+    },
+    {
       "merger_id": "WA-25022",
       "merger_name": "Nuveen \u2013 Schroders",
       "status": "Assessment completed",
@@ -2718,78 +2789,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/atkinsr%C3%A9alis-wga"
-    },
-    {
-      "merger_id": "MN-70012",
-      "merger_name": "Quanta - PSD",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-12T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-06-25T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Quanta Services Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "11 164 311 997"
-        }
-      ],
-      "targets": [
-        {
-          "name": "PSD Global Holdings Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "634 380 813"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "PSD Plant & Equipment Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "97 144 778 861"
-        },
-        {
-          "name": "Intellect Systems Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "11 115 885 348"
-        },
-        {
-          "name": "Axcentium Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "48 638 953 572"
-        },
-        {
-          "name": "Consolidated Power Projects Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "18 075 411 219"
-        },
-        {
-          "name": "Nacap Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "33 006 306 994"
-        },
-        {
-          "name": "PSD Energy Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "68 117 966 926"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "3109",
-          "name": "Other Heavy and Civil Engineering Construction"
-        },
-        {
-          "code": "6923",
-          "name": "Engineering Design and Engineering Consulting Services"
-        },
-        {
-          "code": "6961",
-          "name": "Corporate Head Office Management Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/quanta-psd"
     }
   ],
   "page": 5,

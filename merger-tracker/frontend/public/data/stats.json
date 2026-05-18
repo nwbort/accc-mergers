@@ -1,35 +1,35 @@
 {
   "total_mergers": 104,
-  "total_waivers": 150,
+  "total_waivers": 151,
   "by_status": {
-    "Assessment completed": 74,
-    "Under assessment": 30
+    "Assessment completed": 75,
+    "Under assessment": 29
   },
   "by_determination": {
-    "Approved": 74,
+    "Approved": 75,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 137,
+    "Approved": 138,
     "Not approved": 13
   },
   "phase_duration": {
-    "average_days": 27.716216216216218,
+    "average_days": 27.666666666666668,
     "median_days": 26,
-    "average_business_days": 18.27027027027027,
+    "average_business_days": 18.24,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 17,
-        "percentage": 23.0
+        "percentage": 22.7
       },
       "day20": {
-        "count": 58,
-        "percentage": 78.4
+        "count": 59,
+        "percentage": 78.7
       },
       "day30": {
-        "count": 73,
-        "percentage": 98.6
+        "count": 74,
+        "percentage": 98.7
       }
     }
   },
@@ -40,7 +40,7 @@
     },
     {
       "name": "Financial Asset Investing",
-      "count": 30
+      "count": 31
     },
     {
       "name": "Software Publishing",
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-01097",
+      "merger_name": "Quadrant Private Equity - Stanley International College",
+      "determination": "Approved",
+      "determination_date": "2026-05-18T12:00:00Z",
+      "page_modified_datetime": "2026-05-18T17:38:26+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-25023",
       "merger_name": "EPL - Indovida India",
       "determination": "Approved",
@@ -127,6 +137,16 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
+    },
+    {
+      "merger_id": "MN-50008",
+      "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
+      "determination": "Approved",
+      "determination_date": "2026-05-18T12:00:00Z",
+      "page_modified_datetime": "2026-05-18T17:14:14+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
     },
     {
       "merger_id": "MN-70014",
@@ -154,26 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-15T12:00:00Z",
       "page_modified_datetime": "2026-05-15T17:36:55+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-25022",
-      "merger_name": "Nuveen \u2013 Schroders",
-      "determination": "Approved",
-      "determination_date": "2026-05-15T12:00:00Z",
-      "page_modified_datetime": "2026-05-15T17:33:44+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-30010",
-      "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
-      "determination": "Not approved",
-      "determination_date": "2026-05-15T12:00:00Z",
-      "page_modified_datetime": "2026-05-15T17:29:30+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
