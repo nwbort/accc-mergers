@@ -537,20 +537,19 @@ def build_html_email(digest: dict) -> str:
         <!-- HEADER -->
         <tr>
           <td style="background:#ffffff;border:1px solid #e5e7eb;border-bottom:none;border-radius:12px 12px 0 0;padding:26px 28px 22px;">
-            <span style="font-size:18px;letter-spacing:-0.3px;">
+            <div style="font-size:18px;letter-spacing:-0.3px;">
               <span style="font-weight:700;color:#335145;">australian merger tracker</span><span style="font-weight:400;color:#335145;"> weekly digest</span>
-            </span>
-            <br>
-            <span style="font-size:13px;color:#6b7280;margin-top:6px;display:block;">
+            </div>
+            <div style="font-size:13px;color:#6b7280;margin-top:6px;">
               Week of {esc(date_range)}
               &nbsp;&middot;&nbsp;
               <a href="{SITE_BASE}/digest" style="color:#335145;text-decoration:underline;">
                 View online
               </a>
-            </span>
-            <span style="font-size:13px;color:#6b7280;margin-top:4px;display:block;font-style:italic;">
+            </div>
+            <div style="font-size:13px;color:#6b7280;margin-top:4px;font-style:italic;">
               {header_cta}
-            </span>
+            </div>
           </td>
         </tr>
 
