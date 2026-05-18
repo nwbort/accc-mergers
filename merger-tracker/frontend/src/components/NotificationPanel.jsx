@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBell, FaCheckCircle } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
@@ -16,16 +16,22 @@ function PanelEmptyState({ iconBg, iconColor, Icon, title, subtitle }) {
   );
 }
 
-function MergerEventGroup({ group, onClose, isEventSeen }) {
+function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
   const [showPastEvents, setShowPastEvents] = useState(false);
 
   // Separate past and future events
   const pastEvents = group.events.filter((e) => isDatePast(e.date));
   const futureEvents = group.events.filter((e) => !isDatePast(e.date));
 
+  // Past events that were unseen when the panel opened are always shown
+  // so notified events can't hide behind the collapse.
+  const unseenPastEvents = pastEvents.filter((e) => wasUnseenOnOpen(e));
+  const seenPastEvents = pastEvents.filter((e) => !wasUnseenOnOpen(e));
+
   // Sort all events by date descending (most recent/latest dates first)
   futureEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
-  pastEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
+  unseenPastEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
+  seenPastEvents.sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <div className="p-4">
@@ -45,20 +51,27 @@ function MergerEventGroup({ group, onClose, isEventSeen }) {
         {futureEvents.map((event, idx) => {
           const daysRemaining = getDaysRemaining(event.date);
           const isUpcoming = event.type === 'consultation_due' || event.type === 'determination_due' || event.type === 'notice_of_competition_concerns';
-          const isNew = !isEventSeen(event);
+          const isNew = wasUnseenOnOpen(event);
 
           return (
             <li
               key={`${event.merger_id}-${event.date}-future-${idx}`}
-              className="text-xs"
+              className={`text-xs rounded-md ${
+                isNew ? 'bg-emerald-50 ring-1 ring-emerald-200 px-2 py-1.5 -mx-1' : ''
+              }`}
             >
               <div className="flex items-start gap-2">
                 <span className={`mt-0.5 flex-shrink-0 w-2 h-2 rounded-full ${
                   isNew ? 'bg-emerald-500' : isUpcoming ? 'bg-amber-400' : 'bg-gray-300'
                 }`} />
                 <div className="flex-1 min-w-0">
-                  <p className="text-gray-700 truncate">
+                  <p className={`truncate ${isNew ? 'text-gray-900 font-medium' : 'text-gray-700'}`}>
                     {event.display_title || event.event_type_display || event.title}
+                    {isNew && (
+                      <span className="ml-1.5 inline-block align-middle text-[10px] font-semibold uppercase tracking-wide text-emerald-700">
+                        New
+                      </span>
+                    )}
                   </p>
                   <p className="text-gray-400">
                     {formatDate(event.date)}
@@ -74,42 +87,59 @@ function MergerEventGroup({ group, onClose, isEventSeen }) {
           );
         })}
 
-        {/* Past events collapsible */}
-        {pastEvents.length > 0 && (
+        {/* Unseen past events: always visible so notified events can't hide behind the collapse */}
+        {unseenPastEvents.map((event, idx) => (
+          <li
+            key={`${event.merger_id}-${event.date}-past-new-${idx}`}
+            className="text-xs rounded-md bg-emerald-50 ring-1 ring-emerald-200 px-2 py-1.5 -mx-1"
+          >
+            <div className="flex items-start gap-2">
+              <span className="mt-0.5 flex-shrink-0 w-2 h-2 rounded-full bg-emerald-500" />
+              <div className="flex-1 min-w-0">
+                <p className="text-gray-900 font-medium truncate">
+                  {event.display_title || event.event_type_display || event.title}
+                  <span className="ml-1.5 inline-block align-middle text-[10px] font-semibold uppercase tracking-wide text-emerald-700">
+                    New
+                  </span>
+                </p>
+                <p className="text-gray-400">
+                  {formatDate(event.date)}
+                </p>
+              </div>
+            </div>
+          </li>
+        ))}
+
+        {/* Seen past events collapsible */}
+        {seenPastEvents.length > 0 && (
           <>
             <li className="text-xs">
               <button
                 onClick={() => setShowPastEvents(!showPastEvents)}
                 className="text-gray-400 hover:text-gray-600 hover:underline cursor-pointer pl-4 transition-colors"
               >
-                {showPastEvents ? 'Hide' : 'Show'} {pastEvents.length} past event{pastEvents.length !== 1 ? 's' : ''}
+                {showPastEvents ? 'Hide' : 'Show'} {seenPastEvents.length} past event{seenPastEvents.length !== 1 ? 's' : ''}
               </button>
             </li>
 
-            {showPastEvents && pastEvents.map((event, idx) => {
-              const isNew = !isEventSeen(event);
-
-              return (
-                <li
-                  key={`${event.merger_id}-${event.date}-past-${idx}`}
-                  className="text-xs"
-                >
-                  <div className="flex items-start gap-2">
-                    <span className={`mt-0.5 flex-shrink-0 w-2 h-2 rounded-full ${
-                      isNew ? 'bg-emerald-500' : 'bg-gray-300'
-                    }`} />
-                    <div className="flex-1 min-w-0">
-                      <p className="text-gray-500 truncate">
-                        {event.display_title || event.event_type_display || event.title}
-                      </p>
-                      <p className="text-gray-400">
-                        {formatDate(event.date)}
-                      </p>
-                    </div>
+            {showPastEvents && seenPastEvents.map((event, idx) => (
+              <li
+                key={`${event.merger_id}-${event.date}-past-${idx}`}
+                className="text-xs"
+              >
+                <div className="flex items-start gap-2">
+                  <span className="mt-0.5 flex-shrink-0 w-2 h-2 rounded-full bg-gray-300" />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-gray-500 truncate">
+                      {event.display_title || event.event_type_display || event.title}
+                    </p>
+                    <p className="text-gray-400">
+                      {formatDate(event.date)}
+                    </p>
                   </div>
-                </li>
-              );
-            })}
+                </div>
+              </li>
+            ))}
           </>
         )}
       </ul>
@@ -125,8 +155,17 @@ function NotificationPanel({ isOpen, onClose }) {
     trackedMergerIds,
     markEventsAsSeen,
     isEventSeen,
-    loading
+    getEventKey,
+    loading,
   } = useTracking();
+
+  // Snapshot which events were unseen when the panel opened, so the "new"
+  // highlight persists for this viewing even after markEventsAsSeen runs.
+  const [unseenOnOpen, setUnseenOnOpen] = useState(() => new Set());
+  const wasUnseenOnOpen = useCallback(
+    (event) => unseenOnOpen.has(getEventKey(event)),
+    [unseenOnOpen, getEventKey]
+  );
 
   // Restore focus to the trigger element when the panel closes
   useEffect(() => {
@@ -175,8 +214,18 @@ function NotificationPanel({ isOpen, onClose }) {
   // Mark all events as seen when panel is opened
   // Only mark when transitioning to open, not on every trackedEvents change
   useEffect(() => {
-    if (isOpen && trackedEvents.length > 0) {
-      markEventsAsSeen(trackedEvents);
+    if (isOpen) {
+      if (trackedEvents.length > 0) {
+        // Snapshot unseen keys before marking them as seen so we can keep
+        // highlighting them for the duration of this panel view.
+        const snapshot = new Set(
+          trackedEvents.filter((e) => !isEventSeen(e)).map(getEventKey)
+        );
+        setUnseenOnOpen(snapshot);
+        markEventsAsSeen(trackedEvents);
+      }
+    } else {
+      setUnseenOnOpen(new Set());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isOpen]); // Only depend on isOpen to mark events when panel first opens
@@ -200,9 +249,9 @@ function NotificationPanel({ isOpen, onClose }) {
   // 1. Mergers with unseen events first (most recent unseen event at top)
   // 2. Then by soonest upcoming event
   const mergerGroups = Object.values(eventsByMerger).sort((a, b) => {
-    // Check for unseen events
-    const aUnseenEvents = a.events.filter((e) => !isEventSeen(e));
-    const bUnseenEvents = b.events.filter((e) => !isEventSeen(e));
+    // Check for events that were unseen when the panel opened
+    const aUnseenEvents = a.events.filter((e) => wasUnseenOnOpen(e));
+    const bUnseenEvents = b.events.filter((e) => wasUnseenOnOpen(e));
     const aHasUnseen = aUnseenEvents.length > 0;
     const bHasUnseen = bUnseenEvents.length > 0;
 
@@ -281,7 +330,7 @@ function NotificationPanel({ isOpen, onClose }) {
                 key={group.merger_id}
                 group={group}
                 onClose={onClose}
-                isEventSeen={isEventSeen}
+                wasUnseenOnOpen={wasUnseenOnOpen}
               />
             ))}
           </div>
