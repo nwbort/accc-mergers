@@ -1,6 +1,6 @@
 {
   "total_mergers": 107,
-  "total_waivers": 151,
+  "total_waivers": 152,
   "by_status": {
     "Assessment completed": 77,
     "Under assessment": 30
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 138,
+    "Approved": 139,
     "Not approved": 13
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70017",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
+      "determination": "Approved",
+      "determination_date": "2026-05-19T12:00:00Z",
+      "page_modified_datetime": "2026-05-19T17:12:11+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-60014",
       "merger_name": "Gilead - Ouro",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-18T12:00:00Z",
       "page_modified_datetime": "2026-05-18T17:14:14+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-70014",
-      "merger_name": "Global Infrastructure Management \u2013 TCR",
-      "determination": "Approved",
-      "determination_date": "2026-05-18T12:00:00Z",
-      "page_modified_datetime": "2026-05-18T16:52:57+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

@@ -1,6 +1,39 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-65016",
+      "merger_name": "AtkinsR\u00e9alis - WGA",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-12T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-06-25T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "ATKINSREALIS ENGINEERING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "36 101 300 476"
+        }
+      ],
+      "targets": [
+        {
+          "name": "WGA GROUP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 649 953 980"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/atkinsr%C3%A9alis-wga"
+    },
+    {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
       "status": "Under assessment",

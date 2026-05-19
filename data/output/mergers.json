@@ -10684,7 +10684,7 @@
       "original_notification_datetime": "2026-05-12T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-06-25T12:00:00Z",
-      "page_modified_datetime": "2026-05-12T16:13:41+10:00",
+      "page_modified_datetime": "2026-05-19T16:46:10+10:00",
       "consultation_response_due_date": "2026-05-19T12:00:00Z",
       "acquirers": [
         {
@@ -10702,11 +10702,6 @@
       ],
       "other_parties": [
         {
-          "name": "Novartis Finance Corporation",
-          "identifier_type": null,
-          "identifier": "US EIN 133922240"
-        },
-        {
           "name": "NOVARTIS PHARMACEUTICALS AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "18 004 244 160"
@@ -10715,6 +10710,11 @@
           "name": "EXCELLERGY AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "50 690 676 941"
+        },
+        {
+          "name": "Novartis Finance Corporation",
+          "identifier_type": null,
+          "identifier": "US EIN 133922240"
         },
         {
           "name": "NOVARTIS AUSTRALIA PTY LIMITED",
@@ -10736,7 +10736,7 @@
           "name": "Scientific Research Services"
         }
       ],
-      "merger_description": "Novartis Finance Corporation (**Novartis Finance**), via its wholly-owned subsidiary Elba Merger Sub, Inc., proposes to acquire 100% of the issued and outstanding capital stock of Excellergy, Inc. (**Excellergy**) (the **Acquisition**).\n\nNovartis Finance is a subsidiary of Novartis AG (collectively, **Novartis**). Novartis is a global medicines company headquartered in Basel, Switzerland. Novartis is engaged in the research, development, manufacturing, distribution, commercialisation and sale of medicines, with a focus on the following therapeutic areas: cardiovascular, renal and metabolic; immunology; neuroscience; oncology; and established brands.\n\nIn Australia, Novartis supplies a range of medicines to customers, including treatments for chronic spontaneous urticaria (**CSU**) such as Xolair, and has a further CSU medicine under evaluation by the Therapeutic Goods Administration.\n\nExcellergy is a private biotechnology company based on Palo Alto, California, United States. Excellergy is developing next-generation anti\u2011immunoglobulin E (**anti\u2011IgE**) therapies for the treatment of IgE-driven allergic diseases, where the body produces specific IgE antibodies in response to substances that are generally harmless (allergens), resulting in allergic symptoms and inflammation. This includes Excellergy's lead asset, Exl-111, a half-life extended, high-affinity anti-IgE antibody, which is currently in Phase 1 clinical evaluation.\n\nExcellergy's operations are limited to the United States and.it has not generated any revenue from sales of product in Australia (or anywhere else) to date. Excellergy's connection with Australia arises from the registration of trademarks and the establishment of an Australian subsidiary for the purpose of conducting clinical trials.",
+      "merger_description": "Novartis Finance Corporation (Novartis Finance), via its wholly-owned subsidiary Elba Merger Sub, Inc., proposes to acquire 100% of the issued and outstanding capital stock of Excellergy, Inc. (Excellergy) (the Acquisition).\n\nNovartis Finance is a subsidiary of Novartis AG (collectively, Novartis). Novartis is a global medicines company headquartered in Basel, Switzerland. Novartis is engaged in the research, development, manufacturing, distribution, commercialisation and sale of medicines, with a focus on the following therapeutic areas: cardiovascular, renal and metabolic; immunology; neuroscience; oncology; and established brands.\n\nIn Australia, Novartis supplies a range of medicines to customers, including treatments for chronic spontaneous urticaria (CSU) such as Xolair, and has a further CSU medicine under evaluation by the Therapeutic Goods Administration.\n\nExcellergy is a private biotechnology company based on Palo Alto, California, United States. Excellergy is developing next-generation anti\u2011immunoglobulin E (anti\u2011IgE) therapies for the treatment of IgE-driven allergic diseases, where the body produces specific IgE antibodies in response to substances that are generally harmless (allergens), resulting in allergic symptoms and inflammation. This includes Excellergy's lead asset, Exl-111, a half-life extended, high-affinity anti-IgE antibody, which is currently in Phase 1 clinical evaluation.\n\nExcellergy's operations are limited to the United States and.it has not generated any revenue from sales of product in Australia (or anywhere else) to date. Excellergy's connection with Australia arises from the registration of trademarks and the establishment of an Australian subsidiary for the purpose of conducting clinical trials.",
       "events": [
         {
           "date": "2026-05-12T12:00:00Z",
@@ -10744,7 +10744,7 @@
           "display_title": "Questionnaire - Novartis-Excellergy",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Novartis-Excellergy_1.docx",
           "url_gh": "/mergers/MN-40019/Questionnaire - Novartis-Excellergy_1.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
@@ -40336,6 +40336,181 @@
           "targets": [
             {
               "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/national-dental-care-%E2%80%93-business-assets-comprising-the-cambridge-dental-centre-clinic-perth-wa",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
+      "status": "Assessment completed",
+      "merger_id": "WA-70017",
+      "effective_notification_datetime": "2026-05-04T12:00:00Z",
+      "original_notification_datetime": "2026-05-04T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-05-19T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-05-19T17:12:11+10:00",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CAMDENT SERVICES UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "37 559 915 898"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "NDC SERVICE CO PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 162 958 072"
+        },
+        {
+          "name": "NATIONAL DENTAL CARE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "89 160 442 071"
+        },
+        {
+          "name": "NDC HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "13 654 148 188"
+        },
+        {
+          "name": "NDC FINCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 654 149 818"
+        },
+        {
+          "name": "NDC PROPERTY CO PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "68 163 264 097"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8531",
+          "name": "Dental Services"
+        }
+      ],
+      "merger_description": "NDC HoldCo Pty Ltd (together with its subsidiaries, **National Dental Care**), through its wholly-owned subsidiary, NDC Australia Pty Limited, proposes to acquire from the Camdent Services Unit Trust 100% of the business assets comprising the Cambridge Dental Centre (**Cambridge Dental**).\n\nNational Dental Care is a dental services organisation that operates a network of dental clinics that provide a range of general dentistry services. National Dental Care has dental clinics in all mainland Australian states and territories, including 26 clinics in Perth, WA.\n\nCambridge Dental is a dental clinic located in Perth, WA that provides a range of general dentistry services",
+      "events": [
+        {
+          "date": "2026-05-19T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/National%20Dental%20Care%20%E2%80%93%20business%20assets%20comprising%20the%20Cambridge%20Dental%20Centre%20clinic_%20Perth_%20WA%20%28WA-70017%29%20-%20Notification%20waiver%20determination%20-%2018%20May%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "NDC Australia Pty Limited (National Dental Care) applied for a\nnotification waiver in respect of its proposed acquisition of 100% of\nthe assets comprising the Cambridge Dental Centre from Camdent\nServices Unit Trust, as described in the transaction documents\nprovided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "18 May 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, National Dental Care, is a dental services organisation\nthat operates a network of dental clinics that provide a range of\ngeneral dentistry services. National Dental Care has dental clinics in\nall mainlands Australian states and territories, including 26 clinics in\nWA. National Dental Care is majority owned by funds managed by\nCrescent Capital Partners\nCambridge Dental Centre is a dental clinic located in Perth, WA that\nprovides a range of general dentistry services.\nNational Dental Care and Cambridge Dental Centre both supply\ngeneral dentistry services in Perth, WA."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. the parties\u2019 combined share in the number of clinics\nsupplying general dentistry services in the area surrounding\nCambridge Dental Centre is low\nb. there are alternative suppliers of general dentistry services in\nPerth, WA.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-70017/National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic_ Perth_ WA (WA-70017) - Notification waiver determination - 18 May 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-05-04T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-50007",
+          "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "NDC AUSTRALIA PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "49 162 955 866"
+            }
+          ],
+          "targets": [
+            {
+              "name": "The Trustee for the Comfy Dental Trust",
+              "identifier_type": "ABN",
+              "identifier": "59 865 563 072"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-85013",
+          "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "NDC AUSTRALIA PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "49 162 955 866"
+            }
+          ],
+          "targets": [
+            {
+              "name": "TAN DENTAL PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "18 146 067 594"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-75002",
+          "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "OHCA Property Holdings Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "70 675 807 477"
+            },
+            {
+              "name": "DPG Services Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "38 090 007 999"
+            }
+          ],
+          "targets": [
+            {
+              "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
               "identifier_type": null,
               "identifier": ""
             }
