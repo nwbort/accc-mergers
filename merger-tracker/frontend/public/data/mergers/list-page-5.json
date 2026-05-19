@@ -1190,6 +1190,50 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/win-television-network-nbn-enterprises-television-holdings-darwin"
     },
     {
+      "merger_id": "WA-30011",
+      "merger_name": "AXDI - minority interest in La Trobe Financial",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-24T12:00:00Z",
+      "determination_publication_date": "2026-05-19T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "AXDI SPV 5 Ltd",
+          "identifier_type": null,
+          "identifier": "ADGM  36279"
+        }
+      ],
+      "targets": [
+        {
+          "name": "AMC AUSCO 1 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "49 658 085 771"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "BCP AMC Aus LP",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Axight Capital Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/axdi-minority-interest-in-la-trobe-financial"
+    },
+    {
       "merger_id": "WA-35015",
       "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
       "status": "Assessment completed",
@@ -2754,49 +2798,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tony-white-group-sharton-motors-dealerships-in-maitland-port-stephens-and-cardiff"
-    },
-    {
-      "merger_id": "MN-25021",
-      "merger_name": "OpenAI - Tomoro",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-12T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-06-25T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "OpenAI Group PBC",
-          "identifier_type": null,
-          "identifier": "Delaware file number  10381551"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Tomoro AI Ltd",
-          "identifier_type": null,
-          "identifier": "UK Companies House registration number  15208678"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "OpenAI Foundation",
-          "identifier_type": null,
-          "identifier": "Delaware file number  5902936"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "5921",
-          "name": "Data Processing and Web Hosting Services"
-        },
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/openai-tomoro"
     }
   ],
   "page": 5,

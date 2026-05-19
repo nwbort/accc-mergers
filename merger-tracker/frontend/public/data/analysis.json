@@ -1846,6 +1846,14 @@
       },
       {
         "application_date": "2026-04-24",
+        "business_days": 17,
+        "calendar_days": 25,
+        "merger_name": "AXDI - minority interest in La Trobe Financial",
+        "merger_id": "WA-30011",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-04-24",
         "business_days": 11,
         "calendar_days": 17,
         "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
@@ -1975,17 +1983,17 @@
     ],
     "stats": {
       "average": 12.0,
-      "median": 12,
+      "median": 12.0,
       "min": 2,
       "max": 25,
-      "count": 153
+      "count": 154
     },
     "calendar_stats": {
       "average": 17.9,
-      "median": 17,
+      "median": 17.0,
       "min": 2,
       "max": 39,
-      "count": 153
+      "count": 154
     }
   },
   "monthly_volume": {
@@ -2019,7 +2027,7 @@
       30,
       30,
       48,
-      43,
+      44,
       2
     ]
   }

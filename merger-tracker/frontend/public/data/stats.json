@@ -1,6 +1,6 @@
 {
   "total_mergers": 107,
-  "total_waivers": 153,
+  "total_waivers": 154,
   "by_status": {
     "Assessment completed": 77,
     "Under assessment": 30
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 140,
+    "Approved": 141,
     "Not approved": 13
   },
   "phase_duration": {
@@ -40,7 +40,7 @@
     },
     {
       "name": "Financial Asset Investing",
-      "count": 31
+      "count": 32
     },
     {
       "name": "Software Publishing",
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30011",
+      "merger_name": "AXDI - minority interest in La Trobe Financial",
+      "determination": "Approved",
+      "determination_date": "2026-05-19T12:00:00Z",
+      "page_modified_datetime": "2026-05-19T17:28:48+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-65015",
       "merger_name": "Hillhouse - Barwon Investment Partners",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-18T12:00:00Z",
       "page_modified_datetime": "2026-05-18T17:38:26+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-25023",
-      "merger_name": "EPL - Indovida India",
-      "determination": "Approved",
-      "determination_date": "2026-05-18T12:00:00Z",
-      "page_modified_datetime": "2026-05-18T17:34:25+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
