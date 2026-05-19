@@ -837,6 +837,50 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-leasehold-interest-in-shopping-centre-on-capricorn-highway-emerald-qld"
     },
     {
+      "merger_id": "WA-65015",
+      "merger_name": "Hillhouse - Barwon Investment Partners",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-04-21T12:00:00Z",
+      "determination_publication_date": "2026-05-19T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "BARWON BIDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "23 695 060 907"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BARWON INVESTMENT PARTNERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "19 116 012 009"
+        },
+        {
+          "name": "",
+          "identifier_type": "ACN",
+          "identifier": "620 598 745"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Hillhouse Investment Management, Ltd",
+          "identifier_type": null,
+          "identifier": "CR No.  147297"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hillhouse-barwon-investment-partners"
+    },
+    {
       "merger_id": "MN-60014",
       "merger_name": "Gilead - Ouro",
       "status": "Assessment completed",
@@ -2753,68 +2797,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/openai-tomoro"
-    },
-    {
-      "merger_id": "MN-40019",
-      "merger_name": "Novartis / Excellergy",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-12T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-06-25T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Elba Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware company number 10547479"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Excellergy Inc.",
-          "identifier_type": null,
-          "identifier": "EIN 854115816"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "NOVARTIS PHARMACEUTICALS AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "18 004 244 160"
-        },
-        {
-          "name": "EXCELLERGY AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "50 690 676 941"
-        },
-        {
-          "name": "Novartis Finance Corporation",
-          "identifier_type": null,
-          "identifier": "US EIN 133922240"
-        },
-        {
-          "name": "NOVARTIS AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 004 371 224"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "3720",
-          "name": "Pharmaceutical and Toiletry Goods Wholesaling"
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        },
-        {
-          "code": "6910",
-          "name": "Scientific Research Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/novartis-excellergy"
     }
   ],
   "page": 5,

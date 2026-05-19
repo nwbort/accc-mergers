@@ -1,6 +1,6 @@
 {
   "total_mergers": 107,
-  "total_waivers": 152,
+  "total_waivers": 153,
   "by_status": {
     "Assessment completed": 77,
     "Under assessment": 30
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 139,
+    "Approved": 140,
     "Not approved": 13
   },
   "phase_duration": {
@@ -48,7 +48,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 20
+      "count": 21
     },
     {
       "name": "Non-Residential Property Operators",
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-65015",
+      "merger_name": "Hillhouse - Barwon Investment Partners",
+      "determination": "Approved",
+      "determination_date": "2026-05-19T12:00:00Z",
+      "page_modified_datetime": "2026-05-19T17:19:45+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-70017",
       "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-50008",
-      "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
-      "determination": "Approved",
-      "determination_date": "2026-05-18T12:00:00Z",
-      "page_modified_datetime": "2026-05-18T17:14:14+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

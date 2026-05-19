@@ -1,6 +1,68 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-40019",
+      "merger_name": "Novartis / Excellergy",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-12T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-06-25T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Elba Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware company number 10547479"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Excellergy Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 854115816"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "NOVARTIS PHARMACEUTICALS AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "18 004 244 160"
+        },
+        {
+          "name": "EXCELLERGY AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "50 690 676 941"
+        },
+        {
+          "name": "Novartis Finance Corporation",
+          "identifier_type": null,
+          "identifier": "US EIN 133922240"
+        },
+        {
+          "name": "NOVARTIS AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "81 004 371 224"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3720",
+          "name": "Pharmaceutical and Toiletry Goods Wholesaling"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6910",
+          "name": "Scientific Research Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/novartis-excellergy"
+    },
+    {
       "merger_id": "MN-65016",
       "merger_name": "AtkinsR\u00e9alis - WGA",
       "status": "Under assessment",
