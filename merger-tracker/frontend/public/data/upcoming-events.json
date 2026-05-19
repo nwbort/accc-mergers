@@ -111,6 +111,16 @@
       "effective_notification_datetime": "2026-03-03T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-05-26T12:00:00Z",
+      "merger_id": "MN-70018",
+      "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-05-18T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-06-02T12:00:00Z",
@@ -369,8 +379,18 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-05-15T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-07-01T12:00:00Z",
+      "merger_id": "MN-70018",
+      "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-05-18T12:00:00Z"
     }
   ],
-  "count": 37,
+  "count": 39,
   "days_ahead": 60
 }

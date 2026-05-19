@@ -1,9 +1,9 @@
 {
-  "total_mergers": 104,
+  "total_mergers": 105,
   "total_waivers": 151,
   "by_status": {
     "Assessment completed": 76,
-    "Under assessment": 28
+    "Under assessment": 29
   },
   "by_determination": {
     "Approved": 76,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-70018",
+      "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-18T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-50015",
       "merger_name": "Mastercard - BVNK",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-12T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-05017",
-      "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-12T12:00:00Z",

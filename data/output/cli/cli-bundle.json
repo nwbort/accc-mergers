@@ -6799,7 +6799,7 @@
       "original_notification_datetime": "2026-05-06T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-06-19T12:00:00Z",
-      "page_modified_datetime": "2026-05-11T15:50:13+10:00",
+      "page_modified_datetime": "2026-05-19T09:53:11+10:00",
       "consultation_response_due_date": "2026-05-18T12:00:00Z",
       "acquirers": [
         {
@@ -6817,6 +6817,11 @@
       ],
       "other_parties": [
         {
+          "name": "Bain Capital Investors, LLC",
+          "identifier_type": null,
+          "identifier": "IRS EIN  812878769"
+        },
+        {
           "name": "3M Company",
           "identifier_type": null,
           "identifier": "IRS EIN  41041777"
@@ -6825,11 +6830,6 @@
           "name": "Madison Industrial Solutions Corporation",
           "identifier_type": null,
           "identifier": "State of Delaware, Division of Corporations  5633530"
-        },
-        {
-          "name": "Bain Capital Investors, LLC",
-          "identifier_type": null,
-          "identifier": "IRS EIN  812878769"
         }
       ],
       "anzsic_codes": [
@@ -6846,7 +6846,7 @@
           "name": "Fire Protection and Other Emergency Services"
         }
       ],
-      "merger_description": "3M Company (**3M**) and funds managed and/or advised by Bain Capital Investors, LLC (**Bain Capital**) are proposing to form a new limited partnership (the **JV**), which will hold 3M’s supply of self-contained breathing apparatus (**SCBA**) and related products (the **SCBA Business**) and Madison Safety & Flow Holdings LLC (**Madison Fire & Rescue**). 3M will hold 50.1% and Bain Capital will indirectly hold 49.9% of the interests in the JV (together, the **Acquisition**). The Acquisition comprises (i) the formation of the JV as described above; (ii) the sale or contribution of 3M’s SCBA Business to the JV; and (iii) the JV’s acquisition of Madison Fire & Rescue.\n\n3M is a diversified technology company based in the US.\n\nBain Capital is a private equity firm that invests, through its family of funds, in companies across a number of industries.\n\nMadison Fire & Rescue manufactures equipment for first responder applications. Madison Fire & Rescue offers products in fire suppression and rescue technology including products offered under the Holmatro, Amkus, Task Force Tips, Fire Fighting Systems, and Waterax brands.",
+      "merger_description": "3M Company (**3M**) and funds managed and/or advised by Bain Capital Investors, LLC (**Bain Capital**) are proposing to form a new limited partnership (the **JV**), which will hold 3M’s supply of self-contained breathing apparatus (SCBA) and related products (the **SCBA Business**) and Madison Safety & Flow Holdings LLC (**Madison Fire & Rescue**). 3M will hold 50.1% and Bain Capital will indirectly hold 49.9% of the interests in the JV (together, the **Acquisition**). The Acquisition comprises (i) the formation of the JV as described above; (ii) the sale or contribution of 3M’s SCBA Business to the JV; and (iii) the JV’s acquisition of Madison Fire & Rescue.\n\n3M is a diversified technology company based in the US.\n\nBain Capital is a private equity firm that invests, through its family of funds, in companies across a number of industries.\n\nMadison Fire & Rescue manufactures equipment for first responder applications. Madison Fire & Rescue offers products in fire suppression and rescue technology including products offered under the Holmatro, Amkus, Task Force Tips, Fire Fighting Systems, and Waterax brands.",
       "events": [
         {
           "date": "2026-05-11T12:00:00Z",
@@ -6854,7 +6854,7 @@
           "display_title": "Questionnaire - 3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/or%20advised%20by%20Bain%20Capital%20-%20Madison%20Fire%20%26%20Rescue.docx",
           "url_gh": "/mergers/MN-15015/or advised by Bain Capital - Madison Fire and Rescue.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
@@ -15826,6 +15826,174 @@
               "name": "Biomin Phytogenics GmbH (Germany)",
               "identifier_type": null,
               "identifier": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/restaurant-brands-and-yum-brands-%E2%80%93-taco-bell-restaurants",
+      "merger_name": "Restaurant Brands and Yum! Brands – Taco Bell restaurants",
+      "status": "Under assessment",
+      "merger_id": "MN-70018",
+      "effective_notification_datetime": "2026-05-18T12:00:00Z",
+      "original_notification_datetime": "2026-05-18T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-07-01T12:00:00Z",
+      "page_modified_datetime": "2026-05-19T09:54:48+10:00",
+      "consultation_response_due_date": "2026-05-26T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Taco Ventures Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "697 591 692"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Collins Foods Subsidiary Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "94 616 663 793"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Restaurant Brands Australia Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "53 611 058 701"
+        },
+        {
+          "name": "Collins Restaurants Management Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "24 093 912 979"
+        },
+        {
+          "name": "QSR Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "63 089 163 682"
+        },
+        {
+          "name": "Gardiner Lane Capital, LLC",
+          "identifier_type": null,
+          "identifier": "USDE  3308412"
+        },
+        {
+          "name": "Collins Foods Limited",
+          "identifier_type": "ABN",
+          "identifier": "13 151 420 781"
+        },
+        {
+          "name": "Yum! Brands, Inc.",
+          "identifier_type": null,
+          "identifier": "USNC  0428278"
+        },
+        {
+          "name": "Restaurant Brands New Zealand Limited",
+          "identifier_type": null,
+          "identifier": "NZBN  9429038138775"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4512",
+          "name": "Takeaway Food Services"
+        }
+      ],
+      "merger_description": "Restaurant Brands New Zealand Limited (**Restaurant Brands**) and Yum! Brands, Inc. (**Yum**) propose to acquire, via a joint venture (Taco Ventures Pty Ltd (**JV Co**)):\n\n* 9 Taco Bell restaurants from Restaurant Brands’ subsidiary QSR Pty Ltd, and\n* 20 Taco Bell restaurants from Collins Foods Subsidiary Pty Ltd, a subsidiary of Collins Foods Limited (**Collins**)\n\nRestaurant Brands will control JV Co and hold a 60% interest, while Gardiner Lane Capital, LLC, a wholly owned subsidiary of Yum, will acquire a 40% interest.\n\nYum is a NYSE-listed, US-based restaurant company that owns, operates and franchises various fast-food brands and associated restaurants, including KFC, Pizza Hut and Taco Bell. Yum holds equity in and operates around 70 KFC restaurants in Australia but does not operate or hold equity in any Taco Bell or Pizza Hut restaurants in Australia.\n\nRestaurant Brands is a Yum corporate franchisee. In Australia, it operates 9 Taco Bell restaurants, all of which are in NSW, and 74 KFC restaurants.\n\nCollins is an ASX-listed Australian fast-food corporation that owns and operates 294 KFC restaurants and 20 Taco Bell restaurants in Australia, under franchise arrangements with Yum.",
+      "events": [
+        {
+          "date": "2026-05-19T12:00:00Z",
+          "title": "Restaurant Brands and Yum Brands - Taco Bell - Questionnaire",
+          "display_title": "Restaurant Brands and Yum Brands - Taco Bell - Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Yum%20-%20Taco%20Bell%3A%20Questionnaire%20-%20May%202026.docx",
+          "url_gh": "/mergers/MN-70018/Yum - Taco Bell - Questionnaire - May 2026.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-18T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-95009",
+          "merger_name": "McDonald’s Australia – McDonald’s Restaurants in Bankstown and Yagoona, NSW",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "MCDONALD'S AUSTRALIA LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "43 008 496 928"
+            }
+          ],
+          "targets": [
+            {
+              "name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST",
+              "identifier_type": "ACN",
+              "identifier": "601 504 590"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-45002",
+          "merger_name": "eBay / Depop",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "eBay Inc.",
+              "identifier_type": null,
+              "identifier": "I.R.S. Employer Identification No. – United States  770430924"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Etsy, Inc.",
+              "identifier_type": null,
+              "identifier": ""
+            },
+            {
+              "name": "Depop Limited",
+              "identifier_type": null,
+              "identifier": "UK Company Registration Number  08316342"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-10013",
+          "merger_name": "Accenture - Ziff Davis' connectivity business",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Accenture Inc.",
+              "identifier_type": null,
+              "identifier": "State File Number  3387477"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Ookla, LLC",
+              "identifier_type": null,
+              "identifier": "Unified Business ID  602 422 103"
+            },
+            {
+              "name": "Ekahau OY",
+              "identifier_type": null,
+              "identifier": "Business ID  16108964"
             }
           ]
         }
@@ -50140,6 +50308,26 @@
       ],
       "questions_count": 3
     },
+    "MN-70018": {
+      "deadline": "26 May 2026",
+      "deadline_iso": "2026-05-26",
+      "file_name": "Yum - Taco Bell - Questionnaire - May 2026.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition, including if Restaurant Brands and/or Yum (including their KFC and Pizza Hut restaurants) compete closely with Taco Bell and there are not many alternatives, or if one is a major supplier to competitors of the other."
+        },
+        {
+          "number": 2,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        },
+        {
+          "number": 3,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with Restaurant Brands, Yum or Taco Bell restaurants."
+        }
+      ],
+      "questions_count": 3
+    },
     "MN-75002": {
       "deadline": "28 January 2026",
       "deadline_iso": "2026-01-28",
@@ -52220,11 +52408,11 @@
     }
   },
   "stats": {
-    "total_mergers": 104,
+    "total_mergers": 105,
     "total_waivers": 151,
     "by_status": {
       "Assessment completed": 76,
-      "Under assessment": 28
+      "Under assessment": 29
     },
     "by_determination": {
       "Approved": 76,
@@ -52298,6 +52486,14 @@
     ],
     "recent_mergers": [
       {
+        "merger_id": "MN-70018",
+        "merger_name": "Restaurant Brands and Yum! Brands – Taco Bell restaurants",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-05-18T12:00:00Z",
+        "is_waiver": false
+      },
+      {
         "merger_id": "MN-50015",
         "merger_name": "Mastercard - BVNK",
         "status": "Under assessment",
@@ -52324,14 +52520,6 @@
       {
         "merger_id": "MN-05013",
         "merger_name": "Zoetis – Neogen Genomics Business",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-05-12T12:00:00Z",
-        "is_waiver": false
-      },
-      {
-        "merger_id": "MN-05017",
-        "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-05-12T12:00:00Z",
@@ -52846,6 +53034,11 @@
       {
         "code": "9412",
         "name": "Automotive Body, Paint and Interior Repair",
+        "merger_count": 2
+      },
+      {
+        "code": "4512",
+        "name": "Takeaway Food Services",
         "merger_count": 2
       },
       {
@@ -53506,11 +53699,6 @@
       {
         "code": "5610",
         "name": "Radio Broadcasting",
-        "merger_count": 1
-      },
-      {
-        "code": "4512",
-        "name": "Takeaway Food Services",
         "merger_count": 1
       },
       {
