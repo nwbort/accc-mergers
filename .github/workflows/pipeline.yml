@@ -224,6 +224,7 @@ jobs:
       # --- Single commit ---
 
       - name: Commit all changes
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -279,9 +280,67 @@ jobs:
                 git reset --hard HEAD^
               else
                 git push
+                # Flag downstream cli-sqlite publish if cli-bundle.json is in
+                # the pushed commit. Pushes from GITHUB_TOKEN don't fire other
+                # workflows, so we publish inline rather than relying on a
+                # paths-filtered push trigger on publish-cli-sqlite.yml.
+                if git diff HEAD^..HEAD --name-only \
+                    | grep -qx "data/output/cli/cli-bundle.json"; then
+                  echo "publish_cli=true" >> "$GITHUB_OUTPUT"
+                fi
               fi
             fi
           fi
+
+      # --- Publish cli.sqlite to the cli-dist orphan branch ---
+      # Inlined here (rather than a separate workflow triggered by push to
+      # cli-bundle.json) because pushes from the default GITHUB_TOKEN do not
+      # fire downstream workflow runs.
+
+      - name: Build CLI SQLite
+        if: steps.commit.outputs.publish_cli == 'true'
+        run: |
+          mkdir -p "${RUNNER_TEMP}/cli-dist"
+          python scripts/build_cli_sqlite.py \
+            --bundle data/output/cli/cli-bundle.json \
+            --output-dir "${RUNNER_TEMP}/cli-dist"
+          echo "--- Manifest ---"
+          cat "${RUNNER_TEMP}/cli-dist/cli-manifest.json"
+
+      - name: Force-push cli.sqlite to cli-dist branch
+        if: steps.commit.outputs.publish_cli == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          work="${RUNNER_TEMP}/cli-dist-publish"
+          mkdir -p "$work"
+          cp "${RUNNER_TEMP}/cli-dist/cli.sqlite" "$work/cli.sqlite"
+          cp "${RUNNER_TEMP}/cli-dist/cli-manifest.json" "$work/cli-manifest.json"
+
+          cd "$work"
+          git init -q -b cli-dist
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          version=$(python -c 'import json; print(json.load(open("cli-manifest.json"))["version"])')
+
+          git add cli.sqlite cli-manifest.json
+          git commit -q -m "Publish cli.sqlite (data version ${version})"
+
+          remote="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          for attempt in 1 2 3 4; do
+            if git push --force "$remote" HEAD:cli-dist; then
+              echo "Push succeeded on attempt ${attempt}"
+              break
+            fi
+            if [ "$attempt" -eq 4 ]; then
+              echo "Push failed after 4 attempts" >&2
+              exit 1
+            fi
+            sleep $((2 ** attempt))
+          done
 
       # --- Open GitHub issues for auto-fixed questionnaire dates ---
       # The extraction script writes missing_questionnaire_dates.json when it

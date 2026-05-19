@@ -1,20 +1,21 @@
 name: Publish CLI SQLite
 
-# Builds cli.sqlite + cli-manifest.json from the latest cli-bundle.json on
-# main and force-pushes them to the orphan `cli-dist` branch. The
-# accc-mergers-cli reads those two files directly from raw.githubusercontent.com:
+# Manual republish of cli.sqlite + cli-manifest.json from the latest
+# cli-bundle.json on main, force-pushed to the orphan `cli-dist` branch.
+# The accc-mergers-cli reads those two files directly from
+# raw.githubusercontent.com:
 #
 #   https://raw.githubusercontent.com/nwbort/accc-mergers/cli-dist/cli-manifest.json
 #   https://raw.githubusercontent.com/nwbort/accc-mergers/cli-dist/cli.sqlite
 #
 # The SQLite binary lives only on the orphan branch so it doesn't bloat the
 # main history. Each run replaces the branch with a fresh single commit.
+#
+# Routine publishes happen inline at the end of pipeline.yml whenever a
+# pipeline run pushes a change to cli-bundle.json. This workflow exists for
+# manual republishes (e.g. after a schema change in build_cli_sqlite.py).
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - data/output/cli/cli-bundle.json
   workflow_dispatch:
 
 permissions:
