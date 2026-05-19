@@ -8974,7 +8974,7 @@
     "original_notification_datetime": "2026-05-12T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-06-25T12:00:00Z",
-    "page_modified_datetime": "2026-05-12T14:58:54+10:00",
+    "page_modified_datetime": "2026-05-20T07:51:16+10:00",
     "consultation_response_due_date": "2026-05-19T12:00:00Z",
     "acquirers": [
       {
@@ -8992,19 +8992,24 @@
     ],
     "other_parties": [
       {
+        "name": "Axcentium Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "48 638 953 572"
+      },
+      {
         "name": "PSD Plant & Equipment Pty Ltd",
         "identifier_type": "ABN",
         "identifier": "97 144 778 861"
       },
       {
+        "name": "PSD Energy Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "68 117 966 926"
+      },
+      {
         "name": "Intellect Systems Pty Ltd",
         "identifier_type": "ABN",
         "identifier": "11 115 885 348"
-      },
-      {
-        "name": "Axcentium Pty Ltd",
-        "identifier_type": "ABN",
-        "identifier": "48 638 953 572"
       },
       {
         "name": "Consolidated Power Projects Australia Pty Ltd",
@@ -9015,11 +9020,6 @@
         "name": "Nacap Pty Ltd",
         "identifier_type": "ABN",
         "identifier": "33 006 306 994"
-      },
-      {
-        "name": "PSD Energy Pty Ltd",
-        "identifier_type": "ABN",
-        "identifier": "68 117 966 926"
       }
     ],
     "anzsic_codes": [
@@ -9044,7 +9044,7 @@
         "display_title": "Questionnaire - Quanta - PSD",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Quanta%20-%20PSD.docx",
         "url_gh": "/mergers/MN-70012/Questionnaire - Quanta - PSD.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-05-12T12:00:00Z",
