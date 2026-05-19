@@ -2,11 +2,11 @@
   "total_mergers": 105,
   "total_waivers": 151,
   "by_status": {
-    "Assessment completed": 76,
-    "Under assessment": 29
+    "Assessment completed": 77,
+    "Under assessment": 28
   },
   "by_determination": {
-    "Approved": 76,
+    "Approved": 77,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 13
   },
   "phase_duration": {
-    "average_days": 27.57894736842105,
+    "average_days": 27.558441558441558,
     "median_days": 26,
-    "average_business_days": 18.19736842105263,
+    "average_business_days": 18.194805194805195,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 18,
-        "percentage": 23.7
+        "percentage": 23.4
       },
       "day20": {
-        "count": 60,
-        "percentage": 78.9
+        "count": 61,
+        "percentage": 79.2
       },
       "day30": {
-        "count": 75,
+        "count": 76,
         "percentage": 98.7
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-60014",
+      "merger_name": "Gilead - Ouro",
+      "determination": "Approved",
+      "determination_date": "2026-05-18T12:00:00Z",
+      "page_modified_datetime": "2026-05-19T10:18:20+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-05009",
       "merger_name": "Genea - Embrace Fertility",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-90014",
-      "merger_name": "Constellation Software - DerbySoft Holdings",
-      "determination": "Approved",
-      "determination_date": "2026-05-15T12:00:00Z",
-      "page_modified_datetime": "2026-05-15T17:49:17+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

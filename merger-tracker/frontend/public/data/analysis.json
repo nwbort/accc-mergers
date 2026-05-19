@@ -704,6 +704,15 @@
         "in_progress": false
       },
       {
+        "notification_date": "2026-04-22",
+        "business_days": 18,
+        "calendar_days": 26,
+        "merger_name": "Gilead - Ouro",
+        "merger_id": "MN-60014",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
         "notification_date": "2026-04-24",
         "business_days": 16,
         "calendar_days": 24,
@@ -724,17 +733,17 @@
     ],
     "stats": {
       "average": 18.2,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 36,
-      "count": 76
+      "count": 77
     },
     "calendar_stats": {
       "average": 27.6,
-      "median": 25.5,
+      "median": 26,
       "min": 21,
       "max": 55,
-      "count": 76
+      "count": 77
     }
   },
   "waiver_duration": {
