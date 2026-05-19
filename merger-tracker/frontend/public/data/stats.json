@@ -1,9 +1,9 @@
 {
-  "total_mergers": 106,
+  "total_mergers": 107,
   "total_waivers": 151,
   "by_status": {
     "Assessment completed": 77,
-    "Under assessment": 29
+    "Under assessment": 30
   },
   "by_determination": {
     "Approved": 77,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-25018",
+      "merger_name": "Primary Wave - Kobalt",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-18T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-70018",
       "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-14T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-90012",
-      "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-13T12:00:00Z",
       "is_waiver": false
     }
   ],

@@ -8300,6 +8300,164 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/primary-wave-kobalt",
+      "merger_name": "Primary Wave - Kobalt",
+      "status": "Under assessment",
+      "merger_id": "MN-25018",
+      "effective_notification_datetime": "2026-05-18T12:00:00Z",
+      "original_notification_datetime": "2026-05-18T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-07-01T12:00:00Z",
+      "page_modified_datetime": "2026-05-19T12:29:44+10:00",
+      "consultation_response_due_date": "2026-05-26T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Primary Wave KB Holdings, LP",
+          "identifier_type": null,
+          "identifier": "Registration number 136215"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Kobalt Music Group Topco L.P.",
+          "identifier_type": null,
+          "identifier": "Registration number 393466"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "KOBALT MUSIC SERVICES AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "12 144 997 142"
+        },
+        {
+          "name": "KOBALT MUSIC PUBLISHING AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "63 144 996 609"
+        },
+        {
+          "name": "PWMP Ventures, LLC",
+          "identifier_type": null,
+          "identifier": "Company number 5324467"
+        },
+        {
+          "name": "Brookfield Corporation",
+          "identifier_type": null,
+          "identifier": "Company number 1644037"
+        },
+        {
+          "name": "Primary Wave Music IP Fund 4, LP",
+          "identifier_type": null,
+          "identifier": "Company number 7667918"
+        },
+        {
+          "name": "Primary Wave Music IP Fund 4 GP, LLC",
+          "identifier_type": null,
+          "identifier": "Company number 7667915"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5521",
+          "name": "Music Publishing"
+        }
+      ],
+      "merger_description": "Primary Wave KB Holdings, LP (together with its group companies, **Primary Wave**), intends to acquire substantially all of the interest units of Kobalt Music Group Topco L.P. (together with its subsidiaries, **Kobalt**) from Francisco Partners Management, L.P. (together with its affiliated funds, **Francisco Partners**) (the **Acquisition**).  \n\nPrimary Wave is a US-based music acquisition, publishing and estate management company engaged in acquiring, managing and commercialising music rights and related intellectual property.  \n\nKobalt is a digital royalty collection and music publishing administration company, servicing artists and other constituents in the music industry. Kobalt’s main business activities relate to the provision of music publishing administration services, to third-party music rights holders.",
+      "events": [
+        {
+          "date": "2026-05-19T12:00:00Z",
+          "title": "Questionnaire",
+          "display_title": "Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Kobalt%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-25018/Kobalt - Questionnaire.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-18T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-70018",
+          "merger_name": "Restaurant Brands and Yum! Brands – Taco Bell restaurants",
+          "status": "Under assessment",
+          "accc_determination": null,
+          "acquirers": [
+            {
+              "name": "Taco Ventures Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "697 591 692"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Collins Foods Subsidiary Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "94 616 663 793"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-55016",
+          "merger_name": "Zurich - ClearView",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "11 008 423 372"
+            }
+          ],
+          "targets": [
+            {
+              "name": "CLEARVIEW WEALTH LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "83 106 248 248"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-85003",
+          "merger_name": "North American Construction Group – Iron Mine Contracting and Iron Hire",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "NACG WA Acquisition Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "693 678 296"
+            }
+          ],
+          "targets": [
+            {
+              "name": "DCL CORP PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "60 633 008 992"
+            },
+            {
+              "name": "IRON HIRE PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "43 641 807 589"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/openai-tomoro",
       "merger_name": "OpenAI - Tomoro",
       "status": "Under assessment",
@@ -49070,6 +49228,30 @@
       ],
       "questions_count": 3
     },
+    "MN-25018": {
+      "deadline": "26 May 2026",
+      "deadline_iso": "2026-05-26",
+      "file_name": "Kobalt - Questionnaire.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Provide a brief description of your interest in the matter, including any commercial relationships your business or organisation has with Primary Wave and/or Kobalt."
+        },
+        {
+          "number": 2,
+          "text": "Outline any concerns regarding the competitive impact of the Acquisition on the supply of music publishing services to artists and songwriters or the distribution of copyright musical works in Australia. Are Primary Wave and Kobalt close competitors for either of these services, and what alternatives are available?"
+        },
+        {
+          "number": 3,
+          "text": "Outline any concerns regarding whether the Acquisition will provide Primary Wave with the ability and/or incentive to restrict a competitor’s access to music publishing and royalty collection services supplied by Kobalt’s royalty collection business ‘amra’."
+        },
+        {
+          "number": 4,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        }
+      ],
+      "questions_count": 4
+    },
     "MN-25021": {
       "deadline": null,
       "deadline_iso": null,
@@ -52603,11 +52785,11 @@
     }
   },
   "stats": {
-    "total_mergers": 106,
+    "total_mergers": 107,
     "total_waivers": 151,
     "by_status": {
       "Assessment completed": 77,
-      "Under assessment": 29
+      "Under assessment": 30
     },
     "by_determination": {
       "Approved": 77,
@@ -52681,6 +52863,14 @@
     ],
     "recent_mergers": [
       {
+        "merger_id": "MN-25018",
+        "merger_name": "Primary Wave - Kobalt",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-05-18T12:00:00Z",
+        "is_waiver": false
+      },
+      {
         "merger_id": "MN-70018",
         "merger_name": "Restaurant Brands and Yum! Brands – Taco Bell restaurants",
         "status": "Under assessment",
@@ -52710,14 +52900,6 @@
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-05-14T12:00:00Z",
-        "is_waiver": false
-      },
-      {
-        "merger_id": "MN-90012",
-        "merger_name": "PT Asian Bulk Logistics – Engage Marine",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-05-13T12:00:00Z",
         "is_waiver": false
       }
     ],
@@ -53464,6 +53646,11 @@
       {
         "code": "9139",
         "name": "Amusement and Other Recreational Activities n.e.c.",
+        "merger_count": 1
+      },
+      {
+        "code": "5521",
+        "name": "Music Publishing",
         "merger_count": 1
       },
       {
