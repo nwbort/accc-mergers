@@ -1,9 +1,9 @@
 {
-  "total_mergers": 107,
+  "total_mergers": 108,
   "total_waivers": 154,
   "by_status": {
     "Assessment completed": 77,
-    "Under assessment": 30
+    "Under assessment": 31
   },
   "by_determination": {
     "Approved": 77,
@@ -35,11 +35,11 @@
   },
   "top_industries": [
     {
-      "name": "Computer System Design and Related Services",
-      "count": 32
+      "name": "Financial Asset Investing",
+      "count": 33
     },
     {
-      "name": "Financial Asset Investing",
+      "name": "Computer System Design and Related Services",
       "count": 32
     },
     {
@@ -48,7 +48,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 21
+      "count": 22
     },
     {
       "name": "Non-Residential Property Operators",
@@ -76,6 +76,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-95007",
+      "merger_name": "Magellan Financial Group - Barrenjoey",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-19T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-25018",
       "merger_name": "Primary Wave - Kobalt",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-15T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-90007",
-      "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-14T12:00:00Z",
       "is_waiver": false
     }
   ],

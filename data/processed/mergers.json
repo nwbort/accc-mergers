@@ -1160,8 +1160,8 @@
     "effective_notification_datetime": "2025-11-27T12:00:00Z",
     "original_notification_datetime": "2025-11-27T12:00:00Z",
     "stage": "Phase 2 - detailed assessment",
-    "end_of_determination_period": "2026-06-22T12:00:00Z",
-    "page_modified_datetime": "2026-05-13T15:14:30+10:00",
+    "end_of_determination_period": "2026-06-26T12:00:00Z",
+    "page_modified_datetime": "2026-05-20T09:09:07+10:00",
     "consultation_response_due_date": "2026-02-13T12:00:00Z",
     "acquirers": [
       {
@@ -1213,7 +1213,7 @@
         "display_title": "Summary of Notice of Competition Concerns",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles_Kalgoorlie%20-%20Final%20-%20Summary%20of%20Notice%20of%20Competition%20Concerns%20-%20March%202026_0.pdf",
         "url_gh": "/mergers/MN-01068/Coles_Kalgoorlie - Final - Summary of Notice of Competition Concerns - March 2026_0.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-01-29T12:00:00Z",
@@ -1221,12 +1221,33 @@
         "display_title": "ACCC decided notification is subject to Phase 2 review",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Kalgoorlie%20-%20Decision%20to%20Proceed%20to%20Phase%202%20review%20-%2029%20January%202026_1.pdf",
         "url_gh": "/mergers/MN-01068/Kalgoorlie - Decision to Proceed to Phase 2 review - 29 January 2026_1.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-05-12T12:00:00Z",
         "title": "Timeline extended by 6 business days \u2013 following request for further information",
         "display_title": "Timeline extended by 6 business days \u2013 following request for further information"
+      },
+      {
+        "date": "2026-03-06T12:00:00Z",
+        "title": "Summary of Notice of Competition Concerns",
+        "display_title": "Summary of Notice of Competition Concerns",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles_Kalgoorlie%20-%20Final%20-%20Summary%20of%20Notice%20of%20Competition%20Concerns%20-%20March%202026_3.pdf",
+        "url_gh": "/mergers/MN-01068/Coles_Kalgoorlie - Final - Summary of Notice of Competition Concerns - March 2026_3.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-01-29T12:00:00Z",
+        "title": "ACCC decided notification is subject to Phase 2 review",
+        "display_title": "ACCC decided notification is subject to Phase 2 review",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Kalgoorlie%20-%20Decision%20to%20Proceed%20to%20Phase%202%20review%20-%2029%20January%202026_3.pdf",
+        "url_gh": "/mergers/MN-01068/Kalgoorlie - Decision to Proceed to Phase 2 review - 29 January 2026_3.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-05-18T12:00:00Z",
+        "title": "Timeline extended by 4 business days \u2013 following request for further information",
+        "display_title": "Timeline extended by 4 business days \u2013 following request for further information"
       }
     ],
     "is_waiver": false
@@ -11996,6 +12017,60 @@
         "status": "live",
         "is_determination_event": true,
         "phase": "Phase 1"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/magellan-financial-group-barrenjoey",
+    "merger_name": "Magellan Financial Group - Barrenjoey",
+    "status": "Under assessment",
+    "merger_id": "MN-95007",
+    "effective_notification_datetime": "2026-05-19T12:00:00Z",
+    "original_notification_datetime": "2026-05-19T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-07-02T12:00:00Z",
+    "page_modified_datetime": "2026-05-20T09:27:53+10:00",
+    "consultation_response_due_date": "2026-05-27T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "Magellan Financial Group Ltd",
+        "identifier_type": "ABN",
+        "identifier": "59 108 437 592"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Barrenjoey Capital Partners Group Holdings Pty Limited",
+        "identifier_type": "ABN",
+        "identifier": "44 644 241 510"
+      }
+    ],
+    "other_parties": [],
+    "anzsic_codes": [
+      {
+        "code": "6240",
+        "name": "Financial Asset Investing"
+      },
+      {
+        "code": "6419",
+        "name": "Other Auxiliary Finance and Investment Services"
+      }
+    ],
+    "merger_description": "Magellan Financial Group Ltd (**MFG**) proposes to acquire the remaining shares in Barrenjoey Capital Partners Group Holdings Pty Limited (**Barrenjoey**) that it does not already own, in return for equity in MFG (the **Acquisition**).\n\nMFG is an Australian financial services group, operating across select global markets, which focuses on investment management and specialist financial services. Its partnerships include Barrenjoey, Vinva Investment Management and FinClear Holdings.\n\nBarrenjoey is an Australian-headquartered financial services firm, primarily focused on offering mergers and acquisitions advisory services, debt and equity capital markets services, equities and fixed income trading and research services. Barrenjoey was established in 2020 with initial funding and support provided by MFG and Barclays PLC.",
+    "events": [
+      {
+        "date": "2026-05-20T12:00:00Z",
+        "title": "Magellan Financial Group - Barrenjoey - Questionnaire",
+        "display_title": "Magellan Financial Group - Barrenjoey - Questionnaire",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Magellan%20Financial%20Group_%20Barrenjoey%20-%20Questionnaire.docx",
+        "url_gh": "/mergers/MN-95007/Magellan Financial Group_ Barrenjoey - Questionnaire.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-05-19T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
       }
     ],
     "is_waiver": false
