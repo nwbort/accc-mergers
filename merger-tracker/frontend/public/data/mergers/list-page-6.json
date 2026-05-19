@@ -209,12 +209,12 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Volt Managed Investment Trust 2",
+          "name": "Volt Managed Investment Trust 1",
           "identifier_type": null,
           "identifier": ""
         },
         {
-          "name": "Volt Managed Investment Trust 1",
+          "name": "Volt Managed Investment Trust 2",
           "identifier_type": null,
           "identifier": ""
         }
@@ -228,19 +228,14 @@
       ],
       "other_parties": [
         {
-          "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "The John Laing Group Limited",
-          "identifier_type": null,
-          "identifier": "UK Company No: 05975300"
-        },
-        {
           "name": "The Trust Company (Australia) Limited (as trustee for Volt Managed Investment Trust 2)",
           "identifier_type": "ABN",
           "identifier": "21 000 000 993"
+        },
+        {
+          "name": "HMC Energy Transition No. 3 Holdings Pty Ltd as trustee of the HMC Energy Transition No. 3 Trust",
+          "identifier_type": "ABN",
+          "identifier": "98 159 167 344"
         },
         {
           "name": "HMC CAPITAL LIMITED",
@@ -248,9 +243,14 @@
           "identifier": "94 138 990 593"
         },
         {
-          "name": "HMC Energy Transition No. 3 Holdings Pty Ltd as trustee of the HMC Energy Transition No. 3 Trust",
-          "identifier_type": "ABN",
-          "identifier": "98 159 167 344"
+          "name": "The John Laing Group Limited",
+          "identifier_type": null,
+          "identifier": "UK Company No: 05975300"
+        },
+        {
+          "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)",
+          "identifier_type": null,
+          "identifier": ""
         }
       ],
       "anzsic_codes": [
