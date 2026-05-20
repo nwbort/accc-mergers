@@ -1,9 +1,9 @@
 {
-  "total_mergers": 108,
+  "total_mergers": 109,
   "total_waivers": 154,
   "by_status": {
     "Assessment completed": 77,
-    "Under assessment": 31
+    "Under assessment": 32
   },
   "by_determination": {
     "Approved": 77,
@@ -35,12 +35,12 @@
   },
   "top_industries": [
     {
-      "name": "Financial Asset Investing",
+      "name": "Computer System Design and Related Services",
       "count": 33
     },
     {
-      "name": "Computer System Design and Related Services",
-      "count": 32
+      "name": "Financial Asset Investing",
+      "count": 33
     },
     {
       "name": "Software Publishing",
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-40022",
+      "merger_name": "Integris & related entities - First Focus",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-19T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-95007",
       "merger_name": "Magellan Financial Group - Barrenjoey",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-18T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50015",
-      "merger_name": "Mastercard - BVNK",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-15T12:00:00Z",
       "is_waiver": false
     }
   ],

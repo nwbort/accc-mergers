@@ -10843,6 +10843,143 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/integris-related-entities-first-focus",
+      "merger_name": "Integris & related entities - First Focus",
+      "status": "Under assessment",
+      "merger_id": "MN-40022",
+      "effective_notification_datetime": "2026-05-19T12:00:00Z",
+      "original_notification_datetime": "2026-05-19T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-07-02T12:00:00Z",
+      "page_modified_datetime": "2026-05-20T16:18:53+10:00",
+      "consultation_response_due_date": "2026-05-27T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Apollo Australia Bidco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "697 230 096"
+        },
+        {
+          "name": "OMERS Apollo Investment Holdings LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "FIRST FOCUS IT PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "73 106 912 350"
+        },
+        {
+          "name": "The Trustee for FUTURE FOCUS TRUST",
+          "identifier_type": "ABN",
+          "identifier": "22 698 604 264"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "OMERS Apollo Investment Holdings LLC (**OMERS Apollo**), which wholly owns Integris, LLC (**Integris**), proposes to acquire 100% of the shares in First Focus IT Pty Ltd (**First Focus**) both directly and via its controlled entities.\n\nIntegris is an IT managed service provider which supplies mid-sized businesses with end-to-end managed services, including IT helpdesk, cybersecurity services, backup and disaster recovery and remote desktop services. Integris does not currently supply goods or services to Australian customers.\n\nOMERS Apollo is an investment vehicle established for the Ontario Municipal Employees Retirement System Primary Pension Plan.\n\nFirst Focus is an IT managed service provider which supplies services to mid-sized businesses across Australia and New Zealand. Its services include helpdesk support, cybersecurity, cloud services, assessing and providing tailored data services, IT, digital transformation and virtual CIO services consulting, AI implementation, app development, disaster recovery, unified communications and connectivity services. First Focus also provides consultancy services across IT strategy, transformation, and compliance, AI consulting and software development.",
+      "events": [
+        {
+          "date": "2026-05-20T12:00:00Z",
+          "title": "Integris-First Focus - Questionnaire",
+          "display_title": "Integris-First Focus - Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/First%20Focus%20-%20Questionnaire%20-%20May%202026_0.docx",
+          "url_gh": "/mergers/MN-40022/First Focus - Questionnaire - May 2026_0.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-19T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-65012",
+          "merger_name": "Savvy Games Group – Moonton",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "East Gate Games Investment Company",
+              "identifier_type": "ABN",
+              "identifier": "39 275 633 205"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Moonton Holdings Limited",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-70009",
+          "merger_name": "Infotrust – Catalyst Cyber",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "INFOTRUST LTD",
+              "identifier_type": "ABN",
+              "identifier": "73 089 224 402"
+            }
+          ],
+          "targets": [
+            {
+              "name": "CATALYST CYBER PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "24 682 157 606"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-55006",
+          "merger_name": "Hg Capital - OneStream",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Hg Pooled Management Limited",
+              "identifier_type": null,
+              "identifier": ""
+            },
+            {
+              "name": "OnwardAcquireCo, Inc",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ],
+          "targets": [
+            {
+              "name": "OneStream, Inc.",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ebay-depop",
       "merger_name": "eBay / Depop",
       "status": "Assessment completed",
@@ -50400,6 +50537,26 @@
       ],
       "questions_count": 3
     },
+    "MN-40022": {
+      "deadline": "27 May 2026",
+      "deadline_iso": "2026-05-27",
+      "file_name": "First Focus - Questionnaire - May 2026_0.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition, including if Integris and First Focus are close competitors and there are not many alternatives or if one is a major supplier to competitors of the other."
+        },
+        {
+          "number": 2,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        },
+        {
+          "number": 3,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with First Focus, Integris, and/or any other connected entity of OMERS Apollo active in the technology sector."
+        }
+      ],
+      "questions_count": 3
+    },
     "MN-45002": {
       "deadline": "14 April 2026",
       "deadline_iso": "2026-04-14",
@@ -53447,11 +53604,11 @@
     }
   },
   "stats": {
-    "total_mergers": 108,
+    "total_mergers": 109,
     "total_waivers": 154,
     "by_status": {
       "Assessment completed": 77,
-      "Under assessment": 31
+      "Under assessment": 32
     },
     "by_determination": {
       "Approved": 77,
@@ -53483,12 +53640,12 @@
     },
     "top_industries": [
       {
-        "name": "Financial Asset Investing",
+        "name": "Computer System Design and Related Services",
         "count": 33
       },
       {
-        "name": "Computer System Design and Related Services",
-        "count": 32
+        "name": "Financial Asset Investing",
+        "count": 33
       },
       {
         "name": "Software Publishing",
@@ -53525,6 +53682,14 @@
     ],
     "recent_mergers": [
       {
+        "merger_id": "MN-40022",
+        "merger_name": "Integris & related entities - First Focus",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-05-19T12:00:00Z",
+        "is_waiver": false
+      },
+      {
         "merger_id": "MN-95007",
         "merger_name": "Magellan Financial Group - Barrenjoey",
         "status": "Under assessment",
@@ -53554,14 +53719,6 @@
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-05-18T12:00:00Z",
-        "is_waiver": false
-      },
-      {
-        "merger_id": "MN-50015",
-        "merger_name": "Mastercard - BVNK",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-05-15T12:00:00Z",
         "is_waiver": false
       }
     ],
@@ -53631,14 +53788,14 @@
   "industries": {
     "industries": [
       {
-        "code": "6240",
-        "name": "Financial Asset Investing",
+        "code": "7000",
+        "name": "Computer System Design and Related Services",
         "merger_count": 33
       },
       {
-        "code": "7000",
-        "name": "Computer System Design and Related Services",
-        "merger_count": 32
+        "code": "6240",
+        "name": "Financial Asset Investing",
+        "merger_count": 33
       },
       {
         "code": "5420",
