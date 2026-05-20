@@ -47,7 +47,7 @@ jobs:
             data/processed/similar_mergers.json \
             data/raw/matters/ merger-tracker/frontend/public/data/ \
             merger-tracker/frontend/public/feed.xml data/output/
-          timestamp=$(date -u)
+          timestamp=$(TZ='Australia/Sydney' date)
           git diff --staged --quiet || true
           git commit -m "Update scraped data and static files: ${timestamp}" || exit 0
           git pull --rebase || { git rebase --abort; exit 1; }

@@ -228,7 +228,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          timestamp=$(date -u)
+          timestamp=$(TZ='Australia/Sydney' date)
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
