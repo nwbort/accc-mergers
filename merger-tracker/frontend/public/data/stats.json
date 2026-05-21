@@ -1,6 +1,6 @@
 {
   "total_mergers": 111,
-  "total_waivers": 154,
+  "total_waivers": 156,
   "by_status": {
     "Assessment completed": 78,
     "Under assessment": 33
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 141,
+    "Approved": 143,
     "Not approved": 13
   },
   "phase_duration": {
@@ -119,6 +119,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05020",
+      "merger_name": "Midea Group \u2013 Esaote",
+      "determination": "Approved",
+      "determination_date": "2026-05-21T12:00:00Z",
+      "page_modified_datetime": "2026-05-21T17:20:16+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-30014",
+      "merger_name": "MedHealth \u2013 Connect Allied Health",
+      "determination": "Approved",
+      "determination_date": "2026-05-21T12:00:00Z",
+      "page_modified_datetime": "2026-05-21T17:17:49+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-10012",
       "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
       "determination": "Approved",
@@ -157,26 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-60014",
-      "merger_name": "Gilead - Ouro",
-      "determination": "Approved",
-      "determination_date": "2026-05-18T12:00:00Z",
-      "page_modified_datetime": "2026-05-19T10:18:20+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-05009",
-      "merger_name": "Genea - Embrace Fertility",
-      "determination": "Approved",
-      "determination_date": "2026-05-18T12:00:00Z",
-      "page_modified_datetime": "2026-05-18T17:48:18+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
