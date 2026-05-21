@@ -1,6 +1,6 @@
 {
   "total_mergers": 111,
-  "total_waivers": 156,
+  "total_waivers": 157,
   "by_status": {
     "Assessment completed": 78,
     "Under assessment": 33
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 143,
+    "Approved": 144,
     "Not approved": 13
   },
   "phase_duration": {
@@ -60,7 +60,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 10
+      "count": 11
     },
     {
       "name": "Accommodation",
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-50017",
+      "merger_name": "Australian Venue Co \u2013 assets of Courthouse Hotel, Newtown NSW",
+      "determination": "Approved",
+      "determination_date": "2026-05-21T12:00:00Z",
+      "page_modified_datetime": "2026-05-21T17:22:36+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-05020",
       "merger_name": "Midea Group \u2013 Esaote",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-19T12:00:00Z",
       "page_modified_datetime": "2026-05-19T17:19:45+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-70017",
-      "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
-      "determination": "Approved",
-      "determination_date": "2026-05-19T12:00:00Z",
-      "page_modified_datetime": "2026-05-19T17:12:11+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
