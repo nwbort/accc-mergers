@@ -1,9 +1,9 @@
 {
-  "total_mergers": 109,
+  "total_mergers": 110,
   "total_waivers": 154,
   "by_status": {
     "Assessment completed": 77,
-    "Under assessment": 32
+    "Under assessment": 33
   },
   "by_determination": {
     "Approved": 77,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-85026",
+      "merger_name": "Banijay Entertainment \u2013 All3Media",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-20T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-40022",
       "merger_name": "Integris & related entities - First Focus",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-70018",
       "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-18T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-95016",
-      "merger_name": "Eli Lilly - Kelonia Therapeutics",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-18T12:00:00Z",
