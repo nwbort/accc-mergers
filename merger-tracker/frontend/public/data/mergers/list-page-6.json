@@ -49,6 +49,60 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-venue-co-%E2%80%93-assets-of-courthouse-hotel-newtown-nsw"
     },
     {
+      "merger_id": "WA-70019",
+      "merger_name": "Cognizant \u2013 Astreya",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-07T12:00:00Z",
+      "determination_publication_date": "2026-05-21T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Cognizant Domestic Holdings Corporation",
+          "identifier_type": null,
+          "identifier": "Delaware file number 5221744"
+        },
+        {
+          "name": "Asteroid Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware file number 10587708"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Astreya Partners, Inc.",
+          "identifier_type": null,
+          "identifier": "CIN 770570107"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Shareholder Representative Services LLC (as the stockholder representative)",
+          "identifier_type": null,
+          "identifier": "20071132387"
+        },
+        {
+          "name": "Astreya Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Cognizant Technology Solutions",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cognizant-%E2%80%93-astreya"
+    },
+    {
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
       "status": "Under assessment",
@@ -545,6 +599,74 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/volt-managed-investment-trusts-%E2%80%93-hmc-energy-transition-platform"
+    },
+    {
+      "merger_id": "WA-75022",
+      "merger_name": "United States\u2013Australia Gallium",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-14T12:00:00Z",
+      "determination_publication_date": "2026-05-21T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "United States Department of War",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Alcoa Gallium Holdings Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "ALCOA OF AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "93 004 879 298"
+        },
+        {
+          "name": "EXPORT FINANCE AND INSURANCE CORP",
+          "identifier_type": "ABN",
+          "identifier": "96 874 024 697"
+        }
+      ],
+      "targets": [
+        {
+          "name": "United States-Australia Gallium Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "0802",
+          "name": "Bauxite Mining"
+        },
+        {
+          "code": "2131",
+          "name": "Alumina Production"
+        },
+        {
+          "code": "2132",
+          "name": "Aluminium Smelting"
+        },
+        {
+          "code": "5212",
+          "name": "Port and Water Transport Terminal Operations"
+        },
+        {
+          "code": "6230",
+          "name": "Non-Depository Financing"
+        },
+        {
+          "code": "7600",
+          "name": "Defence"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/united-states%E2%80%93australia-gallium"
     },
     {
       "merger_id": "MN-50015",

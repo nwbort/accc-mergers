@@ -2,6 +2,18 @@
   "events": [
     {
       "date": "2026-05-14T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-90007",
+      "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
+      "date": "2026-05-14T12:00:00Z",
       "title": "PT Asian Bulk Logistics - Engage Marine - Questionnaire - May 2026",
       "display_title": "PT Asian Bulk Logistics - Engage Marine - Questionnaire - May 2026",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/PT%20Asian%20Bulk%20Logistics%20-%20Engage%20Marine%20-%20Questionnaire%20-%20May%202026_0.docx",
@@ -22,6 +34,18 @@
       "merger_id": "WA-75020",
       "merger_name": "CleanPeak Energy Holdings - Sustainable Energy Infrastructure",
       "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-05-14T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "WA-75022",
+      "merger_name": "United States\u2013Australia Gallium",
+      "phase": "Phase 1",
       "is_waiver": true
     },
     {
@@ -453,6 +477,30 @@
       "status": "live",
       "merger_id": "WA-50017",
       "merger_name": "Australian Venue Co \u2013 assets of Courthouse Hotel, Newtown NSW",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-05-21T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Cognizant%20-%20Astreya%20%28WA-70019%29%20-%20Notification%20waiver%20determination%20-%2021%20May%202026.pdf",
+      "url_gh": "/mergers/WA-70019/Cognizant - Astreya (WA-70019) - Notification waiver determination - 21 May 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-70019",
+      "merger_name": "Cognizant \u2013 Astreya",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-05-21T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/United%20States%20-%20Australia%20Gallium%20%28WA-75022%29%20-%20Notification%20waiver%20determination%20-%2021%20May%202026.pdf",
+      "url_gh": "/mergers/WA-75022/United States - Australia Gallium (WA-75022) - Notification waiver determination - 21 May 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-75022",
+      "merger_name": "United States\u2013Australia Gallium",
       "phase": "Waiver",
       "is_waiver": true
     }

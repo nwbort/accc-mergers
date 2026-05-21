@@ -1,6 +1,6 @@
 {
   "total_mergers": 111,
-  "total_waivers": 157,
+  "total_waivers": 159,
   "by_status": {
     "Assessment completed": 78,
     "Under assessment": 33
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 144,
+    "Approved": 146,
     "Not approved": 13
   },
   "phase_duration": {
@@ -36,7 +36,7 @@
   "top_industries": [
     {
       "name": "Computer System Design and Related Services",
-      "count": 33
+      "count": 34
     },
     {
       "name": "Financial Asset Investing",
@@ -119,6 +119,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-75022",
+      "merger_name": "United States\u2013Australia Gallium",
+      "determination": "Approved",
+      "determination_date": "2026-05-21T12:00:00Z",
+      "page_modified_datetime": "2026-05-21T17:32:25+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-70019",
+      "merger_name": "Cognizant \u2013 Astreya",
+      "determination": "Approved",
+      "determination_date": "2026-05-21T12:00:00Z",
+      "page_modified_datetime": "2026-05-21T17:29:40+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-50017",
       "merger_name": "Australian Venue Co \u2013 assets of Courthouse Hotel, Newtown NSW",
       "determination": "Approved",
@@ -157,26 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-30011",
-      "merger_name": "AXDI - minority interest in La Trobe Financial",
-      "determination": "Approved",
-      "determination_date": "2026-05-19T12:00:00Z",
-      "page_modified_datetime": "2026-05-19T17:28:48+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-65015",
-      "merger_name": "Hillhouse - Barwon Investment Partners",
-      "determination": "Approved",
-      "determination_date": "2026-05-19T12:00:00Z",
-      "page_modified_datetime": "2026-05-19T17:19:45+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
