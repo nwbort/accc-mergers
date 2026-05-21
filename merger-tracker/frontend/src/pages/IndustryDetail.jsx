@@ -74,7 +74,7 @@ function IndustryDetail() {
             <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
               {industryName}
             </h1>
-            <p className="text-sm text-gray-400 mt-1">
+            <p className="text-sm text-gray-500 mt-1">
               ANZSIC code: {decodedCode} · {mergers.length} merger{mergers.length !== 1 ? 's' : ''}
             </p>
           </div>
@@ -93,7 +93,7 @@ function IndustryDetail() {
                 </h3>
                 {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
               </div>
-              <p className="text-xs text-gray-400 mt-1">
+              <p className="text-xs text-gray-500 mt-1">
                 {merger.status}
               </p>
             </Link>

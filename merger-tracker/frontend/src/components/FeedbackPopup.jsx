@@ -41,7 +41,7 @@ function FeedbackPopup() {
         <button
           onClick={dismiss}
           aria-label="Dismiss"
-          className="text-gray-400 hover:text-gray-600 transition-colors"
+          className="text-gray-500 hover:text-gray-700 transition-colors"
         >
           <FaTimes className="h-4 w-4" aria-hidden="true" />
         </button>

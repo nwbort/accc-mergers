@@ -118,7 +118,7 @@ function renderStatementOfReasons(blocks) {
     if (b.type === 'paragraph') {
       return (
         <p key={idx} className="text-sm text-gray-600 leading-relaxed">
-          {b.number && <span className="text-gray-400 mr-2">{b.number}</span>}
+          {b.number && <span className="text-gray-500 mr-2">{b.number}</span>}
           {b.text}
         </p>
       );

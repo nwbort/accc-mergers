@@ -22,7 +22,7 @@ function ScrollToTopButton() {
   return (
     <button
       onClick={scrollToTop}
-      className="p-1 text-gray-400 hover:text-gray-600 transition-all"
+      className="p-1 text-gray-500 hover:text-gray-700 transition-all"
       aria-label="Scroll to top"
       title="Back to top"
     >
@@ -83,7 +83,7 @@ function MergerNameCell({ merger, colorKey }) {
         </Link>
         {merger.is_waiver && <WaiverBadge className="relative z-10" />}
       </div>
-      <div className="text-xs text-gray-400 mt-0.5">
+      <div className="text-xs text-gray-500 mt-0.5">
         <span>{merger.merger_id}</span>
       </div>
     </td>

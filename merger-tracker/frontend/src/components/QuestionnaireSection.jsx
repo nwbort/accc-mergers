@@ -95,14 +95,14 @@ function QuestionnaireSection({ mergerId, events }) {
       onExpand={fetchQuestionnaire}
     >
       {loading && (
-        <div className="flex items-center gap-2 mt-4 text-sm text-gray-400">
+        <div className="flex items-center gap-2 mt-4 text-sm text-gray-500">
           <FaSpinner className="animate-spin h-4 w-4" aria-hidden="true" />
           Loading questionnaire...
         </div>
       )}
 
       {error && (
-        <div className="mt-4 text-sm text-gray-400">
+        <div className="mt-4 text-sm text-gray-500">
           Could not load questionnaire data.{' '}
           <button
             type="button"
@@ -141,7 +141,7 @@ function QuestionnaireSection({ mergerId, events }) {
               const activeEvents = getVersionEvents(active);
               return (
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 mb-4">
-                  <p className="text-xs text-gray-400">
+                  <p className="text-xs text-gray-500">
                     {active.questions_count} question{active.questions_count !== 1 ? 's' : ''}
                     {active.deadline_iso && (
                       <span>
@@ -190,7 +190,7 @@ function QuestionnaireSection({ mergerId, events }) {
                           <ol className="mt-2 space-y-1">
                             {q.subpoints.map((sp) => (
                               <li key={sp.letter} className="flex gap-2 items-baseline">
-                                <span className="flex-shrink-0 text-xs font-medium text-gray-400 w-4">{sp.letter}.</span>
+                                <span className="flex-shrink-0 text-xs font-medium text-gray-500 w-4">{sp.letter}.</span>
                                 <span className="text-sm text-gray-500">{sp.text}</span>
                               </li>
                             ))}

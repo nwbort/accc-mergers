@@ -30,7 +30,7 @@ function Commentary() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         {/* Results count */}
         <div className="mb-4">
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-gray-500">
             {items.length} {items.length === 1 ? 'entry' : 'entries'}
           </p>
         </div>
@@ -55,7 +55,7 @@ function Commentary() {
                       </Link>
                       {item.is_waiver && <WaiverBadge className="flex-shrink-0" />}
                     </div>
-                    <p className="text-xs text-gray-400 mt-1">
+                    <p className="text-xs text-gray-500 mt-1">
                       {item.merger_id} · {item.stage || 'N/A'} · {item.is_waiver ? 'Applied' : 'Notified'}: {formatDate(item.effective_notification_datetime)}
                       {item.determination_publication_date && (
                         <>
@@ -114,12 +114,12 @@ function Commentary() {
                           )}
                           <div className="flex items-center gap-3 mt-3">
                             {comment.date && (
-                              <p className="text-xs text-gray-400">
+                              <p className="text-xs text-gray-500">
                                 Updated {formatDate(comment.date)}
                               </p>
                             )}
                             {comment.author && (
-                              <p className="text-xs text-gray-400">
+                              <p className="text-xs text-gray-500">
                                 by {comment.author}
                               </p>
                             )}

@@ -61,14 +61,14 @@ function RecentDeterminationsTable({ determinations }) {
                       <NewBadge />
                     )}
                   </div>
-                  <div className="text-xs text-gray-400 mt-0.5 flex items-center gap-2">
+                  <div className="text-xs text-gray-500 mt-0.5 flex items-center gap-2">
                     <span>{item.merger_id}</span>
                     {item.is_waiver && <WaiverBadge />}
                   </div>
                 </td>
                 <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
                   <StatusBadge determination={item.determination} />
-                  <div className="text-xs text-gray-400 mt-1 pl-2.5">
+                  <div className="text-xs text-gray-500 mt-1 pl-2.5">
                     {formatDate(item.determination_date)}
                   </div>
                 </td>

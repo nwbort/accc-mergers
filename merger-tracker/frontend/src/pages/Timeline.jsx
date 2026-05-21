@@ -288,7 +288,7 @@ function Timeline() {
           {filtersActive && (
             <button
               onClick={clearFilters}
-              className="text-xs text-gray-400 hover:text-gray-600 transition-colors ml-1"
+              className="text-xs text-gray-500 hover:text-gray-700 transition-colors ml-1"
             >
               Clear
             </button>
@@ -330,7 +330,7 @@ function Timeline() {
                         <p className="text-sm text-gray-500 mt-1">
                           {event.display_title || event.title}
                         </p>
-                        <p className="mt-1 text-xs text-gray-400">
+                        <p className="mt-1 text-xs text-gray-500">
                           {formatDate(event.date)}
                         </p>
                         {event.url_gh && (
@@ -359,22 +359,22 @@ function Timeline() {
 
         {hasMore && (
           <div className="text-center py-8">
-            <p className="text-sm text-gray-400">
+            <p className="text-sm text-gray-500">
               {filtersActive
                 ? `Showing ${filteredDisplayedEvents.length} of ${filteredAllEvents.length} matching events (${displayedEvents.length} of ${allEvents.length} loaded)`
                 : `Showing ${displayedEvents.length} of ${allEvents.length} events`}
             </p>
             {loadingMore ? (
-              <p className="text-xs text-gray-400 mt-1">Loading more...</p>
+              <p className="text-xs text-gray-500 mt-1">Loading more...</p>
             ) : (
-              <p className="text-xs text-gray-400 mt-1">Scroll down to load more</p>
+              <p className="text-xs text-gray-500 mt-1">Scroll down to load more</p>
             )}
           </div>
         )}
 
         {!hasMore && displayedEvents.length > 0 && (
           <div className="text-center py-8">
-            <p className="text-gray-400 text-sm">
+            <p className="text-gray-500 text-sm">
               {filtersActive
                 ? `Showing all ${filteredAllEvents.length} matching events (of ${allEvents.length} total)`
                 : `Showing all ${allEvents.length} events`}

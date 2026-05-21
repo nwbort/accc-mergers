@@ -68,7 +68,7 @@ function UpcomingEventsTable({ events }) {
                         ? '1 day'
                         : `${daysRemaining} days`}
                     </div>
-                    <div className="text-xs text-gray-400 mt-0.5">{formatDate(event.date)}</div>
+                    <div className="text-xs text-gray-500 mt-0.5">{formatDate(event.date)}</div>
                     {/* Event badge inline on mobile */}
                     <span
                       className={`sm:hidden inline-flex items-center px-2.5 py-0.5 rounded-lg text-xs font-semibold border mt-1.5 ${getEventTypeStyle(event.type)}`}
@@ -95,7 +95,7 @@ function UpcomingEventsTable({ events }) {
                     >
                       {event.merger_name}
                     </Link>
-                    <div className="text-xs text-gray-400 mt-0.5">
+                    <div className="text-xs text-gray-500 mt-0.5">
                       {event.merger_id} · {event.stage}
                     </div>
                   </td>

@@ -305,7 +305,7 @@ function Mergers() {
           {/* Search row with filter toggle */}
           <div className="flex gap-3">
             <div className="flex-1 relative">
-              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" aria-hidden="true" />
+              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" aria-hidden="true" />
               <input
                 type="text"
                 id="search"
@@ -326,7 +326,7 @@ function Mergers() {
                     setSearchTerm('');
                     updateParam('q', '', '');
                   }}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
                   aria-label="Clear search"
                   type="button"
                 >
@@ -448,7 +448,7 @@ function Mergers() {
                       params.delete('tracked');
                       setSearchParams(params);
                     }}
-                    className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                    className="text-xs text-gray-500 hover:text-gray-700 transition-colors"
                   >
                     Clear all filters
                   </button>
@@ -460,11 +460,11 @@ function Mergers() {
 
         {/* Results count & Sort */}
         <div className="flex items-center justify-between mb-4">
-          <p className="text-sm text-gray-400">
+          <p className="text-sm text-gray-500">
             Showing {visibleMergers.length} of {sortedMergers.length} mergers
           </p>
           <div className="flex items-center gap-2">
-            <label htmlFor="sort" className="text-sm text-gray-400 hidden sm:inline">Sort by</label>
+            <label htmlFor="sort" className="text-sm text-gray-500 hidden sm:inline">Sort by</label>
             <select
               id="sort"
               className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
@@ -485,7 +485,7 @@ function Mergers() {
                 const newDir = sortBy.endsWith('-asc') ? 'desc' : 'asc';
                 updateParam('sort', `${field}-${newDir}`, 'notification-desc');
               }}
-              className="p-1 text-gray-400 hover:text-gray-600 transition-all"
+              className="p-1 text-gray-500 hover:text-gray-700 transition-all"
               aria-label={sortBy.endsWith('-asc') ? 'Sort descending' : 'Sort ascending'}
               title={sortBy.endsWith('-asc') ? 'Ascending (click for descending)' : 'Descending (click for ascending)'}
             >
@@ -534,7 +534,7 @@ function Mergers() {
                         </h3>
                         {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
                       </div>
-                      <p className="text-xs text-gray-400 mt-1">
+                      <p className="text-xs text-gray-500 mt-1">
                         {merger.merger_id} · {merger.stage || 'N/A'}
                       </p>
                     </div>
@@ -565,7 +565,7 @@ function Mergers() {
 
                   <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <p className="text-xs text-gray-400 mb-0.5">
+                      <p className="text-xs text-gray-500 mb-0.5">
                         {merger.is_waiver ? 'Application date' : 'Notification date'}
                       </p>
                       <p className="text-sm font-medium text-gray-700">
@@ -576,7 +576,7 @@ function Mergers() {
                     </div>
                     {(merger.determination_publication_date || (merger.end_of_determination_period && !merger.status?.toLowerCase().includes('suspended'))) && (
                       <div>
-                        <p className="text-xs text-gray-400 mb-0.5">
+                        <p className="text-xs text-gray-500 mb-0.5">
                           {merger.determination_publication_date ? 'Determination date' : 'End of determination period'}
                         </p>
                         <p className="text-sm font-medium text-gray-700">
@@ -611,12 +611,12 @@ function Mergers() {
         {sortedMergers.length === 0 && (
           <div className="text-center py-16">
             <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gray-100 flex items-center justify-center">
-              <FaSearch className="w-8 h-8 text-gray-400" aria-hidden="true" />
+              <FaSearch className="w-8 h-8 text-gray-500" aria-hidden="true" />
             </div>
             <p className="text-gray-500 font-medium">
               {trackedOnly ? 'No tracked mergers yet' : 'No mergers found'}
             </p>
-            <p className="text-gray-400 text-sm mt-1">Try adjusting your search or filters</p>
+            <p className="text-gray-500 text-sm mt-1">Try adjusting your search or filters</p>
           </div>
         )}
       </div>
