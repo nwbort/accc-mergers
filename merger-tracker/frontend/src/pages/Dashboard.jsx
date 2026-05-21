@@ -213,7 +213,7 @@ function Dashboard() {
                       />
                     </div>
                   </div>
-                  <div className="mt-1.5 text-xs text-gray-400">
+                  <div className="mt-1.5 text-xs text-gray-500">
                     {merger.is_waiver ? 'Applied:' : 'Notified:'}{' '}
                     {formatDate(merger.effective_notification_datetime)}
                   </div>
@@ -261,7 +261,7 @@ function Dashboard() {
                 </div>,
                 <span key={`${label}-pct`} className={`text-sm font-semibold text-gray-900 tabular-nums text-right py-3 whitespace-nowrap ${index < 2 ? 'border-b border-gray-50' : ''}`}>
                   {data.percentage}%
-                  <span className="text-gray-400 font-normal ml-1">({data.count})</span>
+                  <span className="text-gray-500 font-normal ml-1">({data.count})</span>
                 </span>,
               ])}
             </div>

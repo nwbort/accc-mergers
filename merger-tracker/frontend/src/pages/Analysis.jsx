@@ -321,21 +321,21 @@ function Analysis() {
               </div>
               <div className="grid grid-cols-2 divide-x divide-gray-100">
                 <div className="p-5">
-                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Avg duration</p>
+                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Avg duration</p>
                   <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
                     {phase1Stats.average ? `${phase1Stats.average} days` : 'N/A'}
                   </p>
                   {phase1Stats.count && (
-                    <p className="text-sm text-gray-400 mt-0.5">{phase1Stats.count} completed</p>
+                    <p className="text-sm text-gray-500 mt-0.5">{phase1Stats.count} completed</p>
                   )}
                 </div>
                 <div className="p-5">
-                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Median duration</p>
+                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Median duration</p>
                   <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
                     {phase1Stats.median ? `${phase1Stats.median} days` : 'N/A'}
                   </p>
                   {phase1Stats.min && phase1Stats.max && (
-                    <p className="text-sm text-gray-400 mt-0.5">Range {phase1Stats.min}–{phase1Stats.max} days</p>
+                    <p className="text-sm text-gray-500 mt-0.5">Range {phase1Stats.min}–{phase1Stats.max} days</p>
                   )}
                 </div>
               </div>
@@ -348,21 +348,21 @@ function Analysis() {
               </div>
               <div className="grid grid-cols-2 divide-x divide-gray-100">
                 <div className="p-5">
-                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Avg duration</p>
+                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Avg duration</p>
                   <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
                     {waiverStats.average ? `${waiverStats.average} days` : 'N/A'}
                   </p>
                   {waiverStats.count && (
-                    <p className="text-sm text-gray-400 mt-0.5">{waiverStats.count} completed</p>
+                    <p className="text-sm text-gray-500 mt-0.5">{waiverStats.count} completed</p>
                   )}
                 </div>
                 <div className="p-5">
-                  <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">Median duration</p>
+                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Median duration</p>
                   <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
                     {waiverStats.median ? `${waiverStats.median} days` : 'N/A'}
                   </p>
                   {waiverStats.min && waiverStats.max && (
-                    <p className="text-sm text-gray-400 mt-0.5">Range {waiverStats.min}–{waiverStats.max} days</p>
+                    <p className="text-sm text-gray-500 mt-0.5">Range {waiverStats.min}–{waiverStats.max} days</p>
                   )}
                 </div>
               </div>
@@ -383,7 +383,7 @@ function Analysis() {
               <div className="h-72">
                 <Bar data={monthlyVolumeData} options={monthlyVolumeOptions} />
               </div>
-              <p className="text-xs text-gray-400 mt-3">
+              <p className="text-xs text-gray-500 mt-3">
                 Waivers are recorded on the ACCC's register when they are decided. This means the number of waiver applications in a month can rise for up to 25 business days after the month ends.
               </p>
             </div>

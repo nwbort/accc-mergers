@@ -11,7 +11,7 @@ function PanelEmptyState({ iconBg, iconColor, Icon, title, subtitle }) {
         <Icon className={`h-6 w-6 ${iconColor}`} aria-hidden="true" />
       </div>
       <p className="text-sm font-medium text-gray-500 mb-1">{title}</p>
-      {subtitle && <p className="text-xs text-gray-400">{subtitle}</p>}
+      {subtitle && <p className="text-xs text-gray-500">{subtitle}</p>}
     </div>
   );
 }
@@ -43,7 +43,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
         <h3 className="text-sm font-medium text-gray-900 hover:text-primary transition-colors line-clamp-2">
           {group.merger_name}
         </h3>
-        <p className="text-xs text-gray-400 mt-0.5">{group.merger_id}</p>
+        <p className="text-xs text-gray-500 mt-0.5">{group.merger_id}</p>
       </Link>
 
       <ul className="mt-2 space-y-2">
@@ -73,7 +73,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
                       </span>
                     )}
                   </p>
-                  <p className="text-gray-400">
+                  <p className="text-gray-500">
                     {formatDate(event.date)}
                     {isUpcoming && daysRemaining > 0 && (
                       <span className="ml-1 text-amber-600 font-medium">
@@ -102,7 +102,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
                     New
                   </span>
                 </p>
-                <p className="text-gray-400">
+                <p className="text-gray-500">
                   {formatDate(event.date)}
                 </p>
               </div>
@@ -116,7 +116,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
             <li className="text-xs">
               <button
                 onClick={() => setShowPastEvents(!showPastEvents)}
-                className="text-gray-400 hover:text-gray-600 hover:underline cursor-pointer pl-4 transition-colors"
+                className="text-gray-500 hover:text-gray-700 hover:underline cursor-pointer pl-4 transition-colors"
               >
                 {showPastEvents ? 'Hide' : 'Show'} {seenPastEvents.length} past event{seenPastEvents.length !== 1 ? 's' : ''}
               </button>
@@ -133,7 +133,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
                     <p className="text-gray-500 truncate">
                       {event.display_title || event.event_type_display || event.title}
                     </p>
-                    <p className="text-gray-400">
+                    <p className="text-gray-500">
                       {formatDate(event.date)}
                     </p>
                   </div>
@@ -293,7 +293,7 @@ function NotificationPanel({ isOpen, onClose }) {
         <h2 className="text-sm font-semibold text-gray-900">
           Tracked
           {trackedMergerIds.length > 0 && (
-            <span className="ml-2 text-gray-400 font-normal">
+            <span className="ml-2 text-gray-500 font-normal">
               ({trackedMergerIds.length})
             </span>
           )}
@@ -348,7 +348,7 @@ function NotificationPanel({ isOpen, onClose }) {
             >
               View tracked
             </Link>
-            <span className="text-gray-400">·</span>
+            <span className="text-gray-500">·</span>
             <Link
               to="/mergers"
               onClick={onClose}

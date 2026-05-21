@@ -27,7 +27,7 @@ function StatCard({ title, value, subtitle, icon, href }) {
                 </div>
               </dd>
               {subtitle && (
-                <dd className="text-sm text-gray-400 mt-1">{subtitle}</dd>
+                <dd className="text-sm text-gray-500 mt-1">{subtitle}</dd>
               )}
             </dl>
           </div>

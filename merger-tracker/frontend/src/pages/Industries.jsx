@@ -107,7 +107,7 @@ function Industries() {
           { label: 'Avg mergers per industry', value: industries.length > 0 ? (industries.reduce((sum, i) => sum + i.merger_count, 0) / industries.length).toFixed(1) : 0 },
         ].map(({ label, value }) => (
           <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
-            <p className="text-xs font-medium text-gray-400 uppercase tracking-wider">{label}</p>
+            <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
             <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
               {value}
             </p>
@@ -124,7 +124,7 @@ function Industries() {
           Search industries
         </label>
         <div className="relative">
-          <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+          <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
           </svg>
           <input
@@ -140,7 +140,7 @@ function Industries() {
 
       {/* Results count */}
       <div className="mb-4">
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-gray-500">
           Showing {filteredIndustries.length} of {industries.length} industries
         </p>
       </div>
@@ -195,7 +195,7 @@ function Industries() {
                     <td className="px-6 py-4 text-sm text-gray-900">
                       <div className="flex items-center">
                         <svg
-                          className={`w-4 h-4 mr-2.5 text-gray-400 transition-transform duration-200 ${
+                          className={`w-4 h-4 mr-2.5 text-gray-500 transition-transform duration-200 ${
                             isExpanded ? 'transform rotate-90' : ''
                           }`}
                           fill="currentColor"
@@ -264,7 +264,7 @@ function Industries() {
                                     </span>
                                     {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
                                   </div>
-                                  <span className="text-xs text-gray-400 mt-1 block">
+                                  <span className="text-xs text-gray-500 mt-1 block">
                                     {merger.status}
                                   </span>
                                 </Link>
@@ -285,7 +285,7 @@ function Industries() {
       {filteredIndustries.length === 0 && (
         <div className="text-center py-16">
           <p className="text-gray-500 font-medium">No industries found</p>
-          <p className="text-gray-400 text-sm mt-1">Try adjusting your search</p>
+          <p className="text-gray-500 text-sm mt-1">Try adjusting your search</p>
         </div>
       )}
     </div>

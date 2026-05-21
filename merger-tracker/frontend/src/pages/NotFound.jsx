@@ -22,7 +22,7 @@ function NotFound() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
           <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-10 text-center max-w-lg mx-auto">
             <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gray-100 flex items-center justify-center">
-              <FaFile className="w-8 h-8 text-gray-400" aria-hidden="true" />
+              <FaFile className="w-8 h-8 text-gray-500" aria-hidden="true" />
             </div>
             <h1 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">
               Document not found
@@ -61,7 +61,7 @@ function NotFound() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
         <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-10 text-center max-w-lg mx-auto">
           <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gray-100 flex items-center justify-center">
-            <FaExclamationCircle className="w-8 h-8 text-gray-400" aria-hidden="true" />
+            <FaExclamationCircle className="w-8 h-8 text-gray-500" aria-hidden="true" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">
             Page not found

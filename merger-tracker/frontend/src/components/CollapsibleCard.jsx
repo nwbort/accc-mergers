@@ -29,12 +29,12 @@ function CollapsibleCard({ icon, iconBgClass = 'bg-gray-100', title, subtitle, o
               {title}
             </h2>
             {subtitle && (
-              <p className="text-xs text-gray-400 mt-0.5">{subtitle}</p>
+              <p className="text-xs text-gray-500 mt-0.5">{subtitle}</p>
             )}
           </div>
         </div>
         <FaChevronDown
-          className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+          className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
           aria-hidden="true"
         />
       </button>

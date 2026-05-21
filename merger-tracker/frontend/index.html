@@ -3,6 +3,25 @@
   <head>
     <meta charset="UTF-8" />
 
+    <!-- Warm the data fetches the Dashboard needs, but only on the homepage.
+         These files aren't used by other routes, so loading them site-wide
+         would waste bandwidth. The subsequent fetch() in Dashboard.jsx matches
+         the preload (same URL, same-origin, no extra headers) and reuses it. -->
+    <script>
+      (function () {
+        var p = location.pathname;
+        if (p !== '/' && p !== '/index.html') return;
+        var paths = ['/data/stats.json', '/data/upcoming-events.json'];
+        for (var i = 0; i < paths.length; i++) {
+          var link = document.createElement('link');
+          link.rel = 'preload';
+          link.as = 'fetch';
+          link.href = paths[i];
+          document.head.appendChild(link);
+        }
+      })();
+    </script>
+
     <!-- SEO Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Track Australian mergers reviewed by the ACCC — decisions, timelines, industry trends, and consultation documents." />
@@ -30,10 +49,12 @@
     <!-- RSS Feed -->
     <link rel="alternate" type="application/atom+xml" title="Australian Merger Tracker Feed" href="/feed.xml" />
 
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Inter is self-hosted; preload the woff2 so the browser can start
+         fetching it during HTML parse, before the inlined @font-face is seen.
+         crossorigin is required because @font-face requests are CORS-mode,
+         even for same-origin URLs - without it the browser would issue a
+         second request. -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/inter-latin.woff2" crossorigin />
 
     <!-- Favicons and Icons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />

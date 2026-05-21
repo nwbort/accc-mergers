@@ -120,7 +120,7 @@ export default function Feedback() {
               </div>
               <div>
                 <label htmlFor="feedback-email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Email <span className="text-gray-400 font-normal">(optional, if you'd like a reply)</span>
+                  Email <span className="text-gray-500 font-normal">(optional, if you'd like a reply)</span>
                 </label>
                 <input
                   id="feedback-email"

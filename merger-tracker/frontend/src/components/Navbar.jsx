@@ -412,7 +412,7 @@ function Navbar() {
         <div id="mobile-menu" className="border-t border-gray-100 bg-white/95 backdrop-blur-lg">
           <div className="px-3 pt-3 pb-1">
             <div className="flex items-center gap-2 bg-gray-100/80 border border-gray-200 rounded-lg px-3 py-2">
-              <FaSearch className="h-4 w-4 text-gray-400 shrink-0" aria-hidden="true" />
+              <FaSearch className="h-4 w-4 text-gray-500 shrink-0" aria-hidden="true" />
               <input
                 ref={mobileSearchInputRef}
                 type="text"

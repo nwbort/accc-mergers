@@ -51,7 +51,7 @@ function MergerDetail() {
           <div key={`${partyType}-${party.name}-${party.identifier || idx}`} className="mb-3 last:mb-0">
             <p className="font-medium text-gray-900">{party.name}</p>
             {party.identifier && (
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-gray-500">
                 {party.identifier_type ? `${party.identifier_type}: ` : ''}{party.identifier}
               </p>
             )}
@@ -168,7 +168,7 @@ function MergerDetail() {
                 {merger.is_waiver && <WaiverBadge className="px-2.5 py-1 rounded-lg text-sm" />}
               </div>
               <div className="flex items-center gap-4 flex-wrap">
-                <p className="text-sm text-gray-400">{merger.merger_id}</p>
+                <p className="text-sm text-gray-500">{merger.merger_id}</p>
                 {merger.url && (
                   <a
                     href={merger.url}
@@ -207,11 +207,11 @@ function MergerDetail() {
           {/* Key Information Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 pt-6 border-t border-gray-100">
             <div>
-              <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">Stage</h3>
+              <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">Stage</h3>
               <p className="text-sm font-medium text-gray-900">{merger.stage || 'N/A'}</p>
             </div>
             <div>
-              <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">
+              <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">
                 {merger.is_waiver ? 'Waiver Application Date' : 'Effective Notification'}
               </h3>
               <p className="text-sm font-medium text-gray-900">
@@ -222,13 +222,13 @@ function MergerDetail() {
             </div>
             {!merger.is_waiver && !merger.status?.toLowerCase().includes('suspended') && (
               <div>
-                <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">
+                <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">
                   End of Determination Period
                 </h3>
                 <p className="text-sm font-medium text-gray-900">
                   {formatDate(merger.end_of_determination_period)}
                   {daysRemaining !== null && daysRemaining > 0 && !merger.determination_publication_date && (
-                    <span className="ml-2 text-xs text-gray-400 font-normal">
+                    <span className="ml-2 text-xs text-gray-500 font-normal">
                       ({daysRemaining} cal / {businessDaysRemaining} bus. days remaining)
                     </span>
                   )}
@@ -237,13 +237,13 @@ function MergerDetail() {
             )}
             {merger.determination_publication_date && (
               <div>
-                <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">
+                <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">
                   Determination Published
                 </h3>
                 <p className="text-sm font-medium text-gray-900">
                   {formatDate(merger.determination_publication_date)}
                   {duration !== null && businessDuration !== null && (
-                    <span className="ml-2 text-xs text-gray-400 font-normal">
+                    <span className="ml-2 text-xs text-gray-500 font-normal">
                       ({duration} cal / {businessDuration} bus. days)
                     </span>
                   )}
@@ -252,7 +252,7 @@ function MergerDetail() {
             )}
             {merger.accc_determination && (
               <div>
-                <h3 className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">
+                <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">
                   Determination
                 </h3>
                 <p className="text-sm font-medium text-gray-900">
@@ -359,12 +359,12 @@ function MergerDetail() {
                     )}
                     <div className="flex items-center gap-3 mt-3">
                       {comment.date && (
-                        <p className="text-xs text-gray-400">
+                        <p className="text-xs text-gray-500">
                           Updated {formatDate(comment.date)}
                         </p>
                       )}
                       {comment.author && (
-                        <p className="text-xs text-gray-400">
+                        <p className="text-xs text-gray-500">
                           by {comment.author}
                         </p>
                       )}
@@ -423,7 +423,7 @@ function MergerDetail() {
                           <p className="text-sm font-medium text-gray-900">
                             {event.display_title || event.title}
                           </p>
-                          <p className="text-xs text-gray-400 mt-0.5">
+                          <p className="text-xs text-gray-500 mt-0.5">
                             {formatDate(event.date)}
                           </p>
                           {event.url_gh && (
@@ -467,7 +467,7 @@ function MergerDetail() {
                     <p className="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors truncate">
                       {similar.merger_name}
                     </p>
-                    <p className="text-xs text-gray-400 mt-0.5 truncate">
+                    <p className="text-xs text-gray-500 mt-0.5 truncate">
                       {[
                         ...(similar.acquirers || []).map(a => a.name),
                         '→',
@@ -476,9 +476,9 @@ function MergerDetail() {
                     </p>
                   </div>
                   {similar.accc_determination ? (
-                    <span className="flex-shrink-0 text-xs text-gray-400 mt-0.5">{similar.accc_determination}</span>
+                    <span className="flex-shrink-0 text-xs text-gray-500 mt-0.5">{similar.accc_determination}</span>
                   ) : similar.status ? (
-                    <span className="flex-shrink-0 text-xs text-gray-400 mt-0.5">{similar.status}</span>
+                    <span className="flex-shrink-0 text-xs text-gray-500 mt-0.5">{similar.status}</span>
                   ) : null}
                 </Link>
               ))}
