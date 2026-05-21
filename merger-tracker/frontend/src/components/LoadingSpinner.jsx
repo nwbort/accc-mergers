@@ -1,7 +1,7 @@
 function LoadingSpinner() {
   return (
     <div
-      className="flex flex-col justify-center items-center py-16 gap-3"
+      className="flex flex-col justify-center items-center min-h-screen gap-3"
       role="status"
       aria-live="polite"
       aria-busy="true"
