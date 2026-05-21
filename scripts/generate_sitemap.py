@@ -52,7 +52,10 @@ STATIC_COMMENTS = {
 
 
 def lastmod_for(merger):
-    raw = merger.get("page_modified_datetime", "")
+    return _format_lastmod(merger.get("page_modified_datetime", ""))
+
+
+def _format_lastmod(raw):
     if not raw:
         return TODAY
     try:
@@ -60,6 +63,20 @@ def lastmod_for(merger):
         return dt.strftime("%Y-%m-%d")
     except ValueError:
         return raw[:10] if len(raw) >= 10 else TODAY
+
+
+def industry_lastmods(mergers):
+    """Return ``{anzsic_code: latest_page_modified_datetime}`` across mergers."""
+    latest = {}
+    for merger in mergers:
+        raw = merger.get("page_modified_datetime", "")
+        for entry in merger.get("anzsic_codes", []) or []:
+            code = entry.get("code")
+            if not code:
+                continue
+            if raw and (code not in latest or raw > latest[code]):
+                latest[code] = raw
+    return latest
 
 
 def url_entry(loc, lastmod, changefreq, priority):
@@ -91,6 +108,17 @@ def generate_sitemap(mergers):
         ))
         lines.append("")
 
+    lines.append("  <!-- Individual Industry Detail Pages -->")
+    industry_latest = industry_lastmods(mergers)
+    for code in sorted(industry_latest):
+        lines.append(url_entry(
+            loc=escape(f"{BASE_URL}/industries/{code}"),
+            lastmod=_format_lastmod(industry_latest[code]),
+            changefreq="weekly",
+            priority="0.5",
+        ))
+    lines.append("")
+
     lines.append("  <!-- Individual Merger Detail Pages -->")
     for merger in mergers:
         merger_id = merger.get("merger_id")
@@ -111,7 +139,12 @@ def main():
     mergers = load_mergers()
     sitemap = generate_sitemap(mergers)
     SITEMAP_OUT.write_text(sitemap, encoding="utf-8")
-    print(f"Wrote sitemap with {len(STATIC_PAGES)} static pages and {len(mergers)} merger pages -> {SITEMAP_OUT}")
+    industry_count = len(industry_lastmods(mergers))
+    print(
+        f"Wrote sitemap with {len(STATIC_PAGES)} static pages, "
+        f"{industry_count} industry pages and {len(mergers)} merger pages "
+        f"-> {SITEMAP_OUT}"
+    )
 
 
 if __name__ == "__main__":
