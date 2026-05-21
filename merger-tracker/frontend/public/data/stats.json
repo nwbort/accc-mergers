@@ -1,9 +1,9 @@
 {
-  "total_mergers": 110,
+  "total_mergers": 111,
   "total_waivers": 154,
   "by_status": {
     "Assessment completed": 77,
-    "Under assessment": 33
+    "Under assessment": 34
   },
   "by_determination": {
     "Approved": 77,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-15019",
+      "merger_name": "Opal HealthCare - Bethel Aged Care",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-20T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-85026",
       "merger_name": "Banijay Entertainment \u2013 All3Media",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-25018",
       "merger_name": "Primary Wave - Kobalt",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-18T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-70018",
-      "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-18T12:00:00Z",
