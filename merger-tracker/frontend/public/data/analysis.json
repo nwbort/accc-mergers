@@ -696,6 +696,15 @@
       },
       {
         "notification_date": "2026-04-21",
+        "business_days": 22,
+        "calendar_days": 30,
+        "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
+        "merger_id": "MN-10012",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "notification_date": "2026-04-21",
         "business_days": 17,
         "calendar_days": 23,
         "merger_name": "Zurich - ClearView",
@@ -733,17 +742,17 @@
     ],
     "stats": {
       "average": 18.2,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 36,
-      "count": 77
+      "count": 78
     },
     "calendar_stats": {
       "average": 27.6,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 55,
-      "count": 77
+      "count": 78
     }
   },
   "waiver_duration": {

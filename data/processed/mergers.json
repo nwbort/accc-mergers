@@ -3137,13 +3137,15 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/massmutual-rest-aware-super-and-goodman-%E2%80%93-moorabbin-airport",
     "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-10012",
     "effective_notification_datetime": "2026-04-21T12:00:00Z",
     "original_notification_datetime": "2026-04-21T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-06-04T12:00:00Z",
-    "page_modified_datetime": "2026-04-28T17:35:36+10:00",
+    "determination_publication_date": "2026-05-21T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-05-21T15:20:20+10:00",
     "consultation_response_due_date": "2026-04-28T12:00:00Z",
     "acquirers": [
       {
@@ -3166,11 +3168,6 @@
     ],
     "other_parties": [
       {
-        "name": "The Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST",
-        "identifier_type": "ABN",
-        "identifier": "62 653 671 394"
-      },
-      {
         "name": "The Massachusetts Mutual Life Insurance Company (MassMutual)",
         "identifier_type": null,
         "identifier": ""
@@ -3184,6 +3181,11 @@
         "name": "GOODMAN LIMITED",
         "identifier_type": "ABN",
         "identifier": "69 000 123 071"
+      },
+      {
+        "name": "The Trustee for RETAIL EMPLOYEES SUPERANNUATION TRUST",
+        "identifier_type": "ABN",
+        "identifier": "62 653 671 394"
       }
     ],
     "anzsic_codes": [
@@ -3196,7 +3198,7 @@
         "name": "Non-Residential Property Operators"
       }
     ],
-    "merger_description": "A group of investors proposes to acquire 100% of the issued shares in Moorabbin Airport Corporation Pty Ltd (**MAC**), to be held through a holding company. MAC holds the long-term airport lease granted by the Commonwealth in relation to Moorabbin Airport, a metropolitan airport located south-east of the Melbourne CBD. The investors also propose to acquire leasehold interests in various non-aviation commercial properties located at the Moorabbin Airport site (together, the **Acquisition**).\n\nThe group of investors comprise:\n\n* REST, an Australian profit-to-member superannuation fund with approximately 2 million members and around $105 billion in funds under management;\n* Aware Super, an Australian superannuation and retirement fund, with almost 1.2 million members and $198.7 billion in funds under management;\n* MassMutual, a mutual life insurance company based in Massachusetts, United States; and\n* Goodman Limited (Goodman), part of the Goodman Group, an ASX-listed industrial property and digital infrastructure business. Goodman\u2019s primary business activities include the ownership, development and management of essential real estate assets, including logistics facilities, warehouses and data centres worldwide.\n\n(these four businesses are together, the **Investors**)\n\nGoodman currently owns 100% of the units in the Moorabbin Airport Unit Trust (with Tallina Pty Ltd as trustee), which in turn owns 100% of the shares in MAC. The acquisition therefore results in a reduction of Goodman's interest in MAC.\n\nMoorabbin Airport provides services to facilitate general aviation activities such as flight training, private air charter, freight, recreational flying and air work and emergency services. Moorabbin Airport has only one regular passenger transport service, with King Island Airlines flying between King Island and the mainland daily. Moorabbin Airport contains over 250 mixed-use, large and small businesses, including Kingston Central Plaza, Direct Factory Outlet (DFO),\u00a0and the Chifley Business Park.\n\nThe Investors, excluding Goodman, have interests in industrial land across metropolitan Melbourne. The Investors, excluding Goodman, also hold interests in other airports, which either focus on different primary operations to Moorabbin Airport (that is, they are focused on regular passenger transport rather than general aviation services) or offer general aviation services outside of Victoria.",
+    "merger_description": "A group of investors proposes to acquire 100% of the issued shares in Moorabbin Airport Corporation Pty Ltd (**MAC**), to be held through a holding company. MAC holds the long-term airport lease granted by the Commonwealth in relation to Moorabbin Airport, a metropolitan airport located south-east of the Melbourne CBD. The investors also propose to acquire leasehold interests in various non-aviation commercial properties located at the Moorabbin Airport site (together, the **Acquisition**).\n\nThe group of investors comprise:\n\n* REST, an Australian profit-to-member superannuation fund with approximately 2 million members and around $105 billion in funds under management;\n* Aware Super, an Australian superannuation and retirement fund, with almost 1.2 million members and $198.7 billion in funds under management;\n* MassMutual, a mutual life insurance company based in Massachusetts, United States; and\n* Goodman Limited (**Goodman**), part of the Goodman Group, an ASX-listed industrial property and digital infrastructure business. Goodman\u2019s primary business activities include the ownership, development and management of essential real estate assets, including logistics facilities, warehouses and data centres worldwide.\n\n(these four businesses are together, the **Investors**)\n\nGoodman currently owns 100% of the units in the Moorabbin Airport Unit Trust (with Tallina Pty Ltd as trustee), which in turn owns 100% of the shares in MAC. The acquisition therefore results in a reduction of Goodman's interest in MAC.\n\nMoorabbin Airport provides services to facilitate general aviation activities such as flight training, private air charter, freight, recreational flying and air work and emergency services. Moorabbin Airport has only one regular passenger transport service, with King Island Airlines flying between King Island and the mainland daily. Moorabbin Airport contains over 250 mixed-use, large and small businesses, including Kingston Central Plaza, Direct Factory Outlet (DFO),\u00a0and the Chifley Business Park.\n\nThe Investors have interests in industrial land across metropolitan Melbourne. The Investors, excluding Goodman, also hold interests in other airports, which either focus on different primary operations to Moorabbin Airport (that is, they are focused on regular passenger transport rather than general aviation services) or offer general aviation services outside of Victoria.",
     "events": [
       {
         "date": "2026-04-21T12:00:00Z",
@@ -3210,6 +3212,43 @@
         "date": "2026-04-21T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-05-21T12:00:00Z",
+        "title": "MassMutual, REST, Aware Super and Goodman - Moorabbin Airport \u2013 Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/MassMutual%20Moorabbin%20Airport%20-%20Phase%201%20determination.pdf",
+        "determination_commission_division": "Determination made by Commissioner Philip Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "The acquisition of 100% of the issued shares in Moorabbin Airport\nCorporation Pty Ltd (Moorabbin Airport Corporation) and leasehold\ninterests in various non-aviation commercial properties at the\nMoorabbin Airport site by a group of investors comprised of\nMassMutual, REST, Aware Super and Goodman Limited (Goodman)\n(together, the Investors) (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "The Investors comprise:\n\u2022 MassMutual, a mutual life insurance company based in\nMassachusetts, United States;\n\u2022 REST, an Australian profit-to-member superannuation fund\nwith approximately 2 million members and around $105\nbillion in funds under management;\n\u2022 Aware Super, an Australian superannuation and retirement\nfund, with almost 1.2 million members and $198.7 billion in\nfunds under management; and\n\u2022 Goodman, part of the Goodman Group, an ASX-listed\nindustrial property and digital infrastructure business.\nGoodman\u2019s primary business activities include the\nownership, development and management of essential real\nestate assets, including logistics facilities, warehouses and\ndata centres worldwide.\nThe target, Moorabbin Airport Corporation, holds the long-term\nairport lease granted by the Commonwealth in relation to Moorabbin\nAirport, a metropolitan airport located south-east of the Melbourne\nCBD. Moorabbin Airport provides services to facilitate general\naviation activities such as flight training, private air charter, freight,\nrecreational flying and air work and emergency services. Moorabbin\nAirport has only one regular passenger transport service, with King\nIsland Airlines flying between King Island and the mainland daily.\nThe Moorabbin Airport site consists of industrial land as well as\naviation land, and contains over 250 mixed-use, large and small\nbusinesses, including Kingston Central Plaza, Direct Factory Outlet\n(also known as DFO) and the Chifley Business Park.\nGoodman currently holds 100% of the issued shares in Moorabbin\nAirport Corporation indirectly."
+          },
+          {
+            "item": "Overlap and relationship\nbetween the parties",
+            "details": "The Moorabbin Airport site includes industrial land, and the Investors\nhave interests in industrial land across Greater Melbourne.\nThe Moorabbin Airport site also includes aviation land, and the\nInvestors, excluding Goodman, also hold interests in other airports,\nwhich either focus on different primary operations to Moorabbin\nAirport (that is, they are focused on regular passenger transport\nrather than general aviation services) or offer general aviation\nservices outside of Victoria."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third partes.\nDuring consultation, some third parties raised concerns, primarily\nabout the potential for aviation land surrounding Moorabbin Airport\nto be converted to non-aviation land, however these concerns\ngenerally did not relate to competition issues arising from the\nAcquisition.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings:\n\u2022 there is limited horizontal overlap in relation to the interests of\nthe Investors in industrial land and the industrial land at the\nMoorabbin Airport site. The Investors other than Goodman\n(noting that Goodman\u2019s interest in Moorabbin Airport\nCorporation would reduce as a result of the Acquisition) have\nlimited investments in industrial land in Greater Melbourne, and\nalternative industrial land would continue to be available\nfollowing the Acquisition; and\n\u2022 there is limited horizontal overlap between the aviation services\nsupplied at Moorabbin Airport and the interests of the Investors\nin other airports, as the other airports either focus on different\nprimary operations to Moorabbin Airport (that is, they are\nfocused on regular passenger transport rather than general\naviation services) or offer general aviation services outside of\nVictoria."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/mergers/MN-10012/MassMutual Moorabbin Airport - Phase 1 determination.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false

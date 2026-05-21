@@ -2,11 +2,11 @@
   "total_mergers": 111,
   "total_waivers": 154,
   "by_status": {
-    "Assessment completed": 77,
-    "Under assessment": 34
+    "Assessment completed": 78,
+    "Under assessment": 33
   },
   "by_determination": {
-    "Approved": 77,
+    "Approved": 78,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 13
   },
   "phase_duration": {
-    "average_days": 27.558441558441558,
+    "average_days": 27.58974358974359,
     "median_days": 26,
-    "average_business_days": 18.194805194805195,
+    "average_business_days": 18.243589743589745,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 18,
-        "percentage": 23.4
+        "percentage": 23.1
       },
       "day20": {
         "count": 61,
-        "percentage": 79.2
+        "percentage": 78.2
       },
       "day30": {
-        "count": 76,
+        "count": 77,
         "percentage": 98.7
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-10012",
+      "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
+      "determination": "Approved",
+      "determination_date": "2026-05-21T12:00:00Z",
+      "page_modified_datetime": "2026-05-21T15:20:20+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-30011",
       "merger_name": "AXDI - minority interest in La Trobe Financial",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-01097",
-      "merger_name": "Quadrant Private Equity - Stanley International College",
-      "determination": "Approved",
-      "determination_date": "2026-05-18T12:00:00Z",
-      "page_modified_datetime": "2026-05-18T17:38:26+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
