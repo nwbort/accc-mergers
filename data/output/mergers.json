@@ -17286,7 +17286,7 @@
       "original_notification_datetime": "2026-05-12T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-06-25T12:00:00Z",
-      "page_modified_datetime": "2026-05-13T13:47:37+10:00",
+      "page_modified_datetime": "2026-05-20T17:01:33+10:00",
       "consultation_response_due_date": "2026-05-20T12:00:00Z",
       "acquirers": [
         {
@@ -17304,9 +17304,19 @@
       ],
       "other_parties": [
         {
+          "name": "Helix Sub LLC",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  10492813"
+        },
+        {
           "name": "SEISMIC SOFTWARE PTY. LTD.",
           "identifier_type": "ABN",
           "identifier": "87 611 843 808"
+        },
+        {
+          "name": "Helix Sub Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  10492811"
         },
         {
           "name": "HIGHSPOT AUSTRALIA PTY LTD",
@@ -17336,7 +17346,7 @@
           "display_title": "Questionnaire - Seismic - Highspot",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Seismic%20-%20Highspot%20-%203rd%20Party%20Questionnaire.docx",
           "url_gh": "/mergers/MN-75014/Seismic - Highspot - 3rd Party Questionnaire.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
