@@ -1,9 +1,9 @@
 {
-  "total_mergers": 111,
+  "total_mergers": 112,
   "total_waivers": 159,
   "by_status": {
     "Assessment completed": 78,
-    "Under assessment": 33
+    "Under assessment": 34
   },
   "by_determination": {
     "Approved": 78,
@@ -52,23 +52,23 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 11
+      "count": 12
+    },
+    {
+      "name": "Pubs, Taverns and Bars",
+      "count": 12
     },
     {
       "name": "Scientific Research Services",
       "count": 11
     },
     {
-      "name": "Pubs, Taverns and Bars",
-      "count": 11
-    },
-    {
       "name": "Accommodation",
-      "count": 9
+      "count": 10
     },
     {
       "name": "Liquor Retailing",
-      "count": 8
+      "count": 9
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
@@ -76,6 +76,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-90008",
+      "merger_name": "Black Rhino \u2013 Motel at Roma, QLD",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-15019",
       "merger_name": "Opal HealthCare - Bethel Aged Care",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-19T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-25018",
-      "merger_name": "Primary Wave - Kobalt",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-18T12:00:00Z",
       "is_waiver": false
     }
   ],
