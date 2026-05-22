@@ -723,6 +723,15 @@
       },
       {
         "notification_date": "2026-04-24",
+        "business_days": 20,
+        "calendar_days": 28,
+        "merger_name": "Australian Meat Group - Killara Feedlot",
+        "merger_id": "MN-20012",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "notification_date": "2026-04-24",
         "business_days": 16,
         "calendar_days": 24,
         "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
@@ -741,18 +750,18 @@
       }
     ],
     "stats": {
-      "average": 18.2,
-      "median": 17.0,
+      "average": 18.3,
+      "median": 17,
       "min": 15,
       "max": 36,
-      "count": 78
+      "count": 79
     },
     "calendar_stats": {
       "average": 27.6,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 55,
-      "count": 78
+      "count": 79
     }
   },
   "waiver_duration": {

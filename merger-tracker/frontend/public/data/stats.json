@@ -2,11 +2,11 @@
   "total_mergers": 113,
   "total_waivers": 159,
   "by_status": {
-    "Assessment completed": 78,
-    "Under assessment": 35
+    "Assessment completed": 79,
+    "Under assessment": 34
   },
   "by_determination": {
-    "Approved": 78,
+    "Approved": 79,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 13
   },
   "phase_duration": {
-    "average_days": 27.58974358974359,
+    "average_days": 27.59493670886076,
     "median_days": 26,
-    "average_business_days": 18.243589743589745,
+    "average_business_days": 18.265822784810126,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 18,
-        "percentage": 23.1
+        "percentage": 22.8
       },
       "day20": {
-        "count": 61,
-        "percentage": 78.2
+        "count": 62,
+        "percentage": 78.5
       },
       "day30": {
-        "count": 77,
+        "count": 78,
         "percentage": 98.7
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-20012",
+      "merger_name": "Australian Meat Group - Killara Feedlot",
+      "determination": "Approved",
+      "determination_date": "2026-05-22T12:00:00Z",
+      "page_modified_datetime": "2026-05-22T16:47:44+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-75022",
       "merger_name": "United States\u2013Australia Gallium",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-10012",
-      "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
-      "determination": "Approved",
-      "determination_date": "2026-05-21T12:00:00Z",
-      "page_modified_datetime": "2026-05-21T15:20:20+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
