@@ -2031,6 +2031,14 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-05-12",
+        "business_days": 8,
+        "calendar_days": 10,
+        "merger_name": "American Industrial Partners - Avanos Medical",
+        "merger_id": "WA-85027",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-05-14",
         "business_days": 5,
         "calendar_days": 7,
@@ -2041,17 +2049,17 @@
     ],
     "stats": {
       "average": 11.9,
-      "median": 11,
+      "median": 11.0,
       "min": 2,
       "max": 25,
-      "count": 159
+      "count": 160
     },
     "calendar_stats": {
       "average": 17.7,
-      "median": 17,
+      "median": 17.0,
       "min": 2,
       "max": 39,
-      "count": 159
+      "count": 160
     }
   },
   "monthly_volume": {
@@ -2086,7 +2094,7 @@
       30,
       48,
       44,
-      7
+      8
     ]
   }
 }

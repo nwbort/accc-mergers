@@ -1,6 +1,6 @@
 {
   "total_mergers": 113,
-  "total_waivers": 159,
+  "total_waivers": 160,
   "by_status": {
     "Assessment completed": 79,
     "Under assessment": 34
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 146,
+    "Approved": 147,
     "Not approved": 13
   },
   "phase_duration": {
@@ -48,7 +48,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 22
+      "count": 23
     },
     {
       "name": "Non-Residential Property Operators",
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85027",
+      "merger_name": "American Industrial Partners - Avanos Medical",
+      "determination": "Approved",
+      "determination_date": "2026-05-22T12:00:00Z",
+      "page_modified_datetime": "2026-05-22T18:27:32+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-20012",
       "merger_name": "Australian Meat Group - Killara Feedlot",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-21T12:00:00Z",
       "page_modified_datetime": "2026-05-21T17:20:16+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-30014",
-      "merger_name": "MedHealth \u2013 Connect Allied Health",
-      "determination": "Approved",
-      "determination_date": "2026-05-21T12:00:00Z",
-      "page_modified_datetime": "2026-05-21T17:17:49+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
