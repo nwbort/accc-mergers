@@ -1,9 +1,9 @@
 {
-  "total_mergers": 112,
+  "total_mergers": 113,
   "total_waivers": 159,
   "by_status": {
     "Assessment completed": 78,
-    "Under assessment": 34
+    "Under assessment": 35
   },
   "by_determination": {
     "Approved": 78,
@@ -78,7 +78,15 @@
   "recent_mergers": [
     {
       "merger_id": "MN-90008",
-      "merger_name": "Black Rhino \u2013 Motel at Roma, QLD",
+      "merger_name": "Black Rhino - Club Hotel Motel Roma",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "is_waiver": false
+    },
+    {
+      "merger_id": "MN-95021",
+      "merger_name": "Logic Technologies - Ace Communication Distributors",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-21T12:00:00Z",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-40022",
       "merger_name": "Integris & related entities - First Focus",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-19T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-95007",
-      "merger_name": "Magellan Financial Group - Barrenjoey",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-19T12:00:00Z",

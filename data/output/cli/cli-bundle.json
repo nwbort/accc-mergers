@@ -19829,15 +19829,15 @@
       ]
     },
     {
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/black-rhino-%E2%80%93-motel-at-roma-qld",
-      "merger_name": "Black Rhino – Motel at Roma, QLD",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/black-rhino-club-hotel-motel-roma",
+      "merger_name": "Black Rhino - Club Hotel Motel Roma",
       "status": "Under assessment",
       "merger_id": "MN-90008",
       "effective_notification_datetime": "2026-05-21T12:00:00Z",
       "original_notification_datetime": "2026-05-21T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-07-06T12:00:00Z",
-      "page_modified_datetime": "2026-05-22T11:06:47+10:00",
+      "page_modified_datetime": "2026-05-22T11:11:20+10:00",
       "consultation_response_due_date": "2026-05-29T12:00:00Z",
       "acquirers": [
         {
@@ -19853,14 +19853,14 @@
       ],
       "targets": [
         {
-          "name": "SPEEDY COCKTAILS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 619 330 255"
-        },
-        {
           "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
           "identifier_type": "ABN",
           "identifier": "95 506 126 845"
+        },
+        {
+          "name": "SPEEDY COCKTAILS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 619 330 255"
         }
       ],
       "other_parties": [],
@@ -21792,6 +21792,138 @@
               "name": "Orna Therapeutics Holdings, LLC",
               "identifier_type": null,
               "identifier": "IRS Employer Identification Number  861182936"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/logic-technologies-ace-communication-distributors",
+      "merger_name": "Logic Technologies - Ace Communication Distributors",
+      "status": "Under assessment",
+      "merger_id": "MN-95021",
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "original_notification_datetime": "2026-05-21T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-07-06T12:00:00Z",
+      "page_modified_datetime": "2026-05-22T11:54:00+10:00",
+      "consultation_response_due_date": "2026-05-29T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "LOGIC TECHNOLOGIES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 071 025 084"
+        },
+        {
+          "name": "CSE-GLOBAL (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 109 958 090"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ACE COMMUNICATION DISTRIBUTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "75 103 761 011"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3493",
+          "name": "Telecommunication Goods Wholesaling"
+        }
+      ],
+      "merger_description": "Logic Technologies Pty Ltd (**Logic Technologies**) proposes to acquire 100% of the shares in Ace Communication Distributors Pty Ltd (**Ace Communication Distributors**).\n\nLogic Technologies is a wholesale distributor of communication equipment operating across Australia and New Zealand. Logic Technologies supplies two-way radio infrastructure and terminals, push-to-talk over cellular devices, dispatch software, video security systems and audio accessories.\n\nLogic Technologies forms part of CSE Global Limited's Australia/New Zealand communications business. CSE Global Limited is a public company listed on the Singapore stock exchange.\n\nAce Communication Distributors is an Australian wholesale distributor of wireless communication technologies, including two-way radio products, push-to-talk over cellular devices and body worn cameras. Ace Communication Distributors also provides services in design, consulting, radio licensing, software support and product training.",
+      "events": [
+        {
+          "date": "2026-05-22T12:00:00Z",
+          "title": "Questionnaire - Logic Technologies - Ace Communication Distributors",
+          "display_title": "Questionnaire - Logic Technologies - Ace Communication Distributors",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Logic%20Technologies%20-%20Ace%20Communication%20Distributors%20-%20Questionnaire%20-%20May%202026.docx",
+          "url_gh": "/mergers/MN-95021/Logic Technologies - Ace Communication Distributors - Questionnaire - May 2026.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-21T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-01071",
+          "merger_name": "CSE Crosscom – Progility",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "CSE CROSSCOM PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "25 606 614 500"
+            },
+            {
+              "name": "CSE-Global (Australia) Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "85 109 958 090"
+            }
+          ],
+          "targets": [
+            {
+              "name": "PROGILITY PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "11 131 639 837"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-95005",
+          "merger_name": "HCLTech - Jaspersoft",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "HCL Technologies Limited",
+              "identifier_type": "ABN",
+              "identifier": "37 541 578 951"
+            }
+          ],
+          "targets": [
+            {
+              "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "94 092 002 321"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-70012",
+          "merger_name": "Quanta - PSD",
+          "status": "Under assessment",
+          "accc_determination": null,
+          "acquirers": [
+            {
+              "name": "Quanta Services Australia Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "11 164 311 997"
+            }
+          ],
+          "targets": [
+            {
+              "name": "PSD Global Holdings Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "634 380 813"
             }
           ]
         }
@@ -53790,6 +53922,26 @@
         }
       ],
       "questions_count": 3
+    },
+    "MN-95021": {
+      "deadline": "29 May 2026",
+      "deadline_iso": "2026-05-29",
+      "file_name": "Logic Technologies - Ace Communication Distributors - Questionnaire - May 2026.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition, including if Logic Technologies and Ace Communication Distributors are close competitors and there are not many alternatives, or if one is a major supplier to competitors of the other."
+        },
+        {
+          "number": 2,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        },
+        {
+          "number": 3,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with Logic Technologies and/or Ace Communication Distributors."
+        }
+      ],
+      "questions_count": 3
     }
   },
   "noccs": {
@@ -55109,11 +55261,11 @@
     }
   },
   "stats": {
-    "total_mergers": 112,
+    "total_mergers": 113,
     "total_waivers": 159,
     "by_status": {
       "Assessment completed": 78,
-      "Under assessment": 34
+      "Under assessment": 35
     },
     "by_determination": {
       "Approved": 78,
@@ -55188,7 +55340,15 @@
     "recent_mergers": [
       {
         "merger_id": "MN-90008",
-        "merger_name": "Black Rhino – Motel at Roma, QLD",
+        "merger_name": "Black Rhino - Club Hotel Motel Roma",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-05-21T12:00:00Z",
+        "is_waiver": false
+      },
+      {
+        "merger_id": "MN-95021",
+        "merger_name": "Logic Technologies - Ace Communication Distributors",
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-05-21T12:00:00Z",
@@ -55213,14 +55373,6 @@
       {
         "merger_id": "MN-40022",
         "merger_name": "Integris & related entities - First Focus",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-05-19T12:00:00Z",
-        "is_waiver": false
-      },
-      {
-        "merger_id": "MN-95007",
-        "merger_name": "Magellan Financial Group - Barrenjoey",
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-05-19T12:00:00Z",
@@ -55648,6 +55800,11 @@
         "merger_count": 2
       },
       {
+        "code": "3493",
+        "name": "Telecommunication Goods Wholesaling",
+        "merger_count": 2
+      },
+      {
         "code": "8512",
         "name": "Specialist Medical Services",
         "merger_count": 2
@@ -55925,11 +56082,6 @@
       {
         "code": "3609",
         "name": "Other Grocery Wholesaling",
-        "merger_count": 1
-      },
-      {
-        "code": "3493",
-        "name": "Telecommunication Goods Wholesaling",
         "merger_count": 1
       },
       {

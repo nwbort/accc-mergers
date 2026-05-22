@@ -11315,15 +11315,15 @@
     "is_waiver": false
   },
   {
-    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/black-rhino-%E2%80%93-motel-at-roma-qld",
-    "merger_name": "Black Rhino \u2013 Motel at Roma, QLD",
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/black-rhino-club-hotel-motel-roma",
+    "merger_name": "Black Rhino - Club Hotel Motel Roma",
     "status": "Under assessment",
     "merger_id": "MN-90008",
     "effective_notification_datetime": "2026-05-21T12:00:00Z",
     "original_notification_datetime": "2026-05-21T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-07-06T12:00:00Z",
-    "page_modified_datetime": "2026-05-22T11:06:47+10:00",
+    "page_modified_datetime": "2026-05-22T11:11:20+10:00",
     "consultation_response_due_date": "2026-05-29T12:00:00Z",
     "acquirers": [
       {
@@ -11339,14 +11339,14 @@
     ],
     "targets": [
       {
-        "name": "SPEEDY COCKTAILS PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "99 619 330 255"
-      },
-      {
         "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
         "identifier_type": "ABN",
         "identifier": "95 506 126 845"
+      },
+      {
+        "name": "SPEEDY COCKTAILS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "99 619 330 255"
       }
     ],
     "other_parties": [],
@@ -12549,6 +12549,61 @@
       },
       {
         "date": "2026-05-18T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/logic-technologies-ace-communication-distributors",
+    "merger_name": "Logic Technologies - Ace Communication Distributors",
+    "status": "Under assessment",
+    "merger_id": "MN-95021",
+    "effective_notification_datetime": "2026-05-21T12:00:00Z",
+    "original_notification_datetime": "2026-05-21T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-07-06T12:00:00Z",
+    "page_modified_datetime": "2026-05-22T11:54:00+10:00",
+    "consultation_response_due_date": "2026-05-29T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "LOGIC TECHNOLOGIES PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "25 071 025 084"
+      },
+      {
+        "name": "CSE-GLOBAL (AUSTRALIA) PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "85 109 958 090"
+      }
+    ],
+    "targets": [
+      {
+        "name": "ACE COMMUNICATION DISTRIBUTORS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "75 103 761 011"
+      }
+    ],
+    "other_parties": [],
+    "anzsic_codes": [
+      {
+        "code": "3493",
+        "name": "Telecommunication Goods Wholesaling"
+      }
+    ],
+    "merger_description": "Logic Technologies Pty Ltd (**Logic Technologies**) proposes to acquire 100% of the shares in Ace Communication Distributors Pty Ltd (**Ace Communication Distributors**).\n\nLogic Technologies is a wholesale distributor of communication equipment operating across Australia and New Zealand. Logic Technologies supplies two-way radio infrastructure and terminals, push-to-talk over cellular devices, dispatch software, video security systems and audio accessories.\n\nLogic Technologies forms part of CSE Global Limited's Australia/New Zealand communications business. CSE Global Limited is a public company listed on the Singapore stock exchange.\n\nAce Communication Distributors is an Australian wholesale distributor of wireless communication technologies, including two-way radio products, push-to-talk over cellular devices and body worn cameras. Ace Communication Distributors also provides services in design, consulting, radio licensing, software support and product training.",
+    "events": [
+      {
+        "date": "2026-05-22T12:00:00Z",
+        "title": "Questionnaire - Logic Technologies - Ace Communication Distributors",
+        "display_title": "Questionnaire - Logic Technologies - Ace Communication Distributors",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Logic%20Technologies%20-%20Ace%20Communication%20Distributors%20-%20Questionnaire%20-%20May%202026.docx",
+        "url_gh": "/mergers/MN-95021/Logic Technologies - Ace Communication Distributors - Questionnaire - May 2026.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-05-21T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }
