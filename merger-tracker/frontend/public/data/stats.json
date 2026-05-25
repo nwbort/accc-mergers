@@ -1,16 +1,16 @@
 {
-  "total_mergers": 114,
-  "total_waivers": 165,
+  "total_mergers": 115,
+  "total_waivers": 166,
   "by_status": {
     "Assessment completed": 79,
-    "Under assessment": 35
+    "Under assessment": 36
   },
   "by_determination": {
     "Approved": 79,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 152,
+    "Approved": 153,
     "Not approved": 13
   },
   "phase_duration": {
@@ -35,11 +35,11 @@
   },
   "top_industries": [
     {
-      "name": "Computer System Design and Related Services",
-      "count": 35
+      "name": "Financial Asset Investing",
+      "count": 36
     },
     {
-      "name": "Financial Asset Investing",
+      "name": "Computer System Design and Related Services",
       "count": 35
     },
     {
@@ -63,12 +63,12 @@
       "count": 11
     },
     {
-      "name": "Accommodation",
+      "name": "Liquor Retailing",
       "count": 10
     },
     {
-      "name": "Liquor Retailing",
-      "count": 9
+      "name": "Accommodation",
+      "count": 10
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
@@ -76,6 +76,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-30012",
+      "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-60015",
       "merger_name": "Stonepeak \u2013 Castrol",
@@ -107,17 +115,19 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-20T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-85026",
-      "merger_name": "Banijay Entertainment \u2013 All3Media",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-20T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-20020",
+      "merger_name": "Triton - Integris",
+      "determination": "Approved",
+      "determination_date": "2026-05-25T12:00:00Z",
+      "page_modified_datetime": "2026-05-25T16:46:11+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
     {
       "merger_id": "WA-25020",
       "merger_name": "Zijin Mining - Chifeng",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-25T12:00:00Z",
       "page_modified_datetime": "2026-05-25T16:37:57+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-85027",
-      "merger_name": "American Industrial Partners - Avanos Medical",
-      "determination": "Approved",
-      "determination_date": "2026-05-22T12:00:00Z",
-      "page_modified_datetime": "2026-05-22T18:27:32+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

@@ -1,0 +1,142 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/endeavour-group-%E2%80%93-retail-liquor-store-in-muswellbrook-nsw",
+  "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
+  "status": "Under assessment",
+  "merger_id": "MN-30012",
+  "effective_notification_datetime": "2026-05-22T12:00:00Z",
+  "original_notification_datetime": "2026-05-22T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-07-07T12:00:00Z",
+  "page_modified_datetime": "2026-05-25T16:51:04+10:00",
+  "consultation_response_due_date": "2026-06-02T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "ENDEAVOUR GROUP LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "77 159 767 843"
+    }
+  ],
+  "targets": [
+    {
+      "name": "Bottlemart Muswellbrook",
+      "identifier_type": null,
+      "identifier": ""
+    },
+    {
+      "name": "JABETIN PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "62 001 588 496"
+    },
+    {
+      "name": "UPPER HUNTER MOTORS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "53 001 740 218"
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "4123",
+      "name": "Liquor Retailing"
+    }
+  ],
+  "merger_description": "Endeavour Group Limited (**Endeavour Group**) proposes to acquire\n\n* substantially all of the assets of the Prince of Wales Hotel retail liquor store (the **Target**) in Muswellbrook, New South Wales, from Upper Hunter Motors Pty Limited; and\n* a leasehold interest for the premises on which Upper Hunter Motors Pty Limited operates the Prince of Wales Hotel retail liquor store, from Jabetin Pty Limited.\n\nThe Target is a liquor store located at 36 Sydney Street, Muswellbrook NSW 2333 and trades under the Bottlemart brand.\n\nThe proposed lease excludes the land on which the Prince of Wales Hotel bar and restaurant premises are situated.\n\nEndeavour is an Australian public company (ASX:EDV) that primarily operates:\n\n* retail liquor stores nationwide under the BWS and Dan Murphy\u2019s brands;\n* licensed hotel venues under the ALH Hotels banner in all state and territories. These venues are individually branded venues offering on-premises food and drinks, entertainment, gaming services and, in some cases, accommodation; and\n* Pinnacle Drinks, which is a manufacturer and distributor of liquor products, which it distributes exclusively to the Endeavour retail and hotel network in Australia.\n\nThe business and assets of the Target are operated by Upper Hunter Motors Pty Limited and the freehold land on which the Prince of Wales Hotel retail liquor store is situated is owned by Jabetin Pty Limited.",
+  "events": [
+    {
+      "date": "2026-05-25T12:00:00Z",
+      "title": "Questionnaire",
+      "display_title": "Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Endeavour%20Group%20-%20retail%20liquor%20store%20in%20Muswellbrook%20%28NSW%29%20-%20Questionnaire%20-%2025%20May%202026_2.docx",
+      "url_gh": "/mergers/MN-30012/Endeavour Group - retail liquor store in Muswellbrook (NSW) - Questionnaire - 25 May 2026_2.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-05-22T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-25001",
+      "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ALBANY MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "95 676 040 341"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Esperance Motor Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "57 121 986 016"
+        },
+        {
+          "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST",
+          "identifier_type": "ABN",
+          "identifier": "80 701 405 315"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85017",
+      "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "MANDURAH AUTO GROUP PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "693 645 699"
+        },
+        {
+          "name": "PEEL MOTOR GROUP PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "693 645 742"
+        }
+      ],
+      "targets": [
+        {
+          "name": "WA AUTOMOTIVE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 158 702 740"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-70014",
+      "merger_name": "Global Infrastructure Management \u2013 TCR",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "GIP V Snow Bidco Limited",
+          "identifier_type": null,
+          "identifier": "UK company number  17059583"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Envol Holdings Limited",
+          "identifier_type": null,
+          "identifier": "Jersey registration number  121115"
+        }
+      ]
+    }
+  ]
+}
