@@ -1,6 +1,74 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-25023",
+      "merger_name": "EPL - Indovida India",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-07T12:00:00Z",
+      "determination_publication_date": "2026-05-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "EPL Limited",
+          "identifier_type": null,
+          "identifier": "Registered in India, no. L74950MH1982PLC028947"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Indovida India Private Limited",
+          "identifier_type": null,
+          "identifier": "Registered in India, no. U22203MH2025PTC455949"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Petform (Thailand) Limited",
+          "identifier_type": null,
+          "identifier": "Registered in Thailand, no. 0165539000306"
+        },
+        {
+          "name": "Blackstone Inc.",
+          "identifier_type": null,
+          "identifier": "Registered in Delaware, no. 0013355"
+        },
+        {
+          "name": "Indorama Ventures Public Company Limited",
+          "identifier_type": null,
+          "identifier": "Registered in Thailand, no. 0107552000201"
+        },
+        {
+          "name": "Ngoc Nghia Industry - Service - Trading Joint Stock Company",
+          "identifier_type": null,
+          "identifier": "Registered in Vietnam, no. 0301427028"
+        },
+        {
+          "name": "Epsilon Bidco Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "Registered in Singapore, no. 201736984W"
+        },
+        {
+          "name": "Indorama Netherland B.V.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1911",
+          "name": "Polymer Film and Sheet Packaging Material Manufacturing"
+        },
+        {
+          "code": "1912",
+          "name": "Rigid and Semi-Rigid Polymer Product Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/epl-indovida-india"
+    },
+    {
       "merger_id": "WA-50017",
       "merger_name": "Australian Venue Co \u2013 assets of Courthouse Hotel, Newtown NSW",
       "status": "Assessment completed",
@@ -101,6 +169,97 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cognizant-%E2%80%93-astreya"
+    },
+    {
+      "merger_id": "WA-01098",
+      "merger_name": "Adyen - Talon.One",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-08T12:00:00Z",
+      "determination_publication_date": "2026-05-25T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Adyen N.V.",
+          "identifier_type": null,
+          "identifier": "KvK  34259528"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Talon.One GmbH",
+          "identifier_type": null,
+          "identifier": "HRB  172085B"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/adyen-talonone"
+    },
+    {
+      "merger_id": "WA-25020",
+      "merger_name": "Zijin Mining - Chifeng",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-11T12:00:00Z",
+      "determination_publication_date": "2026-05-25T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Zijin Gold (Group) Co., Ltd.,",
+          "identifier_type": null,
+          "identifier": "USCC 91350823MAD2GJHT7P"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Li Jinyang",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zhejiang Hanfeng Venture Capital Partnership (Limited Partnership)",
+          "identifier_type": null,
+          "identifier": "USCC 91110108MA01H51G1X"
+        },
+        {
+          "name": "Chifeng Jilong Gold Mining Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "USCC 91150000708204391F"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Zijin Mining Group Co. Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Norton Gold Fields Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0804",
+          "name": "Gold Ore Mining"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/zijin-mining-chifeng"
     },
     {
       "merger_id": "MN-05013",
@@ -456,6 +615,58 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/seismic-%E2%80%93-highspot"
     },
     {
+      "merger_id": "WA-45015",
+      "merger_name": "EQT Fund Management \u2013 Kakaku.com",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-12T12:00:00Z",
+      "determination_publication_date": "2026-05-25T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Kamgras 1 K.K.",
+          "identifier_type": null,
+          "identifier": "Japan corporate number  0104 01 197943"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Kakaku.com, Inc.",
+          "identifier_type": null,
+          "identifier": "Japan corporate number  011001065997"
+        },
+        {
+          "name": "Time Design International Pte Ltd",
+          "identifier_type": null,
+          "identifier": "Singapore registration number  UEN 201736394D"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "EQT Fund Management S.\u00e0 r.l.",
+          "identifier_type": null,
+          "identifier": "Luxembourg Company Registration Number  B167972"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5700",
+          "name": "Internet Publishing and Broadcasting"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "7220",
+          "name": "Travel Agency and Tour Arrangement Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eqt-fund-management-%E2%80%93-kakakucom"
+    },
+    {
       "merger_id": "WA-85027",
       "merger_name": "American Industrial Partners - Avanos Medical",
       "status": "Assessment completed",
@@ -772,6 +983,53 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mastercard-bvnk"
+    },
+    {
+      "merger_id": "WA-65018",
+      "merger_name": "Blackstone - Medallia",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-15T12:00:00Z",
+      "determination_publication_date": "2026-05-25T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Blackstone Alternative Credit Advisors LP",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Medallia Parent, LP",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Blackstone Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/blackstone-medallia"
     },
     {
       "merger_id": "MN-25018",

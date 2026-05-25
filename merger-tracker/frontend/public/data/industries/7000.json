@@ -2,6 +2,12 @@
   "code": "7000",
   "mergers": [
     {
+      "merger_id": "WA-01098",
+      "merger_name": "Adyen - Talon.One",
+      "is_waiver": true,
+      "status": "Assessment completed"
+    },
+    {
       "merger_id": "WA-70019",
       "merger_name": "Cognizant \u2013 Astreya",
       "is_waiver": true,
@@ -206,5 +212,5 @@
       "status": "Assessment completed"
     }
   ],
-  "count": 34
+  "count": 35
 }
