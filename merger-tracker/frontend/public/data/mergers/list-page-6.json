@@ -524,26 +524,26 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Global Engage Marine Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "693 762 122"
-        },
-        {
           "name": "PT Asian Bulk Logistics",
           "identifier_type": null,
           "identifier": ""
+        },
+        {
+          "name": "Global Engage Marine Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 762 122"
         }
       ],
       "targets": [
         {
-          "name": "ENGAGE MARINE TOPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "46 675 998 562"
-        },
-        {
           "name": "ENGAGE MARINE HOLDINGS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "99 626 774 678"
+        },
+        {
+          "name": "ENGAGE MARINE TOPCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "46 675 998 562"
         },
         {
           "name": "ENGAGE MARINE FINCO PTY LTD",
@@ -553,14 +553,14 @@
       ],
       "other_parties": [
         {
-          "name": "MAGNETIC INFRASTRUCTURE GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "81 663 518 563"
-        },
-        {
           "name": "AUSTRALIAN GLOBAL MARINE AND LOGISTICS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "68 682 427 587"
+        },
+        {
+          "name": "AUSTRALIAN GLOBAL INFRASTRUCTURE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 663 347 948"
         },
         {
           "name": "Australian Global Onshore Logistics Pty Ltd",
@@ -568,9 +568,9 @@
           "identifier": "691 961 136"
         },
         {
-          "name": "AUSTRALIAN GLOBAL INFRASTRUCTURE PTY LTD",
+          "name": "MAGNETIC INFRASTRUCTURE GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "47 663 347 948"
+          "identifier": "81 663 518 563"
         }
       ],
       "anzsic_codes": [
