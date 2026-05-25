@@ -14710,6 +14710,169 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/stonepeak-%E2%80%93-castrol",
+      "merger_name": "Stonepeak \u2013 Castrol",
+      "status": "Under assessment",
+      "merger_id": "MN-60015",
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "original_notification_datetime": "2026-05-21T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-07-06T12:00:00Z",
+      "page_modified_datetime": "2026-05-25T16:22:24+10:00",
+      "consultation_response_due_date": "2026-06-01T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "CPP Investment Board Private Holdings (6) Inc",
+          "identifier_type": null,
+          "identifier": "CBN  764228300"
+        },
+        {
+          "name": "Motion JVCo Limited",
+          "identifier_type": null,
+          "identifier": "Company Identifier Number  163042"
+        },
+        {
+          "name": "BP Motion Holdings Limited",
+          "identifier_type": null,
+          "identifier": "UKCRN  16910312"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Castrol Group Holdings Limited",
+          "identifier_type": null,
+          "identifier": "UKCRN  SC005098"
+        },
+        {
+          "name": "Stonepeak Motion PoolingCo Limited",
+          "identifier_type": null,
+          "identifier": "CBN  764228300"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Stonepeak Partners LP",
+          "identifier_type": null,
+          "identifier": "Company Identifier Number: 4958360  Delaware"
+        },
+        {
+          "name": "BP p.l.c",
+          "identifier_type": null,
+          "identifier": "UKCRN  00102498"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1709",
+          "name": "Other Petroleum and Coal Product Manufacturing"
+        }
+      ],
+      "merger_description": "Castrol Group Holdings Limited (**Castrol**) is BP\u2019s global lubricants business, headquartered in the United Kingdom. Castrol is active globally in the development, production and sale of lubricants and related fluids for various industries including automotive, energy, industrial and marine.\n\nBP p.l.c. (**BP**) is a global integrated energy group with operations in Europe, North and South America, Australasia, Asia and Africa.\n\nStonepeak Partners LP (together with its affiliates, **Stonepeak**) is a global investment firm specialising in infrastructure and real estate assets.\n\nThe Acquisition comprises:\n\n* the acquisition of 100% of the shares in Castrol by Stonepeak from BP, through Motion JVCo Limited (**Motion JVCo**), a special purpose vehicle wholly owned by a company which is indirectly owned by investment funds advised and/or managed by Stonepeak,\n* the reinvestment by BP, Castrol\u2019s current owner, in Castrol by acquiring 35% of the shares in Motion JVCo, through a wholly owned subsidiary. Stonepeak will hold the remaining 65% of Motion JVCo, and\n* the indirect investment by Canada Pension Plan Investment Board (**CPPIB**) in Motion JVCo, through its wholly owned subsidiary CPP Investment Board Private Holdings (6) Inc, via investment in another Stonepeak entity.",
+      "events": [
+        {
+          "date": "2026-05-25T12:00:00Z",
+          "title": "Questionnaire - Stonepeak - Castrol",
+          "display_title": "Questionnaire - Stonepeak - Castrol",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Stonepeak_Castrol%20-%20Third%20Party%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-60015/Stonepeak_Castrol - Third Party Questionnaire.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-21T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-20011",
+          "merger_name": "Origin \u2013 Equity stake in Kraken",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "53 143 484 208"
+            }
+          ],
+          "targets": [
+            {
+              "name": "CPP Investment Board Private Holdings (4) Inc.",
+              "identifier_type": null,
+              "identifier": "BN  11089340"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-70019",
+          "merger_name": "Cognizant \u2013 Astreya",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Cognizant Domestic Holdings Corporation",
+              "identifier_type": null,
+              "identifier": "Delaware file number 5221744"
+            },
+            {
+              "name": "Asteroid Merger Sub, Inc.",
+              "identifier_type": null,
+              "identifier": "Delaware file number 10587708"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Astreya Partners, Inc.",
+              "identifier_type": null,
+              "identifier": "CIN 770570107"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-25006",
+          "merger_name": "KPS \u2013 Novacel",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Desmos US Bidco, Inc.",
+              "identifier_type": null,
+              "identifier": "[ID type unknown]  10469174"
+            },
+            {
+              "name": "Desmos Bidco SAS",
+              "identifier_type": null,
+              "identifier": "SIREN  100 230 754"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Novacel Performance Coatings, Inc.",
+              "identifier_type": null,
+              "identifier": "EIN  311708662"
+            },
+            {
+              "name": "Novacel, Inc.",
+              "identifier_type": null,
+              "identifier": "EIN  043515032"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/insurance-australia-group-%E2%80%93-rac-insurance",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "status": "Under assessment",
