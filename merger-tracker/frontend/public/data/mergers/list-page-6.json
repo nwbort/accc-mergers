@@ -875,6 +875,16 @@
       ],
       "other_parties": [
         {
+          "name": "HMC CAPITAL LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "94 138 990 593"
+        },
+        {
+          "name": "The John Laing Group Limited",
+          "identifier_type": null,
+          "identifier": "UK Company No: 05975300"
+        },
+        {
           "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)",
           "identifier_type": null,
           "identifier": ""
@@ -885,19 +895,9 @@
           "identifier": "98 159 167 344"
         },
         {
-          "name": "HMC CAPITAL LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "94 138 990 593"
-        },
-        {
           "name": "The Trust Company (Australia) Limited (as trustee for Volt Managed Investment Trust 2)",
           "identifier_type": "ABN",
           "identifier": "21 000 000 993"
-        },
-        {
-          "name": "The John Laing Group Limited",
-          "identifier_type": null,
-          "identifier": "UK Company No: 05975300"
         }
       ],
       "anzsic_codes": [
@@ -1614,6 +1614,55 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/logic-technologies-ace-communication-distributors"
     },
     {
+      "merger_id": "MN-25026",
+      "merger_name": "Tibaldi - South Food Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "TIBALDI (AUST) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 664 117 248"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SOUTH FOOD GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "97 006 891 292"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "TIBALDI AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 664 117 257"
+        },
+        {
+          "name": "CHESTNUT AVENUE AUSTRALIA PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "85 667 250 688"
+        },
+        {
+          "name": "CHESTNUT PROPERTY AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "56 664 974 421"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1113",
+          "name": "Cured Meat and Smallgoods Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tibaldi-south-food-group"
+    },
+    {
       "merger_id": "MN-30012",
       "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
       "status": "Under assessment",
@@ -1655,6 +1704,99 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/endeavour-group-%E2%80%93-retail-liquor-store-in-muswellbrook-nsw"
+    },
+    {
+      "merger_id": "MN-30016",
+      "merger_name": "Zurich - Beazley",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Zurich Insurance Company Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Beazley plc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Zurich Assure Australia Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Financial Services Australia Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Insite Holdings Pty Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Services (Australia) Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "OnePath General Insurance Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Cover-More Group",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Australia Insurance Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Finance (Australia) Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Australia Insurance Properties Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Australia Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Australian Property Holdings Pty Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6310",
+          "name": "Life Insurance"
+        },
+        {
+          "code": "6322",
+          "name": "General Insurance"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/zurich-beazley"
     }
   ],
   "page": 6,

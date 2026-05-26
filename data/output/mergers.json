@@ -730,7 +730,7 @@
         },
         {
           "merger_id": "MN-45002",
-          "merger_name": "eBay / Depop",
+          "merger_name": "eBay - Depop",
           "status": "Assessment completed",
           "accc_determination": "Approved",
           "acquirers": [
@@ -4312,7 +4312,7 @@
         },
         {
           "merger_id": "MN-45002",
-          "merger_name": "eBay / Depop",
+          "merger_name": "eBay - Depop",
           "status": "Assessment completed",
           "accc_determination": "Approved",
           "acquirers": [
@@ -5377,14 +5377,14 @@
           ],
           "targets": [
             {
-              "name": "RACI PTY LIMITED",
-              "identifier_type": "ABN",
-              "identifier": "40 008 671 805"
-            },
-            {
               "name": "RAC INSURANCE PTY LIMITED",
               "identifier_type": "ABN",
               "identifier": "59 094 685 882"
+            },
+            {
+              "name": "RACI PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "40 008 671 805"
             }
           ]
         },
@@ -8839,6 +8839,144 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tibaldi-south-food-group",
+      "merger_name": "Tibaldi - South Food Group",
+      "status": "Under assessment",
+      "merger_id": "MN-25026",
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "original_notification_datetime": "2026-05-22T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-07-07T12:00:00Z",
+      "page_modified_datetime": "2026-05-25T17:16:26+10:00",
+      "consultation_response_due_date": "2026-06-02T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "TIBALDI (AUST) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 664 117 248"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SOUTH FOOD GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "97 006 891 292"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "TIBALDI AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 664 117 257"
+        },
+        {
+          "name": "CHESTNUT AVENUE AUSTRALIA PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "85 667 250 688"
+        },
+        {
+          "name": "CHESTNUT PROPERTY AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "56 664 974 421"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1113",
+          "name": "Cured Meat and Smallgoods Manufacturing"
+        }
+      ],
+      "merger_description": "Tibaldi (Aust) Pty Ltd proposes to acquire South Food Group\n\nBoth Tibaldi and South Food Group are manufacturers and suppliers of pork smallgoods.\n\nTibaldi supplies ham products, bacon, salami, deli meats, sausages, and fresh pork. Tibaldi supplies its products\u00a0to supermarket and catering/fast-food customers under various brands including Tibaldi, Signature Collection and Coburg Smokehouse.\n\nSouth Food Group supplies prosciutto, pancetta, chorizo, bresaola, salami, sausages, and related products to both retail and food service customers under the Casalingo Smallgoods, Chicaron, Fiora Smallgoods, crackle & co, and Greenvale Farm Free Range brands. South Food Group also manufactures on behalf of other smallgoods suppliers via toll manufacturing arrangements, including Tibaldi, D\u2019Orsogna Smallgoods, and Spiess Food Solutions.",
+      "events": [
+        {
+          "date": "2026-05-25T12:00:00Z",
+          "title": "Questionnaire - Tibaldi - South Food Group",
+          "display_title": "Questionnaire - Tibaldi - South Food Group",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Tibaldi%20-%20South%20Food%20Group%20-%20Questionnaire%20-%2025%20May%202026.docx",
+          "url_gh": "/mergers/MN-25026/Tibaldi - South Food Group - Questionnaire - 25 May 2026.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-22T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-50007",
+          "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "NDC AUSTRALIA PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "49 162 955 866"
+            }
+          ],
+          "targets": [
+            {
+              "name": "The Trustee for the Comfy Dental Trust",
+              "identifier_type": "ABN",
+              "identifier": "59 865 563 072"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-70017",
+          "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "NDC AUSTRALIA PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "49 162 955 866"
+            }
+          ],
+          "targets": [
+            {
+              "name": "CAMDENT SERVICES UNIT TRUST",
+              "identifier_type": "ABN",
+              "identifier": "37 559 915 898"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-85013",
+          "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "NDC AUSTRALIA PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "49 162 955 866"
+            }
+          ],
+          "targets": [
+            {
+              "name": "TAN DENTAL PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "18 146 067 594"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/peter-warren-wakeling-automotive",
       "merger_name": "Peter Warren - Wakeling Automotive",
       "status": "Under assessment",
@@ -9715,6 +9853,193 @@
               "name": "Envol Holdings Limited",
               "identifier_type": null,
               "identifier": "Jersey registration number  121115"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/zurich-beazley",
+      "merger_name": "Zurich - Beazley",
+      "status": "Under assessment",
+      "merger_id": "MN-30016",
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "original_notification_datetime": "2026-05-22T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-07-07T12:00:00Z",
+      "page_modified_datetime": "2026-05-25T16:56:33+10:00",
+      "consultation_response_due_date": "2026-06-02T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Zurich Insurance Company Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Beazley plc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Zurich Assure Australia Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Financial Services Australia Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Insite Holdings Pty Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Services (Australia) Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "OnePath General Insurance Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Cover-More Group",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Australia Insurance Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Finance (Australia) Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Australia Insurance Properties Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Australia Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Australian Property Holdings Pty Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6310",
+          "name": "Life Insurance"
+        },
+        {
+          "code": "6322",
+          "name": "General Insurance"
+        }
+      ],
+      "merger_description": "Zurich Insurance Group Ltd (**Zurich**) proposes to acquire all of the shares in Beazley plc (**Beazley**) (the **Acquisition**).\n\nBeazley is a UK-based global specialty insurance business. Globally, Beazley underwrites a range of specialty insurance products, including professional indemnity, cyber liability, property, marine, reinsurance, accident and life sciences, financial institutions, directors and officers, and political risks and contingency business. Beazley manages 7 Lloyd\u2019s syndicates that underwrite insurance and reinsurance business through the Lloyd\u2019s global platform, and is active in Australia solely through these syndicates.\n\nZurich is a global multi-line insurer headquartered in Switzerland. In Australia, Zurich, through its wholly-owned subsidiaries, supplies a range of life insurance products and general insurance products, including specialty insurance products.\n\nThe Acquisition gives rise to a competitive overlap in relation to the supply of the following insurance products in Australia: Cyber, Marine, SME, Corporate Property, Personal Accident, Management Liability, Professional Liability, and Financial lines/institutions.",
+      "events": [
+        {
+          "date": "2026-05-26T12:00:00Z",
+          "title": "Zurich - Beazley - Questionnaire",
+          "display_title": "Zurich - Beazley - Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Zurich%20-%20Beazley%20-%20Questionnaire_0.docx",
+          "url_gh": "/mergers/MN-30016/Zurich - Beazley - Questionnaire_0.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-22T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-55016",
+          "merger_name": "Zurich - ClearView",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "11 008 423 372"
+            }
+          ],
+          "targets": [
+            {
+              "name": "CLEARVIEW WEALTH LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "83 106 248 248"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-80006",
+          "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "RUSSELL INVESTMENT GROUP PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "92 003 066 859"
+            }
+          ],
+          "targets": [
+            {
+              "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "56 063 278 400"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-65005",
+          "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+          "status": "Under assessment",
+          "accc_determination": null,
+          "acquirers": [
+            {
+              "name": "INSURANCE AUSTRALIA GROUP LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "60 090 739 923"
+            }
+          ],
+          "targets": [
+            {
+              "name": "RAC INSURANCE PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "59 094 685 882"
+            },
+            {
+              "name": "RACI PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "40 008 671 805"
             }
           ]
         }
@@ -10988,14 +11313,14 @@
           ],
           "targets": [
             {
-              "name": "RACI PTY LIMITED",
-              "identifier_type": "ABN",
-              "identifier": "40 008 671 805"
-            },
-            {
               "name": "RAC INSURANCE PTY LIMITED",
               "identifier_type": "ABN",
               "identifier": "59 094 685 882"
+            },
+            {
+              "name": "RACI PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "40 008 671 805"
             }
           ]
         },
@@ -11346,7 +11671,7 @@
     },
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ebay-depop",
-      "merger_name": "eBay / Depop",
+      "merger_name": "eBay - Depop",
       "status": "Assessment completed",
       "merger_id": "MN-45002",
       "effective_notification_datetime": "2026-04-03T12:00:00Z",
@@ -11355,7 +11680,7 @@
       "end_of_determination_period": "2026-05-19T12:00:00Z",
       "determination_publication_date": "2026-05-12T12:00:00Z",
       "accc_determination": "Approved",
-      "page_modified_datetime": "2026-05-12T15:10:01+10:00",
+      "page_modified_datetime": "2026-05-26T12:04:01+10:00",
       "consultation_response_due_date": "2026-04-14T12:00:00Z",
       "acquirers": [
         {
@@ -11378,11 +11703,6 @@
       ],
       "other_parties": [
         {
-          "name": "eBay Marketplaces GmbH",
-          "identifier_type": null,
-          "identifier": "Swiss Enterprise Identification Number  CHE205764206"
-        },
-        {
           "name": "EBAY COMMERCE AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "62 634 460 969"
@@ -11391,6 +11711,11 @@
           "name": "EBAY AUSTRALIA AND NEW ZEALAND PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "22 086 288 888"
+        },
+        {
+          "name": "eBay Marketplaces GmbH",
+          "identifier_type": null,
+          "identifier": "Swiss Enterprise Identification Number  CHE205764206"
         }
       ],
       "anzsic_codes": [
@@ -13980,14 +14305,14 @@
           ],
           "targets": [
             {
-              "name": "RACI PTY LIMITED",
-              "identifier_type": "ABN",
-              "identifier": "40 008 671 805"
-            },
-            {
               "name": "RAC INSURANCE PTY LIMITED",
               "identifier_type": "ABN",
               "identifier": "59 094 685 882"
+            },
+            {
+              "name": "RACI PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "40 008 671 805"
             }
           ]
         },
@@ -15023,7 +15348,7 @@
       "original_notification_datetime": "2026-03-03T12:00:00Z",
       "stage": "Phase 2 - detailed assessment",
       "end_of_determination_period": "2026-08-26T12:00:00Z",
-      "page_modified_datetime": "2026-05-04T17:11:55+10:00",
+      "page_modified_datetime": "2026-05-25T18:09:58+10:00",
       "consultation_response_due_date": "2026-05-04T12:00:00Z",
       "acquirers": [
         {
@@ -15034,26 +15359,26 @@
       ],
       "targets": [
         {
-          "name": "RACI PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "40 008 671 805"
-        },
-        {
           "name": "RAC INSURANCE PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "59 094 685 882"
+        },
+        {
+          "name": "RACI PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "40 008 671 805"
         }
       ],
       "other_parties": [
         {
-          "name": "RACWA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "60 008 985 877"
-        },
-        {
           "name": "THE ROYAL AUTOMOBILE CLUB OF WA INC",
           "identifier_type": "ABN",
           "identifier": "33 212 133 120"
+        },
+        {
+          "name": "RACWA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 008 985 877"
         }
       ],
       "anzsic_codes": [
@@ -15087,6 +15412,15 @@
           "url_gh": "/mergers/MN-65005/Decision to Proceed to a Phase 2 review.pdf",
           "status": "live",
           "phase": "Phase 2"
+        },
+        {
+          "date": "2026-05-25T12:00:00Z",
+          "title": "Summary of Notice of Competition Concerns",
+          "display_title": "Summary of Notice of Competition Concerns",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IAG_RACI%20-%20Summary%20of%20Notice%20of%20Competition%20Concerns%20-%2025%20May%202026.pdf",
+          "url_gh": "/mergers/MN-65005/IAG_RACI - Summary of Notice of Competition Concerns - 25 May 2026.pdf",
+          "status": "live",
+          "phase": null
         }
       ],
       "is_waiver": false,
@@ -15097,8 +15431,8 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
-      "competition_concerns_notice_date": "2026-05-25T12:00:00Z",
       "has_questionnaire": true,
+      "has_nocc": true,
       "similar_mergers": [
         {
           "merger_id": "MN-40015",
@@ -16816,7 +17150,7 @@
         },
         {
           "merger_id": "MN-45002",
-          "merger_name": "eBay / Depop",
+          "merger_name": "eBay - Depop",
           "status": "Assessment completed",
           "accc_determination": "Approved",
           "acquirers": [
@@ -19999,7 +20333,7 @@
       "original_notification_datetime": "2026-05-14T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-06-29T12:00:00Z",
-      "page_modified_datetime": "2026-05-22T15:14:09+10:00",
+      "page_modified_datetime": "2026-05-25T16:28:39+10:00",
       "consultation_response_due_date": "2026-05-22T12:00:00Z",
       "acquirers": [
         {
@@ -20022,6 +20356,16 @@
       ],
       "other_parties": [
         {
+          "name": "HMC CAPITAL LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "94 138 990 593"
+        },
+        {
+          "name": "The John Laing Group Limited",
+          "identifier_type": null,
+          "identifier": "UK Company No: 05975300"
+        },
+        {
           "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)",
           "identifier_type": null,
           "identifier": ""
@@ -20032,19 +20376,9 @@
           "identifier": "98 159 167 344"
         },
         {
-          "name": "HMC CAPITAL LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "94 138 990 593"
-        },
-        {
           "name": "The Trust Company (Australia) Limited (as trustee for Volt Managed Investment Trust 2)",
           "identifier_type": "ABN",
           "identifier": "21 000 000 993"
-        },
-        {
-          "name": "The John Laing Group Limited",
-          "identifier_type": null,
-          "identifier": "UK Company No: 05975300"
         }
       ],
       "anzsic_codes": [
@@ -20061,7 +20395,7 @@
           "name": "Other Auxiliary Finance and Investment Services"
         }
       ],
-      "merger_description": "Volt Managed Investment Trust 1 and Volt Managed Investment Trust 2 (together, the **Volt MITs**), through their respective trustees, propose to invest A$355 million in HMC Capital Limited\u2019s Energy Transition Platform (**HMC Platform**) through the acquisition of loan notes and share warrants issued by Volt HoldCo Pty Ltd (**Volt HoldCo**), with the warrants automatically converting into a minority equity interest in Volt HoldCo upon repayment of the loan notes (the **Acquisition**). HMC Platform comprises wholly-owned subsidiaries of Volt HoldCo.\n\nThe Volt MITs are administered by professional trust companies, namely Perpetual Corporate Trust Limited, and The Trust Company (Australia) Limited, respectively (together, the **Perpetual Trustees**). The single unitholders in the Volt MITs are KKR Global Climate Transition Holdings Pte. Ltd and KKR Asia Climate Holdings Pte. Ltd respectively (the **KKR Funds**).\n\nThe Volt MITs are ultimately wholly owned by investment funds, vehicles and/or accounts advised and managed by various indirect subsidiaries of KKR & Co. Inc. (together with its direct and indirect subsidiaries, KKR).\n\nKKR is a global investment firm that offers alternative asset management as well as capital markets and insurance solutions.\n\nHMC Capital Limited (**HMC or HMC Capital**) is an ASX-listed alternative asset manager. The HMC Platform operates energy generation and storage assets and has a development pipeline of wind and energy storage projects.\n\nKKR and the HMC Platform (the **Parties**) both operate within the electricity generation supply chain. The Parties horizontally overlap in the operation of electricity generating and storage assets in NEM. Some of HMC Platform\u2019s assets and pipeline projects are, or will be, connected to transmission infrastructure in which KKR has an indirect and minority interest.",
+      "merger_description": "Volt Managed Investment Trust 1 and Volt Managed Investment Trust 2 (together, the **Volt MITs**), through their respective trustees, propose to invest A$355 million in HMC Capital Limited\u2019s Energy Transition Platform (**HMC Platform**) through the acquisition of loan notes and share warrants issued by Volt HoldCo Pty Ltd (**Volt HoldCo**) (the **Acquisition**), with the warrants automatically converting into a minority equity interest in Volt HoldCo upon repayment of the loan notes. HMC Platform comprises wholly-owned subsidiaries of Volt HoldCo.\n\nThe Volt MITs are administered by professional trust companies, namely Perpetual Corporate Trust Limited, and The Trust Company (Australia) Limited, respectively (together, the **Perpetual Trustees**). The single unitholders in the Volt MITs are KKR Global Climate Transition Holdings Pte. Ltd and KKR Asia Climate Holdings Pte. Ltd respectively (the **KKR Funds**).\n\nThe Volt MITs are ultimately wholly owned by investment funds, vehicles and/or accounts advised and managed by various indirect subsidiaries of KKR & Co. Inc. (together with its direct and indirect subsidiaries, KKR).\n\nKKR is a global investment firm that offers alternative asset management as well as capital markets and insurance solutions.\n\nHMC Capital Limited (**HMC or HMC Capital**) is an ASX-listed alternative asset manager. The HMC Platform operates energy generation and storage assets and has a development pipeline of wind and energy storage projects.\n\nKKR and the HMC Platform (the **Parties**) both operate within the electricity generation supply chain. The Parties horizontally overlap in the operation of electricity generating and storage assets in NEM. Some of HMC Platform\u2019s assets and pipeline projects are, or will be, connected to transmission infrastructure in which KKR has an indirect and minority interest.",
       "events": [
         {
           "date": "2026-05-15T12:00:00Z",
@@ -25788,14 +26122,14 @@
           ],
           "targets": [
             {
-              "name": "RACI PTY LIMITED",
-              "identifier_type": "ABN",
-              "identifier": "40 008 671 805"
-            },
-            {
               "name": "RAC INSURANCE PTY LIMITED",
               "identifier_type": "ABN",
               "identifier": "59 094 685 882"
+            },
+            {
+              "name": "RACI PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "40 008 671 805"
             }
           ]
         }
@@ -38511,14 +38845,14 @@
           ],
           "targets": [
             {
-              "name": "RACI PTY LIMITED",
-              "identifier_type": "ABN",
-              "identifier": "40 008 671 805"
-            },
-            {
               "name": "RAC INSURANCE PTY LIMITED",
               "identifier_type": "ABN",
               "identifier": "59 094 685 882"
+            },
+            {
+              "name": "RACI PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "40 008 671 805"
             }
           ]
         },
@@ -43077,14 +43411,14 @@
           ],
           "targets": [
             {
-              "name": "RACI PTY LIMITED",
-              "identifier_type": "ABN",
-              "identifier": "40 008 671 805"
-            },
-            {
               "name": "RAC INSURANCE PTY LIMITED",
               "identifier_type": "ABN",
               "identifier": "59 094 685 882"
+            },
+            {
+              "name": "RACI PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "40 008 671 805"
             }
           ]
         },
@@ -45445,14 +45779,14 @@
           ],
           "targets": [
             {
-              "name": "RACI PTY LIMITED",
-              "identifier_type": "ABN",
-              "identifier": "40 008 671 805"
-            },
-            {
               "name": "RAC INSURANCE PTY LIMITED",
               "identifier_type": "ABN",
               "identifier": "59 094 685 882"
+            },
+            {
+              "name": "RACI PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "40 008 671 805"
             }
           ]
         },
@@ -45843,14 +46177,14 @@
           ],
           "targets": [
             {
-              "name": "RACI PTY LIMITED",
-              "identifier_type": "ABN",
-              "identifier": "40 008 671 805"
-            },
-            {
               "name": "RAC INSURANCE PTY LIMITED",
               "identifier_type": "ABN",
               "identifier": "59 094 685 882"
+            },
+            {
+              "name": "RACI PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "40 008 671 805"
             }
           ]
         }
@@ -46636,7 +46970,7 @@
       "similar_mergers": [
         {
           "merger_id": "MN-45002",
-          "merger_name": "eBay / Depop",
+          "merger_name": "eBay - Depop",
           "status": "Assessment completed",
           "accc_determination": "Approved",
           "acquirers": [
@@ -51617,14 +51951,14 @@
           ],
           "targets": [
             {
-              "name": "RACI PTY LIMITED",
-              "identifier_type": "ABN",
-              "identifier": "40 008 671 805"
-            },
-            {
               "name": "RAC INSURANCE PTY LIMITED",
               "identifier_type": "ABN",
               "identifier": "59 094 685 882"
+            },
+            {
+              "name": "RACI PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "40 008 671 805"
             }
           ]
         },

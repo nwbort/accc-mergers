@@ -1,0 +1,138 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tibaldi-south-food-group",
+  "merger_name": "Tibaldi - South Food Group",
+  "status": "Under assessment",
+  "merger_id": "MN-25026",
+  "effective_notification_datetime": "2026-05-22T12:00:00Z",
+  "original_notification_datetime": "2026-05-22T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-07-07T12:00:00Z",
+  "page_modified_datetime": "2026-05-25T17:16:26+10:00",
+  "consultation_response_due_date": "2026-06-02T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "TIBALDI (AUST) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "18 664 117 248"
+    }
+  ],
+  "targets": [
+    {
+      "name": "SOUTH FOOD GROUP PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "97 006 891 292"
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "TIBALDI AUSTRALIA HOLDINGS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "20 664 117 257"
+    },
+    {
+      "name": "CHESTNUT AVENUE AUSTRALIA PTY. LTD.",
+      "identifier_type": "ABN",
+      "identifier": "85 667 250 688"
+    },
+    {
+      "name": "CHESTNUT PROPERTY AUSTRALIA PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "56 664 974 421"
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "1113",
+      "name": "Cured Meat and Smallgoods Manufacturing"
+    }
+  ],
+  "merger_description": "Tibaldi (Aust) Pty Ltd proposes to acquire South Food Group\n\nBoth Tibaldi and South Food Group are manufacturers and suppliers of pork smallgoods.\n\nTibaldi supplies ham products, bacon, salami, deli meats, sausages, and fresh pork. Tibaldi supplies its products\u00a0to supermarket and catering/fast-food customers under various brands including Tibaldi, Signature Collection and Coburg Smokehouse.\n\nSouth Food Group supplies prosciutto, pancetta, chorizo, bresaola, salami, sausages, and related products to both retail and food service customers under the Casalingo Smallgoods, Chicaron, Fiora Smallgoods, crackle & co, and Greenvale Farm Free Range brands. South Food Group also manufactures on behalf of other smallgoods suppliers via toll manufacturing arrangements, including Tibaldi, D\u2019Orsogna Smallgoods, and Spiess Food Solutions.",
+  "events": [
+    {
+      "date": "2026-05-25T12:00:00Z",
+      "title": "Questionnaire - Tibaldi - South Food Group",
+      "display_title": "Questionnaire - Tibaldi - South Food Group",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Tibaldi%20-%20South%20Food%20Group%20-%20Questionnaire%20-%2025%20May%202026.docx",
+      "url_gh": "/mergers/MN-25026/Tibaldi - South Food Group - Questionnaire - 25 May 2026.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-05-22T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-50007",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for the Comfy Dental Trust",
+          "identifier_type": "ABN",
+          "identifier": "59 865 563 072"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-70017",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CAMDENT SERVICES UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "37 559 915 898"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85013",
+      "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TAN DENTAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 146 067 594"
+        }
+      ]
+    }
+  ]
+}

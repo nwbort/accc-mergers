@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-03-03T12:00:00Z",
   "stage": "Phase 2 - detailed assessment",
   "end_of_determination_period": "2026-08-26T12:00:00Z",
-  "page_modified_datetime": "2026-05-04T17:11:55+10:00",
+  "page_modified_datetime": "2026-05-25T18:09:58+10:00",
   "consultation_response_due_date": "2026-05-04T12:00:00Z",
   "acquirers": [
     {
@@ -18,26 +18,26 @@
   ],
   "targets": [
     {
-      "name": "RACI PTY LIMITED",
-      "identifier_type": "ABN",
-      "identifier": "40 008 671 805"
-    },
-    {
       "name": "RAC INSURANCE PTY LIMITED",
       "identifier_type": "ABN",
       "identifier": "59 094 685 882"
+    },
+    {
+      "name": "RACI PTY LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "40 008 671 805"
     }
   ],
   "other_parties": [
     {
-      "name": "RACWA HOLDINGS PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "60 008 985 877"
-    },
-    {
       "name": "THE ROYAL AUTOMOBILE CLUB OF WA INC",
       "identifier_type": "ABN",
       "identifier": "33 212 133 120"
+    },
+    {
+      "name": "RACWA HOLDINGS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "60 008 985 877"
     }
   ],
   "anzsic_codes": [
@@ -71,6 +71,15 @@
       "url_gh": "/mergers/MN-65005/Decision to Proceed to a Phase 2 review.pdf",
       "status": "live",
       "phase": "Phase 2"
+    },
+    {
+      "date": "2026-05-25T12:00:00Z",
+      "title": "Summary of Notice of Competition Concerns",
+      "display_title": "Summary of Notice of Competition Concerns",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IAG_RACI%20-%20Summary%20of%20Notice%20of%20Competition%20Concerns%20-%2025%20May%202026.pdf",
+      "url_gh": "/mergers/MN-65005/IAG_RACI - Summary of Notice of Competition Concerns - 25 May 2026.pdf",
+      "status": "live",
+      "phase": null
     }
   ],
   "is_waiver": false,
@@ -81,8 +90,8 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
-  "competition_concerns_notice_date": "2026-05-25T12:00:00Z",
   "has_questionnaire": true,
+  "has_nocc": true,
   "similar_mergers": [
     {
       "merger_id": "MN-40015",

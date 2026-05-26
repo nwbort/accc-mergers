@@ -1620,7 +1620,7 @@
     },
     {
       "merger_id": "MN-45002",
-      "merger_name": "eBay / Depop",
+      "merger_name": "eBay - Depop",
       "status": "Assessment completed",
       "accc_determination": "Approved",
       "is_waiver": false,
@@ -1649,11 +1649,6 @@
       ],
       "other_parties": [
         {
-          "name": "eBay Marketplaces GmbH",
-          "identifier_type": null,
-          "identifier": "Swiss Enterprise Identification Number  CHE205764206"
-        },
-        {
           "name": "EBAY COMMERCE AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "62 634 460 969"
@@ -1662,6 +1657,11 @@
           "name": "EBAY AUSTRALIA AND NEW ZEALAND PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "22 086 288 888"
+        },
+        {
+          "name": "eBay Marketplaces GmbH",
+          "identifier_type": null,
+          "identifier": "Swiss Enterprise Identification Number  CHE205764206"
         }
       ],
       "anzsic_codes": [
