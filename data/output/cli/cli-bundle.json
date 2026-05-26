@@ -20667,8 +20667,8 @@
       "effective_notification_datetime": "2026-04-14T12:00:00Z",
       "original_notification_datetime": "2026-04-14T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
-      "end_of_determination_period": "2026-06-10T12:00:00Z",
-      "page_modified_datetime": "2026-05-04T14:31:13+10:00",
+      "end_of_determination_period": "2026-06-25T12:00:00Z",
+      "page_modified_datetime": "2026-05-26T16:57:51+10:00",
       "consultation_response_due_date": "2026-04-21T12:00:00Z",
       "acquirers": [
         {
@@ -20686,6 +20686,11 @@
       ],
       "other_parties": [
         {
+          "name": "N.G. BROWN & ASSOCIATES PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "97 004 819 738"
+        },
+        {
           "name": "EQT Fund Management S.à r.l.",
           "identifier_type": null,
           "identifier": "Registration number B167972"
@@ -20696,27 +20701,26 @@
           "identifier": "30 108 845 718"
         },
         {
-          "name": "The Trustee for ASG Exical Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "57 818 350 085"
-        },
-        {
           "name": "TRESCAL HOLDING PTY LTD",
           "identifier_type": "ABN",
           "identifier": "35 633 411 391"
         },
         {
-          "name": "N.G. BROWN & ASSOCIATES PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "97 004 819 738"
-        },
-        {
           "name": "Mobile Test 'n' Cal Australia Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "45 147 991 482"
+        },
+        {
+          "name": "The Trustee for ASG Exical Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "57 818 350 085"
         }
       ],
       "anzsic_codes": [
+        {
+          "code": "3494",
+          "name": "Other Electrical and Electronic Goods Wholesaling"
+        },
         {
           "code": "6925",
           "name": "Scientific Testing and Analysis Services"
@@ -20724,10 +20728,6 @@
         {
           "code": "9422",
           "name": "Electronic (except Domestic Appliance) and Precision Equipment Repair"
-        },
-        {
-          "code": "3494",
-          "name": "Other Electrical and Electronic Goods Wholesaling"
         }
       ],
       "merger_description": "Trescal Holding Pty Ltd (**Trescal**), through a wholly-owned subsidiary, proposes to acquire TR Pty Ltd’s (**TR**) calibration and equipment sales business, TechRentals Calibration & Sales (**TR Calibration**) (the **Acquisition**).\n\nTrescal supplies calibration services, equipment procurement and distribution, instrument verification, equipment maintenance, system validation, electrical safety equipment testing services and asset management services, to customers in various sectors. Trescal operates across Australia and has laboratories in Adelaide, Brisbane, Melbourne, Perth and Sydney. Trescal is a subsidiary of French company Trescal International SAS, a global provider of calibration and asset management services.\n\nTR is primarily a nationwide provider of technology equipment (including testing, inspection, calibration and telecommunications equipment) for rent. Through the Acquisition, Trescal would acquire TR’s nationwide calibration services and equipment sales business, TR Calibration, which supplies calibration services and measurement equipment to customers across Australia including from laboratories in Sydney and Brisbane. TR is a subsidiary of Vp plc, a company listed on the London Stock Exchange.\n\nTrescal and TR Calibration overlap in the supply of calibration services and calibration equipment in Australia. Calibration services involve comparing the performance of testing and measurement equipment against a measurement standard to ensure accurate performance and compliance with relevant standards, and related equipment repairs (for example, if equipment fails a calibration test).",
@@ -20751,6 +20751,12 @@
           "date": "2026-05-04T12:00:00Z",
           "title": "Timeline extended by 8 business days – following request by parties",
           "display_title": "Timeline extended by 8 business days – following request by parties",
+          "phase": null
+        },
+        {
+          "date": "2026-05-26T12:00:00Z",
+          "title": "Timeline extended by 11 business days – following request by parties",
+          "display_title": "Timeline extended by 11 business days – following request by parties",
           "phase": null
         }
       ],
@@ -33420,6 +33426,180 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/wipro-indeco",
+      "merger_name": "Wipro - Indeco",
+      "status": "Assessment completed",
+      "merger_id": "WA-35016",
+      "effective_notification_datetime": "2026-05-01T12:00:00Z",
+      "original_notification_datetime": "2026-05-01T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-05-26T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-05-26T17:19:44+10:00",
+      "acquirers": [
+        {
+          "name": "Wipro Pari Italy S.r.l.",
+          "identifier_type": null,
+          "identifier": "Companies Register of Emilia no. 05595980284"
+        },
+        {
+          "name": "Wipro Enterprises Private Limited",
+          "identifier_type": null,
+          "identifier": "Registrar of Companies, Karnataka at Bangalore no. U15141KA2010PTC054808"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Indeco Ind S.p.A.",
+          "identifier_type": null,
+          "identifier": "Companies Register of Bari no. 05949910722"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "WIPRO LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 093 961 936"
+        },
+        {
+          "name": "Indeco Australia Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2462",
+          "name": "Mining and Construction Machinery Manufacturing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "Wipro Enterprises Private Limited (**Wipro**) proposes to acquire a 91% interest in Indeco Ind S.p.A. and its subsidiaries (**Indeco**). A sale and purchase agreement was executed on 9 April 2026. Pursuant to that agreement, Wipro has designated its indirect wholly owned subsidiary, Wipro Pari Italy S.r.l., as the direct acquiring entity.\n\nWipro is a privately held company incorporated in India that operates across a variety of sectors including fast-moving consumer goods, lighting, hydraulics, industrial automation, 3D printing, aerospace component manufacturing, and industrial water treatment. Its hydraulics division designs and manufactures hydraulic cylinders (i.e. hydraulic actuators that provide linear motion when hydraulic energy is converted into mechanical movement) with applications in construction and earthmoving, mining, lifting, forestry, agriculture and trucking. Wipro’s presence in Australia is limited to a related entity, Wipro Limited, which is a part of the Wipro Group (i.e. under common control). Wipro Limited and its Australian subsidiaries provide consulting, engineering, IT, and business process services in Australia.\n\nIndeco is a joint stock company incorporated in Italy. Indeco is a manufacturer of hydraulic demolition hammers and other excavator attachments. Indeco also provides maintenance services, primarily related to hydraulic hammers. Indeco’s products and services are primarily used in the mining and quarrying, infrastructure, land clearing, construction, demolition, and recycling sectors. Indeco has multiple subsidiaries globally.\n\nIndeco operates in Australia through its wholly owned subsidiary, Indeco Australia Pty Ltd (**Indeco Australia**). Indeco Australia sells hydraulic hammers and excavator attachments (including compactors, grabs, shears, pulverisers, mulching heads and multi-processors) as well as spare parts, which have applications in construction, mining, demolition, recycling, land clearing, infrastructure and forestry.",
+      "events": [
+        {
+          "date": "2026-05-26T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Wipro%20-%20Indeco%20%28WA-35016%29%20-%20Notification%20waiver%20determination%20-%2026%20May%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Wipro Pari Italy S.r.l. (Wipro Pari), an indirectly wholly owned subsidiary of Wipro Enterprises Private Limited (Wipro), applied for a notification waiver in respect of its proposed acquisition of a 91% interest in Indeco Ind S.p.A (Indeco), as described in the transaction documents provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABV(1)(a) of the Competition and Consumer Act 2010 (Cth) that the Acquisition is not required to be notified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "26 May 2026"
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Wipro, is a privately held company incorporated in India that operates across a variety of sectors including fast-moving consumer goods, lighting, hydraulics, industrial automation, 3D printing, aerospace component manufacturing, and industrial water treatment. Its hydraulics division designs and manufactures hydraulic cylinders (i.e. hydraulic actuators that provide linear motion when hydraulic energy is converted into mechanical movement) with applications in construction and earthmoving, mining, lifting, forestry, agriculture and trucking.\n\nWipro’s related entity, Wipro Limited, together with its subsidiaries, provides consulting, engineering, IT, and business process services in Australia.\n\nThe target, Indeco, is incorporated in Italy and is a manufacturer of hydraulic demolition hammers and other excavator attachments.\n\nIndeco operates in Australia through its wholly owned subsidiary, Indeco Australia Pty Ltd, which sells hydraulic hammers and excavator attachments (including compactors, grabs, shears, pulverisers, mulching heads and multi-processors) as well as spare parts. These products have applications in construction, mining, demolition, recycling, land clearing, infrastructure and forestry.\n\nHydraulic cylinders are an upstream input into some excavator attachments. However, Wipro does not supply hydraulic cylinders to Indeco in Australia, or globally."
+            },
+            {
+              "item": "Explanation for determination",
+              "details": "In making this notification waiver determination, the Australian Competition and Consumer Commission (the ACCC) has considered the information provided with the notification waiver application and had regard to the factors in section 51ABV(2)(b) of the Competition and Consumer Act 2010 (Cth) (the Act).\n\nBased on the information currently before it, the ACCC considers that the Acquisition is unlikely to give rise to any material lessening of competition. In particular there is no horizontal overlap or vertical relationship between Wipro and Indeco (including their connected entities) in the supply of any products or services in Australia.\n\nThe ACCC has also had regard to the likelihood that, if the Acquisition were put into effect, the notification thresholds determined under section 51ABP(1) of the Act would apply.\n\nWhile the ACCC considers that the notification thresholds are likely to be met, given that material competition concerns are unlikely to arise, the ACCC has determined that the Acquisition is not required to be notified.\n\nThe ACCC considers that the determination is consistent with the object of the Act and the interests of consumers in promoting competition.\n\nFor more information about the ACCC’s approach to considering notification waiver applications and to assessing competition effects more generally, see the ACCC’s interim guidance on notification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-35016/Wipro - Indeco (WA-35016) - Notification waiver determination - 26 May 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-05-01T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-15014",
+          "merger_name": "Wipro - Mindsprint",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Wipro Networks Pte Ltd",
+              "identifier_type": null,
+              "identifier": "UEN  199907933M"
+            },
+            {
+              "name": "Wipro Limited",
+              "identifier_type": null,
+              "identifier": "CIN L32102KA1945PLC020800"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Mindsprint Pte Limited",
+              "identifier_type": null,
+              "identifier": "UEN  202118596N"
+            },
+            {
+              "name": "Olam Holdings Pte Limited",
+              "identifier_type": null,
+              "identifier": "UEN  202110101R"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-50007",
+          "merger_name": "National Dental Care – business assets comprising the Comfy Dental clinic, Mandurah, WA",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "NDC AUSTRALIA PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "49 162 955 866"
+            }
+          ],
+          "targets": [
+            {
+              "name": "The Trustee for the Comfy Dental Trust",
+              "identifier_type": "ABN",
+              "identifier": "59 865 563 072"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-70017",
+          "merger_name": "National Dental Care – business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "NDC AUSTRALIA PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "49 162 955 866"
+            }
+          ],
+          "targets": [
+            {
+              "name": "CAMDENT SERVICES UNIT TRUST",
+              "identifier_type": "ABN",
+              "identifier": "37 559 915 898"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/star-hotels-group-%E2%80%93-yandina-hotel-qld",
       "merger_name": "Star Hotels Group – Yandina Hotel, QLD",
       "status": "Assessment completed",
@@ -39053,6 +39233,190 @@
               "name": "Tipalea Private No.31 Pty Ltd",
               "identifier_type": "ACN",
               "identifier": "686 197 115"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/allegro-fantastic-furniture",
+      "merger_name": "Allegro - Fantastic Furniture",
+      "status": "Assessment completed",
+      "merger_id": "WA-55019",
+      "effective_notification_datetime": "2026-05-15T12:00:00Z",
+      "original_notification_datetime": "2026-05-15T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-05-26T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-05-26T17:18:53+10:00",
+      "acquirers": [
+        {
+          "name": "Fantastic Group BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "697 467 100"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Fantastic Furniture – The Package Deal Kings Limited",
+          "identifier_type": null,
+          "identifier": "NZCN  1015185"
+        },
+        {
+          "name": "FANTASTIC FURNITURE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "66 003 688 855"
+        },
+        {
+          "name": "FHL DISTRIBUTION CENTRE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 114 853 315"
+        },
+        {
+          "name": "Fantastic Furniture Limited",
+          "identifier_type": null,
+          "identifier": "NZCN  1015180"
+        },
+        {
+          "name": "FANTASTIC MANUFACTURING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 158 159 230"
+        },
+        {
+          "name": "FF BRANDS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "75 074 780 555"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Allegro Funds Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2511",
+          "name": "Wooden Furniture and Upholstered Seat Manufacturing"
+        },
+        {
+          "code": "4211",
+          "name": "Furniture Retailing"
+        }
+      ],
+      "merger_description": "Fantastic Group BidCo Pty Ltd (the **Acquirer**) is a special purpose vehicle incorporated for the purposes of acquiring 100% of the shares of Fantastic Furniture Pty Limited, FHL Distribution Centre Pty Ltd, Fantastic Manufacturing Pty Ltd, FF Brands Pty Ltd, Fantastic Furniture – The Package Deal Kings Limited and Fantastic Furniture Limited (together, **Fantastic Furniture**) (the **Acquisition**).\n\nThe Acquirer is ultimately owned by Allegro Fund IV LP , a private equity fund managed by Allegro Funds Pty Ltd (**Allegro**). The Acquisition will be funded by way of equity commitments from Allegro Fund IV LP (and/or related fund vehicles) under an equity commitment letter.\n\nAllegro is an Australian registered private equity fund manager with $4.9 billion of assets under management in investments in Australia and New Zealand. It specialises in transforming distressed, complex or underperforming businesses and has investments in a range of sectors, including in food, education services, tourism, energy, healthcare, professional services, business process outsourcing and logistics. Allegro does not have investments in the retail sector in Australia.\n\nFantastic Furniture is an Australian furniture and bedding products retailer. Its products are sourced from third-party suppliers and manufactured locally at its own facilities, before being distributed to its stores and directly to consumers throughout Australia. Fantastic Furniture specialises in mainstream, on-trend designs at budget friendly price points. It sells both \"ready to buy\" and \"made to order\" products. Products are sold through Fantastic Furniture's online marketplace, which offers instore pick-up or delivery, and through its 85 stores located across metropolitan and regional areas in each Australian state and territory.",
+      "events": [
+        {
+          "date": "2026-05-26T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Allegro%20-%20Fantastic%20Furniture%20%28WA-55019%29%20-%20Notification%20waiver%20determination%20-%2026%20May%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Allegro Funds Pty Ltd (Allegro), via Fantastic Group BidCo Pty Ltd, applied for a notification waiver in respect of its proposed acquisition of 100% of the shares of Fantastic Furniture Pty Limited, FHL Distribution Centre Pty Ltd, Fantastic Manufacturing Pty Ltd, FF Brands Pty Ltd, Fantastic Furniture – The Package Deal Kings Limited and Fantastic Furniture Limited (together, Fantastic Furniture), as described in the transaction documents provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABV(1)(a) of the Competition and Consumer Act 2010 (Cth) that the Acquisition is not required to be notified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "26 May 2026"
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Allegro, is an Australian registered private equity fund with $4.9 billion of assets under management in investments in Australia and New Zealand. It specialises in investments in sectors including food, education services, tourism, energy, healthcare, professional services, business process outsourcing, and logistics. It does not have current investments in the retail sector in Australia.\n\nThe target, Fantastic Furniture, is a furniture and bedding products retailer in Australia. Its products are sourced from third-party suppliers and manufactured locally at its own facilities, before being distributed to its stores and directly to consumers throughout Australia. It sells both ‘ready to buy’ and ‘made to order’ products.\n\nProducts are sold through Fantastic Furniture's online marketplace, which offers instore pick-up or delivery, and through its 85 stores located across metropolitan and regional areas in each Australian state and territory."
+            },
+            {
+              "item": "Explanation for determination",
+              "details": "In making this notification waiver determination, the Australian Competition and Consumer Commission (the ACCC) has considered the information provided with the notification waiver application and had regard to the factors in section 51ABV(2)(b) of the Competition and Consumer Act 2010 (Cth) (the Act).\n\nBased on the information provided in the application, the ACCC considers that the Acquisition is unlikely to give rise to any material lessening of competition. In particular, there is no competitive overlap between Allegro (including its controlled portfolio companies) and Fantastic Furniture in Australia.\n\nThe ACCC has also had regard to the likelihood that, if the Acquisition were put into effect, the notification thresholds determined under section 51ABP(1) of the Act would apply.\n\nWhile the ACCC considers that the notification thresholds are likely to be met, given that material competition concerns are unlikely to arise, the ACCC has determined that the Acquisition is not required to be notified.\n\nThe ACCC considers that the determination is consistent with the object of the Act and the interests of consumers in promoting competition.\n\nFor more information about the ACCC’s approach to considering notification waiver applications and to assessing competition effects more generally, see the ACCC’s interim guidance on notification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-55019/Allegro - Fantastic Furniture (WA-55019) - Notification waiver determination - 26 May 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-05-15T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-75013",
+          "merger_name": "Aldus - Hilton Manufacturing",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "ALDUS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "38 085 318 494"
+            }
+          ],
+          "targets": [
+            {
+              "name": "HILTON MANUFACTURING PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "89 005 551 057"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-70018",
+          "merger_name": "Restaurant Brands and Yum! Brands – Taco Bell restaurants",
+          "status": "Under assessment",
+          "accc_determination": null,
+          "acquirers": [
+            {
+              "name": "Taco Ventures Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "697 591 692"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Collins Foods Subsidiary Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "94 616 663 793"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-25008",
+          "merger_name": "Five V Capital - FTP Group",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "OVERWATCH BIDCO PTY LTD",
+              "identifier_type": "ACN",
+              "identifier": "695 739 970"
+            }
+          ],
+          "targets": [
+            {
+              "name": "FTP GROUP HOLDINGS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "82 626 217 614"
+            },
+            {
+              "name": "FAARM BIDCO PTY LTD",
+              "identifier_type": "ACN",
+              "identifier": "695 834 390"
             }
           ]
         }
@@ -58105,7 +58469,7 @@
   },
   "stats": {
     "total_mergers": 117,
-    "total_waivers": 166,
+    "total_waivers": 168,
     "by_status": {
       "Assessment completed": 79,
       "Under assessment": 38
@@ -58115,7 +58479,7 @@
       "Referred to phase 2": 4
     },
     "by_waiver_determination": {
-      "Approved": 153,
+      "Approved": 155,
       "Not approved": 13
     },
     "phase_duration": {
@@ -58140,12 +58504,12 @@
     },
     "top_industries": [
       {
-        "name": "Financial Asset Investing",
+        "name": "Computer System Design and Related Services",
         "count": 36
       },
       {
-        "name": "Computer System Design and Related Services",
-        "count": 35
+        "name": "Financial Asset Investing",
+        "count": 36
       },
       {
         "name": "Software Publishing",
@@ -58224,6 +58588,26 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "WA-35016",
+        "merger_name": "Wipro - Indeco",
+        "determination": "Approved",
+        "determination_date": "2026-05-26T12:00:00Z",
+        "page_modified_datetime": "2026-05-26T17:19:44+10:00",
+        "determination_type": "final",
+        "is_waiver": true,
+        "stage": "Waiver application"
+      },
+      {
+        "merger_id": "WA-55019",
+        "merger_name": "Allegro - Fantastic Furniture",
+        "determination": "Approved",
+        "determination_date": "2026-05-26T12:00:00Z",
+        "page_modified_datetime": "2026-05-26T17:18:53+10:00",
+        "determination_type": "final",
+        "is_waiver": true,
+        "stage": "Waiver application"
+      },
+      {
         "merger_id": "WA-20020",
         "merger_name": "Triton - Integris",
         "determination": "Approved",
@@ -58262,40 +58646,20 @@
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-01098",
-        "merger_name": "Adyen - Talon.One",
-        "determination": "Approved",
-        "determination_date": "2026-05-25T12:00:00Z",
-        "page_modified_datetime": "2026-05-25T16:40:25+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-45015",
-        "merger_name": "EQT Fund Management – Kakaku.com",
-        "determination": "Approved",
-        "determination_date": "2026-05-25T12:00:00Z",
-        "page_modified_datetime": "2026-05-25T16:37:57+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
       }
     ]
   },
   "industries": {
     "industries": [
       {
-        "code": "6240",
-        "name": "Financial Asset Investing",
+        "code": "7000",
+        "name": "Computer System Design and Related Services",
         "merger_count": 36
       },
       {
-        "code": "7000",
-        "name": "Computer System Design and Related Services",
-        "merger_count": 35
+        "code": "6240",
+        "name": "Financial Asset Investing",
+        "merger_count": 36
       },
       {
         "code": "5420",
@@ -58638,6 +59002,11 @@
         "merger_count": 2
       },
       {
+        "code": "2462",
+        "name": "Mining and Construction Machinery Manufacturing",
+        "merger_count": 2
+      },
+      {
         "code": "1916",
         "name": "Paint and Coatings Manufacturing",
         "merger_count": 2
@@ -58863,6 +59232,11 @@
         "merger_count": 2
       },
       {
+        "code": "4211",
+        "name": "Furniture Retailing",
+        "merger_count": 2
+      },
+      {
         "code": "2919",
         "name": "Other Waste Collection Services",
         "merger_count": 2
@@ -58910,11 +59284,6 @@
       {
         "code": "080",
         "name": "Metal Ore Mining",
-        "merger_count": 1
-      },
-      {
-        "code": "2462",
-        "name": "Mining and Construction Machinery Manufacturing",
         "merger_count": 1
       },
       {
@@ -59278,6 +59647,11 @@
         "merger_count": 1
       },
       {
+        "code": "2511",
+        "name": "Wooden Furniture and Upholstered Seat Manufacturing",
+        "merger_count": 1
+      },
+      {
         "code": "7291",
         "name": "Office Administrative Services",
         "merger_count": 1
@@ -59385,11 +59759,6 @@
       {
         "code": "2391",
         "name": "Shipbuilding and Repair Services",
-        "merger_count": 1
-      },
-      {
-        "code": "4211",
-        "name": "Furniture Retailing",
         "merger_count": 1
       },
       {

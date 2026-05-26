@@ -1,6 +1,84 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-05020",
+      "merger_name": "Midea Group \u2013 Esaote",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-07T12:00:00Z",
+      "determination_publication_date": "2026-05-21T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Midea Imaging Technology (Shanghai) Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "USCC  91310118MAEN420F3W"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Esaote S.p.A.",
+          "identifier_type": null,
+          "identifier": "Codice Fiscale/Partita IVA  05131180969"
+        },
+        {
+          "name": "Shanghai Lu Zi Enterprise Management Consulting Center",
+          "identifier_type": null,
+          "identifier": "USCC  91310115MA1K3D4T1W"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Midea Group (Shanghai) Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "USCC  91310118MA1JNET8X1"
+        },
+        {
+          "name": "Carestream Healthcare International Company Limited",
+          "identifier_type": null,
+          "identifier": "USCC  913100007956050379"
+        },
+        {
+          "name": "Midea Medical Technology (Shanghai) Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "USCC  91310118MAEBMH8U5G"
+        },
+        {
+          "name": "Wansheng Medical Investments (Italy) S.p.A.",
+          "identifier_type": null,
+          "identifier": "Codice Fiscale  10087620968"
+        },
+        {
+          "name": "Midea Group Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "USCC  91440606722473344C"
+        },
+        {
+          "name": "Beijing Wandong Medical Technology Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "USCC  9111000063379674X4"
+        },
+        {
+          "name": "Wansheng Medical Investments (Hong Kong) Limited",
+          "identifier_type": null,
+          "identifier": "Company Registry Identification Number  2591584"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2412",
+          "name": "Medical and Surgical Equipment Manufacturing"
+        },
+        {
+          "code": "3491",
+          "name": "Professional and Scientific Goods Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/midea-group-%E2%80%93-esaote"
+    },
+    {
       "merger_id": "WA-25023",
       "merger_name": "EPL - Indovida India",
       "status": "Assessment completed",
@@ -1031,6 +1109,74 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mastercard-bvnk"
+    },
+    {
+      "merger_id": "WA-55019",
+      "merger_name": "Allegro - Fantastic Furniture",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-15T12:00:00Z",
+      "determination_publication_date": "2026-05-26T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Fantastic Group BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "697 467 100"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Fantastic Furniture \u2013 The Package Deal Kings Limited",
+          "identifier_type": null,
+          "identifier": "NZCN  1015185"
+        },
+        {
+          "name": "FANTASTIC FURNITURE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "66 003 688 855"
+        },
+        {
+          "name": "FHL DISTRIBUTION CENTRE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 114 853 315"
+        },
+        {
+          "name": "Fantastic Furniture Limited",
+          "identifier_type": null,
+          "identifier": "NZCN  1015180"
+        },
+        {
+          "name": "FANTASTIC MANUFACTURING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 158 159 230"
+        },
+        {
+          "name": "FF BRANDS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "75 074 780 555"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Allegro Funds Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2511",
+          "name": "Wooden Furniture and Upholstered Seat Manufacturing"
+        },
+        {
+          "code": "4211",
+          "name": "Furniture Retailing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/allegro-fantastic-furniture"
     },
     {
       "merger_id": "WA-65018",

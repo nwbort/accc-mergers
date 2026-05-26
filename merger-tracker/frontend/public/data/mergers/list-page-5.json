@@ -2391,6 +2391,59 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/nuveen-%E2%80%93-schroders"
     },
     {
+      "merger_id": "WA-35016",
+      "merger_name": "Wipro - Indeco",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-01T12:00:00Z",
+      "determination_publication_date": "2026-05-26T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Wipro Pari Italy S.r.l.",
+          "identifier_type": null,
+          "identifier": "Companies Register of Emilia no. 05595980284"
+        },
+        {
+          "name": "Wipro Enterprises Private Limited",
+          "identifier_type": null,
+          "identifier": "Registrar of Companies, Karnataka at Bangalore no. U15141KA2010PTC054808"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Indeco Ind S.p.A.",
+          "identifier_type": null,
+          "identifier": "Companies Register of Bari no. 05949910722"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "WIPRO LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 093 961 936"
+        },
+        {
+          "name": "Indeco Australia Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2462",
+          "name": "Mining and Construction Machinery Manufacturing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/wipro-indeco"
+    },
+    {
       "merger_id": "MN-35014",
       "merger_name": "News \u2013 acquisition of 20% of National Distribution Services",
       "status": "Under assessment",
@@ -2747,84 +2800,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/medhealth-%E2%80%93-connect-allied-health"
-    },
-    {
-      "merger_id": "WA-05020",
-      "merger_name": "Midea Group \u2013 Esaote",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-05-07T12:00:00Z",
-      "determination_publication_date": "2026-05-21T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "Midea Imaging Technology (Shanghai) Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "USCC  91310118MAEN420F3W"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Esaote S.p.A.",
-          "identifier_type": null,
-          "identifier": "Codice Fiscale/Partita IVA  05131180969"
-        },
-        {
-          "name": "Shanghai Lu Zi Enterprise Management Consulting Center",
-          "identifier_type": null,
-          "identifier": "USCC  91310115MA1K3D4T1W"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Midea Group (Shanghai) Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "USCC  91310118MA1JNET8X1"
-        },
-        {
-          "name": "Carestream Healthcare International Company Limited",
-          "identifier_type": null,
-          "identifier": "USCC  913100007956050379"
-        },
-        {
-          "name": "Midea Medical Technology (Shanghai) Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "USCC  91310118MAEBMH8U5G"
-        },
-        {
-          "name": "Wansheng Medical Investments (Italy) S.p.A.",
-          "identifier_type": null,
-          "identifier": "Codice Fiscale  10087620968"
-        },
-        {
-          "name": "Midea Group Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "USCC  91440606722473344C"
-        },
-        {
-          "name": "Beijing Wandong Medical Technology Co., Ltd.",
-          "identifier_type": null,
-          "identifier": "USCC  9111000063379674X4"
-        },
-        {
-          "name": "Wansheng Medical Investments (Hong Kong) Limited",
-          "identifier_type": null,
-          "identifier": "Company Registry Identification Number  2591584"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "2412",
-          "name": "Medical and Surgical Equipment Manufacturing"
-        },
-        {
-          "code": "3491",
-          "name": "Professional and Scientific Goods Wholesaling"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/midea-group-%E2%80%93-esaote"
     }
   ],
   "page": 5,

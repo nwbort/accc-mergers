@@ -2,6 +2,12 @@
   "code": "7000",
   "mergers": [
     {
+      "merger_id": "WA-35016",
+      "merger_name": "Wipro - Indeco",
+      "is_waiver": true,
+      "status": "Assessment completed"
+    },
+    {
       "merger_id": "WA-01098",
       "merger_name": "Adyen - Talon.One",
       "is_waiver": true,
@@ -212,5 +218,5 @@
       "status": "Assessment completed"
     }
   ],
-  "count": 35
+  "count": 36
 }

@@ -2619,7 +2619,7 @@
       "is_waiver": false,
       "effective_notification_datetime": "2026-04-14T12:00:00Z",
       "determination_publication_date": null,
-      "end_of_determination_period": "2026-06-10T12:00:00Z",
+      "end_of_determination_period": "2026-06-25T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
@@ -2637,6 +2637,11 @@
       ],
       "other_parties": [
         {
+          "name": "N.G. BROWN & ASSOCIATES PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "97 004 819 738"
+        },
+        {
           "name": "EQT Fund Management S.\u00e0 r.l.",
           "identifier_type": null,
           "identifier": "Registration number B167972"
@@ -2647,27 +2652,26 @@
           "identifier": "30 108 845 718"
         },
         {
-          "name": "The Trustee for ASG Exical Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "57 818 350 085"
-        },
-        {
           "name": "TRESCAL HOLDING PTY LTD",
           "identifier_type": "ABN",
           "identifier": "35 633 411 391"
         },
         {
-          "name": "N.G. BROWN & ASSOCIATES PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "97 004 819 738"
-        },
-        {
           "name": "Mobile Test 'n' Cal Australia Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "45 147 991 482"
+        },
+        {
+          "name": "The Trustee for ASG Exical Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "57 818 350 085"
         }
       ],
       "anzsic_codes": [
+        {
+          "code": "3494",
+          "name": "Other Electrical and Electronic Goods Wholesaling"
+        },
         {
           "code": "6925",
           "name": "Scientific Testing and Analysis Services"
@@ -2675,10 +2679,6 @@
         {
           "code": "9422",
           "name": "Electronic (except Domestic Appliance) and Precision Equipment Repair"
-        },
-        {
-          "code": "3494",
-          "name": "Other Electrical and Electronic Goods Wholesaling"
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/trescal-%E2%80%93-tr-calibration"

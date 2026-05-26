@@ -2,6 +2,18 @@
   "events": [
     {
       "date": "2026-05-13T12:00:00Z",
+      "title": "Questionnaire - OpenAI - Tomoro",
+      "display_title": "Questionnaire - OpenAI - Tomoro",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20OpenAI%20-%20Tomoro.docx",
+      "url_gh": "/mergers/MN-25021/Questionnaire - OpenAI - Tomoro.pdf",
+      "status": "removed",
+      "merger_id": "MN-25021",
+      "merger_name": "OpenAI - Tomoro",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
+      "date": "2026-05-13T12:00:00Z",
       "title": "Questionnaire - AtkinsRealis - WGA",
       "display_title": "Questionnaire - AtkinsRealis - WGA",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/AtkinsRealis%20-%20WGA%20Group%20-%20third-party%20questionnaire%20template.docx",
@@ -178,6 +190,18 @@
       "merger_id": "WA-30010",
       "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
       "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-05-15T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "WA-55019",
+      "merger_name": "Allegro - Fantastic Furniture",
+      "phase": "Phase 1",
       "is_waiver": true
     },
     {
@@ -837,6 +861,42 @@
       "status": "live",
       "merger_id": "WA-75021",
       "merger_name": "Hillhouse - KMC Solutions",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-05-26T12:00:00Z",
+      "title": "Timeline extended by 11 business days \u2013 following request by parties",
+      "display_title": "Timeline extended by 11 business days \u2013 following request by parties",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
+      "date": "2026-05-26T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Wipro%20-%20Indeco%20%28WA-35016%29%20-%20Notification%20waiver%20determination%20-%2026%20May%202026.pdf",
+      "url_gh": "/mergers/WA-35016/Wipro - Indeco (WA-35016) - Notification waiver determination - 26 May 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-35016",
+      "merger_name": "Wipro - Indeco",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-05-26T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Allegro%20-%20Fantastic%20Furniture%20%28WA-55019%29%20-%20Notification%20waiver%20determination%20-%2026%20May%202026.pdf",
+      "url_gh": "/mergers/WA-55019/Allegro - Fantastic Furniture (WA-55019) - Notification waiver determination - 26 May 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-55019",
+      "merger_name": "Allegro - Fantastic Furniture",
       "phase": "Waiver",
       "is_waiver": true
     }
