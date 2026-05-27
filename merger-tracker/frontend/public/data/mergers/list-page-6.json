@@ -1384,12 +1384,12 @@
       ],
       "other_parties": [
         {
-          "name": "Kang Acquisition Corporation",
+          "name": "Shareholder Representative Services LLC",
           "identifier_type": null,
           "identifier": ""
         },
         {
-          "name": "Shareholder Representative Services LLC",
+          "name": "Kang Acquisition Corporation",
           "identifier_type": null,
           "identifier": ""
         }
@@ -1943,6 +1943,103 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/zurich-beazley"
+    },
+    {
+      "merger_id": "MN-80016",
+      "merger_name": "Henkel \u2013 Olaplex",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-26T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-09T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Henkel US Operations Corporation",
+          "identifier_type": null,
+          "identifier": "Delaware registration number: 740913"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Olaplex, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware registration number: 7702123 (EIN: 843736163)"
+        },
+        {
+          "name": "Advent International, L.P.",
+          "identifier_type": null,
+          "identifier": "Delaware registration number: 204418"
+        },
+        {
+          "name": "Olaplex Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware registration number: 5923882 (EIN: 871242679)"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Henkel Singapore Pte Ltd",
+          "identifier_type": null,
+          "identifier": "Singapore registration number (UEN): 198304615H"
+        },
+        {
+          "name": "Henkel Australia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "82 001 302 996"
+        },
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number (KVK): 854017447; CCI 60683945"
+        },
+        {
+          "name": "Platina Cosm\u00e9ticos Ltda (dba Skala)",
+          "identifier_type": null,
+          "identifier": "Brazil registration number: 66.288.002/000136"
+        },
+        {
+          "name": "Henkel Ireland Distribution Limited",
+          "identifier_type": null,
+          "identifier": "Ireland registration number: 430837"
+        },
+        {
+          "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH",
+          "identifier_type": null,
+          "identifier": "Germany registration number (HRB): 35906"
+        },
+        {
+          "name": "Henkel AG & Co. KGaA",
+          "identifier_type": null,
+          "identifier": "Germany registration number (HRB): 4724"
+        },
+        {
+          "name": "Henkel Finance Australia L.P.",
+          "identifier_type": "ABN",
+          "identifier": "15 740 196 765"
+        },
+        {
+          "name": "L.N.C. (dba Parfums de Marly, now known as Artessence)",
+          "identifier_type": null,
+          "identifier": "France registration number (SIREN): 511 248 981"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1852",
+          "name": "Cosmetic and Toiletry Preparation Manufacturing"
+        },
+        {
+          "code": "3720",
+          "name": "Pharmaceutical and Toiletry Goods Wholesaling"
+        },
+        {
+          "code": "4271",
+          "name": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/henkel-%E2%80%93-olaplex"
     }
   ],
   "page": 6,

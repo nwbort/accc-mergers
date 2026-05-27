@@ -1957,8 +1957,8 @@
       "effective_notification_datetime": "2025-11-27T12:00:00Z",
       "original_notification_datetime": "2025-11-27T12:00:00Z",
       "stage": "Phase 2 - detailed assessment",
-      "end_of_determination_period": "2026-06-26T12:00:00Z",
-      "page_modified_datetime": "2026-05-20T09:09:07+10:00",
+      "end_of_determination_period": "2026-07-02T12:00:00Z",
+      "page_modified_datetime": "2026-05-26T17:27:32+10:00",
       "consultation_response_due_date": "2026-02-13T12:00:00Z",
       "acquirers": [
         {
@@ -2007,7 +2007,7 @@
           "phase": "Phase 1"
         },
         {
-          "date": "2026-05-12T12:00:00Z",
+          "date": "2026-05-13T12:00:00Z",
           "title": "Timeline extended by 6 business days \u2013 following request for further information",
           "display_title": "Timeline extended by 6 business days \u2013 following request for further information",
           "phase": null
@@ -2018,7 +2018,7 @@
           "display_title": "Summary of Notice of Competition Concerns",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles_Kalgoorlie%20-%20Final%20-%20Summary%20of%20Notice%20of%20Competition%20Concerns%20-%20March%202026_3.pdf",
           "url_gh": "/mergers/MN-01068/Coles_Kalgoorlie - Final - Summary of Notice of Competition Concerns - March 2026_3.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
@@ -2027,6 +2027,30 @@
           "display_title": "ACCC decided notification is subject to Phase 2 review",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Kalgoorlie%20-%20Decision%20to%20Proceed%20to%20Phase%202%20review%20-%2029%20January%202026_3.pdf",
           "url_gh": "/mergers/MN-01068/Kalgoorlie - Decision to Proceed to Phase 2 review - 29 January 2026_3.pdf",
+          "status": "removed",
+          "phase": "Phase 2"
+        },
+        {
+          "date": "2026-05-25T12:00:00Z",
+          "title": "Timeline extended by 4 business days \u2013 following request for further information",
+          "display_title": "Timeline extended by 4 business days \u2013 following request for further information",
+          "phase": null
+        },
+        {
+          "date": "2026-03-06T12:00:00Z",
+          "title": "Summary of Notice of Competition Concerns",
+          "display_title": "Summary of Notice of Competition Concerns",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles_Kalgoorlie%20-%20Final%20-%20Summary%20of%20Notice%20of%20Competition%20Concerns%20-%20March%202026_4.pdf",
+          "url_gh": "/mergers/MN-01068/Coles_Kalgoorlie - Final - Summary of Notice of Competition Concerns - March 2026_4.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-01-29T12:00:00Z",
+          "title": "ACCC decided notification is subject to Phase 2 review",
+          "display_title": "ACCC decided notification is subject to Phase 2 review",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Kalgoorlie%20-%20Decision%20to%20Proceed%20to%20Phase%202%20review%20-%2029%20January%202026_4.pdf",
+          "url_gh": "/mergers/MN-01068/Kalgoorlie - Decision to Proceed to Phase 2 review - 29 January 2026_4.pdf",
           "status": "live",
           "phase": "Phase 2"
         },
@@ -19134,6 +19158,197 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/henkel-%E2%80%93-olaplex",
+      "merger_name": "Henkel \u2013 Olaplex",
+      "status": "Under assessment",
+      "merger_id": "MN-80016",
+      "effective_notification_datetime": "2026-05-26T12:00:00Z",
+      "original_notification_datetime": "2026-05-26T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-07-09T12:00:00Z",
+      "page_modified_datetime": "2026-05-27T10:09:42+10:00",
+      "consultation_response_due_date": "2026-06-03T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Henkel US Operations Corporation",
+          "identifier_type": null,
+          "identifier": "Delaware registration number: 740913"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Olaplex, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware registration number: 7702123 (EIN: 843736163)"
+        },
+        {
+          "name": "Advent International, L.P.",
+          "identifier_type": null,
+          "identifier": "Delaware registration number: 204418"
+        },
+        {
+          "name": "Olaplex Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware registration number: 5923882 (EIN: 871242679)"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Henkel Singapore Pte Ltd",
+          "identifier_type": null,
+          "identifier": "Singapore registration number (UEN): 198304615H"
+        },
+        {
+          "name": "Henkel Australia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "82 001 302 996"
+        },
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number (KVK): 854017447; CCI 60683945"
+        },
+        {
+          "name": "Platina Cosm\u00e9ticos Ltda (dba Skala)",
+          "identifier_type": null,
+          "identifier": "Brazil registration number: 66.288.002/000136"
+        },
+        {
+          "name": "Henkel Ireland Distribution Limited",
+          "identifier_type": null,
+          "identifier": "Ireland registration number: 430837"
+        },
+        {
+          "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH",
+          "identifier_type": null,
+          "identifier": "Germany registration number (HRB): 35906"
+        },
+        {
+          "name": "Henkel AG & Co. KGaA",
+          "identifier_type": null,
+          "identifier": "Germany registration number (HRB): 4724"
+        },
+        {
+          "name": "Henkel Finance Australia L.P.",
+          "identifier_type": "ABN",
+          "identifier": "15 740 196 765"
+        },
+        {
+          "name": "L.N.C. (dba Parfums de Marly, now known as Artessence)",
+          "identifier_type": null,
+          "identifier": "France registration number (SIREN): 511 248 981"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1852",
+          "name": "Cosmetic and Toiletry Preparation Manufacturing"
+        },
+        {
+          "code": "3720",
+          "name": "Pharmaceutical and Toiletry Goods Wholesaling"
+        },
+        {
+          "code": "4271",
+          "name": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing"
+        }
+      ],
+      "merger_description": "Henkel AG & Co. KGaA (**Henkel**) proposes to acquire Olaplex Holdings, Inc. and its subsidiaries (together, **Olaplex**) from Advent International, L.P. and other minority shareholders of Olaplex.\n\nHenkel is a German public company listed on the Frankfurt Stock Exchange. In Australia, Henkel is active in the supply of hair care and hair styling products to hair professionals as well as to mass-market retailers, including its Schwarzkopf brand and Schwarzkopf sub brands, BC Bonacure, BLONDME, Chroma ID, Fibre Clinix, Fibreplex, got2b, Indola, Natural Styling, Oil Ultime, OSiS+, Palette, Session Label, Silhouette and TBH. Henkel also sells adhesive technologies in Australia.\n\nOlaplex is a Delaware-registered company listed on the Nasdaq Global Select Market and headquartered in New York. In Australia, Olaplex primarily supplies premium hair products to online retailers and specialty retailers, as well as to hair professionals.",
+      "events": [
+        {
+          "date": "2026-05-27T12:00:00Z",
+          "title": "Henkel - Olaplex - Questionnaire",
+          "display_title": "Henkel - Olaplex - Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Henkel%20-%20Olaplex%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-80016/Henkel - Olaplex - Questionnaire.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-26T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-40005",
+          "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Henkel Global Supply Chain B.V.",
+              "identifier_type": null,
+              "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Aqua Adhesives I GmbH",
+              "identifier_type": null,
+              "identifier": "Swiss registration number: CH170.4.019.1870"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-45007",
+          "merger_name": "Henkel \u2013 Stahl",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Henkel Global Supply Chain B.V.",
+              "identifier_type": null,
+              "identifier": "Netherlands registration number, 854017447, CCI 60683945"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Stahl Holdings B.V.",
+              "identifier_type": null,
+              "identifier": "Netherlands registration number (KVK): 34249320"
+            },
+            {
+              "name": "Stahl Asia Pacific Pte. Ltd.",
+              "identifier_type": null,
+              "identifier": "Singapore registration number: 200606884Z"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-65003",
+          "merger_name": "Henkel \u2013 ATP adhesive systems group",
+          "status": "Assessment completed",
+          "accc_determination": "Not approved",
+          "acquirers": [
+            {
+              "name": "Henkel Global Supply Chain B.V.",
+              "identifier_type": null,
+              "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Aqua Adhesives I GmbH",
+              "identifier_type": null,
+              "identifier": "Swiss registration number  CH170.4.019.1870"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/servicenow-veza",
       "merger_name": "ServiceNow - Veza",
       "status": "Assessment completed",
@@ -22352,7 +22567,7 @@
       "original_notification_datetime": "2026-05-18T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-07-01T12:00:00Z",
-      "page_modified_datetime": "2026-05-19T11:00:45+10:00",
+      "page_modified_datetime": "2026-05-27T09:27:53+10:00",
       "consultation_response_due_date": "2026-05-26T12:00:00Z",
       "acquirers": [
         {
@@ -22370,12 +22585,12 @@
       ],
       "other_parties": [
         {
-          "name": "Kang Acquisition Corporation",
+          "name": "Shareholder Representative Services LLC",
           "identifier_type": null,
           "identifier": ""
         },
         {
-          "name": "Shareholder Representative Services LLC",
+          "name": "Kang Acquisition Corporation",
           "identifier_type": null,
           "identifier": ""
         }
@@ -22398,7 +22613,7 @@
           "display_title": "Eli Lilly - Kelonia Therapeutics - third party questionnaire",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Eli%20Lilly%20-%20Kelonia%20Therapeutics%20-%203rd%20party%20questionnaire.docx",
           "url_gh": "/mergers/MN-95016/Eli Lilly - Kelonia Therapeutics - 3rd party questionnaire.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {

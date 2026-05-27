@@ -111,6 +111,16 @@
       "effective_notification_datetime": "2026-05-22T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-06-03T12:00:00Z",
+      "merger_id": "MN-80016",
+      "merger_name": "Henkel \u2013 Olaplex",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-05-26T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-06-05T12:00:00Z",
@@ -294,16 +304,6 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-06-26T12:00:00Z",
-      "merger_id": "MN-01068",
-      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
-      "status": "Under assessment",
-      "stage": "Phase 2 - detailed assessment",
-      "effective_notification_datetime": "2025-11-27T12:00:00Z"
-    },
-    {
-      "type": "determination_due",
-      "event_type_display": "Determination due",
-      "date": "2026-06-26T12:00:00Z",
       "merger_id": "MN-90012",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
       "status": "Under assessment",
@@ -359,6 +359,16 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-05-18T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-07-02T12:00:00Z",
+      "merger_id": "MN-01068",
+      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+      "status": "Under assessment",
+      "stage": "Phase 2 - detailed assessment",
+      "effective_notification_datetime": "2025-11-27T12:00:00Z"
     },
     {
       "type": "determination_due",
@@ -459,8 +469,18 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-05-22T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-07-09T12:00:00Z",
+      "merger_id": "MN-80016",
+      "merger_name": "Henkel \u2013 Olaplex",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-05-26T12:00:00Z"
     }
   ],
-  "count": 46,
+  "count": 48,
   "days_ahead": 60
 }

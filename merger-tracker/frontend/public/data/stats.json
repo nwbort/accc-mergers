@@ -1,9 +1,9 @@
 {
-  "total_mergers": 117,
+  "total_mergers": 118,
   "total_waivers": 168,
   "by_status": {
     "Assessment completed": 79,
-    "Under assessment": 38
+    "Under assessment": 39
   },
   "by_determination": {
     "Approved": 79,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-80016",
+      "merger_name": "Henkel \u2013 Olaplex",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-26T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-25026",
       "merger_name": "Tibaldi - South Food Group",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-60015",
       "merger_name": "Stonepeak \u2013 Castrol",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-21T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-90008",
-      "merger_name": "Black Rhino - Club Hotel Motel Roma",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-21T12:00:00Z",
