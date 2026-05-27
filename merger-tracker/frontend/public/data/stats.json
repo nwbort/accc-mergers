@@ -1,6 +1,6 @@
 {
   "total_mergers": 118,
-  "total_waivers": 168,
+  "total_waivers": 171,
   "by_status": {
     "Assessment completed": 79,
     "Under assessment": 39
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 155,
+    "Approved": 158,
     "Not approved": 13
   },
   "phase_duration": {
@@ -44,7 +44,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 25
+      "count": 26
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -72,7 +72,7 @@
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
-      "count": 8
+      "count": 9
     }
   ],
   "recent_mergers": [
@@ -119,6 +119,36 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-55020",
+      "merger_name": "BGIS - Safe Fire Electrical",
+      "determination": "Approved",
+      "determination_date": "2026-05-27T12:00:00Z",
+      "page_modified_datetime": "2026-05-27T17:08:12+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-30015",
+      "merger_name": "URUS (CVC Capital Partners) \u2013 AgriWebb",
+      "determination": "Approved",
+      "determination_date": "2026-05-27T12:00:00Z",
+      "page_modified_datetime": "2026-05-27T17:06:43+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-20019",
+      "merger_name": "IK Partners - Selatek",
+      "determination": "Approved",
+      "determination_date": "2026-05-27T12:00:00Z",
+      "page_modified_datetime": "2026-05-27T17:05:05+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-35016",
       "merger_name": "Wipro - Indeco",
       "determination": "Approved",
@@ -144,36 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-25T12:00:00Z",
       "page_modified_datetime": "2026-05-25T16:46:11+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-25020",
-      "merger_name": "Zijin Mining - Chifeng",
-      "determination": "Approved",
-      "determination_date": "2026-05-25T12:00:00Z",
-      "page_modified_datetime": "2026-05-25T16:43:44+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-75021",
-      "merger_name": "Hillhouse - KMC Solutions",
-      "determination": "Approved",
-      "determination_date": "2026-05-25T12:00:00Z",
-      "page_modified_datetime": "2026-05-25T16:42:03+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-65018",
-      "merger_name": "Blackstone - Medallia",
-      "determination": "Approved",
-      "determination_date": "2026-05-25T12:00:00Z",
-      "page_modified_datetime": "2026-05-25T16:41:30+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
