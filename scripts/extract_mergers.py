@@ -768,7 +768,7 @@ def enrich_with_questionnaire_data(mergers_data):
 MISSING_EVENT_DATES_PATH = 'data/processed/missing_event_dates.json'
 
 # Event title keywords that trigger the missing-date catch.
-_CATCHABLE_EVENT_KEYWORDS = ('questionnaire', 'remedy offer')
+_CATCHABLE_EVENT_KEYWORDS = ('questionnaire', 'remedy')
 
 
 def _is_catchable_event(title):
