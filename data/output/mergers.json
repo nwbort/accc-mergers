@@ -21764,6 +21764,144 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/impression-dental-group-coastal-dental-care",
+      "merger_name": "Impression Dental Group - Coastal Dental Care",
+      "status": "Under assessment",
+      "merger_id": "MN-90015",
+      "effective_notification_datetime": "2026-05-28T12:00:00Z",
+      "original_notification_datetime": "2026-05-28T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-07-13T12:00:00Z",
+      "page_modified_datetime": "2026-05-28T17:38:44+10:00",
+      "acquirers": [
+        {
+          "name": "GENERAL DENTAL HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "55 646 760 367"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for FRANCK PAGE #3 TRUST",
+          "identifier_type": "ABN",
+          "identifier": "65 158 640 539"
+        },
+        {
+          "name": "COASTAL DENTAL CARE AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "39 617 360 460"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Genesis Capital",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8531",
+          "name": "Dental Services"
+        }
+      ],
+      "merger_description": "General Dental Holdings Pty Ltd (trading as Impression Dental Group) (**IDG**) proposes to acquire 100% of the shares in Coastal Dental Care Australia Pty Ltd (**CDC**), through a share sale deed.\n\nCDC is owned by Dr Franck Page and operates 15 dental practices across the Redland Bay and Gold Coast areas in Queensland and in Northern NSW under the Coastal Dental Care, Dental Implants & Aesthetics, and Gold Coast Holistic Dental Care names. CDC also has a dental laboratory (The Lab), a denture clinic (Gold Coast Dentures by Design) and a dental supplies organisation (Dental Plus).\n\nIDG is an Australian-based dental support organisation that provides centralised services including recruitment, payroll, marketing, IT, finance, and operations, to enable dental practitioners to focus on providing dental services. IDG currently owns and supports 23 independently branded dental practices in Australia which provide dental services to the public, but IDG does not have any practices in the Redland Bay and Gold Coast areas or Northern NSW.\n\nIDG is controlled by Genesis Capital, an Australian-based private equity firm that invests in businesses operating in the healthcare sector.\n\nGenesis Capital\u2019s investments also include Pacific Smiles Group (**PSG**) which sets up new dental centres from which dentists run their practice and provides operational support. PSG has over 120 dental centres across Australia, including 1 in the Redland Bay area, 5 on the Gold Coast, and 1 in Tweed. PSG\u2019s dental centres are typically located inside shopping centres and operate under the Pacific Smiles Dental and nib Dental Care brands on the East Coast. In Western Australia, PSG provides operational support to 10 dental clinics owned by HBF and operating under the HBF brand.",
+      "events": [
+        {
+          "date": "2026-05-28T12:00:00Z",
+          "title": "Questionnaire - Impression Dental Group \u2013 Coastal Dental Care",
+          "display_title": "Questionnaire - Impression Dental Group \u2013 Coastal Dental Care",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Impression%20Dental%20Group%20%E2%80%93%20Coastal%20Dental%20Care_0.docx",
+          "url_gh": "/mergers/MN-90015/Questionnaire - Impression Dental Group \u2013 Coastal Dental Care_0.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-05-28T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "consultation_response_due_date": "2026-06-05T12:00:00Z",
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-70004",
+          "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "GENERAL DENTAL HOLDINGS PTY LTD trading as Impression Dental Group",
+              "identifier_type": "ABN",
+              "identifier": "55 646 760 367"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Happy Rock Dental Practice",
+              "identifier_type": null,
+              "identifier": ""
+            },
+            {
+              "name": "WEI-JIE JIANG PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "57 116 562 693"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-50007",
+          "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "NDC AUSTRALIA PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "49 162 955 866"
+            }
+          ],
+          "targets": [
+            {
+              "name": "The Trustee for the Comfy Dental Trust",
+              "identifier_type": "ABN",
+              "identifier": "59 865 563 072"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-70017",
+          "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "NDC AUSTRALIA PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "49 162 955 866"
+            }
+          ],
+          "targets": [
+            {
+              "name": "CAMDENT SERVICES UNIT TRUST",
+              "identifier_type": "ABN",
+              "identifier": "37 559 915 898"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sembcorp-industries-ltd-alinta-energy",
       "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
       "status": "Assessment completed",
