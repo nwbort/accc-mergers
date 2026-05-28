@@ -360,6 +360,89 @@ def _build_main_issue_body(report: dict, branch: str, date: str) -> str:
     return "\n".join(out)
 
 
+def apply_fixes(mergers: list[dict], report: dict) -> list[dict]:
+    """Remove the suggested-deletion event from each duplicate group in-place.
+
+    Deletes the highest-index event first within each merger so that earlier
+    indices remain valid after each pop.  Returns a list of change records.
+    """
+    merger_map = {m.get("merger_id"): m for m in mergers}
+    changes: list[dict] = []
+
+    for entry in report["findings"]:
+        merger_id = entry["merger_id"]
+        merger = merger_map.get(merger_id)
+        if merger is None:
+            continue
+        events = merger.get("events", [])
+
+        targets: list[tuple[int, str, str, str]] = []
+        for g in entry["duplicate_groups"]:
+            del_idx, reason = suggest_deletion(g)
+            targets.append((del_idx, reason, g["kind"], g["date"]))
+
+        targets.sort(key=lambda x: x[0], reverse=True)
+
+        for del_idx, reason, kind, date in targets:
+            if del_idx >= len(events):
+                continue
+            deleted = events.pop(del_idx)
+            changes.append({
+                "merger_id": merger_id,
+                "merger_name": entry["merger_name"],
+                "deleted_index": del_idx,
+                "kind": kind,
+                "date": date,
+                "title": deleted.get("title", ""),
+                "reason": reason,
+            })
+
+    return changes
+
+
+def build_pr_body(changes: list[dict], report: dict, date: str) -> str:
+    """Build a markdown PR body summarising the auto-applied fixes."""
+    s = report["summary"]
+    lines = [
+        f"Duplicate events were automatically detected and removed on **{date}**.",
+        "",
+        f"**{s['mergers_with_duplicates']} merger(s) affected · "
+        f"{s['certain_duplicate_groups']} certain · "
+        f"{s['likely_duplicate_groups']} likely duplicate group(s)**",
+        "",
+        "---",
+        "",
+        "## Changes",
+        "",
+    ]
+
+    for entry in report["findings"]:
+        mid = entry["merger_id"]
+        name = entry["merger_name"]
+        merger_changes = [c for c in changes if c["merger_id"] == mid]
+        if not merger_changes:
+            continue
+        fyi_url = mergers_fyi_url(mid)
+        lines.append(f"### [{mid}]({fyi_url}) — {name}")
+        lines.append("")
+        for c in merger_changes:
+            kind_tag = "CERTAIN" if c["kind"] == "certain" else "LIKELY"
+            lines.append(
+                f"- Removed `event[{c['deleted_index']}]` ({kind_tag} duplicate on {c['date']}): "
+                f"**{c['title']}** — _{c['reason']}_"
+            )
+        lines.append("")
+
+    lines.extend([
+        "---",
+        "",
+        f"*Generated automatically by the [Detect Duplicate Events]"
+        f"(https://github.com/{_REPO}/actions/workflows/detect-duplicates.yml) workflow.*",
+    ])
+
+    return "\n".join(lines)
+
+
 def build_issues_data(report: dict, input_path: Path, branch: str, date: str) -> dict:
     """
     Build structured data for GitHub issue creation:
@@ -423,6 +506,20 @@ def main() -> None:
         dest="issues_json",
         help="Write structured issue data (main issue + per-merger sub-issues) to this JSON file",
     )
+    parser.add_argument(
+        "--apply-fixes",
+        action="store_true",
+        dest="apply_fixes",
+        help="Apply suggested deletions to the input file in-place",
+    )
+    parser.add_argument(
+        "--pr-markdown",
+        type=Path,
+        default=None,
+        metavar="PATH",
+        dest="pr_markdown",
+        help="Write a PR body (markdown) summarising the applied fixes to this file",
+    )
     args = parser.parse_args()
 
     if not args.input.exists():
@@ -455,6 +552,21 @@ def main() -> None:
         with args.issues_json.open("w") as fh:
             json.dump(issues_data, fh, indent=2)
         print(f"Issue data written to {args.issues_json}", file=sys.stderr)
+
+    if args.apply_fixes or args.pr_markdown:
+        changes = apply_fixes(mergers, report)
+        if args.apply_fixes:
+            with args.input.open("w") as fh:
+                json.dump(raw, fh, indent=2)
+                fh.write("\n")
+            print(f"Applied {len(changes)} deletion(s) to {args.input}", file=sys.stderr)
+        if args.pr_markdown:
+            today = datetime.utcnow().strftime("%Y-%m-%d")
+            pr_body = build_pr_body(changes, report, today)
+            args.pr_markdown.parent.mkdir(parents=True, exist_ok=True)
+            with args.pr_markdown.open("w") as fh:
+                fh.write(pr_body)
+            print(f"PR body written to {args.pr_markdown}", file=sys.stderr)
 
     # Exit with a non-zero code if any duplicates were found (useful in CI)
     total = (
