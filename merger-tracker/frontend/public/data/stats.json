@@ -2,11 +2,11 @@
   "total_mergers": 119,
   "total_waivers": 171,
   "by_status": {
-    "Assessment completed": 79,
-    "Under assessment": 40
+    "Assessment completed": 80,
+    "Under assessment": 39
   },
   "by_determination": {
-    "Approved": 79,
+    "Approved": 80,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,22 +14,22 @@
     "Not approved": 13
   },
   "phase_duration": {
-    "average_days": 27.59493670886076,
+    "average_days": 27.5375,
     "median_days": 26,
-    "average_business_days": 18.265822784810126,
+    "average_business_days": 18.25,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 18,
-        "percentage": 22.8
+        "percentage": 22.5
       },
       "day20": {
-        "count": 62,
-        "percentage": 78.5
+        "count": 63,
+        "percentage": 78.8
       },
       "day30": {
-        "count": 78,
-        "percentage": 98.7
+        "count": 79,
+        "percentage": 98.8
       }
     }
   },
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-80010",
+      "merger_name": "Medtronic - Scientia",
+      "determination": "Approved",
+      "determination_date": "2026-05-28T12:00:00Z",
+      "page_modified_datetime": "2026-05-28T16:41:20+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-55020",
       "merger_name": "BGIS - Safe Fire Electrical",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-26T12:00:00Z",
       "page_modified_datetime": "2026-05-26T17:18:53+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-20020",
-      "merger_name": "Triton - Integris",
-      "determination": "Approved",
-      "determination_date": "2026-05-25T12:00:00Z",
-      "page_modified_datetime": "2026-05-25T16:46:11+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

@@ -19334,13 +19334,15 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/medtronic-scientia",
       "merger_name": "Medtronic - Scientia",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-80010",
       "effective_notification_datetime": "2026-05-05T12:00:00Z",
       "original_notification_datetime": "2026-05-05T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-06-18T12:00:00Z",
-      "page_modified_datetime": "2026-05-13T16:34:20+10:00",
+      "determination_publication_date": "2026-05-28T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-05-28T16:41:20+10:00",
       "consultation_response_due_date": "2026-05-13T12:00:00Z",
       "acquirers": [
         {
@@ -19349,14 +19351,14 @@
           "identifier": "10489040"
         },
         {
-          "name": "Medtronic plc",
-          "identifier_type": null,
-          "identifier": "981183488"
-        },
-        {
           "name": "United States Surgical Corporation",
           "identifier_type": null,
           "identifier": "132518270"
+        },
+        {
+          "name": "Medtronic plc",
+          "identifier_type": null,
+          "identifier": "981183488"
         }
       ],
       "targets": [
@@ -19389,12 +19391,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-05-28T12:00:00Z",
+          "title": "Medtronic - Scientia - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Medtronic%20-%20Scientia%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Medtronic plc (Medtronic), via its wholly owned subsidiary United States Surgical Corporation, proposes to acquire Scientia Vascular, Inc. (Scientia) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Medtronic, is a global healthcare technology company incorporated in Ireland and listed on the New York Stock Exchange.\n\nGlobally (including in Australia), Medtronic develops, manufactures, distributes and sells device-based medical therapies and services within its cardiovascular, neuroscience and medical surgery portfolios.\n\nIn Australia, Medtronic operates through its Australian subsidiary, Medtronic Australasia Pty Ltd, to supply medical devices, including neurovascular devices such as guidewires, catheters, aspiration catheters, embolic coils, flow diverters, liquid embolic agents, intrasaccular devices, AB stents and stent retrievers. In relation to the supply of guidewires in Australia, Medtronic supplies its Mirage .008” guidewire.\n\nThe target, Scientia, is a medical device company headquartered in West Valley City, Utah, USA. Scientia specialises in microfabrication technology for guidewires and catheters used in neurovascular and peripheral vascular procedures.\n\nIn Australia, Scientia supplies guidewires under its “Aristotle” brand through a third-party distributor, LifeHealthcare Pty Ltd. The Aristotle-branded guidewires are supplied in Australia in four diameter configurations, .014”, .018”, .024”, and .035”."
+            },
+            {
+              "item": "Overlap and relationship between the parties",
+              "details": "Medtronic and Scientia both supply neurovascular guidewires in Australia."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form, information from third parties and publicly available information.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings.\n\n• For the supply of neurovascular guidewires in Australia, the market share aggregation resulting from the Acquisition is estimated to be low, and post-Acquisition, the merged entity will continue to face competition from multiple alternative suppliers of neurovascular guidewires.\n\n• Some market participants were concerned that the Acquisition could give rise to conglomerate effects by enabling Medtronic to bundle its existing neurovascular medical devices with Scientia’s guidewires, resulting in foreclosure of rival guidewire suppliers.\n\n• The ACCC has had regard to: 1. the position of the Parties in their respective markets, including Medtronic’s position as a supplier of a portfolio of neurovascular medical devices, 2. the presence of alternative suppliers of both neurovascular guidewires and other neurovascular medical devices, and 3. customer procurement processes for neurovascular medical devices.\n\n• The ACCC considers that the Acquisition is unlikely to give rise to conglomerate effects, as the merged entity would be unlikely to have the ability and incentive to engage in various commercial arrangements (such as offering bulk or multi-product discounts) to the point of foreclosing rival neurovascular guidewire suppliers and harming competition in the supply of neurovascular guidewires."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-80010/Medtronic - Scientia - Phase 1 determination.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-05-28T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -47106,8 +47144,8 @@
         {
           "merger_id": "MN-80010",
           "merger_name": "Medtronic - Scientia",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Project Saint Merger Sub, Inc.",
@@ -47115,9 +47153,9 @@
               "identifier": "10489040"
             },
             {
-              "name": "Medtronic plc",
+              "name": "United States Surgical Corporation",
               "identifier_type": null,
-              "identifier": "981183488"
+              "identifier": "132518270"
             }
           ],
           "targets": [
@@ -59510,11 +59548,11 @@
     "total_mergers": 119,
     "total_waivers": 171,
     "by_status": {
-      "Assessment completed": 79,
-      "Under assessment": 40
+      "Assessment completed": 80,
+      "Under assessment": 39
     },
     "by_determination": {
-      "Approved": 79,
+      "Approved": 80,
       "Referred to phase 2": 4
     },
     "by_waiver_determination": {
@@ -59522,22 +59560,22 @@
       "Not approved": 13
     },
     "phase_duration": {
-      "average_days": 27.59493670886076,
+      "average_days": 27.5375,
       "median_days": 26,
-      "average_business_days": 18.265822784810126,
+      "average_business_days": 18.25,
       "median_business_days": 17,
       "percentiles": {
         "day15": {
           "count": 18,
-          "percentage": 22.8
+          "percentage": 22.5
         },
         "day20": {
-          "count": 62,
-          "percentage": 78.5
+          "count": 63,
+          "percentage": 78.8
         },
         "day30": {
-          "count": 78,
-          "percentage": 98.7
+          "count": 79,
+          "percentage": 98.8
         }
       }
     },
@@ -59627,6 +59665,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "MN-80010",
+        "merger_name": "Medtronic - Scientia",
+        "determination": "Approved",
+        "determination_date": "2026-05-28T12:00:00Z",
+        "page_modified_datetime": "2026-05-28T16:41:20+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "WA-55020",
         "merger_name": "BGIS - Safe Fire Electrical",
         "determination": "Approved",
@@ -59672,16 +59720,6 @@
         "determination": "Approved",
         "determination_date": "2026-05-26T12:00:00Z",
         "page_modified_datetime": "2026-05-26T17:18:53+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-20020",
-        "merger_name": "Triton - Integris",
-        "determination": "Approved",
-        "determination_date": "2026-05-25T12:00:00Z",
-        "page_modified_datetime": "2026-05-25T16:46:11+10:00",
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"

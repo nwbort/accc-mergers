@@ -2604,11 +2604,11 @@
     {
       "merger_id": "MN-80010",
       "merger_name": "Medtronic - Scientia",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-05T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-05-28T12:00:00Z",
       "end_of_determination_period": "2026-06-18T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -2618,14 +2618,14 @@
           "identifier": "10489040"
         },
         {
-          "name": "Medtronic plc",
-          "identifier_type": null,
-          "identifier": "981183488"
-        },
-        {
           "name": "United States Surgical Corporation",
           "identifier_type": null,
           "identifier": "132518270"
+        },
+        {
+          "name": "Medtronic plc",
+          "identifier_type": null,
+          "identifier": "981183488"
         }
       ],
       "targets": [
