@@ -40,7 +40,7 @@ def generate(mergers: list, output_dir: Path, page_size: int = 100) -> int:
     # Sort by date ascending (oldest first, newest last).
     # New events always append to the last page, so only the last page file
     # changes per scrape run rather than cascading through all pages.
-    events.sort(key=lambda x: x.get('date', ''))
+    events.sort(key=lambda x: x.get('date') or '9999-99-99')
 
     total_events = len(events)
     total_pages = (total_events + page_size - 1) // page_size
