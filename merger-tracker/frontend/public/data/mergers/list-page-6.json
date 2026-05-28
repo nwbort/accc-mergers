@@ -1338,24 +1338,14 @@
       ],
       "other_parties": [
         {
-          "name": "KOBALT MUSIC SERVICES AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "12 144 997 142"
-        },
-        {
-          "name": "KOBALT MUSIC PUBLISHING AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "63 144 996 609"
-        },
-        {
-          "name": "PWMP Ventures, LLC",
-          "identifier_type": null,
-          "identifier": "Company number 5324467"
-        },
-        {
           "name": "Brookfield Corporation",
           "identifier_type": null,
           "identifier": "Company number 1644037"
+        },
+        {
+          "name": "Kobalt Music Publishing Australia Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "63 144 996 609"
         },
         {
           "name": "Primary Wave Music IP Fund 4, LP",
@@ -1363,9 +1353,19 @@
           "identifier": "Company number 7667918"
         },
         {
+          "name": "PWMP Ventures, LLC",
+          "identifier_type": null,
+          "identifier": "Company number 5324467"
+        },
+        {
           "name": "Primary Wave Music IP Fund 4 GP, LLC",
           "identifier_type": null,
           "identifier": "Company number 7667915"
+        },
+        {
+          "name": "Kobalt Music Services Australia Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "12 144 997 142"
         }
       ],
       "anzsic_codes": [
@@ -1505,14 +1505,14 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Apollo Australia Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 230 096"
-        },
-        {
           "name": "OMERS Apollo Investment Holdings LLC",
           "identifier_type": null,
           "identifier": ""
+        },
+        {
+          "name": "Apollo Australia Bidco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "697 230 096"
         }
       ],
       "targets": [

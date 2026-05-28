@@ -2013,24 +2013,6 @@
           "phase": null
         },
         {
-          "date": "2026-03-06T12:00:00Z",
-          "title": "Summary of Notice of Competition Concerns",
-          "display_title": "Summary of Notice of Competition Concerns",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles_Kalgoorlie%20-%20Final%20-%20Summary%20of%20Notice%20of%20Competition%20Concerns%20-%20March%202026_3.pdf",
-          "url_gh": "/mergers/MN-01068/Coles_Kalgoorlie - Final - Summary of Notice of Competition Concerns - March 2026_3.pdf",
-          "status": "removed",
-          "phase": null
-        },
-        {
-          "date": "2026-01-29T12:00:00Z",
-          "title": "ACCC decided notification is subject to Phase 2 review",
-          "display_title": "ACCC decided notification is subject to Phase 2 review",
-          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Kalgoorlie%20-%20Decision%20to%20Proceed%20to%20Phase%202%20review%20-%2029%20January%202026_3.pdf",
-          "url_gh": "/mergers/MN-01068/Kalgoorlie - Decision to Proceed to Phase 2 review - 29 January 2026_3.pdf",
-          "status": "removed",
-          "phase": "Phase 2"
-        },
-        {
           "date": "2026-05-25T12:00:00Z",
           "title": "Timeline extended by 4 business days \u2013 following request for further information",
           "display_title": "Timeline extended by 4 business days \u2013 following request for further information",
@@ -8890,7 +8872,7 @@
       "original_notification_datetime": "2026-05-18T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-07-01T12:00:00Z",
-      "page_modified_datetime": "2026-05-19T12:29:44+10:00",
+      "page_modified_datetime": "2026-05-28T09:38:38+10:00",
       "consultation_response_due_date": "2026-05-26T12:00:00Z",
       "acquirers": [
         {
@@ -8908,24 +8890,14 @@
       ],
       "other_parties": [
         {
-          "name": "KOBALT MUSIC SERVICES AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "12 144 997 142"
-        },
-        {
-          "name": "KOBALT MUSIC PUBLISHING AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "63 144 996 609"
-        },
-        {
-          "name": "PWMP Ventures, LLC",
-          "identifier_type": null,
-          "identifier": "Company number 5324467"
-        },
-        {
           "name": "Brookfield Corporation",
           "identifier_type": null,
           "identifier": "Company number 1644037"
+        },
+        {
+          "name": "Kobalt Music Publishing Australia Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "63 144 996 609"
         },
         {
           "name": "Primary Wave Music IP Fund 4, LP",
@@ -8933,9 +8905,19 @@
           "identifier": "Company number 7667918"
         },
         {
+          "name": "PWMP Ventures, LLC",
+          "identifier_type": null,
+          "identifier": "Company number 5324467"
+        },
+        {
           "name": "Primary Wave Music IP Fund 4 GP, LLC",
           "identifier_type": null,
           "identifier": "Company number 7667915"
+        },
+        {
+          "name": "Kobalt Music Services Australia Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "12 144 997 142"
         }
       ],
       "anzsic_codes": [
@@ -8952,7 +8934,7 @@
           "display_title": "Questionnaire",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Kobalt%20-%20Questionnaire.docx",
           "url_gh": "/mergers/MN-25018/Kobalt - Questionnaire.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
@@ -11894,18 +11876,18 @@
       "original_notification_datetime": "2026-05-19T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-07-02T12:00:00Z",
-      "page_modified_datetime": "2026-05-20T16:18:53+10:00",
+      "page_modified_datetime": "2026-05-28T09:14:09+10:00",
       "consultation_response_due_date": "2026-05-27T12:00:00Z",
       "acquirers": [
-        {
-          "name": "Apollo Australia Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 230 096"
-        },
         {
           "name": "OMERS Apollo Investment Holdings LLC",
           "identifier_type": null,
           "identifier": ""
+        },
+        {
+          "name": "Apollo Australia Bidco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "697 230 096"
         }
       ],
       "targets": [
@@ -11935,7 +11917,7 @@
           "display_title": "Integris-First Focus - Questionnaire",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/First%20Focus%20-%20Questionnaire%20-%20May%202026_0.docx",
           "url_gh": "/mergers/MN-40022/First Focus - Questionnaire - May 2026_0.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {

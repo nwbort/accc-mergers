@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-05-18T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-07-01T12:00:00Z",
-  "page_modified_datetime": "2026-05-19T12:29:44+10:00",
+  "page_modified_datetime": "2026-05-28T09:38:38+10:00",
   "consultation_response_due_date": "2026-05-26T12:00:00Z",
   "acquirers": [
     {
@@ -25,24 +25,14 @@
   ],
   "other_parties": [
     {
-      "name": "KOBALT MUSIC SERVICES AUSTRALIA PTY LIMITED",
-      "identifier_type": "ABN",
-      "identifier": "12 144 997 142"
-    },
-    {
-      "name": "KOBALT MUSIC PUBLISHING AUSTRALIA PTY LIMITED",
-      "identifier_type": "ABN",
-      "identifier": "63 144 996 609"
-    },
-    {
-      "name": "PWMP Ventures, LLC",
-      "identifier_type": null,
-      "identifier": "Company number 5324467"
-    },
-    {
       "name": "Brookfield Corporation",
       "identifier_type": null,
       "identifier": "Company number 1644037"
+    },
+    {
+      "name": "Kobalt Music Publishing Australia Pty Limited",
+      "identifier_type": "ABN",
+      "identifier": "63 144 996 609"
     },
     {
       "name": "Primary Wave Music IP Fund 4, LP",
@@ -50,9 +40,19 @@
       "identifier": "Company number 7667918"
     },
     {
+      "name": "PWMP Ventures, LLC",
+      "identifier_type": null,
+      "identifier": "Company number 5324467"
+    },
+    {
       "name": "Primary Wave Music IP Fund 4 GP, LLC",
       "identifier_type": null,
       "identifier": "Company number 7667915"
+    },
+    {
+      "name": "Kobalt Music Services Australia Pty Limited",
+      "identifier_type": "ABN",
+      "identifier": "12 144 997 142"
     }
   ],
   "anzsic_codes": [
@@ -69,7 +69,7 @@
       "display_title": "Questionnaire",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Kobalt%20-%20Questionnaire.docx",
       "url_gh": "/mergers/MN-25018/Kobalt - Questionnaire.pdf",
-      "status": "live",
+      "status": "removed",
       "phase": null
     },
     {
