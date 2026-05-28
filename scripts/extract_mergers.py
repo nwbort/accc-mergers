@@ -765,17 +765,27 @@ def enrich_with_questionnaire_data(mergers_data):
     return mergers_data
 
 
-MISSING_QUESTIONNAIRE_DATES_PATH = 'data/processed/missing_questionnaire_dates.json'
+MISSING_EVENT_DATES_PATH = 'data/processed/missing_event_dates.json'
+
+# Event title keywords that trigger the missing-date catch.
+_CATCHABLE_EVENT_KEYWORDS = ('questionnaire', 'remedy')
 
 
-def auto_fix_missing_questionnaire_dates(all_mergers_data, frozen_events_mergers):
-    """Detect questionnaire events with empty dates, set today as the date, and freeze.
+def _is_catchable_event(title):
+    lower = title.lower()
+    return any(kw in lower for kw in _CATCHABLE_EVENT_KEYWORDS)
 
-    For each merger not already frozen that has a questionnaire event with no date:
-      1. Sets the event date to today at noon UTC.
+
+def auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers):
+    """Detect catchable events with empty dates, set a date, and freeze the merger.
+
+    Catchable event types: questionnaire, remedy offer (see _CATCHABLE_EVENT_KEYWORDS).
+
+    For each merger not already frozen that has a catchable event with no date:
+      1. Tries to extract the date from the event title; falls back to today at noon UTC.
       2. Adds the merger to frozen_events_mergers.json so future scrapes preserve the date.
-      3. Writes issue content to MISSING_QUESTIONNAIRE_DATES_PATH for the pipeline to
-         create GitHub issues asking the user to confirm the auto-set date is correct.
+      3. Writes issue content to MISSING_EVENT_DATES_PATH for the pipeline to create
+         GitHub issues asking the user to confirm the auto-set date is correct.
 
     Returns a set of newly frozen merger IDs (empty set if nothing was fixed).
     """
@@ -791,21 +801,35 @@ def auto_fix_missing_questionnaire_dates(all_mergers_data, frozen_events_mergers
         if not merger_id or merger_id in frozen_events_mergers:
             continue
 
+        fixed_events = []
         for event in merger.get('events', []):
-            if event.get('date') in ('', None) and 'questionnaire' in event.get('title', '').lower():
+            if event.get('date') not in ('', None) or not _is_catchable_event(event.get('title', '')):
+                continue
+            extracted_iso = parse_text_to_iso(event.get('title', ''), include_time=True)
+            if extracted_iso:
+                event['date'] = extracted_iso
+                dt = datetime.strptime(extracted_iso, '%Y-%m-%dT%H:%M:%SZ')
+                date_display = f"{dt.day} {dt.strftime('%b %Y')}"
+            else:
                 event['date'] = today_iso
-                newly_frozen.append({
-                    'merger_id': merger_id,
-                    'merger_name': merger.get('merger_name', ''),
-                    'event_title': event.get('title', ''),
-                    'date_display': today_display,
-                    'merger_url': merger.get('url', ''),
-                })
-                break  # one fix per merger
+                date_display = today_display
+            fixed_events.append({
+                'event_title': event.get('title', ''),
+                'date_display': date_display,
+                'extracted_from_title': extracted_iso is not None,
+            })
+
+        if fixed_events:
+            newly_frozen.append({
+                'merger_id': merger_id,
+                'merger_name': merger.get('merger_name', ''),
+                'fixed_events': fixed_events,
+                'merger_url': merger.get('url', ''),
+            })
 
     if not newly_frozen:
-        if os.path.exists(MISSING_QUESTIONNAIRE_DATES_PATH):
-            os.remove(MISSING_QUESTIONNAIRE_DATES_PATH)
+        if os.path.exists(MISSING_EVENT_DATES_PATH):
+            os.remove(MISSING_EVENT_DATES_PATH)
         return set()
 
     # Update frozen_events_mergers.json
@@ -823,10 +847,14 @@ def auto_fix_missing_questionnaire_dates(all_mergers_data, frozen_events_mergers
 
     for item in newly_frozen:
         mid = item['merger_id']
+        event_summaries = ', '.join(
+            f"{fe['event_title']} ({fe['date_display']})"
+            for fe in item['fixed_events']
+        )
         frozen_data[mid] = {
             "_comment": (
-                f"Questionnaire event date ({item['date_display']}) is missing from the "
-                "ACCC page; freezing events to preserve the automatically set date."
+                f"Event date(s) missing from ACCC page ({event_summaries}); "
+                "freezing events to preserve the automatically set date(s)."
             ),
             "freeze_events": True,
         }
@@ -841,26 +869,31 @@ def auto_fix_missing_questionnaire_dates(all_mergers_data, frozen_events_mergers
         mid = item['merger_id']
         name = item['merger_name']
         url = item['merger_url']
-        event_title = item['event_title']
-        date_display = item['date_display']
+        fixed_events = item['fixed_events']
         mergers_fyi_url = f"https://mergers.fyi/mergers/{mid}"
         frozen_json_url = f"https://github.com/{_repo}/blob/main/data/frozen_events_mergers.json"
 
+        event_rows = ''.join(
+            f"| {fe['event_title']} | {fe['date_display']} | "
+            f"{'from title' if fe['extracted_from_title'] else 'today (fallback)'} |\n"
+            for fe in fixed_events
+        )
         body = (
-            f"The questionnaire event for **{name}** had no date on the ACCC page.\n\n"
-            f"The pipeline automatically set the date to **{date_display}** and froze "
-            f"the merger's events to prevent future scrapes from clearing it.\n\n"
+            f"One or more events for **{name}** had no date on the ACCC page.\n\n"
+            f"The pipeline automatically set the date(s) and froze "
+            f"the merger's events to prevent future scrapes from clearing them.\n\n"
             f"### Details\n\n"
-            f"| Field | Value |\n"
-            f"|-------|-------|\n"
             f"| Merger | [{name}]({url}) |\n"
-            f"| Merger ID | `{mid}` |\n"
-            f"| Event | {event_title} |\n"
-            f"| Date set | {date_display} |\n\n"
+            f"|--------|---------------|\n"
+            f"| Merger ID | `{mid}` |\n\n"
+            f"### Fixed events\n\n"
+            f"| Event | Date set | Source |\n"
+            f"|-------|----------|--------|\n"
+            f"{event_rows}\n"
             f"### Action required\n\n"
-            f"Please verify that **{date_display}** is the correct questionnaire date.\n\n"
-            f"- If it is correct, close this issue.\n"
-            f"- If it is wrong, update the date in "
+            f"Please verify the date(s) above are correct.\n\n"
+            f"- If they are correct, close this issue.\n"
+            f"- If any are wrong, update the date in "
             f"[`data/frozen_events_mergers.json`]({frozen_json_url}) and "
             f"`data/processed/mergers.json` with the correct value.\n\n"
             f"[View on mergers.fyi]({mergers_fyi_url})"
@@ -868,16 +901,16 @@ def auto_fix_missing_questionnaire_dates(all_mergers_data, frozen_events_mergers
         issues.append({
             'merger_id': mid,
             'merger_name': name,
-            'title': f"Auto-fix: missing questionnaire date for {name} ({mid})",
+            'title': f"Auto-fix: missing event date(s) for {name} ({mid})",
             'body': body,
         })
 
-    with open(MISSING_QUESTIONNAIRE_DATES_PATH, 'w', encoding='utf-8') as f:
+    with open(MISSING_EVENT_DATES_PATH, 'w', encoding='utf-8') as f:
         json.dump({'issues': issues}, f, indent=2)
 
     newly_frozen_ids = {item['merger_id'] for item in newly_frozen}
     print(
-        f"Auto-fixed missing questionnaire date(s) for: {', '.join(sorted(newly_frozen_ids))}",
+        f"Auto-fixed missing event date(s) for: {', '.join(sorted(newly_frozen_ids))}",
         file=sys.stderr,
     )
     return newly_frozen_ids
@@ -1050,10 +1083,10 @@ def main():
         # downstream pipelines load the manifest separately.
         extract_nocc_data()
 
-        # 8c. Auto-fix questionnaire events whose date is missing on the ACCC page.
-        #     Sets today as the date, freezes the merger to preserve it, and writes
-        #     issue content for the pipeline to open a GitHub issue for confirmation.
-        auto_fix_missing_questionnaire_dates(all_mergers_data, frozen_events_mergers)
+        # 8c. Auto-fix catchable events whose date is missing on the ACCC page.
+        #     Tries to extract the date from the event title; falls back to today.
+        #     Freezes the merger and writes issue content for GitHub issue creation.
+        auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers)
 
     # 9. Add is_waiver field to each merger
     for merger in all_mergers_data:

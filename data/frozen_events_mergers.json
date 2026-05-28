@@ -7,5 +7,9 @@
   "MN-05014": {
     "_comment": "Questionnaire event date (27 May 2026) is missing from the ACCC page; freezing events to preserve the automatically set date.",
     "freeze_events": true
+  },
+  "MN-50009": {
+    "_comment": "Remedy offer event date (28 May 2026) was missing from ACCC page; freezing events to preserve the automatically set date.",
+    "freeze_events": true
   }
 }
