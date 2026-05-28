@@ -1,9 +1,9 @@
 {
-  "total_mergers": 119,
+  "total_mergers": 120,
   "total_waivers": 171,
   "by_status": {
     "Assessment completed": 80,
-    "Under assessment": 39
+    "Under assessment": 40
   },
   "by_determination": {
     "Approved": 80,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-50009",
+      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-05-28T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-05014",
       "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-30012",
       "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-22T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-30016",
-      "merger_name": "Zurich - Beazley",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-22T12:00:00Z",

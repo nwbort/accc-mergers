@@ -1661,14 +1661,14 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Gold Rush TopCo Limited",
-          "identifier_type": null,
-          "identifier": "RN 152697"
-        },
-        {
           "name": "Banijay Holding UK Limited",
           "identifier_type": null,
           "identifier": "UK Company number 17040112"
+        },
+        {
+          "name": "Gold Rush TopCo Limited",
+          "identifier_type": null,
+          "identifier": "RN 152697"
         }
       ],
       "targets": [
@@ -1690,9 +1690,9 @@
           "identifier": "File No 5372472"
         },
         {
-          "name": "ENDEMOL SHINE AUSTRALIA HOLDINGS PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "94 134 845 364"
+          "name": "Banijay SAS",
+          "identifier_type": null,
+          "identifier": "499 797 041 RCS PARIS"
         },
         {
           "name": "Banijay Entertainment SASU",
@@ -1700,14 +1700,14 @@
           "identifier": "503 069 965 RCS PARIS"
         },
         {
+          "name": "ENDEMOL SHINE AUSTRALIA HOLDINGS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "94 134 845 364"
+        },
+        {
           "name": "Lov Group Invest S.A.S",
           "identifier_type": null,
           "identifier": "SIREN 494 031 008"
-        },
-        {
-          "name": "Banijay SAS",
-          "identifier_type": null,
-          "identifier": "499 797 041 RCS PARIS"
         },
         {
           "name": "Banijay Group N.V.",
@@ -2389,6 +2389,78 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/henkel-%E2%80%93-olaplex"
+    },
+    {
+      "merger_id": "MN-50009",
+      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-28T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-13T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "HEIDELBERG MATERIALS AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "98 611 565 649"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MAAS GROUP HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "84 632 994 542"
+        },
+        {
+          "name": "MACQUARIE GEOTECHNICAL PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "73 102 691 056"
+        },
+        {
+          "name": "MACHINERY SALES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "13 074 358 277"
+        },
+        {
+          "name": "REGIONAL GROUP AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "21 634 578 699"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "0911",
+          "name": "Gravel and Sand Quarrying"
+        },
+        {
+          "code": "0919",
+          "name": "Other Construction Material Mining"
+        },
+        {
+          "code": "1709",
+          "name": "Other Petroleum and Coal Product Manufacturing"
+        },
+        {
+          "code": "2033",
+          "name": "Ready-Mixed Concrete Manufacturing"
+        },
+        {
+          "code": "2921",
+          "name": "Waste Treatment and Disposal Services"
+        },
+        {
+          "code": "2922",
+          "name": "Waste Remediation and Materials Recovery Services"
+        },
+        {
+          "code": "6925",
+          "name": "Scientific Testing and Analysis Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/heidelberg-materials-australia-%E2%80%93-construction-materials-business-of-maas"
     }
   ],
   "page": 6,
