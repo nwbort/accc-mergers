@@ -25,7 +25,7 @@ from cutoff import is_waiver_merger
 from extract_mergers import (
     MATTERS_DIR,
     _load_frozen_events_mergers,
-    auto_fix_missing_questionnaire_dates,
+    auto_fix_missing_event_dates,
     enrich_with_questionnaire_data,
     extract_nocc_data,
 )
@@ -63,8 +63,8 @@ def main():
     # 2. NOCC manifest.
     extract_nocc_data()
 
-    # 3. Auto-fix questionnaire events whose date is missing on the ACCC page.
-    auto_fix_missing_questionnaire_dates(all_mergers_data, frozen_events_mergers)
+    # 3. Auto-fix catchable events (questionnaire, remedy offer) whose date is missing.
+    auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers)
 
     # is_waiver may shift if enrichment changed a date that affects classification.
     for merger in all_mergers_data:
