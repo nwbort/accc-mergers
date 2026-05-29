@@ -48,8 +48,33 @@ def normalise_title(title: str) -> str:
     return re.sub(r"[\s\W]+$", "", title.strip()).lower()
 
 
+def extract_type_prefix(title: str) -> str:
+    """Return the first segment before a ' - ' or ' – ' separator, lowercased.
+
+    ACCC event titles often begin with a document-type label such as
+    'Questionnaire', 'Remedy offer', 'Statement of Issues', etc.  Two events
+    whose type prefixes differ are clearly not duplicates of each other even
+    if they share a long merger name.
+    """
+    parts = re.split(r"\s+[-–]\s+", title, maxsplit=1)
+    return parts[0].strip().lower() if len(parts) > 1 else ""
+
+
 def title_similarity(a: str, b: str) -> float:
     return SequenceMatcher(None, normalise_title(a), normalise_title(b)).ratio()
+
+
+def titles_are_different_event_types(a: str, b: str) -> bool:
+    """Return True if a and b begin with distinct, non-empty type prefixes.
+
+    This prevents events that are genuinely different documents (e.g. a
+    Questionnaire and a Remedy offer published on the same date for the same
+    merger) from being flagged as likely duplicates just because they share a
+    long common merger name.
+    """
+    prefix_a = extract_type_prefix(a)
+    prefix_b = extract_type_prefix(b)
+    return bool(prefix_a and prefix_b and prefix_a != prefix_b)
 
 
 def parse_date(raw: str):
@@ -118,7 +143,11 @@ def find_duplicates(merger: dict) -> list[dict]:
             title_j = ev_j.get("title", "")
             if not date_j or not title_j:
                 continue
-            if date_i == date_j and title_similarity(title_i, title_j) >= SIMILARITY_THRESHOLD:
+            if (
+                date_i == date_j
+                and not titles_are_different_event_types(title_i, title_j)
+                and title_similarity(title_i, title_j) >= SIMILARITY_THRESHOLD
+            ):
                 group_indices.append(j)
                 checked.add((min(i, j), max(i, j)))
 
@@ -299,14 +328,17 @@ def _build_sub_issue_body(entry: dict, input_path: Path, branch: str) -> str:
         kind = "CERTAIN" if g["kind"] == "certain" else "LIKELY"
         out.append(f"### Group {i} — {kind} — {g['date']}")
         out.append("")
-        out.append("| Index | Status | Title | ACCC URL |")
-        out.append("|-------|--------|-------|----------|")
+        out.append("| Index | Date | Status | Title | ACCC URL | GitHub URL |")
+        out.append("|-------|------|--------|-------|----------|------------|")
         for idx, ev in zip(g["indices"], g["events"]):
+            date = (ev.get("date") or "—").replace("|", "\\|")
             status = ev.get("status") or "—"
             title = (ev.get("title") or "—").replace("|", "\\|")
             url = ev.get("url") or ""
-            link = f"[link]({url})" if url else "—"
-            out.append(f"| `event[{idx}]` | `{status}` | {title} | {link} |")
+            url_gh = ev.get("url_gh") or ""
+            accc_link = f"[link]({url})" if url else "—"
+            gh_link = f"[link]({url_gh})" if url_gh else "—"
+            out.append(f"| `event[{idx}]` | {date} | `{status}` | {title} | {accc_link} | {gh_link} |")
         out.append("")
         del_idx, reason = suggest_deletion(g)
         out.append(f"**Suggested action:** Remove `event[{del_idx}]` — {reason}")
