@@ -1,6 +1,6 @@
 {
   "total_mergers": 121,
-  "total_waivers": 172,
+  "total_waivers": 174,
   "by_status": {
     "Assessment completed": 80,
     "Under assessment": 41
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 159,
+    "Approved": 161,
     "Not approved": 13
   },
   "phase_duration": {
@@ -119,6 +119,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-90016",
+      "merger_name": "Turkish Airlines - Air Europa",
+      "determination": "Approved",
+      "determination_date": "2026-05-29T12:00:00Z",
+      "page_modified_datetime": "2026-05-29T16:58:49+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-80013",
+      "merger_name": "Sydney Water - Windsor Sewerage Scheme Assets",
+      "determination": "Approved",
+      "determination_date": "2026-05-29T12:00:00Z",
+      "page_modified_datetime": "2026-05-29T16:58:03+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-65017",
       "merger_name": "Black Rhino Group \u2013 Granville Tavern and Motel and Cambridge Street Bottle Shop & Cellars in Granville, QLD",
       "determination": "Approved",
@@ -154,26 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-27T12:00:00Z",
       "page_modified_datetime": "2026-05-27T17:06:43+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-20019",
-      "merger_name": "IK Partners - Selatek",
-      "determination": "Approved",
-      "determination_date": "2026-05-27T12:00:00Z",
-      "page_modified_datetime": "2026-05-27T17:05:05+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-35016",
-      "merger_name": "Wipro - Indeco",
-      "determination": "Approved",
-      "determination_date": "2026-05-26T12:00:00Z",
-      "page_modified_datetime": "2026-05-26T17:19:44+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
