@@ -1211,6 +1211,11 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
+          "name": "Mastercard International Incorporated",
+          "identifier_type": null,
+          "identifier": "648928"
+        },
+        {
           "name": "Ares UK Holdco 2 Limited",
           "identifier_type": null,
           "identifier": "CRN 17107097"
@@ -1219,11 +1224,6 @@
           "name": "Mastercard Incorporated",
           "identifier_type": null,
           "identifier": "3390142"
-        },
-        {
-          "name": "Mastercard International Incorporated",
-          "identifier_type": null,
-          "identifier": "648928"
         }
       ],
       "targets": [
@@ -1848,14 +1848,14 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "21 693 060 187"
-        },
-        {
           "name": "The Trustee for Light Them Up (Roma) Trust",
           "identifier_type": "ABN",
           "identifier": "17 705 523 498"
+        },
+        {
+          "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "21 693 060 187"
         }
       ],
       "targets": [
@@ -2448,7 +2448,7 @@
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-28T12:00:00Z",
       "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-13T12:00:00Z",
+      "end_of_determination_period": "2026-08-03T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
@@ -2459,16 +2459,6 @@
       ],
       "targets": [
         {
-          "name": "MAAS GROUP HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "84 632 994 542"
-        },
-        {
-          "name": "MACQUARIE GEOTECHNICAL PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "73 102 691 056"
-        },
-        {
           "name": "MACHINERY SALES PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "13 074 358 277"
@@ -2477,6 +2467,16 @@
           "name": "REGIONAL GROUP AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "21 634 578 699"
+        },
+        {
+          "name": "MAAS GROUP HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "84 632 994 542"
+        },
+        {
+          "name": "MACQUARIE GEOTECHNICAL PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "73 102 691 056"
         }
       ],
       "other_parties": [],

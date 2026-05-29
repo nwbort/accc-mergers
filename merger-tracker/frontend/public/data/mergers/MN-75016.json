@@ -6,8 +6,8 @@
   "effective_notification_datetime": "2026-04-28T12:00:00Z",
   "original_notification_datetime": "2026-04-28T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
-  "end_of_determination_period": "2026-06-11T12:00:00Z",
-  "page_modified_datetime": "2026-05-07T11:13:45+10:00",
+  "end_of_determination_period": "2026-06-17T12:00:00Z",
+  "page_modified_datetime": "2026-05-29T11:31:57+10:00",
   "consultation_response_due_date": "2026-05-06T12:00:00Z",
   "acquirers": [
     {
@@ -23,14 +23,14 @@
       "identifier": "92 166 405 321"
     },
     {
-      "name": "Shane Webb Nominees Pty Ltd in its capacity at the trustee for The S & R Webb Family Trust",
-      "identifier_type": "ACN",
-      "identifier": "619 189 883"
-    },
-    {
       "name": "Nick Brumley Pty Limited in its capacity atf Nick Brumley Family Trust (ABN 98 415 412 572)",
       "identifier_type": "ABN",
       "identifier": "44 124 730 605"
+    },
+    {
+      "name": "Shane Webb Nominees Pty Ltd in its capacity at the trustee for The S & R Webb Family Trust",
+      "identifier_type": "ACN",
+      "identifier": "619 189 883"
     }
   ],
   "other_parties": [
@@ -62,6 +62,12 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-05-28T12:00:00Z",
+      "title": "Timeline extended by 4 business days - following request by parties",
+      "display_title": "Timeline extended by 4 business days - following request by parties",
+      "phase": null
     }
   ],
   "is_waiver": false,
