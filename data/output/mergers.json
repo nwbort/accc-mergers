@@ -15710,14 +15710,9 @@
       "original_notification_datetime": "2026-05-21T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-07-06T12:00:00Z",
-      "page_modified_datetime": "2026-05-25T16:22:24+10:00",
+      "page_modified_datetime": "2026-06-01T14:38:26+10:00",
       "consultation_response_due_date": "2026-06-01T12:00:00Z",
       "acquirers": [
-        {
-          "name": "CPP Investment Board Private Holdings (6) Inc",
-          "identifier_type": null,
-          "identifier": "CBN  764228300"
-        },
         {
           "name": "Motion JVCo Limited",
           "identifier_type": null,
@@ -15727,6 +15722,11 @@
           "name": "BP Motion Holdings Limited",
           "identifier_type": null,
           "identifier": "UKCRN  16910312"
+        },
+        {
+          "name": "CPP Investment Board Private Holdings (6) Inc",
+          "identifier_type": null,
+          "identifier": "CBN  764228300"
         }
       ],
       "targets": [
@@ -15743,14 +15743,14 @@
       ],
       "other_parties": [
         {
-          "name": "Stonepeak Partners LP",
-          "identifier_type": null,
-          "identifier": "Company Identifier Number: 4958360  Delaware"
-        },
-        {
           "name": "BP p.l.c",
           "identifier_type": null,
           "identifier": "UKCRN  00102498"
+        },
+        {
+          "name": "Stonepeak Partners LP",
+          "identifier_type": null,
+          "identifier": "Company Identifier Number: 4958360  Delaware"
         }
       ],
       "anzsic_codes": [
@@ -15767,7 +15767,7 @@
           "display_title": "Questionnaire - Stonepeak - Castrol",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Stonepeak_Castrol%20-%20Third%20Party%20Questionnaire.docx",
           "url_gh": "/mergers/MN-60015/Stonepeak_Castrol - Third Party Questionnaire.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
