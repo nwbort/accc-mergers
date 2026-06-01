@@ -1,6 +1,6 @@
 {
   "total_mergers": 121,
-  "total_waivers": 176,
+  "total_waivers": 178,
   "by_status": {
     "Assessment completed": 80,
     "Under assessment": 41
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 163,
+    "Approved": 165,
     "Not approved": 13
   },
   "phase_duration": {
@@ -119,6 +119,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-35020",
+      "merger_name": "Respect Group - Jallarah Homes",
+      "determination": "Approved",
+      "determination_date": "2026-06-01T12:00:00Z",
+      "page_modified_datetime": "2026-06-01T17:29:14+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-85030",
+      "merger_name": "UP Education \u2013 Australian Academy of Beauty Dermal & Laser",
+      "determination": "Approved",
+      "determination_date": "2026-06-01T12:00:00Z",
+      "page_modified_datetime": "2026-06-01T17:23:34+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-50016",
       "merger_name": "Oracle \u2013 Leasehold interest in AirTrunk data centre",
       "determination": "Approved",
@@ -157,26 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-65017",
-      "merger_name": "Black Rhino Group \u2013 Granville Tavern and Motel and Cambridge Street Bottle Shop & Cellars in Granville, QLD",
-      "determination": "Approved",
-      "determination_date": "2026-05-28T12:00:00Z",
-      "page_modified_datetime": "2026-05-28T20:43:31+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-80010",
-      "merger_name": "Medtronic - Scientia",
-      "determination": "Approved",
-      "determination_date": "2026-05-28T12:00:00Z",
-      "page_modified_datetime": "2026-05-28T16:41:20+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
