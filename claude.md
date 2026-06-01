@@ -43,6 +43,8 @@ merger-tracker/frontend/src/
 │   ├── Commentary.jsx    # /commentary
 │   ├── Digest.jsx        # /digest
 │   ├── Analysis.jsx      # /analysis
+│   ├── MergerProcess.jsx # /merger-process — explainer of the ACCC review process
+│   ├── Glossary.jsx      # /glossary — term definitions (source: constants/glossary.js)
 │   ├── NickTwort.jsx     # /nick-twort
 │   ├── PrivacyPolicy.jsx # /privacy
 │   └── NotFound.jsx      # * (404)

@@ -18,6 +18,8 @@ import Commentary from './pages/Commentary';
 import Digest from './pages/Digest';
 import NickTwort from './pages/NickTwort';
 import Analysis from './pages/Analysis';
+import MergerProcess from './pages/MergerProcess';
+import Glossary from './pages/Glossary';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Feedback from './pages/Feedback';
 import NotFound from './pages/NotFound';
@@ -43,6 +45,8 @@ function AppContent() {
             <Route path="/commentary" element={<Commentary />} />
             <Route path="/digest" element={<Digest />} />
             <Route path="/analysis" element={<Analysis />} />
+            <Route path="/merger-process" element={<MergerProcess />} />
+            <Route path="/glossary" element={<Glossary />} />
             <Route path="/nick-twort" element={<NickTwort />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/feedback" element={<Feedback />} />
