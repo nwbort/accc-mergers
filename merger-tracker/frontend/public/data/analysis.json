@@ -2008,6 +2008,14 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-05-01",
+        "business_days": 20,
+        "calendar_days": 31,
+        "merger_name": "Oracle \u2013 Leasehold interest in AirTrunk data centre",
+        "merger_id": "WA-50016",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-05-04",
         "business_days": 11,
         "calendar_days": 15,
@@ -2178,17 +2186,17 @@
     ],
     "stats": {
       "average": 11.9,
-      "median": 11,
+      "median": 11.0,
       "min": 2,
       "max": 25,
-      "count": 175
+      "count": 176
     },
     "calendar_stats": {
-      "average": 17.6,
-      "median": 17,
+      "average": 17.7,
+      "median": 17.0,
       "min": 2,
       "max": 39,
-      "count": 175
+      "count": 176
     }
   },
   "monthly_volume": {
@@ -2223,7 +2231,7 @@
       30,
       48,
       45,
-      22
+      23
     ]
   }
 }

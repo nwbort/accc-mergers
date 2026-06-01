@@ -1,6 +1,45 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-30014",
+      "merger_name": "MedHealth \u2013 Connect Allied Health",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-06T12:00:00Z",
+      "determination_publication_date": "2026-05-21T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "MedHealth Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "32 141 219 785"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CONNECT ALLIED HEALTH PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 611 517 232"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "ExamWorks Group Inc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8539",
+          "name": "Other Allied Health Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/medhealth-%E2%80%93-connect-allied-health"
+    },
+    {
       "merger_id": "WA-05020",
       "merger_name": "Midea Group \u2013 Esaote",
       "status": "Assessment completed",

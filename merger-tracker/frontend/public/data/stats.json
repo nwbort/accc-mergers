@@ -1,6 +1,6 @@
 {
   "total_mergers": 121,
-  "total_waivers": 175,
+  "total_waivers": 176,
   "by_status": {
     "Assessment completed": 80,
     "Under assessment": 41
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 162,
+    "Approved": 163,
     "Not approved": 13
   },
   "phase_duration": {
@@ -52,7 +52,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 13
+      "count": 14
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-50016",
+      "merger_name": "Oracle \u2013 Leasehold interest in AirTrunk data centre",
+      "determination": "Approved",
+      "determination_date": "2026-06-01T12:00:00Z",
+      "page_modified_datetime": "2026-06-01T17:17:15+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-30018",
       "merger_name": "Tinicum and Blackstone led consortium \u2013 Senior",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-55020",
-      "merger_name": "BGIS - Safe Fire Electrical",
-      "determination": "Approved",
-      "determination_date": "2026-05-27T12:00:00Z",
-      "page_modified_datetime": "2026-05-27T17:08:12+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

@@ -2444,6 +2444,39 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/wipro-indeco"
     },
     {
+      "merger_id": "WA-50016",
+      "merger_name": "Oracle \u2013 Leasehold interest in AirTrunk data centre",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-01T12:00:00Z",
+      "determination_publication_date": "2026-06-01T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "ORACLE CORPORATION AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "80 003 074 468"
+        }
+      ],
+      "targets": [
+        {
+          "name": "AIRTRUNK SYD3 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 652 550 402"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/oracle-%E2%80%93-leasehold-interest-in-airtrunk-data-centre"
+    },
+    {
       "merger_id": "MN-35014",
       "merger_name": "News \u2013 acquisition of 20% of National Distribution Services",
       "status": "Under assessment",
@@ -2761,45 +2794,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/3m-and-funds-managed-andor-advised-by-bain-capital-madison-fire-rescue"
-    },
-    {
-      "merger_id": "WA-30014",
-      "merger_name": "MedHealth \u2013 Connect Allied Health",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-05-06T12:00:00Z",
-      "determination_publication_date": "2026-05-21T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "MedHealth Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "32 141 219 785"
-        }
-      ],
-      "targets": [
-        {
-          "name": "CONNECT ALLIED HEALTH PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 611 517 232"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "ExamWorks Group Inc",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "8539",
-          "name": "Other Allied Health Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/medhealth-%E2%80%93-connect-allied-health"
     }
   ],
   "page": 5,
