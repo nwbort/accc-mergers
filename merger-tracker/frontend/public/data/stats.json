@@ -1,6 +1,6 @@
 {
   "total_mergers": 121,
-  "total_waivers": 184,
+  "total_waivers": 185,
   "by_status": {
     "Assessment completed": 80,
     "Under assessment": 41
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 171,
+    "Approved": 172,
     "Not approved": 13
   },
   "phase_duration": {
@@ -109,15 +109,25 @@
       "is_waiver": false
     },
     {
-      "merger_id": "MN-25026",
-      "merger_name": "Tibaldi - South Food Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-22T12:00:00Z",
-      "is_waiver": false
+      "merger_id": "WA-60020",
+      "merger_name": "Metro Petroleum \u2013 Retail sites part of divestiture remedy from Ampol-EG acquisition",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "effective_notification_datetime": "2026-05-26T12:00:00Z",
+      "is_waiver": true
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-60020",
+      "merger_name": "Metro Petroleum \u2013 Retail sites part of divestiture remedy from Ampol-EG acquisition",
+      "determination": "Approved",
+      "determination_date": "2026-06-03T12:00:00Z",
+      "page_modified_datetime": "2026-06-03T09:04:28+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
     {
       "merger_id": "WA-20022",
       "merger_name": "PRIME Asia \u2013 Stockland Sienna Wood and Providence",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-02T12:00:00Z",
       "page_modified_datetime": "2026-06-02T17:14:15+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-80015",
-      "merger_name": "Star Hotels Group - Shafston Hotel, QLD",
-      "determination": "Approved",
-      "determination_date": "2026-06-02T12:00:00Z",
-      "page_modified_datetime": "2026-06-02T17:11:49+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
