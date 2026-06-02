@@ -5476,9 +5476,9 @@
     "effective_notification_datetime": "2026-03-05T12:00:00Z",
     "original_notification_datetime": "2026-03-05T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
-    "end_of_determination_period": "2026-06-02T12:00:00Z",
-    "page_modified_datetime": "2026-04-07T15:03:09+10:00",
-    "consultation_response_due_date": "2026-03-13T12:00:00Z",
+    "end_of_determination_period": "2026-10-09T12:00:00Z",
+    "page_modified_datetime": "2026-06-02T17:16:13+10:00",
+    "consultation_response_due_date": "2026-06-16T12:00:00Z",
     "acquirers": [
       {
         "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
@@ -5488,29 +5488,9 @@
     ],
     "targets": [
       {
-        "name": "HURRIKAYNE PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "74 118 744 915"
-      },
-      {
         "name": "WOLLONGONG CITY MOTORS PTY LTD",
         "identifier_type": "ABN",
         "identifier": "22 002 019 598"
-      },
-      {
-        "name": "Wakeling South Coast Pty Ltd",
-        "identifier_type": "ACN",
-        "identifier": "636 298 970"
-      },
-      {
-        "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
-        "identifier_type": "ACN",
-        "identifier": "119 879 980"
-      },
-      {
-        "name": "Paul Wakeling Motor Group Pty Ltd",
-        "identifier_type": "ABN",
-        "identifier": "47 119 908 780"
       },
       {
         "name": "WAKELING HOLDINGS PTY LTD",
@@ -5518,9 +5498,29 @@
         "identifier": "41 160 814 040"
       },
       {
+        "name": "HURRIKAYNE PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "74 118 744 915"
+      },
+      {
         "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
         "identifier_type": "ACN",
         "identifier": "119 875 768"
+      },
+      {
+        "name": "Paul Wakeling Motor Group Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "47 119 908 780"
+      },
+      {
+        "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
+        "identifier_type": "ACN",
+        "identifier": "119 879 980"
+      },
+      {
+        "name": "Wakeling South Coast Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "636 298 970"
       }
     ],
     "other_parties": [],
@@ -5565,6 +5565,14 @@
         "date": "2026-04-02T12:00:00Z",
         "title": "Timeline extended by 28 business days \u2013 following request by parties",
         "display_title": "Timeline extended by 28 business days \u2013 following request by parties"
+      },
+      {
+        "date": "2026-06-02T12:00:00Z",
+        "title": "Peter Warren - Wakeling Automotive - Phase 2 Notice",
+        "display_title": "Peter Warren - Wakeling Automotive - Phase 2 Notice",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Wakeling%20Automotive%20-%20Phase%202%20notice%20-%202%20June%202026.pdf",
+        "url_gh": "/mergers/MN-30002/Wakeling Automotive - Phase 2 notice - 2 June 2026.pdf",
+        "status": "live"
       }
     ],
     "is_waiver": false
@@ -27848,6 +27856,110 @@
       },
       {
         "date": "2026-05-14T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/direct-couriers-%E2%80%93-phoenix-transport",
+    "merger_name": "Direct Couriers \u2013 Phoenix Transport",
+    "status": "Assessment completed",
+    "merger_id": "WA-80017",
+    "effective_notification_datetime": "2026-05-18T12:00:00Z",
+    "original_notification_datetime": "2026-05-18T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-06-02T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-06-02T17:24:53+10:00",
+    "acquirers": [
+      {
+        "name": "DIRECT COURIERS (AUST.) PTY. LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "87 063 478 295"
+      }
+    ],
+    "targets": [
+      {
+        "name": "PHOENIX TRANSPORT HOLDINGS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "75 062 309 773"
+      },
+      {
+        "name": "PHOENIX DISTRIBUTION (NSW) PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "24 073 843 982"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "DIRECT COURIERS GROUP PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "70 637 899 051"
+      },
+      {
+        "name": "FRF GROUP PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "11 624 735 459"
+      },
+      {
+        "name": "ANACACIA CAPITAL PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "82 123 237 114"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "4610",
+        "name": "Road Freight Transport"
+      },
+      {
+        "code": "5102",
+        "name": "Courier Pick-up and Delivery Services"
+      },
+      {
+        "code": "5309",
+        "name": "Other Warehousing and Storage Services"
+      }
+    ],
+    "merger_description": "Direct Couriers (Aust) Pty Ltd (**DC**), a wholly owned subsidiary of Direct Couriers Group Pty Ltd (together, **Direct Couriers**), proposes to acquire 100% of the shares in Phoenix Transport Holdings Pty Ltd, along with its 100% wholly owned subsidiary, Phoenix Distribution (NSW) Pty Ltd (together, **Phoenix Transport**).\n\nDirect Couriers is an Australian provider of business-to-business courier, interstate delivery and warehousing services. It services logistics, freight forwarder, commercial and retail customers across Australia and New Zealand, and operates a number of sub-brands including \u2018Direct Cold\u2019 and \u2018Direct Road\u2019. It focuses on same day point-to-point services.\n\nAnacacia V Fund A and Anacacia V Fund B (together, the **Fund**), which are both unregistered Australian unlisted unit trusts, together own 49.7% of the shares in DC, with the remaining 50.3% held by existing and past management, as well as a passive investor.\n\nPhoenix Transport is also an Australian provider of business-to-business courier, interstate delivery and warehousing services, operating in New South Wales and Queensland. Although Phoenix Transport has national customers, its coverage is primarily limited to Brisbane and Sydney. Phoenix Transport services a mix of logistics, retail and commercial customers, with a stronger focus on third-party warehousing and distribution, larger-scale heavy-freight dedicated hire work, and on- transport for warehouse relocations and other similar project work.",
+    "events": [
+      {
+        "date": "2026-06-02T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Direct%20Couriers%20-%20Phoenix%20Transport%20%28WA-80017%29%20-%20Notification%20waiver%20determination%20-%202%20June%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Direct Couriers (Aust) Pty Ltd, a wholly owned subsidiary of Direct\nCouriers Group Pty Ltd (Direct Couriers), applied for a notification\nwaiver in respect of its acquisition of 100% of the shares in Phoenix\nTransport Holdings Pty Ltd and its wholly owned subsidiary, Phoenix\nDistribution (NSW) Pty Ltd (together, Phoenix Transport), as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "2 June 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, Direct Couriers, is an Australian provider of business-\nto-business courier, interstate delivery, and warehousing services. It\nservices logistics, freight forwarder, commercial, and retail\ncustomers across Australia and New Zealand, and operates a\nnumber of sub-brands including \u2018Direct Cold\u2019 and \u2018Direct Road\u2019. Direct\nCouriers focuses on same day point-to-point services.\nPhoenix Transport is also an Australian-headquartered provider of\nbusiness-to-business courier, interstate delivery, and warehousing\nservices. It operates in New South Wales and Queensland, with\ncoverage primarily limited to Brisbane and Sydney. Phoenix\nTransport services a mix of logistics, retail, and commercial\ncustomers, with a stronger focus on third-party warehousing and\ndistribution, large-scale heavy-freight dedicated hire work, and on-\ntransport for warehouse relocations and other similar project work.\nBoth parties supply courier and interstate delivery services in\nQueensland and New South Wales."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application, and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. the parties\u2019 combined share of supply of courier and\ninterstate delivery services in Queensland, New South Wales,\nand nationally is estimated to be low and the increase in\nshare arising from the Acquisition would be small\n\u2022 b. there are alternative suppliers of courier and interstate\ndelivery services in Queensland, New South Wales, and\nnationally.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-80017/Direct Couriers - Phoenix Transport (WA-80017) - Notification waiver determination - 2 June 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-05-18T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }

@@ -1,6 +1,78 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-50009",
+      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-28T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-03T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "HEIDELBERG MATERIALS AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "98 611 565 649"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MACHINERY SALES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "13 074 358 277"
+        },
+        {
+          "name": "REGIONAL GROUP AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "21 634 578 699"
+        },
+        {
+          "name": "MAAS GROUP HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "84 632 994 542"
+        },
+        {
+          "name": "MACQUARIE GEOTECHNICAL PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "73 102 691 056"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "0911",
+          "name": "Gravel and Sand Quarrying"
+        },
+        {
+          "code": "0919",
+          "name": "Other Construction Material Mining"
+        },
+        {
+          "code": "1709",
+          "name": "Other Petroleum and Coal Product Manufacturing"
+        },
+        {
+          "code": "2033",
+          "name": "Ready-Mixed Concrete Manufacturing"
+        },
+        {
+          "code": "2921",
+          "name": "Waste Treatment and Disposal Services"
+        },
+        {
+          "code": "2922",
+          "name": "Waste Remediation and Materials Recovery Services"
+        },
+        {
+          "code": "6925",
+          "name": "Scientific Testing and Analysis Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/heidelberg-materials-australia-%E2%80%93-construction-materials-business-of-maas"
+    },
+    {
       "merger_id": "MN-90015",
       "merger_name": "Impression Dental Group - Coastal Dental Care",
       "status": "Under assessment",

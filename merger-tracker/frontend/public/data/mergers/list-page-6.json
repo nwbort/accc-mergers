@@ -1828,6 +1828,68 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tinicum-and-blackstone-led-consortium-%E2%80%93-senior"
     },
     {
+      "merger_id": "WA-80017",
+      "merger_name": "Direct Couriers \u2013 Phoenix Transport",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-18T12:00:00Z",
+      "determination_publication_date": "2026-06-02T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "DIRECT COURIERS (AUST.) PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "87 063 478 295"
+        }
+      ],
+      "targets": [
+        {
+          "name": "PHOENIX TRANSPORT HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "75 062 309 773"
+        },
+        {
+          "name": "PHOENIX DISTRIBUTION (NSW) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "24 073 843 982"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "DIRECT COURIERS GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 637 899 051"
+        },
+        {
+          "name": "FRF GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 624 735 459"
+        },
+        {
+          "name": "ANACACIA CAPITAL PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "82 123 237 114"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4610",
+          "name": "Road Freight Transport"
+        },
+        {
+          "code": "5102",
+          "name": "Courier Pick-up and Delivery Services"
+        },
+        {
+          "code": "5309",
+          "name": "Other Warehousing and Storage Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/direct-couriers-%E2%80%93-phoenix-transport"
+    },
+    {
       "merger_id": "WA-85030",
       "merger_name": "UP Education \u2013 Australian Academy of Beauty Dermal & Laser",
       "status": "Assessment completed",
@@ -2799,78 +2861,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/henkel-%E2%80%93-olaplex"
-    },
-    {
-      "merger_id": "MN-50009",
-      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-28T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-03T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "HEIDELBERG MATERIALS AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "98 611 565 649"
-        }
-      ],
-      "targets": [
-        {
-          "name": "MACHINERY SALES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "13 074 358 277"
-        },
-        {
-          "name": "REGIONAL GROUP AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "21 634 578 699"
-        },
-        {
-          "name": "MAAS GROUP HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "84 632 994 542"
-        },
-        {
-          "name": "MACQUARIE GEOTECHNICAL PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "73 102 691 056"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "0911",
-          "name": "Gravel and Sand Quarrying"
-        },
-        {
-          "code": "0919",
-          "name": "Other Construction Material Mining"
-        },
-        {
-          "code": "1709",
-          "name": "Other Petroleum and Coal Product Manufacturing"
-        },
-        {
-          "code": "2033",
-          "name": "Ready-Mixed Concrete Manufacturing"
-        },
-        {
-          "code": "2921",
-          "name": "Waste Treatment and Disposal Services"
-        },
-        {
-          "code": "2922",
-          "name": "Waste Remediation and Materials Recovery Services"
-        },
-        {
-          "code": "6925",
-          "name": "Scientific Testing and Analysis Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/heidelberg-materials-australia-%E2%80%93-construction-materials-business-of-maas"
     }
   ],
   "page": 6,
