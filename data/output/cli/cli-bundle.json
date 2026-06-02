@@ -9318,7 +9318,7 @@
       "merger_id": "MN-30002",
       "effective_notification_datetime": "2026-03-05T12:00:00Z",
       "original_notification_datetime": "2026-03-05T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
+      "stage": "Phase 2 - detailed assessment",
       "end_of_determination_period": "2026-10-09T12:00:00Z",
       "page_modified_datetime": "2026-06-02T17:16:13+10:00",
       "consultation_response_due_date": "2026-06-16T12:00:00Z",
@@ -9424,12 +9424,13 @@
       ],
       "is_waiver": false,
       "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Referred to phase 2",
+      "phase_1_determination_date": "2026-06-02T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "phase_2_inferred": true,
       "has_questionnaire": true,
       "similar_mergers": [
         {
@@ -62178,7 +62179,7 @@
     },
     "by_determination": {
       "Approved": 80,
-      "Referred to phase 2": 4
+      "Referred to phase 2": 5
     },
     "by_waiver_determination": {
       "Approved": 171,
@@ -62330,21 +62331,21 @@
         "stage": "Waiver application"
       },
       {
+        "merger_id": "MN-30002",
+        "merger_name": "Peter Warren - Wakeling Automotive",
+        "determination": "Referred to phase 2",
+        "determination_date": "2026-06-02T12:00:00Z",
+        "page_modified_datetime": "2026-06-02T17:16:13+10:00",
+        "determination_type": "phase_transition",
+        "is_waiver": false,
+        "stage": "Phase 2 - detailed assessment"
+      },
+      {
         "merger_id": "WA-40023",
         "merger_name": "AUB – further interest in KJ Risk",
         "determination": "Approved",
         "determination_date": "2026-06-02T12:00:00Z",
         "page_modified_datetime": "2026-06-02T17:14:15+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-80015",
-        "merger_name": "Star Hotels Group - Shafston Hotel, QLD",
-        "determination": "Approved",
-        "determination_date": "2026-06-02T12:00:00Z",
-        "page_modified_datetime": "2026-06-02T17:11:49+10:00",
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"
