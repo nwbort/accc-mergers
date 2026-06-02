@@ -3,6 +3,7 @@ static data generation, cutoff logic, and extraction helpers."""
 
 import sys
 import os
+import json
 import unittest.mock
 from datetime import datetime, timedelta
 
@@ -21,7 +22,12 @@ from parse_determination import (
 )
 from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text, _extract_subpoints, _extract_bullets, _has_questionnaire_header
 from cutoff import is_waiver_merger, get_cutoff_date, should_skip_merger
-from extract_mergers import is_safe_url, get_serve_filename
+from extract_mergers import (
+    is_safe_url,
+    get_serve_filename,
+    detect_inferred_phase_2,
+)
+import extract_mergers
 
 
 # ---------------------------------------------------------------------------
@@ -921,7 +927,11 @@ from static_data.business_days import (
     _count_weekdays_in_range,
     calculate_calendar_days,
 )
-from static_data.enrichment import enrich_merger, extract_phase_from_event
+from static_data.enrichment import (
+    enrich_merger,
+    extract_phase_from_event,
+    is_phase_2_referral_event,
+)
 from static_data.loaders import load_questionnaire_data
 from static_data.outputs.commentary import generate as generate_commentary_json
 from static_data.outputs.industries import generate_index as generate_industries_json
@@ -1135,6 +1145,60 @@ class TestEnrichMerger:
         assert result['phase_1_determination'] == 'Referred to phase 2'
         assert result['phase_1_determination_date'] == '2026-04-16T12:00:00Z'
 
+    def test_phase_2_notice_event_is_referral(self):
+        # A "Phase 2 Notice" event is the mechanism that moves a matter into
+        # Phase 2 (e.g. MN-30002).
+        assert is_phase_2_referral_event(
+            'Peter Warren - Wakeling Automotive - Phase 2 Notice'
+        ) is True
+
+    def test_infers_phase_2_when_stage_lags(self):
+        # ACCC issued a Phase 2 notice but the register's stage still says
+        # Phase 1 — treat the merger as Phase 2 and flag the inference.
+        m = self._base_merger()
+        m['accc_determination'] = None
+        m['determination_publication_date'] = None
+        m['stage'] = 'Phase 1 - initial assessment'
+        m['events'] = [
+            {'title': 'Some Merger - Phase 2 Notice', 'date': '2026-06-02T12:00:00Z'}
+        ]
+        result = enrich_merger(m)
+        assert result['phase_2_inferred'] is True
+        assert result['stage'] == 'Phase 2 - detailed assessment'
+        # The notice still resolves to a Phase 1 outcome of "Referred to phase 2".
+        assert result['phase_1_determination'] == 'Referred to phase 2'
+        assert result['phase_1_determination_date'] == '2026-06-02T12:00:00Z'
+
+    def test_no_inference_when_stage_already_phase_2(self):
+        # When the register already shows Phase 2, there is nothing to infer.
+        m = self._base_merger()
+        m['accc_determination'] = None
+        m['determination_publication_date'] = None
+        m['stage'] = 'Phase 2 - detailed assessment'
+        m['events'] = [
+            {'title': 'Some Merger - Phase 2 Notice', 'date': '2026-06-02T12:00:00Z'}
+        ]
+        result = enrich_merger(m)
+        assert 'phase_2_inferred' not in result
+        assert result['stage'] == 'Phase 2 - detailed assessment'
+
+    def test_no_inference_without_phase_2_event(self):
+        m = self._base_merger()
+        m['stage'] = 'Phase 1 - initial assessment'
+        m['events'] = [{'title': 'Merger notified to ACCC', 'date': '2026-03-05'}]
+        result = enrich_merger(m)
+        assert 'phase_2_inferred' not in result
+        assert result['stage'] == 'Phase 1 - initial assessment'
+
+    def test_inference_does_not_mutate_original_stage(self):
+        m = self._base_merger()
+        m['stage'] = 'Phase 1 - initial assessment'
+        m['events'] = [{'title': 'X - Phase 2 Notice', 'date': '2026-06-02T12:00:00Z'}]
+        enrich_merger(m)
+        # The genuine stage on the source record must be preserved so the
+        # auto-close detection can see when the register actually updates.
+        assert m['stage'] == 'Phase 1 - initial assessment'
+
     def test_adds_commentary(self):
         m = self._base_merger()
         commentary = {
@@ -1173,6 +1237,68 @@ class TestEnrichMerger:
         result = enrich_merger(m)
         assert result['events'][0]['phase'] == 'Phase 1'
         assert result['events'][1]['phase'] is None
+
+
+# ---------------------------------------------------------------------------
+# extract_mergers: detect_inferred_phase_2
+# ---------------------------------------------------------------------------
+
+class TestDetectInferredPhase2:
+    def _run(self, mergers, tmp_path, monkeypatch):
+        out = tmp_path / "inferred_phase_2.json"
+        monkeypatch.setattr(extract_mergers, "INFERRED_PHASE_2_PATH", str(out))
+        detect_inferred_phase_2(mergers)
+        if not out.exists():
+            return None
+        with open(out) as f:
+            return json.load(f)
+
+    def test_opens_issue_when_stage_lags(self, tmp_path, monkeypatch):
+        mergers = [{
+            'merger_id': 'MN-30002',
+            'merger_name': 'Peter Warren - Wakeling Automotive',
+            'url': 'https://accc.gov.au/x',
+            'stage': 'Phase 1 - initial assessment',
+            'events': [{'title': 'X - Phase 2 Notice', 'date': '2026-06-02T12:00:00Z'}],
+        }]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        assert len(result['open']) == 1
+        assert result['open'][0]['merger_id'] == 'MN-30002'
+        assert 'MN-30002' in result['open'][0]['title']
+        assert result['confirmed'] == []
+
+    def test_confirms_close_when_stage_updates(self, tmp_path, monkeypatch):
+        mergers = [{
+            'merger_id': 'MN-30002',
+            'merger_name': 'Peter Warren - Wakeling Automotive',
+            'stage': 'Phase 2 - detailed assessment',
+            'events': [{'title': 'X - Phase 2 Notice', 'date': '2026-06-02T12:00:00Z'}],
+        }]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        assert result['open'] == []
+        assert result['confirmed'] == ['MN-30002']
+
+    def test_ignores_mergers_without_phase_2_event(self, tmp_path, monkeypatch):
+        mergers = [{
+            'merger_id': 'MN-00001',
+            'merger_name': 'Ordinary Phase 1',
+            'stage': 'Phase 1 - initial assessment',
+            'events': [{'title': 'Merger notified to ACCC', 'date': '2026-03-05'}],
+        }]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        # Nothing to report → file is removed / never written.
+        assert result is None
+
+    def test_removes_stale_file_when_nothing_to_report(self, tmp_path, monkeypatch):
+        out = tmp_path / "inferred_phase_2.json"
+        out.write_text('{"open": [{"merger_id": "MN-OLD"}], "confirmed": []}')
+        monkeypatch.setattr(extract_mergers, "INFERRED_PHASE_2_PATH", str(out))
+        detect_inferred_phase_2([{
+            'merger_id': 'MN-00001',
+            'stage': 'Phase 1 - initial assessment',
+            'events': [],
+        }])
+        assert not out.exists()
 
 
 # ---------------------------------------------------------------------------

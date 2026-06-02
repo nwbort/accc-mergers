@@ -26,6 +26,7 @@ from extract_mergers import (
     MATTERS_DIR,
     _load_frozen_events_mergers,
     auto_fix_missing_event_dates,
+    detect_inferred_phase_2,
     enrich_with_questionnaire_data,
     extract_nocc_data,
 )
@@ -65,6 +66,11 @@ def main():
 
     # 3. Auto-fix catchable events (questionnaire, remedy offer) whose date is missing.
     auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers)
+
+    # 4. Detect mergers carrying a Phase 2 notice whose ACCC stage still shows
+    #    Phase 1 (the site treats these as Phase 2; the pipeline opens/closes a
+    #    tracking issue accordingly). Reads the genuine stage from mergers.json.
+    detect_inferred_phase_2(all_mergers_data)
 
     # is_waiver may shift if enrichment changed a date that affects classification.
     for merger in all_mergers_data:

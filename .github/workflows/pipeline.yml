@@ -394,3 +394,71 @@ jobs:
               --method POST --input -
             echo "Created issue: $TITLE"
           done
+
+      # --- Manage inferred-Phase-2 tracking issues ---
+      # detect_inferred_phase_2 writes inferred_phase_2.json when a merger has a
+      # Phase 2 notice but the ACCC register still shows Phase 1 (the site treats
+      # it as Phase 2). We open a tracking issue so the owner can confirm, and
+      # auto-close it once the register's stage catches up to Phase 2.
+
+      - name: Manage inferred Phase 2 issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          FILE=data/processed/inferred_phase_2.json
+          if [ ! -f "$FILE" ]; then
+            echo "No inferred Phase 2 data to process"
+            exit 0
+          fi
+
+          gh label create "inferred-phase-2" \
+            --description "Merger inferred as Phase 2 from a notice; awaiting ACCC stage update" \
+            --color "d4c5f9" \
+            --force
+
+          # Open a tracking issue for each newly inferred Phase 2 merger.
+          OPEN_COUNT=$(jq '.open | length' "$FILE")
+          echo "Inferred Phase 2 mergers to open: $OPEN_COUNT"
+          for i in $(seq 0 $((OPEN_COUNT - 1))); do
+            MERGER_ID=$(jq -r ".open[$i].merger_id" "$FILE")
+
+            # Skip if an issue already exists in ANY state, so we never reopen one
+            # the owner deliberately closed (e.g. after parties dropped out).
+            EXISTING=$(gh issue list \
+              --label "inferred-phase-2" \
+              --state all \
+              --json title \
+              --jq '.[].title' | grep "$MERGER_ID" || true)
+            if [ -n "$EXISTING" ]; then
+              echo "Issue already exists for $MERGER_ID — skipping"
+              continue
+            fi
+
+            TITLE=$(jq -r ".open[$i].title" "$FILE")
+            jq -n \
+              --argjson idx "$i" \
+              --slurpfile data "$FILE" \
+              '{"title": $data[0].open[$idx].title,
+                "body":  $data[0].open[$idx].body,
+                "labels": ["inferred-phase-2"]}' | \
+            gh api "repos/$GITHUB_REPOSITORY/issues" --method POST --input -
+            echo "Created inferred Phase 2 issue: $TITLE"
+          done
+
+          # Auto-close tracking issues where the ACCC register now shows Phase 2.
+          CLOSE_COUNT=$(jq '.confirmed | length' "$FILE")
+          echo "Confirmed Phase 2 mergers to close: $CLOSE_COUNT"
+          for i in $(seq 0 $((CLOSE_COUNT - 1))); do
+            MERGER_ID=$(jq -r ".confirmed[$i]" "$FILE")
+            NUMBER=$(gh issue list \
+              --label "inferred-phase-2" \
+              --state open \
+              --json number,title \
+              --jq ".[] | select(.title | contains(\"$MERGER_ID\")) | .number" | head -n1)
+            if [ -n "$NUMBER" ]; then
+              gh issue comment "$NUMBER" \
+                --body "The ACCC register now shows this merger at Phase 2 — closing automatically."
+              gh issue close "$NUMBER"
+              echo "Closed inferred Phase 2 issue #$NUMBER for $MERGER_ID"
+            fi
+          done
