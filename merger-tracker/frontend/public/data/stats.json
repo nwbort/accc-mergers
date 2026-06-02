@@ -2,8 +2,8 @@
   "total_mergers": 121,
   "total_waivers": 185,
   "by_status": {
-    "Assessment completed": 80,
-    "Under assessment": 41
+    "Assessment completed": 81,
+    "Under assessment": 40
   },
   "by_determination": {
     "Approved": 80,
@@ -14,22 +14,22 @@
     "Not approved": 13
   },
   "phase_duration": {
-    "average_days": 27.5375,
+    "average_days": 30.11111111111111,
     "median_days": 26,
-    "average_business_days": 18.25,
+    "average_business_days": 19.864197530864196,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 18,
-        "percentage": 22.5
+        "percentage": 22.2
       },
       "day20": {
         "count": 63,
-        "percentage": 78.8
+        "percentage": 77.8
       },
       "day30": {
         "count": 79,
-        "percentage": 98.8
+        "percentage": 97.5
       }
     }
   },
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-01019",
+      "merger_name": "Ampol \u2013 EG Australia",
+      "determination": "Approved",
+      "determination_date": "2026-06-03T12:00:00Z",
+      "page_modified_datetime": "2026-06-03T09:09:12+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 2 - detailed assessment"
+    },
+    {
       "merger_id": "WA-60020",
       "merger_name": "Metro Petroleum \u2013 Retail sites part of divestiture remedy from Ampol-EG acquisition",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-02T12:00:00Z",
       "page_modified_datetime": "2026-06-02T17:24:53+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-40023",
-      "merger_name": "AUB \u2013 further interest in KJ Risk",
-      "determination": "Approved",
-      "determination_date": "2026-06-02T12:00:00Z",
-      "page_modified_datetime": "2026-06-02T17:14:15+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
