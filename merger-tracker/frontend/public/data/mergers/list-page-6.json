@@ -1267,6 +1267,54 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/volt-managed-investment-trusts-%E2%80%93-hmc-energy-transition-platform"
     },
     {
+      "merger_id": "WA-40023",
+      "merger_name": "AUB \u2013 further interest in KJ Risk",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-14T12:00:00Z",
+      "determination_publication_date": "2026-06-02T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "AUSTBROKERS CORPORATE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "29 107 477 181"
+        }
+      ],
+      "targets": [
+        {
+          "name": "KJ RISK GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "15 143 512 387"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Niven Industries Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "146 449 265"
+        },
+        {
+          "name": "AUB GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "60 000 000 715"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6420",
+          "name": "Auxiliary Insurance Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/aub-%E2%80%93-further-interest-in-kj-risk"
+    },
+    {
       "merger_id": "WA-75022",
       "merger_name": "United States\u2013Australia Gallium",
       "status": "Assessment completed",
@@ -2823,50 +2871,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/heidelberg-materials-australia-%E2%80%93-construction-materials-business-of-maas"
-    },
-    {
-      "merger_id": "MN-90015",
-      "merger_name": "Impression Dental Group - Coastal Dental Care",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-28T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-13T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "GENERAL DENTAL HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "55 646 760 367"
-        }
-      ],
-      "targets": [
-        {
-          "name": "The Trustee for FRANCK PAGE #3 TRUST",
-          "identifier_type": "ABN",
-          "identifier": "65 158 640 539"
-        },
-        {
-          "name": "COASTAL DENTAL CARE AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 617 360 460"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Genesis Capital",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "8531",
-          "name": "Dental Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/impression-dental-group-coastal-dental-care"
     }
   ],
   "page": 6,

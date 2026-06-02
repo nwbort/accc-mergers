@@ -1,6 +1,6 @@
 {
   "total_mergers": 121,
-  "total_waivers": 179,
+  "total_waivers": 180,
   "by_status": {
     "Assessment completed": 80,
     "Under assessment": 41
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 166,
+    "Approved": 167,
     "Not approved": 13
   },
   "phase_duration": {
@@ -48,7 +48,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 25
+      "count": 26
     },
     {
       "name": "Non-Residential Property Operators",
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-40023",
+      "merger_name": "AUB \u2013 further interest in KJ Risk",
+      "determination": "Approved",
+      "determination_date": "2026-06-02T12:00:00Z",
+      "page_modified_datetime": "2026-06-02T17:14:15+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-80015",
       "merger_name": "Star Hotels Group - Shafston Hotel, QLD",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-01T12:00:00Z",
       "page_modified_datetime": "2026-06-01T17:08:15+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-90016",
-      "merger_name": "Turkish Airlines - Air Europa",
-      "determination": "Approved",
-      "determination_date": "2026-05-29T12:00:00Z",
-      "page_modified_datetime": "2026-05-29T16:58:49+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
