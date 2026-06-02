@@ -1,9 +1,9 @@
 {
-  "total_mergers": 121,
+  "total_mergers": 122,
   "total_waivers": 185,
   "by_status": {
     "Assessment completed": 81,
-    "Under assessment": 40
+    "Under assessment": 41
   },
   "by_determination": {
     "Approved": 80,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-35019",
+      "merger_name": "Precision Poultry - VOAG chicken farming operations",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-02T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-50009",
       "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-26T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "WA-60020",
-      "merger_name": "Metro Petroleum \u2013 Retail sites part of divestiture remedy from Ampol-EG acquisition",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "effective_notification_datetime": "2026-05-26T12:00:00Z",
-      "is_waiver": true
     }
   ],
   "recent_determinations": [
