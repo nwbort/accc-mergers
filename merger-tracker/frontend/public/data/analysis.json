@@ -2152,6 +2152,14 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-05-14",
+        "business_days": 12,
+        "calendar_days": 19,
+        "merger_name": "Star Hotels Group - Shafston Hotel, QLD",
+        "merger_id": "WA-80015",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-05-15",
         "business_days": 7,
         "calendar_days": 11,
@@ -2202,17 +2210,17 @@
     ],
     "stats": {
       "average": 11.9,
-      "median": 11.0,
+      "median": 11,
       "min": 2,
       "max": 25,
-      "count": 178
+      "count": 179
     },
     "calendar_stats": {
       "average": 17.6,
-      "median": 17.0,
+      "median": 17,
       "min": 2,
       "max": 39,
-      "count": 178
+      "count": 179
     }
   },
   "monthly_volume": {
@@ -2247,7 +2255,7 @@
       30,
       48,
       45,
-      25
+      26
     ]
   }
 }

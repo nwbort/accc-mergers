@@ -1,6 +1,6 @@
 {
   "total_mergers": 121,
-  "total_waivers": 178,
+  "total_waivers": 179,
   "by_status": {
     "Assessment completed": 80,
     "Under assessment": 41
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 165,
+    "Approved": 166,
     "Not approved": 13
   },
   "phase_duration": {
@@ -35,11 +35,11 @@
   },
   "top_industries": [
     {
-      "name": "Computer System Design and Related Services",
-      "count": 36
+      "name": "Financial Asset Investing",
+      "count": 37
     },
     {
-      "name": "Financial Asset Investing",
+      "name": "Computer System Design and Related Services",
       "count": 36
     },
     {
@@ -56,7 +56,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 13
+      "count": 14
     },
     {
       "name": "Liquor Retailing",
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80015",
+      "merger_name": "Star Hotels Group - Shafston Hotel, QLD",
+      "determination": "Approved",
+      "determination_date": "2026-06-02T12:00:00Z",
+      "page_modified_datetime": "2026-06-02T17:11:49+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-35020",
       "merger_name": "Respect Group - Jallarah Homes",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-05-29T12:00:00Z",
       "page_modified_datetime": "2026-05-29T16:58:49+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-80013",
-      "merger_name": "Sydney Water - Windsor Sewerage Scheme Assets",
-      "determination": "Approved",
-      "determination_date": "2026-05-29T12:00:00Z",
-      "page_modified_datetime": "2026-05-29T16:58:03+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
