@@ -5,9 +5,9 @@
   "merger_id": "MN-30002",
   "effective_notification_datetime": "2026-03-05T12:00:00Z",
   "original_notification_datetime": "2026-03-05T12:00:00Z",
-  "stage": "Phase 1 - initial assessment",
-  "end_of_determination_period": "2026-10-09T12:00:00Z",
-  "page_modified_datetime": "2026-06-02T17:16:13+10:00",
+  "stage": "Phase 2 - detailed assessment",
+  "end_of_determination_period": "2026-10-08T12:00:00Z",
+  "page_modified_datetime": "2026-06-03T16:39:04+10:00",
   "consultation_response_due_date": "2026-06-16T12:00:00Z",
   "acquirers": [
     {
@@ -18,19 +18,9 @@
   ],
   "targets": [
     {
-      "name": "WOLLONGONG CITY MOTORS PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "22 002 019 598"
-    },
-    {
       "name": "WAKELING HOLDINGS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "41 160 814 040"
-    },
-    {
-      "name": "HURRIKAYNE PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "74 118 744 915"
     },
     {
       "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
@@ -38,19 +28,29 @@
       "identifier": "119 875 768"
     },
     {
+      "name": "WOLLONGONG CITY MOTORS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "22 002 019 598"
+    },
+    {
       "name": "Paul Wakeling Motor Group Pty Ltd",
       "identifier_type": "ABN",
       "identifier": "47 119 908 780"
     },
     {
-      "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
-      "identifier_type": "ACN",
-      "identifier": "119 879 980"
-    },
-    {
       "name": "Wakeling South Coast Pty Ltd",
       "identifier_type": "ACN",
       "identifier": "636 298 970"
+    },
+    {
+      "name": "HURRIKAYNE PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "74 118 744 915"
+    },
+    {
+      "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
+      "identifier_type": "ACN",
+      "identifier": "119 879 980"
     }
   ],
   "other_parties": [],
@@ -105,6 +105,15 @@
       "display_title": "Peter Warren - Wakeling Automotive - Phase 2 Notice",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Wakeling%20Automotive%20-%20Phase%202%20notice%20-%202%20June%202026.pdf",
       "url_gh": "/mergers/MN-30002/Wakeling Automotive - Phase 2 notice - 2 June 2026.pdf",
+      "status": "removed",
+      "phase": "Phase 2"
+    },
+    {
+      "date": "2026-06-02T12:00:00Z",
+      "title": "Peter Warren - Wakeling Automotive - Phase 2 Notice",
+      "display_title": "Peter Warren - Wakeling Automotive - Phase 2 Notice",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Wakeling%20Automotive%20-%20Phase%202%20notice%20-%202%20June%202026_0.pdf",
+      "url_gh": "/mergers/MN-30002/Wakeling Automotive - Phase 2 notice - 2 June 2026_0.pdf",
       "status": "live",
       "phase": "Phase 2"
     }
@@ -117,6 +126,7 @@
   "phase_2_determination_date": null,
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
+  "competition_concerns_notice_date": "2026-07-08T12:00:00Z",
   "has_questionnaire": true,
   "similar_mergers": [
     {
