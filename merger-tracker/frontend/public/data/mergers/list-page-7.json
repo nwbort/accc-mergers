@@ -26,17 +26,17 @@
       ],
       "other_parties": [
         {
-          "name": "Zurich Assure Australia Pty Ltd",
+          "name": "Cover-More Group",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Australia Insurance Limited",
           "identifier_type": null,
           "identifier": ""
         },
         {
           "name": "Zurich Financial Services Australia Limited",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Insite Holdings Pty Limited",
           "identifier_type": null,
           "identifier": ""
         },
@@ -51,17 +51,7 @@
           "identifier": ""
         },
         {
-          "name": "Cover-More Group",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Zurich Australia Insurance Limited",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Zurich Finance (Australia) Limited",
+          "name": "Zurich Assure Australia Pty Ltd",
           "identifier_type": null,
           "identifier": ""
         },
@@ -71,12 +61,22 @@
           "identifier": ""
         },
         {
-          "name": "Zurich Australia Limited",
+          "name": "Insite Holdings Pty Limited",
           "identifier_type": null,
           "identifier": ""
         },
         {
           "name": "Zurich Australian Property Holdings Pty Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Australia Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Finance (Australia) Limited",
           "identifier_type": null,
           "identifier": ""
         }
@@ -645,6 +645,45 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/precision-poultry-voag-chicken-farming-operations"
+    },
+    {
+      "merger_id": "MN-70020",
+      "merger_name": "CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-02T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-15T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "35 667 654 686"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NEWMAN VET PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 633 313 149"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CVS (AUSTRALIA) HOLDINGS PROPRIETARY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "25 667 652 520"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvs-group-%E2%80%93-paws-at-prospect-vet-and-eyes-at-prospect-vet"
     }
   ],
   "page": 7,

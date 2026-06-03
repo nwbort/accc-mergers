@@ -1,9 +1,9 @@
 {
-  "total_mergers": 122,
+  "total_mergers": 123,
   "total_waivers": 185,
   "by_status": {
     "Assessment completed": 81,
-    "Under assessment": 41
+    "Under assessment": 42
   },
   "by_determination": {
     "Approved": 80,
@@ -85,6 +85,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-70020",
+      "merger_name": "CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-02T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-50009",
       "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-05014",
       "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-26T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-80016",
-      "merger_name": "Henkel \u2013 Olaplex",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-26T12:00:00Z",

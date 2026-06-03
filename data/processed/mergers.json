@@ -6190,7 +6190,7 @@
     "original_notification_datetime": "2026-05-22T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-07-07T12:00:00Z",
-    "page_modified_datetime": "2026-05-25T16:56:33+10:00",
+    "page_modified_datetime": "2026-06-03T09:52:59+10:00",
     "consultation_response_due_date": "2026-06-02T12:00:00Z",
     "acquirers": [
       {
@@ -6208,17 +6208,17 @@
     ],
     "other_parties": [
       {
-        "name": "Zurich Assure Australia Pty Ltd",
+        "name": "Cover-More Group",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Zurich Australia Insurance Limited",
         "identifier_type": null,
         "identifier": ""
       },
       {
         "name": "Zurich Financial Services Australia Limited",
-        "identifier_type": null,
-        "identifier": ""
-      },
-      {
-        "name": "Insite Holdings Pty Limited",
         "identifier_type": null,
         "identifier": ""
       },
@@ -6233,17 +6233,7 @@
         "identifier": ""
       },
       {
-        "name": "Cover-More Group",
-        "identifier_type": null,
-        "identifier": ""
-      },
-      {
-        "name": "Zurich Australia Insurance Limited",
-        "identifier_type": null,
-        "identifier": ""
-      },
-      {
-        "name": "Zurich Finance (Australia) Limited",
+        "name": "Zurich Assure Australia Pty Ltd",
         "identifier_type": null,
         "identifier": ""
       },
@@ -6253,12 +6243,22 @@
         "identifier": ""
       },
       {
-        "name": "Zurich Australia Limited",
+        "name": "Insite Holdings Pty Limited",
         "identifier_type": null,
         "identifier": ""
       },
       {
         "name": "Zurich Australian Property Holdings Pty Limited",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Zurich Australia Limited",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Zurich Finance (Australia) Limited",
         "identifier_type": null,
         "identifier": ""
       }
@@ -10592,6 +10592,62 @@
       },
       {
         "date": "2026-05-18T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvs-group-%E2%80%93-paws-at-prospect-vet-and-eyes-at-prospect-vet",
+    "merger_name": "CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
+    "status": "Under assessment",
+    "merger_id": "MN-70020",
+    "effective_notification_datetime": "2026-06-02T12:00:00Z",
+    "original_notification_datetime": "2026-06-02T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-07-15T12:00:00Z",
+    "page_modified_datetime": "2026-06-03T12:25:40+10:00",
+    "consultation_response_due_date": "2026-06-10T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "35 667 654 686"
+      }
+    ],
+    "targets": [
+      {
+        "name": "NEWMAN VET PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "70 633 313 149"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "CVS (AUSTRALIA) HOLDINGS PROPRIETARY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "25 667 652 520"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "6970",
+        "name": "Veterinary Services"
+      }
+    ],
+    "merger_description": "CVS Vets (Australia) Proprietary Limited, which is part of CVS Group Plc (together, **CVS Group**), proposes to acquire 60% of the shares in Newman Vet Pty Ltd (trading as Paws at Prospect Vet and Eyes at Prospect Vet) (**Paws**), a small animal veterinary practice in Adelaide (the **Acquisition**). The existing owners of Paws will retain the remaining 40% of shares in Paws.\n\nCVS Group is an integrated veterinary services provider based in the United Kingdom and listed on the London Stock Exchange. In Australia, CVS Group owns a number of small animal veterinary practices in Queensland, New South Wales, the Australian Capital Territory, Victoria, South Australia and Western Australia. CVS Group currently owns three veterinary practices in Adelaide: Walkerville Vet, Pet Universe Manningham and Pet Universe Northgate.\n\nCVS Group and Paws both supply small animal veterinary services in Adelaide. Small animal veterinary practices attend to small animals (such as cats, dogs, guinea pigs, birds, rabbits and other pets), rather than larger animals (such as cattle, sheep and horses), and offer services such as consultation, general and preventative health care/advice, surgery, microchipping, dentistry, radiology, pathology, pharmacy and related services such as puppy school.\n\nIn addition to first opinion small animal vet services, Paws also provides specialist ophthalmic vet services on referral from first opinion vets. CVS does not own any specialist vet services clinics in South Australia.",
+    "events": [
+      {
+        "date": "2026-06-03T12:00:00Z",
+        "title": "Questionnaire - CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
+        "display_title": "Questionnaire - CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20CVS%20Group%20%E2%80%93%20Paws%20at%20Prospect%20Vet%20and%20Eyes%20at%20Prospect%20Vet.docx",
+        "url_gh": "/mergers/MN-70020/Questionnaire - CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-06-02T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }
