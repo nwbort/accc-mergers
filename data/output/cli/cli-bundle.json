@@ -8483,6 +8483,164 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sony-music-recognition-music",
+      "merger_name": "Sony Music - Recognition Music",
+      "status": "Under assessment",
+      "merger_id": "MN-20023",
+      "effective_notification_datetime": "2026-06-02T12:00:00Z",
+      "original_notification_datetime": "2026-06-02T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-07-15T12:00:00Z",
+      "page_modified_datetime": "2026-06-03T14:19:02+10:00",
+      "consultation_response_due_date": "2026-06-10T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "SMG-Three LLC",
+          "identifier_type": null,
+          "identifier": "DDC  10277876"
+        },
+        {
+          "name": "Sony Music Publishing (US) LLC",
+          "identifier_type": null,
+          "identifier": "DDC  2558200"
+        },
+        {
+          "name": "Orion BidCo LLC",
+          "identifier_type": null,
+          "identifier": "DDC  10608976"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Recognition Music Group (Delaware) L.P.",
+          "identifier_type": null,
+          "identifier": "DDC  6193972"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Candle Media LLC",
+          "identifier_type": null,
+          "identifier": "DDC  6119562"
+        },
+        {
+          "name": "SESAC Holdings, Inc",
+          "identifier_type": null,
+          "identifier": "NY DOS ID  1652738"
+        },
+        {
+          "name": "Blackstone Inc",
+          "identifier_type": null,
+          "identifier": "DDC  4315990"
+        },
+        {
+          "name": "National Exhibition Centre Limited",
+          "identifier_type": null,
+          "identifier": "CRN  00979395"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5521",
+          "name": "Music Publishing"
+        }
+      ],
+      "merger_description": "SMG-Three LLC (**SMG-Three**) and Sony Music Publishing (**SMP**) (together **Sony Music**) propose to acquire 100% of the shares of Recognition Music Group (Delaware) L.P. (**Recognition Music**) from funds advised and/or managed by Blackstone, Inc. (the **Acquisition**).\n\nSMG-Three and SMP are ultimately majority-owned and controlled by Sony Group Corporation.\n\nSony Music and Recognition Music are both active in the music publishing industry. Sony Music acquires and commercialises music publishing rights, including performing and mechanical rights, online rights, synchronisation rights and print rights. Recognition Music holds music publishing rights.",
+      "events": [
+        {
+          "date": "2026-06-03T12:00:00Z",
+          "title": "Questionnaire",
+          "display_title": "Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Recognition%20Music%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-20023/Recognition Music - Questionnaire.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-06-02T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-25018",
+          "merger_name": "Primary Wave - Kobalt",
+          "status": "Under assessment",
+          "accc_determination": null,
+          "acquirers": [
+            {
+              "name": "Primary Wave KB Holdings, LP",
+              "identifier_type": null,
+              "identifier": "Registration number 136215"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Kobalt Music Group Topco L.P.",
+              "identifier_type": null,
+              "identifier": "Registration number 393466"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-15005",
+          "merger_name": "Cvent - ON24",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Cvent Atlanta, LLC",
+              "identifier_type": null,
+              "identifier": "[Delaware corporate file number  5603939]"
+            }
+          ],
+          "targets": [
+            {
+              "name": "ON24, Inc.",
+              "identifier_type": null,
+              "identifier": "[Delaware corporate file number  2843568]"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-10010",
+          "merger_name": "Enverus – Spatial Business Systems",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Enverus, Inc.",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ],
+          "targets": [
+            {
+              "name": "Spatial Business Systems Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "76 125 465 483"
+            },
+            {
+              "name": "SBS Optionco, LLC",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/symal-group-timms-group-and-ld-group",
       "merger_name": "Symal Group - Timms Group and L&D Group",
       "status": "Assessment completed",
@@ -58084,6 +58242,26 @@
       ],
       "questions_count": 3
     },
+    "MN-20023": {
+      "deadline": "10 June 2026",
+      "deadline_iso": "2026-06-10",
+      "file_name": "Recognition Music - Questionnaire.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with Sony Music and/or Recognition Music."
+        },
+        {
+          "number": 2,
+          "text": "Outline any concerns regarding the competitive impact of the Acquisition on the supply of music publishing services to artists and songwriters or the commercialisation of music publishing rights in Australia. Are Sony Music and Recognition Music close competitors for either of these services, and what alternatives are available?"
+        },
+        {
+          "number": 3,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        }
+      ],
+      "questions_count": 3
+    },
     "MN-25002": {
       "deadline": "3 February 2026",
       "deadline_iso": "2026-02-03",
@@ -62941,11 +63119,11 @@
     }
   },
   "stats": {
-    "total_mergers": 123,
+    "total_mergers": 124,
     "total_waivers": 185,
     "by_status": {
       "Assessment completed": 81,
-      "Under assessment": 42
+      "Under assessment": 43
     },
     "by_determination": {
       "Approved": 80,
@@ -63019,6 +63197,14 @@
     ],
     "recent_mergers": [
       {
+        "merger_id": "MN-20023",
+        "merger_name": "Sony Music - Recognition Music",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-06-02T12:00:00Z",
+        "is_waiver": false
+      },
+      {
         "merger_id": "MN-35019",
         "merger_name": "Precision Poultry - VOAG chicken farming operations",
         "status": "Under assessment",
@@ -63048,14 +63234,6 @@
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-05-28T12:00:00Z",
-        "is_waiver": false
-      },
-      {
-        "merger_id": "MN-05014",
-        "merger_name": "Smile Partners Australia – Mehta Orthodontics",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-05-26T12:00:00Z",
         "is_waiver": false
       }
     ],
@@ -63555,6 +63733,11 @@
         "merger_count": 2
       },
       {
+        "code": "5521",
+        "name": "Music Publishing",
+        "merger_count": 2
+      },
+      {
         "code": "3212",
         "name": "Site Preparation Services",
         "merger_count": 2
@@ -63882,11 +64065,6 @@
       {
         "code": "9139",
         "name": "Amusement and Other Recreational Activities n.e.c.",
-        "merger_count": 1
-      },
-      {
-        "code": "5521",
-        "name": "Music Publishing",
         "merger_count": 1
       },
       {
