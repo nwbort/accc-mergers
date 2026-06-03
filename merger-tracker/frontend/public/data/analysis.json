@@ -21,12 +21,12 @@
       },
       {
         "notification_date": "2025-10-10",
-        "business_days": 149,
-        "calendar_days": 236,
+        "business_days": 58,
+        "calendar_days": 102,
         "merger_name": "Ampol \u2013 EG Australia",
         "merger_id": "MN-01019",
         "determination": "Referred to phase 2",
-        "in_progress": false
+        "in_progress": true
       },
       {
         "notification_date": "2025-10-24",
@@ -759,18 +759,18 @@
       }
     ],
     "stats": {
-      "average": 19.9,
-      "median": 17,
+      "average": 18.2,
+      "median": 17.0,
       "min": 15,
-      "max": 149,
-      "count": 81
+      "max": 36,
+      "count": 80
     },
     "calendar_stats": {
-      "average": 30.1,
-      "median": 26,
+      "average": 27.5,
+      "median": 26.0,
       "min": 21,
-      "max": 236,
-      "count": 81
+      "max": 55,
+      "count": 80
     }
   },
   "waiver_duration": {
