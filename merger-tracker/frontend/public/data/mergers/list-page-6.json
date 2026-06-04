@@ -831,11 +831,11 @@
     {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-12T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-03T12:00:00Z",
       "end_of_determination_period": "2026-06-25T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -859,14 +859,19 @@
           "identifier": "48 638 953 572"
         },
         {
+          "name": "Consolidated Power Projects Australia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "18 075 411 219"
+        },
+        {
           "name": "PSD Plant & Equipment Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "97 144 778 861"
         },
         {
-          "name": "PSD Energy Pty Ltd",
+          "name": "Nacap Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "68 117 966 926"
+          "identifier": "33 006 306 994"
         },
         {
           "name": "Intellect Systems Pty Ltd",
@@ -874,14 +879,9 @@
           "identifier": "11 115 885 348"
         },
         {
-          "name": "Consolidated Power Projects Australia Pty Ltd",
+          "name": "PSD Energy Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "18 075 411 219"
-        },
-        {
-          "name": "Nacap Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "33 006 306 994"
+          "identifier": "68 117 966 926"
         }
       ],
       "anzsic_codes": [

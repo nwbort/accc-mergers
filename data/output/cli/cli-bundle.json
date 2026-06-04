@@ -18152,13 +18152,15 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/quanta-psd",
       "merger_name": "Quanta - PSD",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-70012",
       "effective_notification_datetime": "2026-05-12T12:00:00Z",
       "original_notification_datetime": "2026-05-12T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-06-25T12:00:00Z",
-      "page_modified_datetime": "2026-05-20T07:51:16+10:00",
+      "determination_publication_date": "2026-06-03T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-06-04T10:11:07+10:00",
       "consultation_response_due_date": "2026-05-19T12:00:00Z",
       "acquirers": [
         {
@@ -18181,14 +18183,19 @@
           "identifier": "48 638 953 572"
         },
         {
+          "name": "Consolidated Power Projects Australia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "18 075 411 219"
+        },
+        {
           "name": "PSD Plant & Equipment Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "97 144 778 861"
         },
         {
-          "name": "PSD Energy Pty Ltd",
+          "name": "Nacap Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "68 117 966 926"
+          "identifier": "33 006 306 994"
         },
         {
           "name": "Intellect Systems Pty Ltd",
@@ -18196,14 +18203,9 @@
           "identifier": "11 115 885 348"
         },
         {
-          "name": "Consolidated Power Projects Australia Pty Ltd",
+          "name": "PSD Energy Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "18 075 411 219"
-        },
-        {
-          "name": "Nacap Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "33 006 306 994"
+          "identifier": "68 117 966 926"
         }
       ],
       "anzsic_codes": [
@@ -18236,12 +18238,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-06-03T12:00:00Z",
+          "title": "Quanta-PSD - Phase 1 determination - 3 June 2026",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Quanta-PSD%20-%20Phase%201%20determination%20-%203%20June%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Quanta Services Australia Pty Ltd (Quanta)’s acquisition of 100% of the shares in PSD Global Holdings Pty Ltd, including ownership of its wholly owned subsidiaries, PSD Energy Pty Ltd and PSD Plant & Equipment Pty Ltd, and all assets constituting the business trading as PSD Energy (together, PSD) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Quanta, through its subsidiaries, is involved in engineering, procurement and construction of infrastructure projects in the energy sector, including high voltage (HV) electricity projects.\n\nQuanta’s operations in HV electricity projects include transmission lines, substations, grid-scale Battery Energy Storage Systems (BESS), and the supply of electrical protection panels and switchrooms.\n\nThe target, PSD, is an electrical engineering, design and construction company specialising in HV electrical infrastructure and secondary systems. PSD’s projects include substations, solar farms, BESS and the supply of electrical protection panels, switchrooms and related facilities."
+            },
+            {
+              "item": "Overlap between the parties",
+              "details": "Quanta and PSD both supply:\n\n▪ HV electrical infrastructure design and construction services (HV D&C services), including BESS design and construction services\n\n▪ electrical protection panels and switchrooms."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form, information from third partes and publicly available information.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings:\n\n▪ The Parties do not appear to be close competitors in the supply of HV D&C services or in the supply of electrical protection panels and switchrooms.\n\n▪ The merged firm would likely continue to face competition from alternative suppliers of HV D&C services including UGL, Downer, RJE Global and Monford Group, as well as alternative suppliers of electrical protection panels and switchrooms including LAI Industries, Mayfield Industries and Ampcontrol."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-70012/Quanta-PSD - Phase 1 determination - 3 June 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-06-03T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -24920,8 +24958,8 @@
         {
           "merger_id": "MN-70012",
           "merger_name": "Quanta - PSD",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Quanta Services Australia Pty Ltd",
@@ -43204,8 +43242,8 @@
         {
           "merger_id": "MN-70012",
           "merger_name": "Quanta - PSD",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "Quanta Services Australia Pty Ltd",
@@ -63830,11 +63868,11 @@
     "total_mergers": 125,
     "total_waivers": 185,
     "by_status": {
-      "Assessment completed": 81,
-      "Under assessment": 44
+      "Assessment completed": 82,
+      "Under assessment": 43
     },
     "by_determination": {
-      "Approved": 80,
+      "Approved": 81,
       "Referred to phase 2": 4
     },
     "by_waiver_determination": {
@@ -63842,21 +63880,21 @@
       "Not approved": 13
     },
     "phase_duration": {
-      "average_days": 27.5375,
+      "average_days": 27.469135802469136,
       "median_days": 26,
-      "average_business_days": 18.25,
+      "average_business_days": 18.209876543209877,
       "median_business_days": 17,
       "percentiles": {
         "day15": {
-          "count": 18,
-          "percentage": 22.5
+          "count": 19,
+          "percentage": 23.5
         },
         "day20": {
-          "count": 63,
-          "percentage": 78.8
+          "count": 64,
+          "percentage": 79.0
         },
         "day30": {
-          "count": 79,
+          "count": 80,
           "percentage": 98.8
         }
       }
@@ -63947,6 +63985,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "MN-70012",
+        "merger_name": "Quanta - PSD",
+        "determination": "Approved",
+        "determination_date": "2026-06-03T12:00:00Z",
+        "page_modified_datetime": "2026-06-04T10:11:07+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "WA-60020",
         "merger_name": "Metro Petroleum – Retail sites part of divestiture remedy from Ampol-EG acquisition",
         "determination": "Approved",
@@ -63992,16 +64040,6 @@
         "determination": "Approved",
         "determination_date": "2026-06-02T12:00:00Z",
         "page_modified_datetime": "2026-06-02T17:24:53+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-40023",
-        "merger_name": "AUB – further interest in KJ Risk",
-        "determination": "Approved",
-        "determination_date": "2026-06-02T12:00:00Z",
-        "page_modified_datetime": "2026-06-02T17:14:15+10:00",
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"
