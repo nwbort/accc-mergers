@@ -1749,9 +1749,9 @@
     },
     {
       "merger_id": "MN-60011",
-      "merger_name": "Barro Group / BQC Quarries and Burdekin Concrete",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-04-28T12:00:00Z",
       "determination_publication_date": null,
@@ -1766,19 +1766,14 @@
       ],
       "targets": [
         {
-          "name": "BQC Registrations Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "613 361 041"
-        },
-        {
-          "name": "BQC SANDS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "92 662 904 190"
-        },
-        {
           "name": "M&T Populin Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "092 648 078"
+        },
+        {
+          "name": "BQC Registrations Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "613 361 041"
         },
         {
           "name": "TWIN ROCK PTY. LTD.",
@@ -1786,14 +1781,19 @@
           "identifier": "84 092 733 867"
         },
         {
-          "name": "COLEVALE ESTATES PTY LTD & M & T POPULIN PTY LTD & TWIN ROCK PTY LTD",
+          "name": "BQC SANDS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "14 440 726 153"
+          "identifier": "92 662 904 190"
         },
         {
           "name": "BURDEKIN CONCRETE PTY. LTD.",
           "identifier_type": "ABN",
           "identifier": "25 010 095 253"
+        },
+        {
+          "name": "COLEVALE ESTATES PTY LTD & M & T POPULIN PTY LTD & TWIN ROCK PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 440 726 153"
         }
       ],
       "other_parties": [
