@@ -1,12 +1,12 @@
 {
-  "total_mergers": 126,
+  "total_mergers": 127,
   "total_waivers": 192,
   "by_status": {
-    "Assessment completed": 83,
-    "Under assessment": 43
+    "Assessment completed": 85,
+    "Under assessment": 42
   },
   "by_determination": {
-    "Approved": 81,
+    "Approved": 83,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 27.469135802469136,
+    "average_days": 27.433734939759034,
     "median_days": 26,
-    "average_business_days": 18.209876543209877,
+    "average_business_days": 18.204819277108435,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 19,
-        "percentage": 23.5
+        "percentage": 22.9
       },
       "day20": {
-        "count": 64,
-        "percentage": 79.0
+        "count": 66,
+        "percentage": 79.5
       },
       "day30": {
-        "count": 80,
+        "count": 82,
         "percentage": 98.8
       }
     }
@@ -85,6 +85,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-20014",
+      "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-03T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-80014",
       "merger_name": "ANZ Banking Group - Worldline Australia",
       "status": "Under assessment",
@@ -107,17 +115,19 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-02T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-70020",
-      "merger_name": "CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-02T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-75014",
+      "merger_name": "Seismic \u2013 Highspot",
+      "determination": "Approved",
+      "determination_date": "2026-06-04T12:00:00Z",
+      "page_modified_datetime": "2026-06-04T17:10:35+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
     {
       "merger_id": "WA-05023",
       "merger_name": "Apollo Capital Management \u2013 Questex Holdings Group",
@@ -164,16 +174,6 @@
       "determination": "Not approved",
       "determination_date": "2026-06-04T12:00:00Z",
       "page_modified_datetime": "2026-06-04T16:44:20+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-55023",
-      "merger_name": "Vets Central - Claremont Veterinary Surgery",
-      "determination": "Approved",
-      "determination_date": "2026-06-04T12:00:00Z",
-      "page_modified_datetime": "2026-06-04T16:35:43+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

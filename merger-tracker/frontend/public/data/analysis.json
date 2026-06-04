@@ -758,11 +758,29 @@
         "in_progress": false
       },
       {
+        "notification_date": "2026-05-06",
+        "business_days": 20,
+        "calendar_days": 29,
+        "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
+        "merger_id": "MN-15015",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
         "notification_date": "2026-05-12",
         "business_days": 15,
         "calendar_days": 22,
         "merger_name": "Quanta - PSD",
         "merger_id": "MN-70012",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "notification_date": "2026-05-12",
+        "business_days": 16,
+        "calendar_days": 23,
+        "merger_name": "Seismic \u2013 Highspot",
+        "merger_id": "MN-75014",
         "determination": "Approved",
         "in_progress": false
       }
@@ -772,14 +790,14 @@
       "median": 17,
       "min": 15,
       "max": 36,
-      "count": 81
+      "count": 83
     },
     "calendar_stats": {
-      "average": 27.5,
+      "average": 27.4,
       "median": 26,
       "min": 21,
       "max": 55,
-      "count": 81
+      "count": 83
     }
   },
   "waiver_duration": {
@@ -2359,7 +2377,7 @@
       21,
       26,
       32,
-      5
+      6
     ],
     "waivers": [
       0,
