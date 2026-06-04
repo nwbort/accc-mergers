@@ -1,9 +1,9 @@
 {
-  "total_mergers": 125,
+  "total_mergers": 126,
   "total_waivers": 187,
   "by_status": {
     "Assessment completed": 83,
-    "Under assessment": 42
+    "Under assessment": 43
   },
   "by_determination": {
     "Approved": 81,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-50019",
+      "merger_name": "Coles \u2013 supermarket site in Lidcombe (NSW)",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-04T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-80014",
       "merger_name": "ANZ Banking Group - Worldline Australia",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-02T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50009",
-      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-28T12:00:00Z",
       "is_waiver": false
     }
   ],
