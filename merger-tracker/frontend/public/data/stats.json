@@ -1,9 +1,9 @@
 {
-  "total_mergers": 124,
+  "total_mergers": 125,
   "total_waivers": 185,
   "by_status": {
     "Assessment completed": 81,
-    "Under assessment": 43
+    "Under assessment": 44
   },
   "by_determination": {
     "Approved": 80,
@@ -43,11 +43,11 @@
       "count": 36
     },
     {
-      "name": "Software Publishing",
-      "count": 26
+      "name": "Other Auxiliary Finance and Investment Services",
+      "count": 27
     },
     {
-      "name": "Other Auxiliary Finance and Investment Services",
+      "name": "Software Publishing",
       "count": 26
     },
     {
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-80014",
+      "merger_name": "ANZ Banking Group - Worldline Australia",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-03T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-20023",
       "merger_name": "Sony Music - Recognition Music",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-50009",
       "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-05-28T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-90015",
-      "merger_name": "Impression Dental Group - Coastal Dental Care",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-05-28T12:00:00Z",
