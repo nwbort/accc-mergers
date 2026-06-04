@@ -13037,14 +13037,16 @@
     },
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/novartis-excellergy",
-      "merger_name": "Novartis / Excellergy",
-      "status": "Under assessment",
+      "merger_name": "Novartis - Excellergy",
+      "status": "Assessment completed",
       "merger_id": "MN-40019",
       "effective_notification_datetime": "2026-05-12T12:00:00Z",
       "original_notification_datetime": "2026-05-12T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-06-25T12:00:00Z",
-      "page_modified_datetime": "2026-05-19T16:46:10+10:00",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-06-05T08:51:48+10:00",
       "consultation_response_due_date": "2026-05-19T12:00:00Z",
       "acquirers": [
         {
@@ -13062,6 +13064,16 @@
       ],
       "other_parties": [
         {
+          "name": "NOVARTIS AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "81 004 371 224"
+        },
+        {
+          "name": "Novartis Finance Corporation",
+          "identifier_type": null,
+          "identifier": "US EIN 133922240"
+        },
+        {
           "name": "NOVARTIS PHARMACEUTICALS AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "18 004 244 160"
@@ -13070,16 +13082,6 @@
           "name": "EXCELLERGY AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "50 690 676 941"
-        },
-        {
-          "name": "Novartis Finance Corporation",
-          "identifier_type": null,
-          "identifier": "US EIN 133922240"
-        },
-        {
-          "name": "NOVARTIS AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 004 371 224"
         }
       ],
       "anzsic_codes": [
@@ -13112,12 +13114,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-06-04T12:00:00Z",
+          "title": "Novartis - Excellergy - Phase 1 Determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Novartis%20-%20Excellergy%20-%20Phase%201%20Determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Novartis Finance Corporation (Novartis Finance), via its wholly owned subsidiary Elba Merger Sub, Inc., proposes to acquire 100% of the issued and outstanding capital stock of Excellergy, Inc. (Excellergy) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "Novartis Finance, the acquirer, is a subsidiary of Novartis AG (collectively, Novartis). Novartis is a global medicines company headquartered in Basel, Switzerland. Novartis is engaged in the research, development, manufacturing, distribution, commercialisation and sale of medicines, with a focus on the following therapeutic areas: cardiovascular, renal and metabolic; immunology; neuroscience; oncology; and established brands.\n\nIn Australia, Novartis supplies a range of medicines to customers, including treatments for chronic spontaneous urticaria (CSU) such as Xolair, and has a further CSU medicine under evaluation by the Therapeutic Goods Administration.\n\nExcellergy, the target, is a private biotechnology company based in Palo Alto, California, United States. Excellergy is developing next-generation anti-immunoglobulin E (anti-IgE) therapies for the treatment of IgE-driven allergic diseases. This includes Excellergy's lead asset, Exl-111, a half-life extended, high-affinity anti-IgE antibody, which is currently in Phase 1 clinical evaluation.\n\nExcellergy's operations are limited to the United States, and it has not generated any revenue from sales of product in Australia (or anywhere else) to date. Excellergy's connection with Australia arises from the registration of trademarks and the establishment of an Australian subsidiary for the purpose of conducting clinical trials."
+            },
+            {
+              "item": "Overlap and relationship between the parties",
+              "details": "Novartis and Excellergy (the Parties) overlap in the research and development of therapies for CSU and IgE-mediated food allergy (FA)."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form, information from third partes and publicly available information, as relevant.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings.\n\n• The potential competition between the Parties in the supply of therapies for CSU and FA is uncertain, given the early stages of the Parties’ respective pipeline products, which are also likely to be differentiated.\n\n• There are other competitors who already supply, or are active in, the development of CSU and FA therapies that will continue to compete with Novartis."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-40019/Novartis - Excellergy - Phase 1 Determination.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-06-04T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -65743,11 +65781,11 @@
     "total_mergers": 127,
     "total_waivers": 193,
     "by_status": {
-      "Assessment completed": 85,
-      "Under assessment": 42
+      "Assessment completed": 86,
+      "Under assessment": 41
     },
     "by_determination": {
-      "Approved": 83,
+      "Approved": 84,
       "Referred to phase 2": 4
     },
     "by_waiver_determination": {
@@ -65755,21 +65793,21 @@
       "Not approved": 14
     },
     "phase_duration": {
-      "average_days": 27.433734939759034,
+      "average_days": 27.38095238095238,
       "median_days": 26,
-      "average_business_days": 18.204819277108435,
+      "average_business_days": 18.178571428571427,
       "median_business_days": 17,
       "percentiles": {
         "day15": {
           "count": 19,
-          "percentage": 22.9
+          "percentage": 22.6
         },
         "day20": {
-          "count": 66,
-          "percentage": 79.5
+          "count": 67,
+          "percentage": 79.8
         },
         "day30": {
-          "count": 82,
+          "count": 83,
           "percentage": 98.8
         }
       }
@@ -65860,6 +65898,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "MN-40019",
+        "merger_name": "Novartis - Excellergy",
+        "determination": "Approved",
+        "determination_date": "2026-06-04T12:00:00Z",
+        "page_modified_datetime": "2026-06-05T08:51:48+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "WA-01101",
         "merger_name": "INPEX – minority interests in Beetaloo development projects",
         "determination": "Approved",
@@ -65905,16 +65953,6 @@
         "determination": "Approved",
         "determination_date": "2026-06-04T12:00:00Z",
         "page_modified_datetime": "2026-06-04T16:48:43+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-95020",
-        "merger_name": "Grant Thornton Advisors - Grant Thornton Australia",
-        "determination": "Approved",
-        "determination_date": "2026-06-04T12:00:00Z",
-        "page_modified_datetime": "2026-06-04T16:46:25+10:00",
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"
