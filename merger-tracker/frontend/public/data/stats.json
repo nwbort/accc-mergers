@@ -1,6 +1,6 @@
 {
   "total_mergers": 125,
-  "total_waivers": 185,
+  "total_waivers": 187,
   "by_status": {
     "Assessment completed": 83,
     "Under assessment": 42
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 172,
+    "Approved": 174,
     "Not approved": 13
   },
   "phase_duration": {
@@ -119,6 +119,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-55023",
+      "merger_name": "Vets Central - Claremont Veterinary Surgery",
+      "determination": "Approved",
+      "determination_date": "2026-06-04T12:00:00Z",
+      "page_modified_datetime": "2026-06-04T16:35:43+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-01100",
+      "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
+      "determination": "Approved",
+      "determination_date": "2026-06-04T12:00:00Z",
+      "page_modified_datetime": "2026-06-04T16:32:13+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
       "determination": "Approved",
@@ -154,26 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-02T12:00:00Z",
       "page_modified_datetime": "2026-06-02T17:34:44+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-20024",
-      "merger_name": "KK Group Invest - PowerCon",
-      "determination": "Approved",
-      "determination_date": "2026-06-02T12:00:00Z",
-      "page_modified_datetime": "2026-06-02T17:32:10+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-80017",
-      "merger_name": "Direct Couriers \u2013 Phoenix Transport",
-      "determination": "Approved",
-      "determination_date": "2026-06-02T12:00:00Z",
-      "page_modified_datetime": "2026-06-02T17:24:53+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

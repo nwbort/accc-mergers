@@ -1,6 +1,49 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-30012",
+      "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "ENDEAVOUR GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "77 159 767 843"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Bottlemart Muswellbrook",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "JABETIN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "62 001 588 496"
+        },
+        {
+          "name": "UPPER HUNTER MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 001 740 218"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/endeavour-group-%E2%80%93-retail-liquor-store-in-muswellbrook-nsw"
+    },
+    {
       "merger_id": "MN-30016",
       "merger_name": "Zurich - Beazley",
       "status": "Under assessment",
@@ -92,6 +135,89 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/zurich-beazley"
+    },
+    {
+      "merger_id": "WA-55023",
+      "merger_name": "Vets Central - Claremont Veterinary Surgery",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005"
+        }
+      ],
+      "targets": [
+        {
+          "name": "D PETTET & E.E PETTET",
+          "identifier_type": "ABN",
+          "identifier": "30 143 398 487"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "MISTYCAT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "12 644 129 224"
+        },
+        {
+          "name": "VETS CENTRAL HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 652 812 256"
+        },
+        {
+          "name": "VETS CENTRAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 646 462 973"
+        },
+        {
+          "name": "KINGS ROAD VETERINARY SURGERY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 609 596 910"
+        },
+        {
+          "name": "VC OPERATIONS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 641 403 938"
+        },
+        {
+          "name": "Vets Central (New Zealand) Limited",
+          "identifier_type": null,
+          "identifier": "NZBN  9429051820992"
+        },
+        {
+          "name": "NORTHERN BEACHES VETERINARY HOSPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 650 961 541"
+        },
+        {
+          "name": "VC OPERATIONS (NSW) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 646 515 433"
+        },
+        {
+          "name": "FACEBARK PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "71 154 736 884"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        },
+        {
+          "code": "9539",
+          "name": "Other Personal Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-claremont-veterinary-surgery"
     },
     {
       "merger_id": "MN-05014",

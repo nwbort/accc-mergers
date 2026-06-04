@@ -963,6 +963,50 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/seismic-%E2%80%93-highspot"
     },
     {
+      "merger_id": "WA-01100",
+      "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-12T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Ochre Health Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "79 101 069 452"
+        },
+        {
+          "name": "Ochre Group Commercial Property Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "645 244 882"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Airlie Womens Clinic Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "55 603 753 395"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Genesis Capital",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8511",
+          "name": "General Practice Medical Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ochre-health-airlie-womens-clinic-vic"
+    },
+    {
       "merger_id": "WA-45015",
       "merger_name": "EQT Fund Management \u2013 Kakaku.com",
       "status": "Assessment completed",
@@ -2534,49 +2578,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tibaldi-south-food-group"
-    },
-    {
-      "merger_id": "MN-30012",
-      "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-22T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-07T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "ENDEAVOUR GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 159 767 843"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Bottlemart Muswellbrook",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "JABETIN PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "62 001 588 496"
-        },
-        {
-          "name": "UPPER HUNTER MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 001 740 218"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "4123",
-          "name": "Liquor Retailing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/endeavour-group-%E2%80%93-retail-liquor-store-in-muswellbrook-nsw"
     }
   ],
   "page": 6,
