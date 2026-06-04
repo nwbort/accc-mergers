@@ -1,6 +1,6 @@
 {
   "total_mergers": 126,
-  "total_waivers": 188,
+  "total_waivers": 191,
   "by_status": {
     "Assessment completed": 83,
     "Under assessment": 43
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 174,
+    "Approved": 177,
     "Not approved": 14
   },
   "phase_duration": {
@@ -36,7 +36,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 37
+      "count": 38
     },
     {
       "name": "Computer System Design and Related Services",
@@ -119,6 +119,36 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-35021",
+      "merger_name": "BUSS Queensland \u2013 Additional interest in Duxton Vineyards",
+      "determination": "Approved",
+      "determination_date": "2026-06-04T12:00:00Z",
+      "page_modified_datetime": "2026-06-04T16:50:53+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-75024",
+      "merger_name": "KfW \u2013 KNDS N.V.",
+      "determination": "Approved",
+      "determination_date": "2026-06-04T12:00:00Z",
+      "page_modified_datetime": "2026-06-04T16:48:43+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-95020",
+      "merger_name": "Grant Thornton Advisors - Grant Thornton Australia",
+      "determination": "Approved",
+      "determination_date": "2026-06-04T12:00:00Z",
+      "page_modified_datetime": "2026-06-04T16:46:25+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-25025",
       "merger_name": "Laundy \u2013 Woy Woy Hotel",
       "determination": "Not approved",
@@ -144,36 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-04T12:00:00Z",
       "page_modified_datetime": "2026-06-04T16:32:13+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-70012",
-      "merger_name": "Quanta - PSD",
-      "determination": "Approved",
-      "determination_date": "2026-06-03T12:00:00Z",
-      "page_modified_datetime": "2026-06-04T10:11:07+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-60020",
-      "merger_name": "Metro Petroleum \u2013 Retail sites part of divestiture remedy from Ampol-EG acquisition",
-      "determination": "Approved",
-      "determination_date": "2026-06-03T12:00:00Z",
-      "page_modified_datetime": "2026-06-03T09:04:28+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-20022",
-      "merger_name": "PRIME Asia \u2013 Stockland Sienna Wood and Providence",
-      "determination": "Approved",
-      "determination_date": "2026-06-02T12:00:00Z",
-      "page_modified_datetime": "2026-06-02T17:37:17+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

@@ -10153,7 +10153,7 @@
       "original_notification_datetime": "2026-05-22T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-07-07T12:00:00Z",
-      "page_modified_datetime": "2026-05-25T17:16:26+10:00",
+      "page_modified_datetime": "2026-06-02T16:19:37+10:00",
       "consultation_response_due_date": "2026-06-02T12:00:00Z",
       "acquirers": [
         {
@@ -10171,11 +10171,6 @@
       ],
       "other_parties": [
         {
-          "name": "TIBALDI AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 664 117 257"
-        },
-        {
           "name": "CHESTNUT AVENUE AUSTRALIA PTY. LTD.",
           "identifier_type": "ABN",
           "identifier": "85 667 250 688"
@@ -10184,6 +10179,11 @@
           "name": "CHESTNUT PROPERTY AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "56 664 974 421"
+        },
+        {
+          "name": "TIBALDI AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 664 117 257"
         }
       ],
       "anzsic_codes": [
@@ -10200,7 +10200,7 @@
           "display_title": "Questionnaire - Tibaldi - South Food Group",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Tibaldi%20-%20South%20Food%20Group%20-%20Questionnaire%20-%2025%20May%202026.docx",
           "url_gh": "/mergers/MN-25026/Tibaldi - South Food Group - Questionnaire - 25 May 2026.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
@@ -37584,6 +37584,175 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/buss-queensland-%E2%80%93-additional-interest-in-duxton-vineyards",
+      "merger_name": "BUSS Queensland – Additional interest in Duxton Vineyards",
+      "status": "Assessment completed",
+      "merger_id": "WA-35021",
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "original_notification_datetime": "2026-05-21T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-06-04T16:50:53+10:00",
+      "acquirers": [
+        {
+          "name": "BUSS (QUEENSLAND) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "15 065 081 281"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DUXTON VINEYARDS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "26 668 025 545"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "BNP Paribas S.A",
+          "identifier_type": null,
+          "identifier": "ARBN  000 000 117"
+        },
+        {
+          "name": "BNP PARIBAS NOMINEES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "54 084 150 023"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1214",
+          "name": "Wine and Other Alcoholic Beverage Manufacturing"
+        },
+        {
+          "code": "6330",
+          "name": "Superannuation Funds"
+        }
+      ],
+      "merger_description": "BUSS (Queensland) Pty Ltd (**BUSSQ Super**), via its pooled superannuation trust (**BUSSQ PST**), proposes to increase its shareholding in Duxton Vineyards Pty Ltd (**Duxton Vineyards**) from 59% to 84%.\n\nBUSSQ Super is a profit-for-members superannuation fund, focused on the building industry in Queensland. BUSSQ Super’s investment portfolio comprises a range of assets across the following classes: Australian and International shares, property, fixed income, infrastructure, private equity (including agriculture), and private credit. BUSSQ Super’s investments are made through BUSSQ PST, of which BUSSQ Super is the sole unitholder.\n\nDuxton Vineyards is an integrated wine enterprise, located in the Mildura & Sunraysia region of New South Wales. Duxton Vineyards wholly owns Duxton Viticulture Pty Ltd, Duxton Vineyards Land Co Pty Ltd, Duxton Vineyards Unit Trust, and Duxton Winery Buronga Pty Ltd. Duxton Capital (Australia) Pty Ltd provides investment management and advisory services to Duxton Vineyards.\n\nThe investment in Duxton Vineyards is part of BUSSQ Super’s private equity (including agriculture) asset class. BUSSQ PST holds 59% of the shares in Duxton Vineyards, and the acquisition is an issue of new shares which will increase the shareholding to 84%. The investment is held by BNP Paribas Nominees Pty Ltd as nominee for BUSSQ PST’s custodian.",
+      "events": [
+        {
+          "date": "2026-06-04T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/BUSS%20Queensland%20-%20Additional%20interest%20in%20Duxton%20Vineyards%20%28WA-350251%29%20-%20Notification%20waiver%20determination%20-%204%20June%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "BUSS (Queensland) Pty Ltd (BUSSQ Super), via its pooled superannuation trust (BUSSQ PST), applied for a notification waiver in respect of its proposed acquisition of an additional 25% shareholding in Duxton Vineyards Pty Ltd (Duxton Vineyards), as described in the transaction documents provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABV(1)(a) of the Competition and Consumer Act 2010 (Cth) that the Acquisition is not required to be notified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "4 June 2026"
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, BUSSQ Super, is a profit-for-members superannuation fund, focused on the building industry in Queensland. BUSSQ Super’s investment portfolio comprises a range of assets across the following classes: Australian and International shares, property, fixed income, infrastructure, private equity (including agriculture), and private credit. BUSSQ Super’s investments are made through BUSSQ PST, of which BUSSQ Super is the sole unitholder.\n\nThe target, Duxton Vineyards, is an integrated wine enterprise located in the Mildura and Sunraysia region of New South Wales.\n\nDuxton Vineyards and its subsidiaries operate in the wine growing and manufacturing industry.\n\nThe investment in Duxton Vineyards is part of BUSSQ Super’s private equity (including agriculture) asset class. BUSSQ PST holds 59% of the shares in Duxton Vineyards, and the acquisition is an issue of new shares which will increase the shareholding to 84%. The investment is held by BNP Paribas Nominees Pty Ltd as nominee for BUSSQ PST’s custodian."
+            },
+            {
+              "item": "Explanation for determination",
+              "details": "In making this notification waiver determination, the Australian Competition and Consumer Commission (the ACCC) has considered the information provided with the notification waiver application, and had regard to the factors in section 51ABV(2)(b) of the Competition and Consumer Act 2010 (Cth) (the Act).\n\nBased on the information provided in the application, the ACCC considers that the Acquisition is unlikely to give rise to any material lessening of competition. In particular:\n\na. BUSSQ Super is already a majority shareholder in Duxton Vineyards, and the Acquisition would increase BUSSQ Super’s existing majority shareholding, and\n\nb. there is a small horizontal overlap between BUSSQ Super’s other investments and Duxton Vineyards.\n\nThe ACCC has also had regard to the likelihood that, if the Acquisition were put into effect, the notification thresholds determined under section 51ABP(1) of the Act would apply.\n\nWhile the ACCC considers that the notification thresholds are likely to be met, given that material competition concerns are unlikely to arise, the ACCC has determined that the Acquisition is not required to be notified.\n\nThe ACCC considers that the determination is consistent with the object of the Act and the interests of consumers in promoting competition.\n\nFor more information about the ACCC’s approach to considering notification waiver applications and to assessing competition effects more generally, see the ACCC’s interim guidance on notification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-35021/BUSS Queensland - Additional interest in Duxton Vineyards (WA-350251) - Notification waiver determination - 4 June 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-05-21T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-50012",
+          "merger_name": "Maas – 50% acquisition of COLAS’ Caloundra asphalt plant and 100% of COLAS’ Tomago asphalt plant",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "ASPHALT OPERATORS AUSTRALIA PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "11 682 698 282"
+            }
+          ],
+          "targets": [
+            {
+              "name": "COLAS QUEENSLAND PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "91 169 872 208"
+            },
+            {
+              "name": "COLAS AUSTRALIA GROUP PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "11 000 388 161"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-25017",
+          "merger_name": "Mayfair Corporation – Phosphate Hill",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "RYOWA II GPS PTY. LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "16 063 780 058"
+            }
+          ],
+          "targets": [
+            {
+              "name": "PH QUEENSLAND GAS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "12 626 604 000"
+            },
+            {
+              "name": "DYNO NOBEL LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "42 004 080 264"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-40018",
+          "merger_name": "AustralianSuper - IFM Global Infrastructure (Australia) Trust",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "AUSTRALIANSUPER PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "94 006 457 987"
+            }
+          ],
+          "targets": [
+            {
+              "name": "IFM INVESTORS (NOMINEES) LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "56 003 969 891"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/star-hotels-group-%E2%80%93-yandina-hotel-qld",
       "merger_name": "Star Hotels Group – Yandina Hotel, QLD",
       "status": "Assessment completed",
@@ -51196,6 +51365,176 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kfw-%E2%80%93-knds-nv",
+      "merger_name": "KfW – KNDS N.V.",
+      "status": "Assessment completed",
+      "merger_id": "WA-75024",
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "original_notification_datetime": "2026-05-22T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-06-04T16:48:43+10:00",
+      "acquirers": [
+        {
+          "name": "Kreditanstalt für Wiederaufbau",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "KNDS N.V.",
+          "identifier_type": null,
+          "identifier": "64277925"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "German Federal Ministry of Economic Affairs and Energy",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "German Federal Ministry of Defence",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2469",
+          "name": "Other Specialised Machinery and Equipment Manufacturing"
+        }
+      ],
+      "merger_description": "Germany's state-owned promotional bank, Kreditanstalt für Wiederaufbau (**KfW**), acting pursuant to a Special Federal Mandate on behalf of the Federal Government of Germany, proposes to acquire a minority shareholding of up to 40% of the issued share capital of KNDS N.V. (**KNDS**).\n\nKfW is a public law institution (*Anstalt des öffentlichen Rechts*) based in Frankfurt and governed by the *Law Concerning Kreditanstalt für Wiederaufbau* (the **KfW Act**). The Federal Republic of Germany holds 80% of the share capital of KfW, with the Federal States of Germany together holding the remaining 20%. KfW's mandate is to finance and promote sustainable development. KfW has no Australian subsidiary or physical presence in Australia.\n\nKNDS is a Franco-German business association in the land defence sector. KNDS, together with its subsidiaries, is active in the development, manufacture and support of a product portfolio ranging from highly protected wheeled vehicles through to antiaircraft and artillery systems to main battle tanks, infantry fighting vehicles and bridge laying systems. KNDS has no Australian subsidiary or physical presence in Australia.\n\nKNDS is currently jointly controlled by GIAT Industries S.A., France and Wegmann & Co. GmbH, which each hold 50% of its share capital. KfW proposes to acquire its interest in KNDS from Wegmann (which will retain a non-controlling minority stake in KNDS).",
+      "events": [
+        {
+          "date": "2026-06-04T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/KfW%20-%20KNDS%20N.V.%20%28WA-75024%29%20-%20Notification%20waiver%20determination%20-%204%20June%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Germany’s state-owned promotional bank, Kreditanstalt für Wiederaufbau (KfW), acting pursuant to a Special Federal Mandate on behalf of the Federal Government of Germany, applied for a notification waiver in respect of its proposed acquisition of a minority shareholding of up to 40% of the issued share capital of KNDS N.V. (KNDS), as described in the transaction documents provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABV(1)(a) of the Competition and Consumer Act 2010 (Cth) that the Acquisition is not required to be notified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "4 June 2026"
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, KfW, is a public law institution (Anstalt des öffentlichen Rechts) based in Frankfurt, governed by the Law Concerning Kreditanstalt für Wiederaufbau. The Federal Republic of Germany holds 80% of the share capital of KfW, with the Federal States of Germany together holding the remaining 20%. KfW's mandate is to finance and promote sustainable development.\n\nThe target, KNDS, is a Franco-German business association in the land defence sector. KNDS, together with its subsidiaries, is active in the development, manufacture and support of a product portfolio ranging from highly protected wheeled vehicles through to antiaircraft and artillery systems to main battle tanks, infantry fighting vehicles and bridge laying systems.\n\nThe parties (or their connected entities) both supply military and defence products in Australia."
+            },
+            {
+              "item": "Explanation for determination",
+              "details": "In making this notification waiver determination, the Australian Competition and Consumer Commission (the ACCC) has considered the information provided with the notification waiver application, and had regard to the factors in section 51ABV(2)(b) of the Competition and Consumer Act 2010 (Cth) (the Act).\n\nBased on the information currently before it, the ACCC considers that the Acquisition is unlikely to give rise to any material lessening of competition. In particular:\n\na. there is limited horizontal overlap between the product offerings of the parties (or their connected entities) in Australia, as their respective offerings primarily serve different use cases\n\nb. KNDS has a small presence in Australia\n\nc. there is low risk of foreclosure or other concerning vertical or conglomerate effects resulting from exclusionary conduct, bundling or tying of products and services, post-acquisition.\n\nThe ACCC has also had regard to the likelihood that, if the Acquisition were put into effect, the notification thresholds determined under section 51ABP(1) of the Act would apply.\n\nWhile the ACCC considers that the notification thresholds are likely to be met, given that material competition concerns are unlikely to arise, the ACCC has determined that the Acquisition is not required to be notified.\n\nThe ACCC considers that the determination is consistent with the object of the Act and the interests of consumers in promoting competition.\n\nFor more information about the ACCC’s approach to considering notification waiver applications and to assessing competition effects more generally, see the ACCC’s interim guidance on notification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-75024/KfW - KNDS N.V. (WA-75024) - Notification waiver determination - 4 June 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-05-22T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-25014",
+          "merger_name": "CVC Capital Partners – The animal nutrition and health division of the DSM-Firmenich Group",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Essential Bidco B.V.",
+              "identifier_type": null,
+              "identifier": ""
+            },
+            {
+              "name": "Specialty (U.S.) Bidco, Inc.",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ],
+          "targets": [
+            {
+              "name": "SpecialtyCo US LLC",
+              "identifier_type": null,
+              "identifier": ""
+            },
+            {
+              "name": "Biomin Phytogenics GmbH (Germany)",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-40003",
+          "merger_name": "CVC Capital Partners – Smiths Detection Group",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Skyshield UK Bidco Limited",
+              "identifier_type": null,
+              "identifier": ""
+            },
+            {
+              "name": "Skyshield US Bidco Limited",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ],
+          "targets": [
+            {
+              "name": "Smiths Detection Group Limited",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-01098",
+          "merger_name": "Adyen - Talon.One",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Adyen N.V.",
+              "identifier_type": null,
+              "identifier": "KvK  34259528"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Talon.One GmbH",
+              "identifier_type": null,
+              "identifier": "HRB  172085B"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/alpine-software-group-asg-%E2%80%93-playhq",
       "merger_name": "Alpine Software Group (ASG) – PlayHQ",
       "status": "Assessment completed",
@@ -58438,6 +58777,165 @@
           ]
         }
       ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/grant-thornton-advisors-grant-thornton-australia",
+      "merger_name": "Grant Thornton Advisors - Grant Thornton Australia",
+      "status": "Assessment completed",
+      "merger_id": "WA-95020",
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "original_notification_datetime": "2026-05-21T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-06-04T16:46:25+10:00",
+      "acquirers": [
+        {
+          "name": "Turbo Fast Track Buyer Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "696 951 541"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GRANT THORNTON AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "41 127 556 389"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Turbo EMEA Holdings B.V.",
+          "identifier_type": null,
+          "identifier": "Registered with the Dutch Chamber of Commerce under number 96427930"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6932",
+          "name": "Accounting Services"
+        }
+      ],
+      "merger_description": "Turbo Fast Track Buyer Pty Ltd (**BidCo**) proposes to acquire up to 100% of the issued share capital in Grant Thornton Australia Limited (**Grant Thornton Australia**) by way of a scheme of arrangement.\n\nBidCo is a newly incorporated Australian entity and is indirectly wholly owned by Turbo EMEA Holdings B.V. (**Turbo EMEA**), a holding entity incorporated in the Netherlands, which is also the guarantor for BidCo’s obligations under the scheme implementation deed. Both BidCo and Turbo EMEA are non-operating holding companies.\n\nTurbo EMEA’s ultimate parent is Turbo Parent Partnership LP (**Turbo LP**), a Delaware limited partnership, which is owned by an investor group led by New Mountain Capital LLC (**NMC**), and individual Grant Thornton partners from across the Americas, Europe, the Middle East and APAC (excluding Australia).\n\nFor the avoidance of doubt, NMC has a non-controlling minority interest in Turbo LP. Turbo LP is also the ultimate parent of a number of Grant Thornton operating entities across the globe, including Grant Thornton Advisors LLC in the US (**Grant Thornton Advisors**) and other non-US Grant Thornton operating entities. These entities operate or hold interests in the Grant Thornton businesses which provide audit and assurance, tax advisory and compliance, business advisory and consulting, corporate finance and transaction advisory and other related professional services.\n\nFor completeness, the Acquirer and its connected entities currently have no presence in Australia, including any offices, employees (or other staff), assets, or operations.\n\nGrant Thornton Australia is a leading Australian professional services firm and part of the Grant Thornton International (**GTI**) network. Grant Thornton Australia supplies audit and assurance, corporate recovery and insolvency, corporate finance, taxation advice, management consultancy, and financial planning and advisory services to clients across a range of industries in Australia, including energy and resources, financial services, health and aged care, technology, and not-for-profits. Grant Thornton Australia’s current national office network and geographic footprint cover Cairns, Brisbane, Sydney, Melbourne, Adelaide and Perth.",
+      "events": [
+        {
+          "date": "2026-06-04T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Grant%20Thornton%20Advisors%20-%20Grant%20Thornton%20Australia%20%28WA-95020%29%20-%20Notification%20waiver%20determination%20-%204%20June%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Turbo Fast Track Buyer Pty Ltd (BidCo), a newly incorporated Australian entity applied for a notification waiver in respect of its proposed acquisition of up to 100% of the issued share capital in Grant Thornton Australia Limited (Grant Thornton Australia), as described in the transaction documents provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABV(1)(a) of the Competition and Consumer Act 2010 (Cth) that the Acquisition is not required to be notified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "4 June 2026"
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, BidCo, is a newly incorporated Australian entity indirectly wholly owned by Turbo EMEA Holdings B.V. (Turbo EMEA), a holding entity incorporated in the Netherlands. Both BidCo and Turbo EMEA are non-operating holding companies.\n\nTurbo EMEA’s ultimate parent is Turbo Parent Partnership LP (Turbo LP), a Delaware limited partnership owned by an investor group led by New Mountain Capital LLC (NMC) and individual Grant Thornton partners from across the Americas, Europe, the Middle East, and APAC (excluding Australia).\n\nNMC has a non-controlling minority interest in Turbo LP. Turbo LP is also the ultimate parent of a number of Grant Thornton operating entities across the globe, including Grant Thornton Advisors LLC in the US (Grant Thornton Advisors) and other non-US Grant Thornton operating entities. These entities operate or hold interests in the Grant Thornton businesses which provide audit and assurance, tax advisory and compliance, business advisory and consulting, corporate finance and transaction advisory and other related professional services. BidCo and its connected entities currently have no presence in Australia, including any offices, employees (or other staff), assets, or operations.\n\nThe target, Grant Thornton Australia, is a leading Australian professional services firm and part of the Grant Thornton International network. It supplies audit and assurance, corporate recovery and insolvency, corporate finance, taxation advice, management consultancy, and financial planning and advisory services to clients across a range of industries in Australia. Grant Thornton Australia’s current geographic footprint covers Cairns, Brisbane, Sydney, Melbourne, Adelaide and Perth."
+            },
+            {
+              "item": "Explanation for determination",
+              "details": "In making this notification waiver determination, the Australian Competition and Consumer Commission (the ACCC) has considered the information provided with the notification waiver application, and had regard to the factors in section 51ABV(2)(b) of the Competition and Consumer Act 2010 (Cth) (the Act).\n\nBased on the information currently before it, the ACCC considers that the Acquisition is unlikely to give rise to any material lessening of competition. In particular, there is no horizontal overlap between the parties (or their connected entities) in the supply of professional services (including audit and assurance, corporate recovery and insolvency, corporate finance, taxation advice, management consultancy, and financial planning and advisory services) in Australia.\n\nThe ACCC has also had regard to the likelihood that, if the Acquisition were put into effect, the notification thresholds determined under section 51ABP(1) of the Act would apply.\n\nWhile the ACCC considers that the notification thresholds are likely to be met, given that material competition concerns are unlikely to arise, the ACCC has determined that the Acquisition is not required to be notified.The ACCC considers that the determination is consistent with the object of the Act and the interests of consumers in promoting competition.\n\nFor more information about the ACCC’s approach to considering notification waiver applications and to assessing competition effects more generally, see the ACCC’s interim guidance on notification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-95020/Grant Thornton Advisors - Grant Thornton Australia (WA-95020) - Notification waiver determination - 4 June 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-05-21T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-25022",
+          "merger_name": "Nuveen – Schroders",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Pantheon LLC",
+              "identifier_type": null,
+              "identifier": "10488789"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Schroders plc",
+              "identifier_type": null,
+              "identifier": "03909886"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-20005",
+          "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "H-E PARTS INTERNATIONAL MINING SOLUTIONS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "58 007 761 499"
+            }
+          ],
+          "targets": [
+            {
+              "name": "A.T.B. MORTON PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "34 002 684 620"
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-25001",
+          "merger_name": "Regent Motors Group – Esperance Motor Group (Esperance Toyota & Ford)",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "ALBANY MOTORS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "95 676 040 341"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Esperance Motor Group Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "57 121 986 016"
+            },
+            {
+              "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST",
+              "identifier_type": "ABN",
+              "identifier": "80 701 405 315"
+            }
+          ]
+        }
+      ]
     }
   ],
   "questionnaires": {
@@ -64697,7 +65195,7 @@
   },
   "stats": {
     "total_mergers": 126,
-    "total_waivers": 188,
+    "total_waivers": 191,
     "by_status": {
       "Assessment completed": 83,
       "Under assessment": 43
@@ -64707,7 +65205,7 @@
       "Referred to phase 2": 4
     },
     "by_waiver_determination": {
-      "Approved": 174,
+      "Approved": 177,
       "Not approved": 14
     },
     "phase_duration": {
@@ -64733,7 +65231,7 @@
     "top_industries": [
       {
         "name": "Financial Asset Investing",
-        "count": 37
+        "count": 38
       },
       {
         "name": "Computer System Design and Related Services",
@@ -64816,6 +65314,36 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "WA-35021",
+        "merger_name": "BUSS Queensland – Additional interest in Duxton Vineyards",
+        "determination": "Approved",
+        "determination_date": "2026-06-04T12:00:00Z",
+        "page_modified_datetime": "2026-06-04T16:50:53+10:00",
+        "determination_type": "final",
+        "is_waiver": true,
+        "stage": "Waiver application"
+      },
+      {
+        "merger_id": "WA-75024",
+        "merger_name": "KfW – KNDS N.V.",
+        "determination": "Approved",
+        "determination_date": "2026-06-04T12:00:00Z",
+        "page_modified_datetime": "2026-06-04T16:48:43+10:00",
+        "determination_type": "final",
+        "is_waiver": true,
+        "stage": "Waiver application"
+      },
+      {
+        "merger_id": "WA-95020",
+        "merger_name": "Grant Thornton Advisors - Grant Thornton Australia",
+        "determination": "Approved",
+        "determination_date": "2026-06-04T12:00:00Z",
+        "page_modified_datetime": "2026-06-04T16:46:25+10:00",
+        "determination_type": "final",
+        "is_waiver": true,
+        "stage": "Waiver application"
+      },
+      {
         "merger_id": "WA-25025",
         "merger_name": "Laundy – Woy Woy Hotel",
         "determination": "Not approved",
@@ -64844,36 +65372,6 @@
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"
-      },
-      {
-        "merger_id": "MN-70012",
-        "merger_name": "Quanta - PSD",
-        "determination": "Approved",
-        "determination_date": "2026-06-03T12:00:00Z",
-        "page_modified_datetime": "2026-06-04T10:11:07+10:00",
-        "determination_type": "final",
-        "is_waiver": false,
-        "stage": "Phase 1 - initial assessment"
-      },
-      {
-        "merger_id": "WA-60020",
-        "merger_name": "Metro Petroleum – Retail sites part of divestiture remedy from Ampol-EG acquisition",
-        "determination": "Approved",
-        "determination_date": "2026-06-03T12:00:00Z",
-        "page_modified_datetime": "2026-06-03T09:04:28+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-20022",
-        "merger_name": "PRIME Asia – Stockland Sienna Wood and Providence",
-        "determination": "Approved",
-        "determination_date": "2026-06-02T12:00:00Z",
-        "page_modified_datetime": "2026-06-02T17:37:17+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
       }
     ]
   },
@@ -64882,7 +65380,7 @@
       {
         "code": "6240",
         "name": "Financial Asset Investing",
-        "merger_count": 37
+        "merger_count": 38
       },
       {
         "code": "7000",
@@ -65025,8 +65523,18 @@
         "merger_count": 5
       },
       {
+        "code": "2469",
+        "name": "Other Specialised Machinery and Equipment Manufacturing",
+        "merger_count": 5
+      },
+      {
         "code": "5102",
         "name": "Courier Pick-up and Delivery Services",
+        "merger_count": 5
+      },
+      {
+        "code": "6330",
+        "name": "Superannuation Funds",
         "merger_count": 5
       },
       {
@@ -65065,11 +65573,6 @@
         "merger_count": 4
       },
       {
-        "code": "2469",
-        "name": "Other Specialised Machinery and Equipment Manufacturing",
-        "merger_count": 4
-      },
-      {
         "code": "9419",
         "name": "Other Automotive Repair and Maintenance",
         "merger_count": 4
@@ -65092,11 +65595,6 @@
       {
         "code": "4122",
         "name": "Fruit and Vegetable Retailing",
-        "merger_count": 4
-      },
-      {
-        "code": "6330",
-        "name": "Superannuation Funds",
         "merger_count": 4
       },
       {
@@ -65222,6 +65720,11 @@
       {
         "code": "2299",
         "name": "Other Fabricated Metal Product Manufacturing n.e.c.",
+        "merger_count": 3
+      },
+      {
+        "code": "6932",
+        "name": "Accounting Services",
         "merger_count": 3
       },
       {
@@ -65532,11 +66035,6 @@
       {
         "code": "2919",
         "name": "Other Waste Collection Services",
-        "merger_count": 2
-      },
-      {
-        "code": "6932",
-        "name": "Accounting Services",
         "merger_count": 2
       },
       {
@@ -65872,6 +66370,11 @@
       {
         "code": "6711",
         "name": "Residential Property Operators",
+        "merger_count": 1
+      },
+      {
+        "code": "1214",
+        "name": "Wine and Other Alcoholic Beverage Manufacturing",
         "merger_count": 1
       },
       {

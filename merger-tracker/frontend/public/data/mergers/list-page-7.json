@@ -1,6 +1,97 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-35021",
+      "merger_name": "BUSS Queensland \u2013 Additional interest in Duxton Vineyards",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "BUSS (QUEENSLAND) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "15 065 081 281"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DUXTON VINEYARDS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "26 668 025 545"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "BNP Paribas S.A",
+          "identifier_type": null,
+          "identifier": "ARBN  000 000 117"
+        },
+        {
+          "name": "BNP PARIBAS NOMINEES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "54 084 150 023"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1214",
+          "name": "Wine and Other Alcoholic Beverage Manufacturing"
+        },
+        {
+          "code": "6330",
+          "name": "Superannuation Funds"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/buss-queensland-%E2%80%93-additional-interest-in-duxton-vineyards"
+    },
+    {
+      "merger_id": "WA-95020",
+      "merger_name": "Grant Thornton Advisors - Grant Thornton Australia",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Turbo Fast Track Buyer Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "696 951 541"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GRANT THORNTON AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "41 127 556 389"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Turbo EMEA Holdings B.V.",
+          "identifier_type": null,
+          "identifier": "Registered with the Dutch Chamber of Commerce under number 96427930"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6932",
+          "name": "Accounting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/grant-thornton-advisors-grant-thornton-australia"
+    },
+    {
       "merger_id": "MN-25026",
       "merger_name": "Tibaldi - South Food Group",
       "status": "Under assessment",
@@ -26,11 +117,6 @@
       ],
       "other_parties": [
         {
-          "name": "TIBALDI AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 664 117 257"
-        },
-        {
           "name": "CHESTNUT AVENUE AUSTRALIA PTY. LTD.",
           "identifier_type": "ABN",
           "identifier": "85 667 250 688"
@@ -39,6 +125,11 @@
           "name": "CHESTNUT PROPERTY AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "56 664 974 421"
+        },
+        {
+          "name": "TIBALDI AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 664 117 257"
         }
       ],
       "anzsic_codes": [
@@ -267,6 +358,50 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-claremont-veterinary-surgery"
+    },
+    {
+      "merger_id": "WA-75024",
+      "merger_name": "KfW \u2013 KNDS N.V.",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Kreditanstalt f\u00fcr Wiederaufbau",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "KNDS N.V.",
+          "identifier_type": null,
+          "identifier": "64277925"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "German Federal Ministry of Economic Affairs and Energy",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "German Federal Ministry of Defence",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2469",
+          "name": "Other Specialised Machinery and Equipment Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kfw-%E2%80%93-knds-nv"
     },
     {
       "merger_id": "MN-05014",
