@@ -1,6 +1,55 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-25026",
+      "merger_name": "Tibaldi - South Food Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "TIBALDI (AUST) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 664 117 248"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SOUTH FOOD GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "97 006 891 292"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "TIBALDI AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 664 117 257"
+        },
+        {
+          "name": "CHESTNUT AVENUE AUSTRALIA PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "85 667 250 688"
+        },
+        {
+          "name": "CHESTNUT PROPERTY AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "56 664 974 421"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1113",
+          "name": "Cured Meat and Smallgoods Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tibaldi-south-food-group"
+    },
+    {
       "merger_id": "MN-30012",
       "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
       "status": "Under assessment",
