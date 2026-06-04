@@ -1560,6 +1560,74 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mastercard-bvnk"
     },
     {
+      "merger_id": "WA-01101",
+      "merger_name": "INPEX \u2013 minority interests in Beetaloo development projects",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-15T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "A.C.N. 696 382 948 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "32 696 382 948"
+        },
+        {
+          "name": "INPEX FSDA N&S PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 693 697 764"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Daly Waters Energy, LP",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Daly Waters FSDA South Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "696 136 302"
+        },
+        {
+          "name": "Daly Waters FSDA North Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "696 136 295"
+        },
+        {
+          "name": "Daly Waters BCD Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "696 136 277"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "INPEX Corporation",
+          "identifier_type": null,
+          "identifier": "Stock Code 1605"
+        },
+        {
+          "name": "Tamboran Resources Corporation",
+          "identifier_type": "ABN",
+          "identifier": "20 961 904 383"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0700",
+          "name": "Oil and Gas Extraction"
+        },
+        {
+          "code": "1011",
+          "name": "Petroleum Exploration"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/inpex-%E2%80%93-minority-interests-in-beetaloo-development-projects"
+    },
+    {
       "merger_id": "WA-55019",
       "merger_name": "Allegro - Fantastic Furniture",
       "status": "Assessment completed",
@@ -2538,44 +2606,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/black-rhino-club-hotel-motel-roma"
-    },
-    {
-      "merger_id": "MN-95021",
-      "merger_name": "Logic Technologies - Ace Communication Distributors",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-21T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-06T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "CSE-GLOBAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 109 958 090"
-        },
-        {
-          "name": "LOGIC TECHNOLOGIES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 071 025 084"
-        }
-      ],
-      "targets": [
-        {
-          "name": "ACE COMMUNICATION DISTRIBUTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "75 103 761 011"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3493",
-          "name": "Telecommunication Goods Wholesaling"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/logic-technologies-ace-communication-distributors"
     }
   ],
   "page": 6,

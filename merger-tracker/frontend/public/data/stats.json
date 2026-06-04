@@ -1,6 +1,6 @@
 {
   "total_mergers": 127,
-  "total_waivers": 192,
+  "total_waivers": 193,
   "by_status": {
     "Assessment completed": 85,
     "Under assessment": 42
@@ -10,7 +10,7 @@
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 178,
+    "Approved": 179,
     "Not approved": 14
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-01101",
+      "merger_name": "INPEX \u2013 minority interests in Beetaloo development projects",
+      "determination": "Approved",
+      "determination_date": "2026-06-04T12:00:00Z",
+      "page_modified_datetime": "2026-06-04T17:36:50+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-75014",
       "merger_name": "Seismic \u2013 Highspot",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-04T12:00:00Z",
       "page_modified_datetime": "2026-06-04T16:46:25+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-25025",
-      "merger_name": "Laundy \u2013 Woy Woy Hotel",
-      "determination": "Not approved",
-      "determination_date": "2026-06-04T12:00:00Z",
-      "page_modified_datetime": "2026-06-04T16:44:20+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

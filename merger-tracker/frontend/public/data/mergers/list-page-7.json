@@ -1,6 +1,44 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-95021",
+      "merger_name": "Logic Technologies - Ace Communication Distributors",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-06T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "CSE-GLOBAL (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 109 958 090"
+        },
+        {
+          "name": "LOGIC TECHNOLOGIES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 071 025 084"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ACE COMMUNICATION DISTRIBUTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "75 103 761 011"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3493",
+          "name": "Telecommunication Goods Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/logic-technologies-ace-communication-distributors"
+    },
+    {
       "merger_id": "WA-35020",
       "merger_name": "Respect Group - Jallarah Homes",
       "status": "Assessment completed",

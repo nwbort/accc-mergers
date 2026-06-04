@@ -2212,6 +2212,14 @@
       },
       {
         "application_date": "2026-05-15",
+        "business_days": 13,
+        "calendar_days": 20,
+        "merger_name": "INPEX \u2013 minority interests in Beetaloo development projects",
+        "merger_id": "WA-01101",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-05-15",
         "business_days": 7,
         "calendar_days": 11,
         "merger_name": "Allegro - Fantastic Furniture",
@@ -2341,17 +2349,17 @@
     ],
     "stats": {
       "average": 11.8,
-      "median": 11.0,
+      "median": 11,
       "min": 2,
       "max": 25,
-      "count": 192
+      "count": 193
     },
     "calendar_stats": {
       "average": 17.5,
-      "median": 16.5,
+      "median": 17,
       "min": 2,
       "max": 39,
-      "count": 192
+      "count": 193
     }
   },
   "monthly_volume": {
@@ -2388,7 +2396,7 @@
       30,
       48,
       45,
-      39,
+      40,
       0
     ]
   }
