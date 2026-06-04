@@ -1,16 +1,6 @@
 {
   "events": [
     {
-      "type": "consultation_due",
-      "event_type_display": "Consultation responses due",
-      "date": "2026-06-04T12:00:00Z",
-      "merger_id": "MN-05014",
-      "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "status": "Under assessment",
-      "stage": "Phase 1 - initial assessment",
-      "effective_notification_datetime": "2026-05-26T12:00:00Z"
-    },
-    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-06-05T12:00:00Z",
@@ -509,6 +499,16 @@
       "status": "Under assessment",
       "stage": "Phase 1 - initial assessment",
       "effective_notification_datetime": "2026-06-04T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-08-03T12:00:00Z",
+      "merger_id": "MN-50009",
+      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-05-28T12:00:00Z"
     }
   ],
   "count": 51,

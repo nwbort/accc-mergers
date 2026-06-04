@@ -15750,39 +15750,39 @@
     "stage": "Waiver application",
     "determination_publication_date": "2026-06-04T12:00:00Z",
     "accc_determination": "Approved",
-    "page_modified_datetime": "2026-06-04T17:36:50+10:00",
+    "page_modified_datetime": "2026-06-04T17:47:18+10:00",
     "acquirers": [
-      {
-        "name": "A.C.N. 696 382 948 PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "32 696 382 948"
-      },
       {
         "name": "INPEX FSDA N&S PTY LTD",
         "identifier_type": "ABN",
         "identifier": "22 693 697 764"
+      },
+      {
+        "name": "INPEX BCD PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "32 696 382 948"
       }
     ],
     "targets": [
-      {
-        "name": "Daly Waters Energy, LP",
-        "identifier_type": null,
-        "identifier": ""
-      },
-      {
-        "name": "Daly Waters FSDA South Pty Ltd",
-        "identifier_type": "ACN",
-        "identifier": "696 136 302"
-      },
       {
         "name": "Daly Waters FSDA North Pty Ltd",
         "identifier_type": "ACN",
         "identifier": "696 136 295"
       },
       {
+        "name": "Daly Waters Energy, LP",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
         "name": "Daly Waters BCD Pty Ltd",
         "identifier_type": "ACN",
         "identifier": "696 136 277"
+      },
+      {
+        "name": "Daly Waters FSDA South Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "696 136 302"
       }
     ],
     "other_parties": [
