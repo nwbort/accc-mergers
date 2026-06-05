@@ -25,6 +25,8 @@ from parse_questionnaire import (
 from normalization import normalize_determination
 from cutoff import should_skip_merger, get_skipped_merger_ids, is_waiver_merger
 from date_utils import parse_text_to_iso, parse_iso_datetime
+from static_data.enrichment import is_phase_2_referral_event
+from constants import merger_status
 
 BASE_URL = "https://www.accc.gov.au"
 MATTERS_DIR = "./data/raw/matters"
@@ -943,6 +945,101 @@ def auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers):
     return newly_frozen_ids
 
 
+INFERRED_PHASE_2_PATH = 'data/processed/inferred_phase_2.json'
+
+
+def detect_inferred_phase_2(all_mergers_data):
+    """Detect mergers carrying a Phase 2 notice whose ACCC stage still says Phase 1.
+
+    ``enrich_merger`` treats such mergers as Phase 2 on the site (the register
+    sometimes issues a Phase 2 notice before updating the matter's stage). Because
+    parties can still drop out before Phase 2 formally begins, we open a GitHub
+    issue asking the owner to confirm — and auto-close it once the register's own
+    stage catches up.
+
+    Writes ``INFERRED_PHASE_2_PATH`` with two lists for the pipeline to act on:
+
+      - ``open``:      issue content for mergers currently inferred as Phase 2
+                       (notice event present, stage not yet Phase 2).
+      - ``confirmed``: merger IDs whose ACCC stage now shows Phase 2 — any open
+                       tracking issue for them should be closed.
+
+    Removes the file when there is nothing to report.
+
+    Note: this reads the *genuine* ACCC stage. The Phase 2 override lives only in
+    ``enrich_merger`` (the static-data output); it is never written back to
+    mergers.json, so ``merger['stage']`` here always reflects the register.
+    """
+    _repo = "nwbort/accc-mergers"
+    to_open = []
+    confirmed = []
+
+    for merger in all_mergers_data:
+        merger_id = merger.get('merger_id')
+        if not merger_id:
+            continue
+        if not any(
+            is_phase_2_referral_event(event.get('title', ''))
+            for event in merger.get('events', [])
+        ):
+            continue
+
+        stage = merger.get('stage') or ''
+        if merger_status.PHASE_2 in stage:
+            # The register has caught up — close any open tracking issue.
+            confirmed.append(merger_id)
+            continue
+
+        name = merger.get('merger_name', '')
+        url = merger.get('url', '')
+        mergers_fyi_url = f"https://mergers.fyi/mergers/{merger_id}"
+        body = (
+            f"**{name}** has a Phase 2 notice on the ACCC register, but the matter's "
+            f"stage still shows **Phase 1**.\n\n"
+            f"The pipeline now treats this merger as **Phase 2** on mergers.fyi.\n\n"
+            f"### Details\n\n"
+            f"| Merger | [{name}]({url}) |\n"
+            f"|--------|---------------|\n"
+            f"| Merger ID | `{merger_id}` |\n"
+            f"| ACCC stage | {stage or '—'} |\n\n"
+            f"### Why this issue exists\n\n"
+            f"Parties can still drop out before Phase 2 formally begins, so this is "
+            f"an inference rather than a confirmed Phase 2.\n\n"
+            f"- This issue will **close automatically** once the ACCC register updates "
+            f"the stage to Phase 2.\n"
+            f"- If the parties drop out and the merger never proceeds to Phase 2, close "
+            f"this issue manually.\n\n"
+            f"[View on mergers.fyi]({mergers_fyi_url})"
+        )
+        to_open.append({
+            'merger_id': merger_id,
+            'merger_name': name,
+            'title': f"Inferred Phase 2: {name} ({merger_id})",
+            'body': body,
+        })
+
+    if not to_open and not confirmed:
+        if os.path.exists(INFERRED_PHASE_2_PATH):
+            os.remove(INFERRED_PHASE_2_PATH)
+        return
+
+    with open(INFERRED_PHASE_2_PATH, 'w', encoding='utf-8') as f:
+        json.dump({'open': to_open, 'confirmed': confirmed}, f, indent=2)
+
+    if to_open:
+        print(
+            f"Inferred Phase 2 (stage not yet updated): "
+            f"{', '.join(sorted(i['merger_id'] for i in to_open))}",
+            file=sys.stderr,
+        )
+    if confirmed:
+        print(
+            f"ACCC stage now confirms Phase 2 (will close tracking issue): "
+            f"{', '.join(sorted(confirmed))}",
+            file=sys.stderr,
+        )
+
+
 def extract_nocc_data():
     """Parse all NOCC summary PDFs and write the standalone JSON manifest.
 
@@ -1114,6 +1211,10 @@ def main():
         #     Tries to extract the date from the event title; falls back to today.
         #     Freezes the merger and writes issue content for GitHub issue creation.
         auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers)
+
+        # 8d. Detect mergers carrying a Phase 2 notice whose ACCC stage still
+        #     shows Phase 1, and write tracking-issue content for the pipeline.
+        detect_inferred_phase_2(all_mergers_data)
 
     # 9. Add is_waiver field to each merger
     for merger in all_mergers_data:

@@ -32,9 +32,10 @@ def extract_phase_from_event(event_title: str) -> str | None:
 def is_phase_2_referral_event(event_title: str) -> bool:
     """Return True if ``event_title`` marks the Phase 1 → Phase 2 transition.
 
-    The ACCC has used at least two phrasings on the public register:
+    The ACCC has used several phrasings on the public register:
       - "ACCC decided notification is subject to Phase 2 review" (2025)
       - "Decision to Proceed to a Phase 2 review" (from 2026)
+      - "<name> - Phase 2 Notice" (the notice that moves a matter into Phase 2)
     """
     if not event_title:
         return False
@@ -43,7 +44,14 @@ def is_phase_2_referral_event(event_title: str) -> bool:
         'subject to phase 2 review' in lower
         or 'proceed to a phase 2' in lower
         or 'proceed to phase 2' in lower
+        or 'phase 2 notice' in lower
     )
+
+
+# Stage label applied when we infer Phase 2 from a notice event before the
+# ACCC register's own stage field has caught up. Mirrors the value the ACCC
+# uses for matters it has already moved into Phase 2.
+INFERRED_PHASE_2_STAGE = 'Phase 2 - detailed assessment'
 
 
 def enrich_merger(
@@ -122,6 +130,23 @@ def enrich_merger(
             m['competition_concerns_notice_date'] = notice_date.strftime('%Y-%m-%dT12:00:00Z')
         except (ValueError, AttributeError):
             pass
+
+    # Infer Phase 2 when the ACCC register lags behind a Phase 2 notice.
+    # The register sometimes issues a Phase 2 notice (or a "subject to / proceed
+    # to Phase 2" decision) before updating the matter's stage field, leaving it
+    # showing "Phase 1" even though the merger has moved into Phase 2. When that
+    # happens, treat the merger as Phase 2 so the site reflects reality.
+    #
+    # Parties can still drop out before Phase 2 formally begins, so this is only
+    # an inference: the pipeline opens a tracking issue whenever it applies (see
+    # detect_inferred_phase_2 in extract_mergers.py), which auto-closes once the
+    # register's own stage catches up. The override is done last so every
+    # stage-dependent computation above uses the genuine ACCC stage.
+    if merger_status.PHASE_2 not in (m.get('stage') or '') and any(
+        is_phase_2_referral_event(event.get('title', '')) for event in m.get('events', [])
+    ):
+        m['phase_2_inferred'] = True
+        m['stage'] = INFERRED_PHASE_2_STAGE
 
     # Ensure anzsic_codes exists
     if 'anzsic_codes' not in m:
