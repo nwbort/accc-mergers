@@ -64,17 +64,45 @@ def title_similarity(a: str, b: str) -> float:
     return SequenceMatcher(None, normalise_title(a), normalise_title(b)).ratio()
 
 
-def titles_are_different_event_types(a: str, b: str) -> bool:
-    """Return True if a and b begin with distinct, non-empty type prefixes.
+_MIN_SEGMENT_LEN = 5
+_SEGMENT_SIMILARITY_THRESHOLD = 0.70
 
-    This prevents events that are genuinely different documents (e.g. a
-    Questionnaire and a Remedy offer published on the same date for the same
-    merger) from being flagged as likely duplicates just because they share a
-    long common merger name.
+
+def titles_are_different_event_types(a: str, b: str) -> bool:
+    """Return True if a and b represent distinct document types.
+
+    Two checks are applied:
+
+    1. First-segment (type prefix) check: if the leading segment before the
+       first ' - ' separator differs between titles, they are clearly different
+       document types (e.g. 'Questionnaire' vs 'Remedy offer').
+
+    2. All-segments check: when titles split into the same number of segments,
+       compare each segment pair.  If any pair is substantially different
+       (segment similarity < 0.70 and both segments are at least 5 characters
+       long), the titles refer to different document types even when the overall
+       string similarity is high — e.g. 'Phase 2 determination – Statement of
+       Reasons' vs 'Phase 2 determination – Summary of reasons' share a long
+       common prefix but are genuinely distinct documents.
     """
     prefix_a = extract_type_prefix(a)
     prefix_b = extract_type_prefix(b)
-    return bool(prefix_a and prefix_b and prefix_a != prefix_b)
+    if prefix_a and prefix_b and prefix_a != prefix_b:
+        return True
+
+    segs_a = [s.strip().lower() for s in re.split(r"\s+[-–]\s+", a)]
+    segs_b = [s.strip().lower() for s in re.split(r"\s+[-–]\s+", b)]
+    if len(segs_a) == len(segs_b) and len(segs_a) > 1:
+        for sa, sb in zip(segs_a, segs_b):
+            if (
+                sa != sb
+                and len(sa) >= _MIN_SEGMENT_LEN
+                and len(sb) >= _MIN_SEGMENT_LEN
+                and SequenceMatcher(None, sa, sb).ratio() < _SEGMENT_SIMILARITY_THRESHOLD
+            ):
+                return True
+
+    return False
 
 
 def parse_date(raw: str):

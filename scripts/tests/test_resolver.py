@@ -27,6 +27,7 @@ from detect_duplicates import (
     parse_date,
     suggest_deletion,
     title_similarity,
+    titles_are_different_event_types,
 )
 
 
@@ -83,6 +84,73 @@ class TestTitleSimilarity:
             "Public competition assessment published",
         )
         assert ratio < 0.8
+
+
+# ---------------------------------------------------------------------------
+# titles_are_different_event_types
+# ---------------------------------------------------------------------------
+
+class TestTitlesAreDifferentEventTypes:
+    def test_different_first_segment(self):
+        assert titles_are_different_event_types(
+            "Questionnaire - Ampol EG Australia",
+            "Remedy offer - Ampol EG Australia",
+        )
+
+    def test_same_first_segment_is_not_different(self):
+        assert not titles_are_different_event_types(
+            "Questionnaire - Ampol EG Australia",
+            "Questionnaire - Ampol EG Australia",
+        )
+
+    def test_no_separator_is_not_different(self):
+        # Single-segment titles have no type prefix — not flagged.
+        assert not titles_are_different_event_types(
+            "Notification received",
+            "Notification received.",
+        )
+
+    def test_statement_vs_summary_of_reasons(self):
+        # Core regression case: these are different documents even though the
+        # full-title string similarity is ~0.80.
+        assert titles_are_different_event_types(
+            "Phase 2 determination - Statement of Reasons",
+            "Phase 2 determination - Summary of reasons",
+        )
+
+    def test_em_dash_separator_handled(self):
+        assert titles_are_different_event_types(
+            "Phase 2 determination – Statement of Reasons",
+            "Phase 2 determination – Summary of reasons",
+        )
+
+    def test_minor_variation_in_second_segment_is_not_different(self):
+        # Trailing punctuation difference in the second segment should not
+        # trigger the all-segments check.
+        assert not titles_are_different_event_types(
+            "Phase 2 determination - Statement of Reasons",
+            "Phase 2 determination - Statement of Reasons.",
+        )
+
+
+class TestFindDuplicatesStatementVsSummary:
+    """Regression: Statement of Reasons vs Summary of reasons must not be
+    flagged as likely duplicates — they are genuinely different documents."""
+
+    def test_statement_vs_summary_not_flagged(self):
+        merger = {
+            'events': [
+                {
+                    'date': '2026-06-02T12:00:00Z',
+                    'title': 'Phase 2 determination - Statement of Reasons',
+                },
+                {
+                    'date': '2026-06-02T12:00:00Z',
+                    'title': 'Phase 2 determination - Summary of reasons',
+                },
+            ]
+        }
+        assert find_duplicates(merger) == []
 
 
 # ---------------------------------------------------------------------------
