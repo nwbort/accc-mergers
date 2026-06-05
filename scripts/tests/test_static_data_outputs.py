@@ -349,6 +349,36 @@ class TestUpcomingEventsGenerate:
         excluded_ids = {'WA-0003', 'MN-0004'}
         assert not any(e['merger_id'] in excluded_ids for e in payload['events'])
 
+    def test_excludes_early_determination_missing_pub_date(self):
+        # A Phase 2 merger where accc_determination is set but
+        # determination_publication_date is None (early determination, date not
+        # yet scraped) must not produce a "determination due" event.
+        from datetime import datetime, timedelta, timezone
+        future = (datetime.now(timezone.utc) + timedelta(days=30)).strftime('%Y-%m-%dT12:00:00Z')
+        merger = {
+            'merger_id': 'MN-9999',
+            'merger_name': 'Early Phase 2 determination',
+            'status': 'Assessment completed',
+            'accc_determination': 'Approved',
+            'stage': 'Phase 2 - detailed assessment',
+            'effective_notification_datetime': '2025-01-01T12:00:00Z',
+            'determination_publication_date': None,
+            'end_of_determination_period': future,
+            'page_modified_datetime': '2026-01-01T12:00:00Z',
+            'anzsic_codes': [],
+            'acquirers': [],
+            'targets': [],
+            'other_parties': [],
+            'url': 'https://example.com/MN-9999',
+            'events': [{'title': 'Phase 2 determination', 'date': '2026-01-01T12:00:00Z'}],
+        }
+        enriched = [enrich_merger(merger)]
+        payload = upcoming_events.generate(enriched, days_ahead=60)
+        assert not any(e['merger_id'] == 'MN-9999' for e in payload['events']), (
+            "Merger with accc_determination set should be excluded even if "
+            "determination_publication_date is missing"
+        )
+
 
 # ---------------------------------------------------------------------------
 # questionnaires
