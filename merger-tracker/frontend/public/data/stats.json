@@ -1,9 +1,9 @@
 {
-  "total_mergers": 127,
+  "total_mergers": 128,
   "total_waivers": 193,
   "by_status": {
     "Assessment completed": 86,
-    "Under assessment": 41
+    "Under assessment": 42
   },
   "by_determination": {
     "Approved": 84,
@@ -52,7 +52,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 15
+      "count": 16
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -76,6 +76,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-40020",
+      "merger_name": "Premier Fresh \u2013 Domenico Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-04T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-50019",
       "merger_name": "Coles \u2013 supermarket site in Lidcombe (NSW)",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-20023",
       "merger_name": "Sony Music - Recognition Music",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-02T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-35019",
-      "merger_name": "Precision Poultry - VOAG chicken farming operations",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-02T12:00:00Z",
