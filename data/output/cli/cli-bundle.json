@@ -12044,16 +12044,16 @@
         {
           "merger_id": "MN-90007",
           "merger_name": "Volt Managed Investment Trusts – HMC Energy Transition Platform",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
-              "name": "Volt Managed Investment Trust 1",
+              "name": "Volt Managed Investment Trust 2",
               "identifier_type": null,
               "identifier": ""
             },
             {
-              "name": "Volt Managed Investment Trust 2",
+              "name": "Volt Managed Investment Trust 1",
               "identifier_type": null,
               "identifier": ""
             }
@@ -21736,7 +21736,7 @@
       "original_notification_datetime": "2026-06-03T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-07-16T12:00:00Z",
-      "page_modified_datetime": "2026-06-04T10:41:29+10:00",
+      "page_modified_datetime": "2026-06-05T15:21:57+10:00",
       "consultation_response_due_date": "2026-06-11T12:00:00Z",
       "acquirers": [
         {
@@ -21764,7 +21764,7 @@
           "name": "Other Auxiliary Finance and Investment Services"
         }
       ],
-      "merger_description": "Australia and New Zealand Banking Group Limited, through its wholly owned subsidiary, ANZ NBH Pty Ltd (ANZ NBH) (together, ANZ) proposes to acquire Worldline SA (WL)’s interest in Worldline Australia Pty Ltd, trading as ANZ Worldline Payment Solutions (ANZWL), under a share sale and purchase agreement. ANZWL is currently a joint venture between ANZ and WL (the Parties), with ANZ holding 49% and WL holding 51%. Following the acquisition, ANZ will wholly own ANZWL.\n\nANZ is an ASX-listed financial services group. ANZ provides a range of banking products and services to retail and business customers in Australia and New Zealand, and to institutional customers globally. ANZ NBH is a non-operating intermediate holding company.\n\nWL is a global merchant acquiring business, headquartered in France, and Europe’s largest merchant acquiring services provider. WL provides payment acceptance services and products to business customers internationally, including mobile authentication, digital banking, mobile payments and wallets, omni-commerce services, and account-to-account payments.\n\nANZWL was established in April 2022 when ANZ divested its merchant acquiring services business and referred business customers who required merchant acquiring services to ANZWL. The joint venture was intended to deliver enhanced payment solutions to ANZ’s merchant customers, while allowing ANZ to retain a significant ownership interest and an ongoing commercial relationship with the business.\n\nThe Parties overlap in the supply of payment solutions, including merchant acquiring, acceptance and value-added services, to business customers in Australia.",
+      "merger_description": "Australia and New Zealand Banking Group Limited (ANZ), an entity within a group of companies ultimately held by ANZ Group Holdings Limited (ANZ group), proposes to acquire Worldline SA (WL)’s interest in Worldline Australia Pty Ltd, trading as ANZ Worldline Payment Solutions (ANZWL), under a share sale and purchase agreement. ANZWL is currently a joint venture between ANZ and WL (the Parties), with ANZ group holding 49% and WL holding 51% of the share capital of ANZWL. Following the acquisition, ANZ group will wholly own ANZWL.\n\nANZ Group Holdings Limited is an ASX-listed financial services company. ANZ provides a range of banking products and services to retail and business customers in Australia and New Zealand, and to institutional customers globally.\n\nWL is a global merchant acquiring business, headquartered in France, and Europe’s largest merchant acquiring services provider. WL provides payment acceptance services and products to business customers internationally, including mobile authentication, digital banking, mobile payments and wallets, omni-commerce services, and account-to-account payments.\n\nANZWL was established in April 2022 when ANZ divested its merchant acquiring services business and referred business customers who required merchant acquiring services to ANZWL. The joint venture was intended to deliver enhanced payment solutions to ANZ’s merchant customers, while allowing ANZ group to retain a significant ownership interest and an ongoing commercial relationship with the business.\n\nThe Parties overlap in the supply of payment solutions, including merchant acquiring, acceptance and value-added services, to business customers in Australia.",
       "events": [
         {
           "date": "2026-06-04T12:00:00Z",
@@ -23249,22 +23249,24 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/volt-managed-investment-trusts-%E2%80%93-hmc-energy-transition-platform",
       "merger_name": "Volt Managed Investment Trusts – HMC Energy Transition Platform",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-90007",
       "effective_notification_datetime": "2026-05-14T12:00:00Z",
       "original_notification_datetime": "2026-05-14T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-06-29T12:00:00Z",
-      "page_modified_datetime": "2026-05-25T16:28:39+10:00",
+      "determination_publication_date": "2026-06-05T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-06-05T16:36:40+10:00",
       "consultation_response_due_date": "2026-05-22T12:00:00Z",
       "acquirers": [
         {
-          "name": "Volt Managed Investment Trust 1",
+          "name": "Volt Managed Investment Trust 2",
           "identifier_type": null,
           "identifier": ""
         },
         {
-          "name": "Volt Managed Investment Trust 2",
+          "name": "Volt Managed Investment Trust 1",
           "identifier_type": null,
           "identifier": ""
         }
@@ -23278,19 +23280,14 @@
       ],
       "other_parties": [
         {
+          "name": "The Trust Company (Australia) Limited (as trustee for Volt Managed Investment Trust 2)",
+          "identifier_type": "ABN",
+          "identifier": "21 000 000 993"
+        },
+        {
           "name": "HMC CAPITAL LIMITED",
           "identifier_type": "ABN",
           "identifier": "94 138 990 593"
-        },
-        {
-          "name": "The John Laing Group Limited",
-          "identifier_type": null,
-          "identifier": "UK Company No: 05975300"
-        },
-        {
-          "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)",
-          "identifier_type": null,
-          "identifier": ""
         },
         {
           "name": "HMC Energy Transition No. 3 Holdings Pty Ltd as trustee of the HMC Energy Transition No. 3 Trust",
@@ -23298,9 +23295,14 @@
           "identifier": "98 159 167 344"
         },
         {
-          "name": "The Trust Company (Australia) Limited (as trustee for Volt Managed Investment Trust 2)",
-          "identifier_type": "ABN",
-          "identifier": "21 000 000 993"
+          "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "The John Laing Group Limited",
+          "identifier_type": null,
+          "identifier": "UK Company No: 05975300"
         }
       ],
       "anzsic_codes": [
@@ -23333,12 +23335,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-06-05T12:00:00Z",
+          "title": "Volt Managed Investment Trusts – HMC Energy Transition Platform - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Volt%20MITs-HMC%20Platform%20Phase%201%20Determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Volt Managed Investment Trust 1 and Volt Managed Investment Trust 2 (together, the Volt MITs), through their respective trustees, propose to invest $355 million (AUD) in HMC Capital Limited’s Energy Transition Platform (HMC Platform) through the acquisition of loan notes and share warrants issued by Volt HoldCo Pty Ltd (Volt HoldCo) (the Acquisition), with the warrants automatically converting into a minority equity interest in Volt HoldCo upon repayment of the loan notes."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirers, the Volt MITs, are administered by professional trust companies, namely Perpetual Corporate Trust Limited, and The Trust Company (Australia) Limited, respectively (together, the Perpetual Trustees). The single unitholders in the Volt MITs are KKR Global Climate Transition Holdings Pte. Ltd and KKR Asia Climate Holdings Pte. Ltd respectively (the KKR Funds).\n\nThe Volt MITs are ultimately wholly owned by investment funds, vehicles and/or accounts advised and managed by various indirect subsidiaries of KKR & Co. Inc. (together with its direct and indirect subsidiaries, KKR).\n\nKKR is a global investment firm that offers alternative asset management as well as capital markets and insurance solutions.\n\nThe target, HMC Platform, operates energy generation and storage assets and has a development pipeline of wind and energy storage projects in Victoria. HMC Platform comprises wholly owned subsidiaries of Volt HoldCo Pty Ltd, which is itself a subsidiary of HMC Capital Limited (HMC). HMC is an ASX-listed alternative asset manager."
+            },
+            {
+              "item": "Overlap and relationship between the parties",
+              "details": "KKR and the HMC Platform (together, the Parties) both operate within the electricity generation supply chain.\n\nThe Parties horizontally overlap in the operation of electricity generating and storage assets in National Electricity Market (NEM).\n\nSome of HMC Platform’s assets and pipeline projects are, or will be, connected to transmission infrastructure in which KKR has an indirect and minority interest.\n\nIn addition, KKR, via a managed investment fund, has an indirect minority interest in Transgrid and Victoria Power Network. One of the HMC Platform’s Victorian assets is connected to a Victoria Power Network distribution network, and three of HMC Platform’s pipeline projects in NSW will be connected to Transgrid’s transmission network upon completion."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form, market share data from prior matters and publicly available information.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings.\n\n• The Parties’ post-Acquisition share in the generation and storage of electricity in the NEM is minimal, and the merged entity would continue to be constrained by alternative operators of electricity generation and storage assets in the NEM.\n\n• KKR would be unlikely to have an ability to favour the HMC Platform’s assets post-Acquisition given its indirect minority interest would not give it control or influence over the relevant network businesses."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-90007/Volt MITs-HMC Platform Phase 1 Determination.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-06-05T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -35909,16 +35947,16 @@
         {
           "merger_id": "MN-90007",
           "merger_name": "Volt Managed Investment Trusts – HMC Energy Transition Platform",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
-              "name": "Volt Managed Investment Trust 1",
+              "name": "Volt Managed Investment Trust 2",
               "identifier_type": null,
               "identifier": ""
             },
             {
-              "name": "Volt Managed Investment Trust 2",
+              "name": "Volt Managed Investment Trust 1",
               "identifier_type": null,
               "identifier": ""
             }
@@ -65976,11 +66014,11 @@
     "total_mergers": 128,
     "total_waivers": 193,
     "by_status": {
-      "Assessment completed": 86,
-      "Under assessment": 42
+      "Assessment completed": 87,
+      "Under assessment": 41
     },
     "by_determination": {
-      "Approved": 84,
+      "Approved": 85,
       "Referred to phase 2": 4
     },
     "by_waiver_determination": {
@@ -65988,21 +66026,21 @@
       "Not approved": 14
     },
     "phase_duration": {
-      "average_days": 27.38095238095238,
-      "median_days": 26,
-      "average_business_days": 18.178571428571427,
+      "average_days": 27.31764705882353,
+      "median_days": 25,
+      "average_business_days": 18.141176470588235,
       "median_business_days": 17,
       "percentiles": {
         "day15": {
-          "count": 19,
-          "percentage": 22.6
+          "count": 20,
+          "percentage": 23.5
         },
         "day20": {
-          "count": 67,
-          "percentage": 79.8
+          "count": 68,
+          "percentage": 80.0
         },
         "day30": {
-          "count": 83,
+          "count": 84,
           "percentage": 98.8
         }
       }
@@ -66093,6 +66131,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "MN-90007",
+        "merger_name": "Volt Managed Investment Trusts – HMC Energy Transition Platform",
+        "determination": "Approved",
+        "determination_date": "2026-06-05T12:00:00Z",
+        "page_modified_datetime": "2026-06-05T16:36:40+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "MN-40019",
         "merger_name": "Novartis - Excellergy",
         "determination": "Approved",
@@ -66138,16 +66186,6 @@
         "determination": "Approved",
         "determination_date": "2026-06-04T12:00:00Z",
         "page_modified_datetime": "2026-06-04T16:50:53+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-75024",
-        "merger_name": "KfW – KNDS N.V.",
-        "determination": "Approved",
-        "determination_date": "2026-06-04T12:00:00Z",
-        "page_modified_datetime": "2026-06-04T16:48:43+10:00",
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"

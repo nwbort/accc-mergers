@@ -2,11 +2,11 @@
   "total_mergers": 128,
   "total_waivers": 193,
   "by_status": {
-    "Assessment completed": 86,
-    "Under assessment": 42
+    "Assessment completed": 87,
+    "Under assessment": 41
   },
   "by_determination": {
-    "Approved": 84,
+    "Approved": 85,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 27.38095238095238,
-    "median_days": 26,
-    "average_business_days": 18.178571428571427,
+    "average_days": 27.31764705882353,
+    "median_days": 25,
+    "average_business_days": 18.141176470588235,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 19,
-        "percentage": 22.6
+        "count": 20,
+        "percentage": 23.5
       },
       "day20": {
-        "count": 67,
-        "percentage": 79.8
+        "count": 68,
+        "percentage": 80.0
       },
       "day30": {
-        "count": 83,
+        "count": 84,
         "percentage": 98.8
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-90007",
+      "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
+      "determination": "Approved",
+      "determination_date": "2026-06-05T12:00:00Z",
+      "page_modified_datetime": "2026-06-05T16:36:40+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-40019",
       "merger_name": "Novartis - Excellergy",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-04T12:00:00Z",
       "page_modified_datetime": "2026-06-04T16:50:53+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-75024",
-      "merger_name": "KfW \u2013 KNDS N.V.",
-      "determination": "Approved",
-      "determination_date": "2026-06-04T12:00:00Z",
-      "page_modified_datetime": "2026-06-04T16:48:43+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

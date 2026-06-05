@@ -792,21 +792,30 @@
         "merger_id": "MN-75014",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-05-14",
+        "business_days": 15,
+        "calendar_days": 22,
+        "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
+        "merger_id": "MN-90007",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
-      "average": 18.2,
-      "median": 17.0,
+      "average": 18.1,
+      "median": 17,
       "min": 15,
       "max": 36,
-      "count": 84
+      "count": 85
     },
     "calendar_stats": {
-      "average": 27.4,
-      "median": 25.5,
+      "average": 27.3,
+      "median": 25,
       "min": 21,
       "max": 55,
-      "count": 84
+      "count": 85
     }
   },
   "waiver_duration": {
