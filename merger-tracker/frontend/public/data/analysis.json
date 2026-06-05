@@ -21,12 +21,12 @@
       },
       {
         "notification_date": "2025-10-10",
-        "business_days": 58,
-        "calendar_days": 102,
+        "business_days": 148,
+        "calendar_days": 235,
         "merger_name": "Ampol \u2013 EG Australia",
         "merger_id": "MN-01019",
         "determination": "Referred to phase 2",
-        "in_progress": true
+        "in_progress": false
       },
       {
         "notification_date": "2025-10-24",
@@ -749,6 +749,15 @@
         "in_progress": false
       },
       {
+        "notification_date": "2026-04-28",
+        "business_days": 25,
+        "calendar_days": 36,
+        "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
+        "merger_id": "MN-60011",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
         "notification_date": "2026-05-05",
         "business_days": 17,
         "calendar_days": 23,
@@ -804,18 +813,18 @@
       }
     ],
     "stats": {
-      "average": 18.1,
+      "average": 19.7,
       "median": 17,
       "min": 15,
-      "max": 36,
-      "count": 85
+      "max": 148,
+      "count": 87
     },
     "calendar_stats": {
-      "average": 27.3,
-      "median": 25,
+      "average": 29.8,
+      "median": 26,
       "min": 21,
-      "max": 55,
-      "count": 85
+      "max": 235,
+      "count": 87
     }
   },
   "waiver_duration": {
