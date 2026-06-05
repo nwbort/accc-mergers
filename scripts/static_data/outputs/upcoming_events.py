@@ -22,10 +22,15 @@ def generate(mergers: list, days_ahead: int = 60) -> dict:
 
     events = []
 
-    # Skip waivers + suspended assessments and already-determined mergers
+    # Skip waivers + suspended assessments and already-determined mergers.
+    # Check both determination_publication_date and accc_determination: the
+    # ACCC sometimes publishes the determination outcome before the date field
+    # is scraped (e.g. an early Phase 2 determination), so relying solely on
+    # determination_publication_date can leave stale "due" events on the board.
     candidate_mergers = [
         m for m in exclude_for_public_output(mergers)
         if not m.get('determination_publication_date')
+        and not m.get('accc_determination')
     ]
 
     for m in candidate_mergers:

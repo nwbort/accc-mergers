@@ -1749,12 +1749,12 @@
     },
     {
       "merger_id": "MN-60011",
-      "merger_name": "Barro Group / BQC Quarries and Burdekin Concrete",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-04-28T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-03T12:00:00Z",
       "end_of_determination_period": "2026-06-11T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1766,19 +1766,14 @@
       ],
       "targets": [
         {
-          "name": "BQC Registrations Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "613 361 041"
-        },
-        {
-          "name": "BQC SANDS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "92 662 904 190"
-        },
-        {
           "name": "M&T Populin Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "092 648 078"
+        },
+        {
+          "name": "BQC Registrations Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "613 361 041"
         },
         {
           "name": "TWIN ROCK PTY. LTD.",
@@ -1786,14 +1781,19 @@
           "identifier": "84 092 733 867"
         },
         {
-          "name": "COLEVALE ESTATES PTY LTD & M & T POPULIN PTY LTD & TWIN ROCK PTY LTD",
+          "name": "BQC SANDS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "14 440 726 153"
+          "identifier": "92 662 904 190"
         },
         {
           "name": "BURDEKIN CONCRETE PTY. LTD.",
           "identifier_type": "ABN",
           "identifier": "25 010 095 253"
+        },
+        {
+          "name": "COLEVALE ESTATES PTY LTD & M & T POPULIN PTY LTD & TWIN ROCK PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 440 726 153"
         }
       ],
       "other_parties": [
@@ -2741,11 +2741,11 @@
     {
       "merger_id": "MN-15015",
       "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-06T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-04T12:00:00Z",
       "end_of_determination_period": "2026-06-19T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -2769,14 +2769,14 @@
           "identifier": "IRS EIN  812878769"
         },
         {
-          "name": "3M Company",
-          "identifier_type": null,
-          "identifier": "IRS EIN  41041777"
-        },
-        {
           "name": "Madison Industrial Solutions Corporation",
           "identifier_type": null,
           "identifier": "State of Delaware, Division of Corporations  5633530"
+        },
+        {
+          "name": "3M Company",
+          "identifier_type": null,
+          "identifier": "IRS EIN  41041777"
         }
       ],
       "anzsic_codes": [

@@ -1,6 +1,315 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-90008",
+      "merger_name": "Black Rhino - Club Hotel Motel Roma",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-06T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "The Trustee for Light Them Up (Roma) Trust",
+          "identifier_type": "ABN",
+          "identifier": "17 705 523 498"
+        },
+        {
+          "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "21 693 060 187"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
+          "identifier_type": "ABN",
+          "identifier": "95 506 126 845"
+        },
+        {
+          "name": "SPEEDY COCKTAILS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 619 330 255"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        },
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/black-rhino-club-hotel-motel-roma"
+    },
+    {
+      "merger_id": "MN-95021",
+      "merger_name": "Logic Technologies - Ace Communication Distributors",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-06T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "CSE-GLOBAL (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 109 958 090"
+        },
+        {
+          "name": "LOGIC TECHNOLOGIES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 071 025 084"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ACE COMMUNICATION DISTRIBUTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "75 103 761 011"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3493",
+          "name": "Telecommunication Goods Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/logic-technologies-ace-communication-distributors"
+    },
+    {
+      "merger_id": "WA-35020",
+      "merger_name": "Respect Group - Jallarah Homes",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "determination_publication_date": "2026-06-01T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "RESPECT GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "74 121 263 545"
+        }
+      ],
+      "targets": [
+        {
+          "name": "JALLARAH HOMES INC",
+          "identifier_type": "ABN",
+          "identifier": "13 238 944 953"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "8601",
+          "name": "Aged Care Residential Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/respect-group-jallarah-homes"
+    },
+    {
+      "merger_id": "WA-35021",
+      "merger_name": "BUSS Queensland \u2013 Additional interest in Duxton Vineyards",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "BUSS (QUEENSLAND) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "15 065 081 281"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DUXTON VINEYARDS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "26 668 025 545"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "BNP Paribas S.A",
+          "identifier_type": null,
+          "identifier": "ARBN  000 000 117"
+        },
+        {
+          "name": "BNP PARIBAS NOMINEES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "54 084 150 023"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1214",
+          "name": "Wine and Other Alcoholic Beverage Manufacturing"
+        },
+        {
+          "code": "6330",
+          "name": "Superannuation Funds"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/buss-queensland-%E2%80%93-additional-interest-in-duxton-vineyards"
+    },
+    {
+      "merger_id": "WA-95020",
+      "merger_name": "Grant Thornton Advisors - Grant Thornton Australia",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Turbo Fast Track Buyer Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "696 951 541"
+        }
+      ],
+      "targets": [
+        {
+          "name": "GRANT THORNTON AUSTRALIA LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "41 127 556 389"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Turbo EMEA Holdings B.V.",
+          "identifier_type": null,
+          "identifier": "Registered with the Dutch Chamber of Commerce under number 96427930"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6932",
+          "name": "Accounting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/grant-thornton-advisors-grant-thornton-australia"
+    },
+    {
+      "merger_id": "MN-25026",
+      "merger_name": "Tibaldi - South Food Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "TIBALDI (AUST) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 664 117 248"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SOUTH FOOD GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "97 006 891 292"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CHESTNUT AVENUE AUSTRALIA PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "85 667 250 688"
+        },
+        {
+          "name": "CHESTNUT PROPERTY AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "56 664 974 421"
+        },
+        {
+          "name": "TIBALDI AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "20 664 117 257"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1113",
+          "name": "Cured Meat and Smallgoods Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tibaldi-south-food-group"
+    },
+    {
+      "merger_id": "MN-30012",
+      "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "ENDEAVOUR GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "77 159 767 843"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Bottlemart Muswellbrook",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "JABETIN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "62 001 588 496"
+        },
+        {
+          "name": "UPPER HUNTER MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 001 740 218"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/endeavour-group-%E2%80%93-retail-liquor-store-in-muswellbrook-nsw"
+    },
+    {
       "merger_id": "MN-30016",
       "merger_name": "Zurich - Beazley",
       "status": "Under assessment",
@@ -26,17 +335,17 @@
       ],
       "other_parties": [
         {
-          "name": "Zurich Assure Australia Pty Ltd",
+          "name": "Cover-More Group",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Australia Insurance Limited",
           "identifier_type": null,
           "identifier": ""
         },
         {
           "name": "Zurich Financial Services Australia Limited",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Insite Holdings Pty Limited",
           "identifier_type": null,
           "identifier": ""
         },
@@ -51,17 +360,7 @@
           "identifier": ""
         },
         {
-          "name": "Cover-More Group",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Zurich Australia Insurance Limited",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Zurich Finance (Australia) Limited",
+          "name": "Zurich Assure Australia Pty Ltd",
           "identifier_type": null,
           "identifier": ""
         },
@@ -71,12 +370,22 @@
           "identifier": ""
         },
         {
-          "name": "Zurich Australia Limited",
+          "name": "Insite Holdings Pty Limited",
           "identifier_type": null,
           "identifier": ""
         },
         {
           "name": "Zurich Australian Property Holdings Pty Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Australia Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Finance (Australia) Limited",
           "identifier_type": null,
           "identifier": ""
         }
@@ -92,6 +401,133 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/zurich-beazley"
+    },
+    {
+      "merger_id": "WA-55023",
+      "merger_name": "Vets Central - Claremont Veterinary Surgery",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005"
+        }
+      ],
+      "targets": [
+        {
+          "name": "D PETTET & E.E PETTET",
+          "identifier_type": "ABN",
+          "identifier": "30 143 398 487"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "MISTYCAT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "12 644 129 224"
+        },
+        {
+          "name": "VETS CENTRAL HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 652 812 256"
+        },
+        {
+          "name": "VETS CENTRAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 646 462 973"
+        },
+        {
+          "name": "KINGS ROAD VETERINARY SURGERY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "89 609 596 910"
+        },
+        {
+          "name": "VC OPERATIONS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 641 403 938"
+        },
+        {
+          "name": "Vets Central (New Zealand) Limited",
+          "identifier_type": null,
+          "identifier": "NZBN  9429051820992"
+        },
+        {
+          "name": "NORTHERN BEACHES VETERINARY HOSPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 650 961 541"
+        },
+        {
+          "name": "VC OPERATIONS (NSW) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 646 515 433"
+        },
+        {
+          "name": "FACEBARK PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "71 154 736 884"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        },
+        {
+          "code": "9539",
+          "name": "Other Personal Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-claremont-veterinary-surgery"
+    },
+    {
+      "merger_id": "WA-75024",
+      "merger_name": "KfW \u2013 KNDS N.V.",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Kreditanstalt f\u00fcr Wiederaufbau",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "KNDS N.V.",
+          "identifier_type": null,
+          "identifier": "64277925"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "German Federal Ministry of Economic Affairs and Energy",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "German Federal Ministry of Defence",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2469",
+          "name": "Other Specialised Machinery and Equipment Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kfw-%E2%80%93-knds-nv"
     },
     {
       "merger_id": "MN-05014",
@@ -119,89 +555,9 @@
       ],
       "other_parties": [
         {
-          "name": "SMILE PARTNERS (WA3) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "49 675 791 572"
-        },
-        {
-          "name": "Armitage Services IVA Pty Ltd",
+          "name": "Redcat Bidco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "665 389 104"
-        },
-        {
-          "name": "DEMI EDUCATION GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "58 652 798 126"
-        },
-        {
-          "name": "NEWCASTLE WEIGHING SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "36 001 344 430"
-        },
-        {
-          "name": "MEDIQUIP HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "69 628 866 731"
-        },
-        {
-          "name": "IRON CAPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "61 623 379 797"
-        },
-        {
-          "name": "SMILE PARTNERS (WA1) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "27 662 001 925"
-        },
-        {
-          "name": "SMILE PARTNERS (OCEAN) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 625 040 744"
-        },
-        {
-          "name": "SMILE PARTNERS (VIC2) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "95 683 484 764"
-        },
-        {
-          "name": "SMILE PARTNERS (WA2) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "98 674 927 943"
-        },
-        {
-          "name": "OUTLINE GLOBAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 122 481 341"
-        },
-        {
-          "name": "SMILE PARTNERS (KNOX CITY) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "36 616 447 646"
-        },
-        {
-          "name": "SMILE PARTNERS (VIC1) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "22 682 367 899"
-        },
-        {
-          "name": "ARMITAGE ASSOCIATES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "87 611 079 157"
-        },
-        {
-          "name": "SMILE PARTNERS (NSW2) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "26 689 905 799"
-        },
-        {
-          "name": "MAXLIFE CARE CORP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "22 644 546 494"
-        },
-        {
-          "name": "ICG CAPITAL MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "77 679 496 201"
+          "identifier": "683 178 921"
         },
         {
           "name": "SMILE PARTNERS (NORWEST) PTY LTD",
@@ -209,39 +565,9 @@
           "identifier": "89 653 164 795"
         },
         {
-          "name": "SMILE PARTNERS (QLD1) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 691 675 180"
-        },
-        {
-          "name": "WASTECH GROUP PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "61 637 049 293"
-        },
-        {
-          "name": "SMILE PARTNERS MIDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 693 759 894"
-        },
-        {
-          "name": "SASH HOLDCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "91 616 570 560"
-        },
-        {
-          "name": "REDCAT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "88 090 409 920"
-        },
-        {
-          "name": "The Trustee for SHRIKA",
-          "identifier_type": "ABN",
-          "identifier": "83 315 233 206"
-        },
-        {
-          "name": "TECALA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "67 653 440 405"
+          "name": "TNG1 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "682 275 234"
         },
         {
           "name": "THERAPYNOW PTY LTD",
@@ -249,54 +575,19 @@
           "identifier": "17 662 216 104"
         },
         {
-          "name": "BLUEFIT GROUP PTY LTD",
+          "name": "MAXLIFE CARE CORP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "15 623 370 552"
+          "identifier": "22 644 546 494"
         },
         {
-          "name": "Redcat Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "683 178 921"
-        },
-        {
-          "name": "SMILE PARTNERS (AUS) HOLDINGS PTY LTD",
+          "name": "SASH HOLDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "63 614 373 778"
+          "identifier": "91 616 570 560"
         },
         {
-          "name": "Armitage Associates Services Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "614 677 708"
-        },
-        {
-          "name": "SMILE PARTNERS (NSW1) PTY LTD",
+          "name": "TECALA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "80 679 220 350"
-        },
-        {
-          "name": "SMILE PARTNERS (MYSMILE) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "54 620 594 916"
-        },
-        {
-          "name": "SMILE PARTNERS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 607 013 561"
-        },
-        {
-          "name": "TNG1 Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "682 275 234"
-        },
-        {
-          "name": "COLTERLEC HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "51 614 738 608"
-        },
-        {
-          "name": "SMILE PARTNERS (INSTYLE) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "61 625 040 520"
+          "identifier": "67 653 440 405"
         },
         {
           "name": "SMILE PARTNERS (GOLD COAST) PTY LTD",
@@ -304,14 +595,159 @@
           "identifier": "73 669 437 656"
         },
         {
+          "name": "ICG CAPITAL MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "77 679 496 201"
+        },
+        {
           "name": "NWS Topco Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "688 200 795"
         },
         {
+          "name": "OUTLINE GLOBAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 122 481 341"
+        },
+        {
+          "name": "SMILE PARTNERS MIDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "54 693 759 894"
+        },
+        {
+          "name": "COLTERLEC HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "51 614 738 608"
+        },
+        {
+          "name": "Armitage Services IVA Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "665 389 104"
+        },
+        {
+          "name": "Armitage Associates Services Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "614 677 708"
+        },
+        {
+          "name": "SMILE PARTNERS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 607 013 561"
+        },
+        {
+          "name": "ARMITAGE ASSOCIATES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "87 611 079 157"
+        },
+        {
+          "name": "SMILE PARTNERS (VIC1) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 682 367 899"
+        },
+        {
+          "name": "DEMI EDUCATION GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "58 652 798 126"
+        },
+        {
+          "name": "REDCAT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "88 090 409 920"
+        },
+        {
+          "name": "NEWCASTLE WEIGHING SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "36 001 344 430"
+        },
+        {
+          "name": "SMILE PARTNERS (NSW2) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "26 689 905 799"
+        },
+        {
+          "name": "SMILE PARTNERS (MYSMILE) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "54 620 594 916"
+        },
+        {
+          "name": "SMILE PARTNERS (QLD1) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "38 691 675 180"
+        },
+        {
+          "name": "SMILE PARTNERS (WA3) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "49 675 791 572"
+        },
+        {
+          "name": "MEDIQUIP HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "69 628 866 731"
+        },
+        {
+          "name": "WASTECH GROUP PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "61 637 049 293"
+        },
+        {
+          "name": "SMILE PARTNERS (AUS) HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "63 614 373 778"
+        },
+        {
+          "name": "SMILE PARTNERS (OCEAN) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 625 040 744"
+        },
+        {
+          "name": "BLUEFIT GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "15 623 370 552"
+        },
+        {
+          "name": "SMILE PARTNERS (WA2) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "98 674 927 943"
+        },
+        {
+          "name": "SMILE PARTNERS (KNOX CITY) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "36 616 447 646"
+        },
+        {
+          "name": "SMILE PARTNERS (INSTYLE) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "61 625 040 520"
+        },
+        {
+          "name": "SMILE PARTNERS (VIC2) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "95 683 484 764"
+        },
+        {
+          "name": "The Trustee for SHRIKA",
+          "identifier_type": "ABN",
+          "identifier": "83 315 233 206"
+        },
+        {
           "name": "MEHTA, ATUL",
           "identifier_type": "ABN",
           "identifier": "28 009 755 704"
+        },
+        {
+          "name": "SMILE PARTNERS (WA1) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "27 662 001 925"
+        },
+        {
+          "name": "SMILE PARTNERS (NSW1) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 679 220 350"
+        },
+        {
+          "name": "IRON CAPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "61 623 379 797"
         }
       ],
       "anzsic_codes": [
@@ -341,9 +777,9 @@
       ],
       "targets": [
         {
-          "name": "Olaplex, Inc.",
+          "name": "Olaplex Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware registration number: 7702123 (EIN: 843736163)"
+          "identifier": "Delaware registration number: 5923882 (EIN: 871242679)"
         },
         {
           "name": "Advent International, L.P.",
@@ -351,26 +787,31 @@
           "identifier": "Delaware registration number: 204418"
         },
         {
-          "name": "Olaplex Holdings, Inc.",
+          "name": "Olaplex, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware registration number: 5923882 (EIN: 871242679)"
+          "identifier": "Delaware registration number: 7702123 (EIN: 843736163)"
         }
       ],
       "other_parties": [
-        {
-          "name": "Henkel Singapore Pte Ltd",
-          "identifier_type": null,
-          "identifier": "Singapore registration number (UEN): 198304615H"
-        },
         {
           "name": "Henkel Australia Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "82 001 302 996"
         },
         {
+          "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH",
+          "identifier_type": null,
+          "identifier": "Germany registration number (HRB): 35906"
+        },
+        {
           "name": "Henkel Global Supply Chain B.V.",
           "identifier_type": null,
           "identifier": "Netherlands registration number (KVK): 854017447; CCI 60683945"
+        },
+        {
+          "name": "Henkel AG & Co. KGaA",
+          "identifier_type": null,
+          "identifier": "Germany registration number (HRB): 4724"
         },
         {
           "name": "Platina Cosm\u00e9ticos Ltda (dba Skala)",
@@ -383,14 +824,9 @@
           "identifier": "Ireland registration number: 430837"
         },
         {
-          "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH",
+          "name": "Henkel Singapore Pte Ltd",
           "identifier_type": null,
-          "identifier": "Germany registration number (HRB): 35906"
-        },
-        {
-          "name": "Henkel AG & Co. KGaA",
-          "identifier_type": null,
-          "identifier": "Germany registration number (HRB): 4724"
+          "identifier": "Singapore registration number (UEN): 198304615H"
         },
         {
           "name": "Henkel Finance Australia L.P.",
@@ -418,6 +854,48 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/henkel-%E2%80%93-olaplex"
+    },
+    {
+      "merger_id": "WA-60020",
+      "merger_name": "Metro Petroleum \u2013 Retail sites part of divestiture remedy from Ampol-EG acquisition",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-26T12:00:00Z",
+      "determination_publication_date": "2026-06-03T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "DIB GROUP PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "87 002 889 474"
+        }
+      ],
+      "targets": [
+        {
+          "name": "AMPOL AUSTRALIA PETROLEUM PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "17 000 032 128"
+        },
+        {
+          "name": "AMPOL RETAIL HOLDING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 689 777 704"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4000",
+          "name": "Fuel Retailing"
+        },
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/metro-petroleum-%E2%80%93-retail-sites-part-of-divestiture-remedy-from-ampol-eg-acquisition"
     },
     {
       "merger_id": "MN-50009",
@@ -510,14 +988,14 @@
       ],
       "targets": [
         {
-          "name": "The Trustee for FRANCK PAGE #3 TRUST",
-          "identifier_type": "ABN",
-          "identifier": "65 158 640 539"
-        },
-        {
           "name": "COASTAL DENTAL CARE AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "39 617 360 460"
+        },
+        {
+          "name": "The Trustee for FRANCK PAGE #3 TRUST",
+          "identifier_type": "ABN",
+          "identifier": "65 158 640 539"
         }
       ],
       "other_parties": [
@@ -534,6 +1012,368 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/impression-dental-group-coastal-dental-care"
+    },
+    {
+      "merger_id": "MN-20023",
+      "merger_name": "Sony Music - Recognition Music",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-02T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-15T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "SMG-Three LLC",
+          "identifier_type": null,
+          "identifier": "DDC  10277876"
+        },
+        {
+          "name": "Sony Music Publishing (US) LLC",
+          "identifier_type": null,
+          "identifier": "DDC  2558200"
+        },
+        {
+          "name": "Orion BidCo LLC",
+          "identifier_type": null,
+          "identifier": "DDC  10608976"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Recognition Music Group (Delaware) L.P.",
+          "identifier_type": null,
+          "identifier": "DDC  6193972"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Candle Media LLC",
+          "identifier_type": null,
+          "identifier": "DDC  6119562"
+        },
+        {
+          "name": "SESAC Holdings, Inc",
+          "identifier_type": null,
+          "identifier": "NY DOS ID  1652738"
+        },
+        {
+          "name": "Blackstone Inc",
+          "identifier_type": null,
+          "identifier": "DDC  4315990"
+        },
+        {
+          "name": "National Exhibition Centre Limited",
+          "identifier_type": null,
+          "identifier": "CRN  00979395"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5521",
+          "name": "Music Publishing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sony-music-recognition-music"
+    },
+    {
+      "merger_id": "MN-35019",
+      "merger_name": "Precision Poultry - VOAG chicken farming operations",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-02T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-15T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "PRECISION POULTRY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "63 695 837 579"
+        }
+      ],
+      "targets": [
+        {
+          "name": "VOAG 6 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "75 606 446 735"
+        },
+        {
+          "name": "VOAG 2 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 606 445 747"
+        },
+        {
+          "name": "VOAG 5 PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "606 446 039"
+        },
+        {
+          "name": "VOAG 3 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 606 445 809"
+        },
+        {
+          "name": "VOAG PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "84 606 381 597"
+        },
+        {
+          "name": "VOAG 4 PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "606 447 572"
+        },
+        {
+          "name": "VOAG 1 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "12 606 445 658"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "PRECISION POULTRY HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "42 695 837 426"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0171",
+          "name": "Poultry Farming (Meat)"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/precision-poultry-voag-chicken-farming-operations"
+    },
+    {
+      "merger_id": "MN-70020",
+      "merger_name": "CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-02T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-15T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "35 667 654 686"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NEWMAN VET PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 633 313 149"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "CVS (AUSTRALIA) HOLDINGS PROPRIETARY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "25 667 652 520"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvs-group-%E2%80%93-paws-at-prospect-vet-and-eyes-at-prospect-vet"
+    },
+    {
+      "merger_id": "MN-20014",
+      "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-03T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-16T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "NATIONAL AUSTRALIA INVESTMENT CAPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "27 073 242 010"
+        },
+        {
+          "name": "WESTPAC BANKING CORPORATION",
+          "identifier_type": "ABN",
+          "identifier": "33 007 457 141"
+        },
+        {
+          "name": "NATIONAL AUSTRALIA BANK LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "12 004 044 937"
+        },
+        {
+          "name": "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 005 357 522"
+        },
+        {
+          "name": "COMMONWEALTH BANK OF AUSTRALIA",
+          "identifier_type": "ABN",
+          "identifier": "48 123 123 124"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Australian Cash Services (JVCo)",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6221",
+          "name": "Banking"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/anz-cba-nab-and-westpac-%E2%80%93-shares-in-joint-venture-and-interests-in-joint-cash-pool"
+    },
+    {
+      "merger_id": "MN-80014",
+      "merger_name": "ANZ Banking Group - Worldline Australia",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-03T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-16T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 005 357 522"
+        }
+      ],
+      "targets": [
+        {
+          "name": "WORLDLINE AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "50 645 073 034"
+        },
+        {
+          "name": "Worldline SA",
+          "identifier_type": null,
+          "identifier": "VATIN FR01378901946"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/anz-banking-group-worldline-australia"
+    },
+    {
+      "merger_id": "MN-40020",
+      "merger_name": "Premier Fresh \u2013 Domenico Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-04T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-17T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "PREMIER FRESH AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "87 004 843 556"
+        }
+      ],
+      "targets": [
+        {
+          "name": "De Domenico Carmelo",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "NORTH QUEENSLAND IQF PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "32 070 037 795"
+        },
+        {
+          "name": "DOUBLE D PRODUCE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "86 074 625 004"
+        },
+        {
+          "name": "C.A. DE DOMENICO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 102 487 963"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "COL JOHNSON & CO. PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 097 104 606"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0123",
+          "name": "Vegetable Growing (Outdoors)"
+        },
+        {
+          "code": "1140",
+          "name": "Fruit and Vegetable Processing"
+        },
+        {
+          "code": "3605",
+          "name": "Fruit and Vegetable Wholesaling"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/premier-fresh-%E2%80%93-domenico-group"
+    },
+    {
+      "merger_id": "MN-50019",
+      "merger_name": "Coles \u2013 supermarket site in Lidcombe (NSW)",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-04T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-17T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 004 189 708"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BUILTCOM PROPERTIES 11 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "21 648 938 710"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-lidcombe-nsw"
     }
   ],
   "page": 7,

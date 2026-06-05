@@ -1,0 +1,137 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/anz-banking-group-worldline-australia",
+  "merger_name": "ANZ Banking Group - Worldline Australia",
+  "status": "Under assessment",
+  "merger_id": "MN-80014",
+  "effective_notification_datetime": "2026-06-03T12:00:00Z",
+  "original_notification_datetime": "2026-06-03T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-07-16T12:00:00Z",
+  "page_modified_datetime": "2026-06-05T15:21:57+10:00",
+  "consultation_response_due_date": "2026-06-11T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "11 005 357 522"
+    }
+  ],
+  "targets": [
+    {
+      "name": "WORLDLINE AUSTRALIA PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "50 645 073 034"
+    },
+    {
+      "name": "Worldline SA",
+      "identifier_type": null,
+      "identifier": "VATIN FR01378901946"
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "6419",
+      "name": "Other Auxiliary Finance and Investment Services"
+    }
+  ],
+  "merger_description": "Australia and New Zealand Banking Group Limited (ANZ), an entity within a group of companies ultimately held by ANZ Group Holdings Limited (ANZ group), proposes to acquire Worldline SA (WL)\u2019s interest in Worldline Australia Pty Ltd, trading as ANZ Worldline Payment Solutions (ANZWL), under a share sale and purchase agreement. ANZWL is currently a joint venture between ANZ and WL (the Parties), with ANZ group holding 49% and WL holding 51% of the share capital of ANZWL. Following the acquisition, ANZ group will wholly own ANZWL.\n\nANZ Group Holdings Limited is an ASX-listed financial services company. ANZ provides a range of banking products and services to retail and business customers in Australia and New Zealand, and to institutional customers globally.\n\nWL is a global merchant acquiring business, headquartered in France, and Europe\u2019s largest merchant acquiring services provider. WL provides payment acceptance services and products to business customers internationally, including mobile authentication, digital banking, mobile payments and wallets, omni-commerce services, and account-to-account payments.\n\nANZWL was established in April 2022 when ANZ divested its merchant acquiring services business and referred business customers who required merchant acquiring services to ANZWL. The joint venture was intended to deliver enhanced payment solutions to ANZ\u2019s merchant customers, while allowing ANZ group to retain a significant ownership interest and an ongoing commercial relationship with the business.\n\nThe Parties overlap in the supply of payment solutions, including merchant acquiring, acceptance and value-added services, to business customers in Australia.",
+  "events": [
+    {
+      "date": "2026-06-04T12:00:00Z",
+      "title": "ANZ Banking Group - Worldline Australia - Questionnaire",
+      "display_title": "ANZ Banking Group - Worldline Australia - Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/ANZ%20Banking%20Group%20-%20Worldline%20Australia%20-%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-80014/ANZ Banking Group - Worldline Australia - Questionnaire.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-06-03T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-45002",
+      "merger_name": "eBay - Depop",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "eBay Inc.",
+          "identifier_type": null,
+          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Etsy, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Depop Limited",
+          "identifier_type": null,
+          "identifier": "UK Company Registration Number  08316342"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15010",
+      "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 167 960 018"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BMM PARTNERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 649 113 959"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-40016",
+      "merger_name": "Creative Planning \u2013 MASECO",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CP Britannia Bidco Limited",
+          "identifier_type": null,
+          "identifier": "Jersey Financial Services Commission  163400"
+        },
+        {
+          "name": "Creative Planning Holdco, LLC",
+          "identifier_type": null,
+          "identifier": "SEC  801 7725610"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MASECO LLP",
+          "identifier_type": null,
+          "identifier": "United Kingdom  OC337650"
+        }
+      ]
+    }
+  ]
+}

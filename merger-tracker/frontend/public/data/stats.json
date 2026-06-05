@@ -1,62 +1,62 @@
 {
-  "total_mergers": 121,
-  "total_waivers": 184,
+  "total_mergers": 128,
+  "total_waivers": 194,
   "by_status": {
-    "Assessment completed": 80,
+    "Assessment completed": 87,
     "Under assessment": 41
   },
   "by_determination": {
-    "Approved": 80,
+    "Approved": 86,
     "Referred to phase 2": 4
   },
   "by_waiver_determination": {
-    "Approved": 171,
-    "Not approved": 13
+    "Approved": 180,
+    "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 27.5375,
+    "average_days": 29.804597701149426,
     "median_days": 26,
-    "average_business_days": 18.25,
+    "average_business_days": 19.71264367816092,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 18,
-        "percentage": 22.5
+        "count": 20,
+        "percentage": 23.0
       },
       "day20": {
-        "count": 63,
-        "percentage": 78.8
+        "count": 68,
+        "percentage": 78.2
       },
       "day30": {
-        "count": 79,
-        "percentage": 98.8
+        "count": 85,
+        "percentage": 97.7
       }
     }
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 37
+      "count": 38
     },
     {
       "name": "Computer System Design and Related Services",
       "count": 36
     },
     {
+      "name": "Other Auxiliary Finance and Investment Services",
+      "count": 27
+    },
+    {
       "name": "Software Publishing",
       "count": 26
     },
     {
-      "name": "Other Auxiliary Finance and Investment Services",
-      "count": 26
-    },
-    {
       "name": "Non-Residential Property Operators",
-      "count": 14
+      "count": 16
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 14
+      "count": 15
     },
     {
       "name": "Liquor Retailing",
@@ -71,109 +71,109 @@
       "count": 11
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
+      "name": "Supermarket and Grocery Stores",
       "count": 9
     }
   ],
   "recent_mergers": [
     {
-      "merger_id": "MN-50009",
-      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+      "merger_id": "MN-40020",
+      "merger_name": "Premier Fresh \u2013 Domenico Group",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-05-28T12:00:00Z",
+      "effective_notification_datetime": "2026-06-04T12:00:00Z",
       "is_waiver": false
     },
     {
-      "merger_id": "MN-90015",
-      "merger_name": "Impression Dental Group - Coastal Dental Care",
+      "merger_id": "MN-50019",
+      "merger_name": "Coles \u2013 supermarket site in Lidcombe (NSW)",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-05-28T12:00:00Z",
+      "effective_notification_datetime": "2026-06-04T12:00:00Z",
       "is_waiver": false
     },
     {
-      "merger_id": "MN-05014",
-      "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+      "merger_id": "MN-20014",
+      "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-05-26T12:00:00Z",
+      "effective_notification_datetime": "2026-06-03T12:00:00Z",
       "is_waiver": false
     },
     {
-      "merger_id": "MN-80016",
-      "merger_name": "Henkel \u2013 Olaplex",
+      "merger_id": "MN-80014",
+      "merger_name": "ANZ Banking Group - Worldline Australia",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-05-26T12:00:00Z",
+      "effective_notification_datetime": "2026-06-03T12:00:00Z",
       "is_waiver": false
     },
     {
-      "merger_id": "MN-25026",
-      "merger_name": "Tibaldi - South Food Group",
+      "merger_id": "MN-20023",
+      "merger_name": "Sony Music - Recognition Music",
       "status": "Under assessment",
       "accc_determination": null,
-      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "effective_notification_datetime": "2026-06-02T12:00:00Z",
       "is_waiver": false
     }
   ],
   "recent_determinations": [
     {
-      "merger_id": "WA-20022",
-      "merger_name": "PRIME Asia \u2013 Stockland Sienna Wood and Providence",
+      "merger_id": "WA-40024",
+      "merger_name": "Ampol \u2013 Freehold land acquisition in Chelsea Heights, Victoria",
       "determination": "Approved",
-      "determination_date": "2026-06-02T12:00:00Z",
-      "page_modified_datetime": "2026-06-02T17:37:17+10:00",
+      "determination_date": "2026-06-05T12:00:00Z",
+      "page_modified_datetime": "2026-06-05T16:42:38+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
     },
     {
-      "merger_id": "WA-80018",
-      "merger_name": "SOILCO - Go Grow",
+      "merger_id": "MN-90007",
+      "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
       "determination": "Approved",
-      "determination_date": "2026-06-02T12:00:00Z",
-      "page_modified_datetime": "2026-06-02T17:34:44+10:00",
+      "determination_date": "2026-06-05T12:00:00Z",
+      "page_modified_datetime": "2026-06-05T16:36:40+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
+      "merger_id": "MN-40019",
+      "merger_name": "Novartis - Excellergy",
+      "determination": "Approved",
+      "determination_date": "2026-06-04T12:00:00Z",
+      "page_modified_datetime": "2026-06-05T08:51:48+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
+      "merger_id": "WA-01101",
+      "merger_name": "INPEX \u2013 minority interests in Beetaloo development projects",
+      "determination": "Approved",
+      "determination_date": "2026-06-04T12:00:00Z",
+      "page_modified_datetime": "2026-06-04T17:47:18+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
     },
     {
-      "merger_id": "WA-20024",
-      "merger_name": "KK Group Invest - PowerCon",
+      "merger_id": "MN-75014",
+      "merger_name": "Seismic \u2013 Highspot",
       "determination": "Approved",
-      "determination_date": "2026-06-02T12:00:00Z",
-      "page_modified_datetime": "2026-06-02T17:32:10+10:00",
+      "determination_date": "2026-06-04T12:00:00Z",
+      "page_modified_datetime": "2026-06-04T17:10:35+10:00",
       "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
     },
     {
-      "merger_id": "WA-80017",
-      "merger_name": "Direct Couriers \u2013 Phoenix Transport",
+      "merger_id": "WA-05023",
+      "merger_name": "Apollo Capital Management \u2013 Questex Holdings Group",
       "determination": "Approved",
-      "determination_date": "2026-06-02T12:00:00Z",
-      "page_modified_datetime": "2026-06-02T17:24:53+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-40023",
-      "merger_name": "AUB \u2013 further interest in KJ Risk",
-      "determination": "Approved",
-      "determination_date": "2026-06-02T12:00:00Z",
-      "page_modified_datetime": "2026-06-02T17:14:15+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-80015",
-      "merger_name": "Star Hotels Group - Shafston Hotel, QLD",
-      "determination": "Approved",
-      "determination_date": "2026-06-02T12:00:00Z",
-      "page_modified_datetime": "2026-06-02T17:11:49+10:00",
+      "determination_date": "2026-06-04T12:00:00Z",
+      "page_modified_datetime": "2026-06-04T16:59:57+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

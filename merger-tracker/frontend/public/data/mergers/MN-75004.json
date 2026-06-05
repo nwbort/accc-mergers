@@ -144,9 +144,9 @@
     },
     {
       "merger_id": "MN-60011",
-      "merger_name": "Barro Group / BQC Quarries and Burdekin Concrete",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "acquirers": [
         {
           "name": "BQC Group Pty Ltd [yet to be incorporated]",
@@ -156,14 +156,14 @@
       ],
       "targets": [
         {
+          "name": "M&T Populin Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "092 648 078"
+        },
+        {
           "name": "BQC Registrations Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "613 361 041"
-        },
-        {
-          "name": "BQC SANDS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "92 662 904 190"
         }
       ]
     },

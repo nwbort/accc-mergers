@@ -735,12 +735,12 @@
     },
     {
       "merger_id": "MN-40019",
-      "merger_name": "Novartis / Excellergy",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "merger_name": "Novartis - Excellergy",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-12T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-04T12:00:00Z",
       "end_of_determination_period": "2026-06-25T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -759,6 +759,16 @@
       ],
       "other_parties": [
         {
+          "name": "NOVARTIS AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "81 004 371 224"
+        },
+        {
+          "name": "Novartis Finance Corporation",
+          "identifier_type": null,
+          "identifier": "US EIN 133922240"
+        },
+        {
           "name": "NOVARTIS PHARMACEUTICALS AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "18 004 244 160"
@@ -767,16 +777,6 @@
           "name": "EXCELLERGY AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "50 690 676 941"
-        },
-        {
-          "name": "Novartis Finance Corporation",
-          "identifier_type": null,
-          "identifier": "US EIN 133922240"
-        },
-        {
-          "name": "NOVARTIS AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "81 004 371 224"
         }
       ],
       "anzsic_codes": [
@@ -831,11 +831,11 @@
     {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-12T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-03T12:00:00Z",
       "end_of_determination_period": "2026-06-25T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -859,14 +859,19 @@
           "identifier": "48 638 953 572"
         },
         {
+          "name": "Consolidated Power Projects Australia Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "18 075 411 219"
+        },
+        {
           "name": "PSD Plant & Equipment Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "97 144 778 861"
         },
         {
-          "name": "PSD Energy Pty Ltd",
+          "name": "Nacap Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "68 117 966 926"
+          "identifier": "33 006 306 994"
         },
         {
           "name": "Intellect Systems Pty Ltd",
@@ -874,14 +879,9 @@
           "identifier": "11 115 885 348"
         },
         {
-          "name": "Consolidated Power Projects Australia Pty Ltd",
+          "name": "PSD Energy Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "18 075 411 219"
-        },
-        {
-          "name": "Nacap Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "33 006 306 994"
+          "identifier": "68 117 966 926"
         }
       ],
       "anzsic_codes": [
@@ -903,11 +903,11 @@
     {
       "merger_id": "MN-75014",
       "merger_name": "Seismic \u2013 Highspot",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-12T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-04T12:00:00Z",
       "end_of_determination_period": "2026-06-25T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -926,11 +926,6 @@
       ],
       "other_parties": [
         {
-          "name": "Helix Sub LLC",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  10492813"
-        },
-        {
           "name": "SEISMIC SOFTWARE PTY. LTD.",
           "identifier_type": "ABN",
           "identifier": "87 611 843 808"
@@ -944,6 +939,11 @@
           "name": "HIGHSPOT AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "11 653 327 649"
+        },
+        {
+          "name": "Helix Sub LLC",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  10492813"
         }
       ],
       "anzsic_codes": [
@@ -961,6 +961,50 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/seismic-%E2%80%93-highspot"
+    },
+    {
+      "merger_id": "WA-01100",
+      "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-12T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Ochre Health Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "79 101 069 452"
+        },
+        {
+          "name": "Ochre Group Commercial Property Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "645 244 882"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Airlie Womens Clinic Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "55 603 753 395"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Genesis Capital",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8511",
+          "name": "General Practice Medical Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ochre-health-airlie-womens-clinic-vic"
     },
     {
       "merger_id": "WA-45015",
@@ -1197,21 +1241,21 @@
     {
       "merger_id": "MN-90007",
       "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-14T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-05T12:00:00Z",
       "end_of_determination_period": "2026-06-29T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Volt Managed Investment Trust 1",
+          "name": "Volt Managed Investment Trust 2",
           "identifier_type": null,
           "identifier": ""
         },
         {
-          "name": "Volt Managed Investment Trust 2",
+          "name": "Volt Managed Investment Trust 1",
           "identifier_type": null,
           "identifier": ""
         }
@@ -1225,19 +1269,14 @@
       ],
       "other_parties": [
         {
+          "name": "The Trust Company (Australia) Limited (as trustee for Volt Managed Investment Trust 2)",
+          "identifier_type": "ABN",
+          "identifier": "21 000 000 993"
+        },
+        {
           "name": "HMC CAPITAL LIMITED",
           "identifier_type": "ABN",
           "identifier": "94 138 990 593"
-        },
-        {
-          "name": "The John Laing Group Limited",
-          "identifier_type": null,
-          "identifier": "UK Company No: 05975300"
-        },
-        {
-          "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)",
-          "identifier_type": null,
-          "identifier": ""
         },
         {
           "name": "HMC Energy Transition No. 3 Holdings Pty Ltd as trustee of the HMC Energy Transition No. 3 Trust",
@@ -1245,9 +1284,14 @@
           "identifier": "98 159 167 344"
         },
         {
-          "name": "The Trust Company (Australia) Limited (as trustee for Volt Managed Investment Trust 2)",
-          "identifier_type": "ABN",
-          "identifier": "21 000 000 993"
+          "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "The John Laing Group Limited",
+          "identifier_type": null,
+          "identifier": "UK Company No: 05975300"
         }
       ],
       "anzsic_codes": [
@@ -1514,6 +1558,74 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mastercard-bvnk"
+    },
+    {
+      "merger_id": "WA-01101",
+      "merger_name": "INPEX \u2013 minority interests in Beetaloo development projects",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-15T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "INPEX FSDA N&S PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 693 697 764"
+        },
+        {
+          "name": "INPEX BCD PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "32 696 382 948"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Daly Waters FSDA North Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "696 136 295"
+        },
+        {
+          "name": "Daly Waters Energy, LP",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Daly Waters BCD Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "696 136 277"
+        },
+        {
+          "name": "Daly Waters FSDA South Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "696 136 302"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "INPEX Corporation",
+          "identifier_type": null,
+          "identifier": "Stock Code 1605"
+        },
+        {
+          "name": "Tamboran Resources Corporation",
+          "identifier_type": "ABN",
+          "identifier": "20 961 904 383"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0700",
+          "name": "Oil and Gas Extraction"
+        },
+        {
+          "code": "1011",
+          "name": "Petroleum Exploration"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/inpex-%E2%80%93-minority-interests-in-beetaloo-development-projects"
     },
     {
       "merger_id": "WA-55019",
@@ -2148,6 +2260,53 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kk-group-invest-powercon"
     },
     {
+      "merger_id": "WA-25025",
+      "merger_name": "Laundy \u2013 Woy Woy Hotel",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-19T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "LAUNDY WOY FREEHOLD PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 696 471 306"
+        },
+        {
+          "name": "LAUNDY WOY TRADING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "29 696 470 345"
+        }
+      ],
+      "targets": [
+        {
+          "name": "HARVEST PUB OPERATIONS 2 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "51 652 748 242"
+        },
+        {
+          "name": "AMAL TRUSTEES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "98 609 737 064"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/laundy-%E2%80%93-woy-woy-hotel"
+    },
+    {
       "merger_id": "WA-55020",
       "merger_name": "BGIS - Safe Fire Electrical",
       "status": "Assessment completed",
@@ -2302,6 +2461,76 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/banijay-entertainment-%E2%80%93-all3media"
     },
     {
+      "merger_id": "WA-05023",
+      "merger_name": "Apollo Capital Management \u2013 Questex Holdings Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-20T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Apollo Capital Management, L.P.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Questex Holdings Group, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "7299",
+          "name": "Other Administrative Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/apollo-capital-management-%E2%80%93-questex-holdings-group"
+    },
+    {
+      "merger_id": "WA-40024",
+      "merger_name": "Ampol \u2013 Freehold land acquisition in Chelsea Heights, Victoria",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-20T12:00:00Z",
+      "determination_publication_date": "2026-06-05T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "AMPOL PETROLEUM PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 000 007 876"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Charalambous Family",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4000",
+          "name": "Fuel Retailing"
+        },
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ampol-%E2%80%93-freehold-land-acquisition-in-chelsea-heights-victoria"
+    },
+    {
       "merger_id": "MN-60015",
       "merger_name": "Stonepeak \u2013 Castrol",
       "status": "Under assessment",
@@ -2359,224 +2588,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/stonepeak-%E2%80%93-castrol"
-    },
-    {
-      "merger_id": "MN-90008",
-      "merger_name": "Black Rhino - Club Hotel Motel Roma",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-21T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-06T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "The Trustee for Light Them Up (Roma) Trust",
-          "identifier_type": "ABN",
-          "identifier": "17 705 523 498"
-        },
-        {
-          "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "21 693 060 187"
-        }
-      ],
-      "targets": [
-        {
-          "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
-          "identifier_type": "ABN",
-          "identifier": "95 506 126 845"
-        },
-        {
-          "name": "SPEEDY COCKTAILS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 619 330 255"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "4123",
-          "name": "Liquor Retailing"
-        },
-        {
-          "code": "4400",
-          "name": "Accommodation"
-        },
-        {
-          "code": "4520",
-          "name": "Pubs, Taverns and Bars"
-        },
-        {
-          "code": "6712",
-          "name": "Non-Residential Property Operators"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/black-rhino-club-hotel-motel-roma"
-    },
-    {
-      "merger_id": "MN-95021",
-      "merger_name": "Logic Technologies - Ace Communication Distributors",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-21T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-06T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "CSE-GLOBAL (AUSTRALIA) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 109 958 090"
-        },
-        {
-          "name": "LOGIC TECHNOLOGIES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "25 071 025 084"
-        }
-      ],
-      "targets": [
-        {
-          "name": "ACE COMMUNICATION DISTRIBUTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "75 103 761 011"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3493",
-          "name": "Telecommunication Goods Wholesaling"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/logic-technologies-ace-communication-distributors"
-    },
-    {
-      "merger_id": "WA-35020",
-      "merger_name": "Respect Group - Jallarah Homes",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-05-21T12:00:00Z",
-      "determination_publication_date": "2026-06-01T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "RESPECT GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "74 121 263 545"
-        }
-      ],
-      "targets": [
-        {
-          "name": "JALLARAH HOMES INC",
-          "identifier_type": "ABN",
-          "identifier": "13 238 944 953"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "8601",
-          "name": "Aged Care Residential Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/respect-group-jallarah-homes"
-    },
-    {
-      "merger_id": "MN-25026",
-      "merger_name": "Tibaldi - South Food Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-22T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-07T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "TIBALDI (AUST) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 664 117 248"
-        }
-      ],
-      "targets": [
-        {
-          "name": "SOUTH FOOD GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "97 006 891 292"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "TIBALDI AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "20 664 117 257"
-        },
-        {
-          "name": "CHESTNUT AVENUE AUSTRALIA PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "85 667 250 688"
-        },
-        {
-          "name": "CHESTNUT PROPERTY AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "56 664 974 421"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "1113",
-          "name": "Cured Meat and Smallgoods Manufacturing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tibaldi-south-food-group"
-    },
-    {
-      "merger_id": "MN-30012",
-      "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-22T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-07T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "ENDEAVOUR GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 159 767 843"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Bottlemart Muswellbrook",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "JABETIN PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "62 001 588 496"
-        },
-        {
-          "name": "UPPER HUNTER MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 001 740 218"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "4123",
-          "name": "Liquor Retailing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/endeavour-group-%E2%80%93-retail-liquor-store-in-muswellbrook-nsw"
     }
   ],
   "page": 6,
