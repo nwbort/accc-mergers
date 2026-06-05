@@ -113,6 +113,11 @@ function MergerDetail() {
     ? merger.events.find(event => event.is_determination_event)
     : null;
 
+  const statementOfReasonsEvent = merger.phase_2_determination
+    ? merger.events?.find(e => e.url_gh && e.title?.toLowerCase().includes('statement of reasons'))
+    : null;
+  const determinationDocUrl = statementOfReasonsEvent?.url_gh ?? determinationEvent?.url_gh;
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -256,9 +261,9 @@ function MergerDetail() {
                   Determination
                 </h3>
                 <p className="text-sm font-medium text-gray-900">
-                  {determinationEvent?.url_gh ? (
+                  {determinationDocUrl ? (
                     <a
-                      href={determinationEvent.url_gh}
+                      href={determinationDocUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
