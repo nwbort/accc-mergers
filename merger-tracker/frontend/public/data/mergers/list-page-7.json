@@ -1,6 +1,61 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-90008",
+      "merger_name": "Black Rhino - Club Hotel Motel Roma",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-06T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "The Trustee for Light Them Up (Roma) Trust",
+          "identifier_type": "ABN",
+          "identifier": "17 705 523 498"
+        },
+        {
+          "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "21 693 060 187"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
+          "identifier_type": "ABN",
+          "identifier": "95 506 126 845"
+        },
+        {
+          "name": "SPEEDY COCKTAILS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 619 330 255"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        },
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/black-rhino-club-hotel-motel-roma"
+    },
+    {
       "merger_id": "MN-95021",
       "merger_name": "Logic Technologies - Ace Communication Distributors",
       "status": "Under assessment",
