@@ -13328,32 +13328,12 @@
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
       "has_questionnaire": true,
+      "related_merger": {
+        "merger_id": "WA-10008",
+        "relationship": "refiled_from",
+        "merger_name": "Premier Fresh \u2013 Charles Domenico Group"
+      },
       "similar_mergers": [
-        {
-          "merger_id": "WA-10008",
-          "merger_name": "Premier Fresh \u2013 Charles Domenico Group",
-          "status": "Assessment completed",
-          "accc_determination": "Not approved",
-          "acquirers": [
-            {
-              "name": "PREMIER FRESH AUSTRALIA PTY LTD",
-              "identifier_type": "ABN",
-              "identifier": "87 004 843 556"
-            }
-          ],
-          "targets": [
-            {
-              "name": "Carmelo De Domenico",
-              "identifier_type": null,
-              "identifier": ""
-            },
-            {
-              "name": "C.A. DE DOMENICO PTY LTD",
-              "identifier_type": "ABN",
-              "identifier": "18 102 487 963"
-            }
-          ]
-        },
         {
           "merger_id": "WA-25017",
           "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
@@ -28949,6 +28929,11 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "related_merger": {
+        "merger_id": "MN-40020",
+        "relationship": "refiled_as",
+        "merger_name": "Premier Fresh \u2013 Domenico Group"
+      },
       "similar_mergers": [
         {
           "merger_id": "MN-60007",
