@@ -21,7 +21,7 @@ from parse_determination import (
 )
 from parse_questionnaire import extract_deadline, extract_questions, extract_questions_from_text, _extract_subpoints, _extract_bullets, _has_questionnaire_header
 from cutoff import is_waiver_merger, get_cutoff_date, should_skip_merger
-from extract_mergers import is_safe_url, get_serve_filename
+from extract_mergers import is_safe_url, get_serve_filename, _infer_determination_date_from_events
 
 
 # ---------------------------------------------------------------------------
@@ -909,6 +909,70 @@ class TestGetServeFilename:
 
     def test_other_extension_unchanged(self):
         assert get_serve_filename("image.png") == "image.png"
+
+
+# ---------------------------------------------------------------------------
+# extract_mergers: _infer_determination_date_from_events
+# ---------------------------------------------------------------------------
+
+class TestInferDeterminationDateFromEvents:
+    def _base(self):
+        return {
+            'accc_determination': 'Approved',
+            'determination_publication_date': None,
+            'events': [],
+        }
+
+    def test_infers_date_from_linked_determination_event(self):
+        m = self._base()
+        m['events'] = [
+            {'title': 'Phase 2 determination', 'date': '2026-06-02T12:00:00Z', 'url': 'https://accc.gov.au/det.pdf'},
+        ]
+        _infer_determination_date_from_events(m)
+        assert m['determination_publication_date'] == '2026-06-02T12:00:00Z'
+
+    def test_uses_earliest_date_when_multiple_events(self):
+        m = self._base()
+        m['events'] = [
+            {'title': 'Phase 2 determination - Summary', 'date': '2026-06-02T12:00:00Z', 'url': 'https://accc.gov.au/a.pdf'},
+            {'title': 'Phase 2 determination - Statement of reasons', 'date': '2026-06-02T12:00:00Z', 'url': 'https://accc.gov.au/b.pdf'},
+        ]
+        _infer_determination_date_from_events(m)
+        assert m['determination_publication_date'] == '2026-06-02T12:00:00Z'
+
+    def test_skips_events_without_url(self):
+        m = self._base()
+        m['events'] = [
+            {'title': 'Phase 2 determination', 'date': '2026-06-02T12:00:00Z'},  # no url
+        ]
+        _infer_determination_date_from_events(m)
+        assert m['determination_publication_date'] is None
+
+    def test_no_op_when_determination_publication_date_already_set(self):
+        m = self._base()
+        m['determination_publication_date'] = '2026-01-01T12:00:00Z'
+        m['events'] = [
+            {'title': 'Phase 2 determination', 'date': '2026-06-02T12:00:00Z', 'url': 'https://accc.gov.au/det.pdf'},
+        ]
+        _infer_determination_date_from_events(m)
+        assert m['determination_publication_date'] == '2026-01-01T12:00:00Z'
+
+    def test_no_op_when_no_accc_determination(self):
+        m = self._base()
+        m['accc_determination'] = None
+        m['events'] = [
+            {'title': 'Phase 2 determination', 'date': '2026-06-02T12:00:00Z', 'url': 'https://accc.gov.au/det.pdf'},
+        ]
+        _infer_determination_date_from_events(m)
+        assert m['determination_publication_date'] is None
+
+    def test_no_op_when_no_determination_events(self):
+        m = self._base()
+        m['events'] = [
+            {'title': 'Merger notified to ACCC', 'date': '2025-10-10T12:00:00Z', 'url': 'https://accc.gov.au/n.pdf'},
+        ]
+        _infer_determination_date_from_events(m)
+        assert m['determination_publication_date'] is None
 
 
 # ---------------------------------------------------------------------------

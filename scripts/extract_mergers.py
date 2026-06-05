@@ -561,6 +561,25 @@ def _dates_within_one_day(date1, date2):
     return abs((dt1.date() - dt2.date()).days) <= 1
 
 
+def _infer_determination_date_from_events(merger_data):
+    """Set determination_publication_date from linked determination events when absent.
+
+    The ACCC sometimes publishes the determination outcome and document links
+    before populating the structured date field on the page.  When accc_determination
+    is set but the HTML date field was absent, use the earliest linked determination
+    event's date as the publication date.
+    """
+    if not merger_data.get('accc_determination') or merger_data.get('determination_publication_date'):
+        return
+    det_events = [
+        e for e in merger_data.get('events', [])
+        if 'determination' in e.get('title', '').lower() and e.get('url')
+    ]
+    if det_events:
+        det_events.sort(key=lambda e: e.get('date', ''))
+        merger_data['determination_publication_date'] = det_events[0]['date']
+
+
 def _add_synthetic_events(merger_data):
     """Add notification and determination synthetic events if not already present."""
     events = merger_data['events']
@@ -667,6 +686,8 @@ def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers
         merger_data['events'] = _merge_events(
             scraped_events, existing_merger_data, merger_id, frozen_events_mergers
         )
+
+        _infer_determination_date_from_events(merger_data)
         _add_synthetic_events(merger_data)
 
         if field_overrides and merger_id in field_overrides:
