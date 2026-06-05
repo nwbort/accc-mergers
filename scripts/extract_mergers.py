@@ -566,8 +566,13 @@ def _infer_determination_date_from_events(merger_data):
 
     The ACCC sometimes publishes the determination outcome and document links
     before populating the structured date field on the page.  When accc_determination
-    is set but the HTML date field was absent, use the earliest linked determination
+    is set but the HTML date field was absent, use the latest linked determination
     event's date as the publication date.
+
+    Using the latest (not earliest) date is important for Phase 1 → Phase 2 mergers:
+    both phases can have linked determination documents in the events list, and the
+    Phase 2 determination is always dated after the Phase 1 referral document.
+    Taking the earliest would wrongly pick the Phase 1 date in that scenario.
     """
     if not merger_data.get('accc_determination') or merger_data.get('determination_publication_date'):
         return
@@ -576,8 +581,9 @@ def _infer_determination_date_from_events(merger_data):
         if 'determination' in e.get('title', '').lower() and e.get('url')
     ]
     if det_events:
-        det_events.sort(key=lambda e: e.get('date', ''))
-        merger_data['determination_publication_date'] = det_events[0]['date']
+        merger_data['determination_publication_date'] = max(
+            det_events, key=lambda e: e.get('date', '')
+        )['date']
 
 
 def _add_synthetic_events(merger_data):

@@ -931,11 +931,22 @@ class TestInferDeterminationDateFromEvents:
         _infer_determination_date_from_events(m)
         assert m['determination_publication_date'] == '2026-06-02T12:00:00Z'
 
-    def test_uses_earliest_date_when_multiple_events(self):
+    def test_uses_latest_date_when_multiple_events_same_day(self):
         m = self._base()
         m['events'] = [
             {'title': 'Phase 2 determination - Summary', 'date': '2026-06-02T12:00:00Z', 'url': 'https://accc.gov.au/a.pdf'},
             {'title': 'Phase 2 determination - Statement of reasons', 'date': '2026-06-02T12:00:00Z', 'url': 'https://accc.gov.au/b.pdf'},
+        ]
+        _infer_determination_date_from_events(m)
+        assert m['determination_publication_date'] == '2026-06-02T12:00:00Z'
+
+    def test_uses_latest_date_for_phase1_to_phase2_merger(self):
+        # Phase 1 determination document precedes Phase 2 determination document;
+        # we must pick the Phase 2 (latest) date, not the Phase 1 (earliest) date.
+        m = self._base()
+        m['events'] = [
+            {'title': 'Phase 1 determination - Referred to Phase 2', 'date': '2026-01-20T12:00:00Z', 'url': 'https://accc.gov.au/p1.pdf'},
+            {'title': 'Phase 2 determination', 'date': '2026-06-02T12:00:00Z', 'url': 'https://accc.gov.au/p2.pdf'},
         ]
         _infer_determination_date_from_events(m)
         assert m['determination_publication_date'] == '2026-06-02T12:00:00Z'
