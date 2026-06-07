@@ -181,11 +181,21 @@ def build_text_email(digest: dict) -> str:
     lines.append("")
     lines.append("")
 
-    cleared_rows = [
-        [m.get("merger_name", m["merger_id"]), format_date(m.get("determination_publication_date"))]
-        for m in digest["deals_cleared"]
-    ]
-    lines.append(_text_section("MERGERS APPROVED", ["Merger", "Date"], cleared_rows, "No mergers approved this week."))
+    cleared_mergers = digest["deals_cleared"]
+    cleared_title = "MERGERS APPROVED"
+    if not cleared_mergers:
+        lines.append(_text_section(cleared_title, ["Merger", "Date"], [], "No mergers approved this week."))
+    else:
+        cleared_groups = _cleared_groups(cleared_mergers)
+        cleared_lines = [cleared_title, "-" * len(cleared_title)]
+        for label, group_mergers in cleared_groups:
+            cleared_lines.append(f"\n{label}")
+            group_rows = [
+                [m.get("merger_name", m["merger_id"]), format_date(m.get("determination_publication_date"))]
+                for m in group_mergers
+            ]
+            cleared_lines.append(_text_table(["Merger", "Date"], group_rows))
+        lines.append("\n".join(cleared_lines))
     lines.append("")
     lines.append("")
 
@@ -365,6 +375,42 @@ def build_new_mergers(mergers: list) -> str:
     return section_table(hdr, cols, rows)
 
 
+def _cleared_phase(merger: dict) -> str:
+    """Return 'phase2', 'phase1', or 'merger' for a cleared deal."""
+    if merger.get("phase_2_determination") == "Approved":
+        return "phase2"
+    if merger.get("phase_1_determination") == "Approved":
+        return "phase1"
+    return "merger"
+
+
+def _cleared_groups(mergers: list) -> list[tuple[str, list]]:
+    """Return non-empty (label, items) groups sorted phase2→phase1→merger."""
+    phase2 = [m for m in mergers if _cleared_phase(m) == "phase2"]
+    phase1 = [m for m in mergers if _cleared_phase(m) == "phase1"]
+    general = [m for m in mergers if _cleared_phase(m) == "merger"]
+    return [
+        (label, items)
+        for label, items in [
+            ("Phase 2 – detailed assessment", phase2),
+            ("Phase 1 – initial assessment", phase1),
+            ("Waiver", general),
+        ]
+        if items
+    ]
+
+
+def _subheading_row(label: str, color: dict, num_cols: int) -> str:
+    return (
+        f'<tr><td colspan="{num_cols}" style="padding:5px 18px 4px;'
+        f'background:{color["pale"]}80;border-top:1px solid {color["border"]}22;'
+        f'border-bottom:1px solid {color["border"]}22;'
+        f'font-size:10px;font-weight:700;color:#6b7280;'
+        f'text-transform:uppercase;letter-spacing:0.07em;">'
+        f"{esc(label)}</td></tr>"
+    )
+
+
 def build_cleared(mergers: list) -> str:
     c = COLORS["cleared"]
     num_cols = 3
@@ -373,21 +419,24 @@ def build_cleared(mergers: list) -> str:
     if not mergers:
         rows = empty_row("No mergers approved this week.", c, num_cols)
     else:
+        groups = _cleared_groups(mergers)
         rows = ""
-        for m in mergers:
-            det = (
-                m.get("accc_determination")
-                or m.get("phase_1_determination")
-                or m.get("phase_2_determination")
-                or "Approved"
-            )
-            rows += (
-                f"<tr{_row_divider()}>"
-                f"{name_cell(m, c)}"
-                f"{date_cell(m.get('determination_publication_date'))}"
-                f"{text_cell(det, c['dark'])}"
-                f"</tr>"
-            )
+        for label, group_mergers in groups:
+            rows += _subheading_row(label, c, num_cols)
+            for m in group_mergers:
+                det = (
+                    m.get("accc_determination")
+                    or m.get("phase_1_determination")
+                    or m.get("phase_2_determination")
+                    or "Approved"
+                )
+                rows += (
+                    f"<tr{_row_divider()}>"
+                    f"{name_cell(m, c)}"
+                    f"{date_cell(m.get('determination_publication_date'))}"
+                    f"{text_cell(det, c['dark'])}"
+                    f"</tr>"
+                )
     return section_table(hdr, cols, rows)
 
 
