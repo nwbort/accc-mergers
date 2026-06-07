@@ -187,11 +187,9 @@ def build_text_email(digest: dict) -> str:
         lines.append(_text_section(cleared_title, ["Merger", "Date"], [], "No mergers approved this week."))
     else:
         cleared_groups = _cleared_groups(cleared_mergers)
-        show_cleared_subheadings = len(cleared_groups) > 1
         cleared_lines = [cleared_title, "-" * len(cleared_title)]
         for label, group_mergers in cleared_groups:
-            if show_cleared_subheadings:
-                cleared_lines.append(f"\n{label}")
+            cleared_lines.append(f"\n{label}")
             group_rows = [
                 [m.get("merger_name", m["merger_id"]), format_date(m.get("determination_publication_date"))]
                 for m in group_mergers
@@ -422,11 +420,9 @@ def build_cleared(mergers: list) -> str:
         rows = empty_row("No mergers approved this week.", c, num_cols)
     else:
         groups = _cleared_groups(mergers)
-        show_subheadings = len(groups) > 1
         rows = ""
         for label, group_mergers in groups:
-            if show_subheadings:
-                rows += _subheading_row(label, c, num_cols)
+            rows += _subheading_row(label, c, num_cols)
             for m in group_mergers:
                 det = (
                     m.get("accc_determination")

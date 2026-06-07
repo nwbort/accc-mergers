@@ -133,8 +133,6 @@ function ClearedSection({ mergers, getDeterminationPdf }) {
     { label: 'Waiver', items: general },
   ].filter(g => g.items.length > 0);
 
-  const showSubheadings = groups.length > 1;
-
   const renderRow = (merger) => (
     <tr key={merger.merger_id} className="relative hover:bg-cleared-pale/40 transition-colors">
       <MergerNameCell merger={merger} colorKey={colorKey} />
@@ -177,18 +175,16 @@ function ClearedSection({ mergers, getDeterminationPdf }) {
               </tr>
             </thead>
             <tbody className="divide-y divide-gray-50">
-              {showSubheadings
-                ? groups.map((group) => (
-                    <Fragment key={group.label}>
-                      <tr>
-                        <td colSpan={3} className="px-5 sm:px-6 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider bg-cleared-pale/20 border-t border-gray-100">
-                          {group.label}
-                        </td>
-                      </tr>
-                      {group.items.map(renderRow)}
-                    </Fragment>
-                  ))
-                : groups.flatMap(g => g.items).map(renderRow)}
+              {groups.map((group) => (
+                <Fragment key={group.label}>
+                  <tr>
+                    <td colSpan={3} className="px-5 sm:px-6 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider bg-cleared-pale/20 border-t border-gray-100">
+                      {group.label}
+                    </td>
+                  </tr>
+                  {group.items.map(renderRow)}
+                </Fragment>
+              ))}
             </tbody>
           </table>
         </div>
