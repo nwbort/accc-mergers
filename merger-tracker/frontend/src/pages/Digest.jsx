@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -111,6 +111,89 @@ function DeterminationCell({ merger, colorKey, defaultDetermination, getDetermin
         <span className="text-gray-600">{determination}</span>
       )}
     </td>
+  );
+}
+
+function ClearedSection({ mergers, getDeterminationPdf }) {
+  const colorKey = DIGEST_COLOR_KEYS.CLEARED;
+  const c = COLOR_CLASSES[colorKey];
+  const columns = ['Merger', 'Determination date', 'Determination'];
+
+  const phase2 = mergers.filter(m => m.phase_2_determination === MERGER_STATUS.APPROVED);
+  const phase1 = mergers.filter(
+    m => m.phase_1_determination === MERGER_STATUS.APPROVED && m.phase_2_determination !== MERGER_STATUS.APPROVED
+  );
+  const general = mergers.filter(
+    m => m.phase_2_determination !== MERGER_STATUS.APPROVED && m.phase_1_determination !== MERGER_STATUS.APPROVED
+  );
+
+  const groups = [
+    { label: 'Phase 2 – detailed assessment', items: phase2 },
+    { label: 'Phase 1 – initial assessment', items: phase1 },
+    { label: 'Merger', items: general },
+  ].filter(g => g.items.length > 0);
+
+  const showSubheadings = groups.length > 1;
+
+  const renderRow = (merger) => (
+    <tr key={merger.merger_id} className="relative hover:bg-cleared-pale/40 transition-colors">
+      <MergerNameCell merger={merger} colorKey={colorKey} />
+      <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+        {merger.determination_publication_date
+          ? formatDate(merger.determination_publication_date)
+          : 'N/A'}
+      </td>
+      <DeterminationCell
+        merger={merger}
+        colorKey={colorKey}
+        defaultDetermination={MERGER_STATUS.APPROVED}
+        getDeterminationPdf={getDeterminationPdf}
+      />
+    </tr>
+  );
+
+  return (
+    <div id="mergers-approved" className={`bg-white rounded-2xl border-l-4 ${c.borderLeft} border-t border-r border-b border-gray-100 shadow-card overflow-hidden`}>
+      <div className={`px-5 sm:px-6 py-4 border-b ${c.borderLight} bg-gradient-to-r ${c.headerBg} to-transparent`}>
+        <div className="flex items-center justify-between">
+          <h2 className="text-lg font-semibold text-gray-900">Mergers approved</h2>
+          <ScrollToTopButton />
+        </div>
+      </div>
+      {mergers.length === 0 ? (
+        <div className="px-5 sm:px-6 py-4">
+          <p className={`${c.emptyText} text-sm`}>No mergers approved this week</p>
+        </div>
+      ) : (
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-100">
+            <thead>
+              <tr className="bg-gray-50/80">
+                {columns.map((col) => (
+                  <th key={col} scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                    {col}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-50">
+              {showSubheadings
+                ? groups.map((group) => (
+                    <Fragment key={group.label}>
+                      <tr>
+                        <td colSpan={3} className="px-5 sm:px-6 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider bg-cleared-pale/20 border-t border-gray-100">
+                          {group.label}
+                        </td>
+                      </tr>
+                      {group.items.map(renderRow)}
+                    </Fragment>
+                  ))
+                : groups.flatMap(g => g.items).map(renderRow)}
+            </tbody>
+          </table>
+        </div>
+      )}
+    </div>
   );
 }
 
@@ -385,24 +468,9 @@ function Digest() {
             )}
           />
 
-          <DigestSection
-            id="mergers-approved"
-            title="Mergers approved"
-            emptyMessage="No mergers approved this week"
-            colorKey={DIGEST_COLOR_KEYS.CLEARED}
+          <ClearedSection
             mergers={digest.deals_cleared}
-            columns={['Merger', 'Determination date', 'Determination']}
-            renderRow={(merger) => (
-              <tr key={merger.merger_id} className="relative hover:bg-cleared-pale/40 transition-colors">
-                <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.CLEARED} />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                  {merger.determination_publication_date
-                    ? formatDate(merger.determination_publication_date)
-                    : 'N/A'}
-                </td>
-                <DeterminationCell merger={merger} colorKey={DIGEST_COLOR_KEYS.CLEARED} defaultDetermination={MERGER_STATUS.APPROVED} getDeterminationPdf={getDeterminationPdf} />
-              </tr>
-            )}
+            getDeterminationPdf={getDeterminationPdf}
           />
 
           <DigestSection
