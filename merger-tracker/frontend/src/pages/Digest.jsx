@@ -130,7 +130,7 @@ function ClearedSection({ mergers, getDeterminationPdf }) {
   const groups = [
     { label: 'Phase 2 – detailed assessment', items: phase2 },
     { label: 'Phase 1 – initial assessment', items: phase1 },
-    { label: 'Merger', items: general },
+    { label: 'Waiver', items: general },
   ].filter(g => g.items.length > 0);
 
   const showSubheadings = groups.length > 1;

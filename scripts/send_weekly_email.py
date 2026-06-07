@@ -396,7 +396,7 @@ def _cleared_groups(mergers: list) -> list[tuple[str, list]]:
         for label, items in [
             ("Phase 2 – detailed assessment", phase2),
             ("Phase 1 – initial assessment", phase1),
-            ("Merger", general),
+            ("Waiver", general),
         ]
         if items
     ]
