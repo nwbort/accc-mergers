@@ -8,11 +8,6 @@ function Footer() {
           <span className="font-semibold text-gray-600">Disclaimer:</span> This is an unofficial website created by{' '}
           <Link
             to="/nick-twort"
-            onClick={() => window.scrollTo({
-              top: 0,
-              left: 0,
-              behaviour: "smooth",
-            })}
             className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
           >
             Nick Twort
@@ -36,11 +31,6 @@ function Footer() {
           .{' '}
           <Link
             to="/privacy"
-            onClick={() => window.scrollTo({
-              top: 0,
-              left: 0,
-              behaviour: "smooth",
-            })}
             className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
           >
             Privacy Policy
