@@ -1,6 +1,6 @@
 {
   "total_mergers": 128,
-  "total_waivers": 194,
+  "total_waivers": 195,
   "by_status": {
     "Assessment completed": 87,
     "Under assessment": 41
@@ -10,7 +10,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 180,
+    "Approved": 181,
     "Not approved": 14
   },
   "phase_duration": {
@@ -52,7 +52,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 16
+      "count": 17
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45014",
+      "merger_name": "RDO Australia \u2013 freehold land and buildings of three commercial truck dealership sites in West Wodonga VIC",
+      "determination": "Approved",
+      "determination_date": "2026-06-08T12:00:00Z",
+      "page_modified_datetime": "2026-06-08T16:48:32+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-40024",
       "merger_name": "Ampol \u2013 Freehold land acquisition in Chelsea Heights, Victoria",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-05023",
-      "merger_name": "Apollo Capital Management \u2013 Questex Holdings Group",
-      "determination": "Approved",
-      "determination_date": "2026-06-04T12:00:00Z",
-      "page_modified_datetime": "2026-06-04T16:59:57+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

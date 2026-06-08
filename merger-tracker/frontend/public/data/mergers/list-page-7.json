@@ -1,6 +1,65 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-60015",
+      "merger_name": "Stonepeak \u2013 Castrol",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-06T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Motion JVCo Limited",
+          "identifier_type": null,
+          "identifier": "Company Identifier Number  163042"
+        },
+        {
+          "name": "BP Motion Holdings Limited",
+          "identifier_type": null,
+          "identifier": "UKCRN  16910312"
+        },
+        {
+          "name": "CPP Investment Board Private Holdings (6) Inc",
+          "identifier_type": null,
+          "identifier": "CBN  764228300"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Castrol Group Holdings Limited",
+          "identifier_type": null,
+          "identifier": "UKCRN  SC005098"
+        },
+        {
+          "name": "Stonepeak Motion PoolingCo Limited",
+          "identifier_type": null,
+          "identifier": "CBN  764228300"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "BP p.l.c",
+          "identifier_type": null,
+          "identifier": "UKCRN  00102498"
+        },
+        {
+          "name": "Stonepeak Partners LP",
+          "identifier_type": null,
+          "identifier": "Company Identifier Number: 4958360  Delaware"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1709",
+          "name": "Other Petroleum and Coal Product Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/stonepeak-%E2%80%93-castrol"
+    },
+    {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
       "status": "Under assessment",
