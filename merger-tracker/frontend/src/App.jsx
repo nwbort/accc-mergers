@@ -8,6 +8,7 @@ import KeyboardShortcutsHelp from './components/KeyboardShortcutsHelp';
 import FeedbackPopup from './components/FeedbackPopup';
 import { TrackingProvider } from './context/TrackingContext';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
+import ScrollToTop from './components/ScrollToTop';
 import Dashboard from './pages/Dashboard';
 import Mergers from './pages/Mergers';
 import MergerDetail from './pages/MergerDetail';
@@ -30,6 +31,7 @@ function AppContent() {
 
   return (
     <>
+      <ScrollToTop />
       <div className="min-h-screen gradient-mesh flex flex-col">
         <Navbar />
         <main id="main-content" className="flex-grow pt-16">
