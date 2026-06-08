@@ -1,9 +1,9 @@
 {
-  "total_mergers": 128,
+  "total_mergers": 129,
   "total_waivers": 195,
   "by_status": {
     "Assessment completed": 87,
-    "Under assessment": 41
+    "Under assessment": 42
   },
   "by_determination": {
     "Approved": 86,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-20018",
+      "merger_name": "Uber - Blacklane",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-05T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-40020",
       "merger_name": "Premier Fresh \u2013 Domenico Group",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-03T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-20023",
-      "merger_name": "Sony Music - Recognition Music",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-02T12:00:00Z",
       "is_waiver": false
     }
   ],

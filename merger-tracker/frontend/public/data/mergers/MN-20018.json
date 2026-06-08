@@ -1,0 +1,143 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/uber-blacklane",
+  "merger_name": "Uber - Blacklane",
+  "status": "Under assessment",
+  "merger_id": "MN-20018",
+  "effective_notification_datetime": "2026-06-05T12:00:00Z",
+  "original_notification_datetime": "2026-06-05T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-07-20T12:00:00Z",
+  "page_modified_datetime": "2026-06-09T09:23:00+10:00",
+  "consultation_response_due_date": "2026-06-15T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Uber Technologies, Inc",
+      "identifier_type": null,
+      "identifier": "USID  4849283"
+    }
+  ],
+  "targets": [
+    {
+      "name": "Blacklane GmbH",
+      "identifier_type": null,
+      "identifier": "HRB  136941B"
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "UBER AUSTRALIA HOLDINGS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "54 622 364 318"
+    },
+    {
+      "name": "UBER PACIFIC PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "96 622 366 116"
+    },
+    {
+      "name": "RASIER PACIFIC PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "27 622 365 833"
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "4623",
+      "name": "Taxi and Other Road Transport"
+    }
+  ],
+  "merger_description": "Uber Technologies, Inc (**Uber**) proposes to acquire 100% of the issued share capital in Blacklane GmbH (**Blacklane**) by way of a share purchase and transfer agreement (the **Acquisition**). Following completion, Blacklane will become a wholly owned indirect subsidiary of Uber.\n\nUber is a US-based ride-hailing and food delivery platform founded in 2009 that operates in over 70 countries, including Australia, where it launched in 2012. Uber offers a range of products on its ride-hailing platform with different levels of service that operate largely on an on-demand model. These products include its core products, Uber X, Uber X Share, Uber XL and Uber Comfort, as well as its premium product Uber Black, which offers higher-end vehicles along with higher-rated and more experienced drivers.\n\nBlacklane is a German-headquartered global luxury chauffeur platform, founded in 2011 and which operates in over 50 countries. The majority of its services are provided in the United States, United Kingdom and Middle East. Blacklane\u2019s platform connects customers with licensed local chauffeurs offering a high level of service, described as \u201cwhite glove\u201d. In Australia, Blacklane\u2019s services are generally booked at least an hour in advance via Blacklane\u2019s platform, accessed using an app or the web. Blacklane\u2019s services are aimed at senior corporate executives and high net-worth individuals. Blacklane does not own or operate a fleet of vehicles, and instead operates through non-exclusive contracts with local service providers who manage their fleet and drivers and facilitate the journey.",
+  "events": [
+    {
+      "date": "2026-06-09T12:00:00Z",
+      "title": "Uber - Blacklane - Questionnaire",
+      "display_title": "Uber - Blacklane - Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Uber-Blacklane%20-%20third%20party%20questionnaire%20-%20June%202026.docx",
+      "url_gh": "/mergers/MN-20018/Uber-Blacklane - third party questionnaire - June 2026.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-06-05T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-85002",
+      "merger_name": "ServiceNow - Veza",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ServiceNow, Inc.",
+          "identifier_type": null,
+          "identifier": "5111469"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Veza Technologies, Inc.",
+          "identifier_type": null,
+          "identifier": "7791387"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-30018",
+      "merger_name": "Tinicum and Blackstone led consortium \u2013 Senior",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Zeus UK Bidco Limited",
+          "identifier_type": null,
+          "identifier": "UK company number  17118800"
+        },
+        {
+          "name": "Tinicum L.P.",
+          "identifier_type": null,
+          "identifier": "Incorporation number  5040692"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Senior plc",
+          "identifier_type": null,
+          "identifier": "Company number  00282772"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85025",
+      "merger_name": "Francisco Partners - Blackline Safety",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Apollo Purchaser, Inc.",
+          "identifier_type": null,
+          "identifier": "Registration number 2027954573"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Blackline Safety Corp.",
+          "identifier_type": null,
+          "identifier": "Corporate access number 2016380855 and business number 860968577"
+        }
+      ]
+    }
+  ]
+}
