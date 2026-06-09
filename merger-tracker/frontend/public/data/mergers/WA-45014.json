@@ -128,8 +128,8 @@
     {
       "merger_id": "MN-05017",
       "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "acquirers": [
         {
           "name": "TWG HUNTER DEALERSHIPS PTY LTD",
@@ -139,14 +139,14 @@
       ],
       "targets": [
         {
-          "name": "N&M Burton Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "125 935 944"
-        },
-        {
           "name": "SHARTON MOTORS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "55 001 345 384"
+        },
+        {
+          "name": "N&M Burton Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "125 935 944"
         }
       ]
     }
