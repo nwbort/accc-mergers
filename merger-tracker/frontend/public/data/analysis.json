@@ -767,6 +767,15 @@
         "in_progress": false
       },
       {
+        "notification_date": "2026-05-04",
+        "business_days": 24,
+        "calendar_days": 36,
+        "merger_name": "News Corp \u2013 acquisition of 20% of National Distribution Services",
+        "merger_id": "MN-35014",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
         "notification_date": "2026-05-05",
         "business_days": 17,
         "calendar_days": 23,
@@ -822,18 +831,18 @@
       }
     ],
     "stats": {
-      "average": 19.7,
-      "median": 17,
+      "average": 19.8,
+      "median": 17.0,
       "min": 15,
       "max": 148,
-      "count": 87
+      "count": 88
     },
     "calendar_stats": {
-      "average": 29.8,
-      "median": 26,
+      "average": 29.9,
+      "median": 26.0,
       "min": 21,
       "max": 235,
-      "count": 87
+      "count": 88
     }
   },
   "waiver_duration": {
