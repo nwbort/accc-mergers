@@ -1,34 +1,34 @@
 {
   "total_mergers": 130,
-  "total_waivers": 196,
+  "total_waivers": 197,
   "by_status": {
-    "Assessment completed": 90,
-    "Under assessment": 40
+    "Assessment completed": 91,
+    "Under assessment": 39
   },
   "by_determination": {
-    "Approved": 89,
+    "Approved": 90,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 182,
+    "Approved": 183,
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.92222222222222,
+    "average_days": 30.043956043956044,
     "median_days": 26,
-    "average_business_days": 19.788888888888888,
+    "average_business_days": 19.86813186813187,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 20,
-        "percentage": 22.2
+        "percentage": 22.0
       },
       "day20": {
         "count": 69,
-        "percentage": 76.7
+        "percentage": 75.8
       },
       "day30": {
-        "count": 88,
+        "count": 89,
         "percentage": 97.8
       }
     }
@@ -119,6 +119,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-95019",
+      "merger_name": "Capital Group - Big Post",
+      "determination": "Approved",
+      "determination_date": "2026-06-09T12:00:00Z",
+      "page_modified_datetime": "2026-06-09T17:39:33+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "MN-45006",
+      "merger_name": "Paramount Skydance - Warner Bros. Discovery",
+      "determination": "Approved",
+      "determination_date": "2026-06-09T12:00:00Z",
+      "page_modified_datetime": "2026-06-09T17:21:45+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-55022",
       "merger_name": "GenusPlus Group \u2013 MPC Kinetic",
       "determination": "Approved",
@@ -157,26 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-45014",
-      "merger_name": "RDO Australia \u2013 freehold land and buildings of three commercial truck dealership sites in West Wodonga VIC",
-      "determination": "Approved",
-      "determination_date": "2026-06-08T12:00:00Z",
-      "page_modified_datetime": "2026-06-08T16:48:32+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-40024",
-      "merger_name": "Ampol \u2013 Freehold land acquisition in Chelsea Heights, Victoria",
-      "determination": "Approved",
-      "determination_date": "2026-06-05T12:00:00Z",
-      "page_modified_datetime": "2026-06-05T16:42:38+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
