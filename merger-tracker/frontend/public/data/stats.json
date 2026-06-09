@@ -1,6 +1,6 @@
 {
   "total_mergers": 130,
-  "total_waivers": 195,
+  "total_waivers": 196,
   "by_status": {
     "Assessment completed": 90,
     "Under assessment": 40
@@ -10,7 +10,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 181,
+    "Approved": 182,
     "Not approved": 14
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-55022",
+      "merger_name": "GenusPlus Group \u2013 MPC Kinetic",
+      "determination": "Approved",
+      "determination_date": "2026-06-09T12:00:00Z",
+      "page_modified_datetime": "2026-06-09T17:03:54+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-05017",
       "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-90007",
-      "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
-      "determination": "Approved",
-      "determination_date": "2026-06-05T12:00:00Z",
-      "page_modified_datetime": "2026-06-05T16:36:40+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
