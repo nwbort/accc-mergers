@@ -1,9 +1,9 @@
 {
-  "total_mergers": 129,
+  "total_mergers": 130,
   "total_waivers": 195,
   "by_status": {
     "Assessment completed": 90,
-    "Under assessment": 39
+    "Under assessment": 40
   },
   "by_determination": {
     "Approved": 89,
@@ -72,10 +72,18 @@
     },
     {
       "name": "Supermarket and Grocery Stores",
-      "count": 9
+      "count": 10
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-25029",
+      "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-09T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-20018",
       "merger_name": "Uber - Blacklane",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-20014",
       "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-03T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-80014",
-      "merger_name": "ANZ Banking Group - Worldline Australia",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-03T12:00:00Z",
