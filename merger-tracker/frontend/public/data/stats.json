@@ -1,9 +1,9 @@
 {
-  "total_mergers": 130,
+  "total_mergers": 131,
   "total_waivers": 197,
   "by_status": {
     "Assessment completed": 92,
-    "Under assessment": 38
+    "Under assessment": 39
   },
   "by_determination": {
     "Approved": 91,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-05025",
+      "merger_name": "Equans - CV Services Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-09T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-25029",
       "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-04T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-20014",
-      "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-03T12:00:00Z",
       "is_waiver": false
     }
   ],

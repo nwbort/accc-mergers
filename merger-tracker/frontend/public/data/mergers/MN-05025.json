@@ -1,0 +1,138 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/equans-cv-services-group",
+  "merger_name": "Equans - CV Services Group",
+  "status": "Under assessment",
+  "merger_id": "MN-05025",
+  "effective_notification_datetime": "2026-06-09T12:00:00Z",
+  "original_notification_datetime": "2026-06-09T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-07-21T12:00:00Z",
+  "page_modified_datetime": "2026-06-10T15:26:28+10:00",
+  "consultation_response_due_date": "2026-06-17T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Equans SAS",
+      "identifier_type": null,
+      "identifier": "Nanterre Trade and Companies Register  892318312"
+    }
+  ],
+  "targets": [
+    {
+      "name": "CV Services Group Pty Ltd",
+      "identifier_type": "ABN",
+      "identifier": "85 128 857 447"
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "2599",
+      "name": "Other Manufacturing n.e.c."
+    },
+    {
+      "code": "3232",
+      "name": "Electrical Services"
+    },
+    {
+      "code": "3233",
+      "name": "Air Conditioning and Heating Services"
+    },
+    {
+      "code": "3234",
+      "name": "Fire and Security Alarm Installation Services"
+    },
+    {
+      "code": "3239",
+      "name": "Other Building Installation Services"
+    }
+  ],
+  "merger_description": "Equans SAS (**Equans**) proposed to acquire 80% of the share capital of CV Services Group Pty Ltd (**CV Services Group**) either directly or through a wholly-owned subsidiary (the\u00a0**Proposed Acquisition**).\n\nEquans is a global energy and technical services company headquartered in France. In Australia, Equans operates through a local subsidiary, which supplies:\n\n* electrical and communications installation;\n* facility management services, including;\n  \n  + installation and maintenance of heating, ventilation and air conditioning (HVAC); and\n  + fire protection products; and\n* audio-visual integration and digital signage.\n\nCV Services Group is an Australian technical services company. It supplies:\n\n* infrastructure services;\n* electrical design, installation and construction;\n* facility management services; and\n* media and signage manufacturing and installation.",
+  "events": [
+    {
+      "date": "2026-06-10T12:00:00Z",
+      "title": "Questionnaire - Equans - CV Services Group",
+      "display_title": "Questionnaire - Equans - CV Services Group",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Equans%20-%20CV%20Services%20Group%20-%20Questionnaire.docx",
+      "url_gh": "/mergers/MN-05025/Equans - CV Services Group - Questionnaire.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-06-09T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-50007",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for the Comfy Dental Trust",
+          "identifier_type": "ABN",
+          "identifier": "59 865 563 072"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-70017",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CAMDENT SERVICES UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "37 559 915 898"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-85013",
+      "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TAN DENTAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 146 067 594"
+        }
+      ]
+    }
+  ]
+}
