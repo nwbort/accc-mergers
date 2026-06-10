@@ -2,11 +2,11 @@
   "total_mergers": 131,
   "total_waivers": 197,
   "by_status": {
-    "Assessment completed": 94,
-    "Under assessment": 37
+    "Assessment completed": 95,
+    "Under assessment": 36
   },
   "by_determination": {
-    "Approved": 93,
+    "Approved": 94,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.925531914893618,
+    "average_days": 29.88421052631579,
     "median_days": 26,
-    "average_business_days": 19.77659574468085,
+    "average_business_days": 19.736842105263158,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 21,
-        "percentage": 22.3
+        "percentage": 22.1
       },
       "day20": {
-        "count": 72,
-        "percentage": 76.6
+        "count": 73,
+        "percentage": 76.8
       },
       "day30": {
-        "count": 92,
+        "count": 93,
         "percentage": 97.9
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-50015",
+      "merger_name": "Mastercard - BVNK",
+      "determination": "Approved",
+      "determination_date": "2026-06-10T12:00:00Z",
+      "page_modified_datetime": "2026-06-10T17:22:09+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-95016",
       "merger_name": "Eli Lilly - Kelonia Therapeutics",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-55022",
-      "merger_name": "GenusPlus Group \u2013 MPC Kinetic",
-      "determination": "Approved",
-      "determination_date": "2026-06-09T12:00:00Z",
-      "page_modified_datetime": "2026-06-09T17:03:54+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

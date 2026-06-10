@@ -132,13 +132,13 @@
     {
       "merger_id": "MN-50015",
       "merger_name": "Mastercard - BVNK",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "acquirers": [
         {
-          "name": "Mastercard International Incorporated",
+          "name": "Mastercard Incorporated",
           "identifier_type": null,
-          "identifier": "648928"
+          "identifier": "3390142"
         },
         {
           "name": "Ares UK Holdco 2 Limited",
@@ -148,14 +148,14 @@
       ],
       "targets": [
         {
-          "name": "BVNK Holdings Limited",
-          "identifier_type": null,
-          "identifier": "13922014"
-        },
-        {
           "name": "B Corporation S.A.M",
           "identifier_type": null,
           "identifier": "23S09602"
+        },
+        {
+          "name": "BVNK Holdings Limited",
+          "identifier_type": null,
+          "identifier": "13922014"
         }
       ]
     },

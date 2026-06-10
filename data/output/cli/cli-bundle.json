@@ -12641,13 +12641,13 @@
         {
           "merger_id": "MN-50015",
           "merger_name": "Mastercard - BVNK",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
-              "name": "Mastercard International Incorporated",
+              "name": "Mastercard Incorporated",
               "identifier_type": null,
-              "identifier": "648928"
+              "identifier": "3390142"
             },
             {
               "name": "Ares UK Holdco 2 Limited",
@@ -12657,14 +12657,14 @@
           ],
           "targets": [
             {
-              "name": "BVNK Holdings Limited",
-              "identifier_type": null,
-              "identifier": "13922014"
-            },
-            {
               "name": "B Corporation S.A.M",
               "identifier_type": null,
               "identifier": "23S09602"
+            },
+            {
+              "name": "BVNK Holdings Limited",
+              "identifier_type": null,
+              "identifier": "13922014"
             }
           ]
         },
@@ -15919,19 +15919,21 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mastercard-bvnk",
       "merger_name": "Mastercard - BVNK",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-50015",
       "effective_notification_datetime": "2026-05-15T12:00:00Z",
       "original_notification_datetime": "2026-05-15T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-06-30T12:00:00Z",
-      "page_modified_datetime": "2026-05-25T16:32:26+10:00",
+      "determination_publication_date": "2026-06-10T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-06-10T17:22:09+10:00",
       "consultation_response_due_date": "2026-05-25T12:00:00Z",
       "acquirers": [
         {
-          "name": "Mastercard International Incorporated",
+          "name": "Mastercard Incorporated",
           "identifier_type": null,
-          "identifier": "648928"
+          "identifier": "3390142"
         },
         {
           "name": "Ares UK Holdco 2 Limited",
@@ -15939,21 +15941,21 @@
           "identifier": "CRN 17107097"
         },
         {
-          "name": "Mastercard Incorporated",
+          "name": "Mastercard International Incorporated",
           "identifier_type": null,
-          "identifier": "3390142"
+          "identifier": "648928"
         }
       ],
       "targets": [
         {
-          "name": "BVNK Holdings Limited",
-          "identifier_type": null,
-          "identifier": "13922014"
-        },
-        {
           "name": "B Corporation S.A.M",
           "identifier_type": null,
           "identifier": "23S09602"
+        },
+        {
+          "name": "BVNK Holdings Limited",
+          "identifier_type": null,
+          "identifier": "13922014"
         }
       ],
       "other_parties": [],
@@ -15979,12 +15981,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-06-10T12:00:00Z",
+          "title": "Mastercard - BVNK - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Mastercard%20-%20BVNK%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Philip Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Mastercard Incorporated International (Mastercard) through its subsidiary Ares UK Holdco 2 Limited proposes to acquire BVNK Holdings Limited and B Corporation S.A.M (together, BVNK) from its current shareholders (the Acquisition)"
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Mastercard is a technology company in the global payments industry. Mastercard’s main activities include ownership and operation of payment card schemes and provision of switching services for card transactions. Mastercard provides a payments network to facilitate the switching of payment transactions in fiat, and offers payment capabilities that include automated clearing house transactions as well as other payment-related services.\n\nThe target, BVNK supplies infrastructure services for stablecoin, a form of cryptocurrency designed to keep a stable value, which is typically achieved by being pegged to a traditional fiat currency such as the US dollar. BVNK builds and supplies infrastructure to enable customers to send, receive, convert, spend and earn stablecoins and fiat currency across a variety of payment 'rails' and blockchains.\n\nNeither Mastercard nor BVNK issues stablecoins."
+            },
+            {
+              "item": "Relationship between the parties",
+              "details": "The merger parties have a vertical relationship with BVNK's stablecoin infrastructure services a potential input into the supply of Mastercard's offerings to enable Mastercard to facilitate remittance payments in stablecoin."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form and publicly available information.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings.\n\n• Mastercard would not have the ability post-Acquisition to foreclose rival stablecoin infrastructure service providers’ access fiat payment infrastructure providers as there are multiple alternative fiat payments infrastructure service providers available including Visa Inc, PayPal Australia, Stripe Australia, American Express and Australian Payments Plus (eftpos).\n\n• Mastercard would also not have the ability post-Acquisition to foreclose rival fiat payment infrastructure providers’ access to stablecoin infrastructure services. BVNK has a limited presence in Australia and there are multiple alternative stablecoin infrastructure service providers available."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-50015/Mastercard - BVNK - Phase 1 determination.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-06-10T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -41204,13 +41242,13 @@
         {
           "merger_id": "MN-50015",
           "merger_name": "Mastercard - BVNK",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
-              "name": "Mastercard International Incorporated",
+              "name": "Mastercard Incorporated",
               "identifier_type": null,
-              "identifier": "648928"
+              "identifier": "3390142"
             },
             {
               "name": "Ares UK Holdco 2 Limited",
@@ -41220,14 +41258,14 @@
           ],
           "targets": [
             {
-              "name": "BVNK Holdings Limited",
-              "identifier_type": null,
-              "identifier": "13922014"
-            },
-            {
               "name": "B Corporation S.A.M",
               "identifier_type": null,
               "identifier": "23S09602"
+            },
+            {
+              "name": "BVNK Holdings Limited",
+              "identifier_type": null,
+              "identifier": "13922014"
             }
           ]
         },
@@ -58236,13 +58274,13 @@
         {
           "merger_id": "MN-50015",
           "merger_name": "Mastercard - BVNK",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
-              "name": "Mastercard International Incorporated",
+              "name": "Mastercard Incorporated",
               "identifier_type": null,
-              "identifier": "648928"
+              "identifier": "3390142"
             },
             {
               "name": "Ares UK Holdco 2 Limited",
@@ -58252,14 +58290,14 @@
           ],
           "targets": [
             {
-              "name": "BVNK Holdings Limited",
-              "identifier_type": null,
-              "identifier": "13922014"
-            },
-            {
               "name": "B Corporation S.A.M",
               "identifier_type": null,
               "identifier": "23S09602"
+            },
+            {
+              "name": "BVNK Holdings Limited",
+              "identifier_type": null,
+              "identifier": "13922014"
             }
           ]
         },
@@ -67742,11 +67780,11 @@
     "total_mergers": 131,
     "total_waivers": 197,
     "by_status": {
-      "Assessment completed": 94,
-      "Under assessment": 37
+      "Assessment completed": 95,
+      "Under assessment": 36
     },
     "by_determination": {
-      "Approved": 93,
+      "Approved": 94,
       "Referred to phase 2": 5
     },
     "by_waiver_determination": {
@@ -67754,21 +67792,21 @@
       "Not approved": 14
     },
     "phase_duration": {
-      "average_days": 29.925531914893618,
+      "average_days": 29.88421052631579,
       "median_days": 26,
-      "average_business_days": 19.77659574468085,
+      "average_business_days": 19.736842105263158,
       "median_business_days": 17,
       "percentiles": {
         "day15": {
           "count": 21,
-          "percentage": 22.3
+          "percentage": 22.1
         },
         "day20": {
-          "count": 72,
-          "percentage": 76.6
+          "count": 73,
+          "percentage": 76.8
         },
         "day30": {
-          "count": 92,
+          "count": 93,
           "percentage": 97.9
         }
       }
@@ -67859,6 +67897,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "MN-50015",
+        "merger_name": "Mastercard - BVNK",
+        "determination": "Approved",
+        "determination_date": "2026-06-10T12:00:00Z",
+        "page_modified_datetime": "2026-06-10T17:22:09+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "MN-95016",
         "merger_name": "Eli Lilly - Kelonia Therapeutics",
         "determination": "Approved",
@@ -67907,16 +67955,6 @@
         "determination_type": "final",
         "is_waiver": false,
         "stage": "Phase 1 - initial assessment"
-      },
-      {
-        "merger_id": "WA-55022",
-        "merger_name": "GenusPlus Group – MPC Kinetic",
-        "determination": "Approved",
-        "determination_date": "2026-06-09T12:00:00Z",
-        "page_modified_datetime": "2026-06-09T17:03:54+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
       }
     ]
   },

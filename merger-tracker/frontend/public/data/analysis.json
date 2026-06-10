@@ -875,6 +875,15 @@
         "in_progress": false
       },
       {
+        "notification_date": "2026-05-15",
+        "business_days": 16,
+        "calendar_days": 26,
+        "merger_name": "Mastercard - BVNK",
+        "merger_id": "MN-50015",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
         "notification_date": "2026-05-18",
         "business_days": 15,
         "calendar_days": 23,
@@ -885,18 +894,18 @@
       }
     ],
     "stats": {
-      "average": 19.8,
-      "median": 17.0,
+      "average": 19.7,
+      "median": 17,
       "min": 15,
       "max": 148,
-      "count": 94
+      "count": 95
     },
     "calendar_stats": {
       "average": 29.9,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 235,
-      "count": 94
+      "count": 95
     }
   },
   "waiver_duration": {
