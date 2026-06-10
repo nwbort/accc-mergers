@@ -855,21 +855,30 @@
         "merger_id": "MN-90007",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-05-18",
+        "business_days": 15,
+        "calendar_days": 23,
+        "merger_name": "Eli Lilly - Kelonia Therapeutics",
+        "merger_id": "MN-95016",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
-      "average": 19.9,
-      "median": 17,
+      "average": 19.8,
+      "median": 17.0,
       "min": 15,
       "max": 148,
-      "count": 91
+      "count": 92
     },
     "calendar_stats": {
       "average": 30.0,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 235,
-      "count": 91
+      "count": 92
     }
   },
   "waiver_duration": {

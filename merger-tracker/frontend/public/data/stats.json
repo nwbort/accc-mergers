@@ -2,11 +2,11 @@
   "total_mergers": 130,
   "total_waivers": 197,
   "by_status": {
-    "Assessment completed": 91,
-    "Under assessment": 39
+    "Assessment completed": 92,
+    "Under assessment": 38
   },
   "by_determination": {
-    "Approved": 90,
+    "Approved": 91,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 30.043956043956044,
+    "average_days": 29.967391304347824,
     "median_days": 26,
-    "average_business_days": 19.86813186813187,
+    "average_business_days": 19.815217391304348,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 20,
-        "percentage": 22.0
+        "count": 21,
+        "percentage": 22.8
       },
       "day20": {
-        "count": 69,
-        "percentage": 75.8
+        "count": 70,
+        "percentage": 76.1
       },
       "day30": {
-        "count": 89,
+        "count": 90,
         "percentage": 97.8
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-95016",
+      "merger_name": "Eli Lilly - Kelonia Therapeutics",
+      "determination": "Approved",
+      "determination_date": "2026-06-10T12:00:00Z",
+      "page_modified_datetime": "2026-06-10T12:20:13+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-95019",
       "merger_name": "Capital Group - Big Post",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-09T12:00:00Z",
       "page_modified_datetime": "2026-06-09T16:35:40+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-35014",
-      "merger_name": "News Corp \u2013 acquisition of 20% of National Distribution Services",
-      "determination": "Approved",
-      "determination_date": "2026-06-09T12:00:00Z",
-      "page_modified_datetime": "2026-06-09T12:08:09+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

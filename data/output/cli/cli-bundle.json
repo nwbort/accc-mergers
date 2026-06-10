@@ -26197,13 +26197,14 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/eli-lilly-kelonia-therapeutics",
       "merger_name": "Eli Lilly - Kelonia Therapeutics",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-95016",
       "effective_notification_datetime": "2026-05-18T12:00:00Z",
       "original_notification_datetime": "2026-05-18T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-07-01T12:00:00Z",
-      "page_modified_datetime": "2026-05-27T09:27:53+10:00",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-06-10T12:20:13+10:00",
       "consultation_response_due_date": "2026-05-26T12:00:00Z",
       "acquirers": [
         {
@@ -26257,12 +26258,49 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-06-10T12:00:00Z",
+          "title": "Eli Lilly - Kelonia Therapeutics - Phase 1 Determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Eli%20Lilly%20-%20Kelonia%20Therapeutics%20-%20%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Eli Lilly and Company (Eli Lilly) proposes to acquire 100% of the issued shares in Kelonia Therapeutics, Inc (Kelonia Therapeutics) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Eli Lilly, is a US-based pharmaceutical company, which discovers, develops, manufactures and markets human pharmaceutical products for various therapeutic areas, including diabetes, oncology, immunology and neuroscience. Eli Lilly is publicly listed on the New York Stock Exchange.\n\nThe target, Kelonia Therapeutics is a US-based clinical-stage biotechnology company focused on the development of genetic medicines using its in vivo gene placement system (iGPS). Kelonia Therapeutics is developing a pipeline of lentiviral-based in vivo CAR-T therapies primarily for oncology indications. Its lead asset (KLN-1010) is a clinical-stage (Phase 1) that uses iGPS to deliver an anti-BCMA CAR to T cells for treatment of multiple myeloma.\n\nKelonia Therapeutics currently has a strategic collaboration with Johnson & Johnson for the development of lentiviral-based in vivo CAR-T therapies."
+            },
+            {
+              "item": "Overlap between the parties",
+              "details": "There is no overlap in existing products supplied by the Parties."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form and engagement with third parties.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings.\n\n• There is no horizontal overlap between the Parties’ assets in Australia."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-95016/Eli Lilly - Kelonia Therapeutics - Phase 1 determination.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
+      "determination_publication_date": "2026-06-10T12:00:00Z",
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-06-10T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -67470,11 +67508,11 @@
     "total_mergers": 130,
     "total_waivers": 197,
     "by_status": {
-      "Assessment completed": 91,
-      "Under assessment": 39
+      "Assessment completed": 92,
+      "Under assessment": 38
     },
     "by_determination": {
-      "Approved": 90,
+      "Approved": 91,
       "Referred to phase 2": 5
     },
     "by_waiver_determination": {
@@ -67482,21 +67520,21 @@
       "Not approved": 14
     },
     "phase_duration": {
-      "average_days": 30.043956043956044,
+      "average_days": 29.967391304347824,
       "median_days": 26,
-      "average_business_days": 19.86813186813187,
+      "average_business_days": 19.815217391304348,
       "median_business_days": 17,
       "percentiles": {
         "day15": {
-          "count": 20,
-          "percentage": 22.0
+          "count": 21,
+          "percentage": 22.8
         },
         "day20": {
-          "count": 69,
-          "percentage": 75.8
+          "count": 70,
+          "percentage": 76.1
         },
         "day30": {
-          "count": 89,
+          "count": 90,
           "percentage": 97.8
         }
       }
@@ -67587,6 +67625,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "MN-95016",
+        "merger_name": "Eli Lilly - Kelonia Therapeutics",
+        "determination": "Approved",
+        "determination_date": "2026-06-10T12:00:00Z",
+        "page_modified_datetime": "2026-06-10T12:20:13+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "WA-95019",
         "merger_name": "Capital Group - Big Post",
         "determination": "Approved",
@@ -67632,16 +67680,6 @@
         "determination": "Approved",
         "determination_date": "2026-06-09T12:00:00Z",
         "page_modified_datetime": "2026-06-09T16:35:40+10:00",
-        "determination_type": "final",
-        "is_waiver": false,
-        "stage": "Phase 1 - initial assessment"
-      },
-      {
-        "merger_id": "MN-35014",
-        "merger_name": "News Corp – acquisition of 20% of National Distribution Services",
-        "determination": "Approved",
-        "determination_date": "2026-06-09T12:00:00Z",
-        "page_modified_datetime": "2026-06-09T12:08:09+10:00",
         "determination_type": "final",
         "is_waiver": false,
         "stage": "Phase 1 - initial assessment"
