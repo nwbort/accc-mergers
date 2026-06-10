@@ -2,11 +2,11 @@
   "total_mergers": 131,
   "total_waivers": 197,
   "by_status": {
-    "Assessment completed": 92,
-    "Under assessment": 39
+    "Assessment completed": 93,
+    "Under assessment": 38
   },
   "by_determination": {
-    "Approved": 91,
+    "Approved": 92,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.967391304347824,
+    "average_days": 29.946236559139784,
     "median_days": 26,
-    "average_business_days": 19.815217391304348,
+    "average_business_days": 19.795698924731184,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 21,
-        "percentage": 22.8
+        "percentage": 22.6
       },
       "day20": {
-        "count": 70,
-        "percentage": 76.1
+        "count": 71,
+        "percentage": 76.3
       },
       "day30": {
-        "count": 90,
+        "count": 91,
         "percentage": 97.8
       }
     }
@@ -129,6 +129,16 @@
       "stage": "Phase 1 - initial assessment"
     },
     {
+      "merger_id": "MN-25021",
+      "merger_name": "OpenAI - Tomoro",
+      "determination": "Approved",
+      "determination_date": "2026-06-09T12:00:00Z",
+      "page_modified_datetime": "2026-06-10T11:59:09+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-95019",
       "merger_name": "Capital Group - Big Post",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-09T12:00:00Z",
       "page_modified_datetime": "2026-06-09T16:40:05+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-75018",
-      "merger_name": "WPF Duratec - Pacific Welding (Davhold Australia)",
-      "determination": "Approved",
-      "determination_date": "2026-06-09T12:00:00Z",
-      "page_modified_datetime": "2026-06-09T16:35:40+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

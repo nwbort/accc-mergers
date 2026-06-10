@@ -10467,13 +10467,15 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/openai-tomoro",
       "merger_name": "OpenAI - Tomoro",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-25021",
       "effective_notification_datetime": "2026-05-12T12:00:00Z",
       "original_notification_datetime": "2026-05-12T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-06-25T12:00:00Z",
-      "page_modified_datetime": "2026-05-20T09:29:59+10:00",
+      "determination_publication_date": "2026-06-09T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-06-10T11:59:09+10:00",
       "consultation_response_due_date": "2026-05-19T12:00:00Z",
       "acquirers": [
         {
@@ -10522,12 +10524,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-06-09T12:00:00Z",
+          "title": "OpenAI-Tomoro - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/OpenAI-Tomoro%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "The proposed acquisition of 100% of the share capital in Tomoro AI\nLtd (Tomoro) by OpenAI Group PBC, an entity controlled by the\nOpenAI Foundation (OpenAI) (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, OpenAI, develops artificial intelligence (AI) foundation\nmodels, including its GPT family of models, as well as foundation\nmodel-based services, including ChatGPT.\nThe target, Tomoro, is an AI delivery consultancy that helps\nbusinesses implement AI solutions built around commercially\navailable generative AI technology (with a focus on OpenAI's\nmodels). Tomoro helps businesses to improve the use of AI within\nthe business and provides assistance with building in-house\nsolutions (based on existing commercial foundation models) for\nspecific business needs."
+            },
+            {
+              "item": "Relationship between the\nparties",
+              "details": "There is a non-horizontal relationship between OpenAI and Tomoro\n(together, the Parties), as Tomoro provides its AI consultancy and\nimplementation services almost exclusively in respect of OpenAI\u2019s\nfoundation models and application program interfaces (APIs).\nThere is limited horizontal overlap between the Parties in the supply\nof enterprise-focused AI consulting and implementation services.\nOpenAI deploys engineers to a limited customer base, typically on a\nlong-term arrangement to provide highly technical support. Tomoro\noffers its consultancy services to a broad range of business\ncustomers, including for shorter term deployments and\nconsultations, and provides more holistic and strategic advice."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings:\n\u2022 There is limited horizontal overlap between the AI consulting and\nimplementation services offered by OpenAI and Tomoro, given\ndifferences in their customer bases and the different types of\nservices provided and given Tomoro has a very limited customer\nbase in Australia.\n\u2022 Post-Acquisition, the merged entity would be unlikely to have the\nability and incentive to foreclose rival downstream AI consulting\nand implementation service providers\u2019 access to AI foundation\nmodels, given the availability of multiple alternative suppliers of\nAI foundation models, including Anthropic, Google, Microsoft,\nMeta, xAI, MistralAI and others."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-25021/OpenAI-Tomoro - Phase 1 determination.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-06-09T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
