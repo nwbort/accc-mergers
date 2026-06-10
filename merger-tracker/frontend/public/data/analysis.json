@@ -2495,6 +2495,14 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-05-22",
+        "business_days": 11,
+        "calendar_days": 19,
+        "merger_name": "Platinum Equity Group - LMPG",
+        "merger_id": "WA-80020",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-05-25",
         "business_days": 10,
         "calendar_days": 16,
@@ -2513,17 +2521,17 @@
     ],
     "stats": {
       "average": 11.8,
-      "median": 11.0,
+      "median": 11,
       "min": 2,
       "max": 25,
-      "count": 200
+      "count": 201
     },
     "calendar_stats": {
       "average": 17.6,
-      "median": 17.0,
+      "median": 17,
       "min": 2,
       "max": 39,
-      "count": 200
+      "count": 201
     }
   },
   "monthly_volume": {
@@ -2560,7 +2568,7 @@
       30,
       48,
       45,
-      47,
+      48,
       0
     ]
   }

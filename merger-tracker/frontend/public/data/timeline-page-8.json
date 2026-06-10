@@ -2,6 +2,18 @@
   "events": [
     {
       "date": "2026-05-25T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "WA-01102",
+      "merger_name": "Fujifilm \u2013 endoscopy distribution business in Australia",
+      "phase": "Phase 1",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-05-25T12:00:00Z",
       "title": "Notification waiver determination published",
       "display_title": "Waiver application determination: Approved",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Triton%20%E2%80%93%20Integris%20%28WA-20020%29%20-%20Notification%20waiver%20determination%20-%2025%20May%202026.pdf",
@@ -1077,6 +1089,18 @@
       "status": "live",
       "merger_id": "WA-60019",
       "merger_name": "QIC \u2013 CopperString Project assets from Powerlink Queensland",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-06-10T12:00:00Z",
+      "title": "Notification waiver determination published",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Platinum%20Equity%20Group%20%E2%80%93%20LMPG%20%28WA-80020%29%20-%20Notification%20waiver%20determination%20-%2010%20June%202026.pdf",
+      "url_gh": "/mergers/WA-80020/Platinum Equity Group \u2013 LMPG (WA-80020) - Notification waiver determination - 10 June 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-80020",
+      "merger_name": "Platinum Equity Group - LMPG",
       "phase": "Waiver",
       "is_waiver": true
     }
