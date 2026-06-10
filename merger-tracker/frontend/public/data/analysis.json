@@ -840,6 +840,15 @@
       },
       {
         "notification_date": "2026-05-12",
+        "business_days": 18,
+        "calendar_days": 28,
+        "merger_name": "AtkinsR\u00e9alis - WGA",
+        "merger_id": "MN-65016",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "notification_date": "2026-05-12",
         "business_days": 15,
         "calendar_days": 22,
         "merger_name": "Quanta - PSD",
@@ -877,17 +886,17 @@
     ],
     "stats": {
       "average": 19.8,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 148,
-      "count": 93
+      "count": 94
     },
     "calendar_stats": {
       "average": 29.9,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 235,
-      "count": 93
+      "count": 94
     }
   },
   "waiver_duration": {
