@@ -1,6 +1,6 @@
 {
   "total_mergers": 131,
-  "total_waivers": 201,
+  "total_waivers": 202,
   "by_status": {
     "Assessment completed": 95,
     "Under assessment": 36
@@ -10,7 +10,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 187,
+    "Approved": 188,
     "Not approved": 14
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30021",
+      "merger_name": "Regional Australia Bank \u2013 South West Slopes Credit Union",
+      "determination": "Approved",
+      "determination_date": "2026-06-10T12:00:00Z",
+      "page_modified_datetime": "2026-06-10T18:44:26+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-80020",
       "merger_name": "Platinum Equity Group - LMPG",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-10T12:00:00Z",
       "page_modified_datetime": "2026-06-10T17:22:09+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-95016",
-      "merger_name": "Eli Lilly - Kelonia Therapeutics",
-      "determination": "Approved",
-      "determination_date": "2026-06-10T12:00:00Z",
-      "page_modified_datetime": "2026-06-10T12:20:13+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
