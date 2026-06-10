@@ -1,6 +1,6 @@
 {
   "total_mergers": 131,
-  "total_waivers": 197,
+  "total_waivers": 198,
   "by_status": {
     "Assessment completed": 95,
     "Under assessment": 36
@@ -10,7 +10,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 183,
+    "Approved": 184,
     "Not approved": 14
   },
   "phase_duration": {
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-01102",
+      "merger_name": "Fujifilm \u2013 endoscopy distribution business in Australia",
+      "determination": "Approved",
+      "determination_date": "2026-06-10T12:00:00Z",
+      "page_modified_datetime": "2026-06-10T18:00:30+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-50015",
       "merger_name": "Mastercard - BVNK",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-45006",
-      "merger_name": "Paramount Skydance - Warner Bros. Discovery",
-      "determination": "Approved",
-      "determination_date": "2026-06-09T12:00:00Z",
-      "page_modified_datetime": "2026-06-09T17:21:45+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
