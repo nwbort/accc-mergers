@@ -1,6 +1,39 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-05023",
+      "merger_name": "Apollo Capital Management \u2013 Questex Holdings Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-20T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Apollo Capital Management, L.P.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Questex Holdings Group, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "7299",
+          "name": "Other Administrative Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/apollo-capital-management-%E2%80%93-questex-holdings-group"
+    },
+    {
       "merger_id": "WA-40024",
       "merger_name": "Ampol \u2013 Freehold land acquisition in Chelsea Heights, Victoria",
       "status": "Assessment completed",
@@ -221,6 +254,59 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/logic-technologies-ace-communication-distributors"
+    },
+    {
+      "merger_id": "WA-30019",
+      "merger_name": "KKR \u2013 Fresha.com",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "determination_publication_date": "2026-06-10T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Flamingo UK LP",
+          "identifier_type": null,
+          "identifier": "UK Company Registration Number  LP024570"
+        },
+        {
+          "name": "Flamingo UK GP Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Fresha.com Holding Inc.",
+          "identifier_type": null,
+          "identifier": "British Virgin Islands Company Registration Number  1862061"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "FRESHA.COM PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 627 580 563"
+        },
+        {
+          "name": "KKR & Co. Inc",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kkr-%E2%80%93-freshacom"
     },
     {
       "merger_id": "WA-35020",

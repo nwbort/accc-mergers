@@ -1,6 +1,6 @@
 {
   "total_mergers": 131,
-  "total_waivers": 198,
+  "total_waivers": 200,
   "by_status": {
     "Assessment completed": 95,
     "Under assessment": 36
@@ -10,7 +10,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 184,
+    "Approved": 186,
     "Not approved": 14
   },
   "phase_duration": {
@@ -36,7 +36,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 38
+      "count": 39
     },
     {
       "name": "Computer System Design and Related Services",
@@ -44,11 +44,11 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 27
+      "count": 28
     },
     {
       "name": "Software Publishing",
-      "count": 26
+      "count": 27
     },
     {
       "name": "Non-Residential Property Operators",
@@ -119,6 +119,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30019",
+      "merger_name": "KKR \u2013 Fresha.com",
+      "determination": "Approved",
+      "determination_date": "2026-06-10T12:00:00Z",
+      "page_modified_datetime": "2026-06-10T18:19:14+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-60019",
+      "merger_name": "QIC \u2013 CopperString Project assets from Powerlink Queensland",
+      "determination": "Approved",
+      "determination_date": "2026-06-10T12:00:00Z",
+      "page_modified_datetime": "2026-06-10T18:15:37+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-01102",
       "merger_name": "Fujifilm \u2013 endoscopy distribution business in Australia",
       "determination": "Approved",
@@ -157,26 +177,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-25021",
-      "merger_name": "OpenAI - Tomoro",
-      "determination": "Approved",
-      "determination_date": "2026-06-09T12:00:00Z",
-      "page_modified_datetime": "2026-06-10T11:59:09+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-95019",
-      "merger_name": "Capital Group - Big Post",
-      "determination": "Approved",
-      "determination_date": "2026-06-09T12:00:00Z",
-      "page_modified_datetime": "2026-06-09T17:39:33+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
