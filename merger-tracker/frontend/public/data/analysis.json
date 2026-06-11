@@ -849,8 +849,8 @@
       },
       {
         "notification_date": "2026-05-12",
-        "business_days": 15,
-        "calendar_days": 22,
+        "business_days": 16,
+        "calendar_days": 23,
         "merger_name": "Quanta - PSD",
         "merger_id": "MN-70012",
         "determination": "Approved",
@@ -894,8 +894,8 @@
       },
       {
         "notification_date": "2026-05-18",
-        "business_days": 15,
-        "calendar_days": 23,
+        "business_days": 16,
+        "calendar_days": 24,
         "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
         "merger_id": "MN-70018",
         "determination": "Approved",
@@ -909,21 +909,30 @@
         "merger_id": "MN-95016",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-05-19",
+        "business_days": 16,
+        "calendar_days": 24,
+        "merger_name": "Magellan Financial Group - Barrenjoey",
+        "merger_id": "MN-95007",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 19.6,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 148,
-      "count": 97
+      "count": 98
     },
     "calendar_stats": {
-      "average": 29.8,
-      "median": 26,
+      "average": 29.7,
+      "median": 26.0,
       "min": 21,
       "max": 235,
-      "count": 97
+      "count": 98
     }
   },
   "waiver_duration": {

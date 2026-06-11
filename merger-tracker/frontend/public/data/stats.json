@@ -2,11 +2,11 @@
   "total_mergers": 132,
   "total_waivers": 202,
   "by_status": {
-    "Assessment completed": 97,
-    "Under assessment": 35
+    "Assessment completed": 98,
+    "Under assessment": 34
   },
   "by_determination": {
-    "Approved": 96,
+    "Approved": 97,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -14,22 +14,22 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.75257731958763,
+    "average_days": 29.714285714285715,
     "median_days": 26,
-    "average_business_days": 19.649484536082475,
+    "average_business_days": 19.632653061224488,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 22,
-        "percentage": 22.7
+        "count": 20,
+        "percentage": 20.4
       },
       "day20": {
-        "count": 75,
-        "percentage": 77.3
+        "count": 76,
+        "percentage": 77.6
       },
       "day30": {
-        "count": 95,
-        "percentage": 97.9
+        "count": 96,
+        "percentage": 98.0
       }
     }
   },
@@ -119,11 +119,11 @@
   ],
   "recent_determinations": [
     {
-      "merger_id": "MN-25018",
-      "merger_name": "Primary Wave - Kobalt",
+      "merger_id": "MN-95007",
+      "merger_name": "Magellan Financial Group - Barrenjoey",
       "determination": "Approved",
-      "determination_date": "2026-06-11T12:00:00Z",
-      "page_modified_datetime": "2026-06-11T10:04:09+10:00",
+      "determination_date": "2026-06-12T12:00:00Z",
+      "page_modified_datetime": "2026-06-12T08:44:51+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
@@ -132,8 +132,18 @@
       "merger_id": "MN-70018",
       "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
       "determination": "Approved",
-      "determination_date": "2026-06-10T12:00:00Z",
-      "page_modified_datetime": "2026-06-11T16:28:31+10:00",
+      "determination_date": "2026-06-11T12:00:00Z",
+      "page_modified_datetime": "2026-06-12T08:46:44+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
+      "merger_id": "MN-25018",
+      "merger_name": "Primary Wave - Kobalt",
+      "determination": "Approved",
+      "determination_date": "2026-06-11T12:00:00Z",
+      "page_modified_datetime": "2026-06-11T10:04:09+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-10T12:00:00Z",
       "page_modified_datetime": "2026-06-10T18:19:14+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-60019",
-      "merger_name": "QIC \u2013 CopperString Project assets from Powerlink Queensland",
-      "determination": "Approved",
-      "determination_date": "2026-06-10T12:00:00Z",
-      "page_modified_datetime": "2026-06-10T18:15:37+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
