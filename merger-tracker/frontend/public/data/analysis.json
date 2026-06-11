@@ -885,6 +885,15 @@
       },
       {
         "notification_date": "2026-05-18",
+        "business_days": 16,
+        "calendar_days": 24,
+        "merger_name": "Primary Wave - Kobalt",
+        "merger_id": "MN-25018",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "notification_date": "2026-05-18",
         "business_days": 15,
         "calendar_days": 23,
         "merger_name": "Eli Lilly - Kelonia Therapeutics",
@@ -895,17 +904,17 @@
     ],
     "stats": {
       "average": 19.7,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 148,
-      "count": 95
+      "count": 96
     },
     "calendar_stats": {
-      "average": 29.9,
-      "median": 26,
+      "average": 29.8,
+      "median": 26.0,
       "min": 21,
       "max": 235,
-      "count": 95
+      "count": 96
     }
   },
   "waiver_duration": {

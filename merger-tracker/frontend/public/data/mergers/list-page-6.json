@@ -1835,11 +1835,11 @@
     {
       "merger_id": "MN-25018",
       "merger_name": "Primary Wave - Kobalt",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-18T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-11T12:00:00Z",
       "end_of_determination_period": "2026-07-01T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -1858,14 +1858,24 @@
       ],
       "other_parties": [
         {
+          "name": "Primary Wave Music IP Fund 4 GP, LLC",
+          "identifier_type": null,
+          "identifier": "Company number 7667915"
+        },
+        {
+          "name": "KOBALT MUSIC SERVICES AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "12 144 997 142"
+        },
+        {
+          "name": "KOBALT MUSIC PUBLISHING AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "63 144 996 609"
+        },
+        {
           "name": "Brookfield Corporation",
           "identifier_type": null,
           "identifier": "Company number 1644037"
-        },
-        {
-          "name": "Kobalt Music Publishing Australia Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "63 144 996 609"
         },
         {
           "name": "Primary Wave Music IP Fund 4, LP",
@@ -1876,16 +1886,6 @@
           "name": "PWMP Ventures, LLC",
           "identifier_type": null,
           "identifier": "Company number 5324467"
-        },
-        {
-          "name": "Primary Wave Music IP Fund 4 GP, LLC",
-          "identifier_type": null,
-          "identifier": "Company number 7667915"
-        },
-        {
-          "name": "Kobalt Music Services Australia Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "12 144 997 142"
         }
       ],
       "anzsic_codes": [

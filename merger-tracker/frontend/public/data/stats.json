@@ -2,11 +2,11 @@
   "total_mergers": 131,
   "total_waivers": 202,
   "by_status": {
-    "Assessment completed": 95,
-    "Under assessment": 36
+    "Assessment completed": 96,
+    "Under assessment": 35
   },
   "by_determination": {
-    "Approved": 94,
+    "Approved": 95,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.88421052631579,
+    "average_days": 29.822916666666668,
     "median_days": 26,
-    "average_business_days": 19.736842105263158,
+    "average_business_days": 19.697916666666668,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 21,
-        "percentage": 22.1
+        "percentage": 21.9
       },
       "day20": {
-        "count": 73,
-        "percentage": 76.8
+        "count": 74,
+        "percentage": 77.1
       },
       "day30": {
-        "count": 93,
+        "count": 94,
         "percentage": 97.9
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-25018",
+      "merger_name": "Primary Wave - Kobalt",
+      "determination": "Approved",
+      "determination_date": "2026-06-11T12:00:00Z",
+      "page_modified_datetime": "2026-06-11T10:04:09+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-30021",
       "merger_name": "Regional Australia Bank \u2013 South West Slopes Credit Union",
       "determination": "Approved",
@@ -167,16 +177,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-50015",
-      "merger_name": "Mastercard - BVNK",
-      "determination": "Approved",
-      "determination_date": "2026-06-10T12:00:00Z",
-      "page_modified_datetime": "2026-06-10T17:22:09+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
