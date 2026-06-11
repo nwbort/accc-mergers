@@ -1,0 +1,152 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ebos-paringa-pet-foods",
+  "merger_name": "EBOS - Paringa Pet Foods",
+  "status": "Under assessment",
+  "merger_id": "MN-30020",
+  "effective_notification_datetime": "2026-06-11T12:00:00Z",
+  "original_notification_datetime": "2026-06-11T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-07-23T12:00:00Z",
+  "page_modified_datetime": "2026-06-12T08:12:01+10:00",
+  "consultation_response_due_date": "2026-06-19T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "PET CARE DISTRIBUTORS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "58 125 265 769"
+    }
+  ],
+  "targets": [
+    {
+      "name": "PARINGA PET FOODS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "20 142 418 915"
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "EBOS Group Limited",
+      "identifier_type": "ACN",
+      "identifier": "166 840 973"
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "1192",
+      "name": "Prepared Animal and Bird Feed Manufacturing"
+    },
+    {
+      "code": "3739",
+      "name": "Other Goods Wholesaling n.e.c."
+    }
+  ],
+  "merger_description": "Pet Care Distributors Pty Ltd, a subsidiary of EBOS Group Limited (**EBOS**), proposes to acquire 100% of the shares of Paringa Pet Foods Pty Ltd (**Paringa Pet Foods**) (the **Acquisition**).\n\nEBOS is a marketer, wholesaler and distributor of healthcare, medical and pharmaceutical products and animal care products. EBOS serves customers across Australia. EBOS\u2019 animal care portfolio includes dry pet food and pet treats marketed under various brands including Black Hawk, VitaPet, Yours Drooly and Next Generation Pet Foods.\n\nParinga Pet Food is an Australian\u2011owned pet food manufacturer and supplier of fresh, frozen and cooked pet food products. Its products are sold through supermarkets, pet specialty retailers and via a direct\u2011to\u2011consumer channel. Its proprietary brands include Regal and Paringa, alongside premium private/white label brands.",
+  "events": [
+    {
+      "date": "2026-06-12T12:00:00Z",
+      "title": "Questionnaire - EBOS - Paringa Pet Foods",
+      "display_title": "Questionnaire - EBOS - Paringa Pet Foods",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/EBOS%20-%20Paringa%20Pet%20Foods%3A%20Questionnaire%20for%20Acquisitions%20register.docx",
+      "url_gh": "/mergers/MN-30020/EBOS - Paringa Pet Foods - Questionnaire for Acquisitions register.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-06-11T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-95021",
+      "merger_name": "Logic Technologies - Ace Communication Distributors",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "CSE-GLOBAL (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 109 958 090"
+        },
+        {
+          "name": "LOGIC TECHNOLOGIES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 071 025 084"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ACE COMMUNICATION DISTRIBUTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "75 103 761 011"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-55005",
+      "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "General Atlantic",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Canada Pension Plan Investment Board",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Boats Group Holdings, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Bimini Holdings, LP",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-80016",
+      "merger_name": "Henkel \u2013 Olaplex",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Henkel US Operations Corporation",
+          "identifier_type": null,
+          "identifier": "Delaware registration number: 740913"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Olaplex Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware registration number: 5923882 (EIN: 871242679)"
+        },
+        {
+          "name": "Advent International, L.P.",
+          "identifier_type": null,
+          "identifier": "Delaware registration number: 204418"
+        }
+      ]
+    }
+  ]
+}

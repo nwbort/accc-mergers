@@ -1,9 +1,9 @@
 {
-  "total_mergers": 131,
+  "total_mergers": 132,
   "total_waivers": 202,
   "by_status": {
     "Assessment completed": 97,
-    "Under assessment": 34
+    "Under assessment": 35
   },
   "by_determination": {
     "Approved": 96,
@@ -77,6 +77,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-30020",
+      "merger_name": "EBOS - Paringa Pet Foods",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-11T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-05025",
       "merger_name": "Equans - CV Services Group",
       "status": "Under assessment",
@@ -103,14 +111,6 @@
     {
       "merger_id": "MN-40020",
       "merger_name": "Premier Fresh \u2013 Domenico Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-04T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50019",
-      "merger_name": "Coles \u2013 supermarket site in Lidcombe (NSW)",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-04T12:00:00Z",
