@@ -5318,36 +5318,38 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/opal-healthcare-bethel-aged-care",
     "merger_name": "Opal HealthCare - Bethel Aged Care",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-15019",
     "effective_notification_datetime": "2026-05-20T12:00:00Z",
     "original_notification_datetime": "2026-05-20T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-07-03T12:00:00Z",
-    "page_modified_datetime": "2026-05-29T12:31:12+10:00",
+    "determination_publication_date": "2026-06-12T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-06-12T15:31:23+10:00",
     "consultation_response_due_date": "2026-05-28T12:00:00Z",
     "acquirers": [
-      {
-        "name": "DPG SERVICES PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "38 090 007 999"
-      },
       {
         "name": "OHCA PROPERTY HOLDINGS PTY LTD",
         "identifier_type": "ABN",
         "identifier": "70 675 807 477"
+      },
+      {
+        "name": "DPG SERVICES PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "38 090 007 999"
       }
     ],
     "targets": [
       {
-        "name": "Java Dale Pty Ltd",
-        "identifier_type": "ACN",
-        "identifier": "077 379 367"
-      },
-      {
         "name": "Bethel Amen Pty Ltd",
         "identifier_type": "ACN",
         "identifier": "077 379 358"
+      },
+      {
+        "name": "Java Dale Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "077 379 367"
       }
     ],
     "other_parties": [],
@@ -5371,6 +5373,43 @@
         "date": "2026-05-20T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-06-12T12:00:00Z",
+        "title": "Opal Healthcare - Bethel Aged Care - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Opal%20Healthcare%20-%20Bethel%20Aged%20Care%20-%20Phase%201%20determination.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "DPG Services Pty Ltd and OHCA Property Holdings Pty Limited\n(being related bodies corporate, and together referred to as Opal\nHealthcare) propose to acquire the land, assets and business\ncomprising the following approved aged care facilities operated by\nJava Dale Pty Ltd (Bethel Aged Care) in Melbourne:\n- the Bethel Aged Care residential aged care home, an approved\nresidential care facility with 121 beds, located at 600 Plenty\nRoad, Mill Park, Victoria (Mill Park Community); and\n- Anzac Lodge, a residential aged care home, an approved\nresidential care facility also with 121 beds, located at 2/12\nAnzac Avenue, Coburg North, Victoria (Coburg North\nCommunity)\n(the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "The acquirer, Opal Healthcare, owns and operates 146 residential\naged care facilities across New South Wales, Victoria, Queensland,\nWestern Australia and South Australia.\nThe target, Bethel Aged Care, owns and operates the residential\naged care facilities Mill Park Community and Coburg North\nCommunity."
+          },
+          {
+            "item": "Overlap and relationship\nbetween the parties",
+            "details": "Opal Healthcare and Bethel Aged Care overlap in the supply of\nresidential aged care facilities in Melbourne."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third parties and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The aggregation arising from the Acquisition and previous\nacquisitions by Opal Healthcare within the local areas of Mill\nPark Community and Coburg North Community in the last\nthree years is significant at a local level.\n\u2022 However, Opal Healthcare will likely continue to face\ncompetition from alternative suppliers of residential aged\ncare facilities in the local areas surrounding Mill Park\nCommunity and Coburg North Community."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/mergers/MN-15019/Opal Healthcare - Bethel Aged Care - Phase 1 determination.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false
@@ -5940,13 +5979,13 @@
     "original_notification_datetime": "2026-06-02T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-07-15T12:00:00Z",
-    "page_modified_datetime": "2026-06-03T14:19:02+10:00",
+    "page_modified_datetime": "2026-06-10T17:15:56+10:00",
     "consultation_response_due_date": "2026-06-10T12:00:00Z",
     "acquirers": [
       {
-        "name": "SMG-Three LLC",
+        "name": "Orion BidCo LLC",
         "identifier_type": null,
-        "identifier": "DDC  10277876"
+        "identifier": "DDC  10608976"
       },
       {
         "name": "Sony Music Publishing (US) LLC",
@@ -5954,9 +5993,9 @@
         "identifier": "DDC  2558200"
       },
       {
-        "name": "Orion BidCo LLC",
+        "name": "SMG-Three LLC",
         "identifier_type": null,
-        "identifier": "DDC  10608976"
+        "identifier": "DDC  10277876"
       }
     ],
     "targets": [
@@ -5968,9 +6007,9 @@
     ],
     "other_parties": [
       {
-        "name": "Candle Media LLC",
+        "name": "Blackstone Inc",
         "identifier_type": null,
-        "identifier": "DDC  6119562"
+        "identifier": "DDC  4315990"
       },
       {
         "name": "SESAC Holdings, Inc",
@@ -5978,14 +6017,14 @@
         "identifier": "NY DOS ID  1652738"
       },
       {
-        "name": "Blackstone Inc",
-        "identifier_type": null,
-        "identifier": "DDC  4315990"
-      },
-      {
         "name": "National Exhibition Centre Limited",
         "identifier_type": null,
         "identifier": "CRN  00979395"
+      },
+      {
+        "name": "Candle Media LLC",
+        "identifier_type": null,
+        "identifier": "DDC  6119562"
       }
     ],
     "anzsic_codes": [
@@ -6002,7 +6041,7 @@
         "display_title": "Questionnaire",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Recognition%20Music%20-%20Questionnaire.docx",
         "url_gh": "/mergers/MN-20023/Recognition Music - Questionnaire.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-06-02T12:00:00Z",
@@ -13801,7 +13840,7 @@
     "original_notification_datetime": "2026-06-03T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-07-16T12:00:00Z",
-    "page_modified_datetime": "2026-06-05T15:21:57+10:00",
+    "page_modified_datetime": "2026-06-12T15:19:48+10:00",
     "consultation_response_due_date": "2026-06-11T12:00:00Z",
     "acquirers": [
       {
@@ -13812,14 +13851,14 @@
     ],
     "targets": [
       {
-        "name": "WORLDLINE AUSTRALIA PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "50 645 073 034"
-      },
-      {
         "name": "Worldline SA",
         "identifier_type": null,
         "identifier": "VATIN FR01378901946"
+      },
+      {
+        "name": "WORLDLINE AUSTRALIA PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "50 645 073 034"
       }
     ],
     "other_parties": [],
@@ -13837,7 +13876,7 @@
         "display_title": "ANZ Banking Group - Worldline Australia - Questionnaire",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/ANZ%20Banking%20Group%20-%20Worldline%20Australia%20-%20Questionnaire.docx",
         "url_gh": "/mergers/MN-80014/ANZ Banking Group - Worldline Australia - Questionnaire.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-06-03T12:00:00Z",

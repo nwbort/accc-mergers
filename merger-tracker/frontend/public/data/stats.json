@@ -2,11 +2,11 @@
   "total_mergers": 132,
   "total_waivers": 202,
   "by_status": {
-    "Assessment completed": 98,
-    "Under assessment": 34
+    "Assessment completed": 99,
+    "Under assessment": 33
   },
   "by_determination": {
-    "Approved": 97,
+    "Approved": 98,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.714285714285715,
+    "average_days": 29.646464646464647,
     "median_days": 26,
-    "average_business_days": 19.632653061224488,
+    "average_business_days": 19.585858585858585,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 20,
-        "percentage": 20.4
+        "count": 21,
+        "percentage": 21.2
       },
       "day20": {
-        "count": 76,
-        "percentage": 77.6
+        "count": 77,
+        "percentage": 77.8
       },
       "day30": {
-        "count": 96,
+        "count": 97,
         "percentage": 98.0
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-15019",
+      "merger_name": "Opal HealthCare - Bethel Aged Care",
+      "determination": "Approved",
+      "determination_date": "2026-06-12T12:00:00Z",
+      "page_modified_datetime": "2026-06-12T15:31:23+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-95007",
       "merger_name": "Magellan Financial Group - Barrenjoey",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-10T12:00:00Z",
       "page_modified_datetime": "2026-06-10T18:22:09+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-30019",
-      "merger_name": "KKR \u2013 Fresha.com",
-      "determination": "Approved",
-      "determination_date": "2026-06-10T12:00:00Z",
-      "page_modified_datetime": "2026-06-10T18:19:14+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

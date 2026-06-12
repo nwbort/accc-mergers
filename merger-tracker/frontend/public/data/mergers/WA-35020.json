@@ -83,30 +83,30 @@
     {
       "merger_id": "MN-15019",
       "merger_name": "Opal HealthCare - Bethel Aged Care",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "acquirers": [
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
-        },
         {
           "name": "OHCA PROPERTY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "70 675 807 477"
+        },
+        {
+          "name": "DPG SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "38 090 007 999"
         }
       ],
       "targets": [
         {
-          "name": "Java Dale Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "077 379 367"
-        },
-        {
           "name": "Bethel Amen Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "077 379 358"
+        },
+        {
+          "name": "Java Dale Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "077 379 367"
         }
       ]
     },
