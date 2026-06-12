@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-06-04T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-07-17T12:00:00Z",
-  "page_modified_datetime": "2026-06-05T11:13:50+10:00",
+  "page_modified_datetime": "2026-06-12T15:49:39+10:00",
   "consultation_response_due_date": "2026-06-12T12:00:00Z",
   "acquirers": [
     {
@@ -18,6 +18,11 @@
   ],
   "targets": [
     {
+      "name": "DOUBLE D PRODUCE PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "86 074 625 004"
+    },
+    {
       "name": "De Domenico Carmelo",
       "identifier_type": null,
       "identifier": ""
@@ -26,11 +31,6 @@
       "name": "NORTH QUEENSLAND IQF PTY. LTD.",
       "identifier_type": "ABN",
       "identifier": "32 070 037 795"
-    },
-    {
-      "name": "DOUBLE D PRODUCE PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "86 074 625 004"
     },
     {
       "name": "C.A. DE DOMENICO PTY LTD",
@@ -71,7 +71,7 @@
       "display_title": "Questionnaire - Premier Fresh - Domenico Group",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Premier%20Fresh%20-%20Domenico%20Group.docx",
       "url_gh": "/mergers/MN-40020/Questionnaire - Premier Fresh - Domenico Group.pdf",
-      "status": "live",
+      "status": "removed",
       "phase": null
     },
     {
