@@ -1,15 +1,3 @@
 {
-  "_comment": "Override data for specific mergers. An entry with an empty dict or 'freeze_events: true' preserves the existing events array rather than overwriting from the scraped page (use this when the ACCC events table is incorrect). Any other keys are treated as field overrides \u2014 the scraper will use these values instead of whatever it finds on the page.",
-  "MN-30016": {
-    "_comment": "Questionnaire event date (25 May 2026) is missing from the ACCC page; freezing events to preserve the automatically set date.",
-    "freeze_events": true
-  },
-  "MN-05014": {
-    "_comment": "Questionnaire event date (27 May 2026) is missing from the ACCC page; freezing events to preserve the automatically set date.",
-    "freeze_events": true
-  },
-  "MN-50009": {
-    "_comment": "Remedy offer event date (28 May 2026) was missing from ACCC page; freezing events to preserve the automatically set date.",
-    "freeze_events": true
-  }
+  "_comment": "Override data for specific mergers. An entry with an empty dict or 'freeze_events: true' preserves the existing events array rather than overwriting from the scraped page (use this when the ACCC events table is incorrect). Any other keys are treated as field overrides \u2014 the scraper will use these values instead of whatever it finds on the page."
 }
