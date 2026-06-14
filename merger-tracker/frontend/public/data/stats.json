@@ -1,12 +1,12 @@
 {
-  "total_mergers": 132,
+  "total_mergers": 133,
   "total_waivers": 202,
   "by_status": {
-    "Assessment completed": 99,
+    "Assessment completed": 100,
     "Under assessment": 33
   },
   "by_determination": {
-    "Approved": 98,
+    "Approved": 99,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -14,21 +14,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.646464646464647,
+    "average_days": 29.62,
     "median_days": 26,
-    "average_business_days": 19.585858585858585,
+    "average_business_days": 19.56,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 21,
-        "percentage": 21.2
+        "percentage": 21.0
       },
       "day20": {
-        "count": 77,
-        "percentage": 77.8
+        "count": 78,
+        "percentage": 78.0
       },
       "day30": {
-        "count": 97,
+        "count": 98,
         "percentage": 98.0
       }
     }
@@ -119,6 +119,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-30008",
+      "merger_name": "Frasers Group \u2013 Accent Group",
+      "determination": "Approved",
+      "determination_date": "2026-06-15T12:00:00Z",
+      "page_modified_datetime": "2026-06-15T09:48:36+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-15019",
       "merger_name": "Opal HealthCare - Bethel Aged Care",
       "determination": "Approved",
@@ -164,16 +174,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-10T12:00:00Z",
       "page_modified_datetime": "2026-06-10T18:44:26+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-80020",
-      "merger_name": "Platinum Equity Group - LMPG",
-      "determination": "Approved",
-      "determination_date": "2026-06-10T12:00:00Z",
-      "page_modified_datetime": "2026-06-10T18:22:09+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

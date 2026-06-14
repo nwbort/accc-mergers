@@ -912,6 +912,15 @@
       },
       {
         "notification_date": "2026-05-19",
+        "business_days": 17,
+        "calendar_days": 27,
+        "merger_name": "Frasers Group \u2013 Accent Group",
+        "merger_id": "MN-30008",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "notification_date": "2026-05-19",
         "business_days": 16,
         "calendar_days": 24,
         "merger_name": "Magellan Financial Group - Barrenjoey",
@@ -931,17 +940,17 @@
     ],
     "stats": {
       "average": 19.6,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 148,
-      "count": 99
+      "count": 100
     },
     "calendar_stats": {
       "average": 29.6,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 235,
-      "count": 99
+      "count": 100
     }
   },
   "waiver_duration": {
@@ -2600,7 +2609,7 @@
       22,
       21,
       26,
-      32,
+      33,
       11
     ],
     "waivers": [
