@@ -18,6 +18,7 @@ Loaders:
 Predicates (single-merger):
     :func:`is_waiver`
     :func:`is_suspended`
+    :func:`is_ceased`
     :func:`is_public_visible`
 
 List filters:
@@ -113,6 +114,19 @@ def is_suspended(merger: dict) -> bool:
     return merger.get("status") == merger_status.ASSESSMENT_SUSPENDED
 
 
+def is_ceased(merger: dict) -> bool:
+    """Return True if the merger's assessment has been ceased.
+
+    Matches ``merger['status'] ==``
+    :data:`constants.merger_status.ASSESSMENT_CEASED` (``'Assessment
+    ceased'``). A ceased assessment has been permanently terminated without
+    a formal determination (e.g. following a written request from the
+    notifying party). Such mergers should not appear in upcoming-events
+    feeds, though their historical events still surface in digest/RSS.
+    """
+    return merger.get("status") == merger_status.ASSESSMENT_CEASED
+
+
 def is_public_visible(merger: dict) -> bool:
     """Return True if the merger belongs in curated public activity streams.
 
@@ -123,14 +137,16 @@ def is_public_visible(merger: dict) -> bool:
 
     A merger is publicly visible when it is a genuine notification review
     whose assessment is still active — i.e. not a waiver
-    (:func:`is_waiver`) and not suspended (:func:`is_suspended`).
+    (:func:`is_waiver`), not suspended (:func:`is_suspended`), and not
+    ceased (:func:`is_ceased`).
 
     Note: the weekly digest and RSS feed deliberately use the less
     restrictive :func:`filter_active` instead of this predicate — they
-    include waivers as part of substantive ACCC activity. See those
-    generators' module docstrings.
+    include waivers as part of substantive ACCC activity, and include
+    ceased mergers so that the cessation event itself surfaces as news.
+    See those generators' module docstrings.
     """
-    return not is_waiver(merger) and not is_suspended(merger)
+    return not is_waiver(merger) and not is_suspended(merger) and not is_ceased(merger)
 
 
 # ---------------------------------------------------------------------------
@@ -193,6 +209,7 @@ __all__ = [
     "load_mergers",
     "is_waiver",
     "is_suspended",
+    "is_ceased",
     "is_public_visible",
     "filter_public",
     "filter_active",

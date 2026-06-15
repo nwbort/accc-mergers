@@ -15,6 +15,7 @@ Source of truth:
 UNDER_ASSESSMENT = 'Under assessment'
 ASSESSMENT_SUSPENDED = 'Assessment suspended'
 ASSESSMENT_COMPLETED = 'Assessment completed'
+ASSESSMENT_CEASED = 'Assessment ceased'
 
 # Values that appear in merger['accc_determination'] (and phase-specific
 # determinations: phase_1_determination, phase_2_determination, etc.).

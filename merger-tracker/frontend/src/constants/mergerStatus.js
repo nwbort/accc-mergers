@@ -16,6 +16,7 @@ export const MERGER_STATUS = {
   UNDER_ASSESSMENT: 'Under assessment',
   ASSESSMENT_SUSPENDED: 'Assessment suspended',
   ASSESSMENT_COMPLETED: 'Assessment completed',
+  ASSESSMENT_CEASED: 'Assessment ceased',
 
   // merger.accc_determination
   APPROVED: 'Approved',
@@ -46,6 +47,7 @@ export const STATUS_COLORS = {
   [MERGER_STATUS.UNDER_ASSESSMENT]: 'bg-primary/5 text-primary border-primary/20',
   [MERGER_STATUS.ASSESSMENT_SUSPENDED]: 'bg-orange-50 text-orange-700 border-orange-200/60',
   [MERGER_STATUS.ASSESSMENT_COMPLETED]: DEFAULT_STATUS_STYLE,
+  [MERGER_STATUS.ASSESSMENT_CEASED]: DEFAULT_STATUS_STYLE,
 };
 
 // Digest.jsx color keys — correspond to the Tailwind color names declared in
