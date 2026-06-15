@@ -1,6 +1,6 @@
 import { parseISO, isValid } from 'date-fns';
 import {
-  formatDate,
+  formatDateMedium,
   calculateDuration,
   calculateBusinessDays,
   getDaysRemaining,
@@ -47,12 +47,12 @@ function MergerTimelineFallback({ merger, startStr }) {
               None &ndash; assessment suspended
               {merger.original_notification_datetime && (
                 <span className="text-gray-500 font-normal">
-                  {' '}(originally {formatDate(merger.original_notification_datetime)})
+                  {' '}(originally {formatDateMedium(merger.original_notification_datetime)})
                 </span>
               )}
             </>
           ) : (
-            formatDate(startStr)
+            formatDateMedium(startStr)
           )}
         </dd>
       </div>
@@ -100,7 +100,7 @@ function MergerTimeline({ merger }) {
   if (hasDeadline) {
     endStr = deadlineStr;
     end = deadline;
-    endLabel = isComplete ? 'Decision deadline' : 'Decision due';
+    endLabel = 'Deadline';
   } else if (isComplete) {
     endStr = merger.determination_publication_date;
     end = parseISO(endStr);
@@ -126,6 +126,18 @@ function MergerTimeline({ merger }) {
   const decisionPct = isComplete && hasDeadline
     ? axisPct(parseISO(merger.determination_publication_date), start, end)
     : null;
+
+  // For mergers referred to Phase 2, mark the Phase 1 determination date with a
+  // small unlabelled dot (details on hover).
+  const wentToPhase2 = merger.phase_1_determination === MERGER_STATUS.REFERRED_TO_PHASE_2
+    || Boolean(merger.phase_2_determination_date);
+  let phase1Pct = null;
+  if (wentToPhase2 && merger.phase_1_determination_date) {
+    const phase1 = parseISO(merger.phase_1_determination_date);
+    if (isValid(phase1) && phase1 > start && phase1 < end) {
+      phase1Pct = axisPct(phase1, start, end);
+    }
+  }
 
   // Progress + "today" marker, only while the assessment is still running.
   let todayPct = null;
@@ -177,9 +189,9 @@ function MergerTimeline({ merger }) {
   return (
     <div role="group" aria-label="Merger assessment timeline" className="flex items-stretch gap-3 sm:gap-5">
       {/* Start endpoint — outside the track, hugging it from the left */}
-      <div className="w-[5.5rem] shrink-0 flex flex-col justify-center items-end text-right">
+      <div className="w-24 shrink-0 flex flex-col justify-center items-end text-right">
         <span className={labelClass}>{startLabel}</span>
-        <span className={`${dateClass} mt-1`}>{formatDate(startStr)}</span>
+        <span className={`${dateClass} mt-1`}>{formatDateMedium(startStr)}</span>
       </div>
 
       {/* Track region — the mid marker's labels live inside it */}
@@ -203,6 +215,17 @@ function MergerTimeline({ merger }) {
             className="absolute left-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-primary transition-[width] duration-500"
             style={{ width: `${fillPct}%` }}
           />
+          {/* Phase 1 determination marker (referred to Phase 2). Smaller and
+              unlabelled — details shown on hover via the title tooltip. */}
+          {phase1Pct !== null && (
+            <span
+              className="absolute top-1/2 h-2.5 w-2.5 rounded-full bg-amber-500 ring-2 ring-white cursor-help"
+              style={{ left: `${phase1Pct}%`, transform: 'translate(-50%, -50%)' }}
+              title={`Referred to Phase 2 · ${formatDateMedium(merger.phase_1_determination_date)}`}
+              aria-label={`Referred to Phase 2 on ${formatDateMedium(merger.phase_1_determination_date)}`}
+            />
+          )}
+
           {/* Start node */}
           <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full bg-primary ring-2 ring-white" />
           {/* End node */}
@@ -238,7 +261,7 @@ function MergerTimeline({ merger }) {
           >
             {midIsDetermination ? (
               <>
-                <span className={`block ${dateClass}`}>{formatDate(merger.determination_publication_date)}</span>
+                <span className={`block ${dateClass}`}>{formatDateMedium(merger.determination_publication_date)}</span>
                 {durationStr && (
                   <span className="block max-w-[7rem] text-[11px] font-normal text-gray-500">{durationStr}</span>
                 )}
@@ -253,9 +276,9 @@ function MergerTimeline({ merger }) {
       </div>
 
       {/* End endpoint — outside the track, hugging it from the right */}
-      <div className="w-[5.5rem] shrink-0 flex flex-col justify-center items-start text-left">
+      <div className="w-24 shrink-0 flex flex-col justify-center items-start text-left">
         <span className={labelClass}>{endLabel}</span>
-        <span className={`${dateClass} mt-1`}>{formatDate(endStr)}</span>
+        <span className={`${dateClass} mt-1`}>{formatDateMedium(endStr)}</span>
         {endNote && <span className={`text-[11px] mt-0.5 ${endNoteClass}`}>{endNote}</span>}
       </div>
     </div>

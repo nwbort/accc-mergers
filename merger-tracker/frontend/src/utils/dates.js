@@ -142,6 +142,20 @@ export const formatDate = (dateString) => {
   }
 };
 
+/**
+ * Format a date as "DD Mmm Yyyy" (e.g. 18 May 2026).
+ * @param {string} dateString - Date in ISO format
+ * @returns {string} The formatted date
+ */
+export const formatDateMedium = (dateString) => {
+  if (!dateString) return 'N/A';
+  try {
+    return format(parseISO(dateString), 'dd MMM yyyy');
+  } catch {
+    return 'Invalid date';
+  }
+};
+
 export const calculateDuration = (startDate, endDate) => {
   if (!startDate || !endDate) return null;
   try {
