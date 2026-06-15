@@ -8,7 +8,7 @@ from urllib.parse import urljoin, urlparse, unquote
 import unicodedata
 import requests
 import re
-from datetime import datetime
+from datetime import datetime, timedelta
 from markdownify import markdownify as md
 from parse_determination import parse_determination_pdf
 from parse_nocc import (
@@ -571,6 +571,23 @@ def _dates_within_one_day(date1, date2):
     return abs((dt1.date() - dt2.date()).days) <= 1
 
 
+def _determination_pdf_precedes_registration(event_date, det_date, max_days_before=4):
+    """Return True if event_date falls within max_days_before days before det_date.
+
+    The ACCC sometimes records a determination_publication_date on the register
+    page that is later than the actual decision date on the PDF event (e.g.
+    MN-30008: decision made 11 Jun, registered on the page 15 Jun).  This helper
+    identifies those PDF events so they can be promoted as the canonical
+    determination event rather than creating a URL-less synthetic event.
+    """
+    dt_event = parse_iso_datetime(event_date)
+    dt_det = parse_iso_datetime(det_date)
+    if dt_event is None or dt_det is None:
+        return False
+    diff = (dt_det.date() - dt_event.date()).days  # positive when event is before det
+    return 0 < diff <= max_days_before
+
+
 def _infer_determination_date_from_events(merger_data):
     """Set determination_publication_date from linked determination events when absent.
 
@@ -594,6 +611,23 @@ def _infer_determination_date_from_events(merger_data):
         merger_data['determination_publication_date'] = max(
             det_events, key=lambda e: e.get('date', '')
         )['date']
+
+
+def _calculate_missing_end_of_determination_period(merger_data, merger_id):
+    """Calculate end_of_determination_period as effective_notification_datetime + 30 business days.
+
+    Fallback for when the ACCC register page hasn't yet populated the field.
+    Skipped for WA- (waiver) mergers which follow different rules.
+    """
+    if merger_data.get('end_of_determination_period'):
+        return
+    if (merger_id or '').startswith('WA-'):
+        return
+    start_dt = parse_iso_datetime(merger_data.get('effective_notification_datetime'))
+    if start_dt:
+        from static_data.business_days import add_business_days
+        end_dt = add_business_days(start_dt, 30)
+        merger_data['end_of_determination_period'] = end_dt.strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
 def _add_synthetic_events(merger_data):
@@ -639,6 +673,23 @@ def _add_synthetic_events(merger_data):
          and e.get('url')),
         None
     )
+
+    # Fallback: the ACCC sometimes records a determination_publication_date that
+    # is later than the actual decision date on the PDF event (e.g. MN-30008:
+    # decision 11 Jun, registered on the page 15 Jun).  If no event was found
+    # within ±1 day, look for a determination PDF event up to 4 days earlier.
+    if not existing_det_event:
+        prior_pdf_events = sorted(
+            (e for e in events
+             if ('determination' in e.get('title', '').lower()
+                 or 'determination' in e.get('url', '').lower())
+             and e.get('url')
+             and _determination_pdf_precedes_registration(e.get('date'), det_date)),
+            key=lambda e: e.get('date', ''),
+            reverse=True,
+        )
+        if prior_pdf_events:
+            existing_det_event = prior_pdf_events[0]
 
     if existing_det_event:
         existing_det_event['display_title'] = determination_title
@@ -704,6 +755,7 @@ def parse_merger_file(filepath, existing_merger_data=None, frozen_events_mergers
         )
 
         _infer_determination_date_from_events(merger_data)
+        _calculate_missing_end_of_determination_period(merger_data, merger_id)
         _add_synthetic_events(merger_data)
 
         if field_overrides and merger_id in field_overrides:
