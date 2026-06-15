@@ -11591,7 +11591,7 @@
         {
           "date": "2026-06-11T12:00:00Z",
           "title": "Frasers Group - Accent Group - Phase 1 determination",
-          "display_title": "Frasers Group - Accent Group - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/MN-30008%20-%20Phase%201%20determination.pdf",
           "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
           "determination_table_content": [
@@ -11622,6 +11622,7 @@
           ],
           "url_gh": "/mergers/MN-30008/MN-30008 - Phase 1 determination.pdf",
           "status": "live",
+          "is_determination_event": true,
           "phase": "Phase 1"
         },
         {
@@ -11629,16 +11630,10 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
-        },
-        {
-          "date": "2026-06-15T12:00:00Z",
-          "title": "Phase 1 - initial assessment determination: Approved",
-          "display_title": "Phase 1 - initial assessment determination: Approved",
-          "is_determination_event": true,
-          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
+      "end_of_determination_period": "2026-06-29T12:00:00Z",
       "phase_1_determination": "Approved",
       "phase_1_determination_date": "2026-06-15T12:00:00Z",
       "phase_2_determination": null,
