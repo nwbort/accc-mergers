@@ -571,10 +571,10 @@ def _dates_within_one_day(date1, date2):
     return abs((dt1.date() - dt2.date()).days) <= 1
 
 
-def _is_prior_determination_pdf(event_date, det_date, max_days_before=14):
+def _is_prior_determination_pdf(event_date, det_date, max_days_before=4):
     """Return True if event_date falls within max_days_before days before det_date.
 
-    The ACCC sometimes uploads a determination PDF several days before the
+    The ACCC sometimes uploads a determination PDF a few days before the
     formal determination date is recorded on the register page.  This helper
     identifies those early-uploaded PDFs so they can be promoted as the
     canonical determination event.
