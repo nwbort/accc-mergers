@@ -1,6 +1,18 @@
 import { parseISO, isValid } from 'date-fns';
-import { formatDate } from '../utils/dates';
+import {
+  formatDate,
+  calculateDuration,
+  calculateBusinessDays,
+  getDaysRemaining,
+  getBusinessDaysRemaining,
+  addBusinessDays,
+} from '../utils/dates';
 import { MERGER_STATUS } from '../constants/mergerStatus';
+
+// Statutory window the ACCC works to for merger waiver applications. Waivers
+// aren't published with an explicit end-of-determination date, so we derive the
+// deadline as this many business days after the application.
+const WAIVER_BUSINESS_DAYS = 25;
 
 // Determination outcome -> Tailwind background for the end node, so a glance at
 // the timeline endpoint conveys the result. Anything unmapped falls back to the
@@ -60,12 +72,20 @@ function MergerTimelineFallback({ merger, startStr }) {
  * determination once decided, otherwise the statutory decision deadline), with
  * a "today" marker and progress fill while the assessment is still running.
  */
-function MergerTimeline({ merger, duration, businessDuration, daysRemaining, businessDaysRemaining }) {
+function MergerTimeline({ merger }) {
   const startStr = merger.effective_notification_datetime || merger.original_notification_datetime;
   const isComplete = Boolean(merger.determination_publication_date);
 
   const start = startStr ? parseISO(startStr) : null;
-  const deadline = merger.end_of_determination_period ? parseISO(merger.end_of_determination_period) : null;
+
+  // Use the published end-of-determination date when present; for waivers
+  // (which have none) fall back to the statutory 25-business-day window.
+  let deadlineStr = merger.end_of_determination_period;
+  if (!deadlineStr && merger.is_waiver && start && isValid(start)) {
+    const derived = addBusinessDays(start, WAIVER_BUSINESS_DAYS);
+    deadlineStr = derived ? derived.toISOString() : null;
+  }
+  const deadline = deadlineStr ? parseISO(deadlineStr) : null;
   const hasDeadline = start && deadline && isValid(start) && isValid(deadline) && deadline > start;
 
   // The right-hand endpoint is the statutory decision deadline whenever there
@@ -78,7 +98,7 @@ function MergerTimeline({ merger, duration, businessDuration, daysRemaining, bus
   let endLabel;
   let endIsOutcome = false;
   if (hasDeadline) {
-    endStr = merger.end_of_determination_period;
+    endStr = deadlineStr;
     end = deadline;
     endLabel = isComplete ? 'Decision deadline' : 'Decision due';
   } else if (isComplete) {
@@ -100,6 +120,11 @@ function MergerTimeline({ merger, duration, businessDuration, daysRemaining, bus
   const originalStr = merger.original_notification_datetime;
   const showOriginal = originalStr && originalStr !== startStr;
   const outcomeDot = OUTCOME_DOT[merger.accc_determination] || 'bg-primary';
+
+  const duration = calculateDuration(startStr, merger.determination_publication_date);
+  const businessDuration = calculateBusinessDays(startStr, merger.determination_publication_date);
+  const daysRemaining = getDaysRemaining(deadlineStr);
+  const businessDaysRemaining = getBusinessDaysRemaining(deadlineStr);
 
   // Mid-axis "determination" marker for decided mergers whose endpoint is the
   // deadline.
@@ -156,7 +181,16 @@ function MergerTimeline({ merger, duration, businessDuration, daysRemaining, bus
         {/* Start node */}
         <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full bg-primary ring-2 ring-white" />
 
-        {/* Determination marker (decided mergers whose endpoint is the deadline) */}
+        {/* End node */}
+        <span
+          className={`absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white ${
+            endIsOutcome ? outcomeDot : 'bg-white border-2 border-gray-300'
+          }`}
+        />
+
+        {/* Determination marker (decided mergers whose endpoint is the
+            deadline). Rendered after the end node so it stays visible if the
+            determination landed on or past the deadline. */}
         {decisionPct !== null && (
           <span
             className={`absolute top-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white shadow-sm ${outcomeDot}`}
@@ -173,13 +207,6 @@ function MergerTimeline({ merger, duration, businessDuration, daysRemaining, bus
             aria-label="Today"
           />
         )}
-
-        {/* End node */}
-        <span
-          className={`absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white ${
-            endIsOutcome ? outcomeDot : 'bg-white border-2 border-gray-300'
-          }`}
-        />
       </div>
 
       {/* Dates */}

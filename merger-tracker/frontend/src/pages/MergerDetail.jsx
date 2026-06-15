@@ -14,7 +14,7 @@ import DeterminationExplanationSection from '../components/DeterminationExplanat
 import MergerTimeline from '../components/MergerTimeline';
 import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
-import { formatDate, calculateDuration, getDaysRemaining, calculateBusinessDays, getBusinessDaysRemaining } from '../utils/dates';
+import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN } from '../utils/classNames';
 import { slugify, mergerPath } from '../utils/slug';
@@ -106,19 +106,6 @@ function MergerDetail() {
     );
   }
   if (!merger) return null;
-
-  const duration = calculateDuration(
-    merger.effective_notification_datetime,
-    merger.determination_publication_date
-  );
-
-  const businessDuration = calculateBusinessDays(
-    merger.effective_notification_datetime,
-    merger.determination_publication_date
-  );
-
-  const daysRemaining = getDaysRemaining(merger.end_of_determination_period);
-  const businessDaysRemaining = getBusinessDaysRemaining(merger.end_of_determination_period);
 
   const sortedEvents = merger.events
     ? [...merger.events].sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -254,13 +241,7 @@ function MergerDetail() {
 
           {/* Assessment timeline */}
           <div className="mt-6 pt-6 border-t border-gray-100">
-            <MergerTimeline
-              merger={merger}
-              duration={duration}
-              businessDuration={businessDuration}
-              daysRemaining={daysRemaining}
-              businessDaysRemaining={businessDaysRemaining}
-            />
+            <MergerTimeline merger={merger} />
           </div>
 
           {/* Stage & determination */}

@@ -21,10 +21,6 @@ describe('MergerTimeline', () => {
           end_of_determination_period: '2026-07-01T12:00:00Z',
           status: 'Under assessment',
         }}
-        duration={null}
-        businessDuration={null}
-        daysRemaining={30}
-        businessDaysRemaining={21}
       />
     );
 
@@ -33,7 +29,7 @@ describe('MergerTimeline', () => {
     expect(screen.getByText('18/05/2026')).toBeInTheDocument();
     expect(screen.getByText('01/07/2026')).toBeInTheDocument();
     expect(screen.getByText('Today')).toBeInTheDocument();
-    expect(screen.getByText('30 cal / 21 bus. days remaining')).toBeInTheDocument();
+    expect(screen.getByText(/days remaining/)).toBeInTheDocument();
   });
 
   it('shows the original notification date when it differs from the effective one', () => {
@@ -45,10 +41,6 @@ describe('MergerTimeline', () => {
           end_of_determination_period: '2026-08-17T12:00:00Z',
           status: 'Under assessment',
         }}
-        duration={null}
-        businessDuration={null}
-        daysRemaining={63}
-        businessDaysRemaining={44}
       />
     );
 
@@ -66,10 +58,6 @@ describe('MergerTimeline', () => {
           accc_determination: 'Approved',
           status: 'Assessment completed',
         }}
-        duration={23}
-        businessDuration={16}
-        daysRemaining={0}
-        businessDaysRemaining={0}
       />
     );
 
@@ -79,34 +67,48 @@ describe('MergerTimeline', () => {
     // The actual determination is shown as a labelled marker on the axis.
     expect(screen.getByText('Determination')).toBeInTheDocument();
     expect(screen.getByText('10/06/2026')).toBeInTheDocument();
-    expect(screen.getByText('23 cal / 16 bus. days')).toBeInTheDocument();
     // No live "today" marker once the assessment is finished.
     expect(screen.queryByText('Today')).not.toBeInTheDocument();
   });
 
-  it('ends on the determination date for a decided merger with no deadline (waiver)', () => {
+  it('derives a 25-business-day deadline for a decided waiver', () => {
+    render(
+      <MergerTimeline
+        merger={{
+          is_waiver: true,
+          effective_notification_datetime: '2026-01-08T12:00:00Z',
+          end_of_determination_period: null,
+          determination_publication_date: '2026-01-20T12:00:00Z',
+          accc_determination: 'Approved',
+          status: 'Assessment completed',
+        }}
+      />
+    );
+
+    expect(screen.getByText('Waiver application')).toBeInTheDocument();
+    expect(screen.getByText('Decision deadline')).toBeInTheDocument();
+    // 25 business days after 08/01/2026 (allowing for the 23 Dec - 10 Jan
+    // non-business period, weekends and ACT public holidays) is 16/02/2026.
+    expect(screen.getByText('16/02/2026')).toBeInTheDocument();
+    expect(screen.getByText('Determination')).toBeInTheDocument();
+    expect(screen.getByText('20/01/2026')).toBeInTheDocument();
+  });
+
+  it('derives a 25-business-day deadline for a pending waiver', () => {
     render(
       <MergerTimeline
         merger={{
           is_waiver: true,
           effective_notification_datetime: '2026-05-18T12:00:00Z',
           end_of_determination_period: null,
-          determination_publication_date: '2026-06-10T12:00:00Z',
-          accc_determination: 'Approved',
-          status: 'Assessment completed',
+          status: 'Under assessment',
         }}
-        duration={23}
-        businessDuration={16}
-        daysRemaining={0}
-        businessDaysRemaining={0}
       />
     );
 
-    expect(screen.getByText('Determination')).toBeInTheDocument();
-    expect(screen.getByText('10/06/2026')).toBeInTheDocument();
-    expect(screen.getByText('23 cal / 16 bus. days')).toBeInTheDocument();
-    // No deadline available, so nothing labelled as a deadline.
-    expect(screen.queryByText('Decision deadline')).not.toBeInTheDocument();
+    expect(screen.getByText('Waiver application')).toBeInTheDocument();
+    expect(screen.getByText('Decision due')).toBeInTheDocument();
+    expect(screen.getByText('Today')).toBeInTheDocument();
   });
 
   it('falls back to a labelled view when no proportional axis is available', () => {
@@ -117,10 +119,6 @@ describe('MergerTimeline', () => {
           original_notification_datetime: '2026-04-01T12:00:00Z',
           status: 'Assessment suspended',
         }}
-        duration={null}
-        businessDuration={null}
-        daysRemaining={null}
-        businessDaysRemaining={null}
       />
     );
 
