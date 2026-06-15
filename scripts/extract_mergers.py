@@ -613,21 +613,19 @@ def _infer_determination_date_from_events(merger_data):
 
 
 def _calculate_missing_end_of_determination_period(merger_data, merger_id):
-    """Calculate end_of_determination_period from determination_publication_date + 14 days.
+    """Calculate end_of_determination_period as effective_notification_datetime + 30 business days.
 
     Fallback for when the ACCC register page hasn't yet populated the field.
-    The 14-day review window comes from s100C of the Competition and Consumer
-    Act 2010 (Cth).  Skipped for WA- (waiver) mergers which follow different rules.
+    Skipped for WA- (waiver) mergers which follow different rules.
     """
     if merger_data.get('end_of_determination_period'):
         return
-    if not merger_data.get('determination_publication_date'):
-        return
     if (merger_id or '').startswith('WA-'):
         return
-    det_dt = parse_iso_datetime(merger_data['determination_publication_date'])
-    if det_dt:
-        end_dt = det_dt + timedelta(days=14)
+    start_dt = parse_iso_datetime(merger_data.get('effective_notification_datetime'))
+    if start_dt:
+        from static_data.business_days import add_business_days
+        end_dt = add_business_days(start_dt, 30)
         merger_data['end_of_determination_period'] = end_dt.strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
