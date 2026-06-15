@@ -574,10 +574,11 @@ def _dates_within_one_day(date1, date2):
 def _is_prior_determination_pdf(event_date, det_date, max_days_before=4):
     """Return True if event_date falls within max_days_before days before det_date.
 
-    The ACCC sometimes uploads a determination PDF a few days before the
-    formal determination date is recorded on the register page.  This helper
-    identifies those early-uploaded PDFs so they can be promoted as the
-    canonical determination event.
+    The ACCC sometimes records a determination_publication_date on the register
+    page that is later than the actual decision date on the PDF event (e.g.
+    MN-30008: decision made 11 Jun, registered on the page 15 Jun).  This helper
+    identifies those PDF events so they can be promoted as the canonical
+    determination event rather than creating a URL-less synthetic event.
     """
     dt_event = parse_iso_datetime(event_date)
     dt_det = parse_iso_datetime(det_date)
@@ -673,10 +674,10 @@ def _add_synthetic_events(merger_data):
         None
     )
 
-    # Fallback: the ACCC sometimes uploads a determination PDF a few days before
-    # the formal determination date is recorded on the register page.  If no event
-    # was found within ±1 day, use the most recent determination PDF published
-    # within 14 days before the determination date (e.g. MN-30008).
+    # Fallback: the ACCC sometimes records a determination_publication_date that
+    # is later than the actual decision date on the PDF event (e.g. MN-30008:
+    # decision 11 Jun, registered on the page 15 Jun).  If no event was found
+    # within ±1 day, look for a determination PDF event up to 4 days earlier.
     if not existing_det_event:
         prior_pdf_events = sorted(
             (e for e in events
