@@ -11,9 +11,10 @@ import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import QuestionnaireSection from '../components/QuestionnaireSection';
 import DeterminationExplanationSection from '../components/DeterminationExplanationSection';
+import MergerTimeline from '../components/MergerTimeline';
 import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
-import { formatDate, calculateDuration, getDaysRemaining, calculateBusinessDays, getBusinessDaysRemaining } from '../utils/dates';
+import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN } from '../utils/classNames';
 import { slugify, mergerPath } from '../utils/slug';
@@ -105,19 +106,6 @@ function MergerDetail() {
     );
   }
   if (!merger) return null;
-
-  const duration = calculateDuration(
-    merger.effective_notification_datetime,
-    merger.determination_publication_date
-  );
-
-  const businessDuration = calculateBusinessDays(
-    merger.effective_notification_datetime,
-    merger.determination_publication_date
-  );
-
-  const daysRemaining = getDaysRemaining(merger.end_of_determination_period);
-  const businessDaysRemaining = getBusinessDaysRemaining(merger.end_of_determination_period);
 
   const sortedEvents = merger.events
     ? [...merger.events].sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -251,52 +239,17 @@ function MergerDetail() {
             </div>
           </div>
 
-          {/* Key Information Grid */}
+          {/* Assessment timeline */}
+          <div className="mt-6 pt-6 border-t border-gray-100">
+            <MergerTimeline merger={merger} />
+          </div>
+
+          {/* Stage & determination */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 pt-6 border-t border-gray-100">
             <div>
               <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">Stage</h3>
               <p className="text-sm font-medium text-gray-900">{merger.stage || 'N/A'}</p>
             </div>
-            <div>
-              <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">
-                {merger.is_waiver ? 'Waiver Application Date' : 'Effective Notification'}
-              </h3>
-              <p className="text-sm font-medium text-gray-900">
-                {!merger.effective_notification_datetime && merger.status?.toLowerCase().includes('suspended')
-                  ? <>None - assessment suspended{merger.original_notification_datetime && <span className="text-gray-500 font-normal"> (originally {formatDate(merger.original_notification_datetime)})</span>}</>
-                  : formatDate(merger.effective_notification_datetime)}
-              </p>
-            </div>
-            {!merger.is_waiver && !merger.status?.toLowerCase().includes('suspended') && (
-              <div>
-                <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">
-                  End of Determination Period
-                </h3>
-                <p className="text-sm font-medium text-gray-900">
-                  {formatDate(merger.end_of_determination_period)}
-                  {daysRemaining !== null && daysRemaining > 0 && !merger.determination_publication_date && (
-                    <span className="ml-2 text-xs text-gray-500 font-normal">
-                      ({daysRemaining} cal / {businessDaysRemaining} bus. days remaining)
-                    </span>
-                  )}
-                </p>
-              </div>
-            )}
-            {merger.determination_publication_date && (
-              <div>
-                <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">
-                  Determination Published
-                </h3>
-                <p className="text-sm font-medium text-gray-900">
-                  {formatDate(merger.determination_publication_date)}
-                  {duration !== null && businessDuration !== null && (
-                    <span className="ml-2 text-xs text-gray-500 font-normal">
-                      ({duration} cal / {businessDuration} bus. days)
-                    </span>
-                  )}
-                </p>
-              </div>
-            )}
             {merger.accc_determination && (
               <div>
                 <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">

@@ -103,10 +103,54 @@ export const getBusinessDaysRemaining = (endDate) => {
   }
 };
 
+/**
+ * Add a number of business days to a date (ACCC business-day definition).
+ * The start date is day 0, mirroring calculateBusinessDays.
+ * @param {Date|string} startDate - Start date
+ * @param {number} count - Number of business days to add
+ * @returns {Date|null} The resulting date, or null if inputs are invalid
+ */
+export const addBusinessDays = (startDate, count) => {
+  if (!startDate || count == null) return null;
+
+  try {
+    const start = typeof startDate === 'string' ? parseISO(startDate) : startDate;
+    if (!isValid(start)) return null;
+
+    let added = 0;
+    let currentDate = new Date(start);
+
+    while (added < count) {
+      currentDate = addDays(currentDate, 1);
+      if (isBusinessDay(currentDate)) {
+        added++;
+      }
+    }
+
+    return currentDate;
+  } catch {
+    return null;
+  }
+};
+
 export const formatDate = (dateString) => {
   if (!dateString) return 'N/A';
   try {
     return format(parseISO(dateString), 'dd/MM/yyyy');
+  } catch {
+    return 'Invalid date';
+  }
+};
+
+/**
+ * Format a date as "DD Mmm Yyyy" (e.g. 18 May 2026).
+ * @param {string} dateString - Date in ISO format
+ * @returns {string} The formatted date
+ */
+export const formatDateMedium = (dateString) => {
+  if (!dateString) return 'N/A';
+  try {
+    return format(parseISO(dateString), 'dd MMM yyyy');
   } catch {
     return 'Invalid date';
   }
