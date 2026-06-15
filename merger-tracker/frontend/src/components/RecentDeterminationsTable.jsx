@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { mergerPath } from '../utils/slug';
 import { formatDate } from '../utils/dates';
 import { isNewItem } from '../utils/lastVisit';
 import NewBadge from './NewBadge';
@@ -51,7 +52,7 @@ function RecentDeterminationsTable({ determinations }) {
                 <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                   <div className="flex items-start gap-2">
                     <Link
-                      to={`/mergers/${item.merger_id}`}
+                      to={mergerPath(item.merger_id, item.merger_name)}
                       className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
                       aria-label={`View merger details for ${item.merger_name}`}
                     >

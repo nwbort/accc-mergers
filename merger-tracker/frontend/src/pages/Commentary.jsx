@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { mergerPath } from '../utils/slug';
 import { FaComment } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -48,7 +49,7 @@ function Commentary() {
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
                       <Link
-                        to={`/mergers/${item.merger_id}`}
+                        to={mergerPath(item.merger_id, item.merger_name)}
                         className="text-base font-semibold text-gray-900 hover:text-primary transition-colors truncate"
                       >
                         {item.merger_name}

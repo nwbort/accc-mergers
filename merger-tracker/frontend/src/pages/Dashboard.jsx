@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { mergerPath } from '../utils/slug';
 import { FaMagnifyingGlass, FaStopwatch, FaChartLine } from 'react-icons/fa6';
 import { Doughnut } from 'react-chartjs-2';
 import StatusBadge from '../components/StatusBadge';
@@ -191,7 +192,7 @@ function Dashboard() {
           {stats.recent_mergers.map((merger) => (
             <li key={merger.merger_id}>
               <Link
-                to={`/mergers/${merger.merger_id}`}
+                to={mergerPath(merger.merger_id, merger.merger_name)}
                 className="block hover:bg-gray-100/70 transition-colors duration-150"
                 aria-label={`View merger details for ${merger.merger_name}`}
               >

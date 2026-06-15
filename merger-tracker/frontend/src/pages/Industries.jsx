@@ -1,5 +1,6 @@
 import { useState, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { mergerPath } from '../utils/slug';
 import LoadingSpinner from '../components/LoadingSpinner';
 import WaiverBadge from '../components/WaiverBadge';
 import SEO from '../components/SEO';
@@ -254,7 +255,7 @@ function Industries() {
                               {industryMergers.map((merger) => (
                                 <Link
                                   key={merger.merger_id}
-                                  to={`/mergers/${merger.merger_id}`}
+                                  to={mergerPath(merger.merger_id, merger.merger_name)}
                                   className="block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
                                   aria-label={`View merger details for ${merger.merger_name}`}
                                 >

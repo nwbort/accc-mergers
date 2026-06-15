@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { mergerPath } from '../utils/slug';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
@@ -75,7 +76,7 @@ function MergerNameCell({ merger, colorKey }) {
     <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
       <div className="flex items-start gap-2">
         <Link
-          to={`/mergers/${merger.merger_id}`}
+          to={mergerPath(merger.merger_id, merger.merger_name)}
           className={`${c.text} ${c.hoverText} font-medium transition-colors after:absolute after:inset-0`}
           aria-label={`View merger details for ${merger.merger_name}`}
         >

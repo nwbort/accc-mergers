@@ -20,6 +20,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 from merger_filters import load_mergers
+from slug import merger_path
 
 
 BASE_URL = "https://mergers.fyi"
@@ -124,8 +125,9 @@ def generate_sitemap(mergers):
         merger_id = merger.get("merger_id")
         if not merger_id:
             continue
+        path = merger_path(merger_id, merger.get("merger_name", ""))
         lines.append(url_entry(
-            loc=escape(f"{BASE_URL}/mergers/{merger_id}"),
+            loc=escape(f"{BASE_URL}{path}"),
             lastmod=lastmod_for(merger),
             changefreq="weekly",
             priority="0.6",

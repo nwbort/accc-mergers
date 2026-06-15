@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { mergerPath } from '../utils/slug';
 import { formatDate, getDaysRemaining } from '../utils/dates';
 
 function getEventTypeStyle(type) {
@@ -89,7 +90,7 @@ function UpcomingEventsTable({ events }) {
                   </td>
                   <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
                     <Link
-                      to={`/mergers/${event.merger_id}`}
+                      to={mergerPath(event.merger_id, event.merger_name)}
                       className="text-primary hover:text-primary-dark transition-colors after:absolute after:inset-0"
                       aria-label={`View merger details for ${event.merger_name}`}
                     >

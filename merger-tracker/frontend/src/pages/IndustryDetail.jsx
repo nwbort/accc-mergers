@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
+import { mergerPath } from '../utils/slug';
 import { FaChevronLeft } from 'react-icons/fa';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
@@ -84,7 +85,7 @@ function IndustryDetail() {
           {mergers.map((merger) => (
             <Link
               key={merger.merger_id}
-              to={`/mergers/${merger.merger_id}`}
+              to={mergerPath(merger.merger_id, merger.merger_name)}
               className="block bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 p-5"
             >
               <div className="flex items-center gap-2 min-w-0">

@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import { FaSearch, FaTimes, FaSlidersH, FaArrowDown, FaStar } from 'react-icons/fa';
 import { useSearchParams, useNavigate } from 'react-router-dom';
+import { mergerPath } from '../utils/slug';
 import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
 import BellIcon from '../components/BellIcon';
@@ -280,7 +281,7 @@ function Mergers() {
       });
     } else if (e.key === 'Enter' && selectedIndex >= 0 && selectedIndex < visibleMergers.length) {
       e.preventDefault();
-      navigate(`/mergers/${visibleMergers[selectedIndex].merger_id}`);
+      navigate(mergerPath(visibleMergers[selectedIndex].merger_id, visibleMergers[selectedIndex].merger_name));
     }
   }, [visibleMergers, selectedIndex, navigate]);
 
@@ -507,15 +508,15 @@ function Mergers() {
                 role="link"
                 tabIndex={0}
                 aria-label={`View merger details for ${merger.merger_name}`}
-                onClick={() => navigate(`/mergers/${merger.merger_id}`)}
+                onClick={() => navigate(mergerPath(merger.merger_id, merger.merger_name))}
                 onMouseDown={(e) => { if (e.button === 1) e.preventDefault(); }}
                 onAuxClick={(e) => {
-                  if (e.button === 1) window.open(`/mergers/${merger.merger_id}`, '_blank');
+                  if (e.button === 1) window.open(mergerPath(merger.merger_id, merger.merger_name), '_blank');
                 }}
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    navigate(`/mergers/${merger.merger_id}`);
+                    navigate(mergerPath(merger.merger_id, merger.merger_name));
                   }
                 }}
                 className={`bg-white rounded-2xl border shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 cursor-pointer ${
