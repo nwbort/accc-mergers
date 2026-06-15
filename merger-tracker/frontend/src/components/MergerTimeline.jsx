@@ -157,11 +157,13 @@ function MergerTimeline({ merger }) {
   else fillPct = todayPct ?? 0;
 
   // A single mid-axis marker: the determination (decided) or "today" (running).
-  // These are mutually exclusive. The label is clamped away from the track ends
-  // so it stays clear of the endpoints, which sit outside the track entirely.
+  // These are mutually exclusive. The label/value are anchored to the marker
+  // with translateX(-pct%) so they swing from left-aligned at the start of the
+  // track, through centred, to right-aligned at the end — never spilling over
+  // the endpoints, which sit outside the track.
   const midPct = decisionPct !== null ? decisionPct : todayPct;
-  const midLabelPct = midPct === null ? null : Math.min(85, Math.max(15, midPct));
   const midIsDetermination = decisionPct !== null;
+  const midAlign = midPct === null ? null : midPct < 33 ? 'left' : midPct > 67 ? 'right' : 'center';
 
   const durationStr = duration !== null && businessDuration !== null
     ? `${duration} cal / ${businessDuration} bus. days`
@@ -185,24 +187,29 @@ function MergerTimeline({ merger }) {
   // column width on small screens instead of squeezing the track.
   const labelClass = 'text-xs font-medium text-gray-500 uppercase tracking-wider';
   const dateClass = 'text-sm font-medium text-gray-900 whitespace-nowrap';
+  // Every label sits its bottom this far above the line; every value sits its
+  // top this far below it. Shared across endpoints and mid markers so the three
+  // columns line up, with clear breathing room around the bar.
+  const aboveLine = 'absolute bottom-1/2 mb-3';
+  const belowLine = 'absolute top-1/2 mt-3';
 
   return (
-    <div role="group" aria-label="Merger assessment timeline" className="flex items-stretch gap-3 sm:gap-5">
+    <div role="group" aria-label="Merger assessment timeline" className="flex items-stretch gap-2 sm:gap-4">
       {/* Start endpoint — outside the track, hugging it from the left */}
-      <div className="w-24 shrink-0 flex flex-col justify-center items-end text-right">
-        <span className={labelClass}>{startLabel}</span>
-        <span className={`${dateClass} mt-1`}>{formatDateMedium(startStr)}</span>
+      <div className="relative w-24 shrink-0 h-24">
+        <span className={`${aboveLine} inset-x-0 text-right ${labelClass}`}>{startLabel}</span>
+        <span className={`${belowLine} inset-x-0 text-right ${dateClass}`}>{formatDateMedium(startStr)}</span>
       </div>
 
-      {/* Track region — the mid marker's labels live inside it */}
-      <div className="relative flex-1 min-w-0 h-20">
+      {/* Track region — the mid marker's label and value live inside it */}
+      <div className="relative flex-1 min-w-0 h-24">
         {/* Mid marker label, above the line */}
-        {midLabelPct !== null && (
+        {midPct !== null && (
           <span
-            className={`absolute bottom-1/2 mb-1 -translate-x-1/2 whitespace-nowrap ${
+            className={`${aboveLine} whitespace-nowrap ${
               midIsDetermination ? labelClass : 'text-xs font-semibold text-primary uppercase tracking-wider'
             }`}
-            style={{ left: `${midLabelPct}%` }}
+            style={{ left: `${midPct}%`, transform: `translateX(-${midPct}%)`, textAlign: midAlign }}
           >
             {midIsDetermination ? 'Determination' : 'Today'}
           </span>
@@ -254,10 +261,10 @@ function MergerTimeline({ merger }) {
         </div>
 
         {/* Mid marker value, below the line */}
-        {midLabelPct !== null && (
+        {midPct !== null && (
           <span
-            className="absolute top-1/2 mt-1 -translate-x-1/2 text-center leading-tight"
-            style={{ left: `${midLabelPct}%` }}
+            className={`${belowLine} leading-tight`}
+            style={{ left: `${midPct}%`, transform: `translateX(-${midPct}%)`, textAlign: midAlign }}
           >
             {midIsDetermination ? (
               <>
@@ -276,10 +283,12 @@ function MergerTimeline({ merger }) {
       </div>
 
       {/* End endpoint — outside the track, hugging it from the right */}
-      <div className="w-24 shrink-0 flex flex-col justify-center items-start text-left">
-        <span className={labelClass}>{endLabel}</span>
-        <span className={`${dateClass} mt-1`}>{formatDateMedium(endStr)}</span>
-        {endNote && <span className={`text-[11px] mt-0.5 ${endNoteClass}`}>{endNote}</span>}
+      <div className="relative w-24 shrink-0 h-24">
+        <span className={`${aboveLine} inset-x-0 text-left ${labelClass}`}>{endLabel}</span>
+        <span className={`${belowLine} inset-x-0 text-left`}>
+          <span className={`block ${dateClass}`}>{formatDateMedium(endStr)}</span>
+          {endNote && <span className={`block text-[11px] ${endNoteClass}`}>{endNote}</span>}
+        </span>
       </div>
     </div>
   );
