@@ -63,26 +63,49 @@ function MergerTimelineFallback({ merger, startStr }) {
 function MergerTimeline({ merger, duration, businessDuration, daysRemaining, businessDaysRemaining }) {
   const startStr = merger.effective_notification_datetime || merger.original_notification_datetime;
   const isComplete = Boolean(merger.determination_publication_date);
-  const endStr = isComplete
-    ? merger.determination_publication_date
-    : merger.end_of_determination_period;
 
   const start = startStr ? parseISO(startStr) : null;
-  const end = endStr ? parseISO(endStr) : null;
-  const hasRange = start && end && isValid(start) && isValid(end) && end > start;
+  const deadline = merger.end_of_determination_period ? parseISO(merger.end_of_determination_period) : null;
+  const hasDeadline = start && deadline && isValid(start) && isValid(deadline) && deadline > start;
 
+  // The right-hand endpoint is the statutory decision deadline whenever there
+  // is one — including for decided mergers, where the actual determination is
+  // shown as a marker along the axis so you can see how early it landed. Only
+  // when there's no deadline (e.g. waivers) does a completed merger end on its
+  // determination date.
+  let endStr;
+  let end;
+  let endLabel;
+  let endIsOutcome = false;
+  if (hasDeadline) {
+    endStr = merger.end_of_determination_period;
+    end = deadline;
+    endLabel = isComplete ? 'Decision deadline' : 'Decision due';
+  } else if (isComplete) {
+    endStr = merger.determination_publication_date;
+    end = parseISO(endStr);
+    endLabel = 'Determination';
+    endIsOutcome = true;
+  }
+
+  const hasRange = start && end && isValid(start) && isValid(end) && end > start;
   if (!hasRange) {
     return <MergerTimelineFallback merger={merger} startStr={startStr} />;
   }
 
   const startLabel = merger.is_waiver ? 'Waiver application' : 'Notified';
-  const endLabel = isComplete ? 'Determination' : 'Decision due';
   // When the effective notification differs from the original (e.g. the clock
   // was reset after further information was requested), surface the original
   // date so the gap is visible.
   const originalStr = merger.original_notification_datetime;
   const showOriginal = originalStr && originalStr !== startStr;
-  const endDotColor = (isComplete && OUTCOME_DOT[merger.accc_determination]) || 'bg-primary';
+  const outcomeDot = OUTCOME_DOT[merger.accc_determination] || 'bg-primary';
+
+  // Mid-axis "determination" marker for decided mergers whose endpoint is the
+  // deadline.
+  const decisionPct = isComplete && hasDeadline
+    ? axisPct(parseISO(merger.determination_publication_date), start, end)
+    : null;
 
   // Progress + "today" marker, only while the assessment is still running.
   let todayPct = null;
@@ -95,15 +118,30 @@ function MergerTimeline({ merger, duration, businessDuration, daysRemaining, bus
       todayPct = axisPct(now, start, end);
     }
   }
-  const fillPct = isComplete || overdue ? 100 : todayPct ?? 0;
-  // Keep the "Today" caption clear of the start/end dates at the axis ends.
-  const todayLabelPct = todayPct === null ? null : Math.min(88, Math.max(12, todayPct));
+
+  let fillPct;
+  if (decisionPct !== null) fillPct = decisionPct;
+  else if (isComplete || overdue) fillPct = 100;
+  else fillPct = todayPct ?? 0;
+
+  // Keep mid-axis captions clear of the start/end dates at the axis ends.
+  const clamp = (pct) => Math.min(88, Math.max(12, pct));
+  const todayLabelPct = todayPct === null ? null : clamp(todayPct);
+  const decisionLabelPct = decisionPct === null ? null : clamp(decisionPct);
 
   return (
     <div role="group" aria-label="Merger assessment timeline">
       {/* Top labels */}
-      <div className="flex items-baseline justify-between gap-4 mb-2.5">
+      <div className="relative flex items-baseline justify-between gap-4 mb-2.5">
         <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">{startLabel}</span>
+        {decisionLabelPct !== null && (
+          <span
+            className="absolute top-0 -translate-x-1/2 text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap"
+            style={{ left: `${decisionLabelPct}%` }}
+          >
+            Determination
+          </span>
+        )}
         <span className="text-xs font-medium text-gray-500 uppercase tracking-wider text-right">{endLabel}</span>
       </div>
 
@@ -118,6 +156,15 @@ function MergerTimeline({ merger, duration, businessDuration, daysRemaining, bus
         {/* Start node */}
         <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full bg-primary ring-2 ring-white" />
 
+        {/* Determination marker (decided mergers whose endpoint is the deadline) */}
+        {decisionPct !== null && (
+          <span
+            className={`absolute top-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white shadow-sm ${outcomeDot}`}
+            style={{ left: `${decisionPct}%`, transform: 'translate(-50%, -50%)' }}
+            aria-label="Determination"
+          />
+        )}
+
         {/* Today marker */}
         {todayPct !== null && (
           <span
@@ -130,7 +177,7 @@ function MergerTimeline({ merger, duration, businessDuration, daysRemaining, bus
         {/* End node */}
         <span
           className={`absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white ${
-            isComplete ? endDotColor : 'bg-white border-2 border-gray-300'
+            endIsOutcome ? outcomeDot : 'bg-white border-2 border-gray-300'
           }`}
         />
       </div>
@@ -145,6 +192,21 @@ function MergerTimeline({ merger, duration, businessDuration, daysRemaining, bus
             </span>
           )}
         </span>
+        {decisionLabelPct !== null && (
+          <span
+            className="absolute top-0 -translate-x-1/2 text-center whitespace-nowrap"
+            style={{ left: `${decisionLabelPct}%` }}
+          >
+            <span className="block text-sm font-medium text-gray-900">
+              {formatDate(merger.determination_publication_date)}
+            </span>
+            {duration !== null && businessDuration !== null && (
+              <span className="block text-[11px] font-normal text-gray-500">
+                {duration} cal / {businessDuration} bus. days
+              </span>
+            )}
+          </span>
+        )}
         {todayLabelPct !== null && (
           <span
             className="absolute top-0 -translate-x-1/2 text-[11px] font-semibold text-primary whitespace-nowrap"
@@ -158,7 +220,7 @@ function MergerTimeline({ merger, duration, businessDuration, daysRemaining, bus
 
       {/* Duration / time remaining, anchored under the end date */}
       <div className="flex justify-end mt-0.5 min-h-[1rem]">
-        {isComplete && duration !== null && businessDuration !== null && (
+        {endIsOutcome && duration !== null && businessDuration !== null && (
           <span className="text-xs text-gray-500">{duration} cal / {businessDuration} bus. days</span>
         )}
         {!isComplete && overdue && (

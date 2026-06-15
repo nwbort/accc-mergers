@@ -56,7 +56,7 @@ describe('MergerTimeline', () => {
     expect(screen.getByText(/originally 06\/02\/2026/i)).toBeInTheDocument();
   });
 
-  it('ends at the published determination once complete', () => {
+  it('ends on the decision deadline once complete, with the determination as a marker', () => {
     render(
       <MergerTimeline
         merger={{
@@ -73,11 +73,40 @@ describe('MergerTimeline', () => {
       />
     );
 
+    // Right-hand endpoint is the statutory deadline, not the actual date.
+    expect(screen.getByText('Decision deadline')).toBeInTheDocument();
+    expect(screen.getByText('01/07/2026')).toBeInTheDocument();
+    // The actual determination is shown as a labelled marker on the axis.
     expect(screen.getByText('Determination')).toBeInTheDocument();
     expect(screen.getByText('10/06/2026')).toBeInTheDocument();
     expect(screen.getByText('23 cal / 16 bus. days')).toBeInTheDocument();
     // No live "today" marker once the assessment is finished.
     expect(screen.queryByText('Today')).not.toBeInTheDocument();
+  });
+
+  it('ends on the determination date for a decided merger with no deadline (waiver)', () => {
+    render(
+      <MergerTimeline
+        merger={{
+          is_waiver: true,
+          effective_notification_datetime: '2026-05-18T12:00:00Z',
+          end_of_determination_period: null,
+          determination_publication_date: '2026-06-10T12:00:00Z',
+          accc_determination: 'Approved',
+          status: 'Assessment completed',
+        }}
+        duration={23}
+        businessDuration={16}
+        daysRemaining={0}
+        businessDaysRemaining={0}
+      />
+    );
+
+    expect(screen.getByText('Determination')).toBeInTheDocument();
+    expect(screen.getByText('10/06/2026')).toBeInTheDocument();
+    expect(screen.getByText('23 cal / 16 bus. days')).toBeInTheDocument();
+    // No deadline available, so nothing labelled as a deadline.
+    expect(screen.queryByText('Decision deadline')).not.toBeInTheDocument();
   });
 
   it('falls back to a labelled view when no proportional axis is available', () => {
