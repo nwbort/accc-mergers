@@ -132,37 +132,65 @@ function MergerDetail() {
     : null;
   const determinationDocUrl = statementOfReasonsEvent?.url_gh ?? determinationEvent?.url_gh;
 
-  const structuredData = {
+  const siteUrl = 'https://mergers.fyi';
+  const pagePath = mergerPath(merger.merger_id, merger.merger_name);
+  const pageUrl = `${siteUrl}${pagePath}`;
+  const modifiedTime = merger.determination_publication_date || merger.effective_notification_datetime;
+  const articleSection = merger.anzsic_codes?.[0]?.name;
+
+  const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     "headline": merger.merger_name,
     "description": merger.merger_description || `Merger between ${merger.acquirers.map(a => a.name).join(', ')} and ${merger.targets.map(t => t.name).join(', ')}`,
     "datePublished": merger.effective_notification_datetime,
+    "dateModified": modifiedTime,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": pageUrl
+    },
     "author": {
       "@type": "Person",
       "name": "Nick Twort",
-      "url": "https://mergers.fyi"
+      "url": siteUrl
     },
-    "about": {
-      "@type": "MergerAcquisition",
-      "name": merger.merger_name,
-      "acquirer": merger.acquirers.map(a => ({
-        "@type": "Organization",
-        "name": a.name
-      })),
-      "target": merger.targets.map(t => ({
-        "@type": "Organization",
-        "name": t.name
-      }))
-    }
+    "publisher": {
+      "@type": "Organization",
+      "name": "Australian Merger Tracker",
+      "url": siteUrl,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteUrl}/og-image.png`
+      }
+    },
+    "about": [
+      ...merger.acquirers.map(a => ({ "@type": "Organization", "name": a.name })),
+      ...merger.targets.map(t => ({ "@type": "Organization", "name": t.name }))
+    ]
   };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": siteUrl },
+      { "@type": "ListItem", "position": 2, "name": "Mergers", "item": `${siteUrl}/mergers` },
+      { "@type": "ListItem", "position": 3, "name": merger.merger_name, "item": pageUrl }
+    ]
+  };
+
+  const structuredData = [articleSchema, breadcrumbSchema];
 
   return (
     <>
       <SEO
         title={merger.merger_name}
         description={merger.merger_description || `ACCC merger review: ${merger.acquirers.map(a => a.name).join(', ')} acquiring ${merger.targets.map(t => t.name).join(', ')}. Status: ${merger.status}`}
-        url={mergerPath(merger.merger_id, merger.merger_name)}
+        url={pagePath}
+        type="article"
+        publishedTime={merger.effective_notification_datetime}
+        modifiedTime={modifiedTime}
+        section={articleSection}
         structuredData={structuredData}
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">

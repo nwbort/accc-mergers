@@ -1,0 +1,136 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/service-stream-%E2%80%93-rie",
+  "merger_name": "Service Stream \u2013 RiE",
+  "status": "Under assessment",
+  "merger_id": "MN-50022",
+  "effective_notification_datetime": "2026-06-11T12:00:00Z",
+  "original_notification_datetime": "2026-06-11T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-07-23T12:00:00Z",
+  "page_modified_datetime": "2026-06-15T15:11:02+10:00",
+  "consultation_response_due_date": "2026-06-22T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "SERVICE STREAM MAINTENANCE PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "87 081 540 847"
+    }
+  ],
+  "targets": [
+    {
+      "name": "RIE GROUP PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "30 612 894 970"
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "9422",
+      "name": "Electronic (except Domestic Appliance) and Precision Equipment Repair and Maintenance"
+    },
+    {
+      "code": "9429",
+      "name": "Other Machinery and Equipment Repair and Maintenance"
+    }
+  ],
+  "merger_description": "Service Stream Limited (**Service Stream**), via a wholly owned subsidiary, proposes to acquire all of the issued share capital in RiE Group Pty Ltd (**RiE**).\n\nThrough its various subsidiaries, Service Stream provides asset lifecycle services, specialising in the design, construction, operation and maintenance of essential infrastructure networks across all States and Territories in Australia. Service Stream\u2019s business is divided into three operating divisions, which are Telecommunications, Transport and Utilities.\n\nService Stream\u2019s Utilities division, which is relevant to the proposed acquisition, provides services to the water, power and industrial sectors, including:\n\n* design, civil, structural, electrical, mechanical, control engineering and metering services to the water industry\n* operations, maintenance, design and installation services in relation to gas assets\n* distribution and metering services for electricity networks including network maintenance, asset inspection and installation services.\n\nRiE is a privately-owned industrial electrical and instrumentation provider established in 2008, based in Queensland\u2019s Western Downs region. RiE offers specialised electrical and instrumentation infrastructure services, equipment rental and labour hire solutions targeted to industrial clients who rely on electrical infrastructure to operate their plant or facilities, such as power generation, renewable energy, oil and gas, and utilities.",
+  "events": [
+    {
+      "date": "2026-06-15T12:00:00Z",
+      "title": "Questionnaire - Service Stream - RiE",
+      "display_title": "Questionnaire - Service Stream - RiE",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Service%20Stream%20-%20RiE%20-%20Acquisitions%20register%20questionnaire.docx",
+      "url_gh": "/mergers/MN-50022/Service Stream - RiE - Acquisitions register questionnaire.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-06-11T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-60006",
+      "merger_name": "Re.Group \u2013 Scouts Queensland Recycling Centre Site",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "RETURN IT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "61 615 434 869"
+        }
+      ],
+      "targets": [
+        {
+          "name": "THE SCOUT ASSOCIATION OF AUSTRALIA, SOUTH AUSTRALIAN BRANCH INCORPORATED",
+          "identifier_type": "ABN",
+          "identifier": "35 621 021 366"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "INSURANCE AUSTRALIA GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "60 090 739 923"
+        }
+      ],
+      "targets": [
+        {
+          "name": "RAC INSURANCE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "59 094 685 882"
+        },
+        {
+          "name": "RACI PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "40 008 671 805"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-50014",
+      "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Searchlight Capital IV LP",
+          "identifier_type": null,
+          "identifier": "US SEC  0001954453"
+        },
+        {
+          "name": "KONA Merger Sub Co.",
+          "identifier_type": null,
+          "identifier": "Delaware  10525073"
+        }
+      ],
+      "targets": [
+        {
+          "name": "KORE Group Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware  5388903"
+        }
+      ]
+    }
+  ]
+}

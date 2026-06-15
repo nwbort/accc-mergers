@@ -1,9 +1,9 @@
 {
-  "total_mergers": 133,
+  "total_mergers": 134,
   "total_waivers": 202,
   "by_status": {
     "Assessment completed": 100,
-    "Under assessment": 33
+    "Under assessment": 34
   },
   "by_determination": {
     "Approved": 99,
@@ -85,6 +85,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-50022",
+      "merger_name": "Service Stream \u2013 RiE",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-11T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-05025",
       "merger_name": "Equans - CV Services Group",
       "status": "Under assessment",
@@ -106,14 +114,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-05T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-40020",
-      "merger_name": "Premier Fresh \u2013 Domenico Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-04T12:00:00Z",
       "is_waiver": false
     }
   ],
