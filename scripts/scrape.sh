@@ -67,7 +67,7 @@ clean_file() {
   perl -i -0777 -pe '
     s/js-view-dom-id-[a-f0-9]{64}/js-view-dom-id-STATIC/g;
     s/(id="edit-submit-accc-search-site--)[^"\n]+"/${1}STATIC"/g;
-    s/(data-drupal-selector="form-)[a-z0-9]{20,}"/${1}STATIC"/g;
+    s/(data-drupal-selector="form-)[^"\n]+(" type="hidden" name="form_build_id")/${1}STATIC${2}/g;
     s/(name="form_build_id" value="form-)[^"\n]+"/${1}STATIC"/g;
     s/(css\/css_)[^.\n]+\.css/${1}STATIC.css/g;
     s/(js\/js_)[^.\n]+\.js/${1}STATIC.js/g;
