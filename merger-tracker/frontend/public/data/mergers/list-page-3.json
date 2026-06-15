@@ -562,7 +562,7 @@
     {
       "merger_id": "MN-30002",
       "merger_name": "Peter Warren - Wakeling Automotive",
-      "status": "Under assessment",
+      "status": "Assessment ceased",
       "accc_determination": null,
       "is_waiver": false,
       "effective_notification_datetime": "2026-03-05T12:00:00Z",
@@ -578,14 +578,9 @@
       ],
       "targets": [
         {
-          "name": "WAKELING HOLDINGS PTY LTD",
+          "name": "Paul Wakeling Motor Group Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "41 160 814 040"
-        },
-        {
-          "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
-          "identifier_type": "ACN",
-          "identifier": "119 875 768"
+          "identifier": "47 119 908 780"
         },
         {
           "name": "WOLLONGONG CITY MOTORS PTY LTD",
@@ -593,14 +588,14 @@
           "identifier": "22 002 019 598"
         },
         {
-          "name": "Paul Wakeling Motor Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "47 119 908 780"
+          "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
+          "identifier_type": "ACN",
+          "identifier": "119 875 768"
         },
         {
-          "name": "Wakeling South Coast Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "636 298 970"
+          "name": "WAKELING HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "41 160 814 040"
         },
         {
           "name": "HURRIKAYNE PTY LTD",
@@ -611,6 +606,11 @@
           "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
           "identifier_type": "ACN",
           "identifier": "119 879 980"
+        },
+        {
+          "name": "Wakeling South Coast Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "636 298 970"
         }
       ],
       "other_parties": [],
