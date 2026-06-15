@@ -217,7 +217,7 @@ last_page_href=$(pup 'a[title="Go to last page"] attr{href}' < "$MAIN_PAGE_FILE"
 
 if [ -n "$last_page_href" ]; then
   # Extract the page number from the href (e.g. "?init=1&items_per_page=20&page=2" -> "2")
-  last_page=$(echo "$last_page_href" | grep -oP '[?&]page=\K[0-9]+' || true)
+  last_page=$(echo "$last_page_href" | grep -oP '[?&]page=\K[0-9]+' | tail -1 || true)
 
   if [ -n "$last_page" ] && [ "$last_page" -gt 0 ]; then
     echo "Register has $(( last_page + 1 )) pages. Fetching additional pages in parallel..."
