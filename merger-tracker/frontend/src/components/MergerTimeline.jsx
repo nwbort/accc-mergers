@@ -39,7 +39,7 @@ const axisPct = (date, start, end) =>
 // the marker is approaching so it stays under the marker.
 const MID_BOX = '7.5rem';
 const MID_HALF = '3.75rem'; // half of MID_BOX
-const MID_EDGE_ALIGN = 16; // within this % of an end, align text to that end
+const MID_EDGE_ALIGN = 5; // within this % of an end, align text to that end
 
 // Shown when we can't draw a proportional axis: a suspended assessment with no
 // effective notification, or a pending waiver/notification with no end date yet.
