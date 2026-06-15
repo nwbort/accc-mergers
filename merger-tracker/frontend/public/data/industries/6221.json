@@ -2,11 +2,23 @@
   "code": "6221",
   "mergers": [
     {
+      "merger_id": "WA-30021",
+      "merger_name": "Regional Australia Bank \u2013 South West Slopes Credit Union",
+      "is_waiver": true,
+      "status": "Assessment completed"
+    },
+    {
+      "merger_id": "MN-20014",
+      "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
+      "is_waiver": false,
+      "status": "Under assessment"
+    },
+    {
       "merger_id": "WA-70015",
       "merger_name": "Bendigo and Adelaide Bank \u2013 RACQ Bank",
       "is_waiver": true,
       "status": "Assessment completed"
     }
   ],
-  "count": 1
+  "count": 3
 }

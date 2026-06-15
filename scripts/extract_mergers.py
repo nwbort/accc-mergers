@@ -372,7 +372,15 @@ def _extract_parties(soup):
 def _extract_anzsic_codes(soup):
     """Extract ANZSIC industry classification codes."""
     codes = []
-    container = soup.find('div', class_='field--name-field-acquisition-anzsic-code')
+    # The ACCC renamed this field from 'field-acquisition-anzsic-code' to
+    # 'field-acccgov-anzsic-code'; accept either so we can parse old and new pages.
+    container = soup.find(
+        'div',
+        class_=lambda c: c and (
+            'field--name-field-acquisition-anzsic-code' in c
+            or 'field--name-field-acccgov-anzsic-code' in c
+        ),
+    )
     if container:
         for code_div in container.find_all('div', class_='field__item'):
             text = code_div.get_text(strip=True)

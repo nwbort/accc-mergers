@@ -27,8 +27,10 @@ from extract_mergers import (
     get_serve_filename,
     detect_inferred_phase_2,
     _infer_determination_date_from_events,
+    _extract_anzsic_codes,
 )
 import extract_mergers
+from bs4 import BeautifulSoup
 
 
 # ---------------------------------------------------------------------------
@@ -1995,3 +1997,43 @@ class TestGenerateNoccFiles:
 
     def test_empty_data(self, tmp_path):
         assert generate_nocc_files({}, tmp_path) == 0
+
+
+# ---------------------------------------------------------------------------
+# extract_mergers: _extract_anzsic_codes
+# ---------------------------------------------------------------------------
+
+class TestExtractAnzsicCodes:
+    def test_legacy_field_class(self):
+        html = (
+            '<div class="field field--name-field-acquisition-anzsic-code '
+            'field--type-string field--label-inline clearfix">'
+            '<h3 class="field__label">ANZSIC code(s)</h3>'
+            '<div class="field__item">5420  Software Publishing;'
+            '           6240  Financial Asset Investing</div></div>'
+        )
+        codes = _extract_anzsic_codes(BeautifulSoup(html, 'html.parser'))
+        assert codes == [
+            {'code': '5420', 'name': 'Software Publishing'},
+            {'code': '6240', 'name': 'Financial Asset Investing'},
+        ]
+
+    def test_current_acccgov_field_class(self):
+        # The ACCC renamed the field to 'field-acccgov-anzsic-code'.
+        html = (
+            '<div class="field field--name-field-acccgov-anzsic-code '
+            'field--type-entity-reference field--label-inline '
+            'field--type-entity-reference--taxonomy_term clearfix">'
+            '<h3 class="field__label">ANZSIC code(s)</h3>'
+            '<div class="field__item">5420 Software Publishing;'
+            '           6240 Financial Asset Investing</div></div>'
+        )
+        codes = _extract_anzsic_codes(BeautifulSoup(html, 'html.parser'))
+        assert codes == [
+            {'code': '5420', 'name': 'Software Publishing'},
+            {'code': '6240', 'name': 'Financial Asset Investing'},
+        ]
+
+    def test_no_anzsic_field(self):
+        html = '<div class="field field--name-field-other">nothing here</div>'
+        assert _extract_anzsic_codes(BeautifulSoup(html, 'html.parser')) == []
