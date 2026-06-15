@@ -15,7 +15,8 @@ function StatusBadge({ status, determination }) {
     if (
       status === MERGER_STATUS.UNDER_ASSESSMENT ||
       status === MERGER_STATUS.ASSESSMENT_SUSPENDED ||
-      status === MERGER_STATUS.ASSESSMENT_COMPLETED
+      status === MERGER_STATUS.ASSESSMENT_COMPLETED ||
+      status === MERGER_STATUS.ASSESSMENT_CEASED
     ) {
       return STATUS_COLORS[status];
     }
