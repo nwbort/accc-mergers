@@ -13,18 +13,21 @@
     margin: 0; background: #f1f5f9; color: #111827; padding: 24px;
   }
   h1 { font-size: 18px; margin: 0 0 4px; }
-  p.sub { color: #6b7280; margin: 0 0 20px; font-size: 13px; }
+  p.sub { color: #6b7280; margin: 0 0 20px; font-size: 13px; max-width: 60ch; }
   .card {
     background: #fff; border: 1px solid #f3f4f6; border-radius: 16px;
     box-shadow: 0 1px 3px rgba(0,0,0,.06); padding: 24px; margin-bottom: 20px;
   }
-  .timeline { display: flex; align-items: stretch; gap: 16px; }
-  .endpoint { position: relative; width: 96px; flex: 0 0 auto; height: 96px; }
+  /* The width-limited wrapper simulates the merger card at a chosen width. */
+  .frame { margin: 0 auto; border: 1px dashed #cbd5e1; border-radius: 12px; padding: 16px; }
+  .timeline { display: flex; align-items: stretch; gap: 8px; }
+  @media (min-width: 640px) { .timeline { gap: 16px; } }
+  .endpoint { position: relative; flex: 0 0 auto; height: 96px; }
   .track { position: relative; flex: 1 1 0; min-width: 0; height: 96px; }
   .label { font-size: 12px; font-weight: 500; color: #6b7280; text-transform: uppercase; letter-spacing: .05em; }
   .label.today { color: var(--primary); font-weight: 600; }
-  .date { font-size: 14px; font-weight: 500; color: #111827; white-space: nowrap; }
-  .sub { font-size: 11px; color: #6b7280; max-width: 7rem; }
+  .date { font-weight: 500; color: #111827; white-space: nowrap; }
+  .sub { font-size: 11px; color: #6b7280; }
   .above { position: absolute; bottom: 50%; margin-bottom: 12px; }
   .below { position: absolute; top: 50%; margin-top: 12px; line-height: 1.15; }
   .inset { left: 0; right: 0; }
@@ -35,51 +38,46 @@
   .node.start { left: 0; transform: translate(-50%,-50%); background: var(--primary); }
   .node.end { right: 0; transform: translate(50%,-50%); background: #fff; border: 2px solid #d1d5db; }
   .node.today { background: #fff; box-shadow: 0 0 0 2px var(--primary); }
-  /* faint guide line marking the marker's true x position */
-  .guide { position: absolute; top: 4px; bottom: 4px; width: 1px; background: rgba(51,81,69,.25); }
-  .controls { display: grid; grid-template-columns: 160px 1fr 70px; gap: 12px 16px; align-items: center; }
+  /* faint guide marking the marker's true x position */
+  .guide { position: absolute; top: 4px; bottom: 4px; width: 1px; background: rgba(51,81,69,.3); }
+  .controls { display: grid; grid-template-columns: 180px 1fr 90px; gap: 12px 16px; align-items: center; }
   .controls label { font-size: 13px; font-weight: 600; }
   .controls input[type=range] { width: 100%; }
   .controls output { font-variant-numeric: tabular-nums; font-size: 13px; color: #374151; }
   .row { margin-top: 16px; font-size: 13px; color: #374151; }
   code { background: #f3f4f6; padding: 1px 5px; border-radius: 5px; }
-  .chartwrap { margin-top: 8px; }
-  svg { display: block; background: #fff; border: 1px solid #f3f4f6; border-radius: 12px; }
-  .legend { font-size: 12px; color: #6b7280; margin-top: 6px; }
-  .legend b.lin { color: #9ca3af; }
-  .legend b.cur { color: var(--primary); }
-  .preset { display: inline-flex; gap: 8px; margin-top: 8px; }
-  .preset button { font-size: 12px; border: 1px solid #e5e7eb; background: #fff; border-radius: 8px; padding: 4px 10px; cursor: pointer; }
-  .preset button:hover { background: #f9fafb; }
+  .opts { margin-top: 12px; font-size: 13px; display: flex; gap: 20px; flex-wrap: wrap; }
 </style>
 </head>
 <body>
   <h1>Timeline mid-label anchor lab</h1>
-  <p class="sub">Drag the marker and curve sliders to see how the <b>Today</b> / <b>Determination</b> label is anchored. Find a curve you like, then tell Claude the value (or set <code>ANCHOR_CURVE</code> in <code>MergerTimeline.jsx</code>).</p>
+  <p class="sub">The <b>Today</b> / <b>Determination</b> box is a fixed width, centred on its marker, but its centre is clamped to stay <code>half&nbsp;box</code> in from each end of the track. It stays centred through the middle and stops at the edge as the marker slides into its side — monotonic at any width (no mobile wobble) and never narrows. Drag <b>Card width</b> down to simulate mobile.</p>
 
   <div class="card">
-    <div class="timeline">
-      <div class="endpoint">
-        <span class="label above inset" style="text-align:right">Notified</span>
-        <span class="date below inset" style="text-align:right">18 May 2026</span>
-      </div>
-
-      <div class="track" id="track">
-        <span class="label above" id="midLabel">Today</span>
-        <div class="line">
-          <div class="bg"></div>
-          <div class="fill" id="fill"></div>
-          <span class="node start"></span>
-          <span class="node end"></span>
-          <span class="node today" id="todayNode" style="transform:translate(-50%,-50%)"></span>
+    <div class="frame" id="frame">
+      <div class="timeline">
+        <div class="endpoint" id="epStart">
+          <span class="label above inset" style="text-align:right">Notified</span>
+          <span class="date below inset" style="text-align:right">18 May 2026</span>
         </div>
-        <span class="guide" id="guide"></span>
-        <span class="below" id="midValue"></span>
-      </div>
 
-      <div class="endpoint">
-        <span class="label above inset" style="text-align:left">Deadline</span>
-        <span class="date below inset" style="text-align:left">01 Jul 2026</span>
+        <div class="track" id="track">
+          <span class="label above" id="midLabel">Today</span>
+          <div class="line">
+            <div class="bg"></div>
+            <div class="fill" id="fill"></div>
+            <span class="node start"></span>
+            <span class="node end"></span>
+            <span class="node today" id="todayNode" style="transform:translate(-50%,-50%)"></span>
+          </div>
+          <span class="guide" id="guide"></span>
+          <span class="below" id="midValue"></span>
+        </div>
+
+        <div class="endpoint" id="epEnd">
+          <span class="label above inset" style="text-align:left">Deadline</span>
+          <span class="date below inset" style="text-align:left">01 Jul 2026</span>
+        </div>
       </div>
     </div>
   </div>
@@ -90,106 +88,103 @@
       <input id="pos" type="range" min="0" max="100" step="0.5" value="35" />
       <output id="posOut">35%</output>
 
-      <label for="curve">Anchor curve (k)</label>
-      <input id="curve" type="range" min="1" max="6" step="0.1" value="2.5" />
-      <output id="curveOut">2.5</output>
+      <label for="cardw">Card width (px)</label>
+      <input id="cardw" type="range" min="300" max="1000" step="10" value="900" />
+      <output id="cardwOut">900</output>
+
+      <label for="box">Box width (rem)</label>
+      <input id="box" type="range" min="4" max="11" step="0.25" value="7.5" />
+      <output id="boxOut">7.5</output>
+
+      <label for="edge">Edge text-align (%)</label>
+      <input id="edge" type="range" min="0" max="40" step="1" value="16" />
+      <output id="edgeOut">16</output>
     </div>
 
-    <div class="preset">
-      <span style="font-size:12px;color:#6b7280;align-self:center">Presets:</span>
-      <button data-k="1">1 · linear</button>
-      <button data-k="2">2</button>
-      <button data-k="2.5">2.5</button>
-      <button data-k="3.5">3.5</button>
-      <button data-k="5">5</button>
+    <div class="opts">
+      <label><input type="checkbox" id="mode" /> Determination mode (date + duration)</label>
+      <label><input type="checkbox" id="endpoints" checked /> Narrow endpoints on mobile (w-20)</label>
     </div>
 
     <div class="row">
-      Marker at <b id="rPos">35</b>% &rarr; translateX <code id="rAnchor">-…%</code>,
-      text-align <code id="rAlign">…</code>.
-      <label style="margin-left:16px"><input type="checkbox" id="mode" /> Determination mode (date + duration)</label>
-    </div>
-
-    <div class="chartwrap">
-      <svg id="chart" width="320" height="180" viewBox="0 0 320 180"></svg>
-      <div class="legend">x = marker position, y = anchor (translateX). <b class="lin">grey</b> = linear, <b class="cur">green</b> = current curve. The flatter the green line near the middle, the longer the label stays centred.</div>
+      Marker <b id="rPos">35</b>% · track <b id="rTrack">…</b>px · box <b id="rBox">…</b>px ·
+      box centre <code id="rLeft">…</code> · text-align <code id="rAlign">…</code>
+      <span id="rWarn" style="color:#b45309"></span>
     </div>
   </div>
 
 <script>
   const $ = (id) => document.getElementById(id);
-
-  // Mirrors anchorPct() in MergerTimeline.jsx.
-  function anchorPct(pos, k) {
-    const u = pos / 50 - 1;
-    return (0.5 + 0.5 * Math.sign(u) * Math.pow(Math.abs(u), k)) * 100;
-  }
+  const REM = 16;
 
   function render() {
     const pos = parseFloat($('pos').value);
-    const k = parseFloat($('curve').value);
-    const mode = $('mode').checked; // determination vs today
-    const a = anchorPct(pos, k);
-    const align = a < 33 ? 'left' : a > 67 ? 'right' : 'center';
+    const cardW = parseFloat($('cardw').value);
+    const boxRem = parseFloat($('box').value);
+    const edge = parseFloat($('edge').value);
+    const mode = $('mode').checked;
+    const narrowEp = $('endpoints').checked;
+
+    // Simulate the card width and responsive endpoint width / date size.
+    const mobile = cardW < 640;
+    const epW = (narrowEp && mobile) ? 80 : 96;     // w-20 vs w-24
+    const gap = mobile ? 8 : 16;
+    $('frame').style.maxWidth = cardW + 'px';
+    [$('epStart'), $('epEnd')].forEach((el) => (el.style.width = epW + 'px'));
+    document.querySelectorAll('.date').forEach((el) => (el.style.fontSize = mobile ? '12px' : '14px'));
+
+    const trackW = $('track').clientWidth; // measured after layout below
+    const boxPx = boxRem * REM;
+    const halfPx = boxPx / 2;
+
+    // clamp(half, pos% , 100%-half) for the box CENTRE, then translateX(-50%).
+    const centerPx = Math.min(Math.max((pos / 100) * trackW, halfPx), trackW - halfPx);
+    const align = pos < edge ? 'left' : pos > 100 - edge ? 'right' : 'center';
 
     $('posOut').textContent = pos + '%';
-    $('curveOut').textContent = k.toFixed(1);
+    $('cardwOut').textContent = cardW;
+    $('boxOut').textContent = boxRem.toFixed(2);
+    $('edgeOut').textContent = edge;
     $('rPos').textContent = pos;
-    $('rAnchor').textContent = '-' + a.toFixed(1) + '%';
+    $('rTrack').textContent = Math.round(trackW);
+    $('rBox').textContent = Math.round(boxPx);
+    $('rLeft').textContent = Math.round(centerPx) + 'px';
     $('rAlign').textContent = align;
+    $('rWarn').textContent = boxPx > trackW ? ' — box wider than track (centred/clamped)' : '';
 
     $('fill').style.width = pos + '%';
     $('todayNode').style.left = pos + '%';
-    $('todayNode').className = 'node today';
     $('guide').style.left = pos + '%';
+    $('todayNode').style.background = mode ? '#10b981' : '#fff';
+    $('todayNode').style.boxShadow = mode ? '0 0 0 2px #fff' : '0 0 0 2px var(--primary)';
 
     const midLabel = $('midLabel');
     const midValue = $('midValue');
     midLabel.textContent = mode ? 'Determination' : 'Today';
     midLabel.className = 'label above' + (mode ? '' : ' today');
-    [midLabel, midValue].forEach((el) => {
-      el.style.left = pos + '%';
-      el.style.transform = 'translateX(-' + a + '%)';
-      el.style.textAlign = align;
-      el.style.whiteSpace = 'nowrap';
-    });
-    // Determination node colour cue
-    $('todayNode').style.background = mode ? '#10b981' : '#fff';
-    $('todayNode').style.boxShadow = mode ? '0 0 0 2px #fff' : '0 0 0 2px var(--primary)';
 
     if (mode) {
       midValue.innerHTML = '<span class="date" style="display:block">10 Jun 2026</span>'
         + '<span class="sub" style="display:block">23 cal / 16 bus. days</span>';
     } else {
-      midValue.innerHTML = '<span class="sub" style="display:inline-block;white-space:normal">35 cal / 25 bus. days left</span>';
+      midValue.innerHTML = '<span class="sub" style="display:block">35 cal / 25 bus. days left</span>';
     }
 
-    drawChart(k);
+    [midLabel, midValue].forEach((el) => {
+      el.style.width = boxRem + 'rem';
+      el.style.maxWidth = '100%';
+      el.style.left = centerPx + 'px';
+      el.style.transform = 'translateX(-50%)';
+      el.style.textAlign = align;
+    });
   }
 
-  function drawChart(k) {
-    const svg = $('chart');
-    const W = 320, H = 180, pad = 24;
-    const x = (p) => pad + (p / 100) * (W - 2 * pad);
-    const y = (v) => (H - pad) - (v / 100) * (H - 2 * pad);
-    let lin = '', cur = '';
-    for (let p = 0; p <= 100; p += 2) {
-      lin += (p === 0 ? 'M' : 'L') + x(p).toFixed(1) + ',' + y(p).toFixed(1) + ' ';
-      cur += (p === 0 ? 'M' : 'L') + x(p).toFixed(1) + ',' + y(anchorPct(p, k)).toFixed(1) + ' ';
-    }
-    svg.innerHTML =
-      '<line x1="' + x(50) + '" y1="' + pad + '" x2="' + x(50) + '" y2="' + (H - pad) + '" stroke="#eef2f7"/>' +
-      '<line x1="' + pad + '" y1="' + y(50) + '" x2="' + (W - pad) + '" y2="' + y(50) + '" stroke="#eef2f7"/>' +
-      '<path d="' + lin + '" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="4 3"/>' +
-      '<path d="' + cur + '" fill="none" stroke="#335145" stroke-width="2"/>';
-  }
-
-  ['pos', 'curve'].forEach((id) => $(id).addEventListener('input', render));
-  $('mode').addEventListener('change', render);
-  document.querySelectorAll('.preset button').forEach((b) =>
-    b.addEventListener('click', () => { $('curve').value = b.dataset.k; render(); })
-  );
+  ['pos', 'cardw', 'box', 'edge'].forEach((id) => $(id).addEventListener('input', render));
+  ['mode', 'endpoints'].forEach((id) => $(id).addEventListener('change', render));
+  window.addEventListener('resize', render);
+  // Two passes: the first applies widths, the second reads the resulting track width.
   render();
+  requestAnimationFrame(render);
 </script>
 </body>
 </html>
