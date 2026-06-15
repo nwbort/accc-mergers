@@ -123,10 +123,11 @@ export function TrackingProvider({ children }) {
         const syntheticUpcomingEvents = [];
         mergers.forEach(merger => {
           if (!merger) return;
-          // Skip if already determined, a waiver, or assessment is suspended
+          // Skip if already determined, a waiver, or assessment is no longer active
           if (merger.determination_publication_date) return;
           if (merger.is_waiver) return;
           if (merger.status === 'Assessment suspended') return;
+          if (merger.status === 'Assessment ceased') return;
 
           if (merger.end_of_determination_period) {
             const dueDate = new Date(merger.end_of_determination_period);
@@ -190,11 +191,11 @@ export function TrackingProvider({ children }) {
         if (upcomingResponse.ok) {
           const data = await upcomingResponse.json();
           // Filter to only tracked mergers (using Set for O(1) lookup).
-          // Also exclude suspended mergers since their assessment is no longer active.
+          // Also exclude suspended/ceased mergers since their assessment is no longer active.
           // Normalize event structure to match timeline events for consistent keys.
           const filtered = data.events
             .filter((e) => trackedMergerIdsSet.has(e.merger_id))
-            .filter((e) => e.status !== 'Assessment suspended')
+            .filter((e) => e.status !== 'Assessment suspended' && e.status !== 'Assessment ceased')
             .map((event) => ({
               ...event,
               // Ensure display_title is set for consistent key generation
