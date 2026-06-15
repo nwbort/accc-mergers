@@ -81,6 +81,16 @@
       "effective_notification_datetime": "2026-06-11T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-06-22T12:00:00Z",
+      "merger_id": "MN-50022",
+      "merger_name": "Service Stream \u2013 RiE",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-06-11T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-06-25T12:00:00Z",
@@ -363,6 +373,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-07-23T12:00:00Z",
+      "merger_id": "MN-50022",
+      "merger_name": "Service Stream \u2013 RiE",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-06-11T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-08-03T12:00:00Z",
       "merger_id": "MN-50009",
       "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
@@ -371,6 +391,6 @@
       "effective_notification_datetime": "2026-05-28T12:00:00Z"
     }
   ],
-  "count": 37,
+  "count": 39,
   "days_ahead": 60
 }
