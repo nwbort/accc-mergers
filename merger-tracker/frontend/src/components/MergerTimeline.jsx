@@ -29,6 +29,18 @@ const OUTCOME_DOT = {
 const axisPct = (date, start, end) =>
   Math.min(100, Math.max(0, ((date - start) / (end - start)) * 100));
 
+// How the mid-axis label/value is anchored to its marker. We translate the
+// label by `anchorPct(pos)%` of its own width: 0 = left-aligned to the marker,
+// 50 = centred, 100 = right-aligned. A linear map (pos == anchor) swings the
+// label immediately; raising ANCHOR_CURVE keeps it centred through the middle
+// of the track and only swings it toward an edge as the marker nears that edge.
+// 1 = linear, higher = stays centred longer. Tune via the timeline-lab page.
+const ANCHOR_CURVE = 2.5;
+const anchorPct = (pos) => {
+  const u = pos / 50 - 1; // -1 (left) .. 0 (centre) .. 1 (right)
+  return (0.5 + 0.5 * Math.sign(u) * Math.abs(u) ** ANCHOR_CURVE) * 100;
+};
+
 // Shown when we can't draw a proportional axis: a suspended assessment with no
 // effective notification, or a pending waiver/notification with no end date yet.
 function MergerTimelineFallback({ merger, startStr }) {
@@ -163,7 +175,8 @@ function MergerTimeline({ merger }) {
   // the endpoints, which sit outside the track.
   const midPct = decisionPct !== null ? decisionPct : todayPct;
   const midIsDetermination = decisionPct !== null;
-  const midAlign = midPct === null ? null : midPct < 33 ? 'left' : midPct > 67 ? 'right' : 'center';
+  const midAnchor = midPct === null ? null : anchorPct(midPct);
+  const midAlign = midAnchor === null ? null : midAnchor < 33 ? 'left' : midAnchor > 67 ? 'right' : 'center';
 
   const durationStr = duration !== null && businessDuration !== null
     ? `${duration} cal / ${businessDuration} bus. days`
@@ -209,7 +222,7 @@ function MergerTimeline({ merger }) {
             className={`${aboveLine} whitespace-nowrap ${
               midIsDetermination ? labelClass : 'text-xs font-semibold text-primary uppercase tracking-wider'
             }`}
-            style={{ left: `${midPct}%`, transform: `translateX(-${midPct}%)`, textAlign: midAlign }}
+            style={{ left: `${midPct}%`, transform: `translateX(-${midAnchor}%)`, textAlign: midAlign }}
           >
             {midIsDetermination ? 'Determination' : 'Today'}
           </span>
@@ -264,7 +277,7 @@ function MergerTimeline({ merger }) {
         {midPct !== null && (
           <span
             className={`${belowLine} leading-tight`}
-            style={{ left: `${midPct}%`, transform: `translateX(-${midPct}%)`, textAlign: midAlign }}
+            style={{ left: `${midPct}%`, transform: `translateX(-${midAnchor}%)`, textAlign: midAlign }}
           >
             {midIsDetermination ? (
               <>
