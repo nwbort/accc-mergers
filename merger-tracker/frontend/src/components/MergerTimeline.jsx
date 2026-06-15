@@ -114,11 +114,6 @@ function MergerTimeline({ merger }) {
   }
 
   const startLabel = merger.is_waiver ? 'Waiver application' : 'Notified';
-  // When the effective notification differs from the original (e.g. the clock
-  // was reset after further information was requested), surface the original
-  // date so the gap is visible.
-  const originalStr = merger.original_notification_datetime;
-  const showOriginal = originalStr && originalStr !== startStr;
   const outcomeDot = OUTCOME_DOT[merger.accc_determination] || 'bg-primary';
 
   const duration = calculateDuration(startStr, merger.determination_publication_date);
@@ -149,113 +144,119 @@ function MergerTimeline({ merger }) {
   else if (isComplete || overdue) fillPct = 100;
   else fillPct = todayPct ?? 0;
 
-  // Keep mid-axis captions clear of the start/end dates at the axis ends.
-  const clamp = (pct) => Math.min(88, Math.max(12, pct));
-  const todayLabelPct = todayPct === null ? null : clamp(todayPct);
-  const decisionLabelPct = decisionPct === null ? null : clamp(decisionPct);
+  // A single mid-axis marker: the determination (decided) or "today" (running).
+  // These are mutually exclusive. The label is clamped away from the track ends
+  // so it stays clear of the endpoints, which sit outside the track entirely.
+  const midPct = decisionPct !== null ? decisionPct : todayPct;
+  const midLabelPct = midPct === null ? null : Math.min(85, Math.max(15, midPct));
+  const midIsDetermination = decisionPct !== null;
+
+  const durationStr = duration !== null && businessDuration !== null
+    ? `${duration} cal / ${businessDuration} bus. days`
+    : null;
+  const remainingStr = daysRemaining !== null && businessDaysRemaining !== null
+    ? `${daysRemaining} cal / ${businessDaysRemaining} bus. days left`
+    : null;
+
+  // Note under the end date: total duration when the axis ends on the
+  // determination itself, or an overdue flag when the deadline has passed.
+  let endNote = null;
+  let endNoteClass = 'text-gray-500';
+  if (endIsOutcome && durationStr) {
+    endNote = durationStr;
+  } else if (overdue) {
+    endNote = 'Overdue';
+    endNoteClass = 'font-medium text-amber-600';
+  }
+
+  // No nowrap on labels so multi-word endpoint labels wrap within the fixed
+  // column width on small screens instead of squeezing the track.
+  const labelClass = 'text-xs font-medium text-gray-500 uppercase tracking-wider';
+  const dateClass = 'text-sm font-medium text-gray-900 whitespace-nowrap';
 
   return (
-    <div role="group" aria-label="Merger assessment timeline">
-      {/* Top labels */}
-      <div className="relative flex items-baseline justify-between gap-4 mb-2.5">
-        <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">{startLabel}</span>
-        {decisionLabelPct !== null && (
+    <div role="group" aria-label="Merger assessment timeline" className="flex items-stretch gap-3 sm:gap-5">
+      {/* Start endpoint — outside the track, hugging it from the left */}
+      <div className="w-[5.5rem] shrink-0 flex flex-col justify-center items-end text-right">
+        <span className={labelClass}>{startLabel}</span>
+        <span className={`${dateClass} mt-1`}>{formatDate(startStr)}</span>
+      </div>
+
+      {/* Track region — the mid marker's labels live inside it */}
+      <div className="relative flex-1 min-w-0 h-20">
+        {/* Mid marker label, above the line */}
+        {midLabelPct !== null && (
           <span
-            className="absolute top-0 -translate-x-1/2 text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap"
-            style={{ left: `${decisionLabelPct}%` }}
+            className={`absolute bottom-1/2 mb-1 -translate-x-1/2 whitespace-nowrap ${
+              midIsDetermination ? labelClass : 'text-xs font-semibold text-primary uppercase tracking-wider'
+            }`}
+            style={{ left: `${midLabelPct}%` }}
           >
-            Determination
+            {midIsDetermination ? 'Determination' : 'Today'}
           </span>
         )}
-        <span className="text-xs font-medium text-gray-500 uppercase tracking-wider text-right">{endLabel}</span>
-      </div>
 
-      {/* Track */}
-      <div className="relative h-3.5 mx-2">
-        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-gray-100" />
-        <div
-          className="absolute left-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-primary transition-[width] duration-500"
-          style={{ width: `${fillPct}%` }}
-        />
-
-        {/* Start node */}
-        <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full bg-primary ring-2 ring-white" />
-
-        {/* End node */}
-        <span
-          className={`absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white ${
-            endIsOutcome ? outcomeDot : 'bg-white border-2 border-gray-300'
-          }`}
-        />
-
-        {/* Determination marker (decided mergers whose endpoint is the
-            deadline). Rendered after the end node so it stays visible if the
-            determination landed on or past the deadline. */}
-        {decisionPct !== null && (
-          <span
-            className={`absolute top-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white shadow-sm ${outcomeDot}`}
-            style={{ left: `${decisionPct}%`, transform: 'translate(-50%, -50%)' }}
-            aria-label="Determination"
+        {/* The line */}
+        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-3.5">
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-gray-100" />
+          <div
+            className="absolute left-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-primary transition-[width] duration-500"
+            style={{ width: `${fillPct}%` }}
           />
-        )}
-
-        {/* Today marker */}
-        {todayPct !== null && (
+          {/* Start node */}
+          <span className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full bg-primary ring-2 ring-white" />
+          {/* End node */}
           <span
-            className="absolute top-1/2 h-3.5 w-3.5 rounded-full bg-white ring-2 ring-primary shadow-sm"
-            style={{ left: `${todayPct}%`, transform: 'translate(-50%, -50%)' }}
-            aria-label="Today"
+            className={`absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white ${
+              endIsOutcome ? outcomeDot : 'bg-white border-2 border-gray-300'
+            }`}
           />
-        )}
-      </div>
-
-      {/* Dates */}
-      <div className="relative flex items-start justify-between gap-4 mt-2.5">
-        <span className="text-sm font-medium text-gray-900">
-          {formatDate(startStr)}
-          {showOriginal && (
-            <span className="block text-[11px] font-normal text-gray-500">
-              originally {formatDate(originalStr)}
-            </span>
+          {/* Determination marker — rendered after the end node so it stays
+              visible if the determination landed on or past the deadline */}
+          {decisionPct !== null && (
+            <span
+              className={`absolute top-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white shadow-sm ${outcomeDot}`}
+              style={{ left: `${decisionPct}%`, transform: 'translate(-50%, -50%)' }}
+              aria-label="Determination"
+            />
           )}
-        </span>
-        {decisionLabelPct !== null && (
+          {/* Today marker */}
+          {todayPct !== null && (
+            <span
+              className="absolute top-1/2 h-3.5 w-3.5 rounded-full bg-white ring-2 ring-primary shadow-sm"
+              style={{ left: `${todayPct}%`, transform: 'translate(-50%, -50%)' }}
+              aria-label="Today"
+            />
+          )}
+        </div>
+
+        {/* Mid marker value, below the line */}
+        {midLabelPct !== null && (
           <span
-            className="absolute top-0 -translate-x-1/2 text-center whitespace-nowrap"
-            style={{ left: `${decisionLabelPct}%` }}
+            className="absolute top-1/2 mt-1 -translate-x-1/2 text-center leading-tight"
+            style={{ left: `${midLabelPct}%` }}
           >
-            <span className="block text-sm font-medium text-gray-900">
-              {formatDate(merger.determination_publication_date)}
-            </span>
-            {duration !== null && businessDuration !== null && (
-              <span className="block text-[11px] font-normal text-gray-500">
-                {duration} cal / {businessDuration} bus. days
-              </span>
+            {midIsDetermination ? (
+              <>
+                <span className={`block ${dateClass}`}>{formatDate(merger.determination_publication_date)}</span>
+                {durationStr && (
+                  <span className="block max-w-[7rem] text-[11px] font-normal text-gray-500">{durationStr}</span>
+                )}
+              </>
+            ) : (
+              remainingStr && (
+                <span className="block max-w-[7rem] text-[11px] font-normal text-gray-500">{remainingStr}</span>
+              )
             )}
           </span>
         )}
-        {todayLabelPct !== null && (
-          <span
-            className="absolute top-0 -translate-x-1/2 text-[11px] font-semibold text-primary whitespace-nowrap"
-            style={{ left: `${todayLabelPct}%` }}
-          >
-            Today
-          </span>
-        )}
-        <span className="text-sm font-medium text-gray-900 text-right">{formatDate(endStr)}</span>
       </div>
 
-      {/* Duration / time remaining, anchored under the end date */}
-      <div className="flex justify-end mt-0.5 min-h-[1rem]">
-        {endIsOutcome && duration !== null && businessDuration !== null && (
-          <span className="text-xs text-gray-500">{duration} cal / {businessDuration} bus. days</span>
-        )}
-        {!isComplete && overdue && (
-          <span className="text-xs font-medium text-amber-600">Decision overdue</span>
-        )}
-        {!isComplete && !overdue && daysRemaining !== null && (
-          <span className="text-xs text-gray-500">{daysRemaining} cal / {businessDaysRemaining} bus. days remaining</span>
-        )}
+      {/* End endpoint — outside the track, hugging it from the right */}
+      <div className="w-[5.5rem] shrink-0 flex flex-col justify-center items-start text-left">
+        <span className={labelClass}>{endLabel}</span>
+        <span className={`${dateClass} mt-1`}>{formatDate(endStr)}</span>
+        {endNote && <span className={`text-[11px] mt-0.5 ${endNoteClass}`}>{endNote}</span>}
       </div>
     </div>
   );
