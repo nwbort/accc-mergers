@@ -77,6 +77,11 @@ function MergerTimeline({ merger, duration, businessDuration, daysRemaining, bus
 
   const startLabel = merger.is_waiver ? 'Waiver application' : 'Notified';
   const endLabel = isComplete ? 'Determination' : 'Decision due';
+  // When the effective notification differs from the original (e.g. the clock
+  // was reset after further information was requested), surface the original
+  // date so the gap is visible.
+  const originalStr = merger.original_notification_datetime;
+  const showOriginal = originalStr && originalStr !== startStr;
   const endDotColor = (isComplete && OUTCOME_DOT[merger.accc_determination]) || 'bg-primary';
 
   // Progress + "today" marker, only while the assessment is still running.
@@ -132,7 +137,14 @@ function MergerTimeline({ merger, duration, businessDuration, daysRemaining, bus
 
       {/* Dates */}
       <div className="relative flex items-start justify-between gap-4 mt-2.5">
-        <span className="text-sm font-medium text-gray-900">{formatDate(startStr)}</span>
+        <span className="text-sm font-medium text-gray-900">
+          {formatDate(startStr)}
+          {showOriginal && (
+            <span className="block text-[11px] font-normal text-gray-500">
+              originally {formatDate(originalStr)}
+            </span>
+          )}
+        </span>
         {todayLabelPct !== null && (
           <span
             className="absolute top-0 -translate-x-1/2 text-[11px] font-semibold text-primary whitespace-nowrap"

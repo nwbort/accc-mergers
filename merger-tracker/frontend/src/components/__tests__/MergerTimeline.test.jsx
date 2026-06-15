@@ -36,6 +36,26 @@ describe('MergerTimeline', () => {
     expect(screen.getByText('30 cal / 21 bus. days remaining')).toBeInTheDocument();
   });
 
+  it('shows the original notification date when it differs from the effective one', () => {
+    render(
+      <MergerTimeline
+        merger={{
+          effective_notification_datetime: '2026-02-20T12:00:00Z',
+          original_notification_datetime: '2026-02-06T12:00:00Z',
+          end_of_determination_period: '2026-08-17T12:00:00Z',
+          status: 'Under assessment',
+        }}
+        duration={null}
+        businessDuration={null}
+        daysRemaining={63}
+        businessDaysRemaining={44}
+      />
+    );
+
+    expect(screen.getByText('20/02/2026')).toBeInTheDocument();
+    expect(screen.getByText(/originally 06\/02\/2026/i)).toBeInTheDocument();
+  });
+
   it('ends at the published determination once complete', () => {
     render(
       <MergerTimeline
