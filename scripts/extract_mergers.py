@@ -571,7 +571,7 @@ def _dates_within_one_day(date1, date2):
     return abs((dt1.date() - dt2.date()).days) <= 1
 
 
-def _is_prior_determination_pdf(event_date, det_date, max_days_before=4):
+def _determination_pdf_precedes_registration(event_date, det_date, max_days_before=4):
     """Return True if event_date falls within max_days_before days before det_date.
 
     The ACCC sometimes records a determination_publication_date on the register
@@ -684,7 +684,7 @@ def _add_synthetic_events(merger_data):
              if ('determination' in e.get('title', '').lower()
                  or 'determination' in e.get('url', '').lower())
              and e.get('url')
-             and _is_prior_determination_pdf(e.get('date'), det_date)),
+             and _determination_pdf_precedes_registration(e.get('date'), det_date)),
             key=lambda e: e.get('date', ''),
             reverse=True,
         )
