@@ -7,6 +7,25 @@ function isBotRequest(request) {
   return BOT_UA_RE.test(ua);
 }
 
+// Build the readable slug for a merger name. MUST stay in sync with
+// merger-tracker/frontend/src/utils/slug.js and scripts/slug.py so the OG
+// canonical matches the SPA's <link rel="canonical"> and the sitemap entry.
+const MAX_SLUG_LENGTH = 80;
+function slugify(name) {
+  if (!name) return '';
+  return String(name)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, MAX_SLUG_LENGTH)
+    .replace(/-+$/g, '');
+}
+
+function mergerPath(id, name) {
+  const slug = slugify(name);
+  return slug ? `/mergers/${id}/${slug}` : `/mergers/${id}`;
+}
+
 function escapeHtml(str) {
   return String(str ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
@@ -50,8 +69,8 @@ ${publishDate ? `<meta property="article:published_time" content="${escapeHtml(p
 </html>`;
 }
 
-async function serveOgPage(matterId, canonicalUrl, env) {
-  const dataUrl = new URL(`/data/mergers/${matterId}.json`, canonicalUrl);
+async function serveOgPage(matterId, origin, env) {
+  const dataUrl = new URL(`/data/mergers/${matterId}.json`, origin);
   let merger;
   try {
     const resp = await env.ASSETS.fetch(new Request(dataUrl.toString()));
@@ -60,6 +79,9 @@ async function serveOgPage(matterId, canonicalUrl, env) {
   } catch {
     return null;
   }
+  // Canonical URL includes the readable slug derived from the merger name, so
+  // it matches what the SPA renders and what the sitemap lists.
+  const canonicalUrl = `${origin}${mergerPath(matterId, merger.merger_name)}`;
   return new Response(buildOgHtml(merger, canonicalUrl), {
     headers: {
       'Content-Type': 'text/html; charset=utf-8',
@@ -75,15 +97,16 @@ export async function onRequest(context) {
   const url = new URL(request.url);
   const path = url.pathname;
 
-  // For social/crawler bots hitting a top-level merger page, serve a minimal
+  // For social/crawler bots hitting a merger detail page, serve a minimal
   // HTML response with specific OG meta tags — bots don't run JS so they would
-  // otherwise see only the generic tags in the SPA's index.html.
-  const isTopLevel = /^\/mergers\/((MN|WA)-\d+)\/?$/i.test(path);
-  if (isTopLevel && isBotRequest(request)) {
-    const match = path.match(/^\/mergers\/((MN|WA)-\d+)/i);
-    const matterId = match[1].toUpperCase();
-    const canonicalUrl = `${url.origin}/mergers/${matterId}`;
-    const ogResponse = await serveOgPage(matterId, canonicalUrl, env);
+  // otherwise see only the generic tags in the SPA's index.html. This matches
+  // both the bare `/mergers/{id}` form and the readable `/mergers/{id}/{slug}`
+  // form, but never the `/mergers/{id}/{file}.pdf` document paths (handled
+  // below as PDF requests).
+  const detailMatch = path.match(/^\/mergers\/((MN|WA)-\d+)(?:\/[^/]+)?\/?$/i);
+  if (detailMatch && !path.toLowerCase().endsWith('.pdf') && isBotRequest(request)) {
+    const matterId = detailMatch[1].toUpperCase();
+    const ogResponse = await serveOgPage(matterId, url.origin, env);
     if (ogResponse) return ogResponse;
     // Fall through if the merger data couldn't be fetched
   }

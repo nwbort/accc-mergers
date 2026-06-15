@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { FaChevronLeft, FaLink, FaComment } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -16,14 +16,28 @@ import { useFetchData } from '../hooks/useFetchData';
 import { formatDate, calculateDuration, getDaysRemaining, calculateBusinessDays, getBusinessDaysRemaining } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN } from '../utils/classNames';
+import { slugify, mergerPath } from '../utils/slug';
 
 function MergerDetail() {
-  const { id } = useParams();
+  const { id, slug } = useParams();
+  const navigate = useNavigate();
   const { data: merger, loading, error } = useFetchData(
     API_ENDPOINTS.mergerDetail(id),
     { cacheKey: `merger-${id}` }
   );
   const isNotFound = error === 'HTTP 404';
+
+  // Keep the address bar on the canonical `/mergers/{id}/{slug}` form. When the
+  // page is reached via a bare-id link or a stale/incorrect slug, rewrite the
+  // URL (history replace, no extra entry) once the merger data has loaded so the
+  // visible URL matches the <link rel="canonical"> and sitemap entry.
+  useEffect(() => {
+    if (!merger) return;
+    const canonicalSlug = slugify(merger.merger_name);
+    if ((slug || '') !== canonicalSlug) {
+      navigate(mergerPath(merger.merger_id, merger.merger_name), { replace: true });
+    }
+  }, [merger, slug, navigate]);
   const [expandedParties, setExpandedParties] = useState({});
   const { isTracked, toggleTracking } = useTracking();
   const tracked = isTracked(id);
@@ -119,7 +133,7 @@ function MergerDetail() {
   const determinationDocUrl = statementOfReasonsEvent?.url_gh ?? determinationEvent?.url_gh;
 
   const siteUrl = 'https://mergers.fyi';
-  const pagePath = `/mergers/${merger.merger_id}`;
+  const pagePath = mergerPath(merger.merger_id, merger.merger_name);
   const pageUrl = `${siteUrl}${pagePath}`;
   const modifiedTime = merger.determination_publication_date || merger.effective_notification_datetime;
   const articleSection = merger.anzsic_codes?.[0]?.name;
@@ -312,7 +326,7 @@ function MergerDetail() {
         {/* Related Merger Link */}
         {merger.related_merger && (
           <Link
-            to={`/mergers/${merger.related_merger.merger_id}`}
+            to={mergerPath(merger.related_merger.merger_id, merger.related_merger.merger_name)}
             className="flex items-center gap-3 bg-amber-50/80 rounded-2xl border border-amber-200/60 shadow-card p-4 mb-6 hover:bg-amber-50 hover:border-amber-300/60 transition-all group"
           >
             <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center">
@@ -493,7 +507,7 @@ function MergerDetail() {
               {merger.similar_mergers.map((similar) => (
                 <Link
                   key={similar.merger_id}
-                  to={`/mergers/${similar.merger_id}`}
+                  to={mergerPath(similar.merger_id, similar.merger_name)}
                   className="flex items-start gap-3 py-3 first:pt-0 last:pb-0 hover:opacity-75 transition-opacity group"
                 >
                   <div className="flex-1 min-w-0">

@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
+import { mergerPath } from '../utils/slug';
 import { FaBell, FaCheckCircle } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
 import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
@@ -36,7 +37,7 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
   return (
     <div className="p-4">
       <Link
-        to={`/mergers/${group.merger_id}`}
+        to={mergerPath(group.merger_id, group.merger_name)}
         onClick={onClose}
         className="block hover:bg-gray-50/80 -mx-4 -mt-4 px-4 pt-4 pb-2 rounded-t-xl transition-colors"
       >

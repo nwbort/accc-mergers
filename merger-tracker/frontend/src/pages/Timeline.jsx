@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
+import { mergerPath } from '../utils/slug';
 import LoadingSpinner from '../components/LoadingSpinner';
 import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
@@ -320,7 +321,7 @@ function Timeline() {
                         </span>
                       </div>
                       <Link
-                        to={`/mergers/${event.merger_id}`}
+                        to={mergerPath(event.merger_id, event.merger_name)}
                         className="min-w-0 flex-1 bg-white rounded-2xl border border-gray-100 shadow-card p-4 hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 block"
                         aria-label={`View merger details for ${event.merger_name}`}
                       >
