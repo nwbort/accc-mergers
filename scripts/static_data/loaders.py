@@ -28,11 +28,44 @@ def load_mergers() -> list:
     raise ValueError("Unexpected mergers.json format")
 
 
+# Relationship labels emitted for each pair type, as (source_label,
+# target_label). The source is the earlier matter (waiver / suspended); the
+# target is what it was re-filed as. The frontend maps these to display text.
+_RELATIONSHIP_LABELS = {
+    'waiver_refiled': ('refiled_as', 'refiled_from'),
+    'suspended_refiled': ('suspended_refiled_as', 'suspended_refiled_from'),
+}
+
+
+def build_relationship_map(data: dict) -> dict:
+    """Turn related-merger ``pairs`` into a per-merger relationship lookup.
+
+    Accepts both the legacy ``{"waiver", "notification"}`` shape (treated as
+    ``type: "waiver_refiled"``) and the generalised
+    ``{"from", "to", "type"}`` shape. Returns a dict keyed by merger_id mapping
+    to ``{'merger_id': ..., 'relationship': ...}``.
+    """
+    result = {}
+    for pair in data.get('pairs', []):
+        source = pair.get('from') or pair.get('waiver')
+        target = pair.get('to') or pair.get('notification')
+        if not source or not target:
+            continue
+        pair_type = pair.get('type', 'waiver_refiled')
+        source_rel, target_rel = _RELATIONSHIP_LABELS.get(
+            pair_type, _RELATIONSHIP_LABELS['waiver_refiled']
+        )
+        result[source] = {'merger_id': target, 'relationship': source_rel}
+        result[target] = {'merger_id': source, 'relationship': target_rel}
+    return result
+
+
 def load_related_mergers() -> dict:
     """Load related merger pairs from related_mergers.json.
 
     Returns a dict keyed by merger_id mapping to
-    ``{'merger_id': ..., 'relationship': 'refiled_as' | 'refiled_from'}``.
+    ``{'merger_id': ..., 'relationship': ...}``. See ``build_relationship_map``
+    for the supported pair shapes and relationship values.
     """
     if not RELATED_MERGERS_JSON.exists():
         return {}
@@ -40,14 +73,7 @@ def load_related_mergers() -> dict:
     try:
         with open(RELATED_MERGERS_JSON, 'r', encoding='utf-8') as f:
             data = json.load(f)
-
-        result = {}
-        for pair in data.get('pairs', []):
-            wa = pair['waiver']
-            mn = pair['notification']
-            result[wa] = {'merger_id': mn, 'relationship': 'refiled_as'}
-            result[mn] = {'merger_id': wa, 'relationship': 'refiled_from'}
-        return result
+        return build_relationship_map(data)
     except (json.JSONDecodeError, IOError, KeyError) as e:
         print(f"Warning: Could not load related_mergers.json: {e}")
         return {}

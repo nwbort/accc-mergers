@@ -1,5 +1,5 @@
 {
-  "_README": "Mergers that were initially filed as waiver applications, declined, then re-filed as formal notifications. Each entry maps the waiver ID to the notification ID. Both directions are resolved automatically.",
+  "_README": "Mergers that were effectively re-filed as a separate matter. Two pair shapes are accepted. Legacy: { \"waiver\": \"WA-...\", \"notification\": \"MN-...\" } for a waiver that was declined then re-filed as a notification (treated as type waiver_refiled). General: { \"from\": \"...\", \"to\": \"...\", \"type\": \"...\" } where type is \"waiver_refiled\" or \"suspended_refiled\" (a matter whose assessment was suspended and was re-filed later). Both directions are resolved automatically.",
   "pairs": [
     { "waiver": "WA-35003", "notification": "MN-85007" },
     { "waiver": "WA-01087", "notification": "MN-20013" },

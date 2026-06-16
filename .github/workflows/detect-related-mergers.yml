@@ -65,13 +65,14 @@ jobs:
             --limit 500 \
             --json number,state,title > existing_issues.json
 
-          # Extract "WA-XXXX/MN-XXXX" from each title.  Titles created by this
-          # workflow always contain that substring; anything else is skipped.
+          # Extract the "<ID>/<ID>" pair marker from each title.  Titles created
+          # by this workflow always contain that substring (e.g. WA-1234/MN-5678
+          # or MN-1234/MN-5678); anything else is skipped.
           jq -r '
             .[]
-            | select(.title | test("WA-[0-9]+/MN-[0-9]+"))
+            | select(.title | test("[A-Z]{2}-[0-9]+/[A-Z]{2}-[0-9]+"))
             | [
-                (.title | capture("(?<w>WA-[0-9]+)/(?<m>MN-[0-9]+)") | .w + "/" + .m),
+                (.title | capture("(?<a>[A-Z]{2}-[0-9]+)/(?<b>[A-Z]{2}-[0-9]+)") | .a + "/" + .b),
                 (.number | tostring),
                 .state
               ]
