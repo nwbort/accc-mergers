@@ -767,6 +767,15 @@
         "in_progress": false
       },
       {
+        "notification_date": "2026-04-28",
+        "business_days": 33,
+        "calendar_days": 49,
+        "merger_name": "Fulton Hogan \u2013 Avionics",
+        "merger_id": "MN-75016",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
         "notification_date": "2026-04-29",
         "business_days": 27,
         "calendar_days": 41,
@@ -948,18 +957,18 @@
       }
     ],
     "stats": {
-      "average": 19.5,
-      "median": 17,
+      "average": 19.6,
+      "median": 17.0,
       "min": 15,
       "max": 148,
-      "count": 101
+      "count": 102
     },
     "calendar_stats": {
-      "average": 29.6,
-      "median": 26,
+      "average": 29.8,
+      "median": 26.0,
       "min": 21,
       "max": 235,
-      "count": 101
+      "count": 102
     }
   },
   "waiver_duration": {
@@ -2627,7 +2636,7 @@
       21,
       26,
       33,
-      12
+      13
     ],
     "waivers": [
       0,

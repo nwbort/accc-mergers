@@ -1,13 +1,13 @@
 {
-  "total_mergers": 134,
+  "total_mergers": 135,
   "total_waivers": 203,
   "by_status": {
-    "Assessment completed": 101,
+    "Assessment completed": 102,
     "Under assessment": 32,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 100,
+    "Approved": 101,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -15,22 +15,22 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.574257425742573,
+    "average_days": 29.764705882352942,
     "median_days": 26,
-    "average_business_days": 19.514851485148515,
+    "average_business_days": 19.647058823529413,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 22,
-        "percentage": 21.8
+        "percentage": 21.6
       },
       "day20": {
         "count": 79,
-        "percentage": 78.2
+        "percentage": 77.5
       },
       "day30": {
         "count": 99,
-        "percentage": 98.0
+        "percentage": 97.1
       }
     }
   },
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-10018",
+      "merger_name": "CSR - Complete Plaster",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-15T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-30020",
       "merger_name": "EBOS - Paringa Pet Foods",
       "status": "Under assessment",
@@ -108,17 +116,19 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-09T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-20018",
-      "merger_name": "Uber - Blacklane",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-05T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-75016",
+      "merger_name": "Fulton Hogan \u2013 Avionics",
+      "determination": "Approved",
+      "determination_date": "2026-06-16T12:00:00Z",
+      "page_modified_datetime": "2026-06-16T13:07:19+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
     {
       "merger_id": "MN-25026",
       "merger_name": "Tibaldi - South Food Group",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-12T12:00:00Z",
       "page_modified_datetime": "2026-06-12T15:31:23+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-95007",
-      "merger_name": "Magellan Financial Group - Barrenjoey",
-      "determination": "Approved",
-      "determination_date": "2026-06-12T12:00:00Z",
-      "page_modified_datetime": "2026-06-12T08:44:51+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

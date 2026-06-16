@@ -489,8 +489,8 @@
     {
       "merger_id": "MN-75016",
       "merger_name": "Fulton Hogan \u2013 Avionics",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "acquirers": [
         {
           "name": "FULTON HOGAN INDUSTRIES PTY LTD",
@@ -500,14 +500,14 @@
       ],
       "targets": [
         {
-          "name": "AVIONICS HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "92 166 405 321"
-        },
-        {
           "name": "Nick Brumley Pty Limited in its capacity atf Nick Brumley Family Trust (ABN 98 415 412 572)",
           "identifier_type": "ABN",
           "identifier": "44 124 730 605"
+        },
+        {
+          "name": "Shane Webb Nominees Pty Ltd in its capacity at the trustee for The S & R Webb Family Trust",
+          "identifier_type": "ACN",
+          "identifier": "619 189 883"
         }
       ]
     },
