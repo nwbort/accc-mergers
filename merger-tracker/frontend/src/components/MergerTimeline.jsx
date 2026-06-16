@@ -23,6 +23,7 @@ const OUTCOME_DOT = {
   [MERGER_STATUS.DECLINED]: 'bg-red-500',
   [MERGER_STATUS.NOT_APPROVED]: 'bg-red-500',
   [MERGER_STATUS.REFERRED_TO_PHASE_2]: 'bg-amber-500',
+  [MERGER_STATUS.ASSESSMENT_CEASED]: 'bg-purple-500',
 };
 
 // Position of `date` along the start -> end axis, clamped to [0, 100].
@@ -86,7 +87,11 @@ function MergerTimelineFallback({ merger, startStr }) {
  */
 function MergerTimeline({ merger }) {
   const startStr = merger.effective_notification_datetime || merger.original_notification_datetime;
-  const isComplete = Boolean(merger.determination_publication_date);
+  const isCeased = merger.status === MERGER_STATUS.ASSESSMENT_CEASED;
+  // For ceased mergers the cessation date stands in for the determination date.
+  const effectiveDeterminationDate = merger.determination_publication_date
+    || (isCeased ? merger.ceased_date : null);
+  const isComplete = Boolean(effectiveDeterminationDate);
 
   const start = startStr ? parseISO(startStr) : null;
 
@@ -114,9 +119,9 @@ function MergerTimeline({ merger }) {
     end = deadline;
     endLabel = 'Deadline';
   } else if (isComplete) {
-    endStr = merger.determination_publication_date;
+    endStr = effectiveDeterminationDate;
     end = parseISO(endStr);
-    endLabel = 'Determination';
+    endLabel = isCeased ? 'Ceased' : 'Determination';
     endIsOutcome = true;
   }
 
@@ -126,17 +131,17 @@ function MergerTimeline({ merger }) {
   }
 
   const startLabel = merger.is_waiver ? 'Waiver application' : 'Notified';
-  const outcomeDot = OUTCOME_DOT[merger.accc_determination] || 'bg-primary';
+  const outcomeDot = OUTCOME_DOT[merger.accc_determination] || OUTCOME_DOT[merger.status] || 'bg-primary';
 
-  const duration = calculateDuration(startStr, merger.determination_publication_date);
-  const businessDuration = calculateBusinessDays(startStr, merger.determination_publication_date);
+  const duration = calculateDuration(startStr, effectiveDeterminationDate);
+  const businessDuration = calculateBusinessDays(startStr, effectiveDeterminationDate);
   const daysRemaining = getDaysRemaining(deadlineStr);
   const businessDaysRemaining = getBusinessDaysRemaining(deadlineStr);
 
   // Mid-axis "determination" marker for decided mergers whose endpoint is the
   // deadline.
   const decisionPct = isComplete && hasDeadline
-    ? axisPct(parseISO(merger.determination_publication_date), start, end)
+    ? axisPct(parseISO(effectiveDeterminationDate), start, end)
     : null;
 
   // For mergers referred to Phase 2, mark the Phase 1 determination date with a
@@ -172,6 +177,7 @@ function MergerTimeline({ merger }) {
   // These are mutually exclusive.
   const midPct = decisionPct !== null ? decisionPct : todayPct;
   const midIsDetermination = decisionPct !== null;
+  const midLabel = midIsDetermination ? (isCeased ? 'Ceased' : 'Determination') : 'Today';
   // Shared positioning for the mid label and value so they stay aligned.
   const midStyle = midPct === null ? null : {
     width: MID_BOX,
@@ -227,7 +233,7 @@ function MergerTimeline({ merger }) {
             }`}
             style={midStyle}
           >
-            {midIsDetermination ? 'Determination' : 'Today'}
+            {midLabel}
           </span>
         )}
 
@@ -284,7 +290,7 @@ function MergerTimeline({ merger }) {
           >
             {midIsDetermination ? (
               <>
-                <span className={`block ${dateClass}`}>{formatDateMedium(merger.determination_publication_date)}</span>
+                <span className={`block ${dateClass}`}>{formatDateMedium(effectiveDeterminationDate)}</span>
                 {durationStr && (
                   <span className="block text-[11px] font-normal text-gray-500">{durationStr}</span>
                 )}
