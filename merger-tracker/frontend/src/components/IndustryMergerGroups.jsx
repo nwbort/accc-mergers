@@ -58,7 +58,7 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
                       </h4>
                     )}
                   </div>
-                  <span className="text-xs text-gray-500 mt-1 block">
+                  <span className="text-xs text-gray-500 mt-1 block truncate">
                     {merger.status}
                   </span>
                 </Link>

@@ -247,7 +247,9 @@ function Industries() {
                   </tr>
                   {isExpanded && (
                     <tr id={`industry-details-${industry.code}`}>
-                      <td colSpan="2" className="px-6 py-5 bg-gray-100 border-t border-gray-200 shadow-inner">
+                      {/* max-w-0 lets the long, non-wrapping merger titles truncate
+                          instead of stretching the table past the viewport on mobile. */}
+                      <td colSpan="2" className="px-6 py-5 bg-gray-100 border-t border-gray-200 shadow-inner max-w-0">
                         <div className="space-y-2">
                           <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
                             Mergers in this industry
