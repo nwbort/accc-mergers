@@ -2,12 +2,12 @@
   "total_mergers": 134,
   "total_waivers": 203,
   "by_status": {
-    "Assessment completed": 100,
-    "Under assessment": 33,
+    "Assessment completed": 101,
+    "Under assessment": 32,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 99,
+    "Approved": 100,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.62,
+    "average_days": 29.574257425742573,
     "median_days": 26,
-    "average_business_days": 19.56,
+    "average_business_days": 19.514851485148515,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 21,
-        "percentage": 21.0
+        "count": 22,
+        "percentage": 21.8
       },
       "day20": {
-        "count": 78,
-        "percentage": 78.0
+        "count": 79,
+        "percentage": 78.2
       },
       "day30": {
-        "count": 98,
+        "count": 99,
         "percentage": 98.0
       }
     }
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-25026",
+      "merger_name": "Tibaldi - South Food Group",
+      "determination": "Approved",
+      "determination_date": "2026-06-16T12:00:00Z",
+      "page_modified_datetime": "2026-06-16T10:17:15+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-30002",
       "merger_name": "Peter Warren - Wakeling Automotive",
       "determination": "Assessment ceased",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-12T12:00:00Z",
       "page_modified_datetime": "2026-06-12T08:44:51+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-70018",
-      "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
-      "determination": "Approved",
-      "determination_date": "2026-06-11T12:00:00Z",
-      "page_modified_datetime": "2026-06-12T08:46:44+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
