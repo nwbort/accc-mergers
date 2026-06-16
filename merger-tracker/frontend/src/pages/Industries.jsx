@@ -80,6 +80,13 @@ function Industries() {
     })
     .sort((a, b) => b.merger_count - a.merger_count);
 
+  // Largest merger count in the visible set. The share bars are scaled relative
+  // to this (the top industry fills the bar, the rest are proportional to it)
+  // rather than to an absolute 100%, since no single industry comes close.
+  const maxShareCount = filteredIndustries.length
+    ? Math.max(...filteredIndustries.map((i) => i.merger_count))
+    : 0;
+
   const toggleIndustry = async (code, name) => {
     const key = `${code}-${name}`;
 
@@ -156,7 +163,7 @@ function Industries() {
       <div className="bg-white border border-gray-100 shadow-card rounded-2xl overflow-hidden">
         <table className="min-w-full divide-y divide-gray-100">
           <caption className="sr-only">
-            Industry breakdown of Australian merger reviews by ANZSIC code, showing merger counts and percentage of total reviews
+            Industry breakdown of Australian merger reviews by ANZSIC code, showing merger counts and each industry's share of all reviews
           </caption>
           <thead>
             <tr className="bg-gray-50/80">
@@ -164,10 +171,7 @@ function Industries() {
                 Industry name
               </th>
               <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Mergers
-              </th>
-              <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Share
+                Mergers &amp; share of all reviews
               </th>
             </tr>
           </thead>
@@ -219,33 +223,31 @@ function Industries() {
                         <span className="font-medium">{industry.name}</span>
                       </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm">
-                      <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary">
-                        {industry.merger_count}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 text-sm text-gray-500 w-2/3">
                       <div className="flex items-center gap-3">
+                        <span className="inline-flex items-center justify-center min-w-[2.25rem] px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary tabular-nums">
+                          {industry.merger_count}
+                        </span>
                         <div
-                          className="flex-1 bg-gray-100 rounded-full h-1.5 max-w-[8rem] overflow-hidden"
+                          className="flex-1 bg-gray-100 rounded-full h-1.5 overflow-hidden"
                           role="progressbar"
                           aria-valuenow={parseFloat(percentage)}
                           aria-valuemin={0}
                           aria-valuemax={100}
-                          aria-label={`${percentage}% of total mergers`}
+                          aria-label={`${percentage}% of all reviews`}
                         >
                           <div
                             className="bg-primary h-1.5 rounded-full transition-all duration-300"
-                            style={{ width: `${percentage}%` }}
+                            style={{ width: `${maxShareCount > 0 ? (industry.merger_count / maxShareCount) * 100 : 0}%` }}
                           />
                         </div>
-                        <span className="text-xs tabular-nums font-medium text-gray-600 w-12">{percentage}%</span>
+                        <span className="text-xs tabular-nums font-medium text-gray-600 w-12 text-right">{percentage}%</span>
                       </div>
                     </td>
                   </tr>
                   {isExpanded && (
                     <tr id={`industry-details-${industry.code}`}>
-                      <td colSpan="3" className="px-6 py-5 bg-gray-100 border-t border-gray-200 shadow-inner">
+                      <td colSpan="2" className="px-6 py-5 bg-gray-100 border-t border-gray-200 shadow-inner">
                         <div className="space-y-2">
                           <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
                             Mergers in this industry
