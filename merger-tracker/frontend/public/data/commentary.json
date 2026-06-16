@@ -87,6 +87,54 @@
       ]
     },
     {
+      "merger_id": "MN-30008",
+      "merger_name": "Frasers Group \u2013 Accent Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-19T12:00:00Z",
+      "determination_publication_date": "2026-06-15T12:00:00Z",
+      "determination_url": "/mergers/MN-30008/MN-30008 - Phase 1 determination.pdf",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Frasers Group plc",
+          "identifier_type": null,
+          "identifier": "Company number  06035106"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ACCENT GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "85 108 096 251"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3712",
+          "name": "Clothing and Footwear Wholesaling"
+        },
+        {
+          "code": "4251",
+          "name": "Clothing Retailing"
+        },
+        {
+          "code": "4252",
+          "name": "Footwear Retailing"
+        }
+      ],
+      "comments": [
+        {
+          "commentary": "The proposed acquisition by Frasers Group of the remaining share capital of Accent Group was the first acquisition to be assessed confidentially under s51ABZZL of the Competition and Consumer Act.",
+          "tags": [
+            "landmark"
+          ],
+          "date": "2026-06-16"
+        }
+      ]
+    },
+    {
       "merger_id": "MN-95001",
       "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
       "status": "Assessment completed",
@@ -709,5 +757,5 @@
       ]
     }
   ],
-  "count": 15
+  "count": 16
 }
