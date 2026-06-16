@@ -1,0 +1,153 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/csr-complete-plaster",
+  "merger_name": "CSR - Complete Plaster",
+  "status": "Under assessment",
+  "merger_id": "MN-10018",
+  "effective_notification_datetime": "2026-06-15T12:00:00Z",
+  "original_notification_datetime": "2026-06-15T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-07-27T12:00:00Z",
+  "page_modified_datetime": "2026-06-16T14:24:36+10:00",
+  "consultation_response_due_date": "2026-06-23T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "CSR BUILDING PRODUCTS LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "55 008 631 356"
+    }
+  ],
+  "targets": [
+    {
+      "name": "COMPLETE PLASTER & REO PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "48 164 427 114"
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "2031",
+      "name": "Cement and Lime Manufacturing"
+    },
+    {
+      "code": "2032",
+      "name": "Plaster Product Manufacturing"
+    },
+    {
+      "code": "2090",
+      "name": "Other Non-Metallic Mineral Product Manufacturing"
+    },
+    {
+      "code": "3339",
+      "name": "Other Hardware Goods Wholesaling"
+    },
+    {
+      "code": "4231",
+      "name": "Hardware and Building Supplies Retailing"
+    }
+  ],
+  "merger_description": "CSR Building Products Limited (**CSR**) proposes to acquire the business operations of\u00a0Complete Plaster & Reo Pty Ltd (**Complete Plaster**).\n\nCSR manufactures and supplies a range of light building products including plasterboard, cornice, compounds, adhesives and accessories for residential, commercial and DIY projects under the CSR Gyprock brand. CSR also supplies fibre cement products through its Cemintel brand. CSR distributes these products using both direct and indirect channels. It has no direct distribution channels in Port Macquarie (NSW) or surrounding areas. CSR is owned by French company, Saint-Gobain.\n\nComplete Plaster is a plasterboard supply business located in Port Macquarie. It distributes plasterboard, fibre cement, accessories, and tools in the Port Macquarie region and surrounding areas. The products distributed by Complete Plaster are almost entirely manufactured by CSR, with only tools being third party products.",
+  "events": [
+    {
+      "date": "2026-06-16T12:00:00Z",
+      "title": "Questionnaire - CSR-Complete Plaster",
+      "display_title": "Questionnaire - CSR-Complete Plaster",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20CSR-Complete%20Plaster.docx",
+      "url_gh": "/mergers/MN-10018/Questionnaire - CSR-Complete Plaster.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-06-15T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-25014",
+      "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Essential Bidco B.V.",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Specialty (U.S.) Bidco, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "SpecialtyCo US LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Biomin Phytogenics GmbH (Germany)",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-05014",
+      "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Smile Partners (NSW3) Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 902 955"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Shrika Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "108 757 357"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-85003",
+      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NACG WA Acquisition Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 678 296"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DCL CORP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 633 008 992"
+        },
+        {
+          "name": "IRON HIRE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 641 807 589"
+        }
+      ]
+    }
+  ]
+}

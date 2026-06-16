@@ -347,6 +347,65 @@ class TestWeeklyDigestBuckets:
     # Ongoing buckets are current snapshots
     # -----------------------------------------------------------------
 
+    # -----------------------------------------------------------------
+    # Assessment ceased bucket
+    # -----------------------------------------------------------------
+
+    def test_ceased_in_window_is_included(self, monkeypatch):
+        merger = {
+            'merger_id': 'MN-30002',
+            'merger_name': 'Ceased this week',
+            'status': merger_status.ASSESSMENT_CEASED,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-03-20T00:00:00Z',
+            'ceased_date': '2025-04-16',  # within period
+            'events': [],
+        }
+        digest = self._run([merger], monkeypatch)
+        assert [m['merger_id'] for m in digest['deals_assessment_ceased']] == ['MN-30002']
+
+    def test_ceased_outside_window_is_excluded(self, monkeypatch):
+        merger = {
+            'merger_id': 'MN-30003',
+            'merger_name': 'Old cessation',
+            'status': merger_status.ASSESSMENT_CEASED,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-01-10T00:00:00Z',
+            'ceased_date': '2025-03-28',  # > 2 weeks before period
+            'events': [],
+        }
+        digest = self._run([merger], monkeypatch)
+        assert digest['deals_assessment_ceased'] == []
+
+    def test_ceased_already_in_previous_digest_is_not_repeated(self, monkeypatch):
+        merger = {
+            'merger_id': 'MN-30004',
+            'merger_name': 'Ceased last week',
+            'status': merger_status.ASSESSMENT_CEASED,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-03-01T00:00:00Z',
+            'ceased_date': '2025-04-11',  # prior Friday, in 2-week window
+            'events': [],
+        }
+        previous_digest = {'deals_assessment_ceased': [{'merger_id': 'MN-30004'}]}
+        digest = self._run([merger], monkeypatch, previous_digest=previous_digest)
+        assert digest['deals_assessment_ceased'] == []
+
+    def test_ceased_summary_included_in_merger_summary(self, monkeypatch):
+        merger = {
+            'merger_id': 'MN-30005',
+            'merger_name': 'Ceased with date',
+            'status': merger_status.ASSESSMENT_CEASED,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-03-20T00:00:00Z',
+            'ceased_date': '2025-04-16',
+            'events': [],
+        }
+        digest = self._run([merger], monkeypatch)
+        summary = digest['deals_assessment_ceased'][0]
+        assert summary['ceased_date'] == '2025-04-16'
+        assert summary['stage'] == 'Phase 1 - initial assessment'
+
     def test_ongoing_phase1_not_deduplicated(self, monkeypatch):
         """Ongoing phase 1/2 lists reflect the current state of open reviews
         and should not be affected by what last week's digest listed."""
