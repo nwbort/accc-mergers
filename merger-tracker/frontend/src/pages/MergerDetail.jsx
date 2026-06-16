@@ -19,6 +19,16 @@ import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN } from '../utils/classNames';
 import { slugify, mergerPath } from '../utils/slug';
 
+// Display text for each related-merger relationship. Keys match the
+// `relationship` values produced by the data pipeline (see
+// scripts/static_data/loaders.py).
+const RELATED_MERGER_LABELS = {
+  refiled_as: 'Waiver declined – subsequently notified',
+  refiled_from: 'Originally filed as a waiver application',
+  suspended_refiled_as: 'Assessment suspended – subsequently refiled',
+  suspended_refiled_from: 'Refiled after an earlier assessment was suspended',
+};
+
 function MergerDetail() {
   const { id, slug } = useParams();
   const navigate = useNavigate();
@@ -287,10 +297,8 @@ function MergerDetail() {
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-900">
-                {merger.related_merger.relationship === 'refiled_as'
-                  ? 'Waiver declined \u2013 subsequently notified'
-                  : 'Originally filed as a waiver application'
-                }
+                {RELATED_MERGER_LABELS[merger.related_merger.relationship]
+                  ?? RELATED_MERGER_LABELS.refiled_from}
               </p>
             </div>
           </Link>

@@ -1,26 +1,32 @@
 #!/usr/bin/env python3
 """
-Detect likely "related mergers" — waiver applications that were declined and
-then re-filed as formal notifications.
+Detect likely "related mergers" — an earlier application that was later
+re-filed as a separate matter.
 
 Background
 ----------
-`data/processed/related_mergers.json` manually maps each `WA-*` waiver ID to
-the `MN-*` notification ID that followed it after the waiver was declined.
+`data/processed/related_mergers.json` records pairs of merger IDs where one
+matter was effectively re-filed as another. Two patterns are covered:
+
+  * ``waiver_refiled`` — a `WA-*` waiver application was declined, then
+    re-filed as an `MN-*` notification; and
+  * ``suspended_refiled`` — a matter whose assessment was suspended is
+    re-filed later (often, but not necessarily, under a fresh `MN-*` ID).
+
 This script looks through the processed merger data for likely new pairs and
 reports any that aren't already recorded.
 
 Matching heuristic
 ------------------
-A candidate pair is (waiver, notification) where:
+Each pass pairs a "source" merger with a later "target" merger that share at
+least one acquirer or target identifier (ABN/etc.), or have very similar
+acquirer- and target-name strings, and where the target was filed after the
+source (soft check — missing dates don't disqualify a pair).
 
-  * the waiver has `merger_id` starting with `WA-` and
-    `accc_determination == "Not approved"`, and
-  * the notification has `merger_id` starting with `MN-`, and
-  * the two share at least one acquirer or target identifier (ABN/etc.), or
-    have very similar acquirer- and target-name strings, and
-  * the notification was filed after the waiver (soft check — missing dates
-    don't disqualify a pair).
+  * Waiver pass — source is a `WA-*` with `accc_determination == "Not
+    approved"`; target is any `MN-*`.
+  * Suspended pass — source is any merger with
+    `status == "Assessment suspended"`; target is any other merger.
 
 Each candidate gets a confidence score; only pairs above `--threshold`
 (default 0.70) are reported. Existing pairs listed in `related_mergers.json`
@@ -43,6 +49,8 @@ from datetime import datetime
 from difflib import SequenceMatcher
 from pathlib import Path
 
+from constants import merger_status
+
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
 DEFAULT_MERGERS = REPO_ROOT / "data" / "processed" / "mergers.json"
@@ -50,6 +58,10 @@ DEFAULT_RELATED = REPO_ROOT / "data" / "processed" / "related_mergers.json"
 
 DEFAULT_THRESHOLD = 0.70
 NAME_SIMILARITY_THRESHOLD = 0.75
+
+# Pair types recorded in related_mergers.json (see its `_README`).
+WAIVER_REFILED = "waiver_refiled"
+SUSPENDED_REFILED = "suspended_refiled"
 
 _REPO = "nwbort/accc-mergers"
 _MERGERS_FYI_BASE = "https://mergers.fyi/mergers"
@@ -190,39 +202,65 @@ def score_pair(waiver: dict, notification: dict) -> tuple[float, dict]:
 # ---------------------------------------------------------------------------
 
 def load_related_pairs(path: Path) -> set[tuple[str, str]]:
-    """Return the set of (waiver, notification) pairs already recorded."""
+    """Return the set of (source, target) pairs already recorded.
+
+    Each pair has the ``{"from", "to", "type"}`` shape (see
+    ``related_mergers.json``).
+    """
     if not path.exists():
         return set()
     with path.open() as fh:
         data = json.load(fh)
+    pairs: set[tuple[str, str]] = set()
+    for p in data.get("pairs", []):
+        source = p.get("from")
+        target = p.get("to")
+        if source and target:
+            pairs.add((source, target))
+    return pairs
+
+
+def _build_candidate(
+    source: dict, target: dict, pair_type: str, score: float, diag: dict
+) -> dict:
+    """Assemble a candidate dict shared by both detection passes."""
     return {
-        (p["waiver"], p["notification"])
-        for p in data.get("pairs", [])
-        if p.get("waiver") and p.get("notification")
+        "type": pair_type,
+        "source": source.get("merger_id"),
+        "target": target.get("merger_id"),
+        "source_name": source.get("merger_name", ""),
+        "target_name": target.get("merger_name", ""),
+        "source_filed": source.get("effective_notification_datetime"),
+        "target_filed": target.get("effective_notification_datetime"),
+        "source_determination": source.get("accc_determination"),
+        "source_status": source.get("status"),
+        "target_status": target.get("status"),
+        "score": round(score, 3),
+        "signals": diag,
     }
 
 
-def find_candidates(
+def find_waiver_candidates(
     mergers: list[dict],
     known_pairs: set[tuple[str, str]],
     threshold: float,
 ) -> list[dict]:
-    """Return a list of candidate pair dicts, sorted by score (descending)."""
-    known_waivers = {w for w, _ in known_pairs}
-    known_notifs = {n for _, n in known_pairs}
+    """Declined waiver (WA, "Not approved") → later notification (MN)."""
+    known_sources = {s for s, _ in known_pairs}
+    known_targets = {t for _, t in known_pairs}
 
     waivers = [
         m
         for m in mergers
         if m.get("merger_id", "").startswith("WA")
         and m.get("accc_determination") == "Not approved"
-        and m.get("merger_id") not in known_waivers
+        and m.get("merger_id") not in known_sources
     ]
     notifications = [
         m
         for m in mergers
         if m.get("merger_id", "").startswith("MN")
-        and m.get("merger_id") not in known_notifs
+        and m.get("merger_id") not in known_targets
     ]
 
     candidates: list[dict] = []
@@ -235,30 +273,77 @@ def find_candidates(
                 continue
             score, diag = score_pair(wa, mn)
             if score >= threshold:
-                candidates.append({
-                    "waiver": wa.get("merger_id"),
-                    "notification": mn.get("merger_id"),
-                    "waiver_name": wa.get("merger_name", ""),
-                    "notification_name": mn.get("merger_name", ""),
-                    "waiver_filed": wa.get("effective_notification_datetime"),
-                    "notification_filed": mn.get("effective_notification_datetime"),
-                    "waiver_determination": wa.get("accc_determination"),
-                    "notification_status": mn.get("status"),
-                    "score": round(score, 3),
-                    "signals": diag,
-                })
+                candidates.append(
+                    _build_candidate(wa, mn, WAIVER_REFILED, score, diag)
+                )
+    return candidates
 
-    # If a waiver matches multiple notifications, keep only the best per side.
+
+def find_suspended_candidates(
+    mergers: list[dict],
+    known_pairs: set[tuple[str, str]],
+    threshold: float,
+) -> list[dict]:
+    """Suspended merger (any ID) → a later, separately-filed merger.
+
+    Mirrors the waiver pass but keys off ``status == "Assessment suspended"``
+    rather than the WA/"Not approved" combination, and is deliberately
+    prefix-agnostic on both sides — a suspended matter may be refiled under a
+    fresh ``MN`` (or any other) identifier.
+    """
+    known_sources = {s for s, _ in known_pairs}
+    known_targets = {t for _, t in known_pairs}
+
+    suspended = [
+        m
+        for m in mergers
+        if m.get("status") == merger_status.ASSESSMENT_SUSPENDED
+        and m.get("merger_id")
+        and m.get("merger_id") not in known_sources
+    ]
+    others = [m for m in mergers if m.get("merger_id")]
+
+    candidates: list[dict] = []
+    for src in suspended:
+        src_id = src.get("merger_id")
+        src_date = parse_date(src.get("effective_notification_datetime"))
+        for tgt in others:
+            tgt_id = tgt.get("merger_id")
+            # Never link a merger to itself, and skip already-recorded refiles.
+            if tgt_id == src_id or tgt_id in known_targets:
+                continue
+            tgt_date = parse_date(tgt.get("effective_notification_datetime"))
+            # Soft ordering check: a refile should be filed after the suspension.
+            if src_date and tgt_date and tgt_date < src_date:
+                continue
+            score, diag = score_pair(src, tgt)
+            if score >= threshold:
+                candidates.append(
+                    _build_candidate(src, tgt, SUSPENDED_REFILED, score, diag)
+                )
+    return candidates
+
+
+def find_candidates(
+    mergers: list[dict],
+    known_pairs: set[tuple[str, str]],
+    threshold: float,
+) -> list[dict]:
+    """Return candidate pair dicts from every detection pass, best-scored first."""
+    candidates = find_waiver_candidates(mergers, known_pairs, threshold)
+    candidates += find_suspended_candidates(mergers, known_pairs, threshold)
+
+    # If one merger matches several partners, keep only the best per side.
     # Secondary keys keep the output stable across runs.
-    candidates.sort(key=lambda c: (-c["score"], c["waiver"], c["notification"]))
-    seen_waivers: set[str] = set()
-    seen_notifs: set[str] = set()
+    candidates.sort(key=lambda c: (-c["score"], c["source"], c["target"]))
+    seen_sources: set[str] = set()
+    seen_targets: set[str] = set()
     deduped: list[dict] = []
     for c in candidates:
-        if c["waiver"] in seen_waivers or c["notification"] in seen_notifs:
+        if c["source"] in seen_sources or c["target"] in seen_targets:
             continue
-        seen_waivers.add(c["waiver"])
-        seen_notifs.add(c["notification"])
+        seen_sources.add(c["source"])
+        seen_targets.add(c["target"])
         deduped.append(c)
     return deduped
 
@@ -278,8 +363,8 @@ def edit_related_mergers_url(branch: str = "main") -> str:
 def json_line_for(candidate: dict) -> str:
     """Render the exact line to paste into the `pairs` array of related_mergers.json."""
     return (
-        f'    {{ "waiver": "{candidate["waiver"]}", '
-        f'"notification": "{candidate["notification"]}" }},'
+        f'    {{ "from": "{candidate["source"]}", '
+        f'"to": "{candidate["target"]}", "type": "{candidate["type"]}" }},'
     )
 
 
@@ -297,16 +382,16 @@ def _format_signals(signals: dict) -> str:
 
 def pair_id(candidate: dict) -> str:
     """Canonical, parseable identifier used in titles and for de-duplication."""
-    return f"{candidate['waiver']}/{candidate['notification']}"
+    return f"{candidate['source']}/{candidate['target']}"
 
 
 def build_issue_title(candidate: dict) -> str:
-    wa = candidate["waiver"]
-    mn = candidate["notification"]
-    # The `WA-XXXX/MN-XXXX` substring is the marker the workflow greps for
-    # to decide whether an issue already exists for this pair.
-    name = candidate.get("waiver_name") or candidate.get("notification_name") or ""
-    base = f"Related mergers: {wa}/{mn}"
+    src = candidate["source"]
+    tgt = candidate["target"]
+    # The `<ID>/<ID>` substring is the marker the workflow greps for to decide
+    # whether an issue already exists for this pair.
+    name = candidate.get("source_name") or candidate.get("target_name") or ""
+    base = f"Related mergers: {src}/{tgt}"
     if name:
         base = f"{base} — {name}"
     # GitHub issue title limit is 256 chars
@@ -315,30 +400,54 @@ def build_issue_title(candidate: dict) -> str:
     return base
 
 
+def _relationship_blurb(candidate: dict) -> str:
+    """One-line description of the relationship pattern for the issue body."""
+    if candidate["type"] == SUSPENDED_REFILED:
+        return (
+            "A \"related merger\" here is a matter whose assessment was "
+            "**suspended** and which appears to have been **re-filed** as a "
+            "separate matter (see the `_README` field in the JSON)."
+        )
+    return (
+        "A \"related merger\" is one that was initially filed as a **waiver** "
+        "application, declined, then re-filed as a formal **notification** "
+        "(see the `_README` field in the JSON)."
+    )
+
+
 def build_issue_body(candidate: dict, branch: str = "main") -> str:
-    wa = candidate["waiver"]
-    mn = candidate["notification"]
+    src = candidate["source"]
+    tgt = candidate["target"]
     edit_url = edit_related_mergers_url(branch)
     related_blob = f"https://github.com/{_REPO}/blob/{branch}/{_RELATED_PATH}"
 
+    if candidate["type"] == SUSPENDED_REFILED:
+        source_label = "Suspended matter"
+        source_detail = f"status: {candidate['source_status'] or 'unknown'}"
+        target_label = "Re-filed as"
+        target_detail = f"status: {candidate['target_status'] or 'unknown'}"
+    else:
+        source_label = "Waiver"
+        source_detail = (
+            f"determination: {candidate['source_determination'] or 'unknown'}"
+        )
+        target_label = "Notification"
+        target_detail = f"status: {candidate['target_status'] or 'unknown'}"
+
     lines = [
         f"<!-- pair-id: {pair_id(candidate)} -->",
-        f"The daily detector thinks **`{wa}`** and **`{mn}`** look like a "
+        f"The daily detector thinks **`{src}`** and **`{tgt}`** look like a "
         f"related-merger pair that isn't yet in "
         f"[`{_RELATED_PATH}`]({related_blob}).",
         "",
-        "A \"related merger\" is one that was initially filed as a **waiver** "
-        "application, declined, then re-filed as a formal **notification** "
-        "(see the `_README` field in the JSON).",
+        _relationship_blurb(candidate),
         "",
         "## The two mergers",
         "",
-        f"- **Waiver:** [{wa} — {candidate['waiver_name']}]({mergers_fyi_url(wa)}) "
-        f"· filed {candidate['waiver_filed'] or 'unknown'} · determination: "
-        f"{candidate['waiver_determination'] or 'unknown'}",
-        f"- **Notification:** [{mn} — {candidate['notification_name']}]({mergers_fyi_url(mn)}) "
-        f"· filed {candidate['notification_filed'] or 'unknown'} · status: "
-        f"{candidate['notification_status'] or 'unknown'}",
+        f"- **{source_label}:** [{src} — {candidate['source_name']}]({mergers_fyi_url(src)}) "
+        f"· filed {candidate['source_filed'] or 'unknown'} · {source_detail}",
+        f"- **{target_label}:** [{tgt} — {candidate['target_name']}]({mergers_fyi_url(tgt)}) "
+        f"· filed {candidate['target_filed'] or 'unknown'} · {target_detail}",
         "",
         f"**Match confidence:** {candidate['score']:.2f}  ",
         f"**Signals:** {_format_signals(candidate['signals'])}",
@@ -414,10 +523,10 @@ def main() -> int:
             print(f"Found {len(candidates)} candidate pair(s) above threshold {args.threshold}:")
             print()
             for c in candidates:
-                print(f"  {c['waiver']} ↔ {c['notification']}  (score {c['score']:.2f})")
-                print(f"    waiver       : {c['waiver_name']}")
-                print(f"    notification : {c['notification_name']}")
-                print(f"    signals      : {_format_signals(c['signals'])}")
+                print(f"  {c['source']} ↔ {c['target']}  (score {c['score']:.2f}, {c['type']})")
+                print(f"    source : {c['source_name']}")
+                print(f"    target : {c['target_name']}")
+                print(f"    signals: {_format_signals(c['signals'])}")
                 print()
 
     if args.issue_json:
