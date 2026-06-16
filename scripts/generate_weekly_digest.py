@@ -227,6 +227,7 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
         'phase_1_determination': merger.get('phase_1_determination'),
         'phase_1_determination_date': merger.get('phase_1_determination_date'),
         'phase_2_determination': merger.get('phase_2_determination'),
+        'ceased_date': merger.get('ceased_date'),
         'merger_description': truncated_description,
         'events': merger.get('events', []),
     }
@@ -261,6 +262,7 @@ def generate_weekly_digest(
     already_cleared = bucket_ids(previous_digest, 'deals_cleared')
     already_referred = bucket_ids(previous_digest, 'deals_referred_to_phase_2')
     already_declined = bucket_ids(previous_digest, 'deals_declined')
+    already_ceased = bucket_ids(previous_digest, 'deals_assessment_ceased')
 
     sydney_tz = ZoneInfo('Australia/Sydney')
     now_sydney = datetime.now(sydney_tz)
@@ -273,6 +275,7 @@ def generate_weekly_digest(
         'deals_cleared': [],
         'deals_referred_to_phase_2': [],
         'deals_declined': [],
+        'deals_assessment_ceased': [],
         'ongoing_phase_1': [],
         'ongoing_phase_2': [],
     }
@@ -316,6 +319,12 @@ def generate_weekly_digest(
             merger_id not in already_referred):
             digest['deals_referred_to_phase_2'].append(create_merger_summary(merger))
 
+        ceased_date = merger.get('ceased_date')
+        if (status == merger_status.ASSESSMENT_CEASED and
+            is_in_week_range(ceased_date, lookback_start, period_end) and
+            merger_id not in already_ceased):
+            digest['deals_assessment_ceased'].append(create_merger_summary(merger))
+
         # Ongoing phase 1/2 lists are always a current snapshot, not a
         # week-scoped activity list, so dedup does not apply.
         if (status == merger_status.UNDER_ASSESSMENT and
@@ -340,6 +349,11 @@ def generate_weekly_digest(
     )
     digest['deals_declined'].sort(
         key=lambda x: x.get('determination_publication_date') or ''
+    )
+
+    # Sort ceased by cessation date (ascending)
+    digest['deals_assessment_ceased'].sort(
+        key=lambda x: x.get('ceased_date') or ''
     )
 
     # Sort ongoing deals by notification date (ascending)
@@ -382,6 +396,7 @@ def main():
     print(f"  Deals cleared (last week): {len(digest['deals_cleared'])}")
     print(f"  Deals referred to phase 2 (last week): {len(digest['deals_referred_to_phase_2'])}")
     print(f"  Deals declined (last week): {len(digest['deals_declined'])}")
+    print(f"  Assessment ceased (last week): {len(digest['deals_assessment_ceased'])}")
     print(f"  Ongoing phase 1 deals: {len(digest['ongoing_phase_1'])}")
     print(f"  Ongoing phase 2 deals: {len(digest['ongoing_phase_2'])}")
 
