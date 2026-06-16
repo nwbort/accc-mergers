@@ -38,6 +38,12 @@ export default {
           dark: '#E8636C',
           pale: '#FEE7E9',
         },
+        'ceased': {
+          DEFAULT: '#9333ea',
+          light: '#c084fc',
+          dark: '#7e22ce',
+          pale: '#faf5ff',
+        },
         'phase-1': {
           DEFAULT: '#B8935C',
           light: '#D4B384',
