@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { mergerPath } from '../utils/slug';
-import WaiverBadge from './WaiverBadge';
 import { groupMergersByPhase } from '../utils/industryGroups';
 
 // Per-phase accent styling. Literal class strings so Tailwind picks them up.
@@ -58,7 +57,6 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
                         {merger.merger_name}
                       </h4>
                     )}
-                    {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
                   </div>
                   <span className="text-xs text-gray-500 mt-1 block">
                     {merger.status}
