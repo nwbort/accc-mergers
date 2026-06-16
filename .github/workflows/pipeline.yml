@@ -298,7 +298,7 @@ jobs:
       # fire downstream workflow runs.
 
       - name: Build CLI SQLite
-        if: steps.commit.outputs.publish_cli == 'true'
+        if: steps.commit.outputs.publish_cli == 'true' && github.ref == 'refs/heads/main'
         run: |
           mkdir -p "${RUNNER_TEMP}/cli-dist"
           python scripts/build_cli_sqlite.py \
@@ -308,7 +308,7 @@ jobs:
           cat "${RUNNER_TEMP}/cli-dist/cli-manifest.json"
 
       - name: Force-push cli.sqlite to cli-dist branch
-        if: steps.commit.outputs.publish_cli == 'true'
+        if: steps.commit.outputs.publish_cli == 'true' && github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
