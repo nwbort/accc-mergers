@@ -2,6 +2,13 @@
   "code": "6419",
   "mergers": [
     {
+      "merger_id": "MN-80014",
+      "merger_name": "ANZ Banking Group - Worldline Australia",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
       "merger_id": "MN-95007",
       "merger_name": "Magellan Financial Group - Barrenjoey",
       "is_waiver": false,
@@ -27,13 +34,6 @@
       "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
       "is_waiver": false,
       "status": "Assessment completed",
-      "phase": "Phase 1"
-    },
-    {
-      "merger_id": "MN-80014",
-      "merger_name": "ANZ Banking Group - Worldline Australia",
-      "is_waiver": false,
-      "status": "Under assessment",
       "phase": "Phase 1"
     },
     {
@@ -202,5 +202,12 @@
   "phase_1_count": 9,
   "phase_2_count": 0,
   "waiver_count": 19,
-  "active_count": 1
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 25.5,
+    "median_days": 26,
+    "average_business_days": 17.375,
+    "median_business_days": 16,
+    "completed_count": 8
+  }
 }

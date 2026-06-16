@@ -2,18 +2,18 @@
   "code": "6221",
   "mergers": [
     {
-      "merger_id": "WA-30021",
-      "merger_name": "Regional Australia Bank \u2013 South West Slopes Credit Union",
-      "is_waiver": true,
-      "status": "Assessment completed",
-      "phase": "Waiver"
-    },
-    {
       "merger_id": "MN-20014",
       "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-30021",
+      "merger_name": "Regional Australia Bank \u2013 South West Slopes Credit Union",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-70015",
@@ -27,5 +27,6 @@
   "phase_1_count": 1,
   "phase_2_count": 0,
   "waiver_count": 2,
-  "active_count": 1
+  "active_count": 1,
+  "phase_duration": null
 }

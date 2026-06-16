@@ -61,11 +61,29 @@ function IndustryDetail() {
     (m) => m.status === 'Under assessment' || m.status === 'Assessment suspended'
   ).length;
 
+  // Phase 1 duration stats, mirroring the dashboard. May be absent when the
+  // industry has no completed Phase 1 reviews (e.g. waivers only).
+  const duration = data.phase_duration;
+  const avgDuration = duration?.average_business_days != null
+    ? `${Math.round(duration.average_business_days)} business days`
+    : 'N/A';
+  const avgDurationSub = duration?.average_days != null
+    ? `${Math.round(duration.average_days)} calendar days`
+    : null;
+  const medianDuration = duration?.median_business_days != null
+    ? `${duration.median_business_days} business days`
+    : 'N/A';
+  const medianDurationSub = duration?.median_days != null
+    ? `${duration.median_days} calendar days`
+    : null;
+
   const statCards = [
     { label: 'Total reviews', value: mergers.length },
     { label: 'Phase 2 reviews', value: phase2Count },
     { label: 'Waivers', value: waiverCount },
     { label: 'Under assessment', value: activeCount },
+    { label: 'Avg phase 1 duration', value: avgDuration, subtitle: avgDurationSub },
+    { label: 'Median phase 1 duration', value: medianDuration, subtitle: medianDurationSub },
   ];
 
   return (
@@ -96,13 +114,16 @@ function IndustryDetail() {
         </div>
 
         {mergers.length > 0 && (
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-            {statCards.map(({ label, value }) => (
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+            {statCards.map(({ label, value, subtitle }) => (
               <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
                 <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
                 <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight tabular-nums">
                   {value}
                 </p>
+                {subtitle && (
+                  <p className="text-xs text-gray-500 mt-1">{subtitle}</p>
+                )}
               </div>
             ))}
           </div>

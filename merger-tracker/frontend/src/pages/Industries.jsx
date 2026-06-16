@@ -166,9 +166,6 @@ function Industries() {
               <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Mergers
               </th>
-              <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
-                Breakdown
-              </th>
               <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Share
               </th>
@@ -176,15 +173,11 @@ function Industries() {
           </thead>
           <tbody className="divide-y divide-gray-50">
             {filteredIndustries.map((industry) => {
-              const percentage = sumOfIndustryCounts > 0
-                ? ((industry.merger_count / sumOfIndustryCounts) * 100).toFixed(1)
+              // Share of all mergers. A merger can sit in several industries,
+              // so these intentionally sum to more than 100%.
+              const percentage = totalMergerReviews > 0
+                ? ((industry.merger_count / totalMergerReviews) * 100).toFixed(1)
                 : '0.0';
-              // Compact breakdown shown beside each industry. Skip zero buckets.
-              const breakdown = [
-                { label: 'Phase 2', value: industry.phase_2_count },
-                { label: 'waivers', value: industry.waiver_count },
-                { label: 'active', value: industry.active_count },
-              ].filter((b) => b.value > 0);
               const key = `${industry.code}-${industry.name}`;
               const isExpanded = expandedIndustry === key;
               const industryMergers = getMergersForIndustry(industry.code);
@@ -231,22 +224,6 @@ function Industries() {
                         {industry.merger_count}
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-xs text-gray-500 hidden md:table-cell">
-                      {breakdown.length > 0 ? (
-                        <span className="inline-flex flex-wrap items-center gap-x-1.5 gap-y-1">
-                          {breakdown.map((b, idx) => (
-                            <Fragment key={b.label}>
-                              {idx > 0 && <span className="text-gray-300" aria-hidden="true">·</span>}
-                              <span className="tabular-nums">
-                                <span className="font-semibold text-gray-700">{b.value}</span> {b.label}
-                              </span>
-                            </Fragment>
-                          ))}
-                        </span>
-                      ) : (
-                        <span className="text-gray-300">—</span>
-                      )}
-                    </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       <div className="flex items-center gap-3">
                         <div
@@ -268,7 +245,7 @@ function Industries() {
                   </tr>
                   {isExpanded && (
                     <tr id={`industry-details-${industry.code}`}>
-                      <td colSpan="4" className="px-6 py-4 bg-gray-50/50">
+                      <td colSpan="3" className="px-6 py-4 bg-gray-50/50">
                         <div className="space-y-2">
                           <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
                             Mergers in this industry
