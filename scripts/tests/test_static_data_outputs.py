@@ -151,6 +151,39 @@ class TestStatsGenerate:
         mining = next(i for i in payload['top_industries'] if i['name'] == 'Mining')
         assert mining['count'] == 2
 
+    def test_recent_determinations_includes_ceased_assessments(self):
+        mergers = _raw_fixture()
+        mergers.append({
+            'merger_id': 'MN-0006',
+            'merger_name': 'Lambda ceased',
+            'status': merger_status.ASSESSMENT_CEASED,
+            'accc_determination': None,
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2026-01-10T09:00:00Z',
+            'determination_publication_date': None,
+            'end_of_determination_period': '2026-03-01T12:00:00Z',
+            'page_modified_datetime': '2026-02-15T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': ['Lambda'],
+            'targets': ['Mu'],
+            'other_parties': [],
+            'url': 'https://example.com/MN-0006',
+            'events': [
+                {'title': 'Merger notified to ACCC', 'date': '2026-01-10T09:00:00Z'},
+                {'title': 'Consideration of Notification ceased', 'date': '2026-02-15T12:00:00Z'},
+            ],
+        })
+        enriched = [enrich_merger(m) for m in mergers]
+        payload = stats.generate(enriched)
+        ceased = [
+            d for d in payload['recent_determinations']
+            if d.get('determination_type') == 'ceased'
+        ]
+        assert any(d['merger_id'] == 'MN-0006' for d in ceased)
+        entry = next(d for d in ceased if d['merger_id'] == 'MN-0006')
+        assert entry['determination'] == merger_status.ASSESSMENT_CEASED
+        assert entry['determination_date'] == '2026-02-15T12:00:00Z'
+
     def test_recent_determinations_includes_phase_2_referrals(self):
         mergers = _raw_fixture()
         mergers.append({

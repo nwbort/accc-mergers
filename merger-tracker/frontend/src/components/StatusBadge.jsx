@@ -1,6 +1,6 @@
 import { MERGER_STATUS, STATUS_COLORS, DEFAULT_STATUS_STYLE } from '../constants/mergerStatus';
 
-function StatusBadge({ status, determination }) {
+function StatusBadge({ status, determination, label }) {
   const getStatusStyle = () => {
     // Determinations take precedence over statuses; 'Declined' and 'Not approved'
     // share the same red palette (both map to the same STATUS_COLORS entry).
@@ -8,7 +8,8 @@ function StatusBadge({ status, determination }) {
       determination === MERGER_STATUS.APPROVED ||
       determination === MERGER_STATUS.DECLINED ||
       determination === MERGER_STATUS.NOT_APPROVED ||
-      determination === MERGER_STATUS.REFERRED_TO_PHASE_2
+      determination === MERGER_STATUS.REFERRED_TO_PHASE_2 ||
+      determination === MERGER_STATUS.ASSESSMENT_CEASED
     ) {
       return STATUS_COLORS[determination];
     }
@@ -23,7 +24,7 @@ function StatusBadge({ status, determination }) {
     return DEFAULT_STATUS_STYLE;
   };
 
-  const displayText = determination || status;
+  const displayText = label || determination || status;
 
   const ariaLabel = determination
     ? `Determination: ${determination}`

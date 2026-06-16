@@ -153,6 +153,20 @@ def generate(mergers: list) -> dict:
                 })
                 break
 
+        # Check for ceased assessments
+        ceased_date = m.get('ceased_date')
+        if m.get('status') == merger_status.ASSESSMENT_CEASED and ceased_date:
+            determination_events.append({
+                "merger_id": merger_id,
+                "merger_name": merger_name,
+                "determination": merger_status.ASSESSMENT_CEASED,
+                "determination_date": ceased_date,
+                "page_modified_datetime": page_modified,
+                "determination_type": "ceased",
+                "is_waiver": is_waiver,
+                "stage": m.get('stage'),
+            })
+
     # Sort by determination date descending, then by page modification time descending
     # This ensures determinations on the same day are sorted by the time they were added to the register
     determination_events.sort(

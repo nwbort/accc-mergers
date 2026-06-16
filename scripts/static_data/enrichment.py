@@ -111,6 +111,14 @@ def enrich_merger(
     m['public_benefits_determination'] = pb_det
     m['public_benefits_determination_date'] = pb_det_date
 
+    # For ceased mergers, find the cessation event and treat it as a determination event.
+    if m.get('status') == merger_status.ASSESSMENT_CEASED:
+        for event in m.get('events', []):
+            if 'ceased' in event.get('title', '').lower():
+                m['ceased_date'] = event.get('date')
+                event['is_determination_event'] = True
+                break
+
     # Compute competition concerns notice date for Phase 2 mergers
     # The notice is due by BD 25 of Phase 2 (Phase 2 BD 1 = end_of_determination_period - 90 BDs)
     stage = m.get('stage', '')
