@@ -1,12 +1,12 @@
 {
-  "_README": "Mergers that were effectively re-filed as a separate matter. Two pair shapes are accepted. Legacy: { \"waiver\": \"WA-...\", \"notification\": \"MN-...\" } for a waiver that was declined then re-filed as a notification (treated as type waiver_refiled). General: { \"from\": \"...\", \"to\": \"...\", \"type\": \"...\" } where type is \"waiver_refiled\" or \"suspended_refiled\" (a matter whose assessment was suspended and was re-filed later). Both directions are resolved automatically.",
+  "_README": "Mergers that were effectively re-filed as a separate matter. Each entry is { \"from\": \"...\", \"to\": \"...\", \"type\": \"...\" } where `from` is the earlier matter, `to` is what it was re-filed as, and `type` is one of: \"waiver_refiled\" (a WA waiver declined then re-filed as an MN notification) or \"suspended_refiled\" (a matter whose assessment was suspended and re-filed later). Both directions are resolved automatically.",
   "pairs": [
-    { "waiver": "WA-35003", "notification": "MN-85007" },
-    { "waiver": "WA-01087", "notification": "MN-20013" },
-    { "waiver": "WA-65003", "notification": "MN-40005" },
-    { "waiver": "WA-70003", "notification": "MN-40008" },
-    { "waiver": "WA-65011", "notification": "MN-05017" },
-    { "waiver": "WA-20010", "notification": "MN-90012" },
-    { "waiver": "WA-10008", "notification": "MN-40020" }
+    { "from": "WA-35003", "to": "MN-85007", "type": "waiver_refiled" },
+    { "from": "WA-01087", "to": "MN-20013", "type": "waiver_refiled" },
+    { "from": "WA-65003", "to": "MN-40005", "type": "waiver_refiled" },
+    { "from": "WA-70003", "to": "MN-40008", "type": "waiver_refiled" },
+    { "from": "WA-65011", "to": "MN-05017", "type": "waiver_refiled" },
+    { "from": "WA-20010", "to": "MN-90012", "type": "waiver_refiled" },
+    { "from": "WA-10008", "to": "MN-40020", "type": "waiver_refiled" }
   ]
 }

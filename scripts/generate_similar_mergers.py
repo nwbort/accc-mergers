@@ -190,8 +190,8 @@ def _load_existing(path: Path) -> dict:
         return {}
 
 
-def _load_wn_partner_map(path: Path) -> dict[str, str]:
-    """Return {merger_id: direct_partner_id} for all waiver/notification pairs.
+def _load_related_partner_map(path: Path) -> dict[str, str]:
+    """Return {merger_id: direct_partner_id} for all related-merger pairs.
 
     Both directions are mapped so each merger knows its own direct partner.
     """
@@ -202,11 +202,11 @@ def _load_wn_partner_map(path: Path) -> dict[str, str]:
             data = json.load(f)
         result: dict[str, str] = {}
         for pair in data.get("pairs", []):
-            wa = pair.get("waiver", "")
-            mn = pair.get("notification", "")
-            if wa and mn:
-                result[wa] = mn
-                result[mn] = wa
+            source = pair.get("from", "")
+            target = pair.get("to", "")
+            if source and target:
+                result[source] = target
+                result[target] = source
         return result
     except (json.JSONDecodeError, IOError):
         return {}
@@ -235,7 +235,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--mergers", type=Path, default=DEFAULT_MERGERS)
     parser.add_argument("--related", type=Path, default=DEFAULT_RELATED,
-                        help="related_mergers.json path (waiver/notification pairs to exclude)")
+                        help="related_mergers.json path (related-merger pairs to exclude)")
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     parser.add_argument("--all", action="store_true",
                         help="Recompute similar mergers for all mergers (full refresh)")
@@ -254,9 +254,9 @@ def main() -> int:
     all_mergers = _load_mergers(args.mergers)
     merger_index = {m.get("merger_id"): m for m in all_mergers if m.get("merger_id")}
 
-    # Waiver/notification pairs are already surfaced via related_merger; exclude each
+    # Related-merger pairs are already surfaced via related_merger; exclude each
     # merger's direct partner so we don't double-surface that link.
-    wn_partners = _load_wn_partner_map(args.related)
+    related_partners = _load_related_partner_map(args.related)
 
     existing = _load_existing(args.output)
 
@@ -282,11 +282,11 @@ def main() -> int:
         tid = target.get("merger_id", "")
         if not tid:
             continue
-        # Exclude the merger's direct waiver/notification partner — that relationship
+        # Exclude the merger's direct related-merger partner — that relationship
         # is already surfaced via the related_merger link above the page fold.
         exclude: set[str] = set()
-        if tid in wn_partners:
-            exclude.add(wn_partners[tid])
+        if tid in related_partners:
+            exclude.add(related_partners[tid])
 
         results = find_similar(
             target, all_mergers,

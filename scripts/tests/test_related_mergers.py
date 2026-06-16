@@ -2,9 +2,8 @@
 
 Covers two layers:
   * ``static_data.loaders.build_relationship_map`` — turns recorded pairs into
-    the per-merger relationship lookup the frontend consumes, for both the
-    legacy ``{waiver, notification}`` shape and the generalised
-    ``{from, to, type}`` shape.
+    the per-merger relationship lookup the frontend consumes, from the
+    ``{from, to, type}`` pair shape.
   * ``detect_related_mergers`` — the daily candidate detector, including the
     new "suspended assessment, re-filed later" pass.
 """
@@ -31,18 +30,24 @@ from static_data.loaders import build_relationship_map
 # build_relationship_map
 # ---------------------------------------------------------------------------
 
-def test_legacy_pair_shape_maps_to_waiver_relationships():
-    data = {"pairs": [{"waiver": "WA-100", "notification": "MN-200"}]}
+def test_waiver_pair_maps_to_waiver_relationships():
+    data = {"pairs": [{"from": "WA-100", "to": "MN-200", "type": "waiver_refiled"}]}
     result = build_relationship_map(data)
     assert result["WA-100"] == {"merger_id": "MN-200", "relationship": "refiled_as"}
     assert result["MN-200"] == {"merger_id": "WA-100", "relationship": "refiled_from"}
 
 
-def test_typed_waiver_pair_shape_matches_legacy():
-    data = {"pairs": [{"from": "WA-100", "to": "MN-200", "type": "waiver_refiled"}]}
+def test_pair_without_type_defaults_to_waiver_relationships():
+    data = {"pairs": [{"from": "WA-100", "to": "MN-200"}]}
     result = build_relationship_map(data)
     assert result["WA-100"]["relationship"] == "refiled_as"
     assert result["MN-200"]["relationship"] == "refiled_from"
+
+
+def test_legacy_pair_shape_is_ignored():
+    # The old {waiver, notification} shape is no longer supported.
+    data = {"pairs": [{"waiver": "WA-100", "notification": "MN-200"}]}
+    assert build_relationship_map(data) == {}
 
 
 def test_suspended_pair_shape_maps_to_suspended_relationships():
@@ -73,12 +78,13 @@ def test_unknown_type_falls_back_to_waiver_labels():
 # detector: load_related_pairs (both schema shapes)
 # ---------------------------------------------------------------------------
 
-def test_load_related_pairs_accepts_both_shapes(tmp_path):
+def test_load_related_pairs_parses_typed_shape(tmp_path):
     path = tmp_path / "related_mergers.json"
     path.write_text(json.dumps({"pairs": [
-        {"waiver": "WA-100", "notification": "MN-200"},
+        {"from": "WA-100", "to": "MN-200", "type": "waiver_refiled"},
         {"from": "MN-300", "to": "MN-400", "type": "suspended_refiled"},
         {"from": "MN-9"},  # incomplete — ignored
+        {"waiver": "WA-1", "notification": "MN-2"},  # legacy shape — ignored
     ]}))
     assert drm.load_related_pairs(path) == {("WA-100", "MN-200"), ("MN-300", "MN-400")}
 
@@ -177,10 +183,12 @@ def test_soft_date_ordering_rejects_earlier_refile():
 # detector: issue rendering
 # ---------------------------------------------------------------------------
 
-def test_json_line_waiver_uses_legacy_shape():
+def test_json_line_waiver_uses_typed_shape():
     c = {"type": drm.WAIVER_REFILED, "source": "WA-100", "target": "MN-200"}
     line = drm.json_line_for(c)
-    assert '"waiver": "WA-100"' in line and '"notification": "MN-200"' in line
+    assert '"from": "WA-100"' in line
+    assert '"to": "MN-200"' in line
+    assert '"type": "waiver_refiled"' in line
 
 
 def test_json_line_suspended_uses_typed_shape():

@@ -40,15 +40,14 @@ _RELATIONSHIP_LABELS = {
 def build_relationship_map(data: dict) -> dict:
     """Turn related-merger ``pairs`` into a per-merger relationship lookup.
 
-    Accepts both the legacy ``{"waiver", "notification"}`` shape (treated as
-    ``type: "waiver_refiled"``) and the generalised
-    ``{"from", "to", "type"}`` shape. Returns a dict keyed by merger_id mapping
-    to ``{'merger_id': ..., 'relationship': ...}``.
+    Each pair has the shape ``{"from", "to", "type"}`` where ``from`` is the
+    earlier matter and ``to`` is what it was re-filed as. Returns a dict keyed
+    by merger_id mapping to ``{'merger_id': ..., 'relationship': ...}``.
     """
     result = {}
     for pair in data.get('pairs', []):
-        source = pair.get('from') or pair.get('waiver')
-        target = pair.get('to') or pair.get('notification')
+        source = pair.get('from')
+        target = pair.get('to')
         if not source or not target:
             continue
         pair_type = pair.get('type', 'waiver_refiled')

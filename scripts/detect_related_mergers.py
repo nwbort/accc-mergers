@@ -204,8 +204,8 @@ def score_pair(waiver: dict, notification: dict) -> tuple[float, dict]:
 def load_related_pairs(path: Path) -> set[tuple[str, str]]:
     """Return the set of (source, target) pairs already recorded.
 
-    Accepts both the legacy ``{"waiver", "notification"}`` shape and the
-    generalised ``{"from", "to", "type"}`` shape (see ``related_mergers.json``).
+    Each pair has the ``{"from", "to", "type"}`` shape (see
+    ``related_mergers.json``).
     """
     if not path.exists():
         return set()
@@ -213,8 +213,8 @@ def load_related_pairs(path: Path) -> set[tuple[str, str]]:
         data = json.load(fh)
     pairs: set[tuple[str, str]] = set()
     for p in data.get("pairs", []):
-        source = p.get("from") or p.get("waiver")
-        target = p.get("to") or p.get("notification")
+        source = p.get("from")
+        target = p.get("to")
         if source and target:
             pairs.add((source, target))
     return pairs
@@ -361,16 +361,7 @@ def edit_related_mergers_url(branch: str = "main") -> str:
 
 
 def json_line_for(candidate: dict) -> str:
-    """Render the exact line to paste into the `pairs` array of related_mergers.json.
-
-    Waiver pairs keep the original ``{waiver, notification}`` shape; everything
-    else uses the generalised ``{from, to, type}`` shape.
-    """
-    if candidate["type"] == WAIVER_REFILED:
-        return (
-            f'    {{ "waiver": "{candidate["source"]}", '
-            f'"notification": "{candidate["target"]}" }},'
-        )
+    """Render the exact line to paste into the `pairs` array of related_mergers.json."""
     return (
         f'    {{ "from": "{candidate["source"]}", '
         f'"to": "{candidate["target"]}", "type": "{candidate["type"]}" }},'
