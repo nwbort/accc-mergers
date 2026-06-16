@@ -84,7 +84,7 @@ clean_file() {
     s/[ \t]*\n[ \t]*<script>!function\(e\)\{var n="https:\/\/s\.go-mpulse\.net\/boomerang\/".*?\(window\);<\/script><\/head>/\n  <\/head>/s;
     s{(<meta name="dcterms\.modified"[^\n]*/>\n)(<meta name="dcterms\.created"[^\n]*/>\n)}{$2$1}g;
     s{(<link rel="canonical"[^\n]*/>\n)(<link rel="shortlink"[^\n]*/>\n)}{$2$1}g;
-    s#(<a[^>]*class="[^"]*megamenu-page-link-level-3[^"]*"[^>]*href=")[^"]*("[^>]*>[[:space:]]*<span>)[^<]*(</span>)#${1}STATIC_HREF${2}STATIC_TEXT${3}#g;
+    s{(<nav class="accc-entity-hierarchy-megamenu"[^>]*>).*?</nav>}{${1}STATIC_MEGAMENU</nav>}s;
     s/\n{3,}/\n\n/g;
   ' "$file"
 }
