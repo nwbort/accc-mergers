@@ -954,21 +954,30 @@
         "merger_id": "MN-25026",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-05-22",
+        "business_days": 15,
+        "calendar_days": 25,
+        "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
+        "merger_id": "MN-30012",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 19.6,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 148,
-      "count": 102
+      "count": 103
     },
     "calendar_stats": {
-      "average": 29.8,
-      "median": 26.0,
+      "average": 29.7,
+      "median": 26,
       "min": 21,
       "max": 235,
-      "count": 102
+      "count": 103
     }
   },
   "waiver_duration": {
@@ -2636,7 +2645,7 @@
       21,
       26,
       33,
-      13
+      14
     ],
     "waivers": [
       0,

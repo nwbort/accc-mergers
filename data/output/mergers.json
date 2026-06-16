@@ -10709,6 +10709,133 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/transocean-valaris",
+      "merger_name": "Transocean - Valaris",
+      "status": "Under assessment",
+      "merger_id": "MN-25019",
+      "effective_notification_datetime": "2026-06-16T12:00:00Z",
+      "original_notification_datetime": "2026-06-16T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-07-28T12:00:00Z",
+      "page_modified_datetime": "2026-06-16T16:47:04+10:00",
+      "consultation_response_due_date": "2026-06-23T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Transocean Limited",
+          "identifier_type": null,
+          "identifier": "IRS Employer Identification Number  980599916"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Valaris Limited",
+          "identifier_type": null,
+          "identifier": "Bermuda number  56245"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1090",
+          "name": "Other Mining Support Services"
+        }
+      ],
+      "merger_description": "Transocean Limited (**Transocean**) proposes to acquire Valaris Limited (**Valaris**) (the **Acquisition**) by way of merger, where Transocean shareholders will own approximately 53% of the combined entity and Valaris shareholders will own the remaining 47%.\n\nTransocean and Valaris both provide offshore contract drilling services globally through a fleet of owned and operated mobile offshore drilling units including jackups, semisubmersibles and drillships (together, **rigs**). Transocean and Valaris supply these rigs, associated equipment and work crews to oil and gas producing customers for use in offshore exploration, appraisal, development drilling, workovers and \u2018plug and abandonment\u2019 activities.\n\nTransocean owns and operates a rig fleet comprised of 20 drillships (three of which are stacked) and seven semisubmersibles. Stacked rigs refer to rigs that are not currently in service and are instead in a preservation or dormant state. Transocean does not own or operate any jackups. In Australia, Transocean currently has two semisubmersibles under contract and a drillship due to commence operation in Australia in 2027.\n\nValaris currently owns and operates 31 jackups (seven of which are currently stacked), one semisubmersible and 13 drillships (three of which are currently stacked). In Australia, Valaris currently has one jackup under contract.",
+      "events": [
+        {
+          "date": "2026-06-16T12:00:00Z",
+          "title": "Questionnaire - Transocean - Valaris",
+          "display_title": "Questionnaire - Transocean - Valaris",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Transocean%20-%20Valaris_0.docx",
+          "url_gh": "/mergers/MN-25019/Questionnaire - Transocean - Valaris_0.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-06-16T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-25004",
+          "merger_name": "ServiceNow - Armis",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "ServiceNow, Inc.",
+              "identifier_type": null,
+              "identifier": "5111469"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Armis Security, Ltd.",
+              "identifier_type": null,
+              "identifier": "515335941"
+            },
+            {
+              "name": "Armis, Inc.",
+              "identifier_type": null,
+              "identifier": "6021196"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-40019",
+          "merger_name": "Novartis - Excellergy",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Elba Merger Sub, Inc.",
+              "identifier_type": null,
+              "identifier": "Delaware company number 10547479"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Excellergy Inc.",
+              "identifier_type": null,
+              "identifier": "EIN 854115816"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-01075",
+          "merger_name": "Thermo Fisher - Clario Holdings",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Thermo Fisher Scientific Inc.",
+              "identifier_type": null,
+              "identifier": "042209186"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Clario Holdings, Inc.",
+              "identifier_type": null,
+              "identifier": "5977148"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/openai-tomoro",
       "merger_name": "OpenAI - Tomoro",
       "status": "Assessment completed",
@@ -12128,13 +12255,15 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/endeavour-group-%E2%80%93-retail-liquor-store-in-muswellbrook-nsw",
       "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-30012",
       "effective_notification_datetime": "2026-05-22T12:00:00Z",
       "original_notification_datetime": "2026-05-22T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-07-07T12:00:00Z",
-      "page_modified_datetime": "2026-06-02T16:25:01+10:00",
+      "determination_publication_date": "2026-06-16T12:00:00Z",
+      "accc_determination": "Approved",
+      "page_modified_datetime": "2026-06-16T10:24:01+10:00",
       "consultation_response_due_date": "2026-06-02T12:00:00Z",
       "acquirers": [
         {
@@ -12145,6 +12274,11 @@
       ],
       "targets": [
         {
+          "name": "UPPER HUNTER MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 001 740 218"
+        },
+        {
           "name": "Bottlemart Muswellbrook",
           "identifier_type": null,
           "identifier": ""
@@ -12153,11 +12287,6 @@
           "name": "JABETIN PTY LTD",
           "identifier_type": "ABN",
           "identifier": "62 001 588 496"
-        },
-        {
-          "name": "UPPER HUNTER MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 001 740 218"
         }
       ],
       "other_parties": [],
@@ -12183,12 +12312,48 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-06-16T12:00:00Z",
+          "title": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW) - Phase 1 Determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Endeavour%20Group%20-%20retail%20liquor%20store%20in%20Muswellbrook%20%28NSW%29%20-%20Determination%20-%2016%20June%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Endeavour Group (Endeavour Group) proposes to acquire:\n\u25aa substantially all of the assets of the Prince of Wales Hotel\nretail liquor store (the Target) in Muswellbrook, New South\nWales, from Upper Hunter Motors Pty Limited; and\n\u25aa a leasehold interest for the premises on which Upper Hunter\nMotors Pty Limited operates the Prince of Wales Hotel retail\nliquor store, from Jabetin Pty Limited (the Acquisition).\nThe proposed lease excludes the land on which the Prince of Wales\nHotel bar and restaurant premises are situated."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Endeavour, is an Australian public company that\nprimarily operates:\n\u25aa retail liquor stores nationwide under the BWS and Dan\nMurphy\u2019s brands;\n\u25aa licensed hotel venues under the ALH Hotels banner in all\nstate and territories. These venues are individually branded\nvenues offering on-premises food and drinks, entertainment,\ngaming services and, in some cases, accommodation; and\n\u25aa Pinnacle Drinks, which is a manufacturer and distributor of\nliquor products, which it distributes exclusively to the\nEndeavour retail and hotel network in Australia\nThe target is the Prince of Wales Hotel, a retail liquor store located at\n36 Sydney Street, Muswellbrook NSW 2333, which trades under the\nBottlemart brand.\nThe business and assets of the target are operated by Upper Hunter\nMotors Pty Limited and the freehold land on which the Prince of\nWales Hotel retail liquor store is situated is owned by Jabetin Pty\nLimited."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the parties",
+              "details": "The parties both supply takeaway packaged liquor in New South\nWales, however Endeavour Group does not have a presence in\nMuswellbrook."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u25aa There is no local overlap between Endeavour Group and the\nPrinces of Wales Hotel, as Endeavour Group does not\noperate in Muswellbrook. The closest Endeavour Group site\nis 28km by road (23-minute drive time away) in Scone.\n\u25aa The aggregation arising from the Acquisition, including\nconsidering previous acquisitions by Endeavour in the last\nthree years, is not sufficient to meaningfully change\ncompetition over a relevant broader market."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-30012/Endeavour Group - retail liquor store in Muswellbrook (NSW) - Determination - 16 June 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-06-16T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,

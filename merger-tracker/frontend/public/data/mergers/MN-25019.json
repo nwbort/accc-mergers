@@ -1,0 +1,127 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/transocean-valaris",
+  "merger_name": "Transocean - Valaris",
+  "status": "Under assessment",
+  "merger_id": "MN-25019",
+  "effective_notification_datetime": "2026-06-16T12:00:00Z",
+  "original_notification_datetime": "2026-06-16T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-07-28T12:00:00Z",
+  "page_modified_datetime": "2026-06-16T16:47:04+10:00",
+  "consultation_response_due_date": "2026-06-23T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Transocean Limited",
+      "identifier_type": null,
+      "identifier": "IRS Employer Identification Number  980599916"
+    }
+  ],
+  "targets": [
+    {
+      "name": "Valaris Limited",
+      "identifier_type": null,
+      "identifier": "Bermuda number  56245"
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "1090",
+      "name": "Other Mining Support Services"
+    }
+  ],
+  "merger_description": "Transocean Limited (**Transocean**) proposes to acquire Valaris Limited (**Valaris**) (the **Acquisition**) by way of merger, where Transocean shareholders will own approximately 53% of the combined entity and Valaris shareholders will own the remaining 47%.\n\nTransocean and Valaris both provide offshore contract drilling services globally through a fleet of owned and operated mobile offshore drilling units including jackups, semisubmersibles and drillships (together, **rigs**). Transocean and Valaris supply these rigs, associated equipment and work crews to oil and gas producing customers for use in offshore exploration, appraisal, development drilling, workovers and \u2018plug and abandonment\u2019 activities.\n\nTransocean owns and operates a rig fleet comprised of 20 drillships (three of which are stacked) and seven semisubmersibles. Stacked rigs refer to rigs that are not currently in service and are instead in a preservation or dormant state. Transocean does not own or operate any jackups. In Australia, Transocean currently has two semisubmersibles under contract and a drillship due to commence operation in Australia in 2027.\n\nValaris currently owns and operates 31 jackups (seven of which are currently stacked), one semisubmersible and 13 drillships (three of which are currently stacked). In Australia, Valaris currently has one jackup under contract.",
+  "events": [
+    {
+      "date": "2026-06-16T12:00:00Z",
+      "title": "Questionnaire - Transocean - Valaris",
+      "display_title": "Questionnaire - Transocean - Valaris",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Transocean%20-%20Valaris_0.docx",
+      "url_gh": "/mergers/MN-25019/Questionnaire - Transocean - Valaris_0.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-06-16T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-25004",
+      "merger_name": "ServiceNow - Armis",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ServiceNow, Inc.",
+          "identifier_type": null,
+          "identifier": "5111469"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Armis Security, Ltd.",
+          "identifier_type": null,
+          "identifier": "515335941"
+        },
+        {
+          "name": "Armis, Inc.",
+          "identifier_type": null,
+          "identifier": "6021196"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-40019",
+      "merger_name": "Novartis - Excellergy",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Elba Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware company number 10547479"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Excellergy Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 854115816"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01075",
+      "merger_name": "Thermo Fisher - Clario Holdings",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Thermo Fisher Scientific Inc.",
+          "identifier_type": null,
+          "identifier": "042209186"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Clario Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "5977148"
+        }
+      ]
+    }
+  ]
+}

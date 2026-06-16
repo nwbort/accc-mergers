@@ -562,11 +562,11 @@
     {
       "merger_id": "MN-30012",
       "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-22T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-16T12:00:00Z",
       "end_of_determination_period": "2026-07-07T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -578,6 +578,11 @@
       ],
       "targets": [
         {
+          "name": "UPPER HUNTER MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 001 740 218"
+        },
+        {
           "name": "Bottlemart Muswellbrook",
           "identifier_type": null,
           "identifier": ""
@@ -586,11 +591,6 @@
           "name": "JABETIN PTY LTD",
           "identifier_type": "ABN",
           "identifier": "62 001 588 496"
-        },
-        {
-          "name": "UPPER HUNTER MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "53 001 740 218"
         }
       ],
       "other_parties": [],
@@ -2061,6 +2061,39 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/csr-complete-plaster"
+    },
+    {
+      "merger_id": "MN-25019",
+      "merger_name": "Transocean - Valaris",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-16T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-28T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Transocean Limited",
+          "identifier_type": null,
+          "identifier": "IRS Employer Identification Number  980599916"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Valaris Limited",
+          "identifier_type": null,
+          "identifier": "Bermuda number  56245"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1090",
+          "name": "Other Mining Support Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/transocean-valaris"
     }
   ],
   "page": 7,

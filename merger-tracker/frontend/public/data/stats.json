@@ -1,13 +1,13 @@
 {
-  "total_mergers": 135,
+  "total_mergers": 136,
   "total_waivers": 203,
   "by_status": {
-    "Assessment completed": 102,
+    "Assessment completed": 103,
     "Under assessment": 32,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 101,
+    "Approved": 102,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.764705882352942,
+    "average_days": 29.718446601941746,
     "median_days": 26,
-    "average_business_days": 19.647058823529413,
+    "average_business_days": 19.601941747572816,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 22,
-        "percentage": 21.6
+        "count": 23,
+        "percentage": 22.3
       },
       "day20": {
-        "count": 79,
-        "percentage": 77.5
+        "count": 80,
+        "percentage": 77.7
       },
       "day30": {
-        "count": 99,
+        "count": 100,
         "percentage": 97.1
       }
     }
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-25019",
+      "merger_name": "Transocean - Valaris",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-16T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-10018",
       "merger_name": "CSR - Complete Plaster",
       "status": "Under assessment",
@@ -108,14 +116,6 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-09T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-25029",
-      "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-09T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
@@ -125,6 +125,16 @@
       "determination": "Approved",
       "determination_date": "2026-06-16T12:00:00Z",
       "page_modified_datetime": "2026-06-16T13:07:19+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
+      "merger_id": "MN-30012",
+      "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
+      "determination": "Approved",
+      "determination_date": "2026-06-16T12:00:00Z",
+      "page_modified_datetime": "2026-06-16T10:24:01+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-15T12:00:00Z",
       "page_modified_datetime": "2026-06-15T09:48:36+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-15019",
-      "merger_name": "Opal HealthCare - Bethel Aged Care",
-      "determination": "Approved",
-      "determination_date": "2026-06-12T12:00:00Z",
-      "page_modified_datetime": "2026-06-12T15:31:23+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
