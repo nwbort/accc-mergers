@@ -5,9 +5,9 @@ import { groupMergersByPhase } from '../utils/industryGroups';
 
 // Per-phase accent styling. Literal class strings so Tailwind picks them up.
 const GROUP_STYLES = {
-  'Phase 2': { bar: 'bg-phase-2', pill: 'bg-phase-2-pale text-phase-2-dark' },
-  'Phase 1': { bar: 'bg-phase-1', pill: 'bg-phase-1-pale text-phase-1-dark' },
-  'Waiver': { bar: 'bg-amber-400', pill: 'bg-amber-50 text-amber-700' },
+  'Phase 2': { bar: 'bg-phase-2', pill: 'bg-phase-2-pale text-phase-2-dark', line: 'border-phase-2-light' },
+  'Phase 1': { bar: 'bg-phase-1', pill: 'bg-phase-1-pale text-phase-1-dark', line: 'border-phase-1-light' },
+  'Waiver': { bar: 'bg-amber-400', pill: 'bg-amber-50 text-amber-700', line: 'border-amber-300' },
 };
 
 /**
@@ -36,7 +36,7 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
                 {group.mergers.length}
               </span>
             </div>
-            <div className={compact ? 'space-y-2' : 'space-y-3'}>
+            <div className={compact ? `space-y-2 pl-3 border-l-2 ${style.line}` : 'space-y-3'}>
               {group.mergers.map((merger) => (
                 <Link
                   key={merger.merger_id}

@@ -245,7 +245,7 @@ function Industries() {
                   </tr>
                   {isExpanded && (
                     <tr id={`industry-details-${industry.code}`}>
-                      <td colSpan="3" className="px-6 py-4 bg-gray-50/50">
+                      <td colSpan="3" className="px-6 py-5 bg-gray-100 border-t border-gray-200 shadow-inner">
                         <div className="space-y-2">
                           <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
                             Mergers in this industry
