@@ -5,6 +5,11 @@ import { isNewItem } from '../utils/lastVisit';
 import NewBadge from './NewBadge';
 import StatusBadge from './StatusBadge';
 import WaiverBadge from './WaiverBadge';
+import { MERGER_STATUS } from '../constants/mergerStatus';
+
+const DETERMINATION_LABELS = {
+  [MERGER_STATUS.ASSESSMENT_CEASED]: 'Ceased',
+};
 
 function RecentDeterminationsTable({ determinations }) {
   if (!determinations || determinations.length === 0) {
@@ -68,7 +73,10 @@ function RecentDeterminationsTable({ determinations }) {
                   </div>
                 </td>
                 <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm">
-                  <StatusBadge determination={item.determination} />
+                  <StatusBadge
+                    determination={item.determination}
+                    label={DETERMINATION_LABELS[item.determination]}
+                  />
                   <div className="text-xs text-gray-500 mt-1 pl-2.5">
                     {formatDate(item.determination_date)}
                   </div>
