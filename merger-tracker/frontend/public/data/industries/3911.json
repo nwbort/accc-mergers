@@ -5,50 +5,62 @@
       "merger_id": "MN-05017",
       "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-30010",
       "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-05012",
       "merger_name": "Eagers - Audi Melbourne and Audi Richmond",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-65011",
       "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-85017",
       "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-75011",
       "merger_name": "Autosports Group - Solitaire Automotive Group",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-30002",
       "merger_name": "Peter Warren - Wakeling Automotive",
       "is_waiver": false,
-      "status": "Assessment ceased"
+      "status": "Assessment ceased",
+      "phase": "Phase 2"
     },
     {
       "merger_id": "WA-25001",
       "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     }
   ],
-  "count": 8
+  "count": 8,
+  "phase_1_count": 2,
+  "phase_2_count": 1,
+  "waiver_count": 5,
+  "active_count": 0
 }

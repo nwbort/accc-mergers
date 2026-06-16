@@ -5,38 +5,48 @@
       "merger_id": "MN-15019",
       "merger_name": "Opal HealthCare - Bethel Aged Care",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-35020",
       "merger_name": "Respect Group - Jallarah Homes",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-35013",
       "merger_name": "Estia Health \u2013 Norsan residential aged care business",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "MN-55010",
       "merger_name": "Calvary - Holmesglen Private Hospital",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "MN-75012",
       "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "MN-75002",
       "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     }
   ],
-  "count": 6
+  "count": 6,
+  "phase_1_count": 5,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0
 }

@@ -5,26 +5,34 @@
       "merger_id": "MN-75014",
       "merger_name": "Seismic \u2013 Highspot",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-70008",
       "merger_name": "Tetra Tech \u2013 Providence Consulting",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-80006",
       "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-01081",
       "merger_name": "Accenture \u2013 Faculty Science",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     }
   ],
-  "count": 4
+  "count": 4,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 0
 }

@@ -5,20 +5,27 @@
       "merger_id": "WA-55022",
       "merger_name": "GenusPlus Group \u2013 MPC Kinetic",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-55003",
       "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "MN-25002",
       "merger_name": "Symal Group - Timms Group and L&D Group",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     }
   ],
-  "count": 3
+  "count": 3,
+  "phase_1_count": 2,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0
 }

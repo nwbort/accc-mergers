@@ -5,14 +5,20 @@
       "merger_id": "WA-40023",
       "merger_name": "AUB \u2013 further interest in KJ Risk",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-10005",
       "merger_name": "Apex - Mercer Administration Services and related assets",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     }
   ],
-  "count": 2
+  "count": 2,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0
 }

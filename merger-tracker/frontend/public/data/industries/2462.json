@@ -5,14 +5,20 @@
       "merger_id": "WA-35016",
       "merger_name": "Wipro - Indeco",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-01058",
       "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     }
   ],
-  "count": 2
+  "count": 2,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0
 }

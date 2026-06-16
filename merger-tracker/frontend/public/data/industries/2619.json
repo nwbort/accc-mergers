@@ -5,38 +5,48 @@
       "merger_id": "WA-60019",
       "merger_name": "QIC \u2013 CopperString Project assets from Powerlink Queensland",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-90007",
       "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-75020",
       "merger_name": "CleanPeak Energy Holdings - Sustainable Energy Infrastructure",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-01094",
       "merger_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-95001",
       "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "MN-01031",
       "merger_name": "La Caisse \u2013 Edify NSW Development assets",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     }
   ],
-  "count": 6
+  "count": 6,
+  "phase_1_count": 3,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 0
 }

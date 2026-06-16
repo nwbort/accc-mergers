@@ -234,6 +234,27 @@ class TestIndustriesGenerateIndex:
         counts = [i['merger_count'] for i in payload['industries']]
         assert counts == sorted(counts, reverse=True)
 
+    def test_total_mergers_counts_unique_mergers(self):
+        # MN-0001, MN-0002 (Mining) + WA-0003 (Transport); MN-0004 has no codes.
+        # A merger tagged to multiple industries must only count once.
+        payload = industries.generate_index(_enriched_fixture())
+        assert payload['total_mergers'] == 3
+        assert payload['total_industries'] == 2
+
+    def test_includes_stat_breakdown(self):
+        payload = industries.generate_index(_enriched_fixture())
+        mining = next(i for i in payload['industries'] if i['code'] == '0600')
+        transport = next(i for i in payload['industries'] if i['code'] == '5400')
+        # Mining: two Phase 1 mergers, one still under assessment.
+        assert mining['merger_count'] == 2
+        assert mining['phase_1_count'] == 2
+        assert mining['phase_2_count'] == 0
+        assert mining['waiver_count'] == 0
+        assert mining['active_count'] == 1
+        # Transport: a single waiver.
+        assert transport['waiver_count'] == 1
+        assert transport['phase_1_count'] == 0
+
 
 class TestIndustriesDetailFiles:
     def test_writes_one_file_per_code(self, tmp_path):
@@ -250,6 +271,12 @@ class TestIndustriesDetailFiles:
         assert data['count'] == 2
         # _latest_date should have been stripped
         assert all('_latest_date' not in m for m in data['mergers'])
+        # Per-merger phase + aggregate stat breakdown are present
+        assert all(m['phase'] in ('Phase 1', 'Phase 2', 'Waiver') for m in data['mergers'])
+        assert data['phase_1_count'] == 2
+        assert data['phase_2_count'] == 0
+        assert data['waiver_count'] == 0
+        assert data['active_count'] == 1
 
 
 # ---------------------------------------------------------------------------

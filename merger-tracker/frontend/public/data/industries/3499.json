@@ -5,14 +5,20 @@
       "merger_id": "MN-15015",
       "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-60010",
       "merger_name": "Michelin - Flexitallic",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     }
   ],
-  "count": 2
+  "count": 2,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0
 }

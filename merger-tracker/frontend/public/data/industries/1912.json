@@ -5,14 +5,20 @@
       "merger_id": "WA-25023",
       "merger_name": "EPL - Indovida India",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-60010",
       "merger_name": "Michelin - Flexitallic",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     }
   ],
-  "count": 2
+  "count": 2,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 0
 }

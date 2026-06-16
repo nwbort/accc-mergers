@@ -5,26 +5,34 @@
       "merger_id": "WA-90011",
       "merger_name": "Salter Brothers - Buroserv",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-20007",
       "merger_name": "Telstra \u2013 Infosys Technologies",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-35005",
       "merger_name": "Superloop \u2013 Lynham Networks",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-01071",
       "merger_name": "CSE Crosscom \u2013 Progility",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     }
   ],
-  "count": 4
+  "count": 4,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 0
 }

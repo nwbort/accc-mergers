@@ -5,68 +5,83 @@
       "merger_id": "WA-65017",
       "merger_name": "Black Rhino Group \u2013 Granville Tavern and Motel and Cambridge Street Bottle Shop & Cellars in Granville, QLD",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-30012",
       "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
       "is_waiver": false,
-      "status": "Under assessment"
+      "status": "Under assessment",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
       "is_waiver": false,
-      "status": "Under assessment"
+      "status": "Under assessment",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-05016",
       "merger_name": "Coles - substation in Yarrawonga VIC",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-55017",
       "merger_name": "Coles - Leasehold interest in shopping centre on Capricorn Highway, Emerald, QLD",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-60017",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-60012",
       "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-70010",
       "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-75015",
       "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-15009",
       "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-01068",
       "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
       "is_waiver": false,
-      "status": "Under assessment"
+      "status": "Under assessment",
+      "phase": "Phase 2"
     }
   ],
-  "count": 11
+  "count": 11,
+  "phase_1_count": 2,
+  "phase_2_count": 1,
+  "waiver_count": 8,
+  "active_count": 3
 }

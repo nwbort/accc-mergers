@@ -5,62 +5,76 @@
       "merger_id": "MN-25029",
       "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
       "is_waiver": false,
-      "status": "Under assessment"
+      "status": "Under assessment",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-40024",
       "merger_name": "Ampol \u2013 Freehold land acquisition in Chelsea Heights, Victoria",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-50019",
       "merger_name": "Coles \u2013 supermarket site in Lidcombe (NSW)",
       "is_waiver": false,
-      "status": "Under assessment"
+      "status": "Under assessment",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-60020",
       "merger_name": "Metro Petroleum \u2013 Retail sites part of divestiture remedy from Ampol-EG acquisition",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-01019",
       "merger_name": "Ampol \u2013 EG Australia",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 2"
     },
     {
       "merger_id": "WA-05016",
       "merger_name": "Coles - substation in Yarrawonga VIC",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-55017",
       "merger_name": "Coles - Leasehold interest in shopping centre on Capricorn Highway, Emerald, QLD",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-60012",
       "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-01090",
       "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "MN-01068",
       "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
       "is_waiver": false,
-      "status": "Under assessment"
+      "status": "Under assessment",
+      "phase": "Phase 2"
     }
   ],
-  "count": 10
+  "count": 10,
+  "phase_1_count": 3,
+  "phase_2_count": 2,
+  "waiver_count": 5,
+  "active_count": 3
 }

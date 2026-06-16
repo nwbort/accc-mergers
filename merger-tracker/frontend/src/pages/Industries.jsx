@@ -1,8 +1,6 @@
 import { useState, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import { mergerPath } from '../utils/slug';
 import LoadingSpinner from '../components/LoadingSpinner';
-import WaiverBadge from '../components/WaiverBadge';
+import IndustryMergerGroups from '../components/IndustryMergerGroups';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
@@ -16,6 +14,14 @@ function Industries() {
     { cacheKey: 'industries-list' }
   );
   const industries = industriesData?.industries || [];
+
+  // Sum of per-industry counts. Used only as the denominator for each
+  // industry's "share" (so shares total 100%) — NOT as the headline total,
+  // since a merger tagged to N industries is counted N times here.
+  const sumOfIndustryCounts = industries.reduce((sum, i) => sum + i.merger_count, 0);
+  // True count of distinct mergers, provided by the data pipeline. Falls back
+  // to the (over-counted) sum for older cached payloads.
+  const totalMergerReviews = industriesData?.total_mergers ?? sumOfIndustryCounts;
 
   const [industryMergersMap, setIndustryMergersMap] = useState(() => dataCache.get('industry-mergers-map') || {});
   const [loadingIndustries, setLoadingIndustries] = useState({});
@@ -104,8 +110,8 @@ function Industries() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         {[
           { label: 'Total industries', value: industries.length },
-          { label: 'Total merger reviews', value: industries.reduce((sum, i) => sum + i.merger_count, 0) },
-          { label: 'Avg mergers per industry', value: industries.length > 0 ? (industries.reduce((sum, i) => sum + i.merger_count, 0) / industries.length).toFixed(1) : 0 },
+          { label: 'Total merger reviews', value: totalMergerReviews },
+          { label: 'Avg mergers per industry', value: industries.length > 0 ? (sumOfIndustryCounts / industries.length).toFixed(1) : 0 },
         ].map(({ label, value }) => (
           <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
             <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
@@ -160,6 +166,9 @@ function Industries() {
               <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Mergers
               </th>
+              <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">
+                Breakdown
+              </th>
               <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Share
               </th>
@@ -167,11 +176,15 @@ function Industries() {
           </thead>
           <tbody className="divide-y divide-gray-50">
             {filteredIndustries.map((industry) => {
-              const totalMergers = industries.reduce((sum, i) => sum + i.merger_count, 0);
-              const percentage = (
-                (industry.merger_count / totalMergers) *
-                100
-              ).toFixed(1);
+              const percentage = sumOfIndustryCounts > 0
+                ? ((industry.merger_count / sumOfIndustryCounts) * 100).toFixed(1)
+                : '0.0';
+              // Compact breakdown shown beside each industry. Skip zero buckets.
+              const breakdown = [
+                { label: 'Phase 2', value: industry.phase_2_count },
+                { label: 'waivers', value: industry.waiver_count },
+                { label: 'active', value: industry.active_count },
+              ].filter((b) => b.value > 0);
               const key = `${industry.code}-${industry.name}`;
               const isExpanded = expandedIndustry === key;
               const industryMergers = getMergersForIndustry(industry.code);
@@ -218,6 +231,22 @@ function Industries() {
                         {industry.merger_count}
                       </span>
                     </td>
+                    <td className="px-6 py-4 whitespace-nowrap text-xs text-gray-500 hidden md:table-cell">
+                      {breakdown.length > 0 ? (
+                        <span className="inline-flex flex-wrap items-center gap-x-1.5 gap-y-1">
+                          {breakdown.map((b, idx) => (
+                            <Fragment key={b.label}>
+                              {idx > 0 && <span className="text-gray-300" aria-hidden="true">·</span>}
+                              <span className="tabular-nums">
+                                <span className="font-semibold text-gray-700">{b.value}</span> {b.label}
+                              </span>
+                            </Fragment>
+                          ))}
+                        </span>
+                      ) : (
+                        <span className="text-gray-300">—</span>
+                      )}
+                    </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       <div className="flex items-center gap-3">
                         <div
@@ -239,7 +268,7 @@ function Industries() {
                   </tr>
                   {isExpanded && (
                     <tr id={`industry-details-${industry.code}`}>
-                      <td colSpan="3" className="px-6 py-4 bg-gray-50/50">
+                      <td colSpan="4" className="px-6 py-4 bg-gray-50/50">
                         <div className="space-y-2">
                           <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
                             Mergers in this industry
@@ -251,25 +280,8 @@ function Industries() {
                           ) : industryMergers.length === 0 ? (
                             <p className="text-sm text-gray-500 py-4">No mergers found for this industry</p>
                           ) : (
-                            <div className={`space-y-2 ${industryMergers.length > SCROLL_THRESHOLD ? 'max-h-[400px] overflow-y-auto pr-2' : ''}`}>
-                              {industryMergers.map((merger) => (
-                                <Link
-                                  key={merger.merger_id}
-                                  to={mergerPath(merger.merger_id, merger.merger_name)}
-                                  className="block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
-                                  aria-label={`View merger details for ${merger.merger_name}`}
-                                >
-                                  <div className="flex items-center gap-2 min-w-0">
-                                    <span className="text-sm font-medium text-gray-900 truncate">
-                                      {merger.merger_name}
-                                    </span>
-                                    {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
-                                  </div>
-                                  <span className="text-xs text-gray-500 mt-1 block">
-                                    {merger.status}
-                                  </span>
-                                </Link>
-                              ))}
+                            <div className={industryMergers.length > SCROLL_THRESHOLD ? 'max-h-[400px] overflow-y-auto pr-2' : ''}>
+                              <IndustryMergerGroups mergers={industryMergers} variant="compact" />
                             </div>
                           )}
                         </div>
