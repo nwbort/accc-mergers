@@ -5,14 +5,21 @@
       "merger_id": "MN-80016",
       "merger_name": "Henkel \u2013 Olaplex",
       "is_waiver": false,
-      "status": "Under assessment"
+      "status": "Under assessment",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-65003",
       "merger_name": "Henkel \u2013 ATP adhesive systems group",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     }
   ],
-  "count": 2
+  "count": 2,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 1,
+  "phase_duration": null
 }

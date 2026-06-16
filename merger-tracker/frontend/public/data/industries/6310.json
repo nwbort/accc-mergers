@@ -5,14 +5,27 @@
       "merger_id": "MN-30016",
       "merger_name": "Zurich - Beazley",
       "is_waiver": false,
-      "status": "Under assessment"
+      "status": "Under assessment",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "MN-55016",
       "merger_name": "Zurich - ClearView",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     }
   ],
-  "count": 2
+  "count": 2,
+  "phase_1_count": 2,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 23.0,
+    "median_days": 23,
+    "average_business_days": 17.0,
+    "median_business_days": 17,
+    "completed_count": 1
+  }
 }

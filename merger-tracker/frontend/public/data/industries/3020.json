@@ -5,20 +5,28 @@
       "merger_id": "WA-55015",
       "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-65004",
       "merger_name": "Kee Safety - RIS Safety",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-20005",
       "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     }
   ],
-  "count": 3
+  "count": 3,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 0,
+  "phase_duration": null
 }

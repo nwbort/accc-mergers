@@ -5,20 +5,28 @@
       "merger_id": "MN-10007",
       "merger_name": "Macquarie Asset Management led consortium \u2013 Qube",
       "is_waiver": false,
-      "status": "Under assessment"
+      "status": "Under assessment",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-70011",
       "merger_name": "Egis Projects Asia Pacific - Fulton Hogan Egis O&M",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-90010",
       "merger_name": "Prime Super - Additional interest in Peninsula Link Project",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     }
   ],
-  "count": 3
+  "count": 3,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 1,
+  "phase_duration": null
 }

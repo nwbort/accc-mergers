@@ -2,29 +2,44 @@
   "code": "5511",
   "mergers": [
     {
-      "merger_id": "MN-45006",
-      "merger_name": "Paramount Skydance - Warner Bros. Discovery",
-      "is_waiver": false,
-      "status": "Assessment completed"
-    },
-    {
       "merger_id": "MN-85026",
       "merger_name": "Banijay Entertainment \u2013 All3Media",
       "is_waiver": false,
-      "status": "Under assessment"
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-45006",
+      "merger_name": "Paramount Skydance - Warner Bros. Discovery",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-65014",
       "merger_name": "26North Funds - Intermedia Cloud Communications",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-85008",
       "merger_name": "Sony \u2013 Peanuts Worldwide",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     }
   ],
-  "count": 4
+  "count": 4,
+  "phase_1_count": 2,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 41.0,
+    "median_days": 41,
+    "average_business_days": 27.0,
+    "median_business_days": 27,
+    "completed_count": 1
+  }
 }

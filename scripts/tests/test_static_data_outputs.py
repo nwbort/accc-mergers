@@ -234,6 +234,13 @@ class TestIndustriesGenerateIndex:
         counts = [i['merger_count'] for i in payload['industries']]
         assert counts == sorted(counts, reverse=True)
 
+    def test_total_mergers_counts_unique_mergers(self):
+        # MN-0001, MN-0002 (Mining) + WA-0003 (Transport); MN-0004 has no codes.
+        # A merger tagged to multiple industries must only count once.
+        payload = industries.generate_index(_enriched_fixture())
+        assert payload['total_mergers'] == 3
+        assert payload['total_industries'] == 2
+
 
 class TestIndustriesDetailFiles:
     def test_writes_one_file_per_code(self, tmp_path):
@@ -250,6 +257,32 @@ class TestIndustriesDetailFiles:
         assert data['count'] == 2
         # _latest_date should have been stripped
         assert all('_latest_date' not in m for m in data['mergers'])
+        # Per-merger phase + aggregate stat breakdown are present
+        assert all(m['phase'] in ('Phase 1', 'Phase 2', 'Waiver') for m in data['mergers'])
+        assert data['phase_1_count'] == 2
+        assert data['phase_2_count'] == 0
+        assert data['waiver_count'] == 0
+        assert data['active_count'] == 1
+
+    def test_includes_phase_duration(self, tmp_path):
+        industries.generate_detail_files(_enriched_fixture(), tmp_path)
+        with open(tmp_path / 'industries' / '0600.json') as f:
+            mining = json.load(f)
+        # MN-0001 completed (notified 2025-01-06 → determined 2025-02-05).
+        assert mining['phase_duration'] is not None
+        assert mining['phase_duration']['average_days'] == 30
+        assert mining['phase_duration']['completed_count'] == 1
+        # Transport is a single waiver — no Phase 1 duration.
+        with open(tmp_path / 'industries' / '5400.json') as f:
+            transport = json.load(f)
+        assert transport['phase_duration'] is None
+
+    def test_active_mergers_sort_first(self, tmp_path):
+        industries.generate_detail_files(_enriched_fixture(), tmp_path)
+        with open(tmp_path / 'industries' / '0600.json') as f:
+            data = json.load(f)
+        # MN-0002 is under assessment, so it leads MN-0001 (completed).
+        assert [m['merger_id'] for m in data['mergers']] == ['MN-0002', 'MN-0001']
 
 
 # ---------------------------------------------------------------------------

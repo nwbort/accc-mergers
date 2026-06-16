@@ -1,8 +1,6 @@
 import { useState, Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import { mergerPath } from '../utils/slug';
 import LoadingSpinner from '../components/LoadingSpinner';
-import WaiverBadge from '../components/WaiverBadge';
+import IndustryMergerGroups from '../components/IndustryMergerGroups';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
@@ -16,6 +14,14 @@ function Industries() {
     { cacheKey: 'industries-list' }
   );
   const industries = industriesData?.industries || [];
+
+  // Sum of per-industry counts. Used only as the denominator for each
+  // industry's "share" (so shares total 100%) — NOT as the headline total,
+  // since a merger tagged to N industries is counted N times here.
+  const sumOfIndustryCounts = industries.reduce((sum, i) => sum + i.merger_count, 0);
+  // True count of distinct mergers, provided by the data pipeline. Falls back
+  // to the (over-counted) sum for older cached payloads.
+  const totalMergerReviews = industriesData?.total_mergers ?? sumOfIndustryCounts;
 
   const [industryMergersMap, setIndustryMergersMap] = useState(() => dataCache.get('industry-mergers-map') || {});
   const [loadingIndustries, setLoadingIndustries] = useState({});
@@ -74,6 +80,13 @@ function Industries() {
     })
     .sort((a, b) => b.merger_count - a.merger_count);
 
+  // Largest merger count in the visible set. The share bars are scaled relative
+  // to this (the top industry fills the bar, the rest are proportional to it)
+  // rather than to an absolute 100%, since no single industry comes close.
+  const maxShareCount = filteredIndustries.length
+    ? Math.max(...filteredIndustries.map((i) => i.merger_count))
+    : 0;
+
   const toggleIndustry = async (code, name) => {
     const key = `${code}-${name}`;
 
@@ -104,8 +117,8 @@ function Industries() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
         {[
           { label: 'Total industries', value: industries.length },
-          { label: 'Total merger reviews', value: industries.reduce((sum, i) => sum + i.merger_count, 0) },
-          { label: 'Avg mergers per industry', value: industries.length > 0 ? (industries.reduce((sum, i) => sum + i.merger_count, 0) / industries.length).toFixed(1) : 0 },
+          { label: 'Total merger reviews', value: totalMergerReviews },
+          { label: 'Avg mergers per industry', value: industries.length > 0 ? (sumOfIndustryCounts / industries.length).toFixed(1) : 0 },
         ].map(({ label, value }) => (
           <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
             <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
@@ -150,7 +163,7 @@ function Industries() {
       <div className="bg-white border border-gray-100 shadow-card rounded-2xl overflow-hidden">
         <table className="min-w-full divide-y divide-gray-100">
           <caption className="sr-only">
-            Industry breakdown of Australian merger reviews by ANZSIC code, showing merger counts and percentage of total reviews
+            Industry breakdown of Australian merger reviews by ANZSIC code, showing merger counts and each industry's share of all reviews
           </caption>
           <thead>
             <tr className="bg-gray-50/80">
@@ -158,20 +171,17 @@ function Industries() {
                 Industry name
               </th>
               <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Mergers
-              </th>
-              <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Share
+                Mergers &amp; share of all reviews
               </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-50">
             {filteredIndustries.map((industry) => {
-              const totalMergers = industries.reduce((sum, i) => sum + i.merger_count, 0);
-              const percentage = (
-                (industry.merger_count / totalMergers) *
-                100
-              ).toFixed(1);
+              // Share of all mergers. A merger can sit in several industries,
+              // so these intentionally sum to more than 100%.
+              const percentage = totalMergerReviews > 0
+                ? ((industry.merger_count / totalMergerReviews) * 100).toFixed(1)
+                : '0.0';
               const key = `${industry.code}-${industry.name}`;
               const isExpanded = expandedIndustry === key;
               const industryMergers = getMergersForIndustry(industry.code);
@@ -213,33 +223,33 @@ function Industries() {
                         <span className="font-medium">{industry.name}</span>
                       </div>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm">
-                      <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary">
-                        {industry.merger_count}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    <td className="px-6 py-4 text-sm text-gray-500 w-2/3">
                       <div className="flex items-center gap-3">
+                        <span className="inline-flex items-center justify-center min-w-[2.25rem] px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary tabular-nums">
+                          {industry.merger_count}
+                        </span>
                         <div
-                          className="flex-1 bg-gray-100 rounded-full h-1.5 max-w-[8rem] overflow-hidden"
+                          className="flex-1 bg-gray-100 rounded-full h-1.5 overflow-hidden"
                           role="progressbar"
                           aria-valuenow={parseFloat(percentage)}
                           aria-valuemin={0}
                           aria-valuemax={100}
-                          aria-label={`${percentage}% of total mergers`}
+                          aria-label={`${percentage}% of all reviews`}
                         >
                           <div
                             className="bg-primary h-1.5 rounded-full transition-all duration-300"
-                            style={{ width: `${percentage}%` }}
+                            style={{ width: `${maxShareCount > 0 ? (industry.merger_count / maxShareCount) * 100 : 0}%` }}
                           />
                         </div>
-                        <span className="text-xs tabular-nums font-medium text-gray-600 w-12">{percentage}%</span>
+                        <span className="text-xs tabular-nums font-medium text-gray-600 w-12 text-right">{percentage}%</span>
                       </div>
                     </td>
                   </tr>
                   {isExpanded && (
                     <tr id={`industry-details-${industry.code}`}>
-                      <td colSpan="3" className="px-6 py-4 bg-gray-50/50">
+                      {/* max-w-0 lets the long, non-wrapping merger titles truncate
+                          instead of stretching the table past the viewport on mobile. */}
+                      <td colSpan="2" className="px-6 py-5 bg-gray-100 border-t border-gray-200 shadow-inner max-w-0">
                         <div className="space-y-2">
                           <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
                             Mergers in this industry
@@ -251,25 +261,8 @@ function Industries() {
                           ) : industryMergers.length === 0 ? (
                             <p className="text-sm text-gray-500 py-4">No mergers found for this industry</p>
                           ) : (
-                            <div className={`space-y-2 ${industryMergers.length > SCROLL_THRESHOLD ? 'max-h-[400px] overflow-y-auto pr-2' : ''}`}>
-                              {industryMergers.map((merger) => (
-                                <Link
-                                  key={merger.merger_id}
-                                  to={mergerPath(merger.merger_id, merger.merger_name)}
-                                  className="block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all"
-                                  aria-label={`View merger details for ${merger.merger_name}`}
-                                >
-                                  <div className="flex items-center gap-2 min-w-0">
-                                    <span className="text-sm font-medium text-gray-900 truncate">
-                                      {merger.merger_name}
-                                    </span>
-                                    {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
-                                  </div>
-                                  <span className="text-xs text-gray-500 mt-1 block">
-                                    {merger.status}
-                                  </span>
-                                </Link>
-                              ))}
+                            <div className={industryMergers.length > SCROLL_THRESHOLD ? 'max-h-[400px] overflow-y-auto pr-2' : ''}>
+                              <IndustryMergerGroups mergers={industryMergers} variant="compact" />
                             </div>
                           )}
                         </div>

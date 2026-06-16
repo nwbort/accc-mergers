@@ -5,14 +5,27 @@
       "merger_id": "WA-85011",
       "merger_name": "TDR and Estoril \u2013 Escode",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-15002",
       "merger_name": "Google - Wiz",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     }
   ],
-  "count": 2
+  "count": 2,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 41.0,
+    "median_days": 41,
+    "average_business_days": 28.0,
+    "median_business_days": 28,
+    "completed_count": 1
+  }
 }

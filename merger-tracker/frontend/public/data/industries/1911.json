@@ -5,14 +5,27 @@
       "merger_id": "WA-25023",
       "merger_name": "EPL - Indovida India",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-25006",
       "merger_name": "KPS \u2013 Novacel",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     }
   ],
-  "count": 2
+  "count": 2,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 21.0,
+    "median_days": 21,
+    "average_business_days": 15.0,
+    "median_business_days": 15,
+    "completed_count": 1
+  }
 }

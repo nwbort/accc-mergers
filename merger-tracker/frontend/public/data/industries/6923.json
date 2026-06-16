@@ -2,65 +2,86 @@
   "code": "6923",
   "mergers": [
     {
+      "merger_id": "MN-01072",
+      "merger_name": "Saipem - Subsea7",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
       "merger_id": "MN-65016",
       "merger_name": "AtkinsR\u00e9alis - WGA",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-55022",
       "merger_name": "GenusPlus Group \u2013 MPC Kinetic",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-70012",
       "merger_name": "Quanta - PSD",
       "is_waiver": false,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "WA-20019",
       "merger_name": "IK Partners - Selatek",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-90013",
       "merger_name": "Cement Australia \u2013 Global Manufacturing Group",
       "is_waiver": true,
-      "status": "Assessment completed"
-    },
-    {
-      "merger_id": "MN-01072",
-      "merger_name": "Saipem - Subsea7",
-      "is_waiver": false,
-      "status": "Under assessment"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-55009",
       "merger_name": "Resonetics \u2013 Resolution Medical",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-05007",
       "merger_name": "Eiffel and Eurazeo \u2013 Segula",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-15008",
       "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-35001",
       "merger_name": "WSP \u2013 TRC",
       "is_waiver": true,
-      "status": "Assessment completed"
+      "status": "Assessment completed",
+      "phase": "Waiver"
     }
   ],
-  "count": 10
+  "count": 10,
+  "phase_1_count": 3,
+  "phase_2_count": 0,
+  "waiver_count": 7,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 25.5,
+    "median_days": 28,
+    "average_business_days": 17.0,
+    "median_business_days": 18,
+    "completed_count": 2
+  }
 }
