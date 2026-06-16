@@ -150,18 +150,18 @@
             <button class="btn btn-toggler search-toggler mobile-toggle js-mobile-toggle__search">
               <span class="visually-hidden">Search</span>
                 <span class="mobile-toggle__icons">
-                  <svg  class="fa-search" aria-hidden="true"><use xlink:href="/themes/custom/accc_bootstrap/icons/icons.svg?tSTATIC"></use></svg>
+                  <svg  class="fa-search" aria-hidden="true"><use href="/themes/custom/accc_bootstrap/icons/icons.svg?tSTATIC"></use></svg>
 
-                  <svg  class="fa-times" aria-hidden="true"><use xlink:href="/themes/custom/accc_bootstrap/icons/icons.svg?tSTATIC"></use></svg>
+                  <svg  class="fa-times" aria-hidden="true"><use href="/themes/custom/accc_bootstrap/icons/icons.svg?tSTATIC"></use></svg>
 
                 </span>
             </button>
             <button class="btn btn-toggler megamenu-toggler mobile-toggle js-mobile-toggle__menu">
               <span class="mobile-toggle__label">Menu</span>
               <span class="mobile-toggle__icons">
-                  <svg  class="fa-bars" aria-hidden="true"><use xlink:href="/themes/custom/accc_bootstrap/icons/icons.svg?tSTATIC"></use></svg>
+                  <svg  class="fa-bars" aria-hidden="true"><use href="/themes/custom/accc_bootstrap/icons/icons.svg?tSTATIC"></use></svg>
 
-                <svg  class="fa-times" aria-hidden="true"><use xlink:href="/themes/custom/accc_bootstrap/icons/icons.svg?tSTATIC"></use></svg>
+                <svg  class="fa-times" aria-hidden="true"><use href="/themes/custom/accc_bootstrap/icons/icons.svg?tSTATIC"></use></svg>
 
                 </span>
             </button>
@@ -187,7 +187,7 @@
 
           </div>
 <div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">    <button aria-label="Submit search" data-drupal-selector="edit-submit-accc-search-site" type="submit" id="edit-submit-accc-search-site--STATIC" value="Search" class="button js-form-submit form-submit btn btn-primary">
-  <span>Search</span>              <svg  class="fa-search" aria-hidden="true"><use xlink:href="/themes/custom/accc_bootstrap/icons/icons.svg?tSTATIC"></use></svg>
+  <span>Search</span>              <svg  class="fa-search" aria-hidden="true"><use href="/themes/custom/accc_bootstrap/icons/icons.svg?tSTATIC"></use></svg>
 
       
     </button>
@@ -326,7 +326,71 @@
           </div>
 
   </div>
+            <div class="field field--name-dynamic-block-fieldnode-acquisitions-subscribe field--type-ds field--label-hidden field__item">
+<div class="accc-content-call-out accc-content-call-out-col-bg highlight">
+  <p>Keep up with the latest updates for this specific acquisition</p>
+  <button class="btn btn-light btn-sm btn-block acccgov-acquisition-subscribe-modal-button" data-toggle="modal" data-target="#acccgov-acquisition-subscribe-modal">
+        <span>Subscribe to this acquisition</span>
+  </button>
+</div>
+<div id="acccgov-acquisition-subscribe-modal" class="acccgov-acquisition-subscribe-modal modal fade" tabindex="-1" aria-labelledby="acccgov-acquisition-subscribe-modal__title" aria-modal="true" role="dialog">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header p-0 d-flex align-items-center">
+        <h3 class="modal-title pl-3 m-0" id="acccgov-acquisition-subscribe-modal__title">
+          Subscribe to email alerts
+        </h3>
+        <button type="button" class="acccgov-acquisition-subscribe-modal__close-button btn btn-close" data-dismiss="modal" aria-label="Close">
+          <svg  class="fa-times" aria-hidden="true"><use href="/themes/custom/accc_bootstrap/icons/icons.svg?tSTATIC"></use></svg>
 
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Receive an email alert when this acquisition is updated on the register.</p><p>Before subscribing, please read our <a href="/about-us/using-our-website/privacy-policy">Privacy Policy</a> to understand how your personal information is handled.</p><p>To sign up for another acquisition, open the acquisition in the <a href="/public-registers/mergers-and-acquisitions-registers/acquisitions-register">acquisitions register</a> and choose subscribe.</p>
+        <div class="accc-mailchimp-subscription-form" id="mc_embed_signup">
+          <div id="acq-subscribe-status-message"></div><div id="acquisition-subscribe-modal-form-wrapper"><form class="acquisition-subscribe-form validate" data-drupal-selector="acquisition-subscribe-form" novalidate="novalidate" action="/public-registers/mergers-and-acquisitions-registers/acquisitions-register/publicis-%E2%80%93-160over90" method="post" id="acquisition-subscribe-form" accept-charset="UTF-8">
+  <div class="form-group js-form-item form-item form-type-email js-form-type-email form-item-email js-form-item-email">
+             <label for="edit-email" class="field-element-label js-form-required form-required">
+    Email
+    <span class="form-required__indicator" data-toggle="tooltip" data-placement="top"
+          title="This field is required">(required)</span>
+  </label>
+              <input class="form-email required form-control" id="mce-EMAIL" data-drupal-selector="edit-email" type="email" name="email" value="" size="60" maxlength="254" required="required" aria-required="true" />
+
+          </div>
+<div id="edit-case-title" class="form-group js-form-item form-item form-type-item js-form-type-item form-item-case-title js-form-item-case-title">
+             <label for="edit-case-title" class="field-element-label">
+    Acquisition title
+    <span class="form-required__indicator" data-toggle="tooltip" data-placement="top"
+          title="This field is required">(required)</span>
+  </label>
+              Publicis – 160over90
+          </div>
+<div id="edit-case-id" class="form-group js-form-item form-item form-type-item js-form-type-item form-item-case-id js-form-item-case-id">
+             <label for="edit-case-id" class="field-element-label">
+    Acquisition case number
+    <span class="form-required__indicator" data-toggle="tooltip" data-placement="top"
+          title="This field is required">(required)</span>
+  </label>
+              WA-95014
+          </div>
+<input data-drupal-selector="edit-case-id-hidden" type="hidden" name="case_id_hidden" value="WA-95014" />
+<input autocomplete="off" data-drupal-selector="form-STATIC" type="hidden" name="form_build_id" value="form-STATIC" />
+<input data-drupal-selector="edit-acquisition-subscribe-form" type="hidden" name="form_id" value="acquisition_subscribe_form" />
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions">  <input class="btn btn-light button js-form-submit form-submit" data-dismiss="modal" data-drupal-selector="edit-close" type="submit" id="edit-close" name="op" value="Cancel" />
+  <input class="btn btn-primary button js-form-submit form-submit" data-drupal-selector="edit-submit" type="submit" id="edit-submit" name="op" value="Sign up now" />
+</div>
+
+</form>
+</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+      
       </div>
       
             <div class="accc-field__section accc-field__section--content">
@@ -338,7 +402,7 @@
               <div class="field__item">Waiver application</div>
           </div>
   <div class="field field--name-field-acccgov-acquisition-deter field--type-list-string field--label-inline clearfix">
-    <h3 class="field__label">ACCC Determination</h3>
+    <h3 class="field__label">ACCC determination</h3>
               <div class="field__item">Approved</div>
           </div>
 
@@ -370,7 +434,7 @@
     </ul>      </div>
     </div>
 <div class="field field--name-field-acccgov-pub-reg-targets field--type-entity-reference-revisions field--label-inline clearfix">
-  <h3 class="field__label">Target(s) or Vendor(s)</h3>
+  <h3 class="field__label">Target(s) or vendor(s)</h3>
       <div class="field__items">
     <ul>      <li>      <div class="paragraph paragraph--type--acccgov-trader paragraph--view-mode--detailed-list paragraph--id--632411">
       <span class="field_acccgov_name">
@@ -402,10 +466,10 @@
   </li>
     </ul>      </div>
     </div>
-  <div class="field field--name-field-acquisition-anzsic-code field--type-string field--label-inline clearfix">
+  <div class="field field--name-field-acccgov-anzsic-code field--type-entity-reference field--label-inline field--type-entity-reference--taxonomy_term clearfix">
     <h3 class="field__label">ANZSIC code(s)</h3>
           <div class="field__item">
-              6940  Advertising Services              </div>
+              6940 Advertising Services              </div>
       </div>
   <div class="field field--name-field-accc-body field--type-text-with-summary field--label-inline clearfix text-formatted">
     <h3 class="field__label">Description</h3>
@@ -441,7 +505,7 @@
       <td class="acccgov-timeline__date"><time datetime="2026-04-29T12:00:00Z" class="datetime">29 Apr 2026</time>
 </td>
       <td>Notification waiver determination published</td>
-      <td class="acccgov-timeline__file-link"><span class="file file--mime-application-pdf file--application-pdf"><a href="/system/files/public-merger-register/documents/Publicis%20-%20160over90%20%28WA-95014%29%20-%20Notification%20waiver%20determination%20-%2029%20April%202026.pdf" type="application/pdf" title="Publicis - 160over90 (WA-95014) - Notification waiver determination - 29 April 2026.pdf"><svg  class="fa-file-pdf" aria-hidden="true"><use xlink:href="/themes/custom/accc_bootstrap/icons/icons.svg?tSTATIC"></use></svg>
+      <td class="acccgov-timeline__file-link"><span class="file file--mime-application-pdf file--application-pdf"><a href="/system/files/public-merger-register/documents/Publicis%20-%20160over90%20%28WA-95014%29%20-%20Notification%20waiver%20determination%20-%2029%20April%202026.pdf" type="application/pdf" title="Publicis - 160over90 (WA-95014) - Notification waiver determination - 29 April 2026.pdf"><svg  class="fa-file-pdf" aria-hidden="true"><use href="/themes/custom/accc_bootstrap/icons/icons.svg?tSTATIC"></use></svg>
  Attachment <span class="badge badge-info">147.41 KB</span></a></span>
 </td>
     </tr>
@@ -544,7 +608,7 @@
   </div>
 
     
-    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/168366","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"STATIC_LIBRARIES","theme":"acccgov_theme","theme_token":null},"ajaxTrustedUrl":{"\/search":true},"google_analytics":{"account":"G-S5TGQHQ4G8"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":".no-extlink, .rsbtn_play, .region-header-top","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":["www.accc.gov.au"]}},"acccWebchat":{"deploymentKey":"79cdc325-9942-4e22-919b-15fbf3b66c26","orgGuid":null,"queueTargetAddress":null,"completionMessage":null},"acccBootstrap":{"css_js_query_string":"STATIC"},"field_group":{"html_element":{"mode":"full","context":"view","settings":{"classes":"acquisition-summary-wrapper","show_empty_fields":false,"id":"","element":"div","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast"}}},"icon_select":{"icon_select_url":"\/sites\/www.accc.gov.au\/files\/icons\/icon_select_map.svg?hash=2661be60a2021b5bd51b6f74d38883a5"},"search_api_autocomplete":{"accc_search_site":{"auto_submit":true,"min_length":3}},"user":{"uid":0,"permissionsHash":"STATIC_HASH"}}</script>
+    <script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","pathPrefix":"","currentPath":"node\/168366","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"ajaxPageState":{"libraries":"STATIC_LIBRARIES","theme":"acccgov_theme","theme_token":null},"ajaxTrustedUrl":{"form_action_p_pvdeGsVG5zNF_XLGPTvYSKCf43t8qZYSwcfZl2uzM":true,"\/public-registers\/mergers-and-acquisitions-registers\/acquisitions-register\/publicis-%E2%80%93-160over90?ajax_form=1":true,"\/search":true},"google_analytics":{"account":"G-S5TGQHQ4G8"},"data":{"extlink":{"extTarget":false,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":".no-extlink, .rsbtn_play, .region-header-top","extCssExplicit":"","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"mailto","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":["www.accc.gov.au"]}},"acccWebchat":{"deploymentKey":"79cdc325-9942-4e22-919b-15fbf3b66c26","orgGuid":null,"queueTargetAddress":null,"completionMessage":null},"acccBootstrap":{"css_js_query_string":"STATIC"},"field_group":{"html_element":{"mode":"full","context":"view","settings":{"classes":"acquisition-summary-wrapper","show_empty_fields":false,"id":"","element":"div","show_label":false,"label_element":"h3","label_element_classes":"","attributes":"","effect":"none","speed":"fast"}}},"ajax":{"edit-submit":{"callback":"::ajaxSubmit","wrapper":"acquisition-subscribe-modal-form-wrapper","event":"mousedown","keypress":true,"prevent":"click","url":"\/public-registers\/mergers-and-acquisitions-registers\/acquisitions-register\/publicis-%E2%80%93-160over90?ajax_form=1","httpMethod":"POST","dialogType":"ajax","submit":{"_triggering_element_name":"op","_triggering_element_value":"Sign up now"}}},"icon_select":{"icon_select_url":"\/sites\/www.accc.gov.au\/files\/icons\/icon_select_map.svg?hash=2661be60a2021b5bd51b6f74d38883a5"},"search_api_autocomplete":{"accc_search_site":{"auto_submit":true,"min_length":3}},"user":{"uid":0,"permissionsHash":"STATIC_HASH"}}</script>
 <script src="/sites/www.accc.gov.au/files/js/js_STATIC.js?scope=footer&amp;delta=0&amp;language=en&amp;theme=acccgov_theme&amp;include=STATIC"></script>
 <script src="https://app-script.monsido.com/v2/monsido-script.js" async></script>
 <script src="/sites/www.accc.gov.au/files/js/js_STATIC.js?scope=footer&amp;delta=2&amp;language=en&amp;theme=acccgov_theme&amp;include=STATIC"></script>
