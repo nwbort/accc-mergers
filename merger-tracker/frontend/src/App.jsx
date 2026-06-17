@@ -21,6 +21,10 @@ import NickTwort from './pages/NickTwort';
 import Analysis from './pages/Analysis';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Feedback from './pages/Feedback';
+import ConceptsIndex from './pages/concepts/ConceptsIndex';
+import DashboardPulse from './pages/concepts/DashboardPulse';
+import DashboardCommand from './pages/concepts/DashboardCommand';
+import DashboardClarity from './pages/concepts/DashboardClarity';
 import NotFound from './pages/NotFound';
 
 function AppContent() {
@@ -49,6 +53,10 @@ function AppContent() {
             <Route path="/nick-twort" element={<NickTwort />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/feedback" element={<Feedback />} />
+            <Route path="/concepts" element={<ConceptsIndex />} />
+            <Route path="/concepts/pulse" element={<DashboardPulse />} />
+            <Route path="/concepts/command" element={<DashboardCommand />} />
+            <Route path="/concepts/clarity" element={<DashboardClarity />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
