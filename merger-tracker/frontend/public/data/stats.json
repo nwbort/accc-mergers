@@ -1,36 +1,36 @@
 {
   "total_mergers": 138,
-  "total_waivers": 203,
+  "total_waivers": 205,
   "by_status": {
-    "Assessment completed": 104,
-    "Under assessment": 33,
+    "Assessment completed": 107,
+    "Under assessment": 30,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 103,
+    "Approved": 106,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 189,
+    "Approved": 191,
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.682692307692307,
+    "average_days": 29.77570093457944,
     "median_days": 26,
-    "average_business_days": 19.567307692307693,
+    "average_business_days": 19.626168224299064,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 23,
-        "percentage": 22.1
+        "percentage": 21.5
       },
       "day20": {
-        "count": 81,
-        "percentage": 77.9
+        "count": 83,
+        "percentage": 77.6
       },
       "day30": {
-        "count": 101,
-        "percentage": 97.1
+        "count": 104,
+        "percentage": 97.2
       }
     }
   },
@@ -120,6 +120,56 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-95022",
+      "merger_name": "Life Without Barriers \u2013 Mallacoota District Health & Support Service",
+      "determination": "Approved",
+      "determination_date": "2026-06-17T12:00:00Z",
+      "page_modified_datetime": "2026-06-17T18:28:18+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-90018",
+      "merger_name": "International Parking Group \u2013 car park at St John of God Murdoch Hospital",
+      "determination": "Approved",
+      "determination_date": "2026-06-17T12:00:00Z",
+      "page_modified_datetime": "2026-06-17T18:25:14+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "MN-10007",
+      "merger_name": "Macquarie Asset Management led consortium \u2013 Qube",
+      "determination": "Approved",
+      "determination_date": "2026-06-17T12:00:00Z",
+      "page_modified_datetime": "2026-06-17T17:47:29+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
+      "merger_id": "MN-40022",
+      "merger_name": "Integris & related entities - First Focus",
+      "determination": "Approved",
+      "determination_date": "2026-06-17T12:00:00Z",
+      "page_modified_datetime": "2026-06-17T16:17:12+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
+      "merger_id": "MN-85026",
+      "merger_name": "Banijay Entertainment \u2013 All3Media",
+      "determination": "Approved",
+      "determination_date": "2026-06-17T12:00:00Z",
+      "page_modified_datetime": "2026-06-17T15:28:13+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-30016",
       "merger_name": "Zurich - Beazley",
       "determination": "Approved",
@@ -128,56 +178,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-75016",
-      "merger_name": "Fulton Hogan \u2013 Avionics",
-      "determination": "Approved",
-      "determination_date": "2026-06-16T12:00:00Z",
-      "page_modified_datetime": "2026-06-16T13:07:19+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-30012",
-      "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
-      "determination": "Approved",
-      "determination_date": "2026-06-16T12:00:00Z",
-      "page_modified_datetime": "2026-06-16T10:24:01+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-25026",
-      "merger_name": "Tibaldi - South Food Group",
-      "determination": "Approved",
-      "determination_date": "2026-06-16T12:00:00Z",
-      "page_modified_datetime": "2026-06-16T10:17:15+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-30002",
-      "merger_name": "Peter Warren - Wakeling Automotive",
-      "determination": "Assessment ceased",
-      "determination_date": "2026-06-15T12:00:00Z",
-      "page_modified_datetime": "2026-06-16T08:57:08+10:00",
-      "determination_type": "ceased",
-      "is_waiver": false,
-      "stage": "Phase 2 - detailed assessment"
-    },
-    {
-      "merger_id": "WA-50023",
-      "merger_name": "Hillhouse - MGI Dobbyn Carafa",
-      "determination": "Approved",
-      "determination_date": "2026-06-15T12:00:00Z",
-      "page_modified_datetime": "2026-06-15T17:54:07+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

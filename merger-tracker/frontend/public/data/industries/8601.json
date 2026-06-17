@@ -2,6 +2,13 @@
   "code": "8601",
   "mergers": [
     {
+      "merger_id": "WA-95022",
+      "merger_name": "Life Without Barriers \u2013 Mallacoota District Health & Support Service",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
       "merger_id": "MN-15019",
       "merger_name": "Opal HealthCare - Bethel Aged Care",
       "is_waiver": false,
@@ -44,10 +51,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 6,
+  "count": 7,
   "phase_1_count": 5,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": {
     "average_days": 25.2,

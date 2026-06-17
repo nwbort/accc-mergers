@@ -2264,23 +2264,33 @@
     {
       "merger_id": "MN-40022",
       "merger_name": "Integris & related entities - First Focus",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-19T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-17T12:00:00Z",
       "end_of_determination_period": "2026-07-02T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
+        {
+          "name": "Apollo Australia Bidco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "697 230 096"
+        },
+        {
+          "name": "Apollo Australia Bidco Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "697 230 096"
+        },
         {
           "name": "OMERS Apollo Investment Holdings LLC",
           "identifier_type": null,
           "identifier": ""
         },
         {
-          "name": "Apollo Australia Bidco Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "697 230 096"
+          "name": "OMERS Apollo Investment Holdings LLC",
+          "identifier_type": null,
+          "identifier": ""
         }
       ],
       "targets": [
@@ -2293,6 +2303,11 @@
           "name": "The Trustee for FUTURE FOCUS TRUST",
           "identifier_type": "ABN",
           "identifier": "22 698 604 264"
+        },
+        {
+          "name": "FIRST FOCUS IT PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "73 106 912 350"
         }
       ],
       "other_parties": [],

@@ -3,11 +3,11 @@
     {
       "merger_id": "MN-85026",
       "merger_name": "Banijay Entertainment \u2013 All3Media",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-20T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-17T12:00:00Z",
       "end_of_determination_period": "2026-07-03T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -24,21 +24,21 @@
       ],
       "targets": [
         {
-          "name": "Banijay Holding S.A.S.",
-          "identifier_type": null,
-          "identifier": "829 295 138 RCS PARIS"
-        },
-        {
           "name": "Gold Rush HoldCo Limited",
           "identifier_type": null,
           "identifier": "RN 152698"
+        },
+        {
+          "name": "Banijay Holding S.A.S.",
+          "identifier_type": null,
+          "identifier": "829 295 138 RCS PARIS"
         }
       ],
       "other_parties": [
         {
-          "name": "RedBird Capital Partners Management LLC",
+          "name": "Lov Group Invest S.A.S",
           "identifier_type": null,
-          "identifier": "File No 5372472"
+          "identifier": "SIREN 494 031 008"
         },
         {
           "name": "Banijay SAS",
@@ -56,14 +56,14 @@
           "identifier": "94 134 845 364"
         },
         {
-          "name": "Lov Group Invest S.A.S",
-          "identifier_type": null,
-          "identifier": "SIREN 494 031 008"
-        },
-        {
           "name": "Banijay Group N.V.",
           "identifier_type": null,
           "identifier": "ISIN: NL0015000X07"
+        },
+        {
+          "name": "RedBird Capital Partners Management LLC",
+          "identifier_type": null,
+          "identifier": "File No 5372472"
         }
       ],
       "anzsic_codes": [
@@ -866,6 +866,89 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/platinum-equity-group-lmpg"
     },
     {
+      "merger_id": "WA-95022",
+      "merger_name": "Life Without Barriers \u2013 Mallacoota District Health & Support Service",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": "2026-06-17T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Life Without Barriers",
+          "identifier_type": "ABN",
+          "identifier": "15 101 252 171"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MALLACOOTA DISTRICT HEALTH & SUPPORT SERVICE INC",
+          "identifier_type": "ABN",
+          "identifier": "75 698 494 045"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "LIFE WITHOUT BARRIERS EDUCATION LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "59 685 316 321"
+        },
+        {
+          "name": "LWB DISABILITY SERVICES SOUTH LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "82 623 564 054"
+        },
+        {
+          "name": "MYHORIZON LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "14 260 253 412"
+        },
+        {
+          "name": "Family and Youth Therapeutic Services Limited",
+          "identifier_type": null,
+          "identifier": "NZBN  9429041826089"
+        },
+        {
+          "name": "LWB DISABILITY SERVICES CENTRAL LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "74 623 564 018"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8024",
+          "name": "Special School Education"
+        },
+        {
+          "code": "8531",
+          "name": "Dental Services"
+        },
+        {
+          "code": "8533",
+          "name": "Physiotherapy Services"
+        },
+        {
+          "code": "8539",
+          "name": "Other Allied Health Services"
+        },
+        {
+          "code": "8601",
+          "name": "Aged Care Residential Services"
+        },
+        {
+          "code": "8609",
+          "name": "Other Residential Care Services"
+        },
+        {
+          "code": "8790",
+          "name": "Other Social Assistance Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/life-without-barriers-%E2%80%93-mallacoota-district-health-support-service"
+    },
+    {
       "merger_id": "WA-01102",
       "merger_name": "Fujifilm \u2013 endoscopy distribution business in Australia",
       "status": "Assessment completed",
@@ -1298,6 +1381,48 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/metro-petroleum-%E2%80%93-retail-sites-part-of-divestiture-remedy-from-ampol-eg-acquisition"
+    },
+    {
+      "merger_id": "WA-90018",
+      "merger_name": "International Parking Group \u2013 car park at St John of God Murdoch Hospital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-26T12:00:00Z",
+      "determination_publication_date": "2026-06-17T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "The Trustee for INTERNATIONAL PARKING TRUST",
+          "identifier_type": "ABN",
+          "identifier": "16 622 415 949"
+        },
+        {
+          "name": "International Parking Group Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "ST JOHN OF GOD HEALTH CARE INC",
+          "identifier_type": "ABN",
+          "identifier": "21 930 207 958"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "8401",
+          "name": "Hospitals (Except Psychiatric Hospitals)"
+        },
+        {
+          "code": "9533",
+          "name": "Parking Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/international-parking-group-%E2%80%93-car-park-at-st-john-of-god-murdoch-hospital"
     },
     {
       "merger_id": "MN-50009",
