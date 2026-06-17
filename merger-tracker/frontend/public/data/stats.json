@@ -1,13 +1,13 @@
 {
-  "total_mergers": 136,
+  "total_mergers": 138,
   "total_waivers": 203,
   "by_status": {
-    "Assessment completed": 103,
-    "Under assessment": 32,
+    "Assessment completed": 104,
+    "Under assessment": 33,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 102,
+    "Approved": 103,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.718446601941746,
+    "average_days": 29.682692307692307,
     "median_days": 26,
-    "average_business_days": 19.601941747572816,
+    "average_business_days": 19.567307692307693,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 23,
-        "percentage": 22.3
+        "percentage": 22.1
       },
       "day20": {
-        "count": 80,
-        "percentage": 77.7
+        "count": 81,
+        "percentage": 77.9
       },
       "day30": {
-        "count": 100,
+        "count": 101,
         "percentage": 97.1
       }
     }
@@ -78,8 +78,24 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-15018",
+      "merger_name": "Complete Air Supply - All Air",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-16T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-25019",
       "merger_name": "Transocean - Valaris",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-16T12:00:00Z",
+      "is_waiver": false
+    },
+    {
+      "merger_id": "MN-40013",
+      "merger_name": "Calvary - Hobart Private Hospital",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-16T12:00:00Z",
@@ -100,25 +116,19 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-11T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50022",
-      "merger_name": "Service Stream \u2013 RiE",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-11T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-05025",
-      "merger_name": "Equans - CV Services Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-09T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-30016",
+      "merger_name": "Zurich - Beazley",
+      "determination": "Approved",
+      "determination_date": "2026-06-17T12:00:00Z",
+      "page_modified_datetime": "2026-06-17T11:16:39+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
     {
       "merger_id": "MN-75016",
       "merger_name": "Fulton Hogan \u2013 Avionics",
@@ -168,16 +178,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-30008",
-      "merger_name": "Frasers Group \u2013 Accent Group",
-      "determination": "Approved",
-      "determination_date": "2026-06-15T12:00:00Z",
-      "page_modified_datetime": "2026-06-15T09:48:36+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

@@ -605,11 +605,11 @@
     {
       "merger_id": "MN-30016",
       "merger_name": "Zurich - Beazley",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-22T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-17T12:00:00Z",
       "end_of_determination_period": "2026-07-07T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
@@ -628,7 +628,7 @@
       ],
       "other_parties": [
         {
-          "name": "Cover-More Group",
+          "name": "Zurich Assure Australia Pty Ltd",
           "identifier_type": null,
           "identifier": ""
         },
@@ -638,7 +638,7 @@
           "identifier": ""
         },
         {
-          "name": "Zurich Financial Services Australia Limited",
+          "name": "OnePath General Insurance Pty Ltd",
           "identifier_type": null,
           "identifier": ""
         },
@@ -648,22 +648,7 @@
           "identifier": ""
         },
         {
-          "name": "OnePath General Insurance Pty Ltd",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Zurich Assure Australia Pty Ltd",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Zurich Australia Insurance Properties Pty Ltd",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Insite Holdings Pty Limited",
+          "name": "Zurich Finance (Australia) Limited",
           "identifier_type": null,
           "identifier": ""
         },
@@ -673,12 +658,27 @@
           "identifier": ""
         },
         {
+          "name": "Cover-More Group",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Insite Holdings Pty Limited",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
           "name": "Zurich Australia Limited",
           "identifier_type": null,
           "identifier": ""
         },
         {
-          "name": "Zurich Finance (Australia) Limited",
+          "name": "Zurich Australia Insurance Properties Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Zurich Financial Services Australia Limited",
           "identifier_type": null,
           "identifier": ""
         }
@@ -2063,6 +2063,88 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/csr-complete-plaster"
     },
     {
+      "merger_id": "MN-15018",
+      "merger_name": "Complete Air Supply - All Air",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-16T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-28T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "COMPLETE AIR SUPPLY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "27 050 611 473"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ALL AIR DUCT AND FITTINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "63 131 353 298"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "TURNER ENGINEERING W.A. PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 009 381 373"
+        },
+        {
+          "name": "Australian Airconditioning Distributors Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "43 139 947 363"
+        },
+        {
+          "name": "QUALITY AIR EQUIPMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "42 095 082 689"
+        },
+        {
+          "name": "KIRBY HVAC&R PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "42 624 910 041"
+        },
+        {
+          "name": "HVAC CONSOLIDATED PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "26 162 828 971"
+        },
+        {
+          "name": "Quality Air Equipment (W.A) Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "66 145 765 680"
+        },
+        {
+          "name": "BEIJER REF AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "62 133 913 283"
+        },
+        {
+          "name": "AIRCONDITIONING DIRECT PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "48 100 354 461"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2452",
+          "name": "Fixed Space Heating, Cooling and Ventilation Equipment Manufacturing"
+        },
+        {
+          "code": "3494",
+          "name": "Other Electrical and Electronic Goods Wholesaling"
+        },
+        {
+          "code": "3499",
+          "name": "Other Machinery and Equipment Wholesaling n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/complete-air-supply-all-air"
+    },
+    {
       "merger_id": "MN-25019",
       "merger_name": "Transocean - Valaris",
       "status": "Under assessment",
@@ -2094,6 +2176,75 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/transocean-valaris"
+    },
+    {
+      "merger_id": "MN-40013",
+      "merger_name": "Calvary - Hobart Private Hospital",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-16T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-28T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 079 815 697"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ANZ HOSPITALS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 631 014 938"
+        },
+        {
+          "name": "HEALTHSCOPE NEWCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 092 450 274"
+        },
+        {
+          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 146 342 814"
+        },
+        {
+          "name": "HEALTHSCOPE OPERATIONS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 006 405 152"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Keith Crawford (as joint and several receivers)",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Jason Ireland (as joint and several receivers)",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Matthew Caddy (as joint and several receivers)",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Kathy Sozou (as joint and several receivers)",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8401",
+          "name": "Hospitals (Except Psychiatric Hospitals)"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/calvary-hobart-private-hospital"
     }
   ],
   "page": 7,

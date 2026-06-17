@@ -963,21 +963,30 @@
         "merger_id": "MN-30012",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-05-22",
+        "business_days": 16,
+        "calendar_days": 26,
+        "merger_name": "Zurich - Beazley",
+        "merger_id": "MN-30016",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 19.6,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 148,
-      "count": 103
+      "count": 104
     },
     "calendar_stats": {
       "average": 29.7,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 235,
-      "count": 103
+      "count": 104
     }
   },
   "waiver_duration": {
@@ -2645,7 +2654,7 @@
       21,
       26,
       33,
-      14
+      16
     ],
     "waivers": [
       0,
