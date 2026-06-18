@@ -6558,23 +6558,13 @@
     "original_notification_datetime": "2026-06-03T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-07-16T12:00:00Z",
-    "page_modified_datetime": "2026-06-04T17:15:40+10:00",
+    "page_modified_datetime": "2026-06-18T16:07:43+10:00",
     "consultation_response_due_date": "2026-06-16T12:00:00Z",
     "acquirers": [
-      {
-        "name": "NATIONAL AUSTRALIA INVESTMENT CAPITAL PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "27 073 242 010"
-      },
       {
         "name": "WESTPAC BANKING CORPORATION",
         "identifier_type": "ABN",
         "identifier": "33 007 457 141"
-      },
-      {
-        "name": "NATIONAL AUSTRALIA BANK LIMITED",
-        "identifier_type": "ABN",
-        "identifier": "12 004 044 937"
       },
       {
         "name": "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
@@ -6582,9 +6572,19 @@
         "identifier": "11 005 357 522"
       },
       {
+        "name": "NATIONAL AUSTRALIA BANK LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "12 004 044 937"
+      },
+      {
         "name": "COMMONWEALTH BANK OF AUSTRALIA",
         "identifier_type": "ABN",
         "identifier": "48 123 123 124"
+      },
+      {
+        "name": "NATIONAL AUSTRALIA INVESTMENT CAPITAL PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "27 073 242 010"
       }
     ],
     "targets": [
@@ -6601,7 +6601,7 @@
         "name": "Banking"
       }
     ],
-    "merger_description": "ANZ, CBA, NAB and Westpac (together, the **Major Banks**) propose to enter into a joint venture for the establishment of a new joint single cash pool (**Joint Cash Pool**) between the Major Banks with respect to wholesale and \u2018commercial cash\u2019 distribution (**Proposed JV**).\n\nCurrently, the Major Banks purchase banknotes from the RBA and coins from the Mint directly and each Major Bank has its own cash reserves, which are managed as four separate \u2018virtual\u2019 cash pools.\u00a0 Each Major Bank uses its own cash pool to support the supply of cash to its own branches and ATMs, and on to customers.\n\nIn order to establish the Proposed JV, the Major Banks\u2019 existing cash holdings would be amalgamated into the Joint Cash Pool and the Major Banks would each acquire a 25% shareholding in an incorporated operating entity (**JVCo**) and a 25% interest in the Joint Cash Pool (together,\u00a0the **Acquisitions**).\n\nJVCo\u2019s operations and the Joint Cash Pool will form part of the broader cash distribution system, following Westpac\u2019s decision to cease its current arrangements as the sole supplier of commercial cash.\n\nConduct related to the establishment and operation of JVCo is also the subject of a separate application for authorisation (AA1000729) under section 88 of the *Competition and Consumer Act 2010* (Cth) (**CCA**).\n\nOnce JVCo is established, and subject to the separate ACCC authorisation application, it is proposed that JVCo:\n\n* will hold the cash in the Joint Cash Pool as bailee for the Major Banks as joint bailors;\n* would supply cash from the Joint Cash Pool to each of the Major Banks (in their capacity as customers of JVCo), in order to meet their cash requirements for their own branches and ATMs, and to in-scope commercial cash distributors for supply to their business cash customers such as major retailers, small businesses and smaller banks; and\n* would become the sole supplier of commercial cash from the Joint Cash Pool.",
+    "merger_description": "ANZ, CBA, NAB and Westpac (together, the **Major Banks**) propose to enter into a joint venture for the establishment of a new joint single cash pool (**Joint Cash Pool**) between the Major Banks with respect to wholesale and \u2018commercial cash\u2019 distribution (**Proposed JV**).\n\nCurrently, the Major Banks purchase banknotes from the RBA and coins from the Mint directly and each Major Bank has its own cash reserves, which are managed as four separate \u2018virtual\u2019 cash pools.\u00a0 Each Major Bank uses its own cash pool to support the supply of cash to its own branches and ATMs, and on to customers.\n\nIn order to establish the Proposed JV, the Major Banks\u2019 existing cash holdings would be amalgamated into the Joint Cash Pool and the Major Banks would each acquire a 25% shareholding in an incorporated operating entity (**JVCo**) and a 25% interest in the Joint Cash Pool (together,\u00a0the **Acquisitions**).\n\nJVCo\u2019s operations and the Joint Cash Pool will form part of the broader cash distribution system, following Westpac\u2019s decision to cease its current arrangements as the sole supplier of commercial cash.\n\nConduct related to the establishment and operation of JVCo is also the subject of a separate application of authorisation (AA1000729) under section 88 of the Competition and Consumer Act 2010 (Cth) (**CCA**).\n\nOnce JVCo is established, and subject to the separate ACCC authorisation application, it is proposed that JVCo:\n\n* will hold the cash in the Joint Cash Pool as bailee for the Major Banks as joint bailors;\n* would supply cash from the Joint Cash Pool to each of the Major Banks (in their capacity as customers of JVCo), in order to meet their cash requirements for their own branches and ATMs, and to in-scope commercial cash distributors for supply to their business cash customers such as major retailers, small businesses and smaller banks; and\n* would become the sole supplier of commercial cash from the Joint Cash Pool.",
     "events": [
       {
         "date": "2026-06-03T12:00:00Z",
@@ -12614,15 +12614,21 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/stonepeak-%E2%80%93-castrol",
     "merger_name": "Stonepeak \u2013 Castrol",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-60015",
     "effective_notification_datetime": "2026-05-21T12:00:00Z",
     "original_notification_datetime": "2026-05-21T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-07-06T12:00:00Z",
-    "page_modified_datetime": "2026-06-01T14:38:26+10:00",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-06-18T15:47:24+10:00",
     "consultation_response_due_date": "2026-06-01T12:00:00Z",
     "acquirers": [
+      {
+        "name": "CPP Investment Board Private Holdings (6) Inc",
+        "identifier_type": null,
+        "identifier": "CBN  764228300"
+      },
       {
         "name": "Motion JVCo Limited",
         "identifier_type": null,
@@ -12632,35 +12638,30 @@
         "name": "BP Motion Holdings Limited",
         "identifier_type": null,
         "identifier": "UKCRN  16910312"
-      },
-      {
-        "name": "CPP Investment Board Private Holdings (6) Inc",
-        "identifier_type": null,
-        "identifier": "CBN  764228300"
       }
     ],
     "targets": [
       {
-        "name": "Castrol Group Holdings Limited",
-        "identifier_type": null,
-        "identifier": "UKCRN  SC005098"
-      },
-      {
         "name": "Stonepeak Motion PoolingCo Limited",
         "identifier_type": null,
         "identifier": "CBN  764228300"
+      },
+      {
+        "name": "Castrol Group Holdings Limited",
+        "identifier_type": null,
+        "identifier": "UKCRN  SC005098"
       }
     ],
     "other_parties": [
       {
-        "name": "BP p.l.c",
-        "identifier_type": null,
-        "identifier": "UKCRN  00102498"
-      },
-      {
         "name": "Stonepeak Partners LP",
         "identifier_type": null,
         "identifier": "Company Identifier Number: 4958360  Delaware"
+      },
+      {
+        "name": "BP p.l.c",
+        "identifier_type": null,
+        "identifier": "UKCRN  00102498"
       }
     ],
     "anzsic_codes": [
@@ -12683,8 +12684,46 @@
         "date": "2026-05-21T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-06-18T12:00:00Z",
+        "title": "Stonepeak - Castrol - Phase 1 Determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Stonepeak%20-%20Castrol%20-%20Phase%201%20determination.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "The Acquisition comprises:\n\u2022 the acquisition of 100% of the shares in Castrol Group\nHoldings Limited (Castrol) by Stonepeak Partners LP\n(together with its affiliates, Stonepeak) from BP p.l.c. (BP),\nthrough Motion JVCo Limited (Motion JVCo), a special\npurpose vehicle wholly owned by a company which is\nindirectly owned by investment funds advised and/or\nmanaged by Stonepeak,\n\u2022 the reinvestment by BP, Castrol\u2019s current owner, in Castrol at\nclosing by acquiring 35% of the shares in Motion JVCo,\nthrough a wholly owned subsidiary. Stonepeak will hold the\nremaining 65% of Motion JVCo, and\n\u2022 the indirect investment by Canada Pension Plan Investment\nBoard (CPPIB) in Motion JVCo, through its wholly owned\nsubsidiary CPP Investment Board Private Holdings (6) Inc,\nwhich is expected to occur through an investment in another\nStonepeak entity."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "Castrol is BP\u2019s global lubricants business, headquartered in the\nUnited Kingdom. Castrol is active globally in the development,\nproduction and sale of lubricants and related fluids for various\nindustries including automotive, energy, industrial and marine.\nBP is a global integrated energy group with operations in Europe,\nNorth and South America, Australasia, Asia and Africa.\nStonepeak is a global investment firm specialising in infrastructure\nand real estate assets.\nCPPIB is a professional investment management organisation that\nmanages the Canada Pension Plan Fund (CPP Fund) in the best\ninterest of more than 22 million contributors and beneficiaries."
+          },
+          {
+            "item": "Overlap and relationship\nbetween the parties",
+            "details": "There is no horizontal overlap in Australia between Castrol\u2019s\nactivities and the activities of either Stonepeak and its connected\nentities, or CPPIB and its connected entities.\nNeither Stonepeak (or its connected entities) or CPPIB (or its\nconnected entities) are material suppliers to or customers of Castrol\nin Australia."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 There are no horizontal overlaps between Castrol and either of\nStonepeak or CPPIB (or their connected entities).\n\u2022 Based on the information before us, there do not appear to be\nmaterial customer or supplier relationships between Castrol and\neither of Stonepeak or CPPIB (or their connected entities), that\nare likely to give rise to vertical or conglomerate competition\nconcerns in Australia."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/mergers/MN-60015/Stonepeak - Castrol - Phase 1 determination.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
+    "determination_publication_date": "2026-06-18T12:00:00Z",
     "is_waiver": false
   },
   {
@@ -19061,6 +19100,89 @@
     "is_waiver": true
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/xylem-trios",
+    "merger_name": "Xylem - TriOS",
+    "status": "Assessment completed",
+    "merger_id": "WA-05018",
+    "effective_notification_datetime": "2026-05-22T12:00:00Z",
+    "original_notification_datetime": "2026-05-22T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-06-18T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-06-18T17:12:04+10:00",
+    "acquirers": [
+      {
+        "name": "Xylem Analytics Germany GmbH",
+        "identifier_type": null,
+        "identifier": "HRB 145685"
+      }
+    ],
+    "targets": [
+      {
+        "name": "TriOS Mess- und Datentechnik GmbH",
+        "identifier_type": null,
+        "identifier": "HRB 3992"
+      }
+    ],
+    "other_parties": [],
+    "anzsic_codes": [
+      {
+        "code": "2419",
+        "name": "Other Professional and Scientific Equipment Manufacturing"
+      },
+      {
+        "code": "2811",
+        "name": "Water Supply"
+      },
+      {
+        "code": "6925",
+        "name": "Scientific Testing and Analysis Services"
+      }
+    ],
+    "merger_description": "Xylem Analytics Germany GmbH, a wholly owned subsidiary of Xylem Inc. (**Xylem**), proposes to acquire 100% of the issued shares in TriOS Mess-und Datentechnik GmbH (including its subsidiaries in Australia, Malaysia and New Zealand) (**TriOS**).\n\nXylem is a global water technology company headquartered in Indiana, United States. It focuses on the design, manufacture and service of engineered products and solutions across a wide variety of critical applications, primarily in the water sector. Its broad portfolio of products, services and solutions address customer needs across the water cycle; from the delivery, treatment, measurement and use of drinking water to the collection, testing, analysis and treatment of wastewater, and finally the return of water to the environment.\n\nXylem's business is structured around four geographic markets: United States, Western Europe, Emerging Markets (i.e., Eastern Europe, Middle East and Africa, Latin America and Asia Pacific) and Other (i.e., Australia and New Zealand), and is supported by four business segments that are aligned around the critical market applications provided as follows: Water Infrastructure, Applied Water, Measurement & Control Solutions and Water Solutions and Services.\n\nTriOS is a company headquartered in Rastede, Germany, with sales and service operations in Australia, Malaysia and New Zealand. It develops, manufactures and supplies optical measurement and sensor systems, primarily for water monitoring. Its portfolio includes optical sensors, such as photometers, fluorometers, radiometers and electrochemical sensors that measure physical, chemical and biological parameters including\u00a0nitrate, nitrite, organic carbon compounds, turbidity, oil content and algal activity. In addition, TriOS offers controllers and integrated measurement and system solutions.\n\nTriOS' activities in Australia are limited to sales and after sales support conducted through its wholly owned subsidiary, TriOS Analytics Australia Pty Ltd, with no local manufacturing or research and development activities undertaken in Australia.",
+    "events": [
+      {
+        "date": "2026-06-18T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Xylem%20-%20TriOS%20%28WA-05018%29%20-%20Notification%20waiver%20determination%20-%2018%20June%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Xylem Analytics Germany GmbH, a wholly owned subsidiary of\nXylem Inc. (together, Xylem), applied for a notification waiver in\nrespect of its proposed acquisition of 100% the shares in TriOS\nMess-und Datentechnik GmbH (including its subsidiaries in Australia,\nMalaysia and New Zealand) (TriOS), as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "18 June 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, Xylem, is a global water technology company\nheadquartered in Indiana, United States. It focuses on the design,\nmanufacture and service of engineered products and solutions\nacross a wide variety of critical applications, primarily in the water\nsector. Its broad portfolio of products, services and solutions\naddress customer needs across the water cycle from the delivery,\ntreatment, measurement and use of drinking water, to the collection,\ntesting, analysis and treatment of wastewater, and finally the return\nof water to the environment.\nThe target, TriOS, is a company headquartered in Rastede, Germany,\nwith sales and service operations in Australia, Malaysia and New\nZealand. It develops, manufactures and supplies optical\nmeasurement and sensor systems, primarily for water monitoring.\nIts portfolio includes optical sensors, such as photometers,\nfluorometers, radiometers and electrochemical sensors that\nmeasure physical, chemical and biological parameters including\nnitrate, nitrite, organic carbon compounds, turbidity, oil content and\nalgal activity. In addition, TriOS offers controllers and integrated\nmeasurement and system solutions.\nIn Australia, the parties both supply analytical instrumentation for\nwater quality used to measure, monitor and analyse the physical,\nchemical and biological parameters of water in different\napplications."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is a small horizontal overlap in the supply of analytical\ninstrumentation for water quality in Australia, and the\nincrease in share of supply arising from the Acquisition\nwould be low\nb. there are alternative suppliers of analytical instrumentation\nfor water quality in Australia\nc. TriOS has a small presence in Australia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-05018/Xylem - TriOS (WA-05018) - Notification waiver determination - 18 June 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-05-22T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/tmx-cboe-australia",
     "merger_name": "TMX - Cboe Australia",
     "status": "Assessment completed",
@@ -20703,6 +20825,190 @@
       },
       {
         "date": "2026-04-07T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/online-education-services-%E2%80%93-south-australian-institute-of-business-and-technology",
+    "merger_name": "Online Education Services \u2013 South Australian Institute of Business and Technology",
+    "status": "Assessment completed",
+    "merger_id": "WA-15020",
+    "effective_notification_datetime": "2026-05-22T12:00:00Z",
+    "original_notification_datetime": "2026-05-22T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-06-18T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-06-18T17:09:16+10:00",
+    "acquirers": [
+      {
+        "name": "Online Education Services Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "75 148 177 959"
+      }
+    ],
+    "targets": [
+      {
+        "name": "South Australian Institute of Business and Technology Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "12 087 769 097"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Swinburne University of Technology",
+        "identifier_type": "ABN",
+        "identifier": "13 628 586 699"
+      },
+      {
+        "name": "Seek Growth Nominees Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "651 929 725"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "6240",
+        "name": "Financial Asset Investing"
+      },
+      {
+        "code": "8101",
+        "name": "Technical and Vocational Education and Training"
+      },
+      {
+        "code": "8102",
+        "name": "Higher Education"
+      }
+    ],
+    "merger_description": "Online Education Services Pty Ltd (**OES**) proposes to acquire 100% of the shares in South Australian Institute of Business and Technology Pty Ltd (**SAIBT**).\n\nOES provides end-to-end online education delivery services to higher education providers such as universities, including delivering online courses on behalf of higher education providers. OES provides teaching and other services related to these courses on behalf of the higher education providers, though the courses themselves are formally offered by the higher education provider, not OES, and the qualifications arising from the courses are awarded by the provider, not OES. OES does not directly offer any educational courses (other than indirectly through Swinburne University, which owns 20% of OES).\n\nSAIBT is part of the Navitas Group. SAIBT has historically offered diploma qualifications intended to act as pathway qualifications to bachelor degrees offered by the University of South Australia. Following the merger of the University of South Australia and the University of Adelaide to form Adelaide University, SAIBT is teaching out its remaining students, not\u00a0enrolling new students and will have no students at completion. That is, while OES is acquiring SAIBT the entity, at the completion date, SAIBT will have no students, will not be conducting any business, and will exist as a dormant \u2018shell\u2019 with regulatory approvals to operate higher education diploma qualifications.",
+    "events": [
+      {
+        "date": "2026-06-18T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Online%20Education%20Services%20%E2%80%93%20South%20Australian%20Institute%20of%20Business%20and%20Technology%20%28WA-15020%29%20-%20Notification%20waiver%20determination%20-%2018%20June%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Online Education Services Pty Ltd (OES) applied for a notification\nwaiver in respect of its proposed acquisition of 100% of the share\ncapital in South Australian Institute of Business and Technology Pty\nLtd (SAIBT), as described in the transaction documents provided as\npart of the application (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "18 June 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, OES, provides end-to-end online education delivery\nservices to higher education providers such as universities. This\nincludes delivering online courses on behalf of higher education\nproviders. OES does not currently possess the regulatory approvals\nnecessary to provide these courses directly to students (other than\nindirectly through Swinburne University, which owns 20% of OES \u2013\nwith the remaining 80% owned by Seek Growth Nominees Pty Ltd).\nThe target, SAIBT, is part of the Navitas Group. SAIBT has historically\noffered face-to-face diploma qualifications in Adelaide intended to\nact as pathway qualifications to bachelor degrees offered by the\nUniversity of South Australia. Following the merger of the University\nof South Australia and the University of Adelaide to form Adelaide\nUniversity, SAIBT commenced transitioning its students to Eynesbury\nCollege, another entity in the Navitas Group. SAIBT has ceased\nenrolling new students and will have no students at completion of\nthe Acquisition. As such, on completion, OES will acquire SAIBT as a\ndormant \u2018shell\u2019 with regulatory approvals to operate higher education\ndiploma qualifications."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. the Acquisition will not increase concentration in the supply\nof diploma/pathway qualifications in Australia\nb. the Acquisition will facilitate new entry by OES into the\nsupply of diploma/pathway qualifications in Australia\nc. there are alternative suppliers of diploma/pathway\nqualifications in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-15020/Online Education Services \u2013 South Australian Institute of Business and Technology (WA-15020) - Notification waiver determination - 18 June 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-05-22T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-morley-veterinary-hospital",
+    "merger_name": "Vets Central - Morley Veterinary Hospital",
+    "status": "Assessment completed",
+    "merger_id": "WA-15022",
+    "effective_notification_datetime": "2026-05-27T12:00:00Z",
+    "original_notification_datetime": "2026-05-27T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-06-18T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-06-18T18:17:03+10:00",
+    "acquirers": [
+      {
+        "name": "VC OPERATIONS (WA) PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "28 646 499 005"
+      }
+    ],
+    "targets": [
+      {
+        "name": "The Trustee for THE MVH UNIT TRUST",
+        "identifier_type": "ABN",
+        "identifier": "44 887 760 871"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "VETS CENTRAL HOLDINGS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "60 652 812 256"
+      },
+      {
+        "name": "Vetcentre Pty Ltd",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "6970",
+        "name": "Veterinary Services"
+      },
+      {
+        "code": "9539",
+        "name": "Other Personal Services n.e.c."
+      }
+    ],
+    "merger_description": "Vets Central Holdings Pty Ltd (together, with its subsidiaries, **Vets Central**), proposes to acquire 100% of the business assets (both tangible and intangible) of Morley Veterinary Hospital from Vetcentre Pty Ltd as trustees for the MVH Unit Trust.\n\nVets Central is an Australian-owned veterinary group that owns and operates 82 first opinion veterinary practices across Australia and New Zealand. In Australia, Vets Central\u2019s practices provide core and ancillary veterinary services, for household pets as well as livestock, and other exotic species. The services primarily include routine, planned, and emergency veterinary services (excluding after-hours services).\n\nMorley Veterinary Hospital is a full-service veterinary practice in the Morley area of Western Australian. The business provides a range of first opinion core and ancillary veterinary services for household pets (extending to exotic pets) in the local area.",
+    "events": [
+      {
+        "date": "2026-06-18T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20Morley%20Veterinary%20Hospital%20%28WA-15022%29%20-%20Notification%20waiver%20determination%20-%2018%20June%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Vets Central Holdings Pty Ltd (together with its subsidiaries, Vets\nCentral) applied for a notification waiver in respect of its proposed\nacquisition of 100% of the business assets of Morley Veterinary\nHospital, as described in the transaction documents provided as part\nof the application (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "18 June 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, Vets Central, is an Australian-owned veterinary group\nthat owns and operates 82 first opinion veterinary practices across\nAustralia and New Zealand. In Australia, Vets Central\u2019s practices\nprovide core and ancillary veterinary services primarily for household\npets as well as livestock and exotic species. The services primarily\ninclude routine, planned and emergency veterinary services\n(excluding after-hours services).\nThe target, Morley Veterinary Hospital, is a full-service veterinary\npractice in Morley, Western Australia. It provides routine, planned\nand emergency (excluding after-hours) veterinary services for\nhousehold pets (extending to exotic pets).\nVets Central and Morley Veterinary Hospital both supply first opinion\nveterinary services primarily for household pets, livestock and exotic\nspecies in Western Australia."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is no horizontal overlap between Vets Central and\nMorley Veterinary Hospital in the supply of veterinary\nservices in the Morley area\nb. there are alternative suppliers of veterinary services in the\nMorley area and more broadly at the, state and national\nlevel.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-15022/Morley Veterinary Hospital (WA-15022) - Notification waiver determination - 18 June 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-05-27T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }
@@ -26744,6 +27050,81 @@
     "is_waiver": true
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/northstar-%E2%80%93-business-assets-of-mildura-mazda",
+    "merger_name": "Northstar \u2013 business assets of Mildura Mazda",
+    "status": "Assessment completed",
+    "merger_id": "WA-45016",
+    "effective_notification_datetime": "2026-05-13T12:00:00Z",
+    "original_notification_datetime": "2026-05-13T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-06-18T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-06-18T17:07:04+10:00",
+    "acquirers": [
+      {
+        "name": "NORTHSTAR MILDURA PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "94 674 572 260"
+      }
+    ],
+    "targets": [
+      {
+        "name": "SA PROGRESS NO.1 PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "86 602 258 695"
+      }
+    ],
+    "other_parties": [],
+    "anzsic_codes": [
+      {
+        "code": "3911",
+        "name": "Car Retailing"
+      }
+    ],
+    "merger_description": "Northstar Mildura Pty Ltd (**Northstar**) proposes to acquire certain business assets associated with the Mildura Mazda dealership.\n\nNorthstar is part of an automotive group comprising a number of related entities which own and operate motor vehicle dealerships. Across those entities, the group is engaged in the retail supply of motor vehicles, including new, demonstrator and used vehicles, across a range of automotive brands. The group also supplies aftermarket services, including vehicle servicing, repairs, spare parts and accessories, and may facilitate ancillary services such as vehicle finance, insurance and extended warranties.\n\nThe group\u2019s operations are conducted on a dealership-by-dealership basis, with each entity typically holding one or more franchise agreements with original equipment manufacturers and operating within defined local or regional catchments.\n\nMildura Mazda conducts motor vehicle dealership activities, including the retail and wholesale sale of new and used Mazda vehicles, vehicle servicing and repairs, the sale of spare parts and accessories, and associated aftersales services. The business primarily services customers in Mildura and the surrounding regional catchment, including north-west Victoria and adjoining regions of New South Wales and South Australia.",
+    "events": [
+      {
+        "date": "2026-06-18T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Northstar%20%E2%80%93%20business%20assets%20of%20Mildura%20Mazda%20%28WA-45016%29%20-%20Notification%20waiver%20determination%20-%2017%20June%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Woodward pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Northstar Mildura Pty Ltd (Northstar) applied for a notification\nwaiver in respect of its proposed acquisition of certain business\nassets associated with the Mildura Mazda dealership, as described\nin the transaction documents provided as part of the application (the\nAcquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "17 June 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, Northstar, is part of an automotive group comprising a\nnumber of related entities which own and operate motor vehicle\ndealerships. Across those entities, the group is engaged in the retail\nsupply of motor vehicles, including new, demonstrator and used\nvehicles, across a range of automotive brands (including Hyundai,\nNissan and BMW). The group also supplies aftermarket services,\nincluding vehicle servicing, repairs, spare parts and accessories, and\nmay facilitate ancillary services such as vehicle finance, insurance\nand extended warranties.\nMildura Mazda, conducts motor vehicle dealership activities,\nincluding the retail and wholesale sale of new and used Mazda\nvehicles, vehicle servicing and repairs, the sale of spare parts and\naccessories, and associated aftersales services. The business\nprimarily services customers in Mildura and the surrounding regional\ncatchment, including north-west Victoria and adjoining regions of\nNew South Wales and South Australia.\nNorthstar and Mildura Mazda are both involved in the supply of new\nand used cars, and associated goods and services, in the Mildura\nregion."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\ncertain publicly available information, and had regard to the factors\nin section 51ABV(2)(b) of the Competition and Consumer Act 2010\n(Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is no overlap in the brands of cars supplied by\nNorthstar and Mildura Mazda\nb. there is a small horizontal overlap between Northstar and\nMildura Mazda in the supply of new and used motor vehicles\nin the Mildura region\nc. there are alternative suppliers of new and used cars in the\nMildura region.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply. The\nACCC considers that there is a low likelihood of the Acquisition\nmeeting the thresholds for notification.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-45016/Northstar \u2013 business assets of Mildura Mazda (WA-45016) - Notification waiver determination - 17 June 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-05-13T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/francisco-partners-sermo",
     "merger_name": "Francisco Partners - Sermo",
     "status": "Assessment completed",
@@ -27486,6 +27867,196 @@
       },
       {
         "date": "2026-05-07T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/autopact-freehold-interest-in-commercial-land-in-ferntree-gully-vic",
+    "merger_name": "Autopact - Freehold interest in commercial land in Ferntree Gully, VIC",
+    "status": "Assessment completed",
+    "merger_id": "WA-50018",
+    "effective_notification_datetime": "2026-06-03T12:00:00Z",
+    "original_notification_datetime": "2026-06-03T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-06-18T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-06-18T18:20:53+10:00",
+    "acquirers": [
+      {
+        "name": "AUTOPACT PROPERTY NO. 4 PTY LTD",
+        "identifier_type": "ACN",
+        "identifier": "697 186 011"
+      }
+    ],
+    "targets": [
+      {
+        "name": "DOIDGE PROPERTY PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "42 167 885 074"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "FERNTREE GULLY AUTO SALES PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "82 156 564 224"
+      },
+      {
+        "name": "AUTOPACT HOLDINGS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "88 679 668 850"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "3911",
+        "name": "Car Retailing"
+      },
+      {
+        "code": "6712",
+        "name": "Non-Residential Property Operators"
+      },
+      {
+        "code": "9419",
+        "name": "Other Automotive Repair and Maintenance"
+      }
+    ],
+    "merger_description": "Autopact Property No. 4 Pty Ltd (the **Acquirer**), a wholly owned subsidiary of Autopact Holdings Pty Ltd (together, **Autopact**), proposes to acquire the 100% freehold interest in the commercial land and buildings at 871\u2013875 Burwood Highway, Ferntree Gully VIC 3156 (the **Property**) from Doidge Property Pty Ltd (the **Vendor**), by way of a contract of sale of land.\n\nAutopact operates motor-vehicle dealerships across Queensland, New South Wales and Victoria, supplying new and used vehicles, finance and insurance, and servicing and parts.\n\nThe Vendor is a passive property-holding entity that does not itself supply vehicles, finance, servicing or parts, and does not operate any motor-vehicle dealership.\n\nThe Property is currently leased to Ferntree Gully Auto Sales Pty Ltd, another wholly owned subsidiary of Autopact Holdings Pty Ltd and connected entity of the Acquirer, which operates a motor-vehicle dealership at the Property. The lease terms extend to 2044.",
+    "events": [
+      {
+        "date": "2026-06-18T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Autopact%20%E2%80%93%20Freehold%20interest%20in%20commercial%20land%20in%20Ferntree%20Gully%2C%20VIC%20%28WA-50018%29%20-%20Notification%20waiver%20determination%20-%2018%20June%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Autopact Property No. 4 Pty Ltd and Autopact Holdings Pty Ltd\napplied for a notification waiver in respect of Autopact Property No.\n4 Pty Ltd\u2019s proposed acquisition of 100% freehold interest in the\ncommercial land and buildings at 871\u2013875 Burwood Highway,\nFerntree Gully VIC 3156 (the Property) from Doidge Property Pty Ltd\n(the Vendor), as described in the transaction documents provided as\npart of the application (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "18 June 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, Autopact Property No. 4 Pty Ltd, is a wholly owned\nsubsidiary of Autopact Holdings Pty Ltd (together, Autopact).\nAutopact operates motor-vehicle dealerships across Queensland,\nNew South Wales and Victoria, supplying new and used vehicles,\nfinance and insurance, and servicing and parts.\nThe Property is currently leased to Ferntree Gully Auto Sales Pty Ltd,\nanother wholly owned subsidiary of Autopact Holdings Pty Ltd and\nconnected entity of the acquirer, which operates a motor-vehicle\ndealership at the Property. The lease terms extend to 2044.\nThe Vendor is a passive property-holding entity that does not itself\nsupply vehicles, finance, servicing or parts, and does not operate any\nmotor-vehicle dealership."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers\nthat the Acquisition is unlikely to give rise to any material lessening\nof competition. In particular:\na. there is no horizontal competitive overlap\nb. Autopact has been using the land as a lessee and intends to\ncontinue using the land for the same purposes, but as an\nowner\nc. the Acquisition does not appear likely to otherwise limit or\nprevent competition from rivals.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-50018/Autopact \u2013 Freehold interest in commercial land in Ferntree Gully, VIC (WA-50018) - Notification waiver determination - 18 June 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-06-03T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/envest-group-%E2%80%93-ma-insurance-brokers",
+    "merger_name": "Envest Group \u2013 MA Insurance Brokers",
+    "status": "Assessment completed",
+    "merger_id": "WA-50020",
+    "effective_notification_datetime": "2026-05-21T12:00:00Z",
+    "original_notification_datetime": "2026-05-21T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-06-18T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-06-18T18:12:29+10:00",
+    "acquirers": [
+      {
+        "name": "PSC TRANSPORT INSURANCE BROKERS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "47 001 768 190"
+      }
+    ],
+    "targets": [
+      {
+        "name": "MA INSURANCE BROKERS PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "14 650 784 204"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "ILLYES PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "55 650 781 132"
+      },
+      {
+        "name": "Oyama Direct Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "600 807 654"
+      },
+      {
+        "name": "THE ENVEST GROUP PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "73 645 319 820"
+      },
+      {
+        "name": "The Ardonagh Group",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "6420",
+        "name": "Auxiliary Insurance Services"
+      }
+    ],
+    "merger_description": "The Envest Group Pty Ltd (**TEG**) proposes to acquire through its indirect wholly owned subsidiary, PSC Transport Insurance Brokers Pty Limited (**PSCT**), the business and assets of MA Insurance Brokers Pty Ltd (**MA**) for cash and the issue of shares in PSCT to nominees of MA (the **Acquisition**).\n\nFollowing the Acquisition, PSCT will be:\n\n* indirectly owned as to approximately 80% by TEG\n* directly owned as to approximately 20% (in aggregate) by Illyes Pty Limited ATF the Illyes Family Trust and Oyama Direct Pty Ltd, being the major shareholders of MA.\n\nMA is a self-licensed general insurance broker specialising in the transport and machinery insurance sector, has been in operation for circa 5 years, and its management have over 30 years of industry experience. MA is based in Brisbane, but services clients across Australia. MA brokers a range of insurance products including general liability, management liability, professional indemnity, directors and officers, property insurance, workers compensation, plant and machinery, marine insurance and business insurance, but is specialised in commercial motor insurance (and related insurance classes).\n\nTEG, through its wholly and partially owned subsidiaries, is active in Australia and New Zealand in the supply of:\n\n1. underwriting products and services as managing general agents, competing with underwriters and other managing general agents both on an intermediated basis (via brokers both within and outside of the Envest network) and direct to consumers;\n2. insurance broking services\n3. wealth management and financial planning: TEG provides financial planning and advice products and services (including life risk broking) (through the Wealth Architects group of companies); and\n4. services in adjacencies and ancillary services such as insurtech (technology that supports the insurance industry), claims management, workers compensation consulting and trade credit risk.",
+    "events": [
+      {
+        "date": "2026-06-18T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Envest%20Group%20%E2%80%93%20MA%20Insurance%20Brokers%20%28WA-50020%29%20-%20Notification%20waiver%20determination%20-%2018%20June%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "PSC Transport Insurance Brokers Pty Ltd (PSCT), which is a wholly\nowned subsidiary (indirectly) of The Envest Group Pty Ltd (TEG),\napplied for a notification waiver in respect of its proposed\nacquisition of the business and assets of MA Insurance Brokers Pty\nLtd (MA), as described in the transaction documents provided as\npart of the application (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "18 June 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, TEG, is an insurance and financial services distribution\ngroup. Through its wholly and partially owned subsidiaries, TEG is\nactive in Australia and New Zealand in the supply of underwriting\nproducts and services as managing general agents, insurance\nbroking services, wealth management and financial planning\nproducts and services, and adjacent and ancillary services such as\nInsurtech (technology to support the insurance industry), claims\nmanagement, workers compensation consulting and trade credit\nrisk.\nTEG is part of the Ardonagh Group which is a UK based independent\ninsurance distribution platform and a global independent broker.\nThe target, MA, is a self-licensed general insurance broker. MA is\nbased in Brisbane, but services clients across Australia. MA brokers\na range of insurance products including general liability,\nmanagement liability, professional indemnity, directors and officers,\nproperty insurance, workers compensation, plant and machinery,\nmarine insurance and business insurance, but is specialised in\ncommercial motor insurance (and related insurance classes).\nThe parties both supply general insurance and commercial motor\ninsurance broking services in Australia."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. the parties\u2019 combined share of supply of general insurance\nbroking services in Australia, including for commercial motor\ninsurance, is estimated to be low and the increase in share\narising from the Acquisition would be small\nb. there are several alternative suppliers of general insurance\nand commercial motor broking services in Australia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-50020/Envest Group \u2013 MA Insurance Brokers (WA-50020) - Notification waiver determination - 18 June 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-05-21T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }
@@ -28454,6 +29025,95 @@
       },
       {
         "date": "2026-05-19T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/autopact-freehold-interest-in-commercial-land-in-dubbo-nsw",
+    "merger_name": "Autopact - Freehold interest in commercial land in Dubbo, NSW",
+    "status": "Assessment completed",
+    "merger_id": "WA-55021",
+    "effective_notification_datetime": "2026-06-03T12:00:00Z",
+    "original_notification_datetime": "2026-06-03T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-06-18T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-06-18T18:19:05+10:00",
+    "acquirers": [
+      {
+        "name": "AUTOPACT PROPERTY NO. 3 PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "66 687 598 278"
+      }
+    ],
+    "targets": [
+      {
+        "name": "PETER TERRY NOMINEES PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "60 081 646 479"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "AUTOPACT HOLDINGS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "88 679 668 850"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "3911",
+        "name": "Car Retailing"
+      },
+      {
+        "code": "6712",
+        "name": "Non-Residential Property Operators"
+      },
+      {
+        "code": "9419",
+        "name": "Other Automotive Repair and Maintenance"
+      }
+    ],
+    "merger_description": "Autopact Property No. 3 Pty Ltd (the **Acquirer**), a wholly owned subsidiary of Autopact Holdings Pty Ltd (together, **Autopact**), proposes to acquire the 100% freehold interest in the commercial land at 59\u201371 Victoria Street, 10 North Street, 23 Bruce Avenue and 49 Victoria Street, Dubbo NSW (the **Properties**) from Peter Terry Nominees Pty Ltd (the **Vendor**), by way of a contract of sale of land.\n\nAutopact operates motor-vehicle dealerships across Queensland, New South Wales and Victoria, supplying new and used vehicles, finance and insurance, and servicing and parts.\n\nThe Vendor is a land-holding entity that does not itself supply vehicles, finance, servicing or parts, and does not operate any motor-vehicle dealership.\n\nThe Properties are currently leased to PT Western Plains Pty Ltd, another wholly owned subsidiary of Autopact Holdings Pty Ltd and connected entity of the Acquirer, which operates a motor-vehicle dealership at the Properties. The current lease has a termination date of October 2026, with an option to extend to 2031.",
+    "events": [
+      {
+        "date": "2026-06-18T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Autopact%20%E2%80%93%20Freehold%20interest%20in%20commercial%20land%20in%20Dubbo%2C%20NSW%20%28WA-55021%29%20-%20Notification%20waiver%20determination%20-%2018%20June%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Autopact Property No. 3 Pty Ltd applied for a notification waiver in\nrespect of its proposed acquisition of a 100% freehold interest in\ncommercial land at 59\u201371 Victoria Street, 10 North Street, 23 Bruce\nAvenue and 49 Victoria Street, Dubbo NSW (the Properties) from\nPeter Terry Nominees Pty Ltd (the Vendor), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "18 June 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, Autopact Property No. 3 Pty Ltd, is a wholly owned\nsubsidiary of Autopact Holdings Pty Ltd (together, Autopact).\nAutopact operates motor-vehicle dealerships across Queensland,\nNew South Wales and Victoria, supplying new and used vehicles,\nfinance and insurance, and servicing and parts.\nThe Properties are currently leased to PT Western Plains Pty Ltd,\nanother wholly owned subsidiary of Autopact Holdings Pty Ltd and\nconnected entity of the acquirer, which operates a motor-vehicle\ndealership at the Properties. The lease terms extend to 2031.\nThe Vendor is a land-holding entity that does not itself supply\nvehicles, finance, servicing or parts, and does not operate any motor-\nvehicle dealership."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers\nthat the Acquisition is unlikely to give rise to any material lessening\nof competition. In particular:\na. there is no horizontal competitive overlap\nb. Autopact has been using the land as a lessee and intends to\ncontinue using the land for the same purposes, but as an\nowner\nc. the Acquisition does not appear likely to otherwise limit or\nprevent competition from rivals.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-55021/Autopact \u2013 Freehold interest in commercial land in Dubbo, NSW (WA-55021) - Notification waiver determination - 18 June 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-06-03T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }
@@ -36096,6 +36756,91 @@
       },
       {
         "date": "2026-05-26T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/jardines-i-med",
+    "merger_name": "Jardines - I-MED",
+    "status": "Assessment completed",
+    "merger_id": "WA-90019",
+    "effective_notification_datetime": "2026-06-03T12:00:00Z",
+    "original_notification_datetime": "2026-06-03T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-06-18T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-06-18T18:15:11+10:00",
+    "acquirers": [
+      {
+        "name": "Kent Image Australia Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "698 274 396"
+      }
+    ],
+    "targets": [
+      {
+        "name": "IMAGE HOLDCO PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "18 623 028 740"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Jardine Matheson Holdings Limited",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "6240",
+        "name": "Financial Asset Investing"
+      },
+      {
+        "code": "8520",
+        "name": "Pathology and Diagnostic Imaging Services"
+      }
+    ],
+    "merger_description": "Jardine Matheson Holdings Limited (**Jardines**) proposes to acquire, via its wholly owned special purpose vehicle Kent Image Australia Pty Ltd, 100% of the issued share capital in Image Holdco Pty Ltd and its subsidiaries and relevant joint venture interests (together, **I-MED**) (the **Acquisition**). The Acquisition is expected to be completed later in 2026.\n\nJardines is a diversified, Asia-focused investment company. Jardines' portfolio spans property, retail, automotive, hospitality, industrial, financial services and healthcare, with operations across Asia, including in Hong Kong, Indonesia, Mainland China, Vietnam, Singapore and Malaysia. Jardines has a primary listing on the London Stock Exchange and secondary listings on the Singapore Exchange and Bermuda Stock Exchange.\n\nI-MED operates a number of diagnostic imaging clinics across metropolitan and regional communities in Australia and New Zealand, providing a range of imaging and diagnostic services (including MRI, CT, PET, nuclear medicine, ultrasound and X-ray) to communities, hospitals, referrers and other stakeholders. I-MED is also a provider of teleradiology \u2013 a service that enables a radiologist to remotely interpret medical images via technology to support diagnosis for patients receiving care where radiologists are not onsite at the health facility \u2013 in Australia and New Zealand as well as the United States.",
+    "events": [
+      {
+        "date": "2026-06-18T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/%20I-MED%20-%20Notification%20waiver%20determination%20-%2018%20June%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Jardine Matheson Holdings Limited (Jardines), via its wholly owned\nspecial purpose vehicle Kent Image Australia Pty Ltd, applied for a\nnotification waiver in respect of its proposed acquisition of 100% of\nthe issued share capital in Image Holdco Pty Ltd and its subsidiaries\nand relevant joint venture interests (I-MED), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "18 June 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, Jardines, is a diversified, Asia-focused investment\ncompany. Its portfolio spans property, retail, automotive, hospitality,\nindustrial, financial services and healthcare, with operations across\nAsia, including in Hong Kong, Indonesia, Mainland China, Vietnam,\nSingapore and Malaysia.\nThe target, I-MED, operates a number of diagnostic imaging clinics\nacross metropolitan and regional communities in Australia and New\nZealand. These clinics provide a range of imaging and diagnostic\nservices (including MRI, CT, PET, nuclear medicine, ultrasound and x-\nray) to communities, hospitals, referrers and other stakeholders.\nJardines does not have any other investments in diagnostic imaging\nservices, or investments in related businesses at different levels in\nthe supply chain for diagnostic imaging services, in Australia."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular, there is no horizontal overlap\nor vertical relationships between Jardines and I-MED in the supply of\ndiagnostic imaging services in Australia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-90019/I-MED - Notification waiver determination - 18 June 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-06-03T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }

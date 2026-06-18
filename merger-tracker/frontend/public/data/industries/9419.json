@@ -2,6 +2,20 @@
   "code": "9419",
   "mergers": [
     {
+      "merger_id": "WA-50018",
+      "merger_name": "Autopact - Freehold interest in commercial land in Ferntree Gully, VIC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55021",
+      "merger_name": "Autopact - Freehold interest in commercial land in Dubbo, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
       "merger_id": "WA-30010",
       "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
       "is_waiver": true,
@@ -30,10 +44,10 @@
       "phase": "Phase 2"
     }
   ],
-  "count": 4,
+  "count": 6,
   "phase_1_count": 1,
   "phase_2_count": 1,
-  "waiver_count": 2,
+  "waiver_count": 4,
   "active_count": 0,
   "phase_duration": {
     "average_days": 24.0,

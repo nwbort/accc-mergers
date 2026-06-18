@@ -1,35 +1,35 @@
 {
   "total_mergers": 139,
-  "total_waivers": 205,
+  "total_waivers": 213,
   "by_status": {
-    "Assessment completed": 107,
-    "Under assessment": 31,
+    "Assessment completed": 108,
+    "Under assessment": 30,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 106,
+    "Approved": 107,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 191,
+    "Approved": 199,
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.77570093457944,
+    "average_days": 29.75925925925926,
     "median_days": 26,
-    "average_business_days": 19.626168224299064,
+    "average_business_days": 19.61111111111111,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 23,
-        "percentage": 21.5
+        "percentage": 21.3
       },
       "day20": {
-        "count": 83,
-        "percentage": 77.6
+        "count": 84,
+        "percentage": 77.8
       },
       "day30": {
-        "count": 104,
+        "count": 105,
         "percentage": 97.2
       }
     }
@@ -37,7 +37,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 40
+      "count": 42
     },
     {
       "name": "Computer System Design and Related Services",
@@ -53,7 +53,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 17
+      "count": 19
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -68,12 +68,12 @@
       "count": 11
     },
     {
-      "name": "Accommodation",
+      "name": "Car Retailing",
       "count": 11
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 10
+      "name": "Accommodation",
+      "count": 11
     }
   ],
   "recent_mergers": [
@@ -120,64 +120,64 @@
   ],
   "recent_determinations": [
     {
-      "merger_id": "WA-95022",
-      "merger_name": "Life Without Barriers \u2013 Mallacoota District Health & Support Service",
+      "merger_id": "WA-50018",
+      "merger_name": "Autopact - Freehold interest in commercial land in Ferntree Gully, VIC",
       "determination": "Approved",
-      "determination_date": "2026-06-17T12:00:00Z",
-      "page_modified_datetime": "2026-06-17T18:28:18+10:00",
+      "determination_date": "2026-06-18T12:00:00Z",
+      "page_modified_datetime": "2026-06-18T18:20:53+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
     },
     {
-      "merger_id": "WA-90018",
-      "merger_name": "International Parking Group \u2013 car park at St John of God Murdoch Hospital",
+      "merger_id": "WA-55021",
+      "merger_name": "Autopact - Freehold interest in commercial land in Dubbo, NSW",
       "determination": "Approved",
-      "determination_date": "2026-06-17T12:00:00Z",
-      "page_modified_datetime": "2026-06-17T18:25:14+10:00",
+      "determination_date": "2026-06-18T12:00:00Z",
+      "page_modified_datetime": "2026-06-18T18:19:05+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
     },
     {
-      "merger_id": "MN-10007",
-      "merger_name": "Macquarie Asset Management led consortium \u2013 Qube",
+      "merger_id": "WA-15022",
+      "merger_name": "Vets Central - Morley Veterinary Hospital",
       "determination": "Approved",
-      "determination_date": "2026-06-17T12:00:00Z",
-      "page_modified_datetime": "2026-06-17T17:47:29+10:00",
+      "determination_date": "2026-06-18T12:00:00Z",
+      "page_modified_datetime": "2026-06-18T18:17:03+10:00",
       "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
+      "is_waiver": true,
+      "stage": "Waiver application"
     },
     {
-      "merger_id": "MN-40022",
-      "merger_name": "Integris & related entities - First Focus",
+      "merger_id": "WA-90019",
+      "merger_name": "Jardines - I-MED",
       "determination": "Approved",
-      "determination_date": "2026-06-17T12:00:00Z",
-      "page_modified_datetime": "2026-06-17T16:17:12+10:00",
+      "determination_date": "2026-06-18T12:00:00Z",
+      "page_modified_datetime": "2026-06-18T18:15:11+10:00",
       "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
+      "is_waiver": true,
+      "stage": "Waiver application"
     },
     {
-      "merger_id": "MN-85026",
-      "merger_name": "Banijay Entertainment \u2013 All3Media",
+      "merger_id": "WA-50020",
+      "merger_name": "Envest Group \u2013 MA Insurance Brokers",
       "determination": "Approved",
-      "determination_date": "2026-06-17T12:00:00Z",
-      "page_modified_datetime": "2026-06-17T15:28:13+10:00",
+      "determination_date": "2026-06-18T12:00:00Z",
+      "page_modified_datetime": "2026-06-18T18:12:29+10:00",
       "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
+      "is_waiver": true,
+      "stage": "Waiver application"
     },
     {
-      "merger_id": "MN-30016",
-      "merger_name": "Zurich - Beazley",
+      "merger_id": "WA-05018",
+      "merger_name": "Xylem - TriOS",
       "determination": "Approved",
-      "determination_date": "2026-06-17T12:00:00Z",
-      "page_modified_datetime": "2026-06-17T11:16:39+10:00",
+      "determination_date": "2026-06-18T12:00:00Z",
+      "page_modified_datetime": "2026-06-18T17:12:04+10:00",
       "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
+      "is_waiver": true,
+      "stage": "Waiver application"
     }
   ]
 }

@@ -2,6 +2,27 @@
   "code": "3911",
   "mergers": [
     {
+      "merger_id": "WA-45016",
+      "merger_name": "Northstar \u2013 business assets of Mildura Mazda",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-50018",
+      "merger_name": "Autopact - Freehold interest in commercial land in Ferntree Gully, VIC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55021",
+      "merger_name": "Autopact - Freehold interest in commercial land in Dubbo, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
       "merger_id": "MN-05017",
       "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
       "is_waiver": false,
@@ -58,10 +79,10 @@
       "phase": "Phase 2"
     }
   ],
-  "count": 8,
+  "count": 11,
   "phase_1_count": 2,
   "phase_2_count": 1,
-  "waiver_count": 5,
+  "waiver_count": 8,
   "active_count": 0,
   "phase_duration": {
     "average_days": 31.5,

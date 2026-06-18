@@ -1,6 +1,49 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-15019",
+      "merger_name": "Opal HealthCare - Bethel Aged Care",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-20T12:00:00Z",
+      "determination_publication_date": "2026-06-12T12:00:00Z",
+      "end_of_determination_period": "2026-07-03T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 675 807 477"
+        },
+        {
+          "name": "DPG SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "38 090 007 999"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Bethel Amen Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "077 379 358"
+        },
+        {
+          "name": "Java Dale Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "077 379 367"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "8601",
+          "name": "Aged Care Residential Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/opal-healthcare-bethel-aged-care"
+    },
+    {
       "merger_id": "MN-85026",
       "merger_name": "Banijay Entertainment \u2013 All3Media",
       "status": "Assessment completed",
@@ -184,14 +227,19 @@
     {
       "merger_id": "MN-60015",
       "merger_name": "Stonepeak \u2013 Castrol",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-05-21T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-18T12:00:00Z",
       "end_of_determination_period": "2026-07-06T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
+        {
+          "name": "CPP Investment Board Private Holdings (6) Inc",
+          "identifier_type": null,
+          "identifier": "CBN  764228300"
+        },
         {
           "name": "Motion JVCo Limited",
           "identifier_type": null,
@@ -201,35 +249,30 @@
           "name": "BP Motion Holdings Limited",
           "identifier_type": null,
           "identifier": "UKCRN  16910312"
-        },
-        {
-          "name": "CPP Investment Board Private Holdings (6) Inc",
-          "identifier_type": null,
-          "identifier": "CBN  764228300"
         }
       ],
       "targets": [
         {
-          "name": "Castrol Group Holdings Limited",
-          "identifier_type": null,
-          "identifier": "UKCRN  SC005098"
-        },
-        {
           "name": "Stonepeak Motion PoolingCo Limited",
           "identifier_type": null,
           "identifier": "CBN  764228300"
+        },
+        {
+          "name": "Castrol Group Holdings Limited",
+          "identifier_type": null,
+          "identifier": "UKCRN  SC005098"
         }
       ],
       "other_parties": [
         {
-          "name": "BP p.l.c",
-          "identifier_type": null,
-          "identifier": "UKCRN  00102498"
-        },
-        {
           "name": "Stonepeak Partners LP",
           "identifier_type": null,
           "identifier": "Company Identifier Number: 4958360  Delaware"
+        },
+        {
+          "name": "BP p.l.c",
+          "identifier_type": null,
+          "identifier": "UKCRN  00102498"
         }
       ],
       "anzsic_codes": [
@@ -468,6 +511,60 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/buss-queensland-%E2%80%93-additional-interest-in-duxton-vineyards"
     },
     {
+      "merger_id": "WA-50020",
+      "merger_name": "Envest Group \u2013 MA Insurance Brokers",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-21T12:00:00Z",
+      "determination_publication_date": "2026-06-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "PSC TRANSPORT INSURANCE BROKERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 001 768 190"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MA INSURANCE BROKERS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "14 650 784 204"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "ILLYES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "55 650 781 132"
+        },
+        {
+          "name": "Oyama Direct Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "600 807 654"
+        },
+        {
+          "name": "THE ENVEST GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "73 645 319 820"
+        },
+        {
+          "name": "The Ardonagh Group",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6420",
+          "name": "Auxiliary Insurance Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/envest-group-%E2%80%93-ma-insurance-brokers"
+    },
+    {
       "merger_id": "WA-95020",
       "merger_name": "Grant Thornton Advisors - Grant Thornton Australia",
       "status": "Assessment completed",
@@ -694,6 +791,99 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/zurich-beazley"
+    },
+    {
+      "merger_id": "WA-05018",
+      "merger_name": "Xylem - TriOS",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": "2026-06-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Xylem Analytics Germany GmbH",
+          "identifier_type": null,
+          "identifier": "HRB 145685"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TriOS Mess- und Datentechnik GmbH",
+          "identifier_type": null,
+          "identifier": "HRB 3992"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "2811",
+          "name": "Water Supply"
+        },
+        {
+          "code": "6925",
+          "name": "Scientific Testing and Analysis Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/xylem-trios"
+    },
+    {
+      "merger_id": "WA-15020",
+      "merger_name": "Online Education Services \u2013 South Australian Institute of Business and Technology",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": "2026-06-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Online Education Services Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "75 148 177 959"
+        }
+      ],
+      "targets": [
+        {
+          "name": "South Australian Institute of Business and Technology Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "12 087 769 097"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Swinburne University of Technology",
+          "identifier_type": "ABN",
+          "identifier": "13 628 586 699"
+        },
+        {
+          "name": "Seek Growth Nominees Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "651 929 725"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "8101",
+          "name": "Technical and Vocational Education and Training"
+        },
+        {
+          "code": "8102",
+          "name": "Higher Education"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/online-education-services-%E2%80%93-south-australian-institute-of-business-and-technology"
     },
     {
       "merger_id": "WA-55023",
@@ -1425,6 +1615,54 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/international-parking-group-%E2%80%93-car-park-at-st-john-of-god-murdoch-hospital"
     },
     {
+      "merger_id": "WA-15022",
+      "merger_name": "Vets Central - Morley Veterinary Hospital",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-27T12:00:00Z",
+      "determination_publication_date": "2026-06-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for THE MVH UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "44 887 760 871"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "VETS CENTRAL HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 652 812 256"
+        },
+        {
+          "name": "Vetcentre Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        },
+        {
+          "code": "9539",
+          "name": "Other Personal Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-morley-veterinary-hospital"
+    },
+    {
       "merger_id": "MN-50009",
       "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
       "status": "Under assessment",
@@ -1749,19 +1987,9 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "NATIONAL AUSTRALIA INVESTMENT CAPITAL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "27 073 242 010"
-        },
-        {
           "name": "WESTPAC BANKING CORPORATION",
           "identifier_type": "ABN",
           "identifier": "33 007 457 141"
-        },
-        {
-          "name": "NATIONAL AUSTRALIA BANK LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "12 004 044 937"
         },
         {
           "name": "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
@@ -1769,9 +1997,19 @@
           "identifier": "11 005 357 522"
         },
         {
+          "name": "NATIONAL AUSTRALIA BANK LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "12 004 044 937"
+        },
+        {
           "name": "COMMONWEALTH BANK OF AUSTRALIA",
           "identifier_type": "ABN",
           "identifier": "48 123 123 124"
+        },
+        {
+          "name": "NATIONAL AUSTRALIA INVESTMENT CAPITAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "27 073 242 010"
         }
       ],
       "targets": [
@@ -1827,6 +2065,148 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/anz-banking-group-worldline-australia"
+    },
+    {
+      "merger_id": "WA-50018",
+      "merger_name": "Autopact - Freehold interest in commercial land in Ferntree Gully, VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-03T12:00:00Z",
+      "determination_publication_date": "2026-06-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "AUTOPACT PROPERTY NO. 4 PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "697 186 011"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DOIDGE PROPERTY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "42 167 885 074"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "FERNTREE GULLY AUTO SALES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 156 564 224"
+        },
+        {
+          "name": "AUTOPACT HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "88 679 668 850"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/autopact-freehold-interest-in-commercial-land-in-ferntree-gully-vic"
+    },
+    {
+      "merger_id": "WA-55021",
+      "merger_name": "Autopact - Freehold interest in commercial land in Dubbo, NSW",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-03T12:00:00Z",
+      "determination_publication_date": "2026-06-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "AUTOPACT PROPERTY NO. 3 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "66 687 598 278"
+        }
+      ],
+      "targets": [
+        {
+          "name": "PETER TERRY NOMINEES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "60 081 646 479"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "AUTOPACT HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "88 679 668 850"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/autopact-freehold-interest-in-commercial-land-in-dubbo-nsw"
+    },
+    {
+      "merger_id": "WA-90019",
+      "merger_name": "Jardines - I-MED",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-03T12:00:00Z",
+      "determination_publication_date": "2026-06-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Kent Image Australia Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "698 274 396"
+        }
+      ],
+      "targets": [
+        {
+          "name": "IMAGE HOLDCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "18 623 028 740"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Jardine Matheson Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "8520",
+          "name": "Pathology and Diagnostic Imaging Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/jardines-i-med"
     },
     {
       "merger_id": "MN-40020",
@@ -2301,129 +2681,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/transocean-valaris"
-    },
-    {
-      "merger_id": "MN-40013",
-      "merger_name": "Calvary - Hobart Private Hospital",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-16T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-28T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 079 815 697"
-        }
-      ],
-      "targets": [
-        {
-          "name": "ANZ HOSPITALS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "14 631 014 938"
-        },
-        {
-          "name": "HEALTHSCOPE NEWCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 092 450 274"
-        },
-        {
-          "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "80 146 342 814"
-        },
-        {
-          "name": "HEALTHSCOPE OPERATIONS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 006 405 152"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Keith Crawford (as joint and several receivers)",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Jason Ireland (as joint and several receivers)",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Matthew Caddy (as joint and several receivers)",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Kathy Sozou (as joint and several receivers)",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "8401",
-          "name": "Hospitals (Except Psychiatric Hospitals)"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/calvary-hobart-private-hospital"
-    },
-    {
-      "merger_id": "MN-50021",
-      "merger_name": "Adbri - Eureka Concrete",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-17T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-29T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "E.B. Mawson & Sons Proprietary Limited",
-          "identifier_type": "ABN",
-          "identifier": "14 004 519 617"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Eureka Concrete (Holdings) Pty. Ltd.",
-          "identifier_type": "ABN",
-          "identifier": "14 005 232 342"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Independent Cement And Lime Pty. Limited",
-          "identifier_type": "ABN",
-          "identifier": "49 005 829 550"
-        },
-        {
-          "name": "Adbri Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "15 007 596 018"
-        },
-        {
-          "name": "Hy-Tec Industries (Victoria) Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "43 096 310 520"
-        },
-        {
-          "name": "Central Pre-Mix Concrete Pty. Ltd.",
-          "identifier_type": "ABN",
-          "identifier": "62 008 070 862"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "2033",
-          "name": "Ready-Mixed Concrete Manufacturing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/adbri-eureka-concrete"
     }
   ],
   "page": 7,

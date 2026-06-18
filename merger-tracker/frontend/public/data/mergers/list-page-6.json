@@ -1272,6 +1272,39 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/pt-asian-bulk-logistics-%E2%80%93-engage-marine-0"
     },
     {
+      "merger_id": "WA-45016",
+      "merger_name": "Northstar \u2013 business assets of Mildura Mazda",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-13T12:00:00Z",
+      "determination_publication_date": "2026-06-18T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "NORTHSTAR MILDURA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "94 674 572 260"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SA PROGRESS NO.1 PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "86 602 258 695"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/northstar-%E2%80%93-business-assets-of-mildura-mazda"
+    },
+    {
       "merger_id": "WA-60019",
       "merger_name": "QIC \u2013 CopperString Project assets from Powerlink Queensland",
       "status": "Assessment completed",
@@ -2533,49 +2566,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/genusplus-group-%E2%80%93-mpc-kinetic"
-    },
-    {
-      "merger_id": "MN-15019",
-      "merger_name": "Opal HealthCare - Bethel Aged Care",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-05-20T12:00:00Z",
-      "determination_publication_date": "2026-06-12T12:00:00Z",
-      "end_of_determination_period": "2026-07-03T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "OHCA PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
-        },
-        {
-          "name": "DPG SERVICES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Bethel Amen Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "077 379 358"
-        },
-        {
-          "name": "Java Dale Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "077 379 367"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "8601",
-          "name": "Aged Care Residential Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/opal-healthcare-bethel-aged-care"
     }
   ],
   "page": 6,
