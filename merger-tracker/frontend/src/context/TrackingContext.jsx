@@ -82,12 +82,7 @@ export function TrackingProvider({ children }) {
             .catch(() => null)
         );
 
-        const upcomingRes = fetch(API_ENDPOINTS.upcomingEvents);
-
-        const [mergers, upcomingResponse] = await Promise.all([
-          Promise.all(mergerPromises),
-          upcomingRes
-        ]);
+        const mergers = await Promise.all(mergerPromises);
 
         let allFetchedEvents = [];
 
@@ -116,9 +111,11 @@ export function TrackingProvider({ children }) {
         allFetchedEvents = [...allFetchedEvents, ...timelineEventsFromMergers];
 
         // Synthesize upcoming events directly from individual merger data for tracked mergers.
-        // This ensures determination/consultation due dates appear in the notification panel
-        // even when they fall beyond the 60-day window in upcoming-events.json (e.g. Phase 2
-        // mergers whose determination deadline is months away).
+        // These per-merger files are already fetched above, so we derive determination,
+        // consultation, and competition-concerns due dates from them rather than fetching the
+        // separate upcoming-events.json feed. This avoids an extra network request on every page
+        // (TrackingProvider wraps the whole app) and is not subject to that feed's 60-day window,
+        // so events whose deadline is months away (e.g. Phase 2 determinations) still surface.
         const now = new Date();
         const syntheticUpcomingEvents = [];
         mergers.forEach(merger => {
@@ -187,32 +184,8 @@ export function TrackingProvider({ children }) {
           }
         });
 
-        // Fetch upcoming events
-        if (upcomingResponse.ok) {
-          const data = await upcomingResponse.json();
-          // Filter to only tracked mergers (using Set for O(1) lookup).
-          // Also exclude suspended/ceased mergers since their assessment is no longer active.
-          // Normalize event structure to match timeline events for consistent keys.
-          const filtered = data.events
-            .filter((e) => trackedMergerIdsSet.has(e.merger_id))
-            .filter((e) => e.status !== 'Assessment suspended' && e.status !== 'Assessment ceased')
-            .map((event) => ({
-              ...event,
-              // Ensure display_title is set for consistent key generation
-              display_title: event.display_title || event.event_type_display || event.title,
-              // Preserve original fields too
-              title: event.title || event.event_type_display,
-            }));
-          // Combine with synthetic events; deduplication in trackedEvents handles any overlap
-          // when a date falls within both the 60-day window and the synthetic events list.
-          const allUpcoming = [...filtered, ...syntheticUpcomingEvents];
-          setUpcomingEvents(allUpcoming);
-          allFetchedEvents = [...allFetchedEvents, ...allUpcoming];
-        } else {
-          // Even if upcoming-events.json is unavailable, still surface synthetic events
-          setUpcomingEvents(syntheticUpcomingEvents);
-          allFetchedEvents = [...allFetchedEvents, ...syntheticUpcomingEvents];
-        }
+        setUpcomingEvents(syntheticUpcomingEvents);
+        allFetchedEvents = [...allFetchedEvents, ...syntheticUpcomingEvents];
 
         // Mark all events for newly tracked mergers as seen
         if (newlyTrackedIds.length > 0) {
@@ -243,7 +216,7 @@ export function TrackingProvider({ children }) {
     };
 
     fetchEvents();
-  }, [trackedMergerIds, newlyTrackedIds, trackedMergerIdsSet, newlyTrackedIdsSet]);
+  }, [trackedMergerIds, newlyTrackedIds, newlyTrackedIdsSet]);
 
   // Persist tracked mergers to localStorage
   useEffect(() => {
