@@ -32,10 +32,11 @@ function Navbar() {
   const [showShortcutHints, setShowShortcutHints] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [navMode, setNavMode] = useState('full'); // 'full' | 'condensed' | 'mobile'
+  const [navMode, setNavMode] = useState('full'); // 'full' | 'condensed' | 'mobile' | 'tiny'
   const containerRef = useRef(null);
   const probeFullRef = useRef(null);
   const probeCondensedRef = useRef(null);
+  const probeMobileRef = useRef(null);
   const searchInputRef = useRef(null);
   const mobileSearchInputRef = useRef(null);
   const moreMenuRef = useRef(null);
@@ -46,15 +47,18 @@ function Navbar() {
     const container = containerRef.current;
     const probeFull = probeFullRef.current;
     const probeCondensed = probeCondensedRef.current;
-    if (!container || !probeFull || !probeCondensed) return;
+    const probeMobile = probeMobileRef.current;
+    if (!container || !probeFull || !probeCondensed || !probeMobile) return;
     const check = () => {
       const available = container.clientWidth;
       if (probeFull.offsetWidth <= available) {
         setNavMode('full');
       } else if (probeCondensed.offsetWidth <= available) {
         setNavMode('condensed');
-      } else {
+      } else if (probeMobile.offsetWidth <= available) {
         setNavMode('mobile');
+      } else {
+        setNavMode('tiny');
       }
     };
     check();
@@ -79,7 +83,7 @@ function Navbar() {
   const [prevNavMode, setPrevNavMode] = useState(navMode);
   if (prevNavMode !== navMode) {
     setPrevNavMode(navMode);
-    if (navMode !== 'mobile' && mobileMenuOpen) setMobileMenuOpen(false);
+    if (navMode !== 'mobile' && navMode !== 'tiny' && mobileMenuOpen) setMobileMenuOpen(false);
     if (navMode !== 'condensed' && moreOpen) setMoreOpen(false);
   }
 
@@ -236,11 +240,25 @@ function Navbar() {
             </div>
           </div>
 
+          {/* Mobile probe: brand + search + bell + hamburger */}
+          <div
+            ref={probeMobileRef}
+            aria-hidden="true"
+            className="absolute top-0 left-0 invisible pointer-events-none flex items-center h-16 whitespace-nowrap"
+          >
+            <span className="text-lg font-bold tracking-tight">australian merger tracker</span>
+            <div className="ml-4 flex items-center gap-1">
+              <div className="w-9 h-9" />
+              <div className="w-9 h-9" />
+              <div className="w-9 h-9" />
+            </div>
+          </div>
+
           {/* Left: brand + nav links */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2.5 group">
               <span className="text-lg font-bold text-primary tracking-tight">
-                australian merger tracker
+                {navMode === 'tiny' ? 'amt' : 'australian merger tracker'}
               </span>
             </Link>
 
@@ -331,7 +349,7 @@ function Navbar() {
 
           {/* Right: search, bell, mobile hamburger */}
           <div className="flex items-center gap-1">
-            {navMode !== 'mobile' ? (
+            {navMode !== 'mobile' && navMode !== 'tiny' ? (
               <div className="flex items-center">
                 <div className={`flex items-center transition-all duration-200 ${searchOpen ? 'w-52' : 'w-8'}`}>
                   {searchOpen && (
@@ -388,7 +406,7 @@ function Navbar() {
                 onClose={() => setNotificationPanelOpen(false)}
               />
             </div>
-            {navMode === 'mobile' && (
+            {(navMode === 'mobile' || navMode === 'tiny') && (
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
@@ -408,7 +426,7 @@ function Navbar() {
         </div>
       </div>
 
-      {navMode === 'mobile' && mobileMenuOpen && (
+      {(navMode === 'mobile' || navMode === 'tiny') && mobileMenuOpen && (
         <div id="mobile-menu" className="border-t border-gray-100 bg-white/95 backdrop-blur-lg">
           <div className="px-3 pt-3 pb-1">
             <div className="flex items-center gap-2 bg-gray-100/80 border border-gray-200 rounded-lg px-3 py-2">
