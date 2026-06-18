@@ -5653,7 +5653,7 @@
       "original_notification_datetime": "2026-06-09T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-06-10T15:26:28+10:00",
+      "page_modified_datetime": "2026-06-18T11:37:08+10:00",
       "consultation_response_due_date": "2026-06-17T12:00:00Z",
       "acquirers": [
         {
@@ -5700,7 +5700,7 @@
           "display_title": "Questionnaire - Equans - CV Services Group",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Equans%20-%20CV%20Services%20Group%20-%20Questionnaire.docx",
           "url_gh": "/mergers/MN-05025/Equans - CV Services Group - Questionnaire.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
@@ -17960,6 +17960,159 @@
               "name": "CITY OF PORT PHILLIP",
               "identifier_type": "ABN",
               "identifier": "21 762 977 945"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/adbri-eureka-concrete",
+      "merger_name": "Adbri - Eureka Concrete",
+      "status": "Under assessment",
+      "merger_id": "MN-50021",
+      "effective_notification_datetime": "2026-06-17T12:00:00Z",
+      "original_notification_datetime": "2026-06-17T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-07-29T12:00:00Z",
+      "page_modified_datetime": "2026-06-18T11:32:56+10:00",
+      "consultation_response_due_date": "2026-06-25T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "E.B. Mawson & Sons Proprietary Limited",
+          "identifier_type": "ABN",
+          "identifier": "14 004 519 617"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Eureka Concrete (Holdings) Pty. Ltd.",
+          "identifier_type": "ABN",
+          "identifier": "14 005 232 342"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Independent Cement And Lime Pty. Limited",
+          "identifier_type": "ABN",
+          "identifier": "49 005 829 550"
+        },
+        {
+          "name": "Adbri Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "15 007 596 018"
+        },
+        {
+          "name": "Hy-Tec Industries (Victoria) Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "43 096 310 520"
+        },
+        {
+          "name": "Central Pre-Mix Concrete Pty. Ltd.",
+          "identifier_type": "ABN",
+          "identifier": "62 008 070 862"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2033",
+          "name": "Ready-Mixed Concrete Manufacturing"
+        }
+      ],
+      "merger_description": "Adbri Pty Ltd (**Adbri**) proposes to acquire the business of Eureka Concrete (Holdings) Pty Ltd (**Eureka**), including its ready-mix concrete (**RMX**) operations, quarry assets, plant and equipment, motor vehicles, certain freehold properties, intellectual property, and associated business contracts, together with the transfer of employees.\n\nAdbri supplies cement, RMX and aggregates nationally, including through E.B. Mawson & Sons Pty Ltd (**Mawsons**), Central Pre-Mix Concrete Pty Ltd and Hy-Tec Industries (Victoria) Pty Ltd.\n\nMawsons is an indirect, wholly owned subsidiary of Adbri. Mawsons supplies RMX, quarry products and landscaping products throughout northern and central regional Victoria, and southern regional NSW, including through Lake Boga Quarries Pty Ltd.\n\nEureka supplies RMX and sand quarry products in the areas surrounding Ballarat. The business operates 4 concrete batch plants in Ballarat, Beaufort, Ballan and Maryborough and a sand quarry in Amphitheatre.",
+      "events": [
+        {
+          "date": "2026-06-18T12:00:00Z",
+          "title": "Questionnaire - Adbri - Eureka Concrete",
+          "display_title": "Questionnaire - Adbri - Eureka Concrete",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Eureka%3A%20third-party%20questionnaire%20-%2018%20June%202026_0.docx",
+          "url_gh": "/mergers/MN-50021/Eureka - third-party questionnaire - 18 June 2026_0.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-06-17T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-01083",
+          "merger_name": "Civilmart \u2013 Taylex",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "CTC PRECAST PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "12 614 966 059"
+            }
+          ],
+          "targets": [
+            {
+              "name": "TAYLEX GROUP HOLDING CO PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "50 646 051 578"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-60011",
+          "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "BQC Group Pty Ltd [yet to be incorporated]",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ],
+          "targets": [
+            {
+              "name": "M&T Populin Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "092 648 078"
+            },
+            {
+              "name": "BQC Registrations Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "613 361 041"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-70013",
+          "merger_name": "Ventura Motors \u2013 Crown Coaches",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "VENTURA NEWCO PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "43 694 822 047"
+            }
+          ],
+          "targets": [
+            {
+              "name": "CROWN HYBRID PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "47 004 550 529"
+            },
+            {
+              "name": "CROWN COACHES PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "48 004 882 213"
             }
           ]
         }

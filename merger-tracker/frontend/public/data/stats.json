@@ -1,9 +1,9 @@
 {
-  "total_mergers": 138,
+  "total_mergers": 139,
   "total_waivers": 205,
   "by_status": {
     "Assessment completed": 107,
-    "Under assessment": 30,
+    "Under assessment": 31,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-50021",
+      "merger_name": "Adbri - Eureka Concrete",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-17T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-15018",
       "merger_name": "Complete Air Supply - All Air",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-15T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-30020",
-      "merger_name": "EBOS - Paringa Pet Foods",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-11T12:00:00Z",
       "is_waiver": false
     }
   ],
