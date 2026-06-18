@@ -1,6 +1,7 @@
 import { useState, Fragment } from 'react';
 import LoadingSpinner from '../components/LoadingSpinner';
 import IndustryMergerGroups from '../components/IndustryMergerGroups';
+import IndustryTreemap from '../components/IndustryTreemap';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
@@ -113,20 +114,33 @@ function Industries() {
         url="/industries"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
-      {/* Summary Stats */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-        {[
-          { label: 'Total industries', value: industries.length },
-          { label: 'Total merger reviews', value: totalMergerReviews },
-          { label: 'Avg mergers per industry', value: industries.length > 0 ? (sumOfIndustryCounts / industries.length).toFixed(1) : 0 },
-        ].map(({ label, value }) => (
-          <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
-            <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
-            <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
-              {value}
-            </p>
-          </div>
-        ))}
+      {/* Header: title + compact summary stats */}
+      <header className="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+        <div>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+            Mergers by industry
+          </h1>
+          <p className="mt-1 text-sm text-gray-500 max-w-xl">
+            Which sectors of the economy draw the most ACCC scrutiny.
+          </p>
+        </div>
+        <div className="flex gap-6 shrink-0">
+          {[
+            { label: 'sectors', value: industries.length },
+            { label: 'reviews', value: totalMergerReviews },
+            { label: 'avg / sector', value: industries.length > 0 ? (sumOfIndustryCounts / industries.length).toFixed(1) : 0 },
+          ].map(({ label, value }) => (
+            <div key={label}>
+              <div className="text-2xl font-bold tracking-tight text-gray-900 tabular-nums">{value}</div>
+              <div className="text-xs text-gray-400">{label}</div>
+            </div>
+          ))}
+        </div>
+      </header>
+
+      {/* Industry heatmap */}
+      <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
+        <IndustryTreemap industries={industries} />
       </div>
 
       {/* Search */}
@@ -152,10 +166,11 @@ function Industries() {
         </div>
       </div>
 
-      {/* Results count */}
-      <div className="mb-4">
-        <p className="text-sm text-gray-500">
-          Showing {filteredIndustries.length} of {industries.length} industries
+      {/* Full list heading + results count */}
+      <div className="mb-4 flex items-baseline justify-between gap-3">
+        <h2 className="text-lg font-semibold text-gray-900">All industries</h2>
+        <p className="text-sm text-gray-500 shrink-0">
+          Showing {filteredIndustries.length} of {industries.length}
         </p>
       </div>
 
