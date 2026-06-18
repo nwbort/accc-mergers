@@ -152,8 +152,8 @@ function Industries() {
           >
             Search industries
           </label>
-          <p className="text-sm text-gray-500 shrink-0">
-            Showing {filteredIndustries.length} of {industries.length} industries
+          <p className="text-xs font-medium text-gray-500 uppercase tracking-wider shrink-0">
+            Showing {filteredIndustries.length} of {industries.length}
           </p>
         </div>
         <div className="relative">
