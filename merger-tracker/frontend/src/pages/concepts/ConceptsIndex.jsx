@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaArrowRightLong, FaNewspaper, FaGaugeHigh, FaFeather } from 'react-icons/fa6';
+import { FaArrowRightLong, FaNewspaper, FaGaugeHigh, FaFeather, FaTableCellsLarge, FaLayerGroup, FaRegCalendarCheck } from 'react-icons/fa6';
 import SEO from '../../components/SEO';
 
 // Landing page for the three dashboard design concepts. This is a review
@@ -37,6 +37,36 @@ const CONCEPTS = [
       'A calm, single-column brief. One big sentence states the position, a few large figures follow, then quiet hairline lists of determinations, deadlines and where the deals are. Reads like the cover of a report.',
     preview: 'from-gray-100 via-white to-gray-50',
   },
+  {
+    to: '/concepts/bento',
+    icon: FaTableCellsLarge,
+    name: 'Bento',
+    tag: 'Glanceable',
+    audience: 'The casual visitor — anyone wanting the whole picture in one screen',
+    blurb:
+      'A colour-blocked bento grid of asymmetric tiles, each metric sized to its weight and tinted with the existing phase / outcome palette. Playful and dense without a scroll — the dashboard as a single composed screen.',
+    preview: 'from-primary via-cleared to-phase-1',
+  },
+  {
+    to: '/concepts/atlas',
+    icon: FaLayerGroup,
+    name: 'Atlas',
+    tag: 'Sector-first',
+    audience: 'The economist / policy watcher — where is review concentrating?',
+    blurb:
+      'Leads with place, not time: a treemap-style heatmap of industries packed by deal volume and shaded by intensity. Click a sector to drill in. Surfaces which corners of the economy the ACCC is busiest in.',
+    preview: 'from-primary-dark via-primary to-primary/40',
+  },
+  {
+    to: '/concepts/agenda',
+    icon: FaRegCalendarCheck,
+    name: 'Agenda',
+    tag: 'Calendar',
+    audience: 'The practitioner — managing live matters against a statutory clock',
+    blurb:
+      'A deadlines diary: a two-week strip showing where obligations fall, then a grouped agenda of every upcoming event by day. Answers "what do I need to watch, and when?" first.',
+    preview: 'from-accent-dark via-accent to-emerald-300',
+  },
 ];
 
 function ConceptsIndex() {
@@ -46,7 +76,7 @@ function ConceptsIndex() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
         <header className="mb-10 max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-widest text-accent-dark mb-2">Design exploration</p>
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">Three dashboard concepts</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900">Six dashboard concepts</h1>
           <p className="mt-3 text-gray-500 leading-relaxed">
             Each takes the same live ACCC data in a different direction, aimed at a different reader.
             They live alongside the current dashboard at <Link to="/" className="text-primary hover:underline">/</Link> so nothing is replaced —

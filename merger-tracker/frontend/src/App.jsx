@@ -25,6 +25,9 @@ import ConceptsIndex from './pages/concepts/ConceptsIndex';
 import DashboardPulse from './pages/concepts/DashboardPulse';
 import DashboardCommand from './pages/concepts/DashboardCommand';
 import DashboardClarity from './pages/concepts/DashboardClarity';
+import DashboardBento from './pages/concepts/DashboardBento';
+import DashboardAtlas from './pages/concepts/DashboardAtlas';
+import DashboardAgenda from './pages/concepts/DashboardAgenda';
 import NotFound from './pages/NotFound';
 
 function AppContent() {
@@ -57,6 +60,9 @@ function AppContent() {
             <Route path="/concepts/pulse" element={<DashboardPulse />} />
             <Route path="/concepts/command" element={<DashboardCommand />} />
             <Route path="/concepts/clarity" element={<DashboardClarity />} />
+            <Route path="/concepts/bento" element={<DashboardBento />} />
+            <Route path="/concepts/atlas" element={<DashboardAtlas />} />
+            <Route path="/concepts/agenda" element={<DashboardAgenda />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

@@ -8,6 +8,9 @@ const CONCEPTS = [
   { key: 'pulse', label: 'Pulse', to: '/concepts/pulse' },
   { key: 'command', label: 'Command Deck', to: '/concepts/command' },
   { key: 'clarity', label: 'Clarity', to: '/concepts/clarity' },
+  { key: 'bento', label: 'Bento', to: '/concepts/bento' },
+  { key: 'atlas', label: 'Atlas', to: '/concepts/atlas' },
+  { key: 'agenda', label: 'Agenda', to: '/concepts/agenda' },
 ];
 
 function ConceptSwitcher({ current, dark = false }) {
