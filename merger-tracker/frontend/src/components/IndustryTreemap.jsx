@@ -34,7 +34,6 @@ function IndustryTreemap({
   if (cells.length === 0) return null;
 
   const maxCount = Math.max(...cells.map((i) => i.merger_count), 1);
-  const hiddenOnMobile = cells.length - mobileLimit;
 
   return (
     <div>
@@ -67,13 +66,6 @@ function IndustryTreemap({
           );
         })}
       </div>
-
-      {/* Mobile hint: the long tail lives in the table below */}
-      {hiddenOnMobile > 0 && (
-        <div className="mt-3 sm:hidden text-right text-xs text-gray-400">
-          +{hiddenOnMobile} more below
-        </div>
-      )}
     </div>
   );
 }

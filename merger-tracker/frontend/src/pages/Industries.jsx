@@ -145,12 +145,17 @@ function Industries() {
 
       {/* Search */}
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
-        <label
-          htmlFor="search"
-          className="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2"
-        >
-          Search industries
-        </label>
+        <div className="flex items-baseline justify-between gap-3 mb-2">
+          <label
+            htmlFor="search"
+            className="text-xs font-medium text-gray-500 uppercase tracking-wider"
+          >
+            Search industries
+          </label>
+          <p className="text-sm text-gray-500 shrink-0">
+            Showing {filteredIndustries.length} of {industries.length} industries
+          </p>
+        </div>
         <div className="relative">
           <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
@@ -164,13 +169,6 @@ function Industries() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-      </div>
-
-      {/* Results count */}
-      <div className="mb-4">
-        <p className="text-sm text-gray-500">
-          Showing {filteredIndustries.length} of {industries.length} industries
-        </p>
       </div>
 
       {/* Industries Table */}
