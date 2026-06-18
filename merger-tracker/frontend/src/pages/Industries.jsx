@@ -166,11 +166,10 @@ function Industries() {
         </div>
       </div>
 
-      {/* Full list heading + results count */}
-      <div className="mb-4 flex items-baseline justify-between gap-3">
-        <h2 className="text-lg font-semibold text-gray-900">All industries</h2>
-        <p className="text-sm text-gray-500 shrink-0">
-          Showing {filteredIndustries.length} of {industries.length}
+      {/* Results count */}
+      <div className="mb-4">
+        <p className="text-sm text-gray-500">
+          Showing {filteredIndustries.length} of {industries.length} industries
         </p>
       </div>
 

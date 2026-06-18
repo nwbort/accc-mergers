@@ -68,22 +68,12 @@ function IndustryTreemap({
         })}
       </div>
 
-      {/* Legend + mobile hint */}
-      <div className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-gray-400">
-        <span>Fewer deals</span>
-        <span className="flex gap-1" aria-hidden="true">
-          <span className="h-3 w-6 rounded bg-primary/10" />
-          <span className="h-3 w-6 rounded bg-primary/25" />
-          <span className="h-3 w-6 rounded bg-primary/60" />
-          <span className="h-3 w-6 rounded bg-primary" />
-        </span>
-        <span>More deals</span>
-        {hiddenOnMobile > 0 && (
-          <span className="sm:hidden ml-auto text-gray-400">
-            +{hiddenOnMobile} more below
-          </span>
-        )}
-      </div>
+      {/* Mobile hint: the long tail lives in the table below */}
+      {hiddenOnMobile > 0 && (
+        <div className="mt-3 sm:hidden text-right text-xs text-gray-400">
+          +{hiddenOnMobile} more below
+        </div>
+      )}
     </div>
   );
 }
