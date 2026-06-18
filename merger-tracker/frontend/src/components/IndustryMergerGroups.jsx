@@ -28,7 +28,7 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
         const style = GROUP_STYLES[group.key] || GROUP_STYLES['Phase 1'];
         return (
           <section key={group.key}>
-            <div className="flex items-center gap-2.5 mb-3 pb-2 border-b border-gray-100">
+            <div className={`flex items-center gap-2.5 mb-3 pb-2 border-b border-gray-100${compact ? ' sticky top-0 bg-gray-100 z-10' : ''}`}>
               <span className={`h-4 w-1 rounded-full ${style.bar}`} aria-hidden="true" />
               <h3 className="text-sm font-semibold text-gray-900">{group.label}</h3>
               <span className={`inline-flex items-center justify-center min-w-[1.375rem] px-1.5 h-5 rounded-full text-[11px] font-semibold ${style.pill}`}>
