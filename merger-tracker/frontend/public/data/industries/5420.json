@@ -2,6 +2,13 @@
   "code": "5420",
   "mergers": [
     {
+      "merger_id": "MN-60022",
+      "merger_name": "Autodesk - MaintainX",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
       "merger_id": "WA-30019",
       "merger_name": "KKR \u2013 Fresha.com",
       "is_waiver": true,
@@ -191,11 +198,11 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 27,
-  "phase_1_count": 9,
+  "count": 28,
+  "phase_1_count": 10,
   "phase_2_count": 0,
   "waiver_count": 18,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 32.111111111111114,
     "median_days": 27,

@@ -20827,6 +20827,132 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/autodesk-maintainx",
+      "merger_name": "Autodesk - MaintainX",
+      "status": "Under assessment",
+      "merger_id": "MN-60022",
+      "effective_notification_datetime": "2026-06-19T12:00:00Z",
+      "original_notification_datetime": "2026-06-19T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-07-31T12:00:00Z",
+      "page_modified_datetime": "2026-06-19T16:19:51+10:00",
+      "consultation_response_due_date": "2026-06-26T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Autodesk, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "MaintainX, Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "merger_description": "Autodesk, Inc. (**Autodesk**) proposes to acquire 100% of the share capital in MaintainX, Inc. (**MaintainX**).\n\nAutodesk is a software company which supplies software products in the architecture, engineering, construction, manufacturing, media, and entertainment industries. Autodesk\u2019s core products include Revit, Fusion and AutoCAD, which allow for computer-aided design, drafting and management.\n\nMaintainX is a software company which supplies a computerised maintenance management system that assists companies to manage the day-to-day work of maintaining physical assets. MaintainX\u2019s platform includes enterprise asset management software, which enables the management, tracking and organisation of assets across their entire lifecycle.",
+      "events": [
+        {
+          "date": "2026-06-19T12:00:00Z",
+          "title": "Autodesk - MaintainX - Questionnaire",
+          "display_title": "Autodesk - MaintainX - Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Autodesk%20-%20MaintainX%20-%20Questionnaire_0.docx",
+          "url_gh": "/mergers/MN-60022/Autodesk - MaintainX - Questionnaire_0.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-06-19T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-75010",
+          "merger_name": "Zendesk \u2013 Forethought",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Zendesk, Inc.",
+              "identifier_type": null,
+              "identifier": "EIN 264411091"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Forethought Technologies, Inc.",
+              "identifier_type": null,
+              "identifier": ""
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-25003",
+          "merger_name": "Delinea (TPG) - StrongDM",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Delinea Inc.",
+              "identifier_type": null,
+              "identifier": "Delaware corporation file number  3777797"
+            }
+          ],
+          "targets": [
+            {
+              "name": "StrongDM, Inc",
+              "identifier_type": null,
+              "identifier": "CIK  0001637806"
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-01074",
+          "merger_name": "GE Healthcare \u2013 Intelerad",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "GE Healthcare Technologies Inc.",
+              "identifier_type": null,
+              "identifier": "6772877"
+            }
+          ],
+          "targets": [
+            {
+              "name": "Intelerad Holdings ULC",
+              "identifier_type": null,
+              "identifier": "703693275"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/insurance-australia-group-%E2%80%93-rac-insurance",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "status": "Under assessment",

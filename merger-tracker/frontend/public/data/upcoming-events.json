@@ -94,6 +94,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-06-26T12:00:00Z",
+      "merger_id": "MN-60022",
+      "merger_name": "Autodesk - MaintainX",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-06-19T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-06-26T12:00:00Z",
       "merger_id": "MN-75023",
       "merger_name": "Bertelsmann Music Group - Concord",
       "status": "Under assessment",
@@ -383,6 +393,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-07-31T12:00:00Z",
+      "merger_id": "MN-60022",
+      "merger_name": "Autodesk - MaintainX",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-06-19T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-08-03T12:00:00Z",
       "merger_id": "MN-50009",
       "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
@@ -401,6 +421,6 @@
       "effective_notification_datetime": "2026-02-20T12:00:00Z"
     }
   ],
-  "count": 40,
+  "count": 42,
   "days_ahead": 60
 }
