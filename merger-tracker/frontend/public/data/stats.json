@@ -1,9 +1,9 @@
 {
-  "total_mergers": 139,
+  "total_mergers": 140,
   "total_waivers": 213,
   "by_status": {
     "Assessment completed": 108,
-    "Under assessment": 30,
+    "Under assessment": 31,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-75023",
+      "merger_name": "Bertelsmann Music Group - Concord",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-18T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-50021",
       "merger_name": "Adbri - Eureka Concrete",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-16T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-10018",
-      "merger_name": "CSR - Complete Plaster",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-15T12:00:00Z",
       "is_waiver": false
     }
   ],
