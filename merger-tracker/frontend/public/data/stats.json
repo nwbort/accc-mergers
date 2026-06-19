@@ -1,9 +1,9 @@
 {
-  "total_mergers": 140,
+  "total_mergers": 141,
   "total_waivers": 213,
   "by_status": {
     "Assessment completed": 108,
-    "Under assessment": 31,
+    "Under assessment": 32,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -60,6 +60,10 @@
       "count": 15
     },
     {
+      "name": "Accommodation",
+      "count": 12
+    },
+    {
       "name": "Liquor Retailing",
       "count": 11
     },
@@ -70,13 +74,17 @@
     {
       "name": "Car Retailing",
       "count": 11
-    },
-    {
-      "name": "Accommodation",
-      "count": 11
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-01103",
+      "merger_name": "Discovery Holiday Parks \u2013 four Breeze Holiday Parks",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-18T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-75023",
       "merger_name": "Bertelsmann Music Group - Concord",
@@ -104,14 +112,6 @@
     {
       "merger_id": "MN-25019",
       "merger_name": "Transocean - Valaris",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-16T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-40013",
-      "merger_name": "Calvary - Hobart Private Hospital",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-16T12:00:00Z",
