@@ -23,7 +23,7 @@ def _active_questionnaire_filenames(merger: dict) -> set:
     return {
         Path(e['url_gh']).name
         for e in merger.get('events', [])
-        if e.get('url_gh') and 'Questionnaire' in e.get('title', '')
+        if e.get('url_gh') and 'questionnaire' in e.get('title', '').lower()
     }
 
 
