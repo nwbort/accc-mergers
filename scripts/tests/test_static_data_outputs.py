@@ -471,3 +471,45 @@ class TestQuestionnairesGenerate:
         }
         n = questionnaires.generate(q_data, tmp_path)
         assert n == 0
+
+    def test_filters_all_questionnaires_to_active_events(self, tmp_path):
+        q_data = {
+            'MN-0001': {
+                'deadline': '26 Jun 2026',
+                'deadline_iso': '2026-06-26',
+                'file_name': 'Q_0.pdf',
+                'questions': [{'number': 1, 'text': 'Q?'}],
+                'questions_count': 1,
+                'all_questionnaires': [
+                    {
+                        'deadline': '26 Jun 2026',
+                        'deadline_iso': '2026-06-26',
+                        'file_name': 'Q_0.pdf',
+                        'questions': [{'number': 1, 'text': 'Q?'}],
+                        'questions_count': 1,
+                    },
+                    {
+                        'deadline': '25 Jun 2026',
+                        'deadline_iso': '2026-06-25',
+                        'file_name': 'Q.pdf',
+                        'questions': [{'number': 1, 'text': 'Q?'}],
+                        'questions_count': 1,
+                    },
+                ],
+            },
+        }
+        mergers = [
+            {
+                'merger_id': 'MN-0001',
+                'events': [
+                    {
+                        'title': 'Questionnaire',
+                        'url_gh': '/mergers/MN-0001/Q_0.pdf',
+                    },
+                ],
+            }
+        ]
+        questionnaires.generate(q_data, tmp_path, mergers=mergers)
+        with open(tmp_path / 'questionnaires' / 'MN-0001.json') as f:
+            data = json.load(f)
+        assert 'all_questionnaires' not in data, "Removed event's questionnaire should be filtered out"
