@@ -1,6 +1,6 @@
 {
   "total_mergers": 142,
-  "total_waivers": 213,
+  "total_waivers": 215,
   "by_status": {
     "Assessment completed": 108,
     "Under assessment": 33,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 199,
+    "Approved": 201,
     "Not approved": 14
   },
   "phase_duration": {
@@ -37,7 +37,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 42
+      "count": 43
     },
     {
       "name": "Computer System Design and Related Services",
@@ -61,7 +61,7 @@
     },
     {
       "name": "Accommodation",
-      "count": 12
+      "count": 13
     },
     {
       "name": "Liquor Retailing",
@@ -120,6 +120,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-85032",
+      "merger_name": "Ares (Bolt S.p.A.) \u2013 Investment in Plenitude",
+      "determination": "Approved",
+      "determination_date": "2026-06-19T12:00:00Z",
+      "page_modified_datetime": "2026-06-19T17:22:38+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-60021",
+      "merger_name": "Oscars Group \u2013 Hotel Diplomat in Potts Point, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-06-19T12:00:00Z",
+      "page_modified_datetime": "2026-06-19T17:20:06+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-50018",
       "merger_name": "Autopact - Freehold interest in commercial land in Ferntree Gully, VIC",
       "determination": "Approved",
@@ -155,26 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-18T12:00:00Z",
       "page_modified_datetime": "2026-06-18T18:15:11+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-50020",
-      "merger_name": "Envest Group \u2013 MA Insurance Brokers",
-      "determination": "Approved",
-      "determination_date": "2026-06-18T12:00:00Z",
-      "page_modified_datetime": "2026-06-18T18:12:29+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-05018",
-      "merger_name": "Xylem - TriOS",
-      "determination": "Approved",
-      "determination_date": "2026-06-18T12:00:00Z",
-      "page_modified_datetime": "2026-06-18T17:12:04+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

@@ -1,6 +1,121 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-15018",
+      "merger_name": "Complete Air Supply - All Air",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-16T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-28T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "COMPLETE AIR SUPPLY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "27 050 611 473"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ALL AIR DUCT AND FITTINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "63 131 353 298"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "TURNER ENGINEERING W.A. PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 009 381 373"
+        },
+        {
+          "name": "Australian Airconditioning Distributors Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "43 139 947 363"
+        },
+        {
+          "name": "QUALITY AIR EQUIPMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "42 095 082 689"
+        },
+        {
+          "name": "KIRBY HVAC&R PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "42 624 910 041"
+        },
+        {
+          "name": "HVAC CONSOLIDATED PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "26 162 828 971"
+        },
+        {
+          "name": "Quality Air Equipment (W.A) Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "66 145 765 680"
+        },
+        {
+          "name": "BEIJER REF AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "62 133 913 283"
+        },
+        {
+          "name": "AIRCONDITIONING DIRECT PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "48 100 354 461"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2452",
+          "name": "Fixed Space Heating, Cooling and Ventilation Equipment Manufacturing"
+        },
+        {
+          "code": "3494",
+          "name": "Other Electrical and Electronic Goods Wholesaling"
+        },
+        {
+          "code": "3499",
+          "name": "Other Machinery and Equipment Wholesaling n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/complete-air-supply-all-air"
+    },
+    {
+      "merger_id": "MN-25019",
+      "merger_name": "Transocean - Valaris",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-16T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-28T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Transocean Limited",
+          "identifier_type": null,
+          "identifier": "IRS Employer Identification Number  980599916"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Valaris Limited",
+          "identifier_type": null,
+          "identifier": "Bermuda number  56245"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1090",
+          "name": "Other Mining Support Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/transocean-valaris"
+    },
+    {
       "merger_id": "MN-40013",
       "merger_name": "Calvary - Hobart Private Hospital",
       "status": "Under assessment",
