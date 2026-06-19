@@ -141,7 +141,7 @@ def main():
 
     if questionnaire_data:
         print("\nGenerating questionnaire files...")
-        q_count = questionnaires.generate(questionnaire_data, OUTPUT_DIR)
+        q_count = questionnaires.generate(questionnaire_data, OUTPUT_DIR, mergers=enriched)
         print(f"✓ Generated {q_count} questionnaire files in {OUTPUT_DIR / 'questionnaires'}")
 
     if nocc_data:
