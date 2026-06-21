@@ -307,32 +307,6 @@ function MergerDetail() {
         {/* Determination explanation (waivers and Phase 1 approved notifications) */}
         <DeterminationExplanationSection merger={merger} />
 
-        {/* Parties */}
-        <div className={`grid grid-cols-1 ${merger.other_parties && merger.other_parties.length > 0 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4 mb-6`}>
-          {renderPartyList(merger.acquirers, 'acquirers', 'Acquirers')}
-          {renderPartyList(merger.targets, 'targets', 'Targets')}
-          {merger.other_parties && merger.other_parties.length > 0 &&
-            renderPartyList(merger.other_parties, 'other_parties', 'Other parties')
-          }
-        </div>
-
-        {/* Description */}
-        {merger.merger_description && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6">
-            <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
-              Description
-            </h2>
-            <div className={PROSE_MARKDOWN}>
-              <ReactMarkdown>{merger.merger_description}</ReactMarkdown>
-            </div>
-          </div>
-        )}
-
-        {/* Questionnaire */}
-        {merger.has_questionnaire && (
-          <QuestionnaireSection mergerId={merger.merger_id} events={merger.events} />
-        )}
-
         {/* Commentary */}
         {merger.comments && merger.comments.length > 0 && (
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50/50 rounded-2xl border border-blue-100/60 shadow-card mb-6 overflow-hidden divide-y divide-blue-100/60">
@@ -382,6 +356,32 @@ function MergerDetail() {
               </div>
             ))}
           </div>
+        )}
+
+        {/* Parties */}
+        <div className={`grid grid-cols-1 ${merger.other_parties && merger.other_parties.length > 0 ? 'md:grid-cols-3' : 'md:grid-cols-2'} gap-4 mb-6`}>
+          {renderPartyList(merger.acquirers, 'acquirers', 'Acquirers')}
+          {renderPartyList(merger.targets, 'targets', 'Targets')}
+          {merger.other_parties && merger.other_parties.length > 0 &&
+            renderPartyList(merger.other_parties, 'other_parties', 'Other parties')
+          }
+        </div>
+
+        {/* Description */}
+        {merger.merger_description && (
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6">
+            <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+              Description
+            </h2>
+            <div className={PROSE_MARKDOWN}>
+              <ReactMarkdown>{merger.merger_description}</ReactMarkdown>
+            </div>
+          </div>
+        )}
+
+        {/* Questionnaire */}
+        {merger.has_questionnaire && (
+          <QuestionnaireSection mergerId={merger.merger_id} events={merger.events} />
         )}
 
         {/* Industries */}
