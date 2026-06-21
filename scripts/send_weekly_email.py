@@ -168,12 +168,12 @@ def build_text_email(digest: dict) -> str:
         "-------",
         f"New deals notified   : {len(digest['new_deals_notified'])}",
         f"Cleared              : {len(digest['deals_cleared'])}",
-        f"Referred to phase 2  : {len(referred)}",
-        f"Declined             : {len(digest['deals_declined'])}",
     ]
     if ceased:
         lines.append(f"Assessment ceased    : {len(ceased)}")
     lines += [
+        f"Referred to phase 2  : {len(referred)}",
+        f"Declined             : {len(digest['deals_declined'])}",
         f"Ongoing phase 1      : {len(digest['ongoing_phase_1'])}",
         f"Ongoing phase 2      : {len(digest['ongoing_phase_2'])}",
         "",
@@ -205,6 +205,15 @@ def build_text_email(digest: dict) -> str:
     lines.append("")
     lines.append("")
 
+    if ceased:
+        ceased_rows = [
+            [m.get("merger_name", m["merger_id"]), format_date(m.get("ceased_date")), m.get("stage") or "N/A"]
+            for m in ceased
+        ]
+        lines.append(_text_section("ASSESSMENT CEASED", ["Merger", "Date ceased", "Stage"], ceased_rows, ""))
+        lines.append("")
+        lines.append("")
+
     referred_rows = [
         [m.get("merger_name", m["merger_id"]), format_date(m.get("phase_1_determination_date"))]
         for m in referred
@@ -220,15 +229,6 @@ def build_text_email(digest: dict) -> str:
     lines.append(_text_section("MERGERS DECLINED", ["Merger", "Date"], declined_rows, "No mergers declined this week."))
     lines.append("")
     lines.append("")
-
-    if ceased:
-        ceased_rows = [
-            [m.get("merger_name", m["merger_id"]), format_date(m.get("ceased_date")), m.get("stage") or "N/A"]
-            for m in ceased
-        ]
-        lines.append(_text_section("ASSESSMENT CEASED", ["Merger", "Date ceased", "Stage"], ceased_rows, ""))
-        lines.append("")
-        lines.append("")
 
     phase1_rows = [
         [m.get("merger_name", m["merger_id"]), format_date(m.get("effective_notification_datetime"))]
@@ -563,9 +563,9 @@ def build_html_email(digest: dict) -> str:
     stat_cards = (
         stat_card(new_count, "New deals", COLORS["new_merger"], "new-mergers")
         + stat_card(cleared_count, "Cleared", COLORS["cleared"], "mergers-approved")
+        + (stat_card(ceased_count, "Assessment ceased", COLORS["ceased"], "mergers-ceased") if ceased_count > 0 else "")
         + stat_card(referred_count, "Referred to phase\u00a02", COLORS["phase_2_referral"], "mergers-referred")
         + stat_card(declined_count, "Declined", COLORS["declined"], "mergers-declined")
-        + (stat_card(ceased_count, "Assessment ceased", COLORS["ceased"], "mergers-ceased") if ceased_count > 0 else "")
         + stat_card(phase1_count, "Ongoing phase\u00a01", COLORS["phase_1"], "ongoing-phase-1")
         + stat_card(phase2_count, "Ongoing phase\u00a02", COLORS["phase_2"], "ongoing-phase-2")
     )
@@ -573,9 +573,9 @@ def build_html_email(digest: dict) -> str:
     sections = (
         build_new_mergers(digest["new_deals_notified"])
         + build_cleared(digest["deals_cleared"])
+        + (build_ceased(ceased_mergers) if ceased_mergers else "")
         + build_referred_to_phase_2(digest.get("deals_referred_to_phase_2") or [])
         + build_declined(digest["deals_declined"])
-        + (build_ceased(ceased_mergers) if ceased_mergers else "")
         + build_phase_section(
             digest["ongoing_phase_1"], "phase_1",
             "Ongoing \u2013 phase 1 \u2013 initial assessment"

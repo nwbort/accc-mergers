@@ -473,6 +473,28 @@ function Digest() {
             getDeterminationPdf={getDeterminationPdf}
           />
 
+          {ceasedMergers.length > 0 && (
+            <DigestSection
+              id="mergers-ceased"
+              title="Assessment ceased"
+              emptyMessage="No assessments ceased this week"
+              colorKey={DIGEST_COLOR_KEYS.CEASED}
+              mergers={ceasedMergers}
+              columns={['Merger', 'Date ceased', 'Stage']}
+              renderRow={(merger) => (
+                <tr key={merger.merger_id} className="relative hover:bg-ceased-pale/40 transition-colors">
+                  <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.CEASED} />
+                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                    {merger.ceased_date ? formatDate(merger.ceased_date) : 'N/A'}
+                  </td>
+                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                    {merger.stage || 'N/A'}
+                  </td>
+                </tr>
+              )}
+            />
+          )}
+
           <DigestSection
             id="mergers-referred"
             title="Mergers referred to phase 2"
@@ -512,28 +534,6 @@ function Digest() {
               </tr>
             )}
           />
-
-          {ceasedMergers.length > 0 && (
-            <DigestSection
-              id="mergers-ceased"
-              title="Assessment ceased"
-              emptyMessage="No assessments ceased this week"
-              colorKey={DIGEST_COLOR_KEYS.CEASED}
-              mergers={ceasedMergers}
-              columns={['Merger', 'Date ceased', 'Stage']}
-              renderRow={(merger) => (
-                <tr key={merger.merger_id} className="relative hover:bg-ceased-pale/40 transition-colors">
-                  <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.CEASED} />
-                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                    {merger.ceased_date ? formatDate(merger.ceased_date) : 'N/A'}
-                  </td>
-                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
-                    {merger.stage || 'N/A'}
-                  </td>
-                </tr>
-              )}
-            />
-          )}
 
           <DigestSection
             id="ongoing-phase-1"
