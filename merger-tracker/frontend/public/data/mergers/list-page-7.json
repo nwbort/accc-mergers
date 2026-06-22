@@ -1903,6 +1903,63 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hillhouse-mgi-dobbyn-carafa"
     },
     {
+      "merger_id": "WA-15023",
+      "merger_name": "American Industrial Partners \u2013 Honeywell\u2019s Warehouse and Workflow Solutions business",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-29T12:00:00Z",
+      "determination_publication_date": "2026-06-22T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "AIPCF VIII Global Corp Holding L.P.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ibiza Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "5162635"
+        },
+        {
+          "name": "Honeywell Intelligrated GmbH",
+          "identifier_type": null,
+          "identifier": "HRB 204633"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "AIP, LLC",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Honeywell International Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2429",
+          "name": "Other Electronic Equipment Manufacturing"
+        },
+        {
+          "code": "2491",
+          "name": "Lifting and Material Handling Equipment Manufacturing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/american-industrial-partners-%E2%80%93-honeywell%E2%80%99s-warehouse-and-workflow-solutions-business"
+    },
+    {
       "merger_id": "WA-25027",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Arthouse Hotel",
       "status": "Assessment completed",
@@ -2673,39 +2730,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/equans-cv-services-group"
-    },
-    {
-      "merger_id": "MN-25029",
-      "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-09T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-21T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 004 189 708"
-        }
-      ],
-      "targets": [
-        {
-          "name": "MINTO MARKETPLACE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 157 762 000"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "4110",
-          "name": "Supermarket and Grocery Stores"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-minto-nsw"
     }
   ],
   "page": 7,

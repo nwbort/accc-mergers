@@ -1,6 +1,6 @@
 {
   "total_mergers": 144,
-  "total_waivers": 218,
+  "total_waivers": 219,
   "by_status": {
     "Assessment completed": 110,
     "Under assessment": 33,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 204,
+    "Approved": 205,
     "Not approved": 14
   },
   "phase_duration": {
@@ -44,11 +44,11 @@
       "count": 37
     },
     {
-      "name": "Software Publishing",
-      "count": 28
+      "name": "Other Auxiliary Finance and Investment Services",
+      "count": 29
     },
     {
-      "name": "Other Auxiliary Finance and Investment Services",
+      "name": "Software Publishing",
       "count": 28
     },
     {
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-15023",
+      "merger_name": "American Industrial Partners \u2013 Honeywell\u2019s Warehouse and Workflow Solutions business",
+      "determination": "Approved",
+      "determination_date": "2026-06-22T12:00:00Z",
+      "page_modified_datetime": "2026-06-22T18:00:48+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-25027",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Arthouse Hotel",
       "determination": "Approved",
@@ -168,16 +178,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-85032",
-      "merger_name": "Ares (Bolt S.p.A.) \u2013 Investment in Plenitude",
-      "determination": "Approved",
-      "determination_date": "2026-06-19T12:00:00Z",
-      "page_modified_datetime": "2026-06-19T17:22:38+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
