@@ -2742,6 +2742,14 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-06-01",
+        "business_days": 14,
+        "calendar_days": 21,
+        "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Arthouse Hotel",
+        "merger_id": "WA-25027",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-06-03",
         "business_days": 10,
         "calendar_days": 15,
@@ -2784,17 +2792,17 @@
     ],
     "stats": {
       "average": 12.0,
-      "median": 11,
+      "median": 11.0,
       "min": 2,
       "max": 25,
-      "count": 217
+      "count": 218
     },
     "calendar_stats": {
       "average": 18.0,
-      "median": 17,
+      "median": 17.0,
       "min": 2,
       "max": 39,
-      "count": 217
+      "count": 218
     }
   },
   "monthly_volume": {
@@ -2832,7 +2840,7 @@
       48,
       45,
       59,
-      5
+      6
     ]
   }
 }

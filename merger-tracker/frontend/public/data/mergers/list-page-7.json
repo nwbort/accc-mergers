@@ -1903,6 +1903,59 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hillhouse-mgi-dobbyn-carafa"
     },
     {
+      "merger_id": "WA-25027",
+      "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Arthouse Hotel",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-01T12:00:00Z",
+      "determination_publication_date": "2026-06-22T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "REDCAPE HOTEL GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 139 067 244"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Alsimas Pty Limited",
+          "identifier_type": "ACN",
+          "identifier": "650 101 778"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "REDCAPE HOSPITALITY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "34 619 297 228"
+        },
+        {
+          "name": "MA REDCAPE HOTEL FUND RE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "87 610 990 004"
+        },
+        {
+          "name": "MA FINANCIAL GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "68 142 008 428"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4511",
+          "name": "Cafes and Restaurants"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ma-financial-group-redcape-fund-%E2%80%93-the-arthouse-hotel"
+    },
+    {
       "merger_id": "MN-20023",
       "merger_name": "Sony Music - Recognition Music",
       "status": "Under assessment",
@@ -2653,49 +2706,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-minto-nsw"
-    },
-    {
-      "merger_id": "MN-30020",
-      "merger_name": "EBOS - Paringa Pet Foods",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-11T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-23T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Pet Care Distributors Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "58 125 265 769"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Paringa Pet Foods Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "20 142 418 915"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "EBOS Group Limited",
-          "identifier_type": "ACN",
-          "identifier": "166 840 973"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "1192",
-          "name": "Prepared Animal and Bird Feed Manufacturing"
-        },
-        {
-          "code": "3739",
-          "name": "Other Goods Wholesaling n.e.c."
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ebos-paringa-pet-foods"
     }
   ],
   "page": 7,
