@@ -1017,21 +1017,30 @@
         "merger_id": "MN-05014",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-05-26",
+        "business_days": 17,
+        "calendar_days": 27,
+        "merger_name": "Henkel \u2013 Olaplex",
+        "merger_id": "MN-80016",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 19.6,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 148,
-      "count": 109
+      "count": 110
     },
     "calendar_stats": {
       "average": 29.7,
-      "median": 26,
+      "median": 26.0,
       "min": 21,
       "max": 235,
-      "count": 109
+      "count": 110
     }
   },
   "waiver_duration": {
