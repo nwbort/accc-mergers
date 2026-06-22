@@ -1,6 +1,6 @@
 {
   "total_mergers": 144,
-  "total_waivers": 219,
+  "total_waivers": 220,
   "by_status": {
     "Assessment completed": 110,
     "Under assessment": 33,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 205,
+    "Approved": 206,
     "Not approved": 14
   },
   "phase_duration": {
@@ -37,7 +37,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 43
+      "count": 44
     },
     {
       "name": "Computer System Design and Related Services",
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-75025",
+      "merger_name": "M&G Asia Property Fund \u2013 Stockland Coopers Paddock and Willawong Distribution Centre",
+      "determination": "Approved",
+      "determination_date": "2026-06-22T12:00:00Z",
+      "page_modified_datetime": "2026-06-22T18:52:07+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-15023",
       "merger_name": "American Industrial Partners \u2013 Honeywell\u2019s Warehouse and Workflow Solutions business",
       "determination": "Approved",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-22T12:00:00Z",
       "page_modified_datetime": "2026-06-22T11:09:40+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-05014",
-      "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-      "determination": "Approved",
-      "determination_date": "2026-06-20T12:00:00Z",
-      "page_modified_datetime": "2026-06-22T11:16:05+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
