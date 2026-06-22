@@ -59,3 +59,9 @@ node_modules/
 
 # Vite dev cache
 .vite/
+
+# Scraper working artifact: the paginated register index is re-fetched fresh at
+# the start of every scrape run and only used within that run to derive matter
+# links. It changes on every fetch (session token / ordering) even when no
+# merger data has changed, so committing it just adds noise.
+data/raw/acquisitions-register.html

@@ -557,7 +557,7 @@ The pipeline runs on four triggers:
 The pipeline runs as a single job with no parallelism — the steps are inherently sequential (scrape → extract → generate). An important detail: extraction can run *twice* in one pipeline run. If the scraper downloads any DOCX files (the ACCC sometimes publishes documents in Word format), LibreOffice converts them to PDF and then extraction runs again to pick up the questionnaire data that was just unlocked.
 
 ```bash
-sed -n '110,132p' .github/workflows/pipeline.yml
+sed -n '122,140p' .github/workflows/pipeline.yml
 ```
 
 ```output
@@ -567,26 +567,16 @@ sed -n '110,132p' .github/workflows/pipeline.yml
           if git diff --staged --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
-            # acquisitions-register.html alone isn't worth committing: any meaningful
-            # change (new merger, status update) is also reflected in individual matter
-            # pages. Unstage it if it's the only thing that changed.
-            non_register=$(git diff --staged --name-only | grep -v "^data/raw/acquisitions-register\.html$" | wc -l)
-            if [ "$non_register" -gt 0 ]; then
-              echo "changed=true" >> $GITHUB_OUTPUT
-            else
-              git restore --staged --worktree data/raw/acquisitions-register.html
-              echo "changed=false" >> $GITHUB_OUTPUT
-            fi
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
-      # --- Extract (first pass) ---
-      # Always runs on non-scheduled triggers; on schedule only if scrape found changes.
+      # --- Extract phase 1: HTML parse + attachment download ---
 
-      - name: Run extraction
+      - name: Run extraction (download phase)
         if: steps.scrape-changes.outputs.changed == 'true' || github.event_name != 'schedule'
 ```
 
-The "check for scrape changes" step is a key optimisation. On scheduled runs, extraction only proceeds if the scrape actually changed something. The `acquisitions-register.html` file (the paginated index page) is intentionally excluded from this check — it changes slightly on every fetch (a timestamp, a session token) even when no merger data has changed. Treating it as a signal would cause unnecessary extractions on every hourly run.
+The "check for scrape changes" step is a key optimisation. On scheduled runs, extraction only proceeds if the scrape actually changed something. The paginated index page, `acquisitions-register.html`, never enters this check at all: it changes slightly on every fetch (a timestamp, a session token) even when no merger data has changed, and it is only ever used as a transient working file within a single scrape run to derive matter links. Rather than committing it and then filtering it back out, it is **git-ignored** (see `.gitignore`), so `git add -A` never stages it and it can never be mistaken for a change signal.
 
 ### Concurrent-run safety and rebase handling
 
@@ -595,48 +585,33 @@ Because the pipeline can run multiple times simultaneously (e.g. a scheduled run
 A subtle problem arises from the rebase: after a merge, HTML files that both runs touched are reconstructed from the merge base plus patches from each side. This can reintroduce the raw dynamic tokens that `clean_file` already stripped, because git's three-way merge applies text patches without understanding Perl regex semantics. The pipeline detects this: after rebasing it checks which HTML files were in the rebased commit and re-runs `scrape.sh --clean-file` on each one, then amends the commit if anything changed.
 
 ```bash
-sed -n '242,279p' .github/workflows/pipeline.yml
+sed -n '231,255p' .github/workflows/pipeline.yml
 ```
 
 ```output
-              git pull --rebase || { git rebase --abort; exit 1; }
+            git pull --rebase --autostash || { git rebase --abort; exit 1; }
 
-              # After rebase, re-clean any HTML files that changed. A 3-way merge
-              # during rebase can reintroduce raw dynamic tokens if both the local
-              # commit and the pulled commits touched the same file.
-              rebase_html=$(git diff HEAD^..HEAD --name-only 2>/dev/null | grep '\.html$' || true)
-              if [ -n "$rebase_html" ]; then
-                echo "HTML files in rebased commit:"
-                echo "$rebase_html" | sed 's/^/  /'
-                while IFS= read -r f; do
-                  if [ -f "$f" ]; then
-                    ./scripts/scrape.sh --clean-file "$f"
-                    git add "$f"
-                    echo "Re-cleaned: $f"
-                  fi
-                done <<< "$rebase_html"
-                if ! git diff --staged --quiet; then
-                  echo "WARNING: Rebase introduced uncleaned HTML — amending commit to fix"
-                  git commit --amend --no-edit
+            # After rebase, re-clean any HTML files that changed. A 3-way merge
+            # during rebase can reintroduce raw dynamic tokens if both the local
+            # commit and the pulled commits touched the same file.
+            rebase_html=$(git diff HEAD^..HEAD --name-only 2>/dev/null | grep '\.html$' || true)
+            if [ -n "$rebase_html" ]; then
+              echo "HTML files in rebased commit:"
+              echo "$rebase_html" | sed 's/^/  /'
+              while IFS= read -r f; do
+                if [ -f "$f" ]; then
+                  ./scripts/scrape.sh --clean-file "$f"
+                  git add "$f"
+                  echo "Re-cleaned: $f"
                 fi
-              fi
-
-              # After rebase (and any amend), check whether our commit was reduced to
-              # only acquisitions-register.html. This can happen if a concurrent run
-              # already committed the shared matter-page/processed-data changes, leaving
-              # only the slightly-different acquisitions-register.html in our rebased
-              # commit. Drop it rather than push noise.
-              post_rebase_non_register=$(git diff HEAD^..HEAD --name-only 2>/dev/null \
-                | grep -v "^data/raw/acquisitions-register\.html$" | wc -l)
-              if git diff HEAD^..HEAD --name-only 2>/dev/null \
-                  | grep -q "acquisitions-register" \
-                  && [ "$post_rebase_non_register" -eq 0 ]; then
-                echo "Rebase reduced commit to acquisitions-register.html only — dropping, not pushing"
-                git reset --hard HEAD^
-              else
-                git push
+              done <<< "$rebase_html"
+              if ! git diff --staged --quiet; then
+                echo "WARNING: Rebase introduced uncleaned HTML — amending commit to fix"
+                git commit --amend --no-edit
               fi
             fi
+
+            git push
 ```
 
 ## End-to-End Data Flow Summary
