@@ -81,6 +81,7 @@ clean_file() {
     s/(icons\.svg\?t)[^#\n]+#/${1}STATIC#/g;
     s/(\?t)[^">\n]+/${1}STATIC/g;
     s/("css_js_query_string":")[^"\n]+"/${1}STATIC"/g;
+    s/ct=t%28[^"\\]*%29\\u0026//g;
     s/[ \t]*\n[ \t]*<script>!function\(e\)\{var n="https:\/\/s\.go-mpulse\.net\/boomerang\/".*?\(window\);<\/script><\/head>/\n  <\/head>/s;
     s{(<meta name="dcterms\.modified"[^\n]*/>\n)(<meta name="dcterms\.created"[^\n]*/>\n)}{$2$1}g;
     s{(<link rel="canonical"[^\n]*/>\n)(<link rel="shortlink"[^\n]*/>\n)}{$2$1}g;
