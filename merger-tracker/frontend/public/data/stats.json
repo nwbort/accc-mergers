@@ -1,6 +1,6 @@
 {
   "total_mergers": 144,
-  "total_waivers": 223,
+  "total_waivers": 225,
   "by_status": {
     "Assessment completed": 110,
     "Under assessment": 33,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 209,
+    "Approved": 211,
     "Not approved": 14
   },
   "phase_duration": {
@@ -37,7 +37,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 44
+      "count": 45
     },
     {
       "name": "Computer System Design and Related Services",
@@ -45,7 +45,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 29
+      "count": 30
     },
     {
       "name": "Software Publishing",
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25032",
+      "merger_name": "River Capital \u2013 YOMG",
+      "determination": "Approved",
+      "determination_date": "2026-06-22T12:00:00Z",
+      "page_modified_datetime": "2026-06-22T20:41:38+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-75026",
       "merger_name": "Australian Venue Co - leasehold and assets of Brabham Tavern, WA",
       "determination": "Approved",
@@ -150,31 +160,21 @@
       "stage": "Waiver application"
     },
     {
+      "merger_id": "WA-80019",
+      "merger_name": "Imagine Education \u2013 childcare centres ownership restructure",
+      "determination": "Approved",
+      "determination_date": "2026-06-22T12:00:00Z",
+      "page_modified_datetime": "2026-06-22T20:29:41+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-75025",
       "merger_name": "M&G Asia Property Fund \u2013 Stockland Coopers Paddock and Willawong Distribution Centre",
       "determination": "Approved",
       "determination_date": "2026-06-22T12:00:00Z",
       "page_modified_datetime": "2026-06-22T18:52:07+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-15023",
-      "merger_name": "American Industrial Partners \u2013 Honeywell\u2019s Warehouse and Workflow Solutions business",
-      "determination": "Approved",
-      "determination_date": "2026-06-22T12:00:00Z",
-      "page_modified_datetime": "2026-06-22T18:00:48+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-25027",
-      "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Arthouse Hotel",
-      "determination": "Approved",
-      "determination_date": "2026-06-22T12:00:00Z",
-      "page_modified_datetime": "2026-06-22T17:58:36+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

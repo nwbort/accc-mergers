@@ -1065,6 +1065,63 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kfw-%E2%80%93-knds-nv"
     },
     {
+      "merger_id": "WA-80019",
+      "merger_name": "Imagine Education \u2013 childcare centres ownership restructure",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-22T12:00:00Z",
+      "determination_publication_date": "2026-06-22T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Waterworks Education Group Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "678 086 210"
+        },
+        {
+          "name": "Imagine Education Investments Trust",
+          "identifier_type": "ABN",
+          "identifier": "54 637 909 142"
+        },
+        {
+          "name": "POLAR 993 PTY LTD as trustee of Imagine Education Investments Trust",
+          "identifier_type": "ABN",
+          "identifier": "77 642 129 226"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Waterworks Childcare Investments Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Imagine Education Investments Pty Ltd",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "8010",
+          "name": "Preschool Education"
+        },
+        {
+          "code": "8710",
+          "name": "Child Care Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/imagine-education-%E2%80%93-childcare-centres-ownership-restructure"
+    },
+    {
       "merger_id": "WA-80020",
       "merger_name": "Platinum Equity Group - LMPG",
       "status": "Assessment completed",
@@ -2636,39 +2693,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/premier-fresh-%E2%80%93-domenico-group"
-    },
-    {
-      "merger_id": "MN-50019",
-      "merger_name": "Coles \u2013 supermarket site in Lidcombe (NSW)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-04T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-17T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 004 189 708"
-        }
-      ],
-      "targets": [
-        {
-          "name": "BUILTCOM PROPERTIES 11 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "21 648 938 710"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "4110",
-          "name": "Supermarket and Grocery Stores"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-lidcombe-nsw"
     }
   ],
   "page": 7,
