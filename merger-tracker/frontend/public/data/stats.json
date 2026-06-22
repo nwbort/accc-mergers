@@ -1,9 +1,9 @@
 {
-  "total_mergers": 142,
+  "total_mergers": 143,
   "total_waivers": 215,
   "by_status": {
     "Assessment completed": 110,
-    "Under assessment": 31,
+    "Under assessment": 32,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-01104",
+      "merger_name": "Genea - Care Fertility Greenslopes",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-19T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-60022",
       "merger_name": "Autodesk - MaintainX",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-17T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-15018",
-      "merger_name": "Complete Air Supply - All Air",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-16T12:00:00Z",
       "is_waiver": false
     }
   ],
