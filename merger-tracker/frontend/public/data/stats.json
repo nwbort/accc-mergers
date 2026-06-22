@@ -1,6 +1,6 @@
 {
   "total_mergers": 144,
-  "total_waivers": 220,
+  "total_waivers": 223,
   "by_status": {
     "Assessment completed": 110,
     "Under assessment": 33,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 206,
+    "Approved": 209,
     "Not approved": 14
   },
   "phase_duration": {
@@ -57,7 +57,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 16
+      "count": 17
     },
     {
       "name": "Accommodation",
@@ -72,7 +72,7 @@
       "count": 12
     },
     {
-      "name": "Car Retailing",
+      "name": "Supermarket and Grocery Stores",
       "count": 11
     }
   ],
@@ -120,6 +120,36 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-75026",
+      "merger_name": "Australian Venue Co - leasehold and assets of Brabham Tavern, WA",
+      "determination": "Approved",
+      "determination_date": "2026-06-22T12:00:00Z",
+      "page_modified_datetime": "2026-06-22T20:39:39+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-40025",
+      "merger_name": "Shape Australia \u2013 Australian Professional Shopfitters",
+      "determination": "Approved",
+      "determination_date": "2026-06-22T12:00:00Z",
+      "page_modified_datetime": "2026-06-22T20:36:22+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-35023",
+      "merger_name": "Metcash - Foodland Flagstaff Hill, South Australia",
+      "determination": "Approved",
+      "determination_date": "2026-06-22T12:00:00Z",
+      "page_modified_datetime": "2026-06-22T20:32:29+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-75025",
       "merger_name": "M&G Asia Property Fund \u2013 Stockland Coopers Paddock and Willawong Distribution Centre",
       "determination": "Approved",
@@ -148,36 +178,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-15021",
-      "merger_name": "Bingo Industries - JLW Services",
-      "determination": "Approved",
-      "determination_date": "2026-06-22T12:00:00Z",
-      "page_modified_datetime": "2026-06-22T17:55:38+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-35022",
-      "merger_name": "Hexagon - Waygate Technologies",
-      "determination": "Approved",
-      "determination_date": "2026-06-22T12:00:00Z",
-      "page_modified_datetime": "2026-06-22T17:53:08+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-80016",
-      "merger_name": "Henkel \u2013 Olaplex",
-      "determination": "Approved",
-      "determination_date": "2026-06-22T12:00:00Z",
-      "page_modified_datetime": "2026-06-22T11:09:40+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

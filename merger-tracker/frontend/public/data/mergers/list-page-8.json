@@ -1,6 +1,172 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-60021",
+      "merger_name": "Oscars Group \u2013 Hotel Diplomat in Potts Point, NSW",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-04T12:00:00Z",
+      "determination_publication_date": "2026-06-19T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "The Trustee for SEAROCK PROPERTY UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "97 391 766 907"
+        },
+        {
+          "name": "OSCARS NSW OPS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "19 686 583 451"
+        },
+        {
+          "name": "SEAROCK PROPERTY PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "623 130 852"
+        }
+      ],
+      "targets": [
+        {
+          "name": "17 BW ROAD HOLDINGS PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "664 303 977"
+        },
+        {
+          "name": "BAYSWATER OPCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "40 673 620 203"
+        },
+        {
+          "name": "BARCLAY HOUSE OPERATIONS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "36 663 847 685"
+        },
+        {
+          "name": "The Trustee for 17 BW Road Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "88 368 040 720"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "OSCARS HOTELS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "13 100 497 765"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/oscars-group-%E2%80%93-hotel-diplomat-in-potts-point-nsw"
+    },
+    {
+      "merger_id": "WA-85032",
+      "merger_name": "Ares (Bolt S.p.A.) \u2013 Investment in Plenitude",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-04T12:00:00Z",
+      "determination_publication_date": "2026-06-19T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Bolt S.p.A",
+          "identifier_type": null,
+          "identifier": "Lodi under no. 14245060968"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Eni Plenitude S.p.A. Societ\u00e0 Benefit",
+          "identifier_type": null,
+          "identifier": "Lodi under no. 123 000 201 58"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Ares Management LLC",
+          "identifier_type": null,
+          "identifier": "LEI  3M096E5S0PEUTB0I8L53"
+        },
+        {
+          "name": "Eni S.p.A.",
+          "identifier_type": null,
+          "identifier": "Registration Authority ID  00484960588"
+        },
+        {
+          "name": "WINDLAB PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "26 104 461 958"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ares-bolt-spa-%E2%80%93-investment-in-plenitude"
+    },
+    {
+      "merger_id": "MN-20018",
+      "merger_name": "Uber - Blacklane",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-05T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-20T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Uber Technologies, Inc",
+          "identifier_type": null,
+          "identifier": "USID  4849283"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Blacklane GmbH",
+          "identifier_type": null,
+          "identifier": "HRB  136941B"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "UBER PACIFIC PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 622 366 116"
+        },
+        {
+          "name": "UBER AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "54 622 364 318"
+        },
+        {
+          "name": "RASIER PACIFIC PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "27 622 365 833"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4623",
+          "name": "Taxi and Other Road Transport"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/uber-blacklane"
+    },
+    {
       "merger_id": "MN-05025",
       "merger_name": "Equans - CV Services Group",
       "status": "Under assessment",
