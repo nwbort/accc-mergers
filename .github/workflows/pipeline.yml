@@ -126,16 +126,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
           else
-            # acquisitions-register.html alone isn't worth committing: any meaningful
-            # change (new merger, status update) is also reflected in individual matter
-            # pages. Unstage it if it's the only thing that changed.
-            non_register=$(git diff --staged --name-only | grep -v "^data/raw/acquisitions-register\.html$" | wc -l)
-            if [ "$non_register" -gt 0 ]; then
-              echo "changed=true" >> $GITHUB_OUTPUT
-            else
-              git restore --staged --worktree data/raw/acquisitions-register.html
-              echo "changed=false" >> $GITHUB_OUTPUT
-            fi
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
 
       # --- Extract phase 1: HTML parse + attachment download ---
@@ -237,63 +228,37 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            # Guard: skip the commit if only acquisitions-register.html is staged.
-            # The scrape-changes filter above handles the obvious case (register is
-            # the only scraped change), but it can be bypassed when a matter page
-            # changes cosmetically (non_register > 0 → filter skipped, changed=true)
-            # yet extraction produces output identical to HEAD, leaving the register
-            # as the sole meaningful staged diff.
-            staged_non_register=$(git diff --staged --name-only \
-              | grep -v "^data/raw/acquisitions-register\.html$" | wc -l)
-            if [ "$staged_non_register" -eq 0 ]; then
-              echo "Only acquisitions-register.html staged — skipping commit"
-            else
-              git commit -m "Update merger data: ${timestamp}"
-              git pull --rebase --autostash || { git rebase --abort; exit 1; }
+            git commit -m "Update merger data: ${timestamp}"
+            git pull --rebase --autostash || { git rebase --abort; exit 1; }
 
-              # After rebase, re-clean any HTML files that changed. A 3-way merge
-              # during rebase can reintroduce raw dynamic tokens if both the local
-              # commit and the pulled commits touched the same file.
-              rebase_html=$(git diff HEAD^..HEAD --name-only 2>/dev/null | grep '\.html$' || true)
-              if [ -n "$rebase_html" ]; then
-                echo "HTML files in rebased commit:"
-                echo "$rebase_html" | sed 's/^/  /'
-                while IFS= read -r f; do
-                  if [ -f "$f" ]; then
-                    ./scripts/scrape.sh --clean-file "$f"
-                    git add "$f"
-                    echo "Re-cleaned: $f"
-                  fi
-                done <<< "$rebase_html"
-                if ! git diff --staged --quiet; then
-                  echo "WARNING: Rebase introduced uncleaned HTML — amending commit to fix"
-                  git commit --amend --no-edit
+            # After rebase, re-clean any HTML files that changed. A 3-way merge
+            # during rebase can reintroduce raw dynamic tokens if both the local
+            # commit and the pulled commits touched the same file.
+            rebase_html=$(git diff HEAD^..HEAD --name-only 2>/dev/null | grep '\.html$' || true)
+            if [ -n "$rebase_html" ]; then
+              echo "HTML files in rebased commit:"
+              echo "$rebase_html" | sed 's/^/  /'
+              while IFS= read -r f; do
+                if [ -f "$f" ]; then
+                  ./scripts/scrape.sh --clean-file "$f"
+                  git add "$f"
+                  echo "Re-cleaned: $f"
                 fi
+              done <<< "$rebase_html"
+              if ! git diff --staged --quiet; then
+                echo "WARNING: Rebase introduced uncleaned HTML — amending commit to fix"
+                git commit --amend --no-edit
               fi
+            fi
 
-              # After rebase (and any amend), check whether our commit was reduced to
-              # only acquisitions-register.html. This can happen if a concurrent run
-              # already committed the shared matter-page/processed-data changes, leaving
-              # only the slightly-different acquisitions-register.html in our rebased
-              # commit. Drop it rather than push noise.
-              post_rebase_non_register=$(git diff HEAD^..HEAD --name-only 2>/dev/null \
-                | grep -v "^data/raw/acquisitions-register\.html$" | wc -l)
-              if git diff HEAD^..HEAD --name-only 2>/dev/null \
-                  | grep -q "acquisitions-register" \
-                  && [ "$post_rebase_non_register" -eq 0 ]; then
-                echo "Rebase reduced commit to acquisitions-register.html only — dropping, not pushing"
-                git reset --hard HEAD^
-              else
-                git push
-                # Flag downstream cli-sqlite publish if cli-bundle.json is in
-                # the pushed commit. Pushes from GITHUB_TOKEN don't fire other
-                # workflows, so we publish inline rather than relying on a
-                # paths-filtered push trigger on publish-cli-sqlite.yml.
-                if git diff HEAD^..HEAD --name-only \
-                    | grep -qx "data/output/cli/cli-bundle.json"; then
-                  echo "publish_cli=true" >> "$GITHUB_OUTPUT"
-                fi
-              fi
+            git push
+            # Flag downstream cli-sqlite publish if cli-bundle.json is in
+            # the pushed commit. Pushes from GITHUB_TOKEN don't fire other
+            # workflows, so we publish inline rather than relying on a
+            # paths-filtered push trigger on publish-cli-sqlite.yml.
+            if git diff HEAD^..HEAD --name-only \
+                | grep -qx "data/output/cli/cli-bundle.json"; then
+              echo "publish_cli=true" >> "$GITHUB_OUTPUT"
             fi
           fi
 

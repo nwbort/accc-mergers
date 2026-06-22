@@ -8,7 +8,11 @@ All data files for the ACCC Mergers Tracker, organised by processing stage.
 
 Raw data scraped from the ACCC website by `scripts/scrape.sh`:
 
-- `acquisitions-register.html` — main acquisitions register listing page
+- `acquisitions-register.html` — main acquisitions register listing page.
+  This is a transient working artifact: it is re-fetched fresh at the start
+  of every scrape run and only used within that run to derive matter links,
+  so it is **git-ignored** rather than committed (it changes on every fetch
+  even when no merger data has).
 - `matters/MN-*.html`, `matters/WA-*.html` — individual merger detail pages
   (one HTML file per matter)
 - `matters/MN-*/`, `matters/WA-*/` — subdirectories containing supporting
