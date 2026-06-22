@@ -1,13 +1,14 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/smile-partners-australia-%E2%80%93-mehta-orthodontics",
   "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-05014",
   "effective_notification_datetime": "2026-05-26T12:00:00Z",
   "original_notification_datetime": "2026-05-26T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-07-09T12:00:00Z",
-  "page_modified_datetime": "2026-06-04T14:49:27+10:00",
+  "accc_determination": "Approved",
+  "page_modified_datetime": "2026-06-22T11:16:05+10:00",
   "consultation_response_due_date": "2026-06-04T12:00:00Z",
   "acquirers": [
     {
@@ -25,9 +26,19 @@
   ],
   "other_parties": [
     {
-      "name": "Redcat Bidco Pty Ltd",
+      "name": "MEDIQUIP HOLDINGS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "69 628 866 731"
+    },
+    {
+      "name": "SMILE PARTNERS (WA1) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "27 662 001 925"
+    },
+    {
+      "name": "Armitage Services IVA Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "683 178 921"
+      "identifier": "665 389 104"
     },
     {
       "name": "SMILE PARTNERS (NORWEST) PTY LTD",
@@ -35,19 +46,19 @@
       "identifier": "89 653 164 795"
     },
     {
-      "name": "TNG1 Pty Ltd",
-      "identifier_type": "ACN",
-      "identifier": "682 275 234"
+      "name": "SMILE PARTNERS MIDCO PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "54 693 759 894"
     },
     {
-      "name": "THERAPYNOW PTY LTD",
+      "name": "SMILE PARTNERS (AUS) HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "17 662 216 104"
+      "identifier": "63 614 373 778"
     },
     {
-      "name": "MAXLIFE CARE CORP PTY LTD",
+      "name": "SMILE PARTNERS (KNOX CITY) PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "22 644 546 494"
+      "identifier": "36 616 447 646"
     },
     {
       "name": "SASH HOLDCO PTY LTD",
@@ -55,34 +66,19 @@
       "identifier": "91 616 570 560"
     },
     {
-      "name": "TECALA HOLDINGS PTY LTD",
+      "name": "DEMI EDUCATION GROUP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "67 653 440 405"
+      "identifier": "58 652 798 126"
     },
     {
-      "name": "SMILE PARTNERS (GOLD COAST) PTY LTD",
+      "name": "REDCAT PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "73 669 437 656"
+      "identifier": "88 090 409 920"
     },
     {
-      "name": "ICG CAPITAL MANAGEMENT PTY LTD",
+      "name": "SMILE PARTNERS (NSW1) PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "77 679 496 201"
-    },
-    {
-      "name": "NWS Topco Pty Ltd",
-      "identifier_type": "ACN",
-      "identifier": "688 200 795"
-    },
-    {
-      "name": "OUTLINE GLOBAL PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "70 122 481 341"
-    },
-    {
-      "name": "SMILE PARTNERS MIDCO PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "54 693 759 894"
+      "identifier": "80 679 220 350"
     },
     {
       "name": "COLTERLEC HOLDINGS PTY LTD",
@@ -90,9 +86,44 @@
       "identifier": "51 614 738 608"
     },
     {
-      "name": "Armitage Services IVA Pty Ltd",
-      "identifier_type": "ACN",
-      "identifier": "665 389 104"
+      "name": "SMILE PARTNERS (WA2) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "98 674 927 943"
+    },
+    {
+      "name": "THERAPYNOW PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "17 662 216 104"
+    },
+    {
+      "name": "SMILE PARTNERS (QLD1) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "38 691 675 180"
+    },
+    {
+      "name": "SMILE PARTNERS (INSTYLE) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "61 625 040 520"
+    },
+    {
+      "name": "SMILE PARTNERS (GOLD COAST) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "73 669 437 656"
+    },
+    {
+      "name": "SMILE PARTNERS (MYSMILE) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "54 620 594 916"
+    },
+    {
+      "name": "The Trustee for SHRIKA",
+      "identifier_type": "ABN",
+      "identifier": "83 315 233 206"
+    },
+    {
+      "name": "SMILE PARTNERS (WA3) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "49 675 791 572"
     },
     {
       "name": "Armitage Associates Services Pty Ltd",
@@ -110,94 +141,9 @@
       "identifier": "87 611 079 157"
     },
     {
-      "name": "SMILE PARTNERS (VIC1) PTY LTD",
+      "name": "ICG CAPITAL MANAGEMENT PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "22 682 367 899"
-    },
-    {
-      "name": "DEMI EDUCATION GROUP PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "58 652 798 126"
-    },
-    {
-      "name": "REDCAT PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "88 090 409 920"
-    },
-    {
-      "name": "NEWCASTLE WEIGHING SERVICES PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "36 001 344 430"
-    },
-    {
-      "name": "SMILE PARTNERS (NSW2) PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "26 689 905 799"
-    },
-    {
-      "name": "SMILE PARTNERS (MYSMILE) PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "54 620 594 916"
-    },
-    {
-      "name": "SMILE PARTNERS (QLD1) PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "38 691 675 180"
-    },
-    {
-      "name": "SMILE PARTNERS (WA3) PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "49 675 791 572"
-    },
-    {
-      "name": "MEDIQUIP HOLDINGS PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "69 628 866 731"
-    },
-    {
-      "name": "WASTECH GROUP PTY LIMITED",
-      "identifier_type": "ABN",
-      "identifier": "61 637 049 293"
-    },
-    {
-      "name": "SMILE PARTNERS (AUS) HOLDINGS PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "63 614 373 778"
-    },
-    {
-      "name": "SMILE PARTNERS (OCEAN) PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "99 625 040 744"
-    },
-    {
-      "name": "BLUEFIT GROUP PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "15 623 370 552"
-    },
-    {
-      "name": "SMILE PARTNERS (WA2) PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "98 674 927 943"
-    },
-    {
-      "name": "SMILE PARTNERS (KNOX CITY) PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "36 616 447 646"
-    },
-    {
-      "name": "SMILE PARTNERS (INSTYLE) PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "61 625 040 520"
-    },
-    {
-      "name": "SMILE PARTNERS (VIC2) PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "95 683 484 764"
-    },
-    {
-      "name": "The Trustee for SHRIKA",
-      "identifier_type": "ABN",
-      "identifier": "83 315 233 206"
+      "identifier": "77 679 496 201"
     },
     {
       "name": "MEHTA, ATUL",
@@ -205,19 +151,74 @@
       "identifier": "28 009 755 704"
     },
     {
-      "name": "SMILE PARTNERS (WA1) PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "27 662 001 925"
+      "name": "NWS Topco Pty Ltd",
+      "identifier_type": "ACN",
+      "identifier": "688 200 795"
     },
     {
-      "name": "SMILE PARTNERS (NSW1) PTY LTD",
+      "name": "NEWCASTLE WEIGHING SERVICES PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "80 679 220 350"
+      "identifier": "36 001 344 430"
+    },
+    {
+      "name": "BLUEFIT GROUP PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "15 623 370 552"
+    },
+    {
+      "name": "SMILE PARTNERS (VIC1) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "22 682 367 899"
+    },
+    {
+      "name": "OUTLINE GLOBAL PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "70 122 481 341"
+    },
+    {
+      "name": "WASTECH GROUP PTY LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "61 637 049 293"
+    },
+    {
+      "name": "SMILE PARTNERS (NSW2) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "26 689 905 799"
+    },
+    {
+      "name": "TECALA HOLDINGS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "67 653 440 405"
+    },
+    {
+      "name": "SMILE PARTNERS (VIC2) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "95 683 484 764"
+    },
+    {
+      "name": "SMILE PARTNERS (OCEAN) PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "99 625 040 744"
     },
     {
       "name": "IRON CAPITAL PTY LTD",
       "identifier_type": "ABN",
       "identifier": "61 623 379 797"
+    },
+    {
+      "name": "Redcat Bidco Pty Ltd",
+      "identifier_type": "ACN",
+      "identifier": "683 178 921"
+    },
+    {
+      "name": "MAXLIFE CARE CORP PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "22 644 546 494"
+    },
+    {
+      "name": "TNG1 Pty Ltd",
+      "identifier_type": "ACN",
+      "identifier": "682 275 234"
     }
   ],
   "anzsic_codes": [
@@ -226,7 +227,7 @@
       "name": "Dental Services"
     }
   ],
-  "merger_description": "Smile Partners (NSW3) Pty Ltd, a wholly owned subsidiary of Smile Partners Australia Pty Ltd, (together, for convenience, **SPA**) proposes to acquire 100% of the assets of Shrika Pty Ltd as trustee for Shrika (trading as **Mehta Orthodontics**).\n\nSPA owns a network of independently branded orthodontic practices located across Australia and New Zealand.\u00a0 Its shareholding is dispersed across a number of investors, the largest proportion of which is controlled by Armitage Australia Pty Ltd, a private equity firm.\n\nSPA currently:\n\n1. owns 13 orthodontic practice brands with 20 clinic locations in Australia, across Western Australia, New South Wales, Victoria and Queensland.\u00a0 This includes 2 orthodontic practices in the Hills District of north-western Sydney (Bachmayer Orthodontic Clinic and Brace5 Orthodontics); and\n2. provides management services pursuant to contractual arrangements with additional orthodontic practices in Australia.\u00a0 Only one of those clinics owns clinics located in NSW, which are outside of the Sydney metropolitan area.\n\nMehta Orthodontics is an independent orthodontic practice located in Bella Vista, a suburb in the Hills District of north-western Sydney.",
+  "merger_description": "Smile Partners (NSW3) Pty Ltd, a wholly owned subsidiary of Smile Partners Australia Pty Ltd, (together, for convenience, **SPA**) proposes to acquire 100% of the assets of Shrika Pty Ltd as trustee for Shrika (trading as **Mehta Orthodontics**).\n\nSPA owns a network of independently branded orthodontic practices located across Australia and New Zealand.\u00a0 Its shareholding is dispersed across a number of investors, the largest proportion of which is controlled by Armitage Australia Pty Ltd, a private equity firm.\n\nSPA currently:\n\n* owns 13 orthodontic practice brands with 20 clinic locations in Australia, across Western Australia, New South Wales, Victoria and Queensland.\u00a0 This includes 2 orthodontic practices in the Hills District of north-western Sydney (Bachmayer Orthodontic Clinic and Brace5 Orthodontics); and\n* provides management services pursuant to contractual arrangements with additional orthodontic practices in Australia.\u00a0 Only one of those clinics owns clinics located in NSW, which are outside of the Sydney metropolitan area.\n\nMehta Orthodontics is an independent orthodontic practice located in Bella Vista, a suburb in the Hills District of north-western Sydney.",
   "events": [
     {
       "date": "2026-05-27T12:00:00Z",
@@ -242,12 +243,49 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-06-20T12:00:00Z",
+      "title": "Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Smile%20Partners%20Australia%20-%20Mehta%20Orthodontics%20-%20Phase%201%20determination.pdf",
+      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "Smile Partners (NSW3) Pty Ltd, a wholly owned subsidiary of Smile\nPartners Australia Pty Ltd, (together, for convenience, SPA)\nproposes to acquire 100% of the assets of Shrika Pty Ltd as trustee\nfor Shrika (trading as Mehta Orthodontics) (the Acquisition)."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "The acquirer, SPA, owns a network of independently branded\northodontic practices located across Australia and New Zealand. Its\nshareholding is dispersed across a number of investors, the largest\nproportion of which is controlled by Armitage Australia Pty Ltd, a\nprivate equity firm.\nSPA currently:\n\u2022 owns 13 orthodontic practice brands with 20 clinic locations in\nAustralia, across Western Australia, New South Wales, Victoria\nand Queensland. This includes 2 orthodontic practices in the\nHills District of north-western Sydney (Bachmayer Orthodontic\nClinic and Brace5 Orthodontics).\n\u2022 provides management services pursuant to contractual\narrangements with additional orthodontic practices in Australia.\nOnly one of those practices owns practices located in NSW,\nwhich are outside of the Sydney metropolitan area.\nThe target, Mehta Orthodontics, is an independent orthodontic\npractice located in Bella Vista, a suburb in the Hills District of north-\nwestern Sydney."
+        },
+        {
+          "item": "Overlap and relationship\nbetween the parties",
+          "details": "SPA and Mehta Orthodontics (together the Parties) overlap in the\nsupply of orthodontic services in the Hills District of north-western\nSydney."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, publicly available information and market\nfeedback.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings:\n\u2022 Post-Acquisition, the merged firm would likely continue to face\ncompetition from multiple alternative suppliers of orthodontic\nservices in the Hills District of north-western Sydney.\n\u2022 The Parties\u2019 combined market share of orthodontic services in\nthe area is estimated to be low, and the increase in share arising\nfrom the Acquisition is estimated to be low."
+        },
+        {
+          "item": "Applications for review",
+          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+        }
+      ],
+      "url_gh": "/mergers/MN-05014/Smile Partners Australia - Mehta Orthodontics - Phase 1 determination.pdf",
+      "status": "live",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
+  "determination_publication_date": "2026-06-20T12:00:00Z",
   "is_waiver": false,
-  "accc_determination": null,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-06-20T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,

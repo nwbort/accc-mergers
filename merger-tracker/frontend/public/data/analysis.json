@@ -1008,21 +1008,30 @@
         "merger_id": "MN-30016",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-05-26",
+        "business_days": 16,
+        "calendar_days": 25,
+        "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+        "merger_id": "MN-05014",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 19.6,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 148,
-      "count": 108
+      "count": 109
     },
     "calendar_stats": {
-      "average": 29.8,
-      "median": 26.0,
+      "average": 29.7,
+      "median": 26,
       "min": 21,
       "max": 235,
-      "count": 108
+      "count": 109
     }
   },
   "waiver_duration": {
