@@ -1,5 +1,10 @@
 name: Merger Pipeline
 
+run-name: >-
+  ${{
+    github.event_name == 'repository_dispatch' && github.event.client_payload.custom_title || 'Merger pipeline'
+  }}
+
 on:
   repository_dispatch:
     types: [new_merger_detected]
