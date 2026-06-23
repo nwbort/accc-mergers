@@ -193,15 +193,16 @@ def test_single_identity_across_many_mergers_is_not_a_candidate():
     assert drp.find_candidates(mergers, []) == []
 
 
-def test_canonical_name_is_title_cased_and_picks_most_common():
+def test_canonical_name_defaults_to_shortest_and_is_title_cased():
     mergers = [
-        _merger("MN-1", acquirers=[{"name": "BIG ENTITY PTY LTD", "identifier": "12 345 678 901"}]),
-        _merger("MN-2", acquirers=[{"name": "BIG ENTITY PTY LTD", "identifier": "12 345 678 901"}]),
-        _merger("MN-3", acquirers=[{"name": "BIG ENTITY (REBRANDED) PTY LTD", "identifier": "12 345 678 901"}]),
+        _merger("MN-1", acquirers=[{"name": "ACME GLOBAL PTY LTD", "identifier": "12 345 678 901"}]),
+        _merger("MN-2", acquirers=[{"name": "ACME GLOBAL PTY LTD", "identifier": "12 345 678 901"}]),
+        _merger("MN-3", acquirers=[{"name": "ACME PTY LTD", "identifier": "12 345 678 901"}]),
     ]
     c = drp.find_candidates(mergers, [])[0]
-    # Most-frequent member wins the canonical name, title-cased.
-    assert c["canonical_name"] == "Big Entity Pty Ltd"
+    # The shortest member name wins even though it is the less common one,
+    # and it is title-cased for display.
+    assert c["canonical_name"] == "Acme Pty Ltd"
 
 
 def test_apply_suggestions_appends_groups(tmp_path):
