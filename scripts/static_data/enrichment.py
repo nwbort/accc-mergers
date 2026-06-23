@@ -8,6 +8,7 @@ from constants import merger_status
 from cutoff import is_waiver_merger
 from date_utils import parse_iso_datetime
 from normalization import normalize_determination
+from party_matching import build_group_lookups, match_party
 
 from .business_days import add_business_days, subtract_business_days
 
@@ -221,6 +222,36 @@ def link_similar_mergers(enriched_mergers: list, similar_map: dict) -> int:
         if cards:
             merger['similar_mergers'] = cards
             linked += 1
+    return linked
+
+
+def link_related_parties(enriched_mergers: list, party_groups: list) -> int:
+    """Attach a ``canonical`` link to each party that belongs to a known group.
+
+    ``party_groups`` is the list loaded from ``related_parties.json``. For every
+    acquirer / target / other party whose name or ABN matches a group member, a
+    ``canonical`` field ``{"id": ..., "name": ...}`` is added to the party dict
+    in-place. The frontend turns this into a link to the mergers list filtered by
+    the canonical name, and folds the canonical name into the search index so the
+    filter surfaces every merger involving the same entity.
+
+    Returns the number of party records that were linked.
+    """
+    if not party_groups:
+        return 0
+
+    by_identifier, by_name = build_group_lookups(party_groups)
+    linked = 0
+    for merger in enriched_mergers:
+        for field in ('acquirers', 'targets', 'other_parties'):
+            for party in merger.get(field) or []:
+                group = match_party(party, by_identifier, by_name)
+                if group:
+                    party['canonical'] = {
+                        'id': group.get('id'),
+                        'name': group.get('canonical_name'),
+                    }
+                    linked += 1
     return linked
 
 

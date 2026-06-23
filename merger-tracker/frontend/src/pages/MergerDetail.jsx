@@ -74,7 +74,17 @@ function MergerDetail() {
         <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">{title}</h2>
         {visibleParties.map((party, idx) => (
           <div key={`${partyType}-${party.name}-${party.identifier || idx}`} className="mb-3 last:mb-0">
-            <p className="font-medium text-gray-900">{party.name}</p>
+            {party.canonical?.name ? (
+              <Link
+                to={`/mergers?q=${encodeURIComponent(party.canonical.name)}`}
+                className="font-medium text-primary hover:text-primary-dark transition-colors"
+                title={`See all mergers involving ${party.canonical.name}`}
+              >
+                {party.name}
+              </Link>
+            ) : (
+              <p className="font-medium text-gray-900">{party.name}</p>
+            )}
             {party.identifier && (
               <p className="text-sm text-gray-500">
                 {party.identifier_type ? `${party.identifier_type}: ` : ''}{party.identifier}

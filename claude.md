@@ -74,6 +74,8 @@ scripts/
 ├── cutoff.py             # Skip old mergers logic
 ├── detect_duplicates.py  # Identify duplicate merger entries (CI check)
 ├── detect_related_mergers.py # Suggest waiver→notification pairs (CI check)
+├── detect_related_parties.py # Suggest same-entity party groups (daily PR)
+├── party_matching.py     # Shared party normalisation + group matching
 ├── tools/                # Interactive admin web UIs (resolver, commentary)
 └── tests/                # test_pipeline.py, test_utils.py
 

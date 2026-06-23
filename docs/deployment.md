@@ -92,6 +92,12 @@ Runs `detect_duplicates.py` to identify duplicate merger entries and reports any
 
 Runs `detect_related_mergers.py` to suggest waiver→notification pairs.
 
+### `detect-related-parties.yml` — Daily related-party check (02:45 UTC)
+
+Runs `detect_related_parties.py` to find parties that are the same real-world
+entity recorded under different names/ABNs, and opens (or updates) a pull request
+recommending additions to `data/processed/related_parties.json`.
+
 ### `update-sitemap.yml` — Daily sitemap update (22:00 UTC)
 
 Runs `generate_sitemap.py` to regenerate `sitemap.xml`.

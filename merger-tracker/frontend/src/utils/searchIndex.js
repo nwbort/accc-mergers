@@ -52,6 +52,16 @@ export function buildSearchIndex(mergers) {
       });
     }
 
+    // Add canonical "related party" names so a search for the canonical name
+    // (used by the party links on the merger detail page) surfaces every merger
+    // involving the same entity, even when its on-record name differs.
+    [merger.acquirers, merger.targets, merger.other_parties].forEach((parties) => {
+      if (!parties) return;
+      parties.forEach((p) => {
+        if (p?.canonical?.name) searchParts.push(p.canonical.name);
+      });
+    });
+
     // Add ANZSIC code names
     if (merger.anzsic_codes) {
       merger.anzsic_codes.forEach((c) => {
