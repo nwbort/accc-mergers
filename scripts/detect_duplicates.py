@@ -115,6 +115,26 @@ def parse_date(raw: str):
         return None
 
 
+def dates_within_one_day(date1: str, date2: str) -> bool:
+    """Return True if two YYYY-MM-DD strings are the same day or one day apart.
+
+    The ACCC sometimes re-publishes a document under a slightly different date:
+    an event that first appears dated 20 Jan can reappear dated 21 Jan when the
+    attachment is re-uploaded under a new version (e.g. MN-01019's Phase 2
+    review notice). Allowing a ±1 day tolerance in the LIKELY pass lets these
+    near-duplicate events be grouped. Mirrors the tolerance applied in
+    extract_mergers._dates_within_one_day for synthetic determination events.
+    """
+    if not date1 or not date2:
+        return False
+    try:
+        d1 = datetime.strptime(date1, "%Y-%m-%d").date()
+        d2 = datetime.strptime(date2, "%Y-%m-%d").date()
+    except ValueError:
+        return date1 == date2
+    return abs((d1 - d2).days) <= 1
+
+
 def find_duplicates(merger: dict) -> list[dict]:
     """
     Return a list of duplicate groups for one merger.
@@ -157,6 +177,8 @@ def find_duplicates(merger: dict) -> list[dict]:
     checked: set[tuple[int, int]] = set()
 
     for i in remaining:
+        if i in used:
+            continue
         ev_i = events[i]
         date_i = parse_date(ev_i.get("date", ""))
         title_i = ev_i.get("title", "")
@@ -164,7 +186,7 @@ def find_duplicates(merger: dict) -> list[dict]:
             continue
         group_indices = [i]
         for j in remaining:
-            if j == i or (min(i, j), max(i, j)) in checked:
+            if j == i or j in used or (min(i, j), max(i, j)) in checked:
                 continue
             ev_j = events[j]
             date_j = parse_date(ev_j.get("date", ""))
@@ -172,7 +194,7 @@ def find_duplicates(merger: dict) -> list[dict]:
             if not date_j or not title_j:
                 continue
             if (
-                date_i == date_j
+                dates_within_one_day(date_i, date_j)
                 and not titles_are_different_event_types(title_i, title_j)
                 and title_similarity(title_i, title_j) >= SIMILARITY_THRESHOLD
             ):

@@ -225,10 +225,14 @@ class TestFindDuplicates:
         assert set(groups[0]['indices']) == {0, 1}
 
     def test_different_dates_not_duplicates(self):
+        # Dates more than one day apart are not grouped. (Same-title events
+        # within ±1 day ARE now grouped as likely duplicates — see
+        # test_detect_duplicates.py — to catch ACCC re-uploads that shift the
+        # date by a day.)
         merger = {
             'events': [
                 {'date': '2025-01-01T00:00:00Z', 'title': 'Notification'},
-                {'date': '2025-01-02T00:00:00Z', 'title': 'Notification'},
+                {'date': '2025-01-05T00:00:00Z', 'title': 'Notification'},
             ]
         }
         assert find_duplicates(merger) == []
