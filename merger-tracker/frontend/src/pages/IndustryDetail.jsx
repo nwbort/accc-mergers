@@ -1,3 +1,4 @@
+import { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { FaChevronRight } from 'react-icons/fa';
 import LoadingSpinner from '../components/LoadingSpinner';
@@ -54,6 +55,19 @@ function IndustryDetail() {
     needsOverall ? API_ENDPOINTS.stats : null,
     needsOverall ? { cacheKey: 'dashboard-stats' } : {}
   );
+
+  // Local free-text filter for the merger list on this page.
+  const [mergerSearch, setMergerSearch] = useState('');
+
+  const allMergers = data?.mergers || [];
+  const trimmedSearch = mergerSearch.trim().toLowerCase();
+  const filteredMergers = useMemo(() => {
+    if (!trimmedSearch) return allMergers;
+    return allMergers.filter((m) =>
+      (m.merger_name || '').toLowerCase().includes(trimmedSearch) ||
+      (m.status || '').toLowerCase().includes(trimmedSearch)
+    );
+  }, [allMergers, trimmedSearch]);
 
   const isNotFound = error === 'HTTP 404';
 
@@ -220,11 +234,43 @@ function IndustryDetail() {
         )}
 
         {mergers.length > 0 && (
-          <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
-            Mergers in this industry
-          </h2>
+          <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 mb-3">
+            <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+              Mergers in this industry
+            </h2>
+            {mergers.length > 5 && (
+              <p className="text-xs font-medium text-gray-500 uppercase tracking-wider shrink-0">
+                Showing {filteredMergers.length} of {mergers.length}
+              </p>
+            )}
+          </div>
         )}
-        <IndustryMergerGroups mergers={mergers} variant="full" />
+
+        {/* Free-text filter for the merger list, worth showing only once the
+            list is long enough to be awkward to scan by eye. */}
+        {mergers.length > 5 && (
+          <div className="relative mb-4">
+            <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+            </svg>
+            <input
+              type="text"
+              aria-label="Search mergers in this industry"
+              className="w-full pl-10 pr-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all"
+              placeholder="Search mergers in this industry..."
+              value={mergerSearch}
+              onChange={(e) => setMergerSearch(e.target.value)}
+            />
+          </div>
+        )}
+
+        <IndustryMergerGroups mergers={filteredMergers} variant="full" />
+
+        {mergers.length > 0 && filteredMergers.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-gray-500 font-medium">No mergers match &ldquo;{mergerSearch.trim()}&rdquo;</p>
+          </div>
+        )}
 
         {mergers.length === 0 && (
           <div className="text-center py-16">
