@@ -11,6 +11,7 @@ from pathlib import Path
 
 from constants import merger_status
 
+from .. import anzsic
 from ..business_days import calculate_business_days, calculate_calendar_days
 from ..filters import filter_notifications
 
@@ -144,14 +145,44 @@ def _sort_mergers(records: list) -> list:
     return [summary for summary, _ in active + decided]
 
 
+def _node_ref(node: anzsic.Node, merger_count: int | None = None) -> dict:
+    """A compact reference to a hierarchy node (for parent/child/breadcrumb links)."""
+    ref = {"code": node.code, "name": node.name, "level": node.level}
+    if merger_count is not None:
+        ref["merger_count"] = merger_count
+    return ref
+
+
+def _write_detail_file(industries_dir: Path, code: str, payload: dict) -> None:
+    safe_code = code.replace('/', '-').replace('\\', '-')
+    out_path = industries_dir / f"{safe_code}.json"
+    with open(out_path, 'w', encoding='utf-8') as f:
+        json.dump(payload, f, indent=2)
+
+
 def generate_detail_files(mergers: list, output_dir: Path) -> int:
-    """Write one JSON file per industry code. Returns the number of industries written."""
+    """Write one JSON file per ANZSIC node. Returns the number of files written.
+
+    A file is generated for every node in the ANZSIC tree — divisions,
+    subdivisions, groups and classes — so each level is independently
+    addressable at ``/industries/{code}``. Each file carries the hierarchy
+    metadata (name, level, breadcrumb ancestors, parent, children) needed to
+    render the page and navigate up/down the tree.
+
+    Mergers aggregate up the tree: a parent node lists every merger tagged to
+    any node in its subtree (plus any tagged directly to the parent code),
+    deduped by merger_id. The ACCC occasionally tags a merger at several levels
+    at once, so deduping keeps it appearing once per page.
+    """
     industries_dir = Path(output_dir) / "industries"
     industries_dir.mkdir(parents=True, exist_ok=True)
 
-    # Group mergers by industry, deduping by merger_id within each industry.
-    # code -> {merger_id: (summary, full_merger)}
-    industry_map = defaultdict(dict)
+    # Records aggregated onto each hierarchy node. A merger tagged at a class
+    # rolls up to its group/subdivision/division too. code -> {merger_id: (summary, full)}
+    node_records: dict[str, dict] = defaultdict(dict)
+    # Tagged codes that aren't part of the ANZSIC tree get a standalone flat
+    # file so existing links never 404 (none at time of writing, but defensive).
+    orphan_records: dict[str, dict] = defaultdict(dict)
 
     for m in mergers:
         merger_id = m.get('merger_id')
@@ -166,25 +197,61 @@ def generate_detail_files(mergers: list, output_dir: Path) -> int:
         codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
         for code_obj in codes:
             code = code_obj.get('code', '')
-            if code:  # Only add if code exists
-                industry_map[code][merger_id] = (summary, m)
+            if not code:
+                continue
+            node = anzsic.get(code)
+            if node is None:
+                orphan_records[code][merger_id] = (summary, m)
+                continue
+            # Roll the merger up onto this node and all its ancestors.
+            node_records[code][merger_id] = (summary, m)
+            for ancestor in anzsic.ancestors(code):
+                node_records[ancestor.code][merger_id] = (summary, m)
 
-    for code, records in industry_map.items():
-        record_list = list(records.values())
+    def merger_count(code: str) -> int:
+        return len(node_records.get(code, {}))
+
+    hierarchy = anzsic.hierarchy()
+    for code, node in hierarchy.items():
+        record_list = list(node_records.get(code, {}).values())
         full_mergers = [full for _, full in record_list]
 
-        output_data = {
+        children = [
+            _node_ref(hierarchy[child_code], merger_count(child_code))
+            for child_code in node.child_codes
+        ]
+        parent = anzsic.get(node.parent_code) if node.parent_code else None
+
+        payload = {
             "code": code,
+            "name": node.name,
+            "level": node.level,
+            "ancestors": [_node_ref(a) for a in anzsic.ancestors(code)],
+            "parent": _node_ref(parent) if parent else None,
+            "children": children,
             "mergers": _sort_mergers(record_list),
             "count": len(record_list),
             **_industry_stats(full_mergers),
             "phase_duration": _phase_duration(full_mergers),
         }
+        _write_detail_file(industries_dir, code, payload)
 
-        safe_code = code.replace('/', '-').replace('\\', '-')
-        out_path = industries_dir / f"{safe_code}.json"
+    # Standalone files for any tagged codes outside the ANZSIC tree.
+    for code, records in orphan_records.items():
+        record_list = list(records.values())
+        full_mergers = [full for _, full in record_list]
+        payload = {
+            "code": code,
+            "name": None,
+            "level": None,
+            "ancestors": [],
+            "parent": None,
+            "children": [],
+            "mergers": _sort_mergers(record_list),
+            "count": len(record_list),
+            **_industry_stats(full_mergers),
+            "phase_duration": _phase_duration(full_mergers),
+        }
+        _write_detail_file(industries_dir, code, payload)
 
-        with open(out_path, 'w', encoding='utf-8') as f:
-            json.dump(output_data, f, indent=2)
-
-    return len(industry_map)
+    return len(hierarchy) + len(orphan_records)

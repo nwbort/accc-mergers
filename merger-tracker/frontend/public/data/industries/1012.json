@@ -1,5 +1,30 @@
 {
   "code": "1012",
+  "name": "Mineral Exploration",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "B",
+      "name": "Mining",
+      "level": "division"
+    },
+    {
+      "code": "10",
+      "name": "Exploration and Other Mining Support Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "101",
+      "name": "Exploration",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "101",
+    "name": "Exploration",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-85014",

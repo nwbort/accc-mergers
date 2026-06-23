@@ -1,5 +1,30 @@
 {
   "code": "6631",
+  "name": "Heavy Machinery and Scaffolding Rental and Hiring",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "L",
+      "name": "Rental, Hiring and Real Estate Services",
+      "level": "division"
+    },
+    {
+      "code": "66",
+      "name": "Rental and Hiring Services (except Real Estate)",
+      "level": "subdivision"
+    },
+    {
+      "code": "663",
+      "name": "Other Goods and Equipment Rental and Hiring",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "663",
+    "name": "Other Goods and Equipment Rental and Hiring",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-85003",

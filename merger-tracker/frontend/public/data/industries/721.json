@@ -1,0 +1,65 @@
+{
+  "code": "721",
+  "name": "Employment Services",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "N",
+      "name": "Administrative and Support Services",
+      "level": "division"
+    },
+    {
+      "code": "72",
+      "name": "Administrative Services",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "72",
+    "name": "Administrative Services",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "7211",
+      "name": "Employment Placement and Recruitment Services",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "7212",
+      "name": "Labour Supply Services",
+      "level": "class",
+      "merger_count": 2
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-75021",
+      "merger_name": "Hillhouse - KMC Solutions",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-90013",
+      "merger_name": "Cement Australia \u2013 Global Manufacturing Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-70016",
+      "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 3,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 0,
+  "phase_duration": null
+}

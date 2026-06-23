@@ -1,0 +1,58 @@
+{
+  "code": "017",
+  "name": "Poultry Farming",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "A",
+      "name": "Agriculture, Forestry and Fishing",
+      "level": "division"
+    },
+    {
+      "code": "01",
+      "name": "Agriculture",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "01",
+    "name": "Agriculture",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "0171",
+      "name": "Poultry Farming (Meat)",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "0172",
+      "name": "Poultry Farming (Eggs)",
+      "level": "class",
+      "merger_count": 1
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-35019",
+      "merger_name": "Precision Poultry - VOAG chicken farming operations",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-20008",
+      "merger_name": "Hall & McLean \u2013 Freehold interest in commercial land in Wellcamp, QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 2,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 1,
+  "phase_duration": null
+}

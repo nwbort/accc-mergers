@@ -1,0 +1,49 @@
+{
+  "code": "900",
+  "name": "Creative and Performing Arts Activities",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "R",
+      "name": "Arts and Recreation Services",
+      "level": "division"
+    },
+    {
+      "code": "90",
+      "name": "Creative and Performing Arts Activities",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "90",
+    "name": "Creative and Performing Arts Activities",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "9001",
+      "name": "Performing Arts Operation",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "9002",
+      "name": "Creative Artists, Musicians, Writers and Performers",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "9003",
+      "name": "Performing Arts Venue Operation",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

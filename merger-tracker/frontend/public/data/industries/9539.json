@@ -1,5 +1,30 @@
 {
   "code": "9539",
+  "name": "Other Personal Services n.e.c.",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "S",
+      "name": "Other Services",
+      "level": "division"
+    },
+    {
+      "code": "95",
+      "name": "Personal and Other Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "953",
+      "name": "Other Personal Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "953",
+    "name": "Other Personal Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-15022",

@@ -1,5 +1,30 @@
 {
   "code": "4251",
+  "name": "Clothing Retailing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "42",
+      "name": "Other Store-Based Retailing",
+      "level": "subdivision"
+    },
+    {
+      "code": "425",
+      "name": "Clothing, Footwear and Personal Accessory Retailing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "425",
+    "name": "Clothing, Footwear and Personal Accessory Retailing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-30008",

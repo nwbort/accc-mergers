@@ -1,0 +1,92 @@
+{
+  "code": "22",
+  "name": "Fabricated Metal Product Manufacturing",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "C",
+    "name": "Manufacturing",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "221",
+      "name": "Iron and Steel Forging",
+      "level": "group",
+      "merger_count": 0
+    },
+    {
+      "code": "222",
+      "name": "Structural Metal Product Manufacturing",
+      "level": "group",
+      "merger_count": 1
+    },
+    {
+      "code": "223",
+      "name": "Metal Container Manufacturing",
+      "level": "group",
+      "merger_count": 1
+    },
+    {
+      "code": "224",
+      "name": "Sheet Metal Product Manufacturing (except Metal Structural and Container Products)",
+      "level": "group",
+      "merger_count": 0
+    },
+    {
+      "code": "229",
+      "name": "Other Fabricated Metal Product Manufacturing",
+      "level": "group",
+      "merger_count": 4
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-90013",
+      "merger_name": "Cement Australia \u2013 Global Manufacturing Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55014",
+      "merger_name": "KPS Capital Partners - Jennmar",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-75013",
+      "merger_name": "Aldus - Hilton Manufacturing",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60010",
+      "merger_name": "Michelin - Flexitallic",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55011",
+      "merger_name": "OEP IX \u2013 Leviat",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 5,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 5,
+  "active_count": 0,
+  "phase_duration": null
+}

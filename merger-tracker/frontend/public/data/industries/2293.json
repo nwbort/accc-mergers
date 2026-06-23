@@ -1,5 +1,30 @@
 {
   "code": "2293",
+  "name": "Metal Coating and Finishing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "22",
+      "name": "Fabricated Metal Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "229",
+      "name": "Other Fabricated Metal Product Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "229",
+    "name": "Other Fabricated Metal Product Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-90013",

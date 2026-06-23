@@ -1,0 +1,92 @@
+{
+  "code": "632",
+  "name": "Health and General Insurance",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "level": "division"
+    },
+    {
+      "code": "63",
+      "name": "Insurance and Superannuation Funds",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "63",
+    "name": "Insurance and Superannuation Funds",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "6321",
+      "name": "Health Insurance",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "6322",
+      "name": "General Insurance",
+      "level": "class",
+      "merger_count": 6
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-65005",
+      "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 2"
+    },
+    {
+      "merger_id": "MN-30016",
+      "merger_name": "Zurich - Beazley",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-55016",
+      "merger_name": "Zurich - ClearView",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-40015",
+      "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-55015",
+      "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-30002",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "is_waiver": false,
+      "status": "Assessment ceased",
+      "phase": "Phase 2"
+    }
+  ],
+  "count": 6,
+  "phase_1_count": 3,
+  "phase_2_count": 2,
+  "waiver_count": 1,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 25.0,
+    "median_days": 26,
+    "average_business_days": 17.0,
+    "median_business_days": 17,
+    "completed_count": 3
+  }
+}

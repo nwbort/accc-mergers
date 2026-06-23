@@ -1,0 +1,51 @@
+{
+  "code": "949",
+  "name": "Other Repair and Maintenance",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "S",
+      "name": "Other Services",
+      "level": "division"
+    },
+    {
+      "code": "94",
+      "name": "Repair and Maintenance",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "94",
+    "name": "Repair and Maintenance",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "9491",
+      "name": "Clothing and Footwear Repair",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "9499",
+      "name": "Other Repair and Maintenance n.e.c.",
+      "level": "class",
+      "merger_count": 1
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-10014",
+      "merger_name": "Turner Family Entities - Pedal Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

@@ -1,0 +1,152 @@
+{
+  "code": "D",
+  "name": "Electricity, Gas, Water and Waste Services",
+  "level": "division",
+  "ancestors": [],
+  "parent": null,
+  "children": [
+    {
+      "code": "26",
+      "name": "Electricity Supply",
+      "level": "subdivision",
+      "merger_count": 9
+    },
+    {
+      "code": "27",
+      "name": "Gas Supply",
+      "level": "subdivision",
+      "merger_count": 1
+    },
+    {
+      "code": "28",
+      "name": "Water Supply, Sewerage and Drainage Services",
+      "level": "subdivision",
+      "merger_count": 3
+    },
+    {
+      "code": "29",
+      "name": "Waste Collection, Treatment and Disposal Services",
+      "level": "subdivision",
+      "merger_count": 3
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-15021",
+      "merger_name": "Bingo Industries - JLW Services",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85032",
+      "merger_name": "Ares (Bolt S.p.A.) \u2013 Investment in Plenitude",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-05018",
+      "merger_name": "Xylem - TriOS",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60019",
+      "merger_name": "QIC \u2013 CopperString Project assets from Powerlink Queensland",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-90007",
+      "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-80013",
+      "merger_name": "Sydney Water - Windsor Sewerage Scheme Assets",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-75020",
+      "merger_name": "CleanPeak Energy Holdings - Sustainable Energy Infrastructure",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-01094",
+      "merger_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-95001",
+      "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-85025",
+      "merger_name": "Francisco Partners - Blackline Safety",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-05016",
+      "merger_name": "Coles - substation in Yarrawonga VIC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85021",
+      "merger_name": "Yancoal - Kestrel Coal Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85005",
+      "merger_name": "Altor Fund Manager - Evac Holding Oy",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60006",
+      "merger_name": "Re.Group \u2013 Scouts Queensland Recycling Centre Site",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01031",
+      "merger_name": "La Caisse \u2013 Edify NSW Development assets",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 15,
+  "phase_1_count": 3,
+  "phase_2_count": 0,
+  "waiver_count": 12,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 26.333333333333332,
+    "median_days": 28,
+    "average_business_days": 18.666666666666668,
+    "median_business_days": 20,
+    "completed_count": 3
+  }
+}

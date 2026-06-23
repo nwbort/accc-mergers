@@ -1,0 +1,158 @@
+{
+  "code": "B",
+  "name": "Mining",
+  "level": "division",
+  "ancestors": [],
+  "parent": null,
+  "children": [
+    {
+      "code": "06",
+      "name": "Coal Mining",
+      "level": "subdivision",
+      "merger_count": 2
+    },
+    {
+      "code": "07",
+      "name": "Oil and Gas Extraction",
+      "level": "subdivision",
+      "merger_count": 4
+    },
+    {
+      "code": "08",
+      "name": "Metal Ore Mining",
+      "level": "subdivision",
+      "merger_count": 6
+    },
+    {
+      "code": "09",
+      "name": "Non-Metallic Mineral Mining and Quarrying",
+      "level": "subdivision",
+      "merger_count": 1
+    },
+    {
+      "code": "10",
+      "name": "Exploration and Other Mining Support Services",
+      "level": "subdivision",
+      "merger_count": 5
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-25019",
+      "merger_name": "Transocean - Valaris",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-90012",
+      "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-01101",
+      "merger_name": "INPEX \u2013 minority interests in Beetaloo development projects",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-60011",
+      "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-25020",
+      "merger_name": "Zijin Mining - Chifeng",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-75022",
+      "merger_name": "United States\u2013Australia Gallium",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-65013",
+      "merger_name": "BHP \u2013 expansion of Special Mining Lease at Olympic Dam, SA",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85025",
+      "merger_name": "Francisco Partners - Blackline Safety",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-45009",
+      "merger_name": "Idemitsu - MidOcean Energy",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-05004",
+      "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-35011",
+      "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55014",
+      "merger_name": "KPS Capital Partners - Jennmar",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-55012",
+      "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-85014",
+      "merger_name": "Genesis Minerals \u2013 Magnetic Resources",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01037",
+      "merger_name": "Anglo American - Teck Resources",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 15,
+  "phase_1_count": 6,
+  "phase_2_count": 0,
+  "waiver_count": 9,
+  "active_count": 2,
+  "phase_duration": {
+    "average_days": 27.25,
+    "median_days": 26,
+    "average_business_days": 18.75,
+    "median_business_days": 17,
+    "completed_count": 4
+  }
+}

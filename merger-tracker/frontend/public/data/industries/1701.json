@@ -1,5 +1,30 @@
 {
   "code": "1701",
+  "name": "Petroleum Refining and Petroleum Fuel Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "17",
+      "name": "Petroleum and Coal Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "170",
+      "name": "Petroleum and Coal Product Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "170",
+    "name": "Petroleum and Coal Product Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-01019",

@@ -1,5 +1,30 @@
 {
   "code": "6711",
+  "name": "Residential Property Operators",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "L",
+      "name": "Rental, Hiring and Real Estate Services",
+      "level": "division"
+    },
+    {
+      "code": "67",
+      "name": "Property Operators and Real Estate Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "671",
+      "name": "Property Operators",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "671",
+    "name": "Property Operators",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-35008",

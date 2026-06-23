@@ -1,5 +1,30 @@
 {
   "code": "2131",
+  "name": "Alumina Production",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "21",
+      "name": "Primary Metal and Metal Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "213",
+      "name": "Basic Non-Ferrous Metal Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "213",
+    "name": "Basic Non-Ferrous Metal Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-75022",

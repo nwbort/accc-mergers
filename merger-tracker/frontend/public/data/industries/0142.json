@@ -1,5 +1,30 @@
 {
   "code": "0142",
+  "name": "Beef Cattle Farming (Specialised)",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "A",
+      "name": "Agriculture, Forestry and Fishing",
+      "level": "division"
+    },
+    {
+      "code": "01",
+      "name": "Agriculture",
+      "level": "subdivision"
+    },
+    {
+      "code": "014",
+      "name": "Sheep, Beef Cattle and Grain Farming",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "014",
+    "name": "Sheep, Beef Cattle and Grain Farming",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-50010",

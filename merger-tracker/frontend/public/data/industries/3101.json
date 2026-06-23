@@ -1,5 +1,30 @@
 {
   "code": "3101",
+  "name": "Road and Bridge Construction",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "E",
+      "name": "Construction",
+      "level": "division"
+    },
+    {
+      "code": "31",
+      "name": "Heavy and Civil Engineering Construction",
+      "level": "subdivision"
+    },
+    {
+      "code": "310",
+      "name": "Heavy and Civil Engineering Construction",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "310",
+    "name": "Heavy and Civil Engineering Construction",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-70011",

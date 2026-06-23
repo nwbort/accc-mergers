@@ -1,0 +1,79 @@
+{
+  "code": "013",
+  "name": "Fruit and Tree Nut Growing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "A",
+      "name": "Agriculture, Forestry and Fishing",
+      "level": "division"
+    },
+    {
+      "code": "01",
+      "name": "Agriculture",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "01",
+    "name": "Agriculture",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "0131",
+      "name": "Grape Growing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0132",
+      "name": "Kiwifruit Growing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0133",
+      "name": "Berry Fruit Growing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0134",
+      "name": "Apple and Pear Growing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0135",
+      "name": "Stone Fruit Growing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0136",
+      "name": "Citrus Fruit Growing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0137",
+      "name": "Olive Growing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0139",
+      "name": "Other Fruit and Tree Nut Growing",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

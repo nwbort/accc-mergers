@@ -1,5 +1,30 @@
 {
   "code": "8024",
+  "name": "Special School Education",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "P",
+      "name": "Education and Training",
+      "level": "division"
+    },
+    {
+      "code": "80",
+      "name": "Preschool and School Education",
+      "level": "subdivision"
+    },
+    {
+      "code": "802",
+      "name": "School Education",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "802",
+    "name": "School Education",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-95022",

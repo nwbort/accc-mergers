@@ -1,0 +1,61 @@
+{
+  "code": "041",
+  "name": "Fishing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "A",
+      "name": "Agriculture, Forestry and Fishing",
+      "level": "division"
+    },
+    {
+      "code": "04",
+      "name": "Fishing, Hunting and Trapping",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "04",
+    "name": "Fishing, Hunting and Trapping",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "0411",
+      "name": "Rock Lobster and Crab Potting",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0412",
+      "name": "Prawn Fishing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0413",
+      "name": "Line Fishing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0414",
+      "name": "Fish Trawling, Seining and Netting",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0419",
+      "name": "Other Fishing",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

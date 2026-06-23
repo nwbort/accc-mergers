@@ -1,0 +1,45 @@
+{
+  "code": "201",
+  "name": "Glass and Glass Product Manufacturing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "20",
+      "name": "Non-Metallic Mineral Product Manufacturing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "20",
+    "name": "Non-Metallic Mineral Product Manufacturing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "2010",
+      "name": "Glass and Glass Product Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-45012",
+      "merger_name": "Apollo Funds - Nippon Sheet Glass",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

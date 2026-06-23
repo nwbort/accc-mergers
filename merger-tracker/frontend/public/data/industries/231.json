@@ -1,0 +1,63 @@
+{
+  "code": "231",
+  "name": "Motor Vehicle and Motor Vehicle Part Manufacturing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "23",
+      "name": "Transport Equipment Manufacturing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "23",
+    "name": "Transport Equipment Manufacturing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "2311",
+      "name": "Motor Vehicle Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "2312",
+      "name": "Motor Vehicle Body and Trailer Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "2313",
+      "name": "Automotive Electrical Component Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "2319",
+      "name": "Other Motor Vehicle Parts Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-65010",
+      "merger_name": "Honda \u2013 additional shareholding in Astemo",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

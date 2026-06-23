@@ -1,0 +1,65 @@
+{
+  "code": "672",
+  "name": "Real Estate Services",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "L",
+      "name": "Rental, Hiring and Real Estate Services",
+      "level": "division"
+    },
+    {
+      "code": "67",
+      "name": "Property Operators and Real Estate Services",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "67",
+    "name": "Property Operators and Real Estate Services",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "6720",
+      "name": "Real Estate Services",
+      "level": "class",
+      "merger_count": 3
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-20015",
+      "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01090",
+      "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-75009",
+      "merger_name": "Charter Hall Holdings - JGS Private Capital",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 3,
+  "phase_1_count": 2,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 30.0,
+    "median_days": 31,
+    "average_business_days": 20.5,
+    "median_business_days": 22,
+    "completed_count": 2
+  }
+}

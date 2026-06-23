@@ -1,5 +1,30 @@
 {
   "code": "9422",
+  "name": "Electronic (except Domestic Appliance) and Precision Equipment Repair and Maintenance",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "S",
+      "name": "Other Services",
+      "level": "division"
+    },
+    {
+      "code": "94",
+      "name": "Repair and Maintenance",
+      "level": "subdivision"
+    },
+    {
+      "code": "942",
+      "name": "Machinery and Equipment Repair and Maintenance",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "942",
+    "name": "Machinery and Equipment Repair and Maintenance",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-50022",

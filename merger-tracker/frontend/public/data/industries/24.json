@@ -1,0 +1,313 @@
+{
+  "code": "24",
+  "name": "Machinery and Equipment Manufacturing",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "C",
+    "name": "Manufacturing",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "241",
+      "name": "Professional and Scientific Equipment Manufacturing",
+      "level": "group",
+      "merger_count": 10
+    },
+    {
+      "code": "242",
+      "name": "Computer and Electronic Equipment Manufacturing",
+      "level": "group",
+      "merger_count": 3
+    },
+    {
+      "code": "243",
+      "name": "Electrical Equipment Manufacturing",
+      "level": "group",
+      "merger_count": 3
+    },
+    {
+      "code": "244",
+      "name": "Domestic Appliance Manufacturing",
+      "level": "group",
+      "merger_count": 0
+    },
+    {
+      "code": "245",
+      "name": "Pump, Compressor, Heating and Ventilation Equipment Manufacturing",
+      "level": "group",
+      "merger_count": 4
+    },
+    {
+      "code": "246",
+      "name": "Specialised Machinery and Equipment Manufacturing",
+      "level": "group",
+      "merger_count": 10
+    },
+    {
+      "code": "249",
+      "name": "Other Machinery and Equipment Manufacturing",
+      "level": "group",
+      "merger_count": 6
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-15018",
+      "merger_name": "Complete Air Supply - All Air",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-15023",
+      "merger_name": "American Industrial Partners \u2013 Honeywell\u2019s Warehouse and Workflow Solutions business",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-35022",
+      "merger_name": "Hexagon - Waygate Technologies",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-05018",
+      "merger_name": "Xylem - TriOS",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-80020",
+      "merger_name": "Platinum Equity Group - LMPG",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-15015",
+      "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-75024",
+      "merger_name": "KfW \u2013 KNDS N.V.",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-20024",
+      "merger_name": "KK Group Invest - PowerCon",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-80010",
+      "merger_name": "Medtronic - Scientia",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-35016",
+      "merger_name": "Wipro - Indeco",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85027",
+      "merger_name": "American Industrial Partners - Avanos Medical",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-05020",
+      "merger_name": "Midea Group \u2013 Esaote",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-80011",
+      "merger_name": "CRH - Axius Water",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-30009",
+      "merger_name": "Daikin - AAMS Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-15011",
+      "merger_name": "Danaher - Masimo",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-45010",
+      "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-85006",
+      "merger_name": "Tega and Apollo Funds consortium - Molycop",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-25010",
+      "merger_name": "INNIO Group \u2013 Enerflex",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-25006",
+      "merger_name": "KPS \u2013 Novacel",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-25013",
+      "merger_name": "Cinven \u2013 Regenity",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-50010",
+      "merger_name": "Blackbird Ventures \u2013 Halter",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-75013",
+      "merger_name": "Aldus - Hilton Manufacturing",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60010",
+      "merger_name": "Michelin - Flexitallic",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-35010",
+      "merger_name": "Blackstone - Advanced Cooling Technologies",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-70005",
+      "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-55009",
+      "merger_name": "Resonetics \u2013 Resolution Medical",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-75004",
+      "merger_name": "Parker-Hannifin \u2013 Filtration Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-90004",
+      "merger_name": "Crossmuller \u2013 GEM",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-80002",
+      "merger_name": "Bain Capital \u2013 MCJ",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-55004",
+      "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-40003",
+      "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01058",
+      "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-01061",
+      "merger_name": "Molex \u2013 Smiths Interconnect",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-01017",
+      "merger_name": "Kongsberg Defence \u2013 site within Newcastle Airport precinct",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 34,
+  "phase_1_count": 13,
+  "phase_2_count": 0,
+  "waiver_count": 21,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 27.583333333333332,
+    "median_days": 29,
+    "average_business_days": 19.166666666666668,
+    "median_business_days": 20,
+    "completed_count": 12
+  }
+}

@@ -1,5 +1,30 @@
 {
   "code": "3312",
+  "name": "Cereal Grain Wholesaling",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "level": "division"
+    },
+    {
+      "code": "33",
+      "name": "Basic Material Wholesaling",
+      "level": "subdivision"
+    },
+    {
+      "code": "331",
+      "name": "Agricultural Product Wholesaling",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "331",
+    "name": "Agricultural Product Wholesaling",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-60013",

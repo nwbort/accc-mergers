@@ -1,0 +1,107 @@
+{
+  "code": "33",
+  "name": "Basic Material Wholesaling",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "F",
+    "name": "Wholesale Trade",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "331",
+      "name": "Agricultural Product Wholesaling",
+      "level": "group",
+      "merger_count": 1
+    },
+    {
+      "code": "332",
+      "name": "Mineral, Metal and Chemical Wholesaling",
+      "level": "group",
+      "merger_count": 4
+    },
+    {
+      "code": "333",
+      "name": "Timber and Hardware Goods Wholesaling",
+      "level": "group",
+      "merger_count": 3
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-10018",
+      "merger_name": "CSR - Complete Plaster",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-01019",
+      "merger_name": "Ampol \u2013 EG Australia",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 2"
+    },
+    {
+      "merger_id": "MN-01093",
+      "merger_name": "Sinopec - CNAF",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-60013",
+      "merger_name": "Export Trading Group Australia \u2013 pulses and grains business and facility in Mount Tyson, QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-01092",
+      "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-45007",
+      "merger_name": "Henkel \u2013 Stahl",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-75013",
+      "merger_name": "Aldus - Hilton Manufacturing",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-60004",
+      "merger_name": "IOR - Delta Specialised Energy assets",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 8,
+  "phase_1_count": 3,
+  "phase_2_count": 1,
+  "waiver_count": 4,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 99.0,
+    "median_days": 35,
+    "average_business_days": 63.0,
+    "median_business_days": 23,
+    "completed_count": 3
+  }
+}

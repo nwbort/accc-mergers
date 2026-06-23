@@ -1,5 +1,30 @@
 {
   "code": "6330",
+  "name": "Superannuation Funds",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "level": "division"
+    },
+    {
+      "code": "63",
+      "name": "Insurance and Superannuation Funds",
+      "level": "subdivision"
+    },
+    {
+      "code": "633",
+      "name": "Superannuation Funds",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "633",
+    "name": "Superannuation Funds",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-35021",

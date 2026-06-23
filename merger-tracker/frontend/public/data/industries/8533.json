@@ -1,5 +1,30 @@
 {
   "code": "8533",
+  "name": "Physiotherapy Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "Q",
+      "name": "Health Care and Social Assistance",
+      "level": "division"
+    },
+    {
+      "code": "85",
+      "name": "Medical and Other Health Care Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "853",
+      "name": "Allied Health Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "853",
+    "name": "Allied Health Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-95022",

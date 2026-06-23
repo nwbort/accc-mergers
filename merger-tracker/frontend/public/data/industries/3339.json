@@ -1,5 +1,30 @@
 {
   "code": "3339",
+  "name": "Other Hardware Goods Wholesaling",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "level": "division"
+    },
+    {
+      "code": "33",
+      "name": "Basic Material Wholesaling",
+      "level": "subdivision"
+    },
+    {
+      "code": "333",
+      "name": "Timber and Hardware Goods Wholesaling",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "333",
+    "name": "Timber and Hardware Goods Wholesaling",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-10018",

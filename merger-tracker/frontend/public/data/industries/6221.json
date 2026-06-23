@@ -1,5 +1,30 @@
 {
   "code": "6221",
+  "name": "Banking",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "level": "division"
+    },
+    {
+      "code": "62",
+      "name": "Finance",
+      "level": "subdivision"
+    },
+    {
+      "code": "622",
+      "name": "Depository Financial Intermediation",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "622",
+    "name": "Depository Financial Intermediation",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-20014",

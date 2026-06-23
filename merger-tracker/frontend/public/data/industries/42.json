@@ -1,0 +1,173 @@
+{
+  "code": "42",
+  "name": "Other Store-Based Retailing",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "G",
+    "name": "Retail Trade",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "421",
+      "name": "Furniture, Floor Coverings, Houseware and Textile Goods Retailing",
+      "level": "group",
+      "merger_count": 3
+    },
+    {
+      "code": "422",
+      "name": "Electrical and Electronic Goods Retailing",
+      "level": "group",
+      "merger_count": 1
+    },
+    {
+      "code": "423",
+      "name": "Hardware, Building and Garden Supplies Retailing",
+      "level": "group",
+      "merger_count": 2
+    },
+    {
+      "code": "424",
+      "name": "Recreational Goods Retailing",
+      "level": "group",
+      "merger_count": 3
+    },
+    {
+      "code": "425",
+      "name": "Clothing, Footwear and Personal Accessory Retailing",
+      "level": "group",
+      "merger_count": 4
+    },
+    {
+      "code": "426",
+      "name": "Department Stores",
+      "level": "group",
+      "merger_count": 0
+    },
+    {
+      "code": "427",
+      "name": "Pharmaceutical and Other Store-Based Retailing",
+      "level": "group",
+      "merger_count": 4
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-10018",
+      "merger_name": "CSR - Complete Plaster",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-80016",
+      "merger_name": "Henkel \u2013 Olaplex",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-30008",
+      "merger_name": "Frasers Group \u2013 Accent Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-80018",
+      "merger_name": "SOILCO - Go Grow",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55019",
+      "merger_name": "Allegro - Fantastic Furniture",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-80012",
+      "merger_name": "FC Group Holdings Corporation & ors - Fluent Retail",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-05016",
+      "merger_name": "Coles - substation in Yarrawonga VIC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-10014",
+      "merger_name": "Turner Family Entities - Pedal Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-01092",
+      "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60012",
+      "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-01088",
+      "merger_name": "BSN Sports \u2013 Sports Endeavors",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-05008",
+      "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-70006",
+      "merger_name": "Scopely \u2013 Loom Games",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-35004",
+      "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 14,
+  "phase_1_count": 3,
+  "phase_2_count": 0,
+  "waiver_count": 11,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 27.0,
+    "median_days": 27,
+    "average_business_days": 17.0,
+    "median_business_days": 17,
+    "completed_count": 2
+  }
+}

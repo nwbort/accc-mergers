@@ -1,5 +1,30 @@
 {
   "code": "5521",
+  "name": "Music Publishing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "J",
+      "name": "Information Media and Telecommunications",
+      "level": "division"
+    },
+    {
+      "code": "55",
+      "name": "Motion Picture and Sound Recording Activities",
+      "level": "subdivision"
+    },
+    {
+      "code": "552",
+      "name": "Sound Recording and Music Publishing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "552",
+    "name": "Sound Recording and Music Publishing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-75023",

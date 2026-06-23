@@ -1,5 +1,30 @@
 {
   "code": "1916",
+  "name": "Paint and Coatings Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "19",
+      "name": "Polymer Product and Rubber Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "191",
+      "name": "Polymer Product Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "191",
+    "name": "Polymer Product Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-45007",

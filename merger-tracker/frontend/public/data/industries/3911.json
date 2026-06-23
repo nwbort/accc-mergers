@@ -1,5 +1,30 @@
 {
   "code": "3911",
+  "name": "Car Retailing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "39",
+      "name": "Motor Vehicle and Motor Vehicle Parts Retailing",
+      "level": "subdivision"
+    },
+    {
+      "code": "391",
+      "name": "Motor Vehicle Retailing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "391",
+    "name": "Motor Vehicle Retailing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-45016",

@@ -1,5 +1,30 @@
 {
   "code": "4110",
+  "name": "Supermarket and Grocery Stores",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "41",
+      "name": "Food Retailing",
+      "level": "subdivision"
+    },
+    {
+      "code": "411",
+      "name": "Supermarket and Grocery Stores",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "411",
+    "name": "Supermarket and Grocery Stores",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-25029",

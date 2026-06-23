@@ -1,0 +1,130 @@
+{
+  "code": "A",
+  "name": "Agriculture, Forestry and Fishing",
+  "level": "division",
+  "ancestors": [],
+  "parent": null,
+  "children": [
+    {
+      "code": "01",
+      "name": "Agriculture",
+      "level": "subdivision",
+      "merger_count": 8
+    },
+    {
+      "code": "02",
+      "name": "Aquaculture",
+      "level": "subdivision",
+      "merger_count": 0
+    },
+    {
+      "code": "03",
+      "name": "Forestry and Logging",
+      "level": "subdivision",
+      "merger_count": 0
+    },
+    {
+      "code": "04",
+      "name": "Fishing, Hunting and Trapping",
+      "level": "subdivision",
+      "merger_count": 0
+    },
+    {
+      "code": "05",
+      "name": "Agriculture, Forestry and Fishing Support Services",
+      "level": "subdivision",
+      "merger_count": 4
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-40020",
+      "merger_name": "Premier Fresh \u2013 Domenico Group",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-35019",
+      "merger_name": "Precision Poultry - VOAG chicken farming operations",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-05013",
+      "merger_name": "Zoetis \u2013 Neogen Genomics Business",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-30015",
+      "merger_name": "URUS (CVC Capital Partners) \u2013 AgriWebb",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-20012",
+      "merger_name": "Australian Meat Group - Killara Feedlot",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-60013",
+      "merger_name": "Export Trading Group Australia \u2013 pulses and grains business and facility in Mount Tyson, QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-50010",
+      "merger_name": "Blackbird Ventures \u2013 Halter",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-20008",
+      "merger_name": "Hall & McLean \u2013 Freehold interest in commercial land in Wellcamp, QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-60007",
+      "merger_name": "Craig Mostyn \u2013 Patmore Feeds",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-10008",
+      "merger_name": "Premier Fresh \u2013 Charles Domenico Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-50005",
+      "merger_name": "Allied Beef - Lease of Yarranbrook Feedlot",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 11,
+  "phase_1_count": 5,
+  "phase_2_count": 0,
+  "waiver_count": 6,
+  "active_count": 3,
+  "phase_duration": {
+    "average_days": 27.5,
+    "median_days": 28,
+    "average_business_days": 19.0,
+    "median_business_days": 20,
+    "completed_count": 2
+  }
+}

@@ -1,5 +1,30 @@
 {
   "code": "6420",
+  "name": "Auxiliary Insurance Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "level": "division"
+    },
+    {
+      "code": "64",
+      "name": "Auxiliary Finance and Insurance Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "642",
+      "name": "Auxiliary Insurance Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "642",
+    "name": "Auxiliary Insurance Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-50020",

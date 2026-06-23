@@ -1,5 +1,30 @@
 {
   "code": "2122",
+  "name": "Steel Pipe and Tube Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "21",
+      "name": "Primary Metal and Metal Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "212",
+      "name": "Basic Ferrous Metal Product Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "212",
+    "name": "Basic Ferrous Metal Product Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-75018",

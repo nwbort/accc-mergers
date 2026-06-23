@@ -1,0 +1,63 @@
+{
+  "code": "911",
+  "name": "Sports and Physical Recreation Activities",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "R",
+      "name": "Arts and Recreation Services",
+      "level": "division"
+    },
+    {
+      "code": "91",
+      "name": "Sports and Recreation Activities",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "91",
+    "name": "Sports and Recreation Activities",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "9111",
+      "name": "Health and Fitness Centres and Gymnasia Operation",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "9112",
+      "name": "Sports and Physical Recreation Clubs and Sports Professionals",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "9113",
+      "name": "Sports and Physical Recreation Venues, Grounds and Facilities Operation",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "9114",
+      "name": "Sports and Physical Recreation Administrative Service",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-80001",
+      "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

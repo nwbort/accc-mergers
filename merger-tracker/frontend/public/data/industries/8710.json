@@ -1,5 +1,30 @@
 {
   "code": "8710",
+  "name": "Child Care Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "Q",
+      "name": "Health Care and Social Assistance",
+      "level": "division"
+    },
+    {
+      "code": "87",
+      "name": "Social Assistance Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "871",
+      "name": "Child Care Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "871",
+    "name": "Child Care Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-80019",

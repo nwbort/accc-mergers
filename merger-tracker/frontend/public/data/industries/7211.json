@@ -1,5 +1,30 @@
 {
   "code": "7211",
+  "name": "Employment Placement and Recruitment Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "N",
+      "name": "Administrative and Support Services",
+      "level": "division"
+    },
+    {
+      "code": "72",
+      "name": "Administrative Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "721",
+      "name": "Employment Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "721",
+    "name": "Employment Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-70016",

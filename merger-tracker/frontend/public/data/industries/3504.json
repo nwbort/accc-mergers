@@ -1,5 +1,30 @@
 {
   "code": "3504",
+  "name": "Motor Vehicle New Parts Wholesaling",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "level": "division"
+    },
+    {
+      "code": "35",
+      "name": "Motor Vehicle and Motor Vehicle Parts Wholesaling",
+      "level": "subdivision"
+    },
+    {
+      "code": "350",
+      "name": "Motor Vehicle and Motor Vehicle Parts Wholesaling",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "350",
+    "name": "Motor Vehicle and Motor Vehicle Parts Wholesaling",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-65010",

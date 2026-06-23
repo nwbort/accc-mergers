@@ -1,5 +1,30 @@
 {
   "code": "2090",
+  "name": "Other Non-Metallic Mineral Product Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "20",
+      "name": "Non-Metallic Mineral Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "209",
+      "name": "Other Non-Metallic Mineral Product Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "209",
+    "name": "Other Non-Metallic Mineral Product Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-10018",

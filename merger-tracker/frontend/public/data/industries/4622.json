@@ -1,5 +1,30 @@
 {
   "code": "4622",
+  "name": "Urban Bus Transport (Including Tramway)",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "I",
+      "name": "Transport, Postal and Warehousing",
+      "level": "division"
+    },
+    {
+      "code": "46",
+      "name": "Road Transport",
+      "level": "subdivision"
+    },
+    {
+      "code": "462",
+      "name": "Road Passenger Transport",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "462",
+    "name": "Road Passenger Transport",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-70013",

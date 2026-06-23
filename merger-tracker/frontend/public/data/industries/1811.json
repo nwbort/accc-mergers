@@ -1,5 +1,30 @@
 {
   "code": "1811",
+  "name": "Industrial Gas Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "18",
+      "name": "Basic Chemical and Chemical Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "181",
+      "name": "Basic Chemical Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "181",
+    "name": "Basic Chemical Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-75004",

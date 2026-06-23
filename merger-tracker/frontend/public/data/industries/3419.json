@@ -1,5 +1,30 @@
 {
   "code": "3419",
+  "name": "Other Specialised Industrial Machinery and Equipment Wholesaling",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "level": "division"
+    },
+    {
+      "code": "34",
+      "name": "Machinery and Equipment Wholesaling",
+      "level": "subdivision"
+    },
+    {
+      "code": "341",
+      "name": "Specialised Industrial Machinery and Equipment Wholesaling",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "341",
+    "name": "Specialised Industrial Machinery and Equipment Wholesaling",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-85006",

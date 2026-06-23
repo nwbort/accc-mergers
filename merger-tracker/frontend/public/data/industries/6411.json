@@ -1,5 +1,30 @@
 {
   "code": "6411",
+  "name": "Financial Asset Broking Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "level": "division"
+    },
+    {
+      "code": "64",
+      "name": "Auxiliary Finance and Insurance Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "641",
+      "name": "Auxiliary Finance and Investment Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "641",
+    "name": "Auxiliary Finance and Investment Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-65008",

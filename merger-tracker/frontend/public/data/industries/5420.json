@@ -1,5 +1,30 @@
 {
   "code": "5420",
+  "name": "Software Publishing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "J",
+      "name": "Information Media and Telecommunications",
+      "level": "division"
+    },
+    {
+      "code": "54",
+      "name": "Publishing (except Internet and Music Publishing)",
+      "level": "subdivision"
+    },
+    {
+      "code": "542",
+      "name": "Software Publishing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "542",
+    "name": "Software Publishing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-60022",

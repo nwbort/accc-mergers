@@ -1,5 +1,30 @@
 {
   "code": "3734",
+  "name": "Toy and Sporting Goods Wholesaling",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "level": "division"
+    },
+    {
+      "code": "37",
+      "name": "Other Goods Wholesaling",
+      "level": "subdivision"
+    },
+    {
+      "code": "373",
+      "name": "Furniture, Floor Covering and Other Goods Wholesaling",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "373",
+    "name": "Furniture, Floor Covering and Other Goods Wholesaling",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-10014",

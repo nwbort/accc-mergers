@@ -1,5 +1,30 @@
 {
   "code": "8922",
+  "name": "Nature Reserves and Conservation Parks Operation",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "R",
+      "name": "Arts and Recreation Services",
+      "level": "division"
+    },
+    {
+      "code": "89",
+      "name": "Heritage Activities",
+      "level": "subdivision"
+    },
+    {
+      "code": "892",
+      "name": "Parks and Gardens Operations",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "892",
+    "name": "Parks and Gardens Operations",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-40008",

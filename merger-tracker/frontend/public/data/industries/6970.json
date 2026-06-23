@@ -1,5 +1,30 @@
 {
   "code": "6970",
+  "name": "Veterinary Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "level": "division"
+    },
+    {
+      "code": "69",
+      "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
+      "level": "subdivision"
+    },
+    {
+      "code": "697",
+      "name": "Veterinary Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "697",
+    "name": "Veterinary Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-70020",

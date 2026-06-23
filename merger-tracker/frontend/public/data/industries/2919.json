@@ -1,5 +1,30 @@
 {
   "code": "2919",
+  "name": "Other Waste Collection Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "D",
+      "name": "Electricity, Gas, Water and Waste Services",
+      "level": "division"
+    },
+    {
+      "code": "29",
+      "name": "Waste Collection, Treatment and Disposal Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "291",
+      "name": "Waste Collection Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "291",
+    "name": "Waste Collection Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-15021",

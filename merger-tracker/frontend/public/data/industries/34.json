@@ -1,0 +1,150 @@
+{
+  "code": "34",
+  "name": "Machinery and Equipment Wholesaling",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "F",
+    "name": "Wholesale Trade",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "341",
+      "name": "Specialised Industrial Machinery and Equipment Wholesaling",
+      "level": "group",
+      "merger_count": 1
+    },
+    {
+      "code": "349",
+      "name": "Other Machinery and Equipment Wholesaling",
+      "level": "group",
+      "merger_count": 14
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-15018",
+      "merger_name": "Complete Air Supply - All Air",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-95021",
+      "merger_name": "Logic Technologies - Ace Communication Distributors",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-15015",
+      "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-85027",
+      "merger_name": "American Industrial Partners - Avanos Medical",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-05020",
+      "merger_name": "Midea Group \u2013 Esaote",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-65014",
+      "merger_name": "26North Funds - Intermedia Cloud Communications",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-15011",
+      "merger_name": "Danaher - Masimo",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-55013",
+      "merger_name": "Lawrence & Hanson - Gordon Macdonald",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-85006",
+      "merger_name": "Tega and Apollo Funds consortium - Molycop",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-01092",
+      "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60010",
+      "merger_name": "Michelin - Flexitallic",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-95002",
+      "merger_name": "Abbott Laboratories - Exact Sciences",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-45001",
+      "merger_name": "Paragon Care \u2013 Presidental",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01071",
+      "merger_name": "CSE Crosscom \u2013 Progility",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 15,
+  "phase_1_count": 9,
+  "phase_2_count": 0,
+  "waiver_count": 6,
+  "active_count": 3,
+  "phase_duration": {
+    "average_days": 30.333333333333332,
+    "median_days": 33,
+    "average_business_days": 18.333333333333332,
+    "median_business_days": 20,
+    "completed_count": 6
+  }
+}

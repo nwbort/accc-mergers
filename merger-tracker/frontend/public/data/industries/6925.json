@@ -1,5 +1,30 @@
 {
   "code": "6925",
+  "name": "Scientific Testing and Analysis Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "level": "division"
+    },
+    {
+      "code": "69",
+      "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
+      "level": "subdivision"
+    },
+    {
+      "code": "692",
+      "name": "Architectural, Engineering and Technical Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "692",
+    "name": "Architectural, Engineering and Technical Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-90009",

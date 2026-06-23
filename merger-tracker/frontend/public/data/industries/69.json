@@ -1,0 +1,431 @@
+{
+  "code": "69",
+  "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "M",
+    "name": "Professional, Scientific and Technical Services",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "691",
+      "name": "Scientific Research Services",
+      "level": "group",
+      "merger_count": 12
+    },
+    {
+      "code": "692",
+      "name": "Architectural, Engineering and Technical Services",
+      "level": "group",
+      "merger_count": 15
+    },
+    {
+      "code": "693",
+      "name": "Legal and Accounting Services",
+      "level": "group",
+      "merger_count": 4
+    },
+    {
+      "code": "694",
+      "name": "Advertising Services",
+      "level": "group",
+      "merger_count": 7
+    },
+    {
+      "code": "695",
+      "name": "Market Research and Statistical Services",
+      "level": "group",
+      "merger_count": 1
+    },
+    {
+      "code": "696",
+      "name": "Management and Related Consulting Services",
+      "level": "group",
+      "merger_count": 6
+    },
+    {
+      "code": "697",
+      "name": "Veterinary Services",
+      "level": "group",
+      "merger_count": 8
+    },
+    {
+      "code": "699",
+      "name": "Other Professional, Scientific and Technical Services",
+      "level": "group",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-70020",
+      "merger_name": "CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-01072",
+      "merger_name": "Saipem - Subsea7",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-35022",
+      "merger_name": "Hexagon - Waygate Technologies",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-05018",
+      "merger_name": "Xylem - TriOS",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-15022",
+      "merger_name": "Vets Central - Morley Veterinary Hospital",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-50023",
+      "merger_name": "Hillhouse - MGI Dobbyn Carafa",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-95016",
+      "merger_name": "Eli Lilly - Kelonia Therapeutics",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-35014",
+      "merger_name": "News Corp \u2013 acquisition of 20% of National Distribution Services",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-45006",
+      "merger_name": "Paramount Skydance - Warner Bros. Discovery",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-65016",
+      "merger_name": "AtkinsR\u00e9alis - WGA",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-55022",
+      "merger_name": "GenusPlus Group \u2013 MPC Kinetic",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-40019",
+      "merger_name": "Novartis - Excellergy",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-70012",
+      "merger_name": "Quanta - PSD",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-75014",
+      "merger_name": "Seismic \u2013 Highspot",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-55023",
+      "merger_name": "Vets Central - Claremont Veterinary Surgery",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-95020",
+      "merger_name": "Grant Thornton Advisors - Grant Thornton Australia",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-20019",
+      "merger_name": "IK Partners - Selatek",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-60014",
+      "merger_name": "Gilead - Ouro",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-45002",
+      "merger_name": "eBay - Depop",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-90013",
+      "merger_name": "Cement Australia \u2013 Global Manufacturing Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-40012",
+      "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-15011",
+      "merger_name": "Danaher - Masimo",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-20013",
+      "merger_name": "Eli Lilly - Orna Therapeutics",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-95014",
+      "merger_name": "Publicis \u2013 160over90",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-45011",
+      "merger_name": "Signant - ActiGraph",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85016",
+      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-40009",
+      "merger_name": "Gilead - Arcellx",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-95003",
+      "merger_name": "CVS Group - Pittwater Animal Hospital",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-75017",
+      "merger_name": "Vets Central - Drovers Vet Hospital",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-50010",
+      "merger_name": "Blackbird Ventures \u2013 Halter",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-70008",
+      "merger_name": "Tetra Tech \u2013 Providence Consulting",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-01087",
+      "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-80006",
+      "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55009",
+      "merger_name": "Resonetics \u2013 Resolution Medical",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-95008",
+      "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-05007",
+      "merger_name": "Eiffel and Eurazeo \u2013 Segula",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-15008",
+      "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-15004",
+      "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-50003",
+      "merger_name": "Francisco Partners - Sermo",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-15002",
+      "merger_name": "Google - Wiz",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-55005",
+      "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-40004",
+      "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01075",
+      "merger_name": "Thermo Fisher - Clario Holdings",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-55004",
+      "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60008",
+      "merger_name": "Warburg Pincus \u2013 Acclime",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01069",
+      "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-85004",
+      "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-01081",
+      "merger_name": "Accenture \u2013 Faculty Science",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-35001",
+      "merger_name": "WSP \u2013 TRC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 50,
+  "phase_1_count": 20,
+  "phase_2_count": 0,
+  "waiver_count": 30,
+  "active_count": 3,
+  "phase_duration": {
+    "average_days": 31.529411764705884,
+    "median_days": 26,
+    "average_business_days": 20.235294117647058,
+    "median_business_days": 18,
+    "completed_count": 17
+  }
+}

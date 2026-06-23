@@ -1,0 +1,90 @@
+{
+  "code": "425",
+  "name": "Clothing, Footwear and Personal Accessory Retailing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "42",
+      "name": "Other Store-Based Retailing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "42",
+    "name": "Other Store-Based Retailing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "4251",
+      "name": "Clothing Retailing",
+      "level": "class",
+      "merger_count": 4
+    },
+    {
+      "code": "4252",
+      "name": "Footwear Retailing",
+      "level": "class",
+      "merger_count": 4
+    },
+    {
+      "code": "4253",
+      "name": "Watch and Jewellery Retailing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "4259",
+      "name": "Other Personal Accessory Retailing",
+      "level": "class",
+      "merger_count": 1
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-30008",
+      "merger_name": "Frasers Group \u2013 Accent Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-80012",
+      "merger_name": "FC Group Holdings Corporation & ors - Fluent Retail",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-01088",
+      "merger_name": "BSN Sports \u2013 Sports Endeavors",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-05008",
+      "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 4,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 27.0,
+    "median_days": 27,
+    "average_business_days": 17.0,
+    "median_business_days": 17,
+    "completed_count": 1
+  }
+}

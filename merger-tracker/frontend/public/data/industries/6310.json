@@ -1,5 +1,30 @@
 {
   "code": "6310",
+  "name": "Life Insurance",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "level": "division"
+    },
+    {
+      "code": "63",
+      "name": "Insurance and Superannuation Funds",
+      "level": "subdivision"
+    },
+    {
+      "code": "631",
+      "name": "Life Insurance",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "631",
+    "name": "Life Insurance",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-30016",

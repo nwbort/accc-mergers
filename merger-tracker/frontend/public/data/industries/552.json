@@ -1,0 +1,71 @@
+{
+  "code": "552",
+  "name": "Sound Recording and Music Publishing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "J",
+      "name": "Information Media and Telecommunications",
+      "level": "division"
+    },
+    {
+      "code": "55",
+      "name": "Motion Picture and Sound Recording Activities",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "55",
+    "name": "Motion Picture and Sound Recording Activities",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "5521",
+      "name": "Music Publishing",
+      "level": "class",
+      "merger_count": 3
+    },
+    {
+      "code": "5522",
+      "name": "Music and Other Sound Recording Activities",
+      "level": "class",
+      "merger_count": 1
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-75023",
+      "merger_name": "Bertelsmann Music Group - Concord",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-20023",
+      "merger_name": "Sony Music - Recognition Music",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-25018",
+      "merger_name": "Primary Wave - Kobalt",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 3,
+  "phase_1_count": 3,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 2,
+  "phase_duration": {
+    "average_days": 24.0,
+    "median_days": 24,
+    "average_business_days": 16.0,
+    "median_business_days": 16,
+    "completed_count": 1
+  }
+}

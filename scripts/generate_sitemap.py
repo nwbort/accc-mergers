@@ -21,6 +21,7 @@ from xml.sax.saxutils import escape
 
 from merger_filters import load_mergers
 from slug import merger_path
+from static_data import anzsic
 
 
 BASE_URL = "https://mergers.fyi"
@@ -67,16 +68,28 @@ def _format_lastmod(raw):
 
 
 def industry_lastmods(mergers):
-    """Return ``{anzsic_code: latest_page_modified_datetime}`` across mergers."""
+    """Return ``{anzsic_code: latest_page_modified_datetime}`` for every node.
+
+    A page exists for every ANZSIC node (division → class). A merger's modified
+    time rolls up to its node *and* that node's ancestors, so a parent page's
+    lastmod reflects the most recent activity anywhere in its subtree. Nodes
+    with no merger activity are omitted here and fall back to ``TODAY``.
+    """
     latest = {}
+
+    def bump(code, raw):
+        if raw and (code not in latest or raw > latest[code]):
+            latest[code] = raw
+
     for merger in mergers:
         raw = merger.get("page_modified_datetime", "")
         for entry in merger.get("anzsic_codes", []) or []:
             code = entry.get("code")
             if not code:
                 continue
-            if raw and (code not in latest or raw > latest[code]):
-                latest[code] = raw
+            bump(code, raw)
+            for ancestor in anzsic.ancestors(code):
+                bump(ancestor.code, raw)
     return latest
 
 
@@ -109,12 +122,15 @@ def generate_sitemap(mergers):
         ))
         lines.append("")
 
-    lines.append("  <!-- Individual Industry Detail Pages -->")
+    lines.append("  <!-- Individual Industry Detail Pages (full ANZSIC tree) -->")
     industry_latest = industry_lastmods(mergers)
-    for code in sorted(industry_latest):
+    # One URL per ANZSIC node, plus any tagged codes outside the tree.
+    all_codes = set(anzsic.hierarchy()) | set(industry_latest)
+    for code in sorted(all_codes):
+        raw = industry_latest.get(code)
         lines.append(url_entry(
             loc=escape(f"{BASE_URL}/industries/{code}"),
-            lastmod=_format_lastmod(industry_latest[code]),
+            lastmod=_format_lastmod(raw) if raw else TODAY,
             changefreq="weekly",
             priority="0.5",
         ))
@@ -141,7 +157,7 @@ def main():
     mergers = load_mergers()
     sitemap = generate_sitemap(mergers)
     SITEMAP_OUT.write_text(sitemap, encoding="utf-8")
-    industry_count = len(industry_lastmods(mergers))
+    industry_count = len(set(anzsic.hierarchy()) | set(industry_lastmods(mergers)))
     print(
         f"Wrote sitemap with {len(STATIC_PAGES)} static pages, "
         f"{industry_count} industry pages and {len(mergers)} merger pages "

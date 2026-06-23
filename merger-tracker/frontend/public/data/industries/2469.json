@@ -1,5 +1,30 @@
 {
   "code": "2469",
+  "name": "Other Specialised Machinery and Equipment Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "24",
+      "name": "Machinery and Equipment Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "246",
+      "name": "Specialised Machinery and Equipment Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "246",
+    "name": "Specialised Machinery and Equipment Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-75024",

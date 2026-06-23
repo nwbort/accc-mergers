@@ -1,5 +1,30 @@
 {
   "code": "2812",
+  "name": "Sewerage and Drainage Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "D",
+      "name": "Electricity, Gas, Water and Waste Services",
+      "level": "division"
+    },
+    {
+      "code": "28",
+      "name": "Water Supply, Sewerage and Drainage Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "281",
+      "name": "Water Supply, Sewerage and Drainage Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "281",
+    "name": "Water Supply, Sewerage and Drainage Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-80013",

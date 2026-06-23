@@ -1,0 +1,49 @@
+{
+  "code": "731",
+  "name": "Building Cleaning, Pest Control and Gardening Services",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "N",
+      "name": "Administrative and Support Services",
+      "level": "division"
+    },
+    {
+      "code": "73",
+      "name": "Building Cleaning, Pest Control and Other Support Services",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "73",
+    "name": "Building Cleaning, Pest Control and Other Support Services",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "7311",
+      "name": "Building and Other Industrial Cleaning Services",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "7312",
+      "name": "Building Pest Control Services",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "7313",
+      "name": "Gardening Services",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

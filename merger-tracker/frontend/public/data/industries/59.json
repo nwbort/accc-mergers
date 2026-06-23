@@ -1,0 +1,108 @@
+{
+  "code": "59",
+  "name": "Internet Service Providers, Web Search Portals and Data Processing Services",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "J",
+      "name": "Information Media and Telecommunications",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "J",
+    "name": "Information Media and Telecommunications",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "591",
+      "name": "Internet Service Providers and Web Search Portals",
+      "level": "group",
+      "merger_count": 1
+    },
+    {
+      "code": "592",
+      "name": "Data Processing, Web Hosting and Electronic Information Storage Services",
+      "level": "group",
+      "merger_count": 9
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-25021",
+      "merger_name": "OpenAI - Tomoro",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-45006",
+      "merger_name": "Paramount Skydance - Warner Bros. Discovery",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-65014",
+      "merger_name": "26North Funds - Intermedia Cloud Communications",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-40010",
+      "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-50006",
+      "merger_name": "Airtree \u2013 HotDoc",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-15005",
+      "merger_name": "Cvent - ON24",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-85011",
+      "merger_name": "TDR and Estoril \u2013 Escode",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-90002",
+      "merger_name": "NEC Corporation \u2013 CSG Systems International",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-15002",
+      "merger_name": "Google - Wiz",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 9,
+  "phase_1_count": 4,
+  "phase_2_count": 0,
+  "waiver_count": 5,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 33.0,
+    "median_days": 41,
+    "average_business_days": 22.0,
+    "median_business_days": 27,
+    "completed_count": 4
+  }
+}

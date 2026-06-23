@@ -1,5 +1,30 @@
 {
   "code": "0160",
+  "name": "Dairy Cattle Farming",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "A",
+      "name": "Agriculture, Forestry and Fishing",
+      "level": "division"
+    },
+    {
+      "code": "01",
+      "name": "Agriculture",
+      "level": "subdivision"
+    },
+    {
+      "code": "016",
+      "name": "Dairy Cattle Farming",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "016",
+    "name": "Dairy Cattle Farming",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-50010",

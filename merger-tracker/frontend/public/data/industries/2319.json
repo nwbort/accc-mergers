@@ -1,5 +1,30 @@
 {
   "code": "2319",
+  "name": "Other Motor Vehicle Parts Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "23",
+      "name": "Transport Equipment Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "231",
+      "name": "Motor Vehicle and Motor Vehicle Part Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "231",
+    "name": "Motor Vehicle and Motor Vehicle Part Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-65010",

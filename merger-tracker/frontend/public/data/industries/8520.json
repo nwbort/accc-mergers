@@ -1,5 +1,30 @@
 {
   "code": "8520",
+  "name": "Pathology and Diagnostic Imaging Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "Q",
+      "name": "Health Care and Social Assistance",
+      "level": "division"
+    },
+    {
+      "code": "85",
+      "name": "Medical and Other Health Care Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "852",
+      "name": "Pathology and Diagnostic Imaging Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "852",
+    "name": "Pathology and Diagnostic Imaging Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-90019",

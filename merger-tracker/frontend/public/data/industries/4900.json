@@ -1,5 +1,30 @@
 {
   "code": "4900",
+  "name": "Air and Space Transport",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "I",
+      "name": "Transport, Postal and Warehousing",
+      "level": "division"
+    },
+    {
+      "code": "49",
+      "name": "Air and Space Transport",
+      "level": "subdivision"
+    },
+    {
+      "code": "490",
+      "name": "Air and Space Transport",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "490",
+    "name": "Air and Space Transport",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-90016",

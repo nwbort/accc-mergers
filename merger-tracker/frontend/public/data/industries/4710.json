@@ -1,5 +1,30 @@
 {
   "code": "4710",
+  "name": "Rail Freight Transport",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "I",
+      "name": "Transport, Postal and Warehousing",
+      "level": "division"
+    },
+    {
+      "code": "47",
+      "name": "Rail Transport",
+      "level": "subdivision"
+    },
+    {
+      "code": "471",
+      "name": "Rail Freight Transport",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "471",
+    "name": "Rail Freight Transport",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-10007",

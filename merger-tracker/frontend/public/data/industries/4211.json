@@ -1,5 +1,30 @@
 {
   "code": "4211",
+  "name": "Furniture Retailing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "42",
+      "name": "Other Store-Based Retailing",
+      "level": "subdivision"
+    },
+    {
+      "code": "421",
+      "name": "Furniture, Floor Coverings, Houseware and Textile Goods Retailing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "421",
+    "name": "Furniture, Floor Coverings, Houseware and Textile Goods Retailing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-55019",

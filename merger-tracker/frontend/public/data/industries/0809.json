@@ -1,5 +1,30 @@
 {
   "code": "0809",
+  "name": "Other Metal Ore Mining",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "B",
+      "name": "Mining",
+      "level": "division"
+    },
+    {
+      "code": "08",
+      "name": "Metal Ore Mining",
+      "level": "subdivision"
+    },
+    {
+      "code": "080",
+      "name": "Metal Ore Mining",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "080",
+    "name": "Metal Ore Mining",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-65013",

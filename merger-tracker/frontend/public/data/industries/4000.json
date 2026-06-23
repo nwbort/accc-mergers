@@ -1,5 +1,30 @@
 {
   "code": "4000",
+  "name": "Fuel Retailing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "40",
+      "name": "Fuel Retailing",
+      "level": "subdivision"
+    },
+    {
+      "code": "400",
+      "name": "Fuel Retailing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "400",
+    "name": "Fuel Retailing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-40024",

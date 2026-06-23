@@ -1,5 +1,30 @@
 {
   "code": "3239",
+  "name": "Other Building Installation Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "E",
+      "name": "Construction",
+      "level": "division"
+    },
+    {
+      "code": "32",
+      "name": "Construction Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "323",
+      "name": "Building Installation Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "323",
+    "name": "Building Installation Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-05025",

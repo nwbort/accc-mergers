@@ -1,5 +1,30 @@
 {
   "code": "4511",
+  "name": "Cafes and Restaurants",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "H",
+      "name": "Accommodation and Food Services",
+      "level": "division"
+    },
+    {
+      "code": "45",
+      "name": "Food and Beverage Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "451",
+      "name": "Cafes, Restaurants and Takeaway Food Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "451",
+    "name": "Cafes, Restaurants and Takeaway Food Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-25027",

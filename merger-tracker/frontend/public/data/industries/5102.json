@@ -1,5 +1,30 @@
 {
   "code": "5102",
+  "name": "Courier Pick-up and Delivery Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "I",
+      "name": "Transport, Postal and Warehousing",
+      "level": "division"
+    },
+    {
+      "code": "51",
+      "name": "Postal and Courier Pick-up and Delivery Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "510",
+      "name": "Postal and Courier Pick-up and Delivery Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "510",
+    "name": "Postal and Courier Pick-up and Delivery Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-35014",

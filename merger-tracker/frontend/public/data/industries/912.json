@@ -1,0 +1,43 @@
+{
+  "code": "912",
+  "name": "Horse and Dog Racing Activities",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "R",
+      "name": "Arts and Recreation Services",
+      "level": "division"
+    },
+    {
+      "code": "91",
+      "name": "Sports and Recreation Activities",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "91",
+    "name": "Sports and Recreation Activities",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "9121",
+      "name": "Horse and Dog Racing Administration and Track Operation",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "9129",
+      "name": "Other Horse and Dog Racing Activities",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

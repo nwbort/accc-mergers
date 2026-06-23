@@ -1,0 +1,37 @@
+{
+  "code": "426",
+  "name": "Department Stores",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "42",
+      "name": "Other Store-Based Retailing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "42",
+    "name": "Other Store-Based Retailing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "4260",
+      "name": "Department Stores",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

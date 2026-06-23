@@ -1,5 +1,30 @@
 {
   "code": "2432",
+  "name": "Electric Lighting Equipment Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "24",
+      "name": "Machinery and Equipment Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "243",
+      "name": "Electrical Equipment Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "243",
+    "name": "Electrical Equipment Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-80020",

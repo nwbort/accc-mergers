@@ -1,0 +1,83 @@
+{
+  "code": "424",
+  "name": "Recreational Goods Retailing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "42",
+      "name": "Other Store-Based Retailing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "42",
+    "name": "Other Store-Based Retailing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "4241",
+      "name": "Sport and Camping Equipment Retailing",
+      "level": "class",
+      "merger_count": 2
+    },
+    {
+      "code": "4242",
+      "name": "Entertainment Media Retailing",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "4243",
+      "name": "Toy and Game Retailing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "4244",
+      "name": "Newspaper and Book Retailing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "4245",
+      "name": "Marine Equipment Retailing",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-10014",
+      "merger_name": "Turner Family Entities - Pedal Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-01088",
+      "merger_name": "BSN Sports \u2013 Sports Endeavors",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-70006",
+      "merger_name": "Scopely \u2013 Loom Games",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 3,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 0,
+  "phase_duration": null
+}

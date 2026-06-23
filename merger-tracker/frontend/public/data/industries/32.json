@@ -1,0 +1,175 @@
+{
+  "code": "32",
+  "name": "Construction Services",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "E",
+      "name": "Construction",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "E",
+    "name": "Construction",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "321",
+      "name": "Land Development and Site Preparation Services",
+      "level": "group",
+      "merger_count": 8
+    },
+    {
+      "code": "322",
+      "name": "Building Structure Services",
+      "level": "group",
+      "merger_count": 0
+    },
+    {
+      "code": "323",
+      "name": "Building Installation Services",
+      "level": "group",
+      "merger_count": 7
+    },
+    {
+      "code": "324",
+      "name": "Building Completion Services",
+      "level": "group",
+      "merger_count": 1
+    },
+    {
+      "code": "329",
+      "name": "Other Construction Services",
+      "level": "group",
+      "merger_count": 3
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-05025",
+      "merger_name": "Equans - CV Services Group",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-55022",
+      "merger_name": "GenusPlus Group \u2013 MPC Kinetic",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-20022",
+      "merger_name": "PRIME Asia \u2013 Stockland Sienna Wood and Providence",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-80018",
+      "merger_name": "SOILCO - Go Grow",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55020",
+      "merger_name": "BGIS - Safe Fire Electrical",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-01094",
+      "merger_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-30009",
+      "merger_name": "Daikin - AAMS Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-55017",
+      "merger_name": "Coles - Leasehold interest in shopping centre on Capricorn Highway, Emerald, QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55015",
+      "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-25010",
+      "merger_name": "INNIO Group \u2013 Enerflex",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-95010",
+      "merger_name": "Lighthouse - Precise Services Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-25011",
+      "merger_name": "BGIS - Ascot Air",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-55003",
+      "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-25002",
+      "merger_name": "Symal Group - Timms Group and L&D Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-10002",
+      "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01017",
+      "merger_name": "Kongsberg Defence \u2013 site within Newcastle Airport precinct",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 16,
+  "phase_1_count": 5,
+  "phase_2_count": 0,
+  "waiver_count": 11,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 22.75,
+    "median_days": 22,
+    "average_business_days": 16.0,
+    "median_business_days": 16,
+    "completed_count": 4
+  }
+}

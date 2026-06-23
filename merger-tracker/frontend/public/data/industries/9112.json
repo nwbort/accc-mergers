@@ -1,5 +1,30 @@
 {
   "code": "9112",
+  "name": "Sports and Physical Recreation Clubs and Sports Professionals",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "R",
+      "name": "Arts and Recreation Services",
+      "level": "division"
+    },
+    {
+      "code": "91",
+      "name": "Sports and Recreation Activities",
+      "level": "subdivision"
+    },
+    {
+      "code": "911",
+      "name": "Sports and Physical Recreation Activities",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "911",
+    "name": "Sports and Physical Recreation Activities",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-80001",

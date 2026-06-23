@@ -1,5 +1,30 @@
 {
   "code": "2511",
+  "name": "Wooden Furniture and Upholstered Seat Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "25",
+      "name": "Furniture and Other Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "251",
+      "name": "Furniture Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "251",
+    "name": "Furniture Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-55019",

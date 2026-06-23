@@ -1,5 +1,30 @@
 {
   "code": "8010",
+  "name": "Preschool Education",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "P",
+      "name": "Education and Training",
+      "level": "division"
+    },
+    {
+      "code": "80",
+      "name": "Preschool and School Education",
+      "level": "subdivision"
+    },
+    {
+      "code": "801",
+      "name": "Preschool Education",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "801",
+    "name": "Preschool Education",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-80019",

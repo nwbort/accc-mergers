@@ -1,5 +1,30 @@
 {
   "code": "1852",
+  "name": "Cosmetic and Toiletry Preparation Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "18",
+      "name": "Basic Chemical and Chemical Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "185",
+      "name": "Cleaning Compound and Toiletry Preparation Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "185",
+    "name": "Cleaning Compound and Toiletry Preparation Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-80016",

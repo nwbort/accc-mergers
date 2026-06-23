@@ -1,5 +1,30 @@
 {
   "code": "9411",
+  "name": "Automotive Electrical Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "S",
+      "name": "Other Services",
+      "level": "division"
+    },
+    {
+      "code": "94",
+      "name": "Repair and Maintenance",
+      "level": "subdivision"
+    },
+    {
+      "code": "941",
+      "name": "Automotive Repair and Maintenance",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "941",
+    "name": "Automotive Repair and Maintenance",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-90006",

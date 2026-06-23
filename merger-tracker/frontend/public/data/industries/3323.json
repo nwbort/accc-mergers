@@ -1,5 +1,30 @@
 {
   "code": "3323",
+  "name": "Industrial and Agricultural Chemical Product Wholesaling",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "level": "division"
+    },
+    {
+      "code": "33",
+      "name": "Basic Material Wholesaling",
+      "level": "subdivision"
+    },
+    {
+      "code": "332",
+      "name": "Mineral, Metal and Chemical Wholesaling",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "332",
+    "name": "Mineral, Metal and Chemical Wholesaling",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-45007",

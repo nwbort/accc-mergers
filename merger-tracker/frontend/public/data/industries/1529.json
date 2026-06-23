@@ -1,5 +1,30 @@
 {
   "code": "1529",
+  "name": "Other Converted Paper Product Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "15",
+      "name": "Pulp, Paper and Converted Paper Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "152",
+      "name": "Converted Paper Product Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "152",
+    "name": "Converted Paper Product Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-15007",

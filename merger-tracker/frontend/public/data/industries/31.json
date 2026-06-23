@@ -1,0 +1,95 @@
+{
+  "code": "31",
+  "name": "Heavy and Civil Engineering Construction",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "E",
+      "name": "Construction",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "E",
+    "name": "Construction",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "310",
+      "name": "Heavy and Civil Engineering Construction",
+      "level": "group",
+      "merger_count": 8
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-01072",
+      "merger_name": "Saipem - Subsea7",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-55022",
+      "merger_name": "GenusPlus Group \u2013 MPC Kinetic",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-70012",
+      "merger_name": "Quanta - PSD",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-70011",
+      "merger_name": "Egis Projects Asia Pacific - Fulton Hogan Egis O&M",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-50012",
+      "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-85003",
+      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-55003",
+      "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-25002",
+      "merger_name": "Symal Group - Timms Group and L&D Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 8,
+  "phase_1_count": 6,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 23.8,
+    "median_days": 23,
+    "average_business_days": 16.0,
+    "median_business_days": 16,
+    "completed_count": 5
+  }
+}

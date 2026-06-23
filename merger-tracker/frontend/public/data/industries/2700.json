@@ -1,5 +1,30 @@
 {
   "code": "2700",
+  "name": "Gas Supply",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "D",
+      "name": "Electricity, Gas, Water and Waste Services",
+      "level": "division"
+    },
+    {
+      "code": "27",
+      "name": "Gas Supply",
+      "level": "subdivision"
+    },
+    {
+      "code": "270",
+      "name": "Gas Supply",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "270",
+    "name": "Gas Supply",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-95001",

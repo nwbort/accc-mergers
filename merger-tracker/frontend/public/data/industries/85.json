@@ -1,0 +1,176 @@
+{
+  "code": "85",
+  "name": "Medical and Other Health Care Services",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "Q",
+      "name": "Health Care and Social Assistance",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "Q",
+    "name": "Health Care and Social Assistance",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "851",
+      "name": "Medical Services",
+      "level": "group",
+      "merger_count": 8
+    },
+    {
+      "code": "852",
+      "name": "Pathology and Diagnostic Imaging Services",
+      "level": "group",
+      "merger_count": 1
+    },
+    {
+      "code": "853",
+      "name": "Allied Health Services",
+      "level": "group",
+      "merger_count": 10
+    },
+    {
+      "code": "859",
+      "name": "Other Health Care Services",
+      "level": "group",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-01104",
+      "merger_name": "Genea - Care Fertility Greenslopes",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-90015",
+      "merger_name": "Impression Dental Group - Coastal Dental Care",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-05014",
+      "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-90019",
+      "merger_name": "Jardines - I-MED",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-95022",
+      "merger_name": "Life Without Barriers \u2013 Mallacoota District Health & Support Service",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-01100",
+      "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-30014",
+      "merger_name": "MedHealth \u2013 Connect Allied Health",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-70017",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-05009",
+      "merger_name": "Genea - Embrace Fertility",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-40021",
+      "merger_name": "Ochre Health - New Lambton Family Practice, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85022",
+      "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-50007",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-15012",
+      "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-95012",
+      "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-50006",
+      "merger_name": "Airtree \u2013 HotDoc",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85013",
+      "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-70004",
+      "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 17,
+  "phase_1_count": 5,
+  "phase_2_count": 0,
+  "waiver_count": 12,
+  "active_count": 2,
+  "phase_duration": {
+    "average_days": 23.666666666666668,
+    "median_days": 25,
+    "average_business_days": 15.333333333333334,
+    "median_business_days": 15,
+    "completed_count": 3
+  }
+}

@@ -1,5 +1,30 @@
 {
   "code": "5922",
+  "name": "Electronic Information Storage Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "J",
+      "name": "Information Media and Telecommunications",
+      "level": "division"
+    },
+    {
+      "code": "59",
+      "name": "Internet Service Providers, Web Search Portals and Data Processing Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "592",
+      "name": "Data Processing, Web Hosting and Electronic Information Storage Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "592",
+    "name": "Data Processing, Web Hosting and Electronic Information Storage Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-85011",

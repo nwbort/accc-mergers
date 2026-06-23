@@ -1,5 +1,30 @@
 {
   "code": "4400",
+  "name": "Accommodation",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "H",
+      "name": "Accommodation and Food Services",
+      "level": "division"
+    },
+    {
+      "code": "44",
+      "name": "Accommodation",
+      "level": "subdivision"
+    },
+    {
+      "code": "440",
+      "name": "Accommodation",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "440",
+    "name": "Accommodation",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-01103",

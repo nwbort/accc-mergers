@@ -1,0 +1,43 @@
+{
+  "code": "116",
+  "name": "Grain Mill and Cereal Product Manufacturing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "11",
+      "name": "Food Product Manufacturing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "11",
+    "name": "Food Product Manufacturing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "1161",
+      "name": "Grain Mill Product Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "1162",
+      "name": "Cereal, Pasta and Baking Mix Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

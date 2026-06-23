@@ -1,5 +1,30 @@
 {
   "code": "3299",
+  "name": "Other Construction Services n.e.c.",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "E",
+      "name": "Construction",
+      "level": "division"
+    },
+    {
+      "code": "32",
+      "name": "Construction Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "329",
+      "name": "Other Construction Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "329",
+    "name": "Other Construction Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-55022",

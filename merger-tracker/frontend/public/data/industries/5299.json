@@ -1,5 +1,30 @@
 {
   "code": "5299",
+  "name": "Other Transport Support Services n.e.c.",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "I",
+      "name": "Transport, Postal and Warehousing",
+      "level": "division"
+    },
+    {
+      "code": "52",
+      "name": "Transport Support Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "529",
+      "name": "Other Transport Support Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "529",
+    "name": "Other Transport Support Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-10007",

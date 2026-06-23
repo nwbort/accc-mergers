@@ -1,0 +1,63 @@
+{
+  "code": "181",
+  "name": "Basic Chemical Manufacturing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "18",
+      "name": "Basic Chemical and Chemical Product Manufacturing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "18",
+    "name": "Basic Chemical and Chemical Product Manufacturing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "1811",
+      "name": "Industrial Gas Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "1812",
+      "name": "Basic Organic Chemical Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "1813",
+      "name": "Basic Inorganic Chemical Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-75004",
+      "merger_name": "Parker-Hannifin \u2013 Filtration Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 33.0,
+    "median_days": 33,
+    "average_business_days": 22.0,
+    "median_business_days": 22,
+    "completed_count": 1
+  }
+}

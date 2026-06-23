@@ -1,0 +1,91 @@
+{
+  "code": "942",
+  "name": "Machinery and Equipment Repair and Maintenance",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "S",
+      "name": "Other Services",
+      "level": "division"
+    },
+    {
+      "code": "94",
+      "name": "Repair and Maintenance",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "94",
+    "name": "Repair and Maintenance",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "9421",
+      "name": "Domestic Appliance Repair and Maintenance",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "9422",
+      "name": "Electronic (except Domestic Appliance) and Precision Equipment Repair and Maintenance",
+      "level": "class",
+      "merger_count": 2
+    },
+    {
+      "code": "9429",
+      "name": "Other Machinery and Equipment Repair and Maintenance",
+      "level": "class",
+      "merger_count": 4
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-50022",
+      "merger_name": "Service Stream \u2013 RiE",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-90013",
+      "merger_name": "Cement Australia \u2013 Global Manufacturing Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-85003",
+      "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-20005",
+      "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 5,
+  "phase_1_count": 3,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 2,
+  "phase_duration": {
+    "average_days": 22.0,
+    "median_days": 22,
+    "average_business_days": 15.0,
+    "median_business_days": 15,
+    "completed_count": 1
+  }
+}

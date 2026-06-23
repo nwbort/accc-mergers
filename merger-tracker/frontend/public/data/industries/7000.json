@@ -1,5 +1,30 @@
 {
   "code": "7000",
+  "name": "Computer System Design and Related Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "level": "division"
+    },
+    {
+      "code": "70",
+      "name": "Computer System Design and Related Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "700",
+      "name": "Computer System Design and Related Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "700",
+    "name": "Computer System Design and Related Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-60022",

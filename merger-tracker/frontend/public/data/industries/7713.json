@@ -1,5 +1,30 @@
 {
   "code": "7713",
+  "name": "Fire Protection and Other Emergency Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "O",
+      "name": "Public Administration and Safety",
+      "level": "division"
+    },
+    {
+      "code": "77",
+      "name": "Public Order, Safety and Regulatory Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "771",
+      "name": "Public Order and Safety Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "771",
+    "name": "Public Order and Safety Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-15015",

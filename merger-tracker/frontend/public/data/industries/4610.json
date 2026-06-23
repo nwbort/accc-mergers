@@ -1,5 +1,30 @@
 {
   "code": "4610",
+  "name": "Road Freight Transport",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "I",
+      "name": "Transport, Postal and Warehousing",
+      "level": "division"
+    },
+    {
+      "code": "46",
+      "name": "Road Transport",
+      "level": "subdivision"
+    },
+    {
+      "code": "461",
+      "name": "Road Freight Transport",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "461",
+    "name": "Road Freight Transport",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-10007",

@@ -1,11 +1,19 @@
 import { useParams, Link } from 'react-router-dom';
-import { FaChevronLeft } from 'react-icons/fa';
+import { FaChevronRight } from 'react-icons/fa';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
 import IndustryMergerGroups from '../components/IndustryMergerGroups';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
+
+// ANZSIC level → human label for the page subtitle and breadcrumb.
+const LEVEL_LABELS = {
+  division: 'Division',
+  subdivision: 'Subdivision',
+  group: 'Group',
+  class: 'Class',
+};
 
 function IndustryDetail() {
   const { code } = useParams();
@@ -20,8 +28,9 @@ function IndustryDetail() {
     API_ENDPOINTS.industryDetail(decodedCode),
     { cacheKey: `industry-${decodedCode}` }
   );
-  // The industries list is used solely to resolve the display name. A failure
-  // there shouldn't block the page — we fall back to the code.
+  // The industries list is only a fallback for the display name on older
+  // payloads — the detail file now carries its own name. A failure here
+  // shouldn't block the page.
   const { data: industriesData } = useFetchData(API_ENDPOINTS.industries, {
     cacheKey: 'industries-list',
   });
@@ -47,9 +56,14 @@ function IndustryDetail() {
 
   if (!data) return null;
 
-  const industryName = industries
-    ? industries.find((i) => i.code === decodedCode)?.name || decodedCode
-    : decodedCode;
+  // Prefer the name baked into the detail file; fall back to the index, then code.
+  const industryName = data.name
+    || (industries ? industries.find((i) => i.code === decodedCode)?.name : null)
+    || decodedCode;
+
+  const levelLabel = data.level ? LEVEL_LABELS[data.level] : null;
+  const ancestors = data.ancestors || [];
+  const children = data.children || [];
 
   const mergers = data.mergers || [];
 
@@ -90,17 +104,35 @@ function IndustryDetail() {
     <>
       <SEO
         title={industryName}
-        description={`${mergers.length} merger${mergers.length !== 1 ? 's' : ''} in the ${industryName} industry reviewed by the ACCC.`}
+        description={`${mergers.length} merger${mergers.length !== 1 ? 's' : ''} in the ${industryName} industry${levelLabel ? ` (ANZSIC ${levelLabel.toLowerCase()} ${decodedCode})` : ''} reviewed by the ACCC.`}
         url={`/industries/${encodeURIComponent(decodedCode)}`}
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
-        <Link
-          to="/industries"
-          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-primary mb-5 transition-colors"
-        >
-          <FaChevronLeft className="w-4 h-4" aria-hidden="true" />
-          Back to industries
-        </Link>
+        {/* Breadcrumb: Industries → division → … → current node */}
+        <nav aria-label="Industry hierarchy" className="mb-5">
+          <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-gray-500">
+            <li>
+              <Link to="/industries" className="hover:text-primary transition-colors">
+                Industries
+              </Link>
+            </li>
+            {ancestors.map((a) => (
+              <li key={a.code} className="flex items-center gap-x-1.5">
+                <FaChevronRight className="w-3 h-3 text-gray-300" aria-hidden="true" />
+                <Link
+                  to={`/industries/${encodeURIComponent(a.code)}`}
+                  className="hover:text-primary transition-colors"
+                >
+                  {a.name}
+                </Link>
+              </li>
+            ))}
+            <li className="flex items-center gap-x-1.5" aria-current="page">
+              <FaChevronRight className="w-3 h-3 text-gray-300" aria-hidden="true" />
+              <span className="font-medium text-gray-700">{industryName}</span>
+            </li>
+          </ol>
+        </nav>
 
         <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6 card-accent">
           <div className="pt-1">
@@ -108,7 +140,7 @@ function IndustryDetail() {
               {industryName}
             </h1>
             <p className="text-sm text-gray-500 mt-1">
-              ANZSIC code: {decodedCode} · {mergers.length} merger{mergers.length !== 1 ? 's' : ''}
+              ANZSIC {levelLabel ? `${levelLabel.toLowerCase()} ` : 'code: '}{decodedCode} · {mergers.length} merger{mergers.length !== 1 ? 's' : ''}
             </p>
           </div>
         </div>
@@ -129,11 +161,51 @@ function IndustryDetail() {
           </div>
         )}
 
+        {/* Sub-industries: children one level down, for drilling into the tree. */}
+        {children.length > 0 && (
+          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6">
+            <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
+              Sub-industries
+            </h2>
+            <ul className="divide-y divide-gray-50">
+              {children.map((child) => (
+                <li key={child.code}>
+                  <Link
+                    to={`/industries/${encodeURIComponent(child.code)}`}
+                    className="flex items-center justify-between gap-3 py-2.5 group"
+                  >
+                    <span className="text-sm text-gray-900 group-hover:text-primary transition-colors">
+                      <span className="text-gray-400 tabular-nums mr-2">{child.code}</span>
+                      {child.name}
+                    </span>
+                    <span className="flex items-center gap-2 shrink-0">
+                      <span className="inline-flex items-center justify-center min-w-[2.25rem] px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary tabular-nums">
+                        {child.merger_count ?? 0}
+                      </span>
+                      <FaChevronRight className="w-3 h-3 text-gray-300 group-hover:text-primary transition-colors" aria-hidden="true" />
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {mergers.length > 0 && (
+          <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
+            Mergers in this industry
+          </h2>
+        )}
         <IndustryMergerGroups mergers={mergers} variant="full" />
 
         {mergers.length === 0 && (
           <div className="text-center py-16">
             <p className="text-gray-500 font-medium">No mergers found for this industry</p>
+            {children.length > 0 && (
+              <p className="text-gray-500 text-sm mt-1">
+                Browse the sub-industries above to find merger activity.
+              </p>
+            )}
           </div>
         )}
       </div>
