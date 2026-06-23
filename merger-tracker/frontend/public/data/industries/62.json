@@ -37,7 +37,7 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 45
+      "merger_count": 46
     }
   ],
   "mergers": [
@@ -47,6 +47,13 @@
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-05026",
+      "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-75025",
@@ -399,10 +406,10 @@
       "phase": "Phase 2"
     }
   ],
-  "count": 51,
+  "count": 52,
   "phase_1_count": 10,
   "phase_2_count": 1,
-  "waiver_count": 40,
+  "waiver_count": 41,
   "active_count": 1,
   "phase_duration": {
     "average_days": 24.444444444444443,

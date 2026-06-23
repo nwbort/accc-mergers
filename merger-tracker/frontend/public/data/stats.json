@@ -1,6 +1,6 @@
 {
   "total_mergers": 146,
-  "total_waivers": 225,
+  "total_waivers": 227,
   "by_status": {
     "Assessment completed": 110,
     "Under assessment": 35,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 211,
+    "Approved": 213,
     "Not approved": 14
   },
   "phase_duration": {
@@ -37,7 +37,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 45
+      "count": 46
     },
     {
       "name": "Computer System Design and Related Services",
@@ -120,6 +120,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-05026",
+      "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
+      "determination": "Approved",
+      "determination_date": "2026-06-23T12:00:00Z",
+      "page_modified_datetime": "2026-06-23T18:54:09+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-95024",
+      "merger_name": "Carlyle \u2013 CHN Group",
+      "determination": "Approved",
+      "determination_date": "2026-06-23T12:00:00Z",
+      "page_modified_datetime": "2026-06-23T18:52:27+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-25032",
       "merger_name": "River Capital \u2013 YOMG",
       "determination": "Approved",
@@ -155,26 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-22T12:00:00Z",
       "page_modified_datetime": "2026-06-22T20:32:29+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-80019",
-      "merger_name": "Imagine Education \u2013 childcare centres ownership restructure",
-      "determination": "Approved",
-      "determination_date": "2026-06-22T12:00:00Z",
-      "page_modified_datetime": "2026-06-22T20:29:41+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-75025",
-      "merger_name": "M&G Asia Property Fund \u2013 Stockland Coopers Paddock and Willawong Distribution Centre",
-      "determination": "Approved",
-      "determination_date": "2026-06-22T12:00:00Z",
-      "page_modified_datetime": "2026-06-22T18:52:07+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

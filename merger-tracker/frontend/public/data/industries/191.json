@@ -30,7 +30,7 @@
       "code": "1912",
       "name": "Rigid and Semi-Rigid Polymer Product Manufacturing",
       "level": "class",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "1913",
@@ -64,6 +64,13 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-95024",
+      "merger_name": "Carlyle \u2013 CHN Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
     {
       "merger_id": "WA-25023",
       "merger_name": "EPL - Indovida India",
@@ -128,10 +135,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 9,
+  "count": 10,
   "phase_1_count": 5,
   "phase_2_count": 0,
-  "waiver_count": 4,
+  "waiver_count": 5,
   "active_count": 0,
   "phase_duration": {
     "average_days": 26.6,

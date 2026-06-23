@@ -31,7 +31,7 @@
       "code": "333",
       "name": "Timber and Hardware Goods Wholesaling",
       "level": "group",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
@@ -41,6 +41,13 @@
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-95024",
+      "merger_name": "Carlyle \u2013 CHN Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-01019",
@@ -92,10 +99,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 8,
+  "count": 9,
   "phase_1_count": 3,
   "phase_2_count": 1,
-  "waiver_count": 4,
+  "waiver_count": 5,
   "active_count": 1,
   "phase_duration": {
     "average_days": 99.0,

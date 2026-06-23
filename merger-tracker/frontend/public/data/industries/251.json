@@ -24,7 +24,7 @@
       "code": "2511",
       "name": "Wooden Furniture and Upholstered Seat Manufacturing",
       "level": "class",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "2512",
@@ -36,7 +36,7 @@
       "code": "2513",
       "name": "Mattress Manufacturing",
       "level": "class",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "2519",
@@ -47,6 +47,13 @@
   ],
   "mergers": [
     {
+      "merger_id": "WA-95024",
+      "merger_name": "Carlyle \u2013 CHN Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
       "merger_id": "WA-55019",
       "merger_name": "Allegro - Fantastic Furniture",
       "is_waiver": true,
@@ -54,10 +61,10 @@
       "phase": "Waiver"
     }
   ],
-  "count": 1,
+  "count": 2,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": null
 }

@@ -24,10 +24,17 @@
       "code": "6720",
       "name": "Real Estate Services",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-05026",
+      "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
     {
       "merger_id": "WA-20015",
       "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
@@ -50,10 +57,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 3,
+  "count": 4,
   "phase_1_count": 2,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": {
     "average_days": 30.0,

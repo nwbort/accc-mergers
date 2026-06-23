@@ -24,10 +24,17 @@
       "code": "6240",
       "name": "Financial Asset Investing",
       "level": "class",
-      "merger_count": 45
+      "merger_count": 46
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-05026",
+      "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
     {
       "merger_id": "WA-75025",
       "merger_name": "M&G Asia Property Fund \u2013 Stockland Coopers Paddock and Willawong Distribution Centre",
@@ -344,10 +351,10 @@
       "phase": "Waiver"
     }
   ],
-  "count": 45,
+  "count": 46,
   "phase_1_count": 9,
   "phase_2_count": 0,
-  "waiver_count": 36,
+  "waiver_count": 37,
   "active_count": 0,
   "phase_duration": {
     "average_days": 24.444444444444443,
