@@ -24,10 +24,17 @@
       "code": "4110",
       "name": "Supermarket and Grocery Stores",
       "level": "class",
-      "merger_count": 11
+      "merger_count": 12
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-70022",
+      "merger_name": "Coles \u2013 supermarket site in Coffs Harbour (NSW)",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
     {
       "merger_id": "MN-25029",
       "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
@@ -106,11 +113,11 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 11,
-  "phase_1_count": 3,
+  "count": 12,
+  "phase_1_count": 4,
   "phase_2_count": 2,
   "waiver_count": 6,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 132.0,
     "median_days": 235,

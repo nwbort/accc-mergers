@@ -1,0 +1,138 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-coffs-harbour-nsw",
+  "merger_name": "Coles \u2013 supermarket site in Coffs Harbour (NSW)",
+  "status": "Under assessment",
+  "merger_id": "MN-70022",
+  "effective_notification_datetime": "2026-06-23T12:00:00Z",
+  "original_notification_datetime": "2026-06-23T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-08-04T12:00:00Z",
+  "page_modified_datetime": "2026-06-23T17:10:58+10:00",
+  "consultation_response_due_date": "2026-06-30T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "45 004 189 708",
+      "canonical": {
+        "id": "coles",
+        "name": "Coles Group"
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "H.A. Bachrach (Nom) Pty Ltd",
+      "identifier_type": "ACN",
+      "identifier": "005 026 326"
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "4110",
+      "name": "Supermarket and Grocery Stores"
+    }
+  ],
+  "merger_description": "Coles Group Limited (**Coles**) is an Australian public company (ASX: COL) that primarily operates:\n\n* supermarkets nationwide through its subsidiary, Coles Supermarkets Australia Pty Ltd; and\n* retail liquor stores nationwide, trading under the Liquorland, Liquorland Warehouse and Liquorland Cellars brands.\n\nH.A. Bachrach (Nom) Pty Ltd (the\u00a0**Lessor**) is a part of an Australian private property development company, the Bachrach Naumburger Group, which manages a portfolio of commercial office and retail properties in Queensland.\n\nColes has signed a letter of offer in respect of a proposed lease for the development of a Coles supermarket within an existing shopping centre known as Park Beach Plaza, located at 253 Pacific Highway, Coffs Harbour, NSW 2450 (the **Acquisition**).\n\nThe site was previously occupied by a Ritchies IGA Supermarket which closed at the end of April 2026.\n\nThe proposed Coles supermarket is anticipated to open in September 2027.",
+  "events": [
+    {
+      "date": "2026-06-23T12:00:00Z",
+      "title": "Questionnaire",
+      "display_title": "Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Coles%20Coffs%20Harbour%20-%20Questionnaire%20-%20June%202026.docx",
+      "url_gh": "/mergers/MN-70022/Coles Coffs Harbour - Questionnaire - June 2026.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-06-23T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-01068",
+      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 004 189 708",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "M Holdings 4 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "652 075 799"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01090",
+      "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 004 189 708",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Tipalea Private No.31 Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "686 197 115"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-25029",
+      "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 004 189 708",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "MINTO MARKETPLACE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 157 762 000"
+        }
+      ]
+    }
+  ]
+}

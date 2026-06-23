@@ -121,6 +121,16 @@
       "effective_notification_datetime": "2026-06-22T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-06-30T12:00:00Z",
+      "merger_id": "MN-70022",
+      "merger_name": "Coles \u2013 supermarket site in Coffs Harbour (NSW)",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-06-23T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-07-02T12:00:00Z",
@@ -433,6 +443,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-08-04T12:00:00Z",
+      "merger_id": "MN-70022",
+      "merger_name": "Coles \u2013 supermarket site in Coffs Harbour (NSW)",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-06-23T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-08-17T12:00:00Z",
       "merger_id": "MN-30003",
       "merger_name": "MicroStar Logistics - Konvoy",
@@ -441,6 +461,6 @@
       "effective_notification_datetime": "2026-02-20T12:00:00Z"
     }
   ],
-  "count": 44,
+  "count": 46,
   "days_ahead": 60
 }

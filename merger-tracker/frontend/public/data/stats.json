@@ -1,9 +1,9 @@
 {
-  "total_mergers": 145,
+  "total_mergers": 146,
   "total_waivers": 225,
   "by_status": {
     "Assessment completed": 110,
-    "Under assessment": 34,
+    "Under assessment": 35,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -64,19 +64,27 @@
       "count": 13
     },
     {
+      "name": "Supermarket and Grocery Stores",
+      "count": 12
+    },
+    {
       "name": "Liquor Retailing",
       "count": 12
     },
     {
       "name": "Scientific Research Services",
       "count": 12
-    },
-    {
-      "name": "Supermarket and Grocery Stores",
-      "count": 11
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-70022",
+      "merger_name": "Coles \u2013 supermarket site in Coffs Harbour (NSW)",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-23T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-50027",
       "merger_name": "Endeavour Group - retail liquor site in Avalon, NSW",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-19T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-01103",
-      "merger_name": "Discovery Holiday Parks \u2013 four Breeze Holiday Parks",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-18T12:00:00Z",
       "is_waiver": false
     }
   ],
