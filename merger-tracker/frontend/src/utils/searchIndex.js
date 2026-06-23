@@ -52,6 +52,13 @@ export function buildSearchIndex(mergers) {
       });
     }
 
+    // Add other-party names
+    if (merger.other_parties) {
+      merger.other_parties.forEach((p) => {
+        if (p?.name) searchParts.push(p.name);
+      });
+    }
+
     // Add canonical "related party" names so a search for the canonical name
     // (used by the party links on the merger detail page) surfaces every merger
     // involving the same entity, even when its on-record name differs.

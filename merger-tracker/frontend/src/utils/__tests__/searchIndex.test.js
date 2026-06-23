@@ -60,6 +60,21 @@ describe('buildSearchIndex', () => {
     expect(str).not.toContain('undefined');
   });
 
+  it('includes other-party names so they are searchable', () => {
+    const withOther = [
+      {
+        merger_id: 'MN-05050',
+        merger_name: 'Some deal',
+        acquirers: [{ name: 'Acquirer Co' }],
+        targets: [{ name: 'Target Co' }],
+        other_parties: [{ name: 'Vendor Holdings Pty Ltd' }],
+      },
+    ];
+    const index = buildSearchIndex(withOther);
+    expect(index.get('MN-05050')).toContain('vendor holdings pty ltd');
+    expect(searchMergers(withOther, 'Vendor Holdings', index)).toHaveLength(1);
+  });
+
   it('includes canonical party names so the canonical filter finds every variant', () => {
     const withCanonical = [
       {
