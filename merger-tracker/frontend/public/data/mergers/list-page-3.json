@@ -14,7 +14,11 @@
         {
           "name": "TETRA TECH AUSTRALIA GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "74 676 488 716"
+          "identifier": "74 676 488 716",
+          "canonical": {
+            "id": "tetra-tech-inc",
+            "name": "Tetra Tech, Inc."
+          }
         }
       ],
       "targets": [
@@ -48,12 +52,20 @@
         {
           "name": "TETRA TECH HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "98 623 346 225"
+          "identifier": "98 623 346 225",
+          "canonical": {
+            "id": "tetra-tech-inc",
+            "name": "Tetra Tech, Inc."
+          }
         },
         {
           "name": "Tetra Tech, Inc.",
           "identifier_type": null,
-          "identifier": "CIK 0000831641"
+          "identifier": "CIK 0000831641",
+          "canonical": {
+            "id": "tetra-tech-inc",
+            "name": "Tetra Tech, Inc."
+          }
         }
       ],
       "anzsic_codes": [
@@ -335,7 +347,11 @@
         {
           "name": "FTP Solutions Inc",
           "identifier_type": null,
-          "identifier": "BN  770283133"
+          "identifier": "BN  770283133",
+          "canonical": {
+            "id": "ftp-solutions-inc",
+            "name": "FTP Solutions Inc"
+          }
         },
         {
           "name": "FAARM SOLUTIONS PTY LTD",
@@ -375,7 +391,11 @@
         {
           "name": "FTP SOLUTIONS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "91 156 293 346"
+          "identifier": "91 156 293 346",
+          "canonical": {
+            "id": "ftp-solutions-inc",
+            "name": "FTP Solutions Inc"
+          }
         },
         {
           "name": "Yarn Mesh NZ Limited",
@@ -465,22 +485,38 @@
         {
           "name": "FGI Acquisition Corp",
           "identifier_type": "ABN",
-          "identifier": "20 659 183 196"
+          "identifier": "20 659 183 196",
+          "canonical": {
+            "id": "fgi-acquisition-corp",
+            "name": "FGI Acquisition Corp"
+          }
         },
         {
           "name": "Fenner Group Holdings Limited",
           "identifier_type": null,
-          "identifier": "CRN  00329377"
+          "identifier": "CRN  00329377",
+          "canonical": {
+            "id": "fenner-international-limited",
+            "name": "Fenner International Limited"
+          }
         },
         {
           "name": "Fenner International Limited",
           "identifier_type": null,
-          "identifier": "CRN  00527338"
+          "identifier": "CRN  00527338",
+          "canonical": {
+            "id": "fenner-international-limited",
+            "name": "Fenner International Limited"
+          }
         },
         {
           "name": "FLEXITALLIC AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 659 183 196"
+          "identifier": "20 659 183 196",
+          "canonical": {
+            "id": "fgi-acquisition-corp",
+            "name": "FGI Acquisition Corp"
+          }
         },
         {
           "name": "HALLITE SEALS AUSTRALIA PTY LIMITED",
@@ -544,7 +580,11 @@
         {
           "name": "VETS CENTRAL HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 652 812 256"
+          "identifier": "60 652 812 256",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1191,7 +1231,11 @@
         {
           "name": "Argo QLD Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "690 893 371"
+          "identifier": "690 893 371",
+          "canonical": {
+            "id": "argo-qld-pty-ltd",
+            "name": "Argo QLD Pty Ltd"
+          }
         },
         {
           "name": "Mercuria Argo Investments Pty Ltd",
@@ -1221,7 +1265,11 @@
         {
           "name": "Argo Holdings QLD Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "690 887 597"
+          "identifier": "690 887 597",
+          "canonical": {
+            "id": "argo-qld-pty-ltd",
+            "name": "Argo QLD Pty Ltd"
+          }
         },
         {
           "name": "Mercuria Dry Bulk Finance Limited",
@@ -1275,7 +1323,11 @@
         {
           "name": "Blackstone, Inc.",
           "identifier_type": null,
-          "identifier": "CIK 0001393818"
+          "identifier": "CIK 0001393818",
+          "canonical": {
+            "id": "blackstone-inc",
+            "name": "Blackstone Inc."
+          }
         }
       ],
       "anzsic_codes": [
@@ -1375,7 +1427,11 @@
         {
           "name": "Rocket Software, Inc.",
           "identifier_type": null,
-          "identifier": "Companies\u2019 Register of Delaware  3506913"
+          "identifier": "Companies\u2019 Register of Delaware  3506913",
+          "canonical": {
+            "id": "rocket-software-inc",
+            "name": "Rocket Software, Inc."
+          }
         }
       ],
       "targets": [
@@ -1394,12 +1450,20 @@
         {
           "name": "ROCKET SOFTWARE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "22 050 043 699"
+          "identifier": "22 050 043 699",
+          "canonical": {
+            "id": "rocket-software-inc",
+            "name": "Rocket Software, Inc."
+          }
         },
         {
           "name": "Bain Capital Investors LLC",
           "identifier_type": null,
-          "identifier": "3229725"
+          "identifier": "3229725",
+          "canonical": {
+            "id": "bain-capital-investors-llc",
+            "name": "Bain Capital Investors LLC"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1431,7 +1495,11 @@
         {
           "name": "Clearwater Analytics Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "00140838"
+          "identifier": "00140838",
+          "canonical": {
+            "id": "clearwater-analytics-llc",
+            "name": "Clearwater Analytics, LLC"
+          }
         }
       ],
       "other_parties": [
@@ -1443,7 +1511,11 @@
         {
           "name": "Clearwater Analytics, LLC",
           "identifier_type": null,
-          "identifier": "4909156"
+          "identifier": "4909156",
+          "canonical": {
+            "id": "clearwater-analytics-llc",
+            "name": "Clearwater Analytics, LLC"
+          }
         },
         {
           "name": "Permira Holdings Limited",
@@ -1633,7 +1705,11 @@
         {
           "name": "THE TRUST COMPANY (AUSTRALIA) LIMITED",
           "identifier_type": "ABN",
-          "identifier": "21 000 000 993"
+          "identifier": "21 000 000 993",
+          "canonical": {
+            "id": "the-trust-company-australia-limited",
+            "name": "The Trust Company (Australia) Limited"
+          }
         },
         {
           "name": "PEARL HOTELS D 1993 PTY LIMITED",
@@ -2186,7 +2262,11 @@
         {
           "name": "VETS CENTRAL HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 652 812 256"
+          "identifier": "60 652 812 256",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         },
         {
           "name": "VC OPERATIONS PTY LTD",
@@ -2206,7 +2286,11 @@
         {
           "name": "VETS CENTRAL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 646 462 973"
+          "identifier": "25 646 462 973",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2412,7 +2496,11 @@
         {
           "name": "CVC Capital Partners plc",
           "identifier_type": null,
-          "identifier": "140080"
+          "identifier": "140080",
+          "canonical": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          }
         }
       ],
       "targets": [
@@ -2468,7 +2556,11 @@
         {
           "name": "Henkel Global Supply Chain B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number, 854017447, CCI 60683945"
+          "identifier": "Netherlands registration number, 854017447, CCI 60683945",
+          "canonical": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
+          }
         }
       ],
       "targets": [
@@ -2517,7 +2609,11 @@
         {
           "name": "Inter Beteiligungsverwaltungs -Gesellschaft mbH",
           "identifier_type": null,
-          "identifier": "Germany registration number (HRB): 35906"
+          "identifier": "Germany registration number (HRB): 35906",
+          "canonical": {
+            "id": "inter-beteiligungsverwaltungs-gesellschaft-mbh",
+            "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH"
+          }
         },
         {
           "name": "Wendel S.E.",
@@ -2532,7 +2628,11 @@
         {
           "name": "Henkel AG & Co. KGaA",
           "identifier_type": null,
-          "identifier": "Germany registration number (HRB): 4724"
+          "identifier": "Germany registration number (HRB): 4724",
+          "canonical": {
+            "id": "henkel-ag-co-kgaa",
+            "name": "Henkel AG & Co. KGaA"
+          }
         },
         {
           "name": "Henkel Australia Pty Ltd",

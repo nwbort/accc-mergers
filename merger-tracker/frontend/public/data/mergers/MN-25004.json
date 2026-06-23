@@ -15,7 +15,11 @@
     {
       "name": "ServiceNow, Inc.",
       "identifier_type": null,
-      "identifier": "5111469"
+      "identifier": "5111469",
+      "canonical": {
+        "id": "servicenow-inc",
+        "name": "ServiceNow, Inc."
+      }
     }
   ],
   "targets": [
@@ -34,7 +38,11 @@
     {
       "name": "ServiceNow Australia Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "149 683 312"
+      "identifier": "149 683 312",
+      "canonical": {
+        "id": "servicenow-inc",
+        "name": "ServiceNow, Inc."
+      }
     }
   ],
   "anzsic_codes": [
@@ -116,7 +124,11 @@
         {
           "name": "ServiceNow, Inc.",
           "identifier_type": null,
-          "identifier": "5111469"
+          "identifier": "5111469",
+          "canonical": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
+          }
         }
       ],
       "targets": [

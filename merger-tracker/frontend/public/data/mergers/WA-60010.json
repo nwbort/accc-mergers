@@ -37,22 +37,38 @@
     {
       "name": "FGI Acquisition Corp",
       "identifier_type": "ABN",
-      "identifier": "20 659 183 196"
+      "identifier": "20 659 183 196",
+      "canonical": {
+        "id": "fgi-acquisition-corp",
+        "name": "FGI Acquisition Corp"
+      }
     },
     {
       "name": "Fenner Group Holdings Limited",
       "identifier_type": null,
-      "identifier": "CRN  00329377"
+      "identifier": "CRN  00329377",
+      "canonical": {
+        "id": "fenner-international-limited",
+        "name": "Fenner International Limited"
+      }
     },
     {
       "name": "Fenner International Limited",
       "identifier_type": null,
-      "identifier": "CRN  00527338"
+      "identifier": "CRN  00527338",
+      "canonical": {
+        "id": "fenner-international-limited",
+        "name": "Fenner International Limited"
+      }
     },
     {
       "name": "FLEXITALLIC AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "20 659 183 196"
+      "identifier": "20 659 183 196",
+      "canonical": {
+        "id": "fgi-acquisition-corp",
+        "name": "FGI Acquisition Corp"
+      }
     },
     {
       "name": "HALLITE SEALS AUSTRALIA PTY LIMITED",
@@ -165,7 +181,11 @@
         {
           "name": "Eli Lilly and Company",
           "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  350470950"
+          "identifier": "IRS Employer Identification Number  350470950",
+          "canonical": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
+          }
         }
       ],
       "targets": [
@@ -185,7 +205,11 @@
         {
           "name": "Eli Lilly and Company",
           "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  350470950"
+          "identifier": "IRS Employer Identification Number  350470950",
+          "canonical": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
+          }
         }
       ],
       "targets": [

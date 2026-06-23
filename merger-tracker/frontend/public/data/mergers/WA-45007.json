@@ -13,7 +13,11 @@
     {
       "name": "Henkel Global Supply Chain B.V.",
       "identifier_type": null,
-      "identifier": "Netherlands registration number, 854017447, CCI 60683945"
+      "identifier": "Netherlands registration number, 854017447, CCI 60683945",
+      "canonical": {
+        "id": "henkel-global-supply-chain-b-v",
+        "name": "Henkel Global Supply Chain B.V."
+      }
     }
   ],
   "targets": [
@@ -62,7 +66,11 @@
     {
       "name": "Inter Beteiligungsverwaltungs -Gesellschaft mbH",
       "identifier_type": null,
-      "identifier": "Germany registration number (HRB): 35906"
+      "identifier": "Germany registration number (HRB): 35906",
+      "canonical": {
+        "id": "inter-beteiligungsverwaltungs-gesellschaft-mbh",
+        "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH"
+      }
     },
     {
       "name": "Wendel S.E.",
@@ -77,7 +85,11 @@
     {
       "name": "Henkel AG & Co. KGaA",
       "identifier_type": null,
-      "identifier": "Germany registration number (HRB): 4724"
+      "identifier": "Germany registration number (HRB): 4724",
+      "canonical": {
+        "id": "henkel-ag-co-kgaa",
+        "name": "Henkel AG & Co. KGaA"
+      }
     },
     {
       "name": "Henkel Australia Pty Ltd",
@@ -163,7 +175,11 @@
         {
           "name": "Henkel Global Supply Chain B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+          "identifier": "Netherlands registration number: 854017447, CCI 60683945",
+          "canonical": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
+          }
         }
       ],
       "targets": [
@@ -183,7 +199,11 @@
         {
           "name": "Henkel Global Supply Chain B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+          "identifier": "Netherlands registration number: 854017447, CCI 60683945",
+          "canonical": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
+          }
         }
       ],
       "targets": [

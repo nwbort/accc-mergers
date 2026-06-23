@@ -67,7 +67,11 @@
         {
           "name": "ServiceNow, Inc.",
           "identifier_type": null,
-          "identifier": "5111469"
+          "identifier": "5111469",
+          "canonical": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
+          }
         }
       ],
       "targets": [
@@ -99,7 +103,11 @@
         {
           "name": "Excellergy Inc.",
           "identifier_type": null,
-          "identifier": "EIN 854115816"
+          "identifier": "EIN 854115816",
+          "canonical": {
+            "id": "excellergy-inc",
+            "name": "Excellergy Inc."
+          }
         }
       ]
     },

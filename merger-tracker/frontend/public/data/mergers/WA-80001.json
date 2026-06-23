@@ -37,7 +37,11 @@
     {
       "name": "PLAYHQ SPORTS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "11 624 565 359"
+      "identifier": "11 624 565 359",
+      "canonical": {
+        "id": "playhq-sports-ltd",
+        "name": "PlayHQ Sports Ltd"
+      }
     },
     {
       "name": "PlayHQ Sports UK Limited",
@@ -47,7 +51,11 @@
     {
       "name": "PlayHQ Sports Ltd",
       "identifier_type": null,
-      "identifier": "Canadian registered company  1001392583"
+      "identifier": "Canadian registered company  1001392583",
+      "canonical": {
+        "id": "playhq-sports-ltd",
+        "name": "PlayHQ Sports Ltd"
+      }
     },
     {
       "name": "Arena HoldCo Pty Ltd",

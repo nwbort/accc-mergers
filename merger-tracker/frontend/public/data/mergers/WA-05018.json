@@ -127,7 +127,11 @@
         {
           "name": "Henkel Global Supply Chain B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number, 854017447, CCI 60683945"
+          "identifier": "Netherlands registration number, 854017447, CCI 60683945",
+          "canonical": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
+          }
         }
       ],
       "targets": [
@@ -159,7 +163,11 @@
         {
           "name": "Clearwater Analytics Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "00140838"
+          "identifier": "00140838",
+          "canonical": {
+            "id": "clearwater-analytics-llc",
+            "name": "Clearwater Analytics, LLC"
+          }
         }
       ]
     }

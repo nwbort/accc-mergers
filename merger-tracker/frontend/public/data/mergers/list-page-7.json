@@ -168,7 +168,11 @@
         {
           "name": "AMPOL PETROLEUM PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 000 007 876"
+          "identifier": "11 000 007 876",
+          "canonical": {
+            "id": "ampol-petroleum-pty-ltd",
+            "name": "Ampol Petroleum Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -238,7 +242,11 @@
         {
           "name": "CPP Investment Board Private Holdings (6) Inc",
           "identifier_type": null,
-          "identifier": "CBN  764228300"
+          "identifier": "CBN  764228300",
+          "canonical": {
+            "id": "stonepeak-motion-poolingco-limited",
+            "name": "Stonepeak Motion PoolingCo Limited"
+          }
         },
         {
           "name": "Motion JVCo Limited",
@@ -255,7 +263,11 @@
         {
           "name": "Stonepeak Motion PoolingCo Limited",
           "identifier_type": null,
-          "identifier": "CBN  764228300"
+          "identifier": "CBN  764228300",
+          "canonical": {
+            "id": "stonepeak-motion-poolingco-limited",
+            "name": "Stonepeak Motion PoolingCo Limited"
+          }
         },
         {
           "name": "Castrol Group Holdings Limited",
@@ -727,7 +739,11 @@
         {
           "name": "Zurich Assure Australia Pty Ltd",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "canonical": {
+            "id": "zurich-assure-australia-pty-ltd",
+            "name": "Zurich Assure Australia Pty Ltd"
+          }
         },
         {
           "name": "Zurich Australia Insurance Limited",
@@ -742,7 +758,11 @@
         {
           "name": "Zurich Services (Australia) Pty Ltd",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "canonical": {
+            "id": "zurich-services-australia-pty-ltd",
+            "name": "Zurich Services (Australia) Pty Ltd"
+          }
         },
         {
           "name": "Zurich Finance (Australia) Limited",
@@ -752,7 +772,11 @@
         {
           "name": "Zurich Australian Property Holdings Pty Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "canonical": {
+            "id": "zurich-australian-property-holdings-pty-ltd",
+            "name": "Zurich Australian Property Holdings Pty Ltd"
+          }
         },
         {
           "name": "Cover-More Group",
@@ -762,7 +786,11 @@
         {
           "name": "Insite Holdings Pty Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "canonical": {
+            "id": "insite-holdings-pty-ltd",
+            "name": "Insite Holdings Pty Ltd"
+          }
         },
         {
           "name": "Zurich Australia Limited",
@@ -970,12 +998,20 @@
         {
           "name": "VETS CENTRAL HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 652 812 256"
+          "identifier": "60 652 812 256",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         },
         {
           "name": "VETS CENTRAL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 646 462 973"
+          "identifier": "25 646 462 973",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         },
         {
           "name": "KINGS ROAD VETERINARY SURGERY PTY LTD",
@@ -1334,7 +1370,11 @@
         {
           "name": "Shrika Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "108 757 357"
+          "identifier": "108 757 357",
+          "canonical": {
+            "id": "shrika-pty-ltd",
+            "name": "Shrika Pty Ltd"
+          }
         }
       ],
       "other_parties": [
@@ -1431,7 +1471,11 @@
         {
           "name": "The Trustee for SHRIKA",
           "identifier_type": "ABN",
-          "identifier": "83 315 233 206"
+          "identifier": "83 315 233 206",
+          "canonical": {
+            "id": "shrika-pty-ltd",
+            "name": "Shrika Pty Ltd"
+          }
         },
         {
           "name": "SMILE PARTNERS (WA3) PTY LTD",
@@ -1563,7 +1607,11 @@
         {
           "name": "Olaplex, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware registration number: 7702123 (EIN: 843736163)"
+          "identifier": "Delaware registration number: 7702123 (EIN: 843736163)",
+          "canonical": {
+            "id": "olaplex-inc",
+            "name": "Olaplex, Inc."
+          }
         },
         {
           "name": "Advent International, L.P.",
@@ -1573,7 +1621,11 @@
         {
           "name": "Olaplex Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware registration number: 5923882 (EIN: 871242679)"
+          "identifier": "Delaware registration number: 5923882 (EIN: 871242679)",
+          "canonical": {
+            "id": "olaplex-inc",
+            "name": "Olaplex, Inc."
+          }
         }
       ],
       "other_parties": [
@@ -1605,12 +1657,20 @@
         {
           "name": "Henkel Global Supply Chain B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 854017447; CCI 60683945"
+          "identifier": "Netherlands registration number (KVK): 854017447; CCI 60683945",
+          "canonical": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
+          }
         },
         {
           "name": "Henkel AG & Co. KGaA",
           "identifier_type": null,
-          "identifier": "Germany registration number (HRB): 4724"
+          "identifier": "Germany registration number (HRB): 4724",
+          "canonical": {
+            "id": "henkel-ag-co-kgaa",
+            "name": "Henkel AG & Co. KGaA"
+          }
         },
         {
           "name": "L.N.C. (dba Parfums de Marly, now known as Artessence)",
@@ -1620,7 +1680,11 @@
         {
           "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH",
           "identifier_type": null,
-          "identifier": "Germany registration number (HRB): 35906"
+          "identifier": "Germany registration number (HRB): 35906",
+          "canonical": {
+            "id": "inter-beteiligungsverwaltungs-gesellschaft-mbh",
+            "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1779,12 +1843,20 @@
         {
           "name": "AMPOL AUSTRALIA PETROLEUM PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "17 000 032 128"
+          "identifier": "17 000 032 128",
+          "canonical": {
+            "id": "ampol-petroleum-pty-ltd",
+            "name": "Ampol Petroleum Pty Ltd"
+          }
         },
         {
           "name": "AMPOL RETAIL HOLDING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 689 777 704"
+          "identifier": "11 689 777 704",
+          "canonical": {
+            "id": "ampol-retail-holding-pty-ltd",
+            "name": "Ampol Retail Holding Pty Ltd"
+          }
         }
       ],
       "other_parties": [],
@@ -1870,7 +1942,11 @@
         {
           "name": "VETS CENTRAL HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 652 812 256"
+          "identifier": "60 652 812 256",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         },
         {
           "name": "Vetcentre Pty Ltd",
@@ -1947,7 +2023,11 @@
         {
           "name": "GENERAL DENTAL HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "55 646 760 367"
+          "identifier": "55 646 760 367",
+          "canonical": {
+            "id": "general-dental-holdings-pty-ltd",
+            "name": "General Dental Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -2053,7 +2133,11 @@
         {
           "name": "Hillhouse Investment Management, Ltd.",
           "identifier_type": null,
-          "identifier": "CR No. 147297"
+          "identifier": "CR No. 147297",
+          "canonical": {
+            "id": "hillhouse-investment-management-ltd",
+            "name": "Hillhouse Investment Management, Ltd."
+          }
         },
         {
           "name": "OXYGEN PRIVATE CLIENTS PTY LTD",
@@ -2217,7 +2301,11 @@
         {
           "name": "Blackstone Inc",
           "identifier_type": null,
-          "identifier": "DDC  4315990"
+          "identifier": "DDC  4315990",
+          "canonical": {
+            "id": "blackstone-inc",
+            "name": "Blackstone Inc."
+          }
         },
         {
           "name": "SESAC Holdings, Inc",

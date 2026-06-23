@@ -37,7 +37,11 @@
     {
       "name": "THE TRUSTEE FOR AUSTRALIAN RETIREMENT TRUST",
       "identifier_type": "ABN",
-      "identifier": "60 905 115 063"
+      "identifier": "60 905 115 063",
+      "canonical": {
+        "id": "the-trustee-for-australian-retirement-trust",
+        "name": "The Trustee For Australian Retirement Trust"
+      }
     },
     {
       "name": "SCENTRE GROUP LIMITED",
@@ -168,7 +172,11 @@
         {
           "name": "Accenture Inc.",
           "identifier_type": null,
-          "identifier": "State File Number  3387477"
+          "identifier": "State File Number  3387477",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
+          }
         }
       ],
       "targets": [

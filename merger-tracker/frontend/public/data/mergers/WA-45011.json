@@ -20,7 +20,11 @@
     {
       "name": "ActiGraph Holdings, LLC",
       "identifier_type": null,
-      "identifier": "Delaware File Number  7952013"
+      "identifier": "Delaware File Number  7952013",
+      "canonical": {
+        "id": "actigraph-llc",
+        "name": "ActiGraph, LLC"
+      }
     }
   ],
   "other_parties": [
@@ -37,7 +41,11 @@
     {
       "name": "ActiGraph, LLC",
       "identifier_type": null,
-      "identifier": "EIN  562443729"
+      "identifier": "EIN  562443729",
+      "canonical": {
+        "id": "actigraph-llc",
+        "name": "ActiGraph, LLC"
+      }
     },
     {
       "name": "Buccaneer Holdco Limited",

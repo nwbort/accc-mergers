@@ -15,36 +15,60 @@
     {
       "name": "Seismic Software, Inc.",
       "identifier_type": null,
-      "identifier": "Delaware File Number  4832793"
+      "identifier": "Delaware File Number  4832793",
+      "canonical": {
+        "id": "seismic-software-inc",
+        "name": "Seismic Software, Inc."
+      }
     }
   ],
   "targets": [
     {
       "name": "Highspot Inc.",
       "identifier_type": null,
-      "identifier": "Delaware File Number  5126410"
+      "identifier": "Delaware File Number  5126410",
+      "canonical": {
+        "id": "highspot-inc",
+        "name": "Highspot Inc."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "SEISMIC SOFTWARE PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "87 611 843 808"
+      "identifier": "87 611 843 808",
+      "canonical": {
+        "id": "seismic-software-inc",
+        "name": "Seismic Software, Inc."
+      }
     },
     {
       "name": "Helix Sub Inc.",
       "identifier_type": null,
-      "identifier": "Delaware File Number  10492811"
+      "identifier": "Delaware File Number  10492811",
+      "canonical": {
+        "id": "helix-sub-llc",
+        "name": "Helix Sub LLC"
+      }
     },
     {
       "name": "HIGHSPOT AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "11 653 327 649"
+      "identifier": "11 653 327 649",
+      "canonical": {
+        "id": "highspot-inc",
+        "name": "Highspot Inc."
+      }
     },
     {
       "name": "Helix Sub LLC",
       "identifier_type": null,
-      "identifier": "Delaware File Number  10492813"
+      "identifier": "Delaware File Number  10492813",
+      "canonical": {
+        "id": "helix-sub-llc",
+        "name": "Helix Sub LLC"
+      }
     }
   ],
   "anzsic_codes": [
@@ -139,7 +163,11 @@
         {
           "name": "Rocket Software, Inc.",
           "identifier_type": null,
-          "identifier": "Companies\u2019 Register of Delaware  3506913"
+          "identifier": "Companies\u2019 Register of Delaware  3506913",
+          "canonical": {
+            "id": "rocket-software-inc",
+            "name": "Rocket Software, Inc."
+          }
         }
       ],
       "targets": [

@@ -52,7 +52,11 @@
     {
       "name": "CLASSPASS AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "36 608 589 037"
+      "identifier": "36 608 589 037",
+      "canonical": {
+        "id": "classpass-llc",
+        "name": "ClassPass LLC"
+      }
     },
     {
       "name": "EGYM AUSTRALIA PTY LIMITED",
@@ -62,7 +66,11 @@
     {
       "name": "ClassPass LLC",
       "identifier_type": null,
-      "identifier": "CIN: 451439319"
+      "identifier": "CIN: 451439319",
+      "canonical": {
+        "id": "classpass-llc",
+        "name": "ClassPass LLC"
+      }
     },
     {
       "name": "INDIGO FINANCE PTY LTD",
@@ -169,7 +177,11 @@
         {
           "name": "ServiceNow, Inc.",
           "identifier_type": null,
-          "identifier": "5111469"
+          "identifier": "5111469",
+          "canonical": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
+          }
         }
       ],
       "targets": [

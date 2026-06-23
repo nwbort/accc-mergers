@@ -38,7 +38,11 @@
         {
           "name": "THE TRUSTEE FOR AUSTRALIAN RETIREMENT TRUST",
           "identifier_type": "ABN",
-          "identifier": "60 905 115 063"
+          "identifier": "60 905 115 063",
+          "canonical": {
+            "id": "the-trustee-for-australian-retirement-trust",
+            "name": "The Trustee For Australian Retirement Trust"
+          }
         }
       ],
       "anzsic_codes": [
@@ -135,7 +139,11 @@
         {
           "name": "CVC Capital Partners",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "canonical": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          }
         },
         {
           "name": "DSM-Firmenich AG",
@@ -181,7 +189,11 @@
         {
           "name": "EXPERIENCE CO LIMITED",
           "identifier_type": "ABN",
-          "identifier": "56 167 320 470"
+          "identifier": "56 167 320 470",
+          "canonical": {
+            "id": "experience-co-limited",
+            "name": "Experience Co Limited"
+          }
         }
       ],
       "other_parties": [
@@ -1133,7 +1145,11 @@
         {
           "name": "VETS CENTRAL HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 652 812 256"
+          "identifier": "60 652 812 256",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         },
         {
           "name": "VC OPERATIONS (NSW) PTY LTD",
@@ -1153,7 +1169,11 @@
         {
           "name": "VETS CENTRAL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 646 462 973"
+          "identifier": "25 646 462 973",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         },
         {
           "name": "Vets Central (New Zealand) Limited",
@@ -1438,7 +1458,11 @@
         {
           "name": "Australian Retirement Trust Pty Ltd as trustee for Australian Retirement Trust",
           "identifier_type": "ABN",
-          "identifier": "60 905 115 063"
+          "identifier": "60 905 115 063",
+          "canonical": {
+            "id": "the-trustee-for-australian-retirement-trust",
+            "name": "The Trustee For Australian Retirement Trust"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1721,7 +1745,11 @@
         {
           "name": "EXPERIENCE AUSTRALIA GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "56 614 713 003"
+          "identifier": "56 614 713 003",
+          "canonical": {
+            "id": "experience-co-limited",
+            "name": "Experience Co Limited"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1853,7 +1881,11 @@
         {
           "name": "Wipro Limited",
           "identifier_type": null,
-          "identifier": "CIN L32102KA1945PLC020800"
+          "identifier": "CIN L32102KA1945PLC020800",
+          "canonical": {
+            "id": "wipro-ltd",
+            "name": "Wipro Ltd"
+          }
         }
       ],
       "targets": [
@@ -1979,7 +2011,11 @@
         {
           "name": "Eli Lilly and Company",
           "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  350470950"
+          "identifier": "IRS Employer Identification Number  350470950",
+          "canonical": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
+          }
         }
       ],
       "targets": [
@@ -2311,7 +2347,11 @@
         {
           "name": "TPG Inc.",
           "identifier_type": null,
-          "identifier": "SEC  872063362"
+          "identifier": "SEC  872063362",
+          "canonical": {
+            "id": "tpg-inc",
+            "name": "TPG Inc."
+          }
         },
         {
           "name": "Peter Mallouk",
@@ -2353,7 +2393,11 @@
         {
           "name": "ActiGraph Holdings, LLC",
           "identifier_type": null,
-          "identifier": "Delaware File Number  7952013"
+          "identifier": "Delaware File Number  7952013",
+          "canonical": {
+            "id": "actigraph-llc",
+            "name": "ActiGraph, LLC"
+          }
         }
       ],
       "other_parties": [
@@ -2370,7 +2414,11 @@
         {
           "name": "ActiGraph, LLC",
           "identifier_type": null,
-          "identifier": "EIN  562443729"
+          "identifier": "EIN  562443729",
+          "canonical": {
+            "id": "actigraph-llc",
+            "name": "ActiGraph, LLC"
+          }
         },
         {
           "name": "Buccaneer Holdco Limited",
@@ -2600,7 +2648,11 @@
         {
           "name": "Eli Lilly and Company",
           "identifier_type": null,
-          "identifier": "350470950 (IRS Employer Identification Number)"
+          "identifier": "350470950 (IRS Employer Identification Number)",
+          "canonical": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
+          }
         }
       ],
       "targets": [
@@ -2651,7 +2703,11 @@
         {
           "name": "EQT Fund Management S.\u00e0 r.l.",
           "identifier_type": null,
-          "identifier": "Registration number B167972"
+          "identifier": "Registration number B167972",
+          "canonical": {
+            "id": "eqt-fund-management-s-r-l",
+            "name": "EQT Fund Management S.\u00e0 r.l."
+          }
         },
         {
           "name": "IPAC SOLUTIONS PTY LTD",

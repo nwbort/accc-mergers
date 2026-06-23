@@ -149,7 +149,11 @@
         {
           "name": "Eli Lilly and Company",
           "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  350470950"
+          "identifier": "IRS Employer Identification Number  350470950",
+          "canonical": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
+          }
         }
       ],
       "targets": [

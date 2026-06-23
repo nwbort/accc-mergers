@@ -13,7 +13,11 @@
     {
       "name": "GENERAL DENTAL HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "55 646 760 367"
+      "identifier": "55 646 760 367",
+      "canonical": {
+        "id": "general-dental-holdings-pty-ltd",
+        "name": "General Dental Holdings Pty Ltd"
+      }
     }
   ],
   "targets": [
@@ -78,7 +82,11 @@
         {
           "name": "GENERAL DENTAL HOLDINGS PTY LTD trading as Impression Dental Group",
           "identifier_type": "ABN",
-          "identifier": "55 646 760 367"
+          "identifier": "55 646 760 367",
+          "canonical": {
+            "id": "general-dental-holdings-pty-ltd",
+            "name": "General Dental Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -90,7 +98,11 @@
         {
           "name": "WEI-JIE JIANG PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "57 116 562 693"
+          "identifier": "57 116 562 693",
+          "canonical": {
+            "id": "wei-jie-jiang",
+            "name": "Wei-Jie Jiang"
+          }
         }
       ]
     },

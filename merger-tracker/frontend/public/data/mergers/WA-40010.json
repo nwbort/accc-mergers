@@ -20,7 +20,11 @@
     {
       "name": "Clearwater Analytics Holdings, Inc.",
       "identifier_type": null,
-      "identifier": "00140838"
+      "identifier": "00140838",
+      "canonical": {
+        "id": "clearwater-analytics-llc",
+        "name": "Clearwater Analytics, LLC"
+      }
     }
   ],
   "other_parties": [
@@ -32,7 +36,11 @@
     {
       "name": "Clearwater Analytics, LLC",
       "identifier_type": null,
-      "identifier": "4909156"
+      "identifier": "4909156",
+      "canonical": {
+        "id": "clearwater-analytics-llc",
+        "name": "Clearwater Analytics, LLC"
+      }
     },
     {
       "name": "Permira Holdings Limited",
@@ -134,12 +142,20 @@
         {
           "name": "Acclime Holdings HK Limited",
           "identifier_type": null,
-          "identifier": "BRN  70084973"
+          "identifier": "BRN  70084973",
+          "canonical": {
+            "id": "acclime-holdings-limited",
+            "name": "Acclime Holdings Limited"
+          }
         },
         {
           "name": "Acclime Holdings Limited",
           "identifier_type": null,
-          "identifier": "BRN  70084973"
+          "identifier": "BRN  70084973",
+          "canonical": {
+            "id": "acclime-holdings-limited",
+            "name": "Acclime Holdings Limited"
+          }
         }
       ]
     },

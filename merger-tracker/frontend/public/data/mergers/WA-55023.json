@@ -32,12 +32,20 @@
     {
       "name": "VETS CENTRAL HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "60 652 812 256"
+      "identifier": "60 652 812 256",
+      "canonical": {
+        "id": "vets-central-holdings-pty-ltd",
+        "name": "Vets Central Holdings Pty Ltd"
+      }
     },
     {
       "name": "VETS CENTRAL PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "25 646 462 973"
+      "identifier": "25 646 462 973",
+      "canonical": {
+        "id": "vets-central-holdings-pty-ltd",
+        "name": "Vets Central Holdings Pty Ltd"
+      }
     },
     {
       "name": "KINGS ROAD VETERINARY SURGERY PTY LTD",
@@ -144,7 +152,11 @@
         {
           "name": "VETS CENTRAL HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 652 812 256"
+          "identifier": "60 652 812 256",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [

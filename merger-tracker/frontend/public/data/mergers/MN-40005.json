@@ -15,7 +15,11 @@
     {
       "name": "Henkel Global Supply Chain B.V.",
       "identifier_type": null,
-      "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+      "identifier": "Netherlands registration number: 854017447, CCI 60683945",
+      "canonical": {
+        "id": "henkel-global-supply-chain-b-v",
+        "name": "Henkel Global Supply Chain B.V."
+      }
     }
   ],
   "targets": [
@@ -49,12 +53,20 @@
     {
       "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH",
       "identifier_type": null,
-      "identifier": "HRB  35906"
+      "identifier": "HRB  35906",
+      "canonical": {
+        "id": "inter-beteiligungsverwaltungs-gesellschaft-mbh",
+        "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH"
+      }
     },
     {
       "name": "Henkel AG & Co. KGaA",
       "identifier_type": null,
-      "identifier": "HRB  4724"
+      "identifier": "HRB  4724",
+      "canonical": {
+        "id": "henkel-ag-co-kgaa",
+        "name": "Henkel AG & Co. KGaA"
+      }
     },
     {
       "name": "Daniel Oscar Werner Heini",
@@ -206,7 +218,11 @@
         {
           "name": "Henkel Global Supply Chain B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number, 854017447, CCI 60683945"
+          "identifier": "Netherlands registration number, 854017447, CCI 60683945",
+          "canonical": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
+          }
         }
       ],
       "targets": [

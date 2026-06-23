@@ -77,7 +77,11 @@
     {
       "name": "CVC Capital Partners",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "canonical": {
+        "id": "cvc-capital-partners",
+        "name": "CVC Capital Partners"
+      }
     },
     {
       "name": "DSM-Firmenich AG",
@@ -154,7 +158,11 @@
         {
           "name": "CVC Capital Partners plc",
           "identifier_type": null,
-          "identifier": "140080"
+          "identifier": "140080",
+          "canonical": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          }
         }
       ],
       "targets": [

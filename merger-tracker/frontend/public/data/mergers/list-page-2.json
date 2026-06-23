@@ -358,7 +358,11 @@
         {
           "name": "CLASSPASS AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "36 608 589 037"
+          "identifier": "36 608 589 037",
+          "canonical": {
+            "id": "classpass-llc",
+            "name": "ClassPass LLC"
+          }
         },
         {
           "name": "EGYM AUSTRALIA PTY LIMITED",
@@ -368,7 +372,11 @@
         {
           "name": "ClassPass LLC",
           "identifier_type": null,
-          "identifier": "CIN: 451439319"
+          "identifier": "CIN: 451439319",
+          "canonical": {
+            "id": "classpass-llc",
+            "name": "ClassPass LLC"
+          }
         },
         {
           "name": "INDIGO FINANCE PTY LTD",
@@ -524,7 +532,11 @@
         {
           "name": "Bain Capital Investors, LLC",
           "identifier_type": null,
-          "identifier": "3229725"
+          "identifier": "3229725",
+          "canonical": {
+            "id": "bain-capital-investors-llc",
+            "name": "Bain Capital Investors LLC"
+          }
         }
       ],
       "anzsic_codes": [
@@ -557,7 +569,11 @@
         {
           "name": "Freudenberg Home and Cleaning Solutions GmbH",
           "identifier_type": null,
-          "identifier": "HRB 431930"
+          "identifier": "HRB 431930",
+          "canonical": {
+            "id": "freudenberg-home-and-cleaning-solutions-gmbh",
+            "name": "Freudenberg Home and Cleaning Solutions GmbH"
+          }
         }
       ],
       "targets": [
@@ -571,7 +587,11 @@
         {
           "name": "FREUDENBERG HOME AND CLEANING SOLUTIONS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 082 274 324"
+          "identifier": "99 082 274 324",
+          "canonical": {
+            "id": "freudenberg-home-and-cleaning-solutions-gmbh",
+            "name": "Freudenberg Home and Cleaning Solutions GmbH"
+          }
         },
         {
           "name": "NILFISK PTY LTD",
@@ -715,7 +735,11 @@
         {
           "name": "GENERAL DENTAL HOLDINGS PTY LTD trading as Impression Dental Group",
           "identifier_type": "ABN",
-          "identifier": "55 646 760 367"
+          "identifier": "55 646 760 367",
+          "canonical": {
+            "id": "general-dental-holdings-pty-ltd",
+            "name": "General Dental Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -727,12 +751,20 @@
         {
           "name": "WEI-JIE JIANG PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "57 116 562 693"
+          "identifier": "57 116 562 693",
+          "canonical": {
+            "id": "wei-jie-jiang",
+            "name": "Wei-Jie Jiang"
+          }
         },
         {
           "name": "Wei-Jie Jiang",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "canonical": {
+            "id": "wei-jie-jiang",
+            "name": "Wei-Jie Jiang"
+          }
         }
       ],
       "other_parties": [
@@ -797,7 +829,11 @@
         {
           "name": "ServiceNow, Inc.",
           "identifier_type": null,
-          "identifier": "5111469"
+          "identifier": "5111469",
+          "canonical": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
+          }
         }
       ],
       "targets": [
@@ -816,7 +852,11 @@
         {
           "name": "ServiceNow Australia Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "149 683 312"
+          "identifier": "149 683 312",
+          "canonical": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
+          }
         }
       ],
       "anzsic_codes": [
@@ -904,17 +944,29 @@
         {
           "name": "Colliers International Engineering & Design (Holdings) Pty Limited",
           "identifier_type": "ACN",
-          "identifier": "670 625 617"
+          "identifier": "670 625 617",
+          "canonical": {
+            "id": "colliers-international-engineering-design-pty-limited",
+            "name": "Colliers International Engineering & Design Pty Limited"
+          }
         },
         {
           "name": "Colliers International Group Inc.",
           "identifier_type": null,
-          "identifier": "Ontario Registry  1936883"
+          "identifier": "Ontario Registry  1936883",
+          "canonical": {
+            "id": "colliers-international-group-inc",
+            "name": "Colliers International Group Inc."
+          }
         },
         {
           "name": "COLLIERS INTERNATIONAL ENGINEERING & DESIGN PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "44 615 403 506"
+          "identifier": "44 615 403 506",
+          "canonical": {
+            "id": "colliers-international-engineering-design-pty-limited",
+            "name": "Colliers International Engineering & Design Pty Limited"
+          }
         },
         {
           "name": "COLLIERS INTERNATIONAL URBAN PLANNING PTY LIMITED",
@@ -924,7 +976,11 @@
         {
           "name": "COLLIERS INTERNATIONAL HOLDINGS (AUSTRALIA) LIMITED",
           "identifier_type": "ABN",
-          "identifier": "65 008 178 238"
+          "identifier": "65 008 178 238",
+          "canonical": {
+            "id": "colliers-international-group-inc",
+            "name": "Colliers International Group Inc."
+          }
         },
         {
           "name": "ADP CONSULTING PTY LTD",
@@ -1267,7 +1323,11 @@
         {
           "name": "Henkel Global Supply Chain B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+          "identifier": "Netherlands registration number: 854017447, CCI 60683945",
+          "canonical": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
+          }
         }
       ],
       "targets": [
@@ -1301,12 +1361,20 @@
         {
           "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH",
           "identifier_type": null,
-          "identifier": "HRB  35906"
+          "identifier": "HRB  35906",
+          "canonical": {
+            "id": "inter-beteiligungsverwaltungs-gesellschaft-mbh",
+            "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH"
+          }
         },
         {
           "name": "Henkel AG & Co. KGaA",
           "identifier_type": null,
-          "identifier": "HRB  4724"
+          "identifier": "HRB  4724",
+          "canonical": {
+            "id": "henkel-ag-co-kgaa",
+            "name": "Henkel AG & Co. KGaA"
+          }
         },
         {
           "name": "Daniel Oscar Werner Heini",
@@ -1889,7 +1957,11 @@
         {
           "name": "Blackstone Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "canonical": {
+            "id": "blackstone-inc",
+            "name": "Blackstone Inc."
+          }
         }
       ],
       "anzsic_codes": [
@@ -2122,7 +2194,11 @@
         {
           "name": "Eli Lilly and Company",
           "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  350470950"
+          "identifier": "IRS Employer Identification Number  350470950",
+          "canonical": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
+          }
         }
       ],
       "targets": [

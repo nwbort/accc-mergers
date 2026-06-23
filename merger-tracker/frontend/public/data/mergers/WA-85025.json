@@ -20,7 +20,11 @@
     {
       "name": "Blackline Safety Corp.",
       "identifier_type": null,
-      "identifier": "Corporate access number 2016380855 and business number 860968577"
+      "identifier": "Corporate access number 2016380855 and business number 860968577",
+      "canonical": {
+        "id": "blackline-safety-corp",
+        "name": "Blackline Safety Corp."
+      }
     }
   ],
   "other_parties": [
@@ -67,7 +71,11 @@
     {
       "name": "BLACKLINE SAFETY AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "29 623 874 073"
+      "identifier": "29 623 874 073",
+      "canonical": {
+        "id": "blackline-safety-corp",
+        "name": "Blackline Safety Corp."
+      }
     },
     {
       "name": "Blackline Safety Europe Ltd",
@@ -216,7 +224,11 @@
         {
           "name": "ServiceNow, Inc.",
           "identifier_type": null,
-          "identifier": "5111469"
+          "identifier": "5111469",
+          "canonical": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
+          }
         }
       ],
       "targets": [

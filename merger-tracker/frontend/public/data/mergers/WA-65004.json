@@ -163,7 +163,11 @@
         {
           "name": "ServiceNow, Inc.",
           "identifier_type": null,
-          "identifier": "5111469"
+          "identifier": "5111469",
+          "canonical": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
+          }
         }
       ],
       "targets": [
@@ -195,12 +199,20 @@
         {
           "name": "NINE NETWORK AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "88 008 685 407"
+          "identifier": "88 008 685 407",
+          "canonical": {
+            "id": "nine-network-australia-pty-ltd",
+            "name": "Nine Network Australia Pty Ltd"
+          }
         },
         {
           "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 124 816 093"
+          "identifier": "43 124 816 093",
+          "canonical": {
+            "id": "nine-network-australia-pty-ltd",
+            "name": "Nine Network Australia Pty Ltd"
+          }
         }
       ]
     }

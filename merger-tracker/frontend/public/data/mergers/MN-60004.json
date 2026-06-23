@@ -156,7 +156,11 @@
         {
           "name": "TETRA TECH AUSTRALIA GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "74 676 488 716"
+          "identifier": "74 676 488 716",
+          "canonical": {
+            "id": "tetra-tech-inc",
+            "name": "Tetra Tech, Inc."
+          }
         }
       ],
       "targets": [

@@ -37,7 +37,11 @@
     {
       "name": "Hillhouse Investment Management, Ltd.",
       "identifier_type": null,
-      "identifier": "CR No. 147297"
+      "identifier": "CR No. 147297",
+      "canonical": {
+        "id": "hillhouse-investment-management-ltd",
+        "name": "Hillhouse Investment Management, Ltd."
+      }
     },
     {
       "name": "OXYGEN PRIVATE CLIENTS PTY LTD",
@@ -135,7 +139,11 @@
         {
           "name": "Hermes Bidco Limited",
           "identifier_type": null,
-          "identifier": "CR number  429985"
+          "identifier": "CR number  429985",
+          "canonical": {
+            "id": "hermes-bidco-limited",
+            "name": "Hermes Bidco Limited"
+          }
         }
       ],
       "targets": [

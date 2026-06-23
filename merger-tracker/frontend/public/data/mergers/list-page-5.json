@@ -233,7 +233,11 @@
         {
           "name": "Accenture Inc.",
           "identifier_type": null,
-          "identifier": "State File Number  3387477"
+          "identifier": "State File Number  3387477",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
+          }
         }
       ],
       "targets": [
@@ -252,22 +256,38 @@
         {
           "name": "Accenture plc",
           "identifier_type": null,
-          "identifier": "CRN  471706"
+          "identifier": "CRN  471706",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
+          }
         },
         {
           "name": "Ziff Davis, LLC",
           "identifier_type": null,
-          "identifier": "State File Number  5455121"
+          "identifier": "State File Number  5455121",
+          "canonical": {
+            "id": "ziff-davis-llc",
+            "name": "Ziff Davis, LLC"
+          }
         },
         {
           "name": "Ziff Davis, Inc.",
           "identifier_type": null,
-          "identifier": "State File Number  5542070"
+          "identifier": "State File Number  5542070",
+          "canonical": {
+            "id": "ziff-davis-llc",
+            "name": "Ziff Davis, LLC"
+          }
         },
         {
           "name": "ACCENTURE AUSTRALIA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "61 096 995 649"
+          "identifier": "61 096 995 649",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
+          }
         },
         {
           "name": "Accenture Venture Holdings B.V.",
@@ -626,12 +646,20 @@
         {
           "name": "ZURICH SERVICES (AUSTRALIA) PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "17 627 298 337"
+          "identifier": "17 627 298 337",
+          "canonical": {
+            "id": "zurich-services-australia-pty-ltd",
+            "name": "Zurich Services (Australia) Pty Ltd"
+          }
         },
         {
           "name": "ZURICH ASSURE AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "58 657 804 736"
+          "identifier": "58 657 804 736",
+          "canonical": {
+            "id": "zurich-assure-australia-pty-ltd",
+            "name": "Zurich Assure Australia Pty Ltd"
+          }
         },
         {
           "name": "Cover-More Group",
@@ -656,12 +684,20 @@
         {
           "name": "INSITE HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "97 082 656 273"
+          "identifier": "97 082 656 273",
+          "canonical": {
+            "id": "insite-holdings-pty-ltd",
+            "name": "Insite Holdings Pty Ltd"
+          }
         },
         {
           "name": "ZURICH AUSTRALIAN PROPERTY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "91 620 869 230"
+          "identifier": "91 620 869 230",
+          "canonical": {
+            "id": "zurich-australian-property-holdings-pty-ltd",
+            "name": "Zurich Australian Property Holdings Pty Ltd"
+          }
         },
         {
           "name": "ZURICH AUSTRALIAN INSURANCE LIMITED",
@@ -877,7 +913,11 @@
         {
           "name": "Hillhouse Investment Management, Ltd",
           "identifier_type": null,
-          "identifier": "CR No.  147297"
+          "identifier": "CR No.  147297",
+          "canonical": {
+            "id": "hillhouse-investment-management-ltd",
+            "name": "Hillhouse Investment Management, Ltd."
+          }
         }
       ],
       "anzsic_codes": [
@@ -1100,7 +1140,11 @@
         {
           "name": "Australian Meat Group Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "75 168 396 316"
+          "identifier": "75 168 396 316",
+          "canonical": {
+            "id": "australian-meat-group-inc",
+            "name": "Australian Meat Group Inc"
+          }
         }
       ],
       "targets": [
@@ -1114,7 +1158,11 @@
         {
           "name": "Australian Meat Group Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "canonical": {
+            "id": "australian-meat-group-inc",
+            "name": "Australian Meat Group Inc"
+          }
         },
         {
           "name": "Cheltenham Property Nominees Pty Ltd",
@@ -1170,12 +1218,20 @@
         {
           "name": "NINE NETWORK AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "88 008 685 407"
+          "identifier": "88 008 685 407",
+          "canonical": {
+            "id": "nine-network-australia-pty-ltd",
+            "name": "Nine Network Australia Pty Ltd"
+          }
         },
         {
           "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 124 816 093"
+          "identifier": "43 124 816 093",
+          "canonical": {
+            "id": "nine-network-australia-pty-ltd",
+            "name": "Nine Network Australia Pty Ltd"
+          }
         },
         {
           "name": "TELEVISION HOLDINGS DARWIN PTY. LIMITED",
@@ -1457,7 +1513,11 @@
         {
           "name": "Blackline Safety Corp.",
           "identifier_type": null,
-          "identifier": "Corporate access number 2016380855 and business number 860968577"
+          "identifier": "Corporate access number 2016380855 and business number 860968577",
+          "canonical": {
+            "id": "blackline-safety-corp",
+            "name": "Blackline Safety Corp."
+          }
         }
       ],
       "other_parties": [
@@ -1504,7 +1564,11 @@
         {
           "name": "BLACKLINE SAFETY AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "29 623 874 073"
+          "identifier": "29 623 874 073",
+          "canonical": {
+            "id": "blackline-safety-corp",
+            "name": "Blackline Safety Corp."
+          }
         },
         {
           "name": "Blackline Safety Europe Ltd",
@@ -1917,7 +1981,11 @@
         {
           "name": "AUSTRALIAN RETIREMENT TRUST PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "88 010 720 840"
+          "identifier": "88 010 720 840",
+          "canonical": {
+            "id": "the-trustee-for-australian-retirement-trust",
+            "name": "The Trustee For Australian Retirement Trust"
+          }
         },
         {
           "name": "SUSTAINABLE ENERGY INFRASTRUCTURE HOLDINGS PTY LTD",
@@ -1952,7 +2020,11 @@
         {
           "name": "Hermes Bidco Limited",
           "identifier_type": null,
-          "identifier": "CR number  429985"
+          "identifier": "CR number  429985",
+          "canonical": {
+            "id": "hermes-bidco-limited",
+            "name": "Hermes Bidco Limited"
+          }
         }
       ],
       "targets": [
@@ -1976,7 +2048,11 @@
         {
           "name": "Hillhouse Investment Management, Ltd",
           "identifier_type": null,
-          "identifier": "CR number  147297"
+          "identifier": "CR number  147297",
+          "canonical": {
+            "id": "hillhouse-investment-management-ltd",
+            "name": "Hillhouse Investment Management, Ltd."
+          }
         },
         {
           "name": "KMC SOLUTIONS AUS PTY LTD",
@@ -1986,7 +2062,11 @@
         {
           "name": "Hermes TopCo Limited",
           "identifier_type": null,
-          "identifier": "CR Number  429985"
+          "identifier": "CR Number  429985",
+          "canonical": {
+            "id": "hermes-bidco-limited",
+            "name": "Hermes Bidco Limited"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2080,12 +2160,20 @@
         {
           "name": "DP World Australia Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "canonical": {
+            "id": "dp-world-limited",
+            "name": "DP World Limited"
+          }
         },
         {
           "name": "DP World Limited",
           "identifier_type": null,
-          "identifier": "549300M3U2DNF4QVSS04"
+          "identifier": "549300M3U2DNF4QVSS04",
+          "canonical": {
+            "id": "dp-world-limited",
+            "name": "DP World Limited"
+          }
         },
         {
           "name": "DP WORLD LOGISTICS OCEANIA (HOLDING) PTY LTD",
@@ -2236,7 +2324,11 @@
         {
           "name": "DerbySoft Holdings Limited",
           "identifier_type": null,
-          "identifier": "Cayman Islands Company Registration Number CF172438"
+          "identifier": "Cayman Islands Company Registration Number CF172438",
+          "canonical": {
+            "id": "derbysoft-inc",
+            "name": "DerbySoft Inc."
+          }
         }
       ],
       "other_parties": [
@@ -2248,12 +2340,20 @@
         {
           "name": "Constellation Software Inc.",
           "identifier_type": null,
-          "identifier": "Canada Business Number 891148553"
+          "identifier": "Canada Business Number 891148553",
+          "canonical": {
+            "id": "constellation-software-inc",
+            "name": "Constellation Software Inc."
+          }
         },
         {
           "name": "CONSTELLATION SOFTWARE AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "50 141 627 232"
+          "identifier": "50 141 627 232",
+          "canonical": {
+            "id": "constellation-software-inc",
+            "name": "Constellation Software Inc."
+          }
         },
         {
           "name": "Vela Software International Inc.",
@@ -2263,7 +2363,11 @@
         {
           "name": "DerbySoft Inc.",
           "identifier_type": null,
-          "identifier": "Wyoming Filing ID 2011000595814"
+          "identifier": "Wyoming Filing ID 2011000595814",
+          "canonical": {
+            "id": "derbysoft-inc",
+            "name": "DerbySoft Inc."
+          }
         },
         {
           "name": "DerbySoft (Hong Kong) Limited",
@@ -2431,7 +2535,11 @@
         {
           "name": "WIPRO LTD",
           "identifier_type": "ABN",
-          "identifier": "18 093 961 936"
+          "identifier": "18 093 961 936",
+          "canonical": {
+            "id": "wipro-ltd",
+            "name": "Wipro Ltd"
+          }
         },
         {
           "name": "Indeco Australia Pty Ltd",
@@ -2774,7 +2882,11 @@
         {
           "name": "Bain Capital Investors, LLC",
           "identifier_type": null,
-          "identifier": "IRS EIN  812878769"
+          "identifier": "IRS EIN  812878769",
+          "canonical": {
+            "id": "bain-capital-investors-llc",
+            "name": "Bain Capital Investors LLC"
+          }
         },
         {
           "name": "Madison Industrial Solutions Corporation",

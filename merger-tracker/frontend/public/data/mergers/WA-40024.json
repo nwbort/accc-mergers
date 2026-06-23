@@ -13,7 +13,11 @@
     {
       "name": "AMPOL PETROLEUM PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "11 000 007 876"
+      "identifier": "11 000 007 876",
+      "canonical": {
+        "id": "ampol-petroleum-pty-ltd",
+        "name": "Ampol Petroleum Pty Ltd"
+      }
     }
   ],
   "targets": [
@@ -100,12 +104,20 @@
         {
           "name": "AMPOL AUSTRALIA PETROLEUM PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "17 000 032 128"
+          "identifier": "17 000 032 128",
+          "canonical": {
+            "id": "ampol-petroleum-pty-ltd",
+            "name": "Ampol Petroleum Pty Ltd"
+          }
         },
         {
           "name": "AMPOL RETAIL HOLDING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 689 777 704"
+          "identifier": "11 689 777 704",
+          "canonical": {
+            "id": "ampol-retail-holding-pty-ltd",
+            "name": "Ampol Retail Holding Pty Ltd"
+          }
         }
       ]
     },
@@ -118,7 +130,11 @@
         {
           "name": "AMPOL RETAIL HOLDING PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "689 777 704"
+          "identifier": "689 777 704",
+          "canonical": {
+            "id": "ampol-retail-holding-pty-ltd",
+            "name": "Ampol Retail Holding Pty Ltd"
+          }
         }
       ],
       "targets": [

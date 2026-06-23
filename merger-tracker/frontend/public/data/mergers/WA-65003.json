@@ -13,7 +13,11 @@
     {
       "name": "Henkel Global Supply Chain B.V.",
       "identifier_type": null,
-      "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+      "identifier": "Netherlands registration number: 854017447, CCI 60683945",
+      "canonical": {
+        "id": "henkel-global-supply-chain-b-v",
+        "name": "Henkel Global Supply Chain B.V."
+      }
     }
   ],
   "targets": [
@@ -27,7 +31,11 @@
     {
       "name": "Henkel AG & Co. KGaA",
       "identifier_type": null,
-      "identifier": "HRB  4724"
+      "identifier": "HRB  4724",
+      "canonical": {
+        "id": "henkel-ag-co-kgaa",
+        "name": "Henkel AG & Co. KGaA"
+      }
     },
     {
       "name": "ATP adhesive systems Group GmbH",
@@ -117,7 +125,11 @@
         {
           "name": "Henkel Global Supply Chain B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number, 854017447, CCI 60683945"
+          "identifier": "Netherlands registration number, 854017447, CCI 60683945",
+          "canonical": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
+          }
         }
       ],
       "targets": [

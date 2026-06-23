@@ -20,7 +20,11 @@
     {
       "name": "Avanos Medical, Inc.",
       "identifier_type": null,
-      "identifier": "Delaware Company Number: 5482684"
+      "identifier": "Delaware Company Number: 5482684",
+      "canonical": {
+        "id": "avanos-medical-inc",
+        "name": "Avanos Medical, Inc."
+      }
     }
   ],
   "other_parties": [
@@ -32,7 +36,11 @@
     {
       "name": "AVANOS MEDICAL AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "25 100 844 488"
+      "identifier": "25 100 844 488",
+      "canonical": {
+        "id": "avanos-medical-inc",
+        "name": "Avanos Medical, Inc."
+      }
     },
     {
       "name": "AIP, LLC",
@@ -138,7 +146,11 @@
         {
           "name": "Mastercard Incorporated",
           "identifier_type": null,
-          "identifier": "3390142"
+          "identifier": "3390142",
+          "canonical": {
+            "id": "mastercard-incorporated",
+            "name": "Mastercard Incorporated"
+          }
         },
         {
           "name": "Ares UK Holdco 2 Limited",

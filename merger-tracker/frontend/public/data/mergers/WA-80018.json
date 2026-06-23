@@ -111,7 +111,11 @@
         {
           "name": "Shrika Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "108 757 357"
+          "identifier": "108 757 357",
+          "canonical": {
+            "id": "shrika-pty-ltd",
+            "name": "Shrika Pty Ltd"
+          }
         }
       ]
     },
@@ -149,7 +153,11 @@
         {
           "name": "GENERAL DENTAL HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "55 646 760 367"
+          "identifier": "55 646 760 367",
+          "canonical": {
+            "id": "general-dental-holdings-pty-ltd",
+            "name": "General Dental Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [

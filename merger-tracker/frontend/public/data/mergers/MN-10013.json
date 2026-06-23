@@ -15,7 +15,11 @@
     {
       "name": "Accenture Inc.",
       "identifier_type": null,
-      "identifier": "State File Number  3387477"
+      "identifier": "State File Number  3387477",
+      "canonical": {
+        "id": "accenture-plc",
+        "name": "Accenture plc"
+      }
     }
   ],
   "targets": [
@@ -34,22 +38,38 @@
     {
       "name": "Accenture plc",
       "identifier_type": null,
-      "identifier": "CRN  471706"
+      "identifier": "CRN  471706",
+      "canonical": {
+        "id": "accenture-plc",
+        "name": "Accenture plc"
+      }
     },
     {
       "name": "Ziff Davis, LLC",
       "identifier_type": null,
-      "identifier": "State File Number  5455121"
+      "identifier": "State File Number  5455121",
+      "canonical": {
+        "id": "ziff-davis-llc",
+        "name": "Ziff Davis, LLC"
+      }
     },
     {
       "name": "Ziff Davis, Inc.",
       "identifier_type": null,
-      "identifier": "State File Number  5542070"
+      "identifier": "State File Number  5542070",
+      "canonical": {
+        "id": "ziff-davis-llc",
+        "name": "Ziff Davis, LLC"
+      }
     },
     {
       "name": "ACCENTURE AUSTRALIA HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "61 096 995 649"
+      "identifier": "61 096 995 649",
+      "canonical": {
+        "id": "accenture-plc",
+        "name": "Accenture plc"
+      }
     },
     {
       "name": "Accenture Venture Holdings B.V.",
@@ -186,7 +206,11 @@
         {
           "name": "Wipro Limited",
           "identifier_type": null,
-          "identifier": "CIN L32102KA1945PLC020800"
+          "identifier": "CIN L32102KA1945PLC020800",
+          "canonical": {
+            "id": "wipro-ltd",
+            "name": "Wipro Ltd"
+          }
         }
       ],
       "targets": [

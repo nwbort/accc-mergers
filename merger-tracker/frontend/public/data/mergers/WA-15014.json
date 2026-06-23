@@ -18,7 +18,11 @@
     {
       "name": "Wipro Limited",
       "identifier_type": null,
-      "identifier": "CIN L32102KA1945PLC020800"
+      "identifier": "CIN L32102KA1945PLC020800",
+      "canonical": {
+        "id": "wipro-ltd",
+        "name": "Wipro Ltd"
+      }
     }
   ],
   "targets": [
@@ -124,7 +128,11 @@
         {
           "name": "Accenture Inc.",
           "identifier_type": null,
-          "identifier": "State File Number  3387477"
+          "identifier": "State File Number  3387477",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
+          }
         }
       ],
       "targets": [

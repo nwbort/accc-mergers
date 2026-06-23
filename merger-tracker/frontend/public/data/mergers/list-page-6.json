@@ -227,7 +227,11 @@
         {
           "name": "Blackstone Inc.",
           "identifier_type": null,
-          "identifier": "Registered in Delaware, no. 0013355"
+          "identifier": "Registered in Delaware, no. 0013355",
+          "canonical": {
+            "id": "blackstone-inc",
+            "name": "Blackstone Inc."
+          }
         },
         {
           "name": "Indorama Ventures Public Company Limited",
@@ -627,7 +631,11 @@
         {
           "name": "CVC Capital Partners plc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "canonical": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          }
         }
       ],
       "anzsic_codes": [
@@ -787,7 +795,11 @@
         {
           "name": "Excellergy Inc.",
           "identifier_type": null,
-          "identifier": "EIN 854115816"
+          "identifier": "EIN 854115816",
+          "canonical": {
+            "id": "excellergy-inc",
+            "name": "Excellergy Inc."
+          }
         }
       ],
       "other_parties": [
@@ -809,7 +821,11 @@
         {
           "name": "EXCELLERGY AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "50 690 676 941"
+          "identifier": "50 690 676 941",
+          "canonical": {
+            "id": "excellergy-inc",
+            "name": "Excellergy Inc."
+          }
         }
       ],
       "anzsic_codes": [
@@ -947,36 +963,60 @@
         {
           "name": "Seismic Software, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware File Number  4832793"
+          "identifier": "Delaware File Number  4832793",
+          "canonical": {
+            "id": "seismic-software-inc",
+            "name": "Seismic Software, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Highspot Inc.",
           "identifier_type": null,
-          "identifier": "Delaware File Number  5126410"
+          "identifier": "Delaware File Number  5126410",
+          "canonical": {
+            "id": "highspot-inc",
+            "name": "Highspot Inc."
+          }
         }
       ],
       "other_parties": [
         {
           "name": "SEISMIC SOFTWARE PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "87 611 843 808"
+          "identifier": "87 611 843 808",
+          "canonical": {
+            "id": "seismic-software-inc",
+            "name": "Seismic Software, Inc."
+          }
         },
         {
           "name": "Helix Sub Inc.",
           "identifier_type": null,
-          "identifier": "Delaware File Number  10492811"
+          "identifier": "Delaware File Number  10492811",
+          "canonical": {
+            "id": "helix-sub-llc",
+            "name": "Helix Sub LLC"
+          }
         },
         {
           "name": "HIGHSPOT AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 653 327 649"
+          "identifier": "11 653 327 649",
+          "canonical": {
+            "id": "highspot-inc",
+            "name": "Highspot Inc."
+          }
         },
         {
           "name": "Helix Sub LLC",
           "identifier_type": null,
-          "identifier": "Delaware File Number  10492813"
+          "identifier": "Delaware File Number  10492813",
+          "canonical": {
+            "id": "helix-sub-llc",
+            "name": "Helix Sub LLC"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1072,7 +1112,11 @@
         {
           "name": "EQT Fund Management S.\u00e0 r.l.",
           "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number  B167972"
+          "identifier": "Luxembourg Company Registration Number  B167972",
+          "canonical": {
+            "id": "eqt-fund-management-s-r-l",
+            "name": "EQT Fund Management S.\u00e0 r.l."
+          }
         }
       ],
       "anzsic_codes": [
@@ -1162,7 +1206,11 @@
         {
           "name": "Avanos Medical, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware Company Number: 5482684"
+          "identifier": "Delaware Company Number: 5482684",
+          "canonical": {
+            "id": "avanos-medical-inc",
+            "name": "Avanos Medical, Inc."
+          }
         }
       ],
       "other_parties": [
@@ -1174,7 +1222,11 @@
         {
           "name": "AVANOS MEDICAL AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 100 844 488"
+          "identifier": "25 100 844 488",
+          "canonical": {
+            "id": "avanos-medical-inc",
+            "name": "Avanos Medical, Inc."
+          }
         },
         {
           "name": "AIP, LLC",
@@ -1394,7 +1446,11 @@
         {
           "name": "The Trust Company (Australia) Limited (as trustee for Volt Managed Investment Trust 2)",
           "identifier_type": "ABN",
-          "identifier": "21 000 000 993"
+          "identifier": "21 000 000 993",
+          "canonical": {
+            "id": "the-trust-company-australia-limited",
+            "name": "The Trust Company (Australia) Limited"
+          }
         },
         {
           "name": "HMC CAPITAL LIMITED",
@@ -1648,7 +1704,11 @@
         {
           "name": "Mastercard Incorporated",
           "identifier_type": null,
-          "identifier": "3390142"
+          "identifier": "3390142",
+          "canonical": {
+            "id": "mastercard-incorporated",
+            "name": "Mastercard Incorporated"
+          }
         },
         {
           "name": "Ares UK Holdco 2 Limited",
@@ -1658,7 +1718,11 @@
         {
           "name": "Mastercard International Incorporated",
           "identifier_type": null,
-          "identifier": "648928"
+          "identifier": "648928",
+          "canonical": {
+            "id": "mastercard-incorporated",
+            "name": "Mastercard Incorporated"
+          }
         }
       ],
       "targets": [
@@ -1776,7 +1840,11 @@
         {
           "name": "FANTASTIC FURNITURE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "66 003 688 855"
+          "identifier": "66 003 688 855",
+          "canonical": {
+            "id": "fantastic-furniture-limited",
+            "name": "Fantastic Furniture Limited"
+          }
         },
         {
           "name": "FHL DISTRIBUTION CENTRE PTY LTD",
@@ -1786,7 +1854,11 @@
         {
           "name": "Fantastic Furniture Limited",
           "identifier_type": null,
-          "identifier": "NZCN  1015180"
+          "identifier": "NZCN  1015180",
+          "canonical": {
+            "id": "fantastic-furniture-limited",
+            "name": "Fantastic Furniture Limited"
+          }
         },
         {
           "name": "FANTASTIC MANUFACTURING PTY LTD",
@@ -1846,7 +1918,11 @@
         {
           "name": "Blackstone Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "canonical": {
+            "id": "blackstone-inc",
+            "name": "Blackstone Inc."
+          }
         }
       ],
       "anzsic_codes": [
@@ -2012,7 +2088,11 @@
         {
           "name": "Eli Lilly and Company",
           "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  350470950"
+          "identifier": "IRS Employer Identification Number  350470950",
+          "canonical": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
+          }
         }
       ],
       "targets": [

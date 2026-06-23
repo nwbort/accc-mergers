@@ -88,7 +88,11 @@
         {
           "name": "AMPOL RETAIL HOLDING PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "689 777 704"
+          "identifier": "689 777 704",
+          "canonical": {
+            "id": "ampol-retail-holding-pty-ltd",
+            "name": "Ampol Retail Holding Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -525,7 +529,11 @@
         {
           "name": "ServiceNow, Inc.",
           "identifier_type": null,
-          "identifier": "5111469"
+          "identifier": "5111469",
+          "canonical": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
+          }
         }
       ],
       "targets": [
@@ -577,7 +585,11 @@
         {
           "name": "TPG, Inc",
           "identifier_type": null,
-          "identifier": "US EIN  872063362"
+          "identifier": "US EIN  872063362",
+          "canonical": {
+            "id": "tpg-inc",
+            "name": "TPG Inc."
+          }
         }
       ],
       "anzsic_codes": [
@@ -1257,7 +1269,11 @@
         {
           "name": "CVC Capital Partners plc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "canonical": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          }
         }
       ],
       "targets": [
@@ -1328,7 +1344,11 @@
         {
           "name": "Henkel Global Supply Chain B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number: 854017447, CCI 60683945"
+          "identifier": "Netherlands registration number: 854017447, CCI 60683945",
+          "canonical": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
+          }
         }
       ],
       "targets": [
@@ -1342,7 +1362,11 @@
         {
           "name": "Henkel AG & Co. KGaA",
           "identifier_type": null,
-          "identifier": "HRB  4724"
+          "identifier": "HRB  4724",
+          "canonical": {
+            "id": "henkel-ag-co-kgaa",
+            "name": "Henkel AG & Co. KGaA"
+          }
         },
         {
           "name": "ATP adhesive systems Group GmbH",
@@ -1408,7 +1432,11 @@
         {
           "name": "PLAYHQ SPORTS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 624 565 359"
+          "identifier": "11 624 565 359",
+          "canonical": {
+            "id": "playhq-sports-ltd",
+            "name": "PlayHQ Sports Ltd"
+          }
         },
         {
           "name": "PlayHQ Sports UK Limited",
@@ -1418,7 +1446,11 @@
         {
           "name": "PlayHQ Sports Ltd",
           "identifier_type": null,
-          "identifier": "Canadian registered company  1001392583"
+          "identifier": "Canadian registered company  1001392583",
+          "canonical": {
+            "id": "playhq-sports-ltd",
+            "name": "PlayHQ Sports Ltd"
+          }
         },
         {
           "name": "Arena HoldCo Pty Ltd",
@@ -1503,7 +1535,11 @@
         {
           "name": "TPG Inc.",
           "identifier_type": null,
-          "identifier": "SEC  872063362"
+          "identifier": "SEC  872063362",
+          "canonical": {
+            "id": "tpg-inc",
+            "name": "TPG Inc."
+          }
         },
         {
           "name": "Spartan Merger Sub, Inc.",
@@ -1592,12 +1628,20 @@
         {
           "name": "Acclime Holdings HK Limited",
           "identifier_type": null,
-          "identifier": "BRN  70084973"
+          "identifier": "BRN  70084973",
+          "canonical": {
+            "id": "acclime-holdings-limited",
+            "name": "Acclime Holdings Limited"
+          }
         },
         {
           "name": "Acclime Holdings Limited",
           "identifier_type": null,
-          "identifier": "BRN  70084973"
+          "identifier": "BRN  70084973",
+          "canonical": {
+            "id": "acclime-holdings-limited",
+            "name": "Acclime Holdings Limited"
+          }
         }
       ],
       "other_parties": [
@@ -1648,7 +1692,11 @@
         {
           "name": "EXPERIENCE CO LIMITED",
           "identifier_type": "ABN",
-          "identifier": "56 167 320 470"
+          "identifier": "56 167 320 470",
+          "canonical": {
+            "id": "experience-co-limited",
+            "name": "Experience Co Limited"
+          }
         },
         {
           "name": "WILD BUSH LUXURY EXPERIENCE PTY LTD",
@@ -1995,7 +2043,11 @@
         {
           "name": "THE TRUSTEE FOR AUSTRALIAN RETIREMENT TRUST",
           "identifier_type": "ABN",
-          "identifier": "60 905 115 063"
+          "identifier": "60 905 115 063",
+          "canonical": {
+            "id": "the-trustee-for-australian-retirement-trust",
+            "name": "The Trustee For Australian Retirement Trust"
+          }
         },
         {
           "name": "SCENTRE GROUP LIMITED",
@@ -2122,7 +2174,11 @@
         {
           "name": "VETS CENTRAL HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 652 812 256"
+          "identifier": "60 652 812 256",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [

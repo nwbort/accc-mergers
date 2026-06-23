@@ -104,7 +104,11 @@
         {
           "name": "Mastercard Incorporated",
           "identifier_type": null,
-          "identifier": "3390142"
+          "identifier": "3390142",
+          "canonical": {
+            "id": "mastercard-incorporated",
+            "name": "Mastercard Incorporated"
+          }
         },
         {
           "name": "Ares UK Holdco 2 Limited",

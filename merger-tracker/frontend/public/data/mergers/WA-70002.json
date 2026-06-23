@@ -32,7 +32,11 @@
     {
       "name": "TPG, Inc",
       "identifier_type": null,
-      "identifier": "US EIN  872063362"
+      "identifier": "US EIN  872063362",
+      "canonical": {
+        "id": "tpg-inc",
+        "name": "TPG Inc."
+      }
     }
   ],
   "anzsic_codes": [
@@ -154,7 +158,11 @@
         {
           "name": "ServiceNow, Inc.",
           "identifier_type": null,
-          "identifier": "5111469"
+          "identifier": "5111469",
+          "canonical": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
+          }
         }
       ],
       "targets": [

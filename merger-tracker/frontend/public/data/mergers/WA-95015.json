@@ -27,12 +27,20 @@
     {
       "name": "DP World Australia Limited",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "canonical": {
+        "id": "dp-world-limited",
+        "name": "DP World Limited"
+      }
     },
     {
       "name": "DP World Limited",
       "identifier_type": null,
-      "identifier": "549300M3U2DNF4QVSS04"
+      "identifier": "549300M3U2DNF4QVSS04",
+      "canonical": {
+        "id": "dp-world-limited",
+        "name": "DP World Limited"
+      }
     },
     {
       "name": "DP WORLD LOGISTICS OCEANIA (HOLDING) PTY LTD",

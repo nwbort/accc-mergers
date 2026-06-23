@@ -32,7 +32,11 @@
     {
       "name": "WIPRO LTD",
       "identifier_type": "ABN",
-      "identifier": "18 093 961 936"
+      "identifier": "18 093 961 936",
+      "canonical": {
+        "id": "wipro-ltd",
+        "name": "Wipro Ltd"
+      }
     },
     {
       "name": "Indeco Australia Pty Ltd",
@@ -114,7 +118,11 @@
         {
           "name": "Wipro Limited",
           "identifier_type": null,
-          "identifier": "CIN L32102KA1945PLC020800"
+          "identifier": "CIN L32102KA1945PLC020800",
+          "canonical": {
+            "id": "wipro-ltd",
+            "name": "Wipro Ltd"
+          }
         }
       ],
       "targets": [

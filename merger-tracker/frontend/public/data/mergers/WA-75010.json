@@ -107,7 +107,11 @@
         {
           "name": "Clearwater Analytics Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "00140838"
+          "identifier": "00140838",
+          "canonical": {
+            "id": "clearwater-analytics-llc",
+            "name": "Clearwater Analytics, LLC"
+          }
         }
       ]
     },
@@ -150,7 +154,11 @@
         {
           "name": "ServiceNow, Inc.",
           "identifier_type": null,
-          "identifier": "5111469"
+          "identifier": "5111469",
+          "canonical": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
+          }
         }
       ],
       "targets": [

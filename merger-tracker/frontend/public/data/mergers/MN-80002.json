@@ -29,7 +29,11 @@
     {
       "name": "Bain Capital Investors, LLC",
       "identifier_type": null,
-      "identifier": "3229725"
+      "identifier": "3229725",
+      "canonical": {
+        "id": "bain-capital-investors-llc",
+        "name": "Bain Capital Investors LLC"
+      }
     }
   ],
   "anzsic_codes": [
@@ -124,7 +128,11 @@
         {
           "name": "Rocket Software, Inc.",
           "identifier_type": null,
-          "identifier": "Companies\u2019 Register of Delaware  3506913"
+          "identifier": "Companies\u2019 Register of Delaware  3506913",
+          "canonical": {
+            "id": "rocket-software-inc",
+            "name": "Rocket Software, Inc."
+          }
         }
       ],
       "targets": [

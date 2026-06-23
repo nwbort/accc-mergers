@@ -15,7 +15,11 @@
     {
       "name": "Australian Meat Group Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "75 168 396 316"
+      "identifier": "75 168 396 316",
+      "canonical": {
+        "id": "australian-meat-group-inc",
+        "name": "Australian Meat Group Inc"
+      }
     }
   ],
   "targets": [
@@ -29,7 +33,11 @@
     {
       "name": "Australian Meat Group Inc",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "canonical": {
+        "id": "australian-meat-group-inc",
+        "name": "Australian Meat Group Inc"
+      }
     },
     {
       "name": "Cheltenham Property Nominees Pty Ltd",

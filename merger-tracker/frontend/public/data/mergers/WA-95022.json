@@ -196,7 +196,11 @@
         {
           "name": "Shrika Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "108 757 357"
+          "identifier": "108 757 357",
+          "canonical": {
+            "id": "shrika-pty-ltd",
+            "name": "Shrika Pty Ltd"
+          }
         }
       ]
     }

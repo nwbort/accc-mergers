@@ -29,7 +29,11 @@
     {
       "name": "Bain Capital Investors, LLC",
       "identifier_type": null,
-      "identifier": "IRS EIN  812878769"
+      "identifier": "IRS EIN  812878769",
+      "canonical": {
+        "id": "bain-capital-investors-llc",
+        "name": "Bain Capital Investors LLC"
+      }
     },
     {
       "name": "Madison Industrial Solutions Corporation",
@@ -134,7 +138,11 @@
         {
           "name": "Rocket Software, Inc.",
           "identifier_type": null,
-          "identifier": "Companies\u2019 Register of Delaware  3506913"
+          "identifier": "Companies\u2019 Register of Delaware  3506913",
+          "canonical": {
+            "id": "rocket-software-inc",
+            "name": "Rocket Software, Inc."
+          }
         }
       ],
       "targets": [

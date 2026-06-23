@@ -25,7 +25,11 @@
     {
       "name": "FANTASTIC FURNITURE PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "66 003 688 855"
+      "identifier": "66 003 688 855",
+      "canonical": {
+        "id": "fantastic-furniture-limited",
+        "name": "Fantastic Furniture Limited"
+      }
     },
     {
       "name": "FHL DISTRIBUTION CENTRE PTY LTD",
@@ -35,7 +39,11 @@
     {
       "name": "Fantastic Furniture Limited",
       "identifier_type": null,
-      "identifier": "NZCN  1015180"
+      "identifier": "NZCN  1015180",
+      "canonical": {
+        "id": "fantastic-furniture-limited",
+        "name": "Fantastic Furniture Limited"
+      }
     },
     {
       "name": "FANTASTIC MANUFACTURING PTY LTD",

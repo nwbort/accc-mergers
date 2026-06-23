@@ -30,7 +30,11 @@
     {
       "name": "FTP Solutions Inc",
       "identifier_type": null,
-      "identifier": "BN  770283133"
+      "identifier": "BN  770283133",
+      "canonical": {
+        "id": "ftp-solutions-inc",
+        "name": "FTP Solutions Inc"
+      }
     },
     {
       "name": "FAARM SOLUTIONS PTY LTD",
@@ -70,7 +74,11 @@
     {
       "name": "FTP SOLUTIONS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "91 156 293 346"
+      "identifier": "91 156 293 346",
+      "canonical": {
+        "id": "ftp-solutions-inc",
+        "name": "FTP Solutions Inc"
+      }
     },
     {
       "name": "Yarn Mesh NZ Limited",

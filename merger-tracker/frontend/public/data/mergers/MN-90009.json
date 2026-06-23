@@ -27,7 +27,11 @@
     {
       "name": "EQT Fund Management S.\u00e0 r.l.",
       "identifier_type": null,
-      "identifier": "Registration number B167972"
+      "identifier": "Registration number B167972",
+      "canonical": {
+        "id": "eqt-fund-management-s-r-l",
+        "name": "EQT Fund Management S.\u00e0 r.l."
+      }
     },
     {
       "name": "IPAC SOLUTIONS PTY LTD",
@@ -181,7 +185,11 @@
         {
           "name": "ActiGraph Holdings, LLC",
           "identifier_type": null,
-          "identifier": "Delaware File Number  7952013"
+          "identifier": "Delaware File Number  7952013",
+          "canonical": {
+            "id": "actigraph-llc",
+            "name": "ActiGraph, LLC"
+          }
         }
       ]
     }

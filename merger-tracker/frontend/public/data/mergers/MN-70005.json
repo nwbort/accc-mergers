@@ -15,7 +15,11 @@
     {
       "name": "Freudenberg Home and Cleaning Solutions GmbH",
       "identifier_type": null,
-      "identifier": "HRB 431930"
+      "identifier": "HRB 431930",
+      "canonical": {
+        "id": "freudenberg-home-and-cleaning-solutions-gmbh",
+        "name": "Freudenberg Home and Cleaning Solutions GmbH"
+      }
     }
   ],
   "targets": [
@@ -29,7 +33,11 @@
     {
       "name": "FREUDENBERG HOME AND CLEANING SOLUTIONS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "99 082 274 324"
+      "identifier": "99 082 274 324",
+      "canonical": {
+        "id": "freudenberg-home-and-cleaning-solutions-gmbh",
+        "name": "Freudenberg Home and Cleaning Solutions GmbH"
+      }
     },
     {
       "name": "NILFISK PTY LTD",

@@ -20,7 +20,11 @@
     {
       "name": "DerbySoft Holdings Limited",
       "identifier_type": null,
-      "identifier": "Cayman Islands Company Registration Number CF172438"
+      "identifier": "Cayman Islands Company Registration Number CF172438",
+      "canonical": {
+        "id": "derbysoft-inc",
+        "name": "DerbySoft Inc."
+      }
     }
   ],
   "other_parties": [
@@ -32,12 +36,20 @@
     {
       "name": "Constellation Software Inc.",
       "identifier_type": null,
-      "identifier": "Canada Business Number 891148553"
+      "identifier": "Canada Business Number 891148553",
+      "canonical": {
+        "id": "constellation-software-inc",
+        "name": "Constellation Software Inc."
+      }
     },
     {
       "name": "CONSTELLATION SOFTWARE AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "50 141 627 232"
+      "identifier": "50 141 627 232",
+      "canonical": {
+        "id": "constellation-software-inc",
+        "name": "Constellation Software Inc."
+      }
     },
     {
       "name": "Vela Software International Inc.",
@@ -47,7 +59,11 @@
     {
       "name": "DerbySoft Inc.",
       "identifier_type": null,
-      "identifier": "Wyoming Filing ID 2011000595814"
+      "identifier": "Wyoming Filing ID 2011000595814",
+      "canonical": {
+        "id": "derbysoft-inc",
+        "name": "DerbySoft Inc."
+      }
     },
     {
       "name": "DerbySoft (Hong Kong) Limited",
@@ -124,14 +140,22 @@
         {
           "name": "Seismic Software, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware File Number  4832793"
+          "identifier": "Delaware File Number  4832793",
+          "canonical": {
+            "id": "seismic-software-inc",
+            "name": "Seismic Software, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Highspot Inc.",
           "identifier_type": null,
-          "identifier": "Delaware File Number  5126410"
+          "identifier": "Delaware File Number  5126410",
+          "canonical": {
+            "id": "highspot-inc",
+            "name": "Highspot Inc."
+          }
         }
       ]
     },
@@ -149,7 +173,11 @@
         {
           "name": "Rocket Software, Inc.",
           "identifier_type": null,
-          "identifier": "Companies\u2019 Register of Delaware  3506913"
+          "identifier": "Companies\u2019 Register of Delaware  3506913",
+          "canonical": {
+            "id": "rocket-software-inc",
+            "name": "Rocket Software, Inc."
+          }
         }
       ],
       "targets": [

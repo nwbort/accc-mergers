@@ -169,7 +169,11 @@
         {
           "name": "Wipro Limited",
           "identifier_type": null,
-          "identifier": "CIN L32102KA1945PLC020800"
+          "identifier": "CIN L32102KA1945PLC020800",
+          "canonical": {
+            "id": "wipro-ltd",
+            "name": "Wipro Ltd"
+          }
         }
       ],
       "targets": [
@@ -201,12 +205,20 @@
         {
           "name": "NINE NETWORK AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "88 008 685 407"
+          "identifier": "88 008 685 407",
+          "canonical": {
+            "id": "nine-network-australia-pty-ltd",
+            "name": "Nine Network Australia Pty Ltd"
+          }
         },
         {
           "name": "NINE NETWORK AUSTRALIA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 124 816 093"
+          "identifier": "43 124 816 093",
+          "canonical": {
+            "id": "nine-network-australia-pty-ltd",
+            "name": "Nine Network Australia Pty Ltd"
+          }
         }
       ]
     }
