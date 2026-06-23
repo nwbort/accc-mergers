@@ -36,13 +36,13 @@
       "code": "0803",
       "name": "Copper Ore Mining",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "0804",
       "name": "Gold Ore Mining",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "0805",
@@ -60,7 +60,7 @@
       "code": "0807",
       "name": "Silver-Lead-Zinc Ore Mining",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     },
     {
       "code": "0809",
@@ -70,6 +70,13 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-65020",
+      "merger_name": "Regis Resources - Vault Minerals",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
     {
       "merger_id": "WA-25020",
       "merger_name": "Zijin Mining - Chifeng",
@@ -113,11 +120,11 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 6,
-  "phase_1_count": 1,
+  "count": 7,
+  "phase_1_count": 2,
   "phase_2_count": 0,
   "waiver_count": 5,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 25.0,
     "median_days": 25,

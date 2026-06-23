@@ -1,9 +1,9 @@
 {
-  "total_mergers": 144,
+  "total_mergers": 145,
   "total_waivers": 225,
   "by_status": {
     "Assessment completed": 110,
-    "Under assessment": 33,
+    "Under assessment": 34,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -86,6 +86,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-65020",
+      "merger_name": "Regis Resources - Vault Minerals",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-22T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-01104",
       "merger_name": "Genea - Care Fertility Greenslopes",
       "status": "Under assessment",
@@ -104,14 +112,6 @@
     {
       "merger_id": "MN-01103",
       "merger_name": "Discovery Holiday Parks \u2013 four Breeze Holiday Parks",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-18T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-75023",
-      "merger_name": "Bertelsmann Music Group - Concord",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-18T12:00:00Z",
