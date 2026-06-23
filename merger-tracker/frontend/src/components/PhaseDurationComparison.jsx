@@ -1,10 +1,11 @@
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
 
 // A single metric (Average or Median) rendered as a pair of horizontal bars:
-// this industry vs the parent in the ANZSIC hierarchy. Bars are scaled to the
-// larger of the two so the comparison reads at a glance, with a delta chip
-// spelling out how much longer/shorter this industry runs.
-function MetricComparison({ label, current, parent, parentName }) {
+// this industry vs a comparison baseline (its parent in the ANZSIC hierarchy,
+// or all industries for top-level divisions). Bars are scaled to the larger of
+// the two so the comparison reads at a glance, with a delta chip spelling out
+// how much longer/shorter this industry runs.
+function MetricComparison({ label, current, comparison, comparisonName }) {
   // No completed Phase 1 reviews here — nothing to plot.
   if (current == null) {
     return (
@@ -15,17 +16,17 @@ function MetricComparison({ label, current, parent, parentName }) {
     );
   }
 
-  const hasParent = parent != null && parentName;
-  const max = Math.max(current, parent ?? 0) || 1;
+  const hasComparison = comparison != null && comparisonName;
+  const max = Math.max(current, comparison ?? 0) || 1;
   const currentWidth = (current / max) * 100;
-  const parentWidth = hasParent ? (parent / max) * 100 : 0;
+  const comparisonWidth = hasComparison ? (comparison / max) * 100 : 0;
 
-  // Delta vs parent: positive means this industry takes longer.
-  const delta = hasParent ? current - parent : null;
-  const pct = hasParent && parent > 0 ? Math.round((delta / parent) * 100) : null;
+  // Delta vs the baseline: positive means this industry takes longer.
+  const delta = hasComparison ? current - comparison : null;
+  const pct = hasComparison && comparison > 0 ? Math.round((delta / comparison) * 100) : null;
 
   let deltaChip = null;
-  if (hasParent && delta !== 0) {
+  if (hasComparison && delta !== 0) {
     const longer = delta > 0;
     deltaChip = (
       <span
@@ -42,8 +43,8 @@ function MetricComparison({ label, current, parent, parentName }) {
         {pct != null && pct !== 0 && <span className="text-gray-400">({Math.abs(pct)}%)</span>}
       </span>
     );
-  } else if (hasParent) {
-    deltaChip = <span className="text-xs font-medium text-gray-400">Same as parent</span>;
+  } else if (hasComparison) {
+    deltaChip = <span className="text-xs font-medium text-gray-400">Same as baseline</span>;
   }
 
   return (
@@ -67,21 +68,21 @@ function MetricComparison({ label, current, parent, parentName }) {
       </div>
       <p className="text-[11px] text-gray-400 mt-1">This industry</p>
 
-      {hasParent && (
+      {hasComparison && (
         <>
-          {/* Parent industry */}
+          {/* Comparison baseline (parent industry or all industries) */}
           <div className="flex items-center gap-3 mt-3">
             <div className="flex-1 bg-gray-100 rounded-full h-2 overflow-hidden">
               <div
                 className="bg-gray-300 h-2 rounded-full transition-all duration-300"
-                style={{ width: `${parentWidth}%` }}
+                style={{ width: `${comparisonWidth}%` }}
               />
             </div>
             <span className="text-sm font-semibold text-gray-500 tabular-nums w-7 text-right">
-              {parent}
+              {comparison}
             </span>
           </div>
-          <p className="text-[11px] text-gray-400 mt-1 truncate">{parentName}</p>
+          <p className="text-[11px] text-gray-400 mt-1 truncate">{comparisonName}</p>
         </>
       )}
     </div>
@@ -89,23 +90,25 @@ function MetricComparison({ label, current, parent, parentName }) {
 }
 
 /**
- * Visual comparison of this industry's Phase 1 review durations against its
- * parent in the ANZSIC hierarchy. Values are business days, rounded.
+ * Visual comparison of this industry's Phase 1 review durations against a
+ * baseline — its parent in the ANZSIC hierarchy, or all industries for a
+ * top-level division. Values are business days, rounded.
  *
  * @param {object} props
  * @param {object|null} props.duration - this industry's `phase_duration`.
- * @param {object|null} props.parentDuration - the parent's `phase_duration`.
- * @param {string|null} props.parentName - parent display name (for labels).
+ * @param {object|null} props.comparisonDuration - baseline `phase_duration`.
+ * @param {string|null} props.comparisonName - baseline label (e.g. parent name
+ *   or "All industries").
  */
-function PhaseDurationComparison({ duration, parentDuration, parentName }) {
+function PhaseDurationComparison({ duration, comparisonDuration, comparisonName }) {
   const round = (v) => (v != null ? Math.round(v) : null);
 
   const currentAvg = round(duration?.average_business_days);
   const currentMedian = round(duration?.median_business_days);
-  const parentAvg = round(parentDuration?.average_business_days);
-  const parentMedian = round(parentDuration?.median_business_days);
+  const comparisonAvg = round(comparisonDuration?.average_business_days);
+  const comparisonMedian = round(comparisonDuration?.median_business_days);
 
-  const hasParent = parentName && (parentAvg != null || parentMedian != null);
+  const hasComparison = comparisonName && (comparisonAvg != null || comparisonMedian != null);
 
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
@@ -120,14 +123,14 @@ function PhaseDurationComparison({ duration, parentDuration, parentName }) {
         <MetricComparison
           label="Average"
           current={currentAvg}
-          parent={hasParent ? parentAvg : null}
-          parentName={hasParent ? parentName : null}
+          comparison={hasComparison ? comparisonAvg : null}
+          comparisonName={hasComparison ? comparisonName : null}
         />
         <MetricComparison
           label="Median"
           current={currentMedian}
-          parent={hasParent ? parentMedian : null}
-          parentName={hasParent ? parentName : null}
+          comparison={hasComparison ? comparisonMedian : null}
+          comparisonName={hasComparison ? comparisonName : null}
         />
       </div>
     </div>

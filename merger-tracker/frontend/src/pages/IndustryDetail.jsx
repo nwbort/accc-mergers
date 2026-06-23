@@ -47,6 +47,14 @@ function IndustryDetail() {
     parentCode ? { cacheKey: `industry-${parentCode}` } : {}
   );
 
+  // Top-level divisions have no parent, so compare against the overall
+  // all-industries figures instead (shared cache with the dashboard).
+  const needsOverall = !!data && !parentCode;
+  const { data: statsData } = useFetchData(
+    needsOverall ? API_ENDPOINTS.stats : null,
+    needsOverall ? { cacheKey: 'dashboard-stats' } : {}
+  );
+
   const isNotFound = error === 'HTTP 404';
 
   if (loading) return <LoadingSpinner />;
@@ -91,8 +99,16 @@ function IndustryDetail() {
   // surfaced visually via PhaseDurationComparison (vs the parent industry)
   // rather than as flat stat cards.
   const duration = data.phase_duration;
-  const parentDuration = parentData?.phase_duration || null;
-  const parentName = data.parent?.name || null;
+  // Compare against the parent industry, or all industries for a top-level
+  // division (which has no parent).
+  const comparisonDuration = parentCode
+    ? parentData?.phase_duration || null
+    : statsData?.phase_duration || null;
+  const comparisonName = parentCode
+    ? data.parent?.name || null
+    : statsData
+      ? 'All industries'
+      : null;
 
   const statCards = [
     { label: 'Total reviews', value: mergers.length },
@@ -167,8 +183,8 @@ function IndustryDetail() {
           <div className="mb-6">
             <PhaseDurationComparison
               duration={duration}
-              parentDuration={parentDuration}
-              parentName={parentName}
+              comparisonDuration={comparisonDuration}
+              comparisonName={comparisonName}
             />
           </div>
         )}
