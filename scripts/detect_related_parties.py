@@ -251,9 +251,10 @@ def _is_distinct_cluster(records: list[PartyRecord]) -> bool:
 
 
 def _canonical_member(records: list[PartyRecord]) -> PartyRecord:
-    """Pick the canonical record: shortest name (usually the cleanest form),
-    tie-broken by the most mergers and then alphabetically for stability."""
-    return min(records, key=lambda r: (len(r.name), -len(r.merger_ids), r.name))
+    """Pick the canonical record: the one appearing in the most mergers,
+    tie-broken by the shortest name (usually the cleanest form) and then
+    alphabetically for stability."""
+    return min(records, key=lambda r: (-len(r.merger_ids), len(r.name), r.name))
 
 
 def _title_case_name(name: str) -> str:

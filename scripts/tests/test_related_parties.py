@@ -193,15 +193,24 @@ def test_single_identity_across_many_mergers_is_not_a_candidate():
     assert drp.find_candidates(mergers, []) == []
 
 
-def test_canonical_name_defaults_to_shortest_and_is_title_cased():
+def test_canonical_name_prefers_most_mergers_then_shortest_and_is_title_cased():
     mergers = [
         _merger("MN-1", acquirers=[{"name": "ACME GLOBAL PTY LTD", "identifier": "12 345 678 901"}]),
         _merger("MN-2", acquirers=[{"name": "ACME GLOBAL PTY LTD", "identifier": "12 345 678 901"}]),
         _merger("MN-3", acquirers=[{"name": "ACME PTY LTD", "identifier": "12 345 678 901"}]),
     ]
     c = drp.find_candidates(mergers, [])[0]
-    # The shortest member name wins even though it is the less common one,
-    # and it is title-cased for display.
+    # The most common member wins (2 mergers > 1), title-cased for display.
+    assert c["canonical_name"] == "Acme Global Pty Ltd"
+
+
+def test_canonical_name_tie_breaks_on_shortest():
+    mergers = [
+        _merger("MN-1", acquirers=[{"name": "ACME GLOBAL PTY LTD", "identifier": "12 345 678 901"}]),
+        _merger("MN-2", acquirers=[{"name": "ACME PTY LTD", "identifier": "12 345 678 901"}]),
+    ]
+    c = drp.find_candidates(mergers, [])[0]
+    # Equal merger counts -> the shorter name wins.
     assert c["canonical_name"] == "Acme Pty Ltd"
 
 
