@@ -1,6 +1,65 @@
 {
   "code": "121",
+  "name": "Beverage Manufacturing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "12",
+      "name": "Beverage and Tobacco Product Manufacturing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "12",
+    "name": "Beverage and Tobacco Product Manufacturing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "1211",
+      "name": "Soft Drink, Cordial and Syrup Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "1212",
+      "name": "Beer Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "1213",
+      "name": "Spirit Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "1214",
+      "name": "Wine and Other Alcoholic Beverage Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    }
+  ],
   "mergers": [
+    {
+      "merger_id": "WA-35021",
+      "merger_name": "BUSS Queensland \u2013 Additional interest in Duxton Vineyards",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01035",
+      "merger_name": "Asahi \u2013 Warehouse site on Weedman and Montgomery Streets, Redbank (Qld)",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
     {
       "merger_id": "MN-01016",
       "merger_name": "Asahi \u2013 Warehouse site on Tilburn Rd, Deer Park (Vic)",
@@ -9,16 +68,16 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 1,
-  "phase_1_count": 1,
+  "count": 3,
+  "phase_1_count": 2,
   "phase_2_count": 0,
-  "waiver_count": 0,
+  "waiver_count": 1,
   "active_count": 0,
   "phase_duration": {
-    "average_days": 21.0,
-    "median_days": 21,
-    "average_business_days": 15.0,
-    "median_business_days": 15,
-    "completed_count": 1
+    "average_days": 23.0,
+    "median_days": 25,
+    "average_business_days": 16.0,
+    "median_business_days": 17,
+    "completed_count": 2
   }
 }

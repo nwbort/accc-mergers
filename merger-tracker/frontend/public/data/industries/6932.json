@@ -1,5 +1,30 @@
 {
   "code": "6932",
+  "name": "Accounting Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "level": "division"
+    },
+    {
+      "code": "69",
+      "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
+      "level": "subdivision"
+    },
+    {
+      "code": "693",
+      "name": "Legal and Accounting Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "693",
+    "name": "Legal and Accounting Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-50023",

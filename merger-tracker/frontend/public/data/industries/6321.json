@@ -1,0 +1,35 @@
+{
+  "code": "6321",
+  "name": "Health Insurance",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "level": "division"
+    },
+    {
+      "code": "63",
+      "name": "Insurance and Superannuation Funds",
+      "level": "subdivision"
+    },
+    {
+      "code": "632",
+      "name": "Health and General Insurance",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "632",
+    "name": "Health and General Insurance",
+    "level": "group"
+  },
+  "children": [],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

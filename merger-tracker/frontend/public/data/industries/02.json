@@ -1,0 +1,32 @@
+{
+  "code": "02",
+  "name": "Aquaculture",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "A",
+      "name": "Agriculture, Forestry and Fishing",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "A",
+    "name": "Agriculture, Forestry and Fishing",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "020",
+      "name": "Aquaculture",
+      "level": "group",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

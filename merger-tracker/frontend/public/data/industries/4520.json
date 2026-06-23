@@ -1,5 +1,30 @@
 {
   "code": "4520",
+  "name": "Pubs, Taverns and Bars",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "H",
+      "name": "Accommodation and Food Services",
+      "level": "division"
+    },
+    {
+      "code": "45",
+      "name": "Food and Beverage Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "452",
+      "name": "Pubs, Taverns and Bars",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "452",
+    "name": "Pubs, Taverns and Bars",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-90008",

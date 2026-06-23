@@ -1,5 +1,30 @@
 {
   "code": "4232",
+  "name": "Garden Supplies Retailing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "42",
+      "name": "Other Store-Based Retailing",
+      "level": "subdivision"
+    },
+    {
+      "code": "423",
+      "name": "Hardware, Building and Garden Supplies Retailing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "423",
+    "name": "Hardware, Building and Garden Supplies Retailing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-80018",

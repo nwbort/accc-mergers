@@ -1,0 +1,37 @@
+{
+  "code": "099",
+  "name": "Other Non-Metallic Mineral Mining and Quarrying",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "B",
+      "name": "Mining",
+      "level": "division"
+    },
+    {
+      "code": "09",
+      "name": "Non-Metallic Mineral Mining and Quarrying",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "09",
+    "name": "Non-Metallic Mineral Mining and Quarrying",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "0990",
+      "name": "Other Non-Metallic Mineral Mining and Quarrying",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

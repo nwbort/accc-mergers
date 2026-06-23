@@ -1,5 +1,30 @@
 {
   "code": "6910",
+  "name": "Scientific Research Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "level": "division"
+    },
+    {
+      "code": "69",
+      "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
+      "level": "subdivision"
+    },
+    {
+      "code": "691",
+      "name": "Scientific Research Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "691",
+    "name": "Scientific Research Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-35022",

@@ -1,0 +1,60 @@
+{
+  "code": "36",
+  "name": "Grocery, Liquor and Tobacco Product Wholesaling",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "F",
+    "name": "Wholesale Trade",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "360",
+      "name": "Grocery, Liquor and Tobacco Product Wholesaling",
+      "level": "group",
+      "merger_count": 3
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-40020",
+      "merger_name": "Premier Fresh \u2013 Domenico Group",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-10008",
+      "merger_name": "Premier Fresh \u2013 Charles Domenico Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01069",
+      "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 3,
+  "phase_1_count": 2,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 47.0,
+    "median_days": 47,
+    "average_business_days": 18.0,
+    "median_business_days": 18,
+    "completed_count": 1
+  }
+}

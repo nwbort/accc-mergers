@@ -1,5 +1,30 @@
 {
   "code": "9139",
+  "name": "Amusement and Other Recreational Activities n.e.c.",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "R",
+      "name": "Arts and Recreation Services",
+      "level": "division"
+    },
+    {
+      "code": "91",
+      "name": "Sports and Recreation Activities",
+      "level": "subdivision"
+    },
+    {
+      "code": "913",
+      "name": "Amusement and Other Recreation Activities",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "913",
+    "name": "Amusement and Other Recreation Activities",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-15013",

@@ -1,5 +1,30 @@
 {
   "code": "1841",
+  "name": "Human Pharmaceutical and Medicinal Product Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "18",
+      "name": "Basic Chemical and Chemical Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "184",
+      "name": "Pharmaceutical and Medicinal Product Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "184",
+    "name": "Pharmaceutical and Medicinal Product Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-95016",

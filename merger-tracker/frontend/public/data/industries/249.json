@@ -1,0 +1,92 @@
+{
+  "code": "249",
+  "name": "Other Machinery and Equipment Manufacturing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "24",
+      "name": "Machinery and Equipment Manufacturing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "24",
+    "name": "Machinery and Equipment Manufacturing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "2491",
+      "name": "Lifting and Material Handling Equipment Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "2499",
+      "name": "Other Machinery and Equipment Manufacturing n.e.c.",
+      "level": "class",
+      "merger_count": 5
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-15023",
+      "merger_name": "American Industrial Partners \u2013 Honeywell\u2019s Warehouse and Workflow Solutions business",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-80011",
+      "merger_name": "CRH - Axius Water",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-25010",
+      "merger_name": "INNIO Group \u2013 Enerflex",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60010",
+      "merger_name": "Michelin - Flexitallic",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-75004",
+      "merger_name": "Parker-Hannifin \u2013 Filtration Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-01017",
+      "merger_name": "Kongsberg Defence \u2013 site within Newcastle Airport precinct",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 6,
+  "phase_1_count": 2,
+  "phase_2_count": 0,
+  "waiver_count": 4,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 27.0,
+    "median_days": 33,
+    "average_business_days": 18.5,
+    "median_business_days": 22,
+    "completed_count": 2
+  }
+}

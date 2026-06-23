@@ -1,5 +1,30 @@
 {
   "code": "1140",
+  "name": "Fruit and Vegetable Processing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "11",
+      "name": "Food Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "114",
+      "name": "Fruit and Vegetable Processing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "114",
+    "name": "Fruit and Vegetable Processing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-40020",

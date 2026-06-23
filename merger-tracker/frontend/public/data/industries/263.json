@@ -1,0 +1,52 @@
+{
+  "code": "263",
+  "name": "Electricity Distribution",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "D",
+      "name": "Electricity, Gas, Water and Waste Services",
+      "level": "division"
+    },
+    {
+      "code": "26",
+      "name": "Electricity Supply",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "26",
+    "name": "Electricity Supply",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "2630",
+      "name": "Electricity Distribution",
+      "level": "class",
+      "merger_count": 2
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-01094",
+      "merger_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-05016",
+      "merger_name": "Coles - substation in Yarrawonga VIC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 2,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 0,
+  "phase_duration": null
+}

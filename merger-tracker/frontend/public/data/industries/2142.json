@@ -1,5 +1,30 @@
 {
   "code": "2142",
+  "name": "Aluminium Rolling, Drawing, Extruding",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "21",
+      "name": "Primary Metal and Metal Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "214",
+      "name": "Basic Non-Ferrous Metal Product Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "214",
+    "name": "Basic Non-Ferrous Metal Product Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-45003",

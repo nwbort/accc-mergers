@@ -1,5 +1,30 @@
 {
   "code": "9499",
+  "name": "Other Repair and Maintenance n.e.c.",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "S",
+      "name": "Other Services",
+      "level": "division"
+    },
+    {
+      "code": "94",
+      "name": "Repair and Maintenance",
+      "level": "subdivision"
+    },
+    {
+      "code": "949",
+      "name": "Other Repair and Maintenance",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "949",
+    "name": "Other Repair and Maintenance",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-10014",

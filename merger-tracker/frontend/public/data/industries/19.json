@@ -1,0 +1,108 @@
+{
+  "code": "19",
+  "name": "Polymer Product and Rubber Product Manufacturing",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "C",
+    "name": "Manufacturing",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "191",
+      "name": "Polymer Product Manufacturing",
+      "level": "group",
+      "merger_count": 9
+    },
+    {
+      "code": "192",
+      "name": "Natural Rubber Product Manufacturing",
+      "level": "group",
+      "merger_count": 2
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-25023",
+      "merger_name": "EPL - Indovida India",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-85006",
+      "merger_name": "Tega and Apollo Funds consortium - Molycop",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-45007",
+      "merger_name": "Henkel \u2013 Stahl",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01083",
+      "merger_name": "Civilmart \u2013 Taylex",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-25006",
+      "merger_name": "KPS \u2013 Novacel",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-60010",
+      "merger_name": "Michelin - Flexitallic",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-40005",
+      "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-65003",
+      "merger_name": "Henkel \u2013 ATP adhesive systems group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01064",
+      "merger_name": "Carlyle - BASF Coatings",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 9,
+  "phase_1_count": 5,
+  "phase_2_count": 0,
+  "waiver_count": 4,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 26.6,
+    "median_days": 22,
+    "average_business_days": 18.2,
+    "median_business_days": 15,
+    "completed_count": 5
+  }
+}

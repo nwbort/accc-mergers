@@ -1,5 +1,30 @@
 {
   "code": "6230",
+  "name": "Non-Depository Financing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "level": "division"
+    },
+    {
+      "code": "62",
+      "name": "Finance",
+      "level": "subdivision"
+    },
+    {
+      "code": "623",
+      "name": "Non-Depository Financing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "623",
+    "name": "Non-Depository Financing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-75022",

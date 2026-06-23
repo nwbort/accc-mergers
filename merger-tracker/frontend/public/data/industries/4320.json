@@ -1,5 +1,30 @@
 {
   "code": "4320",
+  "name": "Retail Commission-Based Buying and/or Selling",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "43",
+      "name": "Non-Store Retailing and Retail Commission Based Buying and/or Selling",
+      "level": "subdivision"
+    },
+    {
+      "code": "432",
+      "name": "Retail Commission-Based Buying and/or Selling",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "432",
+    "name": "Retail Commission-Based Buying and/or Selling",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-45002",

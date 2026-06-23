@@ -1,5 +1,30 @@
 {
   "code": "5512",
+  "name": "Motion Picture and Video Distribution",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "J",
+      "name": "Information Media and Telecommunications",
+      "level": "division"
+    },
+    {
+      "code": "55",
+      "name": "Motion Picture and Sound Recording Activities",
+      "level": "subdivision"
+    },
+    {
+      "code": "551",
+      "name": "Motion Picture and Video Activities",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "551",
+    "name": "Motion Picture and Video Activities",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-85026",

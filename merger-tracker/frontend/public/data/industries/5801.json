@@ -1,5 +1,30 @@
 {
   "code": "5801",
+  "name": "Wired Telecommunications Network Operation",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "J",
+      "name": "Information Media and Telecommunications",
+      "level": "division"
+    },
+    {
+      "code": "58",
+      "name": "Telecommunications Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "580",
+      "name": "Telecommunications Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "580",
+    "name": "Telecommunications Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-20007",

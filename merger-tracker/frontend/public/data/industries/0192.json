@@ -1,5 +1,30 @@
 {
   "code": "0192",
+  "name": "Pig Farming",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "A",
+      "name": "Agriculture, Forestry and Fishing",
+      "level": "division"
+    },
+    {
+      "code": "01",
+      "name": "Agriculture",
+      "level": "subdivision"
+    },
+    {
+      "code": "019",
+      "name": "Other Livestock Farming",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "019",
+    "name": "Other Livestock Farming",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-60007",

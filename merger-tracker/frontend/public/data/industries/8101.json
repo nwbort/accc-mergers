@@ -1,5 +1,30 @@
 {
   "code": "8101",
+  "name": "Technical and Vocational Education and Training",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "P",
+      "name": "Education and Training",
+      "level": "division"
+    },
+    {
+      "code": "81",
+      "name": "Tertiary Education",
+      "level": "subdivision"
+    },
+    {
+      "code": "810",
+      "name": "Tertiary Education",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "810",
+    "name": "Tertiary Education",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-15020",

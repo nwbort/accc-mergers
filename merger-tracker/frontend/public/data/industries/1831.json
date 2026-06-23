@@ -1,5 +1,30 @@
 {
   "code": "1831",
+  "name": "Fertiliser Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "18",
+      "name": "Basic Chemical and Chemical Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "183",
+      "name": "Fertiliser and Pesticide Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "183",
+    "name": "Fertiliser and Pesticide Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-25017",

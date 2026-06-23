@@ -1,5 +1,30 @@
 {
   "code": "8512",
+  "name": "Specialist Medical Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "Q",
+      "name": "Health Care and Social Assistance",
+      "level": "division"
+    },
+    {
+      "code": "85",
+      "name": "Medical and Other Health Care Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "851",
+      "name": "Medical Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "851",
+    "name": "Medical Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-01104",

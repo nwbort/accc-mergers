@@ -1,5 +1,30 @@
 {
   "code": "7530",
+  "name": "Local Government Administration",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "O",
+      "name": "Public Administration and Safety",
+      "level": "division"
+    },
+    {
+      "code": "75",
+      "name": "Public Administration",
+      "level": "subdivision"
+    },
+    {
+      "code": "753",
+      "name": "Local Government Administration",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "753",
+    "name": "Local Government Administration",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-60012",

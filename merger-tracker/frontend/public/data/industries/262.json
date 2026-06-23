@@ -1,0 +1,58 @@
+{
+  "code": "262",
+  "name": "Electricity Transmission",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "D",
+      "name": "Electricity, Gas, Water and Waste Services",
+      "level": "division"
+    },
+    {
+      "code": "26",
+      "name": "Electricity Supply",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "26",
+    "name": "Electricity Supply",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "2620",
+      "name": "Electricity Transmission",
+      "level": "class",
+      "merger_count": 2
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-60019",
+      "merger_name": "QIC \u2013 CopperString Project assets from Powerlink Queensland",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01031",
+      "merger_name": "La Caisse \u2013 Edify NSW Development assets",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 2,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 28.0,
+    "median_days": 28,
+    "average_business_days": 20.0,
+    "median_business_days": 20,
+    "completed_count": 1
+  }
+}

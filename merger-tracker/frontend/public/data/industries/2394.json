@@ -1,5 +1,30 @@
 {
   "code": "2394",
+  "name": "Aircraft Manufacturing and Repair Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "23",
+      "name": "Transport Equipment Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "239",
+      "name": "Other Transport Equipment Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "239",
+    "name": "Other Transport Equipment Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-30018",

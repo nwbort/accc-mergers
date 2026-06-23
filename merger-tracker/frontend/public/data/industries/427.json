@@ -1,0 +1,96 @@
+{
+  "code": "427",
+  "name": "Pharmaceutical and Other Store-Based Retailing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "42",
+      "name": "Other Store-Based Retailing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "42",
+    "name": "Other Store-Based Retailing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "4271",
+      "name": "Pharmaceutical, Cosmetic and Toiletry Goods Retailing",
+      "level": "class",
+      "merger_count": 2
+    },
+    {
+      "code": "4272",
+      "name": "Stationery Goods Retailing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "4273",
+      "name": "Antique and Used Goods Retailing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "4274",
+      "name": "Flower Retailing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "4279",
+      "name": "Other Store-Based Retailing n.e.c.",
+      "level": "class",
+      "merger_count": 2
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-80016",
+      "merger_name": "Henkel \u2013 Olaplex",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-05016",
+      "merger_name": "Coles - substation in Yarrawonga VIC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60012",
+      "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-35004",
+      "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 4,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 27.0,
+    "median_days": 27,
+    "average_business_days": 17.0,
+    "median_business_days": 17,
+    "completed_count": 1
+  }
+}

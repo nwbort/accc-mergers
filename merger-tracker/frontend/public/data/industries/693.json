@@ -1,0 +1,72 @@
+{
+  "code": "693",
+  "name": "Legal and Accounting Services",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "level": "division"
+    },
+    {
+      "code": "69",
+      "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "69",
+    "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "6931",
+      "name": "Legal Services",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "6932",
+      "name": "Accounting Services",
+      "level": "class",
+      "merger_count": 4
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-50023",
+      "merger_name": "Hillhouse - MGI Dobbyn Carafa",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-95020",
+      "merger_name": "Grant Thornton Advisors - Grant Thornton Australia",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60008",
+      "merger_name": "Warburg Pincus \u2013 Acclime",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85004",
+      "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 4,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 4,
+  "active_count": 0,
+  "phase_duration": null
+}

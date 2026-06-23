@@ -1,5 +1,30 @@
 {
   "code": "5309",
+  "name": "Other Warehousing and Storage Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "I",
+      "name": "Transport, Postal and Warehousing",
+      "level": "division"
+    },
+    {
+      "code": "53",
+      "name": "Warehousing and Storage Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "530",
+      "name": "Warehousing and Storage Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "530",
+    "name": "Warehousing and Storage Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-10007",

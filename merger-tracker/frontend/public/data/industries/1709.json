@@ -1,5 +1,30 @@
 {
   "code": "1709",
+  "name": "Other Petroleum and Coal Product Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "17",
+      "name": "Petroleum and Coal Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "170",
+      "name": "Petroleum and Coal Product Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "170",
+    "name": "Petroleum and Coal Product Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-60015",

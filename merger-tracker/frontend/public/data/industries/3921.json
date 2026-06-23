@@ -1,5 +1,30 @@
 {
   "code": "3921",
+  "name": "Motor Vehicle Parts Retailing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "39",
+      "name": "Motor Vehicle and Motor Vehicle Parts Retailing",
+      "level": "subdivision"
+    },
+    {
+      "code": "392",
+      "name": "Motor Vehicle Parts and Tyre Retailing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "392",
+    "name": "Motor Vehicle Parts and Tyre Retailing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-30010",

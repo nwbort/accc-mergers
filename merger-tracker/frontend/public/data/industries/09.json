@@ -1,0 +1,52 @@
+{
+  "code": "09",
+  "name": "Non-Metallic Mineral Mining and Quarrying",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "B",
+      "name": "Mining",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "B",
+    "name": "Mining",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "091",
+      "name": "Construction Material Mining",
+      "level": "group",
+      "merger_count": 1
+    },
+    {
+      "code": "099",
+      "name": "Other Non-Metallic Mineral Mining and Quarrying",
+      "level": "group",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-60011",
+      "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 36.0,
+    "median_days": 36,
+    "average_business_days": 25.0,
+    "median_business_days": 25,
+    "completed_count": 1
+  }
+}

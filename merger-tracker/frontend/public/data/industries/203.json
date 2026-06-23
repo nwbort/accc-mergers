@@ -1,0 +1,90 @@
+{
+  "code": "203",
+  "name": "Cement, Lime, Plaster and Concrete Product Manufacturing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "20",
+      "name": "Non-Metallic Mineral Product Manufacturing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "20",
+    "name": "Non-Metallic Mineral Product Manufacturing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "2031",
+      "name": "Cement and Lime Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "2032",
+      "name": "Plaster Product Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "2033",
+      "name": "Ready-Mixed Concrete Manufacturing",
+      "level": "class",
+      "merger_count": 2
+    },
+    {
+      "code": "2034",
+      "name": "Concrete Product Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-50021",
+      "merger_name": "Adbri - Eureka Concrete",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-10018",
+      "merger_name": "CSR - Complete Plaster",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-60011",
+      "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-01083",
+      "merger_name": "Civilmart \u2013 Taylex",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 4,
+  "phase_1_count": 4,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 2,
+  "phase_duration": {
+    "average_days": 36.0,
+    "median_days": 36,
+    "average_business_days": 25.0,
+    "median_business_days": 25,
+    "completed_count": 2
+  }
+}

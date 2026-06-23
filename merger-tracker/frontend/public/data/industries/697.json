@@ -1,0 +1,100 @@
+{
+  "code": "697",
+  "name": "Veterinary Services",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "level": "division"
+    },
+    {
+      "code": "69",
+      "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "69",
+    "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "6970",
+      "name": "Veterinary Services",
+      "level": "class",
+      "merger_count": 8
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-70020",
+      "merger_name": "CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-15022",
+      "merger_name": "Vets Central - Morley Veterinary Hospital",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55023",
+      "merger_name": "Vets Central - Claremont Veterinary Surgery",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85016",
+      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-95003",
+      "merger_name": "CVS Group - Pittwater Animal Hospital",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-75017",
+      "merger_name": "Vets Central - Drovers Vet Hospital",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-95008",
+      "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-40004",
+      "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 8,
+  "phase_1_count": 2,
+  "phase_2_count": 0,
+  "waiver_count": 6,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 55.0,
+    "median_days": 55,
+    "average_business_days": 36.0,
+    "median_business_days": 36,
+    "completed_count": 1
+  }
+}

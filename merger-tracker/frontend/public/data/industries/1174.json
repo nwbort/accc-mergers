@@ -1,5 +1,30 @@
 {
   "code": "1174",
+  "name": "Bakery Product Manufacturing (Non-factory based)",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "11",
+      "name": "Food Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "117",
+      "name": "Bakery Product Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "117",
+    "name": "Bakery Product Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-25032",

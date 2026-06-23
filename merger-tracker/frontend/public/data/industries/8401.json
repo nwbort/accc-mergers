@@ -1,5 +1,30 @@
 {
   "code": "8401",
+  "name": "Hospitals (Except Psychiatric Hospitals)",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "Q",
+      "name": "Health Care and Social Assistance",
+      "level": "division"
+    },
+    {
+      "code": "84",
+      "name": "Hospitals",
+      "level": "subdivision"
+    },
+    {
+      "code": "840",
+      "name": "Hospitals",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "840",
+    "name": "Hospitals",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-40013",

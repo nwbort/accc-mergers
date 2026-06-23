@@ -1,0 +1,78 @@
+{
+  "code": "170",
+  "name": "Petroleum and Coal Product Manufacturing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "17",
+      "name": "Petroleum and Coal Product Manufacturing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "17",
+    "name": "Petroleum and Coal Product Manufacturing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "1701",
+      "name": "Petroleum Refining and Petroleum Fuel Manufacturing",
+      "level": "class",
+      "merger_count": 2
+    },
+    {
+      "code": "1709",
+      "name": "Other Petroleum and Coal Product Manufacturing",
+      "level": "class",
+      "merger_count": 2
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-60015",
+      "merger_name": "Stonepeak \u2013 Castrol",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-01019",
+      "merger_name": "Ampol \u2013 EG Australia",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 2"
+    },
+    {
+      "merger_id": "MN-50012",
+      "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-75004",
+      "merger_name": "Parker-Hannifin \u2013 Filtration Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 4,
+  "phase_1_count": 3,
+  "phase_2_count": 1,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 80.5,
+    "median_days": 33,
+    "average_business_days": 51.0,
+    "median_business_days": 22,
+    "completed_count": 4
+  }
+}

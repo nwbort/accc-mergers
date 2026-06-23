@@ -1,5 +1,30 @@
 {
   "code": "6720",
+  "name": "Real Estate Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "L",
+      "name": "Rental, Hiring and Real Estate Services",
+      "level": "division"
+    },
+    {
+      "code": "67",
+      "name": "Property Operators and Real Estate Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "672",
+      "name": "Real Estate Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "672",
+    "name": "Real Estate Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-20015",

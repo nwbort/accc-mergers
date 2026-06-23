@@ -1,5 +1,30 @@
 {
   "code": "7320",
+  "name": "Packaging Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "N",
+      "name": "Administrative and Support Services",
+      "level": "division"
+    },
+    {
+      "code": "73",
+      "name": "Building Cleaning, Pest Control and Other Support Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "732",
+      "name": "Packaging Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "732",
+    "name": "Packaging Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-10008",

@@ -1,0 +1,63 @@
+{
+  "code": "251",
+  "name": "Furniture Manufacturing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "25",
+      "name": "Furniture and Other Manufacturing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "25",
+    "name": "Furniture and Other Manufacturing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "2511",
+      "name": "Wooden Furniture and Upholstered Seat Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "2512",
+      "name": "Metal Furniture Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "2513",
+      "name": "Mattress Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "2519",
+      "name": "Other Furniture Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-55019",
+      "merger_name": "Allegro - Fantastic Furniture",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

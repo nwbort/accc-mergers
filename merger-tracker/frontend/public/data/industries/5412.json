@@ -1,5 +1,30 @@
 {
   "code": "5412",
+  "name": "Magazine and Other Periodical Publishing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "J",
+      "name": "Information Media and Telecommunications",
+      "level": "division"
+    },
+    {
+      "code": "54",
+      "name": "Publishing (except Internet and Music Publishing)",
+      "level": "subdivision"
+    },
+    {
+      "code": "541",
+      "name": "Newspaper, Periodical, Book and Directory Publishing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "541",
+    "name": "Newspaper, Periodical, Book and Directory Publishing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-35014",

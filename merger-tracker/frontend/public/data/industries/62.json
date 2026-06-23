@@ -1,0 +1,414 @@
+{
+  "code": "62",
+  "name": "Finance",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "K",
+    "name": "Financial and Insurance Services",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "621",
+      "name": "Central Banking",
+      "level": "group",
+      "merger_count": 0
+    },
+    {
+      "code": "622",
+      "name": "Depository Financial Intermediation",
+      "level": "group",
+      "merger_count": 3
+    },
+    {
+      "code": "623",
+      "name": "Non-Depository Financing",
+      "level": "group",
+      "merger_count": 3
+    },
+    {
+      "code": "624",
+      "name": "Financial Asset Investing",
+      "level": "group",
+      "merger_count": 45
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-20014",
+      "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-75025",
+      "merger_name": "M&G Asia Property Fund \u2013 Stockland Coopers Paddock and Willawong Distribution Centre",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-80019",
+      "merger_name": "Imagine Education \u2013 childcare centres ownership restructure",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85032",
+      "merger_name": "Ares (Bolt S.p.A.) \u2013 Investment in Plenitude",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-15020",
+      "merger_name": "Online Education Services \u2013 South Australian Institute of Business and Technology",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-90019",
+      "merger_name": "Jardines - I-MED",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-95007",
+      "merger_name": "Magellan Financial Group - Barrenjoey",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-30019",
+      "merger_name": "KKR \u2013 Fresha.com",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-30021",
+      "merger_name": "Regional Australia Bank \u2013 South West Slopes Credit Union",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-80020",
+      "merger_name": "Platinum Equity Group - LMPG",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-90007",
+      "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-40019",
+      "merger_name": "Novartis - Excellergy",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-75014",
+      "merger_name": "Seismic \u2013 Highspot",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-95020",
+      "merger_name": "Grant Thornton Advisors - Grant Thornton Australia",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-80015",
+      "merger_name": "Star Hotels Group - Shafston Hotel, QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-20020",
+      "merger_name": "Triton - Integris",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-45015",
+      "merger_name": "EQT Fund Management \u2013 Kakaku.com",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-65018",
+      "merger_name": "Blackstone - Medallia",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-75022",
+      "merger_name": "United States\u2013Australia Gallium",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-30011",
+      "merger_name": "AXDI - minority interest in La Trobe Financial",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-05009",
+      "merger_name": "Genea - Embrace Fertility",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-70014",
+      "merger_name": "Global Infrastructure Management \u2013 TCR",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-01097",
+      "merger_name": "Quadrant Private Equity - Stanley International College",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-25022",
+      "merger_name": "Nuveen \u2013 Schroders",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-90014",
+      "merger_name": "Constellation Software - DerbySoft Holdings",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-40018",
+      "merger_name": "AustralianSuper - IFM Global Infrastructure (Australia) Trust",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-35015",
+      "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-45012",
+      "merger_name": "Apollo Funds - Nippon Sheet Glass",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-70016",
+      "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-45010",
+      "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-70015",
+      "merger_name": "Bendigo and Adelaide Bank \u2013 RACQ Bank",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-50013",
+      "merger_name": "Star Hotels - Fiveways Hotel Toowoomba",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-50014",
+      "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-65009",
+      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-45011",
+      "merger_name": "Signant - ActiGraph",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-05005",
+      "merger_name": "Ironbark - Investment in Viola Private Wealth",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-25014",
+      "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55014",
+      "merger_name": "KPS Capital Partners - Jennmar",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-25006",
+      "merger_name": "KPS \u2013 Novacel",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-25013",
+      "merger_name": "Cinven \u2013 Regenity",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-40010",
+      "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-10009",
+      "merger_name": "SoftBank \u2013 DigitalBridge",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-35010",
+      "merger_name": "Blackstone - Advanced Cooling Technologies",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55011",
+      "merger_name": "OEP IX \u2013 Leviat",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-80006",
+      "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-80002",
+      "merger_name": "Bain Capital \u2013 MCJ",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-55005",
+      "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-25001",
+      "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-65003",
+      "merger_name": "Henkel \u2013 ATP adhesive systems group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60008",
+      "merger_name": "Warburg Pincus \u2013 Acclime",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-30002",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "is_waiver": false,
+      "status": "Assessment ceased",
+      "phase": "Phase 2"
+    }
+  ],
+  "count": 51,
+  "phase_1_count": 10,
+  "phase_2_count": 1,
+  "waiver_count": 40,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 24.444444444444443,
+    "median_days": 23,
+    "average_business_days": 16.77777777777778,
+    "median_business_days": 16,
+    "completed_count": 9
+  }
+}

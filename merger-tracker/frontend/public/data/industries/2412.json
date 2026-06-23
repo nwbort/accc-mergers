@@ -1,5 +1,30 @@
 {
   "code": "2412",
+  "name": "Medical and Surgical Equipment Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "24",
+      "name": "Machinery and Equipment Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "241",
+      "name": "Professional and Scientific Equipment Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "241",
+    "name": "Professional and Scientific Equipment Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-80010",

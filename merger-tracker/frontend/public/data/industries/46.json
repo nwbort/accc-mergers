@@ -1,0 +1,94 @@
+{
+  "code": "46",
+  "name": "Road Transport",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "I",
+      "name": "Transport, Postal and Warehousing",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "I",
+    "name": "Transport, Postal and Warehousing",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "461",
+      "name": "Road Freight Transport",
+      "level": "group",
+      "merger_count": 5
+    },
+    {
+      "code": "462",
+      "name": "Road Passenger Transport",
+      "level": "group",
+      "merger_count": 2
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-20018",
+      "merger_name": "Uber - Blacklane",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-10007",
+      "merger_name": "Macquarie Asset Management led consortium \u2013 Qube",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-35014",
+      "merger_name": "News Corp \u2013 acquisition of 20% of National Distribution Services",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-95019",
+      "merger_name": "Capital Group - Big Post",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-80017",
+      "merger_name": "Direct Couriers \u2013 Phoenix Transport",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-70013",
+      "merger_name": "Ventura Motors \u2013 Crown Coaches",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-85025",
+      "merger_name": "Francisco Partners - Blackline Safety",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 7,
+  "phase_1_count": 4,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 33.333333333333336,
+    "median_days": 36,
+    "average_business_days": 22.666666666666668,
+    "median_business_days": 24,
+    "completed_count": 3
+  }
+}

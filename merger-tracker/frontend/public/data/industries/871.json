@@ -1,0 +1,45 @@
+{
+  "code": "871",
+  "name": "Child Care Services",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "Q",
+      "name": "Health Care and Social Assistance",
+      "level": "division"
+    },
+    {
+      "code": "87",
+      "name": "Social Assistance Services",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "87",
+    "name": "Social Assistance Services",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "8710",
+      "name": "Child Care Services",
+      "level": "class",
+      "merger_count": 1
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-80019",
+      "merger_name": "Imagine Education \u2013 childcare centres ownership restructure",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

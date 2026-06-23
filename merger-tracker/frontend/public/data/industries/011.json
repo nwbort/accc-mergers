@@ -1,0 +1,61 @@
+{
+  "code": "011",
+  "name": "Nursery and Floriculture Production",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "A",
+      "name": "Agriculture, Forestry and Fishing",
+      "level": "division"
+    },
+    {
+      "code": "01",
+      "name": "Agriculture",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "01",
+    "name": "Agriculture",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "0111",
+      "name": "Nursery Production (Under Cover)",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0112",
+      "name": "Nursery Production (Outdoors)",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0113",
+      "name": "Turf Growing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0114",
+      "name": "Floriculture Production (Under Cover)",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0115",
+      "name": "Floriculture Production (Outdoors)",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

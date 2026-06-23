@@ -1,5 +1,30 @@
 {
   "code": "6961",
+  "name": "Corporate Head Office Management Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "level": "division"
+    },
+    {
+      "code": "69",
+      "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
+      "level": "subdivision"
+    },
+    {
+      "code": "696",
+      "name": "Management and Related Consulting Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "696",
+    "name": "Management and Related Consulting Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-70012",

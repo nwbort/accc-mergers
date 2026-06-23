@@ -1,0 +1,79 @@
+{
+  "code": "461",
+  "name": "Road Freight Transport",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "I",
+      "name": "Transport, Postal and Warehousing",
+      "level": "division"
+    },
+    {
+      "code": "46",
+      "name": "Road Transport",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "46",
+    "name": "Road Transport",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "4610",
+      "name": "Road Freight Transport",
+      "level": "class",
+      "merger_count": 5
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-10007",
+      "merger_name": "Macquarie Asset Management led consortium \u2013 Qube",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-35014",
+      "merger_name": "News Corp \u2013 acquisition of 20% of National Distribution Services",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-95019",
+      "merger_name": "Capital Group - Big Post",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-80017",
+      "merger_name": "Direct Couriers \u2013 Phoenix Transport",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85025",
+      "merger_name": "Francisco Partners - Blackline Safety",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 5,
+  "phase_1_count": 2,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 39.0,
+    "median_days": 42,
+    "average_business_days": 26.0,
+    "median_business_days": 28,
+    "completed_count": 2
+  }
+}

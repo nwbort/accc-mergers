@@ -1,5 +1,30 @@
 {
   "code": "4221",
+  "name": "Electrical, Electronic and Gas Appliance Retailing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "42",
+      "name": "Other Store-Based Retailing",
+      "level": "subdivision"
+    },
+    {
+      "code": "422",
+      "name": "Electrical and Electronic Goods Retailing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "422",
+    "name": "Electrical and Electronic Goods Retailing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-01092",

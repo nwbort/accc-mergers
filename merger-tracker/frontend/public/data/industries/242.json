@@ -1,0 +1,77 @@
+{
+  "code": "242",
+  "name": "Computer and Electronic Equipment Manufacturing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "24",
+      "name": "Machinery and Equipment Manufacturing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "24",
+    "name": "Machinery and Equipment Manufacturing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "2421",
+      "name": "Computer and Electronic Office Equipment Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "2422",
+      "name": "Communications Equipment Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "2429",
+      "name": "Other Electronic Equipment Manufacturing",
+      "level": "class",
+      "merger_count": 2
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-15023",
+      "merger_name": "American Industrial Partners \u2013 Honeywell\u2019s Warehouse and Workflow Solutions business",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-80002",
+      "merger_name": "Bain Capital \u2013 MCJ",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-01061",
+      "merger_name": "Molex \u2013 Smiths Interconnect",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 3,
+  "phase_1_count": 2,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 23.5,
+    "median_days": 25,
+    "average_business_days": 16.5,
+    "median_business_days": 17,
+    "completed_count": 2
+  }
+}

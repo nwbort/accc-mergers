@@ -1,5 +1,30 @@
 {
   "code": "2499",
+  "name": "Other Machinery and Equipment Manufacturing n.e.c.",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "24",
+      "name": "Machinery and Equipment Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "249",
+      "name": "Other Machinery and Equipment Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "249",
+    "name": "Other Machinery and Equipment Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-80011",

@@ -1,5 +1,30 @@
 {
   "code": "9533",
+  "name": "Parking Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "S",
+      "name": "Other Services",
+      "level": "division"
+    },
+    {
+      "code": "95",
+      "name": "Personal and Other Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "953",
+      "name": "Other Personal Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "953",
+    "name": "Other Personal Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-90018",

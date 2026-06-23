@@ -1,5 +1,30 @@
 {
   "code": "3499",
+  "name": "Other Machinery and Equipment Wholesaling n.e.c.",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "level": "division"
+    },
+    {
+      "code": "34",
+      "name": "Machinery and Equipment Wholesaling",
+      "level": "subdivision"
+    },
+    {
+      "code": "349",
+      "name": "Other Machinery and Equipment Wholesaling",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "349",
+    "name": "Other Machinery and Equipment Wholesaling",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-15018",

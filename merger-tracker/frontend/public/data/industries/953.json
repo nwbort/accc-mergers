@@ -1,0 +1,118 @@
+{
+  "code": "953",
+  "name": "Other Personal Services",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "S",
+      "name": "Other Services",
+      "level": "division"
+    },
+    {
+      "code": "95",
+      "name": "Personal and Other Services",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "95",
+    "name": "Personal and Other Services",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "9531",
+      "name": "Laundry and Dry-Cleaning Services",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "9532",
+      "name": "Photographic Film Processing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "9533",
+      "name": "Parking Services",
+      "level": "class",
+      "merger_count": 2
+    },
+    {
+      "code": "9534",
+      "name": "Brothel Keeping and Prostitution Services",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "9539",
+      "name": "Other Personal Services n.e.c.",
+      "level": "class",
+      "merger_count": 6
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-15022",
+      "merger_name": "Vets Central - Morley Veterinary Hospital",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-90018",
+      "merger_name": "International Parking Group \u2013 car park at St John of God Murdoch Hospital",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55023",
+      "merger_name": "Vets Central - Claremont Veterinary Surgery",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85016",
+      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-75017",
+      "merger_name": "Vets Central - Drovers Vet Hospital",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-95008",
+      "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-15004",
+      "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-40004",
+      "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 8,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 8,
+  "active_count": 0,
+  "phase_duration": null
+}

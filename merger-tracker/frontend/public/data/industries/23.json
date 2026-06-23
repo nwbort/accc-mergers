@@ -1,0 +1,80 @@
+{
+  "code": "23",
+  "name": "Transport Equipment Manufacturing",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "C",
+    "name": "Manufacturing",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "231",
+      "name": "Motor Vehicle and Motor Vehicle Part Manufacturing",
+      "level": "group",
+      "merger_count": 1
+    },
+    {
+      "code": "239",
+      "name": "Other Transport Equipment Manufacturing",
+      "level": "group",
+      "merger_count": 4
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-30018",
+      "merger_name": "Tinicum and Blackstone led consortium \u2013 Senior",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-90016",
+      "merger_name": "Turkish Airlines - Air Europa",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-45005",
+      "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-80007",
+      "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-65010",
+      "merger_name": "Honda \u2013 additional shareholding in Astemo",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 5,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 4,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 23.0,
+    "median_days": 23,
+    "average_business_days": 15.0,
+    "median_business_days": 15,
+    "completed_count": 1
+  }
+}

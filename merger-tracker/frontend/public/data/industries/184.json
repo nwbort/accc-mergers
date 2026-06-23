@@ -1,0 +1,113 @@
+{
+  "code": "184",
+  "name": "Pharmaceutical and Medicinal Product Manufacturing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "18",
+      "name": "Basic Chemical and Chemical Product Manufacturing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "18",
+    "name": "Basic Chemical and Chemical Product Manufacturing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "1841",
+      "name": "Human Pharmaceutical and Medicinal Product Manufacturing",
+      "level": "class",
+      "merger_count": 8
+    },
+    {
+      "code": "1842",
+      "name": "Veterinary Pharmaceutical and Medicinal Product Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-05013",
+      "merger_name": "Zoetis \u2013 Neogen Genomics Business",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-95016",
+      "merger_name": "Eli Lilly - Kelonia Therapeutics",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-60014",
+      "merger_name": "Gilead - Ouro",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-40012",
+      "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-85025",
+      "merger_name": "Francisco Partners - Blackline Safety",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-20013",
+      "merger_name": "Eli Lilly - Orna Therapeutics",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-65009",
+      "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-40009",
+      "merger_name": "Gilead - Arcellx",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-01087",
+      "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 9,
+  "phase_1_count": 7,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 25.166666666666668,
+    "median_days": 26,
+    "average_business_days": 16.833333333333332,
+    "median_business_days": 18,
+    "completed_count": 6
+  }
+}

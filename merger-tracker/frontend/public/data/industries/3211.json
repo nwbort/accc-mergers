@@ -1,5 +1,30 @@
 {
   "code": "3211",
+  "name": "Land Development and Subdivision",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "E",
+      "name": "Construction",
+      "level": "division"
+    },
+    {
+      "code": "32",
+      "name": "Construction Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "321",
+      "name": "Land Development and Site Preparation Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "321",
+    "name": "Land Development and Site Preparation Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-20022",

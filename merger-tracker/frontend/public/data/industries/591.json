@@ -1,0 +1,51 @@
+{
+  "code": "591",
+  "name": "Internet Service Providers and Web Search Portals",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "J",
+      "name": "Information Media and Telecommunications",
+      "level": "division"
+    },
+    {
+      "code": "59",
+      "name": "Internet Service Providers, Web Search Portals and Data Processing Services",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "59",
+    "name": "Internet Service Providers, Web Search Portals and Data Processing Services",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "5910",
+      "name": "Internet Service Providers and Web Search Portals",
+      "level": "class",
+      "merger_count": 1
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-15002",
+      "merger_name": "Google - Wiz",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 41.0,
+    "median_days": 41,
+    "average_business_days": 28.0,
+    "median_business_days": 28,
+    "completed_count": 1
+  }
+}

@@ -1,5 +1,30 @@
 {
   "code": "0600",
+  "name": "Coal Mining",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "B",
+      "name": "Mining",
+      "level": "division"
+    },
+    {
+      "code": "06",
+      "name": "Coal Mining",
+      "level": "subdivision"
+    },
+    {
+      "code": "060",
+      "name": "Coal Mining",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "060",
+    "name": "Coal Mining",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-45009",

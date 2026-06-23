@@ -1,5 +1,30 @@
 {
   "code": "3603",
+  "name": "Dairy Produce Wholesaling",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "level": "division"
+    },
+    {
+      "code": "36",
+      "name": "Grocery, Liquor and Tobacco Product Wholesaling",
+      "level": "subdivision"
+    },
+    {
+      "code": "360",
+      "name": "Grocery, Liquor and Tobacco Product Wholesaling",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "360",
+    "name": "Grocery, Liquor and Tobacco Product Wholesaling",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-01069",

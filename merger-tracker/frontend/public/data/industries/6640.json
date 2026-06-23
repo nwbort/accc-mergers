@@ -1,5 +1,30 @@
 {
   "code": "6640",
+  "name": "Non-Financial Intangible Assets (Except Copyrights) Leasing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "L",
+      "name": "Rental, Hiring and Real Estate Services",
+      "level": "division"
+    },
+    {
+      "code": "66",
+      "name": "Rental and Hiring Services (except Real Estate)",
+      "level": "subdivision"
+    },
+    {
+      "code": "664",
+      "name": "Non-Financial Intangible Assets (Except Copyrights) Leasing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "664",
+    "name": "Non-Financial Intangible Assets (Except Copyrights) Leasing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-45006",

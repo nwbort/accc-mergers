@@ -1,0 +1,37 @@
+{
+  "code": "662",
+  "name": "Farm Animal and Bloodstock Leasing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "L",
+      "name": "Rental, Hiring and Real Estate Services",
+      "level": "division"
+    },
+    {
+      "code": "66",
+      "name": "Rental and Hiring Services (except Real Estate)",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "66",
+    "name": "Rental and Hiring Services (except Real Estate)",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "6620",
+      "name": "Farm Animal and Bloodstock Leasing",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

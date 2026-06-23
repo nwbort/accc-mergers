@@ -1,0 +1,67 @@
+{
+  "code": "40",
+  "name": "Fuel Retailing",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "G",
+    "name": "Retail Trade",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "400",
+      "name": "Fuel Retailing",
+      "level": "group",
+      "merger_count": 4
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-40024",
+      "merger_name": "Ampol \u2013 Freehold land acquisition in Chelsea Heights, Victoria",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60020",
+      "merger_name": "Metro Petroleum \u2013 Retail sites part of divestiture remedy from Ampol-EG acquisition",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01019",
+      "merger_name": "Ampol \u2013 EG Australia",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 2"
+    },
+    {
+      "merger_id": "WA-75020",
+      "merger_name": "CleanPeak Energy Holdings - Sustainable Energy Infrastructure",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 4,
+  "phase_1_count": 0,
+  "phase_2_count": 1,
+  "waiver_count": 3,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 235.0,
+    "median_days": 235,
+    "average_business_days": 148.0,
+    "median_business_days": 148,
+    "completed_count": 1
+  }
+}

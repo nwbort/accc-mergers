@@ -1,5 +1,30 @@
 {
   "code": "6240",
+  "name": "Financial Asset Investing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "level": "division"
+    },
+    {
+      "code": "62",
+      "name": "Finance",
+      "level": "subdivision"
+    },
+    {
+      "code": "624",
+      "name": "Financial Asset Investing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "624",
+    "name": "Financial Asset Investing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-75025",

@@ -1,5 +1,30 @@
 {
   "code": "3242",
+  "name": "Carpentry Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "E",
+      "name": "Construction",
+      "level": "division"
+    },
+    {
+      "code": "32",
+      "name": "Construction Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "324",
+      "name": "Building Completion Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "324",
+    "name": "Building Completion Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-95010",

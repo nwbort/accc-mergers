@@ -1,5 +1,30 @@
 {
   "code": "2451",
+  "name": "Pump and Compressor Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "24",
+      "name": "Machinery and Equipment Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "245",
+      "name": "Pump, Compressor, Heating and Ventilation Equipment Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "245",
+    "name": "Pump, Compressor, Heating and Ventilation Equipment Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-75004",

@@ -1,5 +1,30 @@
 {
   "code": "6322",
+  "name": "General Insurance",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "level": "division"
+    },
+    {
+      "code": "63",
+      "name": "Insurance and Superannuation Funds",
+      "level": "subdivision"
+    },
+    {
+      "code": "632",
+      "name": "Health and General Insurance",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "632",
+    "name": "Health and General Insurance",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-65005",

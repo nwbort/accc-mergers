@@ -1,5 +1,30 @@
 {
   "code": "7220",
+  "name": "Travel Agency and Tour Arrangement Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "N",
+      "name": "Administrative and Support Services",
+      "level": "division"
+    },
+    {
+      "code": "72",
+      "name": "Administrative Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "722",
+      "name": "Travel Agency and Tour Arrangement Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "722",
+    "name": "Travel Agency and Tour Arrangement Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-45015",

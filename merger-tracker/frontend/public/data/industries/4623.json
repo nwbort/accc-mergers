@@ -1,5 +1,30 @@
 {
   "code": "4623",
+  "name": "Taxi and Other Road Transport",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "I",
+      "name": "Transport, Postal and Warehousing",
+      "level": "division"
+    },
+    {
+      "code": "46",
+      "name": "Road Transport",
+      "level": "subdivision"
+    },
+    {
+      "code": "462",
+      "name": "Road Passenger Transport",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "462",
+    "name": "Road Passenger Transport",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-20018",

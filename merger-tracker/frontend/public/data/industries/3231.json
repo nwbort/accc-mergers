@@ -1,5 +1,30 @@
 {
   "code": "3231",
+  "name": "Plumbing Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "E",
+      "name": "Construction",
+      "level": "division"
+    },
+    {
+      "code": "32",
+      "name": "Construction Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "323",
+      "name": "Building Installation Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "323",
+    "name": "Building Installation Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-95010",

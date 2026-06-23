@@ -1,6 +1,110 @@
 {
   "code": "080",
+  "name": "Metal Ore Mining",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "B",
+      "name": "Mining",
+      "level": "division"
+    },
+    {
+      "code": "08",
+      "name": "Metal Ore Mining",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "08",
+    "name": "Metal Ore Mining",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "0801",
+      "name": "Iron Ore Mining",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0802",
+      "name": "Bauxite Mining",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "0803",
+      "name": "Copper Ore Mining",
+      "level": "class",
+      "merger_count": 3
+    },
+    {
+      "code": "0804",
+      "name": "Gold Ore Mining",
+      "level": "class",
+      "merger_count": 3
+    },
+    {
+      "code": "0805",
+      "name": "Mineral Sand Mining",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0806",
+      "name": "Nickel Ore Mining",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "0807",
+      "name": "Silver-Lead-Zinc Ore Mining",
+      "level": "class",
+      "merger_count": 3
+    },
+    {
+      "code": "0809",
+      "name": "Other Metal Ore Mining",
+      "level": "class",
+      "merger_count": 2
+    }
+  ],
   "mergers": [
+    {
+      "merger_id": "WA-25020",
+      "merger_name": "Zijin Mining - Chifeng",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-75022",
+      "merger_name": "United States\u2013Australia Gallium",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-65013",
+      "merger_name": "BHP \u2013 expansion of Special Mining Lease at Olympic Dam, SA",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-35011",
+      "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85014",
+      "merger_name": "Genesis Minerals \u2013 Magnetic Resources",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
     {
       "merger_id": "MN-01037",
       "merger_name": "Anglo American - Teck Resources",
@@ -9,10 +113,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 1,
+  "count": 6,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 0,
+  "waiver_count": 5,
   "active_count": 0,
   "phase_duration": {
     "average_days": 25.0,

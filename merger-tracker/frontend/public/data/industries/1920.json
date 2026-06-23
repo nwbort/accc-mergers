@@ -1,5 +1,30 @@
 {
   "code": "1920",
+  "name": "Natural Rubber Product Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "19",
+      "name": "Polymer Product and Rubber Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "192",
+      "name": "Natural Rubber Product Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "192",
+    "name": "Natural Rubber Product Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-85006",

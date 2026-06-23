@@ -1,0 +1,66 @@
+{
+  "code": "77",
+  "name": "Public Order, Safety and Regulatory Services",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "O",
+      "name": "Public Administration and Safety",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "O",
+    "name": "Public Administration and Safety",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "771",
+      "name": "Public Order and Safety Services",
+      "level": "group",
+      "merger_count": 2
+    },
+    {
+      "code": "772",
+      "name": "Regulatory Services",
+      "level": "group",
+      "merger_count": 1
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-15015",
+      "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-85025",
+      "merger_name": "Francisco Partners - Blackline Safety",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60012",
+      "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 3,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 29.0,
+    "median_days": 29,
+    "average_business_days": 20.0,
+    "median_business_days": 20,
+    "completed_count": 1
+  }
+}

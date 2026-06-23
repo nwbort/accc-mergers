@@ -1,5 +1,30 @@
 {
   "code": "0700",
+  "name": "Oil and Gas Extraction",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "B",
+      "name": "Mining",
+      "level": "division"
+    },
+    {
+      "code": "07",
+      "name": "Oil and Gas Extraction",
+      "level": "subdivision"
+    },
+    {
+      "code": "070",
+      "name": "Oil and Gas Extraction",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "070",
+    "name": "Oil and Gas Extraction",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-01101",

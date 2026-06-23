@@ -1,0 +1,59 @@
+{
+  "code": "623",
+  "name": "Non-Depository Financing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "level": "division"
+    },
+    {
+      "code": "62",
+      "name": "Finance",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "62",
+    "name": "Finance",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "6230",
+      "name": "Non-Depository Financing",
+      "level": "class",
+      "merger_count": 3
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-75022",
+      "merger_name": "United States\u2013Australia Gallium",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-35015",
+      "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-30002",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "is_waiver": false,
+      "status": "Assessment ceased",
+      "phase": "Phase 2"
+    }
+  ],
+  "count": 3,
+  "phase_1_count": 0,
+  "phase_2_count": 1,
+  "waiver_count": 2,
+  "active_count": 0,
+  "phase_duration": null
+}

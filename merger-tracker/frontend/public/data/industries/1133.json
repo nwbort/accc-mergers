@@ -1,5 +1,30 @@
 {
   "code": "1133",
+  "name": "Cheese and Other Dairy Product Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "11",
+      "name": "Food Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "113",
+      "name": "Dairy Product Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "113",
+    "name": "Dairy Product Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-01069",

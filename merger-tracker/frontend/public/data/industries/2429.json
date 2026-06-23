@@ -1,5 +1,30 @@
 {
   "code": "2429",
+  "name": "Other Electronic Equipment Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "24",
+      "name": "Machinery and Equipment Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "242",
+      "name": "Computer and Electronic Equipment Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "242",
+    "name": "Computer and Electronic Equipment Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-15023",

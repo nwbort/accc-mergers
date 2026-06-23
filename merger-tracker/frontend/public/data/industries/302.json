@@ -1,0 +1,66 @@
+{
+  "code": "302",
+  "name": "Non-Residential Building Construction",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "E",
+      "name": "Construction",
+      "level": "division"
+    },
+    {
+      "code": "30",
+      "name": "Building Construction",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "30",
+    "name": "Building Construction",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "3020",
+      "name": "Non-Residential Building Construction",
+      "level": "class",
+      "merger_count": 4
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-40025",
+      "merger_name": "Shape Australia \u2013 Australian Professional Shopfitters",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55015",
+      "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-65004",
+      "merger_name": "Kee Safety - RIS Safety",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-20005",
+      "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 4,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 4,
+  "active_count": 0,
+  "phase_duration": null
+}

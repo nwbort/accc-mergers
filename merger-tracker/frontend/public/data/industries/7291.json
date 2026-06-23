@@ -1,5 +1,30 @@
 {
   "code": "7291",
+  "name": "Office Administrative Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "N",
+      "name": "Administrative and Support Services",
+      "level": "division"
+    },
+    {
+      "code": "72",
+      "name": "Administrative Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "729",
+      "name": "Other Administrative Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "729",
+    "name": "Other Administrative Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-60008",

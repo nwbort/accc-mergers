@@ -1,5 +1,30 @@
 {
   "code": "0529",
+  "name": "Other Agriculture and Fishing Support Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "A",
+      "name": "Agriculture, Forestry and Fishing",
+      "level": "division"
+    },
+    {
+      "code": "05",
+      "name": "Agriculture, Forestry and Fishing Support Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "052",
+      "name": "Agriculture and Fishing Support Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "052",
+    "name": "Agriculture and Fishing Support Services",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-05013",

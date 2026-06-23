@@ -1,0 +1,54 @@
+{
+  "code": "28",
+  "name": "Water Supply, Sewerage and Drainage Services",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "D",
+      "name": "Electricity, Gas, Water and Waste Services",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "D",
+    "name": "Electricity, Gas, Water and Waste Services",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "281",
+      "name": "Water Supply, Sewerage and Drainage Services",
+      "level": "group",
+      "merger_count": 3
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-05018",
+      "merger_name": "Xylem - TriOS",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-80013",
+      "merger_name": "Sydney Water - Windsor Sewerage Scheme Assets",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85025",
+      "merger_name": "Francisco Partners - Blackline Safety",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 3,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 0,
+  "phase_duration": null
+}

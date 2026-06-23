@@ -1,0 +1,35 @@
+{
+  "code": "3221",
+  "name": "Concreting Services",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "E",
+      "name": "Construction",
+      "level": "division"
+    },
+    {
+      "code": "32",
+      "name": "Construction Services",
+      "level": "subdivision"
+    },
+    {
+      "code": "322",
+      "name": "Building Structure Services",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "322",
+    "name": "Building Structure Services",
+    "level": "group"
+  },
+  "children": [],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

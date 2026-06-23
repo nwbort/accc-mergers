@@ -1,0 +1,58 @@
+{
+  "code": "060",
+  "name": "Coal Mining",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "B",
+      "name": "Mining",
+      "level": "division"
+    },
+    {
+      "code": "06",
+      "name": "Coal Mining",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "06",
+    "name": "Coal Mining",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "0600",
+      "name": "Coal Mining",
+      "level": "class",
+      "merger_count": 2
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-45009",
+      "merger_name": "Idemitsu - MidOcean Energy",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-55012",
+      "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 2,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 22.0,
+    "median_days": 22,
+    "average_business_days": 16.0,
+    "median_business_days": 16,
+    "completed_count": 1
+  }
+}

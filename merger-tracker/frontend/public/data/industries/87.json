@@ -1,0 +1,53 @@
+{
+  "code": "87",
+  "name": "Social Assistance Services",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "Q",
+      "name": "Health Care and Social Assistance",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "Q",
+    "name": "Health Care and Social Assistance",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "871",
+      "name": "Child Care Services",
+      "level": "group",
+      "merger_count": 1
+    },
+    {
+      "code": "879",
+      "name": "Other Social Assistance Services",
+      "level": "group",
+      "merger_count": 1
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-80019",
+      "merger_name": "Imagine Education \u2013 childcare centres ownership restructure",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-95022",
+      "merger_name": "Life Without Barriers \u2013 Mallacoota District Health & Support Service",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 2,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 0,
+  "phase_duration": null
+}

@@ -1,0 +1,71 @@
+{
+  "code": "392",
+  "name": "Motor Vehicle Parts and Tyre Retailing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "39",
+      "name": "Motor Vehicle and Motor Vehicle Parts Retailing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "39",
+    "name": "Motor Vehicle and Motor Vehicle Parts Retailing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "3921",
+      "name": "Motor Vehicle Parts Retailing",
+      "level": "class",
+      "merger_count": 3
+    },
+    {
+      "code": "3922",
+      "name": "Tyre Retailing",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-30010",
+      "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-05012",
+      "merger_name": "Eagers - Audi Melbourne and Audi Richmond",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-30002",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "is_waiver": false,
+      "status": "Assessment ceased",
+      "phase": "Phase 2"
+    }
+  ],
+  "count": 3,
+  "phase_1_count": 1,
+  "phase_2_count": 1,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 35.0,
+    "median_days": 35,
+    "average_business_days": 23.0,
+    "median_business_days": 23,
+    "completed_count": 1
+  }
+}

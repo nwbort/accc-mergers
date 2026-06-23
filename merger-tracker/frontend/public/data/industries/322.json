@@ -1,0 +1,55 @@
+{
+  "code": "322",
+  "name": "Building Structure Services",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "E",
+      "name": "Construction",
+      "level": "division"
+    },
+    {
+      "code": "32",
+      "name": "Construction Services",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "32",
+    "name": "Construction Services",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "3221",
+      "name": "Concreting Services",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "3222",
+      "name": "Bricklaying Services",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "3223",
+      "name": "Roofing Services",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "3224",
+      "name": "Structural Steel Erection Services",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [],
+  "count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": null
+}

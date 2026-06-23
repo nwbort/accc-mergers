@@ -1,0 +1,115 @@
+{
+  "code": "373",
+  "name": "Furniture, Floor Covering and Other Goods Wholesaling",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "level": "division"
+    },
+    {
+      "code": "37",
+      "name": "Other Goods Wholesaling",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "37",
+    "name": "Other Goods Wholesaling",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "3731",
+      "name": "Furniture and Floor Covering Wholesaling",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "3732",
+      "name": "Jewellery and Watch Wholesaling",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "3733",
+      "name": "Kitchen and Diningware Wholesaling",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "3734",
+      "name": "Toy and Sporting Goods Wholesaling",
+      "level": "class",
+      "merger_count": 2
+    },
+    {
+      "code": "3735",
+      "name": "Book and Magazine Wholesaling",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "3736",
+      "name": "Paper Product Wholesaling",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "3739",
+      "name": "Other Goods Wholesaling n.e.c.",
+      "level": "class",
+      "merger_count": 3
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-30020",
+      "merger_name": "EBOS - Paringa Pet Foods",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-10014",
+      "merger_name": "Turner Family Entities - Pedal Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-80004",
+      "merger_name": "Audiotonix - Soundtech Group",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-15007",
+      "merger_name": "Apollo Funds led consortium \u2013 Lecta Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-75006",
+      "merger_name": "Playlist \u2013 EGYM",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 5,
+  "phase_1_count": 2,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 25.0,
+    "median_days": 25,
+    "average_business_days": 16.0,
+    "median_business_days": 16,
+    "completed_count": 1
+  }
+}

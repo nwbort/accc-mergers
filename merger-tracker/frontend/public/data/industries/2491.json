@@ -1,5 +1,30 @@
 {
   "code": "2491",
+  "name": "Lifting and Material Handling Equipment Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "24",
+      "name": "Machinery and Equipment Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "249",
+      "name": "Other Machinery and Equipment Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "249",
+    "name": "Other Machinery and Equipment Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-15023",

@@ -1,0 +1,77 @@
+{
+  "code": "622",
+  "name": "Depository Financial Intermediation",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "level": "division"
+    },
+    {
+      "code": "62",
+      "name": "Finance",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "62",
+    "name": "Finance",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "6221",
+      "name": "Banking",
+      "level": "class",
+      "merger_count": 3
+    },
+    {
+      "code": "6222",
+      "name": "Building Society Operation",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "6223",
+      "name": "Credit Union Operation",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "6229",
+      "name": "Other Depository Financial Intermediation",
+      "level": "class",
+      "merger_count": 0
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "MN-20014",
+      "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-30021",
+      "merger_name": "Regional Australia Bank \u2013 South West Slopes Credit Union",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-70015",
+      "merger_name": "Bendigo and Adelaide Bank \u2013 RACQ Bank",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 3,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 1,
+  "phase_duration": null
+}

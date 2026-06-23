@@ -1,5 +1,30 @@
 {
   "code": "1211",
+  "name": "Soft Drink, Cordial and Syrup Manufacturing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "12",
+      "name": "Beverage and Tobacco Product Manufacturing",
+      "level": "subdivision"
+    },
+    {
+      "code": "121",
+      "name": "Beverage Manufacturing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "121",
+    "name": "Beverage Manufacturing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-01035",

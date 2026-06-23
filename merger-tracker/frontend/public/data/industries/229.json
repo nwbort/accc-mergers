@@ -1,0 +1,84 @@
+{
+  "code": "229",
+  "name": "Other Fabricated Metal Product Manufacturing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "22",
+      "name": "Fabricated Metal Product Manufacturing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "22",
+    "name": "Fabricated Metal Product Manufacturing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "2291",
+      "name": "Spring and Wire Product Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "2292",
+      "name": "Nut, Bolt, Screw and Rivet Manufacturing",
+      "level": "class",
+      "merger_count": 0
+    },
+    {
+      "code": "2293",
+      "name": "Metal Coating and Finishing",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "2299",
+      "name": "Other Fabricated Metal Product Manufacturing n.e.c.",
+      "level": "class",
+      "merger_count": 3
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-90013",
+      "merger_name": "Cement Australia \u2013 Global Manufacturing Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55014",
+      "merger_name": "KPS Capital Partners - Jennmar",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60010",
+      "merger_name": "Michelin - Flexitallic",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-55011",
+      "merger_name": "OEP IX \u2013 Leviat",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 4,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 4,
+  "active_count": 0,
+  "phase_duration": null
+}

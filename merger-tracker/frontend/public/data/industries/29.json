@@ -1,0 +1,60 @@
+{
+  "code": "29",
+  "name": "Waste Collection, Treatment and Disposal Services",
+  "level": "subdivision",
+  "ancestors": [
+    {
+      "code": "D",
+      "name": "Electricity, Gas, Water and Waste Services",
+      "level": "division"
+    }
+  ],
+  "parent": {
+    "code": "D",
+    "name": "Electricity, Gas, Water and Waste Services",
+    "level": "division"
+  },
+  "children": [
+    {
+      "code": "291",
+      "name": "Waste Collection Services",
+      "level": "group",
+      "merger_count": 3
+    },
+    {
+      "code": "292",
+      "name": "Waste Treatment, Disposal and Remediation Services",
+      "level": "group",
+      "merger_count": 1
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-15021",
+      "merger_name": "Bingo Industries - JLW Services",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-85005",
+      "merger_name": "Altor Fund Manager - Evac Holding Oy",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-60006",
+      "merger_name": "Re.Group \u2013 Scouts Queensland Recycling Centre Site",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 3,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 0,
+  "phase_duration": null
+}

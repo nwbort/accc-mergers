@@ -1,5 +1,30 @@
 {
   "code": "4242",
+  "name": "Entertainment Media Retailing",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "level": "division"
+    },
+    {
+      "code": "42",
+      "name": "Other Store-Based Retailing",
+      "level": "subdivision"
+    },
+    {
+      "code": "424",
+      "name": "Recreational Goods Retailing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "424",
+    "name": "Recreational Goods Retailing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-70006",

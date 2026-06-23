@@ -1,5 +1,30 @@
 {
   "code": "3020",
+  "name": "Non-Residential Building Construction",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "E",
+      "name": "Construction",
+      "level": "division"
+    },
+    {
+      "code": "30",
+      "name": "Building Construction",
+      "level": "subdivision"
+    },
+    {
+      "code": "302",
+      "name": "Non-Residential Building Construction",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "302",
+    "name": "Non-Residential Building Construction",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "WA-40025",

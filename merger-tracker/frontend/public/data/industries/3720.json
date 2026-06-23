@@ -1,5 +1,30 @@
 {
   "code": "3720",
+  "name": "Pharmaceutical and Toiletry Goods Wholesaling",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "level": "division"
+    },
+    {
+      "code": "37",
+      "name": "Other Goods Wholesaling",
+      "level": "subdivision"
+    },
+    {
+      "code": "372",
+      "name": "Pharmaceutical and Toiletry Goods Wholesaling",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "372",
+    "name": "Pharmaceutical and Toiletry Goods Wholesaling",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-80016",

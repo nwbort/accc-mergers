@@ -1,5 +1,30 @@
 {
   "code": "0123",
+  "name": "Vegetable Growing (Outdoors)",
+  "level": "class",
+  "ancestors": [
+    {
+      "code": "A",
+      "name": "Agriculture, Forestry and Fishing",
+      "level": "division"
+    },
+    {
+      "code": "01",
+      "name": "Agriculture",
+      "level": "subdivision"
+    },
+    {
+      "code": "012",
+      "name": "Mushroom and Vegetable Growing",
+      "level": "group"
+    }
+  ],
+  "parent": {
+    "code": "012",
+    "name": "Mushroom and Vegetable Growing",
+    "level": "group"
+  },
+  "children": [],
   "mergers": [
     {
       "merger_id": "MN-40020",

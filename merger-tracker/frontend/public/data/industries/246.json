@@ -1,0 +1,132 @@
+{
+  "code": "246",
+  "name": "Specialised Machinery and Equipment Manufacturing",
+  "level": "group",
+  "ancestors": [
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "level": "division"
+    },
+    {
+      "code": "24",
+      "name": "Machinery and Equipment Manufacturing",
+      "level": "subdivision"
+    }
+  ],
+  "parent": {
+    "code": "24",
+    "name": "Machinery and Equipment Manufacturing",
+    "level": "subdivision"
+  },
+  "children": [
+    {
+      "code": "2461",
+      "name": "Agricultural Machinery and Equipment Manufacturing",
+      "level": "class",
+      "merger_count": 2
+    },
+    {
+      "code": "2462",
+      "name": "Mining and Construction Machinery Manufacturing",
+      "level": "class",
+      "merger_count": 2
+    },
+    {
+      "code": "2463",
+      "name": "Machine Tool and Parts Manufacturing",
+      "level": "class",
+      "merger_count": 1
+    },
+    {
+      "code": "2469",
+      "name": "Other Specialised Machinery and Equipment Manufacturing",
+      "level": "class",
+      "merger_count": 5
+    }
+  ],
+  "mergers": [
+    {
+      "merger_id": "WA-75024",
+      "merger_name": "KfW \u2013 KNDS N.V.",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-35016",
+      "merger_name": "Wipro - Indeco",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-85006",
+      "merger_name": "Tega and Apollo Funds consortium - Molycop",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "MN-25006",
+      "merger_name": "KPS \u2013 Novacel",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-50010",
+      "merger_name": "Blackbird Ventures \u2013 Halter",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-75013",
+      "merger_name": "Aldus - Hilton Manufacturing",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-70005",
+      "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-55004",
+      "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-40003",
+      "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "MN-01058",
+      "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
+    }
+  ],
+  "count": 10,
+  "phase_1_count": 4,
+  "phase_2_count": 0,
+  "waiver_count": 6,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 30.75,
+    "median_days": 33,
+    "average_business_days": 21.5,
+    "median_business_days": 22,
+    "completed_count": 4
+  }
+}
