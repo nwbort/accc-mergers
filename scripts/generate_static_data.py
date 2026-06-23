@@ -28,13 +28,19 @@ Output files:
 import json
 from pathlib import Path
 
-from static_data.enrichment import enrich_merger, link_related_mergers, link_similar_mergers
+from static_data.enrichment import (
+    enrich_merger,
+    link_related_mergers,
+    link_related_parties,
+    link_similar_mergers,
+)
 from static_data.loaders import (
     load_commentary,
     load_mergers,
     load_nocc_data,
     load_questionnaire_data,
     load_related_mergers,
+    load_related_parties,
     load_similar_mergers,
 )
 from static_data.outputs import (
@@ -88,6 +94,10 @@ def main():
     if similar_mergers:
         print(f"Loaded similar merger suggestions for {len(similar_mergers)} merger(s)")
 
+    related_parties = load_related_parties()
+    if related_parties:
+        print(f"Loaded {len(related_parties)} related party group(s)")
+
     print("Enriching mergers...")
     enriched = [
         enrich_merger(m, commentary, questionnaire_data, nocc_data) for m in mergers
@@ -98,6 +108,9 @@ def main():
     similar_linked = link_similar_mergers(enriched, similar_mergers)
     if similar_linked:
         print(f"  Linked similar mergers for {similar_linked} merger(s)")
+    party_linked = link_related_parties(enriched, related_parties)
+    if party_linked:
+        print(f"  Linked {party_linked} party record(s) to canonical groups")
     print(f"✓ Enriched {len(enriched)} mergers")
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)

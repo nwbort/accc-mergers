@@ -13,7 +13,11 @@
     {
       "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
       "identifier_type": "ABN",
-      "identifier": "72 004 428 326"
+      "identifier": "72 004 428 326",
+      "canonical": {
+        "id": "coles",
+        "name": "Coles Group"
+      }
     }
   ],
   "targets": [
@@ -27,12 +31,20 @@
     {
       "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "45 004 189 708"
+      "identifier": "45 004 189 708",
+      "canonical": {
+        "id": "coles",
+        "name": "Coles Group"
+      }
     },
     {
       "name": "COLES GROUP LIMITED",
       "identifier_type": "ABN",
-      "identifier": "11 004 089 936"
+      "identifier": "11 004 089 936",
+      "canonical": {
+        "id": "coles",
+        "name": "Coles Group"
+      }
     }
   ],
   "anzsic_codes": [
@@ -124,7 +136,11 @@
         {
           "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
         }
       ],
       "targets": [
@@ -144,7 +160,11 @@
         {
           "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "45 004 189 708"
+          "identifier": "45 004 189 708",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
         }
       ],
       "targets": [
@@ -164,7 +184,11 @@
         {
           "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "45 004 189 708"
+          "identifier": "45 004 189 708",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
         }
       ],
       "targets": [

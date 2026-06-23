@@ -10,6 +10,7 @@ COMMENTARY_JSON = REPO_ROOT / "data" / "processed" / "commentary.json"
 QUESTIONNAIRE_JSON = REPO_ROOT / "data" / "processed" / "questionnaire_data.json"
 NOCC_JSON = REPO_ROOT / "data" / "processed" / "nocc_data.json"
 RELATED_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "related_mergers.json"
+RELATED_PARTIES_JSON = REPO_ROOT / "data" / "processed" / "related_parties.json"
 SIMILAR_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "similar_mergers.json"
 
 
@@ -76,6 +77,27 @@ def load_related_mergers() -> dict:
     except (json.JSONDecodeError, IOError, KeyError) as e:
         print(f"Warning: Could not load related_mergers.json: {e}")
         return {}
+
+
+def load_related_parties() -> list:
+    """Load canonical "related party" groups from related_parties.json.
+
+    Returns the list of group dicts (each with ``id``, ``canonical_name`` and
+    ``members``). The matching logic that turns these into a per-party lookup
+    lives in ``scripts/party_matching.py`` so the daily detector and this
+    pipeline stay in sync. Returns an empty list if the file is missing or
+    malformed.
+    """
+    if not RELATED_PARTIES_JSON.exists():
+        return []
+
+    try:
+        with open(RELATED_PARTIES_JSON, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return data.get('groups', [])
+    except (json.JSONDecodeError, IOError) as e:
+        print(f"Warning: Could not load related_parties.json: {e}")
+        return []
 
 
 def load_similar_mergers() -> dict:

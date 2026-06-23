@@ -60,6 +60,44 @@ describe('buildSearchIndex', () => {
     expect(str).not.toContain('undefined');
   });
 
+  it('includes other-party names so they are searchable', () => {
+    const withOther = [
+      {
+        merger_id: 'MN-05050',
+        merger_name: 'Some deal',
+        acquirers: [{ name: 'Acquirer Co' }],
+        targets: [{ name: 'Target Co' }],
+        other_parties: [{ name: 'Vendor Holdings Pty Ltd' }],
+      },
+    ];
+    const index = buildSearchIndex(withOther);
+    expect(index.get('MN-05050')).toContain('vendor holdings pty ltd');
+    expect(searchMergers(withOther, 'Vendor Holdings', index)).toHaveLength(1);
+  });
+
+  it('includes canonical party names so the canonical filter finds every variant', () => {
+    const withCanonical = [
+      {
+        merger_id: 'MN-04040',
+        merger_name: 'Coles deal',
+        acquirers: [
+          { name: 'COLES SUPERMARKETS AUSTRALIA PTY LTD', canonical: { id: 'coles', name: 'Coles Group' } },
+        ],
+        targets: [],
+        other_parties: [
+          { name: 'COLES GROUP PROPERTY DEVELOPMENTS LTD', canonical: { id: 'coles', name: 'Coles Group' } },
+        ],
+      },
+    ];
+    const index = buildSearchIndex(withCanonical);
+    const str = index.get('MN-04040');
+    // The on-record name and the canonical name are both searchable.
+    expect(str).toContain('coles supermarkets australia pty ltd');
+    expect(str).toContain('coles group');
+    // A search for the canonical name matches this merger.
+    expect(searchMergers(withCanonical, 'Coles Group', index)).toHaveLength(1);
+  });
+
   it('handles an empty array', () => {
     const index = buildSearchIndex([]);
     expect(index).toBeInstanceOf(Map);

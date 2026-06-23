@@ -1,0 +1,15 @@
+{
+  "_README": "Parties (acquirers / targets / other parties) that are the same real-world entity recorded under more than one name or ABN. Each entry in `groups` is { \"id\": \"<slug>\", \"canonical_name\": \"<display name>\", \"members\": [ { \"name\": \"...\", \"identifier\": \"...\" }, ... ] }. A party on a merger is matched to a group when its ABN matches a member's `identifier` OR its (normalised) name matches a member's `name` — see scripts/party_matching.py. On the merger detail page each matched party becomes a link to the mergers list filtered by the group's canonical_name. New candidate groups are suggested daily by scripts/detect_related_parties.py via a pull request.",
+  "groups": [
+    {
+      "id": "coles",
+      "canonical_name": "Coles Group",
+      "members": [
+        { "name": "COLES GROUP LIMITED", "identifier": "11 004 089 936" },
+        { "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD", "identifier": "45 004 189 708" },
+        { "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD", "identifier": "" },
+        { "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD", "identifier": "72 004 428 326" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+name: Detect Related Parties
+
+on:
+  schedule:
+    # Daily at 2:45 AM UTC — after detect-duplicates (2:00) and
+    # detect-related-mergers (2:30) so the processed data has settled.
+    - cron: '45 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write        # needed to push the suggestion branch
+  pull-requests: write   # needed to create / update the suggestion PR
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+
+      - name: Run related-party detection
+        id: detect
+        run: |
+          if python3 scripts/detect_related_parties.py --summary; then
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Write job summary
+        run: |
+          {
+            echo "### Related parties detection"
+            echo ""
+            python3 scripts/detect_related_parties.py --summary || true
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # Switch to (or create/reset) the well-known suggestion branch so the
+      # commit lands on top of the current default-branch HEAD.
+      - name: Create or reset suggestion branch
+        id: branch
+        if: steps.detect.outputs.found == 'true'
+        run: |
+          BRANCH="fix/related-parties"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git switch -C "$BRANCH"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Apply suggested groups
+        if: steps.detect.outputs.found == 'true'
+        run: |
+          python3 scripts/detect_related_parties.py \
+            --apply-suggestions \
+            --pr-markdown pr_body.md || true
+
+      - name: Commit and push suggestion branch
+        id: commit
+        if: steps.detect.outputs.found == 'true'
+        run: |
+          BRANCH="${{ steps.branch.outputs.branch }}"
+          if git diff --quiet data/processed/related_parties.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git add data/processed/related_parties.json
+            git commit -m "suggest: candidate related parties detected on $(date -u +%Y-%m-%d)"
+            git push origin "$BRANCH" --force
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create or update pull request
+        if: steps.detect.outputs.found == 'true' && steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          BRANCH="${{ steps.branch.outputs.branch }}"
+          TITLE="suggest: link related parties ($(date -u +%Y-%m-%d))"
+
+          EXISTING=$(gh pr list \
+            --head "$BRANCH" \
+            --state open \
+            --json number \
+            --jq '.[0].number' 2>/dev/null || echo "")
+
+          if [ -n "$EXISTING" ]; then
+            gh pr edit "$EXISTING" --title "$TITLE" --body-file pr_body.md
+            echo "Updated PR #$EXISTING"
+          else
+            gh pr create \
+              --head "$BRANCH" \
+              --title "$TITLE" \
+              --body-file pr_body.md
+          fi
+
+      - name: Close suggestion PR when nothing left to recommend
+        if: steps.detect.outputs.found == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr list \
+            --head "fix/related-parties" \
+            --state open \
+            --json number \
+            --jq '.[].number' | \
+          while read -r num; do
+            gh pr close "$num" \
+              --comment "All detected related-party groups have been recorded as of $(date -u +%Y-%m-%d). Closing automatically." \
+              || true
+          done
