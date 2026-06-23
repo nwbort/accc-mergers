@@ -3,6 +3,7 @@ import { FaChevronRight } from 'react-icons/fa';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
 import IndustryMergerGroups from '../components/IndustryMergerGroups';
+import PhaseDurationComparison from '../components/PhaseDurationComparison';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
@@ -35,6 +36,16 @@ function IndustryDetail() {
     cacheKey: 'industries-list',
   });
   const industries = industriesData?.industries || null;
+
+  // Parent industry detail — fetched once the main payload reveals the parent
+  // code, so we can compare Phase 1 durations against the next level up. The
+  // hook pauses while the URL is falsy (no parent / not yet loaded). A failure
+  // here is non-fatal: the comparison simply falls back to this industry alone.
+  const parentCode = data?.parent?.code;
+  const { data: parentData } = useFetchData(
+    parentCode ? API_ENDPOINTS.industryDetail(parentCode) : null,
+    parentCode ? { cacheKey: `industry-${parentCode}` } : {}
+  );
 
   const isNotFound = error === 'HTTP 404';
 
@@ -76,28 +87,18 @@ function IndustryDetail() {
   ).length;
 
   // Phase 1 duration stats, mirroring the dashboard. May be absent when the
-  // industry has no completed Phase 1 reviews (e.g. waivers only).
+  // industry has no completed Phase 1 reviews (e.g. waivers only). These are
+  // surfaced visually via PhaseDurationComparison (vs the parent industry)
+  // rather than as flat stat cards.
   const duration = data.phase_duration;
-  const avgDuration = duration?.average_business_days != null
-    ? `${Math.round(duration.average_business_days)} business days`
-    : 'N/A';
-  const avgDurationSub = duration?.average_days != null
-    ? `${Math.round(duration.average_days)} calendar days`
-    : null;
-  const medianDuration = duration?.median_business_days != null
-    ? `${duration.median_business_days} business days`
-    : 'N/A';
-  const medianDurationSub = duration?.median_days != null
-    ? `${duration.median_days} calendar days`
-    : null;
+  const parentDuration = parentData?.phase_duration || null;
+  const parentName = data.parent?.name || null;
 
   const statCards = [
     { label: 'Total reviews', value: mergers.length },
     { label: 'Phase 2 reviews', value: phase2Count },
     { label: 'Waivers', value: waiverCount },
     { label: 'Under assessment', value: activeCount },
-    { label: 'Avg phase 1 duration', value: avgDuration, subtitle: avgDurationSub },
-    { label: 'Median phase 1 duration', value: medianDuration, subtitle: medianDurationSub },
   ];
 
   return (
@@ -146,7 +147,7 @@ function IndustryDetail() {
         </div>
 
         {mergers.length > 0 && (
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
             {statCards.map(({ label, value, subtitle }) => (
               <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
                 <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
@@ -158,6 +159,17 @@ function IndustryDetail() {
                 )}
               </div>
             ))}
+          </div>
+        )}
+
+        {/* Phase 1 duration, shown visually against the parent industry. */}
+        {mergers.length > 0 && duration?.average_business_days != null && (
+          <div className="mb-6">
+            <PhaseDurationComparison
+              duration={duration}
+              parentDuration={parentDuration}
+              parentName={parentName}
+            />
           </div>
         )}
 
