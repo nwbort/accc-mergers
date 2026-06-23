@@ -47,12 +47,12 @@ function IndustryDetail() {
     parentCode ? { cacheKey: `industry-${parentCode}` } : {}
   );
 
-  // Top-level divisions have no parent, so compare against the overall
-  // all-industries figures instead (shared cache with the dashboard).
-  const needsOverall = !!data && !parentCode;
+  // Overall all-industries figures (shared cache with the dashboard). Fetched
+  // for every level so each industry can be compared against the market as a
+  // whole, not just against its immediate parent.
   const { data: statsData } = useFetchData(
-    needsOverall ? API_ENDPOINTS.stats : null,
-    needsOverall ? { cacheKey: 'dashboard-stats' } : {}
+    data ? API_ENDPOINTS.stats : null,
+    data ? { cacheKey: 'dashboard-stats' } : {}
   );
 
   const isNotFound = error === 'HTTP 404';
@@ -99,16 +99,19 @@ function IndustryDetail() {
   // surfaced visually via PhaseDurationComparison (vs the parent industry)
   // rather than as flat stat cards.
   const duration = data.phase_duration;
-  // Compare against the parent industry, or all industries for a top-level
-  // division (which has no parent).
-  const comparisonDuration = parentCode
-    ? parentData?.phase_duration || null
-    : statsData?.phase_duration || null;
-  const comparisonName = parentCode
-    ? data.parent?.name || null
-    : statsData
-      ? 'All industries'
-      : null;
+  // Baselines to compare this industry's durations against: its parent in the
+  // ANZSIC hierarchy (when it has one) and the overall all-industries figures.
+  // Divisions (no parent) show one baseline line; deeper levels show two.
+  const comparisons = [];
+  if (parentCode && parentData?.phase_duration) {
+    comparisons.push({
+      name: data.parent?.name || 'Parent industry',
+      duration: parentData.phase_duration,
+    });
+  }
+  if (statsData?.phase_duration) {
+    comparisons.push({ name: 'All industries', duration: statsData.phase_duration });
+  }
 
   const statCards = [
     { label: 'Total reviews', value: mergers.length },
@@ -183,8 +186,7 @@ function IndustryDetail() {
           <div className="mb-6">
             <PhaseDurationComparison
               duration={duration}
-              comparisonDuration={comparisonDuration}
-              comparisonName={comparisonName}
+              comparisons={comparisons}
             />
           </div>
         )}
