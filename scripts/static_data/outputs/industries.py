@@ -12,8 +12,7 @@ from pathlib import Path
 from constants import merger_status
 
 from .. import anzsic
-from ..business_days import calculate_business_days, calculate_calendar_days
-from ..filters import filter_notifications
+from ..durations import collect_phase_1_durations
 
 
 def classify_phase(m: dict) -> str:
@@ -50,23 +49,12 @@ def _median(values: list):
 def _phase_duration(unique_mergers: list) -> dict | None:
     """Phase 1 duration stats for an industry, mirroring the dashboard stats.
 
-    Measures notification → determination for completed notification (non-waiver)
-    mergers. Returns ``None`` when the industry has no completed Phase 1 reviews.
+    Measures notification → Phase 1 end for completed notification (non-waiver)
+    mergers, with matters referred to Phase 2 measured to the referral date so
+    the Phase 2 clock never inflates the figures. Returns ``None`` when the
+    industry has no completed Phase 1 reviews.
     """
-    durations = []
-    business_durations = []
-
-    for m in filter_notifications(unique_mergers):
-        start = m.get('effective_notification_datetime')
-        end = m.get('determination_publication_date')
-        if not (start and end):
-            continue
-        cal_days = calculate_calendar_days(start, end)
-        if cal_days is not None:
-            durations.append(cal_days)
-        bus_days = calculate_business_days(start, end)
-        if bus_days is not None:
-            business_durations.append(bus_days)
+    durations, business_durations = collect_phase_1_durations(unique_mergers)
 
     if not durations and not business_durations:
         return None
