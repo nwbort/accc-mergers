@@ -1401,12 +1401,16 @@ class TestGenerateIndustriesJson:
 
     def test_empty_mergers(self):
         result = generate_industries_json([])
-        assert result == {"industries": []}
+        assert result['industries'] == []
+        assert result['total_industries'] == 0
+        assert result['total_mergers'] == 0
 
     def test_no_anzsic_codes(self):
         mergers = [{'merger_id': 'MN-001'}]
         result = generate_industries_json(mergers)
-        assert result == {"industries": []}
+        assert result['industries'] == []
+        assert result['total_industries'] == 0
+        assert result['total_mergers'] == 0
 
     def test_multiple_codes_per_merger(self):
         mergers = [
