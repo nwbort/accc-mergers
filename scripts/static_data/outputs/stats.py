@@ -4,7 +4,7 @@ from collections import defaultdict
 
 from constants import merger_status
 
-from ..business_days import calculate_business_days, calculate_calendar_days
+from ..durations import collect_phase_1_durations
 from ..enrichment import is_phase_2_referral_event
 from ..filters import filter_notifications, filter_waivers
 
@@ -38,22 +38,10 @@ def generate(mergers: list) -> dict:
         if det:
             by_waiver_determination[det] += 1
 
-    # Phase durations (notifications only)
-    durations = []
-    business_durations = []
-
-    for m in notification_mergers:
-        start = m.get('effective_notification_datetime')
-        end = m.get('determination_publication_date')
-
-        if start and end:
-            cal_days = calculate_calendar_days(start, end)
-            if cal_days is not None:
-                durations.append(cal_days)
-
-            bus_days = calculate_business_days(start, end)
-            if bus_days is not None:
-                business_durations.append(bus_days)
+    # Phase 1 durations (notifications only). Matters referred to Phase 2 are
+    # measured to the referral date, not the later Phase 2 determination, so the
+    # Phase 2 clock never inflates the Phase 1 figures.
+    durations, business_durations = collect_phase_1_durations(notification_mergers)
 
     avg_duration = sum(durations) / len(durations) if durations else None
     median_duration = sorted(durations)[len(durations) // 2] if durations else None

@@ -319,6 +319,76 @@ class TestIndustriesDetailFiles:
             transport = json.load(f)
         assert transport['phase_duration'] is None
 
+
+# ---------------------------------------------------------------------------
+# Phase 1 duration (shared across stats / industries / analysis)
+# ---------------------------------------------------------------------------
+
+def _referred_then_completed_phase_2_raw():
+    """A matter referred to Phase 2 whose Phase 2 has since concluded.
+
+    Its published determination is the *Phase 2* outcome months after
+    notification; Phase 1 ended at the referral on 2026-01-20.
+    """
+    return {
+        'merger_id': 'MN-7000',
+        'merger_name': 'Referred then approved at Phase 2',
+        'status': 'Assessment completed',
+        'accc_determination': 'Approved',
+        'stage': 'Phase 2 - detailed assessment',
+        'effective_notification_datetime': '2025-10-10T12:00:00Z',
+        'determination_publication_date': '2026-06-02T12:00:00Z',
+        'page_modified_datetime': '2026-06-02T12:30:00Z',
+        'anzsic_codes': [{'code': '0600', 'name': 'Mining'}],
+        'acquirers': ['Nu'],
+        'targets': ['Xi'],
+        'other_parties': [],
+        'url': 'https://example.com/MN-7000',
+        'events': [
+            {'title': 'Merger notified to ACCC', 'date': '2025-10-10T12:00:00Z'},
+            {'title': 'Decision to Proceed to a Phase 2 review', 'date': '2026-01-20T12:00:00Z'},
+            {'title': 'Phase 2 - Determination', 'date': '2026-06-02T12:00:00Z'},
+        ],
+    }
+
+
+class TestPhase1DurationExcludesPhase2Clock:
+    """A Phase-2-referred matter must be measured to the referral date, never
+    to the later Phase 2 determination, which would inflate Phase 1 durations.
+    """
+
+    def test_collect_uses_referral_date_not_phase_2_determination(self):
+        from static_data.business_days import (
+            calculate_business_days,
+            calculate_calendar_days,
+        )
+        from static_data.durations import collect_phase_1_durations
+
+        enriched = enrich_merger(_referred_then_completed_phase_2_raw())
+        cal, bus = collect_phase_1_durations([enriched])
+
+        # Phase 1 ran notification → referral (2025-10-10 → 2026-01-20), not
+        # notification → Phase 2 determination (→ 2026-06-02).
+        assert bus == [calculate_business_days('2025-10-10T12:00:00Z', '2026-01-20T12:00:00Z')]
+        assert cal == [calculate_calendar_days('2025-10-10T12:00:00Z', '2026-01-20T12:00:00Z')]
+
+    def test_stats_phase_duration_not_inflated(self):
+        enriched = enrich_merger(_referred_then_completed_phase_2_raw())
+        payload = stats.generate([enriched])
+        # The full notification → Phase 2 span is ~165 business days; Phase 1
+        # alone is well under the 30-business-day statutory window plus the
+        # Christmas shutdown — comfortably below 80.
+        assert payload['phase_duration']['average_business_days'] < 80
+
+    def test_industries_phase_duration_counts_referred_matter(self, tmp_path):
+        industries.generate_detail_files([enrich_merger(_referred_then_completed_phase_2_raw())], tmp_path)
+        with open(tmp_path / 'industries' / '0600.json') as f:
+            mining = json.load(f)
+        # The referred matter has a concluded Phase 1, so it is counted...
+        assert mining['phase_duration']['completed_count'] == 1
+        # ...but at its Phase 1 length, not the Phase 2 span.
+        assert mining['phase_duration']['average_business_days'] < 80
+
     def test_untouched_node_has_empty_payload(self, tmp_path):
         industries.generate_detail_files(_enriched_fixture(), tmp_path)
         # 0801 (Iron Ore Mining) has no mergers but still gets a browsable page.

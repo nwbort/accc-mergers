@@ -3,9 +3,8 @@
 from collections import defaultdict
 from statistics import median as stat_median
 
-from constants import merger_status
-
 from ..business_days import calculate_business_days, calculate_calendar_days
+from ..durations import phase_1_end_date
 from ..filters import filter_notifications, filter_waivers
 
 
@@ -21,18 +20,15 @@ def generate(mergers: list) -> dict:
 
     for m in notification_mergers:
         start = m.get('effective_notification_datetime')
-        end = m.get('determination_publication_date')
+        # Measure to the Phase 1 end. For matters referred to Phase 2 this is the
+        # referral date — never the later Phase 2 determination — so referred
+        # matters (whether still in Phase 2 or since concluded) don't inflate the
+        # Phase 1 figures.
+        end = phase_1_end_date(m)
         phase_1_det = m.get('phase_1_determination')
 
-        if not start:
+        if not start or not end:
             continue
-
-        # Include 'Referred to phase 2' mergers using the date the phase 2 notice was issued
-        if not end:
-            if phase_1_det == merger_status.REFERRED_TO_PHASE_2 and m.get('phase_1_determination_date'):
-                end = m['phase_1_determination_date']
-            else:
-                continue
 
         bus_days = calculate_business_days(start, end)
         cal_days = calculate_calendar_days(start, end)
