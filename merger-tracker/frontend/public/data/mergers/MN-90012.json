@@ -1,13 +1,15 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/pt-asian-bulk-logistics-%E2%80%93-engage-marine-0",
   "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-90012",
   "effective_notification_datetime": "2026-05-13T12:00:00Z",
   "original_notification_datetime": "2026-05-13T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-06-26T12:00:00Z",
-  "page_modified_datetime": "2026-05-25T11:10:23+10:00",
+  "determination_publication_date": "2026-06-24T12:00:00Z",
+  "accc_determination": "Approved",
+  "page_modified_datetime": "2026-06-24T17:31:20+10:00",
   "consultation_response_due_date": "2026-05-22T12:00:00Z",
   "acquirers": [
     {
@@ -23,6 +25,11 @@
   ],
   "targets": [
     {
+      "name": "ENGAGE MARINE FINCO PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "25 675 999 283"
+    },
+    {
       "name": "ENGAGE MARINE HOLDINGS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "99 626 774 678"
@@ -31,33 +38,28 @@
       "name": "ENGAGE MARINE TOPCO PTY LTD",
       "identifier_type": "ABN",
       "identifier": "46 675 998 562"
-    },
-    {
-      "name": "ENGAGE MARINE FINCO PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "25 675 999 283"
     }
   ],
   "other_parties": [
-    {
-      "name": "AUSTRALIAN GLOBAL MARINE AND LOGISTICS PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "68 682 427 587"
-    },
-    {
-      "name": "AUSTRALIAN GLOBAL INFRASTRUCTURE PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "47 663 347 948"
-    },
     {
       "name": "Australian Global Onshore Logistics Pty Ltd",
       "identifier_type": "ACN",
       "identifier": "691 961 136"
     },
     {
+      "name": "AUSTRALIAN GLOBAL MARINE AND LOGISTICS PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "68 682 427 587"
+    },
+    {
       "name": "MAGNETIC INFRASTRUCTURE GROUP PTY LTD",
       "identifier_type": "ABN",
       "identifier": "81 663 518 563"
+    },
+    {
+      "name": "AUSTRALIAN GLOBAL INFRASTRUCTURE PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "47 663 347 948"
     }
   ],
   "anzsic_codes": [
@@ -70,7 +72,7 @@
       "name": "Other Water Transport Support Services"
     }
   ],
-  "merger_description": "PT Asian Bulk Logistics, through its Australian subsidiary, Global Engage Marine Pty Ltd (**ABL**) proposes to acquire Engage Marine TopCo Pty Ltd (**Engage Marine**) (the\u00a0**Acquisition**).\n\nABL operates three subsidiaries in Australia:\n\n* Transhipment Services Australia, which provides bulk cargo transhipment services utilising floating barges to transfer materials, such as iron ore, directly between smaller ships or shallow terminals and larger ocean-going vessels in deepwater berths.\n* One Rail Australia, a rail freight operator operating in NSW and central Queensland, specialising in transporting bulk commodities such as coal and minerals.\n* SCF Containers, an Australian shipping container supplier offering a wide range of products for hire or sale, including shipping containers, site sheds, dangerous goods containers, tank and refrigerated containers, intermodal containers, trailers, and remote camps.\n\nEngage Marine provides terminal and harbour towage including the berthing and sailing of ocean-going vessels at ports across Australia. Engage Marine also provides ad-hoc towage emergency response solutions in salvage situations.",
+  "merger_description": "PT Asian Bulk Logistics, through its Australian subsidiary, Global Engage Marine Pty Ltd (**ABL**) proposes to acquire Engage Marine TopCo Pty Ltd (**Engage Marine**) (the\u00a0**Acquisition**).\n\nABL operates three subsidiaries in Australia:\n\n* Transhipment Services Australia, which provides bulk cargo transhipment services utilising floating barges to transfer materials, such as iron ore, directly between smaller ships or shallow terminals and larger ocean-going vessels in deepwater berths.\n* One Rail Australia, a rail freight operator operating in NSW and central Queensland, specialising in transporting bulk commodities such as coal and minerals.\n* SCF Containers, an Australian shipping container supplier offering a wide range of products for hire or sale, including shipping containers, site sheds, dangerous goods containers, tank and refrigerated containers, intermodal containers, trailers, and remote camps.\n\nEngage Marine provides terminal and harbour towage including the berthing and sailing of ocean-going vessels at ports across Australia. Engage Marine also provides ad-hoc towage emergency response solutions in salvage situations.\n\nTranshipment in this context refers to a logistics service concerned with getting a mined commodity from land to an ocean-going vessel.",
   "events": [
     {
       "date": "2026-05-14T12:00:00Z",
@@ -86,12 +88,48 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-06-24T12:00:00Z",
+      "title": "PT Asian Bulk Logistics - Engage Marine - Straightforward Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/PT%20Asian%20Bulk%20Logistics%20-%20Engage%20Marine%20-%20Phase%201%20determination.pdf",
+      "determination_commission_division": "Determination made by Commissioner Philip Williams pursuant to a delegation under section 25(1) of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "PT Asian Bulk Logistics, through its Australian subsidiary, Global\nEngage Marine Pty Ltd (ABL) proposes to acquire Engage Marine\nTopCo Pty Ltd (Engage Marine) (the Acquisition)."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "The acquirer, ABL operates three subsidiaries in Australia:\n\u25aa Transhipment Services Australia, which provides bulk cargo\ntranshipment services utilising floating barges to transfer\nmaterials, such as iron ore, directly between smaller ships or\nshallow terminals and larger ocean-going vessels in\ndeepwater berths.\n\u25aa One Rail Australia, a rail freight operator operating in NSW\nand central Queensland, specialising in transporting bulk\ncommodities such as coal and minerals.\n\u25aa SCF Containers, an Australian shipping container supplier\noffering a wide range of products for hire or sale, including\nshipping containers, site sheds, dangerous goods\ncontainers, tank and refrigerated containers, intermodal\ncontainers, trailers, and remote camps.\nThe target, Engage Marine, provides terminal and harbour towage\n(towage services) including the berthing and sailing of ocean-going\nvessels at ports across Australia. Engage Marine also provides ad-\nhoc towage emergency response solutions in salvage situations.\nTranshipment in this context refers to a logistics service concerned\nwith getting a mined commodity from land to an ocean-going vessel."
+        },
+        {
+          "item": "Overlap and relationship\nbetween the parties",
+          "details": "The merger parties have a vertical relationship with Engage Marine\u2019s\ntowage services being an input into the supply of transhipment\nservices in some circumstances."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third partes and publicly available\ninformation.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The merger parties are not close competitors in the supply of\ntranshipment or towage services.\n\u2022 A vertical relationship between towage services and\ntranshipment services may arise at a port. However, the merged\nfirm is unlikely to have the ability and incentive to foreclose rival\ntranshipment service providers post-acquisition.\no This is because there are alternative options to Engage\nMarine available to transhipment providers at those ports\nwhere there is a current demand for transhipment services.\nThose options include alternative towage service providers\ncurrently operating at the port or the ability of some\ntranshipment customers to sponsor a new provider of\ntowage services to deliver the services they require at that\nport."
+        },
+        {
+          "item": "Applications for review",
+          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+        }
+      ],
+      "url_gh": "/mergers/MN-90012/PT Asian Bulk Logistics - Engage Marine - Phase 1 determination.pdf",
+      "status": "live",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-06-24T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,

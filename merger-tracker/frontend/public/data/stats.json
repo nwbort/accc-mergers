@@ -2,12 +2,12 @@
   "total_mergers": 146,
   "total_waivers": 231,
   "by_status": {
-    "Assessment completed": 111,
-    "Under assessment": 34,
+    "Assessment completed": 112,
+    "Under assessment": 33,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 110,
+    "Approved": 111,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -15,22 +15,22 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.495652173913044,
+    "average_days": 29.603448275862068,
     "median_days": 26,
-    "average_business_days": 19.321739130434782,
+    "average_business_days": 19.396551724137932,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 24,
-        "percentage": 20.9
+        "percentage": 20.7
       },
       "day20": {
         "count": 87,
-        "percentage": 75.7
+        "percentage": 75.0
       },
       "day30": {
-        "count": 111,
-        "percentage": 96.5
+        "count": 112,
+        "percentage": 96.6
       }
     }
   },
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-90012",
+      "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+      "determination": "Approved",
+      "determination_date": "2026-06-24T12:00:00Z",
+      "page_modified_datetime": "2026-06-24T17:31:20+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-05024",
       "merger_name": "B.M.D. Holdings \u2013 Bajara Plant Hire and Stirling Contracting",
       "determination": "Approved",
@@ -168,16 +178,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-05026",
-      "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
-      "determination": "Approved",
-      "determination_date": "2026-06-23T12:00:00Z",
-      "page_modified_datetime": "2026-06-23T18:54:09+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

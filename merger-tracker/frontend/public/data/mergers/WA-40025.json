@@ -137,8 +137,8 @@
     {
       "merger_id": "MN-90012",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "acquirers": [
         {
           "name": "PT Asian Bulk Logistics",
@@ -153,14 +153,14 @@
       ],
       "targets": [
         {
+          "name": "ENGAGE MARINE FINCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 675 999 283"
+        },
+        {
           "name": "ENGAGE MARINE HOLDINGS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "99 626 774 678"
-        },
-        {
-          "name": "ENGAGE MARINE TOPCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "46 675 998 562"
         }
       ]
     }
