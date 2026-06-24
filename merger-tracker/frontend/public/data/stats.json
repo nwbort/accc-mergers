@@ -2,12 +2,12 @@
   "total_mergers": 146,
   "total_waivers": 227,
   "by_status": {
-    "Assessment completed": 110,
-    "Under assessment": 35,
+    "Assessment completed": 111,
+    "Under assessment": 34,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 109,
+    "Approved": 110,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.55263157894737,
+    "average_days": 29.48695652173913,
     "median_days": 26,
-    "average_business_days": 19.350877192982455,
+    "average_business_days": 19.31304347826087,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
-        "count": 23,
-        "percentage": 20.2
+        "count": 24,
+        "percentage": 20.9
       },
       "day20": {
-        "count": 86,
-        "percentage": 75.4
+        "count": 87,
+        "percentage": 75.7
       },
       "day30": {
-        "count": 110,
+        "count": 111,
         "percentage": 96.5
       }
     }
@@ -120,6 +120,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-35019",
+      "merger_name": "Precision Poultry - VOAG chicken farming operations",
+      "determination": "Approved",
+      "determination_date": "2026-06-24T12:00:00Z",
+      "page_modified_datetime": "2026-06-24T09:25:08+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-05026",
       "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
       "determination": "Approved",
@@ -165,16 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-22T12:00:00Z",
       "page_modified_datetime": "2026-06-22T20:36:22+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-35023",
-      "merger_name": "Metcash - Foodland Flagstaff Hill, South Australia",
-      "determination": "Approved",
-      "determination_date": "2026-06-22T12:00:00Z",
-      "page_modified_datetime": "2026-06-22T20:32:29+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

@@ -1026,21 +1026,30 @@
         "merger_id": "MN-80016",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-06-02",
+        "business_days": 15,
+        "calendar_days": 22,
+        "merger_name": "Precision Poultry - VOAG chicken farming operations",
+        "merger_id": "MN-35019",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 18.7,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 58,
-      "count": 110
+      "count": 111
     },
     "calendar_stats": {
-      "average": 28.5,
-      "median": 26.0,
+      "average": 28.4,
+      "median": 26,
       "min": 21,
       "max": 102,
-      "count": 110
+      "count": 111
     }
   },
   "waiver_duration": {
