@@ -1,6 +1,6 @@
 {
   "total_mergers": 146,
-  "total_waivers": 227,
+  "total_waivers": 229,
   "by_status": {
     "Assessment completed": 111,
     "Under assessment": 34,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 213,
+    "Approved": 215,
     "Not approved": 14
   },
   "phase_duration": {
@@ -37,7 +37,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 46
+      "count": 47
     },
     {
       "name": "Computer System Design and Related Services",
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-60022",
+      "merger_name": "Autodesk - MaintainX",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-23T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-70022",
       "merger_name": "Coles \u2013 supermarket site in Coffs Harbour (NSW)",
       "status": "Under assessment",
@@ -108,17 +116,29 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-19T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-60022",
-      "merger_name": "Autodesk - MaintainX",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-19T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "WA-15025",
+      "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
+      "determination": "Approved",
+      "determination_date": "2026-06-24T12:00:00Z",
+      "page_modified_datetime": "2026-06-24T17:07:32+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-70021",
+      "merger_name": "Aula Energy \u2013 Additional interest in the Boulder Creek Wind Farm",
+      "determination": "Approved",
+      "determination_date": "2026-06-24T12:00:00Z",
+      "page_modified_datetime": "2026-06-24T17:04:44+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
     {
       "merger_id": "MN-35019",
       "merger_name": "Precision Poultry - VOAG chicken farming operations",
@@ -155,26 +175,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-22T12:00:00Z",
       "page_modified_datetime": "2026-06-22T20:41:38+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-75026",
-      "merger_name": "Australian Venue Co - leasehold and assets of Brabham Tavern, WA",
-      "determination": "Approved",
-      "determination_date": "2026-06-22T12:00:00Z",
-      "page_modified_datetime": "2026-06-22T20:39:39+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-40025",
-      "merger_name": "Shape Australia \u2013 Australian Professional Shopfitters",
-      "determination": "Approved",
-      "determination_date": "2026-06-22T12:00:00Z",
-      "page_modified_datetime": "2026-06-22T20:36:22+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

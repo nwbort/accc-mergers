@@ -1873,6 +1873,49 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/metro-petroleum-%E2%80%93-retail-sites-part-of-divestiture-remedy-from-ampol-eg-acquisition"
     },
     {
+      "merger_id": "WA-70021",
+      "merger_name": "Aula Energy \u2013 Additional interest in the Boulder Creek Wind Farm",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-05-26T12:00:00Z",
+      "determination_publication_date": "2026-06-24T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "BCWF 2 Holdings Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "697 890 207"
+        },
+        {
+          "name": "AULA ENERGY HOLDINGS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "13 662 726 909"
+        }
+      ],
+      "targets": [
+        {
+          "name": "C S ENERGY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "54 078 848 745"
+        },
+        {
+          "name": "BCWF 2 PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "77 670 206 256"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/aula-energy-%E2%80%93-additional-interest-in-the-boulder-creek-wind-farm"
+    },
+    {
       "merger_id": "WA-90018",
       "merger_name": "International Parking Group \u2013 car park at St John of God Murdoch Hospital",
       "status": "Assessment completed",
@@ -2715,72 +2758,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/jardines-i-med"
-    },
-    {
-      "merger_id": "MN-40020",
-      "merger_name": "Premier Fresh \u2013 Domenico Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-04T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-07-17T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "PREMIER FRESH AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "87 004 843 556"
-        }
-      ],
-      "targets": [
-        {
-          "name": "DOUBLE D PRODUCE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "86 074 625 004"
-        },
-        {
-          "name": "De Domenico Carmelo",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "NORTH QUEENSLAND IQF PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "32 070 037 795"
-        },
-        {
-          "name": "C.A. DE DOMENICO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "18 102 487 963"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "COL JOHNSON & CO. PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "96 097 104 606"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "0123",
-          "name": "Vegetable Growing (Outdoors)"
-        },
-        {
-          "code": "1140",
-          "name": "Fruit and Vegetable Processing"
-        },
-        {
-          "code": "3605",
-          "name": "Fruit and Vegetable Wholesaling"
-        },
-        {
-          "code": "6712",
-          "name": "Non-Residential Property Operators"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/premier-fresh-%E2%80%93-domenico-group"
     }
   ],
   "page": 7,

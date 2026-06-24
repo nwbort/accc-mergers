@@ -19,7 +19,7 @@
       "code": "261",
       "name": "Electricity Generation",
       "level": "group",
-      "merger_count": 8
+      "merger_count": 9
     },
     {
       "code": "262",
@@ -37,10 +37,24 @@
       "code": "264",
       "name": "On Selling Electricity and Electricity Market Operation",
       "level": "group",
-      "merger_count": 2
+      "merger_count": 3
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-15025",
+      "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
+      "merger_id": "WA-70021",
+      "merger_name": "Aula Energy \u2013 Additional interest in the Boulder Creek Wind Farm",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
     {
       "merger_id": "WA-85032",
       "merger_name": "Ares (Bolt S.p.A.) \u2013 Investment in Plenitude",
@@ -105,10 +119,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 9,
+  "count": 11,
   "phase_1_count": 3,
   "phase_2_count": 0,
-  "waiver_count": 6,
+  "waiver_count": 8,
   "active_count": 0,
   "phase_duration": {
     "average_days": 26.333333333333332,

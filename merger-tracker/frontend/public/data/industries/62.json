@@ -37,7 +37,7 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 46
+      "merger_count": 47
     }
   ],
   "mergers": [
@@ -47,6 +47,13 @@
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-15025",
+      "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-05026",
@@ -406,10 +413,10 @@
       "phase": "Phase 2"
     }
   ],
-  "count": 52,
+  "count": 53,
   "phase_1_count": 10,
   "phase_2_count": 1,
-  "waiver_count": 41,
+  "waiver_count": 42,
   "active_count": 1,
   "phase_duration": {
     "average_days": 30.9,

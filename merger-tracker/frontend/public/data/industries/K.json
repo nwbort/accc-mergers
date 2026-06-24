@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 52
+      "merger_count": 53
     },
     {
       "code": "63",
@@ -45,6 +45,13 @@
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 2"
+    },
+    {
+      "merger_id": "WA-15025",
+      "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-05026",
@@ -607,10 +614,10 @@
       "phase": "Phase 2"
     }
   ],
-  "count": 83,
+  "count": 84,
   "phase_1_count": 19,
   "phase_2_count": 2,
-  "waiver_count": 62,
+  "waiver_count": 63,
   "active_count": 3,
   "phase_duration": {
     "average_days": 29.31578947368421,
