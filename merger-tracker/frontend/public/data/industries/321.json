@@ -24,16 +24,23 @@
       "code": "3211",
       "name": "Land Development and Subdivision",
       "level": "class",
-      "merger_count": 5
+      "merger_count": 6
     },
     {
       "code": "3212",
       "name": "Site Preparation Services",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-05024",
+      "merger_name": "B.M.D. Holdings \u2013 Bajara Plant Hire and Stirling Contracting",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
     {
       "merger_id": "WA-55022",
       "merger_name": "GenusPlus Group \u2013 MPC Kinetic",
@@ -91,10 +98,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 8,
+  "count": 9,
   "phase_1_count": 3,
   "phase_2_count": 0,
-  "waiver_count": 5,
+  "waiver_count": 6,
   "active_count": 0,
   "phase_duration": {
     "average_days": 23.0,

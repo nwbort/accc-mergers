@@ -24,13 +24,13 @@
       "code": "3291",
       "name": "Landscape Construction Services",
       "level": "class",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "3292",
       "name": "Hire of Construction Machinery with Operator",
       "level": "class",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "3299",
@@ -40,6 +40,13 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-05024",
+      "merger_name": "B.M.D. Holdings \u2013 Bajara Plant Hire and Stirling Contracting",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
     {
       "merger_id": "WA-55022",
       "merger_name": "GenusPlus Group \u2013 MPC Kinetic",
@@ -62,10 +69,10 @@
       "phase": "Waiver"
     }
   ],
-  "count": 3,
+  "count": 4,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 3,
+  "waiver_count": 4,
   "active_count": 0,
   "phase_duration": null
 }

@@ -27,6 +27,13 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "WA-05024",
+      "merger_name": "B.M.D. Holdings \u2013 Bajara Plant Hire and Stirling Contracting",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
       "merger_id": "MN-85003",
       "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
       "is_waiver": false,
@@ -34,10 +41,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 1,
+  "count": 2,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 0,
+  "waiver_count": 1,
   "active_count": 0,
   "phase_duration": {
     "average_days": 22.0,
