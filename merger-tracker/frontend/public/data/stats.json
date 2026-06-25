@@ -1,6 +1,6 @@
 {
   "total_mergers": 147,
-  "total_waivers": 235,
+  "total_waivers": 237,
   "by_status": {
     "Assessment completed": 114,
     "Under assessment": 32,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 221,
+    "Approved": 223,
     "Not approved": 14
   },
   "phase_duration": {
@@ -41,7 +41,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 38
+      "count": 39
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -61,7 +61,7 @@
     },
     {
       "name": "Accommodation",
-      "count": 13
+      "count": 14
     },
     {
       "name": "Supermarket and Grocery Stores",
@@ -120,6 +120,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-15024",
+      "merger_name": "Redwood Services Group \u2013 All IT Australia",
+      "determination": "Approved",
+      "determination_date": "2026-06-25T12:00:00Z",
+      "page_modified_datetime": "2026-06-25T18:34:49+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-10019",
+      "merger_name": "Warburg Pincus \u2013 JSB",
+      "determination": "Approved",
+      "determination_date": "2026-06-25T12:00:00Z",
+      "page_modified_datetime": "2026-06-25T18:32:49+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-25033",
       "merger_name": "Bain Capital \u2013 FDH",
       "determination": "Approved",
@@ -158,26 +178,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-80014",
-      "merger_name": "ANZ Banking Group - Worldline Australia",
-      "determination": "Approved",
-      "determination_date": "2026-06-25T12:00:00Z",
-      "page_modified_datetime": "2026-06-25T16:12:29+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-90015",
-      "merger_name": "Impression Dental Group - Coastal Dental Care",
-      "determination": "Approved",
-      "determination_date": "2026-06-25T12:00:00Z",
-      "page_modified_datetime": "2026-06-25T15:58:53+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

@@ -15,7 +15,7 @@
       "code": "70",
       "name": "Computer System Design and Related Services",
       "level": "subdivision",
-      "merger_count": 38
+      "merger_count": 39
     }
   ],
   "mergers": [
@@ -46,6 +46,13 @@
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-15024",
+      "merger_name": "Redwood Services Group \u2013 All IT Australia",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-35025",
@@ -608,10 +615,10 @@
       "phase": "Waiver"
     }
   ],
-  "count": 84,
+  "count": 85,
   "phase_1_count": 32,
   "phase_2_count": 0,
-  "waiver_count": 52,
+  "waiver_count": 53,
   "active_count": 4,
   "phase_duration": {
     "average_days": 30.571428571428573,

@@ -41,6 +41,13 @@
       "phase": "Phase 1"
     },
     {
+      "merger_id": "WA-10019",
+      "merger_name": "Warburg Pincus \u2013 JSB",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
+    {
       "merger_id": "WA-60021",
       "merger_name": "Oscars Group \u2013 Hotel Diplomat in Potts Point, NSW",
       "is_waiver": true,
@@ -118,10 +125,10 @@
       "phase": "Waiver"
     }
   ],
-  "count": 13,
+  "count": 14,
   "phase_1_count": 5,
   "phase_2_count": 0,
-  "waiver_count": 8,
+  "waiver_count": 9,
   "active_count": 2,
   "phase_duration": {
     "average_days": 25.666666666666668,

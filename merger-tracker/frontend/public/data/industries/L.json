@@ -15,7 +15,7 @@
       "code": "67",
       "name": "Property Operators and Real Estate Services",
       "level": "subdivision",
-      "merger_count": 23
+      "merger_count": 24
     }
   ],
   "mergers": [
@@ -46,6 +46,13 @@
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 2"
+    },
+    {
+      "merger_id": "WA-10019",
+      "merger_name": "Warburg Pincus \u2013 JSB",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-05024",
@@ -223,10 +230,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 29,
+  "count": 30,
   "phase_1_count": 10,
   "phase_2_count": 2,
-  "waiver_count": 17,
+  "waiver_count": 18,
   "active_count": 4,
   "phase_duration": {
     "average_days": 32.6,

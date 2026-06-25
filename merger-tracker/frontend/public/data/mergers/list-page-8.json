@@ -616,6 +616,65 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mercer-investments-australia-limited%E2%80%93-stockland-residential-rental-partnership"
     },
     {
+      "merger_id": "WA-15024",
+      "merger_name": "Redwood Services Group \u2013 All IT Australia",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-09T12:00:00Z",
+      "determination_publication_date": "2026-06-25T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "REDWOOD SERVICES GROUP AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "15 675 368 162"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ALL IT AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 146 108 321"
+        },
+        {
+          "name": "SPURBUCK INVESTMENTS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "16 602 869 910"
+        },
+        {
+          "name": "R & D BRIGGS PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "680 192 563"
+        },
+        {
+          "name": "CALATT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 682 145 026"
+        },
+        {
+          "name": "OBLIVIOUS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "23 676 977 754"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Evergreen Services Group Topco, LLC",
+          "identifier_type": null,
+          "identifier": "EIN  202252119595"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/redwood-services-group-%E2%80%93-all-it-australia"
+    },
+    {
       "merger_id": "WA-60024",
       "merger_name": "Redwood Services Group \u2013 Newtrend I.T. Specialists",
       "status": "Assessment completed",
@@ -1208,6 +1267,54 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/adbri-eureka-concrete"
+    },
+    {
+      "merger_id": "WA-10019",
+      "merger_name": "Warburg Pincus \u2013 JSB",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-17T12:00:00Z",
+      "determination_publication_date": "2026-06-25T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Ursa 4 Kabushiki Kaisha (Japan)",
+          "identifier_type": null,
+          "identifier": "010001265801"
+        }
+      ],
+      "targets": [
+        {
+          "name": "J.S.B. Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "130001017499"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Warburg Pincus LLC",
+          "identifier_type": null,
+          "identifier": "2097098"
+        },
+        {
+          "name": "J.S.B. AUS PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "698 489 566"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "6711",
+          "name": "Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/warburg-pincus-%E2%80%93-jsb"
     },
     {
       "merger_id": "WA-25033",

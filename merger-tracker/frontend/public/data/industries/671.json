@@ -24,7 +24,7 @@
       "code": "6711",
       "name": "Residential Property Operators",
       "level": "class",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "6712",
@@ -54,6 +54,13 @@
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 2"
+    },
+    {
+      "merger_id": "WA-10019",
+      "merger_name": "Warburg Pincus \u2013 JSB",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-50018",
@@ -175,10 +182,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 20,
+  "count": 21,
   "phase_1_count": 6,
   "phase_2_count": 1,
-  "waiver_count": 13,
+  "waiver_count": 14,
   "active_count": 3,
   "phase_duration": {
     "average_days": 35.6,
