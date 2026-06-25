@@ -19,10 +19,17 @@
       "code": "060",
       "name": "Coal Mining",
       "level": "group",
-      "merger_count": 2
+      "merger_count": 3
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-85035",
+      "merger_name": "Dhilmar \u2013 Anglo American steelmaking coal business",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
     {
       "merger_id": "WA-45009",
       "merger_name": "Idemitsu - MidOcean Energy",
@@ -38,10 +45,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 2,
+  "count": 3,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": {
     "average_days": 22.0,

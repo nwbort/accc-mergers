@@ -1,6 +1,6 @@
 {
   "total_mergers": 147,
-  "total_waivers": 232,
+  "total_waivers": 235,
   "by_status": {
     "Assessment completed": 114,
     "Under assessment": 32,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 218,
+    "Approved": 221,
     "Not approved": 14
   },
   "phase_duration": {
@@ -37,7 +37,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 47
+      "count": 48
     },
     {
       "name": "Computer System Design and Related Services",
@@ -120,6 +120,36 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-25033",
+      "merger_name": "Bain Capital \u2013 FDH",
+      "determination": "Approved",
+      "determination_date": "2026-06-25T12:00:00Z",
+      "page_modified_datetime": "2026-06-25T18:30:45+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-85035",
+      "merger_name": "Dhilmar \u2013 Anglo American steelmaking coal business",
+      "determination": "Approved",
+      "determination_date": "2026-06-25T12:00:00Z",
+      "page_modified_datetime": "2026-06-25T18:28:27+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-35025",
+      "merger_name": "SLR Consulting Australia - Hydrobiology",
+      "determination": "Approved",
+      "determination_date": "2026-06-25T12:00:00Z",
+      "page_modified_datetime": "2026-06-25T18:26:14+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-60024",
       "merger_name": "Redwood Services Group \u2013 Newtrend I.T. Specialists",
       "determination": "Approved",
@@ -148,36 +178,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-90012",
-      "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "determination": "Approved",
-      "determination_date": "2026-06-24T12:00:00Z",
-      "page_modified_datetime": "2026-06-24T21:50:17+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-05024",
-      "merger_name": "B.M.D. Holdings \u2013 Bajara Plant Hire and Stirling Contracting",
-      "determination": "Approved",
-      "determination_date": "2026-06-24T12:00:00Z",
-      "page_modified_datetime": "2026-06-24T17:15:37+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-85031",
-      "merger_name": "Tasmea - Maxim",
-      "determination": "Approved",
-      "determination_date": "2026-06-24T12:00:00Z",
-      "page_modified_datetime": "2026-06-24T17:13:08+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

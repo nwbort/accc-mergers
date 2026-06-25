@@ -2898,6 +2898,22 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-06-05",
+        "business_days": 13,
+        "calendar_days": 20,
+        "merger_name": "SLR Consulting Australia - Hydrobiology",
+        "merger_id": "WA-35025",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-06-05",
+        "business_days": 13,
+        "calendar_days": 20,
+        "merger_name": "Dhilmar \u2013 Anglo American steelmaking coal business",
+        "merger_id": "WA-85035",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-06-09",
         "business_days": 10,
         "calendar_days": 14,
@@ -2936,21 +2952,29 @@
         "merger_name": "River Capital \u2013 YOMG",
         "merger_id": "WA-25032",
         "determination": "Approved"
+      },
+      {
+        "application_date": "2026-06-17",
+        "business_days": 6,
+        "calendar_days": 8,
+        "merger_name": "Bain Capital \u2013 FDH",
+        "merger_id": "WA-25033",
+        "determination": "Approved"
       }
     ],
     "stats": {
       "average": 12.1,
-      "median": 12.0,
+      "median": 12,
       "min": 2,
       "max": 25,
-      "count": 232
+      "count": 235
     },
     "calendar_stats": {
       "average": 18.2,
-      "median": 17.0,
+      "median": 17,
       "min": 2,
       "max": 39,
-      "count": 232
+      "count": 235
     }
   },
   "monthly_volume": {
@@ -2988,7 +3012,7 @@
       48,
       45,
       66,
-      13
+      16
     ]
   }
 }

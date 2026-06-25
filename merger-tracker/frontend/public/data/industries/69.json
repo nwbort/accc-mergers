@@ -49,7 +49,7 @@
       "code": "696",
       "name": "Management and Related Consulting Services",
       "level": "group",
-      "merger_count": 6
+      "merger_count": 7
     },
     {
       "code": "697",
@@ -85,6 +85,13 @@
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-35025",
+      "merger_name": "SLR Consulting Australia - Hydrobiology",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-05024",
@@ -423,10 +430,10 @@
       "phase": "Waiver"
     }
   ],
-  "count": 51,
+  "count": 52,
   "phase_1_count": 20,
   "phase_2_count": 0,
-  "waiver_count": 31,
+  "waiver_count": 32,
   "active_count": 3,
   "phase_duration": {
     "average_days": 31.529411764705884,

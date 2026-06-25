@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 53
+      "merger_count": 54
     },
     {
       "code": "63",
@@ -45,6 +45,13 @@
       "is_waiver": false,
       "status": "Assessment completed",
       "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-25033",
+      "merger_name": "Bain Capital \u2013 FDH",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-15025",
@@ -614,10 +621,10 @@
       "phase": "Phase 2"
     }
   ],
-  "count": 84,
+  "count": 85,
   "phase_1_count": 19,
   "phase_2_count": 2,
-  "waiver_count": 63,
+  "waiver_count": 64,
   "active_count": 2,
   "phase_duration": {
     "average_days": 28.95,

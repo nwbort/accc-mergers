@@ -9,7 +9,7 @@
       "code": "06",
       "name": "Coal Mining",
       "level": "subdivision",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "07",
@@ -21,7 +21,7 @@
       "code": "08",
       "name": "Metal Ore Mining",
       "level": "subdivision",
-      "merger_count": 7
+      "merger_count": 8
     },
     {
       "code": "09",
@@ -50,6 +50,13 @@
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-85035",
+      "merger_name": "Dhilmar \u2013 Anglo American steelmaking coal business",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-90012",
@@ -150,10 +157,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 16,
+  "count": 17,
   "phase_1_count": 7,
   "phase_2_count": 0,
-  "waiver_count": 9,
+  "waiver_count": 10,
   "active_count": 2,
   "phase_duration": {
     "average_days": 30.2,

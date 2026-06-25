@@ -37,7 +37,7 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 47
+      "merger_count": 48
     }
   ],
   "mergers": [
@@ -47,6 +47,13 @@
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-25033",
+      "merger_name": "Bain Capital \u2013 FDH",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-15025",
@@ -413,10 +420,10 @@
       "phase": "Phase 2"
     }
   ],
-  "count": 53,
+  "count": 54,
   "phase_1_count": 10,
   "phase_2_count": 1,
-  "waiver_count": 42,
+  "waiver_count": 43,
   "active_count": 1,
   "phase_duration": {
     "average_days": 30.9,
