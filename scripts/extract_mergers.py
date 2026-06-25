@@ -522,8 +522,28 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
                 merged_events.append(updated_event)
                 existing_urls_processed.add(url)
             else:
-                existing_event['status'] = 'removed'
-                merged_events.append(existing_event)
+                # The document link is gone from the scraped page. The ACCC
+                # sometimes drops an event's attachment but keeps the event
+                # itself as a plain (URL-less) timeline row. Without this match
+                # the existing event would be flagged 'removed' AND the URL-less
+                # row appended as a separate event, producing a duplicate that
+                # reappears on every scrape (e.g. MN-30003's "subject to Phase 2
+                # review"). Re-bind that timeline row to the existing event so we
+                # keep the attachment we previously captured.
+                replacement_row = next(
+                    (e for e in scraped_without_url
+                     if e.get('title') == existing_event.get('title')
+                     and _dates_within_one_day(
+                         e.get('date', ''), existing_event.get('date', ''))),
+                    None,
+                )
+                if replacement_row is not None:
+                    existing_event['status'] = 'live'
+                    merged_events.append(existing_event)
+                    scraped_without_url.remove(replacement_row)
+                else:
+                    existing_event['status'] = 'removed'
+                    merged_events.append(existing_event)
         else:
             matching_scraped = next(
                 (e for e in scraped_without_url if e['title'] == existing_event['title']),

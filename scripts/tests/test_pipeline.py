@@ -28,9 +28,74 @@ from extract_mergers import (
     detect_inferred_phase_2,
     _infer_determination_date_from_events,
     _extract_anzsic_codes,
+    _merge_events,
 )
 import extract_mergers
 from bs4 import BeautifulSoup
+
+
+# ---------------------------------------------------------------------------
+# _merge_events: attachment preservation when ACCC drops a document link
+# ---------------------------------------------------------------------------
+
+class TestMergeEventsAttachmentDropped:
+    """When the ACCC removes an event's document link but keeps the event as a
+    plain (URL-less) timeline row, the previously captured attachment must be
+    preserved on a single event rather than spawning a recurring duplicate.
+
+    This is the MN-30003 "subject to Phase 2 review" case: a dedup PR that just
+    deletes the URL-less copy is undone by the next scrape because the row keeps
+    reappearing. Re-binding it to the existing event fixes the loop at source.
+    """
+
+    TITLE = "ACCC decided notification is subject to Phase 2 review"
+
+    def _existing(self):
+        return {
+            "events": [
+                {
+                    "date": "2026-04-01T12:00:00Z",
+                    "title": self.TITLE,
+                    "display_title": self.TITLE,
+                    "url": "https://accc.gov.au/.../phase-2-notice.pdf",
+                    "url_gh": "/mergers/MN-30003/phase-2-notice.pdf",
+                    "status": "live",
+                },
+            ],
+        }
+
+    def test_urlless_row_rebinds_to_attachment_event(self):
+        # The page now shows the event only as a plain timeline row (no link).
+        scraped = [{"date": "2026-04-01T12:00:00Z", "title": self.TITLE}]
+        merged = _merge_events(scraped, self._existing(), "MN-30003", set())
+
+        assert len(merged) == 1, "no duplicate should be created"
+        ev = merged[0]
+        assert ev["url_gh"] == "/mergers/MN-30003/phase-2-notice.pdf"
+        assert ev["url"] == "https://accc.gov.au/.../phase-2-notice.pdf"
+        assert ev["status"] == "live", "event is still on the page, not removed"
+
+    def test_one_day_date_shift_still_rebinds(self):
+        scraped = [{"date": "2026-04-02T12:00:00Z", "title": self.TITLE}]
+        merged = _merge_events(scraped, self._existing(), "MN-30003", set())
+        assert len(merged) == 1
+        assert merged[0]["url_gh"] == "/mergers/MN-30003/phase-2-notice.pdf"
+        assert merged[0]["status"] == "live"
+
+    def test_event_truly_gone_is_marked_removed(self):
+        # No matching timeline row: the event really disappeared from the page.
+        scraped = [{"date": "2026-05-01T12:00:00Z", "title": "Some other event"}]
+        merged = _merge_events(scraped, self._existing(), "MN-30003", set())
+        statuses = {e["title"]: e.get("status") for e in merged}
+        assert statuses[self.TITLE] == "removed"
+
+    def test_different_title_row_not_consumed(self):
+        # A genuinely different URL-less event must remain a separate event and
+        # the attachment event is marked removed (its link is gone, no rebind).
+        scraped = [{"date": "2026-04-01T12:00:00Z", "title": "Merger notified to ACCC"}]
+        merged = _merge_events(scraped, self._existing(), "MN-30003", set())
+        titles = sorted(e["title"] for e in merged)
+        assert titles == sorted([self.TITLE, "Merger notified to ACCC"])
 
 
 # ---------------------------------------------------------------------------
