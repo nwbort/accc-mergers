@@ -76,12 +76,13 @@ scripts/
 ├── detect_related_mergers.py # Suggest waiver→notification pairs (CI check)
 ├── detect_related_parties.py # Suggest same-entity party groups (daily PR)
 ├── party_matching.py     # Shared party normalisation + group matching
-├── tools/                # Interactive admin web UIs (resolver, commentary)
+├── tools/                # Interactive admin web UIs (resolver, commentary, advisors)
 └── tests/                # test_pipeline.py, test_utils.py
 
 data/
 ├── raw/                  # Scraped HTML files and PDFs
-├── processed/            # Intermediate JSON (mergers.json, commentary.json)
+├── processed/            # Intermediate JSON (mergers.json, commentary.json, advisors.json)
+│                         #   advisors.json is backend-only: never published to the frontend
 └── output/               # Not deployed. Full enriched mergers.json (offline analysis)
     └── cli/              # Bundled data files for accc-mergers-cli (manifest + bundle)
 ```
