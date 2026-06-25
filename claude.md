@@ -81,8 +81,10 @@ scripts/
 
 data/
 ├── raw/                  # Scraped HTML files and PDFs
-├── processed/            # Intermediate JSON (mergers.json, commentary.json, advisors.json)
-│                         #   advisors.json is backend-only: never published to the frontend
+├── processed/            # Intermediate JSON (mergers.json, commentary.json, advisors.json.enc)
+│                         #   advisors data is backend-only: never published to the frontend, and
+│                         #   stored encrypted as advisors.json.enc (cleartext advisors.json is
+│                         #   gitignored). See scripts/tools/README.md (ADVISORS_PASSPHRASE).
 └── output/               # Not deployed. Full enriched mergers.json (offline analysis)
     └── cli/              # Bundled data files for accc-mergers-cli (manifest + bundle)
 ```

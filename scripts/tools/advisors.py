@@ -2,12 +2,19 @@
 """
 Web UI to record the legal (and other) advisors who worked on each merger.
 
-Writes directly to data/processed/advisors.json. This data is BACKEND-ONLY:
-it is deliberately not consumed by generate_static_data.py and is never
-published to the front-end. Run with: python scripts/tools/advisors.py
+This data is BACKEND-ONLY: it is deliberately not consumed by
+generate_static_data.py and is never published to the front-end.
+
+The data is stored ENCRYPTED at rest as data/processed/advisors.json.enc
+(safe to commit to the public repo); the cleartext advisors.json is
+gitignored and never committed. Encryption/decryption is handled by
+advisors_crypto.py, which derives a key from the ADVISORS_PASSPHRASE
+environment variable (or prompts when run interactively). Run with:
+
+    ADVISORS_PASSPHRASE=... python scripts/tools/advisors.py
 """
 
-import json
+import sys
 from pathlib import Path
 from typing import List, Optional
 
@@ -16,9 +23,17 @@ from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import uvicorn
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from advisors_crypto import (  # noqa: E402
+    AdvisorsCryptoError,
+    load_advisors as _crypto_load,
+    save_advisors as _crypto_save,
+)
+
+import json  # noqa: E402  (still used for mergers.json)
+
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
-ADVISORS_JSON = REPO_ROOT / "data" / "processed" / "advisors.json"
 
 ADVISOR_TYPES = ["Legal", "Financial", "Economic", "PR", "Other"]
 
@@ -34,16 +49,11 @@ def _load_mergers() -> list:
 
 
 def _load_advisors() -> dict:
-    if not ADVISORS_JSON.exists():
-        return {}
-    with ADVISORS_JSON.open() as fh:
-        return json.load(fh)
+    return _crypto_load()
 
 
 def _save_advisors(data: dict) -> None:
-    with ADVISORS_JSON.open("w") as fh:
-        json.dump(data, fh, indent=2)
-        fh.write("\n")
+    _crypto_save(data)
 
 
 def _merger_parties(m: dict) -> list:
@@ -614,6 +624,14 @@ load();
 
 
 if __name__ == "__main__":
+    # Validate the passphrase up front so a missing/wrong key fails loudly here
+    # rather than as a 500 on the first API request.
+    try:
+        _load_advisors()
+    except AdvisorsCryptoError as exc:
+        print(f"error: {exc}", file=sys.stderr)
+        raise SystemExit(1)
+
     print("Starting advisors tool…")
     print("Open http://127.0.0.1:8002 in your browser.")
     uvicorn.run(app, host="127.0.0.1", port=8002, log_level="warning")
