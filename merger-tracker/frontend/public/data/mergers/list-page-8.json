@@ -485,6 +485,45 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mercer-investments-australia-limited%E2%80%93-stockland-residential-rental-partnership"
     },
     {
+      "merger_id": "WA-60024",
+      "merger_name": "Redwood Services Group \u2013 Newtrend I.T. Specialists",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-09T12:00:00Z",
+      "determination_publication_date": "2026-06-25T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "REDWOOD SERVICES GROUP AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "15 675 368 162"
+        }
+      ],
+      "targets": [
+        {
+          "name": "NEWTREND I.T. SPECIALISTS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "54 124 502 656"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Evergreen Services Group Topco, LLC",
+          "identifier_type": null,
+          "identifier": "EIN  202252119595"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/redwood-services-group-%E2%80%93-newtrend-it-specialists"
+    },
+    {
       "merger_id": "WA-15025",
       "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
       "status": "Assessment completed",
@@ -997,7 +1036,7 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "E.B. Mawson & Sons Proprietary Limited",
+          "name": "E.B. MAWSON & SONS PROPRIETARY LIMITED",
           "identifier_type": "ABN",
           "identifier": "14 004 519 617"
         }
@@ -1011,24 +1050,24 @@
       ],
       "other_parties": [
         {
-          "name": "Independent Cement And Lime Pty. Limited",
-          "identifier_type": "ABN",
-          "identifier": "49 005 829 550"
-        },
-        {
-          "name": "Adbri Pty Limited",
+          "name": "ADBRI PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "15 007 596 018"
         },
         {
-          "name": "Hy-Tec Industries (Victoria) Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "43 096 310 520"
-        },
-        {
-          "name": "Central Pre-Mix Concrete Pty. Ltd.",
+          "name": "CENTRAL PRE-MIX CONCRETE PTY. LTD.",
           "identifier_type": "ABN",
           "identifier": "62 008 070 862"
+        },
+        {
+          "name": "INDEPENDENT CEMENT AND LIME PTY. LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 005 829 550"
+        },
+        {
+          "name": "HY-TEC INDUSTRIES (VICTORIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 096 310 520"
         }
       ],
       "anzsic_codes": [
