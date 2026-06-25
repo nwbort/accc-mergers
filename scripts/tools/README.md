@@ -50,23 +50,32 @@ rest** as `data/processed/advisors.json.enc` — a small JSON text envelope
 `advisors_crypto.py`, which derives a key from a passphrase via
 PBKDF2-HMAC-SHA256.
 
-The passphrase comes from the `ADVISORS_PASSPHRASE` environment variable; if
-it is unset and you are at a terminal, the tool prompts for it. Set it once
-per shell session (keep it secret — it is the only thing protecting the
-data, so store it in a password manager):
+By default you just type the passphrase into the web UI's **unlock screen** —
+nothing to set up first:
+
+```bash
+python scripts/tools/advisors.py
+# open http://127.0.0.1:8002 and enter the passphrase to unlock
+```
+
+The passphrase is held only in the server's memory for that run (a `Lock`
+button in the header clears it). It is the only thing protecting the data, so
+keep it secret and store it in a password manager — it is **unrecoverable**.
+
+To skip the unlock screen (scripts, or just convenience), set
+`ADVISORS_PASSPHRASE` in the environment and the tool auto-unlocks at startup:
 
 ```bash
 export ADVISORS_PASSPHRASE='choose-a-strong-passphrase'
-python scripts/tools/advisors.py
-# open http://127.0.0.1:8002
+python scripts/tools/advisors.py   # opens already unlocked
 ```
 
 The tool reads/writes `advisors.json.enc` directly; commit that file after
-editing. There is no committed `.enc` to start with — bootstrap it once from
-the plaintext template (or any existing plaintext `advisors.json`):
+editing. There is no committed `.enc` to start with — the first save creates
+it. To bootstrap from the existing plaintext template instead, use the CLI
+(which honours `ADVISORS_PASSPHRASE` or prompts):
 
 ```bash
-export ADVISORS_PASSPHRASE='choose-a-strong-passphrase'
 python scripts/tools/advisors_crypto.py encrypt   # advisors.json -> advisors.json.enc
 git add data/processed/advisors.json.enc           # commit the encrypted blob
 ```
