@@ -1,18 +1,6 @@
 {
   "events": [
     {
-      "date": "2026-06-08T12:00:00Z",
-      "title": "Notification waiver determination published",
-      "display_title": "Waiver application determination: Approved",
-      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/RDO%20Australia%20-%20freehold%20land%20and%20buildings%20of%20three%20commercial%20truck%20dealership%20sites%20in%20West%20Wodonga%20VIC%20%28WA-45014%29%20-%20Notification%20waiver%20determination%20-%206%20June%202026_0.pdf",
-      "url_gh": "/mergers/WA-45014/RDO Australia - freehold land and buildings of three commercial truck dealership sites in West Wodonga VIC (WA-45014) - Notification waiver determination - 6 June 2026_0.pdf",
-      "status": "live",
-      "merger_id": "WA-45014",
-      "merger_name": "RDO Australia \u2013 freehold land and buildings of three commercial truck dealership sites in West Wodonga VIC",
-      "phase": "Waiver",
-      "is_waiver": true
-    },
-    {
       "date": "2026-06-09T12:00:00Z",
       "title": "Tony White Group - Sharton Motors - Phase 1 determination",
       "display_title": "Phase 1 - initial assessment determination: Approved",
@@ -582,7 +570,7 @@
       "display_title": "Complete Air Supply - All Air - Questionnaire",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Complete%20Air%20Supply%20-%20All%20Air%20-%20third%20party%20questionnaire.docx",
       "url_gh": "/mergers/MN-15018/Complete Air Supply - All Air - third party questionnaire.pdf",
-      "status": "live",
+      "status": "removed",
       "merger_id": "MN-15018",
       "merger_name": "Complete Air Supply - All Air",
       "phase": null,
@@ -1198,6 +1186,18 @@
       "merger_id": "MN-30003",
       "merger_name": "MicroStar Logistics - Konvoy",
       "phase": null,
+      "is_waiver": false
+    },
+    {
+      "date": "2026-06-24T12:00:00Z",
+      "title": "Precision Poultry - VOAG chicken farming operations - Phase 1 determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Precision%20Poultry%20-%20VOAG%20chicken%20farming%20operations%20-%20Phase%201%20determination.pdf",
+      "url_gh": "/mergers/MN-35019/Precision Poultry - VOAG chicken farming operations - Phase 1 determination.pdf",
+      "status": "live",
+      "merger_id": "MN-35019",
+      "merger_name": "Precision Poultry - VOAG chicken farming operations",
+      "phase": "Phase 1",
       "is_waiver": false
     }
   ],
