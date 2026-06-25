@@ -1,9 +1,9 @@
 {
-  "total_mergers": 146,
+  "total_mergers": 147,
   "total_waivers": 231,
   "by_status": {
     "Assessment completed": 112,
-    "Under assessment": 33,
+    "Under assessment": 34,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-50024",
+      "merger_name": "AkzoNobel - Axalta",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-24T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-60022",
       "merger_name": "Autodesk - MaintainX",
       "status": "Under assessment",
@@ -107,14 +115,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-22T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-01104",
-      "merger_name": "Genea - Care Fertility Greenslopes",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-19T12:00:00Z",
       "is_waiver": false
     }
   ],
