@@ -2,12 +2,26 @@
 """
 Web UI to record the legal (and other) advisors who worked on each merger.
 
-Writes directly to data/processed/advisors.json. This data is BACKEND-ONLY:
-it is deliberately not consumed by generate_static_data.py and is never
-published to the front-end. Run with: python scripts/tools/advisors.py
+This data is BACKEND-ONLY: it is deliberately not consumed by
+generate_static_data.py and is never published to the front-end.
+
+The data is stored ENCRYPTED at rest as data/processed/advisors.json.enc
+(safe to commit to the public repo); the cleartext advisors.json is
+gitignored and never committed. Encryption/decryption is handled by
+advisors_crypto.py, which derives a key from a passphrase.
+
+You can supply the passphrase two ways:
+
+  * Type it into the web UI's unlock screen (default), or
+  * Set ADVISORS_PASSPHRASE in the environment to auto-unlock at startup
+    (handy for scripts / CI secrets).
+
+    python scripts/tools/advisors.py
+    # open http://127.0.0.1:8002 and enter the passphrase
 """
 
-import json
+import os
+import sys
 from pathlib import Path
 from typing import List, Optional
 
@@ -16,13 +30,29 @@ from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import uvicorn
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from advisors_crypto import (  # noqa: E402
+    ADVISORS_ENC,
+    ADVISORS_JSON,
+    ENV_PASSPHRASE,
+    AdvisorsCryptoError,
+    load_advisors as _crypto_load,
+    save_advisors as _crypto_save,
+)
+
+import json  # noqa: E402  (still used for mergers.json)
+
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
-ADVISORS_JSON = REPO_ROOT / "data" / "processed" / "advisors.json"
 
 ADVISOR_TYPES = ["Legal", "Financial", "Economic", "PR", "Other"]
 
 app = FastAPI()
+
+# In-memory passphrase for this server process. Held only in RAM (never
+# written to disk) and only reachable over 127.0.0.1. Set via the UI unlock
+# screen or the ADVISORS_PASSPHRASE env var.
+_SESSION: dict = {"passphrase": None}
 
 
 # ── helpers ────────────────────────────────────────────────────────────────
@@ -33,17 +63,37 @@ def _load_mergers() -> list:
     return data if isinstance(data, list) else data.get("mergers", [])
 
 
+def _is_unlocked() -> bool:
+    return _SESSION["passphrase"] is not None
+
+
+def _require_unlocked() -> None:
+    if not _is_unlocked():
+        raise HTTPException(401, "Locked — enter the passphrase to unlock.")
+
+
+def _try_unlock(passphrase: str) -> bool:
+    """Validate ``passphrase`` against the encrypted store and, on success,
+    keep it for this session. When no .enc exists yet (fresh bootstrap or a
+    legacy plaintext file) there is nothing to verify against, so any
+    non-empty passphrase is accepted and used for the first encrypted save.
+    """
+    if not passphrase:
+        return False
+    try:
+        _crypto_load(passphrase)          # raises on a wrong passphrase
+    except AdvisorsCryptoError:
+        return False
+    _SESSION["passphrase"] = passphrase
+    return True
+
+
 def _load_advisors() -> dict:
-    if not ADVISORS_JSON.exists():
-        return {}
-    with ADVISORS_JSON.open() as fh:
-        return json.load(fh)
+    return _crypto_load(_SESSION["passphrase"])
 
 
 def _save_advisors(data: dict) -> None:
-    with ADVISORS_JSON.open("w") as fh:
-        json.dump(data, fh, indent=2)
-        fh.write("\n")
+    _crypto_save(data, _SESSION["passphrase"])
 
 
 def _merger_parties(m: dict) -> list:
@@ -82,6 +132,10 @@ class DeleteRequest(BaseModel):
     index: int
 
 
+class UnlockRequest(BaseModel):
+    passphrase: str
+
+
 # ── routes ─────────────────────────────────────────────────────────────────
 
 @app.get("/", response_class=HTMLResponse)
@@ -89,8 +143,31 @@ def index():
     return HTML_CONTENT
 
 
+@app.get("/api/status")
+def status():
+    """Tell the UI whether the store is unlocked and whether data exists yet."""
+    return {
+        "unlocked": _is_unlocked(),
+        "has_store": ADVISORS_ENC.exists(),
+    }
+
+
+@app.post("/api/unlock")
+def unlock(req: UnlockRequest):
+    if not _try_unlock(req.passphrase):
+        raise HTTPException(401, "Incorrect passphrase.")
+    return {"status": "success", "has_store": ADVISORS_ENC.exists()}
+
+
+@app.post("/api/lock")
+def lock():
+    _SESSION["passphrase"] = None
+    return {"status": "success"}
+
+
 @app.get("/api/data")
 def get_data():
+    _require_unlocked()
     mergers = _load_mergers()
     advisors = _load_advisors()
     _skip = {"_README", "_example"}
@@ -130,6 +207,7 @@ def get_data():
 
 @app.post("/api/save")
 def save_advisor(req: SaveRequest):
+    _require_unlocked()
     if not req.firm.strip():
         raise HTTPException(400, "Firm/advisor name is required")
     if req.type not in ADVISOR_TYPES:
@@ -163,6 +241,7 @@ def save_advisor(req: SaveRequest):
 
 @app.post("/api/delete")
 def delete_advisor(req: DeleteRequest):
+    _require_unlocked()
     advisors = _load_advisors()
 
     if req.merger_id not in advisors:
@@ -197,16 +276,55 @@ HTML_CONTENT = r"""<!DOCTYPE html>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans min-h-screen">
 
+  <!-- ── lock screen ─────────────────────────────────────────────────────── -->
+  <div id="lock-screen" class="hidden fixed inset-0 z-30 bg-gray-50 flex items-center justify-center px-4">
+    <div class="w-full max-w-sm">
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#335145]/10 mb-3">
+          <svg class="w-6 h-6 text-[#335145]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 11c0-1.105.895-2 2-2s2 .895 2 2m-8 0V7a4 4 0 118 0m-9 4h10a1 1 0 011 1v6a1 1 0 01-1 1H7a1 1 0 01-1-1v-6a1 1 0 011-1z"/>
+          </svg>
+        </div>
+        <h1 class="text-lg font-bold text-gray-800">Advisors Tool</h1>
+        <p id="lock-sub" class="text-sm text-gray-500 mt-1">Enter the passphrase to unlock the encrypted data.</p>
+      </div>
+      <form onsubmit="doUnlock(event)" class="space-y-3">
+        <input id="passphrase" type="password" autocomplete="current-password" autofocus
+          placeholder="Passphrase"
+          class="w-full border border-gray-200 rounded-lg px-4 py-2.5 shadow-sm text-sm bg-white
+                 focus:outline-none focus:ring-2 focus:ring-[#335145]/30">
+        <p id="lock-error" class="hidden text-sm text-red-600"></p>
+        <button type="submit" id="unlock-btn"
+          class="w-full bg-[#335145] text-white text-sm font-medium px-4 py-2.5 rounded-lg hover:opacity-90 transition-opacity">
+          Unlock
+        </button>
+      </form>
+      <p class="text-xs text-gray-400 mt-4 text-center">
+        The passphrase never leaves your machine. Set <code>ADVISORS_PASSPHRASE</code> to skip this screen.
+      </p>
+    </div>
+  </div>
+
+  <!-- ── main app (hidden until unlocked) ────────────────────────────────── -->
+  <div id="app" class="hidden">
+
   <header class="bg-[#335145] text-white px-8 py-4 sticky top-0 z-20 shadow-md">
     <div class="max-w-4xl mx-auto flex items-center justify-between">
       <div>
         <h1 class="text-xl font-bold tracking-tight">Advisors Tool</h1>
         <p class="text-xs text-white/60">Backend only — not published to the front-end</p>
       </div>
-      <button onclick="load()"
-        class="text-sm bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded transition-colors">
-        Refresh
-      </button>
+      <div class="flex items-center gap-2">
+        <button onclick="load()"
+          class="text-sm bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded transition-colors">
+          Refresh
+        </button>
+        <button onclick="doLock()" title="Lock"
+          class="text-sm bg-white/10 hover:bg-white/20 px-3 py-1.5 rounded transition-colors">
+          Lock
+        </button>
+      </div>
     </div>
   </header>
 
@@ -235,6 +353,8 @@ HTML_CONTENT = r"""<!DOCTYPE html>
 
   </div>
 
+  </div><!-- #app -->
+
 <script>
 // ── state ──────────────────────────────────────────────────────────────────
 let allMergers   = [];
@@ -251,10 +371,74 @@ const TYPE_COLOURS = {
   'Other':     'bg-gray-100 text-gray-600',
 };
 
+// ── lock / unlock ───────────────────────────────────────────────────────────
+function showLockScreen(msg) {
+  document.getElementById('app').classList.add('hidden');
+  const ls = document.getElementById('lock-screen');
+  ls.classList.remove('hidden');
+  if (msg) document.getElementById('lock-sub').textContent = msg;
+  const pw = document.getElementById('passphrase');
+  pw.value = '';
+  pw.focus();
+}
+
+function showApp() {
+  document.getElementById('lock-screen').classList.add('hidden');
+  document.getElementById('app').classList.remove('hidden');
+}
+
+async function init() {
+  try {
+    const res  = await fetch('/api/status');
+    const data = await res.json();
+    if (data.unlocked) { showApp(); load(); }
+    else showLockScreen(data.has_store
+      ? 'Enter the passphrase to unlock the encrypted data.'
+      : 'No data yet — choose a passphrase to create the encrypted store.');
+  } catch (e) {
+    showLockScreen('Could not reach the server.');
+  }
+}
+
+async function doUnlock(ev) {
+  ev.preventDefault();
+  const btn = document.getElementById('unlock-btn');
+  const err = document.getElementById('lock-error');
+  const passphrase = document.getElementById('passphrase').value;
+  err.classList.add('hidden');
+  btn.disabled = true; btn.textContent = 'Unlocking…';
+  try {
+    const res = await fetch('/api/unlock', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ passphrase }),
+    });
+    if (!res.ok) {
+      err.textContent = res.status === 401
+        ? 'Incorrect passphrase.' : 'Unlock failed.';
+      err.classList.remove('hidden');
+    } else {
+      showApp(); load();
+    }
+  } catch (e) {
+    err.textContent = 'Could not reach the server.';
+    err.classList.remove('hidden');
+  } finally {
+    btn.disabled = false; btn.textContent = 'Unlock';
+  }
+}
+
+async function doLock() {
+  await fetch('/api/lock', { method: 'POST' });
+  allMergers = []; expandedId = null; editState = null;
+  showLockScreen('Locked. Enter the passphrase to unlock.');
+}
+
 // ── bootstrap ──────────────────────────────────────────────────────────────
 async function load() {
   try {
     const res  = await fetch('/api/data');
+    if (res.status === 401) { showLockScreen('Session locked. Enter the passphrase.'); return; }
     const data = await res.json();
     allMergers   = data.mergers;
     advisorTypes = data.advisor_types || advisorTypes;
@@ -556,6 +740,7 @@ async function doSave(mergerId, index, fid) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(payload),
   });
+  if (res.status === 401) { showLockScreen('Session locked. Enter the passphrase.'); return; }
   if (!res.ok) { alert('Error saving: ' + (await res.text())); return; }
 
   // Optimistic local update
@@ -580,6 +765,7 @@ async function doDelete(mergerId, index) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ merger_id: mergerId, index }),
   });
+  if (res.status === 401) { showLockScreen('Session locked. Enter the passphrase.'); return; }
   if (!res.ok) { alert('Error deleting'); return; }
 
   const m = allMergers.find(m => m.merger_id === mergerId);
@@ -606,7 +792,7 @@ function detBadge(det) {
 }
 
 // ── init ───────────────────────────────────────────────────────────────────
-load();
+init();
 </script>
 
 </body>
@@ -614,6 +800,17 @@ load();
 
 
 if __name__ == "__main__":
+    # Auto-unlock if a passphrase is supplied via the environment (handy for
+    # scripts / CI secrets); otherwise the UI prompts for it on the unlock
+    # screen. A wrong env passphrase just leaves the store locked.
+    env_pass = os.environ.get(ENV_PASSPHRASE)
+    if env_pass and _try_unlock(env_pass):
+        print(f"Unlocked from ${ENV_PASSPHRASE}.")
+    elif env_pass:
+        print(f"warning: ${ENV_PASSPHRASE} did not match — unlock via the UI.",
+              file=sys.stderr)
+
     print("Starting advisors tool…")
-    print("Open http://127.0.0.1:8002 in your browser.")
+    print("Open http://127.0.0.1:8002 in your browser"
+          + ("." if _is_unlocked() else " and enter the passphrase."))
     uvicorn.run(app, host="127.0.0.1", port=8002, log_level="warning")

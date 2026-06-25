@@ -60,6 +60,11 @@ node_modules/
 # Vite dev cache
 .vite/
 
+# Backend-only advisors data: the cleartext is private and must never be
+# committed to this public repo. Only the encrypted advisors.json.enc is
+# tracked (see scripts/tools/advisors_crypto.py).
+data/processed/advisors.json
+
 # Scraper working artifact: the paginated register index is re-fetched fresh at
 # the start of every scrape run and only used within that run to derive matter
 # links. It changes on every fetch (session token / ordering) even when no

@@ -38,22 +38,73 @@ notes, and the party (or parties) they acted for — chosen from the
 merger's own acquirers/targets/other parties, or flagged as "party
 unknown" when you only know the advisor worked on the deal.
 
-Writes back to `data/processed/advisors.json`. Unlike `commentary.py`,
-this data is **backend only**: it is deliberately not consumed by
-`generate_static_data.py` and is never published to
+Unlike `commentary.py`, this data is **backend only**: it is deliberately
+not consumed by `generate_static_data.py` and is never published to
 `merger-tracker/frontend/public/data`, so it is not loaded by the
 front-end.
 
+Because this repo is **public**, the advisor data is stored **encrypted at
+rest** as `data/processed/advisors.json.enc` — a small JSON text envelope
+(salt + Fernet ciphertext, all ASCII) that is safe to commit. The cleartext
+`advisors.json` is gitignored and never committed. Encryption is handled by
+`advisors_crypto.py`, which derives a key from a passphrase via
+PBKDF2-HMAC-SHA256.
+
+By default you just type the passphrase into the web UI's **unlock screen** —
+nothing to set up first:
+
 ```bash
 python scripts/tools/advisors.py
-# open http://127.0.0.1:8002
+# open http://127.0.0.1:8002 and enter the passphrase to unlock
 ```
+
+The passphrase is held only in the server's memory for that run (a `Lock`
+button in the header clears it). It is the only thing protecting the data, so
+keep it secret and store it in a password manager — it is **unrecoverable**.
+
+To skip the unlock screen (scripts, or just convenience), set
+`ADVISORS_PASSPHRASE` in the environment and the tool auto-unlocks at startup:
+
+```bash
+export ADVISORS_PASSPHRASE='choose-a-strong-passphrase'
+python scripts/tools/advisors.py   # opens already unlocked
+```
+
+The tool reads/writes `advisors.json.enc` directly; commit that file after
+editing. There is no committed `.enc` to start with — the first save creates
+it. To bootstrap from the existing plaintext template instead, use the CLI
+(which honours `ADVISORS_PASSPHRASE` or prompts):
+
+```bash
+python scripts/tools/advisors_crypto.py encrypt   # advisors.json -> advisors.json.enc
+git add data/processed/advisors.json.enc           # commit the encrypted blob
+```
+
+To read the data outside the web UI, decrypt to stdout:
+
+```bash
+python scripts/tools/advisors_crypto.py decrypt            # print JSON
+python scripts/tools/advisors_crypto.py decrypt --out /tmp/advisors.json
+```
+
+**GitHub Actions:** if a workflow ever needs this data, add the passphrase as
+a repository secret and expose it as the env var — the same code decrypts:
+
+```yaml
+env:
+  ADVISORS_PASSPHRASE: ${{ secrets.ADVISORS_PASSPHRASE }}
+```
+
+> ⚠️ The passphrase is unrecoverable. If you lose it, the encrypted data
+> cannot be decrypted. To change it, `decrypt` with the old passphrase, then
+> `encrypt` with the new one set in `ADVISORS_PASSPHRASE`.
 
 ## Dependencies
 
 All three tools need `fastapi`, `uvicorn`, and `pydantic` on top of the base
-pipeline requirements:
+pipeline requirements. `advisors.py` additionally needs `cryptography` (it is
+pinned in `scripts/requirements.txt`):
 
 ```bash
-pip install fastapi uvicorn pydantic
+pip install fastapi uvicorn pydantic cryptography
 ```
