@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { mergerPath } from '../utils/slug';
 import { formatDate } from '../utils/dates';
@@ -53,7 +54,11 @@ const DEFAULT_CARD_STYLE = {
   chip: 'bg-white/20 text-white',
 };
 
+const DEFAULT_VISIBLE = 6;
+
 function RecentDeterminationsCards({ determinations }) {
+  const [expanded, setExpanded] = useState(false);
+
   if (!determinations || determinations.length === 0) {
     return (
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
@@ -65,6 +70,9 @@ function RecentDeterminationsCards({ determinations }) {
     );
   }
 
+  const hasMore = determinations.length > DEFAULT_VISIBLE;
+  const visible = expanded ? determinations : determinations.slice(0, DEFAULT_VISIBLE);
+
   return (
     <section aria-labelledby="recent-determinations-heading">
       <h2
@@ -74,7 +82,7 @@ function RecentDeterminationsCards({ determinations }) {
         Recent determinations
       </h2>
       <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {determinations.map((item) => {
+        {visible.map((item) => {
           const style = CARD_STYLES[item.determination] || DEFAULT_CARD_STYLE;
           const label = DETERMINATION_LABELS[item.determination] || item.determination;
           return (
@@ -113,6 +121,20 @@ function RecentDeterminationsCards({ determinations }) {
           );
         })}
       </ul>
+      {hasMore && (
+        <div className="mt-4 flex justify-center">
+          <button
+            type="button"
+            onClick={() => setExpanded((prev) => !prev)}
+            className="inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-card transition-colors hover:bg-gray-50 hover:text-gray-900"
+            aria-expanded={expanded}
+          >
+            {expanded
+              ? 'Show fewer'
+              : `Show ${determinations.length - DEFAULT_VISIBLE} more`}
+          </button>
+        </div>
+      )}
     </section>
   );
 }

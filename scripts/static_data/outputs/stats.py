@@ -161,7 +161,7 @@ def generate(mergers: list) -> dict:
         key=lambda x: (x.get('determination_date', ''), x.get('page_modified_datetime', '')),
         reverse=True,
     )
-    recent_determinations = determination_events[:6]
+    recent_determinations = determination_events[:12]
 
     # Build phase_duration object with pre-computed stats
     phase_duration_data = {
