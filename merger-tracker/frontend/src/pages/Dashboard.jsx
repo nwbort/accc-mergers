@@ -16,7 +16,7 @@ import {
 import StatCard from '../components/StatCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import UpcomingEventsTable from '../components/UpcomingEventsTable';
-import RecentDeterminationsTable from '../components/RecentDeterminationsTable';
+import RecentDeterminationsCards from '../components/RecentDeterminationsCards';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
@@ -175,7 +175,7 @@ function Dashboard() {
       {/* Recent Determinations */}
       {stats.recent_determinations && (
         <div className="mb-8">
-          <RecentDeterminationsTable
+          <RecentDeterminationsCards
             determinations={stats.recent_determinations}
           />
         </div>
