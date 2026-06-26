@@ -54,7 +54,11 @@ const DEFAULT_CARD_STYLE = {
   chip: 'bg-white/20 text-white',
 };
 
-const DEFAULT_VISIBLE = 6;
+// How many cards show before "Show more" is used. Fewer on mobile, where the
+// single-column grid makes a long list a tall scroll; more once the grid has
+// 2+ columns from `sm` up.
+const DEFAULT_VISIBLE_MOBILE = 3;
+const DEFAULT_VISIBLE_DESKTOP = 6;
 
 function RecentDeterminationsCards({ determinations }) {
   const [expanded, setExpanded] = useState(false);
@@ -70,8 +74,17 @@ function RecentDeterminationsCards({ determinations }) {
     );
   }
 
-  const hasMore = determinations.length > DEFAULT_VISIBLE;
-  const visible = expanded ? determinations : determinations.slice(0, DEFAULT_VISIBLE);
+  // The visible count is breakpoint-dependent, so we render every card and use
+  // CSS to hide the overflow (cards 4-6 on mobile only, 7+ everywhere) until
+  // expanded. Full class strings so Tailwind keeps them.
+  const hasMore = determinations.length > DEFAULT_VISIBLE_MOBILE;
+
+  const visibilityClass = (index) => {
+    if (expanded) return 'flex';
+    if (index < DEFAULT_VISIBLE_MOBILE) return 'flex';
+    if (index < DEFAULT_VISIBLE_DESKTOP) return 'hidden sm:flex';
+    return 'hidden';
+  };
 
   return (
     <section aria-labelledby="recent-determinations-heading">
@@ -82,13 +95,13 @@ function RecentDeterminationsCards({ determinations }) {
         Recent determinations
       </h2>
       <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-        {visible.map((item) => {
+        {determinations.map((item, index) => {
           const style = CARD_STYLES[item.determination] || DEFAULT_CARD_STYLE;
           const label = DETERMINATION_LABELS[item.determination] || item.determination;
           return (
             <li
               key={`${item.merger_id}-${item.determination_date}-${item.determination_type}`}
-              className={`relative flex min-h-[7rem] flex-col justify-between rounded-xl p-4 transition-colors ${style.bg} ${style.text}`}
+              className={`relative ${visibilityClass(index)} min-h-[7rem] flex-col justify-between rounded-xl p-4 transition-colors ${style.bg} ${style.text}`}
             >
               <div className="flex items-start justify-between gap-2">
                 <span className="text-xs font-semibold uppercase tracking-wide">
@@ -129,9 +142,7 @@ function RecentDeterminationsCards({ determinations }) {
             className="inline-flex items-center rounded-lg border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-card transition-colors hover:bg-gray-50 hover:text-gray-900"
             aria-expanded={expanded}
           >
-            {expanded
-              ? 'Show fewer'
-              : `Show ${determinations.length - DEFAULT_VISIBLE} more`}
+            {expanded ? 'Show fewer' : 'Show more'}
           </button>
         </div>
       )}
