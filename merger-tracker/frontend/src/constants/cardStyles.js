@@ -38,3 +38,29 @@ export const DEFAULT_CARD_STYLE = { bg: 'bg-gray-500 hover:bg-gray-600', sub: 't
 export function getCardStyle({ determination, status } = {}) {
   return CARD_STYLES[determination] || CARD_STYLES[status] || DEFAULT_CARD_STYLE;
 }
+
+// Light variant: a near-white card with a subtle status-coloured tint, used
+// where the bold solid fill would be too heavy (e.g. recently notified mergers,
+// which are almost all "Under assessment"). The colour signal is carried by an
+// inline StatusBadge; this just tints the surface. Dark text throughout.
+const LIGHT_CARD_TINTS = {
+  [MERGER_STATUS.APPROVED]: 'bg-emerald-50/60 border-emerald-100',
+  [MERGER_STATUS.DECLINED]: 'bg-red-50/60 border-red-100',
+  [MERGER_STATUS.NOT_APPROVED]: 'bg-red-50/60 border-red-100',
+  [MERGER_STATUS.REFERRED_TO_PHASE_2]: 'bg-amber-50/60 border-amber-100',
+  [MERGER_STATUS.ASSESSMENT_CEASED]: 'bg-purple-50/60 border-purple-100',
+  [MERGER_STATUS.UNDER_ASSESSMENT]: 'bg-primary/5 border-primary/10',
+  [MERGER_STATUS.ASSESSMENT_SUSPENDED]: 'bg-orange-50/60 border-orange-100',
+  [MERGER_STATUS.ASSESSMENT_COMPLETED]: 'bg-gray-50 border-gray-100',
+};
+
+const DEFAULT_LIGHT_TINT = 'bg-gray-50 border-gray-100';
+
+export function getLightCardStyle({ determination, status } = {}) {
+  const tint = LIGHT_CARD_TINTS[determination] || LIGHT_CARD_TINTS[status] || DEFAULT_LIGHT_TINT;
+  return {
+    bg: `border ${tint} hover:border-gray-200`,
+    text: 'text-gray-900',
+    sub: 'text-gray-500',
+  };
+}

@@ -2,7 +2,10 @@ import { Link } from 'react-router-dom';
 import { mergerPath } from '../utils/slug';
 import { formatDate } from '../utils/dates';
 import { isNewItem } from '../utils/lastVisit';
-import { getCardStyle } from '../constants/cardStyles';
+import { getLightCardStyle } from '../constants/cardStyles';
+import StatusBadge from './StatusBadge';
+import NewBadge from './NewBadge';
+import WaiverBadge from './WaiverBadge';
 import CardCollapseGrid from './CardCollapseGrid';
 
 function RecentMergersCards({ mergers }) {
@@ -29,23 +32,20 @@ function RecentMergersCards({ mergers }) {
         items={mergers}
         getKey={(merger) => merger.merger_id}
         getStyle={(merger) =>
-          getCardStyle({ determination: merger.accc_determination, status: merger.status })
+          getLightCardStyle({ determination: merger.accc_determination, status: merger.status })
         }
         renderBody={(merger, style) => (
           <>
             <div className="flex items-start justify-between gap-2">
-              <span className="text-xs font-semibold uppercase tracking-wide">
-                {merger.accc_determination || merger.status}
-              </span>
-              {isNewItem(merger.merger_id) && (
-                <span className={`inline-flex items-center rounded-md px-2 py-0.5 text-xs font-semibold ${style.chip}`}>
-                  New
-                </span>
-              )}
+              <StatusBadge
+                status={merger.status}
+                determination={merger.accc_determination}
+              />
+              {isNewItem(merger.merger_id) && <NewBadge />}
             </div>
             <Link
               to={mergerPath(merger.merger_id, merger.merger_name)}
-              className={`mt-2 text-sm font-semibold leading-snug hover:underline after:absolute after:inset-0 ${style.text}`}
+              className={`mt-2 text-sm font-semibold leading-snug hover:text-primary after:absolute after:inset-0 ${style.text}`}
               aria-label={`View merger details for ${merger.merger_name}`}
             >
               {merger.merger_name}
@@ -55,11 +55,7 @@ function RecentMergersCards({ mergers }) {
                 {merger.is_waiver ? 'Applied' : 'Notified'}{' '}
                 {formatDate(merger.effective_notification_datetime)}
               </span>
-              {merger.is_waiver && (
-                <span className={`inline-flex items-center rounded-md px-2 py-0.5 font-medium ${style.chip}`}>
-                  Waiver
-                </span>
-              )}
+              {merger.is_waiver && <WaiverBadge />}
             </div>
           </>
         )}
