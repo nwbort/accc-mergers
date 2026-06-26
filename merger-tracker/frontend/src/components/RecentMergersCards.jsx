@@ -2,11 +2,19 @@ import { Link } from 'react-router-dom';
 import { mergerPath } from '../utils/slug';
 import { formatDate } from '../utils/dates';
 import { isNewItem } from '../utils/lastVisit';
-import { getLightCardStyle } from '../constants/cardStyles';
 import StatusBadge from './StatusBadge';
 import NewBadge from './NewBadge';
 import WaiverBadge from './WaiverBadge';
 import CardCollapseGrid from './CardCollapseGrid';
+
+// A clean white card outlined in primary (dark green). The status colour is
+// carried by the inline StatusBadge rather than the surface, so the section
+// stays calm even when every merger shares the same status.
+const CARD_STYLE = {
+  bg: 'bg-white border border-primary/40 hover:border-primary',
+  text: 'text-gray-900',
+  sub: 'text-gray-500',
+};
 
 function RecentMergersCards({ mergers }) {
   if (!mergers || mergers.length === 0) {
@@ -31,9 +39,7 @@ function RecentMergersCards({ mergers }) {
       <CardCollapseGrid
         items={mergers}
         getKey={(merger) => merger.merger_id}
-        getStyle={(merger) =>
-          getLightCardStyle({ determination: merger.accc_determination, status: merger.status })
-        }
+        getStyle={() => CARD_STYLE}
         renderBody={(merger, style) => (
           <>
             <div className="flex items-start justify-between gap-2">
