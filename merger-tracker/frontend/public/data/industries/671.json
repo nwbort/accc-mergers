@@ -30,7 +30,7 @@
       "code": "6712",
       "name": "Non-Residential Property Operators",
       "level": "class",
-      "merger_count": 19
+      "merger_count": 20
     }
   ],
   "mergers": [
@@ -54,6 +54,13 @@
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 2"
+    },
+    {
+      "merger_id": "WA-40026",
+      "merger_name": "Australian Food & Fibre \u2013 Western Lands Lease Conversion",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-10019",
@@ -182,10 +189,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 21,
+  "count": 22,
   "phase_1_count": 6,
   "phase_2_count": 1,
-  "waiver_count": 14,
+  "waiver_count": 15,
   "active_count": 3,
   "phase_duration": {
     "average_days": 35.6,

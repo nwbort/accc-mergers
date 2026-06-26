@@ -2721,6 +2721,51 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/anz-banking-group-worldline-australia"
     },
     {
+      "merger_id": "WA-40026",
+      "merger_name": "Australian Food & Fibre \u2013 Western Lands Lease Conversion",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-03T12:00:00Z",
+      "determination_publication_date": "2026-06-26T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "BENGERANG PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "66 127 984 123"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DEPARTMENT OF PLANNING HOUSING AND INFRASTRUCTURE",
+          "identifier_type": "ABN",
+          "identifier": "20 770 707 468"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "0152",
+          "name": "Cotton Growing"
+        },
+        {
+          "code": "0521",
+          "name": "Cotton Ginning"
+        },
+        {
+          "code": "0529",
+          "name": "Other Agriculture and Fishing Support Services"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-food-fibre-%E2%80%93-western-lands-lease-conversion"
+    },
+    {
       "merger_id": "WA-50018",
       "merger_name": "Autopact - Freehold interest in commercial land in Ferntree Gully, VIC",
       "status": "Assessment completed",
@@ -2771,53 +2816,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/autopact-freehold-interest-in-commercial-land-in-ferntree-gully-vic"
-    },
-    {
-      "merger_id": "WA-55021",
-      "merger_name": "Autopact - Freehold interest in commercial land in Dubbo, NSW",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-06-03T12:00:00Z",
-      "determination_publication_date": "2026-06-18T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "AUTOPACT PROPERTY NO. 3 PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "66 687 598 278"
-        }
-      ],
-      "targets": [
-        {
-          "name": "PETER TERRY NOMINEES PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "60 081 646 479"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "AUTOPACT HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "88 679 668 850"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "3911",
-          "name": "Car Retailing"
-        },
-        {
-          "code": "6712",
-          "name": "Non-Residential Property Operators"
-        },
-        {
-          "code": "9419",
-          "name": "Other Automotive Repair and Maintenance"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/autopact-freehold-interest-in-commercial-land-in-dubbo-nsw"
     }
   ],
   "page": 7,

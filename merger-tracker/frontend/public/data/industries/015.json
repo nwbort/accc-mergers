@@ -30,7 +30,7 @@
       "code": "0152",
       "name": "Cotton Growing",
       "level": "class",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "0159",
@@ -39,11 +39,19 @@
       "merger_count": 0
     }
   ],
-  "mergers": [],
-  "count": 0,
+  "mergers": [
+    {
+      "merger_id": "WA-40026",
+      "merger_name": "Australian Food & Fibre \u2013 Western Lands Lease Conversion",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    }
+  ],
+  "count": 1,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 0,
+  "waiver_count": 1,
   "active_count": 0,
   "phase_duration": null
 }

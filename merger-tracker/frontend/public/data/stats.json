@@ -1,6 +1,6 @@
 {
   "total_mergers": 148,
-  "total_waivers": 239,
+  "total_waivers": 240,
   "by_status": {
     "Assessment completed": 115,
     "Under assessment": 32,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 225,
+    "Approved": 226,
     "Not approved": 14
   },
   "phase_duration": {
@@ -53,7 +53,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 19
+      "count": 20
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -176,6 +176,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-40026",
+      "merger_name": "Australian Food & Fibre \u2013 Western Lands Lease Conversion",
+      "determination": "Approved",
+      "determination_date": "2026-06-26T12:00:00Z",
+      "page_modified_datetime": "2026-06-26T17:27:44+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-45017",
       "merger_name": "Apax Partners LLP \u2013 Sedex Information Exchange Limited",
       "determination": "Approved",
@@ -281,16 +291,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-25T12:00:00Z",
       "page_modified_datetime": "2026-06-25T15:58:53+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-90012",
-      "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-      "determination": "Approved",
-      "determination_date": "2026-06-24T12:00:00Z",
-      "page_modified_datetime": "2026-06-24T21:50:17+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
