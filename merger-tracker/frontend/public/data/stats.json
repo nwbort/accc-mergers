@@ -2,12 +2,12 @@
   "total_mergers": 148,
   "total_waivers": 237,
   "by_status": {
-    "Assessment completed": 114,
-    "Under assessment": 33,
+    "Assessment completed": 115,
+    "Under assessment": 32,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 113,
+    "Approved": 114,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.52542372881356,
+    "average_days": 29.470588235294116,
     "median_days": 26,
-    "average_business_days": 19.347457627118644,
+    "average_business_days": 19.319327731092436,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 25,
-        "percentage": 21.2
+        "percentage": 21.0
       },
       "day20": {
-        "count": 89,
-        "percentage": 75.4
+        "count": 90,
+        "percentage": 75.6
       },
       "day30": {
-        "count": 114,
+        "count": 115,
         "percentage": 96.6
       }
     }
@@ -176,6 +176,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-20014",
+      "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
+      "determination": "Approved",
+      "determination_date": "2026-06-26T12:00:00Z",
+      "page_modified_datetime": "2026-06-26T16:50:47+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-15024",
       "merger_name": "Redwood Services Group \u2013 All IT Australia",
       "determination": "Approved",
@@ -281,16 +291,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-24T12:00:00Z",
       "page_modified_datetime": "2026-06-24T17:13:08+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-15025",
-      "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
-      "determination": "Approved",
-      "determination_date": "2026-06-24T12:00:00Z",
-      "page_modified_datetime": "2026-06-24T17:07:32+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

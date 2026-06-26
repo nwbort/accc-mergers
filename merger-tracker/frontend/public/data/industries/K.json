@@ -26,18 +26,18 @@
   ],
   "mergers": [
     {
-      "merger_id": "MN-20014",
-      "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "phase": "Phase 1"
-    },
-    {
       "merger_id": "MN-65005",
       "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 2"
+    },
+    {
+      "merger_id": "MN-20014",
+      "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1"
     },
     {
       "merger_id": "MN-80014",
@@ -625,12 +625,12 @@
   "phase_1_count": 19,
   "phase_2_count": 2,
   "waiver_count": 64,
-  "active_count": 2,
+  "active_count": 1,
   "phase_duration": {
-    "average_days": 28.95,
-    "median_days": 25,
-    "average_business_days": 19.7,
+    "average_days": 28.666666666666668,
+    "median_days": 24,
+    "average_business_days": 19.523809523809526,
     "median_business_days": 16,
-    "completed_count": 20
+    "completed_count": 21
   }
 }

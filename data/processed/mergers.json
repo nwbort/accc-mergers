@@ -2886,7 +2886,7 @@
     "original_notification_datetime": "2026-06-18T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-07-30T12:00:00Z",
-    "page_modified_datetime": "2026-06-19T15:49:13+10:00",
+    "page_modified_datetime": "2026-06-26T09:51:32+10:00",
     "consultation_response_due_date": "2026-06-26T12:00:00Z",
     "acquirers": [
       {
@@ -2902,9 +2902,9 @@
     ],
     "targets": [
       {
-        "name": "The Trustee for Katherine Park Holding Trust",
+        "name": "The Trustee for Katherine Park Trust",
         "identifier_type": "ABN",
-        "identifier": "61 521 863 718"
+        "identifier": "52 233 936 018"
       },
       {
         "name": "The Trustee for THE F DAVIES FAMILY TRUST",
@@ -2912,9 +2912,9 @@
         "identifier": "53 298 082 380"
       },
       {
-        "name": "The Trustee for Katherine Park Trust",
+        "name": "The Trustee for Katherine Park Holding Trust",
         "identifier_type": "ABN",
-        "identifier": "52 233 936 018"
+        "identifier": "61 521 863 718"
       }
     ],
     "other_parties": [
@@ -2943,7 +2943,7 @@
         "display_title": "Questionnaire - Discovery Holiday Parks - four Breeze Holiday Parks",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Discovery%20Holiday%20Parks%20-%20four%20Breeze%20Holiday%20Parks%20-%20Questionnaire.docx",
         "url_gh": "/mergers/MN-01103/Discovery Holiday Parks - four Breeze Holiday Parks - Questionnaire.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-06-18T12:00:00Z",
@@ -6709,13 +6709,15 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/anz-cba-nab-and-westpac-%E2%80%93-shares-in-joint-venture-and-interests-in-joint-cash-pool",
     "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-20014",
     "effective_notification_datetime": "2026-06-03T12:00:00Z",
     "original_notification_datetime": "2026-06-03T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-07-16T12:00:00Z",
-    "page_modified_datetime": "2026-06-18T16:07:43+10:00",
+    "determination_publication_date": "2026-06-26T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-06-26T16:50:47+10:00",
     "consultation_response_due_date": "2026-06-16T12:00:00Z",
     "acquirers": [
       {
@@ -6729,11 +6731,6 @@
         "identifier": "11 005 357 522"
       },
       {
-        "name": "NATIONAL AUSTRALIA BANK LIMITED",
-        "identifier_type": "ABN",
-        "identifier": "12 004 044 937"
-      },
-      {
         "name": "COMMONWEALTH BANK OF AUSTRALIA",
         "identifier_type": "ABN",
         "identifier": "48 123 123 124"
@@ -6742,6 +6739,11 @@
         "name": "NATIONAL AUSTRALIA INVESTMENT CAPITAL PTY LTD",
         "identifier_type": "ABN",
         "identifier": "27 073 242 010"
+      },
+      {
+        "name": "NATIONAL AUSTRALIA BANK LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "12 004 044 937"
       }
     ],
     "targets": [
@@ -6764,6 +6766,43 @@
         "date": "2026-06-03T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-06-26T12:00:00Z",
+        "title": "ANZ, CBA, NAB and Westpac - shares in  joint venture and interests in Joint Cash Pool - Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/ANZ%2C%20CBA%2C%20NAB%20and%20Westpac%20%E2%80%93%20shares%20in%20%20joint%20venture%20and%20interests%20in%20Joint%20Cash%20Pool%20%20-%20Phase%201%20determination.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisitions",
+            "details": "Australia and New Zealand Banking Group Limited (ANZ),\nCommonwealth Bank of Australia (CBA), National Australia Bank\nLimited and National Australia Investment Capital Pty Ltd (NAB), and\nWestpac Banking Corporation (Westpac) (together, the Major Banks)\npropose to enter into a joint venture for the establishment of a new\njoint single cash pool (Joint Cash Pool) between the Major Banks\nwith respect to wholesale and \u2018commercial cash\u2019 distribution (the\nProposed JV).\nAs part of the Proposed JV, each Major Bank will acquire:\n\u2022 a 25% shareholding in an incorporated operating entity (JVCo),\nand\n\u2022 a 25% interest in the Joint Cash Pool\n(together, the Acquisitions).\nThe Acquisitions represent a narrow part of the arrangements in\nrelation to the establishment of JVCo and the Joint Cash Pool. The\nremaining conduct relating to the establishment and operation of\nJVCo and the Joint Cash Pool is the subject of a separate\napplication for authorisation (AA1000729) under section 88 of\nthe Competition and Consumer Act 2010 (Cth) (the Act) (the\nAuthorisation Application)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Act that the Acquisitions\nmay be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisitions",
+            "details": "Each Major Bank is a party to the Proposed JV. Currently, the Major\nBanks purchase banknotes from the RBA and coins from the Mint\ndirectly and each Major Bank has its own cash reserves, which are\nmanaged as four separate \u2018virtual\u2019 cash pools. Each Major Bank\nuses their own cash pool to support the supply of cash to their own\nbranches and ATMs, and directly to business customers in some\ninstances.\nWestpac is currently the sole supplier of commercial cash to\ndistributors other than the Major Banks, including cash-in-transit\nproviders (Commercial Cash Distributors). Customers of\nCommercial Cash Distributors include smaller banks, major retailers\nand small businesses. Westpac has decided to cease its current\narrangements as the sole supplier of commercial cash.\nOnce the Proposed JV is established, and subject to the outcome of\nthe separate Authorisation Application, the Proposed JV would:\n\u2022 hold the cash in the Joint Cash Pool as bailee for the Major\nBanks as joint bailors\n\u2022 supply cash from the Joint Cash Pool to each of the Major\nBanks (in their capacity as customers of JVCo), in order to\nmeet their cash requirements, including for their own branches\nand ATMs, and\n\u2022 become the sole supplier of commercial cash to in-scope\nCommercial Cash Distributors from the Joint Cash Pool."
+          },
+          {
+            "item": "Overlap and relationship\nbetween the parties",
+            "details": "Relevantly, the Major Banks currently overlap in the acquisition,\nsupply and distribution of banknotes and coins in Australia."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Act. In doing so,\nthe ACCC must have regard to the object of the Act and all relevant\nmatters, including the interests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and the Authorisation Application, as well as\ninformation provided by third parties regarding the Acquisitions and\ninterim request for authorisation.\nThe ACCC has determined that the Acquisitions may be put into\neffect as it considers that the Acquisitions are unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material currently before it,\nthe ACCC makes the following findings.\n\u2022 The establishment and operation of the Proposed JV is subject\nto the ACCC\u2019s final determination on the Authorisation\nApplication, which is still under consideration.\n\u2022 The Acquisitions are a necessary step in the establishment of\nthe Proposed JV but would not, without authorisation being\ngranted, result in any changes to the status quo in the\nacquisition, supply and distribution of banknotes and coins in\nAustralia. In particular, the Major Banks will not cease\noperating their individual cash pools, and the Proposed JV will\nnot replace Westpac as the sole supplier of commercial cash,\nunless the ACCC separately grants authorisation for conduct\nrelating to the establishment and operation of JVCo and the\nJoint Cash Pool."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/mergers/MN-20014/ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool - Phase 1 determination.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false
@@ -13186,8 +13225,8 @@
     "effective_notification_datetime": "2026-03-03T12:00:00Z",
     "original_notification_datetime": "2026-03-03T12:00:00Z",
     "stage": "Phase 2 - detailed assessment",
-    "end_of_determination_period": "2026-08-26T12:00:00Z",
-    "page_modified_datetime": "2026-05-25T18:09:58+10:00",
+    "end_of_determination_period": "2026-09-23T12:00:00Z",
+    "page_modified_datetime": "2026-06-26T16:38:32+10:00",
     "consultation_response_due_date": "2026-05-04T12:00:00Z",
     "acquirers": [
       {
@@ -13255,7 +13294,20 @@
         "display_title": "Summary of Notice of Competition Concerns",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IAG_RACI%20-%20Summary%20of%20Notice%20of%20Competition%20Concerns%20-%2025%20May%202026.pdf",
         "url_gh": "/mergers/MN-65005/IAG_RACI - Summary of Notice of Competition Concerns - 25 May 2026.pdf",
+        "status": "removed"
+      },
+      {
+        "date": "2026-05-25T12:00:00Z",
+        "title": "Summary of Notice of Competition Concerns",
+        "display_title": "Summary of Notice of Competition Concerns",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IAG_RACI%20-%20Summary%20of%20Notice%20of%20Competition%20Concerns%20-%2025%20May%202026_0.pdf",
+        "url_gh": "/mergers/MN-65005/IAG_RACI - Summary of Notice of Competition Concerns - 25 May 2026_0.pdf",
         "status": "live"
+      },
+      {
+        "date": "2026-06-26T12:00:00Z",
+        "title": "Timeline extended by 20 business days - following request for further information",
+        "display_title": "Timeline extended by 20 business days - following request for further information"
       }
     ],
     "is_waiver": false

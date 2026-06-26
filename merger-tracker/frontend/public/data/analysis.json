@@ -1056,6 +1056,15 @@
       },
       {
         "notification_date": "2026-06-03",
+        "business_days": 16,
+        "calendar_days": 23,
+        "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
+        "merger_id": "MN-20014",
+        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "notification_date": "2026-06-03",
         "business_days": 15,
         "calendar_days": 22,
         "merger_name": "ANZ Banking Group - Worldline Australia",
@@ -1065,18 +1074,18 @@
       }
     ],
     "stats": {
-      "average": 18.8,
-      "median": 17.0,
+      "average": 18.7,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 114
+      "count": 115
     },
     "calendar_stats": {
-      "average": 28.5,
-      "median": 26.0,
+      "average": 28.4,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 114
+      "count": 115
     }
   },
   "waiver_duration": {
