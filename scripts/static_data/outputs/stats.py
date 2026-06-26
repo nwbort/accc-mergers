@@ -99,7 +99,7 @@ def generate(mergers: list) -> dict:
             "effective_notification_datetime": m.get('effective_notification_datetime'),
             "is_waiver": m.get('is_waiver', False),
         }
-        for m in sorted_mergers[:5]
+        for m in sorted_mergers[:12]
     ]
 
     # Recent determinations (approvals, declines, stage transitions)
@@ -161,7 +161,7 @@ def generate(mergers: list) -> dict:
         key=lambda x: (x.get('determination_date', ''), x.get('page_modified_datetime', '')),
         reverse=True,
     )
-    recent_determinations = determination_events[:6]
+    recent_determinations = determination_events[:12]
 
     # Build phase_duration object with pre-computed stats
     phase_duration_data = {
