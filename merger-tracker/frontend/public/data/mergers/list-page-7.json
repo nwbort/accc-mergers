@@ -1963,7 +1963,11 @@
         {
           "name": "BCWF 2 Holdings Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "697 890 207"
+          "identifier": "697 890 207",
+          "canonical": {
+            "id": "bcwf-2-pty-limited",
+            "name": "Bcwf 2 Pty Limited"
+          }
         },
         {
           "name": "AULA ENERGY HOLDINGS PTY LIMITED",
@@ -1980,7 +1984,11 @@
         {
           "name": "BCWF 2 PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "77 670 206 256"
+          "identifier": "77 670 206 256",
+          "canonical": {
+            "id": "bcwf-2-pty-limited",
+            "name": "Bcwf 2 Pty Limited"
+          }
         }
       ],
       "other_parties": [],

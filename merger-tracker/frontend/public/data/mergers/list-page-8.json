@@ -734,14 +734,22 @@
         {
           "name": "ZEN ENERGY RETAIL HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "76 697 773 916"
+          "identifier": "76 697 773 916",
+          "canonical": {
+            "id": "zen-energy-retail-pty-ltd",
+            "name": "Zen Energy Retail Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "ZEN ENERGY RETAIL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "54 615 751 052"
+          "identifier": "54 615 751 052",
+          "canonical": {
+            "id": "zen-energy-retail-pty-ltd",
+            "name": "Zen Energy Retail Pty Ltd"
+          }
         },
         {
           "name": "ZEN ENERGY PTY LTD",
@@ -1700,7 +1708,11 @@
         {
           "name": "Axalta Coating Systems Ltd.",
           "identifier_type": null,
-          "identifier": "Commercial registration # 46832"
+          "identifier": "Commercial registration # 46832",
+          "canonical": {
+            "id": "axalta-coating-systems-ltd",
+            "name": "Axalta Coating Systems Ltd."
+          }
         }
       ],
       "other_parties": [
@@ -1712,7 +1724,11 @@
         {
           "name": "AXALTA COATING SYSTEMS AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "53 158 497 655"
+          "identifier": "53 158 497 655",
+          "canonical": {
+            "id": "axalta-coating-systems-ltd",
+            "name": "Axalta Coating Systems Ltd."
+          }
         },
         {
           "name": "REFINISH IMPORTS PTY LIMITED",
