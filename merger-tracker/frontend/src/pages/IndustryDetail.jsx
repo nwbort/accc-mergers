@@ -59,15 +59,15 @@ function IndustryDetail() {
   // Local free-text filter for the merger list on this page.
   const [mergerSearch, setMergerSearch] = useState('');
 
-  const allMergers = data?.mergers || [];
   const trimmedSearch = mergerSearch.trim().toLowerCase();
   const filteredMergers = useMemo(() => {
+    const allMergers = data?.mergers || [];
     if (!trimmedSearch) return allMergers;
     return allMergers.filter((m) =>
       (m.merger_name || '').toLowerCase().includes(trimmedSearch) ||
       (m.status || '').toLowerCase().includes(trimmedSearch)
     );
-  }, [allMergers, trimmedSearch]);
+  }, [data?.mergers, trimmedSearch]);
 
   const isNotFound = error === 'HTTP 404';
 
