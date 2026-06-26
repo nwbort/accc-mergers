@@ -99,7 +99,7 @@ def generate(mergers: list) -> dict:
             "effective_notification_datetime": m.get('effective_notification_datetime'),
             "is_waiver": m.get('is_waiver', False),
         }
-        for m in sorted_mergers[:5]
+        for m in sorted_mergers[:12]
     ]
 
     # Recent determinations (approvals, declines, stage transitions)

@@ -1,11 +1,6 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { mergerPath } from '../utils/slug';
 import { FaMagnifyingGlass, FaStopwatch, FaChartLine } from 'react-icons/fa6';
 import { Doughnut } from 'react-chartjs-2';
-import StatusBadge from '../components/StatusBadge';
-import NewBadge from '../components/NewBadge';
-import WaiverBadge from '../components/WaiverBadge';
 import {
   Chart as ChartJS,
   Title,
@@ -17,11 +12,12 @@ import StatCard from '../components/StatCard';
 import LoadingSpinner from '../components/LoadingSpinner';
 import UpcomingEventsTable from '../components/UpcomingEventsTable';
 import RecentDeterminationsCards from '../components/RecentDeterminationsCards';
+import RecentMergersCards from '../components/RecentMergersCards';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
-import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
+import { getDaysRemaining, isDatePast } from '../utils/dates';
 import { useFetchData } from '../hooks/useFetchData';
-import { markItemsAsSeen, isNewItem } from '../utils/lastVisit';
+import { markItemsAsSeen } from '../utils/lastVisit';
 
 ChartJS.register(
   Title,
@@ -182,48 +178,11 @@ function Dashboard() {
       )}
 
       {/* Recently Notified Mergers */}
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-card mb-8 overflow-hidden">
-        <div className="px-6 py-5 border-b border-gray-100">
-          <h2 className="text-lg font-semibold text-gray-900">
-            Recently notified mergers
-          </h2>
+      {stats.recent_mergers && (
+        <div className="mb-8">
+          <RecentMergersCards mergers={stats.recent_mergers} />
         </div>
-        <ul className="divide-y divide-gray-50">
-          {stats.recent_mergers.map((merger) => (
-            <li key={merger.merger_id}>
-              <Link
-                to={mergerPath(merger.merger_id, merger.merger_name)}
-                className="block hover:bg-gray-100/70 transition-colors duration-150"
-                aria-label={`View merger details for ${merger.merger_name}`}
-              >
-                <div className="px-6 py-4">
-                  <div className="flex items-start justify-between gap-3">
-                    <div className="flex items-start gap-2 min-w-0 flex-1">
-                      <p className="text-sm font-medium text-gray-900 break-words hover:text-primary transition-colors">
-                        {merger.merger_name}
-                      </p>
-                      {isNewItem(merger.merger_id) && (
-                        <NewBadge />
-                      )}
-                      {merger.is_waiver && <WaiverBadge />}
-                    </div>
-                    <div className="ml-2 flex-shrink-0">
-                      <StatusBadge
-                        status={merger.status}
-                        determination={merger.accc_determination}
-                      />
-                    </div>
-                  </div>
-                  <div className="mt-1.5 text-xs text-gray-500">
-                    {merger.is_waiver ? 'Applied:' : 'Notified:'}{' '}
-                    {formatDate(merger.effective_notification_datetime)}
-                  </div>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      )}
 
       {/* Upcoming Events (within 7 days) */}
       {upcomingEvents && (() => {
