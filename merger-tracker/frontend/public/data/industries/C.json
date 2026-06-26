@@ -57,7 +57,7 @@
       "code": "19",
       "name": "Polymer Product and Rubber Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 11
+      "merger_count": 12
     },
     {
       "code": "20",
@@ -97,6 +97,13 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-40027",
+      "merger_name": "Sika AG - Akkim",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
     {
       "merger_id": "MN-50024",
       "merger_name": "AkzoNobel - Axalta",
@@ -756,11 +763,11 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 94,
-  "phase_1_count": 41,
+  "count": 95,
+  "phase_1_count": 42,
   "phase_2_count": 1,
   "waiver_count": 52,
-  "active_count": 8,
+  "active_count": 9,
   "phase_duration": {
     "average_days": 29.794117647058822,
     "median_days": 26,

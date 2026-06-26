@@ -1,9 +1,9 @@
 {
-  "total_mergers": 147,
+  "total_mergers": 148,
   "total_waivers": 237,
   "by_status": {
     "Assessment completed": 114,
-    "Under assessment": 32,
+    "Under assessment": 33,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -78,6 +78,14 @@
   ],
   "recent_mergers": [
     {
+      "merger_id": "MN-40027",
+      "merger_name": "Sika AG - Akkim",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-25T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-50024",
       "merger_name": "AkzoNobel - Axalta",
       "status": "Under assessment",
@@ -104,14 +112,6 @@
     {
       "merger_id": "MN-50027",
       "merger_name": "Endeavour Group - retail liquor site in Avalon, NSW",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-22T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-65020",
-      "merger_name": "Regis Resources - Vault Minerals",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-22T12:00:00Z",

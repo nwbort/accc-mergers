@@ -19,7 +19,7 @@
       "code": "191",
       "name": "Polymer Product Manufacturing",
       "level": "group",
-      "merger_count": 11
+      "merger_count": 12
     },
     {
       "code": "192",
@@ -29,6 +29,13 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-40027",
+      "merger_name": "Sika AG - Akkim",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1"
+    },
     {
       "merger_id": "MN-50024",
       "merger_name": "AkzoNobel - Axalta",
@@ -107,11 +114,11 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 11,
-  "phase_1_count": 6,
+  "count": 12,
+  "phase_1_count": 7,
   "phase_2_count": 0,
   "waiver_count": 5,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 26.6,
     "median_days": 22,

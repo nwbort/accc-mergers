@@ -1,0 +1,154 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sika-ag-akkim",
+  "merger_name": "Sika AG - Akkim",
+  "status": "Under assessment",
+  "merger_id": "MN-40027",
+  "effective_notification_datetime": "2026-06-25T12:00:00Z",
+  "original_notification_datetime": "2026-06-25T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-08-06T12:00:00Z",
+  "page_modified_datetime": "2026-06-26T10:24:22+10:00",
+  "consultation_response_due_date": "2026-07-03T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Sika AG",
+      "identifier_type": null,
+      "identifier": "CHE106.919.184"
+    }
+  ],
+  "targets": [
+    {
+      "name": "Akkim Europe SRL",
+      "identifier_type": null,
+      "identifier": ""
+    },
+    {
+      "name": "Akfix Kimya Lojistik Hizmetleri Limited \u015eirketi",
+      "identifier_type": null,
+      "identifier": ""
+    },
+    {
+      "name": "Akde Kimya Sanayi ve Ticaret Anonim \u015eirketi",
+      "identifier_type": null,
+      "identifier": ""
+    },
+    {
+      "name": "Akkim Yapi Kimyasallari Sanayi ve Ticaret Anonim \u015eirketi",
+      "identifier_type": null,
+      "identifier": ""
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "1915",
+      "name": "Adhesive Manufacturing"
+    }
+  ],
+  "merger_description": "Sika AG proposes to acquire 100% of the equity in Akkim Yap\u0131 Kimyasallar\u0131 Sanayi ve Ticaret Anonim \u015eirketi, Akfix Kimya Lojistik Hizmetleri Limited \u015eirketi, Akde Kimya Sanayi ve Ticaret Anonim \u015eirketi, and Akkim Europe SRL (together, **Akkim**).\n\nSika AG is a globally active speciality chemicals group headquartered in Switzerland. Sika AG supplies chemical-based admixtures, mortars, sealants and adhesives, damping and reinforcing materials, structural strengthening systems, industrial flooring, as well as roofing and waterproofing systems. Their products are used in the building sector and by manufacturing industries.\n\nAkkim, founded in Turkey, is a chemical product manufacturer specialising in the manufacture of sealants, adhesives, PU foams, waterproofing products and aerosols. Akkim\u2019s main brand in Australia is Akfix.",
+  "events": [
+    {
+      "date": "2026-06-26T12:00:00Z",
+      "title": "Questionnaire - Sika AG - Akkim",
+      "display_title": "Questionnaire - Sika AG - Akkim",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Sika%20AG%20-%20Akkim.docx",
+      "url_gh": "/mergers/MN-40027/Questionnaire - Sika AG - Akkim.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-06-25T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-40005",
+      "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number: 854017447, CCI 60683945",
+          "canonical": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Aqua Adhesives I GmbH",
+          "identifier_type": null,
+          "identifier": "Swiss registration number: CH170.4.019.1870"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-45007",
+      "merger_name": "Henkel \u2013 Stahl",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Henkel Global Supply Chain B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number, 854017447, CCI 60683945",
+          "canonical": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Stahl Holdings B.V.",
+          "identifier_type": null,
+          "identifier": "Netherlands registration number (KVK): 34249320"
+        },
+        {
+          "name": "Stahl Asia Pacific Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "Singapore registration number: 200606884Z"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-05014",
+      "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Smile Partners (NSW3) Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "695 902 955"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Shrika Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "108 757 357",
+          "canonical": {
+            "id": "shrika-pty-ltd",
+            "name": "Shrika Pty Ltd"
+          }
+        }
+      ]
+    }
+  ]
+}
