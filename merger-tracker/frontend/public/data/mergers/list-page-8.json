@@ -1,6 +1,50 @@
 {
   "mergers": [
     {
+      "merger_id": "WA-75026",
+      "merger_name": "Australian Venue Co - leasehold and assets of Brabham Tavern, WA",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-03T12:00:00Z",
+      "determination_publication_date": "2026-06-22T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "AVC OPERATIONS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "81 607 832 299"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Koy Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "009 023 787"
+        },
+        {
+          "name": "Brabtav Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "661 314 772"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Australian Venue Co. Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-venue-co-leasehold-and-assets-of-brabham-tavern-wa"
+    },
+    {
       "merger_id": "WA-85031",
       "merger_name": "Tasmea - Maxim",
       "status": "Assessment completed",
@@ -673,6 +717,60 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/redwood-services-group-%E2%80%93-all-it-australia"
+    },
+    {
+      "merger_id": "WA-55025",
+      "merger_name": "Brookfield \u2013 World Freight Company",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-09T12:00:00Z",
+      "determination_publication_date": "2026-06-26T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Windrose Holdings III (DIFC) Limited",
+          "identifier_type": null,
+          "identifier": "Registered Number  12897"
+        },
+        {
+          "name": "Windrose France Holdings SAS",
+          "identifier_type": null,
+          "identifier": "Registered Number  104439096"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Caeli Software Ltd",
+          "identifier_type": null,
+          "identifier": "Registered Number  12558916"
+        },
+        {
+          "name": "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)",
+          "identifier_type": null,
+          "identifier": "Registered Number  809546 971"
+        },
+        {
+          "name": "Glacis Acquisition S.\u00e0 r.l.",
+          "identifier_type": null,
+          "identifier": "B224034"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Brookfield Corporation",
+          "identifier_type": null,
+          "identifier": "Registered Number  1646037"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5299",
+          "name": "Other Transport Support Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/brookfield-%E2%80%93-world-freight-company"
     },
     {
       "merger_id": "WA-60024",

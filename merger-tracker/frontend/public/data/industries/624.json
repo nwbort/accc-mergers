@@ -24,10 +24,17 @@
       "code": "6240",
       "name": "Financial Asset Investing",
       "level": "class",
-      "merger_count": 48
+      "merger_count": 49
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-45017",
+      "merger_name": "Apax Partners LLP \u2013 Sedex Information Exchange Limited",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
     {
       "merger_id": "WA-25033",
       "merger_name": "Bain Capital \u2013 FDH",
@@ -365,10 +372,10 @@
       "phase": "Waiver"
     }
   ],
-  "count": 48,
+  "count": 49,
   "phase_1_count": 9,
   "phase_2_count": 0,
-  "waiver_count": 39,
+  "waiver_count": 40,
   "active_count": 0,
   "phase_duration": {
     "average_days": 24.444444444444443,

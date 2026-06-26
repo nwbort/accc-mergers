@@ -24,7 +24,7 @@
       "code": "5420",
       "name": "Software Publishing",
       "level": "class",
-      "merger_count": 28
+      "merger_count": 29
     }
   ],
   "mergers": [
@@ -34,6 +34,13 @@
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-45017",
+      "merger_name": "Apax Partners LLP \u2013 Sedex Information Exchange Limited",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "WA-30019",
@@ -225,10 +232,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 28,
+  "count": 29,
   "phase_1_count": 10,
   "phase_2_count": 0,
-  "waiver_count": 18,
+  "waiver_count": 19,
   "active_count": 1,
   "phase_duration": {
     "average_days": 32.111111111111114,

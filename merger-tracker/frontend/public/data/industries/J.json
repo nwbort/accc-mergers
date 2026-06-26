@@ -9,7 +9,7 @@
       "code": "54",
       "name": "Publishing (except Internet and Music Publishing)",
       "level": "subdivision",
-      "merger_count": 29
+      "merger_count": 30
     },
     {
       "code": "55",
@@ -39,7 +39,7 @@
       "code": "59",
       "name": "Internet Service Providers, Web Search Portals and Data Processing Services",
       "level": "subdivision",
-      "merger_count": 9
+      "merger_count": 10
     },
     {
       "code": "60",
@@ -69,6 +69,13 @@
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 1"
+    },
+    {
+      "merger_id": "WA-45017",
+      "merger_name": "Apax Partners LLP \u2013 Sedex Information Exchange Limited",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
     },
     {
       "merger_id": "MN-85026",
@@ -372,10 +379,10 @@
       "phase": "Phase 1"
     }
   ],
-  "count": 46,
+  "count": 47,
   "phase_1_count": 20,
   "phase_2_count": 0,
-  "waiver_count": 26,
+  "waiver_count": 27,
   "active_count": 3,
   "phase_duration": {
     "average_days": 31.470588235294116,

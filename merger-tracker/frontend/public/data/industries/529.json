@@ -36,10 +36,17 @@
       "code": "5299",
       "name": "Other Transport Support Services n.e.c.",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-55025",
+      "merger_name": "Brookfield \u2013 World Freight Company",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver"
+    },
     {
       "merger_id": "MN-10007",
       "merger_name": "Macquarie Asset Management led consortium \u2013 Qube",
@@ -69,10 +76,10 @@
       "phase": "Waiver"
     }
   ],
-  "count": 4,
+  "count": 5,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 3,
+  "waiver_count": 4,
   "active_count": 0,
   "phase_duration": {
     "average_days": 42.0,
