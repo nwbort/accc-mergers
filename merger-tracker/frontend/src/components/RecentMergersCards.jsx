@@ -2,8 +2,30 @@ import { Link } from 'react-router-dom';
 import { mergerPath } from '../utils/slug';
 import { formatDate } from '../utils/dates';
 import { isNewItem } from '../utils/lastVisit';
+import { MERGER_STATUS } from '../constants/mergerStatus';
 import { getCardStyle } from '../constants/cardStyles';
 import CardCollapseGrid from './CardCollapseGrid';
+
+// Mergers still under assessment stay calm: a white card with a green
+// (primary) border, the inline chips tinted green to sit on the white
+// surface. Anything with a determination (e.g. approved) falls through to
+// getCardStyle so it renders identically to the recent determinations cards.
+const UNDER_ASSESSMENT_STYLE = {
+  bg: 'bg-white border border-primary/40 hover:border-primary',
+  text: 'text-gray-900',
+  sub: 'text-gray-500',
+  chip: 'bg-primary/5 text-primary border border-primary/20',
+};
+
+function getMergerCardStyle(merger) {
+  if (!merger.accc_determination && merger.status === MERGER_STATUS.UNDER_ASSESSMENT) {
+    return UNDER_ASSESSMENT_STYLE;
+  }
+  return getCardStyle({
+    determination: merger.accc_determination,
+    status: merger.status,
+  });
+}
 
 function RecentMergersCards({ mergers }) {
   if (!mergers || mergers.length === 0) {
@@ -28,12 +50,7 @@ function RecentMergersCards({ mergers }) {
       <CardCollapseGrid
         items={mergers}
         getKey={(merger) => merger.merger_id}
-        getStyle={(merger) =>
-          getCardStyle({
-            determination: merger.accc_determination,
-            status: merger.status,
-          })
-        }
+        getStyle={getMergerCardStyle}
         renderBody={(merger, style) => (
           <>
             <div className="flex items-start justify-between gap-2">
