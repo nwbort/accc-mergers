@@ -38,3 +38,19 @@ export function mergerPath(id, name) {
   const slug = slugify(name);
   return slug ? `/mergers/${id}/${slug}` : `/mergers/${id}`;
 }
+
+/**
+ * Build the canonical path for an industry detail page, including the readable
+ * slug when one can be derived from the industry name. Falls back to the bare
+ * `/industries/{code}` form. Like the merger slug, this is purely decorative —
+ * industry pages are always looked up by their ANZSIC `code`.
+ *
+ * @param {string} code - ANZSIC code (e.g. "0610")
+ * @param {string} [name] - industry name used to derive the slug
+ * @returns {string}
+ */
+export function industryPath(code, name) {
+  const encodedCode = encodeURIComponent(code);
+  const slug = slugify(name);
+  return slug ? `/industries/${encodedCode}/${slug}` : `/industries/${encodedCode}`;
+}

@@ -8,6 +8,7 @@ import PhaseDurationComparison from '../components/PhaseDurationComparison';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
+import { industryPath } from '../utils/slug';
 
 // ANZSIC level → human label for the page subtitle and breadcrumb.
 const LEVEL_LABELS = {
@@ -139,7 +140,7 @@ function IndustryDetail() {
       <SEO
         title={industryName}
         description={`${mergers.length} merger${mergers.length !== 1 ? 's' : ''} in the ${industryName} industry${levelLabel ? ` (ANZSIC ${levelLabel.toLowerCase()} ${decodedCode})` : ''} reviewed by the ACCC.`}
-        url={`/industries/${encodeURIComponent(decodedCode)}`}
+        url={industryPath(decodedCode, industryName)}
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         {/* Breadcrumb: Industries → division → … → current node */}
@@ -154,7 +155,7 @@ function IndustryDetail() {
               <li key={a.code} className="flex items-center gap-x-1.5">
                 <FaChevronRight className="w-3 h-3 text-gray-300" aria-hidden="true" />
                 <Link
-                  to={`/industries/${encodeURIComponent(a.code)}`}
+                  to={industryPath(a.code, a.name)}
                   className="hover:text-primary transition-colors"
                 >
                   {a.name}
@@ -215,7 +216,7 @@ function IndustryDetail() {
               {children.map((child) => (
                 <li key={child.code}>
                   <Link
-                    to={`/industries/${encodeURIComponent(child.code)}`}
+                    to={industryPath(child.code, child.name)}
                     className="flex items-center justify-between gap-3 py-2.5 group"
                   >
                     <span className="text-sm text-gray-900 group-hover:text-primary transition-colors">
