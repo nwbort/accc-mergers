@@ -298,14 +298,19 @@ def section_header_row(title: str, color: dict, num_cols: int) -> str:
     )
 
 
-def col_header_row(*cols: str) -> str:
-    cells = "".join(
-        f'<td style="padding:8px 18px;font-size:11px;font-weight:600;'
-        f'color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;'
-        f'background:#f9fafb;border-bottom:1px solid #efefef;">'
-        f"{esc(c)}</td>"
-        for c in cols
-    )
+def col_header_row(cols: list[str], widths: list[str] | None = None) -> str:
+    if widths is None:
+        widths = [""] * len(cols)
+    cells = ""
+    for c, w in zip(cols, widths):
+        width_attr = f' width="{w}"' if w else ""
+        cells += (
+            f'<td{width_attr} style="padding:8px 18px;'
+            f'font-size:11px;font-weight:600;'
+            f'color:#6b7280;text-transform:uppercase;letter-spacing:0.05em;'
+            f'background:#f9fafb;border-bottom:1px solid #efefef;">'
+            f"{esc(c)}</td>"
+        )
     return f"<tr>{cells}</tr>"
 
 
@@ -326,7 +331,8 @@ def name_cell(merger: dict, color: dict) -> str:
         else ""
     )
     return (
-        f'<td style="padding:11px 18px;vertical-align:top;min-width:180px;">'
+        f'<td style="padding:11px 18px;vertical-align:top;'
+        f'word-break:break-word;overflow-wrap:break-word;">'
         f"{merger_link(merger, color)}{waiver}"
         f'<div style="color:#9ca3af;font-size:11px;margin-top:2px;">{mid}</div>'
         f"</td>"
@@ -372,18 +378,48 @@ def text_cell(text: str, bold_color: str | None = None) -> str:
     )
 
 
-def section_table(header_row: str, col_row: str, data_rows: str) -> str:
+def section_table(
+    header_row: str,
+    col_row: str,
+    data_rows: str,
+    col_widths: list[str] | None = None,
+) -> str:
+    """Render a section table.
+
+    ``col_widths`` pins the column widths via a ``<colgroup>`` and
+    ``table-layout:fixed`` so the merger-name column can't stretch to fit
+    long names and starve the summary/determination column. Clients that
+    ignore ``colgroup`` fall back to the ``width`` hints on the column
+    header cells.
+    """
+    colgroup = ""
+    layout = ""
+    if col_widths:
+        colgroup = (
+            "<colgroup>"
+            + "".join(f'<col style="width:{w};">' for w in col_widths)
+            + "</colgroup>"
+        )
+        layout = "table-layout:fixed;"
     return (
         '<table width="100%" cellpadding="0" cellspacing="0" border="0" '
         'style="border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;'
-        'margin-bottom:20px;">'
-        f"{header_row}{col_row}{data_rows}"
+        f'{layout}margin-bottom:20px;">'
+        f"{colgroup}{header_row}{col_row}{data_rows}"
         "</table>"
     )
 
 # ---------------------------------------------------------------------------
 # Section builders
 # ---------------------------------------------------------------------------
+
+# Column widths (Merger | Date | last column). Summary-heavy sections give
+# the bulk of the width to the description; determination/stage sections have
+# a short final column, so the merger name can take more room there.
+SUMMARY_COL_WIDTHS = ["26%", "18%", "56%"]
+DETERMINATION_COL_WIDTHS = ["46%", "20%", "34%"]
+CEASED_COL_WIDTHS = ["42%", "24%", "34%"]
+
 
 def _row_divider() -> str:
     return ' style="border-bottom:1px solid #f5f5f5;"'
@@ -393,7 +429,7 @@ def build_new_mergers(mergers: list) -> str:
     c = COLORS["new_merger"]
     num_cols = 3
     hdr = section_header_row("New mergers notified", c, num_cols)
-    cols = col_header_row("Merger", "Notified", "Summary")
+    cols = col_header_row(["Merger", "Notified", "Summary"], SUMMARY_COL_WIDTHS)
     if not mergers:
         rows = empty_row("No new mergers notified this week.", c, num_cols)
     else:
@@ -407,7 +443,7 @@ def build_new_mergers(mergers: list) -> str:
                 f"{text_cell(desc)}"
                 f"</tr>"
             )
-    return section_table(hdr, cols, rows)
+    return section_table(hdr, cols, rows, SUMMARY_COL_WIDTHS)
 
 
 def _cleared_phase(merger: dict) -> str:
@@ -450,7 +486,7 @@ def build_cleared(mergers: list) -> str:
     c = COLORS["cleared"]
     num_cols = 3
     hdr = section_header_row("Mergers approved", c, num_cols)
-    cols = col_header_row("Merger", "Date", "Determination")
+    cols = col_header_row(["Merger", "Date", "Determination"], DETERMINATION_COL_WIDTHS)
     if not mergers:
         rows = empty_row("No mergers approved this week.", c, num_cols)
     else:
@@ -472,14 +508,14 @@ def build_cleared(mergers: list) -> str:
                     f"{text_cell(det, c['dark'])}"
                     f"</tr>"
                 )
-    return section_table(hdr, cols, rows)
+    return section_table(hdr, cols, rows, DETERMINATION_COL_WIDTHS)
 
 
 def build_declined(mergers: list) -> str:
     c = COLORS["declined"]
     num_cols = 3
     hdr = section_header_row("Mergers declined", c, num_cols)
-    cols = col_header_row("Merger", "Date", "Determination")
+    cols = col_header_row(["Merger", "Date", "Determination"], DETERMINATION_COL_WIDTHS)
     if not mergers:
         rows = empty_row("No mergers declined this week.", c, num_cols)
     else:
@@ -498,14 +534,14 @@ def build_declined(mergers: list) -> str:
                 f"{text_cell(det, c['dark'])}"
                 f"</tr>"
             )
-    return section_table(hdr, cols, rows)
+    return section_table(hdr, cols, rows, DETERMINATION_COL_WIDTHS)
 
 
 def build_referred_to_phase_2(mergers: list) -> str:
     c = COLORS["phase_2_referral"]
     num_cols = 3
     hdr = section_header_row("Mergers referred to phase 2", c, num_cols)
-    cols = col_header_row("Merger", "Referral date", "Determination")
+    cols = col_header_row(["Merger", "Referral date", "Determination"], DETERMINATION_COL_WIDTHS)
     if not mergers:
         rows = empty_row("No mergers referred to phase 2 this week.", c, num_cols)
     else:
@@ -523,14 +559,14 @@ def build_referred_to_phase_2(mergers: list) -> str:
                 f"{text_cell(det, c['dark'])}"
                 f"</tr>"
             )
-    return section_table(hdr, cols, rows)
+    return section_table(hdr, cols, rows, DETERMINATION_COL_WIDTHS)
 
 
 def build_ceased(mergers: list) -> str:
     c = COLORS["ceased"]
     num_cols = 3
     hdr = section_header_row("Assessment ceased", c, num_cols)
-    cols = col_header_row("Merger", "Date ceased", "Stage")
+    cols = col_header_row(["Merger", "Date ceased", "Stage"], CEASED_COL_WIDTHS)
     rows = ""
     for m in mergers:
         rows += (
@@ -540,14 +576,14 @@ def build_ceased(mergers: list) -> str:
             f"{text_cell(m.get('stage') or 'N/A', c['dark'])}"
             f"</tr>"
         )
-    return section_table(hdr, cols, rows)
+    return section_table(hdr, cols, rows, CEASED_COL_WIDTHS)
 
 
 def build_phase_section(mergers: list, phase_key: str, title: str) -> str:
     c = COLORS[phase_key]
     num_cols = 3
     hdr = section_header_row(title, c, num_cols)
-    cols = col_header_row("Merger", "Dates", "Summary")
+    cols = col_header_row(["Merger", "Dates", "Summary"], SUMMARY_COL_WIDTHS)
     if not mergers:
         rows = empty_row(f"No ongoing {title.lower().split('–')[0].strip()} mergers.", c, num_cols)
     else:
@@ -561,7 +597,7 @@ def build_phase_section(mergers: list, phase_key: str, title: str) -> str:
                 f"{text_cell(desc)}"
                 f"</tr>"
             )
-    return section_table(hdr, cols, rows)
+    return section_table(hdr, cols, rows, SUMMARY_COL_WIDTHS)
 
 # ---------------------------------------------------------------------------
 # Full email builder
