@@ -17,7 +17,7 @@ import { useFetchData } from '../hooks/useFetchData';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN } from '../utils/classNames';
-import { slugify, mergerPath } from '../utils/slug';
+import { slugify, mergerPath, industryPath } from '../utils/slug';
 
 // Display text for each related-merger relationship. Keys match the
 // `relationship` values produced by the data pipeline (see
@@ -404,7 +404,7 @@ function MergerDetail() {
               {merger.anzsic_codes.map((code) => (
                 <Link
                   key={`anzsic-${code.code || code.name}`}
-                  to={code.code ? `/industries/${encodeURIComponent(code.code)}` : `/mergers?q=${encodeURIComponent(code.name)}`}
+                  to={code.code ? industryPath(code.code, code.name) : `/mergers?q=${encodeURIComponent(code.name)}`}
                   className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm bg-gray-50 text-gray-600 border border-gray-100 hover:bg-primary/5 hover:text-primary hover:border-primary/20 transition-all"
                 >
                   {code.name}

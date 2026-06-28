@@ -39,3 +39,15 @@ def merger_path(merger_id: str, name: str) -> str:
     """
     slug = slugify(name)
     return f"/mergers/{merger_id}/{slug}" if slug else f"/mergers/{merger_id}"
+
+
+def industry_path(code: str, name: str) -> str:
+    """Build the canonical path for an industry detail page.
+
+    Includes the readable slug when one can be derived from the industry name,
+    otherwise falls back to the bare ``/industries/{code}`` form. Like the
+    merger slug, this is purely decorative — industry pages are always looked up
+    by their ANZSIC ``code``.
+    """
+    slug = slugify(name)
+    return f"/industries/{code}/{slug}" if slug else f"/industries/{code}"

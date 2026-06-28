@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from 'react-icons/fa6';
+import { industryPath } from '../utils/slug';
 
 // A treemap-style heatmap of industries: cells packed by deal volume (flex-grow
 // proportional to the merger count) and shaded by intensity. Acts as the visual
@@ -44,7 +45,7 @@ function IndustryTreemap({
           return (
             <Link
               key={ind.code}
-              to={`/industries/${ind.code}`}
+              to={industryPath(ind.code, ind.name)}
               className={`group relative rounded-xl px-4 py-3 flex-col justify-between transition-colors ${cellTone(intensity)} ${
                 hideOnMobile ? 'hidden sm:flex' : 'flex'
               }`}

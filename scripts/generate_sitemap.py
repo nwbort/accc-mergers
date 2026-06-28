@@ -20,7 +20,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 from merger_filters import load_mergers
-from slug import merger_path
+from slug import industry_path, merger_path
 from static_data import anzsic
 
 
@@ -128,8 +128,13 @@ def generate_sitemap(mergers):
     all_codes = set(anzsic.hierarchy()) | set(industry_latest)
     for code in sorted(all_codes):
         raw = industry_latest.get(code)
+        # Append the readable slug derived from the ANZSIC name, matching what
+        # the SPA renders and links to. Codes tagged outside the known tree have
+        # no node (and so no name) and fall back to the bare /industries/{code}.
+        node = anzsic.get(code)
+        path = industry_path(code, node.name if node else "")
         lines.append(url_entry(
-            loc=escape(f"{BASE_URL}/industries/{code}"),
+            loc=escape(f"{BASE_URL}{path}"),
             lastmod=_format_lastmod(raw) if raw else TODAY,
             changefreq="weekly",
             priority="0.5",
