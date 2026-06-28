@@ -10,7 +10,7 @@ import {
 } from 'chart.js';
 import StatCard from '../components/StatCard';
 import LoadingSpinner from '../components/LoadingSpinner';
-import UpcomingEventsTable from '../components/UpcomingEventsTable';
+import UpcomingEventsTimeline from '../components/UpcomingEventsTimeline';
 import RecentDeterminationsCards from '../components/RecentDeterminationsCards';
 import RecentMergersCards from '../components/RecentMergersCards';
 import SEO from '../components/SEO';
@@ -193,7 +193,7 @@ function Dashboard() {
         });
         return eventsWithin7Days.length > 0 ? (
           <div className="mb-8">
-            <UpcomingEventsTable events={eventsWithin7Days} />
+            <UpcomingEventsTimeline events={eventsWithin7Days} />
           </div>
         ) : null;
       })()}

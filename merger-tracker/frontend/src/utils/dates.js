@@ -1,4 +1,4 @@
-import { format, parseISO, differenceInDays, addDays, getDay, isValid } from 'date-fns';
+import { format, parseISO, differenceInDays, differenceInCalendarDays, addDays, getDay, isValid } from 'date-fns';
 import actPublicHolidays from '../data/act-public-holidays.json';
 
 // Build a Set of public holiday dates for fast lookup
@@ -156,6 +156,21 @@ export const formatDateMedium = (dateString) => {
   }
 };
 
+/**
+ * Format a date as a short weekday + day + month for agenda views
+ * (e.g. "Mon 29 Jun").
+ * @param {string} dateString - Date in ISO format
+ * @returns {string} The formatted day
+ */
+export const formatWeekday = (dateString) => {
+  if (!dateString) return 'N/A';
+  try {
+    return format(parseISO(dateString), 'EEE d MMM');
+  } catch {
+    return 'Invalid date';
+  }
+};
+
 export const calculateDuration = (startDate, endDate) => {
   if (!startDate || !endDate) return null;
   try {
@@ -175,6 +190,25 @@ export const getDaysRemaining = (endDate) => {
     if (!isValid(parsed)) return null;
     const days = differenceInDays(parsed, new Date());
     return days > 0 ? days : 0;
+  } catch {
+    return null;
+  }
+};
+
+/**
+ * Get the number of calendar days from today until a date. Unlike
+ * getDaysRemaining (which counts full 24-hour periods), this counts day-boundary
+ * crossings, so an event later today is 0, tomorrow is 1, and so on regardless
+ * of the time of day. Past dates return a negative value.
+ * @param {string} endDate - End date in ISO format
+ * @returns {number|null} Calendar days until the date, or null if invalid
+ */
+export const getCalendarDaysUntil = (endDate) => {
+  if (!endDate) return null;
+  try {
+    const parsed = parseISO(endDate);
+    if (!isValid(parsed)) return null;
+    return differenceInCalendarDays(parsed, new Date());
   } catch {
     return null;
   }
