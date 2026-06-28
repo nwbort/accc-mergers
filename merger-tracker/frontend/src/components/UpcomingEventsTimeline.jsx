@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { FaRegComments, FaGavel, FaTriangleExclamation } from 'react-icons/fa6';
 import { mergerPath } from '../utils/slug';
-import { formatWeekday, getDaysRemaining } from '../utils/dates';
+import { formatWeekday, getCalendarDaysUntil } from '../utils/dates';
 
 // Each event type carries its own accent (icon tile + chip) so the kind of
 // deadline is recognisable at a glance, independent of the urgency colouring
@@ -96,7 +96,7 @@ function UpcomingEventsTimeline({ events }) {
 
       <ol className="px-5 sm:px-6 py-5">
         {days.map((day, dayIndex) => {
-          const daysRemaining = getDaysRemaining(day.date);
+          const daysRemaining = getCalendarDaysUntil(day.date);
           const urgency = getUrgency(daysRemaining);
           const isLast = dayIndex === days.length - 1;
 

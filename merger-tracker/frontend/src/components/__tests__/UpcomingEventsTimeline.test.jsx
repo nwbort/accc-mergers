@@ -67,6 +67,16 @@ describe('UpcomingEventsTimeline', () => {
     expect(screen.getByText('Gamma – Delta')).toBeInTheDocument();
   });
 
+  it('labels by calendar day, not elapsed 24-hour periods', () => {
+    // Afternoon on the 28th: an event at noon UTC on the 29th is under 24h away
+    // but is still the next calendar day, so it must read "Tomorrow", not "Today".
+    vi.setSystemTime(new Date('2026-06-28T13:00:00Z'));
+    renderTimeline([makeEvent({ date: '2026-06-29T12:00:00Z' })]);
+
+    expect(screen.getByText('Tomorrow')).toBeInTheDocument();
+    expect(screen.queryByText('Today')).not.toBeInTheDocument();
+  });
+
   it('labels events by type and links to the merger', () => {
     renderTimeline([
       makeEvent({ type: 'determination_due', merger_name: 'Acme – Globex' }),
