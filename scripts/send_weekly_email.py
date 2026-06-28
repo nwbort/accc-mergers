@@ -340,6 +340,26 @@ def date_cell(date_str: str) -> str:
     )
 
 
+def date_stack_cell(notified: str, due: str) -> str:
+    """Two dates stacked vertically in one column, each with a small label.
+
+    Used for the ongoing phase tables so the dates take a single, narrow
+    column and the summary gets more horizontal space.
+    """
+    label = (
+        'display:block;color:#9ca3af;font-size:10px;font-weight:600;'
+        'text-transform:uppercase;letter-spacing:0.04em;'
+    )
+    return (
+        f'<td style="padding:11px 18px;vertical-align:top;white-space:nowrap;'
+        f'font-size:13px;color:#4b5563;">'
+        f'<span style="{label}">Notified</span>{esc(format_date(notified))}'
+        f'<span style="{label}margin-top:6px;">Due</span>'
+        f"{esc(format_date(due))}"
+        f"</td>"
+    )
+
+
 def text_cell(text: str, bold_color: str | None = None) -> str:
     style = (
         f"color:{bold_color};font-weight:600;"
@@ -525,9 +545,9 @@ def build_ceased(mergers: list) -> str:
 
 def build_phase_section(mergers: list, phase_key: str, title: str) -> str:
     c = COLORS[phase_key]
-    num_cols = 4
+    num_cols = 3
     hdr = section_header_row(title, c, num_cols)
-    cols = col_header_row("Merger", "Notified", "Due", "Summary")
+    cols = col_header_row("Merger", "Dates", "Summary")
     if not mergers:
         rows = empty_row(f"No ongoing {title.lower().split('–')[0].strip()} mergers.", c, num_cols)
     else:
@@ -537,8 +557,7 @@ def build_phase_section(mergers: list, phase_key: str, title: str) -> str:
             rows += (
                 f"<tr{_row_divider()}>"
                 f"{name_cell(m, c)}"
-                f"{date_cell(m.get('effective_notification_datetime'))}"
-                f"{date_cell(m.get('end_of_determination_period'))}"
+                f"{date_stack_cell(m.get('effective_notification_datetime'), m.get('end_of_determination_period'))}"
                 f"{text_cell(desc)}"
                 f"</tr>"
             )
