@@ -40,7 +40,11 @@
     {
       "name": "ANGLO AMERICAN AUSTRALIA LIMITED",
       "identifier_type": "ABN",
-      "identifier": "47 004 892 371"
+      "identifier": "47 004 892 371",
+      "canonical": {
+        "id": "anglo-american-plc",
+        "name": "Anglo American plc"
+      }
     },
     {
       "name": "ANGLO AMERICAN NETHERLANDS B.V.",
@@ -57,12 +61,20 @@
     {
       "name": "DHILMAR AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "49 697 035 868"
+      "identifier": "49 697 035 868",
+      "canonical": {
+        "id": "dhilmar-ltd",
+        "name": "Dhilmar Ltd"
+      }
     },
     {
       "name": "DHILMAR LTD",
       "identifier_type": null,
-      "identifier": "UK CRN  16077471"
+      "identifier": "UK CRN  16077471",
+      "canonical": {
+        "id": "dhilmar-ltd",
+        "name": "Dhilmar Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -134,7 +146,11 @@
         {
           "name": "Anglo American plc",
           "identifier_type": null,
-          "identifier": "03564138"
+          "identifier": "03564138",
+          "canonical": {
+            "id": "anglo-american-plc",
+            "name": "Anglo American plc"
+          }
         }
       ],
       "targets": [
