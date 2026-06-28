@@ -156,6 +156,21 @@ export const formatDateMedium = (dateString) => {
   }
 };
 
+/**
+ * Format a date as a short weekday + day + month for agenda views
+ * (e.g. "Mon 29 Jun").
+ * @param {string} dateString - Date in ISO format
+ * @returns {string} The formatted day
+ */
+export const formatWeekday = (dateString) => {
+  if (!dateString) return 'N/A';
+  try {
+    return format(parseISO(dateString), 'EEE d MMM');
+  } catch {
+    return 'Invalid date';
+  }
+};
+
 export const calculateDuration = (startDate, endDate) => {
   if (!startDate || !endDate) return null;
   try {

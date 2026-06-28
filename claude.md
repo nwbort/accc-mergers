@@ -50,7 +50,7 @@ merger-tracker/frontend/src/
 │   ├── Navbar.jsx, Footer.jsx, ErrorBoundary.jsx, SEO.jsx
 │   ├── StatusBadge.jsx, WaiverBadge.jsx, NewBadge.jsx
 │   ├── StatCard.jsx, LoadingSpinner.jsx
-│   ├── UpcomingEventsTable.jsx, RecentDeterminationsTable.jsx
+│   ├── UpcomingEventsTimeline.jsx, RecentDeterminationsCards.jsx, RecentMergersCards.jsx
 │   ├── NotificationPanel.jsx, BellIcon.jsx
 │   ├── KeyboardShortcutsHelp.jsx
 │   └── ExternalLinkIcon.jsx
