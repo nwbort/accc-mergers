@@ -311,7 +311,7 @@ def col_header_row(cols: list[str], widths: list[str] | None = None) -> str:
             f'background:#f9fafb;border-bottom:1px solid #efefef;">'
             f"{esc(c)}</td>"
         )
-    return f"<tr>{cells}</tr>"
+    return f'<tr class="col-head">{cells}</tr>'
 
 
 def empty_row(message: str, color: dict, num_cols: int) -> str:
@@ -331,8 +331,8 @@ def name_cell(merger: dict, color: dict) -> str:
         else ""
     )
     return (
-        f'<td style="padding:11px 18px;vertical-align:top;'
-        f'word-break:break-word;overflow-wrap:break-word;">'
+        f'<td class="cell cell-merger" style="padding:11px 18px;'
+        f'vertical-align:top;overflow-wrap:break-word;">'
         f"{merger_link(merger, color)}{waiver}"
         f'<div style="color:#9ca3af;font-size:11px;margin-top:2px;">{mid}</div>'
         f"</td>"
@@ -341,8 +341,9 @@ def name_cell(merger: dict, color: dict) -> str:
 
 def date_cell(date_str: str) -> str:
     return (
-        f'<td style="padding:11px 18px;vertical-align:top;white-space:nowrap;'
-        f'font-size:13px;color:#4b5563;">{esc(format_date(date_str))}</td>'
+        f'<td class="cell cell-date" style="padding:11px 18px;vertical-align:top;'
+        f'white-space:nowrap;font-size:13px;color:#4b5563;">'
+        f"{esc(format_date(date_str))}</td>"
     )
 
 
@@ -357,8 +358,8 @@ def date_stack_cell(notified: str, due: str) -> str:
         'text-transform:uppercase;letter-spacing:0.04em;'
     )
     return (
-        f'<td style="padding:11px 18px;vertical-align:top;white-space:nowrap;'
-        f'font-size:13px;color:#4b5563;">'
+        f'<td class="cell cell-date" style="padding:11px 18px;vertical-align:top;'
+        f'white-space:nowrap;font-size:13px;color:#4b5563;">'
         f'<span style="{label}">Notified</span>{esc(format_date(notified))}'
         f'<span style="{label}margin-top:6px;">Due</span>'
         f"{esc(format_date(due))}"
@@ -373,7 +374,8 @@ def text_cell(text: str, bold_color: str | None = None) -> str:
         else "color:#4b5563;"
     )
     return (
-        f'<td style="padding:11px 18px;vertical-align:top;font-size:13px;'
+        f'<td class="cell cell-summary" style="padding:11px 18px;'
+        f'vertical-align:top;font-size:13px;'
         f'{style}line-height:1.5;">{esc(text)}</td>'
     )
 
@@ -402,7 +404,8 @@ def section_table(
         )
         layout = "table-layout:fixed;"
     return (
-        '<table width="100%" cellpadding="0" cellspacing="0" border="0" '
+        '<table class="sec-table" width="100%" cellpadding="0" cellspacing="0" '
+        'border="0" '
         'style="border-radius:10px;overflow:hidden;border:1px solid #e5e7eb;'
         f'{layout}margin-bottom:20px;">'
         f"{colgroup}{header_row}{col_row}{data_rows}"
@@ -662,6 +665,24 @@ def build_html_email(digest: dict) -> str:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weekly mergers digest for {esc(date_range)} | Australian Merger Tracker</title>
+  <style>
+    /* On narrow screens the fixed three-column layout can't fit: merger
+       names break mid-word and the date column overlaps the summary. Stack
+       the cells vertically instead so each gets the full width. */
+    @media only screen and (max-width:600px) {{
+      table.sec-table {{ table-layout:auto !important; }}
+      table.sec-table colgroup {{ display:none !important; }}
+      table.sec-table tr.col-head {{ display:none !important; }}
+      table.sec-table td.cell {{
+        display:block !important;
+        width:100% !important;
+        box-sizing:border-box !important;
+        white-space:normal !important;
+        padding:10px 18px 0 !important;
+      }}
+      table.sec-table td.cell-summary {{ padding-bottom:12px !important; }}
+    }}
+  </style>
 </head>
 <body style="margin:0;padding:0;background-color:#f1f5f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,Helvetica,sans-serif;">
 
