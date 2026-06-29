@@ -2090,7 +2090,11 @@
         {
           "name": "WSP AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "80 078 004 798"
+          "identifier": "80 078 004 798",
+          "canonical": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
+          }
         }
       ],
       "targets": [
@@ -2104,7 +2108,11 @@
         {
           "name": "WSP AUSTRALIA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "90 169 545 395"
+          "identifier": "90 169 545 395",
+          "canonical": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
+          }
         },
         {
           "name": "RICARDO AUSTRALIA PTY LTD",
