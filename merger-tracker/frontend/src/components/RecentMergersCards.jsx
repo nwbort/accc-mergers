@@ -3,7 +3,7 @@ import { mergerPath } from '../utils/slug';
 import { formatDate } from '../utils/dates';
 import { isNewItem } from '../utils/lastVisit';
 import { MERGER_STATUS } from '../constants/mergerStatus';
-import { getCardStyle } from '../constants/cardStyles';
+import { getCardStyle, NEW_ITEM_BORDER } from '../constants/cardStyles';
 import CardCollapseGrid from './CardCollapseGrid';
 
 // Mergers still under assessment stay calm: a white card with a green
@@ -18,13 +18,16 @@ const UNDER_ASSESSMENT_STYLE = {
 };
 
 function getMergerCardStyle(merger) {
-  if (!merger.accc_determination && merger.status === MERGER_STATUS.UNDER_ASSESSMENT) {
-    return UNDER_ASSESSMENT_STYLE;
-  }
-  return getCardStyle({
-    determination: merger.accc_determination,
-    status: merger.status,
-  });
+  const base =
+    !merger.accc_determination && merger.status === MERGER_STATUS.UNDER_ASSESSMENT
+      ? UNDER_ASSESSMENT_STYLE
+      : getCardStyle({
+          determination: merger.accc_determination,
+          status: merger.status,
+        });
+  // Highlight recently notified mergers the visitor hasn't seen yet (those that
+  // also show a "New" badge) with a blue ring so they stand out.
+  return isNewItem(merger.merger_id) ? { ...base, border: NEW_ITEM_BORDER } : base;
 }
 
 function RecentMergersCards({ mergers }) {

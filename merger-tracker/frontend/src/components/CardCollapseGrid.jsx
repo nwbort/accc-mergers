@@ -30,7 +30,7 @@ function CardCollapseGrid({ items, getKey, getStyle, renderBody }) {
           return (
             <li
               key={getKey(item, index)}
-              className={`relative ${visibilityClass(index)} min-h-[7rem] flex-col justify-between rounded-xl p-4 transition-colors ${style.bg} ${style.text}`}
+              className={`relative ${visibilityClass(index)} min-h-[7rem] flex-col justify-between rounded-xl p-4 transition-colors ${style.bg} ${style.text} ${style.border || ''}`}
             >
               {renderBody(item, style)}
             </li>

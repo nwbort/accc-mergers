@@ -3,12 +3,19 @@ import { mergerPath } from '../utils/slug';
 import { formatDate } from '../utils/dates';
 import { isNewItem } from '../utils/lastVisit';
 import { MERGER_STATUS } from '../constants/mergerStatus';
-import { getCardStyle } from '../constants/cardStyles';
+import { getCardStyle, NEW_ITEM_BORDER } from '../constants/cardStyles';
 import CardCollapseGrid from './CardCollapseGrid';
 
 const DETERMINATION_LABELS = {
   [MERGER_STATUS.ASSESSMENT_CEASED]: 'Ceased',
 };
+
+function getDeterminationCardStyle(item) {
+  const base = getCardStyle({ determination: item.determination });
+  // Highlight recent determinations the visitor hasn't seen yet (those that
+  // also show a "New" badge) with a blue ring so they stand out.
+  return isNewItem(item.merger_id) ? { ...base, border: NEW_ITEM_BORDER } : base;
+}
 
 function RecentDeterminationsCards({ determinations }) {
   if (!determinations || determinations.length === 0) {
@@ -35,7 +42,7 @@ function RecentDeterminationsCards({ determinations }) {
         getKey={(item) =>
           `${item.merger_id}-${item.determination_date}-${item.determination_type}`
         }
-        getStyle={(item) => getCardStyle({ determination: item.determination })}
+        getStyle={getDeterminationCardStyle}
         renderBody={(item, style) => (
           <>
             <div className="flex items-start justify-between gap-2">
