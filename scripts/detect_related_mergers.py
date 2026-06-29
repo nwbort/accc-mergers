@@ -34,7 +34,8 @@ are filtered out.
 
 Usage
 -----
-  python scripts/detect_related_mergers.py [--threshold 0.70] [--json PATH]
+  python scripts/detect_related_mergers.py [--threshold 0.70] [--summary]
+  python scripts/detect_related_mergers.py --apply-suggestions --pr-markdown pr_body.md
 
 Exit code is 1 if new candidate pairs are found (useful in CI), 0 otherwise.
 """
@@ -349,23 +350,11 @@ def find_candidates(
 
 
 # ---------------------------------------------------------------------------
-# Issue body construction
+# Reporting helpers
 # ---------------------------------------------------------------------------
 
 def mergers_fyi_url(merger_id: str) -> str:
     return f"{_MERGERS_FYI_BASE}/{merger_id}"
-
-
-def edit_related_mergers_url(branch: str = "main") -> str:
-    return f"https://github.com/{_REPO}/edit/{branch}/{_RELATED_PATH}"
-
-
-def json_line_for(candidate: dict) -> str:
-    """Render the exact line to paste into the `pairs` array of related_mergers.json."""
-    return (
-        f'    {{ "from": "{candidate["source"]}", '
-        f'"to": "{candidate["target"]}", "type": "{candidate["type"]}" }},'
-    )
 
 
 def _format_signals(signals: dict) -> str:
@@ -381,100 +370,145 @@ def _format_signals(signals: dict) -> str:
 
 
 def pair_id(candidate: dict) -> str:
-    """Canonical, parseable identifier used in titles and for de-duplication."""
+    """Canonical, parseable identifier for a candidate pair."""
     return f"{candidate['source']}/{candidate['target']}"
 
 
-def build_issue_title(candidate: dict) -> str:
-    src = candidate["source"]
-    tgt = candidate["target"]
-    # The `<ID>/<ID>` substring is the marker the workflow greps for to decide
-    # whether an issue already exists for this pair.
-    name = candidate.get("source_name") or candidate.get("target_name") or ""
-    base = f"Related mergers: {src}/{tgt}"
-    if name:
-        base = f"{base} — {name}"
-    # GitHub issue title limit is 256 chars
-    if len(base) > 240:
-        base = base[:237] + "..."
-    return base
-
-
 def _relationship_blurb(candidate: dict) -> str:
-    """One-line description of the relationship pattern for the issue body."""
+    """One-line description of the relationship pattern for the PR body."""
     if candidate["type"] == SUSPENDED_REFILED:
         return (
-            "A \"related merger\" here is a matter whose assessment was "
-            "**suspended** and which appears to have been **re-filed** as a "
-            "separate matter (see the `_README` field in the JSON)."
+            "A matter whose assessment was **suspended** and which appears to "
+            "have been **re-filed** as a separate matter."
         )
     return (
-        "A \"related merger\" is one that was initially filed as a **waiver** "
-        "application, declined, then re-filed as a formal **notification** "
-        "(see the `_README` field in the JSON)."
+        "A matter initially filed as a **waiver** application, declined, then "
+        "re-filed as a formal **notification**."
     )
 
 
-def build_issue_body(candidate: dict, branch: str = "main") -> str:
-    src = candidate["source"]
-    tgt = candidate["target"]
-    edit_url = edit_related_mergers_url(branch)
-    related_blob = f"https://github.com/{_REPO}/blob/{branch}/{_RELATED_PATH}"
+# ---------------------------------------------------------------------------
+# Applying suggestions to related_mergers.json
+# ---------------------------------------------------------------------------
 
-    if candidate["type"] == SUSPENDED_REFILED:
-        source_label = "Suspended matter"
-        source_detail = f"status: {candidate['source_status'] or 'unknown'}"
-        target_label = "Re-filed as"
-        target_detail = f"status: {candidate['target_status'] or 'unknown'}"
-    else:
-        source_label = "Waiver"
-        source_detail = (
-            f"determination: {candidate['source_determination'] or 'unknown'}"
+def _pair_from_candidate(candidate: dict) -> dict:
+    """Render a candidate as a pair entry for related_mergers.json."""
+    return {
+        "from": candidate["source"],
+        "to": candidate["target"],
+        "type": candidate["type"],
+    }
+
+
+def write_related_mergers(path: Path, data: dict) -> None:
+    """Write related_mergers.json, preserving the compact one-line-per-pair style."""
+    pairs = data.get("pairs", [])
+    lines = ["{"]
+    if "_README" in data:
+        lines.append(f"  {json.dumps('_README')}: {json.dumps(data['_README'])},")
+    lines.append('  "pairs": [')
+    for i, p in enumerate(pairs):
+        trailing = "," if i < len(pairs) - 1 else ""
+        lines.append(
+            f'    {{ "from": "{p["from"]}", "to": "{p["to"]}", '
+            f'"type": "{p.get("type", WAIVER_REFILED)}" }}{trailing}'
         )
-        target_label = "Notification"
-        target_detail = f"status: {candidate['target_status'] or 'unknown'}"
+    lines.append("  ]")
+    lines.append("}")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text("\n".join(lines) + "\n")
 
+
+def apply_suggestions(related_path: Path, candidates: list[dict]) -> int:
+    """Append candidate pairs to related_mergers.json in-place. Returns count added."""
+    if related_path.exists():
+        with related_path.open() as fh:
+            data = json.load(fh)
+    else:
+        data = {"pairs": []}
+    data.setdefault("pairs", [])
+    data["pairs"].extend(_pair_from_candidate(c) for c in candidates)
+    write_related_mergers(related_path, data)
+    return len(candidates)
+
+
+# ---------------------------------------------------------------------------
+# PR body construction
+# ---------------------------------------------------------------------------
+
+def build_pr_body(candidates: list[dict], date: str) -> str:
+    """Build a markdown PR body recommending the candidate pairs."""
+    related_blob = f"https://github.com/{_REPO}/blob/main/{_RELATED_PATH}"
     lines = [
-        f"<!-- pair-id: {pair_id(candidate)} -->",
-        f"The daily detector thinks **`{src}`** and **`{tgt}`** look like a "
-        f"related-merger pair that isn't yet in "
+        f"The daily detector found **{len(candidates)}** candidate related-merger "
+        f"pair(s) on **{date}** that aren't yet recorded in "
         f"[`{_RELATED_PATH}`]({related_blob}).",
         "",
-        _relationship_blurb(candidate),
+        "Each pair below is one matter that appears to have been re-filed as "
+        "another. The change in this PR adds them to `related_mergers.json`; once "
+        "merged, each merger detail page links to its related matter.",
         "",
-        "## The two mergers",
+        "Review each pair, **edit or remove any that are wrong**, then merge.",
         "",
-        f"- **{source_label}:** [{src} — {candidate['source_name']}]({mergers_fyi_url(src)}) "
-        f"· filed {candidate['source_filed'] or 'unknown'} · {source_detail}",
-        f"- **{target_label}:** [{tgt} — {candidate['target_name']}]({mergers_fyi_url(tgt)}) "
-        f"· filed {candidate['target_filed'] or 'unknown'} · {target_detail}",
+        "---",
         "",
-        f"**Match confidence:** {candidate['score']:.2f}  ",
-        f"**Signals:** {_format_signals(candidate['signals'])}",
-        "",
-        "## To accept this suggestion",
-        "",
-        f"1. [**Open `related_mergers.json` for editing on GitHub →**]({edit_url})",
-        "2. Paste the following line into the `pairs` array:",
-        "",
-        "```json",
-        json_line_for(candidate),
-        "```",
-        "",
-        "3. Commit on `main` (or via a PR) — the next run will then see the "
-        "pair is recorded and will auto-close this issue.",
-        "",
-        "## If this isn't a real pair",
-        "",
-        "Just close the issue. The workflow treats any closed issue for this "
-        "pair as a permanent \"no\" and will not re-raise it on future runs.",
     ]
+    for c in candidates:
+        src, tgt = c["source"], c["target"]
+        if c["type"] == SUSPENDED_REFILED:
+            source_label = "Suspended matter"
+            source_detail = f"status: {c['source_status'] or 'unknown'}"
+            target_label = "Re-filed as"
+            target_detail = f"status: {c['target_status'] or 'unknown'}"
+        else:
+            source_label = "Waiver"
+            source_detail = f"determination: {c['source_determination'] or 'unknown'}"
+            target_label = "Notification"
+            target_detail = f"status: {c['target_status'] or 'unknown'}"
+
+        lines.append(f"### `{src}` ↔ `{tgt}`  ·  `type: {c['type']}`")
+        lines.append("")
+        lines.append(
+            f"_{_relationship_blurb(c)} (confidence {c['score']:.2f})._"
+        )
+        lines.append("")
+        lines.append(
+            f"- **{source_label}:** [{src} — {c['source_name']}]({mergers_fyi_url(src)}) "
+            f"· filed {c['source_filed'] or 'unknown'} · {source_detail}"
+        )
+        lines.append(
+            f"- **{target_label}:** [{tgt} — {c['target_name']}]({mergers_fyi_url(tgt)}) "
+            f"· filed {c['target_filed'] or 'unknown'} · {target_detail}"
+        )
+        lines.append("")
+        lines.append(f"**Signals:** {_format_signals(c['signals'])}")
+        lines.append("")
+    lines.extend([
+        "---",
+        "",
+        f"*Generated automatically by the [Detect Related Mergers]"
+        f"(https://github.com/{_REPO}/actions/workflows/detect-related-mergers.yml) workflow.*",
+    ])
     return "\n".join(lines)
 
 
 # ---------------------------------------------------------------------------
 # CLI
 # ---------------------------------------------------------------------------
+
+def print_summary(candidates: list[dict], threshold: float) -> None:
+    if not candidates:
+        print("No new related-merger candidates found.")
+        return
+    print(f"Found {len(candidates)} candidate pair(s) above threshold {threshold}:")
+    print()
+    for c in candidates:
+        print(f"  {c['source']} ↔ {c['target']}  (score {c['score']:.2f}, {c['type']})")
+        print(f"    source : {c['source_name']}")
+        print(f"    target : {c['target_name']}")
+        print(f"    signals: {_format_signals(c['signals'])}")
+        print()
+
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
@@ -487,21 +521,22 @@ def main() -> int:
         help=f"Minimum confidence score to report (default {DEFAULT_THRESHOLD})",
     )
     parser.add_argument(
-        "--branch",
-        default="main",
-        help="Branch name used in GitHub links within issue bodies",
-    )
-    parser.add_argument(
-        "--issue-json",
-        type=Path,
-        default=None,
-        help="If set, write a JSON payload (candidates + per-pair title/body + "
-        "recorded_pairs) to this path, for use by the workflow.",
-    )
-    parser.add_argument(
         "--summary",
         action="store_true",
         help="Print a human-readable summary to stdout",
+    )
+    parser.add_argument(
+        "--apply-suggestions",
+        action="store_true",
+        dest="apply_suggestions",
+        help="Append candidate pairs to the related_mergers.json file in-place",
+    )
+    parser.add_argument(
+        "--pr-markdown",
+        type=Path,
+        default=None,
+        dest="pr_markdown",
+        help="Write a PR body (markdown) recommending the candidates to this path",
     )
     args = parser.parse_args()
 
@@ -516,39 +551,19 @@ def main() -> int:
     known = load_related_pairs(args.related)
     candidates = find_candidates(mergers, known, args.threshold)
 
-    if args.summary or not args.issue_json:
-        if not candidates:
-            print("No new related-merger candidates found.")
-        else:
-            print(f"Found {len(candidates)} candidate pair(s) above threshold {args.threshold}:")
-            print()
-            for c in candidates:
-                print(f"  {c['source']} ↔ {c['target']}  (score {c['score']:.2f}, {c['type']})")
-                print(f"    source : {c['source_name']}")
-                print(f"    target : {c['target_name']}")
-                print(f"    signals: {_format_signals(c['signals'])}")
-                print()
+    if args.summary or not (args.apply_suggestions or args.pr_markdown):
+        print_summary(candidates, args.threshold)
 
-    if args.issue_json:
-        enriched = []
-        for c in candidates:
-            enriched.append({
-                **c,
-                "pair_id": pair_id(c),
-                "title": build_issue_title(c),
-                "body": build_issue_body(c, args.branch),
-            })
-        payload = {
-            "count": len(enriched),
-            "candidates": enriched,
-            # Pairs already recorded in related_mergers.json — used by the
-            # workflow to produce nicer close messages when an open issue's
-            # pair has been recorded since it was raised.
-            "recorded_pairs": sorted(f"{w}/{n}" for w, n in known),
-        }
-        args.issue_json.parent.mkdir(parents=True, exist_ok=True)
-        with args.issue_json.open("w") as fh:
-            json.dump(payload, fh, indent=2)
+    if args.pr_markdown and candidates:
+        from datetime import timezone
+        today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+        args.pr_markdown.parent.mkdir(parents=True, exist_ok=True)
+        with args.pr_markdown.open("w") as fh:
+            fh.write(build_pr_body(candidates, today))
+
+    if args.apply_suggestions and candidates:
+        added = apply_suggestions(args.related, candidates)
+        print(f"Added {added} candidate pair(s) to {args.related}", file=sys.stderr)
 
     return 1 if candidates else 0
 

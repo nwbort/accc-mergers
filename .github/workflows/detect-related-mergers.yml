@@ -8,8 +8,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  issues: write
+  contents: write        # needed to push the suggestion branch
+  pull-requests: write   # needed to create / update the suggestion PR
 
 jobs:
   detect:
@@ -27,116 +27,89 @@ jobs:
       - name: Run related-merger detection
         id: detect
         run: |
-          python3 scripts/detect_related_mergers.py \
-            --branch "${{ github.event.repository.default_branch }}" \
-            --issue-json issue_payload.json || true
-          COUNT=$(jq -r '.count' issue_payload.json)
-          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          if python3 scripts/detect_related_mergers.py --summary; then
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "found=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Write job summary
+        run: |
           {
             echo "### Related mergers detection"
             echo ""
-            if [ "$COUNT" -gt 0 ]; then
-              echo "Found **$COUNT** candidate pair(s)."
-              jq -r '.candidates[] | "- \(.pair_id) — confidence \(.score)"' issue_payload.json
-            else
-              echo "No candidate pairs found."
-            fi
+            python3 scripts/detect_related_mergers.py --summary || true
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Ensure label exists
+      # Switch to (or create/reset) the well-known suggestion branch so the
+      # commit lands on top of the current default-branch HEAD.
+      - name: Create or reset suggestion branch
+        id: branch
+        if: steps.detect.outputs.found == 'true'
+        run: |
+          BRANCH="fix/related-mergers"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git switch -C "$BRANCH"
+          echo "branch=$BRANCH" >> "$GITHUB_OUTPUT"
+
+      - name: Apply suggested pairs
+        if: steps.detect.outputs.found == 'true'
+        run: |
+          python3 scripts/detect_related_mergers.py \
+            --apply-suggestions \
+            --pr-markdown pr_body.md || true
+
+      - name: Commit and push suggestion branch
+        id: commit
+        if: steps.detect.outputs.found == 'true'
+        run: |
+          BRANCH="${{ steps.branch.outputs.branch }}"
+          if git diff --quiet data/processed/related_mergers.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git add data/processed/related_mergers.json
+            git commit -m "suggest: candidate related mergers detected on $(date -u +%Y-%m-%d)"
+            git push origin "$BRANCH" --force
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create or update pull request
+        if: steps.detect.outputs.found == 'true' && steps.commit.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh label create "related-mergers" \
-            --description "Suggested additions to data/processed/related_mergers.json" \
-            --color "1f6feb" \
-            --force
+          BRANCH="${{ steps.branch.outputs.branch }}"
+          TITLE="suggest: link related mergers ($(date -u +%Y-%m-%d))"
 
-      # List every issue the bot has ever opened for this purpose (open or
-      # closed). A closed issue is treated as a permanent decision — the bot
-      # will NOT re-raise the same pair on a later run.
-      - name: Gather existing related-mergers issues
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh issue list \
-            --label related-mergers \
-            --state all \
-            --limit 500 \
-            --json number,state,title > existing_issues.json
+          EXISTING=$(gh pr list \
+            --head "$BRANCH" \
+            --state open \
+            --json number \
+            --jq '.[0].number' 2>/dev/null || echo "")
 
-          # Extract the "<ID>/<ID>" pair marker from each title.  Titles created
-          # by this workflow always contain that substring (e.g. WA-1234/MN-5678
-          # or MN-1234/MN-5678); anything else is skipped.
-          jq -r '
-            .[]
-            | select(.title | test("[A-Z]{2}-[0-9]+/[A-Z]{2}-[0-9]+"))
-            | [
-                (.title | capture("(?<a>[A-Z]{2}-[0-9]+)/(?<b>[A-Z]{2}-[0-9]+)") | .a + "/" + .b),
-                (.number | tostring),
-                .state
-              ]
-            | @tsv
-          ' existing_issues.json > existing_pairs.tsv
-
-          echo "Existing related-mergers issues (pair, number, state):"
-          cat existing_pairs.tsv || true
-
-      # For each candidate pair, create an issue if (and only if) no issue
-      # for that pair already exists in any state.
-      - name: Create issues for new candidate pairs
-        if: steps.detect.outputs.count != '0'
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          COUNT=$(jq -r '.count' issue_payload.json)
-          CREATED=0
-          SKIPPED=0
-          for i in $(seq 0 $((COUNT - 1))); do
-            PAIR=$(jq -r ".candidates[$i].pair_id" issue_payload.json)
-            if awk -F '\t' -v p="$PAIR" '$1 == p { found=1 } END { exit !found }' existing_pairs.tsv; then
-              STATE=$(awk -F '\t' -v p="$PAIR" '$1 == p { print $3; exit }' existing_pairs.tsv)
-              echo "Skipping $PAIR — existing issue ($STATE)."
-              SKIPPED=$((SKIPPED + 1))
-              continue
-            fi
-            TITLE=$(jq -r ".candidates[$i].title" issue_payload.json)
-            BODY=$(jq -r ".candidates[$i].body" issue_payload.json)
-            URL=$(gh issue create \
+          if [ -n "$EXISTING" ]; then
+            gh pr edit "$EXISTING" --title "$TITLE" --body-file pr_body.md
+            echo "Updated PR #$EXISTING"
+          else
+            gh pr create \
+              --head "$BRANCH" \
               --title "$TITLE" \
-              --body "$BODY" \
-              --label "related-mergers")
-            echo "Created issue for $PAIR: $URL"
-            CREATED=$((CREATED + 1))
-          done
-          {
-            echo ""
-            echo "**Issues created:** $CREATED"
-            echo "**Already-seen pairs skipped:** $SKIPPED"
-          } >> "$GITHUB_STEP_SUMMARY"
+              --body-file pr_body.md
+          fi
 
-      # Close open issues whose pair is no longer flagged by the detector.
-      # This handles the case where the user added the pair to
-      # related_mergers.json (detector now filters it out) or the underlying
-      # data changed.  Issues the user has already closed are left alone.
-      - name: Close open issues for pairs no longer flagged
+      - name: Close suggestion PR when nothing left to recommend
+        if: steps.detect.outputs.found == 'false'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          jq -r '.candidates[].pair_id' issue_payload.json > current_pairs.txt
-          jq -r '.recorded_pairs[]' issue_payload.json > recorded_pairs.txt
-
-          awk -F '\t' '$3 == "OPEN" { print $1 "\t" $2 }' existing_pairs.tsv | \
-          while IFS=$'\t' read -r pair num; do
-            [ -z "$pair" ] && continue
-            if grep -qxF "$pair" current_pairs.txt; then
-              continue   # still flagged — leave the issue open
-            fi
-            if grep -qxF "$pair" recorded_pairs.txt; then
-              MSG="Looks like \`$pair\` is now recorded in \`data/processed/related_mergers.json\` — thanks! Closing automatically."
-            else
-              MSG="The detector no longer flags \`$pair\` (the underlying data may have changed, or the pair was added to \`related_mergers.json\` and then removed). Closing automatically — re-open this issue if you want to act on it."
-            fi
-            echo "Closing #$num for $pair"
-            gh issue close "$num" --comment "$MSG" || true
+          gh pr list \
+            --head "fix/related-mergers" \
+            --state open \
+            --json number \
+            --jq '.[].number' | \
+          while read -r num; do
+            gh pr close "$num" \
+              --comment "All detected related-merger pairs have been recorded as of $(date -u +%Y-%m-%d). Closing automatically." \
+              || true
           done

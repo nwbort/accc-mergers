@@ -90,7 +90,9 @@ Runs `detect_duplicates.py` to identify duplicate merger entries and reports any
 
 ### `detect-related-mergers.yml` — Daily related-merger check (02:30 UTC)
 
-Runs `detect_related_mergers.py` to suggest waiver→notification pairs.
+Runs `detect_related_mergers.py` to suggest re-filed merger pairs (declined
+waiver→notification, or suspended→re-filed), and opens (or updates) a pull
+request recommending additions to `data/processed/related_mergers.json`.
 
 ### `detect-related-parties.yml` — Daily related-party check (02:45 UTC)
 

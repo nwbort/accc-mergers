@@ -180,28 +180,56 @@ def test_soft_date_ordering_rejects_earlier_refile():
 
 
 # ---------------------------------------------------------------------------
-# detector: issue rendering
+# detector: applying suggestions to related_mergers.json
 # ---------------------------------------------------------------------------
 
-def test_json_line_waiver_uses_typed_shape():
-    c = {"type": drm.WAIVER_REFILED, "source": "WA-100", "target": "MN-200"}
-    line = drm.json_line_for(c)
-    assert '"from": "WA-100"' in line
-    assert '"to": "MN-200"' in line
-    assert '"type": "waiver_refiled"' in line
+def test_apply_suggestions_appends_typed_pairs(tmp_path):
+    path = tmp_path / "related_mergers.json"
+    path.write_text(json.dumps({
+        "_README": "doc",
+        "pairs": [{"from": "WA-1", "to": "MN-2", "type": "waiver_refiled"}],
+    }))
+    cands = drm.find_candidates(_mergers(), known_pairs=set(), threshold=0.70)
+    added = drm.apply_suggestions(path, cands)
+    assert added == len(cands)
+
+    data = json.loads(path.read_text())
+    # Original pair preserved, candidates appended.
+    assert {"from": "WA-1", "to": "MN-2", "type": "waiver_refiled"} in data["pairs"]
+    assert {"from": "WA-100", "to": "MN-200", "type": "waiver_refiled"} in data["pairs"]
+    assert {"from": "MN-300", "to": "MN-400", "type": "suspended_refiled"} in data["pairs"]
+    # _README is retained.
+    assert data["_README"] == "doc"
+    # Re-reading the written pairs round-trips through the loader.
+    assert ("WA-100", "MN-200") in drm.load_related_pairs(path)
 
 
-def test_json_line_suspended_uses_typed_shape():
-    c = {"type": drm.SUSPENDED_REFILED, "source": "MN-300", "target": "MN-400"}
-    line = drm.json_line_for(c)
-    assert '"from": "MN-300"' in line
-    assert '"to": "MN-400"' in line
-    assert '"type": "suspended_refiled"' in line
+def test_apply_suggestions_creates_file_when_missing(tmp_path):
+    path = tmp_path / "nested" / "related_mergers.json"
+    cands = drm.find_candidates(_mergers(), known_pairs=set(), threshold=0.70)
+    drm.apply_suggestions(path, cands)
+    data = json.loads(path.read_text())
+    assert len(data["pairs"]) == len(cands)
 
 
-def test_issue_body_describes_suspension_for_suspended_pair():
+def test_write_related_mergers_keeps_compact_one_line_pairs(tmp_path):
+    path = tmp_path / "related_mergers.json"
+    drm.write_related_mergers(path, {
+        "_README": "doc",
+        "pairs": [{"from": "WA-1", "to": "MN-2", "type": "waiver_refiled"}],
+    })
+    text = path.read_text()
+    assert '    { "from": "WA-1", "to": "MN-2", "type": "waiver_refiled" }' in text
+
+
+# ---------------------------------------------------------------------------
+# detector: PR body rendering
+# ---------------------------------------------------------------------------
+
+def test_pr_body_describes_suspension_for_suspended_pair():
     cands = drm.find_candidates(_mergers(), known_pairs=set(), threshold=0.70)
     suspended = next(c for c in cands if c["type"] == drm.SUSPENDED_REFILED)
-    body = drm.build_issue_body(suspended)
+    body = drm.build_pr_body([suspended], "2026-01-01")
     assert "suspended" in body.lower()
+    assert "MN-300" in body and "MN-400" in body
     assert drm.pair_id(suspended) == "MN-300/MN-400"
