@@ -15,7 +15,7 @@
       "code": "34",
       "name": "Machinery and Equipment Wholesaling",
       "level": "subdivision",
-      "merger_count": 15
+      "merger_count": 16
     },
     {
       "code": "35",
@@ -43,6 +43,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-01106",
+      "merger_name": "Midea - Residentia Group",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-26T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-15018",
       "merger_name": "Complete Air Supply - All Air",
@@ -386,11 +395,11 @@
       "determination_date": "2026-01-28T12:00:00Z"
     }
   ],
-  "count": 38,
-  "phase_1_count": 21,
+  "count": 39,
+  "phase_1_count": 22,
   "phase_2_count": 1,
   "waiver_count": 16,
-  "active_count": 6,
+  "active_count": 7,
   "phase_duration": {
     "average_days": 34.625,
     "median_days": 29,
