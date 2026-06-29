@@ -1,0 +1,148 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/innio-group-%E2%80%93-enerflex-0",
+  "merger_name": "INNIO Group \u2013 Enerflex",
+  "status": "Under assessment",
+  "merger_id": "MN-80021",
+  "effective_notification_datetime": "2026-06-25T12:00:00Z",
+  "original_notification_datetime": "2026-06-25T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-08-06T12:00:00Z",
+  "page_modified_datetime": "2026-06-29T14:58:40+10:00",
+  "consultation_response_due_date": "2026-07-06T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "INNIO Holding GmbH",
+      "identifier_type": null,
+      "identifier": "HRB 305810"
+    }
+  ],
+  "targets": [
+    {
+      "name": "ENERFLEX SERVICE PTY LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "85 063 267 238"
+    },
+    {
+      "name": "ENERFLEX SERVICE PTY LIMITED",
+      "identifier_type": "ABN",
+      "identifier": "85 063 267 238"
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "Enerflex Ltd",
+      "identifier_type": null,
+      "identifier": "7748116"
+    },
+    {
+      "name": "Enerflex Ltd",
+      "identifier_type": null,
+      "identifier": "7748116"
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "3299",
+      "name": "Other Construction Services n.e.c."
+    }
+  ],
+  "merger_description": "INNIO Holding GmbH (INNIO Holding), through its wholly owned subsidiaries INNIO Jenbacher International B.V. (INNIO Jenbacher International) and INNIO Jenbacher Netherlands B.V. (INNIO Jenbacher Netherlands) (together with their affiliates, the **INNIO Group**)\u00a0proposes to acquire\u00a0100% of the share capital in Enerflex Service Pty Limited (**Enerflex**). The Target Companies provide aftermarket services (spare parts, repair and maintenance) for gas compression and energy infrastructure. (the **Acquisition**).\n\nINNIO Group is a global manufacturer of gas power units under the Jenbacher and Waukesha brands.\n\nINNIO Group manufactures gas power units and genuine spare parts at its facilities (primarily in Austria for Jenbacher and the United States, and Canada for Waukesha) and supplies these globally through distributors, including in Australia.\n\nEnerflex Australia is an aftermarket services provider for energy infrastructure operators in Australia. It provides maintenance, repair, replacement of spare parts, field services, retrofits, and the supply of gas power units (new and refurbished as replacements) as part of their aftermarket services for a wide variety of gas compression and power generation units and other related equipment, such as compressor units and electric motors.",
+  "events": [
+    {
+      "date": "2026-06-29T12:00:00Z",
+      "title": "INNIO Group - Enerflex Aftermarket Services - Questionnaire",
+      "display_title": "INNIO Group - Enerflex Aftermarket Services - Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/INNIO-Enerflex%20-%20Questionnaire%20-%2016%20June%202026.docx",
+      "url_gh": "/mergers/MN-80021/INNIO-Enerflex - Questionnaire - 16 June 2026.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-06-25T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-25010",
+      "merger_name": "INNIO Group \u2013 Enerflex",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "INNIO Jenbacher International B.V.",
+          "identifier_type": null,
+          "identifier": "KVK90210352"
+        },
+        {
+          "name": "INNIO Jenbacher Netherlands B.V.",
+          "identifier_type": null,
+          "identifier": "KVK90209982"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Exterran (Thailand) Ltd",
+          "identifier_type": null,
+          "identifier": "0105542031616"
+        },
+        {
+          "name": "PT Enerflex (Indonesia)",
+          "identifier_type": null,
+          "identifier": "9120407262914"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-50007",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for the Comfy Dental Trust",
+          "identifier_type": "ABN",
+          "identifier": "59 865 563 072"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-70017",
+      "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "NDC AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CAMDENT SERVICES UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "37 559 915 898"
+        }
+      ]
+    }
+  ]
+}

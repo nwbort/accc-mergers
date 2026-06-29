@@ -1,9 +1,9 @@
 {
-  "total_mergers": 150,
+  "total_mergers": 151,
   "total_waivers": 240,
   "by_status": {
     "Assessment completed": 115,
-    "Under assessment": 34,
+    "Under assessment": 35,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -102,6 +102,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-80021",
+      "merger_name": "INNIO Group \u2013 Enerflex",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-25T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-50024",
       "merger_name": "AkzoNobel - Axalta",
       "status": "Under assessment",
@@ -163,14 +171,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-18T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50021",
-      "merger_name": "Adbri - Eureka Concrete",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-17T12:00:00Z",
       "is_waiver": false
     }
   ],

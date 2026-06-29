@@ -21,10 +21,19 @@
       "code": "32",
       "name": "Construction Services",
       "level": "subdivision",
-      "merger_count": 18
+      "merger_count": 19
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-80021",
+      "merger_name": "INNIO Group \u2013 Enerflex",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-25T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-05025",
       "merger_name": "Equans - CV Services Group",
@@ -260,11 +269,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 26,
-  "phase_1_count": 9,
+  "count": 27,
+  "phase_1_count": 10,
   "phase_2_count": 0,
   "waiver_count": 17,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 23.142857142857142,
     "median_days": 22,
