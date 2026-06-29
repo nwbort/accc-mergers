@@ -73,37 +73,12 @@
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
   "has_questionnaire": true,
+  "related_merger": {
+    "merger_id": "WA-25010",
+    "relationship": "refiled_from",
+    "merger_name": "INNIO Group \u2013 Enerflex"
+  },
   "similar_mergers": [
-    {
-      "merger_id": "WA-25010",
-      "merger_name": "INNIO Group \u2013 Enerflex",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
-      "acquirers": [
-        {
-          "name": "INNIO Jenbacher International B.V.",
-          "identifier_type": null,
-          "identifier": "KVK90210352"
-        },
-        {
-          "name": "INNIO Jenbacher Netherlands B.V.",
-          "identifier_type": null,
-          "identifier": "KVK90209982"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Exterran (Thailand) Ltd",
-          "identifier_type": null,
-          "identifier": "0105542031616"
-        },
-        {
-          "name": "PT Enerflex (Indonesia)",
-          "identifier_type": null,
-          "identifier": "9120407262914"
-        }
-      ]
-    },
     {
       "merger_id": "MN-50007",
       "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
