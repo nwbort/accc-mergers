@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
+import { createContext, useContext, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { API_ENDPOINTS } from '../config';
 
 const TrackingContext = createContext(null);
@@ -7,7 +7,22 @@ const STORAGE_KEYS = {
   TRACKED_MERGERS: 'merger_tracker_tracked',
   TRACKED_INDUSTRIES: 'merger_tracker_tracked_industries',
   SEEN_EVENTS: 'merger_tracker_seen_events',
+  // Forward re-file links ("sourceId->relatedId") we've already auto-tracked,
+  // so each is acted on exactly once. See the auto-track logic in the fetch
+  // effect for why this is persisted.
+  AUTO_TRACK_LINKS: 'merger_tracker_auto_track_links',
 };
+
+// Relationship values (from the data pipeline, see scripts/static_data/loaders.py)
+// where the *tracked* merger is the earlier matter and its related merger is the
+// newer re-filed one. Tracking a merger auto-tracks its related merger only in
+// this forward direction: tracking a declined waiver / suspended matter also
+// tracks the notification it was re-filed as, but tracking the re-filed matter
+// must NOT pull in the historical one it superseded.
+const FORWARD_REFILE_RELATIONSHIPS = new Set([
+  'refiled_as',
+  'suspended_refiled_as',
+]);
 
 // Generate a unique key for an event
 // Use a consistent order and normalize the title field for stability
@@ -102,6 +117,25 @@ export function TrackingProvider({ children }) {
   const [newlyTrackedIds, setNewlyTrackedIds] = useState([]);
   const newlyTrackedIdsSet = useMemo(() => new Set(newlyTrackedIds), [newlyTrackedIds]);
 
+  // Forward re-file links we've already auto-tracked, keyed "sourceId->relatedId".
+  // Persisted so we act on each link exactly once: a re-filing recorded after the
+  // source was tracked still gets picked up, but a re-filed matter the user later
+  // untracks is never silently re-added. Mirrored in a ref so the fetch effect can
+  // read the latest set without listing it as a dependency (which would re-run it).
+  const [autoTrackLinks, setAutoTrackLinks] = useState(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEYS.AUTO_TRACK_LINKS);
+      return stored ? new Set(JSON.parse(stored)) : new Set();
+    } catch (err) {
+      console.error('Failed to read auto-track links from localStorage:', err);
+      return new Set();
+    }
+  });
+  const autoTrackLinksRef = useRef(autoTrackLinks);
+  useEffect(() => {
+    autoTrackLinksRef.current = autoTrackLinks;
+  }, [autoTrackLinks]);
+
   // Fetch events on mount and when tracked mergers change
   useEffect(() => {
     const fetchEvents = async () => {
@@ -123,6 +157,51 @@ export function TrackingProvider({ children }) {
         );
 
         const mergers = await Promise.all(mergerPromises);
+
+        // Auto-track re-filed matters. If a tracked merger points forward to a
+        // newer re-filed matter (a declined waiver → its notification, or a
+        // suspended assessment → its refile) that we haven't acted on yet, track
+        // it too. Doing this here — rather than only when the user clicks track —
+        // means a re-filing recorded *after* the source was tracked is still
+        // picked up on the next load. Each link is recorded in autoTrackLinks so
+        // it fires once: an already-tracked target just marks the link done, and
+        // a target the user later untracks is not re-added.
+        const linksToRecord = [];
+        const idsToAutoTrack = [];
+        mergers.forEach((merger) => {
+          const related = merger && merger.related_merger;
+          if (!related || !FORWARD_REFILE_RELATIONSHIPS.has(related.relationship)) return;
+          const relatedId = related.merger_id;
+          if (!relatedId) return;
+          const linkKey = `${merger.merger_id}->${relatedId}`;
+          if (autoTrackLinksRef.current.has(linkKey)) return;
+          linksToRecord.push(linkKey);
+          if (!trackedMergerIdsSet.has(relatedId)) {
+            idsToAutoTrack.push(relatedId);
+          }
+        });
+        if (linksToRecord.length > 0) {
+          setAutoTrackLinks((prev) => {
+            const next = new Set(prev);
+            linksToRecord.forEach((k) => next.add(k));
+            return next;
+          });
+        }
+        if (idsToAutoTrack.length > 0) {
+          // Add the re-filed matter(s) — which re-runs this effect to fetch their
+          // own events and follow any further forward link in the chain.
+          //
+          // Deliberately NOT added to newlyTrackedIds: unlike a manual track
+          // (which marks the merger's existing events seen to avoid a flood), an
+          // auto-tracked re-filing must surface as a notification — the whole
+          // point is to ping the user that the matter they were following was
+          // re-filed. Leaving its events unseen produces that ping.
+          setTrackedMergerIds((prev) => {
+            const prevSet = new Set(prev);
+            const fresh = idsToAutoTrack.filter((id) => !prevSet.has(id));
+            return fresh.length ? [...prev, ...fresh] : prev;
+          });
+        }
 
         let allFetchedEvents = [];
 
@@ -256,7 +335,7 @@ export function TrackingProvider({ children }) {
     };
 
     fetchEvents();
-  }, [trackedMergerIds, newlyTrackedIds, newlyTrackedIdsSet]);
+  }, [trackedMergerIds, trackedMergerIdsSet, newlyTrackedIds, newlyTrackedIdsSet]);
 
   // Fetch industry-follow events whenever the set of followed industries changes.
   // Unlike merger tracking (which surfaces every timeline event), following an
@@ -379,6 +458,18 @@ export function TrackingProvider({ children }) {
       console.error('Failed to save seen events:', e);
     }
   }, [seenEventKeys]);
+
+  // Persist the set of auto-tracked re-file links to localStorage.
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        STORAGE_KEYS.AUTO_TRACK_LINKS,
+        JSON.stringify(Array.from(autoTrackLinks))
+      );
+    } catch (e) {
+      console.error('Failed to save auto-track links:', e);
+    }
+  }, [autoTrackLinks]);
 
   const trackMerger = useCallback((mergerId) => {
     setTrackedMergerIds((prev) => {
