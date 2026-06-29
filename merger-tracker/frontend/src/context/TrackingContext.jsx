@@ -5,6 +5,7 @@ const TrackingContext = createContext(null);
 
 const STORAGE_KEYS = {
   TRACKED_MERGERS: 'merger_tracker_tracked',
+  TRACKED_INDUSTRIES: 'merger_tracker_tracked_industries',
   SEEN_EVENTS: 'merger_tracker_seen_events',
 };
 
@@ -13,7 +14,11 @@ const STORAGE_KEYS = {
 const getEventKey = (event) => {
   // Normalize title: prefer display_title, then title, then event_type_display, finally type
   const title = event.display_title || event.title || event.event_type_display || event.type || '';
-  return `${event.merger_id}_${event.date}_${title}`;
+  // Industry-follow events are scoped to the industry they were surfaced from,
+  // so the same merger filed under two followed industries stays distinct (and
+  // distinct from the merger's own tracked timeline events).
+  const prefix = event.industry_code ? `ind_${event.industry_code}_` : '';
+  return `${prefix}${event.merger_id}_${event.date}_${title}`;
 };
 
 // Deduplicate events by their event key
@@ -38,6 +43,18 @@ export function TrackingProvider({ children }) {
     }
   });
 
+  // Followed industries store an entry per ANZSIC code with its display name so
+  // the notification panel can label groups without an extra fetch.
+  const [trackedIndustries, setTrackedIndustries] = useState(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEYS.TRACKED_INDUSTRIES);
+      return stored ? JSON.parse(stored) : [];
+    } catch (err) {
+      console.error('Failed to read tracked industries from localStorage:', err);
+      return [];
+    }
+  });
+
   // Use Set internally for O(1) lookups
   const [seenEventKeys, setSeenEventKeys] = useState(() => {
     try {
@@ -53,6 +70,29 @@ export function TrackingProvider({ children }) {
 
   // Create Sets for O(1) lookup performance
   const trackedMergerIdsSet = useMemo(() => new Set(trackedMergerIds), [trackedMergerIds]);
+  const trackedIndustryCodes = useMemo(
+    () => trackedIndustries.map((i) => i.code),
+    [trackedIndustries]
+  );
+  const trackedIndustryCodesSet = useMemo(
+    () => new Set(trackedIndustryCodes),
+    [trackedIndustryCodes]
+  );
+  // Stable key so the fetch effect only re-runs when the set of codes changes,
+  // not when an industry's stored name is rewritten.
+  const trackedIndustryCodesKey = useMemo(
+    () => [...trackedIndustryCodes].sort().join(','),
+    [trackedIndustryCodes]
+  );
+
+  // Industry-follow events (new filings + new determinations) for followed industries
+  const [industryEvents, setIndustryEvents] = useState([]);
+  // Track newly followed industry codes so their existing events are marked seen
+  const [newlyTrackedIndustryCodes, setNewlyTrackedIndustryCodes] = useState([]);
+  const newlyTrackedIndustryCodesSet = useMemo(
+    () => new Set(newlyTrackedIndustryCodes),
+    [newlyTrackedIndustryCodes]
+  );
 
   // Timeline events for tracked mergers
   const [timelineEvents, setTimelineEvents] = useState([]);
@@ -218,6 +258,100 @@ export function TrackingProvider({ children }) {
     fetchEvents();
   }, [trackedMergerIds, newlyTrackedIds, newlyTrackedIdsSet]);
 
+  // Fetch industry-follow events whenever the set of followed industries changes.
+  // Unlike merger tracking (which surfaces every timeline event), following an
+  // industry only flags two things: a new merger filed in it, and a new
+  // determination published for one of its mergers. These are derived from the
+  // lightweight per-industry detail files (notification_date / determination_date
+  // on each merger summary), so no per-merger fetch is needed.
+  useEffect(() => {
+    const fetchIndustryEvents = async () => {
+      if (trackedIndustryCodes.length === 0) {
+        setIndustryEvents([]);
+        return;
+      }
+
+      try {
+        const industryPromises = trackedIndustryCodes.map((code) =>
+          fetch(API_ENDPOINTS.industryDetail(code))
+            .then((res) => (res.ok ? res.json() : null))
+            .then((data) => ({ code, data }))
+            .catch(() => ({ code, data: null }))
+        );
+
+        const results = await Promise.all(industryPromises);
+
+        const derived = [];
+        results.forEach(({ code, data }) => {
+          if (!data) return;
+          const industryName = data.name || code;
+          (data.mergers || []).forEach((m) => {
+            const base = {
+              industry_code: code,
+              industry_name: industryName,
+              merger_id: m.merger_id,
+              merger_name: m.merger_name,
+              is_waiver: m.is_waiver,
+              status: m.status,
+            };
+            if (m.notification_date) {
+              derived.push({
+                ...base,
+                type: 'industry_new_merger',
+                event_type_display: 'New merger filed',
+                display_title: 'New merger filed',
+                title: 'New merger filed',
+                date: m.notification_date,
+              });
+            }
+            if (m.determination_date) {
+              derived.push({
+                ...base,
+                type: 'industry_determination',
+                event_type_display: 'Determination published',
+                display_title: 'Determination published',
+                title: 'Determination published',
+                date: m.determination_date,
+              });
+            }
+          });
+        });
+
+        setIndustryEvents(derived);
+
+        // Mark all events for newly followed industries as seen, so following an
+        // industry doesn't immediately flag its entire back catalogue.
+        if (newlyTrackedIndustryCodes.length > 0) {
+          const eventsToMarkSeen = derived.filter((e) =>
+            newlyTrackedIndustryCodesSet.has(e.industry_code)
+          );
+          if (eventsToMarkSeen.length > 0) {
+            const keys = eventsToMarkSeen.map(getEventKey);
+            setSeenEventKeys((prev) => {
+              const newSet = new Set(prev);
+              let hasChanges = false;
+              keys.forEach((k) => {
+                if (!newSet.has(k)) {
+                  newSet.add(k);
+                  hasChanges = true;
+                }
+              });
+              return hasChanges ? newSet : prev;
+            });
+          }
+          setNewlyTrackedIndustryCodes([]);
+        }
+      } catch (err) {
+        console.error('Failed to fetch industry events:', err);
+      }
+    };
+
+    fetchIndustryEvents();
+    // trackedIndustryCodesKey collapses the code list to a stable primitive so
+    // renaming a stored industry doesn't trigger a refetch.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [trackedIndustryCodesKey, newlyTrackedIndustryCodes, newlyTrackedIndustryCodesSet]);
+
   // Persist tracked mergers to localStorage
   useEffect(() => {
     try {
@@ -226,6 +360,15 @@ export function TrackingProvider({ children }) {
       console.error('Failed to save tracked mergers:', e);
     }
   }, [trackedMergerIds]);
+
+  // Persist tracked industries to localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEYS.TRACKED_INDUSTRIES, JSON.stringify(trackedIndustries));
+    } catch (e) {
+      console.error('Failed to save tracked industries:', e);
+    }
+  }, [trackedIndustries]);
 
   // Persist seen events to localStorage (convert Set to Array)
   useEffect(() => {
@@ -264,6 +407,32 @@ export function TrackingProvider({ children }) {
       // Mark this as a newly tracked merger so we can auto-mark its events as seen
       setNewlyTrackedIds((ids) => [...ids, mergerId]);
       return [...prev, mergerId];
+    });
+  }, []);
+
+  const isIndustryTracked = useCallback((code) => {
+    return trackedIndustryCodesSet.has(code);
+  }, [trackedIndustryCodesSet]);
+
+  const trackIndustry = useCallback((code, name) => {
+    setTrackedIndustries((prev) => {
+      if (prev.some((i) => i.code === code)) return prev;
+      setNewlyTrackedIndustryCodes((codes) => [...codes, code]);
+      return [...prev, { code, name: name || code }];
+    });
+  }, []);
+
+  const untrackIndustry = useCallback((code) => {
+    setTrackedIndustries((prev) => prev.filter((i) => i.code !== code));
+  }, []);
+
+  const toggleIndustryTracking = useCallback((code, name) => {
+    setTrackedIndustries((prev) => {
+      if (prev.some((i) => i.code === code)) {
+        return prev.filter((i) => i.code !== code);
+      }
+      setNewlyTrackedIndustryCodes((codes) => [...codes, code]);
+      return [...prev, { code, name: name || code }];
     });
   }, []);
 
@@ -309,8 +478,18 @@ export function TrackingProvider({ children }) {
     return trackedEvents.filter((event) => !seenEventKeys.has(getEventKey(event)));
   }, [trackedEvents, seenEventKeys]);
 
-  // Count of unseen events (for badge)
-  const unseenCount = unseenEvents.length;
+  // Industry-follow events, deduped and sorted most-recent-first.
+  const trackedIndustryEvents = useMemo(() => {
+    const unique = dedupeEvents(industryEvents);
+    return unique.sort((a, b) => new Date(b.date) - new Date(a.date));
+  }, [industryEvents]);
+
+  const unseenIndustryEvents = useMemo(() => {
+    return trackedIndustryEvents.filter((event) => !seenEventKeys.has(getEventKey(event)));
+  }, [trackedIndustryEvents, seenEventKeys]);
+
+  // Count of unseen events (for badge) — both tracked mergers and followed industries
+  const unseenCount = unseenEvents.length + unseenIndustryEvents.length;
 
   const value = useMemo(() => ({
     trackedMergerIds,
@@ -318,6 +497,14 @@ export function TrackingProvider({ children }) {
     untrackMerger,
     isTracked,
     toggleTracking,
+    trackedIndustries,
+    trackedIndustryCodes,
+    trackIndustry,
+    untrackIndustry,
+    isIndustryTracked,
+    toggleIndustryTracking,
+    trackedIndustryEvents,
+    unseenIndustryEvents,
     markEventAsSeen,
     markEventsAsSeen,
     isEventSeen,
@@ -332,6 +519,14 @@ export function TrackingProvider({ children }) {
     untrackMerger,
     isTracked,
     toggleTracking,
+    trackedIndustries,
+    trackedIndustryCodes,
+    trackIndustry,
+    untrackIndustry,
+    isIndustryTracked,
+    toggleIndustryTracking,
+    trackedIndustryEvents,
+    unseenIndustryEvents,
     markEventAsSeen,
     markEventsAsSeen,
     isEventSeen,

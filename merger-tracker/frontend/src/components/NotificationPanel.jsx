@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { mergerPath } from '../utils/slug';
+import { mergerPath, industryPath } from '../utils/slug';
 import { FaBell, FaCheckCircle } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
 import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
@@ -148,12 +148,92 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
   );
 }
 
+function IndustryEventGroup({ group, onClose, wasUnseenOnOpen }) {
+  const [showOlder, setShowOlder] = useState(false);
+
+  // Industry-follow events are always dated when they happened (a filing or a
+  // determination), so they're effectively all "past". Keep events that were
+  // unseen when the panel opened pinned to the top; collapse the rest.
+  const events = [...group.events].sort((a, b) => new Date(b.date) - new Date(a.date));
+  const newEvents = events.filter((e) => wasUnseenOnOpen(e));
+  const olderEvents = events.filter((e) => !wasUnseenOnOpen(e));
+
+  const renderEvent = (event, idx, isNew) => (
+    <li
+      key={`${event.industry_code}-${event.merger_id}-${event.date}-${idx}`}
+      className={`text-xs rounded-md ${
+        isNew ? 'bg-emerald-50 ring-1 ring-emerald-200 px-2 py-1.5 -mx-1' : ''
+      }`}
+    >
+      <Link
+        to={mergerPath(event.merger_id, event.merger_name)}
+        onClick={onClose}
+        className="flex items-start gap-2 group/event"
+      >
+        <span className={`mt-0.5 flex-shrink-0 w-2 h-2 rounded-full ${
+          isNew
+            ? 'bg-emerald-500'
+            : event.type === 'industry_new_merger' ? 'bg-primary/40' : 'bg-gray-300'
+        }`} />
+        <div className="flex-1 min-w-0">
+          <p className={`truncate group-hover/event:text-primary transition-colors ${isNew ? 'text-gray-900 font-medium' : 'text-gray-700'}`}>
+            {event.merger_name}
+          </p>
+          <p className="text-gray-500">
+            {event.display_title} · {formatDate(event.date)}
+            {isNew && (
+              <span className="ml-1.5 inline-block align-middle text-[10px] font-semibold uppercase tracking-wide text-emerald-700">
+                New
+              </span>
+            )}
+          </p>
+        </div>
+      </Link>
+    </li>
+  );
+
+  return (
+    <div className="p-4">
+      <Link
+        to={industryPath(group.industry_code, group.industry_name)}
+        onClick={onClose}
+        className="block hover:bg-gray-50/80 -mx-4 -mt-4 px-4 pt-4 pb-2 rounded-t-xl transition-colors"
+      >
+        <h3 className="text-sm font-medium text-gray-900 hover:text-primary transition-colors line-clamp-2">
+          {group.industry_name}
+        </h3>
+        <p className="text-xs text-gray-500 mt-0.5">Industry · {group.industry_code}</p>
+      </Link>
+
+      <ul className="mt-2 space-y-2">
+        {newEvents.map((event, idx) => renderEvent(event, idx, true))}
+
+        {olderEvents.length > 0 && (
+          <>
+            <li className="text-xs">
+              <button
+                onClick={() => setShowOlder(!showOlder)}
+                className="text-gray-500 hover:text-gray-700 hover:underline cursor-pointer pl-4 transition-colors"
+              >
+                {showOlder ? 'Hide' : 'Show'} {olderEvents.length} earlier update{olderEvents.length !== 1 ? 's' : ''}
+              </button>
+            </li>
+            {showOlder && olderEvents.map((event, idx) => renderEvent(event, idx, false))}
+          </>
+        )}
+      </ul>
+    </div>
+  );
+}
+
 function NotificationPanel({ isOpen, onClose }) {
   const panelRef = useRef(null);
   const previouslyFocusedRef = useRef(null);
   const {
     trackedEvents,
     trackedMergerIds,
+    trackedIndustries,
+    trackedIndustryEvents,
     markEventsAsSeen,
     isEventSeen,
     getEventKey,
@@ -216,14 +296,15 @@ function NotificationPanel({ isOpen, onClose }) {
   // Only mark when transitioning to open, not on every trackedEvents change
   useEffect(() => {
     if (isOpen) {
-      if (trackedEvents.length > 0) {
+      const allEvents = [...trackedEvents, ...trackedIndustryEvents];
+      if (allEvents.length > 0) {
         // Snapshot unseen keys before marking them as seen so we can keep
         // highlighting them for the duration of this panel view.
         const snapshot = new Set(
-          trackedEvents.filter((e) => !isEventSeen(e)).map(getEventKey)
+          allEvents.filter((e) => !isEventSeen(e)).map(getEventKey)
         );
         setUnseenOnOpen(snapshot);
-        markEventsAsSeen(trackedEvents);
+        markEventsAsSeen(allEvents);
       }
     } else {
       setUnseenOnOpen(new Set());
@@ -282,6 +363,41 @@ function NotificationPanel({ isOpen, onClose }) {
     return aSoonest - bSoonest; // Soonest first
   });
 
+  // Group industry-follow events by industry for display.
+  const eventsByIndustry = trackedIndustryEvents.reduce((acc, event) => {
+    if (!acc[event.industry_code]) {
+      acc[event.industry_code] = {
+        industry_code: event.industry_code,
+        industry_name: event.industry_name,
+        events: [],
+      };
+    }
+    acc[event.industry_code].events.push(event);
+    return acc;
+  }, {});
+
+  // Surface followed industries even when they have no events yet, so the user
+  // sees what they're following. Sort: industries with unseen updates first
+  // (most recent first), then by most recent activity.
+  const industryGroups = trackedIndustries
+    .map((ind) => eventsByIndustry[ind.code] || {
+      industry_code: ind.code,
+      industry_name: ind.name,
+      events: [],
+    })
+    .sort((a, b) => {
+      const aUnseen = a.events.filter((e) => wasUnseenOnOpen(e));
+      const bUnseen = b.events.filter((e) => wasUnseenOnOpen(e));
+      if (aUnseen.length > 0 && bUnseen.length === 0) return -1;
+      if (aUnseen.length === 0 && bUnseen.length > 0) return 1;
+      const aLatest = a.events.length ? Math.max(...a.events.map((e) => new Date(e.date).getTime())) : -Infinity;
+      const bLatest = b.events.length ? Math.max(...b.events.map((e) => new Date(e.date).getTime())) : -Infinity;
+      return bLatest - aLatest;
+    });
+
+  const nothingTracked = trackedMergerIds.length === 0 && trackedIndustries.length === 0;
+  const noRecentActivity = trackedEvents.length === 0 && trackedIndustryEvents.length === 0;
+
   return (
     <div
       ref={panelRef}
@@ -292,54 +408,80 @@ function NotificationPanel({ isOpen, onClose }) {
       {/* Header */}
       <div className="px-5 py-3.5 border-b border-gray-100 bg-gray-50/80 flex-shrink-0">
         <h2 className="text-sm font-semibold text-gray-900">
-          Tracked
-          {trackedMergerIds.length > 0 && (
-            <span className="ml-2 text-gray-500 font-normal">
-              ({trackedMergerIds.length})
-            </span>
-          )}
+          Notifications
         </h2>
       </div>
 
       {/* Content */}
       <div className="overflow-y-auto flex-1">
-        {trackedMergerIds.length === 0 ? (
+        {nothingTracked ? (
           <PanelEmptyState
             iconBg="bg-gray-50"
             iconColor="text-gray-300"
             Icon={FaBell}
-            title="No tracked mergers yet"
-            subtitle="Visit a merger's page and click &quot;Track&quot; to receive updates"
+            title="Nothing tracked yet"
+            subtitle="Track a merger, or follow an industry to hear about new filings and determinations"
           />
         ) : loading ? (
           <div className="px-5 py-10 text-center">
             <div className="animate-spin h-8 w-8 border-2 border-primary border-t-transparent rounded-full mx-auto mb-3"></div>
             <p className="text-sm text-gray-500">Loading events...</p>
           </div>
-        ) : trackedEvents.length === 0 ? (
+        ) : noRecentActivity ? (
           <PanelEmptyState
             iconBg="bg-emerald-50"
             iconColor="text-emerald-400"
             Icon={FaCheckCircle}
             title="No recent events"
-            subtitle="Events for your tracked mergers will appear here"
+            subtitle="Events for your tracked mergers and industries will appear here"
           />
         ) : (
-          <div className="divide-y divide-gray-50">
-            {mergerGroups.map((group) => (
-              <MergerEventGroup
-                key={group.merger_id}
-                group={group}
-                onClose={onClose}
-                wasUnseenOnOpen={wasUnseenOnOpen}
-              />
-            ))}
-          </div>
+          <>
+            {mergerGroups.length > 0 && (
+              <>
+                <div className="px-5 py-2 bg-gray-50/60 border-y border-gray-100">
+                  <h3 className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+                    Tracked mergers
+                  </h3>
+                </div>
+                <div className="divide-y divide-gray-50">
+                  {mergerGroups.map((group) => (
+                    <MergerEventGroup
+                      key={group.merger_id}
+                      group={group}
+                      onClose={onClose}
+                      wasUnseenOnOpen={wasUnseenOnOpen}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+
+            {industryGroups.length > 0 && (
+              <>
+                <div className="px-5 py-2 bg-gray-50/60 border-y border-gray-100">
+                  <h3 className="text-[11px] font-semibold uppercase tracking-wider text-gray-500">
+                    Followed industries
+                  </h3>
+                </div>
+                <div className="divide-y divide-gray-50">
+                  {industryGroups.map((group) => (
+                    <IndustryEventGroup
+                      key={group.industry_code}
+                      group={group}
+                      onClose={onClose}
+                      wasUnseenOnOpen={wasUnseenOnOpen}
+                    />
+                  ))}
+                </div>
+              </>
+            )}
+          </>
         )}
       </div>
 
       {/* Footer */}
-      {trackedMergerIds.length > 0 && (
+      {!nothingTracked && (
         <div className="px-5 py-3 border-t border-gray-100 bg-gray-50/80 flex-shrink-0">
           <div className="flex items-center gap-1.5 text-xs font-medium">
             <Link
@@ -351,11 +493,11 @@ function NotificationPanel({ isOpen, onClose }) {
             </Link>
             <span className="text-gray-500">·</span>
             <Link
-              to="/mergers"
+              to="/industries"
               onClick={onClose}
               className="text-primary hover:text-primary-dark transition-colors"
             >
-              View all mergers
+              Browse industries
             </Link>
           </div>
         </div>

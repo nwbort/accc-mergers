@@ -6,8 +6,10 @@ import ErrorCard from '../components/ErrorCard';
 import IndustryMergerGroups from '../components/IndustryMergerGroups';
 import PhaseDurationComparison from '../components/PhaseDurationComparison';
 import SEO from '../components/SEO';
+import BellIcon from '../components/BellIcon';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
+import { useTracking } from '../context/TrackingContext';
 import { industryPath } from '../utils/slug';
 
 // ANZSIC level → human label for the page subtitle and breadcrumb.
@@ -57,6 +59,8 @@ function IndustryDetail() {
     data ? { cacheKey: 'dashboard-stats' } : {}
   );
 
+  const { isIndustryTracked, toggleIndustryTracking } = useTracking();
+
   // Local free-text filter for the merger list on this page.
   const [mergerSearch, setMergerSearch] = useState('');
 
@@ -94,6 +98,8 @@ function IndustryDetail() {
   const industryName = data.name
     || (industries ? industries.find((i) => i.code === decodedCode)?.name : null)
     || decodedCode;
+
+  const following = isIndustryTracked(decodedCode);
 
   const levelLabel = data.level ? LEVEL_LABELS[data.level] : null;
   const ancestors = data.ancestors || [];
@@ -170,13 +176,31 @@ function IndustryDetail() {
         </nav>
 
         <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6 card-accent">
-          <div className="pt-1">
-            <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
-              {industryName}
-            </h1>
-            <p className="text-sm text-gray-500 mt-1">
-              ANZSIC {levelLabel ? `${levelLabel.toLowerCase()} ` : 'code: '}{decodedCode} · {mergers.length} merger{mergers.length !== 1 ? 's' : ''}
-            </p>
+          <div className="pt-1 flex items-start justify-between gap-4">
+            <div>
+              <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
+                {industryName}
+              </h1>
+              <p className="text-sm text-gray-500 mt-1">
+                ANZSIC {levelLabel ? `${levelLabel.toLowerCase()} ` : 'code: '}{decodedCode} · {mergers.length} merger{mergers.length !== 1 ? 's' : ''}
+              </p>
+            </div>
+            <button
+              onClick={() => toggleIndustryTracking(decodedCode, industryName)}
+              className={`inline-flex items-center justify-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-lg border transition-all duration-200 flex-shrink-0 ${
+                following
+                  ? 'bg-primary text-white border-primary hover:bg-primary-dark shadow-sm'
+                  : 'bg-gray-100 text-gray-600 border-gray-200/60 hover:bg-gray-200'
+              }`}
+              aria-pressed={following}
+              aria-label={following
+                ? 'Stop following this industry'
+                : 'Follow this industry for new filings and determinations'}
+              title="Get notified when a new merger is filed or a determination is published in this industry"
+            >
+              <BellIcon filled={following} className="w-3.5 h-3.5" />
+              {following ? 'Following' : 'Follow'}
+            </button>
           </div>
         </div>
 
