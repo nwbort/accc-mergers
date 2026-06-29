@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useCallback, useMemo } from 'react';
+import { createContext, useContext, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { API_ENDPOINTS } from '../config';
 
 const TrackingContext = createContext(null);
@@ -8,6 +8,17 @@ const STORAGE_KEYS = {
   TRACKED_INDUSTRIES: 'merger_tracker_tracked_industries',
   SEEN_EVENTS: 'merger_tracker_seen_events',
 };
+
+// Relationship values (from the data pipeline, see scripts/static_data/loaders.py)
+// where the *tracked* merger is the earlier matter and its related merger is the
+// newer re-filed one. Tracking a merger auto-tracks its related merger only in
+// this forward direction: tracking a declined waiver / suspended matter also
+// tracks the notification it was re-filed as, but tracking the re-filed matter
+// must NOT pull in the historical one it superseded.
+const FORWARD_REFILE_RELATIONSHIPS = new Set([
+  'refiled_as',
+  'suspended_refiled_as',
+]);
 
 // Generate a unique key for an event
 // Use a consistent order and normalize the title field for stability
@@ -101,6 +112,13 @@ export function TrackingProvider({ children }) {
   // Track newly added merger IDs so we can mark their events as seen
   const [newlyTrackedIds, setNewlyTrackedIds] = useState([]);
   const newlyTrackedIdsSet = useMemo(() => new Set(newlyTrackedIds), [newlyTrackedIds]);
+
+  // Mirror the latest tracked IDs in a ref so the track callbacks can tell an
+  // add from a remove without re-creating on every change (they keep empty deps).
+  const trackedMergerIdsRef = useRef(trackedMergerIds);
+  useEffect(() => {
+    trackedMergerIdsRef.current = trackedMergerIds;
+  }, [trackedMergerIds]);
 
   // Fetch events on mount and when tracked mergers change
   useEffect(() => {
@@ -380,7 +398,54 @@ export function TrackingProvider({ children }) {
     }
   }, [seenEventKeys]);
 
+  // After a merger is tracked, follow its related-merger link forward and track
+  // the re-filed matter(s) too — e.g. tracking a declined waiver also tracks the
+  // notification it was re-filed as. Only the forward direction is followed, so
+  // tracking the newer matter never auto-tracks the historical one. Chains
+  // (A re-filed as B re-filed as C) are walked iteratively; a visited set guards
+  // against the (shouldn't-happen) cycle. Newly added IDs are marked as newly
+  // tracked so their existing events don't immediately flag as unseen.
+  const autoTrackRelatedForward = useCallback(async (mergerId) => {
+    const idsToAdd = [];
+    const visited = new Set([mergerId]);
+    let currentId = mergerId;
+
+    while (currentId) {
+      let merger;
+      try {
+        const res = await fetch(API_ENDPOINTS.mergerDetail(currentId));
+        if (!res.ok) break;
+        merger = await res.json();
+      } catch (err) {
+        console.error('Failed to resolve related merger for auto-tracking:', err);
+        break;
+      }
+
+      const related = merger && merger.related_merger;
+      if (!related || !FORWARD_REFILE_RELATIONSHIPS.has(related.relationship)) break;
+
+      const relatedId = related.merger_id;
+      if (!relatedId || visited.has(relatedId)) break;
+
+      visited.add(relatedId);
+      idsToAdd.push(relatedId);
+      currentId = relatedId;
+    }
+
+    if (idsToAdd.length === 0) return;
+
+    setTrackedMergerIds((prev) => {
+      const prevSet = new Set(prev);
+      const fresh = idsToAdd.filter((id) => !prevSet.has(id));
+      if (fresh.length === 0) return prev;
+      // Mark auto-tracked mergers as newly tracked so we mark their events as seen
+      setNewlyTrackedIds((ids) => [...ids, ...fresh]);
+      return [...prev, ...fresh];
+    });
+  }, []);
+
   const trackMerger = useCallback((mergerId) => {
+    const wasTracked = trackedMergerIdsRef.current.includes(mergerId);
     setTrackedMergerIds((prev) => {
       const prevSet = new Set(prev);
       if (prevSet.has(mergerId)) return prev;
@@ -388,7 +453,8 @@ export function TrackingProvider({ children }) {
       setNewlyTrackedIds((ids) => [...ids, mergerId]);
       return [...prev, mergerId];
     });
-  }, []);
+    if (!wasTracked) autoTrackRelatedForward(mergerId);
+  }, [autoTrackRelatedForward]);
 
   const untrackMerger = useCallback((mergerId) => {
     setTrackedMergerIds((prev) => prev.filter((id) => id !== mergerId));
@@ -399,6 +465,7 @@ export function TrackingProvider({ children }) {
   }, [trackedMergerIdsSet]);
 
   const toggleTracking = useCallback((mergerId) => {
+    const wasTracked = trackedMergerIdsRef.current.includes(mergerId);
     setTrackedMergerIds((prev) => {
       const prevSet = new Set(prev);
       if (prevSet.has(mergerId)) {
@@ -408,7 +475,9 @@ export function TrackingProvider({ children }) {
       setNewlyTrackedIds((ids) => [...ids, mergerId]);
       return [...prev, mergerId];
     });
-  }, []);
+    // Only an add (not a remove) should pull in the re-filed matter.
+    if (!wasTracked) autoTrackRelatedForward(mergerId);
+  }, [autoTrackRelatedForward]);
 
   const isIndustryTracked = useCallback((code) => {
     return trackedIndustryCodesSet.has(code);
