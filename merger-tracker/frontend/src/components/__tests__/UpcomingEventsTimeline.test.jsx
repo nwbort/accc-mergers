@@ -67,6 +67,52 @@ describe('UpcomingEventsTimeline', () => {
     expect(screen.getByText('Gamma – Delta')).toBeInTheDocument();
   });
 
+  it('orders events within a day: determinations first, Phase 2 above Phase 1, then name', () => {
+    renderTimeline([
+      makeEvent({
+        date: '2026-06-30T12:00:00Z',
+        merger_id: 'MN-1',
+        merger_name: 'Zeta – Consultation P1',
+        type: 'consultation_due',
+        stage: 'Phase 1 - initial assessment',
+      }),
+      makeEvent({
+        date: '2026-06-30T12:00:00Z',
+        merger_id: 'MN-2',
+        merger_name: 'Alpha – Determination P1',
+        type: 'determination_due',
+        stage: 'Phase 1 - initial assessment',
+      }),
+      makeEvent({
+        date: '2026-06-30T12:00:00Z',
+        merger_id: 'MN-3',
+        merger_name: 'Beta – Determination P2',
+        type: 'determination_due',
+        stage: 'Phase 2 - in-depth review',
+      }),
+      makeEvent({
+        date: '2026-06-30T12:00:00Z',
+        merger_id: 'MN-4',
+        merger_name: 'Aardvark – Determination P2',
+        type: 'determination_due',
+        stage: 'Phase 2 - in-depth review',
+      }),
+    ]);
+
+    const links = screen.getAllByRole('link');
+    const names = links.map((link) => within(link).getByText(/–/).textContent);
+
+    expect(names).toEqual([
+      // Phase 2 determinations first, broken by merger name…
+      'Aardvark – Determination P2',
+      'Beta – Determination P2',
+      // …then the Phase 1 determination…
+      'Alpha – Determination P1',
+      // …and consultations last.
+      'Zeta – Consultation P1',
+    ]);
+  });
+
   it('labels by calendar day, not elapsed 24-hour periods', () => {
     // Afternoon on the 28th: an event at noon UTC on the 29th is under 24h away
     // but is still the next calendar day, so it must read "Tomorrow", not "Today".
