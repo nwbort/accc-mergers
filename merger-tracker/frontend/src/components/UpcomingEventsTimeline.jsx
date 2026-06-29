@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaRegComments, FaGavel, FaTriangleExclamation } from 'react-icons/fa6';
 import { mergerPath } from '../utils/slug';
 import { formatWeekday, getCalendarDaysUntil } from '../utils/dates';
+import { PHASES } from '../constants/mergerStatus';
 
 // Each event type carries its own accent (icon tile + chip) so the kind of
 // deadline is recognisable at a glance, independent of the urgency colouring
@@ -36,6 +37,29 @@ const DEFAULT_EVENT_TYPE = {
 };
 
 const getEventType = (type) => EVENT_TYPES[type] || DEFAULT_EVENT_TYPE;
+
+// Within a single calendar day, surface the most consequential deadlines
+// first: determinations rank above concerns notices, which rank above
+// consultations; Phase 2 outranks Phase 1; ties fall back to the merger name
+// so the order is stable.
+const EVENT_TYPE_ORDER = {
+  determination_due: 0,
+  notice_of_competition_concerns: 1,
+  consultation_due: 2,
+};
+
+const phaseRank = (stage) => (stage && stage.includes(PHASES.PHASE_2) ? 0 : 1);
+
+function compareWithinDay(a, b) {
+  const typeDelta =
+    (EVENT_TYPE_ORDER[a.type] ?? 99) - (EVENT_TYPE_ORDER[b.type] ?? 99);
+  if (typeDelta !== 0) return typeDelta;
+
+  const phaseDelta = phaseRank(a.stage) - phaseRank(b.stage);
+  if (phaseDelta !== 0) return phaseDelta;
+
+  return a.merger_name.localeCompare(b.merger_name);
+}
 
 // Urgency drives the day marker: due today reads red, the next few days amber,
 // anything further out sits in the calm primary green.
@@ -72,7 +96,10 @@ function UpcomingEventsTimeline({ events }) {
     if (!events) return [];
     const byDay = new Map();
     [...events]
-      .sort((a, b) => a.date.localeCompare(b.date))
+      .sort((a, b) => {
+        const dayDelta = a.date.slice(0, 10).localeCompare(b.date.slice(0, 10));
+        return dayDelta !== 0 ? dayDelta : compareWithinDay(a, b);
+      })
       .forEach((event) => {
         const key = event.date.slice(0, 10);
         if (!byDay.has(key)) byDay.set(key, { date: event.date, events: [] });
