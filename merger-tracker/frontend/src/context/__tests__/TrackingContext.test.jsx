@@ -20,9 +20,12 @@ function notFoundResponse() {
 }
 
 // Stub globalThis.fetch from a map of merger_id -> detail object. Any merger not
-// in the map resolves to a 404 (mirrors a missing per-merger JSON file).
+// in the map resolves to a 404 (mirrors a missing per-merger JSON file). Assigns
+// directly (rather than spyOn) so a test can swap the dataset mid-flight to
+// simulate the data being refreshed between visits.
+const originalFetch = globalThis.fetch;
 function mockFetchFromMergers(mergers) {
-  vi.spyOn(globalThis, 'fetch').mockImplementation((url) => {
+  globalThis.fetch = vi.fn((url) => {
     const match = /\/data\/mergers\/([^/]+)\.json$/.exec(url);
     if (match) {
       const merger = mergers[match[1]];
@@ -42,6 +45,7 @@ describe('TrackingContext auto-tracking of related mergers', () => {
   });
 
   afterEach(() => {
+    globalThis.fetch = originalFetch;
     vi.restoreAllMocks();
   });
 
@@ -195,5 +199,47 @@ describe('TrackingContext auto-tracking of related mergers', () => {
     await waitFor(() => {
       expect(result.current.trackedMergerIds).toEqual(expect.arrayContaining(['A', 'B', 'C']));
     });
+  });
+
+  it('auto-tracks a re-filing that is only recorded after the source was tracked', async () => {
+    // First visit: the waiver is tracked while still live — no re-filing exists
+    // yet, so its detail carries no related_merger link.
+    mockFetchFromMergers({
+      'WA-1': { merger_id: 'WA-1', merger_name: 'Waiver', events: [] },
+    });
+
+    const first = renderHook(() => useTracking(), { wrapper });
+    act(() => {
+      first.result.current.trackMerger('WA-1');
+    });
+    await waitFor(() => {
+      expect(first.result.current.loading).toBe(false);
+    });
+    expect(first.result.current.trackedMergerIds).toEqual(['WA-1']);
+    first.unmount();
+
+    // Later visit: the waiver was declined and re-filed, the pair is now recorded,
+    // and WA-1's detail carries the forward link. (localStorage still holds the
+    // WA-1 tracking from the first visit.)
+    mockFetchFromMergers({
+      'WA-1': {
+        merger_id: 'WA-1',
+        merger_name: 'Waiver',
+        events: [],
+        related_merger: { merger_id: 'MN-2', relationship: 'refiled_as', merger_name: 'Notification' },
+      },
+      'MN-2': {
+        merger_id: 'MN-2',
+        merger_name: 'Notification',
+        events: [],
+        related_merger: { merger_id: 'WA-1', relationship: 'refiled_from', merger_name: 'Waiver' },
+      },
+    });
+
+    const second = renderHook(() => useTracking(), { wrapper });
+    await waitFor(() => {
+      expect(second.result.current.trackedMergerIds).toContain('MN-2');
+    });
+    expect(second.result.current.trackedMergerIds).toContain('WA-1');
   });
 });
