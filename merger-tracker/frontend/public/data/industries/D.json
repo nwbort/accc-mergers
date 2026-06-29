@@ -9,7 +9,7 @@
       "code": "26",
       "name": "Electricity Supply",
       "level": "subdivision",
-      "merger_count": 11
+      "merger_count": 12
     },
     {
       "code": "27",
@@ -31,6 +31,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-70023",
+      "merger_name": "MLPL HoldCo \u2013 shares in Marinus Link Pty Ltd",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-04T12:00:00Z",
+      "determination_date": "2026-06-29T12:00:00Z"
+    },
     {
       "merger_id": "WA-15025",
       "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
@@ -185,10 +194,10 @@
       "determination_date": "2025-11-26T12:00:00Z"
     }
   ],
-  "count": 17,
+  "count": 18,
   "phase_1_count": 3,
   "phase_2_count": 0,
-  "waiver_count": 14,
+  "waiver_count": 15,
   "active_count": 0,
   "phase_duration": {
     "average_days": 26.333333333333332,

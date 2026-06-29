@@ -1,6 +1,6 @@
 {
   "total_mergers": 152,
-  "total_waivers": 240,
+  "total_waivers": 241,
   "by_status": {
     "Assessment completed": 115,
     "Under assessment": 36,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 226,
+    "Approved": 227,
     "Not approved": 14
   },
   "phase_duration": {
@@ -176,6 +176,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70023",
+      "merger_name": "MLPL HoldCo \u2013 shares in Marinus Link Pty Ltd",
+      "determination": "Approved",
+      "determination_date": "2026-06-29T12:00:00Z",
+      "page_modified_datetime": "2026-06-29T17:39:40+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-40026",
       "merger_name": "Australian Food & Fibre \u2013 Western Lands Lease Conversion",
       "determination": "Approved",
@@ -281,16 +291,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-25T12:00:00Z",
       "page_modified_datetime": "2026-06-25T16:12:29+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-90015",
-      "merger_name": "Impression Dental Group - Coastal Dental Care",
-      "determination": "Approved",
-      "determination_date": "2026-06-25T12:00:00Z",
-      "page_modified_datetime": "2026-06-25T15:58:53+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

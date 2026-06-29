@@ -15,7 +15,7 @@
       "code": "31",
       "name": "Heavy and Civil Engineering Construction",
       "level": "subdivision",
-      "merger_count": 9
+      "merger_count": 10
     },
     {
       "code": "32",
@@ -51,6 +51,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-70023",
+      "merger_name": "MLPL HoldCo \u2013 shares in Marinus Link Pty Ltd",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-04T12:00:00Z",
+      "determination_date": "2026-06-29T12:00:00Z"
     },
     {
       "merger_id": "WA-05024",
@@ -269,10 +278,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 27,
+  "count": 28,
   "phase_1_count": 10,
   "phase_2_count": 0,
-  "waiver_count": 17,
+  "waiver_count": 18,
   "active_count": 3,
   "phase_duration": {
     "average_days": 23.142857142857142,
