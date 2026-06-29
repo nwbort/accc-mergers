@@ -180,6 +180,13 @@ def generate_detail_files(mergers: list, output_dir: Path) -> int:
             "is_waiver": m.get('is_waiver', False),
             "status": m.get('status'),
             "phase": classify_phase(m),
+            # Dates that drive industry-level "follow" notifications: a merger
+            # being filed in the industry and its determination being published.
+            # Kept on the lightweight summary so the frontend can detect new
+            # filings/determinations without fetching each merger's detail file.
+            "notification_date": m.get('effective_notification_datetime')
+            or m.get('original_notification_datetime'),
+            "determination_date": m.get('determination_publication_date'),
         }
 
         codes = m.get('anzsic_codes') or m.get('anszic_codes') or []

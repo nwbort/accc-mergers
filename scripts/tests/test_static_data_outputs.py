@@ -279,6 +279,20 @@ class TestIndustriesDetailFiles:
         assert data['waiver_count'] == 0
         assert data['active_count'] == 1
 
+    def test_summary_carries_follow_notification_dates(self, tmp_path):
+        # The per-merger summary exposes the filing + determination dates that
+        # drive industry-follow notifications on the frontend.
+        industries.generate_detail_files(_enriched_fixture(), tmp_path)
+        with open(tmp_path / 'industries' / '0600.json') as f:
+            data = json.load(f)
+        by_id = {m['merger_id']: m for m in data['mergers']}
+        # Determined notification: both dates present.
+        assert by_id['MN-0001']['notification_date'] == '2025-01-06T09:00:00Z'
+        assert by_id['MN-0001']['determination_date'] == '2025-02-05T12:00:00Z'
+        # In-progress notification: filed but no determination yet.
+        assert by_id['MN-0002']['notification_date'] == '2025-03-15T09:00:00Z'
+        assert by_id['MN-0002']['determination_date'] is None
+
     def test_mergers_roll_up_to_ancestors(self, tmp_path):
         industries.generate_detail_files(_enriched_fixture(), tmp_path)
         # The group/subdivision/division above 0600 aggregate its mergers,
