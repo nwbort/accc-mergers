@@ -489,6 +489,58 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/uber-blacklane"
     },
     {
+      "merger_id": "WA-20025",
+      "merger_name": "Bupa \u2013 Barings Australian Private Credit Fund",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-05T12:00:00Z",
+      "determination_publication_date": "2026-06-29T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "BUPA HI PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "81 000 057 590"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Barings Australian Private Credit Fund",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Barings Australia Pty Ltd as trustee and manager of Barings Australian Private Credit Fund",
+          "identifier_type": "ABN",
+          "identifier": "34 140 045 656"
+        },
+        {
+          "name": "Barings LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6230",
+          "name": "Non-Depository Financing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6321",
+          "name": "Health Insurance"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bupa-%E2%80%93-barings-australian-private-credit-fund"
+    },
+    {
       "merger_id": "WA-35025",
       "merger_name": "SLR Consulting Australia - Hydrobiology",
       "status": "Assessment completed",

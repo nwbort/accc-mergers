@@ -27,6 +27,15 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "WA-20025",
+      "merger_name": "Bupa \u2013 Barings Australian Private Credit Fund",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-05T12:00:00Z",
+      "determination_date": "2026-06-29T12:00:00Z"
+    },
+    {
       "merger_id": "WA-75022",
       "merger_name": "United States\u2013Australia Gallium",
       "is_waiver": true,
@@ -54,10 +63,10 @@
       "determination_date": null
     }
   ],
-  "count": 3,
+  "count": 4,
   "phase_1_count": 0,
   "phase_2_count": 1,
-  "waiver_count": 2,
+  "waiver_count": 3,
   "active_count": 0,
   "phase_duration": {
     "average_days": 89.0,

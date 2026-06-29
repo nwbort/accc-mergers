@@ -1,6 +1,6 @@
 {
   "total_mergers": 152,
-  "total_waivers": 241,
+  "total_waivers": 242,
   "by_status": {
     "Assessment completed": 115,
     "Under assessment": 36,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 227,
+    "Approved": 228,
     "Not approved": 14
   },
   "phase_duration": {
@@ -37,7 +37,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 49
+      "count": 50
     },
     {
       "name": "Computer System Design and Related Services",
@@ -176,6 +176,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20025",
+      "merger_name": "Bupa \u2013 Barings Australian Private Credit Fund",
+      "determination": "Approved",
+      "determination_date": "2026-06-29T12:00:00Z",
+      "page_modified_datetime": "2026-06-29T17:41:33+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-70023",
       "merger_name": "MLPL HoldCo \u2013 shares in Marinus Link Pty Ltd",
       "determination": "Approved",
@@ -284,16 +294,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-80014",
-      "merger_name": "ANZ Banking Group - Worldline Australia",
-      "determination": "Approved",
-      "determination_date": "2026-06-25T12:00:00Z",
-      "page_modified_datetime": "2026-06-25T16:12:29+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
