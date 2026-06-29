@@ -1,0 +1,157 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/openai-ona",
+  "merger_name": "OpenAI - Ona",
+  "status": "Under assessment",
+  "merger_id": "MN-90020",
+  "effective_notification_datetime": "2026-06-26T12:00:00Z",
+  "original_notification_datetime": "2026-06-26T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-08-07T12:00:00Z",
+  "page_modified_datetime": "2026-06-29T14:03:06+10:00",
+  "consultation_response_due_date": "2026-07-03T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Wave Merger Sub, Inc.",
+      "identifier_type": null,
+      "identifier": "Delaware File Number  10631976"
+    },
+    {
+      "name": "OpenAI Group PBC",
+      "identifier_type": null,
+      "identifier": "Delaware File Number  10381551"
+    },
+    {
+      "name": "Wave Merger Sub II, LLC",
+      "identifier_type": null,
+      "identifier": "Delaware File Number  7007085"
+    }
+  ],
+  "targets": [
+    {
+      "name": "Gitpod, Inc.",
+      "identifier_type": null,
+      "identifier": "Delaware File Number  3353320"
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "Gitpod GmbH",
+      "identifier_type": null,
+      "identifier": "HRB  22228"
+    },
+    {
+      "name": "OpenAI Foundation",
+      "identifier_type": null,
+      "identifier": "Delaware File Number  5902936"
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "5420",
+      "name": "Software Publishing"
+    },
+    {
+      "code": "5921",
+      "name": "Data Processing and Web Hosting Services"
+    }
+  ],
+  "merger_description": "OpenAI Group PBC, an entity controlled by the OpenAI Foundation (**OpenAI**), proposes to acquire 100% of the share capital of Gitpod, Inc. (known as\u00a0**Ona**).\n\nOpenAI develops artificial intelligence (**AI**) foundational models, including its GPT family of models, as well as foundation model-based services such as ChatGPT.\n\nOpenAI also supplies Codex, an AI-powered agent designed to enable software developers to perform and automate various software engineering tasks, subject to human direction and review. Codex is typically accessed through user-facing interfaces and developer tools and is powered by OpenAI\u2019s own foundation models.\n\nOna (previously known as Gitpod) supplies a platform that enables enterprise customers to deploy and orchestrate AI-powered agents to run software engineering tasks within the customer\u2019s own infrastructure or cloud environment. These agents can run autonomously in the background and at scale, including when individual developers are not actively using their laptops. Ona\u2019s platform works across multiple cloud platforms and with multiple foundation models.",
+  "events": [
+    {
+      "date": "2026-06-29T12:00:00Z",
+      "title": "OpenAI - Ona - Phase 1 Questionnaire",
+      "display_title": "OpenAI - Ona - Phase 1 Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/OpenAI%20-%20Ona%20-%20Phase%201%20questionnaire.docx",
+      "url_gh": "/mergers/MN-90020/OpenAI - Ona - Phase 1 questionnaire.pdf",
+      "status": "live",
+      "phase": "Phase 1"
+    },
+    {
+      "date": "2026-06-26T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-25021",
+      "merger_name": "OpenAI - Tomoro",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OpenAI Group PBC",
+          "identifier_type": null,
+          "identifier": "Delaware file number  10381551"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Tomoro AI Ltd",
+          "identifier_type": null,
+          "identifier": "UK Companies House registration number  15208678"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-30005",
+      "merger_name": "Adobe - Semrush",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Adobe Inc. (NASDAQ: ADBE)",
+          "identifier_type": null,
+          "identifier": "2748129"
+        },
+        {
+          "name": "Fenway Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "10389477"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Semrush Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "7690622"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35002",
+      "merger_name": "IFS \u2013 Softeon",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Fjord Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  921660460"
+        },
+        {
+          "name": "IFS North America, Inc.",
+          "identifier_type": null,
+          "identifier": "TIN/EIN  391292200"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Softeon Inc.",
+          "identifier_type": null,
+          "identifier": "EIN 541960847"
+        }
+      ]
+    }
+  ]
+}
