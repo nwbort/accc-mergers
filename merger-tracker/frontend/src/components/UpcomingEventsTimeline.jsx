@@ -84,16 +84,14 @@ function UpcomingEventsTimeline({ events }) {
   if (days.length === 0) return <EmptyCard />;
 
   return (
-    <section
-      aria-labelledby="upcoming-events-heading"
-      className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden"
-    >
-      <div className="px-5 sm:px-6 py-4 border-b border-gray-50">
-        <h2 id="upcoming-events-heading" className="text-lg font-semibold text-gray-900">
-          Upcoming events
-        </h2>
-      </div>
-
+    <section aria-labelledby="upcoming-events-heading">
+      <h2
+        id="upcoming-events-heading"
+        className="text-lg font-semibold text-gray-900 mb-4"
+      >
+        Upcoming events
+      </h2>
+      <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
       <ol className="px-5 sm:px-6 py-5">
         {days.map((day, dayIndex) => {
           const daysRemaining = getCalendarDaysUntil(day.date);
@@ -168,6 +166,7 @@ function UpcomingEventsTimeline({ events }) {
           );
         })}
       </ol>
+      </div>
     </section>
   );
 }
