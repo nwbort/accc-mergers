@@ -61,10 +61,17 @@ clean_file() {
   local file="$1"
 
   # Single-pass perl rewrite. Slurp mode (-0777) lets the multi-line patterns
-  # (BOOMR script, dcterms/canonical reorder, megamenu) work alongside the
-  # line-scoped ones. Negated classes include \n so line-scoped patterns can't
-  # accidentally span lines under slurp mode.
+  # (settings JSON, BOOMR script, dcterms/canonical reorder, megamenu) work
+  # alongside the line-scoped ones. Negated classes include \n so line-scoped
+  # patterns can't accidentally span lines under slurp mode.
   perl -i -0777 -pe '
+    # Collapse the entire Drupal settings JSON blob to a static placeholder.
+    # It is machine config full of per-request churn (session/build tokens such
+    # as libraries, permissionsHash, css_js_query_string, view_dom_id, ct,
+    # _bhlid, brid, ...) that nothing in the pipeline consumes. Replacing it
+    # wholesale beats stripping each field individually, so new tokens the
+    # upstream site adds inside it never produce diff noise again.
+    s{(<script type="application/json" data-drupal-selector="drupal-settings-json">).*?(</script>)}{${1}STATIC_DRUPAL_SETTINGS${2}}s;
     s/js-view-dom-id-[a-f0-9]{64}/js-view-dom-id-STATIC/g;
     s/(id="edit-submit-accc-search-site--)[^"\n]+"/${1}STATIC"/g;
     s/(id="edit-actions)--[0-9]+"/${1}"/g;
@@ -72,19 +79,10 @@ clean_file() {
     s/(name="form_build_id" value="form-)[^"\n]+"/${1}STATIC"/g;
     s/(css\/css_)[^.\n]+\.css/${1}STATIC.css/g;
     s/(js\/js_)[^.\n]+\.js/${1}STATIC.js/g;
-    s/("libraries":")[^"\n]+"/${1}STATIC_LIBRARIES"/g;
-    s/("permissionsHash":")[^"\n]+"/${1}STATIC_HASH"/g;
-    s/("view_dom_id":")[a-f0-9]{64}/${1}STATIC"/g;
-    s/(views_dom_id:)[a-f0-9]{64}/${1}STATIC/g;
     s/include=[^"&>\n]+/include=STATIC/g;
     s/href="https:\/\/app\.readspeaker\.com\/[^"\n]+"/href="STATIC_READSPEAKER_URL"/g;
     s/(icons\.svg\?t)[^#\n]+#/${1}STATIC#/g;
     s/(\?t)[^">\n]+/${1}STATIC/g;
-    s/("css_js_query_string":")[^"\n]+"/${1}STATIC"/g;
-    s/ct=t%28[^"\\]*%29\\u0026//g;
-    s/acccCrmDataPullChildSyncOnLoad=[^"\\]*\\u0026//g;
-    s/_bhlid=[^"\\]*\\u0026//g;
-    s/brid=[^"\\]*\\u0026//g;
     s/[ \t]*\n[ \t]*<script>!function\(e\)\{var n="https:\/\/s\.go-mpulse\.net\/boomerang\/".*?\(window\);<\/script><\/head>/\n  <\/head>/s;
     s{(<meta name="dcterms\.modified"[^\n]*/>\n)(<meta name="dcterms\.created"[^\n]*/>\n)}{$2$1}g;
     s{(<link rel="canonical"[^\n]*/>\n)(<link rel="shortlink"[^\n]*/>\n)}{$2$1}g;
