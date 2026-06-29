@@ -114,6 +114,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-07-06T12:00:00Z",
+      "merger_id": "MN-01107",
+      "merger_name": "WSP / GEOTECHNICAL TESTING AND INTERPRETATION",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-06-26T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-07-06T12:00:00Z",
       "merger_id": "MN-80021",
       "merger_name": "INNIO Group \u2013 Enerflex",
       "status": "Under assessment",
@@ -414,6 +424,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-08-07T12:00:00Z",
+      "merger_id": "MN-01107",
+      "merger_name": "WSP / GEOTECHNICAL TESTING AND INTERPRETATION",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-06-26T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-08-07T12:00:00Z",
       "merger_id": "MN-90020",
       "merger_name": "OpenAI - Ona",
       "status": "Under assessment",
@@ -431,6 +451,6 @@
       "effective_notification_datetime": "2026-02-20T12:00:00Z"
     }
   ],
-  "count": 43,
+  "count": 45,
   "days_ahead": 60
 }
