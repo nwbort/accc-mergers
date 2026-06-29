@@ -34,6 +34,12 @@ export const CARD_STYLES = {
 
 export const DEFAULT_CARD_STYLE = { bg: 'bg-gray-500 hover:bg-gray-600', sub: 'text-gray-50/80', ...ON_DARK };
 
+// Blue ring applied to cards for items the visitor hasn't seen yet (those that
+// also show a "New" badge), so recent arrivals stand out from the grid. A ring
+// (rather than a border) avoids shifting the card's layout. Full class string
+// required so Tailwind's scanner keeps it at build time.
+export const NEW_ITEM_BORDER = 'ring-2 ring-blue-500';
+
 // Determination takes precedence over status, mirroring StatusBadge.
 export function getCardStyle({ determination, status } = {}) {
   return CARD_STYLES[determination] || CARD_STYLES[status] || DEFAULT_CARD_STYLE;
