@@ -408,7 +408,7 @@ function NotificationPanel({ isOpen, onClose }) {
       {/* Header */}
       <div className="px-5 py-3.5 border-b border-gray-100 bg-gray-50/80 flex-shrink-0">
         <h2 className="text-sm font-semibold text-gray-900">
-          Tracked
+          Tracked mergers
           {trackedMergerIds.length > 0 && (
             <span className="ml-2 text-gray-500 font-normal">
               ({trackedMergerIds.length})
