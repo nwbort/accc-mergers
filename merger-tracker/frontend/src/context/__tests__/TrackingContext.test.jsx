@@ -201,6 +201,43 @@ describe('TrackingContext auto-tracking of related mergers', () => {
     });
   });
 
+  it('surfaces an auto-tracked re-filing as an unseen notification (ping)', async () => {
+    mockFetchFromMergers({
+      'WA-1': {
+        merger_id: 'WA-1',
+        merger_name: 'Waiver',
+        events: [{ date: '2024-01-01', title: 'Waiver lodged' }],
+        related_merger: { merger_id: 'MN-2', relationship: 'refiled_as', merger_name: 'Notification' },
+      },
+      'MN-2': {
+        merger_id: 'MN-2',
+        merger_name: 'Notification',
+        events: [{ date: '2024-06-01', title: 'Notification lodged' }],
+        related_merger: { merger_id: 'WA-1', relationship: 'refiled_from', merger_name: 'Waiver' },
+      },
+    });
+
+    const { result } = renderHook(() => useTracking(), { wrapper });
+
+    act(() => {
+      result.current.trackMerger('WA-1');
+    });
+
+    await waitFor(() => {
+      expect(result.current.trackedMergerIds).toContain('MN-2');
+    });
+
+    // The re-filed matter's events surface as unseen → the user gets a ping.
+    await waitFor(() => {
+      expect(result.current.unseenEvents.some((e) => e.merger_id === 'MN-2')).toBe(true);
+    });
+    expect(result.current.unseenCount).toBeGreaterThan(0);
+
+    // The manually-tracked source's own events stay seen (tracking it yourself
+    // shouldn't ping you about its history).
+    expect(result.current.unseenEvents.some((e) => e.merger_id === 'WA-1')).toBe(false);
+  });
+
   it('auto-tracks a re-filing that is only recorded after the source was tracked', async () => {
     // First visit: the waiver is tracked while still live — no re-filing exists
     // yet, so its detail carries no related_merger link.

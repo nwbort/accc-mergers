@@ -188,11 +188,14 @@ export function TrackingProvider({ children }) {
           });
         }
         if (idsToAutoTrack.length > 0) {
-          // Mark auto-tracked mergers as newly tracked so their existing events
-          // are marked seen (and don't immediately flood the notification panel),
-          // then add them — which re-runs this effect to fetch their own events
-          // and follow any further forward link in the chain.
-          setNewlyTrackedIds((ids) => [...ids, ...idsToAutoTrack]);
+          // Add the re-filed matter(s) — which re-runs this effect to fetch their
+          // own events and follow any further forward link in the chain.
+          //
+          // Deliberately NOT added to newlyTrackedIds: unlike a manual track
+          // (which marks the merger's existing events seen to avoid a flood), an
+          // auto-tracked re-filing must surface as a notification — the whole
+          // point is to ping the user that the matter they were following was
+          // re-filed. Leaving its events unseen produces that ping.
           setTrackedMergerIds((prev) => {
             const prevSet = new Set(prev);
             const fresh = idsToAutoTrack.filter((id) => !prevSet.has(id));
