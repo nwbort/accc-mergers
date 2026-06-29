@@ -30,14 +30,22 @@
     {
       "name": "Gitpod, Inc.",
       "identifier_type": null,
-      "identifier": "Delaware File Number  3353320"
+      "identifier": "Delaware File Number  3353320",
+      "canonical": {
+        "id": "gitpod-gmbh",
+        "name": "Gitpod GmbH"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Gitpod GmbH",
       "identifier_type": null,
-      "identifier": "HRB  22228"
+      "identifier": "HRB  22228",
+      "canonical": {
+        "id": "gitpod-gmbh",
+        "name": "Gitpod GmbH"
+      }
     },
     {
       "name": "OpenAI Foundation",

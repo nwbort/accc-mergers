@@ -2033,19 +2033,31 @@
         {
           "name": "RESIDENTIA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "17 618 920 059"
+          "identifier": "17 618 920 059",
+          "canonical": {
+            "id": "residentia-group-pty-ltd",
+            "name": "Residentia Group Pty Ltd"
+          }
         },
         {
           "name": "RESIDENTIA GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 600 546 656"
+          "identifier": "70 600 546 656",
+          "canonical": {
+            "id": "residentia-group-pty-ltd",
+            "name": "Residentia Group Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Midea Group Co., Ltd.",
           "identifier_type": null,
-          "identifier": "People\u2019s Republic of China identifying number: 91440606722473344C"
+          "identifier": "People\u2019s Republic of China identifying number: 91440606722473344C",
+          "canonical": {
+            "id": "midea-group-co-ltd",
+            "name": "Midea Group Co., Ltd."
+          }
         }
       ],
       "anzsic_codes": [
@@ -2095,14 +2107,22 @@
         {
           "name": "Gitpod, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware File Number  3353320"
+          "identifier": "Delaware File Number  3353320",
+          "canonical": {
+            "id": "gitpod-gmbh",
+            "name": "Gitpod GmbH"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Gitpod GmbH",
           "identifier_type": null,
-          "identifier": "HRB  22228"
+          "identifier": "HRB  22228",
+          "canonical": {
+            "id": "gitpod-gmbh",
+            "name": "Gitpod GmbH"
+          }
         },
         {
           "name": "OpenAI Foundation",
