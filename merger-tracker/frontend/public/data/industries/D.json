@@ -27,10 +27,19 @@
       "code": "29",
       "name": "Waste Collection, Treatment and Disposal Services",
       "level": "subdivision",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-50009",
+      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-05-28T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "WA-35027",
       "merger_name": "GPS Energy \u2013 Ryowa's interest in Gladstone Power Station Joint Venture",
@@ -203,11 +212,11 @@
       "determination_date": "2025-11-26T12:00:00Z"
     }
   ],
-  "count": 19,
-  "phase_1_count": 3,
+  "count": 20,
+  "phase_1_count": 4,
   "phase_2_count": 0,
   "waiver_count": 16,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 26.333333333333332,
     "median_days": 28,

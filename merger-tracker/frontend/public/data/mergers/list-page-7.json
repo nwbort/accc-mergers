@@ -2113,16 +2113,6 @@
       ],
       "targets": [
         {
-          "name": "MACQUARIE GEOTECHNICAL PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "73 102 691 056"
-        },
-        {
-          "name": "REGIONAL GROUP AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "21 634 578 699"
-        },
-        {
           "name": "MAAS GROUP HOLDINGS LIMITED",
           "identifier_type": "ABN",
           "identifier": "84 632 994 542"
@@ -2131,10 +2121,49 @@
           "name": "MACHINERY SALES PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "13 074 358 277"
+        },
+        {
+          "name": "MACQUARIE GEOTECHNICAL PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "73 102 691 056"
+        },
+        {
+          "name": "REGIONAL GROUP AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "21 634 578 699"
         }
       ],
       "other_parties": [],
-      "anzsic_codes": [],
+      "anzsic_codes": [
+        {
+          "code": "0911",
+          "name": "Gravel and Sand Quarrying"
+        },
+        {
+          "code": "0919",
+          "name": "Other Construction Material Mining"
+        },
+        {
+          "code": "1709",
+          "name": "Other Petroleum and Coal Product Manufacturing"
+        },
+        {
+          "code": "2033",
+          "name": "Ready-Mixed Concrete Manufacturing"
+        },
+        {
+          "code": "2921",
+          "name": "Waste Treatment and Disposal Services"
+        },
+        {
+          "code": "2922",
+          "name": "Waste Remediation and Materials Recovery Services"
+        },
+        {
+          "code": "6925",
+          "name": "Scientific Testing and Analysis Services"
+        }
+      ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/heidelberg-materials-australia-%E2%80%93-construction-materials-business-of-maas"
     },
     {

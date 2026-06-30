@@ -25,7 +25,7 @@
       "code": "692",
       "name": "Architectural, Engineering and Technical Services",
       "level": "group",
-      "merger_count": 17
+      "merger_count": 18
     },
     {
       "code": "693",
@@ -81,6 +81,15 @@
       "status": "Under assessment",
       "phase": "Phase 1",
       "notification_date": "2026-06-02T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-50009",
+      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-05-28T12:00:00Z",
       "determination_date": null
     },
     {
@@ -543,11 +552,11 @@
       "determination_date": "2026-01-13T12:00:00Z"
     }
   ],
-  "count": 53,
-  "phase_1_count": 20,
+  "count": 54,
+  "phase_1_count": 21,
   "phase_2_count": 1,
   "waiver_count": 32,
-  "active_count": 4,
+  "active_count": 5,
   "phase_duration": {
     "average_days": 34.05555555555556,
     "median_days": 28,

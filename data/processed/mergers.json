@@ -11246,8 +11246,8 @@
     "original_notification_datetime": "2026-05-28T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-08-03T12:00:00Z",
-    "page_modified_datetime": "2026-06-15T09:42:20+10:00",
-    "consultation_response_due_date": "2026-06-05T12:00:00Z",
+    "page_modified_datetime": "2026-06-30T17:31:23+10:00",
+    "consultation_response_due_date": "2026-06-29T12:00:00Z",
     "acquirers": [
       {
         "name": "HEIDELBERG MATERIALS AUSTRALIA HOLDINGS PTY LTD",
@@ -11257,16 +11257,6 @@
     ],
     "targets": [
       {
-        "name": "MACQUARIE GEOTECHNICAL PTY LIMITED",
-        "identifier_type": "ABN",
-        "identifier": "73 102 691 056"
-      },
-      {
-        "name": "REGIONAL GROUP AUSTRALIA PTY LIMITED",
-        "identifier_type": "ABN",
-        "identifier": "21 634 578 699"
-      },
-      {
         "name": "MAAS GROUP HOLDINGS LIMITED",
         "identifier_type": "ABN",
         "identifier": "84 632 994 542"
@@ -11275,11 +11265,50 @@
         "name": "MACHINERY SALES PTY LIMITED",
         "identifier_type": "ABN",
         "identifier": "13 074 358 277"
+      },
+      {
+        "name": "MACQUARIE GEOTECHNICAL PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "73 102 691 056"
+      },
+      {
+        "name": "REGIONAL GROUP AUSTRALIA PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "21 634 578 699"
       }
     ],
     "other_parties": [],
-    "anzsic_codes": [],
-    "merger_description": "Heidelberg Materials Australia Holdings Pty Ltd (**HMAH**) proposes to acquire 100% of the share capital of Regional Group Australia Pty Limited, Macquarie Geotechnical Pty Limited and Machinery Sales Pty Limited, being wholly owned subsidiaries of Maas Group Holdings Limited (**MGH**), which together comprise MGH\u2019s construction materials business (**MAAS**) (the **Acquisition**).\n\nThe MAAS business includes the following assets (for completeness, this list also includes assets which MAAS has recently acquired from Colas which HMA intends to be included in the Acquisition):\n\n  \n\n(a)\u00a0\u00a0\u00a0\u00a043 quarries (including hard rock and natural sand quarries) in Queensland, New South Wales (**NSW**) and Victoria,\u00a0  \n\n(b)\u00a0\u00a0\u00a0\u00a018 fixed and 4 mobile ready-mix concrete (**RMX**) plants in Queensland, NSW and Victoria,\u00a0  \n\n(c)\u00a0\u00a0\u00a0\u00a04 operating asphalt sites in Queensland, NSW and the Australian Capital Territory (**ACT**), and an asphalt site under construction in Victoria,\u00a0  \n\n(d)\u00a0\u00a0\u00a0\u00a01 heavy construction and demolition (**C&D**) waste disposal and recycling facility in Victoria,\u00a0  \n\n(e)\u00a0\u00a0\u00a0\u00a05 fixed and 8 mobile materials testing and geotechnical services labs in Queensland, NSW and Victoria, and\u00a0  \n\n(f)\u00a0\u00a0\u00a0\u00a03 machinery sales sites in Queensland, NSW and Victoria.\u00a0  \n\n\nHMAH, formerly known as Hanson Holdings Australia Pty Ltd, together with its related entities in Australia (collectively, **HMA**) supplies a range of construction materials, including RMX, quarry products (including coarse and fine aggregates), asphalt and sustainable / recycled construction materials. HMA also operates waste disposal and recycling facilities and has a 50% interest in the Cement Australia joint venture, which produces and sells cement.\n\n  \n\nMGH is a diversified industrials group, which operates a civil construction and hire business, a construction equipment manufacture and retailing business, and a property development business. MGH\u2019s construction materials business, MAAS, operates RMX plants, hard rock and natural sand quarries, an asphalt business, a recycling centre, and also provides materials testing and geotechnical services, and machinery sales and earthmoving services.\n\nHMA and MAAS (the **Parties**) overlap in the supply of the following products in the following regions:\n\n* **RMX** in Greater Melbourne and Geelong, Central Queensland (Rockhampton and Blackwater), NSW (Tamworth, Dubbo, Illawarra and Shoalhaven),\n* **coarse aggregates** in Greater Melbourne, Central Queensland (Biloela), South East Queensland (to the extent that MAAS is the landholder of the Yatala quarry, which is operated by Crushing Dynamics under a lease), NSW (Dubbo, Illawarra and Shoalhaven),\n* **fine aggregates** in Greater Melbourne,\n* **asphalt** in Greater Melbourne (in the future once MAAS\u2019s plant in Pakenham becomes operational), South East Queensland, and\n* **heavy C&D waste disposal and recycling services** in Greater Melbourne.\n\nThe Parties\u2019 coarse aggregates and fine aggregates products are upstream inputs into RMX and asphalt, and can also be used for other end uses such as road base, ballast, fill material, drainage and landscaping.",
+    "anzsic_codes": [
+      {
+        "code": "0911",
+        "name": "Gravel and Sand Quarrying"
+      },
+      {
+        "code": "0919",
+        "name": "Other Construction Material Mining"
+      },
+      {
+        "code": "1709",
+        "name": "Other Petroleum and Coal Product Manufacturing"
+      },
+      {
+        "code": "2033",
+        "name": "Ready-Mixed Concrete Manufacturing"
+      },
+      {
+        "code": "2921",
+        "name": "Waste Treatment and Disposal Services"
+      },
+      {
+        "code": "2922",
+        "name": "Waste Remediation and Materials Recovery Services"
+      },
+      {
+        "code": "6925",
+        "name": "Scientific Testing and Analysis Services"
+      }
+    ],
+    "merger_description": "Heidelberg Materials Australia Holdings Pty Ltd (**HMAH**) proposes to acquire 100% of the share capital of Regional Group Australia Pty Limited, Macquarie Geotechnical Pty Limited and Machinery Sales Pty Limited, being wholly owned subsidiaries of Maas Group Holdings Limited (**MGH**), which together comprise MGH\u2019s construction materials business (**MAAS**) (the **Acquisition**).\n\nThe MAAS business includes the following assets (for completeness, this list also includes assets which MAAS has recently acquired from Colas which HMA intends to be included in the Acquisition):\n\n(a)\u00a0\u00a0\u00a0\u00a043 quarries (including hard rock and natural sand quarries) in Queensland, New South Wales (**NSW**) and Victoria,\u00a0  \n\n(b)\u00a0\u00a0\u00a0\u00a018 fixed and 4 mobile ready-mix concrete (**RMX**) plants in Queensland, NSW and Victoria,\u00a0  \n\n(c)\u00a0\u00a0\u00a0\u00a04 operating asphalt sites in Queensland, NSW and the Australian Capital Territory (**ACT**), and an asphalt site under construction in Victoria,\u00a0  \n\n(d)\u00a0\u00a0\u00a0\u00a01 heavy construction and demolition (**C&D**) waste disposal and recycling facility in Victoria,\u00a0  \n\n(e)\u00a0\u00a0\u00a0\u00a05 fixed and 8 mobile materials testing and geotechnical services labs in Queensland, NSW and Victoria, and\u00a0  \n\n(f)\u00a0\u00a0\u00a0\u00a03 machinery sales sites in Queensland, NSW and Victoria.\n\nHMAH, formerly known as Hanson Holdings Australia Pty Ltd, together with its related entities in Australia (collectively, **HMA**) supplies a range of construction materials, including RMX, quarry products (including coarse and fine aggregates), asphalt and sustainable / recycled construction materials. HMA also operates waste disposal and recycling facilities and has a 50% interest in the Cement Australia joint venture, which produces and sells cement.\n\nMGH is a diversified industrials group, which operates a civil construction and hire business, a construction equipment manufacture and retailing business, and a property development business. MGH\u2019s construction materials business, MAAS, operates RMX plants, hard rock and natural sand quarries, an asphalt business, a recycling centre, and also provides materials testing and geotechnical services, and machinery sales and earthmoving services.\n\nHMA and MAAS (the **Parties**) overlap in the supply of the following products in the following regions:\n\n* **RMX** in Greater Melbourne and Geelong, Central Queensland (Rockhampton and Blackwater), NSW (Tamworth, Dubbo, Illawarra and Shoalhaven),\n* **coarse aggregates** in Greater Melbourne, Central Queensland (Biloela), South East Queensland (to the extent that MAAS is the landholder of the Yatala quarry, which is operated by Crushing Dynamics under a lease), NSW (Dubbo, Illawarra and Shoalhaven),\n* **fine aggregates** in Greater Melbourne,\n* **asphalt** in Greater Melbourne (in the future once MAAS\u2019s plant in Pakenham becomes operational), South East Queensland, and\n* **heavy C&D waste disposal and recycling services** in Greater Melbourne.\n\nThe Parties\u2019 coarse aggregates and fine aggregates products are upstream inputs into RMX and asphalt, and can also be used for other end uses such as road base, ballast, fill material, drainage and landscaping.",
     "events": [
       {
         "date": "2026-05-28T12:00:00Z",
@@ -11306,6 +11335,22 @@
         "date": "2026-05-29T12:00:00Z",
         "title": "Timeline extended by 15 business days \u2013 following remedy offered by parties",
         "display_title": "Timeline extended by 15 business days \u2013 following remedy offered by parties"
+      },
+      {
+        "date": "2026-06-29T12:00:00Z",
+        "title": "Heidelberg Materials Australia - Construction materials business of MAAS - Remedy offer",
+        "display_title": "Heidelberg Materials Australia - Construction materials business of MAAS - Remedy offer",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Heidelberg%20Materials%20Australia%20%E2%80%93%20construction%20materials%20business%20of%20MAAS%20-%20Remedy%20Offer%20-%2029%20June%202026_0.pdf",
+        "url_gh": "/mergers/MN-50009/Heidelberg Materials Australia \u2013 construction materials business of MAAS - Remedy Offer - 29 June 2026_0.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-06-29T12:00:00Z",
+        "title": "Heidelberg Materials Australia - Construction materials business of MAAS - Questionnaire - Remedy offer",
+        "display_title": "Heidelberg Materials Australia - Construction materials business of MAAS - Questionnaire - Remedy offer",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/HMA%20MAAS%20-%20Questionnaire%20re%3A%20Remedy%20Offer%20%2829%20June%202026%29_0.docx",
+        "url_gh": "/mergers/MN-50009/HMA MAAS - Questionnaire re - Remedy Offer (29 June 2026)_0.pdf",
+        "status": "live"
       }
     ],
     "is_waiver": false
@@ -11808,6 +11853,87 @@
         "display_title": "Questionnaire - Amazon-Globalstar",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Amazon-Globalstar%20-%20Phase%201%20questionnaire.docx",
         "url_gh": "/mergers/MN-50025/Amazon-Globalstar - Phase 1 questionnaire.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-06-29T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/stonepeak-led-consortium-estia-health",
+    "merger_name": "Stonepeak-led consortium - Estia Health",
+    "status": "Under assessment",
+    "merger_id": "MN-50026",
+    "effective_notification_datetime": "2026-06-29T12:00:00Z",
+    "original_notification_datetime": "2026-06-29T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-08-10T12:00:00Z",
+    "page_modified_datetime": "2026-06-30T20:43:33+10:00",
+    "consultation_response_due_date": "2026-07-07T12:00:00Z",
+    "acquirers": [
+      {
+        "name": "Wisdom BidCo Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "19 696 888 730"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Estia Health Holdings Ltd",
+        "identifier_type": "ABN",
+        "identifier": "47 669 884 244"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Stonepeak Partners LP",
+        "identifier_type": null,
+        "identifier": "4958360"
+      },
+      {
+        "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Aura Australia Holdings Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "41 614 139 589"
+      },
+      {
+        "name": "Wisdom TopCo Pty Ltd",
+        "identifier_type": "ACN",
+        "identifier": "696 888 552"
+      },
+      {
+        "name": "Wisdom MIT",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust",
+        "identifier_type": "ABN",
+        "identifier": "99 000 341 533"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "8601",
+        "name": "Aged Care Residential Services"
+      }
+    ],
+    "merger_description": "A consortium comprising investment funds advised and/or managed by affiliates of Stonepeak Partners LP (together with its affiliates, **Stonepeak**), and a fund managed by Axight Capital Limited (**Axight**), propose to acquire 100% of the issued share capital of Estia Health Holdings Ltd (**Estia**) (the **Acquisition**).\n\nStonepeak is a global alternative investment firm specialising in infrastructure and real assets. Stonepeak has an interest in Aura Holdings, a retirement village developer and operator in Queensland.\n\nEstia is the ultimate holding company of the Estia corporate group, which operates residential aged care homes in Australia. Estia operates 94 homes nationally, with operations in Queensland, New South Wales, Victoria and South Australia. Estia is currently majority owned by Bain Capital Private Equity.\n\nAxight is an Abu Dhabi-based investment fund manager established by Lunate, an Abu Dhabi asset management firm. Axight operates as Lunate\u2019s dedicated Asia-Pacific investment platform. Axight and Lunate do not hold any interests in any residential aged care business in Australia.",
+    "events": [
+      {
+        "date": "2026-06-30T12:00:00Z",
+        "title": "Questionnaire - Stonepeak led consortium - Estia Health",
+        "display_title": "Questionnaire - Stonepeak led consortium - Estia Health",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Stonepeak%20-%20Estia%20Health%20-%20third-party%20questionnaire.docx",
+        "url_gh": "/mergers/MN-50026/Stonepeak - Estia Health - third-party questionnaire.pdf",
         "status": "live"
       },
       {

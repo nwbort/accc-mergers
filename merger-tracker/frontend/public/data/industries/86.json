@@ -19,10 +19,19 @@
       "code": "860",
       "name": "Residential Care Services",
       "level": "group",
-      "merger_count": 7
+      "merger_count": 8
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-50026",
+      "merger_name": "Stonepeak-led consortium - Estia Health",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-29T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "WA-95022",
       "merger_name": "Life Without Barriers \u2013 Mallacoota District Health & Support Service",
@@ -87,11 +96,11 @@
       "determination_date": "2026-02-10T12:00:00Z"
     }
   ],
-  "count": 7,
-  "phase_1_count": 5,
+  "count": 8,
+  "phase_1_count": 6,
   "phase_2_count": 0,
   "waiver_count": 2,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 25.2,
     "median_days": 24,

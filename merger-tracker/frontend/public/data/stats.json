@@ -1,9 +1,9 @@
 {
-  "total_mergers": 154,
+  "total_mergers": 155,
   "total_waivers": 247,
   "by_status": {
     "Assessment completed": 116,
-    "Under assessment": 37,
+    "Under assessment": 38,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -86,6 +86,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-50026",
+      "merger_name": "Stonepeak-led consortium - Estia Health",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-29T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-65022",
       "merger_name": "Hapag-Lloyd - ZIM",
       "status": "Under assessment",
@@ -160,14 +168,6 @@
     {
       "merger_id": "MN-50027",
       "merger_name": "Endeavour Group - retail liquor site in Avalon, NSW",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-22T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-65020",
-      "merger_name": "Regis Resources - Vault Minerals",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-22T12:00:00Z",

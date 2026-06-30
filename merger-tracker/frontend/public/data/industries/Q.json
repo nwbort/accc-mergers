@@ -21,7 +21,7 @@
       "code": "86",
       "name": "Residential Care Services",
       "level": "subdivision",
-      "merger_count": 7
+      "merger_count": 8
     },
     {
       "code": "87",
@@ -31,6 +31,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-50026",
+      "merger_name": "Stonepeak-led consortium - Estia Health",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-29T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-01104",
       "merger_name": "Genea - Care Fertility Greenslopes",
@@ -302,11 +311,11 @@
       "determination_date": "2026-02-10T12:00:00Z"
     }
   ],
-  "count": 30,
-  "phase_1_count": 12,
+  "count": 31,
+  "phase_1_count": 13,
   "phase_2_count": 0,
   "waiver_count": 18,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 24.7,
     "median_days": 25,

@@ -124,6 +124,16 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-07-07T12:00:00Z",
+      "merger_id": "MN-50026",
+      "merger_name": "Stonepeak-led consortium - Estia Health",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-06-29T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-07-07T12:00:00Z",
       "merger_id": "MN-65022",
       "merger_name": "Hapag-Lloyd - ZIM",
       "status": "Under assessment",
@@ -444,6 +454,16 @@
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-08-10T12:00:00Z",
+      "merger_id": "MN-50026",
+      "merger_name": "Stonepeak-led consortium - Estia Health",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-06-29T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-08-10T12:00:00Z",
       "merger_id": "MN-65022",
       "merger_name": "Hapag-Lloyd - ZIM",
       "status": "Under assessment",
@@ -461,6 +481,6 @@
       "effective_notification_datetime": "2026-02-20T12:00:00Z"
     }
   ],
-  "count": 46,
+  "count": 48,
   "days_ahead": 60
 }

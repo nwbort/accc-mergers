@@ -31,7 +31,7 @@
       "code": "203",
       "name": "Cement, Lime, Plaster and Concrete Product Manufacturing",
       "level": "group",
-      "merger_count": 4
+      "merger_count": 5
     },
     {
       "code": "209",
@@ -57,6 +57,15 @@
       "status": "Under assessment",
       "phase": "Phase 1",
       "notification_date": "2026-06-15T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-50009",
+      "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-05-28T12:00:00Z",
       "determination_date": null
     },
     {
@@ -96,11 +105,11 @@
       "determination_date": "2026-04-02T12:00:00Z"
     }
   ],
-  "count": 6,
-  "phase_1_count": 4,
+  "count": 7,
+  "phase_1_count": 5,
   "phase_2_count": 0,
   "waiver_count": 2,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 36.0,
     "median_days": 36,

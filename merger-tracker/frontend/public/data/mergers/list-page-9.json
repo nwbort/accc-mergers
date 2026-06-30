@@ -1,6 +1,70 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-50026",
+      "merger_name": "Stonepeak-led consortium - Estia Health",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-29T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-10T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Wisdom BidCo Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "19 696 888 730"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Estia Health Holdings Ltd",
+          "identifier_type": "ABN",
+          "identifier": "47 669 884 244"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Stonepeak Partners LP",
+          "identifier_type": null,
+          "identifier": "4958360"
+        },
+        {
+          "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Aura Australia Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "41 614 139 589"
+        },
+        {
+          "name": "Wisdom TopCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "696 888 552"
+        },
+        {
+          "name": "Wisdom MIT",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust",
+          "identifier_type": "ABN",
+          "identifier": "99 000 341 533"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8601",
+          "name": "Aged Care Residential Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/stonepeak-led-consortium-estia-health"
+    },
+    {
       "merger_id": "MN-65022",
       "merger_name": "Hapag-Lloyd - ZIM",
       "status": "Under assessment",
