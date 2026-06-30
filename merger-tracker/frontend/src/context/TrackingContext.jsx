@@ -11,6 +11,14 @@ const STORAGE_KEYS = {
   // so each is acted on exactly once. See the auto-track logic in the fetch
   // effect for why this is persisted.
   AUTO_TRACK_LINKS: 'merger_tracker_auto_track_links',
+  // Merger IDs from the Phase 2 feed we've already reconciled, so a merger that
+  // becomes Phase 2 is auto-tracked exactly once. See the Phase 2 auto-track
+  // effect for the "going forward" baseline semantics.
+  PHASE_2_SEEN: 'merger_tracker_phase2_seen',
+  // Marks that the Phase 2 baseline has been seeded at least once. Until this is
+  // set, the very first feed load records the existing Phase 2 mergers as the
+  // baseline WITHOUT tracking them — so auto-tracking only applies going forward.
+  PHASE_2_INITIALIZED: 'merger_tracker_phase2_initialized',
 };
 
 // Relationship values (from the data pipeline, see scripts/static_data/loaders.py)
@@ -135,6 +143,25 @@ export function TrackingProvider({ children }) {
   useEffect(() => {
     autoTrackLinksRef.current = autoTrackLinks;
   }, [autoTrackLinks]);
+
+  // Merger IDs from the Phase 2 feed we've already reconciled. A merger only
+  // gets auto-tracked the first time it appears here as Phase 2; once recorded
+  // it's never re-added, so a user who untracks an auto-tracked Phase 2 matter
+  // keeps it untracked. Mirrored in a ref so the fetch effect can read the
+  // latest set without depending on it.
+  const [phase2SeenIds, setPhase2SeenIds] = useState(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEYS.PHASE_2_SEEN);
+      return stored ? new Set(JSON.parse(stored)) : new Set();
+    } catch (err) {
+      console.error('Failed to read Phase 2 seen IDs from localStorage:', err);
+      return new Set();
+    }
+  });
+  const phase2SeenIdsRef = useRef(phase2SeenIds);
+  useEffect(() => {
+    phase2SeenIdsRef.current = phase2SeenIds;
+  }, [phase2SeenIds]);
 
   // Fetch events on mount and when tracked mergers change
   useEffect(() => {
@@ -430,6 +457,95 @@ export function TrackingProvider({ children }) {
     // renaming a stored industry doesn't trigger a refetch.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trackedIndustryCodesKey, newlyTrackedIndustryCodes, newlyTrackedIndustryCodesSet]);
+
+  // Auto-track mergers that become Phase 2 — but only going forward. On mount we
+  // fetch the lightweight Phase 2 feed (every notification referred to the
+  // ACCC's detailed Phase 2 review) and diff it against phase2SeenIds.
+  //
+  // The first ever load seeds the baseline: existing Phase 2 mergers are recorded
+  // as "seen" WITHOUT being tracked, so enabling this feature doesn't retroactively
+  // pull a user's whole back catalogue into their tracked list. After that, any
+  // merger appearing in the feed for the first time is auto-tracked, surfacing the
+  // referral as a notification. Each ID is reconciled exactly once: a Phase 2
+  // matter the user later untracks is not silently re-added.
+  //
+  // Runs once on mount — the feed is regenerated server-side, so a long-lived tab
+  // picks up new referrals on its next load rather than via polling.
+  useEffect(() => {
+    let cancelled = false;
+
+    const reconcilePhase2 = async () => {
+      let feed;
+      try {
+        const res = await fetch(API_ENDPOINTS.phase2Mergers);
+        if (!res.ok) return;
+        feed = await res.json();
+      } catch (err) {
+        console.error('Failed to fetch Phase 2 mergers feed:', err);
+        return;
+      }
+      if (cancelled) return;
+
+      const feedIds = (feed?.mergers || [])
+        .map((m) => m.merger_id)
+        .filter(Boolean);
+
+      const seen = phase2SeenIdsRef.current;
+      const newIds = feedIds.filter((id) => !seen.has(id));
+
+      const initialized = localStorage.getItem(STORAGE_KEYS.PHASE_2_INITIALIZED);
+      if (!initialized) {
+        // First run: the current feed (whatever it is, possibly empty) is the
+        // baseline. Mark initialized and record the current IDs as seen WITHOUT
+        // tracking them, so auto-tracking only fires for future referrals.
+        localStorage.setItem(STORAGE_KEYS.PHASE_2_INITIALIZED, '1');
+        if (newIds.length > 0) {
+          setPhase2SeenIds((prev) => {
+            const next = new Set(prev);
+            newIds.forEach((id) => next.add(id));
+            return next;
+          });
+        }
+        return;
+      }
+
+      if (newIds.length === 0) return;
+
+      // Record every newly-seen Phase 2 ID so each is reconciled exactly once.
+      setPhase2SeenIds((prev) => {
+        const next = new Set(prev);
+        newIds.forEach((id) => next.add(id));
+        return next;
+      });
+
+      // Track any merger that newly became Phase 2. Deliberately NOT added to
+      // newlyTrackedIds: like an auto-tracked re-filing, the point is to ping the
+      // user that the matter reached Phase 2, so its events stay unseen.
+      setTrackedMergerIds((prev) => {
+        const prevSet = new Set(prev);
+        const fresh = newIds.filter((id) => !prevSet.has(id));
+        return fresh.length ? [...prev, ...fresh] : prev;
+      });
+    };
+
+    reconcilePhase2();
+    return () => {
+      cancelled = true;
+    };
+    // Mount-only: phase2SeenIds is read through a ref to avoid re-running.
+  }, []);
+
+  // Persist the set of reconciled Phase 2 merger IDs to localStorage.
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        STORAGE_KEYS.PHASE_2_SEEN,
+        JSON.stringify(Array.from(phase2SeenIds))
+      );
+    } catch (e) {
+      console.error('Failed to save Phase 2 seen IDs:', e);
+    }
+  }, [phase2SeenIds]);
 
   // Persist tracked mergers to localStorage
   useEffect(() => {

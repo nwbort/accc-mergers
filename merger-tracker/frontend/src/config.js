@@ -21,6 +21,7 @@ export const API_ENDPOINTS = {
   industries: '/data/industries.json',
   industryDetail: (code) => `/data/industries/${code}.json`,  // Individual industry file with mergers
   upcomingEvents: '/data/upcoming-events.json',
+  phase2Mergers: '/data/phase-2-mergers.json',  // Mergers referred to Phase 2 (drives auto-tracking)
   commentary: '/data/commentary.json',  // Mergers with user commentary
   digest: '/data/digest.json',  // Weekly digest of merger activity
   analysis: '/data/analysis.json',  // Pre-computed analysis data

@@ -26,6 +26,7 @@ from static_data.outputs import (
     individual,
     industries,
     list as list_out,
+    phase2,
     questionnaires,
     stats,
     timeline,
@@ -648,3 +649,88 @@ class TestQuestionnairesGenerate:
         with open(tmp_path / 'questionnaires' / 'MN-0001.json') as f:
             data = json.load(f)
         assert 'all_questionnaires' not in data, "Removed event's questionnaire should be filtered out"
+
+
+# ---------------------------------------------------------------------------
+# phase2
+# ---------------------------------------------------------------------------
+
+class TestPhase2Generate:
+    def _fixture(self):
+        """A Phase 2 referral, a Phase 1 notification, and a waiver."""
+        return [
+            enrich_merger({
+                'merger_id': 'MN-P2',
+                'merger_name': 'Big acquires Rival',
+                'status': 'Under assessment',
+                'accc_determination': None,
+                'stage': 'Phase 2 - detailed assessment',
+                'effective_notification_datetime': '2025-01-06T12:00:00Z',
+                'anzsic_codes': [],
+                'acquirers': [], 'targets': [], 'other_parties': [],
+                'url': 'https://example.com/MN-P2',
+                'events': [
+                    {'title': 'Merger notified to ACCC', 'date': '2025-01-06T12:00:00Z', 'phase': 'Phase 1'},
+                    {'title': 'ACCC decided notification is subject to Phase 2 review',
+                     'date': '2025-02-20T12:00:00Z', 'phase': 'Phase 2'},
+                ],
+            }),
+            enrich_merger({
+                'merger_id': 'MN-P1',
+                'merger_name': 'Phase 1 matter',
+                'status': 'Under assessment',
+                'accc_determination': None,
+                'stage': 'Phase 1 - initial assessment',
+                'effective_notification_datetime': '2025-03-01T12:00:00Z',
+                'anzsic_codes': [],
+                'acquirers': [], 'targets': [], 'other_parties': [],
+                'url': 'https://example.com/MN-P1',
+                'events': [],
+            }),
+            enrich_merger({
+                'merger_id': 'WA-1',
+                'merger_name': 'Waiver',
+                'status': 'Determined',
+                'accc_determination': 'Waiver granted',
+                'stage': 'Waiver',
+                'effective_notification_datetime': '2025-02-01T12:00:00Z',
+                'anzsic_codes': [],
+                'acquirers': [], 'targets': [], 'other_parties': [],
+                'url': 'https://example.com/WA-1',
+                'events': [],
+            }),
+        ]
+
+    def test_returns_valid_shape(self):
+        payload = phase2.generate(self._fixture())
+        json.dumps(payload)
+        assert set(payload.keys()) == {'mergers', 'count'}
+        assert payload['count'] == len(payload['mergers'])
+
+    def test_only_includes_phase_2_mergers(self):
+        payload = phase2.generate(self._fixture())
+        ids = {m['merger_id'] for m in payload['mergers']}
+        assert ids == {'MN-P2'}
+
+    def test_captures_referral_date_from_events(self):
+        payload = phase2.generate(self._fixture())
+        entry = payload['mergers'][0]
+        assert entry['phase_2_date'] == '2025-02-20T12:00:00Z'
+
+    def test_includes_merger_referred_via_determination(self):
+        merger = enrich_merger({
+            'merger_id': 'MN-DET',
+            'merger_name': 'Referred via determination',
+            'status': 'Under assessment',
+            'accc_determination': merger_status.REFERRED_TO_PHASE_2,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-04-01T12:00:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/MN-DET',
+            'events': [],
+        })
+        payload = phase2.generate([merger])
+        assert [m['merger_id'] for m in payload['mergers']] == ['MN-DET']
+        # No Phase 2 event tagged, so referral date degrades to None.
+        assert payload['mergers'][0]['phase_2_date'] is None

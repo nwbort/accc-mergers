@@ -36,6 +36,24 @@ function mockFetchFromMergers(mergers) {
   });
 }
 
+// Stub fetch for the Phase 2 auto-track tests: serves the Phase 2 feed from
+// `phase2Ids` and per-merger details from `mergers` (404 for anything missing).
+function mockFetchPhase2(phase2Ids, mergers = {}) {
+  globalThis.fetch = vi.fn((url) => {
+    if (/\/data\/phase-2-mergers\.json$/.test(url)) {
+      return Promise.resolve(
+        okResponse({ mergers: phase2Ids.map((id) => ({ merger_id: id })) })
+      );
+    }
+    const match = /\/data\/mergers\/([^/]+)\.json$/.exec(url);
+    if (match) {
+      const merger = mergers[match[1]];
+      return Promise.resolve(merger ? okResponse(merger) : notFoundResponse());
+    }
+    return Promise.resolve(notFoundResponse());
+  });
+}
+
 const wrapper = ({ children }) => <TrackingProvider>{children}</TrackingProvider>;
 
 describe('TrackingContext auto-tracking of related mergers', () => {
@@ -278,5 +296,96 @@ describe('TrackingContext auto-tracking of related mergers', () => {
       expect(second.result.current.trackedMergerIds).toContain('MN-2');
     });
     expect(second.result.current.trackedMergerIds).toContain('WA-1');
+  });
+});
+
+describe('TrackingContext auto-tracking of Phase 2 mergers', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    globalThis.fetch = originalFetch;
+    vi.restoreAllMocks();
+  });
+
+  it('does NOT track existing Phase 2 mergers on the first ever load (baseline only)', async () => {
+    mockFetchPhase2(['MN-1', 'MN-2']);
+
+    const { result } = renderHook(() => useTracking(), { wrapper });
+
+    // Give the Phase 2 effect a chance to run.
+    await waitFor(() => {
+      expect(localStorage.getItem('merger_tracker_phase2_initialized')).toBe('1');
+    });
+    expect(result.current.trackedMergerIds).toEqual([]);
+    // The baseline IDs are recorded as seen so they're never tracked later.
+    expect(JSON.parse(localStorage.getItem('merger_tracker_phase2_seen'))).toEqual(
+      expect.arrayContaining(['MN-1', 'MN-2'])
+    );
+  });
+
+  it('auto-tracks a merger that becomes Phase 2 after the baseline was seeded', async () => {
+    // First visit establishes the baseline (MN-1 already in Phase 2).
+    mockFetchPhase2(['MN-1']);
+    const first = renderHook(() => useTracking(), { wrapper });
+    await waitFor(() => {
+      expect(localStorage.getItem('merger_tracker_phase2_initialized')).toBe('1');
+    });
+    expect(first.result.current.trackedMergerIds).toEqual([]);
+    first.unmount();
+
+    // Later visit: MN-2 has since been referred to Phase 2.
+    mockFetchPhase2(['MN-1', 'MN-2'], {
+      'MN-2': {
+        merger_id: 'MN-2',
+        merger_name: 'Newly referred',
+        events: [{ date: '2026-01-01', title: 'Subject to Phase 2 review' }],
+      },
+    });
+    const second = renderHook(() => useTracking(), { wrapper });
+
+    await waitFor(() => {
+      expect(second.result.current.trackedMergerIds).toContain('MN-2');
+    });
+    // The pre-existing Phase 2 matter is still not tracked.
+    expect(second.result.current.trackedMergerIds).not.toContain('MN-1');
+  });
+
+  it('surfaces an auto-tracked Phase 2 referral as an unseen notification (ping)', async () => {
+    localStorage.setItem('merger_tracker_phase2_initialized', '1');
+    localStorage.setItem('merger_tracker_phase2_seen', JSON.stringify(['MN-1']));
+
+    mockFetchPhase2(['MN-1', 'MN-2'], {
+      'MN-2': {
+        merger_id: 'MN-2',
+        merger_name: 'Newly referred',
+        events: [{ date: '2026-01-01', title: 'Subject to Phase 2 review' }],
+      },
+    });
+
+    const { result } = renderHook(() => useTracking(), { wrapper });
+
+    await waitFor(() => {
+      expect(result.current.unseenEvents.some((e) => e.merger_id === 'MN-2')).toBe(true);
+    });
+    expect(result.current.unseenCount).toBeGreaterThan(0);
+  });
+
+  it('does not re-track a Phase 2 merger the user has untracked', async () => {
+    // MN-2 was already auto-tracked-and-untracked: it's in the seen set but not tracked.
+    localStorage.setItem('merger_tracker_phase2_initialized', '1');
+    localStorage.setItem('merger_tracker_phase2_seen', JSON.stringify(['MN-1', 'MN-2']));
+
+    mockFetchPhase2(['MN-1', 'MN-2']);
+
+    const { result } = renderHook(() => useTracking(), { wrapper });
+
+    // Let the effect run; MN-2 must stay untracked.
+    await waitFor(() => {
+      expect(result.current.loading).toBe(false);
+    });
+    expect(result.current.trackedMergerIds).not.toContain('MN-2');
   });
 });

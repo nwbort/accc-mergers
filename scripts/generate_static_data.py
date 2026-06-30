@@ -19,6 +19,7 @@ Output files:
   - industries.json             - ANZSIC codes with merger counts
   - industries/{code}.json      - Mergers per industry code
   - upcoming-events.json        - Future consultation/determination dates
+  - phase-2-mergers.json        - Mergers referred to Phase 2 (drives auto-tracking)
   - commentary.json             - Mergers with user commentary
   - analysis.json               - Pre-computed analysis data
   - questionnaires/{id}.json    - Lazy-loaded questionnaire files
@@ -50,6 +51,7 @@ from static_data.outputs import (
     industries,
     list as list_out,
     noccs,
+    phase2,
     questionnaires,
     stats,
     timeline,
@@ -127,6 +129,7 @@ def main():
         ("stats.json", stats.generate(enriched)),
         ("industries.json", industries.generate_index(enriched)),
         ("upcoming-events.json", upcoming_events.generate(enriched)),
+        ("phase-2-mergers.json", phase2.generate(enriched)),
         ("commentary.json", commentary_out.generate(enriched, commentary)),
         ("analysis.json", analysis.generate(enriched)),
     ]
