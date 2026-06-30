@@ -15,7 +15,7 @@
       "code": "85",
       "name": "Medical and Other Health Care Services",
       "level": "subdivision",
-      "merger_count": 17
+      "merger_count": 18
     },
     {
       "code": "86",
@@ -48,6 +48,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-06-16T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-40028",
+      "merger_name": "Airtree \u2013 HotDoc",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-11T12:00:00Z",
+      "determination_date": "2026-06-30T12:00:00Z"
     },
     {
       "merger_id": "MN-90015",
@@ -293,10 +302,10 @@
       "determination_date": "2026-02-10T12:00:00Z"
     }
   ],
-  "count": 29,
+  "count": 30,
   "phase_1_count": 12,
   "phase_2_count": 0,
-  "waiver_count": 17,
+  "waiver_count": 18,
   "active_count": 2,
   "phase_duration": {
     "average_days": 24.7,

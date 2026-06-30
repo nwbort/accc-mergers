@@ -19,7 +19,7 @@
       "code": "851",
       "name": "Medical Services",
       "level": "group",
-      "merger_count": 8
+      "merger_count": 9
     },
     {
       "code": "852",
@@ -31,7 +31,7 @@
       "code": "853",
       "name": "Allied Health Services",
       "level": "group",
-      "merger_count": 10
+      "merger_count": 11
     },
     {
       "code": "859",
@@ -49,6 +49,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-06-19T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-40028",
+      "merger_name": "Airtree \u2013 HotDoc",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-11T12:00:00Z",
+      "determination_date": "2026-06-30T12:00:00Z"
     },
     {
       "merger_id": "MN-90015",
@@ -195,10 +204,10 @@
       "determination_date": "2026-02-26T12:00:00Z"
     }
   ],
-  "count": 17,
+  "count": 18,
   "phase_1_count": 5,
   "phase_2_count": 0,
-  "waiver_count": 12,
+  "waiver_count": 13,
   "active_count": 1,
   "phase_duration": {
     "average_days": 24.75,

@@ -24,10 +24,19 @@
       "code": "6240",
       "name": "Financial Asset Investing",
       "level": "class",
-      "merger_count": 50
+      "merger_count": 51
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-01108",
+      "merger_name": "Oakley Capital \u2013 XTEL",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-12T12:00:00Z",
+      "determination_date": "2026-06-30T12:00:00Z"
+    },
     {
       "merger_id": "WA-20025",
       "merger_name": "Bupa \u2013 Barings Australian Private Credit Fund",
@@ -479,10 +488,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 50,
+  "count": 51,
   "phase_1_count": 9,
   "phase_2_count": 0,
-  "waiver_count": 41,
+  "waiver_count": 42,
   "active_count": 0,
   "phase_duration": {
     "average_days": 24.444444444444443,

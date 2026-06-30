@@ -24,7 +24,7 @@
       "code": "4520",
       "name": "Pubs, Taverns and Bars",
       "level": "class",
-      "merger_count": 17
+      "merger_count": 18
     }
   ],
   "mergers": [
@@ -36,6 +36,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-21T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-25028",
+      "merger_name": "Australian Venue Co \u2013 assets of Boatbuilders Yard and General Assembly, Melbourne",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-03T12:00:00Z",
+      "determination_date": "2026-06-30T12:00:00Z"
     },
     {
       "merger_id": "WA-25027",
@@ -182,10 +191,10 @@
       "determination_date": "2026-02-02T12:00:00Z"
     }
   ],
-  "count": 17,
+  "count": 18,
   "phase_1_count": 3,
   "phase_2_count": 0,
-  "waiver_count": 14,
+  "waiver_count": 15,
   "active_count": 1,
   "phase_duration": {
     "average_days": 23.5,

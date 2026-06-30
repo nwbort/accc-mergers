@@ -24,13 +24,13 @@
       "code": "8511",
       "name": "General Practice Medical Services",
       "level": "class",
-      "merger_count": 6
+      "merger_count": 7
     },
     {
       "code": "8512",
       "name": "Specialist Medical Services",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
@@ -42,6 +42,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-06-19T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-40028",
+      "merger_name": "Airtree \u2013 HotDoc",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-11T12:00:00Z",
+      "determination_date": "2026-06-30T12:00:00Z"
     },
     {
       "merger_id": "WA-01100",
@@ -107,10 +116,10 @@
       "determination_date": "2026-03-19T12:00:00Z"
     }
   ],
-  "count": 8,
+  "count": 9,
   "phase_1_count": 2,
   "phase_2_count": 0,
-  "waiver_count": 6,
+  "waiver_count": 7,
   "active_count": 1,
   "phase_duration": {
     "average_days": 21.0,

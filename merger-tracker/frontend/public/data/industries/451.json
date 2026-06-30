@@ -24,7 +24,7 @@
       "code": "4511",
       "name": "Cafes and Restaurants",
       "level": "class",
-      "merger_count": 8
+      "merger_count": 9
     },
     {
       "code": "4512",
@@ -40,6 +40,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-25028",
+      "merger_name": "Australian Venue Co \u2013 assets of Boatbuilders Yard and General Assembly, Melbourne",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-03T12:00:00Z",
+      "determination_date": "2026-06-30T12:00:00Z"
+    },
     {
       "merger_id": "WA-25027",
       "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Arthouse Hotel",
@@ -140,10 +149,10 @@
       "determination_date": "2026-02-09T12:00:00Z"
     }
   ],
-  "count": 11,
+  "count": 12,
   "phase_1_count": 3,
   "phase_2_count": 0,
-  "waiver_count": 8,
+  "waiver_count": 9,
   "active_count": 0,
   "phase_duration": {
     "average_days": 23.666666666666668,

@@ -25,7 +25,7 @@
       "code": "542",
       "name": "Software Publishing",
       "level": "group",
-      "merger_count": 30
+      "merger_count": 32
     }
   ],
   "mergers": [
@@ -46,6 +46,24 @@
       "phase": "Phase 1",
       "notification_date": "2026-06-23T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-01108",
+      "merger_name": "Oakley Capital \u2013 XTEL",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-12T12:00:00Z",
+      "determination_date": "2026-06-30T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-40028",
+      "merger_name": "Airtree \u2013 HotDoc",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-11T12:00:00Z",
+      "determination_date": "2026-06-30T12:00:00Z"
     },
     {
       "merger_id": "WA-45017",
@@ -309,10 +327,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 31,
+  "count": 33,
   "phase_1_count": 12,
   "phase_2_count": 0,
-  "waiver_count": 19,
+  "waiver_count": 21,
   "active_count": 2,
   "phase_duration": {
     "average_days": 32.5,
