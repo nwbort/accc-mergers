@@ -27,6 +27,15 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "MN-65022",
+      "merger_name": "Hapag-Lloyd - ZIM",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-29T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "WA-20010",
       "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
       "is_waiver": true,
@@ -36,10 +45,10 @@
       "determination_date": "2026-03-19T12:00:00Z"
     }
   ],
-  "count": 1,
-  "phase_1_count": 0,
+  "count": 2,
+  "phase_1_count": 1,
   "phase_2_count": 0,
   "waiver_count": 1,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": null
 }

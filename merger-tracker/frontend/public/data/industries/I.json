@@ -21,7 +21,7 @@
       "code": "48",
       "name": "Water Transport",
       "level": "subdivision",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "49",
@@ -55,6 +55,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-65022",
+      "merger_name": "Hapag-Lloyd - ZIM",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-29T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-20018",
       "merger_name": "Uber - Blacklane",
@@ -272,11 +281,11 @@
       "determination_date": "2026-02-05T12:00:00Z"
     }
   ],
-  "count": 24,
-  "phase_1_count": 10,
+  "count": 25,
+  "phase_1_count": 11,
   "phase_2_count": 0,
   "waiver_count": 14,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 32.888888888888886,
     "median_days": 30,

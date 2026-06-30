@@ -1,0 +1,132 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hapag-lloyd-zim",
+  "merger_name": "Hapag-Lloyd - ZIM",
+  "status": "Under assessment",
+  "merger_id": "MN-65022",
+  "effective_notification_datetime": "2026-06-29T12:00:00Z",
+  "original_notification_datetime": "2026-06-29T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-08-10T12:00:00Z",
+  "page_modified_datetime": "2026-06-30T16:31:34+10:00",
+  "consultation_response_due_date": "2026-07-07T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Hapag-Lloyd Aktiengesellschaft",
+      "identifier_type": null,
+      "identifier": "German company registration number  HRB97937"
+    }
+  ],
+  "targets": [
+    {
+      "name": "ZIM Integrated Shipping Services Ltd",
+      "identifier_type": null,
+      "identifier": "Israeli company registration number  520015041"
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "4810",
+      "name": "Water Freight Transport"
+    }
+  ],
+  "merger_description": "Hapag-Lloyd Aktiengesellschaft (**HLAG**) proposes to acquire 100% of the outstanding shares and voting rights of ZIM Integrated Shipping Services Ltd (**ZIM**). The proposed acquisition will be effected by a newly-formed and wholly owned Israeli subsidiary of HLAG, Norazia (Israel) Ltd, merging with and into ZIM.\n\nHLAG is an international container liner shipping company, offering global transport services for container cargo and has the fifth largest TEU in the world. Hapag-Lloyd is active across all major east-west and north-south trades, though it submits it maintains a focus in the Transatlantic, Middle East, Latin America, and Intra-America trades.\n\nZIM is a public company listed on the New York Stock Exchange in the USA (NYSE: ZIM). Its headquarters are in Israel. Globally, ZIM is active in container line shipping and related services, including logistics services (such as freight forwarding).  \n\n  \n\nIn Australia, HLAG and ZIM overlap in supply of container liner shipping services between Asia and Australia. Specifically, the Parties overlap in relation to trades between the Australian East Coast and Busan (South Korea), Qingdao (China), Shanghai (China), Ningbo (China) and Yantian (China).  \n\n  \n\nZIM also has a limited presence in the downstream freight forwarding services market in Australia. HLAG does not conduct these activities in Australia.",
+  "events": [
+    {
+      "date": "2026-06-30T12:00:00Z",
+      "title": "Questionnaire - Hapag-Lloyd - ZIM",
+      "display_title": "Questionnaire - Hapag-Lloyd - ZIM",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Hapag-Lloyd%20-%20ZIM.docx",
+      "url_gh": "/mergers/MN-65022/Questionnaire - Hapag-Lloyd - ZIM.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-06-29T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-20010",
+      "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "Global Engage Marine Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "693 762 122"
+        },
+        {
+          "name": "PT Asian Bulk Logistics",
+          "identifier_type": null,
+          "identifier": "NIB   8120012130871"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ENGAGE MARINE TOPCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "46 675 998 562"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-10005",
+      "merger_name": "Apex - Mercer Administration Services and related assets",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Apex Group Holdings (Australia) Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "48 112 252 114"
+        }
+      ],
+      "targets": [
+        {
+          "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "83 068 908 912"
+        },
+        {
+          "name": "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "48 616 275 980"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15010",
+      "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "57 167 960 018"
+        }
+      ],
+      "targets": [
+        {
+          "name": "BMM PARTNERS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 649 113 959"
+        }
+      ]
+    }
+  ]
+}
