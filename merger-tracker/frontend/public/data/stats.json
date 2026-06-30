@@ -1,9 +1,9 @@
 {
-  "total_mergers": 155,
+  "total_mergers": 156,
   "total_waivers": 247,
   "by_status": {
     "Assessment completed": 117,
-    "Under assessment": 37,
+    "Under assessment": 38,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -41,7 +41,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 40
+      "count": 41
     },
     {
       "name": "Software Publishing",
@@ -77,6 +77,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-85036",
+      "merger_name": "SpaceX - Anysphere",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-30T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-50025",
       "merger_name": "Amazon \u2013 Globalstar",
@@ -163,14 +171,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-23T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50027",
-      "merger_name": "Endeavour Group - retail liquor site in Avalon, NSW",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-22T12:00:00Z",
       "is_waiver": false
     }
   ],

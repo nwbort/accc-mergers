@@ -1,0 +1,163 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/spacex-anysphere",
+  "merger_name": "SpaceX - Anysphere",
+  "status": "Under assessment",
+  "merger_id": "MN-85036",
+  "effective_notification_datetime": "2026-06-30T12:00:00Z",
+  "original_notification_datetime": "2026-06-30T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-08-11T12:00:00Z",
+  "page_modified_datetime": "2026-07-01T09:16:16+10:00",
+  "acquirers": [
+    {
+      "name": "Space Exploration Technologies Corp.",
+      "identifier_type": null,
+      "identifier": "NASDAQ  SPCX"
+    }
+  ],
+  "targets": [
+    {
+      "name": "Anysphere, Inc.",
+      "identifier_type": null,
+      "identifier": "Delaware File Number  6524309"
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "X.AI Corp.",
+      "identifier_type": null,
+      "identifier": "Nevada Entity Number  E289151220238"
+    },
+    {
+      "name": "STARLINK AUSTRALIA PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "68 636 841 533"
+    },
+    {
+      "name": "X ASIA PACIFIC INTERNET PTE. LTD.",
+      "identifier_type": "ABN",
+      "identifier": "97 712 692 946"
+    },
+    {
+      "name": "X Internet Unlimited Company",
+      "identifier_type": null,
+      "identifier": "Ireland Registered Number  503351"
+    },
+    {
+      "name": "STARLINK INTERNET SERVICES PTE. LTD.",
+      "identifier_type": "ABN",
+      "identifier": "44 658 489 582"
+    },
+    {
+      "name": "X Global LLC",
+      "identifier_type": null,
+      "identifier": "Delaware File Number  6028653"
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "7000",
+      "name": "Computer System Design and Related Services"
+    }
+  ],
+  "merger_description": "Space Exploration Technologies Corp. (**SpaceX**), through its subsidiary, proposes to acquire 100% of the shares in Anysphere, Inc. (**Anysphere**).\n\nSpaceX is the ultimate parent company of the SpaceX group, which includes X.AI Corp (**xAI**), an artificial intelligence (**AI**) company, and X Corp., which owns and operates the X social media platform (formerly Twitter). xAI develops the Grok family of large language models and offers Grok Build, a terminal-native AI coding tool, to Grok and X subscribers. Grok Build currently runs on xAI\u2019s Grok model family.\n\nAnysphere develops and operates Cursor, an AI coding tool used by software developers to write and review code with the assistance of AI models. Cursor users can select from a range of third-party large language models (including Grok models) or Anysphere\u2019s proprietary Composer model to power the platform\u2019s AI assistant features. Composer is purpose-built for Cursor and is not offered as a standalone general-purpose model for other purposes.",
+  "events": [
+    {
+      "date": "2026-07-01T12:00:00Z",
+      "title": "Questionnaire - SpaceX-Anysphere",
+      "display_title": "Questionnaire - SpaceX-Anysphere",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/SpaceX-Cursor%20-%20Phase%201%20questionnaire.docx",
+      "url_gh": "/mergers/MN-85036/SpaceX-Cursor - Phase 1 questionnaire.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-06-30T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "consultation_response_due_date": "2026-07-08T12:00:00Z",
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-01071",
+      "merger_name": "CSE Crosscom \u2013 Progility",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "CSE CROSSCOM PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 606 614 500"
+        },
+        {
+          "name": "CSE-Global (Australia) Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "85 109 958 090"
+        }
+      ],
+      "targets": [
+        {
+          "name": "PROGILITY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 131 639 837"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-20011",
+      "merger_name": "Origin \u2013 Equity stake in Kraken",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "53 143 484 208"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CPP Investment Board Private Holdings (4) Inc.",
+          "identifier_type": null,
+          "identifier": "BN  11089340"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-40014",
+      "merger_name": "Infosys \u2013 Optimum Healthcare IT",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Infosys Nova Holdings LLC",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Optimum Achieve Holdings, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "OPTIMUM HEALTHCARE IT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 689 795 702"
+        }
+      ]
+    }
+  ]
+}

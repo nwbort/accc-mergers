@@ -15,10 +15,19 @@
       "code": "70",
       "name": "Computer System Design and Related Services",
       "level": "subdivision",
-      "merger_count": 40
+      "merger_count": 41
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-85036",
+      "merger_name": "SpaceX - Anysphere",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-30T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-01107",
       "merger_name": "WSP / GEOTECHNICAL TESTING AND INTERPRETATION",
@@ -812,11 +821,11 @@
       "determination_date": "2026-01-13T12:00:00Z"
     }
   ],
-  "count": 88,
-  "phase_1_count": 33,
+  "count": 89,
+  "phase_1_count": 34,
   "phase_2_count": 1,
   "waiver_count": 54,
-  "active_count": 6,
+  "active_count": 7,
   "phase_duration": {
     "average_days": 32.172413793103445,
     "median_days": 27,
