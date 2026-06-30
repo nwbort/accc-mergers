@@ -1,9 +1,9 @@
 {
-  "total_mergers": 152,
+  "total_mergers": 153,
   "total_waivers": 242,
   "by_status": {
     "Assessment completed": 115,
-    "Under assessment": 36,
+    "Under assessment": 37,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -77,6 +77,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-50025",
+      "merger_name": "Amazon \u2013 Globalstar",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-29T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-01106",
       "merger_name": "Midea - Residentia Group",
@@ -163,14 +171,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-19T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-01103",
-      "merger_name": "Discovery Holiday Parks \u2013 four Breeze Holiday Parks",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-18T12:00:00Z",
       "is_waiver": false
     }
   ],

@@ -2962,7 +2962,7 @@
     "original_notification_datetime": "2026-06-19T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-07-31T12:00:00Z",
-    "page_modified_datetime": "2026-06-22T15:37:14+10:00",
+    "page_modified_datetime": "2026-06-29T15:30:33+10:00",
     "consultation_response_due_date": "2026-06-29T12:00:00Z",
     "acquirers": [
       {
@@ -2985,7 +2985,7 @@
         "name": "Specialist Medical Services"
       }
     ],
-    "merger_description": "The Acquirer, Genea Pty Ltd (**Genea**) operates an IVF and fertility business with clinics in NSW, the ACT, Victoria, Queensland, Western Australia and South Australia. Genea operates a clinic in Bowen Hills, Queensland, and an entity related to Genea (**Adora Holdco Pty Ltd**) operates a bulk-billed IVF clinic, Adora Fertility, in Taringa, Queensland.\n\nGenea proposes to acquire a single independent clinic, Care Fertility Greenslopes Pty Ltd (**Care Fertility**), along with an associated trust (Care Fertility Greenslopes Unit Trust) and intellectual property\u00a0(the\u00a0**Acquisition**). Care Fertility is\u00a0a gynaecology, IVF and fertility business located in Greenslopes, Queensland that is ultimately owned and controlled by Dr Clare Boothroyd.",
+    "merger_description": "The Acquirer, Genea Pty Ltd (**Genea**) operates an IVF and fertility business with clinics in NSW, the ACT, Victoria, Queensland, Western Australia and South Australia. Genea operates a clinic in Bowen Hills, Queensland, and an entity related to Genea (Adora Holdco Pty Ltd) operates a bulk-billed IVF clinic, Adora Fertility, in Taringa, Queensland.\n\nGenea proposes to acquire a single independent clinic, Care Fertility Greenslopes Pty Ltd (**Care Fertility**), along with an associated trust (Care Fertility Greenslopes Unit Trust) and intellectual property\u00a0(the\u00a0**Acquisition**). Care Fertility is\u00a0a gynaecology, IVF and fertility business located in Greenslopes, Queensland that is ultimately owned and controlled by Dr Clare Boothroyd.",
     "events": [
       {
         "date": "2026-06-22T12:00:00Z",
@@ -2993,7 +2993,7 @@
         "display_title": "Questionnaire - Genea - Care Fertility Greenslopes",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Genea%20-%20Care%20Fertility%20Greenslopes%20-%20Questionnaire.docx",
         "url_gh": "/mergers/MN-01104/Genea - Care Fertility Greenslopes - Questionnaire.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-06-19T12:00:00Z",
@@ -11723,6 +11723,61 @@
       }
     ],
     "is_waiver": false
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/amazon-%E2%80%93-globalstar",
+    "merger_name": "Amazon \u2013 Globalstar",
+    "status": "Under assessment",
+    "merger_id": "MN-50025",
+    "effective_notification_datetime": "2026-06-29T12:00:00Z",
+    "original_notification_datetime": "2026-06-29T12:00:00Z",
+    "stage": "Phase 1 - initial assessment",
+    "end_of_determination_period": "2026-08-10T12:00:00Z",
+    "page_modified_datetime": "2026-06-30T10:38:51+10:00",
+    "acquirers": [
+      {
+        "name": "Grapefruit Acquisition Sub II, LLC",
+        "identifier_type": null,
+        "identifier": "10440021"
+      },
+      {
+        "name": "Amazon.com, Inc.",
+        "identifier_type": null,
+        "identifier": "2620453"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Globalstar, Inc.",
+        "identifier_type": null,
+        "identifier": "3731110"
+      }
+    ],
+    "other_parties": [],
+    "anzsic_codes": [
+      {
+        "code": "5802",
+        "name": "Other Telecommunications Network Operation"
+      }
+    ],
+    "merger_description": "Amazon.com, Inc. (**Amazon**) proposes to acquire Globalstar, Inc (**Globalstar**), its subsidiaries, assets and facilities.\n\nAmazon supplies retail services, media content, electronic devices and on-demand technology services (including cloud computing). Amazon also operates Amazon Leo, which will supply high-capacity broadband/fixed satellite service (**FSS**) services to government agencies, business and consumers using low Earth orbit satellites. Amazon Leo plans to launch its commercial service in mid-2026. In Australia, Amazon Leo has an agreement with NBN Co to deliver fixed-satellite broadband services to regional, remote and rural Australian customers.\n\nGlobalstar supplies global narrowband/mobile satellite service (**MSS**) connectivity services for voice and data communications applications. Globalstar provides these services to government agencies, businesses and consumers, using allocated MSS spectrum.\n\nGlobalstar currently provides Apple with direct-to-device (**D2D**) satellite connectivity services on certain iPhone and Apple Watch models, allowing users to send and receive messages while outside of cellular and Wi-Fi coverage (e.g. to text emergency services or receive roadside assistance). Amazon has signed an agreement to continue providing Apple with D2D services post-acquisition.",
+    "events": [
+      {
+        "date": "2026-06-30T12:00:00Z",
+        "title": "Questionnaire - Amazon-Globalstar",
+        "display_title": "Questionnaire - Amazon-Globalstar",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Amazon-Globalstar%20-%20Phase%201%20questionnaire.docx",
+        "url_gh": "/mergers/MN-50025/Amazon-Globalstar - Phase 1 questionnaire.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-06-29T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": false,
+    "consultation_response_due_date": "2026-07-07T12:00:00Z"
   },
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/endeavour-group-retail-liquor-site-in-avalon-nsw",

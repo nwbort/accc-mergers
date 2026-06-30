@@ -1,0 +1,142 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/amazon-%E2%80%93-globalstar",
+  "merger_name": "Amazon \u2013 Globalstar",
+  "status": "Under assessment",
+  "merger_id": "MN-50025",
+  "effective_notification_datetime": "2026-06-29T12:00:00Z",
+  "original_notification_datetime": "2026-06-29T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-08-10T12:00:00Z",
+  "page_modified_datetime": "2026-06-30T10:38:51+10:00",
+  "acquirers": [
+    {
+      "name": "Grapefruit Acquisition Sub II, LLC",
+      "identifier_type": null,
+      "identifier": "10440021"
+    },
+    {
+      "name": "Amazon.com, Inc.",
+      "identifier_type": null,
+      "identifier": "2620453"
+    }
+  ],
+  "targets": [
+    {
+      "name": "Globalstar, Inc.",
+      "identifier_type": null,
+      "identifier": "3731110"
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "5802",
+      "name": "Other Telecommunications Network Operation"
+    }
+  ],
+  "merger_description": "Amazon.com, Inc. (**Amazon**) proposes to acquire Globalstar, Inc (**Globalstar**), its subsidiaries, assets and facilities.\n\nAmazon supplies retail services, media content, electronic devices and on-demand technology services (including cloud computing). Amazon also operates Amazon Leo, which will supply high-capacity broadband/fixed satellite service (**FSS**) services to government agencies, business and consumers using low Earth orbit satellites. Amazon Leo plans to launch its commercial service in mid-2026. In Australia, Amazon Leo has an agreement with NBN Co to deliver fixed-satellite broadband services to regional, remote and rural Australian customers.\n\nGlobalstar supplies global narrowband/mobile satellite service (**MSS**) connectivity services for voice and data communications applications. Globalstar provides these services to government agencies, businesses and consumers, using allocated MSS spectrum.\n\nGlobalstar currently provides Apple with direct-to-device (**D2D**) satellite connectivity services on certain iPhone and Apple Watch models, allowing users to send and receive messages while outside of cellular and Wi-Fi coverage (e.g. to text emergency services or receive roadside assistance). Amazon has signed an agreement to continue providing Apple with D2D services post-acquisition.",
+  "events": [
+    {
+      "date": "2026-06-30T12:00:00Z",
+      "title": "Questionnaire - Amazon-Globalstar",
+      "display_title": "Questionnaire - Amazon-Globalstar",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Amazon-Globalstar%20-%20Phase%201%20questionnaire.docx",
+      "url_gh": "/mergers/MN-50025/Amazon-Globalstar - Phase 1 questionnaire.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-06-29T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "consultation_response_due_date": "2026-07-07T12:00:00Z",
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-55025",
+      "merger_name": "Brookfield \u2013 World Freight Company",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Windrose Holdings III (DIFC) Limited",
+          "identifier_type": null,
+          "identifier": "Registered Number  12897"
+        },
+        {
+          "name": "Windrose France Holdings SAS",
+          "identifier_type": null,
+          "identifier": "Registered Number  104439096"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Caeli Software Ltd",
+          "identifier_type": null,
+          "identifier": "Registered Number  12558916"
+        },
+        {
+          "name": "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)",
+          "identifier_type": null,
+          "identifier": "Registered Number  809546 971"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-60010",
+      "merger_name": "Michelin - Flexitallic",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Compagnie Financi\u00e8re Michelin SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  898 849 153"
+        },
+        {
+          "name": "Fenner America, Inc.",
+          "identifier_type": null,
+          "identifier": "USDOT  3744583"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Flexitallic Group SAS",
+          "identifier_type": null,
+          "identifier": "SIREN  532 742 699"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-01058",
+      "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Caterpillar Inc.",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "RPMGLOBAL HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "17 010 672 321"
+        }
+      ]
+    }
+  ]
+}
