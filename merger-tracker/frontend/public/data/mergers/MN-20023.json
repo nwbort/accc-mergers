@@ -1,19 +1,21 @@
 {
   "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sony-music-recognition-music",
   "merger_name": "Sony Music - Recognition Music",
-  "status": "Under assessment",
+  "status": "Assessment completed",
   "merger_id": "MN-20023",
   "effective_notification_datetime": "2026-06-02T12:00:00Z",
   "original_notification_datetime": "2026-06-02T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-07-15T12:00:00Z",
-  "page_modified_datetime": "2026-06-10T17:15:56+10:00",
+  "determination_publication_date": "2026-06-30T12:00:00Z",
+  "accc_determination": "Approved",
+  "page_modified_datetime": "2026-06-30T14:15:39+10:00",
   "consultation_response_due_date": "2026-06-10T12:00:00Z",
   "acquirers": [
     {
-      "name": "Orion BidCo LLC",
+      "name": "SMG-Three LLC",
       "identifier_type": null,
-      "identifier": "DDC  10608976"
+      "identifier": "DDC  10277876"
     },
     {
       "name": "Sony Music Publishing (US) LLC",
@@ -21,9 +23,9 @@
       "identifier": "DDC  2558200"
     },
     {
-      "name": "SMG-Three LLC",
+      "name": "Orion BidCo LLC",
       "identifier_type": null,
-      "identifier": "DDC  10277876"
+      "identifier": "DDC  10608976"
     }
   ],
   "targets": [
@@ -49,14 +51,14 @@
       "identifier": "NY DOS ID  1652738"
     },
     {
-      "name": "National Exhibition Centre Limited",
-      "identifier_type": null,
-      "identifier": "CRN  00979395"
-    },
-    {
       "name": "Candle Media LLC",
       "identifier_type": null,
       "identifier": "DDC  6119562"
+    },
+    {
+      "name": "National Exhibition Centre Limited",
+      "identifier_type": null,
+      "identifier": "CRN  00979395"
     }
   ],
   "anzsic_codes": [
@@ -81,12 +83,48 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-06-30T12:00:00Z",
+      "title": "Sony Music - Recognition Music - Phase 1 Determination",
+      "display_title": "Phase 1 - initial assessment determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Sony%20Music%20-%20Recognition%20Music%20-%20Phase%201%20Determination_0.pdf",
+      "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+      "determination_table_content": [
+        {
+          "item": "Notified acquisition",
+          "details": "SMG-Three LLC (SMG-Three) and Sony Music Publishing (SMP)\n(together Sony Music) propose to acquire 100% of the shares of\nRecognition Music Group (Delaware) L.P. (Recognition Music)\n(together, the Parties) from funds advised and/or managed by\nBlackstone, Inc. (the Acquisition)."
+        },
+        {
+          "item": "Determination",
+          "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+        },
+        {
+          "item": "Parties to the Acquisition",
+          "details": "The acquirer, Sony Music, acquires and commercialises music\npublishing rights, including performing and mechanical rights, online\nrights, synchronisation rights and print rights.\nThe target, Recognition Music, holds music publishing rights."
+        },
+        {
+          "item": "Overlap between the\nparties",
+          "details": "The Parties overlap in the supply of music publishing services."
+        },
+        {
+          "item": "Reasons for determination",
+          "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and by third parties, information from prior and\ncurrent other matters and publicly available information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The merged firm would continue to face competition from\nalternative suppliers of music publishing services in Australia\nand globally including Universal Music, Warner Music and BMG,\namongst others.\n\u2022 Post-acquisition, Sony is unlikely to have the ability and incentive\nto bundle or tie its supply of artist and repertoire services to its\nsupply of music publishing services with the effect of\nsubstantially lessening competition or foreclose rivals\u2019 access to\nmusic in the movie and gaming industries as it will continue to\nface competition from the other suppliers, as mentioned above."
+        },
+        {
+          "item": "Applications for review",
+          "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+        }
+      ],
+      "url_gh": "/mergers/MN-20023/Sony Music - Recognition Music - Phase 1 Determination_0.pdf",
+      "status": "live",
+      "is_determination_event": true,
+      "phase": "Phase 1"
     }
   ],
   "is_waiver": false,
-  "accc_determination": null,
-  "phase_1_determination": null,
-  "phase_1_determination_date": null,
+  "phase_1_determination": "Approved",
+  "phase_1_determination_date": "2026-06-30T12:00:00Z",
   "phase_2_determination": null,
   "phase_2_determination_date": null,
   "public_benefits_determination": null,

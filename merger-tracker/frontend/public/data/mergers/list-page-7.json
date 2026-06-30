@@ -2456,18 +2456,18 @@
     {
       "merger_id": "MN-20023",
       "merger_name": "Sony Music - Recognition Music",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "is_waiver": false,
       "effective_notification_datetime": "2026-06-02T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-06-30T12:00:00Z",
       "end_of_determination_period": "2026-07-15T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Orion BidCo LLC",
+          "name": "SMG-Three LLC",
           "identifier_type": null,
-          "identifier": "DDC  10608976"
+          "identifier": "DDC  10277876"
         },
         {
           "name": "Sony Music Publishing (US) LLC",
@@ -2475,9 +2475,9 @@
           "identifier": "DDC  2558200"
         },
         {
-          "name": "SMG-Three LLC",
+          "name": "Orion BidCo LLC",
           "identifier_type": null,
-          "identifier": "DDC  10277876"
+          "identifier": "DDC  10608976"
         }
       ],
       "targets": [
@@ -2503,14 +2503,14 @@
           "identifier": "NY DOS ID  1652738"
         },
         {
-          "name": "National Exhibition Centre Limited",
-          "identifier_type": null,
-          "identifier": "CRN  00979395"
-        },
-        {
           "name": "Candle Media LLC",
           "identifier_type": null,
           "identifier": "DDC  6119562"
+        },
+        {
+          "name": "National Exhibition Centre Limited",
+          "identifier_type": null,
+          "identifier": "CRN  00979395"
         }
       ],
       "anzsic_codes": [

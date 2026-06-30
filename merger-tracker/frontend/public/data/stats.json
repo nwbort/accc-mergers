@@ -2,12 +2,12 @@
   "total_mergers": 154,
   "total_waivers": 242,
   "by_status": {
-    "Assessment completed": 115,
-    "Under assessment": 38,
+    "Assessment completed": 116,
+    "Under assessment": 37,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 114,
+    "Approved": 115,
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
@@ -15,22 +15,22 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.470588235294116,
+    "average_days": 29.458333333333332,
     "median_days": 26,
-    "average_business_days": 19.319327731092436,
+    "average_business_days": 19.316666666666666,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 25,
-        "percentage": 21.0
+        "percentage": 20.8
       },
       "day20": {
-        "count": 90,
-        "percentage": 75.6
+        "count": 91,
+        "percentage": 75.8
       },
       "day30": {
-        "count": 115,
-        "percentage": 96.6
+        "count": 116,
+        "percentage": 96.7
       }
     }
   },
@@ -176,6 +176,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-20023",
+      "merger_name": "Sony Music - Recognition Music",
+      "determination": "Approved",
+      "determination_date": "2026-06-30T12:00:00Z",
+      "page_modified_datetime": "2026-06-30T14:15:39+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-20025",
       "merger_name": "Bupa \u2013 Barings Australian Private Credit Fund",
       "determination": "Approved",
@@ -281,16 +291,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-25T12:00:00Z",
       "page_modified_datetime": "2026-06-25T18:26:14+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-60024",
-      "merger_name": "Redwood Services Group \u2013 Newtrend I.T. Specialists",
-      "determination": "Approved",
-      "determination_date": "2026-06-25T12:00:00Z",
-      "page_modified_datetime": "2026-06-25T18:23:20+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
