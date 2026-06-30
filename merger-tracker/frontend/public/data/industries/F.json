@@ -102,7 +102,7 @@
       "merger_name": "Trescal \u2013 TR Calibration",
       "is_waiver": false,
       "status": "Under assessment",
-      "phase": "Phase 1",
+      "phase": "Phase 2",
       "notification_date": "2026-04-14T12:00:00Z",
       "determination_date": null
     },
@@ -396,15 +396,15 @@
     }
   ],
   "count": 39,
-  "phase_1_count": 22,
-  "phase_2_count": 1,
+  "phase_1_count": 21,
+  "phase_2_count": 2,
   "waiver_count": 16,
   "active_count": 7,
   "phase_duration": {
-    "average_days": 34.625,
+    "average_days": 37.11764705882353,
     "median_days": 29,
-    "average_business_days": 20.875,
+    "average_business_days": 22.764705882352942,
     "median_business_days": 18,
-    "completed_count": 16
+    "completed_count": 17
   }
 }
