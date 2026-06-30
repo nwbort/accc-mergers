@@ -57,7 +57,7 @@ function Dashboard() {
   }, [stats]);
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
+  if (error) return <div role="alert" className="text-red-600 p-8 text-center">Error: {error}</div>;
   if (!stats) return null;
 
   const determinationData = {
@@ -127,6 +127,7 @@ function Dashboard() {
         url="/"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
+      <h1 className="sr-only">Australian merger tracker dashboard</h1>
       {/* Stats Grid */}
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-8">
         <StatCard

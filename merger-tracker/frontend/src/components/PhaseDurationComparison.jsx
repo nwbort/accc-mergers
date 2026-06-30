@@ -17,7 +17,7 @@ function Bar({ widthPct, value, barClass, valueClass, caption, delta }) {
         </span>
       </div>
       <div className="flex items-center justify-between gap-2 mt-1">
-        <p className="text-[11px] text-gray-400 truncate">{caption}</p>
+        <p className="text-[11px] text-gray-500 truncate">{caption}</p>
         {delta}
       </div>
     </>
@@ -30,7 +30,7 @@ function DeltaChip({ current, comparison }) {
   if (comparison == null) return null;
   const delta = current - comparison;
   if (delta === 0) {
-    return <span className="text-[11px] font-medium text-gray-400 shrink-0">Same</span>;
+    return <span className="text-[11px] font-medium text-gray-500 shrink-0">Same</span>;
   }
   const longer = delta > 0;
   const pct = comparison > 0 ? Math.round((delta / comparison) * 100) : null;
@@ -46,7 +46,7 @@ function DeltaChip({ current, comparison }) {
         <FaArrowDown className="w-2.5 h-2.5" aria-hidden="true" />
       )}
       {Math.abs(delta)} days {longer ? 'longer' : 'shorter'}
-      {pct != null && pct !== 0 && <span className="text-gray-400">({Math.abs(pct)}%)</span>}
+      {pct != null && pct !== 0 && <span className="text-gray-500">({Math.abs(pct)}%)</span>}
     </span>
   );
 }
@@ -62,7 +62,7 @@ function MetricComparison({ label, current, comparisons }) {
     return (
       <div>
         <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
-        <p className="text-sm text-gray-400 mt-2">No completed Phase 1 reviews</p>
+        <p className="text-sm text-gray-500 mt-2">No completed Phase 1 reviews</p>
       </div>
     );
   }
@@ -136,7 +136,7 @@ function PhaseDurationComparison({ duration, comparisons = [] }) {
         <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
           Phase 1 duration
         </h2>
-        <span className="text-[11px] text-gray-400">business days</span>
+        <span className="text-[11px] text-gray-500">business days</span>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">

@@ -244,7 +244,7 @@ function IndustryDetail() {
                     className="flex items-center justify-between gap-3 py-2.5 group"
                   >
                     <span className="text-sm text-gray-900 group-hover:text-primary transition-colors">
-                      <span className="text-gray-400 tabular-nums mr-2">{child.code}</span>
+                      <span className="text-gray-500 tabular-nums mr-2">{child.code}</span>
                       {child.name}
                     </span>
                     <span className="flex items-center gap-2 shrink-0">

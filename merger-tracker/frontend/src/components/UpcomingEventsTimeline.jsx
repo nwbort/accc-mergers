@@ -148,7 +148,7 @@ function UpcomingEventsTimeline({ events }) {
                   <span className={`text-sm font-semibold ${urgency.text}`}>
                     {relativeLabel(daysRemaining)}
                   </span>
-                  <span className="text-xs text-gray-400">{formatWeekday(day.date)}</span>
+                  <span className="text-xs text-gray-500">{formatWeekday(day.date)}</span>
                 </div>
 
                 <ul className="mt-1.5 space-y-1">
