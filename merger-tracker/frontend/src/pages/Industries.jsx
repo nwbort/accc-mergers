@@ -104,7 +104,7 @@ function Industries() {
   };
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
+  if (error) return <div role="alert" className="text-red-600 p-8 text-center">Error: {error}</div>;
 
   return (
     <>
@@ -132,7 +132,7 @@ function Industries() {
           ].map(({ label, value }) => (
             <div key={label}>
               <div className="text-2xl font-bold tracking-tight text-gray-900 tabular-nums">{value}</div>
-              <div className="text-xs text-gray-400">{label}</div>
+              <div className="text-xs text-gray-500">{label}</div>
             </div>
           ))}
         </div>
