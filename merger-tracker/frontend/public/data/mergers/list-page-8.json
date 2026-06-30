@@ -144,6 +144,83 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-venue-co-leasehold-and-assets-of-brabham-tavern-wa"
     },
     {
+      "merger_id": "WA-80022",
+      "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-03T12:00:00Z",
+      "determination_publication_date": "2026-06-30T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "BCPE Barton BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "694 979 041"
+        }
+      ],
+      "targets": [
+        {
+          "name": "PERPETUAL LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "86 000 431 827"
+        },
+        {
+          "name": "PERPETUAL PWM SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 678 546 113"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "FINTUITION INSTITUTE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "89 139 869 426"
+        },
+        {
+          "name": "JACARANDA FINANCIAL PLANNING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "91 604 960 009"
+        },
+        {
+          "name": "THE TRUST COMPANY (UTCCL) LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "35 008 426 784"
+        },
+        {
+          "name": "FORDHAM BUSINESS ADVISORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "77 140 981 853"
+        },
+        {
+          "name": "Bain Capital Investors, LLC",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  3229725",
+          "canonical": {
+            "id": "bain-capital-investors-llc",
+            "name": "Bain Capital Investors LLC"
+          }
+        },
+        {
+          "name": "PERPETUAL TRUSTEES W.A. LTD",
+          "identifier_type": "ABN",
+          "identifier": "98 008 666 886"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bain-capital-%E2%80%93-perpetual-wealth-management-group"
+    },
+    {
       "merger_id": "WA-85031",
       "merger_name": "Tasmea - Maxim",
       "status": "Assessment completed",
@@ -2590,39 +2667,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/amazon-%E2%80%93-globalstar"
-    },
-    {
-      "merger_id": "MN-65022",
-      "merger_name": "Hapag-Lloyd - ZIM",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-29T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-10T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Hapag-Lloyd Aktiengesellschaft",
-          "identifier_type": null,
-          "identifier": "German company registration number  HRB97937"
-        }
-      ],
-      "targets": [
-        {
-          "name": "ZIM Integrated Shipping Services Ltd",
-          "identifier_type": null,
-          "identifier": "Israeli company registration number  520015041"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "4810",
-          "name": "Water Freight Transport"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hapag-lloyd-zim"
     }
   ],
   "page": 8,

@@ -37,7 +37,7 @@
       "code": "624",
       "name": "Financial Asset Investing",
       "level": "group",
-      "merger_count": 51
+      "merger_count": 52
     }
   ],
   "mergers": [
@@ -48,6 +48,15 @@
       "status": "Assessment completed",
       "phase": "Waiver",
       "notification_date": "2026-06-12T12:00:00Z",
+      "determination_date": "2026-06-30T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-80022",
+      "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-03T12:00:00Z",
       "determination_date": "2026-06-30T12:00:00Z"
     },
     {
@@ -555,10 +564,10 @@
       "determination_date": null
     }
   ],
-  "count": 57,
+  "count": 58,
   "phase_1_count": 10,
   "phase_2_count": 1,
-  "waiver_count": 46,
+  "waiver_count": 47,
   "active_count": 0,
   "phase_duration": {
     "average_days": 30.181818181818183,

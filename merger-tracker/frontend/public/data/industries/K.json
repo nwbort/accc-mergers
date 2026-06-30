@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 57
+      "merger_count": 58
     },
     {
       "code": "63",
@@ -21,7 +21,7 @@
       "code": "64",
       "name": "Auxiliary Finance and Insurance Services",
       "level": "subdivision",
-      "merger_count": 32
+      "merger_count": 33
     }
   ],
   "mergers": [
@@ -50,6 +50,15 @@
       "status": "Assessment completed",
       "phase": "Waiver",
       "notification_date": "2026-06-11T12:00:00Z",
+      "determination_date": "2026-06-30T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-80022",
+      "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-03T12:00:00Z",
       "determination_date": "2026-06-30T12:00:00Z"
     },
     {
@@ -827,10 +836,10 @@
       "determination_date": null
     }
   ],
-  "count": 89,
+  "count": 90,
   "phase_1_count": 19,
   "phase_2_count": 2,
-  "waiver_count": 68,
+  "waiver_count": 69,
   "active_count": 1,
   "phase_duration": {
     "average_days": 28.666666666666668,

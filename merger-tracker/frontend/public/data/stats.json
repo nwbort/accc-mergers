@@ -1,6 +1,6 @@
 {
   "total_mergers": 154,
-  "total_waivers": 246,
+  "total_waivers": 247,
   "by_status": {
     "Assessment completed": 116,
     "Under assessment": 37,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 232,
+    "Approved": 233,
     "Not approved": 14
   },
   "phase_duration": {
@@ -37,7 +37,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 51
+      "count": 52
     },
     {
       "name": "Computer System Design and Related Services",
@@ -49,7 +49,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 31
+      "count": 32
     },
     {
       "name": "Non-Residential Property Operators",
@@ -176,6 +176,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80022",
+      "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
+      "determination": "Approved",
+      "determination_date": "2026-06-30T12:00:00Z",
+      "page_modified_datetime": "2026-06-30T16:50:31+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-40028",
       "merger_name": "Airtree \u2013 HotDoc",
       "determination": "Approved",
@@ -284,16 +294,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-15024",
-      "merger_name": "Redwood Services Group \u2013 All IT Australia",
-      "determination": "Approved",
-      "determination_date": "2026-06-25T12:00:00Z",
-      "page_modified_datetime": "2026-06-25T18:34:49+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
