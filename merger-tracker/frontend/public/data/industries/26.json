@@ -19,7 +19,7 @@
       "code": "261",
       "name": "Electricity Generation",
       "level": "group",
-      "merger_count": 9
+      "merger_count": 10
     },
     {
       "code": "262",
@@ -41,6 +41,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-35027",
+      "merger_name": "GPS Energy \u2013 Ryowa's interest in Gladstone Power Station Joint Venture",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-17T12:00:00Z",
+      "determination_date": "2026-06-30T12:00:00Z"
+    },
     {
       "merger_id": "WA-70023",
       "merger_name": "MLPL HoldCo \u2013 shares in Marinus Link Pty Ltd",
@@ -150,10 +159,10 @@
       "determination_date": "2025-11-26T12:00:00Z"
     }
   ],
-  "count": 12,
+  "count": 13,
   "phase_1_count": 3,
   "phase_2_count": 0,
-  "waiver_count": 9,
+  "waiver_count": 10,
   "active_count": 0,
   "phase_duration": {
     "average_days": 26.333333333333332,

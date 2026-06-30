@@ -69,7 +69,7 @@
       "code": "21",
       "name": "Primary Metal and Metal Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 7
+      "merger_count": 8
     },
     {
       "code": "22",
@@ -186,6 +186,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-35027",
+      "merger_name": "GPS Energy \u2013 Ryowa's interest in Gladstone Power Station Joint Venture",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-17T12:00:00Z",
+      "determination_date": "2026-06-30T12:00:00Z"
     },
     {
       "merger_id": "WA-25033",
@@ -962,10 +971,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 96,
+  "count": 97,
   "phase_1_count": 43,
   "phase_2_count": 1,
-  "waiver_count": 52,
+  "waiver_count": 53,
   "active_count": 10,
   "phase_duration": {
     "average_days": 29.794117647058822,

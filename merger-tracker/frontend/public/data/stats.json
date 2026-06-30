@@ -1,6 +1,6 @@
 {
   "total_mergers": 154,
-  "total_waivers": 242,
+  "total_waivers": 243,
   "by_status": {
     "Assessment completed": 116,
     "Under assessment": 37,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 5
   },
   "by_waiver_determination": {
-    "Approved": 228,
+    "Approved": 229,
     "Not approved": 14
   },
   "phase_duration": {
@@ -176,6 +176,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-35027",
+      "merger_name": "GPS Energy \u2013 Ryowa's interest in Gladstone Power Station Joint Venture",
+      "determination": "Approved",
+      "determination_date": "2026-06-30T12:00:00Z",
+      "page_modified_datetime": "2026-06-30T16:41:56+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-20023",
       "merger_name": "Sony Music - Recognition Music",
       "determination": "Approved",
@@ -281,16 +291,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-25T12:00:00Z",
       "page_modified_datetime": "2026-06-25T18:28:27+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-35025",
-      "merger_name": "SLR Consulting Australia - Hydrobiology",
-      "determination": "Approved",
-      "determination_date": "2026-06-25T12:00:00Z",
-      "page_modified_datetime": "2026-06-25T18:26:14+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

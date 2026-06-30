@@ -3034,21 +3034,29 @@
         "merger_name": "Bain Capital \u2013 FDH",
         "merger_id": "WA-25033",
         "determination": "Approved"
+      },
+      {
+        "application_date": "2026-06-17",
+        "business_days": 9,
+        "calendar_days": 13,
+        "merger_name": "GPS Energy \u2013 Ryowa's interest in Gladstone Power Station Joint Venture",
+        "merger_id": "WA-35027",
+        "determination": "Approved"
       }
     ],
     "stats": {
       "average": 12.1,
-      "median": 12.0,
+      "median": 12,
       "min": 2,
       "max": 25,
-      "count": 242
+      "count": 243
     },
     "calendar_stats": {
       "average": 18.2,
-      "median": 17.0,
+      "median": 17,
       "min": 2,
       "max": 39,
-      "count": 242
+      "count": 243
     }
   },
   "monthly_volume": {
@@ -3086,7 +3094,7 @@
       48,
       45,
       67,
-      22
+      23
     ]
   }
 }
