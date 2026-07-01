@@ -84,6 +84,15 @@ def titles_are_different_event_types(a: str, b: str) -> bool:
        string similarity is high — e.g. 'Phase 2 determination – Statement of
        Reasons' vs 'Phase 2 determination – Summary of reasons' share a long
        common prefix but are genuinely distinct documents.
+
+    3. Extra-segment check: some ACCC titles put the document-type label at the
+       end rather than the start (e.g. '... MAAS - Remedy offer' vs
+       '... MAAS - Questionnaire - Remedy offer'). Here the leading segments
+       are identical and the segment counts differ, so checks 1 and 2 both miss
+       the fact that one title has an inserted 'Questionnaire' segment with no
+       counterpart in the other. If either title has a segment that doesn't
+       match (exactly or fuzzily) any segment in the other title, they are
+       different document types.
     """
     prefix_a = extract_type_prefix(a)
     prefix_b = extract_type_prefix(b)
@@ -101,6 +110,17 @@ def titles_are_different_event_types(a: str, b: str) -> bool:
                 and SequenceMatcher(None, sa, sb).ratio() < _SEGMENT_SIMILARITY_THRESHOLD
             ):
                 return True
+
+    if len(segs_a) != len(segs_b) and len(segs_a) > 1 and len(segs_b) > 1:
+        for segs, other in ((segs_a, segs_b), (segs_b, segs_a)):
+            for seg in segs:
+                if len(seg) < _MIN_SEGMENT_LEN:
+                    continue
+                if not any(
+                    SequenceMatcher(None, seg, o).ratio() >= _SEGMENT_SIMILARITY_THRESHOLD
+                    for o in other
+                ):
+                    return True
 
     return False
 
