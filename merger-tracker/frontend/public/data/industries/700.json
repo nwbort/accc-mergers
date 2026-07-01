@@ -24,10 +24,19 @@
       "code": "7000",
       "name": "Computer System Design and Related Services",
       "level": "class",
-      "merger_count": 41
+      "merger_count": 42
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-75027",
+      "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-30T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-85036",
       "merger_name": "SpaceX - Anysphere",
@@ -398,11 +407,11 @@
       "determination_date": "2026-01-20T12:00:00Z"
     }
   ],
-  "count": 41,
-  "phase_1_count": 16,
+  "count": 42,
+  "phase_1_count": 17,
   "phase_2_count": 0,
   "waiver_count": 25,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 31.285714285714285,
     "median_days": 28,

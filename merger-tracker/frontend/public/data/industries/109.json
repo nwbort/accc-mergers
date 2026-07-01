@@ -24,10 +24,19 @@
       "code": "1090",
       "name": "Other Mining Support Services",
       "level": "class",
-      "merger_count": 3
+      "merger_count": 4
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-75027",
+      "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-30T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-25019",
       "merger_name": "Transocean - Valaris",
@@ -56,11 +65,11 @@
       "determination_date": "2026-04-07T12:00:00Z"
     }
   ],
-  "count": 3,
-  "phase_1_count": 2,
+  "count": 4,
+  "phase_1_count": 3,
   "phase_2_count": 0,
   "waiver_count": 1,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 42.0,
     "median_days": 42,

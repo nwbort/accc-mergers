@@ -24,7 +24,7 @@
       "code": "5921",
       "name": "Data Processing and Web Hosting Services",
       "level": "class",
-      "merger_count": 10
+      "merger_count": 11
     },
     {
       "code": "5922",
@@ -34,6 +34,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-75027",
+      "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-30T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-90020",
       "merger_name": "OpenAI - Ona",
@@ -143,11 +152,11 @@
       "determination_date": "2026-02-19T12:00:00Z"
     }
   ],
-  "count": 12,
-  "phase_1_count": 5,
+  "count": 13,
+  "phase_1_count": 6,
   "phase_2_count": 0,
   "waiver_count": 7,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 33.0,
     "median_days": 41,

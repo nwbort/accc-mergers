@@ -1,9 +1,9 @@
 {
-  "total_mergers": 157,
+  "total_mergers": 158,
   "total_waivers": 247,
   "by_status": {
     "Assessment completed": 117,
-    "Under assessment": 39,
+    "Under assessment": 40,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -41,7 +41,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 41
+      "count": 42
     },
     {
       "name": "Software Publishing",
@@ -64,15 +64,15 @@
       "count": 14
     },
     {
+      "name": "Engineering Design and Engineering Consulting Services",
+      "count": 13
+    },
+    {
       "name": "Supermarket and Grocery Stores",
       "count": 12
     },
     {
       "name": "Liquor Retailing",
-      "count": 12
-    },
-    {
-      "name": "Engineering Design and Engineering Consulting Services",
       "count": 12
     }
   ],
@@ -80,6 +80,14 @@
     {
       "merger_id": "MN-35017",
       "merger_name": "KINETIC - DYSONS BUS SERVICES",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-30T12:00:00Z",
+      "is_waiver": false
+    },
+    {
+      "merger_id": "MN-75027",
+      "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-30T12:00:00Z",
@@ -163,14 +171,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-24T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-60022",
-      "merger_name": "Autodesk - MaintainX",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-23T12:00:00Z",
       "is_waiver": false
     }
   ],
