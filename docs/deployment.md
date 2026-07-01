@@ -59,6 +59,17 @@ cd cloudflare-worker
 npx wrangler deploy
 ```
 
+## Cloudflare Email Worker — ACCC register watcher
+
+The `accc-register-watcher/` directory contains a separate Email Worker
+that watches a mailbox subscribed to the ACCC's register update mailing
+list. On each email it fires a `repository_dispatch` event
+(`new_merger_detected`) so `pipeline.yml` runs immediately rather than
+waiting for its next scheduled run. See
+[`accc-register-watcher/README.md`](../accc-register-watcher/README.md)
+for setup (Cloudflare Email Routing configuration and the GitHub token
+secret).
+
 ## GitHub workflows
 
 ### `pipeline.yml` — Main pipeline (hourly + on push to main)
@@ -70,7 +81,7 @@ The primary automated workflow. Runs end-to-end on a schedule and on every push 
 3. **Convert** — detects unconverted DOCX attachments, installs LibreOffice, converts to PDF; re-runs extraction if any were converted
 4. **Commit** — commits all staged changes in a single commit, rebases, and pushes
 
-Also accepts a `workflow_dispatch` with an `all_mergers` boolean input to force full re-extraction.
+Also accepts a `workflow_dispatch` with an `all_mergers` boolean input to force full re-extraction, and a `repository_dispatch` event (`new_merger_detected`) fired by the `accc-register-watcher` Cloudflare Email Worker when the ACCC's register update mailing list sends an email.
 
 ### `extract.yml` — Manual extraction
 
