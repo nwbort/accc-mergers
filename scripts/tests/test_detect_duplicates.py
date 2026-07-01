@@ -91,6 +91,31 @@ def test_two_days_apart_not_grouped():
     assert find_duplicates(merger) == []
 
 
+def test_type_label_suffix_not_grouped():
+    """Titles with the document-type label at the end, not the start, must
+    still be told apart. MN-50009 had 'MAAS - Remedy offer' and
+    'MAAS - Questionnaire - Remedy offer' on the same day: the leading
+    segments match and the segment counts differ, so the type-prefix and
+    equal-length segment checks both miss the inserted 'Questionnaire'
+    segment. These are genuinely different documents and must not be
+    reported as duplicates.
+    """
+    merger = {
+        "merger_id": "MN-50009",
+        "events": [
+            {
+                "date": "2026-06-29T12:00:00Z",
+                "title": "Heidelberg Materials Australia - Construction materials business of MAAS - Remedy offer",
+            },
+            {
+                "date": "2026-06-29T12:00:00Z",
+                "title": "Heidelberg Materials Australia - Construction materials business of MAAS - Questionnaire - Remedy offer",
+            },
+        ],
+    }
+    assert find_duplicates(merger) == []
+
+
 def test_three_consecutive_days_no_overlapping_groups():
     """Non-transitive tolerance must not emit overlapping groups that share an index."""
     merger = {
