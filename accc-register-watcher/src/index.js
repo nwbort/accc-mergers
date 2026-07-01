@@ -15,12 +15,21 @@
  * Required Worker vars (wrangler.toml):
  *   GITHUB_REPO      — "owner/repo" to dispatch to
  *   ALLOWED_SENDERS  — comma-separated allowlist of sender addresses/domains
- *                      for the ACCC mailing list (blank = accept any sender)
+ *                      for the ACCC mailing list (blank = accept any sender),
+ *                      checked against both the envelope sender and the
+ *                      From: header
  */
 
 const DISPATCH_EVENT_TYPE = "new_merger_detected";
 
-function isAllowedSender(from, allowedSendersVar) {
+// Pulls the bare address out of either a plain "user@domain" string or a
+// display-name form like "ACCC <user@domain>".
+function extractAddress(value) {
+  const match = (value || "").match(/<([^>]+)>/);
+  return (match ? match[1] : value || "").trim().toLowerCase();
+}
+
+function isAllowedSender(candidates, allowedSendersVar) {
   const allowed = (allowedSendersVar || "")
     .split(",")
     .map((s) => s.trim().toLowerCase())
@@ -28,21 +37,29 @@ function isAllowedSender(from, allowedSendersVar) {
 
   if (allowed.length === 0) return true;
 
-  const sender = (from || "").toLowerCase();
-  return allowed.some((entry) =>
-    entry.startsWith("@") ? sender.endsWith(entry) : sender === entry
+  return candidates.some((candidate) =>
+    allowed.some((entry) =>
+      entry.startsWith("@") ? candidate.endsWith(entry) : candidate === entry
+    )
   );
 }
 
 export default {
   async email(message, env, ctx) {
-    const from = message.from;
+    // The envelope sender (message.from) and the From: header can differ for
+    // bulk mail senders — check both against the allowlist.
+    const envelopeFrom = extractAddress(message.from);
+    const headerFrom = extractAddress(message.headers.get("from"));
     const subject = message.headers.get("subject") || "(no subject)";
 
-    if (!isAllowedSender(from, env.ALLOWED_SENDERS)) {
-      console.warn(`Ignoring email from unrecognised sender: ${from}`);
+    if (!isAllowedSender([envelopeFrom, headerFrom], env.ALLOWED_SENDERS)) {
+      console.warn(
+        `Ignoring email from unrecognised sender (envelope: ${envelopeFrom}, header: ${headerFrom})`
+      );
       return;
     }
+
+    const from = message.headers.get("from") || message.from;
 
     console.log(`ACCC register update email received from ${from}: ${subject}`);
 

@@ -67,12 +67,11 @@ Cloudflare Email Routing rules aren't expressible in `wrangler.toml`.
       `accc-register-watcher`, so subsequent update emails go to the
       dispatch logic instead of your inbox.
 
-6. Once you know the mailing list's real sending address, tighten
-   `ALLOWED_SENDERS` in `wrangler.toml` (comma-separated addresses or
-   `@domain` suffixes) and redeploy. Left blank, the worker dispatches on
-   email from any sender — fine for initial testing, not for production
-   (triggering the pipeline is low-risk, but there's no reason to leave it
-   open to arbitrary senders once you know the real one).
+6. `ALLOWED_SENDERS` in `wrangler.toml` is already set to the mailing
+   list's real sender, `do-not-reply@accc.gov.au` — redeploy after any
+   changes to it. It's checked against both the envelope sender and the
+   `From:` header, so it stays effective even if the list sends through a
+   third-party bulk mailer with a different envelope address.
 
 ## Verify
 

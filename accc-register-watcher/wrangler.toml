@@ -7,10 +7,8 @@ compatibility_date = "2024-09-23"
 GITHUB_REPO = "nwbort/accc-mergers"
 
 # Comma-separated allowlist of sender addresses/domains for the ACCC mailing
-# list, e.g. "notifications@accc.gov.au,@accc.gov.au". Leave blank to accept
-# email from any sender (not recommended — fill this in once you know the
-# mailing list's real From address).
-ALLOWED_SENDERS = ""
+# list. Leave blank to accept email from any sender.
+ALLOWED_SENDERS = "do-not-reply@accc.gov.au"
 
 # Secrets — set with:
 #   wrangler secret put GITHUB_TOKEN
