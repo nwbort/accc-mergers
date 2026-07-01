@@ -1999,12 +1999,20 @@
         {
           "name": "RIO TINTO ALUMINIUM LIMITED",
           "identifier_type": "ABN",
-          "identifier": "51 009 679 127"
+          "identifier": "51 009 679 127",
+          "canonical": {
+            "id": "rio-tinto-aluminium-limited",
+            "name": "Rio Tinto Aluminium Limited"
+          }
         },
         {
           "name": "RIO TINTO ALUMINIUM (HOLDINGS) LIMITED",
           "identifier_type": "ABN",
-          "identifier": "37 004 502 694"
+          "identifier": "37 004 502 694",
+          "canonical": {
+            "id": "rio-tinto-aluminium-limited",
+            "name": "Rio Tinto Aluminium Limited"
+          }
         },
         {
           "name": "Boyne Smelters Limited",

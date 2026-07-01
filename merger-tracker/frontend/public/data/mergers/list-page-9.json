@@ -59,14 +59,22 @@
         {
           "name": "Estia Health Holdings Ltd",
           "identifier_type": "ABN",
-          "identifier": "47 669 884 244"
+          "identifier": "47 669 884 244",
+          "canonical": {
+            "id": "estia-health-holdings-ltd",
+            "name": "Estia Health Holdings Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Stonepeak Partners LP",
           "identifier_type": null,
-          "identifier": "4958360"
+          "identifier": "4958360",
+          "canonical": {
+            "id": "stonepeak-partners-lp",
+            "name": "Stonepeak Partners LP"
+          }
         },
         {
           "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust",
