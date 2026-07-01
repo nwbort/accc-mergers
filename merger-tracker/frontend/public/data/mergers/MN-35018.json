@@ -1,0 +1,160 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hewitt-%E2%80%93-nolan-meats",
+  "merger_name": "Hewitt \u2013 Nolan Meats",
+  "status": "Under assessment",
+  "merger_id": "MN-35018",
+  "effective_notification_datetime": "2026-07-01T12:00:00Z",
+  "original_notification_datetime": "2026-07-01T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-08-12T12:00:00Z",
+  "page_modified_datetime": "2026-07-01T16:35:10+10:00",
+  "consultation_response_due_date": "2026-07-08T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust",
+      "identifier_type": "ACN",
+      "identifier": "600 506 778"
+    },
+    {
+      "name": "SAPPHIRE CATTLE COMPANY PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "14 600 389 286"
+    }
+  ],
+  "targets": [
+    {
+      "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust",
+      "identifier_type": "ACN",
+      "identifier": "081 765 228"
+    },
+    {
+      "name": "NOLAN MEATS PTY. LTD.",
+      "identifier_type": "ABN",
+      "identifier": "81 096 869 304"
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "Public Sector Pension Investment Board",
+      "identifier_type": null,
+      "identifier": ""
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "0142",
+      "name": "Beef Cattle Farming (Specialised)"
+    },
+    {
+      "code": "0143",
+      "name": "Beef Cattle Feedlots (Specialised)"
+    },
+    {
+      "code": "1111",
+      "name": "Meat Processing"
+    }
+  ],
+  "merger_description": "Sapphire Cattle Company, an entity within the Hewitt group (**Hewitt**) is proposing to acquire Nolan Meats Pty Ltd (**Nolan Meats**), including land and assets, via connected entities (the\u00a0**Acquisition**).\n\nHewitt is a majority-owned subsidiary of the Public Sector Pension Investment Board (**PSP Investments**), an investment management fund established by the Parliament of Canada. The remaining shares in Hewitt are owned by the Hewitt family.\n\nHewitt is a red meat producer, headquartered in Brisbane, which farms cattle and sheep, undertakes secondary processing of beef into value-added products (such as beef patties), and distributes (including the\u00a0packaging, marketing and sale of) beef to supermarkets, the food service industry, butchers and international customers. Hewitt predominantly produces organic beef products.\n\nNolan Meats is a beef producer headquartered in Gympie, Queensland, which undertakes lot feeding of cattle, primary processing of cattle, and the wholesale distribution (including\u00a0packaging, marketing and sale) of beef to supermarkets, the food service industry, butchers and international customers. Nolan Meats\u2019 core assets include a primary processing facility with an annual capacity of 260,000 head of cattle, located in Gympie, and a 4,000 standard cattle unit-licensed beef cattle feedlot situated 65 kilometres west of the processing facility.",
+  "events": [
+    {
+      "date": "2026-07-01T12:00:00Z",
+      "title": "Hewitt - Nolan Meats - Questionnaire",
+      "display_title": "Hewitt - Nolan Meats - Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Hewitt%20-%20Nolan%20-%20third-party%20questionnaire.docx",
+      "url_gh": "/mergers/MN-35018/Hewitt - Nolan - third-party questionnaire.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-07-01T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-20012",
+      "merger_name": "Australian Meat Group - Killara Feedlot",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Australian Meat Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "75 168 396 316",
+          "canonical": {
+            "id": "australian-meat-group-inc",
+            "name": "Australian Meat Group Inc"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Killara Feedlot Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "18 081 072 746"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-55005",
+      "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "General Atlantic",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Canada Pension Plan Investment Board",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "targets": [
+        {
+          "name": "Boats Group Holdings, Inc",
+          "identifier_type": null,
+          "identifier": ""
+        },
+        {
+          "name": "Bimini Holdings, LP",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-65012",
+      "merger_name": "Savvy Games Group \u2013 Moonton",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "East Gate Games Investment Company",
+          "identifier_type": "ABN",
+          "identifier": "39 275 633 205"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Moonton Holdings Limited",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ]
+    }
+  ]
+}

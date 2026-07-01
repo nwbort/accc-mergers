@@ -1,9 +1,9 @@
 {
-  "total_mergers": 158,
+  "total_mergers": 160,
   "total_waivers": 247,
   "by_status": {
     "Assessment completed": 117,
-    "Under assessment": 40,
+    "Under assessment": 42,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -77,6 +77,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-35018",
+      "merger_name": "Hewitt \u2013 Nolan Meats",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-01T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-35017",
       "merger_name": "KINETIC - DYSONS BUS SERVICES",
@@ -163,14 +171,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-25T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50024",
-      "merger_name": "AkzoNobel - Axalta",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-24T12:00:00Z",
       "is_waiver": false
     }
   ],

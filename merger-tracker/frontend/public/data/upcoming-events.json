@@ -124,6 +124,26 @@
       "type": "consultation_due",
       "event_type_display": "Consultation responses due",
       "date": "2026-07-08T12:00:00Z",
+      "merger_id": "MN-35018",
+      "merger_name": "Hewitt \u2013 Nolan Meats",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-01T12:00:00Z"
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-07-08T12:00:00Z",
+      "merger_id": "MN-50030",
+      "merger_name": "Symal Group - Shamrock Engineering and Equipment",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": null
+    },
+    {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-07-08T12:00:00Z",
       "merger_id": "MN-75027",
       "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
       "status": "Under assessment",
@@ -503,6 +523,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-08-12T12:00:00Z",
+      "merger_id": "MN-35018",
+      "merger_name": "Hewitt \u2013 Nolan Meats",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-01T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-08-17T12:00:00Z",
       "merger_id": "MN-30003",
       "merger_name": "MicroStar Logistics - Konvoy",
@@ -511,6 +541,6 @@
       "effective_notification_datetime": "2026-02-20T12:00:00Z"
     }
   ],
-  "count": 51,
+  "count": 54,
   "days_ahead": 60
 }

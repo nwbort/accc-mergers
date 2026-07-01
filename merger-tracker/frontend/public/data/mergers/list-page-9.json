@@ -1,6 +1,44 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-50025",
+      "merger_name": "Amazon \u2013 Globalstar",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-29T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-10T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Grapefruit Acquisition Sub II, LLC",
+          "identifier_type": null,
+          "identifier": "10440021"
+        },
+        {
+          "name": "Amazon.com, Inc.",
+          "identifier_type": null,
+          "identifier": "2620453"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Globalstar, Inc.",
+          "identifier_type": null,
+          "identifier": "3731110"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5802",
+          "name": "Other Telecommunications Network Operation"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/amazon-%E2%80%93-globalstar"
+    },
+    {
       "merger_id": "MN-50026",
       "merger_name": "Stonepeak-led consortium - Estia Health",
       "status": "Under assessment",
@@ -307,6 +345,63 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/spacex-anysphere"
+    },
+    {
+      "merger_id": "MN-35018",
+      "merger_name": "Hewitt \u2013 Nolan Meats",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-07-01T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-12T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust",
+          "identifier_type": "ACN",
+          "identifier": "600 506 778"
+        },
+        {
+          "name": "SAPPHIRE CATTLE COMPANY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 600 389 286"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust",
+          "identifier_type": "ACN",
+          "identifier": "081 765 228"
+        },
+        {
+          "name": "NOLAN MEATS PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "81 096 869 304"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Public Sector Pension Investment Board",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0142",
+          "name": "Beef Cattle Farming (Specialised)"
+        },
+        {
+          "code": "0143",
+          "name": "Beef Cattle Feedlots (Specialised)"
+        },
+        {
+          "code": "1111",
+          "name": "Meat Processing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hewitt-%E2%80%93-nolan-meats"
     }
   ],
   "page": 9,

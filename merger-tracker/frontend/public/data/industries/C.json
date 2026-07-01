@@ -9,7 +9,7 @@
       "code": "11",
       "name": "Food Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 10
+      "merger_count": 11
     },
     {
       "code": "12",
@@ -97,6 +97,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-35018",
+      "merger_name": "Hewitt \u2013 Nolan Meats",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-07-01T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-01106",
       "merger_name": "Midea - Residentia Group",
@@ -980,11 +989,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 98,
-  "phase_1_count": 44,
+  "count": 99,
+  "phase_1_count": 45,
   "phase_2_count": 1,
   "waiver_count": 53,
-  "active_count": 11,
+  "active_count": 12,
   "phase_duration": {
     "average_days": 29.794117647058822,
     "median_days": 26,

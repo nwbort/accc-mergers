@@ -27,6 +27,15 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "MN-35018",
+      "merger_name": "Hewitt \u2013 Nolan Meats",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-07-01T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "MN-20012",
       "merger_name": "Australian Meat Group - Killara Feedlot",
       "is_waiver": false,
@@ -45,11 +54,11 @@
       "determination_date": "2026-03-19T12:00:00Z"
     }
   ],
-  "count": 2,
-  "phase_1_count": 2,
+  "count": 3,
+  "phase_1_count": 3,
   "phase_2_count": 0,
   "waiver_count": 0,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 27.5,
     "median_days": 28,

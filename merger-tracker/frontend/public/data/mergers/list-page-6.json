@@ -1,6 +1,67 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-15015",
+      "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-06T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": "2026-06-19T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Fire Safety Platform Holding, LP",
+          "identifier_type": null,
+          "identifier": "State of Delaware, Division of Corporations  10541621"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Madison Safety & Flow Holdings LLC",
+          "identifier_type": null,
+          "identifier": "State of Delaware, Division of Corporations  7811257"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Bain Capital Investors, LLC",
+          "identifier_type": null,
+          "identifier": "IRS EIN  812878769",
+          "canonical": {
+            "id": "bain-capital-investors-llc",
+            "name": "Bain Capital Investors LLC"
+          }
+        },
+        {
+          "name": "Madison Industrial Solutions Corporation",
+          "identifier_type": null,
+          "identifier": "State of Delaware, Division of Corporations  5633530"
+        },
+        {
+          "name": "3M Company",
+          "identifier_type": null,
+          "identifier": "IRS EIN  41041777"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "3499",
+          "name": "Other Machinery and Equipment Wholesaling n.e.c."
+        },
+        {
+          "code": "7713",
+          "name": "Fire Protection and Other Emergency Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/3m-and-funds-managed-andor-advised-by-bain-capital-madison-fire-rescue"
+    },
+    {
       "merger_id": "WA-30014",
       "merger_name": "MedHealth \u2013 Connect Allied Health",
       "status": "Assessment completed",
@@ -2605,55 +2666,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bgis-safe-fire-electrical"
-    },
-    {
-      "merger_id": "WA-55022",
-      "merger_name": "GenusPlus Group \u2013 MPC Kinetic",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-05-19T12:00:00Z",
-      "determination_publication_date": "2026-06-09T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "GENUSPLUS GROUP LTD",
-          "identifier_type": "ABN",
-          "identifier": "86 620 283 561"
-        }
-      ],
-      "targets": [
-        {
-          "name": "MPC KINETIC HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "68 626 678 911"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3109",
-          "name": "Other Heavy and Civil Engineering Construction"
-        },
-        {
-          "code": "3212",
-          "name": "Site Preparation Services"
-        },
-        {
-          "code": "3232",
-          "name": "Electrical Services"
-        },
-        {
-          "code": "3299",
-          "name": "Other Construction Services n.e.c."
-        },
-        {
-          "code": "6923",
-          "name": "Engineering Design and Engineering Consulting Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/genusplus-group-%E2%80%93-mpc-kinetic"
     }
   ],
   "page": 6,

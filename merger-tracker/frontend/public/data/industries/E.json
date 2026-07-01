@@ -15,7 +15,7 @@
       "code": "31",
       "name": "Heavy and Civil Engineering Construction",
       "level": "subdivision",
-      "merger_count": 10
+      "merger_count": 11
     },
     {
       "code": "32",
@@ -50,6 +50,15 @@
       "status": "Under assessment",
       "phase": "Phase 1",
       "notification_date": "2026-04-27T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-50030",
+      "merger_name": "Symal Group - Shamrock Engineering and Equipment",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": null,
       "determination_date": null
     },
     {
@@ -278,11 +287,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 28,
-  "phase_1_count": 10,
+  "count": 29,
+  "phase_1_count": 11,
   "phase_2_count": 0,
   "waiver_count": 18,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 23.142857142857142,
     "median_days": 22,
