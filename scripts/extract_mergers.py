@@ -11,6 +11,7 @@ import re
 from datetime import datetime, timedelta
 from markdownify import markdownify as md
 from parse_determination import parse_determination_pdf
+from parse_phase2_notice import parse_phase2_notice_pdf
 from parse_nocc import (
     process_all_noccs,
     _build_caches_from_existing as _build_nocc_caches,
@@ -129,6 +130,12 @@ def download_attachment(merger_id, attachment_url, event_title=None, cached_dete
     """
     Downloads an attachment if it doesn't already exist locally.
     If it's a determination PDF, also parses it to extract commission division and table content.
+
+    Phase 2 Notice PDFs are downloaded here too but parsed later, in the
+    enrich phase (see ``extract_phase2_notice_data``) — unlike determinations,
+    parsing one can require the Tesseract OCR fallback (see
+    parse_phase2_notice.py), so it's kept out of this always-runs download
+    path to avoid making that a hard dependency of every scrape.
 
     Args:
         merger_id: The merger ID
@@ -418,21 +425,33 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
     """Scrape timeline events from the HTML, downloading attachments as needed.
 
     Reuses previously-parsed determination data from ``existing_merger_data``
-    (matched by attachment URL) to avoid re-parsing PDFs on every run.
+    (matched by attachment URL) to avoid re-parsing PDFs on every run. A
+    Phase 2 Notice result computed by a previous ``extract_phase2_notice_data``
+    (enrich-phase) run is carried forward the same way, but without
+    triggering a re-parse here — that parse can require the OCR fallback
+    (see parse_phase2_notice.py), so it's kept out of this always-runs path.
     """
     cached_determination_by_url = {}
+    cached_phase2_notice_by_url = {}
     if existing_merger_data:
         for existing_event in existing_merger_data.get('events', []):
             url = existing_event.get('url')
+            if not url:
+                continue
             # 'determination_commission_division' is always written when a
             # determination PDF parse has previously succeeded, so use its
             # presence as the signal that we have cached data to reuse.
-            if url and 'determination_commission_division' in existing_event:
+            if 'determination_commission_division' in existing_event:
                 cached_determination_by_url[url] = {
                     'commission_division': existing_event.get('determination_commission_division'),
                     'table_content': existing_event.get('determination_table_content'),
                     'statement_of_reasons': existing_event.get('determination_statement_of_reasons'),
                 }
+            # 'phase2_notice_matters_to_investigate' is always written (even
+            # as an empty list) once extract_phase2_notice_data has parsed
+            # this event, so use its presence as the cache signal.
+            if 'phase2_notice_matters_to_investigate' in existing_event:
+                cached_phase2_notice_by_url[url] = existing_event['phase2_notice_matters_to_investigate']
 
     scraped_events = []
     attachment_tables = soup.find_all('div', class_='table-responsive')
@@ -468,6 +487,9 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
                     statement = determination_data.get('statement_of_reasons')
                     if statement:
                         event['determination_statement_of_reasons'] = statement
+
+                if url in cached_phase2_notice_by_url:
+                    event['phase2_notice_matters_to_investigate'] = cached_phase2_notice_by_url[url]
 
                 parsed_url = urlparse(url)
                 original_filename = unquote(os.path.basename(parsed_url.path)).strip()
@@ -1156,6 +1178,62 @@ def extract_nocc_data():
     return nocc_data
 
 
+def find_pending_phase2_notice_events(all_mergers_data):
+    """Return ``(merger_id, event, local_path)`` for each Phase 2 Notice event
+    that hasn't been parsed yet and whose PDF has already been downloaded.
+
+    An event counts as already parsed once it carries
+    ``phase2_notice_matters_to_investigate`` (written even as an empty list
+    on a successful-but-empty parse), so a matter like Ampol-EG Australia
+    is never re-parsed once it has a result.
+    """
+    pending = []
+    for merger in all_mergers_data:
+        merger_id = merger.get('merger_id')
+        for event in merger.get('events', []):
+            if 'phase2_notice_matters_to_investigate' in event:
+                continue
+            if not is_phase_2_referral_event(event.get('title', '')):
+                continue
+            url_gh = event.get('url_gh')
+            if not url_gh or not url_gh.lower().endswith('.pdf'):
+                continue
+            local_path = os.path.join(MATTERS_DIR, merger_id, os.path.basename(url_gh))
+            if os.path.exists(local_path):
+                pending.append((merger_id, event, local_path))
+    return pending
+
+
+def extract_phase2_notice_data(all_mergers_data):
+    """Parse pending Phase 2 Notice PDFs and attach their "matters the ACCC
+    intends to investigate" boxes to the corresponding event in place.
+
+    Run in the enrich phase (after DOCX conversion) rather than inline
+    during download: some notices redact individual paragraphs by
+    flattening the whole page to a picture, which needs the Tesseract OCR
+    fallback in parse_phase2_notice.py, and we don't want that as a hard
+    dependency of the always-runs HTML-parse/download phase.
+
+    Returns the number of events parsed.
+    """
+    pending = find_pending_phase2_notice_events(all_mergers_data)
+    if not pending:
+        return 0
+
+    print(f"Parsing {len(pending)} pending Phase 2 Notice PDF(s)...", file=sys.stderr)
+
+    parsed_count = 0
+    for merger_id, event, local_path in pending:
+        try:
+            data = parse_phase2_notice_pdf(local_path)
+            event['phase2_notice_matters_to_investigate'] = data.get('matters_to_investigate', [])
+            parsed_count += 1
+        except Exception as e:
+            print(f"Error parsing Phase 2 Notice PDF for {merger_id}: {e}", file=sys.stderr)
+
+    return parsed_count
+
+
 def run_parse_merger_file(task):
     """Helper function to unpack arguments for parse_merger_file."""
     return parse_merger_file(*task)
@@ -1286,6 +1364,9 @@ def main():
         # back into per-merger fields (their date is already on the event), but
         # downstream pipelines load the manifest separately.
         extract_nocc_data()
+
+        # 8b2. Parse pending Phase 2 Notice PDFs into their events.
+        extract_phase2_notice_data(all_mergers_data)
 
         # 8c. Auto-fix catchable events whose date is missing on the ACCC page.
         #     Tries to extract the date from the event title; falls back to today.

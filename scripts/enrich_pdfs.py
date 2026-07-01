@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Phase-2 enrichment: parse questionnaire / NOCC PDFs into existing mergers.
+"""Phase-2 enrichment: parse questionnaire / NOCC / Phase 2 Notice PDFs into
+existing mergers.
 
 The pipeline runs ``extract_mergers.py --skip-pdf-enrich`` first to download
 HTML pages and attachment files (PDF and DOCX), then converts any new DOCX
@@ -8,7 +9,8 @@ files to PDF, then runs this script to:
 1. Parse questionnaire PDFs and update each merger's consultation deadline
    if it was missing.
 2. Parse NOCC summary PDFs into the standalone manifest.
-3. Auto-fix questionnaire events whose date is missing on the ACCC page.
+3. Parse pending Phase 2 Notice PDFs into their events.
+4. Auto-fix questionnaire events whose date is missing on the ACCC page.
 
 Splitting these steps out of ``extract_mergers.py`` lets the workflow run
 the expensive HTML parse / download phase once, do DOCX conversion in the
@@ -29,6 +31,7 @@ from extract_mergers import (
     detect_inferred_phase_2,
     enrich_with_questionnaire_data,
     extract_nocc_data,
+    extract_phase2_notice_data,
 )
 
 MERGERS_JSON = 'data/processed/mergers.json'
@@ -63,6 +66,9 @@ def main():
 
     # 2. NOCC manifest.
     extract_nocc_data()
+
+    # 2b. Parse pending Phase 2 Notice PDFs into their events.
+    extract_phase2_notice_data(all_mergers_data)
 
     # 3. Auto-fix catchable events (questionnaire, remedy offer) whose date is missing.
     auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers)
