@@ -11,6 +11,7 @@ import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import QuestionnaireSection from '../components/QuestionnaireSection';
 import DeterminationExplanationSection from '../components/DeterminationExplanationSection';
+import Phase2NoticeMattersSection from '../components/Phase2NoticeMattersSection';
 import MergerTimeline from '../components/MergerTimeline';
 import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
@@ -316,6 +317,9 @@ function MergerDetail() {
 
         {/* Determination explanation (waivers and Phase 1 approved notifications) */}
         <DeterminationExplanationSection merger={merger} />
+
+        {/* Matters the ACCC intends to investigate (Phase 2 Notice) */}
+        <Phase2NoticeMattersSection merger={merger} />
 
         {/* Commentary */}
         {merger.comments && merger.comments.length > 0 && (

@@ -11,6 +11,7 @@ import re
 from datetime import datetime, timedelta
 from markdownify import markdownify as md
 from parse_determination import parse_determination_pdf
+from parse_phase2_notice import parse_phase2_notice_pdf
 from parse_nocc import (
     process_all_noccs,
     _build_caches_from_existing as _build_nocc_caches,
@@ -125,21 +126,30 @@ def is_safe_url(url):
             and parsed.netloc.endswith('accc.gov.au'))
 
 
-def download_attachment(merger_id, attachment_url, event_title=None, cached_determination_data=None):
+def download_attachment(
+    merger_id, attachment_url, event_title=None,
+    cached_determination_data=None, cached_phase2_notice_data=None,
+):
     """
     Downloads an attachment if it doesn't already exist locally.
     If it's a determination PDF, also parses it to extract commission division and table content.
+    If it's the Phase 2 Notice (the decision-to-proceed-to-Phase-2 document), also
+    parses it to extract the "Matters the ACCC intends to investigate" boxes.
 
     Args:
         merger_id: The merger ID
         attachment_url: URL to download
-        event_title: Title of the event (used to detect determination PDFs)
+        event_title: Title of the event (used to detect determination/Phase 2 Notice PDFs)
         cached_determination_data: Previously-parsed determination data for this
             attachment. When provided, parse_determination_pdf() is skipped and
-            this value is returned as-is for determination PDFs.
+            this value is reused as-is for determination PDFs.
+        cached_phase2_notice_data: Previously-parsed Phase 2 Notice data for this
+            attachment. When provided, parse_phase2_notice_pdf() is skipped and
+            this value is reused as-is for Phase 2 Notice PDFs.
 
     Returns:
-        Dictionary with parsed determination data if applicable, None otherwise
+        Dictionary with 'determination' and 'phase2_notice' keys holding
+        whichever parsed data applies (None otherwise for each).
     """
     if not merger_id or not attachment_url:
         return None
@@ -149,6 +159,7 @@ def download_attachment(merger_id, attachment_url, event_title=None, cached_dete
         return None
 
     determination_data = None
+    phase2_notice_data = None
 
     try:
         # Create a directory for the merger's attachments
@@ -200,12 +211,33 @@ def download_attachment(merger_id, attachment_url, event_title=None, cached_dete
                     print(f"Error parsing determination PDF {filename}: {e}", file=sys.stderr)
                     determination_data = None
 
+        # Check if this is the Phase 2 Notice (decision-to-proceed-to-Phase-2
+        # document) and parse it. Uses the same event-title detection as the
+        # Phase 1 -> Phase 2 stage inference, so it always parses the specific
+        # PDF the ACCC register links for this event, not just any PDF that
+        # happens to be sitting in the matter's folder.
+        is_phase2_notice = (
+            event_title and
+            is_phase_2_referral_event(event_title) and
+            filename.lower().endswith('.pdf')
+        )
+
+        if is_phase2_notice and os.path.exists(local_filepath):
+            if cached_phase2_notice_data is not None:
+                phase2_notice_data = cached_phase2_notice_data
+            else:
+                try:
+                    phase2_notice_data = parse_phase2_notice_pdf(local_filepath)
+                except Exception as e:
+                    print(f"Error parsing Phase 2 Notice PDF {filename}: {e}", file=sys.stderr)
+                    phase2_notice_data = None
+
     except requests.exceptions.RequestException as e:
         print(f"Error downloading {attachment_url}: {e}", file=sys.stderr)
     except IOError as e:
         print(f"Error saving file {local_filepath}: {e}", file=sys.stderr)
 
-    return determination_data
+    return {'determination': determination_data, 'phase2_notice': phase2_notice_data}
 
 
 def get_serve_filename(original_filename: str) -> str:
@@ -417,21 +449,32 @@ def _extract_description(soup):
 def _scrape_events(soup, merger_id, existing_merger_data=None):
     """Scrape timeline events from the HTML, downloading attachments as needed.
 
-    Reuses previously-parsed determination data from ``existing_merger_data``
-    (matched by attachment URL) to avoid re-parsing PDFs on every run.
+    Reuses previously-parsed determination and Phase 2 Notice data from
+    ``existing_merger_data`` (matched by attachment URL) to avoid re-parsing
+    PDFs on every run.
     """
     cached_determination_by_url = {}
+    cached_phase2_notice_by_url = {}
     if existing_merger_data:
         for existing_event in existing_merger_data.get('events', []):
             url = existing_event.get('url')
+            if not url:
+                continue
             # 'determination_commission_division' is always written when a
             # determination PDF parse has previously succeeded, so use its
             # presence as the signal that we have cached data to reuse.
-            if url and 'determination_commission_division' in existing_event:
+            if 'determination_commission_division' in existing_event:
                 cached_determination_by_url[url] = {
                     'commission_division': existing_event.get('determination_commission_division'),
                     'table_content': existing_event.get('determination_table_content'),
                     'statement_of_reasons': existing_event.get('determination_statement_of_reasons'),
+                }
+            # 'phase2_notice_matters_to_investigate' is always written (even
+            # as an empty list) when a Phase 2 Notice PDF parse has
+            # previously succeeded, so use its presence as the cache signal.
+            if 'phase2_notice_matters_to_investigate' in existing_event:
+                cached_phase2_notice_by_url[url] = {
+                    'matters_to_investigate': existing_event.get('phase2_notice_matters_to_investigate'),
                 }
 
     scraped_events = []
@@ -458,16 +501,22 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
                 url = urljoin(BASE_URL, link_tag['href'])
                 event['url'] = url
 
-                determination_data = download_attachment(
+                attachment_data = download_attachment(
                     merger_id, url, title,
                     cached_determination_data=cached_determination_by_url.get(url),
+                    cached_phase2_notice_data=cached_phase2_notice_by_url.get(url),
                 )
+                determination_data = (attachment_data or {}).get('determination')
                 if determination_data:
                     event['determination_commission_division'] = determination_data.get('commission_division')
                     event['determination_table_content'] = determination_data.get('table_content')
                     statement = determination_data.get('statement_of_reasons')
                     if statement:
                         event['determination_statement_of_reasons'] = statement
+
+                phase2_notice_data = (attachment_data or {}).get('phase2_notice')
+                if phase2_notice_data:
+                    event['phase2_notice_matters_to_investigate'] = phase2_notice_data.get('matters_to_investigate', [])
 
                 parsed_url = urlparse(url)
                 original_filename = unquote(os.path.basename(parsed_url.path)).strip()
