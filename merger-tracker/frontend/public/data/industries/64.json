@@ -19,7 +19,7 @@
       "code": "641",
       "name": "Auxiliary Finance and Investment Services",
       "level": "group",
-      "merger_count": 32
+      "merger_count": 33
     },
     {
       "code": "642",
@@ -29,6 +29,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-45018",
+      "merger_name": "Count \u2013 Oracle Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-09T12:00:00Z",
+      "determination_date": "2026-07-01T12:00:00Z"
+    },
     {
       "merger_id": "WA-40028",
       "merger_name": "Airtree \u2013 HotDoc",
@@ -327,10 +336,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 33,
+  "count": 34,
   "phase_1_count": 9,
   "phase_2_count": 0,
-  "waiver_count": 24,
+  "waiver_count": 25,
   "active_count": 0,
   "phase_duration": {
     "average_days": 25.11111111111111,

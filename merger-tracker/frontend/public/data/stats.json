@@ -1,6 +1,6 @@
 {
   "total_mergers": 160,
-  "total_waivers": 247,
+  "total_waivers": 249,
   "by_status": {
     "Assessment completed": 117,
     "Under assessment": 42,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 6
   },
   "by_waiver_determination": {
-    "Approved": 233,
+    "Approved": 235,
     "Not approved": 14
   },
   "phase_duration": {
@@ -44,11 +44,11 @@
       "count": 42
     },
     {
-      "name": "Software Publishing",
-      "count": 32
+      "name": "Other Auxiliary Finance and Investment Services",
+      "count": 33
     },
     {
-      "name": "Other Auxiliary Finance and Investment Services",
+      "name": "Software Publishing",
       "count": 32
     },
     {
@@ -176,6 +176,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45018",
+      "merger_name": "Count \u2013 Oracle Group",
+      "determination": "Approved",
+      "determination_date": "2026-07-01T12:00:00Z",
+      "page_modified_datetime": "2026-07-01T18:21:42+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-25030",
+      "merger_name": "Warburg Pincus \u2013 Commercial Credit Holdings Limited",
+      "determination": "Approved",
+      "determination_date": "2026-07-01T12:00:00Z",
+      "page_modified_datetime": "2026-07-01T18:21:19+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-01068",
       "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
       "determination": "Not approved",
@@ -271,26 +291,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-29T12:00:00Z",
       "page_modified_datetime": "2026-06-29T17:39:40+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-40026",
-      "merger_name": "Australian Food & Fibre \u2013 Western Lands Lease Conversion",
-      "determination": "Approved",
-      "determination_date": "2026-06-26T12:00:00Z",
-      "page_modified_datetime": "2026-06-26T17:27:44+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-45017",
-      "merger_name": "Apax Partners LLP \u2013 Sedex Information Exchange Limited",
-      "determination": "Approved",
-      "determination_date": "2026-06-26T12:00:00Z",
-      "page_modified_datetime": "2026-06-26T17:23:17+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

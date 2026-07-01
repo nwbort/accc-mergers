@@ -715,6 +715,50 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bupa-%E2%80%93-barings-australian-private-credit-fund"
     },
     {
+      "merger_id": "WA-25030",
+      "merger_name": "Warburg Pincus \u2013 Commercial Credit Holdings Limited",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-05T12:00:00Z",
+      "determination_publication_date": "2026-07-01T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Currawong BidCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "697 523 578"
+        }
+      ],
+      "targets": [
+        {
+          "name": "COMMERCIAL CREDIT HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "81 654 459 971"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Warburg Pincus LLC",
+          "identifier_type": null,
+          "identifier": "DOS ID 2097098"
+        },
+        {
+          "name": "CREDITOR WATCH PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 144 644 244"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "7293",
+          "name": "Credit Reporting and Debt Collection Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/warburg-pincus-%E2%80%93-commercial-credit-holdings-limited"
+    },
+    {
       "merger_id": "WA-35025",
       "merger_name": "SLR Consulting Australia - Hydrobiology",
       "status": "Assessment completed",
@@ -1054,6 +1098,59 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/redwood-services-group-%E2%80%93-all-it-australia"
+    },
+    {
+      "merger_id": "WA-45018",
+      "merger_name": "Count \u2013 Oracle Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-09T12:00:00Z",
+      "determination_publication_date": "2026-07-01T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Count Holdings No. 4 Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "48 111 695 357"
+        },
+        {
+          "name": "Count Holdings No. 3 Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "37 696 339 161"
+        },
+        {
+          "name": "Count Holdings No. 1 Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "70 696 338 995"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Tamarama Advisory Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "36 696 563 596"
+        },
+        {
+          "name": "Tamarama Investment Management Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "25 696 539 625"
+        },
+        {
+          "name": "Tamarama Accounting Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "17 696 552 922"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/count-%E2%80%93-oracle-group"
     },
     {
       "merger_id": "WA-55025",
@@ -2560,128 +2657,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/midea-residentia-group"
-    },
-    {
-      "merger_id": "MN-01107",
-      "merger_name": "WSP / GEOTECHNICAL TESTING AND INTERPRETATION",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-26T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-07T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "WSP AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "80 078 004 798",
-          "canonical": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "GEOTECHNICAL TESTING AND INTERPRETATION PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "14 616 849 766"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "WSP AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 169 545 395",
-          "canonical": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          }
-        },
-        {
-          "name": "RICARDO AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "17 625 088 646"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6923",
-          "name": "Engineering Design and Engineering Consulting Services"
-        },
-        {
-          "code": "6925",
-          "name": "Scientific Testing and Analysis Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/wsp-geotechnical-testing-and-interpretation"
-    },
-    {
-      "merger_id": "MN-90020",
-      "merger_name": "OpenAI - Ona",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-26T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-07T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Wave Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  10631976"
-        },
-        {
-          "name": "OpenAI Group PBC",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  10381551"
-        },
-        {
-          "name": "Wave Merger Sub II, LLC",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  7007085"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Gitpod, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  3353320",
-          "canonical": {
-            "id": "gitpod-gmbh",
-            "name": "Gitpod GmbH"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Gitpod GmbH",
-          "identifier_type": null,
-          "identifier": "HRB  22228",
-          "canonical": {
-            "id": "gitpod-gmbh",
-            "name": "Gitpod GmbH"
-          }
-        },
-        {
-          "name": "OpenAI Foundation",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  5902936"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "5420",
-          "name": "Software Publishing"
-        },
-        {
-          "code": "5921",
-          "name": "Data Processing and Web Hosting Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/openai-ona"
     }
   ],
   "page": 8,
