@@ -1,9 +1,9 @@
 {
-  "total_mergers": 156,
+  "total_mergers": 157,
   "total_waivers": 247,
   "by_status": {
     "Assessment completed": 117,
-    "Under assessment": 38,
+    "Under assessment": 39,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -77,6 +77,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-35017",
+      "merger_name": "KINETIC - DYSONS BUS SERVICES",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-06-30T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-85036",
       "merger_name": "SpaceX - Anysphere",
@@ -160,14 +168,6 @@
     {
       "merger_id": "MN-60022",
       "merger_name": "Autodesk - MaintainX",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-23T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-70022",
-      "merger_name": "Coles \u2013 supermarket site in Coffs Harbour (NSW)",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-23T12:00:00Z",
