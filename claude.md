@@ -26,6 +26,12 @@ Fully static — no backend server. Cloudflare Pages serves the React SPA plus g
 - Validates Cloudflare Turnstile tokens
 - Deployed separately via wrangler
 
+### ACCC Register Watcher (`accc-register-watcher/`)
+
+- Cloudflare Email Worker bound to a mailbox subscribed to the ACCC's register update mailing list
+- Fires a `repository_dispatch` (`new_merger_detected`) to trigger `pipeline.yml` immediately on each email
+- Deployed separately via wrangler; see its README for the Cloudflare Email Routing setup
+
 ## Project Structure
 
 ```
