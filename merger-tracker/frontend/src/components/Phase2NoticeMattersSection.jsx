@@ -1,6 +1,7 @@
 import { FaSearch } from 'react-icons/fa';
 import CollapsibleCard from './CollapsibleCard';
 import ExternalLinkIcon from './ExternalLinkIcon';
+import { MERGER_STATUS } from '../constants/mergerStatus';
 
 const MattersIcon = () => (
   <FaSearch className="h-5 w-5 text-amber-600" aria-hidden="true" />
@@ -15,11 +16,20 @@ function findPhase2NoticeEvent(events) {
   );
 }
 
+// These matters stop being live questions once the ACCC has made its Phase 2
+// determination or the assessment has ceased - only show the section while
+// the Phase 2 review is still ongoing.
+function isPhase2ReviewOngoing(merger) {
+  if (merger?.phase_2_determination) return false;
+  if (merger?.status === MERGER_STATUS.ASSESSMENT_CEASED) return false;
+  return true;
+}
+
 function Phase2NoticeMattersSection({ merger }) {
   const eventsArr = merger?.events || [];
   const event = findPhase2NoticeEvent(eventsArr);
 
-  if (!event) return null;
+  if (!event || !isPhase2ReviewOngoing(merger)) return null;
 
   const boxes = event.phase2_notice_matters_to_investigate;
 
