@@ -49,6 +49,23 @@ Cloudflare Email Routing rules aren't expressible in `wrangler.toml`.
    **Send to a Worker** → select `accc-register-watcher`.
 
 5. **Subscribe that address** to the ACCC's register update mailing list.
+   Most mailing lists email a confirmation link before activating the
+   subscription — the Worker only dispatches to GitHub, it doesn't put
+   anything in an inbox you can read, so you won't see that email by
+   default. To catch it:
+
+   1. Under Email → Email Routing → **Destination addresses**, add and
+      verify your own personal email address (Cloudflare emails you a
+      verification link — click it there first).
+   2. Go back to the routing rule from step 4 and temporarily change its
+      action from **Send to a Worker** to **Send to an email** → your
+      verified personal address.
+   3. Submit the ACCC mailing list signup using the Cloudflare address.
+      The confirmation email will forward straight to your inbox — open
+      it and click the confirmation link.
+   4. Switch the routing rule's action back to **Send to a Worker** →
+      `accc-register-watcher`, so subsequent update emails go to the
+      dispatch logic instead of your inbox.
 
 6. Once you know the mailing list's real sending address, tighten
    `ALLOWED_SENDERS` in `wrangler.toml` (comma-separated addresses or
