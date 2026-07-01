@@ -29,6 +29,8 @@ from extract_mergers import (
     _infer_determination_date_from_events,
     _extract_anzsic_codes,
     _merge_events,
+    find_pending_phase2_notice_events,
+    extract_phase2_notice_data,
 )
 import extract_mergers
 from bs4 import BeautifulSoup
@@ -1442,6 +1444,124 @@ class TestDetectInferredPhase2:
             'events': [],
         }])
         assert not out.exists()
+
+
+# ---------------------------------------------------------------------------
+# find_pending_phase2_notice_events / extract_phase2_notice_data
+# ---------------------------------------------------------------------------
+
+class TestFindPendingPhase2NoticeEvents:
+    def test_finds_pending_event_with_downloaded_pdf(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(extract_mergers, 'MATTERS_DIR', str(tmp_path))
+        matter_dir = tmp_path / 'MN-90009'
+        matter_dir.mkdir()
+        (matter_dir / 'Notice.pdf').write_bytes(b'%PDF-1.4 fake')
+        mergers = [{
+            'merger_id': 'MN-90009',
+            'events': [{
+                'title': 'Trescal - TR Calibration - Phase 2 Notice',
+                'url_gh': '/mergers/MN-90009/Notice.pdf',
+            }],
+        }]
+        pending = find_pending_phase2_notice_events(mergers)
+        assert len(pending) == 1
+        merger_id, event, path = pending[0]
+        assert merger_id == 'MN-90009'
+        assert event['title'] == 'Trescal - TR Calibration - Phase 2 Notice'
+        assert path == str(matter_dir / 'Notice.pdf')
+
+    def test_skips_already_parsed_event(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(extract_mergers, 'MATTERS_DIR', str(tmp_path))
+        matter_dir = tmp_path / 'MN-01019'
+        matter_dir.mkdir()
+        (matter_dir / 'Notice.pdf').write_bytes(b'%PDF-1.4 fake')
+        mergers = [{
+            'merger_id': 'MN-01019',
+            'events': [{
+                'title': 'ACCC decided notification is subject to Phase 2 review',
+                'url_gh': '/mergers/MN-01019/Notice.pdf',
+                'phase2_notice_matters_to_investigate': [],
+            }],
+        }]
+        assert find_pending_phase2_notice_events(mergers) == []
+
+    def test_skips_non_phase2_events(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(extract_mergers, 'MATTERS_DIR', str(tmp_path))
+        mergers = [{
+            'merger_id': 'MN-00001',
+            'events': [{'title': 'Merger notified to ACCC', 'url_gh': '/mergers/MN-00001/x.pdf'}],
+        }]
+        assert find_pending_phase2_notice_events(mergers) == []
+
+    def test_skips_event_without_downloaded_file(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(extract_mergers, 'MATTERS_DIR', str(tmp_path))
+        mergers = [{
+            'merger_id': 'MN-90009',
+            'events': [{
+                'title': 'X - Phase 2 Notice',
+                'url_gh': '/mergers/MN-90009/does-not-exist.pdf',
+            }],
+        }]
+        assert find_pending_phase2_notice_events(mergers) == []
+
+
+class TestExtractPhase2NoticeData:
+    def test_parses_pending_and_attaches_result(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(extract_mergers, 'MATTERS_DIR', str(tmp_path))
+        matter_dir = tmp_path / 'MN-90009'
+        matter_dir.mkdir()
+        (matter_dir / 'Notice.pdf').write_bytes(b'%PDF-1.4 fake')
+
+        boxes = [{'heading': 'Relevant areas of competition', 'items': ['A matter.']}]
+        monkeypatch.setattr(
+            extract_mergers, 'parse_phase2_notice_pdf',
+            lambda path: {'matters_to_investigate': boxes},
+        )
+
+        event = {'title': 'X - Phase 2 Notice', 'url_gh': '/mergers/MN-90009/Notice.pdf'}
+        mergers = [{'merger_id': 'MN-90009', 'events': [event]}]
+
+        count = extract_phase2_notice_data(mergers)
+        assert count == 1
+        assert event['phase2_notice_matters_to_investigate'] == boxes
+
+    def test_leaves_already_parsed_events_untouched(self, tmp_path, monkeypatch):
+        # Ampol-EG Australia's regression case: once an event has a result
+        # (even an empty one), it must never be re-parsed on a later run.
+        monkeypatch.setattr(extract_mergers, 'MATTERS_DIR', str(tmp_path))
+        calls = []
+        monkeypatch.setattr(
+            extract_mergers, 'parse_phase2_notice_pdf',
+            lambda path: calls.append(path) or {'matters_to_investigate': []},
+        )
+        event = {
+            'title': 'ACCC decided notification is subject to Phase 2 review',
+            'url_gh': '/mergers/MN-01019/Notice.pdf',
+            'phase2_notice_matters_to_investigate': [{'heading': None, 'items': ['Already parsed.']}],
+        }
+        mergers = [{'merger_id': 'MN-01019', 'events': [event]}]
+
+        count = extract_phase2_notice_data(mergers)
+        assert count == 0
+        assert calls == []
+        assert event['phase2_notice_matters_to_investigate'] == [{'heading': None, 'items': ['Already parsed.']}]
+
+    def test_records_error_and_continues_on_parse_failure(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(extract_mergers, 'MATTERS_DIR', str(tmp_path))
+        matter_dir = tmp_path / 'MN-90009'
+        matter_dir.mkdir()
+        (matter_dir / 'Notice.pdf').write_bytes(b'%PDF-1.4 fake')
+
+        def _raise(path):
+            raise ValueError('boom')
+        monkeypatch.setattr(extract_mergers, 'parse_phase2_notice_pdf', _raise)
+
+        event = {'title': 'X - Phase 2 Notice', 'url_gh': '/mergers/MN-90009/Notice.pdf'}
+        mergers = [{'merger_id': 'MN-90009', 'events': [event]}]
+
+        count = extract_phase2_notice_data(mergers)
+        assert count == 0
+        assert 'phase2_notice_matters_to_investigate' not in event
 
 
 # ---------------------------------------------------------------------------

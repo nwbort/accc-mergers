@@ -74,9 +74,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
-      - name: Install Tesseract OCR
-        run: sudo apt-get update && sudo apt-get install -y tesseract-ocr --no-install-recommends
-
       # --- Scrape ---
 
       - name: Run scraper
@@ -186,6 +183,22 @@ jobs:
               libreoffice --headless --convert-to pdf --outdir "$dir" "$docx"
             fi
           done < /tmp/unconverted.txt
+
+      # --- Install Tesseract OCR, only if a pending Phase 2 Notice needs it ---
+      # Most notices have a full text layer and never touch the OCR fallback
+      # in parse_phase2_notice.py; a matter is only pending here the first
+      # time its notice is seen, so this (and the OCR itself) never re-runs
+      # for a matter that's already been parsed, e.g. Ampol-EG Australia.
+
+      - name: Check if Phase 2 Notice OCR is needed
+        id: check-ocr
+        run: |
+          needs_ocr=$(python scripts/check_phase2_notice_ocr_needed.py)
+          echo "needs_ocr=$needs_ocr" >> "$GITHUB_OUTPUT"
+
+      - name: Install Tesseract OCR
+        if: steps.check-ocr.outputs.needs_ocr == 'true'
+        run: sudo apt-get update && sudo apt-get install -y tesseract-ocr --no-install-recommends
 
       # --- Extract phase 2: PDF parsing + downstream generation ---
       # Loads the mergers.json written by phase 1, runs questionnaire/NOCC

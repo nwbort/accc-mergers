@@ -126,30 +126,27 @@ def is_safe_url(url):
             and parsed.netloc.endswith('accc.gov.au'))
 
 
-def download_attachment(
-    merger_id, attachment_url, event_title=None,
-    cached_determination_data=None, cached_phase2_notice_data=None,
-):
+def download_attachment(merger_id, attachment_url, event_title=None, cached_determination_data=None):
     """
     Downloads an attachment if it doesn't already exist locally.
     If it's a determination PDF, also parses it to extract commission division and table content.
-    If it's the Phase 2 Notice (the decision-to-proceed-to-Phase-2 document), also
-    parses it to extract the "Matters the ACCC intends to investigate" boxes.
+
+    Phase 2 Notice PDFs are downloaded here too but parsed later, in the
+    enrich phase (see ``extract_phase2_notice_data``) — unlike determinations,
+    parsing one can require the Tesseract OCR fallback (see
+    parse_phase2_notice.py), so it's kept out of this always-runs download
+    path to avoid making that a hard dependency of every scrape.
 
     Args:
         merger_id: The merger ID
         attachment_url: URL to download
-        event_title: Title of the event (used to detect determination/Phase 2 Notice PDFs)
+        event_title: Title of the event (used to detect determination PDFs)
         cached_determination_data: Previously-parsed determination data for this
             attachment. When provided, parse_determination_pdf() is skipped and
-            this value is reused as-is for determination PDFs.
-        cached_phase2_notice_data: Previously-parsed Phase 2 Notice data for this
-            attachment. When provided, parse_phase2_notice_pdf() is skipped and
-            this value is reused as-is for Phase 2 Notice PDFs.
+            this value is returned as-is for determination PDFs.
 
     Returns:
-        Dictionary with 'determination' and 'phase2_notice' keys holding
-        whichever parsed data applies (None otherwise for each).
+        Dictionary with parsed determination data if applicable, None otherwise
     """
     if not merger_id or not attachment_url:
         return None
@@ -159,7 +156,6 @@ def download_attachment(
         return None
 
     determination_data = None
-    phase2_notice_data = None
 
     try:
         # Create a directory for the merger's attachments
@@ -211,33 +207,12 @@ def download_attachment(
                     print(f"Error parsing determination PDF {filename}: {e}", file=sys.stderr)
                     determination_data = None
 
-        # Check if this is the Phase 2 Notice (decision-to-proceed-to-Phase-2
-        # document) and parse it. Uses the same event-title detection as the
-        # Phase 1 -> Phase 2 stage inference, so it always parses the specific
-        # PDF the ACCC register links for this event, not just any PDF that
-        # happens to be sitting in the matter's folder.
-        is_phase2_notice = (
-            event_title and
-            is_phase_2_referral_event(event_title) and
-            filename.lower().endswith('.pdf')
-        )
-
-        if is_phase2_notice and os.path.exists(local_filepath):
-            if cached_phase2_notice_data is not None:
-                phase2_notice_data = cached_phase2_notice_data
-            else:
-                try:
-                    phase2_notice_data = parse_phase2_notice_pdf(local_filepath)
-                except Exception as e:
-                    print(f"Error parsing Phase 2 Notice PDF {filename}: {e}", file=sys.stderr)
-                    phase2_notice_data = None
-
     except requests.exceptions.RequestException as e:
         print(f"Error downloading {attachment_url}: {e}", file=sys.stderr)
     except IOError as e:
         print(f"Error saving file {local_filepath}: {e}", file=sys.stderr)
 
-    return {'determination': determination_data, 'phase2_notice': phase2_notice_data}
+    return determination_data
 
 
 def get_serve_filename(original_filename: str) -> str:
@@ -449,9 +424,12 @@ def _extract_description(soup):
 def _scrape_events(soup, merger_id, existing_merger_data=None):
     """Scrape timeline events from the HTML, downloading attachments as needed.
 
-    Reuses previously-parsed determination and Phase 2 Notice data from
-    ``existing_merger_data`` (matched by attachment URL) to avoid re-parsing
-    PDFs on every run.
+    Reuses previously-parsed determination data from ``existing_merger_data``
+    (matched by attachment URL) to avoid re-parsing PDFs on every run. A
+    Phase 2 Notice result computed by a previous ``extract_phase2_notice_data``
+    (enrich-phase) run is carried forward the same way, but without
+    triggering a re-parse here — that parse can require the OCR fallback
+    (see parse_phase2_notice.py), so it's kept out of this always-runs path.
     """
     cached_determination_by_url = {}
     cached_phase2_notice_by_url = {}
@@ -470,12 +448,10 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
                     'statement_of_reasons': existing_event.get('determination_statement_of_reasons'),
                 }
             # 'phase2_notice_matters_to_investigate' is always written (even
-            # as an empty list) when a Phase 2 Notice PDF parse has
-            # previously succeeded, so use its presence as the cache signal.
+            # as an empty list) once extract_phase2_notice_data has parsed
+            # this event, so use its presence as the cache signal.
             if 'phase2_notice_matters_to_investigate' in existing_event:
-                cached_phase2_notice_by_url[url] = {
-                    'matters_to_investigate': existing_event.get('phase2_notice_matters_to_investigate'),
-                }
+                cached_phase2_notice_by_url[url] = existing_event['phase2_notice_matters_to_investigate']
 
     scraped_events = []
     attachment_tables = soup.find_all('div', class_='table-responsive')
@@ -501,12 +477,10 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
                 url = urljoin(BASE_URL, link_tag['href'])
                 event['url'] = url
 
-                attachment_data = download_attachment(
+                determination_data = download_attachment(
                     merger_id, url, title,
                     cached_determination_data=cached_determination_by_url.get(url),
-                    cached_phase2_notice_data=cached_phase2_notice_by_url.get(url),
                 )
-                determination_data = (attachment_data or {}).get('determination')
                 if determination_data:
                     event['determination_commission_division'] = determination_data.get('commission_division')
                     event['determination_table_content'] = determination_data.get('table_content')
@@ -514,9 +488,8 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
                     if statement:
                         event['determination_statement_of_reasons'] = statement
 
-                phase2_notice_data = (attachment_data or {}).get('phase2_notice')
-                if phase2_notice_data:
-                    event['phase2_notice_matters_to_investigate'] = phase2_notice_data.get('matters_to_investigate', [])
+                if url in cached_phase2_notice_by_url:
+                    event['phase2_notice_matters_to_investigate'] = cached_phase2_notice_by_url[url]
 
                 parsed_url = urlparse(url)
                 original_filename = unquote(os.path.basename(parsed_url.path)).strip()
@@ -1205,6 +1178,62 @@ def extract_nocc_data():
     return nocc_data
 
 
+def find_pending_phase2_notice_events(all_mergers_data):
+    """Return ``(merger_id, event, local_path)`` for each Phase 2 Notice event
+    that hasn't been parsed yet and whose PDF has already been downloaded.
+
+    An event counts as already parsed once it carries
+    ``phase2_notice_matters_to_investigate`` (written even as an empty list
+    on a successful-but-empty parse), so a matter like Ampol-EG Australia
+    is never re-parsed once it has a result.
+    """
+    pending = []
+    for merger in all_mergers_data:
+        merger_id = merger.get('merger_id')
+        for event in merger.get('events', []):
+            if 'phase2_notice_matters_to_investigate' in event:
+                continue
+            if not is_phase_2_referral_event(event.get('title', '')):
+                continue
+            url_gh = event.get('url_gh')
+            if not url_gh or not url_gh.lower().endswith('.pdf'):
+                continue
+            local_path = os.path.join(MATTERS_DIR, merger_id, os.path.basename(url_gh))
+            if os.path.exists(local_path):
+                pending.append((merger_id, event, local_path))
+    return pending
+
+
+def extract_phase2_notice_data(all_mergers_data):
+    """Parse pending Phase 2 Notice PDFs and attach their "matters the ACCC
+    intends to investigate" boxes to the corresponding event in place.
+
+    Run in the enrich phase (after DOCX conversion) rather than inline
+    during download: some notices redact individual paragraphs by
+    flattening the whole page to a picture, which needs the Tesseract OCR
+    fallback in parse_phase2_notice.py, and we don't want that as a hard
+    dependency of the always-runs HTML-parse/download phase.
+
+    Returns the number of events parsed.
+    """
+    pending = find_pending_phase2_notice_events(all_mergers_data)
+    if not pending:
+        return 0
+
+    print(f"Parsing {len(pending)} pending Phase 2 Notice PDF(s)...", file=sys.stderr)
+
+    parsed_count = 0
+    for merger_id, event, local_path in pending:
+        try:
+            data = parse_phase2_notice_pdf(local_path)
+            event['phase2_notice_matters_to_investigate'] = data.get('matters_to_investigate', [])
+            parsed_count += 1
+        except Exception as e:
+            print(f"Error parsing Phase 2 Notice PDF for {merger_id}: {e}", file=sys.stderr)
+
+    return parsed_count
+
+
 def run_parse_merger_file(task):
     """Helper function to unpack arguments for parse_merger_file."""
     return parse_merger_file(*task)
@@ -1335,6 +1364,9 @@ def main():
         # back into per-merger fields (their date is already on the event), but
         # downstream pipelines load the manifest separately.
         extract_nocc_data()
+
+        # 8b2. Parse pending Phase 2 Notice PDFs into their events.
+        extract_phase2_notice_data(all_mergers_data)
 
         # 8c. Auto-fix catchable events whose date is missing on the ACCC page.
         #     Tries to extract the date from the event title; falls back to today.

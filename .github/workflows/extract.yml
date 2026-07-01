@@ -24,11 +24,25 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r scripts/requirements.txt
 
+      - name: Run extraction script (download phase)
+        run: python scripts/extract_mergers.py --skip-pdf-enrich
+
+      # Install Tesseract only if a pending Phase 2 Notice actually needs the
+      # OCR fallback in parse_phase2_notice.py (most have a full text layer
+      # and never touch it) — and never for a matter that's already been
+      # parsed, e.g. Ampol-EG Australia.
+      - name: Check if Phase 2 Notice OCR is needed
+        id: check-ocr
+        run: |
+          needs_ocr=$(python scripts/check_phase2_notice_ocr_needed.py)
+          echo "needs_ocr=$needs_ocr" >> "$GITHUB_OUTPUT"
+
       - name: Install Tesseract OCR
+        if: steps.check-ocr.outputs.needs_ocr == 'true'
         run: sudo apt-get update && sudo apt-get install -y tesseract-ocr --no-install-recommends
 
-      - name: Run extraction script
-        run: python scripts/extract_mergers.py
+      - name: Run extraction script (enrich phase)
+        run: python scripts/enrich_pdfs.py
 
       - name: Generate similar mergers (incremental)
         run: python scripts/generate_similar_mergers.py

@@ -20,6 +20,7 @@ the vertical gap between lines instead (see ``_classify_ocr_line``).
 """
 
 import re
+import sys
 from typing import Dict, List, Optional, Tuple
 
 import pdfplumber
@@ -202,6 +203,17 @@ def _page_needs_ocr(page) -> bool:
     return len(page.chars) == 0 and len(page.images) > 0
 
 
+def phase2_notice_needs_ocr(pdf_path: str) -> bool:
+    """Return True if any body page of the PDF has no extractable text layer
+    and would need the OCR fallback to parse fully.
+
+    Lets callers (e.g. a CI step) decide whether to install Tesseract before
+    parsing, instead of requiring it unconditionally for every run.
+    """
+    with pdfplumber.open(pdf_path) as pdf:
+        return any(_page_needs_ocr(page) for page in pdf.pages[1:])
+
+
 def _ocr_page_lines(page) -> List[Dict]:
     """OCR an image-only page and return line dicts with a ``gap`` (vertical
     pixel distance from the previous line, or None for the page's first
@@ -301,7 +313,13 @@ def parse_phase2_notice_pdf(pdf_path: str) -> Dict[str, object]:
             if page_idx == 0:
                 continue  # cover page
             if _page_needs_ocr(page):
-                _feed_ocr_lines(builder, _ocr_page_lines(page))
+                try:
+                    _feed_ocr_lines(builder, _ocr_page_lines(page))
+                except Exception as e:
+                    # e.g. Tesseract isn't installed. Skip just this page
+                    # rather than losing boxes already collected from
+                    # earlier, normal-text pages.
+                    print(f"Warning: OCR failed for page {page_idx} of {pdf_path}: {e}", file=sys.stderr)
             else:
                 _feed_vector_lines(builder, _collect_page_lines(page))
 
