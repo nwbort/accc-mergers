@@ -1646,6 +1646,28 @@ class TestDetectInferredPhase2:
 
 
 # ---------------------------------------------------------------------------
+# extract_mergers: _load_known_notification_dates
+# ---------------------------------------------------------------------------
+
+class TestLoadKnownNotificationDates:
+    def test_loads_date_field_and_skips_entries_without_one(self, tmp_path, monkeypatch):
+        path = tmp_path / "known_notification_dates.json"
+        path.write_text(json.dumps({
+            "MN-50030": {"date": "2026-07-01T12:00:00Z", "note": "missing from page"},
+            "MN-BAD": {"note": "no date field, should be skipped"},
+        }))
+        monkeypatch.setattr(extract_mergers, "KNOWN_NOTIFICATION_DATES_PATH", str(path))
+        result = extract_mergers._load_known_notification_dates()
+        assert result == {"MN-50030": "2026-07-01T12:00:00Z"}
+
+    def test_missing_file_returns_empty_dict(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(
+            extract_mergers, "KNOWN_NOTIFICATION_DATES_PATH", str(tmp_path / "nope.json")
+        )
+        assert extract_mergers._load_known_notification_dates() == {}
+
+
+# ---------------------------------------------------------------------------
 # find_pending_phase2_notice_events / extract_phase2_notice_data
 # ---------------------------------------------------------------------------
 

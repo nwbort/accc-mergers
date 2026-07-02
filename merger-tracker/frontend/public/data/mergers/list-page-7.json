@@ -1,55 +1,6 @@
 {
   "mergers": [
     {
-      "merger_id": "WA-55022",
-      "merger_name": "GenusPlus Group \u2013 MPC Kinetic",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-05-19T12:00:00Z",
-      "determination_publication_date": "2026-06-09T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "GENUSPLUS GROUP LTD",
-          "identifier_type": "ABN",
-          "identifier": "86 620 283 561"
-        }
-      ],
-      "targets": [
-        {
-          "name": "MPC KINETIC HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "68 626 678 911"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3109",
-          "name": "Other Heavy and Civil Engineering Construction"
-        },
-        {
-          "code": "3212",
-          "name": "Site Preparation Services"
-        },
-        {
-          "code": "3232",
-          "name": "Electrical Services"
-        },
-        {
-          "code": "3299",
-          "name": "Other Construction Services n.e.c."
-        },
-        {
-          "code": "6923",
-          "name": "Engineering Design and Engineering Consulting Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/genusplus-group-%E2%80%93-mpc-kinetic"
-    },
-    {
       "merger_id": "MN-15019",
       "merger_name": "Opal HealthCare - Bethel Aged Care",
       "status": "Assessment completed",
@@ -2849,6 +2800,51 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-venue-co-%E2%80%93-assets-of-boatbuilders-yard-and-general-assembly-melbourne"
+    },
+    {
+      "merger_id": "WA-40026",
+      "merger_name": "Australian Food & Fibre \u2013 Western Lands Lease Conversion",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-03T12:00:00Z",
+      "determination_publication_date": "2026-06-26T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "BENGERANG PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "66 127 984 123"
+        }
+      ],
+      "targets": [
+        {
+          "name": "DEPARTMENT OF PLANNING HOUSING AND INFRASTRUCTURE",
+          "identifier_type": "ABN",
+          "identifier": "20 770 707 468"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "0152",
+          "name": "Cotton Growing"
+        },
+        {
+          "code": "0521",
+          "name": "Cotton Ginning"
+        },
+        {
+          "code": "0529",
+          "name": "Other Agriculture and Fishing Support Services"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-food-fibre-%E2%80%93-western-lands-lease-conversion"
     }
   ],
   "page": 7,

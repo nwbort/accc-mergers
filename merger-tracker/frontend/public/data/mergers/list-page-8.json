@@ -1,51 +1,6 @@
 {
   "mergers": [
     {
-      "merger_id": "WA-40026",
-      "merger_name": "Australian Food & Fibre \u2013 Western Lands Lease Conversion",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-06-03T12:00:00Z",
-      "determination_publication_date": "2026-06-26T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "BENGERANG PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "66 127 984 123"
-        }
-      ],
-      "targets": [
-        {
-          "name": "DEPARTMENT OF PLANNING HOUSING AND INFRASTRUCTURE",
-          "identifier_type": "ABN",
-          "identifier": "20 770 707 468"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "0152",
-          "name": "Cotton Growing"
-        },
-        {
-          "code": "0521",
-          "name": "Cotton Ginning"
-        },
-        {
-          "code": "0529",
-          "name": "Other Agriculture and Fishing Support Services"
-        },
-        {
-          "code": "6712",
-          "name": "Non-Residential Property Operators"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-food-fibre-%E2%80%93-western-lands-lease-conversion"
-    },
-    {
       "merger_id": "WA-50018",
       "merger_name": "Autopact - Freehold interest in commercial land in Ferntree Gully, VIC",
       "status": "Assessment completed",
@@ -2657,6 +2612,62 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/midea-residentia-group"
+    },
+    {
+      "merger_id": "MN-01107",
+      "merger_name": "WSP / GEOTECHNICAL TESTING AND INTERPRETATION",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-26T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "WSP AUSTRALIA PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "80 078 004 798",
+          "canonical": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "GEOTECHNICAL TESTING AND INTERPRETATION PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "14 616 849 766"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "WSP AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "90 169 545 395",
+          "canonical": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
+          }
+        },
+        {
+          "name": "RICARDO AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "17 625 088 646"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        },
+        {
+          "code": "6925",
+          "name": "Scientific Testing and Analysis Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/wsp-geotechnical-testing-and-interpretation"
     }
   ],
   "page": 8,

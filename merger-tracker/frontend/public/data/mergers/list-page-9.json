@@ -1,62 +1,6 @@
 {
   "mergers": [
     {
-      "merger_id": "MN-01107",
-      "merger_name": "WSP / GEOTECHNICAL TESTING AND INTERPRETATION",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-26T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-07T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "WSP AUSTRALIA PTY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "80 078 004 798",
-          "canonical": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "GEOTECHNICAL TESTING AND INTERPRETATION PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "14 616 849 766"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "WSP AUSTRALIA HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "90 169 545 395",
-          "canonical": {
-            "id": "wsp-australia-pty-limited",
-            "name": "Wsp Australia Pty Limited"
-          }
-        },
-        {
-          "name": "RICARDO AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "17 625 088 646"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "6923",
-          "name": "Engineering Design and Engineering Consulting Services"
-        },
-        {
-          "code": "6925",
-          "name": "Scientific Testing and Analysis Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/wsp-geotechnical-testing-and-interpretation"
-    },
-    {
       "merger_id": "MN-90020",
       "merger_name": "OpenAI - Ona",
       "status": "Under assessment",
@@ -532,6 +476,55 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hewitt-%E2%80%93-nolan-meats"
+    },
+    {
+      "merger_id": "MN-50030",
+      "merger_name": "Symal Group - Shamrock Engineering and Equipment",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-07-01T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-11T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "SYMAL GROUP LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "72 615 255 466"
+        }
+      ],
+      "targets": [
+        {
+          "name": "SHAMROCK CIVIL ENGINEERING PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "68 066 655 856"
+        },
+        {
+          "name": "SHAMROCK EQUIPMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "32 631 585 718"
+        },
+        {
+          "name": "PHOENIX INVESTMENTS QUEENSLAND PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 615 285 937"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "SHAMROCK BUILDING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 639 694 885"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3109",
+          "name": "Other Heavy and Civil Engineering Construction"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/symal-group-shamrock-engineering-and-equipment"
     }
   ],
   "page": 9,

@@ -1,55 +1,6 @@
 {
   "mergers": [
     {
-      "merger_id": "MN-50030",
-      "merger_name": "Symal Group - Shamrock Engineering and Equipment",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": null,
-      "determination_publication_date": null,
-      "end_of_determination_period": null,
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "SYMAL GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "72 615 255 466"
-        }
-      ],
-      "targets": [
-        {
-          "name": "SHAMROCK CIVIL ENGINEERING PTY. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "68 066 655 856"
-        },
-        {
-          "name": "SHAMROCK EQUIPMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "32 631 585 718"
-        },
-        {
-          "name": "PHOENIX INVESTMENTS QUEENSLAND PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "85 615 285 937"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "SHAMROCK BUILDING PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 639 694 885"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "3109",
-          "name": "Other Heavy and Civil Engineering Construction"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/symal-group-shamrock-engineering-and-equipment"
-    },
-    {
       "merger_id": "MN-01017",
       "merger_name": "Kongsberg Defence \u2013 site within Newcastle Airport precinct",
       "status": "Assessment completed",
@@ -2422,6 +2373,49 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/h-e-parts-international-mining-solutions-warehouse-workshop-site-in-paget-qld"
+    },
+    {
+      "merger_id": "WA-45001",
+      "merger_name": "Paragon Care \u2013 Presidental",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-01-30T12:00:00Z",
+      "determination_publication_date": "2026-02-16T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "PARAGON CARE LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "76 064 551 426"
+        },
+        {
+          "name": "CLIFFORD HALLAM HEALTHCARE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "38 001 655 554"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ROCKPAC SOUTH PACIFIC PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "40 639 100 422"
+        },
+        {
+          "name": "PRESIDENTAL PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "77 002 697 896"
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3491",
+          "name": "Professional and Scientific Goods Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/paragon-care-%E2%80%93-presidental"
     }
   ],
   "page": 1,

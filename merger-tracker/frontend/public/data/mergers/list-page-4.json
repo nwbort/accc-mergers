@@ -1,72 +1,6 @@
 {
   "mergers": [
     {
-      "merger_id": "WA-55014",
-      "merger_name": "KPS Capital Partners - Jennmar",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-03-20T12:00:00Z",
-      "determination_publication_date": "2026-04-07T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "KPS Capital Partners, LP",
-          "identifier_type": null,
-          "identifier": "CRD 157678 / SEC: 80173907"
-        },
-        {
-          "name": "Three Rivers Purchaser, LLC",
-          "identifier_type": null,
-          "identifier": "10533455"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Jennmar Intermediate Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "990520173"
-        },
-        {
-          "name": "Jennmar Super Holdings, LLC",
-          "identifier_type": null,
-          "identifier": "412378602"
-        },
-        {
-          "name": "Karl A. Calandra",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "FalconPoint Non-U.S./USTE Feeder II L.P",
-          "identifier_type": null,
-          "identifier": "934704164"
-        },
-        {
-          "name": "FalconPoint Partners II, LP",
-          "identifier_type": null,
-          "identifier": "933979415"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "1090",
-          "name": "Other Mining Support Services"
-        },
-        {
-          "code": "2299",
-          "name": "Other Fabricated Metal Product Manufacturing n.e.c."
-        },
-        {
-          "code": "6240",
-          "name": "Financial Asset Investing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/kps-capital-partners-jennmar"
-    },
-    {
       "merger_id": "WA-85018",
       "merger_name": "Discovery Holiday Parks \u2013 Habitat Noosa Everglades Eco Camp",
       "status": "Assessment completed",
@@ -2820,6 +2754,75 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/trescal-%E2%80%93-tr-calibration"
+    },
+    {
+      "merger_id": "MN-70013",
+      "merger_name": "Ventura Motors \u2013 Crown Coaches",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-04-15T12:00:00Z",
+      "determination_publication_date": "2026-05-07T12:00:00Z",
+      "end_of_determination_period": "2026-05-28T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "VENTURA NEWCO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 694 822 047"
+        }
+      ],
+      "targets": [
+        {
+          "name": "CROWN HYBRID PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "47 004 550 529"
+        },
+        {
+          "name": "CROWN COACHES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "48 004 882 213"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Ventura Bus Lines Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "005 798 121"
+        },
+        {
+          "name": "Ventura Property Management Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "28 100 908 049"
+        },
+        {
+          "name": "Zumba Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "154 324 839"
+        },
+        {
+          "name": "VENTURA MOTORS PROPRIETARY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "67 004 235 518"
+        },
+        {
+          "name": "IVANHOE BUS COMPANY PROPRIETARY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "57 004 367 962"
+        },
+        {
+          "name": "Keppel Infrastructure Fund Management Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "UEN  200803959H"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4622",
+          "name": "Urban Bus Transport (Including Tramway)"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ventura-motors-%E2%80%93-crown-coaches"
     }
   ],
   "page": 4,
