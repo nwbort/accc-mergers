@@ -2,12 +2,12 @@
   "total_mergers": 160,
   "total_waivers": 249,
   "by_status": {
-    "Assessment completed": 118,
-    "Under assessment": 41,
+    "Assessment completed": 119,
+    "Under assessment": 40,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 116,
+    "Approved": 117,
     "Referred to phase 2": 6
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.827868852459016,
+    "average_days": 29.764227642276424,
     "median_days": 26,
-    "average_business_days": 19.581967213114755,
+    "average_business_days": 19.552845528455286,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 25,
-        "percentage": 20.5
+        "percentage": 20.3
       },
       "day20": {
-        "count": 92,
-        "percentage": 75.4
+        "count": 93,
+        "percentage": 75.6
       },
       "day30": {
-        "count": 117,
+        "count": 118,
         "percentage": 95.9
       }
     }
@@ -216,6 +216,16 @@
       "stage": "Phase 1 - initial assessment"
     },
     {
+      "merger_id": "MN-25029",
+      "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-07-01T12:00:00Z",
+      "page_modified_datetime": "2026-07-01T17:52:03+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
       "determination": "Referred to phase 2",
@@ -284,16 +294,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-20025",
-      "merger_name": "Bupa \u2013 Barings Australian Private Credit Fund",
-      "determination": "Approved",
-      "determination_date": "2026-06-29T12:00:00Z",
-      "page_modified_datetime": "2026-06-29T17:41:33+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

@@ -65,15 +65,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-25029",
-      "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "phase": "Phase 1",
-      "notification_date": "2026-06-09T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
       "is_waiver": false,
@@ -89,6 +80,15 @@
       "status": "Assessment completed",
       "phase": "Phase 2",
       "notification_date": "2025-11-27T12:00:00Z",
+      "determination_date": "2026-07-01T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-25029",
+      "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-09T12:00:00Z",
       "determination_date": "2026-07-01T12:00:00Z"
     },
     {
@@ -456,12 +456,12 @@
   "phase_1_count": 13,
   "phase_2_count": 3,
   "waiver_count": 30,
-  "active_count": 5,
+  "active_count": 4,
   "phase_duration": {
-    "average_days": 44.72727272727273,
+    "average_days": 42.833333333333336,
     "median_days": 29,
-    "average_business_days": 27.363636363636363,
+    "average_business_days": 26.416666666666668,
     "median_business_days": 19,
-    "completed_count": 11
+    "completed_count": 12
   }
 }

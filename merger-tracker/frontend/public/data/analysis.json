@@ -1098,21 +1098,30 @@
         "merger_id": "MN-50019",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-06-09",
+        "business_days": 16,
+        "calendar_days": 22,
+        "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
+        "merger_id": "MN-25029",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 18.8,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 118
+      "count": 119
     },
     "calendar_stats": {
       "average": 28.7,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 118
+      "count": 119
     }
   },
   "waiver_duration": {
