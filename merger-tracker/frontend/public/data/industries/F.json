@@ -71,15 +71,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-30020",
-      "merger_name": "EBOS - Paringa Pet Foods",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "phase": "Phase 1",
-      "notification_date": "2026-06-11T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
       "is_waiver": false,
@@ -87,6 +78,15 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-14T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-30020",
+      "merger_name": "EBOS - Paringa Pet Foods",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-11T12:00:00Z",
+      "determination_date": "2026-07-02T12:00:00Z"
     },
     {
       "merger_id": "MN-95021",
@@ -399,12 +399,12 @@
   "phase_1_count": 21,
   "phase_2_count": 2,
   "waiver_count": 16,
-  "active_count": 5,
+  "active_count": 4,
   "phase_duration": {
-    "average_days": 36.8421052631579,
+    "average_days": 36.05,
     "median_days": 29,
-    "average_business_days": 22.789473684210527,
+    "average_business_days": 22.4,
     "median_business_days": 18,
-    "completed_count": 19
+    "completed_count": 20
   }
 }
