@@ -550,6 +550,7 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
         return scraped_events
 
     existing_events = existing_merger_data['events']
+    existing_urls = {e['url'] for e in existing_events if 'url' in e}
 
     scraped_by_url = {}
     scraped_without_url = []
@@ -573,13 +574,38 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
                 existing_urls_processed.add(url)
             else:
                 # The document link is gone from the scraped page. The ACCC
-                # sometimes drops an event's attachment but keeps the event
-                # itself as a plain (URL-less) timeline row. Without this match
-                # the existing event would be flagged 'removed' AND the URL-less
-                # row appended as a separate event, producing a duplicate that
-                # reappears on every scrape (e.g. MN-30003's "subject to Phase 2
-                # review"). Re-bind that timeline row to the existing event so we
-                # keep the attachment we previously captured.
+                # sometimes re-uploads the same document under a new URL (the
+                # CMS appends a fresh _N suffix to the filename, e.g.
+                # "...March 2026_9.pdf" -> "...March 2026_5.pdf"). Without this
+                # match the existing event would be flagged 'removed' AND the
+                # new URL appended as a separate event, duplicating the whole
+                # timeline entry (e.g. MN-01068's Phase 2 documents). Re-bind
+                # the existing event to the re-uploaded document instead.
+                reuploaded = next(
+                    (e for e in scraped_by_url.values()
+                     if e['url'] not in existing_urls
+                     and e['url'] not in existing_urls_processed
+                     and _same_event_identity(e, existing_event)),
+                    None,
+                )
+                if reuploaded is not None:
+                    updated_event = reuploaded.copy()
+                    if 'display_title' in existing_event:
+                        updated_event['display_title'] = existing_event['display_title']
+                    if existing_event.get('is_determination_event'):
+                        updated_event['is_determination_event'] = existing_event['is_determination_event']
+                    merged_events.append(updated_event)
+                    existing_urls_processed.add(updated_event['url'])
+                    continue
+
+                # The ACCC also sometimes drops an event's attachment but keeps
+                # the event itself as a plain (URL-less) timeline row. Without
+                # this match the existing event would be flagged 'removed' AND
+                # the URL-less row appended as a separate event, producing a
+                # duplicate that reappears on every scrape (e.g. MN-30003's
+                # "subject to Phase 2 review"). Re-bind that timeline row to the
+                # existing event so we keep the attachment we previously
+                # captured.
                 replacement_row = next(
                     (e for e in scraped_without_url
                      if e.get('title') == existing_event.get('title')
@@ -622,7 +648,57 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
             event['display_title'] = event['title']
         merged_events.append(event)
 
-    return merged_events
+    return _drop_superseded_removed_events(merged_events)
+
+
+def _drop_superseded_removed_events(events):
+    """Drop 'removed' document events that a live event has superseded.
+
+    Data written before re-uploaded documents were re-bound to their existing
+    event (see _merge_events) can contain both a 'removed' copy of an event and
+    a 'live' copy under the document's new URL. The document was never actually
+    removed, so drop the stale copy, moving any flags it carried onto the live
+    event.
+    """
+    live_url_events = [e for e in events if e.get('status') == 'live' and 'url' in e]
+    kept_events = []
+    for event in events:
+        if event.get('status') == 'removed' and 'url' in event:
+            successor = next(
+                (live for live in live_url_events if _same_event_identity(live, event)),
+                None,
+            )
+            if successor is not None:
+                if event.get('is_determination_event') and not successor.get('is_determination_event'):
+                    successor['is_determination_event'] = event['is_determination_event']
+                if (event.get('display_title', event['title']) != event['title']
+                        and successor.get('display_title', successor['title']) == successor['title']):
+                    successor['display_title'] = event['display_title']
+                continue
+        kept_events.append(event)
+    return kept_events
+
+
+def _normalize_event_title(title):
+    """Whitespace- and case-insensitive form of an event title, for matching
+    the same timeline entry across scrapes (the ACCC occasionally re-cases
+    titles, e.g. "Summary of Reasons" vs "Summary of reasons")."""
+    return ' '.join((title or '').split()).casefold()
+
+
+def _mentions_reasons(event):
+    """True if an event looks like a "Summary of reasons"/"Statement of
+    reasons" document rather than the determination instrument itself."""
+    return 'reasons' in f"{event.get('title', '')} {event.get('url', '')}".lower()
+
+
+def _same_event_identity(event_a, event_b):
+    """Return True if two events describe the same timeline entry: the same
+    normalized title on the same date (with the usual ±1 day tolerance)."""
+    return (
+        _normalize_event_title(event_a.get('title')) == _normalize_event_title(event_b.get('title'))
+        and _dates_within_one_day(event_a.get('date', ''), event_b.get('date', ''))
+    )
 
 
 def _dates_within_one_day(date1, date2):
@@ -735,14 +811,17 @@ def _add_synthetic_events(merger_data):
     # events table date differ by one day, e.g. MN-01090).
     # Also check the URL in case the event title is just the parties' names
     # while the attached PDF filename contains "determination".
-    existing_det_event = next(
-        (e for e in events
-         if _dates_within_one_day(e.get('date'), det_date)
-         and ('determination' in e.get('title', '').lower()
-              or 'determination' in e.get('url', '').lower())
-         and e.get('url')),
-        None
-    )
+    # The ACCC publishes the determination instrument alongside "Summary of
+    # reasons"/"Statement of reasons" documents on the same date; attach the
+    # determination outcome to the instrument itself, not its reasons.
+    candidate_events = [
+        e for e in events
+        if _dates_within_one_day(e.get('date'), det_date)
+        and ('determination' in e.get('title', '').lower()
+             or 'determination' in e.get('url', '').lower())
+        and e.get('url')
+    ]
+    existing_det_event = min(candidate_events, key=_mentions_reasons, default=None)
 
     # Fallback: the ACCC sometimes records a determination_publication_date that
     # is later than the actual decision date on the PDF event (e.g. MN-30008:
@@ -755,7 +834,7 @@ def _add_synthetic_events(merger_data):
                  or 'determination' in e.get('url', '').lower())
              and e.get('url')
              and _determination_pdf_precedes_registration(e.get('date'), det_date)),
-            key=lambda e: e.get('date', ''),
+            key=lambda e: (e.get('date', ''), not _mentions_reasons(e)),
             reverse=True,
         )
         if prior_pdf_events:
@@ -764,6 +843,14 @@ def _add_synthetic_events(merger_data):
     if existing_det_event:
         existing_det_event['display_title'] = determination_title
         existing_det_event['is_determination_event'] = True
+        # Earlier data may carry the flag on a different event (e.g. a reasons
+        # document that used to be picked); clear it so exactly one event is
+        # the determination event.
+        for e in events:
+            if e is not existing_det_event and e.get('is_determination_event'):
+                del e['is_determination_event']
+                if e.get('display_title') == determination_title:
+                    e['display_title'] = e['title']
         if 'phase' not in existing_det_event:
             if 'waiver' in phase.lower():
                 existing_det_event['phase'] = 'Waiver'
