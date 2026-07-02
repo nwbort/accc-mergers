@@ -234,6 +234,11 @@ KNOWN_DETERMINATION_DATES = {
     'MN-15002': '2026-02-19T12:00:00Z',  # Google - Wiz: approved 19 Feb 2026, date never added to page
 }
 
+# Known notification dates for mergers where the ACCC page is unlikely to be corrected
+KNOWN_NOTIFICATION_DATES = {
+    'MN-50030': '2026-07-01T12:00:00Z',  # Symal Group - Shamrock: notification date never added to page
+}
+
 
 def _load_frozen_events_mergers():
     """Load frozen-events and field-override data from frozen_events_mergers.json.
@@ -295,6 +300,10 @@ def _extract_dates_and_status(soup, merger_id, existing_merger_data):
     date_tag = soup.find('div', class_='field--name-field-acccgov-pub-reg-date')
     if date_tag and date_tag.find('time'):
         data['effective_notification_datetime'] = date_tag.find('time')['datetime']
+
+    # Use known hardcoded date if the page is missing the notification date
+    if not data.get('effective_notification_datetime') and merger_id in KNOWN_NOTIFICATION_DATES:
+        data['effective_notification_datetime'] = KNOWN_NOTIFICATION_DATES[merger_id]
 
     # Preserve original_notification_datetime from existing data if already set,
     # otherwise initialise it from the current effective_notification_datetime.
