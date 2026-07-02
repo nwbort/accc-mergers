@@ -658,6 +658,12 @@ def _normalize_event_title(title):
     return ' '.join((title or '').split()).casefold()
 
 
+def _mentions_reasons(event):
+    """True if an event looks like a "Summary of reasons"/"Statement of
+    reasons" document rather than the determination instrument itself."""
+    return 'reasons' in f"{event.get('title', '')} {event.get('url', '')}".lower()
+
+
 def _same_event_identity(event_a, event_b):
     """Return True if two events describe the same timeline entry: the same
     normalized title on the same date (with the usual ±1 day tolerance)."""
@@ -777,14 +783,17 @@ def _add_synthetic_events(merger_data):
     # events table date differ by one day, e.g. MN-01090).
     # Also check the URL in case the event title is just the parties' names
     # while the attached PDF filename contains "determination".
-    existing_det_event = next(
-        (e for e in events
-         if _dates_within_one_day(e.get('date'), det_date)
-         and ('determination' in e.get('title', '').lower()
-              or 'determination' in e.get('url', '').lower())
-         and e.get('url')),
-        None
-    )
+    # The ACCC publishes the determination instrument alongside "Summary of
+    # reasons"/"Statement of reasons" documents on the same date; attach the
+    # determination outcome to the instrument itself, not its reasons.
+    candidate_events = [
+        e for e in events
+        if _dates_within_one_day(e.get('date'), det_date)
+        and ('determination' in e.get('title', '').lower()
+             or 'determination' in e.get('url', '').lower())
+        and e.get('url')
+    ]
+    existing_det_event = min(candidate_events, key=_mentions_reasons, default=None)
 
     # Fallback: the ACCC sometimes records a determination_publication_date that
     # is later than the actual decision date on the PDF event (e.g. MN-30008:
@@ -797,7 +806,7 @@ def _add_synthetic_events(merger_data):
                  or 'determination' in e.get('url', '').lower())
              and e.get('url')
              and _determination_pdf_precedes_registration(e.get('date'), det_date)),
-            key=lambda e: e.get('date', ''),
+            key=lambda e: (e.get('date', ''), not _mentions_reasons(e)),
             reverse=True,
         )
         if prior_pdf_events:
@@ -806,6 +815,14 @@ def _add_synthetic_events(merger_data):
     if existing_det_event:
         existing_det_event['display_title'] = determination_title
         existing_det_event['is_determination_event'] = True
+        # Earlier data may carry the flag on a different event (e.g. a reasons
+        # document that used to be picked); clear it so exactly one event is
+        # the determination event.
+        for e in events:
+            if e is not existing_det_event and e.get('is_determination_event'):
+                del e['is_determination_event']
+                if e.get('display_title') == determination_title:
+                    e['display_title'] = e['title']
         if 'phase' not in existing_det_event:
             if 'waiver' in phase.lower():
                 existing_det_event['phase'] = 'Waiver'

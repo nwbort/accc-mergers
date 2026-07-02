@@ -29,6 +29,7 @@ from extract_mergers import (
     _infer_determination_date_from_events,
     _extract_anzsic_codes,
     _merge_events,
+    _add_synthetic_events,
     find_pending_phase2_notice_events,
     extract_phase2_notice_data,
 )
@@ -224,6 +225,78 @@ class TestMergeEventsDocumentReuploaded:
         )
         statuses = {e["title"]: e.get("status") for e in merged}
         assert statuses[self.TITLE] == "removed"
+
+
+# ---------------------------------------------------------------------------
+# _add_synthetic_events: determination outcome goes on the instrument
+# ---------------------------------------------------------------------------
+
+class TestAddSyntheticEventsDeterminationTarget:
+    """The ACCC publishes the determination instrument alongside "Summary of
+    reasons"/"Statement of reasons" documents on the same date. The
+    determination outcome (display title + is_determination_event) must attach
+    to the instrument, not whichever document happens to come first (MN-01068's
+    Phase 2 determination)."""
+
+    DET_TITLE = "Phase 2 - detailed assessment determination: Not approved"
+
+    def _merger(self, events):
+        return {
+            "merger_id": "MN-01068",
+            "stage": "Phase 2 - detailed assessment",
+            "accc_determination": "Not approved",
+            "determination_publication_date": "2026-07-01T12:00:00Z",
+            "effective_notification_datetime": "2025-11-27T12:00:00Z",
+            "events": events,
+        }
+
+    def _doc(self, title, url):
+        return {
+            "date": "2026-06-30T12:00:00Z",
+            "title": title,
+            "display_title": title,
+            "url": url,
+            "url_gh": f"/mergers/MN-01068/{url.rsplit('/', 1)[-1]}",
+            "status": "live",
+        }
+
+    def test_outcome_attaches_to_instrument_not_reasons_docs(self):
+        merger = self._merger([
+            self._doc("Phase 2 determination - Statement of reasons", "https://accc.gov.au/sor.pdf"),
+            self._doc("Phase 2 determination - Summary of reasons", "https://accc.gov.au/summary.pdf"),
+            self._doc("Phase 2 determination", "https://accc.gov.au/determination.pdf"),
+        ])
+        _add_synthetic_events(merger)
+        flagged = [e for e in merger["events"] if e.get("is_determination_event")]
+        assert [e["title"] for e in flagged] == ["Phase 2 determination"]
+        assert flagged[0]["display_title"] == self.DET_TITLE
+
+    def test_stale_flag_on_reasons_doc_is_cleared(self):
+        # Data written before the instrument was preferred carries the flag and
+        # determination display title on a reasons document.
+        summary = self._doc("Phase 2 determination - Summary of reasons", "https://accc.gov.au/summary.pdf")
+        summary["is_determination_event"] = True
+        summary["display_title"] = self.DET_TITLE
+        merger = self._merger([
+            summary,
+            self._doc("Phase 2 determination", "https://accc.gov.au/determination.pdf"),
+        ])
+        _add_synthetic_events(merger)
+        by_title = {e["title"]: e for e in merger["events"]}
+        assert "is_determination_event" not in by_title["Phase 2 determination - Summary of reasons"]
+        assert (by_title["Phase 2 determination - Summary of reasons"]["display_title"]
+                == "Phase 2 determination - Summary of reasons")
+        assert by_title["Phase 2 determination"]["is_determination_event"] is True
+        assert by_title["Phase 2 determination"]["display_title"] == self.DET_TITLE
+
+    def test_reasons_doc_used_when_it_is_the_only_candidate(self):
+        merger = self._merger([
+            self._doc("Phase 2 determination - Summary of reasons", "https://accc.gov.au/summary.pdf"),
+        ])
+        _add_synthetic_events(merger)
+        flagged = [e for e in merger["events"] if e.get("is_determination_event")]
+        assert [e["title"] for e in flagged] == ["Phase 2 determination - Summary of reasons"]
+        assert flagged[0]["display_title"] == self.DET_TITLE
 
 
 # ---------------------------------------------------------------------------
