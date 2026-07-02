@@ -234,6 +234,30 @@ KNOWN_DETERMINATION_DATES = {
     'MN-15002': '2026-02-19T12:00:00Z',  # Google - Wiz: approved 19 Feb 2026, date never added to page
 }
 
+# Known notification dates for mergers whose ACCC page never publishes one.
+# Loaded from data/known_notification_dates.json, which fix_missing_notification_dates.py
+# keeps up to date via an automated PR (see .github/workflows/fix-missing-notification-dates.yml).
+KNOWN_NOTIFICATION_DATES_PATH = 'data/known_notification_dates.json'
+
+
+def _load_known_notification_dates():
+    try:
+        with open(KNOWN_NOTIFICATION_DATES_PATH, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return {
+            merger_id: entry['date']
+            for merger_id, entry in data.items()
+            if isinstance(entry, dict) and entry.get('date')
+        }
+    except FileNotFoundError:
+        return {}
+    except Exception as e:
+        print(f"Warning: could not load {KNOWN_NOTIFICATION_DATES_PATH}: {e}", file=sys.stderr)
+        return {}
+
+
+KNOWN_NOTIFICATION_DATES = _load_known_notification_dates()
+
 
 def _load_frozen_events_mergers():
     """Load frozen-events and field-override data from frozen_events_mergers.json.
@@ -295,6 +319,10 @@ def _extract_dates_and_status(soup, merger_id, existing_merger_data):
     date_tag = soup.find('div', class_='field--name-field-acccgov-pub-reg-date')
     if date_tag and date_tag.find('time'):
         data['effective_notification_datetime'] = date_tag.find('time')['datetime']
+
+    # Use known hardcoded date if the page is missing the notification date
+    if not data.get('effective_notification_datetime') and merger_id in KNOWN_NOTIFICATION_DATES:
+        data['effective_notification_datetime'] = KNOWN_NOTIFICATION_DATES[merger_id]
 
     # Preserve original_notification_datetime from existing data if already set,
     # otherwise initialise it from the current effective_notification_datetime.
