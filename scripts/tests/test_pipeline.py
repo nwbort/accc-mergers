@@ -101,6 +101,132 @@ class TestMergeEventsAttachmentDropped:
 
 
 # ---------------------------------------------------------------------------
+# _merge_events: re-uploaded documents must not duplicate their event
+# ---------------------------------------------------------------------------
+
+class TestMergeEventsDocumentReuploaded:
+    """When the ACCC re-uploads a document under a new URL (the CMS appends a
+    fresh _N filename suffix), the event must be re-bound to the new URL rather
+    than being marked 'removed' alongside a duplicate 'live' event.
+
+    This is the MN-01068 case: every Phase 2 document was re-published under a
+    new suffix (e.g. "...March 2026_9.pdf" -> "...March 2026_5.pdf"),
+    duplicating four timeline events.
+    """
+
+    TITLE = "Summary of Notice of Competition Concerns"
+    OLD_URL = "https://accc.gov.au/docs/NOCC%20-%20March%202026_9.pdf"
+    NEW_URL = "https://accc.gov.au/docs/NOCC%20-%20March%202026_5.pdf"
+
+    def _existing(self, **extra):
+        return {
+            "events": [
+                {
+                    "date": "2026-03-06T12:00:00Z",
+                    "title": self.TITLE,
+                    "display_title": self.TITLE,
+                    "url": self.OLD_URL,
+                    "url_gh": "/mergers/MN-01068/NOCC - March 2026_9.pdf",
+                    "status": "live",
+                    **extra,
+                },
+            ],
+        }
+
+    def _scraped(self, title=None):
+        return [
+            {
+                "date": "2026-03-06T12:00:00Z",
+                "title": title or self.TITLE,
+                "display_title": title or self.TITLE,
+                "url": self.NEW_URL,
+                "url_gh": "/mergers/MN-01068/NOCC - March 2026_5.pdf",
+                "status": "live",
+            },
+        ]
+
+    def test_new_url_rebinds_to_existing_event(self):
+        merged = _merge_events(self._scraped(), self._existing(), "MN-01068", set())
+        assert len(merged) == 1, "no duplicate should be created"
+        ev = merged[0]
+        assert ev["url"] == self.NEW_URL
+        assert ev["status"] == "live"
+
+    def test_rebind_is_case_insensitive(self):
+        # ACCC re-cased "Summary of Reasons" -> "Summary of reasons" when
+        # re-uploading MN-01068's determination documents.
+        merged = _merge_events(
+            self._scraped(title=self.TITLE.lower()), self._existing(), "MN-01068", set()
+        )
+        assert len(merged) == 1
+        assert merged[0]["url"] == self.NEW_URL
+
+    def test_rebind_preserves_display_title_and_determination_flag(self):
+        existing = self._existing(is_determination_event=True)
+        existing["events"][0]["display_title"] = "Custom display title"
+        merged = _merge_events(self._scraped(), existing, "MN-01068", set())
+        assert len(merged) == 1
+        assert merged[0]["display_title"] == "Custom display title"
+        assert merged[0]["is_determination_event"] is True
+
+    def test_url_claimed_by_another_existing_event_is_not_rebind_target(self):
+        # A scraped URL that exactly matches some other existing event must not
+        # be treated as a re-upload of a different event.
+        existing = self._existing()
+        existing["events"].append(
+            {
+                "date": "2026-03-06T12:00:00Z",
+                "title": "Some other document",
+                "display_title": "Some other document",
+                "url": self.NEW_URL,
+                "status": "live",
+            }
+        )
+        scraped = self._scraped(title="Some other document")
+        merged = _merge_events(scraped, existing, "MN-01068", set())
+        by_title = {e["title"]: e for e in merged}
+        assert by_title["Some other document"]["url"] == self.NEW_URL
+        assert by_title[self.TITLE]["status"] == "removed"
+
+    def test_stale_removed_duplicate_is_dropped(self):
+        # Data poisoned by scrapes made before the rebind fix contains both the
+        # 'removed' old-URL event and a 'live' new-URL duplicate. The next merge
+        # must drop the stale copy and keep its flags on the live event.
+        existing = {
+            "events": [
+                {
+                    "date": "2026-03-06T12:00:00Z",
+                    "title": self.TITLE,
+                    "display_title": "Custom display title",
+                    "url": self.OLD_URL,
+                    "status": "removed",
+                    "is_determination_event": True,
+                },
+                self._scraped()[0],
+            ],
+        }
+        merged = _merge_events(self._scraped(), existing, "MN-01068", set())
+        assert len(merged) == 1
+        ev = merged[0]
+        assert ev["url"] == self.NEW_URL
+        assert ev["status"] == "live"
+        assert ev["display_title"] == "Custom display title"
+        assert ev["is_determination_event"] is True
+
+    def test_genuinely_removed_event_stays_removed(self):
+        # No same-title live event: the document really is gone from the page.
+        existing = self._existing()
+        merged = _merge_events(
+            [{"date": "2026-05-01T12:00:00Z", "title": "Some other event"}],
+            existing,
+            "MN-01068",
+            set(),
+        )
+        statuses = {e["title"]: e.get("status") for e in merged}
+        assert statuses[self.TITLE] == "removed"
+
+
+# ---------------------------------------------------------------------------
 # parse_determination: extract_commission_division
 # ---------------------------------------------------------------------------
 
