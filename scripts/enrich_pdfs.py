@@ -29,6 +29,7 @@ from extract_mergers import (
     _load_frozen_events_mergers,
     auto_fix_missing_event_dates,
     detect_inferred_phase_2,
+    detect_missing_notification_dates,
     enrich_with_questionnaire_data,
     extract_nocc_data,
     extract_phase2_notice_data,
@@ -77,6 +78,11 @@ def main():
     #    Phase 1 (the site treats these as Phase 2; the pipeline opens/closes a
     #    tracking issue accordingly). Reads the genuine stage from mergers.json.
     detect_inferred_phase_2(all_mergers_data)
+
+    # 5. Detect mergers with no notification date on the ACCC page that aren't
+    #    already covered by KNOWN_NOTIFICATION_DATES (the pipeline opens an
+    #    issue asking the owner to add one; see MN-50030).
+    detect_missing_notification_dates(all_mergers_data)
 
     # is_waiver may shift if enrichment changed a date that affects classification.
     for merger in all_mergers_data:

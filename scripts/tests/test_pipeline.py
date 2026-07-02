@@ -26,6 +26,7 @@ from extract_mergers import (
     is_safe_url,
     get_serve_filename,
     detect_inferred_phase_2,
+    detect_missing_notification_dates,
     _infer_determination_date_from_events,
     _extract_anzsic_codes,
     _merge_events,
@@ -1442,6 +1443,64 @@ class TestDetectInferredPhase2:
             'merger_id': 'MN-00001',
             'stage': 'Phase 1 - initial assessment',
             'events': [],
+        }])
+        assert not out.exists()
+
+
+# ---------------------------------------------------------------------------
+# extract_mergers: detect_missing_notification_dates
+# ---------------------------------------------------------------------------
+
+class TestDetectMissingNotificationDates:
+    def _run(self, mergers, tmp_path, monkeypatch, known_dates=None):
+        out = tmp_path / "missing_notification_dates.json"
+        monkeypatch.setattr(extract_mergers, "MISSING_NOTIFICATION_DATES_PATH", str(out))
+        monkeypatch.setattr(extract_mergers, "KNOWN_NOTIFICATION_DATES", known_dates or {})
+        detect_missing_notification_dates(mergers)
+        if not out.exists():
+            return None
+        with open(out) as f:
+            return json.load(f)
+
+    def test_opens_issue_when_notification_date_missing(self, tmp_path, monkeypatch):
+        mergers = [{
+            'merger_id': 'MN-50030',
+            'merger_name': 'Symal Group - Shamrock Engineering and Equipment',
+            'url': 'https://accc.gov.au/x',
+        }]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        assert len(result['issues']) == 1
+        assert result['issues'][0]['merger_id'] == 'MN-50030'
+        assert 'MN-50030' in result['issues'][0]['title']
+
+    def test_ignores_merger_with_notification_date(self, tmp_path, monkeypatch):
+        mergers = [{
+            'merger_id': 'MN-00001',
+            'merger_name': 'Ordinary Phase 1',
+            'effective_notification_datetime': '2026-03-05T12:00:00Z',
+        }]
+        result = self._run(mergers, tmp_path, monkeypatch)
+        assert result is None
+
+    def test_ignores_merger_already_in_known_dates(self, tmp_path, monkeypatch):
+        mergers = [{
+            'merger_id': 'MN-50030',
+            'merger_name': 'Symal Group - Shamrock Engineering and Equipment',
+        }]
+        result = self._run(
+            mergers, tmp_path, monkeypatch,
+            known_dates={'MN-50030': '2026-07-01T12:00:00Z'},
+        )
+        assert result is None
+
+    def test_removes_stale_file_when_nothing_to_report(self, tmp_path, monkeypatch):
+        out = tmp_path / "missing_notification_dates.json"
+        out.write_text('{"issues": [{"merger_id": "MN-OLD"}]}')
+        monkeypatch.setattr(extract_mergers, "MISSING_NOTIFICATION_DATES_PATH", str(out))
+        monkeypatch.setattr(extract_mergers, "KNOWN_NOTIFICATION_DATES", {})
+        detect_missing_notification_dates([{
+            'merger_id': 'MN-00001',
+            'effective_notification_datetime': '2026-03-05T12:00:00Z',
         }])
         assert not out.exists()
 
