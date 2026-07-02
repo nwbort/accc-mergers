@@ -1,6 +1,6 @@
 {
   "total_mergers": 161,
-  "total_waivers": 249,
+  "total_waivers": 250,
   "by_status": {
     "Assessment completed": 121,
     "Under assessment": 39,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 6
   },
   "by_waiver_determination": {
-    "Approved": 235,
+    "Approved": 236,
     "Not approved": 14
   },
   "phase_duration": {
@@ -176,6 +176,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70024",
+      "merger_name": "CVC Capital Partners and Groupe Bruxelles Lambert \u2013 Recordati",
+      "determination": "Approved",
+      "determination_date": "2026-07-02T12:00:00Z",
+      "page_modified_datetime": "2026-07-02T16:54:39+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-95021",
       "merger_name": "Logic Technologies - Ace Communication Distributors",
       "determination": "Approved",
@@ -281,16 +291,6 @@
       "determination": "Approved",
       "determination_date": "2026-06-30T12:00:00Z",
       "page_modified_datetime": "2026-06-30T16:46:06+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-01108",
-      "merger_name": "Oakley Capital \u2013 XTEL",
-      "determination": "Approved",
-      "determination_date": "2026-06-30T12:00:00Z",
-      "page_modified_datetime": "2026-06-30T16:44:25+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

@@ -51,7 +51,7 @@
       "code": "18",
       "name": "Basic Chemical and Chemical Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 13
+      "merger_count": 14
     },
     {
       "code": "19",
@@ -195,6 +195,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-70024",
+      "merger_name": "CVC Capital Partners and Groupe Bruxelles Lambert \u2013 Recordati",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-04T12:00:00Z",
+      "determination_date": "2026-07-02T12:00:00Z"
     },
     {
       "merger_id": "MN-40020",
@@ -989,10 +998,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 99,
+  "count": 100,
   "phase_1_count": 45,
   "phase_2_count": 1,
-  "waiver_count": 53,
+  "waiver_count": 54,
   "active_count": 11,
   "phase_duration": {
     "average_days": 29.714285714285715,

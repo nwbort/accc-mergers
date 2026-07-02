@@ -24,7 +24,7 @@
       "code": "1841",
       "name": "Human Pharmaceutical and Medicinal Product Manufacturing",
       "level": "class",
-      "merger_count": 8
+      "merger_count": 9
     },
     {
       "code": "1842",
@@ -42,6 +42,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-70024",
+      "merger_name": "CVC Capital Partners and Groupe Bruxelles Lambert \u2013 Recordati",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-04T12:00:00Z",
+      "determination_date": "2026-07-02T12:00:00Z"
     },
     {
       "merger_id": "MN-95016",
@@ -116,10 +125,10 @@
       "determination_date": "2026-03-12T12:00:00Z"
     }
   ],
-  "count": 9,
+  "count": 10,
   "phase_1_count": 7,
   "phase_2_count": 0,
-  "waiver_count": 2,
+  "waiver_count": 3,
   "active_count": 1,
   "phase_duration": {
     "average_days": 25.166666666666668,
