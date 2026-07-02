@@ -1,75 +1,6 @@
 {
   "mergers": [
     {
-      "merger_id": "MN-70013",
-      "merger_name": "Ventura Motors \u2013 Crown Coaches",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-04-15T12:00:00Z",
-      "determination_publication_date": "2026-05-07T12:00:00Z",
-      "end_of_determination_period": "2026-05-28T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "VENTURA NEWCO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "43 694 822 047"
-        }
-      ],
-      "targets": [
-        {
-          "name": "CROWN HYBRID PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "47 004 550 529"
-        },
-        {
-          "name": "CROWN COACHES PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "48 004 882 213"
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "Ventura Bus Lines Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "005 798 121"
-        },
-        {
-          "name": "Ventura Property Management Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "28 100 908 049"
-        },
-        {
-          "name": "Zumba Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "154 324 839"
-        },
-        {
-          "name": "VENTURA MOTORS PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "67 004 235 518"
-        },
-        {
-          "name": "IVANHOE BUS COMPANY PROPRIETARY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "57 004 367 962"
-        },
-        {
-          "name": "Keppel Infrastructure Fund Management Pte. Ltd.",
-          "identifier_type": null,
-          "identifier": "UEN  200803959H"
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "4622",
-          "name": "Urban Bus Transport (Including Tramway)"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ventura-motors-%E2%80%93-crown-coaches"
-    },
-    {
       "merger_id": "MN-30009",
       "merger_name": "Daikin - AAMS Group",
       "status": "Assessment completed",
@@ -2922,6 +2853,67 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/macquarie-asset-management-led-consortium-%E2%80%93-qube"
+    },
+    {
+      "merger_id": "MN-15015",
+      "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-05-06T12:00:00Z",
+      "determination_publication_date": "2026-06-04T12:00:00Z",
+      "end_of_determination_period": "2026-06-19T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Fire Safety Platform Holding, LP",
+          "identifier_type": null,
+          "identifier": "State of Delaware, Division of Corporations  10541621"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Madison Safety & Flow Holdings LLC",
+          "identifier_type": null,
+          "identifier": "State of Delaware, Division of Corporations  7811257"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Bain Capital Investors, LLC",
+          "identifier_type": null,
+          "identifier": "IRS EIN  812878769",
+          "canonical": {
+            "id": "bain-capital-investors-llc",
+            "name": "Bain Capital Investors LLC"
+          }
+        },
+        {
+          "name": "Madison Industrial Solutions Corporation",
+          "identifier_type": null,
+          "identifier": "State of Delaware, Division of Corporations  5633530"
+        },
+        {
+          "name": "3M Company",
+          "identifier_type": null,
+          "identifier": "IRS EIN  41041777"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "3499",
+          "name": "Other Machinery and Equipment Wholesaling n.e.c."
+        },
+        {
+          "code": "7713",
+          "name": "Fire Protection and Other Emergency Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/3m-and-funds-managed-andor-advised-by-bain-capital-madison-fire-rescue"
     }
   ],
   "page": 5,
