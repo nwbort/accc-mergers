@@ -48,15 +48,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-95021",
-      "merger_name": "Logic Technologies - Ace Communication Distributors",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "phase": "Phase 1",
-      "notification_date": "2026-05-21T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
       "is_waiver": false,
@@ -64,6 +55,15 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-14T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-95021",
+      "merger_name": "Logic Technologies - Ace Communication Distributors",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1",
+      "notification_date": "2026-05-21T12:00:00Z",
+      "determination_date": "2026-07-02T12:00:00Z"
     },
     {
       "merger_id": "MN-15015",
@@ -178,12 +178,12 @@
   "phase_1_count": 9,
   "phase_2_count": 1,
   "waiver_count": 6,
-  "active_count": 4,
+  "active_count": 3,
   "phase_duration": {
-    "average_days": 37.0,
+    "average_days": 37.625,
     "median_days": 33,
-    "average_business_days": 23.285714285714285,
-    "median_business_days": 20,
-    "completed_count": 7
+    "average_business_days": 23.875,
+    "median_business_days": 21,
+    "completed_count": 8
   }
 }
