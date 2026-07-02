@@ -24,10 +24,19 @@
       "code": "6970",
       "name": "Veterinary Services",
       "level": "class",
-      "merger_count": 8
+      "merger_count": 9
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-40017",
+      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-07-01T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-70020",
       "merger_name": "CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
@@ -101,11 +110,11 @@
       "determination_date": "2026-02-12T12:00:00Z"
     }
   ],
-  "count": 8,
-  "phase_1_count": 2,
+  "count": 9,
+  "phase_1_count": 3,
   "phase_2_count": 0,
   "waiver_count": 6,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 55.0,
     "median_days": 55,

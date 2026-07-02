@@ -1,9 +1,9 @@
 {
-  "total_mergers": 160,
+  "total_mergers": 161,
   "total_waivers": 249,
   "by_status": {
     "Assessment completed": 120,
-    "Under assessment": 39,
+    "Under assessment": 40,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -80,6 +80,14 @@
     {
       "merger_id": "MN-35018",
       "merger_name": "Hewitt \u2013 Nolan Meats",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-01T12:00:00Z",
+      "is_waiver": false
+    },
+    {
+      "merger_id": "MN-40017",
+      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-01T12:00:00Z",
@@ -163,14 +171,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-26T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-40027",
-      "merger_name": "Sika AG - Akkim",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-25T12:00:00Z",
       "is_waiver": false
     }
   ],

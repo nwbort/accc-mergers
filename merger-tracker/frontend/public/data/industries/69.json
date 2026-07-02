@@ -55,7 +55,7 @@
       "code": "697",
       "name": "Veterinary Services",
       "level": "group",
-      "merger_count": 8
+      "merger_count": 9
     },
     {
       "code": "699",
@@ -65,6 +65,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-40017",
+      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-07-01T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75027",
       "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
@@ -561,11 +570,11 @@
       "determination_date": "2026-01-13T12:00:00Z"
     }
   ],
-  "count": 55,
-  "phase_1_count": 22,
+  "count": 56,
+  "phase_1_count": 23,
   "phase_2_count": 1,
   "waiver_count": 32,
-  "active_count": 6,
+  "active_count": 7,
   "phase_duration": {
     "average_days": 34.05555555555556,
     "median_days": 28,
