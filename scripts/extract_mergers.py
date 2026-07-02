@@ -234,10 +234,29 @@ KNOWN_DETERMINATION_DATES = {
     'MN-15002': '2026-02-19T12:00:00Z',  # Google - Wiz: approved 19 Feb 2026, date never added to page
 }
 
-# Known notification dates for mergers where the ACCC page is unlikely to be corrected
-KNOWN_NOTIFICATION_DATES = {
-    'MN-50030': '2026-07-01T12:00:00Z',  # Symal Group - Shamrock: notification date never added to page
-}
+# Known notification dates for mergers whose ACCC page never publishes one.
+# Loaded from data/known_notification_dates.json, which fix_missing_notification_dates.py
+# keeps up to date via an automated PR (see .github/workflows/fix-missing-notification-dates.yml).
+KNOWN_NOTIFICATION_DATES_PATH = 'data/known_notification_dates.json'
+
+
+def _load_known_notification_dates():
+    try:
+        with open(KNOWN_NOTIFICATION_DATES_PATH, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return {
+            merger_id: entry['date']
+            for merger_id, entry in data.items()
+            if isinstance(entry, dict) and entry.get('date')
+        }
+    except FileNotFoundError:
+        return {}
+    except Exception as e:
+        print(f"Warning: could not load {KNOWN_NOTIFICATION_DATES_PATH}: {e}", file=sys.stderr)
+        return {}
+
+
+KNOWN_NOTIFICATION_DATES = _load_known_notification_dates()
 
 
 def _load_frozen_events_mergers():
@@ -1149,73 +1168,6 @@ def detect_inferred_phase_2(all_mergers_data):
             f"{', '.join(sorted(confirmed))}",
             file=sys.stderr,
         )
-
-
-MISSING_NOTIFICATION_DATES_PATH = 'data/processed/missing_notification_dates.json'
-
-
-def detect_missing_notification_dates(all_mergers_data):
-    """Detect mergers with no notification date that aren't already covered by
-    KNOWN_NOTIFICATION_DATES, and write issue content for the pipeline to open
-    a GitHub issue asking the owner to add an entry.
-
-    The ACCC page occasionally never publishes a notification date (see
-    MN-50030). KNOWN_NOTIFICATION_DATES is the fix, but it requires a human to
-    pick the correct date and add a code entry — this flags new occurrences
-    instead of letting them sit silently missing.
-
-    Writes MISSING_NOTIFICATION_DATES_PATH with issue content. Removes the
-    file when there is nothing to report.
-    """
-    _repo = "nwbort/accc-mergers"
-    issues = []
-
-    for merger in all_mergers_data:
-        merger_id = merger.get('merger_id')
-        if not merger_id or merger_id in KNOWN_NOTIFICATION_DATES:
-            continue
-        if merger.get('effective_notification_datetime'):
-            continue
-
-        name = merger.get('merger_name', '')
-        url = merger.get('url', '')
-        mergers_fyi_url = f"https://mergers.fyi/mergers/{merger_id}"
-        extract_script_url = f"https://github.com/{_repo}/blob/main/scripts/extract_mergers.py"
-
-        body = (
-            f"**{name}** has no notification date on the ACCC register page.\n\n"
-            f"### Details\n\n"
-            f"| Merger | [{name}]({url}) |\n"
-            f"|--------|---------------|\n"
-            f"| Merger ID | `{merger_id}` |\n\n"
-            f"### Action required\n\n"
-            f"Confirm the correct notification date (check the questionnaire or "
-            f"other attachments if it isn't on the page) and add an entry to "
-            f"`KNOWN_NOTIFICATION_DATES` in "
-            f"[`scripts/extract_mergers.py`]({extract_script_url}) so future scrapes "
-            f"stop treating this merger as missing a date. Then close this issue.\n\n"
-            f"[View on mergers.fyi]({mergers_fyi_url})"
-        )
-        issues.append({
-            'merger_id': merger_id,
-            'merger_name': name,
-            'title': f"Missing notification date: {name} ({merger_id})",
-            'body': body,
-        })
-
-    if not issues:
-        if os.path.exists(MISSING_NOTIFICATION_DATES_PATH):
-            os.remove(MISSING_NOTIFICATION_DATES_PATH)
-        return
-
-    with open(MISSING_NOTIFICATION_DATES_PATH, 'w', encoding='utf-8') as f:
-        json.dump({'issues': issues}, f, indent=2)
-
-    print(
-        f"Missing notification date(s) for: "
-        f"{', '.join(sorted(i['merger_id'] for i in issues))}",
-        file=sys.stderr,
-    )
 
 
 def extract_nocc_data():
