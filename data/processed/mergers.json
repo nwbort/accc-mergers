@@ -2355,15 +2355,15 @@
     "is_waiver": false
   },
   {
-    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/saipem-subsea7",
-    "merger_name": "Saipem - Subsea7",
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/saipem-spa-subsea7-sa",
+    "merger_name": "Saipem S.p.A - Subsea7 S.A.",
     "status": "Under assessment",
     "merger_id": "MN-01072",
     "effective_notification_datetime": "2026-04-27T12:00:00Z",
     "original_notification_datetime": "2026-04-27T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
-    "end_of_determination_period": "2026-07-06T12:00:00Z",
-    "page_modified_datetime": "2026-05-27T13:26:06+10:00",
+    "end_of_determination_period": "2026-11-10T12:00:00Z",
+    "page_modified_datetime": "2026-07-03T10:24:14+10:00",
     "consultation_response_due_date": "2026-05-04T12:00:00Z",
     "acquirers": [
       {
@@ -2409,6 +2409,32 @@
         "date": "2026-05-27T12:00:00Z",
         "title": "Timeline extended by 18 business days \u2013 following request by parties",
         "display_title": "Timeline extended by 18 business days \u2013 following request by parties"
+      },
+      {
+        "date": "2026-07-02T12:00:00Z",
+        "title": "ACCC decided notification is subject to Phase 2 review",
+        "display_title": "ACCC decided notification is subject to Phase 2 review",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Saipem%20-%20Subsea7%20-%20Decision%20Acquisition%20is%20to%20be%20subject%20to%20Phase%202%20review.pdf",
+        "url_gh": "/mergers/MN-01072/Saipem - Subsea7 - Decision Acquisition is to be subject to Phase 2 review.pdf",
+        "status": "live",
+        "phase2_notice_matters_to_investigate": [
+          {
+            "heading": "Relevant areas of competition",
+            "items": [
+              "The appropriate product dimensions of competition in the supply of SURF services to customers in Australia, including the degree to which different pipelay methods are substitutable."
+            ]
+          },
+          {
+            "heading": "Competition effects in the supply of SURF services",
+            "items": [
+              "The geographic and technical conditions relevant to Australian SURF projects and how these affect the selection of pipelaying vessels and SURF service providers.",
+              "The likely effect of the removal of a key provider on competition in the supply of SURF services in Australia.",
+              "The likely extent to which remaining SURF service suppliers would meaningfully constrain the merged entity in relation to tenders in Australia, taking into account their current and prospective capability and geographic areas of operation.",
+              "The extent to which operators of Australian offshore projects could credibly threaten to bypass the merged firm, either by self-supplying some or all SURF services and/or sponsoring new entry or expansion.",
+              "The likelihood of timely and sufficient new entry, and consequent participation in Australian SURF project tenders, if the Acquisition proceeds."
+            ]
+          }
+        ]
       }
     ],
     "is_waiver": false
@@ -12268,7 +12294,7 @@
     "original_notification_datetime": "2026-06-24T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-08-05T12:00:00Z",
-    "page_modified_datetime": "2026-06-25T14:24:08+10:00",
+    "page_modified_datetime": "2026-07-03T08:27:12+10:00",
     "consultation_response_due_date": "2026-07-02T12:00:00Z",
     "acquirers": [
       {
@@ -12286,6 +12312,11 @@
     ],
     "other_parties": [
       {
+        "name": "U-POL AUSTRALIA PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "12 633 592 819"
+      },
+      {
         "name": "AKZO NOBEL PTY LIMITED",
         "identifier_type": "ABN",
         "identifier": "59 000 119 424"
@@ -12299,11 +12330,6 @@
         "name": "REFINISH IMPORTS PTY LIMITED",
         "identifier_type": "ABN",
         "identifier": "15 626 896 142"
-      },
-      {
-        "name": "U-POL AUSTRALIA PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "12 633 592 819"
       }
     ],
     "anzsic_codes": [
@@ -12320,7 +12346,7 @@
         "display_title": "Questionnaire - AkzoNobel-Axalta",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20AkzoNobel-Axalta_2.docx",
         "url_gh": "/mergers/MN-50024/Questionnaire - AkzoNobel-Axalta_2.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-06-24T12:00:00Z",

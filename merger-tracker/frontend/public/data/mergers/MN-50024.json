@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-06-24T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-08-05T12:00:00Z",
-  "page_modified_datetime": "2026-06-25T14:24:08+10:00",
+  "page_modified_datetime": "2026-07-03T08:27:12+10:00",
   "consultation_response_due_date": "2026-07-02T12:00:00Z",
   "acquirers": [
     {
@@ -29,6 +29,11 @@
   ],
   "other_parties": [
     {
+      "name": "U-POL AUSTRALIA PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "12 633 592 819"
+    },
+    {
       "name": "AKZO NOBEL PTY LIMITED",
       "identifier_type": "ABN",
       "identifier": "59 000 119 424"
@@ -46,11 +51,6 @@
       "name": "REFINISH IMPORTS PTY LIMITED",
       "identifier_type": "ABN",
       "identifier": "15 626 896 142"
-    },
-    {
-      "name": "U-POL AUSTRALIA PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "12 633 592 819"
     }
   ],
   "anzsic_codes": [
@@ -67,7 +67,7 @@
       "display_title": "Questionnaire - AkzoNobel-Axalta",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20AkzoNobel-Axalta_2.docx",
       "url_gh": "/mergers/MN-50024/Questionnaire - AkzoNobel-Axalta_2.pdf",
-      "status": "live",
+      "status": "removed",
       "phase": null
     },
     {

@@ -3426,15 +3426,15 @@
       ]
     },
     {
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/saipem-subsea7",
-      "merger_name": "Saipem - Subsea7",
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/saipem-spa-subsea7-sa",
+      "merger_name": "Saipem S.p.A - Subsea7 S.A.",
       "status": "Under assessment",
       "merger_id": "MN-01072",
       "effective_notification_datetime": "2026-04-27T12:00:00Z",
       "original_notification_datetime": "2026-04-27T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "end_of_determination_period": "2026-07-06T12:00:00Z",
-      "page_modified_datetime": "2026-05-27T13:26:06+10:00",
+      "stage": "Phase 2 - detailed assessment",
+      "end_of_determination_period": "2026-11-10T12:00:00Z",
+      "page_modified_datetime": "2026-07-03T10:24:14+10:00",
       "consultation_response_due_date": "2026-05-04T12:00:00Z",
       "acquirers": [
         {
@@ -3483,16 +3483,44 @@
           "title": "Timeline extended by 18 business days – following request by parties",
           "display_title": "Timeline extended by 18 business days – following request by parties",
           "phase": null
+        },
+        {
+          "date": "2026-07-02T12:00:00Z",
+          "title": "ACCC decided notification is subject to Phase 2 review",
+          "display_title": "ACCC decided notification is subject to Phase 2 review",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Saipem%20-%20Subsea7%20-%20Decision%20Acquisition%20is%20to%20be%20subject%20to%20Phase%202%20review.pdf",
+          "url_gh": "/mergers/MN-01072/Saipem - Subsea7 - Decision Acquisition is to be subject to Phase 2 review.pdf",
+          "status": "live",
+          "phase2_notice_matters_to_investigate": [
+            {
+              "heading": "Relevant areas of competition",
+              "items": [
+                "The appropriate product dimensions of competition in the supply of SURF services to customers in Australia, including the degree to which different pipelay methods are substitutable."
+              ]
+            },
+            {
+              "heading": "Competition effects in the supply of SURF services",
+              "items": [
+                "The geographic and technical conditions relevant to Australian SURF projects and how these affect the selection of pipelaying vessels and SURF service providers.",
+                "The likely effect of the removal of a key provider on competition in the supply of SURF services in Australia.",
+                "The likely extent to which remaining SURF service suppliers would meaningfully constrain the merged entity in relation to tenders in Australia, taking into account their current and prospective capability and geographic areas of operation.",
+                "The extent to which operators of Australian offshore projects could credibly threaten to bypass the merged firm, either by self-supplying some or all SURF services and/or sponsoring new entry or expansion.",
+                "The likelihood of timely and sufficient new entry, and consequent participation in Australian SURF project tenders, if the Acquisition proceeds."
+              ]
+            }
+          ],
+          "phase": "Phase 2"
         }
       ],
       "is_waiver": false,
       "accc_determination": null,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Referred to phase 2",
+      "phase_1_determination_date": "2026-07-02T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "phase_2_inferred": true,
       "has_questionnaire": true,
       "similar_mergers": [
         {
@@ -20467,7 +20495,7 @@
       "original_notification_datetime": "2026-06-24T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-05T12:00:00Z",
-      "page_modified_datetime": "2026-06-25T14:24:08+10:00",
+      "page_modified_datetime": "2026-07-03T08:27:12+10:00",
       "consultation_response_due_date": "2026-07-02T12:00:00Z",
       "acquirers": [
         {
@@ -20489,6 +20517,11 @@
       ],
       "other_parties": [
         {
+          "name": "U-POL AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "12 633 592 819"
+        },
+        {
           "name": "AKZO NOBEL PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "59 000 119 424"
@@ -20506,11 +20539,6 @@
           "name": "REFINISH IMPORTS PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "15 626 896 142"
-        },
-        {
-          "name": "U-POL AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "12 633 592 819"
         }
       ],
       "anzsic_codes": [
@@ -20527,7 +20555,7 @@
           "display_title": "Questionnaire - AkzoNobel-Axalta",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20AkzoNobel-Axalta_2.docx",
           "url_gh": "/mergers/MN-50024/Questionnaire - AkzoNobel-Axalta_2.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
@@ -37409,7 +37437,7 @@
       "similar_mergers": [
         {
           "merger_id": "MN-01072",
-          "merger_name": "Saipem - Subsea7",
+          "merger_name": "Saipem S.p.A - Subsea7 S.A.",
           "status": "Under assessment",
           "accc_determination": null,
           "acquirers": [
@@ -87051,29 +87079,29 @@
     },
     "by_determination": {
       "Approved": 120,
-      "Referred to phase 2": 6
+      "Referred to phase 2": 7
     },
     "by_waiver_determination": {
       "Approved": 236,
       "Not approved": 14
     },
     "phase_duration": {
-      "average_days": 29.76984126984127,
+      "average_days": 30.055118110236222,
       "median_days": 26,
-      "average_business_days": 19.571428571428573,
+      "average_business_days": 19.77952755905512,
       "median_business_days": 17,
       "percentiles": {
         "day15": {
           "count": 26,
-          "percentage": 20.6
+          "percentage": 20.5
         },
         "day20": {
           "count": 95,
-          "percentage": 75.4
+          "percentage": 74.8
         },
         "day30": {
           "count": 121,
-          "percentage": 96.0
+          "percentage": 95.3
         }
       }
     },
@@ -87219,6 +87247,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "MN-01072",
+        "merger_name": "Saipem S.p.A - Subsea7 S.A.",
+        "determination": "Referred to phase 2",
+        "determination_date": "2026-07-02T12:00:00Z",
+        "page_modified_datetime": "2026-07-03T10:24:14+10:00",
+        "determination_type": "phase_transition",
+        "is_waiver": false,
+        "stage": "Phase 2 - detailed assessment"
+      },
+      {
         "merger_id": "WA-70024",
         "merger_name": "CVC Capital Partners and Groupe Bruxelles Lambert – Recordati",
         "determination": "Approved",
@@ -87324,16 +87362,6 @@
         "determination": "Approved",
         "determination_date": "2026-06-30T12:00:00Z",
         "page_modified_datetime": "2026-06-30T16:50:31+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-40028",
-        "merger_name": "Airtree – HotDoc",
-        "determination": "Approved",
-        "determination_date": "2026-06-30T12:00:00Z",
-        "page_modified_datetime": "2026-06-30T16:48:21+10:00",
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"
