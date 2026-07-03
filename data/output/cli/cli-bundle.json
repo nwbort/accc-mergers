@@ -3489,8 +3489,6 @@
           "title": "ACCC decided notification is subject to Phase 2 review",
           "display_title": "ACCC decided notification is subject to Phase 2 review",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Saipem%20-%20Subsea7%20-%20Decision%20Acquisition%20is%20to%20be%20subject%20to%20Phase%202%20review.pdf",
-          "url_gh": "/mergers/MN-01072/Saipem - Subsea7 - Decision Acquisition is to be subject to Phase 2 review.pdf",
-          "status": "live",
           "phase2_notice_matters_to_investigate": [
             {
               "heading": "Relevant areas of competition",
@@ -3509,6 +3507,8 @@
               ]
             }
           ],
+          "url_gh": "/mergers/MN-01072/Saipem - Subsea7 - Decision Acquisition is to be subject to Phase 2 review.pdf",
+          "status": "live",
           "phase": "Phase 2"
         }
       ],
@@ -31279,31 +31279,31 @@
       "effective_notification_datetime": "2026-05-21T12:00:00Z",
       "original_notification_datetime": "2026-05-21T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
-      "end_of_determination_period": "2026-07-20T12:00:00Z",
-      "page_modified_datetime": "2026-06-19T12:17:30+10:00",
+      "end_of_determination_period": "2026-07-27T12:00:00Z",
+      "page_modified_datetime": "2026-07-03T10:56:23+10:00",
       "consultation_response_due_date": "2026-05-29T12:00:00Z",
       "acquirers": [
-        {
-          "name": "The Trustee for Light Them Up (Roma) Trust",
-          "identifier_type": "ABN",
-          "identifier": "17 705 523 498"
-        },
         {
           "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
           "identifier_type": "ABN",
           "identifier": "21 693 060 187"
+        },
+        {
+          "name": "The Trustee for Light Them Up (Roma) Trust",
+          "identifier_type": "ABN",
+          "identifier": "17 705 523 498"
         }
       ],
       "targets": [
         {
-          "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
-          "identifier_type": "ABN",
-          "identifier": "95 506 126 845"
-        },
-        {
           "name": "SPEEDY COCKTAILS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "99 619 330 255"
+        },
+        {
+          "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
+          "identifier_type": "ABN",
+          "identifier": "95 506 126 845"
         }
       ],
       "other_parties": [],
@@ -31346,6 +31346,12 @@
           "date": "2026-06-19T12:00:00Z",
           "title": "Timeline extended by 10 business days – following request by parties",
           "display_title": "Timeline extended by 10 business days – following request by parties",
+          "phase": null
+        },
+        {
+          "date": "2026-07-03T12:00:00Z",
+          "title": "Timeline extended by 5 business days - following request by parties",
+          "display_title": "Timeline extended by 5 business days - following request by parties",
           "phase": null
         }
       ],
@@ -53446,26 +53452,26 @@
           "accc_determination": null,
           "acquirers": [
             {
-              "name": "The Trustee for Light Them Up (Roma) Trust",
-              "identifier_type": "ABN",
-              "identifier": "17 705 523 498"
-            },
-            {
               "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
               "identifier_type": "ABN",
               "identifier": "21 693 060 187"
+            },
+            {
+              "name": "The Trustee for Light Them Up (Roma) Trust",
+              "identifier_type": "ABN",
+              "identifier": "17 705 523 498"
             }
           ],
           "targets": [
             {
-              "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
-              "identifier_type": "ABN",
-              "identifier": "95 506 126 845"
-            },
-            {
               "name": "SPEEDY COCKTAILS PTY LTD",
               "identifier_type": "ABN",
               "identifier": "99 619 330 255"
+            },
+            {
+              "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
+              "identifier_type": "ABN",
+              "identifier": "95 506 126 845"
             }
           ]
         }
@@ -64104,26 +64110,26 @@
           "accc_determination": null,
           "acquirers": [
             {
-              "name": "The Trustee for Light Them Up (Roma) Trust",
-              "identifier_type": "ABN",
-              "identifier": "17 705 523 498"
-            },
-            {
               "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
               "identifier_type": "ABN",
               "identifier": "21 693 060 187"
+            },
+            {
+              "name": "The Trustee for Light Them Up (Roma) Trust",
+              "identifier_type": "ABN",
+              "identifier": "17 705 523 498"
             }
           ],
           "targets": [
             {
-              "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
-              "identifier_type": "ABN",
-              "identifier": "95 506 126 845"
-            },
-            {
               "name": "SPEEDY COCKTAILS PTY LTD",
               "identifier_type": "ABN",
               "identifier": "99 619 330 255"
+            },
+            {
+              "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
+              "identifier_type": "ABN",
+              "identifier": "95 506 126 845"
             }
           ]
         },
