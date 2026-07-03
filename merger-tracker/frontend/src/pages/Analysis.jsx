@@ -294,13 +294,26 @@ function Analysis() {
   // the backend's descending order to put the longest durations at the top.
   const industryDurations = industry_phase1_duration || [];
 
+  // "Overall" reference bar, pinned to the top, covering every industry.
+  const overallEntry = phase1_duration.stats.average != null ? {
+    code: null,
+    name: 'Overall',
+    average_business_days: phase1_duration.stats.average,
+    median_business_days: phase1_duration.stats.median,
+    average_calendar_days: phase1_duration.calendar_stats.average,
+    median_calendar_days: phase1_duration.calendar_stats.median,
+    count: phase1_duration.stats.count,
+  } : null;
+
+  const industryChartRows = overallEntry ? [overallEntry, ...industryDurations] : industryDurations;
+
   const industryDurationData = {
-    labels: industryDurations.map(d => d.name),
+    labels: industryChartRows.map(d => d.name),
     datasets: [
       {
         label: `Avg phase 1 duration (${dayLabel})`,
-        data: industryDurations.map(d => d[industryDurationField]),
-        backgroundColor: COLORS.primary,
+        data: industryChartRows.map(d => d[industryDurationField]),
+        backgroundColor: industryChartRows.map(d => d.code === null ? COLORS.accent : COLORS.primary),
         borderRadius: 4,
         maxBarThickness: 22,
       },
@@ -310,8 +323,8 @@ function Analysis() {
   const handleIndustryChartClick = (event, elements) => {
     if (elements.length > 0) {
       const { index } = elements[0];
-      const industry = industryDurations[index];
-      if (industry) {
+      const industry = industryChartRows[index];
+      if (industry && industry.code !== null) {
         navigate(industryPath(industry.code, industry.name));
       }
     }
@@ -331,7 +344,7 @@ function Analysis() {
       tooltip: {
         callbacks: {
           label: (item) => {
-            const d = industryDurations[item.dataIndex];
+            const d = industryChartRows[item.dataIndex];
             return [
               `Avg: ${d.average_business_days} business days (${d.average_calendar_days} calendar)`,
               `Median: ${d.median_business_days} business days (${d.median_calendar_days} calendar)`,
@@ -474,7 +487,7 @@ function Analysis() {
                 </p>
               </div>
               <div className="p-6">
-                <div style={{ height: `${Math.max(320, industryDurations.length * 32)}px` }}>
+                <div style={{ height: `${Math.max(320, industryChartRows.length * 32)}px` }}>
                   <Bar data={industryDurationData} options={industryDurationOptions} />
                 </div>
               </div>
