@@ -3,9 +3,63 @@
 from collections import defaultdict
 from statistics import median as stat_median
 
+from .. import anzsic
 from ..business_days import calculate_business_days, calculate_calendar_days
-from ..durations import phase_1_end_date
+from ..durations import collect_phase_1_durations, phase_1_end_date
 from ..filters import filter_notifications, filter_waivers
+
+
+def _division_for_code(code: str):
+    """The top-level ANZSIC division (letter) node a tagged code rolls up to.
+
+    ``code`` may already be a division, or a subdivision/group/class beneath
+    one. Returns ``None`` for codes outside the known ANZSIC tree.
+    """
+    node = anzsic.get(code)
+    if node is None:
+        return None
+    if node.level == 'division':
+        return node
+    ancestors = anzsic.ancestors(code)
+    return ancestors[0] if ancestors else None
+
+
+def industry_phase1_duration(mergers: list) -> list[dict]:
+    """Phase 1 duration stats per top-level ANZSIC division, for comparison.
+
+    Each merger is attributed to every division its tagged codes roll up to
+    (deduped, so a merger tagged twice within a division isn't double-counted).
+    Divisions with no completed Phase 1 reviews are omitted.
+    """
+    division_mergers = defaultdict(list)
+    for m in mergers:
+        codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
+        divisions = {}
+        for code_obj in codes:
+            division = _division_for_code(code_obj.get('code', ''))
+            if division is not None:
+                divisions[division.code] = division
+        for division in divisions.values():
+            division_mergers[division.code].append((division.name, m))
+
+    results = []
+    for division_code, entries in division_mergers.items():
+        division_name = entries[0][0]
+        cal_days, bus_days = collect_phase_1_durations([m for _, m in entries])
+        if not bus_days:
+            continue
+        results.append({
+            "code": division_code,
+            "name": division_name,
+            "average_business_days": round(sum(bus_days) / len(bus_days), 1),
+            "median_business_days": stat_median(bus_days),
+            "average_calendar_days": round(sum(cal_days) / len(cal_days), 1) if cal_days else None,
+            "median_calendar_days": stat_median(cal_days) if cal_days else None,
+            "count": len(bus_days),
+        })
+
+    results.sort(key=lambda x: -x['average_business_days'])
+    return results
 
 
 def generate(mergers: list) -> dict:
@@ -153,4 +207,5 @@ def generate(mergers: list) -> dict:
             "calendar_stats": waiver_calendar_stats,
         },
         "monthly_volume": monthly_volume,
+        "industry_phase1_duration": industry_phase1_duration(mergers),
     }

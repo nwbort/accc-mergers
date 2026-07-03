@@ -445,7 +445,9 @@ class TestAnalysisGenerate:
     def test_returns_valid_shape(self):
         payload = analysis.generate(_enriched_fixture())
         json.dumps(payload)
-        assert set(payload.keys()) == {'phase1_duration', 'waiver_duration', 'monthly_volume'}
+        assert set(payload.keys()) == {
+            'phase1_duration', 'waiver_duration', 'monthly_volume', 'industry_phase1_duration',
+        }
         assert 'scatter_data' in payload['phase1_duration']
         assert 'scatter_data' in payload['waiver_duration']
         assert 'labels' in payload['monthly_volume']
@@ -461,6 +463,18 @@ class TestAnalysisGenerate:
         payload = analysis.generate(_enriched_fixture())
         ids = {p['merger_id'] for p in payload['waiver_duration']['scatter_data']}
         assert ids == {'WA-0003'}
+
+    def test_industry_phase1_duration_rolls_up_to_division(self):
+        payload = analysis.generate(_enriched_fixture())
+        divisions = payload['industry_phase1_duration']
+        # MN-0001 (code 0600, Coal Mining) has a completed Phase 1 and rolls up
+        # to division B (Mining). MN-0002 shares the code but is in progress,
+        # so it doesn't add a second completed review. WA-0003's code (5400)
+        # is an orphan outside the ANZSIC tree, so Transport contributes nothing.
+        assert [d['code'] for d in divisions] == ['B']
+        mining = divisions[0]
+        assert mining['name'] == 'Mining'
+        assert mining['count'] == 1
 
 
 # ---------------------------------------------------------------------------
