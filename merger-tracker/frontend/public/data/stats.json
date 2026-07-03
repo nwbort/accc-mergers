@@ -1,9 +1,9 @@
 {
-  "total_mergers": 163,
+  "total_mergers": 164,
   "total_waivers": 253,
   "by_status": {
     "Assessment completed": 123,
-    "Under assessment": 39,
+    "Under assessment": 40,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -61,7 +61,7 @@
     },
     {
       "name": "Accommodation",
-      "count": 14
+      "count": 15
     },
     {
       "name": "Engineering Design and Engineering Consulting Services",
@@ -118,6 +118,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-85015",
+      "merger_name": "Journey Beyond Kelsian Group Tourism Portfolio",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-01T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-35017",
       "merger_name": "KINETIC - DYSONS BUS SERVICES",
       "status": "Under assessment",
@@ -163,14 +171,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-29T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-01106",
-      "merger_name": "Midea - Residentia Group",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-26T12:00:00Z",
       "is_waiver": false
     }
   ],

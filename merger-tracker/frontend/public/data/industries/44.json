@@ -19,10 +19,19 @@
       "code": "440",
       "name": "Accommodation",
       "level": "group",
-      "merger_count": 14
+      "merger_count": 15
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-85015",
+      "merger_name": "Journey Beyond Kelsian Group Tourism Portfolio",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-07-01T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-01103",
       "merger_name": "Discovery Holiday Parks \u2013 four Breeze Holiday Parks",
@@ -150,11 +159,11 @@
       "determination_date": "2026-02-02T12:00:00Z"
     }
   ],
-  "count": 14,
-  "phase_1_count": 5,
+  "count": 15,
+  "phase_1_count": 6,
   "phase_2_count": 0,
   "waiver_count": 9,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 25.666666666666668,
     "median_days": 25,
