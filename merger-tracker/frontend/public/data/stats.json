@@ -1,9 +1,9 @@
 {
-  "total_mergers": 164,
+  "total_mergers": 165,
   "total_waivers": 253,
   "by_status": {
     "Assessment completed": 123,
-    "Under assessment": 40,
+    "Under assessment": 41,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -110,6 +110,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-50011",
+      "merger_name": "Journey Beyond - SeaLink Rottnest",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-01T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-50030",
       "merger_name": "Symal Group - Shamrock Engineering and Equipment",
       "status": "Under assessment",
@@ -160,14 +168,6 @@
     {
       "merger_id": "MN-50026",
       "merger_name": "Stonepeak-led consortium - Estia Health",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-29T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-65022",
-      "merger_name": "Hapag-Lloyd - ZIM",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-29T12:00:00Z",
