@@ -1,9 +1,9 @@
 {
-  "total_mergers": 161,
+  "total_mergers": 162,
   "total_waivers": 250,
   "by_status": {
     "Assessment completed": 122,
-    "Under assessment": 38,
+    "Under assessment": 39,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -77,6 +77,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-15027",
+      "merger_name": "Partnered Health - Ryan Plaza Medical Services",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-03T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-35018",
       "merger_name": "Hewitt \u2013 Nolan Meats",
@@ -160,14 +168,6 @@
     {
       "merger_id": "MN-01107",
       "merger_name": "WSP / GEOTECHNICAL TESTING AND INTERPRETATION",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-26T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-90020",
-      "merger_name": "OpenAI - Ona",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-26T12:00:00Z",

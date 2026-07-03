@@ -1,0 +1,138 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/partnered-health-ryan-plaza-medical-services",
+  "merger_name": "Partnered Health - Ryan Plaza Medical Services",
+  "status": "Under assessment",
+  "merger_id": "MN-15027",
+  "effective_notification_datetime": "2026-07-03T12:00:00Z",
+  "original_notification_datetime": "2026-07-03T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-08-14T12:00:00Z",
+  "page_modified_datetime": "2026-07-03T14:49:22+10:00",
+  "consultation_response_due_date": "2026-07-10T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "PH MEDICAL CENTRES PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "84 615 268 043"
+    }
+  ],
+  "targets": [
+    {
+      "name": "Ryan Plaza Medical Services Pty Ltd",
+      "identifier_type": "ACN",
+      "identifier": "067 705 220"
+    }
+  ],
+  "other_parties": [
+    {
+      "name": "PARTNERED HEALTH PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "41 164 892 924"
+    }
+  ],
+  "anzsic_codes": [
+    {
+      "code": "8511",
+      "name": "General Practice Medical Services"
+    }
+  ],
+  "merger_description": "PH Medical Centres Pty Ltd (**Partnered Health**) proposes to acquire Ryan Plaza Medical Services Pty Ltd (**Ryan Plaza**) (the **Proposed Acquisition**).\n\nPartnered Health is part of the Partnered Health Group and an indirectly wholly-owned subsidiary of Partnered Health Pty Ltd (**PHPL**). The Partnered Health Group comprises two business divisions: the PH Primary Care Group and the Corporate Health and Wellbeing Group. PHPL is part of a larger group of companies which are majority owned by Quadrant Private Equity (**QPE**) through Quadrant Private Equity No. 6 (**QPE Fund 6**).\n\nPartnered Health together with other PHPL subsidiaries (**PH Primary Care Group**) provide primary care services through 67 general practice clinics and medical centres across Australia, engaging approximately 570 general practitioners. The PH Primary Care Group also operates skin cancer clinics, allied health providers (physiotherapy and dietetics) and TeleWell, a 24/7 telehealth platform.\n\nThe Partnered Health Group\u2019s Corporate Health and Wellbeing Group provides corporate and occupational healthcare services and solutions, including occupational health services, psychology and mental health services, nutritional services, onsite medical and emergency response and training solutions and services provided by physiotherapists, massage therapists, exercise physiologists, and dietitians\n\nRyan Plaza operates a single medical centre called \u201cMedicine on Second\u201d at Maroochydore, Queensland. Ryan Plaza provides primary care services through 11 general practitioners.",
+  "events": [
+    {
+      "date": "2026-07-03T12:00:00Z",
+      "title": "Questionnaire - Partnered Health-Ryan Plaza",
+      "display_title": "Questionnaire - Partnered Health-Ryan Plaza",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Partnered%20Health-Ryan%20Plaza_1.docx",
+      "url_gh": "/mergers/MN-15027/Questionnaire - Partnered Health-Ryan Plaza_1.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-07-03T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "WA-85022",
+      "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "PH MEDICAL CENTRES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "84 615 268 043"
+        }
+      ],
+      "targets": [
+        {
+          "name": "RIVERSTONE GP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "34 651 255 319"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-15012",
+      "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "OCHRE HEALTH PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "79 101 069 452"
+        }
+      ],
+      "targets": [
+        {
+          "name": "TELEGRAPH ROAD MEDICAL SERVICES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 107 416 080"
+        },
+        {
+          "name": "The Trustee for TELEGRAPH ROAD MEDICAL SERVICES UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "94 428 158 606"
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-01100",
+      "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Ochre Health Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "79 101 069 452"
+        },
+        {
+          "name": "Ochre Group Commercial Property Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "645 244 882"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Airlie Womens Clinic Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "55 603 753 395"
+        }
+      ]
+    }
+  ]
+}

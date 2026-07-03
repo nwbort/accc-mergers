@@ -141,6 +141,16 @@
       "effective_notification_datetime": "2026-07-01T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-07-10T12:00:00Z",
+      "merger_id": "MN-15027",
+      "merger_name": "Partnered Health - Ryan Plaza Medical Services",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-03T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-07-20T12:00:00Z",
@@ -503,6 +513,16 @@
     {
       "type": "determination_due",
       "event_type_display": "Determination due",
+      "date": "2026-08-14T12:00:00Z",
+      "merger_id": "MN-15027",
+      "merger_name": "Partnered Health - Ryan Plaza Medical Services",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-03T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
       "date": "2026-08-17T12:00:00Z",
       "merger_id": "MN-30003",
       "merger_name": "MicroStar Logistics - Konvoy",
@@ -511,6 +531,6 @@
       "effective_notification_datetime": "2026-02-20T12:00:00Z"
     }
   ],
-  "count": 51,
+  "count": 53,
   "days_ahead": 60
 }
