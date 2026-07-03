@@ -35,15 +35,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-50022",
-      "merger_name": "Service Stream \u2013 RiE",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "phase": "Phase 1",
-      "notification_date": "2026-06-11T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
       "is_waiver": false,
@@ -51,6 +42,15 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-14T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-50022",
+      "merger_name": "Service Stream \u2013 RiE",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-11T12:00:00Z",
+      "determination_date": "2026-07-03T12:00:00Z"
     },
     {
       "merger_id": "WA-15022",
@@ -219,12 +219,12 @@
   "phase_1_count": 5,
   "phase_2_count": 2,
   "waiver_count": 14,
-  "active_count": 3,
+  "active_count": 2,
   "phase_duration": {
-    "average_days": 48.8,
+    "average_days": 44.333333333333336,
     "median_days": 32,
-    "average_business_days": 32.8,
+    "average_business_days": 30.0,
     "median_business_days": 22,
-    "completed_count": 5
+    "completed_count": 6
   }
 }

@@ -1,13 +1,13 @@
 {
-  "total_mergers": 162,
+  "total_mergers": 163,
   "total_waivers": 250,
   "by_status": {
-    "Assessment completed": 122,
+    "Assessment completed": 123,
     "Under assessment": 39,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 120,
+    "Approved": 121,
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
@@ -15,21 +15,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 30.055118110236222,
+    "average_days": 29.9921875,
     "median_days": 26,
-    "average_business_days": 19.77952755905512,
+    "average_business_days": 19.75,
     "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 26,
-        "percentage": 20.5
+        "percentage": 20.3
       },
       "day20": {
-        "count": 95,
-        "percentage": 74.8
+        "count": 96,
+        "percentage": 75.0
       },
       "day30": {
-        "count": 121,
+        "count": 122,
         "percentage": 95.3
       }
     }
@@ -80,6 +80,14 @@
     {
       "merger_id": "MN-15027",
       "merger_name": "Partnered Health - Ryan Plaza Medical Services",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-03T12:00:00Z",
+      "is_waiver": false
+    },
+    {
+      "merger_id": "MN-80024",
+      "merger_name": "Allianz \u2013 certain assets of nib\u2019s Australian travel insurance business",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-03T12:00:00Z",
@@ -164,17 +172,19 @@
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-26T12:00:00Z",
       "is_waiver": false
-    },
-    {
-      "merger_id": "MN-01107",
-      "merger_name": "WSP / GEOTECHNICAL TESTING AND INTERPRETATION",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-26T12:00:00Z",
-      "is_waiver": false
     }
   ],
   "recent_determinations": [
+    {
+      "merger_id": "MN-50022",
+      "merger_name": "Service Stream \u2013 RiE",
+      "determination": "Approved",
+      "determination_date": "2026-07-03T12:00:00Z",
+      "page_modified_datetime": "2026-07-03T11:57:58+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
     {
       "merger_id": "MN-01072",
       "merger_name": "Saipem S.p.A - Subsea7 S.A.",
@@ -284,16 +294,6 @@
       "determination_type": "phase_transition",
       "is_waiver": false,
       "stage": "Phase 2 - detailed assessment"
-    },
-    {
-      "merger_id": "WA-80022",
-      "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
-      "determination": "Approved",
-      "determination_date": "2026-06-30T12:00:00Z",
-      "page_modified_datetime": "2026-06-30T16:50:31+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

@@ -1143,21 +1143,30 @@
         "merger_id": "MN-30020",
         "determination": "Approved",
         "in_progress": false
+      },
+      {
+        "notification_date": "2026-06-11",
+        "business_days": 16,
+        "calendar_days": 22,
+        "merger_name": "Service Stream \u2013 RiE",
+        "merger_id": "MN-50022",
+        "determination": "Approved",
+        "in_progress": false
       }
     ],
     "stats": {
       "average": 18.8,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 122
+      "count": 123
     },
     "calendar_stats": {
-      "average": 28.7,
-      "median": 26.0,
+      "average": 28.6,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 122
+      "count": 123
     }
   },
   "waiver_duration": {
@@ -3203,7 +3212,7 @@
       26,
       33,
       36,
-      4
+      5
     ],
     "waivers": [
       0,
@@ -3223,11 +3232,11 @@
     {
       "code": "S",
       "name": "Other Services",
-      "average_business_days": 32.8,
-      "median_business_days": 22,
-      "average_calendar_days": 48.8,
-      "median_calendar_days": 32,
-      "count": 5
+      "average_business_days": 30.0,
+      "median_business_days": 19.0,
+      "average_calendar_days": 44.3,
+      "median_calendar_days": 28.0,
+      "count": 6
     },
     {
       "code": "G",
