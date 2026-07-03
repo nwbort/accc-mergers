@@ -290,11 +290,10 @@ function Analysis() {
 
   // --- Industry Phase 1 Duration Comparison ---
   const industryDurationField = calendarDays ? 'average_calendar_days' : 'average_business_days';
-  // Chart.js renders index 0 at the top of a horizontal bar chart, so keep
-  // the backend's descending order to put the longest durations at the top.
   const industryDurations = industry_phase1_duration || [];
 
-  // "Overall" reference bar, pinned to the top, covering every industry.
+  // "Overall" reference bar, covering every industry, slotted in by value
+  // alongside the rest rather than pinned to an end.
   const overallEntry = phase1_duration.stats.average != null ? {
     code: null,
     name: 'Overall',
@@ -305,7 +304,12 @@ function Analysis() {
     count: phase1_duration.stats.count,
   } : null;
 
-  const industryChartRows = overallEntry ? [overallEntry, ...industryDurations] : industryDurations;
+  // Chart.js renders index 0 at the top of a horizontal bar chart, so sort
+  // descending by the currently displayed metric to put the longest
+  // durations at the top.
+  const industryChartRows = (overallEntry ? [...industryDurations, overallEntry] : industryDurations)
+    .slice()
+    .sort((a, b) => b[industryDurationField] - a[industryDurationField]);
 
   const industryDurationData = {
     labels: industryChartRows.map(d => d.name),
