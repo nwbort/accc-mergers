@@ -3218,5 +3218,169 @@
       30,
       0
     ]
-  }
+  },
+  "industry_phase1_duration": [
+    {
+      "code": "S",
+      "name": "Other Services",
+      "average_business_days": 32.8,
+      "median_business_days": 22,
+      "average_calendar_days": 48.8,
+      "median_calendar_days": 32,
+      "count": 5
+    },
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "average_business_days": 26.4,
+      "median_business_days": 18.5,
+      "average_calendar_days": 42.8,
+      "median_calendar_days": 28.5,
+      "count": 12
+    },
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "average_business_days": 22.4,
+      "median_business_days": 18.0,
+      "average_calendar_days": 36.0,
+      "median_calendar_days": 28.0,
+      "count": 20
+    },
+    {
+      "code": "I",
+      "name": "Transport, Postal and Warehousing",
+      "average_business_days": 22.4,
+      "median_business_days": 22,
+      "average_calendar_days": 32.9,
+      "median_calendar_days": 30,
+      "count": 9
+    },
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "average_business_days": 21.5,
+      "median_business_days": 18.0,
+      "average_calendar_days": 33.3,
+      "median_calendar_days": 27.0,
+      "count": 30
+    },
+    {
+      "code": "L",
+      "name": "Rental, Hiring and Real Estate Services",
+      "average_business_days": 20.7,
+      "median_business_days": 19,
+      "average_calendar_days": 32.1,
+      "median_calendar_days": 29,
+      "count": 11
+    },
+    {
+      "code": "B",
+      "name": "Mining",
+      "average_business_days": 20.6,
+      "median_business_days": 17,
+      "average_calendar_days": 30.2,
+      "median_calendar_days": 26,
+      "count": 5
+    },
+    {
+      "code": "O",
+      "name": "Public Administration and Safety",
+      "average_business_days": 20.0,
+      "median_business_days": 20,
+      "average_calendar_days": 29.0,
+      "median_calendar_days": 29,
+      "count": 1
+    },
+    {
+      "code": "J",
+      "name": "Information Media and Telecommunications",
+      "average_business_days": 19.8,
+      "median_business_days": 18.0,
+      "average_calendar_days": 31.3,
+      "median_calendar_days": 28.0,
+      "count": 18
+    },
+    {
+      "code": "E",
+      "name": "Construction",
+      "average_business_days": 19.6,
+      "median_business_days": 16.0,
+      "average_calendar_days": 28.5,
+      "median_calendar_days": 22.5,
+      "count": 8
+    },
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "average_business_days": 19.5,
+      "median_business_days": 16,
+      "average_calendar_days": 28.7,
+      "median_calendar_days": 24,
+      "count": 21
+    },
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "average_business_days": 19.3,
+      "median_business_days": 17.5,
+      "average_calendar_days": 29.5,
+      "median_calendar_days": 26.0,
+      "count": 36
+    },
+    {
+      "code": "D",
+      "name": "Electricity, Gas, Water and Waste Services",
+      "average_business_days": 18.7,
+      "median_business_days": 20,
+      "average_calendar_days": 26.3,
+      "median_calendar_days": 28,
+      "count": 3
+    },
+    {
+      "code": "R",
+      "name": "Arts and Recreation Services",
+      "average_business_days": 18.0,
+      "median_business_days": 18.0,
+      "average_calendar_days": 26.0,
+      "median_calendar_days": 26.0,
+      "count": 2
+    },
+    {
+      "code": "A",
+      "name": "Agriculture, Forestry and Fishing",
+      "average_business_days": 17.8,
+      "median_business_days": 18.0,
+      "average_calendar_days": 26.0,
+      "median_calendar_days": 27.0,
+      "count": 4
+    },
+    {
+      "code": "N",
+      "name": "Administrative and Support Services",
+      "average_business_days": 17.5,
+      "median_business_days": 17.5,
+      "average_calendar_days": 26.5,
+      "median_calendar_days": 26.5,
+      "count": 2
+    },
+    {
+      "code": "H",
+      "name": "Accommodation and Food Services",
+      "average_business_days": 16.8,
+      "median_business_days": 16,
+      "average_calendar_days": 24.6,
+      "median_calendar_days": 24,
+      "count": 5
+    },
+    {
+      "code": "Q",
+      "name": "Health Care and Social Assistance",
+      "average_business_days": 16.0,
+      "median_business_days": 15.0,
+      "average_calendar_days": 24.7,
+      "median_calendar_days": 24.5,
+      "count": 10
+    }
+  ]
 }

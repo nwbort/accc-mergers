@@ -16,6 +16,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
+import { industryPath } from '../utils/slug';
 
 ChartJS.register(
   CategoryScale,
@@ -55,7 +56,7 @@ function Analysis() {
   if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
   if (!data) return null;
 
-  const { phase1_duration, waiver_duration, monthly_volume } = data;
+  const { phase1_duration, waiver_duration, monthly_volume, industry_phase1_duration } = data;
   const phase1Stats = calendarDays ? phase1_duration.calendar_stats : phase1_duration.stats;
   const waiverStats = calendarDays ? waiver_duration.calendar_stats : waiver_duration.stats;
 
@@ -287,6 +288,95 @@ function Analysis() {
     },
   };
 
+  // --- Industry Phase 1 Duration Comparison ---
+  const industryDurationField = calendarDays ? 'average_calendar_days' : 'average_business_days';
+  const industryDurations = industry_phase1_duration || [];
+
+  // "Overall" reference bar, covering every industry, slotted in by value
+  // alongside the rest rather than pinned to an end.
+  const overallEntry = phase1_duration.stats.average != null ? {
+    code: null,
+    name: 'Overall',
+    average_business_days: phase1_duration.stats.average,
+    median_business_days: phase1_duration.stats.median,
+    average_calendar_days: phase1_duration.calendar_stats.average,
+    median_calendar_days: phase1_duration.calendar_stats.median,
+    count: phase1_duration.stats.count,
+  } : null;
+
+  // Chart.js renders index 0 at the top of a horizontal bar chart, so sort
+  // descending by the currently displayed metric to put the longest
+  // durations at the top.
+  const industryChartRows = (overallEntry ? [...industryDurations, overallEntry] : industryDurations)
+    .slice()
+    .sort((a, b) => b[industryDurationField] - a[industryDurationField]);
+
+  const industryDurationData = {
+    labels: industryChartRows.map(d => d.name),
+    datasets: [
+      {
+        label: `Avg phase 1 duration (${dayLabel})`,
+        data: industryChartRows.map(d => d[industryDurationField]),
+        backgroundColor: industryChartRows.map(d => d.code === null ? COLORS.accent : COLORS.primary),
+        borderRadius: 4,
+        maxBarThickness: 22,
+      },
+    ],
+  };
+
+  const handleIndustryChartClick = (event, elements) => {
+    if (elements.length > 0) {
+      const { index } = elements[0];
+      const industry = industryChartRows[index];
+      if (industry && industry.code !== null) {
+        navigate(industryPath(industry.code, industry.name));
+      }
+    }
+  };
+
+  const industryDurationOptions = {
+    indexAxis: 'y',
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: false,
+    onClick: handleIndustryChartClick,
+    onHover: (event, elements) => {
+      event.native.target.style.cursor = elements.length > 0 ? 'pointer' : 'default';
+    },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: (item) => {
+            const d = industryChartRows[item.dataIndex];
+            return [
+              `Avg: ${d.average_business_days} business days (${d.average_calendar_days} calendar)`,
+              `Median: ${d.median_business_days} business days (${d.median_calendar_days} calendar)`,
+              `${d.count} completed review${d.count === 1 ? '' : 's'}`,
+            ];
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        beginAtZero: true,
+        title: {
+          display: true,
+          text: calendarDays ? 'Average calendar days' : 'Average business days',
+          font: { size: 12, family: 'Inter, sans-serif' },
+          color: '#6b7280',
+        },
+        grid: { color: 'rgba(0,0,0,0.04)' },
+        ticks: { font: { size: 11 } },
+      },
+      y: {
+        grid: { display: false },
+        ticks: { font: { size: 11 } },
+      },
+    },
+  };
+
   return (
     <>
       <SEO
@@ -389,6 +479,25 @@ function Analysis() {
             </div>
           </div>
         </div>
+
+        {/* Industry Phase 1 Duration Comparison */}
+        {industryDurations.length > 0 && (
+          <section className="mb-8">
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+              <div className="px-6 py-5 border-b border-gray-100">
+                <h2 className="text-lg font-semibold text-gray-900">Phase 1 duration by industry</h2>
+                <p className="text-sm text-gray-500 mt-0.5">
+                  Average phase 1 duration for completed reviews, by top-level industry. Click a bar to view that industry.
+                </p>
+              </div>
+              <div className="p-6">
+                <div style={{ height: `${Math.max(320, industryChartRows.length * 32)}px` }}>
+                  <Bar data={industryDurationData} options={industryDurationOptions} />
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Phase 1 Duration Analysis */}
         <section className="mb-8">
