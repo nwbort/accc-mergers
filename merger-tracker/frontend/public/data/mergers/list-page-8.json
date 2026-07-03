@@ -1301,6 +1301,54 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/redwood-services-group-%E2%80%93-newtrend-it-specialists"
     },
     {
+      "merger_id": "WA-90021",
+      "merger_name": "EY Australia - Australian EY Fusion business",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-09T12:00:00Z",
+      "determination_publication_date": "2026-07-03T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "ERNST & YOUNG",
+          "identifier_type": "ABN",
+          "identifier": "75 288 172 749"
+        }
+      ],
+      "targets": [
+        {
+          "name": "EY BUSINESS SOLUTIONS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "35 122 885 465"
+        },
+        {
+          "name": "EY IDENTITY PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "64 007 086 348"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "AP Fusion LP Limited Partnership",
+          "identifier_type": null,
+          "identifier": ""
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6962",
+          "name": "Management Advice and Related Consulting Services"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ey-australia-australian-ey-fusion-business"
+    },
+    {
       "merger_id": "WA-15025",
       "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
       "status": "Assessment completed",
@@ -2597,54 +2645,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/akzonobel-axalta"
-    },
-    {
-      "merger_id": "MN-40027",
-      "merger_name": "Sika AG - Akkim",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-25T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-06T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Sika AG",
-          "identifier_type": null,
-          "identifier": "CHE106.919.184"
-        }
-      ],
-      "targets": [
-        {
-          "name": "Akkim Europe SRL",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Akfix Kimya Lojistik Hizmetleri Limited \u015eirketi",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Akde Kimya Sanayi ve Ticaret Anonim \u015eirketi",
-          "identifier_type": null,
-          "identifier": ""
-        },
-        {
-          "name": "Akkim Yapi Kimyasallari Sanayi ve Ticaret Anonim \u015eirketi",
-          "identifier_type": null,
-          "identifier": ""
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "1915",
-          "name": "Adhesive Manufacturing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sika-ag-akkim"
     }
   ],
   "page": 8,

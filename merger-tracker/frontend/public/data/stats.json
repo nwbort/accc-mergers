@@ -1,6 +1,6 @@
 {
   "total_mergers": 163,
-  "total_waivers": 252,
+  "total_waivers": 253,
   "by_status": {
     "Assessment completed": 123,
     "Under assessment": 39,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 238,
+    "Approved": 239,
     "Not approved": 14
   },
   "phase_duration": {
@@ -41,7 +41,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 42
+      "count": 43
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -176,6 +176,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-90021",
+      "merger_name": "EY Australia - Australian EY Fusion business",
+      "determination": "Approved",
+      "determination_date": "2026-07-03T12:00:00Z",
+      "page_modified_datetime": "2026-07-03T17:04:24+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-55026",
       "merger_name": "Vets Central - Gold Coast Veterinary Surgery",
       "determination": "Approved",
@@ -284,16 +294,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-50019",
-      "merger_name": "Coles \u2013 supermarket site in Lidcombe (NSW)",
-      "determination": "Approved",
-      "determination_date": "2026-07-01T12:00:00Z",
-      "page_modified_datetime": "2026-07-01T17:59:10+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }
