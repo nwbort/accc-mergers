@@ -18979,14 +18979,9 @@
     "original_notification_datetime": "2026-06-26T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-08-07T12:00:00Z",
-    "page_modified_datetime": "2026-06-29T14:03:06+10:00",
+    "page_modified_datetime": "2026-07-03T16:02:23+10:00",
     "consultation_response_due_date": "2026-07-03T12:00:00Z",
     "acquirers": [
-      {
-        "name": "Wave Merger Sub, Inc.",
-        "identifier_type": null,
-        "identifier": "Delaware File Number  10631976"
-      },
       {
         "name": "OpenAI Group PBC",
         "identifier_type": null,
@@ -18996,6 +18991,11 @@
         "name": "Wave Merger Sub II, LLC",
         "identifier_type": null,
         "identifier": "Delaware File Number  7007085"
+      },
+      {
+        "name": "Wave Merger Sub, Inc.",
+        "identifier_type": null,
+        "identifier": "Delaware File Number  10631976"
       }
     ],
     "targets": [
@@ -19007,14 +19007,14 @@
     ],
     "other_parties": [
       {
-        "name": "Gitpod GmbH",
-        "identifier_type": null,
-        "identifier": "HRB  22228"
-      },
-      {
         "name": "OpenAI Foundation",
         "identifier_type": null,
         "identifier": "Delaware File Number  5902936"
+      },
+      {
+        "name": "Gitpod GmbH",
+        "identifier_type": null,
+        "identifier": "HRB  22228"
       }
     ],
     "anzsic_codes": [
@@ -19035,7 +19035,7 @@
         "display_title": "OpenAI - Ona - Phase 1 Questionnaire",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/OpenAI%20-%20Ona%20-%20Phase%201%20questionnaire.docx",
         "url_gh": "/mergers/MN-90020/OpenAI - Ona - Phase 1 questionnaire.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-06-26T12:00:00Z",
@@ -34312,6 +34312,91 @@
     "is_waiver": true
   },
   {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-gold-coast-veterinary-surgery",
+    "merger_name": "Vets Central - Gold Coast Veterinary Surgery",
+    "status": "Assessment completed",
+    "merger_id": "WA-55026",
+    "effective_notification_datetime": "2026-06-23T12:00:00Z",
+    "original_notification_datetime": "2026-06-23T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-07-03T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-07-03T16:54:25+10:00",
+    "acquirers": [
+      {
+        "name": "VC OPERATIONS (WA) PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "28 646 499 005"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Ingwe Consulting Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "83 121 308 503"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "VETS CENTRAL HOLDINGS PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "60 652 812 256"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "6970",
+        "name": "Veterinary Services"
+      },
+      {
+        "code": "9539",
+        "name": "Other Personal Services n.e.c."
+      }
+    ],
+    "merger_description": "VC Operations (WA) Pty Ltd (together, with its subsidiaries, **Vets Central**), proposes to acquire 100% of the shares on issue in Ingwe Consulting Pty Ltd (**Gold Coast Veterinary Surgery**) from Kevin Mark Cruickshank and Fiona Jane Cruickshank as trustees for the Feekev Family Trust and Fiona Jane Cruickshank and Kevin Mark Cruickshank individually.\n\nVets Central is an Australian-owned veterinary group that owns and operates 82 first opinion veterinary practices across Australia and New Zealand. In Australia, Vets Central\u2019s practices provide core and ancillary veterinary services, for household pets as well as livestock, and other exotic species. The services primarily include routine, planned, and emergency veterinary services (excluding after-hours services).\n\nThe Gold Coast Veterinary Surgery is a full-service veterinary practice in the Surfers Paradise area of Queensland. The business provides a range of first opinion core and ancillary veterinary services for household pets (extending to exotic pets) in the local area.",
+    "events": [
+      {
+        "date": "2026-07-03T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Vets%20Central%20-%20Gold%20Coast%20Veterinary%20Surgery%20%28WA-55026%29%20-%20Notification%20waiver%20determination%20-%203%20July%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "VC Operations (WA) Pty Ltd, a wholly owned subsidiary of Vets\nCentral Holdings Pty Ltd (together, with its subsidiaries, Vets\nCentral) applied for a notification waiver in respect of its proposed\nacquisition of 100% of the share capital in Ingwe Consulting Pty Ltd\n(Gold Coast Veterinary Surgery), as described in the transaction\ndocuments provided as part of the application (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "3 July 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "Vets Central is an Australian owned veterinary group that owns and\noperates 82 first opinion veterinary practices across Australia and\nNew Zealand. In Australia, Vets Central\u2019s practices provide core and\nancillary veterinary services, for household pets as well as livestock,\nand other exotic species. The services primarily include routine,\nplanned, and emergency veterinary services (excluding after-hours\nservices). Vets Central currently operates 18 veterinary clinics in\nQueensland.\nGold Coast Veterinary Surgery a full-service veterinary practice in the\nSurfers Paradise area of Queensland. The business provides a range\nof first opinion core and ancillary veterinary services for household\npets (extending to exotic pets) in the local area."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap between Vets Central and Gold\nCoast Veterinary Surgery in the supply of veterinary services\nin the Surfers Paradise area and a small horizontal overlap\nby number of clinics in Queensland\nb. there are alternative suppliers of veterinary services in the\nSurfers Paradise area and more broadly at the Queensland\nand national level.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-55026/Vets Central - Gold Coast Veterinary Surgery (WA-55026) - Notification waiver determination - 3 July 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-06-23T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/regroup-%E2%80%93-scouts-queensland-recycling-centre-site",
     "merger_name": "Re.Group \u2013 Scouts Queensland Recycling Centre Site",
     "status": "Assessment completed",
@@ -41953,6 +42038,92 @@
       },
       {
         "date": "2026-06-04T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/freedom-fuels-%E2%80%93-rennic",
+    "merger_name": "Freedom Fuels \u2013 Rennic",
+    "status": "Assessment completed",
+    "merger_id": "WA-85034",
+    "effective_notification_datetime": "2026-06-08T12:00:00Z",
+    "original_notification_datetime": "2026-06-08T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-07-03T12:00:00Z",
+    "accc_determination": "Approved",
+    "page_modified_datetime": "2026-07-03T16:50:25+10:00",
+    "acquirers": [
+      {
+        "name": "FREEDOM FUELS AUSTRALIA PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "49 093 244 761"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Rennic Pty Ltd",
+        "identifier_type": "ABN",
+        "identifier": "28 124 280 173"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "TRINITY PETROLEUM SERVICES PTY. LTD.",
+        "identifier_type": "ABN",
+        "identifier": "52 010 708 102"
+      },
+      {
+        "name": "Idemitsu Kosan Co. Ltd",
+        "identifier_type": null,
+        "identifier": ""
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "4000",
+        "name": "Fuel Retailing"
+      }
+    ],
+    "merger_description": "Freedom Fuels Australia Pty Ltd (**Freedom Fuels**) is a small to medium sized, independent fuel business that operates across the fuel wholesale, fuel distribution and fuel retail markets in Eastern Australia. Freedom Fuels is wholly owned by Idemitsu Kosan Co. Ltd \u2013 a Japanese energy company.\n\nTogether with its sister company Trinity Petroleum Services Pty Ltd, Freedom Fuels operates 54 fuel retail sites in total \u2013 52 in Queensland and two in the Northern Rivers Region of NSW (located in Kingscliff and Terranora). Freedom Fuels also operates a fuel wholesale business in Queensland, NSW and Victoria.\n\nRennic Pty Ltd (**Rennic**) is a small, independent fuel business that has been divesting its fuel retail sites in recent years. Rennic's sole remaining fuel retail site is located in Armidale NSW, which operates under a trademark registered to Rennic ('Connetic').\n\nFreedom Fuels proposes to acquire the operating rights and equipment for the sole remaining 'Connetic' fuel retail site operated by Rennic in Armidale NSW pursuant to a business sale agreement.",
+    "events": [
+      {
+        "date": "2026-07-03T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Freedom%20Fuels%20%E2%80%93%20Rennic%20%28WA-85034%29%20-%20Notification%20waiver%20determination%20-%203%20July%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Freedom Fuels Australia Pty Ltd (Freedom Fuels) applied for a\nnotification waiver in respect of its proposed acquisition of the\noperating rights and equipment for the 'Connetic' fuel retail site\noperated by Rennic Pty Ltd (Rennic) in Armidale, NSW, as described\nin the transaction documents provided as part of the application (the\nAcquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "3 July 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, Freedom Fuels, is a small to medium sized,\nindependent fuel business that operates across the fuel wholesale,\nfuel distribution and fuel retail markets in Eastern Australia. Freedom\nFuels is wholly owned by Idemitsu Kosan Co. Ltd \u2013 a Japanese\nenergy company.\nTogether with its sister company Trinity Petroleum Services Pty Ltd,\nFreedom Fuels operates 54 fuel retail sites in total \u2013 52 in\nQueensland and two in the Northern Rivers Region of NSW (located\nin Kingscliff and Terranora). Freedom Fuels also operates a fuel\nwholesale business in Queensland, NSW and Victoria.\nThe vendor, Rennic, is a small, independent fuel business that has\nbeen divesting its fuel retail sites in recent years. Rennic's sole\nremaining fuel retail site is located in Armidale NSW, which operates\nunder a trademark registered to Rennic ('Connetic').\nFreedom Fuels has previously been a wholesale supplier of fuel to\nthe Connetic retail fuel site in Armidale."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is no horizontal overlap between Freedom Fuels and\nthe target in the retail supply of fuel in Armidale or the\nsurrounding area\nb. there are alternative retail suppliers of fuel to customers in\nArmidale and the surrounding area\nc. there appears to be a low risk of foreclosure or other\nconcerning vertical effects resulting from exclusionary\nconduct post-acquisition.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-85034/Freedom Fuels \u2013 Rennic (WA-85034) - Notification waiver determination - 3 July 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-06-08T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }

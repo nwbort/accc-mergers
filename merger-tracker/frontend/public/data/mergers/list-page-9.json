@@ -1,6 +1,124 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-80021",
+      "merger_name": "INNIO Group \u2013 Enerflex",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-25T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-06T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "INNIO Holding GmbH",
+          "identifier_type": null,
+          "identifier": "HRB 305810"
+        }
+      ],
+      "targets": [
+        {
+          "name": "ENERFLEX SERVICE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "85 063 267 238"
+        },
+        {
+          "name": "ENERFLEX SERVICE PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "85 063 267 238"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Enerflex Ltd",
+          "identifier_type": null,
+          "identifier": "7748116"
+        },
+        {
+          "name": "Enerflex Ltd",
+          "identifier_type": null,
+          "identifier": "7748116"
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3299",
+          "name": "Other Construction Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/innio-group-%E2%80%93-enerflex-0"
+    },
+    {
+      "merger_id": "MN-01106",
+      "merger_name": "Midea - Residentia Group",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-26T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-07T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Midea Electric Trading (Singapore) Co. Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "Singapore identifying number (UEN): 200800970G"
+        }
+      ],
+      "targets": [
+        {
+          "name": "RESIDENTIA IP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "92 666 876 964"
+        },
+        {
+          "name": "RESIDENTIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "17 618 920 059",
+          "canonical": {
+            "id": "residentia-group-pty-ltd",
+            "name": "Residentia Group Pty Ltd"
+          }
+        },
+        {
+          "name": "RESIDENTIA GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 600 546 656",
+          "canonical": {
+            "id": "residentia-group-pty-ltd",
+            "name": "Residentia Group Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Midea Group Co., Ltd.",
+          "identifier_type": null,
+          "identifier": "People\u2019s Republic of China identifying number: 91440606722473344C",
+          "canonical": {
+            "id": "midea-group-co-ltd",
+            "name": "Midea Group Co., Ltd."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2441",
+          "name": "Whiteware Appliance Manufacturing"
+        },
+        {
+          "code": "2449",
+          "name": "Other Domestic Appliance Manufacturing"
+        },
+        {
+          "code": "3494",
+          "name": "Other Electrical and Electronic Goods Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/midea-residentia-group"
+    },
+    {
       "merger_id": "MN-01107",
       "merger_name": "WSP / GEOTECHNICAL TESTING AND INTERPRETATION",
       "status": "Under assessment",
@@ -68,11 +186,6 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Wave Merger Sub, Inc.",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  10631976"
-        },
-        {
           "name": "OpenAI Group PBC",
           "identifier_type": null,
           "identifier": "Delaware File Number  10381551"
@@ -81,6 +194,11 @@
           "name": "Wave Merger Sub II, LLC",
           "identifier_type": null,
           "identifier": "Delaware File Number  7007085"
+        },
+        {
+          "name": "Wave Merger Sub, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  10631976"
         }
       ],
       "targets": [
@@ -96,6 +214,11 @@
       ],
       "other_parties": [
         {
+          "name": "OpenAI Foundation",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  5902936"
+        },
+        {
           "name": "Gitpod GmbH",
           "identifier_type": null,
           "identifier": "HRB  22228",
@@ -103,11 +226,6 @@
             "id": "gitpod-gmbh",
             "name": "Gitpod GmbH"
           }
-        },
-        {
-          "name": "OpenAI Foundation",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  5902936"
         }
       ],
       "anzsic_codes": [

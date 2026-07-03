@@ -55,7 +55,7 @@
       "code": "697",
       "name": "Veterinary Services",
       "level": "group",
-      "merger_count": 9
+      "merger_count": 10
     },
     {
       "code": "699",
@@ -127,6 +127,15 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-14T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-55026",
+      "merger_name": "Vets Central - Gold Coast Veterinary Surgery",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-23T12:00:00Z",
+      "determination_date": "2026-07-03T12:00:00Z"
     },
     {
       "merger_id": "WA-35025",
@@ -570,10 +579,10 @@
       "determination_date": "2026-01-13T12:00:00Z"
     }
   ],
-  "count": 56,
+  "count": 57,
   "phase_1_count": 22,
   "phase_2_count": 2,
-  "waiver_count": 32,
+  "waiver_count": 33,
   "active_count": 7,
   "phase_duration": {
     "average_days": 35.73684210526316,

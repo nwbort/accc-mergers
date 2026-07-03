@@ -15,7 +15,7 @@
       "code": "40",
       "name": "Fuel Retailing",
       "level": "subdivision",
-      "merger_count": 4
+      "merger_count": 5
     },
     {
       "code": "41",
@@ -72,6 +72,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-21T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-85034",
+      "merger_name": "Freedom Fuels \u2013 Rennic",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-08T12:00:00Z",
+      "determination_date": "2026-07-03T12:00:00Z"
     },
     {
       "merger_id": "MN-01068",
@@ -452,10 +461,10 @@
       "determination_date": null
     }
   ],
-  "count": 46,
+  "count": 47,
   "phase_1_count": 13,
   "phase_2_count": 3,
-  "waiver_count": 30,
+  "waiver_count": 31,
   "active_count": 4,
   "phase_duration": {
     "average_days": 42.833333333333336,

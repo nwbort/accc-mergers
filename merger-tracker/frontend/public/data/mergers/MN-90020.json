@@ -7,14 +7,9 @@
   "original_notification_datetime": "2026-06-26T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-08-07T12:00:00Z",
-  "page_modified_datetime": "2026-06-29T14:03:06+10:00",
+  "page_modified_datetime": "2026-07-03T16:02:23+10:00",
   "consultation_response_due_date": "2026-07-03T12:00:00Z",
   "acquirers": [
-    {
-      "name": "Wave Merger Sub, Inc.",
-      "identifier_type": null,
-      "identifier": "Delaware File Number  10631976"
-    },
     {
       "name": "OpenAI Group PBC",
       "identifier_type": null,
@@ -24,6 +19,11 @@
       "name": "Wave Merger Sub II, LLC",
       "identifier_type": null,
       "identifier": "Delaware File Number  7007085"
+    },
+    {
+      "name": "Wave Merger Sub, Inc.",
+      "identifier_type": null,
+      "identifier": "Delaware File Number  10631976"
     }
   ],
   "targets": [
@@ -39,6 +39,11 @@
   ],
   "other_parties": [
     {
+      "name": "OpenAI Foundation",
+      "identifier_type": null,
+      "identifier": "Delaware File Number  5902936"
+    },
+    {
       "name": "Gitpod GmbH",
       "identifier_type": null,
       "identifier": "HRB  22228",
@@ -46,11 +51,6 @@
         "id": "gitpod-gmbh",
         "name": "Gitpod GmbH"
       }
-    },
-    {
-      "name": "OpenAI Foundation",
-      "identifier_type": null,
-      "identifier": "Delaware File Number  5902936"
     }
   ],
   "anzsic_codes": [
@@ -71,7 +71,7 @@
       "display_title": "OpenAI - Ona - Phase 1 Questionnaire",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/OpenAI%20-%20Ona%20-%20Phase%201%20questionnaire.docx",
       "url_gh": "/mergers/MN-90020/OpenAI - Ona - Phase 1 questionnaire.pdf",
-      "status": "live",
+      "status": "removed",
       "phase": "Phase 1"
     },
     {

@@ -1,6 +1,6 @@
 {
   "total_mergers": 163,
-  "total_waivers": 250,
+  "total_waivers": 252,
   "by_status": {
     "Assessment completed": 123,
     "Under assessment": 39,
@@ -11,7 +11,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 236,
+    "Approved": 238,
     "Not approved": 14
   },
   "phase_duration": {
@@ -176,6 +176,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-55026",
+      "merger_name": "Vets Central - Gold Coast Veterinary Surgery",
+      "determination": "Approved",
+      "determination_date": "2026-07-03T12:00:00Z",
+      "page_modified_datetime": "2026-07-03T16:54:25+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-85034",
+      "merger_name": "Freedom Fuels \u2013 Rennic",
+      "determination": "Approved",
+      "determination_date": "2026-07-03T12:00:00Z",
+      "page_modified_datetime": "2026-07-03T16:50:25+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-50022",
       "merger_name": "Service Stream \u2013 RiE",
       "determination": "Approved",
@@ -274,26 +294,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-25029",
-      "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
-      "determination": "Approved",
-      "determination_date": "2026-07-01T12:00:00Z",
-      "page_modified_datetime": "2026-07-01T17:52:03+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-90009",
-      "merger_name": "Trescal \u2013 TR Calibration",
-      "determination": "Referred to phase 2",
-      "determination_date": "2026-06-30T12:00:00Z",
-      "page_modified_datetime": "2026-07-03T13:31:12+10:00",
-      "determination_type": "phase_transition",
-      "is_waiver": false,
-      "stage": "Phase 2 - detailed assessment"
     }
   ]
 }
