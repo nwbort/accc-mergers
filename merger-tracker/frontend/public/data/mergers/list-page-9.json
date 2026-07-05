@@ -941,7 +941,11 @@
         {
           "name": "AWP Australia Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "52 097 227 177"
+          "identifier": "52 097 227 177",
+          "canonical": {
+            "id": "awp-australia-pty-ltd",
+            "name": "AWP Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -975,7 +979,11 @@
         {
           "name": "AWP Australia Holdings Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "75 097 227 211"
+          "identifier": "75 097 227 211",
+          "canonical": {
+            "id": "awp-australia-pty-ltd",
+            "name": "AWP Australia Pty Ltd"
+          }
         },
         {
           "name": "nib Holdings Ltd",
