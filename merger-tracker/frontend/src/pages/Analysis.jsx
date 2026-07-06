@@ -45,6 +45,34 @@ function formatMonthLabel(yyyymm) {
   return `${months[parseInt(month, 10) - 1]} ${year}`;
 }
 
+// ECDF of completed-matter durations: "X% of reviews conclude by day N".
+// Right-continuous — the cumulative percentage jumps at each distinct
+// duration and holds flat until the next one (Chart.js stepped: 'after').
+function computeEcdf(scatterData, dayField) {
+  const durations = scatterData
+    .filter(d => d.in_progress === false)
+    .map(d => d[dayField])
+    .sort((a, b) => a - b);
+
+  const total = durations.length;
+  if (total === 0) return [];
+
+  const points = [{ x: 0, y: 0, n: 0, total }];
+  let cumulative = 0;
+  let i = 0;
+  while (i < durations.length) {
+    const value = durations[i];
+    let count = 0;
+    while (i < durations.length && durations[i] === value) {
+      count += 1;
+      i += 1;
+    }
+    cumulative += count;
+    points.push({ x: value, y: Math.round((cumulative / total) * 1000) / 10, n: cumulative, total });
+  }
+  return points;
+}
+
 function Analysis() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.analysis, {
     cacheKey: 'analysis-data',
@@ -227,6 +255,103 @@ function Analysis() {
           font: { size: 12, family: 'Inter, sans-serif' },
           color: '#6b7280',
         },
+      },
+    },
+  };
+
+  // --- Phase 1 Duration ECDF ---
+  const ecdfPoints = computeEcdf(phase1_duration.scatter_data, dayField);
+  const ecdfMedian = phase1Stats.median;
+  const ecdfMaxX = ecdfPoints.length > 0
+    ? Math.max(ecdfPoints[ecdfPoints.length - 1].x, 30) + 2
+    : 30;
+
+  const phase1EcdfData = {
+    datasets: [
+      ...(!calendarDays ? [{
+        label: 'BD 30 deadline',
+        data: [{ x: 30, y: 0 }, { x: 30, y: 100 }],
+        borderColor: COLORS.accent,
+        borderDash: [6, 4],
+        borderWidth: 1.5,
+        pointRadius: 0,
+        showLine: true,
+      }] : []),
+      ...(ecdfMedian != null ? [{
+        label: `Median (${ecdfMedian} ${dayLabel})`,
+        data: [
+          { x: 0, y: 50 },
+          { x: ecdfMedian, y: 50 },
+          { x: ecdfMedian, y: 0 },
+        ],
+        borderColor: '#9ca3af',
+        borderDash: [4, 4],
+        borderWidth: 1.5,
+        pointRadius: 0,
+        showLine: true,
+      }] : []),
+      {
+        label: '% of reviews concluded',
+        data: ecdfPoints,
+        borderColor: COLORS.primary,
+        backgroundColor: COLORS.primary,
+        stepped: 'after',
+        borderWidth: 2,
+        pointRadius: 0,
+        pointHoverRadius: 5,
+        showLine: true,
+      },
+    ],
+  };
+
+  const phase1EcdfOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: false,
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: {
+          usePointStyle: true,
+          padding: 16,
+          font: { size: 12, family: 'Inter, sans-serif' },
+        },
+      },
+      tooltip: {
+        callbacks: {
+          label: (item) => {
+            if (item.dataset.label !== '% of reviews concluded') return item.dataset.label;
+            const { x, y, n, total } = item.raw;
+            return `by BD ${x}: ${y}% (${n} of ${total})`;
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        type: 'linear',
+        min: 0,
+        max: ecdfMaxX,
+        title: {
+          display: true,
+          text: calendarDays ? 'Calendar days' : 'Business days',
+          font: { size: 12, family: 'Inter, sans-serif' },
+          color: '#6b7280',
+        },
+        grid: { color: 'rgba(0,0,0,0.04)' },
+        ticks: { font: { size: 11 } },
+      },
+      y: {
+        min: 0,
+        max: 100,
+        title: {
+          display: true,
+          text: '% of reviews concluded',
+          font: { size: 12, family: 'Inter, sans-serif' },
+          color: '#6b7280',
+        },
+        grid: { color: 'rgba(0,0,0,0.04)' },
+        ticks: { font: { size: 11 }, callback: (value) => `${value}%` },
       },
     },
   };
@@ -515,6 +640,45 @@ function Analysis() {
             </div>
           </div>
         </section>
+
+        {/* Phase 1 Duration ECDF */}
+        {ecdfPoints.length > 0 && (
+          <section className="mb-8">
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+              <div className="px-6 py-5 border-b border-gray-100">
+                <h2 id="chart-phase1-ecdf-title" className="text-lg font-semibold text-gray-900">
+                  Phase 1 duration: share of reviews concluded
+                </h2>
+                <p className="text-sm text-gray-500 mt-0.5">
+                  What percentage of completed phase 1 reviews concluded by a given number of {dayLabel}.
+                </p>
+              </div>
+              <div className="p-6">
+                <div
+                  className="h-80"
+                  role="img"
+                  aria-labelledby="chart-phase1-ecdf-title"
+                  aria-describedby="chart-phase1-ecdf-summary"
+                >
+                  <Scatter data={phase1EcdfData} options={phase1EcdfOptions} />
+                </div>
+                <table id="chart-phase1-ecdf-summary" className="sr-only">
+                  <caption>Cumulative share of completed phase 1 reviews concluded by {dayLabel}</caption>
+                  <thead><tr><th>By {dayLabel === 'calendar days' ? 'calendar day' : 'business day'}</th><th>% concluded</th><th>Reviews concluded</th></tr></thead>
+                  <tbody>
+                    {ecdfPoints.filter(p => p.x > 0).map(p => (
+                      <tr key={p.x}>
+                        <td>{p.x}</td>
+                        <td>{p.y}%</td>
+                        <td>{p.n} of {p.total}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* Waiver Duration Analysis */}
         <section className="mb-8">
