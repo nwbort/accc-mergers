@@ -28,6 +28,7 @@ from static_data.outputs import (
     list as list_out,
     questionnaires,
     stats,
+    theories_of_harm,
     timeline,
     upcoming_events,
 )
@@ -1082,3 +1083,263 @@ class TestQuestionnairesGenerate:
         with open(tmp_path / 'questionnaires' / 'MN-0001.json') as f:
             data = json.load(f)
         assert 'all_questionnaires' not in data, "Removed event's questionnaire should be filtered out"
+
+
+# ---------------------------------------------------------------------------
+# theories_of_harm
+# ---------------------------------------------------------------------------
+#
+# Fixtures below are real "matters the ACCC intends to investigate" and NOCC
+# excerpts from the live dataset (Ampol/EG Australia MN-01019, Coles/Kalgoorlie
+# MN-01068, Kegstar/Konvoy MN-30003, IAG/RACI MN-65005, calibration services
+# MN-90009), trimmed to the sentences that exercise each category.
+
+def _phase2_matters_fixture():
+    return [
+        {
+            'merger_id': 'MN-90009',
+            'merger_name': 'Calibration Co acquires Rival Labs',
+            'events': [
+                {
+                    'title': 'Phase 2 Notice',
+                    'phase2_notice_matters_to_investigate': [
+                        {
+                            'heading': 'Competition effects in the supply of calibration services in certain testing domains',
+                            'items': [
+                                'The extent to which alternative suppliers would meaningfully constrain the merged entity post-Acquisition in the supply of calibration services in certain testing domains, taking into account factors such as their scope of accreditation, breadth of service offering, price and turnaround times, particularly in relation to the following testing domains: electrical, radiofrequency, torque and force.',
+                                'The likelihood of timely new entry and expansion to constrain the merged entity in the electrical, radiofrequency, torque and force testing domains.',
+                            ],
+                        },
+                        {
+                            'heading': 'Competition effects in the supply of calibration services to customers that require multiple calibration services across a range of testing domains',
+                            'items': [
+                                'The extent to which multiple suppliers could enter into arrangements that enable a single supplier from the group to offer all of their calibration services, across the range of their testing domains, to customers.',
+                            ],
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            'merger_id': 'MN-65005',
+            'merger_name': 'IAG acquires RACI',
+            'events': [
+                {
+                    'title': 'Phase 2 Notice',
+                    'phase2_notice_matters_to_investigate': [
+                        {
+                            'heading': 'Competitive effects in the retail supply of home and contents insurance in Western Australia',
+                            'items': [
+                                'The extent to which IAG and RACI compete closely in Western Australia, including in relation to price, coverage and other terms of the insurance product offering, customer service, claims handling and renewals.',
+                                'The competitive significance of RACI in Western Australia, and the likely future competitiveness of RACI absent the Acquisition (taking into account RACI’s position as a state-based organisation, capital adequacy requirements, and RACI’s ability to raise capital).',
+                                'The extent to which IAG would be in an enhanced position to foreclose or frustrate competing insurers’ access to repairers post-Acquisition.',
+                            ],
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            'merger_id': 'MN-30003',
+            'merger_name': 'MicroStar acquires Konvoy',
+            'events': [
+                {
+                    'title': 'Phase 2 Notice',
+                    'phase2_notice_matters_to_investigate': [
+                        {
+                            'heading': 'Competition effects in the supply of keg pooling services',
+                            'items': [
+                                'The extent to which customer countervailing power would provide a competitive constraint on MicroStar after the Acquisition. The likelihood of timely new entry if the Acquisition proceeds.',
+                            ],
+                        },
+                    ],
+                },
+            ],
+        },
+        {
+            'merger_id': 'MN-01019',
+            'merger_name': 'Ampol acquires EG Australia',
+            'events': [
+                {
+                    'title': 'Phase 2 Notice',
+                    'phase2_notice_matters_to_investigate': [
+                        {
+                            'heading': 'Relevant areas of competition',
+                            'items': [
+                                'The factors taken into account by fuel retailers when setting prices at retail sites, including the extent to which metropolitan-wide pricing movements are considered.',
+                                'The appropriate geographic dimensions of competition, including traffic routes and natural barriers in specific local areas and the extent to which consumers travel to purchase fuel.',
+                            ],
+                        },
+                    ],
+                },
+            ],
+        },
+    ]
+
+
+def _nocc_fixture():
+    return {
+        'MN-01019': {
+            'sections': [
+                {
+                    'number': '5',
+                    'title': 'Summary of preliminary competition concerns',
+                    'blocks': [
+                        {
+                            'number': '5.9',
+                            'type': 'paragraph',
+                            'text': (
+                                'In Canberra, which does not have petrol price cycles, the Acquisition '
+                                'would remove a direct competitor to Ampol and lead to Ampol becoming the '
+                                'largest fuel retailer in that metropolitan market. The ACCC’s preliminary '
+                                'assessment is that the Acquisition would have the effect, or likely effect, '
+                                'of substantially lessening competition in the retail supply of fuel in '
+                                'Canberra from coordinated effects becoming more likely, more complete '
+                                'and/or more sustainable across the remaining retailers. The ACCC is '
+                                'continuing to consider the potential for the Acquisition to give rise to '
+                                'unilateral effects in Canberra.'
+                            ),
+                        },
+                    ],
+                },
+            ],
+        },
+        'MN-65005': {
+            'sections': [
+                {
+                    'number': '5',
+                    'title': 'Summary of preliminary competition assessment',
+                    'blocks': [
+                        {
+                            'number': '5.35',
+                            'type': 'paragraph',
+                            'text': (
+                                'Barriers to entry and/or expansion applicable to the supply of motor '
+                                'insurance include significant capital requirements, high sunk costs, '
+                                'licensing timeframes, strict regulatory obligations, brand loyalty, and '
+                                'limited access to repair services networks and skilled employees.'
+                            ),
+                        },
+                        {
+                            'number': '5.48',
+                            'type': 'paragraph',
+                            'text': (
+                                'As such, the Acquisition could result in IAG gaining monopsony power in '
+                                'the acquisition of smash repair services in Western Australia and/or '
+                                'certain regions in Western Australia.'
+                            ),
+                        },
+                        {
+                            'type': 'bullet_list',
+                            'items': [
+                                'IAG is a strong and effective competitor in Western Australia.',
+                            ],
+                        },
+                    ],
+                },
+            ],
+        },
+    }
+
+
+class TestTheoriesOfHarmGenerate:
+    def test_returns_all_seven_categories(self):
+        payload = theories_of_harm.generate(_phase2_matters_fixture(), _nocc_fixture())
+        json.dumps(payload)
+        assert set(payload['categories']) == {
+            'horizontal_unilateral_effects', 'coordinated_effects', 'vertical_foreclosure',
+            'conglomerate_bundling', 'potential_nascent_competition', 'buyer_power', 'entry_barriers',
+        }
+
+    def test_horizontal_unilateral_effects_from_real_excerpts(self):
+        payload = theories_of_harm.generate(_phase2_matters_fixture(), {})
+        excerpts = {m['excerpt'] for m in payload['categories']['horizontal_unilateral_effects']['matters']}
+        assert any('meaningfully constrain the merged entity' in e for e in excerpts)
+        assert any('compete closely in Western Australia' in e for e in excerpts)
+
+    def test_coordinated_effects_from_real_nocc_excerpt(self):
+        payload = theories_of_harm.generate([], _nocc_fixture())
+        matters = payload['categories']['coordinated_effects']['matters']
+        assert len(matters) == 1
+        assert matters[0]['merger_id'] == 'MN-01019'
+        assert matters[0]['source'] == 'nocc'
+        assert 'coordinated effects' in matters[0]['excerpt'].lower()
+
+    def test_vertical_foreclosure_from_real_excerpts(self):
+        payload = theories_of_harm.generate(_phase2_matters_fixture(), {})
+        matters = payload['categories']['vertical_foreclosure']['matters']
+        assert any(m['merger_id'] == 'MN-65005' for m in matters)
+
+    def test_conglomerate_bundling_from_real_excerpt(self):
+        payload = theories_of_harm.generate(_phase2_matters_fixture(), {})
+        matters = payload['categories']['conglomerate_bundling']['matters']
+        assert len(matters) == 1
+        assert matters[0]['merger_id'] == 'MN-90009'
+        assert matters[0]['matched_phrase'] == 'single supplier'
+
+    def test_potential_nascent_competition_from_real_excerpt(self):
+        payload = theories_of_harm.generate(_phase2_matters_fixture(), {})
+        matters = payload['categories']['potential_nascent_competition']['matters']
+        assert any('future competitiveness of RACI' in m['excerpt'] for m in matters)
+
+    def test_buyer_power_from_real_excerpts(self):
+        payload = theories_of_harm.generate(_phase2_matters_fixture(), _nocc_fixture())
+        matters = payload['categories']['buyer_power']['matters']
+        merger_ids = {m['merger_id'] for m in matters}
+        assert 'MN-30003' in merger_ids  # "customer countervailing power" (phase2 matter)
+        assert 'MN-65005' in merger_ids  # "monopsony power" (NOCC)
+
+    def test_entry_barriers_from_real_excerpts(self):
+        payload = theories_of_harm.generate(_phase2_matters_fixture(), _nocc_fixture())
+        matters = payload['categories']['entry_barriers']['matters']
+        merger_ids = {m['merger_id'] for m in matters}
+        assert 'MN-90009' in merger_ids  # "timely new entry" (phase2 matter)
+        assert 'MN-65005' in merger_ids  # "Barriers to entry" (NOCC)
+
+    def test_unmatched_matter_goes_to_unclassified(self):
+        payload = theories_of_harm.generate(_phase2_matters_fixture(), {})
+        excerpts = {m['excerpt'] for m in payload['unclassified']['matters']}
+        assert any('metropolitan-wide pricing movements' in e for e in excerpts)
+
+    def test_natural_barriers_is_not_misclassified_as_entry_barrier(self):
+        # Guards against an overly-broad "barrier" keyword: this excerpt is
+        # about geographic/demand-side market definition, not barriers to
+        # entry for rival suppliers, so it must not land in entry_barriers.
+        payload = theories_of_harm.generate(_phase2_matters_fixture(), {})
+        entry_excerpts = {m['excerpt'] for m in payload['categories']['entry_barriers']['matters']}
+        assert not any('natural barriers' in e for e in entry_excerpts)
+        unclassified_excerpts = {m['excerpt'] for m in payload['unclassified']['matters']}
+        assert any('natural barriers' in e for e in unclassified_excerpts)
+
+    def test_every_matter_to_investigate_item_is_classified_or_unclassified(self):
+        mergers = _phase2_matters_fixture()
+        payload = theories_of_harm.generate(mergers, {})
+        raw_items = [
+            item
+            for m in mergers
+            for event in m['events']
+            for box in event['phase2_notice_matters_to_investigate']
+            for item in box['items']
+        ]
+        classified_excerpts = {
+            m['excerpt']
+            for cat in payload['categories'].values()
+            for m in cat['matters']
+        }
+        unclassified_excerpts = {m['excerpt'] for m in payload['unclassified']['matters']}
+        assert not (classified_excerpts & unclassified_excerpts)
+        for item in raw_items:
+            assert item in classified_excerpts or item in unclassified_excerpts
+
+    def test_nocc_text_with_no_keyword_match_is_simply_omitted(self):
+        # Unlike phase2 matters, NOCC prose has no enumerable "one entry per
+        # matter" structure, so non-matching text isn't tracked anywhere
+        # (there's no NOCC-side unclassified bucket).
+        payload = theories_of_harm.generate([], _nocc_fixture())
+        all_excerpts = {
+            m['excerpt']
+            for cat in payload['categories'].values()
+            for m in cat['matters']
+        }
+        assert not any('strong and effective competitor' in e for e in all_excerpts)
+        assert payload['unclassified']['matters'] == []

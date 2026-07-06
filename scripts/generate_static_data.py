@@ -22,6 +22,7 @@ Output files:
   - commentary.json             - Mergers with user commentary
   - analysis.json               - Pre-computed analysis data
   - serial-acquirers.json       - Serial-acquirer ("creeping acquisitions") detection
+  - theories_of_harm.json       - Keyword-classified theory-of-harm taxonomy
   - questionnaires/{id}.json    - Lazy-loaded questionnaire files
   - noccs/{id}.json             - Lazy-loaded NOCC summary files
 """
@@ -57,6 +58,7 @@ from static_data.outputs import (
     questionnaires,
     serial_acquirers,
     stats,
+    theories_of_harm,
     timeline,
     upcoming_events,
 )
@@ -141,6 +143,7 @@ def main():
         ("commentary.json", commentary_out.generate(enriched, commentary)),
         ("analysis.json", analysis.generate(enriched)),
         ("serial-acquirers.json", serial_acquirers.generate(enriched)),
+        ("theories_of_harm.json", theories_of_harm.generate(enriched, nocc_data)),
     ]
     for filename, payload in single_file_outputs:
         out_path = OUTPUT_DIR / filename
