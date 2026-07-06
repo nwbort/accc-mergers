@@ -3,12 +3,12 @@
   "total_waivers": 256,
   "total_conditional_approvals": 1,
   "by_status": {
-    "Assessment completed": 123,
-    "Under assessment": 41,
+    "Assessment completed": 124,
+    "Under assessment": 40,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 121,
+    "Approved": 122,
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
@@ -16,21 +16,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.9921875,
-    "median_days": 26.0,
-    "average_business_days": 19.546875,
-    "median_business_days": 17.0,
+    "average_days": 29.968992248062015,
+    "median_days": 26,
+    "average_business_days": 19.54263565891473,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 33,
-        "percentage": 25.8
+        "percentage": 25.6
       },
       "day20": {
-        "count": 99,
-        "percentage": 77.3
+        "count": 100,
+        "percentage": 77.5
       },
       "day30": {
-        "count": 122,
+        "count": 123,
         "percentage": 95.3
       }
     }
@@ -207,6 +207,16 @@
       "stage": "Waiver application"
     },
     {
+      "merger_id": "MN-05025",
+      "merger_name": "Equans - CV Services Group",
+      "determination": "Approved",
+      "determination_date": "2026-07-06T12:00:00Z",
+      "page_modified_datetime": "2026-07-06T15:46:57+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-90021",
       "merger_name": "EY Australia - Australian EY Fusion business",
       "determination": "Approved",
@@ -282,16 +292,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-02T12:00:00Z",
       "page_modified_datetime": "2026-07-02T13:56:06+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-40020",
-      "merger_name": "Premier Fresh \u2013 Domenico Group",
-      "determination": "Approved",
-      "determination_date": "2026-07-01T12:00:00Z",
-      "page_modified_datetime": "2026-07-02T16:33:10+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

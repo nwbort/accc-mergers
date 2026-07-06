@@ -6628,13 +6628,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/equans-cv-services-group",
       "merger_name": "Equans - CV Services Group",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-05025",
       "effective_notification_datetime": "2026-06-09T12:00:00Z",
       "original_notification_datetime": "2026-06-09T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-06-18T11:37:08+10:00",
+      "determination_publication_date": "2026-07-06T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-06T15:46:57+10:00",
       "consultation_response_due_date": "2026-06-17T12:00:00Z",
       "acquirers": [
         {
@@ -6689,13 +6692,49 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-07-06T12:00:00Z",
+          "title": "Equans - CV Services Group",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Equans%20-%20CV%20Services%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Equans SAS (Equans) proposed to acquire 80% of the share capital of CV Services Group Pty Ltd (CV Services Group) either directly or through a wholly-owned subsidiary (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Equans, is a global energy and technical services company headquartered in France. In Australia, Equans operates through a local subsidiary, which supplies:\n\n• electrical and communications installation;\n\n• facility management services, including; o installation and maintenance of heating, ventilation and air conditioning (HVAC); and o fire protection products; and\n\n• audio-visual integration and digital signage.\n\nThe target, CV Services Group, is an Australian technical services company. It supplies:\n\n• infrastructure services;\n\n• electrical design, installation and construction;\n\n• facility management services; and\n\n• media and signage manufacturing and installation."
+            },
+            {
+              "item": "Overlap and relationship between the parties",
+              "details": "The parties overlap in the supply of:\n\n• electrical construction services;\n\n• facility management services; and\n\n• signage solutions.\n\nThe parties also have a limited vertical relationship in the supply of signage solutions for electrical construction services."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form, information from third parties, and publicly available information.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings.\n\n• Equans and CV Services Group do not appear to compete closely in the supply of electrical construction services, facility management services, or signage solutions in Australia.\n\n• Post-Acquisition, the merged entity will continue to face competition from multiple alternative suppliers."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-05025/Equans - CV Services - Phase 1 determination.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-07-06T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -89968,12 +90007,12 @@
     "total_waivers": 256,
     "total_conditional_approvals": 1,
     "by_status": {
-      "Assessment completed": 123,
-      "Under assessment": 41,
+      "Assessment completed": 124,
+      "Under assessment": 40,
       "Assessment ceased": 1
     },
     "by_determination": {
-      "Approved": 121,
+      "Approved": 122,
       "Referred to phase 2": 7
     },
     "by_waiver_determination": {
@@ -89981,21 +90020,21 @@
       "Not approved": 14
     },
     "phase_duration": {
-      "average_days": 29.9921875,
-      "median_days": 26.0,
-      "average_business_days": 19.546875,
-      "median_business_days": 17.0,
+      "average_days": 29.968992248062015,
+      "median_days": 26,
+      "average_business_days": 19.54263565891473,
+      "median_business_days": 17,
       "percentiles": {
         "day15": {
           "count": 33,
-          "percentage": 25.8
+          "percentage": 25.6
         },
         "day20": {
-          "count": 99,
-          "percentage": 77.3
+          "count": 100,
+          "percentage": 77.5
         },
         "day30": {
-          "count": 122,
+          "count": 123,
           "percentage": 95.3
         }
       }
@@ -90172,6 +90211,16 @@
         "stage": "Waiver application"
       },
       {
+        "merger_id": "MN-05025",
+        "merger_name": "Equans - CV Services Group",
+        "determination": "Approved",
+        "determination_date": "2026-07-06T12:00:00Z",
+        "page_modified_datetime": "2026-07-06T15:46:57+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "WA-90021",
         "merger_name": "EY Australia - Australian EY Fusion business",
         "determination": "Approved",
@@ -90247,16 +90296,6 @@
         "determination": "Approved",
         "determination_date": "2026-07-02T12:00:00Z",
         "page_modified_datetime": "2026-07-02T13:56:06+10:00",
-        "determination_type": "final",
-        "is_waiver": false,
-        "stage": "Phase 1 - initial assessment"
-      },
-      {
-        "merger_id": "MN-40020",
-        "merger_name": "Premier Fresh – Domenico Group",
-        "determination": "Approved",
-        "determination_date": "2026-07-01T12:00:00Z",
-        "page_modified_datetime": "2026-07-02T16:33:10+10:00",
         "determination_type": "final",
         "is_waiver": false,
         "stage": "Phase 1 - initial assessment"
