@@ -3,10 +3,17 @@
 from collections import defaultdict
 from statistics import median as stat_median
 
+from constants import merger_status
+
 from .. import anzsic
 from ..business_days import calculate_business_days, calculate_calendar_days
 from ..durations import collect_phase_1_durations, phase_1_end_date
 from ..filters import filter_notifications, filter_waivers
+
+# A Phase 1 window longer than this is an extension (e.g. public benefit
+# applications) rather than the standard 30-business-day clock, so it's
+# reported separately rather than folded into the "% of 30-day clock" stats.
+STANDARD_WINDOW_MAX_BD = 31
 
 
 def _division_for_code(code: str):
@@ -60,6 +67,80 @@ def industry_phase1_duration(mergers: list) -> list[dict]:
 
     results.sort(key=lambda x: -x['average_business_days'])
     return results
+
+
+def deadline_utilisation(mergers: list) -> dict:
+    """How much of the Phase 1 statutory clock the ACCC uses.
+
+    For every completed (non-referred) Phase 1 notification, measures
+    ``used_bd`` = business days from notification to the Phase 1 determination,
+    and, where ``end_of_determination_period`` is known, ``slack_bd`` = business
+    days remaining before the statutory deadline when the determination was
+    made. Matters whose window exceeds :data:`STANDARD_WINDOW_MAX_BD` (an
+    extension) are excluded from the histogram and stats and only counted via
+    ``extended_count``, since folding them in would distort the "% of 30-day
+    clock" framing.
+    """
+    used_days = []
+    slack_days = []  # only for standard-window matters with a known deadline
+    extended_count = 0
+
+    for m in filter_notifications(mergers):
+        det = m.get('phase_1_determination')
+        det_date = m.get('phase_1_determination_date')
+        start = m.get('effective_notification_datetime')
+        if not det or det == merger_status.REFERRED_TO_PHASE_2 or not det_date:
+            continue
+
+        used_bd = calculate_business_days(start, det_date)
+        if used_bd is None:
+            continue
+
+        deadline = m.get('end_of_determination_period')
+        window_bd = calculate_business_days(start, deadline) if deadline else None
+
+        if window_bd is not None and window_bd > STANDARD_WINDOW_MAX_BD:
+            extended_count += 1
+            continue
+
+        used_days.append(used_bd)
+        if window_bd is not None:
+            slack_days.append(window_bd - used_bd)
+
+    histogram = defaultdict(int)
+    for bd in used_days:
+        histogram[str(bd) if bd <= 30 else '30+'] += 1
+    histogram_sorted = dict(sorted(
+        histogram.items(),
+        key=lambda kv: 31 if kv[0] == '30+' else int(kv[0]),
+    ))
+
+    # Last 5 BDs before the deadline, keyed by BDs of slack remaining (0 = the
+    # determination landed on the deadline itself, up to 4 = five BDs early).
+    last_5_bd = defaultdict(int)
+    for slack in slack_days:
+        if 0 <= slack <= 4:
+            last_5_bd[str(slack)] += 1
+    last_5_bd_sorted = dict(sorted(last_5_bd.items(), key=lambda kv: int(kv[0])))
+
+    stats = {}
+    if used_days:
+        final_3_count = sum(1 for slack in slack_days if 0 <= slack <= 2)
+        stats = {
+            "mean_used_bd": round(sum(used_days) / len(used_days), 1),
+            "median_used_bd": stat_median(used_days),
+            "pct_decided_final_3_bd": (
+                round(final_3_count / len(slack_days) * 100, 1) if slack_days else None
+            ),
+            "count": len(used_days),
+        }
+
+    return {
+        "histogram": histogram_sorted,
+        "last_5_bd_counts": last_5_bd_sorted,
+        "stats": stats,
+        "extended_count": extended_count,
+    }
 
 
 def generate(mergers: list) -> dict:
@@ -208,4 +289,5 @@ def generate(mergers: list) -> dict:
         },
         "monthly_volume": monthly_volume,
         "industry_phase1_duration": industry_phase1_duration(mergers),
+        "deadline_utilisation": deadline_utilisation(mergers),
     }

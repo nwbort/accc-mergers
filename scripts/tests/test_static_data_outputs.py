@@ -498,6 +498,7 @@ class TestAnalysisGenerate:
         json.dumps(payload)
         assert set(payload.keys()) == {
             'phase1_duration', 'waiver_duration', 'monthly_volume', 'industry_phase1_duration',
+            'deadline_utilisation',
         }
         assert 'scatter_data' in payload['phase1_duration']
         assert 'scatter_data' in payload['waiver_duration']
@@ -526,6 +527,97 @@ class TestAnalysisGenerate:
         mining = divisions[0]
         assert mining['name'] == 'Mining'
         assert mining['count'] == 1
+
+
+# ---------------------------------------------------------------------------
+# deadline_utilisation
+# ---------------------------------------------------------------------------
+
+def _deadline_merger(merger_id, det_date, deadline=None, determination='Approved'):
+    """A notification merger notified 2025-06-02T09:00:00Z (a Monday).
+
+    ``det_date`` and ``deadline`` are ISO datetimes for the Phase 1
+    determination and ``end_of_determination_period`` respectively.
+    """
+    return {
+        'merger_id': merger_id,
+        'merger_name': f'{merger_id} merger',
+        'status': 'Determined' if determination != merger_status.REFERRED_TO_PHASE_2 else 'Assessment completed',
+        'accc_determination': determination if determination != merger_status.REFERRED_TO_PHASE_2 else None,
+        'stage': 'Phase 1 - preliminary assessment',
+        'effective_notification_datetime': '2025-06-02T09:00:00Z',
+        'determination_publication_date': det_date if determination != merger_status.REFERRED_TO_PHASE_2 else None,
+        'end_of_determination_period': deadline,
+        'page_modified_datetime': det_date,
+        'anzsic_codes': [],
+        'acquirers': ['Acquirer'],
+        'targets': ['Target'],
+        'other_parties': [],
+        'url': f'https://example.com/{merger_id}',
+        'events': (
+            [{'title': 'Decision to Proceed to a Phase 2 review', 'date': det_date}]
+            if determination == merger_status.REFERRED_TO_PHASE_2 else []
+        ),
+    }
+
+
+def _deadline_utilisation_fixture():
+    """Notification 2025-06-02T09:00:00Z; a standard 30-BD window (deadline
+    2025-07-15). Determinations land at used_bd 30, 28, 26, 24 (slack 0, 2, 4,
+    6 respectively), plus an extended matter (45-BD window, used_bd 40) and a
+    Phase 2 referral (excluded entirely).
+    """
+    deadline = '2025-07-15T12:00:00Z'
+    return [
+        _deadline_merger('MN-1000', '2025-07-15T12:00:00Z', deadline),  # slack 0
+        _deadline_merger('MN-1001', '2025-07-11T12:00:00Z', deadline),  # slack 2
+        _deadline_merger('MN-1002', '2025-07-09T12:00:00Z', deadline),  # slack 4
+        _deadline_merger('MN-1003', '2025-07-07T12:00:00Z', deadline),  # slack 6
+        _deadline_merger('MN-1004', '2025-07-29T12:00:00Z', '2025-08-05T12:00:00Z'),  # extended
+        _deadline_merger('MN-1005', '2025-08-01T12:00:00Z', determination=merger_status.REFERRED_TO_PHASE_2),
+    ]
+
+
+class TestDeadlineUtilisationGenerate:
+    def test_histogram_buckets_used_bd_excludes_extended_and_referred(self):
+        enriched = [enrich_merger(m) for m in _deadline_utilisation_fixture()]
+        payload = analysis.deadline_utilisation(enriched)
+        assert payload['histogram'] == {'24': 1, '26': 1, '28': 1, '30': 1}
+
+    def test_last_5_bd_counts_keyed_by_slack_remaining(self):
+        enriched = [enrich_merger(m) for m in _deadline_utilisation_fixture()]
+        payload = analysis.deadline_utilisation(enriched)
+        # slack 0, 2 and 4 fall in the last-5-BD window; slack 6 does not.
+        assert payload['last_5_bd_counts'] == {'0': 1, '2': 1, '4': 1}
+
+    def test_extended_matter_counted_separately(self):
+        enriched = [enrich_merger(m) for m in _deadline_utilisation_fixture()]
+        payload = analysis.deadline_utilisation(enriched)
+        assert payload['extended_count'] == 1
+
+    def test_referral_excluded_entirely(self):
+        enriched = [enrich_merger(m) for m in _deadline_utilisation_fixture()]
+        payload = analysis.deadline_utilisation(enriched)
+        assert payload['stats']['count'] == 4
+        assert payload['extended_count'] == 1  # not 2 — the referral isn't counted here either
+
+    def test_stats_mean_median_and_final_3_pct(self):
+        enriched = [enrich_merger(m) for m in _deadline_utilisation_fixture()]
+        payload = analysis.deadline_utilisation(enriched)
+        stats = payload['stats']
+        assert stats['mean_used_bd'] == 27.0
+        assert stats['median_used_bd'] == 27
+        # 2 of the 4 standard matters (slack 0 and 2) landed in the final 3 BDs.
+        assert stats['pct_decided_final_3_bd'] == 50.0
+
+    def test_empty_input_returns_zeroed_shape(self):
+        payload = analysis.deadline_utilisation([])
+        assert payload == {
+            'histogram': {},
+            'last_5_bd_counts': {},
+            'stats': {},
+            'extended_count': 0,
+        }
 
 
 # ---------------------------------------------------------------------------
