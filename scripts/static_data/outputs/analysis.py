@@ -1,15 +1,24 @@
 """Pre-computed analysis data for the Analysis page — ``analysis.json``.
 
 Label normalisation for ``by_commission_division`` (see that function):
-whitespace runs are collapsed and grouping is case-insensitive (via
-``str.casefold``), with the first-seen spelling for a group used as its
-display label. A merger with no parsed ``determination_commission_division``
-on any event, or with a corrupted value, is grouped under "Unknown". A
-label longer than ``_MAX_DIVISION_LABEL_LENGTH`` is treated as corrupted:
-real division sentences top out around 120 characters, but the extractor's
-"...of the Act" end-of-sentence marker can occasionally be missing nearby in
-a determination PDF (e.g. within a lengthy s87B undertaking), causing it to
-capture the rest of the document instead of just the division sentence.
+- Whitespace runs are collapsed.
+- A delegate sentence ("Determination made by <person> pursuant to a
+  delegation...") is canonicalised to "<title> <surname>" (e.g. "Commissioner
+  Philip Williams" and "Commissioner Williams" both collapse to "Commissioner
+  Williams") so the same delegate isn't split across buckets depending on
+  whether their first name happened to be spelled out. Non-delegate
+  sentences (e.g. "a division of the Commission constituted by a direction
+  ...") are left as-is; there's only ever one such phrasing per determination
+  type in practice.
+- Grouping is case-insensitive (via ``str.casefold``), with the first-seen
+  spelling for a group used as its display label.
+- A merger with no parsed ``determination_commission_division`` on any
+  event, or with a corrupted value, is grouped under "Unknown". A label
+  longer than ``_MAX_DIVISION_LABEL_LENGTH`` is treated as corrupted: real
+  division sentences top out around 120 characters, but the extractor's
+  "...of the Act" end-of-sentence marker can occasionally be missing nearby
+  in a determination PDF (e.g. within a lengthy s87B undertaking), causing it
+  to capture the rest of the document instead of just the division sentence.
 """
 
 import re
@@ -22,6 +31,15 @@ from ..durations import collect_phase_1_durations, phase_1_end_date
 from ..filters import filter_notifications, filter_waivers
 
 _MAX_DIVISION_LABEL_LENGTH = 200
+
+# Matches "Determination made by <person> pursuant to a delegation ..." so the
+# delegate's name can be canonicalised to "<title> <surname>", collapsing
+# variants that do/don't spell out a first name (e.g. "Commissioner Philip
+# Williams" vs "Commissioner Williams").
+_DELEGATE_PATTERN = re.compile(
+    r'^Determination made by (?P<person>.+?) pursuant to a delegation\b',
+    re.IGNORECASE,
+)
 
 
 def _division_for_code(code: str):
@@ -89,6 +107,14 @@ def _normalise_division(raw: str | None) -> str | None:
     label = re.sub(r'\s+', ' ', raw).strip()
     if not label or len(label) > _MAX_DIVISION_LABEL_LENGTH:
         return None
+
+    match = _DELEGATE_PATTERN.match(label)
+    if match:
+        words = match.group('person').split()
+        if len(words) >= 2:
+            return f'{words[0]} {words[-1]}'
+        return match.group('person')
+
     return label
 
 

@@ -534,9 +534,11 @@ class TestAnalysisGenerate:
 # ---------------------------------------------------------------------------
 
 def _commission_division_fixture():
-    """Four determined mergers exercising the by_commission_division normalisation:
-    same division split across two spellings (whitespace + case), a corrupted
-    over-length extraction, and a determination with no division parsed."""
+    """Five mergers exercising the by_commission_division normalisation: the
+    same delegate spelled two ways (with/without a first name, plus
+    whitespace/case noise), a corrupted over-length extraction, a
+    determination with no division parsed, and a waiver decided by a delegate
+    who otherwise only appears on notifications."""
     raw = [
         {
             'merger_id': 'MN-1001',
@@ -555,7 +557,7 @@ def _commission_division_fixture():
                 'date': '2025-02-05T12:00:00Z',
                 'url': 'e1',
                 'determination_commission_division': (
-                    'Determination made by Commissioner  Williams pursuant to a\n'
+                    'Determination made by Commissioner  Philip Williams pursuant to a\n'
                     'delegation under section 25(1) of the Act'
                 ),
             }],
@@ -576,7 +578,8 @@ def _commission_division_fixture():
                 'title': 'Phase 1 - Determination',
                 'date': '2025-03-12T12:00:00Z',
                 'url': 'e2',
-                # Same division as MN-1001's, differing only in case/whitespace.
+                # Same delegate as MN-1001's, but without the first name, and
+                # differing in case/whitespace too.
                 'determination_commission_division': (
                     'determination made by commissioner williams pursuant to a '
                     'delegation under section 25(1) of the act'
@@ -621,21 +624,45 @@ def _commission_division_fixture():
                 {'title': 'Phase 1 - Determination', 'date': '2025-03-31T12:00:00Z', 'url': 'e4'},
             ],
         },
+        {
+            'merger_id': 'WA-1005',
+            'merger_name': 'Rho waiver',
+            'status': 'Determined',
+            'accc_determination': 'Approved',
+            'stage': 'Waiver',
+            'effective_notification_datetime': '2025-04-01T09:00:00Z',
+            'determination_publication_date': '2025-04-15T12:00:00Z',
+            'page_modified_datetime': '2025-04-15T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/WA-1005',
+            'events': [{
+                'title': 'Waiver determination',
+                'date': '2025-04-15T12:00:00Z',
+                'url': 'e5',
+                # Same delegate as MN-1001/MN-1002, but this merger is a
+                # waiver, so it has no Phase 1 review to measure.
+                'determination_commission_division': (
+                    'Determination made by Commissioner Williams pursuant to a '
+                    'delegation under section 25(1) of the Act'
+                ),
+            }],
+        },
     ]
     return [enrich_merger(m) for m in raw]
 
 
 class TestByCommissionDivision:
-    def test_groups_case_and_whitespace_insensitively(self):
+    def test_collapses_delegate_name_variants(self):
         divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
         williams = next(d for d in divisions if 'Williams' in d['division'])
-        assert williams['count'] == 2
-        # Display label keeps the first-seen spelling.
-        assert williams['division'] == (
-            'Determination made by Commissioner Williams pursuant to a '
-            'delegation under section 25(1) of the Act'
-        )
-        assert williams['outcome_mix'] == {'Approved': 1, 'Not opposed': 1}
+        # MN-1001 ("Philip Williams"), MN-1002 ("Williams", different
+        # case/whitespace) and WA-1005 ("Williams") all collapse to one
+        # delegate.
+        assert williams['count'] == 3
+        # Display label is canonicalised to "<title> <surname>", not the raw sentence.
+        assert williams['division'] == 'Commissioner Williams'
+        assert williams['outcome_mix'] == {'Approved': 2, 'Not opposed': 1}
 
     def test_corrupted_and_missing_values_fold_into_unknown(self):
         divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
@@ -645,7 +672,40 @@ class TestByCommissionDivision:
     def test_median_phase_1_business_days_uses_the_subset(self):
         divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
         williams = next(d for d in divisions if 'Williams' in d['division'])
+        # WA-1005 is a waiver and contributes no Phase 1 duration, but
+        # MN-1001/MN-1002 do, so the bucket's median isn't null just because
+        # one contributing merger has no Phase 1 review.
         assert williams['median_phase_1_business_days'] is not None
+
+    def test_waiver_only_division_has_null_median(self):
+        # A delegate whose only determinations in this fixture are waivers
+        # has no Phase 1 duration to report — expected, not a bug, since
+        # collect_phase_1_durations only measures notifications.
+        raw = [{
+            'merger_id': 'WA-2001',
+            'merger_name': 'Sigma waiver',
+            'status': 'Determined',
+            'accc_determination': 'Approved',
+            'stage': 'Waiver',
+            'effective_notification_datetime': '2025-05-01T09:00:00Z',
+            'determination_publication_date': '2025-05-15T12:00:00Z',
+            'page_modified_datetime': '2025-05-15T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/WA-2001',
+            'events': [{
+                'title': 'Waiver determination',
+                'date': '2025-05-15T12:00:00Z',
+                'url': 'e6',
+                'determination_commission_division': (
+                    'Determination made by Chair Cass-Gottlieb pursuant to a '
+                    'delegation under section 25(1) of the Act'
+                ),
+            }],
+        }]
+        divisions = analysis.generate([enrich_merger(m) for m in raw])['by_commission_division']
+        assert divisions[0]['division'] == 'Chair Cass-Gottlieb'
+        assert divisions[0]['median_phase_1_business_days'] is None
 
 
 # ---------------------------------------------------------------------------
