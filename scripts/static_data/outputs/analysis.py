@@ -428,7 +428,7 @@ def generate(mergers: list) -> dict:
     waiver_mergers = filter_waivers(mergers)
 
     # --- Phase 1 duration analysis (notifications only) ---
-    phase1_scatter = []
+    phase1_durations = []
     phase1_business_days = []
     phase1_calendar_days = []
 
@@ -439,7 +439,6 @@ def generate(mergers: list) -> dict:
         # matters (whether still in Phase 2 or since concluded) don't inflate the
         # Phase 1 figures.
         end = phase_1_end_date(m)
-        phase_1_det = m.get('phase_1_determination')
 
         if not start or not end:
             continue
@@ -454,17 +453,11 @@ def generate(mergers: list) -> dict:
             phase1_business_days.append(bus_days)
             if cal_days is not None:
                 phase1_calendar_days.append(cal_days)
-        phase1_scatter.append({
-            "notification_date": start[:10],
+        phase1_durations.append({
             "business_days": bus_days,
             "calendar_days": cal_days,
-            "merger_name": m.get('merger_name'),
-            "merger_id": m.get('merger_id'),
-            "determination": phase_1_det,
             "in_progress": in_progress,
         })
-
-    phase1_scatter.sort(key=lambda x: x['notification_date'])
 
     phase1_stats = {}
     if phase1_business_days:
@@ -487,7 +480,7 @@ def generate(mergers: list) -> dict:
         }
 
     # --- Waiver duration analysis ---
-    waiver_scatter = []
+    waiver_durations = []
     waiver_business_days = []
     waiver_calendar_days = []
 
@@ -505,16 +498,10 @@ def generate(mergers: list) -> dict:
         waiver_business_days.append(bus_days)
         if cal_days is not None:
             waiver_calendar_days.append(cal_days)
-        waiver_scatter.append({
-            "application_date": start[:10],
+        waiver_durations.append({
             "business_days": bus_days,
             "calendar_days": cal_days,
-            "merger_name": m.get('merger_name'),
-            "merger_id": m.get('merger_id'),
-            "determination": m.get('accc_determination'),
         })
-
-    waiver_scatter.sort(key=lambda x: x['application_date'])
 
     waiver_stats = {}
     if waiver_business_days:
@@ -561,12 +548,12 @@ def generate(mergers: list) -> dict:
 
     return {
         "phase1_duration": {
-            "scatter_data": phase1_scatter,
+            "durations": phase1_durations,
             "stats": phase1_stats,
             "calendar_stats": phase1_calendar_stats,
         },
         "waiver_duration": {
-            "scatter_data": waiver_scatter,
+            "durations": waiver_durations,
             "stats": waiver_stats,
             "calendar_stats": waiver_calendar_stats,
         },

@@ -1,1165 +1,649 @@
 {
   "phase1_duration": {
-    "scatter_data": [
+    "durations": [
       {
-        "notification_date": "2025-08-08",
         "business_days": 15,
         "calendar_days": 21,
-        "merger_name": "Kongsberg Defence \u2013 site within Newcastle Airport precinct",
-        "merger_id": "MN-01017",
-        "determination": "Approved",
         "in_progress": false
       },
       {
-        "notification_date": "2025-08-15",
         "business_days": 15,
         "calendar_days": 21,
-        "merger_name": "Asahi \u2013 Warehouse site on Tilburn Rd, Deer Park (Vic)",
-        "merger_id": "MN-01016",
-        "determination": "Approved",
         "in_progress": false
       },
       {
-        "notification_date": "2025-10-10",
         "business_days": 59,
         "calendar_days": 103,
-        "merger_name": "Ampol \u2013 EG Australia",
-        "merger_id": "MN-01019",
-        "determination": "Referred to phase 2",
         "in_progress": false
       },
       {
-        "notification_date": "2025-10-24",
-        "business_days": 17,
-        "calendar_days": 25,
-        "merger_name": "Asahi \u2013 Warehouse site on Weedman and Montgomery Streets, Redbank (Qld)",
-        "merger_id": "MN-01035",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2025-10-24",
-        "business_days": 17,
-        "calendar_days": 25,
-        "merger_name": "Anglo American - Teck Resources",
-        "merger_id": "MN-01037",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2025-10-29",
         "business_days": 20,
         "calendar_days": 28,
-        "merger_name": "La Caisse \u2013 Edify NSW Development assets",
-        "merger_id": "MN-01031",
-        "determination": "Approved",
         "in_progress": false
       },
       {
-        "notification_date": "2025-11-10",
+        "business_days": 17,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
         "business_days": 28,
         "calendar_days": 38,
-        "merger_name": "Caterpillar \u2013 RPMGlobal Holdings",
-        "merger_id": "MN-01058",
-        "determination": "Approved",
         "in_progress": false
       },
       {
-        "notification_date": "2025-11-13",
         "business_days": 16,
         "calendar_days": 22,
-        "merger_name": "Molex \u2013 Smiths Interconnect",
-        "merger_id": "MN-01061",
-        "determination": "Approved",
         "in_progress": false
       },
       {
-        "notification_date": "2025-11-27",
         "business_days": 15,
         "calendar_days": 21,
-        "merger_name": "Carlyle - BASF Coatings",
-        "merger_id": "MN-01064",
-        "determination": "Approved",
         "in_progress": false
       },
       {
-        "notification_date": "2025-11-27",
         "business_days": 30,
         "calendar_days": 63,
-        "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
-        "merger_id": "MN-01068",
-        "determination": "Referred to phase 2",
         "in_progress": false
       },
       {
-        "notification_date": "2025-12-12",
         "business_days": 18,
         "calendar_days": 47,
-        "merger_name": "Danone \u2013 further 1% interest in Danone Saputo Dairy Australia",
-        "merger_id": "MN-01069",
-        "determination": "Approved",
         "in_progress": false
       },
       {
-        "notification_date": "2025-12-22",
         "business_days": 16,
         "calendar_days": 43,
-        "merger_name": "CSE Crosscom \u2013 Progility",
-        "merger_id": "MN-01071",
-        "determination": "Approved",
         "in_progress": false
       },
       {
-        "notification_date": "2025-12-22",
-        "business_days": 21,
-        "calendar_days": 50,
-        "merger_name": "ServiceNow - Veza",
-        "merger_id": "MN-85002",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-01-09",
-        "business_days": 28,
-        "calendar_days": 41,
-        "merger_name": "Google - Wiz",
-        "merger_id": "MN-15002",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-01-15",
-        "business_days": 18,
-        "calendar_days": 27,
-        "merger_name": "L\u2019Or\u00e9al \u2013 Kering Beaut\u00e9",
-        "merger_id": "MN-01080",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-01-16",
-        "business_days": 16,
-        "calendar_days": 25,
-        "merger_name": "Thermo Fisher - Clario Holdings",
-        "merger_id": "MN-01075",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-01-19",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Opal Healthcare \u2013 Sunnymeade Park Aged Care Community",
-        "merger_id": "MN-75002",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-01-20",
-        "business_days": 26,
-        "calendar_days": 37,
-        "merger_name": "GE Healthcare \u2013 Intelerad",
-        "merger_id": "MN-01074",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-01-21",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Ramsay Health Care \u2013 National Capital Private Hospital",
-        "merger_id": "MN-75003",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-01-23",
-        "business_days": 18,
-        "calendar_days": 27,
-        "merger_name": "Symal Group - Timms Group and L&D Group",
-        "merger_id": "MN-25002",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-02",
-        "business_days": 16,
-        "calendar_days": 22,
-        "merger_name": "Abbott Laboratories - Exact Sciences",
-        "merger_id": "MN-95002",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-03",
-        "business_days": 15,
-        "calendar_days": 21,
-        "merger_name": "Symal Group - 80% acquisition of Davison Earthmovers",
-        "merger_id": "MN-55003",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-04",
-        "business_days": 19,
-        "calendar_days": 27,
-        "merger_name": "IBM - Confluent",
-        "merger_id": "MN-10001",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-05",
-        "business_days": 22,
-        "calendar_days": 33,
-        "merger_name": "Parker-Hannifin \u2013 Filtration Group",
-        "merger_id": "MN-75004",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-06",
-        "business_days": 17,
-        "calendar_days": 25,
-        "merger_name": "Australian Venue Co. \u2013 four licensed venues in metropolitan Sydney (Public House Petersham, The Erko, The Golden Sheaf and Barangaroo House)",
-        "merger_id": "MN-10006",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-06",
-        "business_days": 17,
-        "calendar_days": 25,
-        "merger_name": "Bain Capital \u2013 MCJ",
-        "merger_id": "MN-80002",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-09",
-        "business_days": 22,
-        "calendar_days": 31,
-        "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
-        "merger_id": "MN-70005",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-13",
-        "business_days": 18,
-        "calendar_days": 27,
-        "merger_name": "ServiceNow - Armis",
-        "merger_id": "MN-25004",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-13",
-        "business_days": 36,
-        "calendar_days": 55,
-        "merger_name": "CVS Group - Pittwater Animal Hospital",
-        "merger_id": "MN-95003",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-17",
-        "business_days": 16,
-        "calendar_days": 23,
-        "merger_name": "Apex - Mercer Administration Services and related assets",
-        "merger_id": "MN-10005",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-17",
-        "business_days": 22,
-        "calendar_days": 31,
-        "merger_name": "Charter Hall Holdings - JGS Private Capital",
-        "merger_id": "MN-75009",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-18",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
-        "merger_id": "MN-40005",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-19",
-        "business_days": 17,
-        "calendar_days": 26,
-        "merger_name": "Hg Capital - OneStream",
-        "merger_id": "MN-55006",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-19",
-        "business_days": 17,
-        "calendar_days": 26,
-        "merger_name": "Salesforce \u2013 Qualified",
-        "merger_id": "MN-85007",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-20",
-        "business_days": 27,
-        "calendar_days": 40,
-        "merger_name": "MicroStar Logistics - Konvoy",
-        "merger_id": "MN-30003",
-        "determination": "Referred to phase 2",
-        "in_progress": true
-      },
-      {
-        "notification_date": "2026-02-20",
-        "business_days": 18,
-        "calendar_days": 27,
-        "merger_name": "Craig Mostyn \u2013 Patmore Feeds",
-        "merger_id": "MN-60007",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-20",
-        "business_days": 16,
-        "calendar_days": 25,
-        "merger_name": "Audiotonix - Soundtech Group",
-        "merger_id": "MN-80004",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-23",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Cvent - ON24",
-        "merger_id": "MN-15005",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-23",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Australian Venue Co. \u2013 An Sibin Irish Pub",
-        "merger_id": "MN-65007",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-25",
-        "business_days": 25,
-        "calendar_days": 36,
-        "merger_name": "Civilmart \u2013 Taylex",
-        "merger_id": "MN-01083",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-25",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
-        "merger_id": "MN-85003",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-02-26",
-        "business_days": 18,
-        "calendar_days": 27,
-        "merger_name": "IOR - Delta Specialised Energy assets",
-        "merger_id": "MN-60004",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-03",
-        "business_days": 29,
-        "calendar_days": 44,
-        "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
-        "merger_id": "MN-65005",
-        "determination": "Referred to phase 2",
-        "in_progress": true
-      },
-      {
-        "notification_date": "2026-03-05",
-        "business_days": 58,
-        "calendar_days": 89,
-        "merger_name": "Peter Warren - Wakeling Automotive",
-        "merger_id": "MN-30002",
-        "determination": "Referred to phase 2",
-        "in_progress": true
-      },
-      {
-        "notification_date": "2026-03-06",
-        "business_days": 15,
-        "calendar_days": 24,
-        "merger_name": "CARe \u2013 MotorOne Autobody",
-        "merger_id": "MN-90006",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-10",
-        "business_days": 16,
-        "calendar_days": 22,
-        "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
-        "merger_id": "MN-55012",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-11",
-        "business_days": 15,
-        "calendar_days": 21,
-        "merger_name": "Rocket Software \u2013 Vertica",
-        "merger_id": "MN-20009",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-12",
-        "business_days": 19,
-        "calendar_days": 29,
-        "merger_name": "Coles \u2013 supermarket site in New Norfolk (TAS)",
-        "merger_id": "MN-01090",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-12",
-        "business_days": 15,
-        "calendar_days": 21,
-        "merger_name": "KPS \u2013 Novacel",
-        "merger_id": "MN-25006",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-13",
-        "business_days": 15,
-        "calendar_days": 25,
-        "merger_name": "National Dental Care \u2013 business assets comprising the Comfy Dental clinic, Mandurah, WA",
-        "merger_id": "MN-50007",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-14",
-        "business_days": 17,
-        "calendar_days": 26,
-        "merger_name": "MidOcean Energy \u2013 JERA Gorgon",
-        "merger_id": "MN-05004",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-16",
-        "business_days": 17,
-        "calendar_days": 25,
-        "merger_name": "Adobe - Semrush",
-        "merger_id": "MN-30005",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-18",
-        "business_days": 16,
-        "calendar_days": 26,
-        "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
-        "merger_id": "MN-50012",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-18",
-        "business_days": 19,
-        "calendar_days": 29,
-        "merger_name": "CVC Capital Partners \u2013 Marathon Asset Management",
-        "merger_id": "MN-65009",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-19",
-        "business_days": 15,
-        "calendar_days": 25,
-        "merger_name": "Gilead - Arcellx",
-        "merger_id": "MN-40009",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-19",
-        "business_days": 15,
-        "calendar_days": 25,
-        "merger_name": "Opal HealthCare \u2013 Greenwich Place residential aged care home",
-        "merger_id": "MN-75012",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-23",
-        "business_days": 16,
-        "calendar_days": 24,
-        "merger_name": "Intrepid Travel - Wild Bush Luxury",
-        "merger_id": "MN-40008",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-24",
-        "business_days": 17,
-        "calendar_days": 27,
-        "merger_name": "Origin \u2013 Equity stake in Kraken",
-        "merger_id": "MN-20011",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-25",
-        "business_days": 15,
-        "calendar_days": 23,
-        "merger_name": "MA Financial Group (MA Marina Fund) \u2013 Gold Coast City Marina",
-        "merger_id": "MN-45005",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-26",
-        "business_days": 22,
-        "calendar_days": 35,
-        "merger_name": "Sinopec - CNAF",
-        "merger_id": "MN-01093",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-26",
-        "business_days": 20,
-        "calendar_days": 33,
-        "merger_name": "Tega and Apollo Funds consortium - Molycop",
-        "merger_id": "MN-85006",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-27",
-        "business_days": 19,
-        "calendar_days": 32,
-        "merger_name": "Calvary - Holmesglen Private Hospital",
-        "merger_id": "MN-55010",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-03-31",
-        "business_days": 22,
-        "calendar_days": 35,
-        "merger_name": "Eagers - Audi Melbourne and Audi Richmond",
-        "merger_id": "MN-05012",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-02",
-        "business_days": 20,
-        "calendar_days": 33,
-        "merger_name": "Danaher - Masimo",
-        "merger_id": "MN-15011",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-03",
-        "business_days": 25,
-        "calendar_days": 39,
-        "merger_name": "eBay - Depop",
-        "merger_id": "MN-45002",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-07",
-        "business_days": 19,
-        "calendar_days": 28,
-        "merger_name": "Journey Beyond \u2013 Kakadu Crocodile Hotel",
-        "merger_id": "MN-15013",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-07",
-        "business_days": 19,
-        "calendar_days": 28,
-        "merger_name": "REA Group - Simplicity Loans & Advisory",
-        "merger_id": "MN-65008",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-07",
-        "business_days": 20,
-        "calendar_days": 29,
-        "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
-        "merger_id": "MN-95001",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-08",
-        "business_days": 17,
-        "calendar_days": 26,
-        "merger_name": "Eli Lilly - Orna Therapeutics",
-        "merger_id": "MN-20013",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-10",
-        "business_days": 15,
-        "calendar_days": 24,
-        "merger_name": "Estia Health \u2013 Norsan residential aged care business",
-        "merger_id": "MN-35013",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-10",
-        "business_days": 17,
-        "calendar_days": 26,
-        "merger_name": "Swiss Re - QBE Insurance's Trade Credit and Surety business",
-        "merger_id": "MN-40015",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-10",
-        "business_days": 15,
-        "calendar_days": 24,
-        "merger_name": "Dubai Aerospace Enterprise - Macquarie AirFinance",
-        "merger_id": "MN-95011",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-13",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Lawrence & Hanson - Gordon Macdonald",
-        "merger_id": "MN-55013",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-14",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Eli Lilly \u2013 acquisition of licence from CSL Behring",
-        "merger_id": "MN-40012",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-14",
-        "business_days": 52,
-        "calendar_days": 77,
-        "merger_name": "Trescal \u2013 TR Calibration",
-        "merger_id": "MN-90009",
-        "determination": "Referred to phase 2",
-        "in_progress": true
-      },
-      {
-        "notification_date": "2026-04-15",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Ventura Motors \u2013 Crown Coaches",
-        "merger_id": "MN-70013",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-16",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Daikin - AAMS Group",
-        "merger_id": "MN-30009",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-16",
-        "business_days": 21,
-        "calendar_days": 32,
-        "merger_name": "Global Infrastructure Management \u2013 TCR",
-        "merger_id": "MN-70014",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-17",
-        "business_days": 18,
-        "calendar_days": 27,
-        "merger_name": "Accenture - Ziff Davis' connectivity business",
-        "merger_id": "MN-10013",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-21",
-        "business_days": 21,
-        "calendar_days": 30,
-        "merger_name": "MassMutual, Rest, Aware Super and Goodman \u2013 Moorabbin Airport",
-        "merger_id": "MN-10012",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-21",
-        "business_days": 16,
-        "calendar_days": 23,
-        "merger_name": "Zurich - ClearView",
-        "merger_id": "MN-55016",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-22",
-        "business_days": 17,
-        "calendar_days": 26,
-        "merger_name": "Gilead - Ouro",
-        "merger_id": "MN-60014",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-24",
-        "business_days": 19,
-        "calendar_days": 28,
-        "merger_name": "Australian Meat Group - Killara Feedlot",
-        "merger_id": "MN-20012",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-24",
-        "business_days": 15,
-        "calendar_days": 24,
-        "merger_name": "WIN Television Network - NBN Enterprises & Television Holdings Darwin",
-        "merger_id": "MN-50008",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-27",
         "business_days": 46,
         "calendar_days": 66,
-        "merger_name": "Saipem S.p.A - Subsea7 S.A.",
-        "merger_id": "MN-01072",
-        "determination": "Referred to phase 2",
         "in_progress": true
       },
       {
-        "notification_date": "2026-04-27",
-        "business_days": 15,
-        "calendar_days": 21,
-        "merger_name": "Genea - Embrace Fertility",
-        "merger_id": "MN-05009",
-        "determination": "Approved",
+        "business_days": 26,
+        "calendar_days": 37,
         "in_progress": false
       },
       {
-        "notification_date": "2026-04-28",
+        "business_days": 16,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
         "business_days": 25,
         "calendar_days": 36,
-        "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
-        "merger_id": "MN-60011",
-        "determination": "Approved",
         "in_progress": false
       },
       {
-        "notification_date": "2026-04-28",
-        "business_days": 33,
-        "calendar_days": 49,
-        "merger_name": "Fulton Hogan \u2013 Avionics",
-        "merger_id": "MN-75016",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-04-29",
-        "business_days": 27,
-        "calendar_days": 41,
-        "merger_name": "Paramount Skydance - Warner Bros. Discovery",
-        "merger_id": "MN-45006",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-04",
-        "business_days": 24,
-        "calendar_days": 36,
-        "merger_name": "News Corp \u2013 acquisition of 20% of National Distribution Services",
-        "merger_id": "MN-35014",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-04",
-        "business_days": 24,
-        "calendar_days": 36,
-        "merger_name": "WPF Duratec - Pacific Welding (Davhold Australia)",
-        "merger_id": "MN-75018",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-05",
-        "business_days": 17,
-        "calendar_days": 23,
-        "merger_name": "Medtronic - Scientia",
-        "merger_id": "MN-80010",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-06",
-        "business_days": 28,
-        "calendar_days": 42,
-        "merger_name": "Macquarie Asset Management led consortium \u2013 Qube",
-        "merger_id": "MN-10007",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-06",
-        "business_days": 20,
-        "calendar_days": 29,
-        "merger_name": "3M and funds managed and/or advised by Bain Capital - Madison Fire & Rescue",
-        "merger_id": "MN-15015",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-12",
-        "business_days": 18,
-        "calendar_days": 28,
-        "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
-        "merger_id": "MN-05017",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-12",
-        "business_days": 18,
-        "calendar_days": 28,
-        "merger_name": "OpenAI - Tomoro",
-        "merger_id": "MN-25021",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-12",
-        "business_days": 16,
-        "calendar_days": 23,
-        "merger_name": "Novartis - Excellergy",
-        "merger_id": "MN-40019",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-12",
-        "business_days": 18,
-        "calendar_days": 28,
-        "merger_name": "AtkinsR\u00e9alis - WGA",
-        "merger_id": "MN-65016",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-12",
-        "business_days": 16,
-        "calendar_days": 23,
-        "merger_name": "Quanta - PSD",
-        "merger_id": "MN-70012",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-12",
-        "business_days": 16,
-        "calendar_days": 23,
-        "merger_name": "Seismic \u2013 Highspot",
-        "merger_id": "MN-75014",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-13",
-        "business_days": 28,
-        "calendar_days": 42,
-        "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-        "merger_id": "MN-90012",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-14",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Volt Managed Investment Trusts \u2013 HMC Energy Transition Platform",
-        "merger_id": "MN-90007",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-15",
-        "business_days": 16,
-        "calendar_days": 26,
-        "merger_name": "Mastercard - BVNK",
-        "merger_id": "MN-50015",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-18",
-        "business_days": 16,
-        "calendar_days": 24,
-        "merger_name": "Primary Wave - Kobalt",
-        "merger_id": "MN-25018",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-18",
-        "business_days": 16,
-        "calendar_days": 24,
-        "merger_name": "Restaurant Brands and Yum! Brands \u2013 Taco Bell restaurants",
-        "merger_id": "MN-70018",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-18",
-        "business_days": 15,
-        "calendar_days": 23,
-        "merger_name": "Eli Lilly - Kelonia Therapeutics",
-        "merger_id": "MN-95016",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-19",
-        "business_days": 17,
-        "calendar_days": 27,
-        "merger_name": "Frasers Group \u2013 Accent Group",
-        "merger_id": "MN-30008",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-19",
         "business_days": 19,
         "calendar_days": 29,
-        "merger_name": "Integris & related entities - First Focus",
-        "merger_id": "MN-40022",
-        "determination": "Approved",
         "in_progress": false
       },
       {
-        "notification_date": "2026-05-19",
-        "business_days": 16,
-        "calendar_days": 24,
-        "merger_name": "Magellan Financial Group - Barrenjoey",
-        "merger_id": "MN-95007",
-        "determination": "Approved",
+        "business_days": 22,
+        "calendar_days": 35,
         "in_progress": false
       },
       {
-        "notification_date": "2026-05-20",
-        "business_days": 15,
-        "calendar_days": 23,
-        "merger_name": "Opal HealthCare - Bethel Aged Care",
-        "merger_id": "MN-15019",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-20",
-        "business_days": 18,
-        "calendar_days": 28,
-        "merger_name": "Banijay Entertainment \u2013 All3Media",
-        "merger_id": "MN-85026",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-21",
-        "business_days": 18,
-        "calendar_days": 28,
-        "merger_name": "Stonepeak \u2013 Castrol",
-        "merger_id": "MN-60015",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-21",
-        "business_days": 28,
-        "calendar_days": 42,
-        "merger_name": "Logic Technologies - Ace Communication Distributors",
-        "merger_id": "MN-95021",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-22",
-        "business_days": 15,
-        "calendar_days": 25,
-        "merger_name": "Tibaldi - South Food Group",
-        "merger_id": "MN-25026",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-22",
-        "business_days": 15,
-        "calendar_days": 25,
-        "merger_name": "Endeavour Group \u2013 retail liquor store in Muswellbrook (NSW)",
-        "merger_id": "MN-30012",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-22",
-        "business_days": 16,
-        "calendar_days": 26,
-        "merger_name": "Zurich - Beazley",
-        "merger_id": "MN-30016",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-26",
-        "business_days": 16,
-        "calendar_days": 25,
-        "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
-        "merger_id": "MN-05014",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-05-26",
         "business_days": 17,
-        "calendar_days": 27,
-        "merger_name": "Henkel \u2013 Olaplex",
-        "merger_id": "MN-80016",
-        "determination": "Approved",
+        "calendar_days": 26,
         "in_progress": false
       },
       {
-        "notification_date": "2026-05-28",
-        "business_days": 18,
-        "calendar_days": 28,
-        "merger_name": "Impression Dental Group - Coastal Dental Care",
-        "merger_id": "MN-90015",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-06-02",
-        "business_days": 19,
-        "calendar_days": 28,
-        "merger_name": "Sony Music - Recognition Music",
-        "merger_id": "MN-20023",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-06-02",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Precision Poultry - VOAG chicken farming operations",
-        "merger_id": "MN-35019",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-06-03",
-        "business_days": 16,
-        "calendar_days": 23,
-        "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
-        "merger_id": "MN-20014",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-06-03",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "ANZ Banking Group - Worldline Australia",
-        "merger_id": "MN-80014",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-06-04",
-        "business_days": 18,
-        "calendar_days": 27,
-        "merger_name": "Premier Fresh \u2013 Domenico Group",
-        "merger_id": "MN-40020",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-06-04",
-        "business_days": 18,
-        "calendar_days": 27,
-        "merger_name": "Coles \u2013 supermarket site in Lidcombe (NSW)",
-        "merger_id": "MN-50019",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-06-09",
-        "business_days": 19,
-        "calendar_days": 27,
-        "merger_name": "Equans - CV Services Group",
-        "merger_id": "MN-05025",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-06-09",
-        "business_days": 16,
-        "calendar_days": 22,
-        "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
-        "merger_id": "MN-25029",
-        "determination": "Approved",
-        "in_progress": false
-      },
-      {
-        "notification_date": "2026-06-11",
         "business_days": 15,
         "calendar_days": 21,
-        "merger_name": "EBOS - Paringa Pet Foods",
-        "merger_id": "MN-30020",
-        "determination": "Approved",
         "in_progress": false
       },
       {
-        "notification_date": "2026-06-11",
+        "business_days": 22,
+        "calendar_days": 35,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 28,
+        "in_progress": false
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 23,
+        "in_progress": false
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
+        "business_days": 28,
+        "calendar_days": 42,
+        "in_progress": false
+      },
+      {
+        "business_days": 21,
+        "calendar_days": 30,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
+        "business_days": 28,
+        "calendar_days": 41,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 20,
+        "calendar_days": 33,
+        "in_progress": false
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 28,
+        "in_progress": false
+      },
+      {
+        "business_days": 20,
+        "calendar_days": 29,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 23,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 21,
+        "in_progress": false
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 28,
+        "in_progress": false
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 26,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 23,
+        "in_progress": false
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 28,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 21,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 24,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 28,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
         "business_days": 16,
         "calendar_days": 22,
-        "merger_name": "Service Stream \u2013 RiE",
-        "merger_id": "MN-50022",
-        "determination": "Approved",
+        "in_progress": false
+      },
+      {
+        "business_days": 58,
+        "calendar_days": 89,
+        "in_progress": true
+      },
+      {
+        "business_days": 27,
+        "calendar_days": 40,
+        "in_progress": true
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 26,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 21,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 24,
+        "in_progress": false
+      },
+      {
+        "business_days": 24,
+        "calendar_days": 36,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 24,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 26,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 23,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 29,
+        "in_progress": false
+      },
+      {
+        "business_days": 25,
+        "calendar_days": 39,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 23,
+        "in_progress": false
+      },
+      {
+        "business_days": 27,
+        "calendar_days": 41,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 24,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 26,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 26,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 21,
+        "in_progress": false
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 26,
+        "in_progress": false
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 32,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 23,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
+        "business_days": 25,
+        "calendar_days": 36,
+        "in_progress": false
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 26,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 28,
+        "in_progress": false
+      },
+      {
+        "business_days": 29,
+        "calendar_days": 44,
+        "in_progress": true
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 28,
+        "in_progress": false
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 29,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 28,
+        "in_progress": false
+      },
+      {
+        "business_days": 22,
+        "calendar_days": 31,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 23,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 21,
+        "calendar_days": 32,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 24,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 22,
+        "calendar_days": 33,
+        "in_progress": false
+      },
+      {
+        "business_days": 22,
+        "calendar_days": 31,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 23,
+        "in_progress": false
+      },
+      {
+        "business_days": 33,
+        "calendar_days": 49,
+        "in_progress": false
+      },
+      {
+        "business_days": 24,
+        "calendar_days": 36,
+        "in_progress": false
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 25,
+        "in_progress": false
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 23,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
+        "business_days": 21,
+        "calendar_days": 50,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 20,
+        "calendar_days": 33,
+        "in_progress": false
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 26,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 28,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 24,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 52,
+        "calendar_days": 77,
+        "in_progress": true
+      },
+      {
+        "business_days": 28,
+        "calendar_days": 42,
+        "in_progress": false
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 28,
+        "in_progress": false
+      },
+      {
+        "business_days": 20,
+        "calendar_days": 29,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
+        "business_days": 36,
+        "calendar_days": 55,
+        "in_progress": false
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 24,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 24,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 23,
+        "in_progress": false
+      },
+      {
+        "business_days": 28,
+        "calendar_days": 42,
         "in_progress": false
       }
     ],
@@ -1179,2054 +663,1030 @@
     }
   },
   "waiver_duration": {
-    "scatter_data": [
+    "durations": [
       {
-        "application_date": "2026-01-03",
-        "business_days": 2,
-        "calendar_days": 10,
-        "merger_name": "Ethos (TPG) \u2013 EMIS and certain related assets",
-        "merger_id": "WA-70002",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-03",
-        "business_days": 11,
-        "calendar_days": 24,
-        "merger_name": "Treysta Wealth Management \u2013 Locumsgroup",
-        "merger_id": "WA-85004",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-06",
-        "business_days": 2,
-        "calendar_days": 7,
-        "merger_name": "WSP \u2013 TRC",
-        "merger_id": "WA-35001",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-06",
-        "business_days": 11,
-        "calendar_days": 21,
-        "merger_name": "IFS \u2013 Softeon",
-        "merger_id": "WA-35002",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-08",
         "business_days": 7,
-        "calendar_days": 12,
-        "merger_name": "Accenture \u2013 Faculty Science",
-        "merger_id": "WA-01081",
-        "determination": "Approved"
+        "calendar_days": 12
       },
       {
-        "application_date": "2026-01-08",
-        "business_days": 8,
-        "calendar_days": 13,
-        "merger_name": "Salesforce \u2013 Qualified",
-        "merger_id": "WA-35003",
-        "determination": "Not approved"
-      },
-      {
-        "application_date": "2026-01-09",
-        "business_days": 18,
-        "calendar_days": 27,
-        "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
-        "merger_id": "WA-25001",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-11",
         "business_days": 11,
-        "calendar_days": 16,
-        "merger_name": "KKR led consortium \u2013 Saviynt",
-        "merger_id": "WA-05003",
-        "determination": "Approved"
+        "calendar_days": 16
       },
       {
-        "application_date": "2026-01-12",
-        "business_days": 13,
-        "calendar_days": 18,
-        "merger_name": "Carlyle \u2013 Peloton Computer Enterprises",
-        "merger_id": "WA-20003",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-12",
-        "business_days": 13,
-        "calendar_days": 18,
-        "merger_name": "Altor Fund Manager - Evac Holding Oy",
-        "merger_id": "WA-85005",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-14",
-        "business_days": 12,
-        "calendar_days": 19,
-        "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
-        "merger_id": "WA-40002",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-14",
-        "business_days": 10,
-        "calendar_days": 15,
-        "merger_name": "Re.Group \u2013 Scouts Queensland Recycling Centre Site",
-        "merger_id": "WA-60006",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-15",
-        "business_days": 20,
-        "calendar_days": 29,
-        "merger_name": "Stockland LLC \u2013 intragroup transfer of Halcyon Jardin and Evergreen projects",
-        "merger_id": "WA-10002",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-16",
-        "business_days": 9,
-        "calendar_days": 14,
-        "merger_name": "CVC Capital Partners \u2013 Smiths Detection Group",
-        "merger_id": "WA-40003",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-19",
-        "business_days": 12,
-        "calendar_days": 17,
-        "merger_name": "Henkel \u2013 ATP adhesive systems group",
-        "merger_id": "WA-65003",
-        "determination": "Not approved"
-      },
-      {
-        "application_date": "2026-01-19",
         "business_days": 7,
-        "calendar_days": 10,
-        "merger_name": "Alpine Software Group (ASG) \u2013 PlayHQ",
-        "merger_id": "WA-80001",
-        "determination": "Approved"
+        "calendar_days": 9
       },
       {
-        "application_date": "2026-01-20",
-        "business_days": 9,
-        "calendar_days": 14,
-        "merger_name": "Delinea (TPG) - StrongDM",
-        "merger_id": "WA-25003",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-20",
-        "business_days": 22,
-        "calendar_days": 31,
-        "merger_name": "Francisco Partners - Sermo",
-        "merger_id": "WA-50003",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-20",
-        "business_days": 7,
-        "calendar_days": 10,
-        "merger_name": "Warburg Pincus \u2013 Acclime",
-        "merger_id": "WA-60008",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-20",
-        "business_days": 11,
-        "calendar_days": 16,
-        "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury",
-        "merger_id": "WA-70003",
-        "determination": "Not approved"
-      },
-      {
-        "application_date": "2026-01-21",
-        "business_days": 16,
-        "calendar_days": 23,
-        "merger_name": "Coforge - Encora",
-        "merger_id": "WA-15003",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-22",
-        "business_days": 8,
-        "calendar_days": 13,
-        "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
-        "merger_id": "WA-35004",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-24",
-        "business_days": 19,
-        "calendar_days": 27,
-        "merger_name": "Australian Retirement Trust \u2013 Interests in non-rental income (Westfield Sydney)",
-        "merger_id": "WA-15004",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-27",
-        "business_days": 9,
-        "calendar_days": 13,
-        "merger_name": "Australian Venue Co. \u2013 leasehold and certain other assets of Quay Restaurant, Sydney",
-        "merger_id": "WA-25005",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-28",
-        "business_days": 19,
-        "calendar_days": 27,
-        "merger_name": "NEC Corporation \u2013 CSG Systems International",
-        "merger_id": "WA-90002",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-29",
-        "business_days": 10,
-        "calendar_days": 14,
-        "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
-        "merger_id": "WA-40004",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-29",
-        "business_days": 8,
-        "calendar_days": 12,
-        "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
-        "merger_id": "WA-55004",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-29",
-        "business_days": 15,
-        "calendar_days": 21,
-        "merger_name": "General Atlantic and CPP Investments led consortium - Boats Group",
-        "merger_id": "WA-55005",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-30",
-        "business_days": 9,
-        "calendar_days": 13,
-        "merger_name": "H-E Parts International Mining Solutions - Warehouse workshop site in Paget, QLD",
-        "merger_id": "WA-20005",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-01-30",
-        "business_days": 11,
-        "calendar_days": 17,
-        "merger_name": "Paragon Care \u2013 Presidental",
-        "merger_id": "WA-45001",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-02",
-        "business_days": 9,
-        "calendar_days": 11,
-        "merger_name": "Kee Safety - RIS Safety",
-        "merger_id": "WA-65004",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-02",
-        "business_days": 13,
-        "calendar_days": 17,
-        "merger_name": "Sony \u2013 Peanuts Worldwide",
-        "merger_id": "WA-85008",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-05",
-        "business_days": 10,
-        "calendar_days": 14,
-        "merger_name": "Playlist \u2013 EGYM",
-        "merger_id": "WA-75006",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-05",
-        "business_days": 10,
-        "calendar_days": 14,
-        "merger_name": "HCLTech - Jaspersoft",
-        "merger_id": "WA-95005",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-10",
-        "business_days": 7,
-        "calendar_days": 9,
-        "merger_name": "Apollo Funds led consortium \u2013 Lecta Group",
-        "merger_id": "WA-15007",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-11",
-        "business_days": 7,
-        "calendar_days": 9,
-        "merger_name": "Laundy Group \u2013 Nine Radio",
-        "merger_id": "WA-95006",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-12",
-        "business_days": 10,
-        "calendar_days": 14,
-        "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
-        "merger_id": "WA-70004",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-12",
-        "business_days": 11,
-        "calendar_days": 15,
-        "merger_name": "Bettergrow - HYG",
-        "merger_id": "WA-75008",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-13",
-        "business_days": 8,
-        "calendar_days": 12,
-        "merger_name": "Colliers International Group \u2013 Ayesa Engineering",
-        "merger_id": "WA-15008",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-13",
-        "business_days": 15,
-        "calendar_days": 21,
-        "merger_name": "Allied Beef - Lease of Yarranbrook Feedlot",
-        "merger_id": "WA-50005",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-16",
-        "business_days": 13,
-        "calendar_days": 17,
-        "merger_name": "Crossmuller \u2013 GEM",
-        "merger_id": "WA-90004",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-17",
-        "business_days": 13,
-        "calendar_days": 17,
-        "merger_name": "HongShan Capital Group and Temasek \u2013 Golden Goose Group",
-        "merger_id": "WA-05008",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-17",
         "business_days": 21,
-        "calendar_days": 30,
-        "merger_name": "Telstra \u2013 Infosys Technologies",
-        "merger_id": "WA-20007",
-        "determination": "Approved"
+        "calendar_days": 31
       },
       {
-        "application_date": "2026-02-18",
-        "business_days": 4,
-        "calendar_days": 6,
-        "merger_name": "Superloop \u2013 Lynham Networks",
-        "merger_id": "WA-35005",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-18",
-        "business_days": 12,
-        "calendar_days": 16,
-        "merger_name": "Scopely \u2013 Loom Games",
-        "merger_id": "WA-70006",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-19",
-        "business_days": 14,
-        "calendar_days": 21,
-        "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
-        "merger_id": "WA-80006",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-19",
-        "business_days": 17,
-        "calendar_days": 26,
-        "merger_name": "TDR and Estoril \u2013 Escode",
-        "merger_id": "WA-85011",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-20",
-        "business_days": 14,
-        "calendar_days": 21,
-        "merger_name": "Premier Fresh \u2013 Charles Domenico Group",
-        "merger_id": "WA-10008",
-        "determination": "Not approved"
-      },
-      {
-        "application_date": "2026-02-23",
-        "business_days": 17,
-        "calendar_days": 24,
-        "merger_name": "Airtree \u2013 HotDoc",
-        "merger_id": "WA-50006",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-23",
-        "business_days": 9,
-        "calendar_days": 11,
-        "merger_name": "Platinum Equity Group \u2013 Burke",
-        "merger_id": "WA-70007",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-23",
-        "business_days": 9,
-        "calendar_days": 11,
-        "merger_name": "Zendesk \u2013 Forethought",
-        "merger_id": "WA-75010",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-24",
-        "business_days": 11,
-        "calendar_days": 16,
-        "merger_name": "Eli Lilly \u2013 Orna Therapeutics",
-        "merger_id": "WA-01087",
-        "determination": "Not approved"
-      },
-      {
-        "application_date": "2026-02-24",
-        "business_days": 2,
-        "calendar_days": 2,
-        "merger_name": "Eiffel and Eurazeo \u2013 Segula",
-        "merger_id": "WA-05007",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-25",
-        "business_days": 7,
-        "calendar_days": 9,
-        "merger_name": "BSN Sports \u2013 Sports Endeavors",
-        "merger_id": "WA-01088",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-26",
-        "business_days": 8,
-        "calendar_days": 13,
-        "merger_name": "Aluminium Specialties Group \u2013 Manufacturing facility site in Orchard Hills, NSW",
-        "merger_id": "WA-45003",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-26",
-        "business_days": 8,
-        "calendar_days": 13,
-        "merger_name": "Resonetics \u2013 Resolution Medical",
-        "merger_id": "WA-55009",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-26",
-        "business_days": 11,
-        "calendar_days": 18,
-        "merger_name": "OEP IX \u2013 Leviat",
-        "merger_id": "WA-55011",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-26",
-        "business_days": 8,
-        "calendar_days": 13,
-        "merger_name": "Autosports Group - Solitaire Automotive Group",
-        "merger_id": "WA-75011",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-27",
-        "business_days": 22,
-        "calendar_days": 33,
-        "merger_name": "Tetra Tech \u2013 Providence Consulting",
-        "merger_id": "WA-70008",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-02-27",
-        "business_days": 6,
-        "calendar_days": 11,
-        "merger_name": "National Dental Care \u2013 DDTA Dental clinic in Launceston, TAS",
-        "merger_id": "WA-85013",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-02",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "SoftBank \u2013 DigitalBridge",
-        "merger_id": "WA-10009",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-02",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Hall & McLean \u2013 Freehold interest in commercial land in Wellcamp, QLD",
-        "merger_id": "WA-20008",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-03",
-        "business_days": 11,
-        "calendar_days": 16,
-        "merger_name": "Genesis Minerals \u2013 Magnetic Resources",
-        "merger_id": "WA-85014",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-04",
-        "business_days": 13,
-        "calendar_days": 20,
-        "merger_name": "Five V Capital - FTP Group",
-        "merger_id": "WA-25008",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-04",
-        "business_days": 16,
-        "calendar_days": 23,
-        "merger_name": "Michelin - Flexitallic",
-        "merger_id": "WA-60010",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-04",
-        "business_days": 3,
-        "calendar_days": 6,
-        "merger_name": "Vets Central \u2013 West Toowoomba Veterinary Surgery in QLD",
-        "merger_id": "WA-95008",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-05",
-        "business_days": 10,
-        "calendar_days": 15,
-        "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
-        "merger_id": "WA-15009",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-06",
-        "business_days": 11,
-        "calendar_days": 18,
-        "merger_name": "AZ Next Generation Advisory \u2013 Intend Financial",
-        "merger_id": "WA-15010",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-06",
-        "business_days": 8,
-        "calendar_days": 13,
-        "merger_name": "PT Asian Bulk Logistics \u2013 Engage Marine",
-        "merger_id": "WA-20010",
-        "determination": "Not approved"
-      },
-      {
-        "application_date": "2026-03-06",
-        "business_days": 20,
-        "calendar_days": 33,
-        "merger_name": "Brisbane Airport Corporation \u2013 Interest in land at Brisbane Airport",
-        "merger_id": "WA-25009",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-06",
-        "business_days": 13,
-        "calendar_days": 20,
-        "merger_name": "Infotrust \u2013 Catalyst Cyber",
-        "merger_id": "WA-70009",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-06",
-        "business_days": 18,
-        "calendar_days": 27,
-        "merger_name": "Waymark Hotels Group \u2013 Warrego Hotel Motel Cunnamulla, Queensland",
-        "merger_id": "WA-70010",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-09",
-        "business_days": 13,
-        "calendar_days": 17,
-        "merger_name": "VFMC \u2013 CorVal Land and Operator Trusts",
-        "merger_id": "WA-35008",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-09",
-        "business_days": 11,
-        "calendar_days": 15,
-        "merger_name": "Blackstone - Advanced Cooling Technologies",
-        "merger_id": "WA-35010",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-09",
-        "business_days": 17,
-        "calendar_days": 23,
-        "merger_name": "McDonald\u2019s Australia \u2013 McDonald\u2019s Restaurants in Bankstown and Yagoona, NSW",
-        "merger_id": "WA-95009",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-10",
-        "business_days": 18,
-        "calendar_days": 28,
-        "merger_name": "Enverus \u2013 Spatial Business Systems",
-        "merger_id": "WA-10010",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-10",
-        "business_days": 18,
-        "calendar_days": 28,
-        "merger_name": "BGIS - Ascot Air",
-        "merger_id": "WA-25011",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-10",
-        "business_days": 16,
-        "calendar_days": 22,
-        "merger_name": "Honda \u2013 additional shareholding in Astemo",
-        "merger_id": "WA-65010",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-11",
-        "business_days": 15,
-        "calendar_days": 21,
-        "merger_name": "Permira and Warburg Pincus - Clearwater Analytics",
-        "merger_id": "WA-40010",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-12",
-        "business_days": 16,
-        "calendar_days": 26,
-        "merger_name": "Wentworth Capital \u2013 Novotel Darling Harbour and Ibis Darling Harbour",
-        "merger_id": "WA-10011",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-12",
-        "business_days": 16,
-        "calendar_days": 26,
-        "merger_name": "Austral Resources Australia \u2013 Lady Loretta mine",
-        "merger_id": "WA-35011",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-12",
-        "business_days": 16,
-        "calendar_days": 26,
-        "merger_name": "Element Zero's L701 \u2013 Option to lease DevelopmentWA industrial land at Boodarie Strategic Industrial Area",
-        "merger_id": "WA-40011",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-13",
-        "business_days": 22,
-        "calendar_days": 34,
-        "merger_name": "INNIO Group \u2013 Enerflex",
-        "merger_id": "WA-25010",
-        "determination": "Not approved"
-      },
-      {
-        "application_date": "2026-03-13",
-        "business_days": 13,
-        "calendar_days": 19,
-        "merger_name": "Blackbird Ventures \u2013 Halter",
-        "merger_id": "WA-50010",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-13",
-        "business_days": 13,
-        "calendar_days": 19,
-        "merger_name": "Aldus - Hilton Manufacturing",
-        "merger_id": "WA-75013",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-16",
-        "business_days": 19,
-        "calendar_days": 29,
-        "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
-        "merger_id": "WA-65011",
-        "determination": "Not approved"
-      },
-      {
-        "application_date": "2026-03-16",
-        "business_days": 19,
-        "calendar_days": 29,
-        "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-        "merger_id": "WA-85016",
-        "determination": "Not approved"
-      },
-      {
-        "application_date": "2026-03-17",
-        "business_days": 15,
-        "calendar_days": 23,
-        "merger_name": "Ironbark - Investment in Viola Private Wealth",
-        "merger_id": "WA-05005",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-17",
-        "business_days": 11,
-        "calendar_days": 15,
-        "merger_name": "Cinven \u2013 Regenity",
-        "merger_id": "WA-25013",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-17",
-        "business_days": 12,
-        "calendar_days": 16,
-        "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
-        "merger_id": "WA-75015",
-        "determination": "Not approved"
-      },
-      {
-        "application_date": "2026-03-18",
-        "business_days": 12,
-        "calendar_days": 20,
-        "merger_name": "Henkel \u2013 Stahl",
-        "merger_id": "WA-45007",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-18",
-        "business_days": 12,
-        "calendar_days": 20,
-        "merger_name": "Arlington Capital Partners \u2013 Eptec Defence Solutions",
-        "merger_id": "WA-80007",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-18",
-        "business_days": 14,
-        "calendar_days": 22,
-        "merger_name": "Regent Motors Group - Lane Group's Mandurah Dealerships",
-        "merger_id": "WA-85017",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-20",
-        "business_days": 10,
-        "calendar_days": 18,
-        "merger_name": "KPS Capital Partners - Jennmar",
-        "merger_id": "WA-55014",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-20",
-        "business_days": 13,
-        "calendar_days": 21,
-        "merger_name": "Discovery Holiday Parks \u2013 Habitat Noosa Everglades Eco Camp",
-        "merger_id": "WA-85018",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-21",
-        "business_days": 10,
-        "calendar_days": 17,
-        "merger_name": "CVC Capital Partners \u2013 The animal nutrition and health division of the DSM-Firmenich Group",
-        "merger_id": "WA-25014",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-23",
-        "business_days": 21,
-        "calendar_days": 31,
-        "merger_name": "Winning Group Holdings \u2013 Winning Appliances",
-        "merger_id": "WA-01092",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-23",
-        "business_days": 12,
-        "calendar_days": 18,
-        "merger_name": "Idemitsu - MidOcean Energy",
-        "merger_id": "WA-45009",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-23",
-        "business_days": 13,
-        "calendar_days": 21,
-        "merger_name": "Lighthouse - Precise Services Group",
-        "merger_id": "WA-95010",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-25",
-        "business_days": 19,
-        "calendar_days": 29,
-        "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
-        "merger_id": "WA-60012",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-26",
-        "business_days": 6,
-        "calendar_days": 12,
-        "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
-        "merger_id": "WA-15012",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-28",
-        "business_days": 19,
-        "calendar_days": 31,
-        "merger_name": "Bendigo and Adelaide Bank \u2013 RACQ Bank",
-        "merger_id": "WA-70015",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-30",
-        "business_days": 14,
-        "calendar_days": 22,
-        "merger_name": "Princeton Digital Group Australia - land located in Campbelltown, NSW",
-        "merger_id": "WA-80008",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-30",
-        "business_days": 3,
-        "calendar_days": 3,
-        "merger_name": "Francisco Partners \u2013 Capsa Healthcare",
-        "merger_id": "WA-85020",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-31",
-        "business_days": 15,
-        "calendar_days": 23,
-        "merger_name": "Star Hotels - Fiveways Hotel Toowoomba",
-        "merger_id": "WA-50013",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-31",
-        "business_days": 18,
-        "calendar_days": 29,
-        "merger_name": "Export Trading Group Australia \u2013 pulses and grains business and facility in Mount Tyson, QLD",
-        "merger_id": "WA-60013",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-31",
-        "business_days": 3,
-        "calendar_days": 7,
-        "merger_name": "Vets Central - Drovers Vet Hospital",
-        "merger_id": "WA-75017",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-03-31",
-        "business_days": 3,
-        "calendar_days": 7,
-        "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
-        "merger_id": "WA-95012",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-01",
-        "business_days": 14,
-        "calendar_days": 22,
-        "merger_name": "Searchlight Capital Partners - Additional interest in KORE Group Holdings Inc.",
-        "merger_id": "WA-50014",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-02",
         "business_days": 24,
-        "calendar_days": 39,
-        "merger_name": "Energy Bay - Rights to install/operate embedded networks and other assets from Centuria Capital Group members",
-        "merger_id": "WA-01094",
-        "determination": "Not approved"
+        "calendar_days": 39
       },
       {
-        "application_date": "2026-04-02",
-        "business_days": 18,
-        "calendar_days": 29,
-        "merger_name": "Airtree and ors (additional minority co-investors) - Advanced Navigation",
-        "merger_id": "WA-45010",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-02",
         "business_days": 12,
-        "calendar_days": 20,
-        "merger_name": "Egis Projects Asia Pacific - Fulton Hogan Egis O&M",
-        "merger_id": "WA-70011",
-        "determination": "Approved"
+        "calendar_days": 18
       },
       {
-        "application_date": "2026-04-02",
-        "business_days": 5,
-        "calendar_days": 11,
-        "merger_name": "Yancoal - Kestrel Coal Group",
-        "merger_id": "WA-85021",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-02",
-        "business_days": 10,
-        "calendar_days": 18,
-        "merger_name": "Prime Super - Additional interest in Peninsula Link Project",
-        "merger_id": "WA-90010",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-07",
-        "business_days": 13,
-        "calendar_days": 17,
-        "merger_name": "Wipro - Mindsprint",
-        "merger_id": "WA-15014",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-07",
-        "business_days": 8,
-        "calendar_days": 10,
-        "merger_name": "Infosys \u2013 Optimum Healthcare IT",
-        "merger_id": "WA-40014",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-07",
-        "business_days": 8,
-        "calendar_days": 10,
-        "merger_name": "Mizuho \u2013 Avendus",
-        "merger_id": "WA-80009",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-08",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Turner Family Entities - Pedal Group",
-        "merger_id": "WA-10014",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-08",
-        "business_days": 15,
-        "calendar_days": 22,
-        "merger_name": "Savvy Games Group \u2013 Moonton",
-        "merger_id": "WA-65012",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-08",
-        "business_days": 6,
-        "calendar_days": 8,
-        "merger_name": "PH Medical Centres - Riverstone Family Medical Practice",
-        "merger_id": "WA-85022",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-10",
-        "business_days": 9,
-        "calendar_days": 13,
-        "merger_name": "Creative Planning \u2013 MASECO",
-        "merger_id": "WA-40016",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-10",
-        "business_days": 4,
-        "calendar_days": 6,
-        "merger_name": "Signant - ActiGraph",
-        "merger_id": "WA-45011",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-10",
-        "business_days": 12,
-        "calendar_days": 19,
-        "merger_name": "Salter Brothers - Buroserv",
-        "merger_id": "WA-90011",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-13",
-        "business_days": 17,
-        "calendar_days": 24,
-        "merger_name": "Herron Todd White \u2013 CJA Lee Property Valuers",
-        "merger_id": "WA-20015",
-        "determination": "Not approved"
-      },
-      {
-        "application_date": "2026-04-16",
         "business_days": 11,
-        "calendar_days": 18,
-        "merger_name": "Hostplus \u2013 CH Investment Holding Trust",
-        "merger_id": "WA-25016",
-        "determination": "Approved"
+        "calendar_days": 17
       },
       {
-        "application_date": "2026-04-16",
-        "business_days": 9,
-        "calendar_days": 14,
-        "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Entrance Social Club",
-        "merger_id": "WA-60017",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-20",
-        "business_days": 11,
-        "calendar_days": 16,
-        "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
-        "merger_id": "WA-25017",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-20",
-        "business_days": 18,
-        "calendar_days": 25,
-        "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
-        "merger_id": "WA-30010",
-        "determination": "Not approved"
-      },
-      {
-        "application_date": "2026-04-20",
         "business_days": 16,
-        "calendar_days": 23,
-        "merger_name": "26North Funds - Intermedia Cloud Communications",
-        "merger_id": "WA-65014",
-        "determination": "Approved"
+        "calendar_days": 23
       },
       {
-        "application_date": "2026-04-20",
-        "business_days": 6,
-        "calendar_days": 9,
-        "merger_name": "Publicis \u2013 160over90",
-        "merger_id": "WA-95014",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-21",
-        "business_days": 9,
-        "calendar_days": 14,
-        "merger_name": "Coles - substation in Yarrawonga VIC",
-        "merger_id": "WA-05016",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-21",
-        "business_days": 14,
-        "calendar_days": 21,
-        "merger_name": "AustralianSuper - IFM Global Infrastructure (Australia) Trust",
-        "merger_id": "WA-40018",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-21",
-        "business_days": 7,
-        "calendar_days": 10,
-        "merger_name": "Coles - Leasehold interest in shopping centre on Capricorn Highway, Emerald, QLD",
-        "merger_id": "WA-55017",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-21",
-        "business_days": 19,
-        "calendar_days": 28,
-        "merger_name": "Hillhouse - Barwon Investment Partners",
-        "merger_id": "WA-65015",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-22",
-        "business_days": 8,
-        "calendar_days": 13,
-        "merger_name": "Apollo Funds - Nippon Sheet Glass",
-        "merger_id": "WA-45012",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-22",
-        "business_days": 7,
-        "calendar_days": 12,
-        "merger_name": "Oceania Capital Partners - Hudson Global Resources (Aust)",
-        "merger_id": "WA-70016",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-23",
-        "business_days": 3,
-        "calendar_days": 6,
-        "merger_name": "Allianz - Lease of commercial office space in North Sydney from Lendlease (Victoria Cross)",
-        "merger_id": "WA-55015",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-24",
-        "business_days": 16,
-        "calendar_days": 25,
-        "merger_name": "AXDI - minority interest in La Trobe Financial",
-        "merger_id": "WA-30011",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-24",
-        "business_days": 10,
-        "calendar_days": 17,
-        "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
-        "merger_id": "WA-35015",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-24",
-        "business_days": 10,
-        "calendar_days": 17,
-        "merger_name": "Australian Venue Co \u2013 assets of White Cockatoo Hotel, Petersham",
-        "merger_id": "WA-45013",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-24",
-        "business_days": 8,
-        "calendar_days": 13,
-        "merger_name": "BHP \u2013 expansion of Special Mining Lease at Olympic Dam, SA",
-        "merger_id": "WA-65013",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-24",
-        "business_days": 10,
-        "calendar_days": 17,
-        "merger_name": "CRH - Axius Water",
-        "merger_id": "WA-80011",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-24",
-        "business_days": 7,
-        "calendar_days": 12,
-        "merger_name": "Francisco Partners - Blackline Safety",
-        "merger_id": "WA-85025",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-24",
-        "business_days": 10,
-        "calendar_days": 17,
-        "merger_name": "Cement Australia \u2013 Global Manufacturing Group",
-        "merger_id": "WA-90013",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-26",
-        "business_days": 11,
-        "calendar_days": 16,
-        "merger_name": "Ochre Health - New Lambton Family Practice, NSW",
-        "merger_id": "WA-40021",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-28",
-        "business_days": 12,
-        "calendar_days": 16,
-        "merger_name": "CleanPeak Energy Holdings - Sustainable Energy Infrastructure",
-        "merger_id": "WA-75020",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-28",
-        "business_days": 19,
-        "calendar_days": 27,
-        "merger_name": "Hillhouse - KMC Solutions",
-        "merger_id": "WA-75021",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-28",
         "business_days": 13,
-        "calendar_days": 17,
-        "merger_name": "FC Group Holdings Corporation & ors - Fluent Retail",
-        "merger_id": "WA-80012",
-        "determination": "Approved"
+        "calendar_days": 20
       },
       {
-        "application_date": "2026-04-28",
-        "business_days": 9,
-        "calendar_days": 13,
-        "merger_name": "DP World Global Forwarding \u2013 Pure Global Logistics",
-        "merger_id": "WA-95015",
-        "determination": "Approved"
+        "business_days": 10,
+        "calendar_days": 16
       },
       {
-        "application_date": "2026-04-29",
         "business_days": 12,
-        "calendar_days": 16,
-        "merger_name": "TMX - Cboe Australia",
-        "merger_id": "WA-05019",
-        "determination": "Approved"
+        "calendar_days": 18
       },
       {
-        "application_date": "2026-04-29",
-        "business_days": 12,
-        "calendar_days": 16,
-        "merger_name": "Constellation Software - DerbySoft Holdings",
-        "merger_id": "WA-90014",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-30",
-        "business_days": 12,
-        "calendar_days": 18,
-        "merger_name": "Quadrant Private Equity - Stanley International College",
-        "merger_id": "WA-01097",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-04-30",
         "business_days": 11,
-        "calendar_days": 15,
-        "merger_name": "Nuveen \u2013 Schroders",
-        "merger_id": "WA-25022",
-        "determination": "Approved"
+        "calendar_days": 16
       },
       {
-        "application_date": "2026-05-01",
+        "business_days": 15,
+        "calendar_days": 23
+      },
+      {
+        "business_days": 2,
+        "calendar_days": 2
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 14
+      },
+      {
         "business_days": 17,
-        "calendar_days": 25,
-        "merger_name": "Wipro - Indeco",
-        "merger_id": "WA-35016",
-        "determination": "Approved"
+        "calendar_days": 27
       },
       {
-        "application_date": "2026-05-01",
+        "business_days": 12,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 15
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 29
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 14
+      },
+      {
         "business_days": 20,
-        "calendar_days": 31,
-        "merger_name": "Oracle \u2013 Leasehold interest in AirTrunk data centre",
-        "merger_id": "WA-50016",
-        "determination": "Approved"
+        "calendar_days": 29
       },
       {
-        "application_date": "2026-05-04",
+        "business_days": 14,
+        "calendar_days": 21
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 28
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 26
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 22
+      },
+      {
+        "business_days": 6,
+        "calendar_days": 8
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 23
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 27
+      },
+      {
+        "business_days": 7,
+        "calendar_days": 9
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 12
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 15
+      },
+      {
         "business_days": 11,
-        "calendar_days": 15,
-        "merger_name": "National Dental Care \u2013 business assets comprising the Cambridge Dental Centre clinic, Perth, WA",
-        "merger_id": "WA-70017",
-        "determination": "Approved"
+        "calendar_days": 18
       },
       {
-        "application_date": "2026-05-06",
-        "business_days": 11,
-        "calendar_days": 15,
-        "merger_name": "MedHealth \u2013 Connect Allied Health",
-        "merger_id": "WA-30014",
-        "determination": "Approved"
+        "business_days": 6,
+        "calendar_days": 12
       },
       {
-        "application_date": "2026-05-06",
+        "business_days": 13,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 27
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 27
+      },
+      {
+        "business_days": 14,
+        "calendar_days": 22
+      },
+      {
+        "business_days": 14,
+        "calendar_days": 24
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 18
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 13
+      },
+      {
         "business_days": 21,
-        "calendar_days": 33,
-        "merger_name": "RDO Australia \u2013 freehold land and buildings of three commercial truck dealership sites in West Wodonga VIC",
-        "merger_id": "WA-45014",
-        "determination": "Approved"
+        "calendar_days": 30
       },
       {
-        "application_date": "2026-05-07",
-        "business_days": 10,
-        "calendar_days": 14,
-        "merger_name": "Midea Group \u2013 Esaote",
-        "merger_id": "WA-05020",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-07",
-        "business_days": 14,
-        "calendar_days": 20,
-        "merger_name": "IK Partners - Selatek",
-        "merger_id": "WA-20019",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-07",
-        "business_days": 7,
-        "calendar_days": 11,
-        "merger_name": "EPL - Indovida India",
-        "merger_id": "WA-25023",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-07",
-        "business_days": 10,
-        "calendar_days": 14,
-        "merger_name": "Australian Venue Co \u2013 assets of Courthouse Hotel, Newtown NSW",
-        "merger_id": "WA-50017",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-07",
-        "business_days": 10,
-        "calendar_days": 14,
-        "merger_name": "Cognizant \u2013 Astreya",
-        "merger_id": "WA-70019",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-08",
-        "business_days": 11,
-        "calendar_days": 17,
-        "merger_name": "Adyen - Talon.One",
-        "merger_id": "WA-01098",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-08",
-        "business_days": 11,
-        "calendar_days": 17,
-        "merger_name": "Triton - Integris",
-        "merger_id": "WA-20020",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-08",
         "business_days": 15,
-        "calendar_days": 21,
-        "merger_name": "Sydney Water - Windsor Sewerage Scheme Assets",
-        "merger_id": "WA-80013",
-        "determination": "Approved"
+        "calendar_days": 22
       },
       {
-        "application_date": "2026-05-08",
-        "business_days": 15,
-        "calendar_days": 21,
-        "merger_name": "Turkish Airlines - Air Europa",
-        "merger_id": "WA-90016",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-11",
-        "business_days": 10,
-        "calendar_days": 14,
-        "merger_name": "Zijin Mining - Chifeng",
-        "merger_id": "WA-25020",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-11",
-        "business_days": 12,
-        "calendar_days": 16,
-        "merger_name": "URUS (CVC Capital Partners) \u2013 AgriWebb",
-        "merger_id": "WA-30015",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-12",
-        "business_days": 16,
-        "calendar_days": 23,
-        "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
-        "merger_id": "WA-01100",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-12",
-        "business_days": 9,
-        "calendar_days": 13,
-        "merger_name": "EQT Fund Management \u2013 Kakaku.com",
-        "merger_id": "WA-45015",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-12",
-        "business_days": 12,
-        "calendar_days": 16,
-        "merger_name": "Black Rhino Group \u2013 Granville Tavern and Motel and Cambridge Street Bottle Shop & Cellars in Granville, QLD",
-        "merger_id": "WA-65017",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-12",
         "business_days": 8,
-        "calendar_days": 10,
-        "merger_name": "American Industrial Partners - Avanos Medical",
-        "merger_id": "WA-85027",
-        "determination": "Approved"
+        "calendar_days": 13
       },
       {
-        "application_date": "2026-05-13",
+        "business_days": 17,
+        "calendar_days": 24
+      },
+      {
+        "business_days": 14,
+        "calendar_days": 20
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 19
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 24
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 18
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 27
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 13
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 20
+      },
+      {
+        "business_days": 20,
+        "calendar_days": 33
+      },
+      {
+        "business_days": 22,
+        "calendar_days": 34
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 28
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 15
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 18
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 15
+      },
+      {
+        "business_days": 7,
+        "calendar_days": 11
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 14,
+        "calendar_days": 21
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 27
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 26
+      },
+      {
+        "business_days": 5,
+        "calendar_days": 7
+      },
+      {
+        "business_days": 6,
+        "calendar_days": 8
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 25
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 25
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 15
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 20
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 15
+      },
+      {
+        "business_days": 2,
+        "calendar_days": 7
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 21
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 13
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 13
+      },
+      {
+        "business_days": 4,
+        "calendar_days": 6
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 15
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 26
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 25
+      },
+      {
+        "business_days": 6,
+        "calendar_days": 11
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 31
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 27
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 20
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 18
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 13
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 19
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 21
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 26
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 10
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 13
+      },
+      {
+        "business_days": 14,
+        "calendar_days": 21
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 19
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 25
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 23
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 19
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 13
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 20
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 18
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 29
+      },
+      {
+        "business_days": 4,
+        "calendar_days": 6
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 13
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 21,
+        "calendar_days": 33
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 13
+      },
+      {
         "business_days": 24,
-        "calendar_days": 36,
-        "merger_name": "Northstar \u2013 business assets of Mildura Mazda",
-        "merger_id": "WA-45016",
-        "determination": "Approved"
+        "calendar_days": 36
       },
       {
-        "application_date": "2026-05-13",
-        "business_days": 18,
-        "calendar_days": 28,
-        "merger_name": "QIC \u2013 CopperString Project assets from Powerlink Queensland",
-        "merger_id": "WA-60019",
-        "determination": "Approved"
+        "business_days": 19,
+        "calendar_days": 29
       },
       {
-        "application_date": "2026-05-14",
-        "business_days": 12,
-        "calendar_days": 19,
-        "merger_name": "PRIME Asia \u2013 Stockland Sienna Wood and Providence",
-        "merger_id": "WA-20022",
-        "determination": "Approved"
+        "business_days": 16,
+        "calendar_days": 22
       },
       {
-        "application_date": "2026-05-14",
-        "business_days": 12,
-        "calendar_days": 19,
-        "merger_name": "AUB \u2013 further interest in KJ Risk",
-        "merger_id": "WA-40023",
-        "determination": "Approved"
+        "business_days": 22,
+        "calendar_days": 31
       },
       {
-        "application_date": "2026-05-14",
-        "business_days": 5,
-        "calendar_days": 7,
-        "merger_name": "United States\u2013Australia Gallium",
-        "merger_id": "WA-75022",
-        "determination": "Approved"
+        "business_days": 15,
+        "calendar_days": 21
       },
       {
-        "application_date": "2026-05-14",
-        "business_days": 12,
-        "calendar_days": 19,
-        "merger_name": "Star Hotels Group - Shafston Hotel, QLD",
-        "merger_id": "WA-80015",
-        "determination": "Approved"
+        "business_days": 17,
+        "calendar_days": 24
       },
       {
-        "application_date": "2026-05-15",
         "business_days": 13,
-        "calendar_days": 20,
-        "merger_name": "INPEX \u2013 minority interests in Beetaloo development projects",
-        "merger_id": "WA-01101",
-        "determination": "Approved"
+        "calendar_days": 19
       },
       {
-        "application_date": "2026-05-15",
+        "business_days": 15,
+        "calendar_days": 23
+      },
+      {
+        "business_days": 14,
+        "calendar_days": 22
+      },
+      {
+        "business_days": 20,
+        "calendar_days": 31
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 15
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 28
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 18
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 12
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 21
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 13
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 18
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 18
+      },
+      {
+        "business_days": 3,
+        "calendar_days": 6
+      },
+      {
         "business_days": 7,
-        "calendar_days": 11,
-        "merger_name": "Allegro - Fantastic Furniture",
-        "merger_id": "WA-55019",
-        "determination": "Approved"
+        "calendar_days": 10
       },
       {
-        "application_date": "2026-05-15",
+        "business_days": 7,
+        "calendar_days": 11
+      },
+      {
         "business_days": 6,
-        "calendar_days": 10,
-        "merger_name": "Blackstone - Medallia",
-        "merger_id": "WA-65018",
-        "determination": "Approved"
+        "calendar_days": 8
       },
       {
-        "application_date": "2026-05-18",
-        "business_days": 9,
-        "calendar_days": 14,
-        "merger_name": "Tinicum and Blackstone led consortium \u2013 Senior",
-        "merger_id": "WA-30018",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-18",
         "business_days": 10,
-        "calendar_days": 15,
-        "merger_name": "Direct Couriers \u2013 Phoenix Transport",
-        "merger_id": "WA-80017",
-        "determination": "Approved"
+        "calendar_days": 15
       },
       {
-        "application_date": "2026-05-18",
-        "business_days": 10,
-        "calendar_days": 15,
-        "merger_name": "SOILCO - Go Grow",
-        "merger_id": "WA-80018",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-18",
-        "business_days": 9,
-        "calendar_days": 14,
-        "merger_name": "UP Education \u2013 Australian Academy of Beauty Dermal & Laser",
-        "merger_id": "WA-85030",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-19",
-        "business_days": 9,
-        "calendar_days": 14,
-        "merger_name": "KK Group Invest - PowerCon",
-        "merger_id": "WA-20024",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-19",
-        "business_days": 11,
-        "calendar_days": 16,
-        "merger_name": "Laundy \u2013 Woy Woy Hotel",
-        "merger_id": "WA-25025",
-        "determination": "Not approved"
-      },
-      {
-        "application_date": "2026-05-19",
-        "business_days": 6,
-        "calendar_days": 8,
-        "merger_name": "BGIS - Safe Fire Electrical",
-        "merger_id": "WA-55020",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-19",
         "business_days": 13,
-        "calendar_days": 21,
-        "merger_name": "GenusPlus Group \u2013 MPC Kinetic",
-        "merger_id": "WA-55022",
-        "determination": "Approved"
+        "calendar_days": 21
       },
       {
-        "application_date": "2026-05-20",
+        "business_days": 8,
+        "calendar_days": 13
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 10
+      },
+      {
         "business_days": 10,
-        "calendar_days": 15,
-        "merger_name": "Apollo Capital Management \u2013 Questex Holdings Group",
-        "merger_id": "WA-05023",
-        "determination": "Approved"
+        "calendar_days": 15
       },
       {
-        "application_date": "2026-05-20",
-        "business_days": 11,
-        "calendar_days": 16,
-        "merger_name": "Ampol \u2013 Freehold land acquisition in Chelsea Heights, Victoria",
-        "merger_id": "WA-40024",
-        "determination": "Approved"
+        "business_days": 7,
+        "calendar_days": 10
       },
       {
-        "application_date": "2026-05-20",
-        "business_days": 12,
-        "calendar_days": 20,
-        "merger_name": "Capital Group - Big Post",
-        "merger_id": "WA-95019",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-21",
-        "business_days": 12,
-        "calendar_days": 20,
-        "merger_name": "KKR \u2013 Fresha.com",
-        "merger_id": "WA-30019",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-21",
-        "business_days": 6,
-        "calendar_days": 11,
-        "merger_name": "Respect Group - Jallarah Homes",
-        "merger_id": "WA-35020",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-21",
-        "business_days": 9,
-        "calendar_days": 14,
-        "merger_name": "BUSS Queensland \u2013 Additional interest in Duxton Vineyards",
-        "merger_id": "WA-35021",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-21",
-        "business_days": 18,
-        "calendar_days": 28,
-        "merger_name": "Envest Group \u2013 MA Insurance Brokers",
-        "merger_id": "WA-50020",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-21",
-        "business_days": 9,
-        "calendar_days": 14,
-        "merger_name": "Grant Thornton Advisors - Grant Thornton Australia",
-        "merger_id": "WA-95020",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-22",
-        "business_days": 17,
-        "calendar_days": 27,
-        "merger_name": "Xylem - TriOS",
-        "merger_id": "WA-05018",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-22",
-        "business_days": 17,
-        "calendar_days": 27,
-        "merger_name": "Online Education Services \u2013 South Australian Institute of Business and Technology",
-        "merger_id": "WA-15020",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-22",
-        "business_days": 19,
-        "calendar_days": 31,
-        "merger_name": "Hexagon - Waygate Technologies",
-        "merger_id": "WA-35022",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-22",
-        "business_days": 8,
-        "calendar_days": 13,
-        "merger_name": "Vets Central - Claremont Veterinary Surgery",
-        "merger_id": "WA-55023",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-22",
-        "business_days": 8,
-        "calendar_days": 13,
-        "merger_name": "KfW \u2013 KNDS N.V.",
-        "merger_id": "WA-75024",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-22",
-        "business_days": 19,
-        "calendar_days": 31,
-        "merger_name": "Imagine Education \u2013 childcare centres ownership restructure",
-        "merger_id": "WA-80019",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-22",
-        "business_days": 11,
-        "calendar_days": 19,
-        "merger_name": "Platinum Equity Group - LMPG",
-        "merger_id": "WA-80020",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-22",
         "business_days": 16,
-        "calendar_days": 26,
-        "merger_name": "Life Without Barriers \u2013 Mallacoota District Health & Support Service",
-        "merger_id": "WA-95022",
-        "determination": "Approved"
+        "calendar_days": 23
       },
       {
-        "application_date": "2026-05-25",
-        "business_days": 10,
-        "calendar_days": 16,
-        "merger_name": "Fujifilm \u2013 endoscopy distribution business in Australia",
-        "merger_id": "WA-01102",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-25",
-        "business_days": 18,
-        "calendar_days": 28,
-        "merger_name": "M&G Asia Property Fund \u2013 Stockland Coopers Paddock and Willawong Distribution Centre",
-        "merger_id": "WA-75025",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-26",
         "business_days": 19,
-        "calendar_days": 29,
-        "merger_name": "B.M.D. Holdings \u2013 Bajara Plant Hire and Stirling Contracting",
-        "merger_id": "WA-05024",
-        "determination": "Approved"
+        "calendar_days": 29
       },
       {
-        "application_date": "2026-05-26",
-        "business_days": 17,
-        "calendar_days": 27,
-        "merger_name": "Bingo Industries - JLW Services",
-        "merger_id": "WA-15021",
-        "determination": "Approved"
+        "business_days": 18,
+        "calendar_days": 29
       },
       {
-        "application_date": "2026-05-26",
         "business_days": 9,
-        "calendar_days": 15,
-        "merger_name": "Regional Australia Bank \u2013 South West Slopes Credit Union",
-        "merger_id": "WA-30021",
-        "determination": "Approved"
+        "calendar_days": 14
       },
       {
-        "application_date": "2026-05-26",
-        "business_days": 17,
-        "calendar_days": 27,
-        "merger_name": "Metcash - Foodland Flagstaff Hill, South Australia",
-        "merger_id": "WA-35023",
-        "determination": "Approved"
+        "business_days": 18,
+        "calendar_days": 28
       },
       {
-        "application_date": "2026-05-26",
         "business_days": 5,
-        "calendar_days": 8,
-        "merger_name": "Metro Petroleum \u2013 Retail sites part of divestiture remedy from Ampol-EG acquisition",
-        "merger_id": "WA-60020",
-        "determination": "Approved"
+        "calendar_days": 8
       },
       {
-        "application_date": "2026-05-26",
-        "business_days": 19,
-        "calendar_days": 29,
-        "merger_name": "Aula Energy \u2013 Additional interest in the Boulder Creek Wind Farm",
-        "merger_id": "WA-70021",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-26",
-        "business_days": 14,
-        "calendar_days": 22,
-        "merger_name": "International Parking Group \u2013 car park at St John of God Murdoch Hospital",
-        "merger_id": "WA-90018",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-27",
-        "business_days": 14,
-        "calendar_days": 22,
-        "merger_name": "Vets Central - Morley Veterinary Hospital",
-        "merger_id": "WA-15022",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-28",
-        "business_days": 15,
-        "calendar_days": 25,
-        "merger_name": "Shape Australia \u2013 Australian Professional Shopfitters",
-        "merger_id": "WA-40025",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-28",
-        "business_days": 19,
-        "calendar_days": 29,
-        "merger_name": "Apax Partners LLP \u2013 Sedex Information Exchange Limited",
-        "merger_id": "WA-45017",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-05-28",
         "business_days": 10,
-        "calendar_days": 18,
-        "merger_name": "Hillhouse - MGI Dobbyn Carafa",
-        "merger_id": "WA-50023",
-        "determination": "Approved"
+        "calendar_days": 15
       },
       {
-        "application_date": "2026-05-29",
-        "business_days": 14,
-        "calendar_days": 24,
-        "merger_name": "American Industrial Partners \u2013 Honeywell\u2019s Warehouse and Workflow Solutions business",
-        "merger_id": "WA-15023",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-01",
-        "business_days": 14,
-        "calendar_days": 21,
-        "merger_name": "MA Financial Group (Redcape Fund) \u2013 The Arthouse Hotel",
-        "merger_id": "WA-25027",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-03",
-        "business_days": 18,
-        "calendar_days": 27,
-        "merger_name": "Australian Venue Co \u2013 assets of Boatbuilders Yard and General Assembly, Melbourne",
-        "merger_id": "WA-25028",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-03",
-        "business_days": 16,
-        "calendar_days": 23,
-        "merger_name": "Australian Food & Fibre \u2013 Western Lands Lease Conversion",
-        "merger_id": "WA-40026",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-03",
-        "business_days": 10,
-        "calendar_days": 15,
-        "merger_name": "Autopact - Freehold interest in commercial land in Ferntree Gully, VIC",
-        "merger_id": "WA-50018",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-03",
-        "business_days": 10,
-        "calendar_days": 15,
-        "merger_name": "Autopact - Freehold interest in commercial land in Dubbo, NSW",
-        "merger_id": "WA-55021",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-03",
         "business_days": 12,
-        "calendar_days": 19,
-        "merger_name": "Australian Venue Co - leasehold and assets of Brabham Tavern, WA",
-        "merger_id": "WA-75026",
-        "determination": "Approved"
+        "calendar_days": 18
       },
       {
-        "application_date": "2026-06-03",
-        "business_days": 18,
-        "calendar_days": 27,
-        "merger_name": "Bain Capital \u2013 Perpetual Wealth Management Group",
-        "merger_id": "WA-80022",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-03",
-        "business_days": 14,
-        "calendar_days": 21,
-        "merger_name": "Tasmea - Maxim",
-        "merger_id": "WA-85031",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-03",
-        "business_days": 10,
-        "calendar_days": 15,
-        "merger_name": "Jardines - I-MED",
-        "merger_id": "WA-90019",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-04",
-        "business_days": 10,
-        "calendar_days": 15,
-        "merger_name": "Oscars Group \u2013 Hotel Diplomat in Potts Point, NSW",
-        "merger_id": "WA-60021",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-04",
-        "business_days": 16,
-        "calendar_days": 25,
-        "merger_name": "MLPL HoldCo \u2013 shares in Marinus Link Pty Ltd",
-        "merger_id": "WA-70023",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-04",
-        "business_days": 19,
-        "calendar_days": 28,
-        "merger_name": "CVC Capital Partners and Groupe Bruxelles Lambert \u2013 Recordati",
-        "merger_id": "WA-70024",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-04",
-        "business_days": 10,
-        "calendar_days": 15,
-        "merger_name": "Ares (Bolt S.p.A.) \u2013 Investment in Plenitude",
-        "merger_id": "WA-85032",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-05",
-        "business_days": 15,
-        "calendar_days": 24,
-        "merger_name": "Bupa \u2013 Barings Australian Private Credit Fund",
-        "merger_id": "WA-20025",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-05",
-        "business_days": 17,
-        "calendar_days": 26,
-        "merger_name": "Warburg Pincus \u2013 Commercial Credit Holdings Limited",
-        "merger_id": "WA-25030",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-05",
-        "business_days": 13,
-        "calendar_days": 20,
-        "merger_name": "SLR Consulting Australia - Hydrobiology",
-        "merger_id": "WA-35025",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-05",
-        "business_days": 13,
-        "calendar_days": 20,
-        "merger_name": "Dhilmar \u2013 Anglo American steelmaking coal business",
-        "merger_id": "WA-85035",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-08",
-        "business_days": 19,
-        "calendar_days": 25,
-        "merger_name": "Freedom Fuels \u2013 Rennic",
-        "merger_id": "WA-85034",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-09",
-        "business_days": 10,
-        "calendar_days": 14,
-        "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
-        "merger_id": "WA-05026",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-09",
         "business_days": 12,
-        "calendar_days": 16,
-        "merger_name": "Redwood Services Group \u2013 All IT Australia",
-        "merger_id": "WA-15024",
-        "determination": "Approved"
+        "calendar_days": 16
       },
       {
-        "application_date": "2026-06-09",
-        "business_days": 16,
-        "calendar_days": 22,
-        "merger_name": "Count \u2013 Oracle Group",
-        "merger_id": "WA-45018",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-09",
-        "business_days": 13,
-        "calendar_days": 17,
-        "merger_name": "Brookfield \u2013 World Freight Company",
-        "merger_id": "WA-55025",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-09",
         "business_days": 12,
-        "calendar_days": 16,
-        "merger_name": "Redwood Services Group \u2013 Newtrend I.T. Specialists",
-        "merger_id": "WA-60024",
-        "determination": "Approved"
+        "calendar_days": 17
       },
       {
-        "application_date": "2026-06-09",
-        "business_days": 18,
-        "calendar_days": 24,
-        "merger_name": "EY Australia - Australian EY Fusion business",
-        "merger_id": "WA-90021",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-10",
-        "business_days": 10,
-        "calendar_days": 14,
-        "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
-        "merger_id": "WA-15025",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-11",
-        "business_days": 13,
-        "calendar_days": 19,
-        "merger_name": "Airtree \u2013 HotDoc",
-        "merger_id": "WA-40028",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-11",
-        "business_days": 8,
-        "calendar_days": 12,
-        "merger_name": "Carlyle \u2013 CHN Group",
-        "merger_id": "WA-95024",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-12",
-        "business_days": 12,
-        "calendar_days": 18,
-        "merger_name": "Oakley Capital \u2013 XTEL",
-        "merger_id": "WA-01108",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-15",
-        "business_days": 5,
-        "calendar_days": 7,
-        "merger_name": "River Capital \u2013 YOMG",
-        "merger_id": "WA-25032",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-17",
-        "business_days": 6,
-        "calendar_days": 8,
-        "merger_name": "Warburg Pincus \u2013 JSB",
-        "merger_id": "WA-10019",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-17",
-        "business_days": 6,
-        "calendar_days": 8,
-        "merger_name": "Bain Capital \u2013 FDH",
-        "merger_id": "WA-25033",
-        "determination": "Approved"
-      },
-      {
-        "application_date": "2026-06-17",
         "business_days": 9,
-        "calendar_days": 13,
-        "merger_name": "GPS Energy \u2013 Ryowa's interest in Gladstone Power Station Joint Venture",
-        "merger_id": "WA-35027",
-        "determination": "Approved"
+        "calendar_days": 11
       },
       {
-        "application_date": "2026-06-18",
-        "business_days": 12,
-        "calendar_days": 18,
-        "merger_name": "Oaktree \u2013 Vivax Metrotech",
-        "merger_id": "WA-20026",
-        "determination": "Approved"
+        "business_days": 16,
+        "calendar_days": 22
       },
       {
-        "application_date": "2026-06-18",
-        "business_days": 12,
-        "calendar_days": 18,
-        "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
-        "merger_id": "WA-35026",
-        "determination": "Approved"
+        "business_days": 19,
+        "calendar_days": 29
       },
       {
-        "application_date": "2026-06-18",
-        "business_days": 12,
-        "calendar_days": 18,
-        "merger_name": "Siemens Energy \u2013 Camlin Group",
-        "merger_id": "WA-60023",
-        "determination": "Approved"
+        "business_days": 15,
+        "calendar_days": 22
       },
       {
-        "application_date": "2026-06-23",
         "business_days": 8,
-        "calendar_days": 10,
-        "merger_name": "Vets Central - Gold Coast Veterinary Surgery",
-        "merger_id": "WA-55026",
-        "determination": "Approved"
+        "calendar_days": 13
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 23
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 28
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 6,
+        "calendar_days": 10
+      },
+      {
+        "business_days": 2,
+        "calendar_days": 10
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 11
+      },
+      {
+        "business_days": 22,
+        "calendar_days": 33
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 20
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 27
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 20
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 31
+      },
+      {
+        "business_days": 7,
+        "calendar_days": 12
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 15
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 29
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 25
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 28
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 15
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 11
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 13
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 19
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 3,
+        "calendar_days": 7
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 27
+      },
+      {
+        "business_days": 5,
+        "calendar_days": 7
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 13
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 28
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 19
+      },
+      {
+        "business_days": 7,
+        "calendar_days": 10
+      },
+      {
+        "business_days": 14,
+        "calendar_days": 21
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 20
+      },
+      {
+        "business_days": 14,
+        "calendar_days": 22
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 10
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 21
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 19
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 15
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 15
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 31
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 19
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 27
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 24
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 18
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 26
+      },
+      {
+        "business_days": 6,
+        "calendar_days": 11
+      },
+      {
+        "business_days": 11,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 29
+      },
+      {
+        "business_days": 14,
+        "calendar_days": 22
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 21
+      },
+      {
+        "business_days": 3,
+        "calendar_days": 3
+      },
+      {
+        "business_days": 5,
+        "calendar_days": 11
+      },
+      {
+        "business_days": 6,
+        "calendar_days": 8
+      },
+      {
+        "business_days": 7,
+        "calendar_days": 12
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 10
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 14,
+        "calendar_days": 21
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 15
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 25
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 20
+      },
+      {
+        "business_days": 19,
+        "calendar_days": 27
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 18
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 19
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 17
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 16
+      },
+      {
+        "business_days": 15,
+        "calendar_days": 21
+      },
+      {
+        "business_days": 14,
+        "calendar_days": 22
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 15
+      },
+      {
+        "business_days": 18,
+        "calendar_days": 24
+      },
+      {
+        "business_days": 10,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 7,
+        "calendar_days": 9
+      },
+      {
+        "business_days": 3,
+        "calendar_days": 6
+      },
+      {
+        "business_days": 17,
+        "calendar_days": 23
+      },
+      {
+        "business_days": 13,
+        "calendar_days": 21
+      },
+      {
+        "business_days": 3,
+        "calendar_days": 7
+      },
+      {
+        "business_days": 6,
+        "calendar_days": 9
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 13
+      },
+      {
+        "business_days": 12,
+        "calendar_days": 20
+      },
+      {
+        "business_days": 9,
+        "calendar_days": 14
+      },
+      {
+        "business_days": 16,
+        "calendar_days": 26
+      },
+      {
+        "business_days": 8,
+        "calendar_days": 12
       }
     ],
     "stats": {

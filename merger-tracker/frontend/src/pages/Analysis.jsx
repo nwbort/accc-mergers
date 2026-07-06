@@ -92,7 +92,7 @@ function Analysis() {
   const dayLabel = calendarDays ? 'calendar days' : 'business days';
 
   // --- Phase 1 Duration ECDF ---
-  const ecdfPoints = computeEcdf(phase1_duration.scatter_data, dayField);
+  const ecdfPoints = computeEcdf(phase1_duration.durations, dayField);
   const ecdfMedian = phase1Stats.median;
   const ecdfMaxX = ecdfPoints.length > 0
     ? Math.max(ecdfPoints[ecdfPoints.length - 1].x, 30) + 2
@@ -185,14 +185,23 @@ function Analysis() {
   };
 
   // --- Waiver Duration ECDF ---
-  const waiverEcdfPoints = computeEcdf(waiver_duration.scatter_data, dayField);
+  const waiverEcdfPoints = computeEcdf(waiver_duration.durations, dayField);
   const waiverEcdfMedian = waiverStats.median;
   const waiverEcdfMaxX = waiverEcdfPoints.length > 0
-    ? Math.max(waiverEcdfPoints[waiverEcdfPoints.length - 1].x, 30) + 2
-    : 30;
+    ? Math.max(waiverEcdfPoints[waiverEcdfPoints.length - 1].x, 25) + 2
+    : 25;
 
   const waiverEcdfData = {
     datasets: [
+      ...(!calendarDays ? [{
+        label: 'BD 25 deadline',
+        data: [{ x: 25, y: 0 }, { x: 25, y: 100 }],
+        borderColor: COLORS.accent,
+        borderDash: [6, 4],
+        borderWidth: 1.5,
+        pointRadius: 0,
+        showLine: true,
+      }] : []),
       ...(waiverEcdfMedian != null ? [{
         label: `Median (${waiverEcdfMedian} ${dayLabel})`,
         data: [{ x: waiverEcdfMedian, y: 0 }, { x: waiverEcdfMedian, y: 100 }],

@@ -14,19 +14,19 @@ function ok(json) {
 // excluded from the curve entirely.
 const analysisFixture = {
   phase1_duration: {
-    scatter_data: [
-      { notification_date: '2025-01-01', business_days: 10, calendar_days: 15, merger_name: 'A', merger_id: 'MN-1', determination: 'Approved', in_progress: false },
-      { notification_date: '2025-02-01', business_days: 10, calendar_days: 15, merger_name: 'B', merger_id: 'MN-2', determination: 'Approved', in_progress: false },
-      { notification_date: '2025-03-01', business_days: 20, calendar_days: 28, merger_name: 'C', merger_id: 'MN-3', determination: 'Approved', in_progress: false },
-      { notification_date: '2025-04-01', business_days: 30, calendar_days: 42, merger_name: 'D', merger_id: 'MN-4', determination: 'Referred to phase 2', in_progress: false },
-      { notification_date: '2025-05-01', business_days: 40, calendar_days: 56, merger_name: 'E', merger_id: 'MN-5', determination: 'Approved', in_progress: false },
-      { notification_date: '2025-06-01', business_days: 5, calendar_days: 7, merger_name: 'F', merger_id: 'MN-6', determination: 'Referred to phase 2', in_progress: true },
+    durations: [
+      { business_days: 10, calendar_days: 15, in_progress: false },
+      { business_days: 10, calendar_days: 15, in_progress: false },
+      { business_days: 20, calendar_days: 28, in_progress: false },
+      { business_days: 30, calendar_days: 42, in_progress: false },
+      { business_days: 40, calendar_days: 56, in_progress: false },
+      { business_days: 5, calendar_days: 7, in_progress: true },
     ],
     stats: { average: 22, median: 20, min: 10, max: 40, count: 5 },
     calendar_stats: { average: 30, median: 28, min: 15, max: 56, count: 5 },
   },
   waiver_duration: {
-    scatter_data: [],
+    durations: [],
     stats: { average: null, median: null, min: null, max: null, count: 0 },
     calendar_stats: { average: null, median: null, min: null, max: null, count: 0 },
   },
@@ -90,7 +90,7 @@ describe('Analysis phase 1 duration ECDF', () => {
       ...analysisFixture,
       phase1_duration: {
         ...analysisFixture.phase1_duration,
-        scatter_data: analysisFixture.phase1_duration.scatter_data.filter((d) => d.in_progress),
+        durations: analysisFixture.phase1_duration.durations.filter((d) => d.in_progress),
       },
     };
 
@@ -106,5 +106,64 @@ describe('Analysis phase 1 duration ECDF', () => {
     });
 
     expect(screen.queryByText('Phase 1 duration: share of reviews concluded')).not.toBeInTheDocument();
+  });
+});
+
+describe('Analysis waiver duration ECDF', () => {
+  beforeEach(() => {
+    dataCache.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+    dataCache.clear();
+  });
+
+  it('computes cumulative percentages for completed waivers', async () => {
+    const fixture = {
+      ...analysisFixture,
+      waiver_duration: {
+        durations: [
+          { business_days: 10, calendar_days: 15 },
+          { business_days: 20, calendar_days: 28 },
+        ],
+        stats: { average: 15, median: 15, min: 10, max: 20, count: 2 },
+        calendar_stats: { average: 21.5, median: 21.5, min: 15, max: 28, count: 2 },
+      },
+    };
+
+    vi.spyOn(globalThis, 'fetch').mockImplementation((url) => {
+      if (url.includes('analysis.json')) return Promise.resolve(ok(fixture));
+      return Promise.reject(new Error(`Unexpected fetch: ${url}`));
+    });
+
+    renderAnalysis();
+
+    await waitFor(() => {
+      expect(screen.getByText('Waiver duration: share of applications concluded')).toBeInTheDocument();
+    });
+
+    const table = document.getElementById('chart-waiver-ecdf-summary');
+    const rows = within(table).getAllByRole('row').slice(1);
+    const cellsFor = (row) => within(row).getAllByRole('cell').map((c) => c.textContent);
+
+    expect(cellsFor(rows[0])).toEqual(['10', '50%', '1 of 2']);
+    expect(cellsFor(rows[1])).toEqual(['20', '100%', '2 of 2']);
+  });
+
+  it('omits the waiver ECDF section when there are no completed waivers', async () => {
+    vi.spyOn(globalThis, 'fetch').mockImplementation((url) => {
+      if (url.includes('analysis.json')) return Promise.resolve(ok(analysisFixture));
+      return Promise.reject(new Error(`Unexpected fetch: ${url}`));
+    });
+
+    renderAnalysis();
+
+    await waitFor(() => {
+      expect(screen.getByText('Monthly notification volume')).toBeInTheDocument();
+    });
+
+    expect(screen.queryByText('Waiver duration: share of applications concluded')).not.toBeInTheDocument();
   });
 });
