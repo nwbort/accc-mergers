@@ -2,12 +2,14 @@
   "name": "accc-register-watcher",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Cloudflare Email Worker — triggers the merger pipeline when the ACCC register update mailing list sends an email",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy",
     "deploy:dry": "wrangler deploy --dry-run",
-    "tail": "wrangler tail"
+    "tail": "wrangler tail",
+    "test": "node --test"
   },
   "devDependencies": {
     "wrangler": "^4.67.0"

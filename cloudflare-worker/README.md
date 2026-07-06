@@ -19,11 +19,26 @@ npm install
 wrangler d1 create mergers-feedback
 wrangler d1 execute mergers-feedback --file=schema.sql
 
+# Create the KV namespace used for rate limiting, copy its id into wrangler.toml
+wrangler kv namespace create RATE_LIMIT_KV
+
 # Set required secrets
 wrangler secret put RESEND_API_KEY
 wrangler secret put RESEND_AUDIENCE_ID
 wrangler secret put TURNSTILE_SECRET_KEY
 ```
+
+## Rate limiting
+
+Both endpoints enforce a per-IP fixed-window limit using the `RATE_LIMIT_KV`
+namespace (keyed on `CF-Connecting-IP`), on top of Turnstile:
+
+- `POST /` (signup): 5 requests per 10 minutes per IP.
+- `POST /feedback`: 5 requests per 10 minutes per IP, plus a 20-per-day cap
+  to bound D1 row growth from a single IP.
+
+Requests over the limit get a `429` with the same `{ "error": "..." }` shape
+as other validation errors, which the frontend already renders inline.
 
 ## Develop and deploy
 

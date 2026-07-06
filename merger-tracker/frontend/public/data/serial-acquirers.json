@@ -1,0 +1,319 @@
+{
+  "acquirers": [
+    {
+      "acquirer_name": "Coles Group",
+      "canonical_id": "coles",
+      "anzsic_code": "411",
+      "anzsic_name": "Supermarket and Grocery Stores",
+      "merger_ids": [
+        "MN-01068",
+        "MN-01090",
+        "MN-50019",
+        "MN-25029",
+        "MN-70022"
+      ],
+      "dates": [
+        "2025-11-27T12:00:00Z",
+        "2026-03-12T12:00:00Z",
+        "2026-06-04T12:00:00Z",
+        "2026-06-09T12:00:00Z",
+        "2026-06-23T12:00:00Z"
+      ],
+      "count": 5
+    },
+    {
+      "acquirer_name": "OHCA PROPERTY HOLDINGS PTY LTD",
+      "canonical_id": null,
+      "anzsic_code": "860",
+      "anzsic_name": "Residential Care Services",
+      "merger_ids": [
+        "MN-75002",
+        "MN-75012",
+        "MN-15019"
+      ],
+      "dates": [
+        "2026-01-19T12:00:00Z",
+        "2026-03-19T12:00:00Z",
+        "2026-05-20T12:00:00Z"
+      ],
+      "count": 3
+    },
+    {
+      "acquirer_name": "DPG SERVICES PTY LTD",
+      "canonical_id": null,
+      "anzsic_code": "860",
+      "anzsic_name": "Residential Care Services",
+      "merger_ids": [
+        "MN-75002",
+        "MN-75012",
+        "MN-15019"
+      ],
+      "dates": [
+        "2026-01-19T12:00:00Z",
+        "2026-03-19T12:00:00Z",
+        "2026-05-20T12:00:00Z"
+      ],
+      "count": 3
+    },
+    {
+      "acquirer_name": "Eli Lilly and Company",
+      "canonical_id": "eli-lilly-and-company",
+      "anzsic_code": "184",
+      "anzsic_name": "Pharmaceutical and Medicinal Product Manufacturing",
+      "merger_ids": [
+        "MN-20013",
+        "MN-40012",
+        "MN-95016"
+      ],
+      "dates": [
+        "2026-04-08T12:00:00Z",
+        "2026-04-14T12:00:00Z",
+        "2026-05-18T12:00:00Z"
+      ],
+      "count": 3
+    },
+    {
+      "acquirer_name": "Eli Lilly and Company",
+      "canonical_id": "eli-lilly-and-company",
+      "anzsic_code": "691",
+      "anzsic_name": "Scientific Research Services",
+      "merger_ids": [
+        "MN-20013",
+        "MN-40012",
+        "MN-95016"
+      ],
+      "dates": [
+        "2026-04-08T12:00:00Z",
+        "2026-04-14T12:00:00Z",
+        "2026-05-18T12:00:00Z"
+      ],
+      "count": 3
+    },
+    {
+      "acquirer_name": "Experience Co Limited",
+      "canonical_id": "experience-co-limited",
+      "anzsic_code": "482",
+      "anzsic_name": "Water Passenger Transport",
+      "merger_ids": [
+        "MN-50011",
+        "MN-85015"
+      ],
+      "dates": [
+        "2026-07-01T12:00:00Z",
+        "2026-07-01T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Experience Co Limited",
+      "canonical_id": "experience-co-limited",
+      "anzsic_code": "501",
+      "anzsic_name": "Scenic and Sightseeing Transport",
+      "merger_ids": [
+        "MN-50011",
+        "MN-85015"
+      ],
+      "dates": [
+        "2026-07-01T12:00:00Z",
+        "2026-07-01T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "SYMAL GROUP LIMITED",
+      "canonical_id": null,
+      "anzsic_code": "310",
+      "anzsic_name": "Heavy and Civil Engineering Construction",
+      "merger_ids": [
+        "MN-55003",
+        "MN-50030"
+      ],
+      "dates": [
+        "2026-02-03T12:00:00Z",
+        "2026-07-01T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "OpenAI Group PBC",
+      "canonical_id": null,
+      "anzsic_code": "592",
+      "anzsic_name": "Data Processing, Web Hosting and Electronic Information Storage Services",
+      "merger_ids": [
+        "MN-25021",
+        "MN-90020"
+      ],
+      "dates": [
+        "2026-05-12T12:00:00Z",
+        "2026-06-26T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "ENDEAVOUR GROUP LIMITED",
+      "canonical_id": null,
+      "anzsic_code": "412",
+      "anzsic_name": "Specialised Food Retailing",
+      "merger_ids": [
+        "MN-30012",
+        "MN-50027"
+      ],
+      "dates": [
+        "2026-05-22T12:00:00Z",
+        "2026-06-22T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
+      "canonical_id": null,
+      "anzsic_code": "840",
+      "anzsic_name": "Hospitals",
+      "merger_ids": [
+        "MN-55010",
+        "MN-40013"
+      ],
+      "dates": [
+        "2026-03-27T12:00:00Z",
+        "2026-06-16T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
+      "canonical_id": null,
+      "anzsic_code": "697",
+      "anzsic_name": "Veterinary Services",
+      "merger_ids": [
+        "MN-95003",
+        "MN-70020"
+      ],
+      "dates": [
+        "2026-02-13T12:00:00Z",
+        "2026-06-02T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "CSE-Global (Australia) Pty Ltd",
+      "canonical_id": null,
+      "anzsic_code": "349",
+      "anzsic_name": "Other Machinery and Equipment Wholesaling",
+      "merger_ids": [
+        "MN-01071",
+        "MN-95021"
+      ],
+      "dates": [
+        "2025-12-22T12:00:00Z",
+        "2026-05-21T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Gilead Sciences, Inc.",
+      "canonical_id": null,
+      "anzsic_code": "184",
+      "anzsic_name": "Pharmaceutical and Medicinal Product Manufacturing",
+      "merger_ids": [
+        "MN-40009",
+        "MN-60014"
+      ],
+      "dates": [
+        "2026-03-19T12:00:00Z",
+        "2026-04-22T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Gilead Sciences, Inc.",
+      "canonical_id": null,
+      "anzsic_code": "691",
+      "anzsic_name": "Scientific Research Services",
+      "merger_ids": [
+        "MN-40009",
+        "MN-60014"
+      ],
+      "dates": [
+        "2026-03-19T12:00:00Z",
+        "2026-04-22T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Coles Group",
+      "canonical_id": "coles",
+      "anzsic_code": "671",
+      "anzsic_name": "Property Operators",
+      "merger_ids": [
+        "MN-01068",
+        "MN-01090"
+      ],
+      "dates": [
+        "2025-11-27T12:00:00Z",
+        "2026-03-12T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "AVC Operations Pty Limited",
+      "canonical_id": null,
+      "anzsic_code": "451",
+      "anzsic_name": "Cafes, Restaurants and Takeaway Food Services",
+      "merger_ids": [
+        "MN-10006",
+        "MN-65007"
+      ],
+      "dates": [
+        "2026-02-06T12:00:00Z",
+        "2026-02-23T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "AVC Operations Pty Limited",
+      "canonical_id": null,
+      "anzsic_code": "452",
+      "anzsic_name": "Pubs, Taverns and Bars",
+      "merger_ids": [
+        "MN-10006",
+        "MN-65007"
+      ],
+      "dates": [
+        "2026-02-06T12:00:00Z",
+        "2026-02-23T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "ServiceNow, Inc.",
+      "canonical_id": "servicenow-inc",
+      "anzsic_code": "542",
+      "anzsic_name": "Software Publishing",
+      "merger_ids": [
+        "MN-85002",
+        "MN-25004"
+      ],
+      "dates": [
+        "2025-12-22T12:00:00Z",
+        "2026-02-13T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "ASAHI HOLDINGS (AUSTRALIA) PTY LTD",
+      "canonical_id": null,
+      "anzsic_code": "121",
+      "anzsic_name": "Beverage Manufacturing",
+      "merger_ids": [
+        "MN-01016",
+        "MN-01035"
+      ],
+      "dates": [
+        "2025-08-15T12:00:00Z",
+        "2025-10-24T12:00:00Z"
+      ],
+      "count": 2
+    }
+  ],
+  "count": 20
+}

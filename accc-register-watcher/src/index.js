@@ -15,9 +15,9 @@
  * Required Worker vars (wrangler.toml):
  *   GITHUB_REPO      — "owner/repo" to dispatch to
  *   ALLOWED_SENDERS  — comma-separated allowlist of sender addresses/domains
- *                      for the ACCC mailing list (blank = accept any sender),
- *                      checked against both the envelope sender and the
- *                      From: header
+ *                      for the ACCC mailing list (blank/unset = reject all
+ *                      senders, logging a warning), checked against both the
+ *                      envelope sender and the From: header
  */
 
 const DISPATCH_EVENT_TYPE = "new_merger_detected";
@@ -29,13 +29,15 @@ function extractAddress(value) {
   return (match ? match[1] : value || "").trim().toLowerCase();
 }
 
-function isAllowedSender(candidates, allowedSendersVar) {
+export function isAllowedSender(candidates, allowedSendersVar) {
   const allowed = (allowedSendersVar || "")
     .split(",")
     .map((s) => s.trim().toLowerCase())
     .filter(Boolean);
 
-  if (allowed.length === 0) return true;
+  // No allowlist configured — reject rather than accept-any, so a blank
+  // ALLOWED_SENDERS can't silently let spoofed mail trigger pipeline runs.
+  if (allowed.length === 0) return false;
 
   return candidates.some((candidate) =>
     allowed.some((entry) =>
@@ -53,9 +55,10 @@ export default {
     const subject = message.headers.get("subject") || "(no subject)";
 
     if (!isAllowedSender([envelopeFrom, headerFrom], env.ALLOWED_SENDERS)) {
-      console.warn(
-        `Ignoring email from unrecognised sender (envelope: ${envelopeFrom}, header: ${headerFrom})`
-      );
+      const reason = env.ALLOWED_SENDERS
+        ? `unrecognised sender (envelope: ${envelopeFrom}, header: ${headerFrom})`
+        : "ALLOWED_SENDERS is not configured";
+      console.warn(`Ignoring email — ${reason}`);
       return;
     }
 
