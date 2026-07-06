@@ -21,12 +21,20 @@
     {
       "name": "Camlin Limited",
       "identifier_type": null,
-      "identifier": "UK company number  NI073204"
+      "identifier": "UK company number  NI073204",
+      "canonical": {
+        "id": "camlin-limited",
+        "name": "Camlin Limited"
+      }
     },
     {
       "name": "Camlin (Australia) Pty Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "canonical": {
+        "id": "camlin-limited",
+        "name": "Camlin Limited"
+      }
     }
   ],
   "other_parties": [],
