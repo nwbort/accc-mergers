@@ -66,6 +66,10 @@ function Mergers() {
   const [mergers, setMergers] = useState(() => dataCache.get('mergers-list') || []);
   const [loading, setLoading] = useState(() => !dataCache.has('mergers-list'));
   const [error, setError] = useState(null);
+  // Total merger count from list-meta.json — known from the very first request,
+  // well before every page has loaded, so the unfiltered "of N" count doesn't
+  // have to creep up page by page while the rest load in the background.
+  const [totalMergerCount, setTotalMergerCount] = useState(() => dataCache.get('mergers-list')?.length ?? null);
   const [page, setPage] = useState(1);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const listRef = useRef(null);
@@ -116,6 +120,11 @@ function Mergers() {
   }, []);
 
   const fetchMergers = async () => {
+    // Only render progressively on a cold visit — if a full list is already
+    // cached (and showing), replacing it with a partial page-1-only list
+    // while the rest re-fetches in the background would be a visible regression.
+    const isColdVisit = mergers.length === 0;
+
     try {
       // First, fetch metadata to know how many pages there are
       const metaResponse = await fetch(API_ENDPOINTS.mergersListMeta);
@@ -124,36 +133,73 @@ function Mergers() {
 
       const meta = await metaResponse.json();
       const totalPages = meta.total_pages;
+      setTotalMergerCount(meta.total);
 
-      // Fetch pages in batches to avoid saturating the browser's connection pool.
-      // Promise.all within each batch still parallelises those requests.
-      const allResponses = [];
-      for (let i = 1; i <= totalPages; i += FETCH_BATCH_SIZE) {
-        const batch = [];
-        for (let j = i; j < i + FETCH_BATCH_SIZE && j <= totalPages; j++) {
-          batch.push(fetch(API_ENDPOINTS.mergersListPage(j)));
-        }
-        const batchResponses = await Promise.all(batch);
-        allResponses.push(...batchResponses);
+      // list-page-N.json files are sorted ascending by notification date
+      // (oldest first — new mergers only ever append to the last page, so
+      // regenerating the pipeline only touches that one file). The default
+      // frontend sort is notification-desc (newest first), so fetch the
+      // *last* page first in that case — otherwise the first screen would
+      // flash the oldest mergers before the background fetch replaces them
+      // with the newest ones. For notification-asc, page 1 is already the
+      // right first screen; the determination sorts have no page/sort
+      // correlation, so page 1 is just a reasonable default there too.
+      const initialPage = sortBy === 'notification-desc' ? totalPages : 1;
+
+      const initialResponse = await fetch(API_ENDPOINTS.mergersListPage(initialPage));
+      if (!initialResponse.ok) throw new Error('Failed to fetch merger page');
+      const initialPageData = await initialResponse.json();
+      let allMergers = initialPageData.mergers;
+
+      if (isColdVisit) {
+        // Render immediately with just this one page so users aren't stuck
+        // looking at a spinner while the remaining ~8 pages load in the
+        // background. The rest fill in silently (no progress UI) since a
+        // banner that appears then disappears just shifts the list under it.
+        // The search index is built without touching the shared dataCache
+        // entry — that entry is reserved for the complete, final index so a
+        // stale partial index is never mistaken for a complete one.
+        setMergers(allMergers);
+        setSearchIndex(buildSearchIndex(allMergers, { cache: false }));
+        setLoading(false);
       }
 
-      const pagesResults = await Promise.allSettled(
-        allResponses.map((r) => {
-          if (!r.ok) throw new Error('Failed to fetch merger page');
-          return r.json();
-        })
-      );
+      // Fetch remaining pages in batches to avoid saturating the browser's
+      // connection pool. Promise.all within each batch still parallelises
+      // those requests. Order doesn't matter — the default sort is always
+      // re-applied to the combined list on render.
+      const remainingPages = [];
+      for (let p = 1; p <= totalPages; p++) {
+        if (p !== initialPage) remainingPages.push(p);
+      }
 
-      const allMergers = pagesResults
-        .filter((r) => r.status === 'fulfilled')
-        .flatMap((r) => r.value.mergers);
+      for (let i = 0; i < remainingPages.length; i += FETCH_BATCH_SIZE) {
+        const batchPages = remainingPages.slice(i, i + FETCH_BATCH_SIZE);
+        const batchResponses = await Promise.all(
+          batchPages.map((p) => fetch(API_ENDPOINTS.mergersListPage(p)))
+        );
+        const batchResults = await Promise.allSettled(
+          batchResponses.map((r) => {
+            if (!r.ok) throw new Error('Failed to fetch merger page');
+            return r.json();
+          })
+        );
+        const batchMergers = batchResults
+          .filter((r) => r.status === 'fulfilled')
+          .flatMap((r) => r.value.mergers);
+        allMergers = allMergers.concat(batchMergers);
 
+        if (isColdVisit) {
+          setMergers(allMergers);
+          setSearchIndex(buildSearchIndex(allMergers, { cache: false }));
+        }
+      }
+
+      // Only now — once every page has arrived — write the shared caches, so
+      // a partial list/index is never persisted as if it were complete.
       dataCache.set('mergers-list', allMergers);
-      setMergers(allMergers);
-
-      // Clear the session-cached index so it is rebuilt from the freshly fetched
-      // data rather than returning the stale index from the previous navigation.
       clearSearchIndex();
+      setMergers(allMergers);
       setSearchIndex(buildSearchIndex(allMergers));
     } catch (err) {
       console.error('Failed to load mergers list:', err);
@@ -231,6 +277,14 @@ function Mergers() {
   // Paginated slice of sorted results
   const visibleMergers = sortedMergers.slice(0, page * PAGE_SIZE);
   const hasMore = visibleMergers.length < sortedMergers.length;
+
+  // With no search/filter active, sortedMergers *is* every merger, so its count
+  // otherwise creeps up page by page while background pages are still loading.
+  // The real total is already known from list-meta.json, so use that instead.
+  const hasActiveSearchOrFilter = activeFilterCount > 0 || Boolean(debouncedSearchTerm);
+  const displayedTotal = !hasActiveSearchOrFilter && totalMergerCount !== null
+    ? totalMergerCount
+    : sortedMergers.length;
 
   // Reset to page 1 whenever filters or sort order change
   useEffect(() => {
@@ -465,7 +519,7 @@ function Mergers() {
         {/* Results count & Sort */}
         <div className="flex items-center justify-between mb-4">
           <p className="text-sm text-gray-500">
-            Showing {visibleMergers.length} of {sortedMergers.length} mergers
+            Showing {visibleMergers.length} of {displayedTotal} mergers
           </p>
           <div className="flex items-center gap-2">
             <label htmlFor="sort" className="text-sm text-gray-500 hidden sm:inline">Sort by</label>

@@ -10,6 +10,11 @@ const SEARCH_INDEX_KEY = 'mergers-search-index';
  * The index is cached using the dataCache utility for performance.
  *
  * @param {Array} mergers - Array of merger objects
+ * @param {Object} [options]
+ * @param {boolean} [options.cache=true] - Whether to read/write the shared
+ *   dataCache entry. Pass `false` while building an index over a partial
+ *   (still-loading) merger list so an incomplete index is never mistaken for
+ *   the cached, complete one.
  * @returns {Map} Map of merger_id -> searchable string
  *
  * @example
@@ -23,9 +28,9 @@ const SEARCH_INDEX_KEY = 'mergers-search-index';
  * const index = buildSearchIndex(mergers);
  * // index.get('MN-01019') => 'ampol / z energy mn-01019 ampol limited z energy petroleum retailing'
  */
-export function buildSearchIndex(mergers) {
+export function buildSearchIndex(mergers, { cache = true } = {}) {
   // Check cache first
-  if (dataCache.has(SEARCH_INDEX_KEY)) {
+  if (cache && dataCache.has(SEARCH_INDEX_KEY)) {
     return dataCache.get(SEARCH_INDEX_KEY);
   }
 
@@ -82,7 +87,9 @@ export function buildSearchIndex(mergers) {
   }
 
   // Cache for future use
-  dataCache.set(SEARCH_INDEX_KEY, index);
+  if (cache) {
+    dataCache.set(SEARCH_INDEX_KEY, index);
+  }
 
   return index;
 }
