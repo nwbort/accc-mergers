@@ -566,19 +566,21 @@ function Analysis() {
                 >
                   <Scatter data={phase1EcdfData} options={phase1EcdfOptions} />
                 </div>
-                <table id="chart-phase1-ecdf-summary" className="sr-only">
-                  <caption>Cumulative share of completed phase 1 reviews concluded by {dayLabel}</caption>
-                  <thead><tr><th>By {dayLabel === 'calendar days' ? 'calendar day' : 'business day'}</th><th>% concluded</th><th>Reviews concluded</th></tr></thead>
-                  <tbody>
-                    {ecdfPoints.filter(p => p.x > 0).map(p => (
-                      <tr key={p.x}>
-                        <td>{p.x}</td>
-                        <td>{p.y}%</td>
-                        <td>{p.n} of {p.total}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                <div className="sr-only">
+                  <table id="chart-phase1-ecdf-summary">
+                    <caption>Cumulative share of completed phase 1 reviews concluded by {dayLabel}</caption>
+                    <thead><tr><th>By {dayLabel === 'calendar days' ? 'calendar day' : 'business day'}</th><th>% concluded</th><th>Reviews concluded</th></tr></thead>
+                    <tbody>
+                      {ecdfPoints.filter(p => p.x > 0).map(p => (
+                        <tr key={p.x}>
+                          <td>{p.x}</td>
+                          <td>{p.y}%</td>
+                          <td>{p.n} of {p.total}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </section>
@@ -605,19 +607,21 @@ function Analysis() {
                 >
                   <Scatter data={waiverEcdfData} options={waiverEcdfOptions} />
                 </div>
-                <table id="chart-waiver-ecdf-summary" className="sr-only">
-                  <caption>Cumulative share of waiver applications decided by {dayLabel}</caption>
-                  <thead><tr><th>By {dayLabel === 'calendar days' ? 'calendar day' : 'business day'}</th><th>% concluded</th><th>Waivers decided</th></tr></thead>
-                  <tbody>
-                    {waiverEcdfPoints.filter(p => p.x > 0).map(p => (
-                      <tr key={p.x}>
-                        <td>{p.x}</td>
-                        <td>{p.y}%</td>
-                        <td>{p.n} of {p.total}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+                <div className="sr-only">
+                  <table id="chart-waiver-ecdf-summary">
+                    <caption>Cumulative share of waiver applications decided by {dayLabel}</caption>
+                    <thead><tr><th>By {dayLabel === 'calendar days' ? 'calendar day' : 'business day'}</th><th>% concluded</th><th>Waivers decided</th></tr></thead>
+                    <tbody>
+                      {waiverEcdfPoints.filter(p => p.x > 0).map(p => (
+                        <tr key={p.x}>
+                          <td>{p.x}</td>
+                          <td>{p.y}%</td>
+                          <td>{p.n} of {p.total}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </section>
