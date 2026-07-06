@@ -29,7 +29,7 @@ import argparse
 import json
 import re
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
 
@@ -648,7 +648,7 @@ def main() -> None:
         print(f"JSON report written to {args.output}")
 
     if args.issues_json:
-        today = datetime.utcnow().strftime("%Y-%m-%d")
+        today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
         issues_data = build_issues_data(report, args.input, args.branch, today)
         args.issues_json.parent.mkdir(parents=True, exist_ok=True)
         with args.issues_json.open("w") as fh:
@@ -663,7 +663,7 @@ def main() -> None:
                 fh.write("\n")
             print(f"Applied {len(changes)} deletion(s) to {args.input}", file=sys.stderr)
         if args.pr_markdown:
-            today = datetime.utcnow().strftime("%Y-%m-%d")
+            today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
             pr_body = build_pr_body(changes, report, today)
             args.pr_markdown.parent.mkdir(parents=True, exist_ok=True)
             with args.pr_markdown.open("w") as fh:
