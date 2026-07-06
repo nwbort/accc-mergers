@@ -13,6 +13,9 @@
  * Required D1 binding (wrangler.toml):
  *   DB  — mergers-feedback D1 database
  *
+ * Required KV binding (wrangler.toml):
+ *   RATE_LIMIT_KV  — per-IP rate limit counters
+ *
  * To view feedback: Cloudflare Dashboard → D1 → mergers-feedback → Console
  *   SELECT * FROM feedback ORDER BY created_at DESC;
  */
@@ -53,6 +56,31 @@ function jsonResponse(body, status, origin = "", env = {}) {
 }
 
 // ---------------------------------------------------------------------------
+// Rate limiting: fixed-window counter in KV, keyed by IP + route
+// ---------------------------------------------------------------------------
+
+// Returns true if the request is within the limit, false if it should be
+// rejected with 429. KV is eventually consistent, so under concurrent bursts
+// the effective limit may be exceeded slightly — acceptable for abuse
+// prevention (this isn't a billing-critical limit).
+async function checkRateLimit(env, key, limit, windowSeconds) {
+  const now = Date.now();
+  const raw = await env.RATE_LIMIT_KV.get(key);
+  let entry = raw ? JSON.parse(raw) : null;
+
+  if (!entry || entry.resetAt <= now) {
+    entry = { count: 0, resetAt: now + windowSeconds * 1000 };
+  }
+
+  entry.count += 1;
+  await env.RATE_LIMIT_KV.put(key, JSON.stringify(entry), {
+    expirationTtl: Math.ceil((entry.resetAt - now) / 1000) + 1,
+  });
+
+  return entry.count <= limit;
+}
+
+// ---------------------------------------------------------------------------
 // Shared: verify Turnstile token
 // ---------------------------------------------------------------------------
 
@@ -75,6 +103,17 @@ async function verifyTurnstile(token, remoteIp, env) {
 // ---------------------------------------------------------------------------
 
 async function handleSubscribe(request, env, origin) {
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  const withinLimit = await checkRateLimit(env, `signup:${ip}`, 5, 600);
+  if (!withinLimit) {
+    return jsonResponse(
+      { error: "Too many attempts. Please try again in a few minutes." },
+      429,
+      origin,
+      env
+    );
+  }
+
   let body;
   try {
     body = await request.json();
@@ -157,6 +196,26 @@ async function handleSubscribe(request, env, origin) {
 // ---------------------------------------------------------------------------
 
 async function handleFeedback(request, env, origin) {
+  const ip = request.headers.get("CF-Connecting-IP") || "unknown";
+  const withinBurstLimit = await checkRateLimit(env, `feedback:${ip}`, 5, 600);
+  if (!withinBurstLimit) {
+    return jsonResponse(
+      { error: "Too many attempts. Please try again in a few minutes." },
+      429,
+      origin,
+      env
+    );
+  }
+  const withinDailyLimit = await checkRateLimit(env, `feedback-daily:${ip}`, 20, 86400);
+  if (!withinDailyLimit) {
+    return jsonResponse(
+      { error: "You’ve reached today’s feedback limit. Please try again tomorrow." },
+      429,
+      origin,
+      env
+    );
+  }
+
   let body;
   try {
     body = await request.json();
