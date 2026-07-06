@@ -43,7 +43,7 @@ describe('Phase2Timeline', () => {
     expect(screen.getByText('Referred')).toBeInTheDocument();
     expect(screen.getByText('01 Jan 2026')).toBeInTheDocument();
     expect(screen.getByText('NOCC issued 10 Feb 2026')).toBeInTheDocument();
-    expect(screen.getByText('Determination due')).toBeInTheDocument();
+    expect(screen.getByText('Determination')).toBeInTheDocument();
     expect(screen.getByText('01 Jun 2026')).toBeInTheDocument();
   });
 

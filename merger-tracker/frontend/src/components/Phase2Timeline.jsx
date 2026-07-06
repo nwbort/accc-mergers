@@ -79,7 +79,7 @@ function MatterBar({ matter }) {
           <div
             className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-3 rounded-full bg-phase-2-pale"
             role="img"
-            aria-label={`Phase 2 timeline for ${merger_name}, from referral ${formatDateMedium(referral_date)} to determination due ${formatDateMedium(end_of_determination_period)}`}
+            aria-label={`Phase 2 timeline for ${merger_name}, from referral ${formatDateMedium(referral_date)} to determination ${formatDateMedium(end_of_determination_period)}`}
           >
             <div className="absolute inset-0 rounded-full bg-phase-2/25" />
 
@@ -103,7 +103,7 @@ function MatterBar({ matter }) {
 
         {/* End endpoint — outside the track, hugging it from the right */}
         <div className="relative w-16 sm:w-20 shrink-0 h-11">
-          <span className={`${ABOVE_LINE} inset-x-0 text-left text-[11px] font-medium text-gray-500`}>Determination due</span>
+          <span className={`${ABOVE_LINE} inset-x-0 text-left text-[11px] font-medium text-gray-500`}>Determination</span>
           <span className={`${BELOW_LINE} inset-x-0 text-left text-xs font-medium text-gray-900`}>{formatDateMedium(end_of_determination_period)}</span>
         </div>
       </div>
