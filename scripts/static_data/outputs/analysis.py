@@ -3,10 +3,17 @@
 from collections import defaultdict
 from statistics import median as stat_median
 
+from constants import merger_status
+
 from .. import anzsic
 from ..business_days import calculate_business_days, calculate_calendar_days
 from ..durations import collect_phase_1_durations, phase_1_end_date
 from ..filters import filter_notifications, filter_waivers
+
+# A Phase 1 window longer than this is an extension (e.g. public benefit
+# applications) rather than the standard 30-business-day clock, so it's
+# reported separately rather than folded into the "% of 30-day clock" stats.
+STANDARD_WINDOW_MAX_BD = 31
 
 
 def _division_for_code(code: str):
@@ -60,6 +67,192 @@ def industry_phase1_duration(mergers: list) -> list[dict]:
 
     results.sort(key=lambda x: -x['average_business_days'])
     return results
+
+
+def deadline_utilisation(mergers: list) -> dict:
+    """How much of the Phase 1 statutory clock the ACCC uses.
+
+    For every completed (non-referred) Phase 1 notification, measures
+    ``used_bd`` = business days from notification to the Phase 1 determination,
+    and, where ``end_of_determination_period`` is known, ``slack_bd`` = business
+    days remaining before the statutory deadline when the determination was
+    made. Matters whose window exceeds :data:`STANDARD_WINDOW_MAX_BD` (an
+    extension) are excluded from the histogram and stats and only counted via
+    ``extended_count``, since folding them in would distort the "% of 30-day
+    clock" framing.
+    """
+    used_days = []
+    slack_days = []  # only for standard-window matters with a known deadline
+    extended_count = 0
+
+    for m in filter_notifications(mergers):
+        det = m.get('phase_1_determination')
+        det_date = m.get('phase_1_determination_date')
+        start = m.get('effective_notification_datetime')
+        if not det or det == merger_status.REFERRED_TO_PHASE_2 or not det_date:
+            continue
+
+        used_bd = calculate_business_days(start, det_date)
+        if used_bd is None:
+            continue
+
+        deadline = m.get('end_of_determination_period')
+        window_bd = calculate_business_days(start, deadline) if deadline else None
+
+        if window_bd is not None and window_bd > STANDARD_WINDOW_MAX_BD:
+            extended_count += 1
+            continue
+
+        used_days.append(used_bd)
+        if window_bd is not None:
+            slack_days.append(window_bd - used_bd)
+
+    histogram = defaultdict(int)
+    for bd in used_days:
+        histogram[str(bd) if bd <= 30 else '30+'] += 1
+    histogram_sorted = dict(sorted(
+        histogram.items(),
+        key=lambda kv: 31 if kv[0] == '30+' else int(kv[0]),
+    ))
+
+    # Last 5 BDs before the deadline, keyed by BDs of slack remaining (0 = the
+    # determination landed on the deadline itself, up to 4 = five BDs early).
+    last_5_bd = defaultdict(int)
+    for slack in slack_days:
+        if 0 <= slack <= 4:
+            last_5_bd[str(slack)] += 1
+    last_5_bd_sorted = dict(sorted(last_5_bd.items(), key=lambda kv: int(kv[0])))
+
+    stats = {}
+    if used_days:
+        final_3_count = sum(1 for slack in slack_days if 0 <= slack <= 2)
+        stats = {
+            "mean_used_bd": round(sum(used_days) / len(used_days), 1),
+            "median_used_bd": stat_median(used_days),
+            "pct_decided_final_3_bd": (
+                round(final_3_count / len(slack_days) * 100, 1) if slack_days else None
+            ),
+            "count": len(used_days),
+        }
+
+    return {
+        "histogram": histogram_sorted,
+        "last_5_bd_counts": last_5_bd_sorted,
+        "stats": stats,
+        "extended_count": extended_count,
+    }
+
+
+def notification_restarts(mergers: list) -> list[dict]:
+    """Notifications whose clock restarted: original vs effective notification date.
+
+    ``effective_notification_datetime`` moves forward when the ACCC treats a
+    notification as amended/restarted; ``original_notification_datetime``
+    stays fixed at first filing. Waivers have no such clock, so only
+    notifications are considered. Sorted by delta (days) descending.
+    """
+    restarts = []
+    for m in filter_notifications(mergers):
+        original = m.get('original_notification_datetime')
+        effective = m.get('effective_notification_datetime')
+        if not original or not effective or original == effective:
+            continue
+        delta = calculate_calendar_days(original, effective)
+        if delta is None:
+            continue
+        restarts.append({
+            "merger_id": m.get('merger_id'),
+            "merger_name": m.get('merger_name'),
+            "original_date": original[:10],
+            "effective_date": effective[:10],
+            "delta_calendar_days": delta,
+        })
+
+    restarts.sort(key=lambda x: -x['delta_calendar_days'])
+    return restarts
+
+
+def outcomes_by_division(notification_mergers: list) -> list[dict]:
+    """Phase 1 outcome mix per top-level ANZSIC division.
+
+    Each merger is attributed to every division its tagged codes roll up to
+    (deduped), exactly as :func:`industry_phase1_duration` does. Counts
+    approved / not-approved / referred-to-Phase-2 / in-progress outcomes and
+    the resulting Phase 2 referral rate (referred over completed+referred).
+    """
+    division_mergers = defaultdict(list)
+    for m in notification_mergers:
+        codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
+        divisions = {}
+        for code_obj in codes:
+            division = _division_for_code(code_obj.get('code', ''))
+            if division is not None:
+                divisions[division.code] = division
+        for division in divisions.values():
+            division_mergers[division.code].append((division.name, m))
+
+    results = []
+    for division_code, entries in division_mergers.items():
+        division_name = entries[0][0]
+        approved = not_approved = referred = in_progress = 0
+        for _, m in entries:
+            det = m.get('phase_1_determination')
+            if det is None:
+                in_progress += 1
+            elif det == merger_status.REFERRED_TO_PHASE_2:
+                referred += 1
+            elif det == merger_status.APPROVED:
+                approved += 1
+            else:
+                not_approved += 1
+
+        completed_and_referred = approved + not_approved + referred
+        phase2_referral_rate = (
+            round(referred / completed_and_referred, 3) if completed_and_referred else None
+        )
+
+        results.append({
+            "code": division_code,
+            "name": division_name,
+            "approved": approved,
+            "not_approved": not_approved,
+            "referred": referred,
+            "in_progress": in_progress,
+            "phase2_referral_rate": phase2_referral_rate,
+        })
+
+    results.sort(key=lambda x: (x['phase2_referral_rate'] is None, -(x['phase2_referral_rate'] or 0)))
+    return results
+
+
+def referrals_by_quarter(notification_mergers: list) -> list[dict]:
+    """Notification volume and subsequent Phase 2 referrals, per calendar quarter.
+
+    Quarter is derived from the notification date (``effective_notification_datetime``),
+    not the (potentially much later) referral date.
+    """
+    quarter_counts = defaultdict(lambda: {"notifications": 0, "referred": 0})
+    for m in notification_mergers:
+        start = m.get('effective_notification_datetime')
+        if not start:
+            continue
+        year = start[:4]
+        month = int(start[5:7])
+        quarter = (month - 1) // 3 + 1
+        quarter_key = f"{year}-Q{quarter}"
+
+        quarter_counts[quarter_key]["notifications"] += 1
+        if m.get('phase_1_determination') == merger_status.REFERRED_TO_PHASE_2:
+            quarter_counts[quarter_key]["referred"] += 1
+
+    return [
+        {
+            "quarter": quarter_key,
+            "notifications": counts["notifications"],
+            "referred": counts["referred"],
+        }
+        for quarter_key, counts in sorted(quarter_counts.items())
+    ]
 
 
 def generate(mergers: list) -> dict:
@@ -195,6 +388,10 @@ def generate(mergers: list) -> dict:
         "waivers": [monthly_counts[m]["waivers"] for m in sorted_months],
     }
 
+    restarts = notification_restarts(mergers)
+    total_notifications = len(notification_mergers)
+    restart_rate = round(len(restarts) / total_notifications, 4) if total_notifications else None
+
     return {
         "phase1_duration": {
             "scatter_data": phase1_scatter,
@@ -208,4 +405,9 @@ def generate(mergers: list) -> dict:
         },
         "monthly_volume": monthly_volume,
         "industry_phase1_duration": industry_phase1_duration(mergers),
+        "deadline_utilisation": deadline_utilisation(mergers),
+        "notification_restarts": restarts,
+        "restart_rate": restart_rate,
+        "outcomes_by_division": outcomes_by_division(notification_mergers),
+        "referrals_by_quarter": referrals_by_quarter(notification_mergers),
     }

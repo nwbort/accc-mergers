@@ -7,7 +7,11 @@ compatibility_date = "2024-09-23"
 GITHUB_REPO = "nwbort/accc-mergers"
 
 # Comma-separated allowlist of sender addresses/domains for the ACCC mailing
-# list. Leave blank to accept email from any sender.
+# list, checked against both the envelope sender and the From: header.
+# Leave blank/unset to REJECT all senders (a warning is logged) — this must
+# be set for the watcher to dispatch anything. Recommended: the mailing
+# list's known sender address below, or a domain entry like "@accc.gov.au"
+# to also tolerate a bulk-mail sender with a different envelope address.
 ALLOWED_SENDERS = "do-not-reply@accc.gov.au"
 
 # Secrets — set with:
