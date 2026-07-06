@@ -5,7 +5,9 @@ import { useNavigate, useLocation } from 'react-router-dom';
  * Keyboard shortcuts for power users.
  *
  * Global shortcuts (work from any page):
- *   /        Focus the search input on the current page (if one exists)
+ *   ⌘K/Ctrl-K Open the command palette (works even while typing in an input)
+ *   /        Focus the search input on the current page if one exists,
+ *            otherwise open the command palette
  *   g then d Go to Dashboard
  *   g then m Go to Mergers
  *   g then t Go to Timeline
@@ -19,7 +21,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
  *   k        Move selection up
  *   Enter    Open selected merger
  */
-export function useKeyboardShortcuts({ onToggleHelp } = {}) {
+export function useKeyboardShortcuts({ onToggleHelp, onTogglePalette } = {}) {
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -28,6 +30,13 @@ export function useKeyboardShortcuts({ onToggleHelp } = {}) {
     let gTimer = null;
 
     const handleKeyDown = (e) => {
+      // ⌘K/Ctrl-K opens the command palette from anywhere, including inputs.
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        onTogglePalette?.();
+        return;
+      }
+
       // Don't capture shortcuts when typing in inputs, textareas, or contenteditable
       const tag = e.target.tagName;
       const isInput = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT' || e.target.isContentEditable;
@@ -72,14 +81,14 @@ export function useKeyboardShortcuts({ onToggleHelp } = {}) {
       }
 
       // "/" to focus search — prefer an in-page search input if the page has
-      // one (Mergers, Industries); otherwise fall back to the navbar search.
+      // one (Mergers, Industries); otherwise open the command palette.
       if (e.key === '/') {
         e.preventDefault();
         const searchInput = document.getElementById('search');
         if (searchInput) {
           searchInput.focus();
         } else {
-          window.dispatchEvent(new CustomEvent('focus-navbar-search'));
+          onTogglePalette?.();
         }
         return;
       }
@@ -97,5 +106,5 @@ export function useKeyboardShortcuts({ onToggleHelp } = {}) {
       window.removeEventListener('keydown', handleKeyDown);
       clearTimeout(gTimer);
     };
-  }, [navigate, location.pathname, onToggleHelp]);
+  }, [navigate, location.pathname, onToggleHelp, onTogglePalette]);
 }

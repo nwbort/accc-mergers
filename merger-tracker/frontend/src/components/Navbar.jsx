@@ -120,22 +120,6 @@ function Navbar() {
   }, [searchOpen]);
 
   useEffect(() => {
-    const handleFocusNavbarSearch = () => {
-      if (navMode !== 'mobile') {
-        setSearchOpen(true);
-        if (searchInputRef.current) {
-          searchInputRef.current.focus();
-        }
-      } else {
-        focusMobileSearchRef.current = true;
-        setMobileMenuOpen(true);
-      }
-    };
-    window.addEventListener('focus-navbar-search', handleFocusNavbarSearch);
-    return () => window.removeEventListener('focus-navbar-search', handleFocusNavbarSearch);
-  }, [navMode]);
-
-  useEffect(() => {
     if (mobileMenuOpen && focusMobileSearchRef.current && mobileSearchInputRef.current) {
       mobileSearchInputRef.current.focus();
       focusMobileSearchRef.current = false;
