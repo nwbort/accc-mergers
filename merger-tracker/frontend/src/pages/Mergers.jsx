@@ -66,6 +66,10 @@ function Mergers() {
   const [mergers, setMergers] = useState(() => dataCache.get('mergers-list') || []);
   const [loading, setLoading] = useState(() => !dataCache.has('mergers-list'));
   const [error, setError] = useState(null);
+  // Total merger count from list-meta.json — known from the very first request,
+  // well before every page has loaded, so the unfiltered "of N" count doesn't
+  // have to creep up page by page while the rest load in the background.
+  const [totalMergerCount, setTotalMergerCount] = useState(() => dataCache.get('mergers-list')?.length ?? null);
   const [page, setPage] = useState(1);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const listRef = useRef(null);
@@ -129,6 +133,7 @@ function Mergers() {
 
       const meta = await metaResponse.json();
       const totalPages = meta.total_pages;
+      setTotalMergerCount(meta.total);
 
       // list-page-N.json files are sorted ascending by notification date
       // (oldest first — new mergers only ever append to the last page, so
@@ -272,6 +277,14 @@ function Mergers() {
   // Paginated slice of sorted results
   const visibleMergers = sortedMergers.slice(0, page * PAGE_SIZE);
   const hasMore = visibleMergers.length < sortedMergers.length;
+
+  // With no search/filter active, sortedMergers *is* every merger, so its count
+  // otherwise creeps up page by page while background pages are still loading.
+  // The real total is already known from list-meta.json, so use that instead.
+  const hasActiveSearchOrFilter = activeFilterCount > 0 || Boolean(debouncedSearchTerm);
+  const displayedTotal = !hasActiveSearchOrFilter && totalMergerCount !== null
+    ? totalMergerCount
+    : sortedMergers.length;
 
   // Reset to page 1 whenever filters or sort order change
   useEffect(() => {
@@ -506,7 +519,7 @@ function Mergers() {
         {/* Results count & Sort */}
         <div className="flex items-center justify-between mb-4">
           <p className="text-sm text-gray-500">
-            Showing {visibleMergers.length} of {sortedMergers.length} mergers
+            Showing {visibleMergers.length} of {displayedTotal} mergers
           </p>
           <div className="flex items-center gap-2">
             <label htmlFor="sort" className="text-sm text-gray-500 hidden sm:inline">Sort by</label>
