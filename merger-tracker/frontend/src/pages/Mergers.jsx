@@ -66,9 +66,6 @@ function Mergers() {
   const [mergers, setMergers] = useState(() => dataCache.get('mergers-list') || []);
   const [loading, setLoading] = useState(() => !dataCache.has('mergers-list'));
   const [error, setError] = useState(null);
-  // Non-null while background pages are still loading: { loaded, total }.
-  // Only used for a cold visit — a warm (cached) list loads fully before display.
-  const [loadingProgress, setLoadingProgress] = useState(null);
   const [page, setPage] = useState(1);
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const listRef = useRef(null);
@@ -152,13 +149,14 @@ function Mergers() {
       if (isColdVisit) {
         // Render immediately with just this one page so users aren't stuck
         // looking at a spinner while the remaining ~8 pages load in the
-        // background. The search index is built without touching the shared
-        // dataCache entry — that entry is reserved for the complete, final
-        // index so a stale partial index is never mistaken for a complete one.
+        // background. The rest fill in silently (no progress UI) since a
+        // banner that appears then disappears just shifts the list under it.
+        // The search index is built without touching the shared dataCache
+        // entry — that entry is reserved for the complete, final index so a
+        // stale partial index is never mistaken for a complete one.
         setMergers(allMergers);
         setSearchIndex(buildSearchIndex(allMergers, { cache: false }));
         setLoading(false);
-        if (totalPages > 1) setLoadingProgress({ loaded: 1, total: totalPages });
       }
 
       // Fetch remaining pages in batches to avoid saturating the browser's
@@ -170,7 +168,6 @@ function Mergers() {
         if (p !== initialPage) remainingPages.push(p);
       }
 
-      let loadedPages = 1;
       for (let i = 0; i < remainingPages.length; i += FETCH_BATCH_SIZE) {
         const batchPages = remainingPages.slice(i, i + FETCH_BATCH_SIZE);
         const batchResponses = await Promise.all(
@@ -185,13 +182,11 @@ function Mergers() {
         const batchMergers = batchResults
           .filter((r) => r.status === 'fulfilled')
           .flatMap((r) => r.value.mergers);
-        loadedPages += batchResults.length;
         allMergers = allMergers.concat(batchMergers);
 
         if (isColdVisit) {
           setMergers(allMergers);
           setSearchIndex(buildSearchIndex(allMergers, { cache: false }));
-          setLoadingProgress({ loaded: Math.min(loadedPages, totalPages), total: totalPages });
         }
       }
 
@@ -201,7 +196,6 @@ function Mergers() {
       clearSearchIndex();
       setMergers(allMergers);
       setSearchIndex(buildSearchIndex(allMergers));
-      setLoadingProgress(null);
     } catch (err) {
       console.error('Failed to load mergers list:', err);
       setError(err.message);
@@ -508,13 +502,6 @@ function Mergers() {
             </div>
           )}
         </div>
-
-        {loadingProgress && (
-          <p className="text-xs text-gray-500 mb-3 flex items-center gap-2">
-            <span className="inline-block h-3 w-3 rounded-full border-2 border-gray-300 border-t-primary animate-spin" aria-hidden="true" />
-            Loading all mergers… ({loadingProgress.loaded} of {loadingProgress.total} pages)
-          </p>
-        )}
 
         {/* Results count & Sort */}
         <div className="flex items-center justify-between mb-4">
