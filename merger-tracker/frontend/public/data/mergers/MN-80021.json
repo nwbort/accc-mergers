@@ -13,31 +13,51 @@
     {
       "name": "INNIO Holding GmbH",
       "identifier_type": null,
-      "identifier": "HRB 305810"
+      "identifier": "HRB 305810",
+      "party_page": {
+        "id": "innio-holding-gmbh",
+        "name": "INNIO Holding GmbH"
+      }
     }
   ],
   "targets": [
     {
       "name": "ENERFLEX SERVICE PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "85 063 267 238"
+      "identifier": "85 063 267 238",
+      "party_page": {
+        "id": "enerflex-service-pty-limited",
+        "name": "Enerflex Service Pty Limited"
+      }
     },
     {
       "name": "ENERFLEX SERVICE PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "85 063 267 238"
+      "identifier": "85 063 267 238",
+      "party_page": {
+        "id": "enerflex-service-pty-limited",
+        "name": "Enerflex Service Pty Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Enerflex Ltd",
       "identifier_type": null,
-      "identifier": "7748116"
+      "identifier": "7748116",
+      "party_page": {
+        "id": "enerflex-ltd",
+        "name": "Enerflex Ltd"
+      }
     },
     {
       "name": "Enerflex Ltd",
       "identifier_type": null,
-      "identifier": "7748116"
+      "identifier": "7748116",
+      "party_page": {
+        "id": "enerflex-ltd",
+        "name": "Enerflex Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -89,14 +109,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "The Trustee for the Comfy Dental Trust",
           "identifier_type": "ABN",
-          "identifier": "59 865 563 072"
+          "identifier": "59 865 563 072",
+          "party_page": {
+            "id": "the-trustee-for-the-comfy-dental-trust",
+            "name": "The Trustee for the Comfy Dental Trust"
+          }
         }
       ]
     },
@@ -109,14 +137,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CAMDENT SERVICES UNIT TRUST",
           "identifier_type": "ABN",
-          "identifier": "37 559 915 898"
+          "identifier": "37 559 915 898",
+          "party_page": {
+            "id": "camdent-services-unit-trust",
+            "name": "Camdent Services Unit Trust"
+          }
         }
       ]
     }

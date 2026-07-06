@@ -16,14 +16,22 @@
     {
       "name": "REA FINANCIAL SERVICES HOLDING CO. PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "38 649 505 386"
+      "identifier": "38 649 505 386",
+      "party_page": {
+        "id": "rea-financial-services-holding-co-pty-ltd",
+        "name": "Rea Financial Services Holding Co. Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "SIMPLICITY LOANS & ADVISORY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "98 616 763 878"
+      "identifier": "98 616 763 878",
+      "party_page": {
+        "id": "simplicity-loans-advisory-pty-ltd",
+        "name": "Simplicity Loans & Advisory Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -216,19 +224,31 @@
         {
           "name": "CP Britannia Bidco Limited",
           "identifier_type": null,
-          "identifier": "Jersey Financial Services Commission  163400"
+          "identifier": "Jersey Financial Services Commission  163400",
+          "party_page": {
+            "id": "cp-britannia-bidco-limited",
+            "name": "CP Britannia Bidco Limited"
+          }
         },
         {
           "name": "Creative Planning Holdco, LLC",
           "identifier_type": null,
-          "identifier": "SEC  801 7725610"
+          "identifier": "SEC  801 7725610",
+          "party_page": {
+            "id": "creative-planning-holdco-llc",
+            "name": "Creative Planning Holdco, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "MASECO LLP",
           "identifier_type": null,
-          "identifier": "United Kingdom  OC337650"
+          "identifier": "United Kingdom  OC337650",
+          "party_page": {
+            "id": "maseco-llp",
+            "name": "Maseco Llp"
+          }
         }
       ]
     },
@@ -241,14 +261,22 @@
         {
           "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "57 167 960 018"
+          "identifier": "57 167 960 018",
+          "party_page": {
+            "id": "az-next-generation-advisory-pty-ltd",
+            "name": "Az Next Generation Advisory Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "BMM PARTNERS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 649 113 959"
+          "identifier": "82 649 113 959",
+          "party_page": {
+            "id": "bmm-partners-pty-ltd",
+            "name": "Bmm Partners Pty Ltd"
+          }
         }
       ]
     },
@@ -261,14 +289,22 @@
         {
           "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "11 008 423 372"
+          "identifier": "11 008 423 372",
+          "party_page": {
+            "id": "zurich-financial-services-australia-limited",
+            "name": "Zurich Financial Services Australia Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CLEARVIEW WEALTH LIMITED",
           "identifier_type": "ABN",
-          "identifier": "83 106 248 248"
+          "identifier": "83 106 248 248",
+          "party_page": {
+            "id": "clearview-wealth-limited",
+            "name": "Clearview Wealth Limited"
+          }
         }
       ]
     }

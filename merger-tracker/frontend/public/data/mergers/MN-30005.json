@@ -16,19 +16,31 @@
     {
       "name": "Adobe Inc. (NASDAQ: ADBE)",
       "identifier_type": null,
-      "identifier": "2748129"
+      "identifier": "2748129",
+      "party_page": {
+        "id": "adobe-inc-nasdaq-adbe",
+        "name": "Adobe Inc. (NASDAQ: ADBE)"
+      }
     },
     {
       "name": "Fenway Merger Sub, Inc.",
       "identifier_type": null,
-      "identifier": "10389477"
+      "identifier": "10389477",
+      "party_page": {
+        "id": "fenway-merger-sub-inc",
+        "name": "Fenway Merger Sub, Inc."
+      }
     }
   ],
   "targets": [
     {
       "name": "Semrush Holdings, Inc.",
       "identifier_type": null,
-      "identifier": "7690622"
+      "identifier": "7690622",
+      "party_page": {
+        "id": "semrush-holdings-inc",
+        "name": "Semrush Holdings, Inc."
+      }
     }
   ],
   "other_parties": [],
@@ -116,14 +128,22 @@
         {
           "name": "Delinea Inc.",
           "identifier_type": null,
-          "identifier": "Delaware corporation file number  3777797"
+          "identifier": "Delaware corporation file number  3777797",
+          "party_page": {
+            "id": "delinea-inc",
+            "name": "Delinea Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "StrongDM, Inc",
           "identifier_type": null,
-          "identifier": "CIK  0001637806"
+          "identifier": "CIK  0001637806",
+          "party_page": {
+            "id": "strongdm-inc",
+            "name": "StrongDM, Inc"
+          }
         }
       ]
     },
@@ -136,19 +156,31 @@
         {
           "name": "Fjord Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "TIN/EIN  921660460"
+          "identifier": "TIN/EIN  921660460",
+          "party_page": {
+            "id": "fjord-merger-sub-inc",
+            "name": "Fjord Merger Sub, Inc."
+          }
         },
         {
           "name": "IFS North America, Inc.",
           "identifier_type": null,
-          "identifier": "TIN/EIN  391292200"
+          "identifier": "TIN/EIN  391292200",
+          "party_page": {
+            "id": "ifs-north-america-inc",
+            "name": "IFS North America, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Softeon Inc.",
           "identifier_type": null,
-          "identifier": "EIN 541960847"
+          "identifier": "EIN 541960847",
+          "party_page": {
+            "id": "softeon-inc",
+            "name": "Softeon Inc."
+          }
         }
       ]
     },
@@ -161,19 +193,31 @@
         {
           "name": "Searchlight Capital IV LP",
           "identifier_type": null,
-          "identifier": "US SEC  0001954453"
+          "identifier": "US SEC  0001954453",
+          "party_page": {
+            "id": "searchlight-capital-iv-lp",
+            "name": "Searchlight Capital IV LP"
+          }
         },
         {
           "name": "KONA Merger Sub Co.",
           "identifier_type": null,
-          "identifier": "Delaware  10525073"
+          "identifier": "Delaware  10525073",
+          "party_page": {
+            "id": "kona-merger-sub-co",
+            "name": "KONA Merger Sub Co."
+          }
         }
       ],
       "targets": [
         {
           "name": "KORE Group Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware  5388903"
+          "identifier": "Delaware  5388903",
+          "party_page": {
+            "id": "kore-group-holdings-inc",
+            "name": "KORE Group Holdings, Inc."
+          }
         }
       ]
     }

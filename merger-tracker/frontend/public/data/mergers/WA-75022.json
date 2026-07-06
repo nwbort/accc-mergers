@@ -14,29 +14,49 @@
     {
       "name": "United States Department of War",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "united-states-department-of-war",
+        "name": "United States Department of War"
+      }
     },
     {
       "name": "Alcoa Gallium Holdings Pty Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "alcoa-gallium-holdings-pty-ltd",
+        "name": "Alcoa Gallium Holdings Pty Ltd"
+      }
     },
     {
       "name": "ALCOA OF AUSTRALIA LIMITED",
       "identifier_type": "ABN",
-      "identifier": "93 004 879 298"
+      "identifier": "93 004 879 298",
+      "party_page": {
+        "id": "alcoa-of-australia-limited",
+        "name": "Alcoa Of Australia Limited"
+      }
     },
     {
       "name": "EXPORT FINANCE AND INSURANCE CORP",
       "identifier_type": "ABN",
-      "identifier": "96 874 024 697"
+      "identifier": "96 874 024 697",
+      "party_page": {
+        "id": "export-finance-and-insurance-corp",
+        "name": "Export Finance And Insurance Corp"
+      }
     }
   ],
   "targets": [
     {
       "name": "United States-Australia Gallium Pty Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "united-states-australia-gallium-pty-ltd",
+        "name": "United States-Australia Gallium Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -126,19 +146,31 @@
         {
           "name": "Project Saint Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "10489040"
+          "identifier": "10489040",
+          "party_page": {
+            "id": "project-saint-merger-sub-inc",
+            "name": "Project Saint Merger Sub, Inc."
+          }
         },
         {
           "name": "United States Surgical Corporation",
           "identifier_type": null,
-          "identifier": "132518270"
+          "identifier": "132518270",
+          "party_page": {
+            "id": "united-states-surgical-corporation",
+            "name": "United States Surgical Corporation"
+          }
         }
       ],
       "targets": [
         {
           "name": "Scientia Vascular, Inc.",
           "identifier_type": null,
-          "identifier": "5931868"
+          "identifier": "5931868",
+          "party_page": {
+            "id": "scientia-vascular-inc",
+            "name": "Scientia Vascular, Inc."
+          }
         }
       ]
     },
@@ -151,19 +183,31 @@
         {
           "name": "INSURANCE AUSTRALIA GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "60 090 739 923"
+          "identifier": "60 090 739 923",
+          "party_page": {
+            "id": "insurance-australia-group-limited",
+            "name": "Insurance Australia Group Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "RAC INSURANCE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "59 094 685 882"
+          "identifier": "59 094 685 882",
+          "party_page": {
+            "id": "rac-insurance-pty-limited",
+            "name": "Rac Insurance Pty Limited"
+          }
         },
         {
           "name": "RACI PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "40 008 671 805"
+          "identifier": "40 008 671 805",
+          "party_page": {
+            "id": "raci-pty-limited",
+            "name": "Raci Pty Limited"
+          }
         }
       ]
     },
@@ -176,24 +220,40 @@
         {
           "name": "Desmos US Bidco, Inc.",
           "identifier_type": null,
-          "identifier": "[ID type unknown]  10469174"
+          "identifier": "[ID type unknown]  10469174",
+          "party_page": {
+            "id": "desmos-us-bidco-inc",
+            "name": "Desmos US Bidco, Inc."
+          }
         },
         {
           "name": "Desmos Bidco SAS",
           "identifier_type": null,
-          "identifier": "SIREN  100 230 754"
+          "identifier": "SIREN  100 230 754",
+          "party_page": {
+            "id": "desmos-bidco-sas",
+            "name": "Desmos Bidco SAS"
+          }
         }
       ],
       "targets": [
         {
           "name": "Novacel Performance Coatings, Inc.",
           "identifier_type": null,
-          "identifier": "EIN  311708662"
+          "identifier": "EIN  311708662",
+          "party_page": {
+            "id": "novacel-performance-coatings-inc",
+            "name": "Novacel Performance Coatings, Inc."
+          }
         },
         {
           "name": "Novacel, Inc.",
           "identifier_type": null,
-          "identifier": "EIN  043515032"
+          "identifier": "EIN  043515032",
+          "party_page": {
+            "id": "novacel-inc",
+            "name": "Novacel, Inc."
+          }
         }
       ]
     }

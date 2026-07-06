@@ -14,26 +14,42 @@
     {
       "name": "SOILCO PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "85 055 303 243"
+      "identifier": "85 055 303 243",
+      "party_page": {
+        "id": "soilco-pty-limited",
+        "name": "Soilco Pty Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "GARDEN MEDIUMS PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "44 079 600 230"
+      "identifier": "44 079 600 230",
+      "party_page": {
+        "id": "garden-mediums-pty-limited",
+        "name": "Garden Mediums Pty Limited"
+      }
     },
     {
       "name": "Lumime Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "001 931 228"
+      "identifier": "001 931 228",
+      "party_page": {
+        "id": "lumime-pty-ltd",
+        "name": "Lumime Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "I Squared Capital, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "i-squared-capital-llc",
+        "name": "I Squared Capital, LLC"
+      }
     }
   ],
   "anzsic_codes": [
@@ -106,7 +122,11 @@
         {
           "name": "Smile Partners (NSW3) Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 902 955"
+          "identifier": "695 902 955",
+          "party_page": {
+            "id": "smile-partners-nsw3-pty-ltd",
+            "name": "Smile Partners (NSW3) Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -115,6 +135,10 @@
           "identifier_type": "ACN",
           "identifier": "108 757 357",
           "canonical": {
+            "id": "shrika-pty-ltd",
+            "name": "Shrika Pty Ltd"
+          },
+          "party_page": {
             "id": "shrika-pty-ltd",
             "name": "Shrika Pty Ltd"
           }
@@ -130,19 +154,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     },
@@ -159,6 +195,10 @@
           "canonical": {
             "id": "general-dental-holdings-pty-ltd",
             "name": "General Dental Holdings Pty Ltd"
+          },
+          "party_page": {
+            "id": "general-dental-holdings-pty-ltd",
+            "name": "General Dental Holdings Pty Ltd"
           }
         }
       ],
@@ -166,12 +206,20 @@
         {
           "name": "COASTAL DENTAL CARE AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "39 617 360 460"
+          "identifier": "39 617 360 460",
+          "party_page": {
+            "id": "coastal-dental-care-australia-pty-ltd",
+            "name": "Coastal Dental Care Australia Pty Ltd"
+          }
         },
         {
           "name": "The Trustee for FRANCK PAGE #3 TRUST",
           "identifier_type": "ABN",
-          "identifier": "65 158 640 539"
+          "identifier": "65 158 640 539",
+          "party_page": {
+            "id": "the-trustee-for-franck-page-3-trust",
+            "name": "The Trustee for FRANCK PAGE #3 TRUST"
+          }
         }
       ]
     }

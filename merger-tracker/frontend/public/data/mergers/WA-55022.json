@@ -14,14 +14,22 @@
     {
       "name": "GENUSPLUS GROUP LTD",
       "identifier_type": "ABN",
-      "identifier": "86 620 283 561"
+      "identifier": "86 620 283 561",
+      "party_page": {
+        "id": "genusplus-group-ltd",
+        "name": "Genusplus Group Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "MPC KINETIC HOLDINGS LIMITED",
       "identifier_type": "ABN",
-      "identifier": "68 626 678 911"
+      "identifier": "68 626 678 911",
+      "party_page": {
+        "id": "mpc-kinetic-holdings-limited",
+        "name": "Mpc Kinetic Holdings Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -107,14 +115,22 @@
         {
           "name": "HOST-PLUS PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "79 008 634 704"
+          "identifier": "79 008 634 704",
+          "party_page": {
+            "id": "host-plus-pty-limited",
+            "name": "Host-Plus Pty. Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CH Investment Holding Trust",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "ch-investment-holding-trust",
+            "name": "CH Investment Holding Trust"
+          }
         }
       ]
     },
@@ -127,19 +143,31 @@
         {
           "name": "Resonetics, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "resonetics-llc",
+            "name": "Resonetics, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Resolution Medical MidCo, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "resolution-medical-midco-llc",
+            "name": "Resolution Medical MidCo, LLC"
+          }
         },
         {
           "name": "Arcline Capital Partners II-A LP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "arcline-capital-partners-ii-a-lp",
+            "name": "Arcline Capital Partners II-A LP"
+          }
         }
       ]
     },
@@ -152,24 +180,40 @@
         {
           "name": "Admiral AU Bidco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 801 195"
+          "identifier": "695 801 195",
+          "party_page": {
+            "id": "admiral-au-bidco-pty-ltd",
+            "name": "Admiral AU Bidco Pty Ltd"
+          }
         },
         {
           "name": "Admiral AU Holdco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 791 710"
+          "identifier": "695 791 710",
+          "party_page": {
+            "id": "admiral-au-holdco-pty-ltd",
+            "name": "Admiral AU Holdco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "EPTEC MARINE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "49 118 319 547"
+          "identifier": "49 118 319 547",
+          "party_page": {
+            "id": "eptec-marine-pty-ltd",
+            "name": "Eptec Marine Pty Ltd"
+          }
         },
         {
           "name": "EPTEC BIDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "12 638 785 378"
+          "identifier": "12 638 785 378",
+          "party_page": {
+            "id": "eptec-bidco-pty-ltd",
+            "name": "Eptec Bidco Pty Ltd"
+          }
         }
       ]
     }

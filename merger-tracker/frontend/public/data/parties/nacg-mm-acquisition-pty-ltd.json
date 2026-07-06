@@ -1,0 +1,38 @@
+{
+  "id": "nacg-mm-acquisition-pty-ltd",
+  "canonical_name": "Nacg Mm Acquisition Pty Ltd",
+  "members": [
+    {
+      "name": "NACG MM ACQUISITION PTY LTD",
+      "identifier": "89 669 859 376",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "MN-85003",
+        "merger_name": "North American Construction Group \u2013 Iron Mine Contracting and Iron Hire",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-02-25T12:00:00Z",
+        "determination_date": "2026-03-19T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 22.0,
+    "median_days": 22,
+    "average_business_days": 15.0,
+    "median_business_days": 15,
+    "completed_count": 1
+  }
+}

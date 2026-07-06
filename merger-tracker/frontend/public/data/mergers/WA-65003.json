@@ -18,6 +18,10 @@
       "canonical": {
         "id": "henkel-global-supply-chain-b-v",
         "name": "Henkel Global Supply Chain B.V."
+      },
+      "party_page": {
+        "id": "henkel-global-supply-chain-b-v",
+        "name": "Henkel Global Supply Chain B.V."
       }
     }
   ],
@@ -25,7 +29,11 @@
     {
       "name": "Aqua Adhesives I GmbH",
       "identifier_type": null,
-      "identifier": "Swiss registration number  CH170.4.019.1870"
+      "identifier": "Swiss registration number  CH170.4.019.1870",
+      "party_page": {
+        "id": "aqua-adhesives-i-gmbh",
+        "name": "Aqua Adhesives I GmbH"
+      }
     }
   ],
   "other_parties": [
@@ -36,12 +44,20 @@
       "canonical": {
         "id": "henkel-ag-co-kgaa",
         "name": "Henkel AG & Co. KGaA"
+      },
+      "party_page": {
+        "id": "henkel-ag-co-kgaa",
+        "name": "Henkel AG & Co. KGaA"
       }
     },
     {
       "name": "ATP adhesive systems Group GmbH",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "atp-adhesive-systems-group-gmbh-2",
+        "name": "ATP adhesive systems Group GmbH"
+      }
     }
   ],
   "anzsic_codes": [
@@ -131,6 +147,10 @@
           "canonical": {
             "id": "henkel-global-supply-chain-b-v",
             "name": "Henkel Global Supply Chain B.V."
+          },
+          "party_page": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
           }
         }
       ],
@@ -138,12 +158,20 @@
         {
           "name": "Stahl Holdings B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 34249320"
+          "identifier": "Netherlands registration number (KVK): 34249320",
+          "party_page": {
+            "id": "stahl-holdings-b-v",
+            "name": "Stahl Holdings B.V."
+          }
         },
         {
           "name": "Stahl Asia Pacific Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "Singapore registration number: 200606884Z"
+          "identifier": "Singapore registration number: 200606884Z",
+          "party_page": {
+            "id": "stahl-asia-pacific-pte-ltd",
+            "name": "Stahl Asia Pacific Pte. Ltd."
+          }
         }
       ]
     },
@@ -156,19 +184,31 @@
         {
           "name": "Enverus, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "enverus-inc",
+            "name": "Enverus, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Spatial Business Systems Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "76 125 465 483"
+          "identifier": "76 125 465 483",
+          "party_page": {
+            "id": "spatial-business-systems-pty-ltd",
+            "name": "Spatial Business Systems Pty Ltd"
+          }
         },
         {
           "name": "SBS Optionco, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "sbs-optionco-llc",
+            "name": "SBS Optionco, LLC"
+          }
         }
       ]
     },
@@ -181,14 +221,22 @@
         {
           "name": "NEC Corporation",
           "identifier_type": null,
-          "identifier": "Company number 7010401022916"
+          "identifier": "Company number 7010401022916",
+          "party_page": {
+            "id": "nec-corporation",
+            "name": "NEC Corporation"
+          }
         }
       ],
       "targets": [
         {
           "name": "CSG Systems International, Inc.",
           "identifier_type": null,
-          "identifier": "Company number 2444546"
+          "identifier": "Company number 2444546",
+          "party_page": {
+            "id": "csg-systems-international-inc",
+            "name": "CSG Systems International, Inc."
+          }
         }
       ]
     }

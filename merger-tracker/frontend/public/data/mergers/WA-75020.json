@@ -14,24 +14,40 @@
     {
       "name": "CLEANPEAK ENERGY HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "17 689 336 696"
+      "identifier": "17 689 336 696",
+      "party_page": {
+        "id": "cleanpeak-energy-holdings-pty-ltd",
+        "name": "Cleanpeak Energy Holdings Pty Ltd"
+      }
     },
     {
       "name": "CLEANPEAK IFM PROJECTS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "30 618 387 143"
+      "identifier": "30 618 387 143",
+      "party_page": {
+        "id": "cleanpeak-ifm-projects-pty-ltd",
+        "name": "Cleanpeak Ifm Projects Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "CARESUPER PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "14 008 650 628"
+      "identifier": "14 008 650 628",
+      "party_page": {
+        "id": "caresuper-pty-ltd",
+        "name": "Caresuper Pty Ltd"
+      }
     },
     {
       "name": "STATE STREET AUSTRALIA LTD",
       "identifier_type": "ABN",
-      "identifier": "21 002 965 200"
+      "identifier": "21 002 965 200",
+      "party_page": {
+        "id": "state-street-australia-ltd",
+        "name": "State Street Australia Ltd"
+      }
     },
     {
       "name": "AUSTRALIAN RETIREMENT TRUST PTY LTD",
@@ -40,12 +56,20 @@
       "canonical": {
         "id": "the-trustee-for-australian-retirement-trust",
         "name": "The Trustee For Australian Retirement Trust"
+      },
+      "party_page": {
+        "id": "the-trustee-for-australian-retirement-trust",
+        "name": "The Trustee For Australian Retirement Trust"
       }
     },
     {
       "name": "SUSTAINABLE ENERGY INFRASTRUCTURE HOLDINGS PTY LTD",
       "identifier_type": "ACN",
-      "identifier": "625 685 734"
+      "identifier": "625 685 734",
+      "party_page": {
+        "id": "sustainable-energy-infrastructure-holdings-pty-ltd",
+        "name": "Sustainable Energy Infrastructure Holdings Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -119,19 +143,31 @@
         {
           "name": "CHARTER HALL HOLDINGS PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "15 051 363 547"
+          "identifier": "15 051 363 547",
+          "party_page": {
+            "id": "charter-hall-holdings-pty-limited",
+            "name": "Charter Hall Holdings Pty. Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "JGS PRIVATE CAPITAL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 602 602 595"
+          "identifier": "20 602 602 595",
+          "party_page": {
+            "id": "jgs-private-capital-pty-ltd",
+            "name": "Jgs Private Capital Pty Ltd"
+          }
         },
         {
           "name": "J.G. SERVICE PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "75 008 492 126"
+          "identifier": "75 008 492 126",
+          "party_page": {
+            "id": "j-g-service-pty-limited",
+            "name": "J.G. Service Pty. Limited"
+          }
         }
       ]
     },
@@ -144,19 +180,31 @@
         {
           "name": "TRANSPORT ACCIDENT COMMISSION",
           "identifier_type": "ABN",
-          "identifier": "22 033 947 623"
+          "identifier": "22 033 947 623",
+          "party_page": {
+            "id": "transport-accident-commission",
+            "name": "Transport Accident Commission"
+          }
         },
         {
           "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
           "identifier_type": "ABN",
-          "identifier": "39 682 497 841"
+          "identifier": "39 682 497 841",
+          "party_page": {
+            "id": "victorian-managed-insurance-authority",
+            "name": "Victorian Managed Insurance Authority"
+          }
         }
       ],
       "targets": [
         {
           "name": "CORVAL PARTNERS LIMITED",
           "identifier_type": "ABN",
-          "identifier": "86 130 628 830"
+          "identifier": "86 130 628 830",
+          "party_page": {
+            "id": "corval-partners-limited",
+            "name": "Corval Partners Limited"
+          }
         }
       ]
     },
@@ -169,19 +217,31 @@
         {
           "name": "QIC TT COMPANY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "27 694 380 973"
+          "identifier": "27 694 380 973",
+          "party_page": {
+            "id": "qic-tt-company-pty-ltd",
+            "name": "Qic Tt Company Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "SCENTRE GROUP TRUST 3",
           "identifier_type": "ABN",
-          "identifier": "11 517 229 138"
+          "identifier": "11 517 229 138",
+          "party_page": {
+            "id": "scentre-group-trust-3",
+            "name": "Scentre Group Trust 3"
+          }
         },
         {
           "name": "SCENTRE ALLIANCES PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 098 357 521"
+          "identifier": "53 098 357 521",
+          "party_page": {
+            "id": "scentre-alliances-pty-limited",
+            "name": "Scentre Alliances Pty Limited"
+          }
         }
       ]
     }

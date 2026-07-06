@@ -14,21 +14,33 @@
     {
       "name": "EPL Limited",
       "identifier_type": null,
-      "identifier": "Registered in India, no. L74950MH1982PLC028947"
+      "identifier": "Registered in India, no. L74950MH1982PLC028947",
+      "party_page": {
+        "id": "epl-limited",
+        "name": "EPL Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "Indovida India Private Limited",
       "identifier_type": null,
-      "identifier": "Registered in India, no. U22203MH2025PTC455949"
+      "identifier": "Registered in India, no. U22203MH2025PTC455949",
+      "party_page": {
+        "id": "indovida-india-private-limited",
+        "name": "Indovida India Private Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Petform (Thailand) Limited",
       "identifier_type": null,
-      "identifier": "Registered in Thailand, no. 0165539000306"
+      "identifier": "Registered in Thailand, no. 0165539000306",
+      "party_page": {
+        "id": "petform-thailand-limited",
+        "name": "Petform (Thailand) Limited"
+      }
     },
     {
       "name": "Blackstone Inc.",
@@ -37,27 +49,47 @@
       "canonical": {
         "id": "blackstone-inc",
         "name": "Blackstone Inc."
+      },
+      "party_page": {
+        "id": "blackstone-inc",
+        "name": "Blackstone Inc."
       }
     },
     {
       "name": "Indorama Ventures Public Company Limited",
       "identifier_type": null,
-      "identifier": "Registered in Thailand, no. 0107552000201"
+      "identifier": "Registered in Thailand, no. 0107552000201",
+      "party_page": {
+        "id": "indorama-ventures-public-company-limited",
+        "name": "Indorama Ventures Public Company Limited"
+      }
     },
     {
       "name": "Ngoc Nghia Industry - Service - Trading Joint Stock Company",
       "identifier_type": null,
-      "identifier": "Registered in Vietnam, no. 0301427028"
+      "identifier": "Registered in Vietnam, no. 0301427028",
+      "party_page": {
+        "id": "ngoc-nghia-industry-service-trading-joint-stock-company",
+        "name": "Ngoc Nghia Industry - Service - Trading Joint Stock Company"
+      }
     },
     {
       "name": "Epsilon Bidco Pte. Ltd.",
       "identifier_type": null,
-      "identifier": "Registered in Singapore, no. 201736984W"
+      "identifier": "Registered in Singapore, no. 201736984W",
+      "party_page": {
+        "id": "epsilon-bidco-pte-ltd",
+        "name": "Epsilon Bidco Pte. Ltd."
+      }
     },
     {
       "name": "Indorama Netherland B.V.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "indorama-netherland-b-v",
+        "name": "Indorama Netherland B.V."
+      }
     }
   ],
   "anzsic_codes": [
@@ -130,14 +162,22 @@
         {
           "name": "Cvent Atlanta, LLC",
           "identifier_type": null,
-          "identifier": "[Delaware corporate file number  5603939]"
+          "identifier": "[Delaware corporate file number  5603939]",
+          "party_page": {
+            "id": "cvent-atlanta-llc",
+            "name": "Cvent Atlanta, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "ON24, Inc.",
           "identifier_type": null,
-          "identifier": "[Delaware corporate file number  2843568]"
+          "identifier": "[Delaware corporate file number  2843568]",
+          "party_page": {
+            "id": "on24-inc",
+            "name": "ON24, Inc."
+          }
         }
       ]
     },
@@ -150,19 +190,31 @@
         {
           "name": "Enverus, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "enverus-inc",
+            "name": "Enverus, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Spatial Business Systems Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "76 125 465 483"
+          "identifier": "76 125 465 483",
+          "party_page": {
+            "id": "spatial-business-systems-pty-ltd",
+            "name": "Spatial Business Systems Pty Ltd"
+          }
         },
         {
           "name": "SBS Optionco, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "sbs-optionco-llc",
+            "name": "SBS Optionco, LLC"
+          }
         }
       ]
     },
@@ -175,24 +227,40 @@
         {
           "name": "INNIO Jenbacher International B.V.",
           "identifier_type": null,
-          "identifier": "KVK90210352"
+          "identifier": "KVK90210352",
+          "party_page": {
+            "id": "innio-jenbacher-international-b-v",
+            "name": "INNIO Jenbacher International B.V."
+          }
         },
         {
           "name": "INNIO Jenbacher Netherlands B.V.",
           "identifier_type": null,
-          "identifier": "KVK90209982"
+          "identifier": "KVK90209982",
+          "party_page": {
+            "id": "innio-jenbacher-netherlands-b-v",
+            "name": "INNIO Jenbacher Netherlands B.V."
+          }
         }
       ],
       "targets": [
         {
           "name": "Exterran (Thailand) Ltd",
           "identifier_type": null,
-          "identifier": "0105542031616"
+          "identifier": "0105542031616",
+          "party_page": {
+            "id": "exterran-thailand-ltd",
+            "name": "Exterran (Thailand) Ltd"
+          }
         },
         {
           "name": "PT Enerflex (Indonesia)",
           "identifier_type": null,
-          "identifier": "9120407262914"
+          "identifier": "9120407262914",
+          "party_page": {
+            "id": "pt-enerflex-indonesia",
+            "name": "PT Enerflex (Indonesia)"
+          }
         }
       ]
     }

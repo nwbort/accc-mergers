@@ -14,19 +14,31 @@
     {
       "name": "Kamgras 1 K.K.",
       "identifier_type": null,
-      "identifier": "Japan corporate number  0104 01 197943"
+      "identifier": "Japan corporate number  0104 01 197943",
+      "party_page": {
+        "id": "kamgras-1-k-k",
+        "name": "Kamgras 1 K.K."
+      }
     }
   ],
   "targets": [
     {
       "name": "Kakaku.com, Inc.",
       "identifier_type": null,
-      "identifier": "Japan corporate number  011001065997"
+      "identifier": "Japan corporate number  011001065997",
+      "party_page": {
+        "id": "kakaku-com-inc",
+        "name": "Kakaku.com, Inc."
+      }
     },
     {
       "name": "Time Design International Pte Ltd",
       "identifier_type": null,
-      "identifier": "Singapore registration number  UEN 201736394D"
+      "identifier": "Singapore registration number  UEN 201736394D",
+      "party_page": {
+        "id": "time-design-international-pte-ltd",
+        "name": "Time Design International Pte Ltd"
+      }
     }
   ],
   "other_parties": [
@@ -35,6 +47,10 @@
       "identifier_type": null,
       "identifier": "Luxembourg Company Registration Number  B167972",
       "canonical": {
+        "id": "eqt-fund-management-s-r-l",
+        "name": "EQT Fund Management S.\u00e0 r.l."
+      },
+      "party_page": {
         "id": "eqt-fund-management-s-r-l",
         "name": "EQT Fund Management S.\u00e0 r.l."
       }
@@ -114,14 +130,22 @@
         {
           "name": "TRESCAL (AUSTRALIA) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "39 117 603 835"
+          "identifier": "39 117 603 835",
+          "party_page": {
+            "id": "trescal-australia-pty-ltd",
+            "name": "Trescal (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TR PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 005 499 721"
+          "identifier": "99 005 499 721",
+          "party_page": {
+            "id": "tr-pty-ltd",
+            "name": "Tr Pty Ltd"
+          }
         }
       ]
     },
@@ -134,14 +158,22 @@
         {
           "name": "The Trustee for Energy Bay Kappa Fund",
           "identifier_type": "ABN",
-          "identifier": "37 949 909 024"
+          "identifier": "37 949 909 024",
+          "party_page": {
+            "id": "the-trustee-for-energy-bay-kappa-fund",
+            "name": "The Trustee for Energy Bay Kappa Fund"
+          }
         }
       ],
       "targets": [
         {
           "name": "CENTURIA FUNDS MANAGEMENT LIMITED",
           "identifier_type": "ABN",
-          "identifier": "11 607 153 588"
+          "identifier": "11 607 153 588",
+          "party_page": {
+            "id": "centuria-funds-management-limited",
+            "name": "Centuria Funds Management Limited"
+          }
         }
       ]
     },
@@ -154,19 +186,31 @@
         {
           "name": "TRANSPORT ACCIDENT COMMISSION",
           "identifier_type": "ABN",
-          "identifier": "22 033 947 623"
+          "identifier": "22 033 947 623",
+          "party_page": {
+            "id": "transport-accident-commission",
+            "name": "Transport Accident Commission"
+          }
         },
         {
           "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
           "identifier_type": "ABN",
-          "identifier": "39 682 497 841"
+          "identifier": "39 682 497 841",
+          "party_page": {
+            "id": "victorian-managed-insurance-authority",
+            "name": "Victorian Managed Insurance Authority"
+          }
         }
       ],
       "targets": [
         {
           "name": "CORVAL PARTNERS LIMITED",
           "identifier_type": "ABN",
-          "identifier": "86 130 628 830"
+          "identifier": "86 130 628 830",
+          "party_page": {
+            "id": "corval-partners-limited",
+            "name": "Corval Partners Limited"
+          }
         }
       ]
     }

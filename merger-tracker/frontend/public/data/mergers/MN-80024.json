@@ -17,6 +17,10 @@
       "canonical": {
         "id": "awp-australia-pty-ltd",
         "name": "AWP Australia Pty Ltd"
+      },
+      "party_page": {
+        "id": "awp-australia-pty-ltd",
+        "name": "AWP Australia Pty Ltd"
       }
     }
   ],
@@ -24,29 +28,49 @@
     {
       "name": "nib Travel Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "48 132 902 713"
+      "identifier": "48 132 902 713",
+      "party_page": {
+        "id": "nib-travel-pty-ltd",
+        "name": "nib Travel Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Suresave Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "82 137 885 262"
+      "identifier": "82 137 885 262",
+      "party_page": {
+        "id": "suresave-pty-ltd",
+        "name": "Suresave Pty Ltd"
+      }
     },
     {
       "name": "nib Travel Services (Australia) Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "81 115 932 173"
+      "identifier": "81 115 932 173",
+      "party_page": {
+        "id": "nib-travel-services-australia-pty-ltd",
+        "name": "nib Travel Services (Australia) Pty Ltd"
+      }
     },
     {
       "name": "nib Travel Insurance Distribution Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "40 129 262 175"
+      "identifier": "40 129 262 175",
+      "party_page": {
+        "id": "nib-travel-insurance-distribution-pty-ltd",
+        "name": "nib Travel Insurance Distribution Pty Ltd"
+      }
     },
     {
       "name": "nib International Assistance Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "72 164 763 884"
+      "identifier": "72 164 763 884",
+      "party_page": {
+        "id": "nib-international-assistance-pty-ltd",
+        "name": "nib International Assistance Pty Ltd"
+      }
     },
     {
       "name": "AWP Australia Holdings Pty Ltd",
@@ -55,17 +79,29 @@
       "canonical": {
         "id": "awp-australia-pty-ltd",
         "name": "AWP Australia Pty Ltd"
+      },
+      "party_page": {
+        "id": "awp-australia-pty-ltd",
+        "name": "AWP Australia Pty Ltd"
       }
     },
     {
       "name": "nib Holdings Ltd",
       "identifier_type": "ABN",
-      "identifier": "51 125 633 856"
+      "identifier": "51 125 633 856",
+      "party_page": {
+        "id": "nib-holdings-ltd",
+        "name": "nib Holdings Ltd"
+      }
     },
     {
       "name": "Travel Insurance Direct Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "30 121 659 470"
+      "identifier": "30 121 659 470",
+      "party_page": {
+        "id": "travel-insurance-direct-pty-ltd",
+        "name": "Travel Insurance Direct Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -112,19 +148,31 @@
         {
           "name": "INSURANCE AUSTRALIA GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "60 090 739 923"
+          "identifier": "60 090 739 923",
+          "party_page": {
+            "id": "insurance-australia-group-limited",
+            "name": "Insurance Australia Group Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "RAC INSURANCE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "59 094 685 882"
+          "identifier": "59 094 685 882",
+          "party_page": {
+            "id": "rac-insurance-pty-limited",
+            "name": "Rac Insurance Pty Limited"
+          }
         },
         {
           "name": "RACI PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "40 008 671 805"
+          "identifier": "40 008 671 805",
+          "party_page": {
+            "id": "raci-pty-limited",
+            "name": "Raci Pty Limited"
+          }
         }
       ]
     },
@@ -137,14 +185,22 @@
         {
           "name": "Swiss Re International SE",
           "identifier_type": null,
-          "identifier": "B134553"
+          "identifier": "B134553",
+          "party_page": {
+            "id": "swiss-re-international-se",
+            "name": "Swiss Re International SE"
+          }
         }
       ],
       "targets": [
         {
           "name": "QBE Insurance Holdings Pty Limited",
           "identifier_type": "ABN",
-          "identifier": "69 146 960 438"
+          "identifier": "69 146 960 438",
+          "party_page": {
+            "id": "qbe-insurance-holdings-pty-limited",
+            "name": "QBE Insurance Holdings Pty Limited"
+          }
         }
       ]
     },
@@ -157,19 +213,31 @@
         {
           "name": "LIGHTHOUSE SERVICE PARTNERS BIDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "91 685 113 197"
+          "identifier": "91 685 113 197",
+          "party_page": {
+            "id": "lighthouse-service-partners-bidco-pty-ltd",
+            "name": "Lighthouse Service Partners Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "PRECISE TRADE SERVICES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "48 167 424 562"
+          "identifier": "48 167 424 562",
+          "party_page": {
+            "id": "precise-trade-services-pty-ltd",
+            "name": "Precise Trade Services Pty Ltd"
+          }
         },
         {
           "name": "SA Pipe Relining Pty. Ltd.",
           "identifier_type": "ABN",
-          "identifier": "89 125 590 276"
+          "identifier": "89 125 590 276",
+          "party_page": {
+            "id": "sa-pipe-relining-pty-ltd",
+            "name": "SA Pipe Relining Pty. Ltd."
+          }
         }
       ]
     }

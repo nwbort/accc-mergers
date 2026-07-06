@@ -13,7 +13,11 @@
     {
       "name": "Wisdom BidCo Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "19 696 888 730"
+      "identifier": "19 696 888 730",
+      "party_page": {
+        "id": "wisdom-bidco-pty-ltd",
+        "name": "Wisdom BidCo Pty Ltd"
+      }
     }
   ],
   "targets": [
@@ -22,6 +26,10 @@
       "identifier_type": "ABN",
       "identifier": "47 669 884 244",
       "canonical": {
+        "id": "estia-health-holdings-ltd",
+        "name": "Estia Health Holdings Ltd"
+      },
+      "party_page": {
         "id": "estia-health-holdings-ltd",
         "name": "Estia Health Holdings Ltd"
       }
@@ -35,32 +43,56 @@
       "canonical": {
         "id": "stonepeak-partners-lp",
         "name": "Stonepeak Partners LP"
+      },
+      "party_page": {
+        "id": "stonepeak-partners-lp",
+        "name": "Stonepeak Partners LP"
       }
     },
     {
       "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "perpetual-corporate-trust-limited-as-trustee-for-volarae-living-australia-holdin",
+        "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust"
+      }
     },
     {
       "name": "Aura Australia Holdings Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "41 614 139 589"
+      "identifier": "41 614 139 589",
+      "party_page": {
+        "id": "aura-australia-holdings-pty-ltd",
+        "name": "Aura Australia Holdings Pty Ltd"
+      }
     },
     {
       "name": "Wisdom TopCo Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "696 888 552"
+      "identifier": "696 888 552",
+      "party_page": {
+        "id": "wisdom-topco-pty-ltd",
+        "name": "Wisdom TopCo Pty Ltd"
+      }
     },
     {
       "name": "Wisdom MIT",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "wisdom-mit",
+        "name": "Wisdom MIT"
+      }
     },
     {
       "name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust",
       "identifier_type": "ABN",
-      "identifier": "99 000 341 533"
+      "identifier": "99 000 341 533",
+      "party_page": {
+        "id": "perpetual-corporate-trust-limited-as-trustee-for-sp-plus-australia-holdings-2-tr",
+        "name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust"
+      }
     }
   ],
   "anzsic_codes": [
@@ -107,14 +139,22 @@
         {
           "name": "ESTIA INVESTMENTS PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "87 164 350 387"
+          "identifier": "87 164 350 387",
+          "party_page": {
+            "id": "estia-investments-pty-ltd",
+            "name": "Estia Investments Pty. Ltd."
+          }
         }
       ],
       "targets": [
         {
           "name": "NORSAN PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "33 076 143 596"
+          "identifier": "33 076 143 596",
+          "party_page": {
+            "id": "norsan-pty-ltd",
+            "name": "Norsan Pty Ltd"
+          }
         }
       ]
     },
@@ -131,12 +171,20 @@
           "canonical": {
             "id": "stonepeak-motion-poolingco-limited",
             "name": "Stonepeak Motion PoolingCo Limited"
+          },
+          "party_page": {
+            "id": "stonepeak-motion-poolingco-limited",
+            "name": "Stonepeak Motion PoolingCo Limited"
           }
         },
         {
           "name": "Motion JVCo Limited",
           "identifier_type": null,
-          "identifier": "Company Identifier Number  163042"
+          "identifier": "Company Identifier Number  163042",
+          "party_page": {
+            "id": "motion-jvco-limited",
+            "name": "Motion JVCo Limited"
+          }
         }
       ],
       "targets": [
@@ -147,12 +195,20 @@
           "canonical": {
             "id": "stonepeak-motion-poolingco-limited",
             "name": "Stonepeak Motion PoolingCo Limited"
+          },
+          "party_page": {
+            "id": "stonepeak-motion-poolingco-limited",
+            "name": "Stonepeak Motion PoolingCo Limited"
           }
         },
         {
           "name": "Castrol Group Holdings Limited",
           "identifier_type": null,
-          "identifier": "UKCRN  SC005098"
+          "identifier": "UKCRN  SC005098",
+          "party_page": {
+            "id": "castrol-group-holdings-limited",
+            "name": "Castrol Group Holdings Limited"
+          }
         }
       ]
     },
@@ -165,19 +221,31 @@
         {
           "name": "Volt Managed Investment Trust 2",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "volt-managed-investment-trust-2",
+            "name": "Volt Managed Investment Trust 2"
+          }
         },
         {
           "name": "Volt Managed Investment Trust 1",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "volt-managed-investment-trust-1",
+            "name": "Volt Managed Investment Trust 1"
+          }
         }
       ],
       "targets": [
         {
           "name": "VOLT HOLDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "54 694 754 062"
+          "identifier": "54 694 754 062",
+          "party_page": {
+            "id": "volt-holdco-pty-ltd",
+            "name": "Volt Holdco Pty Ltd"
+          }
         }
       ]
     }

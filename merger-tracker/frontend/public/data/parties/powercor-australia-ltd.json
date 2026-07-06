@@ -1,0 +1,32 @@
+{
+  "id": "powercor-australia-ltd",
+  "canonical_name": "Powercor Australia Ltd",
+  "members": [
+    {
+      "name": "POWERCOR AUSTRALIA LTD",
+      "identifier": "89 064 651 109",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-05016",
+        "merger_name": "Coles - substation in Yarrawonga VIC",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-04-21T12:00:00Z",
+        "determination_date": "2026-05-05T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

@@ -1,0 +1,47 @@
+{
+  "id": "twg-hunter-dealerships-pty-ltd",
+  "canonical_name": "Twg Hunter Dealerships Pty Ltd",
+  "members": [
+    {
+      "name": "TWG HUNTER DEALERSHIPS PTY LTD",
+      "identifier": "18 695 726 348",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "MN-05017",
+        "merger_name": "Tony White Group - Sharton Motors dealerships in Maitland, Port Stephens and Cardiff",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-05-12T12:00:00Z",
+        "determination_date": "2026-06-09T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-65011",
+        "merger_name": "Tony White Group - Sharton Motors Dealerships in Maitland and Port Stephens",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-03-16T12:00:00Z",
+        "determination_date": "2026-04-14T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 2,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 28.0,
+    "median_days": 28,
+    "average_business_days": 18.0,
+    "median_business_days": 18,
+    "completed_count": 1
+  }
+}

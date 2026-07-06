@@ -14,14 +14,22 @@
     {
       "name": "NEC Corporation",
       "identifier_type": null,
-      "identifier": "Company number 7010401022916"
+      "identifier": "Company number 7010401022916",
+      "party_page": {
+        "id": "nec-corporation",
+        "name": "NEC Corporation"
+      }
     }
   ],
   "targets": [
     {
       "name": "CSG Systems International, Inc.",
       "identifier_type": null,
-      "identifier": "Company number 2444546"
+      "identifier": "Company number 2444546",
+      "party_page": {
+        "id": "csg-systems-international-inc",
+        "name": "CSG Systems International, Inc."
+      }
     }
   ],
   "other_parties": [],
@@ -95,14 +103,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "The Trustee for the Comfy Dental Trust",
           "identifier_type": "ABN",
-          "identifier": "59 865 563 072"
+          "identifier": "59 865 563 072",
+          "party_page": {
+            "id": "the-trustee-for-the-comfy-dental-trust",
+            "name": "The Trustee for the Comfy Dental Trust"
+          }
         }
       ]
     },
@@ -115,14 +131,22 @@
         {
           "name": "ETG QUEENSLAND PROCESSING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 695 139 032"
+          "identifier": "20 695 139 032",
+          "party_page": {
+            "id": "etg-queensland-processing-pty-ltd",
+            "name": "Etg Queensland Processing Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "QUEENSLAND COTTON CORPORATION PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "26 010 944 591"
+          "identifier": "26 010 944 591",
+          "party_page": {
+            "id": "queensland-cotton-corporation-pty-ltd",
+            "name": "Queensland Cotton Corporation Pty Ltd"
+          }
         }
       ]
     },
@@ -135,24 +159,40 @@
         {
           "name": "TDR Capital LLP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "tdr-capital-llp",
+            "name": "TDR Capital LLP"
+          }
         },
         {
           "name": "Estoril Coinvest SCSp",
           "identifier_type": null,
-          "identifier": "B303369"
+          "identifier": "B303369",
+          "party_page": {
+            "id": "estoril-coinvest-scsp",
+            "name": "Estoril Coinvest SCSp"
+          }
         }
       ],
       "targets": [
         {
           "name": "ESCODE AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 675 307 301"
+          "identifier": "96 675 307 301",
+          "party_page": {
+            "id": "escode-australia-pty-ltd",
+            "name": "Escode Australia Pty Ltd"
+          }
         },
         {
           "name": "NCC Group plc",
           "identifier_type": null,
-          "identifier": "UK Company number: 04627044"
+          "identifier": "UK Company number: 04627044",
+          "party_page": {
+            "id": "ncc-group-plc",
+            "name": "NCC Group plc"
+          }
         }
       ]
     }

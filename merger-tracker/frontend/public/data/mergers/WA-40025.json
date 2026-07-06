@@ -14,19 +14,31 @@
     {
       "name": "SHAPE AUSTRALIA CORPORATION LIMITED",
       "identifier_type": "ABN",
-      "identifier": "14 654 729 352"
+      "identifier": "14 654 729 352",
+      "party_page": {
+        "id": "shape-australia-corporation-limited",
+        "name": "Shape Australia Corporation Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "Handa Manufacturing Pty Ltd as trustee for the Handa Manufacturing Trust",
       "identifier_type": "ACN",
-      "identifier": "668 207 725"
+      "identifier": "668 207 725",
+      "party_page": {
+        "id": "handa-manufacturing-pty-ltd-as-trustee-for-the-handa-manufacturing-trust",
+        "name": "Handa Manufacturing Pty Ltd as trustee for the Handa Manufacturing Trust"
+      }
     },
     {
       "name": "AUSTRALIAN PROFESSIONAL SHOPFITTERS PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "93 082 820 237"
+      "identifier": "93 082 820 237",
+      "party_page": {
+        "id": "australian-professional-shopfitters-pty-ltd",
+        "name": "Australian Professional Shopfitters Pty. Ltd."
+      }
     }
   ],
   "other_parties": [],
@@ -96,19 +108,31 @@
         {
           "name": "Apex Group Holdings (Australia) Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "48 112 252 114"
+          "identifier": "48 112 252 114",
+          "party_page": {
+            "id": "apex-group-holdings-australia-pty-ltd",
+            "name": "Apex Group Holdings (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "83 068 908 912"
+          "identifier": "83 068 908 912",
+          "party_page": {
+            "id": "mercer-outsourcing-australia-pty-ltd",
+            "name": "Mercer Outsourcing (Australia) Pty Ltd"
+          }
         },
         {
           "name": "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "48 616 275 980"
+          "identifier": "48 616 275 980",
+          "party_page": {
+            "id": "mercer-administration-services-australia-pty-limited",
+            "name": "Mercer Administration Services (Australia) Pty Limited"
+          }
         }
       ]
     },
@@ -125,6 +149,10 @@
           "canonical": {
             "id": "tetra-tech-inc",
             "name": "Tetra Tech, Inc."
+          },
+          "party_page": {
+            "id": "tetra-tech-inc",
+            "name": "Tetra Tech, Inc."
           }
         }
       ],
@@ -132,7 +160,11 @@
         {
           "name": "Providence Consulting Group Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "49 117 321 552"
+          "identifier": "49 117 321 552",
+          "party_page": {
+            "id": "providence-consulting-group-pty-ltd",
+            "name": "Providence Consulting Group Pty Ltd"
+          }
         }
       ]
     },
@@ -145,24 +177,40 @@
         {
           "name": "PT Asian Bulk Logistics",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "pt-asian-bulk-logistics-2",
+            "name": "PT Asian Bulk Logistics"
+          }
         },
         {
           "name": "Global Engage Marine Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 762 122"
+          "identifier": "693 762 122",
+          "party_page": {
+            "id": "global-engage-marine-pty-ltd",
+            "name": "Global Engage Marine Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "ENGAGE MARINE FINCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 675 999 283"
+          "identifier": "25 675 999 283",
+          "party_page": {
+            "id": "engage-marine-finco-pty-ltd",
+            "name": "Engage Marine Finco Pty Ltd"
+          }
         },
         {
           "name": "ENGAGE MARINE HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 626 774 678"
+          "identifier": "99 626 774 678",
+          "party_page": {
+            "id": "engage-marine-holdings-pty-ltd",
+            "name": "Engage Marine Holdings Pty Ltd"
+          }
         }
       ]
     }

@@ -14,41 +14,69 @@
     {
       "name": "T\u00fcrk Hava Yollar\u0131 Anonim Ortakl\u0131\u011f\u0131",
       "identifier_type": null,
-      "identifier": "Registration number  751840"
+      "identifier": "Registration number  751840",
+      "party_page": {
+        "id": "t-rk-hava-yollar-anonim-ortakl",
+        "name": "T\u00fcrk Hava Yollar\u0131 Anonim Ortakl\u0131\u011f\u0131"
+      }
     }
   ],
   "targets": [
     {
       "name": "Air Europa Holding, S.L.",
       "identifier_type": null,
-      "identifier": "PM87946"
+      "identifier": "PM87946",
+      "party_page": {
+        "id": "air-europa-holding-s-l",
+        "name": "Air Europa Holding, S.L."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Air Europa L\u00edneas A\u00e9reas, S.A.U.",
       "identifier_type": null,
-      "identifier": "PM4757"
+      "identifier": "PM4757",
+      "party_page": {
+        "id": "air-europa-l-neas-a-reas-s-a-u",
+        "name": "Air Europa L\u00edneas A\u00e9reas, S.A.U."
+      }
     },
     {
       "name": "Le\u00f3n Activos Aeron\u00e1uticos, S.L.U.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "le-n-activos-aeron-uticos-s-l-u",
+        "name": "Le\u00f3n Activos Aeron\u00e1uticos, S.L.U."
+      }
     },
     {
       "name": "Air Europa Suma Miles, S.L.U.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "air-europa-suma-miles-s-l-u",
+        "name": "Air Europa Suma Miles, S.L.U."
+      }
     },
     {
       "name": "Globalia Corporaci\u00f3n Empresarial, S.A.",
       "identifier_type": null,
-      "identifier": "PM26677"
+      "identifier": "PM26677",
+      "party_page": {
+        "id": "globalia-corporaci-n-empresarial-s-a",
+        "name": "Globalia Corporaci\u00f3n Empresarial, S.A."
+      }
     },
     {
       "name": "Aeronova, S.L.U.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "aeronova-s-l-u",
+        "name": "Aeronova, S.L.U."
+      }
     }
   ],
   "anzsic_codes": [
@@ -121,24 +149,40 @@
         {
           "name": "Banijay Holding UK Limited",
           "identifier_type": null,
-          "identifier": "UK Company number 17040112"
+          "identifier": "UK Company number 17040112",
+          "party_page": {
+            "id": "banijay-holding-uk-limited",
+            "name": "Banijay Holding UK Limited"
+          }
         },
         {
           "name": "Gold Rush TopCo Limited",
           "identifier_type": null,
-          "identifier": "RN 152697"
+          "identifier": "RN 152697",
+          "party_page": {
+            "id": "gold-rush-topco-limited",
+            "name": "Gold Rush TopCo Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Gold Rush HoldCo Limited",
           "identifier_type": null,
-          "identifier": "RN 152698"
+          "identifier": "RN 152698",
+          "party_page": {
+            "id": "gold-rush-holdco-limited",
+            "name": "Gold Rush HoldCo Limited"
+          }
         },
         {
           "name": "Banijay Holding S.A.S.",
           "identifier_type": null,
-          "identifier": "829 295 138 RCS PARIS"
+          "identifier": "829 295 138 RCS PARIS",
+          "party_page": {
+            "id": "banijay-holding-s-a-s",
+            "name": "Banijay Holding S.A.S."
+          }
         }
       ]
     },
@@ -151,19 +195,31 @@
         {
           "name": "Eiffel Investment Group SAS",
           "identifier_type": null,
-          "identifier": "SIREN 510 813 991"
+          "identifier": "SIREN 510 813 991",
+          "party_page": {
+            "id": "eiffel-investment-group-sas",
+            "name": "Eiffel Investment Group SAS"
+          }
         },
         {
           "name": "Eurazeo SE",
           "identifier_type": null,
-          "identifier": "SIREN 692 030 992"
+          "identifier": "SIREN 692 030 992",
+          "party_page": {
+            "id": "eurazeo-se",
+            "name": "Eurazeo SE"
+          }
         }
       ],
       "targets": [
         {
           "name": "Segula Holding SAS",
           "identifier_type": null,
-          "identifier": "SIREN 343 166 393"
+          "identifier": "SIREN 343 166 393",
+          "party_page": {
+            "id": "segula-holding-sas",
+            "name": "Segula Holding SAS"
+          }
         }
       ]
     },
@@ -176,7 +232,11 @@
         {
           "name": "A-AV Holdco I, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "a-av-holdco-i-inc",
+            "name": "A-AV Holdco I, Inc"
+          }
         }
       ],
       "targets": [
@@ -185,6 +245,10 @@
           "identifier_type": null,
           "identifier": "Delaware Company Number: 5482684",
           "canonical": {
+            "id": "avanos-medical-inc",
+            "name": "Avanos Medical, Inc."
+          },
+          "party_page": {
             "id": "avanos-medical-inc",
             "name": "Avanos Medical, Inc."
           }

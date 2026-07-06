@@ -15,14 +15,22 @@
     {
       "name": "SERVICE STREAM MAINTENANCE PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "87 081 540 847"
+      "identifier": "87 081 540 847",
+      "party_page": {
+        "id": "service-stream-maintenance-pty-ltd",
+        "name": "Service Stream Maintenance Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "RIE GROUP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "30 612 894 970"
+      "identifier": "30 612 894 970",
+      "party_page": {
+        "id": "rie-group-pty-ltd",
+        "name": "Rie Group Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -111,14 +119,22 @@
         {
           "name": "RETURN IT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "61 615 434 869"
+          "identifier": "61 615 434 869",
+          "party_page": {
+            "id": "return-it-pty-ltd",
+            "name": "Return It Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "THE SCOUT ASSOCIATION OF AUSTRALIA, SOUTH AUSTRALIAN BRANCH INCORPORATED",
           "identifier_type": "ABN",
-          "identifier": "35 621 021 366"
+          "identifier": "35 621 021 366",
+          "party_page": {
+            "id": "the-scout-association-of-australia-south-australian-branch-incorporated",
+            "name": "The Scout Association Of Australia, South Australian Branch Incorporated"
+          }
         }
       ]
     },
@@ -131,19 +147,31 @@
         {
           "name": "INSURANCE AUSTRALIA GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "60 090 739 923"
+          "identifier": "60 090 739 923",
+          "party_page": {
+            "id": "insurance-australia-group-limited",
+            "name": "Insurance Australia Group Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "RAC INSURANCE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "59 094 685 882"
+          "identifier": "59 094 685 882",
+          "party_page": {
+            "id": "rac-insurance-pty-limited",
+            "name": "Rac Insurance Pty Limited"
+          }
         },
         {
           "name": "RACI PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "40 008 671 805"
+          "identifier": "40 008 671 805",
+          "party_page": {
+            "id": "raci-pty-limited",
+            "name": "Raci Pty Limited"
+          }
         }
       ]
     },
@@ -156,19 +184,31 @@
         {
           "name": "Searchlight Capital IV LP",
           "identifier_type": null,
-          "identifier": "US SEC  0001954453"
+          "identifier": "US SEC  0001954453",
+          "party_page": {
+            "id": "searchlight-capital-iv-lp",
+            "name": "Searchlight Capital IV LP"
+          }
         },
         {
           "name": "KONA Merger Sub Co.",
           "identifier_type": null,
-          "identifier": "Delaware  10525073"
+          "identifier": "Delaware  10525073",
+          "party_page": {
+            "id": "kona-merger-sub-co",
+            "name": "KONA Merger Sub Co."
+          }
         }
       ],
       "targets": [
         {
           "name": "KORE Group Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware  5388903"
+          "identifier": "Delaware  5388903",
+          "party_page": {
+            "id": "kore-group-holdings-inc",
+            "name": "KORE Group Holdings, Inc."
+          }
         }
       ]
     }

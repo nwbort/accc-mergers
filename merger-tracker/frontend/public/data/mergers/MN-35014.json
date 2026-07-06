@@ -16,21 +16,33 @@
     {
       "name": "NEWS PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "47 007 871 178"
+      "identifier": "47 007 871 178",
+      "party_page": {
+        "id": "news-pty-limited",
+        "name": "News Pty Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "NATIONAL DISTRIBUTION SERVICES PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "66 633 619 333"
+      "identifier": "66 633 619 333",
+      "party_page": {
+        "id": "national-distribution-services-pty-ltd",
+        "name": "National Distribution Services Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "NATIONWIDE NEWS PTY. LIMITED",
       "identifier_type": "ABN",
-      "identifier": "98 008 438 828"
+      "identifier": "98 008 438 828",
+      "party_page": {
+        "id": "nationwide-news-pty-limited",
+        "name": "Nationwide News Pty. Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -261,19 +273,31 @@
         {
           "name": "NACG WA Acquisition Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 678 296"
+          "identifier": "693 678 296",
+          "party_page": {
+            "id": "nacg-wa-acquisition-pty-ltd",
+            "name": "NACG WA Acquisition Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "DCL CORP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 633 008 992"
+          "identifier": "60 633 008 992",
+          "party_page": {
+            "id": "dcl-corp-pty-ltd",
+            "name": "Dcl Corp Pty Ltd"
+          }
         },
         {
           "name": "IRON HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 641 807 589"
+          "identifier": "43 641 807 589",
+          "party_page": {
+            "id": "iron-hire-pty-ltd",
+            "name": "Iron Hire Pty Ltd"
+          }
         }
       ]
     },
@@ -286,19 +310,31 @@
         {
           "name": "Apex Group Holdings (Australia) Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "48 112 252 114"
+          "identifier": "48 112 252 114",
+          "party_page": {
+            "id": "apex-group-holdings-australia-pty-ltd",
+            "name": "Apex Group Holdings (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "83 068 908 912"
+          "identifier": "83 068 908 912",
+          "party_page": {
+            "id": "mercer-outsourcing-australia-pty-ltd",
+            "name": "Mercer Outsourcing (Australia) Pty Ltd"
+          }
         },
         {
           "name": "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "48 616 275 980"
+          "identifier": "48 616 275 980",
+          "party_page": {
+            "id": "mercer-administration-services-australia-pty-limited",
+            "name": "Mercer Administration Services (Australia) Pty Limited"
+          }
         }
       ]
     },
@@ -311,7 +347,11 @@
         {
           "name": "WIN TELEVISION NETWORK PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "90 008 589 026"
+          "identifier": "90 008 589 026",
+          "party_page": {
+            "id": "win-television-network-pty-ltd",
+            "name": "Win Television Network Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -322,6 +362,10 @@
           "canonical": {
             "id": "nine-network-australia-pty-ltd",
             "name": "Nine Network Australia Pty Ltd"
+          },
+          "party_page": {
+            "id": "nine-network-australia-pty-ltd",
+            "name": "Nine Network Australia Pty Ltd"
           }
         },
         {
@@ -329,6 +373,10 @@
           "identifier_type": "ABN",
           "identifier": "43 124 816 093",
           "canonical": {
+            "id": "nine-network-australia-pty-ltd",
+            "name": "Nine Network Australia Pty Ltd"
+          },
+          "party_page": {
             "id": "nine-network-australia-pty-ltd",
             "name": "Nine Network Australia Pty Ltd"
           }

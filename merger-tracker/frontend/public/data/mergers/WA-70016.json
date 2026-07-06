@@ -14,31 +14,51 @@
     {
       "name": "OCEANIA CAPITAL PARTNERS LIMITED",
       "identifier_type": "ABN",
-      "identifier": "52 111 554 360"
+      "identifier": "52 111 554 360",
+      "party_page": {
+        "id": "oceania-capital-partners-limited",
+        "name": "Oceania Capital Partners Limited"
+      }
     },
     {
       "name": "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "k-k-ryan-pty-ltd-acn-623119960-as-trustee-for-the-k-k-ryan-family-trust",
+        "name": "K & K Ryan Pty Ltd (Acn 623119960) As Trustee For The K & K Ryan Family Trust"
+      }
     }
   ],
   "targets": [
     {
       "name": "HUDSON HIGHLAND (APAC) PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "14 074 319 396"
+      "identifier": "14 074 319 396",
+      "party_page": {
+        "id": "hudson-highland-apac-pty-limited",
+        "name": "Hudson Highland (Apac) Pty Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "HUDSON GLOBAL RESOURCES (AUST) PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "21 002 888 762"
+      "identifier": "21 002 888 762",
+      "party_page": {
+        "id": "hudson-global-resources-aust-pty-limited",
+        "name": "Hudson Global Resources (Aust) Pty Limited"
+      }
     },
     {
       "name": "The Trustee for Apache Unit Trust",
       "identifier_type": "ABN",
-      "identifier": "91 171 649 407"
+      "identifier": "91 171 649 407",
+      "party_page": {
+        "id": "the-trustee-for-apache-unit-trust",
+        "name": "The Trustee for Apache Unit Trust"
+      }
     }
   ],
   "anzsic_codes": [
@@ -111,24 +131,40 @@
         {
           "name": "Essential Bidco B.V.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "essential-bidco-b-v",
+            "name": "Essential Bidco B.V."
+          }
         },
         {
           "name": "Specialty (U.S.) Bidco, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialty-u-s-bidco-inc",
+            "name": "Specialty (U.S.) Bidco, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "SpecialtyCo US LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialtyco-us-llc",
+            "name": "SpecialtyCo US LLC"
+          }
         },
         {
           "name": "Biomin Phytogenics GmbH (Germany)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "biomin-phytogenics-gmbh-germany",
+            "name": "Biomin Phytogenics GmbH (Germany)"
+          }
         }
       ]
     },
@@ -141,14 +177,22 @@
         {
           "name": "Rosewood AG, LP",
           "identifier_type": null,
-          "identifier": "LP5500"
+          "identifier": "LP5500",
+          "party_page": {
+            "id": "rosewood-ag-lp",
+            "name": "Rosewood AG, LP"
+          }
         }
       ],
       "targets": [
         {
           "name": "Collagen Holdings, LLC",
           "identifier_type": null,
-          "identifier": "DE File Number  7473707"
+          "identifier": "DE File Number  7473707",
+          "party_page": {
+            "id": "collagen-holdings-llc",
+            "name": "Collagen Holdings, LLC"
+          }
         }
       ]
     },
@@ -165,6 +209,10 @@
           "canonical": {
             "id": "cvc-capital-partners",
             "name": "CVC Capital Partners"
+          },
+          "party_page": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
           }
         }
       ],
@@ -172,7 +220,11 @@
         {
           "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
+            "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+          }
         }
       ]
     }

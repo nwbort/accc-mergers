@@ -13,17 +13,29 @@
     {
       "name": "OpenAI Group PBC",
       "identifier_type": null,
-      "identifier": "Delaware File Number  10381551"
+      "identifier": "Delaware File Number  10381551",
+      "party_page": {
+        "id": "openai-group-pbc",
+        "name": "OpenAI Group PBC"
+      }
     },
     {
       "name": "Wave Merger Sub II, LLC",
       "identifier_type": null,
-      "identifier": "Delaware File Number  7007085"
+      "identifier": "Delaware File Number  7007085",
+      "party_page": {
+        "id": "wave-merger-sub-ii-llc",
+        "name": "Wave Merger Sub II, LLC"
+      }
     },
     {
       "name": "Wave Merger Sub, Inc.",
       "identifier_type": null,
-      "identifier": "Delaware File Number  10631976"
+      "identifier": "Delaware File Number  10631976",
+      "party_page": {
+        "id": "wave-merger-sub-inc",
+        "name": "Wave Merger Sub, Inc."
+      }
     }
   ],
   "targets": [
@@ -34,6 +46,10 @@
       "canonical": {
         "id": "gitpod-gmbh",
         "name": "Gitpod GmbH"
+      },
+      "party_page": {
+        "id": "gitpod-gmbh",
+        "name": "Gitpod GmbH"
       }
     }
   ],
@@ -41,13 +57,21 @@
     {
       "name": "OpenAI Foundation",
       "identifier_type": null,
-      "identifier": "Delaware File Number  5902936"
+      "identifier": "Delaware File Number  5902936",
+      "party_page": {
+        "id": "openai-foundation",
+        "name": "OpenAI Foundation"
+      }
     },
     {
       "name": "Gitpod GmbH",
       "identifier_type": null,
       "identifier": "HRB  22228",
       "canonical": {
+        "id": "gitpod-gmbh",
+        "name": "Gitpod GmbH"
+      },
+      "party_page": {
         "id": "gitpod-gmbh",
         "name": "Gitpod GmbH"
       }
@@ -101,14 +125,22 @@
         {
           "name": "OpenAI Group PBC",
           "identifier_type": null,
-          "identifier": "Delaware file number  10381551"
+          "identifier": "Delaware file number  10381551",
+          "party_page": {
+            "id": "openai-group-pbc",
+            "name": "OpenAI Group PBC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Tomoro AI Ltd",
           "identifier_type": null,
-          "identifier": "UK Companies House registration number  15208678"
+          "identifier": "UK Companies House registration number  15208678",
+          "party_page": {
+            "id": "tomoro-ai-ltd",
+            "name": "Tomoro AI Ltd"
+          }
         }
       ]
     },
@@ -121,19 +153,31 @@
         {
           "name": "Adobe Inc. (NASDAQ: ADBE)",
           "identifier_type": null,
-          "identifier": "2748129"
+          "identifier": "2748129",
+          "party_page": {
+            "id": "adobe-inc-nasdaq-adbe",
+            "name": "Adobe Inc. (NASDAQ: ADBE)"
+          }
         },
         {
           "name": "Fenway Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "10389477"
+          "identifier": "10389477",
+          "party_page": {
+            "id": "fenway-merger-sub-inc",
+            "name": "Fenway Merger Sub, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Semrush Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "7690622"
+          "identifier": "7690622",
+          "party_page": {
+            "id": "semrush-holdings-inc",
+            "name": "Semrush Holdings, Inc."
+          }
         }
       ]
     },
@@ -146,19 +190,31 @@
         {
           "name": "Fjord Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "TIN/EIN  921660460"
+          "identifier": "TIN/EIN  921660460",
+          "party_page": {
+            "id": "fjord-merger-sub-inc",
+            "name": "Fjord Merger Sub, Inc."
+          }
         },
         {
           "name": "IFS North America, Inc.",
           "identifier_type": null,
-          "identifier": "TIN/EIN  391292200"
+          "identifier": "TIN/EIN  391292200",
+          "party_page": {
+            "id": "ifs-north-america-inc",
+            "name": "IFS North America, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Softeon Inc.",
           "identifier_type": null,
-          "identifier": "EIN 541960847"
+          "identifier": "EIN 541960847",
+          "party_page": {
+            "id": "softeon-inc",
+            "name": "Softeon Inc."
+          }
         }
       ]
     }

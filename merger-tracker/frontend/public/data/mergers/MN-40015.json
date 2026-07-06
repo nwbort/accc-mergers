@@ -16,14 +16,22 @@
     {
       "name": "Swiss Re International SE",
       "identifier_type": null,
-      "identifier": "B134553"
+      "identifier": "B134553",
+      "party_page": {
+        "id": "swiss-re-international-se",
+        "name": "Swiss Re International SE"
+      }
     }
   ],
   "targets": [
     {
       "name": "QBE Insurance Holdings Pty Limited",
       "identifier_type": "ABN",
-      "identifier": "69 146 960 438"
+      "identifier": "69 146 960 438",
+      "party_page": {
+        "id": "qbe-insurance-holdings-pty-limited",
+        "name": "QBE Insurance Holdings Pty Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -107,19 +115,31 @@
         {
           "name": "INSURANCE AUSTRALIA GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "60 090 739 923"
+          "identifier": "60 090 739 923",
+          "party_page": {
+            "id": "insurance-australia-group-limited",
+            "name": "Insurance Australia Group Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "RAC INSURANCE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "59 094 685 882"
+          "identifier": "59 094 685 882",
+          "party_page": {
+            "id": "rac-insurance-pty-limited",
+            "name": "Rac Insurance Pty Limited"
+          }
         },
         {
           "name": "RACI PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "40 008 671 805"
+          "identifier": "40 008 671 805",
+          "party_page": {
+            "id": "raci-pty-limited",
+            "name": "Raci Pty Limited"
+          }
         }
       ]
     },
@@ -132,19 +152,31 @@
         {
           "name": "ALLIANZ AUSTRALIA SERVICES PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "66 002 947 257"
+          "identifier": "66 002 947 257",
+          "party_page": {
+            "id": "allianz-australia-services-pty-limited",
+            "name": "Allianz Australia Services Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "VICTORIA CROSS COMMERCIAL PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "56 630 332 222"
+          "identifier": "56 630 332 222",
+          "party_page": {
+            "id": "victoria-cross-commercial-pty-limited",
+            "name": "Victoria Cross Commercial Pty Limited"
+          }
         },
         {
           "name": "The Trustee for Lendlease Victoria Cross Trust",
           "identifier_type": "ABN",
-          "identifier": "26 397 448 085"
+          "identifier": "26 397 448 085",
+          "party_page": {
+            "id": "the-trustee-for-lendlease-victoria-cross-trust",
+            "name": "The Trustee for Lendlease Victoria Cross Trust"
+          }
         }
       ]
     },
@@ -157,14 +189,22 @@
         {
           "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "11 008 423 372"
+          "identifier": "11 008 423 372",
+          "party_page": {
+            "id": "zurich-financial-services-australia-limited",
+            "name": "Zurich Financial Services Australia Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CLEARVIEW WEALTH LIMITED",
           "identifier_type": "ABN",
-          "identifier": "83 106 248 248"
+          "identifier": "83 106 248 248",
+          "party_page": {
+            "id": "clearview-wealth-limited",
+            "name": "Clearview Wealth Limited"
+          }
         }
       ]
     }

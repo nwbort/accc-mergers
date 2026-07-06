@@ -14,26 +14,42 @@
     {
       "name": "Arena BidCo Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "693 657 484"
+      "identifier": "693 657 484",
+      "party_page": {
+        "id": "arena-bidco-pty-ltd",
+        "name": "Arena BidCo Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "RFGI GROUP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "55 630 028 974"
+      "identifier": "55 630 028 974",
+      "party_page": {
+        "id": "rfgi-group-pty-ltd",
+        "name": "Rfgi Group Pty Ltd"
+      }
     },
     {
       "name": "GAMEON HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "47 629 422 206"
+      "identifier": "47 629 422 206",
+      "party_page": {
+        "id": "gameon-holdings-pty-ltd",
+        "name": "Gameon Holdings Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "ASG IV, LLC",
       "identifier_type": null,
-      "identifier": "EIN  393804433"
+      "identifier": "EIN  393804433",
+      "party_page": {
+        "id": "asg-iv-llc",
+        "name": "Asg Iv, Llc"
+      }
     },
     {
       "name": "PLAYHQ SPORTS PTY LTD",
@@ -42,12 +58,20 @@
       "canonical": {
         "id": "playhq-sports-ltd",
         "name": "PlayHQ Sports Ltd"
+      },
+      "party_page": {
+        "id": "playhq-sports-ltd",
+        "name": "PlayHQ Sports Ltd"
       }
     },
     {
       "name": "PlayHQ Sports UK Limited",
       "identifier_type": null,
-      "identifier": "UK registered company  16260012"
+      "identifier": "UK registered company  16260012",
+      "party_page": {
+        "id": "playhq-sports-uk-limited",
+        "name": "PlayHQ Sports UK Limited"
+      }
     },
     {
       "name": "PlayHQ Sports Ltd",
@@ -56,12 +80,20 @@
       "canonical": {
         "id": "playhq-sports-ltd",
         "name": "PlayHQ Sports Ltd"
+      },
+      "party_page": {
+        "id": "playhq-sports-ltd",
+        "name": "PlayHQ Sports Ltd"
       }
     },
     {
       "name": "Arena HoldCo Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "693 657 162"
+      "identifier": "693 657 162",
+      "party_page": {
+        "id": "arena-holdco-pty-ltd",
+        "name": "Arena HoldCo Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -134,24 +166,40 @@
         {
           "name": "Coforge Limited",
           "identifier_type": null,
-          "identifier": "L72100HR1992PLC128382"
+          "identifier": "L72100HR1992PLC128382",
+          "party_page": {
+            "id": "coforge-limited",
+            "name": "Coforge Limited"
+          }
         },
         {
           "name": "Encora Holdco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdco-limited",
+            "name": "Encora Holdco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Encora US Holdco, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-us-holdco-inc",
+            "name": "Encora US Holdco, Inc"
+          }
         },
         {
           "name": "Encora Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdings-limited",
+            "name": "Encora Holdings Limited"
+          }
         }
       ]
     },
@@ -164,19 +212,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     },
@@ -189,19 +249,31 @@
         {
           "name": "Genea Bidco SA Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 694 458"
+          "identifier": "695 694 458",
+          "party_page": {
+            "id": "genea-bidco-sa-pty-ltd",
+            "name": "Genea Bidco SA Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "EMBRACE FERTILITY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "84 135 918 580"
+          "identifier": "84 135 918 580",
+          "party_page": {
+            "id": "embrace-fertility-pty-ltd",
+            "name": "Embrace Fertility Pty Ltd"
+          }
         },
         {
           "name": "Histon Nelson Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "144 914 965"
+          "identifier": "144 914 965",
+          "party_page": {
+            "id": "histon-nelson-pty-ltd",
+            "name": "Histon Nelson Pty Ltd"
+          }
         }
       ]
     }

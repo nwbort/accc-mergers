@@ -16,14 +16,22 @@
     {
       "name": "L'Oreal S.A.",
       "identifier_type": null,
-      "identifier": "Paris Trade and Companies Register number 632 012 100"
+      "identifier": "Paris Trade and Companies Register number 632 012 100",
+      "party_page": {
+        "id": "l-oreal-s-a",
+        "name": "L'Oreal S.A."
+      }
     }
   ],
   "targets": [
     {
       "name": "Kering Beaut\u00e9 S.A.S.",
       "identifier_type": null,
-      "identifier": "Netherlands Chamber of Commerce registration number 33223151"
+      "identifier": "Netherlands Chamber of Commerce registration number 33223151",
+      "party_page": {
+        "id": "kering-beaut-s-a-s",
+        "name": "Kering Beaut\u00e9 S.A.S."
+      }
     }
   ],
   "other_parties": [],
@@ -111,6 +119,10 @@
           "canonical": {
             "id": "henkel-global-supply-chain-b-v",
             "name": "Henkel Global Supply Chain B.V."
+          },
+          "party_page": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
           }
         }
       ],
@@ -118,12 +130,20 @@
         {
           "name": "Stahl Holdings B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 34249320"
+          "identifier": "Netherlands registration number (KVK): 34249320",
+          "party_page": {
+            "id": "stahl-holdings-b-v",
+            "name": "Stahl Holdings B.V."
+          }
         },
         {
           "name": "Stahl Asia Pacific Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "Singapore registration number: 200606884Z"
+          "identifier": "Singapore registration number: 200606884Z",
+          "party_page": {
+            "id": "stahl-asia-pacific-pte-ltd",
+            "name": "Stahl Asia Pacific Pte. Ltd."
+          }
         }
       ]
     },
@@ -140,6 +160,10 @@
           "canonical": {
             "id": "freudenberg-home-and-cleaning-solutions-gmbh",
             "name": "Freudenberg Home and Cleaning Solutions GmbH"
+          },
+          "party_page": {
+            "id": "freudenberg-home-and-cleaning-solutions-gmbh",
+            "name": "Freudenberg Home and Cleaning Solutions GmbH"
           }
         }
       ],
@@ -147,7 +171,11 @@
         {
           "name": "Nilfisk Holding A/S",
           "identifier_type": null,
-          "identifier": "CVR 38998870"
+          "identifier": "CVR 38998870",
+          "party_page": {
+            "id": "nilfisk-holding-a-s",
+            "name": "Nilfisk Holding A/S"
+          }
         }
       ]
     },
@@ -160,24 +188,40 @@
         {
           "name": "SGL HOTELS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "74 627 068 526"
+          "identifier": "74 627 068 526",
+          "party_page": {
+            "id": "sgl-hotels-pty-ltd",
+            "name": "Sgl Hotels Pty Ltd"
+          }
         },
         {
           "name": "SCHF PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 644 329 733"
+          "identifier": "99 644 329 733",
+          "party_page": {
+            "id": "schf-pty-ltd",
+            "name": "Schf Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "MPG FIVEWAYS PROP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "45 688 881 101"
+          "identifier": "45 688 881 101",
+          "party_page": {
+            "id": "mpg-fiveways-prop-pty-ltd",
+            "name": "Mpg Fiveways Prop Pty Ltd"
+          }
         },
         {
           "name": "MPG FIVEWAYS OP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "53 688 880 828"
+          "identifier": "53 688 880 828",
+          "party_page": {
+            "id": "mpg-fiveways-op-pty-ltd",
+            "name": "Mpg Fiveways Op Pty Ltd"
+          }
         }
       ]
     }

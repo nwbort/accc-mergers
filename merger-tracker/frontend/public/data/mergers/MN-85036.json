@@ -13,46 +13,78 @@
     {
       "name": "Space Exploration Technologies Corp.",
       "identifier_type": null,
-      "identifier": "NASDAQ  SPCX"
+      "identifier": "NASDAQ  SPCX",
+      "party_page": {
+        "id": "space-exploration-technologies-corp",
+        "name": "Space Exploration Technologies Corp."
+      }
     }
   ],
   "targets": [
     {
       "name": "Anysphere, Inc.",
       "identifier_type": null,
-      "identifier": "Delaware File Number  6524309"
+      "identifier": "Delaware File Number  6524309",
+      "party_page": {
+        "id": "anysphere-inc",
+        "name": "Anysphere, Inc."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "X.AI Corp.",
       "identifier_type": null,
-      "identifier": "Nevada Entity Number  E289151220238"
+      "identifier": "Nevada Entity Number  E289151220238",
+      "party_page": {
+        "id": "x-ai-corp",
+        "name": "X.AI Corp."
+      }
     },
     {
       "name": "STARLINK AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "68 636 841 533"
+      "identifier": "68 636 841 533",
+      "party_page": {
+        "id": "starlink-australia-pty-ltd",
+        "name": "Starlink Australia Pty Ltd"
+      }
     },
     {
       "name": "X ASIA PACIFIC INTERNET PTE. LTD.",
       "identifier_type": "ABN",
-      "identifier": "97 712 692 946"
+      "identifier": "97 712 692 946",
+      "party_page": {
+        "id": "x-asia-pacific-internet-pte-ltd",
+        "name": "X Asia Pacific Internet Pte. Ltd."
+      }
     },
     {
       "name": "X Internet Unlimited Company",
       "identifier_type": null,
-      "identifier": "Ireland Registered Number  503351"
+      "identifier": "Ireland Registered Number  503351",
+      "party_page": {
+        "id": "x-internet-unlimited-company",
+        "name": "X Internet Unlimited Company"
+      }
     },
     {
       "name": "STARLINK INTERNET SERVICES PTE. LTD.",
       "identifier_type": "ABN",
-      "identifier": "44 658 489 582"
+      "identifier": "44 658 489 582",
+      "party_page": {
+        "id": "starlink-internet-services-pte-ltd",
+        "name": "Starlink Internet Services Pte. Ltd."
+      }
     },
     {
       "name": "X Global LLC",
       "identifier_type": null,
-      "identifier": "Delaware File Number  6028653"
+      "identifier": "Delaware File Number  6028653",
+      "party_page": {
+        "id": "x-global-llc",
+        "name": "X Global LLC"
+      }
     }
   ],
   "anzsic_codes": [
@@ -99,19 +131,31 @@
         {
           "name": "CSE CROSSCOM PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 606 614 500"
+          "identifier": "25 606 614 500",
+          "party_page": {
+            "id": "cse-crosscom-pty-ltd",
+            "name": "Cse Crosscom Pty Ltd"
+          }
         },
         {
           "name": "CSE-Global (Australia) Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "85 109 958 090"
+          "identifier": "85 109 958 090",
+          "party_page": {
+            "id": "cse-global-australia-pty-ltd",
+            "name": "Cse-Global (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "PROGILITY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 131 639 837"
+          "identifier": "11 131 639 837",
+          "party_page": {
+            "id": "progility-pty-ltd",
+            "name": "Progility Pty Ltd"
+          }
         }
       ]
     },
@@ -124,14 +168,22 @@
         {
           "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 143 484 208"
+          "identifier": "53 143 484 208",
+          "party_page": {
+            "id": "origin-energy-international-holdings-pty-limited",
+            "name": "Origin Energy International Holdings Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CPP Investment Board Private Holdings (4) Inc.",
           "identifier_type": null,
-          "identifier": "BN  11089340"
+          "identifier": "BN  11089340",
+          "party_page": {
+            "id": "cpp-investment-board-private-holdings-4-inc",
+            "name": "CPP Investment Board Private Holdings (4) Inc."
+          }
         }
       ]
     },
@@ -144,19 +196,31 @@
         {
           "name": "Infosys Nova Holdings LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "infosys-nova-holdings-llc",
+            "name": "Infosys Nova Holdings LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Optimum Achieve Holdings, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "optimum-achieve-holdings-inc",
+            "name": "Optimum Achieve Holdings, Inc"
+          }
         },
         {
           "name": "OPTIMUM HEALTHCARE IT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "53 689 795 702"
+          "identifier": "53 689 795 702",
+          "party_page": {
+            "id": "optimum-healthcare-it-pty-ltd",
+            "name": "Optimum Healthcare It Pty Ltd"
+          }
         }
       ]
     }

@@ -14,32 +14,52 @@
     {
       "name": "GPS ENERGY PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "36 063 207 456"
+      "identifier": "36 063 207 456",
+      "party_page": {
+        "id": "gps-energy-pty-limited",
+        "name": "Gps Energy Pty Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "RYOWA II GPS PTY. LIMITED",
       "identifier_type": "ABN",
-      "identifier": "16 063 780 058"
+      "identifier": "16 063 780 058",
+      "party_page": {
+        "id": "ryowa-ii-gps-pty-limited",
+        "name": "Ryowa Ii Gps Pty. Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "GPS POWER PTY. LIMITED",
       "identifier_type": "ABN",
-      "identifier": "34 009 103 422"
+      "identifier": "34 009 103 422",
+      "party_page": {
+        "id": "gps-power-pty-limited",
+        "name": "Gps Power Pty. Limited"
+      }
     },
     {
       "name": "RIO TINTO LIMITED",
       "identifier_type": "ABN",
-      "identifier": "96 004 458 404"
+      "identifier": "96 004 458 404",
+      "party_page": {
+        "id": "rio-tinto-limited",
+        "name": "Rio Tinto Limited"
+      }
     },
     {
       "name": "RIO TINTO ALUMINIUM LIMITED",
       "identifier_type": "ABN",
       "identifier": "51 009 679 127",
       "canonical": {
+        "id": "rio-tinto-aluminium-limited",
+        "name": "Rio Tinto Aluminium Limited"
+      },
+      "party_page": {
         "id": "rio-tinto-aluminium-limited",
         "name": "Rio Tinto Aluminium Limited"
       }
@@ -51,12 +71,20 @@
       "canonical": {
         "id": "rio-tinto-aluminium-limited",
         "name": "Rio Tinto Aluminium Limited"
+      },
+      "party_page": {
+        "id": "rio-tinto-aluminium-limited",
+        "name": "Rio Tinto Aluminium Limited"
       }
     },
     {
       "name": "Boyne Smelters Limited",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "boyne-smelters-limited",
+        "name": "Boyne Smelters Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -129,19 +157,31 @@
         {
           "name": "RYOWA II GPS PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "16 063 780 058"
+          "identifier": "16 063 780 058",
+          "party_page": {
+            "id": "ryowa-ii-gps-pty-limited",
+            "name": "Ryowa Ii Gps Pty. Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "PH QUEENSLAND GAS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "12 626 604 000"
+          "identifier": "12 626 604 000",
+          "party_page": {
+            "id": "ph-queensland-gas-pty-ltd",
+            "name": "Ph Queensland Gas Pty Ltd"
+          }
         },
         {
           "name": "DYNO NOBEL LIMITED",
           "identifier_type": "ABN",
-          "identifier": "42 004 080 264"
+          "identifier": "42 004 080 264",
+          "party_page": {
+            "id": "dyno-nobel-limited",
+            "name": "Dyno Nobel Limited"
+          }
         }
       ]
     },
@@ -154,14 +194,22 @@
         {
           "name": "Quanta Services Australia Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "11 164 311 997"
+          "identifier": "11 164 311 997",
+          "party_page": {
+            "id": "quanta-services-australia-pty-ltd",
+            "name": "Quanta Services Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "PSD Global Holdings Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "634 380 813"
+          "identifier": "634 380 813",
+          "party_page": {
+            "id": "psd-global-holdings-pty-ltd",
+            "name": "PSD Global Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -178,25 +226,41 @@
           "canonical": {
             "id": "bcwf-2-pty-limited",
             "name": "Bcwf 2 Pty Limited"
+          },
+          "party_page": {
+            "id": "bcwf-2-pty-limited",
+            "name": "Bcwf 2 Pty Limited"
           }
         },
         {
           "name": "AULA ENERGY HOLDINGS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "13 662 726 909"
+          "identifier": "13 662 726 909",
+          "party_page": {
+            "id": "aula-energy-holdings-pty-limited",
+            "name": "Aula Energy Holdings Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "C S ENERGY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "54 078 848 745"
+          "identifier": "54 078 848 745",
+          "party_page": {
+            "id": "c-s-energy-limited",
+            "name": "C S Energy Limited"
+          }
         },
         {
           "name": "BCWF 2 PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "77 670 206 256",
           "canonical": {
+            "id": "bcwf-2-pty-limited",
+            "name": "Bcwf 2 Pty Limited"
+          },
+          "party_page": {
             "id": "bcwf-2-pty-limited",
             "name": "Bcwf 2 Pty Limited"
           }

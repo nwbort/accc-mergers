@@ -16,21 +16,33 @@
     {
       "name": "OpenAI Group PBC",
       "identifier_type": null,
-      "identifier": "Delaware file number  10381551"
+      "identifier": "Delaware file number  10381551",
+      "party_page": {
+        "id": "openai-group-pbc",
+        "name": "OpenAI Group PBC"
+      }
     }
   ],
   "targets": [
     {
       "name": "Tomoro AI Ltd",
       "identifier_type": null,
-      "identifier": "UK Companies House registration number  15208678"
+      "identifier": "UK Companies House registration number  15208678",
+      "party_page": {
+        "id": "tomoro-ai-ltd",
+        "name": "Tomoro AI Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "OpenAI Foundation",
       "identifier_type": null,
-      "identifier": "Delaware file number  5902936"
+      "identifier": "Delaware file number  5902936",
+      "party_page": {
+        "id": "openai-foundation",
+        "name": "OpenAI Foundation"
+      }
     }
   ],
   "anzsic_codes": [
@@ -117,7 +129,11 @@
         {
           "name": "GT Silver BidCo, Inc.",
           "identifier_type": null,
-          "identifier": "413417606"
+          "identifier": "413417606",
+          "party_page": {
+            "id": "gt-silver-bidco-inc",
+            "name": "GT Silver BidCo, Inc."
+          }
         }
       ],
       "targets": [
@@ -126,6 +142,10 @@
           "identifier_type": null,
           "identifier": "00140838",
           "canonical": {
+            "id": "clearwater-analytics-llc",
+            "name": "Clearwater Analytics, LLC"
+          },
+          "party_page": {
             "id": "clearwater-analytics-llc",
             "name": "Clearwater Analytics, LLC"
           }
@@ -141,24 +161,40 @@
         {
           "name": "Coforge Limited",
           "identifier_type": null,
-          "identifier": "L72100HR1992PLC128382"
+          "identifier": "L72100HR1992PLC128382",
+          "party_page": {
+            "id": "coforge-limited",
+            "name": "Coforge Limited"
+          }
         },
         {
           "name": "Encora Holdco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdco-limited",
+            "name": "Encora Holdco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Encora US Holdco, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-us-holdco-inc",
+            "name": "Encora US Holdco, Inc"
+          }
         },
         {
           "name": "Encora Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdings-limited",
+            "name": "Encora Holdings Limited"
+          }
         }
       ]
     },
@@ -171,13 +207,21 @@
         {
           "name": "Wipro Networks Pte Ltd",
           "identifier_type": null,
-          "identifier": "UEN  199907933M"
+          "identifier": "UEN  199907933M",
+          "party_page": {
+            "id": "wipro-networks-pte-ltd",
+            "name": "Wipro Networks Pte Ltd"
+          }
         },
         {
           "name": "Wipro Limited",
           "identifier_type": null,
           "identifier": "CIN L32102KA1945PLC020800",
           "canonical": {
+            "id": "wipro-ltd",
+            "name": "Wipro Ltd"
+          },
+          "party_page": {
             "id": "wipro-ltd",
             "name": "Wipro Ltd"
           }
@@ -187,12 +231,20 @@
         {
           "name": "Mindsprint Pte Limited",
           "identifier_type": null,
-          "identifier": "UEN  202118596N"
+          "identifier": "UEN  202118596N",
+          "party_page": {
+            "id": "mindsprint-pte-limited",
+            "name": "Mindsprint Pte Limited"
+          }
         },
         {
           "name": "Olam Holdings Pte Limited",
           "identifier_type": null,
-          "identifier": "UEN  202110101R"
+          "identifier": "UEN  202110101R",
+          "party_page": {
+            "id": "olam-holdings-pte-limited",
+            "name": "Olam Holdings Pte Limited"
+          }
         }
       ]
     }

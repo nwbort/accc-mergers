@@ -16,7 +16,11 @@
     {
       "name": "WIN TELEVISION NETWORK PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "90 008 589 026"
+      "identifier": "90 008 589 026",
+      "party_page": {
+        "id": "win-television-network-pty-ltd",
+        "name": "Win Television Network Pty Ltd"
+      }
     }
   ],
   "targets": [
@@ -25,6 +29,10 @@
       "identifier_type": "ABN",
       "identifier": "88 008 685 407",
       "canonical": {
+        "id": "nine-network-australia-pty-ltd",
+        "name": "Nine Network Australia Pty Ltd"
+      },
+      "party_page": {
         "id": "nine-network-australia-pty-ltd",
         "name": "Nine Network Australia Pty Ltd"
       }
@@ -36,17 +44,29 @@
       "canonical": {
         "id": "nine-network-australia-pty-ltd",
         "name": "Nine Network Australia Pty Ltd"
+      },
+      "party_page": {
+        "id": "nine-network-australia-pty-ltd",
+        "name": "Nine Network Australia Pty Ltd"
       }
     },
     {
       "name": "TELEVISION HOLDINGS DARWIN PTY. LIMITED",
       "identifier_type": "ABN",
-      "identifier": "33 009 634 048"
+      "identifier": "33 009 634 048",
+      "party_page": {
+        "id": "television-holdings-darwin-pty-limited",
+        "name": "Television Holdings Darwin Pty. Limited"
+      }
     },
     {
       "name": "NBN ENTERPRISES PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "68 009 140 078"
+      "identifier": "68 009 140 078",
+      "party_page": {
+        "id": "nbn-enterprises-pty-limited",
+        "name": "Nbn Enterprises Pty Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -130,14 +150,22 @@
         {
           "name": "SUPERLOOP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "96 169 263 094"
+          "identifier": "96 169 263 094",
+          "party_page": {
+            "id": "superloop-limited",
+            "name": "Superloop Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "LYNHAM NETWORKS PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "17 602 258 337"
+          "identifier": "17 602 258 337",
+          "party_page": {
+            "id": "lynham-networks-pty-ltd",
+            "name": "Lynham Networks Pty. Ltd."
+          }
         }
       ]
     },
@@ -150,24 +178,40 @@
         {
           "name": "Cielo TopCo Limited",
           "identifier_type": null,
-          "identifier": "CRN  16320933"
+          "identifier": "CRN  16320933",
+          "party_page": {
+            "id": "cielo-topco-limited",
+            "name": "Cielo TopCo Limited"
+          }
         },
         {
           "name": "Kee Safety (Australia) Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "694 369 116"
+          "identifier": "694 369 116",
+          "party_page": {
+            "id": "kee-safety-australia-pty-ltd",
+            "name": "Kee Safety (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "HALLWELD BENNETT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "15 161 086 595"
+          "identifier": "15 161 086 595",
+          "party_page": {
+            "id": "hallweld-bennett-pty-ltd",
+            "name": "Hallweld Bennett Pty Ltd"
+          }
         },
         {
           "name": "RIS SAFETY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "19 668 836 351"
+          "identifier": "19 668 836 351",
+          "party_page": {
+            "id": "ris-safety-holdings-pty-ltd",
+            "name": "Ris Safety Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -180,14 +224,22 @@
         {
           "name": "BUROSERV TELCO HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "17 690 175 770"
+          "identifier": "17 690 175 770",
+          "party_page": {
+            "id": "buroserv-telco-holdings-pty-ltd",
+            "name": "Buroserv Telco Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "LMGPS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "48 612 519 178"
+          "identifier": "48 612 519 178",
+          "party_page": {
+            "id": "lmgps-pty-ltd",
+            "name": "Lmgps Pty Ltd"
+          }
         }
       ]
     }

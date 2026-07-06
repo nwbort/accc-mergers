@@ -14,24 +14,40 @@
     {
       "name": "LAUNDY WOY FREEHOLD PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "65 696 471 306"
+      "identifier": "65 696 471 306",
+      "party_page": {
+        "id": "laundy-woy-freehold-pty-ltd",
+        "name": "Laundy Woy Freehold Pty Ltd"
+      }
     },
     {
       "name": "LAUNDY WOY TRADING PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "29 696 470 345"
+      "identifier": "29 696 470 345",
+      "party_page": {
+        "id": "laundy-woy-trading-pty-ltd",
+        "name": "Laundy Woy Trading Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "HARVEST PUB OPERATIONS 2 PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "51 652 748 242"
+      "identifier": "51 652 748 242",
+      "party_page": {
+        "id": "harvest-pub-operations-2-pty-ltd",
+        "name": "Harvest Pub Operations 2 Pty Ltd"
+      }
     },
     {
       "name": "AMAL TRUSTEES PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "98 609 737 064"
+      "identifier": "98 609 737 064",
+      "party_page": {
+        "id": "amal-trustees-pty-limited",
+        "name": "Amal Trustees Pty Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -105,14 +121,22 @@
         {
           "name": "AVC OPERATIONS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Petersham Pub Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "620 159 757"
+          "identifier": "620 159 757",
+          "party_page": {
+            "id": "petersham-pub-pty-ltd",
+            "name": "Petersham Pub Pty Ltd"
+          }
         }
       ]
     },
@@ -125,14 +149,22 @@
         {
           "name": "AVC OPERATIONS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "ASH PROMOTIONS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "41 601 281 510"
+          "identifier": "41 601 281 510",
+          "party_page": {
+            "id": "ash-promotions-pty-ltd",
+            "name": "Ash Promotions Pty Ltd"
+          }
         }
       ]
     },
@@ -145,19 +177,31 @@
         {
           "name": "AVC OPERATIONS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         },
         {
           "name": "Australian Venue Co. Holdings Limited",
           "identifier_type": "ABN",
-          "identifier": "90 619 977 070"
+          "identifier": "90 619 977 070",
+          "party_page": {
+            "id": "australian-venue-co-holdings-limited",
+            "name": "Australian Venue Co. Holdings Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Q.R.A. PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "62 051 433 839"
+          "identifier": "62 051 433 839",
+          "party_page": {
+            "id": "q-r-a-pty-limited",
+            "name": "Q.R.A. Pty Limited"
+          }
         }
       ]
     }

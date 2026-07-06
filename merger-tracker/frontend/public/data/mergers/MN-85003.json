@@ -16,61 +16,105 @@
     {
       "name": "NACG WA Acquisition Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "693 678 296"
+      "identifier": "693 678 296",
+      "party_page": {
+        "id": "nacg-wa-acquisition-pty-ltd",
+        "name": "NACG WA Acquisition Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "DCL CORP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "60 633 008 992"
+      "identifier": "60 633 008 992",
+      "party_page": {
+        "id": "dcl-corp-pty-ltd",
+        "name": "Dcl Corp Pty Ltd"
+      }
     },
     {
       "name": "IRON HIRE PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "43 641 807 589"
+      "identifier": "43 641 807 589",
+      "party_page": {
+        "id": "iron-hire-pty-ltd",
+        "name": "Iron Hire Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "MacKellar Mining Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "81 150 919 761"
+      "identifier": "81 150 919 761",
+      "party_page": {
+        "id": "mackellar-mining-pty-ltd",
+        "name": "MacKellar Mining Pty Ltd"
+      }
     },
     {
       "name": "IRON MINE SERVICES PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "77 608 402 446"
+      "identifier": "77 608 402 446",
+      "party_page": {
+        "id": "iron-mine-services-pty-ltd",
+        "name": "Iron Mine Services Pty Ltd"
+      }
     },
     {
       "name": "North American Construction Group Limited",
       "identifier_type": null,
-      "identifier": "BN 889309654"
+      "identifier": "BN 889309654",
+      "party_page": {
+        "id": "north-american-construction-group-limited",
+        "name": "North American Construction Group Limited"
+      }
     },
     {
       "name": "WESTERN PLANT HIRE (WA) PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "74 643 771 920"
+      "identifier": "74 643 771 920",
+      "party_page": {
+        "id": "western-plant-hire-wa-pty-ltd",
+        "name": "Western Plant Hire (Wa) Pty Ltd"
+      }
     },
     {
       "name": "INDIGENOUS PARTNERSHIPS AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "70 616 384 171"
+      "identifier": "70 616 384 171",
+      "party_page": {
+        "id": "indigenous-partnerships-australia-pty-ltd",
+        "name": "Indigenous Partnerships Australia Pty Ltd"
+      }
     },
     {
       "name": "DGI TRADING (AUST) PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "50 134 423 966"
+      "identifier": "50 134 423 966",
+      "party_page": {
+        "id": "dgi-trading-aust-pty-limited",
+        "name": "Dgi Trading (Aust) Pty Limited"
+      }
     },
     {
       "name": "IRON MINE CONTRACTING PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "26 626 808 759"
+      "identifier": "26 626 808 759",
+      "party_page": {
+        "id": "iron-mine-contracting-pty-ltd",
+        "name": "Iron Mine Contracting Pty Ltd"
+      }
     },
     {
       "name": "NACG MM ACQUISITION PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "89 669 859 376"
+      "identifier": "89 669 859 376",
+      "party_page": {
+        "id": "nacg-mm-acquisition-pty-ltd",
+        "name": "Nacg Mm Acquisition Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -170,24 +214,40 @@
         {
           "name": "SYMAL MANAGEMENT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "85 602 084 471"
+          "identifier": "85 602 084 471",
+          "party_page": {
+            "id": "symal-management-pty-ltd",
+            "name": "Symal Management Pty Ltd"
+          }
         },
         {
           "name": "SYL TM CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 693 144 697"
+          "identifier": "68 693 144 697",
+          "party_page": {
+            "id": "syl-tm-contracting-pty-ltd",
+            "name": "Syl Tm Contracting Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TIMMS HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "73 115 389 949"
+          "identifier": "73 115 389 949",
+          "party_page": {
+            "id": "timms-hire-pty-ltd",
+            "name": "Timms Hire Pty Ltd"
+          }
         },
         {
           "name": "TIMMS CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "30 070 456 567"
+          "identifier": "30 070 456 567",
+          "party_page": {
+            "id": "timms-contracting-pty-ltd",
+            "name": "Timms Contracting Pty Ltd"
+          }
         }
       ]
     },
@@ -200,19 +260,31 @@
         {
           "name": "Compagnie Financi\u00e8re Michelin SAS",
           "identifier_type": null,
-          "identifier": "SIREN  898 849 153"
+          "identifier": "SIREN  898 849 153",
+          "party_page": {
+            "id": "compagnie-financi-re-michelin-sas",
+            "name": "Compagnie Financi\u00e8re Michelin SAS"
+          }
         },
         {
           "name": "Fenner America, Inc.",
           "identifier_type": null,
-          "identifier": "USDOT  3744583"
+          "identifier": "USDOT  3744583",
+          "party_page": {
+            "id": "fenner-america-inc",
+            "name": "Fenner America, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Flexitallic Group SAS",
           "identifier_type": null,
-          "identifier": "SIREN  532 742 699"
+          "identifier": "SIREN  532 742 699",
+          "party_page": {
+            "id": "flexitallic-group-sas",
+            "name": "Flexitallic Group SAS"
+          }
         }
       ]
     },
@@ -225,14 +297,22 @@
         {
           "name": "Advance Holdings II, LLC",
           "identifier_type": null,
-          "identifier": "Delaware ID  10496142"
+          "identifier": "Delaware ID  10496142",
+          "party_page": {
+            "id": "advance-holdings-ii-llc",
+            "name": "Advance Holdings II, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "BCI Acquisitions, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware ID  6389940"
+          "identifier": "Delaware ID  6389940",
+          "party_page": {
+            "id": "bci-acquisitions-inc",
+            "name": "BCI Acquisitions, Inc."
+          }
         }
       ]
     }

@@ -14,36 +14,60 @@
     {
       "name": "Smith UK Bidco Limited",
       "identifier_type": null,
-      "identifier": "UK registration number   17165099"
+      "identifier": "UK registration number   17165099",
+      "party_page": {
+        "id": "smith-uk-bidco-limited",
+        "name": "Smith UK Bidco Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "Sedex Information Exchange Limited",
       "identifier_type": null,
-      "identifier": "UK registration number  14708906"
+      "identifier": "UK registration number  14708906",
+      "party_page": {
+        "id": "sedex-information-exchange-limited",
+        "name": "Sedex Information Exchange Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Magaya Corporation",
       "identifier_type": null,
-      "identifier": "US registration number  651096513"
+      "identifier": "US registration number  651096513",
+      "party_page": {
+        "id": "magaya-corporation",
+        "name": "Magaya Corporation"
+      }
     },
     {
       "name": "Foods Connected Limited",
       "identifier_type": null,
-      "identifier": "UK registration number  NI614697"
+      "identifier": "UK registration number  NI614697",
+      "party_page": {
+        "id": "foods-connected-limited",
+        "name": "Foods Connected Limited"
+      }
     },
     {
       "name": "Apax Partners LLP",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "apax-partners-llp",
+        "name": "Apax Partners LLP"
+      }
     },
     {
       "name": "Viper HoldCo Limited",
       "identifier_type": null,
-      "identifier": "Guernsey registration number  CMP74411"
+      "identifier": "Guernsey registration number  CMP74411",
+      "party_page": {
+        "id": "viper-holdco-limited",
+        "name": "Viper HoldCo Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -120,7 +144,11 @@
         {
           "name": "Sail Parent Holdco Ltd",
           "identifier_type": null,
-          "identifier": "UK Company Registration Number 17112723"
+          "identifier": "UK Company Registration Number 17112723",
+          "party_page": {
+            "id": "sail-parent-holdco-ltd",
+            "name": "Sail Parent Holdco Ltd"
+          }
         }
       ],
       "targets": [
@@ -129,6 +157,10 @@
           "identifier_type": null,
           "identifier": "Cayman Islands Company Registration Number CF172438",
           "canonical": {
+            "id": "derbysoft-inc",
+            "name": "DerbySoft Inc."
+          },
+          "party_page": {
             "id": "derbysoft-inc",
             "name": "DerbySoft Inc."
           }
@@ -144,14 +176,22 @@
         {
           "name": "Kent Image Australia Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "698 274 396"
+          "identifier": "698 274 396",
+          "party_page": {
+            "id": "kent-image-australia-pty-ltd",
+            "name": "Kent Image Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "IMAGE HOLDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "18 623 028 740"
+          "identifier": "18 623 028 740",
+          "party_page": {
+            "id": "image-holdco-pty-ltd",
+            "name": "Image Holdco Pty Ltd"
+          }
         }
       ]
     },
@@ -164,24 +204,40 @@
         {
           "name": "Desmos US Bidco, Inc.",
           "identifier_type": null,
-          "identifier": "[ID type unknown]  10469174"
+          "identifier": "[ID type unknown]  10469174",
+          "party_page": {
+            "id": "desmos-us-bidco-inc",
+            "name": "Desmos US Bidco, Inc."
+          }
         },
         {
           "name": "Desmos Bidco SAS",
           "identifier_type": null,
-          "identifier": "SIREN  100 230 754"
+          "identifier": "SIREN  100 230 754",
+          "party_page": {
+            "id": "desmos-bidco-sas",
+            "name": "Desmos Bidco SAS"
+          }
         }
       ],
       "targets": [
         {
           "name": "Novacel Performance Coatings, Inc.",
           "identifier_type": null,
-          "identifier": "EIN  311708662"
+          "identifier": "EIN  311708662",
+          "party_page": {
+            "id": "novacel-performance-coatings-inc",
+            "name": "Novacel Performance Coatings, Inc."
+          }
         },
         {
           "name": "Novacel, Inc.",
           "identifier_type": null,
-          "identifier": "EIN  043515032"
+          "identifier": "EIN  043515032",
+          "party_page": {
+            "id": "novacel-inc",
+            "name": "Novacel, Inc."
+          }
         }
       ]
     }

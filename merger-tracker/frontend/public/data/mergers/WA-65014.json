@@ -14,26 +14,42 @@
     {
       "name": "Unite Holdco LLC",
       "identifier_type": null,
-      "identifier": "Delaware file number  10564239"
+      "identifier": "Delaware file number  10564239",
+      "party_page": {
+        "id": "unite-holdco-llc",
+        "name": "Unite Holdco LLC"
+      }
     },
     {
       "name": "26North Partners LP",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "26north-partners-lp",
+        "name": "26North Partners LP"
+      }
     }
   ],
   "targets": [
     {
       "name": "Intermedia Cloud Communications, Inc.",
       "identifier_type": null,
-      "identifier": "Delaware file number  6139185"
+      "identifier": "Delaware file number  6139185",
+      "party_page": {
+        "id": "intermedia-cloud-communications-inc",
+        "name": "Intermedia Cloud Communications, Inc."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Unite Merger Sub Inc.",
       "identifier_type": null,
-      "identifier": "Delaware file number  10564247"
+      "identifier": "Delaware file number  10564247",
+      "party_page": {
+        "id": "unite-merger-sub-inc",
+        "name": "Unite Merger Sub Inc."
+      }
     }
   ],
   "anzsic_codes": [
@@ -130,19 +146,31 @@
         {
           "name": "Saturn NewCo, Inc",
           "identifier_type": null,
-          "identifier": "DE File number: 10449592"
+          "identifier": "DE File number: 10449592",
+          "party_page": {
+            "id": "saturn-newco-inc",
+            "name": "Saturn NewCo, Inc"
+          }
         },
         {
           "name": "ClassPass Aggregator, LLC",
           "identifier_type": null,
-          "identifier": "DE File number: 6177870"
+          "identifier": "DE File number: 6177870",
+          "party_page": {
+            "id": "classpass-aggregator-llc",
+            "name": "ClassPass Aggregator, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "EGYM SE",
           "identifier_type": null,
-          "identifier": "HRB: 186394"
+          "identifier": "HRB: 186394",
+          "party_page": {
+            "id": "egym-se",
+            "name": "Egym Se"
+          }
         }
       ]
     },
@@ -155,19 +183,31 @@
         {
           "name": "Adobe Inc. (NASDAQ: ADBE)",
           "identifier_type": null,
-          "identifier": "2748129"
+          "identifier": "2748129",
+          "party_page": {
+            "id": "adobe-inc-nasdaq-adbe",
+            "name": "Adobe Inc. (NASDAQ: ADBE)"
+          }
         },
         {
           "name": "Fenway Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "10389477"
+          "identifier": "10389477",
+          "party_page": {
+            "id": "fenway-merger-sub-inc",
+            "name": "Fenway Merger Sub, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Semrush Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "7690622"
+          "identifier": "7690622",
+          "party_page": {
+            "id": "semrush-holdings-inc",
+            "name": "Semrush Holdings, Inc."
+          }
         }
       ]
     },
@@ -180,7 +220,11 @@
         {
           "name": "GT Silver BidCo, Inc.",
           "identifier_type": null,
-          "identifier": "413417606"
+          "identifier": "413417606",
+          "party_page": {
+            "id": "gt-silver-bidco-inc",
+            "name": "GT Silver BidCo, Inc."
+          }
         }
       ],
       "targets": [
@@ -189,6 +233,10 @@
           "identifier_type": null,
           "identifier": "00140838",
           "canonical": {
+            "id": "clearwater-analytics-llc",
+            "name": "Clearwater Analytics, LLC"
+          },
+          "party_page": {
             "id": "clearwater-analytics-llc",
             "name": "Clearwater Analytics, LLC"
           }

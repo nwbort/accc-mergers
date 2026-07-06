@@ -16,24 +16,40 @@
     {
       "name": "Project Saint Merger Sub, Inc.",
       "identifier_type": null,
-      "identifier": "10489040"
+      "identifier": "10489040",
+      "party_page": {
+        "id": "project-saint-merger-sub-inc",
+        "name": "Project Saint Merger Sub, Inc."
+      }
     },
     {
       "name": "United States Surgical Corporation",
       "identifier_type": null,
-      "identifier": "132518270"
+      "identifier": "132518270",
+      "party_page": {
+        "id": "united-states-surgical-corporation",
+        "name": "United States Surgical Corporation"
+      }
     },
     {
       "name": "Medtronic plc",
       "identifier_type": null,
-      "identifier": "981183488"
+      "identifier": "981183488",
+      "party_page": {
+        "id": "medtronic-plc",
+        "name": "Medtronic plc"
+      }
     }
   ],
   "targets": [
     {
       "name": "Scientia Vascular, Inc.",
       "identifier_type": null,
-      "identifier": "5931868"
+      "identifier": "5931868",
+      "party_page": {
+        "id": "scientia-vascular-inc",
+        "name": "Scientia Vascular, Inc."
+      }
     }
   ],
   "other_parties": [],
@@ -117,14 +133,22 @@
         {
           "name": "Delinea Inc.",
           "identifier_type": null,
-          "identifier": "Delaware corporation file number  3777797"
+          "identifier": "Delaware corporation file number  3777797",
+          "party_page": {
+            "id": "delinea-inc",
+            "name": "Delinea Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "StrongDM, Inc",
           "identifier_type": null,
-          "identifier": "CIK  0001637806"
+          "identifier": "CIK  0001637806",
+          "party_page": {
+            "id": "strongdm-inc",
+            "name": "StrongDM, Inc"
+          }
         }
       ]
     },
@@ -137,14 +161,22 @@
         {
           "name": "Rocket Purchaser, L.L.C.",
           "identifier_type": null,
-          "identifier": "10521263"
+          "identifier": "10521263",
+          "party_page": {
+            "id": "rocket-purchaser-l-l-c",
+            "name": "Rocket Purchaser, L.L.C."
+          }
         }
       ],
       "targets": [
         {
           "name": "Advanced Cooling Technologies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "advanced-cooling-technologies-inc",
+            "name": "Advanced Cooling Technologies, Inc."
+          }
         }
       ]
     },
@@ -157,19 +189,31 @@
         {
           "name": "Saturn NewCo, Inc",
           "identifier_type": null,
-          "identifier": "DE File number: 10449592"
+          "identifier": "DE File number: 10449592",
+          "party_page": {
+            "id": "saturn-newco-inc",
+            "name": "Saturn NewCo, Inc"
+          }
         },
         {
           "name": "ClassPass Aggregator, LLC",
           "identifier_type": null,
-          "identifier": "DE File number: 6177870"
+          "identifier": "DE File number: 6177870",
+          "party_page": {
+            "id": "classpass-aggregator-llc",
+            "name": "ClassPass Aggregator, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "EGYM SE",
           "identifier_type": null,
-          "identifier": "HRB: 186394"
+          "identifier": "HRB: 186394",
+          "party_page": {
+            "id": "egym-se",
+            "name": "Egym Se"
+          }
         }
       ]
     }

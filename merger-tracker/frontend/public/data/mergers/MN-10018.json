@@ -13,14 +13,22 @@
     {
       "name": "CSR BUILDING PRODUCTS LIMITED",
       "identifier_type": "ABN",
-      "identifier": "55 008 631 356"
+      "identifier": "55 008 631 356",
+      "party_page": {
+        "id": "csr-building-products-limited",
+        "name": "Csr Building Products Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "COMPLETE PLASTER & REO PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "48 164 427 114"
+      "identifier": "48 164 427 114",
+      "party_page": {
+        "id": "complete-plaster-reo-pty-ltd",
+        "name": "Complete Plaster & Reo Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -84,24 +92,40 @@
         {
           "name": "Essential Bidco B.V.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "essential-bidco-b-v",
+            "name": "Essential Bidco B.V."
+          }
         },
         {
           "name": "Specialty (U.S.) Bidco, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialty-u-s-bidco-inc",
+            "name": "Specialty (U.S.) Bidco, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "SpecialtyCo US LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialtyco-us-llc",
+            "name": "SpecialtyCo US LLC"
+          }
         },
         {
           "name": "Biomin Phytogenics GmbH (Germany)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "biomin-phytogenics-gmbh-germany",
+            "name": "Biomin Phytogenics GmbH (Germany)"
+          }
         }
       ]
     },
@@ -114,7 +138,11 @@
         {
           "name": "Smile Partners (NSW3) Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 902 955"
+          "identifier": "695 902 955",
+          "party_page": {
+            "id": "smile-partners-nsw3-pty-ltd",
+            "name": "Smile Partners (NSW3) Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -123,6 +151,10 @@
           "identifier_type": "ACN",
           "identifier": "108 757 357",
           "canonical": {
+            "id": "shrika-pty-ltd",
+            "name": "Shrika Pty Ltd"
+          },
+          "party_page": {
             "id": "shrika-pty-ltd",
             "name": "Shrika Pty Ltd"
           }
@@ -138,19 +170,31 @@
         {
           "name": "NACG WA Acquisition Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 678 296"
+          "identifier": "693 678 296",
+          "party_page": {
+            "id": "nacg-wa-acquisition-pty-ltd",
+            "name": "NACG WA Acquisition Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "DCL CORP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 633 008 992"
+          "identifier": "60 633 008 992",
+          "party_page": {
+            "id": "dcl-corp-pty-ltd",
+            "name": "Dcl Corp Pty Ltd"
+          }
         },
         {
           "name": "IRON HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 641 807 589"
+          "identifier": "43 641 807 589",
+          "party_page": {
+            "id": "iron-hire-pty-ltd",
+            "name": "Iron Hire Pty Ltd"
+          }
         }
       ]
     }

@@ -16,31 +16,51 @@
     {
       "name": "Primary Wave KB Holdings, LP",
       "identifier_type": null,
-      "identifier": "Registration number 136215"
+      "identifier": "Registration number 136215",
+      "party_page": {
+        "id": "primary-wave-kb-holdings-lp",
+        "name": "Primary Wave KB Holdings, LP"
+      }
     }
   ],
   "targets": [
     {
       "name": "Kobalt Music Group Topco L.P.",
       "identifier_type": null,
-      "identifier": "Registration number 393466"
+      "identifier": "Registration number 393466",
+      "party_page": {
+        "id": "kobalt-music-group-topco-l-p",
+        "name": "Kobalt Music Group Topco L.P."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Primary Wave Music IP Fund 4 GP, LLC",
       "identifier_type": null,
-      "identifier": "Company number 7667915"
+      "identifier": "Company number 7667915",
+      "party_page": {
+        "id": "primary-wave-music-ip-fund-4-gp-llc",
+        "name": "Primary Wave Music IP Fund 4 GP, LLC"
+      }
     },
     {
       "name": "KOBALT MUSIC SERVICES AUSTRALIA PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "12 144 997 142"
+      "identifier": "12 144 997 142",
+      "party_page": {
+        "id": "kobalt-music-services-australia-pty-limited",
+        "name": "Kobalt Music Services Australia Pty Limited"
+      }
     },
     {
       "name": "KOBALT MUSIC PUBLISHING AUSTRALIA PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "63 144 996 609"
+      "identifier": "63 144 996 609",
+      "party_page": {
+        "id": "kobalt-music-publishing-australia-pty-limited",
+        "name": "Kobalt Music Publishing Australia Pty Limited"
+      }
     },
     {
       "name": "Brookfield Corporation",
@@ -49,17 +69,29 @@
       "canonical": {
         "id": "brookfield-corporation",
         "name": "Brookfield Corporation"
+      },
+      "party_page": {
+        "id": "brookfield-corporation",
+        "name": "Brookfield Corporation"
       }
     },
     {
       "name": "Primary Wave Music IP Fund 4, LP",
       "identifier_type": null,
-      "identifier": "Company number 7667918"
+      "identifier": "Company number 7667918",
+      "party_page": {
+        "id": "primary-wave-music-ip-fund-4-lp",
+        "name": "Primary Wave Music IP Fund 4, LP"
+      }
     },
     {
       "name": "PWMP Ventures, LLC",
       "identifier_type": null,
-      "identifier": "Company number 5324467"
+      "identifier": "Company number 5324467",
+      "party_page": {
+        "id": "pwmp-ventures-llc",
+        "name": "PWMP Ventures, LLC"
+      }
     }
   ],
   "anzsic_codes": [
@@ -142,14 +174,22 @@
         {
           "name": "Taco Ventures Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "697 591 692"
+          "identifier": "697 591 692",
+          "party_page": {
+            "id": "taco-ventures-pty-ltd",
+            "name": "Taco Ventures Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Collins Foods Subsidiary Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "94 616 663 793"
+          "identifier": "94 616 663 793",
+          "party_page": {
+            "id": "collins-foods-subsidiary-pty-ltd",
+            "name": "Collins Foods Subsidiary Pty Ltd"
+          }
         }
       ]
     },
@@ -162,14 +202,22 @@
         {
           "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "11 008 423 372"
+          "identifier": "11 008 423 372",
+          "party_page": {
+            "id": "zurich-financial-services-australia-limited",
+            "name": "Zurich Financial Services Australia Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CLEARVIEW WEALTH LIMITED",
           "identifier_type": "ABN",
-          "identifier": "83 106 248 248"
+          "identifier": "83 106 248 248",
+          "party_page": {
+            "id": "clearview-wealth-limited",
+            "name": "Clearview Wealth Limited"
+          }
         }
       ]
     },
@@ -182,19 +230,31 @@
         {
           "name": "NACG WA Acquisition Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 678 296"
+          "identifier": "693 678 296",
+          "party_page": {
+            "id": "nacg-wa-acquisition-pty-ltd",
+            "name": "NACG WA Acquisition Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "DCL CORP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 633 008 992"
+          "identifier": "60 633 008 992",
+          "party_page": {
+            "id": "dcl-corp-pty-ltd",
+            "name": "Dcl Corp Pty Ltd"
+          }
         },
         {
           "name": "IRON HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 641 807 589"
+          "identifier": "43 641 807 589",
+          "party_page": {
+            "id": "iron-hire-pty-ltd",
+            "name": "Iron Hire Pty Ltd"
+          }
         }
       ]
     }

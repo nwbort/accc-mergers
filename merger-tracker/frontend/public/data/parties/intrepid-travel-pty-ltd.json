@@ -1,0 +1,52 @@
+{
+  "id": "intrepid-travel-pty-ltd",
+  "canonical_name": "Intrepid Travel Pty Ltd",
+  "members": [
+    {
+      "name": "INTREPID TRAVEL PTY LTD",
+      "identifier": "35 007 172 456",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "INTREPID TRAVEL PTY. LTD.",
+      "identifier": "35 007 172 456",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "MN-40008",
+        "merger_name": "Intrepid Travel - Wild Bush Luxury",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-03-23T12:00:00Z",
+        "determination_date": "2026-04-16T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-70003",
+        "merger_name": "Intrepid Travel \u2013 Wild Bush Luxury",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-01-20T12:00:00Z",
+        "determination_date": "2026-02-05T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 2,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 24.0,
+    "median_days": 24,
+    "average_business_days": 16.0,
+    "median_business_days": 16,
+    "completed_count": 1
+  }
+}

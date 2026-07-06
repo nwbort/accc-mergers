@@ -19,17 +19,29 @@
       "canonical": {
         "id": "stonepeak-motion-poolingco-limited",
         "name": "Stonepeak Motion PoolingCo Limited"
+      },
+      "party_page": {
+        "id": "stonepeak-motion-poolingco-limited",
+        "name": "Stonepeak Motion PoolingCo Limited"
       }
     },
     {
       "name": "Motion JVCo Limited",
       "identifier_type": null,
-      "identifier": "Company Identifier Number  163042"
+      "identifier": "Company Identifier Number  163042",
+      "party_page": {
+        "id": "motion-jvco-limited",
+        "name": "Motion JVCo Limited"
+      }
     },
     {
       "name": "BP Motion Holdings Limited",
       "identifier_type": null,
-      "identifier": "UKCRN  16910312"
+      "identifier": "UKCRN  16910312",
+      "party_page": {
+        "id": "bp-motion-holdings-limited",
+        "name": "BP Motion Holdings Limited"
+      }
     }
   ],
   "targets": [
@@ -40,12 +52,20 @@
       "canonical": {
         "id": "stonepeak-motion-poolingco-limited",
         "name": "Stonepeak Motion PoolingCo Limited"
+      },
+      "party_page": {
+        "id": "stonepeak-motion-poolingco-limited",
+        "name": "Stonepeak Motion PoolingCo Limited"
       }
     },
     {
       "name": "Castrol Group Holdings Limited",
       "identifier_type": null,
-      "identifier": "UKCRN  SC005098"
+      "identifier": "UKCRN  SC005098",
+      "party_page": {
+        "id": "castrol-group-holdings-limited",
+        "name": "Castrol Group Holdings Limited"
+      }
     }
   ],
   "other_parties": [
@@ -56,12 +76,20 @@
       "canonical": {
         "id": "stonepeak-partners-lp",
         "name": "Stonepeak Partners LP"
+      },
+      "party_page": {
+        "id": "stonepeak-partners-lp",
+        "name": "Stonepeak Partners LP"
       }
     },
     {
       "name": "BP p.l.c",
       "identifier_type": null,
-      "identifier": "UKCRN  00102498"
+      "identifier": "UKCRN  00102498",
+      "party_page": {
+        "id": "bp-p-l-c",
+        "name": "BP p.l.c"
+      }
     }
   ],
   "anzsic_codes": [
@@ -145,14 +173,22 @@
         {
           "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 143 484 208"
+          "identifier": "53 143 484 208",
+          "party_page": {
+            "id": "origin-energy-international-holdings-pty-limited",
+            "name": "Origin Energy International Holdings Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CPP Investment Board Private Holdings (4) Inc.",
           "identifier_type": null,
-          "identifier": "BN  11089340"
+          "identifier": "BN  11089340",
+          "party_page": {
+            "id": "cpp-investment-board-private-holdings-4-inc",
+            "name": "CPP Investment Board Private Holdings (4) Inc."
+          }
         }
       ]
     },
@@ -165,19 +201,31 @@
         {
           "name": "Cognizant Domestic Holdings Corporation",
           "identifier_type": null,
-          "identifier": "Delaware file number 5221744"
+          "identifier": "Delaware file number 5221744",
+          "party_page": {
+            "id": "cognizant-domestic-holdings-corporation",
+            "name": "Cognizant Domestic Holdings Corporation"
+          }
         },
         {
           "name": "Asteroid Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware file number 10587708"
+          "identifier": "Delaware file number 10587708",
+          "party_page": {
+            "id": "asteroid-merger-sub-inc",
+            "name": "Asteroid Merger Sub, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Astreya Partners, Inc.",
           "identifier_type": null,
-          "identifier": "CIN 770570107"
+          "identifier": "CIN 770570107",
+          "party_page": {
+            "id": "astreya-partners-inc",
+            "name": "Astreya Partners, Inc."
+          }
         }
       ]
     },
@@ -190,24 +238,40 @@
         {
           "name": "Desmos US Bidco, Inc.",
           "identifier_type": null,
-          "identifier": "[ID type unknown]  10469174"
+          "identifier": "[ID type unknown]  10469174",
+          "party_page": {
+            "id": "desmos-us-bidco-inc",
+            "name": "Desmos US Bidco, Inc."
+          }
         },
         {
           "name": "Desmos Bidco SAS",
           "identifier_type": null,
-          "identifier": "SIREN  100 230 754"
+          "identifier": "SIREN  100 230 754",
+          "party_page": {
+            "id": "desmos-bidco-sas",
+            "name": "Desmos Bidco SAS"
+          }
         }
       ],
       "targets": [
         {
           "name": "Novacel Performance Coatings, Inc.",
           "identifier_type": null,
-          "identifier": "EIN  311708662"
+          "identifier": "EIN  311708662",
+          "party_page": {
+            "id": "novacel-performance-coatings-inc",
+            "name": "Novacel Performance Coatings, Inc."
+          }
         },
         {
           "name": "Novacel, Inc.",
           "identifier_type": null,
-          "identifier": "EIN  043515032"
+          "identifier": "EIN  043515032",
+          "party_page": {
+            "id": "novacel-inc",
+            "name": "Novacel, Inc."
+          }
         }
       ]
     }

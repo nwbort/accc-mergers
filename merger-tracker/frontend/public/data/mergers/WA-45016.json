@@ -14,14 +14,22 @@
     {
       "name": "NORTHSTAR MILDURA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "94 674 572 260"
+      "identifier": "94 674 572 260",
+      "party_page": {
+        "id": "northstar-mildura-pty-ltd",
+        "name": "Northstar Mildura Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "SA PROGRESS NO.1 PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "86 602 258 695"
+      "identifier": "86 602 258 695",
+      "party_page": {
+        "id": "sa-progress-no-1-pty-limited",
+        "name": "Sa Progress No.1 Pty Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -91,19 +99,31 @@
         {
           "name": "AUTOSPORTS GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "54 614 505 261"
+          "identifier": "54 614 505 261",
+          "party_page": {
+            "id": "autosports-group-limited",
+            "name": "Autosports Group Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "David Smoker",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "david-smoker",
+            "name": "David Smoker"
+          }
         },
         {
           "name": "Russleigh Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "052 977 198"
+          "identifier": "052 977 198",
+          "party_page": {
+            "id": "russleigh-pty-ltd",
+            "name": "Russleigh Pty Ltd"
+          }
         }
       ]
     },
@@ -116,14 +136,22 @@
         {
           "name": "Princeton Digital Group (Australia Alpha) Prop Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 155 663"
+          "identifier": "693 155 663",
+          "party_page": {
+            "id": "princeton-digital-group-australia-alpha-prop-pty-ltd",
+            "name": "Princeton Digital Group (Australia Alpha) Prop Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "MH Property No. 1 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "644 453 430"
+          "identifier": "644 453 430",
+          "party_page": {
+            "id": "mh-property-no-1-pty-ltd",
+            "name": "MH Property No. 1 Pty Ltd"
+          }
         }
       ]
     },
@@ -136,14 +164,22 @@
         {
           "name": "AUTOPACT PROPERTY NO. 4 PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "697 186 011"
+          "identifier": "697 186 011",
+          "party_page": {
+            "id": "autopact-property-no-4-pty-ltd",
+            "name": "Autopact Property No. 4 Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "DOIDGE PROPERTY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "42 167 885 074"
+          "identifier": "42 167 885 074",
+          "party_page": {
+            "id": "doidge-property-pty-ltd",
+            "name": "Doidge Property Pty Ltd"
+          }
         }
       ]
     }

@@ -16,24 +16,40 @@
     {
       "name": "SMG-Three LLC",
       "identifier_type": null,
-      "identifier": "DDC  10277876"
+      "identifier": "DDC  10277876",
+      "party_page": {
+        "id": "smg-three-llc",
+        "name": "SMG-Three LLC"
+      }
     },
     {
       "name": "Sony Music Publishing (US) LLC",
       "identifier_type": null,
-      "identifier": "DDC  2558200"
+      "identifier": "DDC  2558200",
+      "party_page": {
+        "id": "sony-music-publishing-us-llc",
+        "name": "Sony Music Publishing (US) LLC"
+      }
     },
     {
       "name": "Orion BidCo LLC",
       "identifier_type": null,
-      "identifier": "DDC  10608976"
+      "identifier": "DDC  10608976",
+      "party_page": {
+        "id": "orion-bidco-llc",
+        "name": "Orion BidCo LLC"
+      }
     }
   ],
   "targets": [
     {
       "name": "Recognition Music Group (Delaware) L.P.",
       "identifier_type": null,
-      "identifier": "DDC  6193972"
+      "identifier": "DDC  6193972",
+      "party_page": {
+        "id": "recognition-music-group-delaware-l-p",
+        "name": "Recognition Music Group (Delaware) L.P."
+      }
     }
   ],
   "other_parties": [
@@ -44,22 +60,38 @@
       "canonical": {
         "id": "blackstone-inc",
         "name": "Blackstone Inc."
+      },
+      "party_page": {
+        "id": "blackstone-inc",
+        "name": "Blackstone Inc."
       }
     },
     {
       "name": "SESAC Holdings, Inc",
       "identifier_type": null,
-      "identifier": "NY DOS ID  1652738"
+      "identifier": "NY DOS ID  1652738",
+      "party_page": {
+        "id": "sesac-holdings-inc",
+        "name": "SESAC Holdings, Inc"
+      }
     },
     {
       "name": "Candle Media LLC",
       "identifier_type": null,
-      "identifier": "DDC  6119562"
+      "identifier": "DDC  6119562",
+      "party_page": {
+        "id": "candle-media-llc",
+        "name": "Candle Media LLC"
+      }
     },
     {
       "name": "National Exhibition Centre Limited",
       "identifier_type": null,
-      "identifier": "CRN  00979395"
+      "identifier": "CRN  00979395",
+      "party_page": {
+        "id": "national-exhibition-centre-limited",
+        "name": "National Exhibition Centre Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -142,14 +174,22 @@
         {
           "name": "Primary Wave KB Holdings, LP",
           "identifier_type": null,
-          "identifier": "Registration number 136215"
+          "identifier": "Registration number 136215",
+          "party_page": {
+            "id": "primary-wave-kb-holdings-lp",
+            "name": "Primary Wave KB Holdings, LP"
+          }
         }
       ],
       "targets": [
         {
           "name": "Kobalt Music Group Topco L.P.",
           "identifier_type": null,
-          "identifier": "Registration number 393466"
+          "identifier": "Registration number 393466",
+          "party_page": {
+            "id": "kobalt-music-group-topco-l-p",
+            "name": "Kobalt Music Group Topco L.P."
+          }
         }
       ]
     },
@@ -162,14 +202,22 @@
         {
           "name": "Cvent Atlanta, LLC",
           "identifier_type": null,
-          "identifier": "[Delaware corporate file number  5603939]"
+          "identifier": "[Delaware corporate file number  5603939]",
+          "party_page": {
+            "id": "cvent-atlanta-llc",
+            "name": "Cvent Atlanta, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "ON24, Inc.",
           "identifier_type": null,
-          "identifier": "[Delaware corporate file number  2843568]"
+          "identifier": "[Delaware corporate file number  2843568]",
+          "party_page": {
+            "id": "on24-inc",
+            "name": "ON24, Inc."
+          }
         }
       ]
     },
@@ -182,19 +230,31 @@
         {
           "name": "Enverus, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "enverus-inc",
+            "name": "Enverus, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Spatial Business Systems Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "76 125 465 483"
+          "identifier": "76 125 465 483",
+          "party_page": {
+            "id": "spatial-business-systems-pty-ltd",
+            "name": "Spatial Business Systems Pty Ltd"
+          }
         },
         {
           "name": "SBS Optionco, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "sbs-optionco-llc",
+            "name": "SBS Optionco, LLC"
+          }
         }
       ]
     }

@@ -14,19 +14,31 @@
     {
       "name": "Sony Music Entertainment (Japan) Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "sony-music-entertainment-japan-inc",
+        "name": "Sony Music Entertainment (Japan) Inc."
+      }
     },
     {
       "name": "Sony Pictures Entertainment, Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "sony-pictures-entertainment-inc",
+        "name": "Sony Pictures Entertainment, Inc."
+      }
     }
   ],
   "targets": [
     {
       "name": "DHX Entertainment (USA) Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "dhx-entertainment-usa-inc",
+        "name": "DHX Entertainment (USA) Inc."
+      }
     }
   ],
   "other_parties": [],
@@ -100,14 +112,22 @@
         {
           "name": "SPIKE MEDIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "28 694 712 699"
+          "identifier": "28 694 712 699",
+          "party_page": {
+            "id": "spike-media-pty-ltd",
+            "name": "Spike Media Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "NINE RADIO PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "32 063 906 927"
+          "identifier": "32 063 906 927",
+          "party_page": {
+            "id": "nine-radio-pty-limited",
+            "name": "Nine Radio Pty Limited"
+          }
         }
       ]
     },
@@ -120,19 +140,31 @@
         {
           "name": "NACG WA Acquisition Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 678 296"
+          "identifier": "693 678 296",
+          "party_page": {
+            "id": "nacg-wa-acquisition-pty-ltd",
+            "name": "NACG WA Acquisition Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "DCL CORP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 633 008 992"
+          "identifier": "60 633 008 992",
+          "party_page": {
+            "id": "dcl-corp-pty-ltd",
+            "name": "Dcl Corp Pty Ltd"
+          }
         },
         {
           "name": "IRON HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 641 807 589"
+          "identifier": "43 641 807 589",
+          "party_page": {
+            "id": "iron-hire-pty-ltd",
+            "name": "Iron Hire Pty Ltd"
+          }
         }
       ]
     },
@@ -145,14 +177,22 @@
         {
           "name": "Saphir Holdings SAS",
           "identifier_type": null,
-          "identifier": "Trade and Companies Registry Number 995 192 986"
+          "identifier": "Trade and Companies Registry Number 995 192 986",
+          "party_page": {
+            "id": "saphir-holdings-sas",
+            "name": "Saphir Holdings SAS"
+          }
         }
       ],
       "targets": [
         {
           "name": "Ex Nihilo Group",
           "identifier_type": null,
-          "identifier": "Trade and Companies Registry Number 981 087 646"
+          "identifier": "Trade and Companies Registry Number 981 087 646",
+          "party_page": {
+            "id": "ex-nihilo-group",
+            "name": "Ex Nihilo Group"
+          }
         }
       ]
     }

@@ -14,7 +14,11 @@
     {
       "name": "Sail Parent Holdco Ltd",
       "identifier_type": null,
-      "identifier": "UK Company Registration Number 17112723"
+      "identifier": "UK Company Registration Number 17112723",
+      "party_page": {
+        "id": "sail-parent-holdco-ltd",
+        "name": "Sail Parent Holdco Ltd"
+      }
     }
   ],
   "targets": [
@@ -25,6 +29,10 @@
       "canonical": {
         "id": "derbysoft-inc",
         "name": "DerbySoft Inc."
+      },
+      "party_page": {
+        "id": "derbysoft-inc",
+        "name": "DerbySoft Inc."
       }
     }
   ],
@@ -32,13 +40,21 @@
     {
       "name": "DerbySoft (Shanghai) Co. Limited",
       "identifier_type": null,
-      "identifier": "Chinese Unified Social Credit Code  913101157456256621"
+      "identifier": "Chinese Unified Social Credit Code  913101157456256621",
+      "party_page": {
+        "id": "derbysoft-shanghai-co-limited",
+        "name": "DerbySoft (Shanghai) Co. Limited"
+      }
     },
     {
       "name": "Constellation Software Inc.",
       "identifier_type": null,
       "identifier": "Canada Business Number 891148553",
       "canonical": {
+        "id": "constellation-software-inc",
+        "name": "Constellation Software Inc."
+      },
+      "party_page": {
         "id": "constellation-software-inc",
         "name": "Constellation Software Inc."
       }
@@ -50,12 +66,20 @@
       "canonical": {
         "id": "constellation-software-inc",
         "name": "Constellation Software Inc."
+      },
+      "party_page": {
+        "id": "constellation-software-inc",
+        "name": "Constellation Software Inc."
       }
     },
     {
       "name": "Vela Software International Inc.",
       "identifier_type": null,
-      "identifier": "Canada Business Number 1998439"
+      "identifier": "Canada Business Number 1998439",
+      "party_page": {
+        "id": "vela-software-international-inc",
+        "name": "Vela Software International Inc."
+      }
     },
     {
       "name": "DerbySoft Inc.",
@@ -64,12 +88,20 @@
       "canonical": {
         "id": "derbysoft-inc",
         "name": "DerbySoft Inc."
+      },
+      "party_page": {
+        "id": "derbysoft-inc",
+        "name": "DerbySoft Inc."
       }
     },
     {
       "name": "DerbySoft (Hong Kong) Limited",
       "identifier_type": null,
-      "identifier": "Hong Kong Business Registration Certificate Number: 6594292400004242"
+      "identifier": "Hong Kong Business Registration Certificate Number: 6594292400004242",
+      "party_page": {
+        "id": "derbysoft-hong-kong-limited",
+        "name": "DerbySoft (Hong Kong) Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -146,6 +178,10 @@
           "canonical": {
             "id": "seismic-software-inc",
             "name": "Seismic Software, Inc."
+          },
+          "party_page": {
+            "id": "seismic-software-inc",
+            "name": "Seismic Software, Inc."
           }
         }
       ],
@@ -155,6 +191,10 @@
           "identifier_type": null,
           "identifier": "Delaware File Number  5126410",
           "canonical": {
+            "id": "highspot-inc",
+            "name": "Highspot Inc."
+          },
+          "party_page": {
             "id": "highspot-inc",
             "name": "Highspot Inc."
           }
@@ -170,13 +210,21 @@
         {
           "name": "Rocket Software AMC UK Ltd",
           "identifier_type": null,
-          "identifier": "UK Company number 01504593"
+          "identifier": "UK Company number 01504593",
+          "party_page": {
+            "id": "rocket-software-amc-uk-ltd",
+            "name": "Rocket Software AMC UK Ltd"
+          }
         },
         {
           "name": "Rocket Software, Inc.",
           "identifier_type": null,
           "identifier": "Companies\u2019 Register of Delaware  3506913",
           "canonical": {
+            "id": "rocket-software-inc",
+            "name": "Rocket Software, Inc."
+          },
+          "party_page": {
             "id": "rocket-software-inc",
             "name": "Rocket Software, Inc."
           }
@@ -186,12 +234,20 @@
         {
           "name": "Micro Focus IP Development Limited",
           "identifier_type": null,
-          "identifier": "UK Company number 07233975"
+          "identifier": "UK Company number 07233975",
+          "party_page": {
+            "id": "micro-focus-ip-development-limited",
+            "name": "Micro Focus IP Development Limited"
+          }
         },
         {
           "name": "Open Text Corporation",
           "identifier_type": null,
-          "identifier": "10836044"
+          "identifier": "10836044",
+          "party_page": {
+            "id": "open-text-corporation",
+            "name": "Open Text Corporation"
+          }
         }
       ]
     },
@@ -204,14 +260,22 @@
         {
           "name": "HCL Technologies Limited",
           "identifier_type": "ABN",
-          "identifier": "37 541 578 951"
+          "identifier": "37 541 578 951",
+          "party_page": {
+            "id": "hcl-technologies-limited",
+            "name": "HCL Technologies Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "94 092 002 321"
+          "identifier": "94 092 002 321",
+          "party_page": {
+            "id": "cloud-software-group-australia-pty-ltd",
+            "name": "Cloud Software Group Australia Pty Ltd"
+          }
         }
       ]
     }

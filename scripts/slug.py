@@ -51,3 +51,15 @@ def industry_path(code: str, name: str) -> str:
     """
     slug = slugify(name)
     return f"/industries/{code}/{slug}" if slug else f"/industries/{code}"
+
+
+def party_path(party_id: str, name: str) -> str:
+    """Build the canonical path for a party detail page.
+
+    Includes the readable slug when one can be derived from the party's
+    canonical name, otherwise falls back to the bare ``/parties/{id}`` form.
+    Like the other slugs, this is purely decorative — party pages are always
+    looked up by their ``id``.
+    """
+    slug = slugify(name)
+    return f"/parties/{party_id}/{slug}" if slug else f"/parties/{party_id}"

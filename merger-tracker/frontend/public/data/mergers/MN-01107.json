@@ -17,6 +17,10 @@
       "canonical": {
         "id": "wsp-australia-pty-limited",
         "name": "Wsp Australia Pty Limited"
+      },
+      "party_page": {
+        "id": "wsp-australia-pty-limited",
+        "name": "Wsp Australia Pty Limited"
       }
     }
   ],
@@ -24,20 +28,32 @@
     {
       "name": "GEOTECHNICAL TESTING AND INTERPRETATION PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "14 616 849 766"
+      "identifier": "14 616 849 766",
+      "party_page": {
+        "id": "geotechnical-testing-and-interpretation-pty-ltd",
+        "name": "Geotechnical Testing And Interpretation Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "RICARDO AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "17 625 088 646"
+      "identifier": "17 625 088 646",
+      "party_page": {
+        "id": "ricardo-australia-pty-ltd",
+        "name": "Ricardo Australia Pty Ltd"
+      }
     },
     {
       "name": "WSP AUSTRALIA HOLDINGS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "90 169 545 395",
       "canonical": {
+        "id": "wsp-australia-pty-limited",
+        "name": "Wsp Australia Pty Limited"
+      },
+      "party_page": {
         "id": "wsp-australia-pty-limited",
         "name": "Wsp Australia Pty Limited"
       }
@@ -95,6 +111,10 @@
           "canonical": {
             "id": "wsp-australia-pty-limited",
             "name": "Wsp Australia Pty Limited"
+          },
+          "party_page": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
           }
         }
       ],
@@ -102,7 +122,11 @@
         {
           "name": "TRC Companies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "trc-companies-inc",
+            "name": "TRC Companies, Inc."
+          }
         }
       ]
     },
@@ -115,14 +139,22 @@
         {
           "name": "NEWS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "47 007 871 178"
+          "identifier": "47 007 871 178",
+          "party_page": {
+            "id": "news-pty-limited",
+            "name": "News Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "NATIONAL DISTRIBUTION SERVICES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "66 633 619 333"
+          "identifier": "66 633 619 333",
+          "party_page": {
+            "id": "national-distribution-services-pty-ltd",
+            "name": "National Distribution Services Pty Ltd"
+          }
         }
       ]
     },
@@ -139,12 +171,20 @@
           "canonical": {
             "id": "stonepeak-motion-poolingco-limited",
             "name": "Stonepeak Motion PoolingCo Limited"
+          },
+          "party_page": {
+            "id": "stonepeak-motion-poolingco-limited",
+            "name": "Stonepeak Motion PoolingCo Limited"
           }
         },
         {
           "name": "Motion JVCo Limited",
           "identifier_type": null,
-          "identifier": "Company Identifier Number  163042"
+          "identifier": "Company Identifier Number  163042",
+          "party_page": {
+            "id": "motion-jvco-limited",
+            "name": "Motion JVCo Limited"
+          }
         }
       ],
       "targets": [
@@ -155,12 +195,20 @@
           "canonical": {
             "id": "stonepeak-motion-poolingco-limited",
             "name": "Stonepeak Motion PoolingCo Limited"
+          },
+          "party_page": {
+            "id": "stonepeak-motion-poolingco-limited",
+            "name": "Stonepeak Motion PoolingCo Limited"
           }
         },
         {
           "name": "Castrol Group Holdings Limited",
           "identifier_type": null,
-          "identifier": "UKCRN  SC005098"
+          "identifier": "UKCRN  SC005098",
+          "party_page": {
+            "id": "castrol-group-holdings-limited",
+            "name": "Castrol Group Holdings Limited"
+          }
         }
       ]
     }

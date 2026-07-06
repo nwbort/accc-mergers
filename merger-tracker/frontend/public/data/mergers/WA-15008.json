@@ -14,14 +14,22 @@
     {
       "name": "Global Garella, S.L.",
       "identifier_type": null,
-      "identifier": "Spanish Tax Identification Number  B24904989"
+      "identifier": "Spanish Tax Identification Number  B24904989",
+      "party_page": {
+        "id": "global-garella-s-l",
+        "name": "Global Garella, S.L."
+      }
     }
   ],
   "targets": [
     {
       "name": "Ayesa Engineering, S.A.U.",
       "identifier_type": null,
-      "identifier": "Spanish Tax Identification Number  A91379875"
+      "identifier": "Spanish Tax Identification Number  A91379875",
+      "party_page": {
+        "id": "ayesa-engineering-s-a-u",
+        "name": "Ayesa Engineering, S.A.U."
+      }
     }
   ],
   "other_parties": [
@@ -30,6 +38,10 @@
       "identifier_type": "ACN",
       "identifier": "670 625 617",
       "canonical": {
+        "id": "colliers-international-engineering-design-pty-limited",
+        "name": "Colliers International Engineering & Design Pty Limited"
+      },
+      "party_page": {
         "id": "colliers-international-engineering-design-pty-limited",
         "name": "Colliers International Engineering & Design Pty Limited"
       }
@@ -41,6 +53,10 @@
       "canonical": {
         "id": "colliers-international-group-inc",
         "name": "Colliers International Group Inc."
+      },
+      "party_page": {
+        "id": "colliers-international-group-inc",
+        "name": "Colliers International Group Inc."
       }
     },
     {
@@ -50,12 +66,20 @@
       "canonical": {
         "id": "colliers-international-engineering-design-pty-limited",
         "name": "Colliers International Engineering & Design Pty Limited"
+      },
+      "party_page": {
+        "id": "colliers-international-engineering-design-pty-limited",
+        "name": "Colliers International Engineering & Design Pty Limited"
       }
     },
     {
       "name": "COLLIERS INTERNATIONAL URBAN PLANNING PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "13 615 087 931"
+      "identifier": "13 615 087 931",
+      "party_page": {
+        "id": "colliers-international-urban-planning-pty-limited",
+        "name": "Colliers International Urban Planning Pty Limited"
+      }
     },
     {
       "name": "COLLIERS INTERNATIONAL HOLDINGS (AUSTRALIA) LIMITED",
@@ -64,17 +88,29 @@
       "canonical": {
         "id": "colliers-international-group-inc",
         "name": "Colliers International Group Inc."
+      },
+      "party_page": {
+        "id": "colliers-international-group-inc",
+        "name": "Colliers International Group Inc."
       }
     },
     {
       "name": "ADP CONSULTING PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "81 139 719 529"
+      "identifier": "81 139 719 529",
+      "party_page": {
+        "id": "adp-consulting-pty-ltd",
+        "name": "Adp Consulting Pty Ltd"
+      }
     },
     {
       "name": "AYESA ENGINEERING HOLDCO AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "57 683 539 620"
+      "identifier": "57 683 539 620",
+      "party_page": {
+        "id": "ayesa-engineering-holdco-australia-pty-ltd",
+        "name": "Ayesa Engineering Holdco Australia Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -147,6 +183,10 @@
           "canonical": {
             "id": "coles",
             "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -154,7 +194,11 @@
         {
           "name": "CITY OF PORT PHILLIP",
           "identifier_type": "ABN",
-          "identifier": "21 762 977 945"
+          "identifier": "21 762 977 945",
+          "party_page": {
+            "id": "city-of-port-phillip",
+            "name": "City Of Port Phillip"
+          }
         }
       ]
     },
@@ -171,6 +215,10 @@
           "canonical": {
             "id": "wsp-australia-pty-limited",
             "name": "Wsp Australia Pty Limited"
+          },
+          "party_page": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
           }
         }
       ],
@@ -178,7 +226,11 @@
         {
           "name": "TRC Companies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "trc-companies-inc",
+            "name": "TRC Companies, Inc."
+          }
         }
       ]
     },
@@ -191,19 +243,31 @@
         {
           "name": "Eiffel Investment Group SAS",
           "identifier_type": null,
-          "identifier": "SIREN 510 813 991"
+          "identifier": "SIREN 510 813 991",
+          "party_page": {
+            "id": "eiffel-investment-group-sas",
+            "name": "Eiffel Investment Group SAS"
+          }
         },
         {
           "name": "Eurazeo SE",
           "identifier_type": null,
-          "identifier": "SIREN 692 030 992"
+          "identifier": "SIREN 692 030 992",
+          "party_page": {
+            "id": "eurazeo-se",
+            "name": "Eurazeo SE"
+          }
         }
       ],
       "targets": [
         {
           "name": "Segula Holding SAS",
           "identifier_type": null,
-          "identifier": "SIREN 343 166 393"
+          "identifier": "SIREN 343 166 393",
+          "party_page": {
+            "id": "segula-holding-sas",
+            "name": "Segula Holding SAS"
+          }
         }
       ]
     }

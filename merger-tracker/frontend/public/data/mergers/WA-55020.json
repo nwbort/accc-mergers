@@ -14,14 +14,22 @@
     {
       "name": "BGIS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "83 064 638 197"
+      "identifier": "83 064 638 197",
+      "party_page": {
+        "id": "bgis-pty-ltd",
+        "name": "Bgis Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "FIRE SYSTEMS (S.A.) PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "45 109 996 876"
+      "identifier": "45 109 996 876",
+      "party_page": {
+        "id": "fire-systems-s-a-pty-ltd",
+        "name": "Fire Systems (S.A.) Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -91,14 +99,22 @@
         {
           "name": "BGIS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "83 064 638 197"
+          "identifier": "83 064 638 197",
+          "party_page": {
+            "id": "bgis-pty-ltd",
+            "name": "Bgis Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "ASCOT AIR FACILITIES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "34 620 803 358"
+          "identifier": "34 620 803 358",
+          "party_page": {
+            "id": "ascot-air-facilities-pty-ltd",
+            "name": "Ascot Air Facilities Pty Ltd"
+          }
         }
       ]
     },
@@ -111,14 +127,22 @@
         {
           "name": "Quanta Services Australia Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "11 164 311 997"
+          "identifier": "11 164 311 997",
+          "party_page": {
+            "id": "quanta-services-australia-pty-ltd",
+            "name": "Quanta Services Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "PSD Global Holdings Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "634 380 813"
+          "identifier": "634 380 813",
+          "party_page": {
+            "id": "psd-global-holdings-pty-ltd",
+            "name": "PSD Global Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -131,14 +155,22 @@
         {
           "name": "NEC Corporation",
           "identifier_type": null,
-          "identifier": "Company number 7010401022916"
+          "identifier": "Company number 7010401022916",
+          "party_page": {
+            "id": "nec-corporation",
+            "name": "NEC Corporation"
+          }
         }
       ],
       "targets": [
         {
           "name": "CSG Systems International, Inc.",
           "identifier_type": null,
-          "identifier": "Company number 2444546"
+          "identifier": "Company number 2444546",
+          "party_page": {
+            "id": "csg-systems-international-inc",
+            "name": "CSG Systems International, Inc."
+          }
         }
       ]
     }

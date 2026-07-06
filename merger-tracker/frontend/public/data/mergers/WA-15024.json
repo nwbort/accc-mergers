@@ -14,41 +14,69 @@
     {
       "name": "REDWOOD SERVICES GROUP AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "15 675 368 162"
+      "identifier": "15 675 368 162",
+      "party_page": {
+        "id": "redwood-services-group-australia-pty-ltd",
+        "name": "Redwood Services Group Australia Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "ALL IT AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "90 146 108 321"
+      "identifier": "90 146 108 321",
+      "party_page": {
+        "id": "all-it-australia-pty-ltd",
+        "name": "All It Australia Pty Ltd"
+      }
     },
     {
       "name": "SPURBUCK INVESTMENTS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "16 602 869 910"
+      "identifier": "16 602 869 910",
+      "party_page": {
+        "id": "spurbuck-investments-pty-ltd",
+        "name": "Spurbuck Investments Pty Ltd"
+      }
     },
     {
       "name": "R & D BRIGGS PTY LTD",
       "identifier_type": "ACN",
-      "identifier": "680 192 563"
+      "identifier": "680 192 563",
+      "party_page": {
+        "id": "r-d-briggs-pty-ltd",
+        "name": "R & D Briggs Pty Ltd"
+      }
     },
     {
       "name": "CALATT PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "28 682 145 026"
+      "identifier": "28 682 145 026",
+      "party_page": {
+        "id": "calatt-pty-ltd",
+        "name": "Calatt Pty Ltd"
+      }
     },
     {
       "name": "OBLIVIOUS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "23 676 977 754"
+      "identifier": "23 676 977 754",
+      "party_page": {
+        "id": "oblivious-pty-ltd",
+        "name": "Oblivious Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Evergreen Services Group Topco, LLC",
       "identifier_type": null,
-      "identifier": "EIN  202252119595"
+      "identifier": "EIN  202252119595",
+      "party_page": {
+        "id": "evergreen-services-group-topco-llc",
+        "name": "Evergreen Services Group Topco, LLC"
+      }
     }
   ],
   "anzsic_codes": [
@@ -117,14 +145,22 @@
         {
           "name": "REDWOOD SERVICES GROUP AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "15 675 368 162"
+          "identifier": "15 675 368 162",
+          "party_page": {
+            "id": "redwood-services-group-australia-pty-ltd",
+            "name": "Redwood Services Group Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "NEWTREND I.T. SPECIALISTS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "54 124 502 656"
+          "identifier": "54 124 502 656",
+          "party_page": {
+            "id": "newtrend-i-t-specialists-pty-ltd",
+            "name": "Newtrend I.T. Specialists Pty Ltd"
+          }
         }
       ]
     },
@@ -137,14 +173,22 @@
         {
           "name": "East Gate Games Investment Company",
           "identifier_type": "ABN",
-          "identifier": "39 275 633 205"
+          "identifier": "39 275 633 205",
+          "party_page": {
+            "id": "east-gate-games-investment-company",
+            "name": "East Gate Games Investment Company"
+          }
         }
       ],
       "targets": [
         {
           "name": "Moonton Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "moonton-holdings-limited",
+            "name": "Moonton Holdings Limited"
+          }
         }
       ]
     },
@@ -157,24 +201,40 @@
         {
           "name": "Apollo Australia Bidco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "697 230 096"
+          "identifier": "697 230 096",
+          "party_page": {
+            "id": "apollo-australia-bidco-pty-ltd",
+            "name": "Apollo Australia Bidco Pty Ltd"
+          }
         },
         {
           "name": "Apollo Australia Bidco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "697 230 096"
+          "identifier": "697 230 096",
+          "party_page": {
+            "id": "apollo-australia-bidco-pty-ltd",
+            "name": "Apollo Australia Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FIRST FOCUS IT PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "73 106 912 350"
+          "identifier": "73 106 912 350",
+          "party_page": {
+            "id": "first-focus-it-pty-limited",
+            "name": "First Focus It Pty Limited"
+          }
         },
         {
           "name": "The Trustee for FUTURE FOCUS TRUST",
           "identifier_type": "ABN",
-          "identifier": "22 698 604 264"
+          "identifier": "22 698 604 264",
+          "party_page": {
+            "id": "the-trustee-for-future-focus-trust",
+            "name": "The Trustee for FUTURE FOCUS TRUST"
+          }
         }
       ]
     }

@@ -14,31 +14,51 @@
     {
       "name": "Waterworks Education Group Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "678 086 210"
+      "identifier": "678 086 210",
+      "party_page": {
+        "id": "waterworks-education-group-pty-ltd",
+        "name": "Waterworks Education Group Pty Ltd"
+      }
     },
     {
       "name": "Imagine Education Investments Trust",
       "identifier_type": "ABN",
-      "identifier": "54 637 909 142"
+      "identifier": "54 637 909 142",
+      "party_page": {
+        "id": "imagine-education-investments-trust",
+        "name": "Imagine Education Investments Trust"
+      }
     },
     {
       "name": "POLAR 993 PTY LTD as trustee of Imagine Education Investments Trust",
       "identifier_type": "ABN",
-      "identifier": "77 642 129 226"
+      "identifier": "77 642 129 226",
+      "party_page": {
+        "id": "polar-993-pty-ltd-as-trustee-of-imagine-education-investments-trust",
+        "name": "POLAR 993 PTY LTD as trustee of Imagine Education Investments Trust"
+      }
     }
   ],
   "targets": [
     {
       "name": "Waterworks Childcare Investments Pty Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "waterworks-childcare-investments-pty-ltd",
+        "name": "Waterworks Childcare Investments Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Imagine Education Investments Pty Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "imagine-education-investments-pty-ltd",
+        "name": "Imagine Education Investments Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -115,19 +135,31 @@
         {
           "name": "Volt Managed Investment Trust 2",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "volt-managed-investment-trust-2",
+            "name": "Volt Managed Investment Trust 2"
+          }
         },
         {
           "name": "Volt Managed Investment Trust 1",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "volt-managed-investment-trust-1",
+            "name": "Volt Managed Investment Trust 1"
+          }
         }
       ],
       "targets": [
         {
           "name": "VOLT HOLDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "54 694 754 062"
+          "identifier": "54 694 754 062",
+          "party_page": {
+            "id": "volt-holdco-pty-ltd",
+            "name": "Volt Holdco Pty Ltd"
+          }
         }
       ]
     },
@@ -140,14 +172,22 @@
         {
           "name": "IOR PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "36 009 653 070"
+          "identifier": "36 009 653 070",
+          "party_page": {
+            "id": "ior-pty-ltd",
+            "name": "Ior Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "DELTA SPECIALISED ENERGY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 624 642 682"
+          "identifier": "11 624 642 682",
+          "party_page": {
+            "id": "delta-specialised-energy-pty-ltd",
+            "name": "Delta Specialised Energy Pty Ltd"
+          }
         }
       ]
     },
@@ -160,14 +200,22 @@
         {
           "name": "Online Education Services Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "75 148 177 959"
+          "identifier": "75 148 177 959",
+          "party_page": {
+            "id": "online-education-services-pty-ltd",
+            "name": "Online Education Services Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "South Australian Institute of Business and Technology Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "12 087 769 097"
+          "identifier": "12 087 769 097",
+          "party_page": {
+            "id": "south-australian-institute-of-business-and-technology-pty-ltd",
+            "name": "South Australian Institute of Business and Technology Pty Ltd"
+          }
         }
       ]
     }

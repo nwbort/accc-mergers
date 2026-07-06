@@ -14,26 +14,42 @@
     {
       "name": "Ivera Bidco B.V.",
       "identifier_type": null,
-      "identifier": "Dutch Commercial Register  42000883"
+      "identifier": "Dutch Commercial Register  42000883",
+      "party_page": {
+        "id": "ivera-bidco-b-v",
+        "name": "Ivera Bidco B.V."
+      }
     }
   ],
   "targets": [
     {
       "name": "Protego Holdco B.V.",
       "identifier_type": null,
-      "identifier": "Dutch Commercial Register  80710417"
+      "identifier": "Dutch Commercial Register  80710417",
+      "party_page": {
+        "id": "protego-holdco-b-v",
+        "name": "Protego Holdco B.V."
+      }
     },
     {
       "name": "Agilitas Protego 2026 Subsidiary Fund LP",
       "identifier_type": null,
-      "identifier": "Jersey Registry  5028"
+      "identifier": "Jersey Registry  5028",
+      "party_page": {
+        "id": "agilitas-protego-2026-subsidiary-fund-lp",
+        "name": "Agilitas Protego 2026 Subsidiary Fund LP"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Triton Investments Advisers LLP",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "triton-investments-advisers-llp",
+        "name": "Triton Investments Advisers LLP"
+      }
     }
   ],
   "anzsic_codes": [
@@ -106,24 +122,40 @@
         {
           "name": "Essential Bidco B.V.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "essential-bidco-b-v",
+            "name": "Essential Bidco B.V."
+          }
         },
         {
           "name": "Specialty (U.S.) Bidco, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialty-u-s-bidco-inc",
+            "name": "Specialty (U.S.) Bidco, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "SpecialtyCo US LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialtyco-us-llc",
+            "name": "SpecialtyCo US LLC"
+          }
         },
         {
           "name": "Biomin Phytogenics GmbH (Germany)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "biomin-phytogenics-gmbh-germany",
+            "name": "Biomin Phytogenics GmbH (Germany)"
+          }
         }
       ]
     },
@@ -136,14 +168,22 @@
         {
           "name": "IBWM PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "28 621 141 026"
+          "identifier": "28 621 141 026",
+          "party_page": {
+            "id": "ibwm-pty-ltd",
+            "name": "Ibwm Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "VIOLA GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 680 038 180"
+          "identifier": "20 680 038 180",
+          "party_page": {
+            "id": "viola-group-holdings-pty-ltd",
+            "name": "Viola Group Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -156,7 +196,11 @@
         {
           "name": "GT Silver BidCo, Inc.",
           "identifier_type": null,
-          "identifier": "413417606"
+          "identifier": "413417606",
+          "party_page": {
+            "id": "gt-silver-bidco-inc",
+            "name": "GT Silver BidCo, Inc."
+          }
         }
       ],
       "targets": [
@@ -165,6 +209,10 @@
           "identifier_type": null,
           "identifier": "00140838",
           "canonical": {
+            "id": "clearwater-analytics-llc",
+            "name": "Clearwater Analytics, LLC"
+          },
+          "party_page": {
             "id": "clearwater-analytics-llc",
             "name": "Clearwater Analytics, LLC"
           }

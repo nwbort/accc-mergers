@@ -1,0 +1,38 @@
+{
+  "id": "origin-energy-international-holdings-pty-limited",
+  "canonical_name": "Origin Energy International Holdings Pty Limited",
+  "members": [
+    {
+      "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
+      "identifier": "53 143 484 208",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "MN-20011",
+        "merger_name": "Origin \u2013 Equity stake in Kraken",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-03-24T12:00:00Z",
+        "determination_date": "2026-04-20T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 27.0,
+    "median_days": 27,
+    "average_business_days": 17.0,
+    "median_business_days": 17,
+    "completed_count": 1
+  }
+}

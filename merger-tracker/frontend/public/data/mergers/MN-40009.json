@@ -16,14 +16,22 @@
     {
       "name": "Gilead Sciences, Inc.",
       "identifier_type": null,
-      "identifier": "EIN 943047598"
+      "identifier": "EIN 943047598",
+      "party_page": {
+        "id": "gilead-sciences-inc",
+        "name": "Gilead Sciences, Inc."
+      }
     }
   ],
   "targets": [
     {
       "name": "Arcellx, Inc.",
       "identifier_type": null,
-      "identifier": "EIN 472855917"
+      "identifier": "EIN 472855917",
+      "party_page": {
+        "id": "arcellx-inc",
+        "name": "Arcellx, Inc."
+      }
     }
   ],
   "other_parties": [],
@@ -111,14 +119,22 @@
         {
           "name": "Gilead Sciences, Inc.",
           "identifier_type": null,
-          "identifier": "EIN 943047598"
+          "identifier": "EIN 943047598",
+          "party_page": {
+            "id": "gilead-sciences-inc",
+            "name": "Gilead Sciences, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Ouro Medicines, LLC",
           "identifier_type": null,
-          "identifier": "202462212198"
+          "identifier": "202462212198",
+          "party_page": {
+            "id": "ouro-medicines-llc",
+            "name": "Ouro Medicines, LLC"
+          }
         }
       ]
     },
@@ -131,14 +147,22 @@
         {
           "name": "Badger Merger Sub I, Inc",
           "identifier_type": null,
-          "identifier": "10389384"
+          "identifier": "10389384",
+          "party_page": {
+            "id": "badger-merger-sub-i-inc",
+            "name": "Badger Merger Sub I, Inc"
+          }
         }
       ],
       "targets": [
         {
           "name": "Exact Sciences Corporation",
           "identifier_type": null,
-          "identifier": "020478229"
+          "identifier": "020478229",
+          "party_page": {
+            "id": "exact-sciences-corporation",
+            "name": "Exact Sciences Corporation"
+          }
         }
       ]
     },
@@ -155,6 +179,10 @@
           "canonical": {
             "id": "eli-lilly-and-company",
             "name": "Eli Lilly and Company"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
           }
         }
       ],
@@ -162,7 +190,11 @@
         {
           "name": "Orna Therapeutics Holdings, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "orna-therapeutics-holdings-llc-2",
+            "name": "Orna Therapeutics Holdings, LLC"
+          }
         }
       ]
     }

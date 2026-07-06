@@ -14,56 +14,96 @@
     {
       "name": "MAG SOUTH COAST PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "70 683 627 590"
+      "identifier": "70 683 627 590",
+      "party_page": {
+        "id": "mag-south-coast-pty-ltd",
+        "name": "Mag South Coast Pty Ltd"
+      }
     },
     {
       "name": "MCCARROLL PROPERTY HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "64 676 724 306"
+      "identifier": "64 676 724 306",
+      "party_page": {
+        "id": "mccarroll-property-holdings-pty-ltd",
+        "name": "Mccarroll Property Holdings Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "Donna Lea Buikstra Family Will Trust",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "donna-lea-buikstra-family-will-trust",
+        "name": "Donna Lea Buikstra Family Will Trust"
+      }
     },
     {
       "name": "Glenn Ype Buikstra Family Will Trust",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "glenn-ype-buikstra-family-will-trust",
+        "name": "Glenn Ype Buikstra Family Will Trust"
+      }
     },
     {
       "name": "KINGHORN MOTORS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "33 000 220 557"
+      "identifier": "33 000 220 557",
+      "party_page": {
+        "id": "kinghorn-motors-pty-ltd",
+        "name": "Kinghorn Motors Pty Ltd"
+      }
     },
     {
       "name": "COUNTRY MOTOR COMPANY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "11 002 189 228"
+      "identifier": "11 002 189 228",
+      "party_page": {
+        "id": "country-motor-company-pty-ltd",
+        "name": "Country Motor Company Pty Ltd"
+      }
     },
     {
       "name": "KJO PROPERTY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "33 169 760 178"
+      "identifier": "33 169 760 178",
+      "party_page": {
+        "id": "kjo-property-pty-ltd",
+        "name": "Kjo Property Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "MAG NORTHERN BEACHES PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "21 659 209 051"
+      "identifier": "21 659 209 051",
+      "party_page": {
+        "id": "mag-northern-beaches-pty-ltd",
+        "name": "Mag Northern Beaches Pty Ltd"
+      }
     },
     {
       "name": "MAG BODY CORP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "93 676 724 495"
+      "identifier": "93 676 724 495",
+      "party_page": {
+        "id": "mag-body-corp-pty-ltd",
+        "name": "Mag Body Corp Pty Ltd"
+      }
     },
     {
       "name": "MCCARROLL'S OF MOSS VALE PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "60 003 411 210"
+      "identifier": "60 003 411 210",
+      "party_page": {
+        "id": "mccarroll-s-of-moss-vale-pty-ltd",
+        "name": "Mccarroll'S Of Moss Vale Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -140,19 +180,31 @@
         {
           "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
           "identifier_type": "ABN",
-          "identifier": "57 615 674 185"
+          "identifier": "57 615 674 185",
+          "party_page": {
+            "id": "peter-warren-automotive-holdings-limited",
+            "name": "Peter Warren Automotive Holdings Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Paul Wakeling Motor Group Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "47 119 908 780"
+          "identifier": "47 119 908 780",
+          "party_page": {
+            "id": "paul-wakeling-motor-group-pty-ltd",
+            "name": "Paul Wakeling Motor Group Pty Ltd"
+          }
         },
         {
           "name": "WOLLONGONG CITY MOTORS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "22 002 019 598"
+          "identifier": "22 002 019 598",
+          "party_page": {
+            "id": "wollongong-city-motors-pty-ltd",
+            "name": "Wollongong City Motors Pty Ltd"
+          }
         }
       ]
     },
@@ -165,14 +217,22 @@
         {
           "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "35 667 654 686"
+          "identifier": "35 667 654 686",
+          "party_page": {
+            "id": "cvs-vets-australia-proprietary-limited",
+            "name": "Cvs Vets (Australia) Proprietary Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 001 336 723"
+          "identifier": "25 001 336 723",
+          "party_page": {
+            "id": "pittwater-animal-hospital-pty-ltd",
+            "name": "Pittwater Animal Hospital Pty Ltd"
+          }
         }
       ]
     },
@@ -185,19 +245,31 @@
         {
           "name": "OHCA Property Holdings Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
+          "identifier": "70 675 807 477",
+          "party_page": {
+            "id": "ohca-property-holdings-pty-ltd",
+            "name": "Ohca Property Holdings Pty Ltd"
+          }
         },
         {
           "name": "DPG Services Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
+          "identifier": "38 090 007 999",
+          "party_page": {
+            "id": "dpg-services-pty-ltd",
+            "name": "Dpg Services Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "the-assets-and-business-comprising-sunnymeade-park-aged-care-community",
+            "name": "The assets and business comprising Sunnymeade Park Aged Care Community"
+          }
         }
       ]
     }

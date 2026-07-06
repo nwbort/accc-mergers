@@ -14,26 +14,42 @@
     {
       "name": "ETG QUEENSLAND PROCESSING PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "20 695 139 032"
+      "identifier": "20 695 139 032",
+      "party_page": {
+        "id": "etg-queensland-processing-pty-ltd",
+        "name": "Etg Queensland Processing Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "QUEENSLAND COTTON CORPORATION PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "26 010 944 591"
+      "identifier": "26 010 944 591",
+      "party_page": {
+        "id": "queensland-cotton-corporation-pty-ltd",
+        "name": "Queensland Cotton Corporation Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "ETC Group",
       "identifier_type": null,
-      "identifier": "C095264"
+      "identifier": "C095264",
+      "party_page": {
+        "id": "etc-group",
+        "name": "ETC Group"
+      }
     },
     {
       "name": "EXPORT TRADING GROUP AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "92 168 116 041"
+      "identifier": "92 168 116 041",
+      "party_page": {
+        "id": "export-trading-group-australia-pty-ltd",
+        "name": "Export Trading Group Australia Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -106,24 +122,40 @@
         {
           "name": "MA MARINA FUND HOLDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 667 241 385"
+          "identifier": "96 667 241 385",
+          "party_page": {
+            "id": "ma-marina-fund-holdco-pty-ltd",
+            "name": "Ma Marina Fund Holdco Pty Ltd"
+          }
         },
         {
           "name": "MA MARINA FUND TT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "65 666 902 245"
+          "identifier": "65 666 902 245",
+          "party_page": {
+            "id": "ma-marina-fund-tt-pty-ltd",
+            "name": "Ma Marina Fund Tt Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "GGC Marketing Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "32 105 294 228"
+          "identifier": "32 105 294 228",
+          "party_page": {
+            "id": "ggc-marketing-pty-ltd",
+            "name": "GGC Marketing Pty Ltd"
+          }
         },
         {
           "name": "QUEENSLAND & PACIFIC PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "72 081 370 685"
+          "identifier": "72 081 370 685",
+          "party_page": {
+            "id": "queensland-pacific-pty-ltd",
+            "name": "Queensland & Pacific Pty. Ltd."
+          }
         }
       ]
     },
@@ -136,14 +168,22 @@
         {
           "name": "NEC Corporation",
           "identifier_type": null,
-          "identifier": "Company number 7010401022916"
+          "identifier": "Company number 7010401022916",
+          "party_page": {
+            "id": "nec-corporation",
+            "name": "NEC Corporation"
+          }
         }
       ],
       "targets": [
         {
           "name": "CSG Systems International, Inc.",
           "identifier_type": null,
-          "identifier": "Company number 2444546"
+          "identifier": "Company number 2444546",
+          "party_page": {
+            "id": "csg-systems-international-inc",
+            "name": "CSG Systems International, Inc."
+          }
         }
       ]
     },
@@ -156,24 +196,40 @@
         {
           "name": "Cielo TopCo Limited",
           "identifier_type": null,
-          "identifier": "CRN  16320933"
+          "identifier": "CRN  16320933",
+          "party_page": {
+            "id": "cielo-topco-limited",
+            "name": "Cielo TopCo Limited"
+          }
         },
         {
           "name": "Kee Safety (Australia) Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "694 369 116"
+          "identifier": "694 369 116",
+          "party_page": {
+            "id": "kee-safety-australia-pty-ltd",
+            "name": "Kee Safety (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "HALLWELD BENNETT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "15 161 086 595"
+          "identifier": "15 161 086 595",
+          "party_page": {
+            "id": "hallweld-bennett-pty-ltd",
+            "name": "Hallweld Bennett Pty Ltd"
+          }
         },
         {
           "name": "RIS SAFETY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "19 668 836 351"
+          "identifier": "19 668 836 351",
+          "party_page": {
+            "id": "ris-safety-holdings-pty-ltd",
+            "name": "Ris Safety Holdings Pty Ltd"
+          }
         }
       ]
     }

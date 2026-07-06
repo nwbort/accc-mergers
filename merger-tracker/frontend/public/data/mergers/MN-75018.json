@@ -15,26 +15,42 @@
     {
       "name": "WPF DURATEC PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "87 082 800 397"
+      "identifier": "87 082 800 397",
+      "party_page": {
+        "id": "wpf-duratec-pty-ltd",
+        "name": "Wpf Duratec Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "Davhold Australia Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "12 146 239 223"
+      "identifier": "12 146 239 223",
+      "party_page": {
+        "id": "davhold-australia-pty-ltd",
+        "name": "Davhold Australia Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Grant Davies",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "grant-davies",
+        "name": "Grant Davies"
+      }
     },
     {
       "name": "Ryan Jones",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "ryan-jones",
+        "name": "Ryan Jones"
+      }
     }
   ],
   "anzsic_codes": [
@@ -118,19 +134,31 @@
         {
           "name": "SYMAL GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "72 615 255 466"
+          "identifier": "72 615 255 466",
+          "party_page": {
+            "id": "symal-group-limited",
+            "name": "Symal Group Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "J. DAVISON NOMINEES PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "70 007 998 969"
+          "identifier": "70 007 998 969",
+          "party_page": {
+            "id": "j-davison-nominees-pty-ltd",
+            "name": "J. Davison Nominees Pty. Ltd."
+          }
         },
         {
           "name": "DAVISON CONTRACTORS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 675 773 896"
+          "identifier": "68 675 773 896",
+          "party_page": {
+            "id": "davison-contractors-pty-ltd",
+            "name": "Davison Contractors Pty Ltd"
+          }
         }
       ]
     },
@@ -143,19 +171,31 @@
         {
           "name": "Genea Bidco SA Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 694 458"
+          "identifier": "695 694 458",
+          "party_page": {
+            "id": "genea-bidco-sa-pty-ltd",
+            "name": "Genea Bidco SA Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "EMBRACE FERTILITY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "84 135 918 580"
+          "identifier": "84 135 918 580",
+          "party_page": {
+            "id": "embrace-fertility-pty-ltd",
+            "name": "Embrace Fertility Pty Ltd"
+          }
         },
         {
           "name": "Histon Nelson Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "144 914 965"
+          "identifier": "144 914 965",
+          "party_page": {
+            "id": "histon-nelson-pty-ltd",
+            "name": "Histon Nelson Pty Ltd"
+          }
         }
       ]
     },
@@ -168,19 +208,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     }

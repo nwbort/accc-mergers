@@ -16,7 +16,11 @@
     {
       "name": "Elba Merger Sub, Inc.",
       "identifier_type": null,
-      "identifier": "Delaware company number 10547479"
+      "identifier": "Delaware company number 10547479",
+      "party_page": {
+        "id": "elba-merger-sub-inc",
+        "name": "Elba Merger Sub, Inc."
+      }
     }
   ],
   "targets": [
@@ -27,6 +31,10 @@
       "canonical": {
         "id": "excellergy-inc",
         "name": "Excellergy Inc."
+      },
+      "party_page": {
+        "id": "excellergy-inc",
+        "name": "Excellergy Inc."
       }
     }
   ],
@@ -34,23 +42,39 @@
     {
       "name": "NOVARTIS AUSTRALIA PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "81 004 371 224"
+      "identifier": "81 004 371 224",
+      "party_page": {
+        "id": "novartis-australia-pty-limited",
+        "name": "Novartis Australia Pty Limited"
+      }
     },
     {
       "name": "Novartis Finance Corporation",
       "identifier_type": null,
-      "identifier": "US EIN 133922240"
+      "identifier": "US EIN 133922240",
+      "party_page": {
+        "id": "novartis-finance-corporation",
+        "name": "Novartis Finance Corporation"
+      }
     },
     {
       "name": "NOVARTIS PHARMACEUTICALS AUSTRALIA PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "18 004 244 160"
+      "identifier": "18 004 244 160",
+      "party_page": {
+        "id": "novartis-pharmaceuticals-australia-pty-limited",
+        "name": "Novartis Pharmaceuticals Australia Pty Limited"
+      }
     },
     {
       "name": "EXCELLERGY AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
       "identifier": "50 690 676 941",
       "canonical": {
+        "id": "excellergy-inc",
+        "name": "Excellergy Inc."
+      },
+      "party_page": {
         "id": "excellergy-inc",
         "name": "Excellergy Inc."
       }
@@ -144,19 +168,31 @@
         {
           "name": "Searchlight Capital IV LP",
           "identifier_type": null,
-          "identifier": "US SEC  0001954453"
+          "identifier": "US SEC  0001954453",
+          "party_page": {
+            "id": "searchlight-capital-iv-lp",
+            "name": "Searchlight Capital IV LP"
+          }
         },
         {
           "name": "KONA Merger Sub Co.",
           "identifier_type": null,
-          "identifier": "Delaware  10525073"
+          "identifier": "Delaware  10525073",
+          "party_page": {
+            "id": "kona-merger-sub-co",
+            "name": "KONA Merger Sub Co."
+          }
         }
       ],
       "targets": [
         {
           "name": "KORE Group Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware  5388903"
+          "identifier": "Delaware  5388903",
+          "party_page": {
+            "id": "kore-group-holdings-inc",
+            "name": "KORE Group Holdings, Inc."
+          }
         }
       ]
     },
@@ -169,14 +205,22 @@
         {
           "name": "Badger Merger Sub I, Inc",
           "identifier_type": null,
-          "identifier": "10389384"
+          "identifier": "10389384",
+          "party_page": {
+            "id": "badger-merger-sub-i-inc",
+            "name": "Badger Merger Sub I, Inc"
+          }
         }
       ],
       "targets": [
         {
           "name": "Exact Sciences Corporation",
           "identifier_type": null,
-          "identifier": "020478229"
+          "identifier": "020478229",
+          "party_page": {
+            "id": "exact-sciences-corporation",
+            "name": "Exact Sciences Corporation"
+          }
         }
       ]
     },
@@ -189,19 +233,31 @@
         {
           "name": "Adobe Inc. (NASDAQ: ADBE)",
           "identifier_type": null,
-          "identifier": "2748129"
+          "identifier": "2748129",
+          "party_page": {
+            "id": "adobe-inc-nasdaq-adbe",
+            "name": "Adobe Inc. (NASDAQ: ADBE)"
+          }
         },
         {
           "name": "Fenway Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "10389477"
+          "identifier": "10389477",
+          "party_page": {
+            "id": "fenway-merger-sub-inc",
+            "name": "Fenway Merger Sub, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Semrush Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "7690622"
+          "identifier": "7690622",
+          "party_page": {
+            "id": "semrush-holdings-inc",
+            "name": "Semrush Holdings, Inc."
+          }
         }
       ]
     }

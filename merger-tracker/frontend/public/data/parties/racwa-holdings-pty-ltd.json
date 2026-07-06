@@ -1,0 +1,38 @@
+{
+  "id": "racwa-holdings-pty-ltd",
+  "canonical_name": "Racwa Holdings Pty Ltd",
+  "members": [
+    {
+      "name": "RACWA HOLDINGS PTY LTD",
+      "identifier": "60 008 985 877",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "MN-65005",
+        "merger_name": "Insurance Australia Group \u2013 RAC Insurance",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "phase": "Phase 2",
+        "notification_date": "2026-03-03T12:00:00Z",
+        "determination_date": null
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 1,
+  "waiver_count": 0,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 44.0,
+    "median_days": 44,
+    "average_business_days": 29.0,
+    "median_business_days": 29,
+    "completed_count": 1
+  }
+}

@@ -20,6 +20,8 @@ export const API_ENDPOINTS = {
   timelineMeta: '/data/timeline-meta.json',  // Pagination metadata for timeline
   industries: '/data/industries.json',
   industryDetail: (code) => `/data/industries/${code}.json`,  // Individual industry file with mergers
+  parties: '/data/parties.json',
+  partyDetail: (id) => `/data/parties/${id}.json`,  // Individual party file with mergers by role
   upcomingEvents: '/data/upcoming-events.json',
   commentary: '/data/commentary.json',  // Mergers with user commentary
   digest: '/data/digest.json',  // Weekly digest of merger activity

@@ -14,26 +14,42 @@
     {
       "name": "Goldcup 39483 AB (u.n.c.t. Prometheus BidCo AB)",
       "identifier_type": null,
-      "identifier": "Swedish registration number 5595805887"
+      "identifier": "Swedish registration number 5595805887",
+      "party_page": {
+        "id": "goldcup-39483-ab-u-n-c-t-prometheus-bidco-ab",
+        "name": "Goldcup 39483 AB (u.n.c.t. Prometheus BidCo AB)"
+      }
     }
   ],
   "targets": [
     {
       "name": "SELATEK Holding AB",
       "identifier_type": null,
-      "identifier": "Swedish registration number: 5593325987"
+      "identifier": "Swedish registration number: 5593325987",
+      "party_page": {
+        "id": "selatek-holding-ab",
+        "name": "SELATEK Holding AB"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "IK Partners",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "ik-partners",
+        "name": "IK Partners"
+      }
     },
     {
       "name": "Deltatec AB",
       "identifier_type": null,
-      "identifier": "Swedish registration number: 5567168660"
+      "identifier": "Swedish registration number: 5567168660",
+      "party_page": {
+        "id": "deltatec-ab",
+        "name": "Deltatec AB"
+      }
     }
   ],
   "anzsic_codes": [
@@ -102,19 +118,31 @@
         {
           "name": "Eiffel Investment Group SAS",
           "identifier_type": null,
-          "identifier": "SIREN 510 813 991"
+          "identifier": "SIREN 510 813 991",
+          "party_page": {
+            "id": "eiffel-investment-group-sas",
+            "name": "Eiffel Investment Group SAS"
+          }
         },
         {
           "name": "Eurazeo SE",
           "identifier_type": null,
-          "identifier": "SIREN 692 030 992"
+          "identifier": "SIREN 692 030 992",
+          "party_page": {
+            "id": "eurazeo-se",
+            "name": "Eurazeo SE"
+          }
         }
       ],
       "targets": [
         {
           "name": "Segula Holding SAS",
           "identifier_type": null,
-          "identifier": "SIREN 343 166 393"
+          "identifier": "SIREN 343 166 393",
+          "party_page": {
+            "id": "segula-holding-sas",
+            "name": "Segula Holding SAS"
+          }
         }
       ]
     },
@@ -127,14 +155,22 @@
         {
           "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "57 167 960 018"
+          "identifier": "57 167 960 018",
+          "party_page": {
+            "id": "az-next-generation-advisory-pty-ltd",
+            "name": "Az Next Generation Advisory Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "BMM PARTNERS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 649 113 959"
+          "identifier": "82 649 113 959",
+          "party_page": {
+            "id": "bmm-partners-pty-ltd",
+            "name": "Bmm Partners Pty Ltd"
+          }
         }
       ]
     },
@@ -151,6 +187,10 @@
           "canonical": {
             "id": "wsp-australia-pty-limited",
             "name": "Wsp Australia Pty Limited"
+          },
+          "party_page": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
           }
         }
       ],
@@ -158,7 +198,11 @@
         {
           "name": "TRC Companies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "trc-companies-inc",
+            "name": "TRC Companies, Inc."
+          }
         }
       ]
     }

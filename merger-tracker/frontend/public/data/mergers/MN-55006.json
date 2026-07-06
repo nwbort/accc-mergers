@@ -16,36 +16,60 @@
     {
       "name": "Hg Pooled Management Limited",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "hg-pooled-management-limited",
+        "name": "Hg Pooled Management Limited"
+      }
     },
     {
       "name": "OnwardAcquireCo, Inc",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "onwardacquireco-inc",
+        "name": "OnwardAcquireCo, Inc"
+      }
     }
   ],
   "targets": [
     {
       "name": "OneStream, Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "onestream-inc",
+        "name": "OneStream, Inc."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "GS Topco GP LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "gs-topco-gp-llc",
+        "name": "GS Topco GP LLC"
+      }
     },
     {
       "name": "LucaNet Group GmbH",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "lucanet-group-gmbh",
+        "name": "LucaNet Group GmbH"
+      }
     },
     {
       "name": "Prophix Software Inc",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "prophix-software-inc",
+        "name": "Prophix Software Inc"
+      }
     }
   ],
   "anzsic_codes": [
@@ -128,14 +152,22 @@
         {
           "name": "HCL Technologies Limited",
           "identifier_type": "ABN",
-          "identifier": "37 541 578 951"
+          "identifier": "37 541 578 951",
+          "party_page": {
+            "id": "hcl-technologies-limited",
+            "name": "HCL Technologies Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "94 092 002 321"
+          "identifier": "94 092 002 321",
+          "party_page": {
+            "id": "cloud-software-group-australia-pty-ltd",
+            "name": "Cloud Software Group Australia Pty Ltd"
+          }
         }
       ]
     },
@@ -148,13 +180,21 @@
         {
           "name": "Wipro Networks Pte Ltd",
           "identifier_type": null,
-          "identifier": "UEN  199907933M"
+          "identifier": "UEN  199907933M",
+          "party_page": {
+            "id": "wipro-networks-pte-ltd",
+            "name": "Wipro Networks Pte Ltd"
+          }
         },
         {
           "name": "Wipro Limited",
           "identifier_type": null,
           "identifier": "CIN L32102KA1945PLC020800",
           "canonical": {
+            "id": "wipro-ltd",
+            "name": "Wipro Ltd"
+          },
+          "party_page": {
             "id": "wipro-ltd",
             "name": "Wipro Ltd"
           }
@@ -164,12 +204,20 @@
         {
           "name": "Mindsprint Pte Limited",
           "identifier_type": null,
-          "identifier": "UEN  202118596N"
+          "identifier": "UEN  202118596N",
+          "party_page": {
+            "id": "mindsprint-pte-limited",
+            "name": "Mindsprint Pte Limited"
+          }
         },
         {
           "name": "Olam Holdings Pte Limited",
           "identifier_type": null,
-          "identifier": "UEN  202110101R"
+          "identifier": "UEN  202110101R",
+          "party_page": {
+            "id": "olam-holdings-pte-limited",
+            "name": "Olam Holdings Pte Limited"
+          }
         }
       ]
     },
@@ -186,6 +234,10 @@
           "canonical": {
             "id": "accenture-plc",
             "name": "Accenture plc"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
           }
         }
       ],
@@ -193,12 +245,20 @@
         {
           "name": "Ookla, LLC",
           "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103"
+          "identifier": "Unified Business ID  602 422 103",
+          "party_page": {
+            "id": "ookla-llc",
+            "name": "Ookla, LLC"
+          }
         },
         {
           "name": "Ekahau OY",
           "identifier_type": null,
-          "identifier": "Business ID  16108964"
+          "identifier": "Business ID  16108964",
+          "party_page": {
+            "id": "ekahau-oy",
+            "name": "Ekahau OY"
+          }
         }
       ]
     }

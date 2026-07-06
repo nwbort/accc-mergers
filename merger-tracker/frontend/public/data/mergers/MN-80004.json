@@ -16,56 +16,96 @@
     {
       "name": "A6 Audio Bidco Limited",
       "identifier_type": null,
-      "identifier": "Company number (England and Wales)  10573578"
+      "identifier": "Company number (England and Wales)  10573578",
+      "party_page": {
+        "id": "a6-audio-bidco-limited",
+        "name": "A6 Audio Bidco Limited"
+      }
     },
     {
       "name": "Sound Bidco (Denmark) ApS",
       "identifier_type": null,
-      "identifier": "Company number (Denmark)  45697088"
+      "identifier": "Company number (Denmark)  45697088",
+      "party_page": {
+        "id": "sound-bidco-denmark-aps",
+        "name": "Sound Bidco (Denmark) ApS"
+      }
     },
     {
       "name": "Sound Bidco S.r.l.",
       "identifier_type": null,
-      "identifier": "Registration number (Companies\u2019 Register of Milan, Monza, Brianza and Lodi)  14469610969"
+      "identifier": "Registration number (Companies\u2019 Register of Milan, Monza, Brianza and Lodi)  14469610969",
+      "party_page": {
+        "id": "sound-bidco-s-r-l",
+        "name": "Sound Bidco S.r.l."
+      }
     }
   ],
   "targets": [
     {
       "name": "Soundtech Group S.r.l.",
       "identifier_type": null,
-      "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241"
+      "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241",
+      "party_page": {
+        "id": "soundtech-group-s-r-l",
+        "name": "Soundtech Group S.r.l."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "DPA Microphones A/S",
       "identifier_type": null,
-      "identifier": "Company number (Denmark)  15912200"
+      "identifier": "Company number (Denmark)  15912200",
+      "party_page": {
+        "id": "dpa-microphones-a-s",
+        "name": "DPA Microphones A/S"
+      }
     },
     {
       "name": "Sound Network ApS",
       "identifier_type": null,
-      "identifier": "Company number (Denmark)  43989472"
+      "identifier": "Company number (Denmark)  43989472",
+      "party_page": {
+        "id": "sound-network-aps",
+        "name": "Sound Network ApS"
+      }
     },
     {
       "name": "Austrian Audio GmbH",
       "identifier_type": null,
-      "identifier": "Company number (Austria): FN 472051"
+      "identifier": "Company number (Austria): FN 472051",
+      "party_page": {
+        "id": "austrian-audio-gmbh",
+        "name": "Austrian Audio GmbH"
+      }
     },
     {
       "name": "Sound Devices LLC",
       "identifier_type": null,
-      "identifier": "Company number (State of Wisconsin)  S053063"
+      "identifier": "Company number (State of Wisconsin)  S053063",
+      "party_page": {
+        "id": "sound-devices-llc",
+        "name": "Sound Devices LLC"
+      }
     },
     {
       "name": "Audiotonix Limited",
       "identifier_type": null,
-      "identifier": "Company number (England and Wales)  15618986"
+      "identifier": "Company number (England and Wales)  15618986",
+      "party_page": {
+        "id": "audiotonix-limited",
+        "name": "Audiotonix Limited"
+      }
     },
     {
       "name": "Wisycom S.r.l.",
       "identifier_type": null,
-      "identifier": "Registration number (Companies\u2019 Register of Padova, VAT and Tax Code)  02765640244"
+      "identifier": "Registration number (Companies\u2019 Register of Padova, VAT and Tax Code)  02765640244",
+      "party_page": {
+        "id": "wisycom-s-r-l",
+        "name": "Wisycom S.r.l."
+      }
     }
   ],
   "anzsic_codes": [
@@ -152,6 +192,10 @@
           "canonical": {
             "id": "australian-meat-group-inc",
             "name": "Australian Meat Group Inc"
+          },
+          "party_page": {
+            "id": "australian-meat-group-inc",
+            "name": "Australian Meat Group Inc"
           }
         }
       ],
@@ -159,7 +203,11 @@
         {
           "name": "Killara Feedlot Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "18 081 072 746"
+          "identifier": "18 081 072 746",
+          "party_page": {
+            "id": "killara-feedlot-pty-ltd",
+            "name": "Killara Feedlot Pty Ltd"
+          }
         }
       ]
     },
@@ -172,14 +220,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "The Trustee for the Comfy Dental Trust",
           "identifier_type": "ABN",
-          "identifier": "59 865 563 072"
+          "identifier": "59 865 563 072",
+          "party_page": {
+            "id": "the-trustee-for-the-comfy-dental-trust",
+            "name": "The Trustee for the Comfy Dental Trust"
+          }
         }
       ]
     },
@@ -192,19 +248,31 @@
         {
           "name": "AVC OPERATIONS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         },
         {
           "name": "Australian Venue Co. Holdings Limited",
           "identifier_type": "ABN",
-          "identifier": "90 619 977 070"
+          "identifier": "90 619 977 070",
+          "party_page": {
+            "id": "australian-venue-co-holdings-limited",
+            "name": "Australian Venue Co. Holdings Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Q.R.A. PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "62 051 433 839"
+          "identifier": "62 051 433 839",
+          "party_page": {
+            "id": "q-r-a-pty-limited",
+            "name": "Q.R.A. Pty Limited"
+          }
         }
       ]
     }

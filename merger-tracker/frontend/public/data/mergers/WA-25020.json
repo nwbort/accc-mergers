@@ -14,36 +14,60 @@
     {
       "name": "Zijin Gold (Group) Co., Ltd.,",
       "identifier_type": null,
-      "identifier": "USCC 91350823MAD2GJHT7P"
+      "identifier": "USCC 91350823MAD2GJHT7P",
+      "party_page": {
+        "id": "zijin-gold-group-co-ltd",
+        "name": "Zijin Gold (Group) Co., Ltd.,"
+      }
     }
   ],
   "targets": [
     {
       "name": "Li Jinyang",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "li-jinyang",
+        "name": "Li Jinyang"
+      }
     },
     {
       "name": "Zhejiang Hanfeng Venture Capital Partnership (Limited Partnership)",
       "identifier_type": null,
-      "identifier": "USCC 91110108MA01H51G1X"
+      "identifier": "USCC 91110108MA01H51G1X",
+      "party_page": {
+        "id": "zhejiang-hanfeng-venture-capital-partnership-limited-partnership",
+        "name": "Zhejiang Hanfeng Venture Capital Partnership (Limited Partnership)"
+      }
     },
     {
       "name": "Chifeng Jilong Gold Mining Co., Ltd.",
       "identifier_type": null,
-      "identifier": "USCC 91150000708204391F"
+      "identifier": "USCC 91150000708204391F",
+      "party_page": {
+        "id": "chifeng-jilong-gold-mining-co-ltd",
+        "name": "Chifeng Jilong Gold Mining Co., Ltd."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Zijin Mining Group Co. Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "zijin-mining-group-co-ltd",
+        "name": "Zijin Mining Group Co. Ltd"
+      }
     },
     {
       "name": "Norton Gold Fields Pty Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "norton-gold-fields-pty-ltd",
+        "name": "Norton Gold Fields Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -112,19 +136,31 @@
         {
           "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
           "identifier_type": "ABN",
-          "identifier": "21 151 833 555"
+          "identifier": "21 151 833 555",
+          "party_page": {
+            "id": "herman-corp-pty-ltd-as-trustee-for-the-herman-holdings-family-trust",
+            "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)"
+          }
         },
         {
           "name": "Yandoo Holdings Pty Ltd",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "yandoo-holdings-pty-ltd",
+            "name": "Yandoo Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "WINNING APPLIANCES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "94 002 193 688"
+          "identifier": "94 002 193 688",
+          "party_page": {
+            "id": "winning-appliances-pty-ltd",
+            "name": "Winning Appliances Pty Ltd"
+          }
         }
       ]
     },
@@ -141,6 +177,10 @@
           "canonical": {
             "id": "general-dental-holdings-pty-ltd",
             "name": "General Dental Holdings Pty Ltd"
+          },
+          "party_page": {
+            "id": "general-dental-holdings-pty-ltd",
+            "name": "General Dental Holdings Pty Ltd"
           }
         }
       ],
@@ -148,13 +188,21 @@
         {
           "name": "Happy Rock Dental Practice",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "happy-rock-dental-practice",
+            "name": "Happy Rock Dental Practice"
+          }
         },
         {
           "name": "WEI-JIE JIANG PTY LTD",
           "identifier_type": "ABN",
           "identifier": "57 116 562 693",
           "canonical": {
+            "id": "wei-jie-jiang",
+            "name": "Wei-Jie Jiang"
+          },
+          "party_page": {
             "id": "wei-jie-jiang",
             "name": "Wei-Jie Jiang"
           }
@@ -170,14 +218,22 @@
         {
           "name": "Rocket Purchaser, L.L.C.",
           "identifier_type": null,
-          "identifier": "10521263"
+          "identifier": "10521263",
+          "party_page": {
+            "id": "rocket-purchaser-l-l-c",
+            "name": "Rocket Purchaser, L.L.C."
+          }
         }
       ],
       "targets": [
         {
           "name": "Advanced Cooling Technologies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "advanced-cooling-technologies-inc",
+            "name": "Advanced Cooling Technologies, Inc."
+          }
         }
       ]
     }

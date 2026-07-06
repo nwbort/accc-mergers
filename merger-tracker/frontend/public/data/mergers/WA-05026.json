@@ -14,31 +14,51 @@
     {
       "name": "MERCER INVESTMENTS (AUSTRALIA) LIMITED",
       "identifier_type": "ABN",
-      "identifier": "66 008 612 397"
+      "identifier": "66 008 612 397",
+      "party_page": {
+        "id": "mercer-investments-australia-limited",
+        "name": "Mercer Investments (Australia) Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "One MEA Holdings Pte. Ltd",
       "identifier_type": null,
-      "identifier": "201923882C"
+      "identifier": "201923882C",
+      "party_page": {
+        "id": "one-mea-holdings-pte-ltd",
+        "name": "One MEA Holdings Pte. Ltd"
+      }
     },
     {
       "name": "The Trustee for Stockland Residential Rental Partnership Trust",
       "identifier_type": "ABN",
-      "identifier": "55 773 008 463"
+      "identifier": "55 773 008 463",
+      "party_page": {
+        "id": "the-trustee-for-stockland-residential-rental-partnership-trust",
+        "name": "The Trustee for Stockland Residential Rental Partnership Trust"
+      }
     },
     {
       "name": "The Trustee for SRRP Development Trust",
       "identifier_type": "ABN",
-      "identifier": "29 422 661 271"
+      "identifier": "29 422 661 271",
+      "party_page": {
+        "id": "the-trustee-for-srrp-development-trust",
+        "name": "The Trustee for SRRP Development Trust"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "The Trustee for AP#2 Trust",
       "identifier_type": "ABN",
-      "identifier": "87 187 242 840"
+      "identifier": "87 187 242 840",
+      "party_page": {
+        "id": "the-trustee-for-ap-2-trust",
+        "name": "The Trustee for AP#2 Trust"
+      }
     }
   ],
   "anzsic_codes": [
@@ -111,14 +131,22 @@
         {
           "name": "MAP Logistics Holding Trust",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "map-logistics-holding-trust",
+            "name": "MAP Logistics Holding Trust"
+          }
         }
       ],
       "targets": [
         {
           "name": "Stockland M&G Asia Partnership 2",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "stockland-m-g-asia-partnership-2",
+            "name": "Stockland M&G Asia Partnership 2"
+          }
         }
       ]
     },
@@ -131,19 +159,31 @@
         {
           "name": "Argo Bowen 2 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 023 619"
+          "identifier": "695 023 619",
+          "party_page": {
+            "id": "argo-bowen-2-pty-ltd",
+            "name": "Argo Bowen 2 Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "48 149 524 809"
+          "identifier": "48 149 524 809",
+          "party_page": {
+            "id": "lenton-management-and-marketing-pty-ltd",
+            "name": "Lenton Management And Marketing Pty Ltd"
+          }
         },
         {
           "name": "COKING COAL ONE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "89 615 317 907"
+          "identifier": "89 615 317 907",
+          "party_page": {
+            "id": "coking-coal-one-pty-ltd",
+            "name": "Coking Coal One Pty Ltd"
+          }
         }
       ]
     },
@@ -156,19 +196,31 @@
         {
           "name": "OCEANIA CAPITAL PARTNERS LIMITED",
           "identifier_type": "ABN",
-          "identifier": "52 111 554 360"
+          "identifier": "52 111 554 360",
+          "party_page": {
+            "id": "oceania-capital-partners-limited",
+            "name": "Oceania Capital Partners Limited"
+          }
         },
         {
           "name": "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "k-k-ryan-pty-ltd-acn-623119960-as-trustee-for-the-k-k-ryan-family-trust",
+            "name": "K & K Ryan Pty Ltd (Acn 623119960) As Trustee For The K & K Ryan Family Trust"
+          }
         }
       ],
       "targets": [
         {
           "name": "HUDSON HIGHLAND (APAC) PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "14 074 319 396"
+          "identifier": "14 074 319 396",
+          "party_page": {
+            "id": "hudson-highland-apac-pty-limited",
+            "name": "Hudson Highland (Apac) Pty Limited"
+          }
         }
       ]
     }

@@ -18,25 +18,41 @@
       "canonical": {
         "id": "bcwf-2-pty-limited",
         "name": "Bcwf 2 Pty Limited"
+      },
+      "party_page": {
+        "id": "bcwf-2-pty-limited",
+        "name": "Bcwf 2 Pty Limited"
       }
     },
     {
       "name": "AULA ENERGY HOLDINGS PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "13 662 726 909"
+      "identifier": "13 662 726 909",
+      "party_page": {
+        "id": "aula-energy-holdings-pty-limited",
+        "name": "Aula Energy Holdings Pty Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "C S ENERGY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "54 078 848 745"
+      "identifier": "54 078 848 745",
+      "party_page": {
+        "id": "c-s-energy-limited",
+        "name": "C S Energy Limited"
+      }
     },
     {
       "name": "BCWF 2 PTY LIMITED",
       "identifier_type": "ABN",
       "identifier": "77 670 206 256",
       "canonical": {
+        "id": "bcwf-2-pty-limited",
+        "name": "Bcwf 2 Pty Limited"
+      },
+      "party_page": {
         "id": "bcwf-2-pty-limited",
         "name": "Bcwf 2 Pty Limited"
       }
@@ -109,24 +125,40 @@
         {
           "name": "CLEANPEAK ENERGY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "17 689 336 696"
+          "identifier": "17 689 336 696",
+          "party_page": {
+            "id": "cleanpeak-energy-holdings-pty-ltd",
+            "name": "Cleanpeak Energy Holdings Pty Ltd"
+          }
         },
         {
           "name": "CLEANPEAK IFM PROJECTS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "30 618 387 143"
+          "identifier": "30 618 387 143",
+          "party_page": {
+            "id": "cleanpeak-ifm-projects-pty-ltd",
+            "name": "Cleanpeak Ifm Projects Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "CARESUPER PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "14 008 650 628"
+          "identifier": "14 008 650 628",
+          "party_page": {
+            "id": "caresuper-pty-ltd",
+            "name": "Caresuper Pty Ltd"
+          }
         },
         {
           "name": "STATE STREET AUSTRALIA LTD",
           "identifier_type": "ABN",
-          "identifier": "21 002 965 200"
+          "identifier": "21 002 965 200",
+          "party_page": {
+            "id": "state-street-australia-ltd",
+            "name": "State Street Australia Ltd"
+          }
         }
       ]
     },
@@ -139,14 +171,22 @@
         {
           "name": "Quanta Services Australia Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "11 164 311 997"
+          "identifier": "11 164 311 997",
+          "party_page": {
+            "id": "quanta-services-australia-pty-ltd",
+            "name": "Quanta Services Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "PSD Global Holdings Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "634 380 813"
+          "identifier": "634 380 813",
+          "party_page": {
+            "id": "psd-global-holdings-pty-ltd",
+            "name": "PSD Global Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -159,7 +199,11 @@
         {
           "name": "Gunvor Group Ltd",
           "identifier_type": null,
-          "identifier": "Cyprus registration number  HE 279934"
+          "identifier": "Cyprus registration number  HE 279934",
+          "party_page": {
+            "id": "gunvor-group-ltd",
+            "name": "Gunvor Group Ltd"
+          }
         }
       ],
       "targets": [
@@ -168,6 +212,10 @@
           "identifier_type": "ABN",
           "identifier": "76 697 773 916",
           "canonical": {
+            "id": "zen-energy-retail-pty-ltd",
+            "name": "Zen Energy Retail Pty Ltd"
+          },
+          "party_page": {
             "id": "zen-energy-retail-pty-ltd",
             "name": "Zen Energy Retail Pty Ltd"
           }

@@ -14,34 +14,58 @@
     {
       "name": "Searchlight Capital IV LP",
       "identifier_type": null,
-      "identifier": "US SEC  0001954453"
+      "identifier": "US SEC  0001954453",
+      "party_page": {
+        "id": "searchlight-capital-iv-lp",
+        "name": "Searchlight Capital IV LP"
+      }
     },
     {
       "name": "KONA Merger Sub Co.",
       "identifier_type": null,
-      "identifier": "Delaware  10525073"
+      "identifier": "Delaware  10525073",
+      "party_page": {
+        "id": "kona-merger-sub-co",
+        "name": "KONA Merger Sub Co."
+      }
     },
     {
       "name": "KONA Parent LP",
       "identifier_type": null,
-      "identifier": "Delaware  10525128"
+      "identifier": "Delaware  10525128",
+      "party_page": {
+        "id": "kona-parent-lp",
+        "name": "KONA Parent LP"
+      }
     },
     {
       "name": "ABRY Partners VII Co-Investment Fund, LP",
       "identifier_type": null,
-      "identifier": "US SEC  0001681304"
+      "identifier": "US SEC  0001681304",
+      "party_page": {
+        "id": "abry-partners-vii-co-investment-fund-lp",
+        "name": "ABRY Partners VII Co-Investment Fund, LP"
+      }
     },
     {
       "name": "Abry Partners VII, LP",
       "identifier_type": null,
-      "identifier": "US SEC  0001510627"
+      "identifier": "US SEC  0001510627",
+      "party_page": {
+        "id": "abry-partners-vii-lp",
+        "name": "Abry Partners VII, LP"
+      }
     }
   ],
   "targets": [
     {
       "name": "KORE Group Holdings, Inc.",
       "identifier_type": null,
-      "identifier": "Delaware  5388903"
+      "identifier": "Delaware  5388903",
+      "party_page": {
+        "id": "kore-group-holdings-inc",
+        "name": "KORE Group Holdings, Inc."
+      }
     }
   ],
   "other_parties": [],
@@ -111,14 +135,22 @@
         {
           "name": "Rocket Purchaser, L.L.C.",
           "identifier_type": null,
-          "identifier": "10521263"
+          "identifier": "10521263",
+          "party_page": {
+            "id": "rocket-purchaser-l-l-c",
+            "name": "Rocket Purchaser, L.L.C."
+          }
         }
       ],
       "targets": [
         {
           "name": "Advanced Cooling Technologies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "advanced-cooling-technologies-inc",
+            "name": "Advanced Cooling Technologies, Inc."
+          }
         }
       ]
     },
@@ -131,14 +163,22 @@
         {
           "name": "IBWM PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "28 621 141 026"
+          "identifier": "28 621 141 026",
+          "party_page": {
+            "id": "ibwm-pty-ltd",
+            "name": "Ibwm Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "VIOLA GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 680 038 180"
+          "identifier": "20 680 038 180",
+          "party_page": {
+            "id": "viola-group-holdings-pty-ltd",
+            "name": "Viola Group Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -151,19 +191,31 @@
         {
           "name": "Adobe Inc. (NASDAQ: ADBE)",
           "identifier_type": null,
-          "identifier": "2748129"
+          "identifier": "2748129",
+          "party_page": {
+            "id": "adobe-inc-nasdaq-adbe",
+            "name": "Adobe Inc. (NASDAQ: ADBE)"
+          }
         },
         {
           "name": "Fenway Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "10389477"
+          "identifier": "10389477",
+          "party_page": {
+            "id": "fenway-merger-sub-inc",
+            "name": "Fenway Merger Sub, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Semrush Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "7690622"
+          "identifier": "7690622",
+          "party_page": {
+            "id": "semrush-holdings-inc",
+            "name": "Semrush Holdings, Inc."
+          }
         }
       ]
     }

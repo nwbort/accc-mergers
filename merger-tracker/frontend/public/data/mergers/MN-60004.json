@@ -16,26 +16,42 @@
     {
       "name": "IOR PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "36 009 653 070"
+      "identifier": "36 009 653 070",
+      "party_page": {
+        "id": "ior-pty-ltd",
+        "name": "Ior Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "DELTA SPECIALISED ENERGY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "11 624 642 682"
+      "identifier": "11 624 642 682",
+      "party_page": {
+        "id": "delta-specialised-energy-pty-ltd",
+        "name": "Delta Specialised Energy Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "The Trustee for National Energy Investment Trust",
       "identifier_type": "ABN",
-      "identifier": "83 354 514 679"
+      "identifier": "83 354 514 679",
+      "party_page": {
+        "id": "the-trustee-for-national-energy-investment-trust",
+        "name": "The Trustee for National Energy Investment Trust"
+      }
     },
     {
       "name": "SMRM HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "85 168 760 861"
+      "identifier": "85 168 760 861",
+      "party_page": {
+        "id": "smrm-holdings-pty-ltd",
+        "name": "Smrm Holdings Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -118,14 +134,22 @@
         {
           "name": "IBWM PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "28 621 141 026"
+          "identifier": "28 621 141 026",
+          "party_page": {
+            "id": "ibwm-pty-ltd",
+            "name": "Ibwm Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "VIOLA GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 680 038 180"
+          "identifier": "20 680 038 180",
+          "party_page": {
+            "id": "viola-group-holdings-pty-ltd",
+            "name": "Viola Group Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -138,14 +162,22 @@
         {
           "name": "China Petrochemical Corporation",
           "identifier_type": null,
-          "identifier": "Unified social credit identifier 9111000010169286X1"
+          "identifier": "Unified social credit identifier 9111000010169286X1",
+          "party_page": {
+            "id": "china-petrochemical-corporation",
+            "name": "China Petrochemical Corporation"
+          }
         }
       ],
       "targets": [
         {
           "name": "China National Aviation Fuel Group Limited",
           "identifier_type": null,
-          "identifier": "Unified social credit identifier 911100007109303176"
+          "identifier": "Unified social credit identifier 911100007109303176",
+          "party_page": {
+            "id": "china-national-aviation-fuel-group-limited",
+            "name": "China National Aviation Fuel Group Limited"
+          }
         }
       ]
     },
@@ -162,6 +194,10 @@
           "canonical": {
             "id": "tetra-tech-inc",
             "name": "Tetra Tech, Inc."
+          },
+          "party_page": {
+            "id": "tetra-tech-inc",
+            "name": "Tetra Tech, Inc."
           }
         }
       ],
@@ -169,7 +205,11 @@
         {
           "name": "Providence Consulting Group Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "49 117 321 552"
+          "identifier": "49 117 321 552",
+          "party_page": {
+            "id": "providence-consulting-group-pty-ltd",
+            "name": "Providence Consulting Group Pty Ltd"
+          }
         }
       ]
     }

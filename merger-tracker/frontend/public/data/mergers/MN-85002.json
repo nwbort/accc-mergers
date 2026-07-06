@@ -20,6 +20,10 @@
       "canonical": {
         "id": "servicenow-inc",
         "name": "ServiceNow, Inc."
+      },
+      "party_page": {
+        "id": "servicenow-inc",
+        "name": "ServiceNow, Inc."
       }
     }
   ],
@@ -27,7 +31,11 @@
     {
       "name": "Veza Technologies, Inc.",
       "identifier_type": null,
-      "identifier": "7791387"
+      "identifier": "7791387",
+      "party_page": {
+        "id": "veza-technologies-inc",
+        "name": "Veza Technologies, Inc."
+      }
     }
   ],
   "other_parties": [],
@@ -115,6 +123,10 @@
           "canonical": {
             "id": "servicenow-inc",
             "name": "ServiceNow, Inc."
+          },
+          "party_page": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
           }
         }
       ],
@@ -122,12 +134,20 @@
         {
           "name": "Armis Security, Ltd.",
           "identifier_type": null,
-          "identifier": "515335941"
+          "identifier": "515335941",
+          "party_page": {
+            "id": "armis-security-ltd",
+            "name": "Armis Security, Ltd."
+          }
         },
         {
           "name": "Armis, Inc.",
           "identifier_type": null,
-          "identifier": "6021196"
+          "identifier": "6021196",
+          "party_page": {
+            "id": "armis-inc",
+            "name": "Armis, Inc."
+          }
         }
       ]
     },
@@ -140,14 +160,22 @@
         {
           "name": "Zendesk, Inc.",
           "identifier_type": null,
-          "identifier": "EIN 264411091"
+          "identifier": "EIN 264411091",
+          "party_page": {
+            "id": "zendesk-inc",
+            "name": "Zendesk, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Forethought Technologies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "forethought-technologies-inc",
+            "name": "Forethought Technologies, Inc."
+          }
         }
       ]
     },
@@ -160,14 +188,22 @@
         {
           "name": "HCL Technologies Limited",
           "identifier_type": "ABN",
-          "identifier": "37 541 578 951"
+          "identifier": "37 541 578 951",
+          "party_page": {
+            "id": "hcl-technologies-limited",
+            "name": "HCL Technologies Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "94 092 002 321"
+          "identifier": "94 092 002 321",
+          "party_page": {
+            "id": "cloud-software-group-australia-pty-ltd",
+            "name": "Cloud Software Group Australia Pty Ltd"
+          }
         }
       ]
     }

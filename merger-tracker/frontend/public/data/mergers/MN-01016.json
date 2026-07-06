@@ -16,14 +16,22 @@
     {
       "name": "ASAHI HOLDINGS (AUSTRALIA) PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "48 135 315 767"
+      "identifier": "48 135 315 767",
+      "party_page": {
+        "id": "asahi-holdings-australia-pty-ltd",
+        "name": "Asahi Holdings (Australia) Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "GPT PLATFORM PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "51 164 839 061"
+      "identifier": "51 164 839 061",
+      "party_page": {
+        "id": "gpt-platform-pty-limited",
+        "name": "Gpt Platform Pty Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -118,14 +126,22 @@
         {
           "name": "ASAHI HOLDINGS (AUSTRALIA) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "48 135 315 767"
+          "identifier": "48 135 315 767",
+          "party_page": {
+            "id": "asahi-holdings-australia-pty-ltd",
+            "name": "Asahi Holdings (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "GTA INDUSTRIAL CUSTODIAN PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "45 081 823 743"
+          "identifier": "45 081 823 743",
+          "party_page": {
+            "id": "gta-industrial-custodian-pty-limited",
+            "name": "Gta Industrial Custodian Pty Limited"
+          }
         }
       ]
     },
@@ -138,19 +154,31 @@
         {
           "name": "ASPHALT OPERATORS AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 682 698 282"
+          "identifier": "11 682 698 282",
+          "party_page": {
+            "id": "asphalt-operators-australia-pty-ltd",
+            "name": "Asphalt Operators Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "COLAS QUEENSLAND PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "91 169 872 208"
+          "identifier": "91 169 872 208",
+          "party_page": {
+            "id": "colas-queensland-pty-ltd",
+            "name": "Colas Queensland Pty Ltd"
+          }
         },
         {
           "name": "COLAS AUSTRALIA GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 000 388 161"
+          "identifier": "11 000 388 161",
+          "party_page": {
+            "id": "colas-australia-group-pty-ltd",
+            "name": "Colas Australia Group Pty Ltd"
+          }
         }
       ]
     },
@@ -163,14 +191,22 @@
         {
           "name": "Danaher Corporation",
           "identifier_type": null,
-          "identifier": "213594"
+          "identifier": "213594",
+          "party_page": {
+            "id": "danaher-corporation",
+            "name": "Danaher Corporation"
+          }
         }
       ],
       "targets": [
         {
           "name": "Masimo Corporation",
           "identifier_type": null,
-          "identifier": "2614702"
+          "identifier": "2614702",
+          "party_page": {
+            "id": "masimo-corporation",
+            "name": "Masimo Corporation"
+          }
         }
       ]
     }

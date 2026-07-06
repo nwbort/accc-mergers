@@ -14,34 +14,58 @@
     {
       "name": "TDR Capital LLP",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "tdr-capital-llp",
+        "name": "TDR Capital LLP"
+      }
     },
     {
       "name": "Estoril Coinvest SCSp",
       "identifier_type": null,
-      "identifier": "B303369"
+      "identifier": "B303369",
+      "party_page": {
+        "id": "estoril-coinvest-scsp",
+        "name": "Estoril Coinvest SCSp"
+      }
     }
   ],
   "targets": [
     {
       "name": "ESCODE AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "96 675 307 301"
+      "identifier": "96 675 307 301",
+      "party_page": {
+        "id": "escode-australia-pty-ltd",
+        "name": "Escode Australia Pty Ltd"
+      }
     },
     {
       "name": "NCC Group plc",
       "identifier_type": null,
-      "identifier": "UK Company number: 04627044"
+      "identifier": "UK Company number: 04627044",
+      "party_page": {
+        "id": "ncc-group-plc",
+        "name": "NCC Group plc"
+      }
     },
     {
       "name": "Escode Jersey Holdco Limited",
       "identifier_type": null,
-      "identifier": "Jersey Registration Number 162830"
+      "identifier": "Jersey Registration Number 162830",
+      "party_page": {
+        "id": "escode-jersey-holdco-limited",
+        "name": "Escode Jersey Holdco Limited"
+      }
     },
     {
       "name": "NCC Group Software Resilience (Americas) LLC",
       "identifier_type": null,
-      "identifier": "State of Delaware File Number 5837008"
+      "identifier": "State of Delaware File Number 5837008",
+      "party_page": {
+        "id": "ncc-group-software-resilience-americas-llc",
+        "name": "NCC Group Software Resilience (Americas) LLC"
+      }
     }
   ],
   "other_parties": [],
@@ -111,14 +135,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "The Trustee for the Comfy Dental Trust",
           "identifier_type": "ABN",
-          "identifier": "59 865 563 072"
+          "identifier": "59 865 563 072",
+          "party_page": {
+            "id": "the-trustee-for-the-comfy-dental-trust",
+            "name": "The Trustee for the Comfy Dental Trust"
+          }
         }
       ]
     },
@@ -131,24 +163,40 @@
         {
           "name": "Coforge Limited",
           "identifier_type": null,
-          "identifier": "L72100HR1992PLC128382"
+          "identifier": "L72100HR1992PLC128382",
+          "party_page": {
+            "id": "coforge-limited",
+            "name": "Coforge Limited"
+          }
         },
         {
           "name": "Encora Holdco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdco-limited",
+            "name": "Encora Holdco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Encora US Holdco, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-us-holdco-inc",
+            "name": "Encora US Holdco, Inc"
+          }
         },
         {
           "name": "Encora Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdings-limited",
+            "name": "Encora Holdings Limited"
+          }
         }
       ]
     },
@@ -161,14 +209,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "TAN DENTAL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "18 146 067 594"
+          "identifier": "18 146 067 594",
+          "party_page": {
+            "id": "tan-dental-pty-ltd",
+            "name": "Tan Dental Pty Ltd"
+          }
         }
       ]
     }

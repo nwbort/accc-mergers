@@ -16,20 +16,32 @@
     {
       "name": "INTREPID TRAVEL PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "35 007 172 456"
+      "identifier": "35 007 172 456",
+      "party_page": {
+        "id": "intrepid-travel-pty-ltd",
+        "name": "Intrepid Travel Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "WILD BUSH LUXURY EXPERIENCE PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "47 648 431 734"
+      "identifier": "47 648 431 734",
+      "party_page": {
+        "id": "wild-bush-luxury-experience-pty-ltd",
+        "name": "Wild Bush Luxury Experience Pty Ltd"
+      }
     },
     {
       "name": "EXPERIENCE CO LIMITED",
       "identifier_type": "ABN",
       "identifier": "56 167 320 470",
       "canonical": {
+        "id": "experience-co-limited",
+        "name": "Experience Co Limited"
+      },
+      "party_page": {
         "id": "experience-co-limited",
         "name": "Experience Co Limited"
       }
@@ -39,17 +51,29 @@
     {
       "name": "EXPERIENCE CO ADMIN PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "30 636 083 639"
+      "identifier": "30 636 083 639",
+      "party_page": {
+        "id": "experience-co-admin-pty-ltd",
+        "name": "Experience Co Admin Pty Ltd"
+      }
     },
     {
       "name": "INTREPID IP HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "54 006 831 974"
+      "identifier": "54 006 831 974",
+      "party_page": {
+        "id": "intrepid-ip-holdings-pty-ltd",
+        "name": "Intrepid Ip Holdings Pty Ltd"
+      }
     },
     {
       "name": "SKYDIVE HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "99 140 817 063"
+      "identifier": "99 140 817 063",
+      "party_page": {
+        "id": "skydive-holdings-pty-ltd",
+        "name": "Skydive Holdings Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -149,14 +173,22 @@
         {
           "name": "JB KAKADU HOTEL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "86 692 273 591"
+          "identifier": "86 692 273 591",
+          "party_page": {
+            "id": "jb-kakadu-hotel-pty-ltd",
+            "name": "Jb Kakadu Hotel Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "KAKADU TOURISM (GCH) PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "50 087 366 612"
+          "identifier": "50 087 366 612",
+          "party_page": {
+            "id": "kakadu-tourism-gch-pty-limited",
+            "name": "Kakadu Tourism (Gch) Pty Limited"
+          }
         }
       ]
     },
@@ -169,14 +201,22 @@
         {
           "name": "ETG QUEENSLAND PROCESSING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 695 139 032"
+          "identifier": "20 695 139 032",
+          "party_page": {
+            "id": "etg-queensland-processing-pty-ltd",
+            "name": "Etg Queensland Processing Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "QUEENSLAND COTTON CORPORATION PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "26 010 944 591"
+          "identifier": "26 010 944 591",
+          "party_page": {
+            "id": "queensland-cotton-corporation-pty-ltd",
+            "name": "Queensland Cotton Corporation Pty Ltd"
+          }
         }
       ]
     },
@@ -189,14 +229,22 @@
         {
           "name": "Badger Merger Sub I, Inc",
           "identifier_type": null,
-          "identifier": "10389384"
+          "identifier": "10389384",
+          "party_page": {
+            "id": "badger-merger-sub-i-inc",
+            "name": "Badger Merger Sub I, Inc"
+          }
         }
       ],
       "targets": [
         {
           "name": "Exact Sciences Corporation",
           "identifier_type": null,
-          "identifier": "020478229"
+          "identifier": "020478229",
+          "party_page": {
+            "id": "exact-sciences-corporation",
+            "name": "Exact Sciences Corporation"
+          }
         }
       ]
     }

@@ -15,21 +15,33 @@
         {
           "name": "MedHealth Pty Limited",
           "identifier_type": "ABN",
-          "identifier": "32 141 219 785"
+          "identifier": "32 141 219 785",
+          "party_page": {
+            "id": "medhealth-pty-limited",
+            "name": "MedHealth Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CONNECT ALLIED HEALTH PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 611 517 232"
+          "identifier": "70 611 517 232",
+          "party_page": {
+            "id": "connect-allied-health-pty-ltd",
+            "name": "Connect Allied Health Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "ExamWorks Group Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "examworks-group-inc",
+            "name": "ExamWorks Group Inc"
+          }
         }
       ],
       "anzsic_codes": [
@@ -55,14 +67,22 @@
         {
           "name": "RDO AUSTRALIA PROPERTY HOLDINGS NO 2 PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "28 633 633 753"
+          "identifier": "28 633 633 753",
+          "party_page": {
+            "id": "rdo-australia-property-holdings-no-2-pty-ltd",
+            "name": "Rdo Australia Property Holdings No 2 Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "CD & JB INVESTMENTS PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "630 465 815"
+          "identifier": "630 465 815",
+          "party_page": {
+            "id": "cd-jb-investments-pty-ltd",
+            "name": "Cd & Jb Investments Pty Ltd"
+          }
         }
       ],
       "other_parties": [],
@@ -89,41 +109,69 @@
         {
           "name": "Midea Imaging Technology (Shanghai) Co., Ltd.",
           "identifier_type": null,
-          "identifier": "USCC  91310118MAEN420F3W"
+          "identifier": "USCC  91310118MAEN420F3W",
+          "party_page": {
+            "id": "midea-imaging-technology-shanghai-co-ltd",
+            "name": "Midea Imaging Technology (Shanghai) Co., Ltd."
+          }
         }
       ],
       "targets": [
         {
           "name": "Esaote S.p.A.",
           "identifier_type": null,
-          "identifier": "Codice Fiscale/Partita IVA  05131180969"
+          "identifier": "Codice Fiscale/Partita IVA  05131180969",
+          "party_page": {
+            "id": "esaote-s-p-a",
+            "name": "Esaote S.p.A."
+          }
         },
         {
           "name": "Shanghai Lu Zi Enterprise Management Consulting Center",
           "identifier_type": null,
-          "identifier": "USCC  91310115MA1K3D4T1W"
+          "identifier": "USCC  91310115MA1K3D4T1W",
+          "party_page": {
+            "id": "shanghai-lu-zi-enterprise-management-consulting-center",
+            "name": "Shanghai Lu Zi Enterprise Management Consulting Center"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Midea Group (Shanghai) Co., Ltd.",
           "identifier_type": null,
-          "identifier": "USCC  91310118MA1JNET8X1"
+          "identifier": "USCC  91310118MA1JNET8X1",
+          "party_page": {
+            "id": "midea-group-shanghai-co-ltd",
+            "name": "Midea Group (Shanghai) Co., Ltd."
+          }
         },
         {
           "name": "Carestream Healthcare International Company Limited",
           "identifier_type": null,
-          "identifier": "USCC  913100007956050379"
+          "identifier": "USCC  913100007956050379",
+          "party_page": {
+            "id": "carestream-healthcare-international-company-limited",
+            "name": "Carestream Healthcare International Company Limited"
+          }
         },
         {
           "name": "Midea Medical Technology (Shanghai) Co., Ltd.",
           "identifier_type": null,
-          "identifier": "USCC  91310118MAEBMH8U5G"
+          "identifier": "USCC  91310118MAEBMH8U5G",
+          "party_page": {
+            "id": "midea-medical-technology-shanghai-co-ltd",
+            "name": "Midea Medical Technology (Shanghai) Co., Ltd."
+          }
         },
         {
           "name": "Wansheng Medical Investments (Italy) S.p.A.",
           "identifier_type": null,
-          "identifier": "Codice Fiscale  10087620968"
+          "identifier": "Codice Fiscale  10087620968",
+          "party_page": {
+            "id": "wansheng-medical-investments-italy-s-p-a",
+            "name": "Wansheng Medical Investments (Italy) S.p.A."
+          }
         },
         {
           "name": "Midea Group Co., Ltd.",
@@ -132,17 +180,29 @@
           "canonical": {
             "id": "midea-group-co-ltd",
             "name": "Midea Group Co., Ltd."
+          },
+          "party_page": {
+            "id": "midea-group-co-ltd",
+            "name": "Midea Group Co., Ltd."
           }
         },
         {
           "name": "Beijing Wandong Medical Technology Co., Ltd.",
           "identifier_type": null,
-          "identifier": "USCC  9111000063379674X4"
+          "identifier": "USCC  9111000063379674X4",
+          "party_page": {
+            "id": "beijing-wandong-medical-technology-co-ltd",
+            "name": "Beijing Wandong Medical Technology Co., Ltd."
+          }
         },
         {
           "name": "Wansheng Medical Investments (Hong Kong) Limited",
           "identifier_type": null,
-          "identifier": "Company Registry Identification Number  2591584"
+          "identifier": "Company Registry Identification Number  2591584",
+          "party_page": {
+            "id": "wansheng-medical-investments-hong-kong-limited",
+            "name": "Wansheng Medical Investments (Hong Kong) Limited"
+          }
         }
       ],
       "anzsic_codes": [
@@ -172,26 +232,42 @@
         {
           "name": "Goldcup 39483 AB (u.n.c.t. Prometheus BidCo AB)",
           "identifier_type": null,
-          "identifier": "Swedish registration number 5595805887"
+          "identifier": "Swedish registration number 5595805887",
+          "party_page": {
+            "id": "goldcup-39483-ab-u-n-c-t-prometheus-bidco-ab",
+            "name": "Goldcup 39483 AB (u.n.c.t. Prometheus BidCo AB)"
+          }
         }
       ],
       "targets": [
         {
           "name": "SELATEK Holding AB",
           "identifier_type": null,
-          "identifier": "Swedish registration number: 5593325987"
+          "identifier": "Swedish registration number: 5593325987",
+          "party_page": {
+            "id": "selatek-holding-ab",
+            "name": "SELATEK Holding AB"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "IK Partners",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "ik-partners",
+            "name": "IK Partners"
+          }
         },
         {
           "name": "Deltatec AB",
           "identifier_type": null,
-          "identifier": "Swedish registration number: 5567168660"
+          "identifier": "Swedish registration number: 5567168660",
+          "party_page": {
+            "id": "deltatec-ab",
+            "name": "Deltatec AB"
+          }
         }
       ],
       "anzsic_codes": [
@@ -217,21 +293,33 @@
         {
           "name": "EPL Limited",
           "identifier_type": null,
-          "identifier": "Registered in India, no. L74950MH1982PLC028947"
+          "identifier": "Registered in India, no. L74950MH1982PLC028947",
+          "party_page": {
+            "id": "epl-limited",
+            "name": "EPL Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Indovida India Private Limited",
           "identifier_type": null,
-          "identifier": "Registered in India, no. U22203MH2025PTC455949"
+          "identifier": "Registered in India, no. U22203MH2025PTC455949",
+          "party_page": {
+            "id": "indovida-india-private-limited",
+            "name": "Indovida India Private Limited"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Petform (Thailand) Limited",
           "identifier_type": null,
-          "identifier": "Registered in Thailand, no. 0165539000306"
+          "identifier": "Registered in Thailand, no. 0165539000306",
+          "party_page": {
+            "id": "petform-thailand-limited",
+            "name": "Petform (Thailand) Limited"
+          }
         },
         {
           "name": "Blackstone Inc.",
@@ -240,27 +328,47 @@
           "canonical": {
             "id": "blackstone-inc",
             "name": "Blackstone Inc."
+          },
+          "party_page": {
+            "id": "blackstone-inc",
+            "name": "Blackstone Inc."
           }
         },
         {
           "name": "Indorama Ventures Public Company Limited",
           "identifier_type": null,
-          "identifier": "Registered in Thailand, no. 0107552000201"
+          "identifier": "Registered in Thailand, no. 0107552000201",
+          "party_page": {
+            "id": "indorama-ventures-public-company-limited",
+            "name": "Indorama Ventures Public Company Limited"
+          }
         },
         {
           "name": "Ngoc Nghia Industry - Service - Trading Joint Stock Company",
           "identifier_type": null,
-          "identifier": "Registered in Vietnam, no. 0301427028"
+          "identifier": "Registered in Vietnam, no. 0301427028",
+          "party_page": {
+            "id": "ngoc-nghia-industry-service-trading-joint-stock-company",
+            "name": "Ngoc Nghia Industry - Service - Trading Joint Stock Company"
+          }
         },
         {
           "name": "Epsilon Bidco Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "Registered in Singapore, no. 201736984W"
+          "identifier": "Registered in Singapore, no. 201736984W",
+          "party_page": {
+            "id": "epsilon-bidco-pte-ltd",
+            "name": "Epsilon Bidco Pte. Ltd."
+          }
         },
         {
           "name": "Indorama Netherland B.V.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "indorama-netherland-b-v",
+            "name": "Indorama Netherland B.V."
+          }
         }
       ],
       "anzsic_codes": [
@@ -290,26 +398,42 @@
         {
           "name": "AVC OPERATIONS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "FLOTTO HOLDINGS PTY. LTD. as trustee for Milton Trust",
           "identifier_type": "ABN",
-          "identifier": "90 003 868 335"
+          "identifier": "90 003 868 335",
+          "party_page": {
+            "id": "flotto-holdings-pty-ltd-as-trustee-for-milton-trust",
+            "name": "FLOTTO HOLDINGS PTY. LTD. as trustee for Milton Trust"
+          }
         },
         {
           "name": "Austlen Pty Limited as trustee for The Courthouse Trust",
           "identifier_type": "ACN",
-          "identifier": "120 109 962"
+          "identifier": "120 109 962",
+          "party_page": {
+            "id": "austlen-pty-limited-as-trustee-for-the-courthouse-trust",
+            "name": "Austlen Pty Limited as trustee for The Courthouse Trust"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Australian Venue Co. Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "australian-venue-co-holdings-limited-2",
+            "name": "Australian Venue Co. Holdings Limited"
+          }
         }
       ],
       "anzsic_codes": [
@@ -339,36 +463,60 @@
         {
           "name": "Cognizant Domestic Holdings Corporation",
           "identifier_type": null,
-          "identifier": "Delaware file number 5221744"
+          "identifier": "Delaware file number 5221744",
+          "party_page": {
+            "id": "cognizant-domestic-holdings-corporation",
+            "name": "Cognizant Domestic Holdings Corporation"
+          }
         },
         {
           "name": "Asteroid Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware file number 10587708"
+          "identifier": "Delaware file number 10587708",
+          "party_page": {
+            "id": "asteroid-merger-sub-inc",
+            "name": "Asteroid Merger Sub, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Astreya Partners, Inc.",
           "identifier_type": null,
-          "identifier": "CIN 770570107"
+          "identifier": "CIN 770570107",
+          "party_page": {
+            "id": "astreya-partners-inc",
+            "name": "Astreya Partners, Inc."
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Shareholder Representative Services LLC (as the stockholder representative)",
           "identifier_type": null,
-          "identifier": "20071132387"
+          "identifier": "20071132387",
+          "party_page": {
+            "id": "shareholder-representative-services-llc-as-the-stockholder-representative",
+            "name": "Shareholder Representative Services LLC (as the stockholder representative)"
+          }
         },
         {
           "name": "Astreya Pty Ltd",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "astreya-pty-ltd",
+            "name": "Astreya Pty Ltd"
+          }
         },
         {
           "name": "Cognizant Technology Solutions",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "cognizant-technology-solutions",
+            "name": "Cognizant Technology Solutions"
+          }
         }
       ],
       "anzsic_codes": [
@@ -394,14 +542,22 @@
         {
           "name": "Adyen N.V.",
           "identifier_type": null,
-          "identifier": "KvK  34259528"
+          "identifier": "KvK  34259528",
+          "party_page": {
+            "id": "adyen-n-v",
+            "name": "Adyen N.V."
+          }
         }
       ],
       "targets": [
         {
           "name": "Talon.One GmbH",
           "identifier_type": null,
-          "identifier": "HRB  172085B"
+          "identifier": "HRB  172085B",
+          "party_page": {
+            "id": "talon-one-gmbh",
+            "name": "Talon.One GmbH"
+          }
         }
       ],
       "other_parties": [],
@@ -432,26 +588,42 @@
         {
           "name": "Ivera Bidco B.V.",
           "identifier_type": null,
-          "identifier": "Dutch Commercial Register  42000883"
+          "identifier": "Dutch Commercial Register  42000883",
+          "party_page": {
+            "id": "ivera-bidco-b-v",
+            "name": "Ivera Bidco B.V."
+          }
         }
       ],
       "targets": [
         {
           "name": "Protego Holdco B.V.",
           "identifier_type": null,
-          "identifier": "Dutch Commercial Register  80710417"
+          "identifier": "Dutch Commercial Register  80710417",
+          "party_page": {
+            "id": "protego-holdco-b-v",
+            "name": "Protego Holdco B.V."
+          }
         },
         {
           "name": "Agilitas Protego 2026 Subsidiary Fund LP",
           "identifier_type": null,
-          "identifier": "Jersey Registry  5028"
+          "identifier": "Jersey Registry  5028",
+          "party_page": {
+            "id": "agilitas-protego-2026-subsidiary-fund-lp",
+            "name": "Agilitas Protego 2026 Subsidiary Fund LP"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Triton Investments Advisers LLP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "triton-investments-advisers-llp",
+            "name": "Triton Investments Advisers LLP"
+          }
         }
       ],
       "anzsic_codes": [
@@ -481,14 +653,22 @@
         {
           "name": "SYDNEY WATER CORPORATION",
           "identifier_type": "ABN",
-          "identifier": "49 776 225 038"
+          "identifier": "49 776 225 038",
+          "party_page": {
+            "id": "sydney-water-corporation",
+            "name": "Sydney Water Corporation"
+          }
         }
       ],
       "targets": [
         {
           "name": "HAWKESBURY CITY COUNCIL",
           "identifier_type": "ABN",
-          "identifier": "54 659 038 834"
+          "identifier": "54 659 038 834",
+          "party_page": {
+            "id": "hawkesbury-city-council",
+            "name": "Hawkesbury City Council"
+          }
         }
       ],
       "other_parties": [],
@@ -515,41 +695,69 @@
         {
           "name": "T\u00fcrk Hava Yollar\u0131 Anonim Ortakl\u0131\u011f\u0131",
           "identifier_type": null,
-          "identifier": "Registration number  751840"
+          "identifier": "Registration number  751840",
+          "party_page": {
+            "id": "t-rk-hava-yollar-anonim-ortakl",
+            "name": "T\u00fcrk Hava Yollar\u0131 Anonim Ortakl\u0131\u011f\u0131"
+          }
         }
       ],
       "targets": [
         {
           "name": "Air Europa Holding, S.L.",
           "identifier_type": null,
-          "identifier": "PM87946"
+          "identifier": "PM87946",
+          "party_page": {
+            "id": "air-europa-holding-s-l",
+            "name": "Air Europa Holding, S.L."
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Air Europa L\u00edneas A\u00e9reas, S.A.U.",
           "identifier_type": null,
-          "identifier": "PM4757"
+          "identifier": "PM4757",
+          "party_page": {
+            "id": "air-europa-l-neas-a-reas-s-a-u",
+            "name": "Air Europa L\u00edneas A\u00e9reas, S.A.U."
+          }
         },
         {
           "name": "Le\u00f3n Activos Aeron\u00e1uticos, S.L.U.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "le-n-activos-aeron-uticos-s-l-u",
+            "name": "Le\u00f3n Activos Aeron\u00e1uticos, S.L.U."
+          }
         },
         {
           "name": "Air Europa Suma Miles, S.L.U.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "air-europa-suma-miles-s-l-u",
+            "name": "Air Europa Suma Miles, S.L.U."
+          }
         },
         {
           "name": "Globalia Corporaci\u00f3n Empresarial, S.A.",
           "identifier_type": null,
-          "identifier": "PM26677"
+          "identifier": "PM26677",
+          "party_page": {
+            "id": "globalia-corporaci-n-empresarial-s-a",
+            "name": "Globalia Corporaci\u00f3n Empresarial, S.A."
+          }
         },
         {
           "name": "Aeronova, S.L.U.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "aeronova-s-l-u",
+            "name": "Aeronova, S.L.U."
+          }
         }
       ],
       "anzsic_codes": [
@@ -579,36 +787,60 @@
         {
           "name": "Zijin Gold (Group) Co., Ltd.,",
           "identifier_type": null,
-          "identifier": "USCC 91350823MAD2GJHT7P"
+          "identifier": "USCC 91350823MAD2GJHT7P",
+          "party_page": {
+            "id": "zijin-gold-group-co-ltd",
+            "name": "Zijin Gold (Group) Co., Ltd.,"
+          }
         }
       ],
       "targets": [
         {
           "name": "Li Jinyang",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "li-jinyang",
+            "name": "Li Jinyang"
+          }
         },
         {
           "name": "Zhejiang Hanfeng Venture Capital Partnership (Limited Partnership)",
           "identifier_type": null,
-          "identifier": "USCC 91110108MA01H51G1X"
+          "identifier": "USCC 91110108MA01H51G1X",
+          "party_page": {
+            "id": "zhejiang-hanfeng-venture-capital-partnership-limited-partnership",
+            "name": "Zhejiang Hanfeng Venture Capital Partnership (Limited Partnership)"
+          }
         },
         {
           "name": "Chifeng Jilong Gold Mining Co., Ltd.",
           "identifier_type": null,
-          "identifier": "USCC 91150000708204391F"
+          "identifier": "USCC 91150000708204391F",
+          "party_page": {
+            "id": "chifeng-jilong-gold-mining-co-ltd",
+            "name": "Chifeng Jilong Gold Mining Co., Ltd."
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Zijin Mining Group Co. Ltd",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "zijin-mining-group-co-ltd",
+            "name": "Zijin Mining Group Co. Ltd"
+          }
         },
         {
           "name": "Norton Gold Fields Pty Ltd",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "norton-gold-fields-pty-ltd",
+            "name": "Norton Gold Fields Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -634,14 +866,22 @@
         {
           "name": "Alta Genetics Australia Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "54 140 644 784"
+          "identifier": "54 140 644 784",
+          "party_page": {
+            "id": "alta-genetics-australia-pty-ltd",
+            "name": "Alta Genetics Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "AGRIWEBB PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "56 163 515 900"
+          "identifier": "56 163 515 900",
+          "party_page": {
+            "id": "agriwebb-pty-ltd",
+            "name": "Agriwebb Pty Ltd"
+          }
         }
       ],
       "other_parties": [
@@ -650,6 +890,10 @@
           "identifier_type": null,
           "identifier": "",
           "canonical": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
+          },
+          "party_page": {
             "id": "cvc-capital-partners",
             "name": "CVC Capital Partners"
           }
@@ -682,14 +926,22 @@
         {
           "name": "Zoetis Holdings LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "zoetis-holdings-llc",
+            "name": "Zoetis Holdings LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Neogen Corporation",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "neogen-corporation",
+            "name": "Neogen Corporation"
+          }
         }
       ],
       "other_parties": [],
@@ -720,26 +972,42 @@
         {
           "name": "TWG HUNTER DEALERSHIPS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "18 695 726 348"
+          "identifier": "18 695 726 348",
+          "party_page": {
+            "id": "twg-hunter-dealerships-pty-ltd",
+            "name": "Twg Hunter Dealerships Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "SHARTON MOTORS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "55 001 345 384"
+          "identifier": "55 001 345 384",
+          "party_page": {
+            "id": "sharton-motors-pty-ltd",
+            "name": "Sharton Motors Pty Ltd"
+          }
         },
         {
           "name": "N&M Burton Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "125 935 944"
+          "identifier": "125 935 944",
+          "party_page": {
+            "id": "n-m-burton-pty-ltd",
+            "name": "N&M Burton Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "PPT INVESTMENTS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "80 000 868 860"
+          "identifier": "80 000 868 860",
+          "party_page": {
+            "id": "ppt-investments-pty-ltd",
+            "name": "Ppt Investments Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -765,21 +1033,33 @@
         {
           "name": "OpenAI Group PBC",
           "identifier_type": null,
-          "identifier": "Delaware file number  10381551"
+          "identifier": "Delaware file number  10381551",
+          "party_page": {
+            "id": "openai-group-pbc",
+            "name": "OpenAI Group PBC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Tomoro AI Ltd",
           "identifier_type": null,
-          "identifier": "UK Companies House registration number  15208678"
+          "identifier": "UK Companies House registration number  15208678",
+          "party_page": {
+            "id": "tomoro-ai-ltd",
+            "name": "Tomoro AI Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "OpenAI Foundation",
           "identifier_type": null,
-          "identifier": "Delaware file number  5902936"
+          "identifier": "Delaware file number  5902936",
+          "party_page": {
+            "id": "openai-foundation",
+            "name": "OpenAI Foundation"
+          }
         }
       ],
       "anzsic_codes": [
@@ -809,7 +1089,11 @@
         {
           "name": "Elba Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware company number 10547479"
+          "identifier": "Delaware company number 10547479",
+          "party_page": {
+            "id": "elba-merger-sub-inc",
+            "name": "Elba Merger Sub, Inc."
+          }
         }
       ],
       "targets": [
@@ -820,6 +1104,10 @@
           "canonical": {
             "id": "excellergy-inc",
             "name": "Excellergy Inc."
+          },
+          "party_page": {
+            "id": "excellergy-inc",
+            "name": "Excellergy Inc."
           }
         }
       ],
@@ -827,23 +1115,39 @@
         {
           "name": "NOVARTIS AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "81 004 371 224"
+          "identifier": "81 004 371 224",
+          "party_page": {
+            "id": "novartis-australia-pty-limited",
+            "name": "Novartis Australia Pty Limited"
+          }
         },
         {
           "name": "Novartis Finance Corporation",
           "identifier_type": null,
-          "identifier": "US EIN 133922240"
+          "identifier": "US EIN 133922240",
+          "party_page": {
+            "id": "novartis-finance-corporation",
+            "name": "Novartis Finance Corporation"
+          }
         },
         {
           "name": "NOVARTIS PHARMACEUTICALS AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "18 004 244 160"
+          "identifier": "18 004 244 160",
+          "party_page": {
+            "id": "novartis-pharmaceuticals-australia-pty-limited",
+            "name": "Novartis Pharmaceuticals Australia Pty Limited"
+          }
         },
         {
           "name": "EXCELLERGY AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
           "identifier": "50 690 676 941",
           "canonical": {
+            "id": "excellergy-inc",
+            "name": "Excellergy Inc."
+          },
+          "party_page": {
             "id": "excellergy-inc",
             "name": "Excellergy Inc."
           }
@@ -880,14 +1184,22 @@
         {
           "name": "ATKINSREALIS AUSTRALIA HOLDINGS PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "697 935 685"
+          "identifier": "697 935 685",
+          "party_page": {
+            "id": "atkinsrealis-australia-holdings-pty-ltd",
+            "name": "Atkinsrealis Australia Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "WGA GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "86 649 953 980"
+          "identifier": "86 649 953 980",
+          "party_page": {
+            "id": "wga-group-holdings-pty-ltd",
+            "name": "Wga Group Holdings Pty Ltd"
+          }
         }
       ],
       "other_parties": [],
@@ -914,46 +1226,78 @@
         {
           "name": "Quanta Services Australia Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "11 164 311 997"
+          "identifier": "11 164 311 997",
+          "party_page": {
+            "id": "quanta-services-australia-pty-ltd",
+            "name": "Quanta Services Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "PSD Global Holdings Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "634 380 813"
+          "identifier": "634 380 813",
+          "party_page": {
+            "id": "psd-global-holdings-pty-ltd",
+            "name": "PSD Global Holdings Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Axcentium Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "48 638 953 572"
+          "identifier": "48 638 953 572",
+          "party_page": {
+            "id": "axcentium-pty-ltd",
+            "name": "Axcentium Pty Ltd"
+          }
         },
         {
           "name": "Consolidated Power Projects Australia Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "18 075 411 219"
+          "identifier": "18 075 411 219",
+          "party_page": {
+            "id": "consolidated-power-projects-australia-pty-ltd",
+            "name": "Consolidated Power Projects Australia Pty Ltd"
+          }
         },
         {
           "name": "PSD Plant & Equipment Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "97 144 778 861"
+          "identifier": "97 144 778 861",
+          "party_page": {
+            "id": "psd-plant-equipment-pty-ltd",
+            "name": "PSD Plant & Equipment Pty Ltd"
+          }
         },
         {
           "name": "Nacap Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "33 006 306 994"
+          "identifier": "33 006 306 994",
+          "party_page": {
+            "id": "nacap-pty-ltd",
+            "name": "Nacap Pty Ltd"
+          }
         },
         {
           "name": "Intellect Systems Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "11 115 885 348"
+          "identifier": "11 115 885 348",
+          "party_page": {
+            "id": "intellect-systems-pty-ltd",
+            "name": "Intellect Systems Pty Ltd"
+          }
         },
         {
           "name": "PSD Energy Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "68 117 966 926"
+          "identifier": "68 117 966 926",
+          "party_page": {
+            "id": "psd-energy-pty-ltd",
+            "name": "PSD Energy Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -991,6 +1335,10 @@
           "canonical": {
             "id": "seismic-software-inc",
             "name": "Seismic Software, Inc."
+          },
+          "party_page": {
+            "id": "seismic-software-inc",
+            "name": "Seismic Software, Inc."
           }
         }
       ],
@@ -1000,6 +1348,10 @@
           "identifier_type": null,
           "identifier": "Delaware File Number  5126410",
           "canonical": {
+            "id": "highspot-inc",
+            "name": "Highspot Inc."
+          },
+          "party_page": {
             "id": "highspot-inc",
             "name": "Highspot Inc."
           }
@@ -1013,6 +1365,10 @@
           "canonical": {
             "id": "seismic-software-inc",
             "name": "Seismic Software, Inc."
+          },
+          "party_page": {
+            "id": "seismic-software-inc",
+            "name": "Seismic Software, Inc."
           }
         },
         {
@@ -1020,6 +1376,10 @@
           "identifier_type": null,
           "identifier": "Delaware File Number  10492811",
           "canonical": {
+            "id": "helix-sub-llc",
+            "name": "Helix Sub LLC"
+          },
+          "party_page": {
             "id": "helix-sub-llc",
             "name": "Helix Sub LLC"
           }
@@ -1031,6 +1391,10 @@
           "canonical": {
             "id": "highspot-inc",
             "name": "Highspot Inc."
+          },
+          "party_page": {
+            "id": "highspot-inc",
+            "name": "Highspot Inc."
           }
         },
         {
@@ -1038,6 +1402,10 @@
           "identifier_type": null,
           "identifier": "Delaware File Number  10492813",
           "canonical": {
+            "id": "helix-sub-llc",
+            "name": "Helix Sub LLC"
+          },
+          "party_page": {
             "id": "helix-sub-llc",
             "name": "Helix Sub LLC"
           }
@@ -1074,26 +1442,42 @@
         {
           "name": "Ochre Health Pty Limited",
           "identifier_type": "ABN",
-          "identifier": "79 101 069 452"
+          "identifier": "79 101 069 452",
+          "party_page": {
+            "id": "ochre-health-pty-limited",
+            "name": "Ochre Health Pty Limited"
+          }
         },
         {
           "name": "Ochre Group Commercial Property Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "645 244 882"
+          "identifier": "645 244 882",
+          "party_page": {
+            "id": "ochre-group-commercial-property-pty-ltd",
+            "name": "Ochre Group Commercial Property Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Airlie Womens Clinic Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "55 603 753 395"
+          "identifier": "55 603 753 395",
+          "party_page": {
+            "id": "airlie-womens-clinic-pty-ltd",
+            "name": "Airlie Womens Clinic Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Genesis Capital",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "genesis-capital",
+            "name": "Genesis Capital"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1119,19 +1503,31 @@
         {
           "name": "Kamgras 1 K.K.",
           "identifier_type": null,
-          "identifier": "Japan corporate number  0104 01 197943"
+          "identifier": "Japan corporate number  0104 01 197943",
+          "party_page": {
+            "id": "kamgras-1-k-k",
+            "name": "Kamgras 1 K.K."
+          }
         }
       ],
       "targets": [
         {
           "name": "Kakaku.com, Inc.",
           "identifier_type": null,
-          "identifier": "Japan corporate number  011001065997"
+          "identifier": "Japan corporate number  011001065997",
+          "party_page": {
+            "id": "kakaku-com-inc",
+            "name": "Kakaku.com, Inc."
+          }
         },
         {
           "name": "Time Design International Pte Ltd",
           "identifier_type": null,
-          "identifier": "Singapore registration number  UEN 201736394D"
+          "identifier": "Singapore registration number  UEN 201736394D",
+          "party_page": {
+            "id": "time-design-international-pte-ltd",
+            "name": "Time Design International Pte Ltd"
+          }
         }
       ],
       "other_parties": [
@@ -1140,6 +1536,10 @@
           "identifier_type": null,
           "identifier": "Luxembourg Company Registration Number  B167972",
           "canonical": {
+            "id": "eqt-fund-management-s-r-l",
+            "name": "EQT Fund Management S.\u00e0 r.l."
+          },
+          "party_page": {
             "id": "eqt-fund-management-s-r-l",
             "name": "EQT Fund Management S.\u00e0 r.l."
           }
@@ -1176,19 +1576,31 @@
         {
           "name": "BLACK RHINO (GRANVILLE) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 693 147 063"
+          "identifier": "68 693 147 063",
+          "party_page": {
+            "id": "black-rhino-granville-pty-ltd",
+            "name": "Black Rhino (Granville) Pty Ltd"
+          }
         },
         {
           "name": "The Trustee for It Is What It Is (Granville) Trust",
           "identifier_type": "ABN",
-          "identifier": "82 294 935 476"
+          "identifier": "82 294 935 476",
+          "party_page": {
+            "id": "the-trustee-for-it-is-what-it-is-granville-trust",
+            "name": "The Trustee for It Is What It Is (Granville) Trust"
+          }
         }
       ],
       "targets": [
         {
           "name": "GRANVILLE HOTEL QLD PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "89 649 928 441"
+          "identifier": "89 649 928 441",
+          "party_page": {
+            "id": "granville-hotel-qld-pty-ltd",
+            "name": "Granville Hotel Qld Pty Ltd"
+          }
         }
       ],
       "other_parties": [],
@@ -1227,7 +1639,11 @@
         {
           "name": "A-AV Holdco I, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "a-av-holdco-i-inc",
+            "name": "A-AV Holdco I, Inc"
+          }
         }
       ],
       "targets": [
@@ -1238,6 +1654,10 @@
           "canonical": {
             "id": "avanos-medical-inc",
             "name": "Avanos Medical, Inc."
+          },
+          "party_page": {
+            "id": "avanos-medical-inc",
+            "name": "Avanos Medical, Inc."
           }
         }
       ],
@@ -1245,7 +1665,11 @@
         {
           "name": "AIPCF VIII Global Corp Holding L.P.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "aipcf-viii-global-corp-holding-l-p",
+            "name": "AIPCF VIII Global Corp Holding L.P."
+          }
         },
         {
           "name": "AVANOS MEDICAL AUSTRALIA PTY LTD",
@@ -1254,12 +1678,20 @@
           "canonical": {
             "id": "avanos-medical-inc",
             "name": "Avanos Medical, Inc."
+          },
+          "party_page": {
+            "id": "avanos-medical-inc",
+            "name": "Avanos Medical, Inc."
           }
         },
         {
           "name": "AIP, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "aip-llc",
+            "name": "Aip, Llc"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1293,51 +1725,87 @@
         {
           "name": "PT Asian Bulk Logistics",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "pt-asian-bulk-logistics-2",
+            "name": "PT Asian Bulk Logistics"
+          }
         },
         {
           "name": "Global Engage Marine Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 762 122"
+          "identifier": "693 762 122",
+          "party_page": {
+            "id": "global-engage-marine-pty-ltd",
+            "name": "Global Engage Marine Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "ENGAGE MARINE FINCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 675 999 283"
+          "identifier": "25 675 999 283",
+          "party_page": {
+            "id": "engage-marine-finco-pty-ltd",
+            "name": "Engage Marine Finco Pty Ltd"
+          }
         },
         {
           "name": "ENGAGE MARINE HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 626 774 678"
+          "identifier": "99 626 774 678",
+          "party_page": {
+            "id": "engage-marine-holdings-pty-ltd",
+            "name": "Engage Marine Holdings Pty Ltd"
+          }
         },
         {
           "name": "ENGAGE MARINE TOPCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "46 675 998 562"
+          "identifier": "46 675 998 562",
+          "party_page": {
+            "id": "engage-marine-topco-pty-ltd",
+            "name": "Engage Marine Topco Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Australian Global Onshore Logistics Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "691 961 136"
+          "identifier": "691 961 136",
+          "party_page": {
+            "id": "australian-global-onshore-logistics-pty-ltd",
+            "name": "Australian Global Onshore Logistics Pty Ltd"
+          }
         },
         {
           "name": "AUSTRALIAN GLOBAL MARINE AND LOGISTICS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 682 427 587"
+          "identifier": "68 682 427 587",
+          "party_page": {
+            "id": "australian-global-marine-and-logistics-pty-ltd",
+            "name": "Australian Global Marine And Logistics Pty Ltd"
+          }
         },
         {
           "name": "MAGNETIC INFRASTRUCTURE GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "81 663 518 563"
+          "identifier": "81 663 518 563",
+          "party_page": {
+            "id": "magnetic-infrastructure-group-pty-ltd",
+            "name": "Magnetic Infrastructure Group Pty Ltd"
+          }
         },
         {
           "name": "AUSTRALIAN GLOBAL INFRASTRUCTURE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "47 663 347 948"
+          "identifier": "47 663 347 948",
+          "party_page": {
+            "id": "australian-global-infrastructure-pty-ltd",
+            "name": "Australian Global Infrastructure Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1367,14 +1835,22 @@
         {
           "name": "NORTHSTAR MILDURA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "94 674 572 260"
+          "identifier": "94 674 572 260",
+          "party_page": {
+            "id": "northstar-mildura-pty-ltd",
+            "name": "Northstar Mildura Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "SA PROGRESS NO.1 PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "86 602 258 695"
+          "identifier": "86 602 258 695",
+          "party_page": {
+            "id": "sa-progress-no-1-pty-limited",
+            "name": "Sa Progress No.1 Pty Limited"
+          }
         }
       ],
       "other_parties": [],
@@ -1401,31 +1877,51 @@
         {
           "name": "NORTH QUEENSLAND REGIONAL ENERGY CO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 695 814 101"
+          "identifier": "99 695 814 101",
+          "party_page": {
+            "id": "north-queensland-regional-energy-co-pty-ltd",
+            "name": "North Queensland Regional Energy Co Pty Ltd"
+          }
         },
         {
           "name": "QBF NO. 2 PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "78 074 123 130"
+          "identifier": "78 074 123 130",
+          "party_page": {
+            "id": "qbf-no-2-pty-ltd",
+            "name": "Qbf No. 2 Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "QUEENSLAND ELECTRICITY TRANSMISSION CORPORATION LIMITED",
           "identifier_type": "ABN",
-          "identifier": "82 078 849 233"
+          "identifier": "82 078 849 233",
+          "party_page": {
+            "id": "queensland-electricity-transmission-corporation-limited",
+            "name": "Queensland Electricity Transmission Corporation Limited"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "North Queensland Regional Energy Trust",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "north-queensland-regional-energy-trust",
+            "name": "North Queensland Regional Energy Trust"
+          }
         },
         {
           "name": "QIC LIMITED",
           "identifier_type": "ABN",
-          "identifier": "95 942 373 762"
+          "identifier": "95 942 373 762",
+          "party_page": {
+            "id": "qic-limited",
+            "name": "Qic Limited"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1459,19 +1955,31 @@
         {
           "name": "Volt Managed Investment Trust 2",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "volt-managed-investment-trust-2",
+            "name": "Volt Managed Investment Trust 2"
+          }
         },
         {
           "name": "Volt Managed Investment Trust 1",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "volt-managed-investment-trust-1",
+            "name": "Volt Managed Investment Trust 1"
+          }
         }
       ],
       "targets": [
         {
           "name": "VOLT HOLDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "54 694 754 062"
+          "identifier": "54 694 754 062",
+          "party_page": {
+            "id": "volt-holdco-pty-ltd",
+            "name": "Volt Holdco Pty Ltd"
+          }
         }
       ],
       "other_parties": [
@@ -1482,27 +1990,47 @@
           "canonical": {
             "id": "the-trust-company-australia-limited",
             "name": "The Trust Company (Australia) Limited"
+          },
+          "party_page": {
+            "id": "the-trust-company-australia-limited",
+            "name": "The Trust Company (Australia) Limited"
           }
         },
         {
           "name": "HMC CAPITAL LIMITED",
           "identifier_type": "ABN",
-          "identifier": "94 138 990 593"
+          "identifier": "94 138 990 593",
+          "party_page": {
+            "id": "hmc-capital-limited",
+            "name": "Hmc Capital Limited"
+          }
         },
         {
           "name": "HMC Energy Transition No. 3 Holdings Pty Ltd as trustee of the HMC Energy Transition No. 3 Trust",
           "identifier_type": "ABN",
-          "identifier": "98 159 167 344"
+          "identifier": "98 159 167 344",
+          "party_page": {
+            "id": "hmc-energy-transition-no-3-holdings-pty-ltd-as-trustee-of-the-hmc-energy-transit",
+            "name": "HMC Energy Transition No. 3 Holdings Pty Ltd as trustee of the HMC Energy Transition No. 3 Trust"
+          }
         },
         {
           "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "perpetual-corporate-trust-limited-as-trustee-for-volt-managed-investment-trust-1",
+            "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)"
+          }
         },
         {
           "name": "The John Laing Group Limited",
           "identifier_type": null,
-          "identifier": "UK Company No: 05975300"
+          "identifier": "UK Company No: 05975300",
+          "party_page": {
+            "id": "the-john-laing-group-limited",
+            "name": "The John Laing Group Limited"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1536,19 +2064,31 @@
         {
           "name": "Prime Property Fund Asia Limited Partnership",
           "identifier_type": null,
-          "identifier": "LEI code 549300BDKD6CMDEVJ029"
+          "identifier": "LEI code 549300BDKD6CMDEVJ029",
+          "party_page": {
+            "id": "prime-property-fund-asia-limited-partnership",
+            "name": "Prime Property Fund Asia Limited Partnership"
+          }
         }
       ],
       "targets": [
         {
           "name": "Stockland Providence Retail Trust",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "stockland-providence-retail-trust",
+            "name": "Stockland Providence Retail Trust"
+          }
         },
         {
           "name": "Stockland Sienna Wood Retail No. 2 Trust",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "stockland-sienna-wood-retail-no-2-trust",
+            "name": "Stockland Sienna Wood Retail No. 2 Trust"
+          }
         }
       ],
       "other_parties": [],
@@ -1575,26 +2115,42 @@
         {
           "name": "AUSTBROKERS CORPORATE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "29 107 477 181"
+          "identifier": "29 107 477 181",
+          "party_page": {
+            "id": "austbrokers-corporate-pty-ltd",
+            "name": "Austbrokers Corporate Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "KJ RISK GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "15 143 512 387"
+          "identifier": "15 143 512 387",
+          "party_page": {
+            "id": "kj-risk-group-pty-ltd",
+            "name": "Kj Risk Group Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Niven Industries Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "146 449 265"
+          "identifier": "146 449 265",
+          "party_page": {
+            "id": "niven-industries-pty-ltd",
+            "name": "Niven Industries Pty Ltd"
+          }
         },
         {
           "name": "AUB GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "60 000 000 715"
+          "identifier": "60 000 000 715",
+          "party_page": {
+            "id": "aub-group-limited",
+            "name": "Aub Group Limited"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1624,29 +2180,49 @@
         {
           "name": "United States Department of War",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "united-states-department-of-war",
+            "name": "United States Department of War"
+          }
         },
         {
           "name": "Alcoa Gallium Holdings Pty Ltd",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "alcoa-gallium-holdings-pty-ltd",
+            "name": "Alcoa Gallium Holdings Pty Ltd"
+          }
         },
         {
           "name": "ALCOA OF AUSTRALIA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "93 004 879 298"
+          "identifier": "93 004 879 298",
+          "party_page": {
+            "id": "alcoa-of-australia-limited",
+            "name": "Alcoa Of Australia Limited"
+          }
         },
         {
           "name": "EXPORT FINANCE AND INSURANCE CORP",
           "identifier_type": "ABN",
-          "identifier": "96 874 024 697"
+          "identifier": "96 874 024 697",
+          "party_page": {
+            "id": "export-finance-and-insurance-corp",
+            "name": "Export Finance And Insurance Corp"
+          }
         }
       ],
       "targets": [
         {
           "name": "United States-Australia Gallium Pty Ltd",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "united-states-australia-gallium-pty-ltd",
+            "name": "United States-Australia Gallium Pty Ltd"
+          }
         }
       ],
       "other_parties": [],
@@ -1693,24 +2269,40 @@
         {
           "name": "SCHF PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 644 329 733"
+          "identifier": "99 644 329 733",
+          "party_page": {
+            "id": "schf-pty-ltd",
+            "name": "Schf Pty Ltd"
+          }
         },
         {
           "name": "MH SOUTH BRISBANE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "73 601 843 485"
+          "identifier": "73 601 843 485",
+          "party_page": {
+            "id": "mh-south-brisbane-pty-ltd",
+            "name": "Mh South Brisbane Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "The Trustee for Fat Shaft Operating Unit Trust",
           "identifier_type": "ABN",
-          "identifier": "22 173 424 812"
+          "identifier": "22 173 424 812",
+          "party_page": {
+            "id": "the-trustee-for-fat-shaft-operating-unit-trust",
+            "name": "The Trustee for Fat Shaft Operating Unit Trust"
+          }
         },
         {
           "name": "The Trustee for Fat Shaft Property Unit Trust",
           "identifier_type": "ABN",
-          "identifier": "15 988 283 479"
+          "identifier": "15 988 283 479",
+          "party_page": {
+            "id": "the-trustee-for-fat-shaft-property-unit-trust",
+            "name": "The Trustee for Fat Shaft Property Unit Trust"
+          }
         }
       ],
       "other_parties": [],
@@ -1745,18 +2337,30 @@
           "canonical": {
             "id": "mastercard-incorporated",
             "name": "Mastercard Incorporated"
+          },
+          "party_page": {
+            "id": "mastercard-incorporated",
+            "name": "Mastercard Incorporated"
           }
         },
         {
           "name": "Ares UK Holdco 2 Limited",
           "identifier_type": null,
-          "identifier": "CRN 17107097"
+          "identifier": "CRN 17107097",
+          "party_page": {
+            "id": "ares-uk-holdco-2-limited",
+            "name": "Ares UK Holdco 2 Limited"
+          }
         },
         {
           "name": "Mastercard International Incorporated",
           "identifier_type": null,
           "identifier": "648928",
           "canonical": {
+            "id": "mastercard-incorporated",
+            "name": "Mastercard Incorporated"
+          },
+          "party_page": {
             "id": "mastercard-incorporated",
             "name": "Mastercard Incorporated"
           }
@@ -1766,12 +2370,20 @@
         {
           "name": "B Corporation S.A.M",
           "identifier_type": null,
-          "identifier": "23S09602"
+          "identifier": "23S09602",
+          "party_page": {
+            "id": "b-corporation-s-a-m",
+            "name": "B Corporation S.A.M"
+          }
         },
         {
           "name": "BVNK Holdings Limited",
           "identifier_type": null,
-          "identifier": "13922014"
+          "identifier": "13922014",
+          "party_page": {
+            "id": "bvnk-holdings-limited",
+            "name": "BVNK Holdings Limited"
+          }
         }
       ],
       "other_parties": [],
@@ -1798,46 +2410,78 @@
         {
           "name": "INPEX FSDA N&S PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "22 693 697 764"
+          "identifier": "22 693 697 764",
+          "party_page": {
+            "id": "inpex-fsda-n-s-pty-ltd",
+            "name": "Inpex Fsda N&S Pty Ltd"
+          }
         },
         {
           "name": "INPEX BCD PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "32 696 382 948"
+          "identifier": "32 696 382 948",
+          "party_page": {
+            "id": "inpex-bcd-pty-ltd",
+            "name": "Inpex Bcd Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Daly Waters FSDA North Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "696 136 295"
+          "identifier": "696 136 295",
+          "party_page": {
+            "id": "daly-waters-fsda-north-pty-ltd",
+            "name": "Daly Waters FSDA North Pty Ltd"
+          }
         },
         {
           "name": "Daly Waters Energy, LP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "daly-waters-energy-lp",
+            "name": "Daly Waters Energy, LP"
+          }
         },
         {
           "name": "Daly Waters BCD Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "696 136 277"
+          "identifier": "696 136 277",
+          "party_page": {
+            "id": "daly-waters-bcd-pty-ltd",
+            "name": "Daly Waters BCD Pty Ltd"
+          }
         },
         {
           "name": "Daly Waters FSDA South Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "696 136 302"
+          "identifier": "696 136 302",
+          "party_page": {
+            "id": "daly-waters-fsda-south-pty-ltd",
+            "name": "Daly Waters FSDA South Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "INPEX Corporation",
           "identifier_type": null,
-          "identifier": "Stock Code 1605"
+          "identifier": "Stock Code 1605",
+          "party_page": {
+            "id": "inpex-corporation",
+            "name": "INPEX Corporation"
+          }
         },
         {
           "name": "Tamboran Resources Corporation",
           "identifier_type": "ABN",
-          "identifier": "20 961 904 383"
+          "identifier": "20 961 904 383",
+          "party_page": {
+            "id": "tamboran-resources-corporation",
+            "name": "Tamboran Resources Corporation"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1867,14 +2511,22 @@
         {
           "name": "Fantastic Group BidCo Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "697 467 100"
+          "identifier": "697 467 100",
+          "party_page": {
+            "id": "fantastic-group-bidco-pty-ltd",
+            "name": "Fantastic Group BidCo Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Fantastic Furniture \u2013 The Package Deal Kings Limited",
           "identifier_type": null,
-          "identifier": "NZCN  1015185"
+          "identifier": "NZCN  1015185",
+          "party_page": {
+            "id": "fantastic-furniture-the-package-deal-kings-limited",
+            "name": "Fantastic Furniture \u2013 The Package Deal Kings Limited"
+          }
         },
         {
           "name": "FANTASTIC FURNITURE PTY LIMITED",
@@ -1883,12 +2535,20 @@
           "canonical": {
             "id": "fantastic-furniture-limited",
             "name": "Fantastic Furniture Limited"
+          },
+          "party_page": {
+            "id": "fantastic-furniture-limited",
+            "name": "Fantastic Furniture Limited"
           }
         },
         {
           "name": "FHL DISTRIBUTION CENTRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 114 853 315"
+          "identifier": "96 114 853 315",
+          "party_page": {
+            "id": "fhl-distribution-centre-pty-ltd",
+            "name": "Fhl Distribution Centre Pty Ltd"
+          }
         },
         {
           "name": "Fantastic Furniture Limited",
@@ -1897,24 +2557,40 @@
           "canonical": {
             "id": "fantastic-furniture-limited",
             "name": "Fantastic Furniture Limited"
+          },
+          "party_page": {
+            "id": "fantastic-furniture-limited",
+            "name": "Fantastic Furniture Limited"
           }
         },
         {
           "name": "FANTASTIC MANUFACTURING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 158 159 230"
+          "identifier": "20 158 159 230",
+          "party_page": {
+            "id": "fantastic-manufacturing-pty-ltd",
+            "name": "Fantastic Manufacturing Pty Ltd"
+          }
         },
         {
           "name": "FF BRANDS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "75 074 780 555"
+          "identifier": "75 074 780 555",
+          "party_page": {
+            "id": "ff-brands-pty-ltd",
+            "name": "Ff Brands Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Allegro Funds Pty Ltd",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "allegro-funds-pty-ltd",
+            "name": "Allegro Funds Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -1944,14 +2620,22 @@
         {
           "name": "Blackstone Alternative Credit Advisors LP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "blackstone-alternative-credit-advisors-lp",
+            "name": "Blackstone Alternative Credit Advisors LP"
+          }
         }
       ],
       "targets": [
         {
           "name": "Medallia Parent, LP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "medallia-parent-lp",
+            "name": "Medallia Parent, LP"
+          }
         }
       ],
       "other_parties": [
@@ -1960,6 +2644,10 @@
           "identifier_type": null,
           "identifier": "",
           "canonical": {
+            "id": "blackstone-inc",
+            "name": "Blackstone Inc."
+          },
+          "party_page": {
             "id": "blackstone-inc",
             "name": "Blackstone Inc."
           }
@@ -1996,31 +2684,51 @@
         {
           "name": "Primary Wave KB Holdings, LP",
           "identifier_type": null,
-          "identifier": "Registration number 136215"
+          "identifier": "Registration number 136215",
+          "party_page": {
+            "id": "primary-wave-kb-holdings-lp",
+            "name": "Primary Wave KB Holdings, LP"
+          }
         }
       ],
       "targets": [
         {
           "name": "Kobalt Music Group Topco L.P.",
           "identifier_type": null,
-          "identifier": "Registration number 393466"
+          "identifier": "Registration number 393466",
+          "party_page": {
+            "id": "kobalt-music-group-topco-l-p",
+            "name": "Kobalt Music Group Topco L.P."
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Primary Wave Music IP Fund 4 GP, LLC",
           "identifier_type": null,
-          "identifier": "Company number 7667915"
+          "identifier": "Company number 7667915",
+          "party_page": {
+            "id": "primary-wave-music-ip-fund-4-gp-llc",
+            "name": "Primary Wave Music IP Fund 4 GP, LLC"
+          }
         },
         {
           "name": "KOBALT MUSIC SERVICES AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "12 144 997 142"
+          "identifier": "12 144 997 142",
+          "party_page": {
+            "id": "kobalt-music-services-australia-pty-limited",
+            "name": "Kobalt Music Services Australia Pty Limited"
+          }
         },
         {
           "name": "KOBALT MUSIC PUBLISHING AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "63 144 996 609"
+          "identifier": "63 144 996 609",
+          "party_page": {
+            "id": "kobalt-music-publishing-australia-pty-limited",
+            "name": "Kobalt Music Publishing Australia Pty Limited"
+          }
         },
         {
           "name": "Brookfield Corporation",
@@ -2029,17 +2737,29 @@
           "canonical": {
             "id": "brookfield-corporation",
             "name": "Brookfield Corporation"
+          },
+          "party_page": {
+            "id": "brookfield-corporation",
+            "name": "Brookfield Corporation"
           }
         },
         {
           "name": "Primary Wave Music IP Fund 4, LP",
           "identifier_type": null,
-          "identifier": "Company number 7667918"
+          "identifier": "Company number 7667918",
+          "party_page": {
+            "id": "primary-wave-music-ip-fund-4-lp",
+            "name": "Primary Wave Music IP Fund 4, LP"
+          }
         },
         {
           "name": "PWMP Ventures, LLC",
           "identifier_type": null,
-          "identifier": "Company number 5324467"
+          "identifier": "Company number 5324467",
+          "party_page": {
+            "id": "pwmp-ventures-llc",
+            "name": "PWMP Ventures, LLC"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2065,51 +2785,87 @@
         {
           "name": "Taco Ventures Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "697 591 692"
+          "identifier": "697 591 692",
+          "party_page": {
+            "id": "taco-ventures-pty-ltd",
+            "name": "Taco Ventures Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Collins Foods Subsidiary Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "94 616 663 793"
+          "identifier": "94 616 663 793",
+          "party_page": {
+            "id": "collins-foods-subsidiary-pty-ltd",
+            "name": "Collins Foods Subsidiary Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Restaurant Brands New Zealand Limited",
           "identifier_type": null,
-          "identifier": "NZBN  9429038138775"
+          "identifier": "NZBN  9429038138775",
+          "party_page": {
+            "id": "restaurant-brands-new-zealand-limited",
+            "name": "Restaurant Brands New Zealand Limited"
+          }
         },
         {
           "name": "Yum! Brands, Inc.",
           "identifier_type": null,
-          "identifier": "USNC  0428278"
+          "identifier": "USNC  0428278",
+          "party_page": {
+            "id": "yum-brands-inc",
+            "name": "Yum! Brands, Inc."
+          }
         },
         {
           "name": "Gardiner Lane Capital, LLC",
           "identifier_type": null,
-          "identifier": "USDE  3308412"
+          "identifier": "USDE  3308412",
+          "party_page": {
+            "id": "gardiner-lane-capital-llc",
+            "name": "Gardiner Lane Capital, LLC"
+          }
         },
         {
           "name": "Collins Foods Limited",
           "identifier_type": "ABN",
-          "identifier": "13 151 420 781"
+          "identifier": "13 151 420 781",
+          "party_page": {
+            "id": "collins-foods-limited",
+            "name": "Collins Foods Limited"
+          }
         },
         {
           "name": "Collins Restaurants Management Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "24 093 912 979"
+          "identifier": "24 093 912 979",
+          "party_page": {
+            "id": "collins-restaurants-management-pty-ltd",
+            "name": "Collins Restaurants Management Pty Ltd"
+          }
         },
         {
           "name": "Restaurant Brands Australia Holdings Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "53 611 058 701"
+          "identifier": "53 611 058 701",
+          "party_page": {
+            "id": "restaurant-brands-australia-holdings-pty-ltd",
+            "name": "Restaurant Brands Australia Holdings Pty Ltd"
+          }
         },
         {
           "name": "QSR Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "63 089 163 682"
+          "identifier": "63 089 163 682",
+          "party_page": {
+            "id": "qsr-pty-ltd",
+            "name": "QSR Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2139,6 +2895,10 @@
           "canonical": {
             "id": "eli-lilly-and-company",
             "name": "Eli Lilly and Company"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
           }
         }
       ],
@@ -2146,19 +2906,31 @@
         {
           "name": "Kelonia Therapeutics, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "kelonia-therapeutics-inc",
+            "name": "Kelonia Therapeutics, Inc."
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Shareholder Representative Services LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "shareholder-representative-services-llc",
+            "name": "Shareholder Representative Services, LLC"
+          }
         },
         {
           "name": "Kang Acquisition Corporation",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "kang-acquisition-corporation",
+            "name": "Kang Acquisition Corporation"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2188,36 +2960,60 @@
         {
           "name": "Zeus UK Bidco Limited",
           "identifier_type": null,
-          "identifier": "UK company number  17118800"
+          "identifier": "UK company number  17118800",
+          "party_page": {
+            "id": "zeus-uk-bidco-limited",
+            "name": "Zeus UK Bidco Limited"
+          }
         },
         {
           "name": "Tinicum L.P.",
           "identifier_type": null,
-          "identifier": "Incorporation number  5040692"
+          "identifier": "Incorporation number  5040692",
+          "party_page": {
+            "id": "tinicum-l-p",
+            "name": "Tinicum L.P."
+          }
         },
         {
           "name": "BMA IX LLC",
           "identifier_type": null,
-          "identifier": "File number  6549791"
+          "identifier": "File number  6549791",
+          "party_page": {
+            "id": "bma-ix-llc",
+            "name": "Bma Ix Llc"
+          }
         }
       ],
       "targets": [
         {
           "name": "Senior plc",
           "identifier_type": null,
-          "identifier": "Company number  00282772"
+          "identifier": "Company number  00282772",
+          "party_page": {
+            "id": "senior-plc",
+            "name": "Senior plc"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "AeroFlow Technologies, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "aeroflow-technologies-llc",
+            "name": "AeroFlow Technologies, LLC"
+          }
         },
         {
           "name": "PennAero",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "pennaero",
+            "name": "PennAero"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2243,36 +3039,60 @@
         {
           "name": "DIRECT COURIERS (AUST.) PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "87 063 478 295"
+          "identifier": "87 063 478 295",
+          "party_page": {
+            "id": "direct-couriers-aust-pty-limited",
+            "name": "Direct Couriers (Aust.) Pty. Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "PHOENIX TRANSPORT HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "75 062 309 773"
+          "identifier": "75 062 309 773",
+          "party_page": {
+            "id": "phoenix-transport-holdings-pty-ltd",
+            "name": "Phoenix Transport Holdings Pty Ltd"
+          }
         },
         {
           "name": "PHOENIX DISTRIBUTION (NSW) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "24 073 843 982"
+          "identifier": "24 073 843 982",
+          "party_page": {
+            "id": "phoenix-distribution-nsw-pty-ltd",
+            "name": "Phoenix Distribution (Nsw) Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "DIRECT COURIERS GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 637 899 051"
+          "identifier": "70 637 899 051",
+          "party_page": {
+            "id": "direct-couriers-group-pty-ltd",
+            "name": "Direct Couriers Group Pty Ltd"
+          }
         },
         {
           "name": "FRF GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 624 735 459"
+          "identifier": "11 624 735 459",
+          "party_page": {
+            "id": "frf-group-pty-ltd",
+            "name": "Frf Group Pty Ltd"
+          }
         },
         {
           "name": "ANACACIA CAPITAL PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "82 123 237 114"
+          "identifier": "82 123 237 114",
+          "party_page": {
+            "id": "anacacia-capital-pty-limited",
+            "name": "Anacacia Capital Pty Limited"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2306,26 +3126,42 @@
         {
           "name": "SOILCO PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "85 055 303 243"
+          "identifier": "85 055 303 243",
+          "party_page": {
+            "id": "soilco-pty-limited",
+            "name": "Soilco Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "GARDEN MEDIUMS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "44 079 600 230"
+          "identifier": "44 079 600 230",
+          "party_page": {
+            "id": "garden-mediums-pty-limited",
+            "name": "Garden Mediums Pty Limited"
+          }
         },
         {
           "name": "Lumime Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "001 931 228"
+          "identifier": "001 931 228",
+          "party_page": {
+            "id": "lumime-pty-ltd",
+            "name": "Lumime Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "I Squared Capital, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "i-squared-capital-llc",
+            "name": "I Squared Capital, LLC"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2355,21 +3191,33 @@
         {
           "name": "UP EDUCATION AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "58 095 741 227"
+          "identifier": "58 095 741 227",
+          "party_page": {
+            "id": "up-education-australia-pty-ltd",
+            "name": "Up Education Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "AUSTRALIAN ACADEMY OF BEAUTY DERMAL AND LASER PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "88 089 942 647"
+          "identifier": "88 089 942 647",
+          "party_page": {
+            "id": "australian-academy-of-beauty-dermal-and-laser-pty-ltd",
+            "name": "Australian Academy Of Beauty Dermal And Laser Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Pacific Equity Partners",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "pacific-equity-partners",
+            "name": "Pacific Equity Partners"
+          }
         }
       ],
       "anzsic_codes": [
@@ -2399,14 +3247,22 @@
         {
           "name": "Frasers Group plc",
           "identifier_type": null,
-          "identifier": "Company number  06035106"
+          "identifier": "Company number  06035106",
+          "party_page": {
+            "id": "frasers-group-plc",
+            "name": "Frasers Group plc"
+          }
         }
       ],
       "targets": [
         {
           "name": "ACCENT GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "85 108 096 251"
+          "identifier": "85 108 096 251",
+          "party_page": {
+            "id": "accent-group-limited",
+            "name": "Accent Group Limited"
+          }
         }
       ],
       "other_parties": [],
@@ -2441,39 +3297,67 @@
         {
           "name": "Apollo Australia Bidco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "697 230 096"
+          "identifier": "697 230 096",
+          "party_page": {
+            "id": "apollo-australia-bidco-pty-ltd",
+            "name": "Apollo Australia Bidco Pty Ltd"
+          }
         },
         {
           "name": "Apollo Australia Bidco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "697 230 096"
+          "identifier": "697 230 096",
+          "party_page": {
+            "id": "apollo-australia-bidco-pty-ltd",
+            "name": "Apollo Australia Bidco Pty Ltd"
+          }
         },
         {
           "name": "OMERS Apollo Investment Holdings LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "omers-apollo-investment-holdings-llc",
+            "name": "OMERS Apollo Investment Holdings LLC"
+          }
         },
         {
           "name": "OMERS Apollo Investment Holdings LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "omers-apollo-investment-holdings-llc",
+            "name": "OMERS Apollo Investment Holdings LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "FIRST FOCUS IT PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "73 106 912 350"
+          "identifier": "73 106 912 350",
+          "party_page": {
+            "id": "first-focus-it-pty-limited",
+            "name": "First Focus It Pty Limited"
+          }
         },
         {
           "name": "The Trustee for FUTURE FOCUS TRUST",
           "identifier_type": "ABN",
-          "identifier": "22 698 604 264"
+          "identifier": "22 698 604 264",
+          "party_page": {
+            "id": "the-trustee-for-future-focus-trust",
+            "name": "The Trustee for FUTURE FOCUS TRUST"
+          }
         },
         {
           "name": "FIRST FOCUS IT PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "73 106 912 350"
+          "identifier": "73 106 912 350",
+          "party_page": {
+            "id": "first-focus-it-pty-limited",
+            "name": "First Focus It Pty Limited"
+          }
         }
       ],
       "other_parties": [],
@@ -2500,14 +3384,22 @@
         {
           "name": "Magellan Financial Group Ltd",
           "identifier_type": "ABN",
-          "identifier": "59 108 437 592"
+          "identifier": "59 108 437 592",
+          "party_page": {
+            "id": "magellan-financial-group-ltd",
+            "name": "Magellan Financial Group Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Barrenjoey Capital Partners Group Holdings Pty Limited",
           "identifier_type": "ABN",
-          "identifier": "44 644 241 510"
+          "identifier": "44 644 241 510",
+          "party_page": {
+            "id": "barrenjoey-capital-partners-group-holdings-pty-limited",
+            "name": "Barrenjoey Capital Partners Group Holdings Pty Limited"
+          }
         }
       ],
       "other_parties": [],
@@ -2538,31 +3430,51 @@
         {
           "name": "KK Group Invest A/S",
           "identifier_type": null,
-          "identifier": "CVR  66821110"
+          "identifier": "CVR  66821110",
+          "party_page": {
+            "id": "kk-group-invest-a-s",
+            "name": "KK Group Invest A/S"
+          }
         }
       ],
       "targets": [
         {
           "name": "PowerCon Holding ApS",
           "identifier_type": null,
-          "identifier": "CVR  32269095"
+          "identifier": "CVR  32269095",
+          "party_page": {
+            "id": "powercon-holding-aps",
+            "name": "PowerCon Holding ApS"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "PowerCon A/S",
           "identifier_type": null,
-          "identifier": "CVR  32270433"
+          "identifier": "CVR  32270433",
+          "party_page": {
+            "id": "powercon-a-s",
+            "name": "PowerCon A/S"
+          }
         },
         {
           "name": "A.P. M\u00f8ller Holding A/S",
           "identifier_type": null,
-          "identifier": "CVR  25679288"
+          "identifier": "CVR  25679288",
+          "party_page": {
+            "id": "a-p-m-ller-holding-a-s",
+            "name": "A.P. M\u00f8ller Holding A/S"
+          }
         },
         {
           "name": "PowerCon USA Inc.",
           "identifier_type": null,
-          "identifier": "Delaware File Number  6469852"
+          "identifier": "Delaware File Number  6469852",
+          "party_page": {
+            "id": "powercon-usa-inc",
+            "name": "PowerCon USA Inc."
+          }
         }
       ],
       "anzsic_codes": [
@@ -2588,24 +3500,40 @@
         {
           "name": "LAUNDY WOY FREEHOLD PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "65 696 471 306"
+          "identifier": "65 696 471 306",
+          "party_page": {
+            "id": "laundy-woy-freehold-pty-ltd",
+            "name": "Laundy Woy Freehold Pty Ltd"
+          }
         },
         {
           "name": "LAUNDY WOY TRADING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "29 696 470 345"
+          "identifier": "29 696 470 345",
+          "party_page": {
+            "id": "laundy-woy-trading-pty-ltd",
+            "name": "Laundy Woy Trading Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "HARVEST PUB OPERATIONS 2 PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "51 652 748 242"
+          "identifier": "51 652 748 242",
+          "party_page": {
+            "id": "harvest-pub-operations-2-pty-ltd",
+            "name": "Harvest Pub Operations 2 Pty Ltd"
+          }
         },
         {
           "name": "AMAL TRUSTEES PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "98 609 737 064"
+          "identifier": "98 609 737 064",
+          "party_page": {
+            "id": "amal-trustees-pty-limited",
+            "name": "Amal Trustees Pty Limited"
+          }
         }
       ],
       "other_parties": [],
@@ -2636,14 +3564,22 @@
         {
           "name": "BGIS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "83 064 638 197"
+          "identifier": "83 064 638 197",
+          "party_page": {
+            "id": "bgis-pty-ltd",
+            "name": "Bgis Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FIRE SYSTEMS (S.A.) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "45 109 996 876"
+          "identifier": "45 109 996 876",
+          "party_page": {
+            "id": "fire-systems-s-a-pty-ltd",
+            "name": "Fire Systems (S.A.) Pty Ltd"
+          }
         }
       ],
       "other_parties": [],
@@ -2670,14 +3606,22 @@
         {
           "name": "GENUSPLUS GROUP LTD",
           "identifier_type": "ABN",
-          "identifier": "86 620 283 561"
+          "identifier": "86 620 283 561",
+          "party_page": {
+            "id": "genusplus-group-ltd",
+            "name": "Genusplus Group Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "MPC KINETIC HOLDINGS LIMITED",
           "identifier_type": "ABN",
-          "identifier": "68 626 678 911"
+          "identifier": "68 626 678 911",
+          "party_page": {
+            "id": "mpc-kinetic-holdings-limited",
+            "name": "Mpc Kinetic Holdings Limited"
+          }
         }
       ],
       "other_parties": [],

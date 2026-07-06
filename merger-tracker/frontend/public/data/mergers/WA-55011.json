@@ -14,14 +14,22 @@
     {
       "name": "OEP IX Master Co\u00f6peratief U.A.",
       "identifier_type": null,
-      "identifier": "CCI number 93127189"
+      "identifier": "CCI number 93127189",
+      "party_page": {
+        "id": "oep-ix-master-co-peratief-u-a",
+        "name": "OEP IX Master Co\u00f6peratief U.A."
+      }
     }
   ],
   "targets": [
     {
       "name": "LEVIAT PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "41 000 496 079"
+      "identifier": "41 000 496 079",
+      "party_page": {
+        "id": "leviat-pty-ltd",
+        "name": "Leviat Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -95,14 +103,22 @@
         {
           "name": "IBWM PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "28 621 141 026"
+          "identifier": "28 621 141 026",
+          "party_page": {
+            "id": "ibwm-pty-ltd",
+            "name": "Ibwm Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "VIOLA GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 680 038 180"
+          "identifier": "20 680 038 180",
+          "party_page": {
+            "id": "viola-group-holdings-pty-ltd",
+            "name": "Viola Group Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -115,24 +131,40 @@
         {
           "name": "KPS Capital Partners, LP",
           "identifier_type": null,
-          "identifier": "CRD 157678 / SEC: 80173907"
+          "identifier": "CRD 157678 / SEC: 80173907",
+          "party_page": {
+            "id": "kps-capital-partners-lp",
+            "name": "KPS Capital Partners, LP"
+          }
         },
         {
           "name": "Three Rivers Purchaser, LLC",
           "identifier_type": null,
-          "identifier": "10533455"
+          "identifier": "10533455",
+          "party_page": {
+            "id": "three-rivers-purchaser-llc",
+            "name": "Three Rivers Purchaser, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Jennmar Intermediate Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "990520173"
+          "identifier": "990520173",
+          "party_page": {
+            "id": "jennmar-intermediate-holdings-inc",
+            "name": "Jennmar Intermediate Holdings, Inc."
+          }
         },
         {
           "name": "Jennmar Super Holdings, LLC",
           "identifier_type": null,
-          "identifier": "412378602"
+          "identifier": "412378602",
+          "party_page": {
+            "id": "jennmar-super-holdings-llc",
+            "name": "Jennmar Super Holdings, LLC"
+          }
         }
       ]
     },
@@ -145,24 +177,40 @@
         {
           "name": "General Atlantic",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "general-atlantic",
+            "name": "General Atlantic"
+          }
         },
         {
           "name": "Canada Pension Plan Investment Board",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "canada-pension-plan-investment-board",
+            "name": "Canada Pension Plan Investment Board"
+          }
         }
       ],
       "targets": [
         {
           "name": "Boats Group Holdings, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "boats-group-holdings-inc",
+            "name": "Boats Group Holdings, Inc"
+          }
         },
         {
           "name": "Bimini Holdings, LP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "bimini-holdings-lp",
+            "name": "Bimini Holdings, LP"
+          }
         }
       ]
     }

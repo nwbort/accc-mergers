@@ -18,6 +18,10 @@
       "canonical": {
         "id": "eli-lilly-and-company",
         "name": "Eli Lilly and Company"
+      },
+      "party_page": {
+        "id": "eli-lilly-and-company",
+        "name": "Eli Lilly and Company"
       }
     }
   ],
@@ -25,19 +29,31 @@
     {
       "name": "Orna Therapeutics Holdings, LLC",
       "identifier_type": null,
-      "identifier": "IRS Employer Identification Number  861182936"
+      "identifier": "IRS Employer Identification Number  861182936",
+      "party_page": {
+        "id": "orna-therapeutics-holdings-llc",
+        "name": "Orna Therapeutics Holdings, LLC"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Shareholder Representative Services, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "shareholder-representative-services-llc",
+        "name": "Shareholder Representative Services, LLC"
+      }
     },
     {
       "name": "BLJX Acquisition, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "bljx-acquisition-llc",
+        "name": "BLJX Acquisition, LLC"
+      }
     }
   ],
   "anzsic_codes": [
@@ -119,6 +135,10 @@
           "canonical": {
             "id": "eli-lilly-and-company",
             "name": "Eli Lilly and Company"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
           }
         }
       ],
@@ -126,7 +146,11 @@
         {
           "name": "CSL Behring LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "csl-behring-llc",
+            "name": "CSL Behring LLC"
+          }
         }
       ]
     },
@@ -139,14 +163,22 @@
         {
           "name": "Advance Holdings II, LLC",
           "identifier_type": null,
-          "identifier": "Delaware ID  10496142"
+          "identifier": "Delaware ID  10496142",
+          "party_page": {
+            "id": "advance-holdings-ii-llc",
+            "name": "Advance Holdings II, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "BCI Acquisitions, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware ID  6389940"
+          "identifier": "Delaware ID  6389940",
+          "party_page": {
+            "id": "bci-acquisitions-inc",
+            "name": "BCI Acquisitions, Inc."
+          }
         }
       ]
     },
@@ -159,19 +191,31 @@
         {
           "name": "Compagnie Financi\u00e8re Michelin SAS",
           "identifier_type": null,
-          "identifier": "SIREN  898 849 153"
+          "identifier": "SIREN  898 849 153",
+          "party_page": {
+            "id": "compagnie-financi-re-michelin-sas",
+            "name": "Compagnie Financi\u00e8re Michelin SAS"
+          }
         },
         {
           "name": "Fenner America, Inc.",
           "identifier_type": null,
-          "identifier": "USDOT  3744583"
+          "identifier": "USDOT  3744583",
+          "party_page": {
+            "id": "fenner-america-inc",
+            "name": "Fenner America, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Flexitallic Group SAS",
           "identifier_type": null,
-          "identifier": "SIREN  532 742 699"
+          "identifier": "SIREN  532 742 699",
+          "party_page": {
+            "id": "flexitallic-group-sas",
+            "name": "Flexitallic Group SAS"
+          }
         }
       ]
     }

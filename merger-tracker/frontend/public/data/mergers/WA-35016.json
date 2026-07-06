@@ -14,19 +14,31 @@
     {
       "name": "Wipro Pari Italy S.r.l.",
       "identifier_type": null,
-      "identifier": "Companies Register of Emilia no. 05595980284"
+      "identifier": "Companies Register of Emilia no. 05595980284",
+      "party_page": {
+        "id": "wipro-pari-italy-s-r-l",
+        "name": "Wipro Pari Italy S.r.l."
+      }
     },
     {
       "name": "Wipro Enterprises Private Limited",
       "identifier_type": null,
-      "identifier": "Registrar of Companies, Karnataka at Bangalore no. U15141KA2010PTC054808"
+      "identifier": "Registrar of Companies, Karnataka at Bangalore no. U15141KA2010PTC054808",
+      "party_page": {
+        "id": "wipro-enterprises-private-limited",
+        "name": "Wipro Enterprises Private Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "Indeco Ind S.p.A.",
       "identifier_type": null,
-      "identifier": "Companies Register of Bari no. 05949910722"
+      "identifier": "Companies Register of Bari no. 05949910722",
+      "party_page": {
+        "id": "indeco-ind-s-p-a",
+        "name": "Indeco Ind S.p.A."
+      }
     }
   ],
   "other_parties": [
@@ -37,12 +49,20 @@
       "canonical": {
         "id": "wipro-ltd",
         "name": "Wipro Ltd"
+      },
+      "party_page": {
+        "id": "wipro-ltd",
+        "name": "Wipro Ltd"
       }
     },
     {
       "name": "Indeco Australia Pty Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "indeco-australia-pty-ltd",
+        "name": "Indeco Australia Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -115,13 +135,21 @@
         {
           "name": "Wipro Networks Pte Ltd",
           "identifier_type": null,
-          "identifier": "UEN  199907933M"
+          "identifier": "UEN  199907933M",
+          "party_page": {
+            "id": "wipro-networks-pte-ltd",
+            "name": "Wipro Networks Pte Ltd"
+          }
         },
         {
           "name": "Wipro Limited",
           "identifier_type": null,
           "identifier": "CIN L32102KA1945PLC020800",
           "canonical": {
+            "id": "wipro-ltd",
+            "name": "Wipro Ltd"
+          },
+          "party_page": {
             "id": "wipro-ltd",
             "name": "Wipro Ltd"
           }
@@ -131,12 +159,20 @@
         {
           "name": "Mindsprint Pte Limited",
           "identifier_type": null,
-          "identifier": "UEN  202118596N"
+          "identifier": "UEN  202118596N",
+          "party_page": {
+            "id": "mindsprint-pte-limited",
+            "name": "Mindsprint Pte Limited"
+          }
         },
         {
           "name": "Olam Holdings Pte Limited",
           "identifier_type": null,
-          "identifier": "UEN  202110101R"
+          "identifier": "UEN  202110101R",
+          "party_page": {
+            "id": "olam-holdings-pte-limited",
+            "name": "Olam Holdings Pte Limited"
+          }
         }
       ]
     },
@@ -149,14 +185,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "The Trustee for the Comfy Dental Trust",
           "identifier_type": "ABN",
-          "identifier": "59 865 563 072"
+          "identifier": "59 865 563 072",
+          "party_page": {
+            "id": "the-trustee-for-the-comfy-dental-trust",
+            "name": "The Trustee for the Comfy Dental Trust"
+          }
         }
       ]
     },
@@ -169,14 +213,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CAMDENT SERVICES UNIT TRUST",
           "identifier_type": "ABN",
-          "identifier": "37 559 915 898"
+          "identifier": "37 559 915 898",
+          "party_page": {
+            "id": "camdent-services-unit-trust",
+            "name": "Camdent Services Unit Trust"
+          }
         }
       ]
     }

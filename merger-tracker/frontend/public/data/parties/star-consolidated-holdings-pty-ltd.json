@@ -1,0 +1,47 @@
+{
+  "id": "star-consolidated-holdings-pty-ltd",
+  "canonical_name": "Star Consolidated Holdings Pty Ltd",
+  "members": [
+    {
+      "name": "STAR CONSOLIDATED HOLDINGS PTY LTD",
+      "identifier": "12 615 803 588",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "Star Consolidated Holdings Pty Ltd",
+      "identifier": "12 615 803 588",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "WA-40002",
+        "merger_name": "Star Hotels Group \u2013 Yandina Hotel, QLD",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-01-14T12:00:00Z",
+        "determination_date": "2026-02-02T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "WA-75015",
+        "merger_name": "Star Hotels Group \u2013 Liquor Legends Berserker & Liquor Legends Highway A1, QLD",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-03-17T12:00:00Z",
+        "determination_date": "2026-04-02T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 2,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 0,
+  "phase_duration": null
+}

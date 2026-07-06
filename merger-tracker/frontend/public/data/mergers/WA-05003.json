@@ -14,39 +14,67 @@
     {
       "name": "KKR Spire Aggregator L.P.",
       "identifier_type": null,
-      "identifier": "Company No.: 1001421059  Ontario"
+      "identifier": "Company No.: 1001421059  Ontario",
+      "party_page": {
+        "id": "kkr-spire-aggregator-l-p",
+        "name": "KKR Spire Aggregator L.P."
+      }
     },
     {
       "name": "Carrick Capital Associates Fund II, L.P.",
       "identifier_type": null,
-      "identifier": "Company No.: 5654423  Delaware"
+      "identifier": "Company No.: 5654423  Delaware",
+      "party_page": {
+        "id": "carrick-capital-associates-fund-ii-l-p",
+        "name": "Carrick Capital Associates Fund II, L.P."
+      }
     },
     {
       "name": "Carrick Capital Partners III Co-Investment Fund II, L.P.",
       "identifier_type": null,
-      "identifier": "Company No.: 7023487  Delaware"
+      "identifier": "Company No.: 7023487  Delaware",
+      "party_page": {
+        "id": "carrick-capital-partners-iii-co-investment-fund-ii-l-p",
+        "name": "Carrick Capital Partners III Co-Investment Fund II, L.P."
+      }
     },
     {
       "name": "Carrick Capital Founders Fund II, L.P.",
       "identifier_type": null,
-      "identifier": "Company No.: 5654424  Delaware"
+      "identifier": "Company No.: 5654424  Delaware",
+      "party_page": {
+        "id": "carrick-capital-founders-fund-ii-l-p",
+        "name": "Carrick Capital Founders Fund II, L.P."
+      }
     },
     {
       "name": "Carrick Capital II Co-Investment Fund II, L.P.",
       "identifier_type": null,
-      "identifier": "Company No.: 6150404  Delaware"
+      "identifier": "Company No.: 6150404  Delaware",
+      "party_page": {
+        "id": "carrick-capital-ii-co-investment-fund-ii-l-p",
+        "name": "Carrick Capital II Co-Investment Fund II, L.P."
+      }
     },
     {
       "name": "Carrick Capital Partners II, L.P.",
       "identifier_type": null,
-      "identifier": "Company No.: 5654420  Delaware"
+      "identifier": "Company No.: 5654420  Delaware",
+      "party_page": {
+        "id": "carrick-capital-partners-ii-l-p",
+        "name": "Carrick Capital Partners II, L.P."
+      }
     }
   ],
   "targets": [
     {
       "name": "Saviynt, Inc.",
       "identifier_type": null,
-      "identifier": "Company No.: 5712935  Delaware"
+      "identifier": "Company No.: 5712935  Delaware",
+      "party_page": {
+        "id": "saviynt-inc",
+        "name": "Saviynt, Inc."
+      }
     }
   ],
   "other_parties": [],
@@ -116,14 +144,22 @@
         {
           "name": "East Gate Games Investment Company",
           "identifier_type": "ABN",
-          "identifier": "39 275 633 205"
+          "identifier": "39 275 633 205",
+          "party_page": {
+            "id": "east-gate-games-investment-company",
+            "name": "East Gate Games Investment Company"
+          }
         }
       ],
       "targets": [
         {
           "name": "Moonton Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "moonton-holdings-limited",
+            "name": "Moonton Holdings Limited"
+          }
         }
       ]
     },
@@ -136,19 +172,31 @@
         {
           "name": "Resonetics, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "resonetics-llc",
+            "name": "Resonetics, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Resolution Medical MidCo, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "resolution-medical-midco-llc",
+            "name": "Resolution Medical MidCo, LLC"
+          }
         },
         {
           "name": "Arcline Capital Partners II-A LP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "arcline-capital-partners-ii-a-lp",
+            "name": "Arcline Capital Partners II-A LP"
+          }
         }
       ]
     },
@@ -161,14 +209,22 @@
         {
           "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 143 484 208"
+          "identifier": "53 143 484 208",
+          "party_page": {
+            "id": "origin-energy-international-holdings-pty-limited",
+            "name": "Origin Energy International Holdings Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CPP Investment Board Private Holdings (4) Inc.",
           "identifier_type": null,
-          "identifier": "BN  11089340"
+          "identifier": "BN  11089340",
+          "party_page": {
+            "id": "cpp-investment-board-private-holdings-4-inc",
+            "name": "CPP Investment Board Private Holdings (4) Inc."
+          }
         }
       ]
     }

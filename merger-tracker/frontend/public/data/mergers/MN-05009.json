@@ -16,41 +16,69 @@
     {
       "name": "Genea Bidco SA Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "695 694 458"
+      "identifier": "695 694 458",
+      "party_page": {
+        "id": "genea-bidco-sa-pty-ltd",
+        "name": "Genea Bidco SA Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "EMBRACE FERTILITY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "84 135 918 580"
+      "identifier": "84 135 918 580",
+      "party_page": {
+        "id": "embrace-fertility-pty-ltd",
+        "name": "Embrace Fertility Pty Ltd"
+      }
     },
     {
       "name": "Histon Nelson Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "144 914 965"
+      "identifier": "144 914 965",
+      "party_page": {
+        "id": "histon-nelson-pty-ltd",
+        "name": "Histon Nelson Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Fertility SA Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "147 408 857"
+      "identifier": "147 408 857",
+      "party_page": {
+        "id": "fertility-sa-pty-ltd",
+        "name": "Fertility SA Pty Ltd"
+      }
     },
     {
       "name": "Genea HoldCo SA Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "695 660 701"
+      "identifier": "695 660 701",
+      "party_page": {
+        "id": "genea-holdco-sa-pty-ltd",
+        "name": "Genea HoldCo SA Pty Ltd"
+      }
     },
     {
       "name": "JOEY HOLDCO PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "37 658 985 276"
+      "identifier": "37 658 985 276",
+      "party_page": {
+        "id": "joey-holdco-pty-ltd",
+        "name": "Joey Holdco Pty Ltd"
+      }
     },
     {
       "name": "ADORA HOLDCO PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "66 657 708 819"
+      "identifier": "66 657 708 819",
+      "party_page": {
+        "id": "adora-holdco-pty-ltd",
+        "name": "Adora Holdco Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -137,19 +165,31 @@
         {
           "name": "Arena BidCo Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 657 484"
+          "identifier": "693 657 484",
+          "party_page": {
+            "id": "arena-bidco-pty-ltd",
+            "name": "Arena BidCo Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "RFGI GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "55 630 028 974"
+          "identifier": "55 630 028 974",
+          "party_page": {
+            "id": "rfgi-group-pty-ltd",
+            "name": "Rfgi Group Pty Ltd"
+          }
         },
         {
           "name": "GAMEON HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "47 629 422 206"
+          "identifier": "47 629 422 206",
+          "party_page": {
+            "id": "gameon-holdings-pty-ltd",
+            "name": "Gameon Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -162,24 +202,40 @@
         {
           "name": "Coforge Limited",
           "identifier_type": null,
-          "identifier": "L72100HR1992PLC128382"
+          "identifier": "L72100HR1992PLC128382",
+          "party_page": {
+            "id": "coforge-limited",
+            "name": "Coforge Limited"
+          }
         },
         {
           "name": "Encora Holdco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdco-limited",
+            "name": "Encora Holdco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Encora US Holdco, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-us-holdco-inc",
+            "name": "Encora US Holdco, Inc"
+          }
         },
         {
           "name": "Encora Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdings-limited",
+            "name": "Encora Holdings Limited"
+          }
         }
       ]
     },
@@ -192,14 +248,22 @@
         {
           "name": "BETTERGROW HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 649 891 663"
+          "identifier": "99 649 891 663",
+          "party_page": {
+            "id": "bettergrow-holdings-pty-ltd",
+            "name": "Bettergrow Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "HYG HOLDCO PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "81 622 657 729"
+          "identifier": "81 622 657 729",
+          "party_page": {
+            "id": "hyg-holdco-pty-limited",
+            "name": "Hyg Holdco Pty Limited"
+          }
         }
       ]
     }

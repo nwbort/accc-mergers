@@ -14,14 +14,22 @@
     {
       "name": "Accenture International B.V.",
       "identifier_type": null,
-      "identifier": "Business registration no: KVK70797285"
+      "identifier": "Business registration no: KVK70797285",
+      "party_page": {
+        "id": "accenture-international-b-v",
+        "name": "Accenture International B.V."
+      }
     }
   ],
   "targets": [
     {
       "name": "Faculty Science Limited",
       "identifier_type": null,
-      "identifier": "Company registration no: CRN08873131"
+      "identifier": "Company registration no: CRN08873131",
+      "party_page": {
+        "id": "faculty-science-limited",
+        "name": "Faculty Science Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -99,6 +107,10 @@
           "canonical": {
             "id": "accenture-plc",
             "name": "Accenture plc"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
           }
         }
       ],
@@ -106,12 +118,20 @@
         {
           "name": "Ookla, LLC",
           "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103"
+          "identifier": "Unified Business ID  602 422 103",
+          "party_page": {
+            "id": "ookla-llc",
+            "name": "Ookla, LLC"
+          }
         },
         {
           "name": "Ekahau OY",
           "identifier_type": null,
-          "identifier": "Business ID  16108964"
+          "identifier": "Business ID  16108964",
+          "party_page": {
+            "id": "ekahau-oy",
+            "name": "Ekahau OY"
+          }
         }
       ]
     },
@@ -124,14 +144,22 @@
         {
           "name": "Badger Merger Sub I, Inc",
           "identifier_type": null,
-          "identifier": "10389384"
+          "identifier": "10389384",
+          "party_page": {
+            "id": "badger-merger-sub-i-inc",
+            "name": "Badger Merger Sub I, Inc"
+          }
         }
       ],
       "targets": [
         {
           "name": "Exact Sciences Corporation",
           "identifier_type": null,
-          "identifier": "020478229"
+          "identifier": "020478229",
+          "party_page": {
+            "id": "exact-sciences-corporation",
+            "name": "Exact Sciences Corporation"
+          }
         }
       ]
     },
@@ -144,24 +172,40 @@
         {
           "name": "Coforge Limited",
           "identifier_type": null,
-          "identifier": "L72100HR1992PLC128382"
+          "identifier": "L72100HR1992PLC128382",
+          "party_page": {
+            "id": "coforge-limited",
+            "name": "Coforge Limited"
+          }
         },
         {
           "name": "Encora Holdco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdco-limited",
+            "name": "Encora Holdco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Encora US Holdco, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-us-holdco-inc",
+            "name": "Encora US Holdco, Inc"
+          }
         },
         {
           "name": "Encora Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdings-limited",
+            "name": "Encora Holdings Limited"
+          }
         }
       ]
     }

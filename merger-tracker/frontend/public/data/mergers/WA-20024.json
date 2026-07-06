@@ -14,31 +14,51 @@
     {
       "name": "KK Group Invest A/S",
       "identifier_type": null,
-      "identifier": "CVR  66821110"
+      "identifier": "CVR  66821110",
+      "party_page": {
+        "id": "kk-group-invest-a-s",
+        "name": "KK Group Invest A/S"
+      }
     }
   ],
   "targets": [
     {
       "name": "PowerCon Holding ApS",
       "identifier_type": null,
-      "identifier": "CVR  32269095"
+      "identifier": "CVR  32269095",
+      "party_page": {
+        "id": "powercon-holding-aps",
+        "name": "PowerCon Holding ApS"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "PowerCon A/S",
       "identifier_type": null,
-      "identifier": "CVR  32270433"
+      "identifier": "CVR  32270433",
+      "party_page": {
+        "id": "powercon-a-s",
+        "name": "PowerCon A/S"
+      }
     },
     {
       "name": "A.P. M\u00f8ller Holding A/S",
       "identifier_type": null,
-      "identifier": "CVR  25679288"
+      "identifier": "CVR  25679288",
+      "party_page": {
+        "id": "a-p-m-ller-holding-a-s",
+        "name": "A.P. M\u00f8ller Holding A/S"
+      }
     },
     {
       "name": "PowerCon USA Inc.",
       "identifier_type": null,
-      "identifier": "Delaware File Number  6469852"
+      "identifier": "Delaware File Number  6469852",
+      "party_page": {
+        "id": "powercon-usa-inc",
+        "name": "PowerCon USA Inc."
+      }
     }
   ],
   "anzsic_codes": [
@@ -107,24 +127,40 @@
         {
           "name": "Banijay Holding UK Limited",
           "identifier_type": null,
-          "identifier": "UK Company number 17040112"
+          "identifier": "UK Company number 17040112",
+          "party_page": {
+            "id": "banijay-holding-uk-limited",
+            "name": "Banijay Holding UK Limited"
+          }
         },
         {
           "name": "Gold Rush TopCo Limited",
           "identifier_type": null,
-          "identifier": "RN 152697"
+          "identifier": "RN 152697",
+          "party_page": {
+            "id": "gold-rush-topco-limited",
+            "name": "Gold Rush TopCo Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Gold Rush HoldCo Limited",
           "identifier_type": null,
-          "identifier": "RN 152698"
+          "identifier": "RN 152698",
+          "party_page": {
+            "id": "gold-rush-holdco-limited",
+            "name": "Gold Rush HoldCo Limited"
+          }
         },
         {
           "name": "Banijay Holding S.A.S.",
           "identifier_type": null,
-          "identifier": "829 295 138 RCS PARIS"
+          "identifier": "829 295 138 RCS PARIS",
+          "party_page": {
+            "id": "banijay-holding-s-a-s",
+            "name": "Banijay Holding S.A.S."
+          }
         }
       ]
     },
@@ -141,6 +177,10 @@
           "canonical": {
             "id": "coles",
             "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -148,7 +188,11 @@
         {
           "name": "POWERCOR AUSTRALIA LTD",
           "identifier_type": "ABN",
-          "identifier": "89 064 651 109"
+          "identifier": "89 064 651 109",
+          "party_page": {
+            "id": "powercor-australia-ltd",
+            "name": "Powercor Australia Ltd"
+          }
         }
       ]
     },
@@ -165,6 +209,10 @@
           "canonical": {
             "id": "freudenberg-home-and-cleaning-solutions-gmbh",
             "name": "Freudenberg Home and Cleaning Solutions GmbH"
+          },
+          "party_page": {
+            "id": "freudenberg-home-and-cleaning-solutions-gmbh",
+            "name": "Freudenberg Home and Cleaning Solutions GmbH"
           }
         }
       ],
@@ -172,7 +220,11 @@
         {
           "name": "Nilfisk Holding A/S",
           "identifier_type": null,
-          "identifier": "CVR 38998870"
+          "identifier": "CVR 38998870",
+          "party_page": {
+            "id": "nilfisk-holding-a-s",
+            "name": "Nilfisk Holding A/S"
+          }
         }
       ]
     }

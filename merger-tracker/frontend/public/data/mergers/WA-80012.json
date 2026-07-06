@@ -14,24 +14,40 @@
     {
       "name": "Fluent Commerce Holdings Inc.",
       "identifier_type": null,
-      "identifier": "EIN 415103184"
+      "identifier": "EIN 415103184",
+      "party_page": {
+        "id": "fluent-commerce-holdings-inc",
+        "name": "Fluent Commerce Holdings Inc."
+      }
     },
     {
       "name": "FC Group Holdings Corporation",
       "identifier_type": null,
-      "identifier": "EIN 415051058"
+      "identifier": "EIN 415051058",
+      "party_page": {
+        "id": "fc-group-holdings-corporation",
+        "name": "FC Group Holdings Corporation"
+      }
     },
     {
       "name": "Fluent Commerce MidCo Inc.",
       "identifier_type": null,
-      "identifier": "EIN 415132220"
+      "identifier": "EIN 415132220",
+      "party_page": {
+        "id": "fluent-commerce-midco-inc",
+        "name": "Fluent Commerce MidCo Inc."
+      }
     }
   ],
   "targets": [
     {
       "name": "FLUENT RETAIL PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "75 132 599 154"
+      "identifier": "75 132 599 154",
+      "party_page": {
+        "id": "fluent-retail-pty-ltd",
+        "name": "Fluent Retail Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -113,19 +129,31 @@
         {
           "name": "eBay Inc.",
           "identifier_type": null,
-          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924"
+          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924",
+          "party_page": {
+            "id": "ebay-inc",
+            "name": "eBay Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Etsy, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "etsy-inc",
+            "name": "Etsy, Inc."
+          }
         },
         {
           "name": "Depop Limited",
           "identifier_type": null,
-          "identifier": "UK Company Registration Number  08316342"
+          "identifier": "UK Company Registration Number  08316342",
+          "party_page": {
+            "id": "depop-limited",
+            "name": "Depop Limited"
+          }
         }
       ]
     },
@@ -138,19 +166,31 @@
         {
           "name": "Resonetics, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "resonetics-llc",
+            "name": "Resonetics, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Resolution Medical MidCo, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "resolution-medical-midco-llc",
+            "name": "Resolution Medical MidCo, LLC"
+          }
         },
         {
           "name": "Arcline Capital Partners II-A LP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "arcline-capital-partners-ii-a-lp",
+            "name": "Arcline Capital Partners II-A LP"
+          }
         }
       ]
     },
@@ -163,19 +203,31 @@
         {
           "name": "Compagnie Financi\u00e8re Michelin SAS",
           "identifier_type": null,
-          "identifier": "SIREN  898 849 153"
+          "identifier": "SIREN  898 849 153",
+          "party_page": {
+            "id": "compagnie-financi-re-michelin-sas",
+            "name": "Compagnie Financi\u00e8re Michelin SAS"
+          }
         },
         {
           "name": "Fenner America, Inc.",
           "identifier_type": null,
-          "identifier": "USDOT  3744583"
+          "identifier": "USDOT  3744583",
+          "party_page": {
+            "id": "fenner-america-inc",
+            "name": "Fenner America, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Flexitallic Group SAS",
           "identifier_type": null,
-          "identifier": "SIREN  532 742 699"
+          "identifier": "SIREN  532 742 699",
+          "party_page": {
+            "id": "flexitallic-group-sas",
+            "name": "Flexitallic Group SAS"
+          }
         }
       ]
     }

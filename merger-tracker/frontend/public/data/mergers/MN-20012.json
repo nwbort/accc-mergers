@@ -20,6 +20,10 @@
       "canonical": {
         "id": "australian-meat-group-inc",
         "name": "Australian Meat Group Inc"
+      },
+      "party_page": {
+        "id": "australian-meat-group-inc",
+        "name": "Australian Meat Group Inc"
       }
     }
   ],
@@ -27,7 +31,11 @@
     {
       "name": "Killara Feedlot Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "18 081 072 746"
+      "identifier": "18 081 072 746",
+      "party_page": {
+        "id": "killara-feedlot-pty-ltd",
+        "name": "Killara Feedlot Pty Ltd"
+      }
     }
   ],
   "other_parties": [
@@ -38,27 +46,47 @@
       "canonical": {
         "id": "australian-meat-group-inc",
         "name": "Australian Meat Group Inc"
+      },
+      "party_page": {
+        "id": "australian-meat-group-inc",
+        "name": "Australian Meat Group Inc"
       }
     },
     {
       "name": "Cheltenham Property Nominees Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "134 215 731"
+      "identifier": "134 215 731",
+      "party_page": {
+        "id": "cheltenham-property-nominees-pty-ltd",
+        "name": "Cheltenham Property Nominees Pty Ltd"
+      }
     },
     {
       "name": "Australian Meat Properties Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "165 852 282"
+      "identifier": "165 852 282",
+      "party_page": {
+        "id": "australian-meat-properties-pty-ltd",
+        "name": "Australian Meat Properties Pty Ltd"
+      }
     },
     {
       "name": "Josdale Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "629 731 013"
+      "identifier": "629 731 013",
+      "party_page": {
+        "id": "josdale-pty-ltd",
+        "name": "Josdale Pty Ltd"
+      }
     },
     {
       "name": "NSW Meat Properties Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "630 576 859"
+      "identifier": "630 576 859",
+      "party_page": {
+        "id": "nsw-meat-properties-pty-ltd",
+        "name": "NSW Meat Properties Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -145,19 +173,31 @@
         {
           "name": "AVC OPERATIONS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         },
         {
           "name": "Australian Venue Co. Holdings Limited",
           "identifier_type": "ABN",
-          "identifier": "90 619 977 070"
+          "identifier": "90 619 977 070",
+          "party_page": {
+            "id": "australian-venue-co-holdings-limited",
+            "name": "Australian Venue Co. Holdings Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Q.R.A. PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "62 051 433 839"
+          "identifier": "62 051 433 839",
+          "party_page": {
+            "id": "q-r-a-pty-limited",
+            "name": "Q.R.A. Pty Limited"
+          }
         }
       ]
     },
@@ -170,14 +210,22 @@
         {
           "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "11 008 423 372"
+          "identifier": "11 008 423 372",
+          "party_page": {
+            "id": "zurich-financial-services-australia-limited",
+            "name": "Zurich Financial Services Australia Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CLEARVIEW WEALTH LIMITED",
           "identifier_type": "ABN",
-          "identifier": "83 106 248 248"
+          "identifier": "83 106 248 248",
+          "party_page": {
+            "id": "clearview-wealth-limited",
+            "name": "Clearview Wealth Limited"
+          }
         }
       ]
     },
@@ -190,19 +238,31 @@
         {
           "name": "A6 Audio Bidco Limited",
           "identifier_type": null,
-          "identifier": "Company number (England and Wales)  10573578"
+          "identifier": "Company number (England and Wales)  10573578",
+          "party_page": {
+            "id": "a6-audio-bidco-limited",
+            "name": "A6 Audio Bidco Limited"
+          }
         },
         {
           "name": "Sound Bidco (Denmark) ApS",
           "identifier_type": null,
-          "identifier": "Company number (Denmark)  45697088"
+          "identifier": "Company number (Denmark)  45697088",
+          "party_page": {
+            "id": "sound-bidco-denmark-aps",
+            "name": "Sound Bidco (Denmark) ApS"
+          }
         }
       ],
       "targets": [
         {
           "name": "Soundtech Group S.r.l.",
           "identifier_type": null,
-          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241"
+          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241",
+          "party_page": {
+            "id": "soundtech-group-s-r-l",
+            "name": "Soundtech Group S.r.l."
+          }
         }
       ]
     }

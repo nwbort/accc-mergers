@@ -14,21 +14,33 @@
     {
       "name": "MIGALOO QLD PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "30 600 219 172"
+      "identifier": "30 600 219 172",
+      "party_page": {
+        "id": "migaloo-qld-pty-ltd",
+        "name": "Migaloo Qld Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "The Trustee for The Garden Holdings Trust",
       "identifier_type": "ABN",
-      "identifier": "45 745 542 544"
+      "identifier": "45 745 542 544",
+      "party_page": {
+        "id": "the-trustee-for-the-garden-holdings-trust",
+        "name": "The Trustee for The Garden Holdings Trust"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "STAR CONSOLIDATED HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "12 615 803 588"
+      "identifier": "12 615 803 588",
+      "party_page": {
+        "id": "star-consolidated-holdings-pty-ltd",
+        "name": "Star Consolidated Holdings Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -101,19 +113,31 @@
         {
           "name": "HOTEL MAROOCHYDORE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 140 651 887"
+          "identifier": "99 140 651 887",
+          "party_page": {
+            "id": "hotel-maroochydore-pty-ltd",
+            "name": "Hotel Maroochydore Pty Ltd"
+          }
         },
         {
           "name": "SCHF PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 644 329 733"
+          "identifier": "99 644 329 733",
+          "party_page": {
+            "id": "schf-pty-ltd",
+            "name": "Schf Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "The Trustee for Kingston Family Trust",
           "identifier_type": "ABN",
-          "identifier": "96 328 946 230"
+          "identifier": "96 328 946 230",
+          "party_page": {
+            "id": "the-trustee-for-kingston-family-trust",
+            "name": "The Trustee for Kingston Family Trust"
+          }
         }
       ]
     },
@@ -126,19 +150,31 @@
         {
           "name": "REDCAPE HOTEL GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 139 067 244"
+          "identifier": "43 139 067 244",
+          "party_page": {
+            "id": "redcape-hotel-group-pty-ltd",
+            "name": "Redcape Hotel Group Pty Ltd"
+          }
         },
         {
           "name": "MAHF CUSTODIAN PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 619 512 060"
+          "identifier": "96 619 512 060",
+          "party_page": {
+            "id": "mahf-custodian-pty-ltd",
+            "name": "Mahf Custodian Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "REDBRAN PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "34 003 920 232"
+          "identifier": "34 003 920 232",
+          "party_page": {
+            "id": "redbran-pty-limited",
+            "name": "Redbran Pty. Limited"
+          }
         }
       ]
     },
@@ -151,14 +187,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "The Trustee for the Comfy Dental Trust",
           "identifier_type": "ABN",
-          "identifier": "59 865 563 072"
+          "identifier": "59 865 563 072",
+          "party_page": {
+            "id": "the-trustee-for-the-comfy-dental-trust",
+            "name": "The Trustee for the Comfy Dental Trust"
+          }
         }
       ]
     }

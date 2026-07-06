@@ -14,32 +14,52 @@
     {
       "name": "Compagnie Financi\u00e8re Michelin SAS",
       "identifier_type": null,
-      "identifier": "SIREN  898 849 153"
+      "identifier": "SIREN  898 849 153",
+      "party_page": {
+        "id": "compagnie-financi-re-michelin-sas",
+        "name": "Compagnie Financi\u00e8re Michelin SAS"
+      }
     },
     {
       "name": "Fenner America, Inc.",
       "identifier_type": null,
-      "identifier": "USDOT  3744583"
+      "identifier": "USDOT  3744583",
+      "party_page": {
+        "id": "fenner-america-inc",
+        "name": "Fenner America, Inc."
+      }
     }
   ],
   "targets": [
     {
       "name": "Flexitallic Group SAS",
       "identifier_type": null,
-      "identifier": "SIREN  532 742 699"
+      "identifier": "SIREN  532 742 699",
+      "party_page": {
+        "id": "flexitallic-group-sas",
+        "name": "Flexitallic Group SAS"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Compagnie G\u00e9n\u00e9rale des \u00c9tablissements Michelin",
       "identifier_type": null,
-      "identifier": "SIREN  855 200 887"
+      "identifier": "SIREN  855 200 887",
+      "party_page": {
+        "id": "compagnie-g-n-rale-des-tablissements-michelin",
+        "name": "Compagnie G\u00e9n\u00e9rale des \u00c9tablissements Michelin"
+      }
     },
     {
       "name": "FGI Acquisition Corp",
       "identifier_type": "ABN",
       "identifier": "20 659 183 196",
       "canonical": {
+        "id": "fgi-acquisition-corp",
+        "name": "FGI Acquisition Corp"
+      },
+      "party_page": {
         "id": "fgi-acquisition-corp",
         "name": "FGI Acquisition Corp"
       }
@@ -51,6 +71,10 @@
       "canonical": {
         "id": "fenner-international-limited",
         "name": "Fenner International Limited"
+      },
+      "party_page": {
+        "id": "fenner-international-limited",
+        "name": "Fenner International Limited"
       }
     },
     {
@@ -58,6 +82,10 @@
       "identifier_type": null,
       "identifier": "CRN  00527338",
       "canonical": {
+        "id": "fenner-international-limited",
+        "name": "Fenner International Limited"
+      },
+      "party_page": {
         "id": "fenner-international-limited",
         "name": "Fenner International Limited"
       }
@@ -69,12 +97,20 @@
       "canonical": {
         "id": "fgi-acquisition-corp",
         "name": "FGI Acquisition Corp"
+      },
+      "party_page": {
+        "id": "fgi-acquisition-corp",
+        "name": "FGI Acquisition Corp"
       }
     },
     {
       "name": "HALLITE SEALS AUSTRALIA PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "91 000 484 953"
+      "identifier": "91 000 484 953",
+      "party_page": {
+        "id": "hallite-seals-australia-pty-limited",
+        "name": "Hallite Seals Australia Pty Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -163,14 +199,22 @@
         {
           "name": "Advance Holdings II, LLC",
           "identifier_type": null,
-          "identifier": "Delaware ID  10496142"
+          "identifier": "Delaware ID  10496142",
+          "party_page": {
+            "id": "advance-holdings-ii-llc",
+            "name": "Advance Holdings II, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "BCI Acquisitions, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware ID  6389940"
+          "identifier": "Delaware ID  6389940",
+          "party_page": {
+            "id": "bci-acquisitions-inc",
+            "name": "BCI Acquisitions, Inc."
+          }
         }
       ]
     },
@@ -187,6 +231,10 @@
           "canonical": {
             "id": "eli-lilly-and-company",
             "name": "Eli Lilly and Company"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
           }
         }
       ],
@@ -194,7 +242,11 @@
         {
           "name": "Orna Therapeutics Holdings, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "orna-therapeutics-holdings-llc-2",
+            "name": "Orna Therapeutics Holdings, LLC"
+          }
         }
       ]
     },
@@ -211,6 +263,10 @@
           "canonical": {
             "id": "eli-lilly-and-company",
             "name": "Eli Lilly and Company"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
           }
         }
       ],
@@ -218,7 +274,11 @@
         {
           "name": "Orna Therapeutics Holdings, LLC",
           "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  861182936"
+          "identifier": "IRS Employer Identification Number  861182936",
+          "party_page": {
+            "id": "orna-therapeutics-holdings-llc",
+            "name": "Orna Therapeutics Holdings, LLC"
+          }
         }
       ]
     }

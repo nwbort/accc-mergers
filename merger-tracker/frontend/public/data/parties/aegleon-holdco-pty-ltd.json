@@ -1,0 +1,41 @@
+{
+  "id": "aegleon-holdco-pty-ltd",
+  "canonical_name": "Aegleon Holdco Pty Ltd",
+  "members": [
+    {
+      "name": "Aegleon Holdco Pty Ltd",
+      "identifier": "693 692 769",
+      "identifier_type": "ACN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-40028",
+        "merger_name": "Airtree \u2013 HotDoc",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-06-11T12:00:00Z",
+        "determination_date": "2026-06-30T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-50006",
+        "merger_name": "Airtree \u2013 HotDoc",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-02-23T12:00:00Z",
+        "determination_date": "2026-03-19T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 2,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 0,
+  "phase_duration": null
+}

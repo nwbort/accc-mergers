@@ -14,14 +14,22 @@
     {
       "name": "Adyen N.V.",
       "identifier_type": null,
-      "identifier": "KvK  34259528"
+      "identifier": "KvK  34259528",
+      "party_page": {
+        "id": "adyen-n-v",
+        "name": "Adyen N.V."
+      }
     }
   ],
   "targets": [
     {
       "name": "Talon.One GmbH",
       "identifier_type": null,
-      "identifier": "HRB  172085B"
+      "identifier": "HRB  172085B",
+      "party_page": {
+        "id": "talon-one-gmbh",
+        "name": "Talon.One GmbH"
+      }
     }
   ],
   "other_parties": [],
@@ -95,24 +103,40 @@
         {
           "name": "Coforge Limited",
           "identifier_type": null,
-          "identifier": "L72100HR1992PLC128382"
+          "identifier": "L72100HR1992PLC128382",
+          "party_page": {
+            "id": "coforge-limited",
+            "name": "Coforge Limited"
+          }
         },
         {
           "name": "Encora Holdco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdco-limited",
+            "name": "Encora Holdco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Encora US Holdco, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-us-holdco-inc",
+            "name": "Encora US Holdco, Inc"
+          }
         },
         {
           "name": "Encora Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdings-limited",
+            "name": "Encora Holdings Limited"
+          }
         }
       ]
     },
@@ -125,19 +149,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     },
@@ -150,14 +186,22 @@
         {
           "name": "East Gate Games Investment Company",
           "identifier_type": "ABN",
-          "identifier": "39 275 633 205"
+          "identifier": "39 275 633 205",
+          "party_page": {
+            "id": "east-gate-games-investment-company",
+            "name": "East Gate Games Investment Company"
+          }
         }
       ],
       "targets": [
         {
           "name": "Moonton Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "moonton-holdings-limited",
+            "name": "Moonton Holdings Limited"
+          }
         }
       ]
     }

@@ -14,19 +14,31 @@
     {
       "name": "BARWON BIDCO PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "23 695 060 907"
+      "identifier": "23 695 060 907",
+      "party_page": {
+        "id": "barwon-bidco-pty-ltd",
+        "name": "Barwon Bidco Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "BARWON INVESTMENT PARTNERS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "19 116 012 009"
+      "identifier": "19 116 012 009",
+      "party_page": {
+        "id": "barwon-investment-partners-pty-ltd",
+        "name": "Barwon Investment Partners Pty Ltd"
+      }
     },
     {
       "name": "",
       "identifier_type": "ACN",
-      "identifier": "620 598 745"
+      "identifier": "620 598 745",
+      "party_page": {
+        "id": "620598745",
+        "name": "620598745"
+      }
     }
   ],
   "other_parties": [
@@ -35,6 +47,10 @@
       "identifier_type": null,
       "identifier": "CR No.  147297",
       "canonical": {
+        "id": "hillhouse-investment-management-ltd",
+        "name": "Hillhouse Investment Management, Ltd."
+      },
+      "party_page": {
         "id": "hillhouse-investment-management-ltd",
         "name": "Hillhouse Investment Management, Ltd."
       }
@@ -106,19 +122,31 @@
         {
           "name": "Mizuho Securities Co., Ltd.",
           "identifier_type": null,
-          "identifier": "No. 94"
+          "identifier": "No. 94",
+          "party_page": {
+            "id": "mizuho-securities-co-ltd",
+            "name": "Mizuho Securities Co., Ltd."
+          }
         }
       ],
       "targets": [
         {
           "name": "Redpoint Investments Pte Ltd",
           "identifier_type": null,
-          "identifier": "201536795E"
+          "identifier": "201536795E",
+          "party_page": {
+            "id": "redpoint-investments-pte-ltd",
+            "name": "Redpoint Investments Pte Ltd"
+          }
         },
         {
           "name": "Avendus Capital Private Limited",
           "identifier_type": null,
-          "identifier": "CIN U99999MH1999PTC123358"
+          "identifier": "CIN U99999MH1999PTC123358",
+          "party_page": {
+            "id": "avendus-capital-private-limited",
+            "name": "Avendus Capital Private Limited"
+          }
         }
       ]
     },
@@ -131,19 +159,31 @@
         {
           "name": "CP Britannia Bidco Limited",
           "identifier_type": null,
-          "identifier": "Jersey Financial Services Commission  163400"
+          "identifier": "Jersey Financial Services Commission  163400",
+          "party_page": {
+            "id": "cp-britannia-bidco-limited",
+            "name": "CP Britannia Bidco Limited"
+          }
         },
         {
           "name": "Creative Planning Holdco, LLC",
           "identifier_type": null,
-          "identifier": "SEC  801 7725610"
+          "identifier": "SEC  801 7725610",
+          "party_page": {
+            "id": "creative-planning-holdco-llc",
+            "name": "Creative Planning Holdco, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "MASECO LLP",
           "identifier_type": null,
-          "identifier": "United Kingdom  OC337650"
+          "identifier": "United Kingdom  OC337650",
+          "party_page": {
+            "id": "maseco-llp",
+            "name": "Maseco Llp"
+          }
         }
       ]
     },
@@ -156,14 +196,22 @@
         {
           "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "57 167 960 018"
+          "identifier": "57 167 960 018",
+          "party_page": {
+            "id": "az-next-generation-advisory-pty-ltd",
+            "name": "Az Next Generation Advisory Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "BMM PARTNERS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 649 113 959"
+          "identifier": "82 649 113 959",
+          "party_page": {
+            "id": "bmm-partners-pty-ltd",
+            "name": "Bmm Partners Pty Ltd"
+          }
         }
       ]
     }

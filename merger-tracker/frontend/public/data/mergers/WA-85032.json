@@ -14,31 +14,51 @@
     {
       "name": "Bolt S.p.A",
       "identifier_type": null,
-      "identifier": "Lodi under no. 14245060968"
+      "identifier": "Lodi under no. 14245060968",
+      "party_page": {
+        "id": "bolt-s-p-a",
+        "name": "Bolt S.p.A"
+      }
     }
   ],
   "targets": [
     {
       "name": "Eni Plenitude S.p.A. Societ\u00e0 Benefit",
       "identifier_type": null,
-      "identifier": "Lodi under no. 123 000 201 58"
+      "identifier": "Lodi under no. 123 000 201 58",
+      "party_page": {
+        "id": "eni-plenitude-s-p-a-societ-benefit",
+        "name": "Eni Plenitude S.p.A. Societ\u00e0 Benefit"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Ares Management LLC",
       "identifier_type": null,
-      "identifier": "LEI  3M096E5S0PEUTB0I8L53"
+      "identifier": "LEI  3M096E5S0PEUTB0I8L53",
+      "party_page": {
+        "id": "ares-management-llc",
+        "name": "Ares Management LLC"
+      }
     },
     {
       "name": "Eni S.p.A.",
       "identifier_type": null,
-      "identifier": "Registration Authority ID  00484960588"
+      "identifier": "Registration Authority ID  00484960588",
+      "party_page": {
+        "id": "eni-s-p-a",
+        "name": "Eni S.p.A."
+      }
     },
     {
       "name": "WINDLAB PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "26 104 461 958"
+      "identifier": "26 104 461 958",
+      "party_page": {
+        "id": "windlab-pty-limited",
+        "name": "Windlab Pty Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -111,24 +131,40 @@
         {
           "name": "SYMAL MANAGEMENT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "85 602 084 471"
+          "identifier": "85 602 084 471",
+          "party_page": {
+            "id": "symal-management-pty-ltd",
+            "name": "Symal Management Pty Ltd"
+          }
         },
         {
           "name": "SYL TM CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 693 144 697"
+          "identifier": "68 693 144 697",
+          "party_page": {
+            "id": "syl-tm-contracting-pty-ltd",
+            "name": "Syl Tm Contracting Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TIMMS HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "73 115 389 949"
+          "identifier": "73 115 389 949",
+          "party_page": {
+            "id": "timms-hire-pty-ltd",
+            "name": "Timms Hire Pty Ltd"
+          }
         },
         {
           "name": "TIMMS CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "30 070 456 567"
+          "identifier": "30 070 456 567",
+          "party_page": {
+            "id": "timms-contracting-pty-ltd",
+            "name": "Timms Contracting Pty Ltd"
+          }
         }
       ]
     },
@@ -141,24 +177,40 @@
         {
           "name": "MA MARINA FUND HOLDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 667 241 385"
+          "identifier": "96 667 241 385",
+          "party_page": {
+            "id": "ma-marina-fund-holdco-pty-ltd",
+            "name": "Ma Marina Fund Holdco Pty Ltd"
+          }
         },
         {
           "name": "MA MARINA FUND TT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "65 666 902 245"
+          "identifier": "65 666 902 245",
+          "party_page": {
+            "id": "ma-marina-fund-tt-pty-ltd",
+            "name": "Ma Marina Fund Tt Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "GGC Marketing Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "32 105 294 228"
+          "identifier": "32 105 294 228",
+          "party_page": {
+            "id": "ggc-marketing-pty-ltd",
+            "name": "GGC Marketing Pty Ltd"
+          }
         },
         {
           "name": "QUEENSLAND & PACIFIC PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "72 081 370 685"
+          "identifier": "72 081 370 685",
+          "party_page": {
+            "id": "queensland-pacific-pty-ltd",
+            "name": "Queensland & Pacific Pty. Ltd."
+          }
         }
       ]
     },
@@ -171,14 +223,22 @@
         {
           "name": "RUSSELL INVESTMENT GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "92 003 066 859"
+          "identifier": "92 003 066 859",
+          "party_page": {
+            "id": "russell-investment-group-pty-ltd",
+            "name": "Russell Investment Group Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
           "identifier_type": "ABN",
-          "identifier": "56 063 278 400"
+          "identifier": "56 063 278 400",
+          "party_page": {
+            "id": "zurich-investment-management-limited",
+            "name": "Zurich Investment Management Limited"
+          }
         }
       ]
     }

@@ -16,34 +16,58 @@
     {
       "name": "LAWRENCE & HANSON GROUP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "69 080 350 812"
+      "identifier": "69 080 350 812",
+      "party_page": {
+        "id": "lawrence-hanson-group-pty-ltd",
+        "name": "Lawrence & Hanson Group Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "ROBYN DAN",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "robyn-dan",
+        "name": "Robyn Dan"
+      }
     },
     {
       "name": "LYNETTE ROBYN VAN ECK",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "lynette-robyn-van-eck",
+        "name": "Lynette Robyn Van Eck"
+      }
     },
     {
       "name": "SCOTT VAN ECK",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "scott-van-eck",
+        "name": "Scott Van Eck"
+      }
     },
     {
       "name": "JOHN VAN ECK",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "john-van-eck",
+        "name": "John Van Eck"
+      }
     },
     {
       "name": "GORDON MACDONALD PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "36 000 307 246"
+      "identifier": "36 000 307 246",
+      "party_page": {
+        "id": "gordon-macdonald-pty-ltd",
+        "name": "Gordon Macdonald Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -127,14 +151,22 @@
         {
           "name": "MCDONALD'S AUSTRALIA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "43 008 496 928"
+          "identifier": "43 008 496 928",
+          "party_page": {
+            "id": "mcdonald-s-australia-limited",
+            "name": "Mcdonald'S Australia Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST",
           "identifier_type": "ACN",
-          "identifier": "601 504 590"
+          "identifier": "601 504 590",
+          "party_page": {
+            "id": "lvant-mecca-pty-limited-as-trustee-for-carmichael-family-trust",
+            "name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST"
+          }
         }
       ]
     },
@@ -147,14 +179,22 @@
         {
           "name": "Duncan Holdco III LLC",
           "identifier_type": null,
-          "identifier": "State of Delaware Company File Number  10510961"
+          "identifier": "State of Delaware Company File Number  10510961",
+          "party_page": {
+            "id": "duncan-holdco-iii-llc",
+            "name": "Duncan Holdco III LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "DigitalBridge Group, Inc.",
           "identifier_type": null,
-          "identifier": "IRS  464591526"
+          "identifier": "IRS  464591526",
+          "party_page": {
+            "id": "digitalbridge-group-inc",
+            "name": "DigitalBridge Group, Inc."
+          }
         }
       ]
     },
@@ -171,6 +211,10 @@
           "canonical": {
             "id": "henkel-global-supply-chain-b-v",
             "name": "Henkel Global Supply Chain B.V."
+          },
+          "party_page": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
           }
         }
       ],
@@ -178,7 +222,11 @@
         {
           "name": "Aqua Adhesives I GmbH",
           "identifier_type": null,
-          "identifier": "Swiss registration number: CH170.4.019.1870"
+          "identifier": "Swiss registration number: CH170.4.019.1870",
+          "party_page": {
+            "id": "aqua-adhesives-i-gmbh",
+            "name": "Aqua Adhesives I GmbH"
+          }
         }
       ]
     }

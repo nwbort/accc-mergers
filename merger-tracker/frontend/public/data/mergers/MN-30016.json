@@ -16,14 +16,22 @@
     {
       "name": "Zurich Insurance Company Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "zurich-insurance-company-ltd",
+        "name": "Zurich Insurance Company Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "Beazley plc",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "beazley-plc",
+        "name": "Beazley plc"
+      }
     }
   ],
   "other_parties": [
@@ -34,17 +42,29 @@
       "canonical": {
         "id": "zurich-assure-australia-pty-ltd",
         "name": "Zurich Assure Australia Pty Ltd"
+      },
+      "party_page": {
+        "id": "zurich-assure-australia-pty-ltd",
+        "name": "Zurich Assure Australia Pty Ltd"
       }
     },
     {
       "name": "Zurich Australia Insurance Limited",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "zurich-insurance-group-ltd",
+        "name": "Zurich Insurance Group Ltd"
+      }
     },
     {
       "name": "OnePath General Insurance Pty Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "onepath-general-insurance-pty-ltd-2",
+        "name": "OnePath General Insurance Pty Ltd"
+      }
     },
     {
       "name": "Zurich Services (Australia) Pty Ltd",
@@ -53,12 +73,20 @@
       "canonical": {
         "id": "zurich-services-australia-pty-ltd",
         "name": "Zurich Services (Australia) Pty Ltd"
+      },
+      "party_page": {
+        "id": "zurich-services-australia-pty-ltd",
+        "name": "Zurich Services (Australia) Pty Ltd"
       }
     },
     {
       "name": "Zurich Finance (Australia) Limited",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "zurich-finance-australia-limited-2",
+        "name": "Zurich Finance (Australia) Limited"
+      }
     },
     {
       "name": "Zurich Australian Property Holdings Pty Limited",
@@ -67,12 +95,20 @@
       "canonical": {
         "id": "zurich-australian-property-holdings-pty-ltd",
         "name": "Zurich Australian Property Holdings Pty Ltd"
+      },
+      "party_page": {
+        "id": "zurich-australian-property-holdings-pty-ltd",
+        "name": "Zurich Australian Property Holdings Pty Ltd"
       }
     },
     {
       "name": "Cover-More Group",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "cover-more-group",
+        "name": "Cover-More Group"
+      }
     },
     {
       "name": "Insite Holdings Pty Limited",
@@ -81,22 +117,38 @@
       "canonical": {
         "id": "insite-holdings-pty-ltd",
         "name": "Insite Holdings Pty Ltd"
+      },
+      "party_page": {
+        "id": "insite-holdings-pty-ltd",
+        "name": "Insite Holdings Pty Ltd"
       }
     },
     {
       "name": "Zurich Australia Limited",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "zurich-australia-limited-2",
+        "name": "Zurich Australia Limited"
+      }
     },
     {
       "name": "Zurich Australia Insurance Properties Pty Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "zurich-australia-insurance-properties-pty-ltd",
+        "name": "Zurich Australia Insurance Properties Pty Ltd"
+      }
     },
     {
       "name": "Zurich Financial Services Australia Limited",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "zurich-financial-services-australia-limited-2",
+        "name": "Zurich Financial Services Australia Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -183,14 +235,22 @@
         {
           "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "11 008 423 372"
+          "identifier": "11 008 423 372",
+          "party_page": {
+            "id": "zurich-financial-services-australia-limited",
+            "name": "Zurich Financial Services Australia Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CLEARVIEW WEALTH LIMITED",
           "identifier_type": "ABN",
-          "identifier": "83 106 248 248"
+          "identifier": "83 106 248 248",
+          "party_page": {
+            "id": "clearview-wealth-limited",
+            "name": "Clearview Wealth Limited"
+          }
         }
       ]
     },
@@ -203,14 +263,22 @@
         {
           "name": "RUSSELL INVESTMENT GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "92 003 066 859"
+          "identifier": "92 003 066 859",
+          "party_page": {
+            "id": "russell-investment-group-pty-ltd",
+            "name": "Russell Investment Group Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
           "identifier_type": "ABN",
-          "identifier": "56 063 278 400"
+          "identifier": "56 063 278 400",
+          "party_page": {
+            "id": "zurich-investment-management-limited",
+            "name": "Zurich Investment Management Limited"
+          }
         }
       ]
     },
@@ -223,19 +291,31 @@
         {
           "name": "INSURANCE AUSTRALIA GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "60 090 739 923"
+          "identifier": "60 090 739 923",
+          "party_page": {
+            "id": "insurance-australia-group-limited",
+            "name": "Insurance Australia Group Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "RAC INSURANCE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "59 094 685 882"
+          "identifier": "59 094 685 882",
+          "party_page": {
+            "id": "rac-insurance-pty-limited",
+            "name": "Rac Insurance Pty Limited"
+          }
         },
         {
           "name": "RACI PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "40 008 671 805"
+          "identifier": "40 008 671 805",
+          "party_page": {
+            "id": "raci-pty-limited",
+            "name": "Raci Pty Limited"
+          }
         }
       ]
     }

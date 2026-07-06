@@ -14,31 +14,51 @@
     {
       "name": "General Atlantic",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "general-atlantic",
+        "name": "General Atlantic"
+      }
     },
     {
       "name": "Canada Pension Plan Investment Board",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "canada-pension-plan-investment-board",
+        "name": "Canada Pension Plan Investment Board"
+      }
     }
   ],
   "targets": [
     {
       "name": "Boats Group Holdings, Inc",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "boats-group-holdings-inc",
+        "name": "Boats Group Holdings, Inc"
+      }
     },
     {
       "name": "Bimini Holdings, LP",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "bimini-holdings-lp",
+        "name": "Bimini Holdings, LP"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Permira Holdings Limited",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "permira-holdings-limited-2",
+        "name": "Permira Holdings Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -111,7 +131,11 @@
         {
           "name": "GT Silver BidCo, Inc.",
           "identifier_type": null,
-          "identifier": "413417606"
+          "identifier": "413417606",
+          "party_page": {
+            "id": "gt-silver-bidco-inc",
+            "name": "GT Silver BidCo, Inc."
+          }
         }
       ],
       "targets": [
@@ -120,6 +144,10 @@
           "identifier_type": null,
           "identifier": "00140838",
           "canonical": {
+            "id": "clearwater-analytics-llc",
+            "name": "Clearwater Analytics, LLC"
+          },
+          "party_page": {
             "id": "clearwater-analytics-llc",
             "name": "Clearwater Analytics, LLC"
           }
@@ -135,14 +163,22 @@
         {
           "name": "Zendesk, Inc.",
           "identifier_type": null,
-          "identifier": "EIN 264411091"
+          "identifier": "EIN 264411091",
+          "party_page": {
+            "id": "zendesk-inc",
+            "name": "Zendesk, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Forethought Technologies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "forethought-technologies-inc",
+            "name": "Forethought Technologies, Inc."
+          }
         }
       ]
     },
@@ -155,14 +191,22 @@
         {
           "name": "IBWM PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "28 621 141 026"
+          "identifier": "28 621 141 026",
+          "party_page": {
+            "id": "ibwm-pty-ltd",
+            "name": "Ibwm Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "VIOLA GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 680 038 180"
+          "identifier": "20 680 038 180",
+          "party_page": {
+            "id": "viola-group-holdings-pty-ltd",
+            "name": "Viola Group Holdings Pty Ltd"
+          }
         }
       ]
     }

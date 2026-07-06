@@ -13,36 +13,60 @@
     {
       "name": "ADBRI PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "15 007 596 018"
+      "identifier": "15 007 596 018",
+      "party_page": {
+        "id": "adbri-pty-limited",
+        "name": "Adbri Pty Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "Eureka Concrete (Holdings) Pty. Ltd.",
       "identifier_type": "ABN",
-      "identifier": "14 005 232 342"
+      "identifier": "14 005 232 342",
+      "party_page": {
+        "id": "eureka-concrete-holdings-pty-ltd",
+        "name": "Eureka Concrete (Holdings) Pty. Ltd."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "INDEPENDENT CEMENT AND LIME PTY. LIMITED",
       "identifier_type": "ABN",
-      "identifier": "49 005 829 550"
+      "identifier": "49 005 829 550",
+      "party_page": {
+        "id": "independent-cement-and-lime-pty-limited",
+        "name": "Independent Cement And Lime Pty. Limited"
+      }
     },
     {
       "name": "CENTRAL PRE-MIX CONCRETE PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "62 008 070 862"
+      "identifier": "62 008 070 862",
+      "party_page": {
+        "id": "central-pre-mix-concrete-pty-ltd",
+        "name": "Central Pre-Mix Concrete Pty. Ltd."
+      }
     },
     {
       "name": "HY-TEC INDUSTRIES (VICTORIA) PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "43 096 310 520"
+      "identifier": "43 096 310 520",
+      "party_page": {
+        "id": "hy-tec-industries-victoria-pty-ltd",
+        "name": "Hy-Tec Industries (Victoria) Pty Ltd"
+      }
     },
     {
       "name": "E.B. MAWSON & SONS PROPRIETARY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "14 004 519 617"
+      "identifier": "14 004 519 617",
+      "party_page": {
+        "id": "e-b-mawson-sons-proprietary-limited",
+        "name": "E.B. Mawson & Sons Proprietary Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -89,14 +113,22 @@
         {
           "name": "CTC PRECAST PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "12 614 966 059"
+          "identifier": "12 614 966 059",
+          "party_page": {
+            "id": "ctc-precast-pty-ltd",
+            "name": "Ctc Precast Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TAYLEX GROUP HOLDING CO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "50 646 051 578"
+          "identifier": "50 646 051 578",
+          "party_page": {
+            "id": "taylex-group-holding-co-pty-ltd",
+            "name": "Taylex Group Holding Co Pty Ltd"
+          }
         }
       ]
     },
@@ -109,19 +141,31 @@
         {
           "name": "BQC Group Pty Ltd [yet to be incorporated]",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "bqc-group-pty-ltd-yet-to-be-incorporated",
+            "name": "BQC Group Pty Ltd [yet to be incorporated]"
+          }
         }
       ],
       "targets": [
         {
           "name": "M&T Populin Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "092 648 078"
+          "identifier": "092 648 078",
+          "party_page": {
+            "id": "m-t-populin-pty-ltd",
+            "name": "M&T Populin Pty Ltd"
+          }
         },
         {
           "name": "BQC Registrations Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "613 361 041"
+          "identifier": "613 361 041",
+          "party_page": {
+            "id": "bqc-registrations-pty-ltd",
+            "name": "BQC Registrations Pty Ltd"
+          }
         }
       ]
     },
@@ -134,19 +178,31 @@
         {
           "name": "VENTURA NEWCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 694 822 047"
+          "identifier": "43 694 822 047",
+          "party_page": {
+            "id": "ventura-newco-pty-ltd",
+            "name": "Ventura Newco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "CROWN HYBRID PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "47 004 550 529"
+          "identifier": "47 004 550 529",
+          "party_page": {
+            "id": "crown-hybrid-pty-ltd",
+            "name": "Crown Hybrid Pty Ltd"
+          }
         },
         {
           "name": "CROWN COACHES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "48 004 882 213"
+          "identifier": "48 004 882 213",
+          "party_page": {
+            "id": "crown-coaches-pty-ltd",
+            "name": "Crown Coaches Pty Ltd"
+          }
         }
       ]
     }

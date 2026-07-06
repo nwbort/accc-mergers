@@ -14,21 +14,33 @@
     {
       "name": "ALDUS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "38 085 318 494"
+      "identifier": "38 085 318 494",
+      "party_page": {
+        "id": "aldus-pty-ltd",
+        "name": "Aldus Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "HILTON MANUFACTURING PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "89 005 551 057"
+      "identifier": "89 005 551 057",
+      "party_page": {
+        "id": "hilton-manufacturing-pty-ltd",
+        "name": "Hilton Manufacturing Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "ALDUS MANUFACTURING PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "73 695 120 677"
+      "identifier": "73 695 120 677",
+      "party_page": {
+        "id": "aldus-manufacturing-pty-ltd",
+        "name": "Aldus Manufacturing Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -109,19 +121,31 @@
         {
           "name": "NACG WA Acquisition Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 678 296"
+          "identifier": "693 678 296",
+          "party_page": {
+            "id": "nacg-wa-acquisition-pty-ltd",
+            "name": "NACG WA Acquisition Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "DCL CORP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 633 008 992"
+          "identifier": "60 633 008 992",
+          "party_page": {
+            "id": "dcl-corp-pty-ltd",
+            "name": "Dcl Corp Pty Ltd"
+          }
         },
         {
           "name": "IRON HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 641 807 589"
+          "identifier": "43 641 807 589",
+          "party_page": {
+            "id": "iron-hire-pty-ltd",
+            "name": "Iron Hire Pty Ltd"
+          }
         }
       ]
     },
@@ -134,19 +158,31 @@
         {
           "name": "Argo Bowen 2 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 023 619"
+          "identifier": "695 023 619",
+          "party_page": {
+            "id": "argo-bowen-2-pty-ltd",
+            "name": "Argo Bowen 2 Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "48 149 524 809"
+          "identifier": "48 149 524 809",
+          "party_page": {
+            "id": "lenton-management-and-marketing-pty-ltd",
+            "name": "Lenton Management And Marketing Pty Ltd"
+          }
         },
         {
           "name": "COKING COAL ONE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "89 615 317 907"
+          "identifier": "89 615 317 907",
+          "party_page": {
+            "id": "coking-coal-one-pty-ltd",
+            "name": "Coking Coal One Pty Ltd"
+          }
         }
       ]
     },
@@ -159,24 +195,40 @@
         {
           "name": "SYMAL MANAGEMENT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "85 602 084 471"
+          "identifier": "85 602 084 471",
+          "party_page": {
+            "id": "symal-management-pty-ltd",
+            "name": "Symal Management Pty Ltd"
+          }
         },
         {
           "name": "SYL TM CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 693 144 697"
+          "identifier": "68 693 144 697",
+          "party_page": {
+            "id": "syl-tm-contracting-pty-ltd",
+            "name": "Syl Tm Contracting Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TIMMS HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "73 115 389 949"
+          "identifier": "73 115 389 949",
+          "party_page": {
+            "id": "timms-hire-pty-ltd",
+            "name": "Timms Hire Pty Ltd"
+          }
         },
         {
           "name": "TIMMS CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "30 070 456 567"
+          "identifier": "30 070 456 567",
+          "party_page": {
+            "id": "timms-contracting-pty-ltd",
+            "name": "Timms Contracting Pty Ltd"
+          }
         }
       ]
     }

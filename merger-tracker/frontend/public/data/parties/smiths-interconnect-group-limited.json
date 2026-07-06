@@ -1,0 +1,38 @@
+{
+  "id": "smiths-interconnect-group-limited",
+  "canonical_name": "Smiths Interconnect Group Limited",
+  "members": [
+    {
+      "name": "Smiths Interconnect Group Limited",
+      "identifier": "UK CRN  06641403",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "MN-01061",
+        "merger_name": "Molex \u2013 Smiths Interconnect",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2025-11-13T12:00:00Z",
+        "determination_date": "2025-12-05T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 22.0,
+    "median_days": 22,
+    "average_business_days": 16.0,
+    "median_business_days": 16,
+    "completed_count": 1
+  }
+}

@@ -26,6 +26,7 @@ from static_data.outputs import (
     individual,
     industries,
     list as list_out,
+    parties,
     questionnaires,
     stats,
     theories_of_harm,
@@ -1650,3 +1651,198 @@ class TestTheoriesOfHarmGenerate:
         }
         assert not any('strong and effective competitor' in e for e in all_excerpts)
         assert payload['unclassified']['matters'] == []
+
+
+# ---------------------------------------------------------------------------
+# parties
+# ---------------------------------------------------------------------------
+
+def _party_mergers_fixture():
+    """Three mergers: two share a canonical-group member (Coles), one has an
+    unlisted acquirer that recurs under the same name/ABN across two mergers,
+    and one has an unlisted target that only appears once."""
+    return [
+        {
+            'merger_id': 'MN-1001',
+            'merger_name': 'Coles buys Corner Store',
+            'status': 'Determined',
+            'is_waiver': False,
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-01-06T09:00:00Z',
+            'determination_publication_date': '2025-02-05T12:00:00Z',
+            'phase_1_determination_date': '2025-02-05T12:00:00Z',
+            'page_modified_datetime': '2025-02-05T12:30:00Z',
+            'acquirers': [{'name': 'COLES GROUP LIMITED', 'identifier': '11 004 089 936', 'identifier_type': 'ABN'}],
+            'targets': [{'name': 'CORNER STORE PTY LTD', 'identifier': '', 'identifier_type': ''}],
+            'other_parties': [],
+        },
+        {
+            'merger_id': 'MN-1002',
+            'merger_name': 'Coles Supermarkets buys Depot',
+            'status': 'Under assessment',
+            'is_waiver': False,
+            'stage': 'Phase 2 - in-depth assessment',
+            'effective_notification_datetime': '2025-03-15T09:00:00Z',
+            'determination_publication_date': None,
+            'phase_1_determination_date': None,
+            'page_modified_datetime': '2025-03-15T09:30:00Z',
+            'acquirers': [{'name': 'COLES SUPERMARKETS AUSTRALIA PTY LTD', 'identifier': '45 004 189 708', 'identifier_type': 'ABN'}],
+            'targets': [{'name': 'DEPOT HOLDINGS PTY LTD', 'identifier': '99 111 222 333', 'identifier_type': 'ABN'}],
+            'other_parties': [],
+        },
+        {
+            'merger_id': 'MN-1003',
+            'merger_name': 'Depot Holdings buys Warehouse',
+            'status': 'Determined',
+            'is_waiver': False,
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-04-01T09:00:00Z',
+            'determination_publication_date': '2025-04-30T12:00:00Z',
+            'phase_1_determination_date': '2025-04-30T12:00:00Z',
+            'page_modified_datetime': '2025-04-30T12:30:00Z',
+            'acquirers': [{'name': 'DEPOT HOLDINGS PTY LTD', 'identifier': '99 111 222 333', 'identifier_type': 'ABN'}],
+            'targets': [{'name': 'WAREHOUSE CO', 'identifier': '', 'identifier_type': ''}],
+            'other_parties': [],
+        },
+    ]
+
+
+_COLES_GROUP = {
+    'id': 'coles',
+    'canonical_name': 'Coles Group',
+    'members': [
+        {'name': 'COLES GROUP LIMITED', 'identifier': '11 004 089 936'},
+        {'name': 'COLES SUPERMARKETS AUSTRALIA PTY LTD', 'identifier': '45 004 189 708'},
+    ],
+}
+
+
+class TestBuildPartyPages:
+    def test_canonical_group_parties_share_one_page(self):
+        groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        coles = next(g for g in groups if g['id'] == 'coles')
+        assert coles['canonical_name'] == 'Coles Group'
+        member_names = {m['name'] for m in coles['members']}
+        assert member_names == {'COLES GROUP LIMITED', 'COLES SUPERMARKETS AUSTRALIA PTY LTD'}
+        assert set(coles['mergers_by_role']['acquirer'].keys()) == {'MN-1001', 'MN-1002'}
+
+    def test_unlisted_party_gets_a_synthesized_group_of_one(self):
+        # Depot Holdings has no canonical group entry but recurs (same ABN)
+        # as a target in MN-1002 and an acquirer in MN-1003 — both appearances
+        # must land in the same synthesized page.
+        groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        depot = next(g for g in groups if any('DEPOT HOLDINGS' in m['name'] for m in g['members']))
+        assert depot['id'] != 'coles'
+        assert set(depot['mergers_by_role']['target'].keys()) == {'MN-1002'}
+        assert set(depot['mergers_by_role']['acquirer'].keys()) == {'MN-1003'}
+
+    def test_single_appearance_party_still_gets_a_page(self):
+        # Deviation from the spec's "groups only" recommendation: every party,
+        # even one that appears in a single merger, gets its own page.
+        groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        warehouse = next(g for g in groups if any('WAREHOUSE CO' in m['name'] for m in g['members']))
+        assert set(warehouse['mergers_by_role']['target'].keys()) == {'MN-1003'}
+
+    def test_attaches_party_page_to_every_party_in_place(self):
+        mergers = _party_mergers_fixture()
+        parties.build_party_pages(mergers, [_COLES_GROUP])
+        for m in mergers:
+            for field in ('acquirers', 'targets', 'other_parties'):
+                for p in m.get(field) or []:
+                    assert 'party_page' in p
+                    assert p['party_page']['id']
+
+    def test_slug_collisions_between_unrelated_parties_are_disambiguated(self):
+        # Two distinct, unlisted entities that happen to share a display name
+        # (different ABNs, no canonical group) must not be folded into one
+        # page: the second gets a disambiguated id, and each keeps its own
+        # merger appearances.
+        clashing_mergers = [
+            {
+                'merger_id': 'MN-2001',
+                'merger_name': 'Example Co (WA) buys X',
+                'status': 'Determined',
+                'is_waiver': False,
+                'stage': 'Phase 1 - preliminary assessment',
+                'effective_notification_datetime': '2025-05-01T09:00:00Z',
+                'determination_publication_date': '2025-05-20T12:00:00Z',
+                'phase_1_determination_date': '2025-05-20T12:00:00Z',
+                'page_modified_datetime': '2025-05-20T12:30:00Z',
+                'acquirers': [{'name': 'EXAMPLE CO PTY LTD', 'identifier': '11 111 111 111', 'identifier_type': 'ABN'}],
+                'targets': [],
+                'other_parties': [],
+            },
+            {
+                'merger_id': 'MN-2002',
+                'merger_name': 'Example Co (VIC) buys Y',
+                'status': 'Determined',
+                'is_waiver': False,
+                'stage': 'Phase 1 - preliminary assessment',
+                'effective_notification_datetime': '2025-06-01T09:00:00Z',
+                'determination_publication_date': '2025-06-20T12:00:00Z',
+                'phase_1_determination_date': '2025-06-20T12:00:00Z',
+                'page_modified_datetime': '2025-06-20T12:30:00Z',
+                'acquirers': [{'name': 'EXAMPLE CO PTY LTD', 'identifier': '22 222 222 222', 'identifier_type': 'ABN'}],
+                'targets': [],
+                'other_parties': [],
+            },
+        ]
+        groups = parties.build_party_pages(clashing_mergers, [_COLES_GROUP])
+        example_groups = [g for g in groups if g['canonical_name'] == 'Example Co Pty Ltd']
+        assert len(example_groups) == 2
+        ids = {g['id'] for g in example_groups}
+        assert len(ids) == 2
+        merger_ids = {next(iter(g['mergers_by_role']['acquirer'])) for g in example_groups}
+        assert merger_ids == {'MN-2001', 'MN-2002'}
+
+    def test_output_is_deterministic(self):
+        first = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        second = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        assert [g['id'] for g in first] == [g['id'] for g in second]
+
+
+class TestPartiesGenerateIndex:
+    def test_returns_valid_shape_sorted_by_count_desc(self):
+        groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        payload = parties.generate_index(groups)
+        json.dumps(payload)
+        assert all({'id', 'name', 'merger_count'} <= set(p.keys()) for p in payload['parties'])
+        counts = [p['merger_count'] for p in payload['parties']]
+        assert counts == sorted(counts, reverse=True)
+        assert payload['total_parties'] == len(groups)
+
+    def test_coles_counts_both_notifications(self):
+        groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        payload = parties.generate_index(groups)
+        coles = next(p for p in payload['parties'] if p['id'] == 'coles')
+        assert coles['merger_count'] == 2
+
+
+class TestPartiesDetailFiles:
+    def test_writes_one_file_per_group(self, tmp_path):
+        groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        n = parties.generate_detail_files(groups, tmp_path)
+        assert n == len(groups)
+        written = {p.stem for p in (tmp_path / 'parties').glob('*.json')}
+        assert written == {g['id'] for g in groups}
+
+    def test_coles_file_contents(self, tmp_path):
+        groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        parties.generate_detail_files(groups, tmp_path)
+        with open(tmp_path / 'parties' / 'coles.json') as f:
+            data = json.load(f)
+        assert data['canonical_name'] == 'Coles Group'
+        assert data['merger_count'] == 2
+        assert data['phase_1_count'] == 1
+        assert data['phase_2_count'] == 1
+        assert {m['merger_id'] for m in data['mergers']['acquirer']} == {'MN-1001', 'MN-1002'}
+        assert data['mergers']['target'] == []
+
+    def test_single_party_file_contents(self, tmp_path):
+        groups = parties.build_party_pages(_party_mergers_fixture(), [_COLES_GROUP])
+        parties.generate_detail_files(groups, tmp_path)
+        warehouse_id = next(g['id'] for g in groups if 'WAREHOUSE CO' in [m['name'] for m in g['members']])
+        with open(tmp_path / 'parties' / f'{warehouse_id}.json') as f:
+            data = json.load(f)
+        assert data['merger_count'] == 1
+        assert [m['merger_id'] for m in data['mergers']['target']] == ['MN-1003']

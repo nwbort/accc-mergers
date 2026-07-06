@@ -14,14 +14,22 @@
     {
       "name": "Xylem Analytics Germany GmbH",
       "identifier_type": null,
-      "identifier": "HRB 145685"
+      "identifier": "HRB 145685",
+      "party_page": {
+        "id": "xylem-analytics-germany-gmbh",
+        "name": "Xylem Analytics Germany GmbH"
+      }
     }
   ],
   "targets": [
     {
       "name": "TriOS Mess- und Datentechnik GmbH",
       "identifier_type": null,
-      "identifier": "HRB 3992"
+      "identifier": "HRB 3992",
+      "party_page": {
+        "id": "trios-mess-und-datentechnik-gmbh",
+        "name": "TriOS Mess- und Datentechnik GmbH"
+      }
     }
   ],
   "other_parties": [],
@@ -99,24 +107,40 @@
         {
           "name": "Essential Bidco B.V.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "essential-bidco-b-v",
+            "name": "Essential Bidco B.V."
+          }
         },
         {
           "name": "Specialty (U.S.) Bidco, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialty-u-s-bidco-inc",
+            "name": "Specialty (U.S.) Bidco, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "SpecialtyCo US LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialtyco-us-llc",
+            "name": "SpecialtyCo US LLC"
+          }
         },
         {
           "name": "Biomin Phytogenics GmbH (Germany)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "biomin-phytogenics-gmbh-germany",
+            "name": "Biomin Phytogenics GmbH (Germany)"
+          }
         }
       ]
     },
@@ -133,6 +157,10 @@
           "canonical": {
             "id": "henkel-global-supply-chain-b-v",
             "name": "Henkel Global Supply Chain B.V."
+          },
+          "party_page": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
           }
         }
       ],
@@ -140,12 +168,20 @@
         {
           "name": "Stahl Holdings B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 34249320"
+          "identifier": "Netherlands registration number (KVK): 34249320",
+          "party_page": {
+            "id": "stahl-holdings-b-v",
+            "name": "Stahl Holdings B.V."
+          }
         },
         {
           "name": "Stahl Asia Pacific Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "Singapore registration number: 200606884Z"
+          "identifier": "Singapore registration number: 200606884Z",
+          "party_page": {
+            "id": "stahl-asia-pacific-pte-ltd",
+            "name": "Stahl Asia Pacific Pte. Ltd."
+          }
         }
       ]
     },
@@ -158,7 +194,11 @@
         {
           "name": "GT Silver BidCo, Inc.",
           "identifier_type": null,
-          "identifier": "413417606"
+          "identifier": "413417606",
+          "party_page": {
+            "id": "gt-silver-bidco-inc",
+            "name": "GT Silver BidCo, Inc."
+          }
         }
       ],
       "targets": [
@@ -167,6 +207,10 @@
           "identifier_type": null,
           "identifier": "00140838",
           "canonical": {
+            "id": "clearwater-analytics-llc",
+            "name": "Clearwater Analytics, LLC"
+          },
+          "party_page": {
             "id": "clearwater-analytics-llc",
             "name": "Clearwater Analytics, LLC"
           }

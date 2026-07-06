@@ -16,36 +16,60 @@
     {
       "name": "SYMAL GROUP LIMITED",
       "identifier_type": "ABN",
-      "identifier": "72 615 255 466"
+      "identifier": "72 615 255 466",
+      "party_page": {
+        "id": "symal-group-limited",
+        "name": "Symal Group Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "J. DAVISON NOMINEES PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "70 007 998 969"
+      "identifier": "70 007 998 969",
+      "party_page": {
+        "id": "j-davison-nominees-pty-ltd",
+        "name": "J. Davison Nominees Pty. Ltd."
+      }
     },
     {
       "name": "DAVISON CONTRACTORS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "68 675 773 896"
+      "identifier": "68 675 773 896",
+      "party_page": {
+        "id": "davison-contractors-pty-ltd",
+        "name": "Davison Contractors Pty Ltd"
+      }
     },
     {
       "name": "P&A EQUIPMENT PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "59 650 590 864"
+      "identifier": "59 650 590 864",
+      "party_page": {
+        "id": "p-a-equipment-pty-ltd",
+        "name": "P&A Equipment Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Paul Davison",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "paul-davison",
+        "name": "Paul Davison"
+      }
     },
     {
       "name": "Anna Davison",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "anna-davison",
+        "name": "Anna Davison"
+      }
     }
   ],
   "anzsic_codes": [
@@ -132,24 +156,40 @@
         {
           "name": "SYMAL MANAGEMENT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "85 602 084 471"
+          "identifier": "85 602 084 471",
+          "party_page": {
+            "id": "symal-management-pty-ltd",
+            "name": "Symal Management Pty Ltd"
+          }
         },
         {
           "name": "SYL TM CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 693 144 697"
+          "identifier": "68 693 144 697",
+          "party_page": {
+            "id": "syl-tm-contracting-pty-ltd",
+            "name": "Syl Tm Contracting Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TIMMS HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "73 115 389 949"
+          "identifier": "73 115 389 949",
+          "party_page": {
+            "id": "timms-hire-pty-ltd",
+            "name": "Timms Hire Pty Ltd"
+          }
         },
         {
           "name": "TIMMS CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "30 070 456 567"
+          "identifier": "30 070 456 567",
+          "party_page": {
+            "id": "timms-contracting-pty-ltd",
+            "name": "Timms Contracting Pty Ltd"
+          }
         }
       ]
     },
@@ -162,19 +202,31 @@
         {
           "name": "NACG WA Acquisition Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 678 296"
+          "identifier": "693 678 296",
+          "party_page": {
+            "id": "nacg-wa-acquisition-pty-ltd",
+            "name": "NACG WA Acquisition Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "DCL CORP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 633 008 992"
+          "identifier": "60 633 008 992",
+          "party_page": {
+            "id": "dcl-corp-pty-ltd",
+            "name": "Dcl Corp Pty Ltd"
+          }
         },
         {
           "name": "IRON HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 641 807 589"
+          "identifier": "43 641 807 589",
+          "party_page": {
+            "id": "iron-hire-pty-ltd",
+            "name": "Iron Hire Pty Ltd"
+          }
         }
       ]
     },
@@ -187,19 +239,31 @@
         {
           "name": "Global Engage Marine Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 762 122"
+          "identifier": "693 762 122",
+          "party_page": {
+            "id": "global-engage-marine-pty-ltd",
+            "name": "Global Engage Marine Pty Ltd"
+          }
         },
         {
           "name": "PT Asian Bulk Logistics",
           "identifier_type": null,
-          "identifier": "NIB   8120012130871"
+          "identifier": "NIB   8120012130871",
+          "party_page": {
+            "id": "pt-asian-bulk-logistics",
+            "name": "PT Asian Bulk Logistics"
+          }
         }
       ],
       "targets": [
         {
           "name": "ENGAGE MARINE TOPCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "46 675 998 562"
+          "identifier": "46 675 998 562",
+          "party_page": {
+            "id": "engage-marine-topco-pty-ltd",
+            "name": "Engage Marine Topco Pty Ltd"
+          }
         }
       ]
     }

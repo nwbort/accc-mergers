@@ -14,7 +14,11 @@
     {
       "name": "A-AV Holdco I, Inc",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "a-av-holdco-i-inc",
+        "name": "A-AV Holdco I, Inc"
+      }
     }
   ],
   "targets": [
@@ -25,6 +29,10 @@
       "canonical": {
         "id": "avanos-medical-inc",
         "name": "Avanos Medical, Inc."
+      },
+      "party_page": {
+        "id": "avanos-medical-inc",
+        "name": "Avanos Medical, Inc."
       }
     }
   ],
@@ -32,7 +40,11 @@
     {
       "name": "AIPCF VIII Global Corp Holding L.P.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "aipcf-viii-global-corp-holding-l-p",
+        "name": "AIPCF VIII Global Corp Holding L.P."
+      }
     },
     {
       "name": "AVANOS MEDICAL AUSTRALIA PTY LTD",
@@ -41,12 +53,20 @@
       "canonical": {
         "id": "avanos-medical-inc",
         "name": "Avanos Medical, Inc."
+      },
+      "party_page": {
+        "id": "avanos-medical-inc",
+        "name": "Avanos Medical, Inc."
       }
     },
     {
       "name": "AIP, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "aip-llc",
+        "name": "Aip, Llc"
+      }
     }
   ],
   "anzsic_codes": [
@@ -123,19 +143,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     },
@@ -152,24 +184,40 @@
           "canonical": {
             "id": "mastercard-incorporated",
             "name": "Mastercard Incorporated"
+          },
+          "party_page": {
+            "id": "mastercard-incorporated",
+            "name": "Mastercard Incorporated"
           }
         },
         {
           "name": "Ares UK Holdco 2 Limited",
           "identifier_type": null,
-          "identifier": "CRN 17107097"
+          "identifier": "CRN 17107097",
+          "party_page": {
+            "id": "ares-uk-holdco-2-limited",
+            "name": "Ares UK Holdco 2 Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "B Corporation S.A.M",
           "identifier_type": null,
-          "identifier": "23S09602"
+          "identifier": "23S09602",
+          "party_page": {
+            "id": "b-corporation-s-a-m",
+            "name": "B Corporation S.A.M"
+          }
         },
         {
           "name": "BVNK Holdings Limited",
           "identifier_type": null,
-          "identifier": "13922014"
+          "identifier": "13922014",
+          "party_page": {
+            "id": "bvnk-holdings-limited",
+            "name": "BVNK Holdings Limited"
+          }
         }
       ]
     },
@@ -182,14 +230,22 @@
         {
           "name": "Duncan Holdco III LLC",
           "identifier_type": null,
-          "identifier": "State of Delaware Company File Number  10510961"
+          "identifier": "State of Delaware Company File Number  10510961",
+          "party_page": {
+            "id": "duncan-holdco-iii-llc",
+            "name": "Duncan Holdco III LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "DigitalBridge Group, Inc.",
           "identifier_type": null,
-          "identifier": "IRS  464591526"
+          "identifier": "IRS  464591526",
+          "party_page": {
+            "id": "digitalbridge-group-inc",
+            "name": "DigitalBridge Group, Inc."
+          }
         }
       ]
     }

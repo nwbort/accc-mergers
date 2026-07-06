@@ -16,14 +16,22 @@
     {
       "name": "ASAHI HOLDINGS (AUSTRALIA) PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "48 135 315 767"
+      "identifier": "48 135 315 767",
+      "party_page": {
+        "id": "asahi-holdings-australia-pty-ltd",
+        "name": "Asahi Holdings (Australia) Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "GTA INDUSTRIAL CUSTODIAN PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "45 081 823 743"
+      "identifier": "45 081 823 743",
+      "party_page": {
+        "id": "gta-industrial-custodian-pty-limited",
+        "name": "Gta Industrial Custodian Pty Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -122,14 +130,22 @@
         {
           "name": "ASAHI HOLDINGS (AUSTRALIA) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "48 135 315 767"
+          "identifier": "48 135 315 767",
+          "party_page": {
+            "id": "asahi-holdings-australia-pty-ltd",
+            "name": "Asahi Holdings (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "GPT PLATFORM PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "51 164 839 061"
+          "identifier": "51 164 839 061",
+          "party_page": {
+            "id": "gpt-platform-pty-limited",
+            "name": "Gpt Platform Pty Limited"
+          }
         }
       ]
     },
@@ -142,19 +158,31 @@
         {
           "name": "A6 Audio Bidco Limited",
           "identifier_type": null,
-          "identifier": "Company number (England and Wales)  10573578"
+          "identifier": "Company number (England and Wales)  10573578",
+          "party_page": {
+            "id": "a6-audio-bidco-limited",
+            "name": "A6 Audio Bidco Limited"
+          }
         },
         {
           "name": "Sound Bidco (Denmark) ApS",
           "identifier_type": null,
-          "identifier": "Company number (Denmark)  45697088"
+          "identifier": "Company number (Denmark)  45697088",
+          "party_page": {
+            "id": "sound-bidco-denmark-aps",
+            "name": "Sound Bidco (Denmark) ApS"
+          }
         }
       ],
       "targets": [
         {
           "name": "Soundtech Group S.r.l.",
           "identifier_type": null,
-          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241"
+          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241",
+          "party_page": {
+            "id": "soundtech-group-s-r-l",
+            "name": "Soundtech Group S.r.l."
+          }
         }
       ]
     },
@@ -167,19 +195,31 @@
         {
           "name": "REDCAPE HOTEL GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 139 067 244"
+          "identifier": "43 139 067 244",
+          "party_page": {
+            "id": "redcape-hotel-group-pty-ltd",
+            "name": "Redcape Hotel Group Pty Ltd"
+          }
         },
         {
           "name": "MAHF CUSTODIAN PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 619 512 060"
+          "identifier": "96 619 512 060",
+          "party_page": {
+            "id": "mahf-custodian-pty-ltd",
+            "name": "Mahf Custodian Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "REDBRAN PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "34 003 920 232"
+          "identifier": "34 003 920 232",
+          "party_page": {
+            "id": "redbran-pty-limited",
+            "name": "Redbran Pty. Limited"
+          }
         }
       ]
     }

@@ -14,41 +14,69 @@
     {
       "name": "Midea Imaging Technology (Shanghai) Co., Ltd.",
       "identifier_type": null,
-      "identifier": "USCC  91310118MAEN420F3W"
+      "identifier": "USCC  91310118MAEN420F3W",
+      "party_page": {
+        "id": "midea-imaging-technology-shanghai-co-ltd",
+        "name": "Midea Imaging Technology (Shanghai) Co., Ltd."
+      }
     }
   ],
   "targets": [
     {
       "name": "Esaote S.p.A.",
       "identifier_type": null,
-      "identifier": "Codice Fiscale/Partita IVA  05131180969"
+      "identifier": "Codice Fiscale/Partita IVA  05131180969",
+      "party_page": {
+        "id": "esaote-s-p-a",
+        "name": "Esaote S.p.A."
+      }
     },
     {
       "name": "Shanghai Lu Zi Enterprise Management Consulting Center",
       "identifier_type": null,
-      "identifier": "USCC  91310115MA1K3D4T1W"
+      "identifier": "USCC  91310115MA1K3D4T1W",
+      "party_page": {
+        "id": "shanghai-lu-zi-enterprise-management-consulting-center",
+        "name": "Shanghai Lu Zi Enterprise Management Consulting Center"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Midea Group (Shanghai) Co., Ltd.",
       "identifier_type": null,
-      "identifier": "USCC  91310118MA1JNET8X1"
+      "identifier": "USCC  91310118MA1JNET8X1",
+      "party_page": {
+        "id": "midea-group-shanghai-co-ltd",
+        "name": "Midea Group (Shanghai) Co., Ltd."
+      }
     },
     {
       "name": "Carestream Healthcare International Company Limited",
       "identifier_type": null,
-      "identifier": "USCC  913100007956050379"
+      "identifier": "USCC  913100007956050379",
+      "party_page": {
+        "id": "carestream-healthcare-international-company-limited",
+        "name": "Carestream Healthcare International Company Limited"
+      }
     },
     {
       "name": "Midea Medical Technology (Shanghai) Co., Ltd.",
       "identifier_type": null,
-      "identifier": "USCC  91310118MAEBMH8U5G"
+      "identifier": "USCC  91310118MAEBMH8U5G",
+      "party_page": {
+        "id": "midea-medical-technology-shanghai-co-ltd",
+        "name": "Midea Medical Technology (Shanghai) Co., Ltd."
+      }
     },
     {
       "name": "Wansheng Medical Investments (Italy) S.p.A.",
       "identifier_type": null,
-      "identifier": "Codice Fiscale  10087620968"
+      "identifier": "Codice Fiscale  10087620968",
+      "party_page": {
+        "id": "wansheng-medical-investments-italy-s-p-a",
+        "name": "Wansheng Medical Investments (Italy) S.p.A."
+      }
     },
     {
       "name": "Midea Group Co., Ltd.",
@@ -57,17 +85,29 @@
       "canonical": {
         "id": "midea-group-co-ltd",
         "name": "Midea Group Co., Ltd."
+      },
+      "party_page": {
+        "id": "midea-group-co-ltd",
+        "name": "Midea Group Co., Ltd."
       }
     },
     {
       "name": "Beijing Wandong Medical Technology Co., Ltd.",
       "identifier_type": null,
-      "identifier": "USCC  9111000063379674X4"
+      "identifier": "USCC  9111000063379674X4",
+      "party_page": {
+        "id": "beijing-wandong-medical-technology-co-ltd",
+        "name": "Beijing Wandong Medical Technology Co., Ltd."
+      }
     },
     {
       "name": "Wansheng Medical Investments (Hong Kong) Limited",
       "identifier_type": null,
-      "identifier": "Company Registry Identification Number  2591584"
+      "identifier": "Company Registry Identification Number  2591584",
+      "party_page": {
+        "id": "wansheng-medical-investments-hong-kong-limited",
+        "name": "Wansheng Medical Investments (Hong Kong) Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -140,14 +180,22 @@
         {
           "name": "Saipem S.p.A",
           "identifier_type": null,
-          "identifier": "Register of Milan Monza Brianza Lodi under number 00825790157"
+          "identifier": "Register of Milan Monza Brianza Lodi under number 00825790157",
+          "party_page": {
+            "id": "saipem-s-p-a",
+            "name": "Saipem S.p.A"
+          }
         }
       ],
       "targets": [
         {
           "name": "Subsea7 S.A.",
           "identifier_type": null,
-          "identifier": "R.C.S. Luxembourg B 43172"
+          "identifier": "R.C.S. Luxembourg B 43172",
+          "party_page": {
+            "id": "subsea7-s-a",
+            "name": "Subsea7 S.A."
+          }
         }
       ]
     },
@@ -160,7 +208,11 @@
         {
           "name": "Sail Parent Holdco Ltd",
           "identifier_type": null,
-          "identifier": "UK Company Registration Number 17112723"
+          "identifier": "UK Company Registration Number 17112723",
+          "party_page": {
+            "id": "sail-parent-holdco-ltd",
+            "name": "Sail Parent Holdco Ltd"
+          }
         }
       ],
       "targets": [
@@ -169,6 +221,10 @@
           "identifier_type": null,
           "identifier": "Cayman Islands Company Registration Number CF172438",
           "canonical": {
+            "id": "derbysoft-inc",
+            "name": "DerbySoft Inc."
+          },
+          "party_page": {
             "id": "derbysoft-inc",
             "name": "DerbySoft Inc."
           }
@@ -184,24 +240,40 @@
         {
           "name": "PARAGON CARE LIMITED",
           "identifier_type": "ABN",
-          "identifier": "76 064 551 426"
+          "identifier": "76 064 551 426",
+          "party_page": {
+            "id": "paragon-care-limited",
+            "name": "Paragon Care Limited"
+          }
         },
         {
           "name": "CLIFFORD HALLAM HEALTHCARE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "38 001 655 554"
+          "identifier": "38 001 655 554",
+          "party_page": {
+            "id": "clifford-hallam-healthcare-pty-limited",
+            "name": "Clifford Hallam Healthcare Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "ROCKPAC SOUTH PACIFIC PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "40 639 100 422"
+          "identifier": "40 639 100 422",
+          "party_page": {
+            "id": "rockpac-south-pacific-pty-ltd",
+            "name": "Rockpac South Pacific Pty Ltd"
+          }
         },
         {
           "name": "PRESIDENTAL PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "77 002 697 896"
+          "identifier": "77 002 697 896",
+          "party_page": {
+            "id": "presidental-pty-limited",
+            "name": "Presidental Pty Limited"
+          }
         }
       ]
     }

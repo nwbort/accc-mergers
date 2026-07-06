@@ -16,51 +16,87 @@
     {
       "name": "VENTURA NEWCO PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "43 694 822 047"
+      "identifier": "43 694 822 047",
+      "party_page": {
+        "id": "ventura-newco-pty-ltd",
+        "name": "Ventura Newco Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "CROWN HYBRID PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "47 004 550 529"
+      "identifier": "47 004 550 529",
+      "party_page": {
+        "id": "crown-hybrid-pty-ltd",
+        "name": "Crown Hybrid Pty Ltd"
+      }
     },
     {
       "name": "CROWN COACHES PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "48 004 882 213"
+      "identifier": "48 004 882 213",
+      "party_page": {
+        "id": "crown-coaches-pty-ltd",
+        "name": "Crown Coaches Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Ventura Bus Lines Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "005 798 121"
+      "identifier": "005 798 121",
+      "party_page": {
+        "id": "ventura-bus-lines-pty-ltd",
+        "name": "Ventura Bus Lines Pty Ltd"
+      }
     },
     {
       "name": "Ventura Property Management Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "28 100 908 049"
+      "identifier": "28 100 908 049",
+      "party_page": {
+        "id": "ventura-property-management-pty-ltd",
+        "name": "Ventura Property Management Pty Ltd"
+      }
     },
     {
       "name": "Zumba Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "154 324 839"
+      "identifier": "154 324 839",
+      "party_page": {
+        "id": "zumba-pty-ltd",
+        "name": "Zumba Pty Ltd"
+      }
     },
     {
       "name": "VENTURA MOTORS PROPRIETARY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "67 004 235 518"
+      "identifier": "67 004 235 518",
+      "party_page": {
+        "id": "ventura-motors-proprietary-limited",
+        "name": "Ventura Motors Proprietary Limited"
+      }
     },
     {
       "name": "IVANHOE BUS COMPANY PROPRIETARY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "57 004 367 962"
+      "identifier": "57 004 367 962",
+      "party_page": {
+        "id": "ivanhoe-bus-company-proprietary-limited",
+        "name": "Ivanhoe Bus Company Proprietary Limited"
+      }
     },
     {
       "name": "Keppel Infrastructure Fund Management Pte. Ltd.",
       "identifier_type": null,
-      "identifier": "UEN  200803959H"
+      "identifier": "UEN  200803959H",
+      "party_page": {
+        "id": "keppel-infrastructure-fund-management-pte-ltd",
+        "name": "Keppel Infrastructure Fund Management Pte. Ltd."
+      }
     }
   ],
   "anzsic_codes": [
@@ -143,14 +179,22 @@
         {
           "name": "GIP V Snow Bidco Limited",
           "identifier_type": null,
-          "identifier": "UK company number  17059583"
+          "identifier": "UK company number  17059583",
+          "party_page": {
+            "id": "gip-v-snow-bidco-limited",
+            "name": "GIP V Snow Bidco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Envol Holdings Limited",
           "identifier_type": null,
-          "identifier": "Jersey registration number  121115"
+          "identifier": "Jersey registration number  121115",
+          "party_page": {
+            "id": "envol-holdings-limited",
+            "name": "Envol Holdings Limited"
+          }
         }
       ]
     },
@@ -163,19 +207,31 @@
         {
           "name": "Saturn NewCo, Inc",
           "identifier_type": null,
-          "identifier": "DE File number: 10449592"
+          "identifier": "DE File number: 10449592",
+          "party_page": {
+            "id": "saturn-newco-inc",
+            "name": "Saturn NewCo, Inc"
+          }
         },
         {
           "name": "ClassPass Aggregator, LLC",
           "identifier_type": null,
-          "identifier": "DE File number: 6177870"
+          "identifier": "DE File number: 6177870",
+          "party_page": {
+            "id": "classpass-aggregator-llc",
+            "name": "ClassPass Aggregator, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "EGYM SE",
           "identifier_type": null,
-          "identifier": "HRB: 186394"
+          "identifier": "HRB: 186394",
+          "party_page": {
+            "id": "egym-se",
+            "name": "Egym Se"
+          }
         }
       ]
     },
@@ -188,14 +244,22 @@
         {
           "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "35 667 654 686"
+          "identifier": "35 667 654 686",
+          "party_page": {
+            "id": "cvs-vets-australia-proprietary-limited",
+            "name": "Cvs Vets (Australia) Proprietary Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 001 336 723"
+          "identifier": "25 001 336 723",
+          "party_page": {
+            "id": "pittwater-animal-hospital-pty-ltd",
+            "name": "Pittwater Animal Hospital Pty Ltd"
+          }
         }
       ]
     }

@@ -14,26 +14,42 @@
     {
       "name": "Scopely, Inc.",
       "identifier_type": null,
-      "identifier": "State of Delaware, Division of Corporations  4932055"
+      "identifier": "State of Delaware, Division of Corporations  4932055",
+      "party_page": {
+        "id": "scopely-inc",
+        "name": "Scopely, Inc."
+      }
     }
   ],
   "targets": [
     {
       "name": "Loom Games Oyun Yaz\u0131l\u0131m ve Pazarlama Anonim \u015eirketi",
       "identifier_type": null,
-      "identifier": "Istanbul Trade Registry  2483665"
+      "identifier": "Istanbul Trade Registry  2483665",
+      "party_page": {
+        "id": "loom-games-oyun-yaz-l-m-ve-pazarlama-anonim-irketi",
+        "name": "Loom Games Oyun Yaz\u0131l\u0131m ve Pazarlama Anonim \u015eirketi"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Public Investment Fund",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "public-investment-fund",
+        "name": "Public Investment Fund"
+      }
     },
     {
       "name": "Savvy Games Group",
       "identifier_type": null,
-      "identifier": "KSA National Number  7026599618; Commercial Register Number  1010758131"
+      "identifier": "KSA National Number  7026599618; Commercial Register Number  1010758131",
+      "party_page": {
+        "id": "savvy-games-group",
+        "name": "Savvy Games Group"
+      }
     }
   ],
   "anzsic_codes": [
@@ -110,14 +126,22 @@
         {
           "name": "East Gate Games Investment Company",
           "identifier_type": "ABN",
-          "identifier": "39 275 633 205"
+          "identifier": "39 275 633 205",
+          "party_page": {
+            "id": "east-gate-games-investment-company",
+            "name": "East Gate Games Investment Company"
+          }
         }
       ],
       "targets": [
         {
           "name": "Moonton Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "moonton-holdings-limited",
+            "name": "Moonton Holdings Limited"
+          }
         }
       ]
     },
@@ -130,19 +154,31 @@
         {
           "name": "QIC TT COMPANY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "27 694 380 973"
+          "identifier": "27 694 380 973",
+          "party_page": {
+            "id": "qic-tt-company-pty-ltd",
+            "name": "Qic Tt Company Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "SCENTRE GROUP TRUST 3",
           "identifier_type": "ABN",
-          "identifier": "11 517 229 138"
+          "identifier": "11 517 229 138",
+          "party_page": {
+            "id": "scentre-group-trust-3",
+            "name": "Scentre Group Trust 3"
+          }
         },
         {
           "name": "SCENTRE ALLIANCES PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 098 357 521"
+          "identifier": "53 098 357 521",
+          "party_page": {
+            "id": "scentre-alliances-pty-limited",
+            "name": "Scentre Alliances Pty Limited"
+          }
         }
       ]
     },
@@ -155,19 +191,31 @@
         {
           "name": "KKR Spire Aggregator L.P.",
           "identifier_type": null,
-          "identifier": "Company No.: 1001421059  Ontario"
+          "identifier": "Company No.: 1001421059  Ontario",
+          "party_page": {
+            "id": "kkr-spire-aggregator-l-p",
+            "name": "KKR Spire Aggregator L.P."
+          }
         },
         {
           "name": "Carrick Capital Associates Fund II, L.P.",
           "identifier_type": null,
-          "identifier": "Company No.: 5654423  Delaware"
+          "identifier": "Company No.: 5654423  Delaware",
+          "party_page": {
+            "id": "carrick-capital-associates-fund-ii-l-p",
+            "name": "Carrick Capital Associates Fund II, L.P."
+          }
         }
       ],
       "targets": [
         {
           "name": "Saviynt, Inc.",
           "identifier_type": null,
-          "identifier": "Company No.: 5712935  Delaware"
+          "identifier": "Company No.: 5712935  Delaware",
+          "party_page": {
+            "id": "saviynt-inc",
+            "name": "Saviynt, Inc."
+          }
         }
       ]
     }

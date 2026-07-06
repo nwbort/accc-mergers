@@ -1,0 +1,38 @@
+{
+  "id": "minto-marketplace-pty-ltd",
+  "canonical_name": "Minto Marketplace Pty Ltd",
+  "members": [
+    {
+      "name": "MINTO MARKETPLACE PTY LTD",
+      "identifier": "45 157 762 000",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "MN-25029",
+        "merger_name": "Coles \u2013 supermarket site in Minto, NSW",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-06-09T12:00:00Z",
+        "determination_date": "2026-07-01T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 22.0,
+    "median_days": 22,
+    "average_business_days": 16.0,
+    "median_business_days": 16,
+    "completed_count": 1
+  }
+}

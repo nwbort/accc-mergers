@@ -16,31 +16,51 @@
     {
       "name": "Danone Asia Pte Ltd",
       "identifier_type": null,
-      "identifier": "UEN 198905732N"
+      "identifier": "UEN 198905732N",
+      "party_page": {
+        "id": "danone-asia-pte-ltd",
+        "name": "Danone Asia Pte Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "DANONE SAPUTO DAIRY AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "32 143 172 258"
+      "identifier": "32 143 172 258",
+      "party_page": {
+        "id": "danone-saputo-dairy-australia-pty-ltd",
+        "name": "Danone Saputo Dairy Australia Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "NUTRICIA AUSTRALIA PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "99 076 246 752"
+      "identifier": "99 076 246 752",
+      "party_page": {
+        "id": "nutricia-australia-pty-limited",
+        "name": "Nutricia Australia Pty Limited"
+      }
     },
     {
       "name": "SAPUTO DAIRY AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "52 166 135 486"
+      "identifier": "52 166 135 486",
+      "party_page": {
+        "id": "saputo-dairy-australia-pty-ltd",
+        "name": "Saputo Dairy Australia Pty Ltd"
+      }
     },
     {
       "name": "Soci\u00e9t\u00e9 Anonyme des Eaux Min\u00e9rales d\u2019\u00c9vian S.A.",
       "identifier_type": null,
-      "identifier": "SIREN 797 080 850"
+      "identifier": "SIREN 797 080 850",
+      "party_page": {
+        "id": "soci-t-anonyme-des-eaux-min-rales-d-vian-s-a",
+        "name": "Soci\u00e9t\u00e9 Anonyme des Eaux Min\u00e9rales d\u2019\u00c9vian S.A."
+      }
     }
   ],
   "anzsic_codes": [
@@ -139,24 +159,40 @@
         {
           "name": "Admiral AU Bidco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 801 195"
+          "identifier": "695 801 195",
+          "party_page": {
+            "id": "admiral-au-bidco-pty-ltd",
+            "name": "Admiral AU Bidco Pty Ltd"
+          }
         },
         {
           "name": "Admiral AU Holdco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 791 710"
+          "identifier": "695 791 710",
+          "party_page": {
+            "id": "admiral-au-holdco-pty-ltd",
+            "name": "Admiral AU Holdco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "EPTEC MARINE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "49 118 319 547"
+          "identifier": "49 118 319 547",
+          "party_page": {
+            "id": "eptec-marine-pty-ltd",
+            "name": "Eptec Marine Pty Ltd"
+          }
         },
         {
           "name": "EPTEC BIDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "12 638 785 378"
+          "identifier": "12 638 785 378",
+          "party_page": {
+            "id": "eptec-bidco-pty-ltd",
+            "name": "Eptec Bidco Pty Ltd"
+          }
         }
       ]
     },
@@ -169,14 +205,22 @@
         {
           "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "11 008 423 372"
+          "identifier": "11 008 423 372",
+          "party_page": {
+            "id": "zurich-financial-services-australia-limited",
+            "name": "Zurich Financial Services Australia Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CLEARVIEW WEALTH LIMITED",
           "identifier_type": "ABN",
-          "identifier": "83 106 248 248"
+          "identifier": "83 106 248 248",
+          "party_page": {
+            "id": "clearview-wealth-limited",
+            "name": "Clearview Wealth Limited"
+          }
         }
       ]
     },
@@ -189,14 +233,22 @@
         {
           "name": "TRESCAL (AUSTRALIA) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "39 117 603 835"
+          "identifier": "39 117 603 835",
+          "party_page": {
+            "id": "trescal-australia-pty-ltd",
+            "name": "Trescal (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TR PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 005 499 721"
+          "identifier": "99 005 499 721",
+          "party_page": {
+            "id": "tr-pty-ltd",
+            "name": "Tr Pty Ltd"
+          }
         }
       ]
     }

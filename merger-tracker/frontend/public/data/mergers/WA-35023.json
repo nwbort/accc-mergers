@@ -14,21 +14,33 @@
     {
       "name": "ACTION SUPERMARKETS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "28 693 656 843"
+      "identifier": "28 693 656 843",
+      "party_page": {
+        "id": "action-supermarkets-pty-ltd",
+        "name": "Action Supermarkets Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "ZH SUPERMARKET PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "43 652 207 040"
+      "identifier": "43 652 207 040",
+      "party_page": {
+        "id": "zh-supermarket-pty-ltd",
+        "name": "Zh Supermarket Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "METCASH LIMITED",
       "identifier_type": "ABN",
-      "identifier": "32 112 073 480"
+      "identifier": "32 112 073 480",
+      "party_page": {
+        "id": "metcash-limited",
+        "name": "Metcash Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -101,6 +113,10 @@
           "canonical": {
             "id": "coles",
             "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -108,7 +124,11 @@
         {
           "name": "MINTO MARKETPLACE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "45 157 762 000"
+          "identifier": "45 157 762 000",
+          "party_page": {
+            "id": "minto-marketplace-pty-ltd",
+            "name": "Minto Marketplace Pty Ltd"
+          }
         }
       ]
     },
@@ -125,6 +145,10 @@
           "canonical": {
             "id": "coles",
             "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -132,7 +156,11 @@
         {
           "name": "BUILTCOM PROPERTIES 11 PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "21 648 938 710"
+          "identifier": "21 648 938 710",
+          "party_page": {
+            "id": "builtcom-properties-11-pty-ltd",
+            "name": "Builtcom Properties 11 Pty Ltd"
+          }
         }
       ]
     },
@@ -149,6 +177,10 @@
           "canonical": {
             "id": "coles",
             "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -156,7 +188,11 @@
         {
           "name": "M Holdings 4 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "652 075 799"
+          "identifier": "652 075 799",
+          "party_page": {
+            "id": "m-holdings-4-pty-ltd",
+            "name": "M Holdings 4 Pty Ltd"
+          }
         }
       ]
     }

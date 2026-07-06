@@ -14,26 +14,42 @@
     {
       "name": "Pantheon LLC",
       "identifier_type": null,
-      "identifier": "10488789"
+      "identifier": "10488789",
+      "party_page": {
+        "id": "pantheon-llc",
+        "name": "Pantheon LLC"
+      }
     }
   ],
   "targets": [
     {
       "name": "Schroders plc",
       "identifier_type": null,
-      "identifier": "03909886"
+      "identifier": "03909886",
+      "party_page": {
+        "id": "schroders-plc",
+        "name": "Schroders plc"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Nuveen, LLC",
       "identifier_type": null,
-      "identifier": "5572656"
+      "identifier": "5572656",
+      "party_page": {
+        "id": "nuveen-llc",
+        "name": "Nuveen, LLC"
+      }
     },
     {
       "name": "Teachers Insurance and Annuity Association of America (TIAA)",
       "identifier_type": null,
-      "identifier": "FEIN 131624203"
+      "identifier": "FEIN 131624203",
+      "party_page": {
+        "id": "teachers-insurance-and-annuity-association-of-america-tiaa",
+        "name": "Teachers Insurance and Annuity Association of America (TIAA)"
+      }
     }
   ],
   "anzsic_codes": [
@@ -102,14 +118,22 @@
         {
           "name": "Rosewood AG, LP",
           "identifier_type": null,
-          "identifier": "LP5500"
+          "identifier": "LP5500",
+          "party_page": {
+            "id": "rosewood-ag-lp",
+            "name": "Rosewood AG, LP"
+          }
         }
       ],
       "targets": [
         {
           "name": "Collagen Holdings, LLC",
           "identifier_type": null,
-          "identifier": "DE File Number  7473707"
+          "identifier": "DE File Number  7473707",
+          "party_page": {
+            "id": "collagen-holdings-llc",
+            "name": "Collagen Holdings, LLC"
+          }
         }
       ]
     },
@@ -122,14 +146,22 @@
         {
           "name": "Zoetis Holdings LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "zoetis-holdings-llc",
+            "name": "Zoetis Holdings LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Neogen Corporation",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "neogen-corporation",
+            "name": "Neogen Corporation"
+          }
         }
       ]
     },
@@ -142,24 +174,40 @@
         {
           "name": "TDR Capital LLP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "tdr-capital-llp",
+            "name": "TDR Capital LLP"
+          }
         },
         {
           "name": "Estoril Coinvest SCSp",
           "identifier_type": null,
-          "identifier": "B303369"
+          "identifier": "B303369",
+          "party_page": {
+            "id": "estoril-coinvest-scsp",
+            "name": "Estoril Coinvest SCSp"
+          }
         }
       ],
       "targets": [
         {
           "name": "ESCODE AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 675 307 301"
+          "identifier": "96 675 307 301",
+          "party_page": {
+            "id": "escode-australia-pty-ltd",
+            "name": "Escode Australia Pty Ltd"
+          }
         },
         {
           "name": "NCC Group plc",
           "identifier_type": null,
-          "identifier": "UK Company number: 04627044"
+          "identifier": "UK Company number: 04627044",
+          "party_page": {
+            "id": "ncc-group-plc",
+            "name": "NCC Group plc"
+          }
         }
       ]
     }

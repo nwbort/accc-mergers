@@ -1,0 +1,38 @@
+{
+  "id": "smile-partners-nsw2-pty-ltd",
+  "canonical_name": "Smile Partners (Nsw2) Pty Ltd",
+  "members": [
+    {
+      "name": "SMILE PARTNERS (NSW2) PTY LTD",
+      "identifier": "26 689 905 799",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "MN-05014",
+        "merger_name": "Smile Partners Australia \u2013 Mehta Orthodontics",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-05-26T12:00:00Z",
+        "determination_date": "2026-06-20T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 25.0,
+    "median_days": 25,
+    "average_business_days": 16.0,
+    "median_business_days": 16,
+    "completed_count": 1
+  }
+}

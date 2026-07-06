@@ -14,29 +14,49 @@
     {
       "name": "Windrose Holdings III (DIFC) Limited",
       "identifier_type": null,
-      "identifier": "Registered Number  12897"
+      "identifier": "Registered Number  12897",
+      "party_page": {
+        "id": "windrose-holdings-iii-difc-limited",
+        "name": "Windrose Holdings III (DIFC) Limited"
+      }
     },
     {
       "name": "Windrose France Holdings SAS",
       "identifier_type": null,
-      "identifier": "Registered Number  104439096"
+      "identifier": "Registered Number  104439096",
+      "party_page": {
+        "id": "windrose-france-holdings-sas",
+        "name": "Windrose France Holdings SAS"
+      }
     }
   ],
   "targets": [
     {
       "name": "Caeli Software Ltd",
       "identifier_type": null,
-      "identifier": "Registered Number  12558916"
+      "identifier": "Registered Number  12558916",
+      "party_page": {
+        "id": "caeli-software-ltd",
+        "name": "Caeli Software Ltd"
+      }
     },
     {
       "name": "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)",
       "identifier_type": null,
-      "identifier": "Registered Number  809546 971"
+      "identifier": "Registered Number  809546 971",
+      "party_page": {
+        "id": "gb-wfc-france-sas-trading-as-world-freight-company-or-wfc",
+        "name": "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)"
+      }
     },
     {
       "name": "Glacis Acquisition S.\u00e0 r.l.",
       "identifier_type": null,
-      "identifier": "B224034"
+      "identifier": "B224034",
+      "party_page": {
+        "id": "glacis-acquisition-s-r-l",
+        "name": "Glacis Acquisition S.\u00e0 r.l."
+      }
     }
   ],
   "other_parties": [
@@ -45,6 +65,10 @@
       "identifier_type": null,
       "identifier": "Registered Number  1646037",
       "canonical": {
+        "id": "brookfield-corporation",
+        "name": "Brookfield Corporation"
+      },
+      "party_page": {
         "id": "brookfield-corporation",
         "name": "Brookfield Corporation"
       }
@@ -116,14 +140,22 @@
         {
           "name": "Primary Wave KB Holdings, LP",
           "identifier_type": null,
-          "identifier": "Registration number 136215"
+          "identifier": "Registration number 136215",
+          "party_page": {
+            "id": "primary-wave-kb-holdings-lp",
+            "name": "Primary Wave KB Holdings, LP"
+          }
         }
       ],
       "targets": [
         {
           "name": "Kobalt Music Group Topco L.P.",
           "identifier_type": null,
-          "identifier": "Registration number 393466"
+          "identifier": "Registration number 393466",
+          "party_page": {
+            "id": "kobalt-music-group-topco-l-p",
+            "name": "Kobalt Music Group Topco L.P."
+          }
         }
       ]
     },
@@ -136,7 +168,11 @@
         {
           "name": "Sail Parent Holdco Ltd",
           "identifier_type": null,
-          "identifier": "UK Company Registration Number 17112723"
+          "identifier": "UK Company Registration Number 17112723",
+          "party_page": {
+            "id": "sail-parent-holdco-ltd",
+            "name": "Sail Parent Holdco Ltd"
+          }
         }
       ],
       "targets": [
@@ -145,6 +181,10 @@
           "identifier_type": null,
           "identifier": "Cayman Islands Company Registration Number CF172438",
           "canonical": {
+            "id": "derbysoft-inc",
+            "name": "DerbySoft Inc."
+          },
+          "party_page": {
             "id": "derbysoft-inc",
             "name": "DerbySoft Inc."
           }
@@ -160,14 +200,22 @@
         {
           "name": "HCL Technologies Limited",
           "identifier_type": "ABN",
-          "identifier": "37 541 578 951"
+          "identifier": "37 541 578 951",
+          "party_page": {
+            "id": "hcl-technologies-limited",
+            "name": "HCL Technologies Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "94 092 002 321"
+          "identifier": "94 092 002 321",
+          "party_page": {
+            "id": "cloud-software-group-australia-pty-ltd",
+            "name": "Cloud Software Group Australia Pty Ltd"
+          }
         }
       ]
     }

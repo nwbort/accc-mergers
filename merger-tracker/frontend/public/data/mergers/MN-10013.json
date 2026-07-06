@@ -20,6 +20,10 @@
       "canonical": {
         "id": "accenture-plc",
         "name": "Accenture plc"
+      },
+      "party_page": {
+        "id": "accenture-plc",
+        "name": "Accenture plc"
       }
     }
   ],
@@ -27,12 +31,20 @@
     {
       "name": "Ookla, LLC",
       "identifier_type": null,
-      "identifier": "Unified Business ID  602 422 103"
+      "identifier": "Unified Business ID  602 422 103",
+      "party_page": {
+        "id": "ookla-llc",
+        "name": "Ookla, LLC"
+      }
     },
     {
       "name": "Ekahau OY",
       "identifier_type": null,
-      "identifier": "Business ID  16108964"
+      "identifier": "Business ID  16108964",
+      "party_page": {
+        "id": "ekahau-oy",
+        "name": "Ekahau OY"
+      }
     }
   ],
   "other_parties": [
@@ -41,6 +53,10 @@
       "identifier_type": null,
       "identifier": "CRN  471706",
       "canonical": {
+        "id": "accenture-plc",
+        "name": "Accenture plc"
+      },
+      "party_page": {
         "id": "accenture-plc",
         "name": "Accenture plc"
       }
@@ -52,6 +68,10 @@
       "canonical": {
         "id": "ziff-davis-llc",
         "name": "Ziff Davis, LLC"
+      },
+      "party_page": {
+        "id": "ziff-davis-llc",
+        "name": "Ziff Davis, LLC"
       }
     },
     {
@@ -59,6 +79,10 @@
       "identifier_type": null,
       "identifier": "State File Number  5542070",
       "canonical": {
+        "id": "ziff-davis-llc",
+        "name": "Ziff Davis, LLC"
+      },
+      "party_page": {
         "id": "ziff-davis-llc",
         "name": "Ziff Davis, LLC"
       }
@@ -70,12 +94,20 @@
       "canonical": {
         "id": "accenture-plc",
         "name": "Accenture plc"
+      },
+      "party_page": {
+        "id": "accenture-plc",
+        "name": "Accenture plc"
       }
     },
     {
       "name": "Accenture Venture Holdings B.V.",
       "identifier_type": null,
-      "identifier": "KVK  42007173"
+      "identifier": "KVK  42007173",
+      "party_page": {
+        "id": "accenture-venture-holdings-b-v",
+        "name": "Accenture Venture Holdings B.V."
+      }
     }
   ],
   "anzsic_codes": [
@@ -158,14 +190,22 @@
         {
           "name": "Accenture International B.V.",
           "identifier_type": null,
-          "identifier": "Business registration no: KVK70797285"
+          "identifier": "Business registration no: KVK70797285",
+          "party_page": {
+            "id": "accenture-international-b-v",
+            "name": "Accenture International B.V."
+          }
         }
       ],
       "targets": [
         {
           "name": "Faculty Science Limited",
           "identifier_type": null,
-          "identifier": "Company registration no: CRN08873131"
+          "identifier": "Company registration no: CRN08873131",
+          "party_page": {
+            "id": "faculty-science-limited",
+            "name": "Faculty Science Limited"
+          }
         }
       ]
     },
@@ -178,19 +218,31 @@
         {
           "name": "QIC TT COMPANY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "27 694 380 973"
+          "identifier": "27 694 380 973",
+          "party_page": {
+            "id": "qic-tt-company-pty-ltd",
+            "name": "Qic Tt Company Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "SCENTRE GROUP TRUST 3",
           "identifier_type": "ABN",
-          "identifier": "11 517 229 138"
+          "identifier": "11 517 229 138",
+          "party_page": {
+            "id": "scentre-group-trust-3",
+            "name": "Scentre Group Trust 3"
+          }
         },
         {
           "name": "SCENTRE ALLIANCES PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 098 357 521"
+          "identifier": "53 098 357 521",
+          "party_page": {
+            "id": "scentre-alliances-pty-limited",
+            "name": "Scentre Alliances Pty Limited"
+          }
         }
       ]
     },
@@ -203,13 +255,21 @@
         {
           "name": "Wipro Networks Pte Ltd",
           "identifier_type": null,
-          "identifier": "UEN  199907933M"
+          "identifier": "UEN  199907933M",
+          "party_page": {
+            "id": "wipro-networks-pte-ltd",
+            "name": "Wipro Networks Pte Ltd"
+          }
         },
         {
           "name": "Wipro Limited",
           "identifier_type": null,
           "identifier": "CIN L32102KA1945PLC020800",
           "canonical": {
+            "id": "wipro-ltd",
+            "name": "Wipro Ltd"
+          },
+          "party_page": {
             "id": "wipro-ltd",
             "name": "Wipro Ltd"
           }
@@ -219,12 +279,20 @@
         {
           "name": "Mindsprint Pte Limited",
           "identifier_type": null,
-          "identifier": "UEN  202118596N"
+          "identifier": "UEN  202118596N",
+          "party_page": {
+            "id": "mindsprint-pte-limited",
+            "name": "Mindsprint Pte Limited"
+          }
         },
         {
           "name": "Olam Holdings Pte Limited",
           "identifier_type": null,
-          "identifier": "UEN  202110101R"
+          "identifier": "UEN  202110101R",
+          "party_page": {
+            "id": "olam-holdings-pte-limited",
+            "name": "Olam Holdings Pte Limited"
+          }
         }
       ]
     }

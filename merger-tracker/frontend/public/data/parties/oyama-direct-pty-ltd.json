@@ -1,0 +1,32 @@
+{
+  "id": "oyama-direct-pty-ltd",
+  "canonical_name": "Oyama Direct Pty Ltd",
+  "members": [
+    {
+      "name": "Oyama Direct Pty Ltd",
+      "identifier": "600 807 654",
+      "identifier_type": "ACN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "WA-50020",
+        "merger_name": "Envest Group \u2013 MA Insurance Brokers",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-05-21T12:00:00Z",
+        "determination_date": "2026-06-18T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

@@ -13,7 +13,11 @@
     {
       "name": "Akzo Nobel N.V.",
       "identifier_type": null,
-      "identifier": "Commercial registration # 09007809"
+      "identifier": "Commercial registration # 09007809",
+      "party_page": {
+        "id": "akzo-nobel-n-v",
+        "name": "Akzo Nobel N.V."
+      }
     }
   ],
   "targets": [
@@ -24,6 +28,10 @@
       "canonical": {
         "id": "axalta-coating-systems-ltd",
         "name": "Axalta Coating Systems Ltd."
+      },
+      "party_page": {
+        "id": "axalta-coating-systems-ltd",
+        "name": "Axalta Coating Systems Ltd."
       }
     }
   ],
@@ -31,12 +39,20 @@
     {
       "name": "U-POL AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "12 633 592 819"
+      "identifier": "12 633 592 819",
+      "party_page": {
+        "id": "u-pol-australia-pty-ltd",
+        "name": "U-Pol Australia Pty Ltd"
+      }
     },
     {
       "name": "AKZO NOBEL PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "59 000 119 424"
+      "identifier": "59 000 119 424",
+      "party_page": {
+        "id": "akzo-nobel-pty-limited",
+        "name": "Akzo Nobel Pty Limited"
+      }
     },
     {
       "name": "AXALTA COATING SYSTEMS AUSTRALIA PTY LTD",
@@ -45,12 +61,20 @@
       "canonical": {
         "id": "axalta-coating-systems-ltd",
         "name": "Axalta Coating Systems Ltd."
+      },
+      "party_page": {
+        "id": "axalta-coating-systems-ltd",
+        "name": "Axalta Coating Systems Ltd."
       }
     },
     {
       "name": "REFINISH IMPORTS PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "15 626 896 142"
+      "identifier": "15 626 896 142",
+      "party_page": {
+        "id": "refinish-imports-pty-limited",
+        "name": "Refinish Imports Pty Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -97,19 +121,31 @@
         {
           "name": "RYOWA II GPS PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "16 063 780 058"
+          "identifier": "16 063 780 058",
+          "party_page": {
+            "id": "ryowa-ii-gps-pty-limited",
+            "name": "Ryowa Ii Gps Pty. Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "PH QUEENSLAND GAS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "12 626 604 000"
+          "identifier": "12 626 604 000",
+          "party_page": {
+            "id": "ph-queensland-gas-pty-ltd",
+            "name": "Ph Queensland Gas Pty Ltd"
+          }
         },
         {
           "name": "DYNO NOBEL LIMITED",
           "identifier_type": "ABN",
-          "identifier": "42 004 080 264"
+          "identifier": "42 004 080 264",
+          "party_page": {
+            "id": "dyno-nobel-limited",
+            "name": "Dyno Nobel Limited"
+          }
         }
       ]
     },
@@ -122,14 +158,22 @@
         {
           "name": "NEC Corporation",
           "identifier_type": null,
-          "identifier": "Company number 7010401022916"
+          "identifier": "Company number 7010401022916",
+          "party_page": {
+            "id": "nec-corporation",
+            "name": "NEC Corporation"
+          }
         }
       ],
       "targets": [
         {
           "name": "CSG Systems International, Inc.",
           "identifier_type": null,
-          "identifier": "Company number 2444546"
+          "identifier": "Company number 2444546",
+          "party_page": {
+            "id": "csg-systems-international-inc",
+            "name": "CSG Systems International, Inc."
+          }
         }
       ]
     },
@@ -146,6 +190,10 @@
           "canonical": {
             "id": "henkel-global-supply-chain-b-v",
             "name": "Henkel Global Supply Chain B.V."
+          },
+          "party_page": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
           }
         }
       ],
@@ -153,12 +201,20 @@
         {
           "name": "Stahl Holdings B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 34249320"
+          "identifier": "Netherlands registration number (KVK): 34249320",
+          "party_page": {
+            "id": "stahl-holdings-b-v",
+            "name": "Stahl Holdings B.V."
+          }
         },
         {
           "name": "Stahl Asia Pacific Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "Singapore registration number: 200606884Z"
+          "identifier": "Singapore registration number: 200606884Z",
+          "party_page": {
+            "id": "stahl-asia-pacific-pte-ltd",
+            "name": "Stahl Asia Pacific Pte. Ltd."
+          }
         }
       ]
     }

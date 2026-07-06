@@ -16,36 +16,60 @@
     {
       "name": "eBay Inc.",
       "identifier_type": null,
-      "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924"
+      "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924",
+      "party_page": {
+        "id": "ebay-inc",
+        "name": "eBay Inc."
+      }
     }
   ],
   "targets": [
     {
       "name": "Etsy, Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "etsy-inc",
+        "name": "Etsy, Inc."
+      }
     },
     {
       "name": "Depop Limited",
       "identifier_type": null,
-      "identifier": "UK Company Registration Number  08316342"
+      "identifier": "UK Company Registration Number  08316342",
+      "party_page": {
+        "id": "depop-limited",
+        "name": "Depop Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "EBAY COMMERCE AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "62 634 460 969"
+      "identifier": "62 634 460 969",
+      "party_page": {
+        "id": "ebay-commerce-australia-pty-ltd",
+        "name": "Ebay Commerce Australia Pty Ltd"
+      }
     },
     {
       "name": "EBAY AUSTRALIA AND NEW ZEALAND PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "22 086 288 888"
+      "identifier": "22 086 288 888",
+      "party_page": {
+        "id": "ebay-australia-and-new-zealand-pty-limited",
+        "name": "Ebay Australia And New Zealand Pty Limited"
+      }
     },
     {
       "name": "eBay Marketplaces GmbH",
       "identifier_type": null,
-      "identifier": "Swiss Enterprise Identification Number  CHE205764206"
+      "identifier": "Swiss Enterprise Identification Number  CHE205764206",
+      "party_page": {
+        "id": "ebay-marketplaces-gmbh",
+        "name": "eBay Marketplaces GmbH"
+      }
     }
   ],
   "anzsic_codes": [
@@ -257,6 +281,10 @@
           "canonical": {
             "id": "vets-central-holdings-pty-ltd",
             "name": "Vets Central Holdings Pty Ltd"
+          },
+          "party_page": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
           }
         }
       ],
@@ -264,12 +292,20 @@
         {
           "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
           "identifier_type": "ABN",
-          "identifier": "96 315 737 133"
+          "identifier": "96 315 737 133",
+          "party_page": {
+            "id": "wayne-shipham-and-raylene-shipham-as-trustees-for-mcguire-family-trust",
+            "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust"
+          }
         },
         {
           "name": "DROVERS VET HOSPITAL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "67 159 300 768"
+          "identifier": "67 159 300 768",
+          "party_page": {
+            "id": "drovers-vet-hospital-pty-ltd",
+            "name": "Drovers Vet Hospital Pty Ltd"
+          }
         }
       ]
     },
@@ -286,6 +322,10 @@
           "canonical": {
             "id": "vets-central-holdings-pty-ltd",
             "name": "Vets Central Holdings Pty Ltd"
+          },
+          "party_page": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
           }
         }
       ],
@@ -293,7 +333,11 @@
         {
           "name": "CARRUTHERS, JONATHAN JULIAN",
           "identifier_type": "ABN",
-          "identifier": "22 148 400 175"
+          "identifier": "22 148 400 175",
+          "party_page": {
+            "id": "carruthers-jonathan-julian",
+            "name": "Carruthers, Jonathan Julian"
+          }
         }
       ]
     },
@@ -306,24 +350,40 @@
         {
           "name": "General Atlantic",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "general-atlantic",
+            "name": "General Atlantic"
+          }
         },
         {
           "name": "Canada Pension Plan Investment Board",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "canada-pension-plan-investment-board",
+            "name": "Canada Pension Plan Investment Board"
+          }
         }
       ],
       "targets": [
         {
           "name": "Boats Group Holdings, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "boats-group-holdings-inc",
+            "name": "Boats Group Holdings, Inc"
+          }
         },
         {
           "name": "Bimini Holdings, LP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "bimini-holdings-lp",
+            "name": "Bimini Holdings, LP"
+          }
         }
       ]
     }

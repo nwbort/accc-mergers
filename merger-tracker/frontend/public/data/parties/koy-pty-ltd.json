@@ -1,0 +1,32 @@
+{
+  "id": "koy-pty-ltd",
+  "canonical_name": "Koy Pty Ltd",
+  "members": [
+    {
+      "name": "Koy Pty Ltd",
+      "identifier": "009 023 787",
+      "identifier_type": "ACN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-75026",
+        "merger_name": "Australian Venue Co - leasehold and assets of Brabham Tavern, WA",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-06-03T12:00:00Z",
+        "determination_date": "2026-06-22T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

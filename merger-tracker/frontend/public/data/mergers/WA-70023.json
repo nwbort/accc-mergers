@@ -14,29 +14,49 @@
     {
       "name": "The Treasurer of Victoria for and on behalf of the Crown in the right of the State of Victoria",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "the-treasurer-of-victoria-for-and-on-behalf-of-the-crown-in-the-right-of-the-sta",
+        "name": "The Treasurer of Victoria for and on behalf of the Crown in the right of the State of Victoria"
+      }
     },
     {
       "name": "The Commonwealth of Australia",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "the-commonwealth-of-australia",
+        "name": "The Commonwealth of Australia"
+      }
     },
     {
       "name": "The Crown in the right of the State of Tasmania",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "the-crown-in-the-right-of-the-state-of-tasmania",
+        "name": "The Crown in the right of the State of Tasmania"
+      }
     },
     {
       "name": "Marinus Link Holding Company Pty Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "marinus-link-holding-company-pty-ltd",
+        "name": "Marinus Link Holding Company Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "MARINUS LINK PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "47 630 194 562"
+      "identifier": "47 630 194 562",
+      "party_page": {
+        "id": "marinus-link-pty-ltd",
+        "name": "Marinus Link Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -110,19 +130,31 @@
         {
           "name": "WESTPAC BANKING CORPORATION",
           "identifier_type": "ABN",
-          "identifier": "33 007 457 141"
+          "identifier": "33 007 457 141",
+          "party_page": {
+            "id": "westpac-banking-corporation",
+            "name": "Westpac Banking Corporation"
+          }
         },
         {
           "name": "AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "11 005 357 522"
+          "identifier": "11 005 357 522",
+          "party_page": {
+            "id": "australia-and-new-zealand-banking-group-limited",
+            "name": "Australia And New Zealand Banking Group Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Australian Cash Services (JVCo)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "australian-cash-services-jvco",
+            "name": "Australian Cash Services (JVCo)"
+          }
         }
       ]
     },
@@ -135,24 +167,40 @@
         {
           "name": "Tega MC SG Holdings Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "202551682E"
+          "identifier": "202551682E",
+          "party_page": {
+            "id": "tega-mc-sg-holdings-pte-ltd",
+            "name": "Tega MC SG Holdings Pte. Ltd."
+          }
         },
         {
           "name": "Tega MC Australia Holdings Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "16 147 692 840"
+          "identifier": "16 147 692 840",
+          "party_page": {
+            "id": "tega-mc-australia-holdings-pty-ltd",
+            "name": "Tega MC Australia Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Orway IQ Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "52 631 359 370"
+          "identifier": "52 631 359 370",
+          "party_page": {
+            "id": "orway-iq-pty-ltd",
+            "name": "Orway IQ Pty Ltd"
+          }
         },
         {
           "name": "Molycop Technologies Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "85 154 346 004"
+          "identifier": "85 154 346 004",
+          "party_page": {
+            "id": "molycop-technologies-pty-ltd",
+            "name": "Molycop Technologies Pty Ltd"
+          }
         }
       ]
     },
@@ -169,6 +217,10 @@
           "canonical": {
             "id": "eli-lilly-and-company",
             "name": "Eli Lilly and Company"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
           }
         }
       ],
@@ -176,7 +228,11 @@
         {
           "name": "Orna Therapeutics Holdings, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "orna-therapeutics-holdings-llc-2",
+            "name": "Orna Therapeutics Holdings, LLC"
+          }
         }
       ]
     }

@@ -14,26 +14,42 @@
     {
       "name": "Rocket Purchaser, L.L.C.",
       "identifier_type": null,
-      "identifier": "10521263"
+      "identifier": "10521263",
+      "party_page": {
+        "id": "rocket-purchaser-l-l-c",
+        "name": "Rocket Purchaser, L.L.C."
+      }
     }
   ],
   "targets": [
     {
       "name": "Advanced Cooling Technologies, Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "advanced-cooling-technologies-inc",
+        "name": "Advanced Cooling Technologies, Inc."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Rocket Merger Sub, Inc.",
       "identifier_type": null,
-      "identifier": "10499371"
+      "identifier": "10499371",
+      "party_page": {
+        "id": "rocket-merger-sub-inc",
+        "name": "Rocket Merger Sub, Inc."
+      }
     },
     {
       "name": "Zhijun Zuo",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "zhijun-zuo",
+        "name": "Zhijun Zuo"
+      }
     }
   ],
   "anzsic_codes": [
@@ -110,19 +126,31 @@
         {
           "name": "Searchlight Capital IV LP",
           "identifier_type": null,
-          "identifier": "US SEC  0001954453"
+          "identifier": "US SEC  0001954453",
+          "party_page": {
+            "id": "searchlight-capital-iv-lp",
+            "name": "Searchlight Capital IV LP"
+          }
         },
         {
           "name": "KONA Merger Sub Co.",
           "identifier_type": null,
-          "identifier": "Delaware  10525073"
+          "identifier": "Delaware  10525073",
+          "party_page": {
+            "id": "kona-merger-sub-co",
+            "name": "KONA Merger Sub Co."
+          }
         }
       ],
       "targets": [
         {
           "name": "KORE Group Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware  5388903"
+          "identifier": "Delaware  5388903",
+          "party_page": {
+            "id": "kore-group-holdings-inc",
+            "name": "KORE Group Holdings, Inc."
+          }
         }
       ]
     },
@@ -135,7 +163,11 @@
         {
           "name": "GT Silver BidCo, Inc.",
           "identifier_type": null,
-          "identifier": "413417606"
+          "identifier": "413417606",
+          "party_page": {
+            "id": "gt-silver-bidco-inc",
+            "name": "GT Silver BidCo, Inc."
+          }
         }
       ],
       "targets": [
@@ -144,6 +176,10 @@
           "identifier_type": null,
           "identifier": "00140838",
           "canonical": {
+            "id": "clearwater-analytics-llc",
+            "name": "Clearwater Analytics, LLC"
+          },
+          "party_page": {
             "id": "clearwater-analytics-llc",
             "name": "Clearwater Analytics, LLC"
           }
@@ -159,14 +195,22 @@
         {
           "name": "Delinea Inc.",
           "identifier_type": null,
-          "identifier": "Delaware corporation file number  3777797"
+          "identifier": "Delaware corporation file number  3777797",
+          "party_page": {
+            "id": "delinea-inc",
+            "name": "Delinea Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "StrongDM, Inc",
           "identifier_type": null,
-          "identifier": "CIK  0001637806"
+          "identifier": "CIK  0001637806",
+          "party_page": {
+            "id": "strongdm-inc",
+            "name": "StrongDM, Inc"
+          }
         }
       ]
     }

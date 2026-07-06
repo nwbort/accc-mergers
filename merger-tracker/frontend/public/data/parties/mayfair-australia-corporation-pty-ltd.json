@@ -1,0 +1,32 @@
+{
+  "id": "mayfair-australia-corporation-pty-ltd",
+  "canonical_name": "Mayfair Australia Corporation Pty Ltd",
+  "members": [
+    {
+      "name": "Mayfair Australia Corporation Pty Ltd",
+      "identifier": "683 119 128",
+      "identifier_type": "ACN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "WA-25017",
+        "merger_name": "Mayfair Corporation \u2013 Phosphate Hill",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-04-20T12:00:00Z",
+        "determination_date": "2026-05-06T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

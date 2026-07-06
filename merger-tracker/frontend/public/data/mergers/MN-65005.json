@@ -13,31 +13,51 @@
     {
       "name": "INSURANCE AUSTRALIA GROUP LIMITED",
       "identifier_type": "ABN",
-      "identifier": "60 090 739 923"
+      "identifier": "60 090 739 923",
+      "party_page": {
+        "id": "insurance-australia-group-limited",
+        "name": "Insurance Australia Group Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "RAC INSURANCE PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "59 094 685 882"
+      "identifier": "59 094 685 882",
+      "party_page": {
+        "id": "rac-insurance-pty-limited",
+        "name": "Rac Insurance Pty Limited"
+      }
     },
     {
       "name": "RACI PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "40 008 671 805"
+      "identifier": "40 008 671 805",
+      "party_page": {
+        "id": "raci-pty-limited",
+        "name": "Raci Pty Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "THE ROYAL AUTOMOBILE CLUB OF WA INC",
       "identifier_type": "ABN",
-      "identifier": "33 212 133 120"
+      "identifier": "33 212 133 120",
+      "party_page": {
+        "id": "the-royal-automobile-club-of-wa-inc",
+        "name": "The Royal Automobile Club Of Wa Inc"
+      }
     },
     {
       "name": "RACWA HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "60 008 985 877"
+      "identifier": "60 008 985 877",
+      "party_page": {
+        "id": "racwa-holdings-pty-ltd",
+        "name": "Racwa Holdings Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -156,14 +176,22 @@
         {
           "name": "Swiss Re International SE",
           "identifier_type": null,
-          "identifier": "B134553"
+          "identifier": "B134553",
+          "party_page": {
+            "id": "swiss-re-international-se",
+            "name": "Swiss Re International SE"
+          }
         }
       ],
       "targets": [
         {
           "name": "QBE Insurance Holdings Pty Limited",
           "identifier_type": "ABN",
-          "identifier": "69 146 960 438"
+          "identifier": "69 146 960 438",
+          "party_page": {
+            "id": "qbe-insurance-holdings-pty-limited",
+            "name": "QBE Insurance Holdings Pty Limited"
+          }
         }
       ]
     },
@@ -176,14 +204,22 @@
         {
           "name": "BENDIGO AND ADELAIDE BANK LIMITED",
           "identifier_type": "ABN",
-          "identifier": "11 068 049 178"
+          "identifier": "11 068 049 178",
+          "party_page": {
+            "id": "bendigo-and-adelaide-bank-limited",
+            "name": "Bendigo And Adelaide Bank Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "MEMBERS BANKING GROUP LIMITED (TRADING AS RACQ BANK)",
           "identifier_type": "ABN",
-          "identifier": "83 087 651 054"
+          "identifier": "83 087 651 054",
+          "party_page": {
+            "id": "members-banking-group-limited-trading-as-racq-bank",
+            "name": "Members Banking Group Limited (Trading As Racq Bank)"
+          }
         }
       ]
     },
@@ -196,14 +232,22 @@
         {
           "name": "RUSSELL INVESTMENT GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "92 003 066 859"
+          "identifier": "92 003 066 859",
+          "party_page": {
+            "id": "russell-investment-group-pty-ltd",
+            "name": "Russell Investment Group Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
           "identifier_type": "ABN",
-          "identifier": "56 063 278 400"
+          "identifier": "56 063 278 400",
+          "party_page": {
+            "id": "zurich-investment-management-limited",
+            "name": "Zurich Investment Management Limited"
+          }
         }
       ]
     }

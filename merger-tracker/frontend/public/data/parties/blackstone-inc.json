@@ -1,0 +1,89 @@
+{
+  "id": "blackstone-inc",
+  "canonical_name": "Blackstone Inc.",
+  "members": [
+    {
+      "name": "Blackstone Inc",
+      "identifier": "DDC  4315990",
+      "identifier_type": null
+    },
+    {
+      "name": "Blackstone Inc.",
+      "identifier": null,
+      "identifier_type": null
+    },
+    {
+      "name": "Blackstone Inc.",
+      "identifier": "Registered in Delaware, no. 0013355",
+      "identifier_type": null
+    },
+    {
+      "name": "Blackstone, Inc.",
+      "identifier": "CIK 0001393818",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "MN-20023",
+        "merger_name": "Sony Music - Recognition Music",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-06-02T12:00:00Z",
+        "determination_date": "2026-06-30T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-65018",
+        "merger_name": "Blackstone - Medallia",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-05-15T12:00:00Z",
+        "determination_date": "2026-05-25T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-25023",
+        "merger_name": "EPL - Indovida India",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-05-07T12:00:00Z",
+        "determination_date": "2026-05-18T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-10010",
+        "merger_name": "Enverus \u2013 Spatial Business Systems",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-03-10T12:00:00Z",
+        "determination_date": "2026-04-07T12:00:00Z"
+      },
+      {
+        "merger_id": "MN-15005",
+        "merger_name": "Cvent - ON24",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-02-23T12:00:00Z",
+        "determination_date": "2026-03-17T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 5,
+  "phase_1_count": 2,
+  "phase_2_count": 0,
+  "waiver_count": 3,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 25.0,
+    "median_days": 28,
+    "average_business_days": 17.0,
+    "median_business_days": 19,
+    "completed_count": 2
+  }
+}

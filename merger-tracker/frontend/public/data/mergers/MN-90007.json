@@ -16,19 +16,31 @@
     {
       "name": "Volt Managed Investment Trust 2",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "volt-managed-investment-trust-2",
+        "name": "Volt Managed Investment Trust 2"
+      }
     },
     {
       "name": "Volt Managed Investment Trust 1",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "volt-managed-investment-trust-1",
+        "name": "Volt Managed Investment Trust 1"
+      }
     }
   ],
   "targets": [
     {
       "name": "VOLT HOLDCO PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "54 694 754 062"
+      "identifier": "54 694 754 062",
+      "party_page": {
+        "id": "volt-holdco-pty-ltd",
+        "name": "Volt Holdco Pty Ltd"
+      }
     }
   ],
   "other_parties": [
@@ -39,27 +51,47 @@
       "canonical": {
         "id": "the-trust-company-australia-limited",
         "name": "The Trust Company (Australia) Limited"
+      },
+      "party_page": {
+        "id": "the-trust-company-australia-limited",
+        "name": "The Trust Company (Australia) Limited"
       }
     },
     {
       "name": "HMC CAPITAL LIMITED",
       "identifier_type": "ABN",
-      "identifier": "94 138 990 593"
+      "identifier": "94 138 990 593",
+      "party_page": {
+        "id": "hmc-capital-limited",
+        "name": "Hmc Capital Limited"
+      }
     },
     {
       "name": "HMC Energy Transition No. 3 Holdings Pty Ltd as trustee of the HMC Energy Transition No. 3 Trust",
       "identifier_type": "ABN",
-      "identifier": "98 159 167 344"
+      "identifier": "98 159 167 344",
+      "party_page": {
+        "id": "hmc-energy-transition-no-3-holdings-pty-ltd-as-trustee-of-the-hmc-energy-transit",
+        "name": "HMC Energy Transition No. 3 Holdings Pty Ltd as trustee of the HMC Energy Transition No. 3 Trust"
+      }
     },
     {
       "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "perpetual-corporate-trust-limited-as-trustee-for-volt-managed-investment-trust-1",
+        "name": "Perpetual Corporate Trust Limited (as trustee for Volt Managed Investment Trust 1)"
+      }
     },
     {
       "name": "The John Laing Group Limited",
       "identifier_type": null,
-      "identifier": "UK Company No: 05975300"
+      "identifier": "UK Company No: 05975300",
+      "party_page": {
+        "id": "the-john-laing-group-limited",
+        "name": "The John Laing Group Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -150,12 +182,20 @@
         {
           "name": "Wentworth Inn Prop TC Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 488 263"
+          "identifier": "695 488 263",
+          "party_page": {
+            "id": "wentworth-inn-prop-tc-pty-ltd",
+            "name": "Wentworth Inn Prop TC Pty Ltd"
+          }
         },
         {
           "name": "Wentworth Inn OpCo II Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 554 262"
+          "identifier": "695 554 262",
+          "party_page": {
+            "id": "wentworth-inn-opco-ii-pty-ltd",
+            "name": "Wentworth Inn OpCo II Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -166,12 +206,20 @@
           "canonical": {
             "id": "the-trust-company-australia-limited",
             "name": "The Trust Company (Australia) Limited"
+          },
+          "party_page": {
+            "id": "the-trust-company-australia-limited",
+            "name": "The Trust Company (Australia) Limited"
           }
         },
         {
           "name": "PEARL HOTELS D 1993 PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "25 060 896 568"
+          "identifier": "25 060 896 568",
+          "party_page": {
+            "id": "pearl-hotels-d-1993-pty-limited",
+            "name": "Pearl Hotels D 1993 Pty Limited"
+          }
         }
       ]
     },
@@ -184,19 +232,31 @@
         {
           "name": "Genea Bidco SA Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 694 458"
+          "identifier": "695 694 458",
+          "party_page": {
+            "id": "genea-bidco-sa-pty-ltd",
+            "name": "Genea Bidco SA Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "EMBRACE FERTILITY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "84 135 918 580"
+          "identifier": "84 135 918 580",
+          "party_page": {
+            "id": "embrace-fertility-pty-ltd",
+            "name": "Embrace Fertility Pty Ltd"
+          }
         },
         {
           "name": "Histon Nelson Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "144 914 965"
+          "identifier": "144 914 965",
+          "party_page": {
+            "id": "histon-nelson-pty-ltd",
+            "name": "Histon Nelson Pty Ltd"
+          }
         }
       ]
     },
@@ -209,19 +269,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     }

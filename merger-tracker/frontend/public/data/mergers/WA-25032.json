@@ -14,41 +14,69 @@
     {
       "name": "RC BITE BID CO PTY LTD",
       "identifier_type": "ACN",
-      "identifier": "698 175 012"
+      "identifier": "698 175 012",
+      "party_page": {
+        "id": "rc-bite-bid-co-pty-ltd",
+        "name": "Rc Bite Bid Co Pty Ltd"
+      }
     },
     {
       "name": "RIVER CAPITAL PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "64 073 531 469"
+      "identifier": "64 073 531 469",
+      "party_page": {
+        "id": "river-capital-pty-ltd",
+        "name": "River Capital Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "Yo My Goodness Pty Ltd as trustee for The Yo My Goodness IP Unit Trust",
       "identifier_type": "ACN",
-      "identifier": "603 490 035"
+      "identifier": "603 490 035",
+      "party_page": {
+        "id": "yo-my-goodness-pty-ltd-as-trustee-for-the-yo-my-goodness-ip-unit-trust",
+        "name": "Yo My Goodness Pty Ltd as trustee for The Yo My Goodness IP Unit Trust"
+      }
     },
     {
       "name": "YOMG PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "93 603 489 943"
+      "identifier": "93 603 489 943",
+      "party_page": {
+        "id": "yomg-pty-ltd",
+        "name": "Yomg Pty Ltd"
+      }
     },
     {
       "name": "YOMG IP Pty Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "yomg-ip-pty-ltd",
+        "name": "YOMG IP Pty Ltd"
+      }
     },
     {
       "name": "YOMG OPCO PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "74 698 532 866"
+      "identifier": "74 698 532 866",
+      "party_page": {
+        "id": "yomg-opco-pty-ltd",
+        "name": "Yomg Opco Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "THE YO MY COMPANY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "55 603 052 286"
+      "identifier": "55 603 052 286",
+      "party_page": {
+        "id": "the-yo-my-company-pty-ltd",
+        "name": "The Yo My Company Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -125,19 +153,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     },
@@ -150,19 +190,31 @@
         {
           "name": "CHARTER HALL HOLDINGS PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "15 051 363 547"
+          "identifier": "15 051 363 547",
+          "party_page": {
+            "id": "charter-hall-holdings-pty-limited",
+            "name": "Charter Hall Holdings Pty. Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "JGS PRIVATE CAPITAL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 602 602 595"
+          "identifier": "20 602 602 595",
+          "party_page": {
+            "id": "jgs-private-capital-pty-ltd",
+            "name": "Jgs Private Capital Pty Ltd"
+          }
         },
         {
           "name": "J.G. SERVICE PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "75 008 492 126"
+          "identifier": "75 008 492 126",
+          "party_page": {
+            "id": "j-g-service-pty-limited",
+            "name": "J.G. Service Pty. Limited"
+          }
         }
       ]
     },
@@ -175,14 +227,22 @@
         {
           "name": "Taco Ventures Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "697 591 692"
+          "identifier": "697 591 692",
+          "party_page": {
+            "id": "taco-ventures-pty-ltd",
+            "name": "Taco Ventures Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Collins Foods Subsidiary Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "94 616 663 793"
+          "identifier": "94 616 663 793",
+          "party_page": {
+            "id": "collins-foods-subsidiary-pty-ltd",
+            "name": "Collins Foods Subsidiary Pty Ltd"
+          }
         }
       ]
     }

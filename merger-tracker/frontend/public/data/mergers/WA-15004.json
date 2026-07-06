@@ -14,26 +14,42 @@
     {
       "name": "QIC TT COMPANY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "27 694 380 973"
+      "identifier": "27 694 380 973",
+      "party_page": {
+        "id": "qic-tt-company-pty-ltd",
+        "name": "Qic Tt Company Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "SCENTRE GROUP TRUST 3",
       "identifier_type": "ABN",
-      "identifier": "11 517 229 138"
+      "identifier": "11 517 229 138",
+      "party_page": {
+        "id": "scentre-group-trust-3",
+        "name": "Scentre Group Trust 3"
+      }
     },
     {
       "name": "SCENTRE ALLIANCES PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "53 098 357 521"
+      "identifier": "53 098 357 521",
+      "party_page": {
+        "id": "scentre-alliances-pty-limited",
+        "name": "Scentre Alliances Pty Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "QIC INVESTMENTS NO.4 PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "84 682 889 818"
+      "identifier": "84 682 889 818",
+      "party_page": {
+        "id": "qic-investments-no-4-pty-ltd",
+        "name": "Qic Investments No.4 Pty Ltd"
+      }
     },
     {
       "name": "THE TRUSTEE FOR AUSTRALIAN RETIREMENT TRUST",
@@ -42,17 +58,29 @@
       "canonical": {
         "id": "the-trustee-for-australian-retirement-trust",
         "name": "The Trustee For Australian Retirement Trust"
+      },
+      "party_page": {
+        "id": "the-trustee-for-australian-retirement-trust",
+        "name": "The Trustee For Australian Retirement Trust"
       }
     },
     {
       "name": "SCENTRE GROUP LIMITED",
       "identifier_type": "ABN",
-      "identifier": "66 001 671 496"
+      "identifier": "66 001 671 496",
+      "party_page": {
+        "id": "scentre-group-limited",
+        "name": "Scentre Group Limited"
+      }
     },
     {
       "name": "WESTFIELD GIFT CARDS PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "78 113 171 663"
+      "identifier": "78 113 171 663",
+      "party_page": {
+        "id": "westfield-gift-cards-pty-limited",
+        "name": "Westfield Gift Cards Pty Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -129,19 +157,31 @@
         {
           "name": "LGPE SEC S.C. Sp",
           "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B281514"
+          "identifier": "Luxembourg Company Registration Number: B281514",
+          "party_page": {
+            "id": "lgpe-sec-s-c-sp",
+            "name": "LGPE SEC S.C. Sp"
+          }
         },
         {
           "name": "Crown Growth Opportunities IV SCSp-RAIF",
           "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B254394"
+          "identifier": "Luxembourg Company Registration Number: B254394",
+          "party_page": {
+            "id": "crown-growth-opportunities-iv-scsp-raif",
+            "name": "Crown Growth Opportunities IV SCSp-RAIF"
+          }
         }
       ],
       "targets": [
         {
           "name": "ADVANCED NAVIGATION PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "49 156 101 549"
+          "identifier": "49 156 101 549",
+          "party_page": {
+            "id": "advanced-navigation-pty-ltd",
+            "name": "Advanced Navigation Pty. Ltd."
+          }
         }
       ]
     },
@@ -154,14 +194,22 @@
         {
           "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "50 111 782 846"
+          "identifier": "50 111 782 846",
+          "party_page": {
+            "id": "discovery-holiday-parks-pty-limited",
+            "name": "Discovery Holiday Parks Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Eco Camp Pty Ltd as trustee for the MCB Trust",
           "identifier_type": "ACN",
-          "identifier": "615 432 016"
+          "identifier": "615 432 016",
+          "party_page": {
+            "id": "eco-camp-pty-ltd-as-trustee-for-the-mcb-trust",
+            "name": "Eco Camp Pty Ltd as trustee for the MCB Trust"
+          }
         }
       ]
     },
@@ -178,6 +226,10 @@
           "canonical": {
             "id": "accenture-plc",
             "name": "Accenture plc"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
           }
         }
       ],
@@ -185,12 +237,20 @@
         {
           "name": "Ookla, LLC",
           "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103"
+          "identifier": "Unified Business ID  602 422 103",
+          "party_page": {
+            "id": "ookla-llc",
+            "name": "Ookla, LLC"
+          }
         },
         {
           "name": "Ekahau OY",
           "identifier_type": null,
-          "identifier": "Business ID  16108964"
+          "identifier": "Business ID  16108964",
+          "party_page": {
+            "id": "ekahau-oy",
+            "name": "Ekahau OY"
+          }
         }
       ]
     }

@@ -1,0 +1,38 @@
+{
+  "id": "australian-cash-services-jvco",
+  "canonical_name": "Australian Cash Services (JVCo)",
+  "members": [
+    {
+      "name": "Australian Cash Services (JVCo)",
+      "identifier": null,
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "MN-20014",
+        "merger_name": "ANZ, CBA, NAB and Westpac \u2013 shares in joint venture and interests in Joint Cash Pool",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-06-03T12:00:00Z",
+        "determination_date": "2026-06-26T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 23.0,
+    "median_days": 23,
+    "average_business_days": 16.0,
+    "median_business_days": 16,
+    "completed_count": 1
+  }
+}

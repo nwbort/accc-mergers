@@ -16,21 +16,33 @@
     {
       "name": "Molex Electronic Technologies Holdings, LLC",
       "identifier_type": null,
-      "identifier": "Company number   464432478"
+      "identifier": "Company number   464432478",
+      "party_page": {
+        "id": "molex-electronic-technologies-holdings-llc",
+        "name": "Molex Electronic Technologies Holdings, LLC"
+      }
     }
   ],
   "targets": [
     {
       "name": "Smiths Interconnect Group Limited",
       "identifier_type": null,
-      "identifier": "UK CRN  06641403"
+      "identifier": "UK CRN  06641403",
+      "party_page": {
+        "id": "smiths-interconnect-group-limited",
+        "name": "Smiths Interconnect Group Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Koch, Inc.",
       "identifier_type": null,
-      "identifier": "Company number  992449504"
+      "identifier": "Company number  992449504",
+      "party_page": {
+        "id": "koch-inc",
+        "name": "Koch, Inc."
+      }
     }
   ],
   "anzsic_codes": [
@@ -120,24 +132,40 @@
         {
           "name": "Tega MC SG Holdings Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "202551682E"
+          "identifier": "202551682E",
+          "party_page": {
+            "id": "tega-mc-sg-holdings-pte-ltd",
+            "name": "Tega MC SG Holdings Pte. Ltd."
+          }
         },
         {
           "name": "Tega MC Australia Holdings Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "16 147 692 840"
+          "identifier": "16 147 692 840",
+          "party_page": {
+            "id": "tega-mc-australia-holdings-pty-ltd",
+            "name": "Tega MC Australia Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Orway IQ Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "52 631 359 370"
+          "identifier": "52 631 359 370",
+          "party_page": {
+            "id": "orway-iq-pty-ltd",
+            "name": "Orway IQ Pty Ltd"
+          }
         },
         {
           "name": "Molycop Technologies Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "85 154 346 004"
+          "identifier": "85 154 346 004",
+          "party_page": {
+            "id": "molycop-technologies-pty-ltd",
+            "name": "Molycop Technologies Pty Ltd"
+          }
         }
       ]
     },
@@ -150,14 +178,22 @@
         {
           "name": "Zendesk, Inc.",
           "identifier_type": null,
-          "identifier": "EIN 264411091"
+          "identifier": "EIN 264411091",
+          "party_page": {
+            "id": "zendesk-inc",
+            "name": "Zendesk, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Forethought Technologies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "forethought-technologies-inc",
+            "name": "Forethought Technologies, Inc."
+          }
         }
       ]
     },
@@ -170,19 +206,31 @@
         {
           "name": "Skyshield UK Bidco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "skyshield-uk-bidco-limited",
+            "name": "Skyshield UK Bidco Limited"
+          }
         },
         {
           "name": "Skyshield US Bidco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "skyshield-us-bidco-limited",
+            "name": "Skyshield US Bidco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Smiths Detection Group Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "smiths-detection-group-limited",
+            "name": "Smiths Detection Group Limited"
+          }
         }
       ]
     }
