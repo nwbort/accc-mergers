@@ -349,6 +349,8 @@ def _extract_dates_and_status(soup, merger_id, existing_merger_data):
     if determination_tag:
         raw_determination = determination_tag.get_text(strip=True)
         data['accc_determination'] = normalize_determination(raw_determination)
+        if raw_determination and raw_determination != data['accc_determination']:
+            data['accc_determination_raw'] = raw_determination
 
     # Use known hardcoded date if the page is missing the determination date
     if data.get('accc_determination') and not data.get('determination_publication_date'):

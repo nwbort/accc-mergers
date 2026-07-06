@@ -543,6 +543,7 @@ function Mergers() {
                       <StatusBadge
                         status={merger.status}
                         determination={merger.accc_determination}
+                        hasConditions={merger.has_conditions}
                       />
                       <button
                         onClick={(e) => {
