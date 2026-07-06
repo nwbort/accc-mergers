@@ -15,6 +15,7 @@ def _lightweight(m: dict) -> dict:
         "merger_name": m.get('merger_name'),
         "status": m.get('status'),
         "accc_determination": m.get('accc_determination'),
+        "has_conditions": m.get('has_conditions', False),
         "is_waiver": m.get('is_waiver', False),
         "effective_notification_datetime": m.get('effective_notification_datetime'),
         "determination_publication_date": m.get('determination_publication_date'),

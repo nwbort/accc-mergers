@@ -12,6 +12,59 @@ from party_matching import build_group_lookups, match_party
 
 from .business_days import add_business_days, subtract_business_days
 
+# Case-insensitive phrases indicating an ACCC approval was subject to
+# conditions (a s 87B undertaking, divestiture, etc.), used by
+# detect_has_conditions. Not exhaustive; refine as new phrasings are seen.
+_CONDITION_PHRASES = (
+    'subject to conditions',
+    'conditions of approval',
+    's 87b',
+    'section 87b',
+    '87b undertaking',
+)
+
+
+def _collect_determination_text(merger: dict) -> str:
+    """Flatten the raw determination string and parsed determination-PDF
+    content (table rows, statement of reasons) into one string for phrase
+    matching in detect_has_conditions."""
+    parts = [merger.get('accc_determination_raw') or '']
+
+    for event in merger.get('events', []):
+        # Events like "ACCC accepted s87B undertaking" carry the signal in
+        # their title rather than in any parsed PDF content.
+        parts.append(str(event.get('title') or ''))
+
+        for row in event.get('determination_table_content') or []:
+            if isinstance(row, dict):
+                parts.append(str(row.get('item') or ''))
+                parts.append(str(row.get('details') or ''))
+
+        for block in event.get('determination_statement_of_reasons') or []:
+            if not isinstance(block, dict):
+                continue
+            parts.append(str(block.get('text') or ''))
+            for item in block.get('items') or []:
+                if isinstance(item, dict):
+                    parts.append(str(item.get('text') or ''))
+                else:
+                    parts.append(str(item))
+
+    return '\n'.join(parts)
+
+
+def detect_has_conditions(merger: dict) -> bool:
+    """Detect whether an ACCC approval was granted subject to conditions.
+
+    Matches case-insensitive phrases against the raw (pre-normalisation)
+    determination string, event titles (e.g. "ACCC accepted s87B
+    undertaking"), and the parsed determination PDF content. Negated
+    phrasing such as "no conditions were imposed" is not distinguished from
+    a genuine match — a documented limitation rather than a bug.
+    """
+    text = _collect_determination_text(merger).lower()
+    return any(phrase in text for phrase in _CONDITION_PHRASES)
+
 
 def extract_phase_from_event(event_title: str) -> str | None:
     """Extract phase information from event title."""
@@ -66,6 +119,13 @@ def enrich_merger(
 
     # Normalize the determination
     m['accc_determination'] = normalize_determination(m.get('accc_determination'))
+
+    # Flag approvals granted subject to conditions (e.g. a s 87B undertaking
+    # or divestiture) — normalize_determination collapses these to a bare
+    # "Approved", so surface the distinction separately.
+    m['has_conditions'] = (
+        m['accc_determination'] == merger_status.APPROVED and detect_has_conditions(m)
+    )
 
     # Add is_waiver flag
     m['is_waiver'] = is_waiver_merger(merger)

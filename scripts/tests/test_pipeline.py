@@ -28,6 +28,7 @@ from extract_mergers import (
     detect_inferred_phase_2,
     _infer_determination_date_from_events,
     _extract_anzsic_codes,
+    _extract_dates_and_status,
     _merge_events,
     _add_synthetic_events,
     find_pending_phase2_notice_events,
@@ -1272,6 +1273,7 @@ from static_data.business_days import (
     calculate_calendar_days,
 )
 from static_data.enrichment import (
+    detect_has_conditions,
     enrich_merger,
     extract_phase_from_event,
     is_phase_2_referral_event,
@@ -1581,6 +1583,76 @@ class TestEnrichMerger:
         result = enrich_merger(m)
         assert result['events'][0]['phase'] == 'Phase 1'
         assert result['events'][1]['phase'] is None
+
+    def test_has_conditions_false_by_default(self):
+        result = enrich_merger(self._base_merger())
+        assert result['has_conditions'] is False
+
+    def test_has_conditions_false_when_not_approved(self):
+        m = self._base_merger()
+        m['accc_determination'] = 'Not approved'
+        m['accc_determination_raw'] = 'Not approved subject to conditions'
+        result = enrich_merger(m)
+        assert result['has_conditions'] is False
+
+    def test_has_conditions_true_from_raw_determination(self):
+        m = self._base_merger()
+        m['accc_determination_raw'] = 'Approved subject to conditions'
+        result = enrich_merger(m)
+        assert result['has_conditions'] is True
+
+    def test_has_conditions_true_from_determination_table_content(self):
+        m = self._base_merger()
+        m['events'] = [{
+            'title': 'Phase 2 determination',
+            'determination_table_content': [
+                {'item': 'Conditions', 'details': 'a s 87B undertaking was accepted'},
+            ],
+        }]
+        result = enrich_merger(m)
+        assert result['has_conditions'] is True
+
+    def test_has_conditions_true_from_statement_of_reasons(self):
+        m = self._base_merger()
+        m['events'] = [{
+            'title': 'Phase 2 determination - Statement of reasons',
+            'determination_statement_of_reasons': [
+                {'type': 'paragraph', 'text': 'The ACCC accepted a section 87B undertaking.'},
+            ],
+        }]
+        result = enrich_merger(m)
+        assert result['has_conditions'] is True
+
+
+class TestDetectHasConditions:
+    def test_no_conditions_signal(self):
+        assert detect_has_conditions({'events': []}) is False
+
+    def test_case_insensitive_match(self):
+        m = {'accc_determination_raw': 'APPROVED SUBJECT TO CONDITIONS', 'events': []}
+        assert detect_has_conditions(m) is True
+
+    def test_does_not_distinguish_negated_phrasing(self):
+        # Documented limitation: "no conditions were imposed" still matches
+        # because it contains no condition-indicating phrase to begin with,
+        # but a negated phrase that DOES contain one (e.g. "conditions of
+        # approval were not required") would still be flagged as a false
+        # positive. Covering the non-negated case here.
+        m = {'accc_determination_raw': 'Approved', 'events': []}
+        assert detect_has_conditions(m) is False
+
+    def test_matches_lettered_list_items_in_statement_of_reasons(self):
+        m = {
+            'events': [{
+                'determination_statement_of_reasons': [
+                    {
+                        'type': 'lettered_list',
+                        'items': [{'letter': 'a', 'text': 'a s 87B undertaking'}],
+                    },
+                ],
+            }],
+        }
+        assert detect_has_conditions(m) is True
 
 
 # ---------------------------------------------------------------------------
@@ -2447,3 +2519,28 @@ class TestExtractAnzsicCodes:
     def test_no_anzsic_field(self):
         html = '<div class="field field--name-field-other">nothing here</div>'
         assert _extract_anzsic_codes(BeautifulSoup(html, 'html.parser')) == []
+
+
+# ---------------------------------------------------------------------------
+# extract_mergers: _extract_dates_and_status (accc_determination_raw capture)
+# ---------------------------------------------------------------------------
+
+class TestExtractDatesAndStatusDeterminationRaw:
+    def _soup(self, determination_text):
+        html = (
+            '<div class="field field--name-field-acccgov-acquisition-deter">'
+            f'{determination_text}</div>'
+        )
+        return BeautifulSoup(html, 'html.parser')
+
+    def test_captures_raw_when_it_differs_from_normalized(self):
+        soup = self._soup('ACCC Determination Approved subject to conditions')
+        data = _extract_dates_and_status(soup, 'MN-01000', None)
+        assert data['accc_determination'] == 'Approved'
+        assert data['accc_determination_raw'] == 'ACCC Determination Approved subject to conditions'
+
+    def test_no_raw_field_when_identical_to_normalized(self):
+        soup = self._soup('Approved')
+        data = _extract_dates_and_status(soup, 'MN-01000', None)
+        assert data['accc_determination'] == 'Approved'
+        assert 'accc_determination_raw' not in data

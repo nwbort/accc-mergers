@@ -16,6 +16,9 @@ def generate(mergers: list) -> dict:
 
     total_notifications = len(notification_mergers)
     total_waivers = len(waiver_mergers)
+    total_conditional_approvals = sum(
+        1 for m in mergers if m.get('has_conditions')
+    )
 
     # By status (notifications only)
     by_status = defaultdict(int)
@@ -176,6 +179,7 @@ def generate(mergers: list) -> dict:
     return {
         "total_mergers": total_notifications,
         "total_waivers": total_waivers,
+        "total_conditional_approvals": total_conditional_approvals,
         "by_status": dict(by_status),
         "by_determination": dict(by_determination),
         "by_waiver_determination": dict(by_waiver_determination),
