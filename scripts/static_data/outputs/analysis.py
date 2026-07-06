@@ -172,6 +172,89 @@ def notification_restarts(mergers: list) -> list[dict]:
     return restarts
 
 
+def outcomes_by_division(notification_mergers: list) -> list[dict]:
+    """Phase 1 outcome mix per top-level ANZSIC division.
+
+    Each merger is attributed to every division its tagged codes roll up to
+    (deduped), exactly as :func:`industry_phase1_duration` does. Counts
+    approved / not-approved / referred-to-Phase-2 / in-progress outcomes and
+    the resulting Phase 2 referral rate (referred over completed+referred).
+    """
+    division_mergers = defaultdict(list)
+    for m in notification_mergers:
+        codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
+        divisions = {}
+        for code_obj in codes:
+            division = _division_for_code(code_obj.get('code', ''))
+            if division is not None:
+                divisions[division.code] = division
+        for division in divisions.values():
+            division_mergers[division.code].append((division.name, m))
+
+    results = []
+    for division_code, entries in division_mergers.items():
+        division_name = entries[0][0]
+        approved = not_approved = referred = in_progress = 0
+        for _, m in entries:
+            det = m.get('phase_1_determination')
+            if det is None:
+                in_progress += 1
+            elif det == merger_status.REFERRED_TO_PHASE_2:
+                referred += 1
+            elif det == merger_status.APPROVED:
+                approved += 1
+            else:
+                not_approved += 1
+
+        completed_and_referred = approved + not_approved + referred
+        phase2_referral_rate = (
+            round(referred / completed_and_referred, 3) if completed_and_referred else None
+        )
+
+        results.append({
+            "code": division_code,
+            "name": division_name,
+            "approved": approved,
+            "not_approved": not_approved,
+            "referred": referred,
+            "in_progress": in_progress,
+            "phase2_referral_rate": phase2_referral_rate,
+        })
+
+    results.sort(key=lambda x: (x['phase2_referral_rate'] is None, -(x['phase2_referral_rate'] or 0)))
+    return results
+
+
+def referrals_by_quarter(notification_mergers: list) -> list[dict]:
+    """Notification volume and subsequent Phase 2 referrals, per calendar quarter.
+
+    Quarter is derived from the notification date (``effective_notification_datetime``),
+    not the (potentially much later) referral date.
+    """
+    quarter_counts = defaultdict(lambda: {"notifications": 0, "referred": 0})
+    for m in notification_mergers:
+        start = m.get('effective_notification_datetime')
+        if not start:
+            continue
+        year = start[:4]
+        month = int(start[5:7])
+        quarter = (month - 1) // 3 + 1
+        quarter_key = f"{year}-Q{quarter}"
+
+        quarter_counts[quarter_key]["notifications"] += 1
+        if m.get('phase_1_determination') == merger_status.REFERRED_TO_PHASE_2:
+            quarter_counts[quarter_key]["referred"] += 1
+
+    return [
+        {
+            "quarter": quarter_key,
+            "notifications": counts["notifications"],
+            "referred": counts["referred"],
+        }
+        for quarter_key, counts in sorted(quarter_counts.items())
+    ]
+
+
 def generate(mergers: list) -> dict:
     """Return the analysis.json payload for pre-enriched mergers."""
     notification_mergers = filter_notifications(mergers)
@@ -325,4 +408,6 @@ def generate(mergers: list) -> dict:
         "deadline_utilisation": deadline_utilisation(mergers),
         "notification_restarts": restarts,
         "restart_rate": restart_rate,
+        "outcomes_by_division": outcomes_by_division(notification_mergers),
+        "referrals_by_quarter": referrals_by_quarter(notification_mergers),
     }
