@@ -504,21 +504,23 @@ class TestAnalysisGenerate:
             'deadline_utilisation', 'notification_restarts', 'restart_rate',
             'outcomes_by_division', 'referrals_by_quarter',
         }
-        assert 'scatter_data' in payload['phase1_duration']
-        assert 'scatter_data' in payload['waiver_duration']
+        assert 'durations' in payload['phase1_duration']
+        assert 'durations' in payload['waiver_duration']
         assert 'labels' in payload['monthly_volume']
 
-    def test_phase1_scatter_only_notifications(self):
+    def test_phase1_durations_only_notifications_with_an_end_date(self):
         payload = analysis.generate(_enriched_fixture())
-        ids = {p['merger_id'] for p in payload['phase1_duration']['scatter_data']}
+        durations = payload['phase1_duration']['durations']
         # Only MN-0001 has notification + determination (MN-0002 has no determination,
-        # MN-0004 is suspended with no determination either)
-        assert ids == {'MN-0001'}
+        # MN-0004 is suspended with no determination either), so it's the only one
+        # with a Phase 1 end date to measure to.
+        assert len(durations) == 1
+        assert durations[0]['in_progress'] is False
 
-    def test_waiver_scatter_only_waivers(self):
+    def test_waiver_durations_only_waivers(self):
         payload = analysis.generate(_enriched_fixture())
-        ids = {p['merger_id'] for p in payload['waiver_duration']['scatter_data']}
-        assert ids == {'WA-0003'}
+        durations = payload['waiver_duration']['durations']
+        assert len(durations) == 1
 
     def test_industry_phase1_duration_rolls_up_to_division(self):
         payload = analysis.generate(_enriched_fixture())
