@@ -3468,5 +3468,196 @@
       "delta_calendar_days": 4
     }
   ],
-  "restart_rate": 0.0182
+  "restart_rate": 0.0182,
+  "outcomes_by_division": [
+    {
+      "code": "S",
+      "name": "Other Services",
+      "approved": 4,
+      "not_approved": 0,
+      "referred": 2,
+      "in_progress": 1,
+      "phase2_referral_rate": 0.333
+    },
+    {
+      "code": "G",
+      "name": "Retail Trade",
+      "approved": 9,
+      "not_approved": 0,
+      "referred": 3,
+      "in_progress": 4,
+      "phase2_referral_rate": 0.25
+    },
+    {
+      "code": "L",
+      "name": "Rental, Hiring and Real Estate Services",
+      "approved": 9,
+      "not_approved": 0,
+      "referred": 2,
+      "in_progress": 1,
+      "phase2_referral_rate": 0.182
+    },
+    {
+      "code": "E",
+      "name": "Construction",
+      "approved": 7,
+      "not_approved": 0,
+      "referred": 1,
+      "in_progress": 3,
+      "phase2_referral_rate": 0.125
+    },
+    {
+      "code": "F",
+      "name": "Wholesale Trade",
+      "approved": 18,
+      "not_approved": 0,
+      "referred": 2,
+      "in_progress": 3,
+      "phase2_referral_rate": 0.1
+    },
+    {
+      "code": "K",
+      "name": "Financial and Insurance Services",
+      "approved": 19,
+      "not_approved": 0,
+      "referred": 2,
+      "in_progress": 1,
+      "phase2_referral_rate": 0.095
+    },
+    {
+      "code": "M",
+      "name": "Professional, Scientific and Technical Services",
+      "approved": 28,
+      "not_approved": 0,
+      "referred": 2,
+      "in_progress": 7,
+      "phase2_referral_rate": 0.067
+    },
+    {
+      "code": "C",
+      "name": "Manufacturing",
+      "approved": 35,
+      "not_approved": 0,
+      "referred": 1,
+      "in_progress": 10,
+      "phase2_referral_rate": 0.028
+    },
+    {
+      "code": "D",
+      "name": "Electricity, Gas, Water and Waste Services",
+      "approved": 3,
+      "not_approved": 0,
+      "referred": 0,
+      "in_progress": 1,
+      "phase2_referral_rate": 0.0
+    },
+    {
+      "code": "B",
+      "name": "Mining",
+      "approved": 5,
+      "not_approved": 0,
+      "referred": 0,
+      "in_progress": 4,
+      "phase2_referral_rate": 0.0
+    },
+    {
+      "code": "J",
+      "name": "Information Media and Telecommunications",
+      "approved": 18,
+      "not_approved": 0,
+      "referred": 0,
+      "in_progress": 5,
+      "phase2_referral_rate": 0.0
+    },
+    {
+      "code": "H",
+      "name": "Accommodation and Food Services",
+      "approved": 5,
+      "not_approved": 0,
+      "referred": 0,
+      "in_progress": 3,
+      "phase2_referral_rate": 0.0
+    },
+    {
+      "code": "Q",
+      "name": "Health Care and Social Assistance",
+      "approved": 10,
+      "not_approved": 0,
+      "referred": 0,
+      "in_progress": 4,
+      "phase2_referral_rate": 0.0
+    },
+    {
+      "code": "A",
+      "name": "Agriculture, Forestry and Fishing",
+      "approved": 4,
+      "not_approved": 0,
+      "referred": 0,
+      "in_progress": 2,
+      "phase2_referral_rate": 0.0
+    },
+    {
+      "code": "I",
+      "name": "Transport, Postal and Warehousing",
+      "approved": 9,
+      "not_approved": 0,
+      "referred": 0,
+      "in_progress": 5,
+      "phase2_referral_rate": 0.0
+    },
+    {
+      "code": "R",
+      "name": "Arts and Recreation Services",
+      "approved": 2,
+      "not_approved": 0,
+      "referred": 0,
+      "in_progress": 1,
+      "phase2_referral_rate": 0.0
+    },
+    {
+      "code": "O",
+      "name": "Public Administration and Safety",
+      "approved": 1,
+      "not_approved": 0,
+      "referred": 0,
+      "in_progress": 0,
+      "phase2_referral_rate": 0.0
+    },
+    {
+      "code": "N",
+      "name": "Administrative and Support Services",
+      "approved": 2,
+      "not_approved": 0,
+      "referred": 0,
+      "in_progress": 1,
+      "phase2_referral_rate": 0.0
+    }
+  ],
+  "referrals_by_quarter": [
+    {
+      "quarter": "2025-Q3",
+      "notifications": 2,
+      "referred": 0
+    },
+    {
+      "quarter": "2025-Q4",
+      "notifications": 11,
+      "referred": 2
+    },
+    {
+      "quarter": "2026-Q1",
+      "notifications": 50,
+      "referred": 3
+    },
+    {
+      "quarter": "2026-Q2",
+      "notifications": 95,
+      "referred": 2
+    },
+    {
+      "quarter": "2026-Q3",
+      "notifications": 7,
+      "referred": 0
+    }
+  ]
 }
