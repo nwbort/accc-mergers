@@ -1,5 +1,18 @@
-"""Pre-computed analysis data for the Analysis page — ``analysis.json``."""
+"""Pre-computed analysis data for the Analysis page — ``analysis.json``.
 
+Label normalisation for ``by_commission_division`` (see that function):
+whitespace runs are collapsed and grouping is case-insensitive (via
+``str.casefold``), with the first-seen spelling for a group used as its
+display label. A merger with no parsed ``determination_commission_division``
+on any event, or with a corrupted value, is grouped under "Unknown". A
+label longer than ``_MAX_DIVISION_LABEL_LENGTH`` is treated as corrupted:
+real division sentences top out around 120 characters, but the extractor's
+"...of the Act" end-of-sentence marker can occasionally be missing nearby in
+a determination PDF (e.g. within a lengthy s87B undertaking), causing it to
+capture the rest of the document instead of just the division sentence.
+"""
+
+import re
 from collections import defaultdict
 from statistics import median as stat_median
 
@@ -7,6 +20,8 @@ from .. import anzsic
 from ..business_days import calculate_business_days, calculate_calendar_days
 from ..durations import collect_phase_1_durations, phase_1_end_date
 from ..filters import filter_notifications, filter_waivers
+
+_MAX_DIVISION_LABEL_LENGTH = 200
 
 
 def _division_for_code(code: str):
@@ -59,6 +74,72 @@ def industry_phase1_duration(mergers: list) -> list[dict]:
         })
 
     results.sort(key=lambda x: -x['average_business_days'])
+    return results
+
+
+def _normalise_division(raw: str | None) -> str | None:
+    """Collapse whitespace in a raw division sentence; ``None`` if unusable.
+
+    Returns ``None`` (rather than "Unknown" directly) so callers can still
+    distinguish "no value parsed" from "value parsed but corrupted" if
+    needed; both fold into "Unknown" in :func:`by_commission_division`.
+    """
+    if not raw:
+        return None
+    label = re.sub(r'\s+', ' ', raw).strip()
+    if not label or len(label) > _MAX_DIVISION_LABEL_LENGTH:
+        return None
+    return label
+
+
+def _commission_division_for(merger: dict) -> str | None:
+    """The normalised ``determination_commission_division`` label for ``merger``.
+
+    This is parsed onto whichever event carries the determination PDF — at
+    most one event per merger has it set — not onto the merger itself.
+    """
+    for event in merger.get('events') or []:
+        raw = event.get('determination_commission_division')
+        if raw is not None:
+            return _normalise_division(raw)
+    return None
+
+
+def by_commission_division(mergers: list) -> list[dict]:
+    """Determination counts, outcome mix, and Phase 1 duration per commission division.
+
+    See the module docstring for the label normalisation rules. Divisions are
+    sorted by determination count, descending.
+    """
+    groups: dict[str, dict] = {}
+    unknown = []
+    for m in mergers:
+        label = _commission_division_for(m)
+        if label is None:
+            unknown.append(m)
+            continue
+        bucket = groups.setdefault(label.casefold(), {"label": label, "mergers": []})
+        bucket["mergers"].append(m)
+
+    buckets = list(groups.values())
+    if unknown:
+        buckets.append({"label": "Unknown", "mergers": unknown})
+
+    results = []
+    for bucket in buckets:
+        group = bucket["mergers"]
+        outcome_mix = defaultdict(int)
+        for m in group:
+            outcome_mix[m.get('accc_determination') or 'Unknown'] += 1
+        _, business_days = collect_phase_1_durations(group)
+        results.append({
+            "division": bucket["label"],
+            "count": len(group),
+            "outcome_mix": dict(outcome_mix),
+            "median_phase_1_business_days": stat_median(business_days) if business_days else None,
+        })
+
+    results.sort(key=lambda x: -x['count'])
     return results
 
 
@@ -208,4 +289,5 @@ def generate(mergers: list) -> dict:
         },
         "monthly_volume": monthly_volume,
         "industry_phase1_duration": industry_phase1_duration(mergers),
+        "by_commission_division": by_commission_division(mergers),
     }

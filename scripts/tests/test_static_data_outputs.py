@@ -498,6 +498,7 @@ class TestAnalysisGenerate:
         json.dumps(payload)
         assert set(payload.keys()) == {
             'phase1_duration', 'waiver_duration', 'monthly_volume', 'industry_phase1_duration',
+            'by_commission_division',
         }
         assert 'scatter_data' in payload['phase1_duration']
         assert 'scatter_data' in payload['waiver_duration']
@@ -526,6 +527,125 @@ class TestAnalysisGenerate:
         mining = divisions[0]
         assert mining['name'] == 'Mining'
         assert mining['count'] == 1
+
+
+# ---------------------------------------------------------------------------
+# analysis.by_commission_division
+# ---------------------------------------------------------------------------
+
+def _commission_division_fixture():
+    """Four determined mergers exercising the by_commission_division normalisation:
+    same division split across two spellings (whitespace + case), a corrupted
+    over-length extraction, and a determination with no division parsed."""
+    raw = [
+        {
+            'merger_id': 'MN-1001',
+            'merger_name': 'Iota acquires Kappa',
+            'status': 'Determined',
+            'accc_determination': 'Approved',
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-01-06T09:00:00Z',
+            'determination_publication_date': '2025-02-05T12:00:00Z',
+            'page_modified_datetime': '2025-02-05T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/MN-1001',
+            'events': [{
+                'title': 'Phase 1 - Determination',
+                'date': '2025-02-05T12:00:00Z',
+                'url': 'e1',
+                'determination_commission_division': (
+                    'Determination made by Commissioner  Williams pursuant to a\n'
+                    'delegation under section 25(1) of the Act'
+                ),
+            }],
+        },
+        {
+            'merger_id': 'MN-1002',
+            'merger_name': 'Lambda acquires Mu',
+            'status': 'Determined',
+            'accc_determination': 'Not opposed',
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-02-10T09:00:00Z',
+            'determination_publication_date': '2025-03-12T12:00:00Z',
+            'page_modified_datetime': '2025-03-12T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/MN-1002',
+            'events': [{
+                'title': 'Phase 1 - Determination',
+                'date': '2025-03-12T12:00:00Z',
+                'url': 'e2',
+                # Same division as MN-1001's, differing only in case/whitespace.
+                'determination_commission_division': (
+                    'determination made by commissioner williams pursuant to a '
+                    'delegation under section 25(1) of the act'
+                ),
+            }],
+        },
+        {
+            'merger_id': 'MN-1003',
+            'merger_name': 'Nu acquires Xi',
+            'status': 'Determined',
+            'accc_determination': 'Approved',
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-01-20T09:00:00Z',
+            'determination_publication_date': '2025-02-19T12:00:00Z',
+            'page_modified_datetime': '2025-02-19T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/MN-1003',
+            'events': [{
+                'title': 'Phase 1 - Determination',
+                'date': '2025-02-19T12:00:00Z',
+                'url': 'e3',
+                # A corrupted extraction (no "of the Act" marker nearby) that
+                # captured far more than the division sentence.
+                'determination_commission_division': 'Determination made by the Commission ' + 'x' * 300,
+            }],
+        },
+        {
+            'merger_id': 'MN-1004',
+            'merger_name': 'Omicron acquires Pi',
+            'status': 'Determined',
+            'accc_determination': 'Approved',
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-03-01T09:00:00Z',
+            'determination_publication_date': '2025-03-31T12:00:00Z',
+            'page_modified_datetime': '2025-03-31T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/MN-1004',
+            'events': [
+                # No determination_commission_division parsed at all.
+                {'title': 'Phase 1 - Determination', 'date': '2025-03-31T12:00:00Z', 'url': 'e4'},
+            ],
+        },
+    ]
+    return [enrich_merger(m) for m in raw]
+
+
+class TestByCommissionDivision:
+    def test_groups_case_and_whitespace_insensitively(self):
+        divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
+        williams = next(d for d in divisions if 'Williams' in d['division'])
+        assert williams['count'] == 2
+        # Display label keeps the first-seen spelling.
+        assert williams['division'] == (
+            'Determination made by Commissioner Williams pursuant to a '
+            'delegation under section 25(1) of the Act'
+        )
+        assert williams['outcome_mix'] == {'Approved': 1, 'Not opposed': 1}
+
+    def test_corrupted_and_missing_values_fold_into_unknown(self):
+        divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
+        unknown = next(d for d in divisions if d['division'] == 'Unknown')
+        assert unknown['count'] == 2
+
+    def test_median_phase_1_business_days_uses_the_subset(self):
+        divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
+        williams = next(d for d in divisions if 'Williams' in d['division'])
+        assert williams['median_phase_1_business_days'] is not None
 
 
 # ---------------------------------------------------------------------------
