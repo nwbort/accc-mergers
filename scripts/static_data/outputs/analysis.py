@@ -143,6 +143,35 @@ def deadline_utilisation(mergers: list) -> dict:
     }
 
 
+def notification_restarts(mergers: list) -> list[dict]:
+    """Notifications whose clock restarted: original vs effective notification date.
+
+    ``effective_notification_datetime`` moves forward when the ACCC treats a
+    notification as amended/restarted; ``original_notification_datetime``
+    stays fixed at first filing. Waivers have no such clock, so only
+    notifications are considered. Sorted by delta (days) descending.
+    """
+    restarts = []
+    for m in filter_notifications(mergers):
+        original = m.get('original_notification_datetime')
+        effective = m.get('effective_notification_datetime')
+        if not original or not effective or original == effective:
+            continue
+        delta = calculate_calendar_days(original, effective)
+        if delta is None:
+            continue
+        restarts.append({
+            "merger_id": m.get('merger_id'),
+            "merger_name": m.get('merger_name'),
+            "original_date": original[:10],
+            "effective_date": effective[:10],
+            "delta_calendar_days": delta,
+        })
+
+    restarts.sort(key=lambda x: -x['delta_calendar_days'])
+    return restarts
+
+
 def generate(mergers: list) -> dict:
     """Return the analysis.json payload for pre-enriched mergers."""
     notification_mergers = filter_notifications(mergers)
@@ -276,6 +305,10 @@ def generate(mergers: list) -> dict:
         "waivers": [monthly_counts[m]["waivers"] for m in sorted_months],
     }
 
+    restarts = notification_restarts(mergers)
+    total_notifications = len(notification_mergers)
+    restart_rate = round(len(restarts) / total_notifications, 4) if total_notifications else None
+
     return {
         "phase1_duration": {
             "scatter_data": phase1_scatter,
@@ -290,4 +323,6 @@ def generate(mergers: list) -> dict:
         "monthly_volume": monthly_volume,
         "industry_phase1_duration": industry_phase1_duration(mergers),
         "deadline_utilisation": deadline_utilisation(mergers),
+        "notification_restarts": restarts,
+        "restart_rate": restart_rate,
     }

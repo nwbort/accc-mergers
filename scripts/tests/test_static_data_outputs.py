@@ -498,7 +498,7 @@ class TestAnalysisGenerate:
         json.dumps(payload)
         assert set(payload.keys()) == {
             'phase1_duration', 'waiver_duration', 'monthly_volume', 'industry_phase1_duration',
-            'deadline_utilisation',
+            'deadline_utilisation', 'notification_restarts', 'restart_rate',
         }
         assert 'scatter_data' in payload['phase1_duration']
         assert 'scatter_data' in payload['waiver_duration']
@@ -527,6 +527,92 @@ class TestAnalysisGenerate:
         mining = divisions[0]
         assert mining['name'] == 'Mining'
         assert mining['count'] == 1
+
+
+class TestNotificationRestarts:
+    """Spec 14: original_notification_datetime vs effective_notification_datetime."""
+
+    def _restarted_notification_raw(self):
+        return {
+            'merger_id': 'MN-9001',
+            'merger_name': 'Restarted notification',
+            'status': 'Under assessment',
+            'accc_determination': None,
+            'stage': 'Phase 1 - preliminary assessment',
+            'original_notification_datetime': '2026-02-06T12:00:00Z',
+            'effective_notification_datetime': '2026-02-20T12:00:00Z',
+            'determination_publication_date': None,
+            'page_modified_datetime': '2026-02-20T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': ['Omicron'],
+            'targets': ['Pi'],
+            'other_parties': [],
+            'url': 'https://example.com/MN-9001',
+            'events': [
+                {'title': 'Merger notified to ACCC', 'date': '2026-02-20T12:00:00Z'},
+            ],
+        }
+
+    def _restarted_waiver_raw(self):
+        # Same original/effective mismatch, but a waiver — must not count as
+        # a notification restart, since waivers have no Phase 1 clock.
+        return {
+            'merger_id': 'WA-9002',
+            'merger_name': 'Restarted waiver (excluded)',
+            'status': 'Determined',
+            'accc_determination': 'Waiver granted',
+            'stage': 'Waiver',
+            'original_notification_datetime': '2026-03-01T12:00:00Z',
+            'effective_notification_datetime': '2026-03-10T12:00:00Z',
+            'determination_publication_date': '2026-03-20T12:00:00Z',
+            'page_modified_datetime': '2026-03-20T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': ['Rho'],
+            'targets': ['Sigma'],
+            'other_parties': [],
+            'url': 'https://example.com/WA-9002',
+            'events': [
+                {'title': 'Waiver application received', 'date': '2026-03-10T12:00:00Z'},
+            ],
+        }
+
+    def test_finds_restarted_notification(self):
+        enriched = [enrich_merger(self._restarted_notification_raw())]
+        restarts = analysis.notification_restarts(enriched)
+        assert len(restarts) == 1
+        entry = restarts[0]
+        assert entry['merger_id'] == 'MN-9001'
+        assert entry['original_date'] == '2026-02-06'
+        assert entry['effective_date'] == '2026-02-20'
+        assert entry['delta_calendar_days'] == 14
+
+    def test_excludes_waivers(self):
+        enriched = [enrich_merger(self._restarted_waiver_raw())]
+        assert analysis.notification_restarts(enriched) == []
+
+    def test_excludes_unchanged_dates(self):
+        # The base fixture's mergers all have matching original/effective dates.
+        assert analysis.notification_restarts(_enriched_fixture()) == []
+
+    def test_sorted_by_delta_descending(self):
+        small_delta = self._restarted_notification_raw()
+        small_delta['merger_id'] = 'MN-9003'
+        small_delta['effective_notification_datetime'] = '2026-02-08T12:00:00Z'
+        enriched = [
+            enrich_merger(small_delta),
+            enrich_merger(self._restarted_notification_raw()),
+        ]
+        restarts = analysis.notification_restarts(enriched)
+        assert [r['merger_id'] for r in restarts] == ['MN-9001', 'MN-9003']
+        assert restarts[0]['delta_calendar_days'] > restarts[1]['delta_calendar_days']
+
+    def test_restart_rate_in_generate_payload(self):
+        mergers = _raw_fixture() + [self._restarted_notification_raw(), self._restarted_waiver_raw()]
+        enriched = [enrich_merger(m) for m in mergers]
+        payload = analysis.generate(enriched)
+        assert len(payload['notification_restarts']) == 1
+        notification_count = sum(1 for m in enriched if not m.get('is_waiver'))
+        assert payload['restart_rate'] == round(1 / notification_count, 4)
 
 
 # ---------------------------------------------------------------------------
