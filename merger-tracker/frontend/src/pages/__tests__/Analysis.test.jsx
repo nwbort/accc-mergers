@@ -102,7 +102,7 @@ describe('Analysis phase 1 duration ECDF', () => {
     renderAnalysis();
 
     await waitFor(() => {
-      expect(screen.getByText('Phase 1 duration over time')).toBeInTheDocument();
+      expect(screen.getByText('Monthly notification volume')).toBeInTheDocument();
     });
 
     expect(screen.queryByText('Phase 1 duration: share of reviews concluded')).not.toBeInTheDocument();
