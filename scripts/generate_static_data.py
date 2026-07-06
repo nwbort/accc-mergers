@@ -21,6 +21,7 @@ Output files:
   - upcoming-events.json        - Future consultation/determination dates
   - commentary.json             - Mergers with user commentary
   - analysis.json               - Pre-computed analysis data
+  - theories_of_harm.json       - Keyword-classified theory-of-harm taxonomy
   - questionnaires/{id}.json    - Lazy-loaded questionnaire files
   - noccs/{id}.json             - Lazy-loaded NOCC summary files
 """
@@ -55,6 +56,7 @@ from static_data.outputs import (
     noccs,
     questionnaires,
     stats,
+    theories_of_harm,
     timeline,
     upcoming_events,
 )
@@ -138,6 +140,7 @@ def main():
         ("upcoming-events.json", upcoming_events.generate(enriched)),
         ("commentary.json", commentary_out.generate(enriched, commentary)),
         ("analysis.json", analysis.generate(enriched)),
+        ("theories_of_harm.json", theories_of_harm.generate(enriched, nocc_data)),
     ]
     for filename, payload in single_file_outputs:
         out_path = OUTPUT_DIR / filename
