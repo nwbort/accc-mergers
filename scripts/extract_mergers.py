@@ -8,7 +8,7 @@ from urllib.parse import urljoin, urlparse, unquote
 import unicodedata
 import requests
 import re
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from markdownify import markdownify as md
 from parse_determination import parse_determination_pdf
 from parse_phase2_notice import parse_phase2_notice_pdf
@@ -772,7 +772,10 @@ def _calculate_missing_end_of_determination_period(merger_data, merger_id):
     start_dt = parse_iso_datetime(merger_data.get('effective_notification_datetime'))
     if start_dt:
         from static_data.business_days import add_business_days
-        end_dt = add_business_days(start_dt, 30)
+        # BD 1 of the review period is the day after notification (day 0), but
+        # add_business_days counts its start date as day 1 - so shift the start
+        # forward one day before adding 30 business days.
+        end_dt = add_business_days(start_dt + timedelta(days=1), 30)
         merger_data['end_of_determination_period'] = end_dt.strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
@@ -1035,7 +1038,7 @@ def auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers):
 
     Returns a set of newly frozen merger IDs (empty set if nothing was fixed).
     """
-    today = datetime.utcnow()
+    today = datetime.now(timezone.utc)
     today_iso = today.strftime('%Y-%m-%dT12:00:00Z')
     day = str(today.day)
     today_display = f"{day} {today.strftime('%b %Y')}"  # e.g. "6 May 2026"
