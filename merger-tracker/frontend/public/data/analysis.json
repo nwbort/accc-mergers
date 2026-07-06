@@ -3196,6 +3196,14 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-06-18",
+        "business_days": 12,
+        "calendar_days": 18,
+        "merger_name": "Siemens Energy \u2013 Camlin Group",
+        "merger_id": "WA-60023",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-06-23",
         "business_days": 8,
         "calendar_days": 10,
@@ -3206,17 +3214,17 @@
     ],
     "stats": {
       "average": 12.2,
-      "median": 12.0,
+      "median": 12,
       "min": 2,
       "max": 24,
-      "count": 254
+      "count": 255
     },
     "calendar_stats": {
       "average": 18.4,
-      "median": 17.0,
+      "median": 17,
       "min": 2,
       "max": 39,
-      "count": 254
+      "count": 255
     }
   },
   "monthly_volume": {
@@ -3256,7 +3264,7 @@
       48,
       45,
       67,
-      34,
+      35,
       0
     ]
   },
@@ -3427,9 +3435,9 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 273,
+      "count": 274,
       "outcome_mix": {
-        "Approved": 273
+        "Approved": 274
       },
       "median_phase_1_business_days": 16.0
     },

@@ -1,6 +1,6 @@
 {
   "total_mergers": 165,
-  "total_waivers": 254,
+  "total_waivers": 255,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 123,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 240,
+    "Approved": 241,
     "Not approved": 14
   },
   "phase_duration": {
@@ -177,6 +177,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-60023",
+      "merger_name": "Siemens Energy \u2013 Camlin Group",
+      "determination": "Approved",
+      "determination_date": "2026-07-06T12:00:00Z",
+      "page_modified_datetime": "2026-07-06T16:57:59+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-35026",
       "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
       "determination": "Approved",
@@ -285,16 +295,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 2 - detailed assessment"
-    },
-    {
-      "merger_id": "WA-45018",
-      "merger_name": "Count \u2013 Oracle Group",
-      "determination": "Approved",
-      "determination_date": "2026-07-01T12:00:00Z",
-      "page_modified_datetime": "2026-07-01T18:21:42+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
