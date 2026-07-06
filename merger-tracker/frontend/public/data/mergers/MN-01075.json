@@ -16,14 +16,22 @@
     {
       "name": "Thermo Fisher Scientific Inc.",
       "identifier_type": null,
-      "identifier": "042209186"
+      "identifier": "042209186",
+      "party_page": {
+        "id": "thermo-fisher-scientific-inc",
+        "name": "Thermo Fisher Scientific Inc."
+      }
     }
   ],
   "targets": [
     {
       "name": "Clario Holdings, Inc.",
       "identifier_type": null,
-      "identifier": "5977148"
+      "identifier": "5977148",
+      "party_page": {
+        "id": "clario-holdings-inc",
+        "name": "Clario Holdings, Inc."
+      }
     }
   ],
   "other_parties": [],
@@ -115,6 +123,10 @@
           "canonical": {
             "id": "eli-lilly-and-company",
             "name": "Eli Lilly and Company"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
           }
         }
       ],
@@ -122,7 +134,11 @@
         {
           "name": "CSL Behring LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "csl-behring-llc",
+            "name": "CSL Behring LLC"
+          }
         }
       ]
     },
@@ -135,14 +151,22 @@
         {
           "name": "Danaher Corporation",
           "identifier_type": null,
-          "identifier": "213594"
+          "identifier": "213594",
+          "party_page": {
+            "id": "danaher-corporation",
+            "name": "Danaher Corporation"
+          }
         }
       ],
       "targets": [
         {
           "name": "Masimo Corporation",
           "identifier_type": null,
-          "identifier": "2614702"
+          "identifier": "2614702",
+          "party_page": {
+            "id": "masimo-corporation",
+            "name": "Masimo Corporation"
+          }
         }
       ]
     },
@@ -155,14 +179,22 @@
         {
           "name": "CTC PRECAST PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "12 614 966 059"
+          "identifier": "12 614 966 059",
+          "party_page": {
+            "id": "ctc-precast-pty-ltd",
+            "name": "Ctc Precast Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TAYLEX GROUP HOLDING CO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "50 646 051 578"
+          "identifier": "50 646 051 578",
+          "party_page": {
+            "id": "taylex-group-holding-co-pty-ltd",
+            "name": "Taylex Group Holding Co Pty Ltd"
+          }
         }
       ]
     }

@@ -14,64 +14,112 @@
     {
       "name": "Essential Bidco B.V.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "essential-bidco-b-v",
+        "name": "Essential Bidco B.V."
+      }
     },
     {
       "name": "Specialty (U.S.) Bidco, Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "specialty-u-s-bidco-inc",
+        "name": "Specialty (U.S.) Bidco, Inc."
+      }
     },
     {
       "name": "Essential (U.S.) Bidco, Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "essential-u-s-bidco-inc",
+        "name": "Essential (U.S.) Bidco, Inc."
+      }
     },
     {
       "name": "Specialty Bidco B.V.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "specialty-bidco-b-v",
+        "name": "Specialty Bidco B.V."
+      }
     }
   ],
   "targets": [
     {
       "name": "SpecialtyCo US LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "specialtyco-us-llc",
+        "name": "SpecialtyCo US LLC"
+      }
     },
     {
       "name": "Biomin Phytogenics GmbH (Germany)",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "biomin-phytogenics-gmbh-germany",
+        "name": "Biomin Phytogenics GmbH (Germany)"
+      }
     },
     {
       "name": "DSM Nutritional Products Holding AG (Switzerland)",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "dsm-nutritional-products-holding-ag-switzerland",
+        "name": "DSM Nutritional Products Holding AG (Switzerland)"
+      }
     },
     {
       "name": "EssentialCo Holding AG",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "essentialco-holding-ag",
+        "name": "EssentialCo Holding AG"
+      }
     },
     {
       "name": "Animal Nutrition & Health, LLC (US)",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "animal-nutrition-health-llc-us",
+        "name": "Animal Nutrition & Health, LLC (US)"
+      }
     },
     {
       "name": "DSM Nutritional Products GmbH",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "dsm-nutritional-products-gmbh",
+        "name": "DSM Nutritional Products GmbH"
+      }
     },
     {
       "name": "DSM Nutritional Products Vietnam Ltd (Vietnam)",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "dsm-nutritional-products-vietnam-ltd-vietnam",
+        "name": "DSM Nutritional Products Vietnam Ltd (Vietnam)"
+      }
     },
     {
       "name": "DSM B.V.",
       "identifier_type": null,
-      "identifier": "Dutch Commercial Register 14022069"
+      "identifier": "Dutch Commercial Register 14022069",
+      "party_page": {
+        "id": "dsm-b-v",
+        "name": "Dsm B.V."
+      }
     }
   ],
   "other_parties": [
@@ -82,12 +130,20 @@
       "canonical": {
         "id": "cvc-capital-partners",
         "name": "CVC Capital Partners"
+      },
+      "party_page": {
+        "id": "cvc-capital-partners",
+        "name": "CVC Capital Partners"
       }
     },
     {
       "name": "DSM-Firmenich AG",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "dsm-firmenich-ag",
+        "name": "DSM-Firmenich AG"
+      }
     }
   ],
   "anzsic_codes": [
@@ -164,6 +220,10 @@
           "canonical": {
             "id": "cvc-capital-partners",
             "name": "CVC Capital Partners"
+          },
+          "party_page": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
           }
         }
       ],
@@ -171,7 +231,11 @@
         {
           "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
+            "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+          }
         }
       ]
     },
@@ -184,19 +248,31 @@
         {
           "name": "Skyshield UK Bidco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "skyshield-uk-bidco-limited",
+            "name": "Skyshield UK Bidco Limited"
+          }
         },
         {
           "name": "Skyshield US Bidco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "skyshield-us-bidco-limited",
+            "name": "Skyshield US Bidco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Smiths Detection Group Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "smiths-detection-group-limited",
+            "name": "Smiths Detection Group Limited"
+          }
         }
       ]
     },
@@ -209,14 +285,22 @@
         {
           "name": "Rosewood AG, LP",
           "identifier_type": null,
-          "identifier": "LP5500"
+          "identifier": "LP5500",
+          "party_page": {
+            "id": "rosewood-ag-lp",
+            "name": "Rosewood AG, LP"
+          }
         }
       ],
       "targets": [
         {
           "name": "Collagen Holdings, LLC",
           "identifier_type": null,
-          "identifier": "DE File Number  7473707"
+          "identifier": "DE File Number  7473707",
+          "party_page": {
+            "id": "collagen-holdings-llc",
+            "name": "Collagen Holdings, LLC"
+          }
         }
       ]
     }

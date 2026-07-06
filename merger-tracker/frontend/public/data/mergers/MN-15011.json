@@ -16,14 +16,22 @@
     {
       "name": "Danaher Corporation",
       "identifier_type": null,
-      "identifier": "213594"
+      "identifier": "213594",
+      "party_page": {
+        "id": "danaher-corporation",
+        "name": "Danaher Corporation"
+      }
     }
   ],
   "targets": [
     {
       "name": "Masimo Corporation",
       "identifier_type": null,
-      "identifier": "2614702"
+      "identifier": "2614702",
+      "party_page": {
+        "id": "masimo-corporation",
+        "name": "Masimo Corporation"
+      }
     }
   ],
   "other_parties": [],
@@ -119,14 +127,22 @@
         {
           "name": "Honda Motor Co., Ltd",
           "identifier_type": null,
-          "identifier": "6010401027577"
+          "identifier": "6010401027577",
+          "party_page": {
+            "id": "honda-motor-co-ltd",
+            "name": "Honda Motor Co., Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Astemo, Ltd",
           "identifier_type": null,
-          "identifier": "7050001007842"
+          "identifier": "7050001007842",
+          "party_page": {
+            "id": "astemo-ltd",
+            "name": "Astemo, Ltd"
+          }
         }
       ]
     },
@@ -139,24 +155,40 @@
         {
           "name": "MA MARINA FUND HOLDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 667 241 385"
+          "identifier": "96 667 241 385",
+          "party_page": {
+            "id": "ma-marina-fund-holdco-pty-ltd",
+            "name": "Ma Marina Fund Holdco Pty Ltd"
+          }
         },
         {
           "name": "MA MARINA FUND TT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "65 666 902 245"
+          "identifier": "65 666 902 245",
+          "party_page": {
+            "id": "ma-marina-fund-tt-pty-ltd",
+            "name": "Ma Marina Fund Tt Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "GGC Marketing Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "32 105 294 228"
+          "identifier": "32 105 294 228",
+          "party_page": {
+            "id": "ggc-marketing-pty-ltd",
+            "name": "GGC Marketing Pty Ltd"
+          }
         },
         {
           "name": "QUEENSLAND & PACIFIC PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "72 081 370 685"
+          "identifier": "72 081 370 685",
+          "party_page": {
+            "id": "queensland-pacific-pty-ltd",
+            "name": "Queensland & Pacific Pty. Ltd."
+          }
         }
       ]
     },
@@ -169,14 +201,22 @@
         {
           "name": "Thermo Fisher Scientific Inc.",
           "identifier_type": null,
-          "identifier": "042209186"
+          "identifier": "042209186",
+          "party_page": {
+            "id": "thermo-fisher-scientific-inc",
+            "name": "Thermo Fisher Scientific Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Clario Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "5977148"
+          "identifier": "5977148",
+          "party_page": {
+            "id": "clario-holdings-inc",
+            "name": "Clario Holdings, Inc."
+          }
         }
       ]
     }

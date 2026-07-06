@@ -14,34 +14,58 @@
     {
       "name": "INNIO Jenbacher International B.V.",
       "identifier_type": null,
-      "identifier": "KVK90210352"
+      "identifier": "KVK90210352",
+      "party_page": {
+        "id": "innio-jenbacher-international-b-v",
+        "name": "INNIO Jenbacher International B.V."
+      }
     },
     {
       "name": "INNIO Jenbacher Netherlands B.V.",
       "identifier_type": null,
-      "identifier": "KVK90209982"
+      "identifier": "KVK90209982",
+      "party_page": {
+        "id": "innio-jenbacher-netherlands-b-v",
+        "name": "INNIO Jenbacher Netherlands B.V."
+      }
     },
     {
       "name": "INNIO Holding GmbH",
       "identifier_type": null,
-      "identifier": "HRB305810"
+      "identifier": "HRB305810",
+      "party_page": {
+        "id": "innio-holding-gmbh",
+        "name": "INNIO Holding GmbH"
+      }
     }
   ],
   "targets": [
     {
       "name": "Exterran (Thailand) Ltd",
       "identifier_type": null,
-      "identifier": "0105542031616"
+      "identifier": "0105542031616",
+      "party_page": {
+        "id": "exterran-thailand-ltd",
+        "name": "Exterran (Thailand) Ltd"
+      }
     },
     {
       "name": "PT Enerflex (Indonesia)",
       "identifier_type": null,
-      "identifier": "9120407262914"
+      "identifier": "9120407262914",
+      "party_page": {
+        "id": "pt-enerflex-indonesia",
+        "name": "PT Enerflex (Indonesia)"
+      }
     },
     {
       "name": "ENERFLEX SERVICE PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "85 063 267 238"
+      "identifier": "85 063 267 238",
+      "party_page": {
+        "id": "enerflex-service-pty-limited",
+        "name": "Enerflex Service Pty Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -124,6 +148,10 @@
           "canonical": {
             "id": "henkel-global-supply-chain-b-v",
             "name": "Henkel Global Supply Chain B.V."
+          },
+          "party_page": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
           }
         }
       ],
@@ -131,12 +159,20 @@
         {
           "name": "Stahl Holdings B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 34249320"
+          "identifier": "Netherlands registration number (KVK): 34249320",
+          "party_page": {
+            "id": "stahl-holdings-b-v",
+            "name": "Stahl Holdings B.V."
+          }
         },
         {
           "name": "Stahl Asia Pacific Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "Singapore registration number: 200606884Z"
+          "identifier": "Singapore registration number: 200606884Z",
+          "party_page": {
+            "id": "stahl-asia-pacific-pte-ltd",
+            "name": "Stahl Asia Pacific Pte. Ltd."
+          }
         }
       ]
     },
@@ -149,14 +185,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "The Trustee for the Comfy Dental Trust",
           "identifier_type": "ABN",
-          "identifier": "59 865 563 072"
+          "identifier": "59 865 563 072",
+          "party_page": {
+            "id": "the-trustee-for-the-comfy-dental-trust",
+            "name": "The Trustee for the Comfy Dental Trust"
+          }
         }
       ]
     },
@@ -169,14 +213,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "TAN DENTAL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "18 146 067 594"
+          "identifier": "18 146 067 594",
+          "party_page": {
+            "id": "tan-dental-pty-ltd",
+            "name": "Tan Dental Pty Ltd"
+          }
         }
       ]
     }

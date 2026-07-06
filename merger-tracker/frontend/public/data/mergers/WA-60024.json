@@ -14,21 +14,33 @@
     {
       "name": "REDWOOD SERVICES GROUP AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "15 675 368 162"
+      "identifier": "15 675 368 162",
+      "party_page": {
+        "id": "redwood-services-group-australia-pty-ltd",
+        "name": "Redwood Services Group Australia Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "NEWTREND I.T. SPECIALISTS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "54 124 502 656"
+      "identifier": "54 124 502 656",
+      "party_page": {
+        "id": "newtrend-i-t-specialists-pty-ltd",
+        "name": "Newtrend I.T. Specialists Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Evergreen Services Group Topco, LLC",
       "identifier_type": null,
-      "identifier": "EIN  202252119595"
+      "identifier": "EIN  202252119595",
+      "party_page": {
+        "id": "evergreen-services-group-topco-llc",
+        "name": "Evergreen Services Group Topco, LLC"
+      }
     }
   ],
   "anzsic_codes": [
@@ -97,19 +109,31 @@
         {
           "name": "Hg Pooled Management Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "hg-pooled-management-limited",
+            "name": "Hg Pooled Management Limited"
+          }
         },
         {
           "name": "OnwardAcquireCo, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "onwardacquireco-inc",
+            "name": "OnwardAcquireCo, Inc"
+          }
         }
       ],
       "targets": [
         {
           "name": "OneStream, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "onestream-inc",
+            "name": "OneStream, Inc."
+          }
         }
       ]
     },
@@ -122,19 +146,31 @@
         {
           "name": "Cognizant Domestic Holdings Corporation",
           "identifier_type": null,
-          "identifier": "Delaware file number 5221744"
+          "identifier": "Delaware file number 5221744",
+          "party_page": {
+            "id": "cognizant-domestic-holdings-corporation",
+            "name": "Cognizant Domestic Holdings Corporation"
+          }
         },
         {
           "name": "Asteroid Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware file number 10587708"
+          "identifier": "Delaware file number 10587708",
+          "party_page": {
+            "id": "asteroid-merger-sub-inc",
+            "name": "Asteroid Merger Sub, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Astreya Partners, Inc.",
           "identifier_type": null,
-          "identifier": "CIN 770570107"
+          "identifier": "CIN 770570107",
+          "party_page": {
+            "id": "astreya-partners-inc",
+            "name": "Astreya Partners, Inc."
+          }
         }
       ]
     },
@@ -147,24 +183,40 @@
         {
           "name": "OHCA PROPERTY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
+          "identifier": "70 675 807 477",
+          "party_page": {
+            "id": "ohca-property-holdings-pty-ltd",
+            "name": "Ohca Property Holdings Pty Ltd"
+          }
         },
         {
           "name": "DPG SERVICES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
+          "identifier": "38 090 007 999",
+          "party_page": {
+            "id": "dpg-services-pty-ltd",
+            "name": "Dpg Services Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Bethel Amen Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "077 379 358"
+          "identifier": "077 379 358",
+          "party_page": {
+            "id": "bethel-amen-pty-ltd",
+            "name": "Bethel Amen Pty Ltd"
+          }
         },
         {
           "name": "Java Dale Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "077 379 367"
+          "identifier": "077 379 367",
+          "party_page": {
+            "id": "java-dale-pty-ltd",
+            "name": "Java Dale Pty Ltd"
+          }
         }
       ]
     }

@@ -14,21 +14,33 @@
     {
       "name": "Blackbird FOF25 Pty Ltd as trustee for Blackbird Ventures 2025 Follow-On Fund Trust",
       "identifier_type": "ABN",
-      "identifier": "49 711 375 395"
+      "identifier": "49 711 375 395",
+      "party_page": {
+        "id": "blackbird-fof25-pty-ltd-as-trustee-for-blackbird-ventures-2025-follow-on-fund-tr",
+        "name": "Blackbird FOF25 Pty Ltd as trustee for Blackbird Ventures 2025 Follow-On Fund Trust"
+      }
     }
   ],
   "targets": [
     {
       "name": "Baseten Labs, Inc",
       "identifier_type": null,
-      "identifier": "EIN 371950658"
+      "identifier": "EIN 371950658",
+      "party_page": {
+        "id": "baseten-labs-inc",
+        "name": "Baseten Labs, Inc"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Blackbird Ventures Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "93 159 044 989"
+      "identifier": "93 159 044 989",
+      "party_page": {
+        "id": "blackbird-ventures-pty-ltd",
+        "name": "Blackbird Ventures Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -113,19 +125,31 @@
         {
           "name": "Blackbird FSA Pty Ltd as trustee for Blackbird FSA Co-investment Trust",
           "identifier_type": "ABN",
-          "identifier": "99 526 258 209"
+          "identifier": "99 526 258 209",
+          "party_page": {
+            "id": "blackbird-fsa-pty-ltd-as-trustee-for-blackbird-fsa-co-investment-trust",
+            "name": "Blackbird FSA Pty Ltd as trustee for Blackbird FSA Co-investment Trust"
+          }
         },
         {
           "name": "Blackbird FOF25 Pty Ltd as trustee for Blackbird Ventures 2025 Follow-On Fund Trust",
           "identifier_type": "ABN",
-          "identifier": "49 711 375 395"
+          "identifier": "49 711 375 395",
+          "party_page": {
+            "id": "blackbird-fof25-pty-ltd-as-trustee-for-blackbird-ventures-2025-follow-on-fund-tr",
+            "name": "Blackbird FOF25 Pty Ltd as trustee for Blackbird Ventures 2025 Follow-On Fund Trust"
+          }
         }
       ],
       "targets": [
         {
           "name": "Halter USA Inc.",
           "identifier_type": null,
-          "identifier": "EIN 364872517"
+          "identifier": "EIN 364872517",
+          "party_page": {
+            "id": "halter-usa-inc",
+            "name": "Halter USA Inc."
+          }
         }
       ]
     },
@@ -142,6 +166,10 @@
           "canonical": {
             "id": "accenture-plc",
             "name": "Accenture plc"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
           }
         }
       ],
@@ -149,12 +177,20 @@
         {
           "name": "Ookla, LLC",
           "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103"
+          "identifier": "Unified Business ID  602 422 103",
+          "party_page": {
+            "id": "ookla-llc",
+            "name": "Ookla, LLC"
+          }
         },
         {
           "name": "Ekahau OY",
           "identifier_type": null,
-          "identifier": "Business ID  16108964"
+          "identifier": "Business ID  16108964",
+          "party_page": {
+            "id": "ekahau-oy",
+            "name": "Ekahau OY"
+          }
         }
       ]
     },
@@ -167,14 +203,22 @@
         {
           "name": "Accenture International B.V.",
           "identifier_type": null,
-          "identifier": "Business registration no: KVK70797285"
+          "identifier": "Business registration no: KVK70797285",
+          "party_page": {
+            "id": "accenture-international-b-v",
+            "name": "Accenture International B.V."
+          }
         }
       ],
       "targets": [
         {
           "name": "Faculty Science Limited",
           "identifier_type": null,
-          "identifier": "Company registration no: CRN08873131"
+          "identifier": "Company registration no: CRN08873131",
+          "party_page": {
+            "id": "faculty-science-limited",
+            "name": "Faculty Science Limited"
+          }
         }
       ]
     }

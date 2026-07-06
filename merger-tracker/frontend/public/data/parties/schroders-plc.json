@@ -1,0 +1,32 @@
+{
+  "id": "schroders-plc",
+  "canonical_name": "Schroders plc",
+  "members": [
+    {
+      "name": "Schroders plc",
+      "identifier": "03909886",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-25022",
+        "merger_name": "Nuveen \u2013 Schroders",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-04-30T12:00:00Z",
+        "determination_date": "2026-05-15T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

@@ -13,14 +13,22 @@
     {
       "name": "GENEA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "82 002 844 448"
+      "identifier": "82 002 844 448",
+      "party_page": {
+        "id": "genea-pty-ltd",
+        "name": "Genea Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "CARE FERTILITY GREENSLOPES PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "11 128 331 797"
+      "identifier": "11 128 331 797",
+      "party_page": {
+        "id": "care-fertility-greenslopes-pty-ltd",
+        "name": "Care Fertility Greenslopes Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -68,19 +76,31 @@
         {
           "name": "Genea Bidco SA Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 694 458"
+          "identifier": "695 694 458",
+          "party_page": {
+            "id": "genea-bidco-sa-pty-ltd",
+            "name": "Genea Bidco SA Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "EMBRACE FERTILITY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "84 135 918 580"
+          "identifier": "84 135 918 580",
+          "party_page": {
+            "id": "embrace-fertility-pty-ltd",
+            "name": "Embrace Fertility Pty Ltd"
+          }
         },
         {
           "name": "Histon Nelson Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "144 914 965"
+          "identifier": "144 914 965",
+          "party_page": {
+            "id": "histon-nelson-pty-ltd",
+            "name": "Histon Nelson Pty Ltd"
+          }
         }
       ]
     },
@@ -93,14 +113,22 @@
         {
           "name": "Delinea Inc.",
           "identifier_type": null,
-          "identifier": "Delaware corporation file number  3777797"
+          "identifier": "Delaware corporation file number  3777797",
+          "party_page": {
+            "id": "delinea-inc",
+            "name": "Delinea Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "StrongDM, Inc",
           "identifier_type": null,
-          "identifier": "CIK  0001637806"
+          "identifier": "CIK  0001637806",
+          "party_page": {
+            "id": "strongdm-inc",
+            "name": "StrongDM, Inc"
+          }
         }
       ]
     },
@@ -113,19 +141,31 @@
         {
           "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "50 142 485 470"
+          "identifier": "50 142 485 470",
+          "party_page": {
+            "id": "austral-resources-australia-limited",
+            "name": "Austral Resources Australia Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "NORANDA PACIFIC PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "65 006 864 802"
+          "identifier": "65 006 864 802",
+          "party_page": {
+            "id": "noranda-pacific-pty-ltd",
+            "name": "Noranda Pacific Pty Ltd"
+          }
         },
         {
           "name": "Noranda Pacific No. 2 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "158 936 264"
+          "identifier": "158 936 264",
+          "party_page": {
+            "id": "noranda-pacific-no-2-pty-ltd",
+            "name": "Noranda Pacific No. 2 Pty Ltd"
+          }
         }
       ]
     }

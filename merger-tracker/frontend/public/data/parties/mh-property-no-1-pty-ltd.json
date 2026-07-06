@@ -1,0 +1,32 @@
+{
+  "id": "mh-property-no-1-pty-ltd",
+  "canonical_name": "MH Property No. 1 Pty Ltd",
+  "members": [
+    {
+      "name": "MH Property No. 1 Pty Ltd",
+      "identifier": "644 453 430",
+      "identifier_type": "ACN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-80008",
+        "merger_name": "Princeton Digital Group Australia - land located in Campbelltown, NSW",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-03-30T12:00:00Z",
+        "determination_date": "2026-04-21T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

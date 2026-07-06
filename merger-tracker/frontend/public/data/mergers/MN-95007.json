@@ -16,14 +16,22 @@
     {
       "name": "Magellan Financial Group Ltd",
       "identifier_type": "ABN",
-      "identifier": "59 108 437 592"
+      "identifier": "59 108 437 592",
+      "party_page": {
+        "id": "magellan-financial-group-ltd",
+        "name": "Magellan Financial Group Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "Barrenjoey Capital Partners Group Holdings Pty Limited",
       "identifier_type": "ABN",
-      "identifier": "44 644 241 510"
+      "identifier": "44 644 241 510",
+      "party_page": {
+        "id": "barrenjoey-capital-partners-group-holdings-pty-limited",
+        "name": "Barrenjoey Capital Partners Group Holdings Pty Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -115,6 +123,10 @@
           "canonical": {
             "id": "cvc-capital-partners",
             "name": "CVC Capital Partners"
+          },
+          "party_page": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
           }
         }
       ],
@@ -122,7 +134,11 @@
         {
           "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
+            "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+          }
         }
       ]
     },
@@ -135,14 +151,22 @@
         {
           "name": "Rosewood AG, LP",
           "identifier_type": null,
-          "identifier": "LP5500"
+          "identifier": "LP5500",
+          "party_page": {
+            "id": "rosewood-ag-lp",
+            "name": "Rosewood AG, LP"
+          }
         }
       ],
       "targets": [
         {
           "name": "Collagen Holdings, LLC",
           "identifier_type": null,
-          "identifier": "DE File Number  7473707"
+          "identifier": "DE File Number  7473707",
+          "party_page": {
+            "id": "collagen-holdings-llc",
+            "name": "Collagen Holdings, LLC"
+          }
         }
       ]
     },
@@ -155,19 +179,31 @@
         {
           "name": "OCEANIA CAPITAL PARTNERS LIMITED",
           "identifier_type": "ABN",
-          "identifier": "52 111 554 360"
+          "identifier": "52 111 554 360",
+          "party_page": {
+            "id": "oceania-capital-partners-limited",
+            "name": "Oceania Capital Partners Limited"
+          }
         },
         {
           "name": "K & K RYAN PTY LTD (ACN 623119960) AS TRUSTEE FOR THE K & K RYAN FAMILY TRUST",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "k-k-ryan-pty-ltd-acn-623119960-as-trustee-for-the-k-k-ryan-family-trust",
+            "name": "K & K Ryan Pty Ltd (Acn 623119960) As Trustee For The K & K Ryan Family Trust"
+          }
         }
       ],
       "targets": [
         {
           "name": "HUDSON HIGHLAND (APAC) PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "14 074 319 396"
+          "identifier": "14 074 319 396",
+          "party_page": {
+            "id": "hudson-highland-apac-pty-limited",
+            "name": "Hudson Highland (Apac) Pty Limited"
+          }
         }
       ]
     }

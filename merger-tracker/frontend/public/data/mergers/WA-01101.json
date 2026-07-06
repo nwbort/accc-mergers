@@ -14,46 +14,78 @@
     {
       "name": "INPEX FSDA N&S PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "22 693 697 764"
+      "identifier": "22 693 697 764",
+      "party_page": {
+        "id": "inpex-fsda-n-s-pty-ltd",
+        "name": "Inpex Fsda N&S Pty Ltd"
+      }
     },
     {
       "name": "INPEX BCD PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "32 696 382 948"
+      "identifier": "32 696 382 948",
+      "party_page": {
+        "id": "inpex-bcd-pty-ltd",
+        "name": "Inpex Bcd Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "Daly Waters FSDA North Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "696 136 295"
+      "identifier": "696 136 295",
+      "party_page": {
+        "id": "daly-waters-fsda-north-pty-ltd",
+        "name": "Daly Waters FSDA North Pty Ltd"
+      }
     },
     {
       "name": "Daly Waters Energy, LP",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "daly-waters-energy-lp",
+        "name": "Daly Waters Energy, LP"
+      }
     },
     {
       "name": "Daly Waters BCD Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "696 136 277"
+      "identifier": "696 136 277",
+      "party_page": {
+        "id": "daly-waters-bcd-pty-ltd",
+        "name": "Daly Waters BCD Pty Ltd"
+      }
     },
     {
       "name": "Daly Waters FSDA South Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "696 136 302"
+      "identifier": "696 136 302",
+      "party_page": {
+        "id": "daly-waters-fsda-south-pty-ltd",
+        "name": "Daly Waters FSDA South Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "INPEX Corporation",
       "identifier_type": null,
-      "identifier": "Stock Code 1605"
+      "identifier": "Stock Code 1605",
+      "party_page": {
+        "id": "inpex-corporation",
+        "name": "INPEX Corporation"
+      }
     },
     {
       "name": "Tamboran Resources Corporation",
       "identifier_type": "ABN",
-      "identifier": "20 961 904 383"
+      "identifier": "20 961 904 383",
+      "party_page": {
+        "id": "tamboran-resources-corporation",
+        "name": "Tamboran Resources Corporation"
+      }
     }
   ],
   "anzsic_codes": [
@@ -126,19 +158,31 @@
         {
           "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "50 142 485 470"
+          "identifier": "50 142 485 470",
+          "party_page": {
+            "id": "austral-resources-australia-limited",
+            "name": "Austral Resources Australia Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "NORANDA PACIFIC PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "65 006 864 802"
+          "identifier": "65 006 864 802",
+          "party_page": {
+            "id": "noranda-pacific-pty-ltd",
+            "name": "Noranda Pacific Pty Ltd"
+          }
         },
         {
           "name": "Noranda Pacific No. 2 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "158 936 264"
+          "identifier": "158 936 264",
+          "party_page": {
+            "id": "noranda-pacific-no-2-pty-ltd",
+            "name": "Noranda Pacific No. 2 Pty Ltd"
+          }
         }
       ]
     },
@@ -155,6 +199,10 @@
           "canonical": {
             "id": "anglo-american-plc",
             "name": "Anglo American plc"
+          },
+          "party_page": {
+            "id": "anglo-american-plc",
+            "name": "Anglo American plc"
           }
         }
       ],
@@ -162,7 +210,11 @@
         {
           "name": "Teck Resources Limited",
           "identifier_type": null,
-          "identifier": "4460561"
+          "identifier": "4460561",
+          "party_page": {
+            "id": "teck-resources-limited",
+            "name": "Teck Resources Limited"
+          }
         }
       ]
     },
@@ -175,19 +227,31 @@
         {
           "name": "Apex Group Holdings (Australia) Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "48 112 252 114"
+          "identifier": "48 112 252 114",
+          "party_page": {
+            "id": "apex-group-holdings-australia-pty-ltd",
+            "name": "Apex Group Holdings (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "83 068 908 912"
+          "identifier": "83 068 908 912",
+          "party_page": {
+            "id": "mercer-outsourcing-australia-pty-ltd",
+            "name": "Mercer Outsourcing (Australia) Pty Ltd"
+          }
         },
         {
           "name": "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "48 616 275 980"
+          "identifier": "48 616 275 980",
+          "party_page": {
+            "id": "mercer-administration-services-australia-pty-limited",
+            "name": "Mercer Administration Services (Australia) Pty Limited"
+          }
         }
       ]
     }

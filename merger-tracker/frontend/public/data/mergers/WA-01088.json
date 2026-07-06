@@ -14,26 +14,42 @@
     {
       "name": "BSN Sports, LLC",
       "identifier_type": null,
-      "identifier": "Company No.: 2980248  Delaware"
+      "identifier": "Company No.: 2980248  Delaware",
+      "party_page": {
+        "id": "bsn-sports-llc",
+        "name": "BSN Sports, LLC"
+      }
     }
   ],
   "targets": [
     {
       "name": "SW Soccer Corp Holdings LLC",
       "identifier_type": null,
-      "identifier": "Company No.: 6920423  Delaware"
+      "identifier": "Company No.: 6920423  Delaware",
+      "party_page": {
+        "id": "sw-soccer-corp-holdings-llc",
+        "name": "SW Soccer Corp Holdings LLC"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "SW Soccer HoldCo LLC",
       "identifier_type": null,
-      "identifier": "Company No.: 6906027  Delaware"
+      "identifier": "Company No.: 6906027  Delaware",
+      "party_page": {
+        "id": "sw-soccer-holdco-llc",
+        "name": "SW Soccer HoldCo LLC"
+      }
     },
     {
       "name": "Varsity Brands, Inc.",
       "identifier_type": null,
-      "identifier": "Company No.: 2426622  Delaware"
+      "identifier": "Company No.: 2426622  Delaware",
+      "party_page": {
+        "id": "varsity-brands-inc",
+        "name": "Varsity Brands, Inc."
+      }
     }
   ],
   "anzsic_codes": [
@@ -110,7 +126,11 @@
         {
           "name": "Signant Health Holding Corp.",
           "identifier_type": null,
-          "identifier": "Delaware File Number  5354678"
+          "identifier": "Delaware File Number  5354678",
+          "party_page": {
+            "id": "signant-health-holding-corp",
+            "name": "Signant Health Holding Corp."
+          }
         }
       ],
       "targets": [
@@ -119,6 +139,10 @@
           "identifier_type": null,
           "identifier": "Delaware File Number  7952013",
           "canonical": {
+            "id": "actigraph-llc",
+            "name": "ActiGraph, LLC"
+          },
+          "party_page": {
             "id": "actigraph-llc",
             "name": "ActiGraph, LLC"
           }
@@ -134,19 +158,31 @@
         {
           "name": "Genea Bidco SA Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 694 458"
+          "identifier": "695 694 458",
+          "party_page": {
+            "id": "genea-bidco-sa-pty-ltd",
+            "name": "Genea Bidco SA Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "EMBRACE FERTILITY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "84 135 918 580"
+          "identifier": "84 135 918 580",
+          "party_page": {
+            "id": "embrace-fertility-pty-ltd",
+            "name": "Embrace Fertility Pty Ltd"
+          }
         },
         {
           "name": "Histon Nelson Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "144 914 965"
+          "identifier": "144 914 965",
+          "party_page": {
+            "id": "histon-nelson-pty-ltd",
+            "name": "Histon Nelson Pty Ltd"
+          }
         }
       ]
     },
@@ -159,19 +195,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     }

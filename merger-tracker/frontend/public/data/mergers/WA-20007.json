@@ -14,14 +14,22 @@
     {
       "name": "TELSTRA LIMITED",
       "identifier_type": "ABN",
-      "identifier": "64 086 174 781"
+      "identifier": "64 086 174 781",
+      "party_page": {
+        "id": "telstra-limited",
+        "name": "Telstra Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "INFOSYS TECHNOLOGIES LIMITED",
       "identifier_type": "ABN",
-      "identifier": "52 090 591 209"
+      "identifier": "52 090 591 209",
+      "party_page": {
+        "id": "infosys-technologies-limited",
+        "name": "Infosys Technologies Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -103,19 +111,31 @@
         {
           "name": "Infosys Nova Holdings LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "infosys-nova-holdings-llc",
+            "name": "Infosys Nova Holdings LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Optimum Achieve Holdings, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "optimum-achieve-holdings-inc",
+            "name": "Optimum Achieve Holdings, Inc"
+          }
         },
         {
           "name": "OPTIMUM HEALTHCARE IT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "53 689 795 702"
+          "identifier": "53 689 795 702",
+          "party_page": {
+            "id": "optimum-healthcare-it-pty-ltd",
+            "name": "Optimum Healthcare It Pty Ltd"
+          }
         }
       ]
     },
@@ -128,19 +148,31 @@
         {
           "name": "Saturn NewCo, Inc",
           "identifier_type": null,
-          "identifier": "DE File number: 10449592"
+          "identifier": "DE File number: 10449592",
+          "party_page": {
+            "id": "saturn-newco-inc",
+            "name": "Saturn NewCo, Inc"
+          }
         },
         {
           "name": "ClassPass Aggregator, LLC",
           "identifier_type": null,
-          "identifier": "DE File number: 6177870"
+          "identifier": "DE File number: 6177870",
+          "party_page": {
+            "id": "classpass-aggregator-llc",
+            "name": "ClassPass Aggregator, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "EGYM SE",
           "identifier_type": null,
-          "identifier": "HRB: 186394"
+          "identifier": "HRB: 186394",
+          "party_page": {
+            "id": "egym-se",
+            "name": "Egym Se"
+          }
         }
       ]
     },
@@ -153,19 +185,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     }

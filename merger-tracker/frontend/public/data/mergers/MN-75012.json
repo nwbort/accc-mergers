@@ -16,29 +16,49 @@
     {
       "name": "OHCA PROPERTY HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "70 675 807 477"
+      "identifier": "70 675 807 477",
+      "party_page": {
+        "id": "ohca-property-holdings-pty-ltd",
+        "name": "Ohca Property Holdings Pty Ltd"
+      }
     },
     {
       "name": "DPG SERVICES PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "38 090 007 999"
+      "identifier": "38 090 007 999",
+      "party_page": {
+        "id": "dpg-services-pty-ltd",
+        "name": "Dpg Services Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "GREENWICH PLACE PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "45 000 706 249"
+      "identifier": "45 000 706 249",
+      "party_page": {
+        "id": "greenwich-place-pty-ltd",
+        "name": "Greenwich Place Pty Ltd"
+      }
     },
     {
       "name": "GREENWICH CARE PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "96 613 786 682"
+      "identifier": "96 613 786 682",
+      "party_page": {
+        "id": "greenwich-care-pty-limited",
+        "name": "Greenwich Care Pty Limited"
+      }
     },
     {
       "name": "STAMEN GREENWICH PROPERTY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "82 613 786 182"
+      "identifier": "82 613 786 182",
+      "party_page": {
+        "id": "stamen-greenwich-property-pty-ltd",
+        "name": "Stamen Greenwich Property Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -122,19 +142,31 @@
         {
           "name": "OHCA Property Holdings Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
+          "identifier": "70 675 807 477",
+          "party_page": {
+            "id": "ohca-property-holdings-pty-ltd",
+            "name": "Ohca Property Holdings Pty Ltd"
+          }
         },
         {
           "name": "DPG Services Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
+          "identifier": "38 090 007 999",
+          "party_page": {
+            "id": "dpg-services-pty-ltd",
+            "name": "Dpg Services Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "the-assets-and-business-comprising-sunnymeade-park-aged-care-community",
+            "name": "The assets and business comprising Sunnymeade Park Aged Care Community"
+          }
         }
       ]
     },
@@ -147,14 +179,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "The Trustee for the Comfy Dental Trust",
           "identifier_type": "ABN",
-          "identifier": "59 865 563 072"
+          "identifier": "59 865 563 072",
+          "party_page": {
+            "id": "the-trustee-for-the-comfy-dental-trust",
+            "name": "The Trustee for the Comfy Dental Trust"
+          }
         }
       ]
     },
@@ -167,14 +207,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "TAN DENTAL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "18 146 067 594"
+          "identifier": "18 146 067 594",
+          "party_page": {
+            "id": "tan-dental-pty-ltd",
+            "name": "Tan Dental Pty Ltd"
+          }
         }
       ]
     }

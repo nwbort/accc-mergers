@@ -1,0 +1,64 @@
+{
+  "id": "ochre-health-pty-limited",
+  "canonical_name": "Ochre Health Pty Limited",
+  "members": [
+    {
+      "name": "OCHRE HEALTH PTY LIMITED",
+      "identifier": "79 101 069 452",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "Ochre Health Pty Limited",
+      "identifier": "79 101 069 452",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "WA-01100",
+        "merger_name": "Ochre Health - Airlie Women's Clinic, VIC",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-05-12T12:00:00Z",
+        "determination_date": "2026-06-04T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-40021",
+        "merger_name": "Ochre Health - New Lambton Family Practice, NSW",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-04-26T12:00:00Z",
+        "determination_date": "2026-05-12T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-15012",
+        "merger_name": "Ochre Health - Telegraph Road Clinic, Bracken Ridge QLD",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-03-26T12:00:00Z",
+        "determination_date": "2026-04-07T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-95012",
+        "merger_name": "Ochre Health - Newstead Medical and Kings Meadows Medical Centre, TAS",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-03-31T12:00:00Z",
+        "determination_date": "2026-04-07T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 4,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 4,
+  "active_count": 0,
+  "phase_duration": null
+}

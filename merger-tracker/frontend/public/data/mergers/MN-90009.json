@@ -13,31 +13,51 @@
     {
       "name": "TRESCAL (AUSTRALIA) PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "39 117 603 835"
+      "identifier": "39 117 603 835",
+      "party_page": {
+        "id": "trescal-australia-pty-ltd",
+        "name": "Trescal (Australia) Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "TR PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "99 005 499 721"
+      "identifier": "99 005 499 721",
+      "party_page": {
+        "id": "tr-pty-ltd",
+        "name": "Tr Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "IPAC SOLUTIONS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "30 108 845 718"
+      "identifier": "30 108 845 718",
+      "party_page": {
+        "id": "ipac-solutions-pty-ltd",
+        "name": "Ipac Solutions Pty Ltd"
+      }
     },
     {
       "name": "The Trustee for ASG Exical Unit Trust",
       "identifier_type": "ABN",
-      "identifier": "57 818 350 085"
+      "identifier": "57 818 350 085",
+      "party_page": {
+        "id": "the-trustee-for-asg-exical-unit-trust",
+        "name": "The Trustee for ASG Exical Unit Trust"
+      }
     },
     {
       "name": "Mobile Test 'n' Cal Australia Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "45 147 991 482"
+      "identifier": "45 147 991 482",
+      "party_page": {
+        "id": "mobile-test-n-cal-australia-pty-ltd",
+        "name": "Mobile Test 'n' Cal Australia Pty Ltd"
+      }
     },
     {
       "name": "EQT Fund Management S.\u00e0 r.l.",
@@ -46,17 +66,29 @@
       "canonical": {
         "id": "eqt-fund-management-s-r-l",
         "name": "EQT Fund Management S.\u00e0 r.l."
+      },
+      "party_page": {
+        "id": "eqt-fund-management-s-r-l",
+        "name": "EQT Fund Management S.\u00e0 r.l."
       }
     },
     {
       "name": "TRESCAL HOLDING PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "35 633 411 391"
+      "identifier": "35 633 411 391",
+      "party_page": {
+        "id": "trescal-holding-pty-ltd",
+        "name": "Trescal Holding Pty Ltd"
+      }
     },
     {
       "name": "N.G. BROWN & ASSOCIATES PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "97 004 819 738"
+      "identifier": "97 004 819 738",
+      "party_page": {
+        "id": "n-g-brown-associates-pty-ltd",
+        "name": "N.G. Brown & Associates Pty. Ltd."
+      }
     }
   ],
   "anzsic_codes": [
@@ -174,19 +206,31 @@
         {
           "name": "Catalyst Blocker Merger Sub I, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "catalyst-blocker-merger-sub-i-llc",
+            "name": "Catalyst Blocker Merger Sub I, LLC"
+          }
         },
         {
           "name": "Catalyst Blocker Merger Sub II, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "catalyst-blocker-merger-sub-ii-llc",
+            "name": "Catalyst Blocker Merger Sub II, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "CSHC Buyerco, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "cshc-buyerco-llc",
+            "name": "CSHC Buyerco, LLC"
+          }
         }
       ]
     },
@@ -199,19 +243,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     },
@@ -224,7 +280,11 @@
         {
           "name": "Signant Health Holding Corp.",
           "identifier_type": null,
-          "identifier": "Delaware File Number  5354678"
+          "identifier": "Delaware File Number  5354678",
+          "party_page": {
+            "id": "signant-health-holding-corp",
+            "name": "Signant Health Holding Corp."
+          }
         }
       ],
       "targets": [
@@ -233,6 +293,10 @@
           "identifier_type": null,
           "identifier": "Delaware File Number  7952013",
           "canonical": {
+            "id": "actigraph-llc",
+            "name": "ActiGraph, LLC"
+          },
+          "party_page": {
             "id": "actigraph-llc",
             "name": "ActiGraph, LLC"
           }

@@ -14,21 +14,33 @@
     {
       "name": "PUBLICIS MEDIA AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "40 001 786 858"
+      "identifier": "40 001 786 858",
+      "party_page": {
+        "id": "publicis-media-australia-pty-ltd",
+        "name": "Publicis Media Australia Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "INTERNATIONAL MANAGEMENT GROUP OF AMERICA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "23 001 788 343"
+      "identifier": "23 001 788 343",
+      "party_page": {
+        "id": "international-management-group-of-america-pty-ltd",
+        "name": "International Management Group Of America Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Publicis Groupe S.A.",
       "identifier_type": null,
-      "identifier": "Paris Trade and Companies Registry no. 542 080 601"
+      "identifier": "Paris Trade and Companies Registry no. 542 080 601",
+      "party_page": {
+        "id": "publicis-groupe-s-a",
+        "name": "Publicis Groupe S.A."
+      }
     }
   ],
   "anzsic_codes": [
@@ -101,6 +113,10 @@
           "canonical": {
             "id": "anglo-american-plc",
             "name": "Anglo American plc"
+          },
+          "party_page": {
+            "id": "anglo-american-plc",
+            "name": "Anglo American plc"
           }
         }
       ],
@@ -108,7 +124,11 @@
         {
           "name": "Teck Resources Limited",
           "identifier_type": null,
-          "identifier": "4460561"
+          "identifier": "4460561",
+          "party_page": {
+            "id": "teck-resources-limited",
+            "name": "Teck Resources Limited"
+          }
         }
       ]
     },
@@ -121,14 +141,22 @@
         {
           "name": "SPIKE MEDIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "28 694 712 699"
+          "identifier": "28 694 712 699",
+          "party_page": {
+            "id": "spike-media-pty-ltd",
+            "name": "Spike Media Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "NINE RADIO PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "32 063 906 927"
+          "identifier": "32 063 906 927",
+          "party_page": {
+            "id": "nine-radio-pty-limited",
+            "name": "Nine Radio Pty Limited"
+          }
         }
       ]
     },
@@ -141,14 +169,22 @@
         {
           "name": "East Gate Games Investment Company",
           "identifier_type": "ABN",
-          "identifier": "39 275 633 205"
+          "identifier": "39 275 633 205",
+          "party_page": {
+            "id": "east-gate-games-investment-company",
+            "name": "East Gate Games Investment Company"
+          }
         }
       ],
       "targets": [
         {
           "name": "Moonton Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "moonton-holdings-limited",
+            "name": "Moonton Holdings Limited"
+          }
         }
       ]
     }

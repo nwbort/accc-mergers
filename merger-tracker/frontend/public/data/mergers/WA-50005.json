@@ -14,26 +14,42 @@
     {
       "name": "ALLIED BEEF GROUP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "52 151 578 102"
+      "identifier": "52 151 578 102",
+      "party_page": {
+        "id": "allied-beef-group-pty-ltd",
+        "name": "Allied Beef Group Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "Yarranbrook Feedlot land",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "yarranbrook-feedlot-land",
+        "name": "Yarranbrook Feedlot land"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "YARRANBROOK PROPERTY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "88 693 879 042"
+      "identifier": "88 693 879 042",
+      "party_page": {
+        "id": "yarranbrook-property-pty-ltd",
+        "name": "Yarranbrook Property Pty Ltd"
+      }
     },
     {
       "name": "Laguna Bay Agricultural Fund 1",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "laguna-bay-agricultural-fund-1",
+        "name": "Laguna Bay Agricultural Fund 1"
+      }
     }
   ],
   "anzsic_codes": [
@@ -106,24 +122,40 @@
         {
           "name": "Cielo TopCo Limited",
           "identifier_type": null,
-          "identifier": "CRN  16320933"
+          "identifier": "CRN  16320933",
+          "party_page": {
+            "id": "cielo-topco-limited",
+            "name": "Cielo TopCo Limited"
+          }
         },
         {
           "name": "Kee Safety (Australia) Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "694 369 116"
+          "identifier": "694 369 116",
+          "party_page": {
+            "id": "kee-safety-australia-pty-ltd",
+            "name": "Kee Safety (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "HALLWELD BENNETT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "15 161 086 595"
+          "identifier": "15 161 086 595",
+          "party_page": {
+            "id": "hallweld-bennett-pty-ltd",
+            "name": "Hallweld Bennett Pty Ltd"
+          }
         },
         {
           "name": "RIS SAFETY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "19 668 836 351"
+          "identifier": "19 668 836 351",
+          "party_page": {
+            "id": "ris-safety-holdings-pty-ltd",
+            "name": "Ris Safety Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -140,6 +172,10 @@
           "canonical": {
             "id": "australian-meat-group-inc",
             "name": "Australian Meat Group Inc"
+          },
+          "party_page": {
+            "id": "australian-meat-group-inc",
+            "name": "Australian Meat Group Inc"
           }
         }
       ],
@@ -147,7 +183,11 @@
         {
           "name": "Killara Feedlot Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "18 081 072 746"
+          "identifier": "18 081 072 746",
+          "party_page": {
+            "id": "killara-feedlot-pty-ltd",
+            "name": "Killara Feedlot Pty Ltd"
+          }
         }
       ]
     },
@@ -160,24 +200,40 @@
         {
           "name": "SYMAL MANAGEMENT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "85 602 084 471"
+          "identifier": "85 602 084 471",
+          "party_page": {
+            "id": "symal-management-pty-ltd",
+            "name": "Symal Management Pty Ltd"
+          }
         },
         {
           "name": "SYL TM CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 693 144 697"
+          "identifier": "68 693 144 697",
+          "party_page": {
+            "id": "syl-tm-contracting-pty-ltd",
+            "name": "Syl Tm Contracting Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TIMMS HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "73 115 389 949"
+          "identifier": "73 115 389 949",
+          "party_page": {
+            "id": "timms-hire-pty-ltd",
+            "name": "Timms Hire Pty Ltd"
+          }
         },
         {
           "name": "TIMMS CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "30 070 456 567"
+          "identifier": "30 070 456 567",
+          "party_page": {
+            "id": "timms-contracting-pty-ltd",
+            "name": "Timms Contracting Pty Ltd"
+          }
         }
       ]
     }

@@ -14,19 +14,31 @@
     {
       "name": "BHP OLYMPIC DAM CORPORATION PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "99 007 835 761"
+      "identifier": "99 007 835 761",
+      "party_page": {
+        "id": "bhp-olympic-dam-corporation-pty-ltd",
+        "name": "Bhp Olympic Dam Corporation Pty Ltd"
+      }
     },
     {
       "name": "BHP GROUP LIMITED",
       "identifier_type": "ABN",
-      "identifier": "49 004 028 077"
+      "identifier": "49 004 028 077",
+      "party_page": {
+        "id": "bhp-group-limited",
+        "name": "Bhp Group Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "State of South Australia",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "state-of-south-australia",
+        "name": "State of South Australia"
+      }
     }
   ],
   "other_parties": [],
@@ -112,14 +124,22 @@
         {
           "name": "H-E PARTS INTERNATIONAL MINING SOLUTIONS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "58 007 761 499"
+          "identifier": "58 007 761 499",
+          "party_page": {
+            "id": "h-e-parts-international-mining-solutions-pty-ltd",
+            "name": "H-E Parts International Mining Solutions Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "A.T.B. MORTON PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "34 002 684 620"
+          "identifier": "34 002 684 620",
+          "party_page": {
+            "id": "a-t-b-morton-pty-limited",
+            "name": "A.T.B. Morton Pty Limited"
+          }
         }
       ]
     },
@@ -132,19 +152,31 @@
         {
           "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "50 142 485 470"
+          "identifier": "50 142 485 470",
+          "party_page": {
+            "id": "austral-resources-australia-limited",
+            "name": "Austral Resources Australia Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "NORANDA PACIFIC PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "65 006 864 802"
+          "identifier": "65 006 864 802",
+          "party_page": {
+            "id": "noranda-pacific-pty-ltd",
+            "name": "Noranda Pacific Pty Ltd"
+          }
         },
         {
           "name": "Noranda Pacific No. 2 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "158 936 264"
+          "identifier": "158 936 264",
+          "party_page": {
+            "id": "noranda-pacific-no-2-pty-ltd",
+            "name": "Noranda Pacific No. 2 Pty Ltd"
+          }
         }
       ]
     },
@@ -157,19 +189,31 @@
         {
           "name": "TRANSPORT ACCIDENT COMMISSION",
           "identifier_type": "ABN",
-          "identifier": "22 033 947 623"
+          "identifier": "22 033 947 623",
+          "party_page": {
+            "id": "transport-accident-commission",
+            "name": "Transport Accident Commission"
+          }
         },
         {
           "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
           "identifier_type": "ABN",
-          "identifier": "39 682 497 841"
+          "identifier": "39 682 497 841",
+          "party_page": {
+            "id": "victorian-managed-insurance-authority",
+            "name": "Victorian Managed Insurance Authority"
+          }
         }
       ],
       "targets": [
         {
           "name": "CORVAL PARTNERS LIMITED",
           "identifier_type": "ABN",
-          "identifier": "86 130 628 830"
+          "identifier": "86 130 628 830",
+          "party_page": {
+            "id": "corval-partners-limited",
+            "name": "Corval Partners Limited"
+          }
         }
       ]
     }

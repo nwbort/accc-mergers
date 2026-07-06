@@ -1,0 +1,38 @@
+{
+  "id": "desmos-bidco-sas",
+  "canonical_name": "Desmos Bidco SAS",
+  "members": [
+    {
+      "name": "Desmos Bidco SAS",
+      "identifier": "SIREN  100 230 754",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "MN-25006",
+        "merger_name": "KPS \u2013 Novacel",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-03-12T12:00:00Z",
+        "determination_date": "2026-04-02T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 21.0,
+    "median_days": 21,
+    "average_business_days": 15.0,
+    "median_business_days": 15,
+    "completed_count": 1
+  }
+}

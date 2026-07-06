@@ -18,6 +18,10 @@
       "canonical": {
         "id": "wsp-australia-pty-limited",
         "name": "Wsp Australia Pty Limited"
+      },
+      "party_page": {
+        "id": "wsp-australia-pty-limited",
+        "name": "Wsp Australia Pty Limited"
       }
     }
   ],
@@ -25,7 +29,11 @@
     {
       "name": "TRC Companies, Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "trc-companies-inc",
+        "name": "TRC Companies, Inc."
+      }
     }
   ],
   "other_parties": [],
@@ -104,19 +112,31 @@
         {
           "name": "CSE CROSSCOM PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 606 614 500"
+          "identifier": "25 606 614 500",
+          "party_page": {
+            "id": "cse-crosscom-pty-ltd",
+            "name": "Cse Crosscom Pty Ltd"
+          }
         },
         {
           "name": "CSE-Global (Australia) Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "85 109 958 090"
+          "identifier": "85 109 958 090",
+          "party_page": {
+            "id": "cse-global-australia-pty-ltd",
+            "name": "Cse-Global (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "PROGILITY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 131 639 837"
+          "identifier": "11 131 639 837",
+          "party_page": {
+            "id": "progility-pty-ltd",
+            "name": "Progility Pty Ltd"
+          }
         }
       ]
     },
@@ -129,14 +149,22 @@
         {
           "name": "Global Garella, S.L.",
           "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  B24904989"
+          "identifier": "Spanish Tax Identification Number  B24904989",
+          "party_page": {
+            "id": "global-garella-s-l",
+            "name": "Global Garella, S.L."
+          }
         }
       ],
       "targets": [
         {
           "name": "Ayesa Engineering, S.A.U.",
           "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  A91379875"
+          "identifier": "Spanish Tax Identification Number  A91379875",
+          "party_page": {
+            "id": "ayesa-engineering-s-a-u",
+            "name": "Ayesa Engineering, S.A.U."
+          }
         }
       ]
     },
@@ -149,14 +177,22 @@
         {
           "name": "Caterpillar Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "caterpillar-inc",
+            "name": "Caterpillar Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "RPMGLOBAL HOLDINGS LIMITED",
           "identifier_type": "ABN",
-          "identifier": "17 010 672 321"
+          "identifier": "17 010 672 321",
+          "party_page": {
+            "id": "rpmglobal-holdings-limited",
+            "name": "Rpmglobal Holdings Limited"
+          }
         }
       ]
     }

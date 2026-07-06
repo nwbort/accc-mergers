@@ -14,41 +14,69 @@
     {
       "name": "BCPE Barton BidCo Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "694 979 041"
+      "identifier": "694 979 041",
+      "party_page": {
+        "id": "bcpe-barton-bidco-pty-ltd",
+        "name": "BCPE Barton BidCo Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "PERPETUAL LIMITED",
       "identifier_type": "ABN",
-      "identifier": "86 000 431 827"
+      "identifier": "86 000 431 827",
+      "party_page": {
+        "id": "perpetual-limited",
+        "name": "Perpetual Limited"
+      }
     },
     {
       "name": "PERPETUAL PWM SERVICES PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "90 678 546 113"
+      "identifier": "90 678 546 113",
+      "party_page": {
+        "id": "perpetual-pwm-services-pty-ltd",
+        "name": "Perpetual Pwm Services Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "FINTUITION INSTITUTE PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "89 139 869 426"
+      "identifier": "89 139 869 426",
+      "party_page": {
+        "id": "fintuition-institute-pty-limited",
+        "name": "Fintuition Institute Pty Limited"
+      }
     },
     {
       "name": "JACARANDA FINANCIAL PLANNING PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "91 604 960 009"
+      "identifier": "91 604 960 009",
+      "party_page": {
+        "id": "jacaranda-financial-planning-pty-ltd",
+        "name": "Jacaranda Financial Planning Pty Ltd"
+      }
     },
     {
       "name": "THE TRUST COMPANY (UTCCL) LIMITED",
       "identifier_type": "ABN",
-      "identifier": "35 008 426 784"
+      "identifier": "35 008 426 784",
+      "party_page": {
+        "id": "the-trust-company-utccl-limited",
+        "name": "The Trust Company (Utccl) Limited"
+      }
     },
     {
       "name": "FORDHAM BUSINESS ADVISORS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "77 140 981 853"
+      "identifier": "77 140 981 853",
+      "party_page": {
+        "id": "fordham-business-advisors-pty-ltd",
+        "name": "Fordham Business Advisors Pty Ltd"
+      }
     },
     {
       "name": "Bain Capital Investors, LLC",
@@ -57,12 +85,20 @@
       "canonical": {
         "id": "bain-capital-investors-llc",
         "name": "Bain Capital Investors LLC"
+      },
+      "party_page": {
+        "id": "bain-capital-investors-llc",
+        "name": "Bain Capital Investors LLC"
       }
     },
     {
       "name": "PERPETUAL TRUSTEES W.A. LTD",
       "identifier_type": "ABN",
-      "identifier": "98 008 666 886"
+      "identifier": "98 008 666 886",
+      "party_page": {
+        "id": "perpetual-trustees-w-a-ltd",
+        "name": "Perpetual Trustees W.A. Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -135,19 +171,31 @@
         {
           "name": "BCPE Lightning Buyer, Inc.",
           "identifier_type": null,
-          "identifier": "US incorporation number  10644291"
+          "identifier": "US incorporation number  10644291",
+          "party_page": {
+            "id": "bcpe-lightning-buyer-inc",
+            "name": "BCPE Lightning Buyer, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "FDH Group Intermediate Holdings, LP",
           "identifier_type": null,
-          "identifier": "US incorporation number  6336375"
+          "identifier": "US incorporation number  6336375",
+          "party_page": {
+            "id": "fdh-group-intermediate-holdings-lp",
+            "name": "FDH Group Intermediate Holdings, LP"
+          }
         },
         {
           "name": "FDH Group Intermediate, Inc.",
           "identifier_type": null,
-          "identifier": "US incorporation number  6310370"
+          "identifier": "US incorporation number  6310370",
+          "party_page": {
+            "id": "fdh-group-intermediate-inc",
+            "name": "FDH Group Intermediate, Inc."
+          }
         }
       ]
     },
@@ -160,14 +208,22 @@
         {
           "name": "BCPE Meta Cayman, L.P.",
           "identifier_type": null,
-          "identifier": "MC135352"
+          "identifier": "MC135352",
+          "party_page": {
+            "id": "bcpe-meta-cayman-l-p",
+            "name": "BCPE Meta Cayman, L.P."
+          }
         }
       ],
       "targets": [
         {
           "name": "MCJ Co., Ltd.",
           "identifier_type": null,
-          "identifier": "9030001052005"
+          "identifier": "9030001052005",
+          "party_page": {
+            "id": "mcj-co-ltd",
+            "name": "MCJ Co., Ltd."
+          }
         }
       ]
     },
@@ -180,14 +236,22 @@
         {
           "name": "Fire Safety Platform Holding, LP",
           "identifier_type": null,
-          "identifier": "State of Delaware, Division of Corporations  10541621"
+          "identifier": "State of Delaware, Division of Corporations  10541621",
+          "party_page": {
+            "id": "fire-safety-platform-holding-lp",
+            "name": "Fire Safety Platform Holding, LP"
+          }
         }
       ],
       "targets": [
         {
           "name": "Madison Safety & Flow Holdings LLC",
           "identifier_type": null,
-          "identifier": "State of Delaware, Division of Corporations  7811257"
+          "identifier": "State of Delaware, Division of Corporations  7811257",
+          "party_page": {
+            "id": "madison-safety-flow-holdings-llc",
+            "name": "Madison Safety & Flow Holdings LLC"
+          }
         }
       ]
     }

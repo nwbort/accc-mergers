@@ -14,31 +14,51 @@
     {
       "name": "NORTH QUEENSLAND REGIONAL ENERGY CO PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "99 695 814 101"
+      "identifier": "99 695 814 101",
+      "party_page": {
+        "id": "north-queensland-regional-energy-co-pty-ltd",
+        "name": "North Queensland Regional Energy Co Pty Ltd"
+      }
     },
     {
       "name": "QBF NO. 2 PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "78 074 123 130"
+      "identifier": "78 074 123 130",
+      "party_page": {
+        "id": "qbf-no-2-pty-ltd",
+        "name": "Qbf No. 2 Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "QUEENSLAND ELECTRICITY TRANSMISSION CORPORATION LIMITED",
       "identifier_type": "ABN",
-      "identifier": "82 078 849 233"
+      "identifier": "82 078 849 233",
+      "party_page": {
+        "id": "queensland-electricity-transmission-corporation-limited",
+        "name": "Queensland Electricity Transmission Corporation Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "North Queensland Regional Energy Trust",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "north-queensland-regional-energy-trust",
+        "name": "North Queensland Regional Energy Trust"
+      }
     },
     {
       "name": "QIC LIMITED",
       "identifier_type": "ABN",
-      "identifier": "95 942 373 762"
+      "identifier": "95 942 373 762",
+      "party_page": {
+        "id": "qic-limited",
+        "name": "Qic Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -115,19 +135,31 @@
         {
           "name": "PREMIER FRESH AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "87 004 843 556"
+          "identifier": "87 004 843 556",
+          "party_page": {
+            "id": "premier-fresh-australia-pty-ltd",
+            "name": "Premier Fresh Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "DOUBLE D PRODUCE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "86 074 625 004"
+          "identifier": "86 074 625 004",
+          "party_page": {
+            "id": "double-d-produce-pty-ltd",
+            "name": "Double D Produce Pty Ltd"
+          }
         },
         {
           "name": "De Domenico Carmelo",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "de-domenico-carmelo",
+            "name": "De Domenico Carmelo"
+          }
         }
       ]
     },
@@ -140,14 +172,22 @@
         {
           "name": "ETG QUEENSLAND PROCESSING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 695 139 032"
+          "identifier": "20 695 139 032",
+          "party_page": {
+            "id": "etg-queensland-processing-pty-ltd",
+            "name": "Etg Queensland Processing Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "QUEENSLAND COTTON CORPORATION PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "26 010 944 591"
+          "identifier": "26 010 944 591",
+          "party_page": {
+            "id": "queensland-cotton-corporation-pty-ltd",
+            "name": "Queensland Cotton Corporation Pty Ltd"
+          }
         }
       ]
     },
@@ -160,19 +200,31 @@
         {
           "name": "RYOWA II GPS PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "16 063 780 058"
+          "identifier": "16 063 780 058",
+          "party_page": {
+            "id": "ryowa-ii-gps-pty-limited",
+            "name": "Ryowa Ii Gps Pty. Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "PH QUEENSLAND GAS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "12 626 604 000"
+          "identifier": "12 626 604 000",
+          "party_page": {
+            "id": "ph-queensland-gas-pty-ltd",
+            "name": "Ph Queensland Gas Pty Ltd"
+          }
         },
         {
           "name": "DYNO NOBEL LIMITED",
           "identifier_type": "ABN",
-          "identifier": "42 004 080 264"
+          "identifier": "42 004 080 264",
+          "party_page": {
+            "id": "dyno-nobel-limited",
+            "name": "Dyno Nobel Limited"
+          }
         }
       ]
     }

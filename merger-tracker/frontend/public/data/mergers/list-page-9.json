@@ -15,29 +15,49 @@
         {
           "name": "Sika AG",
           "identifier_type": null,
-          "identifier": "CHE106.919.184"
+          "identifier": "CHE106.919.184",
+          "party_page": {
+            "id": "sika-ag",
+            "name": "Sika AG"
+          }
         }
       ],
       "targets": [
         {
           "name": "Akde Kimya Sanayi ve Ticaret Anonim \u015eirketi",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "akde-kimya-sanayi-ve-ticaret-anonim-irketi",
+            "name": "Akde Kimya Sanayi ve Ticaret Anonim \u015eirketi"
+          }
         },
         {
           "name": "Akkim Europe SRL",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "akkim-europe-srl",
+            "name": "Akkim Europe SRL"
+          }
         },
         {
           "name": "Akkim Yapi Kimyasallari Sanayi ve Ticaret Anonim \u015eirketi",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "akkim-yapi-kimyasallari-sanayi-ve-ticaret-anonim-irketi",
+            "name": "Akkim Yapi Kimyasallari Sanayi ve Ticaret Anonim \u015eirketi"
+          }
         },
         {
           "name": "Akfix Kimya Lojistik Hizmetleri Limited \u015eirketi",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "akfix-kimya-lojistik-hizmetleri-limited-irketi",
+            "name": "Akfix Kimya Lojistik Hizmetleri Limited \u015eirketi"
+          }
         }
       ],
       "other_parties": [],
@@ -64,31 +84,51 @@
         {
           "name": "INNIO Holding GmbH",
           "identifier_type": null,
-          "identifier": "HRB 305810"
+          "identifier": "HRB 305810",
+          "party_page": {
+            "id": "innio-holding-gmbh",
+            "name": "INNIO Holding GmbH"
+          }
         }
       ],
       "targets": [
         {
           "name": "ENERFLEX SERVICE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "85 063 267 238"
+          "identifier": "85 063 267 238",
+          "party_page": {
+            "id": "enerflex-service-pty-limited",
+            "name": "Enerflex Service Pty Limited"
+          }
         },
         {
           "name": "ENERFLEX SERVICE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "85 063 267 238"
+          "identifier": "85 063 267 238",
+          "party_page": {
+            "id": "enerflex-service-pty-limited",
+            "name": "Enerflex Service Pty Limited"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Enerflex Ltd",
           "identifier_type": null,
-          "identifier": "7748116"
+          "identifier": "7748116",
+          "party_page": {
+            "id": "enerflex-ltd",
+            "name": "Enerflex Ltd"
+          }
         },
         {
           "name": "Enerflex Ltd",
           "identifier_type": null,
-          "identifier": "7748116"
+          "identifier": "7748116",
+          "party_page": {
+            "id": "enerflex-ltd",
+            "name": "Enerflex Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -114,20 +154,32 @@
         {
           "name": "Midea Electric Trading (Singapore) Co. Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "Singapore identifying number (UEN): 200800970G"
+          "identifier": "Singapore identifying number (UEN): 200800970G",
+          "party_page": {
+            "id": "midea-electric-trading-singapore-co-pte-ltd",
+            "name": "Midea Electric Trading (Singapore) Co. Pte. Ltd."
+          }
         }
       ],
       "targets": [
         {
           "name": "RESIDENTIA IP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "92 666 876 964"
+          "identifier": "92 666 876 964",
+          "party_page": {
+            "id": "residentia-ip-pty-ltd",
+            "name": "Residentia Ip Pty Ltd"
+          }
         },
         {
           "name": "RESIDENTIA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "17 618 920 059",
           "canonical": {
+            "id": "residentia-group-pty-ltd",
+            "name": "Residentia Group Pty Ltd"
+          },
+          "party_page": {
             "id": "residentia-group-pty-ltd",
             "name": "Residentia Group Pty Ltd"
           }
@@ -139,6 +191,10 @@
           "canonical": {
             "id": "residentia-group-pty-ltd",
             "name": "Residentia Group Pty Ltd"
+          },
+          "party_page": {
+            "id": "residentia-group-pty-ltd",
+            "name": "Residentia Group Pty Ltd"
           }
         }
       ],
@@ -148,6 +204,10 @@
           "identifier_type": null,
           "identifier": "People\u2019s Republic of China identifying number: 91440606722473344C",
           "canonical": {
+            "id": "midea-group-co-ltd",
+            "name": "Midea Group Co., Ltd."
+          },
+          "party_page": {
             "id": "midea-group-co-ltd",
             "name": "Midea Group Co., Ltd."
           }
@@ -188,6 +248,10 @@
           "canonical": {
             "id": "wsp-australia-pty-limited",
             "name": "Wsp Australia Pty Limited"
+          },
+          "party_page": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
           }
         }
       ],
@@ -195,7 +259,11 @@
         {
           "name": "GEOTECHNICAL TESTING AND INTERPRETATION PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "14 616 849 766"
+          "identifier": "14 616 849 766",
+          "party_page": {
+            "id": "geotechnical-testing-and-interpretation-pty-ltd",
+            "name": "Geotechnical Testing And Interpretation Pty Ltd"
+          }
         }
       ],
       "other_parties": [
@@ -206,12 +274,20 @@
           "canonical": {
             "id": "wsp-australia-pty-limited",
             "name": "Wsp Australia Pty Limited"
+          },
+          "party_page": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
           }
         },
         {
           "name": "RICARDO AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "17 625 088 646"
+          "identifier": "17 625 088 646",
+          "party_page": {
+            "id": "ricardo-australia-pty-ltd",
+            "name": "Ricardo Australia Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -241,17 +317,29 @@
         {
           "name": "OpenAI Group PBC",
           "identifier_type": null,
-          "identifier": "Delaware File Number  10381551"
+          "identifier": "Delaware File Number  10381551",
+          "party_page": {
+            "id": "openai-group-pbc",
+            "name": "OpenAI Group PBC"
+          }
         },
         {
           "name": "Wave Merger Sub II, LLC",
           "identifier_type": null,
-          "identifier": "Delaware File Number  7007085"
+          "identifier": "Delaware File Number  7007085",
+          "party_page": {
+            "id": "wave-merger-sub-ii-llc",
+            "name": "Wave Merger Sub II, LLC"
+          }
         },
         {
           "name": "Wave Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware File Number  10631976"
+          "identifier": "Delaware File Number  10631976",
+          "party_page": {
+            "id": "wave-merger-sub-inc",
+            "name": "Wave Merger Sub, Inc."
+          }
         }
       ],
       "targets": [
@@ -262,6 +350,10 @@
           "canonical": {
             "id": "gitpod-gmbh",
             "name": "Gitpod GmbH"
+          },
+          "party_page": {
+            "id": "gitpod-gmbh",
+            "name": "Gitpod GmbH"
           }
         }
       ],
@@ -269,13 +361,21 @@
         {
           "name": "OpenAI Foundation",
           "identifier_type": null,
-          "identifier": "Delaware File Number  5902936"
+          "identifier": "Delaware File Number  5902936",
+          "party_page": {
+            "id": "openai-foundation",
+            "name": "OpenAI Foundation"
+          }
         },
         {
           "name": "Gitpod GmbH",
           "identifier_type": null,
           "identifier": "HRB  22228",
           "canonical": {
+            "id": "gitpod-gmbh",
+            "name": "Gitpod GmbH"
+          },
+          "party_page": {
             "id": "gitpod-gmbh",
             "name": "Gitpod GmbH"
           }
@@ -308,19 +408,31 @@
         {
           "name": "Grapefruit Acquisition Sub II, LLC",
           "identifier_type": null,
-          "identifier": "10440021"
+          "identifier": "10440021",
+          "party_page": {
+            "id": "grapefruit-acquisition-sub-ii-llc",
+            "name": "Grapefruit Acquisition Sub II, LLC"
+          }
         },
         {
           "name": "Amazon.com, Inc.",
           "identifier_type": null,
-          "identifier": "2620453"
+          "identifier": "2620453",
+          "party_page": {
+            "id": "amazon-com-inc",
+            "name": "Amazon.com, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Globalstar, Inc.",
           "identifier_type": null,
-          "identifier": "3731110"
+          "identifier": "3731110",
+          "party_page": {
+            "id": "globalstar-inc",
+            "name": "Globalstar, Inc."
+          }
         }
       ],
       "other_parties": [],
@@ -347,7 +459,11 @@
         {
           "name": "Wisdom BidCo Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "19 696 888 730"
+          "identifier": "19 696 888 730",
+          "party_page": {
+            "id": "wisdom-bidco-pty-ltd",
+            "name": "Wisdom BidCo Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -356,6 +472,10 @@
           "identifier_type": "ABN",
           "identifier": "47 669 884 244",
           "canonical": {
+            "id": "estia-health-holdings-ltd",
+            "name": "Estia Health Holdings Ltd"
+          },
+          "party_page": {
             "id": "estia-health-holdings-ltd",
             "name": "Estia Health Holdings Ltd"
           }
@@ -369,32 +489,56 @@
           "canonical": {
             "id": "stonepeak-partners-lp",
             "name": "Stonepeak Partners LP"
+          },
+          "party_page": {
+            "id": "stonepeak-partners-lp",
+            "name": "Stonepeak Partners LP"
           }
         },
         {
           "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "perpetual-corporate-trust-limited-as-trustee-for-volarae-living-australia-holdin",
+            "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust"
+          }
         },
         {
           "name": "Aura Australia Holdings Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "41 614 139 589"
+          "identifier": "41 614 139 589",
+          "party_page": {
+            "id": "aura-australia-holdings-pty-ltd",
+            "name": "Aura Australia Holdings Pty Ltd"
+          }
         },
         {
           "name": "Wisdom TopCo Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "696 888 552"
+          "identifier": "696 888 552",
+          "party_page": {
+            "id": "wisdom-topco-pty-ltd",
+            "name": "Wisdom TopCo Pty Ltd"
+          }
         },
         {
           "name": "Wisdom MIT",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "wisdom-mit",
+            "name": "Wisdom MIT"
+          }
         },
         {
           "name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust",
           "identifier_type": "ABN",
-          "identifier": "99 000 341 533"
+          "identifier": "99 000 341 533",
+          "party_page": {
+            "id": "perpetual-corporate-trust-limited-as-trustee-for-sp-plus-australia-holdings-2-tr",
+            "name": "Perpetual Corporate Trust Limited as trustee for SP-Plus (Australia) Holdings 2 Trust"
+          }
         }
       ],
       "anzsic_codes": [
@@ -420,14 +564,22 @@
         {
           "name": "Hapag-Lloyd Aktiengesellschaft",
           "identifier_type": null,
-          "identifier": "German company registration number  HRB97937"
+          "identifier": "German company registration number  HRB97937",
+          "party_page": {
+            "id": "hapag-lloyd-aktiengesellschaft",
+            "name": "Hapag-Lloyd Aktiengesellschaft"
+          }
         }
       ],
       "targets": [
         {
           "name": "ZIM Integrated Shipping Services Ltd",
           "identifier_type": null,
-          "identifier": "Israeli company registration number  520015041"
+          "identifier": "Israeli company registration number  520015041",
+          "party_page": {
+            "id": "zim-integrated-shipping-services-ltd",
+            "name": "ZIM Integrated Shipping Services Ltd"
+          }
         }
       ],
       "other_parties": [],
@@ -454,56 +606,96 @@
         {
           "name": "KINETIC HOLDING COMPANY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "49 601 254 880"
+          "identifier": "49 601 254 880",
+          "party_page": {
+            "id": "kinetic-holding-company-pty-ltd",
+            "name": "Kinetic Holding Company Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "L.C. DYSON'S BUS SERVICES PROPRIETARY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "99 004 436 542"
+          "identifier": "99 004 436 542",
+          "party_page": {
+            "id": "l-c-dyson-s-bus-services-proprietary-limited",
+            "name": "L.C. Dyson'S Bus Services Proprietary Limited"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "SURFSIDE BUSLINES PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "25 010 957 552"
+          "identifier": "25 010 957 552",
+          "party_page": {
+            "id": "surfside-buslines-pty-ltd",
+            "name": "Surfside Buslines Pty. Ltd."
+          }
         },
         {
           "name": "KINETIC (MELBOURNE) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "89 644 690 522"
+          "identifier": "89 644 690 522",
+          "party_page": {
+            "id": "kinetic-melbourne-pty-ltd",
+            "name": "Kinetic (Melbourne) Pty Ltd"
+          }
         },
         {
           "name": "KACM 3A PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "24 674 151 118"
+          "identifier": "24 674 151 118",
+          "party_page": {
+            "id": "kacm-3a-pty-ltd",
+            "name": "Kacm 3A Pty Ltd"
+          }
         },
         {
           "name": "KOCM 3 PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 679 737 510"
+          "identifier": "60 679 737 510",
+          "party_page": {
+            "id": "kocm-3-pty-ltd",
+            "name": "Kocm 3 Pty Ltd"
+          }
         },
         {
           "name": "DYSONS MZF (ASSETCO) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "18 680 323 291"
+          "identifier": "18 680 323 291",
+          "party_page": {
+            "id": "dysons-mzf-assetco-pty-ltd",
+            "name": "Dysons Mzf (Assetco) Pty Ltd"
+          }
         },
         {
           "name": "DYSONS MZF PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "16 680 323 282"
+          "identifier": "16 680 323 282",
+          "party_page": {
+            "id": "dysons-mzf-pty-ltd",
+            "name": "Dysons Mzf Pty Ltd"
+          }
         },
         {
           "name": "KINETIC (MELBOURNE URBAN) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "88 632 522 233"
+          "identifier": "88 632 522 233",
+          "party_page": {
+            "id": "kinetic-melbourne-urban-pty-ltd",
+            "name": "Kinetic (Melbourne Urban) Pty Ltd"
+          }
         },
         {
           "name": "KINETIC ASSETCO (MELBOURNE) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "72 644 633 303"
+          "identifier": "72 644 633 303",
+          "party_page": {
+            "id": "kinetic-assetco-melbourne-pty-ltd",
+            "name": "Kinetic Assetco (Melbourne) Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -533,34 +725,58 @@
         {
           "name": "Schlumberger Canada Limited",
           "identifier_type": null,
-          "identifier": "2025732419"
+          "identifier": "2025732419",
+          "party_page": {
+            "id": "schlumberger-canada-limited",
+            "name": "Schlumberger Canada Limited"
+          }
         },
         {
           "name": "Schlumberger Technology Corporation",
           "identifier_type": null,
-          "identifier": "EIN  221692661"
+          "identifier": "EIN  221692661",
+          "party_page": {
+            "id": "schlumberger-technology-corporation",
+            "name": "Schlumberger Technology Corporation"
+          }
         },
         {
           "name": "SLB N.V. (SLB Limited)",
           "identifier_type": null,
-          "identifier": "EIN  520684746"
+          "identifier": "EIN  520684746",
+          "party_page": {
+            "id": "slb-n-v-slb-limited",
+            "name": "SLB N.V. (SLB Limited)"
+          }
         },
         {
           "name": "Geoquest Systems BV",
           "identifier_type": null,
-          "identifier": "KVK  27176644"
+          "identifier": "KVK  27176644",
+          "party_page": {
+            "id": "geoquest-systems-bv",
+            "name": "Geoquest Systems BV"
+          }
         }
       ],
       "targets": [
         {
           "name": "IHS Markit Canada ULC",
           "identifier_type": null,
-          "identifier": "2021460650"
+          "identifier": "2021460650",
+          "party_page": {
+            "id": "ihs-markit-canada-ulc",
+            "name": "IHS Markit Canada ULC"
+          }
         },
         {
           "name": "IHS Global Inc.",
           "identifier_type": null,
-          "identifier": "EIN  222721160"
+          "identifier": "EIN  222721160",
+          "party_page": {
+            "id": "ihs-global-inc",
+            "name": "IHS Global Inc."
+          }
         }
       ],
       "other_parties": [],
@@ -603,46 +819,78 @@
         {
           "name": "Space Exploration Technologies Corp.",
           "identifier_type": null,
-          "identifier": "NASDAQ  SPCX"
+          "identifier": "NASDAQ  SPCX",
+          "party_page": {
+            "id": "space-exploration-technologies-corp",
+            "name": "Space Exploration Technologies Corp."
+          }
         }
       ],
       "targets": [
         {
           "name": "Anysphere, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware File Number  6524309"
+          "identifier": "Delaware File Number  6524309",
+          "party_page": {
+            "id": "anysphere-inc",
+            "name": "Anysphere, Inc."
+          }
         }
       ],
       "other_parties": [
         {
           "name": "X.AI Corp.",
           "identifier_type": null,
-          "identifier": "Nevada Entity Number  E289151220238"
+          "identifier": "Nevada Entity Number  E289151220238",
+          "party_page": {
+            "id": "x-ai-corp",
+            "name": "X.AI Corp."
+          }
         },
         {
           "name": "STARLINK AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 636 841 533"
+          "identifier": "68 636 841 533",
+          "party_page": {
+            "id": "starlink-australia-pty-ltd",
+            "name": "Starlink Australia Pty Ltd"
+          }
         },
         {
           "name": "X ASIA PACIFIC INTERNET PTE. LTD.",
           "identifier_type": "ABN",
-          "identifier": "97 712 692 946"
+          "identifier": "97 712 692 946",
+          "party_page": {
+            "id": "x-asia-pacific-internet-pte-ltd",
+            "name": "X Asia Pacific Internet Pte. Ltd."
+          }
         },
         {
           "name": "X Internet Unlimited Company",
           "identifier_type": null,
-          "identifier": "Ireland Registered Number  503351"
+          "identifier": "Ireland Registered Number  503351",
+          "party_page": {
+            "id": "x-internet-unlimited-company",
+            "name": "X Internet Unlimited Company"
+          }
         },
         {
           "name": "STARLINK INTERNET SERVICES PTE. LTD.",
           "identifier_type": "ABN",
-          "identifier": "44 658 489 582"
+          "identifier": "44 658 489 582",
+          "party_page": {
+            "id": "starlink-internet-services-pte-ltd",
+            "name": "Starlink Internet Services Pte. Ltd."
+          }
         },
         {
           "name": "X Global LLC",
           "identifier_type": null,
-          "identifier": "Delaware File Number  6028653"
+          "identifier": "Delaware File Number  6028653",
+          "party_page": {
+            "id": "x-global-llc",
+            "name": "X Global LLC"
+          }
         }
       ],
       "anzsic_codes": [
@@ -668,31 +916,51 @@
         {
           "name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust",
           "identifier_type": "ACN",
-          "identifier": "600 506 778"
+          "identifier": "600 506 778",
+          "party_page": {
+            "id": "dawson-land-investments-company-pty-ltd-as-trustee-for-the-dawson-land-trust",
+            "name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust"
+          }
         },
         {
           "name": "SAPPHIRE CATTLE COMPANY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "14 600 389 286"
+          "identifier": "14 600 389 286",
+          "party_page": {
+            "id": "sapphire-cattle-company-pty-ltd",
+            "name": "Sapphire Cattle Company Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust",
           "identifier_type": "ACN",
-          "identifier": "081 765 228"
+          "identifier": "081 765 228",
+          "party_page": {
+            "id": "tolobex-pty-ltd-as-trustee-for-tolobex-unit-trust",
+            "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust"
+          }
         },
         {
           "name": "NOLAN MEATS PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "81 096 869 304"
+          "identifier": "81 096 869 304",
+          "party_page": {
+            "id": "nolan-meats-pty-ltd",
+            "name": "Nolan Meats Pty. Ltd."
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Public Sector Pension Investment Board",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "public-sector-pension-investment-board",
+            "name": "Public Sector Pension Investment Board"
+          }
         }
       ],
       "anzsic_codes": [
@@ -730,6 +998,10 @@
           "canonical": {
             "id": "vets-central-holdings-pty-ltd",
             "name": "Vets Central Holdings Pty Ltd"
+          },
+          "party_page": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
           }
         }
       ],
@@ -737,7 +1009,11 @@
         {
           "name": "CARRUTHERS, JONATHAN JULIAN",
           "identifier_type": "ABN",
-          "identifier": "22 148 400 175"
+          "identifier": "22 148 400 175",
+          "party_page": {
+            "id": "carruthers-jonathan-julian",
+            "name": "Carruthers, Jonathan Julian"
+          }
         }
       ],
       "other_parties": [],
@@ -772,6 +1048,10 @@
           "canonical": {
             "id": "experience-co-limited",
             "name": "Experience Co Limited"
+          },
+          "party_page": {
+            "id": "experience-co-limited",
+            "name": "Experience Co Limited"
           }
         }
       ],
@@ -779,12 +1059,20 @@
         {
           "name": "VYSCOT PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "25 009 241 972"
+          "identifier": "25 009 241 972",
+          "party_page": {
+            "id": "vyscot-pty-limited",
+            "name": "Vyscot Pty. Limited"
+          }
         },
         {
           "name": "KELSIAN GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 109 078 257"
+          "identifier": "49 109 078 257",
+          "party_page": {
+            "id": "kelsian-group-limited",
+            "name": "Kelsian Group Limited"
+          }
         }
       ],
       "other_parties": [],
@@ -815,31 +1103,51 @@
         {
           "name": "SYMAL GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "72 615 255 466"
+          "identifier": "72 615 255 466",
+          "party_page": {
+            "id": "symal-group-limited",
+            "name": "Symal Group Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "SHAMROCK CIVIL ENGINEERING PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "68 066 655 856"
+          "identifier": "68 066 655 856",
+          "party_page": {
+            "id": "shamrock-civil-engineering-pty-ltd",
+            "name": "Shamrock Civil Engineering Pty. Ltd."
+          }
         },
         {
           "name": "SHAMROCK EQUIPMENT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "32 631 585 718"
+          "identifier": "32 631 585 718",
+          "party_page": {
+            "id": "shamrock-equipment-pty-ltd",
+            "name": "Shamrock Equipment Pty Ltd"
+          }
         },
         {
           "name": "PHOENIX INVESTMENTS QUEENSLAND PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "85 615 285 937"
+          "identifier": "85 615 285 937",
+          "party_page": {
+            "id": "phoenix-investments-queensland-pty-ltd",
+            "name": "Phoenix Investments Queensland Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "SHAMROCK BUILDING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 639 694 885"
+          "identifier": "70 639 694 885",
+          "party_page": {
+            "id": "shamrock-building-pty-ltd",
+            "name": "Shamrock Building Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -869,6 +1177,10 @@
           "canonical": {
             "id": "experience-co-limited",
             "name": "Experience Co Limited"
+          },
+          "party_page": {
+            "id": "experience-co-limited",
+            "name": "Experience Co Limited"
           }
         }
       ],
@@ -876,7 +1188,11 @@
         {
           "name": "KELSIAN GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 109 078 257"
+          "identifier": "49 109 078 257",
+          "party_page": {
+            "id": "kelsian-group-limited",
+            "name": "Kelsian Group Limited"
+          }
         }
       ],
       "other_parties": [],
@@ -919,21 +1235,33 @@
         {
           "name": "PH MEDICAL CENTRES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "84 615 268 043"
+          "identifier": "84 615 268 043",
+          "party_page": {
+            "id": "ph-medical-centres-pty-ltd",
+            "name": "Ph Medical Centres Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Ryan Plaza Medical Services Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "067 705 220"
+          "identifier": "067 705 220",
+          "party_page": {
+            "id": "ryan-plaza-medical-services-pty-ltd",
+            "name": "Ryan Plaza Medical Services Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "PARTNERED HEALTH PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "41 164 892 924"
+          "identifier": "41 164 892 924",
+          "party_page": {
+            "id": "partnered-health-pty-ltd",
+            "name": "Partnered Health Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [
@@ -963,6 +1291,10 @@
           "canonical": {
             "id": "awp-australia-pty-ltd",
             "name": "AWP Australia Pty Ltd"
+          },
+          "party_page": {
+            "id": "awp-australia-pty-ltd",
+            "name": "AWP Australia Pty Ltd"
           }
         }
       ],
@@ -970,29 +1302,49 @@
         {
           "name": "nib Travel Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "48 132 902 713"
+          "identifier": "48 132 902 713",
+          "party_page": {
+            "id": "nib-travel-pty-ltd",
+            "name": "nib Travel Pty Ltd"
+          }
         }
       ],
       "other_parties": [
         {
           "name": "Suresave Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "82 137 885 262"
+          "identifier": "82 137 885 262",
+          "party_page": {
+            "id": "suresave-pty-ltd",
+            "name": "Suresave Pty Ltd"
+          }
         },
         {
           "name": "nib Travel Services (Australia) Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "81 115 932 173"
+          "identifier": "81 115 932 173",
+          "party_page": {
+            "id": "nib-travel-services-australia-pty-ltd",
+            "name": "nib Travel Services (Australia) Pty Ltd"
+          }
         },
         {
           "name": "nib Travel Insurance Distribution Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "40 129 262 175"
+          "identifier": "40 129 262 175",
+          "party_page": {
+            "id": "nib-travel-insurance-distribution-pty-ltd",
+            "name": "nib Travel Insurance Distribution Pty Ltd"
+          }
         },
         {
           "name": "nib International Assistance Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "72 164 763 884"
+          "identifier": "72 164 763 884",
+          "party_page": {
+            "id": "nib-international-assistance-pty-ltd",
+            "name": "nib International Assistance Pty Ltd"
+          }
         },
         {
           "name": "AWP Australia Holdings Pty Ltd",
@@ -1001,17 +1353,29 @@
           "canonical": {
             "id": "awp-australia-pty-ltd",
             "name": "AWP Australia Pty Ltd"
+          },
+          "party_page": {
+            "id": "awp-australia-pty-ltd",
+            "name": "AWP Australia Pty Ltd"
           }
         },
         {
           "name": "nib Holdings Ltd",
           "identifier_type": "ABN",
-          "identifier": "51 125 633 856"
+          "identifier": "51 125 633 856",
+          "party_page": {
+            "id": "nib-holdings-ltd",
+            "name": "nib Holdings Ltd"
+          }
         },
         {
           "name": "Travel Insurance Direct Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "30 121 659 470"
+          "identifier": "30 121 659 470",
+          "party_page": {
+            "id": "travel-insurance-direct-pty-ltd",
+            "name": "Travel Insurance Direct Pty Ltd"
+          }
         }
       ],
       "anzsic_codes": [

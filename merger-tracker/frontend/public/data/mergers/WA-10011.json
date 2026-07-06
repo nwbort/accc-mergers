@@ -14,17 +14,29 @@
     {
       "name": "Wentworth Inn Prop TC Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "695 488 263"
+      "identifier": "695 488 263",
+      "party_page": {
+        "id": "wentworth-inn-prop-tc-pty-ltd",
+        "name": "Wentworth Inn Prop TC Pty Ltd"
+      }
     },
     {
       "name": "Wentworth Inn OpCo II Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "695 554 262"
+      "identifier": "695 554 262",
+      "party_page": {
+        "id": "wentworth-inn-opco-ii-pty-ltd",
+        "name": "Wentworth Inn OpCo II Pty Ltd"
+      }
     },
     {
       "name": "Wentworth Inn OpCo I Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "695 554 253"
+      "identifier": "695 554 253",
+      "party_page": {
+        "id": "wentworth-inn-opco-i-pty-ltd",
+        "name": "Wentworth Inn OpCo I Pty Ltd"
+      }
     }
   ],
   "targets": [
@@ -35,44 +47,76 @@
       "canonical": {
         "id": "the-trust-company-australia-limited",
         "name": "The Trust Company (Australia) Limited"
+      },
+      "party_page": {
+        "id": "the-trust-company-australia-limited",
+        "name": "The Trust Company (Australia) Limited"
       }
     },
     {
       "name": "PEARL HOTELS D 1993 PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "25 060 896 568"
+      "identifier": "25 060 896 568",
+      "party_page": {
+        "id": "pearl-hotels-d-1993-pty-limited",
+        "name": "Pearl Hotels D 1993 Pty Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Sun Hung Kai & Co. Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "sun-hung-kai-co-ltd",
+        "name": "Sun Hung Kai & Co. Ltd"
+      }
     },
     {
       "name": "Mulpha International Bhd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "mulpha-international-bhd",
+        "name": "Mulpha International Bhd"
+      }
     },
     {
       "name": "WENTWORTH CAPITAL TOPCO PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "51 663 503 848"
+      "identifier": "51 663 503 848",
+      "party_page": {
+        "id": "wentworth-capital-topco-pty-ltd",
+        "name": "Wentworth Capital Topco Pty Ltd"
+      }
     },
     {
       "name": "Wentworth Inn Mid TC Pty Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "wentworth-inn-mid-tc-pty-ltd",
+        "name": "Wentworth Inn Mid TC Pty Ltd"
+      }
     },
     {
       "name": "Wentworth Inn TC Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "695 478 454"
+      "identifier": "695 478 454",
+      "party_page": {
+        "id": "wentworth-inn-tc-pty-ltd",
+        "name": "Wentworth Inn TC Pty Ltd"
+      }
     },
     {
       "name": "WENTWORTH CAPITAL INVESTMENT MANAGEMENT PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "62 634 954 206"
+      "identifier": "62 634 954 206",
+      "party_page": {
+        "id": "wentworth-capital-investment-management-pty-ltd",
+        "name": "Wentworth Capital Investment Management Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -141,24 +185,40 @@
         {
           "name": "MA MARINA FUND HOLDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 667 241 385"
+          "identifier": "96 667 241 385",
+          "party_page": {
+            "id": "ma-marina-fund-holdco-pty-ltd",
+            "name": "Ma Marina Fund Holdco Pty Ltd"
+          }
         },
         {
           "name": "MA MARINA FUND TT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "65 666 902 245"
+          "identifier": "65 666 902 245",
+          "party_page": {
+            "id": "ma-marina-fund-tt-pty-ltd",
+            "name": "Ma Marina Fund Tt Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "GGC Marketing Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "32 105 294 228"
+          "identifier": "32 105 294 228",
+          "party_page": {
+            "id": "ggc-marketing-pty-ltd",
+            "name": "GGC Marketing Pty Ltd"
+          }
         },
         {
           "name": "QUEENSLAND & PACIFIC PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "72 081 370 685"
+          "identifier": "72 081 370 685",
+          "party_page": {
+            "id": "queensland-pacific-pty-ltd",
+            "name": "Queensland & Pacific Pty. Ltd."
+          }
         }
       ]
     },
@@ -171,14 +231,22 @@
         {
           "name": "RUSSELL INVESTMENT GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "92 003 066 859"
+          "identifier": "92 003 066 859",
+          "party_page": {
+            "id": "russell-investment-group-pty-ltd",
+            "name": "Russell Investment Group Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
           "identifier_type": "ABN",
-          "identifier": "56 063 278 400"
+          "identifier": "56 063 278 400",
+          "party_page": {
+            "id": "zurich-investment-management-limited",
+            "name": "Zurich Investment Management Limited"
+          }
         }
       ]
     },
@@ -191,19 +259,31 @@
         {
           "name": "QIC TT COMPANY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "27 694 380 973"
+          "identifier": "27 694 380 973",
+          "party_page": {
+            "id": "qic-tt-company-pty-ltd",
+            "name": "Qic Tt Company Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "SCENTRE GROUP TRUST 3",
           "identifier_type": "ABN",
-          "identifier": "11 517 229 138"
+          "identifier": "11 517 229 138",
+          "party_page": {
+            "id": "scentre-group-trust-3",
+            "name": "Scentre Group Trust 3"
+          }
         },
         {
           "name": "SCENTRE ALLIANCES PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 098 357 521"
+          "identifier": "53 098 357 521",
+          "party_page": {
+            "id": "scentre-alliances-pty-limited",
+            "name": "Scentre Alliances Pty Limited"
+          }
         }
       ]
     }

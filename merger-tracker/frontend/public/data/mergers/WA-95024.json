@@ -14,31 +14,51 @@
     {
       "name": "Crystal Holdings Korea Co., Ltd.",
       "identifier_type": null,
-      "identifier": "SKID  1201110153602"
+      "identifier": "SKID  1201110153602",
+      "party_page": {
+        "id": "crystal-holdings-korea-co-ltd",
+        "name": "Crystal Holdings Korea Co., Ltd."
+      }
     }
   ],
   "targets": [
     {
       "name": "Chung Ho Nais Co., Ltd.",
       "identifier_type": null,
-      "identifier": "SKID  1101111052482"
+      "identifier": "SKID  1101111052482",
+      "party_page": {
+        "id": "chung-ho-nais-co-ltd",
+        "name": "Chung Ho Nais Co., Ltd."
+      }
     },
     {
       "name": "MCM Co., Ltd.",
       "identifier_type": null,
-      "identifier": "SKID  1543110025062"
+      "identifier": "SKID  1543110025062",
+      "party_page": {
+        "id": "mcm-co-ltd",
+        "name": "MCM Co., Ltd."
+      }
     },
     {
       "name": "Microfilter Co., Ltd.",
       "identifier_type": null,
-      "identifier": "SKID  1543110014099"
+      "identifier": "SKID  1543110014099",
+      "party_page": {
+        "id": "microfilter-co-ltd",
+        "name": "Microfilter Co., Ltd."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "The Carlyle Group Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "the-carlyle-group-inc",
+        "name": "The Carlyle Group Inc."
+      }
     }
   ],
   "anzsic_codes": [
@@ -131,14 +151,22 @@
         {
           "name": "CG Panther Parentco, L.P.",
           "identifier_type": null,
-          "identifier": "135095"
+          "identifier": "135095",
+          "party_page": {
+            "id": "cg-panther-parentco-l-p",
+            "name": "CG Panther Parentco, L.P."
+          }
         }
       ],
       "targets": [
         {
           "name": "Peloton Computer Enterprises Ltd.",
           "identifier_type": null,
-          "identifier": "2023447374  Canada"
+          "identifier": "2023447374  Canada",
+          "party_page": {
+            "id": "peloton-computer-enterprises-ltd",
+            "name": "Peloton Computer Enterprises Ltd."
+          }
         }
       ]
     },
@@ -151,14 +179,22 @@
         {
           "name": "BCPE Meta Cayman, L.P.",
           "identifier_type": null,
-          "identifier": "MC135352"
+          "identifier": "MC135352",
+          "party_page": {
+            "id": "bcpe-meta-cayman-l-p",
+            "name": "BCPE Meta Cayman, L.P."
+          }
         }
       ],
       "targets": [
         {
           "name": "MCJ Co., Ltd.",
           "identifier_type": null,
-          "identifier": "9030001052005"
+          "identifier": "9030001052005",
+          "party_page": {
+            "id": "mcj-co-ltd",
+            "name": "MCJ Co., Ltd."
+          }
         }
       ]
     },
@@ -171,7 +207,11 @@
         {
           "name": "Smile Partners (NSW3) Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 902 955"
+          "identifier": "695 902 955",
+          "party_page": {
+            "id": "smile-partners-nsw3-pty-ltd",
+            "name": "Smile Partners (NSW3) Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -180,6 +220,10 @@
           "identifier_type": "ACN",
           "identifier": "108 757 357",
           "canonical": {
+            "id": "shrika-pty-ltd",
+            "name": "Shrika Pty Ltd"
+          },
+          "party_page": {
             "id": "shrika-pty-ltd",
             "name": "Shrika Pty Ltd"
           }

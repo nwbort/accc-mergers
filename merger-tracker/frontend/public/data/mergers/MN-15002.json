@@ -16,14 +16,22 @@
     {
       "name": "Google LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "google-llc",
+        "name": "Google LLC"
+      }
     }
   ],
   "targets": [
     {
       "name": "Wiz Inc",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "wiz-inc",
+        "name": "Wiz Inc"
+      }
     }
   ],
   "other_parties": [],
@@ -397,6 +405,10 @@
           "canonical": {
             "id": "accenture-plc",
             "name": "Accenture plc"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
           }
         }
       ],
@@ -404,12 +416,20 @@
         {
           "name": "Ookla, LLC",
           "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103"
+          "identifier": "Unified Business ID  602 422 103",
+          "party_page": {
+            "id": "ookla-llc",
+            "name": "Ookla, LLC"
+          }
         },
         {
           "name": "Ekahau OY",
           "identifier_type": null,
-          "identifier": "Business ID  16108964"
+          "identifier": "Business ID  16108964",
+          "party_page": {
+            "id": "ekahau-oy",
+            "name": "Ekahau OY"
+          }
         }
       ]
     },
@@ -426,6 +446,10 @@
           "canonical": {
             "id": "coles",
             "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -433,7 +457,11 @@
         {
           "name": "CITY OF PORT PHILLIP",
           "identifier_type": "ABN",
-          "identifier": "21 762 977 945"
+          "identifier": "21 762 977 945",
+          "party_page": {
+            "id": "city-of-port-phillip",
+            "name": "City Of Port Phillip"
+          }
         }
       ]
     },
@@ -446,13 +474,21 @@
         {
           "name": "Wipro Networks Pte Ltd",
           "identifier_type": null,
-          "identifier": "UEN  199907933M"
+          "identifier": "UEN  199907933M",
+          "party_page": {
+            "id": "wipro-networks-pte-ltd",
+            "name": "Wipro Networks Pte Ltd"
+          }
         },
         {
           "name": "Wipro Limited",
           "identifier_type": null,
           "identifier": "CIN L32102KA1945PLC020800",
           "canonical": {
+            "id": "wipro-ltd",
+            "name": "Wipro Ltd"
+          },
+          "party_page": {
             "id": "wipro-ltd",
             "name": "Wipro Ltd"
           }
@@ -462,12 +498,20 @@
         {
           "name": "Mindsprint Pte Limited",
           "identifier_type": null,
-          "identifier": "UEN  202118596N"
+          "identifier": "UEN  202118596N",
+          "party_page": {
+            "id": "mindsprint-pte-limited",
+            "name": "Mindsprint Pte Limited"
+          }
         },
         {
           "name": "Olam Holdings Pte Limited",
           "identifier_type": null,
-          "identifier": "UEN  202110101R"
+          "identifier": "UEN  202110101R",
+          "party_page": {
+            "id": "olam-holdings-pte-limited",
+            "name": "Olam Holdings Pte Limited"
+          }
         }
       ]
     }

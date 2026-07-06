@@ -16,26 +16,42 @@
     {
       "name": "CHARTER HALL HOLDINGS PTY. LIMITED",
       "identifier_type": "ABN",
-      "identifier": "15 051 363 547"
+      "identifier": "15 051 363 547",
+      "party_page": {
+        "id": "charter-hall-holdings-pty-limited",
+        "name": "Charter Hall Holdings Pty. Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "JGS PRIVATE CAPITAL PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "20 602 602 595"
+      "identifier": "20 602 602 595",
+      "party_page": {
+        "id": "jgs-private-capital-pty-ltd",
+        "name": "Jgs Private Capital Pty Ltd"
+      }
     },
     {
       "name": "J.G. SERVICE PTY. LIMITED",
       "identifier_type": "ABN",
-      "identifier": "75 008 492 126"
+      "identifier": "75 008 492 126",
+      "party_page": {
+        "id": "j-g-service-pty-limited",
+        "name": "J.G. Service Pty. Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "CARESUPER PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "14 008 650 628"
+      "identifier": "14 008 650 628",
+      "party_page": {
+        "id": "caresuper-pty-ltd",
+        "name": "Caresuper Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -126,19 +142,31 @@
         {
           "name": "MAC HoldCo Pty Ltd (an entity which has not been established yet)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "mac-holdco-pty-ltd-an-entity-which-has-not-been-established-yet",
+            "name": "MAC HoldCo Pty Ltd (an entity which has not been established yet)"
+          }
         }
       ],
       "targets": [
         {
           "name": "MOORABBIN AIRPORT CORPORATION PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "94 081 564 310"
+          "identifier": "94 081 564 310",
+          "party_page": {
+            "id": "moorabbin-airport-corporation-pty-limited",
+            "name": "Moorabbin Airport Corporation Pty Limited"
+          }
         },
         {
           "name": "TALLINA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 090 716 895"
+          "identifier": "68 090 716 895",
+          "party_page": {
+            "id": "tallina-pty-ltd",
+            "name": "Tallina Pty Ltd"
+          }
         }
       ]
     },
@@ -151,19 +179,31 @@
         {
           "name": "OHCA Property Holdings Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
+          "identifier": "70 675 807 477",
+          "party_page": {
+            "id": "ohca-property-holdings-pty-ltd",
+            "name": "Ohca Property Holdings Pty Ltd"
+          }
         },
         {
           "name": "DPG Services Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
+          "identifier": "38 090 007 999",
+          "party_page": {
+            "id": "dpg-services-pty-ltd",
+            "name": "Dpg Services Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "the-assets-and-business-comprising-sunnymeade-park-aged-care-community",
+            "name": "The assets and business comprising Sunnymeade Park Aged Care Community"
+          }
         }
       ]
     },
@@ -176,24 +216,40 @@
         {
           "name": "OHCA PROPERTY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
+          "identifier": "70 675 807 477",
+          "party_page": {
+            "id": "ohca-property-holdings-pty-ltd",
+            "name": "Ohca Property Holdings Pty Ltd"
+          }
         },
         {
           "name": "DPG SERVICES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
+          "identifier": "38 090 007 999",
+          "party_page": {
+            "id": "dpg-services-pty-ltd",
+            "name": "Dpg Services Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "GREENWICH PLACE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "45 000 706 249"
+          "identifier": "45 000 706 249",
+          "party_page": {
+            "id": "greenwich-place-pty-ltd",
+            "name": "Greenwich Place Pty Ltd"
+          }
         },
         {
           "name": "GREENWICH CARE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "96 613 786 682"
+          "identifier": "96 613 786 682",
+          "party_page": {
+            "id": "greenwich-care-pty-limited",
+            "name": "Greenwich Care Pty Limited"
+          }
         }
       ]
     }

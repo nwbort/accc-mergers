@@ -14,31 +14,51 @@
     {
       "name": "AIPCF VIII Global Corp Holding L.P.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "aipcf-viii-global-corp-holding-l-p",
+        "name": "AIPCF VIII Global Corp Holding L.P."
+      }
     }
   ],
   "targets": [
     {
       "name": "Ibiza Holdings, Inc.",
       "identifier_type": null,
-      "identifier": "5162635"
+      "identifier": "5162635",
+      "party_page": {
+        "id": "ibiza-holdings-inc",
+        "name": "Ibiza Holdings, Inc."
+      }
     },
     {
       "name": "Honeywell Intelligrated GmbH",
       "identifier_type": null,
-      "identifier": "HRB 204633"
+      "identifier": "HRB 204633",
+      "party_page": {
+        "id": "honeywell-intelligrated-gmbh",
+        "name": "Honeywell Intelligrated GmbH"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "AIP, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "aip-llc",
+        "name": "Aip, Llc"
+      }
     },
     {
       "name": "Honeywell International Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "honeywell-international-inc",
+        "name": "Honeywell International Inc."
+      }
     }
   ],
   "anzsic_codes": [
@@ -115,7 +135,11 @@
         {
           "name": "A-AV Holdco I, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "a-av-holdco-i-inc",
+            "name": "A-AV Holdco I, Inc"
+          }
         }
       ],
       "targets": [
@@ -124,6 +148,10 @@
           "identifier_type": null,
           "identifier": "Delaware Company Number: 5482684",
           "canonical": {
+            "id": "avanos-medical-inc",
+            "name": "Avanos Medical, Inc."
+          },
+          "party_page": {
             "id": "avanos-medical-inc",
             "name": "Avanos Medical, Inc."
           }
@@ -139,19 +167,31 @@
         {
           "name": "Apex Group Holdings (Australia) Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "48 112 252 114"
+          "identifier": "48 112 252 114",
+          "party_page": {
+            "id": "apex-group-holdings-australia-pty-ltd",
+            "name": "Apex Group Holdings (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "83 068 908 912"
+          "identifier": "83 068 908 912",
+          "party_page": {
+            "id": "mercer-outsourcing-australia-pty-ltd",
+            "name": "Mercer Outsourcing (Australia) Pty Ltd"
+          }
         },
         {
           "name": "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "48 616 275 980"
+          "identifier": "48 616 275 980",
+          "party_page": {
+            "id": "mercer-administration-services-australia-pty-limited",
+            "name": "Mercer Administration Services (Australia) Pty Limited"
+          }
         }
       ]
     },
@@ -164,14 +204,22 @@
         {
           "name": "KK Group Invest A/S",
           "identifier_type": null,
-          "identifier": "CVR  66821110"
+          "identifier": "CVR  66821110",
+          "party_page": {
+            "id": "kk-group-invest-a-s",
+            "name": "KK Group Invest A/S"
+          }
         }
       ],
       "targets": [
         {
           "name": "PowerCon Holding ApS",
           "identifier_type": null,
-          "identifier": "CVR  32269095"
+          "identifier": "CVR  32269095",
+          "party_page": {
+            "id": "powercon-holding-aps",
+            "name": "PowerCon Holding ApS"
+          }
         }
       ]
     }

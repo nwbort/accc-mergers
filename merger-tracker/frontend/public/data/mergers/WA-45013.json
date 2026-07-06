@@ -14,14 +14,22 @@
     {
       "name": "AVC OPERATIONS PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "81 607 832 299"
+      "identifier": "81 607 832 299",
+      "party_page": {
+        "id": "avc-operations-pty-limited",
+        "name": "Avc Operations Pty Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "Petersham Pub Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "620 159 757"
+      "identifier": "620 159 757",
+      "party_page": {
+        "id": "petersham-pub-pty-ltd",
+        "name": "Petersham Pub Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -95,19 +103,31 @@
         {
           "name": "AVC Operations Pty Limited",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
           "identifier_type": "ABN",
-          "identifier": "70 075 074 930"
+          "identifier": "70 075 074 930",
+          "party_page": {
+            "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
+            "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
+          }
         },
         {
           "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
           "identifier_type": "ACN",
-          "identifier": "604 221 801"
+          "identifier": "604 221 801",
+          "party_page": {
+            "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
+            "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+          }
         }
       ]
     },
@@ -120,14 +140,22 @@
         {
           "name": "AVC OPERATIONS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "ASH PROMOTIONS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "41 601 281 510"
+          "identifier": "41 601 281 510",
+          "party_page": {
+            "id": "ash-promotions-pty-ltd",
+            "name": "Ash Promotions Pty Ltd"
+          }
         }
       ]
     },
@@ -140,19 +168,31 @@
         {
           "name": "AVC OPERATIONS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         },
         {
           "name": "Australian Venue Co. Holdings Limited",
           "identifier_type": "ABN",
-          "identifier": "90 619 977 070"
+          "identifier": "90 619 977 070",
+          "party_page": {
+            "id": "australian-venue-co-holdings-limited",
+            "name": "Australian Venue Co. Holdings Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Q.R.A. PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "62 051 433 839"
+          "identifier": "62 051 433 839",
+          "party_page": {
+            "id": "q-r-a-pty-limited",
+            "name": "Q.R.A. Pty Limited"
+          }
         }
       ]
     }

@@ -14,21 +14,33 @@
     {
       "name": "RETURN IT PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "61 615 434 869"
+      "identifier": "61 615 434 869",
+      "party_page": {
+        "id": "return-it-pty-ltd",
+        "name": "Return It Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "THE SCOUT ASSOCIATION OF AUSTRALIA, SOUTH AUSTRALIAN BRANCH INCORPORATED",
       "identifier_type": "ABN",
-      "identifier": "35 621 021 366"
+      "identifier": "35 621 021 366",
+      "party_page": {
+        "id": "the-scout-association-of-australia-south-australian-branch-incorporated",
+        "name": "The Scout Association Of Australia, South Australian Branch Incorporated"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "RE.GROUP PTY LIMITED",
       "identifier_type": "ACN",
-      "identifier": "616 439 779"
+      "identifier": "616 439 779",
+      "party_page": {
+        "id": "re-group-pty-limited",
+        "name": "Re.Group Pty Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -97,19 +109,31 @@
         {
           "name": "Searchlight Capital IV LP",
           "identifier_type": null,
-          "identifier": "US SEC  0001954453"
+          "identifier": "US SEC  0001954453",
+          "party_page": {
+            "id": "searchlight-capital-iv-lp",
+            "name": "Searchlight Capital IV LP"
+          }
         },
         {
           "name": "KONA Merger Sub Co.",
           "identifier_type": null,
-          "identifier": "Delaware  10525073"
+          "identifier": "Delaware  10525073",
+          "party_page": {
+            "id": "kona-merger-sub-co",
+            "name": "KONA Merger Sub Co."
+          }
         }
       ],
       "targets": [
         {
           "name": "KORE Group Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware  5388903"
+          "identifier": "Delaware  5388903",
+          "party_page": {
+            "id": "kore-group-holdings-inc",
+            "name": "KORE Group Holdings, Inc."
+          }
         }
       ]
     },
@@ -122,14 +146,22 @@
         {
           "name": "CAVE BidCo Oy",
           "identifier_type": null,
-          "identifier": "Business Identity Code 35317614"
+          "identifier": "Business Identity Code 35317614",
+          "party_page": {
+            "id": "cave-bidco-oy",
+            "name": "CAVE BidCo Oy"
+          }
         }
       ],
       "targets": [
         {
           "name": "Evac Holding Oy",
           "identifier_type": null,
-          "identifier": "Business Identity Code 28586576"
+          "identifier": "Business Identity Code 28586576",
+          "party_page": {
+            "id": "evac-holding-oy",
+            "name": "Evac Holding Oy"
+          }
         }
       ]
     },
@@ -146,6 +178,10 @@
           "canonical": {
             "id": "tetra-tech-inc",
             "name": "Tetra Tech, Inc."
+          },
+          "party_page": {
+            "id": "tetra-tech-inc",
+            "name": "Tetra Tech, Inc."
           }
         }
       ],
@@ -153,7 +189,11 @@
         {
           "name": "Providence Consulting Group Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "49 117 321 552"
+          "identifier": "49 117 321 552",
+          "party_page": {
+            "id": "providence-consulting-group-pty-ltd",
+            "name": "Providence Consulting Group Pty Ltd"
+          }
         }
       ]
     }

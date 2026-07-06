@@ -16,19 +16,31 @@
     {
       "name": "CSE CROSSCOM PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "25 606 614 500"
+      "identifier": "25 606 614 500",
+      "party_page": {
+        "id": "cse-crosscom-pty-ltd",
+        "name": "Cse Crosscom Pty Ltd"
+      }
     },
     {
       "name": "CSE-Global (Australia) Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "85 109 958 090"
+      "identifier": "85 109 958 090",
+      "party_page": {
+        "id": "cse-global-australia-pty-ltd",
+        "name": "Cse-Global (Australia) Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "PROGILITY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "11 131 639 837"
+      "identifier": "11 131 639 837",
+      "party_page": {
+        "id": "progility-pty-ltd",
+        "name": "Progility Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -124,6 +136,10 @@
           "canonical": {
             "id": "wsp-australia-pty-limited",
             "name": "Wsp Australia Pty Limited"
+          },
+          "party_page": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
           }
         }
       ],
@@ -131,7 +147,11 @@
         {
           "name": "TRC Companies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "trc-companies-inc",
+            "name": "TRC Companies, Inc."
+          }
         }
       ]
     },
@@ -144,14 +164,22 @@
         {
           "name": "Caterpillar Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "caterpillar-inc",
+            "name": "Caterpillar Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "RPMGLOBAL HOLDINGS LIMITED",
           "identifier_type": "ABN",
-          "identifier": "17 010 672 321"
+          "identifier": "17 010 672 321",
+          "party_page": {
+            "id": "rpmglobal-holdings-limited",
+            "name": "Rpmglobal Holdings Limited"
+          }
         }
       ]
     },
@@ -164,14 +192,22 @@
         {
           "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 143 484 208"
+          "identifier": "53 143 484 208",
+          "party_page": {
+            "id": "origin-energy-international-holdings-pty-limited",
+            "name": "Origin Energy International Holdings Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CPP Investment Board Private Holdings (4) Inc.",
           "identifier_type": null,
-          "identifier": "BN  11089340"
+          "identifier": "BN  11089340",
+          "party_page": {
+            "id": "cpp-investment-board-private-holdings-4-inc",
+            "name": "CPP Investment Board Private Holdings (4) Inc."
+          }
         }
       ]
     }

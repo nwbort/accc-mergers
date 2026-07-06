@@ -14,7 +14,11 @@
     {
       "name": "Gunvor Group Ltd",
       "identifier_type": null,
-      "identifier": "Cyprus registration number  HE 279934"
+      "identifier": "Cyprus registration number  HE 279934",
+      "party_page": {
+        "id": "gunvor-group-ltd",
+        "name": "Gunvor Group Ltd"
+      }
     }
   ],
   "targets": [
@@ -23,6 +27,10 @@
       "identifier_type": "ABN",
       "identifier": "76 697 773 916",
       "canonical": {
+        "id": "zen-energy-retail-pty-ltd",
+        "name": "Zen Energy Retail Pty Ltd"
+      },
+      "party_page": {
         "id": "zen-energy-retail-pty-ltd",
         "name": "Zen Energy Retail Pty Ltd"
       }
@@ -36,12 +44,20 @@
       "canonical": {
         "id": "zen-energy-retail-pty-ltd",
         "name": "Zen Energy Retail Pty Ltd"
+      },
+      "party_page": {
+        "id": "zen-energy-retail-pty-ltd",
+        "name": "Zen Energy Retail Pty Ltd"
       }
     },
     {
       "name": "ZEN ENERGY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "13 644 924 729"
+      "identifier": "13 644 924 729",
+      "party_page": {
+        "id": "zen-energy-pty-ltd",
+        "name": "Zen Energy Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -114,14 +130,22 @@
         {
           "name": "Quanta Services Australia Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "11 164 311 997"
+          "identifier": "11 164 311 997",
+          "party_page": {
+            "id": "quanta-services-australia-pty-ltd",
+            "name": "Quanta Services Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "PSD Global Holdings Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "634 380 813"
+          "identifier": "634 380 813",
+          "party_page": {
+            "id": "psd-global-holdings-pty-ltd",
+            "name": "PSD Global Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -138,25 +162,41 @@
           "canonical": {
             "id": "bcwf-2-pty-limited",
             "name": "Bcwf 2 Pty Limited"
+          },
+          "party_page": {
+            "id": "bcwf-2-pty-limited",
+            "name": "Bcwf 2 Pty Limited"
           }
         },
         {
           "name": "AULA ENERGY HOLDINGS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "13 662 726 909"
+          "identifier": "13 662 726 909",
+          "party_page": {
+            "id": "aula-energy-holdings-pty-limited",
+            "name": "Aula Energy Holdings Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "C S ENERGY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "54 078 848 745"
+          "identifier": "54 078 848 745",
+          "party_page": {
+            "id": "c-s-energy-limited",
+            "name": "C S Energy Limited"
+          }
         },
         {
           "name": "BCWF 2 PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "77 670 206 256",
           "canonical": {
+            "id": "bcwf-2-pty-limited",
+            "name": "Bcwf 2 Pty Limited"
+          },
+          "party_page": {
             "id": "bcwf-2-pty-limited",
             "name": "Bcwf 2 Pty Limited"
           }
@@ -172,14 +212,22 @@
         {
           "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 143 484 208"
+          "identifier": "53 143 484 208",
+          "party_page": {
+            "id": "origin-energy-international-holdings-pty-limited",
+            "name": "Origin Energy International Holdings Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CPP Investment Board Private Holdings (4) Inc.",
           "identifier_type": null,
-          "identifier": "BN  11089340"
+          "identifier": "BN  11089340",
+          "party_page": {
+            "id": "cpp-investment-board-private-holdings-4-inc",
+            "name": "CPP Investment Board Private Holdings (4) Inc."
+          }
         }
       ]
     }

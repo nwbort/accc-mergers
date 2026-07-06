@@ -14,41 +14,69 @@
     {
       "name": "HERRON TODD WHITE (BIDCO) PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "74 665 809 665"
+      "identifier": "74 665 809 665",
+      "party_page": {
+        "id": "herron-todd-white-bidco-pty-ltd",
+        "name": "Herron Todd White (Bidco) Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "CJA Lee Property Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "113 706 826"
+      "identifier": "113 706 826",
+      "party_page": {
+        "id": "cja-lee-property-pty-ltd",
+        "name": "CJA Lee Property Pty Ltd"
+      }
     },
     {
       "name": "C McMahon Enterprises Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "115 024 854"
+      "identifier": "115 024 854",
+      "party_page": {
+        "id": "c-mcmahon-enterprises-pty-ltd",
+        "name": "C McMahon Enterprises Pty Ltd"
+      }
     },
     {
       "name": "T.J. Shaw Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "115 022 930"
+      "identifier": "115 022 930",
+      "party_page": {
+        "id": "t-j-shaw-pty-ltd",
+        "name": "T.J. Shaw Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "HERRON TODD WHITE (HOLDINGS) PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "99 665 808 962"
+      "identifier": "99 665 808 962",
+      "party_page": {
+        "id": "herron-todd-white-holdings-pty-ltd",
+        "name": "Herron Todd White (Holdings) Pty Ltd"
+      }
     },
     {
       "name": "CJA LEE PROPERTY PARTNERSHIP",
       "identifier_type": "ABN",
-      "identifier": "53 968 532 362"
+      "identifier": "53 968 532 362",
+      "party_page": {
+        "id": "cja-lee-property-partnership",
+        "name": "Cja Lee Property Partnership"
+      }
     },
     {
       "name": "QPE NO. 7 MANAGEMENT PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "34 643 260 182"
+      "identifier": "34 643 260 182",
+      "party_page": {
+        "id": "qpe-no-7-management-pty-limited",
+        "name": "Qpe No. 7 Management Pty Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -117,19 +145,31 @@
         {
           "name": "OHCA Property Holdings Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
+          "identifier": "70 675 807 477",
+          "party_page": {
+            "id": "ohca-property-holdings-pty-ltd",
+            "name": "Ohca Property Holdings Pty Ltd"
+          }
         },
         {
           "name": "DPG Services Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
+          "identifier": "38 090 007 999",
+          "party_page": {
+            "id": "dpg-services-pty-ltd",
+            "name": "Dpg Services Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "the-assets-and-business-comprising-sunnymeade-park-aged-care-community",
+            "name": "The assets and business comprising Sunnymeade Park Aged Care Community"
+          }
         }
       ]
     },
@@ -142,24 +182,40 @@
         {
           "name": "OHCA PROPERTY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
+          "identifier": "70 675 807 477",
+          "party_page": {
+            "id": "ohca-property-holdings-pty-ltd",
+            "name": "Ohca Property Holdings Pty Ltd"
+          }
         },
         {
           "name": "DPG SERVICES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
+          "identifier": "38 090 007 999",
+          "party_page": {
+            "id": "dpg-services-pty-ltd",
+            "name": "Dpg Services Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "GREENWICH PLACE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "45 000 706 249"
+          "identifier": "45 000 706 249",
+          "party_page": {
+            "id": "greenwich-place-pty-ltd",
+            "name": "Greenwich Place Pty Ltd"
+          }
         },
         {
           "name": "GREENWICH CARE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "96 613 786 682"
+          "identifier": "96 613 786 682",
+          "party_page": {
+            "id": "greenwich-care-pty-limited",
+            "name": "Greenwich Care Pty Limited"
+          }
         }
       ]
     },
@@ -172,7 +228,11 @@
         {
           "name": "WIN TELEVISION NETWORK PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "90 008 589 026"
+          "identifier": "90 008 589 026",
+          "party_page": {
+            "id": "win-television-network-pty-ltd",
+            "name": "Win Television Network Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -183,6 +243,10 @@
           "canonical": {
             "id": "nine-network-australia-pty-ltd",
             "name": "Nine Network Australia Pty Ltd"
+          },
+          "party_page": {
+            "id": "nine-network-australia-pty-ltd",
+            "name": "Nine Network Australia Pty Ltd"
           }
         },
         {
@@ -190,6 +254,10 @@
           "identifier_type": "ABN",
           "identifier": "43 124 816 093",
           "canonical": {
+            "id": "nine-network-australia-pty-ltd",
+            "name": "Nine Network Australia Pty Ltd"
+          },
+          "party_page": {
             "id": "nine-network-australia-pty-ltd",
             "name": "Nine Network Australia Pty Ltd"
           }

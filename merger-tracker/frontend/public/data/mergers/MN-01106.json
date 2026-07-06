@@ -13,20 +13,32 @@
     {
       "name": "Midea Electric Trading (Singapore) Co. Pte. Ltd.",
       "identifier_type": null,
-      "identifier": "Singapore identifying number (UEN): 200800970G"
+      "identifier": "Singapore identifying number (UEN): 200800970G",
+      "party_page": {
+        "id": "midea-electric-trading-singapore-co-pte-ltd",
+        "name": "Midea Electric Trading (Singapore) Co. Pte. Ltd."
+      }
     }
   ],
   "targets": [
     {
       "name": "RESIDENTIA IP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "92 666 876 964"
+      "identifier": "92 666 876 964",
+      "party_page": {
+        "id": "residentia-ip-pty-ltd",
+        "name": "Residentia Ip Pty Ltd"
+      }
     },
     {
       "name": "RESIDENTIA HOLDINGS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "17 618 920 059",
       "canonical": {
+        "id": "residentia-group-pty-ltd",
+        "name": "Residentia Group Pty Ltd"
+      },
+      "party_page": {
         "id": "residentia-group-pty-ltd",
         "name": "Residentia Group Pty Ltd"
       }
@@ -38,6 +50,10 @@
       "canonical": {
         "id": "residentia-group-pty-ltd",
         "name": "Residentia Group Pty Ltd"
+      },
+      "party_page": {
+        "id": "residentia-group-pty-ltd",
+        "name": "Residentia Group Pty Ltd"
       }
     }
   ],
@@ -47,6 +63,10 @@
       "identifier_type": null,
       "identifier": "People\u2019s Republic of China identifying number: 91440606722473344C",
       "canonical": {
+        "id": "midea-group-co-ltd",
+        "name": "Midea Group Co., Ltd."
+      },
+      "party_page": {
         "id": "midea-group-co-ltd",
         "name": "Midea Group Co., Ltd."
       }
@@ -104,19 +124,31 @@
         {
           "name": "Midea Imaging Technology (Shanghai) Co., Ltd.",
           "identifier_type": null,
-          "identifier": "USCC  91310118MAEN420F3W"
+          "identifier": "USCC  91310118MAEN420F3W",
+          "party_page": {
+            "id": "midea-imaging-technology-shanghai-co-ltd",
+            "name": "Midea Imaging Technology (Shanghai) Co., Ltd."
+          }
         }
       ],
       "targets": [
         {
           "name": "Esaote S.p.A.",
           "identifier_type": null,
-          "identifier": "Codice Fiscale/Partita IVA  05131180969"
+          "identifier": "Codice Fiscale/Partita IVA  05131180969",
+          "party_page": {
+            "id": "esaote-s-p-a",
+            "name": "Esaote S.p.A."
+          }
         },
         {
           "name": "Shanghai Lu Zi Enterprise Management Consulting Center",
           "identifier_type": null,
-          "identifier": "USCC  91310115MA1K3D4T1W"
+          "identifier": "USCC  91310115MA1K3D4T1W",
+          "party_page": {
+            "id": "shanghai-lu-zi-enterprise-management-consulting-center",
+            "name": "Shanghai Lu Zi Enterprise Management Consulting Center"
+          }
         }
       ]
     },
@@ -129,24 +161,40 @@
         {
           "name": "PARAGON CARE LIMITED",
           "identifier_type": "ABN",
-          "identifier": "76 064 551 426"
+          "identifier": "76 064 551 426",
+          "party_page": {
+            "id": "paragon-care-limited",
+            "name": "Paragon Care Limited"
+          }
         },
         {
           "name": "CLIFFORD HALLAM HEALTHCARE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "38 001 655 554"
+          "identifier": "38 001 655 554",
+          "party_page": {
+            "id": "clifford-hallam-healthcare-pty-limited",
+            "name": "Clifford Hallam Healthcare Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "ROCKPAC SOUTH PACIFIC PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "40 639 100 422"
+          "identifier": "40 639 100 422",
+          "party_page": {
+            "id": "rockpac-south-pacific-pty-ltd",
+            "name": "Rockpac South Pacific Pty Ltd"
+          }
         },
         {
           "name": "PRESIDENTAL PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "77 002 697 896"
+          "identifier": "77 002 697 896",
+          "party_page": {
+            "id": "presidental-pty-limited",
+            "name": "Presidental Pty Limited"
+          }
         }
       ]
     },
@@ -159,19 +207,31 @@
         {
           "name": "MidOcean Australia Holdings 2 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "691 597 707"
+          "identifier": "691 597 707",
+          "party_page": {
+            "id": "midocean-australia-holdings-2-pty-ltd",
+            "name": "MidOcean Australia Holdings 2 Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "JERA EXPLORATION ICHTHYS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 158 193 250"
+          "identifier": "20 158 193 250",
+          "party_page": {
+            "id": "jera-exploration-ichthys-pty-ltd",
+            "name": "Jera Exploration Ichthys Pty Ltd"
+          }
         },
         {
           "name": "JERA GORGON PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "94 140 107 464"
+          "identifier": "94 140 107 464",
+          "party_page": {
+            "id": "jera-gorgon-pty-ltd",
+            "name": "Jera Gorgon Pty Ltd"
+          }
         }
       ]
     }

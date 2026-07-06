@@ -1,0 +1,32 @@
+{
+  "id": "macquarie-leasing-pty-ltd",
+  "canonical_name": "Macquarie Leasing Pty Ltd",
+  "members": [
+    {
+      "name": "MACQUARIE LEASING PTY LTD",
+      "identifier": "38 002 674 982",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-35015",
+        "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-04-24T12:00:00Z",
+        "determination_date": "2026-05-11T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

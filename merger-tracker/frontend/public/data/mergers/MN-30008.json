@@ -15,14 +15,22 @@
     {
       "name": "Frasers Group plc",
       "identifier_type": null,
-      "identifier": "Company number  06035106"
+      "identifier": "Company number  06035106",
+      "party_page": {
+        "id": "frasers-group-plc",
+        "name": "Frasers Group plc"
+      }
     }
   ],
   "targets": [
     {
       "name": "ACCENT GROUP LIMITED",
       "identifier_type": "ABN",
-      "identifier": "85 108 096 251"
+      "identifier": "85 108 096 251",
+      "party_page": {
+        "id": "accent-group-limited",
+        "name": "Accent Group Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -117,6 +125,10 @@
           "canonical": {
             "id": "accenture-plc",
             "name": "Accenture plc"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
           }
         }
       ],
@@ -124,12 +136,20 @@
         {
           "name": "Ookla, LLC",
           "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103"
+          "identifier": "Unified Business ID  602 422 103",
+          "party_page": {
+            "id": "ookla-llc",
+            "name": "Ookla, LLC"
+          }
         },
         {
           "name": "Ekahau OY",
           "identifier_type": null,
-          "identifier": "Business ID  16108964"
+          "identifier": "Business ID  16108964",
+          "party_page": {
+            "id": "ekahau-oy",
+            "name": "Ekahau OY"
+          }
         }
       ]
     },
@@ -142,14 +162,22 @@
         {
           "name": "Quanta Services Australia Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "11 164 311 997"
+          "identifier": "11 164 311 997",
+          "party_page": {
+            "id": "quanta-services-australia-pty-ltd",
+            "name": "Quanta Services Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "PSD Global Holdings Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "634 380 813"
+          "identifier": "634 380 813",
+          "party_page": {
+            "id": "psd-global-holdings-pty-ltd",
+            "name": "PSD Global Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -162,14 +190,22 @@
         {
           "name": "DGH DESIGN AND FABRICATION SERVICES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "44 684 719 300"
+          "identifier": "44 684 719 300",
+          "party_page": {
+            "id": "dgh-design-and-fabrication-services-pty-ltd",
+            "name": "Dgh Design And Fabrication Services Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "AYLWARD DOWLING AND WALL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "63 113 533 298"
+          "identifier": "63 113 533 298",
+          "party_page": {
+            "id": "aylward-dowling-and-wall-pty-ltd",
+            "name": "Aylward Dowling And Wall Pty Ltd"
+          }
         }
       ]
     }

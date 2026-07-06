@@ -14,21 +14,33 @@
     {
       "name": "Duncan Holdco III LLC",
       "identifier_type": null,
-      "identifier": "State of Delaware Company File Number  10510961"
+      "identifier": "State of Delaware Company File Number  10510961",
+      "party_page": {
+        "id": "duncan-holdco-iii-llc",
+        "name": "Duncan Holdco III LLC"
+      }
     }
   ],
   "targets": [
     {
       "name": "DigitalBridge Group, Inc.",
       "identifier_type": null,
-      "identifier": "IRS  464591526"
+      "identifier": "IRS  464591526",
+      "party_page": {
+        "id": "digitalbridge-group-inc",
+        "name": "DigitalBridge Group, Inc."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "SoftBank Group Corp",
       "identifier_type": null,
-      "identifier": "Japanese registration number  010401056795"
+      "identifier": "Japanese registration number  010401056795",
+      "party_page": {
+        "id": "softbank-group-corp",
+        "name": "SoftBank Group Corp"
+      }
     }
   ],
   "anzsic_codes": [
@@ -101,7 +113,11 @@
         {
           "name": "Signant Health Holding Corp.",
           "identifier_type": null,
-          "identifier": "Delaware File Number  5354678"
+          "identifier": "Delaware File Number  5354678",
+          "party_page": {
+            "id": "signant-health-holding-corp",
+            "name": "Signant Health Holding Corp."
+          }
         }
       ],
       "targets": [
@@ -110,6 +126,10 @@
           "identifier_type": null,
           "identifier": "Delaware File Number  7952013",
           "canonical": {
+            "id": "actigraph-llc",
+            "name": "ActiGraph, LLC"
+          },
+          "party_page": {
             "id": "actigraph-llc",
             "name": "ActiGraph, LLC"
           }
@@ -125,19 +145,31 @@
         {
           "name": "Genea Bidco SA Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 694 458"
+          "identifier": "695 694 458",
+          "party_page": {
+            "id": "genea-bidco-sa-pty-ltd",
+            "name": "Genea Bidco SA Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "EMBRACE FERTILITY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "84 135 918 580"
+          "identifier": "84 135 918 580",
+          "party_page": {
+            "id": "embrace-fertility-pty-ltd",
+            "name": "Embrace Fertility Pty Ltd"
+          }
         },
         {
           "name": "Histon Nelson Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "144 914 965"
+          "identifier": "144 914 965",
+          "party_page": {
+            "id": "histon-nelson-pty-ltd",
+            "name": "Histon Nelson Pty Ltd"
+          }
         }
       ]
     },
@@ -150,14 +182,22 @@
         {
           "name": "NDC AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 162 955 866"
+          "identifier": "49 162 955 866",
+          "party_page": {
+            "id": "ndc-australia-pty-limited",
+            "name": "Ndc Australia Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "The Trustee for the Comfy Dental Trust",
           "identifier_type": "ABN",
-          "identifier": "59 865 563 072"
+          "identifier": "59 865 563 072",
+          "party_page": {
+            "id": "the-trustee-for-the-comfy-dental-trust",
+            "name": "The Trustee for the Comfy Dental Trust"
+          }
         }
       ]
     }

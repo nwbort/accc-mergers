@@ -1,0 +1,38 @@
+{
+  "id": "banijay-entertainment-sasu",
+  "canonical_name": "Banijay Entertainment SASU",
+  "members": [
+    {
+      "name": "Banijay Entertainment SASU",
+      "identifier": "503 069 965 RCS PARIS",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "MN-85026",
+        "merger_name": "Banijay Entertainment \u2013 All3Media",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-05-20T12:00:00Z",
+        "determination_date": "2026-06-17T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 28.0,
+    "median_days": 28,
+    "average_business_days": 18.0,
+    "median_business_days": 18,
+    "completed_count": 1
+  }
+}

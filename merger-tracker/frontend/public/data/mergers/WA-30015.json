@@ -14,14 +14,22 @@
     {
       "name": "Alta Genetics Australia Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "54 140 644 784"
+      "identifier": "54 140 644 784",
+      "party_page": {
+        "id": "alta-genetics-australia-pty-ltd",
+        "name": "Alta Genetics Australia Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "AGRIWEBB PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "56 163 515 900"
+      "identifier": "56 163 515 900",
+      "party_page": {
+        "id": "agriwebb-pty-ltd",
+        "name": "Agriwebb Pty Ltd"
+      }
     }
   ],
   "other_parties": [
@@ -30,6 +38,10 @@
       "identifier_type": null,
       "identifier": "",
       "canonical": {
+        "id": "cvc-capital-partners",
+        "name": "CVC Capital Partners"
+      },
+      "party_page": {
         "id": "cvc-capital-partners",
         "name": "CVC Capital Partners"
       }
@@ -109,6 +121,10 @@
           "canonical": {
             "id": "cvc-capital-partners",
             "name": "CVC Capital Partners"
+          },
+          "party_page": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
           }
         }
       ],
@@ -116,7 +132,11 @@
         {
           "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
+            "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+          }
         }
       ]
     },
@@ -129,24 +149,40 @@
         {
           "name": "Essential Bidco B.V.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "essential-bidco-b-v",
+            "name": "Essential Bidco B.V."
+          }
         },
         {
           "name": "Specialty (U.S.) Bidco, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialty-u-s-bidco-inc",
+            "name": "Specialty (U.S.) Bidco, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "SpecialtyCo US LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialtyco-us-llc",
+            "name": "SpecialtyCo US LLC"
+          }
         },
         {
           "name": "Biomin Phytogenics GmbH (Germany)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "biomin-phytogenics-gmbh-germany",
+            "name": "Biomin Phytogenics GmbH (Germany)"
+          }
         }
       ]
     },
@@ -159,19 +195,31 @@
         {
           "name": "Skyshield UK Bidco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "skyshield-uk-bidco-limited",
+            "name": "Skyshield UK Bidco Limited"
+          }
         },
         {
           "name": "Skyshield US Bidco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "skyshield-us-bidco-limited",
+            "name": "Skyshield US Bidco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Smiths Detection Group Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "smiths-detection-group-limited",
+            "name": "Smiths Detection Group Limited"
+          }
         }
       ]
     }

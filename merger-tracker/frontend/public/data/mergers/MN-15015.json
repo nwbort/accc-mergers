@@ -16,14 +16,22 @@
     {
       "name": "Fire Safety Platform Holding, LP",
       "identifier_type": null,
-      "identifier": "State of Delaware, Division of Corporations  10541621"
+      "identifier": "State of Delaware, Division of Corporations  10541621",
+      "party_page": {
+        "id": "fire-safety-platform-holding-lp",
+        "name": "Fire Safety Platform Holding, LP"
+      }
     }
   ],
   "targets": [
     {
       "name": "Madison Safety & Flow Holdings LLC",
       "identifier_type": null,
-      "identifier": "State of Delaware, Division of Corporations  7811257"
+      "identifier": "State of Delaware, Division of Corporations  7811257",
+      "party_page": {
+        "id": "madison-safety-flow-holdings-llc",
+        "name": "Madison Safety & Flow Holdings LLC"
+      }
     }
   ],
   "other_parties": [
@@ -34,17 +42,29 @@
       "canonical": {
         "id": "bain-capital-investors-llc",
         "name": "Bain Capital Investors LLC"
+      },
+      "party_page": {
+        "id": "bain-capital-investors-llc",
+        "name": "Bain Capital Investors LLC"
       }
     },
     {
       "name": "Madison Industrial Solutions Corporation",
       "identifier_type": null,
-      "identifier": "State of Delaware, Division of Corporations  5633530"
+      "identifier": "State of Delaware, Division of Corporations  5633530",
+      "party_page": {
+        "id": "madison-industrial-solutions-corporation",
+        "name": "Madison Industrial Solutions Corporation"
+      }
     },
     {
       "name": "3M Company",
       "identifier_type": null,
-      "identifier": "IRS EIN  41041777"
+      "identifier": "IRS EIN  41041777",
+      "party_page": {
+        "id": "3m-company",
+        "name": "3M Company"
+      }
     }
   ],
   "anzsic_codes": [
@@ -135,13 +155,21 @@
         {
           "name": "Rocket Software AMC UK Ltd",
           "identifier_type": null,
-          "identifier": "UK Company number 01504593"
+          "identifier": "UK Company number 01504593",
+          "party_page": {
+            "id": "rocket-software-amc-uk-ltd",
+            "name": "Rocket Software AMC UK Ltd"
+          }
         },
         {
           "name": "Rocket Software, Inc.",
           "identifier_type": null,
           "identifier": "Companies\u2019 Register of Delaware  3506913",
           "canonical": {
+            "id": "rocket-software-inc",
+            "name": "Rocket Software, Inc."
+          },
+          "party_page": {
             "id": "rocket-software-inc",
             "name": "Rocket Software, Inc."
           }
@@ -151,12 +179,20 @@
         {
           "name": "Micro Focus IP Development Limited",
           "identifier_type": null,
-          "identifier": "UK Company number 07233975"
+          "identifier": "UK Company number 07233975",
+          "party_page": {
+            "id": "micro-focus-ip-development-limited",
+            "name": "Micro Focus IP Development Limited"
+          }
         },
         {
           "name": "Open Text Corporation",
           "identifier_type": null,
-          "identifier": "10836044"
+          "identifier": "10836044",
+          "party_page": {
+            "id": "open-text-corporation",
+            "name": "Open Text Corporation"
+          }
         }
       ]
     },
@@ -169,14 +205,22 @@
         {
           "name": "BCPE Meta Cayman, L.P.",
           "identifier_type": null,
-          "identifier": "MC135352"
+          "identifier": "MC135352",
+          "party_page": {
+            "id": "bcpe-meta-cayman-l-p",
+            "name": "BCPE Meta Cayman, L.P."
+          }
         }
       ],
       "targets": [
         {
           "name": "MCJ Co., Ltd.",
           "identifier_type": null,
-          "identifier": "9030001052005"
+          "identifier": "9030001052005",
+          "party_page": {
+            "id": "mcj-co-ltd",
+            "name": "MCJ Co., Ltd."
+          }
         }
       ]
     },
@@ -193,6 +237,10 @@
           "canonical": {
             "id": "coles",
             "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -200,7 +248,11 @@
         {
           "name": "BOULDER CAPITAL INVESTMENTS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "48 632 507 996"
+          "identifier": "48 632 507 996",
+          "party_page": {
+            "id": "boulder-capital-investments-pty-ltd",
+            "name": "Boulder Capital Investments Pty Ltd"
+          }
         }
       ]
     }

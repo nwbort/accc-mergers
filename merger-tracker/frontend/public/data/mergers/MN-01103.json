@@ -13,29 +13,49 @@
     {
       "name": "Beston Parks Land Co Pty Ltd atf Beston Accommodation Parks Trust",
       "identifier_type": "ACN",
-      "identifier": "111 783 423"
+      "identifier": "111 783 423",
+      "party_page": {
+        "id": "beston-parks-land-co-pty-ltd-atf-beston-accommodation-parks-trust",
+        "name": "Beston Parks Land Co Pty Ltd atf Beston Accommodation Parks Trust"
+      }
     },
     {
       "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "50 111 782 846"
+      "identifier": "50 111 782 846",
+      "party_page": {
+        "id": "discovery-holiday-parks-pty-limited",
+        "name": "Discovery Holiday Parks Pty Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "The Trustee for Katherine Park Trust",
       "identifier_type": "ABN",
-      "identifier": "52 233 936 018"
+      "identifier": "52 233 936 018",
+      "party_page": {
+        "id": "the-trustee-for-katherine-park-trust",
+        "name": "The Trustee for Katherine Park Trust"
+      }
     },
     {
       "name": "The Trustee for THE F DAVIES FAMILY TRUST",
       "identifier_type": "ABN",
-      "identifier": "53 298 082 380"
+      "identifier": "53 298 082 380",
+      "party_page": {
+        "id": "the-trustee-for-the-f-davies-family-trust",
+        "name": "The Trustee for THE F DAVIES FAMILY TRUST"
+      }
     },
     {
       "name": "The Trustee for Katherine Park Holding Trust",
       "identifier_type": "ABN",
-      "identifier": "61 521 863 718"
+      "identifier": "61 521 863 718",
+      "party_page": {
+        "id": "the-trustee-for-katherine-park-holding-trust",
+        "name": "The Trustee for Katherine Park Holding Trust"
+      }
     }
   ],
   "other_parties": [
@@ -46,12 +66,20 @@
       "canonical": {
         "id": "the-trustee-for-australian-retirement-trust",
         "name": "The Trustee For Australian Retirement Trust"
+      },
+      "party_page": {
+        "id": "the-trustee-for-australian-retirement-trust",
+        "name": "The Trustee For Australian Retirement Trust"
       }
     },
     {
       "name": "Discovery Parks Holdings Pty Limited",
       "identifier_type": "ABN",
-      "identifier": "61 127 847 269"
+      "identifier": "61 127 847 269",
+      "party_page": {
+        "id": "discovery-parks-holdings-pty-limited",
+        "name": "Discovery Parks Holdings Pty Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -98,19 +126,31 @@
         {
           "name": "QIC TT COMPANY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "27 694 380 973"
+          "identifier": "27 694 380 973",
+          "party_page": {
+            "id": "qic-tt-company-pty-ltd",
+            "name": "Qic Tt Company Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "SCENTRE GROUP TRUST 3",
           "identifier_type": "ABN",
-          "identifier": "11 517 229 138"
+          "identifier": "11 517 229 138",
+          "party_page": {
+            "id": "scentre-group-trust-3",
+            "name": "Scentre Group Trust 3"
+          }
         },
         {
           "name": "SCENTRE ALLIANCES PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 098 357 521"
+          "identifier": "53 098 357 521",
+          "party_page": {
+            "id": "scentre-alliances-pty-limited",
+            "name": "Scentre Alliances Pty Limited"
+          }
         }
       ]
     },
@@ -123,19 +163,31 @@
         {
           "name": "LGPE SEC S.C. Sp",
           "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B281514"
+          "identifier": "Luxembourg Company Registration Number: B281514",
+          "party_page": {
+            "id": "lgpe-sec-s-c-sp",
+            "name": "LGPE SEC S.C. Sp"
+          }
         },
         {
           "name": "Crown Growth Opportunities IV SCSp-RAIF",
           "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B254394"
+          "identifier": "Luxembourg Company Registration Number: B254394",
+          "party_page": {
+            "id": "crown-growth-opportunities-iv-scsp-raif",
+            "name": "Crown Growth Opportunities IV SCSp-RAIF"
+          }
         }
       ],
       "targets": [
         {
           "name": "ADVANCED NAVIGATION PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "49 156 101 549"
+          "identifier": "49 156 101 549",
+          "party_page": {
+            "id": "advanced-navigation-pty-ltd",
+            "name": "Advanced Navigation Pty. Ltd."
+          }
         }
       ]
     },
@@ -148,14 +200,22 @@
         {
           "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "50 111 782 846"
+          "identifier": "50 111 782 846",
+          "party_page": {
+            "id": "discovery-holiday-parks-pty-limited",
+            "name": "Discovery Holiday Parks Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Eco Camp Pty Ltd as trustee for the MCB Trust",
           "identifier_type": "ACN",
-          "identifier": "615 432 016"
+          "identifier": "615 432 016",
+          "party_page": {
+            "id": "eco-camp-pty-ltd-as-trustee-for-the-mcb-trust",
+            "name": "Eco Camp Pty Ltd as trustee for the MCB Trust"
+          }
         }
       ]
     }

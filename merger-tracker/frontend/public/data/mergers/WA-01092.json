@@ -14,24 +14,40 @@
     {
       "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
       "identifier_type": "ABN",
-      "identifier": "21 151 833 555"
+      "identifier": "21 151 833 555",
+      "party_page": {
+        "id": "herman-corp-pty-ltd-as-trustee-for-the-herman-holdings-family-trust",
+        "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)"
+      }
     },
     {
       "name": "Yandoo Holdings Pty Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "yandoo-holdings-pty-ltd",
+        "name": "Yandoo Holdings Pty Ltd"
+      }
     },
     {
       "name": "Winning Group Holdings Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "695 253 779"
+      "identifier": "695 253 779",
+      "party_page": {
+        "id": "winning-group-holdings-pty-ltd",
+        "name": "Winning Group Holdings Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "WINNING APPLIANCES PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "94 002 193 688"
+      "identifier": "94 002 193 688",
+      "party_page": {
+        "id": "winning-appliances-pty-ltd",
+        "name": "Winning Appliances Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -117,6 +133,10 @@
           "canonical": {
             "id": "vets-central-holdings-pty-ltd",
             "name": "Vets Central Holdings Pty Ltd"
+          },
+          "party_page": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
           }
         }
       ],
@@ -124,7 +144,11 @@
         {
           "name": "The trustee for the Burke Family Trust",
           "identifier_type": "ABN",
-          "identifier": "35 834 715 269"
+          "identifier": "35 834 715 269",
+          "party_page": {
+            "id": "the-trustee-for-the-burke-family-trust",
+            "name": "The trustee for the Burke Family Trust"
+          }
         }
       ]
     },
@@ -137,19 +161,31 @@
         {
           "name": "ALBANY MOTORS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "95 676 040 341"
+          "identifier": "95 676 040 341",
+          "party_page": {
+            "id": "albany-motors-pty-ltd",
+            "name": "Albany Motors Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Esperance Motor Group Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "57 121 986 016"
+          "identifier": "57 121 986 016",
+          "party_page": {
+            "id": "esperance-motor-group-pty-ltd",
+            "name": "Esperance Motor Group Pty Ltd"
+          }
         },
         {
           "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST",
           "identifier_type": "ABN",
-          "identifier": "80 701 405 315"
+          "identifier": "80 701 405 315",
+          "party_page": {
+            "id": "buverie-pty-ltd-as-trustee-for-schwarzback-family-trust",
+            "name": "BUVERIE PTY LTD as trustee for SCHWARZBACK FAMILY TRUST"
+          }
         }
       ]
     },
@@ -162,19 +198,31 @@
         {
           "name": "AVC Operations Pty Limited",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
           "identifier_type": "ABN",
-          "identifier": "70 075 074 930"
+          "identifier": "70 075 074 930",
+          "party_page": {
+            "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
+            "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
+          }
         },
         {
           "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
           "identifier_type": "ACN",
-          "identifier": "604 221 801"
+          "identifier": "604 221 801",
+          "party_page": {
+            "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
+            "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+          }
         }
       ]
     }

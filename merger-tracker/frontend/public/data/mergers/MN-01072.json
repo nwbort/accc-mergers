@@ -13,14 +13,22 @@
     {
       "name": "Saipem S.p.A",
       "identifier_type": null,
-      "identifier": "Register of Milan Monza Brianza Lodi under number 00825790157"
+      "identifier": "Register of Milan Monza Brianza Lodi under number 00825790157",
+      "party_page": {
+        "id": "saipem-s-p-a",
+        "name": "Saipem S.p.A"
+      }
     }
   ],
   "targets": [
     {
       "name": "Subsea7 S.A.",
       "identifier_type": null,
-      "identifier": "R.C.S. Luxembourg B 43172"
+      "identifier": "R.C.S. Luxembourg B 43172",
+      "party_page": {
+        "id": "subsea7-s-a",
+        "name": "Subsea7 S.A."
+      }
     }
   ],
   "other_parties": [],
@@ -111,6 +119,10 @@
           "canonical": {
             "id": "henkel-global-supply-chain-b-v",
             "name": "Henkel Global Supply Chain B.V."
+          },
+          "party_page": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
           }
         }
       ],
@@ -118,12 +130,20 @@
         {
           "name": "Stahl Holdings B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 34249320"
+          "identifier": "Netherlands registration number (KVK): 34249320",
+          "party_page": {
+            "id": "stahl-holdings-b-v",
+            "name": "Stahl Holdings B.V."
+          }
         },
         {
           "name": "Stahl Asia Pacific Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "Singapore registration number: 200606884Z"
+          "identifier": "Singapore registration number: 200606884Z",
+          "party_page": {
+            "id": "stahl-asia-pacific-pte-ltd",
+            "name": "Stahl Asia Pacific Pte. Ltd."
+          }
         }
       ]
     },
@@ -136,14 +156,22 @@
         {
           "name": "Global Garella, S.L.",
           "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  B24904989"
+          "identifier": "Spanish Tax Identification Number  B24904989",
+          "party_page": {
+            "id": "global-garella-s-l",
+            "name": "Global Garella, S.L."
+          }
         }
       ],
       "targets": [
         {
           "name": "Ayesa Engineering, S.A.U.",
           "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  A91379875"
+          "identifier": "Spanish Tax Identification Number  A91379875",
+          "party_page": {
+            "id": "ayesa-engineering-s-a-u",
+            "name": "Ayesa Engineering, S.A.U."
+          }
         }
       ]
     },
@@ -156,19 +184,31 @@
         {
           "name": "Resonetics, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "resonetics-llc",
+            "name": "Resonetics, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Resolution Medical MidCo, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "resolution-medical-midco-llc",
+            "name": "Resolution Medical MidCo, LLC"
+          }
         },
         {
           "name": "Arcline Capital Partners II-A LP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "arcline-capital-partners-ii-a-lp",
+            "name": "Arcline Capital Partners II-A LP"
+          }
         }
       ]
     }

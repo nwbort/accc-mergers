@@ -13,31 +13,51 @@
     {
       "name": "SYMAL GROUP LIMITED",
       "identifier_type": "ABN",
-      "identifier": "72 615 255 466"
+      "identifier": "72 615 255 466",
+      "party_page": {
+        "id": "symal-group-limited",
+        "name": "Symal Group Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "SHAMROCK CIVIL ENGINEERING PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "68 066 655 856"
+      "identifier": "68 066 655 856",
+      "party_page": {
+        "id": "shamrock-civil-engineering-pty-ltd",
+        "name": "Shamrock Civil Engineering Pty. Ltd."
+      }
     },
     {
       "name": "SHAMROCK EQUIPMENT PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "32 631 585 718"
+      "identifier": "32 631 585 718",
+      "party_page": {
+        "id": "shamrock-equipment-pty-ltd",
+        "name": "Shamrock Equipment Pty Ltd"
+      }
     },
     {
       "name": "PHOENIX INVESTMENTS QUEENSLAND PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "85 615 285 937"
+      "identifier": "85 615 285 937",
+      "party_page": {
+        "id": "phoenix-investments-queensland-pty-ltd",
+        "name": "Phoenix Investments Queensland Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "SHAMROCK BUILDING PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "70 639 694 885"
+      "identifier": "70 639 694 885",
+      "party_page": {
+        "id": "shamrock-building-pty-ltd",
+        "name": "Shamrock Building Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -84,19 +104,31 @@
         {
           "name": "SYMAL GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "72 615 255 466"
+          "identifier": "72 615 255 466",
+          "party_page": {
+            "id": "symal-group-limited",
+            "name": "Symal Group Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "J. DAVISON NOMINEES PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "70 007 998 969"
+          "identifier": "70 007 998 969",
+          "party_page": {
+            "id": "j-davison-nominees-pty-ltd",
+            "name": "J. Davison Nominees Pty. Ltd."
+          }
         },
         {
           "name": "DAVISON CONTRACTORS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 675 773 896"
+          "identifier": "68 675 773 896",
+          "party_page": {
+            "id": "davison-contractors-pty-ltd",
+            "name": "Davison Contractors Pty Ltd"
+          }
         }
       ]
     },
@@ -109,14 +141,22 @@
         {
           "name": "Quanta Services Australia Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "11 164 311 997"
+          "identifier": "11 164 311 997",
+          "party_page": {
+            "id": "quanta-services-australia-pty-ltd",
+            "name": "Quanta Services Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "PSD Global Holdings Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "634 380 813"
+          "identifier": "634 380 813",
+          "party_page": {
+            "id": "psd-global-holdings-pty-ltd",
+            "name": "PSD Global Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -129,24 +169,40 @@
         {
           "name": "SYMAL MANAGEMENT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "85 602 084 471"
+          "identifier": "85 602 084 471",
+          "party_page": {
+            "id": "symal-management-pty-ltd",
+            "name": "Symal Management Pty Ltd"
+          }
         },
         {
           "name": "SYL TM CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 693 144 697"
+          "identifier": "68 693 144 697",
+          "party_page": {
+            "id": "syl-tm-contracting-pty-ltd",
+            "name": "Syl Tm Contracting Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TIMMS HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "73 115 389 949"
+          "identifier": "73 115 389 949",
+          "party_page": {
+            "id": "timms-hire-pty-ltd",
+            "name": "Timms Hire Pty Ltd"
+          }
         },
         {
           "name": "TIMMS CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "30 070 456 567"
+          "identifier": "30 070 456 567",
+          "party_page": {
+            "id": "timms-contracting-pty-ltd",
+            "name": "Timms Contracting Pty Ltd"
+          }
         }
       ]
     }

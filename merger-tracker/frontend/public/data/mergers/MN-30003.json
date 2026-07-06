@@ -13,14 +13,22 @@
     {
       "name": "KEGSTAR PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "81 157 818 990"
+      "identifier": "81 157 818 990",
+      "party_page": {
+        "id": "kegstar-pty-limited",
+        "name": "Kegstar Pty Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "KONVOY HOLDINGS PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "66 634 234 549"
+      "identifier": "66 634 234 549",
+      "party_page": {
+        "id": "konvoy-holdings-pty-limited",
+        "name": "Konvoy Holdings Pty Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -160,14 +168,22 @@
         {
           "name": "TELSTRA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "64 086 174 781"
+          "identifier": "64 086 174 781",
+          "party_page": {
+            "id": "telstra-limited",
+            "name": "Telstra Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "INFOSYS TECHNOLOGIES LIMITED",
           "identifier_type": "ABN",
-          "identifier": "52 090 591 209"
+          "identifier": "52 090 591 209",
+          "party_page": {
+            "id": "infosys-technologies-limited",
+            "name": "Infosys Technologies Limited"
+          }
         }
       ]
     },
@@ -180,13 +196,21 @@
         {
           "name": "Rocket Software AMC UK Ltd",
           "identifier_type": null,
-          "identifier": "UK Company number 01504593"
+          "identifier": "UK Company number 01504593",
+          "party_page": {
+            "id": "rocket-software-amc-uk-ltd",
+            "name": "Rocket Software AMC UK Ltd"
+          }
         },
         {
           "name": "Rocket Software, Inc.",
           "identifier_type": null,
           "identifier": "Companies\u2019 Register of Delaware  3506913",
           "canonical": {
+            "id": "rocket-software-inc",
+            "name": "Rocket Software, Inc."
+          },
+          "party_page": {
             "id": "rocket-software-inc",
             "name": "Rocket Software, Inc."
           }
@@ -196,12 +220,20 @@
         {
           "name": "Micro Focus IP Development Limited",
           "identifier_type": null,
-          "identifier": "UK Company number 07233975"
+          "identifier": "UK Company number 07233975",
+          "party_page": {
+            "id": "micro-focus-ip-development-limited",
+            "name": "Micro Focus IP Development Limited"
+          }
         },
         {
           "name": "Open Text Corporation",
           "identifier_type": null,
-          "identifier": "10836044"
+          "identifier": "10836044",
+          "party_page": {
+            "id": "open-text-corporation",
+            "name": "Open Text Corporation"
+          }
         }
       ]
     },
@@ -214,14 +246,22 @@
         {
           "name": "GIP V Snow Bidco Limited",
           "identifier_type": null,
-          "identifier": "UK company number  17059583"
+          "identifier": "UK company number  17059583",
+          "party_page": {
+            "id": "gip-v-snow-bidco-limited",
+            "name": "GIP V Snow Bidco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Envol Holdings Limited",
           "identifier_type": null,
-          "identifier": "Jersey registration number  121115"
+          "identifier": "Jersey registration number  121115",
+          "party_page": {
+            "id": "envol-holdings-limited",
+            "name": "Envol Holdings Limited"
+          }
         }
       ]
     }

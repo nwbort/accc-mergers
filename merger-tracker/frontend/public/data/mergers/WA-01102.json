@@ -14,14 +14,22 @@
     {
       "name": "FUJIFILM Australia Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "80 000 064 433"
+      "identifier": "80 000 064 433",
+      "party_page": {
+        "id": "fujifilm-australia-pty-ltd",
+        "name": "FUJIFILM Australia Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "C.R. Kennedy & Company Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "50 008 458 884"
+      "identifier": "50 008 458 884",
+      "party_page": {
+        "id": "c-r-kennedy-company-pty-ltd",
+        "name": "C.R. Kennedy & Company Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -91,24 +99,40 @@
         {
           "name": "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "36 003 184 889"
+          "identifier": "36 003 184 889",
+          "party_page": {
+            "id": "ramsay-health-care-australia-pty-limited",
+            "name": "Ramsay Health Care Australia Pty Limited"
+          }
         },
         {
           "name": "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "44 078 881 473"
+          "identifier": "44 078 881 473",
+          "party_page": {
+            "id": "ramsay-health-care-investments-pty-limited",
+            "name": "Ramsay Health Care Investments Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "HEALTHSCOPE OPERATIONS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "85 006 405 152"
+          "identifier": "85 006 405 152",
+          "party_page": {
+            "id": "healthscope-operations-pty-ltd",
+            "name": "Healthscope Operations Pty Ltd"
+          }
         },
         {
           "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "80 146 342 814"
+          "identifier": "80 146 342 814",
+          "party_page": {
+            "id": "healthscope-management-pty-ltd",
+            "name": "Healthscope Management Pty Ltd"
+          }
         }
       ]
     },
@@ -121,19 +145,31 @@
         {
           "name": "QIC TT COMPANY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "27 694 380 973"
+          "identifier": "27 694 380 973",
+          "party_page": {
+            "id": "qic-tt-company-pty-ltd",
+            "name": "Qic Tt Company Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "SCENTRE GROUP TRUST 3",
           "identifier_type": "ABN",
-          "identifier": "11 517 229 138"
+          "identifier": "11 517 229 138",
+          "party_page": {
+            "id": "scentre-group-trust-3",
+            "name": "Scentre Group Trust 3"
+          }
         },
         {
           "name": "SCENTRE ALLIANCES PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 098 357 521"
+          "identifier": "53 098 357 521",
+          "party_page": {
+            "id": "scentre-alliances-pty-limited",
+            "name": "Scentre Alliances Pty Limited"
+          }
         }
       ]
     },
@@ -146,19 +182,31 @@
         {
           "name": "Catalyst Blocker Merger Sub I, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "catalyst-blocker-merger-sub-i-llc",
+            "name": "Catalyst Blocker Merger Sub I, LLC"
+          }
         },
         {
           "name": "Catalyst Blocker Merger Sub II, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "catalyst-blocker-merger-sub-ii-llc",
+            "name": "Catalyst Blocker Merger Sub II, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "CSHC Buyerco, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "cshc-buyerco-llc",
+            "name": "CSHC Buyerco, LLC"
+          }
         }
       ]
     }

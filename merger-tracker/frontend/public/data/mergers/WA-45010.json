@@ -14,62 +14,106 @@
     {
       "name": "LGPE SEC S.C. Sp",
       "identifier_type": null,
-      "identifier": "Luxembourg Company Registration Number: B281514"
+      "identifier": "Luxembourg Company Registration Number: B281514",
+      "party_page": {
+        "id": "lgpe-sec-s-c-sp",
+        "name": "LGPE SEC S.C. Sp"
+      }
     },
     {
       "name": "Crown Growth Opportunities IV SCSp-RAIF",
       "identifier_type": null,
-      "identifier": "Luxembourg Company Registration Number: B254394"
+      "identifier": "Luxembourg Company Registration Number: B254394",
+      "party_page": {
+        "id": "crown-growth-opportunities-iv-scsp-raif",
+        "name": "Crown Growth Opportunities IV SCSp-RAIF"
+      }
     },
     {
       "name": "Harvard Private Capital Realty, Inc.",
       "identifier_type": null,
-      "identifier": "EIN: 223138409"
+      "identifier": "EIN: 223138409",
+      "party_page": {
+        "id": "harvard-private-capital-realty-inc",
+        "name": "Harvard Private Capital Realty, Inc."
+      }
     },
     {
       "name": "AIRTREE VENTURES FUND V FRANKLIN PARK TRUSCO PTY LTD atf Airtree Ventures Fund V Franklin Park Co-In",
       "identifier_type": "ABN",
-      "identifier": "93 693 484 141"
+      "identifier": "93 693 484 141",
+      "party_page": {
+        "id": "airtree-ventures-fund-v-franklin-park-trusco-pty-ltd-atf-airtree-ventures-fund-v",
+        "name": "AIRTREE VENTURES FUND V FRANKLIN PARK TRUSCO PTY LTD atf Airtree Ventures Fund V Franklin Park Co-In"
+      }
     },
     {
       "name": "Crown Asia-Pacific Private Equity VI Alt S.C.Sp.",
       "identifier_type": null,
-      "identifier": "Luxembourg Company Registration Number: B289917"
+      "identifier": "Luxembourg Company Registration Number: B289917",
+      "party_page": {
+        "id": "crown-asia-pacific-private-equity-vi-alt-s-c-sp",
+        "name": "Crown Asia-Pacific Private Equity VI Alt S.C.Sp."
+      }
     },
     {
       "name": "Airtree Ventures Co-Investment Nominee Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "686 585 277"
+      "identifier": "686 585 277",
+      "party_page": {
+        "id": "airtree-ventures-co-investment-nominee-pty-ltd",
+        "name": "Airtree Ventures Co-Investment Nominee Pty Ltd"
+      }
     },
     {
       "name": "Crown Asia-Pacific Private Equity V Master SCSp",
       "identifier_type": null,
-      "identifier": "Luxembourg Company Registration Number: B246151"
+      "identifier": "Luxembourg Company Registration Number: B246151",
+      "party_page": {
+        "id": "crown-asia-pacific-private-equity-v-master-scsp",
+        "name": "Crown Asia-Pacific Private Equity V Master SCSp"
+      }
     },
     {
       "name": "AirTree Ventures Opportunity Fund 2019 Trusco Pty Ltd atf the Australia Retirement Trust Co-Investme",
       "identifier_type": "ACN",
-      "identifier": "633 454 467"
+      "identifier": "633 454 467",
+      "party_page": {
+        "id": "airtree-ventures-opportunity-fund-2019-trusco-pty-ltd-atf-the-australia-retireme",
+        "name": "AirTree Ventures Opportunity Fund 2019 Trusco Pty Ltd atf the Australia Retirement Trust Co-Investme"
+      }
     }
   ],
   "targets": [
     {
       "name": "ADVANCED NAVIGATION PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "49 156 101 549"
+      "identifier": "49 156 101 549",
+      "party_page": {
+        "id": "advanced-navigation-pty-ltd",
+        "name": "Advanced Navigation Pty. Ltd."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Franklin Park Venture Capital Opportunity Fund II, L.P.",
       "identifier_type": null,
-      "identifier": "EIN 333134437"
+      "identifier": "EIN 333134437",
+      "party_page": {
+        "id": "franklin-park-venture-capital-opportunity-fund-ii-l-p",
+        "name": "Franklin Park Venture Capital Opportunity Fund II, L.P."
+      }
     },
     {
       "name": "Australian Retirement Trust Pty Ltd as trustee for Australian Retirement Trust",
       "identifier_type": "ABN",
       "identifier": "60 905 115 063",
       "canonical": {
+        "id": "the-trustee-for-australian-retirement-trust",
+        "name": "The Trustee For Australian Retirement Trust"
+      },
+      "party_page": {
         "id": "the-trustee-for-australian-retirement-trust",
         "name": "The Trustee For Australian Retirement Trust"
       }
@@ -149,19 +193,31 @@
         {
           "name": "QIC TT COMPANY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "27 694 380 973"
+          "identifier": "27 694 380 973",
+          "party_page": {
+            "id": "qic-tt-company-pty-ltd",
+            "name": "Qic Tt Company Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "SCENTRE GROUP TRUST 3",
           "identifier_type": "ABN",
-          "identifier": "11 517 229 138"
+          "identifier": "11 517 229 138",
+          "party_page": {
+            "id": "scentre-group-trust-3",
+            "name": "Scentre Group Trust 3"
+          }
         },
         {
           "name": "SCENTRE ALLIANCES PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 098 357 521"
+          "identifier": "53 098 357 521",
+          "party_page": {
+            "id": "scentre-alliances-pty-limited",
+            "name": "Scentre Alliances Pty Limited"
+          }
         }
       ]
     },
@@ -174,14 +230,22 @@
         {
           "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "50 111 782 846"
+          "identifier": "50 111 782 846",
+          "party_page": {
+            "id": "discovery-holiday-parks-pty-limited",
+            "name": "Discovery Holiday Parks Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Eco Camp Pty Ltd as trustee for the MCB Trust",
           "identifier_type": "ACN",
-          "identifier": "615 432 016"
+          "identifier": "615 432 016",
+          "party_page": {
+            "id": "eco-camp-pty-ltd-as-trustee-for-the-mcb-trust",
+            "name": "Eco Camp Pty Ltd as trustee for the MCB Trust"
+          }
         }
       ]
     },
@@ -194,14 +258,22 @@
         {
           "name": "Advance Holdings II, LLC",
           "identifier_type": null,
-          "identifier": "Delaware ID  10496142"
+          "identifier": "Delaware ID  10496142",
+          "party_page": {
+            "id": "advance-holdings-ii-llc",
+            "name": "Advance Holdings II, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "BCI Acquisitions, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware ID  6389940"
+          "identifier": "Delaware ID  6389940",
+          "party_page": {
+            "id": "bci-acquisitions-inc",
+            "name": "BCI Acquisitions, Inc."
+          }
         }
       ]
     }

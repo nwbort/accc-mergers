@@ -20,7 +20,7 @@ import { useFetchData } from '../hooks/useFetchData';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN } from '../utils/classNames';
-import { slugify, mergerPath, industryPath } from '../utils/slug';
+import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
 
 // Display text for each related-merger relationship. Keys match the
 // `relationship` values produced by the data pipeline (see
@@ -77,21 +77,42 @@ function MergerDetail() {
         <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">{title}</h2>
         {visibleParties.map((party, idx) => (
           <div key={`${partyType}-${party.name}-${party.identifier || idx}`} className="mb-3 last:mb-0">
-            <Link
-              to={`/mergers?q=${encodeURIComponent(party.canonical?.name || party.name)}`}
-              className={party.canonical?.name
-                ? 'font-medium text-primary hover:text-primary-dark transition-colors'
-                : 'font-medium text-gray-900 hover:text-primary transition-colors'}
-              title={party.canonical?.name
-                ? `See all mergers involving ${party.canonical.name}`
-                : `Search mergers for ${party.name}`}
-            >
-              {party.name}
-            </Link>
+            {party.party_page?.id ? (
+              <Link
+                to={partyPath(party.party_page.id, party.party_page.name)}
+                className={party.canonical?.name
+                  ? 'font-medium text-primary hover:text-primary-dark transition-colors'
+                  : 'font-medium text-gray-900 hover:text-primary transition-colors'}
+                title={`View the party page for ${party.party_page.name || party.name}`}
+              >
+                {party.name}
+              </Link>
+            ) : (
+              <Link
+                to={`/mergers?q=${encodeURIComponent(party.canonical?.name || party.name)}`}
+                className={party.canonical?.name
+                  ? 'font-medium text-primary hover:text-primary-dark transition-colors'
+                  : 'font-medium text-gray-900 hover:text-primary transition-colors'}
+                title={party.canonical?.name
+                  ? `See all mergers involving ${party.canonical.name}`
+                  : `Search mergers for ${party.name}`}
+              >
+                {party.name}
+              </Link>
+            )}
             {party.identifier && (
               <p className="text-sm text-gray-500">
                 {party.identifier_type ? `${party.identifier_type}: ` : ''}{party.identifier}
               </p>
+            )}
+            {party.party_page?.id && (
+              <Link
+                to={`/mergers?q=${encodeURIComponent(party.canonical?.name || party.name)}`}
+                className="text-xs text-gray-500 hover:text-primary transition-colors"
+                title={`Search mergers for ${party.canonical?.name || party.name}`}
+              >
+                See all mergers involving this party &rarr;
+              </Link>
             )}
           </div>
         ))}

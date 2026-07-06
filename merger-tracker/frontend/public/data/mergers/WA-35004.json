@@ -14,21 +14,33 @@
     {
       "name": "Saphir Holdings SAS",
       "identifier_type": null,
-      "identifier": "Trade and Companies Registry Number 995 192 986"
+      "identifier": "Trade and Companies Registry Number 995 192 986",
+      "party_page": {
+        "id": "saphir-holdings-sas",
+        "name": "Saphir Holdings SAS"
+      }
     }
   ],
   "targets": [
     {
       "name": "Ex Nihilo Group",
       "identifier_type": null,
-      "identifier": "Trade and Companies Registry Number 981 087 646"
+      "identifier": "Trade and Companies Registry Number 981 087 646",
+      "party_page": {
+        "id": "ex-nihilo-group",
+        "name": "Ex Nihilo Group"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "L Catterton Management Limited",
       "identifier_type": null,
-      "identifier": "N/A"
+      "identifier": "N/A",
+      "party_page": {
+        "id": "l-catterton-management-limited",
+        "name": "L Catterton Management Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -101,24 +113,40 @@
         {
           "name": "MA MARINA FUND HOLDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 667 241 385"
+          "identifier": "96 667 241 385",
+          "party_page": {
+            "id": "ma-marina-fund-holdco-pty-ltd",
+            "name": "Ma Marina Fund Holdco Pty Ltd"
+          }
         },
         {
           "name": "MA MARINA FUND TT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "65 666 902 245"
+          "identifier": "65 666 902 245",
+          "party_page": {
+            "id": "ma-marina-fund-tt-pty-ltd",
+            "name": "Ma Marina Fund Tt Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "GGC Marketing Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "32 105 294 228"
+          "identifier": "32 105 294 228",
+          "party_page": {
+            "id": "ggc-marketing-pty-ltd",
+            "name": "GGC Marketing Pty Ltd"
+          }
         },
         {
           "name": "QUEENSLAND & PACIFIC PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "72 081 370 685"
+          "identifier": "72 081 370 685",
+          "party_page": {
+            "id": "queensland-pacific-pty-ltd",
+            "name": "Queensland & Pacific Pty. Ltd."
+          }
         }
       ]
     },
@@ -131,19 +159,31 @@
         {
           "name": "EGIS PROJECTS ASIA PACIFIC PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "82 071 536 957"
+          "identifier": "82 071 536 957",
+          "party_page": {
+            "id": "egis-projects-asia-pacific-pty-limited",
+            "name": "Egis Projects Asia Pacific Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "FULTON HOGAN INDUSTRIES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "54 000 538 689"
+          "identifier": "54 000 538 689",
+          "party_page": {
+            "id": "fulton-hogan-industries-pty-ltd",
+            "name": "Fulton Hogan Industries Pty Ltd"
+          }
         },
         {
           "name": "FULTON HOGAN EGIS O&M PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "37 609 764 730"
+          "identifier": "37 609 764 730",
+          "party_page": {
+            "id": "fulton-hogan-egis-o-m-pty-ltd",
+            "name": "Fulton Hogan Egis O&M Pty Ltd"
+          }
         }
       ]
     },
@@ -156,19 +196,31 @@
         {
           "name": "LITTLE COMPANY OF MARY HEALTH CARE LIMITED",
           "identifier_type": "ABN",
-          "identifier": "11 079 815 697"
+          "identifier": "11 079 815 697",
+          "party_page": {
+            "id": "little-company-of-mary-health-care-limited",
+            "name": "Little Company Of Mary Health Care Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "80 146 342 814"
+          "identifier": "80 146 342 814",
+          "party_page": {
+            "id": "healthscope-management-pty-ltd",
+            "name": "Healthscope Management Pty Ltd"
+          }
         },
         {
           "name": "ANZ HOSPITALS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "14 631 014 938"
+          "identifier": "14 631 014 938",
+          "party_page": {
+            "id": "anz-hospitals-pty-ltd",
+            "name": "Anz Hospitals Pty Ltd"
+          }
         }
       ]
     }

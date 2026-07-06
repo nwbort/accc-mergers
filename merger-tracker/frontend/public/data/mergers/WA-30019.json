@@ -14,31 +14,51 @@
     {
       "name": "Flamingo UK LP",
       "identifier_type": null,
-      "identifier": "UK Company Registration Number  LP024570"
+      "identifier": "UK Company Registration Number  LP024570",
+      "party_page": {
+        "id": "flamingo-uk-lp",
+        "name": "Flamingo UK LP"
+      }
     },
     {
       "name": "Flamingo UK GP Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "flamingo-uk-gp-ltd",
+        "name": "Flamingo UK GP Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "Fresha.com Holding Inc.",
       "identifier_type": null,
-      "identifier": "British Virgin Islands Company Registration Number  1862061"
+      "identifier": "British Virgin Islands Company Registration Number  1862061",
+      "party_page": {
+        "id": "fresha-com-holding-inc",
+        "name": "Fresha.com Holding Inc."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "FRESHA.COM PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "11 627 580 563"
+      "identifier": "11 627 580 563",
+      "party_page": {
+        "id": "fresha-com-pty-ltd",
+        "name": "Fresha.Com Pty Ltd"
+      }
     },
     {
       "name": "KKR & Co. Inc",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "kkr-co-inc",
+        "name": "KKR & Co. Inc"
+      }
     }
   ],
   "anzsic_codes": [
@@ -111,24 +131,40 @@
         {
           "name": "Essential Bidco B.V.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "essential-bidco-b-v",
+            "name": "Essential Bidco B.V."
+          }
         },
         {
           "name": "Specialty (U.S.) Bidco, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialty-u-s-bidco-inc",
+            "name": "Specialty (U.S.) Bidco, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "SpecialtyCo US LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialtyco-us-llc",
+            "name": "SpecialtyCo US LLC"
+          }
         },
         {
           "name": "Biomin Phytogenics GmbH (Germany)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "biomin-phytogenics-gmbh-germany",
+            "name": "Biomin Phytogenics GmbH (Germany)"
+          }
         }
       ]
     },
@@ -141,14 +177,22 @@
         {
           "name": "TRESCAL (AUSTRALIA) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "39 117 603 835"
+          "identifier": "39 117 603 835",
+          "party_page": {
+            "id": "trescal-australia-pty-ltd",
+            "name": "Trescal (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TR PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 005 499 721"
+          "identifier": "99 005 499 721",
+          "party_page": {
+            "id": "tr-pty-ltd",
+            "name": "Tr Pty Ltd"
+          }
         }
       ]
     },
@@ -161,19 +205,31 @@
         {
           "name": "Searchlight Capital IV LP",
           "identifier_type": null,
-          "identifier": "US SEC  0001954453"
+          "identifier": "US SEC  0001954453",
+          "party_page": {
+            "id": "searchlight-capital-iv-lp",
+            "name": "Searchlight Capital IV LP"
+          }
         },
         {
           "name": "KONA Merger Sub Co.",
           "identifier_type": null,
-          "identifier": "Delaware  10525073"
+          "identifier": "Delaware  10525073",
+          "party_page": {
+            "id": "kona-merger-sub-co",
+            "name": "KONA Merger Sub Co."
+          }
         }
       ],
       "targets": [
         {
           "name": "KORE Group Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware  5388903"
+          "identifier": "Delaware  5388903",
+          "party_page": {
+            "id": "kore-group-holdings-inc",
+            "name": "KORE Group Holdings, Inc."
+          }
         }
       ]
     }

@@ -1,0 +1,47 @@
+{
+  "id": "blackline-safety-corp",
+  "canonical_name": "Blackline Safety Corp.",
+  "members": [
+    {
+      "name": "BLACKLINE SAFETY AUSTRALIA PTY LTD",
+      "identifier": "29 623 874 073",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "Blackline Safety Corp.",
+      "identifier": "Corporate access number 2016380855 and business number 860968577",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-85025",
+        "merger_name": "Francisco Partners - Blackline Safety",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-04-24T12:00:00Z",
+        "determination_date": "2026-05-06T12:00:00Z"
+      }
+    ],
+    "other": [
+      {
+        "merger_id": "WA-85025",
+        "merger_name": "Francisco Partners - Blackline Safety",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-04-24T12:00:00Z",
+        "determination_date": "2026-05-06T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

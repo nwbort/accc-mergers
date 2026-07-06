@@ -14,21 +14,33 @@
     {
       "name": "BINGO ACQUISITIONS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "19 602 662 984"
+      "identifier": "19 602 662 984",
+      "party_page": {
+        "id": "bingo-acquisitions-pty-ltd",
+        "name": "Bingo Acquisitions Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "JLW SERVICES PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "83 168 536 098"
+      "identifier": "83 168 536 098",
+      "party_page": {
+        "id": "jlw-services-pty-ltd",
+        "name": "Jlw Services Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "BINGO INDUSTRIES LIMITED",
       "identifier_type": "ABN",
-      "identifier": "72 617 748 231"
+      "identifier": "72 617 748 231",
+      "party_page": {
+        "id": "bingo-industries-limited",
+        "name": "Bingo Industries Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -105,14 +117,22 @@
         {
           "name": "Advance Holdings II, LLC",
           "identifier_type": null,
-          "identifier": "Delaware ID  10496142"
+          "identifier": "Delaware ID  10496142",
+          "party_page": {
+            "id": "advance-holdings-ii-llc",
+            "name": "Advance Holdings II, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "BCI Acquisitions, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware ID  6389940"
+          "identifier": "Delaware ID  6389940",
+          "party_page": {
+            "id": "bci-acquisitions-inc",
+            "name": "BCI Acquisitions, Inc."
+          }
         }
       ]
     },
@@ -129,6 +149,10 @@
           "canonical": {
             "id": "eli-lilly-and-company",
             "name": "Eli Lilly and Company"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
           }
         }
       ],
@@ -136,7 +160,11 @@
         {
           "name": "Kelonia Therapeutics, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "kelonia-therapeutics-inc",
+            "name": "Kelonia Therapeutics, Inc."
+          }
         }
       ]
     },
@@ -149,14 +177,22 @@
         {
           "name": "AUSTBROKERS CORPORATE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "29 107 477 181"
+          "identifier": "29 107 477 181",
+          "party_page": {
+            "id": "austbrokers-corporate-pty-ltd",
+            "name": "Austbrokers Corporate Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "KJ RISK GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "15 143 512 387"
+          "identifier": "15 143 512 387",
+          "party_page": {
+            "id": "kj-risk-group-pty-ltd",
+            "name": "Kj Risk Group Pty Ltd"
+          }
         }
       ]
     }

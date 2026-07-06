@@ -15,51 +15,87 @@
     {
       "name": "BQC Group Pty Ltd [yet to be incorporated]",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "bqc-group-pty-ltd-yet-to-be-incorporated",
+        "name": "BQC Group Pty Ltd [yet to be incorporated]"
+      }
     }
   ],
   "targets": [
     {
       "name": "M&T Populin Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "092 648 078"
+      "identifier": "092 648 078",
+      "party_page": {
+        "id": "m-t-populin-pty-ltd",
+        "name": "M&T Populin Pty Ltd"
+      }
     },
     {
       "name": "BQC Registrations Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "613 361 041"
+      "identifier": "613 361 041",
+      "party_page": {
+        "id": "bqc-registrations-pty-ltd",
+        "name": "BQC Registrations Pty Ltd"
+      }
     },
     {
       "name": "TWIN ROCK PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "84 092 733 867"
+      "identifier": "84 092 733 867",
+      "party_page": {
+        "id": "twin-rock-pty-ltd",
+        "name": "Twin Rock Pty. Ltd."
+      }
     },
     {
       "name": "BQC SANDS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "92 662 904 190"
+      "identifier": "92 662 904 190",
+      "party_page": {
+        "id": "bqc-sands-pty-ltd",
+        "name": "Bqc Sands Pty Ltd"
+      }
     },
     {
       "name": "BURDEKIN CONCRETE PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "25 010 095 253"
+      "identifier": "25 010 095 253",
+      "party_page": {
+        "id": "burdekin-concrete-pty-ltd",
+        "name": "Burdekin Concrete Pty. Ltd."
+      }
     },
     {
       "name": "COLEVALE ESTATES PTY LTD & M & T POPULIN PTY LTD & TWIN ROCK PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "14 440 726 153"
+      "identifier": "14 440 726 153",
+      "party_page": {
+        "id": "colevale-estates-pty-ltd-m-t-populin-pty-ltd-twin-rock-pty-ltd",
+        "name": "Colevale Estates Pty Ltd & M & T Populin Pty Ltd & Twin Rock Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Barro Group Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "005 105 724"
+      "identifier": "005 105 724",
+      "party_page": {
+        "id": "barro-group-pty-ltd",
+        "name": "Barro Group Pty Ltd"
+      }
     },
     {
       "name": "MT. MARROW BLUE METAL QUARRIES PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "64 004 879 930"
+      "identifier": "64 004 879 930",
+      "party_page": {
+        "id": "mt-marrow-blue-metal-quarries-pty-ltd",
+        "name": "Mt. Marrow Blue Metal Quarries Pty. Ltd."
+      }
     }
   ],
   "anzsic_codes": [
@@ -266,6 +302,10 @@
           "canonical": {
             "id": "vets-central-holdings-pty-ltd",
             "name": "Vets Central Holdings Pty Ltd"
+          },
+          "party_page": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
           }
         }
       ],
@@ -273,12 +313,20 @@
         {
           "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust",
           "identifier_type": "ABN",
-          "identifier": "96 315 737 133"
+          "identifier": "96 315 737 133",
+          "party_page": {
+            "id": "wayne-shipham-and-raylene-shipham-as-trustees-for-mcguire-family-trust",
+            "name": "Wayne Shipham and Raylene Shipham as trustees for McGuire Family Trust"
+          }
         },
         {
           "name": "DROVERS VET HOSPITAL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "67 159 300 768"
+          "identifier": "67 159 300 768",
+          "party_page": {
+            "id": "drovers-vet-hospital-pty-ltd",
+            "name": "Drovers Vet Hospital Pty Ltd"
+          }
         }
       ]
     },
@@ -295,6 +343,10 @@
           "canonical": {
             "id": "vets-central-holdings-pty-ltd",
             "name": "Vets Central Holdings Pty Ltd"
+          },
+          "party_page": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
           }
         }
       ],
@@ -302,7 +354,11 @@
         {
           "name": "CARRUTHERS, JONATHAN JULIAN",
           "identifier_type": "ABN",
-          "identifier": "22 148 400 175"
+          "identifier": "22 148 400 175",
+          "party_page": {
+            "id": "carruthers-jonathan-julian",
+            "name": "Carruthers, Jonathan Julian"
+          }
         }
       ]
     },
@@ -315,19 +371,31 @@
         {
           "name": "AVC Operations Pty Limited",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
           "identifier_type": "ABN",
-          "identifier": "70 075 074 930"
+          "identifier": "70 075 074 930",
+          "party_page": {
+            "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
+            "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
+          }
         },
         {
           "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
           "identifier_type": "ACN",
-          "identifier": "604 221 801"
+          "identifier": "604 221 801",
+          "party_page": {
+            "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
+            "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+          }
         }
       ]
     }

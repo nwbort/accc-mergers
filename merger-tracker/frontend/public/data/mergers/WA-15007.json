@@ -14,26 +14,42 @@
     {
       "name": "Reed BidCo Limited",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "reed-bidco-limited",
+        "name": "Reed BidCo Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "lecta-paper-industries-intermediate-financing-s-r-l",
+        "name": "Lecta Paper Industries Intermediate Financing S.\u00e0 r.l."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Apollo Capital Management, L.P.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "apollo-capital-management-l-p-2",
+        "name": "Apollo Capital Management, L.P."
+      }
     },
     {
       "name": "Apollo Global Management",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "apollo-global-management",
+        "name": "Apollo Global Management"
+      }
     }
   ],
   "anzsic_codes": [
@@ -118,6 +134,10 @@
           "canonical": {
             "id": "henkel-global-supply-chain-b-v",
             "name": "Henkel Global Supply Chain B.V."
+          },
+          "party_page": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
           }
         }
       ],
@@ -125,7 +145,11 @@
         {
           "name": "Aqua Adhesives I GmbH",
           "identifier_type": null,
-          "identifier": "Swiss registration number: CH170.4.019.1870"
+          "identifier": "Swiss registration number: CH170.4.019.1870",
+          "party_page": {
+            "id": "aqua-adhesives-i-gmbh",
+            "name": "Aqua Adhesives I GmbH"
+          }
         }
       ]
     },
@@ -138,19 +162,31 @@
         {
           "name": "Arena BidCo Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 657 484"
+          "identifier": "693 657 484",
+          "party_page": {
+            "id": "arena-bidco-pty-ltd",
+            "name": "Arena BidCo Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "RFGI GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "55 630 028 974"
+          "identifier": "55 630 028 974",
+          "party_page": {
+            "id": "rfgi-group-pty-ltd",
+            "name": "Rfgi Group Pty Ltd"
+          }
         },
         {
           "name": "GAMEON HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "47 629 422 206"
+          "identifier": "47 629 422 206",
+          "party_page": {
+            "id": "gameon-holdings-pty-ltd",
+            "name": "Gameon Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -163,24 +199,40 @@
         {
           "name": "Admiral AU Bidco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 801 195"
+          "identifier": "695 801 195",
+          "party_page": {
+            "id": "admiral-au-bidco-pty-ltd",
+            "name": "Admiral AU Bidco Pty Ltd"
+          }
         },
         {
           "name": "Admiral AU Holdco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 791 710"
+          "identifier": "695 791 710",
+          "party_page": {
+            "id": "admiral-au-holdco-pty-ltd",
+            "name": "Admiral AU Holdco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "EPTEC MARINE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "49 118 319 547"
+          "identifier": "49 118 319 547",
+          "party_page": {
+            "id": "eptec-marine-pty-ltd",
+            "name": "Eptec Marine Pty Ltd"
+          }
         },
         {
           "name": "EPTEC BIDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "12 638 785 378"
+          "identifier": "12 638 785 378",
+          "party_page": {
+            "id": "eptec-bidco-pty-ltd",
+            "name": "Eptec Bidco Pty Ltd"
+          }
         }
       ]
     }

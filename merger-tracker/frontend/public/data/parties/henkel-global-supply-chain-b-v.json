@@ -1,0 +1,76 @@
+{
+  "id": "henkel-global-supply-chain-b-v",
+  "canonical_name": "Henkel Global Supply Chain B.V.",
+  "members": [
+    {
+      "name": "Henkel Global Supply Chain B.V.",
+      "identifier": "Netherlands registration number (KVK): 854017447; CCI 60683945",
+      "identifier_type": null
+    },
+    {
+      "name": "Henkel Global Supply Chain B.V.",
+      "identifier": "Netherlands registration number, 854017447, CCI 60683945",
+      "identifier_type": null
+    },
+    {
+      "name": "Henkel Global Supply Chain B.V.",
+      "identifier": "Netherlands registration number: 854017447, CCI 60683945",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "WA-45007",
+        "merger_name": "Henkel \u2013 Stahl",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-03-18T12:00:00Z",
+        "determination_date": "2026-04-07T12:00:00Z"
+      },
+      {
+        "merger_id": "MN-40005",
+        "merger_name": "Henkel \u2013 ATP Adhesives Systems Group",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-02-18T12:00:00Z",
+        "determination_date": "2026-03-12T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-65003",
+        "merger_name": "Henkel \u2013 ATP adhesive systems group",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-01-19T12:00:00Z",
+        "determination_date": "2026-02-05T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "MN-80016",
+        "merger_name": "Henkel \u2013 Olaplex",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-05-26T12:00:00Z",
+        "determination_date": "2026-06-22T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 4,
+  "phase_1_count": 2,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 24.5,
+    "median_days": 27,
+    "average_business_days": 16.0,
+    "median_business_days": 17,
+    "completed_count": 2
+  }
+}

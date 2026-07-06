@@ -14,14 +14,22 @@
     {
       "name": "HCL Technologies Limited",
       "identifier_type": "ABN",
-      "identifier": "37 541 578 951"
+      "identifier": "37 541 578 951",
+      "party_page": {
+        "id": "hcl-technologies-limited",
+        "name": "HCL Technologies Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "94 092 002 321"
+      "identifier": "94 092 002 321",
+      "party_page": {
+        "id": "cloud-software-group-australia-pty-ltd",
+        "name": "Cloud Software Group Australia Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -95,14 +103,22 @@
         {
           "name": "GE Healthcare Technologies Inc.",
           "identifier_type": null,
-          "identifier": "6772877"
+          "identifier": "6772877",
+          "party_page": {
+            "id": "ge-healthcare-technologies-inc",
+            "name": "GE Healthcare Technologies Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Intelerad Holdings ULC",
           "identifier_type": null,
-          "identifier": "703693275"
+          "identifier": "703693275",
+          "party_page": {
+            "id": "intelerad-holdings-ulc",
+            "name": "Intelerad Holdings ULC"
+          }
         }
       ]
     },
@@ -119,6 +135,10 @@
           "canonical": {
             "id": "servicenow-inc",
             "name": "ServiceNow, Inc."
+          },
+          "party_page": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
           }
         }
       ],
@@ -126,7 +146,11 @@
         {
           "name": "Veza Technologies, Inc.",
           "identifier_type": null,
-          "identifier": "7791387"
+          "identifier": "7791387",
+          "party_page": {
+            "id": "veza-technologies-inc",
+            "name": "Veza Technologies, Inc."
+          }
         }
       ]
     },
@@ -139,19 +163,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     }

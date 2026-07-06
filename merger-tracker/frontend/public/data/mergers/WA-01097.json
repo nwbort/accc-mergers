@@ -14,41 +14,69 @@
     {
       "name": "Swan Bidco Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "99 634 920 773"
+      "identifier": "99 634 920 773",
+      "party_page": {
+        "id": "swan-bidco-pty-ltd",
+        "name": "Swan Bidco Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "Stanley International College Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "16 130 977 221"
+      "identifier": "16 130 977 221",
+      "party_page": {
+        "id": "stanley-international-college-pty-ltd",
+        "name": "Stanley International College Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Swan Topco Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "682 241 612"
+      "identifier": "682 241 612",
+      "party_page": {
+        "id": "swan-topco-pty-ltd",
+        "name": "Swan Topco Pty Ltd"
+      }
     },
     {
       "name": "Kaishwer Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "17 142 301 371"
+      "identifier": "17 142 301 371",
+      "party_page": {
+        "id": "kaishwer-pty-ltd",
+        "name": "Kaishwer Pty Ltd"
+      }
     },
     {
       "name": "Swan Midco Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "682 241 621"
+      "identifier": "682 241 621",
+      "party_page": {
+        "id": "swan-midco-pty-ltd",
+        "name": "Swan Midco Pty Ltd"
+      }
     },
     {
       "name": "BARRIJAG PTY. LIMITED & QPE GROWTH 3 GP PTY LIMITED & QPE GROWTH 3 LP PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "42 453 976 426"
+      "identifier": "42 453 976 426",
+      "party_page": {
+        "id": "barrijag-pty-limited-qpe-growth-3-gp-pty-limited-qpe-growth-3-lp-pty-limited",
+        "name": "Barrijag Pty. Limited & Qpe Growth 3 Gp Pty Limited & Qpe Growth 3 Lp Pty Limited"
+      }
     },
     {
       "name": "Chintalia Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "94 147 049 698"
+      "identifier": "94 147 049 698",
+      "party_page": {
+        "id": "chintalia-pty-ltd",
+        "name": "Chintalia Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -129,19 +157,31 @@
         {
           "name": "Arena BidCo Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 657 484"
+          "identifier": "693 657 484",
+          "party_page": {
+            "id": "arena-bidco-pty-ltd",
+            "name": "Arena BidCo Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "RFGI GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "55 630 028 974"
+          "identifier": "55 630 028 974",
+          "party_page": {
+            "id": "rfgi-group-pty-ltd",
+            "name": "Rfgi Group Pty Ltd"
+          }
         },
         {
           "name": "GAMEON HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "47 629 422 206"
+          "identifier": "47 629 422 206",
+          "party_page": {
+            "id": "gameon-holdings-pty-ltd",
+            "name": "Gameon Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -154,19 +194,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     },
@@ -179,14 +231,22 @@
         {
           "name": "Sigrun Bidco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "sigrun-bidco-limited",
+            "name": "Sigrun Bidco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)",
           "identifier_type": null,
-          "identifier": "CRN 11755038"
+          "identifier": "CRN 11755038",
+          "party_page": {
+            "id": "sermo-limited-together-with-its-subsidiaries-sermo",
+            "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
+          }
         }
       ]
     }

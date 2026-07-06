@@ -14,26 +14,42 @@
     {
       "name": "Rosewood AG, LP",
       "identifier_type": null,
-      "identifier": "LP5500"
+      "identifier": "LP5500",
+      "party_page": {
+        "id": "rosewood-ag-lp",
+        "name": "Rosewood AG, LP"
+      }
     }
   ],
   "targets": [
     {
       "name": "Collagen Holdings, LLC",
       "identifier_type": null,
-      "identifier": "DE File Number  7473707"
+      "identifier": "DE File Number  7473707",
+      "party_page": {
+        "id": "collagen-holdings-llc",
+        "name": "Collagen Holdings, LLC"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Cinven Limited",
       "identifier_type": null,
-      "identifier": "Company number  02192937"
+      "identifier": "Company number  02192937",
+      "party_page": {
+        "id": "cinven-limited",
+        "name": "Cinven Limited"
+      }
     },
     {
       "name": "Linden Capital Partners",
       "identifier_type": null,
-      "identifier": "Company number  5075067"
+      "identifier": "Company number  5075067",
+      "party_page": {
+        "id": "linden-capital-partners",
+        "name": "Linden Capital Partners"
+      }
     }
   ],
   "anzsic_codes": [
@@ -106,24 +122,40 @@
         {
           "name": "Essential Bidco B.V.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "essential-bidco-b-v",
+            "name": "Essential Bidco B.V."
+          }
         },
         {
           "name": "Specialty (U.S.) Bidco, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialty-u-s-bidco-inc",
+            "name": "Specialty (U.S.) Bidco, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "SpecialtyCo US LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialtyco-us-llc",
+            "name": "SpecialtyCo US LLC"
+          }
         },
         {
           "name": "Biomin Phytogenics GmbH (Germany)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "biomin-phytogenics-gmbh-germany",
+            "name": "Biomin Phytogenics GmbH (Germany)"
+          }
         }
       ]
     },
@@ -136,24 +168,40 @@
         {
           "name": "Admiral AU Bidco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 801 195"
+          "identifier": "695 801 195",
+          "party_page": {
+            "id": "admiral-au-bidco-pty-ltd",
+            "name": "Admiral AU Bidco Pty Ltd"
+          }
         },
         {
           "name": "Admiral AU Holdco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 791 710"
+          "identifier": "695 791 710",
+          "party_page": {
+            "id": "admiral-au-holdco-pty-ltd",
+            "name": "Admiral AU Holdco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "EPTEC MARINE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "49 118 319 547"
+          "identifier": "49 118 319 547",
+          "party_page": {
+            "id": "eptec-marine-pty-ltd",
+            "name": "Eptec Marine Pty Ltd"
+          }
         },
         {
           "name": "EPTEC BIDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "12 638 785 378"
+          "identifier": "12 638 785 378",
+          "party_page": {
+            "id": "eptec-bidco-pty-ltd",
+            "name": "Eptec Bidco Pty Ltd"
+          }
         }
       ]
     },
@@ -166,19 +214,31 @@
         {
           "name": "Resonetics, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "resonetics-llc",
+            "name": "Resonetics, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Resolution Medical MidCo, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "resolution-medical-midco-llc",
+            "name": "Resolution Medical MidCo, LLC"
+          }
         },
         {
           "name": "Arcline Capital Partners II-A LP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "arcline-capital-partners-ii-a-lp",
+            "name": "Arcline Capital Partners II-A LP"
+          }
         }
       ]
     }

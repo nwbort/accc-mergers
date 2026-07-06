@@ -1,0 +1,37 @@
+{
+  "id": "acclime-holdings-limited",
+  "canonical_name": "Acclime Holdings Limited",
+  "members": [
+    {
+      "name": "Acclime Holdings HK Limited",
+      "identifier": "BRN  70084973",
+      "identifier_type": null
+    },
+    {
+      "name": "Acclime Holdings Limited",
+      "identifier": "BRN  70084973",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-60008",
+        "merger_name": "Warburg Pincus \u2013 Acclime",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-01-20T12:00:00Z",
+        "determination_date": "2026-01-30T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

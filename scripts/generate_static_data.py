@@ -18,6 +18,8 @@ Output files:
   - timeline-meta.json          - Pagination metadata for timeline
   - industries.json             - ANZSIC codes with merger counts
   - industries/{code}.json      - Mergers per industry code
+  - parties.json                - Every party (canonical group or single) with merger counts
+  - parties/{id}.json           - Mergers per party, grouped by role
   - upcoming-events.json        - Future consultation/determination dates
   - commentary.json             - Mergers with user commentary
   - analysis.json               - Pre-computed analysis data
@@ -55,6 +57,7 @@ from static_data.outputs import (
     industries,
     list as list_out,
     noccs,
+    parties,
     questionnaires,
     serial_acquirers,
     stats,
@@ -126,6 +129,9 @@ def main():
         print(f"  Linked {party_linked} party record(s) to canonical groups")
     print(f"✓ Enriched {len(enriched)} mergers")
 
+    party_groups = parties.build_party_pages(enriched, related_parties)
+    print(f"✓ Built {len(party_groups)} party page group(s)")
+
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     DATA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -139,6 +145,7 @@ def main():
     single_file_outputs = [
         ("stats.json", stats.generate(enriched)),
         ("industries.json", industries.generate_index(enriched)),
+        ("parties.json", parties.generate_index(party_groups)),
         ("upcoming-events.json", upcoming_events.generate(enriched)),
         ("commentary.json", commentary_out.generate(enriched, commentary)),
         ("analysis.json", analysis.generate(enriched)),
@@ -166,6 +173,10 @@ def main():
     print("\nGenerating individual industry files...")
     n = industries.generate_detail_files(enriched, OUTPUT_DIR)
     print(f"✓ Generated {n} individual industry files in {OUTPUT_DIR / 'industries'}")
+
+    print("\nGenerating individual party files...")
+    n = parties.generate_detail_files(party_groups, OUTPUT_DIR)
+    print(f"✓ Generated {n} individual party files in {OUTPUT_DIR / 'parties'}")
 
     if questionnaire_data:
         print("\nGenerating questionnaire files...")

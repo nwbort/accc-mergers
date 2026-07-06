@@ -1,0 +1,38 @@
+{
+  "id": "twin-rock-pty-ltd",
+  "canonical_name": "Twin Rock Pty. Ltd.",
+  "members": [
+    {
+      "name": "TWIN ROCK PTY. LTD.",
+      "identifier": "84 092 733 867",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "MN-60011",
+        "merger_name": "Barro Group - BQC Quarries and Burdekin Concrete",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-04-28T12:00:00Z",
+        "determination_date": "2026-06-03T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 36.0,
+    "median_days": 36,
+    "average_business_days": 25.0,
+    "median_business_days": 25,
+    "completed_count": 1
+  }
+}

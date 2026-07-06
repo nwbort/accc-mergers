@@ -14,26 +14,42 @@
     {
       "name": "AUSTRALIANSUPER PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "94 006 457 987"
+      "identifier": "94 006 457 987",
+      "party_page": {
+        "id": "australiansuper-pty-ltd",
+        "name": "Australiansuper Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "IFM INVESTORS (NOMINEES) LIMITED",
       "identifier_type": "ABN",
-      "identifier": "56 003 969 891"
+      "identifier": "56 003 969 891",
+      "party_page": {
+        "id": "ifm-investors-nominees-limited",
+        "name": "Ifm Investors (Nominees) Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Conyers Trust Company (Cayman) Ltd as trustee for the IFM Global Infrastructure Fund",
       "identifier_type": null,
-      "identifier": "CR55233"
+      "identifier": "CR55233",
+      "party_page": {
+        "id": "conyers-trust-company-cayman-ltd-as-trustee-for-the-ifm-global-infrastructure-fu",
+        "name": "Conyers Trust Company (Cayman) Ltd as trustee for the IFM Global Infrastructure Fund"
+      }
     },
     {
       "name": "IFM INVESTORS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "67 107 247 727"
+      "identifier": "67 107 247 727",
+      "party_page": {
+        "id": "ifm-investors-pty-ltd",
+        "name": "Ifm Investors Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -106,19 +122,31 @@
         {
           "name": "AVC OPERATIONS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         },
         {
           "name": "Australian Venue Co. Holdings Limited",
           "identifier_type": "ABN",
-          "identifier": "90 619 977 070"
+          "identifier": "90 619 977 070",
+          "party_page": {
+            "id": "australian-venue-co-holdings-limited",
+            "name": "Australian Venue Co. Holdings Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Q.R.A. PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "62 051 433 839"
+          "identifier": "62 051 433 839",
+          "party_page": {
+            "id": "q-r-a-pty-limited",
+            "name": "Q.R.A. Pty Limited"
+          }
         }
       ]
     },
@@ -131,19 +159,31 @@
         {
           "name": "LGPE SEC S.C. Sp",
           "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B281514"
+          "identifier": "Luxembourg Company Registration Number: B281514",
+          "party_page": {
+            "id": "lgpe-sec-s-c-sp",
+            "name": "LGPE SEC S.C. Sp"
+          }
         },
         {
           "name": "Crown Growth Opportunities IV SCSp-RAIF",
           "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B254394"
+          "identifier": "Luxembourg Company Registration Number: B254394",
+          "party_page": {
+            "id": "crown-growth-opportunities-iv-scsp-raif",
+            "name": "Crown Growth Opportunities IV SCSp-RAIF"
+          }
         }
       ],
       "targets": [
         {
           "name": "ADVANCED NAVIGATION PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "49 156 101 549"
+          "identifier": "49 156 101 549",
+          "party_page": {
+            "id": "advanced-navigation-pty-ltd",
+            "name": "Advanced Navigation Pty. Ltd."
+          }
         }
       ]
     },
@@ -160,6 +200,10 @@
           "canonical": {
             "id": "australian-meat-group-inc",
             "name": "Australian Meat Group Inc"
+          },
+          "party_page": {
+            "id": "australian-meat-group-inc",
+            "name": "Australian Meat Group Inc"
           }
         }
       ],
@@ -167,7 +211,11 @@
         {
           "name": "Killara Feedlot Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "18 081 072 746"
+          "identifier": "18 081 072 746",
+          "party_page": {
+            "id": "killara-feedlot-pty-ltd",
+            "name": "Killara Feedlot Pty Ltd"
+          }
         }
       ]
     }

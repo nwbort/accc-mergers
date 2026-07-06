@@ -14,26 +14,42 @@
     {
       "name": "HOST-PLUS PTY. LIMITED",
       "identifier_type": "ABN",
-      "identifier": "79 008 634 704"
+      "identifier": "79 008 634 704",
+      "party_page": {
+        "id": "host-plus-pty-limited",
+        "name": "Host-Plus Pty. Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "CH Investment Holding Trust",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "ch-investment-holding-trust",
+        "name": "CH Investment Holding Trust"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Charter Hall Property Trust",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "charter-hall-property-trust",
+        "name": "Charter Hall Property Trust"
+      }
     },
     {
       "name": "Charter Hall Prime Office Fund 1",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "charter-hall-prime-office-fund-1",
+        "name": "Charter Hall Prime Office Fund 1"
+      }
     }
   ],
   "anzsic_codes": [
@@ -106,19 +122,31 @@
         {
           "name": "QIC TT COMPANY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "27 694 380 973"
+          "identifier": "27 694 380 973",
+          "party_page": {
+            "id": "qic-tt-company-pty-ltd",
+            "name": "Qic Tt Company Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "SCENTRE GROUP TRUST 3",
           "identifier_type": "ABN",
-          "identifier": "11 517 229 138"
+          "identifier": "11 517 229 138",
+          "party_page": {
+            "id": "scentre-group-trust-3",
+            "name": "Scentre Group Trust 3"
+          }
         },
         {
           "name": "SCENTRE ALLIANCES PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 098 357 521"
+          "identifier": "53 098 357 521",
+          "party_page": {
+            "id": "scentre-alliances-pty-limited",
+            "name": "Scentre Alliances Pty Limited"
+          }
         }
       ]
     },
@@ -131,19 +159,31 @@
         {
           "name": "Southern Way PS Pty Limited as trustee for PS Southern Way Unit Trust",
           "identifier_type": "ACN",
-          "identifier": "140 806 935"
+          "identifier": "140 806 935",
+          "party_page": {
+            "id": "southern-way-ps-pty-limited-as-trustee-for-ps-southern-way-unit-trust",
+            "name": "Southern Way PS Pty Limited as trustee for PS Southern Way Unit Trust"
+          }
         }
       ],
       "targets": [
         {
           "name": "Southern Way Holding Trust",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "southern-way-holding-trust",
+            "name": "Southern Way Holding Trust"
+          }
         },
         {
           "name": "SOUTHERN WAY HOLDINGS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "93 140 429 483"
+          "identifier": "93 140 429 483",
+          "party_page": {
+            "id": "southern-way-holdings-pty-limited",
+            "name": "Southern Way Holdings Pty Limited"
+          }
         }
       ]
     },
@@ -156,24 +196,40 @@
         {
           "name": "SYMAL MANAGEMENT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "85 602 084 471"
+          "identifier": "85 602 084 471",
+          "party_page": {
+            "id": "symal-management-pty-ltd",
+            "name": "Symal Management Pty Ltd"
+          }
         },
         {
           "name": "SYL TM CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 693 144 697"
+          "identifier": "68 693 144 697",
+          "party_page": {
+            "id": "syl-tm-contracting-pty-ltd",
+            "name": "Syl Tm Contracting Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TIMMS HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "73 115 389 949"
+          "identifier": "73 115 389 949",
+          "party_page": {
+            "id": "timms-hire-pty-ltd",
+            "name": "Timms Hire Pty Ltd"
+          }
         },
         {
           "name": "TIMMS CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "30 070 456 567"
+          "identifier": "30 070 456 567",
+          "party_page": {
+            "id": "timms-contracting-pty-ltd",
+            "name": "Timms Contracting Pty Ltd"
+          }
         }
       ]
     }

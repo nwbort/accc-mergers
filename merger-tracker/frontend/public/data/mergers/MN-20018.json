@@ -13,31 +13,51 @@
     {
       "name": "Uber Technologies, Inc",
       "identifier_type": null,
-      "identifier": "USID  4849283"
+      "identifier": "USID  4849283",
+      "party_page": {
+        "id": "uber-technologies-inc",
+        "name": "Uber Technologies, Inc"
+      }
     }
   ],
   "targets": [
     {
       "name": "Blacklane GmbH",
       "identifier_type": null,
-      "identifier": "HRB  136941B"
+      "identifier": "HRB  136941B",
+      "party_page": {
+        "id": "blacklane-gmbh",
+        "name": "Blacklane GmbH"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "UBER PACIFIC PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "96 622 366 116"
+      "identifier": "96 622 366 116",
+      "party_page": {
+        "id": "uber-pacific-pty-ltd",
+        "name": "Uber Pacific Pty Ltd"
+      }
     },
     {
       "name": "UBER AUSTRALIA HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "54 622 364 318"
+      "identifier": "54 622 364 318",
+      "party_page": {
+        "id": "uber-australia-holdings-pty-ltd",
+        "name": "Uber Australia Holdings Pty Ltd"
+      }
     },
     {
       "name": "RASIER PACIFIC PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "27 622 365 833"
+      "identifier": "27 622 365 833",
+      "party_page": {
+        "id": "rasier-pacific-pty-ltd",
+        "name": "Rasier Pacific Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -88,6 +108,10 @@
           "canonical": {
             "id": "servicenow-inc",
             "name": "ServiceNow, Inc."
+          },
+          "party_page": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
           }
         }
       ],
@@ -95,7 +119,11 @@
         {
           "name": "Veza Technologies, Inc.",
           "identifier_type": null,
-          "identifier": "7791387"
+          "identifier": "7791387",
+          "party_page": {
+            "id": "veza-technologies-inc",
+            "name": "Veza Technologies, Inc."
+          }
         }
       ]
     },
@@ -108,19 +136,31 @@
         {
           "name": "Zeus UK Bidco Limited",
           "identifier_type": null,
-          "identifier": "UK company number  17118800"
+          "identifier": "UK company number  17118800",
+          "party_page": {
+            "id": "zeus-uk-bidco-limited",
+            "name": "Zeus UK Bidco Limited"
+          }
         },
         {
           "name": "Tinicum L.P.",
           "identifier_type": null,
-          "identifier": "Incorporation number  5040692"
+          "identifier": "Incorporation number  5040692",
+          "party_page": {
+            "id": "tinicum-l-p",
+            "name": "Tinicum L.P."
+          }
         }
       ],
       "targets": [
         {
           "name": "Senior plc",
           "identifier_type": null,
-          "identifier": "Company number  00282772"
+          "identifier": "Company number  00282772",
+          "party_page": {
+            "id": "senior-plc",
+            "name": "Senior plc"
+          }
         }
       ]
     },
@@ -133,7 +173,11 @@
         {
           "name": "Apollo Purchaser, Inc.",
           "identifier_type": null,
-          "identifier": "Registration number 2027954573"
+          "identifier": "Registration number 2027954573",
+          "party_page": {
+            "id": "apollo-purchaser-inc",
+            "name": "Apollo Purchaser, Inc."
+          }
         }
       ],
       "targets": [
@@ -142,6 +186,10 @@
           "identifier_type": null,
           "identifier": "Corporate access number 2016380855 and business number 860968577",
           "canonical": {
+            "id": "blackline-safety-corp",
+            "name": "Blackline Safety Corp."
+          },
+          "party_page": {
             "id": "blackline-safety-corp",
             "name": "Blackline Safety Corp."
           }

@@ -1,0 +1,32 @@
+{
+  "id": "maas-group-holdings-limited",
+  "canonical_name": "Maas Group Holdings Limited",
+  "members": [
+    {
+      "name": "MAAS GROUP HOLDINGS LIMITED",
+      "identifier": "84 632 994 542",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "MN-50009",
+        "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "phase": "Phase 1",
+        "notification_date": "2026-05-28T12:00:00Z",
+        "determination_date": null
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 1,
+  "phase_duration": null
+}

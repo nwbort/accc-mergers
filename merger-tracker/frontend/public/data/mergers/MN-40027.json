@@ -13,29 +13,49 @@
     {
       "name": "Sika AG",
       "identifier_type": null,
-      "identifier": "CHE106.919.184"
+      "identifier": "CHE106.919.184",
+      "party_page": {
+        "id": "sika-ag",
+        "name": "Sika AG"
+      }
     }
   ],
   "targets": [
     {
       "name": "Akde Kimya Sanayi ve Ticaret Anonim \u015eirketi",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "akde-kimya-sanayi-ve-ticaret-anonim-irketi",
+        "name": "Akde Kimya Sanayi ve Ticaret Anonim \u015eirketi"
+      }
     },
     {
       "name": "Akkim Europe SRL",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "akkim-europe-srl",
+        "name": "Akkim Europe SRL"
+      }
     },
     {
       "name": "Akkim Yapi Kimyasallari Sanayi ve Ticaret Anonim \u015eirketi",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "akkim-yapi-kimyasallari-sanayi-ve-ticaret-anonim-irketi",
+        "name": "Akkim Yapi Kimyasallari Sanayi ve Ticaret Anonim \u015eirketi"
+      }
     },
     {
       "name": "Akfix Kimya Lojistik Hizmetleri Limited \u015eirketi",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "akfix-kimya-lojistik-hizmetleri-limited-irketi",
+        "name": "Akfix Kimya Lojistik Hizmetleri Limited \u015eirketi"
+      }
     }
   ],
   "other_parties": [],
@@ -87,6 +107,10 @@
           "canonical": {
             "id": "henkel-global-supply-chain-b-v",
             "name": "Henkel Global Supply Chain B.V."
+          },
+          "party_page": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
           }
         }
       ],
@@ -94,7 +118,11 @@
         {
           "name": "Aqua Adhesives I GmbH",
           "identifier_type": null,
-          "identifier": "Swiss registration number: CH170.4.019.1870"
+          "identifier": "Swiss registration number: CH170.4.019.1870",
+          "party_page": {
+            "id": "aqua-adhesives-i-gmbh",
+            "name": "Aqua Adhesives I GmbH"
+          }
         }
       ]
     },
@@ -111,6 +139,10 @@
           "canonical": {
             "id": "henkel-global-supply-chain-b-v",
             "name": "Henkel Global Supply Chain B.V."
+          },
+          "party_page": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
           }
         }
       ],
@@ -118,12 +150,20 @@
         {
           "name": "Stahl Holdings B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 34249320"
+          "identifier": "Netherlands registration number (KVK): 34249320",
+          "party_page": {
+            "id": "stahl-holdings-b-v",
+            "name": "Stahl Holdings B.V."
+          }
         },
         {
           "name": "Stahl Asia Pacific Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "Singapore registration number: 200606884Z"
+          "identifier": "Singapore registration number: 200606884Z",
+          "party_page": {
+            "id": "stahl-asia-pacific-pte-ltd",
+            "name": "Stahl Asia Pacific Pte. Ltd."
+          }
         }
       ]
     },
@@ -136,7 +176,11 @@
         {
           "name": "Smile Partners (NSW3) Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 902 955"
+          "identifier": "695 902 955",
+          "party_page": {
+            "id": "smile-partners-nsw3-pty-ltd",
+            "name": "Smile Partners (NSW3) Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -145,6 +189,10 @@
           "identifier_type": "ACN",
           "identifier": "108 757 357",
           "canonical": {
+            "id": "shrika-pty-ltd",
+            "name": "Shrika Pty Ltd"
+          },
+          "party_page": {
             "id": "shrika-pty-ltd",
             "name": "Shrika Pty Ltd"
           }

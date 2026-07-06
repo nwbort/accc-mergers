@@ -14,26 +14,42 @@
     {
       "name": "Mizuho Securities Co., Ltd.",
       "identifier_type": null,
-      "identifier": "No. 94"
+      "identifier": "No. 94",
+      "party_page": {
+        "id": "mizuho-securities-co-ltd",
+        "name": "Mizuho Securities Co., Ltd."
+      }
     }
   ],
   "targets": [
     {
       "name": "Redpoint Investments Pte Ltd",
       "identifier_type": null,
-      "identifier": "201536795E"
+      "identifier": "201536795E",
+      "party_page": {
+        "id": "redpoint-investments-pte-ltd",
+        "name": "Redpoint Investments Pte Ltd"
+      }
     },
     {
       "name": "Avendus Capital Private Limited",
       "identifier_type": null,
-      "identifier": "CIN U99999MH1999PTC123358"
+      "identifier": "CIN U99999MH1999PTC123358",
+      "party_page": {
+        "id": "avendus-capital-private-limited",
+        "name": "Avendus Capital Private Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Spark Institutional Equities Private Limited",
       "identifier_type": null,
-      "identifier": "CIN U65999TN2022PTC149473"
+      "identifier": "CIN U65999TN2022PTC149473",
+      "party_page": {
+        "id": "spark-institutional-equities-private-limited",
+        "name": "Spark Institutional Equities Private Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -102,24 +118,40 @@
         {
           "name": "Rosa Investments Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "UEN 202340014H (Accounting and Corporate Regulatory Authority of Singapore)"
+          "identifier": "UEN 202340014H (Accounting and Corporate Regulatory Authority of Singapore)",
+          "party_page": {
+            "id": "rosa-investments-pte-ltd",
+            "name": "Rosa Investments Pte. Ltd."
+          }
         },
         {
           "name": "GG12 S.p.A.",
           "identifier_type": null,
-          "identifier": "14436160965 (Italy)"
+          "identifier": "14436160965 (Italy)",
+          "party_page": {
+            "id": "gg12-s-p-a",
+            "name": "GG12 S.p.A."
+          }
         }
       ],
       "targets": [
         {
           "name": "Permira VII Investment Platform Limited",
           "identifier_type": null,
-          "identifier": "12263614 (UK Tax number)"
+          "identifier": "12263614 (UK Tax number)",
+          "party_page": {
+            "id": "permira-vii-investment-platform-limited",
+            "name": "Permira VII Investment Platform Limited"
+          }
         },
         {
           "name": "Golden Goose Group S.p.A.",
           "identifier_type": null,
-          "identifier": "11212510967 (Partita IVA \u2013 Italy)"
+          "identifier": "11212510967 (Partita IVA \u2013 Italy)",
+          "party_page": {
+            "id": "golden-goose-group-s-p-a",
+            "name": "Golden Goose Group S.p.A."
+          }
         }
       ]
     },
@@ -136,6 +168,10 @@
           "canonical": {
             "id": "cvc-capital-partners",
             "name": "CVC Capital Partners"
+          },
+          "party_page": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
           }
         }
       ],
@@ -143,7 +179,11 @@
         {
           "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
+            "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+          }
         }
       ]
     },
@@ -156,14 +196,22 @@
         {
           "name": "REA FINANCIAL SERVICES HOLDING CO. PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "38 649 505 386"
+          "identifier": "38 649 505 386",
+          "party_page": {
+            "id": "rea-financial-services-holding-co-pty-ltd",
+            "name": "Rea Financial Services Holding Co. Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "SIMPLICITY LOANS & ADVISORY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "98 616 763 878"
+          "identifier": "98 616 763 878",
+          "party_page": {
+            "id": "simplicity-loans-advisory-pty-ltd",
+            "name": "Simplicity Loans & Advisory Pty Ltd"
+          }
         }
       ]
     }

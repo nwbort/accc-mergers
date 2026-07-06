@@ -1,0 +1,38 @@
+{
+  "id": "frasers-group-plc",
+  "canonical_name": "Frasers Group plc",
+  "members": [
+    {
+      "name": "Frasers Group plc",
+      "identifier": "Company number  06035106",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "MN-30008",
+        "merger_name": "Frasers Group \u2013 Accent Group",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-05-19T12:00:00Z",
+        "determination_date": "2026-06-15T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 27.0,
+    "median_days": 27,
+    "average_business_days": 17.0,
+    "median_business_days": 17,
+    "completed_count": 1
+  }
+}

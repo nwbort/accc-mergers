@@ -20,8 +20,10 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 
 from merger_filters import load_mergers
-from slug import industry_path, merger_path
+from slug import industry_path, merger_path, party_path
 from static_data import anzsic
+from static_data.loaders import load_related_parties
+from static_data.outputs.parties import build_party_pages
 
 
 BASE_URL = "https://mergers.fyi"
@@ -35,6 +37,7 @@ STATIC_PAGES = [
     {"path": "/mergers",     "changefreq": "daily",   "priority": "0.9"},
     {"path": "/timeline",    "changefreq": "daily",   "priority": "0.8"},
     {"path": "/industries",  "changefreq": "weekly",  "priority": "0.8"},
+    {"path": "/parties",     "changefreq": "weekly",  "priority": "0.7"},
     {"path": "/commentary",  "changefreq": "weekly",  "priority": "0.7"},
     {"path": "/digest",      "changefreq": "weekly",  "priority": "0.7"},
     {"path": "/nick-twort",  "changefreq": "monthly", "priority": "0.8"},
@@ -46,6 +49,7 @@ STATIC_COMMENTS = {
     "/mergers":     "All Mergers Page",
     "/timeline":    "Timeline Page",
     "/industries":  "Industries Page",
+    "/parties":     "Parties Page",
     "/commentary":  "Commentary Page",
     "/digest":      "Digest Page",
     "/nick-twort":  "About / Author Page",
@@ -93,6 +97,21 @@ def industry_lastmods(mergers):
     return latest
 
 
+def party_lastmods(party_groups):
+    """Return ``{party_id: latest_page_modified_datetime}`` across each group's mergers."""
+    latest = {}
+    for group in party_groups:
+        raw_values = [
+            m.get("page_modified_datetime", "")
+            for role_mergers in group["mergers_by_role"].values()
+            for m in role_mergers.values()
+        ]
+        raw_values = [r for r in raw_values if r]
+        if raw_values:
+            latest[group["id"]] = max(raw_values)
+    return latest
+
+
 def url_entry(loc, lastmod, changefreq, priority):
     return (
         f"  <url>\n"
@@ -104,7 +123,7 @@ def url_entry(loc, lastmod, changefreq, priority):
     )
 
 
-def generate_sitemap(mergers):
+def generate_sitemap(mergers, party_groups):
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -141,6 +160,19 @@ def generate_sitemap(mergers):
         ))
     lines.append("")
 
+    lines.append("  <!-- Individual Party Pages (canonical groups + single parties) -->")
+    party_latest = party_lastmods(party_groups)
+    for group in sorted(party_groups, key=lambda g: g["id"]):
+        path = party_path(group["id"], group["canonical_name"])
+        raw = party_latest.get(group["id"])
+        lines.append(url_entry(
+            loc=escape(f"{BASE_URL}{path}"),
+            lastmod=_format_lastmod(raw) if raw else TODAY,
+            changefreq="weekly",
+            priority="0.5",
+        ))
+    lines.append("")
+
     lines.append("  <!-- Individual Merger Detail Pages -->")
     for merger in mergers:
         merger_id = merger.get("merger_id")
@@ -160,13 +192,15 @@ def generate_sitemap(mergers):
 
 def main():
     mergers = load_mergers()
-    sitemap = generate_sitemap(mergers)
+    related_parties = load_related_parties()
+    party_groups = build_party_pages(mergers, related_parties)
+    sitemap = generate_sitemap(mergers, party_groups)
     SITEMAP_OUT.write_text(sitemap, encoding="utf-8")
     industry_count = len(set(anzsic.hierarchy()) | set(industry_lastmods(mergers)))
     print(
         f"Wrote sitemap with {len(STATIC_PAGES)} static pages, "
-        f"{industry_count} industry pages and {len(mergers)} merger pages "
-        f"-> {SITEMAP_OUT}"
+        f"{industry_count} industry pages, {len(party_groups)} party pages "
+        f"and {len(mergers)} merger pages -> {SITEMAP_OUT}"
     )
 
 

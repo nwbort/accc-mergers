@@ -17,6 +17,10 @@
       "canonical": {
         "id": "experience-co-limited",
         "name": "Experience Co Limited"
+      },
+      "party_page": {
+        "id": "experience-co-limited",
+        "name": "Experience Co Limited"
       }
     }
   ],
@@ -24,12 +28,20 @@
     {
       "name": "VYSCOT PTY. LIMITED",
       "identifier_type": "ABN",
-      "identifier": "25 009 241 972"
+      "identifier": "25 009 241 972",
+      "party_page": {
+        "id": "vyscot-pty-limited",
+        "name": "Vyscot Pty. Limited"
+      }
     },
     {
       "name": "KELSIAN GROUP LIMITED",
       "identifier_type": "ABN",
-      "identifier": "49 109 078 257"
+      "identifier": "49 109 078 257",
+      "party_page": {
+        "id": "kelsian-group-limited",
+        "name": "Kelsian Group Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -81,14 +93,22 @@
         {
           "name": "JB KAKADU HOTEL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "86 692 273 591"
+          "identifier": "86 692 273 591",
+          "party_page": {
+            "id": "jb-kakadu-hotel-pty-ltd",
+            "name": "Jb Kakadu Hotel Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "KAKADU TOURISM (GCH) PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "50 087 366 612"
+          "identifier": "50 087 366 612",
+          "party_page": {
+            "id": "kakadu-tourism-gch-pty-limited",
+            "name": "Kakadu Tourism (Gch) Pty Limited"
+          }
         }
       ]
     },
@@ -105,6 +125,10 @@
           "canonical": {
             "id": "experience-co-limited",
             "name": "Experience Co Limited"
+          },
+          "party_page": {
+            "id": "experience-co-limited",
+            "name": "Experience Co Limited"
           }
         }
       ],
@@ -112,7 +136,11 @@
         {
           "name": "KELSIAN GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "49 109 078 257"
+          "identifier": "49 109 078 257",
+          "party_page": {
+            "id": "kelsian-group-limited",
+            "name": "Kelsian Group Limited"
+          }
         }
       ]
     },
@@ -125,20 +153,32 @@
         {
           "name": "INTREPID TRAVEL PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "35 007 172 456"
+          "identifier": "35 007 172 456",
+          "party_page": {
+            "id": "intrepid-travel-pty-ltd",
+            "name": "Intrepid Travel Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "WILD BUSH LUXURY EXPERIENCE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "47 648 431 734"
+          "identifier": "47 648 431 734",
+          "party_page": {
+            "id": "wild-bush-luxury-experience-pty-ltd",
+            "name": "Wild Bush Luxury Experience Pty Ltd"
+          }
         },
         {
           "name": "EXPERIENCE CO LIMITED",
           "identifier_type": "ABN",
           "identifier": "56 167 320 470",
           "canonical": {
+            "id": "experience-co-limited",
+            "name": "Experience Co Limited"
+          },
+          "party_page": {
             "id": "experience-co-limited",
             "name": "Experience Co Limited"
           }

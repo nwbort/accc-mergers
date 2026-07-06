@@ -1,0 +1,32 @@
+{
+  "id": "allied-credit-pty-ltd",
+  "canonical_name": "Allied Credit Pty Ltd",
+  "members": [
+    {
+      "name": "ALLIED CREDIT PTY LTD",
+      "identifier": "65 143 964 667",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "WA-35015",
+        "merger_name": "Allied Retail Finance \u2013 automotive retail finance assets of Macquarie Leasing",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-04-24T12:00:00Z",
+        "determination_date": "2026-05-11T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

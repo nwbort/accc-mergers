@@ -54,3 +54,19 @@ export function industryPath(code, name) {
   const slug = slugify(name);
   return slug ? `/industries/${encodedCode}/${slug}` : `/industries/${encodedCode}`;
 }
+
+/**
+ * Build the canonical path for a party detail page, including the readable
+ * slug when one can be derived from the party's canonical name. Falls back
+ * to the bare `/parties/{id}` form. Like the other slugs, this is purely
+ * decorative — party pages are always looked up by their `id`.
+ *
+ * @param {string} id - party group id (e.g. "coles")
+ * @param {string} [name] - canonical name used to derive the slug
+ * @returns {string}
+ */
+export function partyPath(id, name) {
+  const encodedId = encodeURIComponent(id);
+  const slug = slugify(name);
+  return slug ? `/parties/${encodedId}/${slug}` : `/parties/${encodedId}`;
+}

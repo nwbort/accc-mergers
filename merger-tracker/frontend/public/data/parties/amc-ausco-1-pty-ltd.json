@@ -1,0 +1,32 @@
+{
+  "id": "amc-ausco-1-pty-ltd",
+  "canonical_name": "Amc Ausco 1 Pty Ltd",
+  "members": [
+    {
+      "name": "AMC AUSCO 1 PTY LTD",
+      "identifier": "49 658 085 771",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-30011",
+        "merger_name": "AXDI - minority interest in La Trobe Financial",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-04-24T12:00:00Z",
+        "determination_date": "2026-05-19T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

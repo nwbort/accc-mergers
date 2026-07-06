@@ -16,34 +16,58 @@
     {
       "name": "Argo Bowen 2 Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "695 023 619"
+      "identifier": "695 023 619",
+      "party_page": {
+        "id": "argo-bowen-2-pty-ltd",
+        "name": "Argo Bowen 2 Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "48 149 524 809"
+      "identifier": "48 149 524 809",
+      "party_page": {
+        "id": "lenton-management-and-marketing-pty-ltd",
+        "name": "Lenton Management And Marketing Pty Ltd"
+      }
     },
     {
       "name": "COKING COAL ONE PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "89 615 317 907"
+      "identifier": "89 615 317 907",
+      "party_page": {
+        "id": "coking-coal-one-pty-ltd",
+        "name": "Coking Coal One Pty Ltd"
+      }
     },
     {
       "name": "BOWEN COKING COAL MARKETING PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "22 642 022 437"
+      "identifier": "22 642 022 437",
+      "party_page": {
+        "id": "bowen-coking-coal-marketing-pty-ltd",
+        "name": "Bowen Coking Coal Marketing Pty Ltd"
+      }
     },
     {
       "name": "BOWEN COKING COAL LIMITED",
       "identifier_type": "ABN",
-      "identifier": "72 064 874 620"
+      "identifier": "72 064 874 620",
+      "party_page": {
+        "id": "bowen-coking-coal-limited",
+        "name": "Bowen Coking Coal Limited"
+      }
     },
     {
       "name": "New Lenton Coal Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "48 095 390 079"
+      "identifier": "48 095 390 079",
+      "party_page": {
+        "id": "new-lenton-coal-pty-ltd",
+        "name": "New Lenton Coal Pty Ltd"
+      }
     }
   ],
   "other_parties": [
@@ -54,32 +78,56 @@
       "canonical": {
         "id": "argo-qld-pty-ltd",
         "name": "Argo QLD Pty Ltd"
+      },
+      "party_page": {
+        "id": "argo-qld-pty-ltd",
+        "name": "Argo QLD Pty Ltd"
       }
     },
     {
       "name": "Mercuria Argo Investments Pty Ltd",
       "identifier_type": null,
-      "identifier": "202505079"
+      "identifier": "202505079",
+      "party_page": {
+        "id": "mercuria-argo-investments-pty-ltd",
+        "name": "Mercuria Argo Investments Pty Ltd"
+      }
     },
     {
       "name": "ECLIPSE MINING 2 PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "99 690 880 892"
+      "identifier": "99 690 880 892",
+      "party_page": {
+        "id": "eclipse-mining-2-pty-ltd",
+        "name": "Eclipse Mining 2 Pty Ltd"
+      }
     },
     {
       "name": "Mercuria Energy Group Limited",
       "identifier_type": null,
-      "identifier": "202404088"
+      "identifier": "202404088",
+      "party_page": {
+        "id": "mercuria-energy-group-limited",
+        "name": "Mercuria Energy Group Limited"
+      }
     },
     {
       "name": "TALISMAN PARTNERS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "31 645 148 796"
+      "identifier": "31 645 148 796",
+      "party_page": {
+        "id": "talisman-partners-pty-ltd",
+        "name": "Talisman Partners Pty Ltd"
+      }
     },
     {
       "name": "Argo Bowen Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "695 021 124"
+      "identifier": "695 021 124",
+      "party_page": {
+        "id": "argo-bowen-pty-ltd",
+        "name": "Argo Bowen Pty Ltd"
+      }
     },
     {
       "name": "Argo Holdings QLD Pty Ltd",
@@ -88,12 +136,20 @@
       "canonical": {
         "id": "argo-qld-pty-ltd",
         "name": "Argo QLD Pty Ltd"
+      },
+      "party_page": {
+        "id": "argo-qld-pty-ltd",
+        "name": "Argo QLD Pty Ltd"
       }
     },
     {
       "name": "Mercuria Dry Bulk Finance Limited",
       "identifier_type": null,
-      "identifier": "202505067"
+      "identifier": "202505067",
+      "party_page": {
+        "id": "mercuria-dry-bulk-finance-limited",
+        "name": "Mercuria Dry Bulk Finance Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -176,14 +232,22 @@
         {
           "name": "ESTIA INVESTMENTS PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "87 164 350 387"
+          "identifier": "87 164 350 387",
+          "party_page": {
+            "id": "estia-investments-pty-ltd",
+            "name": "Estia Investments Pty. Ltd."
+          }
         }
       ],
       "targets": [
         {
           "name": "NORSAN PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "33 076 143 596"
+          "identifier": "33 076 143 596",
+          "party_page": {
+            "id": "norsan-pty-ltd",
+            "name": "Norsan Pty Ltd"
+          }
         }
       ]
     },
@@ -196,14 +260,22 @@
         {
           "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "57 167 960 018"
+          "identifier": "57 167 960 018",
+          "party_page": {
+            "id": "az-next-generation-advisory-pty-ltd",
+            "name": "Az Next Generation Advisory Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "BMM PARTNERS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 649 113 959"
+          "identifier": "82 649 113 959",
+          "party_page": {
+            "id": "bmm-partners-pty-ltd",
+            "name": "Bmm Partners Pty Ltd"
+          }
         }
       ]
     },
@@ -216,19 +288,31 @@
         {
           "name": "TRANSPORT ACCIDENT COMMISSION",
           "identifier_type": "ABN",
-          "identifier": "22 033 947 623"
+          "identifier": "22 033 947 623",
+          "party_page": {
+            "id": "transport-accident-commission",
+            "name": "Transport Accident Commission"
+          }
         },
         {
           "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
           "identifier_type": "ABN",
-          "identifier": "39 682 497 841"
+          "identifier": "39 682 497 841",
+          "party_page": {
+            "id": "victorian-managed-insurance-authority",
+            "name": "Victorian Managed Insurance Authority"
+          }
         }
       ],
       "targets": [
         {
           "name": "CORVAL PARTNERS LIMITED",
           "identifier_type": "ABN",
-          "identifier": "86 130 628 830"
+          "identifier": "86 130 628 830",
+          "party_page": {
+            "id": "corval-partners-limited",
+            "name": "Corval Partners Limited"
+          }
         }
       ]
     }

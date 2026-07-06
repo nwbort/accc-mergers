@@ -20,6 +20,10 @@
       "canonical": {
         "id": "eli-lilly-and-company",
         "name": "Eli Lilly and Company"
+      },
+      "party_page": {
+        "id": "eli-lilly-and-company",
+        "name": "Eli Lilly and Company"
       }
     }
   ],
@@ -27,7 +31,11 @@
     {
       "name": "CSL Behring LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "csl-behring-llc",
+        "name": "CSL Behring LLC"
+      }
     }
   ],
   "other_parties": [],
@@ -119,6 +127,10 @@
           "canonical": {
             "id": "eli-lilly-and-company",
             "name": "Eli Lilly and Company"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
           }
         }
       ],
@@ -126,7 +138,11 @@
         {
           "name": "Orna Therapeutics Holdings, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "orna-therapeutics-holdings-llc-2",
+            "name": "Orna Therapeutics Holdings, LLC"
+          }
         }
       ]
     },
@@ -143,6 +159,10 @@
           "canonical": {
             "id": "eli-lilly-and-company",
             "name": "Eli Lilly and Company"
+          },
+          "party_page": {
+            "id": "eli-lilly-and-company",
+            "name": "Eli Lilly and Company"
           }
         }
       ],
@@ -150,7 +170,11 @@
         {
           "name": "Orna Therapeutics Holdings, LLC",
           "identifier_type": null,
-          "identifier": "IRS Employer Identification Number  861182936"
+          "identifier": "IRS Employer Identification Number  861182936",
+          "party_page": {
+            "id": "orna-therapeutics-holdings-llc",
+            "name": "Orna Therapeutics Holdings, LLC"
+          }
         }
       ]
     },
@@ -163,14 +187,22 @@
         {
           "name": "Gilead Sciences, Inc.",
           "identifier_type": null,
-          "identifier": "EIN 943047598"
+          "identifier": "EIN 943047598",
+          "party_page": {
+            "id": "gilead-sciences-inc",
+            "name": "Gilead Sciences, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Arcellx, Inc.",
           "identifier_type": null,
-          "identifier": "EIN 472855917"
+          "identifier": "EIN 472855917",
+          "party_page": {
+            "id": "arcellx-inc",
+            "name": "Arcellx, Inc."
+          }
         }
       ]
     }

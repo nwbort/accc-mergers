@@ -1,0 +1,58 @@
+{
+  "id": "accenture-plc",
+  "canonical_name": "Accenture plc",
+  "members": [
+    {
+      "name": "ACCENTURE AUSTRALIA HOLDINGS PTY LTD",
+      "identifier": "61 096 995 649",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "Accenture Inc.",
+      "identifier": "State File Number  3387477",
+      "identifier_type": null
+    },
+    {
+      "name": "Accenture plc",
+      "identifier": "CRN  471706",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "MN-10013",
+        "merger_name": "Accenture - Ziff Davis' connectivity business",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-04-17T12:00:00Z",
+        "determination_date": "2026-05-14T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "MN-10013",
+        "merger_name": "Accenture - Ziff Davis' connectivity business",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-04-17T12:00:00Z",
+        "determination_date": "2026-05-14T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 27.0,
+    "median_days": 27,
+    "average_business_days": 18.0,
+    "median_business_days": 18,
+    "completed_count": 1
+  }
+}

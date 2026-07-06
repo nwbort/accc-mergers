@@ -14,21 +14,33 @@
     {
       "name": "CAVE BidCo Oy",
       "identifier_type": null,
-      "identifier": "Business Identity Code 35317614"
+      "identifier": "Business Identity Code 35317614",
+      "party_page": {
+        "id": "cave-bidco-oy",
+        "name": "CAVE BidCo Oy"
+      }
     }
   ],
   "targets": [
     {
       "name": "Evac Holding Oy",
       "identifier_type": null,
-      "identifier": "Business Identity Code 28586576"
+      "identifier": "Business Identity Code 28586576",
+      "party_page": {
+        "id": "evac-holding-oy",
+        "name": "Evac Holding Oy"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Altor Fund Manager AB",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "altor-fund-manager-ab",
+        "name": "Altor Fund Manager AB"
+      }
     }
   ],
   "anzsic_codes": [
@@ -97,14 +109,22 @@
         {
           "name": "TRESCAL (AUSTRALIA) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "39 117 603 835"
+          "identifier": "39 117 603 835",
+          "party_page": {
+            "id": "trescal-australia-pty-ltd",
+            "name": "Trescal (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TR PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 005 499 721"
+          "identifier": "99 005 499 721",
+          "party_page": {
+            "id": "tr-pty-ltd",
+            "name": "Tr Pty Ltd"
+          }
         }
       ]
     },
@@ -117,19 +137,31 @@
         {
           "name": "Eiffel Investment Group SAS",
           "identifier_type": null,
-          "identifier": "SIREN 510 813 991"
+          "identifier": "SIREN 510 813 991",
+          "party_page": {
+            "id": "eiffel-investment-group-sas",
+            "name": "Eiffel Investment Group SAS"
+          }
         },
         {
           "name": "Eurazeo SE",
           "identifier_type": null,
-          "identifier": "SIREN 692 030 992"
+          "identifier": "SIREN 692 030 992",
+          "party_page": {
+            "id": "eurazeo-se",
+            "name": "Eurazeo SE"
+          }
         }
       ],
       "targets": [
         {
           "name": "Segula Holding SAS",
           "identifier_type": null,
-          "identifier": "SIREN 343 166 393"
+          "identifier": "SIREN 343 166 393",
+          "party_page": {
+            "id": "segula-holding-sas",
+            "name": "Segula Holding SAS"
+          }
         }
       ]
     },
@@ -142,19 +174,31 @@
         {
           "name": "Arena BidCo Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 657 484"
+          "identifier": "693 657 484",
+          "party_page": {
+            "id": "arena-bidco-pty-ltd",
+            "name": "Arena BidCo Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "RFGI GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "55 630 028 974"
+          "identifier": "55 630 028 974",
+          "party_page": {
+            "id": "rfgi-group-pty-ltd",
+            "name": "Rfgi Group Pty Ltd"
+          }
         },
         {
           "name": "GAMEON HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "47 629 422 206"
+          "identifier": "47 629 422 206",
+          "party_page": {
+            "id": "gameon-holdings-pty-ltd",
+            "name": "Gameon Holdings Pty Ltd"
+          }
         }
       ]
     }

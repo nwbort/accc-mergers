@@ -13,34 +13,58 @@
     {
       "name": "Axton Holdings, LLC",
       "identifier_type": null,
-      "identifier": "CRN: 7039521"
+      "identifier": "CRN: 7039521",
+      "party_page": {
+        "id": "axton-holdings-llc",
+        "name": "Axton Holdings, LLC"
+      }
     },
     {
       "name": "Bertelsmann SE & Co. KGaA",
       "identifier_type": null,
-      "identifier": "HRB 9194"
+      "identifier": "HRB 9194",
+      "party_page": {
+        "id": "bertelsmann-se-co-kgaa",
+        "name": "Bertelsmann SE & Co. KGaA"
+      }
     }
   ],
   "targets": [
     {
       "name": "BMG LP [New MusicCo]",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "bmg-lp-new-musicco",
+        "name": "BMG LP [New MusicCo]"
+      }
     },
     {
       "name": "Alchemy Copyrights LLC",
       "identifier_type": null,
-      "identifier": "Company Number: 5614268"
+      "identifier": "Company Number: 5614268",
+      "party_page": {
+        "id": "alchemy-copyrights-llc",
+        "name": "Alchemy Copyrights LLC"
+      }
     },
     {
       "name": "Reinhard Mohn Nederland B.V. (formerly ROW HoldCo B.V.)",
       "identifier_type": null,
-      "identifier": "Company Number: 42027204"
+      "identifier": "Company Number: 42027204",
+      "party_page": {
+        "id": "reinhard-mohn-nederland-b-v-formerly-row-holdco-b-v",
+        "name": "Reinhard Mohn Nederland B.V. (formerly ROW HoldCo B.V.)"
+      }
     },
     {
       "name": "BMG Rights Management (US), LLC",
       "identifier_type": null,
-      "identifier": "4645458"
+      "identifier": "4645458",
+      "party_page": {
+        "id": "bmg-rights-management-us-llc",
+        "name": "BMG Rights Management (US), LLC"
+      }
     }
   ],
   "other_parties": [],
@@ -92,19 +116,31 @@
         {
           "name": "SMG-Three LLC",
           "identifier_type": null,
-          "identifier": "DDC  10277876"
+          "identifier": "DDC  10277876",
+          "party_page": {
+            "id": "smg-three-llc",
+            "name": "SMG-Three LLC"
+          }
         },
         {
           "name": "Sony Music Publishing (US) LLC",
           "identifier_type": null,
-          "identifier": "DDC  2558200"
+          "identifier": "DDC  2558200",
+          "party_page": {
+            "id": "sony-music-publishing-us-llc",
+            "name": "Sony Music Publishing (US) LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Recognition Music Group (Delaware) L.P.",
           "identifier_type": null,
-          "identifier": "DDC  6193972"
+          "identifier": "DDC  6193972",
+          "party_page": {
+            "id": "recognition-music-group-delaware-l-p",
+            "name": "Recognition Music Group (Delaware) L.P."
+          }
         }
       ]
     },
@@ -117,7 +153,11 @@
         {
           "name": "Smile Partners (NSW3) Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 902 955"
+          "identifier": "695 902 955",
+          "party_page": {
+            "id": "smile-partners-nsw3-pty-ltd",
+            "name": "Smile Partners (NSW3) Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -126,6 +166,10 @@
           "identifier_type": "ACN",
           "identifier": "108 757 357",
           "canonical": {
+            "id": "shrika-pty-ltd",
+            "name": "Shrika Pty Ltd"
+          },
+          "party_page": {
             "id": "shrika-pty-ltd",
             "name": "Shrika Pty Ltd"
           }
@@ -141,24 +185,40 @@
         {
           "name": "MA MARINA FUND HOLDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 667 241 385"
+          "identifier": "96 667 241 385",
+          "party_page": {
+            "id": "ma-marina-fund-holdco-pty-ltd",
+            "name": "Ma Marina Fund Holdco Pty Ltd"
+          }
         },
         {
           "name": "MA MARINA FUND TT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "65 666 902 245"
+          "identifier": "65 666 902 245",
+          "party_page": {
+            "id": "ma-marina-fund-tt-pty-ltd",
+            "name": "Ma Marina Fund Tt Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "GGC Marketing Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "32 105 294 228"
+          "identifier": "32 105 294 228",
+          "party_page": {
+            "id": "ggc-marketing-pty-ltd",
+            "name": "GGC Marketing Pty Ltd"
+          }
         },
         {
           "name": "QUEENSLAND & PACIFIC PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "72 081 370 685"
+          "identifier": "72 081 370 685",
+          "party_page": {
+            "id": "queensland-pacific-pty-ltd",
+            "name": "Queensland & Pacific Pty. Ltd."
+          }
         }
       ]
     }

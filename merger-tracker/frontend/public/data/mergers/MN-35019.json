@@ -16,51 +16,87 @@
     {
       "name": "PRECISION POULTRY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "63 695 837 579"
+      "identifier": "63 695 837 579",
+      "party_page": {
+        "id": "precision-poultry-pty-ltd",
+        "name": "Precision Poultry Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "VOAG 6 PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "75 606 446 735"
+      "identifier": "75 606 446 735",
+      "party_page": {
+        "id": "voag-6-pty-ltd",
+        "name": "Voag 6 Pty Ltd"
+      }
     },
     {
       "name": "VOAG PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "84 606 381 597"
+      "identifier": "84 606 381 597",
+      "party_page": {
+        "id": "voag-pty-ltd",
+        "name": "Voag Pty Ltd"
+      }
     },
     {
       "name": "VOAG 2 PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "33 606 445 747"
+      "identifier": "33 606 445 747",
+      "party_page": {
+        "id": "voag-2-pty-ltd",
+        "name": "Voag 2 Pty Ltd"
+      }
     },
     {
       "name": "VOAG 1 PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "12 606 445 658"
+      "identifier": "12 606 445 658",
+      "party_page": {
+        "id": "voag-1-pty-ltd",
+        "name": "Voag 1 Pty Ltd"
+      }
     },
     {
       "name": "VOAG 4 Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "606 447 572"
+      "identifier": "606 447 572",
+      "party_page": {
+        "id": "voag-4-pty-ltd",
+        "name": "VOAG 4 Pty Ltd"
+      }
     },
     {
       "name": "VOAG 5 Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "606 446 039"
+      "identifier": "606 446 039",
+      "party_page": {
+        "id": "voag-5-pty-ltd",
+        "name": "VOAG 5 Pty Ltd"
+      }
     },
     {
       "name": "VOAG 3 PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "48 606 445 809"
+      "identifier": "48 606 445 809",
+      "party_page": {
+        "id": "voag-3-pty-ltd",
+        "name": "Voag 3 Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "PRECISION POULTRY HOLDCO PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "42 695 837 426"
+      "identifier": "42 695 837 426",
+      "party_page": {
+        "id": "precision-poultry-holdco-pty-ltd",
+        "name": "Precision Poultry Holdco Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -143,14 +179,22 @@
         {
           "name": "IBWM PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "28 621 141 026"
+          "identifier": "28 621 141 026",
+          "party_page": {
+            "id": "ibwm-pty-ltd",
+            "name": "Ibwm Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "VIOLA GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 680 038 180"
+          "identifier": "20 680 038 180",
+          "party_page": {
+            "id": "viola-group-holdings-pty-ltd",
+            "name": "Viola Group Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -167,24 +211,40 @@
           "canonical": {
             "id": "mastercard-incorporated",
             "name": "Mastercard Incorporated"
+          },
+          "party_page": {
+            "id": "mastercard-incorporated",
+            "name": "Mastercard Incorporated"
           }
         },
         {
           "name": "Ares UK Holdco 2 Limited",
           "identifier_type": null,
-          "identifier": "CRN 17107097"
+          "identifier": "CRN 17107097",
+          "party_page": {
+            "id": "ares-uk-holdco-2-limited",
+            "name": "Ares UK Holdco 2 Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "B Corporation S.A.M",
           "identifier_type": null,
-          "identifier": "23S09602"
+          "identifier": "23S09602",
+          "party_page": {
+            "id": "b-corporation-s-a-m",
+            "name": "B Corporation S.A.M"
+          }
         },
         {
           "name": "BVNK Holdings Limited",
           "identifier_type": null,
-          "identifier": "13922014"
+          "identifier": "13922014",
+          "party_page": {
+            "id": "bvnk-holdings-limited",
+            "name": "BVNK Holdings Limited"
+          }
         }
       ]
     },
@@ -197,19 +257,31 @@
         {
           "name": "Volt Managed Investment Trust 2",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "volt-managed-investment-trust-2",
+            "name": "Volt Managed Investment Trust 2"
+          }
         },
         {
           "name": "Volt Managed Investment Trust 1",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "volt-managed-investment-trust-1",
+            "name": "Volt Managed Investment Trust 1"
+          }
         }
       ],
       "targets": [
         {
           "name": "VOLT HOLDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "54 694 754 062"
+          "identifier": "54 694 754 062",
+          "party_page": {
+            "id": "volt-holdco-pty-ltd",
+            "name": "Volt Holdco Pty Ltd"
+          }
         }
       ]
     }

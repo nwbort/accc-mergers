@@ -14,26 +14,42 @@
     {
       "name": "Hexagon Manufacturing Intelligence LLC",
       "identifier_type": null,
-      "identifier": "3377346"
+      "identifier": "3377346",
+      "party_page": {
+        "id": "hexagon-manufacturing-intelligence-llc",
+        "name": "Hexagon Manufacturing Intelligence LLC"
+      }
     }
   ],
   "targets": [
     {
       "name": "BAKER HUGHES DIGITAL SOLUTIONS AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "97 082 286 913"
+      "identifier": "97 082 286 913",
+      "party_page": {
+        "id": "baker-hughes-digital-solutions-australia-pty-ltd",
+        "name": "Baker Hughes Digital Solutions Australia Pty Ltd"
+      }
     },
     {
       "name": "Baker Hughes Holdings LLC",
       "identifier_type": null,
-      "identifier": "EIN 760207995"
+      "identifier": "EIN 760207995",
+      "party_page": {
+        "id": "baker-hughes-holdings-llc",
+        "name": "Baker Hughes Holdings LLC"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Hexagon AB",
       "identifier_type": null,
-      "identifier": "Swedish Company Registration Number 5561904771"
+      "identifier": "Swedish Company Registration Number 5561904771",
+      "party_page": {
+        "id": "hexagon-ab",
+        "name": "Hexagon AB"
+      }
     }
   ],
   "anzsic_codes": [
@@ -110,14 +126,22 @@
         {
           "name": "Fire Safety Platform Holding, LP",
           "identifier_type": null,
-          "identifier": "State of Delaware, Division of Corporations  10541621"
+          "identifier": "State of Delaware, Division of Corporations  10541621",
+          "party_page": {
+            "id": "fire-safety-platform-holding-lp",
+            "name": "Fire Safety Platform Holding, LP"
+          }
         }
       ],
       "targets": [
         {
           "name": "Madison Safety & Flow Holdings LLC",
           "identifier_type": null,
-          "identifier": "State of Delaware, Division of Corporations  7811257"
+          "identifier": "State of Delaware, Division of Corporations  7811257",
+          "party_page": {
+            "id": "madison-safety-flow-holdings-llc",
+            "name": "Madison Safety & Flow Holdings LLC"
+          }
         }
       ]
     },
@@ -130,14 +154,22 @@
         {
           "name": "ALDUS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "38 085 318 494"
+          "identifier": "38 085 318 494",
+          "party_page": {
+            "id": "aldus-pty-ltd",
+            "name": "Aldus Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "HILTON MANUFACTURING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "89 005 551 057"
+          "identifier": "89 005 551 057",
+          "party_page": {
+            "id": "hilton-manufacturing-pty-ltd",
+            "name": "Hilton Manufacturing Pty Ltd"
+          }
         }
       ]
     },
@@ -150,19 +182,31 @@
         {
           "name": "Catalyst Blocker Merger Sub I, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "catalyst-blocker-merger-sub-i-llc",
+            "name": "Catalyst Blocker Merger Sub I, LLC"
+          }
         },
         {
           "name": "Catalyst Blocker Merger Sub II, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "catalyst-blocker-merger-sub-ii-llc",
+            "name": "Catalyst Blocker Merger Sub II, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "CSHC Buyerco, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "cshc-buyerco-llc",
+            "name": "CSHC Buyerco, LLC"
+          }
         }
       ]
     }

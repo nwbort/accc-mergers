@@ -14,31 +14,51 @@
     {
       "name": "B.M.D. HOLDINGS PTY. LIMITED",
       "identifier_type": "ABN",
-      "identifier": "47 010 093 348"
+      "identifier": "47 010 093 348",
+      "party_page": {
+        "id": "b-m-d-holdings-pty-limited",
+        "name": "B.M.D. Holdings Pty. Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "BAJARA PLANT HIRE PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "90 654 044 390"
+      "identifier": "90 654 044 390",
+      "party_page": {
+        "id": "bajara-plant-hire-pty-ltd",
+        "name": "Bajara Plant Hire Pty Ltd"
+      }
     },
     {
       "name": "Stirling Earthworks Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "28 150 410 389"
+      "identifier": "28 150 410 389",
+      "party_page": {
+        "id": "stirling-earthworks-pty-ltd",
+        "name": "Stirling Earthworks Pty Ltd"
+      }
     },
     {
       "name": "STIRLING CONTRACTING PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "73 697 852 403"
+      "identifier": "73 697 852 403",
+      "party_page": {
+        "id": "stirling-contracting-pty-ltd",
+        "name": "Stirling Contracting Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "B.M.D. CONSTRUCTIONS PTY. LIMITED",
       "identifier_type": "ABN",
-      "identifier": "59 010 126 100"
+      "identifier": "59 010 126 100",
+      "party_page": {
+        "id": "b-m-d-constructions-pty-limited",
+        "name": "B.M.D. Constructions Pty. Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -135,19 +155,31 @@
         {
           "name": "NACG WA Acquisition Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 678 296"
+          "identifier": "693 678 296",
+          "party_page": {
+            "id": "nacg-wa-acquisition-pty-ltd",
+            "name": "NACG WA Acquisition Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "DCL CORP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 633 008 992"
+          "identifier": "60 633 008 992",
+          "party_page": {
+            "id": "dcl-corp-pty-ltd",
+            "name": "Dcl Corp Pty Ltd"
+          }
         },
         {
           "name": "IRON HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 641 807 589"
+          "identifier": "43 641 807 589",
+          "party_page": {
+            "id": "iron-hire-pty-ltd",
+            "name": "Iron Hire Pty Ltd"
+          }
         }
       ]
     },
@@ -160,24 +192,40 @@
         {
           "name": "SYMAL MANAGEMENT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "85 602 084 471"
+          "identifier": "85 602 084 471",
+          "party_page": {
+            "id": "symal-management-pty-ltd",
+            "name": "Symal Management Pty Ltd"
+          }
         },
         {
           "name": "SYL TM CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 693 144 697"
+          "identifier": "68 693 144 697",
+          "party_page": {
+            "id": "syl-tm-contracting-pty-ltd",
+            "name": "Syl Tm Contracting Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TIMMS HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "73 115 389 949"
+          "identifier": "73 115 389 949",
+          "party_page": {
+            "id": "timms-hire-pty-ltd",
+            "name": "Timms Hire Pty Ltd"
+          }
         },
         {
           "name": "TIMMS CONTRACTING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "30 070 456 567"
+          "identifier": "30 070 456 567",
+          "party_page": {
+            "id": "timms-contracting-pty-ltd",
+            "name": "Timms Contracting Pty Ltd"
+          }
         }
       ]
     },
@@ -190,19 +238,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     }

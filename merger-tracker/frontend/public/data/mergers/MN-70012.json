@@ -16,46 +16,78 @@
     {
       "name": "Quanta Services Australia Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "11 164 311 997"
+      "identifier": "11 164 311 997",
+      "party_page": {
+        "id": "quanta-services-australia-pty-ltd",
+        "name": "Quanta Services Australia Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "PSD Global Holdings Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "634 380 813"
+      "identifier": "634 380 813",
+      "party_page": {
+        "id": "psd-global-holdings-pty-ltd",
+        "name": "PSD Global Holdings Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Axcentium Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "48 638 953 572"
+      "identifier": "48 638 953 572",
+      "party_page": {
+        "id": "axcentium-pty-ltd",
+        "name": "Axcentium Pty Ltd"
+      }
     },
     {
       "name": "Consolidated Power Projects Australia Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "18 075 411 219"
+      "identifier": "18 075 411 219",
+      "party_page": {
+        "id": "consolidated-power-projects-australia-pty-ltd",
+        "name": "Consolidated Power Projects Australia Pty Ltd"
+      }
     },
     {
       "name": "PSD Plant & Equipment Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "97 144 778 861"
+      "identifier": "97 144 778 861",
+      "party_page": {
+        "id": "psd-plant-equipment-pty-ltd",
+        "name": "PSD Plant & Equipment Pty Ltd"
+      }
     },
     {
       "name": "Nacap Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "33 006 306 994"
+      "identifier": "33 006 306 994",
+      "party_page": {
+        "id": "nacap-pty-ltd",
+        "name": "Nacap Pty Ltd"
+      }
     },
     {
       "name": "Intellect Systems Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "11 115 885 348"
+      "identifier": "11 115 885 348",
+      "party_page": {
+        "id": "intellect-systems-pty-ltd",
+        "name": "Intellect Systems Pty Ltd"
+      }
     },
     {
       "name": "PSD Energy Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "68 117 966 926"
+      "identifier": "68 117 966 926",
+      "party_page": {
+        "id": "psd-energy-pty-ltd",
+        "name": "PSD Energy Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -150,6 +182,10 @@
           "canonical": {
             "id": "wsp-australia-pty-limited",
             "name": "Wsp Australia Pty Limited"
+          },
+          "party_page": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
           }
         }
       ],
@@ -157,7 +193,11 @@
         {
           "name": "TRC Companies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "trc-companies-inc",
+            "name": "TRC Companies, Inc."
+          }
         }
       ]
     },
@@ -170,19 +210,31 @@
         {
           "name": "SYMAL GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "72 615 255 466"
+          "identifier": "72 615 255 466",
+          "party_page": {
+            "id": "symal-group-limited",
+            "name": "Symal Group Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "J. DAVISON NOMINEES PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "70 007 998 969"
+          "identifier": "70 007 998 969",
+          "party_page": {
+            "id": "j-davison-nominees-pty-ltd",
+            "name": "J. Davison Nominees Pty. Ltd."
+          }
         },
         {
           "name": "DAVISON CONTRACTORS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "68 675 773 896"
+          "identifier": "68 675 773 896",
+          "party_page": {
+            "id": "davison-contractors-pty-ltd",
+            "name": "Davison Contractors Pty Ltd"
+          }
         }
       ]
     },
@@ -195,19 +247,31 @@
         {
           "name": "CSE CROSSCOM PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 606 614 500"
+          "identifier": "25 606 614 500",
+          "party_page": {
+            "id": "cse-crosscom-pty-ltd",
+            "name": "Cse Crosscom Pty Ltd"
+          }
         },
         {
           "name": "CSE-Global (Australia) Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "85 109 958 090"
+          "identifier": "85 109 958 090",
+          "party_page": {
+            "id": "cse-global-australia-pty-ltd",
+            "name": "Cse-Global (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "PROGILITY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 131 639 837"
+          "identifier": "11 131 639 837",
+          "party_page": {
+            "id": "progility-pty-ltd",
+            "name": "Progility Pty Ltd"
+          }
         }
       ]
     }

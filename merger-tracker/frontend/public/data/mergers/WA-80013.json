@@ -14,14 +14,22 @@
     {
       "name": "SYDNEY WATER CORPORATION",
       "identifier_type": "ABN",
-      "identifier": "49 776 225 038"
+      "identifier": "49 776 225 038",
+      "party_page": {
+        "id": "sydney-water-corporation",
+        "name": "Sydney Water Corporation"
+      }
     }
   ],
   "targets": [
     {
       "name": "HAWKESBURY CITY COUNCIL",
       "identifier_type": "ABN",
-      "identifier": "54 659 038 834"
+      "identifier": "54 659 038 834",
+      "party_page": {
+        "id": "hawkesbury-city-council",
+        "name": "Hawkesbury City Council"
+      }
     }
   ],
   "other_parties": [],
@@ -91,24 +99,40 @@
         {
           "name": "CRH Americas Products, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware file number  3253282"
+          "identifier": "Delaware file number  3253282",
+          "party_page": {
+            "id": "crh-americas-products-inc",
+            "name": "CRH Americas Products, Inc."
+          }
         },
         {
           "name": "OLDCASTLE INFRASTRUCTURE, INC.",
           "identifier_type": null,
-          "identifier": "Washington UBI  171 004 504"
+          "identifier": "Washington UBI  171 004 504",
+          "party_page": {
+            "id": "oldcastle-infrastructure-inc",
+            "name": "Oldcastle Infrastructure, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "NEXUS WATER HOLDINGS GP LLC",
           "identifier_type": null,
-          "identifier": "7688735"
+          "identifier": "7688735",
+          "party_page": {
+            "id": "nexus-water-holdings-gp-llc",
+            "name": "Nexus Water Holdings Gp Llc"
+          }
         },
         {
           "name": "NEXUS WATER HOLDINGS LP",
           "identifier_type": null,
-          "identifier": "7694945"
+          "identifier": "7694945",
+          "party_page": {
+            "id": "nexus-water-holdings-lp",
+            "name": "Nexus Water Holdings Lp"
+          }
         }
       ]
     },
@@ -121,24 +145,40 @@
         {
           "name": "Cielo TopCo Limited",
           "identifier_type": null,
-          "identifier": "CRN  16320933"
+          "identifier": "CRN  16320933",
+          "party_page": {
+            "id": "cielo-topco-limited",
+            "name": "Cielo TopCo Limited"
+          }
         },
         {
           "name": "Kee Safety (Australia) Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "694 369 116"
+          "identifier": "694 369 116",
+          "party_page": {
+            "id": "kee-safety-australia-pty-ltd",
+            "name": "Kee Safety (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "HALLWELD BENNETT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "15 161 086 595"
+          "identifier": "15 161 086 595",
+          "party_page": {
+            "id": "hallweld-bennett-pty-ltd",
+            "name": "Hallweld Bennett Pty Ltd"
+          }
         },
         {
           "name": "RIS SAFETY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "19 668 836 351"
+          "identifier": "19 668 836 351",
+          "party_page": {
+            "id": "ris-safety-holdings-pty-ltd",
+            "name": "Ris Safety Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -151,14 +191,22 @@
         {
           "name": "Danaher Corporation",
           "identifier_type": null,
-          "identifier": "213594"
+          "identifier": "213594",
+          "party_page": {
+            "id": "danaher-corporation",
+            "name": "Danaher Corporation"
+          }
         }
       ],
       "targets": [
         {
           "name": "Masimo Corporation",
           "identifier_type": null,
-          "identifier": "2614702"
+          "identifier": "2614702",
+          "party_page": {
+            "id": "masimo-corporation",
+            "name": "Masimo Corporation"
+          }
         }
       ]
     }

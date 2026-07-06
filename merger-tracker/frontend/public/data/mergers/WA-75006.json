@@ -14,41 +14,69 @@
     {
       "name": "Saturn NewCo, Inc",
       "identifier_type": null,
-      "identifier": "DE File number: 10449592"
+      "identifier": "DE File number: 10449592",
+      "party_page": {
+        "id": "saturn-newco-inc",
+        "name": "Saturn NewCo, Inc"
+      }
     },
     {
       "name": "ClassPass Aggregator, LLC",
       "identifier_type": null,
-      "identifier": "DE File number: 6177870"
+      "identifier": "DE File number: 6177870",
+      "party_page": {
+        "id": "classpass-aggregator-llc",
+        "name": "ClassPass Aggregator, LLC"
+      }
     },
     {
       "name": "MindBody, Inc.(US)",
       "identifier_type": null,
-      "identifier": "CIN: 1458962"
+      "identifier": "CIN: 1458962",
+      "party_page": {
+        "id": "mindbody-inc-us",
+        "name": "MindBody, Inc.(US)"
+      }
     },
     {
       "name": "Saturn Merger Sub, Inc.",
       "identifier_type": null,
-      "identifier": "DE File number: 10449597"
+      "identifier": "DE File number: 10449597",
+      "party_page": {
+        "id": "saturn-merger-sub-inc",
+        "name": "Saturn Merger Sub, Inc."
+      }
     },
     {
       "name": "Vista Equity Partners Management, LLC",
       "identifier_type": null,
-      "identifier": "DE File number: 4326765"
+      "identifier": "DE File number: 4326765",
+      "party_page": {
+        "id": "vista-equity-partners-management-llc",
+        "name": "Vista Equity Partners Management, LLC"
+      }
     }
   ],
   "targets": [
     {
       "name": "EGYM SE",
       "identifier_type": null,
-      "identifier": "HRB: 186394"
+      "identifier": "HRB: 186394",
+      "party_page": {
+        "id": "egym-se",
+        "name": "Egym Se"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Fitness Technologies Group LLC",
       "identifier_type": null,
-      "identifier": "DE File number: 6170825"
+      "identifier": "DE File number: 6170825",
+      "party_page": {
+        "id": "fitness-technologies-group-llc",
+        "name": "Fitness Technologies Group LLC"
+      }
     },
     {
       "name": "CLASSPASS AUSTRALIA PTY LTD",
@@ -57,12 +85,20 @@
       "canonical": {
         "id": "classpass-llc",
         "name": "ClassPass LLC"
+      },
+      "party_page": {
+        "id": "classpass-llc",
+        "name": "ClassPass LLC"
       }
     },
     {
       "name": "EGYM AUSTRALIA PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "92 637 650 447"
+      "identifier": "92 637 650 447",
+      "party_page": {
+        "id": "egym-australia-pty-limited",
+        "name": "Egym Australia Pty Limited"
+      }
     },
     {
       "name": "ClassPass LLC",
@@ -71,22 +107,38 @@
       "canonical": {
         "id": "classpass-llc",
         "name": "ClassPass LLC"
+      },
+      "party_page": {
+        "id": "classpass-llc",
+        "name": "ClassPass LLC"
       }
     },
     {
       "name": "INDIGO FINANCE PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "16 158 644 850"
+      "identifier": "16 158 644 850",
+      "party_page": {
+        "id": "indigo-finance-pty-ltd",
+        "name": "Indigo Finance Pty Ltd"
+      }
     },
     {
       "name": "MINDBODY AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "95 161 549 006"
+      "identifier": "95 161 549 006",
+      "party_page": {
+        "id": "mindbody-australia-pty-ltd",
+        "name": "Mindbody Australia Pty Ltd"
+      }
     },
     {
       "name": "VEPF Torreys Aggregator, LLC",
       "identifier_type": null,
-      "identifier": "DE File number: 7267040"
+      "identifier": "DE File number: 7267040",
+      "party_page": {
+        "id": "vepf-torreys-aggregator-llc",
+        "name": "VEPF Torreys Aggregator, LLC"
+      }
     }
   ],
   "anzsic_codes": [
@@ -159,14 +211,22 @@
         {
           "name": "Delinea Inc.",
           "identifier_type": null,
-          "identifier": "Delaware corporation file number  3777797"
+          "identifier": "Delaware corporation file number  3777797",
+          "party_page": {
+            "id": "delinea-inc",
+            "name": "Delinea Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "StrongDM, Inc",
           "identifier_type": null,
-          "identifier": "CIK  0001637806"
+          "identifier": "CIK  0001637806",
+          "party_page": {
+            "id": "strongdm-inc",
+            "name": "StrongDM, Inc"
+          }
         }
       ]
     },
@@ -183,6 +243,10 @@
           "canonical": {
             "id": "servicenow-inc",
             "name": "ServiceNow, Inc."
+          },
+          "party_page": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
           }
         }
       ],
@@ -190,7 +254,11 @@
         {
           "name": "Veza Technologies, Inc.",
           "identifier_type": null,
-          "identifier": "7791387"
+          "identifier": "7791387",
+          "party_page": {
+            "id": "veza-technologies-inc",
+            "name": "Veza Technologies, Inc."
+          }
         }
       ]
     },
@@ -203,19 +271,31 @@
         {
           "name": "Fjord Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "TIN/EIN  921660460"
+          "identifier": "TIN/EIN  921660460",
+          "party_page": {
+            "id": "fjord-merger-sub-inc",
+            "name": "Fjord Merger Sub, Inc."
+          }
         },
         {
           "name": "IFS North America, Inc.",
           "identifier_type": null,
-          "identifier": "TIN/EIN  391292200"
+          "identifier": "TIN/EIN  391292200",
+          "party_page": {
+            "id": "ifs-north-america-inc",
+            "name": "IFS North America, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Softeon Inc.",
           "identifier_type": null,
-          "identifier": "EIN 541960847"
+          "identifier": "EIN 541960847",
+          "party_page": {
+            "id": "softeon-inc",
+            "name": "Softeon Inc."
+          }
         }
       ]
     }

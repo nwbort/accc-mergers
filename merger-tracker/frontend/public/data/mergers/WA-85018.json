@@ -14,32 +14,52 @@
     {
       "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "50 111 782 846"
+      "identifier": "50 111 782 846",
+      "party_page": {
+        "id": "discovery-holiday-parks-pty-limited",
+        "name": "Discovery Holiday Parks Pty Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "Eco Camp Pty Ltd as trustee for the MCB Trust",
       "identifier_type": "ACN",
-      "identifier": "615 432 016"
+      "identifier": "615 432 016",
+      "party_page": {
+        "id": "eco-camp-pty-ltd-as-trustee-for-the-mcb-trust",
+        "name": "Eco Camp Pty Ltd as trustee for the MCB Trust"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Discovery Parks Holdings Pty Limited",
       "identifier_type": "ABN",
-      "identifier": "61 127 847 269"
+      "identifier": "61 127 847 269",
+      "party_page": {
+        "id": "discovery-parks-holdings-pty-limited",
+        "name": "Discovery Parks Holdings Pty Limited"
+      }
     },
     {
       "name": "Discovery Parks Investments Pty Limited",
       "identifier_type": "ABN",
-      "identifier": "84 127 847 303"
+      "identifier": "84 127 847 303",
+      "party_page": {
+        "id": "discovery-parks-investments-pty-limited",
+        "name": "Discovery Parks Investments Pty Limited"
+      }
     },
     {
       "name": "THE TRUSTEE FOR AUSTRALIAN RETIREMENT TRUST",
       "identifier_type": "ABN",
       "identifier": "60 905 115 063",
       "canonical": {
+        "id": "the-trustee-for-australian-retirement-trust",
+        "name": "The Trustee For Australian Retirement Trust"
+      },
+      "party_page": {
         "id": "the-trustee-for-australian-retirement-trust",
         "name": "The Trustee For Australian Retirement Trust"
       }
@@ -119,19 +139,31 @@
         {
           "name": "QIC TT COMPANY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "27 694 380 973"
+          "identifier": "27 694 380 973",
+          "party_page": {
+            "id": "qic-tt-company-pty-ltd",
+            "name": "Qic Tt Company Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "SCENTRE GROUP TRUST 3",
           "identifier_type": "ABN",
-          "identifier": "11 517 229 138"
+          "identifier": "11 517 229 138",
+          "party_page": {
+            "id": "scentre-group-trust-3",
+            "name": "Scentre Group Trust 3"
+          }
         },
         {
           "name": "SCENTRE ALLIANCES PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "53 098 357 521"
+          "identifier": "53 098 357 521",
+          "party_page": {
+            "id": "scentre-alliances-pty-limited",
+            "name": "Scentre Alliances Pty Limited"
+          }
         }
       ]
     },
@@ -144,19 +176,31 @@
         {
           "name": "LGPE SEC S.C. Sp",
           "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B281514"
+          "identifier": "Luxembourg Company Registration Number: B281514",
+          "party_page": {
+            "id": "lgpe-sec-s-c-sp",
+            "name": "LGPE SEC S.C. Sp"
+          }
         },
         {
           "name": "Crown Growth Opportunities IV SCSp-RAIF",
           "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B254394"
+          "identifier": "Luxembourg Company Registration Number: B254394",
+          "party_page": {
+            "id": "crown-growth-opportunities-iv-scsp-raif",
+            "name": "Crown Growth Opportunities IV SCSp-RAIF"
+          }
         }
       ],
       "targets": [
         {
           "name": "ADVANCED NAVIGATION PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "49 156 101 549"
+          "identifier": "49 156 101 549",
+          "party_page": {
+            "id": "advanced-navigation-pty-ltd",
+            "name": "Advanced Navigation Pty. Ltd."
+          }
         }
       ]
     },
@@ -169,19 +213,31 @@
         {
           "name": "AVC Operations Pty Limited",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
           "identifier_type": "ABN",
-          "identifier": "70 075 074 930"
+          "identifier": "70 075 074 930",
+          "party_page": {
+            "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
+            "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
+          }
         },
         {
           "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
           "identifier_type": "ACN",
-          "identifier": "604 221 801"
+          "identifier": "604 221 801",
+          "party_page": {
+            "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
+            "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+          }
         }
       ]
     }

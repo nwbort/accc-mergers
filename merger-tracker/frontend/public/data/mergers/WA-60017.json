@@ -14,46 +14,78 @@
     {
       "name": "REDCAPE HOTEL GROUP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "43 139 067 244"
+      "identifier": "43 139 067 244",
+      "party_page": {
+        "id": "redcape-hotel-group-pty-ltd",
+        "name": "Redcape Hotel Group Pty Ltd"
+      }
     },
     {
       "name": "MAHF CUSTODIAN PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "96 619 512 060"
+      "identifier": "96 619 512 060",
+      "party_page": {
+        "id": "mahf-custodian-pty-ltd",
+        "name": "Mahf Custodian Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "REDBRAN PTY. LIMITED",
       "identifier_type": "ABN",
-      "identifier": "34 003 920 232"
+      "identifier": "34 003 920 232",
+      "party_page": {
+        "id": "redbran-pty-limited",
+        "name": "Redbran Pty. Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "MA REDCAPE HOTEL FUND RE LIMITED",
       "identifier_type": "ABN",
-      "identifier": "87 610 990 004"
+      "identifier": "87 610 990 004",
+      "party_page": {
+        "id": "ma-redcape-hotel-fund-re-limited",
+        "name": "Ma Redcape Hotel Fund Re Limited"
+      }
     },
     {
       "name": "MA FINANCIAL GROUP LIMITED",
       "identifier_type": "ABN",
-      "identifier": "68 142 008 428"
+      "identifier": "68 142 008 428",
+      "party_page": {
+        "id": "ma-financial-group-limited",
+        "name": "Ma Financial Group Limited"
+      }
     },
     {
       "name": "The Trustee for The Entrance Trust",
       "identifier_type": "ABN",
-      "identifier": "60 327 956 502"
+      "identifier": "60 327 956 502",
+      "party_page": {
+        "id": "the-trustee-for-the-entrance-trust",
+        "name": "The Trustee for The Entrance Trust"
+      }
     },
     {
       "name": "REDCAPE HOSPITALITY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "34 619 297 228"
+      "identifier": "34 619 297 228",
+      "party_page": {
+        "id": "redcape-hospitality-pty-ltd",
+        "name": "Redcape Hospitality Pty Ltd"
+      }
     },
     {
       "name": "RGM TT PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "99 619 024 949"
+      "identifier": "99 619 024 949",
+      "party_page": {
+        "id": "rgm-tt-pty-ltd",
+        "name": "Rgm Tt Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -134,24 +166,40 @@
         {
           "name": "MA MARINA FUND HOLDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 667 241 385"
+          "identifier": "96 667 241 385",
+          "party_page": {
+            "id": "ma-marina-fund-holdco-pty-ltd",
+            "name": "Ma Marina Fund Holdco Pty Ltd"
+          }
         },
         {
           "name": "MA MARINA FUND TT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "65 666 902 245"
+          "identifier": "65 666 902 245",
+          "party_page": {
+            "id": "ma-marina-fund-tt-pty-ltd",
+            "name": "Ma Marina Fund Tt Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "GGC Marketing Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "32 105 294 228"
+          "identifier": "32 105 294 228",
+          "party_page": {
+            "id": "ggc-marketing-pty-ltd",
+            "name": "GGC Marketing Pty Ltd"
+          }
         },
         {
           "name": "QUEENSLAND & PACIFIC PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "72 081 370 685"
+          "identifier": "72 081 370 685",
+          "party_page": {
+            "id": "queensland-pacific-pty-ltd",
+            "name": "Queensland & Pacific Pty. Ltd."
+          }
         }
       ]
     },
@@ -164,24 +212,40 @@
         {
           "name": "REDCAPE HOTEL GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 139 067 244"
+          "identifier": "43 139 067 244",
+          "party_page": {
+            "id": "redcape-hotel-group-pty-ltd",
+            "name": "Redcape Hotel Group Pty Ltd"
+          }
         },
         {
           "name": "MAHPT TT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "31 619 297 657"
+          "identifier": "31 619 297 657",
+          "party_page": {
+            "id": "mahpt-tt-pty-ltd",
+            "name": "Mahpt Tt Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "BRUNSWICK HOTEL OPCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 656 116 853"
+          "identifier": "99 656 116 853",
+          "party_page": {
+            "id": "brunswick-hotel-opco-pty-ltd",
+            "name": "Brunswick Hotel Opco Pty Ltd"
+          }
         },
         {
           "name": "The Trustee for Brunswick Hotel Sub-Trust",
           "identifier_type": "ABN",
-          "identifier": "51 927 228 244"
+          "identifier": "51 927 228 244",
+          "party_page": {
+            "id": "the-trustee-for-brunswick-hotel-sub-trust",
+            "name": "The Trustee for Brunswick Hotel Sub-Trust"
+          }
         }
       ]
     },
@@ -194,14 +258,22 @@
         {
           "name": "MIGALOO QLD PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "30 600 219 172"
+          "identifier": "30 600 219 172",
+          "party_page": {
+            "id": "migaloo-qld-pty-ltd",
+            "name": "Migaloo Qld Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "The Trustee for The Garden Holdings Trust",
           "identifier_type": "ABN",
-          "identifier": "45 745 542 544"
+          "identifier": "45 745 542 544",
+          "party_page": {
+            "id": "the-trustee-for-the-garden-holdings-trust",
+            "name": "The Trustee for The Garden Holdings Trust"
+          }
         }
       ]
     }

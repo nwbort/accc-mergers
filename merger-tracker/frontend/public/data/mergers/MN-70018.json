@@ -16,51 +16,87 @@
     {
       "name": "Taco Ventures Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "697 591 692"
+      "identifier": "697 591 692",
+      "party_page": {
+        "id": "taco-ventures-pty-ltd",
+        "name": "Taco Ventures Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "Collins Foods Subsidiary Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "94 616 663 793"
+      "identifier": "94 616 663 793",
+      "party_page": {
+        "id": "collins-foods-subsidiary-pty-ltd",
+        "name": "Collins Foods Subsidiary Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Restaurant Brands New Zealand Limited",
       "identifier_type": null,
-      "identifier": "NZBN  9429038138775"
+      "identifier": "NZBN  9429038138775",
+      "party_page": {
+        "id": "restaurant-brands-new-zealand-limited",
+        "name": "Restaurant Brands New Zealand Limited"
+      }
     },
     {
       "name": "Yum! Brands, Inc.",
       "identifier_type": null,
-      "identifier": "USNC  0428278"
+      "identifier": "USNC  0428278",
+      "party_page": {
+        "id": "yum-brands-inc",
+        "name": "Yum! Brands, Inc."
+      }
     },
     {
       "name": "Gardiner Lane Capital, LLC",
       "identifier_type": null,
-      "identifier": "USDE  3308412"
+      "identifier": "USDE  3308412",
+      "party_page": {
+        "id": "gardiner-lane-capital-llc",
+        "name": "Gardiner Lane Capital, LLC"
+      }
     },
     {
       "name": "Collins Foods Limited",
       "identifier_type": "ABN",
-      "identifier": "13 151 420 781"
+      "identifier": "13 151 420 781",
+      "party_page": {
+        "id": "collins-foods-limited",
+        "name": "Collins Foods Limited"
+      }
     },
     {
       "name": "Collins Restaurants Management Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "24 093 912 979"
+      "identifier": "24 093 912 979",
+      "party_page": {
+        "id": "collins-restaurants-management-pty-ltd",
+        "name": "Collins Restaurants Management Pty Ltd"
+      }
     },
     {
       "name": "Restaurant Brands Australia Holdings Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "53 611 058 701"
+      "identifier": "53 611 058 701",
+      "party_page": {
+        "id": "restaurant-brands-australia-holdings-pty-ltd",
+        "name": "Restaurant Brands Australia Holdings Pty Ltd"
+      }
     },
     {
       "name": "QSR Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "63 089 163 682"
+      "identifier": "63 089 163 682",
+      "party_page": {
+        "id": "qsr-pty-ltd",
+        "name": "QSR Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -143,14 +179,22 @@
         {
           "name": "MCDONALD'S AUSTRALIA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "43 008 496 928"
+          "identifier": "43 008 496 928",
+          "party_page": {
+            "id": "mcdonald-s-australia-limited",
+            "name": "Mcdonald'S Australia Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST",
           "identifier_type": "ACN",
-          "identifier": "601 504 590"
+          "identifier": "601 504 590",
+          "party_page": {
+            "id": "lvant-mecca-pty-limited-as-trustee-for-carmichael-family-trust",
+            "name": "LVANT MECCA PTY LIMITED as trustee for CARMICHAEL FAMILY TRUST"
+          }
         }
       ]
     },
@@ -163,19 +207,31 @@
         {
           "name": "eBay Inc.",
           "identifier_type": null,
-          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924"
+          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924",
+          "party_page": {
+            "id": "ebay-inc",
+            "name": "eBay Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Etsy, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "etsy-inc",
+            "name": "Etsy, Inc."
+          }
         },
         {
           "name": "Depop Limited",
           "identifier_type": null,
-          "identifier": "UK Company Registration Number  08316342"
+          "identifier": "UK Company Registration Number  08316342",
+          "party_page": {
+            "id": "depop-limited",
+            "name": "Depop Limited"
+          }
         }
       ]
     },
@@ -192,6 +248,10 @@
           "canonical": {
             "id": "accenture-plc",
             "name": "Accenture plc"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
           }
         }
       ],
@@ -199,12 +259,20 @@
         {
           "name": "Ookla, LLC",
           "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103"
+          "identifier": "Unified Business ID  602 422 103",
+          "party_page": {
+            "id": "ookla-llc",
+            "name": "Ookla, LLC"
+          }
         },
         {
           "name": "Ekahau OY",
           "identifier_type": null,
-          "identifier": "Business ID  16108964"
+          "identifier": "Business ID  16108964",
+          "party_page": {
+            "id": "ekahau-oy",
+            "name": "Ekahau OY"
+          }
         }
       ]
     }

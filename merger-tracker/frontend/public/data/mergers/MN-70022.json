@@ -17,6 +17,10 @@
       "canonical": {
         "id": "coles",
         "name": "Coles Group"
+      },
+      "party_page": {
+        "id": "coles",
+        "name": "Coles Group"
       }
     }
   ],
@@ -24,7 +28,11 @@
     {
       "name": "H.A. Bachrach (Nom) Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "005 026 326"
+      "identifier": "005 026 326",
+      "party_page": {
+        "id": "h-a-bachrach-nom-pty-ltd",
+        "name": "H.A. Bachrach (Nom) Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -76,6 +84,10 @@
           "canonical": {
             "id": "coles",
             "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -83,7 +95,11 @@
         {
           "name": "M Holdings 4 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "652 075 799"
+          "identifier": "652 075 799",
+          "party_page": {
+            "id": "m-holdings-4-pty-ltd",
+            "name": "M Holdings 4 Pty Ltd"
+          }
         }
       ]
     },
@@ -100,6 +116,10 @@
           "canonical": {
             "id": "coles",
             "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -107,7 +127,11 @@
         {
           "name": "Tipalea Private No.31 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "686 197 115"
+          "identifier": "686 197 115",
+          "party_page": {
+            "id": "tipalea-private-no-31-pty-ltd",
+            "name": "Tipalea Private No.31 Pty Ltd"
+          }
         }
       ]
     },
@@ -124,6 +148,10 @@
           "canonical": {
             "id": "coles",
             "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -131,7 +159,11 @@
         {
           "name": "MINTO MARKETPLACE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "45 157 762 000"
+          "identifier": "45 157 762 000",
+          "party_page": {
+            "id": "minto-marketplace-pty-ltd",
+            "name": "Minto Marketplace Pty Ltd"
+          }
         }
       ]
     }

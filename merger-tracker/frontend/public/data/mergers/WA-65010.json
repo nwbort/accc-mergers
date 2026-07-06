@@ -14,14 +14,22 @@
     {
       "name": "Honda Motor Co., Ltd",
       "identifier_type": null,
-      "identifier": "6010401027577"
+      "identifier": "6010401027577",
+      "party_page": {
+        "id": "honda-motor-co-ltd",
+        "name": "Honda Motor Co., Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "Astemo, Ltd",
       "identifier_type": null,
-      "identifier": "7050001007842"
+      "identifier": "7050001007842",
+      "party_page": {
+        "id": "astemo-ltd",
+        "name": "Astemo, Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -95,24 +103,40 @@
         {
           "name": "TWG HUNTER DEALERSHIPS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "18 695 726 348"
+          "identifier": "18 695 726 348",
+          "party_page": {
+            "id": "twg-hunter-dealerships-pty-ltd",
+            "name": "Twg Hunter Dealerships Pty Ltd"
+          }
         },
         {
           "name": "THE TRUSTEE FOR WHITE KING CORPORATE UNIT TRUST",
           "identifier_type": "ABN",
-          "identifier": "70 760 893 620"
+          "identifier": "70 760 893 620",
+          "party_page": {
+            "id": "the-trustee-for-white-king-corporate-unit-trust",
+            "name": "The Trustee For White King Corporate Unit Trust"
+          }
         }
       ],
       "targets": [
         {
           "name": "SHARTON MOTORS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "55 001 345 384"
+          "identifier": "55 001 345 384",
+          "party_page": {
+            "id": "sharton-motors-pty-ltd",
+            "name": "Sharton Motors Pty Ltd"
+          }
         },
         {
           "name": "N&M BURTON PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "125 935 944"
+          "identifier": "125 935 944",
+          "party_page": {
+            "id": "n-m-burton-pty-ltd",
+            "name": "N&M Burton Pty Ltd"
+          }
         }
       ]
     },
@@ -125,14 +149,22 @@
         {
           "name": "Danaher Corporation",
           "identifier_type": null,
-          "identifier": "213594"
+          "identifier": "213594",
+          "party_page": {
+            "id": "danaher-corporation",
+            "name": "Danaher Corporation"
+          }
         }
       ],
       "targets": [
         {
           "name": "Masimo Corporation",
           "identifier_type": null,
-          "identifier": "2614702"
+          "identifier": "2614702",
+          "party_page": {
+            "id": "masimo-corporation",
+            "name": "Masimo Corporation"
+          }
         }
       ]
     },
@@ -145,19 +177,31 @@
         {
           "name": "Fjord Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "TIN/EIN  921660460"
+          "identifier": "TIN/EIN  921660460",
+          "party_page": {
+            "id": "fjord-merger-sub-inc",
+            "name": "Fjord Merger Sub, Inc."
+          }
         },
         {
           "name": "IFS North America, Inc.",
           "identifier_type": null,
-          "identifier": "TIN/EIN  391292200"
+          "identifier": "TIN/EIN  391292200",
+          "party_page": {
+            "id": "ifs-north-america-inc",
+            "name": "IFS North America, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Softeon Inc.",
           "identifier_type": null,
-          "identifier": "EIN 541960847"
+          "identifier": "EIN 541960847",
+          "party_page": {
+            "id": "softeon-inc",
+            "name": "Softeon Inc."
+          }
         }
       ]
     }

@@ -14,59 +14,103 @@
     {
       "name": "Cielo TopCo Limited",
       "identifier_type": null,
-      "identifier": "CRN  16320933"
+      "identifier": "CRN  16320933",
+      "party_page": {
+        "id": "cielo-topco-limited",
+        "name": "Cielo TopCo Limited"
+      }
     },
     {
       "name": "Kee Safety (Australia) Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "694 369 116"
+      "identifier": "694 369 116",
+      "party_page": {
+        "id": "kee-safety-australia-pty-ltd",
+        "name": "Kee Safety (Australia) Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "HALLWELD BENNETT PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "15 161 086 595"
+      "identifier": "15 161 086 595",
+      "party_page": {
+        "id": "hallweld-bennett-pty-ltd",
+        "name": "Hallweld Bennett Pty Ltd"
+      }
     },
     {
       "name": "RIS SAFETY HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "19 668 836 351"
+      "identifier": "19 668 836 351",
+      "party_page": {
+        "id": "ris-safety-holdings-pty-ltd",
+        "name": "Ris Safety Holdings Pty Ltd"
+      }
     },
     {
       "name": "RTO SAFETY TRAINING PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "89 164 524 994"
+      "identifier": "89 164 524 994",
+      "party_page": {
+        "id": "rto-safety-training-pty-limited",
+        "name": "Rto Safety Training Pty Limited"
+      }
     },
     {
       "name": "RISSAFETY ENTERPRISES PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "62 152 879 082"
+      "identifier": "62 152 879 082",
+      "party_page": {
+        "id": "rissafety-enterprises-pty-ltd",
+        "name": "Rissafety Enterprises Pty Ltd"
+      }
     },
     {
       "name": "RISSAFETY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "46 008 445 458"
+      "identifier": "46 008 445 458",
+      "party_page": {
+        "id": "rissafety-pty-ltd",
+        "name": "Rissafety Pty Ltd"
+      }
     },
     {
       "name": "W.C. SALES PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "13 067 394 281"
+      "identifier": "13 067 394 281",
+      "party_page": {
+        "id": "w-c-sales-pty-ltd",
+        "name": "W.C. Sales Pty. Ltd."
+      }
     },
     {
       "name": "Sydney Safety Training Pty Limited",
       "identifier_type": "ABN",
-      "identifier": "12 158 377 532"
+      "identifier": "12 158 377 532",
+      "party_page": {
+        "id": "sydney-safety-training-pty-limited",
+        "name": "Sydney Safety Training Pty Limited"
+      }
     },
     {
       "name": "SST VILLAWOOD PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "86 649 992 487"
+      "identifier": "86 649 992 487",
+      "party_page": {
+        "id": "sst-villawood-pty-ltd",
+        "name": "Sst Villawood Pty Ltd"
+      }
     },
     {
       "name": "SAFETY TRAINING GROUP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "85 158 347 490"
+      "identifier": "85 158 347 490",
+      "party_page": {
+        "id": "safety-training-group-pty-ltd",
+        "name": "Safety Training Group Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -140,19 +184,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     },
@@ -169,6 +225,10 @@
           "canonical": {
             "id": "servicenow-inc",
             "name": "ServiceNow, Inc."
+          },
+          "party_page": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
           }
         }
       ],
@@ -176,12 +236,20 @@
         {
           "name": "Armis Security, Ltd.",
           "identifier_type": null,
-          "identifier": "515335941"
+          "identifier": "515335941",
+          "party_page": {
+            "id": "armis-security-ltd",
+            "name": "Armis Security, Ltd."
+          }
         },
         {
           "name": "Armis, Inc.",
           "identifier_type": null,
-          "identifier": "6021196"
+          "identifier": "6021196",
+          "party_page": {
+            "id": "armis-inc",
+            "name": "Armis, Inc."
+          }
         }
       ]
     },
@@ -194,7 +262,11 @@
         {
           "name": "WIN TELEVISION NETWORK PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "90 008 589 026"
+          "identifier": "90 008 589 026",
+          "party_page": {
+            "id": "win-television-network-pty-ltd",
+            "name": "Win Television Network Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -205,6 +277,10 @@
           "canonical": {
             "id": "nine-network-australia-pty-ltd",
             "name": "Nine Network Australia Pty Ltd"
+          },
+          "party_page": {
+            "id": "nine-network-australia-pty-ltd",
+            "name": "Nine Network Australia Pty Ltd"
           }
         },
         {
@@ -212,6 +288,10 @@
           "identifier_type": "ABN",
           "identifier": "43 124 816 093",
           "canonical": {
+            "id": "nine-network-australia-pty-ltd",
+            "name": "Nine Network Australia Pty Ltd"
+          },
+          "party_page": {
             "id": "nine-network-australia-pty-ltd",
             "name": "Nine Network Australia Pty Ltd"
           }

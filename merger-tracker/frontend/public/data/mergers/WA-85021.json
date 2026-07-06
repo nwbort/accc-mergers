@@ -14,14 +14,22 @@
     {
       "name": "YANCOAL AUSTRALIA LTD",
       "identifier_type": "ABN",
-      "identifier": "82 111 859 119"
+      "identifier": "82 111 859 119",
+      "party_page": {
+        "id": "yancoal-australia-ltd",
+        "name": "Yancoal Australia Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "KESTREL COAL GROUP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "70 624 655 518"
+      "identifier": "70 624 655 518",
+      "party_page": {
+        "id": "kestrel-coal-group-pty-ltd",
+        "name": "Kestrel Coal Group Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -95,14 +103,22 @@
         {
           "name": "TRESCAL (AUSTRALIA) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "39 117 603 835"
+          "identifier": "39 117 603 835",
+          "party_page": {
+            "id": "trescal-australia-pty-ltd",
+            "name": "Trescal (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TR PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 005 499 721"
+          "identifier": "99 005 499 721",
+          "party_page": {
+            "id": "tr-pty-ltd",
+            "name": "Tr Pty Ltd"
+          }
         }
       ]
     },
@@ -115,19 +131,31 @@
         {
           "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)",
           "identifier_type": "ABN",
-          "identifier": "21 151 833 555"
+          "identifier": "21 151 833 555",
+          "party_page": {
+            "id": "herman-corp-pty-ltd-as-trustee-for-the-herman-holdings-family-trust",
+            "name": "Herman Corp Pty Ltd (as trustee for the Herman Holdings Family Trust)"
+          }
         },
         {
           "name": "Yandoo Holdings Pty Ltd",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "yandoo-holdings-pty-ltd",
+            "name": "Yandoo Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "WINNING APPLIANCES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "94 002 193 688"
+          "identifier": "94 002 193 688",
+          "party_page": {
+            "id": "winning-appliances-pty-ltd",
+            "name": "Winning Appliances Pty Ltd"
+          }
         }
       ]
     },
@@ -140,24 +168,40 @@
         {
           "name": "Coforge Limited",
           "identifier_type": null,
-          "identifier": "L72100HR1992PLC128382"
+          "identifier": "L72100HR1992PLC128382",
+          "party_page": {
+            "id": "coforge-limited",
+            "name": "Coforge Limited"
+          }
         },
         {
           "name": "Encora Holdco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdco-limited",
+            "name": "Encora Holdco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Encora US Holdco, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-us-holdco-inc",
+            "name": "Encora US Holdco, Inc"
+          }
         },
         {
           "name": "Encora Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "encora-holdings-limited",
+            "name": "Encora Holdings Limited"
+          }
         }
       ]
     }

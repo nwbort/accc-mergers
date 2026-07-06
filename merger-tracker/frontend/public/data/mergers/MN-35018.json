@@ -13,31 +13,51 @@
     {
       "name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust",
       "identifier_type": "ACN",
-      "identifier": "600 506 778"
+      "identifier": "600 506 778",
+      "party_page": {
+        "id": "dawson-land-investments-company-pty-ltd-as-trustee-for-the-dawson-land-trust",
+        "name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust"
+      }
     },
     {
       "name": "SAPPHIRE CATTLE COMPANY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "14 600 389 286"
+      "identifier": "14 600 389 286",
+      "party_page": {
+        "id": "sapphire-cattle-company-pty-ltd",
+        "name": "Sapphire Cattle Company Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust",
       "identifier_type": "ACN",
-      "identifier": "081 765 228"
+      "identifier": "081 765 228",
+      "party_page": {
+        "id": "tolobex-pty-ltd-as-trustee-for-tolobex-unit-trust",
+        "name": "Tolobex Pty Ltd as trustee for Tolobex Unit Trust"
+      }
     },
     {
       "name": "NOLAN MEATS PTY. LTD.",
       "identifier_type": "ABN",
-      "identifier": "81 096 869 304"
+      "identifier": "81 096 869 304",
+      "party_page": {
+        "id": "nolan-meats-pty-ltd",
+        "name": "Nolan Meats Pty. Ltd."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Public Sector Pension Investment Board",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "public-sector-pension-investment-board",
+        "name": "Public Sector Pension Investment Board"
+      }
     }
   ],
   "anzsic_codes": [
@@ -96,6 +116,10 @@
           "canonical": {
             "id": "australian-meat-group-inc",
             "name": "Australian Meat Group Inc"
+          },
+          "party_page": {
+            "id": "australian-meat-group-inc",
+            "name": "Australian Meat Group Inc"
           }
         }
       ],
@@ -103,7 +127,11 @@
         {
           "name": "Killara Feedlot Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "18 081 072 746"
+          "identifier": "18 081 072 746",
+          "party_page": {
+            "id": "killara-feedlot-pty-ltd",
+            "name": "Killara Feedlot Pty Ltd"
+          }
         }
       ]
     },
@@ -116,24 +144,40 @@
         {
           "name": "General Atlantic",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "general-atlantic",
+            "name": "General Atlantic"
+          }
         },
         {
           "name": "Canada Pension Plan Investment Board",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "canada-pension-plan-investment-board",
+            "name": "Canada Pension Plan Investment Board"
+          }
         }
       ],
       "targets": [
         {
           "name": "Boats Group Holdings, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "boats-group-holdings-inc",
+            "name": "Boats Group Holdings, Inc"
+          }
         },
         {
           "name": "Bimini Holdings, LP",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "bimini-holdings-lp",
+            "name": "Bimini Holdings, LP"
+          }
         }
       ]
     },
@@ -146,14 +190,22 @@
         {
           "name": "East Gate Games Investment Company",
           "identifier_type": "ABN",
-          "identifier": "39 275 633 205"
+          "identifier": "39 275 633 205",
+          "party_page": {
+            "id": "east-gate-games-investment-company",
+            "name": "East Gate Games Investment Company"
+          }
         }
       ],
       "targets": [
         {
           "name": "Moonton Holdings Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "moonton-holdings-limited",
+            "name": "Moonton Holdings Limited"
+          }
         }
       ]
     }

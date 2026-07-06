@@ -1,0 +1,32 @@
+{
+  "id": "cboe-asia-pacific-holdings-limited-hong-kong",
+  "canonical_name": "Cboe Asia Pacific Holdings Limited, Hong Kong",
+  "members": [
+    {
+      "name": "Cboe Asia Pacific Holdings Limited, Hong Kong",
+      "identifier": "BRN 65691773",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-05019",
+        "merger_name": "TMX - Cboe Australia",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-04-29T12:00:00Z",
+        "determination_date": "2026-05-15T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

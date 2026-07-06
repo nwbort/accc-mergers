@@ -16,14 +16,22 @@
     {
       "name": "Sembcorp Industries Ltd",
       "identifier_type": null,
-      "identifier": "SG1R50925390 (Singapore ISIN Code)"
+      "identifier": "SG1R50925390 (Singapore ISIN Code)",
+      "party_page": {
+        "id": "sembcorp-industries-ltd",
+        "name": "Sembcorp Industries Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "Pioneer Sail Holdings Pty Limited",
       "identifier_type": "ABN",
-      "identifier": "45 617 844 569"
+      "identifier": "45 617 844 569",
+      "party_page": {
+        "id": "pioneer-sail-holdings-pty-limited",
+        "name": "Pioneer Sail Holdings Pty Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -497,19 +505,31 @@
         {
           "name": "FULTON HOGAN INDUSTRIES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "54 000 538 689"
+          "identifier": "54 000 538 689",
+          "party_page": {
+            "id": "fulton-hogan-industries-pty-ltd",
+            "name": "Fulton Hogan Industries Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Nick Brumley Pty Limited in its capacity atf Nick Brumley Family Trust (ABN 98 415 412 572)",
           "identifier_type": "ABN",
-          "identifier": "44 124 730 605"
+          "identifier": "44 124 730 605",
+          "party_page": {
+            "id": "nick-brumley-pty-limited-in-its-capacity-atf-nick-brumley-family-trust-abn-98-41",
+            "name": "Nick Brumley Pty Limited in its capacity atf Nick Brumley Family Trust (ABN 98 415 412 572)"
+          }
         },
         {
           "name": "Shane Webb Nominees Pty Ltd in its capacity at the trustee for The S & R Webb Family Trust",
           "identifier_type": "ACN",
-          "identifier": "619 189 883"
+          "identifier": "619 189 883",
+          "party_page": {
+            "id": "shane-webb-nominees-pty-ltd-in-its-capacity-at-the-trustee-for-the-s-r-webb-fami",
+            "name": "Shane Webb Nominees Pty Ltd in its capacity at the trustee for The S & R Webb Family Trust"
+          }
         }
       ]
     },
@@ -522,19 +542,31 @@
         {
           "name": "EGIS PROJECTS ASIA PACIFIC PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "82 071 536 957"
+          "identifier": "82 071 536 957",
+          "party_page": {
+            "id": "egis-projects-asia-pacific-pty-limited",
+            "name": "Egis Projects Asia Pacific Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "FULTON HOGAN INDUSTRIES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "54 000 538 689"
+          "identifier": "54 000 538 689",
+          "party_page": {
+            "id": "fulton-hogan-industries-pty-ltd",
+            "name": "Fulton Hogan Industries Pty Ltd"
+          }
         },
         {
           "name": "FULTON HOGAN EGIS O&M PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "37 609 764 730"
+          "identifier": "37 609 764 730",
+          "party_page": {
+            "id": "fulton-hogan-egis-o-m-pty-ltd",
+            "name": "Fulton Hogan Egis O&M Pty Ltd"
+          }
         }
       ]
     },
@@ -547,14 +579,22 @@
         {
           "name": "GE Healthcare Technologies Inc.",
           "identifier_type": null,
-          "identifier": "6772877"
+          "identifier": "6772877",
+          "party_page": {
+            "id": "ge-healthcare-technologies-inc",
+            "name": "GE Healthcare Technologies Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Intelerad Holdings ULC",
           "identifier_type": null,
-          "identifier": "703693275"
+          "identifier": "703693275",
+          "party_page": {
+            "id": "intelerad-holdings-ulc",
+            "name": "Intelerad Holdings ULC"
+          }
         }
       ]
     }

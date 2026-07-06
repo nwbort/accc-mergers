@@ -14,14 +14,22 @@
     {
       "name": "Ursa 4 Kabushiki Kaisha (Japan)",
       "identifier_type": null,
-      "identifier": "010001265801"
+      "identifier": "010001265801",
+      "party_page": {
+        "id": "ursa-4-kabushiki-kaisha-japan",
+        "name": "Ursa 4 Kabushiki Kaisha (Japan)"
+      }
     }
   ],
   "targets": [
     {
       "name": "J.S.B. Co., Ltd.",
       "identifier_type": null,
-      "identifier": "130001017499"
+      "identifier": "130001017499",
+      "party_page": {
+        "id": "j-s-b-co-ltd",
+        "name": "J.S.B. Co., Ltd."
+      }
     }
   ],
   "other_parties": [
@@ -32,12 +40,20 @@
       "canonical": {
         "id": "warburg-pincus-llc",
         "name": "Warburg Pincus LLC"
+      },
+      "party_page": {
+        "id": "warburg-pincus-llc",
+        "name": "Warburg Pincus LLC"
       }
     },
     {
       "name": "J.S.B. AUS PTY LTD",
       "identifier_type": "ACN",
-      "identifier": "698 489 566"
+      "identifier": "698 489 566",
+      "party_page": {
+        "id": "j-s-b-aus-pty-ltd",
+        "name": "J.S.B. Aus Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -110,7 +126,11 @@
         {
           "name": "GT Silver BidCo, Inc.",
           "identifier_type": null,
-          "identifier": "413417606"
+          "identifier": "413417606",
+          "party_page": {
+            "id": "gt-silver-bidco-inc",
+            "name": "GT Silver BidCo, Inc."
+          }
         }
       ],
       "targets": [
@@ -119,6 +139,10 @@
           "identifier_type": null,
           "identifier": "00140838",
           "canonical": {
+            "id": "clearwater-analytics-llc",
+            "name": "Clearwater Analytics, LLC"
+          },
+          "party_page": {
             "id": "clearwater-analytics-llc",
             "name": "Clearwater Analytics, LLC"
           }
@@ -134,7 +158,11 @@
         {
           "name": "Achronite Bidco Ltd",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "achronite-bidco-ltd",
+            "name": "Achronite Bidco Ltd"
+          }
         }
       ],
       "targets": [
@@ -145,6 +173,10 @@
           "canonical": {
             "id": "acclime-holdings-limited",
             "name": "Acclime Holdings Limited"
+          },
+          "party_page": {
+            "id": "acclime-holdings-limited",
+            "name": "Acclime Holdings Limited"
           }
         },
         {
@@ -152,6 +184,10 @@
           "identifier_type": null,
           "identifier": "BRN  70084973",
           "canonical": {
+            "id": "acclime-holdings-limited",
+            "name": "Acclime Holdings Limited"
+          },
+          "party_page": {
             "id": "acclime-holdings-limited",
             "name": "Acclime Holdings Limited"
           }
@@ -167,19 +203,31 @@
         {
           "name": "Waymark Hotels Properties No 42 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "692 820 143"
+          "identifier": "692 820 143",
+          "party_page": {
+            "id": "waymark-hotels-properties-no-42-pty-ltd",
+            "name": "Waymark Hotels Properties No 42 Pty Ltd"
+          }
         },
         {
           "name": "WARREGO OP CO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "29 692 796 697"
+          "identifier": "29 692 796 697",
+          "party_page": {
+            "id": "warrego-op-co-pty-ltd",
+            "name": "Warrego Op Co Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "G.A.A. Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "131 680 790"
+          "identifier": "131 680 790",
+          "party_page": {
+            "id": "g-a-a-pty-ltd",
+            "name": "G.A.A. Pty Ltd"
+          }
         }
       ]
     }

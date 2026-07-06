@@ -16,26 +16,42 @@
     {
       "name": "CARE AUTOBODY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "99 692 619 962"
+      "identifier": "99 692 619 962",
+      "party_page": {
+        "id": "care-autobody-pty-ltd",
+        "name": "Care Autobody Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "MOTORONE AUTOBODY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "98 077 935 614"
+      "identifier": "98 077 935 614",
+      "party_page": {
+        "id": "motorone-autobody-pty-ltd",
+        "name": "Motorone Autobody Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "M1 TOPCO PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "99 663 463 116"
+      "identifier": "99 663 463 116",
+      "party_page": {
+        "id": "m1-topco-pty-ltd",
+        "name": "M1 Topco Pty Ltd"
+      }
     },
     {
       "name": "THE CARE AUTOMOTIVE GROUP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "94 633 108 700"
+      "identifier": "94 633 108 700",
+      "party_page": {
+        "id": "the-care-automotive-group-pty-ltd",
+        "name": "The Care Automotive Group Pty Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -126,19 +142,31 @@
         {
           "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
           "identifier_type": "ABN",
-          "identifier": "57 615 674 185"
+          "identifier": "57 615 674 185",
+          "party_page": {
+            "id": "peter-warren-automotive-holdings-limited",
+            "name": "Peter Warren Automotive Holdings Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Paul Wakeling Motor Group Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "47 119 908 780"
+          "identifier": "47 119 908 780",
+          "party_page": {
+            "id": "paul-wakeling-motor-group-pty-ltd",
+            "name": "Paul Wakeling Motor Group Pty Ltd"
+          }
         },
         {
           "name": "WOLLONGONG CITY MOTORS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "22 002 019 598"
+          "identifier": "22 002 019 598",
+          "party_page": {
+            "id": "wollongong-city-motors-pty-ltd",
+            "name": "Wollongong City Motors Pty Ltd"
+          }
         }
       ]
     },
@@ -151,19 +179,31 @@
         {
           "name": "MANDURAH AUTO GROUP PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "693 645 699"
+          "identifier": "693 645 699",
+          "party_page": {
+            "id": "mandurah-auto-group-pty-ltd",
+            "name": "Mandurah Auto Group Pty Ltd"
+          }
         },
         {
           "name": "PEEL MOTOR GROUP PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "693 645 742"
+          "identifier": "693 645 742",
+          "party_page": {
+            "id": "peel-motor-group-pty-ltd",
+            "name": "Peel Motor Group Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "WA AUTOMOTIVE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 158 702 740"
+          "identifier": "20 158 702 740",
+          "party_page": {
+            "id": "wa-automotive-pty-ltd",
+            "name": "Wa Automotive Pty Ltd"
+          }
         }
       ]
     },
@@ -176,14 +216,22 @@
         {
           "name": "EAGERS VIC PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "29 616 989 596"
+          "identifier": "29 616 989 596",
+          "party_page": {
+            "id": "eagers-vic-pty-ltd",
+            "name": "Eagers Vic Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Zagame Automotive Group Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "85 085 950 063"
+          "identifier": "85 085 950 063",
+          "party_page": {
+            "id": "zagame-automotive-group-pty-ltd",
+            "name": "Zagame Automotive Group Pty Ltd"
+          }
         }
       ]
     }

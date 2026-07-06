@@ -16,14 +16,22 @@
     {
       "name": "KONGSBERG DEFENCE AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "95 146 599 359"
+      "identifier": "95 146 599 359",
+      "party_page": {
+        "id": "kongsberg-defence-australia-pty-ltd",
+        "name": "Kongsberg Defence Australia Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "GREATER NEWCASTLE AEROTROPOLIS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "90 629 359 726"
+      "identifier": "90 629 359 726",
+      "party_page": {
+        "id": "greater-newcastle-aerotropolis-pty-ltd",
+        "name": "Greater Newcastle Aerotropolis Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -120,19 +128,31 @@
         {
           "name": "AVC Operations Pty Limited",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
           "identifier_type": "ABN",
-          "identifier": "70 075 074 930"
+          "identifier": "70 075 074 930",
+          "party_page": {
+            "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
+            "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
+          }
         },
         {
           "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
           "identifier_type": "ACN",
-          "identifier": "604 221 801"
+          "identifier": "604 221 801",
+          "party_page": {
+            "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
+            "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+          }
         }
       ]
     },
@@ -145,24 +165,40 @@
         {
           "name": "INNIO Jenbacher International B.V.",
           "identifier_type": null,
-          "identifier": "KVK90210352"
+          "identifier": "KVK90210352",
+          "party_page": {
+            "id": "innio-jenbacher-international-b-v",
+            "name": "INNIO Jenbacher International B.V."
+          }
         },
         {
           "name": "INNIO Jenbacher Netherlands B.V.",
           "identifier_type": null,
-          "identifier": "KVK90209982"
+          "identifier": "KVK90209982",
+          "party_page": {
+            "id": "innio-jenbacher-netherlands-b-v",
+            "name": "INNIO Jenbacher Netherlands B.V."
+          }
         }
       ],
       "targets": [
         {
           "name": "Exterran (Thailand) Ltd",
           "identifier_type": null,
-          "identifier": "0105542031616"
+          "identifier": "0105542031616",
+          "party_page": {
+            "id": "exterran-thailand-ltd",
+            "name": "Exterran (Thailand) Ltd"
+          }
         },
         {
           "name": "PT Enerflex (Indonesia)",
           "identifier_type": null,
-          "identifier": "9120407262914"
+          "identifier": "9120407262914",
+          "party_page": {
+            "id": "pt-enerflex-indonesia",
+            "name": "PT Enerflex (Indonesia)"
+          }
         }
       ]
     },
@@ -175,19 +211,31 @@
         {
           "name": "A6 Audio Bidco Limited",
           "identifier_type": null,
-          "identifier": "Company number (England and Wales)  10573578"
+          "identifier": "Company number (England and Wales)  10573578",
+          "party_page": {
+            "id": "a6-audio-bidco-limited",
+            "name": "A6 Audio Bidco Limited"
+          }
         },
         {
           "name": "Sound Bidco (Denmark) ApS",
           "identifier_type": null,
-          "identifier": "Company number (Denmark)  45697088"
+          "identifier": "Company number (Denmark)  45697088",
+          "party_page": {
+            "id": "sound-bidco-denmark-aps",
+            "name": "Sound Bidco (Denmark) ApS"
+          }
         }
       ],
       "targets": [
         {
           "name": "Soundtech Group S.r.l.",
           "identifier_type": null,
-          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241"
+          "identifier": "Registration number (Companies\u2019 Register of Vicenza, VAT and Tax Code )  04495290241",
+          "party_page": {
+            "id": "soundtech-group-s-r-l",
+            "name": "Soundtech Group S.r.l."
+          }
         }
       ]
     }

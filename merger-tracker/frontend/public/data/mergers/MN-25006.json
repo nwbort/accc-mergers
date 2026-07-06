@@ -16,49 +16,85 @@
     {
       "name": "Desmos US Bidco, Inc.",
       "identifier_type": null,
-      "identifier": "[ID type unknown]  10469174"
+      "identifier": "[ID type unknown]  10469174",
+      "party_page": {
+        "id": "desmos-us-bidco-inc",
+        "name": "Desmos US Bidco, Inc."
+      }
     },
     {
       "name": "Desmos Bidco SAS",
       "identifier_type": null,
-      "identifier": "SIREN  100 230 754"
+      "identifier": "SIREN  100 230 754",
+      "party_page": {
+        "id": "desmos-bidco-sas",
+        "name": "Desmos Bidco SAS"
+      }
     },
     {
       "name": "KPS Capital Partners, LP",
       "identifier_type": null,
-      "identifier": "CRD  157678 / SEC  80173907"
+      "identifier": "CRD  157678 / SEC  80173907",
+      "party_page": {
+        "id": "kps-capital-partners-lp",
+        "name": "KPS Capital Partners, LP"
+      }
     }
   ],
   "targets": [
     {
       "name": "Novacel Performance Coatings, Inc.",
       "identifier_type": null,
-      "identifier": "EIN  311708662"
+      "identifier": "EIN  311708662",
+      "party_page": {
+        "id": "novacel-performance-coatings-inc",
+        "name": "Novacel Performance Coatings, Inc."
+      }
     },
     {
       "name": "Novacel, Inc.",
       "identifier_type": null,
-      "identifier": "EIN  043515032"
+      "identifier": "EIN  043515032",
+      "party_page": {
+        "id": "novacel-inc",
+        "name": "Novacel, Inc."
+      }
     },
     {
       "name": "Walco, Inc.",
       "identifier_type": null,
-      "identifier": "EIN  821136395"
+      "identifier": "EIN  821136395",
+      "party_page": {
+        "id": "walco-inc",
+        "name": "Walco, Inc."
+      }
     },
     {
       "name": "Chargeurs USA Holdings Inc.",
       "identifier_type": null,
-      "identifier": "EIN / TIN  043515028"
+      "identifier": "EIN / TIN  043515028",
+      "party_page": {
+        "id": "chargeurs-usa-holdings-inc",
+        "name": "Chargeurs USA Holdings Inc."
+      }
     },
     {
       "name": "Chargeurs Films de Protection SAS",
       "identifier_type": null,
-      "identifier": "SIREN  885 582 072"
+      "identifier": "SIREN  885 582 072",
+      "party_page": {
+        "id": "chargeurs-films-de-protection-sas",
+        "name": "Chargeurs Films de Protection SAS"
+      }
     },
     {
       "name": "Compagnie Chargeurs Invest SA",
       "identifier_type": null,
-      "identifier": "SIREN  390 474 898"
+      "identifier": "SIREN  390 474 898",
+      "party_page": {
+        "id": "compagnie-chargeurs-invest-sa",
+        "name": "Compagnie Chargeurs Invest SA"
+      }
     }
   ],
   "other_parties": [],
@@ -150,24 +186,40 @@
         {
           "name": "KPS Capital Partners, LP",
           "identifier_type": null,
-          "identifier": "CRD 157678 / SEC: 80173907"
+          "identifier": "CRD 157678 / SEC: 80173907",
+          "party_page": {
+            "id": "kps-capital-partners-lp",
+            "name": "KPS Capital Partners, LP"
+          }
         },
         {
           "name": "Three Rivers Purchaser, LLC",
           "identifier_type": null,
-          "identifier": "10533455"
+          "identifier": "10533455",
+          "party_page": {
+            "id": "three-rivers-purchaser-llc",
+            "name": "Three Rivers Purchaser, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "Jennmar Intermediate Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "990520173"
+          "identifier": "990520173",
+          "party_page": {
+            "id": "jennmar-intermediate-holdings-inc",
+            "name": "Jennmar Intermediate Holdings, Inc."
+          }
         },
         {
           "name": "Jennmar Super Holdings, LLC",
           "identifier_type": null,
-          "identifier": "412378602"
+          "identifier": "412378602",
+          "party_page": {
+            "id": "jennmar-super-holdings-llc",
+            "name": "Jennmar Super Holdings, LLC"
+          }
         }
       ]
     },
@@ -180,19 +232,31 @@
         {
           "name": "Skyshield UK Bidco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "skyshield-uk-bidco-limited",
+            "name": "Skyshield UK Bidco Limited"
+          }
         },
         {
           "name": "Skyshield US Bidco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "skyshield-us-bidco-limited",
+            "name": "Skyshield US Bidco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Smiths Detection Group Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "smiths-detection-group-limited",
+            "name": "Smiths Detection Group Limited"
+          }
         }
       ]
     },
@@ -205,24 +269,40 @@
         {
           "name": "Essential Bidco B.V.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "essential-bidco-b-v",
+            "name": "Essential Bidco B.V."
+          }
         },
         {
           "name": "Specialty (U.S.) Bidco, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialty-u-s-bidco-inc",
+            "name": "Specialty (U.S.) Bidco, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "SpecialtyCo US LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialtyco-us-llc",
+            "name": "SpecialtyCo US LLC"
+          }
         },
         {
           "name": "Biomin Phytogenics GmbH (Germany)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "biomin-phytogenics-gmbh-germany",
+            "name": "Biomin Phytogenics GmbH (Germany)"
+          }
         }
       ]
     }

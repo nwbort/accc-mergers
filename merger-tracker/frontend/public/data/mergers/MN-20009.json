@@ -16,13 +16,21 @@
     {
       "name": "Rocket Software AMC UK Ltd",
       "identifier_type": null,
-      "identifier": "UK Company number 01504593"
+      "identifier": "UK Company number 01504593",
+      "party_page": {
+        "id": "rocket-software-amc-uk-ltd",
+        "name": "Rocket Software AMC UK Ltd"
+      }
     },
     {
       "name": "Rocket Software, Inc.",
       "identifier_type": null,
       "identifier": "Companies\u2019 Register of Delaware  3506913",
       "canonical": {
+        "id": "rocket-software-inc",
+        "name": "Rocket Software, Inc."
+      },
+      "party_page": {
         "id": "rocket-software-inc",
         "name": "Rocket Software, Inc."
       }
@@ -32,12 +40,20 @@
     {
       "name": "Micro Focus IP Development Limited",
       "identifier_type": null,
-      "identifier": "UK Company number 07233975"
+      "identifier": "UK Company number 07233975",
+      "party_page": {
+        "id": "micro-focus-ip-development-limited",
+        "name": "Micro Focus IP Development Limited"
+      }
     },
     {
       "name": "Open Text Corporation",
       "identifier_type": null,
-      "identifier": "10836044"
+      "identifier": "10836044",
+      "party_page": {
+        "id": "open-text-corporation",
+        "name": "Open Text Corporation"
+      }
     }
   ],
   "other_parties": [
@@ -48,6 +64,10 @@
       "canonical": {
         "id": "rocket-software-inc",
         "name": "Rocket Software, Inc."
+      },
+      "party_page": {
+        "id": "rocket-software-inc",
+        "name": "Rocket Software, Inc."
       }
     },
     {
@@ -55,6 +75,10 @@
       "identifier_type": null,
       "identifier": "3229725",
       "canonical": {
+        "id": "bain-capital-investors-llc",
+        "name": "Bain Capital Investors LLC"
+      },
+      "party_page": {
         "id": "bain-capital-investors-llc",
         "name": "Bain Capital Investors LLC"
       }
@@ -140,14 +164,22 @@
         {
           "name": "BCPE Meta Cayman, L.P.",
           "identifier_type": null,
-          "identifier": "MC135352"
+          "identifier": "MC135352",
+          "party_page": {
+            "id": "bcpe-meta-cayman-l-p",
+            "name": "BCPE Meta Cayman, L.P."
+          }
         }
       ],
       "targets": [
         {
           "name": "MCJ Co., Ltd.",
           "identifier_type": null,
-          "identifier": "9030001052005"
+          "identifier": "9030001052005",
+          "party_page": {
+            "id": "mcj-co-ltd",
+            "name": "MCJ Co., Ltd."
+          }
         }
       ]
     },
@@ -160,14 +192,22 @@
         {
           "name": "HCL Technologies Limited",
           "identifier_type": "ABN",
-          "identifier": "37 541 578 951"
+          "identifier": "37 541 578 951",
+          "party_page": {
+            "id": "hcl-technologies-limited",
+            "name": "HCL Technologies Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "94 092 002 321"
+          "identifier": "94 092 002 321",
+          "party_page": {
+            "id": "cloud-software-group-australia-pty-ltd",
+            "name": "Cloud Software Group Australia Pty Ltd"
+          }
         }
       ]
     },
@@ -180,19 +220,31 @@
         {
           "name": "Enverus, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "enverus-inc",
+            "name": "Enverus, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Spatial Business Systems Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "76 125 465 483"
+          "identifier": "76 125 465 483",
+          "party_page": {
+            "id": "spatial-business-systems-pty-ltd",
+            "name": "Spatial Business Systems Pty Ltd"
+          }
         },
         {
           "name": "SBS Optionco, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "sbs-optionco-llc",
+            "name": "SBS Optionco, LLC"
+          }
         }
       ]
     }

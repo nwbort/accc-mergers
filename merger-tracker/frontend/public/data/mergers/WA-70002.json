@@ -14,19 +14,31 @@
     {
       "name": "Ethos Bidco, Ltd",
       "identifier_type": null,
-      "identifier": "UK Company Number: 16905190"
+      "identifier": "UK Company Number: 16905190",
+      "party_page": {
+        "id": "ethos-bidco-ltd",
+        "name": "Ethos Bidco, Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "EMIS Group Limited",
       "identifier_type": "ABN",
-      "identifier": "75 075 102 028"
+      "identifier": "75 075 102 028",
+      "party_page": {
+        "id": "emis-group-limited",
+        "name": "EMIS Group Limited"
+      }
     },
     {
       "name": "UnitedHealth Group Incorporated (UHG)",
       "identifier_type": null,
-      "identifier": "US EIN  4113221939"
+      "identifier": "US EIN  4113221939",
+      "party_page": {
+        "id": "unitedhealth-group-incorporated-uhg",
+        "name": "UnitedHealth Group Incorporated (UHG)"
+      }
     }
   ],
   "other_parties": [
@@ -35,6 +47,10 @@
       "identifier_type": null,
       "identifier": "US EIN  872063362",
       "canonical": {
+        "id": "tpg-inc",
+        "name": "TPG Inc."
+      },
+      "party_page": {
         "id": "tpg-inc",
         "name": "TPG Inc."
       }
@@ -115,14 +131,22 @@
         {
           "name": "Delinea Inc.",
           "identifier_type": null,
-          "identifier": "Delaware corporation file number  3777797"
+          "identifier": "Delaware corporation file number  3777797",
+          "party_page": {
+            "id": "delinea-inc",
+            "name": "Delinea Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "StrongDM, Inc",
           "identifier_type": null,
-          "identifier": "CIK  0001637806"
+          "identifier": "CIK  0001637806",
+          "party_page": {
+            "id": "strongdm-inc",
+            "name": "StrongDM, Inc"
+          }
         }
       ]
     },
@@ -135,19 +159,31 @@
         {
           "name": "CP Britannia Bidco Limited",
           "identifier_type": null,
-          "identifier": "Jersey Financial Services Commission  163400"
+          "identifier": "Jersey Financial Services Commission  163400",
+          "party_page": {
+            "id": "cp-britannia-bidco-limited",
+            "name": "CP Britannia Bidco Limited"
+          }
         },
         {
           "name": "Creative Planning Holdco, LLC",
           "identifier_type": null,
-          "identifier": "SEC  801 7725610"
+          "identifier": "SEC  801 7725610",
+          "party_page": {
+            "id": "creative-planning-holdco-llc",
+            "name": "Creative Planning Holdco, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "MASECO LLP",
           "identifier_type": null,
-          "identifier": "United Kingdom  OC337650"
+          "identifier": "United Kingdom  OC337650",
+          "party_page": {
+            "id": "maseco-llp",
+            "name": "Maseco Llp"
+          }
         }
       ]
     },
@@ -164,6 +200,10 @@
           "canonical": {
             "id": "servicenow-inc",
             "name": "ServiceNow, Inc."
+          },
+          "party_page": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
           }
         }
       ],
@@ -171,12 +211,20 @@
         {
           "name": "Armis Security, Ltd.",
           "identifier_type": null,
-          "identifier": "515335941"
+          "identifier": "515335941",
+          "party_page": {
+            "id": "armis-security-ltd",
+            "name": "Armis Security, Ltd."
+          }
         },
         {
           "name": "Armis, Inc.",
           "identifier_type": null,
-          "identifier": "6021196"
+          "identifier": "6021196",
+          "party_page": {
+            "id": "armis-inc",
+            "name": "Armis, Inc."
+          }
         }
       ]
     }

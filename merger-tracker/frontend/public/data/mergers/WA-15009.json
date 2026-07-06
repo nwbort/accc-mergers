@@ -14,29 +14,49 @@
     {
       "name": "REDCAPE HOTEL GROUP PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "43 139 067 244"
+      "identifier": "43 139 067 244",
+      "party_page": {
+        "id": "redcape-hotel-group-pty-ltd",
+        "name": "Redcape Hotel Group Pty Ltd"
+      }
     },
     {
       "name": "MAHPT TT PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "31 619 297 657"
+      "identifier": "31 619 297 657",
+      "party_page": {
+        "id": "mahpt-tt-pty-ltd",
+        "name": "Mahpt Tt Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "BRUNSWICK HOTEL OPCO PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "99 656 116 853"
+      "identifier": "99 656 116 853",
+      "party_page": {
+        "id": "brunswick-hotel-opco-pty-ltd",
+        "name": "Brunswick Hotel Opco Pty Ltd"
+      }
     },
     {
       "name": "The Trustee for Brunswick Hotel Sub-Trust",
       "identifier_type": "ABN",
-      "identifier": "51 927 228 244"
+      "identifier": "51 927 228 244",
+      "party_page": {
+        "id": "the-trustee-for-brunswick-hotel-sub-trust",
+        "name": "The Trustee for Brunswick Hotel Sub-Trust"
+      }
     },
     {
       "name": "BRUNSWICK HOTEL TT PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "17 656 117 252"
+      "identifier": "17 656 117 252",
+      "party_page": {
+        "id": "brunswick-hotel-tt-pty-ltd",
+        "name": "Brunswick Hotel Tt Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -114,19 +134,31 @@
         {
           "name": "REDCAPE HOTEL GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 139 067 244"
+          "identifier": "43 139 067 244",
+          "party_page": {
+            "id": "redcape-hotel-group-pty-ltd",
+            "name": "Redcape Hotel Group Pty Ltd"
+          }
         },
         {
           "name": "MAHF CUSTODIAN PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "96 619 512 060"
+          "identifier": "96 619 512 060",
+          "party_page": {
+            "id": "mahf-custodian-pty-ltd",
+            "name": "Mahf Custodian Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "REDBRAN PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "34 003 920 232"
+          "identifier": "34 003 920 232",
+          "party_page": {
+            "id": "redbran-pty-limited",
+            "name": "Redbran Pty. Limited"
+          }
         }
       ]
     },
@@ -139,19 +171,31 @@
         {
           "name": "AVC Operations Pty Limited",
           "identifier_type": "ABN",
-          "identifier": "81 607 832 299"
+          "identifier": "81 607 832 299",
+          "party_page": {
+            "id": "avc-operations-pty-limited",
+            "name": "Avc Operations Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust",
           "identifier_type": "ABN",
-          "identifier": "70 075 074 930"
+          "identifier": "70 075 074 930",
+          "party_page": {
+            "id": "sherilyn-pty-limited-as-trustee-for-solotrust-unit-trust",
+            "name": "Sherilyn Pty. Limited as trustee for Solotrust Unit Trust"
+          }
         },
         {
           "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust",
           "identifier_type": "ACN",
-          "identifier": "604 221 801"
+          "identifier": "604 221 801",
+          "party_page": {
+            "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
+            "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+          }
         }
       ]
     },
@@ -164,24 +208,40 @@
         {
           "name": "SGL HOTELS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "74 627 068 526"
+          "identifier": "74 627 068 526",
+          "party_page": {
+            "id": "sgl-hotels-pty-ltd",
+            "name": "Sgl Hotels Pty Ltd"
+          }
         },
         {
           "name": "SCHF PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "99 644 329 733"
+          "identifier": "99 644 329 733",
+          "party_page": {
+            "id": "schf-pty-ltd",
+            "name": "Schf Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "MPG FIVEWAYS PROP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "45 688 881 101"
+          "identifier": "45 688 881 101",
+          "party_page": {
+            "id": "mpg-fiveways-prop-pty-ltd",
+            "name": "Mpg Fiveways Prop Pty Ltd"
+          }
         },
         {
           "name": "MPG FIVEWAYS OP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "53 688 880 828"
+          "identifier": "53 688 880 828",
+          "party_page": {
+            "id": "mpg-fiveways-op-pty-ltd",
+            "name": "Mpg Fiveways Op Pty Ltd"
+          }
         }
       ]
     }

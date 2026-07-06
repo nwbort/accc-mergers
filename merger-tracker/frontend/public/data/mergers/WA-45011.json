@@ -14,7 +14,11 @@
     {
       "name": "Signant Health Holding Corp.",
       "identifier_type": null,
-      "identifier": "Delaware File Number  5354678"
+      "identifier": "Delaware File Number  5354678",
+      "party_page": {
+        "id": "signant-health-holding-corp",
+        "name": "Signant Health Holding Corp."
+      }
     }
   ],
   "targets": [
@@ -25,6 +29,10 @@
       "canonical": {
         "id": "actigraph-llc",
         "name": "ActiGraph, LLC"
+      },
+      "party_page": {
+        "id": "actigraph-llc",
+        "name": "ActiGraph, LLC"
       }
     }
   ],
@@ -32,12 +40,20 @@
     {
       "name": "ActiGraph India Private Limited",
       "identifier_type": null,
-      "identifier": "India CIN  U72900KA2023FTC169807"
+      "identifier": "India CIN  U72900KA2023FTC169807",
+      "party_page": {
+        "id": "actigraph-india-private-limited",
+        "name": "ActiGraph India Private Limited"
+      }
     },
     {
       "name": "Genstar BI Gen Holdings Cayman, L.P.",
       "identifier_type": null,
-      "identifier": "Cayman Islands Reference Number  1754174"
+      "identifier": "Cayman Islands Reference Number  1754174",
+      "party_page": {
+        "id": "genstar-bi-gen-holdings-cayman-l-p",
+        "name": "Genstar BI Gen Holdings Cayman, L.P."
+      }
     },
     {
       "name": "ActiGraph, LLC",
@@ -46,12 +62,20 @@
       "canonical": {
         "id": "actigraph-llc",
         "name": "ActiGraph, LLC"
+      },
+      "party_page": {
+        "id": "actigraph-llc",
+        "name": "ActiGraph, LLC"
       }
     },
     {
       "name": "Buccaneer Holdco Limited",
       "identifier_type": null,
-      "identifier": "UK Company Number  11463144"
+      "identifier": "UK Company Number  11463144",
+      "party_page": {
+        "id": "buccaneer-holdco-limited",
+        "name": "Buccaneer Holdco Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -124,14 +148,22 @@
         {
           "name": "Duncan Holdco III LLC",
           "identifier_type": null,
-          "identifier": "State of Delaware Company File Number  10510961"
+          "identifier": "State of Delaware Company File Number  10510961",
+          "party_page": {
+            "id": "duncan-holdco-iii-llc",
+            "name": "Duncan Holdco III LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "DigitalBridge Group, Inc.",
           "identifier_type": null,
-          "identifier": "IRS  464591526"
+          "identifier": "IRS  464591526",
+          "party_page": {
+            "id": "digitalbridge-group-inc",
+            "name": "DigitalBridge Group, Inc."
+          }
         }
       ]
     },
@@ -144,19 +176,31 @@
         {
           "name": "Genea Bidco SA Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 694 458"
+          "identifier": "695 694 458",
+          "party_page": {
+            "id": "genea-bidco-sa-pty-ltd",
+            "name": "Genea Bidco SA Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "EMBRACE FERTILITY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "84 135 918 580"
+          "identifier": "84 135 918 580",
+          "party_page": {
+            "id": "embrace-fertility-pty-ltd",
+            "name": "Embrace Fertility Pty Ltd"
+          }
         },
         {
           "name": "Histon Nelson Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "144 914 965"
+          "identifier": "144 914 965",
+          "party_page": {
+            "id": "histon-nelson-pty-ltd",
+            "name": "Histon Nelson Pty Ltd"
+          }
         }
       ]
     },
@@ -169,14 +213,22 @@
         {
           "name": "BCPE Meta Cayman, L.P.",
           "identifier_type": null,
-          "identifier": "MC135352"
+          "identifier": "MC135352",
+          "party_page": {
+            "id": "bcpe-meta-cayman-l-p",
+            "name": "BCPE Meta Cayman, L.P."
+          }
         }
       ],
       "targets": [
         {
           "name": "MCJ Co., Ltd.",
           "identifier_type": null,
-          "identifier": "9030001052005"
+          "identifier": "9030001052005",
+          "party_page": {
+            "id": "mcj-co-ltd",
+            "name": "MCJ Co., Ltd."
+          }
         }
       ]
     }

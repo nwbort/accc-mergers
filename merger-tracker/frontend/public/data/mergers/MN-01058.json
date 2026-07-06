@@ -16,14 +16,22 @@
     {
       "name": "Caterpillar Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "caterpillar-inc",
+        "name": "Caterpillar Inc."
+      }
     }
   ],
   "targets": [
     {
       "name": "RPMGLOBAL HOLDINGS LIMITED",
       "identifier_type": "ABN",
-      "identifier": "17 010 672 321"
+      "identifier": "17 010 672 321",
+      "party_page": {
+        "id": "rpmglobal-holdings-limited",
+        "name": "Rpmglobal Holdings Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -429,6 +437,10 @@
           "canonical": {
             "id": "wsp-australia-pty-limited",
             "name": "Wsp Australia Pty Limited"
+          },
+          "party_page": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
           }
         }
       ],
@@ -436,7 +448,11 @@
         {
           "name": "TRC Companies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "trc-companies-inc",
+            "name": "TRC Companies, Inc."
+          }
         }
       ]
     },
@@ -449,19 +465,31 @@
         {
           "name": "CSE CROSSCOM PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 606 614 500"
+          "identifier": "25 606 614 500",
+          "party_page": {
+            "id": "cse-crosscom-pty-ltd",
+            "name": "Cse Crosscom Pty Ltd"
+          }
         },
         {
           "name": "CSE-Global (Australia) Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "85 109 958 090"
+          "identifier": "85 109 958 090",
+          "party_page": {
+            "id": "cse-global-australia-pty-ltd",
+            "name": "Cse-Global (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "PROGILITY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 131 639 837"
+          "identifier": "11 131 639 837",
+          "party_page": {
+            "id": "progility-pty-ltd",
+            "name": "Progility Pty Ltd"
+          }
         }
       ]
     },
@@ -474,14 +502,22 @@
         {
           "name": "CG Panther Parentco, L.P.",
           "identifier_type": null,
-          "identifier": "135095"
+          "identifier": "135095",
+          "party_page": {
+            "id": "cg-panther-parentco-l-p",
+            "name": "CG Panther Parentco, L.P."
+          }
         }
       ],
       "targets": [
         {
           "name": "Peloton Computer Enterprises Ltd.",
           "identifier_type": null,
-          "identifier": "2023447374  Canada"
+          "identifier": "2023447374  Canada",
+          "party_page": {
+            "id": "peloton-computer-enterprises-ltd",
+            "name": "Peloton Computer Enterprises Ltd."
+          }
         }
       ]
     }

@@ -14,21 +14,33 @@
     {
       "name": "BENDIGO AND ADELAIDE BANK LIMITED",
       "identifier_type": "ABN",
-      "identifier": "11 068 049 178"
+      "identifier": "11 068 049 178",
+      "party_page": {
+        "id": "bendigo-and-adelaide-bank-limited",
+        "name": "Bendigo And Adelaide Bank Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "MEMBERS BANKING GROUP LIMITED (TRADING AS RACQ BANK)",
       "identifier_type": "ABN",
-      "identifier": "83 087 651 054"
+      "identifier": "83 087 651 054",
+      "party_page": {
+        "id": "members-banking-group-limited-trading-as-racq-bank",
+        "name": "Members Banking Group Limited (Trading As Racq Bank)"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "THE ROYAL AUTOMOBILE CLUB OF QUEENSLAND LIMITED",
       "identifier_type": "ABN",
-      "identifier": "72 009 660 575"
+      "identifier": "72 009 660 575",
+      "party_page": {
+        "id": "the-royal-automobile-club-of-queensland-limited",
+        "name": "The Royal Automobile Club Of Queensland Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -97,19 +109,31 @@
         {
           "name": "INSURANCE AUSTRALIA GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "60 090 739 923"
+          "identifier": "60 090 739 923",
+          "party_page": {
+            "id": "insurance-australia-group-limited",
+            "name": "Insurance Australia Group Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "RAC INSURANCE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "59 094 685 882"
+          "identifier": "59 094 685 882",
+          "party_page": {
+            "id": "rac-insurance-pty-limited",
+            "name": "Rac Insurance Pty Limited"
+          }
         },
         {
           "name": "RACI PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "40 008 671 805"
+          "identifier": "40 008 671 805",
+          "party_page": {
+            "id": "raci-pty-limited",
+            "name": "Raci Pty Limited"
+          }
         }
       ]
     },
@@ -122,14 +146,22 @@
         {
           "name": "ETG QUEENSLAND PROCESSING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "20 695 139 032"
+          "identifier": "20 695 139 032",
+          "party_page": {
+            "id": "etg-queensland-processing-pty-ltd",
+            "name": "Etg Queensland Processing Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "QUEENSLAND COTTON CORPORATION PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "26 010 944 591"
+          "identifier": "26 010 944 591",
+          "party_page": {
+            "id": "queensland-cotton-corporation-pty-ltd",
+            "name": "Queensland Cotton Corporation Pty Ltd"
+          }
         }
       ]
     },
@@ -142,19 +174,31 @@
         {
           "name": "Apex Group Holdings (Australia) Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "48 112 252 114"
+          "identifier": "48 112 252 114",
+          "party_page": {
+            "id": "apex-group-holdings-australia-pty-ltd",
+            "name": "Apex Group Holdings (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "83 068 908 912"
+          "identifier": "83 068 908 912",
+          "party_page": {
+            "id": "mercer-outsourcing-australia-pty-ltd",
+            "name": "Mercer Outsourcing (Australia) Pty Ltd"
+          }
         },
         {
           "name": "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "48 616 275 980"
+          "identifier": "48 616 275 980",
+          "party_page": {
+            "id": "mercer-administration-services-australia-pty-limited",
+            "name": "Mercer Administration Services (Australia) Pty Limited"
+          }
         }
       ]
     }

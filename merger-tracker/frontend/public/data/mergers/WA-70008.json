@@ -18,6 +18,10 @@
       "canonical": {
         "id": "tetra-tech-inc",
         "name": "Tetra Tech, Inc."
+      },
+      "party_page": {
+        "id": "tetra-tech-inc",
+        "name": "Tetra Tech, Inc."
       }
     }
   ],
@@ -25,35 +29,59 @@
     {
       "name": "Providence Consulting Group Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "49 117 321 552"
+      "identifier": "49 117 321 552",
+      "party_page": {
+        "id": "providence-consulting-group-pty-ltd",
+        "name": "Providence Consulting Group Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "TETRA TECH RPS ENERGY PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "44 072 504 299"
+      "identifier": "44 072 504 299",
+      "party_page": {
+        "id": "tetra-tech-rps-energy-pty-ltd",
+        "name": "Tetra Tech Rps Energy Pty Ltd"
+      }
     },
     {
       "name": "RPS Consultants Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "55 108 734 407"
+      "identifier": "55 108 734 407",
+      "party_page": {
+        "id": "rps-consultants-pty-ltd",
+        "name": "RPS Consultants Pty Ltd"
+      }
     },
     {
       "name": "SAGE GROUP HOLDINGS LTD",
       "identifier_type": "ABN",
-      "identifier": "58 093 581 330"
+      "identifier": "58 093 581 330",
+      "party_page": {
+        "id": "sage-group-holdings-ltd",
+        "name": "Sage Group Holdings Ltd"
+      }
     },
     {
       "name": "TETRA TECH COFFEY HOLDING PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "46 611 080 534"
+      "identifier": "46 611 080 534",
+      "party_page": {
+        "id": "tetra-tech-coffey-holding-pty-limited",
+        "name": "Tetra Tech Coffey Holding Pty Limited"
+      }
     },
     {
       "name": "TETRA TECH HOLDINGS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "98 623 346 225",
       "canonical": {
+        "id": "tetra-tech-inc",
+        "name": "Tetra Tech, Inc."
+      },
+      "party_page": {
         "id": "tetra-tech-inc",
         "name": "Tetra Tech, Inc."
       }
@@ -63,6 +91,10 @@
       "identifier_type": null,
       "identifier": "CIK 0000831641",
       "canonical": {
+        "id": "tetra-tech-inc",
+        "name": "Tetra Tech, Inc."
+      },
+      "party_page": {
         "id": "tetra-tech-inc",
         "name": "Tetra Tech, Inc."
       }
@@ -138,14 +170,22 @@
         {
           "name": "Global Garella, S.L.",
           "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  B24904989"
+          "identifier": "Spanish Tax Identification Number  B24904989",
+          "party_page": {
+            "id": "global-garella-s-l",
+            "name": "Global Garella, S.L."
+          }
         }
       ],
       "targets": [
         {
           "name": "Ayesa Engineering, S.A.U.",
           "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  A91379875"
+          "identifier": "Spanish Tax Identification Number  A91379875",
+          "party_page": {
+            "id": "ayesa-engineering-s-a-u",
+            "name": "Ayesa Engineering, S.A.U."
+          }
         }
       ]
     },
@@ -158,19 +198,31 @@
         {
           "name": "NACG WA Acquisition Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 678 296"
+          "identifier": "693 678 296",
+          "party_page": {
+            "id": "nacg-wa-acquisition-pty-ltd",
+            "name": "NACG WA Acquisition Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "DCL CORP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 633 008 992"
+          "identifier": "60 633 008 992",
+          "party_page": {
+            "id": "dcl-corp-pty-ltd",
+            "name": "Dcl Corp Pty Ltd"
+          }
         },
         {
           "name": "IRON HIRE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "43 641 807 589"
+          "identifier": "43 641 807 589",
+          "party_page": {
+            "id": "iron-hire-pty-ltd",
+            "name": "Iron Hire Pty Ltd"
+          }
         }
       ]
     },
@@ -183,24 +235,40 @@
         {
           "name": "Tega MC SG Holdings Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "202551682E"
+          "identifier": "202551682E",
+          "party_page": {
+            "id": "tega-mc-sg-holdings-pte-ltd",
+            "name": "Tega MC SG Holdings Pte. Ltd."
+          }
         },
         {
           "name": "Tega MC Australia Holdings Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "16 147 692 840"
+          "identifier": "16 147 692 840",
+          "party_page": {
+            "id": "tega-mc-australia-holdings-pty-ltd",
+            "name": "Tega MC Australia Holdings Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Orway IQ Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "52 631 359 370"
+          "identifier": "52 631 359 370",
+          "party_page": {
+            "id": "orway-iq-pty-ltd",
+            "name": "Orway IQ Pty Ltd"
+          }
         },
         {
           "name": "Molycop Technologies Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "85 154 346 004"
+          "identifier": "85 154 346 004",
+          "party_page": {
+            "id": "molycop-technologies-pty-ltd",
+            "name": "Molycop Technologies Pty Ltd"
+          }
         }
       ]
     }

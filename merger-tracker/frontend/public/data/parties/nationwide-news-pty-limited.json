@@ -1,0 +1,38 @@
+{
+  "id": "nationwide-news-pty-limited",
+  "canonical_name": "Nationwide News Pty. Limited",
+  "members": [
+    {
+      "name": "NATIONWIDE NEWS PTY. LIMITED",
+      "identifier": "98 008 438 828",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "MN-35014",
+        "merger_name": "News Corp \u2013 acquisition of 20% of National Distribution Services",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-05-04T12:00:00Z",
+        "determination_date": "2026-06-09T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 36.0,
+    "median_days": 36,
+    "average_business_days": 24.0,
+    "median_business_days": 24,
+    "completed_count": 1
+  }
+}

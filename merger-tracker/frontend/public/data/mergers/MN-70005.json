@@ -20,6 +20,10 @@
       "canonical": {
         "id": "freudenberg-home-and-cleaning-solutions-gmbh",
         "name": "Freudenberg Home and Cleaning Solutions GmbH"
+      },
+      "party_page": {
+        "id": "freudenberg-home-and-cleaning-solutions-gmbh",
+        "name": "Freudenberg Home and Cleaning Solutions GmbH"
       }
     }
   ],
@@ -27,7 +31,11 @@
     {
       "name": "Nilfisk Holding A/S",
       "identifier_type": null,
-      "identifier": "CVR 38998870"
+      "identifier": "CVR 38998870",
+      "party_page": {
+        "id": "nilfisk-holding-a-s",
+        "name": "Nilfisk Holding A/S"
+      }
     }
   ],
   "other_parties": [
@@ -38,17 +46,29 @@
       "canonical": {
         "id": "freudenberg-home-and-cleaning-solutions-gmbh",
         "name": "Freudenberg Home and Cleaning Solutions GmbH"
+      },
+      "party_page": {
+        "id": "freudenberg-home-and-cleaning-solutions-gmbh",
+        "name": "Freudenberg Home and Cleaning Solutions GmbH"
       }
     },
     {
       "name": "NILFISK PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "98 003 762 623"
+      "identifier": "98 003 762 623",
+      "party_page": {
+        "id": "nilfisk-pty-ltd",
+        "name": "Nilfisk Pty Ltd"
+      }
     },
     {
       "name": "Nilfisk A/S",
       "identifier_type": null,
-      "identifier": "CVR 62572213"
+      "identifier": "CVR 62572213",
+      "party_page": {
+        "id": "nilfisk-a-s",
+        "name": "Nilfisk A/S"
+      }
     }
   ],
   "anzsic_codes": [
@@ -135,19 +155,31 @@
         {
           "name": "Eiffel Investment Group SAS",
           "identifier_type": null,
-          "identifier": "SIREN 510 813 991"
+          "identifier": "SIREN 510 813 991",
+          "party_page": {
+            "id": "eiffel-investment-group-sas",
+            "name": "Eiffel Investment Group SAS"
+          }
         },
         {
           "name": "Eurazeo SE",
           "identifier_type": null,
-          "identifier": "SIREN 692 030 992"
+          "identifier": "SIREN 692 030 992",
+          "party_page": {
+            "id": "eurazeo-se",
+            "name": "Eurazeo SE"
+          }
         }
       ],
       "targets": [
         {
           "name": "Segula Holding SAS",
           "identifier_type": null,
-          "identifier": "SIREN 343 166 393"
+          "identifier": "SIREN 343 166 393",
+          "party_page": {
+            "id": "segula-holding-sas",
+            "name": "Segula Holding SAS"
+          }
         }
       ]
     },
@@ -160,24 +192,40 @@
         {
           "name": "Essential Bidco B.V.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "essential-bidco-b-v",
+            "name": "Essential Bidco B.V."
+          }
         },
         {
           "name": "Specialty (U.S.) Bidco, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialty-u-s-bidco-inc",
+            "name": "Specialty (U.S.) Bidco, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "SpecialtyCo US LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialtyco-us-llc",
+            "name": "SpecialtyCo US LLC"
+          }
         },
         {
           "name": "Biomin Phytogenics GmbH (Germany)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "biomin-phytogenics-gmbh-germany",
+            "name": "Biomin Phytogenics GmbH (Germany)"
+          }
         }
       ]
     },
@@ -190,24 +238,40 @@
         {
           "name": "INNIO Jenbacher International B.V.",
           "identifier_type": null,
-          "identifier": "KVK90210352"
+          "identifier": "KVK90210352",
+          "party_page": {
+            "id": "innio-jenbacher-international-b-v",
+            "name": "INNIO Jenbacher International B.V."
+          }
         },
         {
           "name": "INNIO Jenbacher Netherlands B.V.",
           "identifier_type": null,
-          "identifier": "KVK90209982"
+          "identifier": "KVK90209982",
+          "party_page": {
+            "id": "innio-jenbacher-netherlands-b-v",
+            "name": "INNIO Jenbacher Netherlands B.V."
+          }
         }
       ],
       "targets": [
         {
           "name": "Exterran (Thailand) Ltd",
           "identifier_type": null,
-          "identifier": "0105542031616"
+          "identifier": "0105542031616",
+          "party_page": {
+            "id": "exterran-thailand-ltd",
+            "name": "Exterran (Thailand) Ltd"
+          }
         },
         {
           "name": "PT Enerflex (Indonesia)",
           "identifier_type": null,
-          "identifier": "9120407262914"
+          "identifier": "9120407262914",
+          "party_page": {
+            "id": "pt-enerflex-indonesia",
+            "name": "PT Enerflex (Indonesia)"
+          }
         }
       ]
     }

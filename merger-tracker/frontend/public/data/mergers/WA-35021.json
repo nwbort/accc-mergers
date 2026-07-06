@@ -14,26 +14,42 @@
     {
       "name": "BUSS (QUEENSLAND) PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "15 065 081 281"
+      "identifier": "15 065 081 281",
+      "party_page": {
+        "id": "buss-queensland-pty-ltd",
+        "name": "Buss (Queensland) Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "DUXTON VINEYARDS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "26 668 025 545"
+      "identifier": "26 668 025 545",
+      "party_page": {
+        "id": "duxton-vineyards-pty-ltd",
+        "name": "Duxton Vineyards Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "BNP Paribas S.A",
       "identifier_type": null,
-      "identifier": "ARBN  000 000 117"
+      "identifier": "ARBN  000 000 117",
+      "party_page": {
+        "id": "bnp-paribas-s-a",
+        "name": "BNP Paribas S.A"
+      }
     },
     {
       "name": "BNP PARIBAS NOMINEES PTY LIMITED",
       "identifier_type": "ABN",
-      "identifier": "54 084 150 023"
+      "identifier": "54 084 150 023",
+      "party_page": {
+        "id": "bnp-paribas-nominees-pty-limited",
+        "name": "Bnp Paribas Nominees Pty Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -106,19 +122,31 @@
         {
           "name": "ASPHALT OPERATORS AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 682 698 282"
+          "identifier": "11 682 698 282",
+          "party_page": {
+            "id": "asphalt-operators-australia-pty-ltd",
+            "name": "Asphalt Operators Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "COLAS QUEENSLAND PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "91 169 872 208"
+          "identifier": "91 169 872 208",
+          "party_page": {
+            "id": "colas-queensland-pty-ltd",
+            "name": "Colas Queensland Pty Ltd"
+          }
         },
         {
           "name": "COLAS AUSTRALIA GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 000 388 161"
+          "identifier": "11 000 388 161",
+          "party_page": {
+            "id": "colas-australia-group-pty-ltd",
+            "name": "Colas Australia Group Pty Ltd"
+          }
         }
       ]
     },
@@ -131,19 +159,31 @@
         {
           "name": "RYOWA II GPS PTY. LIMITED",
           "identifier_type": "ABN",
-          "identifier": "16 063 780 058"
+          "identifier": "16 063 780 058",
+          "party_page": {
+            "id": "ryowa-ii-gps-pty-limited",
+            "name": "Ryowa Ii Gps Pty. Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "PH QUEENSLAND GAS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "12 626 604 000"
+          "identifier": "12 626 604 000",
+          "party_page": {
+            "id": "ph-queensland-gas-pty-ltd",
+            "name": "Ph Queensland Gas Pty Ltd"
+          }
         },
         {
           "name": "DYNO NOBEL LIMITED",
           "identifier_type": "ABN",
-          "identifier": "42 004 080 264"
+          "identifier": "42 004 080 264",
+          "party_page": {
+            "id": "dyno-nobel-limited",
+            "name": "Dyno Nobel Limited"
+          }
         }
       ]
     },
@@ -156,14 +196,22 @@
         {
           "name": "AUSTRALIANSUPER PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "94 006 457 987"
+          "identifier": "94 006 457 987",
+          "party_page": {
+            "id": "australiansuper-pty-ltd",
+            "name": "Australiansuper Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "IFM INVESTORS (NOMINEES) LIMITED",
           "identifier_type": "ABN",
-          "identifier": "56 003 969 891"
+          "identifier": "56 003 969 891",
+          "party_page": {
+            "id": "ifm-investors-nominees-limited",
+            "name": "Ifm Investors (Nominees) Limited"
+          }
         }
       ]
     }

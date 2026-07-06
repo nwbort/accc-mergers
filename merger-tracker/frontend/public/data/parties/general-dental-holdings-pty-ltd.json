@@ -1,0 +1,52 @@
+{
+  "id": "general-dental-holdings-pty-ltd",
+  "canonical_name": "General Dental Holdings Pty Ltd",
+  "members": [
+    {
+      "name": "GENERAL DENTAL HOLDINGS PTY LTD",
+      "identifier": "55 646 760 367",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "GENERAL DENTAL HOLDINGS PTY LTD trading as Impression Dental Group",
+      "identifier": "55 646 760 367",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "MN-90015",
+        "merger_name": "Impression Dental Group - Coastal Dental Care",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "phase": "Phase 1",
+        "notification_date": "2026-05-28T12:00:00Z",
+        "determination_date": "2026-06-25T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-70004",
+        "merger_name": "Impression Dental Group - Happy Rock Dental Practice",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-02-12T12:00:00Z",
+        "determination_date": "2026-02-26T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 2,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": {
+    "average_days": 28.0,
+    "median_days": 28,
+    "average_business_days": 18.0,
+    "median_business_days": 18,
+    "completed_count": 1
+  }
+}

@@ -14,7 +14,11 @@
     {
       "name": "Achronite Bidco Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "achronite-bidco-ltd",
+        "name": "Achronite Bidco Ltd"
+      }
     }
   ],
   "targets": [
@@ -23,6 +27,10 @@
       "identifier_type": null,
       "identifier": "BRN  70084973",
       "canonical": {
+        "id": "acclime-holdings-limited",
+        "name": "Acclime Holdings Limited"
+      },
+      "party_page": {
         "id": "acclime-holdings-limited",
         "name": "Acclime Holdings Limited"
       }
@@ -34,6 +42,10 @@
       "canonical": {
         "id": "acclime-holdings-limited",
         "name": "Acclime Holdings Limited"
+      },
+      "party_page": {
+        "id": "acclime-holdings-limited",
+        "name": "Acclime Holdings Limited"
       }
     }
   ],
@@ -43,6 +55,10 @@
       "identifier_type": null,
       "identifier": "",
       "canonical": {
+        "id": "warburg-pincus-llc",
+        "name": "Warburg Pincus LLC"
+      },
+      "party_page": {
         "id": "warburg-pincus-llc",
         "name": "Warburg Pincus LLC"
       }
@@ -126,7 +142,11 @@
         {
           "name": "GT Silver BidCo, Inc.",
           "identifier_type": null,
-          "identifier": "413417606"
+          "identifier": "413417606",
+          "party_page": {
+            "id": "gt-silver-bidco-inc",
+            "name": "GT Silver BidCo, Inc."
+          }
         }
       ],
       "targets": [
@@ -135,6 +155,10 @@
           "identifier_type": null,
           "identifier": "00140838",
           "canonical": {
+            "id": "clearwater-analytics-llc",
+            "name": "Clearwater Analytics, LLC"
+          },
+          "party_page": {
             "id": "clearwater-analytics-llc",
             "name": "Clearwater Analytics, LLC"
           }
@@ -150,19 +174,31 @@
         {
           "name": "Arena BidCo Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 657 484"
+          "identifier": "693 657 484",
+          "party_page": {
+            "id": "arena-bidco-pty-ltd",
+            "name": "Arena BidCo Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "RFGI GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "55 630 028 974"
+          "identifier": "55 630 028 974",
+          "party_page": {
+            "id": "rfgi-group-pty-ltd",
+            "name": "Rfgi Group Pty Ltd"
+          }
         },
         {
           "name": "GAMEON HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "47 629 422 206"
+          "identifier": "47 629 422 206",
+          "party_page": {
+            "id": "gameon-holdings-pty-ltd",
+            "name": "Gameon Holdings Pty Ltd"
+          }
         }
       ]
     },
@@ -175,19 +211,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     }

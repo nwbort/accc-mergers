@@ -14,41 +14,69 @@
     {
       "name": "TRANSPORT ACCIDENT COMMISSION",
       "identifier_type": "ABN",
-      "identifier": "22 033 947 623"
+      "identifier": "22 033 947 623",
+      "party_page": {
+        "id": "transport-accident-commission",
+        "name": "Transport Accident Commission"
+      }
     },
     {
       "name": "VICTORIAN MANAGED INSURANCE AUTHORITY",
       "identifier_type": "ABN",
-      "identifier": "39 682 497 841"
+      "identifier": "39 682 497 841",
+      "party_page": {
+        "id": "victorian-managed-insurance-authority",
+        "name": "Victorian Managed Insurance Authority"
+      }
     },
     {
       "name": "VICTORIAN WORKCOVER AUTHORITY",
       "identifier_type": "ABN",
-      "identifier": "90 296 467 627"
+      "identifier": "90 296 467 627",
+      "party_page": {
+        "id": "victorian-workcover-authority",
+        "name": "Victorian Workcover Authority"
+      }
     },
     {
       "name": "VICTORIAN FUNDS MANAGEMENT CORPORATION",
       "identifier_type": "ABN",
-      "identifier": "27 691 254 157"
+      "identifier": "27 691 254 157",
+      "party_page": {
+        "id": "victorian-funds-management-corporation",
+        "name": "Victorian Funds Management Corporation"
+      }
     },
     {
       "name": "EMERGENCY SERVICES SUPER BOARD",
       "identifier_type": "ABN",
-      "identifier": "28 161 296 741"
+      "identifier": "28 161 296 741",
+      "party_page": {
+        "id": "emergency-services-super-board",
+        "name": "Emergency Services Super Board"
+      }
     }
   ],
   "targets": [
     {
       "name": "CORVAL PARTNERS LIMITED",
       "identifier_type": "ABN",
-      "identifier": "86 130 628 830"
+      "identifier": "86 130 628 830",
+      "party_page": {
+        "id": "corval-partners-limited",
+        "name": "Corval Partners Limited"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "STATE STREET AUSTRALIA LTD",
       "identifier_type": "ABN",
-      "identifier": "21 002 965 200"
+      "identifier": "21 002 965 200",
+      "party_page": {
+        "id": "state-street-australia-ltd",
+        "name": "State Street Australia Ltd"
+      }
     }
   ],
   "anzsic_codes": [
@@ -121,14 +149,22 @@
         {
           "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "57 167 960 018"
+          "identifier": "57 167 960 018",
+          "party_page": {
+            "id": "az-next-generation-advisory-pty-ltd",
+            "name": "Az Next Generation Advisory Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "BMM PARTNERS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 649 113 959"
+          "identifier": "82 649 113 959",
+          "party_page": {
+            "id": "bmm-partners-pty-ltd",
+            "name": "Bmm Partners Pty Ltd"
+          }
         }
       ]
     },
@@ -145,6 +181,10 @@
           "canonical": {
             "id": "cvc-capital-partners",
             "name": "CVC Capital Partners"
+          },
+          "party_page": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
           }
         }
       ],
@@ -152,7 +192,11 @@
         {
           "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
+            "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+          }
         }
       ]
     },
@@ -165,24 +209,40 @@
         {
           "name": "Essential Bidco B.V.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "essential-bidco-b-v",
+            "name": "Essential Bidco B.V."
+          }
         },
         {
           "name": "Specialty (U.S.) Bidco, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialty-u-s-bidco-inc",
+            "name": "Specialty (U.S.) Bidco, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "SpecialtyCo US LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialtyco-us-llc",
+            "name": "SpecialtyCo US LLC"
+          }
         },
         {
           "name": "Biomin Phytogenics GmbH (Germany)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "biomin-phytogenics-gmbh-germany",
+            "name": "Biomin Phytogenics GmbH (Germany)"
+          }
         }
       ]
     }

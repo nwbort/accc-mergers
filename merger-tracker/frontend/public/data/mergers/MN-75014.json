@@ -20,6 +20,10 @@
       "canonical": {
         "id": "seismic-software-inc",
         "name": "Seismic Software, Inc."
+      },
+      "party_page": {
+        "id": "seismic-software-inc",
+        "name": "Seismic Software, Inc."
       }
     }
   ],
@@ -29,6 +33,10 @@
       "identifier_type": null,
       "identifier": "Delaware File Number  5126410",
       "canonical": {
+        "id": "highspot-inc",
+        "name": "Highspot Inc."
+      },
+      "party_page": {
         "id": "highspot-inc",
         "name": "Highspot Inc."
       }
@@ -42,6 +50,10 @@
       "canonical": {
         "id": "seismic-software-inc",
         "name": "Seismic Software, Inc."
+      },
+      "party_page": {
+        "id": "seismic-software-inc",
+        "name": "Seismic Software, Inc."
       }
     },
     {
@@ -49,6 +61,10 @@
       "identifier_type": null,
       "identifier": "Delaware File Number  10492811",
       "canonical": {
+        "id": "helix-sub-llc",
+        "name": "Helix Sub LLC"
+      },
+      "party_page": {
         "id": "helix-sub-llc",
         "name": "Helix Sub LLC"
       }
@@ -60,6 +76,10 @@
       "canonical": {
         "id": "highspot-inc",
         "name": "Highspot Inc."
+      },
+      "party_page": {
+        "id": "highspot-inc",
+        "name": "Highspot Inc."
       }
     },
     {
@@ -67,6 +87,10 @@
       "identifier_type": null,
       "identifier": "Delaware File Number  10492813",
       "canonical": {
+        "id": "helix-sub-llc",
+        "name": "Helix Sub LLC"
+      },
+      "party_page": {
         "id": "helix-sub-llc",
         "name": "Helix Sub LLC"
       }
@@ -160,13 +184,21 @@
         {
           "name": "Rocket Software AMC UK Ltd",
           "identifier_type": null,
-          "identifier": "UK Company number 01504593"
+          "identifier": "UK Company number 01504593",
+          "party_page": {
+            "id": "rocket-software-amc-uk-ltd",
+            "name": "Rocket Software AMC UK Ltd"
+          }
         },
         {
           "name": "Rocket Software, Inc.",
           "identifier_type": null,
           "identifier": "Companies\u2019 Register of Delaware  3506913",
           "canonical": {
+            "id": "rocket-software-inc",
+            "name": "Rocket Software, Inc."
+          },
+          "party_page": {
             "id": "rocket-software-inc",
             "name": "Rocket Software, Inc."
           }
@@ -176,12 +208,20 @@
         {
           "name": "Micro Focus IP Development Limited",
           "identifier_type": null,
-          "identifier": "UK Company number 07233975"
+          "identifier": "UK Company number 07233975",
+          "party_page": {
+            "id": "micro-focus-ip-development-limited",
+            "name": "Micro Focus IP Development Limited"
+          }
         },
         {
           "name": "Open Text Corporation",
           "identifier_type": null,
-          "identifier": "10836044"
+          "identifier": "10836044",
+          "party_page": {
+            "id": "open-text-corporation",
+            "name": "Open Text Corporation"
+          }
         }
       ]
     },
@@ -194,14 +234,22 @@
         {
           "name": "HCL Technologies Limited",
           "identifier_type": "ABN",
-          "identifier": "37 541 578 951"
+          "identifier": "37 541 578 951",
+          "party_page": {
+            "id": "hcl-technologies-limited",
+            "name": "HCL Technologies Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "CLOUD SOFTWARE GROUP AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "94 092 002 321"
+          "identifier": "94 092 002 321",
+          "party_page": {
+            "id": "cloud-software-group-australia-pty-ltd",
+            "name": "Cloud Software Group Australia Pty Ltd"
+          }
         }
       ]
     },
@@ -214,19 +262,31 @@
         {
           "name": "Hg Pooled Management Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "hg-pooled-management-limited",
+            "name": "Hg Pooled Management Limited"
+          }
         },
         {
           "name": "OnwardAcquireCo, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "onwardacquireco-inc",
+            "name": "OnwardAcquireCo, Inc"
+          }
         }
       ],
       "targets": [
         {
           "name": "OneStream, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "onestream-inc",
+            "name": "OneStream, Inc."
+          }
         }
       ]
     }

@@ -13,14 +13,22 @@
     {
       "name": "ENDEAVOUR GROUP LIMITED",
       "identifier_type": "ABN",
-      "identifier": "77 159 767 843"
+      "identifier": "77 159 767 843",
+      "party_page": {
+        "id": "endeavour-group-limited",
+        "name": "Endeavour Group Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "AVALON DM PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "61 691 733 150"
+      "identifier": "61 691 733 150",
+      "party_page": {
+        "id": "avalon-dm-pty-ltd",
+        "name": "Avalon Dm Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -68,19 +76,31 @@
         {
           "name": "ENDEAVOUR GROUP LIMITED",
           "identifier_type": "ABN",
-          "identifier": "77 159 767 843"
+          "identifier": "77 159 767 843",
+          "party_page": {
+            "id": "endeavour-group-limited",
+            "name": "Endeavour Group Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "UPPER HUNTER MOTORS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "53 001 740 218"
+          "identifier": "53 001 740 218",
+          "party_page": {
+            "id": "upper-hunter-motors-pty-ltd",
+            "name": "Upper Hunter Motors Pty Ltd"
+          }
         },
         {
           "name": "Bottlemart Muswellbrook",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "bottlemart-muswellbrook",
+            "name": "Bottlemart Muswellbrook"
+          }
         }
       ]
     },
@@ -93,14 +113,22 @@
         {
           "name": "MIGALOO QLD PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "30 600 219 172"
+          "identifier": "30 600 219 172",
+          "party_page": {
+            "id": "migaloo-qld-pty-ltd",
+            "name": "Migaloo Qld Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "The Trustee for The Garden Holdings Trust",
           "identifier_type": "ABN",
-          "identifier": "45 745 542 544"
+          "identifier": "45 745 542 544",
+          "party_page": {
+            "id": "the-trustee-for-the-garden-holdings-trust",
+            "name": "The Trustee for The Garden Holdings Trust"
+          }
         }
       ]
     },
@@ -113,14 +141,22 @@
         {
           "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "35 667 654 686"
+          "identifier": "35 667 654 686",
+          "party_page": {
+            "id": "cvs-vets-australia-proprietary-limited",
+            "name": "Cvs Vets (Australia) Proprietary Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 001 336 723"
+          "identifier": "25 001 336 723",
+          "party_page": {
+            "id": "pittwater-animal-hospital-pty-ltd",
+            "name": "Pittwater Animal Hospital Pty Ltd"
+          }
         }
       ]
     }

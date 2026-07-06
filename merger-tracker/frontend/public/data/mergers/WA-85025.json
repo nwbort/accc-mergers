@@ -14,7 +14,11 @@
     {
       "name": "Apollo Purchaser, Inc.",
       "identifier_type": null,
-      "identifier": "Registration number 2027954573"
+      "identifier": "Registration number 2027954573",
+      "party_page": {
+        "id": "apollo-purchaser-inc",
+        "name": "Apollo Purchaser, Inc."
+      }
     }
   ],
   "targets": [
@@ -25,6 +29,10 @@
       "canonical": {
         "id": "blackline-safety-corp",
         "name": "Blackline Safety Corp."
+      },
+      "party_page": {
+        "id": "blackline-safety-corp",
+        "name": "Blackline Safety Corp."
       }
     }
   ],
@@ -32,42 +40,74 @@
     {
       "name": "Blackline Safety Middle East Wireless  Equipment Trading \u2013 L.L.C. \u2013 S.P.C.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "blackline-safety-middle-east-wireless-equipment-trading-l-l-c-s-p-c",
+        "name": "Blackline Safety Middle East Wireless Equipment Trading \u2013 L.L.C. \u2013 S.P.C."
+      }
     },
     {
       "name": "Blackline Safety USA Corp.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "blackline-safety-usa-corp",
+        "name": "Blackline Safety USA Corp."
+      }
     },
     {
       "name": "Apollo Intermediate Holdings, Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "apollo-intermediate-inc",
+        "name": "Apollo Intermediate, Inc."
+      }
     },
     {
       "name": "Apollo Intermediate, Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "apollo-intermediate-inc",
+        "name": "Apollo Intermediate, Inc."
+      }
     },
     {
       "name": "Apollo CallCo, Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "apollo-callco-inc",
+        "name": "Apollo CallCo, Inc."
+      }
     },
     {
       "name": "Blackline Safety Europe SAS",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "blackline-safety-europe-sas",
+        "name": "Blackline Safety Europe SAS"
+      }
     },
     {
       "name": "Apollo Topco, L.P.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "apollo-topco-l-p",
+        "name": "Apollo Topco, L.P."
+      }
     },
     {
       "name": "Wearable Technologies Limited",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "wearable-technologies-limited",
+        "name": "Wearable Technologies Limited"
+      }
     },
     {
       "name": "BLACKLINE SAFETY AUSTRALIA PTY LTD",
@@ -76,27 +116,47 @@
       "canonical": {
         "id": "blackline-safety-corp",
         "name": "Blackline Safety Corp."
+      },
+      "party_page": {
+        "id": "blackline-safety-corp",
+        "name": "Blackline Safety Corp."
       }
     },
     {
       "name": "Blackline Safety Europe Ltd",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "blackline-safety-europe-ltd",
+        "name": "Blackline Safety Europe Ltd"
+      }
     },
     {
       "name": "Francisco Partners Management, L.P.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "francisco-partners-management-l-p",
+        "name": "Francisco Partners Management, L.P"
+      }
     },
     {
       "name": "Blackline Safety Europe GmbH",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "blackline-safety-europe-ltd",
+        "name": "Blackline Safety Europe Ltd"
+      }
     },
     {
       "name": "Apollo Topco GP, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "apollo-topco-gp-llc",
+        "name": "Apollo Topco GP, LLC"
+      }
     }
   ],
   "anzsic_codes": [
@@ -181,14 +241,22 @@
         {
           "name": "Sigrun Bidco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "sigrun-bidco-limited",
+            "name": "Sigrun Bidco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)",
           "identifier_type": null,
-          "identifier": "CRN 11755038"
+          "identifier": "CRN 11755038",
+          "party_page": {
+            "id": "sermo-limited-together-with-its-subsidiaries-sermo",
+            "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
+          }
         }
       ]
     },
@@ -201,19 +269,31 @@
         {
           "name": "Catalyst Blocker Merger Sub I, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "catalyst-blocker-merger-sub-i-llc",
+            "name": "Catalyst Blocker Merger Sub I, LLC"
+          }
         },
         {
           "name": "Catalyst Blocker Merger Sub II, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "catalyst-blocker-merger-sub-ii-llc",
+            "name": "Catalyst Blocker Merger Sub II, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "CSHC Buyerco, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "cshc-buyerco-llc",
+            "name": "CSHC Buyerco, LLC"
+          }
         }
       ]
     },
@@ -230,6 +310,10 @@
           "canonical": {
             "id": "servicenow-inc",
             "name": "ServiceNow, Inc."
+          },
+          "party_page": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
           }
         }
       ],
@@ -237,7 +321,11 @@
         {
           "name": "Veza Technologies, Inc.",
           "identifier_type": null,
-          "identifier": "7791387"
+          "identifier": "7791387",
+          "party_page": {
+            "id": "veza-technologies-inc",
+            "name": "Veza Technologies, Inc."
+          }
         }
       ]
     }

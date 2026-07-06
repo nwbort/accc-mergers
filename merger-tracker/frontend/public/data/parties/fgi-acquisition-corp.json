@@ -1,0 +1,37 @@
+{
+  "id": "fgi-acquisition-corp",
+  "canonical_name": "FGI Acquisition Corp",
+  "members": [
+    {
+      "name": "FGI Acquisition Corp",
+      "identifier": "20 659 183 196",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "FLEXITALLIC AUSTRALIA PTY LTD",
+      "identifier": "20 659 183 196",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "WA-60010",
+        "merger_name": "Michelin - Flexitallic",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-03-04T12:00:00Z",
+        "determination_date": "2026-03-27T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

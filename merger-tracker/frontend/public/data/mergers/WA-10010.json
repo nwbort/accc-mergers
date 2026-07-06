@@ -14,24 +14,40 @@
     {
       "name": "Enverus, Inc.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "enverus-inc",
+        "name": "Enverus, Inc."
+      }
     }
   ],
   "targets": [
     {
       "name": "Spatial Business Systems Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "76 125 465 483"
+      "identifier": "76 125 465 483",
+      "party_page": {
+        "id": "spatial-business-systems-pty-ltd",
+        "name": "Spatial Business Systems Pty Ltd"
+      }
     },
     {
       "name": "SBS Optionco, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "sbs-optionco-llc",
+        "name": "SBS Optionco, LLC"
+      }
     },
     {
       "name": "SBS Blocker, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "sbs-blocker-llc",
+        "name": "SBS Blocker, LLC"
+      }
     }
   ],
   "other_parties": [
@@ -40,6 +56,10 @@
       "identifier_type": null,
       "identifier": "CIK 0001393818",
       "canonical": {
+        "id": "blackstone-inc",
+        "name": "Blackstone Inc."
+      },
+      "party_page": {
         "id": "blackstone-inc",
         "name": "Blackstone Inc."
       }
@@ -111,14 +131,22 @@
         {
           "name": "Cvent Atlanta, LLC",
           "identifier_type": null,
-          "identifier": "[Delaware corporate file number  5603939]"
+          "identifier": "[Delaware corporate file number  5603939]",
+          "party_page": {
+            "id": "cvent-atlanta-llc",
+            "name": "Cvent Atlanta, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "ON24, Inc.",
           "identifier_type": null,
-          "identifier": "[Delaware corporate file number  2843568]"
+          "identifier": "[Delaware corporate file number  2843568]",
+          "party_page": {
+            "id": "on24-inc",
+            "name": "ON24, Inc."
+          }
         }
       ]
     },
@@ -131,14 +159,22 @@
         {
           "name": "Zendesk, Inc.",
           "identifier_type": null,
-          "identifier": "EIN 264411091"
+          "identifier": "EIN 264411091",
+          "party_page": {
+            "id": "zendesk-inc",
+            "name": "Zendesk, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Forethought Technologies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "forethought-technologies-inc",
+            "name": "Forethought Technologies, Inc."
+          }
         }
       ]
     },
@@ -151,19 +187,31 @@
         {
           "name": "Fjord Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "TIN/EIN  921660460"
+          "identifier": "TIN/EIN  921660460",
+          "party_page": {
+            "id": "fjord-merger-sub-inc",
+            "name": "Fjord Merger Sub, Inc."
+          }
         },
         {
           "name": "IFS North America, Inc.",
           "identifier_type": null,
-          "identifier": "TIN/EIN  391292200"
+          "identifier": "TIN/EIN  391292200",
+          "party_page": {
+            "id": "ifs-north-america-inc",
+            "name": "IFS North America, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Softeon Inc.",
           "identifier_type": null,
-          "identifier": "EIN 541960847"
+          "identifier": "EIN 541960847",
+          "party_page": {
+            "id": "softeon-inc",
+            "name": "Softeon Inc."
+          }
         }
       ]
     }

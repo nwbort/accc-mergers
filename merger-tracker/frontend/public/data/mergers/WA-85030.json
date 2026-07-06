@@ -14,21 +14,33 @@
     {
       "name": "UP EDUCATION AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "58 095 741 227"
+      "identifier": "58 095 741 227",
+      "party_page": {
+        "id": "up-education-australia-pty-ltd",
+        "name": "Up Education Australia Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "AUSTRALIAN ACADEMY OF BEAUTY DERMAL AND LASER PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "88 089 942 647"
+      "identifier": "88 089 942 647",
+      "party_page": {
+        "id": "australian-academy-of-beauty-dermal-and-laser-pty-ltd",
+        "name": "Australian Academy Of Beauty Dermal And Laser Pty Ltd"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Pacific Equity Partners",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "pacific-equity-partners",
+        "name": "Pacific Equity Partners"
+      }
     }
   ],
   "anzsic_codes": [
@@ -101,7 +113,11 @@
         {
           "name": "Smile Partners (NSW3) Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 902 955"
+          "identifier": "695 902 955",
+          "party_page": {
+            "id": "smile-partners-nsw3-pty-ltd",
+            "name": "Smile Partners (NSW3) Pty Ltd"
+          }
         }
       ],
       "targets": [
@@ -110,6 +126,10 @@
           "identifier_type": "ACN",
           "identifier": "108 757 357",
           "canonical": {
+            "id": "shrika-pty-ltd",
+            "name": "Shrika Pty Ltd"
+          },
+          "party_page": {
             "id": "shrika-pty-ltd",
             "name": "Shrika Pty Ltd"
           }
@@ -125,19 +145,31 @@
         {
           "name": "LGPE SEC S.C. Sp",
           "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B281514"
+          "identifier": "Luxembourg Company Registration Number: B281514",
+          "party_page": {
+            "id": "lgpe-sec-s-c-sp",
+            "name": "LGPE SEC S.C. Sp"
+          }
         },
         {
           "name": "Crown Growth Opportunities IV SCSp-RAIF",
           "identifier_type": null,
-          "identifier": "Luxembourg Company Registration Number: B254394"
+          "identifier": "Luxembourg Company Registration Number: B254394",
+          "party_page": {
+            "id": "crown-growth-opportunities-iv-scsp-raif",
+            "name": "Crown Growth Opportunities IV SCSp-RAIF"
+          }
         }
       ],
       "targets": [
         {
           "name": "ADVANCED NAVIGATION PTY. LTD.",
           "identifier_type": "ABN",
-          "identifier": "49 156 101 549"
+          "identifier": "49 156 101 549",
+          "party_page": {
+            "id": "advanced-navigation-pty-ltd",
+            "name": "Advanced Navigation Pty. Ltd."
+          }
         }
       ]
     },
@@ -154,6 +186,10 @@
           "canonical": {
             "id": "cvc-capital-partners",
             "name": "CVC Capital Partners"
+          },
+          "party_page": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
           }
         }
       ],
@@ -161,7 +197,11 @@
         {
           "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
+            "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+          }
         }
       ]
     }

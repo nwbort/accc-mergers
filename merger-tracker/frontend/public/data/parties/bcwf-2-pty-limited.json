@@ -1,0 +1,47 @@
+{
+  "id": "bcwf-2-pty-limited",
+  "canonical_name": "Bcwf 2 Pty Limited",
+  "members": [
+    {
+      "name": "BCWF 2 Holdings Pty Ltd",
+      "identifier": "697 890 207",
+      "identifier_type": "ACN"
+    },
+    {
+      "name": "BCWF 2 PTY LIMITED",
+      "identifier": "77 670 206 256",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "WA-70021",
+        "merger_name": "Aula Energy \u2013 Additional interest in the Boulder Creek Wind Farm",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-05-26T12:00:00Z",
+        "determination_date": "2026-06-24T12:00:00Z"
+      }
+    ],
+    "target": [
+      {
+        "merger_id": "WA-70021",
+        "merger_name": "Aula Energy \u2013 Additional interest in the Boulder Creek Wind Farm",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-05-26T12:00:00Z",
+        "determination_date": "2026-06-24T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

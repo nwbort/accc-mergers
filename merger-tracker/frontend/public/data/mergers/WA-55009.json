@@ -14,46 +14,78 @@
     {
       "name": "Resonetics, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "resonetics-llc",
+        "name": "Resonetics, LLC"
+      }
     }
   ],
   "targets": [
     {
       "name": "Resolution Medical MidCo, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "resolution-medical-midco-llc",
+        "name": "Resolution Medical MidCo, LLC"
+      }
     },
     {
       "name": "Arcline Capital Partners II-A LP",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "arcline-capital-partners-ii-a-lp",
+        "name": "Arcline Capital Partners II-A LP"
+      }
     },
     {
       "name": "Arcline Resolution Blocker, Inc",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "arcline-resolution-blocker-inc",
+        "name": "Arcline Resolution Blocker, Inc"
+      }
     },
     {
       "name": "Resolution Medical TopCo LP",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "resolution-medical-topco-lp",
+        "name": "Resolution Medical TopCo LP"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "GTCR (Regatta Investors) LP",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "gtcr-regatta-investors-lp",
+        "name": "GTCR (Regatta Investors) LP"
+      }
     },
     {
       "name": "CP Granite Holdings, L.P.",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "cp-granite-holdings-l-p",
+        "name": "CP Granite Holdings, L.P."
+      }
     },
     {
       "name": "Regatta Medical Holdings, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "regatta-medical-holdings-llc",
+        "name": "Regatta Medical Holdings, LLC"
+      }
     }
   ],
   "anzsic_codes": [
@@ -126,14 +158,22 @@
         {
           "name": "Rosewood AG, LP",
           "identifier_type": null,
-          "identifier": "LP5500"
+          "identifier": "LP5500",
+          "party_page": {
+            "id": "rosewood-ag-lp",
+            "name": "Rosewood AG, LP"
+          }
         }
       ],
       "targets": [
         {
           "name": "Collagen Holdings, LLC",
           "identifier_type": null,
-          "identifier": "DE File Number  7473707"
+          "identifier": "DE File Number  7473707",
+          "party_page": {
+            "id": "collagen-holdings-llc",
+            "name": "Collagen Holdings, LLC"
+          }
         }
       ]
     },
@@ -146,19 +186,31 @@
         {
           "name": "KKR Spire Aggregator L.P.",
           "identifier_type": null,
-          "identifier": "Company No.: 1001421059  Ontario"
+          "identifier": "Company No.: 1001421059  Ontario",
+          "party_page": {
+            "id": "kkr-spire-aggregator-l-p",
+            "name": "KKR Spire Aggregator L.P."
+          }
         },
         {
           "name": "Carrick Capital Associates Fund II, L.P.",
           "identifier_type": null,
-          "identifier": "Company No.: 5654423  Delaware"
+          "identifier": "Company No.: 5654423  Delaware",
+          "party_page": {
+            "id": "carrick-capital-associates-fund-ii-l-p",
+            "name": "Carrick Capital Associates Fund II, L.P."
+          }
         }
       ],
       "targets": [
         {
           "name": "Saviynt, Inc.",
           "identifier_type": null,
-          "identifier": "Company No.: 5712935  Delaware"
+          "identifier": "Company No.: 5712935  Delaware",
+          "party_page": {
+            "id": "saviynt-inc",
+            "name": "Saviynt, Inc."
+          }
         }
       ]
     },
@@ -171,24 +223,40 @@
         {
           "name": "Admiral AU Bidco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 801 195"
+          "identifier": "695 801 195",
+          "party_page": {
+            "id": "admiral-au-bidco-pty-ltd",
+            "name": "Admiral AU Bidco Pty Ltd"
+          }
         },
         {
           "name": "Admiral AU Holdco Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 791 710"
+          "identifier": "695 791 710",
+          "party_page": {
+            "id": "admiral-au-holdco-pty-ltd",
+            "name": "Admiral AU Holdco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "EPTEC MARINE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "49 118 319 547"
+          "identifier": "49 118 319 547",
+          "party_page": {
+            "id": "eptec-marine-pty-ltd",
+            "name": "Eptec Marine Pty Ltd"
+          }
         },
         {
           "name": "EPTEC BIDCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "12 638 785 378"
+          "identifier": "12 638 785 378",
+          "party_page": {
+            "id": "eptec-bidco-pty-ltd",
+            "name": "Eptec Bidco Pty Ltd"
+          }
         }
       ]
     }

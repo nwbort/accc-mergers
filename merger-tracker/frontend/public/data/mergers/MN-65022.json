@@ -13,14 +13,22 @@
     {
       "name": "Hapag-Lloyd Aktiengesellschaft",
       "identifier_type": null,
-      "identifier": "German company registration number  HRB97937"
+      "identifier": "German company registration number  HRB97937",
+      "party_page": {
+        "id": "hapag-lloyd-aktiengesellschaft",
+        "name": "Hapag-Lloyd Aktiengesellschaft"
+      }
     }
   ],
   "targets": [
     {
       "name": "ZIM Integrated Shipping Services Ltd",
       "identifier_type": null,
-      "identifier": "Israeli company registration number  520015041"
+      "identifier": "Israeli company registration number  520015041",
+      "party_page": {
+        "id": "zim-integrated-shipping-services-ltd",
+        "name": "ZIM Integrated Shipping Services Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -68,19 +76,31 @@
         {
           "name": "Global Engage Marine Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 762 122"
+          "identifier": "693 762 122",
+          "party_page": {
+            "id": "global-engage-marine-pty-ltd",
+            "name": "Global Engage Marine Pty Ltd"
+          }
         },
         {
           "name": "PT Asian Bulk Logistics",
           "identifier_type": null,
-          "identifier": "NIB   8120012130871"
+          "identifier": "NIB   8120012130871",
+          "party_page": {
+            "id": "pt-asian-bulk-logistics",
+            "name": "PT Asian Bulk Logistics"
+          }
         }
       ],
       "targets": [
         {
           "name": "ENGAGE MARINE TOPCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "46 675 998 562"
+          "identifier": "46 675 998 562",
+          "party_page": {
+            "id": "engage-marine-topco-pty-ltd",
+            "name": "Engage Marine Topco Pty Ltd"
+          }
         }
       ]
     },
@@ -93,19 +113,31 @@
         {
           "name": "Apex Group Holdings (Australia) Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "48 112 252 114"
+          "identifier": "48 112 252 114",
+          "party_page": {
+            "id": "apex-group-holdings-australia-pty-ltd",
+            "name": "Apex Group Holdings (Australia) Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "MERCER OUTSOURCING (AUSTRALIA) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "83 068 908 912"
+          "identifier": "83 068 908 912",
+          "party_page": {
+            "id": "mercer-outsourcing-australia-pty-ltd",
+            "name": "Mercer Outsourcing (Australia) Pty Ltd"
+          }
         },
         {
           "name": "MERCER ADMINISTRATION SERVICES (AUSTRALIA) PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "48 616 275 980"
+          "identifier": "48 616 275 980",
+          "party_page": {
+            "id": "mercer-administration-services-australia-pty-limited",
+            "name": "Mercer Administration Services (Australia) Pty Limited"
+          }
         }
       ]
     },
@@ -118,14 +150,22 @@
         {
           "name": "AZ NEXT GENERATION ADVISORY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "57 167 960 018"
+          "identifier": "57 167 960 018",
+          "party_page": {
+            "id": "az-next-generation-advisory-pty-ltd",
+            "name": "Az Next Generation Advisory Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "BMM PARTNERS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 649 113 959"
+          "identifier": "82 649 113 959",
+          "party_page": {
+            "id": "bmm-partners-pty-ltd",
+            "name": "Bmm Partners Pty Ltd"
+          }
         }
       ]
     }

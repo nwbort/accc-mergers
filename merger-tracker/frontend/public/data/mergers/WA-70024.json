@@ -14,27 +14,43 @@
     {
       "name": "Respighi Bidco S.p.A",
       "identifier_type": null,
-      "identifier": "Company number (Italy)  14717940960"
+      "identifier": "Company number (Italy)  14717940960",
+      "party_page": {
+        "id": "respighi-bidco-s-p-a",
+        "name": "Respighi Bidco S.p.A"
+      }
     }
   ],
   "targets": [
     {
       "name": "Recordati Industria Chimica e Farmaceutica S.p.A. / Recordati S.p.A.",
       "identifier_type": null,
-      "identifier": "Company number (Italy)  00748210150"
+      "identifier": "Company number (Italy)  00748210150",
+      "party_page": {
+        "id": "recordati-industria-chimica-e-farmaceutica-s-p-a-recordati-s-p-a",
+        "name": "Recordati Industria Chimica e Farmaceutica S.p.A. / Recordati S.p.A."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "Groupe Bruxelles Lambert SA",
       "identifier_type": null,
-      "identifier": "CBE number  0407040209"
+      "identifier": "CBE number  0407040209",
+      "party_page": {
+        "id": "groupe-bruxelles-lambert-sa",
+        "name": "Groupe Bruxelles Lambert SA"
+      }
     },
     {
       "name": "CVC Capital Partners plc",
       "identifier_type": null,
       "identifier": "Registration number (Jersey)  140080",
       "canonical": {
+        "id": "cvc-capital-partners",
+        "name": "CVC Capital Partners"
+      },
+      "party_page": {
         "id": "cvc-capital-partners",
         "name": "CVC Capital Partners"
       }
@@ -110,6 +126,10 @@
           "canonical": {
             "id": "cvc-capital-partners",
             "name": "CVC Capital Partners"
+          },
+          "party_page": {
+            "id": "cvc-capital-partners",
+            "name": "CVC Capital Partners"
           }
         }
       ],
@@ -117,7 +137,11 @@
         {
           "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "marathon-asset-management-lp-marathon-gp-holdings-i-llc-and-marathon-gp-holdings",
+            "name": "Marathon Asset Management; LP, Marathon GP Holdings I, LLC and Marathon GP Holdings II, LLC"
+          }
         }
       ]
     },
@@ -130,24 +154,40 @@
         {
           "name": "Essential Bidco B.V.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "essential-bidco-b-v",
+            "name": "Essential Bidco B.V."
+          }
         },
         {
           "name": "Specialty (U.S.) Bidco, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialty-u-s-bidco-inc",
+            "name": "Specialty (U.S.) Bidco, Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "SpecialtyCo US LLC",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "specialtyco-us-llc",
+            "name": "SpecialtyCo US LLC"
+          }
         },
         {
           "name": "Biomin Phytogenics GmbH (Germany)",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "biomin-phytogenics-gmbh-germany",
+            "name": "Biomin Phytogenics GmbH (Germany)"
+          }
         }
       ]
     },
@@ -160,14 +200,22 @@
         {
           "name": "Alta Genetics Australia Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "54 140 644 784"
+          "identifier": "54 140 644 784",
+          "party_page": {
+            "id": "alta-genetics-australia-pty-ltd",
+            "name": "Alta Genetics Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "AGRIWEBB PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "56 163 515 900"
+          "identifier": "56 163 515 900",
+          "party_page": {
+            "id": "agriwebb-pty-ltd",
+            "name": "Agriwebb Pty Ltd"
+          }
         }
       ]
     }

@@ -16,7 +16,11 @@
     {
       "name": "Henkel US Operations Corporation",
       "identifier_type": null,
-      "identifier": "Delaware registration number: 740913"
+      "identifier": "Delaware registration number: 740913",
+      "party_page": {
+        "id": "henkel-us-operations-corporation",
+        "name": "Henkel US Operations Corporation"
+      }
     }
   ],
   "targets": [
@@ -27,18 +31,30 @@
       "canonical": {
         "id": "olaplex-inc",
         "name": "Olaplex, Inc."
+      },
+      "party_page": {
+        "id": "olaplex-inc",
+        "name": "Olaplex, Inc."
       }
     },
     {
       "name": "Advent International, L.P.",
       "identifier_type": null,
-      "identifier": "Delaware registration number: 204418"
+      "identifier": "Delaware registration number: 204418",
+      "party_page": {
+        "id": "advent-international-l-p",
+        "name": "Advent International, L.P."
+      }
     },
     {
       "name": "Olaplex Holdings, Inc.",
       "identifier_type": null,
       "identifier": "Delaware registration number: 5923882 (EIN: 871242679)",
       "canonical": {
+        "id": "olaplex-inc",
+        "name": "Olaplex, Inc."
+      },
+      "party_page": {
         "id": "olaplex-inc",
         "name": "Olaplex, Inc."
       }
@@ -48,33 +64,57 @@
     {
       "name": "Henkel Australia Pty Ltd",
       "identifier_type": "ABN",
-      "identifier": "82 001 302 996"
+      "identifier": "82 001 302 996",
+      "party_page": {
+        "id": "henkel-australia-pty-ltd",
+        "name": "Henkel Australia Pty Ltd"
+      }
     },
     {
       "name": "Platina Cosm\u00e9ticos Ltda (dba Skala)",
       "identifier_type": null,
-      "identifier": "Brazil registration number: 66.288.002/000136"
+      "identifier": "Brazil registration number: 66.288.002/000136",
+      "party_page": {
+        "id": "platina-cosm-ticos-ltda-dba-skala",
+        "name": "Platina Cosm\u00e9ticos Ltda (dba Skala)"
+      }
     },
     {
       "name": "Henkel Ireland Distribution Limited",
       "identifier_type": null,
-      "identifier": "Ireland registration number: 430837"
+      "identifier": "Ireland registration number: 430837",
+      "party_page": {
+        "id": "henkel-ireland-distribution-limited",
+        "name": "Henkel Ireland Distribution Limited"
+      }
     },
     {
       "name": "Henkel Finance Australia L.P.",
       "identifier_type": "ABN",
-      "identifier": "15 740 196 765"
+      "identifier": "15 740 196 765",
+      "party_page": {
+        "id": "henkel-finance-australia-l-p",
+        "name": "Henkel Finance Australia L.P."
+      }
     },
     {
       "name": "Henkel Singapore Pte Ltd",
       "identifier_type": null,
-      "identifier": "Singapore registration number (UEN): 198304615H"
+      "identifier": "Singapore registration number (UEN): 198304615H",
+      "party_page": {
+        "id": "henkel-singapore-pte-ltd",
+        "name": "Henkel Singapore Pte Ltd"
+      }
     },
     {
       "name": "Henkel Global Supply Chain B.V.",
       "identifier_type": null,
       "identifier": "Netherlands registration number (KVK): 854017447; CCI 60683945",
       "canonical": {
+        "id": "henkel-global-supply-chain-b-v",
+        "name": "Henkel Global Supply Chain B.V."
+      },
+      "party_page": {
         "id": "henkel-global-supply-chain-b-v",
         "name": "Henkel Global Supply Chain B.V."
       }
@@ -86,18 +126,30 @@
       "canonical": {
         "id": "henkel-ag-co-kgaa",
         "name": "Henkel AG & Co. KGaA"
+      },
+      "party_page": {
+        "id": "henkel-ag-co-kgaa",
+        "name": "Henkel AG & Co. KGaA"
       }
     },
     {
       "name": "L.N.C. (dba Parfums de Marly, now known as Artessence)",
       "identifier_type": null,
-      "identifier": "France registration number (SIREN): 511 248 981"
+      "identifier": "France registration number (SIREN): 511 248 981",
+      "party_page": {
+        "id": "l-n-c-dba-parfums-de-marly-now-known-as-artessence",
+        "name": "L.N.C. (dba Parfums de Marly, now known as Artessence)"
+      }
     },
     {
       "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH",
       "identifier_type": null,
       "identifier": "Germany registration number (HRB): 35906",
       "canonical": {
+        "id": "inter-beteiligungsverwaltungs-gesellschaft-mbh",
+        "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH"
+      },
+      "party_page": {
         "id": "inter-beteiligungsverwaltungs-gesellschaft-mbh",
         "name": "Inter Beteiligungsverwaltungs-Gesellschaft mbH"
       }
@@ -195,6 +247,10 @@
           "canonical": {
             "id": "henkel-global-supply-chain-b-v",
             "name": "Henkel Global Supply Chain B.V."
+          },
+          "party_page": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
           }
         }
       ],
@@ -202,7 +258,11 @@
         {
           "name": "Aqua Adhesives I GmbH",
           "identifier_type": null,
-          "identifier": "Swiss registration number: CH170.4.019.1870"
+          "identifier": "Swiss registration number: CH170.4.019.1870",
+          "party_page": {
+            "id": "aqua-adhesives-i-gmbh",
+            "name": "Aqua Adhesives I GmbH"
+          }
         }
       ]
     },
@@ -219,6 +279,10 @@
           "canonical": {
             "id": "henkel-global-supply-chain-b-v",
             "name": "Henkel Global Supply Chain B.V."
+          },
+          "party_page": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
           }
         }
       ],
@@ -226,12 +290,20 @@
         {
           "name": "Stahl Holdings B.V.",
           "identifier_type": null,
-          "identifier": "Netherlands registration number (KVK): 34249320"
+          "identifier": "Netherlands registration number (KVK): 34249320",
+          "party_page": {
+            "id": "stahl-holdings-b-v",
+            "name": "Stahl Holdings B.V."
+          }
         },
         {
           "name": "Stahl Asia Pacific Pte. Ltd.",
           "identifier_type": null,
-          "identifier": "Singapore registration number: 200606884Z"
+          "identifier": "Singapore registration number: 200606884Z",
+          "party_page": {
+            "id": "stahl-asia-pacific-pte-ltd",
+            "name": "Stahl Asia Pacific Pte. Ltd."
+          }
         }
       ]
     },
@@ -248,6 +320,10 @@
           "canonical": {
             "id": "henkel-global-supply-chain-b-v",
             "name": "Henkel Global Supply Chain B.V."
+          },
+          "party_page": {
+            "id": "henkel-global-supply-chain-b-v",
+            "name": "Henkel Global Supply Chain B.V."
           }
         }
       ],
@@ -255,7 +331,11 @@
         {
           "name": "Aqua Adhesives I GmbH",
           "identifier_type": null,
-          "identifier": "Swiss registration number  CH170.4.019.1870"
+          "identifier": "Swiss registration number  CH170.4.019.1870",
+          "party_page": {
+            "id": "aqua-adhesives-i-gmbh",
+            "name": "Aqua Adhesives I GmbH"
+          }
         }
       ]
     }

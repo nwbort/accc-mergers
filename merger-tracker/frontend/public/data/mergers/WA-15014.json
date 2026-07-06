@@ -14,13 +14,21 @@
     {
       "name": "Wipro Networks Pte Ltd",
       "identifier_type": null,
-      "identifier": "UEN  199907933M"
+      "identifier": "UEN  199907933M",
+      "party_page": {
+        "id": "wipro-networks-pte-ltd",
+        "name": "Wipro Networks Pte Ltd"
+      }
     },
     {
       "name": "Wipro Limited",
       "identifier_type": null,
       "identifier": "CIN L32102KA1945PLC020800",
       "canonical": {
+        "id": "wipro-ltd",
+        "name": "Wipro Ltd"
+      },
+      "party_page": {
         "id": "wipro-ltd",
         "name": "Wipro Ltd"
       }
@@ -30,12 +38,20 @@
     {
       "name": "Mindsprint Pte Limited",
       "identifier_type": null,
-      "identifier": "UEN  202118596N"
+      "identifier": "UEN  202118596N",
+      "party_page": {
+        "id": "mindsprint-pte-limited",
+        "name": "Mindsprint Pte Limited"
+      }
     },
     {
       "name": "Olam Holdings Pte Limited",
       "identifier_type": null,
-      "identifier": "UEN  202110101R"
+      "identifier": "UEN  202110101R",
+      "party_page": {
+        "id": "olam-holdings-pte-limited",
+        "name": "Olam Holdings Pte Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -105,19 +121,31 @@
         {
           "name": "Hg Pooled Management Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "hg-pooled-management-limited",
+            "name": "Hg Pooled Management Limited"
+          }
         },
         {
           "name": "OnwardAcquireCo, Inc",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "onwardacquireco-inc",
+            "name": "OnwardAcquireCo, Inc"
+          }
         }
       ],
       "targets": [
         {
           "name": "OneStream, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "onestream-inc",
+            "name": "OneStream, Inc."
+          }
         }
       ]
     },
@@ -134,6 +162,10 @@
           "canonical": {
             "id": "accenture-plc",
             "name": "Accenture plc"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
           }
         }
       ],
@@ -141,12 +173,20 @@
         {
           "name": "Ookla, LLC",
           "identifier_type": null,
-          "identifier": "Unified Business ID  602 422 103"
+          "identifier": "Unified Business ID  602 422 103",
+          "party_page": {
+            "id": "ookla-llc",
+            "name": "Ookla, LLC"
+          }
         },
         {
           "name": "Ekahau OY",
           "identifier_type": null,
-          "identifier": "Business ID  16108964"
+          "identifier": "Business ID  16108964",
+          "party_page": {
+            "id": "ekahau-oy",
+            "name": "Ekahau OY"
+          }
         }
       ]
     },
@@ -159,19 +199,31 @@
         {
           "name": "KKR Spire Aggregator L.P.",
           "identifier_type": null,
-          "identifier": "Company No.: 1001421059  Ontario"
+          "identifier": "Company No.: 1001421059  Ontario",
+          "party_page": {
+            "id": "kkr-spire-aggregator-l-p",
+            "name": "KKR Spire Aggregator L.P."
+          }
         },
         {
           "name": "Carrick Capital Associates Fund II, L.P.",
           "identifier_type": null,
-          "identifier": "Company No.: 5654423  Delaware"
+          "identifier": "Company No.: 5654423  Delaware",
+          "party_page": {
+            "id": "carrick-capital-associates-fund-ii-l-p",
+            "name": "Carrick Capital Associates Fund II, L.P."
+          }
         }
       ],
       "targets": [
         {
           "name": "Saviynt, Inc.",
           "identifier_type": null,
-          "identifier": "Company No.: 5712935  Delaware"
+          "identifier": "Company No.: 5712935  Delaware",
+          "party_page": {
+            "id": "saviynt-inc",
+            "name": "Saviynt, Inc."
+          }
         }
       ]
     }

@@ -1,0 +1,32 @@
+{
+  "id": "ares-management-llc",
+  "canonical_name": "Ares Management LLC",
+  "members": [
+    {
+      "name": "Ares Management LLC",
+      "identifier": "LEI  3M096E5S0PEUTB0I8L53",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "WA-85032",
+        "merger_name": "Ares (Bolt S.p.A.) \u2013 Investment in Plenitude",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-06-04T12:00:00Z",
+        "determination_date": "2026-06-19T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

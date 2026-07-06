@@ -14,29 +14,49 @@
     {
       "name": "DHILMAR QLD PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "80 697 675 988"
+      "identifier": "80 697 675 988",
+      "party_page": {
+        "id": "dhilmar-qld-pty-ltd",
+        "name": "Dhilmar Qld Pty Ltd"
+      }
     },
     {
       "name": "DHILMAR QLD ASSETS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "76 697 930 171"
+      "identifier": "76 697 930 171",
+      "party_page": {
+        "id": "dhilmar-qld-assets-pty-ltd",
+        "name": "Dhilmar Qld Assets Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "ANGLO AMERICAN STEELMAKING COAL HOLDINGS LIMITED",
       "identifier_type": "ABN",
-      "identifier": "52 079 017 940"
+      "identifier": "52 079 017 940",
+      "party_page": {
+        "id": "anglo-american-steelmaking-coal-holdings-limited",
+        "name": "Anglo American Steelmaking Coal Holdings Limited"
+      }
     },
     {
       "name": "ANGLO AMERICAN STEELMAKING COAL ASSETS EASTERN AUSTRALIA LIMITED",
       "identifier_type": "ABN",
-      "identifier": "81 009 727 851"
+      "identifier": "81 009 727 851",
+      "party_page": {
+        "id": "anglo-american-steelmaking-coal-assets-eastern-australia-limited",
+        "name": "Anglo American Steelmaking Coal Assets Eastern Australia Limited"
+      }
     },
     {
       "name": "MORANBAH NORTH COAL PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "99 007 083 249"
+      "identifier": "99 007 083 249",
+      "party_page": {
+        "id": "moranbah-north-coal-pty-ltd",
+        "name": "Moranbah North Coal Pty Ltd"
+      }
     },
     {
       "name": "ANGLO AMERICAN AUSTRALIA LIMITED",
@@ -45,25 +65,41 @@
       "canonical": {
         "id": "anglo-american-plc",
         "name": "Anglo American plc"
+      },
+      "party_page": {
+        "id": "anglo-american-plc",
+        "name": "Anglo American plc"
       }
     },
     {
       "name": "ANGLO AMERICAN NETHERLANDS B.V.",
       "identifier_type": null,
-      "identifier": "Dutch company registration number (KVK)  33139747"
+      "identifier": "Dutch company registration number (KVK)  33139747",
+      "party_page": {
+        "id": "anglo-american-netherlands-b-v",
+        "name": "Anglo American Netherlands B.V."
+      }
     }
   ],
   "other_parties": [
     {
       "name": "ANGLO AMERICAN SERVICES (UK) LTD",
       "identifier_type": null,
-      "identifier": "UK CRN  02295324"
+      "identifier": "UK CRN  02295324",
+      "party_page": {
+        "id": "anglo-american-services-uk-ltd",
+        "name": "Anglo American Services (Uk) Ltd"
+      }
     },
     {
       "name": "DHILMAR AUSTRALIA PTY LTD",
       "identifier_type": "ABN",
       "identifier": "49 697 035 868",
       "canonical": {
+        "id": "dhilmar-ltd",
+        "name": "Dhilmar Ltd"
+      },
+      "party_page": {
         "id": "dhilmar-ltd",
         "name": "Dhilmar Ltd"
       }
@@ -73,6 +109,10 @@
       "identifier_type": null,
       "identifier": "UK CRN  16077471",
       "canonical": {
+        "id": "dhilmar-ltd",
+        "name": "Dhilmar Ltd"
+      },
+      "party_page": {
         "id": "dhilmar-ltd",
         "name": "Dhilmar Ltd"
       }
@@ -152,6 +192,10 @@
           "canonical": {
             "id": "anglo-american-plc",
             "name": "Anglo American plc"
+          },
+          "party_page": {
+            "id": "anglo-american-plc",
+            "name": "Anglo American plc"
           }
         }
       ],
@@ -159,7 +203,11 @@
         {
           "name": "Teck Resources Limited",
           "identifier_type": null,
-          "identifier": "4460561"
+          "identifier": "4460561",
+          "party_page": {
+            "id": "teck-resources-limited",
+            "name": "Teck Resources Limited"
+          }
         }
       ]
     },
@@ -172,19 +220,31 @@
         {
           "name": "Argo Bowen 2 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "695 023 619"
+          "identifier": "695 023 619",
+          "party_page": {
+            "id": "argo-bowen-2-pty-ltd",
+            "name": "Argo Bowen 2 Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "48 149 524 809"
+          "identifier": "48 149 524 809",
+          "party_page": {
+            "id": "lenton-management-and-marketing-pty-ltd",
+            "name": "Lenton Management And Marketing Pty Ltd"
+          }
         },
         {
           "name": "COKING COAL ONE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "89 615 317 907"
+          "identifier": "89 615 317 907",
+          "party_page": {
+            "id": "coking-coal-one-pty-ltd",
+            "name": "Coking Coal One Pty Ltd"
+          }
         }
       ]
     },
@@ -197,14 +257,22 @@
         {
           "name": "EPL Limited",
           "identifier_type": null,
-          "identifier": "Registered in India, no. L74950MH1982PLC028947"
+          "identifier": "Registered in India, no. L74950MH1982PLC028947",
+          "party_page": {
+            "id": "epl-limited",
+            "name": "EPL Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Indovida India Private Limited",
           "identifier_type": null,
-          "identifier": "Registered in India, no. U22203MH2025PTC455949"
+          "identifier": "Registered in India, no. U22203MH2025PTC455949",
+          "party_page": {
+            "id": "indovida-india-private-limited",
+            "name": "Indovida India Private Limited"
+          }
         }
       ]
     }

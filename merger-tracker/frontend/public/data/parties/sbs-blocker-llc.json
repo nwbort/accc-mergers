@@ -1,0 +1,32 @@
+{
+  "id": "sbs-blocker-llc",
+  "canonical_name": "SBS Blocker, LLC",
+  "members": [
+    {
+      "name": "SBS Blocker, LLC",
+      "identifier": null,
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-10010",
+        "merger_name": "Enverus \u2013 Spatial Business Systems",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-03-10T12:00:00Z",
+        "determination_date": "2026-04-07T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

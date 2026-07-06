@@ -14,56 +14,96 @@
     {
       "name": "Catalyst Blocker Merger Sub I, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "catalyst-blocker-merger-sub-i-llc",
+        "name": "Catalyst Blocker Merger Sub I, LLC"
+      }
     },
     {
       "name": "Catalyst Blocker Merger Sub II, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "catalyst-blocker-merger-sub-ii-llc",
+        "name": "Catalyst Blocker Merger Sub II, LLC"
+      }
     },
     {
       "name": "Catalyst Holdco Merger Sub, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "catalyst-holdco-merger-sub-llc",
+        "name": "Catalyst Holdco Merger Sub, LLC"
+      }
     },
     {
       "name": "Catalyst Debt Merger Sub, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "catalyst-debt-merger-sub-llc",
+        "name": "Catalyst Debt Merger Sub, LLC"
+      }
     }
   ],
   "targets": [
     {
       "name": "CSHC Buyerco, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "cshc-buyerco-llc",
+        "name": "CSHC Buyerco, LLC"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "CSHC Holdings, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "cshc-holdings-llc",
+        "name": "CSHC Holdings, LLC"
+      }
     },
     {
       "name": "Capsa Solutions, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "capsa-solutions-llc",
+        "name": "Capsa Solutions, LLC"
+      }
     },
     {
       "name": "CSHC Fund Blocker, LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "cshc-fund-blocker-llc",
+        "name": "CSHC Fund Blocker, LLC"
+      }
     },
     {
       "name": "CSHC Co-Investment Blocker Corp., LLC",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "cshc-co-investment-blocker-corp-llc",
+        "name": "CSHC Co-Investment Blocker Corp., LLC"
+      }
     },
     {
       "name": "Francisco Partners Management, LP",
       "identifier_type": null,
-      "identifier": ""
+      "identifier": "",
+      "party_page": {
+        "id": "francisco-partners-management-lp",
+        "name": "Francisco Partners Management, LP"
+      }
     }
   ],
   "anzsic_codes": [
@@ -132,14 +172,22 @@
         {
           "name": "Sigrun Bidco Limited",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "sigrun-bidco-limited",
+            "name": "Sigrun Bidco Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)",
           "identifier_type": null,
-          "identifier": "CRN 11755038"
+          "identifier": "CRN 11755038",
+          "party_page": {
+            "id": "sermo-limited-together-with-its-subsidiaries-sermo",
+            "name": "Sermo Limited (together with its subsidiaries, \u201cSermo\u201d)"
+          }
         }
       ]
     },
@@ -152,24 +200,40 @@
         {
           "name": "RAMSAY HEALTH CARE AUSTRALIA PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "36 003 184 889"
+          "identifier": "36 003 184 889",
+          "party_page": {
+            "id": "ramsay-health-care-australia-pty-limited",
+            "name": "Ramsay Health Care Australia Pty Limited"
+          }
         },
         {
           "name": "RAMSAY HEALTH CARE INVESTMENTS PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "44 078 881 473"
+          "identifier": "44 078 881 473",
+          "party_page": {
+            "id": "ramsay-health-care-investments-pty-limited",
+            "name": "Ramsay Health Care Investments Pty Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "HEALTHSCOPE OPERATIONS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "85 006 405 152"
+          "identifier": "85 006 405 152",
+          "party_page": {
+            "id": "healthscope-operations-pty-ltd",
+            "name": "Healthscope Operations Pty Ltd"
+          }
         },
         {
           "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "80 146 342 814"
+          "identifier": "80 146 342 814",
+          "party_page": {
+            "id": "healthscope-management-pty-ltd",
+            "name": "Healthscope Management Pty Ltd"
+          }
         }
       ]
     },
@@ -182,19 +246,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     }

@@ -16,14 +16,22 @@
     {
       "name": "CAISSE DE DEPOT ET PLACEMENT DU QUEBEC",
       "identifier_type": "ACN",
-      "identifier": "154 317 209"
+      "identifier": "154 317 209",
+      "party_page": {
+        "id": "caisse-de-depot-et-placement-du-quebec",
+        "name": "Caisse De Depot Et Placement Du Quebec"
+      }
     }
   ],
   "targets": [
     {
       "name": "Edify New South Wales LandCo Pty Ltd",
       "identifier_type": "ACN",
-      "identifier": "691 053 317"
+      "identifier": "691 053 317",
+      "party_page": {
+        "id": "edify-new-south-wales-landco-pty-ltd",
+        "name": "Edify New South Wales LandCo Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -118,19 +126,31 @@
         {
           "name": "ASPHALT OPERATORS AUSTRALIA PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 682 698 282"
+          "identifier": "11 682 698 282",
+          "party_page": {
+            "id": "asphalt-operators-australia-pty-ltd",
+            "name": "Asphalt Operators Australia Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "COLAS QUEENSLAND PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "91 169 872 208"
+          "identifier": "91 169 872 208",
+          "party_page": {
+            "id": "colas-queensland-pty-ltd",
+            "name": "Colas Queensland Pty Ltd"
+          }
         },
         {
           "name": "COLAS AUSTRALIA GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 000 388 161"
+          "identifier": "11 000 388 161",
+          "party_page": {
+            "id": "colas-australia-group-pty-ltd",
+            "name": "Colas Australia Group Pty Ltd"
+          }
         }
       ]
     },
@@ -143,19 +163,31 @@
         {
           "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
           "identifier_type": "ABN",
-          "identifier": "57 615 674 185"
+          "identifier": "57 615 674 185",
+          "party_page": {
+            "id": "peter-warren-automotive-holdings-limited",
+            "name": "Peter Warren Automotive Holdings Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Paul Wakeling Motor Group Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "47 119 908 780"
+          "identifier": "47 119 908 780",
+          "party_page": {
+            "id": "paul-wakeling-motor-group-pty-ltd",
+            "name": "Paul Wakeling Motor Group Pty Ltd"
+          }
         },
         {
           "name": "WOLLONGONG CITY MOTORS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "22 002 019 598"
+          "identifier": "22 002 019 598",
+          "party_page": {
+            "id": "wollongong-city-motors-pty-ltd",
+            "name": "Wollongong City Motors Pty Ltd"
+          }
         }
       ]
     },
@@ -168,19 +200,31 @@
         {
           "name": "eBay Inc.",
           "identifier_type": null,
-          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924"
+          "identifier": "I.R.S. Employer Identification No. \u2013 United States  770430924",
+          "party_page": {
+            "id": "ebay-inc",
+            "name": "eBay Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Etsy, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "etsy-inc",
+            "name": "Etsy, Inc."
+          }
         },
         {
           "name": "Depop Limited",
           "identifier_type": null,
-          "identifier": "UK Company Registration Number  08316342"
+          "identifier": "UK Company Registration Number  08316342",
+          "party_page": {
+            "id": "depop-limited",
+            "name": "Depop Limited"
+          }
         }
       ]
     }

@@ -13,14 +13,22 @@
     {
       "name": "Transocean Limited",
       "identifier_type": null,
-      "identifier": "IRS Employer Identification Number  980599916"
+      "identifier": "IRS Employer Identification Number  980599916",
+      "party_page": {
+        "id": "transocean-limited",
+        "name": "Transocean Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "Valaris Limited",
       "identifier_type": null,
-      "identifier": "Bermuda number  56245"
+      "identifier": "Bermuda number  56245",
+      "party_page": {
+        "id": "valaris-limited",
+        "name": "Valaris Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -72,6 +80,10 @@
           "canonical": {
             "id": "servicenow-inc",
             "name": "ServiceNow, Inc."
+          },
+          "party_page": {
+            "id": "servicenow-inc",
+            "name": "ServiceNow, Inc."
           }
         }
       ],
@@ -79,12 +91,20 @@
         {
           "name": "Armis Security, Ltd.",
           "identifier_type": null,
-          "identifier": "515335941"
+          "identifier": "515335941",
+          "party_page": {
+            "id": "armis-security-ltd",
+            "name": "Armis Security, Ltd."
+          }
         },
         {
           "name": "Armis, Inc.",
           "identifier_type": null,
-          "identifier": "6021196"
+          "identifier": "6021196",
+          "party_page": {
+            "id": "armis-inc",
+            "name": "Armis, Inc."
+          }
         }
       ]
     },
@@ -97,7 +117,11 @@
         {
           "name": "Elba Merger Sub, Inc.",
           "identifier_type": null,
-          "identifier": "Delaware company number 10547479"
+          "identifier": "Delaware company number 10547479",
+          "party_page": {
+            "id": "elba-merger-sub-inc",
+            "name": "Elba Merger Sub, Inc."
+          }
         }
       ],
       "targets": [
@@ -106,6 +130,10 @@
           "identifier_type": null,
           "identifier": "EIN 854115816",
           "canonical": {
+            "id": "excellergy-inc",
+            "name": "Excellergy Inc."
+          },
+          "party_page": {
             "id": "excellergy-inc",
             "name": "Excellergy Inc."
           }
@@ -121,14 +149,22 @@
         {
           "name": "Thermo Fisher Scientific Inc.",
           "identifier_type": null,
-          "identifier": "042209186"
+          "identifier": "042209186",
+          "party_page": {
+            "id": "thermo-fisher-scientific-inc",
+            "name": "Thermo Fisher Scientific Inc."
+          }
         }
       ],
       "targets": [
         {
           "name": "Clario Holdings, Inc.",
           "identifier_type": null,
-          "identifier": "5977148"
+          "identifier": "5977148",
+          "party_page": {
+            "id": "clario-holdings-inc",
+            "name": "Clario Holdings, Inc."
+          }
         }
       ]
     }

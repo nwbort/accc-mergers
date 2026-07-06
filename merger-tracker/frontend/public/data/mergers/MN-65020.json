@@ -13,14 +13,22 @@
     {
       "name": "REGIS RESOURCES LIMITED",
       "identifier_type": "ABN",
-      "identifier": "28 009 174 761"
+      "identifier": "28 009 174 761",
+      "party_page": {
+        "id": "regis-resources-limited",
+        "name": "Regis Resources Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "VAULT MINERALS LIMITED",
       "identifier_type": "ABN",
-      "identifier": "73 068 647 610"
+      "identifier": "73 068 647 610",
+      "party_page": {
+        "id": "vault-minerals-limited",
+        "name": "Vault Minerals Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -80,6 +88,10 @@
           "canonical": {
             "id": "anglo-american-plc",
             "name": "Anglo American plc"
+          },
+          "party_page": {
+            "id": "anglo-american-plc",
+            "name": "Anglo American plc"
           }
         }
       ],
@@ -87,7 +99,11 @@
         {
           "name": "Teck Resources Limited",
           "identifier_type": null,
-          "identifier": "4460561"
+          "identifier": "4460561",
+          "party_page": {
+            "id": "teck-resources-limited",
+            "name": "Teck Resources Limited"
+          }
         }
       ]
     },
@@ -100,19 +116,31 @@
         {
           "name": "AUSTRAL RESOURCES AUSTRALIA LIMITED",
           "identifier_type": "ABN",
-          "identifier": "50 142 485 470"
+          "identifier": "50 142 485 470",
+          "party_page": {
+            "id": "austral-resources-australia-limited",
+            "name": "Austral Resources Australia Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "NORANDA PACIFIC PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "65 006 864 802"
+          "identifier": "65 006 864 802",
+          "party_page": {
+            "id": "noranda-pacific-pty-ltd",
+            "name": "Noranda Pacific Pty Ltd"
+          }
         },
         {
           "name": "Noranda Pacific No. 2 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "158 936 264"
+          "identifier": "158 936 264",
+          "party_page": {
+            "id": "noranda-pacific-no-2-pty-ltd",
+            "name": "Noranda Pacific No. 2 Pty Ltd"
+          }
         }
       ]
     },
@@ -125,14 +153,22 @@
         {
           "name": "GENESIS MINERALS LIMITED",
           "identifier_type": "ABN",
-          "identifier": "72 124 772 041"
+          "identifier": "72 124 772 041",
+          "party_page": {
+            "id": "genesis-minerals-limited",
+            "name": "Genesis Minerals Limited"
+          }
         }
       ],
       "targets": [
         {
           "name": "Magnetic Resources NL",
           "identifier_type": "ABN",
-          "identifier": "34 121 370 232"
+          "identifier": "34 121 370 232",
+          "party_page": {
+            "id": "magnetic-resources-nl",
+            "name": "Magnetic Resources NL"
+          }
         }
       ]
     }

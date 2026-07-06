@@ -1,0 +1,32 @@
+{
+  "id": "gah-2-0-pty-ltd",
+  "canonical_name": "Gah 2.0 Pty Ltd",
+  "members": [
+    {
+      "name": "GAH 2.0 PTY LTD",
+      "identifier": "76 666 800 666",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "WA-40004",
+        "merger_name": "Vets Central \u2013 Gawler Animal Hospital and Animalia Vet Clinic",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-01-29T12:00:00Z",
+        "determination_date": "2026-02-12T12:00:00Z"
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

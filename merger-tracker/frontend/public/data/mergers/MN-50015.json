@@ -20,18 +20,30 @@
       "canonical": {
         "id": "mastercard-incorporated",
         "name": "Mastercard Incorporated"
+      },
+      "party_page": {
+        "id": "mastercard-incorporated",
+        "name": "Mastercard Incorporated"
       }
     },
     {
       "name": "Ares UK Holdco 2 Limited",
       "identifier_type": null,
-      "identifier": "CRN 17107097"
+      "identifier": "CRN 17107097",
+      "party_page": {
+        "id": "ares-uk-holdco-2-limited",
+        "name": "Ares UK Holdco 2 Limited"
+      }
     },
     {
       "name": "Mastercard International Incorporated",
       "identifier_type": null,
       "identifier": "648928",
       "canonical": {
+        "id": "mastercard-incorporated",
+        "name": "Mastercard Incorporated"
+      },
+      "party_page": {
         "id": "mastercard-incorporated",
         "name": "Mastercard Incorporated"
       }
@@ -41,12 +53,20 @@
     {
       "name": "B Corporation S.A.M",
       "identifier_type": null,
-      "identifier": "23S09602"
+      "identifier": "23S09602",
+      "party_page": {
+        "id": "b-corporation-s-a-m",
+        "name": "B Corporation S.A.M"
+      }
     },
     {
       "name": "BVNK Holdings Limited",
       "identifier_type": null,
-      "identifier": "13922014"
+      "identifier": "13922014",
+      "party_page": {
+        "id": "bvnk-holdings-limited",
+        "name": "BVNK Holdings Limited"
+      }
     }
   ],
   "other_parties": [],
@@ -130,19 +150,31 @@
         {
           "name": "OVERWATCH BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 739 970"
+          "identifier": "695 739 970",
+          "party_page": {
+            "id": "overwatch-bidco-pty-ltd",
+            "name": "Overwatch Bidco Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "FTP GROUP HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "82 626 217 614"
+          "identifier": "82 626 217 614",
+          "party_page": {
+            "id": "ftp-group-holdings-pty-ltd",
+            "name": "Ftp Group Holdings Pty Ltd"
+          }
         },
         {
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
-          "identifier": "695 834 390"
+          "identifier": "695 834 390",
+          "party_page": {
+            "id": "faarm-bidco-pty-ltd",
+            "name": "Faarm Bidco Pty Ltd"
+          }
         }
       ]
     },
@@ -155,19 +187,31 @@
         {
           "name": "CP Britannia Bidco Limited",
           "identifier_type": null,
-          "identifier": "Jersey Financial Services Commission  163400"
+          "identifier": "Jersey Financial Services Commission  163400",
+          "party_page": {
+            "id": "cp-britannia-bidco-limited",
+            "name": "CP Britannia Bidco Limited"
+          }
         },
         {
           "name": "Creative Planning Holdco, LLC",
           "identifier_type": null,
-          "identifier": "SEC  801 7725610"
+          "identifier": "SEC  801 7725610",
+          "party_page": {
+            "id": "creative-planning-holdco-llc",
+            "name": "Creative Planning Holdco, LLC"
+          }
         }
       ],
       "targets": [
         {
           "name": "MASECO LLP",
           "identifier_type": null,
-          "identifier": "United Kingdom  OC337650"
+          "identifier": "United Kingdom  OC337650",
+          "party_page": {
+            "id": "maseco-llp",
+            "name": "Maseco Llp"
+          }
         }
       ]
     },
@@ -180,19 +224,31 @@
         {
           "name": "Arena BidCo Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 657 484"
+          "identifier": "693 657 484",
+          "party_page": {
+            "id": "arena-bidco-pty-ltd",
+            "name": "Arena BidCo Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "RFGI GROUP PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "55 630 028 974"
+          "identifier": "55 630 028 974",
+          "party_page": {
+            "id": "rfgi-group-pty-ltd",
+            "name": "Rfgi Group Pty Ltd"
+          }
         },
         {
           "name": "GAMEON HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "47 629 422 206"
+          "identifier": "47 629 422 206",
+          "party_page": {
+            "id": "gameon-holdings-pty-ltd",
+            "name": "Gameon Holdings Pty Ltd"
+          }
         }
       ]
     }

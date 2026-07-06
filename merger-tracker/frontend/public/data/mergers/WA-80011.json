@@ -14,41 +14,69 @@
     {
       "name": "CRH Americas Products, Inc.",
       "identifier_type": null,
-      "identifier": "Delaware file number  3253282"
+      "identifier": "Delaware file number  3253282",
+      "party_page": {
+        "id": "crh-americas-products-inc",
+        "name": "CRH Americas Products, Inc."
+      }
     },
     {
       "name": "OLDCASTLE INFRASTRUCTURE, INC.",
       "identifier_type": null,
-      "identifier": "Washington UBI  171 004 504"
+      "identifier": "Washington UBI  171 004 504",
+      "party_page": {
+        "id": "oldcastle-infrastructure-inc",
+        "name": "Oldcastle Infrastructure, Inc."
+      }
     }
   ],
   "targets": [
     {
       "name": "NEXUS WATER HOLDINGS GP LLC",
       "identifier_type": null,
-      "identifier": "7688735"
+      "identifier": "7688735",
+      "party_page": {
+        "id": "nexus-water-holdings-gp-llc",
+        "name": "Nexus Water Holdings Gp Llc"
+      }
     },
     {
       "name": "NEXUS WATER HOLDINGS LP",
       "identifier_type": null,
-      "identifier": "7694945"
+      "identifier": "7694945",
+      "party_page": {
+        "id": "nexus-water-holdings-lp",
+        "name": "Nexus Water Holdings Lp"
+      }
     },
     {
       "name": "AXIUS WATER PARENT LP",
       "identifier_type": null,
-      "identifier": "7694921"
+      "identifier": "7694921",
+      "party_page": {
+        "id": "axius-water-parent-lp",
+        "name": "Axius Water Parent Lp"
+      }
     }
   ],
   "other_parties": [
     {
       "name": "CTC PRECAST PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "12 614 966 059"
+      "identifier": "12 614 966 059",
+      "party_page": {
+        "id": "ctc-precast-pty-ltd",
+        "name": "Ctc Precast Pty Ltd"
+      }
     },
     {
       "name": "Hydro International Limited",
       "identifier_type": null,
-      "identifier": "Companies House number  01606391"
+      "identifier": "Companies House number  01606391",
+      "party_page": {
+        "id": "hydro-international-limited",
+        "name": "Hydro International Limited"
+      }
     }
   ],
   "anzsic_codes": [
@@ -117,14 +145,22 @@
         {
           "name": "CTC PRECAST PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "12 614 966 059"
+          "identifier": "12 614 966 059",
+          "party_page": {
+            "id": "ctc-precast-pty-ltd",
+            "name": "Ctc Precast Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "TAYLEX GROUP HOLDING CO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "50 646 051 578"
+          "identifier": "50 646 051 578",
+          "party_page": {
+            "id": "taylex-group-holding-co-pty-ltd",
+            "name": "Taylex Group Holding Co Pty Ltd"
+          }
         }
       ]
     },
@@ -137,19 +173,31 @@
         {
           "name": "Global Engage Marine Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "693 762 122"
+          "identifier": "693 762 122",
+          "party_page": {
+            "id": "global-engage-marine-pty-ltd",
+            "name": "Global Engage Marine Pty Ltd"
+          }
         },
         {
           "name": "PT Asian Bulk Logistics",
           "identifier_type": null,
-          "identifier": "NIB   8120012130871"
+          "identifier": "NIB   8120012130871",
+          "party_page": {
+            "id": "pt-asian-bulk-logistics",
+            "name": "PT Asian Bulk Logistics"
+          }
         }
       ],
       "targets": [
         {
           "name": "ENGAGE MARINE TOPCO PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "46 675 998 562"
+          "identifier": "46 675 998 562",
+          "party_page": {
+            "id": "engage-marine-topco-pty-ltd",
+            "name": "Engage Marine Topco Pty Ltd"
+          }
         }
       ]
     },
@@ -162,14 +210,22 @@
         {
           "name": "CG Panther Parentco, L.P.",
           "identifier_type": null,
-          "identifier": "135095"
+          "identifier": "135095",
+          "party_page": {
+            "id": "cg-panther-parentco-l-p",
+            "name": "CG Panther Parentco, L.P."
+          }
         }
       ],
       "targets": [
         {
           "name": "Peloton Computer Enterprises Ltd.",
           "identifier_type": null,
-          "identifier": "2023447374  Canada"
+          "identifier": "2023447374  Canada",
+          "party_page": {
+            "id": "peloton-computer-enterprises-ltd",
+            "name": "Peloton Computer Enterprises Ltd."
+          }
         }
       ]
     }

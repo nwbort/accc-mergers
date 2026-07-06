@@ -1,0 +1,32 @@
+{
+  "id": "rio-tinto-limited",
+  "canonical_name": "Rio Tinto Limited",
+  "members": [
+    {
+      "name": "RIO TINTO LIMITED",
+      "identifier": "96 004 458 404",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "WA-35027",
+        "merger_name": "GPS Energy \u2013 Ryowa's interest in Gladstone Power Station Joint Venture",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-06-17T12:00:00Z",
+        "determination_date": "2026-06-30T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null
+}

@@ -14,14 +14,22 @@
     {
       "name": "RESPECT GROUP LIMITED",
       "identifier_type": "ABN",
-      "identifier": "74 121 263 545"
+      "identifier": "74 121 263 545",
+      "party_page": {
+        "id": "respect-group-limited",
+        "name": "Respect Group Limited"
+      }
     }
   ],
   "targets": [
     {
       "name": "JALLARAH HOMES INC",
       "identifier_type": "ABN",
-      "identifier": "13 238 944 953"
+      "identifier": "13 238 944 953",
+      "party_page": {
+        "id": "jallarah-homes-inc",
+        "name": "Jallarah Homes Inc"
+      }
     }
   ],
   "other_parties": [],
@@ -91,24 +99,40 @@
         {
           "name": "OHCA PROPERTY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
+          "identifier": "70 675 807 477",
+          "party_page": {
+            "id": "ohca-property-holdings-pty-ltd",
+            "name": "Ohca Property Holdings Pty Ltd"
+          }
         },
         {
           "name": "DPG SERVICES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
+          "identifier": "38 090 007 999",
+          "party_page": {
+            "id": "dpg-services-pty-ltd",
+            "name": "Dpg Services Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "Bethel Amen Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "077 379 358"
+          "identifier": "077 379 358",
+          "party_page": {
+            "id": "bethel-amen-pty-ltd",
+            "name": "Bethel Amen Pty Ltd"
+          }
         },
         {
           "name": "Java Dale Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "077 379 367"
+          "identifier": "077 379 367",
+          "party_page": {
+            "id": "java-dale-pty-ltd",
+            "name": "Java Dale Pty Ltd"
+          }
         }
       ]
     },
@@ -121,19 +145,31 @@
         {
           "name": "OHCA Property Holdings Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
+          "identifier": "70 675 807 477",
+          "party_page": {
+            "id": "ohca-property-holdings-pty-ltd",
+            "name": "Ohca Property Holdings Pty Ltd"
+          }
         },
         {
           "name": "DPG Services Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
+          "identifier": "38 090 007 999",
+          "party_page": {
+            "id": "dpg-services-pty-ltd",
+            "name": "Dpg Services Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "The assets and business comprising Sunnymeade Park Aged Care Community",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "the-assets-and-business-comprising-sunnymeade-park-aged-care-community",
+            "name": "The assets and business comprising Sunnymeade Park Aged Care Community"
+          }
         }
       ]
     },
@@ -146,24 +182,40 @@
         {
           "name": "OHCA PROPERTY HOLDINGS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "70 675 807 477"
+          "identifier": "70 675 807 477",
+          "party_page": {
+            "id": "ohca-property-holdings-pty-ltd",
+            "name": "Ohca Property Holdings Pty Ltd"
+          }
         },
         {
           "name": "DPG SERVICES PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "38 090 007 999"
+          "identifier": "38 090 007 999",
+          "party_page": {
+            "id": "dpg-services-pty-ltd",
+            "name": "Dpg Services Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "GREENWICH PLACE PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "45 000 706 249"
+          "identifier": "45 000 706 249",
+          "party_page": {
+            "id": "greenwich-place-pty-ltd",
+            "name": "Greenwich Place Pty Ltd"
+          }
         },
         {
           "name": "GREENWICH CARE PTY LIMITED",
           "identifier_type": "ABN",
-          "identifier": "96 613 786 682"
+          "identifier": "96 613 786 682",
+          "party_page": {
+            "id": "greenwich-care-pty-limited",
+            "name": "Greenwich Care Pty Limited"
+          }
         }
       ]
     }

@@ -18,6 +18,10 @@
       "canonical": {
         "id": "coles",
         "name": "Coles Group"
+      },
+      "party_page": {
+        "id": "coles",
+        "name": "Coles Group"
       }
     }
   ],
@@ -25,7 +29,11 @@
     {
       "name": "CITY OF PORT PHILLIP",
       "identifier_type": "ABN",
-      "identifier": "21 762 977 945"
+      "identifier": "21 762 977 945",
+      "party_page": {
+        "id": "city-of-port-phillip",
+        "name": "City Of Port Phillip"
+      }
     }
   ],
   "other_parties": [
@@ -36,6 +44,10 @@
       "canonical": {
         "id": "coles",
         "name": "Coles Group"
+      },
+      "party_page": {
+        "id": "coles",
+        "name": "Coles Group"
       }
     },
     {
@@ -43,6 +55,10 @@
       "identifier_type": "ABN",
       "identifier": "11 004 089 936",
       "canonical": {
+        "id": "coles",
+        "name": "Coles Group"
+      },
+      "party_page": {
         "id": "coles",
         "name": "Coles Group"
       }
@@ -142,6 +158,10 @@
           "canonical": {
             "id": "coles",
             "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -149,7 +169,11 @@
         {
           "name": "BOULDER CAPITAL INVESTMENTS PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "48 632 507 996"
+          "identifier": "48 632 507 996",
+          "party_page": {
+            "id": "boulder-capital-investments-pty-ltd",
+            "name": "Boulder Capital Investments Pty Ltd"
+          }
         }
       ]
     },
@@ -166,6 +190,10 @@
           "canonical": {
             "id": "coles",
             "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -173,7 +201,11 @@
         {
           "name": "M Holdings 4 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "652 075 799"
+          "identifier": "652 075 799",
+          "party_page": {
+            "id": "m-holdings-4-pty-ltd",
+            "name": "M Holdings 4 Pty Ltd"
+          }
         }
       ]
     },
@@ -190,6 +222,10 @@
           "canonical": {
             "id": "coles",
             "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -197,7 +233,11 @@
         {
           "name": "Tipalea Private No.31 Pty Ltd",
           "identifier_type": "ACN",
-          "identifier": "686 197 115"
+          "identifier": "686 197 115",
+          "party_page": {
+            "id": "tipalea-private-no-31-pty-ltd",
+            "name": "Tipalea Private No.31 Pty Ltd"
+          }
         }
       ]
     }

@@ -16,14 +16,22 @@
     {
       "name": "ATKINSREALIS AUSTRALIA HOLDINGS PTY LTD",
       "identifier_type": "ACN",
-      "identifier": "697 935 685"
+      "identifier": "697 935 685",
+      "party_page": {
+        "id": "atkinsrealis-australia-holdings-pty-ltd",
+        "name": "Atkinsrealis Australia Holdings Pty Ltd"
+      }
     }
   ],
   "targets": [
     {
       "name": "WGA GROUP HOLDINGS PTY LTD",
       "identifier_type": "ABN",
-      "identifier": "86 649 953 980"
+      "identifier": "86 649 953 980",
+      "party_page": {
+        "id": "wga-group-holdings-pty-ltd",
+        "name": "Wga Group Holdings Pty Ltd"
+      }
     }
   ],
   "other_parties": [],
@@ -107,14 +115,22 @@
         {
           "name": "Global Garella, S.L.",
           "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  B24904989"
+          "identifier": "Spanish Tax Identification Number  B24904989",
+          "party_page": {
+            "id": "global-garella-s-l",
+            "name": "Global Garella, S.L."
+          }
         }
       ],
       "targets": [
         {
           "name": "Ayesa Engineering, S.A.U.",
           "identifier_type": null,
-          "identifier": "Spanish Tax Identification Number  A91379875"
+          "identifier": "Spanish Tax Identification Number  A91379875",
+          "party_page": {
+            "id": "ayesa-engineering-s-a-u",
+            "name": "Ayesa Engineering, S.A.U."
+          }
         }
       ]
     },
@@ -131,6 +147,10 @@
           "canonical": {
             "id": "wsp-australia-pty-limited",
             "name": "Wsp Australia Pty Limited"
+          },
+          "party_page": {
+            "id": "wsp-australia-pty-limited",
+            "name": "Wsp Australia Pty Limited"
           }
         }
       ],
@@ -138,7 +158,11 @@
         {
           "name": "TRC Companies, Inc.",
           "identifier_type": null,
-          "identifier": ""
+          "identifier": "",
+          "party_page": {
+            "id": "trc-companies-inc",
+            "name": "TRC Companies, Inc."
+          }
         }
       ]
     },
@@ -151,14 +175,22 @@
         {
           "name": "IOR PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "36 009 653 070"
+          "identifier": "36 009 653 070",
+          "party_page": {
+            "id": "ior-pty-ltd",
+            "name": "Ior Pty Ltd"
+          }
         }
       ],
       "targets": [
         {
           "name": "DELTA SPECIALISED ENERGY PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "11 624 642 682"
+          "identifier": "11 624 642 682",
+          "party_page": {
+            "id": "delta-specialised-energy-pty-ltd",
+            "name": "Delta Specialised Energy Pty Ltd"
+          }
         }
       ]
     }
