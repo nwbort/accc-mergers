@@ -7,6 +7,8 @@ import ErrorCard from '../components/ErrorCard';
 import StatusBadge from '../components/StatusBadge';
 import BellIcon from '../components/BellIcon';
 import WaiverBadge from '../components/WaiverBadge';
+import BusinessDayProgress from '../components/BusinessDayProgress';
+import { getBusinessDayProgress } from '../utils/businessDayProgress';
 import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import QuestionnaireSection from '../components/QuestionnaireSection';
@@ -127,6 +129,8 @@ function MergerDetail() {
     );
   }
   if (!merger) return null;
+
+  const businessDayProgress = getBusinessDayProgress(merger);
 
   const sortedEvents = merger.events
     ? [...merger.events].sort((a, b) => new Date(b.date) - new Date(a.date))
@@ -260,6 +264,13 @@ function MergerDetail() {
               </button>
             </div>
           </div>
+
+          {/* Business day progress (non-waiver matters under assessment) */}
+          {businessDayProgress && (
+            <div className="mt-4">
+              <BusinessDayProgress merger={merger} />
+            </div>
+          )}
 
           {/* Assessment timeline */}
           <div className="mt-6 pt-6 border-t border-gray-100">
