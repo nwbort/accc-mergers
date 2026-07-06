@@ -6,9 +6,9 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
 import BellIcon from '../components/BellIcon';
 import WaiverBadge from '../components/WaiverBadge';
-import { BusinessDayChip } from '../components/BusinessDayProgress';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
+import { getBusinessDayProgress } from '../utils/businessDayProgress';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
 import { useTracking } from '../context/TrackingContext';
@@ -502,6 +502,7 @@ function Mergers() {
             // Compute once per item rather than calling isTracked 4 times in the JSX
             const tracked = isTracked(merger.merger_id);
             const isSelected = idx === selectedIndex;
+            const businessDayProgress = getBusinessDayProgress(merger);
             return (
               <div
                 key={merger.merger_id}
@@ -566,8 +567,10 @@ function Mergers() {
                     </div>
                   </div>
 
-                  <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
+                  <div className={`mt-4 grid gap-4 ${
+                    businessDayProgress ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-1 md:grid-cols-2'
+                  }`}>
+                    <div className={businessDayProgress ? 'order-1' : ''}>
                       <p className="text-xs text-gray-500 mb-0.5">
                         {merger.is_waiver ? 'Application date' : 'Notification date'}
                       </p>
@@ -578,15 +581,26 @@ function Mergers() {
                       </p>
                     </div>
                     {(merger.determination_publication_date || (merger.end_of_determination_period && !merger.status?.toLowerCase().includes('suspended'))) && (
-                      <div>
+                      <div className={businessDayProgress ? 'order-3 md:order-2 col-span-2 md:col-span-1' : ''}>
                         <p className="text-xs text-gray-500 mb-0.5">
                           {merger.determination_publication_date ? 'Determination date' : 'End of determination period'}
                         </p>
-                        <p className="text-sm font-medium text-gray-700 flex items-center gap-1.5">
+                        <p className="text-sm font-medium text-gray-700">
                           {merger.determination_publication_date
                             ? formatDate(merger.determination_publication_date)
                             : formatDate(merger.end_of_determination_period)}
-                          <BusinessDayChip merger={merger} />
+                        </p>
+                      </div>
+                    )}
+                    {businessDayProgress && (
+                      <div className="order-2 md:order-3">
+                        <p className="text-xs text-gray-500 mb-0.5">Business days</p>
+                        <p className={`text-sm font-medium ${
+                          businessDayProgress.overdue ? 'text-amber-600' : 'text-gray-700'
+                        }`}>
+                          {businessDayProgress.overdue
+                            ? 'Overdue'
+                            : `BD ${businessDayProgress.elapsed}/${businessDayProgress.total}`}
                         </p>
                       </div>
                     )}

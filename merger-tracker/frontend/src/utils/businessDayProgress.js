@@ -24,7 +24,14 @@ export function getBusinessDayProgress(merger) {
   );
   if (total === null || total <= 0) return null;
 
-  const rawElapsed = calculateBusinessDays(merger.effective_notification_datetime, new Date());
+  // Notification timestamps carry a fixed time-of-day (typically noon UTC), and
+  // calculateBusinessDays does a plain datetime comparison as it walks forward
+  // a day at a time — so comparing against the raw current instant undercounts
+  // today whenever "now" is earlier in the day than that time-of-day. Normalize
+  // to the end of today so today counts as soon as it's a business day.
+  const today = new Date();
+  today.setHours(23, 59, 59, 999);
+  const rawElapsed = calculateBusinessDays(merger.effective_notification_datetime, today);
   if (rawElapsed === null) return null;
 
   return {
