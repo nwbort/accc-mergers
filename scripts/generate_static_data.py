@@ -26,8 +26,11 @@ Output files:
 """
 
 import json
+import os
+import sys
 from pathlib import Path
 
+from static_data.business_days import check_holiday_horizon
 from static_data.enrichment import (
     enrich_merger,
     link_related_mergers,
@@ -64,6 +67,12 @@ DATA_OUTPUT_DIR = REPO_ROOT / "data" / "output"
 
 def main():
     """Generate all static data files."""
+    horizon_warning = check_holiday_horizon()
+    if horizon_warning:
+        print(f"WARNING: {horizon_warning}", file=sys.stderr)
+        if os.environ.get("CI"):
+            sys.exit(1)
+
     print("Loading mergers.json...")
     mergers = load_mergers()
     print(f"Loaded {len(mergers)} mergers")

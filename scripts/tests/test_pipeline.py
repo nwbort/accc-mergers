@@ -5,7 +5,7 @@ import sys
 import os
 import json
 import unittest.mock
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 
 # Add scripts directory to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
@@ -1270,6 +1270,8 @@ from static_data.business_days import (
     is_christmas_new_year_period,
     _count_weekdays_in_range,
     calculate_calendar_days,
+    check_holiday_horizon,
+    get_latest_holiday_year,
 )
 from static_data.enrichment import (
     enrich_merger,
@@ -1374,6 +1376,45 @@ class TestCalculateCalendarDays:
 
     def test_empty_strings(self):
         assert calculate_calendar_days("", "") is None
+
+
+# ---------------------------------------------------------------------------
+# generate_static_data: check_holiday_horizon
+# ---------------------------------------------------------------------------
+
+class TestCheckHolidayHorizon:
+    def test_current_date_passes(self):
+        # The current holiday file (2025-2029) must cover >=15 months ahead
+        # of "today" for the real generator run to pass.
+        assert check_holiday_horizon() is None
+
+    def test_within_horizon_passes(self):
+        latest_year = get_latest_holiday_year()
+        # 15 months before Jan 1 of the year after latest_year is well within
+        # the covered range.
+        today = date(latest_year - 1, 6, 1)
+        assert check_holiday_horizon(today=today) is None
+
+    def test_beyond_horizon_warns(self):
+        latest_year = get_latest_holiday_year()
+        today = date(latest_year + 2, 1, 1)
+        message = check_holiday_horizon(today=today)
+        assert message is not None
+        assert str(latest_year) in message
+
+    def test_just_inside_horizon_passes(self):
+        latest_year = get_latest_holiday_year()
+        # 15 months ahead of Sep of the year before latest_year lands exactly
+        # on latest_year, which the calendar covers.
+        today = date(latest_year - 1, 9, 1)
+        assert check_holiday_horizon(today=today) is None
+
+    def test_just_outside_horizon_warns(self):
+        latest_year = get_latest_holiday_year()
+        # 15 months ahead of Oct of the year before latest_year lands in
+        # latest_year + 1, which the calendar does not cover.
+        today = date(latest_year - 1, 10, 1)
+        assert check_holiday_horizon(today=today) is not None
 
 
 # ---------------------------------------------------------------------------

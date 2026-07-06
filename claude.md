@@ -65,6 +65,14 @@ merger-tracker/frontend/src/
 ├── hooks/                # useDebounce.js, useKeyboardShortcuts.js
 ├── utils/                # dates.js, dataCache.js, lastVisit.js, classNames.js, searchIndex.js
 └── data/                 # ACT public holidays JSON
+                          #   (act-public-holidays.json — source of truth for both the Python
+                          #   pipeline and the frontend; authoritative list published at
+                          #   https://www.cmtedd.act.gov.au/communication/holidays. Substitute-day
+                          #   rules: a weekend ANZAC Day moves to the following Monday; Christmas
+                          #   Day/Boxing Day substitutes are moot since the statutory 23 Dec-10 Jan
+                          #   shutdown already excludes that period. The pipeline and a frontend
+                          #   vitest test both fail loudly if the calendar's horizon shrinks to
+                          #   less than ~1 year ahead — extend this file when that happens.)
 
 scripts/
 ├── scrape.sh             # Bash wrapper using pup to scrape ACCC register

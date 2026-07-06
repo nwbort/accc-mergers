@@ -5,7 +5,7 @@ and is not within the Christmas/New Year shutdown (23 Dec - 10 Jan inclusive).
 """
 
 import json
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
 from date_utils import parse_iso_datetime
@@ -35,6 +35,37 @@ def _ensure_holidays_loaded() -> set:
     if PUBLIC_HOLIDAYS is None:
         PUBLIC_HOLIDAYS = load_public_holidays()
     return PUBLIC_HOLIDAYS
+
+
+def get_latest_holiday_year() -> int:
+    """Return the latest year covered by the ACT public holiday calendar."""
+    with open(HOLIDAYS_JSON, 'r') as f:
+        data = json.load(f)
+    return max(year_data['year'] for year_data in data['holidays'])
+
+
+def check_holiday_horizon(today: date | None = None, horizon_months: int = 15) -> str | None:
+    """Warn when the holiday calendar doesn't extend far enough into the future.
+
+    Returns a human-readable warning message if the calendar's latest covered
+    year ends before `horizon_months` from today, else None. 15 months covers
+    the longest computed horizon (a Phase 2 end of determination period is
+    roughly 120 business days / 6 months, plus slack).
+    """
+    today = today or date.today()
+    latest_year = get_latest_holiday_year()
+
+    total_months = today.month - 1 + horizon_months
+    horizon_year = today.year + total_months // 12
+
+    if latest_year < horizon_year:
+        return (
+            f"ACT public holiday calendar only covers through {latest_year}, "
+            f"which is less than {horizon_months} months ahead of {today.isoformat()}. "
+            f"Business-day calculations beyond {latest_year} will silently treat holidays "
+            f"as workdays. Add holiday entries to {HOLIDAYS_JSON} for the missing year(s)."
+        )
+    return None
 
 
 def is_christmas_new_year_period(date: datetime) -> bool:
