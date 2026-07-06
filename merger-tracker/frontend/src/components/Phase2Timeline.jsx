@@ -35,19 +35,8 @@ const NOCC_EDGE_ALIGN = 10; // within this % of an end, align text to that end
 const ABOVE_LINE = 'absolute bottom-1/2 mb-2';
 const BELOW_LINE = 'absolute top-1/2 mt-2';
 
-function InferredBadge() {
-  return (
-    <span
-      className="inline-flex items-center rounded-md border px-1.5 py-0.5 text-[10px] font-medium bg-amber-50 text-amber-700 border-amber-200/60"
-      title="Inferred from Phase 2 notice — the ACCC register hasn't updated the stage field yet"
-    >
-      Inferred
-    </span>
-  );
-}
-
 function MatterBar({ matter }) {
-  const { merger_id, merger_name, referral_date, nocc_date, nocc_issued, end_of_determination_period, phase_2_inferred } = matter;
+  const { merger_id, merger_name, referral_date, nocc_date, nocc_issued, end_of_determination_period } = matter;
 
   const todayPercent = percentAlong(new Date().toISOString(), referral_date, end_of_determination_period);
   const noccPercent = percentAlong(nocc_date, referral_date, end_of_determination_period);
@@ -62,18 +51,12 @@ function MatterBar({ matter }) {
 
   return (
     <li className="py-4 first:pt-0 last:pb-0">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 mb-3">
-        <Link
-          to={mergerPath(merger_id, merger_name)}
-          className="text-sm font-semibold text-gray-900 hover:text-primary transition-colors truncate"
-        >
-          {merger_name}
-        </Link>
-        <div className="flex items-center gap-2 shrink-0">
-          {phase_2_inferred && <InferredBadge />}
-          <span className="text-xs text-gray-500">{merger_id}</span>
-        </div>
-      </div>
+      <Link
+        to={mergerPath(merger_id, merger_name)}
+        className="block text-sm font-semibold text-gray-900 hover:text-primary transition-colors truncate mb-3"
+      >
+        {merger_name}
+      </Link>
 
       <div className="flex items-stretch gap-2 sm:gap-4">
         {/* Start endpoint — outside the track, hugging it from the left */}

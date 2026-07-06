@@ -19,7 +19,6 @@ const makeMatter = (overrides) => ({
   end_of_determination_period: '2026-06-01T12:00:00Z',
   determination: null,
   determination_date: null,
-  phase_2_inferred: false,
   ...overrides,
 });
 
@@ -41,7 +40,6 @@ describe('Phase2Timeline', () => {
   it('renders a bar per matter with referral, NOCC and determination milestones', () => {
     renderTimeline([makeMatter()]);
     expect(screen.getByText('Acme – Globex')).toBeInTheDocument();
-    expect(screen.getByText('MN-00001')).toBeInTheDocument();
     expect(screen.getByText('Referred')).toBeInTheDocument();
     expect(screen.getByText('01 Jan 2026')).toBeInTheDocument();
     expect(screen.getByText('NOCC issued 10 Feb 2026')).toBeInTheDocument();
@@ -57,15 +55,5 @@ describe('Phase2Timeline', () => {
   it('omits the NOCC milestone line when no NOCC date is available', () => {
     renderTimeline([makeMatter({ nocc_date: null })]);
     expect(screen.queryByText(/NOCC/)).not.toBeInTheDocument();
-  });
-
-  it('shows an inferred badge for phase_2_inferred matters', () => {
-    renderTimeline([makeMatter({ phase_2_inferred: true })]);
-    expect(screen.getByText('Inferred')).toBeInTheDocument();
-  });
-
-  it('does not show an inferred badge for genuine Phase 2 matters', () => {
-    renderTimeline([makeMatter({ phase_2_inferred: false })]);
-    expect(screen.queryByText('Inferred')).not.toBeInTheDocument();
   });
 });
