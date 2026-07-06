@@ -2400,6 +2400,89 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/bertelsmann-music-group-concord"
     },
     {
+      "merger_id": "WA-20026",
+      "merger_name": "Oaktree \u2013 Vivax Metrotech",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-18T12:00:00Z",
+      "determination_publication_date": "2026-07-06T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Vector JV Bidco, Inc.",
+          "identifier_type": null,
+          "identifier": "10619273"
+        }
+      ],
+      "targets": [
+        {
+          "name": "Vivax Metrotech Sdn. Bhd.",
+          "identifier_type": null,
+          "identifier": "202401054941"
+        },
+        {
+          "name": "Vivax-Metrotech Ltd.",
+          "identifier_type": null,
+          "identifier": "08253003"
+        },
+        {
+          "name": "Vivax-Metrotech SAS",
+          "identifier_type": null,
+          "identifier": "799092002"
+        },
+        {
+          "name": "Metrotech Vertriebs GmbH",
+          "identifier_type": null,
+          "identifier": "N/A"
+        },
+        {
+          "name": "Vivax (Asia) Ltd",
+          "identifier_type": null,
+          "identifier": "31003708"
+        },
+        {
+          "name": "AMI Holding GmbH",
+          "identifier_type": null,
+          "identifier": "N/A"
+        },
+        {
+          "name": "VXMT Corporation",
+          "identifier_type": null,
+          "identifier": "2066184"
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Oaktree Capital Holdings, LLC",
+          "identifier_type": null,
+          "identifier": "7315698"
+        },
+        {
+          "name": "Brookfield Corporation",
+          "identifier_type": null,
+          "identifier": "890126527",
+          "canonical": {
+            "id": "brookfield-corporation",
+            "name": "Brookfield Corporation"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/oaktree-%E2%80%93-vivax-metrotech"
+    },
+    {
       "merger_id": "WA-35026",
       "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
       "status": "Assessment completed",
@@ -2675,44 +2758,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/autodesk-maintainx"
-    },
-    {
-      "merger_id": "MN-70022",
-      "merger_name": "Coles \u2013 supermarket site in Coffs Harbour (NSW)",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-23T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-04T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "45 004 189 708",
-          "canonical": {
-            "id": "coles",
-            "name": "Coles Group"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "H.A. Bachrach (Nom) Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "005 026 326"
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "4110",
-          "name": "Supermarket and Grocery Stores"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-coffs-harbour-nsw"
     }
   ],
   "page": 8,

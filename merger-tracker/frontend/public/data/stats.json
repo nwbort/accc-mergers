@@ -1,6 +1,6 @@
 {
   "total_mergers": 165,
-  "total_waivers": 255,
+  "total_waivers": 256,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 123,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 241,
+    "Approved": 242,
     "Not approved": 14
   },
   "phase_duration": {
@@ -38,7 +38,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 52
+      "count": 53
     },
     {
       "name": "Computer System Design and Related Services",
@@ -177,6 +177,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20026",
+      "merger_name": "Oaktree \u2013 Vivax Metrotech",
+      "determination": "Approved",
+      "determination_date": "2026-07-06T12:00:00Z",
+      "page_modified_datetime": "2026-07-06T17:14:54+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-60023",
       "merger_name": "Siemens Energy \u2013 Camlin Group",
       "determination": "Approved",
@@ -285,16 +295,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-01068",
-      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
-      "determination": "Not approved",
-      "determination_date": "2026-07-01T12:00:00Z",
-      "page_modified_datetime": "2026-07-01T18:32:20+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 2 - detailed assessment"
     }
   ]
 }

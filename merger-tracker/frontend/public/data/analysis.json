@@ -3191,6 +3191,14 @@
         "application_date": "2026-06-18",
         "business_days": 12,
         "calendar_days": 18,
+        "merger_name": "Oaktree \u2013 Vivax Metrotech",
+        "merger_id": "WA-20026",
+        "determination": "Approved"
+      },
+      {
+        "application_date": "2026-06-18",
+        "business_days": 12,
+        "calendar_days": 18,
         "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
         "merger_id": "WA-35026",
         "determination": "Approved"
@@ -3214,17 +3222,17 @@
     ],
     "stats": {
       "average": 12.2,
-      "median": 12,
+      "median": 12.0,
       "min": 2,
       "max": 24,
-      "count": 255
+      "count": 256
     },
     "calendar_stats": {
       "average": 18.4,
-      "median": 17,
+      "median": 17.0,
       "min": 2,
       "max": 39,
-      "count": 255
+      "count": 256
     }
   },
   "monthly_volume": {
@@ -3264,7 +3272,7 @@
       48,
       45,
       67,
-      35,
+      36,
       0
     ]
   },
@@ -3435,9 +3443,9 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 274,
+      "count": 275,
       "outcome_mix": {
-        "Approved": 274
+        "Approved": 275
       },
       "median_phase_1_business_days": 16.0
     },

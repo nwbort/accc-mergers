@@ -2,6 +2,18 @@
   "events": [
     {
       "date": "2026-07-03T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "url": null,
+      "url_gh": null,
+      "status": null,
+      "merger_id": "MN-15027",
+      "merger_name": "Partnered Health - Ryan Plaza Medical Services",
+      "phase": "Phase 1",
+      "is_waiver": false
+    },
+    {
+      "date": "2026-07-03T12:00:00Z",
       "title": "Questionnaire - EAG - Kelsian and Vyscot",
       "display_title": "Questionnaire - EAG - Kelsian and Vyscot",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20EAG%20-%20Kelsian%20and%20Vyscot_0.docx",
@@ -105,6 +117,18 @@
       "status": "live",
       "merger_id": "WA-90021",
       "merger_name": "EY Australia - Australian EY Fusion business",
+      "phase": "Waiver",
+      "is_waiver": true
+    },
+    {
+      "date": "2026-07-06T12:00:00Z",
+      "title": "Notification waiver determination",
+      "display_title": "Waiver application determination: Approved",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Oaktree%20-%20Vivax%20%28WA-20026%29%20-%20Notification%20waiver%20determination%20%20%20-%206%20July%202026.pdf",
+      "url_gh": "/mergers/WA-20026/Oaktree - Vivax (WA-20026) - Notification waiver determination - 6 July 2026.pdf",
+      "status": "live",
+      "merger_id": "WA-20026",
+      "merger_name": "Oaktree \u2013 Vivax Metrotech",
       "phase": "Waiver",
       "is_waiver": true
     },
