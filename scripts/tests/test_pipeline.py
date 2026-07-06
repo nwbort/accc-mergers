@@ -1157,11 +1157,15 @@ class TestIsSafeUrl:
     def test_subdomain_accc(self):
         assert is_safe_url("https://register.accc.gov.au/some-page") is True
 
+    def test_bare_accc_domain(self):
+        assert is_safe_url("https://accc.gov.au/x") is True
+
     def test_non_accc_domain(self):
         assert is_safe_url("https://example.com/some-page") is False
 
     def test_ftp_scheme(self):
         assert is_safe_url("ftp://www.accc.gov.au/file") is False
+        assert is_safe_url("ftp://accc.gov.au/x") is False
 
     def test_empty_url(self):
         assert is_safe_url("") is False
@@ -1171,6 +1175,19 @@ class TestIsSafeUrl:
 
     def test_javascript_scheme(self):
         assert is_safe_url("javascript:alert(1)") is False
+
+    def test_suffix_domain_bypass(self):
+        """A hostname that merely ends with 'accc.gov.au' without a dot
+        boundary (e.g. evilaccc.gov.au) must be rejected."""
+        assert is_safe_url("https://evilaccc.gov.au/x") is False
+
+    def test_subdomain_of_attacker_domain_bypass(self):
+        """accc.gov.au as a prefix of an attacker-controlled domain must
+        be rejected."""
+        assert is_safe_url("https://accc.gov.au.evil.com/x") is False
+
+    def test_no_host(self):
+        assert is_safe_url("/relative/path") is False
 
 
 # ---------------------------------------------------------------------------

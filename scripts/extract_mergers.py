@@ -122,8 +122,10 @@ def sanitize_filename(filename):
 def is_safe_url(url):
     """Validate that a URL points to an allowed domain to prevent SSRF attacks."""
     parsed = urlparse(url)
+    hostname = parsed.hostname
     return (parsed.scheme in ('http', 'https')
-            and parsed.netloc.endswith('accc.gov.au'))
+            and hostname is not None
+            and (hostname == 'accc.gov.au' or hostname.endswith('.accc.gov.au')))
 
 
 def download_attachment(merger_id, attachment_url, event_title=None, cached_determination_data=None):
