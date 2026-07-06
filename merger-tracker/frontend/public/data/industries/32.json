@@ -19,7 +19,7 @@
       "code": "321",
       "name": "Land Development and Site Preparation Services",
       "level": "group",
-      "merger_count": 9
+      "merger_count": 10
     },
     {
       "code": "322",
@@ -64,6 +64,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-06-09T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-35026",
+      "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-18T12:00:00Z",
+      "determination_date": "2026-07-06T12:00:00Z"
     },
     {
       "merger_id": "WA-05024",
@@ -219,10 +228,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 19,
+  "count": 20,
   "phase_1_count": 6,
   "phase_2_count": 0,
-  "waiver_count": 13,
+  "waiver_count": 14,
   "active_count": 2,
   "phase_duration": {
     "average_days": 22.75,

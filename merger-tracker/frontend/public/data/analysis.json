@@ -3188,6 +3188,14 @@
         "determination": "Approved"
       },
       {
+        "application_date": "2026-06-18",
+        "business_days": 12,
+        "calendar_days": 18,
+        "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
+        "merger_id": "WA-35026",
+        "determination": "Approved"
+      },
+      {
         "application_date": "2026-06-23",
         "business_days": 8,
         "calendar_days": 10,
@@ -3198,17 +3206,17 @@
     ],
     "stats": {
       "average": 12.2,
-      "median": 12,
+      "median": 12.0,
       "min": 2,
       "max": 24,
-      "count": 253
+      "count": 254
     },
     "calendar_stats": {
       "average": 18.4,
-      "median": 17,
+      "median": 17.0,
       "min": 2,
       "max": 39,
-      "count": 253
+      "count": 254
     }
   },
   "monthly_volume": {
@@ -3248,7 +3256,7 @@
       48,
       45,
       67,
-      33,
+      34,
       0
     ]
   },
@@ -3419,9 +3427,9 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 272,
+      "count": 273,
       "outcome_mix": {
-        "Approved": 272
+        "Approved": 273
       },
       "median_phase_1_business_days": 16.0
     },

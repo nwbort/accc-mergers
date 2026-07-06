@@ -21,7 +21,7 @@
       "code": "32",
       "name": "Construction Services",
       "level": "subdivision",
-      "merger_count": 19
+      "merger_count": 20
     }
   ],
   "mergers": [
@@ -60,6 +60,15 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-35026",
+      "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-18T12:00:00Z",
+      "determination_date": "2026-07-06T12:00:00Z"
     },
     {
       "merger_id": "WA-70023",
@@ -287,10 +296,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 29,
+  "count": 30,
   "phase_1_count": 10,
   "phase_2_count": 1,
-  "waiver_count": 18,
+  "waiver_count": 19,
   "active_count": 4,
   "phase_duration": {
     "average_days": 28.5,

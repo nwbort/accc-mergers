@@ -19,7 +19,7 @@
       "code": "671",
       "name": "Property Operators",
       "level": "group",
-      "merger_count": 22
+      "merger_count": 23
     },
     {
       "code": "672",
@@ -37,6 +37,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-21T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-35026",
+      "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-18T12:00:00Z",
+      "determination_date": "2026-07-06T12:00:00Z"
     },
     {
       "merger_id": "MN-01068",
@@ -255,10 +264,10 @@
       "determination_date": "2025-09-05T12:00:00Z"
     }
   ],
-  "count": 25,
+  "count": 26,
   "phase_1_count": 7,
   "phase_2_count": 1,
-  "waiver_count": 17,
+  "waiver_count": 18,
   "active_count": 1,
   "phase_duration": {
     "average_days": 32.285714285714285,
