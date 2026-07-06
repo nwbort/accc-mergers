@@ -279,11 +279,7 @@ function Analysis() {
       }] : []),
       ...(ecdfMedian != null ? [{
         label: `Median (${ecdfMedian} ${dayLabel})`,
-        data: [
-          { x: 0, y: 50 },
-          { x: ecdfMedian, y: 50 },
-          { x: ecdfMedian, y: 0 },
-        ],
+        data: [{ x: ecdfMedian, y: 0 }, { x: ecdfMedian, y: 100 }],
         borderColor: '#9ca3af',
         borderDash: [4, 4],
         borderWidth: 1.5,
@@ -295,7 +291,7 @@ function Analysis() {
         data: ecdfPoints,
         borderColor: COLORS.primary,
         backgroundColor: COLORS.primary,
-        stepped: 'after',
+        stepped: 'before',
         borderWidth: 2,
         pointRadius: 0,
         pointHoverRadius: 5,
@@ -650,7 +646,7 @@ function Analysis() {
                   Phase 1 duration: share of reviews concluded
                 </h2>
                 <p className="text-sm text-gray-500 mt-0.5">
-                  What percentage of completed phase 1 reviews concluded by a given number of {dayLabel}.
+                  Proportion of phase 1 reviews completed by the given number of {dayLabel}.
                 </p>
               </div>
               <div className="p-6">
