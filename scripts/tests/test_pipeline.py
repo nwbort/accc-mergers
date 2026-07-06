@@ -32,7 +32,9 @@ from extract_mergers import (
     _add_synthetic_events,
     find_pending_phase2_notice_events,
     extract_phase2_notice_data,
+    _calculate_missing_end_of_determination_period,
 )
+from static_data.business_days import calculate_business_days
 import extract_mergers
 from bs4 import BeautifulSoup
 
@@ -2447,3 +2449,35 @@ class TestExtractAnzsicCodes:
     def test_no_anzsic_field(self):
         html = '<div class="field field--name-field-other">nothing here</div>'
         assert _extract_anzsic_codes(BeautifulSoup(html, 'html.parser')) == []
+
+
+# ---------------------------------------------------------------------------
+# extract_mergers: _calculate_missing_end_of_determination_period
+# ---------------------------------------------------------------------------
+
+class TestCalculateMissingEndOfDeterminationPeriod:
+    """BD 1 of the review period is the day after notification, but
+    add_business_days counts its start date as day 1 - the fallback must
+    compensate for that mismatch (issue #576)."""
+
+    def test_computed_end_is_exactly_30_business_days_after_notification(self):
+        merger_data = {
+            'effective_notification_datetime': '2026-05-19T12:00:00Z',
+        }
+        _calculate_missing_end_of_determination_period(merger_data, 'MN-30008')
+        assert calculate_business_days(
+            '2026-05-19T12:00:00Z', merger_data['end_of_determination_period']
+        ) == 30
+
+    def test_skips_waiver_mergers(self):
+        merger_data = {'effective_notification_datetime': '2026-05-19T12:00:00Z'}
+        _calculate_missing_end_of_determination_period(merger_data, 'WA-00001')
+        assert 'end_of_determination_period' not in merger_data
+
+    def test_does_not_overwrite_existing_value(self):
+        merger_data = {
+            'effective_notification_datetime': '2026-05-19T12:00:00Z',
+            'end_of_determination_period': '2026-07-01T12:00:00Z',
+        }
+        _calculate_missing_end_of_determination_period(merger_data, 'MN-30008')
+        assert merger_data['end_of_determination_period'] == '2026-07-01T12:00:00Z'

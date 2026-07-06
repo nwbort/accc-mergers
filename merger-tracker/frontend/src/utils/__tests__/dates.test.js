@@ -40,6 +40,10 @@ describe('isBusinessDay', () => {
     expect(isBusinessDay(d('2025-03-10'))).toBe(false);
   });
 
+  it('returns false for ANZAC Day observed Monday 2026 (27 April)', () => {
+    expect(isBusinessDay(d('2026-04-27'))).toBe(false);
+  });
+
   describe('Christmas / New Year period (23 Dec – 10 Jan)', () => {
     it('returns false on 23 December', () => {
       expect(isBusinessDay(d('2025-12-23'))).toBe(false);
