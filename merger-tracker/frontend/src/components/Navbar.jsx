@@ -10,7 +10,6 @@ const SCROLL_HIDE_THRESHOLD_PX = 50;
 const navLinks = [
   { path: '/', label: 'Dashboard', shortcut: 'd' },
   { path: '/mergers', label: 'Mergers', shortcut: 'm' },
-  { path: '/timeline', label: 'Timeline', shortcut: 't' },
   { path: '/phase-2', label: 'Phase 2' },
   { path: '/industries', label: 'Industries', shortcut: 'i' },
   { path: '/commentary', label: 'Commentary', shortcut: 'c' },
