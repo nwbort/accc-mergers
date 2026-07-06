@@ -20,6 +20,7 @@ import Commentary from './pages/Commentary';
 import Digest from './pages/Digest';
 import NickTwort from './pages/NickTwort';
 import Analysis from './pages/Analysis';
+import Phase2 from './pages/Phase2';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Feedback from './pages/Feedback';
 import NotFound from './pages/NotFound';
@@ -50,6 +51,7 @@ function AppContent() {
             <Route path="/commentary" element={<Commentary />} />
             <Route path="/digest" element={<Digest />} />
             <Route path="/analysis" element={<Analysis />} />
+            <Route path="/phase-2" element={<Phase2 />} />
             <Route path="/nick-twort" element={<NickTwort />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/feedback" element={<Feedback />} />
