@@ -21,6 +21,7 @@ Output files:
   - upcoming-events.json        - Future consultation/determination dates
   - commentary.json             - Mergers with user commentary
   - analysis.json               - Pre-computed analysis data
+  - serial-acquirers.json       - Serial-acquirer ("creeping acquisitions") detection
   - questionnaires/{id}.json    - Lazy-loaded questionnaire files
   - noccs/{id}.json             - Lazy-loaded NOCC summary files
 """
@@ -54,6 +55,7 @@ from static_data.outputs import (
     list as list_out,
     noccs,
     questionnaires,
+    serial_acquirers,
     stats,
     timeline,
     upcoming_events,
@@ -138,6 +140,7 @@ def main():
         ("upcoming-events.json", upcoming_events.generate(enriched)),
         ("commentary.json", commentary_out.generate(enriched, commentary)),
         ("analysis.json", analysis.generate(enriched)),
+        ("serial-acquirers.json", serial_acquirers.generate(enriched)),
     ]
     for filename, payload in single_file_outputs:
         out_path = OUTPUT_DIR / filename
