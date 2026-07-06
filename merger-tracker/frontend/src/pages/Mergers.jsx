@@ -170,7 +170,9 @@ function Mergers() {
     } else {
       params.delete(key);
     }
-    setSearchParams(params);
+    // replace: true avoids pushing a history entry per keystroke/toggle, so
+    // Back doesn't have to walk through every intermediate filter state.
+    setSearchParams(params, { replace: true });
   };
 
   const activeFilterCount = [
@@ -448,7 +450,7 @@ function Mergers() {
                       params.delete('phase');
                       params.delete('status');
                       params.delete('tracked');
-                      setSearchParams(params);
+                      setSearchParams(params, { replace: true });
                     }}
                     className="text-xs text-gray-500 hover:text-gray-700 transition-colors"
                   >

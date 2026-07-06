@@ -87,33 +87,63 @@ export function buildSearchIndex(mergers) {
   return index;
 }
 
+// Matches quoted phrases (kept as a single token, quotes stripped) or
+// runs of non-whitespace characters.
+const TOKEN_PATTERN = /"([^"]+)"|(\S+)/g;
+
+/**
+ * Split a search term into lowercase tokens on whitespace, treating any
+ * "quoted phrase" as a single token.
+ *
+ * @param {string} searchTerm - Raw search term
+ * @returns {string[]} Non-empty, lowercased tokens
+ */
+function tokenize(searchTerm) {
+  const tokens = [];
+  let match;
+  while ((match = TOKEN_PATTERN.exec(searchTerm)) !== null) {
+    const token = (match[1] ?? match[2]).toLowerCase();
+    if (token) tokens.push(token);
+  }
+  return tokens;
+}
+
 /**
  * Search mergers using the pre-built index.
  *
  * This is significantly faster than iterating through all mergers and
  * checking multiple fields, as it:
  * 1. Only does toLowerCase() once on the search term (not for every field)
- * 2. Performs a single .includes() check per merger (vs 5+ checks)
+ * 2. Performs a single .includes() check per token per merger (vs 5+ field checks)
  * 3. Uses O(1) Map lookups instead of array iterations
+ *
+ * The search term is split into whitespace-separated tokens (quoted phrases
+ * count as one token); a merger matches only if every token is a substring
+ * of its index string, so token order and adjacency don't matter.
  *
  * @param {Array} mergers - Array of merger objects to search
  * @param {string} searchTerm - Term to search for
  * @param {Map} searchIndex - Pre-built search index from buildSearchIndex()
- * @returns {Array} Filtered array of mergers matching the search term
+ * @returns {Array} Filtered array of mergers matching every search token
  *
  * @example
  * const filtered = searchMergers(mergers, 'ampol', searchIndex);
  * // Returns all mergers where 'ampol' appears in name, ID, parties, or industries
+ *
+ * @example
+ * const filtered = searchMergers(mergers, 'google wiz', searchIndex);
+ * // Returns mergers whose index contains both 'google' and 'wiz',
+ * // even non-adjacently (e.g. "... google ... wiz ...")
  */
 export function searchMergers(mergers, searchTerm, searchIndex) {
   if (!searchTerm) return mergers;
 
-  const term = searchTerm.toLowerCase().trim();
-  if (!term) return mergers;
+  const tokens = tokenize(searchTerm);
+  if (!tokens.length) return mergers;
 
   return mergers.filter((merger) => {
     const searchString = searchIndex.get(merger.merger_id);
-    return searchString && searchString.includes(term);
+    return searchString && tokens.every((token) => searchString.includes(token));
   });
 }
 
