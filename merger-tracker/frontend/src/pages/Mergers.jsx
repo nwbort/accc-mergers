@@ -6,6 +6,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import StatusBadge from '../components/StatusBadge';
 import BellIcon from '../components/BellIcon';
 import WaiverBadge from '../components/WaiverBadge';
+import { BusinessDayChip } from '../components/BusinessDayProgress';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
@@ -581,10 +582,11 @@ function Mergers() {
                         <p className="text-xs text-gray-500 mb-0.5">
                           {merger.determination_publication_date ? 'Determination date' : 'End of determination period'}
                         </p>
-                        <p className="text-sm font-medium text-gray-700">
+                        <p className="text-sm font-medium text-gray-700 flex items-center gap-1.5">
                           {merger.determination_publication_date
                             ? formatDate(merger.determination_publication_date)
                             : formatDate(merger.end_of_determination_period)}
+                          <BusinessDayChip merger={merger} />
                         </p>
                       </div>
                     )}
