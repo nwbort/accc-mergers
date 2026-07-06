@@ -3415,5 +3415,34 @@
       "median_calendar_days": 24.5,
       "count": 10
     }
-  ]
+  ],
+  "deadline_utilisation": {
+    "histogram": {
+      "15": 33,
+      "16": 22,
+      "17": 15,
+      "18": 15,
+      "19": 9,
+      "20": 5,
+      "21": 3,
+      "22": 5,
+      "24": 2,
+      "25": 3,
+      "26": 1,
+      "27": 1,
+      "28": 5
+    },
+    "last_5_bd_counts": {
+      "2": 5,
+      "3": 1,
+      "4": 1
+    },
+    "stats": {
+      "mean_used_bd": 17.9,
+      "median_used_bd": 17,
+      "pct_decided_final_3_bd": 4.2,
+      "count": 119
+    },
+    "extended_count": 2
+  }
 }
