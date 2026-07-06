@@ -499,6 +499,7 @@ class TestAnalysisGenerate:
         json.dumps(payload)
         assert set(payload.keys()) == {
             'phase1_duration', 'waiver_duration', 'monthly_volume', 'industry_phase1_duration',
+            'by_commission_division',
             'deadline_utilisation', 'notification_restarts', 'restart_rate',
             'outcomes_by_division', 'referrals_by_quarter',
         }
@@ -896,6 +897,312 @@ class TestReferralsByQuarter:
 
         assert total_notifications == stats_payload['total_mergers']
         assert total_referred == stats_payload['by_determination'].get(merger_status.REFERRED_TO_PHASE_2, 0)
+
+
+# ---------------------------------------------------------------------------
+# analysis.by_commission_division
+# ---------------------------------------------------------------------------
+
+def _commission_division_fixture():
+    """Five mergers exercising the by_commission_division normalisation: the
+    same delegate spelled two ways (with/without a first name, plus
+    whitespace/case noise), a corrupted over-length extraction, a
+    determination with no division parsed, and a waiver decided by a delegate
+    who otherwise only appears on notifications."""
+    raw = [
+        {
+            'merger_id': 'MN-1001',
+            'merger_name': 'Iota acquires Kappa',
+            'status': 'Determined',
+            'accc_determination': 'Approved',
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-01-06T09:00:00Z',
+            'determination_publication_date': '2025-02-05T12:00:00Z',
+            'page_modified_datetime': '2025-02-05T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/MN-1001',
+            'events': [{
+                'title': 'Phase 1 - Determination',
+                'date': '2025-02-05T12:00:00Z',
+                'url': 'e1',
+                'determination_commission_division': (
+                    'Determination made by Commissioner  Philip Williams pursuant to a\n'
+                    'delegation under section 25(1) of the Act'
+                ),
+            }],
+        },
+        {
+            'merger_id': 'MN-1002',
+            'merger_name': 'Lambda acquires Mu',
+            'status': 'Determined',
+            'accc_determination': 'Not opposed',
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-02-10T09:00:00Z',
+            'determination_publication_date': '2025-03-12T12:00:00Z',
+            'page_modified_datetime': '2025-03-12T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/MN-1002',
+            'events': [{
+                'title': 'Phase 1 - Determination',
+                'date': '2025-03-12T12:00:00Z',
+                'url': 'e2',
+                # Same delegate as MN-1001's, but without the first name, and
+                # differing in case/whitespace too.
+                'determination_commission_division': (
+                    'determination made by commissioner williams pursuant to a '
+                    'delegation under section 25(1) of the act'
+                ),
+            }],
+        },
+        {
+            'merger_id': 'MN-1003',
+            'merger_name': 'Nu acquires Xi',
+            'status': 'Determined',
+            'accc_determination': 'Approved',
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-01-20T09:00:00Z',
+            'determination_publication_date': '2025-02-19T12:00:00Z',
+            'page_modified_datetime': '2025-02-19T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/MN-1003',
+            'events': [{
+                'title': 'Phase 1 - Determination',
+                'date': '2025-02-19T12:00:00Z',
+                'url': 'e3',
+                # A corrupted extraction (no "of the Act" marker nearby) that
+                # captured far more than the division sentence.
+                'determination_commission_division': 'Determination made by the Commission ' + 'x' * 300,
+            }],
+        },
+        {
+            'merger_id': 'MN-1004',
+            'merger_name': 'Omicron acquires Pi',
+            'status': 'Determined',
+            'accc_determination': 'Approved',
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-03-01T09:00:00Z',
+            'determination_publication_date': '2025-03-31T12:00:00Z',
+            'page_modified_datetime': '2025-03-31T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/MN-1004',
+            'events': [
+                # No determination_commission_division parsed at all.
+                {'title': 'Phase 1 - Determination', 'date': '2025-03-31T12:00:00Z', 'url': 'e4'},
+            ],
+        },
+        {
+            'merger_id': 'WA-1005',
+            'merger_name': 'Rho waiver',
+            'status': 'Determined',
+            'accc_determination': 'Approved',
+            'stage': 'Waiver',
+            'effective_notification_datetime': '2025-04-01T09:00:00Z',
+            'determination_publication_date': '2025-04-15T12:00:00Z',
+            'page_modified_datetime': '2025-04-15T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/WA-1005',
+            'events': [{
+                'title': 'Waiver determination',
+                'date': '2025-04-15T12:00:00Z',
+                'url': 'e5',
+                # Same delegate as MN-1001/MN-1002, but this merger is a
+                # waiver, so it has no Phase 1 review to measure.
+                'determination_commission_division': (
+                    'Determination made by Commissioner Williams pursuant to a '
+                    'delegation under section 25(1) of the Act'
+                ),
+            }],
+        },
+    ]
+    return [enrich_merger(m) for m in raw]
+
+
+class TestByCommissionDivision:
+    def test_collapses_delegate_name_variants(self):
+        divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
+        williams = next(d for d in divisions if 'Williams' in d['division'])
+        # MN-1001 ("Philip Williams"), MN-1002 ("Williams", different
+        # case/whitespace) and WA-1005 ("Williams") all collapse to one
+        # delegate.
+        assert williams['count'] == 3
+        # Display label is canonicalised to "<title> <surname>", not the raw sentence.
+        assert williams['division'] == 'Commissioner Williams'
+        assert williams['outcome_mix'] == {'Approved': 2, 'Not opposed': 1}
+
+    def test_corrupted_and_missing_values_fold_into_unknown(self):
+        divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
+        unknown = next(d for d in divisions if d['division'] == 'Unknown')
+        assert unknown['count'] == 2
+
+    def test_still_under_assessment_is_separated_from_unknown(self):
+        # A merger with no division parsed because it simply hasn't been
+        # determined yet shouldn't be lumped in with genuine data gaps
+        # (corrupted/missing extraction on an already-determined merger).
+        raw = [{
+            'merger_id': 'MN-4001',
+            'merger_name': 'Alpha Two acquires Beta Two',
+            'status': 'Under assessment',
+            'accc_determination': None,
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-08-01T09:00:00Z',
+            'determination_publication_date': None,
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/MN-4001',
+            'events': [{'title': 'Merger notified to ACCC', 'date': '2025-08-01T09:00:00Z', 'url': 'e11'}],
+        }]
+        fixture = _commission_division_fixture() + [enrich_merger(m) for m in raw]
+        divisions = analysis.generate(fixture)['by_commission_division']
+
+        pending = next(d for d in divisions if d['division'] == 'Not yet determined')
+        assert pending['count'] == 1
+        # The genuinely corrupted/missing-extraction cases from the base
+        # fixture (both already "Determined") stay in "Unknown", unaffected.
+        unknown = next(d for d in divisions if d['division'] == 'Unknown')
+        assert unknown['count'] == 2
+
+    def test_median_phase_1_business_days_uses_the_subset(self):
+        divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
+        williams = next(d for d in divisions if 'Williams' in d['division'])
+        # WA-1005 is a waiver and contributes no Phase 1 duration, but
+        # MN-1001/MN-1002 do, so the bucket's median isn't null just because
+        # one contributing merger has no Phase 1 review.
+        assert williams['median_phase_1_business_days'] is not None
+
+    def test_waiver_only_division_has_null_median(self):
+        # A delegate whose only determinations in this fixture are waivers
+        # has no Phase 1 duration to report — expected, not a bug, since
+        # collect_phase_1_durations only measures notifications.
+        raw = [{
+            'merger_id': 'WA-2001',
+            'merger_name': 'Sigma waiver',
+            'status': 'Determined',
+            'accc_determination': 'Approved',
+            'stage': 'Waiver',
+            'effective_notification_datetime': '2025-05-01T09:00:00Z',
+            'determination_publication_date': '2025-05-15T12:00:00Z',
+            'page_modified_datetime': '2025-05-15T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/WA-2001',
+            'events': [{
+                'title': 'Waiver determination',
+                'date': '2025-05-15T12:00:00Z',
+                'url': 'e6',
+                'determination_commission_division': (
+                    'Determination made by Chair Cass-Gottlieb pursuant to a '
+                    'delegation under section 25(1) of the Act'
+                ),
+            }],
+        }]
+        divisions = analysis.generate([enrich_merger(m) for m in raw])['by_commission_division']
+        assert divisions[0]['division'] == 'Chair Cass-Gottlieb'
+        assert divisions[0]['median_phase_1_business_days'] is None
+
+    def test_collapses_division_of_commission_wording_variants(self):
+        # A determination says "Determination made by ... of the Act"; a
+        # Phase 2 Notice says "Decision made by ... of the Competition and
+        # Consumer Act 2010 (Cth)" for the same kind of body. Both should
+        # collapse to one canonical bucket.
+        raw = [
+            {
+                'merger_id': 'MN-3001',
+                'merger_name': 'Tau acquires Upsilon',
+                'status': 'Determined',
+                'accc_determination': 'Approved',
+                'stage': 'Phase 1 - preliminary assessment',
+                'effective_notification_datetime': '2025-06-01T09:00:00Z',
+                'determination_publication_date': '2025-06-30T12:00:00Z',
+                'page_modified_datetime': '2025-06-30T12:30:00Z',
+                'anzsic_codes': [],
+                'acquirers': [], 'targets': [], 'other_parties': [],
+                'url': 'https://example.com/MN-3001',
+                'events': [{
+                    'title': 'Phase 1 - Determination',
+                    'date': '2025-06-30T12:00:00Z',
+                    'url': 'e7',
+                    'determination_commission_division': (
+                        'Determination made by a division of the Commission '
+                        'constituted by a direction issued pursuant to section 19 of the Act'
+                    ),
+                }],
+            },
+            {
+                'merger_id': 'MN-3002',
+                'merger_name': 'Phi acquires Chi',
+                'status': 'Assessment ceased',
+                'accc_determination': None,
+                'stage': 'Phase 2 - detailed assessment',
+                'effective_notification_datetime': '2025-06-05T09:00:00Z',
+                'determination_publication_date': None,
+                'page_modified_datetime': '2025-07-01T09:30:00Z',
+                'anzsic_codes': [],
+                'acquirers': [], 'targets': [], 'other_parties': [],
+                'url': 'https://example.com/MN-3002',
+                'events': [{
+                    'title': 'Phi - Chi - Phase 2 Notice',
+                    'date': '2025-07-01T09:00:00Z',
+                    'url': 'e8',
+                    'phase2_notice_matters_to_investigate': [],
+                    'phase2_notice_commission_division': (
+                        'Decision made by a division of the Commission constituted by a '
+                        'direction issued pursuant to section 19 of the Competition and '
+                        'Consumer Act 2010 (Cth)'
+                    ),
+                }],
+            },
+        ]
+        divisions = analysis.generate([enrich_merger(m) for m in raw])['by_commission_division']
+        assert len(divisions) == 1
+        assert divisions[0]['division'] == 'A division of the Commission (s19 direction)'
+        assert divisions[0]['count'] == 2
+
+    def test_final_determination_takes_precedence_over_phase2_notice(self):
+        # A matter referred to Phase 2 and later determined by a named
+        # delegate shouldn't have its bucket overridden by the earlier Phase
+        # 2 Notice's division event.
+        raw = [{
+            'merger_id': 'MN-3003',
+            'merger_name': 'Psi acquires Omega',
+            'status': 'Determined',
+            'accc_determination': 'Approved',
+            'stage': 'Phase 2 - detailed assessment',
+            'effective_notification_datetime': '2025-06-05T09:00:00Z',
+            'determination_publication_date': '2025-09-01T12:00:00Z',
+            'page_modified_datetime': '2025-09-01T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/MN-3003',
+            'events': [
+                {
+                    'title': 'Psi - Omega - Phase 2 Notice',
+                    'date': '2025-07-01T09:00:00Z',
+                    'url': 'e9',
+                    'phase2_notice_matters_to_investigate': [],
+                    'phase2_notice_commission_division': (
+                        'Decision made by a division of the Commission constituted by a '
+                        'direction issued pursuant to section 19 of the Competition and '
+                        'Consumer Act 2010 (Cth)'
+                    ),
+                },
+                {
+                    'title': 'Phase 2 - Determination',
+                    'date': '2025-09-01T12:00:00Z',
+                    'url': 'e10',
+                    'determination_commission_division': (
+                        'Determination made by Commissioner Woodward pursuant to a '
+                        'delegation under section 25(1) of the Act'
+                    ),
+                },
+            ],
+        }]
+        divisions = analysis.generate([enrich_merger(m) for m in raw])['by_commission_division']
+        assert divisions[0]['division'] == 'Commissioner Woodward'
 
 
 # ---------------------------------------------------------------------------

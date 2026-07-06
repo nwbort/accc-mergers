@@ -1,5 +1,43 @@
-"""Pre-computed analysis data for the Analysis page — ``analysis.json``."""
+"""Pre-computed analysis data for the Analysis page — ``analysis.json``.
 
+Label normalisation for ``by_commission_division`` (see that function):
+- Whitespace runs are collapsed.
+- A delegate sentence ("Determination/Decision made by <person> pursuant to
+  a delegation...") is canonicalised to "<title> <surname>" (e.g.
+  "Commissioner Philip Williams" and "Commissioner Williams" both collapse to
+  "Commissioner Williams") so the same delegate isn't split across buckets
+  depending on whether their first name happened to be spelled out.
+- A "division of the Commission" sentence ("Determination/Decision made by a
+  division of the Commission constituted by a direction issued pursuant to
+  section <n>...") is canonicalised to "A division of the Commission (s<n>
+  direction)", collapsing the "Determination"/"Decision" wording difference
+  and the trailing Act-reference wording difference (a Phase 2 Notice cites
+  "the Competition and Consumer Act 2010 (Cth)" in full; a determination just
+  says "of the Act") — both describe the same kind of body.
+- Grouping is case-insensitive (via ``str.casefold``), with the first-seen
+  spelling for a group used as its display label.
+- A merger with no parsed ``determination_commission_division`` on any
+  event, or with a corrupted value, falls back to a Phase 2 Notice's own
+  "Decision made by..." sentence (``phase2_notice_commission_division``)
+  first: a matter whose assessment is ceased after referral to Phase 2 never
+  gets a final determination PDF to parse, but its Phase 2 Notice still says
+  who decided the referral.
+- A label longer than ``_MAX_DIVISION_LABEL_LENGTH`` is treated as corrupted:
+  real division sentences top out around 120 characters, but the
+  extractor's "...of the Act" end-of-sentence marker can occasionally be
+  missing nearby in a determination PDF (e.g. within a lengthy s87B
+  undertaking), causing it to capture the rest of the document instead of
+  just the division sentence.
+- If still nothing is recoverable, the merger is split between two buckets
+  rather than one blanket "Unknown" (see ``_PENDING_STATUSES`` and
+  :func:`by_commission_division`): "Not yet determined" for matters still
+  under assessment/suspended (there's simply no decision yet), and "Unknown"
+  for matters that did reach or abandon an outcome but whose division
+  genuinely couldn't be identified — a data gap worth investigating, unlike
+  the former.
+"""
+
+import re
 from collections import defaultdict
 from statistics import median as stat_median
 
@@ -9,6 +47,27 @@ from .. import anzsic
 from ..business_days import calculate_business_days, calculate_calendar_days
 from ..durations import collect_phase_1_durations, phase_1_end_date
 from ..filters import filter_notifications, filter_waivers
+
+_MAX_DIVISION_LABEL_LENGTH = 200
+
+# Matches "Determination/Decision made by <person> pursuant to a delegation
+# ..." so the delegate's name can be canonicalised to "<title> <surname>",
+# collapsing variants that do/don't spell out a first name (e.g.
+# "Commissioner Philip Williams" vs "Commissioner Williams").
+_DELEGATE_PATTERN = re.compile(
+    r'^(?:Determination|Decision) made by (?P<person>.+?) pursuant to a delegation\b',
+    re.IGNORECASE,
+)
+
+# Matches "Determination/Decision made by a division of the Commission
+# constituted by a direction issued pursuant to section <n> ..." so it can be
+# canonicalised regardless of the "Determination"/"Decision" wording and the
+# trailing Act-reference wording (see module docstring).
+_DIVISION_PATTERN = re.compile(
+    r'^(?:Determination|Decision) made by a division of the Commission '
+    r'constituted by a direction issued pursuant to section (?P<section>\d+)\b',
+    re.IGNORECASE,
+)
 
 # A Phase 1 window longer than this is an extension (e.g. public benefit
 # applications) rather than the standard 30-business-day clock, so it's
@@ -66,6 +125,114 @@ def industry_phase1_duration(mergers: list) -> list[dict]:
         })
 
     results.sort(key=lambda x: -x['average_business_days'])
+    return results
+
+
+def _normalise_division(raw: str | None) -> str | None:
+    """Collapse whitespace in a raw division sentence; ``None`` if unusable.
+
+    Returns ``None`` (rather than "Unknown" directly) so callers can still
+    distinguish "no value parsed" from "value parsed but corrupted" if
+    needed; both fold into "Unknown" in :func:`by_commission_division`.
+    """
+    if not raw:
+        return None
+    label = re.sub(r'\s+', ' ', raw).strip()
+    if not label or len(label) > _MAX_DIVISION_LABEL_LENGTH:
+        return None
+
+    match = _DELEGATE_PATTERN.match(label)
+    if match:
+        words = match.group('person').split()
+        if len(words) >= 2:
+            return f'{words[0]} {words[-1]}'
+        return match.group('person')
+
+    match = _DIVISION_PATTERN.match(label)
+    if match:
+        return f"A division of the Commission (s{match.group('section')} direction)"
+
+    return label
+
+
+def _commission_division_for(merger: dict) -> str | None:
+    """The normalised commission-division label for ``merger``.
+
+    Prefers ``determination_commission_division`` — parsed onto whichever
+    event carries the determination PDF, at most one event per merger — over
+    ``phase2_notice_commission_division``, used as a fallback only when no
+    determination was ever reached (e.g. assessment ceased after a Phase 2
+    referral), since the final determination's attribution should win when
+    both exist.
+    """
+    events = merger.get('events') or []
+
+    for event in events:
+        raw = event.get('determination_commission_division')
+        if raw is not None:
+            return _normalise_division(raw)
+
+    for event in events:
+        raw = event.get('phase2_notice_commission_division')
+        if raw is not None:
+            return _normalise_division(raw)
+
+    return None
+
+
+# Statuses that mean a merger hasn't reached (and may never reach, if
+# suspended pending information) a determination yet, as opposed to one that
+# has but whose division couldn't be identified. See by_commission_division.
+_PENDING_STATUSES = {merger_status.UNDER_ASSESSMENT, merger_status.ASSESSMENT_SUSPENDED}
+
+
+def by_commission_division(mergers: list) -> list[dict]:
+    """Determination counts, outcome mix, and Phase 1 duration per commission division.
+
+    See the module docstring for the label normalisation rules. Divisions are
+    sorted by determination count, descending. Mergers with no recoverable
+    division are split into two buckets rather than one blanket "Unknown":
+    "Not yet determined" for those still under assessment (or suspended) —
+    there's simply no decision yet to attribute — and "Unknown" for those
+    that reached (or abandoned) an outcome but whose division genuinely
+    couldn't be identified (a data gap worth investigating, not an absence
+    of data).
+    """
+    groups: dict[str, dict] = {}
+    pending = []
+    unknown = []
+    for m in mergers:
+        label = _commission_division_for(m)
+        if label is None:
+            if m.get('status') in _PENDING_STATUSES:
+                pending.append(m)
+            else:
+                unknown.append(m)
+            continue
+        bucket = groups.setdefault(label.casefold(), {"label": label, "mergers": []})
+        bucket["mergers"].append(m)
+
+    buckets = list(groups.values())
+    if pending:
+        buckets.append({"label": "Not yet determined", "mergers": pending})
+    if unknown:
+        buckets.append({"label": "Unknown", "mergers": unknown})
+
+    results = []
+    for bucket in buckets:
+        group = bucket["mergers"]
+        outcome_mix = defaultdict(int)
+        for m in group:
+            outcome_mix[m.get('accc_determination') or 'Unknown'] += 1
+        _, business_days = collect_phase_1_durations(group)
+        results.append({
+            "division": bucket["label"],
+            "count": len(group),
+            "outcome_mix": dict(outcome_mix),
+            "median_phase_1_business_days": stat_median(business_days) if business_days else None,
+        })
+
+    results.sort(key=lambda x: -x['count'])
     return results
 
 
@@ -405,6 +572,7 @@ def generate(mergers: list) -> dict:
         },
         "monthly_volume": monthly_volume,
         "industry_phase1_duration": industry_phase1_duration(mergers),
+        "by_commission_division": by_commission_division(mergers),
         "deadline_utilisation": deadline_utilisation(mergers),
         "notification_restarts": restarts,
         "restart_rate": restart_rate,

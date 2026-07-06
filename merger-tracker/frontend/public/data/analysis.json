@@ -3416,6 +3416,59 @@
       "count": 10
     }
   ],
+  "by_commission_division": [
+    {
+      "division": "Commissioner Williams",
+      "count": 272,
+      "outcome_mix": {
+        "Approved": 272
+      },
+      "median_phase_1_business_days": 16.0
+    },
+    {
+      "division": "A division of the Commission (s19 direction)",
+      "count": 77,
+      "outcome_mix": {
+        "Approved": 62,
+        "Not approved": 14,
+        "Unknown": 1
+      },
+      "median_phase_1_business_days": 18
+    },
+    {
+      "division": "Not yet determined",
+      "count": 41,
+      "outcome_mix": {
+        "Unknown": 41
+      },
+      "median_phase_1_business_days": 37.5
+    },
+    {
+      "division": "Commissioner Woodward",
+      "count": 24,
+      "outcome_mix": {
+        "Approved": 23,
+        "Not approved": 1
+      },
+      "median_phase_1_business_days": 18
+    },
+    {
+      "division": "Chair Cass-Gottlieb",
+      "count": 2,
+      "outcome_mix": {
+        "Approved": 2
+      },
+      "median_phase_1_business_days": null
+    },
+    {
+      "division": "Unknown",
+      "count": 2,
+      "outcome_mix": {
+        "Approved": 2
+      },
+      "median_phase_1_business_days": 40.0
+    }
+  ],
   "deadline_utilisation": {
     "histogram": {
       "15": 33,
