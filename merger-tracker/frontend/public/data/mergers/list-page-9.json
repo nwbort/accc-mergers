@@ -1,6 +1,203 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-70022",
+      "merger_name": "Coles \u2013 supermarket site in Coffs Harbour (NSW)",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-23T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-04T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "45 004 189 708",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "H.A. Bachrach (Nom) Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "005 026 326",
+          "party_page": {
+            "id": "h-a-bachrach-nom-pty-ltd",
+            "name": "H.A. Bachrach (Nom) Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4110",
+          "name": "Supermarket and Grocery Stores"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-coffs-harbour-nsw"
+    },
+    {
+      "merger_id": "WA-55026",
+      "merger_name": "Vets Central - Gold Coast Veterinary Surgery",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-23T12:00:00Z",
+      "determination_publication_date": "2026-07-03T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          },
+          "party_page": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ingwe Consulting Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "83 121 308 503",
+          "party_page": {
+            "id": "ingwe-consulting-pty-ltd",
+            "name": "Ingwe Consulting Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "VETS CENTRAL HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "60 652 812 256",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          },
+          "party_page": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        },
+        {
+          "code": "9539",
+          "name": "Other Personal Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-gold-coast-veterinary-surgery"
+    },
+    {
+      "merger_id": "MN-50024",
+      "merger_name": "AkzoNobel - Axalta",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-24T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-05T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Akzo Nobel N.V.",
+          "identifier_type": null,
+          "identifier": "Commercial registration # 09007809",
+          "party_page": {
+            "id": "akzo-nobel-n-v",
+            "name": "Akzo Nobel N.V."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Axalta Coating Systems Ltd.",
+          "identifier_type": null,
+          "identifier": "Commercial registration # 46832",
+          "canonical": {
+            "id": "axalta-coating-systems-ltd",
+            "name": "Axalta Coating Systems Ltd."
+          },
+          "party_page": {
+            "id": "axalta-coating-systems-ltd",
+            "name": "Axalta Coating Systems Ltd."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "U-POL AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "12 633 592 819",
+          "party_page": {
+            "id": "u-pol-australia-pty-ltd",
+            "name": "U-Pol Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "AKZO NOBEL PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "59 000 119 424",
+          "party_page": {
+            "id": "akzo-nobel-pty-limited",
+            "name": "Akzo Nobel Pty Limited"
+          }
+        },
+        {
+          "name": "AXALTA COATING SYSTEMS AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "53 158 497 655",
+          "canonical": {
+            "id": "axalta-coating-systems-ltd",
+            "name": "Axalta Coating Systems Ltd."
+          },
+          "party_page": {
+            "id": "axalta-coating-systems-ltd",
+            "name": "Axalta Coating Systems Ltd."
+          }
+        },
+        {
+          "name": "REFINISH IMPORTS PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "15 626 896 142",
+          "party_page": {
+            "id": "refinish-imports-pty-limited",
+            "name": "Refinish Imports Pty Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1916",
+          "name": "Paint and Coatings Manufacturing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/akzonobel-axalta"
+    },
+    {
       "merger_id": "MN-40027",
       "merger_name": "Sika AG - Akkim",
       "status": "Under assessment",
@@ -231,7 +428,7 @@
     },
     {
       "merger_id": "MN-01107",
-      "merger_name": "WSP / GEOTECHNICAL TESTING AND INTERPRETATION",
+      "merger_name": "WSP - Geotechnical Testing and Interpretation",
       "status": "Under assessment",
       "accc_determination": null,
       "has_conditions": false,
@@ -268,6 +465,15 @@
       ],
       "other_parties": [
         {
+          "name": "RICARDO AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "17 625 088 646",
+          "party_page": {
+            "id": "ricardo-australia-pty-ltd",
+            "name": "Ricardo Australia Pty Ltd"
+          }
+        },
+        {
           "name": "WSP AUSTRALIA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "90 169 545 395",
@@ -278,15 +484,6 @@
           "party_page": {
             "id": "wsp-australia-pty-limited",
             "name": "Wsp Australia Pty Limited"
-          }
-        },
-        {
-          "name": "RICARDO AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "17 625 088 646",
-          "party_page": {
-            "id": "ricardo-australia-pty-ltd",
-            "name": "Ricardo Australia Pty Ltd"
           }
         }
       ],

@@ -1405,6 +1405,7 @@
               ]
             }
           ],
+          "phase2_notice_commission_division": null,
           "url_gh": "/mergers/MN-01019/Ampol - EG Australia - Phase 2 Notice - Redacted_7.pdf",
           "status": "live",
           "phase": "Phase 2"
@@ -3034,10 +3035,6 @@
           "title": "Carlyle - BASF Coatings",
           "display_title": "Phase 1 - initial assessment determination: Approved",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Carlyle%20BASF%20Coatings%20-Determination%20-%2018%20December%202025.pdf",
-          "url_gh": "/mergers/MN-01064/Carlyle BASF Coatings -Determination - 18 December 2025.pdf",
-          "status": "live",
-          "is_determination_event": true,
-          "phase": "Phase 1",
           "determination_commission_division": "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act",
           "determination_table_content": [
             {
@@ -3064,7 +3061,11 @@
               "item": "Applications for review",
               "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
             }
-          ]
+          ],
+          "url_gh": "/mergers/MN-01064/Carlyle BASF Coatings -Determination - 18 December 2025.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
@@ -6089,14 +6090,14 @@
     },
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/wsp-geotechnical-testing-and-interpretation",
-      "merger_name": "WSP / GEOTECHNICAL TESTING AND INTERPRETATION",
+      "merger_name": "WSP - Geotechnical Testing and Interpretation",
       "status": "Under assessment",
       "merger_id": "MN-01107",
       "effective_notification_datetime": "2026-06-26T12:00:00Z",
       "original_notification_datetime": "2026-06-26T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-07T12:00:00Z",
-      "page_modified_datetime": "2026-06-29T16:38:51+10:00",
+      "page_modified_datetime": "2026-07-06T11:23:24+10:00",
       "consultation_response_due_date": "2026-07-06T12:00:00Z",
       "acquirers": [
         {
@@ -6126,6 +6127,15 @@
       ],
       "other_parties": [
         {
+          "name": "RICARDO AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "17 625 088 646",
+          "party_page": {
+            "id": "ricardo-australia-pty-ltd",
+            "name": "Ricardo Australia Pty Ltd"
+          }
+        },
+        {
           "name": "WSP AUSTRALIA HOLDINGS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "90 169 545 395",
@@ -6136,15 +6146,6 @@
           "party_page": {
             "id": "wsp-australia-pty-limited",
             "name": "Wsp Australia Pty Limited"
-          }
-        },
-        {
-          "name": "RICARDO AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "17 625 088 646",
-          "party_page": {
-            "id": "ricardo-australia-pty-ltd",
-            "name": "Ricardo Australia Pty Ltd"
           }
         }
       ],
@@ -6166,7 +6167,7 @@
           "display_title": "Questionnaire \u2013 WSP - Geotechnical Testing and Interpretation",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/WSP-Geotechnical%20Testing%20and%20Interpretation%20-%20Phase%201%20questionnaire.docx",
           "url_gh": "/mergers/MN-01107/WSP-Geotechnical Testing and Interpretation - Phase 1 questionnaire.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
@@ -8007,13 +8008,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/equans-cv-services-group",
       "merger_name": "Equans - CV Services Group",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-05025",
       "effective_notification_datetime": "2026-06-09T12:00:00Z",
       "original_notification_datetime": "2026-06-09T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-06-18T11:37:08+10:00",
+      "determination_publication_date": "2026-07-06T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-06T15:46:57+10:00",
       "consultation_response_due_date": "2026-06-17T12:00:00Z",
       "acquirers": [
         {
@@ -8076,13 +8080,49 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-07-06T12:00:00Z",
+          "title": "Equans - CV Services Group",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Equans%20-%20CV%20Services%20-%20Phase%201%20determination.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Equans SAS (Equans) proposed to acquire 80% of the share capital\nof CV Services Group Pty Ltd (CV Services Group) either directly or\nthrough a wholly-owned subsidiary (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Equans, is a global energy and technical services\ncompany headquartered in France. In Australia, Equans operates\nthrough a local subsidiary, which supplies:\n\u2022 electrical and communications installation;\n\u2022 facility management services, including;\no installation and maintenance of heating, ventilation\nand air conditioning (HVAC); and\no fire protection products; and\n\u2022 audio-visual integration and digital signage.\nThe target, CV Services Group, is an Australian technical services\ncompany. It supplies:\n\u2022 infrastructure services;\n\u2022 electrical design, installation and construction;\n\u2022 facility management services; and\n\u2022 media and signage manufacturing and installation."
+            },
+            {
+              "item": "Overlap and relationship\nbetween the parties",
+              "details": "The parties overlap in the supply of:\n\u2022 electrical construction services;\n\u2022 facility management services; and\n\u2022 signage solutions.\nThe parties also have a limited vertical relationship in the supply of\nsignage solutions for electrical construction services."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form, information from third parties, and publicly\navailable information.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 Equans and CV Services Group do not appear to compete closely\nin the supply of electrical construction services, facility\nmanagement services, or signage solutions in Australia.\n\u2022 Post-Acquisition, the merged entity will continue to face\ncompetition from multiple alternative suppliers."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-05025/Equans - CV Services - Phase 1 determination.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-07-06T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -34688,10 +34728,6 @@
           "title": "Opal Healthcare - Greenwich Place residential aged care home",
           "display_title": "Phase 1 - initial assessment determination: Approved",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Phase%201%20Determination%20-%20Opal%20HealthCare%20%E2%80%93%20Greenwich%20Place%20residential%20aged%20care%20home.pdf",
-          "url_gh": "/mergers/MN-75012/Phase 1 Determination - Opal HealthCare \u2013 Greenwich Place residential aged care home.pdf",
-          "status": "live",
-          "is_determination_event": true,
-          "phase": "Phase 1",
           "determination_commission_division": "Determination made by Commissioner Philip Williams pursuant to a delegation under section 25(1) of the Act",
           "determination_table_content": [
             {
@@ -34718,7 +34754,11 @@
               "item": "Applications for review",
               "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
             }
-          ]
+          ],
+          "url_gh": "/mergers/MN-75012/Phase 1 Determination - Opal HealthCare \u2013 Greenwich Place residential aged care home.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
@@ -56346,6 +56386,283 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/oaktree-%E2%80%93-vivax-metrotech",
+      "merger_name": "Oaktree \u2013 Vivax Metrotech",
+      "status": "Assessment completed",
+      "merger_id": "WA-20026",
+      "effective_notification_datetime": "2026-06-18T12:00:00Z",
+      "original_notification_datetime": "2026-06-18T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-07-06T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-06T17:14:54+10:00",
+      "acquirers": [
+        {
+          "name": "Vector JV Bidco, Inc.",
+          "identifier_type": null,
+          "identifier": "10619273",
+          "party_page": {
+            "id": "vector-jv-bidco-inc",
+            "name": "Vector JV Bidco, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Vivax Metrotech Sdn. Bhd.",
+          "identifier_type": null,
+          "identifier": "202401054941",
+          "party_page": {
+            "id": "vivax-metrotech-sdn-bhd",
+            "name": "Vivax Metrotech Sdn. Bhd."
+          }
+        },
+        {
+          "name": "Vivax-Metrotech Ltd.",
+          "identifier_type": null,
+          "identifier": "08253003",
+          "party_page": {
+            "id": "vivax-metrotech-ltd",
+            "name": "Vivax-Metrotech Ltd."
+          }
+        },
+        {
+          "name": "Vivax-Metrotech SAS",
+          "identifier_type": null,
+          "identifier": "799092002",
+          "party_page": {
+            "id": "vivax-metrotech-sas",
+            "name": "Vivax-Metrotech SAS"
+          }
+        },
+        {
+          "name": "Metrotech Vertriebs GmbH",
+          "identifier_type": null,
+          "identifier": "N/A",
+          "party_page": {
+            "id": "ami-holding-gmbh",
+            "name": "AMI Holding GmbH"
+          }
+        },
+        {
+          "name": "Vivax (Asia) Ltd",
+          "identifier_type": null,
+          "identifier": "31003708",
+          "party_page": {
+            "id": "vivax-asia-ltd",
+            "name": "Vivax (Asia) Ltd"
+          }
+        },
+        {
+          "name": "AMI Holding GmbH",
+          "identifier_type": null,
+          "identifier": "N/A",
+          "party_page": {
+            "id": "ami-holding-gmbh",
+            "name": "AMI Holding GmbH"
+          }
+        },
+        {
+          "name": "VXMT Corporation",
+          "identifier_type": null,
+          "identifier": "2066184",
+          "party_page": {
+            "id": "vxmt-corporation",
+            "name": "VXMT Corporation"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Oaktree Capital Holdings, LLC",
+          "identifier_type": null,
+          "identifier": "7315698",
+          "party_page": {
+            "id": "oaktree-capital-holdings-llc",
+            "name": "Oaktree Capital Holdings, LLC"
+          }
+        },
+        {
+          "name": "Brookfield Corporation",
+          "identifier_type": null,
+          "identifier": "890126527",
+          "canonical": {
+            "id": "brookfield-corporation",
+            "name": "Brookfield Corporation"
+          },
+          "party_page": {
+            "id": "brookfield-corporation",
+            "name": "Brookfield Corporation"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2419",
+          "name": "Other Professional and Scientific Equipment Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "merger_description": "Oaktree Capital Holdings, LLC (together with its subsidiaries, **Oaktree**), acting through Vector JV Bidco, a special purpose vehicle it controls, proposes to:\n\n* acquire 100% of the shares issued in each of VXMT Corporation, Vivax (Asia) Ltd, Metrotech Vertriebs GmbH, Vivax Metrotech Sdn. Bhd., Vivax-Metrotech Ltd. and Vivax-Metrotech SAS (together, **Vivax**);\n* grant AMI Holding GmbH, the vendor, a 40% indirect equity participation in Vector JV Bidco through the vendor\u2019s investment in Vector JV Topco, Inc. (the **Acquisition**);\n\nAs a result of the Acquisition, Oaktree will own a 60% stake in Vivax.\n\nOaktree is indirectly jointly controlled by Oaktree Capital Group Holdings GP, LLC and Brookfield Corporation (together with its subsidiaries - other than the Oaktree group \u2013 **Brookfield Group**).\n\nOaktree is a global investment manager specialising in alternative investments. Oaktree pursues an opportunistic, value-oriented and risk-controlled approach to investments in distressed debt, high yield bonds, convertible securities, senior loans, corporate control, real estate, emerging market equities and mezzanine finance. Headquartered in Los Angeles, Oaktree has over 1,200 employees and offices in over 22 cities worldwide. Oaktree has investments in a range of companies in Australia including IT businesses and health and wellness food manufacturing, among others.\n\nBrookfield Group is a global investment firm that deploys pools of discretionary capital for investors across its core businesses, including its asset management business and its operating businesses focused on renewable power and transition, infrastructure, private equity, and real estate. Brookfield Group is a public company and its Class A Limited Voting Shares are co-listed on the New York Stock Exchange and the Toronto Stock Exchange under the symbol \u201cBN\u201d. Brookfield Group has investments in Australia across a range of sectors, including infrastructure and energy. Brookfield Group is in the process of acquiring the remaining interest in Oaktree.\n\nVivax is a global surveying instrument manufacturer. Its products are used for locating and mapping buried utilities and inspecting the interior of pipes and ducts. In Australia, Vivax predominantly supplies precision pipes and cable locating equipment and related accessories through an independent third-party distributor. Vivax also provide full calibration of their pipe and cable locaters in Australia.\n\nAMI Holding GmbH is the current Germany-based holding company for Vivax.",
+      "events": [
+        {
+          "date": "2026-07-06T12:00:00Z",
+          "title": "Notification waiver determination",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Oaktree%20-%20Vivax%20%28WA-20026%29%20-%20Notification%20waiver%20determination%20%20%20-%206%20July%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Vector JV Bidco, Inc, a special purpose vehicle controlled by Oaktree\nCapital Holdings, LLC (Oaktree), applied for a notification waiver in\nrespect of its proposed:\n\u25aa acquisition of 100% of the share capital in in each of VXMT\nCorporation, Vivax (Asia) Ltd, Metrotech Vertriebs GmbH,\nVivax Metrotech Sdn. Bhd., Vivax-Metrotech Ltd. and Vivax-\nMetrotech SAS (together, Vivax); and\n\u25aa grant to AMI Holding GmbH, the vendor, of a 40% indirect\nequity participation in Vector JV Bidco through the vendor\u2019s\ninvestment in Vector JV Topco, Inc,\nas described in the transaction documents provided as part of the\napplication (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "6 July 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "Oaktree is indirectly jointly controlled by Oaktree Capital Group\nHoldings GP, LLC; and Brookfield Corporation (together with its\nsubsidiaries, Brookfield Group).\nOaktree is a global investment manager headquartered in Los\nAngeles, USA, specialising in alternative investments. Oaktree\npursues an opportunistic, value-oriented and risk-controlled\napproach to investments in distressed debt, high yield bonds,\nconvertible securities, senior loans, corporate control, real estate,\nemerging market equities and mezzanine finance. Oaktree has\ninvestments in a range of companies in Australia including IT\nbusinesses and health and wellness food manufacturing, among\nothers.\nBrookfield Group is a global investment firm that deploys pools of\ndiscretionary capital for investors across its core businesses,\nincluding its asset management business and its operating\nbusinesses focused on renewable power and transition,\ninfrastructure, private equity, and real estate. Brookfield Group is a\npublic company, co-listed on the New York Stock Exchange and the\nToronto Stock Exchange. Brookfield Group has investments in\nAustralia across a range of sectors, including infrastructure and\nenergy. Brookfield Group is in the process of acquiring the remaining\ninterest in Oaktree.\nVivax is a global surveying instrument manufacturer. Its products are\nused for locating and mapping buried utilities and inspecting the\ninterior of pipes and ducts. In Australia, Vivax predominantly supplies\nprecision pipes and cable locating equipment and related\naccessories through an independent third-party distributor. Vivax\nalso provide full calibration of their pipe and cable locaters in\nAustralia.\nAMI Holding GmbH is the current Germany-based holding company\nfor Vivax."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there are no material competitive overlaps between Oaktree,\nBrookfield Group and Vivax in the supply of utility services,\nand surveying instruments, particularly underground utility\ndetection equipment in Australia\nb. there are alternative suppliers of surveying instruments,\nincluding underground utility detection equipment in\nAustralia.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-20026/Oaktree - Vivax (WA-20026) - Notification waiver determination - 6 July 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-06-18T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-35004",
+          "merger_name": "L Catterton Management \u2013 Ex Nihilo Group",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Saphir Holdings SAS",
+              "identifier_type": null,
+              "identifier": "Trade and Companies Registry Number 995 192 986",
+              "party_page": {
+                "id": "saphir-holdings-sas",
+                "name": "Saphir Holdings SAS"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Ex Nihilo Group",
+              "identifier_type": null,
+              "identifier": "Trade and Companies Registry Number 981 087 646",
+              "party_page": {
+                "id": "ex-nihilo-group",
+                "name": "Ex Nihilo Group"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-25018",
+          "merger_name": "Primary Wave - Kobalt",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Primary Wave KB Holdings, LP",
+              "identifier_type": null,
+              "identifier": "Registration number 136215",
+              "party_page": {
+                "id": "primary-wave-kb-holdings-lp",
+                "name": "Primary Wave KB Holdings, LP"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Kobalt Music Group Topco L.P.",
+              "identifier_type": null,
+              "identifier": "Registration number 393466",
+              "party_page": {
+                "id": "kobalt-music-group-topco-l-p",
+                "name": "Kobalt Music Group Topco L.P."
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-55025",
+          "merger_name": "Brookfield \u2013 World Freight Company",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Windrose Holdings III (DIFC) Limited",
+              "identifier_type": null,
+              "identifier": "Registered Number  12897",
+              "party_page": {
+                "id": "windrose-holdings-iii-difc-limited",
+                "name": "Windrose Holdings III (DIFC) Limited"
+              }
+            },
+            {
+              "name": "Windrose France Holdings SAS",
+              "identifier_type": null,
+              "identifier": "Registered Number  104439096",
+              "party_page": {
+                "id": "windrose-france-holdings-sas",
+                "name": "Windrose France Holdings SAS"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Caeli Software Ltd",
+              "identifier_type": null,
+              "identifier": "Registered Number  12558916",
+              "party_page": {
+                "id": "caeli-software-ltd",
+                "name": "Caeli Software Ltd"
+              }
+            },
+            {
+              "name": "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)",
+              "identifier_type": null,
+              "identifier": "Registered Number  809546 971",
+              "party_page": {
+                "id": "gb-wfc-france-sas-trading-as-world-freight-company-or-wfc",
+                "name": "GB WFC France SAS (trading as \u201cWorld Freight Company\u201d or \u201cWFC\u201d)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/regent-motors-group-%E2%80%93-esperance-motor-group-esperance-toyota-ford",
       "merger_name": "Regent Motors Group \u2013 Esperance Motor Group (Esperance Toyota & Ford)",
       "status": "Assessment completed",
@@ -63474,8 +63791,8 @@
           "identifier_type": null,
           "identifier": "N/A",
           "party_page": {
-            "id": "l-catterton-management-limited",
-            "name": "L Catterton Management Limited"
+            "id": "ami-holding-gmbh",
+            "name": "AMI Holding GmbH"
           }
         }
       ],
@@ -66120,6 +66437,273 @@
               "party_page": {
                 "id": "onestream-inc",
                 "name": "OneStream, Inc."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mitsubishi-estate-asia-%E2%80%93-eynesbury-properties",
+      "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
+      "status": "Assessment completed",
+      "merger_id": "WA-35026",
+      "effective_notification_datetime": "2026-06-18T12:00:00Z",
+      "original_notification_datetime": "2026-06-18T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-07-06T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-06T16:50:48+10:00",
+      "acquirers": [
+        {
+          "name": "MECO Eynesbury Pty Limited",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "meco-eynesbury-pty-limited",
+            "name": "MECO Eynesbury Pty Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "EYNESBURY WYNDHAM PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "38 635 954 086",
+          "party_page": {
+            "id": "eynesbury-wyndham-pty-ltd",
+            "name": "Eynesbury Wyndham Pty Ltd"
+          }
+        },
+        {
+          "name": "Eynesbury AK2 Pty Ltd atf Eynesbury AK2 Trust",
+          "identifier_type": "ACN",
+          "identifier": "635 946 995",
+          "party_page": {
+            "id": "eynesbury-ak2-pty-ltd-atf-eynesbury-ak2-trust",
+            "name": "Eynesbury AK2 Pty Ltd atf Eynesbury AK2 Trust"
+          }
+        },
+        {
+          "name": "Eynesbury AK1 Pty Ltd atf Eynesbury AK1 Trust",
+          "identifier_type": "ACN",
+          "identifier": "635 945 498",
+          "party_page": {
+            "id": "eynesbury-ak1-pty-ltd-atf-eynesbury-ak1-trust",
+            "name": "Eynesbury AK1 Pty Ltd atf Eynesbury AK1 Trust"
+          }
+        },
+        {
+          "name": "EYNESBURY TOWNSHIP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "40 635 948 873",
+          "party_page": {
+            "id": "eynesbury-township-pty-ltd",
+            "name": "Eynesbury Township Pty Ltd"
+          }
+        },
+        {
+          "name": "EYNESBURY GREENHILL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "36 635 953 203",
+          "party_page": {
+            "id": "eynesbury-greenhill-pty-ltd",
+            "name": "Eynesbury Greenhill Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "MEC OCEANIA INVESTMENT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "35 675 561 458",
+          "party_page": {
+            "id": "mec-oceania-investment-pty-ltd",
+            "name": "Mec Oceania Investment Pty Ltd"
+          }
+        },
+        {
+          "name": "Mitsubishi Estate Co., Ltd",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "mitsubishi-estate-co-ltd",
+            "name": "Mitsubishi Estate Co., Ltd"
+          }
+        },
+        {
+          "name": "Resimax Group Proprietary Limited",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "resimax-group-proprietary-limited",
+            "name": "Resimax Group Proprietary Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3211",
+          "name": "Land Development and Subdivision"
+        },
+        {
+          "code": "4511",
+          "name": "Cafes and Restaurants"
+        },
+        {
+          "code": "6711",
+          "name": "Residential Property Operators"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        },
+        {
+          "code": "9113",
+          "name": "Sports and Physical Recreation Venues, Grounds and Facilities Operation"
+        }
+      ],
+      "merger_description": "Pursuant to the Term Sheet between:\n\n* MEC Oceania Investment Pty Ltd (**MEA**);\n* Eynesbury AK1 Pty Ltd atf Eynesbury AK1 Trust, and Eynesbury AK2 Pty Ltd atf Eynesbury AK2 Trust (**RMax**); and\n* Resimax Group Proprietary Limited\n\nMEA intends that its wholly-owned subsidiary MECO Eynesbury Pty Limited (MECO) acquires 49.9% of the equity interests, via a subscription for preference shares, in each of Eynesbury Greenhill Pty Ltd, Eynesbury Wyndham Pty Ltd, and Eynesbury Township Pty Ltd (the **Eynesbury Entities**) (the **Acquisition**).\n\nFollowing the Acquisition, RMax will hold the remaining 50.1% equity stake in the Eynesbury Entities.\n\nThe Eynesbury Entities (including via current subsidiary Eynesbury Quarter Hospitality Trading Pty Ltd and future subsidiary Eynesbury Water Pty Ltd) own land and commercial businesses in connection with the development of a residential master planned community development project in Eynesbury, Victoria (the **Eynesbury MPC**). The Eynesbury MPC is under development, and the Acquisition is to provide further capital to fund the development.\n\nThe Eynesbury Entities are wholly owned subsidiaries of RMax.\n\nMECO is a special purpose acquisition vehicle and wholly owned subsidiary of MEA, the Australian investment vehicle of Japan based real-estate investment group, Mitsubishi Estate.",
+      "events": [
+        {
+          "date": "2026-07-06T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Mitsubishi%20Estate%20Asia%20%E2%80%93%20Eynesbury%20Properties%20%28WA-35026%29%20-%20Notification%20waiver%20determination%20-%206%20July%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "MECO Eynesbury Pty Limited (MECO), a wholly-owned subsidiary of\nMEC Oceania Investment Pty Ltd (MEA), the Australian investment\nvehicle of Mitsubishi Estate, applied for a notification waiver in\nrespect of its proposed acquisition of 49.9% of the equity interests,\nvia a subscription for preference shares, in each of Eynesbury\nGreenhill Pty Ltd, Eynesbury Wyndham Pty Ltd, and Eynesbury\nTownship Pty Ltd (the Eynesbury Entities) from Eynesbury AK1 Pty\nLtd atf Eynesbury AK1 Trust, and Eynesbury AK2 Pty Ltd atf\nEynesbury AK2 Trust (RMax), as described in the transaction\ndocuments provided as part of the application (the Acquisition).\nFollowing the Acquisition, RMax will hold the remaining 50.1% equity\nstake in the Eynesbury Entities."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "6 July 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, MECO, is a special purpose acquisition vehicle and\nwholly owned subsidiary of MEA, the Australian investment vehicle\nof Japan based real-estate investment group, Mitsubishi Estate.\nThe target, the Eynesbury Entities, are wholly-owned subsidiaries of\nRMax, and are associated with the Resimax Group. The Resimax\nGroup an Australian property developer based in Victoria.\nThe Eynesbury Entities (including via current subsidiary Eynesbury\nQuarter Hospitality Trading Pty Ltd and future subsidiary Eynesbury\nWater Pty Ltd) own land and commercial businesses in connection\nwith the development of a residential master planned community\n(MPC) development project in Eynesbury, Victoria (the Eynesbury\nMPC). The Eynesbury MPC is under development, and the\nAcquisition is to provide further capital to fund the development."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information currently before it, the ACCC considers that\nthe Acquisition is unlikely to give rise to any material lessening of\ncompetition. In particular:\na. there is no horizontal overlap between MECO or MEA and\nthe Eynesbury Entities in the supply of residential MPC\nhousing in Eynesbury and the surrounding areas, nor in the\nWestern Melbourne Corridor more broadly\nb. there are several alternative suppliers of residential MPC\nhousing to customers in the Western Melbourne Corridor.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-35026/Mitsubishi Estate Asia \u2013 Eynesbury Properties (WA-35026) - Notification waiver determination - 6 July 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-06-18T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-70020",
+          "merger_name": "CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
+          "status": "Under assessment",
+          "accc_determination": null,
+          "acquirers": [
+            {
+              "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "35 667 654 686",
+              "party_page": {
+                "id": "cvs-vets-australia-proprietary-limited",
+                "name": "Cvs Vets (Australia) Proprietary Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "NEWMAN VET PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "70 633 313 149",
+              "party_page": {
+                "id": "newman-vet-pty-ltd",
+                "name": "Newman Vet Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-95003",
+          "merger_name": "CVS Group - Pittwater Animal Hospital",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "35 667 654 686",
+              "party_page": {
+                "id": "cvs-vets-australia-proprietary-limited",
+                "name": "Cvs Vets (Australia) Proprietary Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "PITTWATER ANIMAL HOSPITAL PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "25 001 336 723",
+              "party_page": {
+                "id": "pittwater-animal-hospital-pty-ltd",
+                "name": "Pittwater Animal Hospital Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-05026",
+          "merger_name": "Mercer Investments (Australia) Limited\u2013 Stockland Residential Rental Partnership",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "MERCER INVESTMENTS (AUSTRALIA) LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "66 008 612 397",
+              "party_page": {
+                "id": "mercer-investments-australia-limited",
+                "name": "Mercer Investments (Australia) Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "One MEA Holdings Pte. Ltd",
+              "identifier_type": null,
+              "identifier": "201923882C",
+              "party_page": {
+                "id": "one-mea-holdings-pte-ltd",
+                "name": "One MEA Holdings Pte. Ltd"
+              }
+            },
+            {
+              "name": "The Trustee for Stockland Residential Rental Partnership Trust",
+              "identifier_type": "ABN",
+              "identifier": "55 773 008 463",
+              "party_page": {
+                "id": "the-trustee-for-stockland-residential-rental-partnership-trust",
+                "name": "The Trustee for Stockland Residential Rental Partnership Trust"
               }
             }
           ]
@@ -80700,6 +81284,253 @@
               "party_page": {
                 "id": "barangaroo-pty-limited-as-trustee-for-barangaroo-trust",
                 "name": "Barangaroo Pty Limited as trustee for Barangaroo Trust"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/siemens-energy-%E2%80%93-camlin-group",
+      "merger_name": "Siemens Energy \u2013 Camlin Group",
+      "status": "Assessment completed",
+      "merger_id": "WA-60023",
+      "effective_notification_datetime": "2026-06-18T12:00:00Z",
+      "original_notification_datetime": "2026-06-18T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-07-06T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-06T16:57:59+10:00",
+      "acquirers": [
+        {
+          "name": "Siemens Energy Limited",
+          "identifier_type": null,
+          "identifier": "UK company number  00631825",
+          "party_page": {
+            "id": "siemens-energy-limited",
+            "name": "Siemens Energy Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Camlin Limited",
+          "identifier_type": null,
+          "identifier": "UK company number  NI073204",
+          "canonical": {
+            "id": "camlin-limited",
+            "name": "Camlin Limited"
+          },
+          "party_page": {
+            "id": "camlin-limited",
+            "name": "Camlin Limited"
+          }
+        },
+        {
+          "name": "Camlin (Australia) Pty Ltd",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "camlin-limited",
+            "name": "Camlin Limited"
+          },
+          "party_page": {
+            "id": "camlin-limited",
+            "name": "Camlin Limited"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        },
+        {
+          "code": "2620",
+          "name": "Electricity Transmission"
+        }
+      ],
+      "merger_description": "Siemens Energy Limited (together with its corporate group, **Siemens Energy**) proposes to acquire the entire issued share capital of Camlin Limited and its global subsidiaries (**Camlin Group**) (the **Acquisition**).\n\nSiemens Energy is headquartered in Germany and operates in four main business areas: (i) gas services; (ii) grid technologies; (iii) transformation of industry; and (iv) Siemens Gamesa Renewable Energy. Siemens Energy is active in the energy sector, offering products and services in conventional and renewable power technologies, grid technology, energy storage and solutions for electrifying industrial processes. Siemens Energy has over 100,000 employees across 90 countries.\n\nCamlin Group is a private company, headquartered in Northern Ireland, which provides monitoring solutions for the energy sector and railways. Camlin Group provides services in over 45 countries from its offices in the UK, the US, France and China, and its 21 facilities in 17 countries. Camlin Group has around 600 employees globally. In Australia, Camlin Group is active through Camlin (Australia) Pty Ltd, the primary vehicle with which to contract with Australian customers. Globally, Camlin Group operates in two business areas:\n\n* Energy \u2013 Camlin Group provides solutions for real-time monitoring and predictive fault management across the power chain (i.e., generation, transmission, distribution and private networks). In particular, Camlin Group provides its sensing technology and intelligent analytics solutions for: (i) low voltage networks, (ii) overhead lines, (iii) transformer monitoring, (iv) switchgear/circuit breaker monitoring, (v) generator monitoring, and (vi) inbuilding power networks. These solutions account for the vast majority their business.\n* Rail \u2013 Camlin Group provides visual in-service, non-intrusive inspection solutions of pantographs, catenary, roofs, bogies and signalling power for fleet and infrastructure operators to detect issues early. However, these solutions only account for a small proportion of Camlin Group\u2019s business.",
+      "events": [
+        {
+          "date": "2026-07-06T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Siemens%20Energy%20%E2%80%93%20Camlin%20Group%20%28WA-60023%29%20-%20Notification%20waiver%20determination%20-%206%20July%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Siemens Energy Limited (together with its corporate group, Siemens\nEnergy) applied for a notification waiver in respect of its proposed\nacquisition of the entire issued share capital of Camlin Limited and\nits global subsidiaries (Camlin Group), as described in the\ntransaction documents provided as part of the application (the\nAcquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "6 July 2026"
+            },
+            {
+              "item": "Parties to the\nAcquisition",
+              "details": "The acquirer, Siemens Energy, is headquartered in Germany and\noperates in four main business areas: (i) gas services; (ii) grid\ntechnologies; (iii) transformation of industry; and (iv) Siemens\nGamesa Renewable Energy. Siemens Energy is active in the energy\nsector, offering products and services in conventional and renewable\npower technologies, grid technology, energy storage and solutions\nfor electrifying industrial processes. Siemens Energy has over\n100,000 employees across 90 countries.\nThe target, Camlin Group, is a private company, headquartered in\nNorthern Ireland, which provides monitoring solutions for the energy\nsector and railways. Camlin Group provides services in over 45\ncountries from its offices in the UK, the US, France and China, and its\n21 facilities in 17 countries. Camlin Group has around 600\nemployees globally. In Australia, Camlin Group is active through\nCamlin (Australia) Pty Ltd, the primary vehicle with which to contract\nwith Australian customers. Globally, Camlin Group operates in two\nbusiness areas:\n\u2022 Energy \u2013 Camlin Group provides solutions for real-time\nmonitoring and predictive fault management across the\npower chain (i.e., generation, transmission, distribution and\nprivate networks). In particular, Camlin Group provides its\nsensing technology and intelligent analytics solutions for: (i)\nlow voltage networks, (ii) overhead lines, (iii) transformer\nmonitoring, (iv) switchgear/circuit breaker monitoring, (v)\ngenerator monitoring, and (vi) inbuilding power networks.\nThese solutions account for the vast majority their business.\n\u2022 Rail \u2013 Camlin Group provides visual in-service, non-intrusive\ninspection solutions of pantographs, catenary, roofs, bogies\nand signalling power for fleet and infrastructure operators to\ndetect issues early. However, these solutions only account\nfor a small proportion of Camlin Group\u2019s business.\nGlobally, the parties both supply of monitoring solutions for (i)\ntransformers, (ii) switchgears/circuit breakers and (iii) overhead\nlines. However, the application states that Siemens Energy does not\nsupply any of these monitoring solutions in Australia. Further, Camlin\nGroup does not supply any monitoring solutions for overhead lines in\nAustralia.\nGlobally, Siemens Energy also supplies transformers and\nswitchgears/circuit breakers."
+            },
+            {
+              "item": "Explanation for\ndetermination",
+              "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no horizontal overlap between Siemens Energy and\nCamlin Group in the supply of monitoring solutions for\ntransformers and switchgears/circuit breakers in Australia\nb. there are alternative suppliers of monitoring solutions for\ntransformers and switchgears/circuit breakers for\ncustomers in Australia\nc. there is a low risk of foreclosure or other concerning vertical\neffects in Australia resulting from exclusionary conduct\npost-acquisition.\nThe ACCC has also had regard to the likelihood that, if the\nAcquisition were put into effect, the notification thresholds\ndetermined under section 51ABP(1) of the Act would apply.\nWhile the ACCC considers that the notification thresholds are likely\nto be met, given that material competition concerns are unlikely to\narise, the ACCC has determined that the Acquisition is not required\nto be notified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-60023/Siemens Energy \u2013 Camlin Group (WA-60023) - Notification waiver determination - 6 July 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-06-18T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-70021",
+          "merger_name": "Aula Energy \u2013 Additional interest in the Boulder Creek Wind Farm",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "BCWF 2 Holdings Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "697 890 207",
+              "canonical": {
+                "id": "bcwf-2-pty-limited",
+                "name": "Bcwf 2 Pty Limited"
+              },
+              "party_page": {
+                "id": "bcwf-2-pty-limited",
+                "name": "Bcwf 2 Pty Limited"
+              }
+            },
+            {
+              "name": "AULA ENERGY HOLDINGS PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "13 662 726 909",
+              "party_page": {
+                "id": "aula-energy-holdings-pty-limited",
+                "name": "Aula Energy Holdings Pty Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "C S ENERGY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "54 078 848 745",
+              "party_page": {
+                "id": "c-s-energy-limited",
+                "name": "C S Energy Limited"
+              }
+            },
+            {
+              "name": "BCWF 2 PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "77 670 206 256",
+              "canonical": {
+                "id": "bcwf-2-pty-limited",
+                "name": "Bcwf 2 Pty Limited"
+              },
+              "party_page": {
+                "id": "bcwf-2-pty-limited",
+                "name": "Bcwf 2 Pty Limited"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-15025",
+          "merger_name": "Gunvor Group \u2013 ZEN Energy Retail Holdings",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Gunvor Group Ltd",
+              "identifier_type": null,
+              "identifier": "Cyprus registration number  HE 279934",
+              "party_page": {
+                "id": "gunvor-group-ltd",
+                "name": "Gunvor Group Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "ZEN ENERGY RETAIL HOLDINGS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "76 697 773 916",
+              "canonical": {
+                "id": "zen-energy-retail-pty-ltd",
+                "name": "Zen Energy Retail Pty Ltd"
+              },
+              "party_page": {
+                "id": "zen-energy-retail-pty-ltd",
+                "name": "Zen Energy Retail Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-75020",
+          "merger_name": "CleanPeak Energy Holdings - Sustainable Energy Infrastructure",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "CLEANPEAK ENERGY HOLDINGS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "17 689 336 696",
+              "party_page": {
+                "id": "cleanpeak-energy-holdings-pty-ltd",
+                "name": "Cleanpeak Energy Holdings Pty Ltd"
+              }
+            },
+            {
+              "name": "CLEANPEAK IFM PROJECTS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "30 618 387 143",
+              "party_page": {
+                "id": "cleanpeak-ifm-projects-pty-ltd",
+                "name": "Cleanpeak Ifm Projects Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "CARESUPER PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "14 008 650 628",
+              "party_page": {
+                "id": "caresuper-pty-ltd",
+                "name": "Caresuper Pty Ltd"
+              }
+            },
+            {
+              "name": "STATE STREET AUSTRALIA LTD",
+              "identifier_type": "ABN",
+              "identifier": "21 002 965 200",
+              "party_page": {
+                "id": "state-street-australia-ltd",
+                "name": "State Street Australia Ltd"
               }
             }
           ]

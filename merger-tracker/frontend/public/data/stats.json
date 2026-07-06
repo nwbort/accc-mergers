@@ -1,36 +1,36 @@
 {
   "total_mergers": 165,
-  "total_waivers": 253,
+  "total_waivers": 256,
   "total_conditional_approvals": 1,
   "by_status": {
-    "Assessment completed": 123,
-    "Under assessment": 41,
+    "Assessment completed": 124,
+    "Under assessment": 40,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 121,
+    "Approved": 122,
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 239,
+    "Approved": 242,
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.9921875,
-    "median_days": 26.0,
-    "average_business_days": 19.546875,
-    "median_business_days": 17.0,
+    "average_days": 29.968992248062015,
+    "median_days": 26,
+    "average_business_days": 19.54263565891473,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 33,
-        "percentage": 25.8
+        "percentage": 25.6
       },
       "day20": {
-        "count": 99,
-        "percentage": 77.3
+        "count": 100,
+        "percentage": 77.5
       },
       "day30": {
-        "count": 122,
+        "count": 123,
         "percentage": 95.3
       }
     }
@@ -38,7 +38,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 52
+      "count": 53
     },
     {
       "name": "Computer System Design and Related Services",
@@ -54,7 +54,7 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 20
+      "count": 21
     },
     {
       "name": "Pubs, Taverns and Bars",
@@ -177,6 +177,46 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20026",
+      "merger_name": "Oaktree \u2013 Vivax Metrotech",
+      "determination": "Approved",
+      "determination_date": "2026-07-06T12:00:00Z",
+      "page_modified_datetime": "2026-07-06T17:14:54+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-60023",
+      "merger_name": "Siemens Energy \u2013 Camlin Group",
+      "determination": "Approved",
+      "determination_date": "2026-07-06T12:00:00Z",
+      "page_modified_datetime": "2026-07-06T16:57:59+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-35026",
+      "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
+      "determination": "Approved",
+      "determination_date": "2026-07-06T12:00:00Z",
+      "page_modified_datetime": "2026-07-06T16:50:48+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "MN-05025",
+      "merger_name": "Equans - CV Services Group",
+      "determination": "Approved",
+      "determination_date": "2026-07-06T12:00:00Z",
+      "page_modified_datetime": "2026-07-06T15:46:57+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-90021",
       "merger_name": "EY Australia - Australian EY Fusion business",
       "determination": "Approved",
@@ -255,46 +295,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-40020",
-      "merger_name": "Premier Fresh \u2013 Domenico Group",
-      "determination": "Approved",
-      "determination_date": "2026-07-01T12:00:00Z",
-      "page_modified_datetime": "2026-07-02T16:33:10+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-01068",
-      "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
-      "determination": "Not approved",
-      "determination_date": "2026-07-01T12:00:00Z",
-      "page_modified_datetime": "2026-07-01T18:32:20+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 2 - detailed assessment"
-    },
-    {
-      "merger_id": "WA-45018",
-      "merger_name": "Count \u2013 Oracle Group",
-      "determination": "Approved",
-      "determination_date": "2026-07-01T12:00:00Z",
-      "page_modified_datetime": "2026-07-01T18:21:42+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-25030",
-      "merger_name": "Warburg Pincus \u2013 Commercial Credit Holdings Limited",
-      "determination": "Approved",
-      "determination_date": "2026-07-01T12:00:00Z",
-      "page_modified_datetime": "2026-07-01T18:21:19+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

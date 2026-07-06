@@ -19,7 +19,7 @@
       "code": "241",
       "name": "Professional and Scientific Equipment Manufacturing",
       "level": "group",
-      "merger_count": 10
+      "merger_count": 11
     },
     {
       "code": "242",
@@ -76,6 +76,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-06-16T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-20026",
+      "merger_name": "Oaktree \u2013 Vivax Metrotech",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-18T12:00:00Z",
+      "determination_date": "2026-07-06T12:00:00Z"
     },
     {
       "merger_id": "WA-95024",
@@ -384,10 +393,10 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 36,
+  "count": 37,
   "phase_1_count": 14,
   "phase_2_count": 0,
-  "waiver_count": 22,
+  "waiver_count": 23,
   "active_count": 2,
   "phase_duration": {
     "average_days": 27.583333333333332,

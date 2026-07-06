@@ -36,6 +36,15 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-35026",
+      "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-18T12:00:00Z",
+      "determination_date": "2026-07-06T12:00:00Z"
+    },
+    {
       "merger_id": "MN-01068",
       "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
       "is_waiver": false,
@@ -207,10 +216,10 @@
       "determination_date": "2025-11-18T12:00:00Z"
     }
   ],
-  "count": 20,
+  "count": 21,
   "phase_1_count": 6,
   "phase_2_count": 1,
-  "waiver_count": 13,
+  "waiver_count": 14,
   "active_count": 1,
   "phase_duration": {
     "average_days": 34.166666666666664,

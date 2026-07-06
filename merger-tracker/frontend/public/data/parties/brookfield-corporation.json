@@ -4,6 +4,11 @@
   "members": [
     {
       "name": "Brookfield Corporation",
+      "identifier": "890126527",
+      "identifier_type": null
+    },
+    {
+      "name": "Brookfield Corporation",
       "identifier": "Company number 1644037",
       "identifier_type": null
     },
@@ -17,6 +22,15 @@
     "acquirer": [],
     "target": [],
     "other": [
+      {
+        "merger_id": "WA-20026",
+        "merger_name": "Oaktree \u2013 Vivax Metrotech",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-06-18T12:00:00Z",
+        "determination_date": "2026-07-06T12:00:00Z"
+      },
       {
         "merger_id": "WA-55025",
         "merger_name": "Brookfield \u2013 World Freight Company",
@@ -37,10 +51,10 @@
       }
     ]
   },
-  "merger_count": 2,
+  "merger_count": 3,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": {
     "average_days": 24.0,

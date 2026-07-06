@@ -200,6 +200,41 @@ describe('searchMergers', () => {
     // means no match — that is the documented behaviour.
     expect(searchMergers(sample, 'ampol', index)).toEqual([]);
   });
+
+  describe('multi-term (token AND) matching', () => {
+    const multiTermSample = [
+      {
+        merger_id: 'MN-06060',
+        merger_name: 'Google / Wizard Cloud',
+        acquirers: [{ name: 'Google LLC' }],
+        targets: [{ name: 'Wizard Cloud Security' }],
+      },
+      ...sample,
+    ];
+
+    it('matches when tokens appear non-adjacently across fields', () => {
+      const index = buildSearchIndex(multiTermSample);
+      const result = searchMergers(multiTermSample, 'google wiz', index);
+      expect(result.map((m) => m.merger_id)).toEqual(['MN-06060']);
+    });
+
+    it('requires every token to match, so unrelated terms return nothing', () => {
+      const index = buildSearchIndex(multiTermSample);
+      expect(searchMergers(multiTermSample, 'google amazon', index)).toEqual([]);
+    });
+
+    it('keeps single-token behaviour identical', () => {
+      const index = buildSearchIndex(multiTermSample);
+      const result = searchMergers(multiTermSample, 'google', index);
+      expect(result.map((m) => m.merger_id)).toEqual(['MN-06060']);
+    });
+
+    it('treats a quoted phrase as a single token', () => {
+      const index = buildSearchIndex(multiTermSample);
+      const result = searchMergers(multiTermSample, '"wizard cloud"', index);
+      expect(result.map((m) => m.merger_id)).toEqual(['MN-06060']);
+    });
+  });
 });
 
 describe('clearSearchIndex', () => {

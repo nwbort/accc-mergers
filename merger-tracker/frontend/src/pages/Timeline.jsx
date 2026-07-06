@@ -69,13 +69,14 @@ function Timeline() {
     const params = new URLSearchParams(searchParams);
     if (next.length === 0) params.delete('types');
     else params.set('types', next.join(','));
-    setSearchParams(params);
+    // replace: true keeps repeated filter toggles from spamming history.
+    setSearchParams(params, { replace: true });
   };
 
   const clearFilters = () => {
     const params = new URLSearchParams(searchParams);
     params.delete('types');
-    setSearchParams(params);
+    setSearchParams(params, { replace: true });
   };
 
   const { data: meta, error: metaError } = useFetchData(
