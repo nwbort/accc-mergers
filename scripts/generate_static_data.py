@@ -23,6 +23,7 @@ Output files:
   - analysis.json               - Pre-computed analysis data
   - serial-acquirers.json       - Serial-acquirer ("creeping acquisitions") detection
   - theories_of_harm.json       - Keyword-classified theory-of-harm taxonomy
+  - phase2.json                 - Current + completed Phase 2 matters with statutory milestones
   - questionnaires/{id}.json    - Lazy-loaded questionnaire files
   - noccs/{id}.json             - Lazy-loaded NOCC summary files
 """
@@ -55,6 +56,7 @@ from static_data.outputs import (
     industries,
     list as list_out,
     noccs,
+    phase2,
     questionnaires,
     serial_acquirers,
     stats,
@@ -144,6 +146,7 @@ def main():
         ("analysis.json", analysis.generate(enriched)),
         ("serial-acquirers.json", serial_acquirers.generate(enriched)),
         ("theories_of_harm.json", theories_of_harm.generate(enriched, nocc_data)),
+        ("phase2.json", phase2.generate(enriched)),
     ]
     for filename, payload in single_file_outputs:
         out_path = OUTPUT_DIR / filename

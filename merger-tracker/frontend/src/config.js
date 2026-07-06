@@ -24,5 +24,6 @@ export const API_ENDPOINTS = {
   commentary: '/data/commentary.json',  // Mergers with user commentary
   digest: '/data/digest.json',  // Weekly digest of merger activity
   analysis: '/data/analysis.json',  // Pre-computed analysis data
+  phase2: '/data/phase2.json',  // Current + completed Phase 2 matters with statutory milestones
   questionnaire: (id) => `/data/questionnaires/${id}.json`,  // Questionnaire data (lazy-loaded)
 };
