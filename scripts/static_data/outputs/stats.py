@@ -1,6 +1,7 @@
 """Aggregated statistics — ``stats.json``."""
 
 from collections import defaultdict
+from statistics import median
 
 from constants import merger_status
 
@@ -44,10 +45,10 @@ def generate(mergers: list) -> dict:
     durations, business_durations = collect_phase_1_durations(notification_mergers)
 
     avg_duration = sum(durations) / len(durations) if durations else None
-    median_duration = sorted(durations)[len(durations) // 2] if durations else None
+    median_duration = round(median(durations), 1) if durations else None
 
     avg_business = sum(business_durations) / len(business_durations) if business_durations else None
-    median_business = sorted(business_durations)[len(business_durations) // 2] if business_durations else None
+    median_business = round(median(business_durations), 1) if business_durations else None
 
     # Pre-compute percentile statistics for business days
     total_completed = len(business_durations)
