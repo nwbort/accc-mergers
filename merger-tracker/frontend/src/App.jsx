@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
 import KeyboardShortcutsHelp from './components/KeyboardShortcutsHelp';
+import CommandPalette from './components/CommandPalette';
 import FeedbackPopup from './components/FeedbackPopup';
 import { TrackingProvider } from './context/TrackingContext';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
@@ -27,9 +28,11 @@ import NotFound from './pages/NotFound';
 
 function AppContent() {
   const [showShortcuts, setShowShortcuts] = useState(false);
+  const [showCommandPalette, setShowCommandPalette] = useState(false);
   const toggleShortcuts = useCallback(() => setShowShortcuts(prev => !prev), []);
+  const togglePalette = useCallback(() => setShowCommandPalette(prev => !prev), []);
 
-  useKeyboardShortcuts({ onToggleHelp: toggleShortcuts });
+  useKeyboardShortcuts({ onToggleHelp: toggleShortcuts, onTogglePalette: togglePalette });
 
   return (
     <>
@@ -63,6 +66,10 @@ function AppContent() {
       <KeyboardShortcutsHelp
         isOpen={showShortcuts}
         onClose={() => setShowShortcuts(false)}
+      />
+      <CommandPalette
+        isOpen={showCommandPalette}
+        onClose={() => setShowCommandPalette(false)}
       />
       <FeedbackPopup />
     </>

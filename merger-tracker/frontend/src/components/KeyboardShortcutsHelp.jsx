@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { FaTimes } from 'react-icons/fa';
 
 const shortcuts = [
+  { keys: ['⌘K'], description: 'Open command palette' },
   { keys: ['/'], description: 'Focus search' },
   { keys: ['g', 'd'], description: 'Go to Dashboard' },
   { keys: ['g', 'm'], description: 'Go to Mergers' },
