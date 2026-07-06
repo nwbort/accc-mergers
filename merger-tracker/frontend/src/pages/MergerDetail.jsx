@@ -105,15 +105,6 @@ function MergerDetail() {
                 {party.identifier_type ? `${party.identifier_type}: ` : ''}{party.identifier}
               </p>
             )}
-            {party.party_page?.id && (
-              <Link
-                to={`/mergers?q=${encodeURIComponent(party.canonical?.name || party.name)}`}
-                className="text-xs text-gray-500 hover:text-primary transition-colors"
-                title={`Search mergers for ${party.canonical?.name || party.name}`}
-              >
-                See all mergers involving this party &rarr;
-              </Link>
-            )}
           </div>
         ))}
         {hasMore && (
