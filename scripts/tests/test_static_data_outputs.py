@@ -499,6 +499,7 @@ class TestAnalysisGenerate:
         assert set(payload.keys()) == {
             'phase1_duration', 'waiver_duration', 'monthly_volume', 'industry_phase1_duration',
             'deadline_utilisation', 'notification_restarts', 'restart_rate',
+            'outcomes_by_division', 'referrals_by_quarter',
         }
         assert 'scatter_data' in payload['phase1_duration']
         assert 'scatter_data' in payload['waiver_duration']
@@ -704,6 +705,196 @@ class TestDeadlineUtilisationGenerate:
             'stats': {},
             'extended_count': 0,
         }
+
+
+# ---------------------------------------------------------------------------
+# outcomes_by_division / referrals_by_quarter (spec 15)
+# ---------------------------------------------------------------------------
+
+def _outcomes_fixture_raw():
+    """Notifications spanning every Phase 1 outcome, plus a referral, for spec 15.
+
+    - MN-9101: approved, division B (Mining) via code 0600, notified Q1 2025.
+    - MN-9102: not approved, division B via code 0600, notified Q1 2025.
+    - MN-9103: referred to Phase 2, division B via code 0600, notified Q2 2025.
+    - MN-9104: in progress (no determination yet), division B via code 0600,
+      notified Q2 2025.
+    - MN-9105: approved, tagged with two codes (0600 and 0801) that both roll
+      up to division B — must be deduped, not double-counted.
+    - WA-9106: a waiver (excluded from notification-based aggregates entirely).
+    """
+    return [
+        {
+            'merger_id': 'MN-9101',
+            'merger_name': 'Outcome approved',
+            'status': 'Determined',
+            'accc_determination': 'Approved',
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-01-10T09:00:00Z',
+            'determination_publication_date': '2025-02-10T12:00:00Z',
+            'page_modified_datetime': '2025-02-10T12:30:00Z',
+            'anzsic_codes': [{'code': '0600', 'name': 'Coal Mining'}],
+            'acquirers': ['A'], 'targets': ['B'], 'other_parties': [],
+            'url': 'https://example.com/MN-9101',
+            'events': [
+                {'title': 'Merger notified to ACCC', 'date': '2025-01-10T09:00:00Z'},
+                {'title': 'Phase 1 - Determination', 'date': '2025-02-10T12:00:00Z'},
+            ],
+        },
+        {
+            'merger_id': 'MN-9102',
+            'merger_name': 'Outcome not approved',
+            'status': 'Determined',
+            'accc_determination': 'Not approved',
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-01-20T09:00:00Z',
+            'determination_publication_date': '2025-02-20T12:00:00Z',
+            'page_modified_datetime': '2025-02-20T12:30:00Z',
+            'anzsic_codes': [{'code': '0600', 'name': 'Coal Mining'}],
+            'acquirers': ['C'], 'targets': ['D'], 'other_parties': [],
+            'url': 'https://example.com/MN-9102',
+            'events': [
+                {'title': 'Merger notified to ACCC', 'date': '2025-01-20T09:00:00Z'},
+                {'title': 'Phase 1 - Determination', 'date': '2025-02-20T12:00:00Z'},
+            ],
+        },
+        {
+            'merger_id': 'MN-9103',
+            'merger_name': 'Outcome referred',
+            'status': 'Under assessment',
+            'accc_determination': None,
+            'stage': 'Phase 2 - detailed assessment',
+            'effective_notification_datetime': '2025-04-05T09:00:00Z',
+            'determination_publication_date': None,
+            'page_modified_datetime': '2025-06-01T12:30:00Z',
+            'anzsic_codes': [{'code': '0600', 'name': 'Coal Mining'}],
+            'acquirers': ['E'], 'targets': ['F'], 'other_parties': [],
+            'url': 'https://example.com/MN-9103',
+            'events': [
+                {'title': 'Merger notified to ACCC', 'date': '2025-04-05T09:00:00Z'},
+                {'title': 'Decision to Proceed to a Phase 2 review', 'date': '2025-06-01T12:00:00Z'},
+            ],
+        },
+        {
+            'merger_id': 'MN-9104',
+            'merger_name': 'Outcome in progress',
+            'status': 'Under assessment',
+            'accc_determination': None,
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-05-15T09:00:00Z',
+            'determination_publication_date': None,
+            'page_modified_datetime': '2025-05-15T09:30:00Z',
+            'anzsic_codes': [{'code': '0600', 'name': 'Coal Mining'}],
+            'acquirers': ['G'], 'targets': ['H'], 'other_parties': [],
+            'url': 'https://example.com/MN-9104',
+            'events': [
+                {'title': 'Merger notified to ACCC', 'date': '2025-05-15T09:00:00Z'},
+            ],
+        },
+        {
+            'merger_id': 'MN-9105',
+            'merger_name': 'Outcome approved, dual-tagged same division',
+            'status': 'Determined',
+            'accc_determination': 'Approved',
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-01-25T09:00:00Z',
+            'determination_publication_date': '2025-02-25T12:00:00Z',
+            'page_modified_datetime': '2025-02-25T12:30:00Z',
+            'anzsic_codes': [
+                {'code': '0600', 'name': 'Coal Mining'},
+                {'code': '0801', 'name': 'Iron Ore Mining'},
+            ],
+            'acquirers': ['I'], 'targets': ['J'], 'other_parties': [],
+            'url': 'https://example.com/MN-9105',
+            'events': [
+                {'title': 'Merger notified to ACCC', 'date': '2025-01-25T09:00:00Z'},
+                {'title': 'Phase 1 - Determination', 'date': '2025-02-25T12:00:00Z'},
+            ],
+        },
+        {
+            'merger_id': 'WA-9106',
+            'merger_name': 'Excluded waiver',
+            'status': 'Determined',
+            'accc_determination': 'Waiver granted',
+            'stage': 'Waiver',
+            'effective_notification_datetime': '2025-01-01T09:00:00Z',
+            'determination_publication_date': '2025-01-15T12:00:00Z',
+            'page_modified_datetime': '2025-01-15T12:30:00Z',
+            'anzsic_codes': [{'code': '0600', 'name': 'Coal Mining'}],
+            'acquirers': ['K'], 'targets': ['L'], 'other_parties': [],
+            'url': 'https://example.com/WA-9106',
+            'events': [
+                {'title': 'Waiver application received', 'date': '2025-01-01T09:00:00Z'},
+            ],
+        },
+    ]
+
+
+def _outcomes_enriched_fixture():
+    return [enrich_merger(m) for m in _outcomes_fixture_raw()]
+
+
+class TestOutcomesByDivision:
+    def test_counts_and_referral_rate(self):
+        payload = analysis.generate(_outcomes_enriched_fixture())
+        divisions = payload['outcomes_by_division']
+        assert [d['code'] for d in divisions] == ['B']
+        mining = divisions[0]
+        # MN-9101 + MN-9105 approved, MN-9102 not approved, MN-9103 referred,
+        # MN-9104 in progress. WA-9106 is a waiver, excluded entirely.
+        assert mining['approved'] == 2
+        assert mining['not_approved'] == 1
+        assert mining['referred'] == 1
+        assert mining['in_progress'] == 1
+        # referred / (approved + not_approved + referred) = 1 / 4
+        assert mining['phase2_referral_rate'] == 0.25
+
+    def test_dual_tagged_merger_deduped_within_division(self):
+        # MN-9105 is tagged with two codes (0600, 0801) that both roll up to
+        # division B — it must be counted once, not twice.
+        payload = analysis.generate(_outcomes_enriched_fixture())
+        mining = next(d for d in payload['outcomes_by_division'] if d['code'] == 'B')
+        assert mining['approved'] + mining['not_approved'] + mining['referred'] + mining['in_progress'] == 5
+
+    def test_reconciles_with_stats_by_determination(self):
+        enriched = _outcomes_enriched_fixture()
+        analysis_payload = analysis.generate(enriched)
+        stats_payload = stats.generate(enriched)
+
+        mining = next(d for d in analysis_payload['outcomes_by_division'] if d['code'] == 'B')
+        by_det = stats_payload['by_determination']
+        assert mining['approved'] == by_det.get(merger_status.APPROVED, 0)
+        assert mining['not_approved'] == by_det.get(merger_status.NOT_APPROVED, 0)
+        assert mining['referred'] == by_det.get(merger_status.REFERRED_TO_PHASE_2, 0)
+
+
+class TestReferralsByQuarter:
+    def test_buckets_by_notification_quarter(self):
+        payload = analysis.generate(_outcomes_enriched_fixture())
+        by_quarter = {q['quarter']: q for q in payload['referrals_by_quarter']}
+        # MN-9101, MN-9102, MN-9105 notified in Q1 2025; MN-9103, MN-9104 in Q2.
+        assert by_quarter['2025-Q1']['notifications'] == 3
+        assert by_quarter['2025-Q1']['referred'] == 0
+        assert by_quarter['2025-Q2']['notifications'] == 2
+        # MN-9103 was referred (notified Q2, referral event also lands in Q2,
+        # but bucketing follows the notification date regardless).
+        assert by_quarter['2025-Q2']['referred'] == 1
+
+    def test_sorted_ascending_by_quarter(self):
+        payload = analysis.generate(_outcomes_enriched_fixture())
+        quarters = [q['quarter'] for q in payload['referrals_by_quarter']]
+        assert quarters == sorted(quarters)
+
+    def test_totals_reconcile_with_stats(self):
+        enriched = _outcomes_enriched_fixture()
+        analysis_payload = analysis.generate(enriched)
+        stats_payload = stats.generate(enriched)
+
+        total_notifications = sum(q['notifications'] for q in analysis_payload['referrals_by_quarter'])
+        total_referred = sum(q['referred'] for q in analysis_payload['referrals_by_quarter'])
+
+        assert total_notifications == stats_payload['total_mergers']
+        assert total_referred == stats_payload['by_determination'].get(merger_status.REFERRED_TO_PHASE_2, 0)
 
 
 # ---------------------------------------------------------------------------
