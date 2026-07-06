@@ -133,17 +133,28 @@ function Mergers() {
       const meta = await metaResponse.json();
       const totalPages = meta.total_pages;
 
-      const page1Response = await fetch(API_ENDPOINTS.mergersListPage(1));
-      if (!page1Response.ok) throw new Error('Failed to fetch merger page');
-      const page1 = await page1Response.json();
-      let allMergers = page1.mergers;
+      // list-page-N.json files are sorted ascending by notification date
+      // (oldest first — new mergers only ever append to the last page, so
+      // regenerating the pipeline only touches that one file). The default
+      // frontend sort is notification-desc (newest first), so fetch the
+      // *last* page first in that case — otherwise the first screen would
+      // flash the oldest mergers before the background fetch replaces them
+      // with the newest ones. For notification-asc, page 1 is already the
+      // right first screen; the determination sorts have no page/sort
+      // correlation, so page 1 is just a reasonable default there too.
+      const initialPage = sortBy === 'notification-desc' ? totalPages : 1;
+
+      const initialResponse = await fetch(API_ENDPOINTS.mergersListPage(initialPage));
+      if (!initialResponse.ok) throw new Error('Failed to fetch merger page');
+      const initialPageData = await initialResponse.json();
+      let allMergers = initialPageData.mergers;
 
       if (isColdVisit) {
-        // Render immediately with just page 1 so users aren't stuck looking
-        // at a spinner while the remaining ~8 pages load in the background.
-        // The search index is built without touching the shared dataCache
-        // entry — that entry is reserved for the complete, final index so a
-        // stale partial index is never mistaken for a complete one.
+        // Render immediately with just this one page so users aren't stuck
+        // looking at a spinner while the remaining ~8 pages load in the
+        // background. The search index is built without touching the shared
+        // dataCache entry — that entry is reserved for the complete, final
+        // index so a stale partial index is never mistaken for a complete one.
         setMergers(allMergers);
         setSearchIndex(buildSearchIndex(allMergers, { cache: false }));
         setLoading(false);
@@ -152,14 +163,19 @@ function Mergers() {
 
       // Fetch remaining pages in batches to avoid saturating the browser's
       // connection pool. Promise.all within each batch still parallelises
-      // those requests.
+      // those requests. Order doesn't matter — the default sort is always
+      // re-applied to the combined list on render.
+      const remainingPages = [];
+      for (let p = 1; p <= totalPages; p++) {
+        if (p !== initialPage) remainingPages.push(p);
+      }
+
       let loadedPages = 1;
-      for (let i = 2; i <= totalPages; i += FETCH_BATCH_SIZE) {
-        const batch = [];
-        for (let j = i; j < i + FETCH_BATCH_SIZE && j <= totalPages; j++) {
-          batch.push(fetch(API_ENDPOINTS.mergersListPage(j)));
-        }
-        const batchResponses = await Promise.all(batch);
+      for (let i = 0; i < remainingPages.length; i += FETCH_BATCH_SIZE) {
+        const batchPages = remainingPages.slice(i, i + FETCH_BATCH_SIZE);
+        const batchResponses = await Promise.all(
+          batchPages.map((p) => fetch(API_ENDPOINTS.mergersListPage(p)))
+        );
         const batchResults = await Promise.allSettled(
           batchResponses.map((r) => {
             if (!r.ok) throw new Error('Failed to fetch merger page');
