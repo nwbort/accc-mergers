@@ -85,36 +85,36 @@ function PartyDetail() {
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         <nav aria-label="Party breadcrumb" className="mb-5">
-          <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-gray-500">
+          <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-gray-500 dark:text-gray-400">
             <li>
-              <Link to="/parties" className="hover:text-primary transition-colors">
+              <Link to="/parties" className="hover:text-primary dark:hover:text-accent-light transition-colors">
                 Parties
               </Link>
             </li>
             <li className="flex items-center gap-x-1.5" aria-current="page">
               <FaChevronRight className="w-3 h-3 text-gray-300" aria-hidden="true" />
-              <span className="font-medium text-gray-700">{partyName}</span>
+              <span className="font-medium text-gray-700 dark:text-gray-200">{partyName}</span>
             </li>
           </ol>
         </nav>
 
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6 card-accent">
-          <h1 className="text-2xl font-bold text-gray-900 tracking-tight">{partyName}</h1>
-          <p className="text-sm text-gray-500 mt-1">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-6 mb-6 card-accent">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">{partyName}</h1>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
             {mergerCount} merger{mergerCount !== 1 ? 's' : ''}
           </p>
 
           {members.length > 1 && (
-            <div className="mt-4 pt-4 border-t border-gray-100">
-              <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">
+            <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
+              <h2 className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">
                 Also registered as
               </h2>
               <ul className="space-y-1">
                 {members.map((member) => (
-                  <li key={`${member.name}-${member.identifier || ''}`} className="text-sm text-gray-700">
+                  <li key={`${member.name}-${member.identifier || ''}`} className="text-sm text-gray-700 dark:text-gray-200">
                     {member.name}
                     {member.identifier && (
-                      <span className="text-gray-500">
+                      <span className="text-gray-500 dark:text-gray-400">
                         {' '}&middot; {member.identifier_type ? `${member.identifier_type}: ` : ''}{member.identifier}
                       </span>
                     )}
@@ -124,7 +124,7 @@ function PartyDetail() {
             </div>
           )}
           {members.length === 1 && members[0].identifier && (
-            <p className="text-sm text-gray-500 mt-2">
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
               {members[0].identifier_type ? `${members[0].identifier_type}: ` : ''}{members[0].identifier}
             </p>
           )}
@@ -133,9 +133,9 @@ function PartyDetail() {
         {mergerCount > 0 && (
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
             {statCards.map(({ label, value }) => (
-              <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
-                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight tabular-nums">
+              <div key={label} className="bg-white dark:bg-gray-900 p-5 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card">
+                <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">{label}</p>
+                <p className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-1.5 tracking-tight tabular-nums">
                   {value}
                 </p>
               </div>
@@ -151,7 +151,7 @@ function PartyDetail() {
 
         {roles.map((role) => (
           <div key={role} className="mb-8">
-            <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
+            <h2 className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
               {ROLE_LABELS[role]}
             </h2>
             <IndustryMergerGroups mergers={mergersByRole[role]} variant="full" />
@@ -160,7 +160,7 @@ function PartyDetail() {
 
         {mergerCount === 0 && (
           <div className="text-center py-16">
-            <p className="text-gray-500 font-medium">No mergers found for this party</p>
+            <p className="text-gray-500 dark:text-gray-400 font-medium">No mergers found for this party</p>
           </div>
         )}
       </div>

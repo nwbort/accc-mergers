@@ -47,7 +47,7 @@ function Phase2NoticeMattersSection({ merger }) {
               href={event.url_gh}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark transition-colors font-medium"
+              className="inline-flex items-center gap-1 text-xs text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent-light transition-colors font-medium"
             >
               View Phase 2 Notice document
               <ExternalLinkIcon className="h-3 w-3" />
@@ -59,11 +59,11 @@ function Phase2NoticeMattersSection({ merger }) {
           {boxes.map((box, idx) => (
             <div key={idx}>
               {box.heading && (
-                <h3 className="text-sm font-semibold text-gray-900 mb-2">{box.heading}</h3>
+                <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">{box.heading}</h3>
               )}
               <ul className="list-disc list-outside pl-5 space-y-1.5">
                 {box.items.map((item, j) => (
-                  <li key={j} className="text-sm text-gray-600 leading-relaxed">{item}</li>
+                  <li key={j} className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{item}</li>
                 ))}
               </ul>
             </div>

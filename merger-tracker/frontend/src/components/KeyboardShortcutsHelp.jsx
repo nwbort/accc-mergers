@@ -19,7 +19,7 @@ const shortcuts = [
 
 function Kbd({ children }) {
   return (
-    <kbd className="inline-flex items-center justify-center min-w-[1.5rem] h-6 px-1.5 rounded bg-gray-100 border border-gray-200 text-xs font-mono font-medium text-gray-600 shadow-sm">
+    <kbd className="inline-flex items-center justify-center min-w-[1.5rem] h-6 px-1.5 rounded bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-xs font-mono font-medium text-gray-600 dark:text-gray-300 shadow-sm">
       {children}
     </kbd>
   );
@@ -88,14 +88,14 @@ export default function KeyboardShortcutsHelp({ isOpen, onClose }) {
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
       <div
         ref={dialogRef}
-        className="relative bg-white rounded-2xl shadow-xl border border-gray-100 max-w-sm w-full p-6 animate-fade-in"
+        className="relative bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 max-w-sm w-full p-6 animate-fade-in"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-5">
-          <h2 className="text-lg font-semibold text-gray-900">Keyboard shortcuts</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Keyboard shortcuts</h2>
           <button
             onClick={onClose}
-            className="p-1 text-gray-500 hover:text-gray-700 transition-colors rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            className="p-1 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
             aria-label="Close shortcuts help"
           >
             <FaTimes className="w-5 h-5" aria-hidden="true" />
@@ -104,11 +104,11 @@ export default function KeyboardShortcutsHelp({ isOpen, onClose }) {
         <ul className="space-y-3">
           {shortcuts.map(({ keys, description }) => (
             <li key={description} className="flex items-center justify-between">
-              <span className="text-sm text-gray-600">{description}</span>
+              <span className="text-sm text-gray-600 dark:text-gray-300">{description}</span>
               <span className="flex items-center gap-1">
                 {keys.map((key, i) => (
                   <span key={i} className="flex items-center gap-1">
-                    {i > 0 && <span className="text-xs text-gray-500">then</span>}
+                    {i > 0 && <span className="text-xs text-gray-500 dark:text-gray-400">then</span>}
                     <Kbd>{key}</Kbd>
                   </span>
                 ))}

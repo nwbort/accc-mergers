@@ -16,6 +16,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
+import { useChartTheme } from '../hooks/useChartTheme';
 import { industryPath } from '../utils/slug';
 
 ChartJS.register(
@@ -79,6 +80,10 @@ function Analysis() {
   });
   const navigate = useNavigate();
   const [calendarDays, setCalendarDays] = useState(false);
+  // Chart.js draws to a canvas and can't see CSS. The options objects below
+  // pull tick/grid/legend colours from this theme fragment, so the charts
+  // redraw with the right palette on toggle (chartTheme identity changes).
+  const chartTheme = useChartTheme();
 
   if (loading) return <LoadingSpinner />;
   if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
@@ -148,6 +153,7 @@ function Analysis() {
       legend: {
         position: 'bottom',
         labels: {
+          color: chartTheme.colors.legend,
           usePointStyle: true,
           padding: 16,
           font: { size: 12, family: 'Inter, sans-serif' },
@@ -181,14 +187,15 @@ function Analysis() {
           },
           maxTicksLimit: 8,
           font: { size: 11 },
+          color: chartTheme.colors.tick,
         },
         title: {
           display: true,
           text: 'Notification date',
           font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
+          color: chartTheme.colors.tick,
         },
-        grid: { color: 'rgba(0,0,0,0.04)' },
+        grid: { color: chartTheme.colors.grid },
       },
       y: {
         beginAtZero: true,
@@ -196,10 +203,10 @@ function Analysis() {
           display: true,
           text: calendarDays ? 'Calendar days' : 'Business days',
           font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
+          color: chartTheme.colors.tick,
         },
-        grid: { color: 'rgba(0,0,0,0.04)' },
-        ticks: { font: { size: 11 } },
+        grid: { color: chartTheme.colors.grid },
+        ticks: { font: { size: 11 }, color: chartTheme.colors.tick },
       },
     },
   };
@@ -253,7 +260,7 @@ function Analysis() {
           display: true,
           text: 'Application date',
           font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
+          color: chartTheme.colors.tick,
         },
       },
     },
@@ -308,6 +315,7 @@ function Analysis() {
       legend: {
         position: 'bottom',
         labels: {
+          color: chartTheme.colors.legend,
           usePointStyle: true,
           padding: 16,
           font: { size: 12, family: 'Inter, sans-serif' },
@@ -332,10 +340,10 @@ function Analysis() {
           display: true,
           text: calendarDays ? 'Calendar days' : 'Business days',
           font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
+          color: chartTheme.colors.tick,
         },
-        grid: { color: 'rgba(0,0,0,0.04)' },
-        ticks: { font: { size: 11 } },
+        grid: { color: chartTheme.colors.grid },
+        ticks: { font: { size: 11 }, color: chartTheme.colors.tick },
       },
       y: {
         min: 0,
@@ -344,10 +352,10 @@ function Analysis() {
           display: true,
           text: '% of reviews concluded',
           font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
+          color: chartTheme.colors.tick,
         },
-        grid: { color: 'rgba(0,0,0,0.04)' },
-        ticks: { font: { size: 11 }, callback: (value) => `${value}%` },
+        grid: { color: chartTheme.colors.grid },
+        ticks: { font: { size: 11 }, color: chartTheme.colors.tick, callback: (value) => `${value}%` },
       },
     },
   };
@@ -381,6 +389,7 @@ function Analysis() {
       legend: {
         position: 'bottom',
         labels: {
+          color: chartTheme.colors.legend,
           usePointStyle: true,
           pointStyle: 'rectRounded',
           padding: 16,
@@ -392,18 +401,18 @@ function Analysis() {
       x: {
         stacked: true,
         grid: { display: false },
-        ticks: { font: { size: 11 } },
+        ticks: { font: { size: 11 }, color: chartTheme.colors.tick },
       },
       y: {
         stacked: true,
         beginAtZero: true,
-        ticks: { stepSize: 5, font: { size: 11 } },
-        grid: { color: 'rgba(0,0,0,0.04)' },
+        ticks: { stepSize: 5, font: { size: 11 }, color: chartTheme.colors.tick },
+        grid: { color: chartTheme.colors.grid },
         title: {
           display: true,
           text: 'Count',
           font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
+          color: chartTheme.colors.tick,
         },
       },
     },
@@ -486,14 +495,14 @@ function Analysis() {
           display: true,
           text: calendarDays ? 'Average calendar days' : 'Average business days',
           font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
+          color: chartTheme.colors.tick,
         },
-        grid: { color: 'rgba(0,0,0,0.04)' },
-        ticks: { font: { size: 11 } },
+        grid: { color: chartTheme.colors.grid },
+        ticks: { font: { size: 11 }, color: chartTheme.colors.tick },
       },
       y: {
         grid: { display: false },
-        ticks: { font: { size: 11 } },
+        ticks: { font: { size: 11 }, color: chartTheme.colors.tick },
       },
     },
   };
@@ -509,16 +518,16 @@ function Analysis() {
         {/* Summary Stat Cards */}
         <div className="mb-8">
           <div className="flex justify-end mb-3">
-            <div className="inline-flex items-center bg-gray-100 rounded-full p-0.5 text-sm">
+            <div className="inline-flex items-center bg-gray-100 dark:bg-gray-800 rounded-full p-0.5 text-sm">
               <button
                 onClick={() => setCalendarDays(false)}
-                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${!calendarDays ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${!calendarDays ? 'bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}`}
               >
                 Business days
               </button>
               <button
                 onClick={() => setCalendarDays(true)}
-                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${calendarDays ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+                className={`px-3.5 py-1.5 rounded-full font-medium transition-all duration-150 ${calendarDays ? 'bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 shadow-sm' : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200'}`}
               >
                 Calendar days
               </button>
@@ -526,54 +535,54 @@ function Analysis() {
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {/* Notifications phase 1 */}
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card overflow-hidden">
               <div className="px-5 py-3 bg-primary">
                 <p className="text-sm font-semibold text-white">Notifications phase 1</p>
               </div>
-              <div className="grid grid-cols-2 divide-x divide-gray-100">
+              <div className="grid grid-cols-2 divide-x divide-gray-100 dark:divide-gray-800">
                 <div className="p-5">
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Avg duration</p>
-                  <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Avg duration</p>
+                  <p className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-1.5 tracking-tight">
                     {phase1Stats.average ? `${phase1Stats.average} days` : 'N/A'}
                   </p>
                   {phase1Stats.count && (
-                    <p className="text-sm text-gray-500 mt-0.5">{phase1Stats.count} completed</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">{phase1Stats.count} completed</p>
                   )}
                 </div>
                 <div className="p-5">
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Median duration</p>
-                  <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Median duration</p>
+                  <p className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-1.5 tracking-tight">
                     {phase1Stats.median ? `${phase1Stats.median} days` : 'N/A'}
                   </p>
                   {phase1Stats.min && phase1Stats.max && (
-                    <p className="text-sm text-gray-500 mt-0.5">Range {phase1Stats.min}–{phase1Stats.max} days</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Range {phase1Stats.min}–{phase1Stats.max} days</p>
                   )}
                 </div>
               </div>
             </div>
 
             {/* Waivers */}
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card overflow-hidden">
               <div className="px-5 py-3 bg-primary">
                 <p className="text-sm font-semibold text-white">Waivers</p>
               </div>
-              <div className="grid grid-cols-2 divide-x divide-gray-100">
+              <div className="grid grid-cols-2 divide-x divide-gray-100 dark:divide-gray-800">
                 <div className="p-5">
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Avg duration</p>
-                  <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Avg duration</p>
+                  <p className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-1.5 tracking-tight">
                     {waiverStats.average ? `${waiverStats.average} days` : 'N/A'}
                   </p>
                   {waiverStats.count && (
-                    <p className="text-sm text-gray-500 mt-0.5">{waiverStats.count} completed</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">{waiverStats.count} completed</p>
                   )}
                 </div>
                 <div className="p-5">
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Median duration</p>
-                  <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
+                  <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">Median duration</p>
+                  <p className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-1.5 tracking-tight">
                     {waiverStats.median ? `${waiverStats.median} days` : 'N/A'}
                   </p>
                   {waiverStats.min && waiverStats.max && (
-                    <p className="text-sm text-gray-500 mt-0.5">Range {waiverStats.min}–{waiverStats.max} days</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">Range {waiverStats.min}–{waiverStats.max} days</p>
                   )}
                 </div>
               </div>
@@ -583,10 +592,10 @@ function Analysis() {
 
         {/* Monthly Volume */}
         <div className="grid grid-cols-1 gap-6 mb-8">
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-6 py-5 border-b border-gray-100">
-              <h2 className="text-base font-semibold text-gray-900">Monthly notification volume</h2>
-              <p className="text-sm text-gray-500 mt-0.5">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card overflow-hidden">
+            <div className="px-6 py-5 border-b border-gray-100 dark:border-gray-800">
+              <h2 className="text-base font-semibold text-gray-900 dark:text-gray-100">Monthly notification volume</h2>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
                 Number of merger notifications and waiver applications per month
               </p>
             </div>
@@ -594,7 +603,7 @@ function Analysis() {
               <div className="h-72">
                 <Bar data={monthlyVolumeData} options={monthlyVolumeOptions} />
               </div>
-              <p className="text-xs text-gray-500 mt-3">
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-3">
                 Waivers are recorded on the ACCC's register when they are decided. This means the number of waiver applications in a month can rise for up to 25 business days after the month ends.
               </p>
             </div>
@@ -604,10 +613,10 @@ function Analysis() {
         {/* Industry Phase 1 Duration Comparison */}
         {industryDurations.length > 0 && (
           <section className="mb-8">
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-              <div className="px-6 py-5 border-b border-gray-100">
-                <h2 className="text-lg font-semibold text-gray-900">Phase 1 duration by industry</h2>
-                <p className="text-sm text-gray-500 mt-0.5">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card overflow-hidden">
+              <div className="px-6 py-5 border-b border-gray-100 dark:border-gray-800">
+                <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Phase 1 duration by industry</h2>
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
                   Average phase 1 duration for completed reviews, by top-level industry. Click a bar to view that industry.
                 </p>
               </div>
@@ -622,10 +631,10 @@ function Analysis() {
 
         {/* Phase 1 Duration Analysis */}
         <section className="mb-8">
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-6 py-5 border-b border-gray-100">
-              <h2 className="text-lg font-semibold text-gray-900">Phase 1 duration over time</h2>
-              <p className="text-sm text-gray-500 mt-0.5">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card overflow-hidden">
+            <div className="px-6 py-5 border-b border-gray-100 dark:border-gray-800">
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Phase 1 duration over time</h2>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
                 Each point represents a completed phase 1 assessment. Hover for details.
               </p>
             </div>
@@ -640,12 +649,12 @@ function Analysis() {
         {/* Phase 1 Duration ECDF */}
         {ecdfPoints.length > 0 && (
           <section className="mb-8">
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-              <div className="px-6 py-5 border-b border-gray-100">
-                <h2 id="chart-phase1-ecdf-title" className="text-lg font-semibold text-gray-900">
+            <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card overflow-hidden">
+              <div className="px-6 py-5 border-b border-gray-100 dark:border-gray-800">
+                <h2 id="chart-phase1-ecdf-title" className="text-lg font-semibold text-gray-900 dark:text-gray-100">
                   Phase 1 duration: share of reviews concluded
                 </h2>
-                <p className="text-sm text-gray-500 mt-0.5">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
                   Proportion of phase 1 reviews completed by the given number of {dayLabel}.
                 </p>
               </div>
@@ -678,10 +687,10 @@ function Analysis() {
 
         {/* Waiver Duration Analysis */}
         <section className="mb-8">
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
-            <div className="px-6 py-5 border-b border-gray-100">
-              <h2 className="text-lg font-semibold text-gray-900">Waiver duration over time</h2>
-              <p className="text-sm text-gray-500 mt-0.5">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card overflow-hidden">
+            <div className="px-6 py-5 border-b border-gray-100 dark:border-gray-800">
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Waiver duration over time</h2>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
                 Each point represents a completed waiver application. Hover for details.
               </p>
             </div>

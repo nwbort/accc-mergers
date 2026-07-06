@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Analysis from '../Analysis';
+import { ThemeProvider } from '../../context/ThemeContext';
 import { dataCache } from '../../utils/dataCache';
 
 function ok(json) {
@@ -37,9 +38,11 @@ const analysisFixture = {
 function renderAnalysis() {
   return render(
     <HelmetProvider>
-      <MemoryRouter>
-        <Analysis />
-      </MemoryRouter>
+      <ThemeProvider>
+        <MemoryRouter>
+          <Analysis />
+        </MemoryRouter>
+      </ThemeProvider>
     </HelmetProvider>
   );
 }

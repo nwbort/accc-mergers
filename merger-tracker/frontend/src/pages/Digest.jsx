@@ -23,7 +23,7 @@ function ScrollToTopButton() {
   return (
     <button
       onClick={scrollToTop}
-      className="p-1 text-gray-500 hover:text-gray-700 transition-all"
+      className="p-1 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-all"
       aria-label="Scroll to top"
       title="Back to top"
     >
@@ -37,10 +37,10 @@ function ScrollToTopButton() {
 function DigestSection({ id, title, emptyMessage, colorKey, mergers, columns, renderRow }) {
   const c = COLOR_CLASSES[colorKey];
   return (
-    <div id={id} className={`bg-white rounded-2xl border-l-4 ${c.borderLeft} border-t border-r border-b border-gray-100 shadow-card overflow-hidden`}>
+    <div id={id} className={`bg-white dark:bg-gray-900 rounded-2xl border-l-4 ${c.borderLeft} border-t border-r border-b border-gray-100 dark:border-gray-800 shadow-card overflow-hidden`}>
       <div className={`px-5 sm:px-6 py-4 border-b ${c.borderLight} bg-gradient-to-r ${c.headerBg} to-transparent`}>
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-gray-900">{title}</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">{title}</h2>
           <ScrollToTopButton />
         </div>
       </div>
@@ -50,11 +50,11 @@ function DigestSection({ id, title, emptyMessage, colorKey, mergers, columns, re
         </div>
       ) : (
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-100">
+          <table className="min-w-full divide-y divide-gray-100 dark:divide-gray-800">
             <thead>
               <tr className="bg-gray-50/80">
                 {columns.map((col) => (
-                  <th key={col} scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th key={col} scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     {col}
                   </th>
                 ))}
@@ -73,7 +73,7 @@ function DigestSection({ id, title, emptyMessage, colorKey, mergers, columns, re
 function MergerNameCell({ merger, colorKey }) {
   const c = COLOR_CLASSES[colorKey];
   return (
-    <td className="px-5 sm:px-6 py-4 text-sm text-gray-900">
+    <td className="px-5 sm:px-6 py-4 text-sm text-gray-900 dark:text-gray-100">
       <div className="flex items-start gap-2">
         <Link
           to={mergerPath(merger.merger_id, merger.merger_name)}
@@ -84,7 +84,7 @@ function MergerNameCell({ merger, colorKey }) {
         </Link>
         {merger.is_waiver && <WaiverBadge className="relative z-10" />}
       </div>
-      <div className="text-xs text-gray-500 mt-0.5">
+      <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
         <span>{merger.merger_id}</span>
       </div>
     </td>
@@ -109,7 +109,7 @@ function DeterminationCell({ merger, colorKey, defaultDetermination, getDetermin
           <ExternalLinkIcon className="h-3.5 w-3.5" />
         </a>
       ) : (
-        <span className="text-gray-600">{determination}</span>
+        <span className="text-gray-600 dark:text-gray-300">{determination}</span>
       )}
     </td>
   );
@@ -137,7 +137,7 @@ function ClearedSection({ mergers, getDeterminationPdf }) {
   const renderRow = (merger) => (
     <tr key={merger.merger_id} className="relative hover:bg-cleared-pale/40 transition-colors">
       <MergerNameCell merger={merger} colorKey={colorKey} />
-      <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+      <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-300">
         {merger.determination_publication_date
           ? formatDate(merger.determination_publication_date)
           : 'N/A'}
@@ -152,10 +152,10 @@ function ClearedSection({ mergers, getDeterminationPdf }) {
   );
 
   return (
-    <div id="mergers-approved" className={`bg-white rounded-2xl border-l-4 ${c.borderLeft} border-t border-r border-b border-gray-100 shadow-card overflow-hidden`}>
+    <div id="mergers-approved" className={`bg-white dark:bg-gray-900 rounded-2xl border-l-4 ${c.borderLeft} border-t border-r border-b border-gray-100 dark:border-gray-800 shadow-card overflow-hidden`}>
       <div className={`px-5 sm:px-6 py-4 border-b ${c.borderLight} bg-gradient-to-r ${c.headerBg} to-transparent`}>
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-gray-900">Mergers approved</h2>
+          <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100">Mergers approved</h2>
           <ScrollToTopButton />
         </div>
       </div>
@@ -165,11 +165,11 @@ function ClearedSection({ mergers, getDeterminationPdf }) {
         </div>
       ) : (
         <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-gray-100">
+          <table className="min-w-full divide-y divide-gray-100 dark:divide-gray-800">
             <thead>
               <tr className="bg-gray-50/80">
                 {columns.map((col) => (
-                  <th key={col} scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th key={col} scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                     {col}
                   </th>
                 ))}
@@ -179,7 +179,7 @@ function ClearedSection({ mergers, getDeterminationPdf }) {
               {groups.map((group) => (
                 <Fragment key={group.label}>
                   <tr>
-                    <td colSpan={3} className="px-5 sm:px-6 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider bg-cleared-pale/20 border-t border-gray-100">
+                    <td colSpan={3} className="px-5 sm:px-6 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider bg-cleared-pale/20 border-t border-gray-100 dark:border-gray-800">
                       {group.label}
                     </td>
                   </tr>
@@ -275,10 +275,10 @@ function DigestSignup() {
   if (status === 'success') {
     return (
       <div className="mb-6 flex items-center gap-3 rounded-xl border border-primary/20 bg-primary/5 px-5 py-4">
-        <svg className="h-5 w-5 shrink-0 text-primary" viewBox="0 0 20 20" fill="currentColor">
+        <svg className="h-5 w-5 shrink-0 text-primary dark:text-accent-light" viewBox="0 0 20 20" fill="currentColor">
           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
         </svg>
-        <p className="text-sm font-medium text-primary">
+        <p className="text-sm font-medium text-primary dark:text-accent-light">
           Subscribed! You&rsquo;ll get the digest every Monday morning.
         </p>
       </div>
@@ -286,11 +286,11 @@ function DigestSignup() {
   }
 
   return (
-    <div className="mb-6 rounded-xl border border-gray-200 bg-white px-5 py-4 shadow-card">
+    <div className="mb-6 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 px-5 py-4 shadow-card">
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:gap-4">
           <div className="flex-1">
-            <label htmlFor="digest-email" className="mb-1 block text-sm font-medium text-gray-700">
+            <label htmlFor="digest-email" className="mb-1 block text-sm font-medium text-gray-700 dark:text-gray-200">
               Get this delivered every Monday morning
             </label>
             <input
@@ -303,7 +303,7 @@ function DigestSignup() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               disabled={status === 'loading'}
-              className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
+              className="w-full rounded-lg border border-gray-300 dark:border-gray-700 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
             />
           </div>
           <button
@@ -402,7 +402,7 @@ function Digest() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-800">
       <SEO
         title="Catch me up - ACCC Merger Tracker"
         description="Weekly roundup of Australian merger activity: new ACCC notifications, Phase 1 clearances, Phase 2 launches, and upcoming consultation deadlines — all in one digest."
@@ -412,8 +412,8 @@ function Digest() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Catch me up</h1>
-          <p className="text-gray-600">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">Catch me up</h1>
+          <p className="text-gray-600 dark:text-gray-300">
             Weekly digest of merger activity from {dateRange}
           </p>
         </div>
@@ -452,12 +452,12 @@ function Digest() {
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-new-merger-pale/40 transition-colors">
                 <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.NEW_MERGER} />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-300">
                   {merger.effective_notification_datetime
                     ? formatDate(merger.effective_notification_datetime)
                     : 'N/A'}
                 </td>
-                <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 text-sm text-gray-600 dark:text-gray-300">
                   <div role="article" aria-label="Merger summary">
                     <ReactMarkdown className="prose prose-sm max-w-none">
                       {getFirstParagraph(merger.merger_description)}
@@ -484,10 +484,10 @@ function Digest() {
               renderRow={(merger) => (
                 <tr key={merger.merger_id} className="relative hover:bg-ceased-pale/40 transition-colors">
                   <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.CEASED} />
-                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-300">
                     {merger.ceased_date ? formatDate(merger.ceased_date) : 'N/A'}
                   </td>
-                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                  <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-300">
                     {merger.stage || 'N/A'}
                   </td>
                 </tr>
@@ -505,7 +505,7 @@ function Digest() {
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-phase-2-referral-pale/40 transition-colors">
                 <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.PHASE_2_REFERRAL} />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-300">
                   {merger.phase_1_determination_date
                     ? formatDate(merger.phase_1_determination_date)
                     : 'N/A'}
@@ -525,7 +525,7 @@ function Digest() {
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-declined-pale/40 transition-colors">
                 <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.DECLINED} />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-300">
                   {merger.determination_publication_date
                     ? formatDate(merger.determination_publication_date)
                     : 'N/A'}
@@ -545,17 +545,17 @@ function Digest() {
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-phase-1-pale/40 transition-colors">
                 <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.PHASE_1} />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-300">
                   {merger.effective_notification_datetime
                     ? formatDate(merger.effective_notification_datetime)
                     : 'N/A'}
                 </td>
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-300">
                   {merger.end_of_determination_period
                     ? formatDate(merger.end_of_determination_period)
                     : 'N/A'}
                 </td>
-                <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 text-sm text-gray-600 dark:text-gray-300">
                   <div role="article" aria-label="Merger summary">
                     <ReactMarkdown className="prose prose-sm max-w-none">
                       {getFirstParagraph(merger.merger_description)}
@@ -576,17 +576,17 @@ function Digest() {
             renderRow={(merger) => (
               <tr key={merger.merger_id} className="relative hover:bg-phase-2-pale/40 transition-colors">
                 <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.PHASE_2} />
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-300">
                   {merger.effective_notification_datetime
                     ? formatDate(merger.effective_notification_datetime)
                     : 'N/A'}
                 </td>
-                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600 dark:text-gray-300">
                   {merger.end_of_determination_period
                     ? formatDate(merger.end_of_determination_period)
                     : 'N/A'}
                 </td>
-                <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
+                <td className="px-5 sm:px-6 py-4 text-sm text-gray-600 dark:text-gray-300">
                   <div role="article" aria-label="Merger summary">
                     <ReactMarkdown className="prose prose-sm max-w-none">
                       {getFirstParagraph(merger.merger_description)}

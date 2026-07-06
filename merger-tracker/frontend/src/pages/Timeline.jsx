@@ -280,7 +280,7 @@ function Timeline() {
                 className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${
                   active
                     ? 'bg-primary text-white border-primary'
-                    : 'bg-transparent text-gray-500 border-gray-200 hover:text-gray-700 hover:border-gray-300'
+                    : 'bg-transparent text-gray-500 dark:text-gray-400 border-gray-200 dark:border-gray-700 hover:text-gray-700 dark:hover:text-gray-200 hover:border-gray-300 dark:hover:border-gray-700'
                 }`}
               >
                 {opt.label}
@@ -290,7 +290,7 @@ function Timeline() {
           {filtersActive && (
             <button
               onClick={clearFilters}
-              className="text-xs text-gray-500 hover:text-gray-700 transition-colors ml-1"
+              className="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors ml-1"
             >
               Clear
             </button>
@@ -307,7 +307,7 @@ function Timeline() {
                   <div className="relative pb-8">
                     {idx !== filteredDisplayedEvents.length - 1 && (
                       <span
-                        className="absolute top-0 bottom-0 left-5 -ml-px w-0.5 bg-gray-100"
+                        className="absolute top-0 bottom-0 left-5 -ml-px w-0.5 bg-gray-100 dark:bg-gray-800"
                         aria-hidden="true"
                       />
                     )}
@@ -323,16 +323,16 @@ function Timeline() {
                       </div>
                       <Link
                         to={mergerPath(event.merger_id, event.merger_name)}
-                        className="min-w-0 flex-1 bg-white rounded-2xl border border-gray-100 shadow-card p-4 hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 block"
+                        className="min-w-0 flex-1 bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-4 hover:shadow-card-hover hover:border-gray-200 dark:hover:border-gray-700 transition-all duration-200 block"
                         aria-label={`View merger details for ${event.merger_name}`}
                       >
-                        <span className="text-sm font-semibold text-gray-900">
+                        <span className="text-sm font-semibold text-gray-900 dark:text-gray-100">
                           {event.merger_name}
                         </span>
-                        <p className="text-sm text-gray-500 mt-1">
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                           {event.display_title || event.title}
                         </p>
-                        <p className="mt-1 text-xs text-gray-500">
+                        <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
                           {formatDate(event.date)}
                         </p>
                         {event.url_gh && (
@@ -341,7 +341,7 @@ function Timeline() {
                               href={event.url_gh}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark transition-colors relative z-10"
+                              className="inline-flex items-center gap-1 text-xs text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent-light transition-colors relative z-10"
                               aria-label={`View document for ${event.merger_name}`}
                               onClick={(e) => e.stopPropagation()}
                             >
@@ -361,22 +361,22 @@ function Timeline() {
 
         {hasMore && (
           <div className="text-center py-8">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
               {filtersActive
                 ? `Showing ${filteredDisplayedEvents.length} of ${filteredAllEvents.length} matching events (${displayedEvents.length} of ${allEvents.length} loaded)`
                 : `Showing ${displayedEvents.length} of ${allEvents.length} events`}
             </p>
             {loadingMore ? (
-              <p className="text-xs text-gray-500 mt-1">Loading more...</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Loading more...</p>
             ) : (
-              <p className="text-xs text-gray-500 mt-1">Scroll down to load more</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Scroll down to load more</p>
             )}
           </div>
         )}
 
         {!hasMore && displayedEvents.length > 0 && (
           <div className="text-center py-8">
-            <p className="text-gray-500 text-sm">
+            <p className="text-gray-500 dark:text-gray-400 text-sm">
               {filtersActive
                 ? `Showing all ${filteredAllEvents.length} matching events (of ${allEvents.length} total)`
                 : `Showing all ${allEvents.length} events`}
@@ -386,7 +386,7 @@ function Timeline() {
 
         {!loading && filteredDisplayedEvents.length === 0 && !hasMore && (
           <div className="text-center py-16">
-            <p className="text-gray-500">
+            <p className="text-gray-500 dark:text-gray-400">
               {filtersActive
                 ? 'No events match the selected filters'
                 : 'No timeline data available'}
@@ -394,7 +394,7 @@ function Timeline() {
             {filtersActive && (
               <button
                 onClick={clearFilters}
-                className="mt-3 text-sm text-primary hover:text-primary-dark transition-colors"
+                className="mt-3 text-sm text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent-light transition-colors"
               >
                 Clear filters
               </button>

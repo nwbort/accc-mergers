@@ -20,14 +20,14 @@ function NotFound() {
           description="This ACCC document is not currently available."
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-10 text-center max-w-lg mx-auto">
-            <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gray-100 flex items-center justify-center">
-              <FaFile className="w-8 h-8 text-gray-500" aria-hidden="true" />
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-10 text-center max-w-lg mx-auto">
+            <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+              <FaFile className="w-8 h-8 text-gray-500 dark:text-gray-400" aria-hidden="true" />
             </div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3 tracking-tight">
               Document not found
             </h1>
-            <p className="text-gray-500 mb-6">
+            <p className="text-gray-500 dark:text-gray-400 mb-6">
               This document isn't currently available. The ACCC may not have made it publicly accessible yet. Try checking on the ACCC website directly.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -41,7 +41,7 @@ function NotFound() {
                 href={`https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register?init=1&query=${matterId}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
+                className="inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
               >
                 Check ACCC website
               </a>
@@ -59,14 +59,14 @@ function NotFound() {
         description="The page you're looking for doesn't exist on the Australian Merger Tracker."
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-10 text-center max-w-lg mx-auto">
-          <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gray-100 flex items-center justify-center">
-            <FaExclamationCircle className="w-8 h-8 text-gray-500" aria-hidden="true" />
+        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-10 text-center max-w-lg mx-auto">
+          <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+            <FaExclamationCircle className="w-8 h-8 text-gray-500 dark:text-gray-400" aria-hidden="true" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-3 tracking-tight">
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-3 tracking-tight">
             Page not found
           </h1>
-          <p className="text-gray-500 mb-6">
+          <p className="text-gray-500 dark:text-gray-400 mb-6">
             The page you're looking for doesn't exist or has been moved.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -78,7 +78,7 @@ function NotFound() {
             </Link>
             <Link
               to="/mergers"
-              className="inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl text-gray-700 bg-white border border-gray-200 hover:bg-gray-50 transition-colors"
+              className="inline-flex items-center px-5 py-2.5 text-sm font-medium rounded-xl text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
             >
               Browse mergers
             </Link>

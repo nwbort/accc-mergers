@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer className="border-t border-gray-200/60 mt-auto bg-white/50 backdrop-blur-sm">
+    <footer className="border-t border-gray-200/60 dark:border-gray-800 mt-auto bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="text-center text-xs text-gray-500 leading-relaxed">
-          <span className="font-semibold text-gray-600">Disclaimer:</span> This is an unofficial website created by{' '}
+        <div className="text-center text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
+          <span className="font-semibold text-gray-600 dark:text-gray-300">Disclaimer:</span> This is an unofficial website created by{' '}
           <Link
             to="/nick-twort"
-            className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
+            className="text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent font-medium hover:underline transition-colors"
           >
             Nick Twort
           </Link>
@@ -17,21 +17,21 @@ function Footer() {
             href="https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
+            className="text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent font-medium hover:underline transition-colors"
           >
             ACCC website
           </a>
           . For enquiries or feedback, please contact{' '}
           <a
             href="mailto:nick@mergers.fyi"
-            className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
+            className="text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent font-medium hover:underline transition-colors"
           >
             nick@mergers.fyi
           </a>
           .{' '}
           <Link
             to="/privacy"
-            className="text-primary hover:text-primary-dark font-medium hover:underline transition-colors"
+            className="text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent font-medium hover:underline transition-colors"
           >
             Privacy Policy
           </Link>

@@ -6,7 +6,7 @@ function Bar({ widthPct, value, barClass, valueClass, caption, delta }) {
   return (
     <>
       <div className="flex items-center gap-3">
-        <div className="flex-1 bg-gray-100 rounded-full h-2 overflow-hidden">
+        <div className="flex-1 bg-gray-100 dark:bg-gray-800 rounded-full h-2 overflow-hidden">
           <div
             className={`${barClass} h-2 rounded-full transition-all duration-300`}
             style={{ width: `${widthPct}%` }}
@@ -17,7 +17,7 @@ function Bar({ widthPct, value, barClass, valueClass, caption, delta }) {
         </span>
       </div>
       <div className="flex items-center justify-between gap-2 mt-1">
-        <p className="text-[11px] text-gray-500 truncate">{caption}</p>
+        <p className="text-[11px] text-gray-500 dark:text-gray-400 truncate">{caption}</p>
         {delta}
       </div>
     </>
@@ -30,7 +30,7 @@ function DeltaChip({ current, comparison }) {
   if (comparison == null) return null;
   const delta = current - comparison;
   if (delta === 0) {
-    return <span className="text-[11px] font-medium text-gray-500 shrink-0">Same</span>;
+    return <span className="text-[11px] font-medium text-gray-500 dark:text-gray-400 shrink-0">Same</span>;
   }
   const longer = delta > 0;
   const pct = comparison > 0 ? Math.round((delta / comparison) * 100) : null;
@@ -46,7 +46,7 @@ function DeltaChip({ current, comparison }) {
         <FaArrowDown className="w-2.5 h-2.5" aria-hidden="true" />
       )}
       {Math.abs(delta)} days {longer ? 'longer' : 'shorter'}
-      {pct != null && pct !== 0 && <span className="text-gray-500">({Math.abs(pct)}%)</span>}
+      {pct != null && pct !== 0 && <span className="text-gray-500 dark:text-gray-400">({Math.abs(pct)}%)</span>}
     </span>
   );
 }
@@ -61,8 +61,8 @@ function MetricComparison({ label, current, comparisons }) {
   if (current == null) {
     return (
       <div>
-        <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
-        <p className="text-sm text-gray-500 mt-2">No completed Phase 1 reviews</p>
+        <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">{label}</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">No completed Phase 1 reviews</p>
       </div>
     );
   }
@@ -75,7 +75,7 @@ function MetricComparison({ label, current, comparisons }) {
 
   return (
     <div>
-      <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2.5">
+      <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2.5">
         {label}
       </p>
 
@@ -84,7 +84,7 @@ function MetricComparison({ label, current, comparisons }) {
         widthPct={(current / max) * 100}
         value={current}
         barClass="bg-primary"
-        valueClass="font-bold text-gray-900"
+        valueClass="font-bold text-gray-900 dark:text-gray-100"
         caption="This industry"
       />
 
@@ -95,7 +95,7 @@ function MetricComparison({ label, current, comparisons }) {
             widthPct={(c.value / max) * 100}
             value={c.value}
             barClass={barShades[i] || 'bg-gray-300'}
-            valueClass="font-semibold text-gray-500"
+            valueClass="font-semibold text-gray-500 dark:text-gray-400"
             caption={c.name}
             delta={<DeltaChip current={current} comparison={c.value} />}
           />
@@ -131,12 +131,12 @@ function PhaseDurationComparison({ duration, comparisons = [] }) {
   const medianComparisons = toMetric('median_business_days');
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
+    <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-6">
       <div className="flex items-baseline justify-between gap-3 mb-5">
-        <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+        <h2 className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
           Phase 1 duration
         </h2>
-        <span className="text-[11px] text-gray-500">business days</span>
+        <span className="text-[11px] text-gray-500 dark:text-gray-400">business days</span>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">

@@ -7,14 +7,14 @@ function ShowMoreDivider({ expanded, onToggle, className = '' }) {
   return (
     <div className={`relative my-5 ${className}`}>
       <div className="absolute inset-0 flex items-center" aria-hidden="true">
-        <div className="w-full border-t border-gray-200" />
+        <div className="w-full border-t border-gray-200 dark:border-gray-700" />
       </div>
       <div className="relative flex justify-center">
         <button
           type="button"
           onClick={onToggle}
           aria-expanded={expanded}
-          className="inline-flex items-center gap-1.5 bg-slate-50 px-3 text-sm font-medium text-gray-500 transition-colors hover:text-primary"
+          className="inline-flex items-center gap-1.5 bg-slate-50 px-3 text-sm font-medium text-gray-500 dark:text-gray-400 transition-colors hover:text-primary dark:hover:text-accent-light"
         >
           {expanded ? 'Show less' : 'Show more'}
           <FaChevronDown

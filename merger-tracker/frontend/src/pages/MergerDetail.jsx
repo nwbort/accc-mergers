@@ -73,16 +73,16 @@ function MergerDetail() {
     const hiddenCount = parties.length - VISIBLE_COUNT;
 
     return (
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
-        <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">{title}</h2>
+      <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-6">
+        <h2 className="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-4">{title}</h2>
         {visibleParties.map((party, idx) => (
           <div key={`${partyType}-${party.name}-${party.identifier || idx}`} className="mb-3 last:mb-0">
             {party.party_page?.id ? (
               <Link
                 to={partyPath(party.party_page.id, party.party_page.name)}
                 className={party.canonical?.name
-                  ? 'font-medium text-primary hover:text-primary-dark transition-colors'
-                  : 'font-medium text-gray-900 hover:text-primary transition-colors'}
+                  ? 'font-medium text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent-light transition-colors'
+                  : 'font-medium text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-accent-light transition-colors'}
                 title={`View the party page for ${party.party_page.name || party.name}`}
               >
                 {party.name}
@@ -91,8 +91,8 @@ function MergerDetail() {
               <Link
                 to={`/mergers?q=${encodeURIComponent(party.canonical?.name || party.name)}`}
                 className={party.canonical?.name
-                  ? 'font-medium text-primary hover:text-primary-dark transition-colors'
-                  : 'font-medium text-gray-900 hover:text-primary transition-colors'}
+                  ? 'font-medium text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent-light transition-colors'
+                  : 'font-medium text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-accent-light transition-colors'}
                 title={party.canonical?.name
                   ? `See all mergers involving ${party.canonical.name}`
                   : `Search mergers for ${party.name}`}
@@ -101,7 +101,7 @@ function MergerDetail() {
               </Link>
             )}
             {party.identifier && (
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-gray-500 dark:text-gray-400">
                 {party.identifier_type ? `${party.identifier_type}: ` : ''}{party.identifier}
               </p>
             )}
@@ -111,7 +111,7 @@ function MergerDetail() {
           <button
             type="button"
             onClick={() => togglePartyExpand(partyType)}
-            className="text-sm text-primary hover:text-primary-dark font-medium mt-2 transition-colors"
+            className="text-sm text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent-light font-medium mt-2 transition-colors"
             aria-expanded={isExpanded}
           >
             {isExpanded ? 'Show less' : `Show ${hiddenCount} more`}
@@ -222,7 +222,7 @@ function MergerDetail() {
         {/* Back button */}
         <Link
           to={backToMergers}
-          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-primary mb-5 transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-accent-light mb-5 transition-colors"
           aria-label="Return to all mergers list"
         >
           <FaChevronLeft className="w-4 h-4" aria-hidden="true" />
@@ -230,23 +230,23 @@ function MergerDetail() {
         </Link>
 
         {/* Header */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6 card-accent">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-6 mb-6 card-accent">
           <div className="flex items-start justify-between gap-4 pt-1">
             <div className="min-w-0">
               <div className="flex items-center gap-3 mb-2 flex-wrap">
-                <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
+                <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
                   {merger.merger_name}
                 </h1>
                 {merger.is_waiver && <WaiverBadge className="px-2.5 py-1 rounded-lg text-sm" />}
               </div>
               <div className="flex items-center gap-4 flex-wrap">
-                <p className="text-sm text-gray-500">{merger.merger_id}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">{merger.merger_id}</p>
                 {merger.url && (
                   <a
                     href={merger.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm text-primary hover:text-primary-dark transition-colors"
+                    className="inline-flex items-center gap-1 text-sm text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent-light transition-colors"
                     aria-label={`View ${merger.merger_name} on ACCC website`}
                   >
                     View on ACCC website
@@ -266,7 +266,7 @@ function MergerDetail() {
                 className={`inline-flex items-center justify-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-lg border transition-all duration-200 ${
                   tracked
                     ? 'bg-primary text-white border-primary hover:bg-primary-dark shadow-sm'
-                    : 'bg-gray-100 text-gray-600 border-gray-200/60 hover:bg-gray-200'
+                    : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200/60 hover:bg-gray-200 dark:hover:bg-gray-700'
                 }`}
                 aria-pressed={tracked}
                 aria-label={tracked ? 'Stop tracking this merger' : 'Track this merger for updates'}
@@ -285,28 +285,28 @@ function MergerDetail() {
           )}
 
           {/* Assessment timeline */}
-          <div className="mt-6 pt-6 border-t border-gray-100">
+          <div className="mt-6 pt-6 border-t border-gray-100 dark:border-gray-800">
             <MergerTimeline merger={merger} />
           </div>
 
           {/* Stage & determination */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 pt-6 border-t border-gray-100">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 pt-6 border-t border-gray-100 dark:border-gray-800">
             <div>
-              <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">Stage</h3>
-              <p className="text-sm font-medium text-gray-900">{merger.stage || 'N/A'}</p>
+              <h3 className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">Stage</h3>
+              <p className="text-sm font-medium text-gray-900 dark:text-gray-100">{merger.stage || 'N/A'}</p>
             </div>
             {merger.accc_determination && (
               <div>
-                <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">
+                <h3 className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">
                   Determination
                 </h3>
-                <p className="text-sm font-medium text-gray-900">
+                <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
                   {determinationDocUrl ? (
                     <a
                       href={determinationDocUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
+                      className="inline-flex items-center gap-1 text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent-light transition-colors"
                       aria-label={`View determination document: ${merger.accc_determination} (opens in new tab)`}
                     >
                       {merger.accc_determination}
@@ -331,7 +331,7 @@ function MergerDetail() {
               <FaLink className="h-5 w-5 text-amber-600" aria-hidden="true" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium text-gray-900">
+              <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
                 {RELATED_MERGER_LABELS[merger.related_merger.relationship]
                   ?? RELATED_MERGER_LABELS.refiled_from}
               </p>
@@ -356,7 +356,7 @@ function MergerDetail() {
                   </div>
                   <div className="flex-1 min-w-0">
                     {commentIdx === 0 && (
-                      <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">
+                      <h2 className="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-3">
                         Commentary
                       </h2>
                     )}
@@ -379,12 +379,12 @@ function MergerDetail() {
                     )}
                     <div className="flex items-center gap-3 mt-3">
                       {comment.date && (
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-gray-500 dark:text-gray-400">
                           Updated {formatDate(comment.date)}
                         </p>
                       )}
                       {comment.author && (
-                        <p className="text-xs text-gray-500">
+                        <p className="text-xs text-gray-500 dark:text-gray-400">
                           by {comment.author}
                         </p>
                       )}
@@ -407,8 +407,8 @@ function MergerDetail() {
 
         {/* Description */}
         {merger.merger_description && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6">
-            <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-6 mb-6">
+            <h2 className="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-4">
               Description
             </h2>
             <div className={PROSE_MARKDOWN}>
@@ -424,8 +424,8 @@ function MergerDetail() {
 
         {/* Industries */}
         {merger.anzsic_codes && merger.anzsic_codes.length > 0 && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6">
-            <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-6 mb-6">
+            <h2 className="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-4">
               Industries
             </h2>
             <div className="flex flex-wrap gap-2">
@@ -433,7 +433,7 @@ function MergerDetail() {
                 <Link
                   key={`anzsic-${code.code || code.name}`}
                   to={code.code ? industryPath(code.code, code.name) : `/mergers?q=${encodeURIComponent(code.name)}`}
-                  className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm bg-gray-50 text-gray-600 border border-gray-100 hover:bg-primary/5 hover:text-primary hover:border-primary/20 transition-all"
+                  className="inline-flex items-center px-3 py-1.5 rounded-lg text-sm bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-100 dark:border-gray-800 hover:bg-primary/5 hover:text-primary dark:hover:text-accent-light hover:border-primary/20 transition-all"
                 >
                   {code.name}
                 </Link>
@@ -444,8 +444,8 @@ function MergerDetail() {
 
         {/* Timeline */}
         {sortedEvents.length > 0 && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
-            <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-6">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-6">
+            <h2 className="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-6">
               Timeline & Events
             </h2>
             <div className="flow-root">
@@ -455,7 +455,7 @@ function MergerDetail() {
                     <div className="relative pb-8">
                       {idx !== sortedEvents.length - 1 && (
                         <span
-                          className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-100"
+                          className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-100 dark:bg-gray-800"
                           aria-hidden="true"
                         />
                       )}
@@ -466,10 +466,10 @@ function MergerDetail() {
                           </span>
                         </div>
                         <div className="min-w-0 flex-1 pt-1">
-                          <p className="text-sm font-medium text-gray-900">
+                          <p className="text-sm font-medium text-gray-900 dark:text-gray-100">
                             {event.display_title || event.title}
                           </p>
-                          <p className="text-xs text-gray-500 mt-0.5">
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
                             {formatDate(event.date)}
                           </p>
                           {event.url_gh && (
@@ -478,7 +478,7 @@ function MergerDetail() {
                                 href={event.url_gh}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark transition-colors"
+                                className="inline-flex items-center gap-1 text-xs text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent-light transition-colors"
                                 aria-label={`View document: ${event.display_title || event.title}`}
                               >
                                 View document
@@ -498,8 +498,8 @@ function MergerDetail() {
 
         {/* Similar Mergers */}
         {merger.similar_mergers && merger.similar_mergers.length > 0 && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mt-6">
-            <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-6 mt-6">
+            <h2 className="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider mb-4">
               You might be interested in
             </h2>
             <div className="divide-y divide-gray-50">
@@ -510,10 +510,10 @@ function MergerDetail() {
                   className="flex items-start gap-3 py-3 first:pt-0 last:pb-0 hover:opacity-75 transition-opacity group"
                 >
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 group-hover:text-primary transition-colors truncate">
+                    <p className="text-sm font-medium text-gray-900 dark:text-gray-100 group-hover:text-primary dark:group-hover:text-accent-light transition-colors truncate">
                       {similar.merger_name}
                     </p>
-                    <p className="text-xs text-gray-500 mt-0.5 truncate">
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5 truncate">
                       {[
                         ...(similar.acquirers || []).map(a => a.name),
                         '→',
@@ -522,9 +522,9 @@ function MergerDetail() {
                     </p>
                   </div>
                   {similar.accc_determination ? (
-                    <span className="flex-shrink-0 text-xs text-gray-500 mt-0.5">{similar.accc_determination}</span>
+                    <span className="flex-shrink-0 text-xs text-gray-500 dark:text-gray-400 mt-0.5">{similar.accc_determination}</span>
                   ) : similar.status ? (
-                    <span className="flex-shrink-0 text-xs text-gray-500 mt-0.5">{similar.status}</span>
+                    <span className="flex-shrink-0 text-xs text-gray-500 dark:text-gray-400 mt-0.5">{similar.status}</span>
                   ) : null}
                 </Link>
               ))}

@@ -95,19 +95,19 @@ function QuestionnaireSection({ mergerId, events }) {
       onExpand={fetchQuestionnaire}
     >
       {loading && (
-        <div className="flex items-center gap-2 mt-4 text-sm text-gray-500">
+        <div className="flex items-center gap-2 mt-4 text-sm text-gray-500 dark:text-gray-400">
           <FaSpinner className="animate-spin h-4 w-4" aria-hidden="true" />
           Loading questionnaire...
         </div>
       )}
 
       {error && (
-        <div className="mt-4 text-sm text-gray-500">
+        <div className="mt-4 text-sm text-gray-500 dark:text-gray-400">
           Could not load questionnaire data.{' '}
           <button
             type="button"
             onClick={fetchQuestionnaire}
-            className="text-primary hover:text-primary-dark font-medium"
+            className="text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent-light font-medium"
           >
             Retry
           </button>
@@ -129,7 +129,7 @@ function QuestionnaireSection({ mergerId, events }) {
                     className={`text-xs px-3 py-1 rounded-full border transition-colors ${
                       i === selectedIndex
                         ? 'bg-amber-100 border-amber-300 text-amber-800 font-medium'
-                        : 'border-gray-200 text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                        : 'border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:border-gray-300 dark:hover:border-gray-700 hover:text-gray-700 dark:hover:text-gray-200'
                     }`}
                   >
                     {getVersionLabel(q, i, allVersions.length)}
@@ -141,7 +141,7 @@ function QuestionnaireSection({ mergerId, events }) {
               const activeEvents = getVersionEvents(active);
               return (
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-4 mb-4">
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
                     {active.questions_count} question{active.questions_count !== 1 ? 's' : ''}
                     {active.deadline_iso && (
                       <span>
@@ -160,7 +160,7 @@ function QuestionnaireSection({ mergerId, events }) {
                       href={event.url_gh}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary-dark transition-colors font-medium"
+                      className="inline-flex items-center gap-1 text-xs text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent-light transition-colors font-medium"
                     >
                       View document
                       <ExternalLinkIcon className="h-3 w-3" />
@@ -176,22 +176,22 @@ function QuestionnaireSection({ mergerId, events }) {
                 return (
                   <li key={q.number}>
                     {showSectionHeader && (
-                      <p className={`text-xs font-semibold text-gray-500 uppercase tracking-wider ${idx > 0 ? 'mt-3' : ''} mb-3`}>
+                      <p className={`text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider ${idx > 0 ? 'mt-3' : ''} mb-3`}>
                         {q.section}
                       </p>
                     )}
                     <div className="flex gap-3">
-                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 text-gray-500 text-xs font-medium flex items-center justify-center mt-0.5">
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-xs font-medium flex items-center justify-center mt-0.5">
                         {q.number}
                       </span>
                       <div>
-                        <p className="text-sm text-gray-600 leading-relaxed">{q.text}</p>
+                        <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{q.text}</p>
                         {q.subpoints && (
                           <ol className="mt-2 space-y-1">
                             {q.subpoints.map((sp) => (
                               <li key={sp.letter} className="flex gap-2 items-baseline">
-                                <span className="flex-shrink-0 text-xs font-medium text-gray-500 w-4">{sp.letter}.</span>
-                                <span className="text-sm text-gray-500">{sp.text}</span>
+                                <span className="flex-shrink-0 text-xs font-medium text-gray-500 dark:text-gray-400 w-4">{sp.letter}.</span>
+                                <span className="text-sm text-gray-500 dark:text-gray-400">{sp.text}</span>
                               </li>
                             ))}
                           </ol>
@@ -201,7 +201,7 @@ function QuestionnaireSection({ mergerId, events }) {
                             {q.bullets.map((b, i) => (
                               <li key={i} className="flex gap-2 items-baseline">
                                 <span className="flex-shrink-0 text-gray-300 text-xs mt-0.5">–</span>
-                                <span className="text-sm text-gray-500">{b}</span>
+                                <span className="text-sm text-gray-500 dark:text-gray-400">{b}</span>
                               </li>
                             ))}
                           </ul>

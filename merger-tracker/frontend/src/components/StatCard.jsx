@@ -7,27 +7,27 @@ function StatCard({ title, value, subtitle, icon, href }) {
   return (
     <Wrapper
       {...wrapperProps}
-      className="block bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-200 overflow-hidden group"
+      className="block bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card hover:shadow-card-hover transition-all duration-200 overflow-hidden group"
     >
       <div className="p-6">
         <div className="flex items-start gap-4">
           {icon && (
-            <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-xl text-primary group-hover:scale-105 transition-transform duration-200">
+            <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-xl text-primary dark:text-accent-light group-hover:scale-105 transition-transform duration-200">
               {icon}
             </div>
           )}
           <div className="flex-1 min-w-0">
             <dl>
-              <dt className="text-sm font-medium text-gray-500 mb-1">
+              <dt className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">
                 {title}
               </dt>
               <dd>
-                <div className="text-xl font-bold text-gray-900 tracking-tight">
+                <div className="text-xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
                   {value}
                 </div>
               </dd>
               {subtitle && (
-                <dd className="text-sm text-gray-500 mt-1">{subtitle}</dd>
+                <dd className="text-sm text-gray-500 dark:text-gray-400 mt-1">{subtitle}</dd>
               )}
             </dl>
           </div>

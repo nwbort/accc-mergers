@@ -151,9 +151,9 @@ function IndustryDetail() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         {/* Breadcrumb: Industries → division → … → current node */}
         <nav aria-label="Industry hierarchy" className="mb-5">
-          <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-gray-500">
+          <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-gray-500 dark:text-gray-400">
             <li>
-              <Link to="/industries" className="hover:text-primary transition-colors">
+              <Link to="/industries" className="hover:text-primary dark:hover:text-accent-light transition-colors">
                 Industries
               </Link>
             </li>
@@ -162,7 +162,7 @@ function IndustryDetail() {
                 <FaChevronRight className="w-3 h-3 text-gray-300" aria-hidden="true" />
                 <Link
                   to={industryPath(a.code, a.name)}
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-primary dark:hover:text-accent-light transition-colors"
                 >
                   {a.name}
                 </Link>
@@ -170,18 +170,18 @@ function IndustryDetail() {
             ))}
             <li className="flex items-center gap-x-1.5" aria-current="page">
               <FaChevronRight className="w-3 h-3 text-gray-300" aria-hidden="true" />
-              <span className="font-medium text-gray-700">{industryName}</span>
+              <span className="font-medium text-gray-700 dark:text-gray-200">{industryName}</span>
             </li>
           </ol>
         </nav>
 
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6 card-accent">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-6 mb-6 card-accent">
           <div className="pt-1 flex items-start justify-between gap-4">
             <div>
-              <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
                 {industryName}
               </h1>
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                 ANZSIC {levelLabel ? `${levelLabel.toLowerCase()} ` : 'code: '}{decodedCode} · {mergers.length} merger{mergers.length !== 1 ? 's' : ''}
               </p>
             </div>
@@ -190,7 +190,7 @@ function IndustryDetail() {
               className={`inline-flex items-center justify-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-lg border transition-all duration-200 flex-shrink-0 ${
                 following
                   ? 'bg-primary text-white border-primary hover:bg-primary-dark shadow-sm'
-                  : 'bg-gray-100 text-gray-600 border-gray-200/60 hover:bg-gray-200'
+                  : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200/60 hover:bg-gray-200 dark:hover:bg-gray-700'
               }`}
               aria-pressed={following}
               aria-label={following
@@ -207,13 +207,13 @@ function IndustryDetail() {
         {mergers.length > 0 && (
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
             {statCards.map(({ label, value, subtitle }) => (
-              <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
-                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight tabular-nums">
+              <div key={label} className="bg-white dark:bg-gray-900 p-5 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card">
+                <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">{label}</p>
+                <p className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-1.5 tracking-tight tabular-nums">
                   {value}
                 </p>
                 {subtitle && (
-                  <p className="text-xs text-gray-500 mt-1">{subtitle}</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{subtitle}</p>
                 )}
               </div>
             ))}
@@ -232,8 +232,8 @@ function IndustryDetail() {
 
         {/* Sub-industries: children one level down, for drilling into the tree. */}
         {children.length > 0 && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6">
-            <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
+          <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-6 mb-6">
+            <h2 className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
               Sub-industries
             </h2>
             <ul className="divide-y divide-gray-50">
@@ -243,15 +243,15 @@ function IndustryDetail() {
                     to={industryPath(child.code, child.name)}
                     className="flex items-center justify-between gap-3 py-2.5 group"
                   >
-                    <span className="text-sm text-gray-900 group-hover:text-primary transition-colors">
-                      <span className="text-gray-500 tabular-nums mr-2">{child.code}</span>
+                    <span className="text-sm text-gray-900 dark:text-gray-100 group-hover:text-primary dark:group-hover:text-accent-light transition-colors">
+                      <span className="text-gray-500 dark:text-gray-400 tabular-nums mr-2">{child.code}</span>
                       {child.name}
                     </span>
                     <span className="flex items-center gap-2 shrink-0">
-                      <span className="inline-flex items-center justify-center min-w-[2.25rem] px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary tabular-nums">
+                      <span className="inline-flex items-center justify-center min-w-[2.25rem] px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary dark:text-accent-light tabular-nums">
                         {child.merger_count ?? 0}
                       </span>
-                      <FaChevronRight className="w-3 h-3 text-gray-300 group-hover:text-primary transition-colors" aria-hidden="true" />
+                      <FaChevronRight className="w-3 h-3 text-gray-300 group-hover:text-primary dark:group-hover:text-accent-light transition-colors" aria-hidden="true" />
                     </span>
                   </Link>
                 </li>
@@ -262,11 +262,11 @@ function IndustryDetail() {
 
         {mergers.length > 0 && (
           <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 mb-3">
-            <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <h2 className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
               Mergers in this industry
             </h2>
             {mergers.length > 5 && (
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wider shrink-0">
+              <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider shrink-0">
                 Showing {filteredMergers.length} of {mergers.length}
               </p>
             )}
@@ -277,13 +277,13 @@ function IndustryDetail() {
             list is long enough to be awkward to scan by eye. */}
         {mergers.length > 5 && (
           <div className="relative mb-4">
-            <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true">
+            <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
             </svg>
             <input
               type="text"
               aria-label="Search mergers in this industry"
-              className="w-full pl-10 pr-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all"
+              className="w-full pl-10 pr-3 py-2.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white dark:focus:bg-gray-900 transition-all"
               placeholder="Search mergers in this industry..."
               value={mergerSearch}
               onChange={(e) => setMergerSearch(e.target.value)}
@@ -295,15 +295,15 @@ function IndustryDetail() {
 
         {mergers.length > 0 && filteredMergers.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500 font-medium">No mergers match &ldquo;{mergerSearch.trim()}&rdquo;</p>
+            <p className="text-gray-500 dark:text-gray-400 font-medium">No mergers match &ldquo;{mergerSearch.trim()}&rdquo;</p>
           </div>
         )}
 
         {mergers.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-gray-500 font-medium">No mergers found for this industry</p>
+            <p className="text-gray-500 dark:text-gray-400 font-medium">No mergers found for this industry</p>
             {children.length > 0 && (
-              <p className="text-gray-500 text-sm mt-1">
+              <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">
                 Browse the sub-industries above to find merger activity.
               </p>
             )}

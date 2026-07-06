@@ -17,6 +17,7 @@ import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { getDaysRemaining, isDatePast } from '../utils/dates';
 import { useFetchData } from '../hooks/useFetchData';
+import { useChartTheme } from '../hooks/useChartTheme';
 import { markItemsAsSeen } from '../utils/lastVisit';
 import { formatMedian } from '../utils/formatMedian';
 
@@ -37,6 +38,7 @@ function Dashboard() {
     cacheKey: 'dashboard-events',
   });
   const upcomingEvents = upcomingEventsData?.events ?? null;
+  const chartTheme = useChartTheme();
 
   // Mark items as seen after user has viewed them for 2 seconds
   // This ensures the "New" badge persists across refreshes
@@ -90,6 +92,8 @@ function Dashboard() {
     ],
   };
 
+  // Chart.js can't read CSS, so pass the theme's legend text colour in. The
+  // options object references chartTheme, so the chart redraws on toggle.
   const chartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -102,6 +106,7 @@ function Dashboard() {
           padding: 16,
           usePointStyle: true,
           pointStyle: 'circle',
+          color: chartTheme.colors.legend,
           font: {
             size: 12,
             family: 'Inter, sans-serif',
@@ -204,8 +209,8 @@ function Dashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Phase 1 Duration Table */}
         {stats.phase_duration.percentiles && (
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card flex flex-col">
-            <h2 className="text-base font-semibold text-gray-900 mb-5">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card flex flex-col">
+            <h2 className="text-base font-semibold text-gray-900 dark:text-gray-100 mb-5">
               Phase 1 duration
             </h2>
             <div className="grid grid-cols-[auto_1fr_auto] items-center gap-x-4 flex-1 content-around">
@@ -214,16 +219,16 @@ function Dashboard() {
                 { label: 'By day 20', data: stats.phase_duration.percentiles.day20 },
                 { label: 'By day 30', data: stats.phase_duration.percentiles.day30 },
               ].flatMap(({ label, data }, index) => [
-                <span key={`${label}-label`} className={`text-sm text-gray-600 py-3 ${index < 2 ? 'border-b border-gray-50' : ''}`}>{label}</span>,
-                <div key={`${label}-bar`} className="bg-gray-100 rounded-full h-1.5 overflow-hidden">
+                <span key={`${label}-label`} className={`text-sm text-gray-600 dark:text-gray-300 py-3 ${index < 2 ? 'border-b border-gray-50' : ''}`}>{label}</span>,
+                <div key={`${label}-bar`} className="bg-gray-100 dark:bg-gray-800 rounded-full h-1.5 overflow-hidden">
                   <div
                     className="bg-primary h-1.5 rounded-full transition-all duration-500"
                     style={{ width: `${data.percentage}%` }}
                   />
                 </div>,
-                <span key={`${label}-pct`} className={`text-sm font-semibold text-gray-900 tabular-nums text-right py-3 whitespace-nowrap ${index < 2 ? 'border-b border-gray-50' : ''}`}>
+                <span key={`${label}-pct`} className={`text-sm font-semibold text-gray-900 dark:text-gray-100 tabular-nums text-right py-3 whitespace-nowrap ${index < 2 ? 'border-b border-gray-50' : ''}`}>
                   {data.percentage}%
-                  <span className="text-gray-500 font-normal ml-1">({data.count})</span>
+                  <span className="text-gray-500 dark:text-gray-400 font-normal ml-1">({data.count})</span>
                 </span>,
               ])}
             </div>
@@ -232,8 +237,8 @@ function Dashboard() {
 
         {/* Phase 1 Determination Distribution */}
         {Object.keys(stats.by_determination).length > 0 && (
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
-            <h2 id="chart-phase1-title" className="text-base font-semibold text-gray-900 mb-5">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card">
+            <h2 id="chart-phase1-title" className="text-base font-semibold text-gray-900 dark:text-gray-100 mb-5">
               Phase 1 determinations
             </h2>
             <div className="h-64" role="img" aria-labelledby="chart-phase1-title" aria-describedby="chart-phase1-summary">
@@ -253,8 +258,8 @@ function Dashboard() {
 
         {/* Waiver Determination Distribution */}
         {stats.by_waiver_determination && Object.keys(stats.by_waiver_determination).length > 0 && (
-          <div className="bg-white p-6 rounded-2xl border border-gray-100 shadow-card">
-            <h2 id="chart-waiver-title" className="text-base font-semibold text-gray-900 mb-5">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card">
+            <h2 id="chart-waiver-title" className="text-base font-semibold text-gray-900 dark:text-gray-100 mb-5">
               Waiver determinations
             </h2>
             <div className="h-64" role="img" aria-labelledby="chart-waiver-title" aria-describedby="chart-waiver-summary">

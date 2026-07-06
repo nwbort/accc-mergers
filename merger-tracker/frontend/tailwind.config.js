@@ -1,5 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  // Dark mode is opt-in via a `dark` class on <html>, toggled by the Navbar
+  // theme switch (see src/context/ThemeContext.jsx). An inline script in
+  // index.html sets the class before paint to avoid a flash of the wrong theme.
+  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",

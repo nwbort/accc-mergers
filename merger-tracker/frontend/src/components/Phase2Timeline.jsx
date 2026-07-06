@@ -53,7 +53,7 @@ function MatterBar({ matter }) {
     <li className="py-4 first:pt-0 last:pb-0">
       <Link
         to={mergerPath(merger_id, merger_name)}
-        className="block text-sm font-semibold text-gray-900 hover:text-primary transition-colors truncate mb-3"
+        className="block text-sm font-semibold text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-accent-light transition-colors truncate mb-3"
       >
         {merger_name}
       </Link>
@@ -61,15 +61,15 @@ function MatterBar({ matter }) {
       <div className="flex items-stretch gap-2 sm:gap-4">
         {/* Start endpoint — outside the track, hugging it from the left */}
         <div className="relative w-16 sm:w-20 shrink-0 h-11">
-          <span className={`${ABOVE_LINE} inset-x-0 text-right text-[11px] font-medium text-gray-500`}>Referred</span>
-          <span className={`${BELOW_LINE} inset-x-0 text-right text-xs font-medium text-gray-900`}>{formatDateMedium(referral_date)}</span>
+          <span className={`${ABOVE_LINE} inset-x-0 text-right text-[11px] font-medium text-gray-500 dark:text-gray-400`}>Referred</span>
+          <span className={`${BELOW_LINE} inset-x-0 text-right text-xs font-medium text-gray-900 dark:text-gray-100`}>{formatDateMedium(referral_date)}</span>
         </div>
 
         {/* Track region — the NOCC label lives inside it, above the line */}
         <div className="relative flex-1 min-w-0 h-11">
           {noccPercent !== null && nocc_date && (
             <span
-              className={`${ABOVE_LINE} text-[11px] text-gray-500 whitespace-nowrap`}
+              className={`${ABOVE_LINE} text-[11px] text-gray-500 dark:text-gray-400 whitespace-nowrap`}
               style={noccLabelStyle}
             >
               {nocc_issued ? 'NOCC issued' : 'NOCC due'} {formatDateMedium(nocc_date)}
@@ -103,8 +103,8 @@ function MatterBar({ matter }) {
 
         {/* End endpoint — outside the track, hugging it from the right */}
         <div className="relative w-16 sm:w-20 shrink-0 h-11">
-          <span className={`${ABOVE_LINE} inset-x-0 text-left text-[11px] font-medium text-gray-500`}>Determination</span>
-          <span className={`${BELOW_LINE} inset-x-0 text-left text-xs font-medium text-gray-900`}>{formatDateMedium(end_of_determination_period)}</span>
+          <span className={`${ABOVE_LINE} inset-x-0 text-left text-[11px] font-medium text-gray-500 dark:text-gray-400`}>Determination</span>
+          <span className={`${BELOW_LINE} inset-x-0 text-left text-xs font-medium text-gray-900 dark:text-gray-100`}>{formatDateMedium(end_of_determination_period)}</span>
         </div>
       </div>
     </li>
@@ -114,15 +114,15 @@ function MatterBar({ matter }) {
 function Phase2Timeline({ matters }) {
   if (!matters || matters.length === 0) {
     return (
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
-        <p className="text-gray-500 text-sm">No matters are currently in Phase 2.</p>
+      <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-6">
+        <p className="text-gray-500 dark:text-gray-400 text-sm">No matters are currently in Phase 2.</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 sm:p-6">
-      <ul className="divide-y divide-gray-100">
+    <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-5 sm:p-6">
+      <ul className="divide-y divide-gray-100 dark:divide-gray-800">
         {matters.map((matter) => (
           <MatterBar key={matter.merger_id} matter={matter} />
         ))}

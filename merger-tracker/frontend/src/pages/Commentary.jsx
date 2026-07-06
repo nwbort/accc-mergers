@@ -31,7 +31,7 @@ function Commentary() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         {/* Results count */}
         <div className="mb-4">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             {items.length} {items.length === 1 ? 'entry' : 'entries'}
           </p>
         </div>
@@ -41,7 +41,7 @@ function Commentary() {
           {items.map((item) => (
             <div
               key={item.merger_id}
-              className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden"
+              className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card overflow-hidden"
             >
               {/* Header */}
               <div className="p-5 border-b border-gray-50">
@@ -50,13 +50,13 @@ function Commentary() {
                     <div className="flex items-center gap-2">
                       <Link
                         to={mergerPath(item.merger_id, item.merger_name)}
-                        className="text-base font-semibold text-gray-900 hover:text-primary transition-colors truncate"
+                        className="text-base font-semibold text-gray-900 dark:text-gray-100 hover:text-primary dark:hover:text-accent-light transition-colors truncate"
                       >
                         {item.merger_name}
                       </Link>
                       {item.is_waiver && <WaiverBadge className="flex-shrink-0" />}
                     </div>
-                    <p className="text-xs text-gray-500 mt-1">
+                    <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                       {item.merger_id} · {item.stage || 'N/A'} · {item.is_waiver ? 'Applied' : 'Notified'}: {formatDate(item.effective_notification_datetime)}
                       {item.determination_publication_date && (
                         <>
@@ -66,7 +66,7 @@ function Commentary() {
                               href={item.determination_url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
+                              className="inline-flex items-center gap-1 text-primary dark:text-accent-light hover:text-primary-dark dark:hover:text-accent-light transition-colors"
                               aria-label="View determination document"
                             >
                               Determined: {formatDate(item.determination_publication_date)}
@@ -115,12 +115,12 @@ function Commentary() {
                           )}
                           <div className="flex items-center gap-3 mt-3">
                             {comment.date && (
-                              <p className="text-xs text-gray-500">
+                              <p className="text-xs text-gray-500 dark:text-gray-400">
                                 Updated {formatDate(comment.date)}
                               </p>
                             )}
                             {comment.author && (
-                              <p className="text-xs text-gray-500">
+                              <p className="text-xs text-gray-500 dark:text-gray-400">
                                 by {comment.author}
                               </p>
                             )}
@@ -137,7 +137,7 @@ function Commentary() {
 
         {items.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-gray-500 font-medium">No commentary available yet</p>
+            <p className="text-gray-500 dark:text-gray-400 font-medium">No commentary available yet</p>
           </div>
         )}
       </div>

@@ -19,8 +19,8 @@ const DEFAULT_MOBILE_LIMIT = 8;
 function cellTone(intensity) {
   if (intensity > 0.66) return 'bg-primary text-white hover:bg-primary-dark';
   if (intensity > 0.33) return 'bg-primary/60 text-white hover:bg-primary/70';
-  if (intensity > 0.15) return 'bg-primary/25 text-primary-dark hover:bg-primary/35';
-  return 'bg-primary/10 text-primary-dark hover:bg-primary/20';
+  if (intensity > 0.15) return 'bg-primary/25 text-primary-dark dark:text-accent-light hover:bg-primary/35';
+  return 'bg-primary/10 text-primary-dark dark:text-accent-light hover:bg-primary/20';
 }
 
 function IndustryTreemap({

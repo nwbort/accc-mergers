@@ -3,6 +3,23 @@
   <head>
     <meta charset="UTF-8" />
 
+    <!-- Set the colour theme before first paint to avoid a flash of the wrong
+         theme on reload. Reads the persisted choice from localStorage, falling
+         back to the OS `prefers-color-scheme`. Kept tiny and inline; the CSP
+         allows 'unsafe-inline' scripts. Mirrors src/context/ThemeContext.jsx —
+         keep the storage key ('theme') and logic in sync. -->
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var dark = stored
+            ? stored === 'dark'
+            : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (dark) document.documentElement.classList.add('dark');
+        } catch (e) { /* localStorage/matchMedia unavailable: keep light */ }
+      })();
+    </script>
+
     <!-- Warm the data fetches the Dashboard needs, but only on the homepage.
          These files aren't used by other routes, so loading them site-wide
          would waste bandwidth. The subsequent fetch() in Dashboard.jsx matches

@@ -51,15 +51,15 @@ function MergerTimelineFallback({ merger, startStr }) {
   return (
     <dl className="flex flex-wrap gap-x-12 gap-y-4">
       <div>
-        <dt className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">
+        <dt className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">
           {startLabel}
         </dt>
-        <dd className="text-sm font-medium text-gray-900">
+        <dd className="text-sm font-medium text-gray-900 dark:text-gray-100">
           {suspended && !merger.effective_notification_datetime ? (
             <>
               None &ndash; assessment suspended
               {merger.original_notification_datetime && (
-                <span className="text-gray-500 font-normal">
+                <span className="text-gray-500 dark:text-gray-400 font-normal">
                   {' '}(originally {formatDateMedium(merger.original_notification_datetime)})
                 </span>
               )}
@@ -70,10 +70,10 @@ function MergerTimelineFallback({ merger, startStr }) {
         </dd>
       </div>
       <div>
-        <dt className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">
+        <dt className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">
           Status
         </dt>
-        <dd className="text-sm font-medium text-gray-900">{merger.status || 'N/A'}</dd>
+        <dd className="text-sm font-medium text-gray-900 dark:text-gray-100">{merger.status || 'N/A'}</dd>
       </div>
     </dl>
   );
@@ -197,7 +197,7 @@ function MergerTimeline({ merger }) {
   // Note under the end date: total duration when the axis ends on the
   // determination itself, or an overdue flag when the deadline has passed.
   let endNote = null;
-  let endNoteClass = 'text-gray-500';
+  let endNoteClass = 'text-gray-500 dark:text-gray-400';
   if (endIsOutcome && durationStr) {
     endNote = durationStr;
   } else if (overdue) {
@@ -207,8 +207,8 @@ function MergerTimeline({ merger }) {
 
   // No nowrap on labels so multi-word endpoint labels wrap within the fixed
   // column width on small screens instead of squeezing the track.
-  const labelClass = 'text-xs font-medium text-gray-500 uppercase tracking-wider';
-  const dateClass = 'text-xs sm:text-sm font-medium text-gray-900 whitespace-nowrap';
+  const labelClass = 'text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider';
+  const dateClass = 'text-xs sm:text-sm font-medium text-gray-900 dark:text-gray-100 whitespace-nowrap';
   // Every label sits its bottom this far above the line; every value sits its
   // top this far below it. Shared across endpoints and mid markers so the three
   // columns line up, with clear breathing room around the bar.
@@ -229,7 +229,7 @@ function MergerTimeline({ merger }) {
         {midPct !== null && (
           <span
             className={`${aboveLine} ${
-              midIsDetermination ? labelClass : 'text-xs font-semibold text-primary uppercase tracking-wider'
+              midIsDetermination ? labelClass : 'text-xs font-semibold text-primary dark:text-accent-light uppercase tracking-wider'
             }`}
             style={midStyle}
           >
@@ -239,7 +239,7 @@ function MergerTimeline({ merger }) {
 
         {/* The line */}
         <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-3.5">
-          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-gray-100" />
+          <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-gray-100 dark:bg-gray-800" />
           <div
             className="absolute left-0 top-1/2 -translate-y-1/2 h-1.5 rounded-full bg-primary transition-[width] duration-500"
             style={{ width: `${fillPct}%` }}
@@ -260,7 +260,7 @@ function MergerTimeline({ merger }) {
           {/* End node */}
           <span
             className={`absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2 h-3.5 w-3.5 rounded-full ring-2 ring-white ${
-              endIsOutcome ? outcomeDot : 'bg-white border-2 border-gray-300'
+              endIsOutcome ? outcomeDot : 'bg-white dark:bg-gray-900 border-2 border-gray-300 dark:border-gray-700'
             }`}
           />
           {/* Determination marker — rendered after the end node so it stays
@@ -275,7 +275,7 @@ function MergerTimeline({ merger }) {
           {/* Today marker */}
           {todayPct !== null && (
             <span
-              className="absolute top-1/2 h-3.5 w-3.5 rounded-full bg-white ring-2 ring-primary shadow-sm"
+              className="absolute top-1/2 h-3.5 w-3.5 rounded-full bg-white dark:bg-gray-900 ring-2 ring-primary shadow-sm"
               style={{ left: `${todayPct}%`, transform: 'translate(-50%, -50%)' }}
               aria-label="Today"
             />
@@ -292,12 +292,12 @@ function MergerTimeline({ merger }) {
               <>
                 <span className={`block ${dateClass}`}>{formatDateMedium(effectiveDeterminationDate)}</span>
                 {durationStr && (
-                  <span className="block text-[11px] font-normal text-gray-500">{durationStr}</span>
+                  <span className="block text-[11px] font-normal text-gray-500 dark:text-gray-400">{durationStr}</span>
                 )}
               </>
             ) : (
               remainingStr && (
-                <span className="block text-[11px] font-normal text-gray-500">{remainingStr}</span>
+                <span className="block text-[11px] font-normal text-gray-500 dark:text-gray-400">{remainingStr}</span>
               )
             )}
           </span>

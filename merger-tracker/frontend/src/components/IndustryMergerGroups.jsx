@@ -28,9 +28,9 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
         const style = GROUP_STYLES[group.key] || GROUP_STYLES['Phase 1'];
         return (
           <section key={group.key}>
-            <div className={`flex items-center gap-2.5 mb-3 pb-2 border-b border-gray-100${compact ? ' sticky top-0 bg-gray-100 z-10' : ''}`}>
+            <div className={`flex items-center gap-2.5 mb-3 pb-2 border-b border-gray-100 dark:border-gray-800${compact ? ' sticky top-0 bg-gray-100 dark:bg-gray-800 z-10' : ''}`}>
               <span className={`h-4 w-1 rounded-full ${style.bar}`} aria-hidden="true" />
-              <h3 className="text-sm font-semibold text-gray-900">{group.label}</h3>
+              <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100">{group.label}</h3>
               <span className={`inline-flex items-center justify-center min-w-[1.375rem] px-1.5 h-5 rounded-full text-[11px] font-semibold ${style.pill}`}>
                 {group.mergers.length}
               </span>
@@ -42,23 +42,23 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
                   to={mergerPath(merger.merger_id, merger.merger_name)}
                   className={
                     compact
-                      ? 'block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all'
-                      : 'block bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 p-5'
+                      ? 'block p-3 bg-white dark:bg-gray-900 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-primary/30 hover:shadow-sm transition-all'
+                      : 'block bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card hover:shadow-card-hover hover:border-gray-200 dark:hover:border-gray-700 transition-all duration-200 p-5'
                   }
                   aria-label={`View merger details for ${merger.merger_name}`}
                 >
                   <div className="flex items-center gap-2 min-w-0">
                     {compact ? (
-                      <span className="text-sm font-medium text-gray-900 truncate">
+                      <span className="text-sm font-medium text-gray-900 dark:text-gray-100 truncate">
                         {merger.merger_name}
                       </span>
                     ) : (
-                      <h4 className="text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
+                      <h4 className="text-base font-semibold text-gray-900 dark:text-gray-100 truncate hover:text-primary dark:hover:text-accent-light transition-colors">
                         {merger.merger_name}
                       </h4>
                     )}
                   </div>
-                  <span className="text-xs text-gray-500 mt-1 block truncate">
+                  <span className="text-xs text-gray-500 dark:text-gray-400 mt-1 block truncate">
                     {merger.status}
                   </span>
                 </Link>

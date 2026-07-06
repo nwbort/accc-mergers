@@ -34,21 +34,21 @@ function FeedbackPopup() {
     <div
       role="dialog"
       aria-label="Share feedback"
-      className="fixed bottom-4 right-4 z-50 w-72 rounded-2xl bg-white shadow-elevated border border-gray-200 overflow-hidden animate-slide-up"
+      className="fixed bottom-4 right-4 z-50 w-72 rounded-2xl bg-white dark:bg-gray-900 shadow-elevated border border-gray-200 dark:border-gray-700 overflow-hidden animate-slide-up"
     >
-      <div className="flex items-center justify-between px-4 py-3 bg-gray-50 border-b border-gray-100">
-        <h3 className="text-sm font-semibold text-gray-800">Got feedback?</h3>
+      <div className="flex items-center justify-between px-4 py-3 bg-gray-50 dark:bg-gray-800 border-b border-gray-100 dark:border-gray-800">
+        <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-100">Got feedback?</h3>
         <button
           onClick={dismiss}
           aria-label="Dismiss"
-          className="text-gray-500 hover:text-gray-700 transition-colors"
+          className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
         >
           <FaTimes className="h-4 w-4" aria-hidden="true" />
         </button>
       </div>
 
       <div className="p-4 flex flex-col gap-3">
-        <p className="text-sm text-gray-600">
+        <p className="text-sm text-gray-600 dark:text-gray-300">
           Got a suggestion or spotted an issue? I'd love to hear it.
         </p>
         <Link

@@ -8,6 +8,7 @@ import KeyboardShortcutsHelp from './components/KeyboardShortcutsHelp';
 import CommandPalette from './components/CommandPalette';
 import FeedbackPopup from './components/FeedbackPopup';
 import { TrackingProvider } from './context/TrackingContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 import ScrollToTop from './components/ScrollToTop';
 import Dashboard from './pages/Dashboard';
@@ -80,11 +81,13 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ThemeProvider>
         <TrackingProvider>
         <ErrorBoundary>
           <AppContent />
         </ErrorBoundary>
         </TrackingProvider>
+        </ThemeProvider>
       </Router>
     </HelmetProvider>
   );

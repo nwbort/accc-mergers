@@ -20,11 +20,11 @@ function getDeterminationCardStyle(item) {
 function RecentDeterminationsCards({ determinations }) {
   if (!determinations || determinations.length === 0) {
     return (
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">
+      <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-6">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
           Recent determinations
         </h2>
-        <p className="text-gray-500 text-sm">No recent determinations.</p>
+        <p className="text-gray-500 dark:text-gray-400 text-sm">No recent determinations.</p>
       </div>
     );
   }
@@ -33,7 +33,7 @@ function RecentDeterminationsCards({ determinations }) {
     <section aria-labelledby="recent-determinations-heading">
       <h2
         id="recent-determinations-heading"
-        className="text-lg font-semibold text-gray-900 mb-4"
+        className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4"
       >
         Recent determinations
       </h2>

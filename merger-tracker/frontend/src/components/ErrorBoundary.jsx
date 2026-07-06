@@ -21,8 +21,8 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
-          <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8">
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-800 flex items-center justify-center px-4">
+          <div className="max-w-md w-full bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8">
             <div className="flex items-center justify-center w-12 h-12 mx-auto bg-red-100 rounded-full">
               <FaExclamationTriangle
                 className="w-6 h-6 text-red-600"
@@ -30,10 +30,10 @@ class ErrorBoundary extends Component {
                 aria-label="Error icon"
               />
             </div>
-            <h1 className="mt-4 text-xl font-semibold text-gray-900 text-center">
+            <h1 className="mt-4 text-xl font-semibold text-gray-900 dark:text-gray-100 text-center">
               Something went wrong
             </h1>
-            <p className="mt-2 text-sm text-gray-600 text-center">
+            <p className="mt-2 text-sm text-gray-600 dark:text-gray-300 text-center">
               An unexpected error occurred. Please try refreshing the page.
             </p>
             <button

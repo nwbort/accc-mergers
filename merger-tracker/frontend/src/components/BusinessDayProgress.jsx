@@ -12,7 +12,7 @@ function BusinessDayProgress({ merger }) {
   const { elapsed, total, overdue } = progress;
 
   return (
-    <p className={`text-xs font-medium ${overdue ? 'text-amber-600' : 'text-gray-500'}`}>
+    <p className={`text-xs font-medium ${overdue ? 'text-amber-600' : 'text-gray-500 dark:text-gray-400'}`}>
       {overdue ? 'Determination overdue' : `Business day ${elapsed} of ${total}`}
     </p>
   );

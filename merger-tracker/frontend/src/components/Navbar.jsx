@@ -1,7 +1,8 @@
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
-import { FaSearch, FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
+import { FaSearch, FaBars, FaTimes, FaChevronDown, FaSun, FaMoon } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
+import { useTheme } from '../context/ThemeContext';
 import NotificationPanel from './NotificationPanel';
 import BellIcon from './BellIcon';
 
@@ -42,6 +43,7 @@ function Navbar() {
   const moreMenuRef = useRef(null);
   const focusMobileSearchRef = useRef(false);
   const { unseenCount } = useTracking();
+  const { isDark, toggleTheme } = useTheme();
 
   useLayoutEffect(() => {
     const container = containerRef.current;
@@ -175,8 +177,8 @@ function Navbar() {
         isVisible ? 'translate-y-0' : '-translate-y-full'
       } ${
         isScrolled
-          ? 'bg-white/80 backdrop-blur-lg shadow-glass border-b border-gray-200/50'
-          : 'bg-white border-b border-gray-100'
+          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg shadow-glass border-b border-gray-200/50 dark:border-gray-700/50'
+          : 'bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800'
       }`}
     >
       <a
@@ -241,7 +243,7 @@ function Navbar() {
           {/* Left: brand + nav links */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2.5 group">
-              <span className="text-lg font-bold text-primary tracking-tight">
+              <span className="text-lg font-bold text-primary dark:text-accent-light tracking-tight">
                 {navMode === 'tiny' ? 'amt' : 'australian merger tracker'}
               </span>
             </Link>
@@ -255,8 +257,8 @@ function Navbar() {
                     to={path}
                     className={`relative inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
                       isActive(path)
-                        ? 'bg-primary/10 text-primary'
-                        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80'
+                        ? 'bg-primary/10 text-primary dark:bg-accent/15 dark:text-accent-light'
+                        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800/80'
                     }`}
                   >
                     {label}
@@ -279,8 +281,8 @@ function Navbar() {
                     to={path}
                     className={`relative inline-flex items-center px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 ${
                       isActive(path)
-                        ? 'bg-primary/10 text-primary'
-                        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80'
+                        ? 'bg-primary/10 text-primary dark:bg-accent/15 dark:text-accent-light'
+                        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800/80'
                     }`}
                   >
                     {label}
@@ -296,8 +298,8 @@ function Navbar() {
                     onClick={() => setMoreOpen(!moreOpen)}
                     className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
                       isMoreActive || moreOpen
-                        ? 'bg-primary/10 text-primary'
-                        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80'
+                        ? 'bg-primary/10 text-primary dark:bg-accent/15 dark:text-accent-light'
+                        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800/80'
                     }`}
                     aria-expanded={moreOpen}
                     aria-haspopup="true"
@@ -309,15 +311,15 @@ function Navbar() {
                     />
                   </button>
                   {moreOpen && (
-                    <div className="absolute top-full left-0 mt-1 w-44 bg-white shadow-lg rounded-lg border border-gray-100 py-1 z-50">
+                    <div className="absolute top-full left-0 mt-1 w-44 bg-white dark:bg-gray-800 shadow-lg rounded-lg border border-gray-100 dark:border-gray-700 py-1 z-50">
                       {moreNavLinks.map(({ path, label }) => (
                         <Link
                           key={path}
                           to={path}
                           className={`block px-4 py-2 text-sm font-medium transition-all duration-150 ${
                             isActive(path)
-                              ? 'bg-primary/10 text-primary'
-                              : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                              ? 'bg-primary/10 text-primary dark:bg-accent/15 dark:text-accent-light'
+                              : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-700/60 dark:hover:text-gray-100'
                           }`}
                           onClick={() => setMoreOpen(false)}
                         >
@@ -345,13 +347,13 @@ function Navbar() {
                       onKeyDown={handleSearchKeyDown}
                       onBlur={() => { if (!searchQuery.trim()) { setSearchOpen(false); } }}
                       placeholder="Search mergers…"
-                      className="w-full text-sm bg-gray-100/80 border border-gray-200 rounded-l-lg px-3 py-1.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/40"
+                      className="w-full text-sm bg-gray-100/80 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-l-lg px-3 py-1.5 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/40"
                       aria-label="Search mergers"
                     />
                   )}
                   <button
                     onClick={handleSearchIconClick}
-                    className={`inline-flex items-center justify-center p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${searchOpen ? 'rounded-r-lg border border-l-0 border-gray-200 bg-gray-100/80 hover:bg-gray-200/80' : 'rounded-lg'}`}
+                    className={`inline-flex items-center justify-center p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${searchOpen ? 'rounded-r-lg border border-l-0 border-gray-200 dark:border-gray-700 bg-gray-100/80 dark:bg-gray-800 hover:bg-gray-200/80 dark:hover:bg-gray-700' : 'rounded-lg'}`}
                     aria-label="Search"
                   >
                     <FaSearch className="h-4 w-4" aria-hidden="true" />
@@ -361,17 +363,29 @@ function Navbar() {
             ) : (
               <button
                 onClick={() => { focusMobileSearchRef.current = true; setMobileMenuOpen(true); }}
-                className="inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                 aria-label="Search"
               >
                 <FaSearch className="h-5 w-5" aria-hidden="true" />
               </button>
             )}
+            <button
+              onClick={toggleTheme}
+              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800/80 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 dark:focus-visible:ring-offset-gray-900"
+              aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+              title={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
+            >
+              {isDark ? (
+                <FaSun className="h-5 w-5" aria-hidden="true" />
+              ) : (
+                <FaMoon className="h-5 w-5" aria-hidden="true" />
+              )}
+            </button>
             <div className="relative">
               <button
                 onMouseDown={(e) => e.stopPropagation()}
                 onClick={() => setNotificationPanelOpen(!notificationPanelOpen)}
-                className="relative inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className="relative inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                 aria-expanded={notificationPanelOpen}
                 aria-label={`Notifications${unseenCount > 0 ? `, ${unseenCount} new` : ''}`}
               >
@@ -393,7 +407,7 @@ function Navbar() {
             {(navMode === 'mobile' || navMode === 'tiny') && (
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 dark:text-gray-400 dark:hover:text-gray-100 dark:hover:bg-gray-800/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
                 aria-expanded={mobileMenuOpen}
                 aria-controls="mobile-menu"
                 aria-label={mobileMenuOpen ? "Close main menu" : "Open main menu"}
@@ -411,15 +425,15 @@ function Navbar() {
       </div>
 
       {(navMode === 'mobile' || navMode === 'tiny') && mobileMenuOpen && (
-        <div id="mobile-menu" className="border-t border-gray-100 bg-white/95 backdrop-blur-lg">
+        <div id="mobile-menu" className="border-t border-gray-100 dark:border-gray-800 bg-white/95 dark:bg-gray-900/95 backdrop-blur-lg">
           <div className="px-3 pt-3 pb-1">
-            <div className="flex items-center gap-2 bg-gray-100/80 border border-gray-200 rounded-lg px-3 py-2">
-              <FaSearch className="h-4 w-4 text-gray-500 shrink-0" aria-hidden="true" />
+            <div className="flex items-center gap-2 bg-gray-100/80 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2">
+              <FaSearch className="h-4 w-4 text-gray-500 dark:text-gray-400 shrink-0" aria-hidden="true" />
               <input
                 ref={mobileSearchInputRef}
                 type="text"
                 placeholder="Search mergers…"
-                className="flex-1 text-sm bg-transparent text-gray-900 placeholder-gray-400 focus:outline-none"
+                className="flex-1 text-sm bg-transparent text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none"
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && e.target.value.trim()) {
                     navigate(`/mergers?q=${encodeURIComponent(e.target.value.trim())}`);
@@ -437,8 +451,8 @@ function Navbar() {
                 to={path}
                 className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150 ${
                   isActive(path)
-                    ? 'bg-primary/10 text-primary'
-                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
+                    ? 'bg-primary/10 text-primary dark:bg-accent/15 dark:text-accent-light'
+                    : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-100'
                 }`}
                 onClick={() => setMobileMenuOpen(false)}
               >

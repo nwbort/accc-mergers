@@ -117,10 +117,10 @@ function Industries() {
       {/* Header: title + compact summary stats */}
       <header className="mb-6 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-100">
             Mergers by industry
           </h1>
-          <p className="mt-1 text-sm text-gray-500 max-w-xl">
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400 max-w-xl">
             Which sectors of the economy draw the most ACCC scrutiny.
           </p>
         </div>
@@ -131,39 +131,39 @@ function Industries() {
             { label: 'avg / sector', value: industries.length > 0 ? (sumOfIndustryCounts / industries.length).toFixed(1) : 0 },
           ].map(({ label, value }) => (
             <div key={label}>
-              <div className="text-2xl font-bold tracking-tight text-gray-900 tabular-nums">{value}</div>
-              <div className="text-xs text-gray-500">{label}</div>
+              <div className="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-100 tabular-nums">{value}</div>
+              <div className="text-xs text-gray-500 dark:text-gray-400">{label}</div>
             </div>
           ))}
         </div>
       </header>
 
       {/* Industry heatmap */}
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
+      <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-5 mb-6">
         <IndustryTreemap industries={industries} />
       </div>
 
       {/* Search */}
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
+      <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-5 mb-6">
         <div className="flex items-baseline justify-between gap-3 mb-2">
           <label
             htmlFor="search"
-            className="text-xs font-medium text-gray-500 uppercase tracking-wider"
+            className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider"
           >
             Search industries
           </label>
-          <p className="text-xs font-medium text-gray-500 uppercase tracking-wider shrink-0">
+          <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider shrink-0">
             Showing {filteredIndustries.length} of {industries.length}
           </p>
         </div>
         <div className="relative">
-          <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+          <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 dark:text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
           </svg>
           <input
             type="text"
             id="search"
-            className="w-full pl-10 pr-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all"
+            className="w-full pl-10 pr-3 py-2.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white dark:focus:bg-gray-900 transition-all"
             placeholder="Search by industry name or code..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -172,17 +172,17 @@ function Industries() {
       </div>
 
       {/* Industries Table */}
-      <div className="bg-white border border-gray-100 shadow-card rounded-2xl overflow-hidden">
-        <table className="min-w-full divide-y divide-gray-100">
+      <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 shadow-card rounded-2xl overflow-hidden">
+        <table className="min-w-full divide-y divide-gray-100 dark:divide-gray-800">
           <caption className="sr-only">
             Industry breakdown of Australian merger reviews by ANZSIC code, showing merger counts and each industry's share of all reviews
           </caption>
           <thead>
             <tr className="bg-gray-50/80">
-              <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Industry name
               </th>
-              <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider">
                 Mergers &amp; share of all reviews
               </th>
             </tr>
@@ -215,10 +215,10 @@ function Industries() {
                     aria-expanded={isExpanded}
                     aria-controls={`industry-details-${industry.code}`}
                   >
-                    <td className="px-6 py-4 text-sm text-gray-900">
+                    <td className="px-6 py-4 text-sm text-gray-900 dark:text-gray-100">
                       <div className="flex items-center">
                         <svg
-                          className={`w-4 h-4 mr-2.5 text-gray-500 transition-transform duration-200 ${
+                          className={`w-4 h-4 mr-2.5 text-gray-500 dark:text-gray-400 transition-transform duration-200 ${
                             isExpanded ? 'transform rotate-90' : ''
                           }`}
                           fill="currentColor"
@@ -235,13 +235,13 @@ function Industries() {
                         <span className="font-medium">{industry.name}</span>
                       </div>
                     </td>
-                    <td className="px-6 py-4 text-sm text-gray-500 w-2/3">
+                    <td className="px-6 py-4 text-sm text-gray-500 dark:text-gray-400 w-2/3">
                       <div className="flex items-center gap-3">
-                        <span className="inline-flex items-center justify-center min-w-[2.25rem] px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary tabular-nums">
+                        <span className="inline-flex items-center justify-center min-w-[2.25rem] px-2.5 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary dark:text-accent-light tabular-nums">
                           {industry.merger_count}
                         </span>
                         <div
-                          className="flex-1 bg-gray-100 rounded-full h-1.5 overflow-hidden"
+                          className="flex-1 bg-gray-100 dark:bg-gray-800 rounded-full h-1.5 overflow-hidden"
                           role="progressbar"
                           aria-valuenow={parseFloat(percentage)}
                           aria-valuemin={0}
@@ -253,7 +253,7 @@ function Industries() {
                             style={{ width: `${maxShareCount > 0 ? (industry.merger_count / maxShareCount) * 100 : 0}%` }}
                           />
                         </div>
-                        <span className="text-xs tabular-nums font-medium text-gray-600 w-12 text-right">{percentage}%</span>
+                        <span className="text-xs tabular-nums font-medium text-gray-600 dark:text-gray-300 w-12 text-right">{percentage}%</span>
                       </div>
                     </td>
                   </tr>
@@ -261,9 +261,9 @@ function Industries() {
                     <tr id={`industry-details-${industry.code}`}>
                       {/* max-w-0 lets the long, non-wrapping merger titles truncate
                           instead of stretching the table past the viewport on mobile. */}
-                      <td colSpan="2" className="px-6 py-5 bg-gray-100 border-t border-gray-200 shadow-inner max-w-0">
+                      <td colSpan="2" className="px-6 py-5 bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 shadow-inner max-w-0">
                         <div className="space-y-2">
-                          <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
+                          <p className="text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-3">
                             Mergers in this industry
                           </p>
                           {isLoadingThisIndustry ? (
@@ -271,7 +271,7 @@ function Industries() {
                               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
                             </div>
                           ) : industryMergers.length === 0 ? (
-                            <p className="text-sm text-gray-500 py-4">No mergers found for this industry</p>
+                            <p className="text-sm text-gray-500 dark:text-gray-400 py-4">No mergers found for this industry</p>
                           ) : (
                             <div className={industryMergers.length > SCROLL_THRESHOLD ? 'max-h-[400px] overflow-y-auto pr-2' : ''}>
                               <IndustryMergerGroups mergers={industryMergers} variant="compact" />
@@ -290,8 +290,8 @@ function Industries() {
 
       {filteredIndustries.length === 0 && (
         <div className="text-center py-16">
-          <p className="text-gray-500 font-medium">No industries found</p>
-          <p className="text-gray-500 text-sm mt-1">Try adjusting your search</p>
+          <p className="text-gray-500 dark:text-gray-400 font-medium">No industries found</p>
+          <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Try adjusting your search</p>
         </div>
       )}
     </div>

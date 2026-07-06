@@ -359,15 +359,15 @@ function Mergers() {
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         {/* Search & Filters */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-5 mb-6">
           {/* Search row with filter toggle */}
           <div className="flex gap-3">
             <div className="flex-1 relative">
-              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" aria-hidden="true" />
+              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" />
               <input
                 type="text"
                 id="search"
-                className={`w-full pl-10 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all ${
+                className={`w-full pl-10 py-2.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white dark:focus:bg-gray-900 transition-all ${
                   searchTerm ? 'pr-10' : 'pr-3'
                 }`}
                 placeholder="Search mergers, companies, or industries..."
@@ -384,7 +384,7 @@ function Mergers() {
                     setSearchTerm('');
                     updateParam('q', '', '');
                   }}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700 transition-colors"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
                   aria-label="Clear search"
                   type="button"
                 >
@@ -397,7 +397,7 @@ function Mergers() {
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium border transition-all ${
                 filtersOpen || activeFilterCount > 0
                   ? 'bg-primary text-white border-primary shadow-sm'
-                  : 'bg-gray-50 text-gray-600 border-gray-200 hover:bg-gray-100'
+                  : 'bg-gray-50 dark:bg-gray-800 text-gray-600 dark:text-gray-300 border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800'
               }`}
               aria-label="Toggle filters"
               aria-expanded={filtersOpen}
@@ -416,19 +416,19 @@ function Mergers() {
 
           {/* Collapsible filter panel */}
           {filtersOpen && (
-            <div className="mt-4 pt-4 border-t border-gray-100 animate-fade-in">
+            <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-800 animate-fade-in">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div>
                   <label
                     htmlFor="phase"
-                    className="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2"
+                    className="block text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2"
                   >
                     Phase
                   </label>
                   <select
                     id="phase"
-                    className={`w-full px-3 py-2.5 bg-gray-50 border rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none ${
-                      phaseFilter !== 'all' ? 'border-primary border-2' : 'border-gray-200'
+                    className={`w-full px-3 py-2.5 bg-gray-50 dark:bg-gray-800 border rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white dark:focus:bg-gray-900 transition-all appearance-none ${
+                      phaseFilter !== 'all' ? 'border-primary border-2' : 'border-gray-200 dark:border-gray-700'
                     }`}
                     value={phaseFilter}
                     onChange={(e) => updateParam('phase', e.target.value, 'all')}
@@ -443,14 +443,14 @@ function Mergers() {
                 <div>
                   <label
                     htmlFor="status"
-                    className="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2"
+                    className="block text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2"
                   >
                     Status
                   </label>
                   <select
                     id="status"
-                    className={`w-full px-3 py-2.5 bg-gray-50 border rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all appearance-none ${
-                      statusFilter !== 'all' ? 'border-primary border-2' : 'border-gray-200'
+                    className={`w-full px-3 py-2.5 bg-gray-50 dark:bg-gray-800 border rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white dark:focus:bg-gray-900 transition-all appearance-none ${
+                      statusFilter !== 'all' ? 'border-primary border-2' : 'border-gray-200 dark:border-gray-700'
                     }`}
                     value={statusFilter}
                     onChange={(e) => updateParam('status', e.target.value, 'all')}
@@ -467,7 +467,7 @@ function Mergers() {
                 </div>
                 <div>
                   <label
-                    className="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2"
+                    className="block text-xs font-medium text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2"
                   >
                     Tracked
                   </label>
@@ -477,8 +477,8 @@ function Mergers() {
                     onClick={() => updateParam('tracked', !trackedOnly ? 'true' : '', '')}
                     className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-xl text-sm transition-all ${
                       trackedOnly
-                        ? 'bg-primary/5 border-2 border-primary text-primary'
-                        : 'bg-gray-50 border border-gray-200 text-gray-500 hover:bg-gray-100'
+                        ? 'bg-primary/5 border-2 border-primary text-primary dark:text-accent-light'
+                        : 'bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                     }`}
                   >
                     <span
@@ -487,7 +487,7 @@ function Mergers() {
                       }`}
                     >
                       <span
-                        className={`inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm transform transition-transform ${
+                        className={`inline-block h-3.5 w-3.5 rounded-full bg-white dark:bg-gray-900 shadow-sm transform transition-transform ${
                           trackedOnly ? 'translate-x-4' : 'translate-x-0.5'
                         }`}
                       />
@@ -497,7 +497,7 @@ function Mergers() {
                 </div>
               </div>
               {activeFilterCount > 0 && (
-                <div className="mt-3 pt-3 border-t border-gray-100 flex justify-end">
+                <div className="mt-3 pt-3 border-t border-gray-100 dark:border-gray-800 flex justify-end">
                   <button
                     onClick={() => {
                       const params = new URLSearchParams(searchParams);
@@ -506,7 +506,7 @@ function Mergers() {
                       params.delete('tracked');
                       setSearchParams(params, { replace: true });
                     }}
-                    className="text-xs text-gray-500 hover:text-gray-700 transition-colors"
+                    className="text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-colors"
                   >
                     Clear all filters
                   </button>
@@ -518,14 +518,14 @@ function Mergers() {
 
         {/* Results count & Sort */}
         <div className="flex items-center justify-between mb-4">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             Showing {visibleMergers.length} of {displayedTotal} mergers
           </p>
           <div className="flex items-center gap-2">
-            <label htmlFor="sort" className="text-sm text-gray-500 hidden sm:inline">Sort by</label>
+            <label htmlFor="sort" className="text-sm text-gray-500 dark:text-gray-400 hidden sm:inline">Sort by</label>
             <select
               id="sort"
-              className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-sm text-gray-600 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
+              className="px-3 py-1.5 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg text-sm text-gray-600 dark:text-gray-300 focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all appearance-none cursor-pointer"
               value={sortBy.replace(/-(?:asc|desc)$/, '')}
               onChange={(e) => {
                 const dir = sortBy.endsWith('-asc') ? 'asc' : 'desc';
@@ -543,7 +543,7 @@ function Mergers() {
                 const newDir = sortBy.endsWith('-asc') ? 'desc' : 'asc';
                 updateParam('sort', `${field}-${newDir}`, 'notification-desc');
               }}
-              className="p-1 text-gray-500 hover:text-gray-700 transition-all"
+              className="p-1 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-all"
               aria-label={sortBy.endsWith('-asc') ? 'Sort descending' : 'Sort ascending'}
               title={sortBy.endsWith('-asc') ? 'Ascending (click for descending)' : 'Descending (click for ascending)'}
             >
@@ -577,8 +577,8 @@ function Mergers() {
                     navigate(mergerPath(merger.merger_id, merger.merger_name));
                   }
                 }}
-                className={`bg-white rounded-2xl border shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 cursor-pointer ${
-                  isSelected ? 'border-primary/40 ring-2 ring-primary/20' : 'border-gray-100'
+                className={`bg-white dark:bg-gray-900 rounded-2xl border shadow-card hover:shadow-card-hover hover:border-gray-200 dark:hover:border-gray-700 transition-all duration-200 cursor-pointer ${
+                  isSelected ? 'border-primary/40 ring-2 ring-primary/20' : 'border-gray-100 dark:border-gray-800'
                 }`}
               >
                 <div className="p-5">
@@ -586,14 +586,14 @@ function Mergers() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         {tracked && (
-                          <FaStar className="h-4 w-4 flex-shrink-0 text-primary" aria-hidden="true" />
+                          <FaStar className="h-4 w-4 flex-shrink-0 text-primary dark:text-accent-light" aria-hidden="true" />
                         )}
-                        <h3 className="text-base font-semibold text-gray-900 truncate hover:text-primary transition-colors">
+                        <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100 truncate hover:text-primary dark:hover:text-accent-light transition-colors">
                           {merger.merger_name}
                         </h3>
                         {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
                       </div>
-                      <p className="text-xs text-gray-500 mt-1">
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
                         {merger.merger_id} · {merger.stage || 'N/A'}
                       </p>
                     </div>
@@ -612,7 +612,7 @@ function Mergers() {
                         className={`hidden md:inline-flex items-center justify-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-200 ${
                           tracked
                             ? 'bg-primary text-white hover:bg-primary-dark shadow-sm'
-                            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                            : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                         }`}
                         aria-pressed={tracked}
                         aria-label={tracked ? 'Stop tracking this merger' : 'Track this merger for updates'}
@@ -627,10 +627,10 @@ function Mergers() {
                     businessDayProgress ? 'grid-cols-2 md:grid-cols-3' : 'grid-cols-1 md:grid-cols-2'
                   }`}>
                     <div className={businessDayProgress ? 'order-1' : ''}>
-                      <p className="text-xs text-gray-500 mb-0.5">
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mb-0.5">
                         {merger.is_waiver ? 'Application date' : 'Notification date'}
                       </p>
-                      <p className="text-sm font-medium text-gray-700">
+                      <p className="text-sm font-medium text-gray-700 dark:text-gray-200">
                         {!merger.effective_notification_datetime && merger.status?.toLowerCase().includes('suspended')
                           ? 'None - assessment suspended'
                           : formatDate(merger.effective_notification_datetime)}
@@ -638,10 +638,10 @@ function Mergers() {
                     </div>
                     {(merger.determination_publication_date || (merger.end_of_determination_period && !merger.status?.toLowerCase().includes('suspended'))) && (
                       <div className={businessDayProgress ? 'order-3 md:order-2 col-span-2 md:col-span-1' : ''}>
-                        <p className="text-xs text-gray-500 mb-0.5">
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mb-0.5">
                           {merger.determination_publication_date ? 'Determination date' : 'End of determination period'}
                         </p>
-                        <p className="text-sm font-medium text-gray-700">
+                        <p className="text-sm font-medium text-gray-700 dark:text-gray-200">
                           {merger.determination_publication_date
                             ? formatDate(merger.determination_publication_date)
                             : formatDate(merger.end_of_determination_period)}
@@ -650,9 +650,9 @@ function Mergers() {
                     )}
                     {businessDayProgress && (
                       <div className="order-2 md:order-3">
-                        <p className="text-xs text-gray-500 mb-0.5">Business days</p>
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mb-0.5">Business days</p>
                         <p className={`text-sm font-medium ${
-                          businessDayProgress.overdue ? 'text-amber-600' : 'text-gray-700'
+                          businessDayProgress.overdue ? 'text-amber-600' : 'text-gray-700 dark:text-gray-200'
                         }`}>
                           {businessDayProgress.overdue
                             ? 'Overdue'
@@ -667,7 +667,7 @@ function Mergers() {
                       {merger.anzsic_codes.map((code) => (
                         <span
                           key={`${merger.merger_id}-anzsic-${code.code || code.name}`}
-                          className="inline-flex items-center px-2 py-0.5 rounded-md text-xs bg-gray-50 text-gray-500 border border-gray-100"
+                          className="inline-flex items-center px-2 py-0.5 rounded-md text-xs bg-gray-50 dark:bg-gray-800 text-gray-500 dark:text-gray-400 border border-gray-100 dark:border-gray-800"
                         >
                           {code.name}
                         </span>
@@ -684,13 +684,13 @@ function Mergers() {
 
         {sortedMergers.length === 0 && (
           <div className="text-center py-16">
-            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gray-100 flex items-center justify-center">
-              <FaSearch className="w-8 h-8 text-gray-500" aria-hidden="true" />
+            <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
+              <FaSearch className="w-8 h-8 text-gray-500 dark:text-gray-400" aria-hidden="true" />
             </div>
-            <p className="text-gray-500 font-medium">
+            <p className="text-gray-500 dark:text-gray-400 font-medium">
               {trackedOnly ? 'No tracked mergers yet' : 'No mergers found'}
             </p>
-            <p className="text-gray-500 text-sm mt-1">Try adjusting your search or filters</p>
+            <p className="text-gray-500 dark:text-gray-400 text-sm mt-1">Try adjusting your search or filters</p>
           </div>
         )}
       </div>

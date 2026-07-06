@@ -1,7 +1,7 @@
 import { useId, useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 
-function CollapsibleCard({ icon, iconBgClass = 'bg-gray-100', title, subtitle, onExpand, children }) {
+function CollapsibleCard({ icon, iconBgClass = 'bg-gray-100 dark:bg-gray-800', title, subtitle, onExpand, children }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const panelId = useId();
 
@@ -12,7 +12,7 @@ function CollapsibleCard({ icon, iconBgClass = 'bg-gray-100', title, subtitle, o
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-card mb-6 overflow-hidden">
+    <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card mb-6 overflow-hidden">
       <button
         type="button"
         onClick={handleToggle}
@@ -25,22 +25,22 @@ function CollapsibleCard({ icon, iconBgClass = 'bg-gray-100', title, subtitle, o
             {icon}
           </div>
           <div className="min-w-0">
-            <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider">
+            <h2 className="text-sm font-semibold text-gray-900 dark:text-gray-100 uppercase tracking-wider">
               {title}
             </h2>
             {subtitle && (
-              <p className="text-xs text-gray-500 mt-0.5">{subtitle}</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{subtitle}</p>
             )}
           </div>
         </div>
         <FaChevronDown
-          className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
+          className={`w-5 h-5 text-gray-500 dark:text-gray-400 flex-shrink-0 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
           aria-hidden="true"
         />
       </button>
 
       {isExpanded && (
-        <div id={panelId} className="px-6 pb-6 border-t border-gray-100">
+        <div id={panelId} className="px-6 pb-6 border-t border-gray-100 dark:border-gray-800">
           {children}
         </div>
       )}

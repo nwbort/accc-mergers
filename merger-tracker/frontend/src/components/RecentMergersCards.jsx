@@ -11,10 +11,10 @@ import CardCollapseGrid from './CardCollapseGrid';
 // surface. Anything with a determination (e.g. approved) falls through to
 // getCardStyle so it renders identically to the recent determinations cards.
 const UNDER_ASSESSMENT_STYLE = {
-  bg: 'bg-white border border-primary/40 hover:border-primary',
-  text: 'text-gray-900',
-  sub: 'text-gray-500',
-  chip: 'bg-primary/5 text-primary border border-primary/20',
+  bg: 'bg-white dark:bg-gray-900 border border-primary/40 hover:border-primary',
+  text: 'text-gray-900 dark:text-gray-100',
+  sub: 'text-gray-500 dark:text-gray-400',
+  chip: 'bg-primary/5 text-primary dark:text-accent-light border border-primary/20',
 };
 
 function getMergerCardStyle(merger) {
@@ -33,11 +33,11 @@ function getMergerCardStyle(merger) {
 function RecentMergersCards({ mergers }) {
   if (!mergers || mergers.length === 0) {
     return (
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-4">
+      <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-6">
+        <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4">
           Recently notified mergers
         </h2>
-        <p className="text-gray-500 text-sm">No recently notified mergers.</p>
+        <p className="text-gray-500 dark:text-gray-400 text-sm">No recently notified mergers.</p>
       </div>
     );
   }
@@ -46,7 +46,7 @@ function RecentMergersCards({ mergers }) {
     <section aria-labelledby="recent-mergers-heading">
       <h2
         id="recent-mergers-heading"
-        className="text-lg font-semibold text-gray-900 mb-4"
+        className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-4"
       >
         Recently notified mergers
       </h2>

@@ -164,11 +164,11 @@ export default function CommandPalette({ isOpen, onClose }) {
         role="dialog"
         aria-modal="true"
         aria-label="Command palette"
-        className="relative bg-white rounded-2xl shadow-xl border border-gray-100 max-w-lg w-full overflow-hidden animate-slide-up"
+        className="relative bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-100 dark:border-gray-800 max-w-lg w-full overflow-hidden animate-slide-up"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-100">
-          <FaSearch className="w-4 h-4 text-gray-400 shrink-0" aria-hidden="true" />
+        <div className="flex items-center gap-3 px-4 py-3 border-b border-gray-100 dark:border-gray-800">
+          <FaSearch className="w-4 h-4 text-gray-400 dark:text-gray-500 shrink-0" aria-hidden="true" />
           <input
             ref={inputRef}
             type="text"
@@ -176,14 +176,14 @@ export default function CommandPalette({ isOpen, onClose }) {
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
             placeholder="Search pages and mergers…"
-            className="flex-1 bg-transparent text-sm text-gray-900 placeholder-gray-400 focus:outline-none"
+            className="flex-1 bg-transparent text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none"
             role="combobox"
             aria-expanded="true"
             aria-controls="command-palette-listbox"
             aria-activedescendant={selectedKey}
             autoComplete="off"
           />
-          <kbd className="hidden sm:inline-flex items-center justify-center px-1.5 h-5 rounded bg-gray-100 border border-gray-200 text-[10px] font-mono font-medium text-gray-500">
+          <kbd className="hidden sm:inline-flex items-center justify-center px-1.5 h-5 rounded bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-[10px] font-mono font-medium text-gray-500 dark:text-gray-400">
             Esc
           </kbd>
         </div>
@@ -196,7 +196,7 @@ export default function CommandPalette({ isOpen, onClose }) {
           className="max-h-80 overflow-y-auto py-2"
         >
           {noResults && (
-            <li className="px-4 py-6 text-sm text-gray-400 text-center" role="presentation">
+            <li className="px-4 py-6 text-sm text-gray-400 dark:text-gray-500 text-center" role="presentation">
               No results for &ldquo;{trimmedQuery}&rdquo;
             </li>
           )}
@@ -204,7 +204,7 @@ export default function CommandPalette({ isOpen, onClose }) {
           {pageResults.length > 0 && (
             <>
               <li
-                className="px-4 pt-1 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-wide"
+                className="px-4 pt-1 pb-1 text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wide"
                 role="presentation"
               >
                 Pages
@@ -222,7 +222,7 @@ export default function CommandPalette({ isOpen, onClose }) {
                     onMouseEnter={() => setSelectedIndex(items.findIndex((i) => i.key === key))}
                     onClick={() => goTo(p.path)}
                     className={`px-4 py-2 text-sm cursor-pointer ${
-                      selected ? 'bg-primary/10 text-primary' : 'text-gray-700'
+                      selected ? 'bg-primary/10 text-primary dark:text-accent-light' : 'text-gray-700 dark:text-gray-200'
                     }`}
                   >
                     {p.label}
@@ -235,13 +235,13 @@ export default function CommandPalette({ isOpen, onClose }) {
           {showMergersGroup && (
             <>
               <li
-                className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-wide"
+                className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wide"
                 role="presentation"
               >
                 Mergers
               </li>
               {mergersLoading && mergerResults.length === 0 && (
-                <li className="px-4 py-2 text-sm text-gray-400" role="presentation">
+                <li className="px-4 py-2 text-sm text-gray-400 dark:text-gray-500" role="presentation">
                   Loading mergers…
                 </li>
               )}
@@ -259,7 +259,7 @@ export default function CommandPalette({ isOpen, onClose }) {
                     onMouseEnter={() => setSelectedIndex(items.findIndex((i) => i.key === key))}
                     onClick={() => goTo(path)}
                     className={`px-4 py-2 text-sm cursor-pointer truncate ${
-                      selected ? 'bg-primary/10 text-primary' : 'text-gray-700'
+                      selected ? 'bg-primary/10 text-primary dark:text-accent-light' : 'text-gray-700 dark:text-gray-200'
                     }`}
                   >
                     {m.merger_name}

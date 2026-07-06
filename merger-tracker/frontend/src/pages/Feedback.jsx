@@ -91,20 +91,20 @@ export default function Feedback() {
 
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 animate-fade-in">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">Share feedback</h1>
-          <p className="text-gray-500">Got a suggestion or spotted an issue? Let me know.</p>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2">Share feedback</h1>
+          <p className="text-gray-500 dark:text-gray-400">Got a suggestion or spotted an issue? Let me know.</p>
         </div>
 
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-8">
+        <div className="bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-card p-8">
           {status === 'success' ? (
             <div className="flex items-center gap-3 py-2">
-              <FaCheckCircle className="h-6 w-6 text-primary shrink-0" aria-hidden="true" />
-              <p className="text-gray-700">Thanks for your feedback!</p>
+              <FaCheckCircle className="h-6 w-6 text-primary dark:text-accent-light shrink-0" aria-hidden="true" />
+              <p className="text-gray-700 dark:text-gray-200">Thanks for your feedback!</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               <div>
-                <label htmlFor="feedback-message" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="feedback-message" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
                   Message <span className="text-red-500">*</span>
                 </label>
                 <textarea
@@ -115,12 +115,12 @@ export default function Feedback() {
                   rows={5}
                   maxLength={5000}
                   disabled={status === 'loading'}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-none disabled:opacity-50"
+                  className="w-full rounded-lg border border-gray-300 dark:border-gray-700 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary resize-none disabled:opacity-50"
                 />
               </div>
               <div>
-                <label htmlFor="feedback-email" className="block text-sm font-medium text-gray-700 mb-1">
-                  Email <span className="text-gray-500 font-normal">(optional, if you'd like a reply)</span>
+                <label htmlFor="feedback-email" className="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+                  Email <span className="text-gray-500 dark:text-gray-400 font-normal">(optional, if you'd like a reply)</span>
                 </label>
                 <input
                   id="feedback-email"
@@ -129,7 +129,7 @@ export default function Feedback() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@example.com"
                   disabled={status === 'loading'}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
+                  className="w-full rounded-lg border border-gray-300 dark:border-gray-700 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary disabled:opacity-50"
                 />
               </div>
               <div ref={turnstileRef} />
