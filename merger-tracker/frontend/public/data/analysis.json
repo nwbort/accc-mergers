@@ -3444,5 +3444,29 @@
       "count": 119
     },
     "extended_count": 2
-  }
+  },
+  "notification_restarts": [
+    {
+      "merger_id": "MN-95001",
+      "merger_name": "Sembcorp Industries Ltd - Alinta Energy",
+      "original_date": "2026-02-13",
+      "effective_date": "2026-04-07",
+      "delta_calendar_days": 53
+    },
+    {
+      "merger_id": "MN-30003",
+      "merger_name": "MicroStar Logistics - Konvoy",
+      "original_date": "2026-02-06",
+      "effective_date": "2026-02-20",
+      "delta_calendar_days": 14
+    },
+    {
+      "merger_id": "MN-60022",
+      "merger_name": "Autodesk - MaintainX",
+      "original_date": "2026-06-19",
+      "effective_date": "2026-06-23",
+      "delta_calendar_days": 4
+    }
+  ],
+  "restart_rate": 0.0182
 }
