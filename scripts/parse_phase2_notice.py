@@ -25,7 +25,7 @@ from typing import Dict, List, Optional, Tuple
 
 import pdfplumber
 
-from parse_determination import _group_chars_into_lines
+from parse_determination import _group_chars_into_lines, extract_commission_division
 
 _MATTERS_HEADING_NORM = 'matters the accc intends to investigate in phase 2'
 
@@ -297,24 +297,33 @@ def _feed_ocr_lines(builder: _MattersBoxBuilder, lines: List[Dict]):
 
 
 def parse_phase2_notice_pdf(pdf_path: str) -> Dict[str, object]:
-    """Parse a Phase 2 Notice PDF and return its "matters to investigate" boxes.
+    """Parse a Phase 2 Notice PDF and return its "matters to investigate" boxes
+    and its decision-attribution sentence.
 
     Returns ``{'matters_to_investigate': [{'heading': str | None, 'items':
-    [str, ...]}, ...]}``. Pages with no text layer (see module docstring) are
-    OCR'd as a best-effort fallback; if that still yields nothing the list is
-    simply shorter, not an error.
+    [str, ...]}, ...], 'commission_division': str | None}``.
+    ``commission_division`` is the notice's "Decision made by ..." footer
+    (see :func:`parse_determination.extract_commission_division`) — the
+    Phase 2-referral equivalent of a determination's commission-division
+    sentence, useful for matters whose assessment is later ceased and so
+    never reach a final determination. Pages with no text layer (see module
+    docstring) are OCR'd as a best-effort fallback; if that still yields
+    nothing the matters list is simply shorter, not an error.
     """
     with pdfplumber.open(pdf_path) as pdf:
         if not pdf.pages:
             raise ValueError(f"PDF has no pages: {pdf_path}")
 
         builder = _MattersBoxBuilder()
+        raw_text_parts: List[str] = []
         for page_idx, page in enumerate(pdf.pages):
             if page_idx == 0:
                 continue  # cover page
             if _page_needs_ocr(page):
                 try:
-                    _feed_ocr_lines(builder, _ocr_page_lines(page))
+                    ocr_lines = _ocr_page_lines(page)
+                    _feed_ocr_lines(builder, ocr_lines)
+                    raw_text_parts.append('\n'.join(line['text'] for line in ocr_lines))
                 except Exception as e:
                     # e.g. Tesseract isn't installed. Skip just this page
                     # rather than losing boxes already collected from
@@ -322,5 +331,9 @@ def parse_phase2_notice_pdf(pdf_path: str) -> Dict[str, object]:
                     print(f"Warning: OCR failed for page {page_idx} of {pdf_path}: {e}", file=sys.stderr)
             else:
                 _feed_vector_lines(builder, _collect_page_lines(page))
+                raw_text_parts.append(page.extract_text() or '')
 
-    return {'matters_to_investigate': builder.finish()}
+    return {
+        'matters_to_investigate': builder.finish(),
+        'commission_division': extract_commission_division('\n'.join(raw_text_parts)),
+    }

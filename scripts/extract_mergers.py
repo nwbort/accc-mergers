@@ -128,6 +128,23 @@ def is_safe_url(url):
             and (hostname == 'accc.gov.au' or hostname.endswith('.accc.gov.au')))
 
 
+def _is_determination_attachment(event_title: str | None, filename: str) -> bool:
+    """Whether an attachment is a determination PDF worth parsing for a
+    commission-division sentence and table content.
+
+    The event title doesn't always say "determination" — some are titled
+    with just the merger name (e.g. "Carlyle - BASF Coatings") even though
+    the attached PDF plainly is one — so this also falls back to the
+    attachment's own filename, which reliably does (e.g. "Foo -
+    Determination - 1 Jan 2026.pdf").
+    """
+    if not filename.lower().endswith('.pdf'):
+        return False
+    if event_title and 'determination' in event_title.lower():
+        return True
+    return 'determination' in filename.lower()
+
+
 def download_attachment(merger_id, attachment_url, event_title=None, cached_determination_data=None):
     """
     Downloads an attachment if it doesn't already exist locally.
@@ -192,12 +209,8 @@ def download_attachment(merger_id, attachment_url, event_title=None, cached_dete
                 for chunk in response.iter_content(chunk_size=8192):
                     f_out.write(chunk)
 
-        # Check if this is a determination PDF and parse it
-        is_determination = (
-            event_title and
-            'determination' in event_title.lower() and
-            filename.lower().endswith('.pdf')
-        )
+        # Check if this is a determination PDF and parse it.
+        is_determination = _is_determination_attachment(event_title, filename)
 
         if is_determination and os.path.exists(local_filepath):
             if cached_determination_data is not None:
@@ -483,7 +496,10 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
             # as an empty list) once extract_phase2_notice_data has parsed
             # this event, so use its presence as the cache signal.
             if 'phase2_notice_matters_to_investigate' in existing_event:
-                cached_phase2_notice_by_url[url] = existing_event['phase2_notice_matters_to_investigate']
+                cached_phase2_notice_by_url[url] = {
+                    'matters_to_investigate': existing_event['phase2_notice_matters_to_investigate'],
+                    'commission_division': existing_event.get('phase2_notice_commission_division'),
+                }
 
     scraped_events = []
     attachment_tables = soup.find_all('div', class_='table-responsive')
@@ -521,7 +537,9 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
                         event['determination_statement_of_reasons'] = statement
 
                 if url in cached_phase2_notice_by_url:
-                    event['phase2_notice_matters_to_investigate'] = cached_phase2_notice_by_url[url]
+                    cached_notice = cached_phase2_notice_by_url[url]
+                    event['phase2_notice_matters_to_investigate'] = cached_notice['matters_to_investigate']
+                    event['phase2_notice_commission_division'] = cached_notice['commission_division']
 
                 parsed_url = urlparse(url)
                 original_filename = unquote(os.path.basename(parsed_url.path)).strip()
@@ -1328,7 +1346,17 @@ def find_pending_phase2_notice_events(all_mergers_data):
 
 def extract_phase2_notice_data(all_mergers_data):
     """Parse pending Phase 2 Notice PDFs and attach their "matters the ACCC
-    intends to investigate" boxes to the corresponding event in place.
+    intends to investigate" boxes, and their decision-attribution sentence,
+    to the corresponding event in place.
+
+    The decision-attribution sentence is stored as
+    ``phase2_notice_commission_division`` — deliberately not
+    ``determination_commission_division`` — since a matter that reaches a
+    final determination gets its *own* (possibly different) attribution
+    from that later determination PDF, which should take precedence; this
+    field only matters as a fallback for matters whose assessment is ceased
+    (or otherwise never reaches a determination) after being referred to
+    Phase 2.
 
     Run in the enrich phase (after DOCX conversion) rather than inline
     during download: some notices redact individual paragraphs by
@@ -1349,6 +1377,7 @@ def extract_phase2_notice_data(all_mergers_data):
         try:
             data = parse_phase2_notice_pdf(local_path)
             event['phase2_notice_matters_to_investigate'] = data.get('matters_to_investigate', [])
+            event['phase2_notice_commission_division'] = data.get('commission_division')
             parsed_count += 1
         except Exception as e:
             print(f"Error parsing Phase 2 Notice PDF for {merger_id}: {e}", file=sys.stderr)

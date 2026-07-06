@@ -12,22 +12,33 @@ from pathlib import Path
 
 def extract_commission_division(text: str) -> Optional[str]:
     """
-    Extract the commission division information from the last sentence of the determination.
+    Extract the commission/decision-division attribution sentence from the
+    end of a determination (or Phase 2 Notice) PDF.
 
     Examples:
     - "Determination made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Act"
     - "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act"
+    - "Decision made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Competition and Consumer Act 2010 (Cth)"
+      (the equivalent sentence on a Phase 2 Notice, which decides a referral
+      rather than a final determination)
 
     Args:
-        text: Full text of the determination PDF
+        text: Full text of the PDF
 
     Returns:
-        The commission division sentence, or None if not found
+        The attribution sentence, or None if not found
     """
-    # Look for sentences that start with "Determination made by"
-    # This should typically be at the end of the document
-    # The sentence may span multiple lines, so use DOTALL and look for "of the Act" as the ending
-    pattern = r'Determination made by.+?(?:of the Act|under section \d+\(\d+\)(?:\s+of the Act)?)'
+    # Look for sentences that start with "Determination made by" or "Decision
+    # made by" (the Phase 2 Notice equivalent). This should typically be at
+    # the end of the document. The sentence may span multiple lines, so use
+    # DOTALL and look for "of the Act" (or the Phase 2 Notice's fuller
+    # "Competition and Consumer Act <year> (Cth)" reference) as the ending.
+    pattern = (
+        r'(?:Determination|Decision) made by.+?'
+        r'(?:of the Act'
+        r'|under section \d+\(\d+\)(?:\s+of the Act)?'
+        r'|of the Competition and Consumer Act \d{4}\s*\(Cth\))'
+    )
     matches = re.findall(pattern, text, re.IGNORECASE | re.DOTALL)
 
     if matches:

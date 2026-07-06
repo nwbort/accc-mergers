@@ -34,6 +34,7 @@ from extract_mergers import (
     find_pending_phase2_notice_events,
     extract_phase2_notice_data,
     _calculate_missing_end_of_determination_period,
+    _is_determination_attachment,
 )
 from static_data.business_days import calculate_business_days
 import extract_mergers
@@ -361,6 +362,47 @@ class TestExtractCommissionDivision:
         )
         result = extract_commission_division(text)
         assert "Commissioner B" in result
+
+    def test_phase2_notice_decision_sentence(self):
+        # Phase 2 Notices attribute a "Decision", not a "Determination", and
+        # cite the Act by its full name rather than "of the Act".
+        text = (
+            "Matters the ACCC intends to investigate in Phase 2\n"
+            "Decision made by a division of the Commission constituted by a "
+            "direction issued pursuant to section 19 of the Competition and "
+            "Consumer Act 2010 (Cth)"
+        )
+        result = extract_commission_division(text)
+        assert result is not None
+        assert result.startswith("Decision made by")
+        assert "Competition and Consumer Act 2010 (Cth)" in result
+
+
+# ---------------------------------------------------------------------------
+# extract_mergers: _is_determination_attachment
+# ---------------------------------------------------------------------------
+
+class TestIsDeterminationAttachment:
+    def test_true_when_title_says_determination(self):
+        assert _is_determination_attachment('Phase 1 - Determination', 'Foo.pdf') is True
+
+    def test_true_when_only_filename_says_determination(self):
+        # Regression case: some events are titled with just the merger name
+        # (e.g. "Carlyle - BASF Coatings"), even though the attached PDF is a
+        # determination — the filename ("...-Determination-...pdf") still
+        # says so and previously wasn't checked.
+        assert _is_determination_attachment(
+            'Carlyle - BASF Coatings', 'Carlyle BASF Coatings -Determination - 18 December 2025.pdf',
+        ) is True
+
+    def test_false_for_non_determination_pdf(self):
+        assert _is_determination_attachment('Merger notified to ACCC', 'Notification.pdf') is False
+
+    def test_false_for_non_pdf_even_if_title_says_determination(self):
+        assert _is_determination_attachment('Phase 1 - Determination', 'Foo.docx') is False
+
+    def test_false_when_title_is_none(self):
+        assert _is_determination_attachment(None, 'Notification.pdf') is False
 
 
 # ---------------------------------------------------------------------------
@@ -1877,6 +1919,31 @@ class TestExtractPhase2NoticeData:
         count = extract_phase2_notice_data(mergers)
         assert count == 1
         assert event['phase2_notice_matters_to_investigate'] == boxes
+        # No 'commission_division' key returned by the mock -> stored as None,
+        # not left unset, so the field's presence stays a reliable cache signal.
+        assert event['phase2_notice_commission_division'] is None
+
+    def test_attaches_decision_commission_division(self, tmp_path, monkeypatch):
+        monkeypatch.setattr(extract_mergers, 'MATTERS_DIR', str(tmp_path))
+        matter_dir = tmp_path / 'MN-30002'
+        matter_dir.mkdir()
+        (matter_dir / 'Notice.pdf').write_bytes(b'%PDF-1.4 fake')
+
+        division = (
+            'Decision made by a division of the Commission constituted by a '
+            'direction issued pursuant to section 19 of the Competition and '
+            'Consumer Act 2010 (Cth)'
+        )
+        monkeypatch.setattr(
+            extract_mergers, 'parse_phase2_notice_pdf',
+            lambda path: {'matters_to_investigate': [], 'commission_division': division},
+        )
+
+        event = {'title': 'X - Phase 2 Notice', 'url_gh': '/mergers/MN-30002/Notice.pdf'}
+        mergers = [{'merger_id': 'MN-30002', 'events': [event]}]
+
+        extract_phase2_notice_data(mergers)
+        assert event['phase2_notice_commission_division'] == division
 
     def test_leaves_already_parsed_events_untouched(self, tmp_path, monkeypatch):
         # Ampol-EG Australia's regression case: once an event has a result

@@ -2,23 +2,33 @@
 
 Label normalisation for ``by_commission_division`` (see that function):
 - Whitespace runs are collapsed.
-- A delegate sentence ("Determination made by <person> pursuant to a
-  delegation...") is canonicalised to "<title> <surname>" (e.g. "Commissioner
-  Philip Williams" and "Commissioner Williams" both collapse to "Commissioner
-  Williams") so the same delegate isn't split across buckets depending on
-  whether their first name happened to be spelled out. Non-delegate
-  sentences (e.g. "a division of the Commission constituted by a direction
-  ...") are left as-is; there's only ever one such phrasing per determination
-  type in practice.
+- A delegate sentence ("Determination/Decision made by <person> pursuant to
+  a delegation...") is canonicalised to "<title> <surname>" (e.g.
+  "Commissioner Philip Williams" and "Commissioner Williams" both collapse to
+  "Commissioner Williams") so the same delegate isn't split across buckets
+  depending on whether their first name happened to be spelled out.
+- A "division of the Commission" sentence ("Determination/Decision made by a
+  division of the Commission constituted by a direction issued pursuant to
+  section <n>...") is canonicalised to "A division of the Commission (s<n>
+  direction)", collapsing the "Determination"/"Decision" wording difference
+  and the trailing Act-reference wording difference (a Phase 2 Notice cites
+  "the Competition and Consumer Act 2010 (Cth)" in full; a determination just
+  says "of the Act") — both describe the same kind of body.
 - Grouping is case-insensitive (via ``str.casefold``), with the first-seen
   spelling for a group used as its display label.
 - A merger with no parsed ``determination_commission_division`` on any
-  event, or with a corrupted value, is grouped under "Unknown". A label
-  longer than ``_MAX_DIVISION_LABEL_LENGTH`` is treated as corrupted: real
-  division sentences top out around 120 characters, but the extractor's
-  "...of the Act" end-of-sentence marker can occasionally be missing nearby
-  in a determination PDF (e.g. within a lengthy s87B undertaking), causing it
-  to capture the rest of the document instead of just the division sentence.
+  event, or with a corrupted value, is grouped under "Unknown" — except that
+  a Phase 2 Notice's own "Decision made by..." sentence
+  (``phase2_notice_commission_division``) is used as a fallback first: a
+  matter whose assessment is ceased after referral to Phase 2 never gets a
+  final determination PDF to parse, but its Phase 2 Notice still says who
+  decided the referral.
+- A label longer than ``_MAX_DIVISION_LABEL_LENGTH`` is treated as corrupted:
+  real division sentences top out around 120 characters, but the
+  extractor's "...of the Act" end-of-sentence marker can occasionally be
+  missing nearby in a determination PDF (e.g. within a lengthy s87B
+  undertaking), causing it to capture the rest of the document instead of
+  just the division sentence.
 """
 
 import re
@@ -34,12 +44,22 @@ from ..filters import filter_notifications, filter_waivers
 
 _MAX_DIVISION_LABEL_LENGTH = 200
 
-# Matches "Determination made by <person> pursuant to a delegation ..." so the
-# delegate's name can be canonicalised to "<title> <surname>", collapsing
-# variants that do/don't spell out a first name (e.g. "Commissioner Philip
-# Williams" vs "Commissioner Williams").
+# Matches "Determination/Decision made by <person> pursuant to a delegation
+# ..." so the delegate's name can be canonicalised to "<title> <surname>",
+# collapsing variants that do/don't spell out a first name (e.g.
+# "Commissioner Philip Williams" vs "Commissioner Williams").
 _DELEGATE_PATTERN = re.compile(
-    r'^Determination made by (?P<person>.+?) pursuant to a delegation\b',
+    r'^(?:Determination|Decision) made by (?P<person>.+?) pursuant to a delegation\b',
+    re.IGNORECASE,
+)
+
+# Matches "Determination/Decision made by a division of the Commission
+# constituted by a direction issued pursuant to section <n> ..." so it can be
+# canonicalised regardless of the "Determination"/"Decision" wording and the
+# trailing Act-reference wording (see module docstring).
+_DIVISION_PATTERN = re.compile(
+    r'^(?:Determination|Decision) made by a division of the Commission '
+    r'constituted by a direction issued pursuant to section (?P<section>\d+)\b',
     re.IGNORECASE,
 )
 
@@ -122,19 +142,35 @@ def _normalise_division(raw: str | None) -> str | None:
             return f'{words[0]} {words[-1]}'
         return match.group('person')
 
+    match = _DIVISION_PATTERN.match(label)
+    if match:
+        return f"A division of the Commission (s{match.group('section')} direction)"
+
     return label
 
 
 def _commission_division_for(merger: dict) -> str | None:
-    """The normalised ``determination_commission_division`` label for ``merger``.
+    """The normalised commission-division label for ``merger``.
 
-    This is parsed onto whichever event carries the determination PDF — at
-    most one event per merger has it set — not onto the merger itself.
+    Prefers ``determination_commission_division`` — parsed onto whichever
+    event carries the determination PDF, at most one event per merger — over
+    ``phase2_notice_commission_division``, used as a fallback only when no
+    determination was ever reached (e.g. assessment ceased after a Phase 2
+    referral), since the final determination's attribution should win when
+    both exist.
     """
-    for event in merger.get('events') or []:
+    events = merger.get('events') or []
+
+    for event in events:
         raw = event.get('determination_commission_division')
         if raw is not None:
             return _normalise_division(raw)
+
+    for event in events:
+        raw = event.get('phase2_notice_commission_division')
+        if raw is not None:
+            return _normalise_division(raw)
+
     return None
 
 
