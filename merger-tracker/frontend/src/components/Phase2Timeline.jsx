@@ -3,9 +3,9 @@ import { differenceInCalendarDays, parseISO, isValid } from 'date-fns';
 import { mergerPath } from '../utils/slug';
 import { formatDateMedium } from '../utils/dates';
 
-// Clamp a milestone's position to a [0, 100] percentage of the referral →
-// deadline span, so a milestone that lands before/after the span (bad data,
-// clock restarts) still renders inside the bar rather than breaking layout.
+// Position of `date` along the referral -> deadline axis, clamped to [0, 100]
+// so a milestone that lands before/after the span (bad data, clock restarts)
+// still renders inside the bar rather than breaking layout.
 function percentAlong(dateStr, startStr, endStr) {
   if (!dateStr || !startStr || !endStr) return null;
   const date = parseISO(dateStr);
@@ -17,6 +17,23 @@ function percentAlong(dateStr, startStr, endStr) {
   const elapsed = differenceInCalendarDays(date, start);
   return Math.min(100, Math.max(0, (elapsed / total) * 100));
 }
+
+// The NOCC label sits in a fixed-width box centred on its dot — the same
+// technique MergerTimeline uses for its mid-axis label: the box's centre is
+// clamped to stay NOCC_HALF in from each track end, so it tracks the dot
+// through the middle of the track and, near an edge, stops there while the
+// dot keeps going — never overlapping the referred / determination-due end
+// labels, and (unlike a width-relative translate) behaves the same on a
+// narrow mobile track.
+const NOCC_BOX = '9.5rem';
+const NOCC_HALF = '4.75rem';
+const NOCC_EDGE_ALIGN = 10; // within this % of an end, align text to that end
+
+// Every label sits its bottom this far above the line; every date sits its
+// top this far below it, shared across the start/track/end columns so they
+// line up (mirrors MergerTimeline's aboveLine/belowLine).
+const ABOVE_LINE = 'absolute bottom-1/2 mb-2';
+const BELOW_LINE = 'absolute top-1/2 mt-2';
 
 function InferredBadge() {
   return (
@@ -35,9 +52,17 @@ function MatterBar({ matter }) {
   const todayPercent = percentAlong(new Date().toISOString(), referral_date, end_of_determination_period);
   const noccPercent = percentAlong(nocc_date, referral_date, end_of_determination_period);
 
+  const noccLabelStyle = noccPercent === null ? null : {
+    width: NOCC_BOX,
+    maxWidth: '100%',
+    left: `clamp(${NOCC_HALF}, ${noccPercent}%, calc(100% - ${NOCC_HALF}))`,
+    transform: 'translateX(-50%)',
+    textAlign: noccPercent < NOCC_EDGE_ALIGN ? 'left' : noccPercent > 100 - NOCC_EDGE_ALIGN ? 'right' : 'center',
+  };
+
   return (
     <li className="py-4 first:pt-0 last:pb-0">
-      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 mb-2">
+      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 mb-3">
         <Link
           to={mergerPath(merger_id, merger_name)}
           className="text-sm font-semibold text-gray-900 hover:text-primary transition-colors truncate"
@@ -50,32 +75,54 @@ function MatterBar({ matter }) {
         </div>
       </div>
 
-      <div className="relative h-3 rounded-full bg-phase-2-pale" role="img" aria-label={`Phase 2 timeline for ${merger_name}, from referral ${formatDateMedium(referral_date)} to determination due ${formatDateMedium(end_of_determination_period)}`}>
-        <div className="absolute inset-0 rounded-full bg-phase-2/25" />
+      <div className="flex items-stretch gap-2 sm:gap-4">
+        {/* Start endpoint — outside the track, hugging it from the left */}
+        <div className="relative w-16 sm:w-20 shrink-0 h-11">
+          <span className={`${ABOVE_LINE} inset-x-0 text-right text-[11px] font-medium text-gray-500`}>Referred</span>
+          <span className={`${BELOW_LINE} inset-x-0 text-right text-xs font-medium text-gray-900`}>{formatDateMedium(referral_date)}</span>
+        </div>
 
-        {todayPercent !== null && (
+        {/* Track region — the NOCC label lives inside it, above the line */}
+        <div className="relative flex-1 min-w-0 h-11">
+          {noccPercent !== null && nocc_date && (
+            <span
+              className={`${ABOVE_LINE} text-[11px] text-gray-500 whitespace-nowrap`}
+              style={noccLabelStyle}
+            >
+              {nocc_issued ? 'NOCC issued' : 'NOCC due'} {formatDateMedium(nocc_date)}
+            </span>
+          )}
+
           <div
-            className="absolute top-1/2 -translate-y-1/2 h-5 w-0.5 bg-gray-900"
-            style={{ left: `${todayPercent}%` }}
-            title="Today"
-          />
-        )}
+            className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-3 rounded-full bg-phase-2-pale"
+            role="img"
+            aria-label={`Phase 2 timeline for ${merger_name}, from referral ${formatDateMedium(referral_date)} to determination due ${formatDateMedium(end_of_determination_period)}`}
+          >
+            <div className="absolute inset-0 rounded-full bg-phase-2/25" />
 
-        {noccPercent !== null && (
-          <div
-            className={`absolute top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full ring-2 ring-white ${nocc_issued ? 'bg-phase-2-dark' : 'bg-gray-400'}`}
-            style={{ left: `calc(${noccPercent}% - 5px)` }}
-            title={`${nocc_issued ? 'NOCC issued' : 'NOCC due'}: ${formatDateMedium(nocc_date)}`}
-          />
-        )}
-      </div>
+            {todayPercent !== null && (
+              <div
+                className="absolute top-1/2 -translate-y-1/2 h-5 w-0.5 bg-gray-900"
+                style={{ left: `${todayPercent}%` }}
+                title="Today"
+              />
+            )}
 
-      <div className="mt-1.5 flex flex-wrap justify-between gap-x-3 text-xs text-gray-500">
-        <span>Referred {formatDateMedium(referral_date)}</span>
-        {nocc_date && (
-          <span>{nocc_issued ? 'NOCC issued' : 'NOCC due'} {formatDateMedium(nocc_date)}</span>
-        )}
-        <span>Determination due {formatDateMedium(end_of_determination_period)}</span>
+            {noccPercent !== null && (
+              <div
+                className={`absolute top-1/2 h-2.5 w-2.5 rounded-full ring-2 ring-white ${nocc_issued ? 'bg-phase-2-dark' : 'bg-gray-400'}`}
+                style={{ left: `${noccPercent}%`, transform: 'translate(-50%, -50%)' }}
+                title={`${nocc_issued ? 'NOCC issued' : 'NOCC due'}: ${formatDateMedium(nocc_date)}`}
+              />
+            )}
+          </div>
+        </div>
+
+        {/* End endpoint — outside the track, hugging it from the right */}
+        <div className="relative w-16 sm:w-20 shrink-0 h-11">
+          <span className={`${ABOVE_LINE} inset-x-0 text-left text-[11px] font-medium text-gray-500`}>Determination due</span>
+          <span className={`${BELOW_LINE} inset-x-0 text-left text-xs font-medium text-gray-900`}>{formatDateMedium(end_of_determination_period)}</span>
+        </div>
       </div>
     </li>
   );

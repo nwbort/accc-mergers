@@ -42,9 +42,11 @@ describe('Phase2Timeline', () => {
     renderTimeline([makeMatter()]);
     expect(screen.getByText('Acme – Globex')).toBeInTheDocument();
     expect(screen.getByText('MN-00001')).toBeInTheDocument();
-    expect(screen.getByText('Referred 01 Jan 2026')).toBeInTheDocument();
+    expect(screen.getByText('Referred')).toBeInTheDocument();
+    expect(screen.getByText('01 Jan 2026')).toBeInTheDocument();
     expect(screen.getByText('NOCC issued 10 Feb 2026')).toBeInTheDocument();
-    expect(screen.getByText('Determination due 01 Jun 2026')).toBeInTheDocument();
+    expect(screen.getByText('Determination due')).toBeInTheDocument();
+    expect(screen.getByText('01 Jun 2026')).toBeInTheDocument();
   });
 
   it('labels a not-yet-issued NOCC as due, not issued', () => {

@@ -29,11 +29,6 @@ function Phase2() {
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
             Phase 2 tracker
           </h1>
-          <p className="mt-1 text-sm text-gray-500 max-w-2xl">
-            Only a handful of mergers ever reach ACCC Phase 2 (detailed) assessment.
-            This page tracks statutory milestones for matters currently under review,
-            plus recently completed Phase 2 matters.
-          </p>
         </header>
 
         <section aria-labelledby="phase2-current-heading" className="mb-8">
