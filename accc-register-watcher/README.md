@@ -71,7 +71,11 @@ Cloudflare Email Routing rules aren't expressible in `wrangler.toml`.
    list's real sender, `do-not-reply@accc.gov.au` — redeploy after any
    changes to it. It's checked against both the envelope sender and the
    `From:` header, so it stays effective even if the list sends through a
-   third-party bulk mailer with a different envelope address.
+   third-party bulk mailer with a different envelope address. **Leaving it
+   blank/unset rejects all senders** (logging a warning) rather than
+   accepting any — if the list starts sending from a different bulk-mail
+   address, add it here (or use a domain entry like `@accc.gov.au`) rather
+   than clearing the var.
 
 ## Verify
 
