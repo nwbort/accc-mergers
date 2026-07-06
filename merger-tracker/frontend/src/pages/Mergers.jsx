@@ -600,7 +600,7 @@ function Mergers() {
                         }`}>
                           {businessDayProgress.overdue
                             ? 'Overdue'
-                            : `BD ${businessDayProgress.elapsed}/${businessDayProgress.total}`}
+                            : `${businessDayProgress.elapsed}/${businessDayProgress.total}`}
                         </p>
                       </div>
                     )}
