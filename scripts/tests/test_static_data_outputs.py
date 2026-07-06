@@ -219,6 +219,57 @@ class TestStatsGenerate:
         assert phase_2['determination_date'] == '2026-04-16T12:00:00Z'
 
 
+class TestStatsMedianMatchesAnalysis:
+    """stats.py and analysis.py must agree on 'median Phase 1 duration'.
+
+    Regression test for the two modules previously disagreeing on
+    even-length duration lists: stats.py took the upper-middle element
+    while analysis.py used statistics.median (average of the two middle
+    values).
+    """
+
+    def test_even_length_duration_list_medians_agree(self):
+        mergers = [
+            {
+                'merger_id': f'MN-800{i}',
+                'merger_name': f'Merger {i}',
+                'status': 'Determined',
+                'accc_determination': 'Approved',
+                'stage': 'Phase 1 - preliminary assessment',
+                'effective_notification_datetime': notified,
+                'determination_publication_date': determined,
+                'end_of_determination_period': determined,
+                'page_modified_datetime': determined,
+                'anzsic_codes': [],
+                'acquirers': [f'Acquirer {i}'],
+                'targets': [f'Target {i}'],
+                'other_parties': [],
+                'url': f'https://example.com/MN-800{i}',
+                'events': [
+                    {'title': 'Merger notified to ACCC', 'date': notified},
+                    {'title': 'Phase 1 - Determination', 'date': determined},
+                ],
+            }
+            for i, (notified, determined) in enumerate([
+                ('2025-01-06T09:00:00Z', '2025-01-15T12:00:00Z'),
+                ('2025-02-03T09:00:00Z', '2025-02-19T12:00:00Z'),
+                ('2025-03-03T09:00:00Z', '2025-03-25T12:00:00Z'),
+                ('2025-04-07T09:00:00Z', '2025-05-06T12:00:00Z'),
+            ])
+        ]
+        enriched = [enrich_merger(m) for m in mergers]
+
+        stats_payload = stats.generate(enriched)
+        analysis_payload = analysis.generate(enriched)
+
+        assert stats_payload['phase_duration']['median_business_days'] == (
+            analysis_payload['phase1_duration']['stats']['median']
+        )
+        assert stats_payload['phase_duration']['median_days'] == (
+            analysis_payload['phase1_duration']['calendar_stats']['median']
+        )
+
+
 # ---------------------------------------------------------------------------
 # industries
 # ---------------------------------------------------------------------------

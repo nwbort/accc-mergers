@@ -18,6 +18,7 @@ import { API_ENDPOINTS } from '../config';
 import { getDaysRemaining, isDatePast } from '../utils/dates';
 import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen } from '../utils/lastVisit';
+import { formatMedian } from '../utils/formatMedian';
 
 ChartJS.register(
   Title,
@@ -156,12 +157,12 @@ function Dashboard() {
           title="Median phase 1 duration"
           value={
             stats.phase_duration.median_business_days
-              ? `${stats.phase_duration.median_business_days} business days`
+              ? `${formatMedian(stats.phase_duration.median_business_days)} business days`
               : 'N/A'
           }
           subtitle={
             stats.phase_duration.median_days
-              ? `${stats.phase_duration.median_days} calendar days`
+              ? `${formatMedian(stats.phase_duration.median_days)} calendar days`
               : null
           }
           icon={<FaChartLine />}
