@@ -8,7 +8,7 @@ from urllib.parse import urljoin, urlparse, unquote
 import unicodedata
 import requests
 import re
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from markdownify import markdownify as md
 from parse_determination import parse_determination_pdf
 from parse_phase2_notice import parse_phase2_notice_pdf
@@ -1035,7 +1035,7 @@ def auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers):
 
     Returns a set of newly frozen merger IDs (empty set if nothing was fixed).
     """
-    today = datetime.utcnow()
+    today = datetime.now(timezone.utc)
     today_iso = today.strftime('%Y-%m-%dT12:00:00Z')
     day = str(today.day)
     today_display = f"{day} {today.strftime('%b %Y')}"  # e.g. "6 May 2026"
