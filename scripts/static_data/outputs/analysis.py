@@ -17,18 +17,24 @@ Label normalisation for ``by_commission_division`` (see that function):
 - Grouping is case-insensitive (via ``str.casefold``), with the first-seen
   spelling for a group used as its display label.
 - A merger with no parsed ``determination_commission_division`` on any
-  event, or with a corrupted value, is grouped under "Unknown" — except that
-  a Phase 2 Notice's own "Decision made by..." sentence
-  (``phase2_notice_commission_division``) is used as a fallback first: a
-  matter whose assessment is ceased after referral to Phase 2 never gets a
-  final determination PDF to parse, but its Phase 2 Notice still says who
-  decided the referral.
+  event, or with a corrupted value, falls back to a Phase 2 Notice's own
+  "Decision made by..." sentence (``phase2_notice_commission_division``)
+  first: a matter whose assessment is ceased after referral to Phase 2 never
+  gets a final determination PDF to parse, but its Phase 2 Notice still says
+  who decided the referral.
 - A label longer than ``_MAX_DIVISION_LABEL_LENGTH`` is treated as corrupted:
   real division sentences top out around 120 characters, but the
   extractor's "...of the Act" end-of-sentence marker can occasionally be
   missing nearby in a determination PDF (e.g. within a lengthy s87B
   undertaking), causing it to capture the rest of the document instead of
   just the division sentence.
+- If still nothing is recoverable, the merger is split between two buckets
+  rather than one blanket "Unknown" (see ``_PENDING_STATUSES`` and
+  :func:`by_commission_division`): "Not yet determined" for matters still
+  under assessment/suspended (there's simply no decision yet), and "Unknown"
+  for matters that did reach or abandon an outcome but whose division
+  genuinely couldn't be identified — a data gap worth investigating, unlike
+  the former.
 """
 
 import re
@@ -174,23 +180,41 @@ def _commission_division_for(merger: dict) -> str | None:
     return None
 
 
+# Statuses that mean a merger hasn't reached (and may never reach, if
+# suspended pending information) a determination yet, as opposed to one that
+# has but whose division couldn't be identified. See by_commission_division.
+_PENDING_STATUSES = {merger_status.UNDER_ASSESSMENT, merger_status.ASSESSMENT_SUSPENDED}
+
+
 def by_commission_division(mergers: list) -> list[dict]:
     """Determination counts, outcome mix, and Phase 1 duration per commission division.
 
     See the module docstring for the label normalisation rules. Divisions are
-    sorted by determination count, descending.
+    sorted by determination count, descending. Mergers with no recoverable
+    division are split into two buckets rather than one blanket "Unknown":
+    "Not yet determined" for those still under assessment (or suspended) —
+    there's simply no decision yet to attribute — and "Unknown" for those
+    that reached (or abandoned) an outcome but whose division genuinely
+    couldn't be identified (a data gap worth investigating, not an absence
+    of data).
     """
     groups: dict[str, dict] = {}
+    pending = []
     unknown = []
     for m in mergers:
         label = _commission_division_for(m)
         if label is None:
-            unknown.append(m)
+            if m.get('status') in _PENDING_STATUSES:
+                pending.append(m)
+            else:
+                unknown.append(m)
             continue
         bucket = groups.setdefault(label.casefold(), {"label": label, "mergers": []})
         bucket["mergers"].append(m)
 
     buckets = list(groups.values())
+    if pending:
+        buckets.append({"label": "Not yet determined", "mergers": pending})
     if unknown:
         buckets.append({"label": "Unknown", "mergers": unknown})
 

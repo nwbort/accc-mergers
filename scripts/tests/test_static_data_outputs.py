@@ -1039,6 +1039,33 @@ class TestByCommissionDivision:
         unknown = next(d for d in divisions if d['division'] == 'Unknown')
         assert unknown['count'] == 2
 
+    def test_still_under_assessment_is_separated_from_unknown(self):
+        # A merger with no division parsed because it simply hasn't been
+        # determined yet shouldn't be lumped in with genuine data gaps
+        # (corrupted/missing extraction on an already-determined merger).
+        raw = [{
+            'merger_id': 'MN-4001',
+            'merger_name': 'Alpha Two acquires Beta Two',
+            'status': 'Under assessment',
+            'accc_determination': None,
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-08-01T09:00:00Z',
+            'determination_publication_date': None,
+            'anzsic_codes': [],
+            'acquirers': [], 'targets': [], 'other_parties': [],
+            'url': 'https://example.com/MN-4001',
+            'events': [{'title': 'Merger notified to ACCC', 'date': '2025-08-01T09:00:00Z', 'url': 'e11'}],
+        }]
+        fixture = _commission_division_fixture() + [enrich_merger(m) for m in raw]
+        divisions = analysis.generate(fixture)['by_commission_division']
+
+        pending = next(d for d in divisions if d['division'] == 'Not yet determined')
+        assert pending['count'] == 1
+        # The genuinely corrupted/missing-extraction cases from the base
+        # fixture (both already "Determined") stay in "Unknown", unaffected.
+        unknown = next(d for d in divisions if d['division'] == 'Unknown')
+        assert unknown['count'] == 2
+
     def test_median_phase_1_business_days_uses_the_subset(self):
         divisions = analysis.generate(_commission_division_fixture())['by_commission_division']
         williams = next(d for d in divisions if 'Williams' in d['division'])
