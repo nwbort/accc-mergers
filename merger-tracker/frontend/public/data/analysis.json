@@ -1358,6 +1358,10 @@
         "calendar_days": 10
       },
       {
+        "business_days": 12,
+        "calendar_days": 18
+      },
+      {
         "business_days": 2,
         "calendar_days": 10
       },
@@ -1696,17 +1700,17 @@
     ],
     "stats": {
       "average": 12.2,
-      "median": 12.0,
+      "median": 12,
       "min": 2,
       "max": 24,
-      "count": 256
+      "count": 257
     },
     "calendar_stats": {
       "average": 18.4,
-      "median": 17.0,
+      "median": 17,
       "min": 2,
       "max": 39,
-      "count": 256
+      "count": 257
     }
   },
   "monthly_volume": {
@@ -1746,7 +1750,7 @@
       48,
       45,
       67,
-      36,
+      37,
       0
     ]
   },
@@ -1917,9 +1921,9 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 277,
+      "count": 278,
       "outcome_mix": {
-        "Approved": 277
+        "Approved": 278
       },
       "median_phase_1_business_days": 16.0
     },

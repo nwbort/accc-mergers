@@ -1,6 +1,6 @@
 {
   "total_mergers": 166,
-  "total_waivers": 256,
+  "total_waivers": 257,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 125,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 242,
+    "Approved": 243,
     "Not approved": 14
   },
   "phase_duration": {
@@ -58,7 +58,7 @@
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 18
+      "count": 19
     },
     {
       "name": "Accommodation",
@@ -177,6 +177,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-65024",
+      "merger_name": "Australian Venue Co \u2013 assets of Caf\u00e9 Kinetic, Flinders Lane Melbourne CBD",
+      "determination": "Approved",
+      "determination_date": "2026-07-07T12:00:00Z",
+      "page_modified_datetime": "2026-07-07T17:03:38+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-10018",
       "merger_name": "CSR - Complete Plaster",
       "determination": "Approved",
@@ -285,16 +295,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-30020",
-      "merger_name": "EBOS - Paringa Pet Foods",
-      "determination": "Approved",
-      "determination_date": "2026-07-02T12:00:00Z",
-      "page_modified_datetime": "2026-07-02T16:41:07+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

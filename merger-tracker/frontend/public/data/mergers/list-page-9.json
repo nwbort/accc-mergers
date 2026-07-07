@@ -1,6 +1,52 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-60022",
+      "merger_name": "Autodesk - MaintainX",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-23T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-04T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Autodesk, Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "autodesk-inc",
+            "name": "Autodesk, Inc."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "MaintainX, Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "maintainx-inc",
+            "name": "MaintainX, Inc."
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/autodesk-maintainx"
+    },
+    {
       "merger_id": "MN-70022",
       "merger_name": "Coles \u2013 supermarket site in Coffs Harbour (NSW)",
       "status": "Under assessment",
