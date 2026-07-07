@@ -69,6 +69,22 @@ def _completed_phase2(merger_id, determination='Approved'):
     }
 
 
+def _ceased_phase2(merger_id, ceased_date='2026-06-15T12:00:00Z'):
+    return {
+        'merger_id': merger_id,
+        'merger_name': f'{merger_id} deal',
+        'status': 'Assessment ceased',
+        'stage': 'Phase 2 - detailed assessment',
+        'effective_notification_datetime': '2025-01-06T09:00:00Z',
+        'end_of_determination_period': '2026-10-08T12:00:00Z',
+        'events': [
+            {'title': 'Merger notified to ACCC', 'date': '2025-01-06T09:00:00Z'},
+            {'title': 'ACCC decided notification is subject to Phase 2 review', 'date': '2025-03-10T09:00:00Z'},
+            {'title': 'Consideration of Notification ceased – following written request from notifying party', 'date': ceased_date},
+        ],
+    }
+
+
 def _waiver():
     return {
         'merger_id': 'WA-0001',
@@ -127,6 +143,17 @@ class TestCurrentVsCompleted:
         mergers = [enrich_merger(_waiver())]
         payload = phase2.generate(mergers)
         assert payload['count'] == {'current': 0, 'completed': 0}
+
+    def test_ceased_phase2_matter_included_as_completed(self):
+        # A ceased assessment ends the Phase 2 review without a formal
+        # determination; it should surface as a completed matter rather
+        # than being excluded or stuck in "current" forever.
+        mergers = [enrich_merger(_ceased_phase2('MN-0003'))]
+        payload = phase2.generate(mergers)
+        assert payload['count'] == {'current': 0, 'completed': 1}
+        entry = payload['completed'][0]
+        assert entry['determination'] == 'Assessment ceased'
+        assert entry['determination_date'] == '2026-06-15T12:00:00Z'
 
 
 class TestNoccFallsBackToComputedDueDate:
