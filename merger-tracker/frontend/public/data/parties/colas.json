@@ -1,7 +1,22 @@
 {
-  "id": "colas-queensland-pty-ltd",
-  "canonical_name": "Colas Queensland Pty Ltd",
+  "id": "colas",
+  "canonical_name": "Colas",
   "members": [
+    {
+      "name": "COLAS AUSTRALIA GROUP PTY LTD",
+      "identifier": "11 000 388 161",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "COLAS CONTRACTING PTY LTD",
+      "identifier": "88 127 397 899",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "COLAS NEW SOUTH WALES PTY LTD",
+      "identifier": "16 064 662 148",
+      "identifier_type": "ABN"
+    },
     {
       "name": "COLAS QUEENSLAND PTY LTD",
       "identifier": "91 169 872 208",
@@ -21,13 +36,23 @@
         "determination_date": "2026-04-13T12:00:00Z"
       }
     ],
-    "other": []
+    "other": [
+      {
+        "merger_id": "MN-30022",
+        "merger_name": "VSA - SprayLine",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "phase": "Phase 1",
+        "notification_date": "2026-07-06T12:00:00Z",
+        "determination_date": null
+      }
+    ]
   },
-  "merger_count": 1,
-  "phase_1_count": 1,
+  "merger_count": 2,
+  "phase_1_count": 2,
   "phase_2_count": 0,
   "waiver_count": 0,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 26.0,
     "median_days": 26,

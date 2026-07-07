@@ -1621,18 +1621,26 @@
           "name": "COLAS AUSTRALIA GROUP PTY LTD",
           "identifier_type": "ABN",
           "identifier": "11 000 388 161",
+          "canonical": {
+            "id": "colas",
+            "name": "Colas"
+          },
           "party_page": {
-            "id": "colas-australia-group-pty-ltd",
-            "name": "Colas Australia Group Pty Ltd"
+            "id": "colas",
+            "name": "Colas"
           }
         },
         {
           "name": "COLAS CONTRACTING PTY LTD",
           "identifier_type": "ABN",
           "identifier": "88 127 397 899",
+          "canonical": {
+            "id": "colas",
+            "name": "Colas"
+          },
           "party_page": {
-            "id": "colas-contracting-pty-ltd",
-            "name": "Colas Contracting Pty Ltd"
+            "id": "colas",
+            "name": "Colas"
           }
         }
       ],

@@ -134,18 +134,26 @@
           "name": "COLAS QUEENSLAND PTY LTD",
           "identifier_type": "ABN",
           "identifier": "91 169 872 208",
+          "canonical": {
+            "id": "colas",
+            "name": "Colas"
+          },
           "party_page": {
-            "id": "colas-queensland-pty-ltd",
-            "name": "Colas Queensland Pty Ltd"
+            "id": "colas",
+            "name": "Colas"
           }
         },
         {
           "name": "COLAS AUSTRALIA GROUP PTY LTD",
           "identifier_type": "ABN",
           "identifier": "11 000 388 161",
+          "canonical": {
+            "id": "colas",
+            "name": "Colas"
+          },
           "party_page": {
-            "id": "colas-australia-group-pty-ltd",
-            "name": "Colas Australia Group Pty Ltd"
+            "id": "colas",
+            "name": "Colas"
           }
         }
       ]
