@@ -41,11 +41,22 @@ def normalise_name(name: str) -> str:
     return out
 
 
+_PLACEHOLDER_IDENTIFIERS = {"NA", "NONE", "UNKNOWN"}
+
+
 def normalise_identifier(identifier: str) -> str:
-    """Strip whitespace/punctuation from an ABN/ACN-style identifier."""
+    """Strip whitespace/punctuation from an ABN/ACN-style identifier.
+
+    Placeholder values like "N/A" recorded for parties with no known ABN
+    normalise to a non-empty string ("NA"), which would otherwise make every
+    such party look like a shared-identifier match for every other one.
+    """
     if not identifier:
         return ""
-    return re.sub(r"[^0-9A-Za-z]", "", identifier).upper()
+    cleaned = re.sub(r"[^0-9A-Za-z]", "", identifier).upper()
+    if cleaned in _PLACEHOLDER_IDENTIFIERS:
+        return ""
+    return cleaned
 
 
 def build_group_lookups(groups: list[dict]) -> tuple[dict, dict]:

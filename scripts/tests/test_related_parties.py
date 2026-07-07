@@ -41,6 +41,21 @@ def test_normalise_identifier_strips_spaces_and_punctuation():
     assert pm.normalise_identifier("") == ""
 
 
+def test_normalise_identifier_treats_na_placeholder_as_missing():
+    # "N/A" is recorded for parties with no known ABN; it must not normalise
+    # to a shared identifier ("NA") that falsely links unrelated parties.
+    assert pm.normalise_identifier("N/A") == ""
+    assert pm.normalise_identifier("n/a") == ""
+
+
+def test_identical_placeholder_identifier_does_not_collide_unrelated_parties():
+    mergers = [
+        _merger("MN-1", targets=[{"name": "Metrotech Vertriebs GmbH", "identifier": "N/A"}]),
+        _merger("MN-2", targets=[{"name": "L Catterton Management Limited", "identifier": "N/A"}]),
+    ]
+    assert drp.find_candidates(mergers, []) == []
+
+
 def test_build_group_lookups_indexes_by_name_and_identifier():
     groups = [{
         "id": "coles",
