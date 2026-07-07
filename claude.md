@@ -4,7 +4,7 @@ A public-facing web application for tracking Australian Competition and Consumer
 
 ## Architecture
 
-Fully static — no backend server. Cloudflare Pages serves the React SPA plus generated JSON data files. Data is refreshed via GitHub Actions (hourly scrapes, daily extraction) which commit updated JSON files, triggering auto-deploy.
+Fully static — no backend server. Cloudflare Pages serves the React SPA plus generated JSON data files. Data is refreshed by `pipeline.yml`, which scrapes, extracts, and regenerates the static JSON files several times a day (plus on-demand via an email-triggered `repository_dispatch`) and commits the result, triggering auto-deploy.
 
 ### Frontend (`merger-tracker/frontend/`)
 
@@ -46,24 +46,34 @@ merger-tracker/frontend/src/
 │   ├── Timeline.jsx      # /timeline
 │   ├── Industries.jsx    # /industries
 │   ├── IndustryDetail.jsx # /industries/:code
+│   ├── PartyDetail.jsx   # /parties/:id
 │   ├── Commentary.jsx    # /commentary
 │   ├── Digest.jsx        # /digest
 │   ├── Analysis.jsx      # /analysis
+│   ├── Phase2.jsx        # /phase-2
 │   ├── NickTwort.jsx     # /nick-twort
 │   ├── PrivacyPolicy.jsx # /privacy
+│   ├── Feedback.jsx      # /feedback
 │   └── NotFound.jsx      # * (404)
 ├── components/           # Reusable UI
-│   ├── Navbar.jsx, Footer.jsx, ErrorBoundary.jsx, SEO.jsx
-│   ├── StatusBadge.jsx, WaiverBadge.jsx, NewBadge.jsx
-│   ├── StatCard.jsx, LoadingSpinner.jsx
+│   ├── Navbar.jsx, Footer.jsx, ErrorBoundary.jsx, ErrorCard.jsx, SEO.jsx, ScrollToTop.jsx
+│   ├── StatusBadge.jsx, WaiverBadge.jsx, NewBadge.jsx, StatCard.jsx, LoadingSpinner.jsx
+│   ├── CollapsibleCard.jsx, CardCollapseGrid.jsx, ShowMoreDivider.jsx
 │   ├── UpcomingEventsTimeline.jsx, RecentDeterminationsCards.jsx, RecentMergersCards.jsx
+│   ├── MergerTimeline.jsx, Phase2Timeline.jsx, Phase2NoticeMattersSection.jsx
+│   ├── BusinessDayProgress.jsx, PhaseDurationComparison.jsx
+│   ├── DeterminationExplanationSection.jsx, QuestionnaireSection.jsx
+│   ├── IndustryTreemap.jsx, IndustryMergerGroups.jsx
 │   ├── NotificationPanel.jsx, BellIcon.jsx
-│   ├── KeyboardShortcutsHelp.jsx
+│   ├── CommandPalette.jsx, KeyboardShortcutsHelp.jsx
+│   ├── FeedbackPopup.jsx
 │   └── ExternalLinkIcon.jsx
 ├── context/              # TrackingContext.jsx — global merger + industry follow state via localStorage
 │                         #   (industry follows flag only new filings/determinations)
-├── hooks/                # useDebounce.js, useKeyboardShortcuts.js
-├── utils/                # dates.js, dataCache.js, lastVisit.js, classNames.js, searchIndex.js
+├── hooks/                # useDebounce.js, useFetchData.js, useKeyboardShortcuts.js
+├── utils/                # dates.js, dataCache.js, lastVisit.js, classNames.js, searchIndex.js,
+│                         #   businessDayProgress.js, fetchAllMergers.js, formatMedian.js,
+│                         #   industryGroups.js, slug.js
 └── data/                 # ACT public holidays JSON
                           #   (act-public-holidays.json — source of truth for both the Python
                           #   pipeline and the frontend; authoritative list published at
@@ -77,22 +87,35 @@ merger-tracker/frontend/src/
 scripts/
 ├── scrape.sh             # Bash wrapper using pup to scrape ACCC register
 ├── extract_mergers.py    # Parse HTML → merger data JSON
+├── enrich_pdfs.py        # Run questionnaire/NOCC/Phase 2 Notice PDF parsing, auto-fix missing dates
 ├── generate_static_data.py  # Generate all frontend JSON files
+├── generate_similar_mergers.py # Suggest similar mergers by industry/party overlap
 ├── generate_weekly_digest.py  # Generate digest.json for weekly summary
 ├── generate_sitemap.py   # Generate sitemap.xml
 ├── generate_rss_feed.py  # Generate RSS feed
+├── generate-cli-data.sh  # Build/version-bump the accc-mergers-cli bundle + manifest
+├── build_cli_sqlite.py   # Build cli.sqlite from the CLI bundle
+├── embed.py              # Generate semantic search embeddings (Stage 1)
 ├── send_weekly_email.py  # Send weekly digest email via Cloudflare Worker
 ├── parse_determination.py   # Extract text from determination PDFs
 ├── parse_questionnaire.py   # Process questionnaire documents
+├── parse_nocc.py          # Parse Notice of Competition Concerns summary PDFs
+├── parse_phase2_notice.py # Parse "decision to proceed to Phase 2" notice PDFs
+├── check_phase2_notice_ocr_needed.py # CI helper: does a pending Phase 2 Notice need OCR?
+├── determination_text.py # Clean PDF-extracted determination text for the CLI bundle
 ├── normalization.py      # Data cleaning utilities
 ├── date_utils.py         # Date parsing helpers
+├── slug.py               # Human-readable URL slugs for merger detail pages
 ├── cutoff.py             # Skip old mergers logic
-├── detect_duplicates.py  # Identify duplicate merger entries (CI check)
-├── detect_related_mergers.py # Suggest waiver→notification pairs (CI check)
+├── merger_filters.py     # Canonical merger loading/filtering helpers (single source of truth)
+├── detect_duplicates.py  # Identify duplicate merger entries (daily PR)
+├── detect_related_mergers.py # Suggest waiver→notification pairs (daily PR)
 ├── detect_related_parties.py # Suggest same-entity party groups (daily PR)
+├── fix_missing_notification_dates.py # Suggest freezing missing notification dates (daily PR)
 ├── party_matching.py     # Shared party normalisation + group matching
+├── static_data/          # Generator package used by generate_static_data.py (outputs/, loaders, enrichment)
 ├── tools/                # Interactive admin web UIs (resolver, commentary, advisors)
-└── tests/                # test_pipeline.py, test_utils.py
+└── tests/                # Pytest suite covering the pipeline, generators, and CI checks
 
 data/
 ├── raw/                  # Scraped HTML files and PDFs
@@ -100,6 +123,9 @@ data/
 │                         #   advisors data is backend-only: never published to the frontend, and
 │                         #   stored encrypted as advisors.json.enc (cleartext advisors.json is
 │                         #   gitignored). See scripts/tools/README.md (ADVISORS_PASSPHRASE).
+├── embeddings.json / .bin # Semantic search embeddings (Stage 1, generated by embed.py)
+├── known_notification_dates.json # Manually-confirmed/frozen notification dates
+├── digest-archive/       # Past weekly digest.json snapshots
 └── output/               # Not deployed. Full enriched mergers.json (offline analysis)
     └── cli/              # Bundled data files for accc-mergers-cli (manifest + bundle)
 ```
@@ -136,8 +162,8 @@ python -m pytest scripts/tests/
 
 ## Key Data Flow
 
-1. GitHub Actions scrapes ACCC website hourly → raw HTML in `data/raw/`
-2. Daily extraction parses HTML → `data/processed/mergers.json`
+1. `pipeline.yml` scrapes the ACCC website → raw HTML in `data/raw/`
+2. It extracts new/changed matters → `data/processed/mergers.json`
 3. `generate_static_data.py` produces frontend JSON files in `merger-tracker/frontend/public/data/`
 4. Cloudflare Pages auto-deploys on push to main
 
@@ -155,21 +181,34 @@ All data files are pre-generated by `generate_static_data.py` (and other scripts
 | `timeline-meta.json` | Pagination metadata for timeline |
 | `industries.json` | ANZSIC codes (as tagged on mergers) with merger counts |
 | `industries/{code}.json` | One file per ANZSIC node (division/subdivision/group/class), with hierarchy metadata (name, level, breadcrumb ancestors, parent, children) and mergers rolled up from the node's subtree (each merger summary carries `notification_date`/`determination_date` to drive industry-follow notifications). Generated for the full ANZSIC tree from `scripts/static_data/anzsic_codes.json` |
+| `parties.json` | Every party (canonical group or single entity) with merger counts |
+| `parties/{id}.json` | Mergers per party, grouped by role |
 | `upcoming-events.json` | Future consultation/determination dates |
 | `commentary.json` | Mergers with user commentary |
-| `digest.json` | Weekly digest of merger activity |
+| `digest.json` | Weekly digest of merger activity (from `generate_weekly_digest.py`) |
 | `analysis.json` | Pre-computed analysis data |
+| `serial-acquirers.json` | Serial-acquirer ("creeping acquisitions") detection |
+| `theories_of_harm.json` | Keyword-classified theory-of-harm taxonomy |
+| `phase2.json` | Current + completed Phase 2 matters with statutory milestones |
+| `questionnaires/{id}.json` | Lazy-loaded questionnaire files |
+| `noccs/{id}.json` | Lazy-loaded Notice of Competition Concerns summary files |
 
 ## GitHub Actions Workflows
 
-| Workflow | Schedule | Purpose |
-|----------|----------|---------|
-| `scrape.yml` | Hourly | Scrape ACCC website for new merger pages |
-| `extract.yml` | Daily + on matters/ changes | Extract merger data → generate static files → deploy |
-| `convert.yml` | After extract | Convert DOCX attachments to PDF |
-| `detect-duplicates.yml` | On push | Check for duplicate merger entries |
-| `test.yml` | On push | Run Python test suite |
-| `update-sitemap.yml` | Daily | Regenerate sitemap.xml |
-| `weekly-digest.yml` | Weekly | Generate and send weekly digest email |
-| `send-weekly-email.yml` | Triggered | Send digest via Cloudflare Worker |
-| `all-mergers.yml` | Manual | Full re-extraction of all mergers |
+| Workflow | Trigger | Purpose |
+|----------|---------|---------|
+| `pipeline.yml` | Push to `main`, weekdays 4×/day + Sunday once (Sydney time), `repository_dispatch` (email-triggered), manual | End-to-end scrape → extract → convert DOCX → enrich → generate static files → commit; publishes `cli.sqlite` and opens tracking issues when needed |
+| `scrape.yml` | Manual | Standalone scrape of the ACCC register (outside the pipeline) |
+| `extract.yml` | Manual | Standalone extraction of merger data from raw HTML and commit |
+| `convert.yml` | Manual | Convert any unconverted DOCX attachments to PDF and commit |
+| `embed.yml` | Manual | Regenerate `data/embeddings.json`/`.bin` for semantic search |
+| `publish-cli-sqlite.yml` | Manual | Republish `cli.sqlite` + manifest to the orphan `cli-dist` branch |
+| `detect-duplicates.yml` | Daily (2:00 AM UTC), manual | Detect duplicate merger entries, open a fix PR |
+| `detect-related-mergers.yml` | Daily (2:30 AM UTC), manual | Suggest waiver↔notification merger links, open a PR |
+| `detect-related-parties.yml` | Daily (2:45 AM UTC), manual | Suggest same-entity party groupings, open a PR |
+| `fix-missing-notification-dates.yml` | Daily (3:00 AM UTC), manual | Auto-fix missing notification dates, open a PR |
+| `update-sitemap.yml` | Daily (8 AM AEST), manual | Regenerate `sitemap.xml` |
+| `weekly-digest.yml` | Weekly (Sunday, Sydney time), manual | Generate `digest.json` |
+| `send-weekly-email.yml` | Manual (schedule currently disabled) | Send the weekly digest email via the Cloudflare Worker |
+| `test.yml` | Manual | Run the Python test suite |
+| `frontend-test.yml` | Pull requests touching `merger-tracker/frontend/**`, manual | Run the frontend test suite |
