@@ -2310,6 +2310,97 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/oakley-capital-%E2%80%93-xtel"
     },
     {
+      "merger_id": "WA-15026",
+      "merger_name": "LTM \u2013 Randstad Digital entities including FinXL",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-12T12:00:00Z",
+      "determination_publication_date": "2026-07-07T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "LTM UK & Ireland Limited",
+          "identifier_type": null,
+          "identifier": "12817556 (UK company number)",
+          "party_page": {
+            "id": "ltm-uk-ireland-limited",
+            "name": "LTM UK & Ireland Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "FinXL Professional Services Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "74 104 804 793",
+          "party_page": {
+            "id": "finxl-professional-services-pty-ltd",
+            "name": "FinXL Professional Services Pty Ltd"
+          }
+        },
+        {
+          "name": "Randstad Digital B.V.",
+          "identifier_type": null,
+          "identifier": "91235944",
+          "party_page": {
+            "id": "randstad-digital-b-v",
+            "name": "Randstad Digital B.V."
+          }
+        },
+        {
+          "name": "Randstad Digital France SAS",
+          "identifier_type": null,
+          "identifier": "RC.S. Nanterre 352 905 707",
+          "party_page": {
+            "id": "randstad-digital-france-sas",
+            "name": "Randstad Digital France SAS"
+          }
+        },
+        {
+          "name": "Randstad Digital Holdings Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "29 104 800 482",
+          "party_page": {
+            "id": "randstad-digital-holdings-pty-ltd",
+            "name": "Randstad Digital Holdings Pty Ltd"
+          }
+        },
+        {
+          "name": "RANDSTAD N.V.",
+          "identifier_type": null,
+          "identifier": "Registered at the Trade Register of the Dutch Chamber of Commerce under number 33216172",
+          "party_page": {
+            "id": "randstad-n-v",
+            "name": "Randstad N.V."
+          }
+        },
+        {
+          "name": "RANDSTAD FRANCE SASU",
+          "identifier_type": null,
+          "identifier": "Registered with the Trade and Commercial Registry of Bobigny: number 350 988 051",
+          "party_page": {
+            "id": "randstad-france-sasu",
+            "name": "Randstad France Sasu"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        },
+        {
+          "code": "7211",
+          "name": "Employment Placement and Recruitment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ltm-%E2%80%93-randstad-digital-entities-including-finxl"
+    },
+    {
       "merger_id": "MN-10018",
       "merger_name": "CSR - Complete Plaster",
       "status": "Assessment completed",
@@ -3727,56 +3818,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/endeavour-group-retail-liquor-site-in-avalon-nsw"
-    },
-    {
-      "merger_id": "MN-65020",
-      "merger_name": "Regis Resources - Vault Minerals",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-22T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-03T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "REGIS RESOURCES LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "28 009 174 761",
-          "party_page": {
-            "id": "regis-resources-limited",
-            "name": "Regis Resources Limited"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "VAULT MINERALS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "73 068 647 610",
-          "party_page": {
-            "id": "vault-minerals-limited",
-            "name": "Vault Minerals Limited"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "0803",
-          "name": "Copper Ore Mining"
-        },
-        {
-          "code": "0804",
-          "name": "Gold Ore Mining"
-        },
-        {
-          "code": "0807",
-          "name": "Silver-Lead-Zinc Ore Mining"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/regis-resources-vault-minerals"
     }
   ],
   "page": 8,

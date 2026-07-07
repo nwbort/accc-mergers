@@ -19,7 +19,7 @@
       "code": "700",
       "name": "Computer System Design and Related Services",
       "level": "group",
-      "merger_count": 43
+      "merger_count": 44
     }
   ],
   "mergers": [
@@ -49,6 +49,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-06-23T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-15026",
+      "merger_name": "LTM \u2013 Randstad Digital entities including FinXL",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-12T12:00:00Z",
+      "determination_date": "2026-07-07T12:00:00Z"
     },
     {
       "merger_id": "WA-90021",
@@ -411,10 +420,10 @@
       "determination_date": "2026-01-20T12:00:00Z"
     }
   ],
-  "count": 43,
+  "count": 44,
   "phase_1_count": 17,
   "phase_2_count": 0,
-  "waiver_count": 26,
+  "waiver_count": 27,
   "active_count": 3,
   "phase_duration": {
     "average_days": 31.285714285714285,
