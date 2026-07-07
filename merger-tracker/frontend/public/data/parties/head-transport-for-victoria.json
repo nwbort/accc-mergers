@@ -1,0 +1,32 @@
+{
+  "id": "head-transport-for-victoria",
+  "canonical_name": "Head, Transport for Victoria",
+  "members": [
+    {
+      "name": "Head, Transport for Victoria",
+      "identifier": "97 481 088 949",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [
+      {
+        "merger_id": "MN-30022",
+        "merger_name": "VSA - SprayLine",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "phase": "Phase 1",
+        "notification_date": "2026-07-06T12:00:00Z",
+        "determination_date": null
+      }
+    ],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 1,
+  "phase_duration": null
+}

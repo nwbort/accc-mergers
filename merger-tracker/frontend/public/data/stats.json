@@ -1,10 +1,10 @@
 {
-  "total_mergers": 165,
+  "total_mergers": 166,
   "total_waivers": 256,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 124,
-    "Under assessment": 40,
+    "Under assessment": 41,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -78,6 +78,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-30022",
+      "merger_name": "VSA - SprayLine",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-06T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-15027",
       "merger_name": "Partnered Health - Ryan Plaza Medical Services",
@@ -161,14 +169,6 @@
     {
       "merger_id": "MN-50025",
       "merger_name": "Amazon \u2013 Globalstar",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-29T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50026",
-      "merger_name": "Stonepeak-led consortium - Estia Health",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-29T12:00:00Z",

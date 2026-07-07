@@ -131,6 +131,16 @@
       "effective_notification_datetime": "2026-07-01T12:00:00Z"
     },
     {
+      "type": "consultation_due",
+      "event_type_display": "Consultation responses due",
+      "date": "2026-07-14T12:00:00Z",
+      "merger_id": "MN-30022",
+      "merger_name": "VSA - SprayLine",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-06T12:00:00Z"
+    },
+    {
       "type": "determination_due",
       "event_type_display": "Determination due",
       "date": "2026-07-20T12:00:00Z",
@@ -519,8 +529,18 @@
       "status": "Under assessment",
       "stage": "Phase 2 - detailed assessment",
       "effective_notification_datetime": "2026-02-20T12:00:00Z"
+    },
+    {
+      "type": "determination_due",
+      "event_type_display": "Determination due",
+      "date": "2026-08-17T12:00:00Z",
+      "merger_id": "MN-30022",
+      "merger_name": "VSA - SprayLine",
+      "status": "Under assessment",
+      "stage": "Phase 1 - initial assessment",
+      "effective_notification_datetime": "2026-07-06T12:00:00Z"
     }
   ],
-  "count": 52,
+  "count": 54,
   "days_ahead": 60
 }
