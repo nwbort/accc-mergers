@@ -10,7 +10,7 @@ computed by :func:`static_data.enrichment.enrich_merger`.
 from constants import merger_status
 
 from ..enrichment import is_phase_2_referral_event
-from ..filters import exclude_for_public_output
+from ..filters import filter_notifications
 
 
 def _referral_date(merger: dict) -> str | None:
@@ -35,6 +35,16 @@ def _nocc(merger: dict) -> tuple:
 
 def _entry(merger: dict) -> dict:
     nocc_date, nocc_issued = _nocc(merger)
+
+    # A ceased assessment ends the Phase 2 review without a formal
+    # determination, so treat the cessation itself as the outcome (mirrors
+    # stats.py's "recent determinations" handling of ceased assessments).
+    determination = merger.get('phase_2_determination')
+    determination_date = merger.get('phase_2_determination_date')
+    if not determination and merger.get('status') == merger_status.ASSESSMENT_CEASED:
+        determination = merger_status.ASSESSMENT_CEASED
+        determination_date = merger.get('ceased_date')
+
     return {
         'merger_id': merger.get('merger_id'),
         'merger_name': merger.get('merger_name'),
@@ -42,8 +52,8 @@ def _entry(merger: dict) -> dict:
         'nocc_date': nocc_date,
         'nocc_issued': nocc_issued,
         'end_of_determination_period': merger.get('end_of_determination_period'),
-        'determination': merger.get('phase_2_determination'),
-        'determination_date': merger.get('phase_2_determination_date'),
+        'determination': determination,
+        'determination_date': determination_date,
         'phase_2_inferred': bool(merger.get('phase_2_inferred')),
     }
 
@@ -53,13 +63,15 @@ def generate(mergers: list) -> dict:
     current = []
     completed = []
 
-    for merger in exclude_for_public_output(mergers):
+    # Waivers are never Phase 2 matters, but ceased assessments must stay in
+    # so their cessation can surface as a completed Phase 2 outcome below.
+    for merger in filter_notifications(mergers):
         stage = merger.get('stage') or ''
         if merger_status.PHASE_2 not in stage:
             continue
 
         entry = _entry(merger)
-        if merger.get('phase_2_determination') and merger.get('phase_2_determination_date'):
+        if entry['determination'] and entry['determination_date']:
             completed.append(entry)
         else:
             current.append(entry)
