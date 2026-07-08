@@ -35,11 +35,10 @@ function median(values) {
 const ABOVE_LINE = 'absolute bottom-1/2 mb-2';
 const BELOW_LINE = 'absolute top-1/2 mt-2';
 
-// The "days to re-file" label sits in a fixed-width box centred between the
-// declined and re-filed dots — the same clamping technique Phase2Timeline
-// uses for its NOCC label, so it stays inside the track on narrow screens.
-const GAP_BOX = '4.5rem';
-const GAP_HALF = '2.25rem';
+// The "days to re-file" pill sits centred between the declined and re-filed
+// dots, clamped to stay inside the track on narrow screens — the same
+// technique Phase2Timeline uses for its NOCC label.
+const GAP_HALF = '1.75rem';
 
 function RefiledCard({ pair, showOutcome }) {
   const start = pair.waiver_filed_date;
@@ -51,10 +50,8 @@ function RefiledCard({ pair, showOutcome }) {
     ? (declinedPercent + filedPercent) / 2
     : null;
   const gapLabelStyle = gapPercent === null ? null : {
-    width: GAP_BOX,
-    maxWidth: '100%',
     left: `clamp(${GAP_HALF}, ${gapPercent}%, calc(100% - ${GAP_HALF}))`,
-    transform: 'translateX(-50%)',
+    transform: 'translate(-50%, -50%)',
   };
 
   return (
@@ -91,17 +88,8 @@ function RefiledCard({ pair, showOutcome }) {
         </div>
 
         <div className="relative flex-1 min-w-0 h-11">
-          {gapPercent !== null && daysToRefile !== null && (
-            <span
-              className={`${ABOVE_LINE} text-[11px] font-medium text-gray-500 text-center whitespace-nowrap`}
-              style={gapLabelStyle}
-            >
-              {daysToRefile} day{daysToRefile !== 1 ? 's' : ''}
-            </span>
-          )}
-
           <div
-            className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-3 rounded-full bg-gray-100"
+            className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-5 rounded-full bg-gray-100"
             role="img"
             aria-label={`Timeline for ${pair.notification_name}: waiver filed ${formatDateMedium(start)}, declined ${formatDateMedium(pair.waiver_declined_date)}, re-filed as a notification ${formatDateMedium(pair.notification_filed_date)}${showOutcome ? `, determined ${formatDateMedium(pair.notification_determination_date)}` : ', still under assessment'}`}
           >
@@ -114,16 +102,24 @@ function RefiledCard({ pair, showOutcome }) {
                 style={{ left: `${filedPercent}%` }}
               />
             )}
+            {gapPercent !== null && daysToRefile !== null && (
+              <span
+                className="absolute top-1/2 whitespace-nowrap text-[10px] font-semibold text-gray-700 bg-white/95 ring-1 ring-black/5 rounded-full px-1.5 py-0.5 shadow-sm"
+                style={gapLabelStyle}
+              >
+                {daysToRefile} day{daysToRefile !== 1 ? 's' : ''}
+              </span>
+            )}
             {declinedPercent !== null && (
               <div
-                className="absolute top-1/2 h-2.5 w-2.5 rounded-full ring-2 ring-white bg-phase-1-dark"
+                className="absolute top-1/2 h-3 w-3 rounded-full ring-2 ring-white bg-phase-1-dark"
                 style={{ left: `${declinedPercent}%`, transform: 'translate(-50%, -50%)' }}
                 title={`Waiver declined: ${formatDateMedium(pair.waiver_declined_date)}`}
               />
             )}
             {filedPercent !== null && (
               <div
-                className="absolute top-1/2 h-2.5 w-2.5 rounded-full ring-2 ring-white bg-accent-dark"
+                className="absolute top-1/2 h-3 w-3 rounded-full ring-2 ring-white bg-accent-dark"
                 style={{ left: `${filedPercent}%`, transform: 'translate(-50%, -50%)' }}
                 title={`Re-filed as notification: ${formatDateMedium(pair.notification_filed_date)}`}
               />
