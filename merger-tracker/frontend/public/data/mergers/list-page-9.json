@@ -1,6 +1,48 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-01104",
+      "merger_name": "Genea - Care Fertility Greenslopes",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-06-19T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-07-31T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "GENEA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "82 002 844 448",
+          "party_page": {
+            "id": "genea-pty-ltd",
+            "name": "Genea Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CARE FERTILITY GREENSLOPES PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "11 128 331 797",
+          "party_page": {
+            "id": "care-fertility-greenslopes-pty-ltd",
+            "name": "Care Fertility Greenslopes Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "8512",
+          "name": "Specialist Medical Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/genea-care-fertility-greenslopes"
+    },
+    {
       "merger_id": "WA-65024",
       "merger_name": "Australian Venue Co \u2013 assets of Caf\u00e9 Kinetic, Flinders Lane Melbourne CBD",
       "status": "Assessment completed",
@@ -1293,12 +1335,21 @@
       ],
       "other_parties": [
         {
-          "name": "X.AI Corp.",
+          "name": "X Global LLC",
           "identifier_type": null,
-          "identifier": "Nevada Entity Number  E289151220238",
+          "identifier": "Delaware File Number  6028653",
           "party_page": {
-            "id": "x-ai-corp",
-            "name": "X.AI Corp."
+            "id": "x-global-llc",
+            "name": "X Global LLC"
+          }
+        },
+        {
+          "name": "X ASIA PACIFIC INTERNET PTE. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "97 712 692 946",
+          "party_page": {
+            "id": "x-asia-pacific-internet-pte-ltd",
+            "name": "X Asia Pacific Internet Pte. Ltd."
           }
         },
         {
@@ -1311,12 +1362,12 @@
           }
         },
         {
-          "name": "X ASIA PACIFIC INTERNET PTE. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "97 712 692 946",
+          "name": "X.AI Corp.",
+          "identifier_type": null,
+          "identifier": "Nevada Entity Number  E289151220238",
           "party_page": {
-            "id": "x-asia-pacific-internet-pte-ltd",
-            "name": "X Asia Pacific Internet Pte. Ltd."
+            "id": "x-ai-corp",
+            "name": "X.AI Corp."
           }
         },
         {
@@ -1335,15 +1386,6 @@
           "party_page": {
             "id": "starlink-internet-services-pte-ltd",
             "name": "Starlink Internet Services Pte. Ltd."
-          }
-        },
-        {
-          "name": "X Global LLC",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  6028653",
-          "party_page": {
-            "id": "x-global-llc",
-            "name": "X Global LLC"
           }
         }
       ],

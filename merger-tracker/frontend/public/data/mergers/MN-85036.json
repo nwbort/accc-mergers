@@ -7,7 +7,7 @@
   "original_notification_datetime": "2026-06-30T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-08-11T12:00:00Z",
-  "page_modified_datetime": "2026-07-01T09:16:16+10:00",
+  "page_modified_datetime": "2026-07-08T16:05:52+10:00",
   "consultation_response_due_date": "2026-07-08T12:00:00Z",
   "acquirers": [
     {
@@ -33,12 +33,21 @@
   ],
   "other_parties": [
     {
-      "name": "X.AI Corp.",
+      "name": "X Global LLC",
       "identifier_type": null,
-      "identifier": "Nevada Entity Number  E289151220238",
+      "identifier": "Delaware File Number  6028653",
       "party_page": {
-        "id": "x-ai-corp",
-        "name": "X.AI Corp."
+        "id": "x-global-llc",
+        "name": "X Global LLC"
+      }
+    },
+    {
+      "name": "X ASIA PACIFIC INTERNET PTE. LTD.",
+      "identifier_type": "ABN",
+      "identifier": "97 712 692 946",
+      "party_page": {
+        "id": "x-asia-pacific-internet-pte-ltd",
+        "name": "X Asia Pacific Internet Pte. Ltd."
       }
     },
     {
@@ -51,12 +60,12 @@
       }
     },
     {
-      "name": "X ASIA PACIFIC INTERNET PTE. LTD.",
-      "identifier_type": "ABN",
-      "identifier": "97 712 692 946",
+      "name": "X.AI Corp.",
+      "identifier_type": null,
+      "identifier": "Nevada Entity Number  E289151220238",
       "party_page": {
-        "id": "x-asia-pacific-internet-pte-ltd",
-        "name": "X Asia Pacific Internet Pte. Ltd."
+        "id": "x-ai-corp",
+        "name": "X.AI Corp."
       }
     },
     {
@@ -76,15 +85,6 @@
         "id": "starlink-internet-services-pte-ltd",
         "name": "Starlink Internet Services Pte. Ltd."
       }
-    },
-    {
-      "name": "X Global LLC",
-      "identifier_type": null,
-      "identifier": "Delaware File Number  6028653",
-      "party_page": {
-        "id": "x-global-llc",
-        "name": "X Global LLC"
-      }
     }
   ],
   "anzsic_codes": [
@@ -101,7 +101,7 @@
       "display_title": "Questionnaire - SpaceX-Anysphere",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/SpaceX-Cursor%20-%20Phase%201%20questionnaire.docx",
       "url_gh": "/mergers/MN-85036/SpaceX-Cursor - Phase 1 questionnaire.pdf",
-      "status": "live",
+      "status": "removed",
       "phase": null
     },
     {

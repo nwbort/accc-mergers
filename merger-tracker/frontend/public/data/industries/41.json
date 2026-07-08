@@ -25,7 +25,7 @@
       "code": "412",
       "name": "Specialised Food Retailing",
       "level": "group",
-      "merger_count": 13
+      "merger_count": 14
     }
   ],
   "mergers": [
@@ -55,6 +55,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-21T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-25031",
+      "merger_name": "Oscars Group \u2013 South Terrace Hotel in Bankstown, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-12T12:00:00Z",
+      "determination_date": "2026-07-08T12:00:00Z"
     },
     {
       "merger_id": "MN-01068",
@@ -219,10 +228,10 @@
       "determination_date": "2026-03-13T12:00:00Z"
     }
   ],
-  "count": 21,
+  "count": 22,
   "phase_1_count": 7,
   "phase_2_count": 2,
-  "waiver_count": 12,
+  "waiver_count": 13,
   "active_count": 3,
   "phase_duration": {
     "average_days": 44.833333333333336,

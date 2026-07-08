@@ -2,6 +2,18 @@
   "events": [
     {
       "date": "2026-06-19T12:00:00Z",
+      "title": "Questionnaire",
+      "display_title": "Questionnaire",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Concord%20-%20Questionnaire_0.docx",
+      "url_gh": "/mergers/MN-75023/Concord - Questionnaire_0.pdf",
+      "status": "removed",
+      "merger_id": "MN-75023",
+      "merger_name": "Bertelsmann Music Group - Concord",
+      "phase": null,
+      "is_waiver": false
+    },
+    {
+      "date": "2026-06-19T12:00:00Z",
       "title": "Timeline extended by 10 business days \u2013 following request by parties",
       "display_title": "Timeline extended by 10 business days \u2013 following request by parties",
       "url": null,
@@ -1158,7 +1170,7 @@
       "display_title": "Questionnaire - SpaceX-Anysphere",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/SpaceX-Cursor%20-%20Phase%201%20questionnaire.docx",
       "url_gh": "/mergers/MN-85036/SpaceX-Cursor - Phase 1 questionnaire.pdf",
-      "status": "live",
+      "status": "removed",
       "merger_id": "MN-85036",
       "merger_name": "SpaceX - Anysphere",
       "phase": null,
@@ -1187,18 +1199,6 @@
       "merger_name": "Count \u2013 Oracle Group",
       "phase": "Waiver",
       "is_waiver": true
-    },
-    {
-      "date": "2026-07-02T12:00:00Z",
-      "title": "ACCC decided notification is subject to Phase 2 review",
-      "display_title": "ACCC decided notification is subject to Phase 2 review",
-      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Saipem%20-%20Subsea7%20-%20Decision%20Acquisition%20is%20to%20be%20subject%20to%20Phase%202%20review.pdf",
-      "url_gh": "/mergers/MN-01072/Saipem - Subsea7 - Decision Acquisition is to be subject to Phase 2 review.pdf",
-      "status": "live",
-      "merger_id": "MN-01072",
-      "merger_name": "Saipem S.p.A - Subsea7 S.A.",
-      "phase": "Phase 2",
-      "is_waiver": false
     }
   ],
   "page": 10,

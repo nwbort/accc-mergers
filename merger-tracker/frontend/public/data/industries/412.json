@@ -36,7 +36,7 @@
       "code": "4123",
       "name": "Liquor Retailing",
       "level": "class",
-      "merger_count": 12
+      "merger_count": 13
     },
     {
       "code": "4129",
@@ -63,6 +63,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-21T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-25031",
+      "merger_name": "Oscars Group \u2013 South Terrace Hotel in Bankstown, NSW",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-12T12:00:00Z",
+      "determination_date": "2026-07-08T12:00:00Z"
     },
     {
       "merger_id": "MN-01068",
@@ -164,10 +173,10 @@
       "determination_date": "2026-03-13T12:00:00Z"
     }
   ],
-  "count": 13,
+  "count": 14,
   "phase_1_count": 3,
   "phase_2_count": 1,
-  "waiver_count": 9,
+  "waiver_count": 10,
   "active_count": 2,
   "phase_duration": {
     "average_days": 44.0,

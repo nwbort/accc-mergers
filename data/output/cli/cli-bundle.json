@@ -39822,7 +39822,7 @@
       "original_notification_datetime": "2026-06-30T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-11T12:00:00Z",
-      "page_modified_datetime": "2026-07-01T09:16:16+10:00",
+      "page_modified_datetime": "2026-07-08T16:05:52+10:00",
       "consultation_response_due_date": "2026-07-08T12:00:00Z",
       "acquirers": [
         {
@@ -39848,12 +39848,21 @@
       ],
       "other_parties": [
         {
-          "name": "X.AI Corp.",
+          "name": "X Global LLC",
           "identifier_type": null,
-          "identifier": "Nevada Entity Number  E289151220238",
+          "identifier": "Delaware File Number  6028653",
           "party_page": {
-            "id": "x-ai-corp",
-            "name": "X.AI Corp."
+            "id": "x-global-llc",
+            "name": "X Global LLC"
+          }
+        },
+        {
+          "name": "X ASIA PACIFIC INTERNET PTE. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "97 712 692 946",
+          "party_page": {
+            "id": "x-asia-pacific-internet-pte-ltd",
+            "name": "X Asia Pacific Internet Pte. Ltd."
           }
         },
         {
@@ -39866,12 +39875,12 @@
           }
         },
         {
-          "name": "X ASIA PACIFIC INTERNET PTE. LTD.",
-          "identifier_type": "ABN",
-          "identifier": "97 712 692 946",
+          "name": "X.AI Corp.",
+          "identifier_type": null,
+          "identifier": "Nevada Entity Number  E289151220238",
           "party_page": {
-            "id": "x-asia-pacific-internet-pte-ltd",
-            "name": "X Asia Pacific Internet Pte. Ltd."
+            "id": "x-ai-corp",
+            "name": "X.AI Corp."
           }
         },
         {
@@ -39891,15 +39900,6 @@
             "id": "starlink-internet-services-pte-ltd",
             "name": "Starlink Internet Services Pte. Ltd."
           }
-        },
-        {
-          "name": "X Global LLC",
-          "identifier_type": null,
-          "identifier": "Delaware File Number  6028653",
-          "party_page": {
-            "id": "x-global-llc",
-            "name": "X Global LLC"
-          }
         }
       ],
       "anzsic_codes": [
@@ -39916,7 +39916,7 @@
           "display_title": "Questionnaire - SpaceX-Anysphere",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/SpaceX-Cursor%20-%20Phase%201%20questionnaire.docx",
           "url_gh": "/mergers/MN-85036/SpaceX-Cursor - Phase 1 questionnaire.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
@@ -61586,6 +61586,278 @@
               "party_page": {
                 "id": "acclime-holdings-limited",
                 "name": "Acclime Holdings Limited"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/oscars-group-%E2%80%93-south-terrace-hotel-in-bankstown-nsw",
+      "merger_name": "Oscars Group – South Terrace Hotel in Bankstown, NSW",
+      "status": "Assessment completed",
+      "merger_id": "WA-25031",
+      "effective_notification_datetime": "2026-06-12T12:00:00Z",
+      "original_notification_datetime": "2026-06-12T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-07-08T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-08T17:00:59+10:00",
+      "acquirers": [
+        {
+          "name": "OSCARS NSW OPS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "19 686 583 451",
+          "party_page": {
+            "id": "oscars-nsw-ops-pty-ltd",
+            "name": "Oscars Nsw Ops Pty Ltd"
+          }
+        },
+        {
+          "name": "The Trustee for THE BANKSTOWN CENTRAL PROPERTY UNIT TRUST",
+          "identifier_type": "ABN",
+          "identifier": "35 764 968 745",
+          "party_page": {
+            "id": "the-trustee-for-the-bankstown-central-property-unit-trust",
+            "name": "The Trustee for THE BANKSTOWN CENTRAL PROPERTY UNIT TRUST"
+          }
+        },
+        {
+          "name": "BANKSTOWN CENTRAL PROPERTY PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "620 947 300",
+          "party_page": {
+            "id": "bankstown-central-property-pty-ltd",
+            "name": "Bankstown Central Property Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "The Trustee for Red Lantern Hotel Trust",
+          "identifier_type": "ABN",
+          "identifier": "45 384 307 643",
+          "party_page": {
+            "id": "the-trustee-for-red-lantern-hotel-trust",
+            "name": "The Trustee for Red Lantern Hotel Trust"
+          }
+        },
+        {
+          "name": "REDCAPE HOTEL GROUP PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "43 139 067 244",
+          "party_page": {
+            "id": "redcape-hotel-group-pty-ltd",
+            "name": "Redcape Hotel Group Pty Ltd"
+          }
+        },
+        {
+          "name": "RGM TT PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 619 024 949",
+          "party_page": {
+            "id": "rgm-tt-pty-ltd",
+            "name": "Rgm Tt Pty Ltd"
+          }
+        },
+        {
+          "name": "MAHF CUSTODIAN PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "96 619 512 060",
+          "party_page": {
+            "id": "mahf-custodian-pty-ltd",
+            "name": "Mahf Custodian Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "OSCARS HOTELS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "13 100 497 765",
+          "party_page": {
+            "id": "oscars-hotels-pty-ltd",
+            "name": "Oscars Hotels Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        },
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "4511",
+          "name": "Cafes and Restaurants"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        }
+      ],
+      "merger_description": "Bankstown Central Property Pty Ltd as trustee for the Bankstown Central Property Unit Trust and Oscars NSW Ops Pty Ltd (the **Acquirers**) propose to acquire 100% of the freehold land interest, buildings, licenses and business assets (both tangible and intangible) of the South Terrace Hotel in Bankstown, New South Wales from MAHF Custodian Pty Ltd as custodian for RGM TT Pty Ltd as trustee for the Red Lantern Hotel Trust and Redcape Hotel Group Pty Ltd, as described in the transaction documents provided as part of the application (the **Acquisition**).\n\nThe South Terrace Hotel is a community, food, beverage and entertainment venue located at 280 South Terrace, Bankstown NSW 2200.\n\nThe Acquirers are part of the Oscars Group, which owns and operates community, food & beverage, entertainment and accommodation venues. The Oscars Group own and operate hospitality venues across New South Wales, South Australia, Queensland and Victoria.",
+      "events": [
+        {
+          "date": "2026-07-08T12:00:00Z",
+          "title": "Notification waiver determination published",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Oscars%20Group%20%E2%80%93%20South%20Terrace%20Hotel%20in%20Bankstown%2C%20NSW%20%28WA-25031%29%20-%20Notification%20waiver%20determination%20-%208%20July%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Bankstown Central Property Pty Ltd as trustee for the Bankstown Central Property Unit Trust and Oscars NSW Ops Pty Ltd (the Acquirers) applied for a notification waiver in respect of their proposed acquisition of the freehold land interest, buildings, licenses and business assets (both tangible and intangible) of the South Terrace Hotel in Bankstown, New South Wales (the South Terrace Hotel), as described in the transaction documents provided as part of the application (the Acquisition)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABV(1)(a) of the Competition and Consumer Act 2010 (Cth) that the Acquisition is not required to be notified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "8 July 2026"
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The Acquirers are part of the Oscars Group, which owns and operates community, food & beverage, entertainment and accommodation venues across New South Wales, South Australia, Queensland and Victoria.\n\nThe target, the South Terrace Hotel, is a community, food, beverage and entertainment venue located at 280 South Terrace, Bankstown NSW 2200.\n\nThe parties both supply retail hospitality services including dining, entertainment, gaming and on-premises liquor services in the City of Canterbury Bankstown local council area."
+            },
+            {
+              "item": "Explanation for determination",
+              "details": "In making this notification waiver determination, the Australian Competition and Consumer Commission (the ACCC) has considered the information provided with the notification waiver application and had regard to the factors in section 51ABV(2)(b) of the Competition and Consumer Act 2010 (Cth) (the Act).\n\nBased on the information currently before it, the ACCC considers that the Acquisition is unlikely to give rise to any material lessening of competition. In particular:\n\na. the parties’ combined share in the supply of dining, entertainment, gaming and on-premises liquor services at pub-style venues in the local area surrounding the South Terrace Hotel is low to moderate\n\nb. there are alternative pub-style venues that supply dining, entertainment, gaming, and liquor for on-site consumption in the local area surrounding the South Terrace Hotel and in the broader City of Canterbury Bankstown area.\n\n• The ACCC has also had regard to the likelihood that, if the Acquisition were put into effect, the notification thresholds determined under section 51ABP(1) of the Act would apply.\n\nWhile the ACCC considers that the notification thresholds are likely to be met, given that material competition concerns are unlikely to arise, the ACCC has determined that the Acquisition is not required to be notified.\n\nThe ACCC considers that the determination is consistent with the object of the Act and the interests of consumers in promoting competition.\n\nFor more information about the ACCC’s approach to considering notification waiver applications and to assessing competition effects more generally, see the ACCC’s interim guidance on notification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-25031/Oscars Group – South Terrace Hotel in Bankstown, NSW (WA-25031) - Notification waiver determination - 8 July 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-06-12T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-15009",
+          "merger_name": "MA Financial Group (Redcape Fund) - Hotel Brunswick",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "REDCAPE HOTEL GROUP PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "43 139 067 244",
+              "party_page": {
+                "id": "redcape-hotel-group-pty-ltd",
+                "name": "Redcape Hotel Group Pty Ltd"
+              }
+            },
+            {
+              "name": "MAHPT TT PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "31 619 297 657",
+              "party_page": {
+                "id": "mahpt-tt-pty-ltd",
+                "name": "Mahpt Tt Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "BRUNSWICK HOTEL OPCO PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "99 656 116 853",
+              "party_page": {
+                "id": "brunswick-hotel-opco-pty-ltd",
+                "name": "Brunswick Hotel Opco Pty Ltd"
+              }
+            },
+            {
+              "name": "The Trustee for Brunswick Hotel Sub-Trust",
+              "identifier_type": "ABN",
+              "identifier": "51 927 228 244",
+              "party_page": {
+                "id": "the-trustee-for-brunswick-hotel-sub-trust",
+                "name": "The Trustee for Brunswick Hotel Sub-Trust"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-25027",
+          "merger_name": "MA Financial Group (Redcape Fund) – The Arthouse Hotel",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "REDCAPE HOTEL GROUP PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "43 139 067 244",
+              "party_page": {
+                "id": "redcape-hotel-group-pty-ltd",
+                "name": "Redcape Hotel Group Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Alsimas Pty Limited",
+              "identifier_type": "ACN",
+              "identifier": "650 101 778",
+              "party_page": {
+                "id": "alsimas-pty-limited",
+                "name": "Alsimas Pty Limited"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-60017",
+          "merger_name": "MA Financial Group (Redcape Fund) – The Entrance Social Club",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "REDCAPE HOTEL GROUP PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "43 139 067 244",
+              "party_page": {
+                "id": "redcape-hotel-group-pty-ltd",
+                "name": "Redcape Hotel Group Pty Ltd"
+              }
+            },
+            {
+              "name": "MAHF CUSTODIAN PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "96 619 512 060",
+              "party_page": {
+                "id": "mahf-custodian-pty-ltd",
+                "name": "Mahf Custodian Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "REDBRAN PTY. LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "34 003 920 232",
+              "party_page": {
+                "id": "redbran-pty-limited",
+                "name": "Redbran Pty. Limited"
               }
             }
           ]
@@ -113543,7 +113815,7 @@
   },
   "stats": {
     "total_mergers": 166,
-    "total_waivers": 261,
+    "total_waivers": 262,
     "total_conditional_approvals": 1,
     "by_status": {
       "Assessment completed": 125,
@@ -113555,7 +113827,7 @@
       "Referred to phase 2": 7
     },
     "by_waiver_determination": {
-      "Approved": 247,
+      "Approved": 248,
       "Not approved": 14
     },
     "phase_duration": {
@@ -113601,11 +113873,15 @@
       },
       {
         "name": "Pubs, Taverns and Bars",
-        "count": 19
+        "count": 20
       },
       {
         "name": "Accommodation",
-        "count": 15
+        "count": 16
+      },
+      {
+        "name": "Liquor Retailing",
+        "count": 13
       },
       {
         "name": "Engineering Design and Engineering Consulting Services",
@@ -113613,10 +113889,6 @@
       },
       {
         "name": "Supermarket and Grocery Stores",
-        "count": 12
-      },
-      {
-        "name": "Liquor Retailing",
         "count": 12
       }
     ],
@@ -113719,6 +113991,16 @@
       }
     ],
     "recent_determinations": [
+      {
+        "merger_id": "WA-25031",
+        "merger_name": "Oscars Group – South Terrace Hotel in Bankstown, NSW",
+        "determination": "Approved",
+        "determination_date": "2026-07-08T12:00:00Z",
+        "page_modified_datetime": "2026-07-08T17:00:59+10:00",
+        "determination_type": "final",
+        "is_waiver": true,
+        "stage": "Waiver application"
+      },
       {
         "merger_id": "WA-95029",
         "merger_name": "Blackstone – Acacium Group",
@@ -113828,16 +114110,6 @@
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-55026",
-        "merger_name": "Vets Central - Gold Coast Veterinary Surgery",
-        "determination": "Approved",
-        "determination_date": "2026-07-03T12:00:00Z",
-        "page_modified_datetime": "2026-07-03T16:54:25+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
       }
     ]
   },
@@ -113871,12 +114143,17 @@
       {
         "code": "4520",
         "name": "Pubs, Taverns and Bars",
-        "merger_count": 19
+        "merger_count": 20
       },
       {
         "code": "4400",
         "name": "Accommodation",
-        "merger_count": 15
+        "merger_count": 16
+      },
+      {
+        "code": "4123",
+        "name": "Liquor Retailing",
+        "merger_count": 13
       },
       {
         "code": "6923",
@@ -113889,23 +114166,18 @@
         "merger_count": 12
       },
       {
-        "code": "4123",
-        "name": "Liquor Retailing",
-        "merger_count": 12
-      },
-      {
         "code": "6910",
         "name": "Scientific Research Services",
         "merger_count": 12
       },
       {
-        "code": "3911",
-        "name": "Car Retailing",
-        "merger_count": 11
-      },
-      {
         "code": "4511",
         "name": "Cafes and Restaurants",
+        "merger_count": 12
+      },
+      {
+        "code": "3911",
+        "name": "Car Retailing",
         "merger_count": 11
       },
       {
@@ -115209,7 +115481,7 @@
         "merger_count": 1
       }
     ],
-    "total_mergers": 427,
+    "total_mergers": 428,
     "total_industries": 273
   }
 }
