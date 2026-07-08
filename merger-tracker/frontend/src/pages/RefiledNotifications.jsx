@@ -72,13 +72,11 @@ function RefiledCard({ pair, showOutcome }) {
             {pair.notification_id}
           </p>
         </div>
-        <div className="flex-shrink-0">
-          {showOutcome ? (
+        {showOutcome && (
+          <div className="flex-shrink-0">
             <StatusBadge determination={pair.notification_determination} />
-          ) : (
-            <StatusBadge status={pair.notification_status} />
-          )}
-        </div>
+          </div>
+        )}
       </div>
 
       <div className="flex items-stretch gap-2 sm:gap-4">
@@ -188,11 +186,6 @@ function RefiledNotifications() {
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
             Waivers re-filed as notifications
           </h1>
-          <p className="mt-2 text-sm text-gray-500 max-w-3xl">
-            Some mergers are first filed as a waiver application asking the ACCC to waive the need
-            for formal review. When a waiver is declined, the parties sometimes re-file the same
-            deal as a formal notification instead. This page tracks those pairs.
-          </p>
         </header>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
@@ -219,7 +212,7 @@ function RefiledNotifications() {
 
         <section aria-labelledby="refiled-completed-heading">
           <h2 id="refiled-completed-heading" className="text-lg font-semibold text-gray-900 mb-4">
-            Determined
+            Completed
           </h2>
           <RefiledList
             pairs={completed}
