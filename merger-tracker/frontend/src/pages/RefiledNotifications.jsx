@@ -104,7 +104,7 @@ function RefiledCard({ pair, showOutcome }) {
             )}
             {gapPercent !== null && daysToRefile !== null && (
               <span
-                className="absolute top-1/2 whitespace-nowrap text-[10px] font-semibold text-gray-700 bg-white/95 ring-1 ring-black/5 rounded-full px-1.5 py-0.5 shadow-sm"
+                className="absolute top-1/2 whitespace-nowrap text-[10px] font-semibold text-gray-800"
                 style={gapLabelStyle}
               >
                 {daysToRefile} day{daysToRefile !== 1 ? 's' : ''}
