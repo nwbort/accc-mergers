@@ -24,16 +24,25 @@
       "code": "7211",
       "name": "Employment Placement and Recruitment Services",
       "level": "class",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "7212",
       "name": "Labour Supply Services",
       "level": "class",
-      "merger_count": 2
+      "merger_count": 3
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-95029",
+      "merger_name": "Blackstone \u2013 Acacium Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-22T12:00:00Z",
+      "determination_date": "2026-07-08T12:00:00Z"
+    },
     {
       "merger_id": "WA-15026",
       "merger_name": "LTM \u2013 Randstad Digital entities including FinXL",
@@ -71,10 +80,10 @@
       "determination_date": "2026-05-04T12:00:00Z"
     }
   ],
-  "count": 4,
+  "count": 5,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 4,
+  "waiver_count": 5,
   "active_count": 0,
   "phase_duration": null
 }

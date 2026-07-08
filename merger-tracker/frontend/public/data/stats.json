@@ -1,6 +1,6 @@
 {
   "total_mergers": 166,
-  "total_waivers": 260,
+  "total_waivers": 261,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 125,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 246,
+    "Approved": 247,
     "Not approved": 14
   },
   "phase_duration": {
@@ -38,7 +38,7 @@
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 53
+      "count": 54
     },
     {
       "name": "Computer System Design and Related Services",
@@ -46,7 +46,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 33
+      "count": 34
     },
     {
       "name": "Software Publishing",
@@ -177,6 +177,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-95029",
+      "merger_name": "Blackstone \u2013 Acacium Group",
+      "determination": "Approved",
+      "determination_date": "2026-07-08T12:00:00Z",
+      "page_modified_datetime": "2026-07-08T16:59:26+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-90023",
       "merger_name": "SAS Trustee Corporation \u2013 Australia Pacific Airport Corporation",
       "determination": "Approved",
@@ -282,16 +292,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-03T12:00:00Z",
       "page_modified_datetime": "2026-07-03T16:54:25+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-85034",
-      "merger_name": "Freedom Fuels \u2013 Rennic",
-      "determination": "Approved",
-      "determination_date": "2026-07-03T12:00:00Z",
-      "page_modified_datetime": "2026-07-03T16:50:25+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

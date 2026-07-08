@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 59
+      "merger_count": 60
     },
     {
       "code": "63",
@@ -21,7 +21,7 @@
       "code": "64",
       "name": "Auxiliary Finance and Insurance Services",
       "level": "subdivision",
-      "merger_count": 34
+      "merger_count": 35
     }
   ],
   "mergers": [
@@ -50,6 +50,15 @@
       "status": "Assessment completed",
       "phase": "Waiver",
       "notification_date": "2026-06-16T12:00:00Z",
+      "determination_date": "2026-07-08T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-95029",
+      "merger_name": "Blackstone \u2013 Acacium Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-22T12:00:00Z",
       "determination_date": "2026-07-08T12:00:00Z"
     },
     {
@@ -872,10 +881,10 @@
       "determination_date": null
     }
   ],
-  "count": 94,
+  "count": 95,
   "phase_1_count": 20,
   "phase_2_count": 2,
-  "waiver_count": 72,
+  "waiver_count": 73,
   "active_count": 2,
   "phase_duration": {
     "average_days": 28.666666666666668,

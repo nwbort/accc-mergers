@@ -27,6 +27,15 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "WA-95029",
+      "merger_name": "Blackstone \u2013 Acacium Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-22T12:00:00Z",
+      "determination_date": "2026-07-08T12:00:00Z"
+    },
+    {
       "merger_id": "WA-20026",
       "merger_name": "Oaktree \u2013 Vivax Metrotech",
       "is_waiver": true,
@@ -504,10 +513,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 53,
+  "count": 54,
   "phase_1_count": 9,
   "phase_2_count": 0,
-  "waiver_count": 44,
+  "waiver_count": 45,
   "active_count": 0,
   "phase_duration": {
     "average_days": 24.444444444444443,
