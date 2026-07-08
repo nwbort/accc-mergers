@@ -26673,7 +26673,7 @@
       "original_notification_datetime": "2026-06-29T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-10T12:00:00Z",
-      "page_modified_datetime": "2026-06-30T20:43:33+10:00",
+      "page_modified_datetime": "2026-07-09T09:21:42+10:00",
       "consultation_response_due_date": "2026-07-07T12:00:00Z",
       "acquirers": [
         {
@@ -26703,6 +26703,15 @@
       ],
       "other_parties": [
         {
+          "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "perpetual-corporate-trust-limited-as-trustee-for-volarae-living-australia-holdin",
+            "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust"
+          }
+        },
+        {
           "name": "Stonepeak Partners LP",
           "identifier_type": null,
           "identifier": "4958360",
@@ -26716,12 +26725,12 @@
           }
         },
         {
-          "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust",
-          "identifier_type": null,
-          "identifier": "",
+          "name": "Wisdom TopCo Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "696 888 552",
           "party_page": {
-            "id": "perpetual-corporate-trust-limited-as-trustee-for-volarae-living-australia-holdin",
-            "name": "Perpetual Corporate Trust Limited as trustee for Volarae Living (Australia) Holdings 2 Trust"
+            "id": "wisdom-topco-pty-ltd",
+            "name": "Wisdom TopCo Pty Ltd"
           }
         },
         {
@@ -26731,15 +26740,6 @@
           "party_page": {
             "id": "aura-australia-holdings-pty-ltd",
             "name": "Aura Australia Holdings Pty Ltd"
-          }
-        },
-        {
-          "name": "Wisdom TopCo Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "696 888 552",
-          "party_page": {
-            "id": "wisdom-topco-pty-ltd",
-            "name": "Wisdom TopCo Pty Ltd"
           }
         },
         {
@@ -26775,7 +26775,7 @@
           "display_title": "Questionnaire - Stonepeak led consortium - Estia Health",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Stonepeak%20-%20Estia%20Health%20-%20third-party%20questionnaire.docx",
           "url_gh": "/mergers/MN-50026/Stonepeak - Estia Health - third-party questionnaire.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
