@@ -2401,6 +2401,67 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ltm-%E2%80%93-randstad-digital-entities-including-finxl"
     },
     {
+      "merger_id": "WA-70025",
+      "merger_name": "Mitsui \u2013 Rhodes Ridge Joint Venture",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-12T12:00:00Z",
+      "determination_publication_date": "2026-07-08T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "SPC BLUE PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "63 676 457 444",
+          "party_page": {
+            "id": "spc-blue-pty-ltd",
+            "name": "Spc Blue Pty. Ltd."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "RHODES RIDGE MINING (NO 1) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "55 662 559 417",
+          "party_page": {
+            "id": "rhodes-ridge-mining-no-1-pty-ltd",
+            "name": "Rhodes Ridge Mining (No 1) Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "MITSUI & CO LTD",
+          "identifier_type": "ABN",
+          "identifier": "88 001 855 465",
+          "party_page": {
+            "id": "mitsui-co-ltd",
+            "name": "Mitsui & Co Ltd"
+          }
+        },
+        {
+          "name": "AMB HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "85 084 557 737",
+          "party_page": {
+            "id": "amb-holdings-pty-ltd",
+            "name": "Amb Holdings Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0801",
+          "name": "Iron Ore Mining"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mitsui-%E2%80%93-rhodes-ridge-joint-venture"
+    },
+    {
       "merger_id": "MN-10018",
       "merger_name": "CSR - Complete Plaster",
       "status": "Assessment completed",
@@ -3776,48 +3837,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/australian-venue-co-%E2%80%93-assets-of-caf%C3%A9-kinetic-flinders-lane-melbourne-cbd"
-    },
-    {
-      "merger_id": "MN-50027",
-      "merger_name": "Endeavour Group - retail liquor site in Avalon, NSW",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "effective_notification_datetime": "2026-06-22T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-03T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "ENDEAVOUR GROUP LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "77 159 767 843",
-          "party_page": {
-            "id": "endeavour-group-limited",
-            "name": "Endeavour Group Limited"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "AVALON DM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "61 691 733 150",
-          "party_page": {
-            "id": "avalon-dm-pty-ltd",
-            "name": "Avalon Dm Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "4123",
-          "name": "Liquor Retailing"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/endeavour-group-retail-liquor-site-in-avalon-nsw"
     }
   ],
   "page": 8,

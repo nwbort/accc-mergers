@@ -1,6 +1,6 @@
 {
   "total_mergers": 166,
-  "total_waivers": 258,
+  "total_waivers": 259,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 125,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 244,
+    "Approved": 245,
     "Not approved": 14
   },
   "phase_duration": {
@@ -177,6 +177,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-70025",
+      "merger_name": "Mitsui \u2013 Rhodes Ridge Joint Venture",
+      "determination": "Approved",
+      "determination_date": "2026-07-08T12:00:00Z",
+      "page_modified_datetime": "2026-07-08T16:39:34+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-15026",
       "merger_name": "LTM \u2013 Randstad Digital entities including FinXL",
       "determination": "Approved",
@@ -285,16 +295,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-01072",
-      "merger_name": "Saipem S.p.A - Subsea7 S.A.",
-      "determination": "Referred to phase 2",
-      "determination_date": "2026-07-02T12:00:00Z",
-      "page_modified_datetime": "2026-07-08T08:17:10+10:00",
-      "determination_type": "phase_transition",
-      "is_waiver": false,
-      "stage": "Phase 2 - detailed assessment"
     }
   ]
 }

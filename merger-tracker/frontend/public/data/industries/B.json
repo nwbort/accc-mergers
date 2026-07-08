@@ -21,7 +21,7 @@
       "code": "08",
       "name": "Metal Ore Mining",
       "level": "subdivision",
-      "merger_count": 8
+      "merger_count": 9
     },
     {
       "code": "09",
@@ -72,6 +72,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-28T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-70025",
+      "merger_name": "Mitsui \u2013 Rhodes Ridge Joint Venture",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-12T12:00:00Z",
+      "determination_date": "2026-07-08T12:00:00Z"
     },
     {
       "merger_id": "WA-85035",
@@ -209,10 +218,10 @@
       "determination_date": "2025-11-18T12:00:00Z"
     }
   ],
-  "count": 19,
+  "count": 20,
   "phase_1_count": 9,
   "phase_2_count": 0,
-  "waiver_count": 10,
+  "waiver_count": 11,
   "active_count": 4,
   "phase_duration": {
     "average_days": 30.2,
