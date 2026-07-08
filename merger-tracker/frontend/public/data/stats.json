@@ -1,10 +1,10 @@
 {
-  "total_mergers": 166,
+  "total_mergers": 167,
   "total_waivers": 262,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 125,
-    "Under assessment": 40,
+    "Under assessment": 41,
     "Assessment ceased": 1
   },
   "by_determination": {
@@ -78,6 +78,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-05032",
+      "merger_name": "Motorola Solutions - D-Fend Solutions",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-08T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-30022",
       "merger_name": "VSA - SprayLine",
@@ -164,14 +172,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-06-30T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50025",
-      "merger_name": "Amazon \u2013 Globalstar",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-06-29T12:00:00Z",
       "is_waiver": false
     }
   ],
