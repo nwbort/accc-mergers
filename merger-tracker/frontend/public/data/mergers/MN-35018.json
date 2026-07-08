@@ -7,18 +7,9 @@
   "original_notification_datetime": "2026-07-01T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
   "end_of_determination_period": "2026-08-12T12:00:00Z",
-  "page_modified_datetime": "2026-07-01T16:35:10+10:00",
+  "page_modified_datetime": "2026-07-08T16:04:13+10:00",
   "consultation_response_due_date": "2026-07-08T12:00:00Z",
   "acquirers": [
-    {
-      "name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust",
-      "identifier_type": "ACN",
-      "identifier": "600 506 778",
-      "party_page": {
-        "id": "dawson-land-investments-company-pty-ltd-as-trustee-for-the-dawson-land-trust",
-        "name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust"
-      }
-    },
     {
       "name": "SAPPHIRE CATTLE COMPANY PTY LTD",
       "identifier_type": "ABN",
@@ -26,6 +17,15 @@
       "party_page": {
         "id": "sapphire-cattle-company-pty-ltd",
         "name": "Sapphire Cattle Company Pty Ltd"
+      }
+    },
+    {
+      "name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust",
+      "identifier_type": "ACN",
+      "identifier": "600 506 778",
+      "party_page": {
+        "id": "dawson-land-investments-company-pty-ltd-as-trustee-for-the-dawson-land-trust",
+        "name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust"
       }
     }
   ],
@@ -82,7 +82,7 @@
       "display_title": "Hewitt - Nolan Meats - Questionnaire",
       "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Hewitt%20-%20Nolan%20-%20third-party%20questionnaire.docx",
       "url_gh": "/mergers/MN-35018/Hewitt - Nolan - third-party questionnaire.pdf",
-      "status": "live",
+      "status": "removed",
       "phase": null
     },
     {

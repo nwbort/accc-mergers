@@ -9736,18 +9736,18 @@
     "original_notification_datetime": "2026-07-01T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-08-12T12:00:00Z",
-    "page_modified_datetime": "2026-07-01T16:35:10+10:00",
+    "page_modified_datetime": "2026-07-08T16:04:13+10:00",
     "consultation_response_due_date": "2026-07-08T12:00:00Z",
     "acquirers": [
-      {
-        "name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust",
-        "identifier_type": "ACN",
-        "identifier": "600 506 778"
-      },
       {
         "name": "SAPPHIRE CATTLE COMPANY PTY LTD",
         "identifier_type": "ABN",
         "identifier": "14 600 389 286"
+      },
+      {
+        "name": "Dawson Land Investments Company Pty Ltd as trustee for the Dawson Land Trust",
+        "identifier_type": "ACN",
+        "identifier": "600 506 778"
       }
     ],
     "targets": [
@@ -9791,7 +9791,7 @@
         "display_title": "Hewitt - Nolan Meats - Questionnaire",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Hewitt%20-%20Nolan%20-%20third-party%20questionnaire.docx",
         "url_gh": "/mergers/MN-35018/Hewitt - Nolan - third-party questionnaire.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-07-01T12:00:00Z",
@@ -17140,7 +17140,7 @@
     "original_notification_datetime": "2026-06-30T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-08-11T12:00:00Z",
-    "page_modified_datetime": "2026-07-01T15:08:09+10:00",
+    "page_modified_datetime": "2026-07-08T16:06:06+10:00",
     "consultation_response_due_date": "2026-07-08T12:00:00Z",
     "acquirers": [
       {
@@ -17149,14 +17149,14 @@
         "identifier": "2025732419"
       },
       {
-        "name": "Schlumberger Technology Corporation",
-        "identifier_type": null,
-        "identifier": "EIN  221692661"
-      },
-      {
         "name": "SLB N.V. (SLB Limited)",
         "identifier_type": null,
         "identifier": "EIN  520684746"
+      },
+      {
+        "name": "Schlumberger Technology Corporation",
+        "identifier_type": null,
+        "identifier": "EIN  221692661"
       },
       {
         "name": "Geoquest Systems BV",
