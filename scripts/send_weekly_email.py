@@ -370,7 +370,7 @@ def build_lede(c: dict) -> str:
         )
     else:
         sentences.append(
-            "A quiet week at the ACCC — no new deals were notified and no clearances were published."
+            "A quiet week at the ACCC – no new deals were notified and no clearances were published."
         )
 
     mid = []
@@ -391,7 +391,7 @@ def build_lede(c: dict) -> str:
     ongoing = c["p1"] + c["p2"]
     if ongoing:
         if c["p1"] and c["p2"]:
-            split = f" — {b(c['p1'])} in phase 1 and {b(c['p2'])} in phase 2"
+            split = f" – {b(c['p1'])} in phase 1 and {b(c['p2'])} in phase 2"
         elif c["p1"]:
             split = ", all in phase 1"
         else:
@@ -443,12 +443,6 @@ def section_head(title: str, accent: str, right_text: str = "") -> str:
     return (
         f'<tr><td style="padding:28px 0 8px;border-bottom:2px solid {accent};'
         f'font-size:17px;font-weight:800;color:{INK};" valign="bottom">{esc(title)}</td>{right}</tr>'
-    )
-
-
-def note_row(text: str) -> str:
-    return (
-        f'<tr><td colspan="2" style="padding:8px 0 0;font-size:11px;color:{FAINT};">{text}</td></tr>'
     )
 
 
@@ -532,8 +526,8 @@ _GENERIC_DETERMINATIONS = {"approved", "not approved", "declined", "referred to 
 
 
 def _decision_entries(digest: dict) -> list[dict]:
-    """Flatten the week's outcomes into one chronologically grouped list:
-    cleared (phase 2 first), referred, declined, ceased."""
+    """Flatten the week's outcomes into one list, with phase 2 activity
+    (decisions made in phase 2 and referrals to phase 2) at the top."""
     entries = []
     cleared_group_labels = {"Phase 2 – detailed assessment": "Phase 2",
                             "Phase 1 – initial assessment": "Phase 1",
@@ -553,6 +547,7 @@ def _decision_entries(digest: dict) -> list[dict]:
                 "context": cleared_group_labels[label],
                 "date": m.get("determination_publication_date"),
                 "detail": det if det.lower() not in _GENERIC_DETERMINATIONS else "",
+                "is_phase2": label == "Phase 2 – detailed assessment",
             })
     for m in digest.get("deals_referred_to_phase_2") or []:
         det = m.get("accc_determination") or m.get("phase_1_determination") or ""
@@ -563,6 +558,7 @@ def _decision_entries(digest: dict) -> list[dict]:
             "context": "Phase 1 determination",
             "date": m.get("phase_1_determination_date"),
             "detail": det if det.lower() not in _GENERIC_DETERMINATIONS else "",
+            "is_phase2": True,
         })
     for m in digest["deals_declined"]:
         det = (
@@ -578,6 +574,7 @@ def _decision_entries(digest: dict) -> list[dict]:
             "context": "",
             "date": m.get("determination_publication_date"),
             "detail": det if det.lower() not in _GENERIC_DETERMINATIONS else "",
+            "is_phase2": bool(m.get("phase_2_determination")),
         })
     for m in digest.get("deals_assessment_ceased") or []:
         entries.append({
@@ -587,7 +584,10 @@ def _decision_entries(digest: dict) -> list[dict]:
             "context": m.get("stage") or "",
             "date": m.get("ceased_date"),
             "detail": "",
+            "is_phase2": "phase 2" in (m.get("stage") or "").lower(),
         })
+    # Stable sort: phase 2 activity first, otherwise keep grouped order
+    entries.sort(key=lambda e: not e["is_phase2"])
     return entries
 
 
@@ -624,7 +624,8 @@ def build_decisions(digest: dict) -> str:
 
 
 def build_pipeline(digest: dict) -> str:
-    """All ongoing assessments as a compact list, sorted by decision due date."""
+    """All ongoing assessments as a compact list — phase 2 first, then by
+    decision due date. Dates due within a fortnight are shown in amber."""
     deals = (
         [(m, "phase_1") for m in digest["ongoing_phase_1"]]
         + [(m, "phase_2") for m in digest["ongoing_phase_2"]]
@@ -635,23 +636,19 @@ def build_pipeline(digest: dict) -> str:
     def due_dt(m: dict):
         return parse_iso_datetime(m.get("end_of_determination_period") or "")
 
-    deals.sort(key=lambda t: due_dt(t[0]) or far_future)
+    # Phase 2 assessments first, then by decision due date within each phase
+    deals.sort(key=lambda t: (t[1] != "phase_2", due_dt(t[0]) or far_future))
 
     try:
         cutoff = datetime.fromisoformat(digest["period_end"]) + timedelta(days=14)
     except (ValueError, KeyError, TypeError):
         cutoff = None
 
-    rows = section_head("The pipeline", COLORS["phase_1"]["border"],
+    rows = section_head("Pipeline", COLORS["phase_1"]["border"],
                         f"{len(deals)} on foot" if deals else "")
     if not deals:
         rows += empty_section_row("No assessments are currently on foot.")
         return section_table(rows)
-
-    rows += note_row(
-        "Every ongoing assessment, ordered by the date the ACCC&rsquo;s decision is due. "
-        f'<span style="color:{DUE_SOON};font-weight:700;">Amber</span> = due within a fortnight.'
-    )
     for i, (m, phase_key) in enumerate(deals):
         divider = "" if i == len(deals) - 1 else f"border-bottom:1px solid {ROW_LINE};"
         dt = due_dt(m)
@@ -693,7 +690,7 @@ def build_html_email(digest: dict) -> str:
 
     if show_feedback:
         header_cta = (
-            "Got thoughts, feedback or any market gossip? Just reply to this email — "
+            "Got thoughts, feedback or any market gossip? Just reply to this email – "
             "we&rsquo;d love to hear from you."
         )
     else:
