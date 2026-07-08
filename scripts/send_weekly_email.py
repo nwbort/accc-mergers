@@ -623,21 +623,31 @@ def build_decisions(digest: dict) -> str:
     return section_table(rows)
 
 
-def build_pipeline(digest: dict) -> str:
-    """All ongoing assessments as a compact list — phase 2 first, then by
-    decision due date. Dates due within a fortnight are shown in amber."""
-    deals = (
-        [(m, "phase_1") for m in digest["ongoing_phase_1"]]
-        + [(m, "phase_2") for m in digest["ongoing_phase_2"]]
+def _phase_group_row(label: str, color: dict, count: int) -> str:
+    return (
+        f'<tr><td style="padding:16px 0 5px;border-bottom:1px solid {ROW_LINE};'
+        f'font-size:10px;font-weight:700;color:{color["dark"]};letter-spacing:1px;" '
+        f'valign="bottom">{esc(label.upper())}</td>'
+        f'<td align="right" style="padding:16px 0 5px;border-bottom:1px solid {ROW_LINE};'
+        f'font-size:10px;font-weight:700;color:{FAINT};" valign="bottom">{count}</td></tr>'
     )
 
+
+def build_pipeline(digest: dict) -> str:
+    """All ongoing assessments as a compact list, grouped by phase (phase 2
+    first) and sorted by decision due date within each group. Dates due
+    within a fortnight are shown in amber."""
     far_future = datetime(9999, 1, 1, tzinfo=timezone.utc)
 
     def due_dt(m: dict):
         return parse_iso_datetime(m.get("end_of_determination_period") or "")
 
-    # Phase 2 assessments first, then by decision due date within each phase
-    deals.sort(key=lambda t: (t[1] != "phase_2", due_dt(t[0]) or far_future))
+    groups = [
+        ("Phase 2 – detailed assessment", "phase_2", sorted(digest["ongoing_phase_2"], key=lambda m: due_dt(m) or far_future)),
+        ("Phase 1 – initial assessment", "phase_1", sorted(digest["ongoing_phase_1"], key=lambda m: due_dt(m) or far_future)),
+    ]
+    groups = [g for g in groups if g[2]]
+    total = sum(len(g[2]) for g in groups)
 
     try:
         cutoff = datetime.fromisoformat(digest["period_end"]) + timedelta(days=14)
@@ -645,32 +655,32 @@ def build_pipeline(digest: dict) -> str:
         cutoff = None
 
     rows = section_head("Pipeline", COLORS["phase_1"]["border"],
-                        f"{len(deals)} on foot" if deals else "")
-    if not deals:
+                        f"{total} on foot" if total else "")
+    if not total:
         rows += empty_section_row("No assessments are currently on foot.")
         return section_table(rows)
-    for i, (m, phase_key) in enumerate(deals):
-        divider = "" if i == len(deals) - 1 else f"border-bottom:1px solid {ROW_LINE};"
-        dt = due_dt(m)
-        soon = cutoff is not None and dt is not None and dt <= cutoff
-        due_style = (
-            f"font-size:12px;font-weight:700;color:{DUE_SOON};"
-            if soon
-            else f"font-size:12px;color:{BODY_TEXT};"
-        )
-        pc = COLORS[phase_key]
-        phase_label = "P1" if phase_key == "phase_1" else "P2"
-        tags = " " + chip(phase_label, pc["pale"], pc["dark"])
-        if m.get("is_waiver"):
-            tags += waiver_chip()
-        rows += (
-            f'<tr><td style="padding:9px 0 8px;{divider}" valign="top">'
-            f'<a href="{merger_url(m)}" style="color:{INK};font-size:13px;font-weight:600;'
-            f'text-decoration:none;line-height:1.45;">{merger_name(m)}</a>{tags}</td>'
-            f'<td width="80" align="right" style="padding:9px 0 8px 12px;{divider}" valign="top">'
-            f'<span style="{due_style}">{esc(format_date(m.get("end_of_determination_period")))}</span>'
-            "</td></tr>"
-        )
+    for gi, (label, phase_key, mergers) in enumerate(groups):
+        rows += _phase_group_row(label, COLORS[phase_key], len(mergers))
+        last_group = gi == len(groups) - 1
+        for i, m in enumerate(mergers):
+            last = last_group and i == len(mergers) - 1
+            divider = "" if last else f"border-bottom:1px solid {ROW_LINE};"
+            dt = due_dt(m)
+            soon = cutoff is not None and dt is not None and dt <= cutoff
+            due_style = (
+                f"font-size:12px;font-weight:700;color:{DUE_SOON};"
+                if soon
+                else f"font-size:12px;color:{BODY_TEXT};"
+            )
+            waiver = waiver_chip() if m.get("is_waiver") else ""
+            rows += (
+                f'<tr><td style="padding:9px 0 8px;{divider}" valign="top">'
+                f'<a href="{merger_url(m)}" style="color:{INK};font-size:13px;font-weight:600;'
+                f'text-decoration:none;line-height:1.45;">{merger_name(m)}</a>{waiver}</td>'
+                f'<td width="80" align="right" style="padding:9px 0 8px 12px;{divider}" valign="top">'
+                f'<span style="{due_style}">{esc(format_date(m.get("end_of_determination_period")))}</span>'
+                "</td></tr>"
+            )
     return section_table(rows)
 
 # ---------------------------------------------------------------------------
