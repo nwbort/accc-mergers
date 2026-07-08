@@ -35,12 +35,27 @@ function median(values) {
 const ABOVE_LINE = 'absolute bottom-1/2 mb-2';
 const BELOW_LINE = 'absolute top-1/2 mt-2';
 
+// The "days to re-file" label sits in a fixed-width box centred between the
+// declined and re-filed dots — the same clamping technique Phase2Timeline
+// uses for its NOCC label, so it stays inside the track on narrow screens.
+const GAP_BOX = '4.5rem';
+const GAP_HALF = '2.25rem';
+
 function RefiledCard({ pair, showOutcome }) {
   const start = pair.waiver_filed_date;
   const end = showOutcome ? pair.notification_determination_date : new Date().toISOString();
   const declinedPercent = percentAlong(pair.waiver_declined_date, start, end);
   const filedPercent = percentAlong(pair.notification_filed_date, start, end);
   const daysToRefile = calculateDuration(pair.waiver_declined_date, pair.notification_filed_date);
+  const gapPercent = declinedPercent !== null && filedPercent !== null
+    ? (declinedPercent + filedPercent) / 2
+    : null;
+  const gapLabelStyle = gapPercent === null ? null : {
+    width: GAP_BOX,
+    maxWidth: '100%',
+    left: `clamp(${GAP_HALF}, ${gapPercent}%, calc(100% - ${GAP_HALF}))`,
+    transform: 'translateX(-50%)',
+  };
 
   return (
     <li className="py-4 first:pt-0 last:pb-0">
@@ -76,6 +91,15 @@ function RefiledCard({ pair, showOutcome }) {
         </div>
 
         <div className="relative flex-1 min-w-0 h-11">
+          {gapPercent !== null && daysToRefile !== null && (
+            <span
+              className={`${ABOVE_LINE} text-[11px] font-medium text-gray-500 text-center whitespace-nowrap`}
+              style={gapLabelStyle}
+            >
+              {daysToRefile} day{daysToRefile !== 1 ? 's' : ''}
+            </span>
+          )}
+
           <div
             className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-3 rounded-full bg-gray-100"
             role="img"
@@ -116,12 +140,6 @@ function RefiledCard({ pair, showOutcome }) {
           </span>
         </div>
       </div>
-
-      {daysToRefile !== null && (
-        <p className="mt-3 text-xs text-gray-500">
-          Re-filed as a notification <span className="font-medium text-gray-700">{daysToRefile} day{daysToRefile !== 1 ? 's' : ''}</span> after the waiver was declined
-        </p>
-      )}
     </li>
   );
 }
