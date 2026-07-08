@@ -1728,6 +1728,20 @@ class TestBuildPartyPages:
         assert member_names == {'COLES GROUP LIMITED', 'COLES SUPERMARKETS AUSTRALIA PTY LTD'}
         assert set(coles['mergers_by_role']['acquirer'].keys()) == {'MN-1001', 'MN-1002'}
 
+    def test_party_listed_in_two_roles_on_same_merger_only_counted_once(self):
+        # ACCC's own register sometimes lists the same entity as both an
+        # applicant and an "other party" on one matter. The party page
+        # should show that merger once, under the higher-priority role
+        # (acquirer/target), not duplicated under "other" too.
+        mergers = _party_mergers_fixture()
+        mergers[0]['other_parties'] = [
+            {'name': 'COLES GROUP LIMITED', 'identifier': '11 004 089 936', 'identifier_type': 'ABN'}
+        ]
+        groups = parties.build_party_pages(mergers, [_COLES_GROUP])
+        coles = next(g for g in groups if g['id'] == 'coles')
+        assert set(coles['mergers_by_role']['acquirer'].keys()) == {'MN-1001', 'MN-1002'}
+        assert 'MN-1001' not in coles['mergers_by_role']['other']
+
     def test_unlisted_party_gets_a_synthesized_group_of_one(self):
         # Depot Holdings has no canonical group entry but recurs (same ABN)
         # as a target in MN-1002 and an acquirer in MN-1003 — both appearances

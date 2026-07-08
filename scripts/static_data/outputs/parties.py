@@ -113,11 +113,21 @@ def build_party_pages(mergers: list, party_groups: list) -> list:
             {(name, identifier, id_type) for name, identifier, id_type in entry['members'] if name}
         )
 
+        # A party can be listed under more than one role on the same merger
+        # (e.g. named as both an applicant and an "other party" in the ACCC's
+        # own register). Only show it once per merger on its party page,
+        # preferring acquirer/target over other — PARTY_ROLE_FIELDS order
+        # ("acquirers", "targets", "other_parties") gives us that priority
+        # since appearances for a given merger are processed in that order.
         mergers_by_role: dict[str, dict] = {'acquirer': {}, 'target': {}, 'other': {}}
+        assigned_role_by_merger: dict = {}
         for merger, field, party in entry['appearances']:
             party['party_page'] = {'id': group_id, 'name': canonical_name}
             role = ROLE_LABELS[field]
             merger_id = merger.get('merger_id')
+            if merger_id in assigned_role_by_merger:
+                continue
+            assigned_role_by_merger[merger_id] = role
             mergers_by_role[role][merger_id] = merger
 
         groups.append({
