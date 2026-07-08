@@ -27,7 +27,7 @@
       "code": "49",
       "name": "Air and Space Transport",
       "level": "subdivision",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "50",
@@ -99,6 +99,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-06-05T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-90023",
+      "merger_name": "SAS Trustee Corporation \u2013 Australia Pacific Airport Corporation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-16T12:00:00Z",
+      "determination_date": "2026-07-08T12:00:00Z"
     },
     {
       "merger_id": "WA-55025",
@@ -308,10 +317,10 @@
       "determination_date": "2026-02-05T12:00:00Z"
     }
   ],
-  "count": 28,
+  "count": 29,
   "phase_1_count": 14,
   "phase_2_count": 0,
-  "waiver_count": 14,
+  "waiver_count": 15,
   "active_count": 5,
   "phase_duration": {
     "average_days": 32.888888888888886,

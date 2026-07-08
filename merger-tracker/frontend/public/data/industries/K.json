@@ -15,7 +15,7 @@
       "code": "63",
       "name": "Insurance and Superannuation Funds",
       "level": "subdivision",
-      "merger_count": 13
+      "merger_count": 14
     },
     {
       "code": "64",
@@ -42,6 +42,15 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-90023",
+      "merger_name": "SAS Trustee Corporation \u2013 Australia Pacific Airport Corporation",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "phase": "Waiver",
+      "notification_date": "2026-06-16T12:00:00Z",
+      "determination_date": "2026-07-08T12:00:00Z"
     },
     {
       "merger_id": "WA-20026",
@@ -863,10 +872,10 @@
       "determination_date": null
     }
   ],
-  "count": 93,
+  "count": 94,
   "phase_1_count": 20,
   "phase_2_count": 2,
-  "waiver_count": 71,
+  "waiver_count": 72,
   "active_count": 2,
   "phase_duration": {
     "average_days": 28.666666666666668,
