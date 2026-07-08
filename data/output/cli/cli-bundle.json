@@ -19478,7 +19478,7 @@
       "original_notification_datetime": "2026-06-30T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-11T12:00:00Z",
-      "page_modified_datetime": "2026-07-01T10:31:27+10:00",
+      "page_modified_datetime": "2026-07-08T15:51:12+10:00",
       "consultation_response_due_date": "2026-07-08T12:00:00Z",
       "acquirers": [
         {
@@ -19504,21 +19504,12 @@
       ],
       "other_parties": [
         {
-          "name": "SURFSIDE BUSLINES PTY. LTD.",
+          "name": "KINETIC (MELBOURNE URBAN) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "25 010 957 552",
+          "identifier": "88 632 522 233",
           "party_page": {
-            "id": "surfside-buslines-pty-ltd",
-            "name": "Surfside Buslines Pty. Ltd."
-          }
-        },
-        {
-          "name": "KINETIC (MELBOURNE) PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "89 644 690 522",
-          "party_page": {
-            "id": "kinetic-melbourne-pty-ltd",
-            "name": "Kinetic (Melbourne) Pty Ltd"
+            "id": "kinetic-melbourne-urban-pty-ltd",
+            "name": "Kinetic (Melbourne Urban) Pty Ltd"
           }
         },
         {
@@ -19531,12 +19522,12 @@
           }
         },
         {
-          "name": "KOCM 3 PTY LTD",
+          "name": "KINETIC (MELBOURNE) PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "60 679 737 510",
+          "identifier": "89 644 690 522",
           "party_page": {
-            "id": "kocm-3-pty-ltd",
-            "name": "Kocm 3 Pty Ltd"
+            "id": "kinetic-melbourne-pty-ltd",
+            "name": "Kinetic (Melbourne) Pty Ltd"
           }
         },
         {
@@ -19549,6 +19540,15 @@
           }
         },
         {
+          "name": "SURFSIDE BUSLINES PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "25 010 957 552",
+          "party_page": {
+            "id": "surfside-buslines-pty-ltd",
+            "name": "Surfside Buslines Pty. Ltd."
+          }
+        },
+        {
           "name": "DYSONS MZF PTY LTD",
           "identifier_type": "ABN",
           "identifier": "16 680 323 282",
@@ -19558,12 +19558,12 @@
           }
         },
         {
-          "name": "KINETIC (MELBOURNE URBAN) PTY LTD",
+          "name": "KOCM 3 PTY LTD",
           "identifier_type": "ABN",
-          "identifier": "88 632 522 233",
+          "identifier": "60 679 737 510",
           "party_page": {
-            "id": "kinetic-melbourne-urban-pty-ltd",
-            "name": "Kinetic (Melbourne Urban) Pty Ltd"
+            "id": "kocm-3-pty-ltd",
+            "name": "Kocm 3 Pty Ltd"
           }
         },
         {
@@ -19594,7 +19594,7 @@
           "display_title": "Questionnaire - Kinetic - Dysons",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Kinetic%20-%20Dysons.docx",
           "url_gh": "/mergers/MN-35017/Questionnaire - Kinetic - Dysons.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {
