@@ -12,6 +12,14 @@ on:
         required: false
         default: 'false'
         type: boolean
+      audience:
+        description: 'Resend audience to send to'
+        required: false
+        default: 'production'
+        type: choice
+        options:
+          - production
+          - test
 
 jobs:
   send-email:
@@ -40,6 +48,9 @@ jobs:
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+          RESEND_TEST_AUDIENCE_ID: ${{ secrets.RESEND_TEST_AUDIENCE_ID }}
+          # Scheduled runs have no inputs and default to production
+          AUDIENCE: ${{ inputs.audience || 'production' }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
         run: python scripts/send_weekly_email.py
 
