@@ -14611,8 +14611,8 @@
     "original_notification_datetime": "2026-03-03T12:00:00Z",
     "stage": "Phase 2 - detailed assessment",
     "end_of_determination_period": "2026-09-23T12:00:00Z",
-    "page_modified_datetime": "2026-06-26T16:38:32+10:00",
-    "consultation_response_due_date": "2026-05-04T12:00:00Z",
+    "page_modified_datetime": "2026-07-08T17:33:41+10:00",
+    "consultation_response_due_date": "2026-07-01T12:00:00Z",
     "acquirers": [
       {
         "name": "INSURANCE AUSTRALIA GROUP LIMITED",
@@ -14622,14 +14622,14 @@
     ],
     "targets": [
       {
-        "name": "RAC INSURANCE PTY LIMITED",
-        "identifier_type": "ABN",
-        "identifier": "59 094 685 882"
-      },
-      {
         "name": "RACI PTY LIMITED",
         "identifier_type": "ABN",
         "identifier": "40 008 671 805"
+      },
+      {
+        "name": "RAC INSURANCE PTY LIMITED",
+        "identifier_type": "ABN",
+        "identifier": "59 094 685 882"
       }
     ],
     "other_parties": [
@@ -14669,7 +14669,9 @@
         "date": "2026-04-16T12:00:00Z",
         "title": "Decision to Proceed to a Phase 2 review",
         "display_title": "Decision to Proceed to a Phase 2 review",
-        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Decision%20to%20Proceed%20to%20a%20Phase%202%20review.pdf",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Decision%20to%20Proceed%20to%20a%20Phase%202%20review_2.pdf",
+        "url_gh": "/mergers/MN-65005/Decision to Proceed to a Phase 2 review_2.pdf",
+        "status": "live",
         "phase2_notice_matters_to_investigate": [
           {
             "heading": "Relevant areas of competition",
@@ -14716,9 +14718,7 @@
             ]
           }
         ],
-        "phase2_notice_commission_division": null,
-        "url_gh": "/mergers/MN-65005/Decision to Proceed to a Phase 2 review.pdf",
-        "status": "live"
+        "phase2_notice_commission_division": "Decision made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Competition and Consumer Act 2010 (Cth)"
       },
       {
         "date": "2026-05-25T12:00:00Z",
@@ -14732,6 +14732,35 @@
         "date": "2026-06-26T12:00:00Z",
         "title": "Timeline extended by 20 business days - following request for further information",
         "display_title": "Timeline extended by 20 business days - following request for further information"
+      },
+      {
+        "date": "2026-07-08T12:00:00Z",
+        "title": "Remedy Offer - 1 July 2026 - IAG - RACI",
+        "display_title": "Remedy Offer - 1 July 2026 - IAG - RACI",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IAG%20RACI%20-%20Remedy%20Offer%20%281%20July%202026%29_1.pdf",
+        "url_gh": "/mergers/MN-65005/IAG RACI - Remedy Offer (1 July 2026)_1.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-07-08T12:00:00Z",
+        "title": "Remedy Offer Questionnaire - IAG - RACI",
+        "display_title": "Remedy Offer Questionnaire - IAG - RACI",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IAG%20RACI%20-%20Questionnaire%20-%20Remedy%20Offer%20%281%20July%202026%29_1.docx",
+        "url_gh": "/mergers/MN-65005/IAG RACI - Questionnaire - Remedy Offer (1 July 2026)_1.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-05-14T12:00:00Z",
+        "title": "Summary of Notice of Competition Concerns",
+        "display_title": "Summary of Notice of Competition Concerns",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/IAG_RACI%20-%20Summary%20of%20Notice%20of%20Competition%20Concerns%20-%2025%20May%202026_3.pdf",
+        "url_gh": "/mergers/MN-65005/IAG_RACI - Summary of Notice of Competition Concerns - 25 May 2026_3.pdf",
+        "status": "live"
+      },
+      {
+        "date": "2026-06-26T12:00:00Z",
+        "title": "Timeline extended by business days - following request for further information",
+        "display_title": "Timeline extended by business days - following request for further information"
       }
     ],
     "is_waiver": false
