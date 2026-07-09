@@ -56,13 +56,13 @@ function DeltaChip({ current, comparison }) {
 // ANZSIC hierarchy and/or all industries). Bars are scaled to the largest value
 // so the comparison reads at a glance, and each baseline carries a delta chip
 // spelling out how much longer/shorter this industry runs.
-function MetricComparison({ label, current, comparisons }) {
-  // No completed Phase 1 reviews here — nothing to plot.
+function MetricComparison({ label, current, comparisons, subjectLabel }) {
+  // No completed reviews here — nothing to plot.
   if (current == null) {
     return (
       <div>
         <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
-        <p className="text-sm text-gray-500 mt-2">No completed Phase 1 reviews</p>
+        <p className="text-sm text-gray-500 mt-2">No completed reviews</p>
       </div>
     );
   }
@@ -79,13 +79,13 @@ function MetricComparison({ label, current, comparisons }) {
         {label}
       </p>
 
-      {/* This industry */}
+      {/* This subject (industry / party). */}
       <Bar
         widthPct={(current / max) * 100}
         value={current}
         barClass="bg-primary"
         valueClass="font-bold text-gray-900"
-        caption="This industry"
+        caption={subjectLabel}
       />
 
       {/* One bar per baseline (parent industry, all industries). */}
@@ -106,16 +106,25 @@ function MetricComparison({ label, current, comparisons }) {
 }
 
 /**
- * Visual comparison of this industry's Phase 1 review durations against one or
- * more baselines — its parent in the ANZSIC hierarchy and/or all industries.
- * Values are business days, rounded.
+ * Visual comparison of a subject's review durations against one or more
+ * baselines — e.g. an industry's parent in the ANZSIC hierarchy and/or all
+ * industries, or a party against all mergers. Values are business days,
+ * rounded. Used for both the Phase 1 and waiver duration charts.
  *
  * @param {object} props
- * @param {object|null} props.duration - this industry's `phase_duration`.
+ * @param {object|null} props.duration - the subject's duration object
+ *   (`phase_duration` or `waiver_duration`).
  * @param {Array<{name: string, duration: object|null}>} [props.comparisons] -
- *   ordered baselines to plot beneath this industry (e.g. parent then overall).
+ *   ordered baselines to plot beneath the subject (e.g. parent then overall).
+ * @param {string} [props.title] - card heading (e.g. "Phase 1 duration").
+ * @param {string} [props.subjectLabel] - caption for the subject's own bar.
  */
-function PhaseDurationComparison({ duration, comparisons = [] }) {
+function PhaseDurationComparison({
+  duration,
+  comparisons = [],
+  title = 'Phase 1 duration',
+  subjectLabel = 'This industry',
+}) {
   const round = (v) => (v != null ? Math.round(v) : null);
 
   const currentAvg = round(duration?.average_business_days);
@@ -134,7 +143,7 @@ function PhaseDurationComparison({ duration, comparisons = [] }) {
     <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
       <div className="flex items-baseline justify-between gap-3 mb-5">
         <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
-          Phase 1 duration
+          {title}
         </h2>
         <span className="text-[11px] text-gray-500">business days</span>
       </div>
@@ -144,11 +153,13 @@ function PhaseDurationComparison({ duration, comparisons = [] }) {
           label="Average"
           current={currentAvg}
           comparisons={avgComparisons}
+          subjectLabel={subjectLabel}
         />
         <MetricComparison
           label="Median"
           current={currentMedian}
           comparisons={medianComparisons}
+          subjectLabel={subjectLabel}
         />
       </div>
     </div>

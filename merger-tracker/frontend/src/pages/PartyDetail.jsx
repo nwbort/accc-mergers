@@ -74,6 +74,12 @@ function PartyDetail() {
     comparisons.push({ name: 'All mergers', duration: statsData.phase_duration });
   }
 
+  const waiverDuration = data.waiver_duration;
+  const waiverComparisons = [];
+  if (statsData?.waiver_duration?.average_business_days != null) {
+    waiverComparisons.push({ name: 'All mergers', duration: statsData.waiver_duration });
+  }
+
   const roles = ['acquirer', 'target', 'other'].filter((role) => (mergersByRole[role] || []).length > 0);
 
   return (
@@ -145,7 +151,22 @@ function PartyDetail() {
 
         {mergerCount > 0 && duration?.average_business_days != null && (
           <div className="mb-6">
-            <PhaseDurationComparison duration={duration} comparisons={comparisons} />
+            <PhaseDurationComparison
+              duration={duration}
+              comparisons={comparisons}
+              subjectLabel="This party"
+            />
+          </div>
+        )}
+
+        {mergerCount > 0 && waiverDuration?.average_business_days != null && (
+          <div className="mb-6">
+            <PhaseDurationComparison
+              title="Waiver duration"
+              duration={waiverDuration}
+              comparisons={waiverComparisons}
+              subjectLabel="This party"
+            />
           </div>
         )}
 

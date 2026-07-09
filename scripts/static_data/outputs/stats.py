@@ -5,7 +5,7 @@ from statistics import median
 
 from constants import merger_status
 
-from ..durations import collect_phase_1_durations
+from ..durations import collect_phase_1_durations, collect_waiver_durations
 from ..enrichment import is_phase_2_referral_event
 from ..filters import filter_notifications, filter_waivers
 
@@ -177,6 +177,18 @@ def generate(mergers: list) -> dict:
     if percentile_stats:
         phase_duration_data["percentiles"] = percentile_stats
 
+    # Waiver durations (notification → determination publication) for the
+    # all-mergers baseline the industry/party pages compare against.
+    waiver_cal, waiver_business = collect_waiver_durations(waiver_mergers)
+    waiver_duration_data = {
+        "average_days": sum(waiver_cal) / len(waiver_cal) if waiver_cal else None,
+        "median_days": round(median(waiver_cal), 1) if waiver_cal else None,
+        "average_business_days": (
+            sum(waiver_business) / len(waiver_business) if waiver_business else None
+        ),
+        "median_business_days": round(median(waiver_business), 1) if waiver_business else None,
+    }
+
     return {
         "total_mergers": total_notifications,
         "total_waivers": total_waivers,
@@ -185,6 +197,7 @@ def generate(mergers: list) -> dict:
         "by_determination": dict(by_determination),
         "by_waiver_determination": dict(by_waiver_determination),
         "phase_duration": phase_duration_data,
+        "waiver_duration": waiver_duration_data,
         "top_industries": top_industries,
         "recent_mergers": recent_mergers,
         "recent_determinations": recent_determinations,
