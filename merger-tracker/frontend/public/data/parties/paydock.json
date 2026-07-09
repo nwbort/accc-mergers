@@ -1,15 +1,26 @@
 {
-  "id": "retail-payment-solutions-pty-ltd",
-  "canonical_name": "Retail Payment Solutions Pty Ltd",
+  "id": "paydock",
+  "canonical_name": "Paydock",
   "members": [
     {
-      "name": "Retail Payment Solutions Pty Ltd",
-      "identifier": "89 683 915 657",
+      "name": "Paydock  Holdings Pty Limited",
+      "identifier": "31 607 215 163",
       "identifier_type": "ABN"
+    },
+    {
+      "name": "Paydock AUNZ Pty Limited",
+      "identifier": "96 607 219 116",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "Paydock Ltd",
+      "identifier": null,
+      "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [
+    "acquirer": [],
+    "target": [
       {
         "merger_id": "MN-65028",
         "merger_name": "Coles - Paydock",
@@ -20,7 +31,6 @@
         "determination_date": null
       }
     ],
-    "target": [],
     "other": []
   },
   "merger_count": 1,
