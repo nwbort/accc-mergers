@@ -11,6 +11,7 @@ const PAGES = [
   { label: 'Mergers', path: '/mergers' },
   { label: 'Timeline', path: '/timeline' },
   { label: 'Industries', path: '/industries' },
+  { label: 'Parties', path: '/parties' },
   { label: 'Analysis', path: '/analysis' },
   { label: 'Commentary', path: '/commentary' },
   { label: 'Digest', path: '/digest' },
