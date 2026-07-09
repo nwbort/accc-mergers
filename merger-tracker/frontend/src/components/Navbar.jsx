@@ -12,6 +12,7 @@ const navLinks = [
   { path: '/mergers', label: 'Mergers', shortcut: 'm' },
   { path: '/phase-2', label: 'Phase 2' },
   { path: '/industries', label: 'Industries', shortcut: 'i' },
+  { path: '/parties', label: 'Parties', shortcut: 'p' },
   { path: '/commentary', label: 'Commentary', shortcut: 'c' },
   { path: '/analysis', label: 'Analysis', shortcut: 'a' },
   { path: '/digest', label: 'Catch me up' },

@@ -16,6 +16,7 @@ import MergerDetail from './pages/MergerDetail';
 import Timeline from './pages/Timeline';
 import Industries from './pages/Industries';
 import IndustryDetail from './pages/IndustryDetail';
+import Parties from './pages/Parties';
 import PartyDetail from './pages/PartyDetail';
 import Commentary from './pages/Commentary';
 import Digest from './pages/Digest';
@@ -50,6 +51,7 @@ function AppContent() {
             <Route path="/industries" element={<Industries />} />
             <Route path="/industries/:code" element={<IndustryDetail />} />
             <Route path="/industries/:code/:slug" element={<IndustryDetail />} />
+            <Route path="/parties" element={<Parties />} />
             <Route path="/parties/:id" element={<PartyDetail />} />
             <Route path="/parties/:id/:slug" element={<PartyDetail />} />
             <Route path="/commentary" element={<Commentary />} />

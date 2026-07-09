@@ -12,6 +12,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
  *   g then m Go to Mergers
  *   g then t Go to Timeline
  *   g then i Go to Industries
+ *   g then p Go to Parties
  *   g then c Go to Commentary
  *   g then a Go to Analysis
  *   ?        Show/hide keyboard shortcut help overlay
@@ -62,6 +63,7 @@ export function useKeyboardShortcuts({ onToggleHelp, onTogglePalette } = {}) {
           m: '/mergers',
           t: '/timeline',
           i: '/industries',
+          p: '/parties',
           c: '/commentary',
           a: '/analysis',
         };

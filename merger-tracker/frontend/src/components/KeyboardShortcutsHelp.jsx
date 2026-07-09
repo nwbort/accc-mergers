@@ -8,6 +8,7 @@ const shortcuts = [
   { keys: ['g', 'm'], description: 'Go to Mergers' },
   { keys: ['g', 't'], description: 'Go to Timeline' },
   { keys: ['g', 'i'], description: 'Go to Industries' },
+  { keys: ['g', 'p'], description: 'Go to Parties' },
   { keys: ['g', 'c'], description: 'Go to Commentary' },
   { keys: ['g', 'a'], description: 'Go to Analysis' },
   { keys: ['j'], description: 'Next item (mergers list)' },
