@@ -2019,6 +2019,10 @@
           "name": "Leidos, Inc.",
           "identifier_type": null,
           "identifier": "EFN  901386",
+          "canonical": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
+          },
           "party_page": {
             "id": "leidos-inc",
             "name": "Leidos, Inc."
@@ -2068,9 +2072,13 @@
           "name": "Leidos Holdings, Inc.",
           "identifier_type": null,
           "identifier": "EFN  4014717",
+          "canonical": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
+          },
           "party_page": {
-            "id": "leidos-holdings-inc",
-            "name": "Leidos Holdings, Inc."
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
           }
         },
         {

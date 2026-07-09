@@ -152,15 +152,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-50021",
-      "merger_name": "Adbri - Eureka Concrete",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "phase": "Phase 1",
-      "notification_date": "2026-06-17T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-15018",
       "merger_name": "Complete Air Supply - All Air",
       "is_waiver": false,
@@ -186,6 +177,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-50021",
+      "merger_name": "Adbri - Eureka Concrete",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-17T12:00:00Z",
+      "determination_date": "2026-07-09T12:00:00Z"
     },
     {
       "merger_id": "MN-10018",
@@ -1029,12 +1029,12 @@
   "phase_1_count": 47,
   "phase_2_count": 1,
   "waiver_count": 55,
-  "active_count": 10,
+  "active_count": 9,
   "phase_duration": {
-    "average_days": 29.210526315789473,
+    "average_days": 29.025641025641026,
     "median_days": 26,
-    "average_business_days": 19.05263157894737,
+    "average_business_days": 18.974358974358974,
     "median_business_days": 17,
-    "completed_count": 38
+    "completed_count": 39
   }
 }

@@ -47,15 +47,6 @@
   ],
   "mergers": [
     {
-      "merger_id": "MN-50021",
-      "merger_name": "Adbri - Eureka Concrete",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "phase": "Phase 1",
-      "notification_date": "2026-06-17T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-50009",
       "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
       "is_waiver": false,
@@ -63,6 +54,15 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-28T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-50021",
+      "merger_name": "Adbri - Eureka Concrete",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "phase": "Phase 1",
+      "notification_date": "2026-06-17T12:00:00Z",
+      "determination_date": "2026-07-09T12:00:00Z"
     },
     {
       "merger_id": "MN-10018",
@@ -96,12 +96,12 @@
   "phase_1_count": 5,
   "phase_2_count": 0,
   "waiver_count": 0,
-  "active_count": 2,
+  "active_count": 1,
   "phase_duration": {
-    "average_days": 31.333333333333332,
+    "average_days": 29.0,
     "median_days": 36,
-    "average_business_days": 22.0,
+    "average_business_days": 20.5,
     "median_business_days": 25,
-    "completed_count": 3
+    "completed_count": 4
   }
 }
