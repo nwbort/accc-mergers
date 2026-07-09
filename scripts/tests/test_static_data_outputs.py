@@ -137,9 +137,17 @@ class TestStatsGenerate:
         # Key shape
         assert set(payload.keys()) >= {
             'total_mergers', 'total_waivers', 'by_status', 'by_determination',
-            'by_waiver_determination', 'phase_duration', 'top_industries',
-            'recent_mergers', 'recent_determinations',
+            'by_waiver_determination', 'phase_duration', 'waiver_duration',
+            'top_industries', 'recent_mergers', 'recent_determinations',
         }
+
+    def test_waiver_duration_baseline(self):
+        payload = stats.generate(_enriched_fixture())
+        # WA-0003: notified 2025-02-01 → determined 2025-02-10 (9 calendar,
+        # 6 business days). It's the only completed waiver in the fixture.
+        assert payload['waiver_duration']['average_days'] == 9
+        assert payload['waiver_duration']['average_business_days'] == 6
+        assert payload['waiver_duration']['median_business_days'] == 6
 
     def test_counts_split_waivers_correctly(self):
         payload = stats.generate(_enriched_fixture())
@@ -381,10 +389,17 @@ class TestIndustriesDetailFiles:
         assert mining['phase_duration'] is not None
         assert mining['phase_duration']['average_days'] == 30
         assert mining['phase_duration']['completed_count'] == 1
-        # The orphan code is a single waiver — no Phase 1 duration.
+        # Mining is notifications only — no waiver duration.
+        assert mining['waiver_duration'] is None
+        # The orphan code is a single waiver — no Phase 1 duration, but it does
+        # have a waiver duration (notified 2025-02-01 → determined 2025-02-10).
         with open(tmp_path / 'industries' / '5400.json') as f:
             transport = json.load(f)
         assert transport['phase_duration'] is None
+        assert transport['waiver_duration'] is not None
+        assert transport['waiver_duration']['average_days'] == 9
+        assert transport['waiver_duration']['average_business_days'] == 6
+        assert transport['waiver_duration']['completed_count'] == 1
 
 
 # ---------------------------------------------------------------------------
@@ -1862,3 +1877,31 @@ class TestPartiesDetailFiles:
             data = json.load(f)
         assert data['merger_count'] == 1
         assert [m['merger_id'] for m in data['mergers']['target']] == ['MN-1003']
+
+    def test_includes_waiver_duration(self, tmp_path):
+        # A party whose only merger is a completed waiver gets a waiver
+        # duration but no Phase 1 duration.
+        waiver = {
+            'merger_id': 'WA-2001',
+            'merger_name': 'Acme waiver',
+            'status': 'Determined',
+            'is_waiver': True,
+            'stage': 'Waiver',
+            'effective_notification_datetime': '2025-02-01T09:00:00Z',
+            'determination_publication_date': '2025-02-10T12:00:00Z',
+            'phase_1_determination_date': None,
+            'page_modified_datetime': '2025-02-10T12:30:00Z',
+            'acquirers': [{'name': 'ACME PTY LTD', 'identifier': '', 'identifier_type': ''}],
+            'targets': [],
+            'other_parties': [],
+        }
+        groups = parties.build_party_pages([waiver], [])
+        parties.generate_detail_files(groups, tmp_path)
+        acme_id = next(g['id'] for g in groups if 'ACME PTY LTD' in [m['name'] for m in g['members']])
+        with open(tmp_path / 'parties' / f'{acme_id}.json') as f:
+            data = json.load(f)
+        assert data['phase_duration'] is None
+        assert data['waiver_duration'] is not None
+        assert data['waiver_duration']['average_days'] == 9
+        assert data['waiver_duration']['average_business_days'] == 6
+        assert data['waiver_duration']['completed_count'] == 1

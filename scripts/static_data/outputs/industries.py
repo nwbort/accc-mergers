@@ -12,7 +12,7 @@ from pathlib import Path
 from constants import merger_status
 
 from .. import anzsic
-from ..durations import collect_phase_1_durations
+from ..durations import collect_phase_1_durations, collect_waiver_durations
 
 
 def classify_phase(m: dict) -> str:
@@ -55,6 +55,26 @@ def _phase_duration(unique_mergers: list) -> dict | None:
     industry has no completed Phase 1 reviews.
     """
     durations, business_durations = collect_phase_1_durations(unique_mergers)
+
+    if not durations and not business_durations:
+        return None
+
+    return {
+        "average_days": _avg(durations),
+        "median_days": _median(durations),
+        "average_business_days": _avg(business_durations),
+        "median_business_days": _median(business_durations),
+        "completed_count": len(business_durations),
+    }
+
+
+def _waiver_duration(unique_mergers: list) -> dict | None:
+    """Waiver duration stats for an industry, mirroring :func:`_phase_duration`.
+
+    Measures notification → determination publication for completed waiver
+    mergers. Returns ``None`` when the industry has no completed waivers.
+    """
+    durations, business_durations = collect_waiver_durations(unique_mergers)
 
     if not durations and not business_durations:
         return None
@@ -228,6 +248,7 @@ def generate_detail_files(mergers: list, output_dir: Path) -> int:
             "count": len(record_list),
             **_industry_stats(full_mergers),
             "phase_duration": _phase_duration(full_mergers),
+            "waiver_duration": _waiver_duration(full_mergers),
         }
         _write_detail_file(industries_dir, code, payload)
 
@@ -246,6 +267,7 @@ def generate_detail_files(mergers: list, output_dir: Path) -> int:
             "count": len(record_list),
             **_industry_stats(full_mergers),
             "phase_duration": _phase_duration(full_mergers),
+            "waiver_duration": _waiver_duration(full_mergers),
         }
         _write_detail_file(industries_dir, code, payload)
 

@@ -28,7 +28,7 @@ from constants import merger_status
 from party_matching import build_group_lookups, match_party, normalise_identifier, normalise_name
 from slug import slugify
 
-from ..durations import collect_phase_1_durations
+from ..durations import collect_phase_1_durations, collect_waiver_durations
 from .industries import classify_phase, is_active
 
 PARTY_ROLE_FIELDS = ("acquirers", "targets", "other_parties")
@@ -207,6 +207,29 @@ def _phase_duration(unique_mergers: list) -> dict | None:
     }
 
 
+def _waiver_duration(unique_mergers: list) -> dict | None:
+    """Waiver duration stats for a party, mirroring :func:`_phase_duration`.
+
+    Measures notification → determination publication for completed waivers.
+    """
+    durations, business_durations = collect_waiver_durations(unique_mergers)
+
+    if not durations and not business_durations:
+        return None
+
+    return {
+        'average_days': sum(durations) / len(durations) if durations else None,
+        'median_days': sorted(durations)[len(durations) // 2] if durations else None,
+        'average_business_days': (
+            sum(business_durations) / len(business_durations) if business_durations else None
+        ),
+        'median_business_days': (
+            sorted(business_durations)[len(business_durations) // 2] if business_durations else None
+        ),
+        'completed_count': len(business_durations),
+    }
+
+
 def _write_detail_file(parties_dir: Path, group_id: str, payload: dict) -> None:
     safe_id = group_id.replace('/', '-').replace('\\', '-')
     out_path = parties_dir / f"{safe_id}.json"
@@ -246,6 +269,7 @@ def generate_detail_files(groups: list, output_dir: Path) -> int:
             'waiver_count': waivers,
             'active_count': active,
             'phase_duration': _phase_duration(all_mergers),
+            'waiver_duration': _waiver_duration(all_mergers),
         }
         _write_detail_file(parties_dir, g['id'], payload)
 

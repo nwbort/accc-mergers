@@ -14,7 +14,7 @@ output measures to that field via :func:`phase_1_end_date`.
 """
 
 from .business_days import calculate_business_days, calculate_calendar_days
-from .filters import filter_notifications
+from .filters import filter_notifications, filter_waivers
 
 
 def phase_1_end_date(m: dict) -> str | None:
@@ -40,6 +40,31 @@ def collect_phase_1_durations(mergers: list) -> tuple[list, list]:
     for m in filter_notifications(mergers):
         start = m.get('effective_notification_datetime')
         end = phase_1_end_date(m)
+        if not (start and end):
+            continue
+        cal_days = calculate_calendar_days(start, end)
+        if cal_days is not None:
+            calendar_days.append(cal_days)
+        bus_days = calculate_business_days(start, end)
+        if bus_days is not None:
+            business_days.append(bus_days)
+
+    return calendar_days, business_days
+
+
+def collect_waiver_durations(mergers: list) -> tuple[list, list]:
+    """Return ``(calendar_days, business_days)`` for completed waiver reviews.
+
+    Only waiver mergers with a published determination are counted, measuring
+    notification → determination publication. Waivers have no Phase 1 clock, so
+    they are measured end-to-end rather than to :func:`phase_1_end_date`.
+    """
+    calendar_days = []
+    business_days = []
+
+    for m in filter_waivers(mergers):
+        start = m.get('effective_notification_datetime')
+        end = m.get('determination_publication_date')
         if not (start and end):
             continue
         cal_days = calculate_calendar_days(start, end)

@@ -134,6 +134,21 @@ function IndustryDetail() {
     comparisons.push({ name: 'All industries', duration: statsData.phase_duration });
   }
 
+  // Waiver duration (notification → determination) with the same baselines,
+  // shown as a second chart alongside Phase 1. Absent when the industry has no
+  // completed waivers.
+  const waiverDuration = data.waiver_duration;
+  const waiverComparisons = [];
+  if (parentCode && parentData?.waiver_duration) {
+    waiverComparisons.push({
+      name: data.parent?.name || 'Parent industry',
+      duration: parentData.waiver_duration,
+    });
+  }
+  if (statsData?.waiver_duration?.average_business_days != null) {
+    waiverComparisons.push({ name: 'All industries', duration: statsData.waiver_duration });
+  }
+
   const statCards = [
     { label: 'Total reviews', value: mergers.length },
     { label: 'Phase 2 reviews', value: phase2Count },
@@ -226,6 +241,17 @@ function IndustryDetail() {
             <PhaseDurationComparison
               duration={duration}
               comparisons={comparisons}
+            />
+          </div>
+        )}
+
+        {/* Waiver duration, shown the same way for industries with waivers. */}
+        {mergers.length > 0 && waiverDuration?.average_business_days != null && (
+          <div className="mb-6">
+            <PhaseDurationComparison
+              title="Waiver duration"
+              duration={waiverDuration}
+              comparisons={waiverComparisons}
             />
           </div>
         )}
