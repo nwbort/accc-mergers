@@ -1,0 +1,63 @@
+{
+  "id": "oscars-hotels",
+  "canonical_name": "Oscars Hotels",
+  "members": [
+    {
+      "name": "BANKSTOWN CENTRAL PROPERTY PTY LTD",
+      "identifier": "620 947 300",
+      "identifier_type": "ACN"
+    },
+    {
+      "name": "OSCARS HOTELS PTY LTD",
+      "identifier": "13 100 497 765",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "OSCARS NSW OPS PTY LTD",
+      "identifier": "19 686 583 451",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "The Trustee for THE BANKSTOWN CENTRAL PROPERTY UNIT TRUST",
+      "identifier": "35 764 968 745",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "WA-25031",
+        "merger_name": "Oscars Group \u2013 South Terrace Hotel in Bankstown, NSW",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-06-12T12:00:00Z",
+        "determination_date": "2026-07-08T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-60021",
+        "merger_name": "Oscars Group \u2013 Hotel Diplomat in Potts Point, NSW",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "phase": "Waiver",
+        "notification_date": "2026-06-04T12:00:00Z",
+        "determination_date": "2026-06-19T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 2,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 2,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 20.5,
+    "median_days": 26,
+    "average_business_days": 14.0,
+    "median_business_days": 18,
+    "completed_count": 2
+  }
+}
