@@ -26,10 +26,24 @@
       "name": "Coles Group Limited",
       "identifier": "11 004 089 936",
       "identifier_type": "ABN"
+    },
+    {
+      "name": "Retail Payment Solutions Pty Ltd",
+      "identifier": "89 683 915 657",
+      "identifier_type": "ABN"
     }
   ],
   "mergers": {
     "acquirer": [
+      {
+        "merger_id": "MN-65028",
+        "merger_name": "Coles - Paydock",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "phase": "Phase 1",
+        "notification_date": "2026-07-09T12:00:00Z",
+        "determination_date": null
+      },
       {
         "merger_id": "MN-70022",
         "merger_name": "Coles \u2013 supermarket site in Coffs Harbour (NSW)",
@@ -104,17 +118,7 @@
       }
     ],
     "target": [],
-    "other": [
-      {
-        "merger_id": "MN-65028",
-        "merger_name": "Coles - Paydock",
-        "is_waiver": false,
-        "status": "Under assessment",
-        "phase": "Phase 1",
-        "notification_date": "2026-07-09T12:00:00Z",
-        "determination_date": null
-      }
-    ]
+    "other": []
   },
   "merger_count": 9,
   "phase_1_count": 5,
