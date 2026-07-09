@@ -32401,9 +32401,13 @@
           "name": "Retail Payment Solutions Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "89 683 915 657",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          },
           "party_page": {
-            "id": "retail-payment-solutions-pty-ltd",
-            "name": "Retail Payment Solutions Pty Ltd"
+            "id": "coles",
+            "name": "Coles Group"
           }
         }
       ],
@@ -32412,27 +32416,39 @@
           "name": "Paydock  Holdings Pty Limited",
           "identifier_type": "ABN",
           "identifier": "31 607 215 163",
+          "canonical": {
+            "id": "paydock",
+            "name": "Paydock"
+          },
           "party_page": {
-            "id": "paydock-holdings-pty-limited",
-            "name": "Paydock Holdings Pty Limited"
+            "id": "paydock",
+            "name": "Paydock"
           }
         },
         {
           "name": "Paydock AUNZ Pty Limited",
           "identifier_type": "ABN",
           "identifier": "96 607 219 116",
+          "canonical": {
+            "id": "paydock",
+            "name": "Paydock"
+          },
           "party_page": {
-            "id": "paydock-aunz-pty-limited",
-            "name": "Paydock AUNZ Pty Limited"
+            "id": "paydock",
+            "name": "Paydock"
           }
         },
         {
           "name": "Paydock Ltd",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "paydock",
+            "name": "Paydock"
+          },
           "party_page": {
-            "id": "paydock-ltd",
-            "name": "Paydock Ltd"
+            "id": "paydock",
+            "name": "Paydock"
           }
         }
       ],
