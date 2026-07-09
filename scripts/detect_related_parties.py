@@ -23,8 +23,15 @@ Distinct ``(name, identifier)`` party records are unioned together when any of:
     (a renamed entity); strongest signal.
   * ``name`` match — same (normalised) name with a differing or missing
     identifier (a data-entry inconsistency, often a missing ABN).
+  * ``name_variant`` — names that are identical apart from punctuation, spacing
+    or case (e.g. ``Francisco Partners Management, L.P`` and ``... LP``). As
+    reliable as a name match, so it runs by default too.
   * ``fuzzy`` — very similar normalised names that also share a distinctive
-    token; weakest signal, gated by ``--fuzzy-threshold``.
+    token; weakest signal, gated by ``--fuzzy-threshold``. The fuzzy pass skips
+    pairs that differ only by a sibling-distinguishing token (a number, roman
+    numeral, compass point, ``-co`` role, or state code) so it stops
+    recommending distinct vehicles from one deal (``BidCo``/``MidCo``,
+    ``No. 1``/``No. 2``, ``WA1``/``WA2``).
 
 A cluster is only reported when it contains at least two *distinct* identities
 and none of its members already belong to a recorded group. Each candidate gets
@@ -42,6 +49,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 from collections import defaultdict
 from difflib import SequenceMatcher
@@ -77,13 +85,44 @@ _MIN_TOKEN_LEN = 4
 # Signal labels, strongest first, with the confidence score they imply.
 SIGNAL_IDENTIFIER = "identifier"
 SIGNAL_NAME = "name"
+SIGNAL_NAME_VARIANT = "name_variant"
 SIGNAL_FUZZY = "fuzzy"
 _SIGNAL_SCORES = {
     SIGNAL_IDENTIFIER: 0.95,
     SIGNAL_NAME: 0.90,
+    SIGNAL_NAME_VARIANT: 0.90,
     SIGNAL_FUZZY: 0.80,
 }
-_SIGNAL_RANK = {SIGNAL_IDENTIFIER: 3, SIGNAL_NAME: 2, SIGNAL_FUZZY: 1}
+_SIGNAL_RANK = {
+    SIGNAL_IDENTIFIER: 4, SIGNAL_NAME: 3, SIGNAL_NAME_VARIANT: 2, SIGNAL_FUZZY: 1,
+}
+
+# Tokens that mark a genuinely *distinct* sibling entity rather than a name
+# variant: numbered / lettered SPVs, roman numerals, compass points, the
+# structural "-co" roles that differ between vehicles in one deal, and
+# state/country codes. The fuzzy pass refuses to link a pair whose names differ
+# only by tokens like these.
+_ROMAN_NUMERALS = {
+    "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x", "xi", "xii",
+}
+_DIRECTIONS = {
+    "north", "south", "east", "west",
+    "northern", "southern", "eastern", "western", "central",
+}
+_NUMBER_WORDS = {
+    "first", "second", "third", "fourth", "fifth", "sixth", "seventh", "eighth",
+    "ninth", "tenth", "one", "two", "three", "four", "five", "six", "seven",
+    "eight", "nine", "ten",
+}
+_SPV_ROLES = {
+    "bidco", "midco", "topco", "holdco", "opco", "propco", "finco", "newco",
+    "aggco", "gp", "lp", "op", "prop", "mm", "sub", "blocker", "mid",
+}
+_GEO_CODES = {
+    "vic", "nsw", "qld", "wa", "sa", "nt", "act", "tas",
+    "aus", "au", "uk", "us", "usa", "nz", "eu", "apac",
+}
+_STATE_NUMBER = re.compile(r"[a-z]{0,4}\d+")
 
 
 # ---------------------------------------------------------------------------
@@ -157,6 +196,41 @@ def _significant_tokens(norm_name: str) -> set[str]:
     }
 
 
+def _squash_name(name: str) -> str:
+    """Reduce a name to just its lower-cased alphanumerics.
+
+    Two names with the same squash are identical apart from punctuation,
+    spacing and case — ``Francisco Partners Management, L.P`` and ``... LP``
+    both squash to ``franciscopartnersmanagementlp`` — so they are one entity
+    written two ways, not merely similar. Sibling vehicles that differ by any
+    real token (``... No. 1`` / ``... No. 2``) never collide here.
+    """
+    return re.sub(r"[^a-z0-9]", "", (name or "").lower())
+
+
+def _is_distinguishing_token(tok: str) -> bool:
+    """True if ``tok`` only tells two sibling vehicles apart (a number, roman
+    numeral, compass point, ``-co`` role or state/country code)."""
+    if tok in _ROMAN_NUMERALS or tok in _DIRECTIONS or tok in _NUMBER_WORDS:
+        return True
+    if tok in _SPV_ROLES or tok in _GEO_CODES:
+        return True
+    # A bare ordinal ("2") or a short-prefixed number ("wa1", "ak2", "no3").
+    return bool(_STATE_NUMBER.fullmatch(tok))
+
+
+def _differs_only_by_sibling_token(norm_a: str, norm_b: str) -> bool:
+    """True if two normalised names differ *only* by distinguishing tokens.
+
+    ``Swan Bidco`` vs ``Swan Midco``, ``... No. 1`` vs ``... No. 3`` and
+    ``Smile Partners (WA1)`` vs ``... (WA2)`` are separate vehicles in one
+    structure, not one entity under two names. The fuzzy pass uses this to stop
+    recommending such siblings.
+    """
+    sym = set(norm_a.split()) ^ set(norm_b.split())
+    return bool(sym) and all(_is_distinguishing_token(t) for t in sym)
+
+
 def _cluster(
     records: list[PartyRecord], fuzzy_threshold: float, enable_fuzzy: bool
 ) -> tuple[list[list[int]], dict[frozenset[int], str]]:
@@ -176,7 +250,12 @@ def _cluster(
 
     def link(i: int, j: int, signal: str) -> None:
         uf.union(i, j)
-        link_signals[frozenset((i, j))] = signal
+        key = frozenset((i, j))
+        prev = link_signals.get(key)
+        # A pair can qualify under several rules (identical names also squash
+        # equal); keep the strongest so the group is scored on its best signal.
+        if prev is None or _SIGNAL_RANK[signal] > _SIGNAL_RANK[prev]:
+            link_signals[key] = signal
 
     # Exact identifier / name collisions (cheap, via buckets).
     by_id: dict[str, list[int]] = defaultdict(list)
@@ -194,6 +273,18 @@ def _cluster(
         for j in bucket[1:]:
             link(bucket[0], j, SIGNAL_NAME)
 
+    # Punctuation/spacing/case-only name variants (e.g. "L.P" vs "LP"). These
+    # are as trustworthy as an exact-name match — a differing token would break
+    # the squash — so they run by default rather than only under --fuzzy.
+    by_squash: dict[str, list[int]] = defaultdict(list)
+    for idx, rec in enumerate(records):
+        squashed = _squash_name(rec.name)
+        if squashed:
+            by_squash[squashed].append(idx)
+    for bucket in by_squash.values():
+        for j in bucket[1:]:
+            link(bucket[0], j, SIGNAL_NAME_VARIANT)
+
     if not enable_fuzzy:
         return _components(uf, len(records)), link_signals
 
@@ -207,6 +298,8 @@ def _cluster(
                 continue  # already handled as a name collision
             if not (token_sets[i] & token_sets[j]):
                 continue  # require a shared distinctive token
+            if _differs_only_by_sibling_token(records[i].norm_name, records[j].norm_name):
+                continue  # distinct sibling vehicle, not one entity twice
             ratio = SequenceMatcher(None, records[i].norm_name, records[j].norm_name).ratio()
             if ratio >= fuzzy_threshold:
                 link(i, j, SIGNAL_FUZZY)
@@ -373,6 +466,7 @@ def apply_suggestions(parties_path: Path, candidates: list[dict]) -> int:
 _SIGNAL_BLURB = {
     SIGNAL_IDENTIFIER: "share an ABN but are recorded under different names",
     SIGNAL_NAME: "share a name but have a differing or missing ABN",
+    SIGNAL_NAME_VARIANT: "have the same name apart from punctuation or spacing",
     SIGNAL_FUZZY: "have very similar names and a shared distinctive token",
 }
 

@@ -190,16 +190,64 @@ def test_existing_group_members_are_excluded():
     assert drp.find_candidates(mergers, groups) == []
 
 
-def test_sibling_spvs_not_grouped_without_fuzzy():
-    # Distinct names + distinct ABNs: only the (off-by-default) fuzzy pass could
-    # link these, and it shouldn't run by default.
+def test_sibling_spvs_not_grouped_even_with_fuzzy():
+    # "Bidco"/"Midco" are separate vehicles in one deal, not one entity under
+    # two names. They differ only by a distinguishing "-co" role token, so even
+    # the fuzzy pass must refuse to link them.
     mergers = [
         _merger("MN-1", acquirers=[{"name": "Swan Bidco Pty Ltd", "identifier": "99 634 920 773"}]),
         _merger("MN-2", acquirers=[{"name": "Swan Midco Pty Ltd", "identifier": "55 682 241 621"}]),
     ]
     assert drp.find_candidates(mergers, []) == []
-    fuzzy = drp.find_candidates(mergers, [], fuzzy_threshold=0.6, enable_fuzzy=True)
+    assert drp.find_candidates(mergers, [], fuzzy_threshold=0.6, enable_fuzzy=True) == []
+
+
+def test_numbered_and_state_sibling_spvs_are_not_fuzzy_linked():
+    # Numbered / state-suffixed siblings must not be recommended even under fuzzy.
+    mergers = [
+        _merger("MN-1", acquirers=[{"name": "Count Holdings No. 1 Pty Ltd", "identifier": "70 696 338 995"}]),
+        _merger("MN-2", acquirers=[{"name": "Count Holdings No. 3 Pty Ltd", "identifier": "37 696 339 161"}]),
+        _merger("MN-3", targets=[{"name": "Smile Partners (WA1) Pty Ltd", "identifier": "27 662 001 925"}]),
+        _merger("MN-4", targets=[{"name": "Smile Partners (WA2) Pty Ltd", "identifier": "98 674 927 943"}]),
+    ]
+    assert drp.find_candidates(mergers, [], fuzzy_threshold=0.6, enable_fuzzy=True) == []
+
+
+def test_fuzzy_still_links_genuinely_similar_non_sibling_names():
+    # A real typo that isn't just a distinguishing token (shared "acme" and
+    # "solutions" tokens, one mis-spelt word) should still come through fuzzy.
+    mergers = [
+        _merger("MN-1", acquirers=[{"name": "Acme Global Solutions Pty Ltd", "identifier": "60 129 983 688"}]),
+        _merger("MN-2", acquirers=[{"name": "Acme Globel Solutions Pty Ltd", "identifier": "68 120 964 650"}]),
+    ]
+    fuzzy = drp.find_candidates(mergers, [], fuzzy_threshold=0.8, enable_fuzzy=True)
     assert len(fuzzy) == 1
+    assert fuzzy[0]["signal"] == "fuzzy"
+
+
+def test_detects_punctuation_only_name_variant_by_default():
+    # Same name written two ways (comma / no full stop): one entity, and the
+    # name_variant signal catches it without needing --fuzzy.
+    mergers = [
+        _merger("MN-1", acquirers=[{"name": "Francisco Partners Management, L.P", "identifier": ""}]),
+        _merger("MN-2", acquirers=[{"name": "Francisco Partners Management, LP", "identifier": ""}]),
+    ]
+    candidates = drp.find_candidates(mergers, [])
+    assert len(candidates) == 1
+    assert candidates[0]["signal"] == "name_variant"
+    assert candidates[0]["score"] == 0.90
+
+
+def test_exact_name_signal_wins_over_name_variant():
+    # Identical names also squash-equal, but the stronger "name" signal should
+    # label the group, not "name_variant".
+    mergers = [
+        _merger("MN-1", targets=[{"name": "Eli Lilly and Company", "identifier": "IRS 350470950"}]),
+        _merger("MN-2", targets=[{"name": "Eli Lilly and Company", "identifier": "350470950 (IRS)"}]),
+    ]
+    candidates = drp.find_candidates(mergers, [])
+    assert len(candidates) == 1
+    assert candidates[0]["signal"] == "name"
 
 
 def test_single_identity_across_many_mergers_is_not_a_candidate():
