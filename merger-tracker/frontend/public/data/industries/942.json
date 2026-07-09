@@ -30,7 +30,7 @@
       "code": "9422",
       "name": "Electronic (except Domestic Appliance) and Precision Equipment Repair and Maintenance",
       "level": "class",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "9429",
@@ -40,6 +40,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-75029",
+      "merger_name": "Analogic - Leidos SES business",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-07-08T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
@@ -86,11 +95,11 @@
       "determination_date": "2026-02-12T12:00:00Z"
     }
   ],
-  "count": 5,
-  "phase_1_count": 2,
+  "count": 6,
+  "phase_1_count": 3,
   "phase_2_count": 1,
   "waiver_count": 2,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 40.333333333333336,
     "median_days": 22,

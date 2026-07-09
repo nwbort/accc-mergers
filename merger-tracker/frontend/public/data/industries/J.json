@@ -9,7 +9,7 @@
       "code": "54",
       "name": "Publishing (except Internet and Music Publishing)",
       "level": "subdivision",
-      "merger_count": 33
+      "merger_count": 34
     },
     {
       "code": "55",
@@ -49,6 +49,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-65028",
+      "merger_name": "Coles - Paydock",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-07-09T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-75027",
       "merger_name": "SLB \u2013 S&P Global\u2019s Geoscience Software Portfolio",
@@ -518,11 +527,11 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 52,
-  "phase_1_count": 23,
+  "count": 53,
+  "phase_1_count": 24,
   "phase_2_count": 0,
   "waiver_count": 29,
-  "active_count": 5,
+  "active_count": 6,
   "phase_duration": {
     "average_days": 31.27777777777778,
     "median_days": 28,

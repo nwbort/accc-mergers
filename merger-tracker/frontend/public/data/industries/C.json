@@ -87,7 +87,7 @@
       "code": "24",
       "name": "Machinery and Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 38
+      "merger_count": 39
     },
     {
       "code": "25",
@@ -100,6 +100,15 @@
     {
       "merger_id": "MN-05032",
       "merger_name": "Motorola Solutions - D-Fend Solutions",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-07-08T12:00:00Z",
+      "determination_date": null
+    },
+    {
+      "merger_id": "MN-75029",
+      "merger_name": "Analogic - Leidos SES business",
       "is_waiver": false,
       "status": "Under assessment",
       "phase": "Phase 1",
@@ -1016,11 +1025,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 102,
-  "phase_1_count": 46,
+  "count": 103,
+  "phase_1_count": 47,
   "phase_2_count": 1,
   "waiver_count": 55,
-  "active_count": 9,
+  "active_count": 10,
   "phase_duration": {
     "average_days": 29.210526315789473,
     "median_days": 26,

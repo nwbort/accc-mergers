@@ -32386,6 +32386,222 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-paydock",
+      "merger_name": "Coles - Paydock",
+      "status": "Under assessment",
+      "merger_id": "MN-65028",
+      "effective_notification_datetime": "2026-07-09T12:00:00Z",
+      "original_notification_datetime": "2026-07-09T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-08-20T12:00:00Z",
+      "page_modified_datetime": "2026-07-09T13:03:20+10:00",
+      "consultation_response_due_date": "2026-07-16T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Retail Payment Solutions Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "89 683 915 657",
+          "party_page": {
+            "id": "retail-payment-solutions-pty-ltd",
+            "name": "Retail Payment Solutions Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Paydock  Holdings Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "31 607 215 163",
+          "party_page": {
+            "id": "paydock-holdings-pty-limited",
+            "name": "Paydock Holdings Pty Limited"
+          }
+        },
+        {
+          "name": "Paydock AUNZ Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "96 607 219 116",
+          "party_page": {
+            "id": "paydock-aunz-pty-limited",
+            "name": "Paydock AUNZ Pty Limited"
+          }
+        },
+        {
+          "name": "Paydock Ltd",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "paydock-ltd",
+            "name": "Paydock Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Coles Group Limited",
+          "identifier_type": "ABN",
+          "identifier": "11 004 089 936",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4279",
+          "name": "Other Store-Based Retailing n.e.c."
+        },
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "merger_description": "Retail Payment Solutions Pty Ltd (**RPS**), which is owned by Coles Group Limited (**Coles**), proposes to acquire the business assets of Paydock Ltd, Paydock Holdings Pty Limited and Paydock AUNZ Pty Limited (together, **Paydock**) (the **Acquisition**).\n\nColes is an Australian public company (ASX: COL) that primarily operates supermarkets and retail liquor stores trading under the Liquorland banner.\n\nRPS provides payment acquiring services to Coles and a limited number of other Australian retailers through its own payment infrastructure, which supports the routing, processing and settlement of in-store and online card transactions.\n\nPaydock is a software group based in both Australia and the United Kingdom. Paydock provides a payment orchestration platform to merchants and financial institutions, which integrates multiple online payment methods and payment service providers.",
+      "events": [
+        {
+          "date": "2026-07-09T12:00:00Z",
+          "title": "Questionnaire - Coles - Paydock",
+          "display_title": "Questionnaire - Coles - Paydock",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Coles%20-%20Paydock.docx",
+          "url_gh": "/mergers/MN-65028/Questionnaire - Coles - Paydock.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-07-09T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-60012",
+          "merger_name": "Coles \u2013 land around supermarket site in Balaclava, VIC",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "COLES GROUP PROPERTY DEVELOPMENTS LTD",
+              "identifier_type": "ABN",
+              "identifier": "72 004 428 326",
+              "canonical": {
+                "id": "coles",
+                "name": "Coles Group"
+              },
+              "party_page": {
+                "id": "coles",
+                "name": "Coles Group"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "CITY OF PORT PHILLIP",
+              "identifier_type": "ABN",
+              "identifier": "21 762 977 945",
+              "party_page": {
+                "id": "city-of-port-phillip",
+                "name": "City Of Port Phillip"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-30022",
+          "merger_name": "VSA - SprayLine",
+          "status": "Under assessment",
+          "accc_determination": null,
+          "acquirers": [
+            {
+              "name": "VSA ROADS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "18 136 665 935",
+              "party_page": {
+                "id": "vsa-roads-pty-ltd",
+                "name": "Vsa Roads Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Head, Transport for Victoria",
+              "identifier_type": "ABN",
+              "identifier": "97 481 088 949",
+              "party_page": {
+                "id": "head-transport-for-victoria",
+                "name": "Head, Transport for Victoria"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-50012",
+          "merger_name": "Maas \u2013 50% acquisition of COLAS\u2019 Caloundra asphalt plant and 100% of COLAS\u2019 Tomago asphalt plant",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "ASPHALT OPERATORS AUSTRALIA PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "11 682 698 282",
+              "party_page": {
+                "id": "asphalt-operators-australia-pty-ltd",
+                "name": "Asphalt Operators Australia Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "COLAS QUEENSLAND PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "91 169 872 208",
+              "canonical": {
+                "id": "colas",
+                "name": "Colas"
+              },
+              "party_page": {
+                "id": "colas",
+                "name": "Colas"
+              }
+            },
+            {
+              "name": "COLAS AUSTRALIA GROUP PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "11 000 388 161",
+              "canonical": {
+                "id": "colas",
+                "name": "Colas"
+              },
+              "party_page": {
+                "id": "colas",
+                "name": "Colas"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/freudenberg-home-and-cleaning-solutions-%E2%80%93-nilfisk",
       "merger_name": "Freudenberg Home and Cleaning Solutions \u2013 Nilfisk",
       "status": "Assessment completed",
@@ -36712,6 +36928,246 @@
               "party_page": {
                 "id": "psd-global-holdings-pty-ltd",
                 "name": "PSD Global Holdings Pty Ltd"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/analogic-leidos-ses-business",
+      "merger_name": "Analogic - Leidos SES business",
+      "status": "Under assessment",
+      "merger_id": "MN-75029",
+      "effective_notification_datetime": "2026-07-08T12:00:00Z",
+      "original_notification_datetime": "2026-07-08T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-08-19T12:00:00Z",
+      "page_modified_datetime": "2026-07-09T14:01:45+10:00",
+      "consultation_response_due_date": "2026-07-16T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Leidos, Inc.",
+          "identifier_type": null,
+          "identifier": "EFN  901386",
+          "party_page": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
+          }
+        },
+        {
+          "name": "AHP-ANLG IV, LLC",
+          "identifier_type": null,
+          "identifier": "EFN  6840942",
+          "party_page": {
+            "id": "ahp-anlg-iv-llc",
+            "name": "Ahp-Anlg Iv, Llc"
+          }
+        },
+        {
+          "name": "Analogic Corporation",
+          "identifier_type": null,
+          "identifier": "EFN  5450449",
+          "party_page": {
+            "id": "analogic-corporation",
+            "name": "Analogic Corporation"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "ANLG Holding Company, Inc.",
+          "identifier_type": null,
+          "identifier": "EFN  6831336",
+          "party_page": {
+            "id": "anlg-holding-company-inc",
+            "name": "ANLG Holding Company, Inc."
+          }
+        },
+        {
+          "name": "LSD&A, Inc.",
+          "identifier_type": null,
+          "identifier": "Charter ID  2663695",
+          "party_page": {
+            "id": "lsd-a-inc",
+            "name": "LSD&A, Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Leidos Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "EFN  4014717",
+          "party_page": {
+            "id": "leidos-holdings-inc",
+            "name": "Leidos Holdings, Inc."
+          }
+        },
+        {
+          "name": "Altaris Partners, LLC",
+          "identifier_type": null,
+          "identifier": "EFN  4261614",
+          "party_page": {
+            "id": "altaris-partners-llc",
+            "name": "Altaris Partners, LLC"
+          }
+        },
+        {
+          "name": "ANLG Intermediate Company, LLC",
+          "identifier_type": null,
+          "identifier": "EFN  6831160",
+          "party_page": {
+            "id": "anlg-intermediate-company-llc",
+            "name": "ANLG Intermediate Company, LLC"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2469",
+          "name": "Other Specialised Machinery and Equipment Manufacturing"
+        },
+        {
+          "code": "3499",
+          "name": "Other Machinery and Equipment Wholesaling n.e.c."
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "9422",
+          "name": "Electronic (except Domestic Appliance) and Precision Equipment Repair and Maintenance"
+        }
+      ],
+      "merger_description": "The proposed joint venture combines Analogic Corporation (**Analogic**) with the assets and entities that comprise Leidos, Inc. (**Leidos**)\u2019s Security Enterprise Solutions and Industrial and General Automation businesses (**Leidos SES**).\n\nAnalogic, controlled by affiliates of Altaris Partners LLC (**Altaris**) is focussed on the healthcare, industrial and aviation security sectors. It is active in the design, development, manufacturing and support of advanced imaging and detection solutions, as well as power and automation systems. Analogic is active in aviation security globally and supplies explosive detection systems, including components of checked baggage explosive detection systems, to original equipment manufacturers overseas, which may then be supplied onto Australia.\n\nAltaris is an investment firm focussed on acquiring and building companies in the healthcare sector. It has invested in more than 50 companies across a range of healthcare subsectors.\n\nLeidos is an industry and technology company serving government and commercial customers under the Intelligence & Digital, Health, Homeland and Defense groupings. Leidos SES is active in aviation security globally and supplies cabin and checked baggage explosive detection systems in Australia.\n\nThe merged entity will be owned by affiliates of Altaris and Leidos post-acquisition.",
+      "events": [
+        {
+          "date": "2026-07-09T12:00:00Z",
+          "title": "Analogic - Leidos SES business - Questionnaire",
+          "display_title": "Analogic - Leidos SES business - Questionnaire",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Analogic%20-%20Leidos%20SES%20business%20-%20Questionnaire.docx",
+          "url_gh": "/mergers/MN-75029/Analogic - Leidos SES business - Questionnaire.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-07-08T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-70023",
+          "merger_name": "MLPL HoldCo \u2013 shares in Marinus Link Pty Ltd",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "The Treasurer of Victoria for and on behalf of the Crown in the right of the State of Victoria",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "the-treasurer-of-victoria-for-and-on-behalf-of-the-crown-in-the-right-of-the-sta",
+                "name": "The Treasurer of Victoria for and on behalf of the Crown in the right of the State of Victoria"
+              }
+            },
+            {
+              "name": "The Commonwealth of Australia",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "the-commonwealth-of-australia",
+                "name": "The Commonwealth of Australia"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "MARINUS LINK PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "47 630 194 562",
+              "party_page": {
+                "id": "marinus-link-pty-ltd",
+                "name": "Marinus Link Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-35017",
+          "merger_name": "KINETIC - DYSONS BUS SERVICES",
+          "status": "Under assessment",
+          "accc_determination": null,
+          "acquirers": [
+            {
+              "name": "KINETIC HOLDING COMPANY PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "49 601 254 880",
+              "party_page": {
+                "id": "kinetic-holding-company-pty-ltd",
+                "name": "Kinetic Holding Company Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "L.C. DYSON'S BUS SERVICES PROPRIETARY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "99 004 436 542",
+              "party_page": {
+                "id": "l-c-dyson-s-bus-services-proprietary-limited",
+                "name": "L.C. Dyson'S Bus Services Proprietary Limited"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-55012",
+          "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Argo Bowen 2 Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "695 023 619",
+              "party_page": {
+                "id": "argo-bowen-2-pty-ltd",
+                "name": "Argo Bowen 2 Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "LENTON MANAGEMENT AND MARKETING PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "48 149 524 809",
+              "party_page": {
+                "id": "lenton-management-and-marketing-pty-ltd",
+                "name": "Lenton Management And Marketing Pty Ltd"
+              }
+            },
+            {
+              "name": "COKING COAL ONE PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "89 615 317 907",
+              "party_page": {
+                "id": "coking-coal-one-pty-ltd",
+                "name": "Coking Coal One Pty Ltd"
               }
             }
           ]

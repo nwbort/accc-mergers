@@ -21,6 +21,11 @@
       "name": "COLES SUPERMARKETS AUSTRALIA PTY LTD",
       "identifier": "45 004 189 708",
       "identifier_type": "ABN"
+    },
+    {
+      "name": "Coles Group Limited",
+      "identifier": "11 004 089 936",
+      "identifier_type": "ABN"
     }
   ],
   "mergers": {
@@ -99,13 +104,23 @@
       }
     ],
     "target": [],
-    "other": []
+    "other": [
+      {
+        "merger_id": "MN-65028",
+        "merger_name": "Coles - Paydock",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "phase": "Phase 1",
+        "notification_date": "2026-07-09T12:00:00Z",
+        "determination_date": null
+      }
+    ]
   },
-  "merger_count": 8,
-  "phase_1_count": 4,
+  "merger_count": 9,
+  "phase_1_count": 5,
   "phase_2_count": 1,
   "waiver_count": 3,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 35.25,
     "median_days": 29,
