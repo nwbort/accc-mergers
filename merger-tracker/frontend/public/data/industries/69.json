@@ -120,15 +120,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-90009",
-      "merger_name": "Trescal \u2013 TR Calibration",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "phase": "Phase 2",
-      "notification_date": "2026-04-14T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "WA-55026",
       "merger_name": "Vets Central - Gold Coast Veterinary Surgery",
       "is_waiver": true,
@@ -586,13 +577,22 @@
       "phase": "Waiver",
       "notification_date": "2026-01-06T12:00:00Z",
       "determination_date": "2026-01-13T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "is_waiver": false,
+      "status": "Assessment ceased",
+      "phase": "Phase 2",
+      "notification_date": "2026-04-14T12:00:00Z",
+      "determination_date": null
     }
   ],
   "count": 58,
   "phase_1_count": 22,
   "phase_2_count": 2,
   "waiver_count": 34,
-  "active_count": 7,
+  "active_count": 6,
   "phase_duration": {
     "average_days": 35.73684210526316,
     "median_days": 28,

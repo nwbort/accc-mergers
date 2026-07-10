@@ -4,8 +4,8 @@
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 128,
-    "Under assessment": 40,
-    "Assessment ceased": 1
+    "Under assessment": 39,
+    "Assessment ceased": 2
   },
   "by_determination": {
     "Approved": 126,
@@ -183,6 +183,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "determination": "Assessment ceased",
+      "determination_date": "2026-07-10T12:00:00Z",
+      "page_modified_datetime": "2026-07-10T15:08:46+10:00",
+      "determination_type": "ceased",
+      "is_waiver": false,
+      "stage": "Phase 2 - detailed assessment"
+    },
+    {
       "merger_id": "MN-75023",
       "merger_name": "Bertelsmann Music Group - Concord",
       "determination": "Approved",
@@ -288,16 +298,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-06T12:00:00Z",
       "page_modified_datetime": "2026-07-06T17:14:54+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-60023",
-      "merger_name": "Siemens Energy \u2013 Camlin Group",
-      "determination": "Approved",
-      "determination_date": "2026-07-06T12:00:00Z",
-      "page_modified_datetime": "2026-07-06T16:57:59+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

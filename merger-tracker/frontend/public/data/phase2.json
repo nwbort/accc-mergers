@@ -23,17 +23,6 @@
       "phase_2_inferred": false
     },
     {
-      "merger_id": "MN-90009",
-      "merger_name": "Trescal \u2013 TR Calibration",
-      "referral_date": "2026-06-30T12:00:00Z",
-      "nocc_date": "2026-08-06T12:00:00Z",
-      "nocc_issued": false,
-      "end_of_determination_period": "2026-11-06T12:00:00Z",
-      "determination": null,
-      "determination_date": null,
-      "phase_2_inferred": false
-    },
-    {
       "merger_id": "MN-01072",
       "merger_name": "Saipem S.p.A - Subsea7 S.A.",
       "referral_date": "2026-07-02T12:00:00Z",
@@ -46,6 +35,17 @@
     }
   ],
   "completed": [
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "referral_date": "2026-06-30T12:00:00Z",
+      "nocc_date": "2026-08-06T12:00:00Z",
+      "nocc_issued": false,
+      "end_of_determination_period": "2026-11-06T12:00:00Z",
+      "determination": "Assessment ceased",
+      "determination_date": "2026-07-10T12:00:00Z",
+      "phase_2_inferred": false
+    },
     {
       "merger_id": "MN-01068",
       "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
@@ -81,7 +81,7 @@
     }
   ],
   "count": {
-    "current": 4,
-    "completed": 3
+    "current": 3,
+    "completed": 4
   }
 }

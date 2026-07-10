@@ -92,15 +92,6 @@
       "determination_date": null
     },
     {
-      "merger_id": "MN-90009",
-      "merger_name": "Trescal \u2013 TR Calibration",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "phase": "Phase 2",
-      "notification_date": "2026-04-14T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "WA-15026",
       "merger_name": "LTM \u2013 Randstad Digital entities including FinXL",
       "is_waiver": true,
@@ -864,13 +855,22 @@
       "phase": "Waiver",
       "notification_date": "2026-01-06T12:00:00Z",
       "determination_date": "2026-01-13T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-90009",
+      "merger_name": "Trescal \u2013 TR Calibration",
+      "is_waiver": false,
+      "status": "Assessment ceased",
+      "phase": "Phase 2",
+      "notification_date": "2026-04-14T12:00:00Z",
+      "determination_date": null
     }
   ],
   "count": 94,
   "phase_1_count": 35,
   "phase_2_count": 2,
   "waiver_count": 57,
-  "active_count": 9,
+  "active_count": 8,
   "phase_duration": {
     "average_days": 33.3,
     "median_days": 27,

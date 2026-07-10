@@ -3758,7 +3758,7 @@
     {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
-      "status": "Under assessment",
+      "status": "Assessment ceased",
       "accc_determination": null,
       "has_conditions": false,
       "is_waiver": false,
@@ -3790,33 +3790,6 @@
       ],
       "other_parties": [
         {
-          "name": "IPAC SOLUTIONS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "30 108 845 718",
-          "party_page": {
-            "id": "ipac-solutions-pty-ltd",
-            "name": "Ipac Solutions Pty Ltd"
-          }
-        },
-        {
-          "name": "The Trustee for ASG Exical Unit Trust",
-          "identifier_type": "ABN",
-          "identifier": "57 818 350 085",
-          "party_page": {
-            "id": "the-trustee-for-asg-exical-unit-trust",
-            "name": "The Trustee for ASG Exical Unit Trust"
-          }
-        },
-        {
-          "name": "Mobile Test 'n' Cal Australia Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "45 147 991 482",
-          "party_page": {
-            "id": "mobile-test-n-cal-australia-pty-ltd",
-            "name": "Mobile Test 'n' Cal Australia Pty Ltd"
-          }
-        },
-        {
           "name": "EQT Fund Management S.\u00e0 r.l.",
           "identifier_type": null,
           "identifier": "Registration number B167972",
@@ -3830,6 +3803,24 @@
           }
         },
         {
+          "name": "N.G. BROWN & ASSOCIATES PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "97 004 819 738",
+          "party_page": {
+            "id": "n-g-brown-associates-pty-ltd",
+            "name": "N.G. Brown & Associates Pty. Ltd."
+          }
+        },
+        {
+          "name": "IPAC SOLUTIONS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "30 108 845 718",
+          "party_page": {
+            "id": "ipac-solutions-pty-ltd",
+            "name": "Ipac Solutions Pty Ltd"
+          }
+        },
+        {
           "name": "TRESCAL HOLDING PTY LTD",
           "identifier_type": "ABN",
           "identifier": "35 633 411 391",
@@ -3839,12 +3830,21 @@
           }
         },
         {
-          "name": "N.G. BROWN & ASSOCIATES PTY. LTD.",
+          "name": "Mobile Test 'n' Cal Australia Pty Ltd",
           "identifier_type": "ABN",
-          "identifier": "97 004 819 738",
+          "identifier": "45 147 991 482",
           "party_page": {
-            "id": "n-g-brown-associates-pty-ltd",
-            "name": "N.G. Brown & Associates Pty. Ltd."
+            "id": "mobile-test-n-cal-australia-pty-ltd",
+            "name": "Mobile Test 'n' Cal Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "The Trustee for ASG Exical Unit Trust",
+          "identifier_type": "ABN",
+          "identifier": "57 818 350 085",
+          "party_page": {
+            "id": "the-trustee-for-asg-exical-unit-trust",
+            "name": "The Trustee for ASG Exical Unit Trust"
           }
         }
       ],
