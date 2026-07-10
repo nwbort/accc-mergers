@@ -3,9 +3,9 @@
     "notifications_total": 170,
     "matters_extended": 12,
     "share_extended_pct": 7.1,
-    "extension_events_total": 17,
-    "total_extension_bd": 172,
-    "median_matter_extension_bd": 15,
+    "extension_events_total": 18,
+    "total_extension_bd": 187,
+    "median_matter_extension_bd": 18,
     "longest_single_bd": 28,
     "phase_2_total": 7,
     "extended_escalated_to_phase_2": 6,
@@ -27,8 +27,8 @@
     },
     {
       "category": "Remedy under consideration",
-      "events": 1,
-      "business_days": 15
+      "events": 2,
+      "business_days": 30
     }
   ],
   "by_month": [
@@ -54,10 +54,45 @@
     },
     {
       "month": "2026-07",
-      "count": 1
+      "count": 2
     }
   ],
   "matters": [
+    {
+      "merger_id": "MN-90008",
+      "merger_name": "Black Rhino - Club Hotel Motel Roma",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-05-21T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 30,
+      "extension_count": 3,
+      "extensions": [
+        {
+          "date": "2026-06-19T12:00:00Z",
+          "business_days": 10,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 10 business days \u2013 following request by parties"
+        },
+        {
+          "date": "2026-07-03T12:00:00Z",
+          "business_days": 5,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 5 business days - following request by parties"
+        },
+        {
+          "date": "2026-07-10T12:00:00Z",
+          "business_days": 15,
+          "reason_category": "Remedy under consideration",
+          "reason_detail": "remedy offered by parties",
+          "title": "Timeline extended by 15 business days - following remedy offered by parties"
+        }
+      ]
+    },
     {
       "merger_id": "MN-30002",
       "merger_name": "Peter Warren - Wakeling Automotive",
@@ -195,34 +230,6 @@
           "reason_category": "Remedy under consideration",
           "reason_detail": "remedy offered by parties",
           "title": "Timeline extended by 15 business days \u2013 following remedy offered by parties"
-        }
-      ]
-    },
-    {
-      "merger_id": "MN-90008",
-      "merger_name": "Black Rhino - Club Hotel Motel Roma",
-      "stage": "Phase 1 - initial assessment",
-      "status": "Under assessment",
-      "notification_date": "2026-05-21T12:00:00Z",
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
-      "escalated_to_phase_2": false,
-      "total_extension_bd": 15,
-      "extension_count": 2,
-      "extensions": [
-        {
-          "date": "2026-06-19T12:00:00Z",
-          "business_days": 10,
-          "reason_category": "Requested by the merger parties",
-          "reason_detail": "request by parties",
-          "title": "Timeline extended by 10 business days \u2013 following request by parties"
-        },
-        {
-          "date": "2026-07-03T12:00:00Z",
-          "business_days": 5,
-          "reason_category": "Requested by the merger parties",
-          "reason_detail": "request by parties",
-          "title": "Timeline extended by 5 business days - following request by parties"
         }
       ]
     },
