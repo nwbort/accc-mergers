@@ -55,6 +55,7 @@ from static_data.loaders import (
 from static_data.outputs import (
     analysis,
     commentary as commentary_out,
+    extensions,
     individual,
     industries,
     list as list_out,
@@ -157,6 +158,7 @@ def main():
         ("theories_of_harm.json", theories_of_harm.generate(enriched, nocc_data)),
         ("phase2.json", phase2.generate(enriched)),
         ("refiled-notifications.json", refiled.generate(enriched)),
+        ("extensions.json", extensions.generate(enriched)),
     ]
     for filename, payload in single_file_outputs:
         out_path = OUTPUT_DIR / filename

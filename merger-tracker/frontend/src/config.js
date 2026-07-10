@@ -28,5 +28,6 @@ export const API_ENDPOINTS = {
   analysis: '/data/analysis.json',  // Pre-computed analysis data
   phase2: '/data/phase2.json',  // Current + completed Phase 2 matters with statutory milestones
   refiledNotifications: '/data/refiled-notifications.json',  // Waivers declined then re-filed as notifications
+  extensions: '/data/extensions.json',  // Phase 1 timeline extensions (day counts + reasons)
   questionnaire: (id) => `/data/questionnaires/${id}.json`,  // Questionnaire data (lazy-loaded)
 };

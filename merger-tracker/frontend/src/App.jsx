@@ -24,6 +24,7 @@ import NickTwort from './pages/NickTwort';
 import Analysis from './pages/Analysis';
 import Phase2 from './pages/Phase2';
 import RefiledNotifications from './pages/RefiledNotifications';
+import Extensions from './pages/Extensions';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import Feedback from './pages/Feedback';
 import NotFound from './pages/NotFound';
@@ -59,6 +60,7 @@ function AppContent() {
             <Route path="/analysis" element={<Analysis />} />
             <Route path="/phase-2" element={<Phase2 />} />
             <Route path="/refiled-notifications" element={<RefiledNotifications />} />
+            <Route path="/extensions" element={<Extensions />} />
             <Route path="/nick-twort" element={<NickTwort />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/feedback" element={<Feedback />} />

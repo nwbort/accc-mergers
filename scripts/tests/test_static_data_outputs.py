@@ -23,6 +23,7 @@ from static_data.enrichment import enrich_merger
 from static_data.outputs import (
     analysis,
     commentary as commentary_out,
+    extensions,
     individual,
     industries,
     list as list_out,
@@ -1905,3 +1906,116 @@ class TestPartiesDetailFiles:
         assert data['waiver_duration']['average_days'] == 9
         assert data['waiver_duration']['average_business_days'] == 6
         assert data['waiver_duration']['completed_count'] == 1
+
+
+class TestExtensionsGenerate:
+    """extensions.generate — Phase 1 timeline-extension tracker."""
+
+    def _extension_event(self, date, title):
+        return {'date': date, 'title': title, 'display_title': title}
+
+    def _matter(self, merger_id, name, events, stage='Phase 1 - initial assessment',
+                status='Under assessment', is_waiver=False):
+        return {
+            'merger_id': merger_id,
+            'merger_name': name,
+            'status': status,
+            'stage': stage,
+            'is_waiver': is_waiver,
+            'effective_notification_datetime': '2026-03-02T12:00:00Z',
+            'page_modified_datetime': '2026-03-02T12:30:00Z',
+            'anzsic_codes': [],
+            'acquirers': [],
+            'targets': [],
+            'other_parties': [],
+            'url': f'https://example.com/{merger_id}',
+            'events': [
+                {'date': '2026-03-02T12:00:00Z', 'title': f'{name} notified to ACCC',
+                 'display_title': 'Merger notified to ACCC'},
+                *events,
+            ],
+        }
+
+    def test_ignores_matters_without_extensions(self):
+        enriched = [enrich_merger(self._matter('MN-0001', 'Plain deal', []))]
+        payload = extensions.generate(enriched)
+        assert payload['matters'] == []
+        assert payload['summary']['matters_extended'] == 0
+        assert payload['summary']['notifications_total'] == 1
+
+    def test_parses_days_and_reason_category(self):
+        m = self._matter('MN-0002', 'Extended deal', [
+            self._extension_event(
+                '2026-04-01T12:00:00Z',
+                'Timeline extended by 6 business days – following request for further information'),
+            self._extension_event(
+                '2026-04-10T12:00:00Z',
+                'Timeline extended by 4 business days – following request by parties'),
+        ])
+        payload = extensions.generate([enrich_merger(m)])
+        assert payload['summary']['matters_extended'] == 1
+        assert payload['summary']['extension_events_total'] == 2
+        assert payload['summary']['total_extension_bd'] == 10
+        matter = payload['matters'][0]
+        assert matter['total_extension_bd'] == 10
+        assert matter['extension_count'] == 2
+        cats = [e['reason_category'] for e in matter['extensions']]
+        assert cats == ['ACCC information request', 'Requested by the merger parties']
+        # Extensions are ordered chronologically.
+        assert [e['date'] for e in matter['extensions']] == [
+            '2026-04-01T12:00:00Z', '2026-04-10T12:00:00Z']
+
+    def test_further_information_beats_generic_request(self):
+        # "request for further information" contains "request" but must classify
+        # as an ACCC information request, not a party request.
+        assert extensions._classify_reason(
+            'Timeline extended by 5 business days – following request for further information'
+        ) == 'ACCC information request'
+
+    def test_handles_extension_without_a_day_count(self):
+        # The earliest long-form notice carries no "N business days" figure.
+        m = self._matter('MN-0003', 'Legacy notice', [
+            self._extension_event(
+                '2025-11-06T12:00:00Z',
+                'ACCC decided to extend the Phase 1 determination period following '
+                'receipt of extension request from Ampol.'),
+        ])
+        payload = extensions.generate([enrich_merger(m)])
+        matter = payload['matters'][0]
+        assert matter['extension_count'] == 1
+        assert matter['extensions'][0]['business_days'] is None
+        # No parsed days -> total stays None, not 0.
+        assert matter['total_extension_bd'] is None
+        assert matter['extensions'][0]['reason_category'] == 'Requested by the merger parties'
+
+    def test_excludes_waiver_extensions(self):
+        waiver = self._matter('WA-0004', 'Waiver deal', [
+            self._extension_event('2026-04-01T12:00:00Z',
+                                  'Timeline extended by 4 business days – following request by parties'),
+        ], stage='Waiver', is_waiver=True)
+        payload = extensions.generate([enrich_merger(waiver)])
+        assert payload['matters'] == []
+
+    def test_flags_phase_2_escalation_and_correlation(self):
+        extended_to_p2 = self._matter('MN-0005', 'Escalated deal', [
+            self._extension_event('2026-04-01T12:00:00Z',
+                                  'Timeline extended by 10 business days – following request by parties'),
+            {'date': '2026-05-01T12:00:00Z',
+             'title': 'ACCC decided notification is subject to Phase 2 review',
+             'display_title': 'ACCC decided notification is subject to Phase 2 review'},
+        ], stage='Phase 2 - detailed assessment')
+        extended_only = self._matter('MN-0006', 'Extended but cleared', [
+            self._extension_event('2026-04-01T12:00:00Z',
+                                  'Timeline extended by 5 business days – following request by parties'),
+        ])
+        plain = self._matter('MN-0007', 'Plain deal', [])
+        enriched = [enrich_merger(m) for m in (extended_to_p2, extended_only, plain)]
+        payload = extensions.generate(enriched)
+        s = payload['summary']
+        assert s['matters_extended'] == 2
+        assert s['phase_2_total'] == 1
+        assert s['extended_escalated_to_phase_2'] == 1
+        assert s['escalation_rate_given_extension_pct'] == 50.0
+        assert s['phase_2_preceded_by_extension_pct'] == 100.0
+        escalated = next(m for m in payload['matters'] if m['merger_id'] == 'MN-0005')
+        assert escalated['escalated_to_phase_2'] is True
