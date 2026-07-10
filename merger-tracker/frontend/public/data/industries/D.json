@@ -9,7 +9,7 @@
       "code": "26",
       "name": "Electricity Supply",
       "level": "subdivision",
-      "merger_count": 14
+      "merger_count": 15
     },
     {
       "code": "27",
@@ -31,6 +31,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-65023",
+      "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-07-10T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-50009",
       "merger_name": "Heidelberg Materials Australia \u2013 construction materials business of MAAS",
@@ -221,11 +230,11 @@
       "determination_date": "2025-11-26T12:00:00Z"
     }
   ],
-  "count": 21,
-  "phase_1_count": 4,
+  "count": 22,
+  "phase_1_count": 5,
   "phase_2_count": 0,
   "waiver_count": 17,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 26.333333333333332,
     "median_days": 28,

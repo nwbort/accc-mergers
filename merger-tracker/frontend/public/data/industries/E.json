@@ -21,10 +21,19 @@
       "code": "32",
       "name": "Construction Services",
       "level": "subdivision",
-      "merger_count": 20
+      "merger_count": 21
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-65023",
+      "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-07-10T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-30022",
       "merger_name": "VSA - SprayLine",
@@ -305,11 +314,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 31,
-  "phase_1_count": 11,
+  "count": 32,
+  "phase_1_count": 12,
   "phase_2_count": 1,
   "waiver_count": 19,
-  "active_count": 4,
+  "active_count": 5,
   "phase_duration": {
     "average_days": 28.333333333333332,
     "median_days": 23,
