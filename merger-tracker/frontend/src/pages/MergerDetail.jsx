@@ -148,6 +148,20 @@ function MergerDetail() {
     ? [...merger.events].sort((a, b) => new Date(b.date) - new Date(a.date))
     : [];
 
+  // The event marking referral to Phase 2 — the same point the header timeline
+  // flags with an amber marker (both keyed off phase_1_determination_date). It
+  // gets the matching amber dot in the events list below.
+  const isPhase2ReferralEvent = (event) =>
+    event.phase === 'Phase 2'
+    && merger.phase_1_determination_date
+    && event.date === merger.phase_1_determination_date;
+
+  // The event marking the assessment being ceased — the same point the header
+  // timeline flags with a purple endpoint (both keyed off ceased_date). It gets
+  // the matching purple dot in the events list below.
+  const isCeasedEvent = (event) =>
+    merger.ceased_date && event.date === merger.ceased_date;
+
   const determinationEvent = merger.events
     ? merger.events.find(event => event.is_determination_event)
     : null;
@@ -450,7 +464,10 @@ function MergerDetail() {
             </h2>
             <div className="flow-root">
               <ul className="-mb-8">
-                {sortedEvents.map((event, idx) => (
+                {sortedEvents.map((event, idx) => {
+                  const isPhase2Referral = isPhase2ReferralEvent(event);
+                  const isCeased = isCeasedEvent(event);
+                  return (
                   <li key={`event-${event.date}-${event.display_title || event.title}-${idx}`}>
                     <div className="relative pb-8">
                       {idx !== sortedEvents.length - 1 && (
@@ -461,8 +478,12 @@ function MergerDetail() {
                       )}
                       <div className="relative flex space-x-3">
                         <div>
-                          <span className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center ring-4 ring-white">
-                            <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+                          <span className={`h-8 w-8 rounded-full flex items-center justify-center ring-4 ring-white ${
+                            isCeased ? 'bg-purple-500/10' : isPhase2Referral ? 'bg-amber-500/10' : 'bg-primary/10'
+                          }`}>
+                            <div className={`h-2.5 w-2.5 rounded-full ${
+                              isCeased ? 'bg-purple-500' : isPhase2Referral ? 'bg-amber-500' : 'bg-primary'
+                            }`} />
                           </span>
                         </div>
                         <div className="min-w-0 flex-1 pt-1">
@@ -490,7 +511,8 @@ function MergerDetail() {
                       </div>
                     </div>
                   </li>
-                ))}
+                  );
+                })}
               </ul>
             </div>
           </div>
