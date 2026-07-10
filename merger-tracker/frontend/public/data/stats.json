@@ -3,12 +3,12 @@
   "total_waivers": 262,
   "total_conditional_approvals": 1,
   "by_status": {
-    "Assessment completed": 127,
-    "Under assessment": 41,
+    "Assessment completed": 128,
+    "Under assessment": 40,
     "Assessment ceased": 1
   },
   "by_determination": {
-    "Approved": 125,
+    "Approved": 126,
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
@@ -16,21 +16,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.795454545454547,
-    "median_days": 26.0,
-    "average_business_days": 19.46969696969697,
-    "median_business_days": 17.0,
+    "average_days": 29.736842105263158,
+    "median_days": 26,
+    "average_business_days": 19.44360902255639,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 33,
-        "percentage": 25.0
+        "percentage": 24.8
       },
       "day20": {
-        "count": 103,
-        "percentage": 78.0
+        "count": 104,
+        "percentage": 78.2
       },
       "day30": {
-        "count": 126,
+        "count": 127,
         "percentage": 95.5
       }
     }
@@ -183,6 +183,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-75023",
+      "merger_name": "Bertelsmann Music Group - Concord",
+      "determination": "Approved",
+      "determination_date": "2026-07-10T12:00:00Z",
+      "page_modified_datetime": "2026-07-10T15:01:16+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-50021",
       "merger_name": "Adbri - Eureka Concrete",
       "determination": "Approved",
@@ -288,16 +298,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-06T12:00:00Z",
       "page_modified_datetime": "2026-07-06T16:57:59+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-35026",
-      "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
-      "determination": "Approved",
-      "determination_date": "2026-07-06T12:00:00Z",
-      "page_modified_datetime": "2026-07-06T16:50:48+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
