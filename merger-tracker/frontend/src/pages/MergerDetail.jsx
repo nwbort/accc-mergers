@@ -148,6 +148,14 @@ function MergerDetail() {
     ? [...merger.events].sort((a, b) => new Date(b.date) - new Date(a.date))
     : [];
 
+  // The event marking referral to Phase 2 — the same point the header timeline
+  // flags with an amber marker (both keyed off phase_1_determination_date). It
+  // gets the matching amber dot in the events list below.
+  const isPhase2ReferralEvent = (event) =>
+    event.phase === 'Phase 2'
+    && merger.phase_1_determination_date
+    && event.date === merger.phase_1_determination_date;
+
   const determinationEvent = merger.events
     ? merger.events.find(event => event.is_determination_event)
     : null;
@@ -450,7 +458,9 @@ function MergerDetail() {
             </h2>
             <div className="flow-root">
               <ul className="-mb-8">
-                {sortedEvents.map((event, idx) => (
+                {sortedEvents.map((event, idx) => {
+                  const isPhase2Referral = isPhase2ReferralEvent(event);
+                  return (
                   <li key={`event-${event.date}-${event.display_title || event.title}-${idx}`}>
                     <div className="relative pb-8">
                       {idx !== sortedEvents.length - 1 && (
@@ -461,8 +471,12 @@ function MergerDetail() {
                       )}
                       <div className="relative flex space-x-3">
                         <div>
-                          <span className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center ring-4 ring-white">
-                            <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+                          <span className={`h-8 w-8 rounded-full flex items-center justify-center ring-4 ring-white ${
+                            isPhase2Referral ? 'bg-amber-500/10' : 'bg-primary/10'
+                          }`}>
+                            <div className={`h-2.5 w-2.5 rounded-full ${
+                              isPhase2Referral ? 'bg-amber-500' : 'bg-primary'
+                            }`} />
                           </span>
                         </div>
                         <div className="min-w-0 flex-1 pt-1">
@@ -490,7 +504,8 @@ function MergerDetail() {
                       </div>
                     </div>
                   </li>
-                ))}
+                  );
+                })}
               </ul>
             </div>
           </div>
