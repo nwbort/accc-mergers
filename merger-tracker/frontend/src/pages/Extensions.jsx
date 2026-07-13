@@ -14,13 +14,14 @@ import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { mergerPath } from '../utils/slug';
 import { formatDateMedium } from '../utils/dates';
+import { THEME_HEXES } from '../constants/chartColors';
 
 // Reason categories map to a fixed colour so the clock bars, the legend and the
 // "why the clock was extended" breakdown all read as one palette.
 const REASON_STYLE = {
-  'Requested by the merger parties': { color: '#335145', label: 'Requested by the merger parties' },
-  'ACCC information request': { color: '#52489c', label: 'ACCC information request' },
-  'Remedy under consideration': { color: '#d97706', label: 'Remedy under consideration' },
+  'Requested by the merger parties': { color: THEME_HEXES.primary, label: 'Requested by the merger parties' },
+  'ACCC information request': { color: THEME_HEXES.phase2, label: 'ACCC information request' },
+  'Remedy under consideration': { color: THEME_HEXES.phase2Referral, label: 'Remedy under consideration' },
   Other: { color: '#94a3b8', label: 'Other' },
 };
 

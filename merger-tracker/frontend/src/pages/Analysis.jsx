@@ -18,6 +18,7 @@ import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { industryPath } from '../utils/slug';
+import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 
 ChartJS.register(
   CategoryScale,
@@ -29,16 +30,6 @@ ChartJS.register(
   Tooltip,
   Legend
 );
-
-const COLORS = {
-  primary: '#335145',
-  primaryLight: 'rgba(51, 81, 69, 0.15)',
-  accent: '#e07a5f',
-  accentLight: 'rgba(224, 122, 95, 0.15)',
-  teal: '#6b8f7f',
-  tealLight: 'rgba(107, 143, 127, 0.15)',
-  sage: '#8cafa0',
-};
 
 function formatMonthLabel(yyyymm) {
   const [year, month] = yyyymm.split('-');

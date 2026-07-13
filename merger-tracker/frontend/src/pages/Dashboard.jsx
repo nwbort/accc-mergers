@@ -20,6 +20,7 @@ import { getDaysRemaining, isDatePast } from '../utils/dates';
 import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen } from '../utils/lastVisit';
 import { formatMedian } from '../utils/formatMedian';
+import { CHART_PALETTE, CHART_PALETTE_ORDER, DETERMINATION_COLORS } from '../constants/chartColors';
 
 ChartJS.register(
   Title,
@@ -62,12 +63,15 @@ function Dashboard() {
   if (error) return <ErrorMessage error={error} />;
   if (!stats) return null;
 
+  const determinationLabels = Object.keys(stats.by_determination);
   const determinationData = {
-    labels: Object.keys(stats.by_determination),
+    labels: determinationLabels,
     datasets: [
       {
         data: Object.values(stats.by_determination),
-        backgroundColor: ['#335145', '#e07a5f', '#6b8f7f', '#8cafa0'],
+        backgroundColor: determinationLabels.map((label, i) =>
+          DETERMINATION_COLORS[label] || CHART_PALETTE_ORDER[i % CHART_PALETTE_ORDER.length]
+        ),
         borderWidth: 0,
         borderRadius: 4,
       },
@@ -83,7 +87,7 @@ function Dashboard() {
       {
         data: waiverLabels.map((label) => stats.by_waiver_determination[label]),
         backgroundColor: waiverLabels.map((label) =>
-          label === 'Approved' ? '#335145' : '#e07a5f'
+          DETERMINATION_COLORS[label] || CHART_PALETTE.accent
         ),
         borderWidth: 0,
         borderRadius: 4,
