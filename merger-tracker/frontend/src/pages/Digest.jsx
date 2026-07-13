@@ -15,6 +15,7 @@ import {
   DIGEST_COLOR_CLASSES as COLOR_CLASSES,
   MERGER_STATUS,
 } from '../constants/mergerStatus';
+import { SECTION_HEADING } from '../utils/classNames';
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -55,7 +56,7 @@ function DigestSection({ id, title, emptyMessage, colorKey, mergers, columns, re
             <thead>
               <tr className="bg-gray-50/80">
                 {columns.map((col) => (
-                  <th key={col} scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th key={col} scope="col" className={`px-5 sm:px-6 py-3.5 text-left ${SECTION_HEADING}`}>
                     {col}
                   </th>
                 ))}
@@ -170,7 +171,7 @@ function ClearedSection({ mergers, getDeterminationPdf }) {
             <thead>
               <tr className="bg-gray-50/80">
                 {columns.map((col) => (
-                  <th key={col} scope="col" className="px-5 sm:px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th key={col} scope="col" className={`px-5 sm:px-6 py-3.5 text-left ${SECTION_HEADING}`}>
                     {col}
                   </th>
                 ))}
