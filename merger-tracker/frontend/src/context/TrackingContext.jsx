@@ -11,6 +11,12 @@ const STORAGE_KEYS = {
   // so each is acted on exactly once. See the auto-track logic in the fetch
   // effect for why this is persisted.
   AUTO_TRACK_LINKS: 'merger_tracker_auto_track_links',
+  // User setting: automatically track any merger that reaches Phase 2.
+  AUTO_TRACK_PHASE2: 'merger_tracker_auto_track_phase2',
+  // Phase 2 merger IDs we've already auto-tracked, so each is acted on exactly
+  // once (a matter the user later untracks is not silently re-added). Mirrors
+  // AUTO_TRACK_LINKS. See the Phase 2 auto-track effect.
+  AUTO_TRACK_PHASE2_IDS: 'merger_tracker_auto_tracked_phase2_ids',
 };
 
 // Relationship values (from the data pipeline, see scripts/static_data/loaders.py)
@@ -135,6 +141,44 @@ export function TrackingProvider({ children }) {
   useEffect(() => {
     autoTrackLinksRef.current = autoTrackLinks;
   }, [autoTrackLinks]);
+
+  // User setting: when enabled, every matter that reaches Phase 2 is added to
+  // tracked mergers.
+  const [autoTrackPhase2, setAutoTrackPhase2] = useState(() => {
+    try {
+      return localStorage.getItem(STORAGE_KEYS.AUTO_TRACK_PHASE2) === 'true';
+    } catch (err) {
+      console.error('Failed to read auto-track Phase 2 setting from localStorage:', err);
+      return false;
+    }
+  });
+
+  // Phase 2 merger IDs already acted on by the auto-track effect. Persisted so a
+  // matter is auto-tracked exactly once: a matter the user later untracks is not
+  // re-added, while a matter that reaches Phase 2 after the setting was enabled
+  // is still picked up on the next load. Mirrored in a ref so the effect can read
+  // the latest set without listing it as a dependency (which would re-run it).
+  const [autoTrackedPhase2Ids, setAutoTrackedPhase2Ids] = useState(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEYS.AUTO_TRACK_PHASE2_IDS);
+      return stored ? new Set(JSON.parse(stored)) : new Set();
+    } catch (err) {
+      console.error('Failed to read auto-tracked Phase 2 IDs from localStorage:', err);
+      return new Set();
+    }
+  });
+  const autoTrackedPhase2IdsRef = useRef(autoTrackedPhase2Ids);
+  useEffect(() => {
+    autoTrackedPhase2IdsRef.current = autoTrackedPhase2Ids;
+  }, [autoTrackedPhase2Ids]);
+
+  // Latest tracked IDs mirrored in a ref so the Phase 2 auto-track effect can
+  // tell which matters are already tracked without depending on trackedMergerIds
+  // (which would make it re-fetch phase2.json on every track/untrack).
+  const trackedMergerIdsRef = useRef(trackedMergerIds);
+  useEffect(() => {
+    trackedMergerIdsRef.current = trackedMergerIds;
+  }, [trackedMergerIds]);
 
   // Fetch events on mount and when tracked mergers change
   useEffect(() => {
@@ -431,6 +475,83 @@ export function TrackingProvider({ children }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [trackedIndustryCodesKey, newlyTrackedIndustryCodes, newlyTrackedIndustryCodesSet]);
 
+  // Auto-track matters that reach Phase 2 when the user has opted in. Fetches the
+  // Phase 2 feed and tracks every current matter not yet acted on. Mirrors the
+  // forward re-file auto-tracking: each matter is recorded in autoTrackedPhase2Ids
+  // so it is added exactly once — a matter the user later untracks stays untracked,
+  // while a matter that reaches Phase 2 after the setting was enabled is picked up
+  // on the next load. Their existing events are marked seen (like a manual track)
+  // so enabling the setting doesn't flood the notification panel with historical
+  // milestones; future milestones (NOCC, determination) still surface.
+  useEffect(() => {
+    if (!autoTrackPhase2) return;
+    let cancelled = false;
+
+    const run = async () => {
+      try {
+        const res = await fetch(API_ENDPOINTS.phase2);
+        if (!res.ok || cancelled) return;
+        const data = await res.json();
+        if (cancelled) return;
+
+        const current = (data && data.current) || [];
+        const currentlyTracked = new Set(trackedMergerIdsRef.current);
+        const idsToRecord = [];
+        const idsToTrack = [];
+        current.forEach((matter) => {
+          const id = matter && matter.merger_id;
+          if (!id || autoTrackedPhase2IdsRef.current.has(id)) return;
+          idsToRecord.push(id);
+          if (!currentlyTracked.has(id)) idsToTrack.push(id);
+        });
+
+        if (idsToRecord.length > 0) {
+          setAutoTrackedPhase2Ids((prev) => {
+            const next = new Set(prev);
+            idsToRecord.forEach((id) => next.add(id));
+            return next;
+          });
+        }
+        if (idsToTrack.length > 0) {
+          setNewlyTrackedIds((ids) => [...ids, ...idsToTrack]);
+          setTrackedMergerIds((prev) => {
+            const prevSet = new Set(prev);
+            const fresh = idsToTrack.filter((id) => !prevSet.has(id));
+            return fresh.length ? [...prev, ...fresh] : prev;
+          });
+        }
+      } catch (err) {
+        console.error('Failed to auto-track Phase 2 matters:', err);
+      }
+    };
+
+    run();
+    return () => {
+      cancelled = true;
+    };
+  }, [autoTrackPhase2]);
+
+  // Persist the Phase 2 auto-track setting to localStorage.
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEYS.AUTO_TRACK_PHASE2, autoTrackPhase2 ? 'true' : 'false');
+    } catch (e) {
+      console.error('Failed to save auto-track Phase 2 setting:', e);
+    }
+  }, [autoTrackPhase2]);
+
+  // Persist the set of auto-tracked Phase 2 IDs to localStorage.
+  useEffect(() => {
+    try {
+      localStorage.setItem(
+        STORAGE_KEYS.AUTO_TRACK_PHASE2_IDS,
+        JSON.stringify(Array.from(autoTrackedPhase2Ids))
+      );
+    } catch (e) {
+      console.error('Failed to save auto-tracked Phase 2 IDs:', e);
+    }
+  }, [autoTrackedPhase2Ids]);
+
   // Persist tracked mergers to localStorage
   useEffect(() => {
     try {
@@ -527,6 +648,10 @@ export function TrackingProvider({ children }) {
     });
   }, []);
 
+  const toggleAutoTrackPhase2 = useCallback(() => {
+    setAutoTrackPhase2((prev) => !prev);
+  }, []);
+
   const markEventAsSeen = useCallback((event) => {
     const key = getEventKey(event);
     setSeenEventKeys((prev) => {
@@ -596,6 +721,8 @@ export function TrackingProvider({ children }) {
     toggleIndustryTracking,
     trackedIndustryEvents,
     unseenIndustryEvents,
+    autoTrackPhase2,
+    toggleAutoTrackPhase2,
     markEventAsSeen,
     markEventsAsSeen,
     isEventSeen,
@@ -618,6 +745,8 @@ export function TrackingProvider({ children }) {
     toggleIndustryTracking,
     trackedIndustryEvents,
     unseenIndustryEvents,
+    autoTrackPhase2,
+    toggleAutoTrackPhase2,
     markEventAsSeen,
     markEventsAsSeen,
     isEventSeen,
