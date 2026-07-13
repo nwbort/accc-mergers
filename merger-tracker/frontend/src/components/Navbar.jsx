@@ -4,18 +4,13 @@ import { FaSearch, FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
 import NotificationPanel from './NotificationPanel';
 import BellIcon from './BellIcon';
+import { NAV_PAGES } from '../constants/navPages';
 
 const SCROLL_HIDE_THRESHOLD_PX = 50;
 
-const navLinks = [
-  { path: '/', label: 'Dashboard', shortcut: 'd' },
-  { path: '/mergers', label: 'Mergers', shortcut: 'm' },
-  { path: '/phase-2', label: 'Phase 2' },
-  { path: '/industries', label: 'Industries', shortcut: 'i' },
-  { path: '/commentary', label: 'Commentary', shortcut: 'c' },
-  { path: '/analysis', label: 'Analysis', shortcut: 'a' },
-  { path: '/digest', label: 'Catch me up' },
-];
+const navLinks = NAV_PAGES.filter((p) => p.inNavbar)
+  .sort((a, b) => a.navOrder - b.navOrder)
+  .map(({ path, label, navbarLabel, shortcut }) => ({ path, label: navbarLabel || label, shortcut }));
 
 const mainNavLinks = navLinks.slice(0, 2);
 const moreNavLinks = navLinks.slice(2);
