@@ -14,6 +14,10 @@
       "name": "ORIGIN ENERGY LIMITED",
       "identifier_type": "ABN",
       "identifier": "30 000 051 696",
+      "canonical": {
+        "id": "origin-energy-limited",
+        "name": "Origin Energy Limited"
+      },
       "party_page": {
         "id": "origin-energy-limited",
         "name": "Origin Energy Limited"
@@ -34,6 +38,10 @@
       "name": "CLIMATECH ZERO PTY LTD",
       "identifier_type": "ABN",
       "identifier": "70 623 828 508",
+      "canonical": {
+        "id": "climatech-zero-pty-ltd",
+        "name": "Climatech Zero Pty Ltd"
+      },
       "party_page": {
         "id": "climatech-zero-pty-ltd",
         "name": "Climatech Zero Pty Ltd"
@@ -43,9 +51,13 @@
       "name": "CLIMATECH ZERO HOLDINGS PTY LTD",
       "identifier_type": "ABN",
       "identifier": "35 623 827 930",
+      "canonical": {
+        "id": "climatech-zero-pty-ltd",
+        "name": "Climatech Zero Pty Ltd"
+      },
       "party_page": {
-        "id": "climatech-zero-holdings-pty-ltd",
-        "name": "Climatech Zero Holdings Pty Ltd"
+        "id": "climatech-zero-pty-ltd",
+        "name": "Climatech Zero Pty Ltd"
       }
     }
   ],
@@ -95,9 +107,13 @@
           "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "53 143 484 208",
+          "canonical": {
+            "id": "origin-energy-limited",
+            "name": "Origin Energy Limited"
+          },
           "party_page": {
-            "id": "origin-energy-international-holdings-pty-limited",
-            "name": "Origin Energy International Holdings Pty Limited"
+            "id": "origin-energy-limited",
+            "name": "Origin Energy Limited"
           }
         }
       ],

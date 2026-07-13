@@ -15,6 +15,10 @@
       "name": "TELSTRA AUSTRALIA NETWORKS PTY LIMITED",
       "identifier_type": "ABN",
       "identifier": "58 100 816 206",
+      "canonical": {
+        "id": "telstra-australia-networks-pty-limited",
+        "name": "Telstra Australia Networks Pty Limited"
+      },
       "party_page": {
         "id": "telstra-australia-networks-pty-limited",
         "name": "Telstra Australia Networks Pty Limited"
@@ -24,9 +28,13 @@
       "name": "TELSTRA INTERNATIONAL NETWORKS PTY LIMITED",
       "identifier_type": "ABN",
       "identifier": "56 142 220 157",
+      "canonical": {
+        "id": "telstra-australia-networks-pty-limited",
+        "name": "Telstra Australia Networks Pty Limited"
+      },
       "party_page": {
-        "id": "telstra-international-networks-pty-limited",
-        "name": "Telstra International Networks Pty Limited"
+        "id": "telstra-australia-networks-pty-limited",
+        "name": "Telstra Australia Networks Pty Limited"
       }
     }
   ],
@@ -53,8 +61,12 @@
       "name": "Google LLC",
       "identifier_type": null,
       "identifier": "",
+      "canonical": {
+        "id": "google-llc",
+        "name": "Google LLC"
+      },
       "party_page": {
-        "id": "google-llc-2",
+        "id": "google-llc",
         "name": "Google LLC"
       }
     }
@@ -135,8 +147,12 @@
           "name": "Google LLC",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "google-llc",
+            "name": "Google LLC"
+          },
           "party_page": {
-            "id": "google-llc-2",
+            "id": "google-llc",
             "name": "Google LLC"
           }
         }
@@ -191,6 +207,10 @@
           "name": "TELSTRA LIMITED",
           "identifier_type": "ABN",
           "identifier": "64 086 174 781",
+          "canonical": {
+            "id": "telstra-limited",
+            "name": "Telstra Limited"
+          },
           "party_page": {
             "id": "telstra-limited",
             "name": "Telstra Limited"

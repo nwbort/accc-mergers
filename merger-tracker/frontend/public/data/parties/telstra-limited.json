@@ -3,6 +3,11 @@
   "canonical_name": "Telstra Limited",
   "members": [
     {
+      "name": "TELSTRA CORPORATION LIMITED",
+      "identifier": "33 051 775 556",
+      "identifier_type": "ABN"
+    },
+    {
       "name": "TELSTRA LIMITED",
       "identifier": "64 086 174 781",
       "identifier_type": "ABN"
@@ -22,20 +27,32 @@
         "determination_date": "2026-03-19T12:00:00Z"
       }
     ],
-    "target": [],
+    "target": [
+      {
+        "merger_id": "WA-95026",
+        "merger_name": "Google Australia \u2013 indefeasible rights to use terrestrial dark fibre from Telstra",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-06-12T12:00:00Z",
+        "determination_date": "2026-07-13T12:00:00Z"
+      }
+    ],
     "other": []
   },
-  "merger_count": 1,
+  "merger_count": 2,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 30.0,
-    "median_days": 30,
+    "average_days": 30.5,
+    "median_days": 31,
     "average_business_days": 21.0,
     "median_business_days": 21,
-    "completed_count": 1
+    "completed_count": 2
   }
 }

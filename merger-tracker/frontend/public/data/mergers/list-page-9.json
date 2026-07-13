@@ -1002,15 +1002,23 @@
           "name": "Whalar GmbH",
           "identifier_type": null,
           "identifier": "HRB  210859",
+          "canonical": {
+            "id": "whalar-inc",
+            "name": "Whalar Inc"
+          },
           "party_page": {
-            "id": "whalar-gmbh",
-            "name": "Whalar GmbH"
+            "id": "whalar-inc",
+            "name": "Whalar Inc"
           }
         },
         {
           "name": "Whalar Inc",
           "identifier_type": null,
           "identifier": "Delaware company number  6534128",
+          "canonical": {
+            "id": "whalar-inc",
+            "name": "Whalar Inc"
+          },
           "party_page": {
             "id": "whalar-inc",
             "name": "Whalar Inc"
@@ -2989,6 +2997,10 @@
           "name": "ORIGIN ENERGY LIMITED",
           "identifier_type": "ABN",
           "identifier": "30 000 051 696",
+          "canonical": {
+            "id": "origin-energy-limited",
+            "name": "Origin Energy Limited"
+          },
           "party_page": {
             "id": "origin-energy-limited",
             "name": "Origin Energy Limited"
@@ -3009,6 +3021,10 @@
           "name": "CLIMATECH ZERO PTY LTD",
           "identifier_type": "ABN",
           "identifier": "70 623 828 508",
+          "canonical": {
+            "id": "climatech-zero-pty-ltd",
+            "name": "Climatech Zero Pty Ltd"
+          },
           "party_page": {
             "id": "climatech-zero-pty-ltd",
             "name": "Climatech Zero Pty Ltd"
@@ -3018,9 +3034,13 @@
           "name": "CLIMATECH ZERO HOLDINGS PTY LTD",
           "identifier_type": "ABN",
           "identifier": "35 623 827 930",
+          "canonical": {
+            "id": "climatech-zero-pty-ltd",
+            "name": "Climatech Zero Pty Ltd"
+          },
           "party_page": {
-            "id": "climatech-zero-holdings-pty-ltd",
-            "name": "Climatech Zero Holdings Pty Ltd"
+            "id": "climatech-zero-pty-ltd",
+            "name": "Climatech Zero Pty Ltd"
           }
         }
       ],

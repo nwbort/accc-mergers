@@ -210,9 +210,13 @@
           "name": "ORIGIN ENERGY INTERNATIONAL HOLDINGS PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "53 143 484 208",
+          "canonical": {
+            "id": "origin-energy-limited",
+            "name": "Origin Energy Limited"
+          },
           "party_page": {
-            "id": "origin-energy-international-holdings-pty-limited",
-            "name": "Origin Energy International Holdings Pty Limited"
+            "id": "origin-energy-limited",
+            "name": "Origin Energy Limited"
           }
         }
       ],
