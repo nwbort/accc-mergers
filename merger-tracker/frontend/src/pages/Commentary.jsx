@@ -3,6 +3,7 @@ import { mergerPath } from '../utils/slug';
 import { FaComment } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
+import ErrorMessage from '../components/ErrorMessage';
 import StatusBadge from '../components/StatusBadge';
 import WaiverBadge from '../components/WaiverBadge';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
@@ -19,7 +20,7 @@ function Commentary() {
   const items = data?.items || [];
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
+  if (error) return <ErrorMessage error={error} />;
 
   return (
     <>

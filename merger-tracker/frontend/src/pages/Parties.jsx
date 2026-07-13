@@ -2,6 +2,7 @@ import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import LoadingSpinner from '../components/LoadingSpinner';
+import ErrorMessage from '../components/ErrorMessage';
 import PartyTreemap from '../components/PartyTreemap';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
@@ -47,7 +48,7 @@ function Parties() {
   const isSearching = debouncedSearch.trim().length > 0;
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div role="alert" className="text-red-600 p-8 text-center">Error: {error}</div>;
+  if (error) return <ErrorMessage error={error} />;
 
   return (
     <>

@@ -13,6 +13,7 @@ import {
   Legend,
 } from 'chart.js';
 import LoadingSpinner from '../components/LoadingSpinner';
+import ErrorMessage from '../components/ErrorMessage';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
@@ -81,7 +82,7 @@ function Analysis() {
   const [calendarDays, setCalendarDays] = useState(false);
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
+  if (error) return <ErrorMessage error={error} />;
   if (!data) return null;
 
   const { phase1_duration, waiver_duration, monthly_volume, industry_phase1_duration } = data;

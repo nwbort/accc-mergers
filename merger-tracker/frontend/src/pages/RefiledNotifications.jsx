@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { differenceInCalendarDays, parseISO, isValid } from 'date-fns';
 import { FaArrowRightArrowLeft, FaHourglassHalf, FaCalendarDays } from 'react-icons/fa6';
 import LoadingSpinner from '../components/LoadingSpinner';
+import ErrorMessage from '../components/ErrorMessage';
 import StatusBadge from '../components/StatusBadge';
 import StatCard from '../components/StatCard';
 import SEO from '../components/SEO';
@@ -162,7 +163,7 @@ function RefiledNotifications() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.refiledNotifications, { cacheKey: 'refiled-notifications' });
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div role="alert" className="text-red-600 p-8 text-center">Error: {error}</div>;
+  if (error) return <ErrorMessage error={error} />;
 
   const current = data?.current || [];
   const completed = data?.completed || [];

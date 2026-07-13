@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { mergerPath } from '../utils/slug';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
+import ErrorMessage from '../components/ErrorMessage';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import WaiverBadge from '../components/WaiverBadge';
 import SEO from '../components/SEO';
@@ -384,7 +385,7 @@ function Digest() {
   };
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
+  if (error) return <ErrorMessage error={error} />;
   if (!digest) return null;
 
   const dateRange = formatDateRange(digest.period_start, digest.period_end);
