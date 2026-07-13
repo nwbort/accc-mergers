@@ -15,6 +15,7 @@ import { useFetchData } from '../hooks/useFetchData';
 import { mergerPath } from '../utils/slug';
 import { formatDateMedium } from '../utils/dates';
 import { THEME_HEXES } from '../constants/chartColors';
+import { CARD } from '../utils/classNames';
 
 // Reason categories map to a fixed colour so the clock bars, the legend and the
 // "why the clock was extended" breakdown all read as one palette.
@@ -30,7 +31,7 @@ const BASE_CLOCK_COLOR = '#E5E7EB'; // gray-200 — the statutory 30-BD window
 function ReasonBreakdown({ reasons }) {
   const maxEvents = Math.max(...reasons.map((r) => r.events), 1);
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 sm:p-6">
+    <div className={`${CARD} p-5 sm:p-6`}>
       <ul className="space-y-4">
         {reasons.map((r) => {
           const style = REASON_STYLE[r.category] || REASON_STYLE.Other;
@@ -259,11 +260,11 @@ function Extensions() {
             coloured by reason. Longest clock first.
           </p>
           {matters.length === 0 ? (
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
+            <div className={`${CARD} p-6`}>
               <p className="text-gray-500 text-sm">No Phase 1 extensions have been published yet.</p>
             </div>
           ) : (
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 sm:p-6">
+            <div className={`${CARD} p-5 sm:p-6`}>
               <ul className="divide-y divide-gray-100">
                 {matters.map((matter) => (
                   <MatterCard

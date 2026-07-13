@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { FaCheckCircle } from 'react-icons/fa';
 import { FEEDBACK_ENDPOINT, TURNSTILE_SITE_KEY } from '../config';
 import SEO from '../components/SEO';
+import { CARD } from '../utils/classNames';
 
 export default function Feedback() {
   const [message, setMessage] = useState('');
@@ -95,7 +96,7 @@ export default function Feedback() {
           <p className="text-gray-500">Got a suggestion or spotted an issue? Let me know.</p>
         </div>
 
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-8">
+        <div className={`${CARD} p-8`}>
           {status === 'success' ? (
             <div className="flex items-center gap-3 py-2">
               <FaCheckCircle className="h-6 w-6 text-primary shrink-0" aria-hidden="true" />

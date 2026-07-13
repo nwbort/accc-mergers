@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { FaFile, FaExclamationCircle } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import { CARD } from '../utils/classNames';
 
 function NotFound() {
   const location = useLocation();
@@ -20,7 +21,7 @@ function NotFound() {
           description="This ACCC document is not currently available."
         />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-10 text-center max-w-lg mx-auto">
+          <div className={`${CARD} p-10 text-center max-w-lg mx-auto`}>
             <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gray-100 flex items-center justify-center">
               <FaFile className="w-8 h-8 text-gray-500" aria-hidden="true" />
             </div>
@@ -59,7 +60,7 @@ function NotFound() {
         description="The page you're looking for doesn't exist on the Australian Merger Tracker."
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 animate-fade-in">
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-10 text-center max-w-lg mx-auto">
+        <div className={`${CARD} p-10 text-center max-w-lg mx-auto`}>
           <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-gray-100 flex items-center justify-center">
             <FaExclamationCircle className="w-8 h-8 text-gray-500" aria-hidden="true" />
           </div>

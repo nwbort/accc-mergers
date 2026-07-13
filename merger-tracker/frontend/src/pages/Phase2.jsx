@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { useTracking } from '../context/TrackingContext';
+import { CARD } from '../utils/classNames';
 
 function Phase2() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.phase2, { cacheKey: 'phase2' });
@@ -66,7 +67,7 @@ function Phase2() {
             Completed Phase 2 matters
           </h2>
           {completed.length === 0 ? (
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
+            <div className={`${CARD} p-6`}>
               <p className="text-gray-500 text-sm">No Phase 2 matters have been completed yet.</p>
             </div>
           ) : (
