@@ -1,6 +1,6 @@
 {
   "total_mergers": 173,
-  "total_waivers": 263,
+  "total_waivers": 264,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 128,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 249,
+    "Approved": 250,
     "Not approved": 14
   },
   "phase_duration": {
@@ -36,10 +36,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.44866920152091,
-    "median_days": 18,
-    "average_business_days": 12.228136882129277,
-    "median_business_days": 12
+    "average_days": 18.49621212121212,
+    "median_days": 18.0,
+    "average_business_days": 12.261363636363637,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -183,6 +183,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-40030",
+      "merger_name": "Telstra \u2013 indefeasible rights over dark fibre on Tabua, Proa and Bulikula subsea cables",
+      "determination": "Approved",
+      "determination_date": "2026-07-13T12:00:00Z",
+      "page_modified_datetime": "2026-07-13T17:38:03+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-20028",
       "merger_name": "Accenture \u2013 Whalar Agency",
       "determination": "Approved",
@@ -291,16 +301,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-10018",
-      "merger_name": "CSR - Complete Plaster",
-      "determination": "Approved",
-      "determination_date": "2026-07-07T12:00:00Z",
-      "page_modified_datetime": "2026-07-07T16:25:19+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

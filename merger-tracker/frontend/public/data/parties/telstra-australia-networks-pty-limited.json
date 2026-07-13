@@ -1,28 +1,15 @@
 {
-  "id": "google-llc",
-  "canonical_name": "Google LLC",
+  "id": "telstra-australia-networks-pty-limited",
+  "canonical_name": "Telstra Australia Networks Pty Limited",
   "members": [
     {
-      "name": "Google LLC",
-      "identifier": null,
-      "identifier_type": null
+      "name": "TELSTRA AUSTRALIA NETWORKS PTY LIMITED",
+      "identifier": "58 100 816 206",
+      "identifier_type": "ABN"
     }
   ],
   "mergers": {
     "acquirer": [
-      {
-        "merger_id": "MN-15002",
-        "merger_name": "Google - Wiz",
-        "is_waiver": false,
-        "status": "Assessment completed",
-        "determination": "Approved",
-        "has_conditions": false,
-        "phase": "Phase 1",
-        "notification_date": "2026-01-09T12:00:00Z",
-        "determination_date": "2026-02-19T12:00:00Z"
-      }
-    ],
-    "target": [
       {
         "merger_id": "WA-40030",
         "merger_name": "Telstra \u2013 indefeasible rights over dark fibre on Tabua, Proa and Bulikula subsea cables",
@@ -35,20 +22,15 @@
         "determination_date": "2026-07-13T12:00:00Z"
       }
     ],
+    "target": [],
     "other": []
   },
-  "merger_count": 2,
-  "phase_1_count": 1,
+  "merger_count": 1,
+  "phase_1_count": 0,
   "phase_2_count": 0,
   "waiver_count": 1,
   "active_count": 0,
-  "phase_duration": {
-    "average_days": 41.0,
-    "median_days": 41,
-    "average_business_days": 28.0,
-    "median_business_days": 28,
-    "completed_count": 1
-  },
+  "phase_duration": null,
   "waiver_duration": {
     "average_days": 31.0,
     "median_days": 31,
