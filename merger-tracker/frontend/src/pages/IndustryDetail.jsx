@@ -15,6 +15,7 @@ import { useDecodedParam } from '../hooks/useDecodedParam';
 import { useTracking } from '../context/TrackingContext';
 import { industryPath } from '../utils/slug';
 import { MERGER_STATUS, PHASES } from '../constants/mergerStatus';
+import { CARD, SECTION_HEADING } from '../utils/classNames';
 
 // ANZSIC level → human label for the page subtitle and breadcrumb.
 const LEVEL_LABELS = {
@@ -173,7 +174,7 @@ function IndustryDetail() {
           ]}
         />
 
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6 card-accent">
+        <div className={`${CARD} p-6 mb-6 card-accent`}>
           <div className="pt-1 flex items-start justify-between gap-4">
             <div>
               <h1 className="text-2xl font-bold text-gray-900 tracking-tight">
@@ -227,8 +228,8 @@ function IndustryDetail() {
 
         {/* Sub-industries: children one level down, for drilling into the tree. */}
         {children.length > 0 && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6">
-            <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
+          <div className={`${CARD} p-6 mb-6`}>
+            <h2 className={`${SECTION_HEADING} mb-3`}>
               Sub-industries
             </h2>
             <ul className="divide-y divide-gray-50">
@@ -257,11 +258,11 @@ function IndustryDetail() {
 
         {mergers.length > 0 && (
           <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1 mb-3">
-            <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+            <h2 className={SECTION_HEADING}>
               Mergers in this industry
             </h2>
             {mergers.length > 5 && (
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wider shrink-0">
+              <p className={`${SECTION_HEADING} shrink-0`}>
                 Showing {filteredMergers.length} of {mergers.length}
               </p>
             )}

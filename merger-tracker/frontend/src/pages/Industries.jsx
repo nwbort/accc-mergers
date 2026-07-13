@@ -8,6 +8,7 @@ import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
 import { useFetchData } from '../hooks/useFetchData';
 import { industryPath } from '../utils/slug';
+import { CARD, SECTION_HEADING } from '../utils/classNames';
 
 const SCROLL_THRESHOLD = 6; // Show scrollable container when industry has more than this many mergers
 
@@ -141,7 +142,7 @@ function Industries() {
       </header>
 
       {/* Industry heatmap */}
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
+      <div className={`${CARD} p-5 mb-6`}>
         <Treemap
           items={industries}
           getKey={(ind) => ind.code}
@@ -150,15 +151,15 @@ function Industries() {
       </div>
 
       {/* Search */}
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
+      <div className={`${CARD} p-5 mb-6`}>
         <div className="flex items-baseline justify-between gap-3 mb-2">
           <label
             htmlFor="search"
-            className="text-xs font-medium text-gray-500 uppercase tracking-wider"
+            className={SECTION_HEADING}
           >
             Search industries
           </label>
-          <p className="text-xs font-medium text-gray-500 uppercase tracking-wider shrink-0">
+          <p className={`${SECTION_HEADING} shrink-0`}>
             Showing {filteredIndustries.length} of {industries.length}
           </p>
         </div>
@@ -185,10 +186,10 @@ function Industries() {
           </caption>
           <thead>
             <tr className="bg-gray-50/80">
-              <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className={`px-6 py-3.5 text-left ${SECTION_HEADING}`}>
                 Industry name
               </th>
-              <th className="px-6 py-3.5 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th className={`px-6 py-3.5 text-left ${SECTION_HEADING}`}>
                 Mergers &amp; share of all reviews
               </th>
             </tr>
@@ -269,7 +270,7 @@ function Industries() {
                           instead of stretching the table past the viewport on mobile. */}
                       <td colSpan="2" className="px-6 py-5 bg-gray-100 border-t border-gray-200 shadow-inner max-w-0">
                         <div className="space-y-2">
-                          <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
+                          <p className={`${SECTION_HEADING} mb-3`}>
                             Mergers in this industry
                           </p>
                           {isLoadingThisIndustry ? (
