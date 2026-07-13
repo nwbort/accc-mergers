@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { API_ENDPOINTS } from '../config';
+import { MERGER_STATUS } from '../constants/mergerStatus';
 
 const TrackingContext = createContext(null);
 
@@ -286,8 +287,8 @@ export function TrackingProvider({ children }) {
           // Skip if already determined, a waiver, or assessment is no longer active
           if (merger.determination_publication_date) return;
           if (merger.is_waiver) return;
-          if (merger.status === 'Assessment suspended') return;
-          if (merger.status === 'Assessment ceased') return;
+          if (merger.status === MERGER_STATUS.ASSESSMENT_SUSPENDED) return;
+          if (merger.status === MERGER_STATUS.ASSESSMENT_CEASED) return;
 
           if (merger.end_of_determination_period) {
             const dueDate = new Date(merger.end_of_determination_period);

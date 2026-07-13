@@ -21,6 +21,7 @@ import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen } from '../utils/lastVisit';
 import { formatMedian } from '../utils/formatMedian';
 import { CHART_PALETTE, CHART_PALETTE_ORDER, DETERMINATION_COLORS } from '../constants/chartColors';
+import { MERGER_STATUS } from '../constants/mergerStatus';
 
 ChartJS.register(
   Title,
@@ -78,7 +79,7 @@ function Dashboard() {
     ],
   };
 
-  const waiverLabels = ['Approved', 'Not approved'].filter(
+  const waiverLabels = [MERGER_STATUS.APPROVED, MERGER_STATUS.NOT_APPROVED].filter(
     (label) => stats.by_waiver_determination && stats.by_waiver_determination[label]
   );
   const waiverDeterminationData = {
@@ -138,10 +139,10 @@ function Dashboard() {
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-8">
         <StatCard
           title="Mergers"
-          value={`${stats.by_status['Under assessment'] || 0} under assessment`}
+          value={`${stats.by_status[MERGER_STATUS.UNDER_ASSESSMENT] || 0} under assessment`}
           subtitle={`${stats.total_mergers} notified${stats.total_waivers ? ` and ${stats.total_waivers} waiver${stats.total_waivers !== 1 ? 's' : ''}` : ''}`}
           icon={<FaMagnifyingGlass />}
-          href="/mergers?status=Under assessment"
+          href={`/mergers?status=${MERGER_STATUS.UNDER_ASSESSMENT}`}
         />
         <StatCard
           title="Average phase 1 duration"
