@@ -7,7 +7,7 @@ import { groupMergersByPhase } from '../utils/industryGroups';
 const GROUP_STYLES = {
   'Phase 2': { bar: 'bg-phase-2', pill: 'bg-phase-2-pale text-phase-2-dark', line: 'border-phase-2-light' },
   'Phase 1': { bar: 'bg-phase-1', pill: 'bg-phase-1-pale text-phase-1-dark', line: 'border-phase-1-light' },
-  'Waiver': { bar: 'bg-amber-400', pill: 'bg-amber-50 text-amber-700', line: 'border-amber-300' },
+  'Waiver': { bar: 'bg-waiver', pill: 'bg-waiver-pale text-waiver-dark', line: 'border-waiver-light' },
 };
 
 /**
