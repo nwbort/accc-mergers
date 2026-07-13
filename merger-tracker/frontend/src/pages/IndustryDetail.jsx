@@ -5,6 +5,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
 import IndustryMergerGroups from '../components/IndustryMergerGroups';
 import PhaseDurationComparison from '../components/PhaseDurationComparison';
+import SearchInput from '../components/SearchInput';
 import SEO from '../components/SEO';
 import BellIcon from '../components/BellIcon';
 import Breadcrumb from '../components/Breadcrumb';
@@ -271,19 +272,13 @@ function IndustryDetail() {
         {/* Free-text filter for the merger list, worth showing only once the
             list is long enough to be awkward to scan by eye. */}
         {mergers.length > 5 && (
-          <div className="relative mb-4">
-            <svg className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-            </svg>
-            <input
-              type="text"
-              aria-label="Search mergers in this industry"
-              className="w-full pl-10 pr-3 py-2.5 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:ring-2 focus:ring-primary/20 focus:border-primary focus:bg-white transition-all"
-              placeholder="Search mergers in this industry..."
-              value={mergerSearch}
-              onChange={(e) => setMergerSearch(e.target.value)}
-            />
-          </div>
+          <SearchInput
+            ariaLabel="Search mergers in this industry"
+            placeholder="Search mergers in this industry..."
+            value={mergerSearch}
+            onChange={(e) => setMergerSearch(e.target.value)}
+            className="mb-4"
+          />
         )}
 
         <IndustryMergerGroups mergers={filteredMergers} variant="full" />
