@@ -29,6 +29,26 @@ python scripts/tools/commentary.py
 # open http://127.0.0.1:8001
 ```
 
+## `related_parties.py`
+
+Web UI for linking party identities that are the same real-world entity into
+canonical *groups*. Reads every acquirer/target/other party across
+`data/processed/mergers.json`, shows which are already grouped and which are
+still ungrouped, and lets you select ungrouped parties to form a new group or
+fold into an existing one (plus rename/delete groups and remove members).
+Writes back to `data/processed/related_parties.json`.
+
+This is the hand-editing counterpart to `scripts/detect_related_parties.py`,
+which suggests new groups daily via a pull request. The grouping rules — how a
+party is matched to a group by ABN or normalised name — live in
+`scripts/party_matching.py`; once a group is recorded, each matching party on a
+merger detail page links to the register filtered by the group's canonical name.
+
+```bash
+python scripts/tools/related_parties.py
+# open http://127.0.0.1:8003
+```
+
 ## `advisors.py`
 
 Web UI for recording the legal (and other) advisors who worked on each

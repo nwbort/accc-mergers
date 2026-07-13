@@ -116,7 +116,7 @@ scripts/
 ├── fix_missing_notification_dates.py # Suggest freezing missing notification dates (daily PR)
 ├── party_matching.py     # Shared party normalisation + group matching
 ├── static_data/          # Generator package used by generate_static_data.py (outputs/, loaders, enrichment)
-├── tools/                # Interactive admin web UIs (resolver, commentary, advisors)
+├── tools/                # Interactive admin web UIs (resolver, commentary, advisors, related_parties)
 └── tests/                # Pytest suite covering the pipeline, generators, and CI checks
 
 data/
