@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import StatusBadge from './StatusBadge';
 import { mergerPath } from '../utils/slug';
 import { groupMergersByPhase } from '../utils/industryGroups';
 
@@ -58,9 +59,13 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
                       </h4>
                     )}
                   </div>
-                  <span className="text-xs text-gray-500 mt-1 block truncate">
-                    {merger.status}
-                  </span>
+                  <div className="mt-1.5">
+                    <StatusBadge
+                      status={merger.status}
+                      determination={merger.determination}
+                      hasConditions={merger.has_conditions}
+                    />
+                  </div>
                 </Link>
               ))}
             </div>
