@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
 import StatusBadge from '../components/StatusBadge';
-import BellIcon from '../components/BellIcon';
+import TrackButton from '../components/TrackButton';
 import WaiverBadge from '../components/WaiverBadge';
 import BusinessDayProgress from '../components/BusinessDayProgress';
 import { getBusinessDayProgress } from '../utils/businessDayProgress';
@@ -290,19 +290,14 @@ function MergerDetail() {
                 determination={merger.accc_determination}
                 hasConditions={merger.has_conditions}
               />
-              <button
+              <TrackButton
+                active={tracked}
                 onClick={() => toggleTracking(id)}
-                className={`inline-flex items-center justify-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-lg border transition-all duration-200 ${
-                  tracked
-                    ? 'bg-primary text-white border-primary hover:bg-primary-dark shadow-sm'
-                    : 'bg-gray-100 text-gray-600 border-gray-200/60 hover:bg-gray-200'
-                }`}
-                aria-pressed={tracked}
-                aria-label={tracked ? 'Stop tracking this merger' : 'Track this merger for updates'}
-              >
-                <BellIcon filled={tracked} className="w-3.5 h-3.5" />
-                {tracked ? 'Tracking' : 'Track'}
-              </button>
+                activeLabel="Tracking"
+                inactiveLabel="Track"
+                activeAriaLabel="Stop tracking this merger"
+                inactiveAriaLabel="Track this merger for updates"
+              />
             </div>
           </div>
 
