@@ -1,10 +1,9 @@
 """Phase 2 tracker — ``phase2.json``.
 
-See docs/repo-review-specs.md #20 for the spec this implements. Surfaces the
-small set of matters currently in Phase 2 plus completed Phase 2 matters, with
-the statutory milestones needed to render a timeline: referral date, NOCC
-due/issued, and end of determination period. All milestone inputs are already
-computed by :func:`static_data.enrichment.enrich_merger`.
+Surfaces the small set of matters currently in Phase 2 plus completed Phase 2
+matters, with the statutory milestones needed to render a timeline: referral
+date, NOCC due/issued, and end of determination period. All milestone inputs
+are already computed by :func:`static_data.enrichment.enrich_merger`.
 """
 
 from constants import merger_status
