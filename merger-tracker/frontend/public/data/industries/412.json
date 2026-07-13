@@ -47,17 +47,6 @@
   ],
   "mergers": [
     {
-      "merger_id": "MN-50027",
-      "merger_name": "Endeavour Group - retail liquor site in Avalon, NSW",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-06-22T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
       "is_waiver": false,
@@ -67,6 +56,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-21T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-50027",
+      "merger_name": "Endeavour Group - retail liquor site in Avalon, NSW",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-06-22T12:00:00Z",
+      "determination_date": "2026-07-13T12:00:00Z"
     },
     {
       "merger_id": "WA-25031",
@@ -205,13 +205,13 @@
   "phase_1_count": 3,
   "phase_2_count": 1,
   "waiver_count": 10,
-  "active_count": 2,
+  "active_count": 1,
   "phase_duration": {
-    "average_days": 44.0,
-    "median_days": 63,
-    "average_business_days": 22.5,
-    "median_business_days": 30,
-    "completed_count": 2
+    "average_days": 36.333333333333336,
+    "median_days": 25,
+    "average_business_days": 20.0,
+    "median_business_days": 15,
+    "completed_count": 3
   },
   "waiver_duration": {
     "average_days": 18.8,

@@ -3,12 +3,12 @@
   "total_waivers": 267,
   "total_conditional_approvals": 1,
   "by_status": {
-    "Assessment completed": 128,
-    "Under assessment": 43,
+    "Assessment completed": 129,
+    "Under assessment": 42,
     "Assessment ceased": 2
   },
   "by_determination": {
-    "Approved": 126,
+    "Approved": 127,
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
@@ -16,21 +16,21 @@
     "Not approved": 14
   },
   "phase_duration": {
-    "average_days": 29.736842105263158,
-    "median_days": 26,
-    "average_business_days": 19.44360902255639,
-    "median_business_days": 17,
+    "average_days": 29.671641791044777,
+    "median_days": 26.0,
+    "average_business_days": 19.41044776119403,
+    "median_business_days": 17.0,
     "percentiles": {
       "day15": {
-        "count": 33,
-        "percentage": 24.8
+        "count": 34,
+        "percentage": 25.4
       },
       "day20": {
-        "count": 104,
-        "percentage": 78.2
+        "count": 105,
+        "percentage": 78.4
       },
       "day30": {
-        "count": 127,
+        "count": 128,
         "percentage": 95.5
       }
     }
@@ -193,6 +193,16 @@
       "stage": "Waiver application"
     },
     {
+      "merger_id": "MN-50027",
+      "merger_name": "Endeavour Group - retail liquor site in Avalon, NSW",
+      "determination": "Approved",
+      "determination_date": "2026-07-13T12:00:00Z",
+      "page_modified_datetime": "2026-07-13T17:43:16+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-95027",
       "merger_name": "WHP Global and G-III - Marc Jacobs",
       "determination": "Approved",
@@ -288,16 +298,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-08T12:00:00Z",
       "page_modified_datetime": "2026-07-08T16:59:26+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-90023",
-      "merger_name": "SAS Trustee Corporation \u2013 Australia Pacific Airport Corporation",
-      "determination": "Approved",
-      "determination_date": "2026-07-08T12:00:00Z",
-      "page_modified_datetime": "2026-07-08T16:40:56+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
