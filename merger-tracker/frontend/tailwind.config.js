@@ -62,6 +62,15 @@ export default {
           dark: '#b45309',
           pale: '#fef3c7',
         },
+        // Waiver merger type. Currently the same amber family as
+        // phase-2-referral (see issue #668) — kept as a distinct token so the
+        // two unrelated concepts can diverge without a find-and-replace.
+        'waiver': {
+          DEFAULT: '#fbbf24',
+          light: '#fcd34d',
+          dark: '#b45309',
+          pale: '#fffbeb',
+        },
       },
       boxShadow: {
         'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.07)',
