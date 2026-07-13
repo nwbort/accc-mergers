@@ -9,6 +9,8 @@ import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
 import { useFetchData } from '../hooks/useFetchData';
+import { MERGER_STATUS } from '../constants/mergerStatus';
+import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT } from '../constants/outcomeDotColors';
 
 const ITEMS_PER_PAGE = 15;
 const LOAD_MORE_COUNT = 10;
@@ -236,10 +238,10 @@ function Timeline() {
   const getEventColor = (eventType) => {
     switch (eventType) {
       case 'notification': return 'bg-blue-500';
-      case 'determination-approved': return 'bg-emerald-500';
-      case 'determination-not-approved': return 'bg-red-500';
-      case 'determination-referred': return 'bg-amber-500';
-      default: return 'bg-primary';
+      case 'determination-approved': return OUTCOME_DOT_COLORS[MERGER_STATUS.APPROVED].dot;
+      case 'determination-not-approved': return OUTCOME_DOT_COLORS[MERGER_STATUS.DECLINED].dot;
+      case 'determination-referred': return OUTCOME_DOT_COLORS[MERGER_STATUS.REFERRED_TO_PHASE_2].dot;
+      default: return DEFAULT_OUTCOME_DOT.dot;
     }
   };
 

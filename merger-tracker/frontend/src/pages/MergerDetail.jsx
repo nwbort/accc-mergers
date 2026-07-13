@@ -22,23 +22,7 @@ import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
 import { MERGER_STATUS } from '../constants/mergerStatus';
-
-// Dot colours for the Timeline & Events list, mirroring the markers on the
-// header timeline bar so the two views stay consistent. Determination events
-// (a Phase 1 approval or the Phase 2 determination) are coloured by outcome —
-// green for a clearance, red for a block — while the Phase 2 referral and
-// ceased events keep their amber/purple.
-const EVENT_DOT_DEFAULT = { ring: 'bg-primary/10', dot: 'bg-primary' };
-const EVENT_DOT_PHASE2_REFERRAL = { ring: 'bg-amber-500/10', dot: 'bg-amber-500' };
-const EVENT_DOT_CEASED = { ring: 'bg-purple-500/10', dot: 'bg-purple-500' };
-const EVENT_DOT_CLEARED = { ring: 'bg-emerald-500/10', dot: 'bg-emerald-500' };
-const EVENT_DOT_BLOCKED = { ring: 'bg-red-500/10', dot: 'bg-red-500' };
-const OUTCOME_EVENT_DOT = {
-  [MERGER_STATUS.APPROVED]: EVENT_DOT_CLEARED,
-  [MERGER_STATUS.NOT_OPPOSED]: EVENT_DOT_CLEARED,
-  [MERGER_STATUS.DECLINED]: EVENT_DOT_BLOCKED,
-  [MERGER_STATUS.NOT_APPROVED]: EVENT_DOT_BLOCKED,
-};
+import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
 
 // Display text for each related-merger relationship. Keys match the
 // `relationship` values produced by the data pipeline (see
@@ -185,12 +169,12 @@ function MergerDetail() {
   // Phase 2 determination) is coloured by outcome to match the header timeline's
   // endpoint, and everything else falls back to the primary colour.
   const dotStyleForEvent = (event) => {
-    if (isCeasedEvent(event)) return EVENT_DOT_CEASED;
-    if (isPhase2ReferralEvent(event)) return EVENT_DOT_PHASE2_REFERRAL;
+    if (isCeasedEvent(event)) return OUTCOME_DOT_COLORS[MERGER_STATUS.ASSESSMENT_CEASED];
+    if (isPhase2ReferralEvent(event)) return OUTCOME_DOT_COLORS[MERGER_STATUS.REFERRED_TO_PHASE_2];
     if (event.is_determination_event) {
-      return OUTCOME_EVENT_DOT[merger.accc_determination] || EVENT_DOT_DEFAULT;
+      return getOutcomeDot({ determination: merger.accc_determination });
     }
-    return EVENT_DOT_DEFAULT;
+    return DEFAULT_OUTCOME_DOT;
   };
 
   const determinationEvent = merger.events

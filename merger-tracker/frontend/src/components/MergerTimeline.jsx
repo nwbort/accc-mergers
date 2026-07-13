@@ -8,23 +8,12 @@ import {
   addBusinessDays,
 } from '../utils/dates';
 import { MERGER_STATUS } from '../constants/mergerStatus';
+import { getOutcomeDot } from '../constants/outcomeDotColors';
 
 // Statutory window the ACCC works to for merger waiver applications. Waivers
 // aren't published with an explicit end-of-determination date, so we derive the
 // deadline as this many business days after the application.
 const WAIVER_BUSINESS_DAYS = 25;
-
-// Determination outcome -> Tailwind background for the end node, so a glance at
-// the timeline endpoint conveys the result. Anything unmapped falls back to the
-// primary colour.
-const OUTCOME_DOT = {
-  [MERGER_STATUS.APPROVED]: 'bg-emerald-500',
-  [MERGER_STATUS.NOT_OPPOSED]: 'bg-emerald-500',
-  [MERGER_STATUS.DECLINED]: 'bg-red-500',
-  [MERGER_STATUS.NOT_APPROVED]: 'bg-red-500',
-  [MERGER_STATUS.REFERRED_TO_PHASE_2]: 'bg-amber-500',
-  [MERGER_STATUS.ASSESSMENT_CEASED]: 'bg-purple-500',
-};
 
 // Position of `date` along the start -> end axis, clamped to [0, 100].
 const axisPct = (date, start, end) =>
@@ -131,7 +120,7 @@ function MergerTimeline({ merger }) {
   }
 
   const startLabel = merger.is_waiver ? 'Waiver application' : 'Notified';
-  const outcomeDot = OUTCOME_DOT[merger.accc_determination] || OUTCOME_DOT[merger.status] || 'bg-primary';
+  const outcomeDot = getOutcomeDot({ determination: merger.accc_determination, status: merger.status }).dot;
 
   const duration = calculateDuration(startStr, effectiveDeterminationDate);
   const businessDuration = calculateBusinessDays(startStr, effectiveDeterminationDate);
