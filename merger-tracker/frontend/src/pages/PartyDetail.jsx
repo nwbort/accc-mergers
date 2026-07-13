@@ -9,6 +9,7 @@ import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { useDecodedParam } from '../hooks/useDecodedParam';
 import { partyPath } from '../utils/slug';
+import { CARD, SECTION_HEADING } from '../utils/classNames';
 
 const ROLE_LABELS = {
   acquirer: 'As acquirer',
@@ -93,7 +94,7 @@ function PartyDetail() {
           ]}
         />
 
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6 card-accent">
+        <div className={`${CARD} p-6 mb-6 card-accent`}>
           <h1 className="text-2xl font-bold text-gray-900 tracking-tight">{partyName}</h1>
           <p className="text-sm text-gray-500 mt-1">
             {mergerCount} merger{mergerCount !== 1 ? 's' : ''}
@@ -101,7 +102,7 @@ function PartyDetail() {
 
           {members.length > 1 && (
             <div className="mt-4 pt-4 border-t border-gray-100">
-              <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">
+              <h2 className={`${SECTION_HEADING} mb-2`}>
                 Also registered as
               </h2>
               <ul className="space-y-1">
@@ -150,7 +151,7 @@ function PartyDetail() {
 
         {roles.map((role) => (
           <div key={role} className="mb-8">
-            <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-3">
+            <h2 className={`${SECTION_HEADING} mb-3`}>
               {ROLE_LABELS[role]}
             </h2>
             <IndustryMergerGroups mergers={mergersByRole[role]} variant="full" />
