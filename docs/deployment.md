@@ -145,8 +145,8 @@ All data files are pre-generated into `merger-tracker/frontend/public/data/`:
 | `mergers/list-page-{N}.json` | Paginated lightweight merger lists (50/page) |
 | `mergers/list-meta.json` | Pagination metadata for merger list |
 | `stats.json` | Aggregated statistics (counts, averages, medians) |
-| `timeline-page-{N}.json` | Paginated timeline events (100/page) |
-| `timeline-meta.json` | Pagination metadata for timeline |
+| `timeline/timeline-page-{N}.json` | Paginated timeline events (100/page) |
+| `timeline/timeline-meta.json` | Pagination metadata for timeline |
 | `industries.json` | ANZSIC codes with merger counts |
 | `industries/{code}.json` | Mergers per industry code |
 | `upcoming-events.json` | Future consultation/determination dates |
