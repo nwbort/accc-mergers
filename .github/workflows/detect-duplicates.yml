@@ -1,9 +1,8 @@
 name: Detect Duplicate Events
 
 on:
-  schedule:
-    # Daily at 2 AM UTC (noon AEST / 1 PM AEDT), after the hourly scrape
-    - cron: '0 2 * * *'
+  # Detection now runs as part of the main pipeline (pipeline.yml) on every
+  # pipeline run. This standalone workflow is kept for manual re-runs only.
   workflow_dispatch:
 
 permissions:

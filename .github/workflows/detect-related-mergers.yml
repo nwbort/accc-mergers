@@ -1,10 +1,8 @@
 name: Detect Related Mergers
 
 on:
-  schedule:
-    # Daily at 2:30 AM UTC — slightly after detect-duplicates so that run's
-    # processed data is settled. Adjust freely.
-    - cron: '30 2 * * *'
+  # Detection now runs as part of the main pipeline (pipeline.yml) on every
+  # pipeline run. This standalone workflow is kept for manual re-runs only.
   workflow_dispatch:
 
 permissions:
