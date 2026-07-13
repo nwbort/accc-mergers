@@ -280,3 +280,112 @@ describe('TrackingContext auto-tracking of related mergers', () => {
     expect(second.result.current.trackedMergerIds).toContain('WA-1');
   });
 });
+
+// Stub globalThis.fetch to serve a phase2.json payload (current + completed) and
+// treat any per-merger detail URL as an empty, event-less matter so the main
+// event-fetch effect resolves cleanly.
+function mockFetchFromPhase2(phase2) {
+  globalThis.fetch = vi.fn((url) => {
+    if (/\/data\/phase2\.json$/.test(url)) {
+      return Promise.resolve(okResponse(phase2));
+    }
+    const match = /\/data\/mergers\/([^/]+)\.json$/.exec(url);
+    if (match) {
+      return Promise.resolve(okResponse({ merger_id: match[1], merger_name: match[1], events: [] }));
+    }
+    return Promise.resolve(notFoundResponse());
+  });
+}
+
+describe('TrackingContext auto-tracking of Phase 2 matters', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    globalThis.fetch = originalFetch;
+    vi.restoreAllMocks();
+  });
+
+  it('does nothing while the setting is off', async () => {
+    mockFetchFromPhase2({ current: [{ merger_id: 'MN-1' }], completed: [] });
+
+    const { result } = renderHook(() => useTracking(), { wrapper });
+
+    await waitFor(() => {
+      expect(result.current.loading).toBe(false);
+    });
+    expect(result.current.autoTrackPhase2).toBe(false);
+    expect(result.current.trackedMergerIds).not.toContain('MN-1');
+  });
+
+  it('tracks all current Phase 2 matters when the setting is enabled', async () => {
+    mockFetchFromPhase2({
+      current: [{ merger_id: 'MN-1' }, { merger_id: 'MN-2' }],
+      completed: [{ merger_id: 'MN-OLD' }],
+    });
+
+    const { result } = renderHook(() => useTracking(), { wrapper });
+
+    act(() => {
+      result.current.toggleAutoTrackPhase2();
+    });
+
+    await waitFor(() => {
+      expect(result.current.trackedMergerIds).toEqual(expect.arrayContaining(['MN-1', 'MN-2']));
+    });
+    // Completed matters are not retroactively tracked.
+    expect(result.current.trackedMergerIds).not.toContain('MN-OLD');
+  });
+
+  it('does not re-add a Phase 2 matter the user untracked while the setting stays on', async () => {
+    mockFetchFromPhase2({ current: [{ merger_id: 'MN-1' }], completed: [] });
+
+    const { result, unmount } = renderHook(() => useTracking(), { wrapper });
+
+    act(() => {
+      result.current.toggleAutoTrackPhase2();
+    });
+    await waitFor(() => {
+      expect(result.current.trackedMergerIds).toContain('MN-1');
+    });
+
+    act(() => {
+      result.current.untrackMerger('MN-1');
+    });
+    await waitFor(() => {
+      expect(result.current.trackedMergerIds).not.toContain('MN-1');
+    });
+
+    // Re-mounting (a later visit) with the same feed must not silently re-add it.
+    unmount();
+    const second = renderHook(() => useTracking(), { wrapper });
+    await waitFor(() => {
+      expect(second.result.current.loading).toBe(false);
+    });
+    expect(second.result.current.trackedMergerIds).not.toContain('MN-1');
+  });
+
+  it('picks up a matter that reaches Phase 2 after the setting was enabled', async () => {
+    mockFetchFromPhase2({ current: [{ merger_id: 'MN-1' }], completed: [] });
+
+    const first = renderHook(() => useTracking(), { wrapper });
+    act(() => {
+      first.result.current.toggleAutoTrackPhase2();
+    });
+    await waitFor(() => {
+      expect(first.result.current.trackedMergerIds).toContain('MN-1');
+    });
+    first.unmount();
+
+    // Later visit: a new matter has entered Phase 2. The setting persists via
+    // localStorage, so the new matter is auto-tracked too.
+    mockFetchFromPhase2({ current: [{ merger_id: 'MN-1' }, { merger_id: 'MN-3' }], completed: [] });
+    const second = renderHook(() => useTracking(), { wrapper });
+    await waitFor(() => {
+      expect(second.result.current.trackedMergerIds).toContain('MN-3');
+    });
+    expect(second.result.current.trackedMergerIds).toContain('MN-1');
+  });
+});

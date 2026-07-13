@@ -4,9 +4,11 @@ import Phase2CompletedCards from '../components/Phase2CompletedCards';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
+import { useTracking } from '../context/TrackingContext';
 
 function Phase2() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.phase2, { cacheKey: 'phase2' });
+  const { autoTrackPhase2, toggleAutoTrackPhase2 } = useTracking();
 
   if (loading) return <LoadingSpinner />;
   if (error) return <div role="alert" className="text-red-600 p-8 text-center">Error: {error}</div>;
@@ -27,6 +29,37 @@ function Phase2() {
             Phase 2 tracker
           </h1>
         </header>
+
+        <div className="mb-6 bg-white rounded-2xl border border-gray-100 shadow-card p-4 sm:p-5">
+          <button
+            type="button"
+            role="switch"
+            aria-checked={autoTrackPhase2}
+            onClick={toggleAutoTrackPhase2}
+            className="flex items-start gap-3 w-full text-left"
+          >
+            <span
+              className={`relative mt-0.5 inline-flex h-5 w-9 flex-shrink-0 items-center rounded-full transition-colors ${
+                autoTrackPhase2 ? 'bg-primary' : 'bg-gray-300'
+              }`}
+            >
+              <span
+                className={`inline-block h-3.5 w-3.5 rounded-full bg-white shadow-sm transform transition-transform ${
+                  autoTrackPhase2 ? 'translate-x-4' : 'translate-x-0.5'
+                }`}
+              />
+            </span>
+            <span>
+              <span className="block text-sm font-medium text-gray-900">
+                Automatically track Phase 2 matters
+              </span>
+              <span className="block text-xs text-gray-500 mt-0.5">
+                When on, every merger that proceeds to Phase 2 is added to your tracked mergers, so
+                its milestones show up in your notifications.
+              </span>
+            </span>
+          </button>
+        </div>
 
         <section aria-labelledby="phase2-current-heading" className="mb-8">
           <h2 id="phase2-current-heading" className="text-lg font-semibold text-gray-900 mb-4">
