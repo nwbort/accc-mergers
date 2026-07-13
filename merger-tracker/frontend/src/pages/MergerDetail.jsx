@@ -21,6 +21,24 @@ import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
+import { MERGER_STATUS } from '../constants/mergerStatus';
+
+// Dot colours for the Timeline & Events list, mirroring the markers on the
+// header timeline bar so the two views stay consistent. Determination events
+// (a Phase 1 approval or the Phase 2 determination) are coloured by outcome —
+// green for a clearance, red for a block — while the Phase 2 referral and
+// ceased events keep their amber/purple.
+const EVENT_DOT_DEFAULT = { ring: 'bg-primary/10', dot: 'bg-primary' };
+const EVENT_DOT_PHASE2_REFERRAL = { ring: 'bg-amber-500/10', dot: 'bg-amber-500' };
+const EVENT_DOT_CEASED = { ring: 'bg-purple-500/10', dot: 'bg-purple-500' };
+const EVENT_DOT_CLEARED = { ring: 'bg-emerald-500/10', dot: 'bg-emerald-500' };
+const EVENT_DOT_BLOCKED = { ring: 'bg-red-500/10', dot: 'bg-red-500' };
+const OUTCOME_EVENT_DOT = {
+  [MERGER_STATUS.APPROVED]: EVENT_DOT_CLEARED,
+  [MERGER_STATUS.NOT_OPPOSED]: EVENT_DOT_CLEARED,
+  [MERGER_STATUS.DECLINED]: EVENT_DOT_BLOCKED,
+  [MERGER_STATUS.NOT_APPROVED]: EVENT_DOT_BLOCKED,
+};
 
 // Display text for each related-merger relationship. Keys match the
 // `relationship` values produced by the data pipeline (see
@@ -161,6 +179,19 @@ function MergerDetail() {
   // the matching purple dot in the events list below.
   const isCeasedEvent = (event) =>
     merger.ceased_date && event.date === merger.ceased_date;
+
+  // Dot styling for an event: the ceased and Phase 2 referral events keep their
+  // amber/purple, the final determination event (a Phase 1 approval or the
+  // Phase 2 determination) is coloured by outcome to match the header timeline's
+  // endpoint, and everything else falls back to the primary colour.
+  const dotStyleForEvent = (event) => {
+    if (isCeasedEvent(event)) return EVENT_DOT_CEASED;
+    if (isPhase2ReferralEvent(event)) return EVENT_DOT_PHASE2_REFERRAL;
+    if (event.is_determination_event) {
+      return OUTCOME_EVENT_DOT[merger.accc_determination] || EVENT_DOT_DEFAULT;
+    }
+    return EVENT_DOT_DEFAULT;
+  };
 
   const determinationEvent = merger.events
     ? merger.events.find(event => event.is_determination_event)
@@ -465,8 +496,7 @@ function MergerDetail() {
             <div className="flow-root">
               <ul className="-mb-8">
                 {sortedEvents.map((event, idx) => {
-                  const isPhase2Referral = isPhase2ReferralEvent(event);
-                  const isCeased = isCeasedEvent(event);
+                  const dot = dotStyleForEvent(event);
                   return (
                   <li key={`event-${event.date}-${event.display_title || event.title}-${idx}`}>
                     <div className="relative pb-8">
@@ -478,12 +508,8 @@ function MergerDetail() {
                       )}
                       <div className="relative flex space-x-3">
                         <div>
-                          <span className={`h-8 w-8 rounded-full flex items-center justify-center ring-4 ring-white ${
-                            isCeased ? 'bg-purple-500/10' : isPhase2Referral ? 'bg-amber-500/10' : 'bg-primary/10'
-                          }`}>
-                            <div className={`h-2.5 w-2.5 rounded-full ${
-                              isCeased ? 'bg-purple-500' : isPhase2Referral ? 'bg-amber-500' : 'bg-primary'
-                            }`} />
+                          <span className={`h-8 w-8 rounded-full flex items-center justify-center ring-4 ring-white ${dot.ring}`}>
+                            <div className={`h-2.5 w-2.5 rounded-full ${dot.dot}`} />
                           </span>
                         </div>
                         <div className="min-w-0 flex-1 pt-1">
