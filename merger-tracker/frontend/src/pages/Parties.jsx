@@ -9,6 +9,7 @@ import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { useDebounce } from '../hooks/useDebounce';
 import { partyPath } from '../utils/slug';
+import { CARD, SECTION_HEADING } from '../utils/classNames';
 
 // How many search results to render at once. The full index runs to well over a
 // thousand parties (mostly one-deal entities), so we never render the whole
@@ -77,7 +78,7 @@ function Parties() {
         </header>
 
         {/* Party heatmap */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
+        <div className={`${CARD} p-5 mb-6`}>
           <Treemap
             items={parties}
             getKey={(party) => party.id}
@@ -86,16 +87,16 @@ function Parties() {
         </div>
 
         {/* Search */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5">
+        <div className={`${CARD} p-5`}>
           <div className="flex items-baseline justify-between gap-3 mb-2">
             <label
               htmlFor="search"
-              className="text-xs font-medium text-gray-500 uppercase tracking-wider"
+              className={SECTION_HEADING}
             >
               Search parties
             </label>
             {isSearching && (
-              <p className="text-xs font-medium text-gray-500 uppercase tracking-wider shrink-0">
+              <p className={`${SECTION_HEADING} shrink-0`}>
                 {totalMatches > MAX_RESULTS
                   ? `Showing ${MAX_RESULTS} of ${totalMatches}`
                   : `${totalMatches} match${totalMatches === 1 ? '' : 'es'}`}
