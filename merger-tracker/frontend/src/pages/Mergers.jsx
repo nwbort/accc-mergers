@@ -3,6 +3,7 @@ import { FaSearch, FaTimes, FaSlidersH, FaArrowDown, FaStar } from 'react-icons/
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { mergerPath } from '../utils/slug';
 import LoadingSpinner from '../components/LoadingSpinner';
+import ErrorMessage from '../components/ErrorMessage';
 import StatusBadge from '../components/StatusBadge';
 import BellIcon from '../components/BellIcon';
 import WaiverBadge from '../components/WaiverBadge';
@@ -348,7 +349,7 @@ function Mergers() {
   }, [handleListKeyDown]);
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
+  if (error) return <ErrorMessage error={error} />;
 
   return (
     <>

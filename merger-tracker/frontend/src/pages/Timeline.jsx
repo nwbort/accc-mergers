@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { mergerPath } from '../utils/slug';
 import LoadingSpinner from '../components/LoadingSpinner';
+import ErrorMessage from '../components/ErrorMessage';
 import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import { formatDate } from '../utils/dates';
@@ -258,7 +259,7 @@ function Timeline() {
   };
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div className="text-red-600 p-8 text-center">Error: {error}</div>;
+  if (error) return <ErrorMessage error={error} />;
 
   return (
     <>

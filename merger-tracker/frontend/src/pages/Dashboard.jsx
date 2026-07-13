@@ -10,6 +10,7 @@ import {
 } from 'chart.js';
 import StatCard from '../components/StatCard';
 import LoadingSpinner from '../components/LoadingSpinner';
+import ErrorMessage from '../components/ErrorMessage';
 import UpcomingEventsTimeline from '../components/UpcomingEventsTimeline';
 import RecentDeterminationsCards from '../components/RecentDeterminationsCards';
 import RecentMergersCards from '../components/RecentMergersCards';
@@ -58,7 +59,7 @@ function Dashboard() {
   }, [stats]);
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div role="alert" className="text-red-600 p-8 text-center">Error: {error}</div>;
+  if (error) return <ErrorMessage error={error} />;
   if (!stats) return null;
 
   const determinationData = {

@@ -1,5 +1,6 @@
 import { useState, Fragment } from 'react';
 import LoadingSpinner from '../components/LoadingSpinner';
+import ErrorMessage from '../components/ErrorMessage';
 import IndustryMergerGroups from '../components/IndustryMergerGroups';
 import IndustryTreemap from '../components/IndustryTreemap';
 import SEO from '../components/SEO';
@@ -104,7 +105,7 @@ function Industries() {
   };
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div role="alert" className="text-red-600 p-8 text-center">Error: {error}</div>;
+  if (error) return <ErrorMessage error={error} />;
 
   return (
     <>

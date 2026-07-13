@@ -1,4 +1,5 @@
 import LoadingSpinner from '../components/LoadingSpinner';
+import ErrorMessage from '../components/ErrorMessage';
 import Phase2Timeline from '../components/Phase2Timeline';
 import Phase2CompletedCards from '../components/Phase2CompletedCards';
 import SEO from '../components/SEO';
@@ -11,7 +12,7 @@ function Phase2() {
   const { autoTrackPhase2, toggleAutoTrackPhase2 } = useTracking();
 
   if (loading) return <LoadingSpinner />;
-  if (error) return <div role="alert" className="text-red-600 p-8 text-center">Error: {error}</div>;
+  if (error) return <ErrorMessage error={error} />;
 
   const current = data?.current || [];
   const completed = data?.completed || [];
