@@ -1277,18 +1277,18 @@ class TestTimelineGenerate:
     def test_writes_pages_and_meta(self, tmp_path):
         pages = timeline.generate(_enriched_fixture(), tmp_path, page_size=100)
         assert pages >= 1
-        assert (tmp_path / 'timeline-meta.json').exists()
+        assert (tmp_path / 'timeline' / 'timeline-meta.json').exists()
 
     def test_meta_content(self, tmp_path):
         timeline.generate(_enriched_fixture(), tmp_path, page_size=100)
-        with open(tmp_path / 'timeline-meta.json') as f:
+        with open(tmp_path / 'timeline' / 'timeline-meta.json') as f:
             meta = json.load(f)
         # Total events across the fixture: 2 + 1 + 1 + 1 = 5
         assert meta['total'] == 5
 
     def test_events_sorted_ascending(self, tmp_path):
         timeline.generate(_enriched_fixture(), tmp_path, page_size=100)
-        with open(tmp_path / 'timeline-page-1.json') as f:
+        with open(tmp_path / 'timeline' / 'timeline-page-1.json') as f:
             page = json.load(f)
         dates = [e['date'] for e in page['events']]
         assert dates == sorted(dates)

@@ -1,8 +1,8 @@
 """Paginated timeline events + metadata file.
 
 Writes:
-  <output_dir>/timeline-page-{N}.json
-  <output_dir>/timeline-meta.json
+  <output_dir>/timeline/timeline-page-{N}.json
+  <output_dir>/timeline/timeline-meta.json
 """
 
 import json
@@ -13,8 +13,8 @@ from ..enrichment import extract_phase_from_event
 
 def generate(mergers: list, output_dir: Path, page_size: int = 100) -> int:
     """Generate paginated timeline files. Returns number of pages written."""
-    output_dir = Path(output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
+    timeline_dir = Path(output_dir) / "timeline"
+    timeline_dir.mkdir(parents=True, exist_ok=True)
 
     events = []
     for m in mergers:
@@ -54,7 +54,7 @@ def generate(mergers: list, output_dir: Path, page_size: int = 100) -> int:
             "page_size": page_size,
         }
 
-        out_path = output_dir / f"timeline-page-{page_num}.json"
+        out_path = timeline_dir / f"timeline-page-{page_num}.json"
         with open(out_path, 'w', encoding='utf-8') as f:
             json.dump(page_data, f, indent=2)
 
@@ -63,7 +63,7 @@ def generate(mergers: list, output_dir: Path, page_size: int = 100) -> int:
         "page_size": page_size,
         "total_pages": total_pages,
     }
-    meta_path = output_dir / "timeline-meta.json"
+    meta_path = timeline_dir / "timeline-meta.json"
     with open(meta_path, 'w', encoding='utf-8') as f:
         json.dump(meta_data, f, indent=2)
 

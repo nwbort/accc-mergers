@@ -497,8 +497,8 @@ export const API_ENDPOINTS = {
   mergersListMeta: '/data/mergers/list-meta.json',  // Pagination metadata for mergers list
   mergerDetail: (id) => `/data/mergers/${id}.json`,  // Individual merger file
   stats: '/data/stats.json',
-  timelinePage: (page) => `/data/timeline-page-${page}.json`,  // Paginated timeline
-  timelineMeta: '/data/timeline-meta.json',  // Pagination metadata for timeline
+  timelinePage: (page) => `/data/timeline/timeline-page-${page}.json`,  // Paginated timeline
+  timelineMeta: '/data/timeline/timeline-meta.json',  // Pagination metadata for timeline
   industries: '/data/industries.json',
   industryDetail: (code) => `/data/industries/${code}.json`,  // Individual industry file with mergers
   upcomingEvents: '/data/upcoming-events.json',
