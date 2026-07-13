@@ -19,7 +19,7 @@ import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
-import { PROSE_MARKDOWN } from '../utils/classNames';
+import { PROSE_MARKDOWN, CARD, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
@@ -75,7 +75,7 @@ function MergerDetail() {
     const hiddenCount = parties.length - VISIBLE_COUNT;
 
     return (
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
+      <div className={`${CARD} p-6`}>
         <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">{title}</h2>
         {visibleParties.map((party, idx) => (
           <div key={`${partyType}-${party.name}-${party.identifier || idx}`} className="mb-3 last:mb-0">
@@ -259,7 +259,7 @@ function MergerDetail() {
         </Link>
 
         {/* Header */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6 card-accent">
+        <div className={`${CARD} p-6 mb-6 card-accent`}>
           <div className="flex items-start justify-between gap-4 pt-1">
             <div className="min-w-0">
               <div className="flex items-center gap-3 mb-2 flex-wrap">
@@ -321,12 +321,12 @@ function MergerDetail() {
           {/* Stage & determination */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 pt-6 border-t border-gray-100">
             <div>
-              <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">Stage</h3>
+              <h3 className={`${SECTION_HEADING} mb-1.5`}>Stage</h3>
               <p className="text-sm font-medium text-gray-900">{merger.stage || 'N/A'}</p>
             </div>
             {merger.accc_determination && (
               <div>
-                <h3 className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">
+                <h3 className={`${SECTION_HEADING} mb-1.5`}>
                   Determination
                 </h3>
                 <p className="text-sm font-medium text-gray-900">
@@ -436,7 +436,7 @@ function MergerDetail() {
 
         {/* Description */}
         {merger.merger_description && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6">
+          <div className={`${CARD} p-6 mb-6`}>
             <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
               Description
             </h2>
@@ -453,7 +453,7 @@ function MergerDetail() {
 
         {/* Industries */}
         {merger.anzsic_codes && merger.anzsic_codes.length > 0 && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6">
+          <div className={`${CARD} p-6 mb-6`}>
             <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
               Industries
             </h2>
@@ -473,7 +473,7 @@ function MergerDetail() {
 
         {/* Timeline */}
         {sortedEvents.length > 0 && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
+          <div className={`${CARD} p-6`}>
             <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-6">
               Timeline & Events
             </h2>
@@ -530,7 +530,7 @@ function MergerDetail() {
 
         {/* Similar Mergers */}
         {merger.similar_mergers && merger.similar_mergers.length > 0 && (
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mt-6">
+          <div className={`${CARD} p-6 mt-6`}>
             <h2 className="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-4">
               You might be interested in
             </h2>
