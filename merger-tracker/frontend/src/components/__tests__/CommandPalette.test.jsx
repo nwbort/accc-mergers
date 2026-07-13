@@ -14,6 +14,14 @@ const mergerFixture = [
   { merger_id: 'MN-01020', merger_name: 'Woolworths / Some Target' },
 ];
 
+const partiesFixture = {
+  parties: [
+    { id: 'coles', name: 'Coles Group', merger_count: 9 },
+    { id: 'ampol-limited', name: 'Ampol Limited', merger_count: 3 },
+  ],
+  total_parties: 2,
+};
+
 function renderPalette(props) {
   return render(
     <MemoryRouter>
@@ -77,6 +85,44 @@ describe('CommandPalette', () => {
     expect(screen.queryByRole('option', { name: 'Dashboard' })).not.toBeInTheDocument();
     expect(await screen.findByRole('option', { name: 'Ampol / Z Energy' })).toBeInTheDocument();
     expect(screen.queryByRole('option', { name: 'Woolworths / Some Target' })).not.toBeInTheDocument();
+  });
+
+  it('searches cached parties and lists them in a Parties group', async () => {
+    dataCache.set('parties-list', partiesFixture);
+    const user = userEvent.setup();
+    renderPalette();
+
+    const input = screen.getByRole('combobox');
+    await user.type(input, 'coles');
+
+    expect(await screen.findByRole('option', { name: 'Coles Group' })).toBeInTheDocument();
+    expect(screen.getByText('Parties')).toBeInTheDocument();
+    expect(screen.queryByRole('option', { name: 'Ampol Limited' })).not.toBeInTheDocument();
+  });
+
+  it('lazily fetches the parties list on a cold cache', async () => {
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockImplementation((url) => {
+      if (url.includes('parties.json')) {
+        return Promise.resolve(ok(partiesFixture));
+      }
+      if (url.includes('list-meta.json')) {
+        return Promise.resolve(ok({ total_pages: 1 }));
+      }
+      if (url.includes('list-page-1.json')) {
+        return Promise.resolve(ok({ mergers: mergerFixture }));
+      }
+      return Promise.reject(new Error(`Unexpected fetch: ${url}`));
+    });
+
+    const user = userEvent.setup();
+    renderPalette();
+
+    const input = screen.getByRole('combobox');
+    await user.type(input, 'coles');
+
+    expect(await screen.findByRole('option', { name: 'Coles Group' })).toBeInTheDocument();
+    expect(dataCache.get('parties-list')).toEqual(partiesFixture);
+    fetchSpy.mockRestore();
   });
 
   it('navigates arrow keys through results and opens the selected item on Enter', async () => {
