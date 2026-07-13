@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaChevronRight } from 'react-icons/fa';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
@@ -7,8 +7,11 @@ import IndustryMergerGroups from '../components/IndustryMergerGroups';
 import PhaseDurationComparison from '../components/PhaseDurationComparison';
 import SEO from '../components/SEO';
 import BellIcon from '../components/BellIcon';
+import Breadcrumb from '../components/Breadcrumb';
+import DetailStatGrid from '../components/DetailStatGrid';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
+import { useDecodedParam } from '../hooks/useDecodedParam';
 import { useTracking } from '../context/TrackingContext';
 import { industryPath } from '../utils/slug';
 import { MERGER_STATUS, PHASES } from '../constants/mergerStatus';
@@ -22,13 +25,7 @@ const LEVEL_LABELS = {
 };
 
 function IndustryDetail() {
-  const { code } = useParams();
-  let decodedCode;
-  try {
-    decodedCode = decodeURIComponent(code);
-  } catch {
-    decodedCode = code;
-  }
+  const decodedCode = useDecodedParam('code');
 
   const { data, loading, error } = useFetchData(
     API_ENDPOINTS.industryDetail(decodedCode),
@@ -167,30 +164,14 @@ function IndustryDetail() {
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         {/* Breadcrumb: Industries → division → … → current node */}
-        <nav aria-label="Industry hierarchy" className="mb-5">
-          <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-gray-500">
-            <li>
-              <Link to="/industries" className="hover:text-primary transition-colors">
-                Industries
-              </Link>
-            </li>
-            {ancestors.map((a) => (
-              <li key={a.code} className="flex items-center gap-x-1.5">
-                <FaChevronRight className="w-3 h-3 text-gray-300" aria-hidden="true" />
-                <Link
-                  to={industryPath(a.code, a.name)}
-                  className="hover:text-primary transition-colors"
-                >
-                  {a.name}
-                </Link>
-              </li>
-            ))}
-            <li className="flex items-center gap-x-1.5" aria-current="page">
-              <FaChevronRight className="w-3 h-3 text-gray-300" aria-hidden="true" />
-              <span className="font-medium text-gray-700">{industryName}</span>
-            </li>
-          </ol>
-        </nav>
+        <Breadcrumb
+          ariaLabel="Industry hierarchy"
+          items={[
+            { label: 'Industries', to: '/industries' },
+            ...ancestors.map((a) => ({ label: a.name, to: industryPath(a.code, a.name) })),
+            { label: industryName },
+          ]}
+        />
 
         <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6 card-accent">
           <div className="pt-1 flex items-start justify-between gap-4">
@@ -221,21 +202,7 @@ function IndustryDetail() {
           </div>
         </div>
 
-        {mergers.length > 0 && (
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-            {statCards.map(({ label, value, subtitle }) => (
-              <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
-                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight tabular-nums">
-                  {value}
-                </p>
-                {subtitle && (
-                  <p className="text-xs text-gray-500 mt-1">{subtitle}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        )}
+        {mergers.length > 0 && <DetailStatGrid statCards={statCards} />}
 
         {/* Phase 1 duration, shown visually against the parent industry. */}
         {mergers.length > 0 && duration?.average_business_days != null && (
