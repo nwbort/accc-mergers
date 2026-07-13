@@ -11,6 +11,7 @@ import { dataCache } from '../utils/dataCache';
 import { useFetchData } from '../hooks/useFetchData';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT } from '../constants/outcomeDotColors';
+import { CARD } from '../utils/classNames';
 
 const ITEMS_PER_PAGE = 15;
 const LOAD_MORE_COUNT = 10;
@@ -326,7 +327,7 @@ function Timeline() {
                       </div>
                       <Link
                         to={mergerPath(event.merger_id, event.merger_name)}
-                        className="min-w-0 flex-1 bg-white rounded-2xl border border-gray-100 shadow-card p-4 hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 block"
+                        className={`min-w-0 flex-1 ${CARD} p-4 hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 block`}
                         aria-label={`View merger details for ${event.merger_name}`}
                       >
                         <span className="text-sm font-semibold text-gray-900">

@@ -11,7 +11,7 @@ import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
-import { PROSE_MARKDOWN } from '../utils/classNames';
+import { PROSE_MARKDOWN, CARD } from '../utils/classNames';
 
 function Commentary() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.commentary, {
@@ -42,7 +42,7 @@ function Commentary() {
           {items.map((item) => (
             <div
               key={item.merger_id}
-              className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden"
+              className={`${CARD} overflow-hidden`}
             >
               {/* Header */}
               <div className="p-5 border-b border-gray-50">

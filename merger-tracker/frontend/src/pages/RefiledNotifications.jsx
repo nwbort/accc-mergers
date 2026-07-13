@@ -10,6 +10,7 @@ import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { mergerPath } from '../utils/slug';
 import { formatDateMedium, calculateDuration } from '../utils/dates';
+import { CARD } from '../utils/classNames';
 
 // Position of `date` along the waiver-filed -> track-end axis, clamped to
 // [0, 100] so a milestone landing outside the span (bad data) still renders
@@ -142,14 +143,14 @@ function RefiledCard({ pair, showOutcome }) {
 function RefiledList({ pairs, showOutcome, emptyMessage }) {
   if (pairs.length === 0) {
     return (
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
+      <div className={`${CARD} p-6`}>
         <p className="text-gray-500 text-sm">{emptyMessage}</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 sm:p-6">
+    <div className={`${CARD} p-5 sm:p-6`}>
       <ul className="divide-y divide-gray-100">
         {pairs.map((pair) => (
           <RefiledCard key={pair.notification_id} pair={pair} showOutcome={showOutcome} />

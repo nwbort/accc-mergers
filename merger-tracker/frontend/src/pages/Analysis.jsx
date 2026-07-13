@@ -19,6 +19,7 @@ import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { industryPath } from '../utils/slug';
 import { CHART_PALETTE as COLORS } from '../constants/chartColors';
+import { CARD, SECTION_HEADING } from '../utils/classNames';
 
 ChartJS.register(
   CategoryScale,
@@ -443,13 +444,13 @@ function Analysis() {
           </div>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {/* Notifications phase 1 */}
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div className={`${CARD} overflow-hidden`}>
               <div className="px-5 py-3 bg-primary">
                 <p className="text-sm font-semibold text-white">Notifications phase 1</p>
               </div>
               <div className="grid grid-cols-2 divide-x divide-gray-100">
                 <div className="p-5">
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Avg duration</p>
+                  <p className={SECTION_HEADING}>Avg duration</p>
                   <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
                     {phase1Stats.average ? `${phase1Stats.average} days` : 'N/A'}
                   </p>
@@ -458,7 +459,7 @@ function Analysis() {
                   )}
                 </div>
                 <div className="p-5">
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Median duration</p>
+                  <p className={SECTION_HEADING}>Median duration</p>
                   <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
                     {phase1Stats.median ? `${phase1Stats.median} days` : 'N/A'}
                   </p>
@@ -470,13 +471,13 @@ function Analysis() {
             </div>
 
             {/* Waivers */}
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div className={`${CARD} overflow-hidden`}>
               <div className="px-5 py-3 bg-primary">
                 <p className="text-sm font-semibold text-white">Waivers</p>
               </div>
               <div className="grid grid-cols-2 divide-x divide-gray-100">
                 <div className="p-5">
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Avg duration</p>
+                  <p className={SECTION_HEADING}>Avg duration</p>
                   <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
                     {waiverStats.average ? `${waiverStats.average} days` : 'N/A'}
                   </p>
@@ -485,7 +486,7 @@ function Analysis() {
                   )}
                 </div>
                 <div className="p-5">
-                  <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">Median duration</p>
+                  <p className={SECTION_HEADING}>Median duration</p>
                   <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight">
                     {waiverStats.median ? `${waiverStats.median} days` : 'N/A'}
                   </p>
@@ -500,7 +501,7 @@ function Analysis() {
 
         {/* Monthly Volume */}
         <div className="grid grid-cols-1 gap-6 mb-8">
-          <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+          <div className={`${CARD} overflow-hidden`}>
             <div className="px-6 py-5 border-b border-gray-100">
               <h2 className="text-base font-semibold text-gray-900">Monthly notification volume</h2>
               <p className="text-sm text-gray-500 mt-0.5">
@@ -521,7 +522,7 @@ function Analysis() {
         {/* Industry Phase 1 Duration Comparison */}
         {industryDurations.length > 0 && (
           <section className="mb-8">
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div className={`${CARD} overflow-hidden`}>
               <div className="px-6 py-5 border-b border-gray-100">
                 <h2 className="text-lg font-semibold text-gray-900">Phase 1 duration by industry</h2>
                 <p className="text-sm text-gray-500 mt-0.5">
@@ -540,7 +541,7 @@ function Analysis() {
         {/* Phase 1 Duration ECDF */}
         {ecdfPoints.length > 0 && (
           <section className="mb-8">
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div className={`${CARD} overflow-hidden`}>
               <div className="px-6 py-5 border-b border-gray-100">
                 <h2 id="chart-phase1-ecdf-title" className="text-lg font-semibold text-gray-900">
                   Phase 1 duration: share of reviews concluded
@@ -581,7 +582,7 @@ function Analysis() {
         {/* Waiver Duration ECDF */}
         {waiverEcdfPoints.length > 0 && (
           <section className="mb-8">
-            <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+            <div className={`${CARD} overflow-hidden`}>
               <div className="px-6 py-5 border-b border-gray-100">
                 <h2 id="chart-waiver-ecdf-title" className="text-lg font-semibold text-gray-900">
                   Waiver duration: share of applications concluded

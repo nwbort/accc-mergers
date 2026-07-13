@@ -1,5 +1,6 @@
 import { useId, useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
+import { CARD } from '../utils/classNames';
 
 function CollapsibleCard({ icon, iconBgClass = 'bg-gray-100', title, subtitle, onExpand, children }) {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -12,7 +13,7 @@ function CollapsibleCard({ icon, iconBgClass = 'bg-gray-100', title, subtitle, o
   };
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-card mb-6 overflow-hidden">
+    <div className={`${CARD} mb-6 overflow-hidden`}>
       <button
         type="button"
         onClick={handleToggle}

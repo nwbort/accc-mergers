@@ -1,4 +1,5 @@
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { CARD, SECTION_HEADING } from '../utils/classNames';
 
 // A single horizontal bar with its value to the right and a caption (plus an
 // optional delta chip) underneath.
@@ -61,7 +62,7 @@ function MetricComparison({ label, current, comparisons, subjectLabel }) {
   if (current == null) {
     return (
       <div>
-        <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
+        <p className={SECTION_HEADING}>{label}</p>
         <p className="text-sm text-gray-500 mt-2">No completed reviews</p>
       </div>
     );
@@ -75,7 +76,7 @@ function MetricComparison({ label, current, comparisons, subjectLabel }) {
 
   return (
     <div>
-      <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2.5">
+      <p className={`${SECTION_HEADING} mb-2.5`}>
         {label}
       </p>
 
@@ -140,9 +141,9 @@ function PhaseDurationComparison({
   const medianComparisons = toMetric('median_business_days');
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
+    <div className={`${CARD} p-6`}>
       <div className="flex items-baseline justify-between gap-3 mb-5">
-        <h2 className="text-xs font-medium text-gray-500 uppercase tracking-wider">
+        <h2 className={SECTION_HEADING}>
           {title}
         </h2>
         <span className="text-[11px] text-gray-500">business days</span>

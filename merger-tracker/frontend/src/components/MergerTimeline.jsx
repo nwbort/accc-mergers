@@ -9,6 +9,7 @@ import {
 } from '../utils/dates';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { getOutcomeDot } from '../constants/outcomeDotColors';
+import { SECTION_HEADING } from '../utils/classNames';
 
 // Statutory window the ACCC works to for merger waiver applications. Waivers
 // aren't published with an explicit end-of-determination date, so we derive the
@@ -40,7 +41,7 @@ function MergerTimelineFallback({ merger, startStr }) {
   return (
     <dl className="flex flex-wrap gap-x-12 gap-y-4">
       <div>
-        <dt className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">
+        <dt className={`${SECTION_HEADING} mb-1.5`}>
           {startLabel}
         </dt>
         <dd className="text-sm font-medium text-gray-900">
@@ -59,7 +60,7 @@ function MergerTimelineFallback({ merger, startStr }) {
         </dd>
       </div>
       <div>
-        <dt className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1.5">
+        <dt className={`${SECTION_HEADING} mb-1.5`}>
           Status
         </dt>
         <dd className="text-sm font-medium text-gray-900">{merger.status || 'N/A'}</dd>
@@ -196,7 +197,7 @@ function MergerTimeline({ merger }) {
 
   // No nowrap on labels so multi-word endpoint labels wrap within the fixed
   // column width on small screens instead of squeezing the track.
-  const labelClass = 'text-xs font-medium text-gray-500 uppercase tracking-wider';
+  const labelClass = SECTION_HEADING;
   const dateClass = 'text-xs sm:text-sm font-medium text-gray-900 whitespace-nowrap';
   // Every label sits its bottom this far above the line; every value sits its
   // top this far below it. Shared across endpoints and mid markers so the three

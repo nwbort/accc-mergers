@@ -16,6 +16,7 @@ import { useTracking } from '../context/TrackingContext';
 import { useDebounce } from '../hooks/useDebounce';
 import { buildSearchIndex, searchMergers, clearSearchIndex } from '../utils/searchIndex';
 import { PHASES } from '../constants/mergerStatus';
+import { CARD, SECTION_HEADING } from '../utils/classNames';
 
 const SORT_FIELDS = [
   { value: 'notification', label: 'Notification date' },
@@ -361,7 +362,7 @@ function Mergers() {
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
         {/* Search & Filters */}
-        <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
+        <div className={`${CARD} p-5 mb-6`}>
           {/* Search row with filter toggle */}
           <div className="flex gap-3">
             <div className="flex-1 relative">
@@ -423,7 +424,7 @@ function Mergers() {
                 <div>
                   <label
                     htmlFor="phase"
-                    className="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2"
+                    className={`block ${SECTION_HEADING} mb-2`}
                   >
                     Phase
                   </label>
@@ -445,7 +446,7 @@ function Mergers() {
                 <div>
                   <label
                     htmlFor="status"
-                    className="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2"
+                    className={`block ${SECTION_HEADING} mb-2`}
                   >
                     Status
                   </label>
@@ -469,7 +470,7 @@ function Mergers() {
                 </div>
                 <div>
                   <label
-                    className="block text-xs font-medium text-gray-500 uppercase tracking-wider mb-2"
+                    className={`block ${SECTION_HEADING} mb-2`}
                   >
                     Tracked
                   </label>

@@ -1,5 +1,6 @@
 import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 import SEO from '../components/SEO';
+import { CARD } from '../utils/classNames';
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -86,7 +87,7 @@ export default function NickTwort() {
         </div>
 
         {/* Overview */}
-        <section className="bg-white rounded-2xl border border-gray-100 shadow-card p-8 mb-8">
+        <section className={`${CARD} p-8 mb-8`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Overview</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Nick Twort is a competition economist with eight years of experience applying microeconomic principles to
@@ -108,7 +109,7 @@ export default function NickTwort() {
         </section>
 
         {/* Merger Clearance Expertise */}
-        <section className="bg-white rounded-2xl border border-gray-100 shadow-card p-8 mb-8">
+        <section className={`${CARD} p-8 mb-8`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Merger Clearance &amp; the Australian Merger Regime</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Merger clearance is a central pillar of Nick's practice and he has been a vocal commentator on the transition
@@ -134,7 +135,7 @@ export default function NickTwort() {
         </section>
 
         {/* Antitrust Practice Areas */}
-        <section className="bg-white rounded-2xl border border-gray-100 shadow-card p-8 mb-8">
+        <section className={`${CARD} p-8 mb-8`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Antitrust Practice Areas</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Beyond mergers, Nick advises across the full range of competition law matters:
@@ -167,7 +168,7 @@ export default function NickTwort() {
         </section>
 
         {/* Industry Experience */}
-        <section className="bg-white rounded-2xl border border-gray-100 shadow-card p-8 mb-8">
+        <section className={`${CARD} p-8 mb-8`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Industry Experience</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             Nick has worked across a broad range of Australian industries and markets, bringing sector-specific
@@ -224,7 +225,7 @@ export default function NickTwort() {
         </section>
 
         {/* Analytical Approach */}
-        <section className="bg-white rounded-2xl border border-gray-100 shadow-card p-8 mb-8">
+        <section className={`${CARD} p-8 mb-8`}>
           <h2 className="text-xl font-semibold text-gray-900 mb-4">Empirical &amp; Analytical Methods</h2>
           <p className="text-gray-700 leading-relaxed mb-4">
             A distinguishing feature of Nick's practice is his use of data and advanced quantitative methods to

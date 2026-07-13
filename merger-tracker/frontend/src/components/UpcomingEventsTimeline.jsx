@@ -4,6 +4,7 @@ import { FaRegComments, FaGavel, FaTriangleExclamation } from 'react-icons/fa6';
 import { mergerPath } from '../utils/slug';
 import { formatWeekday, getCalendarDaysUntil } from '../utils/dates';
 import { PHASES } from '../constants/mergerStatus';
+import { CARD } from '../utils/classNames';
 import EmptyStateCard from './EmptyStateCard';
 
 // Each event type carries its own accent (icon tile + chip) so the kind of
@@ -112,7 +113,7 @@ function UpcomingEventsTimeline({ events }) {
       >
         Upcoming events
       </h2>
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-card overflow-hidden">
+      <div className={`${CARD} overflow-hidden`}>
       <ol className="px-5 sm:px-6 py-5">
         {days.map((day, dayIndex) => {
           const daysRemaining = getCalendarDaysUntil(day.date);

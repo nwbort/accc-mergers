@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import StatusBadge from './StatusBadge';
 import { mergerPath } from '../utils/slug';
 import { groupMergersByPhase } from '../utils/industryGroups';
+import { CARD } from '../utils/classNames';
 
 // Per-phase accent styling. Literal class strings so Tailwind picks them up.
 const GROUP_STYLES = {
@@ -44,7 +45,7 @@ function IndustryMergerGroups({ mergers, variant = 'full' }) {
                   className={
                     compact
                       ? 'block p-3 bg-white rounded-xl border border-gray-100 hover:border-primary/30 hover:shadow-sm transition-all'
-                      : 'block bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 p-5'
+                      : `block ${CARD} hover:shadow-card-hover hover:border-gray-200 transition-all duration-200 p-5`
                   }
                   aria-label={`View merger details for ${merger.merger_name}`}
                 >
