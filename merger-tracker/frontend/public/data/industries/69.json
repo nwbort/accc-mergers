@@ -25,7 +25,7 @@
       "code": "692",
       "name": "Architectural, Engineering and Technical Services",
       "level": "group",
-      "merger_count": 19
+      "merger_count": 20
     },
     {
       "code": "693",
@@ -65,6 +65,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-95030",
+      "merger_name": "Origin \u2013 Climatech Zero",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-10T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-40017",
       "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
@@ -704,11 +715,11 @@
       "determination_date": null
     }
   ],
-  "count": 58,
-  "phase_1_count": 22,
+  "count": 59,
+  "phase_1_count": 23,
   "phase_2_count": 2,
   "waiver_count": 34,
-  "active_count": 6,
+  "active_count": 7,
   "phase_duration": {
     "average_days": 35.73684210526316,
     "median_days": 28,

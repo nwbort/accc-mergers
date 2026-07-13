@@ -2423,6 +2423,112 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/energy-bay-certain-assets-required-to-operate-embedded-networks-for-centuria-capital-group-members"
+    },
+    {
+      "merger_id": "MN-95030",
+      "merger_name": "Origin \u2013 Climatech Zero",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-07-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-21T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "ORIGIN ENERGY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "30 000 051 696",
+          "party_page": {
+            "id": "origin-energy-limited",
+            "name": "Origin Energy Limited"
+          }
+        },
+        {
+          "name": "ORIGIN ZERO INVESTMENTS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "52 079 089 231",
+          "party_page": {
+            "id": "origin-zero-investments-pty-ltd",
+            "name": "Origin Zero Investments Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLIMATECH ZERO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 623 828 508",
+          "party_page": {
+            "id": "climatech-zero-pty-ltd",
+            "name": "Climatech Zero Pty Ltd"
+          }
+        },
+        {
+          "name": "CLIMATECH ZERO HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "35 623 827 930",
+          "party_page": {
+            "id": "climatech-zero-holdings-pty-ltd",
+            "name": "Climatech Zero Holdings Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/origin-%E2%80%93-climatech-zero"
+    },
+    {
+      "merger_id": "MN-20017",
+      "merger_name": "Amplifon \u2013 GN Hearing",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-07-13T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-24T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Amplifon S.p.A.",
+          "identifier_type": null,
+          "identifier": "Company registration no. 04923960159",
+          "party_page": {
+            "id": "amplifon-s-p-a",
+            "name": "Amplifon S.p.A."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "GN Hearing A/S",
+          "identifier_type": null,
+          "identifier": "(CVR) no. 55 08 27 15",
+          "party_page": {
+            "id": "gn-hearing-a-s",
+            "name": "GN Hearing A/S"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3491",
+          "name": "Professional and Scientific Goods Wholesaling"
+        },
+        {
+          "code": "8539",
+          "name": "Other Allied Health Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/amplifon-%E2%80%93-gn-hearing"
     }
   ],
   "page": 9,

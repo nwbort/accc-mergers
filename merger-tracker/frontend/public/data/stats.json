@@ -1,10 +1,10 @@
 {
-  "total_mergers": 171,
+  "total_mergers": 173,
   "total_waivers": 262,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 128,
-    "Under assessment": 41,
+    "Under assessment": 43,
     "Assessment ceased": 2
   },
   "by_determination": {
@@ -71,11 +71,11 @@
       "count": 16
     },
     {
-      "name": "Liquor Retailing",
-      "count": 13
+      "name": "Engineering Design and Engineering Consulting Services",
+      "count": 14
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
+      "name": "Liquor Retailing",
       "count": 13
     },
     {
@@ -84,6 +84,14 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-20017",
+      "merger_name": "Amplifon \u2013 GN Hearing",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-13T12:00:00Z",
+      "is_waiver": false
+    },
     {
       "merger_id": "MN-01105",
       "merger_name": "Siemens Mobility - MerMec",
@@ -95,6 +103,14 @@
     {
       "merger_id": "MN-65023",
       "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-10T12:00:00Z",
+      "is_waiver": false
+    },
+    {
+      "merger_id": "MN-95030",
+      "merger_name": "Origin \u2013 Climatech Zero",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-10T12:00:00Z",
@@ -159,22 +175,6 @@
     {
       "merger_id": "MN-40017",
       "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-01T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50011",
-      "merger_name": "Journey Beyond - SeaLink Rottnest",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-01T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-50030",
-      "merger_name": "Symal Group - Shamrock Engineering and Equipment",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-01T12:00:00Z",

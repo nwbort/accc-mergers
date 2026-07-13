@@ -15,7 +15,7 @@
       "code": "85",
       "name": "Medical and Other Health Care Services",
       "level": "subdivision",
-      "merger_count": 19
+      "merger_count": 20
     },
     {
       "code": "86",
@@ -31,6 +31,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-20017",
+      "merger_name": "Amplifon \u2013 GN Hearing",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-13T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-15027",
       "merger_name": "Partnered Health - Ryan Plaza Medical Services",
@@ -384,11 +395,11 @@
       "determination_date": "2026-02-10T12:00:00Z"
     }
   ],
-  "count": 32,
-  "phase_1_count": 14,
+  "count": 33,
+  "phase_1_count": 15,
   "phase_2_count": 0,
   "waiver_count": 18,
-  "active_count": 4,
+  "active_count": 5,
   "phase_duration": {
     "average_days": 24.7,
     "median_days": 25,
