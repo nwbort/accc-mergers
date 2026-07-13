@@ -4,6 +4,7 @@ import { FaRegComments, FaGavel, FaTriangleExclamation } from 'react-icons/fa6';
 import { mergerPath } from '../utils/slug';
 import { formatWeekday, getCalendarDaysUntil } from '../utils/dates';
 import { PHASES } from '../constants/mergerStatus';
+import EmptyStateCard from './EmptyStateCard';
 
 // Each event type carries its own accent (icon tile + chip) so the kind of
 // deadline is recognisable at a glance, independent of the urgency colouring
@@ -79,15 +80,6 @@ function relativeLabel(daysRemaining) {
   return `In ${daysRemaining} days`;
 }
 
-function EmptyCard() {
-  return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
-      <h2 className="text-lg font-semibold text-gray-900 mb-4">Upcoming events</h2>
-      <p className="text-gray-500 text-sm">No upcoming events.</p>
-    </div>
-  );
-}
-
 function UpcomingEventsTimeline({ events }) {
   // Group events into one entry per calendar day, ordered earliest first. The
   // date portion (YYYY-MM-DD) is a stable key because every event is stamped at
@@ -108,7 +100,9 @@ function UpcomingEventsTimeline({ events }) {
     return [...byDay.values()];
   }, [events]);
 
-  if (days.length === 0) return <EmptyCard />;
+  if (days.length === 0) {
+    return <EmptyStateCard heading="Upcoming events" message="No upcoming events." />;
+  }
 
   return (
     <section aria-labelledby="upcoming-events-heading">

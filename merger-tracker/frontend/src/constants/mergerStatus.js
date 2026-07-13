@@ -34,6 +34,12 @@ export const PHASES = {
   WAIVER: 'Waiver',
 };
 
+// Abbreviated labels for the compact card header used by the dashboard's
+// recent-determination cards and the Phase 2 completed-matters cards.
+export const DETERMINATION_LABELS = {
+  [MERGER_STATUS.ASSESSMENT_CEASED]: 'Ceased',
+};
+
 // Fallback Tailwind classes for StatusBadge when no specific status matches.
 export const DEFAULT_STATUS_STYLE = 'bg-gray-50 text-gray-600 border-gray-200/60';
 
