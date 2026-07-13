@@ -10,12 +10,12 @@ import { mergerPath, partyPath } from '../utils/slug';
 const PAGES = [
   { label: 'Dashboard', path: '/' },
   { label: 'Mergers', path: '/mergers' },
-  { label: 'Timeline', path: '/timeline' },
   { label: 'Industries', path: '/industries' },
   { label: 'Parties', path: '/parties' },
   { label: 'Analysis', path: '/analysis' },
   { label: 'Commentary', path: '/commentary' },
   { label: 'Digest', path: '/digest' },
+  { label: 'Refiled waivers', path: '/refiled-notifications' },
 ];
 
 // Mergers and parties share one combined budget of rows. By default it's
