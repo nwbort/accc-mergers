@@ -118,6 +118,7 @@ function Mergers() {
 
   useEffect(() => {
     fetchMergers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchMergers = async () => {
