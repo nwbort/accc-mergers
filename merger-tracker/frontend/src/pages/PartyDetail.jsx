@@ -1,12 +1,13 @@
-import { useParams, Link } from 'react-router-dom';
-import { FaChevronRight } from 'react-icons/fa';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
 import IndustryMergerGroups from '../components/IndustryMergerGroups';
 import PhaseDurationComparison from '../components/PhaseDurationComparison';
 import SEO from '../components/SEO';
+import Breadcrumb from '../components/Breadcrumb';
+import DetailStatGrid from '../components/DetailStatGrid';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
+import { useDecodedParam } from '../hooks/useDecodedParam';
 import { partyPath } from '../utils/slug';
 
 const ROLE_LABELS = {
@@ -16,13 +17,7 @@ const ROLE_LABELS = {
 };
 
 function PartyDetail() {
-  const { id } = useParams();
-  let decodedId;
-  try {
-    decodedId = decodeURIComponent(id);
-  } catch {
-    decodedId = id;
-  }
+  const decodedId = useDecodedParam('id');
 
   const { data, loading, error } = useFetchData(
     API_ENDPOINTS.partyDetail(decodedId),
@@ -90,19 +85,13 @@ function PartyDetail() {
         url={partyPath(decodedId, partyName)}
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
-        <nav aria-label="Party breadcrumb" className="mb-5">
-          <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm text-gray-500">
-            <li>
-              <Link to="/parties" className="hover:text-primary transition-colors">
-                Parties
-              </Link>
-            </li>
-            <li className="flex items-center gap-x-1.5" aria-current="page">
-              <FaChevronRight className="w-3 h-3 text-gray-300" aria-hidden="true" />
-              <span className="font-medium text-gray-700">{partyName}</span>
-            </li>
-          </ol>
-        </nav>
+        <Breadcrumb
+          ariaLabel="Party breadcrumb"
+          items={[
+            { label: 'Parties', to: '/parties' },
+            { label: partyName },
+          ]}
+        />
 
         <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6 mb-6 card-accent">
           <h1 className="text-2xl font-bold text-gray-900 tracking-tight">{partyName}</h1>
@@ -136,18 +125,7 @@ function PartyDetail() {
           )}
         </div>
 
-        {mergerCount > 0 && (
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">
-            {statCards.map(({ label, value }) => (
-              <div key={label} className="bg-white p-5 rounded-2xl border border-gray-100 shadow-card">
-                <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">{label}</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1.5 tracking-tight tabular-nums">
-                  {value}
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
+        {mergerCount > 0 && <DetailStatGrid statCards={statCards} />}
 
         {mergerCount > 0 && duration?.average_business_days != null && (
           <div className="mb-6">
