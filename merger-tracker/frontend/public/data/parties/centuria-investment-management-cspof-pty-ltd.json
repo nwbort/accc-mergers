@@ -1,0 +1,41 @@
+{
+  "id": "centuria-investment-management-cspof-pty-ltd",
+  "canonical_name": "Centuria Investment Management (Cspof) Pty Ltd",
+  "members": [
+    {
+      "name": "CENTURIA INVESTMENT MANAGEMENT (CSPOF) PTY LTD",
+      "identifier": "68 696 319 098",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "WA-50029",
+        "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-06-30T12:00:00Z",
+        "determination_date": "2026-07-13T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 13.0,
+    "median_days": 13,
+    "average_business_days": 9.0,
+    "median_business_days": 9,
+    "completed_count": 1
+  }
+}

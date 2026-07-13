@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 61
+      "merger_count": 62
     },
     {
       "code": "63",
@@ -21,7 +21,7 @@
       "code": "64",
       "name": "Auxiliary Finance and Insurance Services",
       "level": "subdivision",
-      "merger_count": 37
+      "merger_count": 38
     }
   ],
   "mergers": [
@@ -78,6 +78,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-06-25T12:00:00Z",
+      "determination_date": "2026-07-13T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-50029",
+      "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-30T12:00:00Z",
       "determination_date": "2026-07-13T12:00:00Z"
     },
     {
@@ -1104,10 +1115,10 @@
       "determination_date": null
     }
   ],
-  "count": 98,
+  "count": 99,
   "phase_1_count": 22,
   "phase_2_count": 2,
-  "waiver_count": 74,
+  "waiver_count": 75,
   "active_count": 4,
   "phase_duration": {
     "average_days": 28.666666666666668,
@@ -1117,10 +1128,10 @@
     "completed_count": 21
   },
   "waiver_duration": {
-    "average_days": 18.675675675675677,
+    "average_days": 18.6,
     "median_days": 18,
-    "average_business_days": 12.256756756756756,
+    "average_business_days": 12.213333333333333,
     "median_business_days": 12,
-    "completed_count": 74
+    "completed_count": 75
   }
 }

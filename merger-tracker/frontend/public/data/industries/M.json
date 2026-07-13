@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 60
+      "merger_count": 61
     },
     {
       "code": "70",
@@ -127,6 +127,17 @@
       "has_conditions": false,
       "phase": "Waiver",
       "notification_date": "2026-06-25T12:00:00Z",
+      "determination_date": "2026-07-13T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-95027",
+      "merger_name": "WHP Global and G-III - Marc Jacobs",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-12T12:00:00Z",
       "determination_date": "2026-07-13T12:00:00Z"
     },
     {
@@ -1076,10 +1087,10 @@
       "determination_date": null
     }
   ],
-  "count": 96,
+  "count": 97,
   "phase_1_count": 36,
   "phase_2_count": 2,
-  "waiver_count": 58,
+  "waiver_count": 59,
   "active_count": 9,
   "phase_duration": {
     "average_days": 33.3,
@@ -1089,10 +1100,10 @@
     "completed_count": 30
   },
   "waiver_duration": {
-    "average_days": 17.93103448275862,
+    "average_days": 18.152542372881356,
     "median_days": 18,
-    "average_business_days": 11.96551724137931,
+    "average_business_days": 12.11864406779661,
     "median_business_days": 12,
-    "completed_count": 58
+    "completed_count": 59
   }
 }
