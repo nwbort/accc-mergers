@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from 'react-icons/fa6';
-import { industryPath } from '../utils/slug';
 
-// A treemap-style heatmap of industries: cells packed by deal volume (flex-grow
-// proportional to the merger count) and shaded by intensity. Acts as the visual
-// overview at the top of the Industries page; the searchable table below carries
-// the full detail.
+// A treemap-style heatmap: cells packed by deal volume (flex-grow
+// proportional to the merger count) and shaded by intensity. Acts as the
+// visual overview at the top of a listing page, with a searchable
+// table/list below carrying the full detail.
 //
-// On small screens the long tail of low-volume sectors would stack into a tall
+// On small screens the long tail of low-volume items would stack into a tall
 // single-column scroll, so we cap how many cells show on mobile (`mobileLimit`)
-// and reveal the rest from `sm` up. The complete list always lives in the table.
+// and reveal the rest from `sm` up. The complete list always lives below.
 
 const DEFAULT_DESKTOP_LIMIT = 24;
 const DEFAULT_MOBILE_LIMIT = 8;
@@ -23,12 +22,14 @@ function cellTone(intensity) {
   return 'bg-primary/10 text-primary-dark hover:bg-primary/20';
 }
 
-function IndustryTreemap({
-  industries,
+function Treemap({
+  items,
+  getKey,
+  getPath,
   desktopLimit = DEFAULT_DESKTOP_LIMIT,
   mobileLimit = DEFAULT_MOBILE_LIMIT,
 }) {
-  const cells = [...industries]
+  const cells = [...items]
     .sort((a, b) => b.merger_count - a.merger_count)
     .slice(0, desktopLimit);
 
@@ -39,28 +40,28 @@ function IndustryTreemap({
   return (
     <div>
       <div className="flex flex-wrap gap-2">
-        {cells.map((ind, i) => {
-          const intensity = ind.merger_count / maxCount;
+        {cells.map((item, i) => {
+          const intensity = item.merger_count / maxCount;
           const hideOnMobile = i >= mobileLimit;
           return (
             <Link
-              key={ind.code}
-              to={industryPath(ind.code, ind.name)}
+              key={getKey(item)}
+              to={getPath(item)}
               className={`group relative rounded-xl px-4 py-3 flex-col justify-between transition-colors ${cellTone(intensity)} ${
                 hideOnMobile ? 'hidden sm:flex' : 'flex'
               }`}
               style={{
-                flexGrow: ind.merger_count,
-                flexBasis: `${120 + ind.merger_count * 4}px`,
+                flexGrow: item.merger_count,
+                flexBasis: `${120 + item.merger_count * 4}px`,
                 minHeight: '4.5rem',
               }}
-              aria-label={`${ind.name}: ${ind.merger_count} merger reviews`}
+              aria-label={`${item.name}: ${item.merger_count} merger reviews`}
             >
               <span className="text-[13px] font-semibold leading-tight line-clamp-2 pr-4">
-                {ind.name}
+                {item.name}
               </span>
               <span className="mt-1 text-2xl font-bold tabular-nums leading-none">
-                {ind.merger_count}
+                {item.merger_count}
               </span>
               <FaArrowRightLong className="absolute top-3 right-3 h-3 w-3 opacity-0 group-hover:opacity-70 transition-opacity" />
             </Link>
@@ -71,4 +72,4 @@ function IndustryTreemap({
   );
 }
 
-export default IndustryTreemap;
+export default Treemap;

@@ -2,11 +2,12 @@ import { useState, Fragment } from 'react';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import IndustryMergerGroups from '../components/IndustryMergerGroups';
-import IndustryTreemap from '../components/IndustryTreemap';
+import Treemap from '../components/Treemap';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
 import { useFetchData } from '../hooks/useFetchData';
+import { industryPath } from '../utils/slug';
 
 const SCROLL_THRESHOLD = 6; // Show scrollable container when industry has more than this many mergers
 
@@ -141,7 +142,11 @@ function Industries() {
 
       {/* Industry heatmap */}
       <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
-        <IndustryTreemap industries={industries} />
+        <Treemap
+          items={industries}
+          getKey={(ind) => ind.code}
+          getPath={(ind) => industryPath(ind.code, ind.name)}
+        />
       </div>
 
       {/* Search */}
