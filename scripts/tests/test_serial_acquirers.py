@@ -1,7 +1,4 @@
-"""Tests for serial-acquirer ("creeping acquisitions") detection.
-
-See docs/repo-review-specs.md #12 for the spec this implements.
-"""
+"""Tests for serial-acquirer ("creeping acquisitions") detection."""
 
 import json
 import os

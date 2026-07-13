@@ -1,7 +1,4 @@
-"""Tests for the Phase 2 tracker output (phase2.json).
-
-See docs/repo-review-specs.md #20 for the spec this implements.
-"""
+"""Tests for the Phase 2 tracker output (phase2.json)."""
 
 import json
 import os
