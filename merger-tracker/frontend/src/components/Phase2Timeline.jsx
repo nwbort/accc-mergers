@@ -50,10 +50,10 @@ function MatterBar({ matter }) {
   };
 
   return (
-    <li className="py-4 first:pt-0 last:pb-0">
+    <li className="group relative -mx-3 rounded-xl px-3 py-4 transition-colors hover:bg-gray-50/70 first:pt-0 last:pb-0">
       <Link
         to={mergerPath(merger_id, merger_name)}
-        className="block text-sm font-semibold text-gray-900 hover:text-primary transition-colors truncate mb-3"
+        className="block text-sm font-semibold text-gray-900 transition-colors truncate mb-3 group-hover:text-primary after:absolute after:inset-0"
       >
         {merger_name}
       </Link>
