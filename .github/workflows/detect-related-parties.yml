@@ -1,10 +1,8 @@
 name: Detect Related Parties
 
 on:
-  schedule:
-    # Daily at 2:45 AM UTC — after detect-duplicates (2:00) and
-    # detect-related-mergers (2:30) so the processed data has settled.
-    - cron: '45 2 * * *'
+  # Detection now runs as part of the main pipeline (pipeline.yml) on every
+  # pipeline run. This standalone workflow is kept for manual re-runs only.
   workflow_dispatch:
 
 permissions:
