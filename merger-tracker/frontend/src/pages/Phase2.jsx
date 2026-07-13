@@ -24,22 +24,23 @@ function Phase2() {
         url="/phase-2"
       />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 animate-fade-in">
-        <header className="mb-6">
+        <header className="mb-6 flex items-center justify-between gap-4">
           <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-gray-900">
             Phase 2 tracker
           </h1>
-        </header>
-
-        <div className="mb-6 bg-white rounded-2xl border border-gray-100 shadow-card p-4 sm:p-5">
           <button
             type="button"
             role="switch"
             aria-checked={autoTrackPhase2}
             onClick={toggleAutoTrackPhase2}
-            className="flex items-start gap-3 w-full text-left"
+            title="When on, every merger that proceeds to Phase 2 is added to your tracked mergers, so its milestones show up in your notifications."
+            className="flex items-center gap-2 flex-shrink-0"
           >
+            <span className="text-sm font-medium text-gray-600 whitespace-nowrap">
+              Auto track
+            </span>
             <span
-              className={`relative mt-0.5 inline-flex h-5 w-9 flex-shrink-0 items-center rounded-full transition-colors ${
+              className={`relative inline-flex h-5 w-9 flex-shrink-0 items-center rounded-full transition-colors ${
                 autoTrackPhase2 ? 'bg-primary' : 'bg-gray-300'
               }`}
             >
@@ -49,17 +50,8 @@ function Phase2() {
                 }`}
               />
             </span>
-            <span>
-              <span className="block text-sm font-medium text-gray-900">
-                Automatically track Phase 2 matters
-              </span>
-              <span className="block text-xs text-gray-500 mt-0.5">
-                When on, every merger that proceeds to Phase 2 is added to your tracked mergers, so
-                its milestones show up in your notifications.
-              </span>
-            </span>
           </button>
-        </div>
+        </header>
 
         <section aria-labelledby="phase2-current-heading" className="mb-8">
           <h2 id="phase2-current-heading" className="text-lg font-semibold text-gray-900 mb-4">
