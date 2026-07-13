@@ -6,17 +6,11 @@ import { dataCache } from '../utils/dataCache';
 import { buildSearchIndex, searchMergers } from '../utils/searchIndex';
 import { fetchAllMergers } from '../utils/fetchAllMergers';
 import { mergerPath, partyPath } from '../utils/slug';
+import { NAV_PAGES } from '../constants/navPages';
 
-const PAGES = [
-  { label: 'Dashboard', path: '/' },
-  { label: 'Mergers', path: '/mergers' },
-  { label: 'Industries', path: '/industries' },
-  { label: 'Parties', path: '/parties' },
-  { label: 'Analysis', path: '/analysis' },
-  { label: 'Commentary', path: '/commentary' },
-  { label: 'Digest', path: '/digest' },
-  { label: 'Refiled waivers', path: '/refiled-notifications' },
-];
+const PAGES = NAV_PAGES.filter((p) => p.inPalette)
+  .sort((a, b) => a.paletteOrder - b.paletteOrder)
+  .map(({ path, label }) => ({ path, label }));
 
 // Mergers and parties share one combined budget of rows. By default it's
 // split evenly, but each group can borrow the other's unused capacity — so
