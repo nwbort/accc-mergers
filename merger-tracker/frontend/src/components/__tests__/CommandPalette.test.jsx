@@ -125,6 +125,41 @@ describe('CommandPalette', () => {
     fetchSpy.mockRestore();
   });
 
+  it('shares the result budget so few parties leave room for more mergers', async () => {
+    // 20 mergers and 2 parties all match "acme". The combined budget is 8, so
+    // the two parties should leave room for six mergers (rather than capping
+    // mergers at the even half of four).
+    const manyMergers = Array.from({ length: 20 }, (_, i) => ({
+      merger_id: `MN-${1000 + i}`,
+      merger_name: `Acme Deal ${i}`,
+    }));
+    const twoParties = {
+      parties: [
+        { id: 'acme-one', name: 'Acme One', merger_count: 2 },
+        { id: 'acme-two', name: 'Acme Two', merger_count: 1 },
+      ],
+      total_parties: 2,
+    };
+    dataCache.set('mergers-list', manyMergers);
+    dataCache.set('parties-list', twoParties);
+
+    const user = userEvent.setup();
+    renderPalette();
+
+    const input = screen.getByRole('combobox');
+    await user.type(input, 'acme');
+
+    await screen.findByText('Parties');
+    // Two party rows...
+    expect(screen.getByRole('option', { name: 'Acme One' })).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: 'Acme Two' })).toBeInTheDocument();
+    // ...and six merger rows (borrowing the two the parties didn't use).
+    const mergerRows = screen
+      .getAllByRole('option')
+      .filter((el) => /^Acme Deal /.test(el.textContent));
+    expect(mergerRows).toHaveLength(6);
+  });
+
   it('navigates arrow keys through results and opens the selected item on Enter', async () => {
     dataCache.set('mergers-list', mergerFixture);
     const onClose = vi.fn();

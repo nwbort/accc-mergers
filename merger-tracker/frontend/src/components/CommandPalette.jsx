@@ -18,8 +18,11 @@ const PAGES = [
   { label: 'Digest', path: '/digest' },
 ];
 
-const MAX_MERGER_RESULTS = 8;
-const MAX_PARTY_RESULTS = 6;
+// Mergers and parties share one combined budget of rows. By default it's
+// split evenly, but each group can borrow the other's unused capacity — so
+// two party matches leaves room for six mergers, and vice versa.
+const MAX_ENTITY_RESULTS = 8;
+const HALF_ENTITY_RESULTS = MAX_ENTITY_RESULTS / 2;
 
 // The parties list is cached as the whole `parties.json` payload
 // ({ parties, total_parties }) under this key by the Parties page.
@@ -110,19 +113,36 @@ export default function CommandPalette({ isOpen, onClose }) {
     return PAGES.filter((p) => p.label.toLowerCase().includes(q));
   }, [trimmedQuery]);
 
-  const mergerResults = useMemo(() => {
+  // Full match sets, each capped at the combined budget (no single group can
+  // ever show more than that). The final per-group slice happens below once
+  // both counts are known, so they can share the budget.
+  const mergerMatches = useMemo(() => {
     if (!trimmedQuery || !searchIndex) return [];
-    return searchMergers(mergers, trimmedQuery, searchIndex).slice(0, MAX_MERGER_RESULTS);
+    return searchMergers(mergers, trimmedQuery, searchIndex).slice(0, MAX_ENTITY_RESULTS);
   }, [trimmedQuery, mergers, searchIndex]);
 
-  const partyResults = useMemo(() => {
+  const partyMatches = useMemo(() => {
     if (!trimmedQuery) return [];
     const q = trimmedQuery.toLowerCase();
     return parties
       .filter((p) => p.name.toLowerCase().includes(q))
       .sort((a, b) => b.merger_count - a.merger_count || a.name.localeCompare(b.name))
-      .slice(0, MAX_PARTY_RESULTS);
+      .slice(0, MAX_ENTITY_RESULTS);
   }, [trimmedQuery, parties]);
+
+  // Divide the shared budget: each group is guaranteed its even half, and may
+  // grow into whatever the other group leaves unused.
+  const [mergerResults, partyResults] = useMemo(() => {
+    const mergerLimit = Math.min(
+      mergerMatches.length,
+      Math.max(HALF_ENTITY_RESULTS, MAX_ENTITY_RESULTS - partyMatches.length)
+    );
+    const partyLimit = Math.min(
+      partyMatches.length,
+      Math.max(HALF_ENTITY_RESULTS, MAX_ENTITY_RESULTS - mergerMatches.length)
+    );
+    return [mergerMatches.slice(0, mergerLimit), partyMatches.slice(0, partyLimit)];
+  }, [mergerMatches, partyMatches]);
 
   const showMergersGroup = trimmedQuery && (mergersLoading || mergerResults.length > 0);
   const showPartiesGroup = trimmedQuery && (partiesLoading || partyResults.length > 0);
