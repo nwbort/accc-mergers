@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaSearch } from 'react-icons/fa';
+import { API_ENDPOINTS } from '../config';
 import { dataCache } from '../utils/dataCache';
 import { buildSearchIndex, searchMergers } from '../utils/searchIndex';
 import { fetchAllMergers } from '../utils/fetchAllMergers';
-import { mergerPath } from '../utils/slug';
+import { mergerPath, partyPath } from '../utils/slug';
 
 const PAGES = [
   { label: 'Dashboard', path: '/' },
@@ -17,7 +18,19 @@ const PAGES = [
   { label: 'Digest', path: '/digest' },
 ];
 
-const MAX_MERGER_RESULTS = 8;
+// Mergers and parties share one combined budget of rows. By default it's
+// split evenly, but each group can borrow the other's unused capacity — so
+// two party matches leaves room for six mergers, and vice versa.
+const MAX_ENTITY_RESULTS = 6;
+const HALF_ENTITY_RESULTS = MAX_ENTITY_RESULTS / 2;
+
+// The parties list is cached as the whole `parties.json` payload
+// ({ parties, total_parties }) under this key by the Parties page.
+const PARTIES_CACHE_KEY = 'parties-list';
+
+function cachedParties() {
+  return dataCache.get(PARTIES_CACHE_KEY)?.parties || [];
+}
 
 export default function CommandPalette({ isOpen, onClose }) {
   const navigate = useNavigate();
@@ -34,6 +47,8 @@ export default function CommandPalette({ isOpen, onClose }) {
     return cached?.length ? buildSearchIndex(cached) : null;
   });
   const [mergersLoading, setMergersLoading] = useState(false);
+  const [parties, setParties] = useState(() => cachedParties());
+  const [partiesLoading, setPartiesLoading] = useState(false);
 
   // Reset state on open (adjusting state during render rather than in an
   // effect, per https://react.dev/learn/you-might-not-need-an-effect).
@@ -49,6 +64,12 @@ export default function CommandPalette({ isOpen, onClose }) {
         setSearchIndex(buildSearchIndex(cached));
       } else {
         setMergersLoading(true);
+      }
+      const cachedPartyList = cachedParties();
+      if (cachedPartyList.length) {
+        setParties(cachedPartyList);
+      } else {
+        setPartiesLoading(true);
       }
     }
   }
@@ -66,6 +87,24 @@ export default function CommandPalette({ isOpen, onClose }) {
       .finally(() => setMergersLoading(false));
   }, [isOpen]);
 
+  // Lazily fetch the parties list if it isn't cached yet, mirroring the merger
+  // load above. The whole payload is cached under the same key the Parties
+  // page uses so the two share one fetch.
+  useEffect(() => {
+    if (!isOpen || dataCache.has(PARTIES_CACHE_KEY)) return;
+    fetch(API_ENDPOINTS.parties)
+      .then((res) => {
+        if (!res.ok) throw new Error('Failed to fetch parties');
+        return res.json();
+      })
+      .then((json) => {
+        dataCache.set(PARTIES_CACHE_KEY, json);
+        setParties(json?.parties || []);
+      })
+      .catch((err) => console.error('Command palette failed to load parties:', err))
+      .finally(() => setPartiesLoading(false));
+  }, [isOpen]);
+
   const trimmedQuery = query.trim();
 
   const pageResults = useMemo(() => {
@@ -74,13 +113,46 @@ export default function CommandPalette({ isOpen, onClose }) {
     return PAGES.filter((p) => p.label.toLowerCase().includes(q));
   }, [trimmedQuery]);
 
-  const mergerResults = useMemo(() => {
+  // Full match sets, each capped at the combined budget (no single group can
+  // ever show more than that). The final per-group slice happens below once
+  // both counts are known, so they can share the budget.
+  const mergerMatches = useMemo(() => {
     if (!trimmedQuery || !searchIndex) return [];
-    return searchMergers(mergers, trimmedQuery, searchIndex).slice(0, MAX_MERGER_RESULTS);
+    return searchMergers(mergers, trimmedQuery, searchIndex).slice(0, MAX_ENTITY_RESULTS);
   }, [trimmedQuery, mergers, searchIndex]);
 
+  const partyMatches = useMemo(() => {
+    if (!trimmedQuery) return [];
+    const q = trimmedQuery.toLowerCase();
+    return parties
+      .filter((p) => p.name.toLowerCase().includes(q))
+      .sort((a, b) => b.merger_count - a.merger_count || a.name.localeCompare(b.name))
+      .slice(0, MAX_ENTITY_RESULTS);
+  }, [trimmedQuery, parties]);
+
+  // Divide the shared budget: each group is guaranteed its even half, and may
+  // grow into whatever the other group leaves unused.
+  const [mergerResults, partyResults] = useMemo(() => {
+    const mergerLimit = Math.min(
+      mergerMatches.length,
+      Math.max(HALF_ENTITY_RESULTS, MAX_ENTITY_RESULTS - partyMatches.length)
+    );
+    const partyLimit = Math.min(
+      partyMatches.length,
+      Math.max(HALF_ENTITY_RESULTS, MAX_ENTITY_RESULTS - mergerMatches.length)
+    );
+    return [mergerMatches.slice(0, mergerLimit), partyMatches.slice(0, partyLimit)];
+  }, [mergerMatches, partyMatches]);
+
   const showMergersGroup = trimmedQuery && (mergersLoading || mergerResults.length > 0);
-  const noResults = trimmedQuery && !mergersLoading && pageResults.length === 0 && mergerResults.length === 0;
+  const showPartiesGroup = trimmedQuery && (partiesLoading || partyResults.length > 0);
+  const noResults =
+    trimmedQuery &&
+    !mergersLoading &&
+    !partiesLoading &&
+    pageResults.length === 0 &&
+    mergerResults.length === 0 &&
+    partyResults.length === 0;
 
   // Flattened list of selectable rows, in display order, so arrow keys can
   // move through both groups without caring which one an index belongs to.
@@ -93,8 +165,15 @@ export default function CommandPalette({ isOpen, onClose }) {
         key: `merger:${m.merger_id}`,
       });
     });
+    partyResults.forEach((p) => {
+      list.push({
+        type: 'party',
+        path: partyPath(p.id, p.name),
+        key: `party:${p.id}`,
+      });
+    });
     return list;
-  }, [pageResults, mergerResults]);
+  }, [pageResults, mergerResults, partyResults]);
 
   // Clamp selection when the result set shrinks (e.g. typing narrows results).
   const [prevItemsLength, setPrevItemsLength] = useState(items.length);
@@ -176,7 +255,7 @@ export default function CommandPalette({ isOpen, onClose }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
-            placeholder="Search pages and mergers…"
+            placeholder="Search pages, mergers and parties…"
             className="flex-1 bg-transparent text-sm text-gray-900 placeholder-gray-400 focus:outline-none"
             role="combobox"
             aria-expanded="true"
@@ -264,6 +343,43 @@ export default function CommandPalette({ isOpen, onClose }) {
                     }`}
                   >
                     {m.merger_name}
+                  </li>
+                );
+              })}
+            </>
+          )}
+
+          {showPartiesGroup && (
+            <>
+              <li
+                className="px-4 pt-3 pb-1 text-xs font-semibold text-gray-400 uppercase tracking-wide"
+                role="presentation"
+              >
+                Parties
+              </li>
+              {partiesLoading && partyResults.length === 0 && (
+                <li className="px-4 py-2 text-sm text-gray-400" role="presentation">
+                  Loading parties…
+                </li>
+              )}
+              {partyResults.map((p) => {
+                const key = `party:${p.id}`;
+                const selected = key === selectedKey;
+                const path = partyPath(p.id, p.name);
+                return (
+                  <li
+                    key={key}
+                    id={key}
+                    role="option"
+                    aria-selected={selected}
+                    data-selected={selected}
+                    onMouseEnter={() => setSelectedIndex(items.findIndex((i) => i.key === key))}
+                    onClick={() => goTo(path)}
+                    className={`px-4 py-2 text-sm cursor-pointer truncate ${
+                      selected ? 'bg-primary/10 text-primary' : 'text-gray-700'
+                    }`}
+                  >
+                    {p.name}
                   </li>
                 );
               })}

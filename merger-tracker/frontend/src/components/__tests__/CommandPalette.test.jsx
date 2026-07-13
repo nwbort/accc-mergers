@@ -14,6 +14,14 @@ const mergerFixture = [
   { merger_id: 'MN-01020', merger_name: 'Woolworths / Some Target' },
 ];
 
+const partiesFixture = {
+  parties: [
+    { id: 'coles', name: 'Coles Group', merger_count: 9 },
+    { id: 'ampol-limited', name: 'Ampol Limited', merger_count: 3 },
+  ],
+  total_parties: 2,
+};
+
 function renderPalette(props) {
   return render(
     <MemoryRouter>
@@ -77,6 +85,79 @@ describe('CommandPalette', () => {
     expect(screen.queryByRole('option', { name: 'Dashboard' })).not.toBeInTheDocument();
     expect(await screen.findByRole('option', { name: 'Ampol / Z Energy' })).toBeInTheDocument();
     expect(screen.queryByRole('option', { name: 'Woolworths / Some Target' })).not.toBeInTheDocument();
+  });
+
+  it('searches cached parties and lists them in a Parties group', async () => {
+    dataCache.set('parties-list', partiesFixture);
+    const user = userEvent.setup();
+    renderPalette();
+
+    const input = screen.getByRole('combobox');
+    await user.type(input, 'coles');
+
+    expect(await screen.findByRole('option', { name: 'Coles Group' })).toBeInTheDocument();
+    expect(screen.getByText('Parties')).toBeInTheDocument();
+    expect(screen.queryByRole('option', { name: 'Ampol Limited' })).not.toBeInTheDocument();
+  });
+
+  it('lazily fetches the parties list on a cold cache', async () => {
+    const fetchSpy = vi.spyOn(globalThis, 'fetch').mockImplementation((url) => {
+      if (url.includes('parties.json')) {
+        return Promise.resolve(ok(partiesFixture));
+      }
+      if (url.includes('list-meta.json')) {
+        return Promise.resolve(ok({ total_pages: 1 }));
+      }
+      if (url.includes('list-page-1.json')) {
+        return Promise.resolve(ok({ mergers: mergerFixture }));
+      }
+      return Promise.reject(new Error(`Unexpected fetch: ${url}`));
+    });
+
+    const user = userEvent.setup();
+    renderPalette();
+
+    const input = screen.getByRole('combobox');
+    await user.type(input, 'coles');
+
+    expect(await screen.findByRole('option', { name: 'Coles Group' })).toBeInTheDocument();
+    expect(dataCache.get('parties-list')).toEqual(partiesFixture);
+    fetchSpy.mockRestore();
+  });
+
+  it('shares the result budget so few parties leave room for more mergers', async () => {
+    // 20 mergers and 2 parties all match "acme". The combined budget is 6, so
+    // the two parties should leave room for four mergers (rather than capping
+    // mergers at the even half of three).
+    const manyMergers = Array.from({ length: 20 }, (_, i) => ({
+      merger_id: `MN-${1000 + i}`,
+      merger_name: `Acme Deal ${i}`,
+    }));
+    const twoParties = {
+      parties: [
+        { id: 'acme-one', name: 'Acme One', merger_count: 2 },
+        { id: 'acme-two', name: 'Acme Two', merger_count: 1 },
+      ],
+      total_parties: 2,
+    };
+    dataCache.set('mergers-list', manyMergers);
+    dataCache.set('parties-list', twoParties);
+
+    const user = userEvent.setup();
+    renderPalette();
+
+    const input = screen.getByRole('combobox');
+    await user.type(input, 'acme');
+
+    await screen.findByText('Parties');
+    // Two party rows...
+    expect(screen.getByRole('option', { name: 'Acme One' })).toBeInTheDocument();
+    expect(screen.getByRole('option', { name: 'Acme Two' })).toBeInTheDocument();
+    // ...and four merger rows (borrowing the one the parties didn't use).
+    const mergerRows = screen
+      .getAllByRole('option')
+      .filter((el) => /^Acme Deal /.test(el.textContent));
+    expect(mergerRows).toHaveLength(4);
   });
 
   it('navigates arrow keys through results and opens the selected item on Enter', async () => {
