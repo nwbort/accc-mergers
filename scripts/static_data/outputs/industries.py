@@ -199,6 +199,11 @@ def generate_detail_files(mergers: list, output_dir: Path) -> int:
             "merger_name": m.get('merger_name'),
             "is_waiver": m.get('is_waiver', False),
             "status": m.get('status'),
+            # ACCC outcome (Approved / Not opposed / Declined / …) when the
+            # review has concluded, so the list can show the result — not just
+            # whether the review is open or closed. Absent while still open.
+            "determination": m.get('accc_determination'),
+            "has_conditions": m.get('has_conditions', False),
             "phase": classify_phase(m),
             # Dates that drive industry-level "follow" notifications: a merger
             # being filed in the industry and its determination being published.

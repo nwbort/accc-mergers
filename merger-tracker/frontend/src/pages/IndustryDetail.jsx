@@ -70,7 +70,8 @@ function IndustryDetail() {
     if (!trimmedSearch) return allMergers;
     return allMergers.filter((m) =>
       (m.merger_name || '').toLowerCase().includes(trimmedSearch) ||
-      (m.status || '').toLowerCase().includes(trimmedSearch)
+      (m.status || '').toLowerCase().includes(trimmedSearch) ||
+      (m.determination || '').toLowerCase().includes(trimmedSearch)
     );
   }, [data?.mergers, trimmedSearch]);
 
