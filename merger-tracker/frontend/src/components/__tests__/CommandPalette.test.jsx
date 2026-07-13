@@ -126,9 +126,9 @@ describe('CommandPalette', () => {
   });
 
   it('shares the result budget so few parties leave room for more mergers', async () => {
-    // 20 mergers and 2 parties all match "acme". The combined budget is 8, so
-    // the two parties should leave room for six mergers (rather than capping
-    // mergers at the even half of four).
+    // 20 mergers and 2 parties all match "acme". The combined budget is 6, so
+    // the two parties should leave room for four mergers (rather than capping
+    // mergers at the even half of three).
     const manyMergers = Array.from({ length: 20 }, (_, i) => ({
       merger_id: `MN-${1000 + i}`,
       merger_name: `Acme Deal ${i}`,
@@ -153,11 +153,11 @@ describe('CommandPalette', () => {
     // Two party rows...
     expect(screen.getByRole('option', { name: 'Acme One' })).toBeInTheDocument();
     expect(screen.getByRole('option', { name: 'Acme Two' })).toBeInTheDocument();
-    // ...and six merger rows (borrowing the two the parties didn't use).
+    // ...and four merger rows (borrowing the one the parties didn't use).
     const mergerRows = screen
       .getAllByRole('option')
       .filter((el) => /^Acme Deal /.test(el.textContent));
-    expect(mergerRows).toHaveLength(6);
+    expect(mergerRows).toHaveLength(4);
   });
 
   it('navigates arrow keys through results and opens the selected item on Enter', async () => {

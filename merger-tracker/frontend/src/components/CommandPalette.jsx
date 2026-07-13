@@ -21,7 +21,7 @@ const PAGES = [
 // Mergers and parties share one combined budget of rows. By default it's
 // split evenly, but each group can borrow the other's unused capacity — so
 // two party matches leaves room for six mergers, and vice versa.
-const MAX_ENTITY_RESULTS = 8;
+const MAX_ENTITY_RESULTS = 6;
 const HALF_ENTITY_RESULTS = MAX_ENTITY_RESULTS / 2;
 
 // The parties list is cached as the whole `parties.json` payload
