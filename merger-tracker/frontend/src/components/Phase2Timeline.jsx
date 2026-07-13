@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { differenceInCalendarDays, parseISO, isValid } from 'date-fns';
 import { mergerPath } from '../utils/slug';
 import { formatDateMedium } from '../utils/dates';
+import { CARD } from '../utils/classNames';
 
 // Position of `date` along the referral -> deadline axis, clamped to [0, 100]
 // so a milestone that lands before/after the span (bad data, clock restarts)
@@ -114,14 +115,14 @@ function MatterBar({ matter }) {
 function Phase2Timeline({ matters }) {
   if (!matters || matters.length === 0) {
     return (
-      <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-6">
+      <div className={`${CARD} p-6`}>
         <p className="text-gray-500 text-sm">No matters are currently in Phase 2.</p>
       </div>
     );
   }
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 sm:p-6">
+    <div className={`${CARD} p-5 sm:p-6`}>
       <ul className="divide-y divide-gray-100">
         {matters.map((matter) => (
           <MatterBar key={matter.merger_id} matter={matter} />

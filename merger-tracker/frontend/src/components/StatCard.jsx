@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { CARD } from '../utils/classNames';
 
 function StatCard({ title, value, subtitle, icon, href }) {
   const Wrapper = href ? Link : 'div';
@@ -7,7 +8,7 @@ function StatCard({ title, value, subtitle, icon, href }) {
   return (
     <Wrapper
       {...wrapperProps}
-      className="block bg-white rounded-2xl border border-gray-100 shadow-card hover:shadow-card-hover transition-all duration-200 overflow-hidden group"
+      className={`block ${CARD} hover:shadow-card-hover transition-all duration-200 overflow-hidden group`}
     >
       <div className="p-6">
         <div className="flex items-start gap-4">
