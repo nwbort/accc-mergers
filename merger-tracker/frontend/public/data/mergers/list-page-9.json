@@ -2317,9 +2317,13 @@
           "name": "SIEMENS MOBILITY PTY. LTD.",
           "identifier_type": "ABN",
           "identifier": "39 625 304 556",
+          "canonical": {
+            "id": "siemens-mobility-gmbh",
+            "name": "Siemens Mobility GmbH"
+          },
           "party_page": {
-            "id": "siemens-mobility-pty-ltd",
-            "name": "Siemens Mobility Pty. Ltd."
+            "id": "siemens-mobility-gmbh",
+            "name": "Siemens Mobility GmbH"
           }
         },
         {
@@ -2335,6 +2339,10 @@
           "name": "Siemens Mobility GmbH",
           "identifier_type": null,
           "identifier": "LEI  529900LT6G2TUO3TZB94",
+          "canonical": {
+            "id": "siemens-mobility-gmbh",
+            "name": "Siemens Mobility GmbH"
+          },
           "party_page": {
             "id": "siemens-mobility-gmbh",
             "name": "Siemens Mobility GmbH"
