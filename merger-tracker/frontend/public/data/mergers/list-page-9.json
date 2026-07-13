@@ -636,6 +636,114 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/innio-group-%E2%80%93-enerflex-0"
     },
     {
+      "merger_id": "WA-20028",
+      "merger_name": "Accenture \u2013 Whalar Agency",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-25T12:00:00Z",
+      "determination_publication_date": "2026-07-13T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Accenture Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware registered number  3387477",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Whalar GmbH",
+          "identifier_type": null,
+          "identifier": "HRB  210859",
+          "party_page": {
+            "id": "whalar-gmbh",
+            "name": "Whalar GmbH"
+          }
+        },
+        {
+          "name": "Whalar Inc",
+          "identifier_type": null,
+          "identifier": "Delaware company number  6534128",
+          "party_page": {
+            "id": "whalar-inc",
+            "name": "Whalar Inc"
+          }
+        },
+        {
+          "name": "Whalar Spain Newco S.L.",
+          "identifier_type": null,
+          "identifier": "MA195172",
+          "party_page": {
+            "id": "whalar-spain-newco-s-l",
+            "name": "Whalar Spain Newco S.L."
+          }
+        },
+        {
+          "name": "Mist Agency NewCo Limited",
+          "identifier_type": null,
+          "identifier": "UK company number  17145938",
+          "party_page": {
+            "id": "mist-agency-newco-limited",
+            "name": "Mist Agency NewCo Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Accenture Australia Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "49 096 776 895",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
+          }
+        },
+        {
+          "name": "Accenture plc",
+          "identifier_type": null,
+          "identifier": "Ireland registered number  471706",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
+          },
+          "party_page": {
+            "id": "accenture-plc",
+            "name": "Accenture plc"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        },
+        {
+          "code": "6940",
+          "name": "Advertising Services"
+        },
+        {
+          "code": "6962",
+          "name": "Management Advice and Related Consulting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/accenture-%E2%80%93-whalar-agency"
+    },
+    {
       "merger_id": "MN-01106",
       "merger_name": "Midea - Residentia Group",
       "status": "Under assessment",

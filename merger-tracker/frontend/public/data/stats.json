@@ -1,6 +1,6 @@
 {
   "total_mergers": 173,
-  "total_waivers": 262,
+  "total_waivers": 263,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 128,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 248,
+    "Approved": 249,
     "Not approved": 14
   },
   "phase_duration": {
@@ -36,15 +36,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.450381679389313,
-    "median_days": 17.5,
-    "average_business_days": 12.229007633587786,
-    "median_business_days": 12.0
+    "average_days": 18.44866920152091,
+    "median_days": 18,
+    "average_business_days": 12.228136882129277,
+    "median_business_days": 12
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 54
+      "count": 55
     },
     {
       "name": "Computer System Design and Related Services",
@@ -183,6 +183,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-20028",
+      "merger_name": "Accenture \u2013 Whalar Agency",
+      "determination": "Approved",
+      "determination_date": "2026-07-13T12:00:00Z",
+      "page_modified_datetime": "2026-07-13T17:36:35+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-90009",
       "merger_name": "Trescal \u2013 TR Calibration",
       "determination": "Assessment ceased",
@@ -291,16 +301,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-20026",
-      "merger_name": "Oaktree \u2013 Vivax Metrotech",
-      "determination": "Approved",
-      "determination_date": "2026-07-06T12:00:00Z",
-      "page_modified_datetime": "2026-07-06T17:14:54+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
