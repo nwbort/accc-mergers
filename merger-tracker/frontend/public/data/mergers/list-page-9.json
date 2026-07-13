@@ -2271,6 +2271,98 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-paydock"
     },
     {
+      "merger_id": "MN-01105",
+      "merger_name": "Siemens Mobility - MerMec",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "effective_notification_datetime": "2026-07-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-21T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Siemens Mobility Holding B.V.",
+          "identifier_type": null,
+          "identifier": "LEI  529900JJ6XL7YX9GBM87",
+          "party_page": {
+            "id": "siemens-mobility-holding-b-v",
+            "name": "Siemens Mobility Holding B.V."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Mer Mec S.p.A.",
+          "identifier_type": null,
+          "identifier": "LEI  81560011DF7243CFC226",
+          "party_page": {
+            "id": "mer-mec-s-p-a",
+            "name": "Mer Mec S.p.A."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Siemens Aktiengesellschaft",
+          "identifier_type": null,
+          "identifier": "LEI  W38RGI023J3WT1HWRP32",
+          "party_page": {
+            "id": "siemens-aktiengesellschaft",
+            "name": "Siemens Aktiengesellschaft"
+          }
+        },
+        {
+          "name": "SIEMENS MOBILITY PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "39 625 304 556",
+          "party_page": {
+            "id": "siemens-mobility-pty-ltd",
+            "name": "Siemens Mobility Pty. Ltd."
+          }
+        },
+        {
+          "name": "MERMEC AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "42 619 285 988",
+          "party_page": {
+            "id": "mermec-australia-pty-ltd",
+            "name": "Mermec Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "Siemens Mobility GmbH",
+          "identifier_type": null,
+          "identifier": "LEI  529900LT6G2TUO3TZB94",
+          "party_page": {
+            "id": "siemens-mobility-gmbh",
+            "name": "Siemens Mobility GmbH"
+          }
+        },
+        {
+          "name": "Angelo Holding S.r.l.",
+          "identifier_type": null,
+          "identifier": "LEI  815600BFD5004E85D746",
+          "party_page": {
+            "id": "angelo-holding-s-r-l",
+            "name": "Angelo Holding S.r.l."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2393",
+          "name": "Railway Rolling Stock Manufacturing and Repair Services"
+        },
+        {
+          "code": "3109",
+          "name": "Other Heavy and Civil Engineering Construction"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/siemens-mobility-mermec"
+    },
+    {
       "merger_id": "MN-65023",
       "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
       "status": "Under assessment",

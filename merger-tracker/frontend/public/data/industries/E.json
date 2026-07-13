@@ -15,7 +15,7 @@
       "code": "31",
       "name": "Heavy and Civil Engineering Construction",
       "level": "subdivision",
-      "merger_count": 12
+      "merger_count": 13
     },
     {
       "code": "32",
@@ -25,6 +25,15 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-01105",
+      "merger_name": "Siemens Mobility - MerMec",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "phase": "Phase 1",
+      "notification_date": "2026-07-10T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-65023",
       "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
@@ -314,11 +323,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 32,
-  "phase_1_count": 12,
+  "count": 33,
+  "phase_1_count": 13,
   "phase_2_count": 1,
   "waiver_count": 19,
-  "active_count": 5,
+  "active_count": 6,
   "phase_duration": {
     "average_days": 28.333333333333332,
     "median_days": 23,

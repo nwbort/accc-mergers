@@ -1,0 +1,33 @@
+{
+  "id": "siemens-mobility-holding-b-v",
+  "canonical_name": "Siemens Mobility Holding B.V.",
+  "members": [
+    {
+      "name": "Siemens Mobility Holding B.V.",
+      "identifier": "LEI  529900JJ6XL7YX9GBM87",
+      "identifier_type": null
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "MN-01105",
+        "merger_name": "Siemens Mobility - MerMec",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "phase": "Phase 1",
+        "notification_date": "2026-07-10T12:00:00Z",
+        "determination_date": null
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 1,
+  "phase_1_count": 1,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 1,
+  "phase_duration": null,
+  "waiver_duration": null
+}
