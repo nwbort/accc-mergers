@@ -11141,7 +11141,7 @@
           "identifier_type": null,
           "identifier": "",
           "party_page": {
-            "id": "google-llc",
+            "id": "google-llc-2",
             "name": "Google LLC"
           }
         }
@@ -73111,7 +73111,7 @@
           "identifier_type": null,
           "identifier": "",
           "party_page": {
-            "id": "google-llc",
+            "id": "google-llc-2",
             "name": "Google LLC"
           }
         }
@@ -73193,7 +73193,7 @@
               "identifier_type": null,
               "identifier": "",
               "party_page": {
-                "id": "google-llc",
+                "id": "google-llc-2",
                 "name": "Google LLC"
               }
             }
@@ -107680,6 +107680,238 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/google-australia-%E2%80%93-indefeasible-rights-to-use-terrestrial-dark-fibre-from-telstra",
+      "merger_name": "Google Australia – indefeasible rights to use terrestrial dark fibre from Telstra",
+      "status": "Assessment completed",
+      "merger_id": "WA-95026",
+      "effective_notification_datetime": "2026-06-12T12:00:00Z",
+      "original_notification_datetime": "2026-06-12T12:00:00Z",
+      "stage": "Waiver application",
+      "determination_publication_date": "2026-07-13T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-13T17:40:04+10:00",
+      "acquirers": [
+        {
+          "name": "GOOGLE AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 102 417 032",
+          "party_page": {
+            "id": "google-australia-pty-ltd",
+            "name": "Google Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "Google Singapore Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "Singapore registration No. 200605367W",
+          "party_page": {
+            "id": "google-singapore-pte-ltd",
+            "name": "Google Singapore Pte. Ltd."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Telstra Singapore Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "Singapore registration No. 200209830G",
+          "party_page": {
+            "id": "telstra-singapore-pte-ltd",
+            "name": "Telstra Singapore Pte. Ltd."
+          }
+        },
+        {
+          "name": "TELSTRA CORPORATION LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "33 051 775 556",
+          "party_page": {
+            "id": "telstra-corporation-limited",
+            "name": "Telstra Corporation Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Google LLC",
+          "identifier_type": null,
+          "identifier": "FEIN 770493581",
+          "party_page": {
+            "id": "google-llc",
+            "name": "Google LLC"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5801",
+          "name": "Wired Telecommunications Network Operation"
+        },
+        {
+          "code": "5802",
+          "name": "Other Telecommunications Network Operation"
+        },
+        {
+          "code": "5809",
+          "name": "Other Telecommunications Services"
+        }
+      ],
+      "merger_description": "Google Australia Pty Ltd (**Google Australia**) and Google Singapore Pte. Ltd. (**Google Singapore**) are indirect subsidiaries of Google LLC, a Delaware limited liability company, owned by Alphabet, Inc.\n\nTelstra Singapore Pte. Ltd. (**Telstra Singapore**) and Telstra Corporation Limited (**Telstra Corporation**) are subsidiaries of Telstra Group Limited, a telecommunications and technology company with its primary operations in Australia.\n\nThe application concerns the acquisition of rights to use dark fibre pairs on Telstra’s Aura Network. The Aura Network is a terrestrial network of fibre optic cables. Fibre optic networks allow large volumes of data to be transmitted quickly and reliably over long distances.\n\nSpecifically, the Acquisition comprises:\n\n* Google Australia acquiring from Telstra Corporation indefeasible rights to use (**IRUs**) certain dark fibre pairs on specified routes on Telstra’s terrestrial Aura Network, and associated colocation services, for a minimum term of 15 years, and\n* Google Singapore acquiring from Telstra Singapore rights for Google Australia (or another affiliate) to acquire additional IRUs for dark fibre pairs on the Aura Network, and associated colocation services.",
+      "events": [
+        {
+          "date": "2026-07-13T12:00:00Z",
+          "title": "Notification waiver determination",
+          "display_title": "Waiver application determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Google%20Australia%20-%20indefeasible%20rights%20to%20use%20terrestrial%20dark%20fibre%20from%20Telstra%20%28WA-95026%29%20-%20Notification%20waiver%20determination%20-%2013%20July%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Acquisition",
+              "details": "Google Australia Pty Ltd (Google Australia) and Google Singapore Pte. Ltd. (Google Singapore) applied for a notification waiver in respect of their proposed acquisition of indefeasible rights to use (IRUs) certain dark fibre pairs from subsidiaries of Telstra Group Limited, Telstra Singapore Pte. Ltd. (Telstra Singapore) and Telstra Corporation Limited (Telstra Corporation), as described in the transaction documents provided as part of the application (the Acquisition).\n\nThe Acquisition involves:\n\n• Google Australia acquiring from Telstra Corporation IRUs certain dark fibre pairs on specified routes on Telstra’s terrestrial Aura Network, and associated colocation services, for a minimum term of 15 years; and\n\n• Google Singapore acquiring from Telstra Singapore rights for Google Australia (or another affiliate) to acquire additional IRUs for dark fibre pairs on the Aura Network, and associated colocation services."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABV(1)(a) of the Competition and Consumer Act 2010 (Cth) that the Acquisition is not required to be notified."
+            },
+            {
+              "item": "Date of determination",
+              "details": "13 July 2026"
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "Google Australia and Google Singapore, are indirect subsidiaries of Google LLC (together, Google Group), a Delaware limited liability company owned by Alphabet, Inc.\n\nTelstra Singapore Pte. Ltd. (Telstra Singapore) and Telstra Corporation Limited (Telstra Corporation) are subsidiaries of Telstra Group Limited (Telstra), a telecommunications and technology company with its primary operations in Australia.\n\nThe Acquisition concerns rights to use dark fibre pairs on Telstra’s Aura Network, a terrestrial network of fibre optic cables. Fibre optic networks allow large volumes of data to be transmitted quickly and reliably over long distances."
+            },
+            {
+              "item": "Explanation for determination",
+              "details": "In making this notification waiver determination, the Australian Competition and Consumer Commission (the ACCC) has considered the information provided with the notification waiver application, and had regard to the factors in section 51ABV(2)(b) of the Competition and Consumer Act 2010 (Cth) (the Act).\n\nBased on the information currently before it, the ACCC considers that the Acquisition is unlikely to give rise to any material lessening of competition. In particular:\n\na. post-Acquisition, Google Group’s share of fibre pairs and/or capacity on each of the terrestrial cables the subject of the Acquisition is expected to be small\n\nb. there are alternative providers of terrestrial dark fibre and capacity on terrestrial cables in Australia\n\nc. the Acquisition is unlikely to foreclose access to the remaining fibre pairs on the relevant terrestrial cables or to capacity on alternative terrestrial cables in Australia for Google Group’s downstream rivals.\n\nIn these circumstances, the ACCC does not consider it necessary to reach a concluded view on the likelihood of the notification thresholds being met.\n\nGiven that material competition concerns are unlikely to arise, the ACCC has determined that the Acquisition is not required to be notified.\n\nThe ACCC considers that the determination is consistent with the object of the Act and the interests of consumers in promoting competition.\n\nFor more information about the ACCC’s approach to considering notification waiver applications and to assessing competition effects more generally, see the ACCC’s interim guidance on notification waivers and merger assessment guidelines."
+            }
+          ],
+          "url_gh": "/mergers/WA-95026/Google Australia - indefeasible rights to use terrestrial dark fibre from Telstra (WA-95026) - Notification waiver determination - 13 July 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Waiver"
+        },
+        {
+          "date": "2026-06-12T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": true,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "similar_mergers": [
+        {
+          "merger_id": "WA-40030",
+          "merger_name": "Telstra – indefeasible rights over dark fibre on Tabua, Proa and Bulikula subsea cables",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "TELSTRA AUSTRALIA NETWORKS PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "58 100 816 206",
+              "party_page": {
+                "id": "telstra-australia-networks-pty-limited",
+                "name": "Telstra Australia Networks Pty Limited"
+              }
+            },
+            {
+              "name": "TELSTRA INTERNATIONAL NETWORKS PTY LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "56 142 220 157",
+              "party_page": {
+                "id": "telstra-international-networks-pty-limited",
+                "name": "Telstra International Networks Pty Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Manta Ray Solutions LLC",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "manta-ray-solutions-llc",
+                "name": "Manta Ray Solutions LLC"
+              }
+            },
+            {
+              "name": "PERCH INFRASTRUCTURE PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "24 672 742 166",
+              "party_page": {
+                "id": "perch-infrastructure-pty-ltd",
+                "name": "Perch Infrastructure Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-20007",
+          "merger_name": "Telstra – Infosys Technologies",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "TELSTRA LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "64 086 174 781",
+              "party_page": {
+                "id": "telstra-limited",
+                "name": "Telstra Limited"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "INFOSYS TECHNOLOGIES LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "52 090 591 209",
+              "party_page": {
+                "id": "infosys-technologies-limited",
+                "name": "Infosys Technologies Limited"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-15002",
+          "merger_name": "Google - Wiz",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Google LLC",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "google-llc-2",
+                "name": "Google LLC"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Wiz Inc",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "wiz-inc",
+                "name": "Wiz Inc"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/blackstone-%E2%80%93-acacium-group",
       "merger_name": "Blackstone – Acacium Group",
       "status": "Assessment completed",
@@ -116325,7 +116557,7 @@
   },
   "stats": {
     "total_mergers": 173,
-    "total_waivers": 264,
+    "total_waivers": 265,
     "total_conditional_approvals": 1,
     "by_status": {
       "Assessment completed": 128,
@@ -116337,7 +116569,7 @@
       "Referred to phase 2": 7
     },
     "by_waiver_determination": {
-      "Approved": 250,
+      "Approved": 251,
       "Not approved": 14
     },
     "phase_duration": {
@@ -116361,10 +116593,10 @@
       }
     },
     "waiver_duration": {
-      "average_days": 18.49621212121212,
-      "median_days": 18.0,
-      "average_business_days": 12.261363636363637,
-      "median_business_days": 12.0
+      "average_days": 18.543396226415094,
+      "median_days": 18,
+      "average_business_days": 12.294339622641509,
+      "median_business_days": 12
     },
     "top_industries": [
       {
@@ -116508,6 +116740,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "WA-95026",
+        "merger_name": "Google Australia – indefeasible rights to use terrestrial dark fibre from Telstra",
+        "determination": "Approved",
+        "determination_date": "2026-07-13T12:00:00Z",
+        "page_modified_datetime": "2026-07-13T17:40:04+10:00",
+        "determination_type": "final",
+        "is_waiver": true,
+        "stage": "Waiver application"
+      },
+      {
         "merger_id": "WA-40030",
         "merger_name": "Telstra – indefeasible rights over dark fibre on Tabua, Proa and Bulikula subsea cables",
         "determination": "Approved",
@@ -116613,16 +116855,6 @@
         "determination": "Approved",
         "determination_date": "2026-07-07T12:00:00Z",
         "page_modified_datetime": "2026-07-07T17:08:24+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-65024",
-        "merger_name": "Australian Venue Co – assets of Café Kinetic, Flinders Lane Melbourne CBD",
-        "determination": "Approved",
-        "determination_date": "2026-07-07T12:00:00Z",
-        "page_modified_datetime": "2026-07-07T17:03:38+10:00",
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"
@@ -116777,6 +117009,11 @@
         "merger_count": 7
       },
       {
+        "code": "5809",
+        "name": "Other Telecommunications Services",
+        "merger_count": 6
+      },
+      {
         "code": "3720",
         "name": "Pharmaceutical and Toiletry Goods Wholesaling",
         "merger_count": 6
@@ -116832,11 +117069,6 @@
         "merger_count": 5
       },
       {
-        "code": "5809",
-        "name": "Other Telecommunications Services",
-        "merger_count": 5
-      },
-      {
         "code": "0529",
         "name": "Other Agriculture and Fishing Support Services",
         "merger_count": 5
@@ -116859,6 +117091,11 @@
       {
         "code": "5102",
         "name": "Courier Pick-up and Delivery Services",
+        "merger_count": 5
+      },
+      {
+        "code": "5802",
+        "name": "Other Telecommunications Network Operation",
         "merger_count": 5
       },
       {
@@ -116972,11 +117209,6 @@
         "merger_count": 4
       },
       {
-        "code": "5802",
-        "name": "Other Telecommunications Network Operation",
-        "merger_count": 4
-      },
-      {
         "code": "2640",
         "name": "On Selling Electricity and Electricity Market Operation",
         "merger_count": 4
@@ -116989,6 +117221,11 @@
       {
         "code": "3020",
         "name": "Non-Residential Building Construction",
+        "merger_count": 4
+      },
+      {
+        "code": "5801",
+        "name": "Wired Telecommunications Network Operation",
         "merger_count": 4
       },
       {
@@ -117149,11 +117386,6 @@
       {
         "code": "7211",
         "name": "Employment Placement and Recruitment Services",
-        "merger_count": 3
-      },
-      {
-        "code": "5801",
-        "name": "Wired Telecommunications Network Operation",
         "merger_count": 3
       },
       {
@@ -118002,7 +118234,7 @@
         "merger_count": 1
       }
     ],
-    "total_mergers": 437,
+    "total_mergers": 438,
     "total_industries": 274
   }
 }

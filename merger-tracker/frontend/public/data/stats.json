@@ -1,6 +1,6 @@
 {
   "total_mergers": 173,
-  "total_waivers": 264,
+  "total_waivers": 265,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 128,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 250,
+    "Approved": 251,
     "Not approved": 14
   },
   "phase_duration": {
@@ -36,10 +36,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.49621212121212,
-    "median_days": 18.0,
-    "average_business_days": 12.261363636363637,
-    "median_business_days": 12.0
+    "average_days": 18.543396226415094,
+    "median_days": 18,
+    "average_business_days": 12.294339622641509,
+    "median_business_days": 12
   },
   "top_industries": [
     {
@@ -183,6 +183,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-95026",
+      "merger_name": "Google Australia \u2013 indefeasible rights to use terrestrial dark fibre from Telstra",
+      "determination": "Approved",
+      "determination_date": "2026-07-13T12:00:00Z",
+      "page_modified_datetime": "2026-07-13T17:40:04+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-40030",
       "merger_name": "Telstra \u2013 indefeasible rights over dark fibre on Tabua, Proa and Bulikula subsea cables",
       "determination": "Approved",
@@ -288,16 +298,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-07T12:00:00Z",
       "page_modified_datetime": "2026-07-07T17:08:24+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-65024",
-      "merger_name": "Australian Venue Co \u2013 assets of Caf\u00e9 Kinetic, Flinders Lane Melbourne CBD",
-      "determination": "Approved",
-      "determination_date": "2026-07-07T12:00:00Z",
-      "page_modified_datetime": "2026-07-07T17:03:38+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

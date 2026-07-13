@@ -1,17 +1,15 @@
 {
-  "id": "google-llc",
-  "canonical_name": "Google LLC",
+  "id": "google-singapore-pte-ltd",
+  "canonical_name": "Google Singapore Pte. Ltd.",
   "members": [
     {
-      "name": "Google LLC",
-      "identifier": "FEIN 770493581",
+      "name": "Google Singapore Pte. Ltd.",
+      "identifier": "Singapore registration No. 200605367W",
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
         "merger_id": "WA-95026",
         "merger_name": "Google Australia \u2013 indefeasible rights to use terrestrial dark fibre from Telstra",
@@ -23,7 +21,9 @@
         "notification_date": "2026-06-12T12:00:00Z",
         "determination_date": "2026-07-13T12:00:00Z"
       }
-    ]
+    ],
+    "target": [],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 0,

@@ -1,17 +1,16 @@
 {
-  "id": "google-llc",
-  "canonical_name": "Google LLC",
+  "id": "telstra-corporation-limited",
+  "canonical_name": "Telstra Corporation Limited",
   "members": [
     {
-      "name": "Google LLC",
-      "identifier": "FEIN 770493581",
-      "identifier_type": null
+      "name": "TELSTRA CORPORATION LIMITED",
+      "identifier": "33 051 775 556",
+      "identifier_type": "ABN"
     }
   ],
   "mergers": {
     "acquirer": [],
-    "target": [],
-    "other": [
+    "target": [
       {
         "merger_id": "WA-95026",
         "merger_name": "Google Australia \u2013 indefeasible rights to use terrestrial dark fibre from Telstra",
@@ -23,7 +22,8 @@
         "notification_date": "2026-06-12T12:00:00Z",
         "determination_date": "2026-07-13T12:00:00Z"
       }
-    ]
+    ],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 0,

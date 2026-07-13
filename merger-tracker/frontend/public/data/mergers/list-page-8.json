@@ -2588,7 +2588,7 @@
           "identifier_type": null,
           "identifier": "",
           "party_page": {
-            "id": "google-llc",
+            "id": "google-llc-2",
             "name": "Google LLC"
           }
         }
@@ -2678,6 +2678,84 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mitsui-%E2%80%93-rhodes-ridge-joint-venture"
+    },
+    {
+      "merger_id": "WA-95026",
+      "merger_name": "Google Australia \u2013 indefeasible rights to use terrestrial dark fibre from Telstra",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "effective_notification_datetime": "2026-06-12T12:00:00Z",
+      "determination_publication_date": "2026-07-13T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "GOOGLE AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 102 417 032",
+          "party_page": {
+            "id": "google-australia-pty-ltd",
+            "name": "Google Australia Pty Ltd"
+          }
+        },
+        {
+          "name": "Google Singapore Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "Singapore registration No. 200605367W",
+          "party_page": {
+            "id": "google-singapore-pte-ltd",
+            "name": "Google Singapore Pte. Ltd."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Telstra Singapore Pte. Ltd.",
+          "identifier_type": null,
+          "identifier": "Singapore registration No. 200209830G",
+          "party_page": {
+            "id": "telstra-singapore-pte-ltd",
+            "name": "Telstra Singapore Pte. Ltd."
+          }
+        },
+        {
+          "name": "TELSTRA CORPORATION LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "33 051 775 556",
+          "party_page": {
+            "id": "telstra-corporation-limited",
+            "name": "Telstra Corporation Limited"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Google LLC",
+          "identifier_type": null,
+          "identifier": "FEIN 770493581",
+          "party_page": {
+            "id": "google-llc",
+            "name": "Google LLC"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "5801",
+          "name": "Wired Telecommunications Network Operation"
+        },
+        {
+          "code": "5802",
+          "name": "Other Telecommunications Network Operation"
+        },
+        {
+          "code": "5809",
+          "name": "Other Telecommunications Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/google-australia-%E2%80%93-indefeasible-rights-to-use-terrestrial-dark-fibre-from-telstra"
     },
     {
       "merger_id": "MN-10018",
@@ -3849,128 +3927,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/oaktree-%E2%80%93-vivax-metrotech"
-    },
-    {
-      "merger_id": "WA-35026",
-      "merger_name": "Mitsubishi Estate Asia \u2013 Eynesbury Properties",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "has_conditions": false,
-      "is_waiver": true,
-      "effective_notification_datetime": "2026-06-18T12:00:00Z",
-      "determination_publication_date": "2026-07-06T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "MECO Eynesbury Pty Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "meco-eynesbury-pty-limited",
-            "name": "MECO Eynesbury Pty Limited"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "EYNESBURY WYNDHAM PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "38 635 954 086",
-          "party_page": {
-            "id": "eynesbury-wyndham-pty-ltd",
-            "name": "Eynesbury Wyndham Pty Ltd"
-          }
-        },
-        {
-          "name": "Eynesbury AK2 Pty Ltd atf Eynesbury AK2 Trust",
-          "identifier_type": "ACN",
-          "identifier": "635 946 995",
-          "party_page": {
-            "id": "eynesbury-ak2-pty-ltd-atf-eynesbury-ak2-trust",
-            "name": "Eynesbury AK2 Pty Ltd atf Eynesbury AK2 Trust"
-          }
-        },
-        {
-          "name": "Eynesbury AK1 Pty Ltd atf Eynesbury AK1 Trust",
-          "identifier_type": "ACN",
-          "identifier": "635 945 498",
-          "party_page": {
-            "id": "eynesbury-ak1-pty-ltd-atf-eynesbury-ak1-trust",
-            "name": "Eynesbury AK1 Pty Ltd atf Eynesbury AK1 Trust"
-          }
-        },
-        {
-          "name": "EYNESBURY TOWNSHIP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "40 635 948 873",
-          "party_page": {
-            "id": "eynesbury-township-pty-ltd",
-            "name": "Eynesbury Township Pty Ltd"
-          }
-        },
-        {
-          "name": "EYNESBURY GREENHILL PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "36 635 953 203",
-          "party_page": {
-            "id": "eynesbury-greenhill-pty-ltd",
-            "name": "Eynesbury Greenhill Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "MEC OCEANIA INVESTMENT PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "35 675 561 458",
-          "party_page": {
-            "id": "mec-oceania-investment-pty-ltd",
-            "name": "Mec Oceania Investment Pty Ltd"
-          }
-        },
-        {
-          "name": "Mitsubishi Estate Co., Ltd",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "mitsubishi-estate-co-ltd",
-            "name": "Mitsubishi Estate Co., Ltd"
-          }
-        },
-        {
-          "name": "Resimax Group Proprietary Limited",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "resimax-group-proprietary-limited",
-            "name": "Resimax Group Proprietary Limited"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "3211",
-          "name": "Land Development and Subdivision"
-        },
-        {
-          "code": "4511",
-          "name": "Cafes and Restaurants"
-        },
-        {
-          "code": "6711",
-          "name": "Residential Property Operators"
-        },
-        {
-          "code": "6712",
-          "name": "Non-Residential Property Operators"
-        },
-        {
-          "code": "9113",
-          "name": "Sports and Physical Recreation Venues, Grounds and Facilities Operation"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/mitsubishi-estate-asia-%E2%80%93-eynesbury-properties"
     }
   ],
   "page": 8,

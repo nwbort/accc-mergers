@@ -33,7 +33,7 @@
       "code": "58",
       "name": "Telecommunications Services",
       "level": "subdivision",
-      "merger_count": 7
+      "merger_count": 8
     },
     {
       "code": "59",
@@ -107,6 +107,17 @@
     {
       "merger_id": "WA-40030",
       "merger_name": "Telstra \u2013 indefeasible rights over dark fibre on Tabua, Proa and Bulikula subsea cables",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-12T12:00:00Z",
+      "determination_date": "2026-07-13T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-95026",
+      "merger_name": "Google Australia \u2013 indefeasible rights to use terrestrial dark fibre from Telstra",
       "is_waiver": true,
       "status": "Assessment completed",
       "determination": "Approved",
@@ -644,10 +655,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 54,
+  "count": 55,
   "phase_1_count": 24,
   "phase_2_count": 0,
-  "waiver_count": 30,
+  "waiver_count": 31,
   "active_count": 5,
   "phase_duration": {
     "average_days": 30.789473684210527,
@@ -657,10 +668,10 @@
     "completed_count": 19
   },
   "waiver_duration": {
-    "average_days": 18.366666666666667,
+    "average_days": 18.774193548387096,
     "median_days": 18,
-    "average_business_days": 12.4,
+    "average_business_days": 12.67741935483871,
     "median_business_days": 12,
-    "completed_count": 30
+    "completed_count": 31
   }
 }
