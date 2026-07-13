@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaArrowRightLong } from 'react-icons/fa6';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
-import PartyTreemap from '../components/PartyTreemap';
+import Treemap from '../components/Treemap';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
@@ -78,7 +78,11 @@ function Parties() {
 
         {/* Party heatmap */}
         <div className="bg-white rounded-2xl border border-gray-100 shadow-card p-5 mb-6">
-          <PartyTreemap parties={parties} />
+          <Treemap
+            items={parties}
+            getKey={(party) => party.id}
+            getPath={(party) => partyPath(party.id, party.name)}
+          />
         </div>
 
         {/* Search */}
