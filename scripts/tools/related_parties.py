@@ -273,8 +273,7 @@ def merge_groups_endpoint(req: MergeGroups) -> dict:
     except KeyError as exc:
         raise HTTPException(status_code=404, detail=exc.args[0])
     save_parties_doc(doc)
-    kept_id = req.group_ids[0]
-    return {"status": "success", "group": _find_group(doc, kept_id)}
+    return {"status": "success", "group": _find_group(doc, req.group_ids[0])}
 
 
 @app.delete("/api/groups/{group_id}")

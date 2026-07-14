@@ -139,6 +139,19 @@ def test_merge_groups_combines_members_and_dedupes():
     assert len(groups) == 3
 
 
+def test_merge_groups_keeps_first_requested_id_regardless_of_storage_order():
+    # "coles-2" is stored *before* "coles", but the caller asked to merge
+    # ["coles", "coles-2"] - the kept id must follow the caller's order, not
+    # whatever order the groups happen to be stored in.
+    groups = [
+        {"id": "coles-2", "canonical_name": "Coles Supermarkets", "members": [{"name": "B", "identifier": ""}]},
+        {"id": "coles", "canonical_name": "Coles Group", "members": [{"name": "A", "identifier": ""}]},
+    ]
+    merged = pm.merge_groups(groups, ["coles", "coles-2"])
+    assert [g["id"] for g in merged] == ["coles"]
+    assert merged[0]["canonical_name"] == "Coles Group"
+
+
 def test_merge_groups_accepts_custom_canonical_name():
     groups = [
         {"id": "a", "canonical_name": "A", "members": [{"name": "A Pty Ltd", "identifier": "1"}]},

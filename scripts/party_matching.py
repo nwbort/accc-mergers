@@ -120,10 +120,11 @@ def dedupe_members(members: list[dict]) -> list[dict]:
 def merge_groups(groups: list[dict], group_ids: list[str], canonical_name: str = "") -> list[dict]:
     """Merge the groups identified by ``group_ids`` into a single group.
 
-    The merged group keeps the id of whichever of ``group_ids`` appears first
-    in ``groups``; the rest are folded into it (members combined and
-    de-duplicated) and dropped. ``canonical_name``, if given, becomes the
-    merged group's display name; otherwise the kept group's own name is used.
+    The merged group keeps the id of ``group_ids[0]`` (the caller's own
+    ordering, not whatever order the groups happen to be stored in); the rest
+    are folded into it (members combined and de-duplicated) and dropped.
+    ``canonical_name``, if given, becomes the merged group's display name;
+    otherwise the kept group's own name is used.
 
     Returns a new list — ``groups`` is not mutated. Raises ``ValueError`` if
     fewer than two distinct ids are given, or ``KeyError`` if any id is not
@@ -138,9 +139,10 @@ def merge_groups(groups: list[dict], group_ids: list[str], canonical_name: str =
     if missing:
         raise KeyError(f"Group(s) not found: {', '.join(missing)}")
 
-    # Keep whichever of the merged groups appears first in the input order.
-    keep = next(g for g in groups if g.get("id") in ids)
-    merging = [g for g in groups if g.get("id") in ids]
+    keep_id = ids[0]
+    keep = by_id[keep_id]
+    merge_set = set(ids)
+    merging = [g for g in groups if g.get("id") in merge_set]
 
     combined_members: list[dict] = []
     for g in merging:
@@ -148,11 +150,10 @@ def merge_groups(groups: list[dict], group_ids: list[str], canonical_name: str =
     merged_members = dedupe_members(combined_members)
     merged_name = (canonical_name or "").strip() or keep.get("canonical_name", "")
 
-    merge_set = set(ids)
     result = []
     for g in groups:
         gid = g.get("id")
-        if gid == keep.get("id"):
+        if gid == keep_id:
             new_g = dict(g)
             new_g["members"] = merged_members
             new_g["canonical_name"] = merged_name
