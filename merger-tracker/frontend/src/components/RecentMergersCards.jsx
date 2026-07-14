@@ -71,6 +71,11 @@ function RecentMergersCards({ mergers }) {
                 Waiver
               </span>
             )}
+            {merger.is_refiled && (
+              <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
+                Refiled
+              </span>
+            )}
           </MergerCardBody>
         )}
       />

@@ -9,6 +9,11 @@ from ..durations import collect_phase_1_durations, collect_waiver_durations
 from ..enrichment import is_phase_2_referral_event
 from ..filters import filter_notifications, filter_waivers
 
+# Relationship values (see static_data/loaders.py) where the current merger is
+# the later, re-filed matter — i.e. it's worth flagging as a re-file to a
+# reader browsing recently notified mergers.
+REFILED_RELATIONSHIPS = {'refiled_from', 'suspended_refiled_from'}
+
 
 def generate(mergers: list) -> dict:
     """Return the stats.json payload for pre-enriched mergers."""
@@ -102,6 +107,7 @@ def generate(mergers: list) -> dict:
             "accc_determination": m.get('accc_determination'),
             "effective_notification_datetime": m.get('effective_notification_datetime'),
             "is_waiver": m.get('is_waiver', False),
+            "is_refiled": (m.get('related_merger') or {}).get('relationship') in REFILED_RELATIONSHIPS,
         }
         for m in sorted_mergers[:12]
     ]
