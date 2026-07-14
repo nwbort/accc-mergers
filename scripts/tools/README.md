@@ -36,7 +36,11 @@ canonical *groups*. Reads every acquirer/target/other party across
 `data/processed/mergers.json`, shows which are already grouped and which are
 still ungrouped, and lets you select ungrouped parties to form a new group or
 fold into an existing one (plus rename/delete groups and remove members).
-Writes back to `data/processed/related_parties.json`.
+Both the ungrouped-party list and the canonical-groups list have their own
+search box (name, ABN, or group id). You can also select two or more
+canonical groups (checkbox on each card) and **merge** them into one — members
+are combined and de-duplicated, and you're prompted for the merged canonical
+name. Writes back to `data/processed/related_parties.json`.
 
 This is the hand-editing counterpart to `scripts/detect_related_parties.py`,
 which suggests new groups daily via a pull request. The grouping rules — how a
@@ -48,6 +52,23 @@ merger detail page links to the register filtered by the group's canonical name.
 python scripts/tools/related_parties.py
 # open http://127.0.0.1:8003
 ```
+
+To find *existing* canonical groups that look like the same entity and are
+candidates to merge (e.g. two groups recorded separately before anyone
+noticed they were the same company), run the detector in group-merge mode:
+
+```bash
+python scripts/detect_related_parties.py --group-merge-candidates
+```
+
+This clusters every member across all recorded groups using the same
+identifier/name/name-variant/fuzzy signals as the normal detector, and reports
+clusters that span more than one group id. As with the normal detector, the
+`fuzzy` signal is the weakest — it clusters merely similar names sharing a
+distinctive token, which can produce false positives (e.g. two unrelated
+companies that each have a subsidiary named "... Operations Pty Ltd"), so
+treat fuzzy hits as leads to check by hand in the tool, not groups to merge
+automatically.
 
 ## `advisors.py`
 
