@@ -90,6 +90,21 @@
       "count": 3
     },
     {
+      "acquirer_name": "Salesforce, Inc",
+      "canonical_id": null,
+      "anzsic_code": "700",
+      "anzsic_name": "Computer System Design and Related Services",
+      "merger_ids": [
+        "MN-85007",
+        "MN-95025"
+      ],
+      "dates": [
+        "2026-02-19T12:00:00Z",
+        "2026-07-13T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
       "acquirer_name": "Experience Co Limited",
       "canonical_id": "experience-co-limited",
       "anzsic_code": "482",
@@ -315,5 +330,5 @@
       "count": 2
     }
   ],
-  "count": 20
+  "count": 21
 }

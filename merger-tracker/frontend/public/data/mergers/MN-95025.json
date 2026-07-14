@@ -1,0 +1,155 @@
+{
+  "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/salesforce-contentful",
+  "merger_name": "Salesforce - Contentful",
+  "status": "Under assessment",
+  "merger_id": "MN-95025",
+  "effective_notification_datetime": "2026-07-13T12:00:00Z",
+  "original_notification_datetime": "2026-07-13T12:00:00Z",
+  "stage": "Phase 1 - initial assessment",
+  "end_of_determination_period": "2026-08-24T12:00:00Z",
+  "page_modified_datetime": "2026-07-14T11:20:05+10:00",
+  "consultation_response_due_date": "2026-07-20T12:00:00Z",
+  "acquirers": [
+    {
+      "name": "Salesforce, Inc.",
+      "identifier_type": null,
+      "identifier": "U.S. EIN: 943320693",
+      "party_page": {
+        "id": "salesforce-inc",
+        "name": "Salesforce, Inc."
+      }
+    }
+  ],
+  "targets": [
+    {
+      "name": "Contentful Global, Inc.",
+      "identifier_type": null,
+      "identifier": "U.S. EIN: 862273457",
+      "party_page": {
+        "id": "contentful-global-inc",
+        "name": "Contentful Global, Inc."
+      }
+    }
+  ],
+  "other_parties": [],
+  "anzsic_codes": [
+    {
+      "code": "7000",
+      "name": "Computer System Design and Related Services"
+    }
+  ],
+  "merger_description": "Salesforce, Inc. (**Salesforce**) proposes to acquire 100% of the shares in Contentful Global, Inc. (**Contentful**).\n\nSalesforce is a global supplier of customer relationship management (**CRM**) software and other software-as-a-service solutions that enable companies to manage their relationships with customers. Salesforce\u2019s CRM platform assists users with sales, service, marketing and commerce functions.\n\nContentful is a global supplier of digital experience software, specifically, a content management system (**CMS**). Contentful\u2019s CMS is used by businesses to create, edit, organise and publish a company's digital content across various channels and platforms via Application Programming Interfaces (**API**). Contentful provides a 'headless' CMS product, meaning it stores and manages an organisation's content separately from the system that displays the content to the end user.",
+  "events": [
+    {
+      "date": "2026-07-14T12:00:00Z",
+      "title": "Questionnaire - Salesforce Contentful",
+      "display_title": "Questionnaire - Salesforce Contentful",
+      "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Salesforce%20-%20Contentful.docx",
+      "url_gh": "/mergers/MN-95025/Questionnaire - Salesforce - Contentful.pdf",
+      "status": "live",
+      "phase": null
+    },
+    {
+      "date": "2026-07-13T12:00:00Z",
+      "title": "Merger notified to ACCC",
+      "display_title": "Merger notified to ACCC",
+      "phase": "Phase 1"
+    }
+  ],
+  "is_waiver": false,
+  "accc_determination": null,
+  "has_conditions": false,
+  "phase_1_determination": null,
+  "phase_1_determination_date": null,
+  "phase_2_determination": null,
+  "phase_2_determination_date": null,
+  "public_benefits_determination": null,
+  "public_benefits_determination_date": null,
+  "has_questionnaire": true,
+  "similar_mergers": [
+    {
+      "merger_id": "MN-85007",
+      "merger_name": "Salesforce \u2013 Qualified",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "acquirers": [
+        {
+          "name": "Salesforce, Inc",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "salesforce-inc-2",
+            "name": "Salesforce, Inc"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Qualified.com, Inc",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "qualified-com-inc",
+            "name": "Qualified.com, Inc"
+          }
+        }
+      ]
+    },
+    {
+      "merger_id": "WA-35003",
+      "merger_name": "Salesforce \u2013 Qualified",
+      "status": "Assessment completed",
+      "accc_determination": "Not approved",
+      "acquirers": [
+        {
+          "name": "Salesforce, Inc",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "salesforce-inc-2",
+            "name": "Salesforce, Inc"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Qualified.com, Inc",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "qualified-com-inc",
+            "name": "Qualified.com, Inc"
+          }
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-85036",
+      "merger_name": "SpaceX - Anysphere",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "acquirers": [
+        {
+          "name": "Space Exploration Technologies Corp.",
+          "identifier_type": null,
+          "identifier": "NASDAQ  SPCX",
+          "party_page": {
+            "id": "space-exploration-technologies-corp",
+            "name": "Space Exploration Technologies Corp."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Anysphere, Inc.",
+          "identifier_type": null,
+          "identifier": "Delaware File Number  6524309",
+          "party_page": {
+            "id": "anysphere-inc",
+            "name": "Anysphere, Inc."
+          }
+        }
+      ]
+    }
+  ]
+}

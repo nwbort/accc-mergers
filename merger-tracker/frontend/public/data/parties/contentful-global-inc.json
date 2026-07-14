@@ -1,15 +1,16 @@
 {
-  "id": "salesforce-inc",
-  "canonical_name": "Salesforce, Inc.",
+  "id": "contentful-global-inc",
+  "canonical_name": "Contentful Global, Inc.",
   "members": [
     {
-      "name": "Salesforce, Inc.",
-      "identifier": "U.S. EIN: 943320693",
+      "name": "Contentful Global, Inc.",
+      "identifier": "U.S. EIN: 862273457",
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [
+    "acquirer": [],
+    "target": [
       {
         "merger_id": "MN-95025",
         "merger_name": "Salesforce - Contentful",
@@ -22,7 +23,6 @@
         "determination_date": null
       }
     ],
-    "target": [],
     "other": []
   },
   "merger_count": 1,
