@@ -393,6 +393,56 @@ def build_candidate(
     }
 
 
+def find_group_merge_candidates(
+    groups: list[dict],
+    fuzzy_threshold: float = DEFAULT_FUZZY_THRESHOLD,
+    enable_fuzzy: bool = True,
+) -> list[dict]:
+    """Find existing canonical groups that look like the same real-world
+    entity and should be merged into one.
+
+    Where ``find_candidates`` clusters *ungrouped* parties, this clusters
+    every member across *all* recorded groups using the same matching rules
+    and reports clusters that span more than one group id — i.e. the same
+    identifier/name/fuzzy match shows up under two different canonical
+    groups, most often because they were recorded separately before either
+    was noticed to be the same entity.
+    """
+    records: list[PartyRecord] = []
+    owners: list[str] = []
+    for g in groups:
+        gid = g.get("id", "")
+        for m in g.get("members", []):
+            name = (m.get("name") or "").strip()
+            identifier = (m.get("identifier") or "").strip()
+            if not normalise_name(name) and not normalise_identifier(identifier):
+                continue
+            records.append(PartyRecord(name, identifier))
+            owners.append(gid)
+
+    components, link_signals = _cluster(records, fuzzy_threshold, enable_fuzzy)
+    by_id = {g.get("id"): g for g in groups}
+
+    candidates: list[dict] = []
+    for members in components:
+        group_ids = sorted({owners[i] for i in members})
+        if len(group_ids) < 2:
+            continue  # cluster is entirely within one group already
+        signal = _component_signal(members, link_signals)
+        candidates.append({
+            "group_ids": group_ids,
+            "groups": [
+                {"id": gid, "canonical_name": by_id[gid].get("canonical_name", "")}
+                for gid in group_ids
+            ],
+            "signal": signal,
+            "score": _SIGNAL_SCORES[signal],
+        })
+
+    candidates.sort(key=lambda c: (-c["score"], c["group_ids"]))
+    return candidates
+
+
 def find_candidates(
     mergers: list[dict],
     groups: list[dict],
@@ -490,6 +540,18 @@ def print_summary(candidates: list[dict]) -> None:
         print()
 
 
+def print_group_merge_summary(candidates: list[dict]) -> None:
+    if not candidates:
+        print("No candidate group merges found.")
+        return
+    print(f"Found {len(candidates)} group(s) that look like the same entity:")
+    print()
+    for c in candidates:
+        names = " / ".join(f"{g['canonical_name']} ({g['id']})" for g in c["groups"])
+        print(f"  {names}  (score {c['score']:.2f}, {c['signal']})")
+    print()
+
+
 def build_pr_body(candidates: list[dict], date: str) -> str:
     """Build a markdown PR body recommending the candidate groups."""
     lines = [
@@ -568,6 +630,11 @@ def main() -> int:
         "--pr-markdown", type=Path, default=None, dest="pr_markdown",
         help="Write a PR body (markdown) recommending the candidates to this path",
     )
+    parser.add_argument(
+        "--group-merge-candidates", action="store_true", dest="group_merge_candidates",
+        help="Instead of detecting new groups, find existing groups in --parties "
+        "that look like the same entity and should be merged (see related_parties.py)",
+    )
     args = parser.parse_args()
 
     if not args.mergers.exists():
@@ -582,6 +649,18 @@ def main() -> int:
     if args.parties.exists():
         with args.parties.open() as fh:
             groups = json.load(fh).get("groups", [])
+
+    if args.group_merge_candidates:
+        merge_candidates = find_group_merge_candidates(groups, args.fuzzy_threshold)
+        print_group_merge_summary(merge_candidates)
+        if args.json:
+            args.json.parent.mkdir(parents=True, exist_ok=True)
+            with args.json.open("w") as fh:
+                json.dump(
+                    {"count": len(merge_candidates), "candidates": merge_candidates},
+                    fh, indent=2,
+                )
+        return 1 if merge_candidates else 0
 
     candidates = find_candidates(mergers, groups, args.fuzzy_threshold, args.fuzzy)
 

@@ -13,6 +13,8 @@ import os
 import sys
 import unittest.mock
 
+import pytest
+
 # Add scripts directory to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
@@ -88,6 +90,75 @@ def test_match_party_prefers_identifier_then_name():
     )["id"] == "coles"
     # No match
     assert pm.match_party({"name": "Woolworths", "identifier": ""}, by_id, by_name) is None
+
+
+def test_dedupe_members_drops_normalised_duplicates_keeping_first_display_form():
+    members = [
+        {"name": "COLES GROUP LIMITED", "identifier": "11 004 089 936"},
+        {"name": "Coles Group Limited", "identifier": "11004089936"},  # same, different casing/spacing
+        {"name": "COLES SUPERMARKETS AUSTRALIA PTY LTD", "identifier": ""},
+    ]
+    out = pm.dedupe_members(members)
+    assert out == [
+        {"name": "COLES GROUP LIMITED", "identifier": "11 004 089 936"},
+        {"name": "COLES SUPERMARKETS AUSTRALIA PTY LTD", "identifier": ""},
+    ]
+
+
+def test_merge_groups_combines_members_and_dedupes():
+    groups = [
+        {
+            "id": "coles",
+            "canonical_name": "Coles Group",
+            "members": [{"name": "COLES GROUP LIMITED", "identifier": "11 004 089 936"}],
+        },
+        {
+            "id": "coles-2",
+            "canonical_name": "Coles Supermarkets",
+            "members": [
+                {"name": "COLES SUPERMARKETS AUSTRALIA PTY LTD", "identifier": "45 004 189 708"},
+                {"name": "COLES GROUP LIMITED", "identifier": "11 004 089 936"},  # duplicate
+            ],
+        },
+        {
+            "id": "woolworths",
+            "canonical_name": "Woolworths Group",
+            "members": [{"name": "WOOLWORTHS GROUP LIMITED", "identifier": "88 000 014 675"}],
+        },
+    ]
+    merged = pm.merge_groups(groups, ["coles", "coles-2"])
+    ids = [g["id"] for g in merged]
+    assert ids == ["coles", "woolworths"]  # first-listed id kept, other dropped, rest untouched
+    kept = next(g for g in merged if g["id"] == "coles")
+    assert kept["canonical_name"] == "Coles Group"  # default: kept group's own name
+    assert kept["members"] == [
+        {"name": "COLES GROUP LIMITED", "identifier": "11 004 089 936"},
+        {"name": "COLES SUPERMARKETS AUSTRALIA PTY LTD", "identifier": "45 004 189 708"},
+    ]
+    # Original list is untouched.
+    assert len(groups) == 3
+
+
+def test_merge_groups_accepts_custom_canonical_name():
+    groups = [
+        {"id": "a", "canonical_name": "A", "members": [{"name": "A Pty Ltd", "identifier": "1"}]},
+        {"id": "b", "canonical_name": "B", "members": [{"name": "B Pty Ltd", "identifier": "2"}]},
+    ]
+    merged = pm.merge_groups(groups, ["a", "b"], canonical_name="A and B Combined")
+    assert len(merged) == 1
+    assert merged[0]["canonical_name"] == "A and B Combined"
+
+
+def test_merge_groups_requires_two_distinct_ids():
+    groups = [{"id": "a", "canonical_name": "A", "members": []}]
+    with pytest.raises(ValueError):
+        pm.merge_groups(groups, ["a"])
+
+
+def test_merge_groups_raises_on_unknown_id():
+    groups = [{"id": "a", "canonical_name": "A", "members": []}]
+    with pytest.raises(KeyError):
+        pm.merge_groups(groups, ["a", "missing"])
 
 
 # ---------------------------------------------------------------------------
@@ -294,6 +365,43 @@ def test_apply_suggestions_appends_groups(tmp_path):
     assert data["groups"][0]["id"] == "old-name-pty-ltd"
     # merger_count / merger_ids are stripped from the stored members
     assert data["groups"][0]["members"][0] == {"name": "Old Name Pty Ltd", "identifier": "12 345 678 901"}
+
+
+def test_find_group_merge_candidates_flags_groups_sharing_an_identifier():
+    groups = [
+        {
+            "id": "old-name",
+            "canonical_name": "Old Name",
+            "members": [{"name": "Old Name Pty Ltd", "identifier": "12 345 678 901"}],
+        },
+        {
+            "id": "new-name",
+            "canonical_name": "New Name",
+            "members": [{"name": "New Name Pty Ltd", "identifier": "12 345 678 901"}],
+        },
+    ]
+    candidates = drp.find_group_merge_candidates(groups, enable_fuzzy=False)
+    assert len(candidates) == 1
+    c = candidates[0]
+    assert c["group_ids"] == ["new-name", "old-name"]
+    assert c["signal"] == "identifier"
+    assert {g["canonical_name"] for g in c["groups"]} == {"Old Name", "New Name"}
+
+
+def test_find_group_merge_candidates_ignores_clusters_within_one_group():
+    groups = [{
+        "id": "coles",
+        "canonical_name": "Coles Group",
+        "members": [
+            {"name": "COLES GROUP LIMITED", "identifier": "11 004 089 936"},
+            {"name": "Coles Group Limited", "identifier": "11 004 089 936"},
+        ],
+    }]
+    assert drp.find_group_merge_candidates(groups, enable_fuzzy=False) == []
+
+
+def test_find_group_merge_candidates_no_groups_is_noop():
+    assert drp.find_group_merge_candidates([], enable_fuzzy=False) == []
 
 
 def test_generated_ids_are_unique():

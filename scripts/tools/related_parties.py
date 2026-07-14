@@ -38,7 +38,14 @@ from detect_related_parties import (
     _title_case_name,
     collect_party_records,
 )
-from party_matching import build_group_lookups, match_party, normalise_identifier, normalise_name
+from party_matching import (
+    build_group_lookups,
+    dedupe_members,
+    match_party,
+    merge_groups,
+    normalise_identifier,
+    normalise_name,
+)
 from slug import slugify
 
 app = FastAPI()
@@ -87,24 +94,6 @@ def _new_group_id(canonical_name: str, existing_ids: set[str]) -> str:
         slug = f"{base}-{n}"
         n += 1
     return slug
-
-
-def _dedupe_members(members: list[dict]) -> list[dict]:
-    """Drop exact duplicate (normalised name, normalised identifier) members,
-    keeping the first display form seen."""
-    seen: set[tuple[str, str]] = set()
-    out: list[dict] = []
-    for m in members:
-        name = (m.get("name") or "").strip()
-        identifier = (m.get("identifier") or "").strip()
-        if not name and not identifier:
-            continue
-        key = (normalise_name(name), normalise_identifier(identifier))
-        if key in seen:
-            continue
-        seen.add(key)
-        out.append({"name": name, "identifier": identifier})
-    return out
 
 
 # ---------------------------------------------------------------------------
@@ -194,6 +183,11 @@ class RemoveMember(BaseModel):
     index: int
 
 
+class MergeGroups(BaseModel):
+    group_ids: list[str]
+    canonical_name: str = ""
+
+
 # ---------------------------------------------------------------------------
 # API endpoints
 # ---------------------------------------------------------------------------
@@ -210,7 +204,7 @@ def get_state() -> dict:
 
 @app.post("/api/groups")
 def create_group(req: CreateGroup) -> dict:
-    members = _dedupe_members([m.model_dump() for m in req.members])
+    members = dedupe_members([m.model_dump() for m in req.members])
     if not members:
         raise HTTPException(status_code=400, detail="A group needs at least one member.")
 
@@ -237,7 +231,7 @@ def add_members(group_id: str, req: AddMembers) -> dict:
     doc = load_parties_doc()
     group = _find_group(doc, group_id)
     combined = list(group.get("members", [])) + [m.model_dump() for m in req.members]
-    group["members"] = _dedupe_members(combined)
+    group["members"] = dedupe_members(combined)
     save_parties_doc(doc)
     return {"status": "success", "group": group}
 
@@ -267,6 +261,20 @@ def remove_member(group_id: str, req: RemoveMember) -> dict:
         doc["groups"] = [g for g in doc["groups"] if g.get("id") != group_id]
     save_parties_doc(doc)
     return {"status": "success"}
+
+
+@app.post("/api/groups/merge")
+def merge_groups_endpoint(req: MergeGroups) -> dict:
+    if len(set(req.group_ids)) < 2:
+        raise HTTPException(status_code=400, detail="Select at least two different groups to merge.")
+    doc = load_parties_doc()
+    try:
+        doc["groups"] = merge_groups(doc["groups"], req.group_ids, req.canonical_name)
+    except KeyError as exc:
+        raise HTTPException(status_code=404, detail=exc.args[0])
+    save_parties_doc(doc)
+    kept_id = req.group_ids[0]
+    return {"status": "success", "group": _find_group(doc, kept_id)}
 
 
 @app.delete("/api/groups/{group_id}")
@@ -325,7 +333,16 @@ HTML_CONTENT = """
 
         <!-- Existing groups -->
         <div>
-            <h2 class="text-xl font-bold text-gray-900 mb-2 sticky top-0 bg-gray-50 pt-1 pb-3 z-10">Canonical groups</h2>
+            <div class="sticky top-0 bg-gray-50 pt-1 pb-3 z-10">
+                <h2 class="text-xl font-bold text-gray-900 mb-2">Canonical groups</h2>
+                <input id="group-search" oninput="renderGroups()" placeholder="Search canonical name, member or ABN..."
+                    class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent" />
+                <div id="group-selection-bar" class="hidden mt-3 flex items-center gap-3 bg-brand text-white px-4 py-2 rounded">
+                    <span id="group-selection-count" class="text-sm font-medium"></span>
+                    <button onclick="mergeSelectedGroups()" class="text-sm bg-accent hover:bg-emerald-600 px-3 py-1.5 rounded font-medium transition-colors">Merge</button>
+                    <button onclick="clearGroupSelection()" class="text-sm bg-white/20 hover:bg-white/30 px-3 py-1.5 rounded transition-colors">Clear</button>
+                </div>
+            </div>
             <div id="groups" class="space-y-4"></div>
         </div>
     </div>
@@ -333,7 +350,8 @@ HTML_CONTENT = """
 
 <script>
 let STATE = { groups: [], ungrouped: [], merger_names: {}, counts: {} };
-const selected = new Map();   // key -> { name, identifier }
+const selected = new Map();       // key -> { name, identifier }
+const selectedGroups = new Map(); // group id -> canonical_name
 
 function partyKey(p) { return p.name + '\\u0000' + (p.identifier || ''); }
 function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -349,10 +367,14 @@ async function load() {
     // Drop any selections that are no longer ungrouped (e.g. just got grouped).
     const valid = new Set(STATE.ungrouped.map(partyKey));
     for (const k of [...selected.keys()]) if (!valid.has(k)) selected.delete(k);
+    // Drop any group selections that no longer exist (e.g. just got merged).
+    const validGroups = new Set(STATE.groups.map(g => g.id));
+    for (const k of [...selectedGroups.keys()]) if (!validGroups.has(k)) selectedGroups.delete(k);
     renderStats();
     renderUngrouped();
     renderGroups();
     renderSelectionBar();
+    renderGroupSelectionBar();
 }
 
 function renderStats() {
@@ -455,19 +477,39 @@ function titleCase(s) {
     return s;
 }
 
+function groupMatches(g, q) {
+    if (!q) return true;
+    if (g.canonical_name.toLowerCase().includes(q)) return true;
+    if (g.id.toLowerCase().includes(q)) return true;
+    return g.members.some(m =>
+        m.name.toLowerCase().includes(q) || (m.identifier || '').toLowerCase().includes(q));
+}
+
 function renderGroups() {
     const container = document.getElementById('groups');
     if (STATE.groups.length === 0) {
         container.innerHTML = '<div class="p-4 bg-white rounded border border-gray-200 text-gray-400 text-sm">No groups yet. Select parties on the left to create one.</div>';
         return;
     }
-    container.innerHTML = STATE.groups.map(g => `
-        <div class="bg-white rounded-lg shadow-sm border-t-4 border-brand p-4">
+    const q = document.getElementById('group-search').value.trim().toLowerCase();
+    const list = STATE.groups.filter(g => groupMatches(g, q));
+    if (list.length === 0) {
+        container.innerHTML = '<div class="p-4 bg-white rounded border border-gray-200 text-gray-400 text-sm">No matching groups.</div>';
+        return;
+    }
+    container.innerHTML = list.map(g => {
+        const isSel = selectedGroups.has(g.id);
+        return `
+        <div class="bg-white rounded-lg shadow-sm border-t-4 ${isSel ? 'border-accent ring-1 ring-accent' : 'border-brand'} p-4">
             <div class="flex items-start justify-between gap-3 mb-3">
-                <div class="min-w-0">
-                    <div class="text-lg font-bold text-gray-900 break-words">${esc(g.canonical_name)}</div>
-                    <div class="text-xs text-gray-400 font-mono">${esc(g.id)} &middot; ${g.merger_count} merger${g.merger_count === 1 ? '' : 's'}</div>
-                </div>
+                <label class="flex items-start gap-2 min-w-0 cursor-pointer">
+                    <input type="checkbox" ${isSel ? 'checked' : ''} onchange="toggleGroupSelect(this, '${esc(g.id)}', ${JSON.stringify(g.canonical_name).replace(/"/g, '&quot;')})"
+                        class="mt-1.5 h-4 w-4 accent-brand shrink-0" />
+                    <div class="min-w-0">
+                        <div class="text-lg font-bold text-gray-900 break-words">${esc(g.canonical_name)}</div>
+                        <div class="text-xs text-gray-400 font-mono">${esc(g.id)} &middot; ${g.merger_count} merger${g.merger_count === 1 ? '' : 's'}</div>
+                    </div>
+                </label>
                 <div class="flex gap-2 shrink-0">
                     <button onclick="renameGroup('${esc(g.id)}', ${JSON.stringify(g.canonical_name).replace(/"/g, '&quot;')})"
                         class="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded transition-colors">Rename</button>
@@ -490,7 +532,38 @@ function renderGroups() {
                 class="w-full text-sm bg-brand/5 text-brand hover:bg-brand hover:text-white border border-brand/20 px-3 py-1.5 rounded font-medium transition-colors">
                 + Add selected party(s)
             </button>
-        </div>`).join('');
+        </div>`;
+    }).join('');
+}
+
+function toggleGroupSelect(cb, id, name) {
+    if (cb.checked) selectedGroups.set(id, name);
+    else selectedGroups.delete(id);
+    renderGroups();
+    renderGroupSelectionBar();
+}
+
+function clearGroupSelection() { selectedGroups.clear(); renderGroups(); renderGroupSelectionBar(); }
+
+function renderGroupSelectionBar() {
+    const bar = document.getElementById('group-selection-bar');
+    if (selectedGroups.size < 2) { bar.classList.add('hidden'); return; }
+    bar.classList.remove('hidden');
+    document.getElementById('group-selection-count').textContent =
+        `${selectedGroups.size} groups selected`;
+}
+
+async function mergeSelectedGroups() {
+    const ids = [...selectedGroups.keys()];
+    if (ids.length < 2) return;
+    const names = [...selectedGroups.values()];
+    const def = names[0];
+    const name = prompt(`Canonical name for the merged group of ${ids.length} (${names.join(', ')}):`, def);
+    if (name === null) return;
+    if (!confirm(`Merge ${ids.length} groups into "${name.trim() || def}"? This cannot be undone.`)) return;
+    await api('/api/groups/merge', 'POST', { group_ids: ids, canonical_name: name.trim() });
+    selectedGroups.clear();
+    await load();
 }
 
 async function renameGroup(id, current) {
