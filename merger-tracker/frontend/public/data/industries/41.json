@@ -30,17 +30,6 @@
   ],
   "mergers": [
     {
-      "merger_id": "MN-70022",
-      "merger_name": "Coles \u2013 supermarket site in Coffs Harbour (NSW)",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-06-23T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
       "is_waiver": false,
@@ -50,6 +39,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-05-21T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "MN-70022",
+      "merger_name": "Coles \u2013 supermarket site in Coffs Harbour (NSW)",
+      "is_waiver": false,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-06-23T12:00:00Z",
+      "determination_date": "2026-07-14T12:00:00Z"
     },
     {
       "merger_id": "MN-50027",
@@ -276,13 +276,13 @@
   "phase_1_count": 7,
   "phase_2_count": 2,
   "waiver_count": 13,
-  "active_count": 2,
+  "active_count": 1,
   "phase_duration": {
-    "average_days": 41.42857142857143,
+    "average_days": 38.875,
     "median_days": 27,
-    "average_business_days": 24.571428571428573,
+    "average_business_days": 23.375,
     "median_business_days": 18,
-    "completed_count": 7
+    "completed_count": 8
   },
   "waiver_duration": {
     "average_days": 18.384615384615383,

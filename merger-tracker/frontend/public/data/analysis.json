@@ -518,6 +518,11 @@
       },
       {
         "business_days": 15,
+        "calendar_days": 21,
+        "in_progress": false
+      },
+      {
+        "business_days": 15,
         "calendar_days": 22,
         "in_progress": false
       },
@@ -674,17 +679,17 @@
     ],
     "stats": {
       "average": 18.5,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 59,
-      "count": 129
+      "count": 130
     },
     "calendar_stats": {
-      "average": 28.4,
-      "median": 26,
+      "average": 28.3,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 129
+      "count": 130
     }
   },
   "waiver_duration": {
@@ -1827,11 +1832,11 @@
     {
       "code": "G",
       "name": "Retail Trade",
-      "average_business_days": 24.6,
-      "median_business_days": 18.0,
-      "average_calendar_days": 39.8,
-      "median_calendar_days": 27.5,
-      "count": 14
+      "average_business_days": 24.0,
+      "median_business_days": 18,
+      "average_calendar_days": 38.5,
+      "median_calendar_days": 27,
+      "count": 15
     },
     {
       "code": "I",
@@ -1981,11 +1986,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 292,
+      "count": 293,
       "outcome_mix": {
-        "Approved": 292
+        "Approved": 293
       },
-      "median_phase_1_business_days": 16.0
+      "median_phase_1_business_days": 16
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -1999,9 +2004,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 42,
+      "count": 41,
       "outcome_mix": {
-        "Unknown": 42
+        "Unknown": 41
       },
       "median_phase_1_business_days": 36.5
     },
@@ -2033,7 +2038,7 @@
   ],
   "deadline_utilisation": {
     "histogram": {
-      "15": 34,
+      "15": 35,
       "16": 25,
       "17": 16,
       "18": 15,
@@ -2054,9 +2059,9 @@
     },
     "stats": {
       "mean_used_bd": 17.8,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 4.0,
-      "count": 125
+      "count": 126
     },
     "extended_count": 2
   },
@@ -2097,11 +2102,11 @@
     {
       "code": "G",
       "name": "Retail Trade",
-      "approved": 11,
+      "approved": 12,
       "not_approved": 0,
       "referred": 3,
-      "in_progress": 3,
-      "phase2_referral_rate": 0.214
+      "in_progress": 2,
+      "phase2_referral_rate": 0.2
     },
     {
       "code": "L",
