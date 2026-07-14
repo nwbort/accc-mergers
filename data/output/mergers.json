@@ -17451,6 +17451,11 @@
       "ceased_date": "2026-06-15T12:00:00Z",
       "competition_concerns_notice_date": "2026-07-08T12:00:00Z",
       "has_questionnaire": true,
+      "related_merger": {
+        "merger_id": "MN-90028",
+        "relationship": "suspended_refiled_as",
+        "merger_name": "Peter Warren - Wakeling Automotive"
+      },
       "similar_mergers": [
         {
           "merger_id": "MN-90006",
@@ -43872,44 +43877,12 @@
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
       "has_questionnaire": true,
+      "related_merger": {
+        "merger_id": "MN-30002",
+        "relationship": "suspended_refiled_from",
+        "merger_name": "Peter Warren - Wakeling Automotive"
+      },
       "similar_mergers": [
-        {
-          "merger_id": "MN-30002",
-          "merger_name": "Peter Warren - Wakeling Automotive",
-          "status": "Assessment ceased",
-          "accc_determination": null,
-          "acquirers": [
-            {
-              "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
-              "identifier_type": "ABN",
-              "identifier": "57 615 674 185",
-              "party_page": {
-                "id": "peter-warren-automotive-holdings-limited",
-                "name": "Peter Warren Automotive Holdings Limited"
-              }
-            }
-          ],
-          "targets": [
-            {
-              "name": "Paul Wakeling Motor Group Pty Ltd",
-              "identifier_type": "ABN",
-              "identifier": "47 119 908 780",
-              "party_page": {
-                "id": "paul-wakeling-motor-group-pty-ltd",
-                "name": "Paul Wakeling Motor Group Pty Ltd"
-              }
-            },
-            {
-              "name": "WOLLONGONG CITY MOTORS PTY LTD",
-              "identifier_type": "ABN",
-              "identifier": "22 002 019 598",
-              "party_page": {
-                "id": "wollongong-city-motors-pty-ltd",
-                "name": "Wollongong City Motors Pty Ltd"
-              }
-            }
-          ]
-        },
         {
           "merger_id": "WA-30010",
           "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
