@@ -267,7 +267,7 @@ export default function CommandPalette({ isOpen, onClose }) {
           id="command-palette-listbox"
           role="listbox"
           aria-label="Command palette results"
-          className="max-h-80 overflow-y-auto py-2"
+          className="max-h-[356px] overflow-y-auto py-2"
         >
           {noResults && (
             <li className="px-4 py-6 text-sm text-gray-400 text-center" role="presentation">
