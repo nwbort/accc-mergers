@@ -11,12 +11,35 @@
       "name": "Henkel AG & Co. KGaA",
       "identifier": "HRB  4724",
       "identifier_type": null
+    },
+    {
+      "name": "Henkel Australia Pty Ltd",
+      "identifier": "82 001 302 996",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "Henkel Finance Australia L.P.",
+      "identifier": "15 740 196 765",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "Henkel Ireland Distribution Limited",
+      "identifier": "Ireland registration number: 430837",
+      "identifier_type": null
+    },
+    {
+      "name": "Henkel Singapore Pte Ltd",
+      "identifier": "Singapore registration number (UEN): 198304615H",
+      "identifier_type": null
+    },
+    {
+      "name": "Henkel US Operations Corporation",
+      "identifier": "Delaware registration number: 740913",
+      "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
         "merger_id": "MN-80016",
         "merger_name": "Henkel \u2013 Olaplex",
@@ -27,7 +50,10 @@
         "phase": "Phase 1",
         "notification_date": "2026-05-26T12:00:00Z",
         "determination_date": "2026-06-22T12:00:00Z"
-      },
+      }
+    ],
+    "target": [],
+    "other": [
       {
         "merger_id": "WA-45007",
         "merger_name": "Henkel \u2013 Stahl",
