@@ -1,10 +1,10 @@
 {
-  "total_mergers": 174,
+  "total_mergers": 175,
   "total_waivers": 267,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 130,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 2
   },
   "by_determination": {
@@ -93,6 +93,14 @@
       "is_waiver": false
     },
     {
+      "merger_id": "MN-90028",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-13T12:00:00Z",
+      "is_waiver": false
+    },
+    {
       "merger_id": "MN-95025",
       "merger_name": "Salesforce - Contentful",
       "status": "Under assessment",
@@ -170,14 +178,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-03T12:00:00Z",
-      "is_waiver": false
-    },
-    {
-      "merger_id": "MN-35018",
-      "merger_name": "Hewitt \u2013 Nolan Meats",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-01T12:00:00Z",
       "is_waiver": false
     }
   ],

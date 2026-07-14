@@ -24,7 +24,7 @@
       "code": "3911",
       "name": "Car Retailing",
       "level": "class",
-      "merger_count": 11
+      "merger_count": 12
     },
     {
       "code": "3912",
@@ -40,6 +40,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-90028",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-13T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "WA-45016",
       "merger_name": "Northstar \u2013 business assets of Mildura Mazda",
@@ -162,11 +173,11 @@
       "determination_date": null
     }
   ],
-  "count": 11,
-  "phase_1_count": 2,
+  "count": 12,
+  "phase_1_count": 3,
   "phase_2_count": 1,
   "waiver_count": 8,
-  "active_count": 0,
+  "active_count": 1,
   "phase_duration": {
     "average_days": 50.666666666666664,
     "median_days": 35,

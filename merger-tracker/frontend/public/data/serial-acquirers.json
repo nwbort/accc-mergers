@@ -90,6 +90,51 @@
       "count": 3
     },
     {
+      "acquirer_name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
+      "canonical_id": null,
+      "anzsic_code": "391",
+      "anzsic_name": "Motor Vehicle Retailing",
+      "merger_ids": [
+        "MN-30002",
+        "MN-90028"
+      ],
+      "dates": [
+        "2026-03-05T12:00:00Z",
+        "2026-07-13T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
+      "canonical_id": null,
+      "anzsic_code": "392",
+      "anzsic_name": "Motor Vehicle Parts and Tyre Retailing",
+      "merger_ids": [
+        "MN-30002",
+        "MN-90028"
+      ],
+      "dates": [
+        "2026-03-05T12:00:00Z",
+        "2026-07-13T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
+      "canonical_id": null,
+      "anzsic_code": "941",
+      "anzsic_name": "Automotive Repair and Maintenance",
+      "merger_ids": [
+        "MN-30002",
+        "MN-90028"
+      ],
+      "dates": [
+        "2026-03-05T12:00:00Z",
+        "2026-07-13T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
       "acquirer_name": "Salesforce, Inc",
       "canonical_id": "salesforce-inc",
       "anzsic_code": "700",
@@ -360,5 +405,5 @@
       "count": 2
     }
   ],
-  "count": 23
+  "count": 26
 }
