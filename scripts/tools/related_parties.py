@@ -337,6 +337,10 @@ const selected = new Map();   // key -> { name, identifier }
 
 function partyKey(p) { return p.name + '\\u0000' + (p.identifier || ''); }
 function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+// Keys contain a NUL separator, which the browser's HTML parser mangles when it
+// round-trips through an inline event-handler attribute (innerHTML -> onchange="..."),
+// silently breaking the lookup. Percent-encode so only safe ASCII ever hits the attribute.
+function attrKey(key) { return encodeURIComponent(key).replace(/'/g, '%27'); }
 
 async function load() {
     document.getElementById('ungrouped').innerHTML = '<div class="text-gray-400">Loading...</div>';
@@ -380,8 +384,8 @@ function renderUngrouped() {
         const key = partyKey(p);
         const isSel = selected.has(key);
         return `<label class="flex items-start gap-3 bg-white p-3 rounded border ${isSel ? 'border-accent ring-1 ring-accent' : 'border-gray-200'} hover:shadow-sm cursor-pointer transition-all">
-            <input type="checkbox" ${isSel ? 'checked' : ''} onchange="toggleSelect(this, '${esc(key).replace(/'/g, "\\\\'")}')"
-                class="mt-1 h-4 w-4 accent-brand" data-key="${esc(key)}" />
+            <input type="checkbox" ${isSel ? 'checked' : ''} onchange="toggleSelect(this, '${attrKey(key)}')"
+                class="mt-1 h-4 w-4 accent-brand" data-key="${attrKey(key)}" />
             <div class="min-w-0 flex-1">
                 <div class="text-sm font-medium text-gray-900 break-words">${esc(p.name)}</div>
                 <div class="text-xs text-gray-500 mt-0.5">
@@ -397,6 +401,7 @@ function renderUngrouped() {
 function findUngrouped(key) { return STATE.ungrouped.find(p => partyKey(p) === key); }
 
 function toggleSelect(cb, key) {
+    key = decodeURIComponent(key);
     const p = findUngrouped(key);
     if (!p) return;
     if (cb.checked) selected.set(key, { name: p.name, identifier: p.identifier });
