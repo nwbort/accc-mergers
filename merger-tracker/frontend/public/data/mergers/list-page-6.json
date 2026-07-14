@@ -1886,9 +1886,13 @@
           "name": "NORTH QUEENSLAND REGIONAL ENERGY CO PTY LTD",
           "identifier_type": "ABN",
           "identifier": "99 695 814 101",
+          "canonical": {
+            "id": "north-queensland-regional-energy",
+            "name": "North Queensland Regional Energy"
+          },
           "party_page": {
-            "id": "north-queensland-regional-energy-co-pty-ltd",
-            "name": "North Queensland Regional Energy Co Pty Ltd"
+            "id": "north-queensland-regional-energy",
+            "name": "North Queensland Regional Energy"
           }
         },
         {
@@ -1917,9 +1921,13 @@
           "name": "North Queensland Regional Energy Trust",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "north-queensland-regional-energy",
+            "name": "North Queensland Regional Energy"
+          },
           "party_page": {
-            "id": "north-queensland-regional-energy-trust",
-            "name": "North Queensland Regional Energy Trust"
+            "id": "north-queensland-regional-energy",
+            "name": "North Queensland Regional Energy"
           }
         },
         {

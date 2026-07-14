@@ -1,6 +1,6 @@
 {
   "id": "zurich-assure-australia-pty-ltd",
-  "canonical_name": "Zurich Assure Australia Pty Ltd",
+  "canonical_name": "Zurich",
   "members": [
     {
       "name": "ZURICH ASSURE AUSTRALIA PTY LIMITED",
@@ -8,15 +8,98 @@
       "identifier_type": "ABN"
     },
     {
+      "name": "ZURICH AUSTRALIA LIMITED",
+      "identifier": "92 000 010 195",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "ZURICH AUSTRALIAN INSURANCE LIMITED",
+      "identifier": "13 000 296 640",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "ZURICH AUSTRALIAN INSURANCE PROPERTIES PTY LTD",
+      "identifier": "79 002 463 292",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "ZURICH AUSTRALIAN PROPERTY HOLDINGS PTY LTD",
+      "identifier": "91 620 869 230",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "ZURICH FINANCE (AUSTRALIA) LIMITED",
+      "identifier": "48 618 177 423",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "ZURICH FINANCIAL SERVICES AUSTRALIA LIMITED",
+      "identifier": "11 008 423 372",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
+      "identifier": "56 063 278 400",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "ZURICH SERVICES (AUSTRALIA) PTY LIMITED",
+      "identifier": "17 627 298 337",
+      "identifier_type": "ABN"
+    },
+    {
       "name": "Zurich Assure Australia Pty Ltd",
+      "identifier": null,
+      "identifier_type": null
+    },
+    {
+      "name": "Zurich Australia Insurance Limited",
+      "identifier": null,
+      "identifier_type": null
+    },
+    {
+      "name": "Zurich Australia Insurance Properties Pty Ltd",
+      "identifier": null,
+      "identifier_type": null
+    },
+    {
+      "name": "Zurich Australia Limited",
+      "identifier": null,
+      "identifier_type": null
+    },
+    {
+      "name": "Zurich Australian Property Holdings Pty Limited",
+      "identifier": null,
+      "identifier_type": null
+    },
+    {
+      "name": "Zurich Finance (Australia) Limited",
+      "identifier": null,
+      "identifier_type": null
+    },
+    {
+      "name": "Zurich Financial Services Australia Limited",
+      "identifier": null,
+      "identifier_type": null
+    },
+    {
+      "name": "Zurich Insurance Company Ltd",
+      "identifier": null,
+      "identifier_type": null
+    },
+    {
+      "name": "Zurich Insurance Group Ltd",
+      "identifier": null,
+      "identifier_type": null
+    },
+    {
+      "name": "Zurich Services (Australia) Pty Ltd",
       "identifier": null,
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
         "merger_id": "MN-30016",
         "merger_name": "Zurich - Beazley",
@@ -39,12 +122,26 @@
         "notification_date": "2026-04-21T12:00:00Z",
         "determination_date": "2026-05-14T12:00:00Z"
       }
-    ]
+    ],
+    "target": [
+      {
+        "merger_id": "WA-80006",
+        "merger_name": "Russell Investment Group \u2013 Zurich Investment Management",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-02-19T12:00:00Z",
+        "determination_date": "2026-03-12T12:00:00Z"
+      }
+    ],
+    "other": []
   },
-  "merger_count": 2,
+  "merger_count": 3,
   "phase_1_count": 2,
   "phase_2_count": 0,
-  "waiver_count": 0,
+  "waiver_count": 1,
   "active_count": 0,
   "phase_duration": {
     "average_days": 24.5,
@@ -53,5 +150,11 @@
     "median_business_days": 16,
     "completed_count": 2
   },
-  "waiver_duration": null
+  "waiver_duration": {
+    "average_days": 21.0,
+    "median_days": 21,
+    "average_business_days": 14.0,
+    "median_business_days": 14,
+    "completed_count": 1
+  }
 }

@@ -1,6 +1,6 @@
 {
   "id": "henkel-ag-co-kgaa",
-  "canonical_name": "Henkel AG & Co. KGaA",
+  "canonical_name": "Henkel",
   "members": [
     {
       "name": "Henkel AG & Co. KGaA",
@@ -21,6 +21,21 @@
       "name": "Henkel Finance Australia L.P.",
       "identifier": "15 740 196 765",
       "identifier_type": "ABN"
+    },
+    {
+      "name": "Henkel Global Supply Chain B.V.",
+      "identifier": "Netherlands registration number (KVK): 854017447; CCI 60683945",
+      "identifier_type": null
+    },
+    {
+      "name": "Henkel Global Supply Chain B.V.",
+      "identifier": "Netherlands registration number, 854017447, CCI 60683945",
+      "identifier_type": null
+    },
+    {
+      "name": "Henkel Global Supply Chain B.V.",
+      "identifier": "Netherlands registration number: 854017447, CCI 60683945",
+      "identifier_type": null
     },
     {
       "name": "Henkel Ireland Distribution Limited",
@@ -50,10 +65,7 @@
         "phase": "Phase 1",
         "notification_date": "2026-05-26T12:00:00Z",
         "determination_date": "2026-06-22T12:00:00Z"
-      }
-    ],
-    "target": [],
-    "other": [
+      },
       {
         "merger_id": "WA-45007",
         "merger_name": "Henkel \u2013 Stahl",
@@ -87,7 +99,9 @@
         "notification_date": "2026-01-19T12:00:00Z",
         "determination_date": "2026-02-05T12:00:00Z"
       }
-    ]
+    ],
+    "target": [],
+    "other": []
   },
   "merger_count": 4,
   "phase_1_count": 2,

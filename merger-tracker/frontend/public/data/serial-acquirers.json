@@ -210,6 +210,36 @@
       "count": 2
     },
     {
+      "acquirer_name": "Zurich",
+      "canonical_id": "zurich-assure-australia-pty-ltd",
+      "anzsic_code": "631",
+      "anzsic_name": "Life Insurance",
+      "merger_ids": [
+        "MN-55016",
+        "MN-30016"
+      ],
+      "dates": [
+        "2026-04-21T12:00:00Z",
+        "2026-05-22T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Zurich",
+      "canonical_id": "zurich-assure-australia-pty-ltd",
+      "anzsic_code": "632",
+      "anzsic_name": "Health and General Insurance",
+      "merger_ids": [
+        "MN-55016",
+        "MN-30016"
+      ],
+      "dates": [
+        "2026-04-21T12:00:00Z",
+        "2026-05-22T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
       "acquirer_name": "CSE-Global (Australia) Pty Ltd",
       "canonical_id": null,
       "anzsic_code": "349",
@@ -330,5 +360,5 @@
       "count": 2
     }
   ],
-  "count": 21
+  "count": 23
 }

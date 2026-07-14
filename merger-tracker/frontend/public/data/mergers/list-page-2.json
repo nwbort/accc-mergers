@@ -1297,11 +1297,11 @@
           "identifier": "670 625 617",
           "canonical": {
             "id": "colliers-international-engineering-design-pty-limited",
-            "name": "Colliers International Engineering & Design Pty Limited"
+            "name": "Colliers International"
           },
           "party_page": {
             "id": "colliers-international-engineering-design-pty-limited",
-            "name": "Colliers International Engineering & Design Pty Limited"
+            "name": "Colliers International"
           }
         },
         {
@@ -1309,12 +1309,12 @@
           "identifier_type": null,
           "identifier": "Ontario Registry  1936883",
           "canonical": {
-            "id": "colliers-international-group-inc",
-            "name": "Colliers International Group Inc."
+            "id": "colliers-international-engineering-design-pty-limited",
+            "name": "Colliers International"
           },
           "party_page": {
-            "id": "colliers-international-group-inc",
-            "name": "Colliers International Group Inc."
+            "id": "colliers-international-engineering-design-pty-limited",
+            "name": "Colliers International"
           }
         },
         {
@@ -1323,20 +1323,24 @@
           "identifier": "44 615 403 506",
           "canonical": {
             "id": "colliers-international-engineering-design-pty-limited",
-            "name": "Colliers International Engineering & Design Pty Limited"
+            "name": "Colliers International"
           },
           "party_page": {
             "id": "colliers-international-engineering-design-pty-limited",
-            "name": "Colliers International Engineering & Design Pty Limited"
+            "name": "Colliers International"
           }
         },
         {
           "name": "COLLIERS INTERNATIONAL URBAN PLANNING PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "13 615 087 931",
+          "canonical": {
+            "id": "colliers-international-engineering-design-pty-limited",
+            "name": "Colliers International"
+          },
           "party_page": {
-            "id": "colliers-international-urban-planning-pty-limited",
-            "name": "Colliers International Urban Planning Pty Limited"
+            "id": "colliers-international-engineering-design-pty-limited",
+            "name": "Colliers International"
           }
         },
         {
@@ -1344,12 +1348,12 @@
           "identifier_type": "ABN",
           "identifier": "65 008 178 238",
           "canonical": {
-            "id": "colliers-international-group-inc",
-            "name": "Colliers International Group Inc."
+            "id": "colliers-international-engineering-design-pty-limited",
+            "name": "Colliers International"
           },
           "party_page": {
-            "id": "colliers-international-group-inc",
-            "name": "Colliers International Group Inc."
+            "id": "colliers-international-engineering-design-pty-limited",
+            "name": "Colliers International"
           }
         },
         {
@@ -1761,11 +1765,11 @@
           "identifier": "64 086 174 781",
           "canonical": {
             "id": "telstra-limited",
-            "name": "Telstra Limited"
+            "name": "Telstra"
           },
           "party_page": {
             "id": "telstra-limited",
-            "name": "Telstra Limited"
+            "name": "Telstra"
           }
         }
       ],
@@ -1818,12 +1822,12 @@
           "identifier_type": null,
           "identifier": "Netherlands registration number: 854017447, CCI 60683945",
           "canonical": {
-            "id": "henkel-global-supply-chain-b-v",
-            "name": "Henkel Global Supply Chain B.V."
+            "id": "henkel-ag-co-kgaa",
+            "name": "Henkel"
           },
           "party_page": {
-            "id": "henkel-global-supply-chain-b-v",
-            "name": "Henkel Global Supply Chain B.V."
+            "id": "henkel-ag-co-kgaa",
+            "name": "Henkel"
           }
         }
       ],
@@ -1863,11 +1867,11 @@
           "identifier": "15 740 196 765",
           "canonical": {
             "id": "henkel-ag-co-kgaa",
-            "name": "Henkel AG & Co. KGaA"
+            "name": "Henkel"
           },
           "party_page": {
             "id": "henkel-ag-co-kgaa",
-            "name": "Henkel AG & Co. KGaA"
+            "name": "Henkel"
           }
         },
         {
@@ -1876,11 +1880,11 @@
           "identifier": "82 001 302 996",
           "canonical": {
             "id": "henkel-ag-co-kgaa",
-            "name": "Henkel AG & Co. KGaA"
+            "name": "Henkel"
           },
           "party_page": {
             "id": "henkel-ag-co-kgaa",
-            "name": "Henkel AG & Co. KGaA"
+            "name": "Henkel"
           }
         },
         {
@@ -1902,11 +1906,11 @@
           "identifier": "HRB  4724",
           "canonical": {
             "id": "henkel-ag-co-kgaa",
-            "name": "Henkel AG & Co. KGaA"
+            "name": "Henkel"
           },
           "party_page": {
             "id": "henkel-ag-co-kgaa",
-            "name": "Henkel AG & Co. KGaA"
+            "name": "Henkel"
           }
         },
         {
@@ -2302,9 +2306,13 @@
           "name": "ZURICH INVESTMENT MANAGEMENT LIMITED",
           "identifier_type": "ABN",
           "identifier": "56 063 278 400",
+          "canonical": {
+            "id": "zurich-assure-australia-pty-ltd",
+            "name": "Zurich"
+          },
           "party_page": {
-            "id": "zurich-investment-management-limited",
-            "name": "Zurich Investment Management Limited"
+            "id": "zurich-assure-australia-pty-ltd",
+            "name": "Zurich"
           }
         }
       ],
@@ -2313,9 +2321,13 @@
           "name": "Zurich Insurance Group Ltd",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "zurich-assure-australia-pty-ltd",
+            "name": "Zurich"
+          },
           "party_page": {
-            "id": "zurich-insurance-group-ltd",
-            "name": "Zurich Insurance Group Ltd"
+            "id": "zurich-assure-australia-pty-ltd",
+            "name": "Zurich"
           }
         }
       ],

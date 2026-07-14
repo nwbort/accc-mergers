@@ -39,9 +39,13 @@
       "name": "Telstra Singapore Pte. Ltd.",
       "identifier_type": null,
       "identifier": "Singapore registration No. 200209830G",
+      "canonical": {
+        "id": "telstra-limited",
+        "name": "Telstra"
+      },
       "party_page": {
-        "id": "telstra-singapore-pte-ltd",
-        "name": "Telstra Singapore Pte. Ltd."
+        "id": "telstra-limited",
+        "name": "Telstra"
       }
     },
     {
@@ -50,11 +54,11 @@
       "identifier": "33 051 775 556",
       "canonical": {
         "id": "telstra-limited",
-        "name": "Telstra Limited"
+        "name": "Telstra"
       },
       "party_page": {
         "id": "telstra-limited",
-        "name": "Telstra Limited"
+        "name": "Telstra"
       }
     }
   ],
@@ -149,12 +153,12 @@
           "identifier_type": "ABN",
           "identifier": "58 100 816 206",
           "canonical": {
-            "id": "telstra-australia-networks-pty-limited",
-            "name": "Telstra Australia Networks Pty Limited"
+            "id": "telstra-limited",
+            "name": "Telstra"
           },
           "party_page": {
-            "id": "telstra-australia-networks-pty-limited",
-            "name": "Telstra Australia Networks Pty Limited"
+            "id": "telstra-limited",
+            "name": "Telstra"
           }
         },
         {
@@ -162,12 +166,12 @@
           "identifier_type": "ABN",
           "identifier": "56 142 220 157",
           "canonical": {
-            "id": "telstra-australia-networks-pty-limited",
-            "name": "Telstra Australia Networks Pty Limited"
+            "id": "telstra-limited",
+            "name": "Telstra"
           },
           "party_page": {
-            "id": "telstra-australia-networks-pty-limited",
-            "name": "Telstra Australia Networks Pty Limited"
+            "id": "telstra-limited",
+            "name": "Telstra"
           }
         }
       ],
@@ -204,11 +208,11 @@
           "identifier": "64 086 174 781",
           "canonical": {
             "id": "telstra-limited",
-            "name": "Telstra Limited"
+            "name": "Telstra"
           },
           "party_page": {
             "id": "telstra-limited",
-            "name": "Telstra Limited"
+            "name": "Telstra"
           }
         }
       ],
