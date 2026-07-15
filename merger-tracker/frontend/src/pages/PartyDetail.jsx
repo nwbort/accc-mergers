@@ -125,9 +125,10 @@ function PartyDetail() {
                 <button
                   type="button"
                   onClick={() => setShowAllMembers((prev) => !prev)}
-                  className="mt-2 text-sm font-medium text-blue-600 hover:text-blue-800"
+                  className="text-sm text-primary hover:text-primary-dark font-medium mt-2 transition-colors"
+                  aria-expanded={showAllMembers}
                 >
-                  {showAllMembers ? 'See less' : `See more (${members.length - MEMBERS_PREVIEW_COUNT} more)`}
+                  {showAllMembers ? 'Show less' : `Show ${members.length - MEMBERS_PREVIEW_COUNT} more`}
                 </button>
               )}
             </div>
