@@ -1,6 +1,6 @@
 {
   "total_mergers": 176,
-  "total_waivers": 268,
+  "total_waivers": 269,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 132,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 254,
+    "Approved": 255,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.574626865671643,
-    "median_days": 18.0,
-    "average_business_days": 12.32089552238806,
-    "median_business_days": 12.0
+    "average_days": 18.602230483271377,
+    "median_days": 18,
+    "average_business_days": 12.342007434944238,
+    "median_business_days": 12
   },
   "top_industries": [
     {
@@ -54,7 +54,7 @@
     },
     {
       "name": "Computer System Design and Related Services",
-      "count": 45
+      "count": 46
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
@@ -62,7 +62,7 @@
     },
     {
       "name": "Software Publishing",
-      "count": 33
+      "count": 34
     },
     {
       "name": "Non-Residential Property Operators",
@@ -85,8 +85,8 @@
       "count": 13
     },
     {
-      "name": "Supermarket and Grocery Stores",
-      "count": 12
+      "name": "Scientific Research Services",
+      "count": 13
     }
   ],
   "recent_mergers": [
@@ -201,6 +201,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45019",
+      "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
+      "determination": "Approved",
+      "determination_date": "2026-07-15T12:00:00Z",
+      "page_modified_datetime": "2026-07-15T17:12:33+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-90025",
       "merger_name": "KKR - Crowe",
       "determination": "Approved",
@@ -309,16 +319,6 @@
       "determination_type": "ceased",
       "is_waiver": false,
       "stage": "Phase 2 - detailed assessment"
-    },
-    {
-      "merger_id": "MN-75023",
-      "merger_name": "Bertelsmann Music Group - Concord",
-      "determination": "Approved",
-      "determination_date": "2026-07-10T12:00:00Z",
-      "page_modified_datetime": "2026-07-10T15:01:16+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

@@ -6,11 +6,27 @@
       "name": "Baseten Labs, Inc",
       "identifier": "EIN 371950658",
       "identifier_type": null
+    },
+    {
+      "name": "Baseten Labs, Inc.",
+      "identifier": "EIN 371950658",
+      "identifier_type": null
     }
   ],
   "mergers": {
     "acquirer": [],
     "target": [
+      {
+        "merger_id": "WA-45019",
+        "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-06-19T12:00:00Z",
+        "determination_date": "2026-07-15T12:00:00Z"
+      },
       {
         "merger_id": "WA-55004",
         "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
@@ -25,17 +41,17 @@
     ],
     "other": []
   },
-  "merger_count": 1,
+  "merger_count": 2,
   "phase_1_count": 0,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": null,
   "waiver_duration": {
-    "average_days": 12.0,
-    "median_days": 12,
-    "average_business_days": 8.0,
-    "median_business_days": 8,
-    "completed_count": 1
+    "average_days": 19.0,
+    "median_days": 19.0,
+    "average_business_days": 13.0,
+    "median_business_days": 13.0,
+    "completed_count": 2
   }
 }

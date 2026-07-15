@@ -24,7 +24,7 @@
       "code": "5420",
       "name": "Software Publishing",
       "level": "class",
-      "merger_count": 33
+      "merger_count": 34
     }
   ],
   "mergers": [
@@ -59,6 +59,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-06-23T12:00:00Z",
+      "determination_date": "2026-07-15T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-45019",
+      "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-19T12:00:00Z",
       "determination_date": "2026-07-15T12:00:00Z"
     },
     {
@@ -392,10 +403,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 33,
+  "count": 34,
   "phase_1_count": 12,
   "phase_2_count": 0,
-  "waiver_count": 21,
+  "waiver_count": 22,
   "active_count": 2,
   "phase_duration": {
     "average_days": 31.1,
@@ -405,10 +416,10 @@
     "completed_count": 10
   },
   "waiver_duration": {
-    "average_days": 18.047619047619047,
-    "median_days": 18,
-    "average_business_days": 12.047619047619047,
-    "median_business_days": 12,
-    "completed_count": 21
+    "average_days": 18.40909090909091,
+    "median_days": 18.0,
+    "average_business_days": 12.318181818181818,
+    "median_business_days": 12.0,
+    "completed_count": 22
   }
 }
