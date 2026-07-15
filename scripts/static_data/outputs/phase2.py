@@ -10,6 +10,7 @@ from constants import merger_status
 
 from ..enrichment import is_phase_2_referral_event
 from ..filters import filter_notifications
+from ..loaders import FORWARD_REFILE_RELATIONSHIPS
 
 
 def _referral_date(merger: dict) -> str | None:
@@ -54,6 +55,10 @@ def _entry(merger: dict) -> dict:
         'determination': determination,
         'determination_date': determination_date,
         'phase_2_inferred': bool(merger.get('phase_2_inferred')),
+        # True for a matter (typically a ceased assessment) later re-filed as
+        # a separate notification — the opposite direction to stats.py's
+        # "recent mergers" is_refiled flag, which marks the re-filed matter.
+        'is_refiled': (merger.get('related_merger') or {}).get('relationship') in FORWARD_REFILE_RELATIONSHIPS,
     }
 
 

@@ -38,6 +38,16 @@ _RELATIONSHIP_LABELS = {
 }
 
 
+# Relationship values where the merger is the *earlier* matter that was later
+# re-filed as another (the source side of a pair) — flags the original matter,
+# e.g. a ceased Phase 2 assessment that was subsequently re-filed.
+FORWARD_REFILE_RELATIONSHIPS = frozenset(source for source, _ in _RELATIONSHIP_LABELS.values())
+
+# Relationship values where the merger is the *later*, re-filed matter (the
+# target side of a pair) — flags a notification as itself being a re-file.
+BACKWARD_REFILE_RELATIONSHIPS = frozenset(target for _, target in _RELATIONSHIP_LABELS.values())
+
+
 def build_relationship_map(data: dict) -> dict:
     """Turn related-merger ``pairs`` into a per-merger relationship lookup.
 

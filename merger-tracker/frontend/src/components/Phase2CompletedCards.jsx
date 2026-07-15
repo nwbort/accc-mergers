@@ -2,7 +2,7 @@ import { calculateDuration } from '../utils/dates';
 import { DETERMINATION_LABELS } from '../constants/mergerStatus';
 import { getCardStyle } from '../constants/cardStyles';
 import CardCollapseGrid from './CardCollapseGrid';
-import MergerCardBody from './MergerCardBody';
+import MergerCardBody, { CHIP_BASE_CLASS } from './MergerCardBody';
 
 // Solid, determination-coloured cards for completed Phase 2 matters — echoing
 // the dashboard card grids. Each card surfaces just the outcome and the time
@@ -28,6 +28,11 @@ function Phase2CompletedCards({ matters }) {
                 <span aria-hidden="true">·</span>
                 <span className="tabular-nums">{duration} days in Phase 2</span>
               </>
+            )}
+            {item.is_refiled && (
+              <span className={`${CHIP_BASE_CLASS} font-medium ${style.chip}`}>
+                Refiled
+              </span>
             )}
           </MergerCardBody>
         );
