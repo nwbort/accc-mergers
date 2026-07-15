@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
 import IndustryMergerGroups from '../components/IndustryMergerGroups';
@@ -17,8 +18,11 @@ const ROLE_LABELS = {
   other: 'As other party',
 };
 
+const MEMBERS_PREVIEW_COUNT = 3;
+
 function PartyDetail() {
   const decodedId = useDecodedParam('id');
+  const [showAllMembers, setShowAllMembers] = useState(false);
 
   const { data, loading, error } = useFetchData(
     API_ENDPOINTS.partyDetail(decodedId),
@@ -103,10 +107,10 @@ function PartyDetail() {
           {members.length > 1 && (
             <div className="mt-4 pt-4 border-t border-gray-100">
               <h2 className={`${SECTION_HEADING} mb-2`}>
-                Also registered as
+                Related parties
               </h2>
               <ul className="space-y-1">
-                {members.map((member) => (
+                {(showAllMembers ? members : members.slice(0, MEMBERS_PREVIEW_COUNT)).map((member) => (
                   <li key={`${member.name}-${member.identifier || ''}`} className="text-sm text-gray-700">
                     {member.name}
                     {member.identifier && (
@@ -117,6 +121,15 @@ function PartyDetail() {
                   </li>
                 ))}
               </ul>
+              {members.length > MEMBERS_PREVIEW_COUNT && (
+                <button
+                  type="button"
+                  onClick={() => setShowAllMembers((prev) => !prev)}
+                  className="mt-2 text-sm font-medium text-blue-600 hover:text-blue-800"
+                >
+                  {showAllMembers ? 'See less' : `See more (${members.length - MEMBERS_PREVIEW_COUNT} more)`}
+                </button>
+              )}
             </div>
           )}
           {members.length === 1 && members[0].identifier && (
