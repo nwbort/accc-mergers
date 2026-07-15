@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 62
+      "merger_count": 63
     },
     {
       "code": "63",
@@ -68,6 +68,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-90025",
+      "merger_name": "KKR - Crowe",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-25T12:00:00Z",
+      "determination_date": "2026-07-15T12:00:00Z"
     },
     {
       "merger_id": "WA-20028",
@@ -1115,10 +1126,10 @@
       "determination_date": null
     }
   ],
-  "count": 99,
+  "count": 100,
   "phase_1_count": 22,
   "phase_2_count": 2,
-  "waiver_count": 75,
+  "waiver_count": 76,
   "active_count": 4,
   "phase_duration": {
     "average_days": 28.666666666666668,
@@ -1128,10 +1139,10 @@
     "completed_count": 21
   },
   "waiver_duration": {
-    "average_days": 18.6,
-    "median_days": 18,
-    "average_business_days": 12.213333333333333,
-    "median_business_days": 12,
-    "completed_count": 75
+    "average_days": 18.61842105263158,
+    "median_days": 18.0,
+    "average_business_days": 12.236842105263158,
+    "median_business_days": 12.0,
+    "completed_count": 76
   }
 }

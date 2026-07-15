@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 61
+      "merger_count": 62
     },
     {
       "code": "70",
@@ -127,6 +127,17 @@
       "has_conditions": false,
       "phase": "Phase 1",
       "notification_date": "2026-06-23T12:00:00Z",
+      "determination_date": "2026-07-15T12:00:00Z"
+    },
+    {
+      "merger_id": "WA-90025",
+      "merger_name": "KKR - Crowe",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-25T12:00:00Z",
       "determination_date": "2026-07-15T12:00:00Z"
     },
     {
@@ -1098,10 +1109,10 @@
       "determination_date": null
     }
   ],
-  "count": 98,
+  "count": 99,
   "phase_1_count": 37,
   "phase_2_count": 2,
-  "waiver_count": 59,
+  "waiver_count": 60,
   "active_count": 9,
   "phase_duration": {
     "average_days": 32.935483870967744,
@@ -1111,10 +1122,10 @@
     "completed_count": 31
   },
   "waiver_duration": {
-    "average_days": 18.152542372881356,
-    "median_days": 18,
-    "average_business_days": 12.11864406779661,
-    "median_business_days": 12,
-    "completed_count": 59
+    "average_days": 18.183333333333334,
+    "median_days": 18.0,
+    "average_business_days": 12.15,
+    "median_business_days": 12.0,
+    "completed_count": 60
   }
 }

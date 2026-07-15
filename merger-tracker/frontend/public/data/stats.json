@@ -1,6 +1,6 @@
 {
   "total_mergers": 176,
-  "total_waivers": 267,
+  "total_waivers": 268,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 132,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 253,
+    "Approved": 254,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,15 +42,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.56928838951311,
-    "median_days": 18,
-    "average_business_days": 12.314606741573034,
-    "median_business_days": 12
+    "average_days": 18.574626865671643,
+    "median_days": 18.0,
+    "average_business_days": 12.32089552238806,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 56
+      "count": 57
     },
     {
       "name": "Computer System Design and Related Services",
@@ -201,6 +201,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-90025",
+      "merger_name": "KKR - Crowe",
+      "determination": "Approved",
+      "determination_date": "2026-07-15T12:00:00Z",
+      "page_modified_datetime": "2026-07-15T17:02:22+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-20018",
       "merger_name": "Uber - Blacklane",
       "determination": "Approved",
@@ -306,16 +316,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-10T12:00:00Z",
       "page_modified_datetime": "2026-07-10T15:01:16+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-50021",
-      "merger_name": "Adbri - Eureka Concrete",
-      "determination": "Approved",
-      "determination_date": "2026-07-09T12:00:00Z",
-      "page_modified_datetime": "2026-07-10T08:24:45+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
