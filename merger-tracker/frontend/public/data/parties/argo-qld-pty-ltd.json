@@ -1,7 +1,17 @@
 {
   "id": "argo-qld-pty-ltd",
-  "canonical_name": "Argo QLD Pty Ltd",
+  "canonical_name": "Mercuria Argo",
   "members": [
+    {
+      "name": "Argo Bowen 2 Pty Ltd",
+      "identifier": "695 023 619",
+      "identifier_type": "ACN"
+    },
+    {
+      "name": "Argo Bowen Pty Ltd",
+      "identifier": "695 021 124",
+      "identifier_type": "ACN"
+    },
     {
       "name": "Argo Holdings QLD Pty Ltd",
       "identifier": "690 887 597",
@@ -11,12 +21,15 @@
       "name": "Argo QLD Pty Ltd",
       "identifier": "690 893 371",
       "identifier_type": "ACN"
+    },
+    {
+      "name": "Mercuria Argo Investments Pty Ltd",
+      "identifier": "202505079",
+      "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
         "merger_id": "MN-55012",
         "merger_name": "Argo Bowen 2 \u2013 Bowen Coking Coal and certain subsidiaries",
@@ -28,7 +41,9 @@
         "notification_date": "2026-03-10T12:00:00Z",
         "determination_date": "2026-04-01T12:00:00Z"
       }
-    ]
+    ],
+    "target": [],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 1,

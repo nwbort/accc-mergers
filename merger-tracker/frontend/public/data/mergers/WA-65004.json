@@ -205,9 +205,13 @@
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
           "identifier": "695 834 390",
+          "canonical": {
+            "id": "farrm-solutions",
+            "name": "Farrm Solutions"
+          },
           "party_page": {
-            "id": "faarm-bidco-pty-ltd",
-            "name": "Faarm Bidco Pty Ltd"
+            "id": "farrm-solutions",
+            "name": "Farrm Solutions"
           }
         }
       ]
@@ -276,11 +280,11 @@
           "identifier": "88 008 685 407",
           "canonical": {
             "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network Australia Pty Ltd"
+            "name": "Nine Network"
           },
           "party_page": {
             "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network Australia Pty Ltd"
+            "name": "Nine Network"
           }
         },
         {
@@ -289,11 +293,11 @@
           "identifier": "43 124 816 093",
           "canonical": {
             "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network Australia Pty Ltd"
+            "name": "Nine Network"
           },
           "party_page": {
             "id": "nine-network-australia-pty-ltd",
-            "name": "Nine Network Australia Pty Ltd"
+            "name": "Nine Network"
           }
         }
       ]

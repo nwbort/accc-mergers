@@ -1,0 +1,57 @@
+{
+  "id": "cvs-vets",
+  "canonical_name": "CVS Group",
+  "members": [
+    {
+      "name": "CVS (AUSTRALIA) HOLDINGS PROPRIETARY LIMITED",
+      "identifier": "25 667 652 520",
+      "identifier_type": "ABN"
+    },
+    {
+      "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
+      "identifier": "35 667 654 686",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [
+      {
+        "merger_id": "MN-70020",
+        "merger_name": "CVS Group \u2013 Paws at Prospect Vet and Eyes at Prospect Vet",
+        "is_waiver": false,
+        "status": "Under assessment",
+        "determination": null,
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-06-02T12:00:00Z",
+        "determination_date": null
+      },
+      {
+        "merger_id": "MN-95003",
+        "merger_name": "CVS Group - Pittwater Animal Hospital",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-02-13T12:00:00Z",
+        "determination_date": "2026-04-09T12:00:00Z"
+      }
+    ],
+    "target": [],
+    "other": []
+  },
+  "merger_count": 2,
+  "phase_1_count": 2,
+  "phase_2_count": 0,
+  "waiver_count": 0,
+  "active_count": 1,
+  "phase_duration": {
+    "average_days": 55.0,
+    "median_days": 55,
+    "average_business_days": 36.0,
+    "median_business_days": 36,
+    "completed_count": 1
+  },
+  "waiver_duration": null
+}

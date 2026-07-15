@@ -272,9 +272,13 @@
           "name": "FAARM BIDCO PTY LTD",
           "identifier_type": "ACN",
           "identifier": "695 834 390",
+          "canonical": {
+            "id": "farrm-solutions",
+            "name": "Farrm Solutions"
+          },
           "party_page": {
-            "id": "faarm-bidco-pty-ltd",
-            "name": "Faarm Bidco Pty Ltd"
+            "id": "farrm-solutions",
+            "name": "Farrm Solutions"
           }
         }
       ]
@@ -302,11 +306,11 @@
           "identifier": "Delaware File Number  7952013",
           "canonical": {
             "id": "actigraph-llc",
-            "name": "ActiGraph, LLC"
+            "name": "ActiGraph"
           },
           "party_page": {
             "id": "actigraph-llc",
-            "name": "ActiGraph, LLC"
+            "name": "ActiGraph"
           }
         }
       ]

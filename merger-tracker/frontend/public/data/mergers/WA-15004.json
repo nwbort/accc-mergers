@@ -195,9 +195,13 @@
           "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
           "identifier_type": "ABN",
           "identifier": "50 111 782 846",
+          "canonical": {
+            "id": "discovery-holiday-parks",
+            "name": "Discovery Holiday Parks"
+          },
           "party_page": {
-            "id": "discovery-holiday-parks-pty-limited",
-            "name": "Discovery Holiday Parks Pty Limited"
+            "id": "discovery-holiday-parks",
+            "name": "Discovery Holiday Parks"
           }
         }
       ],
@@ -225,11 +229,11 @@
           "identifier": "State File Number  3387477",
           "canonical": {
             "id": "accenture-plc",
-            "name": "Accenture plc"
+            "name": "Accenture"
           },
           "party_page": {
             "id": "accenture-plc",
-            "name": "Accenture plc"
+            "name": "Accenture"
           }
         }
       ],

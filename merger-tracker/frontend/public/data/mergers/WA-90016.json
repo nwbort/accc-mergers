@@ -150,9 +150,13 @@
           "name": "Banijay Holding UK Limited",
           "identifier_type": null,
           "identifier": "UK Company number 17040112",
+          "canonical": {
+            "id": "banijay-entertainment",
+            "name": "Banijay Entertainment"
+          },
           "party_page": {
-            "id": "banijay-holding-uk-limited",
-            "name": "Banijay Holding UK Limited"
+            "id": "banijay-entertainment",
+            "name": "Banijay Entertainment"
           }
         },
         {
@@ -179,9 +183,13 @@
           "name": "Banijay Holding S.A.S.",
           "identifier_type": null,
           "identifier": "829 295 138 RCS PARIS",
+          "canonical": {
+            "id": "banijay-entertainment",
+            "name": "Banijay Entertainment"
+          },
           "party_page": {
-            "id": "banijay-holding-s-a-s",
-            "name": "Banijay Holding S.A.S."
+            "id": "banijay-entertainment",
+            "name": "Banijay Entertainment"
           }
         }
       ]

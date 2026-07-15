@@ -26,9 +26,13 @@
       "name": "J.S.B. Co., Ltd.",
       "identifier_type": null,
       "identifier": "130001017499",
+      "canonical": {
+        "id": "j-s-b-co",
+        "name": "J.S.B. Co"
+      },
       "party_page": {
-        "id": "j-s-b-co-ltd",
-        "name": "J.S.B. Co., Ltd."
+        "id": "j-s-b-co",
+        "name": "J.S.B. Co"
       }
     }
   ],
@@ -50,9 +54,13 @@
       "name": "J.S.B. AUS PTY LTD",
       "identifier_type": "ACN",
       "identifier": "698 489 566",
+      "canonical": {
+        "id": "j-s-b-co",
+        "name": "J.S.B. Co"
+      },
       "party_page": {
-        "id": "j-s-b-aus-pty-ltd",
-        "name": "J.S.B. Aus Pty Ltd"
+        "id": "j-s-b-co",
+        "name": "J.S.B. Co"
       }
     }
   ],
@@ -172,11 +180,11 @@
           "identifier": "BRN  70084973",
           "canonical": {
             "id": "acclime-holdings-limited",
-            "name": "Acclime Holdings Limited"
+            "name": "Acclime"
           },
           "party_page": {
             "id": "acclime-holdings-limited",
-            "name": "Acclime Holdings Limited"
+            "name": "Acclime"
           }
         },
         {
@@ -185,11 +193,11 @@
           "identifier": "BRN  70084973",
           "canonical": {
             "id": "acclime-holdings-limited",
-            "name": "Acclime Holdings Limited"
+            "name": "Acclime"
           },
           "party_page": {
             "id": "acclime-holdings-limited",
-            "name": "Acclime Holdings Limited"
+            "name": "Acclime"
           }
         }
       ]

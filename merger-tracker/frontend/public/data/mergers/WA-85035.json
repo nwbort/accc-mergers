@@ -35,18 +35,26 @@
       "name": "ANGLO AMERICAN STEELMAKING COAL HOLDINGS LIMITED",
       "identifier_type": "ABN",
       "identifier": "52 079 017 940",
+      "canonical": {
+        "id": "anglo-american-plc",
+        "name": "Anglo American"
+      },
       "party_page": {
-        "id": "anglo-american-steelmaking-coal-holdings-limited",
-        "name": "Anglo American Steelmaking Coal Holdings Limited"
+        "id": "anglo-american-plc",
+        "name": "Anglo American"
       }
     },
     {
       "name": "ANGLO AMERICAN STEELMAKING COAL ASSETS EASTERN AUSTRALIA LIMITED",
       "identifier_type": "ABN",
       "identifier": "81 009 727 851",
+      "canonical": {
+        "id": "anglo-american-plc",
+        "name": "Anglo American"
+      },
       "party_page": {
-        "id": "anglo-american-steelmaking-coal-assets-eastern-australia-limited",
-        "name": "Anglo American Steelmaking Coal Assets Eastern Australia Limited"
+        "id": "anglo-american-plc",
+        "name": "Anglo American"
       }
     },
     {
@@ -64,20 +72,24 @@
       "identifier": "47 004 892 371",
       "canonical": {
         "id": "anglo-american-plc",
-        "name": "Anglo American plc"
+        "name": "Anglo American"
       },
       "party_page": {
         "id": "anglo-american-plc",
-        "name": "Anglo American plc"
+        "name": "Anglo American"
       }
     },
     {
       "name": "ANGLO AMERICAN NETHERLANDS B.V.",
       "identifier_type": null,
       "identifier": "Dutch company registration number (KVK)  33139747",
+      "canonical": {
+        "id": "anglo-american-plc",
+        "name": "Anglo American"
+      },
       "party_page": {
-        "id": "anglo-american-netherlands-b-v",
-        "name": "Anglo American Netherlands B.V."
+        "id": "anglo-american-plc",
+        "name": "Anglo American"
       }
     }
   ],
@@ -86,9 +98,13 @@
       "name": "ANGLO AMERICAN SERVICES (UK) LTD",
       "identifier_type": null,
       "identifier": "UK CRN  02295324",
+      "canonical": {
+        "id": "anglo-american-plc",
+        "name": "Anglo American"
+      },
       "party_page": {
-        "id": "anglo-american-services-uk-ltd",
-        "name": "Anglo American Services (Uk) Ltd"
+        "id": "anglo-american-plc",
+        "name": "Anglo American"
       }
     },
     {
@@ -191,11 +207,11 @@
           "identifier": "03564138",
           "canonical": {
             "id": "anglo-american-plc",
-            "name": "Anglo American plc"
+            "name": "Anglo American"
           },
           "party_page": {
             "id": "anglo-american-plc",
-            "name": "Anglo American plc"
+            "name": "Anglo American"
           }
         }
       ],
@@ -221,9 +237,13 @@
           "name": "Argo Bowen 2 Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "695 023 619",
+          "canonical": {
+            "id": "argo-qld-pty-ltd",
+            "name": "Mercuria Argo"
+          },
           "party_page": {
-            "id": "argo-bowen-2-pty-ltd",
-            "name": "Argo Bowen 2 Pty Ltd"
+            "id": "argo-qld-pty-ltd",
+            "name": "Mercuria Argo"
           }
         }
       ],

@@ -192,9 +192,13 @@
           "name": "Paul Wakeling Motor Group Pty Ltd",
           "identifier_type": "ABN",
           "identifier": "47 119 908 780",
+          "canonical": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          },
           "party_page": {
-            "id": "paul-wakeling-motor-group-pty-ltd",
-            "name": "Paul Wakeling Motor Group Pty Ltd"
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
           }
         },
         {
@@ -218,9 +222,13 @@
           "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
           "identifier_type": "ABN",
           "identifier": "35 667 654 686",
+          "canonical": {
+            "id": "cvs-vets",
+            "name": "CVS Group"
+          },
           "party_page": {
-            "id": "cvs-vets-australia-proprietary-limited",
-            "name": "Cvs Vets (Australia) Proprietary Limited"
+            "id": "cvs-vets",
+            "name": "CVS Group"
           }
         }
       ],

@@ -132,18 +132,26 @@
           "name": "LAUNDY WOY FREEHOLD PTY LTD",
           "identifier_type": "ABN",
           "identifier": "65 696 471 306",
+          "canonical": {
+            "id": "laundy-woy",
+            "name": "Laundy Woy"
+          },
           "party_page": {
-            "id": "laundy-woy-freehold-pty-ltd",
-            "name": "Laundy Woy Freehold Pty Ltd"
+            "id": "laundy-woy",
+            "name": "Laundy Woy"
           }
         },
         {
           "name": "LAUNDY WOY TRADING PTY LTD",
           "identifier_type": "ABN",
           "identifier": "29 696 470 345",
+          "canonical": {
+            "id": "laundy-woy",
+            "name": "Laundy Woy"
+          },
           "party_page": {
-            "id": "laundy-woy-trading-pty-ltd",
-            "name": "Laundy Woy Trading Pty Ltd"
+            "id": "laundy-woy",
+            "name": "Laundy Woy"
           }
         }
       ],

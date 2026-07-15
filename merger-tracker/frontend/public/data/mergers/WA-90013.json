@@ -163,15 +163,23 @@
           "name": "Global Engage Marine Pty Ltd",
           "identifier_type": "ACN",
           "identifier": "693 762 122",
+          "canonical": {
+            "id": "pt-asian-bulk-logistics",
+            "name": "PT Asian Bulk Logistics"
+          },
           "party_page": {
-            "id": "global-engage-marine-pty-ltd",
-            "name": "Global Engage Marine Pty Ltd"
+            "id": "pt-asian-bulk-logistics",
+            "name": "PT Asian Bulk Logistics"
           }
         },
         {
           "name": "PT Asian Bulk Logistics",
           "identifier_type": null,
           "identifier": "NIB   8120012130871",
+          "canonical": {
+            "id": "pt-asian-bulk-logistics",
+            "name": "PT Asian Bulk Logistics"
+          },
           "party_page": {
             "id": "pt-asian-bulk-logistics",
             "name": "PT Asian Bulk Logistics"

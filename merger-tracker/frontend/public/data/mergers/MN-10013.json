@@ -19,11 +19,11 @@
       "identifier": "State File Number  3387477",
       "canonical": {
         "id": "accenture-plc",
-        "name": "Accenture plc"
+        "name": "Accenture"
       },
       "party_page": {
         "id": "accenture-plc",
-        "name": "Accenture plc"
+        "name": "Accenture"
       }
     }
   ],
@@ -54,11 +54,11 @@
       "identifier": "CRN  471706",
       "canonical": {
         "id": "accenture-plc",
-        "name": "Accenture plc"
+        "name": "Accenture"
       },
       "party_page": {
         "id": "accenture-plc",
-        "name": "Accenture plc"
+        "name": "Accenture"
       }
     },
     {
@@ -93,20 +93,24 @@
       "identifier": "61 096 995 649",
       "canonical": {
         "id": "accenture-plc",
-        "name": "Accenture plc"
+        "name": "Accenture"
       },
       "party_page": {
         "id": "accenture-plc",
-        "name": "Accenture plc"
+        "name": "Accenture"
       }
     },
     {
       "name": "Accenture Venture Holdings B.V.",
       "identifier_type": null,
       "identifier": "KVK  42007173",
+      "canonical": {
+        "id": "accenture-plc",
+        "name": "Accenture"
+      },
       "party_page": {
-        "id": "accenture-venture-holdings-b-v",
-        "name": "Accenture Venture Holdings B.V."
+        "id": "accenture-plc",
+        "name": "Accenture"
       }
     }
   ],
@@ -191,9 +195,13 @@
           "name": "Accenture International B.V.",
           "identifier_type": null,
           "identifier": "Business registration no: KVK70797285",
+          "canonical": {
+            "id": "accenture-plc",
+            "name": "Accenture"
+          },
           "party_page": {
-            "id": "accenture-international-b-v",
-            "name": "Accenture International B.V."
+            "id": "accenture-plc",
+            "name": "Accenture"
           }
         }
       ],

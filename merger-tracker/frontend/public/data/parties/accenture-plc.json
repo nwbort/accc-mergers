@@ -1,6 +1,6 @@
 {
   "id": "accenture-plc",
-  "canonical_name": "Accenture plc",
+  "canonical_name": "Accenture",
   "members": [
     {
       "name": "ACCENTURE AUSTRALIA HOLDINGS PTY LTD",
@@ -20,6 +20,16 @@
     {
       "name": "Accenture Inc.",
       "identifier": "State File Number  3387477",
+      "identifier_type": null
+    },
+    {
+      "name": "Accenture International B.V.",
+      "identifier": "Business registration no: KVK70797285",
+      "identifier_type": null
+    },
+    {
+      "name": "Accenture Venture Holdings B.V.",
+      "identifier": "KVK  42007173",
       "identifier_type": null
     },
     {
@@ -56,15 +66,26 @@
         "phase": "Phase 1",
         "notification_date": "2026-04-17T12:00:00Z",
         "determination_date": "2026-05-14T12:00:00Z"
+      },
+      {
+        "merger_id": "WA-01081",
+        "merger_name": "Accenture \u2013 Faculty Science",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-01-08T12:00:00Z",
+        "determination_date": "2026-01-20T12:00:00Z"
       }
     ],
     "target": [],
     "other": []
   },
-  "merger_count": 2,
+  "merger_count": 3,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": {
     "average_days": 27.0,
@@ -74,10 +95,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 18.0,
-    "median_days": 18,
-    "average_business_days": 12.0,
-    "median_business_days": 12,
-    "completed_count": 1
+    "average_days": 15.0,
+    "median_days": 15.0,
+    "average_business_days": 9.5,
+    "median_business_days": 9.5,
+    "completed_count": 2
   }
 }
