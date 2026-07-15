@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import { differenceInCalendarDays, parseISO, isValid } from 'date-fns';
-import { FaArrowRightArrowLeft, FaHourglassHalf, FaCalendarDays } from 'react-icons/fa6';
+import { FaArrowRightArrowLeft, FaHourglassHalf, FaCalendarDays, FaCircleCheck } from 'react-icons/fa6';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import StatusBadge from '../components/StatusBadge';
 import StatCard from '../components/StatCard';
+import PhaseDurationComparison from '../components/PhaseDurationComparison';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
@@ -163,6 +164,13 @@ function RefiledList({ pairs, showOutcome, emptyMessage }) {
 function RefiledNotifications() {
   const { data, loading, error } = useFetchData(API_ENDPOINTS.refiledNotifications, { cacheKey: 'refiled-notifications' });
 
+  // Overall Phase 1 clearance rate, for comparing refiled notifications
+  // against the market as a whole. Non-fatal if it fails to load.
+  const { data: statsData } = useFetchData(
+    data ? API_ENDPOINTS.stats : null,
+    data ? { cacheKey: 'dashboard-stats' } : {}
+  );
+
   if (loading) return <LoadingSpinner />;
   if (error) return <ErrorMessage error={error} />;
 
@@ -175,6 +183,16 @@ function RefiledNotifications() {
       .map((p) => calculateDuration(p.waiver_declined_date, p.notification_filed_date))
       .filter((d) => d !== null)
   );
+
+  const clearanceRate = data?.clearance_rate;
+  const overallClearanceRate = statsData?.clearance_rate;
+  const clearancePct = clearanceRate?.rate != null ? Math.round(clearanceRate.rate * 100) : null;
+  const overallClearancePct = overallClearanceRate?.rate != null
+    ? Math.round(overallClearanceRate.rate * 100)
+    : null;
+
+  const phaseDuration = data?.phase_duration;
+  const straightPhaseDuration = data?.straight_phase_duration;
 
   return (
     <>
@@ -190,16 +208,37 @@ function RefiledNotifications() {
           </h1>
         </header>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
           <StatCard title="Waivers re-filed" value={totalPairs} icon={<FaArrowRightArrowLeft />} />
           <StatCard title="Awaiting a determination" value={current.length} icon={<FaHourglassHalf />} />
           <StatCard
             title="Median time to re-file"
             value={medianDaysToRefile !== null ? `${medianDaysToRefile} days` : 'N/A'}
-            subtitle="From waiver decline to re-filing"
             icon={<FaCalendarDays />}
           />
+          <StatCard
+            title="Clearance rate"
+            value={clearancePct !== null ? `${clearancePct}%` : 'N/A'}
+            subtitle={
+              clearancePct !== null && overallClearancePct !== null
+                ? `${overallClearancePct}% for Phase 1 reviews overall`
+                : undefined
+            }
+            icon={<FaCircleCheck />}
+          />
         </div>
+
+        {phaseDuration && (
+          <div className="mb-8">
+            <PhaseDurationComparison
+              duration={phaseDuration}
+              comparisons={
+                straightPhaseDuration ? [{ name: 'Filed as Phase 1 from the outset', duration: straightPhaseDuration }] : []
+              }
+              subjectLabel="Refiled from a waiver"
+            />
+          </div>
+        )}
 
         <section aria-labelledby="refiled-current-heading" className="mb-8">
           <h2 id="refiled-current-heading" className="text-lg font-semibold text-gray-900 mb-4">

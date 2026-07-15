@@ -138,9 +138,16 @@ class TestStatsGenerate:
         # Key shape
         assert set(payload.keys()) >= {
             'total_mergers', 'total_waivers', 'by_status', 'by_determination',
-            'by_waiver_determination', 'phase_duration', 'waiver_duration',
+            'by_waiver_determination', 'clearance_rate', 'phase_duration', 'waiver_duration',
             'top_industries', 'recent_mergers', 'recent_determinations',
         }
+
+    def test_clearance_rate_only_counts_determined_notifications(self):
+        payload = stats.generate(_enriched_fixture())
+        # Of the 3 notifications (MN-0001 approved, MN-0002 in-progress,
+        # MN-0004 suspended/undetermined), only MN-0001 has a published
+        # determination, and it's a clearance.
+        assert payload['clearance_rate'] == {'cleared': 1, 'not_cleared': 0, 'total': 1, 'rate': 1.0}
 
     def test_waiver_duration_baseline(self):
         payload = stats.generate(_enriched_fixture())

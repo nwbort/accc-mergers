@@ -59,7 +59,14 @@ class TestReturnsValidShape:
     def test_empty_input(self):
         payload = refiled.generate([])
         json.dumps(payload)
-        assert payload == {'current': [], 'completed': [], 'count': {'current': 0, 'completed': 0}}
+        assert payload == {
+            'current': [],
+            'completed': [],
+            'count': {'current': 0, 'completed': 0},
+            'clearance_rate': {'cleared': 0, 'not_cleared': 0, 'total': 0, 'rate': None},
+            'phase_duration': None,
+            'straight_phase_duration': None,
+        }
 
     def test_shape(self):
         mergers = [_waiver(), _current_notification()]
@@ -112,6 +119,52 @@ class TestCurrentVsCompleted:
         mergers = [_waiver(notification_id='MN-9999')]
         payload = refiled.generate(mergers)
         assert payload['count'] == {'current': 0, 'completed': 0}
+
+
+class TestClearanceRate:
+    def test_no_completed_pairs(self):
+        payload = refiled.generate([_waiver(), _current_notification()])
+        assert payload['clearance_rate'] == {'cleared': 0, 'not_cleared': 0, 'total': 0, 'rate': None}
+
+    def test_mixed_outcomes(self):
+        mergers = [
+            _waiver(merger_id='WA-0001', notification_id='MN-0001'),
+            _completed_notification(merger_id='MN-0001', waiver_id='WA-0001', determination='Approved'),
+            _waiver(merger_id='WA-0002', notification_id='MN-0002'),
+            _completed_notification(merger_id='MN-0002', waiver_id='WA-0002', determination='Not opposed'),
+            _waiver(merger_id='WA-0003', notification_id='MN-0003'),
+            _completed_notification(merger_id='MN-0003', waiver_id='WA-0003', determination='Declined'),
+        ]
+        payload = refiled.generate(mergers)
+        assert payload['clearance_rate'] == {'cleared': 2, 'not_cleared': 1, 'total': 3, 'rate': round(2 / 3, 3)}
+
+
+class TestPhaseDuration:
+    def test_refiled_and_straight_durations_are_kept_separate(self):
+        refiled_notification = _completed_notification(merger_id='MN-0002', waiver_id='WA-0002')
+        refiled_notification['phase_1_determination_date'] = '2025-04-15T09:00:00Z'
+        straight_notification = {
+            'merger_id': 'MN-9000',
+            'merger_name': 'Straight notification',
+            'status': 'Assessment completed',
+            'accc_determination': 'Approved',
+            'effective_notification_datetime': '2025-01-01T09:00:00Z',
+            'phase_1_determination_date': '2025-01-20T09:00:00Z',
+            'determination_publication_date': '2025-01-20T09:00:00Z',
+        }
+        mergers = [
+            _waiver(merger_id='WA-0002', notification_id='MN-0002'),
+            refiled_notification,
+            straight_notification,
+        ]
+        payload = refiled.generate(mergers)
+        assert payload['phase_duration']['completed_count'] == 1
+        assert payload['straight_phase_duration']['completed_count'] == 1
+
+    def test_no_completed_reviews_returns_none(self):
+        payload = refiled.generate([_waiver(), _current_notification()])
+        assert payload['phase_duration'] is None
+        assert payload['straight_phase_duration'] is None
 
 
 class TestSorting:

@@ -43,6 +43,29 @@ def generate(mergers: list) -> dict:
         if det:
             by_waiver_determination[det] += 1
 
+    # Clearance rate: share of notifications with a published final
+    # determination that were cleared (Approved / Not opposed) rather than
+    # blocked (Not approved / Declined). Still-open matters are excluded from
+    # both the numerator and denominator; determinations reached after a
+    # Phase 2 referral are included once published, since accc_determination
+    # holds the merger's final outcome regardless of which phase concluded it.
+    cleared = not_cleared = 0
+    for m in notification_mergers:
+        det = m.get('accc_determination')
+        if not (det and m.get('determination_publication_date')):
+            continue
+        if det in (merger_status.APPROVED, merger_status.NOT_OPPOSED):
+            cleared += 1
+        elif det in (merger_status.NOT_APPROVED, merger_status.DECLINED):
+            not_cleared += 1
+    clearance_total = cleared + not_cleared
+    clearance_rate_data = {
+        "cleared": cleared,
+        "not_cleared": not_cleared,
+        "total": clearance_total,
+        "rate": round(cleared / clearance_total, 3) if clearance_total else None,
+    }
+
     # Phase 1 durations (notifications only). Matters referred to Phase 2 are
     # measured to the referral date, not the later Phase 2 determination, so the
     # Phase 2 clock never inflates the Phase 1 figures.
@@ -198,6 +221,7 @@ def generate(mergers: list) -> dict:
         "by_status": dict(by_status),
         "by_determination": dict(by_determination),
         "by_waiver_determination": dict(by_waiver_determination),
+        "clearance_rate": clearance_rate_data,
         "phase_duration": phase_duration_data,
         "waiver_duration": waiver_duration_data,
         "top_industries": top_industries,
