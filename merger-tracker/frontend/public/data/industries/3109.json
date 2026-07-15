@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "MN-15028",
+      "merger_name": "Total Drain Group - Pipe Management Australia",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-15T12:00:00Z",
+      "determination_date": null
+    },
+    {
       "merger_id": "MN-01105",
       "merger_name": "Siemens Mobility - MerMec",
       "is_waiver": false,
@@ -137,11 +148,11 @@
       "determination_date": "2026-02-19T12:00:00Z"
     }
   ],
-  "count": 10,
-  "phase_1_count": 6,
+  "count": 11,
+  "phase_1_count": 7,
   "phase_2_count": 1,
   "waiver_count": 3,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 31.8,
     "median_days": 23,

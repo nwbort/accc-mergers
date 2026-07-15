@@ -1,10 +1,10 @@
 {
-  "total_mergers": 175,
+  "total_mergers": 176,
   "total_waivers": 267,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 131,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 2
   },
   "by_determination": {
@@ -90,6 +90,15 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-15028",
+      "merger_name": "Total Drain Group - Pipe Management Australia",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-15T12:00:00Z",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-20017",
       "merger_name": "Amplifon \u2013 GN Hearing",
@@ -183,15 +192,6 @@
     {
       "merger_id": "MN-15027",
       "merger_name": "Partnered Health - Ryan Plaza Medical Services",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-03T12:00:00Z",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-80024",
-      "merger_name": "Allianz \u2013 certain assets of nib\u2019s Australian travel insurance business",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-03T12:00:00Z",
