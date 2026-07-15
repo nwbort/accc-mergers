@@ -222,6 +222,11 @@
         "in_progress": false
       },
       {
+        "business_days": 27,
+        "calendar_days": 40,
+        "in_progress": false
+      },
+      {
         "business_days": 19,
         "calendar_days": 28,
         "in_progress": false
@@ -684,17 +689,17 @@
     ],
     "stats": {
       "average": 18.5,
-      "median": 17,
+      "median": 17.0,
       "min": 15,
       "max": 59,
-      "count": 131
+      "count": 132
     },
     "calendar_stats": {
-      "average": 28.3,
-      "median": 26,
+      "average": 28.4,
+      "median": 26.0,
       "min": 21,
       "max": 103,
-      "count": 131
+      "count": 132
     }
   },
   "waiver_duration": {
@@ -1846,11 +1851,11 @@
     {
       "code": "I",
       "name": "Transport, Postal and Warehousing",
-      "average_business_days": 22.1,
-      "median_business_days": 21,
-      "average_calendar_days": 32.9,
-      "median_calendar_days": 30,
-      "count": 9
+      "average_business_days": 22.6,
+      "median_business_days": 22.5,
+      "average_calendar_days": 33.6,
+      "median_calendar_days": 33.0,
+      "count": 10
     },
     {
       "code": "F",
@@ -1999,19 +2004,19 @@
     },
     {
       "division": "A division of the Commission (s19 direction)",
-      "count": 79,
+      "count": 80,
       "outcome_mix": {
-        "Approved": 62,
+        "Approved": 63,
         "Not approved": 14,
         "Unknown": 3
       },
-      "median_phase_1_business_days": 18
+      "median_phase_1_business_days": 18.5
     },
     {
       "division": "Not yet determined",
-      "count": 42,
+      "count": 41,
       "outcome_mix": {
-        "Unknown": 42
+        "Unknown": 41
       },
       "median_phase_1_business_days": 36.5
     },
@@ -2054,19 +2059,19 @@
       "24": 2,
       "25": 3,
       "26": 1,
-      "27": 1,
+      "27": 2,
       "28": 5
     },
     "last_5_bd_counts": {
       "2": 5,
-      "3": 1,
+      "3": 2,
       "4": 1
     },
     "stats": {
-      "mean_used_bd": 17.8,
-      "median_used_bd": 17,
+      "mean_used_bd": 17.9,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 3.9,
-      "count": 127
+      "count": 128
     },
     "extended_count": 2
   },
@@ -2224,10 +2229,10 @@
     {
       "code": "I",
       "name": "Transport, Postal and Warehousing",
-      "approved": 9,
+      "approved": 10,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 5,
+      "in_progress": 4,
       "phase2_referral_rate": 0.0
     },
     {

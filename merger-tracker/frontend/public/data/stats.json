@@ -3,12 +3,12 @@
   "total_waivers": 267,
   "total_conditional_approvals": 1,
   "by_status": {
-    "Assessment completed": 131,
-    "Under assessment": 43,
+    "Assessment completed": 132,
+    "Under assessment": 42,
     "Assessment ceased": 2
   },
   "by_determination": {
-    "Approved": 129,
+    "Approved": 130,
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
@@ -16,27 +16,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 130,
+    "cleared": 131,
     "not_cleared": 1,
-    "total": 131,
+    "total": 132,
     "rate": 0.992
   },
   "phase_duration": {
-    "average_days": 29.551470588235293,
-    "median_days": 26.0,
-    "average_business_days": 19.352941176470587,
-    "median_business_days": 17.0,
+    "average_days": 29.62773722627737,
+    "median_days": 26,
+    "average_business_days": 19.40875912408759,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 35,
-        "percentage": 25.7
+        "percentage": 25.5
       },
       "day20": {
         "count": 107,
-        "percentage": 78.7
+        "percentage": 78.1
       },
       "day30": {
-        "count": 130,
+        "count": 131,
         "percentage": 95.6
       }
     }
@@ -201,6 +201,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-20018",
+      "merger_name": "Uber - Blacklane",
+      "determination": "Approved",
+      "determination_date": "2026-07-15T12:00:00Z",
+      "page_modified_datetime": "2026-07-15T16:39:05+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "MN-60022",
       "merger_name": "Autodesk - MaintainX",
       "determination": "Approved",
@@ -306,16 +316,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-09T12:00:00Z",
       "page_modified_datetime": "2026-07-10T08:24:45+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-15018",
-      "merger_name": "Complete Air Supply - All Air",
-      "determination": "Approved",
-      "determination_date": "2026-07-09T12:00:00Z",
-      "page_modified_datetime": "2026-07-09T16:44:29+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
