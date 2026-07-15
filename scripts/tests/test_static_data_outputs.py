@@ -163,6 +163,19 @@ class TestStatsGenerate:
         mining = next(i for i in payload['top_industries'] if i['name'] == 'Mining')
         assert mining['count'] == 2
 
+    def test_recent_mergers_flags_refiled_notifications(self):
+        mergers = _raw_fixture()
+        mergers[1]['related_merger'] = {
+            'merger_id': 'WA-0003',
+            'relationship': 'refiled_from',
+            'merger_name': 'Epsilon waiver',
+        }
+        enriched = [enrich_merger(m) for m in mergers]
+        payload = stats.generate(enriched)
+        by_id = {m['merger_id']: m for m in payload['recent_mergers']}
+        assert by_id['MN-0002']['is_refiled'] is True
+        assert by_id['MN-0001']['is_refiled'] is False
+
     def test_recent_determinations_includes_ceased_assessments(self):
         mergers = _raw_fixture()
         mergers.append({

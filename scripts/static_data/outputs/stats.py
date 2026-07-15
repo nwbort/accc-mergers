@@ -8,6 +8,7 @@ from constants import merger_status
 from ..durations import collect_phase_1_durations, collect_waiver_durations
 from ..enrichment import is_phase_2_referral_event
 from ..filters import filter_notifications, filter_waivers
+from ..loaders import BACKWARD_REFILE_RELATIONSHIPS
 
 
 def generate(mergers: list) -> dict:
@@ -102,6 +103,7 @@ def generate(mergers: list) -> dict:
             "accc_determination": m.get('accc_determination'),
             "effective_notification_datetime": m.get('effective_notification_datetime'),
             "is_waiver": m.get('is_waiver', False),
+            "is_refiled": (m.get('related_merger') or {}).get('relationship') in BACKWARD_REFILE_RELATIONSHIPS,
         }
         for m in sorted_mergers[:12]
     ]

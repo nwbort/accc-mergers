@@ -108,7 +108,7 @@ class TestReturnsValidShape:
         assert set(entry.keys()) == {
             'merger_id', 'merger_name', 'referral_date', 'nocc_date', 'nocc_issued',
             'end_of_determination_period', 'determination', 'determination_date',
-            'phase_2_inferred',
+            'phase_2_inferred', 'is_refiled',
         }
 
 
@@ -151,6 +151,26 @@ class TestCurrentVsCompleted:
         entry = payload['completed'][0]
         assert entry['determination'] == 'Assessment ceased'
         assert entry['determination_date'] == '2026-06-15T12:00:00Z'
+        assert entry['is_refiled'] is False
+
+    def test_ceased_phase2_matter_later_refiled_is_flagged(self):
+        # Mirrors MN-30002 (Peter Warren - Wakeling Automotive): a ceased
+        # Phase 2 assessment later re-filed as a separate notification.
+        ceased = _ceased_phase2('MN-30002')
+        ceased['related_merger'] = {
+            'merger_id': 'MN-90028',
+            'relationship': 'suspended_refiled_as',
+            'merger_name': 'Peter Warren - Wakeling Automotive',
+        }
+        mergers = [enrich_merger(ceased)]
+        payload = phase2.generate(mergers)
+        entry = payload['completed'][0]
+        assert entry['is_refiled'] is True
+
+    def test_completed_phase2_matter_not_refiled(self):
+        mergers = [enrich_merger(_completed_phase2('MN-0002'))]
+        payload = phase2.generate(mergers)
+        assert payload['completed'][0]['is_refiled'] is False
 
 
 class TestNoccFallsBackToComputedDueDate:
