@@ -1,10 +1,10 @@
 {
-  "total_mergers": 176,
+  "total_mergers": 177,
   "total_waivers": 269,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 132,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 2
   },
   "by_determination": {
@@ -66,23 +66,23 @@
     },
     {
       "name": "Non-Residential Property Operators",
-      "count": 22
+      "count": 23
     },
     {
       "name": "Pubs, Taverns and Bars",
-      "count": 20
+      "count": 21
     },
     {
       "name": "Accommodation",
       "count": 16
     },
     {
-      "name": "Engineering Design and Engineering Consulting Services",
+      "name": "Liquor Retailing",
       "count": 14
     },
     {
-      "name": "Liquor Retailing",
-      "count": 13
+      "name": "Engineering Design and Engineering Consulting Services",
+      "count": 14
     },
     {
       "name": "Scientific Research Services",
@@ -93,6 +93,15 @@
     {
       "merger_id": "MN-15028",
       "merger_name": "Total Drain Group - Pipe Management Australia",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-15T12:00:00Z",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-40029",
+      "merger_name": "Laundy \u2013 Woy Woy Hotel",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-15T12:00:00Z",
@@ -186,15 +195,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-06T12:00:00Z",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-15027",
-      "merger_name": "Partnered Health - Ryan Plaza Medical Services",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-03T12:00:00Z",
       "is_waiver": false,
       "is_refiled": false
     }

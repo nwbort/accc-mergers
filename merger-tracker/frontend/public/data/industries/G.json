@@ -21,7 +21,7 @@
       "code": "41",
       "name": "Food Retailing",
       "level": "subdivision",
-      "merger_count": 22
+      "merger_count": 23
     },
     {
       "code": "42",
@@ -37,6 +37,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-40029",
+      "merger_name": "Laundy \u2013 Woy Woy Hotel",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-15T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-90028",
       "merger_name": "Peter Warren - Wakeling Automotive",
@@ -599,11 +610,11 @@
       "determination_date": null
     }
   ],
-  "count": 51,
-  "phase_1_count": 15,
+  "count": 52,
+  "phase_1_count": 16,
   "phase_2_count": 3,
   "waiver_count": 33,
-  "active_count": 3,
+  "active_count": 4,
   "phase_duration": {
     "average_days": 38.53333333333333,
     "median_days": 27,

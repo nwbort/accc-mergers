@@ -19,7 +19,7 @@
       "code": "671",
       "name": "Property Operators",
       "level": "group",
-      "merger_count": 24
+      "merger_count": 25
     },
     {
       "code": "672",
@@ -29,6 +29,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-40029",
+      "merger_name": "Laundy \u2013 Woy Woy Hotel",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-15T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",
@@ -327,11 +338,11 @@
       "determination_date": "2025-09-05T12:00:00Z"
     }
   ],
-  "count": 27,
-  "phase_1_count": 7,
+  "count": 28,
+  "phase_1_count": 8,
   "phase_2_count": 1,
   "waiver_count": 19,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 32.285714285714285,
     "median_days": 29,
