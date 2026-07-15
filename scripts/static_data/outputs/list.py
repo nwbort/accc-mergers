@@ -24,7 +24,7 @@ def _lightweight(m: dict) -> dict:
         "acquirers": m.get('acquirers', []),
         "targets": m.get('targets', []),
         "other_parties": m.get('other_parties', []),
-        "anzsic_codes": m.get('anzsic_codes') or m.get('anszic_codes', []),
+        "anzsic_codes": m.get('anzsic_codes') or [],
         "url": m.get('url'),
     }
 

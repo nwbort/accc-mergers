@@ -225,7 +225,9 @@ function Timeline() {
     if (title.includes('notified')) return 'notification';
     if (displayTitle.includes('determination:') || isPhase2ReferralTitle(displayTitle)) {
       const fullText = (displayTitle || title).toLowerCase();
-      if (fullText.includes('not approved') || fullText.includes('declined') || fullText.includes('not opposed')) {
+      // "Not opposed" is a clearance (see OUTCOME_DOT_COLORS / CLEARED_DETERMINATIONS),
+      // so only "not approved" and "declined" count as blocked outcomes here.
+      if (fullText.includes('not approved') || fullText.includes('declined')) {
         return 'determination-not-approved';
       }
       if (isPhase2ReferralTitle(fullText)) {

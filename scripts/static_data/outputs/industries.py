@@ -12,7 +12,7 @@ from pathlib import Path
 from constants import merger_status
 
 from .. import anzsic
-from ..durations import collect_phase_1_durations, collect_waiver_durations
+from ..durations import collect_phase_1_durations, collect_waiver_durations, median_or_none
 
 
 def classify_phase(m: dict) -> str:
@@ -42,10 +42,6 @@ def _avg(values: list):
     return sum(values) / len(values) if values else None
 
 
-def _median(values: list):
-    return sorted(values)[len(values) // 2] if values else None
-
-
 def _phase_duration(unique_mergers: list) -> dict | None:
     """Phase 1 duration stats for an industry, mirroring the dashboard stats.
 
@@ -61,9 +57,9 @@ def _phase_duration(unique_mergers: list) -> dict | None:
 
     return {
         "average_days": _avg(durations),
-        "median_days": _median(durations),
+        "median_days": median_or_none(durations),
         "average_business_days": _avg(business_durations),
-        "median_business_days": _median(business_durations),
+        "median_business_days": median_or_none(business_durations),
         "completed_count": len(business_durations),
     }
 
@@ -81,9 +77,9 @@ def _waiver_duration(unique_mergers: list) -> dict | None:
 
     return {
         "average_days": _avg(durations),
-        "median_days": _median(durations),
+        "median_days": median_or_none(durations),
         "average_business_days": _avg(business_durations),
-        "median_business_days": _median(business_durations),
+        "median_business_days": median_or_none(business_durations),
         "completed_count": len(business_durations),
     }
 
@@ -111,7 +107,7 @@ def generate_index(mergers: list) -> dict:
 
     for m in mergers:
         merger_id = m['merger_id']
-        codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
+        codes = m.get('anzsic_codes') or []
         for code in codes:
             key = (code.get('code', ''), code.get('name', ''))
             industry_mergers[key].add(merger_id)
@@ -214,7 +210,7 @@ def generate_detail_files(mergers: list, output_dir: Path) -> int:
             "determination_date": m.get('determination_publication_date'),
         }
 
-        codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
+        codes = m.get('anzsic_codes') or []
         for code_obj in codes:
             code = code_obj.get('code', '')
             if not code:

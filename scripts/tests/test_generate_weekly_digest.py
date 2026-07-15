@@ -173,6 +173,38 @@ class TestWeeklyDigestBuckets:
         digest = self._run([merger], monkeypatch)
         assert [m['merger_id'] for m in digest['deals_declined']] == ['MN-2']
 
+    def test_not_opposed_counts_as_cleared(self, monkeypatch):
+        # 'Not opposed' is a clearance (see merger_status.CLEARED_DETERMINATIONS);
+        # it must land in deals_cleared, not vanish from both buckets.
+        merger = {
+            'merger_id': 'MN-10',
+            'merger_name': 'Not opposed clearance',
+            'status': merger_status.ASSESSMENT_COMPLETED,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-03-20T00:00:00Z',
+            'determination_publication_date': '2025-04-16T12:00:00Z',
+            'accc_determination': merger_status.NOT_OPPOSED,
+            'events': [],
+        }
+        digest = self._run([merger], monkeypatch)
+        assert [m['merger_id'] for m in digest['deals_cleared']] == ['MN-10']
+        assert digest['deals_declined'] == []
+
+    def test_declined_counts_as_declined(self, monkeypatch):
+        merger = {
+            'merger_id': 'MN-11',
+            'merger_name': 'Declined outcome',
+            'status': merger_status.ASSESSMENT_COMPLETED,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-03-20T00:00:00Z',
+            'determination_publication_date': '2025-04-16T12:00:00Z',
+            'accc_determination': merger_status.DECLINED,
+            'events': [],
+        }
+        digest = self._run([merger], monkeypatch)
+        assert [m['merger_id'] for m in digest['deals_declined']] == ['MN-11']
+        assert digest['deals_cleared'] == []
+
     def test_same_week_new_notification_is_included(self, monkeypatch):
         merger = {
             'merger_id': 'MN-3',

@@ -28,7 +28,7 @@ Output files:
   - phase2.json                 - Current + completed Phase 2 matters with statutory milestones
   - refiled-notifications.json  - Waivers declined then re-filed as notifications
   - questionnaires/{id}.json    - Lazy-loaded questionnaire files
-  - noccs/{id}.json             - Lazy-loaded NOCC summary files
+  - noccs/{id}.json             - NOCC summary files (consumed by the CLI bundle, not the frontend)
 """
 
 import json

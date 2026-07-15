@@ -297,6 +297,68 @@ function mockFetchFromPhase2(phase2) {
   });
 }
 
+describe('TrackingContext synthetic upcoming events', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    vi.spyOn(console, 'error').mockImplementation(() => {});
+  });
+
+  afterEach(() => {
+    globalThis.fetch = originalFetch;
+    vi.restoreAllMocks();
+  });
+
+  // Far-future deadline so the "due date is in the future" check always passes.
+  const FUTURE = '2099-01-01T12:00:00Z';
+
+  it('synthesises a determination-due event for an undetermined merger', async () => {
+    mockFetchFromMergers({
+      'MN-1': {
+        merger_id: 'MN-1',
+        merger_name: 'Open matter',
+        status: 'Under assessment',
+        events: [],
+        end_of_determination_period: FUTURE,
+      },
+    });
+
+    const { result } = renderHook(() => useTracking(), { wrapper });
+    act(() => {
+      result.current.trackMerger('MN-1');
+    });
+
+    await waitFor(() => {
+      expect(result.current.trackedEvents.some((e) => e.type === 'determination_due')).toBe(true);
+    });
+  });
+
+  it('skips due events once accc_determination is set, even without a publication date', async () => {
+    // The register sometimes publishes the outcome before the date field is
+    // scraped; the panel must not keep showing "Determination due" (mirrors
+    // upcoming_events.py's candidate filter).
+    mockFetchFromMergers({
+      'MN-1': {
+        merger_id: 'MN-1',
+        merger_name: 'Decided matter',
+        status: 'Assessment completed',
+        accc_determination: 'Approved',
+        events: [],
+        end_of_determination_period: FUTURE,
+      },
+    });
+
+    const { result } = renderHook(() => useTracking(), { wrapper });
+    act(() => {
+      result.current.trackMerger('MN-1');
+    });
+
+    await waitFor(() => {
+      expect(result.current.loading).toBe(false);
+    });
+    expect(result.current.trackedEvents.some((e) => e.type === 'determination_due')).toBe(false);
+  });
+});
+
 describe('TrackingContext auto-tracking of Phase 2 matters', () => {
   beforeEach(() => {
     localStorage.clear();

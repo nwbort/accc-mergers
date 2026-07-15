@@ -25,6 +25,12 @@ DECLINED = 'Declined'
 NOT_OPPOSED = 'Not opposed'
 REFERRED_TO_PHASE_2 = 'Referred to phase 2'
 
+# Cleared-vs-blocked split of the determination values above, shared by every
+# output that classifies outcomes (stats.py, refiled.py, the weekly digest and
+# the frontend's OUTCOME_DOT_COLORS) so the split can't drift between them.
+CLEARED_DETERMINATIONS = frozenset({APPROVED, NOT_OPPOSED})
+BLOCKED_DETERMINATIONS = frozenset({NOT_APPROVED, DECLINED})
+
 # Values that appear in merger['stage'].
 PHASE_1 = 'Phase 1'
 PHASE_2 = 'Phase 2'

@@ -99,7 +99,7 @@ def industry_phase1_duration(mergers: list) -> list[dict]:
     """
     division_mergers = defaultdict(list)
     for m in mergers:
-        codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
+        codes = m.get('anzsic_codes') or []
         divisions = {}
         for code_obj in codes:
             division = _division_for_code(code_obj.get('code', ''))
@@ -349,7 +349,7 @@ def outcomes_by_division(notification_mergers: list) -> list[dict]:
     """
     division_mergers = defaultdict(list)
     for m in notification_mergers:
-        codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
+        codes = m.get('anzsic_codes') or []
         divisions = {}
         for code_obj in codes:
             division = _division_for_code(code_obj.get('code', ''))

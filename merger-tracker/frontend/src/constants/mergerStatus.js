@@ -47,6 +47,7 @@ export const DEFAULT_STATUS_STYLE = 'bg-gray-50 text-gray-600 border-gray-200/60
 // Determinations take precedence over statuses in StatusBadge (see component).
 export const STATUS_COLORS = {
   [MERGER_STATUS.APPROVED]: 'bg-emerald-50 text-emerald-700 border-emerald-200/60',
+  [MERGER_STATUS.NOT_OPPOSED]: 'bg-emerald-50 text-emerald-700 border-emerald-200/60',
   [MERGER_STATUS.DECLINED]: 'bg-red-50 text-red-700 border-red-200/60',
   [MERGER_STATUS.NOT_APPROVED]: 'bg-red-50 text-red-700 border-red-200/60',
   [MERGER_STATUS.REFERRED_TO_PHASE_2]: 'bg-amber-50 text-amber-700 border-amber-200/60',

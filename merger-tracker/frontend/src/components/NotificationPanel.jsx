@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { mergerPath, industryPath } from '../utils/slug';
 import { FaBell, FaCheckCircle } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
-import { formatDate, getDaysRemaining, isDatePast } from '../utils/dates';
+import { formatDate, getCalendarDaysUntil, isDatePast } from '../utils/dates';
 
 function PanelEmptyState({ iconBg, iconColor, Icon, title, subtitle }) {
   return (
@@ -50,7 +50,9 @@ function MergerEventGroup({ group, onClose, wasUnseenOnOpen }) {
       <ul className="mt-2 space-y-2">
         {/* Future/current events */}
         {futureEvents.map((event, idx) => {
-          const daysRemaining = getDaysRemaining(event.date);
+          // Calendar-day count so the chip agrees with UpcomingEventsTimeline,
+          // which counts day boundaries rather than full 24-hour periods.
+          const daysRemaining = getCalendarDaysUntil(event.date);
           const isUpcoming = event.type === 'consultation_due' || event.type === 'determination_due' || event.type === 'notice_of_competition_concerns';
           const isNew = wasUnseenOnOpen(event);
 

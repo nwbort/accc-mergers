@@ -137,13 +137,17 @@ export async function onRequest(context) {
     return context.next();
   }
 
-  const matterId = match[1];
+  // Normalise the matter ID to uppercase (as the OG branch above does): the
+  // static data files and SPA routes are uppercase, so a hand-typed lowercase
+  // URL would otherwise produce a viewer whose PDF fetch and back-link 404.
+  const matterId = match[1].toUpperCase();
+  const canonicalPath = path.replace(/^\/mergers\/(?:MN|WA)-\d+\//i, `/mergers/${matterId}/`);
   const displayName = decodeURIComponent(path.split('/').pop()).replace(/\.pdf$/i, '');
 
   const html = renderViewer({
     matterId,
     displayName,
-    rawPdfUrl: `${path}?raw=1`,
+    rawPdfUrl: `${canonicalPath}?raw=1`,
     mergerPageUrl: `/mergers/${matterId}`,
   });
 

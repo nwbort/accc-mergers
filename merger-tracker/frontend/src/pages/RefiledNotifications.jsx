@@ -221,7 +221,9 @@ function RefiledNotifications() {
             value={clearancePct !== null ? `${clearancePct}%` : 'N/A'}
             subtitle={
               clearancePct !== null && overallClearancePct !== null
-                ? `${overallClearancePct}% for Phase 1 reviews overall`
+                // stats.clearance_rate covers every notified merger with a
+                // published final determination, whichever phase decided it.
+                ? `${overallClearancePct}% for all notified mergers`
                 : undefined
             }
             icon={<FaCircleCheck />}

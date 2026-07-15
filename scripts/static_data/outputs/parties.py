@@ -28,7 +28,7 @@ from constants import merger_status
 from party_matching import build_group_lookups, match_party, normalise_identifier, normalise_name
 from slug import slugify
 
-from ..durations import collect_phase_1_durations, collect_waiver_durations
+from ..durations import collect_phase_1_durations, collect_waiver_durations, median_or_none
 from .industries import classify_phase, is_active
 
 PARTY_ROLE_FIELDS = ("acquirers", "targets", "other_parties")
@@ -201,13 +201,11 @@ def _phase_duration(unique_mergers: list) -> dict | None:
 
     return {
         'average_days': sum(durations) / len(durations) if durations else None,
-        'median_days': sorted(durations)[len(durations) // 2] if durations else None,
+        'median_days': median_or_none(durations),
         'average_business_days': (
             sum(business_durations) / len(business_durations) if business_durations else None
         ),
-        'median_business_days': (
-            sorted(business_durations)[len(business_durations) // 2] if business_durations else None
-        ),
+        'median_business_days': median_or_none(business_durations),
         'completed_count': len(business_durations),
     }
 
@@ -224,13 +222,11 @@ def _waiver_duration(unique_mergers: list) -> dict | None:
 
     return {
         'average_days': sum(durations) / len(durations) if durations else None,
-        'median_days': sorted(durations)[len(durations) // 2] if durations else None,
+        'median_days': median_or_none(durations),
         'average_business_days': (
             sum(business_durations) / len(business_durations) if business_durations else None
         ),
-        'median_business_days': (
-            sorted(business_durations)[len(business_durations) // 2] if business_durations else None
-        ),
+        'median_business_days': median_or_none(business_durations),
         'completed_count': len(business_durations),
     }
 
