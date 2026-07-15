@@ -7,6 +7,17 @@ recorded in ``related_mergers.json``. Companion view to the Phase 2 tracker
 ``related_merger`` to each merger (see :func:`static_data.enrichment`).
 """
 
+from constants import merger_status
+
+from ..durations import collect_phase_1_durations
+from ..filters import filter_notifications
+
+#: Determinations that count as the merger being allowed to proceed, mirroring
+#: the cleared/declined split used elsewhere (e.g. OUTCOME_DOT_COLORS on the
+#: frontend, deals_cleared in the weekly digest).
+CLEARED_DETERMINATIONS = {merger_status.APPROVED, merger_status.NOT_OPPOSED}
+NOT_CLEARED_DETERMINATIONS = {merger_status.NOT_APPROVED, merger_status.DECLINED}
+
 
 def _entry(waiver: dict, notification: dict) -> dict:
     return {
@@ -23,16 +34,66 @@ def _entry(waiver: dict, notification: dict) -> dict:
     }
 
 
+def _clearance_rate(completed: list) -> dict:
+    """Cleared-vs-blocked split for completed refiled notifications.
+
+    Only counts determinations recognised as cleared or not cleared (see
+    :data:`CLEARED_DETERMINATIONS`), so a stray value can't silently distort
+    the rate.
+    """
+    cleared = sum(1 for e in completed if e['notification_determination'] in CLEARED_DETERMINATIONS)
+    not_cleared = sum(1 for e in completed if e['notification_determination'] in NOT_CLEARED_DETERMINATIONS)
+    total = cleared + not_cleared
+    return {
+        'cleared': cleared,
+        'not_cleared': not_cleared,
+        'total': total,
+        'rate': round(cleared / total, 3) if total else None,
+    }
+
+
+def _phase_duration(unique_mergers: list) -> dict | None:
+    """Phase 1 duration stats for a set of notification mergers.
+
+    Mirrors :func:`static_data.outputs.industries._phase_duration`. Measures
+    notification → Phase 1 end (referral date for matters sent to Phase 2, so
+    the Phase 2 clock never inflates the figures). Returns ``None`` when
+    there are no completed Phase 1 reviews in the set.
+    """
+    durations, business_durations = collect_phase_1_durations(unique_mergers)
+
+    if not durations and not business_durations:
+        return None
+
+    def _avg(values):
+        return sum(values) / len(values) if values else None
+
+    def _median(values):
+        return sorted(values)[len(values) // 2] if values else None
+
+    return {
+        "average_days": _avg(durations),
+        "median_days": _median(durations),
+        "average_business_days": _avg(business_durations),
+        "median_business_days": _median(business_durations),
+        "completed_count": len(business_durations),
+    }
+
+
 def generate(mergers: list) -> dict:
     """Return the refiled-notifications.json payload.
 
     ``current`` holds pairs whose notification hasn't been determined yet;
     ``completed`` holds pairs where the notification has a determination.
+    ``phase_duration`` / ``straight_phase_duration`` let the page compare how
+    long completed refiled notifications took in Phase 1 against notifications
+    that were filed as a Phase 1 review from the outset (i.e. everything else).
     """
     by_id = {m.get('merger_id'): m for m in mergers if m.get('merger_id')}
 
     current = []
     completed = []
+    completed_notifications = []
     for merger in mergers:
         related = merger.get('related_merger')
         if not related or related.get('relationship') != 'refiled_as':
@@ -43,6 +104,7 @@ def generate(mergers: list) -> dict:
         entry = _entry(merger, notification)
         if entry['notification_determination'] and entry['notification_determination_date']:
             completed.append(entry)
+            completed_notifications.append(notification)
         else:
             current.append(entry)
 
@@ -51,8 +113,16 @@ def generate(mergers: list) -> dict:
     # Completed: most recently determined first.
     completed.sort(key=lambda e: e['notification_determination_date'] or '', reverse=True)
 
+    refiled_ids = {e['notification_id'] for e in current} | {e['notification_id'] for e in completed}
+    straight_notifications = [
+        m for m in filter_notifications(mergers) if m.get('merger_id') not in refiled_ids
+    ]
+
     return {
         'current': current,
         'completed': completed,
         'count': {'current': len(current), 'completed': len(completed)},
+        'clearance_rate': _clearance_rate(completed),
+        'phase_duration': _phase_duration(completed_notifications),
+        'straight_phase_duration': _phase_duration(straight_notifications),
     }
