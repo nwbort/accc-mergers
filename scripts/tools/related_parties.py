@@ -204,7 +204,7 @@ def get_state() -> dict:
 
 @app.post("/api/groups")
 def create_group(req: CreateGroup) -> dict:
-    members = dedupe_members([m.model_dump() for m in req.members])
+    members = dedupe_members([m.dict() for m in req.members])
     if not members:
         raise HTTPException(status_code=400, detail="A group needs at least one member.")
 
@@ -230,7 +230,7 @@ def create_group(req: CreateGroup) -> dict:
 def add_members(group_id: str, req: AddMembers) -> dict:
     doc = load_parties_doc()
     group = _find_group(doc, group_id)
-    combined = list(group.get("members", [])) + [m.model_dump() for m in req.members]
+    combined = list(group.get("members", [])) + [m.dict() for m in req.members]
     group["members"] = dedupe_members(combined)
     save_parties_doc(doc)
     return {"status": "success", "group": group}
@@ -320,6 +320,7 @@ HTML_CONTENT = """
                 <h2 class="text-xl font-bold text-gray-900 mb-2">Ungrouped parties</h2>
                 <input id="search" oninput="renderUngrouped()" placeholder="Search name or ABN..."
                     class="w-full border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-accent" />
+                <div id="letter-bar" class="flex flex-wrap gap-1 mt-2"></div>
                 <div id="selection-bar" class="hidden mt-3 flex items-center gap-3 bg-brand text-white px-4 py-2 rounded">
                     <span id="selection-count" class="text-sm font-medium"></span>
                     <button onclick="createGroupFromSelection()" class="text-sm bg-accent hover:bg-emerald-600 px-3 py-1.5 rounded font-medium transition-colors">New group</button>
@@ -351,6 +352,35 @@ HTML_CONTENT = """
 let STATE = { groups: [], ungrouped: [], merger_names: {}, counts: {} };
 const selected = new Map();       // key -> { name, identifier }
 const selectedGroups = new Map(); // group id -> canonical_name
+let letterFilter = '';            // '' = all, else a single uppercase letter or '#'
+
+function firstLetter(name) {
+    const c = (name || '').trim().charAt(0).toUpperCase();
+    return c >= 'A' && c <= 'Z' ? c : '#';
+}
+
+function setLetterFilter(letter) {
+    letterFilter = letterFilter === letter ? '' : letter;
+    renderLetterBar();
+    renderUngrouped();
+}
+
+function renderLetterBar() {
+    const counts = {};
+    for (const p of STATE.ungrouped) {
+        const l = firstLetter(p.name);
+        counts[l] = (counts[l] || 0) + 1;
+    }
+    const letters = ['#', ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')];
+    document.getElementById('letter-bar').innerHTML = letters.map(l => {
+        const count = counts[l] || 0;
+        const active = letterFilter === l;
+        const disabled = count === 0;
+        return `<button onclick="setLetterFilter('${l}')" ${disabled ? 'disabled' : ''}
+            title="${count} part${count === 1 ? 'y' : 'ies'}"
+            class="text-xs w-7 h-7 rounded ${active ? 'bg-brand text-white' : disabled ? 'text-gray-300 cursor-not-allowed' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}">${l}</button>`;
+    }).join('');
+}
 
 function partyKey(p) { return p.name + '\\u0000' + (p.identifier || ''); }
 function esc(s) { return (s == null ? '' : String(s)).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
@@ -370,6 +400,7 @@ async function load() {
     const validGroups = new Set(STATE.groups.map(g => g.id));
     for (const k of [...selectedGroups.keys()]) if (!validGroups.has(k)) selectedGroups.delete(k);
     renderStats();
+    renderLetterBar();
     renderUngrouped();
     renderGroups();
     renderSelectionBar();
@@ -394,7 +425,8 @@ function mergerTitles(ids) {
 function renderUngrouped() {
     const q = document.getElementById('search').value.trim().toLowerCase();
     const list = STATE.ungrouped.filter(p =>
-        !q || p.name.toLowerCase().includes(q) || (p.identifier || '').toLowerCase().includes(q));
+        (!q || p.name.toLowerCase().includes(q) || (p.identifier || '').toLowerCase().includes(q)) &&
+        (!letterFilter || firstLetter(p.name) === letterFilter));
     const container = document.getElementById('ungrouped');
     if (list.length === 0) {
         container.innerHTML = '<div class="p-4 bg-white rounded border border-gray-200 text-gray-400 text-sm">No matching ungrouped parties.</div>';
