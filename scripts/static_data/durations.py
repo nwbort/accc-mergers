@@ -13,8 +13,22 @@ determination date for matters resolved within Phase 1 — so every duration
 output measures to that field via :func:`phase_1_end_date`.
 """
 
+from statistics import median
+
 from .business_days import calculate_business_days, calculate_calendar_days
 from .filters import filter_notifications, filter_waivers
+
+
+def median_or_none(values: list):
+    """True median of ``values`` (``statistics.median``), or ``None`` if empty.
+
+    Every duration output must use this rather than ``sorted(v)[len(v) // 2]``:
+    the upper-middle shortcut is biased high for even-length samples, and the
+    per-subject figures (industry/party/refiled) are charted directly against
+    the stats.json baselines, so the two conventions must not mix. See the
+    stats-vs-analysis regression test in test_static_data_outputs.py.
+    """
+    return median(values) if values else None
 
 
 def phase_1_end_date(m: dict) -> str | None:

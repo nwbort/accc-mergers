@@ -284,8 +284,13 @@ export function TrackingProvider({ children }) {
         const syntheticUpcomingEvents = [];
         mergers.forEach(merger => {
           if (!merger) return;
-          // Skip if already determined, a waiver, or assessment is no longer active
+          // Skip if already determined, a waiver, or assessment is no longer active.
+          // Check accc_determination as well as the date: the register sometimes
+          // publishes the outcome before the publication-date field is scraped,
+          // and relying on the date alone leaves stale "due" events in the panel
+          // (mirrors the candidate filter in scripts/static_data/outputs/upcoming_events.py).
           if (merger.determination_publication_date) return;
+          if (merger.accc_determination) return;
           if (merger.is_waiver) return;
           if (merger.status === MERGER_STATUS.ASSESSMENT_SUSPENDED) return;
           if (merger.status === MERGER_STATUS.ASSESSMENT_CEASED) return;

@@ -54,9 +54,9 @@ def generate(mergers: list) -> dict:
         det = m.get('accc_determination')
         if not (det and m.get('determination_publication_date')):
             continue
-        if det in (merger_status.APPROVED, merger_status.NOT_OPPOSED):
+        if det in merger_status.CLEARED_DETERMINATIONS:
             cleared += 1
-        elif det in (merger_status.NOT_APPROVED, merger_status.DECLINED):
+        elif det in merger_status.BLOCKED_DETERMINATIONS:
             not_cleared += 1
     clearance_total = cleared + not_cleared
     clearance_rate_data = {
@@ -103,7 +103,7 @@ def generate(mergers: list) -> dict:
     # Top industries (including waivers)
     industry_counts = defaultdict(int)
     for m in mergers:
-        codes = m.get('anzsic_codes') or m.get('anszic_codes') or []
+        codes = m.get('anzsic_codes') or []
         for code in codes:
             industry_counts[code.get('name', 'Unknown')] += 1
 

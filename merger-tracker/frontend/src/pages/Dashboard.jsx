@@ -16,7 +16,7 @@ import RecentDeterminationsCards from '../components/RecentDeterminationsCards';
 import RecentMergersCards from '../components/RecentMergersCards';
 import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
-import { getDaysRemaining, isDatePast } from '../utils/dates';
+import { getCalendarDaysUntil, isDatePast } from '../utils/dates';
 import { useFetchData } from '../hooks/useFetchData';
 import { markItemsAsSeen } from '../utils/lastVisit';
 import { formatMedian } from '../utils/formatMedian';
@@ -196,7 +196,9 @@ function Dashboard() {
       {upcomingEvents && (() => {
         const eventsWithin7Days = upcomingEvents.filter(event => {
           if (isDatePast(event.date)) return false;
-          const daysRemaining = getDaysRemaining(event.date);
+          // Calendar-day count so the filter agrees with the day counts
+          // UpcomingEventsTimeline renders for the same events.
+          const daysRemaining = getCalendarDaysUntil(event.date);
           return daysRemaining !== null && daysRemaining <= 7;
         });
         return eventsWithin7Days.length > 0 ? (

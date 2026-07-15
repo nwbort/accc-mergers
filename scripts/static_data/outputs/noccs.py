@@ -1,8 +1,8 @@
-"""Individual NOCC (Notice of Competition Concerns) summary JSON files for
-lazy loading by the frontend.
+"""Individual NOCC (Notice of Competition Concerns) summary JSON files.
 
 Writes one ``<output_dir>/noccs/{merger_id}.json`` per merger that has a
-parsed NOCC summary.
+parsed NOCC summary. The frontend does not fetch these; they are consumed by
+the CLI data bundle (``generate-cli-data.sh`` → ``build_cli_sqlite.py``).
 """
 
 import json

@@ -9,14 +9,14 @@ recorded in ``related_mergers.json``. Companion view to the Phase 2 tracker
 
 from constants import merger_status
 
-from ..durations import collect_phase_1_durations
+from ..durations import collect_phase_1_durations, median_or_none
 from ..filters import filter_notifications
 
 #: Determinations that count as the merger being allowed to proceed, mirroring
 #: the cleared/declined split used elsewhere (e.g. OUTCOME_DOT_COLORS on the
 #: frontend, deals_cleared in the weekly digest).
-CLEARED_DETERMINATIONS = {merger_status.APPROVED, merger_status.NOT_OPPOSED}
-NOT_CLEARED_DETERMINATIONS = {merger_status.NOT_APPROVED, merger_status.DECLINED}
+CLEARED_DETERMINATIONS = merger_status.CLEARED_DETERMINATIONS
+NOT_CLEARED_DETERMINATIONS = merger_status.BLOCKED_DETERMINATIONS
 
 
 def _entry(waiver: dict, notification: dict) -> dict:
@@ -68,14 +68,11 @@ def _phase_duration(unique_mergers: list) -> dict | None:
     def _avg(values):
         return sum(values) / len(values) if values else None
 
-    def _median(values):
-        return sorted(values)[len(values) // 2] if values else None
-
     return {
         "average_days": _avg(durations),
-        "median_days": _median(durations),
+        "median_days": median_or_none(durations),
         "average_business_days": _avg(business_durations),
-        "median_business_days": _median(business_durations),
+        "median_business_days": median_or_none(business_durations),
         "completed_count": len(business_durations),
     }
 
@@ -86,14 +83,16 @@ def generate(mergers: list) -> dict:
     ``current`` holds pairs whose notification hasn't been determined yet;
     ``completed`` holds pairs where the notification has a determination.
     ``phase_duration`` / ``straight_phase_duration`` let the page compare how
-    long completed refiled notifications took in Phase 1 against notifications
-    that were filed as a Phase 1 review from the outset (i.e. everything else).
+    long refiled notifications' concluded Phase 1 reviews took against
+    notifications that were filed as a Phase 1 review from the outset (i.e.
+    everything else). Both sides use the same rule: any matter whose Phase 1
+    has concluded counts, including referrals still awaiting a Phase 2 outcome.
     """
     by_id = {m.get('merger_id'): m for m in mergers if m.get('merger_id')}
 
     current = []
     completed = []
-    completed_notifications = []
+    refiled_notifications = []
     for merger in mergers:
         related = merger.get('related_merger')
         if not related or related.get('relationship') != 'refiled_as':
@@ -102,9 +101,13 @@ def generate(mergers: list) -> dict:
         if not notification:
             continue
         entry = _entry(merger, notification)
+        # Every paired notification counts towards the Phase 1 duration stats:
+        # collect_phase_1_durations only measures matters whose Phase 1 has
+        # concluded, which includes a referral to Phase 2 even while the final
+        # determination is pending — the same rule the straight baseline uses.
+        refiled_notifications.append(notification)
         if entry['notification_determination'] and entry['notification_determination_date']:
             completed.append(entry)
-            completed_notifications.append(notification)
         else:
             current.append(entry)
 
@@ -123,6 +126,6 @@ def generate(mergers: list) -> dict:
         'completed': completed,
         'count': {'current': len(current), 'completed': len(completed)},
         'clearance_rate': _clearance_rate(completed),
-        'phase_duration': _phase_duration(completed_notifications),
+        'phase_duration': _phase_duration(refiled_notifications),
         'straight_phase_duration': _phase_duration(straight_notifications),
     }

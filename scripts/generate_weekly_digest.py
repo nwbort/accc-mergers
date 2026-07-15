@@ -302,14 +302,11 @@ def generate_weekly_digest(
         # determination that only appeared on the register the following
         # Monday — too late for last week's digest — gets caught here.
         if is_in_week_range(determination_date, lookback_start, period_end):
-            if (accc_determination == merger_status.APPROVED or
-                phase_1_determination == merger_status.APPROVED or
-                phase_2_determination == merger_status.APPROVED):
+            determinations = {accc_determination, phase_1_determination, phase_2_determination}
+            if determinations & merger_status.CLEARED_DETERMINATIONS:
                 if merger_id not in already_cleared:
                     digest['deals_cleared'].append(create_merger_summary(merger))
-            elif (accc_determination == merger_status.NOT_APPROVED or
-                  phase_1_determination == merger_status.NOT_APPROVED or
-                  phase_2_determination == merger_status.NOT_APPROVED):
+            elif determinations & merger_status.BLOCKED_DETERMINATIONS:
                 if merger_id not in already_declined:
                     digest['deals_declined'].append(create_merger_summary(merger))
 

@@ -166,6 +166,22 @@ class TestPhaseDuration:
         assert payload['phase_duration'] is None
         assert payload['straight_phase_duration'] is None
 
+    def test_referred_but_undetermined_pair_counts_toward_phase_duration(self):
+        # A refiled notification referred to Phase 2 has a concluded Phase 1
+        # even while its final determination is pending. It sits in `current`,
+        # but its Phase 1 duration must still count — the straight baseline
+        # includes such matters, so the subject side must too.
+        referred = _current_notification(merger_id='MN-0005', waiver_id='WA-0005')
+        referred['phase_1_determination_date'] = '2025-03-01T09:00:00Z'
+        mergers = [
+            _waiver(merger_id='WA-0005', notification_id='MN-0005'),
+            referred,
+        ]
+        payload = refiled.generate(mergers)
+        assert payload['count'] == {'current': 1, 'completed': 0}
+        assert payload['phase_duration'] is not None
+        assert payload['phase_duration']['completed_count'] == 1
+
 
 class TestSorting:
     def test_current_sorted_by_notification_filed_date_desc(self):

@@ -6,8 +6,15 @@ const MAX_SEEN_ITEMS = 100; // Limit to prevent unbounded growth
  * @returns {Set<string>} Set of merger IDs that have been seen
  */
 export function getSeenItems() {
-  const seenItems = localStorage.getItem(SEEN_ITEMS_KEY);
-  return seenItems ? new Set(JSON.parse(seenItems)) : new Set();
+  // Guarded like TrackingContext's localStorage reads: a corrupted value or
+  // blocked storage must degrade to "nothing seen", not throw during render.
+  try {
+    const seenItems = localStorage.getItem(SEEN_ITEMS_KEY);
+    return seenItems ? new Set(JSON.parse(seenItems)) : new Set();
+  } catch (err) {
+    console.error('Failed to read seen items from localStorage:', err);
+    return new Set();
+  }
 }
 
 /**
@@ -40,7 +47,11 @@ export function markItemsAsSeen(itemIds) {
   });
 
   const prunedItems = pruneSeenItems(seenItems);
-  localStorage.setItem(SEEN_ITEMS_KEY, JSON.stringify([...prunedItems]));
+  try {
+    localStorage.setItem(SEEN_ITEMS_KEY, JSON.stringify([...prunedItems]));
+  } catch (err) {
+    console.error('Failed to save seen items to localStorage:', err);
+  }
 }
 
 /**

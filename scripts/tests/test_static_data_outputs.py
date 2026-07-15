@@ -301,6 +301,33 @@ class TestStatsMedianMatchesAnalysis:
         )
 
 
+class TestSubjectMediansUseTrueMedian:
+    """industries.py / parties.py subject medians must use the same true-median
+    convention as the stats.json baselines they are charted directly against
+    (PhaseDurationComparison), not the upper-middle element.
+    """
+
+    def test_even_length_duration_list_averages_the_middle_pair(self):
+        # Four completed Phase 1 reviews with calendar durations 4/6/8/10 days:
+        # true median is 7; the old sorted[len//2] convention gave 8.
+        mergers = [
+            {
+                'merger_id': f'MN-810{i}',
+                'is_waiver': False,
+                'effective_notification_datetime': start,
+                'phase_1_determination_date': end,
+            }
+            for i, (start, end) in enumerate([
+                ('2025-06-02', '2025-06-06'),
+                ('2025-06-02', '2025-06-08'),
+                ('2025-06-02', '2025-06-10'),
+                ('2025-06-02', '2025-06-12'),
+            ])
+        ]
+        for payload in (industries._phase_duration(mergers), parties._phase_duration(mergers)):
+            assert payload['median_days'] == 7
+
+
 # ---------------------------------------------------------------------------
 # industries
 # ---------------------------------------------------------------------------
