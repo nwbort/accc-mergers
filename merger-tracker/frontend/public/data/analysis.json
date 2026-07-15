@@ -467,6 +467,11 @@
         "in_progress": false
       },
       {
+        "business_days": 16,
+        "calendar_days": 22,
+        "in_progress": false
+      },
+      {
         "business_days": 29,
         "calendar_days": 44,
         "in_progress": true
@@ -679,17 +684,17 @@
     ],
     "stats": {
       "average": 18.5,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 130
+      "count": 131
     },
     "calendar_stats": {
       "average": 28.3,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 130
+      "count": 131
     }
   },
   "waiver_duration": {
@@ -1859,11 +1864,11 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "average_business_days": 21.3,
-      "median_business_days": 17.5,
-      "average_calendar_days": 33.3,
-      "median_calendar_days": 27.0,
-      "count": 30
+      "average_business_days": 21.1,
+      "median_business_days": 17,
+      "average_calendar_days": 32.9,
+      "median_calendar_days": 27,
+      "count": 31
     },
     {
       "code": "B",
@@ -1893,15 +1898,6 @@
       "count": 1
     },
     {
-      "code": "J",
-      "name": "Information Media and Telecommunications",
-      "average_business_days": 19.6,
-      "median_business_days": 18,
-      "average_calendar_days": 30.8,
-      "median_calendar_days": 28,
-      "count": 19
-    },
-    {
       "code": "E",
       "name": "Construction",
       "average_business_days": 19.4,
@@ -1909,6 +1905,15 @@
       "average_calendar_days": 28.3,
       "median_calendar_days": 23,
       "count": 9
+    },
+    {
+      "code": "J",
+      "name": "Information Media and Telecommunications",
+      "average_business_days": 19.4,
+      "median_business_days": 18.0,
+      "average_calendar_days": 30.4,
+      "median_calendar_days": 27.5,
+      "count": 20
     },
     {
       "code": "K",
@@ -1986,11 +1991,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 293,
+      "count": 294,
       "outcome_mix": {
-        "Approved": 293
+        "Approved": 294
       },
-      "median_phase_1_business_days": 16
+      "median_phase_1_business_days": 16.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2004,9 +2009,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 42,
+      "count": 41,
       "outcome_mix": {
-        "Unknown": 42
+        "Unknown": 41
       },
       "median_phase_1_business_days": 36.5
     },
@@ -2039,7 +2044,7 @@
   "deadline_utilisation": {
     "histogram": {
       "15": 35,
-      "16": 25,
+      "16": 26,
       "17": 16,
       "18": 15,
       "19": 10,
@@ -2059,9 +2064,9 @@
     },
     "stats": {
       "mean_used_bd": 17.8,
-      "median_used_bd": 17.0,
-      "pct_decided_final_3_bd": 4.0,
-      "count": 126
+      "median_used_bd": 17,
+      "pct_decided_final_3_bd": 3.9,
+      "count": 127
     },
     "extended_count": 2
   },
@@ -2147,11 +2152,11 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "approved": 28,
+      "approved": 29,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 9,
-      "phase2_referral_rate": 0.067
+      "in_progress": 8,
+      "phase2_referral_rate": 0.065
     },
     {
       "code": "C",
@@ -2183,10 +2188,10 @@
     {
       "code": "J",
       "name": "Information Media and Telecommunications",
-      "approved": 19,
+      "approved": 20,
       "not_approved": 0,
       "referred": 0,
-      "in_progress": 5,
+      "in_progress": 4,
       "phase2_referral_rate": 0.0
     },
     {
