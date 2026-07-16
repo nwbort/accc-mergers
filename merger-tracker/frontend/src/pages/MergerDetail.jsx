@@ -18,7 +18,7 @@ import Phase2NoticeMattersSection from '../components/Phase2NoticeMattersSection
 import MergerTimeline from '../components/MergerTimeline';
 import { useTracking } from '../context/TrackingContext';
 import { useFetchData } from '../hooks/useFetchData';
-import { formatDate } from '../utils/dates';
+import { formatDate, formatDateLong } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN, CARD, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
@@ -427,7 +427,7 @@ function MergerDetail() {
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-900">
                 {merger.appeal.appellant ? `Decision appealed by ${merger.appeal.appellant}` : (APPEAL_TYPE_LABELS[merger.appeal.appeal_type] || DEFAULT_APPEAL_LABEL)}
-                {merger.appeal.filed_date ? ` on ${formatDate(merger.appeal.filed_date)}` : ''}
+                {merger.appeal.filed_date ? ` on ${formatDateLong(merger.appeal.filed_date)}` : ''}
                 {merger.appeal.status === APPEAL_STATUS.CONCLUDED && (
                   <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-gray-100 text-gray-600 align-middle">
                     Concluded
