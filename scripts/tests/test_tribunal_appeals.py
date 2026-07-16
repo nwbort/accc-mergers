@@ -65,6 +65,14 @@ def _appeal(merger_id='MN-0001'):
     }
 
 
+def _concluded_appeal(merger_id='MN-0001', outcome='ACCC decision affirmed'):
+    appeal = _appeal(merger_id)
+    appeal[merger_id]['status'] = tribunal.APPEAL_STATUS_CONCLUDED
+    appeal[merger_id]['outcome'] = outcome
+    appeal[merger_id]['concluded_date'] = '2026-11-01'
+    return appeal
+
+
 class TestLinkTribunalAppeals:
     def test_sets_flag_and_record(self):
         mergers = [enrich_merger(_phase2_not_approved())]
@@ -75,7 +83,35 @@ class TestLinkTribunalAppeals:
         assert m['appeal']['tribunal_number'] == 'ACT 1 of 2026'
         assert m['appeal']['appeal_type'] == tribunal.PARTY_DENIAL
         assert m['appeal']['appellant'] == 'Coles'
+        assert m['appeal']['status'] == tribunal.APPEAL_STATUS_CURRENT
         assert len(m['appeal']['documents']) == 1
+
+    def test_missing_status_defaults_to_current(self):
+        # The fixture has no explicit status → treated as a live appeal.
+        appeal = _appeal()
+        appeal['MN-0001'].pop('status', None)
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, appeal)
+        assert mergers[0]['under_appeal'] is True
+        assert mergers[0]['appeal']['status'] == tribunal.APPEAL_STATUS_CURRENT
+
+    def test_concluded_appeal_is_not_under_appeal(self):
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, _concluded_appeal())
+        m = mergers[0]
+        # No longer live → badge suppressed everywhere ...
+        assert m['under_appeal'] is False
+        # ... but the appeal record + documents remain for the detail page.
+        assert m['appeal']['status'] == tribunal.APPEAL_STATUS_CONCLUDED
+        assert m['appeal']['outcome'] == 'ACCC decision affirmed'
+        assert m['appeal']['concluded_date'] == '2026-11-01'
+        assert any(e.get('is_appeal') for e in m['events'])
+
+    def test_concluded_flag_not_propagated_to_outputs(self):
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, _concluded_appeal())
+        assert list_out._lightweight(mergers[0])['under_appeal'] is False
+        assert phase2.generate(mergers)['completed'][0]['under_appeal'] is False
 
     def test_preserves_accc_outcome(self):
         # The appeal layers on top of — never replaces — the ACCC outcome.
@@ -170,6 +206,7 @@ class TestRealDataFile:
             assert appeal['tribunal_number']
             assert appeal['tribunal_url'].startswith('https://')
             assert appeal['appeal_type'] in tribunal.APPEAL_TYPES
+            assert appeal.get('status', tribunal.DEFAULT_APPEAL_STATUS) in tribunal.APPEAL_STATUSES
             for doc in appeal.get('documents', []):
                 assert doc['date']
                 assert doc['description']

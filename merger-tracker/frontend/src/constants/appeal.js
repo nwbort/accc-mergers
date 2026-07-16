@@ -15,6 +15,14 @@ export const APPEAL_TYPES = {
   THIRD_PARTY_CLEARANCE: 'third_party_clearance',
 };
 
+// Appeal lifecycle status (mirrors scripts/constants/tribunal.py). Only a
+// `current` appeal makes a merger "under appeal"; a `concluded` matter keeps
+// its tribunal link and documents on the detail page but drops the badge.
+export const APPEAL_STATUS = {
+  CURRENT: 'current',
+  CONCLUDED: 'concluded',
+};
+
 // appeal_type → short human label shown on the tribunal link card.
 export const APPEAL_TYPE_LABELS = {
   [APPEAL_TYPES.PARTY_DENIAL]: 'Appeal against refusal',

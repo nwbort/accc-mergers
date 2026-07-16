@@ -4,7 +4,7 @@
 All downstream generators consume the already-enriched objects.
 """
 
-from constants import merger_status
+from constants import merger_status, tribunal
 from cutoff import is_waiver_merger
 from date_utils import parse_iso_datetime
 from normalization import normalize_determination
@@ -354,10 +354,15 @@ def link_tribunal_appeals(enriched_mergers: list, appeals: dict) -> int:
 
     For every merger with an entry in ``appeals`` (keyed by merger_id):
 
-      * ``under_appeal`` is set to ``True`` (a lightweight flag propagated to
-        list/phase2/timeline outputs and rendered as an "Under appeal" badge);
       * ``appeal`` holds the full appeal record (tribunal number, tribunal URL,
-        appeal type, appellant, filed date and documents); and
+        appeal type, appellant, lifecycle status, outcome, filed date and
+        documents), so the tribunal link and filings stay visible on the detail
+        page even after an appeal has finished;
+      * ``under_appeal`` is set to ``True`` only while the appeal is *current*
+        (see :func:`constants.tribunal.is_current_appeal`) — a concluded or
+        withdrawn appeal leaves an appeal record but is not "under appeal", so
+        the badge does not linger. This flag is propagated to the
+        list/phase2/timeline outputs; and
       * each appeal document is folded into the merger's event timeline so the
         filings surface alongside ACCC events.
 
@@ -375,13 +380,17 @@ def link_tribunal_appeals(enriched_mergers: list, appeals: dict) -> int:
         if not appeal:
             continue
 
-        merger['under_appeal'] = True
+        status = appeal.get('status', tribunal.DEFAULT_APPEAL_STATUS)
+        merger['under_appeal'] = tribunal.is_current_appeal(appeal)
         merger['appeal'] = {
             'tribunal_number': appeal.get('tribunal_number'),
             'tribunal_url': appeal.get('tribunal_url'),
             'appeal_type': appeal.get('appeal_type'),
             'appellant': appeal.get('appellant'),
+            'status': status,
+            'outcome': appeal.get('outcome'),
             'filed_date': appeal.get('filed_date'),
+            'concluded_date': appeal.get('concluded_date'),
             'documents': appeal.get('documents', []),
         }
 

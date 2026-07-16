@@ -34,3 +34,32 @@ APPEAL_TYPE_LABELS = {
     PARTY_CONDITIONAL_CLEARANCE: 'Appeal against conditional clearance',
     THIRD_PARTY_CLEARANCE: 'Third party appeal against clearance',
 }
+
+# Appeal lifecycle status. A matter is "current" while it is live before the
+# tribunal and "concluded" once the tribunal has decided it, or it has been
+# withdrawn/dismissed. Only a *current* appeal makes a merger "under appeal":
+# a record (and its documents) can persist here long after the appeal itself
+# has finished, so the presence of an appeal never implies a live one.
+APPEAL_STATUS_CURRENT = 'current'
+APPEAL_STATUS_CONCLUDED = 'concluded'
+
+APPEAL_STATUSES = frozenset({
+    APPEAL_STATUS_CURRENT,
+    APPEAL_STATUS_CONCLUDED,
+})
+
+# Records without an explicit status are treated as current — a concluded
+# appeal must be marked so deliberately (usually with an outcome).
+DEFAULT_APPEAL_STATUS = APPEAL_STATUS_CURRENT
+
+
+def is_current_appeal(appeal: dict) -> bool:
+    """Return True when the appeal is still live before the tribunal.
+
+    An appeal is current unless it is explicitly marked ``concluded``. Anything
+    other than ``concluded`` (including a missing status) is treated as current
+    so a freshly-scraped matter is never silently hidden.
+    """
+    if not appeal:
+        return False
+    return appeal.get('status', DEFAULT_APPEAL_STATUS) != APPEAL_STATUS_CONCLUDED

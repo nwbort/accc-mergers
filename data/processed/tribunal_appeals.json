@@ -1,11 +1,14 @@
 {
-  "_comment": "Manually-maintained Australian Competition Tribunal appeal data, keyed by ACCC merger_id. Merged into the frontend data by scripts/static_data (see loaders.load_tribunal_appeals and enrichment.link_tribunal_appeals). A merger appears 'under appeal' whenever it has an entry here. Fields: tribunal_number (e.g. 'ACT 1 of 2026'), tribunal_url (the tribunal current-matters page), appeal_type (one of party_denial / party_conditional_clearance / third_party_clearance — see scripts/constants/tribunal.py), appellant (who lodged the review), filed_date (ISO date the application was lodged), and documents[] which are folded into the merger's event timeline. Each document: date, filed_by, description, confidentiality ('Confidential' | 'Non-confidential'), url (direct tribunal link, treated like an ACCC url), and optionally url_gh (local mirror served from data/raw/matters/{id}/). Tribunal scraping will maintain this file automatically in future; for now it is edited by hand.",
+  "_comment": "Manually-maintained Australian Competition Tribunal appeal data, keyed by ACCC merger_id. Merged into the frontend data by scripts/static_data (see loaders.load_tribunal_appeals and enrichment.link_tribunal_appeals). IMPORTANT: an entry here does NOT by itself make a merger 'under appeal' — a matter stays listed after it finishes. A merger is shown as under appeal only while 'status' is 'current' (anything other than 'concluded' counts as current; a finished/withdrawn appeal must be marked 'concluded', usually with an 'outcome'). Fields: tribunal_number (e.g. 'ACT 1 of 2026'), tribunal_url (the tribunal matter page), appeal_type (one of party_denial / party_conditional_clearance / third_party_clearance — see scripts/constants/tribunal.py), appellant (who lodged the review), status ('current' | 'concluded'), outcome (optional free text once concluded, e.g. 'ACCC decision affirmed'), filed_date, concluded_date (optional), and documents[] which are folded into the merger's event timeline regardless of status. Each document: date, filed_by, description, confidentiality ('Confidential' | 'Non-confidential'), url (direct tribunal link, treated like an ACCC url), and optionally url_gh (local mirror served from data/raw/matters/{id}/). Tribunal scraping will maintain this file automatically in future; for now it is edited by hand.",
   "MN-01068": {
     "tribunal_number": "ACT 1 of 2026",
     "tribunal_url": "https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026",
     "appeal_type": "party_denial",
     "appellant": "Coles",
+    "status": "current",
+    "outcome": null,
     "filed_date": "2026-07-15",
+    "concluded_date": null,
     "documents": [
       {
         "date": "2026-07-15",

@@ -23,7 +23,7 @@ import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN, CARD, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
 import { MERGER_STATUS } from '../constants/mergerStatus';
-import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL } from '../constants/appeal';
+import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL, APPEAL_STATUS } from '../constants/appeal';
 import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, APPEAL_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
 
 // Display text for each related-merger relationship. Keys match the
@@ -386,10 +386,18 @@ function MergerDetail() {
               <p className="text-sm font-medium text-gray-900">
                 {APPEAL_TYPE_LABELS[merger.appeal.appeal_type] || DEFAULT_APPEAL_LABEL}
                 {merger.appeal.appellant ? ` by ${merger.appeal.appellant}` : ''}
+                {merger.appeal.status === APPEAL_STATUS.CONCLUDED && (
+                  <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-gray-100 text-gray-600 align-middle">
+                    Concluded
+                  </span>
+                )}
               </p>
               <p className="text-xs text-gray-500 mt-0.5">
                 Australian Competition Tribunal
                 {merger.appeal.tribunal_number ? ` · ${merger.appeal.tribunal_number}` : ''}
+                {merger.appeal.status === APPEAL_STATUS.CONCLUDED && merger.appeal.outcome
+                  ? ` · ${merger.appeal.outcome}`
+                  : ''}
               </p>
             </div>
             <ExternalLinkIcon className="h-3.5 w-3.5 text-amber-600 flex-shrink-0" />
