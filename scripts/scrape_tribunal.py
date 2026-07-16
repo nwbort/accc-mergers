@@ -77,6 +77,15 @@ _COLUMN_KEYWORDS = [
     ("description", "name"),
 ]
 
+# Trailing file annotation the tribunal appends to a document link's text, e.g.
+# "Application for review (PDF, 537.8 KB)" or "... (PDF 1.01 MB)". Stripped from
+# the description so it reads like the hand-curated entries ("Application for
+# review"). The link URL is kept regardless.
+_FILE_ANNOTATION_RE = re.compile(
+    r"\s*\((?:PDF|DOCX?|XLSX?|PPTX?|RTF|ZIP|TXT|HTML?)\b[^)]*\)\s*$",
+    re.IGNORECASE,
+)
+
 # Common date formats seen on tribunal pages, normalised to YYYY-MM-DD.
 _DATE_FORMATS = [
     "%d %B %Y",   # 15 July 2026
@@ -97,6 +106,14 @@ def load_appeals() -> tuple[dict, dict]:
         raw = json.load(f)
     records = {k: v for k, v in raw.items() if not k.startswith("_")}
     return raw, records
+
+
+def clean_description(value: str | None) -> str | None:
+    """Strip the trailing '(PDF, 537.8 KB)'-style file annotation from a title."""
+    if not value:
+        return None
+    text = " ".join(value.split())
+    return _FILE_ANNOTATION_RE.sub("", text).strip() or None
 
 
 def normalise_date(value: str | None) -> str | None:
@@ -188,6 +205,7 @@ def parse_document_row(row, field_map: dict[int, str], base_url: str) -> dict | 
             doc[field] = text
 
     doc["date"] = normalise_date(doc["date"])
+    doc["description"] = clean_description(doc["description"])
     doc["confidentiality"] = normalise_confidentiality(doc["confidentiality"])
 
     # A row with no link and no description is noise (spacer / empty row).
