@@ -1,6 +1,6 @@
 {
   "total_mergers": 178,
-  "total_waivers": 269,
+  "total_waivers": 270,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 255,
+    "Approved": 256,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.602230483271377,
-    "median_days": 18,
-    "average_business_days": 12.342007434944238,
-    "median_business_days": 12
+    "average_days": 18.596296296296295,
+    "median_days": 18.0,
+    "average_business_days": 12.344444444444445,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -206,6 +206,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-65027",
+      "merger_name": "Kennards Hire - Skylift Hire & Rentals",
+      "determination": "Approved",
+      "determination_date": "2026-07-16T12:00:00Z",
+      "page_modified_datetime": "2026-07-16T17:33:11+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-01103",
       "merger_name": "Discovery Holiday Parks \u2013 four Breeze Holiday Parks",
       "determination": "Approved",
@@ -311,16 +321,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-13T12:00:00Z",
       "page_modified_datetime": "2026-07-13T17:40:04+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-40030",
-      "merger_name": "Telstra \u2013 indefeasible rights over dark fibre on Tabua, Proa and Bulikula subsea cables",
-      "determination": "Approved",
-      "determination_date": "2026-07-13T12:00:00Z",
-      "page_modified_datetime": "2026-07-13T17:38:03+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

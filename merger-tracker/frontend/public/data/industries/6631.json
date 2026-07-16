@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "WA-65027",
+      "merger_name": "Kennards Hire - Skylift Hire & Rentals",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-29T12:00:00Z",
+      "determination_date": "2026-07-16T12:00:00Z"
+    },
+    {
       "merger_id": "WA-05024",
       "merger_name": "B.M.D. Holdings \u2013 Bajara Plant Hire and Stirling Contracting",
       "is_waiver": true,
@@ -49,10 +60,10 @@
       "determination_date": "2026-03-19T12:00:00Z"
     }
   ],
-  "count": 2,
+  "count": 3,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": {
     "average_days": 22.0,
@@ -62,10 +73,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 29.0,
-    "median_days": 29,
-    "average_business_days": 19.0,
-    "median_business_days": 19,
-    "completed_count": 1
+    "average_days": 23.0,
+    "median_days": 23.0,
+    "average_business_days": 16.0,
+    "median_business_days": 16.0,
+    "completed_count": 2
   }
 }
