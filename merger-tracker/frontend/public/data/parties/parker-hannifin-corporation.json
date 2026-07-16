@@ -4,6 +4,11 @@
   "members": [
     {
       "name": "Parker-Hannifin Corporation",
+      "identifier": null,
+      "identifier_type": null
+    },
+    {
+      "name": "Parker-Hannifin Corporation",
       "identifier": "LEI  5493002CONDB4N2HKI23",
       "identifier_type": null
     }
@@ -20,16 +25,33 @@
         "phase": "Phase 1",
         "notification_date": "2026-07-15T12:00:00Z",
         "determination_date": null
+      },
+      {
+        "merger_id": "MN-75004",
+        "merger_name": "Parker-Hannifin \u2013 Filtration Group",
+        "is_waiver": false,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Phase 1",
+        "notification_date": "2026-02-05T12:00:00Z",
+        "determination_date": "2026-03-10T12:00:00Z"
       }
     ],
     "target": [],
     "other": []
   },
-  "merger_count": 1,
-  "phase_1_count": 1,
+  "merger_count": 2,
+  "phase_1_count": 2,
   "phase_2_count": 0,
   "waiver_count": 0,
   "active_count": 1,
-  "phase_duration": null,
+  "phase_duration": {
+    "average_days": 33.0,
+    "median_days": 33,
+    "average_business_days": 22.0,
+    "median_business_days": 22,
+    "completed_count": 1
+  },
   "waiver_duration": null
 }

@@ -14,6 +14,10 @@
       "name": "Parker-Hannifin Corporation",
       "identifier_type": null,
       "identifier": "LEI  5493002CONDB4N2HKI23",
+      "canonical": {
+        "id": "parker-hannifin-corporation",
+        "name": "Parker-Hannifin Corporation"
+      },
       "party_page": {
         "id": "parker-hannifin-corporation",
         "name": "Parker-Hannifin Corporation"
@@ -85,8 +89,12 @@
           "name": "Parker-Hannifin Corporation",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "parker-hannifin-corporation",
+            "name": "Parker-Hannifin Corporation"
+          },
           "party_page": {
-            "id": "parker-hannifin-corporation-2",
+            "id": "parker-hannifin-corporation",
             "name": "Parker-Hannifin Corporation"
           }
         }
