@@ -24190,61 +24190,12 @@
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
       "has_questionnaire": true,
+      "related_merger": {
+        "merger_id": "WA-25025",
+        "relationship": "refiled_from",
+        "merger_name": "Laundy \u2013 Woy Woy Hotel"
+      },
       "similar_mergers": [
-        {
-          "merger_id": "WA-25025",
-          "merger_name": "Laundy \u2013 Woy Woy Hotel",
-          "status": "Assessment completed",
-          "accc_determination": "Not approved",
-          "acquirers": [
-            {
-              "name": "LAUNDY WOY FREEHOLD PTY LTD",
-              "identifier_type": "ABN",
-              "identifier": "65 696 471 306",
-              "canonical": {
-                "id": "laundy-woy",
-                "name": "Laundy Woy"
-              },
-              "party_page": {
-                "id": "laundy-woy",
-                "name": "Laundy Woy"
-              }
-            },
-            {
-              "name": "LAUNDY WOY TRADING PTY LTD",
-              "identifier_type": "ABN",
-              "identifier": "29 696 470 345",
-              "canonical": {
-                "id": "laundy-woy",
-                "name": "Laundy Woy"
-              },
-              "party_page": {
-                "id": "laundy-woy",
-                "name": "Laundy Woy"
-              }
-            }
-          ],
-          "targets": [
-            {
-              "name": "HARVEST PUB OPERATIONS 2 PTY LTD",
-              "identifier_type": "ABN",
-              "identifier": "51 652 748 242",
-              "party_page": {
-                "id": "harvest-pub-operations-2-pty-ltd",
-                "name": "Harvest Pub Operations 2 Pty Ltd"
-              }
-            },
-            {
-              "name": "AMAL TRUSTEES PTY LIMITED",
-              "identifier_type": "ABN",
-              "identifier": "98 609 737 064",
-              "party_page": {
-                "id": "amal-trustees-pty-limited",
-                "name": "Amal Trustees Pty Limited"
-              }
-            }
-          ]
-        },
         {
           "merger_id": "WA-45013",
           "merger_name": "Australian Venue Co \u2013 assets of White Cockatoo Hotel, Petersham",
@@ -64553,6 +64504,11 @@
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "related_merger": {
+        "merger_id": "MN-40029",
+        "relationship": "refiled_as",
+        "merger_name": "Laundy \u2013 Woy Woy Hotel"
+      },
       "similar_mergers": [
         {
           "merger_id": "WA-45013",
