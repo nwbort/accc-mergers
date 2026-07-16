@@ -33,7 +33,7 @@
       "code": "15",
       "name": "Pulp, Paper and Converted Paper Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 1
+      "merger_count": 2
     },
     {
       "code": "16",
@@ -97,6 +97,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-30023",
+      "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-16T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-70026",
       "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
@@ -1275,11 +1286,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 107,
-  "phase_1_count": 49,
+  "count": 108,
+  "phase_1_count": 50,
   "phase_2_count": 1,
   "waiver_count": 57,
-  "active_count": 9,
+  "active_count": 10,
   "phase_duration": {
     "average_days": 28.682926829268293,
     "median_days": 26,

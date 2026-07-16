@@ -1,10 +1,10 @@
 {
-  "total_mergers": 178,
+  "total_mergers": 179,
   "total_waivers": 273,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 2
   },
   "by_determination": {
@@ -90,6 +90,15 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-30023",
+      "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-16T12:00:00Z",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-15028",
       "merger_name": "Total Drain Group - Pipe Management Australia",
@@ -191,15 +200,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-09T12:00:00Z",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-05032",
-      "merger_name": "Motorola Solutions - D-Fend Solutions",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-08T12:00:00Z",
       "is_waiver": false,
       "is_refiled": false
     }
