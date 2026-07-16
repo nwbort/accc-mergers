@@ -1,0 +1,41 @@
+name: Scrape Tribunal
+
+on:
+  workflow_dispatch:
+    inputs:
+      merger_ids:
+        description: 'Optional space-separated merger_ids to scrape (default: all with a tribunal_url)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  scrape-tribunal:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v6
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install dependencies
+      run: pip install requests beautifulsoup4 lxml
+
+    - name: Run the tribunal scraper
+      run: python scripts/scrape_tribunal.py ${{ github.event.inputs.merger_ids }}
+
+    - name: Commit and push changes
+      run: |-
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+        git add -A
+        timestamp=$(TZ='Australia/Sydney' date)
+        git diff --staged --quiet || true
+        git commit -m "Update scraped tribunal data: ${timestamp}" || exit 0
+        git pull --rebase || { git rebase --abort; exit 1; }
+        git push
