@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import { FaChevronLeft, FaLink, FaComment } from 'react-icons/fa';
+import { FaChevronLeft, FaLink, FaComment, FaGavel } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorCard from '../components/ErrorCard';
 import StatusBadge from '../components/StatusBadge';
 import TrackButton from '../components/TrackButton';
 import WaiverBadge from '../components/WaiverBadge';
+import AppealBadge from '../components/AppealBadge';
 import BusinessDayProgress from '../components/BusinessDayProgress';
 import { getBusinessDayProgress } from '../utils/businessDayProgress';
 import SEO from '../components/SEO';
@@ -22,7 +23,8 @@ import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN, CARD, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
 import { MERGER_STATUS } from '../constants/mergerStatus';
-import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
+import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL, APPEAL_STATUS, APPEAL_OUTCOME_LABELS } from '../constants/appeal';
+import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, APPEAL_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
 
 // Display text for each related-merger relationship. Keys match the
 // `relationship` values produced by the data pipeline (see
@@ -169,6 +171,7 @@ function MergerDetail() {
   // Phase 2 determination) is coloured by outcome to match the header timeline's
   // endpoint, and everything else falls back to the primary colour.
   const dotStyleForEvent = (event) => {
+    if (event.is_appeal) return APPEAL_DOT;
     if (isCeasedEvent(event)) return OUTCOME_DOT_COLORS[MERGER_STATUS.ASSESSMENT_CEASED];
     if (isPhase2ReferralEvent(event)) return OUTCOME_DOT_COLORS[MERGER_STATUS.REFERRED_TO_PHASE_2];
     if (event.is_determination_event) {
@@ -285,11 +288,15 @@ function MergerDetail() {
               </div>
             </div>
             <div className="flex flex-col items-end gap-2 flex-shrink-0">
-              <StatusBadge
-                status={merger.status}
-                determination={merger.accc_determination}
-                hasConditions={merger.has_conditions}
-              />
+              <div className="flex items-center gap-2 flex-wrap justify-end">
+                {merger.under_appeal && <AppealBadge />}
+                <StatusBadge
+                  status={merger.status}
+                  determination={merger.accc_determination}
+                  hasConditions={merger.has_conditions}
+                  appeal={merger.appeal}
+                />
+              </div>
               <TrackButton
                 active={tracked}
                 onClick={() => toggleTracking(id)}
@@ -361,6 +368,41 @@ function MergerDetail() {
               </p>
             </div>
           </Link>
+        )}
+
+        {/* Tribunal appeal link — mirrors the related-merger link styling, but
+            points out to the Australian Competition Tribunal matter page. */}
+        {merger.appeal && merger.appeal.tribunal_url && (
+          <a
+            href={merger.appeal.tribunal_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 bg-amber-50/80 rounded-2xl border border-amber-200/60 shadow-card p-4 mb-6 hover:bg-amber-50 hover:border-amber-300/60 transition-all group"
+            aria-label={`View this matter on the Australian Competition Tribunal website${merger.appeal.tribunal_number ? ` (${merger.appeal.tribunal_number})` : ''}`}
+          >
+            <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center">
+              <FaGavel className="h-4 w-4 text-amber-600" aria-hidden="true" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <p className="text-sm font-medium text-gray-900">
+                {APPEAL_TYPE_LABELS[merger.appeal.appeal_type] || DEFAULT_APPEAL_LABEL}
+                {merger.appeal.appellant ? ` by ${merger.appeal.appellant}` : ''}
+                {merger.appeal.status === APPEAL_STATUS.CONCLUDED && (
+                  <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-gray-100 text-gray-600 align-middle">
+                    Concluded
+                  </span>
+                )}
+              </p>
+              <p className="text-xs text-gray-500 mt-0.5">
+                Australian Competition Tribunal
+                {merger.appeal.tribunal_number ? ` · ${merger.appeal.tribunal_number}` : ''}
+                {merger.appeal.status === APPEAL_STATUS.CONCLUDED && merger.appeal.outcome
+                  ? ` · ${APPEAL_OUTCOME_LABELS[merger.appeal.outcome] || merger.appeal.outcome}`
+                  : ''}
+              </p>
+            </div>
+            <ExternalLinkIcon className="h-3.5 w-3.5 text-amber-600 flex-shrink-0" />
+          </a>
         )}
 
         {/* Determination explanation (waivers and Phase 1 approved notifications) */}
@@ -498,6 +540,11 @@ function MergerDetail() {
                           <p className="text-xs text-gray-500 mt-0.5">
                             {formatDate(event.date)}
                           </p>
+                          {event.is_appeal && (event.appeal_filed_by || event.appeal_confidentiality) && (
+                            <p className="text-xs text-gray-400 mt-0.5">
+                              {[event.appeal_filed_by, event.appeal_confidentiality].filter(Boolean).join(' · ')}
+                            </p>
+                          )}
                           {event.url_gh && (
                             <div className="mt-1.5">
                               <a

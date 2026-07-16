@@ -108,7 +108,7 @@ class TestReturnsValidShape:
         assert set(entry.keys()) == {
             'merger_id', 'merger_name', 'referral_date', 'nocc_date', 'nocc_issued',
             'end_of_determination_period', 'determination', 'determination_date',
-            'phase_2_inferred', 'is_refiled',
+            'phase_2_inferred', 'is_refiled', 'under_appeal',
         }
 
 

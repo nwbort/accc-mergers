@@ -42,6 +42,7 @@ from static_data.enrichment import (
     link_related_mergers,
     link_related_parties,
     link_similar_mergers,
+    link_tribunal_appeals,
 )
 from static_data.loaders import (
     load_commentary,
@@ -51,6 +52,7 @@ from static_data.loaders import (
     load_related_mergers,
     load_related_parties,
     load_similar_mergers,
+    load_tribunal_appeals,
 )
 from static_data.outputs import (
     analysis,
@@ -119,6 +121,10 @@ def main():
     if related_parties:
         print(f"Loaded {len(related_parties)} related party group(s)")
 
+    tribunal_appeals = load_tribunal_appeals()
+    if tribunal_appeals:
+        print(f"Loaded {len(tribunal_appeals)} tribunal appeal(s)")
+
     print("Enriching mergers...")
     enriched = [
         enrich_merger(m, commentary, questionnaire_data, nocc_data) for m in mergers
@@ -132,6 +138,9 @@ def main():
     party_linked = link_related_parties(enriched, related_parties)
     if party_linked:
         print(f"  Linked {party_linked} party record(s) to canonical groups")
+    appeal_linked = link_tribunal_appeals(enriched, tribunal_appeals)
+    if appeal_linked:
+        print(f"  Linked {appeal_linked} tribunal appeal(s)")
     print(f"✓ Enriched {len(enriched)} mergers")
 
     party_groups = parties.build_party_pages(enriched, related_parties)

@@ -11,6 +11,52 @@ from ..filters import filter_notifications, filter_waivers
 from ..loaders import BACKWARD_REFILE_RELATIONSHIPS
 
 
+def _appeal_activity_date(appeal: dict) -> str | None:
+    """Most recent dated activity on a tribunal appeal.
+
+    The latest document date, falling back to the application's filing date, so
+    the appeal stays "recent" on the dashboard as new filings land. A bare
+    ``YYYY-MM-DD`` is promoted to the event datetime format so it sorts cleanly
+    against the ISO notification datetimes.
+    """
+    doc_dates = [d.get('date') for d in appeal.get('documents', []) if d.get('date')]
+    activity = max(doc_dates) if doc_dates else appeal.get('filed_date')
+    if activity and len(activity) == 10 and activity[4] == '-' and activity[7] == '-':
+        return f"{activity}T12:00:00Z"
+    return activity
+
+
+def _appeal_card(merger: dict) -> dict | None:
+    """A dashboard "recent activity" card for a merger's tribunal appeal.
+
+    Returns ``None`` when the merger has no appeal. The card links to the merger
+    detail page and carries the lifecycle fields the frontend needs to label it
+    (under-appeal vs concluded, and the effective determination).
+    """
+    appeal = merger.get('appeal')
+    if not appeal:
+        return None
+    activity_date = _appeal_activity_date(appeal)
+    if not activity_date:
+        return None
+    return {
+        "merger_id": merger['merger_id'],
+        "merger_name": merger['merger_name'],
+        "status": merger.get('status'),
+        "accc_determination": merger.get('accc_determination'),
+        # Reused as the sort key so the appeal interleaves with notifications;
+        # the frontend shows it as the "Appeal filed" date, not a notification.
+        "effective_notification_datetime": activity_date,
+        "is_appeal": True,
+        "under_appeal": bool(merger.get('under_appeal')),
+        "appeal_type": appeal.get('appeal_type'),
+        "appeal_status": appeal.get('status'),
+        "effective_determination": appeal.get('effective_determination'),
+        "tribunal_number": appeal.get('tribunal_number'),
+        "appeal_date": activity_date,
+    }
+
+
 def generate(mergers: list) -> dict:
     """Return the stats.json payload for pre-enriched mergers."""
     notification_mergers = filter_notifications(mergers)
@@ -112,13 +158,16 @@ def generate(mergers: list) -> dict:
         for name, count in sorted(industry_counts.items(), key=lambda x: -x[1])[:10]
     ]
 
-    # Recent mergers (include all but mark waivers)
+    # Recent mergers (include all but mark waivers). Tribunal appeals are folded
+    # in as their own activity cards (see _appeal_card) so a freshly-lodged appeal
+    # surfaces on the dashboard alongside recent notifications, ranked by the same
+    # date. A card slice of 12 is taken after merging the two streams.
     sorted_mergers = sorted(
         mergers,
         key=lambda x: x.get('effective_notification_datetime', ''),
         reverse=True,
     )
-    recent_mergers = [
+    merger_cards = [
         {
             "merger_id": m['merger_id'],
             "merger_name": m['merger_name'],
@@ -130,6 +179,12 @@ def generate(mergers: list) -> dict:
         }
         for m in sorted_mergers[:12]
     ]
+    appeal_cards = [card for card in (_appeal_card(m) for m in mergers) if card]
+    recent_mergers = sorted(
+        merger_cards + appeal_cards,
+        key=lambda x: x.get('effective_notification_datetime') or '',
+        reverse=True,
+    )[:12]
 
     # Recent determinations (approvals, declines, stage transitions)
     determination_events = []

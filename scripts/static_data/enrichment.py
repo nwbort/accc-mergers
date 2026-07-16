@@ -4,7 +4,7 @@
 All downstream generators consume the already-enriched objects.
 """
 
-from constants import merger_status
+from constants import merger_status, tribunal
 from cutoff import is_waiver_merger
 from date_utils import parse_iso_datetime
 from normalization import normalize_determination
@@ -312,6 +312,98 @@ def link_related_parties(enriched_mergers: list, party_groups: list) -> int:
                         'name': group.get('canonical_name'),
                     }
                     linked += 1
+    return linked
+
+
+def _normalise_appeal_date(value: str | None) -> str | None:
+    """Normalise a tribunal document date to the event datetime format.
+
+    Tribunal dates are recorded as plain ``YYYY-MM-DD``; the merger event
+    timeline uses ``YYYY-MM-DDT12:00:00Z``. A bare date is promoted to that
+    form so appeal events sort and render alongside ACCC events; anything
+    already carrying a time component is left untouched.
+    """
+    if not value:
+        return value
+    if len(value) == 10 and value[4] == '-' and value[7] == '-':
+        return f"{value}T12:00:00Z"
+    return value
+
+
+def _appeal_event(doc: dict, appeal: dict) -> dict:
+    """Turn a tribunal appeal document into a merger timeline event."""
+    description = doc.get('description') or 'Tribunal document'
+    return {
+        'date': _normalise_appeal_date(doc.get('date')),
+        'title': description,
+        'display_title': f"Tribunal appeal – {description}",
+        'url': doc.get('url'),
+        'url_gh': doc.get('url_gh'),
+        # Flags the event as originating from the tribunal appeal rather than
+        # the ACCC register, so the frontend can style/label it distinctly.
+        'is_appeal': True,
+        'appeal_filed_by': doc.get('filed_by'),
+        'appeal_confidentiality': doc.get('confidentiality'),
+        'tribunal_number': appeal.get('tribunal_number'),
+        'phase': None,
+    }
+
+
+def link_tribunal_appeals(enriched_mergers: list, appeals: dict) -> int:
+    """Attach Australian Competition Tribunal appeal data to mergers in-place.
+
+    For every merger with an entry in ``appeals`` (keyed by merger_id):
+
+      * ``appeal`` holds the full appeal record (tribunal number, tribunal URL,
+        appeal type, appellant, lifecycle status, outcome, filed date and
+        documents), so the tribunal link and filings stay visible on the detail
+        page even after an appeal has finished;
+      * ``under_appeal`` is set to ``True`` only while the appeal is *current*
+        (see :func:`constants.tribunal.is_current_appeal`) — a concluded or
+        withdrawn appeal leaves an appeal record but is not "under appeal", so
+        the badge does not linger. This flag is propagated to the
+        list/phase2/timeline outputs; and
+      * each appeal document is folded into the merger's event timeline so the
+        filings surface alongside ACCC events.
+
+    The ACCC-scraped ``status`` / ``accc_determination`` fields are left
+    untouched — the appeal is layered on top rather than replacing the
+    underlying outcome. Returns the number of mergers linked.
+    """
+    if not appeals:
+        return 0
+
+    linked = 0
+    for merger in enriched_mergers:
+        mid = merger.get('merger_id', '')
+        appeal = appeals.get(mid)
+        if not appeal:
+            continue
+
+        status = appeal.get('status', tribunal.DEFAULT_APPEAL_STATUS)
+        merger['under_appeal'] = tribunal.is_current_appeal(appeal)
+        merger['appeal'] = {
+            'tribunal_number': appeal.get('tribunal_number'),
+            'tribunal_url': appeal.get('tribunal_url'),
+            'appeal_type': appeal.get('appeal_type'),
+            'appellant': appeal.get('appellant'),
+            'status': status,
+            'outcome': appeal.get('outcome'),
+            # The ACCC-style determination that stands once the appeal is
+            # decided — the same as the ACCC's when affirmed, the opposite when
+            # set aside. Stored explicitly (never derived) and used to render an
+            # appeal-aware status badge, e.g. "Approved · on appeal".
+            'effective_determination': appeal.get('effective_determination'),
+            'filed_date': appeal.get('filed_date'),
+            'concluded_date': appeal.get('concluded_date'),
+            'documents': appeal.get('documents', []),
+        }
+
+        appeal_events = [_appeal_event(doc, appeal) for doc in appeal.get('documents', [])]
+        if appeal_events:
+            merger['events'] = list(merger.get('events') or []) + appeal_events
+
+        linked += 1
     return linked
 
 
