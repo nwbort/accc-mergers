@@ -17,6 +17,7 @@ from pydantic import BaseModel
 import uvicorn
 
 from detect_duplicates import build_report, DEFAULT_INPUT
+from merger_filters import load_mergers
 
 app = FastAPI()
 
@@ -31,10 +32,7 @@ def index():
 @app.get("/api/report")
 def get_report():
     """Generate the duplicate report on the fly."""
-    with DEFAULT_INPUT.open() as fh:
-        raw = json.load(fh)
-    mergers = raw if isinstance(raw, list) else raw.get("mergers", [])
-    return build_report(mergers)
+    return build_report(load_mergers(DEFAULT_INPUT))
 
 @app.post("/api/remove")
 def remove_event(req: RemoveRequest):

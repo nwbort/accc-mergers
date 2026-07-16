@@ -31,6 +31,9 @@ from pydantic import BaseModel
 import uvicorn
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+# Allow imports from the parent scripts/ directory too.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from merger_filters import load_mergers as _load_mergers_from  # noqa: E402
 from advisors_crypto import (  # noqa: E402
     ADVISORS_ENC,
     ADVISORS_JSON,
@@ -39,8 +42,6 @@ from advisors_crypto import (  # noqa: E402
     load_advisors as _crypto_load,
     save_advisors as _crypto_save,
 )
-
-import json  # noqa: E402  (still used for mergers.json)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
@@ -58,9 +59,7 @@ _SESSION: dict = {"passphrase": None}
 # ── helpers ────────────────────────────────────────────────────────────────
 
 def _load_mergers() -> list:
-    with MERGERS_JSON.open() as fh:
-        data = json.load(fh)
-    return data if isinstance(data, list) else data.get("mergers", [])
+    return _load_mergers_from(MERGERS_JSON)
 
 
 def _is_unlocked() -> bool:

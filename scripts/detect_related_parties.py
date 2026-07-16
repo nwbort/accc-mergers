@@ -55,6 +55,8 @@ from collections import defaultdict
 from difflib import SequenceMatcher
 from pathlib import Path
 
+from constants.site import REPO as _REPO, mergers_fyi_url
+from merger_filters import load_mergers
 from party_matching import (
     build_group_lookups,
     match_party,
@@ -70,8 +72,6 @@ DEFAULT_PARTIES = REPO_ROOT / "data" / "processed" / "related_parties.json"
 
 DEFAULT_FUZZY_THRESHOLD = 0.88
 
-_REPO = "nwbort/accc-mergers"
-_MERGERS_FYI_BASE = "https://mergers.fyi/mergers"
 _PARTIES_PATH = "data/processed/related_parties.json"
 
 # Tokens too generic to count as a "distinctive" shared token for fuzzy linking.
@@ -521,10 +521,6 @@ _SIGNAL_BLURB = {
 }
 
 
-def mergers_fyi_url(merger_id: str) -> str:
-    return f"{_MERGERS_FYI_BASE}/{merger_id}"
-
-
 def print_summary(candidates: list[dict]) -> None:
     if not candidates:
         print("No new related-party candidates found.")
@@ -641,9 +637,7 @@ def main() -> int:
         print(f"ERROR: mergers file not found: {args.mergers}", file=sys.stderr)
         return 2
 
-    with args.mergers.open() as fh:
-        raw = json.load(fh)
-    mergers = raw if isinstance(raw, list) else raw.get("mergers", [])
+    mergers = load_mergers(args.mergers)
 
     groups = []
     if args.parties.exists():

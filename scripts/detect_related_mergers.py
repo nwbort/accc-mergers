@@ -51,6 +51,10 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 from constants import merger_status
+from constants.site import REPO as _REPO, mergers_fyi_url
+from date_utils import parse_iso_datetime as parse_date
+from merger_filters import load_mergers
+from party_matching import normalise_name
 
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
@@ -64,31 +68,18 @@ NAME_SIMILARITY_THRESHOLD = 0.75
 WAIVER_REFILED = "waiver_refiled"
 SUSPENDED_REFILED = "suspended_refiled"
 
-_REPO = "nwbort/accc-mergers"
-_MERGERS_FYI_BASE = "https://mergers.fyi/mergers"
 _RELATED_PATH = "data/processed/related_mergers.json"
 
 
 # ---------------------------------------------------------------------------
 # Normalisation helpers
+#
+# Name normalisation is shared with party_matching.normalise_name. The
+# identifier normalisation below is deliberately looser than
+# party_matching.normalise_identifier (whitespace-only stripping, no
+# placeholder filtering) because it feeds set-intersection matching between
+# a waiver's and a notification's own recorded entities.
 # ---------------------------------------------------------------------------
-
-_COMPANY_SUFFIXES = re.compile(
-    r"\b(pty|ltd|limited|inc|llc|l\.l\.c\.|gmbh|b\.v\.|bv|nv|plc|co|corp|"
-    r"corporation|holdings|group|international|australia|the trustee for|trustee for)\b",
-    re.IGNORECASE,
-)
-
-
-def normalise_name(name: str) -> str:
-    """Lower-case, strip company suffixes and punctuation for fuzzy match."""
-    if not name:
-        return ""
-    out = name.lower()
-    out = _COMPANY_SUFFIXES.sub(" ", out)
-    out = re.sub(r"[^\w\s]", " ", out)
-    out = re.sub(r"\s+", " ", out).strip()
-    return out
 
 
 def normalise_identifier(identifier: str) -> str:
@@ -122,15 +113,6 @@ def best_name_similarity(a_names: list[str], b_names: list[str]) -> float:
             if s > best:
                 best = s
     return best
-
-
-def parse_date(raw: str | None):
-    if not raw:
-        return None
-    try:
-        return datetime.fromisoformat(raw.replace("Z", "+00:00"))
-    except ValueError:
-        return None
 
 
 # ---------------------------------------------------------------------------
@@ -353,10 +335,6 @@ def find_candidates(
 # Reporting helpers
 # ---------------------------------------------------------------------------
 
-def mergers_fyi_url(merger_id: str) -> str:
-    return f"{_MERGERS_FYI_BASE}/{merger_id}"
-
-
 def _format_signals(signals: dict) -> str:
     bits = []
     if signals["acq_id_overlap"]:
@@ -544,9 +522,7 @@ def main() -> int:
         print(f"ERROR: mergers file not found: {args.mergers}", file=sys.stderr)
         return 2
 
-    with args.mergers.open() as fh:
-        raw = json.load(fh)
-    mergers = raw if isinstance(raw, list) else raw.get("mergers", [])
+    mergers = load_mergers(args.mergers)
 
     known = load_related_pairs(args.related)
     candidates = find_candidates(mergers, known, args.threshold)

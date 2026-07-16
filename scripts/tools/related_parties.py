@@ -38,6 +38,7 @@ from detect_related_parties import (
     _title_case_name,
     collect_party_records,
 )
+from merger_filters import load_mergers as _load_mergers_from
 from party_matching import (
     build_group_lookups,
     dedupe_members,
@@ -56,9 +57,7 @@ app = FastAPI()
 # ---------------------------------------------------------------------------
 
 def load_mergers() -> list[dict]:
-    with DEFAULT_MERGERS.open() as fh:
-        raw = json.load(fh)
-    return raw if isinstance(raw, list) else raw.get("mergers", [])
+    return _load_mergers_from(DEFAULT_MERGERS)
 
 
 def load_parties_doc() -> dict:
