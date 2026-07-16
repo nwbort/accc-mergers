@@ -2834,6 +2834,54 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/journey-beyond-kelsian-tourism-portfolio"
     },
     {
+      "merger_id": "WA-80023",
+      "merger_name": "National Reconstruction Fund Corporation / SOUTHERNLAUNCH.SPACE PTY LTD",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-02T12:00:00Z",
+      "determination_publication_date": "2026-07-16T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "National Reconstruction Fund Corporation",
+          "identifier_type": "ABN",
+          "identifier": "64 163 995 623",
+          "party_page": {
+            "id": "national-reconstruction-fund-corporation",
+            "name": "National Reconstruction Fund Corporation"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "SOUTHERNLAUNCH.SPACE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "33 621 420 504",
+          "party_page": {
+            "id": "southernlaunch-space-pty-ltd",
+            "name": "Southernlaunch.Space Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4900",
+          "name": "Air and Space Transport"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/national-reconstruction-fund-corporation-southernlaunchspace-pty-ltd"
+    },
+    {
       "merger_id": "MN-15027",
       "merger_name": "Partnered Health - Ryan Plaza Medical Services",
       "status": "Under assessment",
@@ -3985,58 +4033,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/laundy-%E2%80%93-woy-woy-hotel-0"
-    },
-    {
-      "merger_id": "MN-70026",
-      "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-15T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-26T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Parker-Hannifin Corporation",
-          "identifier_type": null,
-          "identifier": "LEI  5493002CONDB4N2HKI23",
-          "party_page": {
-            "id": "parker-hannifin-corporation",
-            "name": "Parker-Hannifin Corporation"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "CIRCOR International, Inc.",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "circor-international-inc",
-            "name": "CIRCOR International, Inc."
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "1811",
-          "name": "Industrial Gas Manufacturing"
-        },
-        {
-          "code": "2394",
-          "name": "Aircraft Manufacturing and Repair Services"
-        },
-        {
-          "code": "2499",
-          "name": "Other Machinery and Equipment Manufacturing n.e.c."
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/parker-hannifin-%E2%80%93-circor-ad"
     }
   ],
   "page": 9,

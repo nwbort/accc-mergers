@@ -1,6 +1,6 @@
 {
   "total_mergers": 178,
-  "total_waivers": 272,
+  "total_waivers": 273,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 258,
+    "Approved": 259,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,15 +42,15 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.59926470588235,
-    "median_days": 18.0,
-    "average_business_days": 12.356617647058824,
-    "median_business_days": 12.0
+    "average_days": 18.582417582417584,
+    "median_days": 18,
+    "average_business_days": 12.347985347985349,
+    "median_business_days": 12
   },
   "top_industries": [
     {
       "name": "Financial Asset Investing",
-      "count": 57
+      "count": 58
     },
     {
       "name": "Computer System Design and Related Services",
@@ -206,6 +206,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-80023",
+      "merger_name": "National Reconstruction Fund Corporation / SOUTHERNLAUNCH.SPACE PTY LTD",
+      "determination": "Approved",
+      "determination_date": "2026-07-16T12:00:00Z",
+      "page_modified_datetime": "2026-07-16T17:37:27+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-75032",
       "merger_name": "Summit Partners \u2013 Keyfactor",
       "determination": "Approved",
@@ -314,16 +324,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-50027",
-      "merger_name": "Endeavour Group - retail liquor site in Avalon, NSW",
-      "determination": "Approved",
-      "determination_date": "2026-07-13T12:00:00Z",
-      "page_modified_datetime": "2026-07-13T17:43:16+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

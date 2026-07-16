@@ -24,10 +24,21 @@
       "code": "6240",
       "name": "Financial Asset Investing",
       "level": "class",
-      "merger_count": 57
+      "merger_count": 58
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-80023",
+      "merger_name": "National Reconstruction Fund Corporation / SOUTHERNLAUNCH.SPACE PTY LTD",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-02T12:00:00Z",
+      "determination_date": "2026-07-16T12:00:00Z"
+    },
     {
       "merger_id": "WA-90025",
       "merger_name": "KKR - Crowe",
@@ -656,10 +667,10 @@
       "determination_date": "2026-01-30T12:00:00Z"
     }
   ],
-  "count": 57,
+  "count": 58,
   "phase_1_count": 9,
   "phase_2_count": 0,
-  "waiver_count": 48,
+  "waiver_count": 49,
   "active_count": 0,
   "phase_duration": {
     "average_days": 24.444444444444443,
@@ -669,10 +680,10 @@
     "completed_count": 9
   },
   "waiver_duration": {
-    "average_days": 18.583333333333332,
-    "median_days": 18.0,
-    "average_business_days": 12.25,
-    "median_business_days": 12.0,
-    "completed_count": 48
+    "average_days": 18.489795918367346,
+    "median_days": 18,
+    "average_business_days": 12.204081632653061,
+    "median_business_days": 12,
+    "completed_count": 49
   }
 }
