@@ -126,12 +126,19 @@
     return fieldMap;
   }
 
-  // Mirrors _body_rows: skip the header row when there's no explicit tbody.
+  // Mirrors _body_rows, but keys off <thead> rather than <tbody>: a browser's
+  // HTML5 parser silently wraps any bare <tr>s in an *implicit* <tbody> even
+  // when the source has no tbody at all (unlike BeautifulSoup/lxml, which
+  // parse the markup literally), so querying for a tbody here would always
+  // find one and never skip the header row. <thead> isn't auto-inserted, so
+  // it's a reliable signal: if there's no <thead>, the first <tr> is the
+  // header (same fallback headerFieldMap uses) and is excluded here too.
   function bodyRows(table) {
-    var tbody = table.querySelector('tbody');
-    if (tbody) return Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+    var thead = table.querySelector('thead');
     var rows = Array.prototype.slice.call(table.querySelectorAll('tr'));
-    return rows.slice(1);
+    if (!thead) return rows.slice(1);
+    var headRows = Array.prototype.slice.call(thead.querySelectorAll('tr'));
+    return rows.filter(function (tr) { return headRows.indexOf(tr) === -1; });
   }
 
   // Mirrors parse_document_row.
