@@ -54,8 +54,23 @@ pip install -q -r scripts/requirements.txt
 log "Running scrape_tribunal.py"
 SCRAPE_LOG="$(mktemp)"
 trap 'rm -f "$SCRAPE_LOG"' EXIT
-if ! python3 scripts/scrape_tribunal.py 2>&1 | tee "$SCRAPE_LOG"; then
-  log "ERROR: scrape_tribunal.py failed; see output above. Leaving $BASE_BRANCH checked out."
+
+# scrape_tribunal.py exits 2 specifically when one or more pages failed to
+# fetch (e.g. blocked by Cloudflare) — distinct from exit 0, which covers
+# both "ran clean, genuinely nothing new" and "ran clean, found changes".
+# Capture the real exit code via PIPESTATUS rather than the pipeline's
+# overall status, so BLOCKED and a genuine crash aren't both just "failed".
+set +e
+python3 scripts/scrape_tribunal.py 2>&1 | tee "$SCRAPE_LOG"
+SCRAPE_EXIT="${PIPESTATUS[0]}"
+set -e
+
+if [ "$SCRAPE_EXIT" -eq 2 ]; then
+  log "STATUS=BLOCKED one or more tribunal pages failed to fetch — see FAILED/curl lines above (likely a Cloudflare challenge, an outage, or a network blip, not a real 'nothing new' result). Nothing committed; $BASE_BRANCH left checked out."
+  git switch "$BASE_BRANCH"
+  exit 2
+elif [ "$SCRAPE_EXIT" -ne 0 ]; then
+  log "STATUS=ERROR scrape_tribunal.py crashed (exit $SCRAPE_EXIT); see output above. Nothing committed; $BASE_BRANCH left checked out."
   git switch "$BASE_BRANCH"
   exit 1
 fi
@@ -63,7 +78,7 @@ fi
 git add data/processed/tribunal_appeals.json data/raw/matters
 
 if git diff --cached --quiet -- data/processed/tribunal_appeals.json data/raw/matters; then
-  log "No changes; nothing to push."
+  log "STATUS=OK-NO-CHANGES"
   git switch "$BASE_BRANCH"
   exit 0
 fi
@@ -88,10 +103,10 @@ trap 'rm -f "$SCRAPE_LOG" "$PR_BODY_FILE"' EXIT
 EXISTING_PR="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number' 2>/dev/null || echo "")"
 
 if [ -n "$EXISTING_PR" ]; then
-  log "Updating existing PR #$EXISTING_PR"
+  log "STATUS=OK-PR-UPDATED #$EXISTING_PR"
   gh pr edit "$EXISTING_PR" --title "$PR_TITLE" --body-file "$PR_BODY_FILE"
 else
-  log "Creating new PR"
+  log "STATUS=OK-PR-OPENED"
   gh pr create --head "$BRANCH" --base "$BASE_BRANCH" --title "$PR_TITLE" --body-file "$PR_BODY_FILE"
 fi
 

@@ -230,6 +230,21 @@ gh auth login
 
 Check `~/tribunal-scrape.log` for run history, and github.com for any open `tribunal-scrape` PR waiting on review.
 
+**Telling "nothing new" apart from "blocked":** a run that finds nothing to scrape and a run that's being blocked (e.g. by Cloudflare) can otherwise look similar — both are "no PR." Each run logs one `STATUS=` line and exits with a matching code, so either is easy to check for:
+
+| `STATUS=` | Exit code | Meaning |
+|---|---|---|
+| `OK-NO-CHANGES` | 0 | Ran cleanly, genuinely nothing new |
+| `OK-PR-OPENED` / `OK-PR-UPDATED` | 0 | Ran cleanly, changes found, PR ready for review |
+| `BLOCKED` | 2 | One or more pages failed to fetch (check the log for `FAILED to fetch` / `cf-mitigated` just above it) — nothing committed |
+| `ERROR` | 1 | The script itself crashed — nothing committed |
+
+```bash
+grep STATUS= ~/tribunal-scrape.log | tail -20   # quick history at a glance
+```
+
+If you want to be pinged rather than checking the log yourself, the exit code is the hook to build on — e.g. add a step after the `flock` command in the crontab entry that only fires on a non-zero exit (a `curl` to [ntfy.sh](https://ntfy.sh), `mail`, a Slack webhook, whatever you already use). Not set up here since it depends on what notification channel you'd actually want it to land in.
+
 ## Local development
 
 ```bash

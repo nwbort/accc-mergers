@@ -520,6 +520,7 @@ def scrape(
         return 0
 
     changed = 0
+    failed: list[str] = []
     for mid in targets:
         record = records[mid]
         url = record.get("tribunal_url")
@@ -533,6 +534,7 @@ def scrape(
         except (RuntimeError, OSError) as e:
             print(f"  FAILED to fetch {url}: {e}", file=sys.stderr)
             gha_warning(f"scrape_tribunal: failed to fetch {mid} ({url}): {e}")
+            failed.append(mid)
             continue
 
         scraped = parse_matter_page(html, url)
@@ -568,15 +570,27 @@ def scrape(
 
     if dry_run:
         print(f"\nDry run: {changed} entr(y/ies) would change; nothing written.")
-        return 0
-
-    if changed:
+    elif changed:
         with open(TRIBUNAL_APPEALS_JSON, "w", encoding="utf-8") as f:
             json.dump(raw, f, indent=2, ensure_ascii=False)
             f.write("\n")
         print(f"\nUpdated {changed} entr(y/ies) in {TRIBUNAL_APPEALS_JSON}")
     else:
         print("\nNo changes.")
+
+    if failed:
+        # A distinct, non-zero exit so callers (the cron wrapper, in
+        # particular) can tell "ran clean, genuinely nothing new" apart from
+        # "one or more fetches failed" — both otherwise print similar-looking
+        # "no changes" output. See the FAILED lines above (and any GitHub
+        # Actions ::warning:: annotations) for per-matter diagnostics.
+        print(
+            f"\n{len(failed)} of {len(targets)} matter(s) failed to fetch: "
+            f"{', '.join(failed)}",
+            file=sys.stderr,
+        )
+        return 2
+
     return 0
 
 
