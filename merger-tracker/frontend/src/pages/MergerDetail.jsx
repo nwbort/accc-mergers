@@ -477,7 +477,7 @@ function MergerDetail() {
                         {comment.tags.map((tag, idx) => (
                           <span
                             key={`tag-${tag}-${idx}`}
-                            className="inline-flex items-center px-2 py-0.5 rounded-md text-xs font-medium bg-blue-100/80 text-blue-700"
+                            className="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium leading-none bg-blue-100/80 text-blue-700"
                           >
                             {tag}
                           </span>
