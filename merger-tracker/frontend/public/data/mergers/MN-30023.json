@@ -23,9 +23,13 @@
       "name": "UPM-Kymmene Corporation",
       "identifier_type": null,
       "identifier": "Finnish Business ID  10410900",
+      "canonical": {
+        "id": "upm-kymmene-pty-ltd",
+        "name": "Upm-Kymmene Pty Ltd"
+      },
       "party_page": {
-        "id": "upm-kymmene-corporation",
-        "name": "UPM-Kymmene Corporation"
+        "id": "upm-kymmene-pty-ltd",
+        "name": "Upm-Kymmene Pty Ltd"
       }
     }
   ],
@@ -54,6 +58,10 @@
       "name": "UPM-KYMMENE PTY LTD",
       "identifier_type": "ABN",
       "identifier": "99 001 255 661",
+      "canonical": {
+        "id": "upm-kymmene-pty-ltd",
+        "name": "Upm-Kymmene Pty Ltd"
+      },
       "party_page": {
         "id": "upm-kymmene-pty-ltd",
         "name": "Upm-Kymmene Pty Ltd"

@@ -6,12 +6,15 @@
       "name": "UPM-KYMMENE PTY LTD",
       "identifier": "99 001 255 661",
       "identifier_type": "ABN"
+    },
+    {
+      "name": "UPM-Kymmene Corporation",
+      "identifier": "Finnish Business ID  10410900",
+      "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [],
-    "target": [],
-    "other": [
+    "acquirer": [
       {
         "merger_id": "MN-30023",
         "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
@@ -23,7 +26,9 @@
         "notification_date": "2026-07-16T12:00:00Z",
         "determination_date": null
       }
-    ]
+    ],
+    "target": [],
+    "other": []
   },
   "merger_count": 1,
   "phase_1_count": 1,
