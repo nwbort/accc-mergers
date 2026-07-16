@@ -921,6 +921,64 @@ class TestExtractQuestions:
         assert result[0]['number'] == 1
         assert result[2]['section'] == 'Questions for suppliers of ITOM software'
 
+    def test_unbolded_section_header_detected(self):
+        """MN-95025: section headers aren't bolded in this PDF. A short,
+        capitalised, unpunctuated line directly followed by a numbered
+        question is treated as a header rather than glued onto the
+        previous question's text."""
+        lines = _lines(
+            ("Questions", True),
+            "1. Provide a brief description of your business or organisation,",
+            "including any commercial relationships with Salesforce and/or Contentful.",
+            "Alternative suppliers",
+            "2. List providers of CRM software that could service your needs.",
+            "3. List providers of CMS software that could service your needs.",
+            "The Acquisition",
+            "4. Outline any concerns regarding the effect on competition.",
+        )
+        result = extract_questions(lines)
+        assert [q['number'] for q in result] == [1, 2, 3, 4]
+        assert result[0]['section'] is None
+        assert result[1]['section'] == 'Alternative suppliers'
+        assert result[2]['section'] == 'Alternative suppliers'
+        assert result[3]['section'] == 'The Acquisition'
+        assert 'Alternative suppliers' not in result[0]['text']
+
+    def test_unbolded_header_not_confused_with_wrapped_word(self):
+        """MN-75003: a single word orphaned onto its own line by word-wrap
+        (mid-sentence, no preceding sentence terminator) must stay part of
+        the previous question, not be misread as a section header, even
+        though it directly precedes the next numbered question."""
+        lines = _lines(
+            ("Questions", True),
+            "1. Which of the following hospitals compete with each other:",
+            "a. National Capital Private Hospital and Ramsay's Southern Highlands Private",
+            "Hospital",
+            "2. Are there any other Ramsay-owned businesses that compete?",
+        )
+        result = extract_questions(lines)
+        assert [q['number'] for q in result] == [1, 2]
+        assert 'section' not in result[1] or result[1]['section'] is None
+        assert 'Southern Highlands Private Hospital' in result[0]['text']
+
+    def test_page_furniture_dropped_mid_question(self):
+        """Bare page numbers and OFFICIAL/SENSITIVE protective markings can
+        appear mid-question (page breaks) and must be dropped, not appended
+        to the question text."""
+        lines = _lines(
+            ("Questions", True),
+            "1. Outline any concerns regarding the impact on competition.",
+            "2",
+            "2. Provide any additional information or comments.",
+            "OFFICIAL",
+            "SENSITIVE",
+            "3. Provide a brief description of your business.",
+        )
+        result = extract_questions(lines)
+        assert [q['number'] for q in result] == [1, 2, 3]
+        assert result[0]['text'] == 'Outline any concerns regarding the impact on competition.'
+        assert result[1]['text'] == 'Provide any additional information or comments.'
+
 
 class TestExtractQuestionsFromText:
     """Tests for the plain-text fallback used when font data is unavailable."""

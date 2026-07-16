@@ -249,6 +249,57 @@ def _extract_subpoints(text: str) -> tuple:
     return _list_stem(text, a_match.start()), subpoints
 
 
+_CLASSIFICATION_MARKING_RE = re.compile(
+    r'^(OFFICIAL|SENSITIVE|PROTECTED|UNCLASSIFIED)(\s*[:\-–]\s*(OFFICIAL|SENSITIVE|PROTECTED|UNCLASSIFIED))*$'
+)
+
+
+def _is_noise_line(text: str) -> bool:
+    """
+    Return True for lines that are page furniture, not document content:
+    Australian government protective-marking headers/footers (OFFICIAL,
+    SENSITIVE, ...) and bare page numbers. These can appear mid-stream
+    (e.g. between a question and the next section header, split across a
+    page break) and must be dropped rather than appended as continuation
+    text or mistaken for a section header.
+    """
+    return bool(_CLASSIFICATION_MARKING_RE.match(text) or re.match(r'^\d{1,3}$', text))
+
+
+def _looks_like_unbolded_section_header(
+    text: str, next_text: Optional[str], prev_text: Optional[str]
+) -> bool:
+    """
+    Heuristic fallback for section headers that aren't bolded in the source
+    PDF (e.g. MN-95025's "Alternative suppliers" / "The Acquisition").
+
+    A short, capitalised, unpunctuated line immediately followed by a
+    numbered question is treated as a header rather than as continuation
+    text of the preceding question. Continuation lines that happen to
+    precede the next question (e.g. "…and continues on next line.") are
+    excluded because they end in sentence punctuation or start lowercase.
+
+    Also requires the preceding line to end a sentence (or be absent).
+    Without this, a word-wrapped line orphaned onto its own line right
+    before the next question (e.g. MN-75003's sub-point wrapping "...
+    Southern Highlands Private" / "Hospital" / "4. Are there...") would be
+    misread as a header rather than as the tail of the previous line.
+    """
+    if not next_text or not re.match(r'^\d+\.\s', next_text):
+        return False
+    if not text or re.match(r'^\d+\.', text):
+        return False
+    if not text[0].isupper():
+        return False
+    if text[-1] in '.,;:?!':
+        return False
+    if len(text.split()) > 8:
+        return False
+    if prev_text and not re.search(r'[.:?!]\s*$', prev_text):
+        return False
+    return True
+
+
 def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
     """
     Extract the numbered questions from annotated lines.
@@ -315,9 +366,11 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
                     break
             questions.append(q)
 
-    for line in lines[start_idx:]:
+    remaining_lines = lines[start_idx:]
+    for idx, line in enumerate(remaining_lines):
         text = line['text']
         is_bold = line['is_bold']
+        next_text = remaining_lines[idx + 1]['text'] if idx + 1 < len(remaining_lines) else None
 
         # Stop at the "Confidentiality" boilerplate that follows the questions.
         # (A bold "Confidentiality of responses" header is also caught as a
@@ -338,6 +391,12 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
         # its second section header ends the parse.
         if re.match(r'^(Note:|Please note)', text, re.IGNORECASE):
             prev_was_section_header = False
+            continue
+
+        # Skip page furniture (protective-marking headers/footers, bare page
+        # numbers) without touching state — it can appear mid-question or
+        # between a question and the following section header.
+        if _is_noise_line(text):
             continue
 
         # Skip lines that fall inside a detected table region. Save the current
@@ -380,6 +439,23 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
                 current_question_num = None
                 current_question_text = []
             # Consecutive bold lines = multi-line section header, concatenate
+            if prev_was_section_header and current_section:
+                current_section = current_section + ' ' + text
+            else:
+                current_section = text
+            has_sections = True
+            prev_was_section_header = True
+            continue
+
+        # Non-bold section header (e.g. MN-95025, where headers aren't
+        # bolded in the source PDF). Detected structurally by position
+        # (immediately precedes a numbered question) rather than font.
+        prev_text = current_question_text[-1] if current_question_text else None
+        if not re.match(r'^\d+\.', text) and _looks_like_unbolded_section_header(text, next_text, prev_text):
+            if current_question_num is not None:
+                save_current_question()
+                current_question_num = None
+                current_question_text = []
             if prev_was_section_header and current_section:
                 current_section = current_section + ' ' + text
             else:
