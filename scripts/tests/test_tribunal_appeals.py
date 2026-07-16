@@ -23,7 +23,7 @@ sys.modules.setdefault('requests', unittest.mock.MagicMock())
 from constants import tribunal
 from static_data import loaders
 from static_data.enrichment import enrich_merger, link_tribunal_appeals
-from static_data.outputs import list as list_out, phase2, timeline
+from static_data.outputs import list as list_out, phase2, stats, timeline
 
 
 def _phase2_not_approved(merger_id='MN-0001'):
@@ -208,6 +208,35 @@ class TestUnderAppealPropagation:
         events = json.loads((tmp_path / 'timeline' / 'timeline-page-1.json').read_text())['events']
         assert all(e['under_appeal'] for e in events)
         assert any(e['is_appeal'] for e in events)
+
+
+class TestDashboardRecentActivity:
+    def test_appeal_surfaces_as_recent_card(self):
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, _appeal())
+        payload = stats.generate(mergers)
+        appeal_cards = [c for c in payload['recent_mergers'] if c.get('is_appeal')]
+        assert len(appeal_cards) == 1
+        card = appeal_cards[0]
+        assert card['merger_id'] == 'MN-0001'
+        assert card['under_appeal'] is True
+        assert card['tribunal_number'] == 'ACT 1 of 2026'
+        # A bare filing date is promoted so it sorts against ISO datetimes.
+        assert card['appeal_date'] == '2026-07-15T12:00:00Z'
+
+    def test_no_appeal_means_no_appeal_card(self):
+        mergers = [enrich_merger(_phase2_not_approved())]
+        payload = stats.generate(mergers)
+        assert not any(c.get('is_appeal') for c in payload['recent_mergers'])
+
+    def test_appeal_card_survives_after_conclusion(self):
+        # A concluded appeal is still recent activity worth surfacing.
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(mergers, _concluded_appeal())
+        payload = stats.generate(mergers)
+        appeal_cards = [c for c in payload['recent_mergers'] if c.get('is_appeal')]
+        assert len(appeal_cards) == 1
+        assert appeal_cards[0]['under_appeal'] is False
 
 
 class TestLoader:
