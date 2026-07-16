@@ -51,7 +51,7 @@
       "code": "18",
       "name": "Basic Chemical and Chemical Product Manufacturing",
       "level": "subdivision",
-      "merger_count": 15
+      "merger_count": 16
     },
     {
       "code": "19",
@@ -81,13 +81,13 @@
       "code": "23",
       "name": "Transport Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 7
+      "merger_count": 8
     },
     {
       "code": "24",
       "name": "Machinery and Equipment Manufacturing",
       "level": "subdivision",
-      "merger_count": 40
+      "merger_count": 41
     },
     {
       "code": "25",
@@ -97,6 +97,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-70026",
+      "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-15T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-01105",
       "merger_name": "Siemens Mobility - MerMec",
@@ -1264,11 +1275,11 @@
       "determination_date": "2025-08-29T12:00:00Z"
     }
   ],
-  "count": 106,
-  "phase_1_count": 48,
+  "count": 107,
+  "phase_1_count": 49,
   "phase_2_count": 1,
   "waiver_count": 57,
-  "active_count": 8,
+  "active_count": 9,
   "phase_duration": {
     "average_days": 28.682926829268293,
     "median_days": 26,

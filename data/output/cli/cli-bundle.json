@@ -3398,12 +3398,24 @@
         },
         {
           "date": "2026-07-15T12:00:00Z",
-          "title": "Application for Review",
-          "display_title": "Tribunal appeal – Application for Review",
+          "title": "Notice of address for service",
+          "display_title": "Tribunal appeal – Notice of address for service",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0012/599808/Notice-of-Address-for-Service-ACCC.pdf",
+          "url_gh": null,
+          "is_appeal": true,
+          "appeal_filed_by": "Australian Competition and Consumer Commission",
+          "appeal_confidentiality": "Non-confidential",
+          "tribunal_number": "ACT 1 of 2026",
+          "phase": null
+        },
+        {
+          "date": "2026-07-15T12:00:00Z",
+          "title": "Application for review",
+          "display_title": "Tribunal appeal – Application for review",
           "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/599732/Application-for-Review.pdf",
           "url_gh": "/mergers/MN-01068/Application-for-Review.pdf",
           "is_appeal": true,
-          "appeal_filed_by": "Coles",
+          "appeal_filed_by": "Coles Supermarkets",
           "appeal_confidentiality": "Non-confidential",
           "tribunal_number": "ACT 1 of 2026",
           "phase": null
@@ -3540,8 +3552,15 @@
         "documents": [
           {
             "date": "2026-07-15",
-            "filed_by": "Coles",
-            "description": "Application for Review",
+            "filed_by": "Australian Competition and Consumer Commission",
+            "description": "Notice of address for service",
+            "confidentiality": "Non-confidential",
+            "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0012/599808/Notice-of-Address-for-Service-ACCC.pdf"
+          },
+          {
+            "date": "2026-07-15",
+            "filed_by": "Coles Supermarkets",
+            "description": "Application for review",
             "confidentiality": "Non-confidential",
             "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/599732/Application-for-Review.pdf",
             "url_gh": "/mergers/MN-01068/Application-for-Review.pdf"
@@ -36178,6 +36197,178 @@
       ]
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/parker-hannifin-%E2%80%93-circor-ad",
+      "merger_name": "Parker-Hannifin – CIRCOR A&D",
+      "status": "Under assessment",
+      "merger_id": "MN-70026",
+      "effective_notification_datetime": "2026-07-15T12:00:00Z",
+      "original_notification_datetime": "2026-07-15T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-08-26T12:00:00Z",
+      "page_modified_datetime": "2026-07-16T17:05:46+10:00",
+      "consultation_response_due_date": "2026-07-23T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Parker-Hannifin Corporation",
+          "identifier_type": null,
+          "identifier": "LEI  5493002CONDB4N2HKI23",
+          "party_page": {
+            "id": "parker-hannifin-corporation",
+            "name": "Parker-Hannifin Corporation"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CIRCOR International, Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "circor-international-inc",
+            "name": "CIRCOR International, Inc."
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "1811",
+          "name": "Industrial Gas Manufacturing"
+        },
+        {
+          "code": "2394",
+          "name": "Aircraft Manufacturing and Repair Services"
+        },
+        {
+          "code": "2499",
+          "name": "Other Machinery and Equipment Manufacturing n.e.c."
+        }
+      ],
+      "merger_description": "Parker-Hannifin Corporation (Parker-Hannifin) proposes to acquire the Aerospace and Defense business of CIRCOR International, Inc. (CIRCOR A&D).\n\nParker-Hannifin is a global engineering company headquartered in the United States. It designs, manufactures and supplies motion and control technologies and systems, and provides engineered solutions for a variety of mobile, industrial and aerospace applications.\n\nCIRCOR A&D designs, manufactures and supports flight-critical motion and flow control products for commercial aircraft and defence applications with manufacturing and operational locations in the United States, France and Morocco.\n\nParker-Hannifin and CIRCOR A&D both supply fluid control valves for industrial applications in Australia.",
+      "events": [
+        {
+          "date": "2026-07-16T12:00:00Z",
+          "title": "Questionnaire - Parker-Hannifin – CIRCOR A&D",
+          "display_title": "Questionnaire - Parker-Hannifin – CIRCOR A&D",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Parker-Hannifin%20%E2%80%93%20CIRCOR%20A%26D%20-%2016%20July%202026.docx",
+          "url_gh": "/mergers/MN-70026/Questionnaire - Parker-Hannifin – CIRCOR AandD - 16 July 2026.pdf",
+          "status": "live",
+          "phase": null
+        },
+        {
+          "date": "2026-07-15T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-75004",
+          "merger_name": "Parker-Hannifin – Filtration Group",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Parker-Hannifin Corporation",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "parker-hannifin-corporation-2",
+                "name": "Parker-Hannifin Corporation"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Filtration Group Corporation",
+              "identifier_type": null,
+              "identifier": "",
+              "party_page": {
+                "id": "filtration-group-corporation",
+                "name": "Filtration Group Corporation"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "MN-60004",
+          "merger_name": "IOR - Delta Specialised Energy assets",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "IOR PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "36 009 653 070",
+              "party_page": {
+                "id": "ior-pty-ltd",
+                "name": "Ior Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "DELTA SPECIALISED ENERGY PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "11 624 642 682",
+              "party_page": {
+                "id": "delta-specialised-energy-pty-ltd",
+                "name": "Delta Specialised Energy Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-30018",
+          "merger_name": "Tinicum and Blackstone led consortium – Senior",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Zeus UK Bidco Limited",
+              "identifier_type": null,
+              "identifier": "UK company number  17118800",
+              "party_page": {
+                "id": "zeus-uk-bidco-limited",
+                "name": "Zeus UK Bidco Limited"
+              }
+            },
+            {
+              "name": "Tinicum L.P.",
+              "identifier_type": null,
+              "identifier": "Incorporation number  5040692",
+              "party_page": {
+                "id": "tinicum-l-p",
+                "name": "Tinicum L.P."
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Senior plc",
+              "identifier_type": null,
+              "identifier": "Company number  00282772",
+              "party_page": {
+                "id": "senior-plc",
+                "name": "Senior plc"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/opal-healthcare-%E2%80%93-sunnymeade-park-aged-care-community",
       "merger_name": "Opal Healthcare – Sunnymeade Park Aged Care Community",
       "status": "Assessment completed",
@@ -36740,7 +36931,7 @@
           "identifier_type": null,
           "identifier": "",
           "party_page": {
-            "id": "parker-hannifin-corporation",
+            "id": "parker-hannifin-corporation-2",
             "name": "Parker-Hannifin Corporation"
           }
         }
@@ -116343,6 +116534,38 @@
       ],
       "questions_count": 3
     },
+    "MN-70026": {
+      "deadline": "23 July 2026",
+      "deadline_iso": "2026-07-23",
+      "file_name": "Questionnaire - Parker-Hannifin – CIRCOR AandD - 16 July 2026.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with Parker-Hannifin and/or CIRCOR A&D and the products you typically acquire from them (if applicable)."
+        },
+        {
+          "number": 2,
+          "text": "Do you consider Parker-Hannifin and CIRCOR A&D to be close competitors in Australia? For example, do they supply products you consider to be substitutable with each other? Please focus on products which are supplied in Australia or have the potential to be."
+        },
+        {
+          "number": 3,
+          "text": "Are alternative suppliers available that compete with Parker-Hannifin and CIRCOR A&D in relation to the products you identified in response to question 2? Are they comparable in terms of the price, availability, and quality of products?"
+        },
+        {
+          "number": 4,
+          "text": "Are either of Parker-Hannifin or CIRCOR A&D major suppliers to competitors of each other?"
+        },
+        {
+          "number": 5,
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition."
+        },
+        {
+          "number": 6,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        }
+      ],
+      "questions_count": 6
+    },
     "MN-75002": {
       "deadline": "28 January 2026",
       "deadline_iso": "2026-01-28",
@@ -120719,12 +120942,12 @@
     }
   },
   "stats": {
-    "total_mergers": 177,
+    "total_mergers": 178,
     "total_waivers": 269,
     "total_conditional_approvals": 1,
     "by_status": {
       "Assessment completed": 134,
-      "Under assessment": 41,
+      "Under assessment": 42,
       "Assessment ceased": 2
     },
     "by_determination": {
@@ -120829,6 +121052,15 @@
         "is_refiled": true
       },
       {
+        "merger_id": "MN-70026",
+        "merger_name": "Parker-Hannifin – CIRCOR A&D",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-07-15T12:00:00Z",
+        "is_waiver": false,
+        "is_refiled": false
+      },
+      {
         "merger_id": "MN-01068",
         "merger_name": "Coles – supermarket and liquor site in Kalgoorlie, WA",
         "status": "Assessment completed",
@@ -120908,15 +121140,6 @@
       {
         "merger_id": "MN-05032",
         "merger_name": "Motorola Solutions - D-Fend Solutions",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-07-08T12:00:00Z",
-        "is_waiver": false,
-        "is_refiled": false
-      },
-      {
-        "merger_id": "MN-75029",
-        "merger_name": "Analogic - Leidos SES business",
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-07-08T12:00:00Z",
@@ -121200,6 +121423,11 @@
         "merger_count": 7
       },
       {
+        "code": "2499",
+        "name": "Other Machinery and Equipment Manufacturing n.e.c.",
+        "merger_count": 6
+      },
+      {
         "code": "5809",
         "name": "Other Telecommunications Services",
         "merger_count": 6
@@ -121243,11 +121471,6 @@
         "code": "6330",
         "name": "Superannuation Funds",
         "merger_count": 6
-      },
-      {
-        "code": "2499",
-        "name": "Other Machinery and Equipment Manufacturing n.e.c.",
-        "merger_count": 5
       },
       {
         "code": "4000",
@@ -121412,6 +121635,11 @@
       {
         "code": "2640",
         "name": "On Selling Electricity and Electricity Market Operation",
+        "merger_count": 4
+      },
+      {
+        "code": "2394",
+        "name": "Aircraft Manufacturing and Repair Services",
         "merger_count": 4
       },
       {
@@ -121595,11 +121823,6 @@
         "merger_count": 3
       },
       {
-        "code": "2394",
-        "name": "Aircraft Manufacturing and Repair Services",
-        "merger_count": 3
-      },
-      {
         "code": "2461",
         "name": "Agricultural Machinery and Equipment Manufacturing",
         "merger_count": 3
@@ -121772,6 +121995,11 @@
       {
         "code": "9412",
         "name": "Automotive Body, Paint and Interior Repair",
+        "merger_count": 2
+      },
+      {
+        "code": "1811",
+        "name": "Industrial Gas Manufacturing",
         "merger_count": 2
       },
       {
@@ -122032,11 +122260,6 @@
       {
         "code": "6411",
         "name": "Financial Asset Broking Services",
-        "merger_count": 1
-      },
-      {
-        "code": "1811",
-        "name": "Industrial Gas Manufacturing",
         "merger_count": 1
       },
       {
@@ -122425,7 +122648,7 @@
         "merger_count": 1
       }
     ],
-    "total_mergers": 446,
+    "total_mergers": 447,
     "total_industries": 275
   }
 }

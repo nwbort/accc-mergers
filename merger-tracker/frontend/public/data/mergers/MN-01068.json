@@ -183,12 +183,24 @@
     },
     {
       "date": "2026-07-15T12:00:00Z",
-      "title": "Application for Review",
-      "display_title": "Tribunal appeal \u2013 Application for Review",
+      "title": "Notice of address for service",
+      "display_title": "Tribunal appeal \u2013 Notice of address for service",
+      "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0012/599808/Notice-of-Address-for-Service-ACCC.pdf",
+      "url_gh": null,
+      "is_appeal": true,
+      "appeal_filed_by": "Australian Competition and Consumer Commission",
+      "appeal_confidentiality": "Non-confidential",
+      "tribunal_number": "ACT 1 of 2026",
+      "phase": null
+    },
+    {
+      "date": "2026-07-15T12:00:00Z",
+      "title": "Application for review",
+      "display_title": "Tribunal appeal \u2013 Application for review",
       "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/599732/Application-for-Review.pdf",
       "url_gh": "/mergers/MN-01068/Application-for-Review.pdf",
       "is_appeal": true,
-      "appeal_filed_by": "Coles",
+      "appeal_filed_by": "Coles Supermarkets",
       "appeal_confidentiality": "Non-confidential",
       "tribunal_number": "ACT 1 of 2026",
       "phase": null
@@ -325,8 +337,15 @@
     "documents": [
       {
         "date": "2026-07-15",
-        "filed_by": "Coles",
-        "description": "Application for Review",
+        "filed_by": "Australian Competition and Consumer Commission",
+        "description": "Notice of address for service",
+        "confidentiality": "Non-confidential",
+        "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0012/599808/Notice-of-Address-for-Service-ACCC.pdf"
+      },
+      {
+        "date": "2026-07-15",
+        "filed_by": "Coles Supermarkets",
+        "description": "Application for review",
         "confidentiality": "Non-confidential",
         "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/599732/Application-for-Review.pdf",
         "url_gh": "/mergers/MN-01068/Application-for-Review.pdf"

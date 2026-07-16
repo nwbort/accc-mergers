@@ -90,6 +90,36 @@
       "count": 3
     },
     {
+      "acquirer_name": "Parker-Hannifin Corporation",
+      "canonical_id": null,
+      "anzsic_code": "181",
+      "anzsic_name": "Basic Chemical Manufacturing",
+      "merger_ids": [
+        "MN-75004",
+        "MN-70026"
+      ],
+      "dates": [
+        "2026-02-05T12:00:00Z",
+        "2026-07-15T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
+      "acquirer_name": "Parker-Hannifin Corporation",
+      "canonical_id": null,
+      "anzsic_code": "249",
+      "anzsic_name": "Other Machinery and Equipment Manufacturing",
+      "merger_ids": [
+        "MN-75004",
+        "MN-70026"
+      ],
+      "dates": [
+        "2026-02-05T12:00:00Z",
+        "2026-07-15T12:00:00Z"
+      ],
+      "count": 2
+    },
+    {
       "acquirer_name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
       "canonical_id": null,
       "anzsic_code": "391",
@@ -405,5 +435,5 @@
       "count": 2
     }
   ],
-  "count": 26
+  "count": 28
 }

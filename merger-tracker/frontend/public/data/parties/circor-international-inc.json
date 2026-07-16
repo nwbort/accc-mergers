@@ -1,15 +1,16 @@
 {
-  "id": "parker-hannifin-corporation",
-  "canonical_name": "Parker-Hannifin Corporation",
+  "id": "circor-international-inc",
+  "canonical_name": "CIRCOR International, Inc.",
   "members": [
     {
-      "name": "Parker-Hannifin Corporation",
-      "identifier": "LEI  5493002CONDB4N2HKI23",
+      "name": "CIRCOR International, Inc.",
+      "identifier": null,
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [
+    "acquirer": [],
+    "target": [
       {
         "merger_id": "MN-70026",
         "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
@@ -22,7 +23,6 @@
         "determination_date": null
       }
     ],
-    "target": [],
     "other": []
   },
   "merger_count": 1,

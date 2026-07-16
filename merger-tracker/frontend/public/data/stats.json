@@ -1,10 +1,10 @@
 {
-  "total_mergers": 177,
+  "total_mergers": 178,
   "total_waivers": 269,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
-    "Under assessment": 41,
+    "Under assessment": 42,
     "Assessment ceased": 2
   },
   "by_determination": {
@@ -109,6 +109,15 @@
       "is_refiled": true
     },
     {
+      "merger_id": "MN-70026",
+      "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-15T12:00:00Z",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
       "merger_id": "MN-01068",
       "merger_name": "Coles \u2013 supermarket and liquor site in Kalgoorlie, WA",
       "status": "Assessment completed",
@@ -188,15 +197,6 @@
     {
       "merger_id": "MN-05032",
       "merger_name": "Motorola Solutions - D-Fend Solutions",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-08T12:00:00Z",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-75029",
-      "merger_name": "Analogic - Leidos SES business",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-08T12:00:00Z",
