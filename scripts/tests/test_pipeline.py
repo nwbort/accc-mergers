@@ -724,6 +724,22 @@ class TestExtractQuestions:
         # The note text must not leak into a question.
         assert all("on-premises hospitality services' include" not in q['text'] for q in result)
 
+    def test_bold_definitional_preamble_not_a_section(self):
+        """MN-15028: a bold "In this questionnaire, … includes …" definition
+        under the Questions heading is intro prose, not Q1's section."""
+        lines = _lines(
+            ("Questions", True),
+            ("In this questionnaire, liquid waste collection and maintenance services", True),
+            "(C&M services) includes the inspection, cleaning and maintenance of drains.",
+            "1. Provide a brief description of your business.",
+            ("Questions for customers", True),
+            "2. Which C&M services does your organisation procure?",
+        )
+        result = extract_questions(lines)
+        assert [q['number'] for q in result] == [1, 2]
+        assert result[0]['section'] is None
+        assert result[1]['section'] == 'Questions for customers'
+
     def test_please_note_mid_questions_not_terminator(self):
         """A 'Please note' line within the questions block is skipped, not fatal."""
         lines = _lines(
