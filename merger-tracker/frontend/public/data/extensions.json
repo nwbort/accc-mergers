@@ -1,15 +1,15 @@
 {
   "summary": {
     "notifications_total": 178,
-    "matters_extended": 12,
-    "share_extended_pct": 6.7,
-    "extension_events_total": 18,
-    "total_extension_bd": 187,
-    "median_matter_extension_bd": 18,
-    "longest_single_bd": 28,
+    "matters_extended": 13,
+    "share_extended_pct": 7.3,
+    "extension_events_total": 19,
+    "total_extension_bd": 217,
+    "median_matter_extension_bd": 19.0,
+    "longest_single_bd": 30,
     "phase_2_total": 7,
     "extended_escalated_to_phase_2": 6,
-    "escalation_rate_given_extension_pct": 50.0,
+    "escalation_rate_given_extension_pct": 46.2,
     "phase_2_preceded_by_extension_pct": 85.7,
     "base_phase_2_rate_pct": 3.9,
     "statutory_phase_1_bd": 30
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 11,
-      "business_days": 118
+      "events": 12,
+      "business_days": 148
     },
     {
       "category": "ACCC information request",
@@ -54,10 +54,31 @@
     },
     {
       "month": "2026-07",
-      "count": 2
+      "count": 3
     }
   ],
   "matters": [
+    {
+      "merger_id": "MN-40013",
+      "merger_name": "Calvary - Hobart Private Hospital",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-06-16T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 30,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-07-16T12:00:00Z",
+          "business_days": 30,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 30 business days \u2013 following request by parties"
+        }
+      ]
+    },
     {
       "merger_id": "MN-90008",
       "merger_name": "Black Rhino - Club Hotel Motel Roma",

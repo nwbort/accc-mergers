@@ -10916,8 +10916,8 @@
     "effective_notification_datetime": "2026-06-16T12:00:00Z",
     "original_notification_datetime": "2026-06-16T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
-    "end_of_determination_period": "2026-07-28T12:00:00Z",
-    "page_modified_datetime": "2026-06-25T09:55:33+10:00",
+    "end_of_determination_period": "2026-09-08T12:00:00Z",
+    "page_modified_datetime": "2026-07-16T17:15:05+10:00",
     "consultation_response_due_date": "2026-06-24T12:00:00Z",
     "acquirers": [
       {
@@ -10933,6 +10933,11 @@
         "identifier": "80 146 342 814"
       },
       {
+        "name": "HEALTHSCOPE NEWCO PTY LTD",
+        "identifier_type": "ABN",
+        "identifier": "80 092 450 274"
+      },
+      {
         "name": "HEALTHSCOPE OPERATIONS PTY LTD",
         "identifier_type": "ABN",
         "identifier": "85 006 405 152"
@@ -10941,19 +10946,9 @@
         "name": "ANZ HOSPITALS PTY LTD",
         "identifier_type": "ABN",
         "identifier": "14 631 014 938"
-      },
-      {
-        "name": "HEALTHSCOPE NEWCO PTY LTD",
-        "identifier_type": "ABN",
-        "identifier": "80 092 450 274"
       }
     ],
     "other_parties": [
-      {
-        "name": "Kathy Sozou (as joint and several receivers)",
-        "identifier_type": null,
-        "identifier": ""
-      },
       {
         "name": "Jason Ireland (as joint and several receivers)",
         "identifier_type": null,
@@ -10966,6 +10961,11 @@
       },
       {
         "name": "Matthew Caddy (as joint and several receivers)",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Kathy Sozou (as joint and several receivers)",
         "identifier_type": null,
         "identifier": ""
       }
@@ -10990,6 +10990,11 @@
         "date": "2026-06-16T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-07-16T12:00:00Z",
+        "title": "Timeline extended by 30 business days \u2013 following request by parties",
+        "display_title": "Timeline extended by 30 business days \u2013 following request by parties"
       }
     ],
     "is_waiver": false
@@ -16135,7 +16140,7 @@
     "original_notification_datetime": "2026-07-09T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-08-20T12:00:00Z",
-    "page_modified_datetime": "2026-07-09T13:03:20+10:00",
+    "page_modified_datetime": "2026-07-16T09:43:11+10:00",
     "consultation_response_due_date": "2026-07-16T12:00:00Z",
     "acquirers": [
       {
@@ -16146,11 +16151,6 @@
     ],
     "targets": [
       {
-        "name": "Paydock  Holdings Pty Limited",
-        "identifier_type": "ABN",
-        "identifier": "31 607 215 163"
-      },
-      {
         "name": "Paydock AUNZ Pty Limited",
         "identifier_type": "ABN",
         "identifier": "96 607 219 116"
@@ -16159,6 +16159,11 @@
         "name": "Paydock Ltd",
         "identifier_type": null,
         "identifier": ""
+      },
+      {
+        "name": "Paydock Holdings Pty Limited",
+        "identifier_type": "ABN",
+        "identifier": "31 607 215 163"
       }
     ],
     "other_parties": [
@@ -16190,7 +16195,7 @@
         "display_title": "Questionnaire - Coles - Paydock",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Questionnaire%20-%20Coles%20-%20Paydock.docx",
         "url_gh": "/mergers/MN-65028/Questionnaire - Coles - Paydock.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-07-09T12:00:00Z",

@@ -3118,19 +3118,6 @@
       ],
       "targets": [
         {
-          "name": "Paydock  Holdings Pty Limited",
-          "identifier_type": "ABN",
-          "identifier": "31 607 215 163",
-          "canonical": {
-            "id": "paydock",
-            "name": "Paydock"
-          },
-          "party_page": {
-            "id": "paydock",
-            "name": "Paydock"
-          }
-        },
-        {
           "name": "Paydock AUNZ Pty Limited",
           "identifier_type": "ABN",
           "identifier": "96 607 219 116",
@@ -3147,6 +3134,19 @@
           "name": "Paydock Ltd",
           "identifier_type": null,
           "identifier": "",
+          "canonical": {
+            "id": "paydock",
+            "name": "Paydock"
+          },
+          "party_page": {
+            "id": "paydock",
+            "name": "Paydock"
+          }
+        },
+        {
+          "name": "Paydock Holdings Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "31 607 215 163",
           "canonical": {
             "id": "paydock",
             "name": "Paydock"

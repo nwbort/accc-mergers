@@ -6,8 +6,8 @@
   "effective_notification_datetime": "2026-06-16T12:00:00Z",
   "original_notification_datetime": "2026-06-16T12:00:00Z",
   "stage": "Phase 1 - initial assessment",
-  "end_of_determination_period": "2026-07-28T12:00:00Z",
-  "page_modified_datetime": "2026-06-25T09:55:33+10:00",
+  "end_of_determination_period": "2026-09-08T12:00:00Z",
+  "page_modified_datetime": "2026-07-16T17:15:05+10:00",
   "consultation_response_due_date": "2026-06-24T12:00:00Z",
   "acquirers": [
     {
@@ -25,6 +25,19 @@
       "name": "HEALTHSCOPE MANAGEMENT PTY LTD",
       "identifier_type": "ABN",
       "identifier": "80 146 342 814",
+      "canonical": {
+        "id": "healthscope",
+        "name": "Healthscope"
+      },
+      "party_page": {
+        "id": "healthscope",
+        "name": "Healthscope"
+      }
+    },
+    {
+      "name": "HEALTHSCOPE NEWCO PTY LTD",
+      "identifier_type": "ABN",
+      "identifier": "80 092 450 274",
       "canonical": {
         "id": "healthscope",
         "name": "Healthscope"
@@ -55,31 +68,9 @@
         "id": "anz-hospitals-pty-ltd",
         "name": "Anz Hospitals Pty Ltd"
       }
-    },
-    {
-      "name": "HEALTHSCOPE NEWCO PTY LTD",
-      "identifier_type": "ABN",
-      "identifier": "80 092 450 274",
-      "canonical": {
-        "id": "healthscope",
-        "name": "Healthscope"
-      },
-      "party_page": {
-        "id": "healthscope",
-        "name": "Healthscope"
-      }
     }
   ],
   "other_parties": [
-    {
-      "name": "Kathy Sozou (as joint and several receivers)",
-      "identifier_type": null,
-      "identifier": "",
-      "party_page": {
-        "id": "kathy-sozou-as-joint-and-several-receivers",
-        "name": "Kathy Sozou (as joint and several receivers)"
-      }
-    },
     {
       "name": "Jason Ireland (as joint and several receivers)",
       "identifier_type": null,
@@ -106,6 +97,15 @@
         "id": "matthew-caddy-as-joint-and-several-receivers",
         "name": "Matthew Caddy (as joint and several receivers)"
       }
+    },
+    {
+      "name": "Kathy Sozou (as joint and several receivers)",
+      "identifier_type": null,
+      "identifier": "",
+      "party_page": {
+        "id": "kathy-sozou-as-joint-and-several-receivers",
+        "name": "Kathy Sozou (as joint and several receivers)"
+      }
     }
   ],
   "anzsic_codes": [
@@ -130,6 +130,12 @@
       "title": "Merger notified to ACCC",
       "display_title": "Merger notified to ACCC",
       "phase": "Phase 1"
+    },
+    {
+      "date": "2026-07-16T12:00:00Z",
+      "title": "Timeline extended by 30 business days \u2013 following request by parties",
+      "display_title": "Timeline extended by 30 business days \u2013 following request by parties",
+      "phase": null
     }
   ],
   "is_waiver": false,
