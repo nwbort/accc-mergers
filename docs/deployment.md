@@ -135,6 +135,12 @@ Manual-only (`workflow_dispatch`). Runs the frontend test suite.
 
 Manual-only (`workflow_dispatch`). Generates semantic embeddings for merger similarity.
 
+### `scrape-tribunal.yml` — Tribunal matter scraper
+
+Manual-only (`workflow_dispatch`). Runs `scrape_tribunal.py` to fill in `data/processed/tribunal_appeals.json`'s `documents[]` from the live Australian Competition Tribunal matter pages.
+
+**In practice this fails from GitHub Actions**: the tribunal site is behind Cloudflare bot management, which serves hosted-runner IPs a JS challenge page instead of the real content — no request-header or client change gets past that. Run it locally instead; see [Running the tribunal scraper locally](#running-the-tribunal-scraper-locally) below. The workflow is kept so a run surfaces the Cloudflare challenge clearly (a `::warning::` annotation with the response status/headers) rather than silently doing nothing, in case that ever changes.
+
 ## Static data files
 
 All data files are pre-generated into `merger-tracker/frontend/public/data/`:
@@ -168,6 +174,24 @@ python scripts/generate_static_data.py
 ./scripts/generate-cli-data.sh
 python scripts/generate_rss_feed.py
 ```
+
+### Running the tribunal scraper locally
+
+`scripts/scrape_tribunal.py` fills in tribunal filing documents in `data/processed/tribunal_appeals.json` from the live Australian Competition Tribunal matter pages. It must be run from a local machine, not GitHub Actions — see [`scrape-tribunal.yml`](#scrape-tribunalyml--tribunal-matter-scraper) above for why.
+
+```bash
+pip install -r scripts/requirements.txt   # requests, beautifulsoup4, lxml (curl must also be on PATH)
+
+python scripts/scrape_tribunal.py                # scrape every entry that has a tribunal_url
+python scripts/scrape_tribunal.py MN-01068        # scrape just this merger_id
+python scripts/scrape_tribunal.py --dry-run       # parse and report only, write nothing
+
+git add data/processed/tribunal_appeals.json data/raw/matters
+git commit -m "Update scraped tribunal data"
+git push
+```
+
+`curl` ships by default on macOS and Linux; on Windows use Git Bash or WSL. New matters are added to `tribunal_appeals.json` by hand (tribunal number, URL, appeal type, appellant) — the scraper only fills in the `documents[]` list for entries that already have a `tribunal_url`.
 
 ## Local development
 

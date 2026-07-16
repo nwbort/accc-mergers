@@ -34,12 +34,33 @@ Each linked document is also downloaded into ``data/raw/matters/{merger_id}/``
 and served exactly like ACCC attachments. Files already present are not
 re-downloaded; off-domain links are kept but not mirrored.
 
-Usage
------
+Usage — run this locally, not from CI
+--------------------------------------
+The tribunal site sits behind Cloudflare bot management, which serves
+GitHub Actions' hosted-runner IPs a JS challenge page ("Just a moment...",
+``cf-mitigated: challenge``) instead of the real content. No amount of
+User-Agent or header tweaking gets past that — it requires an actual
+JS-executing browser to solve, which nothing in this script does. A normal
+residential/office IP is not challenged, so **run this from your own
+machine**, then commit and push the result:
+
+  pip install -r scripts/requirements.txt   # requests, beautifulsoup4, lxml
   python scripts/scrape_tribunal.py                 # scrape + download every entry with a tribunal_url
   python scripts/scrape_tribunal.py MN-01068 ...    # scrape only these merger_ids
   python scripts/scrape_tribunal.py --no-download   # record metadata only, skip file downloads
   python scripts/scrape_tribunal.py --dry-run       # parse and report, don't write or download
+  git add data/processed/tribunal_appeals.json data/raw/matters
+  git commit -m "Update scraped tribunal data" && git push
+
+Also requires ``curl`` on PATH (see "Fetching via curl" below) — already
+present on macOS/Linux; on Windows use Git Bash or WSL.
+
+The ``scrape-tribunal.yml`` workflow (``workflow_dispatch``) still exists and
+can be triggered from the Actions tab, but expect it to fail with the
+Cloudflare challenge diagnostics described below rather than actually
+scraping anything — it's kept mainly so a run makes the failure visible
+(``::warning::`` annotation) rather than silent, in case Cloudflare's
+treatment of the runner IPs ever changes.
 
 Existing ``url_gh`` local-mirror paths are preserved across a re-scrape (matched
 by document URL). If a page yields no rows (e.g. the layout changed), that
@@ -49,12 +70,11 @@ Fetching via curl
 ------------------
 Matter pages are fetched by shelling out to ``curl`` rather than using the
 ``requests`` library (``download_document`` still uses ``requests`` for the
-document files themselves, which aren't behind the same protection). The
-tribunal site's WAF has been observed to 403 the identical User-Agent when
-sent via ``requests``/urllib3 while the ACCC register scraper (``scrape.sh``),
-which fetches with curl, is not blocked from the same CI runners — most
-likely a TLS/JA3 fingerprint check rather than anything header-based. If a
-fetch still fails, the response status, a few identifying response headers
+document files themselves, which aren't behind the same protection) because
+curl's TLS fingerprint gets past a plain block/reputation check the way
+``scrape.sh``'s curl-based ACCC fetch does — but it can't solve a Cloudflare
+JS challenge either way, which is what's actually happening here (see above).
+If a fetch fails, the response status, a few identifying response headers
 (``server``, ``cf-*``, ``x-akamai-*``, etc.) and a body snippet are logged,
 and a ``::warning::`` annotation is emitted under GitHub Actions so the
 failure is visible on the run summary rather than only in the raw logs.
