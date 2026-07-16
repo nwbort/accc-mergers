@@ -3395,6 +3395,18 @@
           "url_gh": "/mergers/MN-01068/Kalgoorlie - Decision to Proceed to Phase 2 review - 29 January 2026_5.pdf",
           "status": "live",
           "phase": "Phase 2"
+        },
+        {
+          "date": "2026-07-15T12:00:00Z",
+          "title": "Application for Review",
+          "display_title": "Tribunal appeal – Application for Review",
+          "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/599732/Application-for-Review.pdf",
+          "url_gh": "/mergers/MN-01068/Application-for-Review.pdf",
+          "is_appeal": true,
+          "appeal_filed_by": "Coles",
+          "appeal_confidentiality": "Non-confidential",
+          "tribunal_number": "ACT 1 of 2026",
+          "phase": null
         }
       ],
       "is_waiver": false,
@@ -3513,7 +3525,29 @@
             }
           ]
         }
-      ]
+      ],
+      "under_appeal": true,
+      "appeal": {
+        "tribunal_number": "ACT 1 of 2026",
+        "tribunal_url": "https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026",
+        "appeal_type": "party_denial",
+        "appellant": "Coles",
+        "status": "current",
+        "outcome": null,
+        "effective_determination": null,
+        "filed_date": "2026-07-15",
+        "concluded_date": null,
+        "documents": [
+          {
+            "date": "2026-07-15",
+            "filed_by": "Coles",
+            "description": "Application for Review",
+            "confidentiality": "Non-confidential",
+            "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/0008/599732/Application-for-Review.pdf",
+            "url_gh": "/mergers/MN-01068/Application-for-Review.pdf"
+          }
+        ]
+      }
     },
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/danone-%E2%80%93-further-1-interest-in-danone-saputo-dairy-australia",
@@ -120464,6 +120498,20 @@
         "is_refiled": false
       },
       {
+        "merger_id": "MN-01068",
+        "merger_name": "Coles – supermarket and liquor site in Kalgoorlie, WA",
+        "status": "Assessment completed",
+        "accc_determination": "Not approved",
+        "effective_notification_datetime": "2026-07-15T12:00:00Z",
+        "is_appeal": true,
+        "under_appeal": true,
+        "appeal_type": "party_denial",
+        "appeal_status": "current",
+        "effective_determination": null,
+        "tribunal_number": "ACT 1 of 2026",
+        "appeal_date": "2026-07-15T12:00:00Z"
+      },
+      {
         "merger_id": "MN-20017",
         "merger_name": "Amplifon – GN Hearing",
         "status": "Under assessment",
@@ -120541,15 +120589,6 @@
         "status": "Under assessment",
         "accc_determination": null,
         "effective_notification_datetime": "2026-07-08T12:00:00Z",
-        "is_waiver": false,
-        "is_refiled": false
-      },
-      {
-        "merger_id": "MN-30022",
-        "merger_name": "VSA - SprayLine",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-07-06T12:00:00Z",
         "is_waiver": false,
         "is_refiled": false
       }
