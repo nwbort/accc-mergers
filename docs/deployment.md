@@ -193,6 +193,10 @@ git push
 
 `curl` ships by default on macOS and Linux; on Windows use Git Bash or WSL. New matters are added to `tribunal_appeals.json` by hand (tribunal number, URL, appeal type, appellant) — the scraper only fills in the `documents[]` list for entries that already have a `tribunal_url`.
 
+### Alternative: browser bookmarklet
+
+If even a local/residential run of `scrape_tribunal.py` gets JS-challenged, `scripts/bookmarklet/` provides another path that doesn't make any HTTP request of its own: a bookmarklet you click while looking at the matter page in your own browser (so the Cloudflare challenge is already solved), which downloads a JSON snapshot of that page's document table(s) using the same parsing rules, ported to JS. `scripts/ingest_tribunal_snapshot.py` then folds that snapshot into `tribunal_appeals.json` the same way a normal scrape would (including mirroring the linked files). See [`scripts/bookmarklet/README.md`](../scripts/bookmarklet/README.md) for the install/use/ingest steps.
+
 ### Running it on a schedule (cron)
 
 `scripts/cron_scrape_tribunal.sh` wraps the scraper for unattended, recurring runs from your own server (a Raspberry Pi, home server, VPS — anything that isn't a GitHub Actions runner). Each run:

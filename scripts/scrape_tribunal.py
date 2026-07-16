@@ -61,6 +61,12 @@ a branch onto fresh ``main``, runs this script, and opens/updates a pull
 request via the ``gh`` CLI if anything changed — see
 docs/deployment.md#running-it-on-a-schedule-cron.
 
+If even a local/residential run gets JS-challenged, ``scripts/bookmarklet/``
+provides a browser-bookmarklet alternative that makes no HTTP request of its
+own (it reads the page you're already looking at) — see
+``scripts/bookmarklet/README.md`` and its companion
+``scripts/ingest_tribunal_snapshot.py``.
+
 The ``scrape-tribunal.yml`` workflow (``workflow_dispatch``) still exists and
 can be triggered from the Actions tab, but expect it to fail with the
 Cloudflare challenge diagnostics described below rather than actually
