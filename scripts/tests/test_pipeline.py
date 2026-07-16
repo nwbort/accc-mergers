@@ -698,6 +698,44 @@ class TestExtractQuestions:
         result = extract_questions(lines)
         assert len(result) == 2
 
+    def test_note_between_section_header_and_question_not_terminator(self):
+        """MN-40029: a 'Note:' under a section header must not end the parse.
+
+        The note sits between the second section header and its first question.
+        Previously it was treated as a terminator, truncating a 10-question
+        questionnaire to the 3 questions before the note.
+        """
+        lines = _lines(
+            ("Questions for all stakeholders", True),
+            "1. Outline any concerns.",
+            "2. Provide additional information.",
+            "3. Describe your business.",
+            ("Questions for suppliers of hospitality services", True),
+            "Note: 'on-premises hospitality services' include bar service,",
+            "casual dining and gaming facilities.",
+            "4. Identify the characteristics of your venue.",
+            "5. Identify alternative suppliers.",
+            ("Confidentiality of responses", True),
+            "During the ACCC's assessment the ACCC may receive information.",
+        )
+        result = extract_questions(lines)
+        assert [q['number'] for q in result] == [1, 2, 3, 4, 5]
+        assert result[3]['section'] == 'Questions for suppliers of hospitality services'
+        # The note text must not leak into a question.
+        assert all("on-premises hospitality services' include" not in q['text'] for q in result)
+
+    def test_please_note_mid_questions_not_terminator(self):
+        """A 'Please note' line within the questions block is skipped, not fatal."""
+        lines = _lines(
+            ("Questions", True),
+            "1. First question?",
+            ("Section B", True),
+            "Please note that responses may be published.",
+            "2. Second question?",
+        )
+        result = extract_questions(lines)
+        assert [q['number'] for q in result] == [1, 2]
+
     def test_empty_lines(self):
         assert extract_questions([]) == []
 
