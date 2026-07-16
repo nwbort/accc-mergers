@@ -23,6 +23,35 @@ export const APPEAL_STATUS = {
   CONCLUDED: 'concluded',
 };
 
+// Tribunal outcome once an appeal is concluded (mirrors constants/tribunal.py).
+export const APPEAL_OUTCOME = {
+  AFFIRMED: 'affirmed',
+  SET_ASIDE: 'set_aside',
+  VARIED: 'varied',
+  WITHDRAWN: 'withdrawn',
+  DISMISSED: 'dismissed',
+};
+
+// outcome → full human label shown on the tribunal link card.
+export const APPEAL_OUTCOME_LABELS = {
+  [APPEAL_OUTCOME.AFFIRMED]: 'ACCC decision affirmed',
+  [APPEAL_OUTCOME.SET_ASIDE]: 'ACCC decision set aside',
+  [APPEAL_OUTCOME.VARIED]: 'ACCC decision varied',
+  [APPEAL_OUTCOME.WITHDRAWN]: 'Appeal withdrawn',
+  [APPEAL_OUTCOME.DISMISSED]: 'Appeal dismissed',
+};
+
+// outcome → short suffix appended to the effective determination on the status
+// badge, mirroring the "· with conditions" treatment (e.g. "Approved · on
+// appeal", "Not approved · confirmed on appeal").
+export const APPEAL_OUTCOME_BADGE_SUFFIX = {
+  [APPEAL_OUTCOME.AFFIRMED]: 'confirmed on appeal',
+  [APPEAL_OUTCOME.DISMISSED]: 'confirmed on appeal',
+  [APPEAL_OUTCOME.WITHDRAWN]: 'appeal withdrawn',
+  [APPEAL_OUTCOME.SET_ASIDE]: 'on appeal',
+  [APPEAL_OUTCOME.VARIED]: 'varied on appeal',
+};
+
 // appeal_type → short human label shown on the tribunal link card.
 export const APPEAL_TYPE_LABELS = {
   [APPEAL_TYPES.PARTY_DENIAL]: 'Appeal against refusal',

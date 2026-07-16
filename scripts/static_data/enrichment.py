@@ -389,6 +389,11 @@ def link_tribunal_appeals(enriched_mergers: list, appeals: dict) -> int:
             'appellant': appeal.get('appellant'),
             'status': status,
             'outcome': appeal.get('outcome'),
+            # The ACCC-style determination that stands once the appeal is
+            # decided — the same as the ACCC's when affirmed, the opposite when
+            # set aside. Stored explicitly (never derived) and used to render an
+            # appeal-aware status badge, e.g. "Approved · on appeal".
+            'effective_determination': appeal.get('effective_determination'),
             'filed_date': appeal.get('filed_date'),
             'concluded_date': appeal.get('concluded_date'),
             'documents': appeal.get('documents', []),

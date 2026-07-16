@@ -65,10 +65,12 @@ def _appeal(merger_id='MN-0001'):
     }
 
 
-def _concluded_appeal(merger_id='MN-0001', outcome='ACCC decision affirmed'):
+def _concluded_appeal(merger_id='MN-0001', outcome=None, effective_determination='Not approved'):
+    outcome = outcome or tribunal.OUTCOME_AFFIRMED
     appeal = _appeal(merger_id)
     appeal[merger_id]['status'] = tribunal.APPEAL_STATUS_CONCLUDED
     appeal[merger_id]['outcome'] = outcome
+    appeal[merger_id]['effective_determination'] = effective_determination
     appeal[merger_id]['concluded_date'] = '2026-11-01'
     return appeal
 
@@ -103,9 +105,21 @@ class TestLinkTribunalAppeals:
         assert m['under_appeal'] is False
         # ... but the appeal record + documents remain for the detail page.
         assert m['appeal']['status'] == tribunal.APPEAL_STATUS_CONCLUDED
-        assert m['appeal']['outcome'] == 'ACCC decision affirmed'
+        assert m['appeal']['outcome'] == tribunal.OUTCOME_AFFIRMED
         assert m['appeal']['concluded_date'] == '2026-11-01'
         assert any(e.get('is_appeal') for e in m['events'])
+
+    def test_effective_determination_carried_through(self):
+        # Party wins its refusal appeal → the merger effectively becomes Approved.
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(
+            mergers,
+            _concluded_appeal(outcome=tribunal.OUTCOME_SET_ASIDE, effective_determination='Approved'),
+        )
+        m = mergers[0]
+        assert m['appeal']['effective_determination'] == 'Approved'
+        # The ACCC's own determination is never rewritten.
+        assert m['accc_determination'] == 'Not approved'
 
     def test_concluded_flag_not_propagated_to_outputs(self):
         mergers = [enrich_merger(_phase2_not_approved())]
@@ -164,6 +178,21 @@ class TestUnderAppealPropagation:
     def test_lightweight_defaults_false(self):
         entry = list_out._lightweight(enrich_merger(_phase2_not_approved()))
         assert entry['under_appeal'] is False
+        # No appeal → no appeal summary key at all (keeps list payload lean).
+        assert 'appeal' not in entry
+
+    def test_lightweight_carries_appeal_summary(self):
+        mergers = [enrich_merger(_phase2_not_approved())]
+        link_tribunal_appeals(
+            mergers,
+            _concluded_appeal(outcome=tribunal.OUTCOME_SET_ASIDE, effective_determination='Approved'),
+        )
+        entry = list_out._lightweight(mergers[0])
+        assert entry['appeal'] == {
+            'status': tribunal.APPEAL_STATUS_CONCLUDED,
+            'outcome': tribunal.OUTCOME_SET_ASIDE,
+            'effective_determination': 'Approved',
+        }
 
     def test_phase2_entry_carries_flag(self):
         mergers = [enrich_merger(_phase2_not_approved())]
@@ -206,7 +235,12 @@ class TestRealDataFile:
             assert appeal['tribunal_number']
             assert appeal['tribunal_url'].startswith('https://')
             assert appeal['appeal_type'] in tribunal.APPEAL_TYPES
-            assert appeal.get('status', tribunal.DEFAULT_APPEAL_STATUS) in tribunal.APPEAL_STATUSES
+            status = appeal.get('status', tribunal.DEFAULT_APPEAL_STATUS)
+            assert status in tribunal.APPEAL_STATUSES
+            if status == tribunal.APPEAL_STATUS_CONCLUDED:
+                # A concluded appeal must record what the tribunal decided.
+                assert appeal.get('outcome') in tribunal.APPEAL_OUTCOMES
+                assert appeal.get('effective_determination')
             for doc in appeal.get('documents', []):
                 assert doc['date']
                 assert doc['description']

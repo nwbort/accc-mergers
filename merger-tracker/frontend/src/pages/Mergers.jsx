@@ -607,6 +607,7 @@ function Mergers() {
                         status={merger.status}
                         determination={merger.accc_determination}
                         hasConditions={merger.has_conditions}
+                        appeal={merger.appeal}
                       />
                       <button
                         onClick={(e) => {

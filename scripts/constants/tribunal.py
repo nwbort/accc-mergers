@@ -63,3 +63,42 @@ def is_current_appeal(appeal: dict) -> bool:
     if not appeal:
         return False
     return appeal.get('status', DEFAULT_APPEAL_STATUS) != APPEAL_STATUS_CONCLUDED
+
+
+# Tribunal outcome once an appeal is concluded — what the tribunal did with the
+# ACCC decision under review.
+OUTCOME_AFFIRMED = 'affirmed'      # ACCC decision upheld
+OUTCOME_SET_ASIDE = 'set_aside'    # ACCC decision overturned
+OUTCOME_VARIED = 'varied'          # ACCC decision varied (e.g. conditions changed)
+OUTCOME_WITHDRAWN = 'withdrawn'    # appeal withdrawn before a decision
+OUTCOME_DISMISSED = 'dismissed'    # appeal dismissed — ACCC decision stands
+
+APPEAL_OUTCOMES = frozenset({
+    OUTCOME_AFFIRMED,
+    OUTCOME_SET_ASIDE,
+    OUTCOME_VARIED,
+    OUTCOME_WITHDRAWN,
+    OUTCOME_DISMISSED,
+})
+
+# outcome → full human label, shown on the tribunal link card. Kept in sync
+# with APPEAL_OUTCOME_LABELS in the frontend constants/appeal.js.
+APPEAL_OUTCOME_LABELS = {
+    OUTCOME_AFFIRMED: 'ACCC decision affirmed',
+    OUTCOME_SET_ASIDE: 'ACCC decision set aside',
+    OUTCOME_VARIED: 'ACCC decision varied',
+    OUTCOME_WITHDRAWN: 'Appeal withdrawn',
+    OUTCOME_DISMISSED: 'Appeal dismissed',
+}
+
+# outcome → short suffix appended to the effective determination on the status
+# badge, mirroring the "· with conditions" treatment (e.g. "Approved · on
+# appeal", "Not approved · confirmed on appeal"). Kept in sync with the
+# frontend's APPEAL_OUTCOME_BADGE_SUFFIX.
+APPEAL_OUTCOME_BADGE_SUFFIXES = {
+    OUTCOME_AFFIRMED: 'confirmed on appeal',
+    OUTCOME_DISMISSED: 'confirmed on appeal',
+    OUTCOME_WITHDRAWN: 'appeal withdrawn',
+    OUTCOME_SET_ASIDE: 'on appeal',
+    OUTCOME_VARIED: 'varied on appeal',
+}

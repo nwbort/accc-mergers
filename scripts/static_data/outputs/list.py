@@ -9,8 +9,25 @@ import json
 from pathlib import Path
 
 
-def _lightweight(m: dict) -> dict:
+def _appeal_summary(m: dict) -> dict | None:
+    """Slim appeal fields needed to render the status badge on a list card.
+
+    Only the lifecycle status and the concluded result are carried — enough for
+    the appeal-aware StatusBadge — not the full documents list. Returns ``None``
+    when the merger has no tribunal appeal.
+    """
+    appeal = m.get('appeal')
+    if not appeal:
+        return None
     return {
+        'status': appeal.get('status'),
+        'outcome': appeal.get('outcome'),
+        'effective_determination': appeal.get('effective_determination'),
+    }
+
+
+def _lightweight(m: dict) -> dict:
+    entry = {
         "merger_id": m.get('merger_id'),
         "merger_name": m.get('merger_name'),
         "status": m.get('status'),
@@ -28,6 +45,10 @@ def _lightweight(m: dict) -> dict:
         "anzsic_codes": m.get('anzsic_codes') or [],
         "url": m.get('url'),
     }
+    appeal = _appeal_summary(m)
+    if appeal:
+        entry["appeal"] = appeal
+    return entry
 
 
 def generate(mergers: list, output_dir: Path, page_size: int = 50) -> int:

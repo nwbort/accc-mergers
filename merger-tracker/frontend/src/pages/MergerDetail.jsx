@@ -23,7 +23,7 @@ import { API_ENDPOINTS } from '../config';
 import { PROSE_MARKDOWN, CARD, SECTION_HEADING } from '../utils/classNames';
 import { slugify, mergerPath, industryPath, partyPath } from '../utils/slug';
 import { MERGER_STATUS } from '../constants/mergerStatus';
-import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL, APPEAL_STATUS } from '../constants/appeal';
+import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL, APPEAL_STATUS, APPEAL_OUTCOME_LABELS } from '../constants/appeal';
 import { OUTCOME_DOT_COLORS, DEFAULT_OUTCOME_DOT, APPEAL_DOT, getOutcomeDot } from '../constants/outcomeDotColors';
 
 // Display text for each related-merger relationship. Keys match the
@@ -294,6 +294,7 @@ function MergerDetail() {
                   status={merger.status}
                   determination={merger.accc_determination}
                   hasConditions={merger.has_conditions}
+                  appeal={merger.appeal}
                 />
               </div>
               <TrackButton
@@ -396,7 +397,7 @@ function MergerDetail() {
                 Australian Competition Tribunal
                 {merger.appeal.tribunal_number ? ` · ${merger.appeal.tribunal_number}` : ''}
                 {merger.appeal.status === APPEAL_STATUS.CONCLUDED && merger.appeal.outcome
-                  ? ` · ${merger.appeal.outcome}`
+                  ? ` · ${APPEAL_OUTCOME_LABELS[merger.appeal.outcome] || merger.appeal.outcome}`
                   : ''}
               </p>
             </div>
