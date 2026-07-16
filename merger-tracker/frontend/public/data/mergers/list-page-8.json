@@ -3879,26 +3879,17 @@
     {
       "merger_id": "MN-01103",
       "merger_name": "Discovery Holiday Parks \u2013 four Breeze Holiday Parks",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-06-18T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-07-16T12:00:00Z",
       "end_of_determination_period": "2026-07-30T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
-        {
-          "name": "Beston Parks Land Co Pty Ltd atf Beston Accommodation Parks Trust",
-          "identifier_type": "ACN",
-          "identifier": "111 783 423",
-          "party_page": {
-            "id": "beston-parks-land-co-pty-ltd-atf-beston-accommodation-parks-trust",
-            "name": "Beston Parks Land Co Pty Ltd atf Beston Accommodation Parks Trust"
-          }
-        },
         {
           "name": "DISCOVERY HOLIDAY PARKS PTY LIMITED",
           "identifier_type": "ABN",
@@ -3910,6 +3901,15 @@
           "party_page": {
             "id": "discovery-holiday-parks",
             "name": "Discovery Holiday Parks"
+          }
+        },
+        {
+          "name": "Beston Parks Land Co Pty Ltd atf Beston Accommodation Parks Trust",
+          "identifier_type": "ACN",
+          "identifier": "111 783 423",
+          "party_page": {
+            "id": "beston-parks-land-co-pty-ltd-atf-beston-accommodation-parks-trust",
+            "name": "Beston Parks Land Co Pty Ltd atf Beston Accommodation Parks Trust"
           }
         }
       ],
