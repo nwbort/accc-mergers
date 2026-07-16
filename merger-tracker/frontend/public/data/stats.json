@@ -1,6 +1,6 @@
 {
   "total_mergers": 178,
-  "total_waivers": 270,
+  "total_waivers": 271,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 7
   },
   "by_waiver_determination": {
-    "Approved": 256,
+    "Approved": 257,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.596296296296295,
-    "median_days": 18.0,
-    "average_business_days": 12.344444444444445,
-    "median_business_days": 12.0
+    "average_days": 18.605166051660518,
+    "median_days": 18,
+    "average_business_days": 12.354243542435425,
+    "median_business_days": 12
   },
   "top_industries": [
     {
@@ -58,7 +58,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 37
+      "count": 38
     },
     {
       "name": "Software Publishing",
@@ -206,6 +206,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-55027",
+      "merger_name": "Sumitomo Mitsui Trust Bank - SMTB ANZ Debt Fund",
+      "determination": "Approved",
+      "determination_date": "2026-07-16T12:00:00Z",
+      "page_modified_datetime": "2026-07-16T17:35:02+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-65027",
       "merger_name": "Kennards Hire - Skylift Hire & Rentals",
       "determination": "Approved",
@@ -311,16 +321,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-13T12:00:00Z",
       "page_modified_datetime": "2026-07-13T17:42:00+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-95026",
-      "merger_name": "Google Australia \u2013 indefeasible rights to use terrestrial dark fibre from Telstra",
-      "determination": "Approved",
-      "determination_date": "2026-07-13T12:00:00Z",
-      "page_modified_datetime": "2026-07-13T17:40:04+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"

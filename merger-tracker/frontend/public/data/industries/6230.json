@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "WA-55027",
+      "merger_name": "Sumitomo Mitsui Trust Bank - SMTB ANZ Debt Fund",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-25T12:00:00Z",
+      "determination_date": "2026-07-16T12:00:00Z"
+    },
+    {
       "merger_id": "WA-20025",
       "merger_name": "Bupa \u2013 Barings Australian Private Credit Fund",
       "is_waiver": true,
@@ -71,10 +82,10 @@
       "determination_date": null
     }
   ],
-  "count": 4,
+  "count": 5,
   "phase_1_count": 0,
   "phase_2_count": 1,
-  "waiver_count": 3,
+  "waiver_count": 4,
   "active_count": 0,
   "phase_duration": {
     "average_days": 89.0,
@@ -84,10 +95,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 16.0,
-    "median_days": 17,
-    "average_business_days": 10.0,
-    "median_business_days": 10,
-    "completed_count": 3
+    "average_days": 17.25,
+    "median_days": 19.0,
+    "average_business_days": 11.25,
+    "median_business_days": 12.5,
+    "completed_count": 4
   }
 }

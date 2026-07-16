@@ -1295,6 +1295,77 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/accenture-%E2%80%93-whalar-agency"
     },
     {
+      "merger_id": "WA-55027",
+      "merger_name": "Sumitomo Mitsui Trust Bank - SMTB ANZ Debt Fund",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-06-25T12:00:00Z",
+      "determination_publication_date": "2026-07-16T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Sumitomo Mitsui Trust Bank, Limited",
+          "identifier_type": null,
+          "identifier": "Financial Institution Registration Number: No.649 Kanto Finance Bureau of the Ministry of Finance",
+          "party_page": {
+            "id": "sumitomo-mitsui-trust-bank-limited",
+            "name": "Sumitomo Mitsui Trust Bank, Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "IFM SuMi TRUST ANZ Debt Fund",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ifm-sumi-trust-anz-debt-fund",
+            "name": "IFM SuMi TRUST ANZ Debt Fund"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "ETICORE SD PTY LTD, as trustee of the IFM SuMi TRUST ANZ Debt Fund",
+          "identifier_type": "ABN",
+          "identifier": "94 613 933 645",
+          "party_page": {
+            "id": "eticore-sd-pty-ltd-as-trustee-of-the-ifm-sumi-trust-anz-debt-fund",
+            "name": "ETICORE SD PTY LTD, as trustee of the IFM SuMi TRUST ANZ Debt Fund"
+          }
+        },
+        {
+          "name": "IFM INVESTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "67 107 247 727",
+          "canonical": {
+            "id": "ifm-investors",
+            "name": "Ifm Investors"
+          },
+          "party_page": {
+            "id": "ifm-investors",
+            "name": "Ifm Investors"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6230",
+          "name": "Non-Depository Financing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sumitomo-mitsui-trust-bank-smtb-anz-debt-fund"
+    },
+    {
       "merger_id": "WA-90025",
       "merger_name": "KKR - Crowe",
       "status": "Assessment completed",

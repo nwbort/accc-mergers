@@ -31,7 +31,7 @@
       "code": "623",
       "name": "Non-Depository Financing",
       "level": "group",
-      "merger_count": 4
+      "merger_count": 5
     },
     {
       "code": "624",
@@ -41,6 +41,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-55027",
+      "merger_name": "Sumitomo Mitsui Trust Bank - SMTB ANZ Debt Fund",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-25T12:00:00Z",
+      "determination_date": "2026-07-16T12:00:00Z"
+    },
     {
       "merger_id": "WA-90025",
       "merger_name": "KKR - Crowe",
@@ -735,10 +746,10 @@
       "determination_date": null
     }
   ],
-  "count": 63,
+  "count": 64,
   "phase_1_count": 10,
   "phase_2_count": 1,
-  "waiver_count": 52,
+  "waiver_count": 53,
   "active_count": 0,
   "phase_duration": {
     "average_days": 30.181818181818183,
@@ -748,10 +759,10 @@
     "completed_count": 11
   },
   "waiver_duration": {
-    "average_days": 18.5,
-    "median_days": 18.0,
-    "average_business_days": 12.134615384615385,
-    "median_business_days": 12.0,
-    "completed_count": 52
+    "average_days": 18.547169811320753,
+    "median_days": 18,
+    "average_business_days": 12.18867924528302,
+    "median_business_days": 12,
+    "completed_count": 53
   }
 }
