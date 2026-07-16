@@ -135,6 +135,12 @@ Manual-only (`workflow_dispatch`). Runs the frontend test suite.
 
 Manual-only (`workflow_dispatch`). Generates semantic embeddings for merger similarity.
 
+### `scrape-tribunal.yml` — Tribunal matter scraper
+
+Manual-only (`workflow_dispatch`). Runs `scrape_tribunal.py` to fill in `data/processed/tribunal_appeals.json`'s `documents[]` from the live Australian Competition Tribunal matter pages.
+
+**In practice this fails from GitHub Actions**: the tribunal site is behind Cloudflare bot management, which serves hosted-runner IPs a JS challenge page instead of the real content — no request-header or client change gets past that. Run it locally instead; see [Running the tribunal scraper locally](#running-the-tribunal-scraper-locally) below. The workflow is kept so a run surfaces the Cloudflare challenge clearly (a `::warning::` annotation with the response status/headers) rather than silently doing nothing, in case that ever changes.
+
 ## Static data files
 
 All data files are pre-generated into `merger-tracker/frontend/public/data/`:
@@ -168,6 +174,76 @@ python scripts/generate_static_data.py
 ./scripts/generate-cli-data.sh
 python scripts/generate_rss_feed.py
 ```
+
+### Running the tribunal scraper locally
+
+`scripts/scrape_tribunal.py` fills in tribunal filing documents in `data/processed/tribunal_appeals.json` from the live Australian Competition Tribunal matter pages. It must be run from a local machine, not GitHub Actions — see [`scrape-tribunal.yml`](#scrape-tribunalyml--tribunal-matter-scraper) above for why.
+
+```bash
+pip install -r scripts/requirements.txt   # requests, beautifulsoup4, lxml (curl must also be on PATH)
+
+python scripts/scrape_tribunal.py                # scrape every entry that has a tribunal_url
+python scripts/scrape_tribunal.py MN-01068        # scrape just this merger_id
+python scripts/scrape_tribunal.py --dry-run       # parse and report only, write nothing
+
+git add data/processed/tribunal_appeals.json data/raw/matters
+git commit -m "Update scraped tribunal data"
+git push
+```
+
+`curl` ships by default on macOS and Linux; on Windows use Git Bash or WSL. New matters are added to `tribunal_appeals.json` by hand (tribunal number, URL, appeal type, appellant) — the scraper only fills in the `documents[]` list for entries that already have a `tribunal_url`.
+
+### Running it on a schedule (cron)
+
+`scripts/cron_scrape_tribunal.sh` wraps the scraper for unattended, recurring runs from your own server (a Raspberry Pi, home server, VPS — anything that isn't a GitHub Actions runner). Each run:
+
+1. Fetches `origin/main` and resets a local `tribunal-scrape` branch onto its tip, so it's always scraping against a fresh copy of main, not stale local state.
+2. Runs `scrape_tribunal.py`.
+3. If nothing changed, exits quietly — no branch push, no PR.
+4. If something changed, commits, force-pushes `tribunal-scrape`, and opens a pull request (or updates the existing one if the last PR is still open/unmerged) via the `gh` CLI, with the scrape output as the PR body.
+
+It deliberately **does not** merge the PR itself — a home-server cron job can fail in ways CI wouldn't (stale deps, disk issues, flaky network), so changes get a human review/merge step before they reach `main` and Cloudflare Pages deploys them.
+
+**One-time setup on the server:**
+
+```bash
+# Use a clone dedicated to this cron job — the script resets/force-pushes a
+# branch in it and refuses to run if the tree isn't clean, so don't also use
+# this clone for manual development.
+git clone https://github.com/nwbort/accc-mergers.git ~/accc-mergers-tribunal-cron
+cd ~/accc-mergers-tribunal-cron
+pip install -r scripts/requirements.txt
+
+# Install the gh CLI (https://cli.github.com) if not already present, then
+# authenticate once with an account that has push access to the repo:
+gh auth login
+
+# Sanity-check it end to end before scheduling it:
+./scripts/cron_scrape_tribunal.sh
+```
+
+**Crontab entry** (every 6 hours, `flock` prevents overlapping runs if one takes longer than expected):
+
+```cron
+0 */6 * * * /usr/bin/flock -n /tmp/tribunal-scrape.lock ~/accc-mergers-tribunal-cron/scripts/cron_scrape_tribunal.sh >> ~/tribunal-scrape.log 2>&1
+```
+
+Check `~/tribunal-scrape.log` for run history, and github.com for any open `tribunal-scrape` PR waiting on review.
+
+**Telling "nothing new" apart from "blocked":** a run that finds nothing to scrape and a run that's being blocked (e.g. by Cloudflare) can otherwise look similar — both are "no PR." Each run logs one `STATUS=` line and exits with a matching code, so either is easy to check for:
+
+| `STATUS=` | Exit code | Meaning |
+|---|---|---|
+| `OK-NO-CHANGES` | 0 | Ran cleanly, genuinely nothing new |
+| `OK-PR-OPENED` / `OK-PR-UPDATED` | 0 | Ran cleanly, changes found, PR ready for review |
+| `BLOCKED` | 2 | One or more pages failed to fetch (check the log for `FAILED to fetch` / `cf-mitigated` just above it) — nothing committed |
+| `ERROR` | 1 | The script itself crashed — nothing committed |
+
+```bash
+grep STATUS= ~/tribunal-scrape.log | tail -20   # quick history at a glance
+```
+
+If you want to be pinged rather than checking the log yourself, the exit code is the hook to build on — e.g. add a step after the `flock` command in the crontab entry that only fires on a non-zero exit (a `curl` to [ntfy.sh](https://ntfy.sh), `mail`, a Slack webhook, whatever you already use). Not set up here since it depends on what notification channel you'd actually want it to land in.
 
 ## Local development
 

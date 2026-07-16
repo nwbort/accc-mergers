@@ -34,16 +34,56 @@ Each linked document is also downloaded into ``data/raw/matters/{merger_id}/``
 and served exactly like ACCC attachments. Files already present are not
 re-downloaded; off-domain links are kept but not mirrored.
 
-Usage
------
+Usage — run this locally, not from CI
+--------------------------------------
+The tribunal site sits behind Cloudflare bot management, which serves
+GitHub Actions' hosted-runner IPs a JS challenge page ("Just a moment...",
+``cf-mitigated: challenge``) instead of the real content. No amount of
+User-Agent or header tweaking gets past that — it requires an actual
+JS-executing browser to solve, which nothing in this script does. A normal
+residential/office IP is not challenged, so **run this from your own
+machine**, then commit and push the result:
+
+  pip install -r scripts/requirements.txt   # requests, beautifulsoup4, lxml
   python scripts/scrape_tribunal.py                 # scrape + download every entry with a tribunal_url
   python scripts/scrape_tribunal.py MN-01068 ...    # scrape only these merger_ids
   python scripts/scrape_tribunal.py --no-download   # record metadata only, skip file downloads
   python scripts/scrape_tribunal.py --dry-run       # parse and report, don't write or download
+  git add data/processed/tribunal_appeals.json data/raw/matters
+  git commit -m "Update scraped tribunal data" && git push
+
+Also requires ``curl`` on PATH (see "Fetching via curl" below) — already
+present on macOS/Linux; on Windows use Git Bash or WSL.
+
+To run this on a recurring schedule (e.g. from a home server via cron)
+rather than by hand, use ``scripts/cron_scrape_tribunal.sh``, which resets
+a branch onto fresh ``main``, runs this script, and opens/updates a pull
+request via the ``gh`` CLI if anything changed — see
+docs/deployment.md#running-it-on-a-schedule-cron.
+
+The ``scrape-tribunal.yml`` workflow (``workflow_dispatch``) still exists and
+can be triggered from the Actions tab, but expect it to fail with the
+Cloudflare challenge diagnostics described below rather than actually
+scraping anything — it's kept mainly so a run makes the failure visible
+(``::warning::`` annotation) rather than silent, in case Cloudflare's
+treatment of the runner IPs ever changes.
 
 Existing ``url_gh`` local-mirror paths are preserved across a re-scrape (matched
 by document URL). If a page yields no rows (e.g. the layout changed), that
 entry is left untouched rather than wiped.
+
+Fetching via curl
+------------------
+Matter pages are fetched by shelling out to ``curl`` rather than using the
+``requests`` library (``download_document`` still uses ``requests`` for the
+document files themselves, which aren't behind the same protection) because
+curl's TLS fingerprint gets past a plain block/reputation check the way
+``scrape.sh``'s curl-based ACCC fetch does — but it can't solve a Cloudflare
+JS challenge either way, which is what's actually happening here (see above).
+If a fetch fails, the response status, a few identifying response headers
+(``server``, ``cf-*``, ``x-akamai-*``, etc.) and a body snippet are logged,
+and a ``::warning::`` annotation is emitted under GitHub Actions so the
+failure is visible on the run summary rather than only in the raw logs.
 """
 
 from __future__ import annotations
@@ -52,7 +92,9 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
+import tempfile
 import unicodedata
 from datetime import datetime
 from pathlib import Path
@@ -376,12 +418,67 @@ def parse_matter_page(html: str, base_url: str) -> list[dict]:
     return documents
 
 
+# Response headers worth echoing on a failed fetch: they're the cheapest way
+# to tell a WAF/bot-protection block (cf-*, x-akamai-*, server: cloudflare...)
+# apart from an ordinary server error.
+_DIAGNOSTIC_HEADER_PREFIXES = ("server:", "cf-", "x-akamai", "x-waf", "retry-after:")
+
+
+def gha_warning(message: str) -> None:
+    """Emit a GitHub Actions warning annotation (visible on the run summary).
+
+    A no-op outside Actions (GITHUB_ACTIONS unset) so local runs aren't spammed
+    with workflow-command syntax.
+    """
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        print(f"::warning::{message}")
+
+
 def fetch(url: str) -> str:
-    resp = requests.get(
-        url, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT
-    )
-    resp.raise_for_status()
-    return resp.text
+    """Fetch a tribunal page via curl.
+
+    Uses curl rather than ``requests`` — see the "Fetching via curl" note in
+    the module docstring for why. Raises RuntimeError on any non-2xx/transport
+    failure, with diagnostics (status, relevant headers, body snippet)
+    attached to the message.
+    """
+    with tempfile.TemporaryDirectory() as tmp:
+        body_path = os.path.join(tmp, "body")
+        headers_path = os.path.join(tmp, "headers")
+        result = subprocess.run(
+            [
+                "curl", "-sS", "-L", "--compressed",
+                "-A", USER_AGENT,
+                "--max-time", str(REQUEST_TIMEOUT),
+                "--retry", "1", "--retry-delay", "5", "--retry-max-time", "90",
+                "-D", headers_path,
+                "-o", body_path,
+                "-w", "%{http_code}",
+                url,
+            ],
+            capture_output=True,
+            text=True,
+        )
+        status = result.stdout.strip()
+        body = Path(body_path).read_text(encoding="utf-8", errors="replace") if os.path.exists(body_path) else ""
+        headers_text = Path(headers_path).read_text(encoding="utf-8", errors="replace") if os.path.exists(headers_path) else ""
+
+        if result.returncode == 0 and status.startswith("2"):
+            return body
+
+        interesting_headers = [
+            line.strip()
+            for line in headers_text.splitlines()
+            if line.strip().lower().startswith(_DIAGNOSTIC_HEADER_PREFIXES)
+        ]
+        snippet = " ".join(body.split())[:300]
+        detail = (
+            f"curl exit={result.returncode} http={status or 'n/a'}"
+            f" curl_stderr={result.stderr.strip()[:200]!r}"
+            f" headers=[{'; '.join(interesting_headers) or 'none'}]"
+            f" body={snippet!r}"
+        )
+        raise RuntimeError(detail)
 
 
 def merge_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
@@ -423,6 +520,7 @@ def scrape(
         return 0
 
     changed = 0
+    failed: list[str] = []
     for mid in targets:
         record = records[mid]
         url = record.get("tribunal_url")
@@ -433,8 +531,10 @@ def scrape(
         print(f"Scraping {mid}: {url}")
         try:
             html = fetch(url)
-        except requests.RequestException as e:
+        except (RuntimeError, OSError) as e:
             print(f"  FAILED to fetch {url}: {e}", file=sys.stderr)
+            gha_warning(f"scrape_tribunal: failed to fetch {mid} ({url}): {e}")
+            failed.append(mid)
             continue
 
         scraped = parse_matter_page(html, url)
@@ -470,15 +570,27 @@ def scrape(
 
     if dry_run:
         print(f"\nDry run: {changed} entr(y/ies) would change; nothing written.")
-        return 0
-
-    if changed:
+    elif changed:
         with open(TRIBUNAL_APPEALS_JSON, "w", encoding="utf-8") as f:
             json.dump(raw, f, indent=2, ensure_ascii=False)
             f.write("\n")
         print(f"\nUpdated {changed} entr(y/ies) in {TRIBUNAL_APPEALS_JSON}")
     else:
         print("\nNo changes.")
+
+    if failed:
+        # A distinct, non-zero exit so callers (the cron wrapper, in
+        # particular) can tell "ran clean, genuinely nothing new" apart from
+        # "one or more fetches failed" — both otherwise print similar-looking
+        # "no changes" output. See the FAILED lines above (and any GitHub
+        # Actions ::warning:: annotations) for per-matter diagnostics.
+        print(
+            f"\n{len(failed)} of {len(targets)} matter(s) failed to fetch: "
+            f"{', '.join(failed)}",
+            file=sys.stderr,
+        )
+        return 2
+
     return 0
 
 

@@ -1,3 +1,9 @@
+# NOTE: the tribunal site is behind Cloudflare bot management, which serves
+# GitHub Actions' hosted-runner IPs a JS challenge instead of the real page —
+# no header/client change gets past that. This will very likely fail with a
+# clear ::warning:: annotation rather than actually scrape anything. Prefer
+# running scripts/scrape_tribunal.py locally instead; see
+# docs/deployment.md#running-the-tribunal-scraper-locally.
 name: Scrape Tribunal
 
 on:
