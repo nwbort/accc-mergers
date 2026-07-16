@@ -17,6 +17,7 @@ def _lightweight(m: dict) -> dict:
         "accc_determination": m.get('accc_determination'),
         "has_conditions": m.get('has_conditions', False),
         "is_waiver": m.get('is_waiver', False),
+        "under_appeal": m.get('under_appeal', False),
         "effective_notification_datetime": m.get('effective_notification_datetime'),
         "determination_publication_date": m.get('determination_publication_date'),
         "end_of_determination_period": m.get('end_of_determination_period'),

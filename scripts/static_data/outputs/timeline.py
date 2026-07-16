@@ -21,6 +21,7 @@ def generate(mergers: list, output_dir: Path, page_size: int = 100) -> int:
         merger_id = m['merger_id']
         merger_name = m['merger_name']
         merger_is_waiver = m.get('is_waiver', False)
+        merger_under_appeal = m.get('under_appeal', False)
 
         for event in m.get('events', []):
             title = event.get('title', '')
@@ -35,6 +36,8 @@ def generate(mergers: list, output_dir: Path, page_size: int = 100) -> int:
                 "merger_name": merger_name,
                 "phase": event.get('phase') or extract_phase_from_event(title),
                 "is_waiver": merger_is_waiver,
+                "under_appeal": merger_under_appeal,
+                "is_appeal": event.get('is_appeal', False),
             })
 
     # Sort by date ascending (oldest first, newest last).

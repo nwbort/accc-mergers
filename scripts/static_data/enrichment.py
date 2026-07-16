@@ -315,6 +315,84 @@ def link_related_parties(enriched_mergers: list, party_groups: list) -> int:
     return linked
 
 
+def _normalise_appeal_date(value: str | None) -> str | None:
+    """Normalise a tribunal document date to the event datetime format.
+
+    Tribunal dates are recorded as plain ``YYYY-MM-DD``; the merger event
+    timeline uses ``YYYY-MM-DDT12:00:00Z``. A bare date is promoted to that
+    form so appeal events sort and render alongside ACCC events; anything
+    already carrying a time component is left untouched.
+    """
+    if not value:
+        return value
+    if len(value) == 10 and value[4] == '-' and value[7] == '-':
+        return f"{value}T12:00:00Z"
+    return value
+
+
+def _appeal_event(doc: dict, appeal: dict) -> dict:
+    """Turn a tribunal appeal document into a merger timeline event."""
+    description = doc.get('description') or 'Tribunal document'
+    return {
+        'date': _normalise_appeal_date(doc.get('date')),
+        'title': description,
+        'display_title': f"Tribunal appeal – {description}",
+        'url': doc.get('url'),
+        'url_gh': doc.get('url_gh'),
+        # Flags the event as originating from the tribunal appeal rather than
+        # the ACCC register, so the frontend can style/label it distinctly.
+        'is_appeal': True,
+        'appeal_filed_by': doc.get('filed_by'),
+        'appeal_confidentiality': doc.get('confidentiality'),
+        'tribunal_number': appeal.get('tribunal_number'),
+        'phase': None,
+    }
+
+
+def link_tribunal_appeals(enriched_mergers: list, appeals: dict) -> int:
+    """Attach Australian Competition Tribunal appeal data to mergers in-place.
+
+    For every merger with an entry in ``appeals`` (keyed by merger_id):
+
+      * ``under_appeal`` is set to ``True`` (a lightweight flag propagated to
+        list/phase2/timeline outputs and rendered as an "Under appeal" badge);
+      * ``appeal`` holds the full appeal record (tribunal number, tribunal URL,
+        appeal type, appellant, filed date and documents); and
+      * each appeal document is folded into the merger's event timeline so the
+        filings surface alongside ACCC events.
+
+    The ACCC-scraped ``status`` / ``accc_determination`` fields are left
+    untouched — the appeal is layered on top rather than replacing the
+    underlying outcome. Returns the number of mergers linked.
+    """
+    if not appeals:
+        return 0
+
+    linked = 0
+    for merger in enriched_mergers:
+        mid = merger.get('merger_id', '')
+        appeal = appeals.get(mid)
+        if not appeal:
+            continue
+
+        merger['under_appeal'] = True
+        merger['appeal'] = {
+            'tribunal_number': appeal.get('tribunal_number'),
+            'tribunal_url': appeal.get('tribunal_url'),
+            'appeal_type': appeal.get('appeal_type'),
+            'appellant': appeal.get('appellant'),
+            'filed_date': appeal.get('filed_date'),
+            'documents': appeal.get('documents', []),
+        }
+
+        appeal_events = [_appeal_event(doc, appeal) for doc in appeal.get('documents', [])]
+        if appeal_events:
+            merger['events'] = list(merger.get('events') or []) + appeal_events
+
+        linked += 1
+    return linked
+
+
 def link_related_mergers(enriched_mergers: list, related_mergers: dict) -> int:
     """Attach ``related_merger`` entries to each merger in-place, with resolved names.
 

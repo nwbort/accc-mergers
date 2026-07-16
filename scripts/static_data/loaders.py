@@ -12,6 +12,7 @@ NOCC_JSON = REPO_ROOT / "data" / "processed" / "nocc_data.json"
 RELATED_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "related_mergers.json"
 RELATED_PARTIES_JSON = REPO_ROOT / "data" / "processed" / "related_parties.json"
 SIMILAR_MERGERS_JSON = REPO_ROOT / "data" / "processed" / "similar_mergers.json"
+TRIBUNAL_APPEALS_JSON = REPO_ROOT / "data" / "processed" / "tribunal_appeals.json"
 
 
 def load_mergers() -> list:
@@ -125,6 +126,26 @@ def load_similar_mergers() -> dict:
         return data.get('similar', {})
     except (json.JSONDecodeError, IOError) as e:
         print(f"Warning: Could not load similar_mergers.json: {e}")
+        return {}
+
+
+def load_tribunal_appeals() -> dict:
+    """Load Australian Competition Tribunal appeal data from tribunal_appeals.json.
+
+    Returns a dict keyed by merger_id mapping to the appeal record (tribunal
+    number, tribunal URL, appeal type, appellant, filed date and documents).
+    Metadata keys (starting with ``_``) are stripped. Returns an empty dict if
+    the file is missing or malformed.
+    """
+    if not TRIBUNAL_APPEALS_JSON.exists():
+        return {}
+
+    try:
+        with open(TRIBUNAL_APPEALS_JSON, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return {k: v for k, v in data.items() if not k.startswith('_')}
+    except (json.JSONDecodeError, IOError) as e:
+        print(f"Warning: Could not load tribunal_appeals.json: {e}")
         return {}
 
 

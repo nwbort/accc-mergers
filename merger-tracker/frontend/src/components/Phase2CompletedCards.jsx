@@ -34,6 +34,11 @@ function Phase2CompletedCards({ matters }) {
                 Refiled
               </span>
             )}
+            {item.under_appeal && (
+              <span className={`${CHIP_BASE_CLASS} font-medium bg-indigo-100 text-indigo-700`}>
+                Under appeal
+              </span>
+            )}
           </MergerCardBody>
         );
       }}

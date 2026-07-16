@@ -4,6 +4,7 @@ import { mergerPath } from '../utils/slug';
 import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import SEO from '../components/SEO';
+import AppealBadge from '../components/AppealBadge';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import { formatDate } from '../utils/dates';
 import { API_ENDPOINTS } from '../config';
@@ -334,6 +335,7 @@ function Timeline() {
                       >
                         <span className="text-sm font-semibold text-gray-900">
                           {event.merger_name}
+                          {event.under_appeal && <AppealBadge className="ml-2 align-middle" />}
                         </span>
                         <p className="text-sm text-gray-500 mt-1">
                           {event.display_title || event.title}

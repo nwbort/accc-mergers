@@ -7,6 +7,7 @@ import ErrorMessage from '../components/ErrorMessage';
 import StatusBadge from '../components/StatusBadge';
 import BellIcon from '../components/BellIcon';
 import WaiverBadge from '../components/WaiverBadge';
+import AppealBadge from '../components/AppealBadge';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
 import { getBusinessDayProgress } from '../utils/businessDayProgress';
@@ -601,6 +602,7 @@ function Mergers() {
                       </p>
                     </div>
                     <div className="flex items-center gap-2 flex-shrink-0">
+                      {merger.under_appeal && <AppealBadge />}
                       <StatusBadge
                         status={merger.status}
                         determination={merger.accc_determination}

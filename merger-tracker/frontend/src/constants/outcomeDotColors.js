@@ -22,6 +22,10 @@ export const OUTCOME_DOT_COLORS = {
 
 export const DEFAULT_OUTCOME_DOT = { dot: 'bg-primary', ring: 'bg-primary/10' };
 
+// Marker for tribunal appeal events in the Timeline & Events list — indigo, to
+// match the "Under appeal" badge (components/AppealBadge.jsx).
+export const APPEAL_DOT = { dot: 'bg-indigo-500', ring: 'bg-indigo-500/10' };
+
 // Determination takes precedence over status, mirroring getCardStyle.
 export function getOutcomeDot({ determination, status } = {}) {
   return OUTCOME_DOT_COLORS[determination] || OUTCOME_DOT_COLORS[status] || DEFAULT_OUTCOME_DOT;
