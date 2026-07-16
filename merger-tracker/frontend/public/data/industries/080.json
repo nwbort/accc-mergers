@@ -71,17 +71,6 @@
   ],
   "mergers": [
     {
-      "merger_id": "MN-65020",
-      "merger_name": "Regis Resources - Vault Minerals",
-      "is_waiver": false,
-      "status": "Under assessment",
-      "determination": null,
-      "has_conditions": false,
-      "phase": "Phase 1",
-      "notification_date": "2026-06-22T12:00:00Z",
-      "determination_date": null
-    },
-    {
       "merger_id": "WA-70025",
       "merger_name": "Mitsui \u2013 Rhodes Ridge Joint Venture",
       "is_waiver": true,
@@ -168,13 +157,24 @@
       "phase": "Phase 1",
       "notification_date": "2025-10-24T12:00:00Z",
       "determination_date": "2025-11-18T12:00:00Z"
+    },
+    {
+      "merger_id": "MN-65020",
+      "merger_name": "Regis Resources - Vault Minerals",
+      "is_waiver": false,
+      "status": "Assessment ceased",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-06-22T12:00:00Z",
+      "determination_date": null
     }
   ],
   "count": 9,
   "phase_1_count": 2,
   "phase_2_count": 0,
   "waiver_count": 7,
-  "active_count": 1,
+  "active_count": 0,
   "phase_duration": {
     "average_days": 25.0,
     "median_days": 25,

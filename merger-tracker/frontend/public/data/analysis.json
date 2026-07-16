@@ -2048,9 +2048,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 42,
+      "count": 41,
       "outcome_mix": {
-        "Unknown": 42
+        "Unknown": 41
       },
       "median_phase_1_business_days": 36.5
     },
@@ -2064,20 +2064,21 @@
       "median_phase_1_business_days": 18
     },
     {
+      "division": "Unknown",
+      "count": 3,
+      "outcome_mix": {
+        "Approved": 2,
+        "Unknown": 1
+      },
+      "median_phase_1_business_days": 40.0
+    },
+    {
       "division": "Chair Cass-Gottlieb",
       "count": 2,
       "outcome_mix": {
         "Approved": 2
       },
       "median_phase_1_business_days": null
-    },
-    {
-      "division": "Unknown",
-      "count": 2,
-      "outcome_mix": {
-        "Approved": 2
-      },
-      "median_phase_1_business_days": 40.0
     }
   ],
   "deadline_utilisation": {

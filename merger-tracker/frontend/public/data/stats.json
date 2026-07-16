@@ -4,8 +4,8 @@
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
-    "Under assessment": 43,
-    "Assessment ceased": 2
+    "Under assessment": 42,
+    "Assessment ceased": 3
   },
   "by_determination": {
     "Approved": 132,
@@ -206,6 +206,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-65020",
+      "merger_name": "Regis Resources - Vault Minerals",
+      "determination": "Assessment ceased",
+      "determination_date": "2026-07-16T12:00:00Z",
+      "page_modified_datetime": "2026-07-16T19:36:41+10:00",
+      "determination_type": "ceased",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-80023",
       "merger_name": "National Reconstruction Fund Corporation / SOUTHERNLAUNCH.SPACE PTY LTD",
       "determination": "Approved",
@@ -314,16 +324,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-50029",
-      "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
-      "determination": "Approved",
-      "determination_date": "2026-07-13T12:00:00Z",
-      "page_modified_datetime": "2026-07-13T17:43:55+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
