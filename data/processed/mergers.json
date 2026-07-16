@@ -11357,13 +11357,16 @@
   {
     "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sika-ag-akkim",
     "merger_name": "Sika AG - Akkim",
-    "status": "Under assessment",
+    "status": "Assessment completed",
     "merger_id": "MN-40027",
     "effective_notification_datetime": "2026-06-25T12:00:00Z",
     "original_notification_datetime": "2026-06-25T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-08-06T12:00:00Z",
-    "page_modified_datetime": "2026-07-03T09:52:30+10:00",
+    "determination_publication_date": "2026-07-16T12:00:00Z",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-07-16T11:11:32+10:00",
     "consultation_response_due_date": "2026-07-03T12:00:00Z",
     "acquirers": [
       {
@@ -11379,17 +11382,17 @@
         "identifier": ""
       },
       {
+        "name": "Akfix Kimya Lojistik Hizmetleri Limited \u015eirketi",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
         "name": "Akkim Europe SRL",
         "identifier_type": null,
         "identifier": ""
       },
       {
         "name": "Akkim Yapi Kimyasallari Sanayi ve Ticaret Anonim \u015eirketi",
-        "identifier_type": null,
-        "identifier": ""
-      },
-      {
-        "name": "Akfix Kimya Lojistik Hizmetleri Limited \u015eirketi",
         "identifier_type": null,
         "identifier": ""
       }
@@ -11415,6 +11418,43 @@
         "date": "2026-06-25T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
+      },
+      {
+        "date": "2026-07-16T12:00:00Z",
+        "title": "Sika AG - Akkim -  Phase 1 determination",
+        "display_title": "Phase 1 - initial assessment determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Sika%20AG%20-%20Akkim%20-%20%20Phase%201%20determination%20-%2016%20July%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Notified acquisition",
+            "details": "Sika AG proposes to acquire 100% of the equity in Akkim Yap\u0131\nKimyasallar\u0131 Sanayi ve Ticaret Anonim \u015eirketi, Akfix Kimya Lojistik\nHizmetleri Limited \u015eirketi, Akde Kimya Sanayi ve Ticaret Anonim\n\u015eirketi, and Akkim Europe SRL (together, Akkim)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABZE(1) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition may be put into effect."
+          },
+          {
+            "item": "Parties to the Acquisition",
+            "details": "The acquirer, Sika AG, is a globally active specialty chemicals group\nheadquartered in Switzerland. Sika AG supplies chemical-based\nadmixtures, mortars, sealants and adhesives, damping and\nreinforcing materials, structural strengthening systems, industrial\nflooring, as well as roofing and waterproofing systems. Their\nproducts are used in the building sector and by manufacturing\nindustries.\nThe target, Akkim, founded in Turkey, is a chemical product\nmanufacturer specialising in the manufacture of sealants, adhesives,\nPU foams, waterproofing products, and aerosols. Akkim\u2019s main\nbrand in Australia is Akfix. Akkim also manufactures private label\nproducts for other suppliers, including sealants, PU foams, and\nwaterproofing products."
+          },
+          {
+            "item": "Overlap and relationship\nbetween the parties",
+            "details": "The parties overlap in the manufacture and supply of sealants,\nadhesives, polyurethane foams (PU foams), and waterproofing\nproducts."
+          },
+          {
+            "item": "Reasons for determination",
+            "details": "When making a determination in Phase 1, the Australian Competition\nand Consumer Commission (ACCC) undertakes a competition\nassessment and considers whether it is appropriate for an\nacquisition to be approved or subject to further assessment in\nPhase 2 in accordance with section 51ABZJ of the Competition and\nConsumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have\nregard to the object of the Act and all relevant matters, including the\ninterests of consumers.\nFor more information about the ACCC\u2019s approach to considering\nnotified acquisitions, see the ACCC\u2019s merger assessment guidelines\nand interim merger process guidelines.\nIn conducting its competition assessment, the ACCC has considered\nthe information and documents that were submitted with the\nnotification form and information from third partes, including\nsubmissions expressing concerns that private label products\ncurrently manufactured by Akkim may no longer be available post-\nAcquisition.\nThe ACCC has determined that the Acquisition may be put into\neffect as it considers that the Acquisition is unlikely to have the\neffect of substantially lessening competition in any market. In\nreaching its decision, and based on the material before it, the ACCC\nmakes the following findings.\n\u2022 The increase in market share resulting from the Acquisition is\nestimated to be low.\n\u2022 The merged firm would continue to face competition from\nmultiple alternative manufacturers and suppliers of sealants,\nadhesives, PU foams, and waterproofing products, including\nprivate label manufacturers and suppliers of those products."
+          },
+          {
+            "item": "Applications for review",
+            "details": "A notifying party, or other person who has been allowed to do so by\nthe Australian Competition Tribunal, may apply for review if they are\ndissatisfied with the determination. Pursuant to section 100C of the\nAct, applications for review of the determination are to be made to\nthe Australian Competition Tribunal before the end of 14 calendar\ndays after this statement of reasons was included on the ACCC\u2019s\nAcquisitions Register. To confirm whether there has been any\napplication for review, please contact the Australian Competition\nTribunal."
+          }
+        ],
+        "url_gh": "/mergers/MN-40027/Sika AG - Akkim - Phase 1 determination - 16 July 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Phase 1"
       }
     ],
     "is_waiver": false

@@ -362,6 +362,11 @@
         "in_progress": false
       },
       {
+        "business_days": 15,
+        "calendar_days": 21,
+        "in_progress": false
+      },
+      {
         "business_days": 25,
         "calendar_days": 39,
         "in_progress": false
@@ -689,17 +694,17 @@
     ],
     "stats": {
       "average": 18.5,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 132
+      "count": 133
     },
     "calendar_stats": {
-      "average": 28.4,
-      "median": 26.0,
+      "average": 28.3,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 132
+      "count": 133
     }
   },
   "waiver_duration": {
@@ -1940,11 +1945,11 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "average_business_days": 18.9,
-      "median_business_days": 17.0,
-      "average_calendar_days": 28.9,
-      "median_calendar_days": 26.0,
-      "count": 40
+      "average_business_days": 18.8,
+      "median_business_days": 17,
+      "average_calendar_days": 28.7,
+      "median_calendar_days": 26,
+      "count": 41
     },
     {
       "code": "D",
@@ -2004,11 +2009,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 295,
+      "count": 296,
       "outcome_mix": {
-        "Approved": 295
+        "Approved": 296
       },
-      "median_phase_1_business_days": 16.0
+      "median_phase_1_business_days": 16
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2022,9 +2027,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 42,
+      "count": 41,
       "outcome_mix": {
-        "Unknown": 42
+        "Unknown": 41
       },
       "median_phase_1_business_days": 36.5
     },
@@ -2056,7 +2061,7 @@
   ],
   "deadline_utilisation": {
     "histogram": {
-      "15": 35,
+      "15": 36,
       "16": 26,
       "17": 16,
       "18": 15,
@@ -2077,9 +2082,9 @@
     },
     "stats": {
       "mean_used_bd": 17.9,
-      "median_used_bd": 17.0,
+      "median_used_bd": 17,
       "pct_decided_final_3_bd": 3.9,
-      "count": 128
+      "count": 129
     },
     "extended_count": 2
   },
@@ -2174,11 +2179,11 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "approved": 39,
+      "approved": 40,
       "not_approved": 0,
       "referred": 1,
-      "in_progress": 9,
-      "phase2_referral_rate": 0.025
+      "in_progress": 8,
+      "phase2_referral_rate": 0.024
     },
     {
       "code": "D",

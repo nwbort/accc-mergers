@@ -23888,13 +23888,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/sika-ag-akkim",
       "merger_name": "Sika AG - Akkim",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-40027",
       "effective_notification_datetime": "2026-06-25T12:00:00Z",
       "original_notification_datetime": "2026-06-25T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-06T12:00:00Z",
-      "page_modified_datetime": "2026-07-03T09:52:30+10:00",
+      "determination_publication_date": "2026-07-16T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-16T11:11:32+10:00",
       "consultation_response_due_date": "2026-07-03T12:00:00Z",
       "acquirers": [
         {
@@ -23918,6 +23921,15 @@
           }
         },
         {
+          "name": "Akfix Kimya Lojistik Hizmetleri Limited Şirketi",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "akfix-kimya-lojistik-hizmetleri-limited-irketi",
+            "name": "Akfix Kimya Lojistik Hizmetleri Limited Şirketi"
+          }
+        },
+        {
           "name": "Akkim Europe SRL",
           "identifier_type": null,
           "identifier": "",
@@ -23933,15 +23945,6 @@
           "party_page": {
             "id": "akkim-yapi-kimyasallari-sanayi-ve-ticaret-anonim-irketi",
             "name": "Akkim Yapi Kimyasallari Sanayi ve Ticaret Anonim Şirketi"
-          }
-        },
-        {
-          "name": "Akfix Kimya Lojistik Hizmetleri Limited Şirketi",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "akfix-kimya-lojistik-hizmetleri-limited-irketi",
-            "name": "Akfix Kimya Lojistik Hizmetleri Limited Şirketi"
           }
         }
       ],
@@ -23968,13 +23971,49 @@
           "title": "Merger notified to ACCC",
           "display_title": "Merger notified to ACCC",
           "phase": "Phase 1"
+        },
+        {
+          "date": "2026-07-16T12:00:00Z",
+          "title": "Sika AG - Akkim -  Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Sika%20AG%20-%20Akkim%20-%20%20Phase%201%20determination%20-%2016%20July%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "Sika AG proposes to acquire 100% of the equity in Akkim Yapı Kimyasalları Sanayi ve Ticaret Anonim Şirketi, Akfix Kimya Lojistik Hizmetleri Limited Şirketi, Akde Kimya Sanayi ve Ticaret Anonim Şirketi, and Akkim Europe SRL (together, Akkim)."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, Sika AG, is a globally active specialty chemicals group headquartered in Switzerland. Sika AG supplies chemical-based admixtures, mortars, sealants and adhesives, damping and reinforcing materials, structural strengthening systems, industrial flooring, as well as roofing and waterproofing systems. Their products are used in the building sector and by manufacturing industries.\n\nThe target, Akkim, founded in Turkey, is a chemical product manufacturer specialising in the manufacture of sealants, adhesives, PU foams, waterproofing products, and aerosols. Akkim’s main brand in Australia is Akfix. Akkim also manufactures private label products for other suppliers, including sealants, PU foams, and waterproofing products."
+            },
+            {
+              "item": "Overlap and relationship between the parties",
+              "details": "The parties overlap in the manufacture and supply of sealants, adhesives, polyurethane foams (PU foams), and waterproofing products."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form and information from third partes, including submissions expressing concerns that private label products currently manufactured by Akkim may no longer be available post-Acquisition.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings.\n\n• The increase in market share resulting from the Acquisition is estimated to be low.\n\n• The merged firm would continue to face competition from multiple alternative manufacturers and suppliers of sealants, adhesives, PU foams, and waterproofing products, including private label manufacturers and suppliers of those products."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-40027/Sika AG - Akkim - Phase 1 determination - 16 July 2026.pdf",
+          "status": "live",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-07-16T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -120348,12 +120387,12 @@
     "total_waivers": 269,
     "total_conditional_approvals": 1,
     "by_status": {
-      "Assessment completed": 132,
-      "Under assessment": 43,
+      "Assessment completed": 133,
+      "Under assessment": 42,
       "Assessment ceased": 2
     },
     "by_determination": {
-      "Approved": 130,
+      "Approved": 131,
       "Referred to phase 2": 7
     },
     "by_waiver_determination": {
@@ -120361,28 +120400,28 @@
       "Not approved": 14
     },
     "clearance_rate": {
-      "cleared": 131,
+      "cleared": 132,
       "not_cleared": 1,
-      "total": 132,
+      "total": 133,
       "rate": 0.992
     },
     "phase_duration": {
-      "average_days": 29.62773722627737,
-      "median_days": 26,
-      "average_business_days": 19.40875912408759,
-      "median_business_days": 17,
+      "average_days": 29.565217391304348,
+      "median_days": 26.0,
+      "average_business_days": 19.3768115942029,
+      "median_business_days": 17.0,
       "percentiles": {
         "day15": {
-          "count": 35,
-          "percentage": 25.5
+          "count": 36,
+          "percentage": 26.1
         },
         "day20": {
-          "count": 107,
-          "percentage": 78.1
+          "count": 108,
+          "percentage": 78.3
         },
         "day30": {
-          "count": 131,
-          "percentage": 95.6
+          "count": 132,
+          "percentage": 95.7
         }
       }
     },
@@ -120551,6 +120590,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "MN-40027",
+        "merger_name": "Sika AG - Akkim",
+        "determination": "Approved",
+        "determination_date": "2026-07-16T12:00:00Z",
+        "page_modified_datetime": "2026-07-16T11:11:32+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "WA-45019",
         "merger_name": "Blackbird Ventures – Baseten Labs",
         "determination": "Approved",
@@ -120659,16 +120708,6 @@
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"
-      },
-      {
-        "merger_id": "MN-90009",
-        "merger_name": "Trescal – TR Calibration",
-        "determination": "Assessment ceased",
-        "determination_date": "2026-07-10T12:00:00Z",
-        "page_modified_datetime": "2026-07-10T15:08:46+10:00",
-        "determination_type": "ceased",
-        "is_waiver": false,
-        "stage": "Phase 2 - detailed assessment"
       }
     ]
   },
