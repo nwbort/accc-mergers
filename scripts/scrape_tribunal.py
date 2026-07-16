@@ -44,6 +44,20 @@ Usage
 Existing ``url_gh`` local-mirror paths are preserved across a re-scrape (matched
 by document URL). If a page yields no rows (e.g. the layout changed), that
 entry is left untouched rather than wiped.
+
+Fetching via curl
+------------------
+Matter pages are fetched by shelling out to ``curl`` rather than using the
+``requests`` library (``download_document`` still uses ``requests`` for the
+document files themselves, which aren't behind the same protection). The
+tribunal site's WAF has been observed to 403 the identical User-Agent when
+sent via ``requests``/urllib3 while the ACCC register scraper (``scrape.sh``),
+which fetches with curl, is not blocked from the same CI runners — most
+likely a TLS/JA3 fingerprint check rather than anything header-based. If a
+fetch still fails, the response status, a few identifying response headers
+(``server``, ``cf-*``, ``x-akamai-*``, etc.) and a body snippet are logged,
+and a ``::warning::`` annotation is emitted under GitHub Actions so the
+failure is visible on the run summary rather than only in the raw logs.
 """
 
 from __future__ import annotations
@@ -52,7 +66,9 @@ import argparse
 import json
 import os
 import re
+import subprocess
 import sys
+import tempfile
 import unicodedata
 from datetime import datetime
 from pathlib import Path
@@ -376,12 +392,67 @@ def parse_matter_page(html: str, base_url: str) -> list[dict]:
     return documents
 
 
+# Response headers worth echoing on a failed fetch: they're the cheapest way
+# to tell a WAF/bot-protection block (cf-*, x-akamai-*, server: cloudflare...)
+# apart from an ordinary server error.
+_DIAGNOSTIC_HEADER_PREFIXES = ("server:", "cf-", "x-akamai", "x-waf", "retry-after:")
+
+
+def gha_warning(message: str) -> None:
+    """Emit a GitHub Actions warning annotation (visible on the run summary).
+
+    A no-op outside Actions (GITHUB_ACTIONS unset) so local runs aren't spammed
+    with workflow-command syntax.
+    """
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        print(f"::warning::{message}")
+
+
 def fetch(url: str) -> str:
-    resp = requests.get(
-        url, headers={"User-Agent": USER_AGENT}, timeout=REQUEST_TIMEOUT
-    )
-    resp.raise_for_status()
-    return resp.text
+    """Fetch a tribunal page via curl.
+
+    Uses curl rather than ``requests`` — see the "Fetching via curl" note in
+    the module docstring for why. Raises RuntimeError on any non-2xx/transport
+    failure, with diagnostics (status, relevant headers, body snippet)
+    attached to the message.
+    """
+    with tempfile.TemporaryDirectory() as tmp:
+        body_path = os.path.join(tmp, "body")
+        headers_path = os.path.join(tmp, "headers")
+        result = subprocess.run(
+            [
+                "curl", "-sS", "-L", "--compressed",
+                "-A", USER_AGENT,
+                "--max-time", str(REQUEST_TIMEOUT),
+                "--retry", "1", "--retry-delay", "5", "--retry-max-time", "90",
+                "-D", headers_path,
+                "-o", body_path,
+                "-w", "%{http_code}",
+                url,
+            ],
+            capture_output=True,
+            text=True,
+        )
+        status = result.stdout.strip()
+        body = Path(body_path).read_text(encoding="utf-8", errors="replace") if os.path.exists(body_path) else ""
+        headers_text = Path(headers_path).read_text(encoding="utf-8", errors="replace") if os.path.exists(headers_path) else ""
+
+        if result.returncode == 0 and status.startswith("2"):
+            return body
+
+        interesting_headers = [
+            line.strip()
+            for line in headers_text.splitlines()
+            if line.strip().lower().startswith(_DIAGNOSTIC_HEADER_PREFIXES)
+        ]
+        snippet = " ".join(body.split())[:300]
+        detail = (
+            f"curl exit={result.returncode} http={status or 'n/a'}"
+            f" curl_stderr={result.stderr.strip()[:200]!r}"
+            f" headers=[{'; '.join(interesting_headers) or 'none'}]"
+            f" body={snippet!r}"
+        )
+        raise RuntimeError(detail)
 
 
 def merge_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
@@ -433,8 +504,9 @@ def scrape(
         print(f"Scraping {mid}: {url}")
         try:
             html = fetch(url)
-        except requests.RequestException as e:
+        except (RuntimeError, OSError) as e:
             print(f"  FAILED to fetch {url}: {e}", file=sys.stderr)
+            gha_warning(f"scrape_tribunal: failed to fetch {mid} ({url}): {e}")
             continue
 
         scraped = parse_matter_page(html, url)
