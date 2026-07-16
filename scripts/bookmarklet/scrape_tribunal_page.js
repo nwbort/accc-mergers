@@ -2,10 +2,16 @@
 //
 // Runs in the browser, on an already-loaded tribunal matter page (after
 // Cloudflare's JS challenge has been solved by the real browser), and
-// downloads a JSON snapshot of the document table(s) on the page. That file
-// is later fed to `scripts/ingest_tribunal_snapshot.py`, which folds it into
-// `data/processed/tribunal_appeals.json` exactly like scrape_tribunal.py
-// would — see scripts/bookmarklet/README.md for the end-to-end flow.
+// downloads a JSON snapshot of the document table(s) on the page — plus the
+// bytes of each linked document file, fetched from inside this same page so
+// Cloudflare's bot management (which also JS-challenges plain file requests,
+// not just the matter page) never sees a bare script making the request.
+// Each document's bytes are attached as base64 (`content_base64`). That file
+// is later fed to `scripts/ingest_tribunal_snapshot.py`, which folds the
+// metadata into `data/processed/tribunal_appeals.json` exactly like
+// scrape_tribunal.py would, and writes the embedded bytes straight to disk
+// (no HTTP request of its own) — see scripts/bookmarklet/README.md for the
+// end-to-end flow.
 //
 // This is a deliberate DOM port of the parsing logic in scrape_tribunal.py
 // (contentRoot/headerFieldMap/bodyRows/parseDocumentRow/parseMatterPage
@@ -205,6 +211,53 @@
     return documents;
   }
 
+  // Only fetch document bytes from the tribunal's own domain, matching
+  // is_safe_document_url in scrape_tribunal.py — an off-domain link (e.g. a
+  // party's own site) is kept as a url but never fetched.
+  function isTribunalDocumentUrl(url) {
+    try {
+      var host = new URL(url, location.href).hostname;
+      var suffix = '.competitiontribunal.gov.au';
+      return host === 'competitiontribunal.gov.au' || host.slice(-suffix.length) === suffix;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // Converts a fetched file's bytes to base64 in fixed-size chunks — passing
+  // the whole byte array to String.fromCharCode.apply at once risks blowing
+  // the call stack on a large PDF.
+  function arrayBufferToBase64(buffer) {
+    var bytes = new Uint8Array(buffer);
+    var chunkSize = 0x8000;
+    var chunks = [];
+    for (var i = 0; i < bytes.length; i += chunkSize) {
+      chunks.push(String.fromCharCode.apply(null, bytes.subarray(i, i + chunkSize)));
+    }
+    return btoa(chunks.join(''));
+  }
+
+  // Fetches one document's bytes from inside the page (same-origin, so the
+  // session that already solved Cloudflare's challenge carries over) and
+  // attaches them to the doc as content_base64. On any failure (off-domain,
+  // network error, non-2xx), attaches content_error instead and leaves the
+  // url in place — ingest_tribunal_snapshot.py falls back to a server-side
+  // download for those.
+  function fetchDocumentContent(doc) {
+    if (!doc.url || !isTribunalDocumentUrl(doc.url)) return Promise.resolve();
+    return fetch(doc.url)
+      .then(function (resp) {
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        return resp.arrayBuffer();
+      })
+      .then(function (buffer) {
+        doc.content_base64 = arrayBufferToBase64(buffer);
+      })
+      .catch(function (e) {
+        doc.content_error = String((e && e.message) || e);
+      });
+  }
+
   function downloadJson(filename, payload) {
     var blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
     var url = URL.createObjectURL(blob);
@@ -227,16 +280,23 @@
     return;
   }
 
-  var slug = location.pathname.replace(/\/+$/, '').split('/').pop() || 'tribunal-matter';
-  var filename = 'tribunal-' + slug + '.json';
-  downloadJson(filename, {
-    tribunal_url: location.href,
-    scraped_at: new Date().toISOString(),
-    documents: documents,
-  });
+  // Fetching every linked file's bytes can take a while on a matter with
+  // many documents — this runs before the JSON is built/downloaded below.
+  Promise.all(documents.map(fetchDocumentContent)).then(function () {
+    var slug = location.pathname.replace(/\/+$/, '').split('/').pop() || 'tribunal-matter';
+    var filename = 'tribunal-' + slug + '.json';
+    downloadJson(filename, {
+      tribunal_url: location.href,
+      scraped_at: new Date().toISOString(),
+      documents: documents,
+    });
 
-  alert(
-    'Downloaded ' + filename + ' — ' + documents.length + ' document(s) found.\n\n' +
-    'Run: python scripts/ingest_tribunal_snapshot.py ~/Downloads/' + filename
-  );
+    var fetched = documents.filter(function (d) { return d.content_base64; }).length;
+    var failed = documents.filter(function (d) { return d.content_error; }).length;
+    var message = 'Downloaded ' + filename + ' — ' + documents.length + ' document(s) found, ' +
+      fetched + ' file(s) fetched';
+    if (failed) message += ', ' + failed + ' failed (see content_error in the file)';
+    message += '.\n\nRun: python scripts/ingest_tribunal_snapshot.py ~/Downloads/' + filename;
+    alert(message);
+  });
 })();
