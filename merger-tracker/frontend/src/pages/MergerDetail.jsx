@@ -189,6 +189,12 @@ function MergerDetail() {
     : null;
   const determinationDocUrl = statementOfReasonsEvent?.url_gh ?? determinationEvent?.url_gh;
 
+  // The document that initiated the appeal (e.g. the Application for
+  // Review) — the first filed document on the tribunal matter — is what the
+  // appeal card links to, rather than the tribunal matter page itself.
+  const appealDocument = merger.appeal?.documents?.[0];
+  const appealDocumentUrl = appealDocument?.url_gh ?? appealDocument?.url ?? merger.appeal?.tribunal_url;
+
   const siteUrl = 'https://mergers.fyi';
   const pagePath = mergerPath(merger.merger_id, merger.merger_name);
   const pageUrl = `${siteUrl}${pagePath}`;
@@ -321,7 +327,13 @@ function MergerDetail() {
           </div>
 
           {/* Stage & determination */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 pt-6 border-t border-gray-100">
+          <div className={`grid grid-cols-1 ${
+            merger.accc_determination && merger.appeal
+              ? 'md:grid-cols-3'
+              : (merger.accc_determination || merger.appeal)
+                ? 'md:grid-cols-2'
+                : 'md:grid-cols-1'
+          } gap-6 mt-6 pt-6 border-t border-gray-100`}>
             <div>
               <h3 className={`${SECTION_HEADING} mb-1.5`}>Stage</h3>
               <p className="text-sm font-medium text-gray-900">{merger.stage || 'N/A'}</p>
@@ -349,6 +361,33 @@ function MergerDetail() {
                 </p>
               </div>
             )}
+            {merger.appeal && (
+              <div>
+                <h3 className={`${SECTION_HEADING} mb-1.5`}>
+                  Tribunal appeal
+                </h3>
+                <p className="text-sm font-medium text-gray-900">
+                  {merger.appeal.tribunal_url ? (
+                    <a
+                      href={merger.appeal.tribunal_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
+                      aria-label={`View this matter on the Australian Competition Tribunal website${merger.appeal.tribunal_number ? ` (${merger.appeal.tribunal_number})` : ''}`}
+                    >
+                      {merger.appeal.status === APPEAL_STATUS.CONCLUDED
+                        ? (APPEAL_OUTCOME_LABELS[merger.appeal.outcome] || 'Concluded')
+                        : 'Ongoing'}
+                      <ExternalLinkIcon />
+                    </a>
+                  ) : (
+                    merger.appeal.status === APPEAL_STATUS.CONCLUDED
+                      ? (APPEAL_OUTCOME_LABELS[merger.appeal.outcome] || 'Concluded')
+                      : 'Ongoing'
+                  )}
+                </p>
+              </div>
+            )}
           </div>
         </div>
 
@@ -371,22 +410,24 @@ function MergerDetail() {
         )}
 
         {/* Tribunal appeal link — mirrors the related-merger link styling, but
-            points out to the Australian Competition Tribunal matter page. */}
-        {merger.appeal && merger.appeal.tribunal_url && (
+            points to the appeal document itself (e.g. the Application for
+            Review) rather than the tribunal matter page, which is linked from
+            the "Tribunal appeal" field in the header card instead. */}
+        {merger.appeal && appealDocumentUrl && (
           <a
-            href={merger.appeal.tribunal_url}
+            href={appealDocumentUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 bg-amber-50/80 rounded-2xl border border-amber-200/60 shadow-card p-4 mb-6 hover:bg-amber-50 hover:border-amber-300/60 transition-all group"
-            aria-label={`View this matter on the Australian Competition Tribunal website${merger.appeal.tribunal_number ? ` (${merger.appeal.tribunal_number})` : ''}`}
+            aria-label={`View the appeal document${merger.appeal.appellant ? ` filed by ${merger.appeal.appellant}` : ''}`}
           >
             <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-amber-100 flex items-center justify-center">
               <FaGavel className="h-4 w-4 text-amber-600" aria-hidden="true" />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-sm font-medium text-gray-900">
-                {APPEAL_TYPE_LABELS[merger.appeal.appeal_type] || DEFAULT_APPEAL_LABEL}
-                {merger.appeal.appellant ? ` by ${merger.appeal.appellant}` : ''}
+                {merger.appeal.appellant ? `Decision appealed by ${merger.appeal.appellant}` : (APPEAL_TYPE_LABELS[merger.appeal.appeal_type] || DEFAULT_APPEAL_LABEL)}
+                {merger.appeal.filed_date ? ` on ${formatDate(merger.appeal.filed_date)}` : ''}
                 {merger.appeal.status === APPEAL_STATUS.CONCLUDED && (
                   <span className="ml-2 inline-flex items-center px-1.5 py-0.5 rounded text-[11px] font-medium bg-gray-100 text-gray-600 align-middle">
                     Concluded
