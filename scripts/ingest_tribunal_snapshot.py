@@ -16,10 +16,17 @@ This script is the other half: it takes one or more of those downloaded
 snapshot files, matches each to the ``tribunal_appeals.json`` entry with the
 same ``tribunal_url``, and folds the documents in — mirroring/reusing
 ``scrape_tribunal.py``'s own ``merge_documents()`` (carries over any
-existing ``url_gh`` local-mirror path) and ``download_document()`` (mirrors
-each linked file into ``data/raw/matters/{merger_id}/``, same as a normal
-scrape). Individual document files aren't behind the same Cloudflare
-challenge as the matter pages, so those downloads work the same as always.
+existing ``url_gh`` local-mirror path). The tribunal's Cloudflare protection
+can JS-challenge individual document file requests too, not just the matter
+page, so the bookmarklet fetches each document's bytes itself (from inside
+the already-loaded page) and ships them base64-encoded on the document as
+``content_base64``. When present, this script writes those bytes straight to
+``data/raw/matters/{merger_id}/`` via ``scrape_tribunal.save_document_content()``
+— no HTTP request of its own. For an older snapshot without embedded content
+(or a document the bookmarklet couldn't fetch), it falls back to
+``scrape_tribunal.download_document()``, which mirrors the file the same way
+a normal scrape would, and will hit the same Cloudflare wall if the file is
+protected.
 
 Usage
 -----
@@ -48,7 +55,12 @@ import scrape_tribunal
 # imported as a plain name) so a test's monkeypatch of that one attribute is
 # also what this module's write-back step sees — there'd otherwise be two
 # separate name bindings to keep in sync.
-from scrape_tribunal import download_document, load_appeals, merge_documents
+from scrape_tribunal import (
+    download_document,
+    load_appeals,
+    merge_documents,
+    save_document_content,
+)
 
 
 def find_merger_id(records: dict, tribunal_url: str) -> str | None:
@@ -101,12 +113,26 @@ def ingest_snapshot(
     record = records[merger_id]
     print(f"Ingesting {path.name} -> {merger_id} ({tribunal_url})")
 
-    if download and not dry_run:
-        for doc in documents:
-            if doc.get("url"):
-                url_gh = download_document(merger_id, doc["url"])
-                if url_gh:
-                    doc["url_gh"] = url_gh
+    # content_base64/content_error are transient — carried in the snapshot
+    # only so this step can act on them — and must never end up persisted in
+    # tribunal_appeals.json, so strip them regardless of download/dry_run.
+    for doc in documents:
+        content_base64 = doc.pop("content_base64", None)
+        content_error = doc.pop("content_error", None)
+        if not download or dry_run or not doc.get("url"):
+            continue
+        if content_base64:
+            url_gh = save_document_content(merger_id, doc["url"], content_base64)
+        else:
+            if content_error:
+                print(
+                    f"    Bookmarklet couldn't fetch {doc['url']} ({content_error}); "
+                    "falling back to a server-side download",
+                    file=sys.stderr,
+                )
+            url_gh = download_document(merger_id, doc["url"])
+        if url_gh:
+            doc["url_gh"] = url_gh
 
     merged = merge_documents(record.get("documents"), documents)
     changed = merged != record.get("documents")

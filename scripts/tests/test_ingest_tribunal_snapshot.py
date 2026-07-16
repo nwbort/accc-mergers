@@ -154,6 +154,77 @@ class TestIngestSnapshot:
         assert calls == [('MN-0001', 'https://x/doc.pdf')]
         assert records['MN-0001']['documents'][0]['url_gh'] == '/mergers/MN-0001/mirrored.pdf'
 
+    def test_content_base64_uses_save_document_content_not_download(self, tmp_path, monkeypatch):
+        # When the bookmarklet embedded the file bytes, ingest should write
+        # them directly rather than falling back to a network fetch.
+        save_calls = []
+        download_calls = []
+
+        monkeypatch.setattr(
+            ingest_mod, 'save_document_content',
+            lambda merger_id, url, content_base64: save_calls.append((merger_id, url, content_base64))
+            or f'/mergers/{merger_id}/embedded.pdf',
+        )
+        monkeypatch.setattr(
+            ingest_mod, 'download_document',
+            lambda merger_id, url: download_calls.append((merger_id, url)) or '/mergers/x/should-not-happen.pdf',
+        )
+
+        records = _records()
+        snapshot = _write(tmp_path / 'snap.json', {
+            'tribunal_url': 'https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026',
+            'documents': [{
+                'date': '2026-07-15', 'description': 'Doc', 'url': 'https://x/doc.pdf',
+                'content_base64': 'ZmFrZS1wZGYtYnl0ZXM=',
+            }],
+        })
+
+        ingest_snapshot(snapshot, records, dry_run=False, download=True)
+
+        assert save_calls == [('MN-0001', 'https://x/doc.pdf', 'ZmFrZS1wZGYtYnl0ZXM=')]
+        assert download_calls == []
+        assert records['MN-0001']['documents'][0]['url_gh'] == '/mergers/MN-0001/embedded.pdf'
+        # The transient field must never end up persisted in the merged record.
+        assert 'content_base64' not in records['MN-0001']['documents'][0]
+
+    def test_content_error_falls_back_to_download_document(self, tmp_path, monkeypatch):
+        calls = []
+        monkeypatch.setattr(
+            ingest_mod, 'download_document',
+            lambda merger_id, url: calls.append((merger_id, url)) or f'/mergers/{merger_id}/mirrored.pdf',
+        )
+
+        records = _records()
+        snapshot = _write(tmp_path / 'snap.json', {
+            'tribunal_url': 'https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026',
+            'documents': [{
+                'date': '2026-07-15', 'description': 'Doc', 'url': 'https://x/doc.pdf',
+                'content_error': 'HTTP 403',
+            }],
+        })
+
+        ingest_snapshot(snapshot, records, dry_run=False, download=True)
+
+        assert calls == [('MN-0001', 'https://x/doc.pdf')]
+        assert records['MN-0001']['documents'][0]['url_gh'] == '/mergers/MN-0001/mirrored.pdf'
+        assert 'content_error' not in records['MN-0001']['documents'][0]
+
+    def test_content_base64_stripped_even_when_not_downloading(self, tmp_path):
+        # --no-download / dry-run must not leave content_base64 sitting in
+        # the persisted documents list.
+        records = _records()
+        snapshot = _write(tmp_path / 'snap.json', {
+            'tribunal_url': 'https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026',
+            'documents': [{
+                'date': '2026-07-15', 'description': 'Doc', 'url': 'https://x/doc.pdf',
+                'content_base64': 'ZmFrZS1wZGYtYnl0ZXM=',
+            }],
+        })
+
+        ingest_snapshot(snapshot, records, dry_run=False, download=False)
+
+        assert 'content_base64' not in records['MN-0001']['documents'][0]
+
 
 class TestIngestCli:
     def test_writes_updated_json(self, tmp_path, monkeypatch):

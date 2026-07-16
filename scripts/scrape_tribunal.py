@@ -61,9 +61,13 @@ a branch onto fresh ``main``, runs this script, and opens/updates a pull
 request via the ``gh`` CLI if anything changed — see
 docs/deployment.md#running-it-on-a-schedule-cron.
 
-If even a local/residential run gets JS-challenged, ``scripts/bookmarklet/``
+If even a local/residential run gets JS-challenged — for the matter page
+itself, or (as also happens) for the linked document files that
+``download_document`` above would otherwise fetch — ``scripts/bookmarklet/``
 provides a browser-bookmarklet alternative that makes no HTTP request of its
-own (it reads the page you're already looking at) — see
+own. It reads the page you're already looking at *and* fetches each linked
+document's bytes from inside that same page (so Cloudflare sees your
+browser, not a script), then ships both in one snapshot file. See
 ``scripts/bookmarklet/README.md`` and its companion
 ``scripts/ingest_tribunal_snapshot.py``.
 
@@ -95,6 +99,7 @@ failure is visible on the run summary rather than only in the raw logs.
 from __future__ import annotations
 
 import argparse
+import base64
 import json
 import os
 import re
@@ -220,36 +225,48 @@ def is_safe_document_url(url: str) -> bool:
     )
 
 
+def _document_local_path(merger_id: str, url: str) -> tuple[Path, str] | None:
+    """Derive (local_path, url_gh) for a document URL, or None if no safe
+    filename can be derived. Shared by download_document and
+    save_document_content."""
+    decoded = unquote(urlparse(url).path)
+    original = os.path.basename(decoded).strip()
+    filename = original if is_safe_filename(original) else sanitize_filename(original)
+    if not filename:
+        return None
+    matter_dir = MATTERS_DIR / merger_id
+    return matter_dir / filename, f"/mergers/{merger_id}/{get_serve_filename(filename)}"
+
+
 def download_document(merger_id: str, url: str) -> str | None:
     """Download a tribunal document into data/raw/matters/{merger_id}/.
 
     Returns the ``url_gh`` serve path (``/mergers/{id}/{file}``) on success, or
     None if the link is off-domain, unsafe, or the download fails. Existing
     files are left in place (never re-downloaded).
+
+    Note: the tribunal's Cloudflare bot management can JS-challenge these
+    file requests too (not just the matter page itself), in which case this
+    will fail the same way ``fetch()`` in this module's docstring describes.
+    ``scripts/bookmarklet/`` sidesteps that entirely by downloading the file
+    bytes in-browser and shipping them in the snapshot — see
+    ``save_document_content``.
     """
     if not is_safe_document_url(url):
         # Off-domain link (e.g. a party's own site) — keep the url, no mirror.
         return None
 
-    decoded = unquote(urlparse(url).path)
-    original = os.path.basename(decoded).strip()
-    if is_safe_filename(original):
-        filename = original
-    else:
-        filename = sanitize_filename(original)
-    if not filename:
+    result = _document_local_path(merger_id, url)
+    if result is None:
         print(f"    Warning: unsafe document filename for {url}", file=sys.stderr)
         return None
-
-    matter_dir = MATTERS_DIR / merger_id
-    local_path = matter_dir / filename
-    url_gh = f"/mergers/{merger_id}/{get_serve_filename(filename)}"
+    local_path, url_gh = result
 
     if local_path.exists():
         return url_gh
 
     try:
-        matter_dir.mkdir(parents=True, exist_ok=True)
+        local_path.parent.mkdir(parents=True, exist_ok=True)
         resp = requests.get(
             url, headers={"User-Agent": USER_AGENT}, stream=True, timeout=REQUEST_TIMEOUT
         )
@@ -264,7 +281,44 @@ def download_document(merger_id: str, url: str) -> str | None:
         print(f"    Warning: failed to save {local_path}: {e}", file=sys.stderr)
         return None
 
-    print(f"    Downloaded {filename}")
+    print(f"    Downloaded {local_path.name}")
+    return url_gh
+
+
+def save_document_content(merger_id: str, url: str, content_base64: str) -> str | None:
+    """Write document bytes captured client-side by the bookmarklet.
+
+    The bookmarklet fetches each document's bytes itself, from inside the
+    already-loaded tribunal page (past Cloudflare's browser challenge, which
+    a server-side ``requests.get()`` can't solve), and ships them
+    base64-encoded in the snapshot as ``content_base64``. This writes those
+    bytes to the same ``data/raw/matters/{merger_id}/`` location
+    ``download_document`` would have, without making any HTTP request of its
+    own. Returns the ``url_gh`` serve path, or None if the link is
+    off-domain, unsafe, or the write fails. Existing files are left in place.
+    """
+    if not is_safe_document_url(url):
+        return None
+
+    result = _document_local_path(merger_id, url)
+    if result is None:
+        print(f"    Warning: unsafe document filename for {url}", file=sys.stderr)
+        return None
+    local_path, url_gh = result
+
+    if local_path.exists():
+        return url_gh
+
+    try:
+        content = base64.b64decode(content_base64)
+        local_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(local_path, "wb") as f:
+            f.write(content)
+    except (ValueError, OSError) as e:
+        print(f"    Warning: failed to save {local_path}: {e}", file=sys.stderr)
+        return None
+
+    print(f"    Saved {local_path.name} ({len(content)} bytes, from bookmarklet snapshot)")
     return url_gh
 
 

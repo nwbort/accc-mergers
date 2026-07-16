@@ -5,13 +5,21 @@ script fetching the matter page itself (and having to get past Cloudflare),
 you load the page in your own browser as normal, click a bookmark, and it
 downloads a JSON snapshot of that page's document table(s) — using the same
 parsing rules as `parse_matter_page()` in `scrape_tribunal.py`, ported to
-JS. `scripts/ingest_tribunal_snapshot.py` then folds that snapshot into
-`data/processed/tribunal_appeals.json`.
+JS — **and** the bytes of every linked document file, fetched from inside
+that same page. `scripts/ingest_tribunal_snapshot.py` then folds the
+metadata into `data/processed/tribunal_appeals.json` and writes the embedded
+file bytes straight to `data/raw/matters/{merger_id}/`, with no HTTP request
+of its own.
 
 Useful when even a local/residential run of `scrape_tribunal.py` gets
 JS-challenged — a bookmarklet runs *inside* the page after your actual
 browser has already solved that challenge, so it never makes a request of
-its own for Cloudflare to see.
+its own for Cloudflare to see. That's true of the document files too: the
+tribunal's Cloudflare bot management can JS-challenge a plain request for a
+linked PDF just as it does the matter page itself, which is why the
+bookmarklet fetches those files itself (as `fetch()` calls made from the
+loaded page, in the same browser session) rather than leaving it to a
+script running server-side later.
 
 ## 1. Install the bookmarklet
 
@@ -27,8 +35,11 @@ bookmark by hand instead and paste the contents of
 
 Navigate to a tribunal matter page, e.g.
 `https://www.competitiontribunal.gov.au/current-matters/act-1-of-2026`, wait
-for it to finish loading, then click the bookmark. It downloads a file like
-`tribunal-act-1-of-2026.json` to your usual downloads folder, containing:
+for it to finish loading, then click the bookmark. It fetches every linked
+document's bytes (this can take a little while for a matter with many
+documents — the browser tab will be busy until the download prompt appears)
+and downloads a file like `tribunal-act-1-of-2026.json` to your usual
+downloads folder, containing:
 
 ```json
 {
@@ -40,11 +51,19 @@ for it to finish loading, then click the bookmark. It downloads a file like
       "filed_by": "Coles",
       "description": "Application for Review",
       "confidentiality": "Non-confidential",
-      "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/.../Application-for-Review.pdf"
+      "url": "https://www.competitiontribunal.gov.au/__data/assets/pdf_file/.../Application-for-Review.pdf",
+      "content_base64": "JVBERi0xLjQKJ...=="
     }
   ]
 }
 ```
+
+`content_base64` is the file's own bytes, base64-encoded — that's what lets
+`ingest_tribunal_snapshot.py` write it straight to disk later without
+fetching it again. If a particular file couldn't be fetched (network error,
+off-domain link), the document instead carries a `content_error` string and
+`ingest_tribunal_snapshot.py` falls back to a normal server-side download
+for just that file.
 
 Repeat for each matter page you need to refresh — one snapshot per page.
 
