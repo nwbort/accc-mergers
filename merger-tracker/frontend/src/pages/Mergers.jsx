@@ -675,7 +675,7 @@ function Mergers() {
                       {merger.anzsic_codes.map((code) => (
                         <span
                           key={`${merger.merger_id}-anzsic-${code.code || code.name}`}
-                          className="inline-flex items-center px-2 py-0.5 rounded-md text-xs bg-gray-50 text-gray-500 border border-gray-100"
+                          className="inline-flex items-center px-2 py-1 rounded-md text-xs leading-none bg-gray-50 text-gray-500 border border-gray-100"
                         >
                           {code.name}
                         </span>

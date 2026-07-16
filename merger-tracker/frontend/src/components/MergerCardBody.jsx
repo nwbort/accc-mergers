@@ -3,7 +3,7 @@ import { mergerPath } from '../utils/slug';
 
 // Shared chip base for the small inline badges (the top-right "New" flag and
 // any caller-supplied meta-row chips like "Waiver") laid over a card's style.
-export const CHIP_BASE_CLASS = 'inline-flex items-center rounded-md px-2 py-0.5';
+export const CHIP_BASE_CLASS = 'inline-flex items-center rounded-md px-2 py-1 leading-none';
 
 // Common body for the dashboard/Phase 2 card grids: an uppercase label row
 // (with an optional top-right chip), a title link using the stretched-link
