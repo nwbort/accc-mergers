@@ -25,7 +25,7 @@ from parse_questionnaire import (
 )
 from normalization import normalize_determination
 from constants.site import REPO, mergers_fyi_url
-from cutoff import should_skip_merger, get_skipped_merger_ids, is_waiver_merger
+from cutoff import get_skipped_merger_ids, is_waiver_merger
 from date_utils import parse_text_to_iso, parse_iso_datetime
 from static_data.enrichment import is_phase_2_referral_event
 from constants import merger_status

@@ -12,7 +12,6 @@ This module can be used by:
 
 import json
 import os
-import sys
 from datetime import datetime, timedelta
 from date_utils import parse_iso_datetime
 from constants import merger_status

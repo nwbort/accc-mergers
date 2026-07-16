@@ -5,7 +5,7 @@ import sys
 import os
 import json
 import unittest.mock
-from datetime import date, datetime, timedelta
+from datetime import date, datetime
 
 # Add scripts directory to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
@@ -1453,7 +1453,6 @@ from static_data.enrichment import (
     extract_phase_from_event,
     is_phase_2_referral_event,
 )
-from static_data.loaders import load_questionnaire_data
 from static_data.outputs.commentary import generate as generate_commentary_json
 from static_data.outputs.industries import generate_index as generate_industries_json
 from static_data.outputs.questionnaires import generate as generate_questionnaire_files

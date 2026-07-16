@@ -44,8 +44,6 @@ from party_matching import (
     dedupe_members,
     match_party,
     merge_groups,
-    normalise_identifier,
-    normalise_name,
 )
 from slug import slugify
 

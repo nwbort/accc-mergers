@@ -5,7 +5,6 @@ determination period ends within ``days_ahead`` days. Excludes waivers and
 suspended mergers using :func:`static_data.filters.exclude_for_public_output`.
 """
 
-from collections import defaultdict  # noqa: F401  (kept for parity with original module)
 from datetime import datetime, timedelta, timezone
 
 from constants import merger_status  # noqa: F401  (kept for parity)

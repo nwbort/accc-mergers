@@ -36,7 +36,6 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from merger_filters import load_mergers as _load_mergers_from  # noqa: E402
 from advisors_crypto import (  # noqa: E402
     ADVISORS_ENC,
-    ADVISORS_JSON,
     ENV_PASSPHRASE,
     AdvisorsCryptoError,
     load_advisors as _crypto_load,

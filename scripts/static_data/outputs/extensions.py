@@ -15,7 +15,6 @@ import re
 
 from constants import merger_status
 from merger_filters import filter_notifications
-from static_data.business_days import calculate_business_days
 from static_data.enrichment import is_phase_2_referral_event
 
 # The standard Phase 1 statutory window, in business days, before any extension.

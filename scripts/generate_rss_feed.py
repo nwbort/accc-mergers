@@ -73,7 +73,7 @@ def generate_atom_xml(entries: list) -> str:
         f'  <id>{SITE_URL}/</id>',
         f'  <updated>{feed_updated}</updated>',
         f'  <author><name>{escape(AUTHOR_NAME)}</name></author>',
-        f'  <generator>Australian Merger Tracker</generator>',
+        '  <generator>Australian Merger Tracker</generator>',
     ]
 
     for entry in entries:
