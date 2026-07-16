@@ -157,6 +157,20 @@ export const formatDateMedium = (dateString) => {
 };
 
 /**
+ * Format a date as "D Month Yyyy" with the full month name (e.g. 15 July 2026).
+ * @param {string} dateString - Date in ISO format
+ * @returns {string} The formatted date
+ */
+export const formatDateLong = (dateString) => {
+  if (!dateString) return 'N/A';
+  try {
+    return format(parseISO(dateString), 'd MMMM yyyy');
+  } catch {
+    return 'Invalid date';
+  }
+};
+
+/**
  * Format a date as a short weekday + day + month for agenda views
  * (e.g. "Mon 29 Jun").
  * @param {string} dateString - Date in ISO format
