@@ -193,6 +193,43 @@ git push
 
 `curl` ships by default on macOS and Linux; on Windows use Git Bash or WSL. New matters are added to `tribunal_appeals.json` by hand (tribunal number, URL, appeal type, appellant) — the scraper only fills in the `documents[]` list for entries that already have a `tribunal_url`.
 
+### Running it on a schedule (cron)
+
+`scripts/cron_scrape_tribunal.sh` wraps the scraper for unattended, recurring runs from your own server (a Raspberry Pi, home server, VPS — anything that isn't a GitHub Actions runner). Each run:
+
+1. Fetches `origin/main` and resets a local `tribunal-scrape` branch onto its tip, so it's always scraping against a fresh copy of main, not stale local state.
+2. Runs `scrape_tribunal.py`.
+3. If nothing changed, exits quietly — no branch push, no PR.
+4. If something changed, commits, force-pushes `tribunal-scrape`, and opens a pull request (or updates the existing one if the last PR is still open/unmerged) via the `gh` CLI, with the scrape output as the PR body.
+
+It deliberately **does not** merge the PR itself — a home-server cron job can fail in ways CI wouldn't (stale deps, disk issues, flaky network), so changes get a human review/merge step before they reach `main` and Cloudflare Pages deploys them.
+
+**One-time setup on the server:**
+
+```bash
+# Use a clone dedicated to this cron job — the script resets/force-pushes a
+# branch in it and refuses to run if the tree isn't clean, so don't also use
+# this clone for manual development.
+git clone https://github.com/nwbort/accc-mergers.git ~/accc-mergers-tribunal-cron
+cd ~/accc-mergers-tribunal-cron
+pip install -r scripts/requirements.txt
+
+# Install the gh CLI (https://cli.github.com) if not already present, then
+# authenticate once with an account that has push access to the repo:
+gh auth login
+
+# Sanity-check it end to end before scheduling it:
+./scripts/cron_scrape_tribunal.sh
+```
+
+**Crontab entry** (every 6 hours, `flock` prevents overlapping runs if one takes longer than expected):
+
+```cron
+0 */6 * * * /usr/bin/flock -n /tmp/tribunal-scrape.lock ~/accc-mergers-tribunal-cron/scripts/cron_scrape_tribunal.sh >> ~/tribunal-scrape.log 2>&1
+```
+
+Check `~/tribunal-scrape.log` for run history, and github.com for any open `tribunal-scrape` PR waiting on review.
+
 ## Local development
 
 ```bash

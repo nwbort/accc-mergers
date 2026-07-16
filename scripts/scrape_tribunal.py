@@ -55,6 +55,12 @@ machine**, then commit and push the result:
 Also requires ``curl`` on PATH (see "Fetching via curl" below) — already
 present on macOS/Linux; on Windows use Git Bash or WSL.
 
+To run this on a recurring schedule (e.g. from a home server via cron)
+rather than by hand, use ``scripts/cron_scrape_tribunal.sh``, which resets
+a branch onto fresh ``main``, runs this script, and opens/updates a pull
+request via the ``gh`` CLI if anything changed — see
+docs/deployment.md#running-it-on-a-schedule-cron.
+
 The ``scrape-tribunal.yml`` workflow (``workflow_dispatch``) still exists and
 can be triggered from the Actions tab, but expect it to fail with the
 Cloudflare challenge diagnostics described below rather than actually
