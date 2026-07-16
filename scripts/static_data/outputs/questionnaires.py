@@ -5,7 +5,44 @@ questionnaire data with at least one question.
 """
 
 import json
+import re
 from pathlib import Path
+
+
+def _norm_filename(name: str) -> str:
+    """Strip re-download suffixes (_0, _1 …) before the extension.
+
+    Mirrors the frontend's ``normalizeFilename`` so that a version whose file
+    the scraper suffixed (e.g. "…Remedy Offer (10 July)_0.pdf") still matches
+    an active event that points at a different suffix ("…_2.pdf").
+    """
+    return re.sub(r'_\d+(\.[^.]+)$', r'\1', name or '')
+
+
+def _active_versions(versions: list, active_files: set) -> list:
+    """Restrict parsed versions to those backing an active questionnaire event.
+
+    Each active event is claimed by an exact filename match when one exists;
+    otherwise it is matched by normalised filename. This drops superseded
+    downloads that are no longer on the register while still keeping a version
+    whose file the scraper re-suffixed relative to its event (e.g. MN-90008's
+    Remedy "…_0" file, whose active event points at "…_2").
+    """
+    exact_claimed = {
+        e for e in active_files if any(v.get('file_name') == e for v in versions)
+    }
+
+    def is_active(v: dict) -> bool:
+        fn = v.get('file_name')
+        if fn in active_files:
+            return True
+        return any(
+            _norm_filename(e) == _norm_filename(fn)
+            for e in active_files
+            if e not in exact_claimed
+        )
+
+    return [v for v in versions if is_active(v)]
 
 
 def _questionnaire_record(q_data: dict) -> dict:
@@ -41,27 +78,34 @@ def generate(questionnaire_data: dict, output_dir: Path, mergers: list | None = 
 
     count = 0
     for merger_id, q_data in questionnaire_data.items():
-        if q_data.get('questions'):
-            output = _questionnaire_record(q_data)
+        # All distinct versions parsed for this matter (the primary entry is
+        # also the first element of all_questionnaires when it exists).
+        versions = q_data.get('all_questionnaires') or [q_data]
+        versions = [v for v in versions if v.get('questions')]
+        if not versions:
+            continue
 
-            # When the matter has multiple distinct questionnaires, include them
-            # all (sorted latest-first) so consumers can access older versions.
-            # Filter to only questionnaires that have a corresponding active event
-            # so manually-removed duplicate events don't reappear on next pipeline run.
-            all_qs = q_data.get('all_questionnaires', [])
-            active_files = active_by_merger.get(merger_id)
-            if active_files is not None:
-                all_qs = [aq for aq in all_qs if aq.get('file_name') in active_files]
-            if len(all_qs) > 1:
-                output['all_questionnaires'] = [
-                    _questionnaire_record(aq)
-                    for aq in all_qs
-                    if aq.get('questions')
-                ]
+        # Restrict to versions that still correspond to an active questionnaire
+        # event, so superseded/stale downloads that are no longer on the ACCC
+        # register are not displayed. Only fall back to the full set when nothing
+        # matches, so a divergence between event and file names never drops the
+        # questionnaire entirely.
+        active_files = active_by_merger.get(merger_id)
+        if active_files:
+            matched = _active_versions(versions, active_files)
+            if matched:
+                versions = matched
 
-            out_path = questionnaires_dir / f"{merger_id}.json"
-            with open(out_path, 'w', encoding='utf-8') as f:
-                json.dump(output, f, indent=2)
-            count += 1
+        # Primary = latest by deadline (missing deadline sorts oldest).
+        versions.sort(key=lambda v: v.get('deadline_iso') or '0000-00-00', reverse=True)
+
+        output = _questionnaire_record(versions[0])
+        if len(versions) > 1:
+            output['all_questionnaires'] = [_questionnaire_record(v) for v in versions]
+
+        out_path = questionnaires_dir / f"{merger_id}.json"
+        with open(out_path, 'w', encoding='utf-8') as f:
+            json.dump(output, f, indent=2)
+        count += 1
 
     return count

@@ -319,14 +319,26 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
         text = line['text']
         is_bold = line['is_bold']
 
-        # Stop if we hit certain keywords that indicate end of questions section.
+        # Stop at the "Confidentiality" boilerplate that follows the questions.
+        # (A bold "Confidentiality of responses" header is also caught as a
+        # section header below, but non-bold variants — e.g. MN-25004 — need
+        # this guard so their standard-terms text isn't captured as questions.)
         # Only stop once we've seen at least one question so preamble notes
-        # (e.g. a "Note:" paragraph between the "Questions" heading and Q1)
         # don't abort parsing before any questions are captured.
         if (questions or current_question_num is not None) and re.match(
-            r'^(Confidentiality|Note:|Please note)', text, re.IGNORECASE
+            r'^Confidentiality', text, re.IGNORECASE
         ):
             break
+
+        # Skip standalone explanatory notes (e.g. "Note: 'on-premises
+        # hospitality services' include…"). These sit under a section header,
+        # between it and the section's first question, and are not questions.
+        # They must NOT terminate parsing — doing so truncated questionnaires
+        # like MN-40029, which drops from 10 questions to 3 when the note after
+        # its second section header ends the parse.
+        if re.match(r'^(Note:|Please note)', text, re.IGNORECASE):
+            prev_was_section_header = False
+            continue
 
         # Skip lines that fall inside a detected table region. Save the current
         # question first (on the first table line) so no table content is
@@ -347,6 +359,19 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
             if re.match(r'^\([^)]+\)$', text):
                 if current_question_num is not None:
                     current_question_text.append(text)
+                prev_was_section_header = False
+                continue
+
+            # Bold definitional preamble (e.g. MN-15028's "In this questionnaire,
+            # liquid waste collection and maintenance services (C&M services)
+            # includes …") is introductory prose whose sentence continues into
+            # the following non-bold lines — not a section header. Treat it as
+            # skippable intro so it isn't captured as the first question's
+            # section. Real headers start "Questions"/"General"/"Other issues".
+            if re.match(
+                r'^(In this (questionnaire|document)|For the purposes? of this)\b',
+                text, re.IGNORECASE
+            ):
                 prev_was_section_header = False
                 continue
 

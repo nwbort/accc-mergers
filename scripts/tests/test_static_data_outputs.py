@@ -1457,6 +1457,40 @@ class TestQuestionnairesGenerate:
             data = json.load(f)
         assert 'all_questionnaires' not in data, "Removed event's questionnaire should be filtered out"
 
+    def test_resuffixed_version_kept_by_normalized_match(self, tmp_path):
+        """MN-90008: a Remedy questionnaire whose file the scraper saved as
+        "…_0.pdf" still matches its active event pointing at "…_2.pdf" (via
+        normalised name), so it is shown alongside the main questionnaire."""
+        q_data = {
+            'MN-0003': {
+                'deadline_iso': '2026-07-17',
+                'file_name': 'Remedy_0.pdf',
+                'questions': [{'number': 1, 'text': 'R?'}],
+                'questions_count': 1,
+                'all_questionnaires': [
+                    {'deadline_iso': '2026-07-17', 'file_name': 'Remedy_0.pdf',
+                     'questions': [{'number': 1, 'text': 'R?'}], 'questions_count': 1},
+                    {'deadline_iso': '2026-06-05', 'file_name': 'Main.pdf',
+                     'questions': [{'number': i, 'text': f'M{i}?'} for i in range(1, 13)],
+                     'questions_count': 12},
+                ],
+            },
+        }
+        mergers = [{
+            'merger_id': 'MN-0003',
+            'events': [
+                {'title': 'Remedy Offer Questionnaire', 'url_gh': '/mergers/MN-0003/Remedy_2.pdf'},
+                {'title': 'Questionnaire', 'url_gh': '/mergers/MN-0003/Main.pdf'},
+            ],
+        }]
+        questionnaires.generate(q_data, tmp_path, mergers=mergers)
+        with open(tmp_path / 'questionnaires' / 'MN-0003.json') as f:
+            data = json.load(f)
+        # Both questionnaires survive; primary is the latest deadline (Remedy).
+        assert data['file_name'] == 'Remedy_0.pdf'
+        versions = {v['file_name']: v['questions_count'] for v in data['all_questionnaires']}
+        assert versions == {'Remedy_0.pdf': 1, 'Main.pdf': 12}
+
 
 # ---------------------------------------------------------------------------
 # theories_of_harm
