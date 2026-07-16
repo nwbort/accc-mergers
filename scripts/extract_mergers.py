@@ -24,7 +24,8 @@ from parse_questionnaire import (
     _NEG_CACHE_KEY as _Q_NEG_CACHE_KEY,
 )
 from normalization import normalize_determination
-from cutoff import should_skip_merger, get_skipped_merger_ids, is_waiver_merger
+from constants.site import REPO, mergers_fyi_url
+from cutoff import get_skipped_merger_ids, is_waiver_merger
 from date_utils import parse_text_to_iso, parse_iso_datetime
 from static_data.enrichment import is_phase_2_referral_event
 from constants import merger_status
@@ -1134,15 +1135,14 @@ def auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers):
         json.dump(frozen_data, f, indent=2)
 
     # Build GitHub issue content
-    _repo = "nwbort/accc-mergers"
     issues = []
     for item in newly_frozen:
         mid = item['merger_id']
         name = item['merger_name']
         url = item['merger_url']
         fixed_events = item['fixed_events']
-        mergers_fyi_url = f"https://mergers.fyi/mergers/{mid}"
-        frozen_json_url = f"https://github.com/{_repo}/blob/main/data/frozen_events_mergers.json"
+        fyi_url = mergers_fyi_url(mid)
+        frozen_json_url = f"https://github.com/{REPO}/blob/main/data/frozen_events_mergers.json"
 
         event_rows = ''.join(
             f"| {fe['event_title']} | {fe['date_display']} | "
@@ -1167,7 +1167,7 @@ def auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers):
             f"- If any are wrong, update the date in "
             f"[`data/frozen_events_mergers.json`]({frozen_json_url}) and "
             f"`data/processed/mergers.json` with the correct value.\n\n"
-            f"[View on mergers.fyi]({mergers_fyi_url})"
+            f"[View on mergers.fyi]({fyi_url})"
         )
         issues.append({
             'merger_id': mid,
@@ -1212,7 +1212,6 @@ def detect_inferred_phase_2(all_mergers_data):
     ``enrich_merger`` (the static-data output); it is never written back to
     mergers.json, so ``merger['stage']`` here always reflects the register.
     """
-    _repo = "nwbort/accc-mergers"
     to_open = []
     confirmed = []
 
@@ -1234,7 +1233,7 @@ def detect_inferred_phase_2(all_mergers_data):
 
         name = merger.get('merger_name', '')
         url = merger.get('url', '')
-        mergers_fyi_url = f"https://mergers.fyi/mergers/{merger_id}"
+        fyi_url = mergers_fyi_url(merger_id)
         body = (
             f"**{name}** has a Phase 2 notice on the ACCC register, but the matter's "
             f"stage still shows **Phase 1**.\n\n"
@@ -1251,7 +1250,7 @@ def detect_inferred_phase_2(all_mergers_data):
             f"the stage to Phase 2.\n"
             f"- If the parties drop out and the merger never proceeds to Phase 2, close "
             f"this issue manually.\n\n"
-            f"[View on mergers.fyi]({mergers_fyi_url})"
+            f"[View on mergers.fyi]({fyi_url})"
         )
         to_open.append({
             'merger_id': merger_id,

@@ -33,14 +33,14 @@ from datetime import datetime, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
 
+from constants.site import REPO as _REPO, mergers_fyi_url
+from date_utils import parse_iso_datetime
+
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
 DEFAULT_INPUT = REPO_ROOT / "data" / "processed" / "mergers.json"
 
 SIMILARITY_THRESHOLD = 0.80
-
-_REPO = "nwbort/accc-mergers"
-_MERGERS_FYI_BASE = "https://mergers.fyi/mergers"
 
 
 def normalise_title(title: str) -> str:
@@ -127,12 +127,8 @@ def titles_are_different_event_types(a: str, b: str) -> bool:
 
 def parse_date(raw: str):
     """Return a date-only string (YYYY-MM-DD) or None."""
-    if not raw:
-        return None
-    try:
-        return datetime.fromisoformat(raw.replace("Z", "+00:00")).strftime("%Y-%m-%d")
-    except ValueError:
-        return None
+    dt = parse_iso_datetime(raw)
+    return dt.strftime("%Y-%m-%d") if dt else None
 
 
 def dates_within_one_day(date1: str, date2: str) -> bool:
@@ -320,10 +316,6 @@ def print_human_report(report: dict) -> None:
 # ---------------------------------------------------------------------------
 # Helpers for GitHub issue generation
 # ---------------------------------------------------------------------------
-
-def mergers_fyi_url(merger_id: str) -> str:
-    return f"{_MERGERS_FYI_BASE}/{merger_id}"
-
 
 def _json_github_url(branch: str, line: int | None = None) -> str:
     base = f"https://github.com/{_REPO}/blob/{branch}/data/processed/mergers.json"
@@ -631,7 +623,8 @@ def main() -> None:
     with args.input.open() as fh:
         raw = json.load(fh)
 
-    # Support both a bare list and the { "mergers": [...] } wrapper
+    # Keep the raw document so --apply-fixes can write it back in its
+    # original shape (bare list or { "mergers": [...] } wrapper).
     mergers: list[dict] = raw if isinstance(raw, list) else raw.get("mergers", [])
 
     report = build_report(mergers)

@@ -6,7 +6,7 @@ Parse determination PDFs to extract commission division information and table co
 import pdfplumber
 import re
 import json
-from typing import Optional, Dict, List, Tuple
+from typing import Optional, Dict, List
 from pathlib import Path
 
 

@@ -6,27 +6,27 @@ Run with: python scripts/tools/commentary.py
 """
 
 import json
+import sys
 from pathlib import Path
 from typing import List, Optional
+
+# Allow imports from the parent scripts/ directory.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 import uvicorn
 
+from merger_filters import load_mergers as _load_mergers
+
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
-MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
 COMMENTARY_JSON = REPO_ROOT / "data" / "processed" / "commentary.json"
 
 app = FastAPI()
 
 
 # ── helpers ────────────────────────────────────────────────────────────────
-
-def _load_mergers() -> list:
-    with MERGERS_JSON.open() as fh:
-        data = json.load(fh)
-    return data if isinstance(data, list) else data.get("mergers", [])
 
 
 def _load_commentary() -> dict:

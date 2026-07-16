@@ -3,6 +3,8 @@
 import json
 from pathlib import Path
 
+from merger_filters import load_mergers as _load_mergers
+
 SCRIPT_DIR = Path(__file__).resolve().parent.parent
 REPO_ROOT = SCRIPT_DIR.parent
 MERGERS_JSON = REPO_ROOT / "data" / "processed" / "mergers.json"
@@ -18,16 +20,10 @@ TRIBUNAL_APPEALS_JSON = REPO_ROOT / "data" / "processed" / "tribunal_appeals.jso
 def load_mergers() -> list:
     """Load mergers list from the processed mergers.json file.
 
-    Accepts both the raw-list format and the ``{"mergers": [...]}`` wrapper.
+    Delegates to the canonical loader in :mod:`merger_filters`, which
+    accepts both the raw-list format and the ``{"mergers": [...]}`` wrapper.
     """
-    with open(MERGERS_JSON, 'r', encoding='utf-8') as f:
-        data = json.load(f)
-
-    if isinstance(data, list):
-        return data
-    if isinstance(data, dict) and 'mergers' in data:
-        return data['mergers']
-    raise ValueError("Unexpected mergers.json format")
+    return _load_mergers(MERGERS_JSON)
 
 
 # Relationship labels emitted for each pair type, as (source_label,

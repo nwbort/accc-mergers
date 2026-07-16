@@ -29,13 +29,14 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+from constants.site import REPO as _REPO, mergers_fyi_url
+from merger_filters import load_mergers
+
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
 DEFAULT_MERGERS = REPO_ROOT / "data" / "processed" / "mergers.json"
 DEFAULT_KNOWN_DATES = REPO_ROOT / "data" / "known_notification_dates.json"
 
-_REPO = "nwbort/accc-mergers"
-_MERGERS_FYI_BASE = "https://mergers.fyi/mergers"
 _KNOWN_DATES_PATH = "data/known_notification_dates.json"
 
 
@@ -115,7 +116,7 @@ def build_pr_body(candidates: list[dict], date: str) -> str:
         lines.append("")
         lines.append(f"Defaulted notification date: **{c['date']}**")
         lines.append("")
-        lines.append(f"[View on mergers.fyi]({_MERGERS_FYI_BASE}/{c['merger_id']})")
+        lines.append(f"[View on mergers.fyi]({mergers_fyi_url(c['merger_id'])})")
         lines.append("")
     lines.extend([
         "---",
@@ -147,8 +148,7 @@ def main() -> int:
         print(f"ERROR: mergers file not found: {args.mergers}", file=sys.stderr)
         return 2
 
-    with args.mergers.open() as fh:
-        mergers = json.load(fh)
+    mergers = load_mergers(args.mergers)
 
     known_dates = {}
     if args.known_dates.exists():

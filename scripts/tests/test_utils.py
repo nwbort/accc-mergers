@@ -3,7 +3,6 @@
 import sys
 import os
 import unittest.mock
-from datetime import datetime
 
 # Add scripts directory to path so we can import modules directly
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))

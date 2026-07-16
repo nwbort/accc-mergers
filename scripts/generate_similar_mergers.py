@@ -38,6 +38,9 @@ from datetime import datetime, timezone
 from difflib import SequenceMatcher
 from pathlib import Path
 
+from merger_filters import load_mergers
+from party_matching import normalise_name as _normalise_name
+
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
 DEFAULT_MERGERS = REPO_ROOT / "data" / "processed" / "mergers.json"
@@ -48,14 +51,10 @@ MAX_RESULTS = 3
 SCORE_THRESHOLD = 0.30
 
 # ---------------------------------------------------------------------------
-# Normalisation helpers (mirrors detect_related_mergers.py)
+# Normalisation helpers (name normalisation shared via party_matching;
+# identifier normalisation mirrors detect_related_mergers.py — see the note
+# there on why it is looser than party_matching.normalise_identifier)
 # ---------------------------------------------------------------------------
-
-_COMPANY_SUFFIXES = re.compile(
-    r"\b(pty|ltd|limited|inc|llc|l\.l\.c\.|gmbh|b\.v\.|bv|nv|plc|co|corp|"
-    r"corporation|holdings|group|international|australia|the trustee for|trustee for)\b",
-    re.IGNORECASE,
-)
 
 # Generic business words that shouldn't drive party similarity
 _WORD_STOP = frozenset({
@@ -64,16 +63,6 @@ _WORD_STOP = frozenset({
     'media', 'finance', 'financial', 'digital', 'retail', 'network', 'trust',
     'fund', 'asset', 'assets', 'super', 'super', 'pension',
 })
-
-
-def _normalise_name(name: str) -> str:
-    if not name:
-        return ""
-    out = name.lower()
-    out = _COMPANY_SUFFIXES.sub(" ", out)
-    out = re.sub(r"[^\w\s]", " ", out)
-    out = re.sub(r"\s+", " ", out).strip()
-    return out
 
 
 def _normalise_identifier(identifier: str) -> str:
@@ -174,12 +163,6 @@ def find_similar(
 # I/O helpers
 # ---------------------------------------------------------------------------
 
-def _load_mergers(path: Path) -> list[dict]:
-    with open(path, encoding="utf-8") as f:
-        raw = json.load(f)
-    return raw if isinstance(raw, list) else raw.get("mergers", [])
-
-
 def _load_existing(path: Path) -> dict:
     if not path.exists():
         return {}
@@ -251,7 +234,7 @@ def main() -> int:
         print(f"ERROR: mergers file not found: {args.mergers}", file=sys.stderr)
         return 2
 
-    all_mergers = _load_mergers(args.mergers)
+    all_mergers = load_mergers(args.mergers)
     merger_index = {m.get("merger_id"): m for m in all_mergers if m.get("merger_id")}
 
     # Related-merger pairs are already surfaced via related_merger; exclude each

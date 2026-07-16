@@ -18,7 +18,7 @@ from __future__ import annotations
 import re
 
 # Company-form suffixes and boilerplate words that carry no identifying signal.
-# Kept deliberately in sync with the equivalent list in detect_related_mergers.py.
+# Single source of truth — detect_related_mergers.py imports normalise_name too.
 _COMPANY_SUFFIXES = re.compile(
     r"\b(pty|ltd|limited|inc|llc|l\.l\.c\.|gmbh|b\.v\.|bv|nv|plc|co|corp|"
     r"corporation|holdings|group|international|australia|"

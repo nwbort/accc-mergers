@@ -347,7 +347,6 @@ def extract_questions(lines: List[Dict]) -> List[Dict[str, str]]:
 
     def save_current_question():
         """Helper to save the current question to the list."""
-        nonlocal current_question_num, current_question_text
         if current_question_num is not None:
             full_text = ' '.join(current_question_text).strip()
             full_text = re.sub(r'\s+', ' ', full_text)

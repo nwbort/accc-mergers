@@ -30,10 +30,10 @@ Outputs:
 """
 
 import json
-from datetime import datetime, timedelta, time
+from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 from pathlib import Path
-from typing import Dict, List, Any, Optional, Set
+from typing import Dict, Any, Optional, Set
 from constants import merger_status
 from date_utils import parse_iso_datetime
 from merger_filters import filter_active, load_mergers
@@ -388,7 +388,7 @@ def main():
 
     print(f"Digest generated: {OUTPUT_PATH}")
     print(f"Archive snapshot: {archive_path}")
-    print(f"\nSummary:")
+    print("\nSummary:")
     print(f"  New deals notified (last week): {len(digest['new_deals_notified'])}")
     print(f"  Deals cleared (last week): {len(digest['deals_cleared'])}")
     print(f"  Deals referred to phase 2 (last week): {len(digest['deals_referred_to_phase_2'])}")
