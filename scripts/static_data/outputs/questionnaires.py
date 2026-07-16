@@ -24,9 +24,9 @@ def _active_versions(versions: list, active_files: set) -> list:
 
     Each active event is claimed by an exact filename match when one exists;
     otherwise it is matched by normalised filename. This drops superseded
-    downloads that are no longer on the register (e.g. MN-90028's "…_0" file,
-    where only "…_1" has an event) while still keeping a version whose file was
-    re-suffixed relative to its event (e.g. MN-90008's Remedy "…_0" vs "…_2").
+    downloads that are no longer on the register while still keeping a version
+    whose file the scraper re-suffixed relative to its event (e.g. MN-90008's
+    Remedy "…_0" file, whose active event points at "…_2").
     """
     exact_claimed = {
         e for e in active_files if any(v.get('file_name') == e for v in versions)
@@ -87,9 +87,9 @@ def generate(questionnaire_data: dict, output_dir: Path, mergers: list | None = 
 
         # Restrict to versions that still correspond to an active questionnaire
         # event, so superseded/stale downloads that are no longer on the ACCC
-        # register (e.g. MN-90028's earlier "…_0" file) are not displayed. Only
-        # fall back to the full set when nothing matches, so a divergence between
-        # event and file names never drops the questionnaire entirely.
+        # register are not displayed. Only fall back to the full set when nothing
+        # matches, so a divergence between event and file names never drops the
+        # questionnaire entirely.
         active_files = active_by_merger.get(merger_id)
         if active_files:
             matched = _active_versions(versions, active_files)

@@ -688,22 +688,14 @@ def process_all_questionnaires(
         def _norm(name: str) -> str:
             return re.sub(r'_\d+(\.[^.]+)$', r'\1', name)
 
-        # Fingerprint the extracted questions so genuinely different documents
-        # sharing a normalised name are not mistaken for re-downloads.
-        def _q_fingerprint(p: dict) -> tuple:
-            return tuple((q.get('number'), q.get('text', '')) for q in p.get('questions', []))
-
-        # Deduplicate: collapse only when the normalised filename, the deadline
-        # AND the question content are all identical (i.e. the scraper genuinely
-        # downloaded the same file twice). Different deadlines with the same base
-        # name means the ACCC re-released with an extended deadline; different
-        # questions with the same base name and deadline means the ACCC expanded
-        # the questionnaire in place (e.g. MN-90028, whose "…_0" 7-question and
-        # "…_1" 13-question files share a deadline) — keep both in either case.
+        # Deduplicate: collapse only when BOTH the normalised filename AND the
+        # deadline are identical (i.e. the scraper downloaded the same file
+        # twice).  Different deadlines with the same base name means the ACCC
+        # re-released the questionnaire with an extended deadline — keep both.
         seen: set = set()
         unique = []
         for p in parsed:
-            key = (_norm(p['file_name']), p.get('deadline_iso') or '', _q_fingerprint(p))
+            key = (_norm(p['file_name']), p.get('deadline_iso') or '')
             if key not in seen:
                 seen.add(key)
                 unique.append(p)

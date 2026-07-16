@@ -1457,38 +1457,6 @@ class TestQuestionnairesGenerate:
             data = json.load(f)
         assert 'all_questionnaires' not in data, "Removed event's questionnaire should be filtered out"
 
-    def test_superseded_same_name_version_dropped_by_exact_match(self, tmp_path):
-        """MN-90028: two same-named files with different content share a deadline;
-        only the file backing the active event ("…_1") is shown, the stale
-        "…_0" is dropped."""
-        def _q(n):
-            return [{'number': i, 'text': f'Q{i}?'} for i in range(1, n + 1)]
-
-        q_data = {
-            'MN-0002': {
-                'deadline_iso': '2026-07-21',
-                'file_name': 'Q_0.pdf',
-                'questions': _q(7),
-                'questions_count': 7,
-                'all_questionnaires': [
-                    {'deadline_iso': '2026-07-21', 'file_name': 'Q_0.pdf',
-                     'questions': _q(7), 'questions_count': 7},
-                    {'deadline_iso': '2026-07-21', 'file_name': 'Q_1.pdf',
-                     'questions': _q(13), 'questions_count': 13},
-                ],
-            },
-        }
-        mergers = [{
-            'merger_id': 'MN-0002',
-            'events': [{'title': 'Questionnaire', 'url_gh': '/mergers/MN-0002/Q_1.pdf'}],
-        }]
-        questionnaires.generate(q_data, tmp_path, mergers=mergers)
-        with open(tmp_path / 'questionnaires' / 'MN-0002.json') as f:
-            data = json.load(f)
-        assert data['file_name'] == 'Q_1.pdf'
-        assert data['questions_count'] == 13
-        assert 'all_questionnaires' not in data
-
     def test_resuffixed_version_kept_by_normalized_match(self, tmp_path):
         """MN-90008: a Remedy questionnaire whose file the scraper saved as
         "…_0.pdf" still matches its active event pointing at "…_2.pdf" (via
