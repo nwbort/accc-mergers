@@ -50,6 +50,18 @@ Repeat for each matter page you need to refresh — one snapshot per page.
 
 ## 3. Ingest it
 
+**Option A — drop it in the repo and let CI do it.** Add the downloaded
+file to `data/incoming/tribunal_snapshots/` (e.g. via GitHub's web UI:
+"Add file → Upload files", no git needed) and push/commit it to `main`.
+The **Ingest Tribunal Snapshots** workflow picks up any `*.json` file added
+or changed there, runs `ingest_tribunal_snapshot.py` on it, commits the
+result, and deletes the snapshot once it's consumed. If the snapshot's
+`tribunal_url` doesn't match any entry, the file is left in place and the
+workflow run is flagged so you can fix the entry and retry. See
+`data/incoming/tribunal_snapshots/README.md`.
+
+**Option B — run it yourself locally:**
+
 ```bash
 pip install -r scripts/requirements.txt   # requests, beautifulsoup4, lxml
 python scripts/ingest_tribunal_snapshot.py ~/Downloads/tribunal-act-1-of-2026.json

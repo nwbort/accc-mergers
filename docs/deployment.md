@@ -141,6 +141,10 @@ Manual-only (`workflow_dispatch`). Runs `scrape_tribunal.py` to fill in `data/pr
 
 **In practice this fails from GitHub Actions**: the tribunal site is behind Cloudflare bot management, which serves hosted-runner IPs a JS challenge page instead of the real content — no request-header or client change gets past that. Run it locally instead; see [Running the tribunal scraper locally](#running-the-tribunal-scraper-locally) below. The workflow is kept so a run surfaces the Cloudflare challenge clearly (a `::warning::` annotation with the response status/headers) rather than silently doing nothing, in case that ever changes.
 
+### `ingest-tribunal-snapshots.yml` — Tribunal snapshot ingest (on push + manual)
+
+Triggered by a push to `main` that adds/changes a `*.json` file under `data/incoming/tribunal_snapshots/` (also `workflow_dispatch` for a manual re-run). Runs `scripts/ingest_tribunal_snapshot.py` on each snapshot file found there — a JSON download produced by the `scripts/bookmarklet/` bookmarklet — folds it into `data/processed/tribunal_appeals.json`, mirrors the linked PDFs, deletes the snapshot once it's consumed, and commits the result. A snapshot whose `tribunal_url` doesn't match any entry is left in place and the run is flagged, rather than being silently dropped. See [Alternative: browser bookmarklet](#alternative-browser-bookmarklet) above.
+
 ## Static data files
 
 All data files are pre-generated into `merger-tracker/frontend/public/data/`:
@@ -196,6 +200,8 @@ git push
 ### Alternative: browser bookmarklet
 
 If even a local/residential run of `scrape_tribunal.py` gets JS-challenged, `scripts/bookmarklet/` provides another path that doesn't make any HTTP request of its own: a bookmarklet you click while looking at the matter page in your own browser (so the Cloudflare challenge is already solved), which downloads a JSON snapshot of that page's document table(s) using the same parsing rules, ported to JS. `scripts/ingest_tribunal_snapshot.py` then folds that snapshot into `tribunal_appeals.json` the same way a normal scrape would (including mirroring the linked files). See [`scripts/bookmarklet/README.md`](../scripts/bookmarklet/README.md) for the install/use/ingest steps.
+
+You don't even need a local Python environment to ingest a snapshot: drop the downloaded JSON file into `data/incoming/tribunal_snapshots/` (e.g. via GitHub's web upload UI) and push to `main` — the `ingest-tribunal-snapshots.yml` workflow runs the ingest script for you and deletes the snapshot once it's folded in. See [`data/incoming/tribunal_snapshots/README.md`](../data/incoming/tribunal_snapshots/README.md).
 
 ### Running it on a schedule (cron)
 
