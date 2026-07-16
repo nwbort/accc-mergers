@@ -8,6 +8,8 @@ Writes:
 import json
 from pathlib import Path
 
+from ..loaders import FORWARD_REFILE_RELATIONSHIPS
+
 
 def _appeal_summary(m: dict) -> dict | None:
     """Slim appeal fields needed to render the status badge on a list card.
@@ -35,6 +37,11 @@ def _lightweight(m: dict) -> dict:
         "has_conditions": m.get('has_conditions', False),
         "is_waiver": m.get('is_waiver', False),
         "under_appeal": m.get('under_appeal', False),
+        # True for a matter (waiver or notification) later re-filed as a
+        # separate matter — e.g. a ceased assessment re-notified under a new
+        # merger ID. Mirrors phase2.py's is_refiled (the earlier/superseded
+        # matter), not stats.py's (which flags the new, re-filing matter).
+        "is_refiled": (m.get('related_merger') or {}).get('relationship') in FORWARD_REFILE_RELATIONSHIPS,
         "effective_notification_datetime": m.get('effective_notification_datetime'),
         "determination_publication_date": m.get('determination_publication_date'),
         "end_of_determination_period": m.get('end_of_determination_period'),

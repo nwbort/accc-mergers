@@ -1315,6 +1315,23 @@ class TestListGenerate:
         dates = [m['effective_notification_datetime'] for m in page['mergers']]
         assert dates == sorted(dates)
 
+    def test_flags_the_earlier_matter_as_refiled(self, tmp_path):
+        # MN-0001 was later refiled as WA-0003 — the earlier matter (MN-0001)
+        # gets is_refiled: True; the later, refiling matter does not.
+        mergers = _raw_fixture()
+        mergers[0]['related_merger'] = {
+            'merger_id': 'WA-0003',
+            'relationship': 'suspended_refiled_as',
+            'merger_name': 'Epsilon waiver',
+        }
+        enriched = [enrich_merger(m) for m in mergers]
+        list_out.generate(enriched, tmp_path, page_size=50)
+        with open(tmp_path / 'mergers' / 'list-page-1.json') as f:
+            page = json.load(f)
+        by_id = {m['merger_id']: m for m in page['mergers']}
+        assert by_id['MN-0001']['is_refiled'] is True
+        assert by_id['WA-0003']['is_refiled'] is False
+
 
 # ---------------------------------------------------------------------------
 # timeline (paginated)

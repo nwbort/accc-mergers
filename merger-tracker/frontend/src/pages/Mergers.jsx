@@ -8,6 +8,7 @@ import StatusBadge from '../components/StatusBadge';
 import BellIcon from '../components/BellIcon';
 import WaiverBadge from '../components/WaiverBadge';
 import AppealBadge from '../components/AppealBadge';
+import RefiledBadge from '../components/RefiledBadge';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
 import { getBusinessDayProgress } from '../utils/businessDayProgress';
@@ -596,6 +597,7 @@ function Mergers() {
                           {merger.merger_name}
                         </h3>
                         {merger.is_waiver && <WaiverBadge className="flex-shrink-0" />}
+                        {merger.is_refiled && <RefiledBadge className="flex-shrink-0" />}
                       </div>
                       <p className="text-xs text-gray-500 mt-1">
                         {merger.merger_id} · {merger.stage || 'N/A'}
