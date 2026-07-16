@@ -1,0 +1,86 @@
+name: Ingest Tribunal Snapshots
+
+# Companion to scripts/bookmarklet/: drop a bookmarklet-downloaded JSON
+# snapshot into data/incoming/tribunal_snapshots/ (e.g. via the GitHub web
+# UI's "Add file -> Upload files") and this runs
+# scripts/ingest_tribunal_snapshot.py on it automatically, folding it into
+# data/processed/tribunal_appeals.json and deleting the snapshot once it's
+# been consumed. See data/incoming/tribunal_snapshots/README.md.
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/incoming/tribunal_snapshots/*.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ingest-tribunal-snapshots-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Ingest each snapshot
+        id: ingest
+        run: |
+          shopt -s nullglob
+          files=(data/incoming/tribunal_snapshots/*.json)
+
+          if [ ${#files[@]} -eq 0 ]; then
+            echo "No snapshot files to ingest."
+            echo "any_failed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          any_failed=false
+          for f in "${files[@]}"; do
+            echo "::group::Ingesting $f"
+            if python scripts/ingest_tribunal_snapshot.py "$f"; then
+              git rm -q "$f"
+              echo "Consumed and removed $f"
+            else
+              any_failed=true
+              echo "::warning::Failed to ingest $f — left in place; see the log above (likely an unmatched or missing tribunal_url in tribunal_appeals.json)."
+            fi
+            echo "::endgroup::"
+          done
+          echo "any_failed=$any_failed" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push changes
+        run: |-
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/processed/tribunal_appeals.json data/raw/matters data/incoming/tribunal_snapshots
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Ingest tribunal snapshot(s): $(TZ='Australia/Sydney' date)"
+          git pull --rebase || { git rebase --abort; exit 1; }
+          git push
+
+      - name: Fail if any snapshot could not be ingested
+        if: steps.ingest.outputs.any_failed == 'true'
+        run: |
+          echo "One or more snapshots failed to ingest — see the ::warning:: annotations above." >&2
+          exit 1
