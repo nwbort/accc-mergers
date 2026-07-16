@@ -28,11 +28,18 @@ Each matter page contains one or more document tables:
 Columns are matched by header text (date / document / filed by / confidential),
 so column order can vary. The document link is taken from the ``<a>`` in the row.
 
+Each linked document is also downloaded into ``data/raw/matters/{merger_id}/``
+(the same tree the ACCC scraper uses) and its local serve path recorded as
+``url_gh`` (``/mergers/{merger_id}/{file}``), so tribunal filings are mirrored
+and served exactly like ACCC attachments. Files already present are not
+re-downloaded; off-domain links are kept but not mirrored.
+
 Usage
 -----
-  python scripts/scrape_tribunal.py                 # scrape every entry with a tribunal_url
+  python scripts/scrape_tribunal.py                 # scrape + download every entry with a tribunal_url
   python scripts/scrape_tribunal.py MN-01068 ...    # scrape only these merger_ids
-  python scripts/scrape_tribunal.py --dry-run       # parse and report, don't write
+  python scripts/scrape_tribunal.py --no-download   # record metadata only, skip file downloads
+  python scripts/scrape_tribunal.py --dry-run       # parse and report, don't write or download
 
 Existing ``url_gh`` local-mirror paths are preserved across a re-scrape (matched
 by document URL). If a page yields no rows (e.g. the layout changed), that
@@ -43,11 +50,13 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
+import unicodedata
 from datetime import datetime
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import unquote, urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -55,6 +64,10 @@ from bs4 import BeautifulSoup
 SCRIPT_DIR = Path(__file__).parent
 REPO_ROOT = SCRIPT_DIR.parent
 TRIBUNAL_APPEALS_JSON = REPO_ROOT / "data" / "processed" / "tribunal_appeals.json"
+# Downloaded documents are mirrored under data/raw/matters/{merger_id}/, the same
+# tree the ACCC scraper uses, so the DOCX→PDF convert workflow and the Cloudflare
+# /mergers/{id}/{file} route pick them up with no extra wiring.
+MATTERS_DIR = REPO_ROOT / "data" / "raw" / "matters"
 
 USER_AGENT = "Mozilla/5.0 (compatible; mergers-fyi/1.0; +https://mergers.fyi)"
 REQUEST_TIMEOUT = 30
@@ -94,6 +107,117 @@ _DATE_FORMATS = [
     "%d-%m-%Y",   # 15-07-2026
     "%Y-%m-%d",   # 2026-07-15
 ]
+
+
+# --- Attachment download helpers ---------------------------------------------
+# These mirror the ACCC scraper's conventions in extract_mergers.py (filename
+# safety, DOCX→PDF serve name, /mergers/{id}/{file} url_gh) so tribunal
+# documents live in the same tree and are served the same way. They're copied
+# rather than imported to keep this script's dependencies to requests + bs4.
+
+
+def is_safe_filename(filename: str) -> bool:
+    """Validate a filename to prevent path traversal (see extract_mergers)."""
+    if not filename or not isinstance(filename, str) or not filename.strip():
+        return False
+    if ".." in filename or "/" in filename or "\\" in filename:
+        return False
+    if "  " in filename:
+        return False
+    if not re.match(
+        r"^[a-zA-Z0-9À-ÿ][\wÀ-ÿ-–—'’. (),]*\.[a-zA-Z0-9]+$",
+        filename,
+    ):
+        return False
+    return len(filename) <= 255
+
+
+def sanitize_filename(filename: str) -> str | None:
+    """Make a filename safe, preserving the extension, or None if impossible."""
+    if not filename or not isinstance(filename, str):
+        return None
+    filename = unicodedata.normalize("NFKC", filename)
+    if not filename.strip():
+        return None
+    if ".." in filename or "/" in filename or "\\" in filename:
+        return None
+    sanitized = filename.replace(":", " -").replace("&", "and").replace("%", "pct")
+    while "  " in sanitized:
+        sanitized = sanitized.replace("  ", " ")
+    sanitized = sanitized.strip()
+    if len(sanitized) > 255:
+        name, ext = os.path.splitext(sanitized)
+        sanitized = name[: 255 - len(ext)] + ext
+    return sanitized if is_safe_filename(sanitized) else None
+
+
+def get_serve_filename(original_filename: str) -> str:
+    """DOCX files are served as the PDF the convert workflow produces."""
+    if original_filename.lower().endswith(".docx"):
+        return os.path.splitext(original_filename)[0] + ".pdf"
+    return original_filename
+
+
+def is_safe_document_url(url: str) -> bool:
+    """Only download from the tribunal's own domain (SSRF guard)."""
+    parsed = urlparse(url)
+    host = parsed.hostname
+    return (
+        parsed.scheme in ("http", "https")
+        and host is not None
+        and (
+            host == "competitiontribunal.gov.au"
+            or host.endswith(".competitiontribunal.gov.au")
+        )
+    )
+
+
+def download_document(merger_id: str, url: str) -> str | None:
+    """Download a tribunal document into data/raw/matters/{merger_id}/.
+
+    Returns the ``url_gh`` serve path (``/mergers/{id}/{file}``) on success, or
+    None if the link is off-domain, unsafe, or the download fails. Existing
+    files are left in place (never re-downloaded).
+    """
+    if not is_safe_document_url(url):
+        # Off-domain link (e.g. a party's own site) — keep the url, no mirror.
+        return None
+
+    decoded = unquote(urlparse(url).path)
+    original = os.path.basename(decoded).strip()
+    if is_safe_filename(original):
+        filename = original
+    else:
+        filename = sanitize_filename(original)
+    if not filename:
+        print(f"    Warning: unsafe document filename for {url}", file=sys.stderr)
+        return None
+
+    matter_dir = MATTERS_DIR / merger_id
+    local_path = matter_dir / filename
+    url_gh = f"/mergers/{merger_id}/{get_serve_filename(filename)}"
+
+    if local_path.exists():
+        return url_gh
+
+    try:
+        matter_dir.mkdir(parents=True, exist_ok=True)
+        resp = requests.get(
+            url, headers={"User-Agent": USER_AGENT}, stream=True, timeout=REQUEST_TIMEOUT
+        )
+        resp.raise_for_status()
+        with open(local_path, "wb") as f:
+            for chunk in resp.iter_content(chunk_size=8192):
+                f.write(chunk)
+    except requests.RequestException as e:
+        print(f"    Warning: failed to download {url}: {e}", file=sys.stderr)
+        return None
+    except OSError as e:
+        print(f"    Warning: failed to save {local_path}: {e}", file=sys.stderr)
+        return None
+
+    print(f"    Downloaded {filename}")
+    return url_gh
 
 
 def load_appeals() -> tuple[dict, dict]:
@@ -279,7 +403,9 @@ def merge_documents(existing: list[dict], scraped: list[dict]) -> list[dict]:
     return scraped
 
 
-def scrape(merger_ids: list[str] | None, dry_run: bool) -> int:
+def scrape(
+    merger_ids: list[str] | None, dry_run: bool, download: bool = True
+) -> int:
     raw, records = load_appeals()
 
     if merger_ids:
@@ -320,6 +446,17 @@ def scrape(merger_ids: list[str] | None, dry_run: bool) -> int:
             )
             continue
 
+        # Mirror each document's PDF into data/raw/matters/{mid}/ and record its
+        # url_gh serve path. Skipped on a dry run so the run stays side-effect
+        # free. merge_documents then carries over any existing url_gh for docs
+        # that weren't (or couldn't be) downloaded.
+        if download and not dry_run:
+            for doc in scraped:
+                if doc.get("url"):
+                    url_gh = download_document(mid, doc["url"])
+                    if url_gh:
+                        doc["url_gh"] = url_gh
+
         merged = merge_documents(record.get("documents"), scraped)
         sections = sorted({d["section"] for d in merged if d.get("section")})
         summary = f"  Parsed {len(merged)} document(s)"
@@ -355,10 +492,15 @@ def main() -> int:
     parser.add_argument(
         "--dry-run",
         action="store_true",
-        help="Parse and report changes without writing the JSON file.",
+        help="Parse and report changes without writing the JSON or downloading files.",
+    )
+    parser.add_argument(
+        "--no-download",
+        action="store_true",
+        help="Record document metadata only; do not download the linked files.",
     )
     args = parser.parse_args()
-    return scrape(args.merger_ids or None, args.dry_run)
+    return scrape(args.merger_ids or None, args.dry_run, download=not args.no_download)
 
 
 if __name__ == "__main__":
