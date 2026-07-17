@@ -8,6 +8,8 @@ generators in :mod:`static_data.outputs`. All heavy lifting lives in the
 Output files:
   data/output/ (for offline analysis, not deployed):
   - mergers.json      - All mergers wrapped in {mergers: [...]} (full enriched data)
+  - referral_probability_by_day.json - P(Phase 2 referral | still undecided at
+                        business day N), one {business_day, probability} per day
 
   merger-tracker/frontend/public/data/ (deployed to Cloudflare Pages):
   - mergers/{id}.json           - Individual merger files (one per merger)
@@ -54,6 +56,7 @@ from static_data.loaders import (
     load_similar_mergers,
     load_tribunal_appeals,
 )
+from static_data.durations import referral_probability_by_day
 from static_data.outputs import (
     analysis,
     commentary as commentary_out,
@@ -154,6 +157,13 @@ def main():
     with open(mergers_json_path, 'w', encoding='utf-8') as f:
         json.dump({"mergers": enriched}, f, indent=2)
     print(f"✓ Generated {mergers_json_path}")
+
+    # Phase 2 referral probability by business day (offline analysis, not
+    # deployed — a building block for a future per-merger risk feature)
+    referral_prob_path = DATA_OUTPUT_DIR / "referral_probability_by_day.json"
+    with open(referral_prob_path, 'w', encoding='utf-8') as f:
+        json.dump(referral_probability_by_day(enriched), f, indent=2)
+    print(f"✓ Generated {referral_prob_path}")
 
     # Small single-file outputs: call generator → write result
     single_file_outputs = [

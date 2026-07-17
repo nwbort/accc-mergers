@@ -123,7 +123,7 @@ def _completed_phase1_outcomes(mergers: list) -> tuple[list[int], list[int]]:
     return referred_days, cleared_days
 
 
-def referral_probability_by_day(mergers: list) -> dict:
+def referral_probability_by_day(mergers: list) -> list[dict]:
     """P(referred to Phase 2 | still undecided at business day N), for each N.
 
     A "survival"-style read of Phase 1 outcomes answering: as a review's clock
@@ -134,17 +134,21 @@ def referral_probability_by_day(mergers: list) -> dict:
     in a referral. It starts at the overall referral rate on day 1 and trends up
     as the quick clearances drop out of the pool.
 
-    The exposed ``referral_probability`` is that raw share passed through a
-    running maximum, so it is **weakly monotonic** (non-decreasing) in the day:
-    the thinning sample can make the raw share dip when a late clearance is still
-    in the pool after a referral has dropped out, but a live merger's referral
-    risk should only ratchet up the longer it sits undecided. The raw pool
-    counts (``still_open``, ``referred``) travel with each point so the estimate
-    stays auditable and its thinning sample is visible.
+    Returns a plain list, one entry per business day from 1 up to the longest
+    completed review::
 
-    Nothing here is written to the published data files — it is kept as a
-    building block for a future per-merger "predicted Phase 2 risk" feature,
-    which would index this curve by an open matter's elapsed business days.
+        [{"business_day": 1, "probability": 0.05}, {"business_day": 2, ...}, ...]
+
+    ``probability`` is the raw share passed through a running maximum, so it is
+    **weakly monotonic** (non-decreasing) in the day: the thinning sample can
+    make the raw share dip when a late clearance is still in the pool after a
+    referral has dropped out, but a live merger's referral risk should only
+    ratchet up the longer it sits undecided.
+
+    Nothing here is served to the frontend — the output lives in the
+    non-deployed ``data/output/`` directory, kept as a building block for a
+    future per-merger "predicted Phase 2 risk" feature that would index this
+    curve by an open matter's elapsed business days.
 
     Measured over completed reviews only, since a still-open matter has no known
     outcome yet. Accepts the full merger list (waivers and in-progress matters
@@ -163,13 +167,7 @@ def referral_probability_by_day(mergers: list) -> dict:
         running_max = max(running_max, referred / still_open)
         points.append({
             "business_day": day,
-            "still_open": still_open,
-            "referred": referred,
-            "referral_probability": round(running_max, 3),
+            "probability": round(running_max, 3),
         })
 
-    return {
-        "points": points,
-        "total_completed": len(all_days),
-        "total_referred": len(referred_days),
-    }
+    return points

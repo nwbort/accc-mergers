@@ -1045,12 +1045,19 @@ def _referral_probability_fixture():
 
 
 class TestReferralProbabilityByDay:
-    def _payload(self):
+    def _points(self):
         enriched = [enrich_merger(m) for m in _referral_probability_fixture()]
         return durations.referral_probability_by_day(enriched)
 
     def _point(self, day):
-        return next(p for p in self._payload()['points'] if p['business_day'] == day)
+        return next(p for p in self._points() if p['business_day'] == day)
+
+    def test_output_is_a_flat_day_probability_list(self):
+        # Just {business_day, probability} per entry — no other keys.
+        points = self._points()
+        assert all(set(p) == {'business_day', 'probability'} for p in points)
+        # Contiguous business days from 1 up to the longest completed review (35 BD).
+        assert [p['business_day'] for p in points] == list(range(1, 36))
 
     def test_not_exposed_in_analysis_payload(self):
         # The curve is a backend building block only — it must not leak into the
@@ -1058,71 +1065,38 @@ class TestReferralProbabilityByDay:
         payload = analysis.generate([enrich_merger(m) for m in _referral_probability_fixture()])
         assert 'referral_probability_by_day' not in payload
 
-    def test_totals_count_only_completed_reviews(self):
-        # Referred durations: 27, 35. Cleared: 9, 18, 23. CD-06 (in progress)
-        # and CD-07 (waiver) are excluded.
-        payload = self._payload()
-        assert payload['total_completed'] == 5
-        assert payload['total_referred'] == 2
-
     def test_day_one_equals_overall_referral_rate(self):
         # Every completed review is "still open" going into day 1: 2 of 5 referred.
-        p1 = self._point(1)
-        assert p1['still_open'] == 5
-        assert p1['referred'] == 2
-        assert p1['referral_probability'] == 0.4
+        # CD-06 (in progress) and CD-07 (waiver) are excluded.
+        assert self._point(1)['probability'] == 0.4
 
     def test_probability_conditions_on_still_open_pool(self):
         # Going into day 19 only 23, 27, 35 remain open (2 of them referred);
         # by day 24 only the two referred matters (27, 35) are left.
-        p19 = self._point(19)
-        assert p19['still_open'] == 3
-        assert p19['referred'] == 2
-        assert p19['referral_probability'] == round(2 / 3, 3)
-        p24 = self._point(24)
-        assert p24['still_open'] == 2
-        assert p24['referred'] == 2
-        assert p24['referral_probability'] == 1.0
+        assert self._point(19)['probability'] == round(2 / 3, 3)
+        assert self._point(24)['probability'] == 1.0
 
     def test_probability_is_weakly_monotonic(self):
-        probs = [p['referral_probability'] for p in self._payload()['points']]
+        probs = [p['probability'] for p in self._points()]
         assert probs == sorted(probs)
 
-    def test_still_open_is_non_increasing_and_bounded_by_max_duration(self):
-        points = self._payload()['points']
-        opens = [p['still_open'] for p in points]
-        assert opens == sorted(opens, reverse=True)
-        # The longest review ran 35 BD, so there is no point past day 35.
-        assert max(p['business_day'] for p in points) == 35
-        assert points[-1]['still_open'] == 1
-
     def test_ratchet_holds_probability_up_when_raw_share_dips(self):
-        # One referred at 18 BD, two cleared at 9 and 27 BD. Raw share peaks at
-        # 1/2 while both the 18 (referred) and 27 (cleared) matters are open,
+        # One referred at 18 BD, two cleared at 9 and 27 BD. The raw share peaks
+        # at 1/2 while both the 18 (referred) and 27 (cleared) matters are open,
         # then the referral drops out at day 19 leaving only a clearance — a raw
         # share of 0. The ratchet must hold the exposed probability at 0.5.
         enriched = [enrich_merger(m) for m in [
-            _phase1_notification('RT-01', '2025-02-14T12:00:00Z'),               # 9 BD, cleared
+            _phase1_notification('RT-01', '2025-02-14T12:00:00Z'),                 # 9 BD, cleared
             _phase1_notification('RT-02', '2025-02-27T12:00:00Z', referred=True),  # 18 BD, referred
-            _phase1_notification('RT-03', '2025-03-13T12:00:00Z'),               # 27 BD, cleared
+            _phase1_notification('RT-03', '2025-03-13T12:00:00Z'),                 # 27 BD, cleared
         ]]
-        points = {p['business_day']: p for p in durations.referral_probability_by_day(enriched)['points']}
-        assert points[18]['referral_probability'] == 0.5
-        tail = points[27]
-        assert tail['still_open'] == 1 and tail['referred'] == 0  # raw share here is 0.0
-        assert tail['referral_probability'] == 0.5                # …but ratcheted up
-
-    def test_referred_count_reconciles_with_stats(self):
-        enriched = [enrich_merger(m) for m in _referral_probability_fixture()]
-        payload = durations.referral_probability_by_day(enriched)
-        stats_payload = stats.generate(enriched)
-        assert payload['total_referred'] == (
-            stats_payload['by_determination'].get(merger_status.REFERRED_TO_PHASE_2, 0)
-        )
+        points = {p['business_day']: p['probability']
+                  for p in durations.referral_probability_by_day(enriched)}
+        assert points[18] == 0.5
+        assert points[27] == 0.5  # raw share is 0 here, but ratcheted up
 
     def test_empty_input(self):
-        payload = durations.referral_probability_by_day([])
-        assert payload == {"points": [], "total_completed": 0, "total_referred": 0}
+        assert durations.referral_probability_by_day([]) == []
 
 
 # ---------------------------------------------------------------------------
