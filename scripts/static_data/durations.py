@@ -128,7 +128,7 @@ def _completed_phase1_outcomes(mergers: list) -> tuple[list[int], list[int]]:
     return referred_days, cleared_days
 
 
-def referral_probability_by_day(mergers: list) -> list[dict]:
+def referral_probability_by_day(mergers: list) -> dict:
     """P(referred to Phase 2 | still undecided at business day N), for each N.
 
     A "survival"-style read of Phase 1 outcomes answering: as a review's clock
@@ -136,19 +136,24 @@ def referral_probability_by_day(mergers: list) -> list[dict]:
     rather than a Phase 1 clearance? For each business day N, among the
     completed reviews still undecided going into day N — those whose Phase 1 ran
     at least N business days — the raw referral share is the fraction that ended
-    in a referral. It starts at the overall referral rate on day 1 and trends up
-    as the quick clearances drop out of the pool.
+    in a referral. Day 0 is the at-notification baseline (the overall referral
+    rate); the curve then trends up as the quick clearances drop out of the pool.
 
-    Returns a plain list, one entry per business day from 1 up to the longest
-    completed review::
+    Returns ``{"probabilities": [...]}`` — one probability per business day,
+    positional so the business day *is* the list index (index 0 = day 0, the
+    baseline), running from day 0 up to the longest completed review::
 
-        [{"business_day": 1, "probability": 0.05}, {"business_day": 2, ...}, ...]
+        {"probabilities": [0.05, 0.05, 0.05, ...]}
 
-    ``probability`` is the raw share passed through a running maximum, so it is
-    **weakly monotonic** (non-decreasing) in the day: the thinning sample can
+    Storing it positionally (rather than as ``{business_day, probability}``
+    objects) drops the repeated keys and makes the future per-merger lookup a
+    plain ``probabilities[elapsed_business_days]``.
+
+    Each probability is the raw share passed through a running maximum, so the
+    series is **weakly monotonic** (non-decreasing): the thinning sample can
     make the raw share dip when a late clearance is still in the pool after a
     referral has dropped out, but a live merger's referral risk should only
-    ratchet up the longer it sits undecided. It is capped at
+    ratchet up the longer it sits undecided. Values are capped at
     :data:`_MAX_REFERRAL_PROBABILITY` (0.99) so the tail — where a handful of
     long referred matters push the raw share to 1.0 — never reads as certainty.
 
@@ -164,17 +169,14 @@ def referral_probability_by_day(mergers: list) -> list[dict]:
     referred_days, cleared_days = _completed_phase1_outcomes(mergers)
     all_days = referred_days + cleared_days
 
-    points = []
+    # Every day from 0 to the longest review has at least that review still
+    # open, so still_open is never 0 in range and the index stays == the day.
+    probabilities = []
     running_max = 0.0
-    for day in range(1, (max(all_days) if all_days else 0) + 1):
+    for day in range(0, (max(all_days) if all_days else -1) + 1):
         still_open = sum(1 for d in all_days if d >= day)
-        if still_open == 0:
-            continue
         referred = sum(1 for d in referred_days if d >= day)
         running_max = max(running_max, referred / still_open)
-        points.append({
-            "business_day": day,
-            "probability": min(round(running_max, 3), _MAX_REFERRAL_PROBABILITY),
-        })
+        probabilities.append(min(round(running_max, 3), _MAX_REFERRAL_PROBABILITY))
 
-    return points
+    return {"probabilities": probabilities}

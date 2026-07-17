@@ -1045,19 +1045,16 @@ def _referral_probability_fixture():
 
 
 class TestReferralProbabilityByDay:
-    def _points(self):
+    def _probs(self):
         enriched = [enrich_merger(m) for m in _referral_probability_fixture()]
-        return durations.referral_probability_by_day(enriched)
+        return durations.referral_probability_by_day(enriched)['probabilities']
 
-    def _point(self, day):
-        return next(p for p in self._points() if p['business_day'] == day)
-
-    def test_output_is_a_flat_day_probability_list(self):
-        # Just {business_day, probability} per entry — no other keys.
-        points = self._points()
-        assert all(set(p) == {'business_day', 'probability'} for p in points)
-        # Contiguous business days from 1 up to the longest completed review (35 BD).
-        assert [p['business_day'] for p in points] == list(range(1, 36))
+    def test_output_is_a_positional_probability_list(self):
+        # One float per business day, index == the business day, from day 0 up to
+        # the longest completed review (35 BD) — so 36 entries, day 0 through 35.
+        probs = self._probs()
+        assert all(isinstance(p, float) for p in probs)
+        assert len(probs) == 36
 
     def test_not_exposed_in_analysis_payload(self):
         # The curve is a backend building block only — it must not leak into the
@@ -1065,24 +1062,27 @@ class TestReferralProbabilityByDay:
         payload = analysis.generate([enrich_merger(m) for m in _referral_probability_fixture()])
         assert 'referral_probability_by_day' not in payload
 
-    def test_day_one_equals_overall_referral_rate(self):
-        # Every completed review is "still open" going into day 1: 2 of 5 referred.
-        # CD-06 (in progress) and CD-07 (waiver) are excluded.
-        assert self._point(1)['probability'] == 0.4
+    def test_day_zero_and_one_equal_overall_referral_rate(self):
+        # Every completed review is "still open" going into day 0/1: 2 of 5
+        # referred. CD-06 (in progress) and CD-07 (waiver) are excluded.
+        probs = self._probs()
+        assert probs[0] == 0.4
+        assert probs[1] == 0.4
 
     def test_probability_conditions_on_still_open_pool(self):
         # Going into day 19 only 23, 27, 35 remain open (2 of them referred);
         # by day 24 only the two referred matters (27, 35) are left — a raw share
         # of 1.0, clamped to the 0.99 ceiling.
-        assert self._point(19)['probability'] == round(2 / 3, 3)
-        assert self._point(24)['probability'] == 0.99
+        probs = self._probs()
+        assert probs[19] == round(2 / 3, 3)
+        assert probs[24] == 0.99
 
     def test_probability_is_weakly_monotonic(self):
-        probs = [p['probability'] for p in self._points()]
+        probs = self._probs()
         assert probs == sorted(probs)
 
     def test_probability_is_capped_at_99_percent(self):
-        assert max(p['probability'] for p in self._points()) == 0.99
+        assert max(self._probs()) == 0.99
 
     def test_ratchet_holds_probability_up_when_raw_share_dips(self):
         # One referred at 18 BD, two cleared at 9 and 27 BD. The raw share peaks
@@ -1094,13 +1094,12 @@ class TestReferralProbabilityByDay:
             _phase1_notification('RT-02', '2025-02-27T12:00:00Z', referred=True),  # 18 BD, referred
             _phase1_notification('RT-03', '2025-03-13T12:00:00Z'),                 # 27 BD, cleared
         ]]
-        points = {p['business_day']: p['probability']
-                  for p in durations.referral_probability_by_day(enriched)}
-        assert points[18] == 0.5
-        assert points[27] == 0.5  # raw share is 0 here, but ratcheted up
+        probs = durations.referral_probability_by_day(enriched)['probabilities']
+        assert probs[18] == 0.5
+        assert probs[27] == 0.5  # raw share is 0 here, but ratcheted up
 
     def test_empty_input(self):
-        assert durations.referral_probability_by_day([]) == []
+        assert durations.referral_probability_by_day([]) == {"probabilities": []}
 
 
 # ---------------------------------------------------------------------------
