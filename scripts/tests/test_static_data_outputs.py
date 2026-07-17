@@ -1542,6 +1542,39 @@ class TestUpcomingEventsGenerate:
             "determination_publication_date is missing"
         )
 
+    def test_excludes_stale_determination_due_after_phase_2_referral(self):
+        # MN-05013: the ACCC issued a Phase 2 notice while
+        # end_of_determination_period still held the Phase 1 deadline a few
+        # days out. The dashboard must not show a "determination due" event
+        # for the superseded Phase 1 date.
+        from datetime import datetime, timedelta, timezone
+        now = datetime.now(timezone.utc)
+        referral = now.strftime('%Y-%m-%dT12:00:00Z')
+        stale_phase_1_end = (now + timedelta(days=6)).strftime('%Y-%m-%dT12:00:00Z')
+        merger = {
+            'merger_id': 'MN-9998',
+            'merger_name': 'Referred to Phase 2 with stale Phase 1 deadline',
+            'status': 'Under assessment',
+            'accc_determination': None,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2026-05-12T12:00:00Z',
+            'determination_publication_date': None,
+            'end_of_determination_period': stale_phase_1_end,
+            'page_modified_datetime': '2026-01-01T12:00:00Z',
+            'anzsic_codes': [],
+            'acquirers': [],
+            'targets': [],
+            'other_parties': [],
+            'url': 'https://example.com/MN-9998',
+            'events': [{'title': 'Some Merger - Phase 2 Notice', 'date': referral}],
+        }
+        enriched = [enrich_merger(merger)]
+        payload = upcoming_events.generate(enriched, days_ahead=60)
+        assert not any(e['merger_id'] == 'MN-9998' for e in payload['events']), (
+            "Phase 1 deadline superseded by a Phase 2 referral should not "
+            "produce a determination due event"
+        )
+
 
 # ---------------------------------------------------------------------------
 # questionnaires

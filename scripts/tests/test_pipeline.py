@@ -1711,6 +1711,46 @@ class TestEnrichMerger:
             'Peter Warren - Wakeling Automotive - Phase 2 Notice'
         ) is True
 
+    def test_drops_stale_phase_1_period_end_after_referral(self):
+        # MN-05013: the register issued the Phase 2 notice while
+        # end_of_determination_period still held the Phase 1 deadline six days
+        # later — the superseded Phase 1 date must not survive enrichment.
+        m = self._base_merger()
+        m['accc_determination'] = None
+        m['determination_publication_date'] = None
+        m['stage'] = 'Phase 1 - initial assessment'
+        m['end_of_determination_period'] = '2026-07-23T12:00:00Z'
+        m['events'] = [
+            {'title': 'Some Merger - Phase 2 Notice', 'date': '2026-07-17T12:00:00Z'}
+        ]
+        result = enrich_merger(m)
+        assert result['end_of_determination_period'] is None
+
+    def test_keeps_genuine_phase_2_period_end(self):
+        # Once the register publishes the real Phase 2 date (~90 BDs after the
+        # referral, MN-01072's actual dates) it must pass through untouched.
+        m = self._base_merger()
+        m['accc_determination'] = None
+        m['determination_publication_date'] = None
+        m['stage'] = 'Phase 2 - detailed assessment'
+        m['end_of_determination_period'] = '2026-11-10T12:00:00Z'
+        m['events'] = [
+            {'title': 'Decision to Proceed to a Phase 2 review', 'date': '2026-07-02T12:00:00Z'}
+        ]
+        result = enrich_merger(m)
+        assert result['end_of_determination_period'] == '2026-11-10T12:00:00Z'
+
+    def test_keeps_period_end_without_referral(self):
+        # A Phase 1 matter with no referral event keeps its deadline.
+        m = self._base_merger()
+        m['accc_determination'] = None
+        m['determination_publication_date'] = None
+        m['stage'] = 'Phase 1 - initial assessment'
+        m['end_of_determination_period'] = '2026-07-23T12:00:00Z'
+        m['events'] = [{'title': 'Merger notified to ACCC', 'date': '2026-05-12T12:00:00Z'}]
+        result = enrich_merger(m)
+        assert result['end_of_determination_period'] == '2026-07-23T12:00:00Z'
+
     def test_infers_phase_2_when_stage_lags(self):
         # ACCC issued a Phase 2 notice but the register's stage still says
         # Phase 1 — treat the merger as Phase 2 and flag the inference.
