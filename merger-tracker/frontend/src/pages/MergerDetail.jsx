@@ -9,6 +9,7 @@ import TrackButton from '../components/TrackButton';
 import WaiverBadge from '../components/WaiverBadge';
 import AppealBadge from '../components/AppealBadge';
 import BusinessDayProgress from '../components/BusinessDayProgress';
+import Phase2OddsReveal from '../components/Phase2OddsReveal';
 import { getBusinessDayProgress } from '../utils/businessDayProgress';
 import SEO from '../components/SEO';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
@@ -301,12 +302,14 @@ function MergerDetail() {
             <div className="flex flex-col items-end gap-2 flex-shrink-0">
               <div className="flex items-center gap-2 flex-wrap justify-end">
                 {merger.under_appeal && <AppealBadge />}
-                <StatusBadge
-                  status={merger.status}
-                  determination={merger.accc_determination}
-                  hasConditions={merger.has_conditions}
-                  appeal={merger.appeal}
-                />
+                <Phase2OddsReveal merger={merger}>
+                  <StatusBadge
+                    status={merger.status}
+                    determination={merger.accc_determination}
+                    hasConditions={merger.has_conditions}
+                    appeal={merger.appeal}
+                  />
+                </Phase2OddsReveal>
               </div>
               <TrackButton
                 active={tracked}
