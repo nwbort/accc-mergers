@@ -4,6 +4,8 @@
 All downstream generators consume the already-enriched objects.
 """
 
+from datetime import timedelta
+
 from constants import merger_status, tribunal
 from cutoff import is_waiver_merger
 from date_utils import parse_iso_datetime
@@ -144,10 +146,12 @@ def enrich_merger(
     pb_det_date = None
 
     # Check events for Phase 2 review decision (indicates Phase 1 completion)
+    phase_2_referral_date = None
     for event in m.get('events', []):
         if is_phase_2_referral_event(event.get('title', '')):
             phase_1_det = merger_status.REFERRED_TO_PHASE_2
             phase_1_det_date = event.get('date')
+            phase_2_referral_date = event.get('date')
             break
 
     if m.get('accc_determination') and m.get('determination_publication_date'):
@@ -179,6 +183,38 @@ def enrich_merger(
                 m['ceased_date'] = event.get('date')
                 event['is_determination_event'] = True
                 break
+
+    # Derive the Phase 2 end_of_determination_period after a referral.
+    # The register issues the referral notice before refreshing the date
+    # field, which meanwhile still holds the superseded Phase 1 deadline
+    # (e.g. MN-05013), so the site would keep advertising a determination
+    # due date that no longer exists. A genuine Phase 2 period ends ~90
+    # business days after the referral while the leftover Phase 1 date sits
+    # within days of it, so a period end before BD 45 of Phase 2 can only be
+    # the stale Phase 1 date. That stale date pins down the real Phase 2
+    # deadline: the Phase 2 clock runs for 90 business days counted from the
+    # first business day after the Phase 1 determination was *due* — not
+    # from the referral, which may land a few days early (verified against
+    # MN-01072/MN-90009/MN-30002, whose published Phase 2 ends all equal
+    # BD 90 from the day after their Phase 1 due dates). The derived value
+    # is superseded once the register publishes its own Phase 2 date, which
+    # also folds in any Phase 2 extensions.
+    if phase_2_referral_date and m.get('end_of_determination_period'):
+        try:
+            referral_dt = parse_iso_datetime(phase_2_referral_date)
+            period_end_dt = parse_iso_datetime(m['end_of_determination_period'])
+            if referral_dt is not None and period_end_dt is not None:
+                referral_dt = referral_dt.replace(tzinfo=None)
+                period_end_dt = period_end_dt.replace(tzinfo=None)
+                if period_end_dt < add_business_days(referral_dt, 45):
+                    # add_business_days treats the first business day on or
+                    # after its start as BD 1, so starting from the day after
+                    # the Phase 1 due date lands BD 90 of Phase 2.
+                    phase_2_end = add_business_days(period_end_dt + timedelta(days=1), 90)
+                    m['end_of_determination_period'] = phase_2_end.strftime('%Y-%m-%dT12:00:00Z')
+                    m['end_of_determination_period_derived'] = True
+        except (ValueError, AttributeError):
+            pass
 
     # Compute competition concerns notice date for Phase 2 mergers
     # The notice is due by BD 25 of Phase 2 (Phase 2 BD 1 = end_of_determination_period - 90 BDs)
