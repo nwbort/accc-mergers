@@ -77,7 +77,7 @@ function Analysis() {
   if (error) return <ErrorMessage error={error} />;
   if (!data) return null;
 
-  const { phase1_duration, waiver_duration, monthly_volume, industry_phase1_duration, clearance_by_duration } = data;
+  const { phase1_duration, waiver_duration, monthly_volume, industry_phase1_duration, referral_probability_by_day } = data;
   const phase1Stats = calendarDays ? phase1_duration.calendar_stats : phase1_duration.stats;
   const waiverStats = calendarDays ? waiver_duration.calendar_stats : waiver_duration.stats;
 
@@ -416,34 +416,50 @@ function Analysis() {
     },
   };
 
-  // --- Phase 1 outcome by review length ---
-  // Always measured in business days: the framing is the 30-business-day Phase 1
-  // statutory clock, so this chart ignores the calendar/business toggle above.
-  const clearanceBuckets = clearance_by_duration?.buckets || [];
-  const clearanceHasReferrals = clearanceBuckets.some(b => b.referred > 0);
-  const REFERRED_COLOR = THEME_HEXES.phase2Referral;
+  // --- Referral probability by business day ---
+  // "Given a review is still undecided at business day N, how likely is it to
+  //  end in a Phase 2 referral?" Always in business days (the Phase 1 statutory
+  //  clock is 30 business days), so this chart ignores the calendar toggle.
+  // The tail is trimmed once fewer than REFERRAL_PROB_MIN_SAMPLE reviews remain
+  // open, so a 100%-off-a-handful tail doesn't read as certainty.
+  const REFERRAL_PROB_MIN_SAMPLE = 5;
+  const referralProbAll = referral_probability_by_day?.points || [];
+  const referralProbPoints = referralProbAll.filter(p => p.still_open >= REFERRAL_PROB_MIN_SAMPLE);
+  const referralProbTrimmed = referralProbAll.length - referralProbPoints.length;
+  const referralProbMaxX = referralProbPoints.length > 0
+    ? Math.max(referralProbPoints[referralProbPoints.length - 1].business_day, 30) + 1
+    : 30;
 
-  const clearanceData = {
-    labels: clearanceBuckets.map(b => b.label),
+  const referralProbData = {
     datasets: [
       {
-        label: 'Cleared in phase 1',
-        data: clearanceBuckets.map(b => b.cleared),
-        backgroundColor: COLORS.primary,
-        borderRadius: 4,
-        maxBarThickness: 56,
+        label: 'BD 30 deadline',
+        data: [{ x: 30, y: 0 }, { x: 30, y: 100 }],
+        borderColor: COLORS.accent,
+        borderDash: [6, 4],
+        borderWidth: 1.5,
+        pointRadius: 0,
+        showLine: true,
       },
       {
-        label: 'Referred to phase 2',
-        data: clearanceBuckets.map(b => b.referred),
-        backgroundColor: REFERRED_COLOR,
-        borderRadius: 4,
-        maxBarThickness: 56,
+        label: 'P(referred to phase 2)',
+        data: referralProbPoints.map(p => ({
+          x: p.business_day,
+          y: Math.round(p.referral_probability * 1000) / 10,
+          still_open: p.still_open,
+          referred: p.referred,
+        })),
+        borderColor: THEME_HEXES.phase2Referral,
+        backgroundColor: THEME_HEXES.phase2Referral,
+        borderWidth: 2,
+        pointRadius: 0,
+        pointHoverRadius: 5,
+        showLine: true,
       },
     ],
   };
 
-  const clearanceOptions = {
+  const referralProbOptions = {
     responsive: true,
     maintainAspectRatio: false,
     animation: false,
@@ -452,54 +468,48 @@ function Analysis() {
         position: 'bottom',
         labels: {
           usePointStyle: true,
-          pointStyle: 'rectRounded',
           padding: 16,
           font: { size: 12, family: 'Inter, sans-serif' },
         },
       },
       tooltip: {
         callbacks: {
-          afterBody: (items) => {
-            const bucket = clearanceBuckets[items[0].dataIndex];
-            if (!bucket || bucket.total === 0) return '';
-            const pct = Math.round((bucket.referral_rate ?? 0) * 100);
-            return `Referred to phase 2: ${pct}% (${bucket.referred} of ${bucket.total})`;
+          label: (item) => {
+            if (item.dataset.label !== 'P(referred to phase 2)') return item.dataset.label;
+            const { x, y, still_open, referred } = item.raw;
+            return `Still open at BD ${x}: ${y}% referred (${referred} of ${still_open})`;
           },
         },
       },
     },
     scales: {
       x: {
-        stacked: true,
-        grid: { display: false },
-        ticks: { font: { size: 11 } },
+        type: 'linear',
+        min: 0,
+        max: referralProbMaxX,
         title: {
           display: true,
-          text: 'Phase 1 duration (business days)',
+          text: 'Business day of review (still undecided)',
           font: { size: 12, family: 'Inter, sans-serif' },
           color: '#6b7280',
         },
+        grid: { color: 'rgba(0,0,0,0.04)' },
+        ticks: { font: { size: 11 } },
       },
       y: {
-        stacked: true,
-        beginAtZero: true,
-        ticks: { precision: 0, font: { size: 11 } },
-        grid: { color: 'rgba(0,0,0,0.04)' },
+        min: 0,
+        max: 100,
         title: {
           display: true,
-          text: 'Completed reviews',
+          text: 'Probability of phase 2 referral',
           font: { size: 12, family: 'Inter, sans-serif' },
           color: '#6b7280',
         },
+        grid: { color: 'rgba(0,0,0,0.04)' },
+        ticks: { font: { size: 11 }, callback: (value) => `${value}%` },
       },
     },
   };
-
-  const clearedMedian = clearance_by_duration?.cleared?.median_business_days;
-  const referredMedian = clearance_by_duration?.referred?.median_business_days;
-  const overallReferralPct = clearance_by_duration?.overall_referral_rate != null
-    ? Math.round(clearance_by_duration.overall_referral_rate * 100)
-    : null;
 
   return (
     <>
@@ -664,63 +674,51 @@ function Analysis() {
           </section>
         )}
 
-        {/* Phase 1 outcome by review length */}
-        {clearanceBuckets.length > 0 && clearance_by_duration.total_completed > 0 && (
+        {/* Referral probability by business day */}
+        {referralProbPoints.length > 0 && (
           <section className="mb-8">
             <div className={`${CARD} overflow-hidden`}>
               <div className="px-6 py-5 border-b border-gray-100">
-                <h2 id="chart-clearance-title" className="text-lg font-semibold text-gray-900">
-                  Clearance vs phase 2 referral, by review length
+                <h2 id="chart-referral-prob-title" className="text-lg font-semibold text-gray-900">
+                  Phase 2 referral risk as the clock runs
                 </h2>
                 <p className="text-sm text-gray-500 mt-0.5">
-                  Completed phase 1 reviews grouped by how long they ran, split between matters cleared in phase 1 and matters referred to phase 2.
+                  For a review still undecided at a given business day, the share of comparable past reviews that went on to a phase 2 referral rather than a phase 1 clearance.
                 </p>
               </div>
               <div className="p-6">
-                {(clearedMedian != null || overallReferralPct != null) && (
-                  <p className="text-sm text-gray-600 mb-4">
-                    Reviews cleared in phase 1 conclude in a median of{' '}
-                    <span className="font-semibold text-gray-900">{clearedMedian} business days</span>
-                    {referredMedian != null && (
-                      <>
-                        , while those referred to phase 2 run to a median of{' '}
-                        <span className="font-semibold text-gray-900">{referredMedian} business days</span>
-                      </>
-                    )}
-                    . Overall,{' '}
-                    <span className="font-semibold text-gray-900">{overallReferralPct}%</span>{' '}
-                    of the {clearance_by_duration.total_completed} completed reviews were referred — but that risk is concentrated in the reviews that run to the end of the 30-business-day statutory clock and beyond.
-                  </p>
-                )}
+                <p className="text-sm text-gray-600 mb-4">
+                  Most reviews clear early, so a merger still under assessment late in the clock is increasingly one of the harder cases. Referral risk sits near{' '}
+                  <span className="font-semibold text-gray-900">
+                    {Math.round((referral_probability_by_day.total_referred / referral_probability_by_day.total_completed) * 100)}%
+                  </span>{' '}
+                  at the start, but rises sharply through the back half of the 30-business-day statutory clock. Read the curve as "if it's day N and there's still no decision, this share of similar reviews ended in phase 2".
+                </p>
                 <div
                   className="h-80"
                   role="img"
-                  aria-labelledby="chart-clearance-title"
-                  aria-describedby="chart-clearance-summary"
+                  aria-labelledby="chart-referral-prob-title"
+                  aria-describedby="chart-referral-prob-summary"
                 >
-                  <Bar data={clearanceData} options={clearanceOptions} />
+                  <Scatter data={referralProbData} options={referralProbOptions} />
                 </div>
                 <div className="sr-only">
-                  <table id="chart-clearance-summary">
-                    <caption>Phase 1 outcome by review length in business days</caption>
-                    <thead><tr><th>Duration</th><th>Cleared in phase 1</th><th>Referred to phase 2</th><th>Referral rate</th></tr></thead>
+                  <table id="chart-referral-prob-summary">
+                    <caption>Probability of a phase 2 referral given the review is still undecided at each business day</caption>
+                    <thead><tr><th>Business day</th><th>Referral probability</th><th>Reviews still open</th></tr></thead>
                     <tbody>
-                      {clearanceBuckets.map(b => (
-                        <tr key={b.label}>
-                          <td>{b.label}</td>
-                          <td>{b.cleared}</td>
-                          <td>{b.referred}</td>
-                          <td>{b.total > 0 ? `${Math.round((b.referral_rate ?? 0) * 100)}%` : 'n/a'}</td>
+                      {referralProbPoints.map(p => (
+                        <tr key={p.business_day}>
+                          <td>{p.business_day}</td>
+                          <td>{Math.round(p.referral_probability * 1000) / 10}%</td>
+                          <td>{p.referred} of {p.still_open}</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
                 </div>
                 <p className="text-xs text-gray-500 mt-3">
-                  A referral to phase 2 is decided at the end of the phase 1 clock, so referred matters have longer phase 1 durations by construction. The pattern still shows that clearances land well before the deadline, while reviews still open near or past day 30 are increasingly likely to be referred.
-                  {clearanceHasReferrals && clearance_by_duration.referred?.count != null && (
-                    <> Phase 2 referrals remain rare ({clearance_by_duration.referred.count} to date), so bucket rates are based on small numbers.</>
-                  )}
+                  Based on {referral_probability_by_day.total_completed} completed phase 1 reviews ({referral_probability_by_day.total_referred} referred to phase 2). Each point is conditional on the review still being undecided going into that business day. Phase 2 referrals are still rare, so these are early estimates{referralProbTrimmed > 0 && <>; the curve stops once fewer than {REFERRAL_PROB_MIN_SAMPLE} reviews remain open</>}.
                 </p>
               </div>
             </div>

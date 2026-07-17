@@ -2325,46 +2325,423 @@
       "referred": 0
     }
   ],
-  "clearance_by_duration": {
-    "buckets": [
+  "referral_probability_by_day": {
+    "points": [
       {
-        "label": "\u226420 BD",
-        "cleared": 109,
-        "referred": 0,
-        "total": 109,
-        "referral_rate": 0.0
+        "business_day": 1,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
       },
       {
-        "label": "21\u201325 BD",
+        "business_day": 2,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 3,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 4,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 5,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 6,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 7,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 8,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 9,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 10,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 11,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 12,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 13,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 14,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 15,
+        "still_open": 139,
+        "referred": 7,
+        "cleared": 132,
+        "referral_probability": 0.05
+      },
+      {
+        "business_day": 16,
+        "still_open": 103,
+        "referred": 7,
+        "cleared": 96,
+        "referral_probability": 0.068
+      },
+      {
+        "business_day": 17,
+        "still_open": 77,
+        "referred": 7,
+        "cleared": 70,
+        "referral_probability": 0.091
+      },
+      {
+        "business_day": 18,
+        "still_open": 61,
+        "referred": 7,
+        "cleared": 54,
+        "referral_probability": 0.115
+      },
+      {
+        "business_day": 19,
+        "still_open": 46,
+        "referred": 7,
+        "cleared": 39,
+        "referral_probability": 0.152
+      },
+      {
+        "business_day": 20,
+        "still_open": 36,
+        "referred": 7,
+        "cleared": 29,
+        "referral_probability": 0.194
+      },
+      {
+        "business_day": 21,
+        "still_open": 30,
+        "referred": 7,
+        "cleared": 23,
+        "referral_probability": 0.233
+      },
+      {
+        "business_day": 22,
+        "still_open": 27,
+        "referred": 7,
+        "cleared": 20,
+        "referral_probability": 0.259
+      },
+      {
+        "business_day": 23,
+        "still_open": 22,
+        "referred": 7,
+        "cleared": 15,
+        "referral_probability": 0.318
+      },
+      {
+        "business_day": 24,
+        "still_open": 22,
+        "referred": 7,
+        "cleared": 15,
+        "referral_probability": 0.318
+      },
+      {
+        "business_day": 25,
+        "still_open": 20,
+        "referred": 7,
         "cleared": 13,
-        "referred": 0,
-        "total": 13,
-        "referral_rate": 0.0
+        "referral_probability": 0.35
       },
       {
-        "label": "26\u201330 BD",
-        "cleared": 8,
-        "referred": 3,
-        "total": 11,
-        "referral_rate": 0.273
+        "business_day": 26,
+        "still_open": 17,
+        "referred": 7,
+        "cleared": 10,
+        "referral_probability": 0.412
       },
       {
-        "label": ">30 BD",
+        "business_day": 27,
+        "still_open": 16,
+        "referred": 7,
+        "cleared": 9,
+        "referral_probability": 0.438
+      },
+      {
+        "business_day": 28,
+        "still_open": 13,
+        "referred": 6,
+        "cleared": 7,
+        "referral_probability": 0.462
+      },
+      {
+        "business_day": 29,
+        "still_open": 8,
+        "referred": 6,
         "cleared": 2,
+        "referral_probability": 0.75
+      },
+      {
+        "business_day": 30,
+        "still_open": 7,
+        "referred": 5,
+        "cleared": 2,
+        "referral_probability": 0.714
+      },
+      {
+        "business_day": 31,
+        "still_open": 6,
         "referred": 4,
-        "total": 6,
-        "referral_rate": 0.667
+        "cleared": 2,
+        "referral_probability": 0.667
+      },
+      {
+        "business_day": 32,
+        "still_open": 6,
+        "referred": 4,
+        "cleared": 2,
+        "referral_probability": 0.667
+      },
+      {
+        "business_day": 33,
+        "still_open": 6,
+        "referred": 4,
+        "cleared": 2,
+        "referral_probability": 0.667
+      },
+      {
+        "business_day": 34,
+        "still_open": 5,
+        "referred": 4,
+        "cleared": 1,
+        "referral_probability": 0.8
+      },
+      {
+        "business_day": 35,
+        "still_open": 5,
+        "referred": 4,
+        "cleared": 1,
+        "referral_probability": 0.8
+      },
+      {
+        "business_day": 36,
+        "still_open": 5,
+        "referred": 4,
+        "cleared": 1,
+        "referral_probability": 0.8
+      },
+      {
+        "business_day": 37,
+        "still_open": 4,
+        "referred": 4,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 38,
+        "still_open": 4,
+        "referred": 4,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 39,
+        "still_open": 4,
+        "referred": 4,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 40,
+        "still_open": 4,
+        "referred": 4,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 41,
+        "still_open": 4,
+        "referred": 4,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 42,
+        "still_open": 4,
+        "referred": 4,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 43,
+        "still_open": 4,
+        "referred": 4,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 44,
+        "still_open": 4,
+        "referred": 4,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 45,
+        "still_open": 4,
+        "referred": 4,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 46,
+        "still_open": 4,
+        "referred": 4,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 47,
+        "still_open": 3,
+        "referred": 3,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 48,
+        "still_open": 3,
+        "referred": 3,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 49,
+        "still_open": 3,
+        "referred": 3,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 50,
+        "still_open": 3,
+        "referred": 3,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 51,
+        "still_open": 3,
+        "referred": 3,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 52,
+        "still_open": 3,
+        "referred": 3,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 53,
+        "still_open": 2,
+        "referred": 2,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 54,
+        "still_open": 2,
+        "referred": 2,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 55,
+        "still_open": 2,
+        "referred": 2,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 56,
+        "still_open": 2,
+        "referred": 2,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 57,
+        "still_open": 2,
+        "referred": 2,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 58,
+        "still_open": 2,
+        "referred": 2,
+        "cleared": 0,
+        "referral_probability": 1.0
+      },
+      {
+        "business_day": 59,
+        "still_open": 1,
+        "referred": 1,
+        "cleared": 0,
+        "referral_probability": 1.0
       }
     ],
-    "cleared": {
-      "count": 132,
-      "median_business_days": 17.0
-    },
-    "referred": {
-      "count": 7,
-      "median_business_days": 46
-    },
     "total_completed": 139,
-    "overall_referral_rate": 0.05
+    "total_referred": 7
   }
 }

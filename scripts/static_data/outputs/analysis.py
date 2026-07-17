@@ -422,44 +422,20 @@ def referrals_by_quarter(notification_mergers: list) -> list[dict]:
     ]
 
 
-# Business-day cut points for the "outcome by review length" analysis, keyed to
-# the 30-business-day Phase 1 statutory clock: comfortably inside the clock, its
-# back half, its final stretch, and beyond the standard window (an extended
-# clock). ``max`` of ``None`` is the open-ended top bucket.
-CLEARANCE_DURATION_BUCKETS = [
-    {"label": "≤20 BD", "min": 0, "max": 20},
-    {"label": "21–25 BD", "min": 21, "max": 25},
-    {"label": "26–30 BD", "min": 26, "max": 30},
-    {"label": ">30 BD", "min": 31, "max": None},
-]
+def _completed_phase1_durations(notification_mergers: list) -> tuple[list[int], list[int]]:
+    """``(referred_business_days, cleared_business_days)`` for completed reviews.
 
-
-def clearance_by_duration(notification_mergers: list) -> dict:
-    """Phase 1 clearance vs Phase 2 referral, grouped by how long the review ran.
-
-    For every completed Phase 1 notification — one that reached a Phase 1
-    outcome — measures the business days from notification to the Phase 1 end
+    A completed Phase 1 review is a notification that reached a Phase 1 outcome.
+    Each is measured from notification to the Phase 1 end
     (:func:`phase_1_end_date`: the referral date for referred matters, the
-    determination date for cleared ones) and drops it into a duration bucket.
-    Within each bucket the split between matters cleared in Phase 1 and matters
-    referred to Phase 2 gives the conditional referral rate by review length —
-    the answer to "how likely is a Phase 1 to be cleared, given how long it is
-    taking".
-
-    Matters still in Phase 1 (no outcome yet) are excluded. So are the rare
+    determination date for cleared ones — so the Phase 2 clock never inflates a
+    referred matter's duration) and sorted into the referred or cleared list.
+    Matters still in Phase 1 (no outcome yet) are skipped, as are the rare
     outcomes that are neither a clearance nor a referral (Phase 1 does not block
-    a merger — a block only follows a Phase 2 referral), so ``cleared`` and
-    ``referred`` are the only two categories and together make each bucket
-    total. Referrals are measured to the referral date and so are never inflated
-    by the Phase 2 clock.
+    a merger — a block only follows a Phase 2 referral).
     """
-    buckets = [
-        {"label": b["label"], "min": b["min"], "max": b["max"], "cleared": 0, "referred": 0}
-        for b in CLEARANCE_DURATION_BUCKETS
-    ]
-    cleared_days = []
-    referred_days = []
-
+    referred_days: list[int] = []
+    cleared_days: list[int] = []
     for m in notification_mergers:
         det = m.get('phase_1_determination')
         start = m.get('effective_notification_datetime')
@@ -472,39 +448,47 @@ def clearance_by_duration(notification_mergers: list) -> dict:
         bus_days = calculate_business_days(start, end)
         if bus_days is None:
             continue
-
-        for bucket in buckets:
-            if bus_days >= bucket["min"] and (bucket["max"] is None or bus_days <= bucket["max"]):
-                bucket["referred" if is_referred else "cleared"] += 1
-                break
         (referred_days if is_referred else cleared_days).append(bus_days)
+    return referred_days, cleared_days
 
-    bucket_rows = []
-    for bucket in buckets:
-        total = bucket["cleared"] + bucket["referred"]
-        bucket_rows.append({
-            "label": bucket["label"],
-            "cleared": bucket["cleared"],
-            "referred": bucket["referred"],
-            "total": total,
-            "referral_rate": round(bucket["referred"] / total, 3) if total else None,
+
+def referral_probability_by_day(notification_mergers: list) -> dict:
+    """P(referred to Phase 2 | still undecided at business day N), for each N.
+
+    A "survival"-style read of Phase 1 outcomes answering: as a review's clock
+    runs on without a decision, how likely is it to end in a Phase 2 referral
+    rather than a Phase 1 clearance? For each business day N, among the
+    completed reviews still undecided going into day N — those whose Phase 1 ran
+    at least N business days — ``referral_probability`` is the share that ended
+    in a referral. It starts at the overall referral rate on day 1 and climbs as
+    the quick clearances drop out of the pool.
+
+    Measured over completed reviews only, since a still-open matter has no known
+    outcome yet; ``still_open`` is reported alongside each point so the
+    thinning sample in the tail is visible. Referrals are measured to the
+    referral date (see :func:`_completed_phase1_durations`).
+    """
+    referred_days, cleared_days = _completed_phase1_durations(notification_mergers)
+    all_days = referred_days + cleared_days
+
+    points = []
+    for day in range(1, (max(all_days) if all_days else 0) + 1):
+        still_open = sum(1 for d in all_days if d >= day)
+        if still_open == 0:
+            continue
+        referred = sum(1 for d in referred_days if d >= day)
+        points.append({
+            "business_day": day,
+            "still_open": still_open,
+            "referred": referred,
+            "cleared": still_open - referred,
+            "referral_probability": round(referred / still_open, 3),
         })
 
-    total_completed = len(cleared_days) + len(referred_days)
     return {
-        "buckets": bucket_rows,
-        "cleared": {
-            "count": len(cleared_days),
-            "median_business_days": stat_median(cleared_days) if cleared_days else None,
-        },
-        "referred": {
-            "count": len(referred_days),
-            "median_business_days": stat_median(referred_days) if referred_days else None,
-        },
-        "total_completed": total_completed,
-        "overall_referral_rate": (
-            round(len(referred_days) / total_completed, 3) if total_completed else None
-        ),
+        "points": points,
+        "total_completed": len(all_days),
+        "total_referred": len(referred_days),
     }
 
 
@@ -651,5 +635,5 @@ def generate(mergers: list) -> dict:
         "restart_rate": restart_rate,
         "outcomes_by_division": outcomes_by_division(notification_mergers),
         "referrals_by_quarter": referrals_by_quarter(notification_mergers),
-        "clearance_by_duration": clearance_by_duration(notification_mergers),
+        "referral_probability_by_day": referral_probability_by_day(notification_mergers),
     }

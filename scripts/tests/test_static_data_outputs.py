@@ -566,7 +566,7 @@ class TestAnalysisGenerate:
             'by_commission_division',
             'deadline_utilisation', 'notification_restarts', 'restart_rate',
             'outcomes_by_division', 'referrals_by_quarter',
-            'clearance_by_duration',
+            'referral_probability_by_day',
         }
         assert 'durations' in payload['phase1_duration']
         assert 'durations' in payload['waiver_duration']
@@ -967,21 +967,21 @@ class TestReferralsByQuarter:
 
 
 # ---------------------------------------------------------------------------
-# analysis.clearance_by_duration
+# analysis.referral_probability_by_day
 # ---------------------------------------------------------------------------
 
 def _clearance_by_duration_fixture():
     """Completed and in-progress Phase 1 notifications with controlled durations.
 
-    All notified 2025-02-03; end dates chosen so the business-day duration lands
-    in a known bucket (see the ``bd`` comments):
+    All notified 2025-02-03; end dates chosen for a known business-day duration
+    (see the ``bd`` comments):
 
-    - CD-01 cleared, 9 BD  → ≤20 BD bucket
-    - CD-02 cleared, 18 BD → ≤20 BD bucket
-    - CD-03 cleared, 23 BD → 21–25 BD bucket
-    - CD-04 referred, 27 BD → 26–30 BD bucket
-    - CD-05 referred, 35 BD → >30 BD bucket (an extended clock)
-    - CD-06 in progress (no outcome) — excluded from every bucket
+    - CD-01 cleared, 9 BD
+    - CD-02 cleared, 18 BD
+    - CD-03 cleared, 23 BD
+    - CD-04 referred, 27 BD
+    - CD-05 referred, 35 BD
+    - CD-06 in progress (no outcome) — excluded (no known outcome yet)
     - CD-07 waiver — excluded entirely
     """
     def notif(mid, det_date, referred=False):
@@ -1042,66 +1042,62 @@ def _clearance_by_duration_fixture():
     ]
 
 
-class TestClearanceByDuration:
+class TestReferralProbabilityByDay:
     def _payload(self):
         enriched = [enrich_merger(m) for m in _clearance_by_duration_fixture()]
-        return analysis.generate(enriched)['clearance_by_duration']
+        return analysis.generate(enriched)['referral_probability_by_day']
 
-    def test_bucket_counts_split_cleared_and_referred(self):
-        buckets = {b['label']: b for b in self._payload()['buckets']}
-        assert buckets['≤20 BD']['cleared'] == 2
-        assert buckets['≤20 BD']['referred'] == 0
-        assert buckets['21–25 BD']['cleared'] == 1
-        assert buckets['21–25 BD']['referred'] == 0
-        assert buckets['26–30 BD']['cleared'] == 0
-        assert buckets['26–30 BD']['referred'] == 1
-        assert buckets['>30 BD']['cleared'] == 0
-        assert buckets['>30 BD']['referred'] == 1
+    def _point(self, day):
+        return next(p for p in self._payload()['points'] if p['business_day'] == day)
 
-    def test_all_four_buckets_present_in_order(self):
-        labels = [b['label'] for b in self._payload()['buckets']]
-        assert labels == ['≤20 BD', '21–25 BD', '26–30 BD', '>30 BD']
-
-    def test_referral_rate_per_bucket(self):
-        buckets = {b['label']: b for b in self._payload()['buckets']}
-        assert buckets['≤20 BD']['referral_rate'] == 0.0
-        assert buckets['26–30 BD']['referral_rate'] == 1.0
-        # An empty bucket reports None rather than dividing by zero.
-        assert all(
-            b['referral_rate'] is None or b['total'] > 0
-            for b in self._payload()['buckets']
-        )
-
-    def test_medians_and_totals(self):
+    def test_totals_count_only_completed_reviews(self):
+        # Referred durations: 27, 35. Cleared: 9, 18, 23. CD-06 (in progress)
+        # and CD-07 (waiver) are excluded.
         payload = self._payload()
-        # Cleared durations: 9, 18, 23 → median 18. Referred: 27, 35 → median 31.
-        assert payload['cleared']['count'] == 3
-        assert payload['cleared']['median_business_days'] == 18
-        assert payload['referred']['count'] == 2
-        assert payload['referred']['median_business_days'] == 31
         assert payload['total_completed'] == 5
-        assert payload['overall_referral_rate'] == 0.4
+        assert payload['total_referred'] == 2
 
-    def test_excludes_in_progress_and_waivers(self):
-        # CD-06 (in progress) and CD-07 (waiver) contribute to no bucket, so the
-        # five completed notifications are the only matters counted.
-        payload = self._payload()
-        assert sum(b['total'] for b in payload['buckets']) == 5
+    def test_day_one_equals_overall_referral_rate(self):
+        # Every completed review is "still open" going into day 1: 2 of 5 referred.
+        p1 = self._point(1)
+        assert p1['still_open'] == 5
+        assert p1['referred'] == 2
+        assert p1['referral_probability'] == 0.4
+
+    def test_probability_conditions_on_still_open_pool(self):
+        # Going into day 19 only 23, 27, 35 remain open (2 of them referred);
+        # by day 24 only the two referred matters (27, 35) are left.
+        p19 = self._point(19)
+        assert p19['still_open'] == 3
+        assert p19['referred'] == 2
+        assert p19['referral_probability'] == round(2 / 3, 3)
+        p24 = self._point(24)
+        assert p24['still_open'] == 2
+        assert p24['referred'] == 2
+        assert p24['referral_probability'] == 1.0
+
+    def test_cleared_plus_referred_equals_still_open(self):
+        assert all(p['cleared'] + p['referred'] == p['still_open'] for p in self._payload()['points'])
+
+    def test_still_open_is_non_increasing_and_bounded_by_max_duration(self):
+        points = self._payload()['points']
+        opens = [p['still_open'] for p in points]
+        assert opens == sorted(opens, reverse=True)
+        # The longest review ran 35 BD, so there is no point past day 35.
+        assert max(p['business_day'] for p in points) == 35
+        assert points[-1]['still_open'] == 1
 
     def test_referred_count_reconciles_with_stats(self):
         enriched = [enrich_merger(m) for m in _clearance_by_duration_fixture()]
-        analysis_payload = analysis.generate(enriched)['clearance_by_duration']
+        analysis_payload = analysis.generate(enriched)['referral_probability_by_day']
         stats_payload = stats.generate(enriched)
-        assert analysis_payload['referred']['count'] == (
+        assert analysis_payload['total_referred'] == (
             stats_payload['by_determination'].get(merger_status.REFERRED_TO_PHASE_2, 0)
         )
 
     def test_empty_input(self):
-        payload = analysis.clearance_by_duration([])
-        assert payload['total_completed'] == 0
-        assert payload['overall_referral_rate'] is None
-        assert payload['cleared']['median_business_days'] is None
-        assert all(b['total'] == 0 for b in payload['buckets'])
+        payload = analysis.referral_probability_by_day([])
+        assert payload == {"points": [], "total_completed": 0, "total_referred": 0}
 
 
 # ---------------------------------------------------------------------------
