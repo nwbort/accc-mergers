@@ -1542,11 +1542,13 @@ class TestUpcomingEventsGenerate:
             "determination_publication_date is missing"
         )
 
-    def test_excludes_stale_determination_due_after_phase_2_referral(self):
+    def test_replaces_stale_determination_due_after_phase_2_referral(self):
         # MN-05013: the ACCC issued a Phase 2 notice while
         # end_of_determination_period still held the Phase 1 deadline a few
         # days out. The dashboard must not show a "determination due" event
-        # for the superseded Phase 1 date.
+        # for the superseded Phase 1 date — instead the deadline is derived
+        # as 90 business days after the Phase 1 due date, which also yields
+        # a NOCC due event at BD 25 of Phase 2.
         from datetime import datetime, timedelta, timezone
         now = datetime.now(timezone.utc)
         referral = now.strftime('%Y-%m-%dT12:00:00Z')
@@ -1569,11 +1571,25 @@ class TestUpcomingEventsGenerate:
             'events': [{'title': 'Some Merger - Phase 2 Notice', 'date': referral}],
         }
         enriched = [enrich_merger(merger)]
-        payload = upcoming_events.generate(enriched, days_ahead=60)
-        assert not any(e['merger_id'] == 'MN-9998' for e in payload['events']), (
-            "Phase 1 deadline superseded by a Phase 2 referral should not "
-            "produce a determination due event"
+        assert enriched[0]['end_of_determination_period_derived'] is True
+        derived_end = enriched[0]['end_of_determination_period']
+        assert derived_end != stale_phase_1_end
+
+        # days_ahead wide enough to always cover BD 90 (~4.5-6 months out).
+        payload = upcoming_events.generate(enriched, days_ahead=250)
+        det_dates = [
+            e['date'] for e in payload['events']
+            if e['merger_id'] == 'MN-9998' and e['type'] == 'determination_due'
+        ]
+        assert det_dates == [derived_end], (
+            "Determination due should use the derived Phase 2 deadline, not "
+            "the superseded Phase 1 date"
         )
+        nocc_events = [
+            e for e in payload['events']
+            if e['merger_id'] == 'MN-9998' and e['type'] == 'notice_of_competition_concerns'
+        ]
+        assert len(nocc_events) == 1
 
 
 # ---------------------------------------------------------------------------

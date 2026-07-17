@@ -1711,10 +1711,13 @@ class TestEnrichMerger:
             'Peter Warren - Wakeling Automotive - Phase 2 Notice'
         ) is True
 
-    def test_drops_stale_phase_1_period_end_after_referral(self):
+    def test_derives_phase_2_period_end_after_referral(self):
         # MN-05013: the register issued the Phase 2 notice while
         # end_of_determination_period still held the Phase 1 deadline six days
-        # later — the superseded Phase 1 date must not survive enrichment.
+        # later. The Phase 2 clock runs 90 business days from the day after
+        # the Phase 1 due date (23 Jul 2026 → BD 1 is 24 Jul, BD 90 is
+        # 27 Nov after ACT holidays), regardless of the referral landing a
+        # few days before the Phase 1 deadline.
         m = self._base_merger()
         m['accc_determination'] = None
         m['determination_publication_date'] = None
@@ -1724,7 +1727,8 @@ class TestEnrichMerger:
             {'title': 'Some Merger - Phase 2 Notice', 'date': '2026-07-17T12:00:00Z'}
         ]
         result = enrich_merger(m)
-        assert result['end_of_determination_period'] is None
+        assert result['end_of_determination_period'] == '2026-11-27T12:00:00Z'
+        assert result['end_of_determination_period_derived'] is True
 
     def test_keeps_genuine_phase_2_period_end(self):
         # Once the register publishes the real Phase 2 date (~90 BDs after the
@@ -1739,6 +1743,7 @@ class TestEnrichMerger:
         ]
         result = enrich_merger(m)
         assert result['end_of_determination_period'] == '2026-11-10T12:00:00Z'
+        assert 'end_of_determination_period_derived' not in result
 
     def test_keeps_period_end_without_referral(self):
         # A Phase 1 matter with no referral event keeps its deadline.
@@ -1750,6 +1755,7 @@ class TestEnrichMerger:
         m['events'] = [{'title': 'Merger notified to ACCC', 'date': '2026-05-12T12:00:00Z'}]
         result = enrich_merger(m)
         assert result['end_of_determination_period'] == '2026-07-23T12:00:00Z'
+        assert 'end_of_determination_period_derived' not in result
 
     def test_infers_phase_2_when_stage_lags(self):
         # ACCC issued a Phase 2 notice but the register's stage still says
