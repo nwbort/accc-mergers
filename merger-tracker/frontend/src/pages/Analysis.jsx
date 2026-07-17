@@ -18,7 +18,7 @@ import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { industryPath } from '../utils/slug';
-import { CHART_PALETTE as COLORS, THEME_HEXES } from '../constants/chartColors';
+import { CHART_PALETTE as COLORS } from '../constants/chartColors';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 
 ChartJS.register(
@@ -77,7 +77,7 @@ function Analysis() {
   if (error) return <ErrorMessage error={error} />;
   if (!data) return null;
 
-  const { phase1_duration, waiver_duration, monthly_volume, industry_phase1_duration, referral_probability_by_day } = data;
+  const { phase1_duration, waiver_duration, monthly_volume, industry_phase1_duration } = data;
   const phase1Stats = calendarDays ? phase1_duration.calendar_stats : phase1_duration.stats;
   const waiverStats = calendarDays ? waiver_duration.calendar_stats : waiver_duration.stats;
 
@@ -416,101 +416,6 @@ function Analysis() {
     },
   };
 
-  // --- Referral probability by business day ---
-  // "Given a review is still undecided at business day N, how likely is it to
-  //  end in a Phase 2 referral?" Always in business days (the Phase 1 statutory
-  //  clock is 30 business days), so this chart ignores the calendar toggle.
-  // The tail is trimmed once fewer than REFERRAL_PROB_MIN_SAMPLE reviews remain
-  // open, so a 100%-off-a-handful tail doesn't read as certainty.
-  const REFERRAL_PROB_MIN_SAMPLE = 5;
-  const referralProbAll = referral_probability_by_day?.points || [];
-  const referralProbPoints = referralProbAll.filter(p => p.still_open >= REFERRAL_PROB_MIN_SAMPLE);
-  const referralProbTrimmed = referralProbAll.length - referralProbPoints.length;
-  const referralProbMaxX = referralProbPoints.length > 0
-    ? Math.max(referralProbPoints[referralProbPoints.length - 1].business_day, 30) + 1
-    : 30;
-
-  const referralProbData = {
-    datasets: [
-      {
-        label: 'BD 30 deadline',
-        data: [{ x: 30, y: 0 }, { x: 30, y: 100 }],
-        borderColor: COLORS.accent,
-        borderDash: [6, 4],
-        borderWidth: 1.5,
-        pointRadius: 0,
-        showLine: true,
-      },
-      {
-        label: 'P(referred to phase 2)',
-        data: referralProbPoints.map(p => ({
-          x: p.business_day,
-          y: Math.round(p.referral_probability * 1000) / 10,
-          still_open: p.still_open,
-          referred: p.referred,
-        })),
-        borderColor: THEME_HEXES.phase2Referral,
-        backgroundColor: THEME_HEXES.phase2Referral,
-        borderWidth: 2,
-        pointRadius: 0,
-        pointHoverRadius: 5,
-        showLine: true,
-      },
-    ],
-  };
-
-  const referralProbOptions = {
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: false,
-    plugins: {
-      legend: {
-        position: 'bottom',
-        labels: {
-          usePointStyle: true,
-          padding: 16,
-          font: { size: 12, family: 'Inter, sans-serif' },
-        },
-      },
-      tooltip: {
-        callbacks: {
-          label: (item) => {
-            if (item.dataset.label !== 'P(referred to phase 2)') return item.dataset.label;
-            const { x, y, still_open, referred } = item.raw;
-            return `Still open at BD ${x}: ${y}% referred (${referred} of ${still_open})`;
-          },
-        },
-      },
-    },
-    scales: {
-      x: {
-        type: 'linear',
-        min: 0,
-        max: referralProbMaxX,
-        title: {
-          display: true,
-          text: 'Business day of review (still undecided)',
-          font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
-        },
-        grid: { color: 'rgba(0,0,0,0.04)' },
-        ticks: { font: { size: 11 } },
-      },
-      y: {
-        min: 0,
-        max: 100,
-        title: {
-          display: true,
-          text: 'Probability of phase 2 referral',
-          font: { size: 12, family: 'Inter, sans-serif' },
-          color: '#6b7280',
-        },
-        grid: { color: 'rgba(0,0,0,0.04)' },
-        ticks: { font: { size: 11 }, callback: (value) => `${value}%` },
-      },
-    },
-  };
-
   return (
     <>
       <SEO
@@ -669,57 +574,6 @@ function Analysis() {
                     </tbody>
                   </table>
                 </div>
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Referral probability by business day */}
-        {referralProbPoints.length > 0 && (
-          <section className="mb-8">
-            <div className={`${CARD} overflow-hidden`}>
-              <div className="px-6 py-5 border-b border-gray-100">
-                <h2 id="chart-referral-prob-title" className="text-lg font-semibold text-gray-900">
-                  Phase 2 referral risk as the clock runs
-                </h2>
-                <p className="text-sm text-gray-500 mt-0.5">
-                  For a review still undecided at a given business day, the share of comparable past reviews that went on to a phase 2 referral rather than a phase 1 clearance.
-                </p>
-              </div>
-              <div className="p-6">
-                <p className="text-sm text-gray-600 mb-4">
-                  Most reviews clear early, so a merger still under assessment late in the clock is increasingly one of the harder cases. Referral risk sits near{' '}
-                  <span className="font-semibold text-gray-900">
-                    {Math.round((referral_probability_by_day.total_referred / referral_probability_by_day.total_completed) * 100)}%
-                  </span>{' '}
-                  at the start, but rises sharply through the back half of the 30-business-day statutory clock. Read the curve as "if it's day N and there's still no decision, this share of similar reviews ended in phase 2".
-                </p>
-                <div
-                  className="h-80"
-                  role="img"
-                  aria-labelledby="chart-referral-prob-title"
-                  aria-describedby="chart-referral-prob-summary"
-                >
-                  <Scatter data={referralProbData} options={referralProbOptions} />
-                </div>
-                <div className="sr-only">
-                  <table id="chart-referral-prob-summary">
-                    <caption>Probability of a phase 2 referral given the review is still undecided at each business day</caption>
-                    <thead><tr><th>Business day</th><th>Referral probability</th><th>Reviews still open</th></tr></thead>
-                    <tbody>
-                      {referralProbPoints.map(p => (
-                        <tr key={p.business_day}>
-                          <td>{p.business_day}</td>
-                          <td>{Math.round(p.referral_probability * 1000) / 10}%</td>
-                          <td>{p.referred} of {p.still_open}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                <p className="text-xs text-gray-500 mt-3">
-                  Based on {referral_probability_by_day.total_completed} completed phase 1 reviews ({referral_probability_by_day.total_referred} referred to phase 2). Each point is conditional on the review still being undecided going into that business day. Phase 2 referrals are still rare, so these are early estimates{referralProbTrimmed > 0 && <>; the curve stops once fewer than {REFERRAL_PROB_MIN_SAMPLE} reviews remain open</>}.
-                </p>
               </div>
             </div>
           </section>

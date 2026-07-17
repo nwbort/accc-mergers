@@ -18,7 +18,7 @@ sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
 from constants import merger_status
-from static_data import anzsic
+from static_data import anzsic, durations
 from static_data.enrichment import enrich_merger
 from static_data.outputs import (
     analysis,
@@ -566,7 +566,6 @@ class TestAnalysisGenerate:
             'by_commission_division',
             'deadline_utilisation', 'notification_restarts', 'restart_rate',
             'outcomes_by_division', 'referrals_by_quarter',
-            'referral_probability_by_day',
         }
         assert 'durations' in payload['phase1_duration']
         assert 'durations' in payload['waiver_duration']
@@ -967,14 +966,38 @@ class TestReferralsByQuarter:
 
 
 # ---------------------------------------------------------------------------
-# analysis.referral_probability_by_day
+# durations.referral_probability_by_day (not exposed in any output file)
 # ---------------------------------------------------------------------------
 
-def _clearance_by_duration_fixture():
-    """Completed and in-progress Phase 1 notifications with controlled durations.
+def _phase1_notification(mid, det_date, referred=False):
+    """A completed Phase 1 notification notified 2025-02-03, deciding on
+    ``det_date`` — a referral to Phase 2 if ``referred``, otherwise an approval.
+    """
+    events = [{'title': 'Merger notified to ACCC', 'date': '2025-02-03T09:00:00Z'}]
+    if referred:
+        events.append({'title': 'Decision to Proceed to a Phase 2 review', 'date': det_date})
+    else:
+        events.append({'title': 'Phase 1 - Determination', 'date': det_date})
+    return {
+        'merger_id': mid,
+        'merger_name': mid,
+        'status': 'Under assessment' if referred else 'Determined',
+        'accc_determination': None if referred else 'Approved',
+        'stage': 'Phase 2 - detailed assessment' if referred else 'Phase 1 - preliminary assessment',
+        'effective_notification_datetime': '2025-02-03T09:00:00Z',
+        'determination_publication_date': None if referred else det_date,
+        'page_modified_datetime': det_date,
+        'anzsic_codes': [{'code': '0600', 'name': 'Coal Mining'}],
+        'acquirers': ['A'], 'targets': ['B'], 'other_parties': [],
+        'url': f'https://example.com/{mid}',
+        'events': events,
+    }
 
-    All notified 2025-02-03; end dates chosen for a known business-day duration
-    (see the ``bd`` comments):
+
+def _referral_probability_fixture():
+    """Completed and excluded Phase 1 matters with controlled durations.
+
+    All notified 2025-02-03; end dates chosen for a known business-day duration:
 
     - CD-01 cleared, 9 BD
     - CD-02 cleared, 18 BD
@@ -984,33 +1007,12 @@ def _clearance_by_duration_fixture():
     - CD-06 in progress (no outcome) — excluded (no known outcome yet)
     - CD-07 waiver — excluded entirely
     """
-    def notif(mid, det_date, referred=False):
-        events = [{'title': 'Merger notified to ACCC', 'date': '2025-02-03T09:00:00Z'}]
-        if referred:
-            events.append({'title': 'Decision to Proceed to a Phase 2 review', 'date': det_date})
-        else:
-            events.append({'title': 'Phase 1 - Determination', 'date': det_date})
-        return {
-            'merger_id': mid,
-            'merger_name': mid,
-            'status': 'Under assessment' if referred else 'Determined',
-            'accc_determination': None if referred else 'Approved',
-            'stage': 'Phase 2 - detailed assessment' if referred else 'Phase 1 - preliminary assessment',
-            'effective_notification_datetime': '2025-02-03T09:00:00Z',
-            'determination_publication_date': None if referred else det_date,
-            'page_modified_datetime': det_date,
-            'anzsic_codes': [{'code': '0600', 'name': 'Coal Mining'}],
-            'acquirers': ['A'], 'targets': ['B'], 'other_parties': [],
-            'url': f'https://example.com/{mid}',
-            'events': events,
-        }
-
     return [
-        notif('CD-01', '2025-02-14T12:00:00Z'),              # 9 BD, cleared
-        notif('CD-02', '2025-02-27T12:00:00Z'),              # 18 BD, cleared
-        notif('CD-03', '2025-03-06T12:00:00Z'),              # 23 BD, cleared
-        notif('CD-04', '2025-03-13T12:00:00Z', referred=True),  # 27 BD, referred
-        notif('CD-05', '2025-03-25T12:00:00Z', referred=True),  # 35 BD, referred
+        _phase1_notification('CD-01', '2025-02-14T12:00:00Z'),              # 9 BD, cleared
+        _phase1_notification('CD-02', '2025-02-27T12:00:00Z'),              # 18 BD, cleared
+        _phase1_notification('CD-03', '2025-03-06T12:00:00Z'),              # 23 BD, cleared
+        _phase1_notification('CD-04', '2025-03-13T12:00:00Z', referred=True),  # 27 BD, referred
+        _phase1_notification('CD-05', '2025-03-25T12:00:00Z', referred=True),  # 35 BD, referred
         {
             'merger_id': 'CD-06',
             'merger_name': 'In progress',
@@ -1044,11 +1046,17 @@ def _clearance_by_duration_fixture():
 
 class TestReferralProbabilityByDay:
     def _payload(self):
-        enriched = [enrich_merger(m) for m in _clearance_by_duration_fixture()]
-        return analysis.generate(enriched)['referral_probability_by_day']
+        enriched = [enrich_merger(m) for m in _referral_probability_fixture()]
+        return durations.referral_probability_by_day(enriched)
 
     def _point(self, day):
         return next(p for p in self._payload()['points'] if p['business_day'] == day)
+
+    def test_not_exposed_in_analysis_payload(self):
+        # The curve is a backend building block only — it must not leak into the
+        # published analysis.json.
+        payload = analysis.generate([enrich_merger(m) for m in _referral_probability_fixture()])
+        assert 'referral_probability_by_day' not in payload
 
     def test_totals_count_only_completed_reviews(self):
         # Referred durations: 27, 35. Cleared: 9, 18, 23. CD-06 (in progress)
@@ -1076,8 +1084,9 @@ class TestReferralProbabilityByDay:
         assert p24['referred'] == 2
         assert p24['referral_probability'] == 1.0
 
-    def test_cleared_plus_referred_equals_still_open(self):
-        assert all(p['cleared'] + p['referred'] == p['still_open'] for p in self._payload()['points'])
+    def test_probability_is_weakly_monotonic(self):
+        probs = [p['referral_probability'] for p in self._payload()['points']]
+        assert probs == sorted(probs)
 
     def test_still_open_is_non_increasing_and_bounded_by_max_duration(self):
         points = self._payload()['points']
@@ -1087,16 +1096,32 @@ class TestReferralProbabilityByDay:
         assert max(p['business_day'] for p in points) == 35
         assert points[-1]['still_open'] == 1
 
+    def test_ratchet_holds_probability_up_when_raw_share_dips(self):
+        # One referred at 18 BD, two cleared at 9 and 27 BD. Raw share peaks at
+        # 1/2 while both the 18 (referred) and 27 (cleared) matters are open,
+        # then the referral drops out at day 19 leaving only a clearance — a raw
+        # share of 0. The ratchet must hold the exposed probability at 0.5.
+        enriched = [enrich_merger(m) for m in [
+            _phase1_notification('RT-01', '2025-02-14T12:00:00Z'),               # 9 BD, cleared
+            _phase1_notification('RT-02', '2025-02-27T12:00:00Z', referred=True),  # 18 BD, referred
+            _phase1_notification('RT-03', '2025-03-13T12:00:00Z'),               # 27 BD, cleared
+        ]]
+        points = {p['business_day']: p for p in durations.referral_probability_by_day(enriched)['points']}
+        assert points[18]['referral_probability'] == 0.5
+        tail = points[27]
+        assert tail['still_open'] == 1 and tail['referred'] == 0  # raw share here is 0.0
+        assert tail['referral_probability'] == 0.5                # …but ratcheted up
+
     def test_referred_count_reconciles_with_stats(self):
-        enriched = [enrich_merger(m) for m in _clearance_by_duration_fixture()]
-        analysis_payload = analysis.generate(enriched)['referral_probability_by_day']
+        enriched = [enrich_merger(m) for m in _referral_probability_fixture()]
+        payload = durations.referral_probability_by_day(enriched)
         stats_payload = stats.generate(enriched)
-        assert analysis_payload['total_referred'] == (
+        assert payload['total_referred'] == (
             stats_payload['by_determination'].get(merger_status.REFERRED_TO_PHASE_2, 0)
         )
 
     def test_empty_input(self):
-        payload = analysis.referral_probability_by_day([])
+        payload = durations.referral_probability_by_day([])
         assert payload == {"points": [], "total_completed": 0, "total_referred": 0}
 
 

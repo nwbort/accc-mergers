@@ -422,76 +422,6 @@ def referrals_by_quarter(notification_mergers: list) -> list[dict]:
     ]
 
 
-def _completed_phase1_durations(notification_mergers: list) -> tuple[list[int], list[int]]:
-    """``(referred_business_days, cleared_business_days)`` for completed reviews.
-
-    A completed Phase 1 review is a notification that reached a Phase 1 outcome.
-    Each is measured from notification to the Phase 1 end
-    (:func:`phase_1_end_date`: the referral date for referred matters, the
-    determination date for cleared ones — so the Phase 2 clock never inflates a
-    referred matter's duration) and sorted into the referred or cleared list.
-    Matters still in Phase 1 (no outcome yet) are skipped, as are the rare
-    outcomes that are neither a clearance nor a referral (Phase 1 does not block
-    a merger — a block only follows a Phase 2 referral).
-    """
-    referred_days: list[int] = []
-    cleared_days: list[int] = []
-    for m in notification_mergers:
-        det = m.get('phase_1_determination')
-        start = m.get('effective_notification_datetime')
-        end = phase_1_end_date(m)
-        if not det or not start or not end:
-            continue
-        is_referred = det == merger_status.REFERRED_TO_PHASE_2
-        if not is_referred and det not in merger_status.CLEARED_DETERMINATIONS:
-            continue
-        bus_days = calculate_business_days(start, end)
-        if bus_days is None:
-            continue
-        (referred_days if is_referred else cleared_days).append(bus_days)
-    return referred_days, cleared_days
-
-
-def referral_probability_by_day(notification_mergers: list) -> dict:
-    """P(referred to Phase 2 | still undecided at business day N), for each N.
-
-    A "survival"-style read of Phase 1 outcomes answering: as a review's clock
-    runs on without a decision, how likely is it to end in a Phase 2 referral
-    rather than a Phase 1 clearance? For each business day N, among the
-    completed reviews still undecided going into day N — those whose Phase 1 ran
-    at least N business days — ``referral_probability`` is the share that ended
-    in a referral. It starts at the overall referral rate on day 1 and climbs as
-    the quick clearances drop out of the pool.
-
-    Measured over completed reviews only, since a still-open matter has no known
-    outcome yet; ``still_open`` is reported alongside each point so the
-    thinning sample in the tail is visible. Referrals are measured to the
-    referral date (see :func:`_completed_phase1_durations`).
-    """
-    referred_days, cleared_days = _completed_phase1_durations(notification_mergers)
-    all_days = referred_days + cleared_days
-
-    points = []
-    for day in range(1, (max(all_days) if all_days else 0) + 1):
-        still_open = sum(1 for d in all_days if d >= day)
-        if still_open == 0:
-            continue
-        referred = sum(1 for d in referred_days if d >= day)
-        points.append({
-            "business_day": day,
-            "still_open": still_open,
-            "referred": referred,
-            "cleared": still_open - referred,
-            "referral_probability": round(referred / still_open, 3),
-        })
-
-    return {
-        "points": points,
-        "total_completed": len(all_days),
-        "total_referred": len(referred_days),
-    }
-
-
 def generate(mergers: list) -> dict:
     """Return the analysis.json payload for pre-enriched mergers."""
     notification_mergers = filter_notifications(mergers)
@@ -635,5 +565,4 @@ def generate(mergers: list) -> dict:
         "restart_rate": restart_rate,
         "outcomes_by_division": outcomes_by_division(notification_mergers),
         "referrals_by_quarter": referrals_by_quarter(notification_mergers),
-        "referral_probability_by_day": referral_probability_by_day(notification_mergers),
     }
