@@ -1,0 +1,41 @@
+{
+  "id": "pm-fresh-pty-ltd",
+  "canonical_name": "Pm Fresh Pty Ltd",
+  "members": [
+    {
+      "name": "PM FRESH PTY LTD",
+      "identifier": "80 122 180 929",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "WA-95031",
+        "merger_name": "IFM Fiduciary \u2013 PM Fresh",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-06-30T12:00:00Z",
+        "determination_date": "2026-07-17T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 17.0,
+    "median_days": 17,
+    "average_business_days": 13.0,
+    "median_business_days": 13,
+    "completed_count": 1
+  }
+}

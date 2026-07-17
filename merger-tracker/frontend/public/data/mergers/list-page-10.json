@@ -1,6 +1,54 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-20017",
+      "merger_name": "Amplifon \u2013 GN Hearing",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-13T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-24T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Amplifon S.p.A.",
+          "identifier_type": null,
+          "identifier": "Company registration no. 04923960159",
+          "party_page": {
+            "id": "amplifon-s-p-a",
+            "name": "Amplifon S.p.A."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "GN Hearing A/S",
+          "identifier_type": null,
+          "identifier": "(CVR) no. 55 08 27 15",
+          "party_page": {
+            "id": "gn-hearing-a-s",
+            "name": "GN Hearing A/S"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3491",
+          "name": "Professional and Scientific Goods Wholesaling"
+        },
+        {
+          "code": "8539",
+          "name": "Other Allied Health Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/amplifon-%E2%80%93-gn-hearing"
+    },
+    {
       "merger_id": "MN-90028",
       "merger_name": "Peter Warren - Wakeling Automotive",
       "status": "Under assessment",

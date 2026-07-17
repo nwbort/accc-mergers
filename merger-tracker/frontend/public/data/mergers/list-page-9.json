@@ -2631,8 +2631,12 @@
           "name": "Apollo Capital Management, L.P.",
           "identifier_type": null,
           "identifier": "Registration No. 4293091",
+          "canonical": {
+            "id": "apollo-capital-management-l-p",
+            "name": "Apollo Capital Management, L.P."
+          },
           "party_page": {
-            "id": "apollo-capital-management-l-p-2",
+            "id": "apollo-capital-management-l-p",
             "name": "Apollo Capital Management, L.P."
           }
         }
@@ -2786,6 +2790,73 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/centuria-property-funds-no-2-limited-as-the-responsible-entity-of-centuria-sydney-cbd-prime-office-fund-680-george-st50-goulburn-st"
+    },
+    {
+      "merger_id": "WA-95031",
+      "merger_name": "IFM Fiduciary \u2013 PM Fresh",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-06-30T12:00:00Z",
+      "determination_publication_date": "2026-07-17T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust",
+          "identifier_type": "ABN",
+          "identifier": "52 135 450 618",
+          "party_page": {
+            "id": "ifm-fiduciary-pty-ltd-as-trustee-for-the-sscf-soa8-holding-trust",
+            "name": "IFM FIDUCIARY PTY LTD as trustee for the SSCF SOA8 Holding Trust"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "TESSWATT INVESTMENTS PTY LTD as trustee for the Tesswatt Investment Trust",
+          "identifier_type": "ACN",
+          "identifier": "630 498 823",
+          "party_page": {
+            "id": "tesswatt-investments-pty-ltd-as-trustee-for-the-tesswatt-investment-trust",
+            "name": "TESSWATT INVESTMENTS PTY LTD as trustee for the Tesswatt Investment Trust"
+          }
+        },
+        {
+          "name": "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)",
+          "identifier_type": "ABN",
+          "identifier": "95 631 463 664",
+          "party_page": {
+            "id": "salads-of-australia-pty-limited-receivers-managers-appointed-administrators-appo",
+            "name": "SALADS OF AUSTRALIA PTY LIMITED (Receivers & Managers Appointed) (Administrators Appointed)"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "PM FRESH PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "80 122 180 929",
+          "party_page": {
+            "id": "pm-fresh-pty-ltd",
+            "name": "Pm Fresh Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1140",
+          "name": "Fruit and Vegetable Processing"
+        },
+        {
+          "code": "1199",
+          "name": "Other Food Product Manufacturing n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/ifm-fiduciary-%E2%80%93-pm-fresh"
     },
     {
       "merger_id": "MN-35018",
@@ -3961,54 +4032,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/origin-%E2%80%93-climatech-zero"
-    },
-    {
-      "merger_id": "MN-20017",
-      "merger_name": "Amplifon \u2013 GN Hearing",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-13T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-24T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Amplifon S.p.A.",
-          "identifier_type": null,
-          "identifier": "Company registration no. 04923960159",
-          "party_page": {
-            "id": "amplifon-s-p-a",
-            "name": "Amplifon S.p.A."
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "GN Hearing A/S",
-          "identifier_type": null,
-          "identifier": "(CVR) no. 55 08 27 15",
-          "party_page": {
-            "id": "gn-hearing-a-s",
-            "name": "GN Hearing A/S"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3491",
-          "name": "Professional and Scientific Goods Wholesaling"
-        },
-        {
-          "code": "8539",
-          "name": "Other Allied Health Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/amplifon-%E2%80%93-gn-hearing"
     }
   ],
   "page": 9,

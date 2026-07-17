@@ -1,6 +1,6 @@
 {
   "total_mergers": 180,
-  "total_waivers": 277,
+  "total_waivers": 278,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 263,
+    "Approved": 264,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.595667870036102,
-    "median_days": 18,
-    "average_business_days": 12.379061371841155,
-    "median_business_days": 12
+    "average_days": 18.58992805755396,
+    "median_days": 18.0,
+    "average_business_days": 12.381294964028777,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -206,6 +206,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-95031",
+      "merger_name": "IFM Fiduciary \u2013 PM Fresh",
+      "determination": "Approved",
+      "determination_date": "2026-07-17T12:00:00Z",
+      "page_modified_datetime": "2026-07-17T16:39:37+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-15029",
       "merger_name": "National Dental Care \u2013 business assets comprising the BDF Dental clinic, Beaudesert, Queensland",
       "determination": "Approved",
@@ -311,16 +321,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-16T12:00:00Z",
       "page_modified_datetime": "2026-07-16T16:05:08+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-40027",
-      "merger_name": "Sika AG - Akkim",
-      "determination": "Approved",
-      "determination_date": "2026-07-16T12:00:00Z",
-      "page_modified_datetime": "2026-07-16T11:11:32+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
