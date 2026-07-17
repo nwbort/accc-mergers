@@ -189,10 +189,15 @@ function MergerDetail() {
     : null;
   const determinationDocUrl = statementOfReasonsEvent?.url_gh ?? determinationEvent?.url_gh;
 
-  // The document that initiated the appeal (e.g. the Application for
-  // Review) — the first filed document on the tribunal matter — is what the
-  // appeal card links to, rather than the tribunal matter page itself.
-  const appealDocument = merger.appeal?.documents?.[0];
+  // The appeal card links to the Application for Review — the document that
+  // initiated the appeal — rather than the tribunal matter page itself.
+  // Tribunal document lists aren't reliably date-sorted, so match on the
+  // document's title/description instead of assuming a fixed position;
+  // fall back to the last-listed document, which is where it typically sits.
+  const appealDocuments = merger.appeal?.documents;
+  const appealDocument = appealDocuments?.find(doc =>
+    doc.description?.toLowerCase().includes('application for review')
+  ) ?? appealDocuments?.[appealDocuments.length - 1];
   const appealDocumentUrl = appealDocument?.url_gh ?? appealDocument?.url ?? merger.appeal?.tribunal_url;
 
   const siteUrl = 'https://mergers.fyi';
