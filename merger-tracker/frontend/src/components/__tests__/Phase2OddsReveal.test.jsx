@@ -84,6 +84,29 @@ describe('Phase2OddsReveal', () => {
     expect(screen.queryByText('42%')).not.toBeInTheDocument();
   });
 
+  it('stays silent (no placeholder) when the curve fails to load', async () => {
+    // No cache seed + a fetch that rejects → useFetchData surfaces an error.
+    dataCache.clear(CACHE_KEY);
+    const fetchSpy = vi
+      .spyOn(globalThis, 'fetch')
+      .mockRejectedValue(new Error('network down'));
+
+    renderBadge(phase1Merger);
+
+    // Let the rejected fetch settle into error state.
+    await act(async () => {
+      await vi.runAllTimersAsync();
+    });
+
+    fireEvent.mouseDown(screen.getByTestId('badge'));
+    act(() => vi.advanceTimersByTime(450));
+
+    expect(screen.queryByText('42%')).not.toBeInTheDocument();
+    expect(screen.queryByText('estimating…')).not.toBeInTheDocument();
+
+    fetchSpy.mockRestore();
+  });
+
   it('stays inert for a waiver', () => {
     renderBadge({ ...phase1Merger, is_waiver: true, stage: 'Waiver application' });
 

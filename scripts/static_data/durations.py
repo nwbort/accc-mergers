@@ -157,10 +157,10 @@ def referral_probability_by_day(mergers: list) -> dict:
     :data:`_MAX_REFERRAL_PROBABILITY` (0.99) so the tail — where a handful of
     long referred matters push the raw share to 1.0 — never reads as certainty.
 
-    The result is published to ``referral-probability-by-day.json`` but is not
-    consumed by the frontend yet — it is a building block for a future
-    per-merger "predicted Phase 2 risk" feature that would index this curve by
-    an open matter's elapsed business days.
+    The result is published to ``referral-probability-by-day.json`` and read by
+    the frontend's per-merger "predicted Phase 2 risk" reveal, which indexes
+    this curve by an open matter's elapsed business days
+    (``probabilities[elapsed_business_days]``).
 
     Measured over completed reviews only, since a still-open matter has no known
     outcome yet. Accepts the full merger list (waivers and in-progress matters

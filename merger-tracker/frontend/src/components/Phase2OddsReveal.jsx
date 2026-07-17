@@ -32,7 +32,7 @@ function Phase2OddsReveal({ merger, children }) {
 
   // Only fetch the curve when the badge could actually reveal it — a falsy URL
   // pauses useFetchData, so ineligible matters make no network request.
-  const { data } = useFetchData(
+  const { data, error } = useFetchData(
     eligible ? API_ENDPOINTS.referralProbabilityByDay : null,
     { cacheKey: 'referral-probability-by-day' }
   );
@@ -83,7 +83,9 @@ function Phase2OddsReveal({ merger, children }) {
       onContextMenu={(e) => e.preventDefault()}
     >
       {children}
-      {revealed && (
+      {/* If the curve failed to load, stay silent rather than showing the
+          "estimating…" placeholder forever. */}
+      {revealed && !error && (
         <span
           role="status"
           className="absolute right-0 top-full mt-2 z-30 w-48 rounded-xl border border-amber-200/70 bg-white px-3 py-2.5 text-left shadow-lg animate-fade-in"
