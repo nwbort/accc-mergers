@@ -1,10 +1,10 @@
 {
-  "total_mergers": 179,
+  "total_mergers": 180,
   "total_waivers": 273,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
-    "Under assessment": 42,
+    "Under assessment": 43,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -93,6 +93,15 @@
     {
       "merger_id": "MN-30023",
       "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-16T12:00:00Z",
+      "is_waiver": false,
+      "is_refiled": false
+    },
+    {
+      "merger_id": "MN-60025",
+      "merger_name": "Acrow - Ausgroup Industrial Services",
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-16T12:00:00Z",
@@ -191,15 +200,6 @@
       "status": "Under assessment",
       "accc_determination": null,
       "effective_notification_datetime": "2026-07-10T12:00:00Z",
-      "is_waiver": false,
-      "is_refiled": false
-    },
-    {
-      "merger_id": "MN-65028",
-      "merger_name": "Coles - Paydock",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-09T12:00:00Z",
       "is_waiver": false,
       "is_refiled": false
     }
