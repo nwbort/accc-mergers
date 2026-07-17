@@ -29,5 +29,6 @@ export const API_ENDPOINTS = {
   phase2: '/data/phase2.json',  // Current + completed Phase 2 matters with statutory milestones
   refiledNotifications: '/data/refiled-notifications.json',  // Waivers declined then re-filed as notifications
   extensions: '/data/extensions.json',  // Phase 1 timeline extensions (day counts + reasons)
+  referralProbabilityByDay: '/data/referral-probability-by-day.json',  // P(Phase 2 referral | still undecided at business day N), positional by day
   questionnaire: (id) => `/data/questionnaires/${id}.json`,  // Questionnaire data (lazy-loaded)
 };
