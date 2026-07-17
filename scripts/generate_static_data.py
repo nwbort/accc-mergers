@@ -29,6 +29,8 @@ Output files:
   - refiled-notifications.json  - Waivers declined then re-filed as notifications
   - questionnaires/{id}.json    - Lazy-loaded questionnaire files
   - noccs/{id}.json             - NOCC summary files (consumed by the CLI bundle, not the frontend)
+  - referral-probability-by-day.json - P(Phase 2 referral | still undecided at
+                        business day N); not consumed by the frontend yet
 """
 
 import json
@@ -55,6 +57,7 @@ from static_data.loaders import (
     load_similar_mergers,
     load_tribunal_appeals,
 )
+from static_data.durations import referral_probability_by_day
 from static_data.outputs import (
     analysis,
     commentary as commentary_out,
@@ -178,6 +181,9 @@ def main():
         ("phase2.json", phase2.generate(enriched)),
         ("refiled-notifications.json", refiled.generate(enriched)),
         ("extensions.json", extensions.generate(enriched)),
+        # P(Phase 2 referral | still undecided at business day N); not consumed
+        # by the frontend yet — a building block for a future per-merger risk feature.
+        ("referral-probability-by-day.json", referral_probability_by_day(enriched)),
     ]
     for filename, payload in single_file_outputs:
         out_path = OUTPUT_DIR / filename

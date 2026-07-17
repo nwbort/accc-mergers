@@ -18,7 +18,7 @@ sys.modules.setdefault('markdownify', unittest.mock.MagicMock())
 sys.modules.setdefault('requests', unittest.mock.MagicMock())
 
 from constants import merger_status
-from static_data import anzsic
+from static_data import anzsic, durations
 from static_data.enrichment import enrich_merger
 from static_data.outputs import (
     analysis,
@@ -963,6 +963,143 @@ class TestReferralsByQuarter:
 
         assert total_notifications == stats_payload['total_mergers']
         assert total_referred == stats_payload['by_determination'].get(merger_status.REFERRED_TO_PHASE_2, 0)
+
+
+# ---------------------------------------------------------------------------
+# durations.referral_probability_by_day (not exposed in any output file)
+# ---------------------------------------------------------------------------
+
+def _phase1_notification(mid, det_date, referred=False):
+    """A completed Phase 1 notification notified 2025-02-03, deciding on
+    ``det_date`` — a referral to Phase 2 if ``referred``, otherwise an approval.
+    """
+    events = [{'title': 'Merger notified to ACCC', 'date': '2025-02-03T09:00:00Z'}]
+    if referred:
+        events.append({'title': 'Decision to Proceed to a Phase 2 review', 'date': det_date})
+    else:
+        events.append({'title': 'Phase 1 - Determination', 'date': det_date})
+    return {
+        'merger_id': mid,
+        'merger_name': mid,
+        'status': 'Under assessment' if referred else 'Determined',
+        'accc_determination': None if referred else 'Approved',
+        'stage': 'Phase 2 - detailed assessment' if referred else 'Phase 1 - preliminary assessment',
+        'effective_notification_datetime': '2025-02-03T09:00:00Z',
+        'determination_publication_date': None if referred else det_date,
+        'page_modified_datetime': det_date,
+        'anzsic_codes': [{'code': '0600', 'name': 'Coal Mining'}],
+        'acquirers': ['A'], 'targets': ['B'], 'other_parties': [],
+        'url': f'https://example.com/{mid}',
+        'events': events,
+    }
+
+
+def _referral_probability_fixture():
+    """Completed and excluded Phase 1 matters with controlled durations.
+
+    All notified 2025-02-03; end dates chosen for a known business-day duration:
+
+    - CD-01 cleared, 9 BD
+    - CD-02 cleared, 18 BD
+    - CD-03 cleared, 23 BD
+    - CD-04 referred, 27 BD
+    - CD-05 referred, 35 BD
+    - CD-06 in progress (no outcome) — excluded (no known outcome yet)
+    - CD-07 waiver — excluded entirely
+    """
+    return [
+        _phase1_notification('CD-01', '2025-02-14T12:00:00Z'),              # 9 BD, cleared
+        _phase1_notification('CD-02', '2025-02-27T12:00:00Z'),              # 18 BD, cleared
+        _phase1_notification('CD-03', '2025-03-06T12:00:00Z'),              # 23 BD, cleared
+        _phase1_notification('CD-04', '2025-03-13T12:00:00Z', referred=True),  # 27 BD, referred
+        _phase1_notification('CD-05', '2025-03-25T12:00:00Z', referred=True),  # 35 BD, referred
+        {
+            'merger_id': 'CD-06',
+            'merger_name': 'In progress',
+            'status': 'Under assessment',
+            'accc_determination': None,
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-02-03T09:00:00Z',
+            'determination_publication_date': None,
+            'page_modified_datetime': '2025-02-03T09:30:00Z',
+            'anzsic_codes': [{'code': '0600', 'name': 'Coal Mining'}],
+            'acquirers': ['C'], 'targets': ['D'], 'other_parties': [],
+            'url': 'https://example.com/CD-06',
+            'events': [{'title': 'Merger notified to ACCC', 'date': '2025-02-03T09:00:00Z'}],
+        },
+        {
+            'merger_id': 'CD-07',
+            'merger_name': 'Waiver',
+            'status': 'Determined',
+            'accc_determination': 'Waiver granted',
+            'stage': 'Waiver',
+            'effective_notification_datetime': '2025-02-03T09:00:00Z',
+            'determination_publication_date': '2025-02-14T12:00:00Z',
+            'page_modified_datetime': '2025-02-14T12:30:00Z',
+            'anzsic_codes': [{'code': '0600', 'name': 'Coal Mining'}],
+            'acquirers': ['E'], 'targets': ['F'], 'other_parties': [],
+            'url': 'https://example.com/CD-07',
+            'events': [{'title': 'Waiver application received', 'date': '2025-02-03T09:00:00Z'}],
+        },
+    ]
+
+
+class TestReferralProbabilityByDay:
+    def _probs(self):
+        enriched = [enrich_merger(m) for m in _referral_probability_fixture()]
+        return durations.referral_probability_by_day(enriched)['probabilities']
+
+    def test_output_is_a_positional_probability_list(self):
+        # One float per business day, index == the business day, from day 0 up to
+        # the longest completed review (35 BD) — so 36 entries, day 0 through 35.
+        probs = self._probs()
+        assert all(isinstance(p, float) for p in probs)
+        assert len(probs) == 36
+
+    def test_not_exposed_in_analysis_payload(self):
+        # The curve is a backend building block only — it must not leak into the
+        # published analysis.json.
+        payload = analysis.generate([enrich_merger(m) for m in _referral_probability_fixture()])
+        assert 'referral_probability_by_day' not in payload
+
+    def test_day_zero_and_one_equal_overall_referral_rate(self):
+        # Every completed review is "still open" going into day 0/1: 2 of 5
+        # referred. CD-06 (in progress) and CD-07 (waiver) are excluded.
+        probs = self._probs()
+        assert probs[0] == 0.4
+        assert probs[1] == 0.4
+
+    def test_probability_conditions_on_still_open_pool(self):
+        # Going into day 19 only 23, 27, 35 remain open (2 of them referred);
+        # by day 24 only the two referred matters (27, 35) are left — a raw share
+        # of 1.0, clamped to the 0.99 ceiling.
+        probs = self._probs()
+        assert probs[19] == round(2 / 3, 3)
+        assert probs[24] == 0.99
+
+    def test_probability_is_weakly_monotonic(self):
+        probs = self._probs()
+        assert probs == sorted(probs)
+
+    def test_probability_is_capped_at_99_percent(self):
+        assert max(self._probs()) == 0.99
+
+    def test_ratchet_holds_probability_up_when_raw_share_dips(self):
+        # One referred at 18 BD, two cleared at 9 and 27 BD. The raw share peaks
+        # at 1/2 while both the 18 (referred) and 27 (cleared) matters are open,
+        # then the referral drops out at day 19 leaving only a clearance — a raw
+        # share of 0. The ratchet must hold the exposed probability at 0.5.
+        enriched = [enrich_merger(m) for m in [
+            _phase1_notification('RT-01', '2025-02-14T12:00:00Z'),                 # 9 BD, cleared
+            _phase1_notification('RT-02', '2025-02-27T12:00:00Z', referred=True),  # 18 BD, referred
+            _phase1_notification('RT-03', '2025-03-13T12:00:00Z'),                 # 27 BD, cleared
+        ]]
+        probs = durations.referral_probability_by_day(enriched)['probabilities']
+        assert probs[18] == 0.5
+        assert probs[27] == 0.5  # raw share is 0 here, but ratcheted up
+
+    def test_empty_input(self):
+        assert durations.referral_probability_by_day([]) == {"probabilities": []}
 
 
 # ---------------------------------------------------------------------------
