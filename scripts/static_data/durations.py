@@ -20,6 +20,11 @@ from constants import merger_status
 from .business_days import calculate_business_days, calculate_calendar_days
 from .filters import filter_notifications, filter_waivers
 
+# Ceiling for referral_probability_by_day: the estimate never claims certainty,
+# so the tail (where the raw share hits 1.0 off a few long referred matters)
+# is clamped to 0.99.
+_MAX_REFERRAL_PROBABILITY = 0.99
+
 
 def median_or_none(values: list):
     """True median of ``values`` (``statistics.median``), or ``None`` if empty.
@@ -143,7 +148,9 @@ def referral_probability_by_day(mergers: list) -> list[dict]:
     **weakly monotonic** (non-decreasing) in the day: the thinning sample can
     make the raw share dip when a late clearance is still in the pool after a
     referral has dropped out, but a live merger's referral risk should only
-    ratchet up the longer it sits undecided.
+    ratchet up the longer it sits undecided. It is capped at
+    :data:`_MAX_REFERRAL_PROBABILITY` (0.99) so the tail — where a handful of
+    long referred matters push the raw share to 1.0 — never reads as certainty.
 
     The result is published to ``referral-probability-by-day.json`` but is not
     consumed by the frontend yet — it is a building block for a future
@@ -167,7 +174,7 @@ def referral_probability_by_day(mergers: list) -> list[dict]:
         running_max = max(running_max, referred / still_open)
         points.append({
             "business_day": day,
-            "probability": round(running_max, 3),
+            "probability": min(round(running_max, 3), _MAX_REFERRAL_PROBABILITY),
         })
 
     return points

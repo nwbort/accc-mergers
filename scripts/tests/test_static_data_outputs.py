@@ -1072,13 +1072,17 @@ class TestReferralProbabilityByDay:
 
     def test_probability_conditions_on_still_open_pool(self):
         # Going into day 19 only 23, 27, 35 remain open (2 of them referred);
-        # by day 24 only the two referred matters (27, 35) are left.
+        # by day 24 only the two referred matters (27, 35) are left — a raw share
+        # of 1.0, clamped to the 0.99 ceiling.
         assert self._point(19)['probability'] == round(2 / 3, 3)
-        assert self._point(24)['probability'] == 1.0
+        assert self._point(24)['probability'] == 0.99
 
     def test_probability_is_weakly_monotonic(self):
         probs = [p['probability'] for p in self._points()]
         assert probs == sorted(probs)
+
+    def test_probability_is_capped_at_99_percent(self):
+        assert max(p['probability'] for p in self._points()) == 0.99
 
     def test_ratchet_holds_probability_up_when_raw_share_dips(self):
         # One referred at 18 BD, two cleared at 9 and 27 BD. The raw share peaks
