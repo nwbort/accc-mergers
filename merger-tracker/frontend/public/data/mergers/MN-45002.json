@@ -387,5 +387,21 @@
         }
       ]
     }
-  ]
+  ],
+  "phase_1_estimate": {
+    "expected_business_days": 18,
+    "range_business_days": [
+      16,
+      27
+    ],
+    "basis": "industry",
+    "anzsic_level": "subdivision",
+    "anzsic_codes": [
+      "43",
+      "69"
+    ],
+    "sample_size": 18,
+    "estimated_at": "2026-07-17",
+    "method_version": 1
+  }
 }
