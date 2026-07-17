@@ -44,6 +44,7 @@ from static_data.enrichment import (
     link_similar_mergers,
     link_tribunal_appeals,
 )
+from static_data.phase1_estimate import attach_phase_1_estimates
 from static_data.loaders import (
     load_commentary,
     load_mergers,
@@ -141,6 +142,15 @@ def main():
     appeal_linked = link_tribunal_appeals(enriched, tribunal_appeals)
     if appeal_linked:
         print(f"  Linked {appeal_linked} tribunal appeal(s)")
+    # Freeze + attach filing-time phase-1 duration estimates. New notification
+    # mergers get an estimate computed from completed-review history and frozen
+    # into data/processed/phase1_estimates.json; existing entries are reused so
+    # each estimate stays a filing-time snapshot rather than drifting.
+    new_estimates, attached_estimates = attach_phase_1_estimates(enriched)
+    print(
+        f"  Phase-1 estimates: {attached_estimates} attached "
+        f"({new_estimates} newly frozen)"
+    )
     print(f"✓ Enriched {len(enriched)} mergers")
 
     party_groups = parties.build_party_pages(enriched, related_parties)
