@@ -89,7 +89,7 @@ function Phase2OddsReveal({ merger, children }) {
           className="absolute right-0 top-full mt-2 z-30 w-48 rounded-xl border border-amber-200/70 bg-white px-3 py-2.5 text-left shadow-lg animate-fade-in"
         >
           <span className="block text-[10px] font-semibold uppercase tracking-wider text-amber-600">
-            Est. Phase 2 referral
+            Est. probability of Phase 2 referral
           </span>
           {percent != null ? (
             <>
