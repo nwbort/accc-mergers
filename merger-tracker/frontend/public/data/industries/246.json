@@ -30,7 +30,7 @@
       "code": "2462",
       "name": "Mining and Construction Machinery Manufacturing",
       "level": "class",
-      "merger_count": 2
+      "merger_count": 3
     },
     {
       "code": "2463",
@@ -42,7 +42,7 @@
       "code": "2469",
       "name": "Other Specialised Machinery and Equipment Manufacturing",
       "level": "class",
-      "merger_count": 6
+      "merger_count": 7
     }
   ],
   "mergers": [
@@ -56,6 +56,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-07-08T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-65025",
+      "merger_name": "Sandvik \u2013 Diemme Filtration S.r.l.",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-26T12:00:00Z",
+      "determination_date": "2026-07-17T12:00:00Z"
     },
     {
       "merger_id": "WA-45019",
@@ -179,10 +190,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 12,
+  "count": 13,
   "phase_1_count": 5,
   "phase_2_count": 0,
-  "waiver_count": 7,
+  "waiver_count": 8,
   "active_count": 1,
   "phase_duration": {
     "average_days": 30.75,
@@ -192,10 +203,10 @@
     "completed_count": 4
   },
   "waiver_duration": {
-    "average_days": 18.285714285714285,
-    "median_days": 19,
-    "average_business_days": 12.285714285714286,
-    "median_business_days": 13,
-    "completed_count": 7
+    "average_days": 18.625,
+    "median_days": 19.0,
+    "average_business_days": 12.625,
+    "median_business_days": 13.0,
+    "completed_count": 8
   }
 }

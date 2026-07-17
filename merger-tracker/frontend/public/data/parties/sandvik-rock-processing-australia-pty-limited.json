@@ -1,0 +1,41 @@
+{
+  "id": "sandvik-rock-processing-australia-pty-limited",
+  "canonical_name": "Sandvik Rock Processing Australia Pty Limited",
+  "members": [
+    {
+      "name": "SANDVIK ROCK PROCESSING AUSTRALIA PTY LIMITED",
+      "identifier": "91 073 312 437",
+      "identifier_type": "ABN"
+    }
+  ],
+  "mergers": {
+    "acquirer": [],
+    "target": [],
+    "other": [
+      {
+        "merger_id": "WA-65025",
+        "merger_name": "Sandvik \u2013 Diemme Filtration S.r.l.",
+        "is_waiver": true,
+        "status": "Assessment completed",
+        "determination": "Approved",
+        "has_conditions": false,
+        "phase": "Waiver",
+        "notification_date": "2026-06-26T12:00:00Z",
+        "determination_date": "2026-07-17T12:00:00Z"
+      }
+    ]
+  },
+  "merger_count": 1,
+  "phase_1_count": 0,
+  "phase_2_count": 0,
+  "waiver_count": 1,
+  "active_count": 0,
+  "phase_duration": null,
+  "waiver_duration": {
+    "average_days": 21.0,
+    "median_days": 21,
+    "average_business_days": 15.0,
+    "median_business_days": 15,
+    "completed_count": 1
+  }
+}

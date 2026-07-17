@@ -1,6 +1,6 @@
 {
   "total_mergers": 180,
-  "total_waivers": 273,
+  "total_waivers": 274,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 259,
+    "Approved": 260,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.582417582417584,
-    "median_days": 18,
-    "average_business_days": 12.347985347985349,
-    "median_business_days": 12
+    "average_days": 18.59124087591241,
+    "median_days": 18.0,
+    "average_business_days": 12.357664233576642,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -206,6 +206,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-65025",
+      "merger_name": "Sandvik \u2013 Diemme Filtration S.r.l.",
+      "determination": "Approved",
+      "determination_date": "2026-07-17T12:00:00Z",
+      "page_modified_datetime": "2026-07-17T16:33:31+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
       "determination": "Referred to phase 2",
@@ -311,16 +321,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-15T12:00:00Z",
       "page_modified_datetime": "2026-07-15T16:39:05+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "MN-60022",
-      "merger_name": "Autodesk - MaintainX",
-      "determination": "Approved",
-      "determination_date": "2026-07-15T12:00:00Z",
-      "page_modified_datetime": "2026-07-15T15:37:10+10:00",
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"

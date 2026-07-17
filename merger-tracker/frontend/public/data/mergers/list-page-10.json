@@ -1,6 +1,84 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-40029",
+      "merger_name": "Laundy \u2013 Woy Woy Hotel",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-15T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-26T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "LAUNDY WOY TRADING PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "29 696 470 345",
+          "canonical": {
+            "id": "laundy-woy",
+            "name": "Laundy Woy"
+          },
+          "party_page": {
+            "id": "laundy-woy",
+            "name": "Laundy Woy"
+          }
+        },
+        {
+          "name": "LAUNDY WOY FREEHOLD PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "65 696 471 306",
+          "canonical": {
+            "id": "laundy-woy",
+            "name": "Laundy Woy"
+          },
+          "party_page": {
+            "id": "laundy-woy",
+            "name": "Laundy Woy"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "HARVEST PUB OPERATIONS 2 PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "51 652 748 242",
+          "party_page": {
+            "id": "harvest-pub-operations-2-pty-ltd",
+            "name": "Harvest Pub Operations 2 Pty Ltd"
+          }
+        },
+        {
+          "name": "AMAL TRUSTEES PTY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "98 609 737 064",
+          "party_page": {
+            "id": "amal-trustees-pty-limited",
+            "name": "Amal Trustees Pty Limited"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "4123",
+          "name": "Liquor Retailing"
+        },
+        {
+          "code": "4520",
+          "name": "Pubs, Taverns and Bars"
+        },
+        {
+          "code": "6712",
+          "name": "Non-Residential Property Operators"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/laundy-%E2%80%93-woy-woy-hotel-0"
+    },
+    {
       "merger_id": "MN-70026",
       "merger_name": "Parker-Hannifin \u2013 CIRCOR A&D",
       "status": "Under assessment",

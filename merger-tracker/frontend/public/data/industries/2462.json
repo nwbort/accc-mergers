@@ -27,6 +27,17 @@
   "children": [],
   "mergers": [
     {
+      "merger_id": "WA-65025",
+      "merger_name": "Sandvik \u2013 Diemme Filtration S.r.l.",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-26T12:00:00Z",
+      "determination_date": "2026-07-17T12:00:00Z"
+    },
+    {
       "merger_id": "WA-35016",
       "merger_name": "Wipro - Indeco",
       "is_waiver": true,
@@ -49,10 +60,10 @@
       "determination_date": "2025-12-18T12:00:00Z"
     }
   ],
-  "count": 2,
+  "count": 3,
   "phase_1_count": 1,
   "phase_2_count": 0,
-  "waiver_count": 1,
+  "waiver_count": 2,
   "active_count": 0,
   "phase_duration": {
     "average_days": 38.0,
@@ -62,10 +73,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 25.0,
-    "median_days": 25,
-    "average_business_days": 17.0,
-    "median_business_days": 17,
-    "completed_count": 1
+    "average_days": 23.0,
+    "median_days": 23.0,
+    "average_business_days": 16.0,
+    "median_business_days": 16.0,
+    "completed_count": 2
   }
 }
