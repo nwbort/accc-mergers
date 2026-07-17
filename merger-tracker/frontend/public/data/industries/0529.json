@@ -33,7 +33,7 @@
       "status": "Under assessment",
       "determination": null,
       "has_conditions": false,
-      "phase": "Phase 1",
+      "phase": "Phase 2",
       "notification_date": "2026-05-12T12:00:00Z",
       "determination_date": null
     },
@@ -83,11 +83,17 @@
     }
   ],
   "count": 5,
-  "phase_1_count": 1,
-  "phase_2_count": 0,
+  "phase_1_count": 0,
+  "phase_2_count": 1,
   "waiver_count": 4,
   "active_count": 1,
-  "phase_duration": null,
+  "phase_duration": {
+    "average_days": 66.0,
+    "median_days": 66,
+    "average_business_days": 46.0,
+    "median_business_days": 46,
+    "completed_count": 1
+  },
   "waiver_duration": {
     "average_days": 22.5,
     "median_days": 22.5,

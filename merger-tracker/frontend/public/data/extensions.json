@@ -7,11 +7,11 @@
     "total_extension_bd": 217,
     "median_matter_extension_bd": 19.0,
     "longest_single_bd": 30,
-    "phase_2_total": 7,
-    "extended_escalated_to_phase_2": 6,
-    "escalation_rate_given_extension_pct": 46.2,
-    "phase_2_preceded_by_extension_pct": 85.7,
-    "base_phase_2_rate_pct": 3.9,
+    "phase_2_total": 8,
+    "extended_escalated_to_phase_2": 7,
+    "escalation_rate_given_extension_pct": 53.8,
+    "phase_2_preceded_by_extension_pct": 87.5,
+    "base_phase_2_rate_pct": 4.4,
     "statutory_phase_1_bd": 30
   },
   "reasons": [
@@ -173,12 +173,12 @@
     {
       "merger_id": "MN-05013",
       "merger_name": "Zoetis \u2013 Neogen Genomics Business",
-      "stage": "Phase 1 - initial assessment",
+      "stage": "Phase 2 - detailed assessment",
       "status": "Under assessment",
       "notification_date": "2026-05-12T12:00:00Z",
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
-      "escalated_to_phase_2": false,
+      "phase_1_determination": "Referred to phase 2",
+      "phase_1_determination_date": "2026-07-17T12:00:00Z",
+      "escalated_to_phase_2": true,
       "total_extension_bd": 20,
       "extension_count": 1,
       "extensions": [

@@ -2,7 +2,7 @@
   "categories": {
     "horizontal_unilateral_effects": {
       "label": "Horizontal unilateral effects",
-      "count": 20,
+      "count": 21,
       "matters": [
         {
           "merger_id": "MN-01019",
@@ -26,6 +26,14 @@
           "source": "phase2_notice",
           "heading": "Competition effects in the supply of SURF services",
           "excerpt": "The likely extent to which remaining SURF service suppliers would meaningfully constrain the merged entity in relation to tenders in Australia, taking into account their current and prospective capability and geographic areas of operation.",
+          "matched_phrase": "meaningfully constrain"
+        },
+        {
+          "merger_id": "MN-05013",
+          "merger_name": "Zoetis \u2013 Neogen Genomics Business",
+          "source": "phase2_notice",
+          "heading": "Competition effects in the supply of genomic testing services for cattle in Australia",
+          "excerpt": "The extent to which remaining alternative suppliers of genomic testing services for cattle in Australia would meaningfully constrain the merged entity.",
           "matched_phrase": "meaningfully constrain"
         },
         {
@@ -398,7 +406,7 @@
     },
     "entry_barriers": {
       "label": "Entry barriers",
-      "count": 19,
+      "count": 21,
       "matters": [
         {
           "merger_id": "MN-01068",
@@ -422,6 +430,22 @@
           "source": "phase2_notice",
           "heading": "Competition effects in the supply of SURF services",
           "excerpt": "The likelihood of timely and sufficient new entry, and consequent participation in Australian SURF project tenders, if the Acquisition proceeds.",
+          "matched_phrase": "new entry"
+        },
+        {
+          "merger_id": "MN-05013",
+          "merger_name": "Zoetis \u2013 Neogen Genomics Business",
+          "source": "phase2_notice",
+          "heading": "Competition effects in the supply of genomic testing services for cattle in Australia",
+          "excerpt": "The likelihood of timely new entry and expansion to constrain the merged entity in the supply of genomic testing services for cattle in Australia.",
+          "matched_phrase": "new entry"
+        },
+        {
+          "merger_id": "MN-05013",
+          "merger_name": "Zoetis \u2013 Neogen Genomics Business",
+          "source": "phase2_notice",
+          "heading": "Competition effects in the supply of genomic testing services for cattle in Australia",
+          "excerpt": "The extent to which cattle breed associations could credibly threaten to bypass the merged entity, either by self-supplying genomic testing services for cattle in Australia and/or sponsoring new entry or expansion.",
           "matched_phrase": "new entry"
         },
         {
@@ -556,7 +580,7 @@
     }
   },
   "unclassified": {
-    "count": 52,
+    "count": 56,
     "matters": [
       {
         "merger_id": "MN-01019",
@@ -689,6 +713,30 @@
         "merger_name": "Saipem S.p.A - Subsea7 S.A.",
         "heading": "Competition effects in the supply of SURF services",
         "excerpt": "The geographic and technical conditions relevant to Australian SURF projects and how these affect the selection of pipelaying vessels and SURF service providers."
+      },
+      {
+        "merger_id": "MN-05013",
+        "merger_name": "Zoetis \u2013 Neogen Genomics Business",
+        "heading": "Relevant areas of competition",
+        "excerpt": "Whether other herd improvement methods or services are substitutes for genomic testing for cattle in Australia, including whether other herd improvement services are as efficient and effective as genomic testing, the level of take-up of genomic testing and in what circumstances breed societies require genomic testing to be used."
+      },
+      {
+        "merger_id": "MN-05013",
+        "merger_name": "Zoetis \u2013 Neogen Genomics Business",
+        "heading": "Relevant areas of competition",
+        "excerpt": "The extent of the regulatory requirements for switching or expanding into supplying genomic testing for cattle that are faced by suppliers of genomic testing for other livestock."
+      },
+      {
+        "merger_id": "MN-05013",
+        "merger_name": "Zoetis \u2013 Neogen Genomics Business",
+        "heading": "Relevant areas of competition",
+        "excerpt": "The extent to which there are discrete product markets for dairy cattle and beef cattle."
+      },
+      {
+        "merger_id": "MN-05013",
+        "merger_name": "Zoetis \u2013 Neogen Genomics Business",
+        "heading": "Competition effects in the supply of genomic testing services for cattle in Australia",
+        "excerpt": "The extent to which the merged entity would gain access to additional genetic information, whether this information would provide the merged entity with competitive advantages not available to its rivals and the effect of any such advantages on competition."
       },
       {
         "merger_id": "MN-30002",

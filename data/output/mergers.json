@@ -7945,9 +7945,9 @@
       "merger_id": "MN-05013",
       "effective_notification_datetime": "2026-05-12T12:00:00Z",
       "original_notification_datetime": "2026-05-12T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
+      "stage": "Phase 2 - detailed assessment",
       "end_of_determination_period": "2026-07-23T12:00:00Z",
-      "page_modified_datetime": "2026-06-15T15:05:04+10:00",
+      "page_modified_datetime": "2026-07-17T15:58:34+10:00",
       "consultation_response_due_date": "2026-05-20T12:00:00Z",
       "acquirers": [
         {
@@ -8004,17 +8004,47 @@
           "title": "Timeline extended by 20 business days - following request by notifying party",
           "display_title": "Timeline extended by 20 business days - following request by notifying party",
           "phase": null
+        },
+        {
+          "date": "2026-07-17T12:00:00Z",
+          "title": "Zoetis - Neogen Genomics Business - Phase 2 Notice",
+          "display_title": "Zoetis - Neogen Genomics Business - Phase 2 Notice",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Zoetis-Neogen%20-%20Phase%202%20decision%20-%2017%20July%202026.pdf",
+          "url_gh": "/mergers/MN-05013/Zoetis-Neogen - Phase 2 decision - 17 July 2026.pdf",
+          "status": "live",
+          "phase2_notice_matters_to_investigate": [
+            {
+              "heading": "Relevant areas of competition",
+              "items": [
+                "Whether other herd improvement methods or services are substitutes for genomic testing for cattle in Australia, including whether other herd improvement services are as efficient and effective as genomic testing, the level of take-up of genomic testing and in what circumstances breed societies require genomic testing to be used.",
+                "The extent of the regulatory requirements for switching or expanding into supplying genomic testing for cattle that are faced by suppliers of genomic testing for other livestock.",
+                "The extent to which there are discrete product markets for dairy cattle and beef cattle."
+              ]
+            },
+            {
+              "heading": "Competition effects in the supply of genomic testing services for cattle in Australia",
+              "items": [
+                "The extent to which remaining alternative suppliers of genomic testing services for cattle in Australia would meaningfully constrain the merged entity.",
+                "The likelihood of timely new entry and expansion to constrain the merged entity in the supply of genomic testing services for cattle in Australia.",
+                "The extent to which cattle breed associations could credibly threaten to bypass the merged entity, either by self-supplying genomic testing services for cattle in Australia and/or sponsoring new entry or expansion.",
+                "The extent to which the merged entity would gain access to additional genetic information, whether this information would provide the merged entity with competitive advantages not available to its rivals and the effect of any such advantages on competition."
+              ]
+            }
+          ],
+          "phase2_notice_commission_division": "Decision made by a division of the Commission constituted by a direction issued pursuant to section 19 of the Competition and Consumer Act 2010 (Cth)",
+          "phase": "Phase 2"
         }
       ],
       "is_waiver": false,
       "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Referred to phase 2",
+      "phase_1_determination_date": "2026-07-17T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
       "public_benefits_determination_date": null,
+      "phase_2_inferred": true,
       "has_questionnaire": true,
       "similar_mergers": [
         {
