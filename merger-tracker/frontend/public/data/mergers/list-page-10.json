@@ -1,6 +1,80 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-95030",
+      "merger_name": "Origin \u2013 Climatech Zero",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-21T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "ORIGIN ENERGY LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "30 000 051 696",
+          "canonical": {
+            "id": "origin-energy-limited",
+            "name": "Origin Energy Limited"
+          },
+          "party_page": {
+            "id": "origin-energy-limited",
+            "name": "Origin Energy Limited"
+          }
+        },
+        {
+          "name": "ORIGIN ZERO INVESTMENTS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "52 079 089 231",
+          "party_page": {
+            "id": "origin-zero-investments-pty-ltd",
+            "name": "Origin Zero Investments Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CLIMATECH ZERO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "70 623 828 508",
+          "canonical": {
+            "id": "climatech-zero-pty-ltd",
+            "name": "Climatech Zero Pty Ltd"
+          },
+          "party_page": {
+            "id": "climatech-zero-pty-ltd",
+            "name": "Climatech Zero Pty Ltd"
+          }
+        },
+        {
+          "name": "CLIMATECH ZERO HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "35 623 827 930",
+          "canonical": {
+            "id": "climatech-zero-pty-ltd",
+            "name": "Climatech Zero Pty Ltd"
+          },
+          "party_page": {
+            "id": "climatech-zero-pty-ltd",
+            "name": "Climatech Zero Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "6923",
+          "name": "Engineering Design and Engineering Consulting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/origin-%E2%80%93-climatech-zero"
+    },
+    {
       "merger_id": "MN-20017",
       "merger_name": "Amplifon \u2013 GN Hearing",
       "status": "Under assessment",

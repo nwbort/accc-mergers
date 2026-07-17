@@ -1,6 +1,6 @@
 {
   "total_mergers": 180,
-  "total_waivers": 278,
+  "total_waivers": 279,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 264,
+    "Approved": 265,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.58992805755396,
-    "median_days": 18.0,
-    "average_business_days": 12.381294964028777,
-    "median_business_days": 12.0
+    "average_days": 18.60931899641577,
+    "median_days": 18,
+    "average_business_days": 12.401433691756273,
+    "median_business_days": 12
   },
   "top_industries": [
     {
@@ -206,6 +206,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-45020",
+      "merger_name": "Vets Central \u2013 Willunga & Aldinga Veterinary Services",
+      "determination": "Approved",
+      "determination_date": "2026-07-17T12:00:00Z",
+      "page_modified_datetime": "2026-07-17T16:40:57+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-95031",
       "merger_name": "IFM Fiduciary \u2013 PM Fresh",
       "determination": "Approved",
@@ -314,16 +324,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-01103",
-      "merger_name": "Discovery Holiday Parks \u2013 four Breeze Holiday Parks",
-      "determination": "Approved",
-      "determination_date": "2026-07-16T12:00:00Z",
-      "page_modified_datetime": "2026-07-16T16:05:08+10:00",
-      "determination_type": "final",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
     }
   ]
 }

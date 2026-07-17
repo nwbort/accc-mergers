@@ -879,6 +879,81 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-%E2%80%93-supermarket-site-in-coffs-harbour-nsw"
     },
     {
+      "merger_id": "WA-45020",
+      "merger_name": "Vets Central \u2013 Willunga & Aldinga Veterinary Services",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-06-23T12:00:00Z",
+      "determination_publication_date": "2026-07-17T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "VC OPERATIONS (WA) PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "28 646 499 005",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          },
+          "party_page": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Willunga Veterinary Hospital Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "17 123 795 899",
+          "party_page": {
+            "id": "willunga-veterinary-hospital-pty-ltd",
+            "name": "Willunga Veterinary Hospital Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "VC HAMILTON WA PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "695 874 929",
+          "party_page": {
+            "id": "vc-hamilton-wa-pty-ltd",
+            "name": "Vc Hamilton Wa Pty Ltd"
+          }
+        },
+        {
+          "name": "VETS CENTRAL PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "25 646 462 973",
+          "canonical": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          },
+          "party_page": {
+            "id": "vets-central-holdings-pty-ltd",
+            "name": "Vets Central Holdings Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6970",
+          "name": "Veterinary Services"
+        },
+        {
+          "code": "9539",
+          "name": "Other Personal Services n.e.c."
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/vets-central-%E2%80%93-willunga-aldinga-veterinary-services"
+    },
+    {
       "merger_id": "WA-55026",
       "merger_name": "Vets Central - Gold Coast Veterinary Surgery",
       "status": "Assessment completed",
@@ -3958,80 +4033,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/energy-bay-certain-assets-required-to-operate-embedded-networks-for-centuria-capital-group-members"
-    },
-    {
-      "merger_id": "MN-95030",
-      "merger_name": "Origin \u2013 Climatech Zero",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-10T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-21T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "ORIGIN ENERGY LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "30 000 051 696",
-          "canonical": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          },
-          "party_page": {
-            "id": "origin-energy-limited",
-            "name": "Origin Energy Limited"
-          }
-        },
-        {
-          "name": "ORIGIN ZERO INVESTMENTS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "52 079 089 231",
-          "party_page": {
-            "id": "origin-zero-investments-pty-ltd",
-            "name": "Origin Zero Investments Pty Ltd"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "CLIMATECH ZERO PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 623 828 508",
-          "canonical": {
-            "id": "climatech-zero-pty-ltd",
-            "name": "Climatech Zero Pty Ltd"
-          },
-          "party_page": {
-            "id": "climatech-zero-pty-ltd",
-            "name": "Climatech Zero Pty Ltd"
-          }
-        },
-        {
-          "name": "CLIMATECH ZERO HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "35 623 827 930",
-          "canonical": {
-            "id": "climatech-zero-pty-ltd",
-            "name": "Climatech Zero Pty Ltd"
-          },
-          "party_page": {
-            "id": "climatech-zero-pty-ltd",
-            "name": "Climatech Zero Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "6923",
-          "name": "Engineering Design and Engineering Consulting Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/origin-%E2%80%93-climatech-zero"
     }
   ],
   "page": 9,

@@ -9,7 +9,7 @@
       "code": "69",
       "name": "Professional, Scientific and Technical Services (Except Computer System Design and Related Services)",
       "level": "subdivision",
-      "merger_count": 63
+      "merger_count": 64
     },
     {
       "code": "70",
@@ -117,6 +117,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-04-27T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-45020",
+      "merger_name": "Vets Central \u2013 Willunga & Aldinga Veterinary Services",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-23T12:00:00Z",
+      "determination_date": "2026-07-17T12:00:00Z"
     },
     {
       "merger_id": "WA-75032",
@@ -1131,10 +1142,10 @@
       "determination_date": null
     }
   ],
-  "count": 101,
+  "count": 102,
   "phase_1_count": 37,
   "phase_2_count": 2,
-  "waiver_count": 62,
+  "waiver_count": 63,
   "active_count": 9,
   "phase_duration": {
     "average_days": 32.935483870967744,
@@ -1144,10 +1155,10 @@
     "completed_count": 31
   },
   "waiver_duration": {
-    "average_days": 18.29032258064516,
-    "median_days": 18.0,
-    "average_business_days": 12.258064516129032,
-    "median_business_days": 12.5,
-    "completed_count": 62
+    "average_days": 18.38095238095238,
+    "median_days": 18,
+    "average_business_days": 12.34920634920635,
+    "median_business_days": 13,
+    "completed_count": 63
   }
 }

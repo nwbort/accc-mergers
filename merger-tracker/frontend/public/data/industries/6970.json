@@ -49,6 +49,17 @@
       "determination_date": null
     },
     {
+      "merger_id": "WA-45020",
+      "merger_name": "Vets Central \u2013 Willunga & Aldinga Veterinary Services",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-23T12:00:00Z",
+      "determination_date": "2026-07-17T12:00:00Z"
+    },
+    {
       "merger_id": "WA-55026",
       "merger_name": "Vets Central - Gold Coast Veterinary Surgery",
       "is_waiver": true,
@@ -137,10 +148,10 @@
       "determination_date": "2026-02-12T12:00:00Z"
     }
   ],
-  "count": 10,
+  "count": 11,
   "phase_1_count": 3,
   "phase_2_count": 0,
-  "waiver_count": 7,
+  "waiver_count": 8,
   "active_count": 2,
   "phase_duration": {
     "average_days": 55.0,
@@ -150,10 +161,10 @@
     "completed_count": 1
   },
   "waiver_duration": {
-    "average_days": 14.428571428571429,
-    "median_days": 13,
-    "average_business_days": 9.285714285714286,
-    "median_business_days": 8,
-    "completed_count": 7
+    "average_days": 15.625,
+    "median_days": 13.5,
+    "average_business_days": 10.375,
+    "median_business_days": 9.0,
+    "completed_count": 8
   }
 }
