@@ -145,10 +145,10 @@ def referral_probability_by_day(mergers: list) -> list[dict]:
     referral has dropped out, but a live merger's referral risk should only
     ratchet up the longer it sits undecided.
 
-    Nothing here is served to the frontend — the output lives in the
-    non-deployed ``data/output/`` directory, kept as a building block for a
-    future per-merger "predicted Phase 2 risk" feature that would index this
-    curve by an open matter's elapsed business days.
+    The result is published to ``referral-probability-by-day.json`` but is not
+    consumed by the frontend yet — it is a building block for a future
+    per-merger "predicted Phase 2 risk" feature that would index this curve by
+    an open matter's elapsed business days.
 
     Measured over completed reviews only, since a still-open matter has no known
     outcome yet. Accepts the full merger list (waivers and in-progress matters

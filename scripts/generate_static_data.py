@@ -8,8 +8,6 @@ generators in :mod:`static_data.outputs`. All heavy lifting lives in the
 Output files:
   data/output/ (for offline analysis, not deployed):
   - mergers.json      - All mergers wrapped in {mergers: [...]} (full enriched data)
-  - referral_probability_by_day.json - P(Phase 2 referral | still undecided at
-                        business day N), one {business_day, probability} per day
 
   merger-tracker/frontend/public/data/ (deployed to Cloudflare Pages):
   - mergers/{id}.json           - Individual merger files (one per merger)
@@ -31,6 +29,8 @@ Output files:
   - refiled-notifications.json  - Waivers declined then re-filed as notifications
   - questionnaires/{id}.json    - Lazy-loaded questionnaire files
   - noccs/{id}.json             - NOCC summary files (consumed by the CLI bundle, not the frontend)
+  - referral-probability-by-day.json - P(Phase 2 referral | still undecided at
+                        business day N); not consumed by the frontend yet
 """
 
 import json
@@ -158,13 +158,6 @@ def main():
         json.dump({"mergers": enriched}, f, indent=2)
     print(f"✓ Generated {mergers_json_path}")
 
-    # Phase 2 referral probability by business day (offline analysis, not
-    # deployed — a building block for a future per-merger risk feature)
-    referral_prob_path = DATA_OUTPUT_DIR / "referral_probability_by_day.json"
-    with open(referral_prob_path, 'w', encoding='utf-8') as f:
-        json.dump(referral_probability_by_day(enriched), f, indent=2)
-    print(f"✓ Generated {referral_prob_path}")
-
     # Small single-file outputs: call generator → write result
     single_file_outputs = [
         ("stats.json", stats.generate(enriched)),
@@ -178,6 +171,9 @@ def main():
         ("phase2.json", phase2.generate(enriched)),
         ("refiled-notifications.json", refiled.generate(enriched)),
         ("extensions.json", extensions.generate(enriched)),
+        # P(Phase 2 referral | still undecided at business day N); not consumed
+        # by the frontend yet — a building block for a future per-merger risk feature.
+        ("referral-probability-by-day.json", referral_probability_by_day(enriched)),
     ]
     for filename, payload in single_file_outputs:
         out_path = OUTPUT_DIR / filename
