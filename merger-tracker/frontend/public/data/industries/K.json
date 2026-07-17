@@ -9,7 +9,7 @@
       "code": "62",
       "name": "Finance",
       "level": "subdivision",
-      "merger_count": 65
+      "merger_count": 66
     },
     {
       "code": "63",
@@ -68,6 +68,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-10020",
+      "merger_name": "Apollo Capital \u2013 Curia",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-30T12:00:00Z",
+      "determination_date": "2026-07-17T12:00:00Z"
     },
     {
       "merger_id": "WA-55027",
@@ -1148,10 +1159,10 @@
       "determination_date": null
     }
   ],
-  "count": 102,
+  "count": 103,
   "phase_1_count": 22,
   "phase_2_count": 2,
-  "waiver_count": 78,
+  "waiver_count": 79,
   "active_count": 4,
   "phase_duration": {
     "average_days": 28.666666666666668,
@@ -1161,10 +1172,10 @@
     "completed_count": 21
   },
   "waiver_duration": {
-    "average_days": 18.58974358974359,
-    "median_days": 18.0,
-    "average_business_days": 12.243589743589743,
-    "median_business_days": 12.0,
-    "completed_count": 78
+    "average_days": 18.569620253164558,
+    "median_days": 18,
+    "average_business_days": 12.253164556962025,
+    "median_business_days": 12,
+    "completed_count": 79
   }
 }

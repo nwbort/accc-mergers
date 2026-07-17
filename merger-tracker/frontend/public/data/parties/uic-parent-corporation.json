@@ -1,15 +1,16 @@
 {
-  "id": "apollo-capital-management-l-p-2",
-  "canonical_name": "Apollo Capital Management, L.P.",
+  "id": "uic-parent-corporation",
+  "canonical_name": "UIC Parent Corporation",
   "members": [
     {
-      "name": "Apollo Capital Management, L.P.",
-      "identifier": "Registration No. 4293091",
+      "name": "UIC Parent Corporation",
+      "identifier": "Registration No. 6432344",
       "identifier_type": null
     }
   ],
   "mergers": {
-    "acquirer": [
+    "acquirer": [],
+    "target": [
       {
         "merger_id": "WA-10020",
         "merger_name": "Apollo Capital \u2013 Curia",
@@ -22,7 +23,6 @@
         "determination_date": "2026-07-17T12:00:00Z"
       }
     ],
-    "target": [],
     "other": []
   },
   "merger_count": 1,

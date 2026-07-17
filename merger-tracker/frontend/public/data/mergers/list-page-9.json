@@ -2449,6 +2449,73 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/spacex-anysphere"
     },
     {
+      "merger_id": "WA-10020",
+      "merger_name": "Apollo Capital \u2013 Curia",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-06-30T12:00:00Z",
+      "determination_publication_date": "2026-07-17T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Apollo Capital Management, L.P.",
+          "identifier_type": null,
+          "identifier": "Registration No. 4293091",
+          "party_page": {
+            "id": "apollo-capital-management-l-p-2",
+            "name": "Apollo Capital Management, L.P."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "UIC Parent Corporation",
+          "identifier_type": null,
+          "identifier": "Registration No. 6432344",
+          "party_page": {
+            "id": "uic-parent-corporation",
+            "name": "UIC Parent Corporation"
+          }
+        },
+        {
+          "name": "Curia Global, Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "curia-global-inc",
+            "name": "Curia Global, Inc."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Apollo Global Management, Inc.",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "apollo-global-management",
+            "name": "Apollo Global Management"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "1841",
+          "name": "Human Pharmaceutical and Medicinal Product Manufacturing"
+        },
+        {
+          "code": "6240",
+          "name": "Financial Asset Investing"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/apollo-capital-%E2%80%93-curia"
+    },
+    {
       "merger_id": "WA-50029",
       "merger_name": "Centuria Property Funds No. 2 Limited as the responsible entity of Centuria Sydney CBD Prime Office Fund - 680 George St/50 Goulburn St",
       "status": "Assessment completed",
@@ -3947,81 +4014,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/salesforce-contentful"
-    },
-    {
-      "merger_id": "MN-15028",
-      "merger_name": "Total Drain Group - Pipe Management Australia",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-15T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-26T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "TOTAL DRAIN GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "78 621 479 981",
-          "party_page": {
-            "id": "total-drain-group-pty-ltd",
-            "name": "Total Drain Group Pty Ltd"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "UTILITY MANAGEMENT GROUP PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 644 190 527",
-          "party_page": {
-            "id": "utility-management-group-pty-ltd",
-            "name": "Utility Management Group Pty Ltd"
-          }
-        },
-        {
-          "name": "HEADWORKS AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "39 637 942 646",
-          "party_page": {
-            "id": "headworks-australia-pty-ltd",
-            "name": "Headworks Australia Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "QUADRANT PRIVATE EQUITY NO.6A PTY LIMITED",
-          "identifier_type": "ACN",
-          "identifier": "622 297 750",
-          "party_page": {
-            "id": "quadrant-private-equity-no-6a-pty-limited",
-            "name": "Quadrant Private Equity No.6A Pty Limited"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "2812",
-          "name": "Sewerage and Drainage Services"
-        },
-        {
-          "code": "2919",
-          "name": "Other Waste Collection Services"
-        },
-        {
-          "code": "2921",
-          "name": "Waste Treatment and Disposal Services"
-        },
-        {
-          "code": "3109",
-          "name": "Other Heavy and Civil Engineering Construction"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/total-drain-group-pipe-management-australia"
     }
   ],
   "page": 9,
