@@ -18,7 +18,7 @@ import SEO from '../components/SEO';
 import { API_ENDPOINTS } from '../config';
 import { useFetchData } from '../hooks/useFetchData';
 import { industryPath } from '../utils/slug';
-import { CHART_PALETTE as COLORS } from '../constants/chartColors';
+import { CHART_PALETTE as COLORS, THEME_HEXES } from '../constants/chartColors';
 import { CARD, SECTION_HEADING } from '../utils/classNames';
 
 ChartJS.register(
@@ -77,7 +77,7 @@ function Analysis() {
   if (error) return <ErrorMessage error={error} />;
   if (!data) return null;
 
-  const { phase1_duration, waiver_duration, monthly_volume, industry_phase1_duration } = data;
+  const { phase1_duration, waiver_duration, monthly_volume, industry_phase1_duration, clearance_by_duration } = data;
   const phase1Stats = calendarDays ? phase1_duration.calendar_stats : phase1_duration.stats;
   const waiverStats = calendarDays ? waiver_duration.calendar_stats : waiver_duration.stats;
 
@@ -416,6 +416,91 @@ function Analysis() {
     },
   };
 
+  // --- Phase 1 outcome by review length ---
+  // Always measured in business days: the framing is the 30-business-day Phase 1
+  // statutory clock, so this chart ignores the calendar/business toggle above.
+  const clearanceBuckets = clearance_by_duration?.buckets || [];
+  const clearanceHasReferrals = clearanceBuckets.some(b => b.referred > 0);
+  const REFERRED_COLOR = THEME_HEXES.phase2Referral;
+
+  const clearanceData = {
+    labels: clearanceBuckets.map(b => b.label),
+    datasets: [
+      {
+        label: 'Cleared in phase 1',
+        data: clearanceBuckets.map(b => b.cleared),
+        backgroundColor: COLORS.primary,
+        borderRadius: 4,
+        maxBarThickness: 56,
+      },
+      {
+        label: 'Referred to phase 2',
+        data: clearanceBuckets.map(b => b.referred),
+        backgroundColor: REFERRED_COLOR,
+        borderRadius: 4,
+        maxBarThickness: 56,
+      },
+    ],
+  };
+
+  const clearanceOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: false,
+    plugins: {
+      legend: {
+        position: 'bottom',
+        labels: {
+          usePointStyle: true,
+          pointStyle: 'rectRounded',
+          padding: 16,
+          font: { size: 12, family: 'Inter, sans-serif' },
+        },
+      },
+      tooltip: {
+        callbacks: {
+          afterBody: (items) => {
+            const bucket = clearanceBuckets[items[0].dataIndex];
+            if (!bucket || bucket.total === 0) return '';
+            const pct = Math.round((bucket.referral_rate ?? 0) * 100);
+            return `Referred to phase 2: ${pct}% (${bucket.referred} of ${bucket.total})`;
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        stacked: true,
+        grid: { display: false },
+        ticks: { font: { size: 11 } },
+        title: {
+          display: true,
+          text: 'Phase 1 duration (business days)',
+          font: { size: 12, family: 'Inter, sans-serif' },
+          color: '#6b7280',
+        },
+      },
+      y: {
+        stacked: true,
+        beginAtZero: true,
+        ticks: { precision: 0, font: { size: 11 } },
+        grid: { color: 'rgba(0,0,0,0.04)' },
+        title: {
+          display: true,
+          text: 'Completed reviews',
+          font: { size: 12, family: 'Inter, sans-serif' },
+          color: '#6b7280',
+        },
+      },
+    },
+  };
+
+  const clearedMedian = clearance_by_duration?.cleared?.median_business_days;
+  const referredMedian = clearance_by_duration?.referred?.median_business_days;
+  const overallReferralPct = clearance_by_duration?.overall_referral_rate != null
+    ? Math.round(clearance_by_duration.overall_referral_rate * 100)
+    : null;
+
   return (
     <>
       <SEO
@@ -574,6 +659,69 @@ function Analysis() {
                     </tbody>
                   </table>
                 </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* Phase 1 outcome by review length */}
+        {clearanceBuckets.length > 0 && clearance_by_duration.total_completed > 0 && (
+          <section className="mb-8">
+            <div className={`${CARD} overflow-hidden`}>
+              <div className="px-6 py-5 border-b border-gray-100">
+                <h2 id="chart-clearance-title" className="text-lg font-semibold text-gray-900">
+                  Clearance vs phase 2 referral, by review length
+                </h2>
+                <p className="text-sm text-gray-500 mt-0.5">
+                  Completed phase 1 reviews grouped by how long they ran, split between matters cleared in phase 1 and matters referred to phase 2.
+                </p>
+              </div>
+              <div className="p-6">
+                {(clearedMedian != null || overallReferralPct != null) && (
+                  <p className="text-sm text-gray-600 mb-4">
+                    Reviews cleared in phase 1 conclude in a median of{' '}
+                    <span className="font-semibold text-gray-900">{clearedMedian} business days</span>
+                    {referredMedian != null && (
+                      <>
+                        , while those referred to phase 2 run to a median of{' '}
+                        <span className="font-semibold text-gray-900">{referredMedian} business days</span>
+                      </>
+                    )}
+                    . Overall,{' '}
+                    <span className="font-semibold text-gray-900">{overallReferralPct}%</span>{' '}
+                    of the {clearance_by_duration.total_completed} completed reviews were referred — but that risk is concentrated in the reviews that run to the end of the 30-business-day statutory clock and beyond.
+                  </p>
+                )}
+                <div
+                  className="h-80"
+                  role="img"
+                  aria-labelledby="chart-clearance-title"
+                  aria-describedby="chart-clearance-summary"
+                >
+                  <Bar data={clearanceData} options={clearanceOptions} />
+                </div>
+                <div className="sr-only">
+                  <table id="chart-clearance-summary">
+                    <caption>Phase 1 outcome by review length in business days</caption>
+                    <thead><tr><th>Duration</th><th>Cleared in phase 1</th><th>Referred to phase 2</th><th>Referral rate</th></tr></thead>
+                    <tbody>
+                      {clearanceBuckets.map(b => (
+                        <tr key={b.label}>
+                          <td>{b.label}</td>
+                          <td>{b.cleared}</td>
+                          <td>{b.referred}</td>
+                          <td>{b.total > 0 ? `${Math.round((b.referral_rate ?? 0) * 100)}%` : 'n/a'}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-xs text-gray-500 mt-3">
+                  A referral to phase 2 is decided at the end of the phase 1 clock, so referred matters have longer phase 1 durations by construction. The pattern still shows that clearances land well before the deadline, while reviews still open near or past day 30 are increasingly likely to be referred.
+                  {clearanceHasReferrals && clearance_by_duration.referred?.count != null && (
+                    <> Phase 2 referrals remain rare ({clearance_by_duration.referred.count} to date), so bucket rates are based on small numbers.</>
+                  )}
+                </p>
               </div>
             </div>
           </section>

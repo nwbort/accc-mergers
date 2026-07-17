@@ -2324,5 +2324,47 @@
       "notifications": 22,
       "referred": 0
     }
-  ]
+  ],
+  "clearance_by_duration": {
+    "buckets": [
+      {
+        "label": "\u226420 BD",
+        "cleared": 109,
+        "referred": 0,
+        "total": 109,
+        "referral_rate": 0.0
+      },
+      {
+        "label": "21\u201325 BD",
+        "cleared": 13,
+        "referred": 0,
+        "total": 13,
+        "referral_rate": 0.0
+      },
+      {
+        "label": "26\u201330 BD",
+        "cleared": 8,
+        "referred": 3,
+        "total": 11,
+        "referral_rate": 0.273
+      },
+      {
+        "label": ">30 BD",
+        "cleared": 2,
+        "referred": 4,
+        "total": 6,
+        "referral_rate": 0.667
+      }
+    ],
+    "cleared": {
+      "count": 132,
+      "median_business_days": 17.0
+    },
+    "referred": {
+      "count": 7,
+      "median_business_days": 46
+    },
+    "total_completed": 139,
+    "overall_referral_rate": 0.05
+  }
 }

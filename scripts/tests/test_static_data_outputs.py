@@ -566,6 +566,7 @@ class TestAnalysisGenerate:
             'by_commission_division',
             'deadline_utilisation', 'notification_restarts', 'restart_rate',
             'outcomes_by_division', 'referrals_by_quarter',
+            'clearance_by_duration',
         }
         assert 'durations' in payload['phase1_duration']
         assert 'durations' in payload['waiver_duration']
@@ -963,6 +964,144 @@ class TestReferralsByQuarter:
 
         assert total_notifications == stats_payload['total_mergers']
         assert total_referred == stats_payload['by_determination'].get(merger_status.REFERRED_TO_PHASE_2, 0)
+
+
+# ---------------------------------------------------------------------------
+# analysis.clearance_by_duration
+# ---------------------------------------------------------------------------
+
+def _clearance_by_duration_fixture():
+    """Completed and in-progress Phase 1 notifications with controlled durations.
+
+    All notified 2025-02-03; end dates chosen so the business-day duration lands
+    in a known bucket (see the ``bd`` comments):
+
+    - CD-01 cleared, 9 BD  → ≤20 BD bucket
+    - CD-02 cleared, 18 BD → ≤20 BD bucket
+    - CD-03 cleared, 23 BD → 21–25 BD bucket
+    - CD-04 referred, 27 BD → 26–30 BD bucket
+    - CD-05 referred, 35 BD → >30 BD bucket (an extended clock)
+    - CD-06 in progress (no outcome) — excluded from every bucket
+    - CD-07 waiver — excluded entirely
+    """
+    def notif(mid, det_date, referred=False):
+        events = [{'title': 'Merger notified to ACCC', 'date': '2025-02-03T09:00:00Z'}]
+        if referred:
+            events.append({'title': 'Decision to Proceed to a Phase 2 review', 'date': det_date})
+        else:
+            events.append({'title': 'Phase 1 - Determination', 'date': det_date})
+        return {
+            'merger_id': mid,
+            'merger_name': mid,
+            'status': 'Under assessment' if referred else 'Determined',
+            'accc_determination': None if referred else 'Approved',
+            'stage': 'Phase 2 - detailed assessment' if referred else 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-02-03T09:00:00Z',
+            'determination_publication_date': None if referred else det_date,
+            'page_modified_datetime': det_date,
+            'anzsic_codes': [{'code': '0600', 'name': 'Coal Mining'}],
+            'acquirers': ['A'], 'targets': ['B'], 'other_parties': [],
+            'url': f'https://example.com/{mid}',
+            'events': events,
+        }
+
+    return [
+        notif('CD-01', '2025-02-14T12:00:00Z'),              # 9 BD, cleared
+        notif('CD-02', '2025-02-27T12:00:00Z'),              # 18 BD, cleared
+        notif('CD-03', '2025-03-06T12:00:00Z'),              # 23 BD, cleared
+        notif('CD-04', '2025-03-13T12:00:00Z', referred=True),  # 27 BD, referred
+        notif('CD-05', '2025-03-25T12:00:00Z', referred=True),  # 35 BD, referred
+        {
+            'merger_id': 'CD-06',
+            'merger_name': 'In progress',
+            'status': 'Under assessment',
+            'accc_determination': None,
+            'stage': 'Phase 1 - preliminary assessment',
+            'effective_notification_datetime': '2025-02-03T09:00:00Z',
+            'determination_publication_date': None,
+            'page_modified_datetime': '2025-02-03T09:30:00Z',
+            'anzsic_codes': [{'code': '0600', 'name': 'Coal Mining'}],
+            'acquirers': ['C'], 'targets': ['D'], 'other_parties': [],
+            'url': 'https://example.com/CD-06',
+            'events': [{'title': 'Merger notified to ACCC', 'date': '2025-02-03T09:00:00Z'}],
+        },
+        {
+            'merger_id': 'CD-07',
+            'merger_name': 'Waiver',
+            'status': 'Determined',
+            'accc_determination': 'Waiver granted',
+            'stage': 'Waiver',
+            'effective_notification_datetime': '2025-02-03T09:00:00Z',
+            'determination_publication_date': '2025-02-14T12:00:00Z',
+            'page_modified_datetime': '2025-02-14T12:30:00Z',
+            'anzsic_codes': [{'code': '0600', 'name': 'Coal Mining'}],
+            'acquirers': ['E'], 'targets': ['F'], 'other_parties': [],
+            'url': 'https://example.com/CD-07',
+            'events': [{'title': 'Waiver application received', 'date': '2025-02-03T09:00:00Z'}],
+        },
+    ]
+
+
+class TestClearanceByDuration:
+    def _payload(self):
+        enriched = [enrich_merger(m) for m in _clearance_by_duration_fixture()]
+        return analysis.generate(enriched)['clearance_by_duration']
+
+    def test_bucket_counts_split_cleared_and_referred(self):
+        buckets = {b['label']: b for b in self._payload()['buckets']}
+        assert buckets['≤20 BD']['cleared'] == 2
+        assert buckets['≤20 BD']['referred'] == 0
+        assert buckets['21–25 BD']['cleared'] == 1
+        assert buckets['21–25 BD']['referred'] == 0
+        assert buckets['26–30 BD']['cleared'] == 0
+        assert buckets['26–30 BD']['referred'] == 1
+        assert buckets['>30 BD']['cleared'] == 0
+        assert buckets['>30 BD']['referred'] == 1
+
+    def test_all_four_buckets_present_in_order(self):
+        labels = [b['label'] for b in self._payload()['buckets']]
+        assert labels == ['≤20 BD', '21–25 BD', '26–30 BD', '>30 BD']
+
+    def test_referral_rate_per_bucket(self):
+        buckets = {b['label']: b for b in self._payload()['buckets']}
+        assert buckets['≤20 BD']['referral_rate'] == 0.0
+        assert buckets['26–30 BD']['referral_rate'] == 1.0
+        # An empty bucket reports None rather than dividing by zero.
+        assert all(
+            b['referral_rate'] is None or b['total'] > 0
+            for b in self._payload()['buckets']
+        )
+
+    def test_medians_and_totals(self):
+        payload = self._payload()
+        # Cleared durations: 9, 18, 23 → median 18. Referred: 27, 35 → median 31.
+        assert payload['cleared']['count'] == 3
+        assert payload['cleared']['median_business_days'] == 18
+        assert payload['referred']['count'] == 2
+        assert payload['referred']['median_business_days'] == 31
+        assert payload['total_completed'] == 5
+        assert payload['overall_referral_rate'] == 0.4
+
+    def test_excludes_in_progress_and_waivers(self):
+        # CD-06 (in progress) and CD-07 (waiver) contribute to no bucket, so the
+        # five completed notifications are the only matters counted.
+        payload = self._payload()
+        assert sum(b['total'] for b in payload['buckets']) == 5
+
+    def test_referred_count_reconciles_with_stats(self):
+        enriched = [enrich_merger(m) for m in _clearance_by_duration_fixture()]
+        analysis_payload = analysis.generate(enriched)['clearance_by_duration']
+        stats_payload = stats.generate(enriched)
+        assert analysis_payload['referred']['count'] == (
+            stats_payload['by_determination'].get(merger_status.REFERRED_TO_PHASE_2, 0)
+        )
+
+    def test_empty_input(self):
+        payload = analysis.clearance_by_duration([])
+        assert payload['total_completed'] == 0
+        assert payload['overall_referral_rate'] is None
+        assert payload['cleared']['median_business_days'] is None
+        assert all(b['total'] == 0 for b in payload['buckets'])
 
 
 # ---------------------------------------------------------------------------
