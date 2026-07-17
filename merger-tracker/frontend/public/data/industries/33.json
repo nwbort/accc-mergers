@@ -31,10 +31,21 @@
       "code": "333",
       "name": "Timber and Hardware Goods Wholesaling",
       "level": "group",
-      "merger_count": 4
+      "merger_count": 5
     }
   ],
   "mergers": [
+    {
+      "merger_id": "WA-05029",
+      "merger_name": "HupCo \u2013 AMES Australasia",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-29T12:00:00Z",
+      "determination_date": "2026-07-17T12:00:00Z"
+    },
     {
       "merger_id": "MN-10018",
       "merger_name": "CSR - Complete Plaster",
@@ -135,10 +146,10 @@
       "determination_date": "2026-03-25T12:00:00Z"
     }
   ],
-  "count": 9,
+  "count": 10,
   "phase_1_count": 3,
   "phase_2_count": 1,
-  "waiver_count": 5,
+  "waiver_count": 6,
   "active_count": 0,
   "phase_duration": {
     "average_days": 46.75,
@@ -148,10 +159,10 @@
     "completed_count": 4
   },
   "waiver_duration": {
-    "average_days": 22.2,
-    "median_days": 20,
-    "average_business_days": 14.4,
-    "median_business_days": 13,
-    "completed_count": 5
+    "average_days": 21.5,
+    "median_days": 19.5,
+    "average_business_days": 14.333333333333334,
+    "median_business_days": 13.5,
+    "completed_count": 6
   }
 }

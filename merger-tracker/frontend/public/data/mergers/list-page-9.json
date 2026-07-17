@@ -1177,6 +1177,81 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/innio-group-%E2%80%93-enerflex-0"
     },
     {
+      "merger_id": "WA-15029",
+      "merger_name": "National Dental Care \u2013 business assets comprising the BDF Dental clinic, Beaudesert, Queensland",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-06-25T12:00:00Z",
+      "determination_publication_date": "2026-07-17T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "NDC Australia Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "49 162 955 866",
+          "canonical": {
+            "id": "national-dental-care",
+            "name": "National Dental Care"
+          },
+          "party_page": {
+            "id": "national-dental-care",
+            "name": "National Dental Care"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "BDF Dental Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "13 650 907 378",
+          "party_page": {
+            "id": "bdf-dental-pty-ltd",
+            "name": "BDF Dental Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "NDC HoldCo Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "13 654 148 188",
+          "canonical": {
+            "id": "national-dental-care",
+            "name": "National Dental Care"
+          },
+          "party_page": {
+            "id": "national-dental-care",
+            "name": "National Dental Care"
+          }
+        },
+        {
+          "name": "National Dental Care Limited",
+          "identifier_type": "ABN",
+          "identifier": "89 160 442 071",
+          "canonical": {
+            "id": "national-dental-care",
+            "name": "National Dental Care"
+          },
+          "party_page": {
+            "id": "national-dental-care",
+            "name": "National Dental Care"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "8531",
+          "name": "Dental Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/national-dental-care-%E2%80%93-business-assets-comprising-the-bdf-dental-clinic-beaudesert-queensland"
+    },
+    {
       "merger_id": "WA-20028",
       "merger_name": "Accenture \u2013 Whalar Agency",
       "status": "Assessment completed",
@@ -2007,6 +2082,96 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hapag-lloyd-zim"
+    },
+    {
+      "merger_id": "WA-05029",
+      "merger_name": "HupCo \u2013 AMES Australasia",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-06-29T12:00:00Z",
+      "determination_publication_date": "2026-07-17T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "HUPCO HOLDINGS PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "697 110 099",
+          "party_page": {
+            "id": "hupco-holdings-pty-ltd",
+            "name": "Hupco Holdings Pty Ltd"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Griffon AMES HoldCo LLC",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "griffon-ames-holdco-llc",
+            "name": "Griffon AMES HoldCo LLC"
+          }
+        },
+        {
+          "name": "GRIFFON AUSTRALIA HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "35 156 377 356",
+          "party_page": {
+            "id": "griffon-australia-holdings-pty-ltd",
+            "name": "Griffon Australia Holdings Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "HUPCO PARENTCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "698 725 816",
+          "party_page": {
+            "id": "hupco-parentco-pty-ltd",
+            "name": "Hupco Parentco Pty Ltd"
+          }
+        },
+        {
+          "name": "HUPCO MIDCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "698 725 058",
+          "party_page": {
+            "id": "hupco-midco-pty-ltd",
+            "name": "Hupco Midco Pty Ltd"
+          }
+        },
+        {
+          "name": "HUPCO TOPCO PTY LTD",
+          "identifier_type": "ACN",
+          "identifier": "698 724 579",
+          "party_page": {
+            "id": "hupco-topco-pty-ltd",
+            "name": "Hupco Topco Pty Ltd"
+          }
+        },
+        {
+          "name": "Ames Hunter Holdings Corporation",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "ames-hunter-holdings-corporation",
+            "name": "Ames Hunter Holdings Corporation"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "3339",
+          "name": "Other Hardware Goods Wholesaling"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hupco-%E2%80%93-ames-australasia"
     },
     {
       "merger_id": "WA-65027",
@@ -3844,176 +4009,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/amplifon-%E2%80%93-gn-hearing"
-    },
-    {
-      "merger_id": "MN-90028",
-      "merger_name": "Peter Warren - Wakeling Automotive",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-13T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-24T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "57 615 674 185",
-          "party_page": {
-            "id": "peter-warren-automotive-holdings-limited",
-            "name": "Peter Warren Automotive Holdings Limited"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "WAKELING HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "41 160 814 040",
-          "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          }
-        },
-        {
-          "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
-          "identifier_type": "ACN",
-          "identifier": "119 879 980",
-          "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          }
-        },
-        {
-          "name": "Paul Wakeling Motor Group Pty Ltd",
-          "identifier_type": "ABN",
-          "identifier": "47 119 908 780",
-          "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          }
-        },
-        {
-          "name": "Wakeling South Coast Pty Ltd",
-          "identifier_type": "ACN",
-          "identifier": "636 298 970",
-          "canonical": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          },
-          "party_page": {
-            "id": "wakeling-motos",
-            "name": "Wakeling Motos"
-          }
-        },
-        {
-          "name": "HURRIKAYNE PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "74 118 744 915",
-          "party_page": {
-            "id": "hurrikayne-pty-ltd",
-            "name": "Hurrikayne Pty Ltd"
-          }
-        },
-        {
-          "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
-          "identifier_type": "ACN",
-          "identifier": "119 875 768",
-          "party_page": {
-            "id": "paul-burgess-nominees-pty-ltd-as-trustee-for-paul-burgess-trust",
-            "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust"
-          }
-        },
-        {
-          "name": "WOLLONGONG CITY MOTORS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "22 002 019 598",
-          "party_page": {
-            "id": "wollongong-city-motors-pty-ltd",
-            "name": "Wollongong City Motors Pty Ltd"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "3911",
-          "name": "Car Retailing"
-        },
-        {
-          "code": "3921",
-          "name": "Motor Vehicle Parts Retailing"
-        },
-        {
-          "code": "9419",
-          "name": "Other Automotive Repair and Maintenance"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/peter-warren-wakeling-automotive-0"
-    },
-    {
-      "merger_id": "MN-95025",
-      "merger_name": "Salesforce - Contentful",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-13T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-24T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "Salesforce, Inc.",
-          "identifier_type": null,
-          "identifier": "U.S. EIN: 943320693",
-          "canonical": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          },
-          "party_page": {
-            "id": "salesforce-inc",
-            "name": "Salesforce, Inc"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Contentful Global, Inc.",
-          "identifier_type": null,
-          "identifier": "U.S. EIN: 862273457",
-          "party_page": {
-            "id": "contentful-global-inc",
-            "name": "Contentful Global, Inc."
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "7000",
-          "name": "Computer System Design and Related Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/salesforce-contentful"
     }
   ],
   "page": 9,

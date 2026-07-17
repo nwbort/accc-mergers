@@ -1,6 +1,176 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-90028",
+      "merger_name": "Peter Warren - Wakeling Automotive",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-13T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-24T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "PETER WARREN AUTOMOTIVE HOLDINGS LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "57 615 674 185",
+          "party_page": {
+            "id": "peter-warren-automotive-holdings-limited",
+            "name": "Peter Warren Automotive Holdings Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "WAKELING HOLDINGS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "41 160 814 040",
+          "canonical": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          },
+          "party_page": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          }
+        },
+        {
+          "name": "S A Wakeling Nominees Pty Ltd as trustee for S.A. Wakeling Trust",
+          "identifier_type": "ACN",
+          "identifier": "119 879 980",
+          "canonical": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          },
+          "party_page": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          }
+        },
+        {
+          "name": "Paul Wakeling Motor Group Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "47 119 908 780",
+          "canonical": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          },
+          "party_page": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          }
+        },
+        {
+          "name": "Wakeling South Coast Pty Ltd",
+          "identifier_type": "ACN",
+          "identifier": "636 298 970",
+          "canonical": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          },
+          "party_page": {
+            "id": "wakeling-motos",
+            "name": "Wakeling Motos"
+          }
+        },
+        {
+          "name": "HURRIKAYNE PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "74 118 744 915",
+          "party_page": {
+            "id": "hurrikayne-pty-ltd",
+            "name": "Hurrikayne Pty Ltd"
+          }
+        },
+        {
+          "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust",
+          "identifier_type": "ACN",
+          "identifier": "119 875 768",
+          "party_page": {
+            "id": "paul-burgess-nominees-pty-ltd-as-trustee-for-paul-burgess-trust",
+            "name": "Paul Burgess Nominees Pty Ltd as trustee for Paul Burgess Trust"
+          }
+        },
+        {
+          "name": "WOLLONGONG CITY MOTORS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "22 002 019 598",
+          "party_page": {
+            "id": "wollongong-city-motors-pty-ltd",
+            "name": "Wollongong City Motors Pty Ltd"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "3911",
+          "name": "Car Retailing"
+        },
+        {
+          "code": "3921",
+          "name": "Motor Vehicle Parts Retailing"
+        },
+        {
+          "code": "9419",
+          "name": "Other Automotive Repair and Maintenance"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/peter-warren-wakeling-automotive-0"
+    },
+    {
+      "merger_id": "MN-95025",
+      "merger_name": "Salesforce - Contentful",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-13T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-24T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Salesforce, Inc.",
+          "identifier_type": null,
+          "identifier": "U.S. EIN: 943320693",
+          "canonical": {
+            "id": "salesforce-inc",
+            "name": "Salesforce, Inc"
+          },
+          "party_page": {
+            "id": "salesforce-inc",
+            "name": "Salesforce, Inc"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Contentful Global, Inc.",
+          "identifier_type": null,
+          "identifier": "U.S. EIN: 862273457",
+          "party_page": {
+            "id": "contentful-global-inc",
+            "name": "Contentful Global, Inc."
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "7000",
+          "name": "Computer System Design and Related Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/salesforce-contentful"
+    },
+    {
       "merger_id": "MN-15028",
       "merger_name": "Total Drain Group - Pipe Management Australia",
       "status": "Under assessment",

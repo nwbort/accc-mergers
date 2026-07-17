@@ -1,6 +1,6 @@
 {
   "total_mergers": 180,
-  "total_waivers": 275,
+  "total_waivers": 277,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 261,
+    "Approved": 263,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,9 +42,9 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.585454545454546,
+    "average_days": 18.595667870036102,
     "median_days": 18,
-    "average_business_days": 12.36,
+    "average_business_days": 12.379061371841155,
     "median_business_days": 12
   },
   "top_industries": [
@@ -206,6 +206,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-15029",
+      "merger_name": "National Dental Care \u2013 business assets comprising the BDF Dental clinic, Beaudesert, Queensland",
+      "determination": "Approved",
+      "determination_date": "2026-07-17T12:00:00Z",
+      "page_modified_datetime": "2026-07-17T16:37:41+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-05029",
+      "merger_name": "HupCo \u2013 AMES Australasia",
+      "determination": "Approved",
+      "determination_date": "2026-07-17T12:00:00Z",
+      "page_modified_datetime": "2026-07-17T16:35:57+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-10020",
       "merger_name": "Apollo Capital \u2013 Curia",
       "determination": "Approved",
@@ -304,26 +324,6 @@
       "determination_type": "final",
       "is_waiver": false,
       "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-45019",
-      "merger_name": "Blackbird Ventures \u2013 Baseten Labs",
-      "determination": "Approved",
-      "determination_date": "2026-07-15T12:00:00Z",
-      "page_modified_datetime": "2026-07-15T17:12:33+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-90025",
-      "merger_name": "KKR - Crowe",
-      "determination": "Approved",
-      "determination_date": "2026-07-15T12:00:00Z",
-      "page_modified_datetime": "2026-07-15T17:02:22+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }

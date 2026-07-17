@@ -31,7 +31,7 @@
       "code": "853",
       "name": "Allied Health Services",
       "level": "group",
-      "merger_count": 12
+      "merger_count": 13
     },
     {
       "code": "859",
@@ -73,6 +73,17 @@
       "phase": "Phase 1",
       "notification_date": "2026-06-19T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-15029",
+      "merger_name": "National Dental Care \u2013 business assets comprising the BDF Dental clinic, Beaudesert, Queensland",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-06-25T12:00:00Z",
+      "determination_date": "2026-07-17T12:00:00Z"
     },
     {
       "merger_id": "WA-40028",
@@ -262,10 +273,10 @@
       "determination_date": "2026-02-26T12:00:00Z"
     }
   ],
-  "count": 20,
+  "count": 21,
   "phase_1_count": 7,
   "phase_2_count": 0,
-  "waiver_count": 13,
+  "waiver_count": 14,
   "active_count": 3,
   "phase_duration": {
     "average_days": 24.75,
@@ -275,10 +286,10 @@
     "completed_count": 4
   },
   "waiver_duration": {
-    "average_days": 15.76923076923077,
-    "median_days": 15,
-    "average_business_days": 10.461538461538462,
-    "median_business_days": 11,
-    "completed_count": 13
+    "average_days": 16.214285714285715,
+    "median_days": 15.0,
+    "average_business_days": 10.857142857142858,
+    "median_business_days": 11.0,
+    "completed_count": 14
   }
 }
