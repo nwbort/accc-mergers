@@ -39345,22 +39345,9 @@
       "original_notification_datetime": "2026-07-08T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-19T12:00:00Z",
-      "page_modified_datetime": "2026-07-09T14:01:45+10:00",
+      "page_modified_datetime": "2026-07-17T10:12:46+10:00",
       "consultation_response_due_date": "2026-07-16T12:00:00Z",
       "acquirers": [
-        {
-          "name": "Leidos, Inc.",
-          "identifier_type": null,
-          "identifier": "EFN  901386",
-          "canonical": {
-            "id": "leidos-inc",
-            "name": "Leidos, Inc."
-          },
-          "party_page": {
-            "id": "leidos-inc",
-            "name": "Leidos, Inc."
-          }
-        },
         {
           "name": "AHP-ANLG IV, LLC",
           "identifier_type": null,
@@ -39377,6 +39364,19 @@
           "party_page": {
             "id": "analogic-corporation",
             "name": "Analogic Corporation"
+          }
+        },
+        {
+          "name": "Leidos, Inc.",
+          "identifier_type": null,
+          "identifier": "EFN  901386",
+          "canonical": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
+          },
+          "party_page": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
           }
         }
       ],
@@ -39402,19 +39402,6 @@
       ],
       "other_parties": [
         {
-          "name": "Leidos Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "EFN  4014717",
-          "canonical": {
-            "id": "leidos-inc",
-            "name": "Leidos, Inc."
-          },
-          "party_page": {
-            "id": "leidos-inc",
-            "name": "Leidos, Inc."
-          }
-        },
-        {
           "name": "Altaris Partners, LLC",
           "identifier_type": null,
           "identifier": "EFN  4261614",
@@ -39430,6 +39417,19 @@
           "party_page": {
             "id": "anlg-intermediate-company-llc",
             "name": "ANLG Intermediate Company, LLC"
+          }
+        },
+        {
+          "name": "Leidos Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "EFN  4014717",
+          "canonical": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
+          },
+          "party_page": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
           }
         }
       ],
@@ -39459,7 +39459,7 @@
           "display_title": "Analogic - Leidos SES business - Questionnaire",
           "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Analogic%20-%20Leidos%20SES%20business%20-%20Questionnaire.docx",
           "url_gh": "/mergers/MN-75029/Analogic - Leidos SES business - Questionnaire.pdf",
-          "status": "live",
+          "status": "removed",
           "phase": null
         },
         {

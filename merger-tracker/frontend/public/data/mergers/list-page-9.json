@@ -3227,19 +3227,6 @@
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
         {
-          "name": "Leidos, Inc.",
-          "identifier_type": null,
-          "identifier": "EFN  901386",
-          "canonical": {
-            "id": "leidos-inc",
-            "name": "Leidos, Inc."
-          },
-          "party_page": {
-            "id": "leidos-inc",
-            "name": "Leidos, Inc."
-          }
-        },
-        {
           "name": "AHP-ANLG IV, LLC",
           "identifier_type": null,
           "identifier": "EFN  6840942",
@@ -3255,6 +3242,19 @@
           "party_page": {
             "id": "analogic-corporation",
             "name": "Analogic Corporation"
+          }
+        },
+        {
+          "name": "Leidos, Inc.",
+          "identifier_type": null,
+          "identifier": "EFN  901386",
+          "canonical": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
+          },
+          "party_page": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
           }
         }
       ],
@@ -3280,19 +3280,6 @@
       ],
       "other_parties": [
         {
-          "name": "Leidos Holdings, Inc.",
-          "identifier_type": null,
-          "identifier": "EFN  4014717",
-          "canonical": {
-            "id": "leidos-inc",
-            "name": "Leidos, Inc."
-          },
-          "party_page": {
-            "id": "leidos-inc",
-            "name": "Leidos, Inc."
-          }
-        },
-        {
           "name": "Altaris Partners, LLC",
           "identifier_type": null,
           "identifier": "EFN  4261614",
@@ -3308,6 +3295,19 @@
           "party_page": {
             "id": "anlg-intermediate-company-llc",
             "name": "ANLG Intermediate Company, LLC"
+          }
+        },
+        {
+          "name": "Leidos Holdings, Inc.",
+          "identifier_type": null,
+          "identifier": "EFN  4014717",
+          "canonical": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
+          },
+          "party_page": {
+            "id": "leidos-inc",
+            "name": "Leidos, Inc."
           }
         }
       ],
