@@ -18,7 +18,7 @@ function Bar({ widthPct, value, barClass, valueClass, caption, delta }) {
         </span>
       </div>
       <div className="flex items-center justify-between gap-2 mt-1">
-        <p className="text-[11px] text-gray-500 truncate">{caption}</p>
+        <p className="text-[11px] text-gray-500 truncate min-w-0" title={typeof caption === 'string' ? caption : undefined}>{caption}</p>
         {delta}
       </div>
     </>
@@ -75,7 +75,7 @@ function MetricComparison({ label, current, comparisons, subjectLabel }) {
   const barShades = ['bg-gray-400', 'bg-gray-300'];
 
   return (
-    <div>
+    <div className="min-w-0">
       <p className={`${SECTION_HEADING} mb-2.5`}>
         {label}
       </p>
