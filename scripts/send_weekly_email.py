@@ -704,11 +704,7 @@ def build_html_email(digest: dict) -> str:
             "we&rsquo;d love to hear from you."
         )
     else:
-        header_cta = (
-            "Were you forwarded this email? Sign up "
-            f'<a href="{SITE_BASE}/digest" '
-            f'style="color:{GREEN};text-decoration:underline;">here</a>.'
-        )
+        header_cta = "Congratulations to Spain! 🇪🇸"
 
     preheader_bits = [f"{c['new']} new deals notified", f"{c['cleared']} cleared"]
     if c["ceased"]:
