@@ -29,6 +29,7 @@ from zoneinfo import ZoneInfo
 
 import requests
 
+from constants.tribunal import APPEAL_TYPE_LABELS
 from date_utils import parse_iso_datetime
 
 # ---------------------------------------------------------------------------
@@ -48,6 +49,7 @@ COLORS = {
     "phase_2_referral": {"border": "#d97706", "pale": "#fef3c7", "dark": "#b45309"},
     "declined":         {"border": "#f49097", "pale": "#FEE7E9", "dark": "#E8636C"},
     "ceased":           {"border": "#9333ea", "pale": "#faf5ff", "dark": "#7e22ce"},
+    "tribunal_appeal":  {"border": "#2563eb", "pale": "#DBEAFE", "dark": "#1D4ED8"},
     "phase_1":          {"border": "#B8935C", "pale": "#FCECC9", "dark": "#8A6B3E"},
     "phase_2":          {"border": "#52489c", "pale": "#E8E5F3", "dark": "#3A3372"},
 }
@@ -192,6 +194,7 @@ def build_text_email(digest: dict) -> str:
 
     referred = digest.get("deals_referred_to_phase_2") or []
     ceased = digest.get("deals_assessment_ceased") or []
+    appealed = digest.get("deals_appealed_to_tribunal") or []
 
     lines = [
         "Australian Merger Tracker weekly digest",
@@ -208,6 +211,10 @@ def build_text_email(digest: dict) -> str:
     lines += [
         f"Referred to phase 2  : {len(referred)}",
         f"Declined             : {len(digest['deals_declined'])}",
+    ]
+    if appealed:
+        lines.append(f"Appealed to tribunal : {len(appealed)}")
+    lines += [
         f"Ongoing phase 1      : {len(digest['ongoing_phase_1'])}",
         f"Ongoing phase 2      : {len(digest['ongoing_phase_2'])}",
         "",
@@ -263,6 +270,19 @@ def build_text_email(digest: dict) -> str:
     lines.append(_text_section("MERGERS DECLINED", ["Merger", "Date"], declined_rows, "No mergers declined this week."))
     lines.append("")
     lines.append("")
+
+    if appealed:
+        appealed_rows = [
+            [
+                m.get("merger_name", m["merger_id"]),
+                format_date((m.get("appeal") or {}).get("filed_date")),
+                APPEAL_TYPE_LABELS.get((m.get("appeal") or {}).get("appeal_type"), "Tribunal appeal"),
+            ]
+            for m in appealed
+        ]
+        lines.append(_text_section("APPEALED TO TRIBUNAL", ["Merger", "Filed", "Type"], appealed_rows, ""))
+        lines.append("")
+        lines.append("")
 
     phase1_rows = [
         [m.get("merger_name", m["merger_id"]), format_date(m.get("effective_notification_datetime"))]
@@ -332,6 +352,7 @@ def _counts(digest: dict) -> dict:
         "referred": len(digest.get("deals_referred_to_phase_2") or []),
         "declined": len(digest["deals_declined"]),
         "ceased": len(digest.get("deals_assessment_ceased") or []),
+        "appealed": len(digest.get("deals_appealed_to_tribunal") or []),
         "p1": len(digest["ongoing_phase_1"]),
         "p2": len(digest["ongoing_phase_2"]),
     }
@@ -383,6 +404,11 @@ def build_lede(c: dict) -> str:
         mid.append(f"{bw(c['declined'])} {pluralise(c['declined'], 'was', 'were')} declined")
     if c["ceased"]:
         mid.append(f"{bw(c['ceased'])} {pluralise(c['ceased'], 'assessment')} ceased")
+    if c["appealed"]:
+        mid.append(
+            f"{bw(c['appealed'])} {pluralise(c['appealed'], 'deal was', 'deals were')} "
+            "appealed to the tribunal"
+        )
     if mid:
         sentence = join_and(mid)
         # Capitalise the first letter, skipping the <strong …> markup
@@ -412,6 +438,8 @@ def build_scoreboard(c: dict) -> str:
     ]
     if c["ceased"]:
         cells.append((c["ceased"], "CEASED", COLORS["ceased"], "mergers-ceased"))
+    if c["appealed"]:
+        cells.append((c["appealed"], "APPEALED", COLORS["tribunal_appeal"], "mergers-appealed"))
     cells += [
         (c["referred"], "TO PHASE 2", COLORS["phase_2_referral"], "mergers-referred"),
         (c["declined"], "DECLINED", COLORS["declined"], "mergers-declined"),
@@ -623,6 +651,44 @@ def build_decisions(digest: dict) -> str:
     return section_table(rows)
 
 
+def build_tribunal_appeals(mergers: list) -> str:
+    """Deals taken to the Australian Competition Tribunal for review this week."""
+    c = COLORS["tribunal_appeal"]
+    rows = section_head("Appealed to tribunal", c["border"],
+                        f"{len(mergers)} this week" if mergers else "")
+    if not mergers:
+        rows += empty_section_row("No deals were appealed to the tribunal this week.")
+    else:
+        for i, m in enumerate(mergers):
+            divider = "" if i == len(mergers) - 1 else f"border-bottom:1px solid {ROW_LINE};"
+            appeal = m.get("appeal") or {}
+            type_label = APPEAL_TYPE_LABELS.get(appeal.get("appeal_type"), "Tribunal appeal")
+            meta_bits = [x for x in (
+                type_label,
+                f"Filed {esc(format_date(appeal.get('filed_date')))}",
+                esc(m.get("merger_id", "")),
+            ) if x]
+            detail_bits = []
+            if appeal.get("appellant"):
+                detail_bits.append(f"Lodged by {esc(appeal['appellant'])}")
+            if appeal.get("tribunal_number"):
+                detail_bits.append(esc(appeal["tribunal_number"]))
+            detail_html = (
+                f'<div style="font-size:12px;color:{BODY_TEXT};line-height:18px;'
+                f'margin-top:4px;">{" &middot; ".join(detail_bits)}</div>'
+                if detail_bits else ""
+            )
+            rows += (
+                f'<tr><td colspan="2" style="padding:13px 0 12px;{divider}">'
+                f'<a href="{merger_url(m)}" style="color:{c["dark"]};font-size:14px;'
+                f'font-weight:700;text-decoration:none;line-height:1.4;">{merger_name(m)}</a>'
+                f'<div style="margin-top:4px;">{chip("APPEALED", c["pale"], c["dark"])}'
+                f' <span style="font-size:11px;color:{FAINT};">{" &middot; ".join(meta_bits)}</span></div>'
+                f"{detail_html}</td></tr>"
+            )
+    return section_table(rows)
+
+
 def _phase_group_row(label: str, color: dict, count: int) -> str:
     return (
         f'<tr><td style="padding:16px 0 5px;border-bottom:1px solid {ROW_LINE};'
@@ -692,9 +758,11 @@ def build_html_email(digest: dict) -> str:
     show_feedback = _is_feedback_week(digest.get("period_start", ""))
     c = _counts(digest)
 
+    appealed = digest.get("deals_appealed_to_tribunal") or []
     sections = (
         build_new_deals(digest["new_deals_notified"])
         + build_decisions(digest)
+        + (build_tribunal_appeals(appealed) if appealed else "")
         + build_pipeline(digest)
     )
 
@@ -717,6 +785,8 @@ def build_html_email(digest: dict) -> str:
         preheader_bits.append(f"{c['referred']} referred to phase 2")
     if c["declined"]:
         preheader_bits.append(f"{c['declined']} declined")
+    if c["appealed"]:
+        preheader_bits.append(f"{c['appealed']} appealed to tribunal")
     preheader_bits.append(f"{c['p1'] + c['p2']} ongoing")
     preheader = ", ".join(preheader_bits) + "."
 
@@ -959,6 +1029,7 @@ def main() -> None:
     print(f"  Referred to phase 2   : {len(digest.get('deals_referred_to_phase_2') or [])}")
     print(f"  Deals declined        : {len(digest['deals_declined'])}")
     print(f"  Assessment ceased     : {len(digest.get('deals_assessment_ceased') or [])}")
+    print(f"  Appealed to tribunal  : {len(digest.get('deals_appealed_to_tribunal') or [])}")
     print(f"  Ongoing phase 1       : {len(digest['ongoing_phase_1'])}")
     print(f"  Ongoing phase 2       : {len(digest['ongoing_phase_2'])}")
 

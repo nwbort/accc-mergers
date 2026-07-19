@@ -44,6 +44,12 @@ export default {
           dark: '#7e22ce',
           pale: '#faf5ff',
         },
+        'tribunal-appeal': {
+          DEFAULT: '#2563eb',
+          light: '#60a5fa',
+          dark: '#1d4ed8',
+          pale: '#DBEAFE',
+        },
         'phase-1': {
           DEFAULT: '#B8935C',
           light: '#D4B384',
