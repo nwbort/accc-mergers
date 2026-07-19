@@ -16,6 +16,7 @@ import {
   MERGER_STATUS,
 } from '../constants/mergerStatus';
 import { SECTION_HEADING } from '../utils/classNames';
+import { APPEAL_TYPE_LABELS, DEFAULT_APPEAL_LABEL } from '../constants/appeal';
 
 const scrollToTop = () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -392,6 +393,7 @@ function Digest() {
   const dateRange = formatDateRange(digest.period_start, digest.period_end);
 
   const ceasedMergers = digest.deals_assessment_ceased || [];
+  const appealedMergers = digest.deals_appealed_to_tribunal || [];
 
   const summaryCards = [
     { id: 'new-mergers', colorKey: DIGEST_COLOR_KEYS.NEW_MERGER, count: digest.new_deals_notified.length, label: 'New deals notified' },
@@ -399,6 +401,7 @@ function Digest() {
     { id: 'mergers-referred', colorKey: DIGEST_COLOR_KEYS.PHASE_2_REFERRAL, count: (digest.deals_referred_to_phase_2 || []).length, label: 'Referred to phase 2' },
     { id: 'mergers-declined', colorKey: DIGEST_COLOR_KEYS.DECLINED, count: digest.deals_declined.length, label: 'Deals declined' },
     ...(ceasedMergers.length > 0 ? [{ id: 'mergers-ceased', colorKey: DIGEST_COLOR_KEYS.CEASED, count: ceasedMergers.length, label: 'Assessment ceased' }] : []),
+    ...(appealedMergers.length > 0 ? [{ id: 'mergers-appealed', colorKey: DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL, count: appealedMergers.length, label: 'Appealed to tribunal' }] : []),
     { id: 'ongoing-phase-1', colorKey: DIGEST_COLOR_KEYS.PHASE_1, count: digest.ongoing_phase_1.length, label: 'Ongoing phase 1' },
     { id: 'ongoing-phase-2', colorKey: DIGEST_COLOR_KEYS.PHASE_2, count: digest.ongoing_phase_2.length, label: 'Ongoing phase 2' },
   ];
@@ -536,6 +539,39 @@ function Digest() {
               </tr>
             )}
           />
+
+          {appealedMergers.length > 0 && (
+            <DigestSection
+              id="mergers-appealed"
+              title="Appealed to tribunal"
+              emptyMessage="No deals appealed to the tribunal this week"
+              colorKey={DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL}
+              mergers={appealedMergers}
+              columns={['Merger', 'Filed', 'Appeal']}
+              renderRow={(merger) => {
+                const appeal = merger.appeal || {};
+                return (
+                  <tr key={merger.merger_id} className="relative hover:bg-tribunal-appeal-pale/40 transition-colors">
+                    <MergerNameCell merger={merger} colorKey={DIGEST_COLOR_KEYS.TRIBUNAL_APPEAL} />
+                    <td className="px-5 sm:px-6 py-4 whitespace-nowrap text-sm text-gray-600">
+                      {appeal.filed_date ? formatDate(appeal.filed_date) : 'N/A'}
+                    </td>
+                    <td className="px-5 sm:px-6 py-4 text-sm text-gray-600">
+                      <div>{APPEAL_TYPE_LABELS[appeal.appeal_type] || DEFAULT_APPEAL_LABEL}</div>
+                      {(appeal.tribunal_number || appeal.appellant) && (
+                        <div className="text-xs text-gray-500 mt-0.5">
+                          {[
+                            appeal.appellant ? `Lodged by ${appeal.appellant}` : null,
+                            appeal.tribunal_number,
+                          ].filter(Boolean).join(' · ')}
+                        </div>
+                      )}
+                    </td>
+                  </tr>
+                );
+              }}
+            />
+          )}
 
           <DigestSection
             id="ongoing-phase-1"

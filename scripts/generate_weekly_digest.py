@@ -7,6 +7,7 @@ This script creates a summary showing:
 - Deals cleared in the last week
 - Deals referred to phase 2 in the last week
 - Deals declined/not approved in the last week
+- Deals appealed to the Australian Competition Tribunal in the last week
 - Ongoing phase 1 deals
 - Ongoing phase 2 deals
 
@@ -37,7 +38,8 @@ from typing import Dict, Any, Optional, Set
 from constants import merger_status
 from date_utils import parse_iso_datetime
 from merger_filters import filter_active, load_mergers
-from static_data.enrichment import enrich_merger
+from static_data.enrichment import enrich_merger, link_tribunal_appeals
+from static_data.loaders import load_tribunal_appeals
 
 
 OUTPUT_PATH = (
@@ -230,6 +232,8 @@ def create_merger_summary(merger: Dict[str, Any]) -> Dict[str, Any]:
         'ceased_date': merger.get('ceased_date'),
         'merger_description': truncated_description,
         'events': merger.get('events', []),
+        'under_appeal': merger.get('under_appeal', False),
+        'appeal': merger.get('appeal'),
     }
 
 
@@ -249,7 +253,12 @@ def generate_weekly_digest(
             week's digest are not repeated. Defaults to reading the
             currently-on-disk digest.json.
     """
-    mergers = filter_active([enrich_merger(m) for m in load_mergers()])
+    enriched = [enrich_merger(m) for m in load_mergers()]
+    # Layer on Australian Competition Tribunal appeal data so the digest can
+    # surface deals appealed to the tribunal (sets each merger's `appeal`
+    # record and `under_appeal` flag; leaves the ACCC-scraped fields intact).
+    link_tribunal_appeals(enriched, load_tribunal_appeals())
+    mergers = filter_active(enriched)
 
     # Get the Monday-Sunday week range in Australian time (for display) and
     # the widened lookback window that actually drives inclusion.
@@ -263,6 +272,7 @@ def generate_weekly_digest(
     already_referred = bucket_ids(previous_digest, 'deals_referred_to_phase_2')
     already_declined = bucket_ids(previous_digest, 'deals_declined')
     already_ceased = bucket_ids(previous_digest, 'deals_assessment_ceased')
+    already_appealed = bucket_ids(previous_digest, 'deals_appealed_to_tribunal')
 
     sydney_tz = ZoneInfo('Australia/Sydney')
     now_sydney = datetime.now(sydney_tz)
@@ -276,6 +286,7 @@ def generate_weekly_digest(
         'deals_referred_to_phase_2': [],
         'deals_declined': [],
         'deals_assessment_ceased': [],
+        'deals_appealed_to_tribunal': [],
         'ongoing_phase_1': [],
         'ongoing_phase_2': [],
     }
@@ -322,6 +333,17 @@ def generate_weekly_digest(
             merger_id not in already_ceased):
             digest['deals_assessment_ceased'].append(create_merger_summary(merger))
 
+        # Deals for which an Australian Competition Tribunal appeal was lodged
+        # within the lookback window, keyed on the appeal's filed date, minus
+        # anything already surfaced in last week's digest. A late-appearing
+        # tribunal filing is caught here the same way a late determination is.
+        appeal = merger.get('appeal')
+        if appeal:
+            appeal_filed_date = appeal.get('filed_date')
+            if (is_in_week_range(appeal_filed_date, lookback_start, period_end) and
+                merger_id not in already_appealed):
+                digest['deals_appealed_to_tribunal'].append(create_merger_summary(merger))
+
         # Ongoing phase 1/2 lists are always a current snapshot, not a
         # week-scoped activity list, so dedup does not apply.
         if (status == merger_status.UNDER_ASSESSMENT and
@@ -351,6 +373,11 @@ def generate_weekly_digest(
     # Sort ceased by cessation date (ascending)
     digest['deals_assessment_ceased'].sort(
         key=lambda x: x.get('ceased_date') or ''
+    )
+
+    # Sort tribunal appeals by the date the appeal was filed (ascending)
+    digest['deals_appealed_to_tribunal'].sort(
+        key=lambda x: (x.get('appeal') or {}).get('filed_date') or ''
     )
 
     # Sort ongoing deals by notification date (ascending)
@@ -394,6 +421,7 @@ def main():
     print(f"  Deals referred to phase 2 (last week): {len(digest['deals_referred_to_phase_2'])}")
     print(f"  Deals declined (last week): {len(digest['deals_declined'])}")
     print(f"  Assessment ceased (last week): {len(digest['deals_assessment_ceased'])}")
+    print(f"  Appealed to tribunal (last week): {len(digest['deals_appealed_to_tribunal'])}")
     print(f"  Ongoing phase 1 deals: {len(digest['ongoing_phase_1'])}")
     print(f"  Ongoing phase 2 deals: {len(digest['ongoing_phase_2'])}")
 

@@ -139,6 +139,10 @@ class TestWeeklyDigestBuckets:
         monkeypatch.setattr(gwd, 'load_mergers', lambda: mergers)
         monkeypatch.setattr(gwd, 'filter_active', lambda ms: ms)
         monkeypatch.setattr(gwd, 'get_last_week_range', lambda: (start, end))
+        # Isolate from the real tribunal_appeals.json: any appeal data the test
+        # cares about is injected directly onto the mergers passed in.
+        monkeypatch.setattr(gwd, 'load_tribunal_appeals', lambda: {})
+        monkeypatch.setattr(gwd, 'link_tribunal_appeals', lambda ms, appeals: 0)
         return gwd.generate_weekly_digest(previous_digest=previous_digest or {})
 
     # -----------------------------------------------------------------
@@ -437,6 +441,70 @@ class TestWeeklyDigestBuckets:
         summary = digest['deals_assessment_ceased'][0]
         assert summary['ceased_date'] == '2025-04-16'
         assert summary['stage'] == 'Phase 1 - initial assessment'
+
+    # -----------------------------------------------------------------
+    # Tribunal appeals
+    # -----------------------------------------------------------------
+
+    def _appealed_merger(self, merger_id, filed_date, **overrides):
+        merger = {
+            'merger_id': merger_id,
+            'merger_name': f'Appealed {merger_id}',
+            'status': merger_status.ASSESSMENT_COMPLETED,
+            'stage': 'Phase 2 - detailed assessment',
+            'effective_notification_datetime': '2025-01-10T00:00:00Z',
+            'determination_publication_date': '2025-02-01T12:00:00Z',
+            'accc_determination': merger_status.NOT_APPROVED,
+            'under_appeal': True,
+            'appeal': {
+                'tribunal_number': 'ACT 1 of 2025',
+                'appeal_type': 'party_denial',
+                'appellant': 'Acquirer Co',
+                'status': 'current',
+                'filed_date': filed_date,
+            },
+            'events': [],
+        }
+        merger.update(overrides)
+        return merger
+
+    def test_appeal_filed_in_window_is_included(self, monkeypatch):
+        merger = self._appealed_merger('MN-40001', '2025-04-16')  # Wed in period
+        digest = self._run([merger], monkeypatch)
+        assert [m['merger_id'] for m in digest['deals_appealed_to_tribunal']] == ['MN-40001']
+
+    def test_appeal_filed_outside_window_is_excluded(self, monkeypatch):
+        merger = self._appealed_merger('MN-40002', '2025-03-28')  # > 2 weeks before
+        digest = self._run([merger], monkeypatch)
+        assert digest['deals_appealed_to_tribunal'] == []
+
+    def test_appeal_already_in_previous_digest_is_not_repeated(self, monkeypatch):
+        merger = self._appealed_merger('MN-40003', '2025-04-11')  # prior Fri, in window
+        previous_digest = {'deals_appealed_to_tribunal': [{'merger_id': 'MN-40003'}]}
+        digest = self._run([merger], monkeypatch, previous_digest=previous_digest)
+        assert digest['deals_appealed_to_tribunal'] == []
+
+    def test_appeal_summary_carries_appeal_record(self, monkeypatch):
+        merger = self._appealed_merger('MN-40004', '2025-04-16')
+        digest = self._run([merger], monkeypatch)
+        summary = digest['deals_appealed_to_tribunal'][0]
+        assert summary['under_appeal'] is True
+        assert summary['appeal']['tribunal_number'] == 'ACT 1 of 2025'
+        assert summary['appeal']['filed_date'] == '2025-04-16'
+
+    def test_merger_without_appeal_is_absent_from_bucket(self, monkeypatch):
+        merger = {
+            'merger_id': 'MN-40005',
+            'merger_name': 'No appeal',
+            'status': merger_status.ASSESSMENT_COMPLETED,
+            'stage': 'Phase 1 - initial assessment',
+            'effective_notification_datetime': '2025-03-20T00:00:00Z',
+            'determination_publication_date': '2025-04-16T12:00:00Z',
+            'accc_determination': merger_status.APPROVED,
+            'events': [],
+        }
+        digest = self._run([merger], monkeypatch)
+        assert digest['deals_appealed_to_tribunal'] == []
 
     def test_ongoing_phase1_not_deduplicated(self, monkeypatch):
         """Ongoing phase 1/2 lists reflect the current state of open reviews
