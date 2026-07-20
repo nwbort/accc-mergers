@@ -275,13 +275,55 @@ def _load_known_notification_dates():
 KNOWN_NOTIFICATION_DATES = _load_known_notification_dates()
 
 
+def _parse_freeze_spec(value):
+    """Interpret a frozen_events_mergers.json entry's freeze setting.
+
+    Returns:
+        True       -> freeze every event for the merger (existing behaviour).
+        set[str]   -> freeze only the events whose ``title`` is in the set; all
+                      other events are still merged/updated from the scraped page.
+        None       -> not frozen (the entry only carries field overrides / a comment).
+    """
+    if not isinstance(value, dict):
+        # A bare/empty value (e.g. ``{}`` shorthand) freezes all events.
+        return True
+    if not value:
+        return True
+    freeze = value.get('freeze_events')
+    if isinstance(freeze, list):
+        # Selective freeze: a list of event titles to preserve.
+        titles = {t for t in freeze if isinstance(t, str) and t}
+        return titles or None
+    if freeze:
+        return True
+    return None
+
+
+def _freeze_spec_for(frozen_events_mergers, merger_id):
+    """Return the freeze spec for ``merger_id`` (True, a set of titles, or None).
+
+    Accepts either the dict returned by :func:`_load_frozen_events_mergers`
+    (merger_id -> spec) or a plain collection of merger IDs, in which case
+    membership means "freeze all events" (legacy behaviour used by tests).
+    """
+    if not frozen_events_mergers:
+        return None
+    if isinstance(frozen_events_mergers, dict):
+        return frozen_events_mergers.get(merger_id)
+    return True if merger_id in frozen_events_mergers else None
+
+
 def _load_frozen_events_mergers():
     """Load frozen-events and field-override data from frozen_events_mergers.json.
 
     Returns:
-        tuple: (frozen_ids, field_overrides)
-            frozen_ids: set of merger IDs whose events should not be updated from scraping.
-                An entry with an empty dict or ``freeze_events: true`` freezes events.
+        tuple: (frozen_specs, field_overrides)
+            frozen_specs: dict mapping merger IDs to a freeze spec. The spec is
+                ``True`` to freeze every event, or a set of event titles to freeze
+                only those specific events while still updating the rest from the
+                scraped page. An entry with an empty dict, ``freeze_events: true``,
+                or a bare value freezes all events; ``freeze_events: ["title", ...]``
+                freezes only the listed events.
             field_overrides: dict mapping merger IDs to dicts of field values that should
                 replace whatever the scraper finds.  Any key other than ``freeze_events``
                 (and keys starting with ``_``) is treated as a field override.
@@ -289,24 +331,25 @@ def _load_frozen_events_mergers():
     try:
         with open(FROZEN_EVENTS_MERGERS_PATH, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        frozen_ids = set()
+        frozen_specs = {}
         field_overrides = {}
         for k, v in data.items():
             if k.startswith('_'):
                 continue
-            if not isinstance(v, dict) or not v or v.get('freeze_events'):
-                frozen_ids.add(k)
+            spec = _parse_freeze_spec(v)
+            if spec is not None:
+                frozen_specs[k] = spec
             if isinstance(v, dict):
                 overrides = {fk: fv for fk, fv in v.items()
                              if fk != 'freeze_events' and not fk.startswith('_')}
                 if overrides:
                     field_overrides[k] = overrides
-        return frozen_ids, field_overrides
+        return frozen_specs, field_overrides
     except FileNotFoundError:
-        return set(), {}
+        return {}, {}
     except Exception as e:
         print(f"Warning: could not load {FROZEN_EVENTS_MERGERS_PATH}: {e}", file=sys.stderr)
-        return set(), {}
+        return {}, {}
 
 
 def _extract_basic_info(soup):
@@ -560,10 +603,16 @@ def _scrape_events(soup, merger_id, existing_merger_data=None):
 
 
 def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events_mergers):
-    """Merge scraped events with existing events, handling frozen mergers and display_title preservation."""
-    frozen = frozen_events_mergers or set()
+    """Merge scraped events with existing events, handling frozen mergers and display_title preservation.
 
-    if existing_merger_data and 'events' in existing_merger_data and merger_id in frozen:
+    ``frozen_events_mergers`` controls which existing events are protected from
+    the scraped page. The spec for a merger is either ``True`` (freeze every
+    event) or a set of event titles (freeze only those events, still updating the
+    rest). See :func:`_load_frozen_events_mergers`.
+    """
+    spec = _freeze_spec_for(frozen_events_mergers, merger_id)
+
+    if existing_merger_data and 'events' in existing_merger_data and spec is True:
         # Events are frozen: preserve existing events exactly as-is, only add genuinely new ones
         existing_urls = {e['url'] for e in existing_merger_data['events'] if 'url' in e}
         new_events = [e for e in scraped_events if e.get('url') not in existing_urls and 'url' in e]
@@ -573,6 +622,15 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
         return scraped_events
 
     existing_events = existing_merger_data['events']
+
+    # Selective freeze: keep the listed events exactly as-is. Drop the scraped
+    # copies up front so they can neither overwrite (in the loop below) nor be
+    # re-appended (in the trailing loops) as duplicates.
+    frozen_titles = spec if isinstance(spec, (set, frozenset)) else frozenset()
+    if frozen_titles:
+        scraped_events = [e for e in scraped_events
+                          if e.get('title') not in frozen_titles]
+
     existing_urls = {e['url'] for e in existing_events if 'url' in e}
 
     scraped_by_url = {}
@@ -587,6 +645,13 @@ def _merge_events(scraped_events, existing_merger_data, merger_id, frozen_events
     existing_urls_processed = set()
 
     for existing_event in existing_events:
+        if existing_event.get('title') in frozen_titles:
+            # Frozen event: keep the existing version verbatim (its scraped
+            # counterpart was already dropped above).
+            merged_events.append(existing_event)
+            if 'url' in existing_event:
+                existing_urls_processed.add(existing_event['url'])
+            continue
         if 'url' in existing_event:
             url = existing_event['url']
             if url in scraped_by_url:
