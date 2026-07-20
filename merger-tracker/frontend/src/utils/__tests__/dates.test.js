@@ -4,6 +4,7 @@ import {
   calculateDuration,
   formatDate,
   getBusinessDaysRemaining,
+  getCalendarDaysUntil,
   getDaysRemaining,
   isBusinessDay,
   isDatePast,
@@ -127,8 +128,9 @@ describe('getBusinessDaysRemaining', () => {
   beforeEach(() => {
     vi.useFakeTimers();
     // Pin "today" to a known weekday so the expected counts are stable.
-    // 2025-06-10 is a Tuesday.
-    vi.setSystemTime(new Date(2025, 5, 10, 9, 0, 0));
+    // 2025-06-10 is a Tuesday; use a fixed instant (noon AEST) so the
+    // Australian calendar day is 10 Jun regardless of the runner's timezone.
+    vi.setSystemTime(new Date('2025-06-10T02:00:00Z'));
   });
 
   afterEach(() => {
@@ -167,6 +169,13 @@ describe('formatDate', () => {
 
   it('formats an ISO datetime as DD/MM/YYYY', () => {
     expect(formatDate('2025-06-10T12:34:56Z')).toBe('10/06/2025');
+  });
+
+  it('keeps the ACCC calendar day for a noon-UTC datetime', () => {
+    // ACCC dates are encoded at noon UTC. Rendering the instant in a viewer's
+    // local timezone must not slip the calendar day. MN-01109's notification
+    // date is 2026-07-17T12:00:00Z, which the register shows as 17 July.
+    expect(formatDate('2026-07-17T12:00:00Z')).toBe('17/07/2026');
   });
 
   it('returns "N/A" when the input is missing', () => {
@@ -232,10 +241,46 @@ describe('getDaysRemaining', () => {
   });
 });
 
+describe('countdown functions with noon-UTC (ACCC) inputs', () => {
+  // ACCC dates are encoded at noon UTC. The countdown/comparison functions must
+  // treat them as the published calendar day, not the local-timezone instant,
+  // so a viewer east of Australia gets the same answer as one in Australia.
+  beforeEach(() => {
+    vi.useFakeTimers();
+    // "Today" = 15 Jul 2026, pinned via a fixed instant (noon AEST) so the
+    // Australian calendar day is the same on any runner timezone.
+    vi.setSystemTime(new Date('2026-07-15T02:00:00Z'));
+  });
+
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it('getCalendarDaysUntil treats noon-UTC as the published day', () => {
+    // 2026-07-17T12:00:00Z is 17 July. From 15 July that is 2 calendar days,
+    // regardless of the viewer's timezone.
+    expect(getCalendarDaysUntil('2026-07-17T12:00:00Z')).toBe(2);
+  });
+
+  it('isDatePast does not count the published day as past', () => {
+    // "Today" is 17 Jul; the 17 July notification date must not read as past.
+    vi.setSystemTime(new Date('2026-07-17T02:00:00Z'));
+    expect(isDatePast('2026-07-17T12:00:00Z')).toBe(false);
+  });
+
+  it('getBusinessDaysRemaining treats noon-UTC as the published day', () => {
+    // Today = Wed 15 Jul 2026. Target = Fri 17 Jul 2026.
+    // Business days after today: Thu 16, Fri 17 = 2.
+    expect(getBusinessDaysRemaining('2026-07-17T12:00:00Z')).toBe(2);
+  });
+});
+
 describe('isDatePast', () => {
   beforeEach(() => {
     vi.useFakeTimers();
-    vi.setSystemTime(new Date(2025, 5, 10, 9, 0, 0)); // 10 Jun 2025
+    // 10 Jun 2025, pinned via a fixed instant (noon AEST) so the Australian
+    // calendar day is stable across runner timezones.
+    vi.setSystemTime(new Date('2025-06-10T02:00:00Z'));
   });
 
   afterEach(() => {
