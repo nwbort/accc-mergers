@@ -45,6 +45,7 @@ from static_data.enrichment import (
     link_related_parties,
     link_similar_mergers,
     link_tribunal_appeals,
+    strip_event_status,
 )
 from static_data.phase1_estimate import attach_phase_1_estimates
 from static_data.loaders import (
@@ -162,10 +163,12 @@ def main():
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     DATA_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Full enriched mergers.json (offline analysis, not deployed)
+    # Full enriched mergers.json (offline analysis, not deployed). Event-level
+    # 'live'/'removed' status is stripped here too — like the deployed UI files,
+    # this artifact is generated, and only the backend source keeps the flag.
     mergers_json_path = DATA_OUTPUT_DIR / "mergers.json"
     with open(mergers_json_path, 'w', encoding='utf-8') as f:
-        json.dump({"mergers": enriched}, f, indent=2)
+        json.dump({"mergers": [strip_event_status(m) for m in enriched]}, f, indent=2)
     print(f"✓ Generated {mergers_json_path}")
 
     # Small single-file outputs: call generator → write result
