@@ -133,10 +133,32 @@ export const addBusinessDays = (startDate, count) => {
   }
 };
 
+/**
+ * Parse the calendar-date portion of an ISO string into a Date anchored at
+ * local midnight.
+ *
+ * ACCC register dates are effectively date-only values encoded at noon UTC
+ * (e.g. "2026-07-17T12:00:00Z"). Formatting that instant in the viewer's local
+ * timezone shifts the displayed day for anyone far enough east of Australia —
+ * for a viewer in New Zealand (UTC+12) noon UTC falls at midnight, so 17 July
+ * renders as 18 July. We only ever want to show the calendar day the ACCC
+ * published, so read the YYYY-MM-DD prefix directly and ignore the time/zone.
+ * @param {string} dateString - Date in ISO format
+ * @returns {Date} A local Date for the calendar day, or an Invalid Date
+ */
+const parseDateOnly = (dateString) => {
+  const match = /^(\d{4})-(\d{2})-(\d{2})/.exec(dateString);
+  if (match) {
+    return new Date(Number(match[1]), Number(match[2]) - 1, Number(match[3]));
+  }
+  // Fall back to full ISO parsing for any unexpected format.
+  return parseISO(dateString);
+};
+
 export const formatDate = (dateString) => {
   if (!dateString) return 'N/A';
   try {
-    return format(parseISO(dateString), 'dd/MM/yyyy');
+    return format(parseDateOnly(dateString), 'dd/MM/yyyy');
   } catch {
     return 'Invalid date';
   }
@@ -150,7 +172,7 @@ export const formatDate = (dateString) => {
 export const formatDateMedium = (dateString) => {
   if (!dateString) return 'N/A';
   try {
-    return format(parseISO(dateString), 'dd MMM yyyy');
+    return format(parseDateOnly(dateString), 'dd MMM yyyy');
   } catch {
     return 'Invalid date';
   }
@@ -164,7 +186,7 @@ export const formatDateMedium = (dateString) => {
 export const formatDateLong = (dateString) => {
   if (!dateString) return 'N/A';
   try {
-    return format(parseISO(dateString), 'd MMMM yyyy');
+    return format(parseDateOnly(dateString), 'd MMMM yyyy');
   } catch {
     return 'Invalid date';
   }
@@ -179,7 +201,7 @@ export const formatDateLong = (dateString) => {
 export const formatWeekday = (dateString) => {
   if (!dateString) return 'N/A';
   try {
-    return format(parseISO(dateString), 'EEE d MMM');
+    return format(parseDateOnly(dateString), 'EEE d MMM');
   } catch {
     return 'Invalid date';
   }

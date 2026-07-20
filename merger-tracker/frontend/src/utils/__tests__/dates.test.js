@@ -169,6 +169,13 @@ describe('formatDate', () => {
     expect(formatDate('2025-06-10T12:34:56Z')).toBe('10/06/2025');
   });
 
+  it('keeps the ACCC calendar day for a noon-UTC datetime', () => {
+    // ACCC dates are encoded at noon UTC. Rendering the instant in a viewer's
+    // local timezone must not slip the calendar day. MN-01109's notification
+    // date is 2026-07-17T12:00:00Z, which the register shows as 17 July.
+    expect(formatDate('2026-07-17T12:00:00Z')).toBe('17/07/2026');
+  });
+
   it('returns "N/A" when the input is missing', () => {
     expect(formatDate(null)).toBe('N/A');
     expect(formatDate(undefined)).toBe('N/A');
