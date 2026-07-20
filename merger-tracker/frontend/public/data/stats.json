@@ -1,10 +1,10 @@
 {
-  "total_mergers": 180,
+  "total_mergers": 181,
   "total_waivers": 279,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
-    "Under assessment": 43,
+    "Under assessment": 44,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -90,6 +90,15 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-01109",
+      "merger_name": "Syngenta Crop Protection and D\u00fcmmen Orange \u2013 Joint Venture Formation",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-17T12:00:00Z",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-30023",
       "merger_name": "UPM-Kymmene \u2013 Sappi joint venture",
@@ -193,15 +202,6 @@
       "effective_notification_datetime": "2026-07-10T12:00:00Z",
       "is_waiver": false,
       "is_refiled": true
-    },
-    {
-      "merger_id": "MN-95030",
-      "merger_name": "Origin \u2013 Climatech Zero",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-10T12:00:00Z",
-      "is_waiver": false,
-      "is_refiled": false
     }
   ],
   "recent_determinations": [

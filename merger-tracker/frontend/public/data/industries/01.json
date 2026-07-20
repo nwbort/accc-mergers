@@ -19,7 +19,7 @@
       "code": "011",
       "name": "Nursery and Floriculture Production",
       "level": "group",
-      "merger_count": 0
+      "merger_count": 1
     },
     {
       "code": "012",
@@ -71,6 +71,17 @@
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-01109",
+      "merger_name": "Syngenta Crop Protection and D\u00fcmmen Orange \u2013 Joint Venture Formation",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-17T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-35018",
       "merger_name": "Hewitt \u2013 Nolan Meats",
@@ -182,11 +193,11 @@
       "determination_date": "2026-03-06T12:00:00Z"
     }
   ],
-  "count": 10,
-  "phase_1_count": 5,
+  "count": 11,
+  "phase_1_count": 6,
   "phase_2_count": 0,
   "waiver_count": 5,
-  "active_count": 1,
+  "active_count": 2,
   "phase_duration": {
     "average_days": 26.0,
     "median_days": 27.0,
