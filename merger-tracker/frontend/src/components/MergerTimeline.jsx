@@ -1,4 +1,4 @@
-import { parseISO, isValid } from 'date-fns';
+import { isValid } from 'date-fns';
 import {
   formatDateMedium,
   calculateDuration,
@@ -6,6 +6,8 @@ import {
   getDaysRemaining,
   getBusinessDaysRemaining,
   addBusinessDays,
+  parseDateOnly,
+  toDateString,
 } from '../utils/dates';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { getOutcomeDot } from '../constants/outcomeDotColors';
@@ -83,16 +85,16 @@ function MergerTimeline({ merger }) {
     || (isCeased ? merger.ceased_date : null);
   const isComplete = Boolean(effectiveDeterminationDate);
 
-  const start = startStr ? parseISO(startStr) : null;
+  const start = startStr ? parseDateOnly(startStr) : null;
 
   // Use the published end-of-determination date when present; for waivers
   // (which have none) fall back to the statutory 25-business-day window.
   let deadlineStr = merger.end_of_determination_period;
   if (!deadlineStr && merger.is_waiver && start && isValid(start)) {
     const derived = addBusinessDays(start, WAIVER_BUSINESS_DAYS);
-    deadlineStr = derived ? derived.toISOString() : null;
+    deadlineStr = derived ? toDateString(derived) : null;
   }
-  const deadline = deadlineStr ? parseISO(deadlineStr) : null;
+  const deadline = deadlineStr ? parseDateOnly(deadlineStr) : null;
   const hasDeadline = start && deadline && isValid(start) && isValid(deadline) && deadline > start;
 
   // The right-hand endpoint is the statutory decision deadline whenever there
@@ -110,7 +112,7 @@ function MergerTimeline({ merger }) {
     endLabel = 'Deadline';
   } else if (isComplete) {
     endStr = effectiveDeterminationDate;
-    end = parseISO(endStr);
+    end = parseDateOnly(endStr);
     endLabel = isCeased ? 'Ceased' : 'Determination';
     endIsOutcome = true;
   }
@@ -131,7 +133,7 @@ function MergerTimeline({ merger }) {
   // Mid-axis "determination" marker for decided mergers whose endpoint is the
   // deadline.
   const decisionPct = isComplete && hasDeadline
-    ? axisPct(parseISO(effectiveDeterminationDate), start, end)
+    ? axisPct(parseDateOnly(effectiveDeterminationDate), start, end)
     : null;
 
   // For mergers referred to Phase 2, mark the Phase 1 determination date with a
@@ -140,7 +142,7 @@ function MergerTimeline({ merger }) {
     || Boolean(merger.phase_2_determination_date);
   let phase1Pct = null;
   if (wentToPhase2 && merger.phase_1_determination_date) {
-    const phase1 = parseISO(merger.phase_1_determination_date);
+    const phase1 = parseDateOnly(merger.phase_1_determination_date);
     if (isValid(phase1) && phase1 > start && phase1 < end) {
       phase1Pct = axisPct(phase1, start, end);
     }
