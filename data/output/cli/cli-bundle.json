@@ -6433,7 +6433,7 @@
       "original_notification_datetime": "2026-07-10T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-08-21T12:00:00Z",
-      "page_modified_datetime": "2026-07-13T13:59:36+10:00",
+      "page_modified_datetime": "2026-07-20T17:55:52+10:00",
       "consultation_response_due_date": "2026-07-20T12:00:00Z",
       "acquirers": [
         {
@@ -6481,15 +6481,6 @@
           }
         },
         {
-          "name": "MERMEC AUSTRALIA PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "42 619 285 988",
-          "party_page": {
-            "id": "mermec-australia-pty-ltd",
-            "name": "Mermec Australia Pty Ltd"
-          }
-        },
-        {
           "name": "Siemens Mobility GmbH",
           "identifier_type": null,
           "identifier": "LEI  529900LT6G2TUO3TZB94",
@@ -6509,6 +6500,15 @@
           "party_page": {
             "id": "angelo-holding-s-r-l",
             "name": "Angelo Holding S.r.l."
+          }
+        },
+        {
+          "name": "MERMEC AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "42 619 285 988",
+          "party_page": {
+            "id": "mermec-australia-pty-ltd",
+            "name": "Mermec Australia Pty Ltd"
           }
         }
       ],
