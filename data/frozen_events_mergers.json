@@ -1,15 +1,23 @@
 {
-  "_comment": "Override data for specific mergers. An entry with an empty dict or 'freeze_events: true' preserves the existing events array rather than overwriting from the scraped page (use this when the ACCC events table is incorrect). Any other keys are treated as field overrides \u2014 the scraper will use these values instead of whatever it finds on the page.",
+  "_comment": "Override data for specific mergers. An entry with an empty dict or 'freeze_events: true' preserves the ENTIRE existing events array rather than overwriting from the scraped page (use this when the ACCC events table is incorrect). To freeze only some events, set 'freeze_events' to a list of event titles (e.g. \"freeze_events\": [\"Questionnaire - IAG - RACI\"]) — only those events are preserved verbatim while the rest are still updated from the page. Any other keys are treated as field overrides — the scraper will use these values instead of whatever it finds on the page.",
   "MN-65005": {
-    "_comment": "ACCC events table has duplicate rows: 'Summary of Notice of Competition Concerns' listed twice (14 May and 25 May) for the same byte-identical re-uploaded document, and 'Timeline extended by ... business days' listed both with and without the '20' day count. Deduped to one entry each; freezing events to stop the duplicates reappearing from the still-buggy ACCC page.",
-    "freeze_events": true
+    "_comment": "ACCC events table has duplicate/buggy rows: 'Summary of Notice of Competition Concerns' is listed twice (14 May and 25 May) for the same byte-identical re-uploaded document, and the timeline-extension row is scraped without its '20' day count ('Timeline extended by business days ...'), which would otherwise be appended as a duplicate of the corrected '20 business days' entry. Freezing only these events keeps the deduped/corrected rows while letting any later events (e.g. the Phase 2 determination) flow through from the page. The bare 'Timeline extended by business days ...' title is listed so the buggy scraped variant is dropped.",
+    "freeze_events": [
+      "Summary of Notice of Competition Concerns",
+      "Timeline extended by 20 business days - following request for further information",
+      "Timeline extended by business days - following request for further information"
+    ]
   },
   "MN-01105": {
-    "_comment": "Event date(s) missing from ACCC page (Siemens Mobility - MerMec - Questionnaire (13 Jul 2026)); freezing events to preserve the automatically set date(s).",
-    "freeze_events": true
+    "_comment": "Event date missing from ACCC page (Siemens Mobility - MerMec - Questionnaire (13 Jul 2026)); freezing this event to preserve the automatically set date while later events still update from the page.",
+    "freeze_events": [
+      "Siemens Mobility - MerMec - Questionnaire"
+    ]
   },
   "MN-40029": {
-    "_comment": "Event date(s) missing from ACCC page (Laundy-Woy Woy Hotel Third-party questionnaire (15 Jul 2026)); freezing events to preserve the automatically set date(s).",
-    "freeze_events": true
+    "_comment": "Event date missing from ACCC page (Laundy-Woy Woy Hotel Third-party questionnaire (15 Jul 2026)); freezing this event to preserve the automatically set date while later events still update from the page.",
+    "freeze_events": [
+      "Laundy-Woy Woy Hotel Third-party questionnaire"
+    ]
   }
 }

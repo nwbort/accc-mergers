@@ -232,6 +232,125 @@ class TestMergeEventsDocumentReuploaded:
 
 
 # ---------------------------------------------------------------------------
+# _merge_events: freezing (whole-list and selective)
+# ---------------------------------------------------------------------------
+
+class TestMergeEventsFreeze:
+    """freeze_events can protect either every event (True) or just the named
+    events (a set of titles), while the rest still update from the scrape."""
+
+    FROZEN_TITLE = "Questionnaire - IAG - RACI"
+    OTHER_TITLE = "Merger notified to ACCC"
+
+    def _existing(self):
+        return {
+            "events": [
+                {
+                    "date": "2026-03-04T12:00:00Z",  # manually set, missing on page
+                    "title": self.FROZEN_TITLE,
+                    "display_title": self.FROZEN_TITLE,
+                    "url": "https://accc.gov.au/.../questionnaire.pdf",
+                },
+                {
+                    "date": "2026-03-03T12:00:00Z",
+                    "title": self.OTHER_TITLE,
+                    "display_title": self.OTHER_TITLE,
+                },
+            ],
+        }
+
+    def test_freeze_all_preserves_every_event(self):
+        # Scrape has a wrong (empty) date for the frozen event and drops the other.
+        scraped = [{"date": "", "title": self.FROZEN_TITLE}]
+        merged = _merge_events(scraped, self._existing(), "MN-65005", {"MN-65005": True})
+        by_title = {e["title"]: e for e in merged}
+        assert by_title[self.FROZEN_TITLE]["date"] == "2026-03-04T12:00:00Z"
+        assert self.OTHER_TITLE in by_title  # whole list preserved
+
+    def test_selective_freeze_preserves_only_listed_event(self):
+        # The page shows the questionnaire with no date and updates the notified date.
+        scraped = [
+            {"date": "", "title": self.FROZEN_TITLE},
+            {"date": "2026-03-05T12:00:00Z", "title": self.OTHER_TITLE},
+        ]
+        spec = {"MN-65005": {self.FROZEN_TITLE}}
+        merged = _merge_events(scraped, self._existing(), "MN-65005", spec)
+        by_title = {e["title"]: e for e in merged}
+        # Frozen event keeps its manually set date, not the scraped blank.
+        assert by_title[self.FROZEN_TITLE]["date"] == "2026-03-04T12:00:00Z"
+        # Non-frozen event still picks up the scraped update.
+        assert by_title[self.OTHER_TITLE]["date"] == "2026-03-05T12:00:00Z"
+
+    def test_selective_freeze_ignores_reuploaded_url(self):
+        # The ACCC re-uploads the frozen doc under a new URL: with the event
+        # frozen we must keep the existing copy and not append a duplicate.
+        scraped = [{"date": "", "title": self.FROZEN_TITLE,
+                    "url": "https://accc.gov.au/.../questionnaire_2.pdf"}]
+        spec = {"MN-65005": {self.FROZEN_TITLE}}
+        merged = _merge_events(scraped, self._existing(), "MN-65005", spec)
+        frozen = [e for e in merged if e["title"] == self.FROZEN_TITLE]
+        assert len(frozen) == 1, "no duplicate for the re-uploaded frozen doc"
+        assert frozen[0]["url"] == "https://accc.gov.au/.../questionnaire.pdf"
+
+    def test_selective_freeze_leaves_unlisted_titles_alone(self):
+        # A title not in the freeze set behaves as if nothing were frozen.
+        scraped = [
+            {"date": "2026-03-04T12:00:00Z", "title": self.FROZEN_TITLE},
+            {"date": "2026-03-06T12:00:00Z", "title": "Brand new event"},
+        ]
+        spec = {"MN-65005": {self.FROZEN_TITLE}}
+        merged = _merge_events(scraped, self._existing(), "MN-65005", spec)
+        titles = {e["title"] for e in merged}
+        assert "Brand new event" in titles
+
+    def test_unfrozen_merger_is_unaffected(self):
+        scraped = [{"date": "2026-03-04T12:00:00Z", "title": self.FROZEN_TITLE}]
+        spec = {"MN-99999": {self.FROZEN_TITLE}}  # different merger frozen
+        merged = _merge_events(scraped, self._existing(), "MN-65005", spec)
+        by_title = {e["title"]: e for e in merged}
+        # Not frozen for this merger: normal merge keeps the existing url.
+        assert by_title[self.FROZEN_TITLE]["url"].endswith("questionnaire.pdf")
+
+
+class TestParseFreezeSpec:
+    """_parse_freeze_spec maps a frozen_events_mergers.json entry to a spec."""
+
+    def test_true_and_shorthands_freeze_all(self):
+        from extract_mergers import _parse_freeze_spec
+        assert _parse_freeze_spec({"freeze_events": True}) is True
+        assert _parse_freeze_spec({}) is True
+        assert _parse_freeze_spec(None) is True
+
+    def test_list_freezes_named_titles(self):
+        from extract_mergers import _parse_freeze_spec
+        assert _parse_freeze_spec({"freeze_events": ["A", "B"]}) == {"A", "B"}
+        # An empty/garbage list is not a freeze at all.
+        assert _parse_freeze_spec({"freeze_events": []}) is None
+
+    def test_overrides_only_is_not_frozen(self):
+        from extract_mergers import _parse_freeze_spec
+        assert _parse_freeze_spec({"_comment": "note"}) is None
+        assert _parse_freeze_spec({"status": "Approved"}) is None
+
+    def test_loader_returns_specs_and_overrides(self, tmp_path):
+        from extract_mergers import _load_frozen_events_mergers
+        data = {
+            "_comment": "top",
+            "MN-1": {"freeze_events": True},
+            "MN-2": {"freeze_events": ["Only this one"]},
+            "MN-3": {"status": "Approved"},
+        }
+        p = tmp_path / "frozen.json"
+        p.write_text(json.dumps(data))
+        with unittest.mock.patch.object(
+            extract_mergers, "FROZEN_EVENTS_MERGERS_PATH", str(p)
+        ):
+            specs, overrides = _load_frozen_events_mergers()
+        assert specs == {"MN-1": True, "MN-2": {"Only this one"}}
+        assert overrides == {"MN-3": {"status": "Approved"}}
+
+
+# ---------------------------------------------------------------------------
 # _add_synthetic_events: determination outcome goes on the instrument
 # ---------------------------------------------------------------------------
 
