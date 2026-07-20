@@ -3,6 +3,8 @@
 import json
 from pathlib import Path
 
+from ..enrichment import strip_event_status
+
 
 def generate(mergers: list, output_dir: Path) -> int:
     """Write individual merger detail JSON files. Returns count written."""
@@ -15,6 +17,6 @@ def generate(mergers: list, output_dir: Path) -> int:
         if merger_id:
             out_path = mergers_dir / f"{merger_id}.json"
             with open(out_path, 'w', encoding='utf-8') as f:
-                json.dump(merger, f, indent=2)
+                json.dump(strip_event_status(merger), f, indent=2)
             count += 1
     return count

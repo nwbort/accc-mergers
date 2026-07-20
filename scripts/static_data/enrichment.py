@@ -104,6 +104,28 @@ def is_phase_2_referral_event(event_title: str) -> bool:
     )
 
 
+def strip_event_status(merger: dict) -> dict:
+    """Return a copy of ``merger`` with each event's 'status' key dropped.
+
+    The event-level 'live'/'removed' flag is backend-only: it drives dedup in
+    data/processed/mergers.json (detect_duplicates / resolver) and the scraper's
+    merge cleanup, but nothing downstream of the source reads it. Keeping it out
+    of the generated datasets avoids churning those committed files every time a
+    document link drops off the ACCC register. The input merger is left
+    unmutated because the same object feeds other outputs.
+    """
+    events = merger.get('events')
+    if not events:
+        return merger
+    return {
+        **merger,
+        'events': [
+            {k: v for k, v in event.items() if k != 'status'}
+            for event in events
+        ],
+    }
+
+
 # Stage label applied when we infer Phase 2 from a notice event before the
 # ACCC register's own stage field has caught up. Mirrors the value the ACCC
 # uses for matters it has already moved into Phase 2.

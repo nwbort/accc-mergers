@@ -31,7 +31,10 @@ def generate(mergers: list, output_dir: Path, page_size: int = 100) -> int:
                 "display_title": event.get('display_title'),
                 "url": event.get('url'),
                 "url_gh": event.get('url_gh'),
-                "status": event.get('status'),
+                # event-level 'live'/'removed' status is backend-only (used for
+                # dedup in data/processed/mergers.json); the frontend never reads
+                # it, so it is intentionally omitted here to avoid git churn when
+                # a document link drops off the ACCC register.
                 "merger_id": merger_id,
                 "merger_name": merger_name,
                 "phase": event.get('phase') or extract_phase_from_event(title),
