@@ -350,6 +350,72 @@ class TestParseFreezeSpec:
         assert overrides == {"MN-3": {"status": "Approved"}}
 
 
+class TestAutoFixMissingEventDates:
+    """auto_fix_missing_event_dates sets dates on catchable events with no date,
+    and selectively freezes only those events (not the whole list) so later
+    events still update, while still writing the GitHub-issue payload."""
+
+    QUESTIONNAIRE = "Acme - Target - Questionnaire (13 Jul 2026)"
+    OTHER = "Merger notified to ACCC"
+
+    def _merger(self):
+        return {
+            "merger_id": "MN-77777",
+            "merger_name": "Acme / Target",
+            "url": "https://accc.gov.au/.../acme-target",
+            "events": [
+                {"date": "", "title": self.QUESTIONNAIRE},
+                {"date": "2026-06-01T12:00:00Z", "title": self.OTHER},
+            ],
+        }
+
+    def _run(self, tmp_path, mergers):
+        frozen_path = tmp_path / "frozen_events_mergers.json"
+        missing_path = tmp_path / "missing_event_dates.json"
+        with unittest.mock.patch.object(
+            extract_mergers, "FROZEN_EVENTS_MERGERS_PATH", str(frozen_path)
+        ), unittest.mock.patch.object(
+            extract_mergers, "MISSING_EVENT_DATES_PATH", str(missing_path)
+        ):
+            newly_frozen = extract_mergers.auto_fix_missing_event_dates(mergers, {})
+        frozen = json.loads(frozen_path.read_text()) if frozen_path.exists() else {}
+        missing = json.loads(missing_path.read_text()) if missing_path.exists() else {}
+        return newly_frozen, frozen, missing
+
+    def test_freezes_only_the_fixed_event_titles(self, tmp_path):
+        merger = self._merger()
+        newly_frozen, frozen, missing = self._run(tmp_path, [merger])
+
+        assert newly_frozen == {"MN-77777"}
+        # Selective freeze: a list of titles, not True / whole-list freeze.
+        spec = frozen["MN-77777"]["freeze_events"]
+        assert spec == [self.QUESTIONNAIRE]
+        assert spec is not True
+        # The catchable event picked up the date parsed from its title.
+        assert merger["events"][0]["date"] == "2026-07-13T12:00:00Z"
+        # The other event is untouched (and not frozen).
+        assert self.OTHER not in spec
+
+    def test_still_writes_github_issue_payload(self, tmp_path):
+        _, _, missing = self._run(tmp_path, [self._merger()])
+        assert len(missing["issues"]) == 1
+        issue = missing["issues"][0]
+        assert issue["merger_id"] == "MN-77777"
+        assert "MN-77777" in issue["title"]
+        assert issue["body"]
+
+    def test_no_catchable_events_writes_nothing(self, tmp_path):
+        merger = {
+            "merger_id": "MN-88888",
+            "merger_name": "No Questionnaire Co",
+            "events": [{"date": "", "title": self.OTHER}],
+        }
+        newly_frozen, frozen, missing = self._run(tmp_path, [merger])
+        assert newly_frozen == set()
+        assert frozen == {}
+        assert missing == {}
+
+
 # ---------------------------------------------------------------------------
 # _add_synthetic_events: determination outcome goes on the instrument
 # ---------------------------------------------------------------------------

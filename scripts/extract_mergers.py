@@ -1114,13 +1114,15 @@ def _is_catchable_event(title):
 
 
 def auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers):
-    """Detect catchable events with empty dates, set a date, and freeze the merger.
+    """Detect catchable events with empty dates, set a date, and freeze those events.
 
     Catchable event types: questionnaire, remedy offer (see _CATCHABLE_EVENT_KEYWORDS).
 
     For each merger not already frozen that has a catchable event with no date:
       1. Tries to extract the date from the event title; falls back to today at noon UTC.
-      2. Adds the merger to frozen_events_mergers.json so future scrapes preserve the date.
+      2. Adds a selective freeze to frozen_events_mergers.json listing only those
+         specific events (``freeze_events: [title, ...]``) so future scrapes preserve
+         the auto-set date(s) while every other event still updates from the page.
       3. Writes issue content to MISSING_EVENT_DATES_PATH for the pipeline to create
          GitHub issues asking the user to confirm the auto-set date is correct.
 
@@ -1188,12 +1190,19 @@ def auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers):
             f"{fe['event_title']} ({fe['date_display']})"
             for fe in item['fixed_events']
         )
+        # Freeze only the specific events whose dates we auto-set, not the whole
+        # list, so later events (e.g. a Phase 2 determination) still flow through
+        # from the scraped page. Dedupe titles while preserving order.
+        frozen_titles = list(dict.fromkeys(
+            fe['event_title'] for fe in item['fixed_events']
+        ))
         frozen_data[mid] = {
             "_comment": (
                 f"Event date(s) missing from ACCC page ({event_summaries}); "
-                "freezing events to preserve the automatically set date(s)."
+                "freezing these specific events to preserve the automatically set "
+                "date(s) while other events still update from the page."
             ),
-            "freeze_events": True,
+            "freeze_events": frozen_titles,
         }
 
     with open(FROZEN_EVENTS_MERGERS_PATH, 'w', encoding='utf-8') as f:
@@ -1217,7 +1226,8 @@ def auto_fix_missing_event_dates(all_mergers_data, frozen_events_mergers):
         body = (
             f"One or more events for **{name}** had no date on the ACCC page.\n\n"
             f"The pipeline automatically set the date(s) and froze "
-            f"the merger's events to prevent future scrapes from clearing them.\n\n"
+            f"those specific event(s) to prevent future scrapes from clearing them "
+            f"(other events for this merger still update from the ACCC page).\n\n"
             f"### Details\n\n"
             f"| Merger | [{name}]({url}) |\n"
             f"|--------|---------------|\n"
