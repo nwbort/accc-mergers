@@ -3279,6 +3279,86 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/journey-beyond-kelsian-tourism-portfolio"
     },
     {
+      "merger_id": "WA-01113",
+      "merger_name": "Hillhouse \u2013 LRQA Group",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-02T12:00:00Z",
+      "determination_publication_date": "2026-07-20T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "Atlas Investments Holdings Limited",
+          "identifier_type": null,
+          "identifier": "CR No. 434331",
+          "party_page": {
+            "id": "atlas-investments-holdings-limited",
+            "name": "Atlas Investments Holdings Limited"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Dione Topco Ltd.",
+          "identifier_type": null,
+          "identifier": "Registration number 137864 (Jersey)",
+          "party_page": {
+            "id": "dione-topco-ltd",
+            "name": "Dione Topco Ltd."
+          }
+        },
+        {
+          "name": "LRQA Group Limited",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "lrqa-group-limited",
+            "name": "LRQA Group Limited"
+          }
+        },
+        {
+          "name": "Goldman Sachs Asset Management, L.P.",
+          "identifier_type": null,
+          "identifier": "UEI number: TG1XXUNU7BU5; Delaware File Number: 2228210",
+          "party_page": {
+            "id": "goldman-sachs-asset-management-l-p",
+            "name": "Goldman Sachs Asset Management, L.P."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Hillhouse Investment Management, Ltd.",
+          "identifier_type": null,
+          "identifier": "CR No. 147297",
+          "canonical": {
+            "id": "hillhouse-investment-management-ltd",
+            "name": "Hillhouse Investment Management, Ltd."
+          },
+          "party_page": {
+            "id": "hillhouse-investment-management-ltd",
+            "name": "Hillhouse Investment Management, Ltd."
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        },
+        {
+          "code": "6962",
+          "name": "Management Advice and Related Consulting Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hillhouse-%E2%80%93-lrqa-group"
+    },
+    {
       "merger_id": "WA-80023",
       "merger_name": "National Reconstruction Fund Corporation / SOUTHERNLAUNCH.SPACE PTY LTD",
       "status": "Assessment completed",
@@ -3977,62 +4057,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/siemens-mobility-mermec"
-    },
-    {
-      "merger_id": "MN-65023",
-      "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "has_conditions": false,
-      "is_waiver": false,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-10T12:00:00Z",
-      "determination_publication_date": null,
-      "end_of_determination_period": "2026-08-21T12:00:00Z",
-      "stage": "Phase 1 - initial assessment",
-      "acquirers": [
-        {
-          "name": "The Trustee for Energy Bay Kappa Fund",
-          "identifier_type": "ABN",
-          "identifier": "37 949 909 024",
-          "party_page": {
-            "id": "the-trustee-for-energy-bay-kappa-fund",
-            "name": "The Trustee for Energy Bay Kappa Fund"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "CENTURIA FUNDS MANAGEMENT LIMITED",
-          "identifier_type": "ABN",
-          "identifier": "11 607 153 588",
-          "party_page": {
-            "id": "centuria-funds-management-limited",
-            "name": "Centuria Funds Management Limited"
-          }
-        }
-      ],
-      "other_parties": [],
-      "anzsic_codes": [
-        {
-          "code": "2619",
-          "name": "Other Electricity Generation"
-        },
-        {
-          "code": "2630",
-          "name": "Electricity Distribution"
-        },
-        {
-          "code": "2640",
-          "name": "On Selling Electricity and Electricity Market Operation"
-        },
-        {
-          "code": "3232",
-          "name": "Electrical Services"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/energy-bay-certain-assets-required-to-operate-embedded-networks-for-centuria-capital-group-members"
     }
   ],
   "page": 9,

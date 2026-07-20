@@ -21,7 +21,7 @@
       "code": "64",
       "name": "Auxiliary Finance and Insurance Services",
       "level": "subdivision",
-      "merger_count": 39
+      "merger_count": 40
     }
   ],
   "mergers": [
@@ -68,6 +68,17 @@
       "phase": "Phase 2",
       "notification_date": "2026-03-03T12:00:00Z",
       "determination_date": null
+    },
+    {
+      "merger_id": "WA-01113",
+      "merger_name": "Hillhouse \u2013 LRQA Group",
+      "is_waiver": true,
+      "status": "Assessment completed",
+      "determination": "Approved",
+      "has_conditions": false,
+      "phase": "Waiver",
+      "notification_date": "2026-07-02T12:00:00Z",
+      "determination_date": "2026-07-20T12:00:00Z"
     },
     {
       "merger_id": "WA-10020",
@@ -1159,10 +1170,10 @@
       "determination_date": null
     }
   ],
-  "count": 103,
+  "count": 104,
   "phase_1_count": 22,
   "phase_2_count": 2,
-  "waiver_count": 79,
+  "waiver_count": 80,
   "active_count": 4,
   "phase_duration": {
     "average_days": 28.666666666666668,
@@ -1172,10 +1183,10 @@
     "completed_count": 21
   },
   "waiver_duration": {
-    "average_days": 18.569620253164558,
-    "median_days": 18,
-    "average_business_days": 12.253164556962025,
-    "median_business_days": 12,
-    "completed_count": 79
+    "average_days": 18.5625,
+    "median_days": 18.0,
+    "average_business_days": 12.25,
+    "median_business_days": 12.0,
+    "completed_count": 80
   }
 }

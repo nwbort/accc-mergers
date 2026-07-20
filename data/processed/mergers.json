@@ -22331,7 +22331,7 @@
     "original_notification_datetime": "2026-07-10T12:00:00Z",
     "stage": "Phase 1 - initial assessment",
     "end_of_determination_period": "2026-08-21T12:00:00Z",
-    "page_modified_datetime": "2026-07-13T17:30:11+10:00",
+    "page_modified_datetime": "2026-07-20T16:37:44+10:00",
     "consultation_response_due_date": "2026-07-20T12:00:00Z",
     "acquirers": [
       {
@@ -22372,7 +22372,7 @@
         "display_title": "Questionnaire",
         "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/MN-95030%20-%20Questionnaire%20-%2013%20July%202026.docx",
         "url_gh": "/mergers/MN-95030/MN-95030 - Questionnaire - 13 July 2026.pdf",
-        "status": "live"
+        "status": "removed"
       },
       {
         "date": "2026-07-10T12:00:00Z",
@@ -23387,6 +23387,102 @@
       },
       {
         "date": "2026-06-12T12:00:00Z",
+        "title": "Merger notified to ACCC",
+        "display_title": "Merger notified to ACCC"
+      }
+    ],
+    "is_waiver": true
+  },
+  {
+    "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/hillhouse-%E2%80%93-lrqa-group",
+    "merger_name": "Hillhouse \u2013 LRQA Group",
+    "status": "Assessment completed",
+    "merger_id": "WA-01113",
+    "effective_notification_datetime": "2026-07-02T12:00:00Z",
+    "original_notification_datetime": "2026-07-02T12:00:00Z",
+    "stage": "Waiver application",
+    "determination_publication_date": "2026-07-20T12:00:00Z",
+    "accc_determination": "Approved",
+    "accc_determination_raw": "ACCC determinationApproved",
+    "page_modified_datetime": "2026-07-20T16:58:30+10:00",
+    "acquirers": [
+      {
+        "name": "Atlas Investments Holdings Limited",
+        "identifier_type": null,
+        "identifier": "CR No. 434331"
+      }
+    ],
+    "targets": [
+      {
+        "name": "Dione Topco Ltd.",
+        "identifier_type": null,
+        "identifier": "Registration number 137864 (Jersey)"
+      },
+      {
+        "name": "LRQA Group Limited",
+        "identifier_type": null,
+        "identifier": ""
+      },
+      {
+        "name": "Goldman Sachs Asset Management, L.P.",
+        "identifier_type": null,
+        "identifier": "UEI number: TG1XXUNU7BU5; Delaware File Number: 2228210"
+      }
+    ],
+    "other_parties": [
+      {
+        "name": "Hillhouse Investment Management, Ltd.",
+        "identifier_type": null,
+        "identifier": "CR No. 147297"
+      }
+    ],
+    "anzsic_codes": [
+      {
+        "code": "6419",
+        "name": "Other Auxiliary Finance and Investment Services"
+      },
+      {
+        "code": "6962",
+        "name": "Management Advice and Related Consulting Services"
+      }
+    ],
+    "merger_description": "Hillhouse Investment Management, Ltd. (**Hillhouse**), through Atlas Investments Holdings Limited (**Atlas BidCo**), has agreed to indirectly acquire a minority stake in Dione Topco Ltd. (**Dione Topco**), pursuant to a Share Purchase Agreement dated 19 May 2026 (the **Acquisition**).\n\nHillhouse is a global investment firm that primarily invests in the fields of business services, healthcare, consumer, education, and real assets sectors. Atlas BidCo is indirectly and wholly-owned by certain funds managed and/or advised by Hillhouse and its affiliates.\n\nDione Topco is the holding company for the indirectly wholly owned group of companies comprising LRQA Group Limited (**LRQA**, together with its subsidiaries, the **LRQA Group**). The LRQA Group is a global provider of inspection and certification services to both public and private sector customers with customers across a range of industries, including energy and renewables, construction, food and beverage, consumer goods manufacturing, and technology, amongst others.\n\nThe LRQA Group is headquartered in Birmingham, United Kingdom, and with offices across Europe, the Americas, Asia Pacific, and the Middle East. The LRQA Group\u2019s services can be divided into four service areas: (a) assessment and certification services, (b) inspection services, (c) data analytics and consulting services, and (d) cybersecurity services.",
+    "events": [
+      {
+        "date": "2026-07-20T12:00:00Z",
+        "title": "Notification waiver determination published",
+        "display_title": "Waiver application determination: Approved",
+        "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Hillhouse%20%E2%80%93%20LRQA%20Group%20%28WA-01113%29%20-%20Notification%20waiver%20determination%20-%2018%20July%202026.pdf",
+        "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+        "determination_table_content": [
+          {
+            "item": "Acquisition",
+            "details": "Atlas Investments Holdings Limited (Atlas BidCo), which is indirectly\nand wholly-owned by certain funds managed and/or advised by\nHillhouse Investment Management, Ltd. (Hillhouse) and its affiliates,\napplied for a notification waiver in respect of its proposed\nacquisition of a minority stake in Dione Topco Ltd. (Dione Topco), as\ndescribed in the transaction documents provided as part of the\napplication (the Acquisition)."
+          },
+          {
+            "item": "Determination",
+            "details": "The Australian Competition and Consumer Commission has\ndetermined under section 51ABV(1)(a) of the Competition and\nConsumer Act 2010 (Cth) that the Acquisition is not required to be\nnotified."
+          },
+          {
+            "item": "Date of determination",
+            "details": "18 July 2026"
+          },
+          {
+            "item": "Parties to the\nAcquisition",
+            "details": "The acquirer, Hillhouse, is a global investment firm that primarily\ninvests in the fields of business services, healthcare, consumer,\neducation, and real assets sectors.\nThe target, Dione Topco, is the holding company for the indirectly\nwholly owned group of companies comprising LRQA Group Limited\n(LRQA, together with its subsidiaries, the LRQA Group). The LRQA\nGroup is a global provider of inspection and certification services to\nboth public and private sector customers with customers across a\nrange of industries, including energy and renewables, construction,\nfood and beverage, consumer goods manufacturing, and technology,\namongst others.\nThe LRQA Group is headquartered in Birmingham, United Kingdom,\nand with offices across Europe, the Americas, Asia Pacific, and the\nMiddle East. The LRQA Group\u2019s services can be divided into four\nservice areas: (a) assessment and certification services, (b)\ninspection services, (c) data analytics and consulting services\n(including environmental, social and governance (ESG)), and (d)\ncybersecurity services.\nOne of Hillhouse\u2019s portfolio companies, Ascentium, also offers ESG\nconsulting services."
+          },
+          {
+            "item": "Explanation for\ndetermination",
+            "details": "In making this notification waiver determination, the Australian\nCompetition and Consumer Commission (the ACCC) has considered\nthe information provided with the notification waiver application and\nhad regard to the factors in section 51ABV(2)(b) of the Competition\nand Consumer Act 2010 (Cth) (the Act).\nBased on the information provided in the application, the ACCC\nconsiders that the Acquisition is unlikely to give rise to any material\nlessening of competition. In particular:\na. there is no overlap between Hillhouse (and its connected\nentities) and LRQA Group in the supply of testing, inspection\nand certification services in Australia\nb. there is a small overlap between Hillhouse (and its\nconnected entities) and LRQA Group in the supply of ESG\nconsulting services in Australia\nc. there are alternative suppliers of testing, inspection and\ncertification, and ESG consulting services in Australia.\nIn these circumstances, the ACCC does not consider it necessary to\nreach a concluded view on the likelihood of the notification\nthresholds being met.\nGiven that material competition concerns are unlikely to arise, the\nACCC has determined that the Acquisition is not required to be\nnotified.\nThe ACCC considers that the determination is consistent with the\nobject of the Act and the interests of consumers in promoting\ncompetition.\nFor more information about the ACCC\u2019s approach to considering\nnotification waiver applications and to assessing competition\neffects more generally, see the ACCC\u2019s interim guidance on\nnotification waivers and merger assessment guidelines."
+          }
+        ],
+        "url_gh": "/mergers/WA-01113/Hillhouse \u2013 LRQA Group (WA-01113) - Notification waiver determination - 18 July 2026.pdf",
+        "status": "live",
+        "is_determination_event": true,
+        "phase": "Waiver"
+      },
+      {
+        "date": "2026-07-02T12:00:00Z",
         "title": "Merger notified to ACCC",
         "display_title": "Merger notified to ACCC"
       }

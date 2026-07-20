@@ -1,6 +1,62 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-65023",
+      "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-21T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "The Trustee for Energy Bay Kappa Fund",
+          "identifier_type": "ABN",
+          "identifier": "37 949 909 024",
+          "party_page": {
+            "id": "the-trustee-for-energy-bay-kappa-fund",
+            "name": "The Trustee for Energy Bay Kappa Fund"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "CENTURIA FUNDS MANAGEMENT LIMITED",
+          "identifier_type": "ABN",
+          "identifier": "11 607 153 588",
+          "party_page": {
+            "id": "centuria-funds-management-limited",
+            "name": "Centuria Funds Management Limited"
+          }
+        }
+      ],
+      "other_parties": [],
+      "anzsic_codes": [
+        {
+          "code": "2619",
+          "name": "Other Electricity Generation"
+        },
+        {
+          "code": "2630",
+          "name": "Electricity Distribution"
+        },
+        {
+          "code": "2640",
+          "name": "On Selling Electricity and Electricity Market Operation"
+        },
+        {
+          "code": "3232",
+          "name": "Electrical Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/energy-bay-certain-assets-required-to-operate-embedded-networks-for-centuria-capital-group-members"
+    },
+    {
       "merger_id": "MN-95030",
       "merger_name": "Origin \u2013 Climatech Zero",
       "status": "Under assessment",

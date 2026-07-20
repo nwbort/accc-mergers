@@ -1,6 +1,6 @@
 {
   "total_mergers": 181,
-  "total_waivers": 279,
+  "total_waivers": 280,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 265,
+    "Approved": 266,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.60931899641577,
-    "median_days": 18,
-    "average_business_days": 12.401433691756273,
-    "median_business_days": 12
+    "average_days": 18.607142857142858,
+    "median_days": 18.0,
+    "average_business_days": 12.4,
+    "median_business_days": 12.0
   },
   "top_industries": [
     {
@@ -58,7 +58,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 38
+      "count": 39
     },
     {
       "name": "Software Publishing",
@@ -206,6 +206,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-01113",
+      "merger_name": "Hillhouse \u2013 LRQA Group",
+      "determination": "Approved",
+      "determination_date": "2026-07-20T12:00:00Z",
+      "page_modified_datetime": "2026-07-20T16:58:30+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-45020",
       "merger_name": "Vets Central \u2013 Willunga & Aldinga Veterinary Services",
       "determination": "Approved",
@@ -311,16 +321,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-16T12:00:00Z",
       "page_modified_datetime": "2026-07-16T17:35:02+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-65027",
-      "merger_name": "Kennards Hire - Skylift Hire & Rentals",
-      "determination": "Approved",
-      "determination_date": "2026-07-16T12:00:00Z",
-      "page_modified_datetime": "2026-07-16T17:33:11+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
