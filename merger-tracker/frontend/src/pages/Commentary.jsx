@@ -6,6 +6,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import StatusBadge from '../components/StatusBadge';
 import WaiverBadge from '../components/WaiverBadge';
+import AppealBadge from '../components/AppealBadge';
 import ExternalLinkIcon from '../components/ExternalLinkIcon';
 import SEO from '../components/SEO';
 import { formatDate } from '../utils/dates';
@@ -80,10 +81,14 @@ function Commentary() {
                       )}
                     </p>
                   </div>
-                  <StatusBadge
-                    status={item.status}
-                    determination={item.accc_determination}
-                  />
+                  <div className="flex items-center gap-2 flex-shrink-0">
+                    {item.under_appeal && <AppealBadge />}
+                    <StatusBadge
+                      status={item.status}
+                      determination={item.accc_determination}
+                      appeal={item.appeal}
+                    />
+                  </div>
                 </div>
               </div>
 

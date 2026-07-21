@@ -2450,6 +2450,46 @@ class TestGenerateCommentaryJson:
         assert result['items'][0]['merger_id'] == 'MN-002'
         assert result['items'][1]['merger_id'] == 'MN-001'
 
+    def test_under_appeal_flag_and_summary(self):
+        mergers = [
+            {
+                'merger_id': 'MN-001', 'merger_name': 'A', 'status': 'X',
+                'accc_determination': 'Not approved', 'is_waiver': False,
+                'effective_notification_datetime': '2025-01-01',
+                'determination_publication_date': None, 'stage': 'Phase 2',
+                'acquirers': [], 'targets': [], 'anzsic_codes': [], 'events': [],
+                'under_appeal': True,
+                'appeal': {
+                    'status': 'current',
+                    'outcome': None,
+                    'effective_determination': None,
+                    'tribunal_number': 'ACT 1 of 2026',
+                    'documents': [{'description': 'Application for review'}],
+                },
+            },
+            {
+                'merger_id': 'MN-002', 'merger_name': 'B', 'status': 'X',
+                'accc_determination': 'Approved', 'is_waiver': False,
+                'effective_notification_datetime': '2025-02-01',
+                'determination_publication_date': None, 'stage': 'Phase 1',
+                'acquirers': [], 'targets': [], 'anzsic_codes': [], 'events': [],
+            },
+        ]
+        commentary = {
+            'MN-001': {'comments': [{'text': 'Appealed', 'date': '2025-03-01'}]},
+            'MN-002': {'comments': [{'text': 'Cleared', 'date': '2025-01-05'}]},
+        }
+        result = generate_commentary_json(mergers, commentary)
+        items = {item['merger_id']: item for item in result['items']}
+        assert items['MN-001']['under_appeal'] is True
+        # Only the slim status/outcome/effective_determination fields are
+        # carried — not the full documents list.
+        assert items['MN-001']['appeal'] == {
+            'status': 'current', 'outcome': None, 'effective_determination': None,
+        }
+        assert items['MN-002']['under_appeal'] is False
+        assert 'appeal' not in items['MN-002']
+
 
 # ---------------------------------------------------------------------------
 # generate_static_data: enrich_merger with questionnaire data

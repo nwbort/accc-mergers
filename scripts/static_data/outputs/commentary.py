@@ -1,6 +1,23 @@
 """Commentary index — ``commentary.json``."""
 
 
+def _appeal_summary(m: dict) -> dict | None:
+    """Slim appeal fields needed to render the status badge's appeal suffix.
+
+    Mirrors ``outputs/list.py``'s ``_appeal_summary`` — only the lifecycle
+    status and the concluded result are carried, not the full documents list.
+    Returns ``None`` when the merger has no tribunal appeal.
+    """
+    appeal = m.get('appeal')
+    if not appeal:
+        return None
+    return {
+        'status': appeal.get('status'),
+        'outcome': appeal.get('outcome'),
+        'effective_determination': appeal.get('effective_determination'),
+    }
+
+
 def generate(mergers: list, commentary: dict) -> dict:
     """Return the commentary.json payload for mergers with user commentary."""
     items = []
@@ -17,12 +34,13 @@ def generate(mergers: list, commentary: dict) -> dict:
                     determination_url = event.get('url_gh') or event.get('url')
                     break
 
-            items.append({
+            item = {
                 "merger_id": merger_id,
                 "merger_name": m.get('merger_name'),
                 "status": m.get('status'),
                 "accc_determination": m.get('accc_determination'),
                 "is_waiver": m.get('is_waiver', False),
+                "under_appeal": m.get('under_appeal', False),
                 "effective_notification_datetime": m.get('effective_notification_datetime'),
                 "determination_publication_date": m.get('determination_publication_date'),
                 "determination_url": determination_url,
@@ -31,7 +49,11 @@ def generate(mergers: list, commentary: dict) -> dict:
                 "targets": m.get('targets', []),
                 "anzsic_codes": m.get('anzsic_codes', []),
                 "comments": comm.get('comments', []),
-            })
+            }
+            appeal = _appeal_summary(m)
+            if appeal:
+                item["appeal"] = appeal
+            items.append(item)
 
     # Sort by most recent comment date descending
     def get_latest_comment_date(item):
