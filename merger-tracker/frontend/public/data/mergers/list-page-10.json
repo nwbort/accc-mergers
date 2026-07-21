@@ -1,6 +1,208 @@
 {
   "mergers": [
     {
+      "merger_id": "MN-65028",
+      "merger_name": "Coles - Paydock",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-09T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-20T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Retail Payment Solutions Pty Ltd",
+          "identifier_type": "ABN",
+          "identifier": "89 683 915 657",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Paydock AUNZ Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "96 607 219 116",
+          "canonical": {
+            "id": "paydock",
+            "name": "Paydock"
+          },
+          "party_page": {
+            "id": "paydock",
+            "name": "Paydock"
+          }
+        },
+        {
+          "name": "Paydock Ltd",
+          "identifier_type": null,
+          "identifier": "",
+          "canonical": {
+            "id": "paydock",
+            "name": "Paydock"
+          },
+          "party_page": {
+            "id": "paydock",
+            "name": "Paydock"
+          }
+        },
+        {
+          "name": "Paydock Holdings Pty Limited",
+          "identifier_type": "ABN",
+          "identifier": "31 607 215 163",
+          "canonical": {
+            "id": "paydock",
+            "name": "Paydock"
+          },
+          "party_page": {
+            "id": "paydock",
+            "name": "Paydock"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Coles Group Limited",
+          "identifier_type": "ABN",
+          "identifier": "11 004 089 936",
+          "canonical": {
+            "id": "coles",
+            "name": "Coles Group"
+          },
+          "party_page": {
+            "id": "coles",
+            "name": "Coles Group"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4279",
+          "name": "Other Store-Based Retailing n.e.c."
+        },
+        {
+          "code": "5420",
+          "name": "Software Publishing"
+        },
+        {
+          "code": "6419",
+          "name": "Other Auxiliary Finance and Investment Services"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/coles-paydock"
+    },
+    {
+      "merger_id": "MN-01105",
+      "merger_name": "Siemens Mobility - MerMec",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "has_conditions": false,
+      "is_waiver": false,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-10T12:00:00Z",
+      "determination_publication_date": null,
+      "end_of_determination_period": "2026-08-21T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "acquirers": [
+        {
+          "name": "Siemens Mobility Holding B.V.",
+          "identifier_type": null,
+          "identifier": "LEI  529900JJ6XL7YX9GBM87",
+          "party_page": {
+            "id": "siemens-mobility-holding-b-v",
+            "name": "Siemens Mobility Holding B.V."
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Mer Mec S.p.A.",
+          "identifier_type": null,
+          "identifier": "LEI  81560011DF7243CFC226",
+          "party_page": {
+            "id": "mer-mec-s-p-a",
+            "name": "Mer Mec S.p.A."
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "Siemens Aktiengesellschaft",
+          "identifier_type": null,
+          "identifier": "LEI  W38RGI023J3WT1HWRP32",
+          "party_page": {
+            "id": "siemens-aktiengesellschaft",
+            "name": "Siemens Aktiengesellschaft"
+          }
+        },
+        {
+          "name": "SIEMENS MOBILITY PTY. LTD.",
+          "identifier_type": "ABN",
+          "identifier": "39 625 304 556",
+          "canonical": {
+            "id": "siemens-mobility-gmbh",
+            "name": "Siemens Mobility GmbH"
+          },
+          "party_page": {
+            "id": "siemens-mobility-gmbh",
+            "name": "Siemens Mobility GmbH"
+          }
+        },
+        {
+          "name": "Siemens Mobility GmbH",
+          "identifier_type": null,
+          "identifier": "LEI  529900LT6G2TUO3TZB94",
+          "canonical": {
+            "id": "siemens-mobility-gmbh",
+            "name": "Siemens Mobility GmbH"
+          },
+          "party_page": {
+            "id": "siemens-mobility-gmbh",
+            "name": "Siemens Mobility GmbH"
+          }
+        },
+        {
+          "name": "Angelo Holding S.r.l.",
+          "identifier_type": null,
+          "identifier": "LEI  815600BFD5004E85D746",
+          "party_page": {
+            "id": "angelo-holding-s-r-l",
+            "name": "Angelo Holding S.r.l."
+          }
+        },
+        {
+          "name": "MERMEC AUSTRALIA PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "42 619 285 988",
+          "party_page": {
+            "id": "mermec-australia-pty-ltd",
+            "name": "Mermec Australia Pty Ltd"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "2393",
+          "name": "Railway Rolling Stock Manufacturing and Repair Services"
+        },
+        {
+          "code": "3109",
+          "name": "Other Heavy and Civil Engineering Construction"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/siemens-mobility-mermec"
+    },
+    {
       "merger_id": "MN-65023",
       "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
       "status": "Under assessment",

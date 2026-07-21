@@ -1,6 +1,6 @@
 {
   "total_mergers": 182,
-  "total_waivers": 280,
+  "total_waivers": 282,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 136,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 266,
+    "Approved": 268,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,9 +42,9 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.607142857142858,
+    "average_days": 18.592198581560282,
     "median_days": 18.0,
-    "average_business_days": 12.4,
+    "average_business_days": 12.393617021276595,
     "median_business_days": 12.0
   },
   "top_industries": [
@@ -58,7 +58,7 @@
     },
     {
       "name": "Other Auxiliary Finance and Investment Services",
-      "count": 39
+      "count": 40
     },
     {
       "name": "Software Publishing",
@@ -206,6 +206,26 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-30024",
+      "merger_name": "Centerbridge Partners \u2013 Ebury Partners Limited",
+      "determination": "Approved",
+      "determination_date": "2026-07-21T12:00:00Z",
+      "page_modified_datetime": "2026-07-21T16:34:55+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
+      "merger_id": "WA-25036",
+      "merger_name": "L Catterton Europe \u2013 HYROX",
+      "determination": "Approved",
+      "determination_date": "2026-07-21T12:00:00Z",
+      "page_modified_datetime": "2026-07-21T16:34:19+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "MN-50025",
       "merger_name": "Amazon \u2013 Globalstar",
       "determination": "Approved",
@@ -304,26 +324,6 @@
       "determination_type": "phase_transition",
       "is_waiver": false,
       "stage": "Phase 2 - detailed assessment"
-    },
-    {
-      "merger_id": "MN-65020",
-      "merger_name": "Regis Resources - Vault Minerals",
-      "determination": "Assessment ceased",
-      "determination_date": "2026-07-16T12:00:00Z",
-      "page_modified_datetime": "2026-07-16T19:36:41+10:00",
-      "determination_type": "ceased",
-      "is_waiver": false,
-      "stage": "Phase 1 - initial assessment"
-    },
-    {
-      "merger_id": "WA-80023",
-      "merger_name": "National Reconstruction Fund Corporation / SOUTHERNLAUNCH.SPACE PTY LTD",
-      "determination": "Approved",
-      "determination_date": "2026-07-16T12:00:00Z",
-      "page_modified_datetime": "2026-07-16T17:37:27+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
     }
   ]
 }
