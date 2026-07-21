@@ -1,10 +1,10 @@
 {
-  "total_mergers": 181,
+  "total_mergers": 182,
   "total_waivers": 280,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 134,
-    "Under assessment": 44,
+    "Under assessment": 45,
     "Assessment ceased": 3
   },
   "by_determination": {
@@ -74,7 +74,7 @@
     },
     {
       "name": "Accommodation",
-      "count": 16
+      "count": 17
     },
     {
       "name": "Liquor Retailing",
@@ -90,6 +90,15 @@
     }
   ],
   "recent_mergers": [
+    {
+      "merger_id": "MN-90022",
+      "merger_name": "Expedia - CarTrawler",
+      "status": "Under assessment",
+      "accc_determination": null,
+      "effective_notification_datetime": "2026-07-20T12:00:00Z",
+      "is_waiver": false,
+      "is_refiled": false
+    },
     {
       "merger_id": "MN-01109",
       "merger_name": "Syngenta Crop Protection and D\u00fcmmen Orange \u2013 Joint Venture Formation",
@@ -193,15 +202,6 @@
       "effective_notification_datetime": "2026-07-10T12:00:00Z",
       "is_waiver": false,
       "is_refiled": false
-    },
-    {
-      "merger_id": "MN-65023",
-      "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
-      "status": "Under assessment",
-      "accc_determination": null,
-      "effective_notification_datetime": "2026-07-10T12:00:00Z",
-      "is_waiver": false,
-      "is_refiled": true
     }
   ],
   "recent_determinations": [

@@ -19,10 +19,21 @@
       "code": "440",
       "name": "Accommodation",
       "level": "group",
-      "merger_count": 16
+      "merger_count": 17
     }
   ],
   "mergers": [
+    {
+      "merger_id": "MN-90022",
+      "merger_name": "Expedia - CarTrawler",
+      "is_waiver": false,
+      "status": "Under assessment",
+      "determination": null,
+      "has_conditions": false,
+      "phase": "Phase 1",
+      "notification_date": "2026-07-20T12:00:00Z",
+      "determination_date": null
+    },
     {
       "merger_id": "MN-85015",
       "merger_name": "Journey Beyond - Kelsian Tourism Portfolio",
@@ -200,11 +211,11 @@
       "determination_date": "2026-02-02T12:00:00Z"
     }
   ],
-  "count": 16,
-  "phase_1_count": 6,
+  "count": 17,
+  "phase_1_count": 7,
   "phase_2_count": 0,
   "waiver_count": 10,
-  "active_count": 2,
+  "active_count": 3,
   "phase_duration": {
     "average_days": 26.25,
     "median_days": 26.5,

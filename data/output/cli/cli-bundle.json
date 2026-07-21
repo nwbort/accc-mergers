@@ -47829,6 +47829,240 @@
       }
     },
     {
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/expedia-cartrawler",
+      "merger_name": "Expedia - CarTrawler",
+      "status": "Under assessment",
+      "merger_id": "MN-90022",
+      "effective_notification_datetime": "2026-07-20T12:00:00Z",
+      "original_notification_datetime": "2026-07-20T12:00:00Z",
+      "stage": "Phase 1 - initial assessment",
+      "end_of_determination_period": "2026-08-31T12:00:00Z",
+      "page_modified_datetime": "2026-07-21T10:26:30+10:00",
+      "consultation_response_due_date": "2026-07-28T12:00:00Z",
+      "acquirers": [
+        {
+          "name": "Expedia Group, Inc.",
+          "identifier_type": null,
+          "identifier": "I.R.S. Employer Identification No.202705720",
+          "party_page": {
+            "id": "expedia-group-inc",
+            "name": "Expedia Group, Inc."
+          }
+        },
+        {
+          "name": "Expedia Group International Holdings II, LLC",
+          "identifier_type": null,
+          "identifier": "Delaware Secretary of State7172515 I.R.S Employer Identification No.832737894",
+          "party_page": {
+            "id": "expedia-group-international-holdings-ii-llc",
+            "name": "Expedia Group International Holdings II, LLC"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "Ballast Group Holdings Ltd",
+          "identifier_type": null,
+          "identifier": "018092V",
+          "party_page": {
+            "id": "ballast-group-holdings-ltd",
+            "name": "Ballast Group Holdings Ltd"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "trivago NV",
+          "identifier_type": null,
+          "identifier": "67222927",
+          "party_page": {
+            "id": "trivago-nv",
+            "name": "trivago NV"
+          }
+        },
+        {
+          "name": "Stayz Pty Limited",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "stayz-pty-limited",
+            "name": "Stayz Pty Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "4400",
+          "name": "Accommodation"
+        },
+        {
+          "code": "7220",
+          "name": "Travel Agency and Tour Arrangement Services"
+        }
+      ],
+      "merger_description": "Expedia Group, Inc. (**Expedia**) proposes to acquire the entire issued share capital of Ballast Group Holdings Ltd (trading as **CarTrawler**).\n\nExpedia operates online travel agency (**OTA**) brands, including Expedia.com, Hotels.com, and Vrbo, and is the majority owner of trivago, which is principally a hotel meta-search site. Expedia is primarily active in the supply of online booking intermediation services on a standalone and package basis for hotel rooms, flights, car rental, activities and experiences, cruises and alternative accommodations to consumers.\n\nIn addition to its consumer-facing (**B2C**) operations, Expedia also provides business-to business (**B2B**) intermediation distribution solutions, which enable a wide range of travel and non-travel partners (including airlines, offline travel agents, online retailers, corporate travel management, financial institutions, and other distributors of travel booking services) to utilise Expedia's technology to access and distribute travel products, including car rental services.\n\nCarTrawler is a global provider of distribution solutions for car rental, ground transportation and travel-related insurance. CarTrawler primarily offers B2B solutions that enable third-party travel partners, such as airlines, OTAs, tour operators and other travel distributors, to offer car rental services through their own B2C customer interfaces. CarTrawler's \"Connect\" platform is a proprietary B2B technology platform that supports end to-end booking, availability and pricing aggregation, payments, and ancillary travel insurance products. The platform is integrated into partners' existing booking flows via API, allowing its business customers (e.g. airlines, OTAs, etc.) to offer car rental products to end consumers.\n\nCarTrawler also operates two B2C brands, Holiday Autos and Angus Car Hire, which both supply online car rental comparison and reservation services.",
+      "events": [
+        {
+          "date": "2026-07-21T12:00:00Z",
+          "title": "Questionnaire - Expedia-CarTrawler",
+          "display_title": "Questionnaire - Expedia-CarTrawler",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/Expedia%20-%20CarTrawler%20-%20third-party%20questionnaire.docx",
+          "url_gh": "/mergers/MN-90022/Expedia - CarTrawler - third-party questionnaire.pdf",
+          "phase": null
+        },
+        {
+          "date": "2026-07-20T12:00:00Z",
+          "title": "Merger notified to ACCC",
+          "display_title": "Merger notified to ACCC",
+          "phase": "Phase 1"
+        }
+      ],
+      "is_waiver": false,
+      "accc_determination": null,
+      "has_conditions": false,
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "phase_2_determination": null,
+      "phase_2_determination_date": null,
+      "public_benefits_determination": null,
+      "public_benefits_determination_date": null,
+      "has_questionnaire": true,
+      "similar_mergers": [
+        {
+          "merger_id": "MN-40008",
+          "merger_name": "Intrepid Travel - Wild Bush Luxury",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "INTREPID TRAVEL PTY. LTD.",
+              "identifier_type": "ABN",
+              "identifier": "35 007 172 456",
+              "party_page": {
+                "id": "intrepid-travel-pty-ltd",
+                "name": "Intrepid Travel Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "WILD BUSH LUXURY EXPERIENCE PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "47 648 431 734",
+              "party_page": {
+                "id": "wild-bush-luxury-experience-pty-ltd",
+                "name": "Wild Bush Luxury Experience Pty Ltd"
+              }
+            },
+            {
+              "name": "EXPERIENCE CO LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "56 167 320 470",
+              "canonical": {
+                "id": "experience-co-limited",
+                "name": "Experience Co Limited"
+              },
+              "party_page": {
+                "id": "experience-co-limited",
+                "name": "Experience Co Limited"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-70003",
+          "merger_name": "Intrepid Travel – Wild Bush Luxury",
+          "status": "Assessment completed",
+          "accc_determination": "Not approved",
+          "acquirers": [
+            {
+              "name": "INTREPID TRAVEL PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "35 007 172 456",
+              "party_page": {
+                "id": "intrepid-travel-pty-ltd",
+                "name": "Intrepid Travel Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "EXPERIENCE CO LIMITED",
+              "identifier_type": "ABN",
+              "identifier": "56 167 320 470",
+              "canonical": {
+                "id": "experience-co-limited",
+                "name": "Experience Co Limited"
+              },
+              "party_page": {
+                "id": "experience-co-limited",
+                "name": "Experience Co Limited"
+              }
+            },
+            {
+              "name": "WILD BUSH LUXURY EXPERIENCE PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "47 648 431 734",
+              "party_page": {
+                "id": "wild-bush-luxury-experience-pty-ltd",
+                "name": "Wild Bush Luxury Experience Pty Ltd"
+              }
+            }
+          ]
+        },
+        {
+          "merger_id": "WA-10014",
+          "merger_name": "Turner Family Entities - Pedal Group",
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
+          "acquirers": [
+            {
+              "name": "Hootie Blowfish Pty Ltd",
+              "identifier_type": "ACN",
+              "identifier": "605 475 992",
+              "party_page": {
+                "id": "hootie-blowfish-pty-ltd",
+                "name": "Hootie Blowfish Pty Ltd"
+              }
+            },
+            {
+              "name": "COUNTING CROWS PTY LTD",
+              "identifier_type": "ABN",
+              "identifier": "19 659 478 485",
+              "party_page": {
+                "id": "counting-crows-pty-ltd",
+                "name": "Counting Crows Pty Ltd"
+              }
+            }
+          ],
+          "targets": [
+            {
+              "name": "Pedal Group Pty Ltd",
+              "identifier_type": "ABN",
+              "identifier": "67 131 402 278",
+              "party_page": {
+                "id": "pedal-group-pty-ltd",
+                "name": "Pedal Group Pty Ltd"
+              }
+            }
+          ]
+        }
+      ],
+      "phase_1_estimate": {
+        "expected_business_days": 17,
+        "range_business_days": [
+          15,
+          20
+        ],
+        "basis": "global",
+        "anzsic_level": null,
+        "anzsic_codes": [],
+        "sample_size": 140,
+        "estimated_at": "2026-07-21",
+        "method_version": 1
+      }
+    },
+    {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/peter-warren-wakeling-automotive-0",
       "merger_name": "Peter Warren - Wakeling Automotive",
       "status": "Under assessment",
@@ -123096,6 +123330,59 @@
       ],
       "questions_count": 3
     },
+    "MN-90022": {
+      "deadline": "28 July 2026",
+      "deadline_iso": "2026-07-28",
+      "file_name": "Expedia - CarTrawler - third-party questionnaire.pdf",
+      "questions": [
+        {
+          "number": 1,
+          "section": null,
+          "text": "Outline any concerns regarding the impact of the Acquisition on competition, including the products your concerns relate to, whether Expedia and CarTrawler are close competitors and there are not many alternatives, or whether one is a major supplier to competitors of the other."
+        },
+        {
+          "number": 2,
+          "section": null,
+          "text": "Provide any additional information or comments that you consider relevant to the ACCC’s assessment of the Acquisition."
+        },
+        {
+          "number": 3,
+          "section": null,
+          "text": "Provide a brief description of your business or organisation, including any commercial relationships with Expedia and/or CarTrawler."
+        },
+        {
+          "number": 4,
+          "section": null,
+          "text": "Outline what alternatives you consider there to be to CarTrawler’s services, including any relative strengths and weaknesses of these alternatives compared to CarTrawler’s services."
+        },
+        {
+          "number": 5,
+          "section": null,
+          "text": "Outline what alternatives you consider there to be to Expedia’s intermediation distribution solutions in respect of lodging, flights, activities, and related services, including any relative strengths or weaknesses of these alternatives compared to Expedia’s services."
+        },
+        {
+          "number": 6,
+          "section": "Questions for customers of B2B car rental distribution services",
+          "text": "What would be involved in switching from one provider of B2B car rental distribution services (such as CarTrawler’ Connect platform) to another? Please consider factors such as costs to switch, quality of services provided, and the extent to which it is possible to implement a solution which allows integration with multiple B2B car rental distribution service providers."
+        },
+        {
+          "number": 7,
+          "section": "Questions for customers of B2B car rental distribution services",
+          "text": "In the event that CarTrawler’s Connect platform was only available when used with other related Expedia services (for example, Expedia’s B2B intermediation distribution solutions in respect of lodging, flights, activities, etc.), would this affect your choice of provider for those related services? Explain why/why not, including any barriers to changing providers."
+        },
+        {
+          "number": 8,
+          "section": "Questions for customers of B2B car rental distribution services",
+          "text": "In the event that CarTrawler’s Connect platform was not available on a standalone basis and was instead incorporated into Expedia’s OTA customer offering, to what extent would this affect your ability to compete for customers? Explain why/why not, including for which customers."
+        },
+        {
+          "number": 9,
+          "section": "Questions for suppliers of B2B car rental distribution services",
+          "text": "Explain to what extent interoperability with Expedia’s OTA platform is relevant to your ability to compete for end customers."
+        }
+      ],
+      "questions_count": 9
+    },
     "MN-90028": {
       "deadline": "21 July 2026",
       "deadline_iso": "2026-07-21",
@@ -126392,12 +126679,12 @@
     }
   },
   "stats": {
-    "total_mergers": 181,
+    "total_mergers": 182,
     "total_waivers": 280,
     "total_conditional_approvals": 1,
     "by_status": {
       "Assessment completed": 134,
-      "Under assessment": 44,
+      "Under assessment": 45,
       "Assessment ceased": 3
     },
     "by_determination": {
@@ -126467,7 +126754,7 @@
       },
       {
         "name": "Accommodation",
-        "count": 16
+        "count": 17
       },
       {
         "name": "Liquor Retailing",
@@ -126483,6 +126770,15 @@
       }
     ],
     "recent_mergers": [
+      {
+        "merger_id": "MN-90022",
+        "merger_name": "Expedia - CarTrawler",
+        "status": "Under assessment",
+        "accc_determination": null,
+        "effective_notification_datetime": "2026-07-20T12:00:00Z",
+        "is_waiver": false,
+        "is_refiled": false
+      },
       {
         "merger_id": "MN-01109",
         "merger_name": "Syngenta Crop Protection and Dümmen Orange – Joint Venture Formation",
@@ -126586,15 +126882,6 @@
         "effective_notification_datetime": "2026-07-10T12:00:00Z",
         "is_waiver": false,
         "is_refiled": false
-      },
-      {
-        "merger_id": "MN-65023",
-        "merger_name": "Energy Bay - certain assets required to operate embedded networks for Centuria Capital Group members",
-        "status": "Under assessment",
-        "accc_determination": null,
-        "effective_notification_datetime": "2026-07-10T12:00:00Z",
-        "is_waiver": false,
-        "is_refiled": true
       }
     ],
     "recent_determinations": [
@@ -126755,7 +127042,7 @@
       {
         "code": "4400",
         "name": "Accommodation",
-        "merger_count": 16
+        "merger_count": 17
       },
       {
         "code": "4123",
@@ -126843,6 +127130,11 @@
         "merger_count": 8
       },
       {
+        "code": "7220",
+        "name": "Travel Agency and Tour Arrangement Services",
+        "merger_count": 8
+      },
+      {
         "code": "6962",
         "name": "Management Advice and Related Consulting Services",
         "merger_count": 8
@@ -126870,11 +127162,6 @@
       {
         "code": "9419",
         "name": "Other Automotive Repair and Maintenance",
-        "merger_count": 7
-      },
-      {
-        "code": "7220",
-        "name": "Travel Agency and Tour Arrangement Services",
         "merger_count": 7
       },
       {
@@ -128103,7 +128390,7 @@
         "merger_count": 1
       }
     ],
-    "total_mergers": 461,
+    "total_mergers": 462,
     "total_industries": 276
   }
 }
