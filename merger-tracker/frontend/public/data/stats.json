@@ -1,6 +1,6 @@
 {
   "total_mergers": 182,
-  "total_waivers": 282,
+  "total_waivers": 283,
   "total_conditional_approvals": 1,
   "by_status": {
     "Assessment completed": 136,
@@ -12,7 +12,7 @@
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
-    "Approved": 268,
+    "Approved": 269,
     "Not approved": 14
   },
   "clearance_rate": {
@@ -42,10 +42,10 @@
     }
   },
   "waiver_duration": {
-    "average_days": 18.592198581560282,
-    "median_days": 18.0,
-    "average_business_days": 12.393617021276595,
-    "median_business_days": 12.0
+    "average_days": 18.597173144876326,
+    "median_days": 18,
+    "average_business_days": 12.39929328621908,
+    "median_business_days": 12
   },
   "top_industries": [
     {
@@ -206,6 +206,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "WA-50031",
+      "merger_name": "New Forests Australia New Zealand Landscapes and Forestry Fund \u2013 Benditi Pastoral",
+      "determination": "Approved",
+      "determination_date": "2026-07-21T12:00:00Z",
+      "page_modified_datetime": "2026-07-21T16:36:12+10:00",
+      "determination_type": "final",
+      "is_waiver": true,
+      "stage": "Waiver application"
+    },
+    {
       "merger_id": "WA-30024",
       "merger_name": "Centerbridge Partners \u2013 Ebury Partners Limited",
       "determination": "Approved",
@@ -314,16 +324,6 @@
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
-    },
-    {
-      "merger_id": "MN-05013",
-      "merger_name": "Zoetis \u2013 Neogen Genomics Business",
-      "determination": "Referred to phase 2",
-      "determination_date": "2026-07-17T12:00:00Z",
-      "page_modified_datetime": "2026-07-17T15:58:34+10:00",
-      "determination_type": "phase_transition",
-      "is_waiver": false,
-      "stage": "Phase 2 - detailed assessment"
     }
   ]
 }

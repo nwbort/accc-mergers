@@ -3331,6 +3331,78 @@
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/centerbridge-partners-%E2%80%93-ebury-partners-limited"
     },
     {
+      "merger_id": "WA-50031",
+      "merger_name": "New Forests Australia New Zealand Landscapes and Forestry Fund \u2013 Benditi Pastoral",
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
+      "has_conditions": false,
+      "is_waiver": true,
+      "under_appeal": false,
+      "is_refiled": false,
+      "effective_notification_datetime": "2026-07-01T12:00:00Z",
+      "determination_publication_date": "2026-07-21T12:00:00Z",
+      "end_of_determination_period": null,
+      "stage": "Waiver application",
+      "acquirers": [
+        {
+          "name": "ANZLAFF Sub 2",
+          "identifier_type": "ABN",
+          "identifier": "25 191 128 617",
+          "party_page": {
+            "id": "anzlaff-sub-2",
+            "name": "ANZLAFF Sub 2"
+          }
+        }
+      ],
+      "targets": [
+        {
+          "name": "BENDITI PASTORAL CO PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "39 689 382 965",
+          "party_page": {
+            "id": "benditi-pastoral-co-pty-ltd",
+            "name": "Benditi Pastoral Co Pty Ltd"
+          }
+        },
+        {
+          "name": "Benditi Holding Co Pty Ltd atf Benditi Holding Co Trust",
+          "identifier_type": "ACN",
+          "identifier": "689 836 977",
+          "party_page": {
+            "id": "benditi-holding-co-pty-ltd-atf-benditi-holding-co-trust",
+            "name": "Benditi Holding Co Pty Ltd atf Benditi Holding Co Trust"
+          }
+        }
+      ],
+      "other_parties": [
+        {
+          "name": "The Trust Company Limited atf ANZLAFF Sub 2",
+          "identifier_type": "ABN",
+          "identifier": "59 004 027 749",
+          "party_page": {
+            "id": "the-trust-company-limited-atf-anzlaff-sub-2",
+            "name": "The Trust Company Limited atf ANZLAFF Sub 2"
+          }
+        },
+        {
+          "name": "New Forests Pty Limited",
+          "identifier_type": null,
+          "identifier": "",
+          "party_page": {
+            "id": "new-forests-pty-limited",
+            "name": "New Forests Pty Limited"
+          }
+        }
+      ],
+      "anzsic_codes": [
+        {
+          "code": "0142",
+          "name": "Beef Cattle Farming (Specialised)"
+        }
+      ],
+      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/new-forests-australia-new-zealand-landscapes-and-forestry-fund-%E2%80%93-benditi-pastoral"
+    },
+    {
       "merger_id": "WA-01113",
       "merger_name": "Hillhouse \u2013 LRQA Group",
       "status": "Assessment completed",
@@ -3907,78 +3979,6 @@
         }
       ],
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/analogic-leidos-ses-business"
-    },
-    {
-      "merger_id": "WA-25036",
-      "merger_name": "L Catterton Europe \u2013 HYROX",
-      "status": "Assessment completed",
-      "accc_determination": "Approved",
-      "has_conditions": false,
-      "is_waiver": true,
-      "under_appeal": false,
-      "is_refiled": false,
-      "effective_notification_datetime": "2026-07-08T12:00:00Z",
-      "determination_publication_date": "2026-07-21T12:00:00Z",
-      "end_of_determination_period": null,
-      "stage": "Waiver application",
-      "acquirers": [
-        {
-          "name": "GForce 137 GmbH",
-          "identifier_type": null,
-          "identifier": "HRB 143320",
-          "party_page": {
-            "id": "gforce-137-gmbh",
-            "name": "GForce 137 GmbH"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "HYROX World GmbH (HYROX)",
-          "identifier_type": null,
-          "identifier": "HRB 144750",
-          "party_page": {
-            "id": "hyrox-world-gmbh-hyrox",
-            "name": "HYROX World GmbH (HYROX)"
-          }
-        }
-      ],
-      "other_parties": [
-        {
-          "name": "L Catterton Europe SAS (LCAT Europe), a French soci\u00e9t\u00e9 par actions simplifi\u00e9e",
-          "identifier_type": null,
-          "identifier": "Nombre unique d'identification (SIREN): 433 485 596",
-          "party_page": {
-            "id": "l-catterton-europe-sas-lcat-europe-a-french-soci-t-par-actions-simplifi-e",
-            "name": "L Catterton Europe SAS (LCAT Europe), a French soci\u00e9t\u00e9 par actions simplifi\u00e9e"
-          }
-        },
-        {
-          "name": "Moritz F\u00fcrste",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "moritz-f-rste",
-            "name": "Moritz F\u00fcrste"
-          }
-        },
-        {
-          "name": "J\u00f6rg Christian Toetzke",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "j-rg-christian-toetzke",
-            "name": "J\u00f6rg Christian Toetzke"
-          }
-        }
-      ],
-      "anzsic_codes": [
-        {
-          "code": "9112",
-          "name": "Sports and Physical Recreation Clubs and Sports Professionals"
-        }
-      ],
-      "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/l-catterton-europe-%E2%80%93-hyrox"
     }
   ],
   "page": 9,
