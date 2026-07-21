@@ -1957,26 +1957,17 @@
     {
       "merger_id": "MN-50025",
       "merger_name": "Amazon \u2013 Globalstar",
-      "status": "Under assessment",
-      "accc_determination": null,
+      "status": "Assessment completed",
+      "accc_determination": "Approved",
       "has_conditions": false,
       "is_waiver": false,
       "under_appeal": false,
       "is_refiled": false,
       "effective_notification_datetime": "2026-06-29T12:00:00Z",
-      "determination_publication_date": null,
+      "determination_publication_date": "2026-07-21T12:00:00Z",
       "end_of_determination_period": "2026-08-10T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "acquirers": [
-        {
-          "name": "Grapefruit Acquisition Sub II, LLC",
-          "identifier_type": null,
-          "identifier": "10440021",
-          "party_page": {
-            "id": "grapefruit-acquisition-sub-ii-llc",
-            "name": "Grapefruit Acquisition Sub II, LLC"
-          }
-        },
         {
           "name": "Amazon.com, Inc.",
           "identifier_type": null,
@@ -1984,6 +1975,15 @@
           "party_page": {
             "id": "amazon-com-inc",
             "name": "Amazon.com, Inc."
+          }
+        },
+        {
+          "name": "Grapefruit Acquisition Sub II, LLC",
+          "identifier_type": null,
+          "identifier": "10440021",
+          "party_page": {
+            "id": "grapefruit-acquisition-sub-ii-llc",
+            "name": "Grapefruit Acquisition Sub II, LLC"
           }
         }
       ],
