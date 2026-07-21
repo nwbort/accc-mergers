@@ -427,6 +427,11 @@
         "in_progress": false
       },
       {
+        "business_days": 19,
+        "calendar_days": 27,
+        "in_progress": false
+      },
+      {
         "business_days": 16,
         "calendar_days": 22,
         "in_progress": false
@@ -714,17 +719,17 @@
     ],
     "stats": {
       "average": 19.6,
-      "median": 17.0,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 142
+      "count": 143
     },
     "calendar_stats": {
       "average": 29.9,
-      "median": 26.0,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 142
+      "count": 143
     }
   },
   "waiver_duration": {
@@ -2004,10 +2009,10 @@
       "code": "C",
       "name": "Manufacturing",
       "average_business_days": 19.5,
-      "median_business_days": 17.0,
-      "average_calendar_days": 29.6,
-      "median_calendar_days": 26.0,
-      "count": 42
+      "median_business_days": 17,
+      "average_calendar_days": 29.5,
+      "median_calendar_days": 26,
+      "count": 43
     },
     {
       "code": "E",
@@ -2085,11 +2090,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 311,
+      "count": 312,
       "outcome_mix": {
-        "Approved": 311
+        "Approved": 312
       },
-      "median_phase_1_business_days": 16.0
+      "median_phase_1_business_days": 16
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2103,9 +2108,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 41,
+      "count": 40,
       "outcome_mix": {
-        "Unknown": 41
+        "Unknown": 40
       },
       "median_phase_1_business_days": 36.5
     },
@@ -2142,7 +2147,7 @@
       "16": 27,
       "17": 16,
       "18": 15,
-      "19": 10,
+      "19": 11,
       "20": 6,
       "21": 3,
       "22": 5,
@@ -2159,9 +2164,9 @@
     },
     "stats": {
       "mean_used_bd": 17.9,
-      "median_used_bd": 17,
+      "median_used_bd": 17.0,
       "pct_decided_final_3_bd": 3.8,
-      "count": 131
+      "count": 132
     },
     "extended_count": 3
   },
@@ -2265,11 +2270,11 @@
     {
       "code": "C",
       "name": "Manufacturing",
-      "approved": 40,
+      "approved": 41,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 9,
-      "phase2_referral_rate": 0.048
+      "in_progress": 8,
+      "phase2_referral_rate": 0.047
     },
     {
       "code": "D",

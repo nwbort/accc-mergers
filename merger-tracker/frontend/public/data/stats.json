@@ -3,12 +3,12 @@
   "total_waivers": 283,
   "total_conditional_approvals": 1,
   "by_status": {
-    "Assessment completed": 136,
-    "Under assessment": 43,
+    "Assessment completed": 137,
+    "Under assessment": 42,
     "Assessment ceased": 3
   },
   "by_determination": {
-    "Approved": 134,
+    "Approved": 135,
     "Referred to phase 2": 8
   },
   "by_waiver_determination": {
@@ -16,27 +16,27 @@
     "Not approved": 14
   },
   "clearance_rate": {
-    "cleared": 135,
+    "cleared": 136,
     "not_cleared": 1,
-    "total": 136,
+    "total": 137,
     "rate": 0.993
   },
   "phase_duration": {
-    "average_days": 29.8943661971831,
-    "median_days": 26.0,
-    "average_business_days": 19.64788732394366,
-    "median_business_days": 17.0,
+    "average_days": 29.874125874125873,
+    "median_days": 26,
+    "average_business_days": 19.643356643356643,
+    "median_business_days": 17,
     "percentiles": {
       "day15": {
         "count": 36,
-        "percentage": 25.4
+        "percentage": 25.2
       },
       "day20": {
-        "count": 110,
-        "percentage": 77.5
+        "count": 111,
+        "percentage": 77.6
       },
       "day30": {
-        "count": 134,
+        "count": 135,
         "percentage": 94.4
       }
     }
@@ -206,6 +206,16 @@
   ],
   "recent_determinations": [
     {
+      "merger_id": "MN-50024",
+      "merger_name": "AkzoNobel - Axalta",
+      "determination": "Approved",
+      "determination_date": "2026-07-21T12:00:00Z",
+      "page_modified_datetime": "2026-07-22T09:53:19+10:00",
+      "determination_type": "final",
+      "is_waiver": false,
+      "stage": "Phase 1 - initial assessment"
+    },
+    {
       "merger_id": "WA-50031",
       "merger_name": "New Forests Australia New Zealand Landscapes and Forestry Fund \u2013 Benditi Pastoral",
       "determination": "Approved",
@@ -311,16 +321,6 @@
       "determination": "Approved",
       "determination_date": "2026-07-17T12:00:00Z",
       "page_modified_datetime": "2026-07-17T16:34:44+10:00",
-      "determination_type": "final",
-      "is_waiver": true,
-      "stage": "Waiver application"
-    },
-    {
-      "merger_id": "WA-65025",
-      "merger_name": "Sandvik \u2013 Diemme Filtration S.r.l.",
-      "determination": "Approved",
-      "determination_date": "2026-07-17T12:00:00Z",
-      "page_modified_datetime": "2026-07-17T16:33:31+10:00",
       "determination_type": "final",
       "is_waiver": true,
       "stage": "Waiver application"
