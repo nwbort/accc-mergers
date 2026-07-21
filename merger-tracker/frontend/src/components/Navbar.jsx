@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import { FaSearch, FaBars, FaTimes, FaChevronDown } from 'react-icons/fa';
 import { useTracking } from '../context/TrackingContext';
@@ -15,9 +15,8 @@ const navLinks = NAV_PAGES.filter((p) => p.inNavbar)
 const mainNavLinks = navLinks.slice(0, 2);
 const moreNavLinks = navLinks.slice(2);
 
-function Navbar() {
+function Navbar({ onOpenSearch }) {
   const location = useLocation();
-  const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,17 +24,12 @@ function Navbar() {
   const [moreOpen, setMoreOpen] = useState(false);
   const [notificationPanelOpen, setNotificationPanelOpen] = useState(false);
   const [showShortcutHints, setShowShortcutHints] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [navMode, setNavMode] = useState('full'); // 'full' | 'condensed' | 'mobile' | 'tiny'
   const containerRef = useRef(null);
   const probeFullRef = useRef(null);
   const probeCondensedRef = useRef(null);
   const probeMobileRef = useRef(null);
-  const searchInputRef = useRef(null);
-  const mobileSearchInputRef = useRef(null);
   const moreMenuRef = useRef(null);
-  const focusMobileSearchRef = useRef(false);
   const { unseenCount } = useTracking();
 
   useLayoutEffect(() => {
@@ -81,45 +75,6 @@ function Navbar() {
     if (navMode !== 'mobile' && navMode !== 'tiny' && mobileMenuOpen) setMobileMenuOpen(false);
     if (navMode !== 'condensed' && moreOpen) setMoreOpen(false);
   }
-
-  const submitSearch = (query) => {
-    const trimmed = query.trim();
-    if (trimmed) {
-      navigate(`/mergers?q=${encodeURIComponent(trimmed)}`);
-    }
-    setSearchOpen(false);
-    setSearchQuery('');
-  };
-
-  const handleSearchKeyDown = (e) => {
-    if (e.key === 'Enter') {
-      submitSearch(searchQuery);
-    } else if (e.key === 'Escape') {
-      setSearchOpen(false);
-      setSearchQuery('');
-    }
-  };
-
-  const handleSearchIconClick = () => {
-    if (searchOpen && searchQuery.trim()) {
-      submitSearch(searchQuery);
-    } else {
-      setSearchOpen((prev) => !prev);
-    }
-  };
-
-  useEffect(() => {
-    if (searchOpen && searchInputRef.current) {
-      searchInputRef.current.focus();
-    }
-  }, [searchOpen]);
-
-  useEffect(() => {
-    if (mobileMenuOpen && focusMobileSearchRef.current && mobileSearchInputRef.current) {
-      mobileSearchInputRef.current.focus();
-      focusMobileSearchRef.current = false;
-    }
-  }, [mobileMenuOpen]);
 
   const isActive = (path) => location.pathname === path;
   const isMoreActive = moreNavLinks.some(({ path }) => isActive(path));
@@ -183,7 +138,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div ref={containerRef} className="flex justify-between h-16 relative">
 
-          {/* Full probe: all links + worst-case expanded search (w-52) + bell */}
+          {/* Full probe: all links + search + bell */}
           <div
             ref={probeFullRef}
             aria-hidden="true"
@@ -196,12 +151,12 @@ function Navbar() {
               ))}
             </div>
             <div className="ml-1 flex items-center gap-1">
-              <div className="w-52 h-8" />
+              <div className="w-9 h-9" />
               <div className="w-9 h-9" />
             </div>
           </div>
 
-          {/* Condensed probe: Dashboard + Mergers + More + worst-case expanded search (w-52) + bell */}
+          {/* Condensed probe: Dashboard + Mergers + More + search + bell */}
           <div
             ref={probeCondensedRef}
             aria-hidden="true"
@@ -214,7 +169,7 @@ function Navbar() {
               <span className="px-3 py-2 text-sm font-medium">More ▾</span>
             </div>
             <div className="ml-1 flex items-center gap-1">
-              <div className="w-52 h-8" />
+              <div className="w-9 h-9" />
               <div className="w-9 h-9" />
             </div>
           </div>
@@ -328,40 +283,13 @@ function Navbar() {
 
           {/* Right: search, bell, mobile hamburger */}
           <div className="flex items-center gap-1">
-            {navMode !== 'mobile' && navMode !== 'tiny' ? (
-              <div className="flex items-center">
-                <div className={`flex items-center transition-all duration-200 ${searchOpen ? 'w-52' : 'w-8'}`}>
-                  {searchOpen && (
-                    <input
-                      ref={searchInputRef}
-                      type="text"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                      onKeyDown={handleSearchKeyDown}
-                      onBlur={() => { if (!searchQuery.trim()) { setSearchOpen(false); } }}
-                      placeholder="Search mergers…"
-                      className="w-full text-sm bg-gray-100/80 border border-gray-200 rounded-l-lg px-3 py-1.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-primary/50 focus:border-primary/40"
-                      aria-label="Search mergers"
-                    />
-                  )}
-                  <button
-                    onClick={handleSearchIconClick}
-                    className={`inline-flex items-center justify-center p-2 text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${searchOpen ? 'rounded-r-lg border border-l-0 border-gray-200 bg-gray-100/80 hover:bg-gray-200/80' : 'rounded-lg'}`}
-                    aria-label="Search"
-                  >
-                    <FaSearch className="h-4 w-4" aria-hidden="true" />
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <button
-                onClick={() => { focusMobileSearchRef.current = true; setMobileMenuOpen(true); }}
-                className="inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-                aria-label="Search"
-              >
-                <FaSearch className="h-5 w-5" aria-hidden="true" />
-              </button>
-            )}
+            <button
+              onClick={onOpenSearch}
+              className="inline-flex items-center justify-center p-2 rounded-lg text-gray-500 hover:text-gray-900 hover:bg-gray-100/80 transition-all duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              aria-label="Search"
+            >
+              <FaSearch className="h-5 w-5" aria-hidden="true" />
+            </button>
             <div className="relative">
               <button
                 onMouseDown={(e) => e.stopPropagation()}
@@ -407,24 +335,6 @@ function Navbar() {
 
       {(navMode === 'mobile' || navMode === 'tiny') && mobileMenuOpen && (
         <div id="mobile-menu" className="border-t border-gray-100 bg-white/95 backdrop-blur-lg">
-          <div className="px-3 pt-3 pb-1">
-            <div className="flex items-center gap-2 bg-gray-100/80 border border-gray-200 rounded-lg px-3 py-2">
-              <FaSearch className="h-4 w-4 text-gray-500 shrink-0" aria-hidden="true" />
-              <input
-                ref={mobileSearchInputRef}
-                type="text"
-                placeholder="Search mergers…"
-                className="flex-1 text-sm bg-transparent text-gray-900 placeholder-gray-400 focus:outline-none"
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' && e.target.value.trim()) {
-                    navigate(`/mergers?q=${encodeURIComponent(e.target.value.trim())}`);
-                    setMobileMenuOpen(false);
-                  }
-                }}
-                aria-label="Search mergers"
-              />
-            </div>
-          </div>
           <nav aria-label="Mobile navigation" className="px-3 py-3 space-y-1">
             {navLinks.map(({ path, label }) => (
               <Link
