@@ -117,15 +117,6 @@
       "accc_determination": null,
       "acquirers": [
         {
-          "name": "The Trustee for Light Them Up (Roma) Trust",
-          "identifier_type": "ABN",
-          "identifier": "17 705 523 498",
-          "party_page": {
-            "id": "the-trustee-for-light-them-up-roma-trust",
-            "name": "The Trustee for Light Them Up (Roma) Trust"
-          }
-        },
-        {
           "name": "BLACK RHINO (CLUB ROMA) PTY LTD",
           "identifier_type": "ABN",
           "identifier": "21 693 060 187",
@@ -133,18 +124,18 @@
             "id": "black-rhino-club-roma-pty-ltd",
             "name": "Black Rhino (Club Roma) Pty Ltd"
           }
+        },
+        {
+          "name": "The Trustee for Light Them Up (Roma) Trust",
+          "identifier_type": "ABN",
+          "identifier": "17 705 523 498",
+          "party_page": {
+            "id": "the-trustee-for-light-them-up-roma-trust",
+            "name": "The Trustee for Light Them Up (Roma) Trust"
+          }
         }
       ],
       "targets": [
-        {
-          "name": "SPEEDY COCKTAILS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "99 619 330 255",
-          "party_page": {
-            "id": "speedy-cocktails-pty-ltd",
-            "name": "Speedy Cocktails Pty Ltd"
-          }
-        },
         {
           "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST",
           "identifier_type": "ABN",
@@ -152,6 +143,15 @@
           "party_page": {
             "id": "the-trustee-for-the-barry-waldron-family-trust",
             "name": "The Trustee for THE BARRY WALDRON FAMILY TRUST"
+          }
+        },
+        {
+          "name": "SPEEDY COCKTAILS PTY LTD",
+          "identifier_type": "ABN",
+          "identifier": "99 619 330 255",
+          "party_page": {
+            "id": "speedy-cocktails-pty-ltd",
+            "name": "Speedy Cocktails Pty Ltd"
           }
         }
       ]
