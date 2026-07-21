@@ -2487,7 +2487,9 @@ class TestGenerateCommentaryJson:
         assert items['MN-001']['appeal'] == {
             'status': 'current', 'outcome': None, 'effective_determination': None,
         }
-        assert items['MN-002']['under_appeal'] is False
+        # under_appeal/appeal are omitted entirely rather than set to False —
+        # most mergers never had an appeal, so the field would just be noise.
+        assert 'under_appeal' not in items['MN-002']
         assert 'appeal' not in items['MN-002']
 
 

@@ -40,7 +40,6 @@ def generate(mergers: list, commentary: dict) -> dict:
                 "status": m.get('status'),
                 "accc_determination": m.get('accc_determination'),
                 "is_waiver": m.get('is_waiver', False),
-                "under_appeal": m.get('under_appeal', False),
                 "effective_notification_datetime": m.get('effective_notification_datetime'),
                 "determination_publication_date": m.get('determination_publication_date'),
                 "determination_url": determination_url,
@@ -50,9 +49,11 @@ def generate(mergers: list, commentary: dict) -> dict:
                 "anzsic_codes": m.get('anzsic_codes', []),
                 "comments": comm.get('comments', []),
             }
-            appeal = _appeal_summary(m)
-            if appeal:
-                item["appeal"] = appeal
+            if m.get('under_appeal'):
+                item["under_appeal"] = True
+                appeal = _appeal_summary(m)
+                if appeal:
+                    item["appeal"] = appeal
             items.append(item)
 
     # Sort by most recent comment date descending
