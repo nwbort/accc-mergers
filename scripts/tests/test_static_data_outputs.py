@@ -482,6 +482,103 @@ def _referred_then_completed_phase_2_raw():
     }
 
 
+def _referred_still_in_phase_2_raw():
+    """A matter referred to Phase 2 whose Phase 2 is still open.
+
+    Phase 1 concluded at the referral (2026-01-20) so it is a *completed* Phase
+    1 review, but no final determination has been published yet
+    (``determination_publication_date`` is ``None``). This is the case the
+    analysis overall figures used to silently drop.
+    """
+    return {
+        'merger_id': 'MN-7001',
+        'merger_name': 'Referred, Phase 2 still running',
+        'status': 'Under assessment',
+        'accc_determination': None,
+        'stage': 'Phase 2 - detailed assessment',
+        'effective_notification_datetime': '2025-10-10T12:00:00Z',
+        'determination_publication_date': None,
+        'page_modified_datetime': '2026-01-20T12:30:00Z',
+        'anzsic_codes': [{'code': '0600', 'name': 'Mining'}],
+        'acquirers': ['Nu'],
+        'targets': ['Xi'],
+        'other_parties': [],
+        'url': 'https://example.com/MN-7001',
+        'events': [
+            {'title': 'Merger notified to ACCC', 'date': '2025-10-10T12:00:00Z'},
+            {'title': 'Decision to Proceed to a Phase 2 review', 'date': '2026-01-20T12:00:00Z'},
+        ],
+    }
+
+
+class TestAnalysisOverallMatchesStatsPopulation:
+    """The analysis overall Phase 1 figures must cover the same population as
+    stats.json and the analysis per-industry bars.
+
+    Regression test for the overall bar being computed only over matters with a
+    published ``determination_publication_date``, which dropped matters referred
+    to Phase 2 that were still in Phase 2 — even though their Phase 1 had
+    concluded (at referral) and every other Phase 1 duration figure on the site
+    counted them. The result was an overall average that didn't line up with the
+    "All industries" baseline on the industry pages (stats.json) or with the
+    chart's own per-industry bars.
+    """
+
+    def test_referred_still_open_matter_is_counted_in_overall(self):
+        enriched = enrich_merger(_referred_still_in_phase_2_raw())
+        payload = analysis.generate([enriched])
+        # Its Phase 1 concluded at referral, so it counts as one completed review.
+        assert payload['phase1_duration']['stats']['count'] == 1
+        assert payload['phase1_duration']['stats']['average'] is not None
+
+    def test_overall_matches_stats_and_industry_bars(self):
+        # A mix: one cleared-in-Phase-1 matter, one referred-then-concluded, and
+        # one referred-still-open. All three are completed Phase 1 reviews.
+        raws = [
+            _referred_then_completed_phase_2_raw(),
+            _referred_still_in_phase_2_raw(),
+            {
+                'merger_id': 'MN-7002',
+                'merger_name': 'Cleared in Phase 1',
+                'status': 'Assessment completed',
+                'accc_determination': 'Approved',
+                'stage': 'Phase 1 - preliminary assessment',
+                'effective_notification_datetime': '2025-11-03T12:00:00Z',
+                'determination_publication_date': '2025-11-20T12:00:00Z',
+                'page_modified_datetime': '2025-11-20T12:30:00Z',
+                'anzsic_codes': [{'code': '0600', 'name': 'Mining'}],
+                'acquirers': ['Al'],
+                'targets': ['Be'],
+                'other_parties': [],
+                'url': 'https://example.com/MN-7002',
+                'events': [
+                    {'title': 'Merger notified to ACCC', 'date': '2025-11-03T12:00:00Z'},
+                    {'title': 'Phase 1 - Determination', 'date': '2025-11-20T12:00:00Z'},
+                ],
+            },
+        ]
+        enriched = [enrich_merger(r) for r in raws]
+
+        analysis_payload = analysis.generate(enriched)
+        stats_payload = stats.generate(enriched)
+
+        overall = analysis_payload['phase1_duration']['stats']
+        # All three matters are completed Phase 1 reviews, so the count and
+        # average must match the stats.json baseline exactly.
+        assert overall['count'] == 3
+        assert overall['average'] == round(
+            stats_payload['phase_duration']['average_business_days'], 1
+        )
+        assert overall['median'] == stats_payload['phase_duration']['median_business_days']
+
+        # And the single ANZSIC division present must agree with the overall bar,
+        # since every matter is tagged to Mining (0600 → division B).
+        industry_bars = analysis_payload['industry_phase1_duration']
+        assert len(industry_bars) == 1
+        assert industry_bars[0]['count'] == overall['count']
+        assert industry_bars[0]['average_business_days'] == overall['average']
+
+
 class TestPhase1DurationExcludesPhase2Clock:
     """A Phase-2-referred matter must be measured to the referral date, never
     to the later Phase 2 determination, which would inflate Phase 1 durations.
