@@ -8,6 +8,7 @@ import {
   addBusinessDays,
   parseDateOnly,
   toDateString,
+  australianToday,
 } from '../utils/dates';
 import { MERGER_STATUS } from '../constants/mergerStatus';
 import { getOutcomeDot } from '../constants/outcomeDotColors';
@@ -149,12 +150,20 @@ function MergerTimeline({ merger }) {
   }
 
   // Progress + "today" marker, only while the assessment is still running.
+  // Overdue is judged on calendar days (ACCC's Australian "today") rather than
+  // the raw current instant, so the deadline's own day reads as "due today"
+  // instead of "overdue" from the moment it ticks over at local midnight.
   let todayPct = null;
   let overdue = false;
+  let dueToday = false;
   if (!isComplete) {
     const now = new Date();
-    if (now >= end) {
+    const today = australianToday();
+    if (today > end) {
       overdue = true;
+    } else if (today.getTime() === end.getTime()) {
+      dueToday = true;
+      todayPct = axisPct(now, start, end);
     } else if (now > start) {
       todayPct = axisPct(now, start, end);
     }
@@ -187,13 +196,17 @@ function MergerTimeline({ merger }) {
     : null;
 
   // Note under the end date: total duration when the axis ends on the
-  // determination itself, or an overdue flag when the deadline has passed.
+  // determination itself, or an overdue/due-today flag when the deadline has
+  // arrived.
   let endNote = null;
   let endNoteClass = 'text-gray-500';
   if (endIsOutcome && durationStr) {
     endNote = durationStr;
   } else if (overdue) {
     endNote = 'Overdue';
+    endNoteClass = 'font-medium text-amber-600';
+  } else if (dueToday) {
+    endNote = 'Due today';
     endNoteClass = 'font-medium text-amber-600';
   }
 

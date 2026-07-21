@@ -137,6 +137,40 @@ describe('MergerTimeline', () => {
     expect(screen.getByText('Today')).toBeInTheDocument();
   });
 
+  it('shows "Due today" rather than "Overdue" on the deadline\'s own calendar day', () => {
+    // "Now" is pinned to 2026-06-01T00:00:00Z in beforeEach, which is after
+    // local midnight on the deadline day everywhere behind UTC (including
+    // Australia/Sydney) — so a naive instant comparison would already read
+    // as overdue even though the deadline day hasn't finished yet.
+    render(
+      <MergerTimeline
+        merger={{
+          effective_notification_datetime: '2026-04-01T12:00:00Z',
+          end_of_determination_period: '2026-06-01T12:00:00Z',
+          status: 'Under assessment',
+        }}
+      />
+    );
+
+    expect(screen.getByText('Due today')).toBeInTheDocument();
+    expect(screen.queryByText('Overdue')).not.toBeInTheDocument();
+  });
+
+  it('shows "Overdue" once the deadline day has fully passed', () => {
+    render(
+      <MergerTimeline
+        merger={{
+          effective_notification_datetime: '2026-04-01T12:00:00Z',
+          end_of_determination_period: '2026-05-20T12:00:00Z',
+          status: 'Under assessment',
+        }}
+      />
+    );
+
+    expect(screen.getByText('Overdue')).toBeInTheDocument();
+    expect(screen.queryByText('Due today')).not.toBeInTheDocument();
+  });
+
   it('falls back to a labelled view when no proportional axis is available', () => {
     render(
       <MergerTimeline
