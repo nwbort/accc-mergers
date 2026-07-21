@@ -1,15 +1,15 @@
 {
   "summary": {
     "notifications_total": 182,
-    "matters_extended": 13,
-    "share_extended_pct": 7.1,
-    "extension_events_total": 19,
-    "total_extension_bd": 217,
-    "median_matter_extension_bd": 19.0,
+    "matters_extended": 14,
+    "share_extended_pct": 7.7,
+    "extension_events_total": 20,
+    "total_extension_bd": 222,
+    "median_matter_extension_bd": 18,
     "longest_single_bd": 30,
     "phase_2_total": 8,
     "extended_escalated_to_phase_2": 7,
-    "escalation_rate_given_extension_pct": 53.8,
+    "escalation_rate_given_extension_pct": 50.0,
     "phase_2_preceded_by_extension_pct": 87.5,
     "base_phase_2_rate_pct": 4.4,
     "statutory_phase_1_bd": 30
@@ -17,8 +17,8 @@
   "reasons": [
     {
       "category": "Requested by the merger parties",
-      "events": 12,
-      "business_days": 148
+      "events": 13,
+      "business_days": 153
     },
     {
       "category": "ACCC information request",
@@ -54,7 +54,7 @@
     },
     {
       "month": "2026-07",
-      "count": 3
+      "count": 4
     }
   ],
   "matters": [
@@ -307,6 +307,27 @@
           "reason_category": "Requested by the merger parties",
           "reason_detail": "request by parties",
           "title": "Timeline extended by 10 business days \u2013 following request by parties"
+        }
+      ]
+    },
+    {
+      "merger_id": "MN-40017",
+      "merger_name": "Vets Central \u2013 Hills Veterinary Centre",
+      "stage": "Phase 1 - initial assessment",
+      "status": "Under assessment",
+      "notification_date": "2026-07-01T12:00:00Z",
+      "phase_1_determination": null,
+      "phase_1_determination_date": null,
+      "escalated_to_phase_2": false,
+      "total_extension_bd": 5,
+      "extension_count": 1,
+      "extensions": [
+        {
+          "date": "2026-07-21T12:00:00Z",
+          "business_days": 5,
+          "reason_category": "Requested by the merger parties",
+          "reason_detail": "request by parties",
+          "title": "Timeline extended by 5 business days \u2013 following request by parties"
         }
       ]
     },
