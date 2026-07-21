@@ -428,10 +428,21 @@ def generate(mergers: list) -> dict:
     waiver_mergers = filter_waivers(mergers)
 
     # --- Phase 1 duration analysis (notifications only) ---
-    phase1_durations = []
-    phase1_business_days = []
-    phase1_calendar_days = []
+    # Overall figures are collected via the shared helper so they match
+    # stats.json and the per-industry bars (industry_phase1_duration) exactly —
+    # all three now cover the same population of completed Phase 1 reviews.
+    #
+    # A completed Phase 1 review is any notification whose Phase 1 has concluded
+    # (see phase_1_end_date). Crucially that includes matters referred to Phase
+    # 2: their Phase 1 was concluded *by* the referral, so they are counted even
+    # while their Phase 2 review — and thus their final determination — is still
+    # open. Gating on determination_publication_date (as this block used to)
+    # wrongly dropped those referred-but-Phase-2-pending matters, leaving the
+    # overall bar computed over a smaller population than every other Phase 1
+    # duration figure on the site.
+    phase1_calendar_days, phase1_business_days = collect_phase_1_durations(notification_mergers)
 
+    phase1_durations = []
     for m in notification_mergers:
         start = m.get('effective_notification_datetime')
         # Measure to the Phase 1 end. For matters referred to Phase 2 this is the
@@ -448,15 +459,13 @@ def generate(mergers: list) -> dict:
         if bus_days is None:
             continue
 
-        in_progress = m.get('determination_publication_date') is None
-        if not in_progress:
-            phase1_business_days.append(bus_days)
-            if cal_days is not None:
-                phase1_calendar_days.append(cal_days)
         phase1_durations.append({
             "business_days": bus_days,
             "calendar_days": cal_days,
-            "in_progress": in_progress,
+            # Every retained entry is a completed Phase 1 review — matters still
+            # in Phase 1 have no phase_1_end_date and are skipped above — so none
+            # are in progress. Kept for the ECDF's expected schema.
+            "in_progress": False,
         })
 
     phase1_stats = {}
