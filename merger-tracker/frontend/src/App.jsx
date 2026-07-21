@@ -34,6 +34,7 @@ function AppContent() {
   const [showCommandPalette, setShowCommandPalette] = useState(false);
   const toggleShortcuts = useCallback(() => setShowShortcuts(prev => !prev), []);
   const togglePalette = useCallback(() => setShowCommandPalette(prev => !prev), []);
+  const openPalette = useCallback(() => setShowCommandPalette(true), []);
 
   useKeyboardShortcuts({ onToggleHelp: toggleShortcuts, onTogglePalette: togglePalette });
 
@@ -41,7 +42,7 @@ function AppContent() {
     <>
       <ScrollToTop />
       <div className="min-h-screen gradient-mesh flex flex-col">
-        <Navbar />
+        <Navbar onOpenSearch={openPalette} />
         <main id="main-content" className="flex-grow pt-16">
           <Routes>
             <Route path="/" element={<Dashboard />} />
