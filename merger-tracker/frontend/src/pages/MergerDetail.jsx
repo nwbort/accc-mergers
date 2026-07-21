@@ -463,7 +463,9 @@ function MergerDetail() {
         {/* Commentary */}
         {merger.comments && merger.comments.length > 0 && (
           <div className="bg-gradient-to-r from-blue-50 to-indigo-50/50 rounded-2xl border border-blue-100/60 shadow-card mb-6 overflow-hidden divide-y divide-blue-100/60">
-            {merger.comments.map((comment, commentIdx) => (
+            {[...merger.comments]
+              .sort((a, b) => (b.date || '').localeCompare(a.date || ''))
+              .map((comment, commentIdx) => (
               <div key={commentIdx} className="p-6">
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-blue-100 flex items-center justify-center">
