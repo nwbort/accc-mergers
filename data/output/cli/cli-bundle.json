@@ -38286,13 +38286,16 @@
     {
       "url": "https://www.accc.gov.au/public-registers/mergers-and-acquisitions-registers/acquisitions-register/cvs-group-%E2%80%93-paws-at-prospect-vet-and-eyes-at-prospect-vet",
       "merger_name": "CVS Group – Paws at Prospect Vet and Eyes at Prospect Vet",
-      "status": "Under assessment",
+      "status": "Assessment completed",
       "merger_id": "MN-70020",
       "effective_notification_datetime": "2026-06-02T12:00:00Z",
       "original_notification_datetime": "2026-06-02T12:00:00Z",
       "stage": "Phase 1 - initial assessment",
       "end_of_determination_period": "2026-07-21T12:00:00Z",
-      "page_modified_datetime": "2026-06-29T15:41:02+10:00",
+      "determination_publication_date": "2026-07-21T12:00:00Z",
+      "accc_determination": "Approved",
+      "accc_determination_raw": "ACCC determinationApproved",
+      "page_modified_datetime": "2026-07-21T12:17:29+10:00",
       "consultation_response_due_date": "2026-06-10T12:00:00Z",
       "acquirers": [
         {
@@ -38362,13 +38365,48 @@
           "title": "Timeline extended by 4 business days – following request by parties",
           "display_title": "Timeline extended by 4 business days – following request by parties",
           "phase": null
+        },
+        {
+          "date": "2026-07-21T12:00:00Z",
+          "title": "CVS Group - Paws at Prospect and Eyes at Prospect - Phase 1 determination",
+          "display_title": "Phase 1 - initial assessment determination: Approved",
+          "url": "https://www.accc.gov.au/system/files/public-merger-register/documents/CVS%20Group%20-%20Paws%20at%20Prospect%20and%20Eyes%20at%20Prospect%20-%20Phase%201%20determination%20-%2021%20July%202026.pdf",
+          "determination_commission_division": "Determination made by Commissioner Williams pursuant to a delegation under section 25(1) of the Act",
+          "determination_table_content": [
+            {
+              "item": "Notified acquisition",
+              "details": "The proposed acquisition by CVS Vets (Australia) Proprietary Limited, which is part of CVS Group Plc (together, CVS Group) of 60% of the shares in Newman Vet Pty Ltd, trading as Paws at Prospect Vet and Eyes at Prospect Vet (Paws) (the Acquisition).\n\nThe existing owners of Paws will retain the remaining 40% of shares in Paws."
+            },
+            {
+              "item": "Determination",
+              "details": "The Australian Competition and Consumer Commission has determined under section 51ABZE(1) of the Competition and Consumer Act 2010 (Cth) that the Acquisition may be put into effect."
+            },
+            {
+              "item": "Parties to the Acquisition",
+              "details": "The acquirer, CVS Group, is an integrated veterinary services provider based in the United Kingdom and listed on the London Stock Exchange. In Australia, CVS Group owns a number of small animal veterinary practices in Queensland, New South Wales, the Australian Capital Territory, Victoria, South Australia and Western Australia. CVS Group currently owns three veterinary practices in Adelaide: Walkerville Vet, Pet Universe Manningham and Pet Universe Northgate.\n\nThe target, Paws, is a small animal veterinary practice in Adelaide that also supplies specialist ophthalmic veterinary services on referral from ‘first opinion’ veterinary practices."
+            },
+            {
+              "item": "Overlap between the parties",
+              "details": "CVS Group and Paws (together, the Parties) overlap in the supply of small animal general practice veterinary services supplied in standard hours (General Veterinary Services) in Adelaide. Small animal veterinary practices attend to small animals (such as cats, dogs, guinea pigs, birds, rabbits and other pets), rather than larger animals (such as cattle, sheep and horses), and offer services such as first opinion consultations, general and preventative health care/advice, surgery, microchipping, dentistry, radiology, pathology, pharmacy and related services such as puppy school.\n\nWhile Paws supplies specialist ophthalmic veterinary services, CVS Group does not supply these services in Adelaide, and therefore there is no overlap between the Parties in relation to these services."
+            },
+            {
+              "item": "Reasons for determination",
+              "details": "When making a determination in Phase 1, the Australian Competition and Consumer Commission (ACCC) undertakes a competition assessment and considers whether it is appropriate for an acquisition to be approved or subject to further assessment in Phase 2 in accordance with section 51ABZJ of the Competition and Consumer Act 2010 (Cth) (the Act). In doing so, the ACCC must have regard to the object of the Act and all relevant matters, including the interests of consumers.\n\nFor more information about the ACCC’s approach to considering notified acquisitions, see the ACCC’s merger assessment guidelines and interim merger process guidelines.\n\nIn conducting its competition assessment, the ACCC has considered the information and documents that were submitted with the notification form, information from third parties, publicly available information and other materials available to the ACCC.\n\nThe ACCC has determined that the Acquisition may be put into effect as it considers that the Acquisition is unlikely to have the effect of substantially lessening competition in any market. In reaching its decision, and based on the material before it, the ACCC makes the following findings:\n\n• the market share aggregation resulting from the Acquisition is estimated to be low;\n\n• the merged entity would continue to face competition from multiple alternative General Veterinary Services practices in the local area surrounding Paws;\n\n• the merged entity would continue to face competition from other large suppliers of General Veterinary Services at the state and national levels."
+            },
+            {
+              "item": "Applications for review",
+              "details": "A notifying party, or other person who has been allowed to do so by the Australian Competition Tribunal, may apply for review if they are dissatisfied with the determination. Pursuant to section 100C of the Act, applications for review of the determination are to be made to the Australian Competition Tribunal before the end of 14 calendar days after this statement of reasons was included on the ACCC’s Acquisitions Register. To confirm whether there has been any application for review, please contact the Australian Competition Tribunal."
+            }
+          ],
+          "url_gh": "/mergers/MN-70020/CVS Group - Paws at Prospect and Eyes at Prospect - Phase 1 determination - 21 July 2026.pdf",
+          "is_determination_event": true,
+          "phase": "Phase 1"
         }
       ],
       "is_waiver": false,
-      "accc_determination": null,
       "has_conditions": false,
-      "phase_1_determination": null,
-      "phase_1_determination_date": null,
+      "phase_1_determination": "Approved",
+      "phase_1_determination_date": "2026-07-21T12:00:00Z",
       "phase_2_determination": null,
       "phase_2_determination_date": null,
       "public_benefits_determination": null,
@@ -75849,8 +75887,8 @@
         {
           "merger_id": "MN-70020",
           "merger_name": "CVS Group – Paws at Prospect Vet and Eyes at Prospect Vet",
-          "status": "Under assessment",
-          "accc_determination": null,
+          "status": "Assessment completed",
+          "accc_determination": "Approved",
           "acquirers": [
             {
               "name": "CVS VETS (AUSTRALIA) PROPRIETARY LIMITED",
@@ -126683,12 +126721,12 @@
     "total_waivers": 280,
     "total_conditional_approvals": 1,
     "by_status": {
-      "Assessment completed": 134,
-      "Under assessment": 45,
+      "Assessment completed": 135,
+      "Under assessment": 44,
       "Assessment ceased": 3
     },
     "by_determination": {
-      "Approved": 132,
+      "Approved": 133,
       "Referred to phase 2": 8
     },
     "by_waiver_determination": {
@@ -126696,28 +126734,28 @@
       "Not approved": 14
     },
     "clearance_rate": {
-      "cleared": 133,
+      "cleared": 134,
       "not_cleared": 1,
-      "total": 134,
+      "total": 135,
       "rate": 0.993
     },
     "phase_duration": {
-      "average_days": 29.814285714285713,
-      "median_days": 26.0,
-      "average_business_days": 19.571428571428573,
-      "median_business_days": 17.0,
+      "average_days": 29.95035460992908,
+      "median_days": 26,
+      "average_business_days": 19.673758865248228,
+      "median_business_days": 17,
       "percentiles": {
         "day15": {
           "count": 36,
-          "percentage": 25.7
+          "percentage": 25.5
         },
         "day20": {
           "count": 109,
-          "percentage": 77.9
+          "percentage": 77.3
         },
         "day30": {
           "count": 133,
-          "percentage": 95.0
+          "percentage": 94.3
         }
       }
     },
@@ -126886,6 +126924,16 @@
     ],
     "recent_determinations": [
       {
+        "merger_id": "MN-70020",
+        "merger_name": "CVS Group – Paws at Prospect Vet and Eyes at Prospect Vet",
+        "determination": "Approved",
+        "determination_date": "2026-07-21T12:00:00Z",
+        "page_modified_datetime": "2026-07-21T12:17:29+10:00",
+        "determination_type": "final",
+        "is_waiver": false,
+        "stage": "Phase 1 - initial assessment"
+      },
+      {
         "merger_id": "WA-01113",
         "merger_name": "Hillhouse – LRQA Group",
         "determination": "Approved",
@@ -126991,16 +127039,6 @@
         "determination": "Approved",
         "determination_date": "2026-07-16T12:00:00Z",
         "page_modified_datetime": "2026-07-16T17:35:59+10:00",
-        "determination_type": "final",
-        "is_waiver": true,
-        "stage": "Waiver application"
-      },
-      {
-        "merger_id": "WA-55027",
-        "merger_name": "Sumitomo Mitsui Trust Bank - SMTB ANZ Debt Fund",
-        "determination": "Approved",
-        "determination_date": "2026-07-16T12:00:00Z",
-        "page_modified_datetime": "2026-07-16T17:35:02+10:00",
         "determination_type": "final",
         "is_waiver": true,
         "stage": "Waiver application"

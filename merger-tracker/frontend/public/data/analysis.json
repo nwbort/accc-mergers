@@ -542,6 +542,11 @@
         "in_progress": false
       },
       {
+        "business_days": 34,
+        "calendar_days": 49,
+        "in_progress": false
+      },
+      {
         "business_days": 15,
         "calendar_days": 21,
         "in_progress": false
@@ -703,18 +708,18 @@
       }
     ],
     "stats": {
-      "average": 18.5,
-      "median": 17.0,
+      "average": 18.6,
+      "median": 17,
       "min": 15,
       "max": 59,
-      "count": 134
+      "count": 135
     },
     "calendar_stats": {
-      "average": 28.3,
-      "median": 26.0,
+      "average": 28.5,
+      "median": 26,
       "min": 21,
       "max": 103,
-      "count": 134
+      "count": 135
     }
   },
   "waiver_duration": {
@@ -1945,11 +1950,11 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "average_business_days": 21.1,
-      "median_business_days": 17,
-      "average_calendar_days": 32.9,
-      "median_calendar_days": 27,
-      "count": 31
+      "average_business_days": 21.5,
+      "median_business_days": 17.5,
+      "average_calendar_days": 33.4,
+      "median_calendar_days": 27.0,
+      "count": 32
     },
     {
       "code": "B",
@@ -2063,11 +2068,11 @@
   "by_commission_division": [
     {
       "division": "Commissioner Williams",
-      "count": 307,
+      "count": 308,
       "outcome_mix": {
-        "Approved": 307
+        "Approved": 308
       },
-      "median_phase_1_business_days": 16
+      "median_phase_1_business_days": 16.0
     },
     {
       "division": "A division of the Commission (s19 direction)",
@@ -2081,9 +2086,9 @@
     },
     {
       "division": "Not yet determined",
-      "count": 43,
+      "count": 42,
       "outcome_mix": {
-        "Unknown": 43
+        "Unknown": 42
       },
       "median_phase_1_business_days": 36.5
     },
@@ -2141,7 +2146,7 @@
       "pct_decided_final_3_bd": 3.8,
       "count": 130
     },
-    "extended_count": 2
+    "extended_count": 3
   },
   "notification_restarts": [
     {
@@ -2234,11 +2239,11 @@
     {
       "code": "M",
       "name": "Professional, Scientific and Technical Services",
-      "approved": 29,
+      "approved": 30,
       "not_approved": 0,
       "referred": 2,
-      "in_progress": 8,
-      "phase2_referral_rate": 0.065
+      "in_progress": 7,
+      "phase2_referral_rate": 0.062
     },
     {
       "code": "C",
