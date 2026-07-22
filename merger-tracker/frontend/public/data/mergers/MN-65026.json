@@ -154,53 +154,12 @@
   "public_benefits_determination": null,
   "public_benefits_determination_date": null,
   "has_questionnaire": true,
+  "related_merger": {
+    "merger_id": "WA-30010",
+    "relationship": "refiled_from",
+    "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors"
+  },
   "similar_mergers": [
-    {
-      "merger_id": "WA-30010",
-      "merger_name": "MAG South Coast - Country Motor Company / Kinghorn Motors",
-      "status": "Assessment completed",
-      "accc_determination": "Not approved",
-      "acquirers": [
-        {
-          "name": "MAG SOUTH COAST PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "70 683 627 590",
-          "party_page": {
-            "id": "mag-south-coast-pty-ltd",
-            "name": "Mag South Coast Pty Ltd"
-          }
-        },
-        {
-          "name": "MCCARROLL PROPERTY HOLDINGS PTY LTD",
-          "identifier_type": "ABN",
-          "identifier": "64 676 724 306",
-          "party_page": {
-            "id": "mccarroll-property-holdings-pty-ltd",
-            "name": "Mccarroll Property Holdings Pty Ltd"
-          }
-        }
-      ],
-      "targets": [
-        {
-          "name": "Donna Lea Buikstra Family Will Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "donna-lea-buikstra-family-will-trust",
-            "name": "Donna Lea Buikstra Family Will Trust"
-          }
-        },
-        {
-          "name": "Glenn Ype Buikstra Family Will Trust",
-          "identifier_type": null,
-          "identifier": "",
-          "party_page": {
-            "id": "glenn-ype-buikstra-family-will-trust",
-            "name": "Glenn Ype Buikstra Family Will Trust"
-          }
-        }
-      ]
-    },
     {
       "merger_id": "MN-90028",
       "merger_name": "Peter Warren - Wakeling Automotive",
